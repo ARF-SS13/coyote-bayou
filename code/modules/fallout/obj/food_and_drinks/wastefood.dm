@@ -298,8 +298,6 @@
 	var/mob/living/carbon/C = user
 	if(C.gloves)
 		return FALSE
-	if(C.has_trait(TRAIT_PIERCEIMMUNE))
-		return FALSE
 	var/hit_zone = (C.held_index_to_dir(C.active_hand_index) == "l" ? "l_":"r_") + "arm"
 	var/obj/item/bodypart/affecting = C.get_bodypart(hit_zone)
 	if(affecting)
@@ -715,7 +713,6 @@
 	desc = "<I>Mycena Bregprox</I>: This species of mushroom glows in the dark."
 	icon_state = "glowshroom"
 	filling_color = "#00FA9A"
-	var/effect_path = /obj/structure/glowshroom
 	wine_power = 50
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/attack_self(mob/user)
