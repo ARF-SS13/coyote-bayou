@@ -21,6 +21,7 @@
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt = list()
+	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
@@ -34,6 +35,7 @@
 	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
 
+	var/decompose = FALSE //Does this mob decompose over time when dead?
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -69,6 +71,10 @@
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
 		walk(src, 0) //stops walking
+		if(decompose)
+			if(prob(0.2)) // 0.2% chance every cycle to decompose
+				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
+				gib(FALSE, FALSE, FALSE, TRUE)
 		return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
@@ -371,6 +377,9 @@
 	if(target && emote_taunt.len && prob(taunt_chance))
 		emote("me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
+	if(LAZYLEN(emote_taunt_sound))
+		var/taunt_choice = pick(emote_taunt_sound)
+		playsound(loc, taunt_choice, 50, 0)
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()

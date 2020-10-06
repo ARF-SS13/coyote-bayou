@@ -88,6 +88,9 @@
 	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
 	var/speed = 1
 
+	var/idlesound = null //What to play when idling, if anything.
+	var/aggrosound = null
+
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
 	var/next_scan_time = 0
@@ -634,3 +637,12 @@
 	if (AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
 		toggle_ai(initial(AIStatus))
+
+/mob/living/simple_animal/Life()
+	. = ..()
+	if(stat)
+		return
+	if (idlesound)
+		if (prob(5))
+			var/chosen_sound = pick(idlesound)
+			playsound(src, chosen_sound, 60, FALSE)

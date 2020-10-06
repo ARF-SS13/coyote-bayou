@@ -216,6 +216,42 @@
 	tastes = list("meat" = 4, "a fondness for wearing hats" = 1)
 	foodtype = RAW | MEAT | GROSS
 
+
+/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
+	name = "ghoul meat"
+	icon_state = "flymeat"
+	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
+	list_reagents = list("nutriment" = 3, "radium" = 6, "bad_food" = 2)
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	slice_path = null
+	foodtype = RAW | MEAT | GROSS
+
+/obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	name = "ghoul steak"
+	desc = "Why would you even cook this?"
+	list_reagents = list("nutriment" = 4)
+	bonus_reagents = list("radium" = 3)
+	foodtype = MEAT | GROSS
+
+/obj/item/reagent_containers/food/snacks/meat/slab/human/centaur
+	name = "centaur meat"
+	icon_state = "flymeat"
+	desc = "Absolutely disgusting"
+	list_reagents = list("nutriment" = 3, "radium" = 10, "bad_food" = 4, "FEV_solution" = 6)
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
+	slice_path = null
+	foodtype = RAW | MEAT | GROSS
+
+/obj/item/reagent_containers/food/snacks/meat/steak/centaur
+	name = "centaur steak"
+	desc = "No matter how much you cook, it doesn't seem safe to eat."
+	list_reagents = list("nutriment" = 4)
+	bonus_reagents = list("radium" = 5, "FEV_solution" = 6)
+	foodtype = MEAT | GROSS
+
+
 /obj/item/reagent_containers/food/snacks/meat/slab/pug
 	name = "pug meat"
 	desc = "Tastes like... well you know..."
