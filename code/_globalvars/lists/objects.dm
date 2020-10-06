@@ -45,3 +45,5 @@ GLOBAL_LIST_EMPTY(alert_consoles)			// Station alert consoles, /obj/machinery/co
 
 //list of everyone playing rock paper scissors
 GLOBAL_LIST_EMPTY(rockpaperscissors_players)
+
+GLOBAL_LIST_EMPTY(trash_piles)						//list of all trash_piles
