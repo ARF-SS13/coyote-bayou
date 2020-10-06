@@ -16,13 +16,6 @@
 		return 1
 	return 0
 
-/turf/closed/wall/proc/update_icon()
-	if(!damage_overlays[1]) //list hasn't been populated
-		generate_overlays()
-	queue_smooth_neighbors(src)
-	queue_smooth(src)
-	update_damage_overlay()
-
 /turf/closed/wall/proc/update_damage_overlay()
 	if(damage != 0)
 
