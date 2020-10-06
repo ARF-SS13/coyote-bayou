@@ -116,6 +116,9 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define RAD_PROTECT_CONTENTS (1<<0)
 #define RAD_NO_CONTAMINATE (1<<1)
 
+#define GLOBAL_LIGHT_TURF_2         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
+#define BLOCK_RADIO_2               (1<<1)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
+
 //Mob mobility var flags
 /// any flag
 #define CHECK_MOBILITY(target, flags) CHECK_BITFIELD(target.mobility_flags, flags)
