@@ -110,6 +110,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 		features["color_scheme"] = OLD_CHARACTER_COLORING //advanced is off by default
 
+	if(current_version < 37) //introduction of chooseable eye types/sprites
+		if(S["species"] == "insect")
+			left_eye_color = "#000000"
+			right_eye_color = "#000000"
+			if(chosen_limb_id == "moth" || chosen_limb_id == "moth_not_greyscale") //these actually have slightly different eyes!
+				eye_type = "moth"
+			else
+				eye_type = "insect"
+
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
 		return
@@ -418,6 +427,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["age"]					>> age
 	S["hair_color"]				>> hair_color
 	S["facial_hair_color"]		>> facial_hair_color
+	S["eye_type"]				>> eye_type
 	S["left_eye_color"]			>> left_eye_color
 	S["right_eye_color"]		>> right_eye_color
 	S["use_custom_skin_tone"]	>> use_custom_skin_tone
@@ -603,6 +613,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
+	eye_type						= sanitize_inlist(eye_type, GLOB.eye_types, DEFAULT_EYES_TYPE)
 	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
 	right_eye_color					= sanitize_hexcolor(right_eye_color, 6, FALSE)
 
@@ -756,6 +767,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["age"]						, age)
 	WRITE_FILE(S["hair_color"]				, hair_color)
 	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)
+	WRITE_FILE(S["eye_type"]				, eye_type)
 	WRITE_FILE(S["left_eye_color"]			, left_eye_color)
 	WRITE_FILE(S["right_eye_color"]			, right_eye_color)
 	WRITE_FILE(S["use_custom_skin_tone"]	, use_custom_skin_tone)
