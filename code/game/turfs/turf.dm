@@ -26,6 +26,9 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
+	var/turf_light_range = 0 // Used for the nightcycle subsystem
+	var/turf_light_power = 0 // Used for the nightcycle subsystem
+
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
 

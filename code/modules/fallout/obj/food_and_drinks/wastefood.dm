@@ -441,14 +441,11 @@
 	bitesize = 100
 
 /obj/item/reagent_containers/food/snacks/grown/tato/attackby(obj/item/W, mob/user, params)
-	if(W.is_sharp())
 		to_chat(user, "<span class='notice'>You cut the tato into wedges with [W].</span>")
 		var/obj/item/reagent_containers/food/snacks/grown/tato/wedges/Wedges = new /obj/item/reagent_containers/food/snacks/grown/tato/wedges
 		remove_item_from_storage(user)
 		qdel(src)
 		user.put_in_hands(Wedges)
-	else
-		return ..()
 
 /obj/item/seeds/mutfruit
 	name = "pack of mutfruit seeds"

@@ -5,6 +5,7 @@
 	var/postdig_icon_change = FALSE
 	var/postdig_icon
 	var/wet
+	var/list/archdrops
 
 	var/footstep = null
 	var/barefootstep = null
@@ -15,7 +16,8 @@
 	. = ..()
 	if(wet)
 		AddComponent(/datum/component/wet_floor, wet, INFINITY, 0, INFINITY, TRUE)
-
+	if(LAZYLEN(archdrops))
+		AddComponent(archdrops)
 //direction is direction of travel of A
 /turf/open/zPassIn(atom/movable/A, direction, turf/source)
 	return (direction == DOWN)
