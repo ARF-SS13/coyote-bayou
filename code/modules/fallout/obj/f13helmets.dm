@@ -465,7 +465,7 @@
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
 	glass_colour_type = /datum/client_colour/glass_colour/red
-	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
@@ -573,7 +573,7 @@
 	dynamic_fhair_suffix = ""
 	speechspan = SPAN_ROBOT //makes you sound like a robot
 	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	var/emped = 0
 	var/requires_training = TRUE
 
@@ -581,7 +581,7 @@
 	var/mob/living/carbon/human/H = user
 	if(src == H.head) //Suit is already equipped
 		return ..()
-	if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/f13/power_armor/t45b) && slot == SLOT_HEAD && requires_training)
+	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/f13/power_armor/t45b) && slot == SLOT_HEAD && requires_training)
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return 0
 	if(slot == SLOT_HEAD)
