@@ -73,3 +73,19 @@
 	name = ".38 DumDum bullet casing"
 	desc = "A .38 DumDum bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c38/dumdum
+// .44 magnum
+/obj/item/ammo_casing/m44
+	name = ".44 magnum FMJ bullet casing"
+	desc = "A .44 magnum full metal jacket bullet casing."
+	caliber = "44"
+	projectile_type = /obj/item/projectile/bullet/m44
+
+/obj/item/ammo_casing/m44/jhp
+	name = ".44 magnum JHP bullet casing"
+	desc = "A .44 magnum jacketed hollow point bullet casing."
+	projectile_type = /obj/item/projectile/bullet/m44/jhp
+
+/obj/item/ammo_casing/m44/swc
+	name = ".44 magnum SWC bullet casing"
+	desc = "A .44 magnum semi-wadcutter bullet casing."
+	projectile_type = /obj/item/projectile/bullet/m44/swc

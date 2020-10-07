@@ -43,3 +43,29 @@
 
 /obj/item/reagent_containers/pill/patch/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
+
+/obj/item/reagent_containers/pill/patch/jet
+	name = "Jet"
+	desc = "A highly addictive meta-amphetamine that produces a fast-acting, intense euphoric high on the user."
+	list_reagents = list("jet" = 10)
+	icon_state = "bandaid_jet"
+
+/obj/item/reagent_containers/pill/patch/turbo
+	name = "Turbo"
+	desc = "A chem that vastly increases the user's reflexes and slows their perception of time."
+	list_reagents = list("turbo" = 5)
+	icon_state = "bandaid_turbo"
+
+/obj/item/reagent_containers/pill/patch/healingpowder
+	name = "Healing Powder"
+	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
+	list_reagents = list("healing_powder" = 10)
+	icon_state = "bandaid_healingpowder"
+	self_delay = 0
+
+/obj/item/reagent_containers/pill/patch/healpoultice
+	name = "Healing poultice"
+	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
+	list_reagents = list("healing_poultice" = 10)
+	icon_state = "bandaid_healingpoultice"
+	self_delay = 0

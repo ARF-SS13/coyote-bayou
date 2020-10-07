@@ -138,3 +138,17 @@
 	embedding = list(embed_chance=90, fall_chance=2, jostle_chance=5, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
 	wound_falloff_tile = -1
 	embed_falloff_tile = -5
+
+// .44 Magnum
+/obj/item/projectile/bullet/m44
+	damage = 41 //35
+	armour_penetration = -5 //5
+	penetrating = 55
+
+/obj/item/projectile/bullet/m44/jhp
+	damage = 60 //40
+	armour_penetration = -40 //-15
+
+/obj/item/projectile/bullet/m44/swc
+	damage = 40
+	armour_penetration = 5

@@ -192,3 +192,117 @@
 
 /obj/item/ammo_box/shotgun/loaded/dart
 	ammo_type = /obj/item/ammo_casing/shotgun/dart
+
+//.44 Magnum
+/obj/item/ammo_box/m44
+	name = "speed loader (.44)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "44"
+	ammo_type = /obj/item/ammo_casing/m44
+	max_ammo = 6
+	caliber = "44"
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 4000)
+/*
+/obj/item/ammo_box/m44/heap
+	name = "speed loader (.44) (+Heap!)"
+	ammo_type = /obj/item/ammo_casing/F13/m44/heap
+
+/obj/item/ammo_box/m44/armourpiercing
+	name = "speed loader (.44) (+AP!)"
+	ammo_type = /obj/item/ammo_casing/F13/m44/armourpiercing
+
+/obj/item/ammo_box/m44/toxic
+	name = "speed loader (.44) (+TOXIC!)"
+	ammo_type = /obj/item/ammo_casing/F13/m44/toxic
+
+/obj/item/ammo_box/m44/fire
+	name = "speed loader (.44) (+FIRE!)"
+	ammo_type = /obj/item/ammo_casing/F13/m44/fire
+
+*/
+
+/obj/item/ammo_box/m44/empty
+	start_empty = 1
+
+/obj/item/ammo_box/tube/m44
+	name = "speed loader tube (.44)"
+	desc = "Designed to quickly reload repeaters."
+	icon_state = "44tube"
+	caliber = "44"
+	ammo_type = /obj/item/ammo_casing/m44
+	max_ammo = 8
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 6000)
+
+/obj/item/ammo_box/tube/m44/empty
+	start_empty = 1
+
+//Stripper clips
+
+//7.62x51, .308 Winchester
+/obj/item/ammo_box/a762
+	name = "stripper clip (7.62)"
+	desc = "A stripper clip."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 5000)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/musketbag/
+	name = "Bag of Musket Cartridges"
+	icon_state = "musketbag"
+	ammo_type = /obj/item/ammo_casing/caseless/musketball
+	max_ammo = 15
+	materials = list(MAT_METAL = 1000)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a308
+	name = "stripper clip (.308)"
+	desc = "A stripper clip."
+	icon_state = "308"
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 7000)
+	w_class = WEIGHT_CLASS_SMALL
+/*
+/obj/item/ammo_box/magazine/m308/heap
+	name = "rifle magazine (.308) (+Heap!)"
+	ammo_type = /obj/item/ammo_casing/F13/m308/heap
+
+/obj/item/ammo_box/magazine/m308/armourpiercing
+	name = "rifle magazine (.308) (+AP!)"
+	ammo_type = /obj/item/ammo_casing/F13/m308/armourpiercing
+
+/obj/item/ammo_box/magazine/m308/toxic
+	name = "rifle magazine (.308) (+TOXIC!)"
+	ammo_type = /obj/item/ammo_casing/F13/m308/toxic
+
+/obj/item/ammo_box/magazine/m308/fire
+	name = "rifle magazine (.308) (+FIRE!)"
+	ammo_type = /obj/item/ammo_casing/F13/m308/fire
+*/
+
+/obj/item/ammo_box/a762/doublestacked
+	name = "double stack stripper clip (.308)"
+	desc = "A stripper clip."
+	icon_state = "762a"
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	max_ammo = 10
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 10000)
+	w_class = WEIGHT_CLASS_SMALL
+
+//5.56x45mm
+/obj/item/ammo_box/a556/stripper
+	name = "stripper clip (5.56x45mm)"
+	desc = "A stripper clip."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 2500)
+	w_class = WEIGHT_CLASS_SMALL

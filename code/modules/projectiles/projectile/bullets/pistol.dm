@@ -50,3 +50,20 @@
 			L.Sleeping(300)
 		else
 			L.adjustStaminaLoss(25)
+
+// Needler
+/obj/item/projectile/bullet/needle
+    name = "needle"
+    icon_state = "cbbolt"
+    damage = 40
+    armour_penetration = 15
+
+/obj/item/projectile/bullet/needle/ap
+    name = "armour piercing needle"
+    damage = 30
+    armour_penetration = 35
+
+/obj/item/projectile/bullet/needle/ultra
+    name = "ultracite needle"
+    damage = 50
+    armour_penetration = 25

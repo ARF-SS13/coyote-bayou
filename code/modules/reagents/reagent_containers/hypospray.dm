@@ -288,6 +288,14 @@
 	quickload = TRUE
 	penetrates = TRUE
 
+/obj/item/reagent_containers/hypospray/medipen/psycho
+	name = "Psycho"
+	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
+	icon_state = "psychopen"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("psycho" = 10)
+
 /obj/item/hypospray/mkii/Initialize()
 	. = ..()
 	if(!spawnwithvial)

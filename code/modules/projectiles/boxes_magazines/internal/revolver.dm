@@ -39,3 +39,20 @@
 /obj/item/ammo_box/magazine/internal/rus357/Initialize()
 	stored_ammo += new ammo_type(src)
 	. = ..()
+/obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
+	name = "improvised internal magazine"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 4
+
+/obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	name = "improvised internal magazine"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	name = ".223 pistol cylinder"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 5
