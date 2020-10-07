@@ -26,3 +26,8 @@
 	caliber = "40mm"
 	icon_state = "40mmHE"
 	projectile_type = /obj/item/projectile/bullet/a40mm
+
+/obj/item/ammo_casing/a762/sport
+	name = ".308 Winchester bullet casing"
+	desc = "A .308 Winchester sporting bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a762/sport

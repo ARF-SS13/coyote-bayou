@@ -152,3 +152,16 @@
 /obj/item/projectile/bullet/m44/swc
 	damage = 40
 	armour_penetration = 5
+
+/obj/item/projectile/bullet/c4570
+	damage = 50
+	armour_penetration = 15//10
+	penetrating = 65
+
+/obj/item/projectile/bullet/c4570/jhp
+	damage = 55
+	armour_penetration = -10
+
+/obj/item/projectile/bullet/c4570/swc
+	damage = 55
+	armour_penetration = 10
