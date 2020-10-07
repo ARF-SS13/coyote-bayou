@@ -174,3 +174,14 @@
 	can_suppress = FALSE
 	burst_size = 2
 	extra_penetration = 10 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil
+	name = "browning hi-power"
+	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
+	icon_state = "ninemil"
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 2
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	can_attachments = TRUE
