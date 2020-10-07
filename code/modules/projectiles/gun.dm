@@ -69,6 +69,7 @@
 	var/can_bayonet = FALSE
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/mutable_appearance/flashlight_overlay
+	var/can_attachments = FALSE
 
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
