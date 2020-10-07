@@ -269,3 +269,71 @@
 	if(!wielded)
 		return BLOCK_NONE
 	return ..()
+
+/obj/item/twohanded/bostaff
+	name = "quarterstaff"
+	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts. Can be wielded to both kill and incapacitate."
+	force = 10
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	force_unwielded = 10
+	force_wielded = 15
+	throwforce = 5
+	throw_speed = 2
+	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "bostaff0"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	block_chance = 45
+
+/obj/item/twohanded/bostaff/update_icon()
+	icon_state = "bostaff[wielded]"
+	return
+
+/obj/item/twohanded/bostaff/attack(mob/target, mob/living/user)
+	add_fingerprint(user)
+	if((user.has_trait(TRAIT_CLUMSY)) && prob(50))
+		to_chat(user, "<span class ='warning'>You club yourself over the head with [src].</span>")
+		user.Knockdown(60)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(2*force, BRUTE, BODY_ZONE_HEAD)
+		else
+			user.take_bodypart_damage(2*force)
+		return
+	if(iscyborg(target))
+		return ..()
+	if(!isliving(target))
+		return ..()
+	var/mob/living/carbon/C = target
+	if(C.stat)
+		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
+		return
+	if(user.a_intent == INTENT_DISARM)
+		if(!wielded)
+			return ..()
+		if(!ishuman(target))
+			return ..()
+		var/mob/living/carbon/human/H = target
+		var/list/fluffmessages = list("[user] clubs [H] with [src]!", \
+									  "[user] smacks [H] with the butt of [src]!", \
+									  "[user] broadsides [H] with [src]!", \
+									  "[user] smashes [H]'s head with [src]!", \
+									  "[user] beats [H] with front of [src]!", \
+									  "[user] twirls and slams [H] with [src]!")
+		H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
+							   "<span class='userdanger'>[pick(fluffmessages)]</span>")
+		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
+		H.adjustStaminaLoss( 15)
+		if(prob(10))
+			H.visible_message("<span class='warning'>[H] collapses!</span>", \
+								   "<span class='userdanger'>Your legs give out!</span>")
+			H.Knockdown(80)
+	else
+		return ..()
+
+/obj/item/twohanded/bostaff/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(wielded)
+		return ..()
+	return 0

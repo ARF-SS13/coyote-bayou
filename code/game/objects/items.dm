@@ -11,7 +11,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	name = "item"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
-	
+
 	attack_hand_speed = 0
 	attack_hand_is_action = FALSE
 	attack_hand_unwieldlyness = 0
@@ -47,6 +47,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	obj_flags = NONE
 	var/item_flags = NONE
+
+	var/item_color = null //this needs deprecating, soonish
 
 	var/hitsound = null
 	var/usesound = null

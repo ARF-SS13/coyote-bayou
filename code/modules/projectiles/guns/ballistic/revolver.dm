@@ -492,3 +492,186 @@
 		var/mutable_appearance/charge_bar = mutable_appearance(icon,  "[initial(icon_state)]_charge", color = batt_color)
 		charge_bar.pixel_x = i
 		. += charge_bar
+
+//////////////////////F13 Guns///////////////
+
+/obj/item/gun/ballistic/revolver/m29
+	name = "\improper .44 magnum revolver"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
+	item_state = "model29"
+	icon_state = "m29"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	fire_delay = 3
+	can_scope = TRUE
+
+/obj/item/gun/ballistic/revolver/m29/alt
+	item_state = "44magnum"
+	icon_state = "mysterious_m29"
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/m29/coltwalker
+	name = "Colt Walker 1847"
+	desc = "A legendary gun of the west. The Colt Walker bears a fearsome reputation for a very good reason, finding itself in the hands of everyone from ancient army officials to outlaws throughout the years. An antique when the bombs dropped, the weapon is now incredibly outdated. Still, that doesn't make it any less lethal."
+	item_state = "coltwalker"
+	icon_state = "coltwalker"
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/m29/peacekeeper
+	name = "Peacekeeper"
+	desc = "Even desert roses have thorns. This .44 revolver has been modified with a special hammer mechanism, allowing for slow, powerful shots, or fanning the hammer for a flurry of more inaccurate shots."
+	item_state = "m29peace"
+	icon_state = "m29peace"
+	extra_damage = 15
+	extra_penetration = 5
+	fire_delay = 10
+	burst_size = 1
+	burst_delay = 1
+	var/select = 0
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/m29/peacekeeper/ui_action_click()
+	burst_select()
+
+/obj/item/gun/ballistic/revolver/m29/peacekeeper/proc/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3 //fan the hammer
+			spread = 15
+			extra_penetration = 0
+			fire_delay = 1
+			to_chat(user, "<span class='notice'>You prepare to fan the hammer for a rapid burst of shots.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 0
+			extra_damage = 15 //50 damage, 10 AP - equivalent to a .45-70 Govt round. Strong, but slow.
+			extra_penetration = 5
+			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/m29/scoped
+	name = "\improper .44 magnum revolver"
+	icon_state = "scoped_m29"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/colt357
+	name = "\improper .357 magnum revolver"
+	desc = "A relatively primitive .357 magnum revolver."
+	item_state = "colt357"
+	icon_state = "colt357"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	fire_delay = 5
+
+/obj/item/gun/ballistic/revolver/colt357/lucky
+	name = "Lucky"
+	desc = "Just holding this gun makes you feel like an ace. This .357 revolver has been decorated with a polished ivory handle and a smooth black barrel, and seems just a little quicker on the draw than most guns."
+	item_state = "lucky"
+	icon_state = "lucky"
+	w_class = WEIGHT_CLASS_SMALL
+	fire_delay = 0
+	block_chance = 20 //Do you feel lucky? Well, do you, punk?
+
+/obj/item/gun/ballistic/revolver/colt357/lucky/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		if(prob(block_chance))
+			owner.visible_message("<span class='danger'>[owner] seems to dodge [attack_text] entirely thanks to [src]!</span>")
+			playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
+			return 1
+	return 0
+
+/obj/item/gun/ballistic/revolver/needler
+	name = "needler pistol"
+	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
+	icon_state = "needler"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
+	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gun/ballistic/revolver/needler/ultra
+	name = "Ultracite needler"
+	desc = "An ultracite enhanced needler pistol"
+	icon_state = "ultraneedler"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
+	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gun/ballistic/revolver/colt6250
+	name = "colt 6250"
+	desc = "The Colt 6520 10mm autoloading pistol is a highly durable and efficient weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
+	icon_state = "colt6250"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	fire_delay = 3
+
+/obj/item/gun/ballistic/revolver/sequoia
+	name = "ranger sequoia"
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	icon_state = "sequoia"
+	item_state = "sequoia"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	fire_delay = 4
+
+/obj/item/gun/ballistic/revolver/sequoia/scoped
+	name = "hunting revolver"
+	desc = "A scoped double action revolver chambered in 45-70."
+	icon_state = "hunting_revolver"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+
+/obj/item/gun/ballistic/revolver/zipgun
+	name = "zipgun"
+	desc = "A crudely-made 9mm pistol. You're not sure this thing is reliable."
+	icon_state = "zipgun"
+	item_state = "gun"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
+	spread = 20
+
+/obj/item/gun/ballistic/revolver/pipe_rifle
+	name = "pipe rifle"
+	desc = "A crudely-made 10mm rifle. It's not very accurate."
+	icon_state = "pipe_rifle"
+	item_state = "improvshotgun"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 15
+
+/obj/item/gun/ballistic/revolver/police
+	name = "police pistol"
+	desc = "An old pre-war double action police revolver. Uses .357 and .38 special rounds."
+	icon_state = "police"
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gun/ballistic/revolver/thatgun
+	name = ".223 pistol"
+	desc = "A 556 rifle modified and cut down to a pistol."
+	icon_state = "thatgun"
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	extra_penetration = 13
+
+/obj/item/gun/ballistic/revolver/zhurong
+	name = "Zhu-Rong v417"
+	desc = "The earlier model of the Chinese pistol found in the East Coast, which was known to be the model before all the simplifications of the design, making it smoother, packing a harderer punch. Chambered in 10mm."
+	icon_state = "zhurong"
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	fire_delay = 0
+	extra_damage = 20
+	burst_size = 2
+	extra_penetration = 5
+	fire_sound = 'sound/f13weapons/ninemil.ogg'

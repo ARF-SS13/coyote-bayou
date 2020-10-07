@@ -1,8 +1,3 @@
-#define HAS_TRAIT(target, trait) (target.status_traits ? (target.status_traits[trait] ? TRUE : FALSE) : FALSE)
-#define HAS_TRAIT_FROM(target, trait, source) (target.status_traits ? (target.status_traits[trait] ? (source in target.status_traits[trait]) : FALSE) : FALSE)
-#define HAS_TRAIT_NOT_FROM(target, trait, source) (target.status_traits ? (target.status_traits[trait] ? (length(target.status_traits[trait] - source) > 0) : FALSE) : FALSE)
-
-
 #define SIGNAL_TRAIT(trait_ref) "trait [trait_ref]"
 
 // trait accessor defines
@@ -235,6 +230,23 @@
 #define TRAIT_COMBAT_MODE_LOCKED		"combatmode_locked"
 /// Prevents sprinting from being active.
 #define TRAIT_SPRINT_LOCKED				"sprint_locked"
+
+
+#define	TRAIT_CHEMWHIZ			"chemwhiz"
+#define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
+#define TRAIT_TECHNOPHREAK		"technophreak"	//needed to use the autolathe, renamed and sprited 30/06/2020
+#define TRAIT_PA_WEAR           "pa_wear"
+#define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
+#define TRAIT_PRACTITIONER		"Practitioner" //Has access to FoA specific surgeries
+
+
+// fallout crafting traits
+#define TRAIT_GUNSMITH_ONE      "gunsmith_one"
+#define TRAIT_GUNSMITH_TWO      "gunsmith_two"
+#define TRAIT_GUNSMITH_THREE    "gunsmith_three"
+#define TRAIT_GUNSMITH_FOUR     "gunsmith_four"
+
+
 
  //non-mob traits
 #define TRAIT_PARALYSIS				"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
