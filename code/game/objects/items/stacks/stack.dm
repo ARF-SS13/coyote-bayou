@@ -26,6 +26,7 @@
 	///Datum material type that this stack is made of
 	var/material_type
 	max_integrity = 100
+	var/latin = 0 // Use weird latin pluralization.
 	//NOTE: When adding grind_results, the amounts should be for an INDIVIDUAL ITEM - these amounts will be multiplied by the stack size in on_grind()
 	var/obj/structure/table/tableVariant // we tables now (stores table variant to be built from this stack)
 
@@ -114,6 +115,16 @@
 			. += "There is enough energy for [get_amount()]."
 		return
 	if(singular_name)
+		if (latin)
+			if(get_amount()>1)
+				to_chat(user, "There are [get_amount()] [singular_name]i in the stack.")
+			else
+				to_chat(user, "There is [get_amount()] [singular_name]us in the stack.")
+		else
+			if(get_amount()>1)
+				to_chat(user, "There are [get_amount()] [singular_name]\s in the stack.")
+			else
+				to_chat(user, "There is [get_amount()] [singular_name] in the stack.")
 		if(get_amount()>1)
 			. += "There are [get_amount()] [singular_name]\s in the stack."
 		else

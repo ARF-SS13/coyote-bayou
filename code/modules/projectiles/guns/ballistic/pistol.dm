@@ -155,3 +155,22 @@
 	name = "Syndicate Anti Tank Pistol"
 	desc = "A massively impractical and silly monstrosity of a pistol that fires .50 calliber rounds. The recoil is likely to dislocate a variety of joints without proper bracing."
 	pin = /obj/item/firing_pin/implant/pindicate
+
+/obj/item/gun/ballistic/automatic/pistol/n99
+	name = "10mm pistol"
+	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
+	icon_state = "n99"
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	can_attachments = TRUE
+	fire_delay = 2
+	can_suppress = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/n99/executive
+	name = "\improper Executive" //'the Executive'
+	desc = "A gas-operated N99 pistol chambered in 10mm rounds. It has an accurate two-round-burst and a blue Vault-Tec finish, for only the most robust overseers."
+	icon_state = "executive"
+	can_suppress = FALSE
+	burst_size = 2
+	extra_penetration = 10 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
