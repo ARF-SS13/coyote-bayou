@@ -28,7 +28,7 @@
 	melee_damage_upper = 3
 	minimum_distance = 6
 	retreat_distance = 14
-	attacktext = "punches"
+	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	a_intent = "harm"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -53,7 +53,7 @@
 	ranged = FALSE
 	health = 200
 	maxHealth = 200
-	attacktext = "zaps"
+	attack_verb_simple = "zaps"
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -112,7 +112,7 @@
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
 	maxHealth = 200
-	attacktext = "zaps"
+	attack_verb_simple = "zaps"
 	aggrosound = null
 	speak_chance = 0
 	idlesound = null

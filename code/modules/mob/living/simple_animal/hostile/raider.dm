@@ -18,7 +18,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 25
 	melee_damage_upper = 50
-	attacktext = "punches"
+	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/raidermelee, /obj/item/kitchen/knife/combat/survival)
@@ -81,7 +81,7 @@
 	health = 180
 	projectiletype = /obj/item/projectile/bullet/c45
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	
+
 /mob/living/simple_animal/hostile/raider/ranged/boss
 	name = "Raider Boss"
 	icon_state = "raiderboss"

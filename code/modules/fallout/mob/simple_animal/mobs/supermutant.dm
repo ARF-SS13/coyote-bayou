@@ -29,7 +29,7 @@
 	melee_damage_upper = 55
 	mob_size = MOB_SIZE_LARGE
 	anchored = TRUE //unpullable
-	attacktext = "smashes"
+	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	idlesound = list('sound/f13npc/supermutant/idle1.ogg', 'sound/f13npc/supermutant/idle2.ogg', 'sound/f13npc/supermutant/idle3.ogg', 'sound/f13npc/supermutant/idle4.ogg' )
 	death_sound = list('sound/f13npc/supermutant/death1.ogg', 'sound/f13npc/supermutant/death2.ogg')
@@ -168,7 +168,7 @@
 	force_threshold = 15
 	melee_damage_lower = 45
 	melee_damage_upper = 70
-	attacktext = "slashes"
+	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/Aggro()
@@ -196,7 +196,7 @@
 	force_threshold = 15
 	melee_damage_lower = 45
 	melee_damage_upper = 55
-	attacktext = "smashes"
+	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	extra_projectiles = 1
 	retreat_distance = 4
@@ -230,7 +230,7 @@
 	force_threshold = 15
 	melee_damage_lower = 45
 	melee_damage_upper = 55
-	attacktext = "smashes"
+	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	retreat_distance = 5
 	minimum_distance = 7

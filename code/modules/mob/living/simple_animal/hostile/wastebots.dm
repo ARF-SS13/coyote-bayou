@@ -15,7 +15,7 @@
 	melee_damage_lower = 28 //halved this on req
 	melee_damage_upper = 28 //as above
 	robust_searching = 1
-	attacktext = "saws"
+	attack_verb_simple = "saws"
 	faction = list("wastebot")
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
@@ -42,7 +42,7 @@
 	ranged = FALSE
 	health = 300
 	maxHealth = 300
-	attacktext = "shoots a burst of flame at"
+	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -71,7 +71,7 @@
 	melee_damage_lower = 72
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
-	attacktext = "shoots a burst of flame at"
+	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/plasma/scatter
 	extra_projectiles = 2
@@ -92,7 +92,7 @@
 	health = 340
 	maxHealth = 340
 	speed = 1
-	attacktext = "shoots a burst of flame at"
+	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -120,7 +120,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 	attack_sound = 'sound/items/welder.ogg'
-	attacktext = "shoots a burst of flame at"
+	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet/heap
 	extra_projectiles = 3
@@ -152,7 +152,7 @@
 	maxHealth = 80
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	attacktext = "slaps"
+	attack_verb_simple = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
@@ -179,7 +179,7 @@
 	maxHealth = 80
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	attacktext = "slaps"
+	attack_verb_simple = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
@@ -211,7 +211,7 @@
 	maxHealth = 200
 	melee_damage_lower = 30
 	melee_damage_upper = 45
-	attacktext = "slaps"
+	attack_verb_simple = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser
@@ -244,7 +244,7 @@
 	melee_damage_lower = 72
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
-	attacktext = "shoots a burst of flame at"
+	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet/heap
 	extra_projectiles = 3
@@ -280,7 +280,7 @@
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
-	attacktext = "slaps"
+	attack_verb_simple = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
@@ -301,7 +301,7 @@
 	health = 400
 	maxHealth = 400
 	speed = 2
-	attacktext = "clamps"
+	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -352,7 +352,7 @@
 	retreat_distance = 2
 	minimum_distance = 2
 	del_on_death = FALSE
-	attacktext = "pulverizes"
+	attack_verb_simple = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol/ultraweak
@@ -372,7 +372,7 @@
 	health = 750   //El Beef
 	maxHealth = 750
 	speed = 1
-	attacktext = "clamps"
+	attack_verb_simple = "clamps"
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -441,7 +441,7 @@
 	melee_damage_lower = 55
 	melee_damage_upper = 60
 	environment_smash = 2 //can smash walls
-	attacktext = "grinds their claws on"
+	attack_verb_simple = "grinds their claws on"
 	faction = list("wastebot")
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
 

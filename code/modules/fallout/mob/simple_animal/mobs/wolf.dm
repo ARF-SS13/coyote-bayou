@@ -31,7 +31,7 @@
 	melee_damage_upper = 20
 	aggro_vision_range = 15
 //	idle_vision_range = 7
-	attacktext = "bites"
+	attack_verb_simple = "bites"
 	attack_sound = 'sound/weapons/bite.ogg'
 	move_to_delay = 2
 

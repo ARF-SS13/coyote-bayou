@@ -19,7 +19,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "punches"
+	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/vault)
@@ -138,7 +138,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 25
 	melee_damage_upper = 25
-	attacktext = "thrusts"
+	attack_verb_simple = "thrusts"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -212,7 +212,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
 	healable = 1
 	ranged = 1
-	attacktext = "power-fists"
+	attack_verb_simple = "power-fists"
 	projectiletype = /obj/item/projectile/plasma/repeater
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 
@@ -234,7 +234,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/enclave/soldier)
 	healable = 1
 	ranged = 1
-	attacktext = "pistol-whips"
+	attack_verb_simple = "pistol-whips"
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 
@@ -258,7 +258,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "áüåò"
+	attack_verb_simple = "áüåò"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
@@ -346,7 +346,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "áüåò"
+	attack_verb_simple = "áüåò"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
@@ -436,7 +436,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "attacks"
+	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
@@ -525,7 +525,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 20
 	melee_damage_upper = 30
-	attacktext = "attacks"
+	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/raider)
@@ -556,7 +556,7 @@
 	harm_intent_damage = 5
 	melee_damage_lower = 40
 	melee_damage_upper = 55
-	attacktext = "attacks"
+	attack_verb_simple = "attacks"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	a_intent = INTENT_HARM
 	loot = list(/obj/effect/mob_spawn/human/corpse/raider)
@@ -689,9 +689,9 @@
 	harm_intent_damage = 10
 	melee_damage_lower = 75
 	melee_damage_upper = 75
-	attacktext = "eviscerates"
+	attack_verb_simple = "eviscerates"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	attacktext = "lacerates"
+	attack_verb_simple = "lacerates"
 	speed = -0.5
 	var/static/list/abom_sounds
 	deathmessage = "wails as its form shudders and violently comes to a stop."
@@ -736,9 +736,9 @@
 	harm_intent_damage = 20
 	melee_damage_lower = 50
 	melee_damage_upper = 50
-	attacktext = "eviscerates"
+	attack_verb_simple = "eviscerates"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	attacktext = "lacerates"
+	attack_verb_simple = "lacerates"
 	speed = -0.5
 	var/static/list/abom_sounds
 	deathmessage = "wails as its form shudders and violently comes to a stop."

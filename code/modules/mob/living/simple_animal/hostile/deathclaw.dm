@@ -31,7 +31,7 @@
 	armour_penetration = 40
 	melee_damage_lower = 60
 	melee_damage_upper = 65
-	attacktext = "claws"
+	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	friendly = "hugs"
 	faction = list("deathclaw")
