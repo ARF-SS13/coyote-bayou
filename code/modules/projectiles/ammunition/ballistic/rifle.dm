@@ -31,3 +31,23 @@
 	name = ".308 Winchester bullet casing"
 	desc = "A .308 Winchester sporting bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a762/sport
+
+/obj/item/ammo_casing/F13/m308
+	desc = "A .308 bullet casing."
+	caliber = "308mm"
+	icon_state = "762-casing"
+	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet
+	randomspread = 1
+	variance = 2
+
+/obj/item/ammo_casing/F13/m308/heap
+	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet/heap
+
+/obj/item/ammo_casing/F13/m308/armourpiercing
+	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet/armourpiercing
+
+/obj/item/ammo_casing/F13/m308/toxic
+	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet/toxic
+
+/obj/item/ammo_casing/F13/m308/fire
+	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet/fire

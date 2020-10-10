@@ -9,9 +9,9 @@
 	icon_dead = "dog_dead"
 	icon_gib = "gib"
 	turns_per_move = 1
-	response_help = "pets"
-	response_disarm = "pushes aside"
-	response_harm = "kicks"
+	response_help_simple = "pets"
+	response_disarm_simple = "pushes aside"
+	response_harm_simple = "kicks"
 	maxHealth = 60
 	health = 60
 //	self_weight = 35

@@ -18,9 +18,9 @@
 	emote_taunt = list("yells")
 	taunt_chance = 30
 	turns_per_move = 5
-	response_help = "touches"
-	response_disarm = "pushes"
-	response_harm = "hits"
+	response_help_simple = "touches"
+	response_disarm_simple = "pushes"
+	response_harm_simple = "hits"
 	maxHealth = 300
 	health = 300
 	force_threshold = 15
@@ -83,9 +83,9 @@
 	speak_emote = list("shouts", "yells")
 	emote_hear = list("yawns", "mumbles","sighs")
 	emote_see = list("raises his shovel", "shovels some dirt away", "waves his shovel above his head angrily")
-	response_help  = "touches"
-	response_disarm = "pushes"
-	response_harm   = "punches"
+	response_help_simple  = "touches"
+	response_disarm_simple = "pushes"
+	response_harm_simple   = "punches"
 //	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)

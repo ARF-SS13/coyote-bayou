@@ -11,9 +11,9 @@
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
-	response_help = "pokes"
-	response_disarm = "shoves"
-	response_harm = "hits"
+	response_help_simple = "pokes"
+	response_disarm_simple = "shoves"
+	response_harm_simple = "hits"
 	move_to_delay = 5
 	stat_attack = 1
 	robust_searching = 1

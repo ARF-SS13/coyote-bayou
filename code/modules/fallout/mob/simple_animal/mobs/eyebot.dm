@@ -11,9 +11,9 @@
 	speak_chance = 0
 	turns_per_move = 6
 	environment_smash = 0
-	response_help = "touches"
-	response_disarm = "shoves"
-	response_harm = "hits"
+	response_help_simple = "touches"
+	response_disarm_simple = "shoves"
+	response_harm_simple = "hits"
 	move_to_delay = 3
 	stat_attack = 1
 	robust_searching = 1
@@ -103,9 +103,9 @@
 	speak_emote = list("states")
 	emote_hear = list()
 	emote_see = list()
-	response_help  = "shakes the radio of"
-	response_disarm = "pushes"
-	response_harm   = "punches"
+	response_help_simple  = "shakes the radio of"
+	response_disarm_simple = "pushes"
+	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 
