@@ -13,7 +13,7 @@
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	armour_penetration = 0
-	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
+	custom_materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
@@ -99,8 +99,10 @@
 	name = "Ultracite glaive"
 	desc = "An ultracite enhanced metal glaive that can be wielded."
 	force = 35
-	force_unwielded = 35
-	force_wielded = 55
+
+/obj/item/twohanded/spear/ultra/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 100, 70, /datum/component/two_handed, force_unwielded=35, force_wielded=55)
 
 /obj/item/twohanded/spear/ultra/update_icon()
 	icon_state = "ultraglaive[wielded]"

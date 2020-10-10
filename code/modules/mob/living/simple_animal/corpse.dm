@@ -219,3 +219,47 @@
 	id = /obj/item/card/id
 	l_pocket = /obj/item/paper/fluff/bee_objectives
 	mask = /obj/item/clothing/mask/rat/bee
+
+obj/effect/mob_spawn/human/corpse/raider
+    uniform = /obj/item/clothing/under/jabroni
+    suit = /obj/item/clothing/suit/armor/fluff/chestplate
+    shoes = /obj/item/clothing/shoes/jackboots
+    head = /obj/item/clothing/head/helmet/f13/metalmask
+    hair_style = "Bald"
+    facial_hair_style = "Shaved"
+
+obj/effect/mob_spawn/human/corpse/raidermelee
+    name = "Raider Melee Corpse"
+    uniform = /obj/item/clothing/under/jabroni
+    suit = /obj/item/clothing/suit/armor/f13/leather_jacket
+    shoes = /obj/item/clothing/shoes/jackboots
+    head = /obj/item/clothing/head/helmet/skull
+    hair_style = "Bald"
+    facial_hair_style = "Shaved"
+
+/obj/effect/mob_spawn/human/corpse/raiderranged
+    name = "Raider Ranged Corpse"
+    uniform = /obj/item/clothing/under/jabroni
+    suit = /obj/item/clothing/suit/armor/f13/leather_jacket
+    shoes = /obj/item/clothing/shoes/jackboots
+    head = /obj/item/clothing/head/helmet/skull
+    hair_style = "Bald"
+    facial_hair_style = "Shaved"
+
+/obj/effect/mob_spawn/human/corpse/raiderrangedsulphite
+	name = "Sulphite Raider Ranged Corpse"
+	uniform = /obj/item/clothing/under/f13/raiderharness
+	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat
+	shoes = /obj/item/clothing/shoes/jackboots
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+
+/obj/effect/mob_spawn/human/corpse/raiderboss
+    name = "Raider Boss"
+    uniform = /obj/item/clothing/under/f13/mercc
+    suit = /obj/item/clothing/suit/armor/f13/combat
+    shoes = /obj/item/clothing/shoes/combat
+    gloves = /obj/item/clothing/gloves/color/black
+    head = /obj/item/clothing/head/helmet/f13
+    hair_style = "Bald"
+    facial_hair_style = "Shaved"
