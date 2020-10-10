@@ -26,7 +26,7 @@
 	obj_damage = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
-	attacktext = "stings"
+	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -132,7 +132,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	a_intent = INTENT_HARM
-	attacktext = "stings"
+	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -189,7 +189,7 @@
 	obj_damage = 20
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	attacktext = "claws"
+	attack_verb_simple = "claws"
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
@@ -238,7 +238,7 @@
 	obj_damage = 20
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "nips"
+	attack = "nips"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -275,7 +275,7 @@
 	obj_damage = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
-	attacktext = "stings"
+	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -316,7 +316,7 @@
 	obj_damage = 20
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	attacktext = "stings"
+	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -383,7 +383,7 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	attacktext = "bites"
+	attack_verb_simple = "bites"
 	speak_emote = list("howls")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
@@ -445,7 +445,7 @@
 	obj_damage = 15
 	melee_damage_lower = 10
 	melee_damage_upper = 20
-	attacktext = "bites"
+	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
 	speak_emote = list("growls")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -501,7 +501,7 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
-	attacktext = "bites"
+	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -541,7 +541,7 @@
 	obj_damage = 15
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attacktext = "bites"
+	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)

@@ -563,3 +563,51 @@
 /obj/item/reagent_containers/food/snacks/meat/cutlet/wisdomcow
 	name = "wisdom cow cutlet"
 	tastes = list("meat" = 1, "wisdom" = 5)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat
+	name = "cazador meat"
+	desc = "A slab of cazador meat."
+	icon_state = "mothmeat"
+	list_reagents = list("nutriment" = 2, "carpotoxin" = 5, "vitamin" = 2)
+	tastes = list("insect guts" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
+	name = "cazador steak"
+	desc = "A steak of cazador meat. If the poison did't finish the job, this might do... or not"
+	icon_state = "mothmeat"
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("spicy cooked insect guts" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/ant_meat
+	name = "ant meat"
+	desc = "A slab of ant meat."
+	icon_state = "antmeat"
+	list_reagents = list("nutriment" = 2, "bad_food" = 3, "vitamin" = 1)
+	tastes = list("insect guts" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ant_meat
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/ant_meat
+	name = "ant steak"
+	desc = "A chunk of fried ant flesh."
+	icon_state = "cookedantmeat"
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("cooked insect guts" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat
+	name = "radscorpion meat"
+	desc = "A slab of radscorpion meat."
+	icon_state = "mothmeat"
+	list_reagents = list("nutriment" = 2, "bad_food" = 3, "vitamin" = 1)
+	tastes = list("insect guts" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
+	name = "radscorpion steak"
+	desc = "A radscorpion steak. A dish for seasoned wastelanders."
+	icon_state = "mothmeat"
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("cooked insect guts" = 1)
