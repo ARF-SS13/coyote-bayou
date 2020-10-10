@@ -821,8 +821,6 @@
 	name = "high frequency blade"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	force = 20
-	force_unwielded = 20
-	force_wielded = 40
 	armour_penetration = 100
 	block_chance = 40
 	throwforce = 20
@@ -835,7 +833,7 @@
 
 /obj/item/twohanded/vibro_weapon/Initialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/butchering, 20, 105, /datum/component/two_handed, force_unwielded=20, force_wielded=40)
 
 /obj/item/twohanded/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)

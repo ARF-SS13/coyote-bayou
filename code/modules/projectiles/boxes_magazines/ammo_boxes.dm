@@ -202,7 +202,7 @@
 	max_ammo = 6
 	caliber = "44"
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 4000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 /*
 /obj/item/ammo_box/m44/heap
 	name = "speed loader (.44) (+Heap!)"
@@ -233,7 +233,7 @@
 	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 8
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 6000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 
 /obj/item/ammo_box/tube/m44/empty
 	start_empty = 1
@@ -248,7 +248,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 5
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 5000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/musketbag/
@@ -256,7 +256,7 @@
 	icon_state = "musketbag"
 	ammo_type = /obj/item/ammo_casing/caseless/musketball
 	max_ammo = 15
-	materials = list(MAT_METAL = 1000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/a308
@@ -266,7 +266,7 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 5
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 7000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_SMALL
 /*
 /obj/item/ammo_box/magazine/m308/heap
@@ -293,7 +293,7 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 10
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 10000)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_SMALL
 
 //5.56x45mm
@@ -304,5 +304,5 @@
 	ammo_type = /obj/item/ammo_casing/a556
 	max_ammo = 5
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 2500)
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_SMALL
