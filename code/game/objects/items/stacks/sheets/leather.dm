@@ -194,7 +194,34 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 
 		/*
  * Plates
- 		*/
+ */
+
+ /obj/item/stack/sheet/animalhide/ragstag
+	name = "radstag hide"
+	desc = "A raw pelt taken from a radstag."
+	singular_name = "ragstag hide piece"
+	icon_state = "sheet-hide"
+
+/obj/item/stack/sheet/animalhide/brahmin
+	name = "brahmin skin"
+	desc = "The by-product of brahmin farming."
+	singular_name = "brahmin skin piece"
+	icon_state = "sheet-hide" //ToDo: Brahmin Mat
+
+/obj/item/stack/sheet/animalhide/deathclaw
+	name = "deathclaw skin"
+	desc = "The hard skin of a slain Deathclaw."
+	singular_name = "deathclaw skin piece"
+	icon_state = "sheet-hide" //ToDo: deathclaw Mat
+
+/obj/item/stack/sheet/animalhide/geckohide
+	name = "gecko skin"
+	desc = "This is gecko hide."
+	singular_name = "gecko skin piece"
+	icon_state = "sheet-gekkonhide"
+
+
+
 /obj/item/stack/sheet/animalhide/goliath_hide
 	name = "goliath hide plates"
 	desc = "Pieces of a goliath's rocky hide, these might be able to make your suit a bit more durable to attack from the local fauna."
@@ -212,6 +239,13 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	desc = "Pieces of a polar bear's fur, these might be able to make your suit a bit more durable to attack from the local fauna."
 	icon_state = "polar_bear_hide"
 	singular_name = "polar bear hide"
+
+/obj/item/stack/sheet/animalhide/chitin
+	name = "insect chitin"
+	desc = "Thick insect chitin, tough but light."
+	singular_name = "piece of insect chitin"
+	icon_state = "sheet-chitin"
+	grind_results = list("sodium" = 3, "chlorine" = 3)
 
 /obj/item/stack/sheet/animalhide/ashdrake
 	name = "ash drake hide"

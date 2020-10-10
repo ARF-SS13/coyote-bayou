@@ -4,6 +4,7 @@
 #define ROTATION_COUNTERCLOCKWISE	(1<<3)
 #define ROTATION_CLOCKWISE			(1<<4)
 #define ROTATION_FLIP				(1<<5)
+#define ROTATION_EIGHTDIR			(1<<6)
 
 /datum/component/simple_rotation
 	var/datum/callback/can_user_rotate //Checks if user can rotate
@@ -37,6 +38,8 @@
 		default_rotation_direction = ROTATION_COUNTERCLOCKWISE
 	if(src.rotation_flags & ROTATION_CLOCKWISE)
 		default_rotation_direction = ROTATION_CLOCKWISE
+	if(src.rotation_flags & ROTATION_EIGHTDIR)
+		default_rotation_direction = ROTATION_EIGHTDIR
 
 /datum/component/simple_rotation/proc/add_signals()
 	if(rotation_flags & ROTATION_ALTCLICK)
@@ -54,6 +57,8 @@
 			AM.verbs += /atom/movable/proc/simple_rotate_clockwise
 		if(rotation_flags & ROTATION_COUNTERCLOCKWISE)
 			AM.verbs += /atom/movable/proc/simple_rotate_counterclockwise
+		if(src.rotation_flags & ROTATION_EIGHTDIR)
+			AM.verbs += /atom/movable/proc/simple_rotate_eightdir
 
 /datum/component/simple_rotation/proc/remove_verbs()
 	if(parent)
@@ -139,6 +144,8 @@
 			rot_degree = 90
 		if(ROTATION_FLIP)
 			rot_degree = 180
+		if(ROTATION_EIGHTDIR)
+			rot_degree = 45
 	AM.setDir(turn(AM.dir,rot_degree))
 	if(after_rotation)
 		after_rotation.Invoke(user, rotation_type)
@@ -180,3 +187,11 @@
 	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
 	if(rotcomp)
 		rotcomp.HandRot(null,usr,ROTATION_FLIP)
+
+/atom/movable/proc/simple_rotate_eightdir()
+	set name = "Rotate 45 Degrees"
+	set category = "Object"
+	set src in oview(1)
+	GET_COMPONENT(rotcomp,/datum/component/simple_rotation)
+	if(rotcomp)
+		rotcomp.HandRot(usr,ROTATION_EIGHTDIR)
