@@ -119,6 +119,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			else
 				eye_type = "insect"
 
+	if(current_version < 38) //further eye sprite changes
+		if(S["species"] == "plasmaman")
+			left_eye_color = "#FFC90E"
+			right_eye_color = "#FFC90E"
+		else
+			if(S["species"] == "skeleton")
+				left_eye_color = "#BAB99E"
+				right_eye_color = "#BAB99E"
+
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
 		return
