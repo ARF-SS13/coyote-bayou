@@ -67,6 +67,7 @@
 	var/obj/item/kitchen/knife/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
+	var/can_scope = FALSE
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/mutable_appearance/flashlight_overlay
 	var/can_attachments = FALSE
@@ -77,6 +78,13 @@
 	var/flight_y_offset = 0
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
+
+	var/scope_x_offset = 0
+	var/scope_y_offset = 0
+
+	var/scopestate = "scope"
+
+	var/equipsound = null
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 

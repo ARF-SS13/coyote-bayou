@@ -325,7 +325,7 @@
 	desc = "A blue bathrobe."
 	icon_state = "bathrobe"
 	item_state = "bathrobe"
-	
+
 /obj/item/clothing/under/misc/mechsuitred
 	name = "red mech suit"
 	desc = "What are you, stupid?"
@@ -337,10 +337,198 @@
 	desc = "...Mom?"
 	icon_state = "white_mech_suit"
 	item_state = "white_mech_suit"
-	
+
 /obj/item/clothing/under/misc/mechsuitblue
 	name = "blue mech suit"
 	desc = "Get in the damn robot already!"
 	icon_state = "blue_mech_suit"
 	item_state = "blue_mech_suit"
-	
+
+/obj/item/clothing/under/jabroni
+	name = "Jabroni Outfit"
+	desc = "The leather club is two sectors down."
+	icon_state = "darkholme"
+	item_state = "darkholme"
+	item_color = "darkholme"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/overalls
+	name = "laborer's overalls"
+	desc = "A set of durable overalls for getting the job done."
+	icon_state = "overalls"
+	item_state = "lb_suit"
+	item_color = "overalls"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/plaid_skirt/green
+	name = "green plaid skirt"
+	desc = "A preppy green skirt with a white blouse."
+	icon_state = "plaid_green"
+	item_state = "plaid_green"
+	item_color = "plaid_green"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/plaid_skirt/purple
+	name = "purple plaid skirt"
+	desc = "A preppy purple skirt with a white blouse."
+	icon_state = "plaid_purple"
+	item_state = "plaid_purple"
+	item_color = "plaid_purple"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/blacktango
+	name = "black tango dress"
+	desc = "Filled with Latin fire."
+	icon_state = "black_tango"
+	item_state = "wcoat"
+	item_color = "black_tango"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/redeveninggown
+	name = "red evening gown"
+	desc = "Fancy dress for space bar singers."
+	icon_state = "red_evening_gown"
+	item_state = "redeveninggown"
+	item_color = "red_evening_gown"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/janimaid
+	name = "maid uniform"
+	desc = "A simple maid uniform for housekeeping."
+	icon_state = "janimaid"
+	item_state = "janimaid"
+	item_color = "janimaid"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/suit_jacket/charcoal
+	name = "charcoal suit"
+	desc = "A charcoal suit and red tie. Very professional."
+	icon_state = "charcoal_suit"
+	item_state = "charcoal_suit"
+	item_color = "charcoal_suit"
+
+/obj/item/clothing/under/suit_jacket/burgundy
+	name = "burgundy suit"
+	desc = "A burgundy suit and black tie. Somewhat formal."
+	icon_state = "burgundy_suit"
+	item_state = "burgundy_suit"
+	item_color = "burgundy_suit"
+
+/obj/item/clothing/under/suit_jacket/checkered
+	name = "checkered suit"
+	desc = "That's a very nice suit you have there. Shame if something were to happen to it, eh?"
+	icon_state = "checkered_suit"
+	item_state = "checkered_suit"
+	item_color = "checkered_suit"
+
+/obj/item/clothing/under/scratch
+	name = "white suit"
+	desc = "A white suit, suitable for an excellent host."
+	icon_state = "scratch"
+	item_state = "scratch"
+	item_color = "scratch"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/plaid_skirt/blue
+	name = "blue plaid skirt"
+	desc = "A preppy blue skirt with a white blouse."
+	icon_state = "plaid_blue"
+	item_state = "plaid_blue"
+	item_color = "plaid_blue"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/geisha
+	name = "geisha suit"
+	desc = "Cute space ninja senpai not included."
+	icon_state = "geisha"
+	item_color = "geisha"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/sailor
+	name = "sailor suit"
+	desc = "Skipper's in the wardroom drinkin gin'."
+	icon_state = "sailor"
+	item_state = "sailor"
+	item_color = "sailor"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/schoolgirl/red
+	name = "red schoolgirl uniform"
+	icon_state = "schoolgirlred"
+	item_state = "schoolgirlred"
+	item_color = "schoolgirlred"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/suit_jacket/navy
+	name = "navy suit"
+	desc = "A navy suit and red tie, intended for the station's finest."
+	icon_state = "navy_suit"
+	item_state = "navy_suit"
+	item_color = "navy_suit"
+
+/obj/item/clothing/under/suit_jacket/female
+	name = "executive suit"
+	desc = "A formal trouser suit for women, intended for the station's finest."
+	icon_state = "black_suit_fem"
+	item_state = "black_suit_fem"
+	item_color = "black_suit_fem"
+
+/obj/item/clothing/under/soviet
+	name = "soviet uniform"
+	desc = "For the Motherland!"
+	icon_state = "soviet"
+	item_state = "soviet"
+	item_color = "soviet"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/gladiator
+	name = "gladiator uniform"
+	desc = "Are you not entertained? Is that not why you are here?"
+	icon_state = "gladiator"
+	item_state = "gladiator"
+	item_color = "gladiator"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = NO_FEMALE_UNIFORM
+	can_adjust = FALSE
+	resistance_flags = NONE
+
+/obj/item/clothing/under/gladiator/ash_walker
+	desc = "This gladiator uniform appears to be covered in ash and fairly dated."
+	has_sensor = NO_SENSORS
+
+/obj/item/clothing/under/maid
+	name = "maid costume"
+	desc = "Maid in China."
+	icon_state = "maid"
+	item_state = "maid"
+	item_color = "maid"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/A = new (src)
+	attach_accessory(A)
+
+/obj/item/clothing/under/draculass
+	name = "draculass coat"
+	desc = "A dress inspired by the ancient \"Victorian\" era."
+	icon_state = "draculass"
+	item_state = "draculass"
+	item_color = "draculass"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE

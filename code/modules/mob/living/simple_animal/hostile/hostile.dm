@@ -14,6 +14,7 @@
 	var/dodge_prob = 30
 	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
 
+	var/extra_projectiles = 0 //how many projectiles above 1?
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
@@ -431,6 +432,8 @@
 			addtimer(cb, (i - 1)*rapid_fire_delay)
 	else
 		Shoot(A)
+		for(var/i in 1 to extra_projectiles)
+			addtimer(CALLBACK(src, .proc/Shoot, A), i * 2)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 

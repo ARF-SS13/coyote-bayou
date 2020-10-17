@@ -65,7 +65,7 @@
 
 /obj/item/storage/keys_set/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
+	AddComponent(component_type)
 	STR.can_hold = typecacheof(list(/obj/item/key))
 	STR.max_combined_w_class = 35
 

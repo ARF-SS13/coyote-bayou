@@ -142,3 +142,10 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	rots_per_mag = 2
 	shrapnel_type = /obj/item/projectile/bullet/pellet/stingball
+
+/obj/item/grenade/flashbang/sentry
+	name = "defensive flashbang" //for sentrybots
+	desc = "Why are you staring at this?!"
+	range = 4
+	det_time = 1 SECONDS
+	alert_admins = FALSE //doesn't ping admins when detonated, since it's sentrybot-only

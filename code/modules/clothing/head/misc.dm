@@ -482,3 +482,15 @@
 	icon_state = "kabuto"
 	item_state = "kabuto"
 	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/head/fluff/bandit
+	name = "bandit hat"
+	desc = "A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
+	icon_state = "bandit"
+	item_state = "fedora"
+
+/obj/item/clothing/head/fluff/gambler
+	name = "gambler hat"
+	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	icon_state = "gambler"
+	item_state = "dethat"

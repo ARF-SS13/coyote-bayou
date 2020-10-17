@@ -192,6 +192,6 @@
 	set name = "Rotate 45 Degrees"
 	set category = "Object"
 	set src in oview(1)
-	GET_COMPONENT(rotcomp,/datum/component/simple_rotation)
+	var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
 	if(rotcomp)
-		rotcomp.HandRot(usr,ROTATION_EIGHTDIR)
+		rotcomp.HandRot(null,usr,ROTATION_EIGHTDIR)

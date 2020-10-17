@@ -18,3 +18,16 @@
 		return T.could_speak_language(language)
 	else
 		return initial(language.flags) & TONGUELESS_SPEECH
+
+/mob/living/carbon/get_spans()
+	. = ..()
+	var/obj/item/organ/tongue/T = getorganslot(ORGAN_SLOT_TONGUE)
+	if(T)
+		. |= T.get_spans()
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		. |= I.get_held_item_speechspans(src)
+
+	if(head)
+		. |= head.get_head_speechspans(src)

@@ -9,12 +9,21 @@
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"
 	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
+	var/list/speechspan = null
 
 /obj/item/clothing/head/Initialize()
 	. = ..()
 	if(ishuman(loc) && dynamic_hair_suffix)
 		var/mob/living/carbon/human/H = loc
 		H.update_hair()
+
+/obj/item/clothing/head/get_head_speechspans(mob/living/carbon/user)
+	if(speechspan)
+		return speechspan
+	else
+		return
+
+
 
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)

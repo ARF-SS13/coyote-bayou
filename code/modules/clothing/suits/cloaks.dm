@@ -102,7 +102,7 @@
 /obj/item/clothing/neck/cloak/polychromic/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, poly_colors, 3)
-	
+
 /obj/item/clothing/neck/cloak/alt
 	name = "cloak"
 	desc = "A ragged up white cloak. It reminds you of a place not far from here."
@@ -119,3 +119,12 @@
 /obj/item/clothing/neck/cloak/alt/polychromic/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/polychromic, poly_colors, 3)
+
+/obj/item/clothing/neck/cloak/grey
+	name = "grey cloak"
+	desc = "It's a grey cape that can be worn around your neck."
+	icon = 'icons/obj/clothing/cloaks.dmi'
+	icon_state = "cloakgrey"
+	item_state = "cloakgrey"
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
