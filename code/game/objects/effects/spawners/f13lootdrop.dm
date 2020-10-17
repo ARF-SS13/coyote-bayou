@@ -573,7 +573,7 @@
 	loot = list(
 				/obj/item/twohanded/required/thermic_lance,
 				/obj/item/twohanded/required/chainsaw,
-				/obj/item/twohanded/required/kinetic_crusher,
+				/obj/item/kinetic_crusher,
 				/obj/item/nullrod/claymore/chainsaw_sword,
 				/obj/item/melee/powerfist,
 				/obj/item/melee/transforming/energy/axe,
