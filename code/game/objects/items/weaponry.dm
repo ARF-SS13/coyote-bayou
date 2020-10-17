@@ -71,6 +71,140 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
+/obj/item/claymore/machete
+	name = "machete"
+	desc = "A makeshift machete made of a lawn mower blade."
+	icon_state = "imp_machete"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = "salvagedmachete"
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/claymore/machete/reinforced
+	name = "reinforced machete"
+	desc = "A reinforced machete made of high quality steel."
+	force = 35
+	throwforce = 25
+
+/obj/item/claymore/machete/training
+	name = "training machete"
+	desc = "A training machete made of tough wood."
+	icon_state = "machete_training"
+	force = 0
+	throwforce = 5
+
+/obj/item/claymore/machete/training/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(20, STAMINA, null, 0)
+
+/obj/item/claymore/machete/gladius
+	name = "gladius"
+	desc = "A forged steel machete, the blade has been laborously sharpened and the weight has been evenly distributed for maximum killing power. An image of a bull is burned into the wooden handle."
+	icon_state = "machete"
+	item_state = "machete"
+	slot_flags = ITEM_SLOT_BELT
+	force = 35
+	throwforce = 25
+	block_chance = 10
+
+/obj/item/claymore/machete/spatha
+	name = "\improper Spatha"
+	desc = "This blade is what is known as a Spatha, a particular longsword design that it quickly becoming the favourite of the Legion Officers in Yuma. This one has more care done to it, bone handle, wooden guard and a blade that looks like it could sheer through metal."
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	icon_state = "machete_kalebman"
+	item_state = "claymore"
+	slot_flags = ITEM_SLOT_BELT
+	force = 40
+	throwforce = 25
+	block_chance = 15
+
+/obj/item/claymore/machete/spatha/kalebman
+	desc = "Light touches this dark, curved blade like the glimmer of the evening sun on a calm lake. Longer than your usual Spatha, it is made from steel alloys that are seldom utilized by Caesar's Legion due to their rarity. The hilt is made of thick Deathclaw bone, with carved knots along the edge and golden rings lining it for grip enhancement. Along the blade's curved flat on each side are large solid golden bulls, in the shape that mimicks Caesar's flag, each bull standing atop a gilded 'C' which represents the Century, one hundred. At the far end of the blade, near the tip, a recent addition has been made; a crude engraving. It reads; 'XCIX'"
+
+/obj/item/claymore/machete/pipe
+	name = "pipe"
+	desc = "A heavy rusted pipe, good for smashing heads. "
+	icon_state = "pipe"
+	item_state = "pipe"
+	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
+	force = 25
+	sharpness = IS_BLUNT
+
+/obj/item/claymore/machete/pipe/Initialize()
+	. = ..()
+	var/datum/component/jousting/JC = AddComponent(/datum/component/jousting)
+	JC.unmounted_knockdown_chance_per_tile = 15
+	JC.unmounted_knockdown_time = 50
+	JC.mounted_damage_boost_per_tile = 15
+	JC.mounted_knockdown_chance_per_tile = 15
+
+/obj/item/claymore/machete/warclub
+	name = "war club"
+	desc = "A simple carved wooden club with turquoise inlays."
+	icon_state = "warclub"
+	item_state = "warclub"
+	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
+	force = 35
+	throwforce = 25
+	block_chance = 10
+	armour_penetration = 5
+	sharpness = IS_BLUNT
+
+/obj/item/claymore/machete/warclub/Initialize()
+	. = ..()
+	var/datum/component/jousting/JC = AddComponent(/datum/component/jousting)
+	JC.unmounted_knockdown_chance_per_tile = 25
+	JC.unmounted_knockdown_time = 50
+	JC.mounted_damage_boost_per_tile = 20
+	JC.mounted_knockdown_chance_per_tile = 20
+
+/obj/item/claymore/machete/pipe/tireiron
+	name = "tire iron"
+	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
+	icon_state = "tire"
+	item_state = "tire"
+
+
+/obj/item/claymore/machete/golf
+	name = "9 iron"
+	desc = "This old and quite heavy 9 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
+	icon_state = "golf9"
+	item_state = "golf9"
+	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
+	force = 25
+	sharpness = IS_BLUNT
+
+/obj/item/claymore/machete/golf/Initialize()
+	. = ..()
+	var/datum/component/jousting/JC = AddComponent(/datum/component/jousting)
+	JC.mounted_damage_boost_per_tile = 25
+	JC.mounted_knockdown_chance_per_tile = 25
+
+/obj/item/claymore/machete/golf/teniron
+	name = "10 iron"
+	desc = "This old and quite deadly 10 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
+	icon_state = "golf10"
+	item_state = "golf10"
+	force = 30
+
+/obj/item/claymore/machete/pipe/pan
+	name = "frying pan"
+	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
+	icon_state = "pan"
+	item_state = "pan"
+	hitsound = 'sound/f13weapons/pan.ogg'
+	slot_flags = SLOT_BELT
+	force = 25 //Just try to swing a frying pan//BONK
+	throw_speed = 1
+	throw_range = 2
+	throwforce = 20
+	w_class = 2
+
+
+
 /obj/item/claymore/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 40, 105)
@@ -1100,3 +1234,4 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return NONE
+
