@@ -550,3 +550,96 @@
 	icon_state = "cooking_learing_illegal"
 	oneuse = FALSE
 	remarks = list()
+
+
+/obj/item/book/granter/trait/chemistry
+	name = "Chemistry for Wastelanders"
+	desc = "A useful book on chemistry."
+	oneuse = TRUE
+	granted_trait = TRAIT_CHEMWHIZ
+	traitname = "chemistry"
+	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
+
+/obj/item/book/granter/trait/spirit_teachings
+	name = "Teachings of the Machine Spirits"
+	desc = "A book all about tribal life among the Machine Spirits."
+	icon_state = "ms_teachings"
+	oneuse = TRUE
+	granted_trait = TRAIT_MACHINE_SPIRITS
+	traitname = "The Machine Spirits"
+	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honour and love those blessed by the machine spirits.")
+
+/obj/item/book/granter/trait/techno
+	name = "Craftsmanship Monthly"
+	desc = "A book on how to use advanced tools and production machinery. It's pretty complicated."
+	oneuse = TRUE
+	granted_trait = TRAIT_TECHNOPHREAK
+	traitname = "craftsmanship"
+	remarks = list("Try turning it off and on again...","Alwyas craft in good form.", "Dont forget PPE.", "Keep your mechanisms OILED.", "Stay organised.")
+
+/obj/item/book/granter/trait/pa_wear
+	name = "Advanced Armor and You"
+	desc = "An indepth look into how power armor functions."
+	oneuse = TRUE
+	granted_trait = TRAIT_PA_WEAR
+	traitname = "Power Armor"
+	remarks = list("Don't forget to do daily maintenance...","Keep your armor well guarded..","Slow and steady wins the race...","Positioning is important while moving slow...","Tired? Take a nap in your suit...","Saftey comes first when wearing your gear...")
+
+/obj/item/book/granter/trait/trekking
+	name = "Ranger's Guide to the Wasteland"
+	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."
+	oneuse = TRUE
+	granted_trait = TRAIT_HARD_YARDS
+	traitname = "trekking"
+	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
+
+/*
+/obj/item/book/granter/trait/iron_fist
+	name = "Brawler's Guide to Fisticuffs"
+	desc = "An advanced manual on fistfighting. It has pictures, too!"
+	oneuse = TRUE
+	granted_trait = TRAIT_IRONFIST
+	traitname = "punching"
+	remarks = list("Keep your fists up...", "Don't clench your thumb in your fist, or you might break it...", "Turn into your punch, and put your body weight behind it...", "Footwork is everything, make sure to step into your punches...", "Aim for their jaw for an easy K-O...")
+*/
+
+/obj/item/book/granter/trait/gunsmith_one
+	name = "Guns and Bullets, Part 1"
+	desc = "A rare issue of Guns and Bullets detailing the basic manufacture of firearms, allowing the reader to craft Tier 2 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab1"
+	oneuse = FALSE
+	granted_trait = TRAIT_GUNSMITH_ONE
+	tool_behaviour = TOOL_GUNTIER1
+	traitname = "Basic Gunsmithing"
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+
+/obj/item/book/granter/trait/gunsmith_two
+	name = "Guns and Bullets, Part 2"
+	desc = "A rare issue of Guns and Bullets following up Part 1, going further indepth into weapon mechanics, allowing the reader to craft Tier 3 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab2"
+	oneuse = FALSE
+	granted_trait = TRAIT_GUNSMITH_TWO
+	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2)
+	traitname = "Intermediate Gunsmithing"
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+
+/obj/item/book/granter/trait/gunsmith_three
+	name = "Guns and Bullets, Part 3"
+	desc = "A rare issue of Guns and Bullets following up Part 2, explaining difficult ballistics theory and weapon mechanics, allowing the reader to craft Tier 4 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab3"
+	oneuse = FALSE
+	granted_trait = TRAIT_GUNSMITH_THREE
+	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2, TOOL_GUNTIER3)
+	traitname = "Experienced Gunsmithing"
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+
+/obj/item/book/granter/trait/gunsmith_four
+	name = "Guns and Bullets, Part 4"
+	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft Tier 5 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab4"
+	oneuse = FALSE
+	granted_trait = TRAIT_GUNSMITH_FOUR
+	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2, TOOL_GUNTIER3, TOOL_GUNTIER4)
+	traitname = "Expert Gunsmithing"
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+
