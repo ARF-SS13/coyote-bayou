@@ -64,7 +64,7 @@
 	desc = "This space is blocked off by a wooden barricade."
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "woodenbarricade"
-	material = WOOD
+//	material = WOOD
 
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
@@ -142,7 +142,7 @@
 	max_integrity = 300
 	proj_pass_rate = 20
 	pass_flags = LETPASSTHROW
-	material = SAND
+//	material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)

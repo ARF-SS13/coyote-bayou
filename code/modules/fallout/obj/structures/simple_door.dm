@@ -126,7 +126,7 @@
 	return 1
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
-	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/twohanded/fireaxe)))
+	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/fireaxe)))
 		try_to_crowbar(I, user)
 		return TRUE
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))

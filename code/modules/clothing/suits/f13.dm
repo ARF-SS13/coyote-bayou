@@ -232,7 +232,7 @@
 	name = "desert cloak"
 	icon_state = "desertcloak"
 	desc = "A practical cloak made out of animal hide."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/gun)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
@@ -288,7 +288,7 @@
 	name = "armored medical parka"
 	icon_state = "armormedical"
 	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/gun)
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
 	body_parts_covered = CHEST|GROIN|ARMS

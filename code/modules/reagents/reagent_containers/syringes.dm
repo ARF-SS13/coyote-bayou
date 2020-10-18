@@ -350,3 +350,8 @@
 	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient using it's smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented. Has an extended volume capacity thanks to bluespace foam."
 	amount_per_transfer_from_this = 50
 	volume = 50
+
+/obj/item/reagent_containers/syringe/medx
+	name = "syringe (med-x)"
+	desc = "Contains Med-X, a powerful analgesic drug that increases the user's damage resistance. Highly addictive, and prolonged presence in the body comes with severe side effects."
+	list_reagents = list("medx" = 15)

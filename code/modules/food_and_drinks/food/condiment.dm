@@ -320,3 +320,16 @@
 	name = "soy sauce pack"
 	originalname = "soy sauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 10)
+
+/obj/item/reagent_containers/food/condiment/ketchup
+	name = "Ketchup"
+	desc = "A classic American Sauce."
+	icon_state = "ketchup"
+	list_reagents = list("ketchup" = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/yeast
+	name = "yeast"
+	desc = "A can of yeast extract used, in the of cooking various dishes."
+	icon_state = "yeast"
+	list_reagents = list("yeast" = 50)

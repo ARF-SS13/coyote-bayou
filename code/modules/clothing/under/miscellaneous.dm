@@ -409,7 +409,7 @@
 
 /obj/item/clothing/under/kilt/highlander
 	desc = "You're the only one worthy of this kilt."
-	item_flags = NODROP
+//	item_flags = NODROP
 
 /obj/item/clothing/under/redeveninggown
 	name = "red evening gown"

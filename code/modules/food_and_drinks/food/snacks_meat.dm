@@ -63,7 +63,7 @@
 	filling_color = "#ee7676"
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
-	
+
 /obj/item/reagent_containers/food/snacks/sushi_basic
 	name = "funa hosomaki"
 	desc = "A small cylindrical kudzu skin, filled with rice and fish."
@@ -74,6 +74,16 @@
 	filling_color = "#F2EEEA" //rgb(242, 238, 234)
 	tastes = list("fish" = 1, "rice" = 2, "salt" = 1)
 	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/rawantbrain
+	name = "Raw Ant Brain"
+	desc = "Goppy reddish-grey flesh dug out of the brain case of a giant ant."
+	icon_state = "AntBrain"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list("nutriment" = 3, "vitamin" = 2)
+	tastes = list("fat" = 4, "bitter meat" = 1)
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sushi_adv
 	name = "funa nigiri"

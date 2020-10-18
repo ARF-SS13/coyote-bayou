@@ -146,6 +146,6 @@
 /obj/item/grenade/flashbang/sentry
 	name = "defensive flashbang" //for sentrybots
 	desc = "Why are you staring at this?!"
-	range = 4
+	flashbang_range = 7
 	det_time = 1 SECONDS
-	alert_admins = FALSE //doesn't ping admins when detonated, since it's sentrybot-only
+

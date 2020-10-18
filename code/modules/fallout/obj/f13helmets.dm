@@ -464,9 +464,9 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
-	glass_colour_type = /datum/client_colour/glass_colour/red
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
-	darkness_view = 128
+//	glass_colour_type = /datum/client_colour/glass_colour/red
+//	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+//	darkness_view = 128
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
@@ -572,8 +572,8 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	speechspan = SPAN_ROBOT //makes you sound like a robot
-	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+//	darkness_view = 128
+//	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	var/emped = 0
 	var/requires_training = TRUE
 
@@ -616,7 +616,7 @@
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
-	darkness_view = 0
+//	darkness_view = 0
 
 	requires_training = FALSE
 

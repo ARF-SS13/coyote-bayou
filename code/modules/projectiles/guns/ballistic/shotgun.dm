@@ -343,11 +343,36 @@
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+//	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
 	can_scope = TRUE
+
+
+/obj/item/gun/ballistic/shotgun/remington/scoped
+	name = "scoped hunting rifle"
+	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war. This one has a 8x scope mounted to it."
+	icon_state = "rifle308_scope"
+	item_state = "scoped308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
+	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 3
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/shotgun/hunting
+	name = "hunting shotgun"
+	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
+	icon_state = "hunting"
+	item_state = "huntingshotgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	sawn_desc = "A concealed hand blaster, for any situation."
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	name = "scoped cowboy repeater"
@@ -418,3 +443,42 @@
 	can_scope = FALSE
 	extra_penetration = -5
 	extra_damage = -5
+
+//Anti-Materiel Rifle (NCR)
+/obj/item/gun/ballistic/shotgun/antimateriel
+	name = "anti-materiel rifle"
+	desc = "A heavy, high-powered sniper rifle chambered in .50 caliber ammunition, custom-made for use by the New California Republic Rangers. Although relatively austere, you're still pretty sure it could take the head off a deathclaw."
+	icon_state = "sniper-mag"
+	item_state = "sniper"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	force = 25
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	recoil = 1 //have fun
+	fire_delay = 6
+	projectile_speed = 0 //basically hitscan
+
+//Fallout 13
+
+// Trenchgun //
+/obj/item/gun/ballistic/shotgun/trench
+	name = "lever action shotgun"
+	desc = "A lever action hunting shotgun with a five-shell capacity underneath plus one in chamber."
+	icon_state = "trenchgun"
+	item_state = "trenchgun"
+	can_scope = TRUE
+	scopestate = "AEP7_scope"
+	scope_x_offset = 8
+	scope_y_offset = 19
+	can_bayonet = TRUE
+	bayonetstate = "trenchgun"
+	knife_x_offset = 23
+	knife_y_offset = 14
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_LIGHT
