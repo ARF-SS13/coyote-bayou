@@ -412,14 +412,6 @@
 
 /obj/item/gun/energy/laser/plasma/carbine/burst_select()
 	var/mob/living/carbon/human/user = usr
-	select = !select
-	if(!select)
-		disable_burst()
-		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	else
-		enable_burst()
-		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	for(var/X in actions)
@@ -522,14 +514,6 @@
 
 /obj/item/gun/energy/laser/rcw/burst_select()
 	var/mob/living/carbon/human/user = usr
-	select = !select
-	if(!select)
-		disable_burst()
-		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	else
-		enable_burst()
-		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	for(var/X in actions)

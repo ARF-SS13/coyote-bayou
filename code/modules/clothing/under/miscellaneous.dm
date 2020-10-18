@@ -389,6 +389,28 @@
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
+/obj/item/clothing/under/kilt
+	name = "kilt"
+	desc = "Includes shoes and plaid."
+	icon_state = "kilt"
+	item_state = "kilt"
+	item_color = "kilt"
+	body_parts_covered = CHEST|GROIN|FEET
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/pirate
+	name = "pirate outfit"
+	desc = "Yarr."
+	icon_state = "pirate"
+	item_state = "pirate"
+	item_color = "pirate"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kilt/highlander
+	desc = "You're the only one worthy of this kilt."
+	item_flags = NODROP
+
 /obj/item/clothing/under/redeveninggown
 	name = "red evening gown"
 	desc = "Fancy dress for space bar singers."

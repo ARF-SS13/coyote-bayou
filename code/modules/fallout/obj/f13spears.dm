@@ -44,9 +44,9 @@
 
 /obj/item/twohanded/spear/update_icon()
 	if(explosive)
-		icon_state = "spearbomb[wielded]"
+		icon_state = "spearbomb"
 	else
-		icon_state = "spearglass[wielded]"
+		icon_state = "spearglass"
 
 /obj/item/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
 	. = ..()
@@ -54,7 +54,7 @@
 		return
 	if(isopenturf(AM)) //So you can actually melee with it
 		return
-	if(explosive && wielded)
+	if(explosive)
 		user.say("[war_cry]")
 		explosive.forceMove(AM)
 		explosive.prime()
@@ -105,7 +105,7 @@
 	AddComponent(/datum/component/butchering, 100, 70, /datum/component/two_handed, force_unwielded=35, force_wielded=55)
 
 /obj/item/twohanded/spear/ultra/update_icon()
-	icon_state = "ultraglaive[wielded]"
+	icon_state = "ultraglaive"
 
 /obj/item/twohanded/spear/ultra/attack(mob/living/M, mob/living/user)
 	. = ..()

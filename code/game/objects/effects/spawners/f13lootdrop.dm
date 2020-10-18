@@ -557,9 +557,9 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/twohanded/fireaxe,
-				/obj/item/twohanded/sledgehammer,
-				/obj/item/twohanded/fireaxe/bmprsword,
+				/obj/item/fireaxe,
+				/obj/item/sledgehammer,
+				/obj/item/fireaxe/bmprsword,
 				/obj/item/melee/unarmed/lacerator,
 				/obj/item/melee/unarmed/maceglove,
 				/obj/item/melee/unarmed/punchdagger,
@@ -572,7 +572,7 @@
 
 	loot = list(
 				/obj/item/twohanded/required/thermic_lance,
-				/obj/item/twohanded/required/chainsaw,
+				/obj/item/chainsaw,
 				/obj/item/kinetic_crusher,
 				/obj/item/nullrod/claymore/chainsaw_sword,
 				/obj/item/melee/powerfist,
@@ -715,12 +715,12 @@
 
 	var/loot5 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,
 				//obj/item/ammo_box/tube/a357,
-				/obj/item/ammo_box/tube/a357
+				/obj/item/ammo_box/a357
 				)
 
 	var/loot6 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped,
 				//obj/item/ammo_box/tube/a357,
-				/obj/item/ammo_box/tube/a357
+				/obj/item/ammo_box/a357
 				)
 
 	var/loot7 = list(/obj/item/gun/ballistic/revolver/colt357,

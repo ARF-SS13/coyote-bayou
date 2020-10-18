@@ -364,3 +364,32 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
 	can_scope = FALSE
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	name = "trail carbine"
+	desc = "A lever action rifle chambered in .44 Magnum."
+	icon_state = "trailcarbine"
+	item_state = "trailcarbine"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 4
+	can_scope = TRUE
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
+	name = "scoped trail carbine"
+	desc = "A lever action rifle chambered in .44 Magnum."
+	icon_state = "scopedtrailcarbine"
+	item_state = "scopedtrailcarbine"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 6
+	can_scope = FALSE

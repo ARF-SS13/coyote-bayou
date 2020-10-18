@@ -143,7 +143,6 @@
 /obj/item/projectile/bullet/m44
 	damage = 41 //35
 	armour_penetration = -5 //5
-	penetrating = 55
 
 /obj/item/projectile/bullet/m44/jhp
 	damage = 60 //40
@@ -156,7 +155,6 @@
 /obj/item/projectile/bullet/c4570
 	damage = 50
 	armour_penetration = 15//10
-	penetrating = 65
 
 /obj/item/projectile/bullet/c4570/jhp
 	damage = 55

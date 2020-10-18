@@ -162,13 +162,20 @@
 	amount_per_transfer_from_this = 50
 	list_reagents = list(/datum/reagent/medicine/stimulants = 50)
 
-/obj/item/reagent_containers/hypospray/medipen/stimpack //goliath kiting
-	name = "stimpack medipen"
-	desc = "A rapid way to stimulate your body's adrenaline, allowing for freer movement in restrictive armor."
-	icon_state = "stimpen"
-	volume = 20
-	amount_per_transfer_from_this = 20
-	list_reagents = list(/datum/reagent/medicine/ephedrine = 10, /datum/reagent/consumable/coffee = 10)
+/obj/item/reagent_containers/hypospray/medipen/stimpak
+	name = "stimpak"
+	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
+	icon_state = "stimpakpen"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("stimpak" = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super
+	name = "super stimpak"
+	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
+	icon_state = "superstimpakpen"
+	amount_per_transfer_from_this = 10
+	list_reagents = list("super_stimpak" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 	desc = "A modified stimulants autoinjector for use in combat situations. Has a mild healing effect."
