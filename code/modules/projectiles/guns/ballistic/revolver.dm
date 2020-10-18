@@ -526,7 +526,7 @@
 	extra_penetration = 5
 	fire_delay = 10
 	burst_size = 1
-	burst_delay = 1
+
 	var/select = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	zoomed = FALSE

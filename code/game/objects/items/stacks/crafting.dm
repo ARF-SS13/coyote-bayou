@@ -12,7 +12,7 @@
     name = "metal parts"
     icon_state = "sheet-metalparts"
     singular_name = "metal part"
-    materials = list(MAT_METAL=10000)
+    custom_materials = list(/datum/material/iron = 20000)
     flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/metalparts/three
@@ -25,7 +25,7 @@
     name = "high quality metal parts"
     icon_state = "sheet-goodparts"
     singular_name = "high quality metal part"
-    materials = list(MAT_TITANIUM=10000)
+    custom_materials = list(/datum/material/iron = 20000)
     flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/goodparts/three
@@ -38,7 +38,7 @@
     name = "electronic parts"
     icon_state = "sheet-electronicparts"
     singular_name = "electronic part"
-    materials = list(MAT_GLASS=10000)
+    custom_materials = list(/datum/material/glass = 20000)
     flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/electronicparts/three

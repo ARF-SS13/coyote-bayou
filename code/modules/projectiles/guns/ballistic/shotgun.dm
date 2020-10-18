@@ -356,7 +356,6 @@
 	item_state = "scopedcowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -364,7 +363,6 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
 	can_scope = FALSE
-
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
@@ -372,7 +370,6 @@
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
@@ -385,7 +382,6 @@
 	item_state = "scopedtrailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -393,3 +389,32 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
 	can_scope = FALSE
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+	name = "brush gun"
+	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
+	icon_state = "brushgun"
+	item_state = "brushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 4
+	can_scope = TRUE
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
+	name = "scoped brush gun (standard)"
+	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
+	icon_state = "scopedbrushgun"
+	item_state = "scopedbrushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 6
+	can_scope = FALSE
+	extra_penetration = -5
+	extra_damage = -5

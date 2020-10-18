@@ -605,7 +605,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/ComponentInitialize()
 	. = ..()
-	AddComponent(component_type)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice))

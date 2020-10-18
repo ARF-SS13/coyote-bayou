@@ -432,3 +432,79 @@
 
 /obj/item/gun/ballistic/automatic/laser/update_icon_state()
 	icon_state = "oldrifle[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
+
+/////////////////////////SHOTGUNS/////////////////////////
+/obj/item/gun/ballistic/automatic/shotgun/riot
+	name = "breacher shotgun" //name changed to distinguish from /obj/item/gun/ballistic/shotgun/riot
+	desc = "A compact riot shotgun designed to fight in close quarters."
+	icon_state = "riot_shotgun"
+	item_state = "huntingshotgun"
+	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	burst_size = 1
+	fire_delay = 4
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	force = 40
+
+/obj/item/gun/ballistic/automatic/greasegun
+	spawnwithmagazine = FALSE
+	name = "M3A1 Grease Gun (standard)"
+	desc = "An inexpensive .45 ACP submachine gun. Slow fire rate means less waste of ammo and controllable bursts."
+	icon_state = "grease_gun"
+	item_state = "smg9mm"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	fire_sound = 'sound/f13weapons/greasegun.ogg'
+	can_suppress = FALSE
+	weapon_weight = WEAPON_MEDIUM
+	burst_size = 2
+	fire_delay = 3
+	burst_delay = 3
+	extra_damage = -5
+	extra_penetration = -5
+	force = 15
+	spread = 10
+	randomspread = 10
+	can_attachments = TRUE
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 18
+			if (recoil_decrease)
+				spread = 10
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/bozar
+	name = "Bozar"
+	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56."
+	icon_state = "bozar"
+	item_state = "sniper"
+	slot_flags = SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	burst_size = 2
+	fire_delay = 3
+	automatic = 1
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_attachments = TRUE

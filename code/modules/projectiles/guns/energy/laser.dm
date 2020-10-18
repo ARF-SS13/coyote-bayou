@@ -390,7 +390,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	projectile_speed = 0.9
+
 
 /obj/item/gun/energy/laser/plasma/carbine
 	name ="plasma carbine"
@@ -400,11 +400,11 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	burst_size = 2
-	burst_delay = 1
+
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	projectile_speed = 1.6
+
 	can_scope = TRUE
 	scopestate = "plasma_scope"
 	scope_x_offset = 13
@@ -426,7 +426,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	weapon_weight = WEAPON_HEAVY
-	projectile_speed = 1.2
+
 
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
@@ -439,7 +439,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	slot_flags = ITEM_SLOT_BELT
-	projectile_speed = 1.1
+
 
 /obj/item/gun/energy/laser/plasma/glock
 	name = "glock 86"
@@ -452,7 +452,7 @@
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	slot_flags = ITEM_SLOT_BELT
-	projectile_speed = 1.1
+
 
 /obj/item/gun/energy/laser/plasma/glock/extended
 	name ="glock 86a"
@@ -505,7 +505,7 @@
 	item_state = "rcw"
 	fire_delay = 3
 	burst_size = 2
-	burst_delay = 2.5
+
 	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp

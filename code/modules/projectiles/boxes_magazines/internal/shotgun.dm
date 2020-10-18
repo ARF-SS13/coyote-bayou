@@ -55,3 +55,17 @@
 	name = "triple-barrel shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/incapacitate
 	max_ammo = 3
+
+/obj/item/ammo_box/magazine/internal/shot/tube44
+	name = ".44 magnum internal tube magazine" //trail carbine
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = "44"
+	max_ammo = 8
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/tube357
+	name = ".357 magnum internal tube magazine" //cowboy repeater
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "357"
+	max_ammo = 10
+	multiload = 1
