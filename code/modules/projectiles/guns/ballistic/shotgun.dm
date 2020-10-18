@@ -452,7 +452,7 @@
 	item_state = "sniper"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+//	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -461,7 +461,7 @@
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
 	fire_delay = 6
-	projectile_speed = 0 //basically hitscan
+//	projectile_speed = 0 //basically hitscan
 
 //Fallout 13
 
@@ -476,9 +476,33 @@
 	scope_x_offset = 8
 	scope_y_offset = 19
 	can_bayonet = TRUE
-	bayonetstate = "trenchgun"
+//	bayonetstate = "trenchgun"
 	knife_x_offset = 23
 	knife_y_offset = 14
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
+
+//Double Barrel Caravan Shotgun
+/obj/item/gun/ballistic/revolver/caravan_shotgun
+	name = "caravan shotgun"
+	desc = "An common over-under double barreled shotgun."
+	icon_state = "caravan_shotgun"
+	item_state = "dshotgun1"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	sawn_desc = "Omar's coming!"
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 1
+	distro = 1
+
+/obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)

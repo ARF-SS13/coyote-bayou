@@ -8,6 +8,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
+	var/select = 1
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -400,7 +401,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	burst_size = 2
-
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -410,12 +411,34 @@
 	scope_x_offset = 13
 	scope_y_offset = 16
 
-/obj/item/gun/energy/laser/plasma/carbine/burst_select()
+
+/obj/item/gun/energy/laser/proc/burst_select()
 	var/mob/living/carbon/human/user = usr
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	for(var/X in actions)
-		var/datum/action/A = X
+	select = !select
+	if(!select)
+		disable_burst()
+		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	else
+		enable_burst()
+		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+
+/obj/item/gun/energy/laser/proc/enable_burst()
+	burst_size = initial(burst_size)
+
+/obj/item/gun/energy/laser/proc/disable_burst()
+	burst_size = 1
+
+/obj/item/gun/energy/laser/plasma/carbine/enable_burst()
+	. = ..()
+	spread = 15
+
+/obj/item/gun/energy/laser/plasma/carbine/disable_burst()
+	. = ..()
+	spread = 0
+
+
+
+
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas Rifle"
 	item_state = "multiplas"

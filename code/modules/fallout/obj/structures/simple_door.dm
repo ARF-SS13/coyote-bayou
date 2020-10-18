@@ -175,10 +175,10 @@
 			return
 		else
 			return padlock.check_key(I,user)
-	if(user.a_intent == INTENT_HARM)
-		if(padlock)
-			add_logs(user, src, "attacked", src)
-		return ..()
+//	if(user.a_intent == INTENT_HARM)
+//		if(padlock)
+//			add_logs(user, src, "attacked", src)
+//		return ..()
 	attack_hand(user)
 
 

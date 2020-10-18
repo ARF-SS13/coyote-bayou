@@ -447,3 +447,17 @@
 	icon_type = "silver ring"
 	spawn_type = /obj/item/clothing/gloves/ring/silver
 
+/obj/item/storage/box/rubbershot/beanbag
+	name = "box of beanbag slugs"
+	desc = "A box full of beanbag slugs, designed for riot shotguns."
+	icon = 'icons/obj/ammo.dmi'
+	illustration = null
+	w_class = WEIGHT_CLASS_SMALL
+	icon_type = "stun"
+	spawn_type = /obj/item/ammo_casing/shotgun/beanbag
+
+/obj/item/storage/box/rubbershot/beanbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 14
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/beanbag))

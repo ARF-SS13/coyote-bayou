@@ -55,6 +55,11 @@
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 	var/inaccuracy_modifier = 1
 
+	var/obj/item/attachments/scope
+	var/obj/item/attachments/recoil_decrease
+	var/obj/item/attachments/burst_improvement
+	var/obj/item/attachments/bullet_speed
+
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 

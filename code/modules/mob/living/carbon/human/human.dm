@@ -218,6 +218,18 @@
 
 	spreadFire(AM)
 
+/mob/living/carbon/human/proc/despawn()
+	var/datum/job/job_to_free = SSjob.GetJob(job)
+	job_to_free?.current_positions--
+	GLOB.data_core.remove_record_by_name(real_name)
+	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
+	for(var/i in contents)
+		var/atom/movable/content = i
+		dat += " [content.type]"
+	log_game(dat)
+	ghostize()
+	qdel(src)
+
 /mob/living/carbon/human/Topic(href, href_list)
 	if(usr.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
 		if(href_list["embedded_object"])

@@ -6,6 +6,7 @@
 	world.update_status()
 	client.screen = list()				//remove hud items just in case
 	client.images = list()
+	logout_time = 0 //Zero it up, to allow the person to despawn at will after re-logging.
 
 	if(!hud_used)
 		create_mob_hud()

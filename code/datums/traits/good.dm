@@ -208,6 +208,15 @@
 	if(quirk_holder)
 		quirk_holder.blood_ratio = 1
 
+/datum/quirk/machine_spirits
+	name = "Spirit Blessed"
+	desc = "You respect the teachings of the Machine Spirits."
+	value = 3
+	mob_trait = TRAIT_MACHINE_SPIRITS
+	gain_text = "<span class='notice'>You have recieved the blessing of the Machine Spirits.</span>"
+	lose_text = "<span class='danger'>You've lost the  blessing of the Machine Spirits.</span>"
+	locked = TRUE
+
 /datum/quirk/night_vision
 	name = "Night Vision"
 	desc = "You can see slightly more clearly in full darkness than most people."
@@ -219,3 +228,55 @@
 /datum/quirk/night_vision/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.update_sight()
+
+/datum/quirk/trapper
+	name = "Trapper"
+	desc = "As an experienced hunter and trapper you know your way around butchering animals for their products, and are able to get twice the usable materials by eliminating waste."
+	value = 2
+	mob_trait = TRAIT_TRAPPER
+	gain_text = "<span class='notice'>You learn the secrets of butchering!</span>"
+	lose_text = "<span class='danger'>You forget how to slaughter animals.</span>"
+
+/datum/quirk/bigleagues
+	name = "Big Leagues"
+	desc = "Swing for the fences! You deal additional damage with melee weapons."
+	value = 2
+	mob_trait = TRAIT_BIG_LEAGUES
+	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
+	lose_text = "<span class='danger'>You feel like bunting.</span>"
+	locked = TRUE
+
+/datum/quirk/chemwhiz
+	name = "Chem Whiz"
+	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
+	value = 2
+	mob_trait = TRAIT_CHEMWHIZ
+	gain_text = "<span class='notice'>The mysteries of chemistry are revealed to you.</span>"
+	lose_text = "<span class='danger'>You forget how the periodic table works.</span>"
+	locked = TRUE
+/datum/quirk/pa_wear
+	name = "PA Wear"
+	desc = "You've being around the wastes and have learned the importance of defense."
+	value = 3
+	mob_trait = TRAIT_PA_WEAR
+	gain_text = "<span class='notice'>You realize how to use Power Armor.</span>"
+	lose_text = "<span class='danger'>You forget how Power Armor works.</span>"
+	locked = TRUE
+
+/datum/quirk/master_gunsmith
+	name = "Master Gunsmith"
+	desc = "You're a master gunsmith, able to make weapons of previously unseen power."
+	value = 3
+	mob_trait = TRAIT_MASTER_GUNSMITH
+	gain_text = "<span class='notice'>You realize how to make great weapons.</span>"
+	lose_text = "<span class='danger'>You forget how to make weapons.</span>"
+	locked = TRUE
+
+/datum/quirk/hard_yards
+	name = "Hard Yards"
+	desc = "You've put them in, now reap the rewards."
+	value = 3
+	mob_trait = TRAIT_HARD_YARDS
+	gain_text = "<span class='notice'>Rain or shine, nothing slows you down.</span>"
+	lose_text = "<span class='danger'>You walk with a less sure gait, the ground seeming less firm somehow.</span>"
+	locked = TRUE
