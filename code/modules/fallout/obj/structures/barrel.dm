@@ -63,10 +63,10 @@
 
 /obj/structure/reagent_dispensers/barrel/explosive/fire_act(exposed_temperature, exposed_volume)
 	boom()
-
+/*
 /obj/structure/reagent_dispensers/barrel/explosive/tesla_act()
 	..() //extend the zap
-	boom()
+	boom()*/
 
 obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile/P)
 	..()

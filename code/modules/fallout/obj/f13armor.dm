@@ -584,7 +584,7 @@
     var/mob/living/carbon/human/H = user
     if(src == H.wear_suit) //Suit is already equipped
         return TRUE
-    if (!HAS_TRAIT(target, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+    if (!HAS_TRAIT(usr, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
         to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
         return 0
     if(slot == SLOT_WEAR_SUIT)

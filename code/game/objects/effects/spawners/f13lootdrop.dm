@@ -16,7 +16,7 @@
 	name = "dancemachine or piano"
 	lootcount = 1
 	loot = list(
-				/obj/structure/piano = 3,
+//				/obj/structure/piano = 3,
 				/obj/machinery/jukebox = 1
 				)
 
@@ -540,8 +540,8 @@
 	loot = list(
 				/obj/item/weldingtool,
 				/obj/item/twohanded/spear,
-				/obj/item/twohanded/bostaff,
-				/obj/item/twohanded/baseball,
+				/obj/item/bostaff,
+				/obj/item/baseball,
 				/obj/item/kitchen/knife/butcher,
 				/obj/item/claymore/machete/golf,
 				/obj/item/claymore/machete,
@@ -578,7 +578,7 @@
 				/obj/item/melee/powerfist,
 				/obj/item/melee/transforming/energy/axe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
-				/obj/item/twohanded/sledgehammer/supersledge,
+				/obj/item/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
 				/obj/item/melee/powerfist/moleminer
@@ -1279,7 +1279,7 @@
 				/obj/item/stack/sheet/metal/ten = 5,
 				/obj/item/stack/sheet/cardboard/fifty = 1,
 				/obj/item/stack/sheet/cardboard/twenty = 1,
-				/obj/item/stack/sheet/glass/ten = 2,
+//				/obj/item/stack/sheet/glass/ten = 2,
 				/obj/item/stack/sheet/metal/five = 2,
 				/obj/item/stack/sheet/plasteel/five = 1,
 				/obj/item/stack/sheet/plastic/five = 4,

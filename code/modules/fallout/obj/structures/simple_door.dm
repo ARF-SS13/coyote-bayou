@@ -208,14 +208,14 @@
 /obj/structure/simple_door/attack_hand(mob/user)
 	if(TryToSwitchState(user, 1) && !density)
 		manual_opened = 1
-	user.changeNext_move(CLICK_CD_MELEE)
+//	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
 
 /obj/structure/simple_door/attack_tk(mob/user)
 	if(TryToSwitchState(user, 1) && !density)
 		manual_opened = 1
-	user.changeNext_move(CLICK_CD_MELEE)
+//	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
 /obj/structure/simple_door/CanPass(atom/movable/mover, turf/target, height=0)

@@ -405,3 +405,16 @@
 	max_ammo = 5
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+
+/obj/item/ammo_box/tube/a357
+	name = "speed loader tube (.357)"
+	desc = "Designed to quickly reload repeaters."
+	icon_state = "44tube"
+	caliber = "357"
+	ammo_type = /obj/item/ammo_casing/a357
+	max_ammo = 7
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+
+/obj/item/ammo_box/tube/a357/empty
+	start_empty = 1

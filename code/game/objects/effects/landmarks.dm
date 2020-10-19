@@ -524,3 +524,345 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "portal exit"
 	icon_state = "portal_exit"
 	var/id
+
+// FO13 Faction Start. Set to override for the time being to allow latejoining in their original spots.
+
+// NCR
+/obj/effect/landmark/start/f13
+	icon = 'icons/mob/landmarks.dmi'
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+	icon_state = "Assistant"
+
+/obj/effect/landmark/start/f13/ncrcolonel
+	name = "NCR Colonel"
+	icon_state = "NCR Colonel"
+
+/obj/effect/landmark/start/f13/ncrambassador
+	name = "NCR Ambassador"
+
+/obj/effect/landmark/start/f13/ncrcaptain
+	name = "NCR Captain"
+	icon_state = "NCR Captain"
+
+/obj/effect/landmark/start/f13/ncrlieutenant
+	name = "NCR Lieutenant"
+	icon_state = "NCR Lieutenant"
+
+/obj/effect/landmark/start/f13/ncrsergeant
+	name = "NCR Sergeant"
+	icon_state = "NCR Sergeant"
+
+/obj/effect/landmark/start/f13/ncrspecialist
+	name = "NCR Specialist"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrmp
+	name = "NCR Military Police"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrht
+	name = "NCR Heavy Trooper"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrcorporal
+	name = "NCR Corporal"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrtrooper
+	name = "NCR Trooper"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrrecruit
+	name = "NCR Recruit"
+	icon_state = "NCR Recruit"
+
+/obj/effect/landmark/start/f13/ncrveteranranger
+	name = "NCR Veteran Ranger"
+	icon_state = "NCR Veteran Ranger"
+
+/obj/effect/landmark/start/f13/ncrrangerpatrol
+	name = "NCR Patrol Ranger"
+	icon_state = "NCR Patrol Ranger"
+
+/obj/effect/landmark/start/f13/ncrrangerscout
+	name = "NCR Scout Ranger"
+	icon_state = "NCR Patrol Ranger"
+
+/obj/effect/landmark/start/f13/ncrcitizen
+	name = "NCR Citizen"
+	icon_state = "NCR Citizen"
+
+/obj/effect/landmark/start/f13/ncradmin
+	name = "NCR Administrator"
+	icon_state = "NCR Administrator"
+
+// Legion
+
+/obj/effect/landmark/start/f13/legate
+	name = "Legate"
+	icon_state = "Legate"
+
+/obj/effect/landmark/start/f13/centurion
+	name = "Legion Centurion"
+	icon_state = "Centurion"
+
+/obj/effect/landmark/start/f13/orator
+	name = "Legion Orator"
+
+/obj/effect/landmark/start/f13/slavemaster
+	name = "Legion Slavemaster"
+
+/obj/effect/landmark/start/f13/priestess
+	name = "Priestess of Mars"
+
+/obj/effect/landmark/start/f13/decanvet
+	name = "Legion Veteran Decanus"
+	icon_state = "Decanus"
+
+/obj/effect/landmark/start/f13/vexillarius
+	name = "Legion Vexillarius"
+	icon_state = "Vexillarius"
+
+/obj/effect/landmark/start/f13/vetlegionary
+	name = "Veteran Legionary"
+	icon_state = "Veteran Legionnaire"
+
+/obj/effect/landmark/start/f13/decan
+	name = "Legion Prime Decanus"
+	icon_state = "Decanus"
+
+/obj/effect/landmark/start/f13/legionary
+	name = "Prime Legionary"
+	icon_state = "Veteran Legionnaire"
+
+/obj/effect/landmark/start/f13/decanrec
+	name = "Legion Recruit Decanus"
+	icon_state = "Decanus"
+
+/obj/effect/landmark/start/f13/recleg
+	name = "Recruit Legionary"
+	icon_state = "Legionary"
+
+/obj/effect/landmark/start/f13/explorer
+	name = "Legion Explorer"
+	icon_state = "Legionary"
+
+/obj/effect/landmark/start/f13/venator
+	name = "Legion Venator"
+	icon_state = "Legionary"
+
+/obj/effect/landmark/start/f13/auxilia
+	name = "Auxilia"
+	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/campfollower
+	name = "Camp Follower"
+
+/obj/effect/landmark/start/f13/slave
+	name = "Legion Slave"
+	icon_state = "Wastelander"
+
+// Brotherhood of Steel
+
+/obj/effect/landmark/start/f13/elder
+	name = "Elder"
+	icon_state = "Elder"
+
+/obj/effect/landmark/start/f13/headscribe
+	name = "Head Scribe"
+	icon_state = "Head Scribe"
+
+/obj/effect/landmark/start/f13/seniorscribe
+	name = "Senior Scribe"
+	icon_state = "Head Scribe"
+
+/obj/effect/landmark/start/f13/sentinel
+	name = "Sentinel"
+	icon_state = "Paladin"
+
+/obj/effect/landmark/start/f13/knightcap
+	name = "Knight-Captain"
+	icon_state = "Initiate Knight"
+
+/obj/effect/landmark/start/f13/seniorknight
+	name = "Senior Knight"
+	icon_state = "Initiate Knight"
+
+/obj/effect/landmark/start/f13/seniorpaladin
+	name = "Senior Paladin"
+	icon_state = "Knight"
+
+/obj/effect/landmark/start/f13/paladin
+	name = "Paladin"
+	icon_state = "Knight"
+
+/obj/effect/landmark/start/f13/scribe
+	name = "Scribe"
+	icon_state = "Scribe"
+
+/obj/effect/landmark/start/f13/Knight
+	name = "Knight"
+	icon_state = "Initiate Knight"
+
+/obj/effect/landmark/start/f13/initiate
+	name = "Initiate"
+	icon_state = "Initiate_Scribe"
+
+/obj/effect/landmark/start/f13/offduty
+	name = "Off-Duty"
+	icon_state = "Off-Duty"
+
+// Vault
+
+/obj/effect/landmark/start/f13/overseer
+	name = "Overseer"
+	icon_state = "Overseer"
+
+/obj/effect/landmark/start/f13/vaultheadofsecurity
+	name = "Chief of Security"
+	icon_state = "Chief of Security"
+
+/obj/effect/landmark/start/f13/vaultdoctor
+	name = "Vault-tec Doctor"
+	icon_state = "Vault-tec Doctor"
+
+/obj/effect/landmark/start/f13/vaultscientist
+	name = "Vault-tec Scientist"
+	icon_state = "Vault-tec Scientist"
+
+/obj/effect/landmark/start/f13/vaultsecurityofficer
+	name = "Vault-tec Security"
+	icon_state = "Vault-tec Security"
+
+/obj/effect/landmark/start/f13/vaultengineer
+	name = "Vault-tec Engineer"
+	icon_state = "Vault-tec Engineer"
+
+/obj/effect/landmark/start/f13/vaultdweller
+	name = "Vault Dweller"
+	icon_state = "Vault Dweller"
+
+// Oasis
+
+/obj/effect/landmark/start/f13/mayor
+	name = "Mayor"
+
+/obj/effect/landmark/start/f13/sheriff
+	name = "Sheriff"
+	icon_state = "Sheriff"
+
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
+
+/obj/effect/landmark/start/f13/farmer
+	name = "Farmer"
+
+/obj/effect/landmark/start/f13/prospector
+	name = "Prospector"
+
+/obj/effect/landmark/start/f13/settler
+	name = "Citizen"
+	icon_state = "Settler"
+
+/obj/effect/landmark/start/f13/dendoc
+	name = "Doctor"
+
+/obj/effect/landmark/start/f13/shopkeeper
+	name = "Shopkeeper"
+	icon_state = "Shopkeeper"
+
+/obj/effect/landmark/start/f13/banker
+	name = "Banker"
+	icon_state = "Banker"
+
+/obj/effect/landmark/start/f13/barkeep
+	name = "Barkeep"
+	icon_state = "Barkeep"
+
+// Wasteland
+
+/obj/effect/landmark/start/f13/cultleader
+	name = "Cult Leader"
+
+/obj/effect/landmark/start/f13/wastelander
+	name = "Wastelander"
+	icon_state = "Wastelander"
+
+/obj/effect/landmark/start/f13/raider
+	name = "Outlaw"
+	icon_state = "Raider"
+
+/obj/effect/landmark/start/f13/pusher
+	name = "Great Khan"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/preacher
+	name = "Preacher"
+	icon_state = "Preacher"
+
+/obj/effect/landmark/start/f13/faithful
+	name = "Faithful"
+	icon_state = "Preacher"
+
+/obj/effect/landmark/start/f13/detective
+	name = "Detective"
+	icon_state = "Detective"
+
+// Enclave
+
+/obj/effect/landmark/start/f13/uscommander
+	name = "US Commander"
+
+/obj/effect/landmark/start/f13/usmedic
+	name = "US Medic"
+
+/obj/effect/landmark/start/f13/usprivate
+	name = "US Private"
+
+/obj/effect/landmark/start/f13/usscientist
+	name = "US Scientist"
+
+/obj/effect/landmark/start/f13/usengineer
+	name = "US Engineer"
+
+/obj/effect/landmark/start/f13/uscolonist
+	name = "US Colonist"
+
+//Tribal
+
+/obj/effect/landmark/start/f13/chief
+	name = "Chief"
+	icon_state = "Chief"
+
+/obj/effect/landmark/start/f13/shaman
+	name = "Shaman"
+	icon_state = "Shaman"
+
+/obj/effect/landmark/start/f13/villager
+	name = "Villager"
+	icon_state = "Villager"
+
+//Followers of the Apocalypse
+/obj/effect/landmark/start/f13/followersadministrator
+	name = "Followers Administrator"
+
+/obj/effect/landmark/start/f13/followersdoctor
+	name = "Followers Doctor"
+
+/obj/effect/landmark/start/f13/followersguard
+	name = "Followers Guard"
+
+/obj/effect/landmark/start/f13/followersvolunteer
+	name = "Followers Volunteer"
+
+/obj/effect/landmark/start/f13/followersscientist
+	name = "Followers Scientist"
+
+/obj/effect/landmark/start/f13/hunter
+    name = "Hunter"
+    icon_state = "Hunter"
+
+/obj/effect/landmark/start/f13/Hhunter
+    name = "Head Hunter"
+    icon_state = "Head Hunter"

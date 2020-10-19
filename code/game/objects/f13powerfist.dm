@@ -40,7 +40,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = NEEDS_PERMIT //doesn't slow you down
 	fire_delay = 0
-	distro = 1
+//	distro = 1
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 
 /obj/item/melee/unarmed/brass

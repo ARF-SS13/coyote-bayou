@@ -261,6 +261,17 @@
 	buildstackamount = 5
 	item_chair = null
 
+/obj/structure/chair/f13foldupchair
+	icon_state = "f13foldupchair"
+	item_chair = null
+
+/obj/structure/chair/f13chair1
+	icon_state = "f13chair1"
+	item_chair = null
+
+/obj/structure/chair/f13chair2
+	icon_state = "f13chair2"
+	item_chair = null
 
 /obj/structure/chair/office/Moved()
 	. = ..()

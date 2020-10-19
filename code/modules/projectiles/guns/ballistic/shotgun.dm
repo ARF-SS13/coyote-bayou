@@ -415,6 +415,26 @@
 	fire_delay = 6
 	can_scope = FALSE
 
+/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia
+	name = "Paciencia"
+	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
+	icon_state = "paciencia"
+	item_state = "paciencia"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
+	fire_delay = 5
+	extra_damage = 20 //60 damage- hits as hard as an AMR!
+	extra_penetration = 10
+
+/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		return
+	else if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			return
+	else
+		..()
+
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
@@ -497,6 +517,29 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 1
 //	distro = 1
+
+//Single Shot Shotgun
+/obj/item/gun/ballistic/revolver/single_shotgun
+	name = "single shotgun"
+	desc = "A dirt cheap single shot shotgun."
+	icon_state = "single_shotgun"
+	item_state = "singleshot"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+//	distro = 1
+
+/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()

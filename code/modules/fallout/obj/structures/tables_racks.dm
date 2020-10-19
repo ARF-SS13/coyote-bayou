@@ -327,7 +327,7 @@
 /obj/structure/booth/proc/tableplace(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(src.loc)
 	pushed_mob.resting = TRUE
-	pushed_mob.update_canmove()
+//	pushed_mob.update_canmove()
 	pushed_mob.visible_message("<span class='notice'>[user] places [pushed_mob] onto [src].</span>", \
 								"<span class='notice'>[user] places [pushed_mob] onto [src].</span>")
 //	add_logs(user, pushed_mob, "placed")
@@ -379,13 +379,13 @@
 
 /obj/structure/booth/attack_tk()
 	return FALSE
-
+/*
 /obj/structure/booth/CanAStarPass(ID, dir, caller)
 	. = !density
 	if(ismovableatom(caller))
 		var/atom/movable/mover = caller
 		. = . || (mover.pass_flags & PASSTABLE)
-
+*/
 /obj/structure/booth/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(istype(I, /obj/item/wrench))

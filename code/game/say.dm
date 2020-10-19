@@ -237,3 +237,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 
 /atom/movable/virtualspeaker/GetRadio()
 	return radio
+
+//To get robot span classes, stuff like that.
+/atom/movable/proc/get_spans()
+	return list()

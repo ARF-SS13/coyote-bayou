@@ -161,6 +161,20 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	JC.mounted_damage_boost_per_tile = 20
 	JC.mounted_knockdown_chance_per_tile = 20
 
+/obj/item/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	name = "bumper sword"
+	icon_state = "bmprsword0"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+
+/obj/item/fireaxe/bmprsword/update_icon()
+	name = "bumper sword"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
+	icon_state = "bmprsword[wielded]"
+
+
 /obj/item/claymore/machete/pipe/tireiron
 	name = "tire iron"
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
@@ -1235,3 +1249,278 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return NONE
 
+/obj/item/sledgehammer
+	name = "sledgehammer"
+	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "sledgehammer0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 25
+	throwforce = 30
+	slot_flags = ITEM_SLOT_BACK
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = IS_BLUNT
+
+/obj/item/sledgehammer/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="sledgehammer")
+
+obj/item/sledgehammer/supersledge
+	name = "super sledge"
+	desc = "A heavy sledgehammer manufacted from ultra-dense materials, developed by the Brotherhood of Steel. It looks like it could crush someone's skull with ease."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "supersledge0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 25
+
+obj/item/sledgehammer/supersledge/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="supersledge")
+
+//Baeball
+
+/obj/item/baseball
+	name = "baseball bat"
+	desc = "There ain't a skull in the league that can withstand a swatter."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "baseball0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 15
+	throwforce = 15
+	slot_flags = ITEM_SLOT_BACK
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = IS_BLUNT
+
+/obj/item/baseball/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="supersledge")
+
+/obj/item/shishkebabpack
+	name = "shishkebab backpack"
+	desc = "A backpack containing a large quantity of fuel and a pipe attaching it to a long, deadly blade. You ever wanted to set fire to people with a sword?"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "shishkebabpack"
+	item_state = "shishkebabpack"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+//	actions_types = list(/datum/action/item_action/toggle_shishkebab)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
+	resistance_flags = FIRE_PROOF
+
+	var/obj/item/sword
+
+/obj/item/shishkebabpack/Initialize()
+	. = ..()
+	sword = make_sword()
+
+/obj/item/shishkebabpack/ui_action_click(mob/user)
+	toggle_shishkebab(user)
+
+/obj/item/shishkebabpack/item_action_slot_check(slot, mob/user)
+	if(slot == user.getBackSlot())
+		return 1
+
+/obj/item/shishkebabpack/proc/toggle_shishkebab(mob/living/user)
+	if(!istype(user))
+		return
+	if(user.get_item_by_slot(user.getBackSlot()) != src)
+		to_chat(user, "<span class='warning'>The backpack must be worn properly to use!</span>")
+		return
+	if(user.incapacitated())
+		return
+
+	if(QDELETED(sword))
+		sword = make_sword()
+	if(sword in src)
+		//Detach the sword into the user's hands
+		if(!user.put_in_hands(sword))
+			to_chat(user, "<span class='warning'>You need a free hand to hold the shishkebab!</span>")
+			return
+	else
+		//Remove from their hands and put back "into" the tank
+		remove_sword()
+
+/obj/item/shishkebabpack/verb/toggle_shishkebab_verb()
+	set name = "Toggle Shishkebab"
+	set category = "Object"
+	toggle_shishkebab(usr)
+
+/obj/item/shishkebabpack/proc/make_sword()
+	return new /obj/item/weapon/melee/shishkebab(src)
+
+/obj/item/shishkebabpack/equipped(mob/user, slot)
+	..()
+	if(slot != SLOT_BACK)
+		remove_sword()
+
+/obj/item/shishkebabpack/proc/remove_sword()
+	if(ismob(sword.loc))
+		var/mob/M = sword.loc
+		M.temporarilyRemoveItemFromInventory(sword, TRUE)
+	sword.forceMove(src)
+
+/obj/item/shishkebabpack/Destroy()
+	QDEL_NULL(sword)
+	return ..()
+
+/obj/item/shishkebabpack/attack_hand(mob/user)
+	if (user.get_item_by_slot(user.getBackSlot()) == src)
+		toggle_shishkebab(user)
+	else
+		return ..()
+
+/obj/item/shishkebabpack/MouseDrop(obj/over_object)
+	var/mob/M = loc
+	if(istype(M) && istype(over_object, /obj/screen/inventory/hand))
+		var/obj/screen/inventory/hand/H = over_object
+		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
+	return ..()
+
+/obj/item/shishkebabpack/attackby(obj/item/W, mob/user, params)
+	if(W == sword)
+		remove_sword()
+		return 1
+	else
+		return ..()
+
+/obj/item/shishkebabpack/dropped(mob/user)
+	..()
+	remove_sword()
+
+/obj/item/weapon/melee/shishkebab //This should never exist without the backpack.
+	name = "shishkebab"
+	desc = "A deadly flaming sword covered in fuel. You're not sure this is entirely safe."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "shishkebab"
+	item_state = "shishkebab"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	item_flags = ABSTRACT  // don't put in storage
+	slot_flags = 0
+	force = 55
+	damtype = "fire"
+	tool_behaviour = TOOL_WELDER
+	toolspeed = 0.3
+
+	var/obj/item/shishkebabpack/tank
+
+/obj/item/weapon/melee/shishkebab/Initialize()
+	. = ..()
+	tank = loc
+	if(!istype(tank))
+		return INITIALIZE_HINT_QDEL
+
+/obj/item/weapon/melee/shishkebab/attack_self()
+	return
+
+/obj/item/weapon/melee/shishkebab/doMove(atom/destination)
+	if(destination && (destination != tank.loc || !ismob(destination)))
+		if (loc != tank)
+			to_chat(tank.loc, "<span class='notice'>The shishkebab slides back into the backpack tank.</span>")
+		destination = tank
+	..()
+
+/obj/item/bostaff //May as well make it a "claymore" and inherit the blocking
+	name = "quarterstaff"
+	desc = "A long, tall staff made of polished wood. Fitted with heavy metal ends. Traditionally used in ancient old-Earth martial arts."
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	block_chance = 50
+	slot_flags = ITEM_SLOT_BACK
+	sharpness = IS_BLUNT
+	hitsound = "swing_hit"
+	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "bostaff0"
+	item_state = "bostaff0"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+
+/obj/item/throwing_star/spear
+	name = "throwing spear"
+	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	icon_state = "throw_spear"
+	item_state = "tribalspear"
+	force = 20
+	throwforce = 35
+	reach = 2
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.3
+	embedding = list("embedded_pain_multiplier" = 2, "embed_chance" = 60, "embedded_fall_chance" = 20)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/throwing_star/spear
+	name = "throwing spear"
+	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	icon_state = "throw_spear"
+	item_state = "tribalspear"
+	force = 20
+	throwforce = 35
+	reach = 2
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.3
+	embedding = list("embedded_pain_multiplier" = 2, "embed_chance" = 60, "embedded_fall_chance" = 20)
+	w_class = WEIGHT_CLASS_NORMAL
+
+//THERMIC LANCE
+/obj/item/twohanded/required/thermic_lance
+	name = "thermic lance"
+	desc = "A versatile power-welding tool. Useful for cutting apart metal and limbs."
+	icon_state = "thermiclance_off"
+	item_state = "thermiclance_off"
+	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	slot_flags = ITEM_SLOT_BACK
+	force = 5
+	var/force_on = 60
+	w_class = WEIGHT_CLASS_BULKY
+	throwforce = 20
+	throw_speed = 2
+	throw_range = 4
+
+	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
+	hitsound = "swing_hit"
+//	actions_types = list(/datum/action/item_action/toggle_lance)
+	var/on = FALSE
+/*
+
+/obj/item/thermic_lance/attack_self(mob/user)
+	on = !on
+	to_chat(user, "As you turn the lever from [src], [on ? "it begins to heat." : "the flame goes off."]")
+	force = on ? force_on : initial(force)
+	throwforce = on ? force_on : initial(force)
+	icon_state = "thermiclance_[on ? "on" : "off"]"
+	item_state = "thermiclance_[on ? "on" : "off"]"
+
+	if(on)
+		hitsound = 'sound/items/welder2.ogg'
+		damtype = "fire"
+	else
+		hitsound = "swing_hit"
+		damtype = "brute"
+
+	if(src == user.get_active_held_item()) //update inhands
+		user.update_inv_hands()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/twohanded/required/thermic_lance/get_dismemberment_chance()
+	if(wielded)
+		. = ..()
+*/

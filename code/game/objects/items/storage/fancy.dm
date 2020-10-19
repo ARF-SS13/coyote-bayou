@@ -451,7 +451,7 @@
 	name = "box of beanbag slugs"
 	desc = "A box full of beanbag slugs, designed for riot shotguns."
 	icon = 'icons/obj/ammo.dmi'
-	illustration = null
+//	illustration = null
 	w_class = WEIGHT_CLASS_SMALL
 	icon_type = "stun"
 	spawn_type = /obj/item/ammo_casing/shotgun/beanbag

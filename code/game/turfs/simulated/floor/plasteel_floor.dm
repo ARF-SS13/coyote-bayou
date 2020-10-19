@@ -151,3 +151,6 @@
 
 /turf/open/floor/plasteel/sepia
 	icon_state = "sepia"
+
+/turf/open/floor/plasteel/barber
+	icon_state = "barber"

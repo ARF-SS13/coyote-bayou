@@ -229,3 +229,32 @@
 /obj/item/kitchen/knife/scimiar/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 90 - force, 100, force - 60) //bonus chance increases depending on force
+
+/obj/item/kitchen/knife/cosmicdirty
+	name = "dirty cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy."
+	icon_state = "cosmic_knife_dirty"
+	item_state = "knife"
+	force = 15
+	throwforce = 10
+	armour_penetration = 10
+
+/obj/item/kitchen/knife/cosmic
+	name = "cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
+	icon_state = "cosmic_knife"
+	item_state = "knife"
+	force = 25
+	throwforce = 15
+	armour_penetration = 10
+
+/obj/item/kitchen/knife/cosmicheated
+	name = "superheated cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
+	icon_state = "cosmic_knife_heated"
+	item_state = "knife"
+	damtype = BURN
+	force = 35
+	throwforce = 20
+	armour_penetration = 20
+
