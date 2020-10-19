@@ -227,6 +227,18 @@
 	icon_state = "laceups"
 	equip_delay_other = 50
 
+/obj/item/clothing/shoes/laced
+	name = "desert patrol boots"
+	desc = "A pair of laced, heavy-duty boots, adopted by NCR veteran rangers following the Ranger Unification Treaty."
+	icon_state = "laced"
+	item_state = "laced"
+	strip_delay = 50
+	equip_delay_other = 50
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+
 /obj/item/clothing/shoes/laceup/bos
 	name = "brotherhood dress shoes"
 	desc = "Polished dress shoes typically worn with the Brotherhood's formal attire."

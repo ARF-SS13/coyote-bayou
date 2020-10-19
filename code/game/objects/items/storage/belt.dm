@@ -834,3 +834,37 @@
 /obj/item/storage/belt/military/alt
 	icon_state = "explorer2"
 	item_state = "explorer2"
+
+/obj/item/storage/belt/military/assault/legion
+	name = "legionnaire marching belt"
+	desc = "A belt capable of holding the necessities of a legionnaire."
+	icon_state = "legion_belt"
+	item_state = "legion_belt"
+
+/obj/item/storage/belt/military/assault/ncr
+	name = "NCR patrol belt"
+	desc = "A standard issue robust duty belt for the NCR."
+	icon_state = "ncr_belt"
+	item_state = "ncr_belt"
+
+/obj/item/storage/belt/military/reconbandolier
+	name = "NCR recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/NCR_Bandolier
+	name = "NCR bandolier"
+	desc = "A standard issue NCR bandolier."
+	icon_state = "ncr_bandolier"
+	item_state = "ncr_bandolier"
+
+/obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 7

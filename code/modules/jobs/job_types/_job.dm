@@ -206,6 +206,14 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+	var/pa_wear = FALSE //F13 pa_wear, ability to wear PA
+	var/gunsmith_one = FALSE //F13 gunsmith perk, ability to craft Tier 2 guns and ammo
+	var/gunsmith_two = FALSE //F13 gunsmith perk, ability to craft Tier 3 guns and ammo
+	var/gunsmith_three = FALSE //F13 gunsmith perk, ability to craft Tier 4 guns and ammo
+	var/gunsmith_four = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
+
+
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	var/preference_backpack = preference_source?.prefs.backbag
 
@@ -235,6 +243,24 @@
 	else
 		holder = "[uniform]"
 	uniform = text2path(holder)
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
+
+	if(pa_wear == TRUE)
+		H.add_trait(TRAIT_PA_WEAR)
+
+	if(gunsmith_one == TRUE)
+		H.add_trait(TRAIT_GUNSMITH_ONE)
+
+	if(gunsmith_two == TRUE)
+		H.add_trait(TRAIT_GUNSMITH_TWO)
+
+	if(gunsmith_three == TRUE)
+		H.add_trait(TRAIT_GUNSMITH_THREE)
+
+	if(gunsmith_four == TRUE)
+		H.add_trait(TRAIT_GUNSMITH_FOUR)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -272,6 +298,13 @@
 		PDA.update_label()
 		if(preference_source && !PDA.equipped) //PDA's screen color, font style and look depend on client preferences.
 			PDA.update_style(preference_source)
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
+
+	if(pa_wear == TRUE)
+		H.add_trait(TRAIT_PA_WEAR)
+
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()
