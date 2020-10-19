@@ -204,3 +204,16 @@
 	name = "resting contraption"
 	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
 	icon_state = "abed"
+
+/obj/structure/bed/mattress
+	name = "mattress"
+	desc = "This is used to lie in, sleep in or strap on."
+	icon_state = "mattress0"
+	buildstacktype = /obj/item/stack/sheet/cloth
+	buildstackamount = 3
+//	decontool = /obj/item/wirecutters
+
+/obj/structure/bed/mattress/pregame/New()
+	..()
+	icon_state = "mattress[rand(0,6)]"
+

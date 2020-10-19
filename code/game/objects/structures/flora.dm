@@ -95,6 +95,20 @@
 	icon_state = pick("palm1","palm2")
 	pixel_x = 0
 
+/obj/structure/flora/tree/tall
+	name = "dead tree"
+	desc = "A rather tall tree that has been dead for a long time.<br>Interestingly it is still standing, as a reminder of its green past."
+	icon = 'icons/fallout/flora/talltrees.dmi'
+	icon_state = "tree_1"
+	log_amount = 6
+	obj_integrity = 350
+	max_integrity = 350
+
+/obj/structure/flora/tree/tall/New()
+	icon_state = "tree_[rand(1,3)]"
+	..()
+
+
 /obj/structure/festivus
 	name = "festivus pole"
 	icon = 'icons/obj/flora/pinetrees.dmi'
