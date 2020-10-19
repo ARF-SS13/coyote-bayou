@@ -73,6 +73,16 @@
 	/// Starting skill modifiers.
 	var/list/starting_modifiers
 
+	//Description, short text about the job
+	var/description = ""
+
+	//Against the faction rules, for imporant things that you SHOULDNT do.
+	var/forbids = ""
+
+	//For things that faction Enforces.
+	var/enforces = ""
+
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
