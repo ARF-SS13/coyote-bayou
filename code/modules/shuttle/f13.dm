@@ -1,7 +1,7 @@
 /obj/docking_port/mobile/elevator
 	name = "elevator"
 	id = "elevator"
-	timid = FALSE
+//	timid = FALSE
 	dwidth = 3
 	width = 7
 	height = 7

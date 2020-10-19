@@ -570,3 +570,134 @@
 	if(istype(O, /obj/item/seeds))
 		return TRUE
 	return FALSE
+
+// -------------------------
+// LOOTABLE RACKS - PREWAR SHELVES ETC
+// -------------------------------------------------------------------------
+
+///generic///bottles
+
+/obj/machinery/smartfridge/bottlerack/lootshelf
+	name = "\improper shop shelf"
+	desc = "A rusted pre-war shelf, this one has a faded label about soft drinks. "
+	icon_state = "lootshelf"
+	max_n_of_items = 35
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/accept_check(obj/item/O)
+	return FALSE
+
+/obj/machinery/smartfridge/bottlerack/lootshelf
+	initial_contents = list(
+		/obj/item/reagent_containers/food/drinks/bottle/lemonjuice = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/limejuice = 3,
+		/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 2,
+        /obj/item/reagent_containers/food/drinks/soda_cans/tonic = 3,
+		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 2,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 1,
+
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/bawls = 3,
+		/obj/item/reagent_containers/food/drinks/bottle/vim = 3,
+        /obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
+
+////cans
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/cans
+	desc = "A rusted pre-war shelf, this one has a faded label about canned goods. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/cans
+	initial_contents = list(
+		/obj/item/reagent_containers/food/drinks/bottle/instacoffee = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/instatea = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/instacocoa = 4,
+		/obj/item/reagent_containers/food/drinks/soda_cans/cream = 3,
+		/obj/item/reagent_containers/food/snacks/f13/porknbeans = 3,
+	    /obj/item/reagent_containers/food/snacks/f13/borscht = 1,
+		/obj/item/reagent_containers/food/snacks/f13/dog = 3,
+		/obj/item/reagent_containers/food/snacks/beans = 3,)
+
+///booze
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/brews
+	desc = "A rusted pre-war shelf, this one has a faded label about alchohol. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/brews
+	initial_contents = list(
+		/obj/item/reagent_containers/food/drinks/bottle/gin = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/vodka = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/tequila = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/rum = 1,
+	    /obj/item/reagent_containers/food/drinks/bottle/vermouth = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/cognac = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/lizardwine = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/hcider = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/grappa = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/sake = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/fernet = 1,)
+
+//diy
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/diy
+	desc = "A rusted pre-war shelf, this one has a faded label about DIY. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/diy
+	initial_contents = list(
+		/obj/item/extinguisher = 1,
+		/obj/item/hatchet = 1,
+		/obj/item/pickaxe/mini = 1,
+		/obj/item/wrench = 1,
+		/obj/item/fireaxe = 1,
+		/obj/item/sledgehammer = 1,
+		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/clothing/gloves/color/yellow = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/stack/cable_coil/random = 1,
+		/obj/item/screwdriver = 1,
+		/obj/item/wirecutters = 1,
+		/obj/item/clothing/head/hardhat = 1)
+
+//construction
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/construction
+	desc = "A rusted pre-war shelf, this one has a faded label about materials. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/construction
+	initial_contents = list(
+		/obj/item/stack/sheet/metal/ten = 1,
+
+		/obj/item/stack/sheet/glass/ten = 1,
+		/obj/item/stack/sheet/plasteel/five = 1,
+		/obj/item/stack/sheet/plastic/five = 1,
+		/obj/item/stack/sheet/cloth/five = 1,
+		/obj/item/stack/crafting/metalparts/three = 1,
+		/obj/item/stack/crafting/goodparts/three = 1,
+		/obj/item/stack/crafting/electronicparts/three = 1)
+
+//cooking
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/cooking
+	desc = "A rusted pre-war shelf, this one has a faded label about cooking. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/cooking
+	initial_contents = list(
+		/obj/item/reagent_containers/food/condiment/flour = 1,
+		/obj/item/reagent_containers/food/condiment/rice = 1,
+		/obj/item/reagent_containers/food/condiment/yeast = 1,
+		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
+		/obj/item/reagent_containers/food/condiment/peppermill = 1,
+		/obj/item/reagent_containers/food/condiment/soysauce = 1)
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/books
+	desc = "A rusted pre-war shelf, this one has a faded label about magazines. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/books
+	initial_contents = list(
+		/obj/item/book/granter/trait/chemistry = 1,
+			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+	/obj/item/book/granter/trait/trekking = 1,
+	/obj/item/book/granter/trait/gunsmith_one = 1,
+	/obj/item/book/granter/trait/gunsmith_two = 1,
+	/obj/item/book/granter/trait/gunsmith_three = 1,)

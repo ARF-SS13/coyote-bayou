@@ -865,7 +865,7 @@
 
 /obj/machinery/light/lampost/process()
 	. = ..()
-	night_update()
+
 
 //F13 COLORED LIGHTS
 /obj/machinery/light/fo13colored/Pink

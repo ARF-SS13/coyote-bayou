@@ -442,6 +442,63 @@
 	list_reagents = list(/datum/reagent/consumable/cream = 100)
 	foodtype = DAIRY
 
+
+/obj/item/reagent_containers/food/drinks/bottle/bawls
+	name = "Balls Guarana"
+	desc = "To give you that Bounce!"
+	icon = 'icons/obj/f13vending.dmi'
+	icon_state = "bawls"
+	list_reagents = list("coffee" = 10, "bawls" = 15)
+	foodtype = SUGAR
+	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/lemonjuice
+	name = "Lemon Juice"
+	desc = "Whew! Thats some sour pre-war lemon juice! You know what they say about..."
+	icon_state = "lemonjuice"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	isGlass = TRUE
+	list_reagents = list("limejuice" = 100)
+	foodtype = FRUIT
+
+/obj/item/reagent_containers/food/drinks/bottle/instatea
+	name = "Silician Instatea"
+	desc = "Pre-war powerdered canned tea powder."
+	icon_state = "instatea"
+	list_reagents = list("teapowder" = 98, "radium" = 2)
+
+/obj/item/reagent_containers/food/drinks/soda_cans/cream
+	name = "canned cream"
+	desc = "It's a can of cream. Made from milk. What else did you think you'd find in there?"
+	icon_state = "cream"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	list_reagents = list("cream" = 100)
+	foodtype = DAIRY
+
+
+/obj/item/reagent_containers/food/drinks/bottle/instacocoa
+	name = "Silician Instacocoa"
+	desc = "Pre-war powerdered canned dried chocolate mix."
+	icon_state = "instachoc"
+	list_reagents = list("cocoa" = 98, "radium" = 2)
+
+/obj/item/reagent_containers/food/drinks/bottle/instacoffee
+	name = "Silician Instacoffee"
+	desc = "Pre-war powerdered canned coffee."
+	icon_state = "instacoffee"
+	list_reagents = list("coffeepowder" = 98, "radium" = 2)
+
+/obj/item/reagent_containers/food/drinks/bottle/vim
+	name = "Vim"
+	desc = "You've got Vim!"
+	icon = 'icons/obj/f13vending.dmi'
+	icon_state = "vim"
+	list_reagents = list("sugar" = 5, "vim" = 15)
+	foodtype = SUGAR
+	isGlass = TRUE
+
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
 	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
