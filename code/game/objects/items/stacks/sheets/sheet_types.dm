@@ -338,6 +338,9 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 /obj/item/stack/sheet/mineral/wood/fifty
 	amount = 50
 
+/obj/item/stack/sheet/mineral/wood/five
+	amount = 5
+
 /*
  * Bamboo
  */
@@ -979,3 +982,29 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 
 /obj/item/stack/sheet/hay/five
 	amount = 5
+
+/*
+prewar alloys
+*/
+/obj/item/stack/sheet/prewar
+	name = "pre-war alloys"
+	singular_name = "pre war alloy"
+	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
+	icon_state = "sheet-prewar"
+	item_state = "sheet-metal"
+	custom_materials = list()
+	throwforce = 10
+	flags_1 = CONDUCT_1
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	resistance_flags = FIRE_PROOF
+	merge_type = /obj/item/stack/sheet/prewar
+	grind_results = list("iron" = 20, "plasma" = 20)
+
+/obj/item/stack/sheet/prewar/twenty
+	amount = 20
+
+/obj/item/stack/sheet/prewar/five
+	amount = 5
+
+/obj/item/stack/sheet/prewar/fifty
+	amount = 50

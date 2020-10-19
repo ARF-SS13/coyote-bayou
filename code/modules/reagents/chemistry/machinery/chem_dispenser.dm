@@ -30,6 +30,7 @@
 	var/mutable_appearance/beaker_overlay
 	var/working_state = "dispenser_working"
 	var/nopower_state = "dispenser_nopower"
+	var/cell_type = /obj/item/stock_parts/cell/high
 	var/has_panel_overlay = TRUE
 	var/obj/item/reagent_containers/beaker = null
 	var/list/dispensable_reagents = list(
@@ -138,6 +139,9 @@
 /obj/machinery/chem_dispenser/proc/work_animation()
 	if(working_state)
 		flick(working_state,src)
+
+/obj/machinery/chem_dispenser/low_power
+	cell_type = /obj/item/stock_parts/cell/upgraded
 
 /obj/machinery/chem_dispenser/power_change()
 	..()

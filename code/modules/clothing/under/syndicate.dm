@@ -28,6 +28,16 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
 
+/obj/item/clothing/under/syndicate/brotherhood
+	name = "brotherhood fatigues"
+	desc = "A pair of loose fitting combat pants with a comfortable looking black overshirt."
+	icon_state = "syndicate"
+	item_state = "bl_suit"
+	item_color = "syndicate"
+	has_sensor = NO_SENSORS
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+	alt_covers_chest = TRUE
+
 /obj/item/clothing/under/syndicate/bloodred/sleepytime
 	name = "blood-red pajamas"
 	desc = "Do operatives dream of nuclear sheep?"

@@ -621,7 +621,7 @@
 					else
 						to_chat(H, "<span class='warning'>You can't receive charge from the [fitting]!</span>")
 				return
-				
+
 			if(H.gloves)
 				var/obj/item/clothing/gloves/G = H.gloves
 				if(G.max_heat_protection_temperature)
@@ -847,3 +847,93 @@
 	layer = 2.5
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
+
+//F13 EDIT
+/obj/machinery/light/lampost
+	name = "light post"
+	icon = 'icons/obj/f13lamppost.dmi'
+	icon_state = "lamppost0"
+	base_state = "lamppost1"
+	desc = "a post supporting a usually outdoor lamp or lantern."
+	brightness = 8
+	active_power_usage = 0
+	density = 0
+	layer = WALL_OBJ_LAYER
+	nightshift_allowed = FALSE
+	start_with_cell = FALSE
+	no_emergency = TRUE
+
+/obj/machinery/light/lampost/process()
+	. = ..()
+	night_update()
+
+//F13 COLORED LIGHTS
+/obj/machinery/light/fo13colored/Pink
+	name = "Arcade Light"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tube"
+	desc = "A lighting fixture with pink lighting."
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 5
+	density = 0
+	layer = WALL_OBJ_LAYER
+	bulb_colour = "#FF5ABF"
+	light_color = "#FF00FF"
+
+/obj/machinery/light/fo13colored/Aqua
+	name = "Novelty Store Light"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tube"
+	desc = "A lighting fixture with green lighting."
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 5
+	density = 0
+	layer = WALL_OBJ_LAYER
+	bulb_colour = "#00FFFF"
+	light_color = "#00FFFF"
+
+/obj/machinery/light/fo13colored/Red
+	name = "Red Light"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tube"
+	desc = "A lighting fixture with red lighting."
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 4
+	density = 0
+	layer = WALL_OBJ_LAYER
+	bulb_colour = "#8B0000"
+	light_color = "#FF0000"
+
+//Flickering Ported From Hippiestation. credits to yoyobatty
+/obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
+	. = ..()
+	if(. && !QDELETED(src))
+		if(prob(damage_amount * 10))
+			flicker(damage_amount*rand(1,3))
+
+/obj/machinery/light/flicker(var/amount = rand(10, 20))
+	set waitfor = 0
+	if(flickering)
+		return
+	flickering = TRUE
+	if(on && status == LIGHT_OK)
+		visible_message("<span class='warning'>[src] begins flickering!</span>","<span class='italics'>You hear an electrical sparking.</span>")
+		for(var/i = 0; i < amount; i++)
+			if(status != LIGHT_OK)
+				break
+			on = !on
+			if(prob(18) && !on)//only spark when off so it doesn't occur too much
+				do_sparks(1, FALSE, src)
+			else if(prob(40))
+				bulb_colour = LIGHT_COLOR_BROWN
+				playsound(src, pick('sound/effects/sparks1.ogg', 'sound/effects/sparks2.ogg', 'sound/effects/sparks3.ogg', 'sound/effects/sparks4.ogg', 'sound/effects/light_flicker.ogg'), 100, 1)
+			update(FALSE)
+			sleep(rand(1, 5))
+		on = (status == LIGHT_OK)
+		bulb_colour = initial(bulb_colour)
+		update(FALSE)
+	flickering = FALSE
+

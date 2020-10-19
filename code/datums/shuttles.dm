@@ -106,7 +106,7 @@
 //Whatever special stuff you want
 /datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
 	return
-		
+
 /datum/map_template/shuttle/proc/on_bought()
 	return
 
@@ -636,3 +636,33 @@
 /datum/map_template/shuttle/hunter/bounty
 	suffix = "bounty"
 	name = "Bounty Hunter Ship"
+
+/datum/map_template/shuttle/enclavefort/elevator
+	suffix = "elevator"
+	name = "Enclave Fort Elevator"
+
+/datum/map_template/shuttle/bos/elevator
+	suffix = "elevator"
+	name = "BOS Elevator"
+
+/datum/map_template/shuttle/bunker/elevator
+	suffix = "elevator"
+	name = "Bunker Elevator"
+
+/datum/map_template/shuttle/northbunker/elevator
+	suffix = "elevator"
+	name = "North Bunker Elevator"
+
+/datum/map_template/shuttle/vault113/elevator
+	suffix = "elevator"
+	name = "Vault 113 Elevator"
+
+/datum/map_template/shuttle/mining/elevator
+	suffix = "elevator"
+	name = "Mining Elevator"
+
+/datum/map_template/shuttle/emergency/pahrump
+	suffix = "pahrump"
+	name = "Pahrump train"
+	credit_cost = 2000
+	description = "A train to return the occupants back to New California."

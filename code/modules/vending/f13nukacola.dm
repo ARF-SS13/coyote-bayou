@@ -35,11 +35,11 @@
 /obj/item/vending_refill/nukacolavend
 	machine_name = "Nuka-Cola vending machine"
 	icon_state = "refill_cola"
-	charges = list(30, 8, 4)
-	init_charges = list(20, 4, 1)
+//	charges = list(30, 8, 4)
+//	init_charges = list(20, 4, 1)
 
 /obj/item/vending_refill/nukacolavendfull
 	machine_name = "pristine Nuka-Cola vending machine"
 	icon_state = "refill_cola"
-	charges = list(30, 15, 4)//ammount it has
-	init_charges = list(20, 10, 3) //ammount of shit it is gunna put on the machine
+//	charges = list(30, 15, 4)//ammount it has
+//	init_charges = list(20, 10, 3) //ammount of shit it is gunna put on the machine

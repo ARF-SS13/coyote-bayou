@@ -358,6 +358,16 @@
 	soundloop.stop()
 	update_icon()
 
+/obj/machinery/microwave/stove
+	name = "stove"
+	desc = "A nice white stove for cooking."
+	icon_state = "stove"
+
+/obj/machinery/microwave/stove/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/screwdriver))
+		return
+	..()
+
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK
 #undef MICROWAVE_PRE

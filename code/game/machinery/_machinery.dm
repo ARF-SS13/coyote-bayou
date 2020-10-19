@@ -94,6 +94,7 @@ Class Procs:
 	layer = BELOW_OBJ_LAYER //keeps shit coming out of the machine from ending up underneath it.
 	flags_1 = DEFAULT_RICOCHET_1
 	flags_ricochet = RICOCHET_HARD
+	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 	ricochet_chance_mod = 0.3
 
 	anchored = TRUE

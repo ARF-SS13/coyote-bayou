@@ -273,6 +273,16 @@
 	icon_state = "f13chair2"
 	item_chair = null
 
+/obj/structure/chair/stool/retro/black
+	name = "bar stool"
+	icon_state = "nvbar_black"
+	item_chair = /obj/item/chair/stool/retro/black
+
+/obj/item/chair/stool/retro/black
+	icon_state = "nvbar_black_toppled"
+	item_state = "nvbar_black"
+	origin_type = /obj/structure/chair/stool/retro/black
+
 /obj/structure/chair/office/Moved()
 	. = ..()
 	if(has_gravity())

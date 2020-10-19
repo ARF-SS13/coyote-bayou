@@ -31,7 +31,7 @@
 			return
 
 /obj/structure/destructible/tribal_torch/attackby(obj/item/W, mob/user, params)
-	if(W.is_hot())
+	if(burning)
 		StartBurning()
 		update_icon()
 		user.visible_message("<span class='notice'>[user] lights [src] with [W].</span>", "<span class='notice'>You light [src] with [W].</span>")

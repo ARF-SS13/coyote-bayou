@@ -529,3 +529,44 @@
 		return TRUE
 	else
 		return FALSE
+
+
+// -------------------------
+//  Gardentool Rack
+// -------------------------
+/obj/machinery/smartfridge/bottlerack/gardentool
+	name = "garden toolrack"
+	desc = "The wasteland farmers organisational tool storage."
+	icon_state = "gardentool"
+	layer = ABOVE_OBJ_LAYER
+	max_n_of_items = 30
+
+/obj/machinery/smartfridge/bottlerack/gardentool/default_deconstruction_crowbar(obj/item/crowbar/C, ignore_panel = 1)
+
+/obj/machinery/smartfridge/bottlerack/gardentool/accept_check(obj/item/O)
+	if(istype(O, /obj/item/plant_analyzer) || istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/cultivator) || istype(O, /obj/item/hatchet) || istype(O, /obj/item/scythe) || istype(O, /obj/item/reagent_containers/glass/bottle/nutrient) || istype(O, /obj/item/reagent_containers/glass/bottle/killer) || istype(O, /obj/item/shovel) || istype(O, /obj/item/fireaxe) || istype(O, /obj/item/reagent_containers/glass/bucket) || istype(O, /obj/item/storage/bag/plants) || istype(O, /obj/item/storage/bag/plants/portaseeder))
+		return TRUE
+	return FALSE
+/obj/machinery/smartfridge/bottlerack/gardentool/proc/can_be_rotated(mob/user,rotation_type)
+	if(anchored)
+		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the wall!</span>")
+	else
+		return TRUE
+
+/obj/machinery/smartfridge/bottlerack/gardentool/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated))
+
+// -------------------------
+//  Seedbin
+// -------------------------
+/obj/machinery/smartfridge/bottlerack/seedbin
+	name = "seed bin"
+	desc = "Organised dumping ground for the starters of life."
+	icon_state = "seedbin"
+	max_n_of_items = 150
+
+/obj/machinery/smartfridge/bottlerack/seedbin/accept_check(obj/item/O)
+	if(istype(O, /obj/item/seeds))
+		return TRUE
+	return FALSE

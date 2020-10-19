@@ -148,7 +148,7 @@
 
 /obj/item/blueprint/weapon/lmg
 	name = "LMG blueprint"
-	
+
 /obj/item/blueprint/weapon/lmg/limited
 	name = "Damaged LMG blueprint"
 
@@ -258,7 +258,7 @@
 
 /obj/item/prefabs/complex/simpleWeaponFrame/attackby(obj/item/W, mob/user, params)//todo me more recipes
 	if(istype(W, /obj/item/screwdriver))
-		if(src.contents.len > 0)			
+		if(src.contents.len > 0)
 			to_chat(usr,"You remove the [src.contents[1]] from the [src].")
 			usr.transferItemToLoc(src.contents[1],usr.loc)
 		else
@@ -294,7 +294,7 @@
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
-		else 
+		else
 			to_chat(usr,"This isn't quite right...")
 	if(istype(W, /obj/item/advanced_crafting_components/alloys))
 		usr.transferItemToLoc(W,src)
@@ -401,7 +401,7 @@
 
 /obj/item/prefabs/complex/complexWeaponFrame/attackby(obj/item/W, mob/user, params)//todo me more recipes
 	if(istype(W, /obj/item/screwdriver))
-		if(src.contents.len > 0)			
+		if(src.contents.len > 0)
 			to_chat(usr,"You remove the [src.contents[1]] from the [src].")
 			usr.transferItemToLoc(src.contents[1],usr.loc)
 		else
@@ -637,7 +637,6 @@
 	//icon_state = ""
 
 //moulds
-
 /obj/item/prefabs/mould
 	name = "Mould"
 	desc = ""
@@ -647,10 +646,13 @@
 	name = "Simple Action Mould"
 	desc = ""
 
-/obj/item/prefabs/mould/actionauto
+/obj/item/prefabs/mould/action/auto
 	name = "Automatic Action Mould"
 	desc = ""
 
+/obj/item/prefabs/mould/barrel/shotgun
+	name = "Shotgun Barrel Mould"
+	desc = ""
 /obj/item/prefabs/mould/barrel/m357
 	name = ".357 Barrel Mould"
 	desc = ""
@@ -765,6 +767,11 @@
 	name = "Bolt"
 	desc = ""
 	icon_state = "bolt"
+
+/obj/item/prefabs/complex/barrel/shotgun
+	name = "Shotgun Barrel"
+	desc = ""
+	icon_state = "barrel"
 
 /obj/item/prefabs/complex/bolt/simple
 	name = "Simple Bolt"

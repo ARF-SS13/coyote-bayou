@@ -329,9 +329,9 @@
 	speak_emote = list()
 	emote_hear = list()
 	emote_see = list()
-	response_help  = "shakes its manipulator"
-	response_disarm = "pushes"
-	response_harm   = "punches"
+	response_help_simple  = "shakes its manipulator"
+	response_disarm_simple = "pushes"
+	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 
