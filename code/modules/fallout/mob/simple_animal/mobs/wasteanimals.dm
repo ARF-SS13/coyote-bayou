@@ -96,7 +96,7 @@
 
 /datum/reagent/toxin/cazador_venom
 	name = "Cazador venom"
-	id = "cazador_venom"
+//	id = "cazador_venom"
 	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
 	color = "#801E28" // rgb: 128, 30, 40
 	toxpwr = 1
@@ -238,7 +238,7 @@
 	obj_damage = 20
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	attack = "nips"
+	attack_verb_simple = "nips"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)

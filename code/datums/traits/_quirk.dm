@@ -6,6 +6,7 @@
 	var/value = 0
 	var/human_only = TRUE
 	var/gain_text
+	var/locked = FALSE
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented
 	var/antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.

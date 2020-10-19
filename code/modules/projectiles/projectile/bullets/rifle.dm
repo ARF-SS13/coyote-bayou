@@ -17,3 +17,7 @@
 	name = "enchanted 7.62 bullet"
 	damage = 5
 	stamina = 80
+
+/obj/item/projectile/bullet/a762/sport //.308 Winchester
+	damage = 40
+	armour_penetration = 30

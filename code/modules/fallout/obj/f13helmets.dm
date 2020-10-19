@@ -546,12 +546,6 @@
 	var/hit_reflect_chance = 70
 	strip_delay = 10
 
-/obj/item/clothing/head/helmet/f13/tesla/IsReflect(def_zone)
-	if(!(def_zone in list("head"))) //If not shot where ablative is covering you, you don't get the reflection bonus!
-		return 0
-	if (prob(hit_reflect_chance))
-		return 1
-
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/f13/power_armor/

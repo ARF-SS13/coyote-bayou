@@ -544,7 +544,7 @@
 
 /obj/item/gun/energy/laser/rcw/afterattack()
 	. = ..()
-	empty_alarm()
+//	empty_alarm()
 	return
 
 /obj/item/gun/energy/laser/laer

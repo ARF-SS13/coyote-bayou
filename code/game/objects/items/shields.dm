@@ -418,6 +418,54 @@ obj/item/shield/riot/bullet_proof
 	if(ismob(loc.loc))		//cyberimplant.user
 		to_chat(loc, "<span class='notice'>[src] has recharged its reinforcement matrix and is ready for use!</span>")
 
+/obj/item/shield/legion
+	name = "legion shield"
+	desc = "A well balanced hard wood shield, fashioned together with long iron bands. It has a legion emblem charred into the inside."
+	icon_state = "roman_shield"
+	item_state = "roman_shield"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	force = 20
+	throwforce = 5
+	throw_speed = 2
+	throw_range = 3
+	block_chance = 40
+	w_class = WEIGHT_CLASS_BULKY
+	attack_verb = list("shoved", "bashed")
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+
+/obj/item/shield/legion/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item))
+		if(cooldown < world.time - 25)
+			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+			cooldown = world.time
+	else
+		return ..()
+
+/obj/item/shield/riot/roman/fake
+	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
+	block_chance = 0
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/shield/legion/buckler
+	name = "legion buckler"
+	desc = "A lightweight well balanced shield made out of a hard oak and lashed together with solid iron bands. It has a legion emblem charred onto the inside."
+	icon_state = "buckler"
+	item_state = "buckler"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	custom_materials = list()
+	resistance_flags = FLAMMABLE
+	force = 15
+	throwforce = 15
+	throw_speed = 4
+	throw_range = 7
+	block_chance = 25
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 70)
+
+
 /obj/item/shield/energy
 	name = "energy combat shield"
 	desc = "A shield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."

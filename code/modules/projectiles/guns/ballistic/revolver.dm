@@ -578,7 +578,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0
 	block_chance = 20 //Do you feel lucky? Well, do you, punk?
-
+/*
 /obj/item/gun/ballistic/revolver/colt357/lucky/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		if(prob(block_chance))
@@ -586,7 +586,7 @@
 			playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 			return 1
 	return 0
-
+*/
 /obj/item/gun/ballistic/revolver/needler
 	name = "needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "

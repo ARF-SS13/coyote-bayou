@@ -447,7 +447,7 @@
 	icon_type = "silver ring"
 	spawn_type = /obj/item/clothing/gloves/ring/silver
 
-/obj/item/storage/box/rubbershot/beanbag
+/obj/item/storage/fancy/rubbershot/beanbag
 	name = "box of beanbag slugs"
 	desc = "A box full of beanbag slugs, designed for riot shotguns."
 	icon = 'icons/obj/ammo.dmi'

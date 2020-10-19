@@ -468,6 +468,115 @@
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/automatic/greasegun/attackby(obj/item/W, mob/user, params)
+	if(istype(W,/obj/item/screwdriver))
+		var/obj/item/A = new /obj/item/prefabs/complex/screw
+		var/obj/item/B = new /obj/item/prefabs/complex/trigger
+		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
+		var/obj/item/D = new /obj/item/prefabs/complex/action/auto
+		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m45
+		var/obj/item/F = new /obj/item/prefabs/complex/stock/mid
+		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/low
+		var/obj/item/H = new /obj/item/advanced_crafting_components/receiver
+		A.forceMove(usr.loc)
+		B.forceMove(usr.loc)
+		C.forceMove(usr.loc)
+		D.forceMove(usr.loc)
+		E.forceMove(usr.loc)
+		F.forceMove(usr.loc)
+		G.forceMove(usr.loc)
+		H.forceMove(usr.loc)
+		qdel(src)
+		to_chat(usr,"You dissasemble the [src].")
+	. = ..()
+
+
+/obj/item/gun/ballistic/automatic/greasegun/mid
+	name = "M3A1 Grease Gun (improved)"
+	randomspread = 0
+	fire_delay = 3
+	burst_shot_delay = 3
+
+/obj/item/gun/ballistic/automatic/greasegun/mid/attackby(obj/item/W, mob/user, params)
+	if(istype(W,/obj/item/screwdriver))
+		var/obj/item/A = new /obj/item/prefabs/complex/screw
+		var/obj/item/B = new /obj/item/prefabs/complex/trigger
+		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
+		var/obj/item/D = new /obj/item/prefabs/complex/action/auto
+		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m45
+		var/obj/item/F = new /obj/item/prefabs/complex/stock/mid
+		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/mid
+		var/obj/item/H = new /obj/item/advanced_crafting_components/receiver
+		A.forceMove(usr.loc)
+		B.forceMove(usr.loc)
+		C.forceMove(usr.loc)
+		D.forceMove(usr.loc)
+		E.forceMove(usr.loc)
+		F.forceMove(usr.loc)
+		G.forceMove(usr.loc)
+		H.forceMove(usr.loc)
+		qdel(src)
+		to_chat(usr,"You dissasemble the [src].")
+	. = ..()
+
+/obj/item/gun/ballistic/automatic/greasegun/high
+	name = "M3A1 Grease Gun (masterwork)"
+	fire_delay = 2
+	burst_shot_delay = 2
+	extra_penetration = 5
+	extra_damage = 5
+	randomspread = 0
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT
+
+/obj/item/gun/ballistic/automatic/greasegun/high/attackby(obj/item/W, mob/user, params)
+	if(istype(W,/obj/item/screwdriver))
+		var/obj/item/A = new /obj/item/prefabs/complex/screw
+		var/obj/item/B = new /obj/item/prefabs/complex/trigger
+		var/obj/item/C = new /obj/item/prefabs/complex/bolt/simple
+		var/obj/item/D = new /obj/item/prefabs/complex/action/auto
+		var/obj/item/E = new /obj/item/prefabs/complex/barrel/m45
+		var/obj/item/F = new /obj/item/prefabs/complex/stock/mid
+		var/obj/item/G = new /obj/item/prefabs/complex/complexWeaponFrame/high
+		var/obj/item/H = new /obj/item/advanced_crafting_components/receiver
+		A.forceMove(usr.loc)
+		B.forceMove(usr.loc)
+		C.forceMove(usr.loc)
+		D.forceMove(usr.loc)
+		E.forceMove(usr.loc)
+		F.forceMove(usr.loc)
+		G.forceMove(usr.loc)
+		H.forceMove(usr.loc)
+		qdel(src)
+		to_chat(usr,"You dissasemble the [src].")
+	. = ..()
+
+/obj/item/gun/ballistic/automatic/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 18
+			if (recoil_decrease)
+				spread = 10
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+
+
+
 /obj/item/gun/ballistic/automatic/greasegun/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
@@ -535,7 +644,7 @@
 	desc = "A customized R91 assault rifle, with an integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	suppressed = 1
 	burst_size = 1
 	fire_delay = 3
@@ -1274,3 +1383,23 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
+
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
+	name = "varmint rifle"
+	desc = "A low powered 5.56, easy to use rifle."
+	icon_state = "varmint_rifle"
+	item_state = "varmintrifle"
+	fire_delay = 8
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	can_bayonet = FALSE
+
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
+	name = "ratslayer"
+	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
+	icon_state = "rat_slayer"
+	item_state = "ratslayer"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'

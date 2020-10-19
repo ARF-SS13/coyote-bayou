@@ -244,6 +244,12 @@
 	maxcharge = 40000
 	chargerate = 1500
 
+/obj/item/stock_parts/cell/ammo/ecp
+	name = "electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
+	icon_state = "icell"
+	maxcharge = 2400
+
 /obj/item/stock_parts/cell/pulse/carbine //25 pulse shots
 	name = "pulse carbine power cell"
 	maxcharge = 5000

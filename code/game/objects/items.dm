@@ -1084,7 +1084,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 
 
-
+/obj/item/proc/get_head_speechspans(mob/living/carbon/user) //we need this all the way back here for reasons
+	return
 
 
 ///For when you want to add/update the embedding on an item. Uses the vars in [/obj/item/embedding], and defaults to config values for values that aren't set. Will automatically detach previous embed elements on this item.

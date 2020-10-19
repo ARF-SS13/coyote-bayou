@@ -72,7 +72,7 @@
 	//Materials
 	for(var/path in subtypesof(/datum/material))
 		var/datum/material/D = new path()
-		GLOB.materials_list[D.id] = D
+//		GLOB.materials_list[D.id] = D
 
 	//Emotes
 	for(var/path in subtypesof(/datum/emote))

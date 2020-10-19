@@ -108,6 +108,18 @@
 	max_ammo = 4
 	multiple_sprites = 1
 
+/obj/item/ammo_box/l10mm
+	name = "speed loader (10mm)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "10mm"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	max_ammo = 6
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 50000)
+
+/obj/item/ammo_box/l10mm/empty
+	start_empty = 1
+
 /obj/item/ammo_box/a762
 	name = "stripper clip (7.62mm)"
 	desc = "A stripper clip."
@@ -258,6 +270,31 @@
 	max_ammo = 15
 	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 	w_class = WEIGHT_CLASS_NORMAL
+
+//Needler
+/obj/item/ammo_box/needle
+	name = "needler stripper clip (needle darts)"
+	icon_state = "needler"
+	ammo_type = /obj/item/ammo_casing/caseless/needle
+	max_ammo = 5
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+
+/obj/item/ammo_box/needleap
+	name = "armour-piercing needler stripper clip (needle darts)"
+	icon_state = "apneedler"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/ap
+	max_ammo = 5
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+
+/obj/item/ammo_box/needleultra
+	name = "ultracite needler stripper clip (needle darts)"
+	icon_state = "ultraneedler"
+	ammo_type = /obj/item/ammo_casing/caseless/needle/ultra
+	max_ammo = 5
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
 
 /obj/item/ammo_box/a308
 	name = "stripper clip (.308)"
