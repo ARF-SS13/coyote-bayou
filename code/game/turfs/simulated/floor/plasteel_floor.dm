@@ -175,3 +175,19 @@
 /turf/open/floor/plasteel/vault/killroom
 	name = "killroom Floor"
 	initial_gas_mix = "n2=500;TEMP=80"
+
+/turf/open/floor/plasteel/purple
+	icon_state = "purplefull"
+/turf/open/floor/plasteel/purple/side
+	icon_state = "purple"
+/turf/open/floor/plasteel/purple/corner
+	icon_state = "purplecorner"
+
+/turf/open/floor/plasteel/darkpurple
+	icon_state = "darkpurplefull"
+/turf/open/floor/plasteel/darkpurple/side
+	icon_state = "darkpurple"
+/turf/open/floor/plasteel/darkpurple/side/telecomms
+	initial_gas_mix = "n2=100;TEMP=80"
+/turf/open/floor/plasteel/darkpurple/corner
+	icon_state = "darkpurplecorners"

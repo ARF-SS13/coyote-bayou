@@ -227,6 +227,12 @@
 	icon_state = "laceups"
 	equip_delay_other = 50
 
+/obj/item/clothing/shoes/laceup/bos
+	name = "brotherhood dress shoes"
+	desc = "Polished dress shoes typically worn with the Brotherhood's formal attire."
+	icon_state = "laceups"
+	equip_delay_other = 50
+
 /obj/item/clothing/shoes/roman
 	name = "roman sandals"
 	desc = "Sandals with buckled leather straps on it."

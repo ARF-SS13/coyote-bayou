@@ -187,6 +187,13 @@
 	icon_state = "gray"
 	item_state = "graygloves"
 
+/obj/item/clothing/gloves/color/white/bos
+	name = "brotherhood formal gloves"
+	desc = "White gloves worn with the Brotherhood's formal dress."
+	icon_state = "white"
+	item_state = "wgloves"
+	item_color="white"
+
 /obj/item/clothing/gloves/color/light_brown
 	name = "light brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
