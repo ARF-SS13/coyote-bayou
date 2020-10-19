@@ -1403,3 +1403,18 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+/obj/item/gun/ballistic/automatic/type93
+	name = "type 93 assault rifle"
+	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
+	icon_state = "type93"
+	item_state = "handmade_rifle"
+	w_class = WEIGHT_CLASS_BULKY
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	burst_size = 2
+	fire_delay = 3
+	spread = 10
+	weapon_weight = WEAPON_HEAVY
+	extra_damage = 2

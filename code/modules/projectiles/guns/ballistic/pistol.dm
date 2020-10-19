@@ -185,3 +185,12 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	can_attachments = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/type17
+	name = "type 17"
+	desc = "A reproduction of the WW2 weapon and issued to the Chinese military at the time of the Great War. Most samples seen are surplus finds from the time of the Great War. Chambered in 9mm."
+	icon_state = "c96"
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	fire_delay = 1
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/ninemil.ogg'

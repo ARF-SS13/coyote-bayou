@@ -22,9 +22,9 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
 							/obj/item/stack/sheet/bone = 4)
-	response_help  = "pets"
-	response_disarm = "gently pushes aside"
-	response_harm   = "hits"
+	response_help_simple  = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple   = "hits"
 	maxHealth = 550
 	health = 550
 	obj_damage = 60
@@ -33,7 +33,6 @@
 	melee_damage_upper = 65
 	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
-	friendly = "hugs"
 	faction = list("deathclaw")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 5

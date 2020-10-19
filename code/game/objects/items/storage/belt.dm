@@ -830,3 +830,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
+
+/obj/item/storage/belt/military/alt
+	icon_state = "explorer2"
+	item_state = "explorer2"

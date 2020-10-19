@@ -115,6 +115,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isAI(A) (istype(A, /mob/living/silicon/ai))
 
+#define isghoul(A) (is_species(A, /datum/species/ghoul))
+
 #define ispAI(A) (istype(A, /mob/living/silicon/pai))
 
 //Simple animals
