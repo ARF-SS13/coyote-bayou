@@ -33,6 +33,8 @@
 	var/base_price = 25
 	var/hacked_price = 50
 
+	var/DRM = 0 //determines if DRM is active, preventing you from making ammo
+
 	var/datum/techweb/specialized/autounlocking/stored_research = /datum/techweb/specialized/autounlocking/autolathe
 	var/list/categories = list(
 							"Tools",
@@ -535,13 +537,13 @@
 			. = ..()
 	else
 		. = ..()
-
+/*
 /obj/machinery/autolathe/ui_interact(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE, src))
+		if(L.has_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC))
 			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
 			return FALSE
 		else
 			. = ..()
-
+*/

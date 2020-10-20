@@ -184,3 +184,18 @@
 	opaque = 0
 	can_hold_padlock = TRUE
 	icon = 'icons/obj/fence.dmi'
+
+/obj/structure/fence/pole_t
+	name = "pole"
+	icon_state = "pole_t"
+	desc = "A stout pole."
+	cuttable = FALSE
+	density = FALSE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fence/pole_b
+	name = "pole"
+	icon_state = "pole_b"
+	desc = "A pole, commonly used in traditional fertility rituals. Or by degenerates."
+	cuttable = FALSE
+	density = FALSE
