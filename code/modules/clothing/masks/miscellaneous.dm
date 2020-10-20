@@ -413,3 +413,24 @@
 
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
+
+//Desert facewrap
+
+/obj/item/clothing/mask/facewrap
+	name = "desert headwrap"
+	desc = "A headwrap to help shield the face from sand and other dirt."
+	icon_state = "facewrap"
+	item_state = "facewrap"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+
+//Society Mask
+
+/obj/item/clothing/mask/society
+	name = "golden facemask"
+	desc = "A burlap sack with eyeholes."
+	icon_state = "societymask"
+	item_state = "societymask"
+	flags_inv = HIDEFACE

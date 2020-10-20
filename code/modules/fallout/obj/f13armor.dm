@@ -593,7 +593,7 @@
         return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
-	var/mob/living/carbon/human/H = user
+//	var/mob/living/carbon/human/H = user
 	REMOVE_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
 	REMOVE_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
 	return ..()

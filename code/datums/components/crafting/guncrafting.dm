@@ -110,7 +110,7 @@
 	wrenchable = FALSE
 
 /obj/machinery/workbench/fbench/attackby(obj/item/W, mob/user, params)//todo me
-	var/mob/living/carbon/human/H = usr
+//	var/mob/living/carbon/human/H = usr
 	if (istype(W, /obj/item/stack/sheet/prewar) && !HAS_TRAIT(usr, TRAIT_MASTER_GUNSMITH))
 		to_chat(usr,"You have no clue as to how to work this material.")
 		return

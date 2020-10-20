@@ -117,6 +117,11 @@
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
+/obj/item/clothing/head/collectable/police/cos
+	name = "Chief of Security Hat"
+	desc = "This hat emphasizes that you are THE LAW."
+
+
 /obj/item/clothing/head/collectable/wizard
 	name = "collectable wizard's hat"
 	desc = "NOTE: Any magical powers gained from wearing this hat are purely coincidental."

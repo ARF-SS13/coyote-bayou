@@ -1265,6 +1265,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/sledgehammer/ComponentInitialize()
 	. = ..()
+//	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+//	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	AddComponent(/datum/component/butchering, 20, 105)
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="sledgehammer")
 
@@ -1524,3 +1526,102 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	if(wielded)
 		. = ..()
 */
+
+
+
+/obj/item/twohanded/sledgehammer/shamanstaff
+	name = "shaman staff"
+	desc = "An intricate staff, carried for centuries by the shaman class of the Wayfayer Tribe."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "shamanstaff0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 15
+
+
+	slot_flags = ITEM_SLOT_BACK
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = IS_BLUNT
+
+/obj/item/sledgehammer/shamanstaff/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="shamanstaff")
+
+/obj/item/sledgehammer/marsstaff
+	name = "Staff of Mars"
+	desc = " A staff crafted by the guidance of Mars."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "mars_staff0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	hitsound = "swing_hit"
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "enlightened")
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = IS_BLUNT
+
+/obj/item/sledgehammer/marsstaff/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="mars_staff")
+
+
+var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
+var/list/possible_colors = list("red")
+/*
+/obj/item/sledgehammer/marsstaff/update_icon()
+	if(wielded)
+		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
+		light_color = LIGHT_COLOR_RED
+		START_PROCESSING(SSobj, src)
+		set_light(brightness_on)
+		sharpness = IS_BLUNT
+*/
+/obj/item/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(2, BURN, 0)
+	M.apply_damage(25, STAMINA, null, 0)
+
+/obj/item/sledgehammer/marsstaff/pickup(mob/living/user, slot)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/U = user
+		if(U.job in list("Priestess of Mars"))
+		else
+			to_chat(user, "<span class='userdanger'>You invoke the wrath of Mars!</span>")
+			user.emote("scream")
+			user.apply_damage(30, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+			user.dropItemToGround(src, TRUE)
+			user.Knockdown(50)
+		return
+/*
+/obj/item/sledgehammer/marsstaff/unwield() //Specific unwield () to switch hitsounds.
+	sharpness = IS_BLUNT
+	..()
+	STOP_PROCESSING(SSobj, src)
+	set_light(0)
+*/
+
+/obj/item/sledgehammer/atomsjudgement
+	name = "atom's judgement"
+	desc = "A heavy sledgehammer manufacted from ultra-dense materials. The head of this hammer seems to of been replaced with four fusion cores, shorted to discharge its fissle material."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "atom_hammer0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 25
+
+/obj/item/sledgehammer/atomsjudgement/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="atom_hammer")
+
+/obj/item/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
+    . = ..()
+    if(!istype(M))
+        return
+    M.apply_effect(300, EFFECT_IRRADIATE, 0)

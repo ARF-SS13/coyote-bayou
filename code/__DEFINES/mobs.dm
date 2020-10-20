@@ -48,7 +48,7 @@
 #define MOB_EPIC		(1 << 7) //megafauna
 #define MOB_REPTILE		(1 << 8)
 #define MOB_SPIRIT		(1 << 9)
-
+#define MOB_INORGANIC 	(1 << 10)
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
 #define ORGAN_ROBOTIC   2

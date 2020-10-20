@@ -53,6 +53,10 @@
 	var/exp_type = ""
 	var/exp_type_department = ""
 
+	//faction objective for the round
+	var/objectives
+	var/list/objectivesList
+
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
 	//can be overridden by antag_rep.txt config
 	var/antag_rep = 10
@@ -81,6 +85,9 @@
 
 	//For things that faction Enforces.
 	var/enforces = ""
+	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
+	//This is ontop of the base job outfit
+	var/list/datum/outfit/loadout_options = list()
 
 
 //Only override this proc
@@ -255,22 +262,22 @@
 	uniform = text2path(holder)
 
 	if(chemwhiz == TRUE)
-		H.add_trait(TRAIT_CHEMWHIZ)
+		ADD_TRAIT(H, TRAIT_CHEMWHIZ, "chemwhiz")
 
 	if(pa_wear == TRUE)
-		H.add_trait(TRAIT_PA_WEAR)
+		ADD_TRAIT(H, TRAIT_PA_WEAR, "pa_wear")
 
 	if(gunsmith_one == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_ONE)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_ONE, "gunsmith_one")
 
 	if(gunsmith_two == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_TWO)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_TWO, "gunsmith_two")
 
 	if(gunsmith_three == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_THREE)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_THREE, "gunsmith_three")
 
 	if(gunsmith_four == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_FOUR)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR, "gunsmith_four")
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -310,10 +317,10 @@
 			PDA.update_style(preference_source)
 
 	if(chemwhiz == TRUE)
-		H.add_trait(TRAIT_CHEMWHIZ)
+		ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 	if(pa_wear == TRUE)
-		H.add_trait(TRAIT_PA_WEAR)
+		ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 
 /datum/outfit/job/get_chameleon_disguise_info()

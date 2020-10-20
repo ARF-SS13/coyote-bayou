@@ -539,8 +539,8 @@
 	var/mob/living/carbon/human/user = usr
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
-	for(var/X in actions)
-		var/datum/action/A = X
+//	for(var/X in actions)
+//		var/datum/action/A = X
 
 /obj/item/gun/energy/laser/rcw/afterattack()
 	. = ..()

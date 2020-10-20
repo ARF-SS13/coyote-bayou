@@ -32,8 +32,8 @@ Main doors: ACCESS_CAPTAIN 20
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
-
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 /*
 Elder
 */
@@ -59,7 +59,7 @@ Elder
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
@@ -106,7 +106,7 @@ Sentinel
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13sentinel
 	name = "Sentinel"
@@ -183,7 +183,9 @@ Head Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_MEDICALEXPERT, TRAIT_GENERIC, TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -250,7 +252,7 @@ Knight-Captain
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13knightcap
 	name = "Knight-Captain"
@@ -472,7 +474,7 @@ Senior Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name = "Senior Scribe"
@@ -522,7 +524,7 @@ Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_CHEMWHIZ)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"

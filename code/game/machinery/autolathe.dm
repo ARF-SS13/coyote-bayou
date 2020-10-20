@@ -462,3 +462,86 @@
 /obj/machinery/autolathe/toy/hacked/Initialize()
 	. = ..()
 	adjust_hacked(TRUE)
+
+/obj/machinery/autolathe/constructionlathe
+	name = "Workshop"
+	desc = "Contains an array of custom made and skilled tools for professional craftsmen."
+	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
+	super_advanced_technology = FALSE
+	resistance_flags = NONE
+	var/constage = 0 //construction stage for upgrading into a regular lathe
+	DRM = 1
+	categories = list(
+							"Tools",
+							"Electronics",
+							"Construction",
+							"T-Comm",
+							"Security",
+							"Machinery",
+							"Medical",
+							"Misc",
+							"Dinnerware",
+							)
+
+/obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
+	..()
+	if(DRM && panel_open)
+		if(constage == 0)
+			if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
+				constage = 1
+				qdel(O)
+		if(constage == 1)
+			if(istype(O, /obj/item/stack/crafting/goodparts))
+				var/obj/item/stack/crafting/goodparts/S = O
+				if(S.get_amount() < 5)
+					to_chat(user, "<span class='warning'>You need at least 5 high-quality metal parts to upgrade [src].</span>")
+					return
+				S.use(5)
+				to_chat(user, "<span class='notice'>You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process.</span>")
+				constage = 2
+		if(constage == 2)
+			if(istype(O, /obj/item/crafting/reloader))
+				to_chat(user, "<span class='notice'>You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again.</span>")
+				constage = 3
+				DRM = 0
+				categories = list(
+							"Tools",
+							"Electronics",
+							"Construction",
+							"T-Comm",
+							"Security",
+							"Machinery",
+							"Medical",
+							"Misc",
+							"Dinnerware",
+							)
+				hacked = TRUE
+				name = "Workshop"
+				desc = "Contains an array of custom made and skilled tools for professional craftsmen."
+				qdel(O)
+	if(panel_open)
+		default_deconstruction_crowbar(O)
+		return TRUE
+	else
+		attack_hand(user)
+		return TRUE
+
+/obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
+	if("Security" in D.category)
+		if(DRM == 1)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+
+/obj/machinery/autolathe/ui_interact(mob/user)
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE, src))
+			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+			return FALSE
+		else
+			. = ..()
+

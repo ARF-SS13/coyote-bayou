@@ -45,6 +45,16 @@
 	desc = "Worn by Sciencia, thaumaturges and researchers of the universe."
 	icon_state = "rdcloak"
 
+/obj/item/clothing/neck/cloak/overseer
+	name = "vault-tec overseer's cloak"
+	desc = "This is the overseers cloak.  Issued by the Vault-tec corporation to easily identify the overseer. This cloak has been passed down from overseer to overseer"
+	icon_state = "overseercloak"
+
+/obj/item/clothing/neck/cloak/chiefcloak
+	name = "wayfarer cloak"
+	desc = "A symbol of the authority of the Wayfarer Chief."
+	icon_state = "chiefcloak"
+
 /obj/item/clothing/neck/cloak/cap
 	name = "captain's cloak"
 	desc = "Worn by the commander of Space Station 13."

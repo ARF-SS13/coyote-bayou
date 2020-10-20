@@ -628,7 +628,39 @@
 	buildstackamount = 1
 	item_chair = null
 
+/obj/structure/chair/wood/modern
+	icon_state = "wooden_chair_new"
+	desc = "This chair is good as new.<br>Old is never too old to not be in fashion."
+	item_chair = /obj/item/chair/wood/modern
+
+
 /obj/structure/chair/bronze/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
+
+/obj/item/chair/wood/modern
+	icon_state = "wooden_chair_generic_toppled"
+	item_state = "wooden_chair_new"
+	origin_type = /obj/structure/chair/wood/modern
+
+/obj/structure/chair/wood/fancy
+	icon_state = "wooden_chair_fancy"
+	name = "fancy wooden chair"
+	desc = "An elegant chair made of luxurious wood."
+	item_chair = /obj/item/chair/wood/fancy
+
+/obj/item/chair/wood/fancy
+	icon_state = "wooden_chair_fancy_toppled"
+	item_state = "wooden_chair_fancy"
+	origin_type = /obj/structure/chair/wood/fancy
+
+/obj/structure/chair/wood/worn
+	icon_state = "wooden_chair_old"
+	desc = "The furnish has faded and it's not so shiny anymore.<br>Still a good chair though."
+	item_chair = /obj/item/chair/wood/worn
+
+/obj/item/chair/wood/worn
+	icon_state = "wooden_chair_generic_toppled"
+	item_state = "wooden_chair_old"
+	origin_type = /obj/structure/chair/wood/worn

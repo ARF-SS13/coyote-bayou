@@ -444,6 +444,15 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
+
+/obj/item/storage/belt/security/follower/PopulateContents()
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/kitchen/knife/combat(src)
+	new /obj/item/storage/box/rubbershot/beanbag(src)
+	update_icon()
+
 /obj/item/storage/belt/durathread
 	name = "durathread toolbelt"
 	desc = "A toolbelt made out of durathread, it seems robust enough to hold bigger tools like RCDs or RPDs, with enough pouches to hold more gear than a normal belt."
@@ -855,7 +864,7 @@
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/belt/military/NCR_Bandolier
@@ -866,5 +875,29 @@
 
 /obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
+
+/obj/item/storage/belt/tribe_quiver
+	name = "tribal quiver"
+	desc = "A simple leather quiver designed for holding arrows."
+	icon_state = "tribal_quiver"
+	item_state = "tribal_quiver"
+
+/obj/item/storage/belt/tribe_quiver/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	STR.max_w_class = 3
+	STR.max_combined_w_class = 24
+
+/obj/item/storage/belt/tribe_quiver/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)

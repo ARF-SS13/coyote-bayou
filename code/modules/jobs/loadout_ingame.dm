@@ -56,7 +56,7 @@
 	desc = "Activate this item to select your additional loadout equipment. It will vanish once you're done."
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"
-	item_flags = NODROP
+
 
 /obj/item/loadout_token/attack_self(var/mob/user)
 	user.select_loadout()
@@ -117,7 +117,7 @@
 
 /obj/item/storage/box/large/ComponentInitialize() //same storage as a backpack, to allow it to hold loadout items
 	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21

@@ -333,6 +333,11 @@
 	name = "Library Visitor Console (Computer Board)"
 	build_path = /obj/machinery/computer/libraryconsole
 
+/obj/item/circuitboard/computer/robco_terminal
+	name = "RobCo Terminal Mainboard (Computer board)"
+	build_path = /obj/machinery/computer/terminal
+
+
 /obj/item/circuitboard/computer/libraryconsole/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		if(build_path == /obj/machinery/computer/libraryconsole/bookmanagement)

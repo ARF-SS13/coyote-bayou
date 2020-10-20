@@ -39,3 +39,8 @@
 /obj/item/projectile/bullet/a556/sport
 	damage = 30
 	armour_penetration = 10
+
+//2mm Electromagnetic
+/obj/item/projectile/bullet/c2mm
+	damage = 55
+	armour_penetration = 50

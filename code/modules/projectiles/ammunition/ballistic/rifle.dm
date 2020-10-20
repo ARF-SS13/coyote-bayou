@@ -51,3 +51,10 @@
 
 /obj/item/ammo_casing/F13/m308/fire
 	projectile_type = /obj/item/projectile/bullet/F13/c308mmBullet/fire
+
+// 2mm EC
+/obj/item/ammo_casing/c2mm
+	name = "2mm gauss projectile casing"
+	desc = "A 2mm gauss projectile casing."
+	caliber = "2mm"
+	projectile_type = /obj/item/projectile/bullet/c2mm

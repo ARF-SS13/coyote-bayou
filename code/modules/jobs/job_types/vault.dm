@@ -18,8 +18,8 @@ here's a tip, go search DEFINES/access.dm
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
-
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 /*
 Overseer
 */
@@ -64,7 +64,7 @@ Overseer
 	ears = 			/obj/item/radio/headset/headset_overseer
 	neck = 			/obj/item/clothing/neck/cloak/overseer
 	backpack = /obj/item/storage/backpack/satchel/leather
-	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/melee/oldstyle = 1, /obj/item/gun/ballistic/automatic/pistol/n99/executive = 1, /obj/item/ammo_box/magazine/m10mm_adv = 3)
+	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/melee/classic_baton/telescopic = 1, /obj/item/gun/ballistic/automatic/pistol/n99/executive = 1, /obj/item/ammo_box/magazine/m10mm_adv = 3)
 
 ///datum/outfit/f13overseer/post_equip(mob/living/carbon/human/H)
 	//..()
@@ -171,8 +171,8 @@ Medical Doctor
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_MEDICALEXPERT, TRAIT_GENERIC)
-
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 /*
 Scientist
 */

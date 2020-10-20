@@ -1424,3 +1424,30 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/strange_seeds_5pack/PopulateContents()
 	for(var/i in 1 to 5)
 		new /obj/item/seeds/random(src)
+
+/obj/item/storage/box/ids/follower
+	name = "box of spare medallions"
+	desc = "Medallions for issue to Camp Followers."
+	illustration = "legauxilia"
+
+/obj/item/storage/box/ids/follower/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/id/dogtag/legfollower
+
+/obj/item/storage/box/deputy_badges
+	name = "box of spare badges"
+	desc = "A box containing the spare badges for deputies. Use your sheriff badge on a deputy badge to assign its owner."
+	illustration = "id"
+
+/obj/item/storage/box/deputy_badges/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/card/id/dogtag/deputy(src)
+
+/obj/item/storage/box/citizenship_permits
+	name = "box of citizenship permits"
+	desc = "A box containing spare citizenship permits for Oasis. Use a mayor's ID on a citizenship permit to assign its owner."
+	illustration = "id"
+
+/obj/item/storage/box/citizenship_permits/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/id/dogtag/town(src)

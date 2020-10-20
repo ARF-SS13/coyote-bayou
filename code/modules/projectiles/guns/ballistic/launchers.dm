@@ -164,3 +164,32 @@
 			"<span class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
 		sleep(20)
 		return OXYLOSS
+
+/obj/item/gun/ballistic/automatic/tribalbow
+	name = "tribal bow"
+	desc = "A simple wooden bow with small pieces of turquiose."
+	icon_state = "tribalbow"
+	item_state = "tribalbow"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	burst_size = 1
+	fire_delay = 0
+	select = 0
+	actions_types = list()
+	casing_ejector = FALSE
+
+/obj/item/gun/ballistic/automatic/tribalbow/update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/tribalbow/attack_self()
+	return
+
+/obj/item/gun/ballistic/automatic/tribalbow/attackby(obj/item/A, mob/user, params)
+	var/num_loaded = magazine.attackby(A, user, params, 1)
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] spear\s into \the [src].</span>")
+		update_icon()
+		chamber_round()

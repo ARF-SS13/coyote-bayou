@@ -36,7 +36,7 @@
 	if(!broken)
 		desc = "[initial(desc)] Remarkably, it still works."
 		termnumber = rand(69,420) // Unlikely to get two identical numbers.
-		write_documents()
+//		write_documents()
 	else
 		desc = "[initial(desc)] Unfortunately, this one seems to have broken down."
 
@@ -95,7 +95,7 @@
 
 	var/datum/browser/popup = new(user, "terminal", null, 600, 400)
 	popup.set_content(dat)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
+//	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
 
 /obj/machinery/computer/terminal/Topic(href, href_list)
@@ -154,7 +154,7 @@
 
 	updateUsrDialog()
 	return
-
+/*
 /obj/machinery/computer/terminal/proc/write_documents()
 	if (doc_title_1)
 		var/file_in_memory = text2path("/datum/terminal/document/[doc_title_1]")
@@ -183,3 +183,4 @@
 		doc_content_5 = "[N.content]"
 
 	return
+*/

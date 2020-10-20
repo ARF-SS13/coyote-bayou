@@ -1151,3 +1151,7 @@
 	name = "Explosive Compressor (Machine Board)"
 	build_path = /obj/machinery/research/explosive_compressor
 	req_components = list(/obj/item/stock_parts/matter_bin = 3)
+
+/obj/item/circuitboard/machine/autolathe/constructionlathe
+	name = "Workshop (Machine Board)"
+	build_path = /obj/machinery/autolathe/constructionlathe

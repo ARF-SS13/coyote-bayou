@@ -317,3 +317,17 @@ obj/item/clothing/neck/neckerchief
 			user.visible_message("You untie [oldName] back into a [newBand.name]", "[user] unties [oldName] back into a [newBand.name]")
 		else
 			to_chat(user, "<span class='warning'>You must be holding [src] in order to untie it!")
+
+
+/obj/item/clothing/neck/scarf/cptpatriot
+	name = "desert scarf"
+	icon_state = "cptpatriotscarf"
+	item_color = "cptpatriotscarf"
+	desc = "A stylish scarf. This one has a camoflage pattern popularized during the great war."
+
+/obj/item/clothing/neck/corditeclamp
+	name = "Cordite Clamps Y-72"
+	desc = "People say having a glass jaw is a bad thing but when that jaw is a RobCo alloy-infused combat facial prosthetic made for the U.S army and the American Elite, they are inclined to think twice about throwing a punch. At least a bare fisted one."
+	icon_state = "corditeclamps"
+	item_color = "corditeclamps"
+	item_state = "corditeclamps"

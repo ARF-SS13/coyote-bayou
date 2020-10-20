@@ -18,8 +18,8 @@
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC)
-
+	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 /*
 Tribal Chief
 */

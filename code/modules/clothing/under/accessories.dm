@@ -558,3 +558,9 @@
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/armband/black
+	name = "MP's armband"
+	desc = "An armband issued to NCR Military Police, signifying their alignment with NCROSI rather than the typical chain of command."
+	icon_state = "blackband"
+	item_color = "blackband"

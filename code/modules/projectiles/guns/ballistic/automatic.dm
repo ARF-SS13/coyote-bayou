@@ -1418,3 +1418,174 @@
 	spread = 10
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 2
+
+/obj/item/gun/ballistic/automatic/m1garand
+	name = "battle rifle"
+	desc = "The WWII American Classic. Still has that satisfiying ping."
+	icon_state = "m1garand"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/garand308
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 6
+	burst_size = 1
+//	en_bloc = 1
+//	auto_eject = 1
+//	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
+	can_bayonet = TRUE
+//	bayonetstate = "lasmusket"
+	knife_x_offset = 22
+	knife_y_offset = 21
+
+/obj/item/gun/ballistic/automatic/m1garand/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]"
+
+/obj/item/gun/ballistic/automatic/m1garand/attackby(obj/item/A, mob/user, params)
+	. = ..()
+	if(.)
+		return
+
+/obj/item/gun/ballistic/automatic/m1garand/oldglory
+	name = "Old Glory"
+	desc = "This Machine kills communists!"
+	icon_state = "oldglory"
+	extra_damage = 10
+
+/obj/item/gun/ballistic/automatic/marksman/sniper
+	name = "sniper rifle"
+	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	icon_state = "sniper_rifle"
+	item_state = "sniper_rifle"
+	mag_type = /obj/item/ammo_box/magazine/w308
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 10
+	burst_size = 1
+//	projectile_speed = 0 //basically hitscan
+	can_bayonet = FALSE
+
+/obj/item/gun/ballistic/automatic/m1garand/republicspride
+	name = "Republic's Pride"
+	desc = "A well-tuned scoped M1C rifle crafted by master gunsmith from the Gunrunners. Proudly issued to Scout Captains and packs a mean punch. Chambered in 7.62x51."
+	icon_state = "republics_pride"
+	item_state = "scoped308"
+	extra_damage = 8
+	extra_penetration = 5
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+
+
+/obj/item/gun/ballistic/automatic/lmg
+	name = "R84 LMG"
+	desc = "A post war lmg, traditionally manufactured by NCR forces. It is designed as a suppressive support weapon, generally granted to Heavy Troopers to compliment their stripped power armor."
+	icon_state = "R84"
+	item_state = "R84"
+	slot_flags = 0
+	automatic = 1
+	mag_type = /obj/item/ammo_box/magazine/lmg
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = FALSE
+	burst_size = 1
+	fire_delay = 3
+//	burst_delay = 3
+	slowdown = 1.0
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 25
+	randomspread = 1
+
+/obj/item/gun/ballistic/automatic/lmg/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 35
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select += 1
+			burst_size = 3
+			spread = 45
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(2)
+			select = 0
+			burst_size = 1
+			spread = 25
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/assault_carbine
+	name = "assault carbine"
+	desc = "A variant of the R81 with increased rate of fire and a matte black exterior."
+	icon_state = "assault_carbine"
+	item_state = "assault_carbine"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+//	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	burst_size = 2
+	fire_delay = 3
+//	burst_delay = 2.0
+	spread = 16
+	automatic = 1
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	can_attachments = TRUE
+
+/obj/item/gun/ballistic/automatic/assault_carbine/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 14
+			if (recoil_decrease)
+				spread = 6
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	name = "R82 heavy service rifle"
+	desc = "A top of the line 5.56x45 automatic service rifle manufactured by the NCR and issued to high ranking personnel."
+	fire_delay = 1 //faster ROF, superior to regular service rifle
+//	projectile_speed = 0.6 //faster velocity, superior to regular service rifle
+//	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	icon_state = "R82"
+	item_state = "R82"
+	automatic = 1
+	burst_size = 2
+	can_bayonet = FALSE
+
+/obj/item/gun/ballistic/automatic/m72
+	name = "\improper M72 gauss rifle"
+	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
+	icon_state = "m72"
+	item_state = "shotgun"
+	slot_flags = SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/m2mm
+	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
+	can_suppress = FALSE
+	burst_size = 1
+	fire_delay = 15
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+//	projectile_speed = 0
+	recoil = 2

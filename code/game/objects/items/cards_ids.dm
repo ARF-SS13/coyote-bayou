@@ -186,7 +186,7 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/id_type_name = "identification card"
+	var/assignment_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/registered_name = null // The name registered_name on the card
@@ -857,7 +857,7 @@
 	name = "holo dogtag"
 	desc = "An advanced holographic dogtag, that shows the duty of a BoS member."
 	icon_state = "holodogtag"
-	id_type = "ID tags"
+	assignment = "ID tags"
 
 /obj/item/card/id/selfassign/attack_self(mob/user)
     if(isliving(user))
@@ -878,7 +878,7 @@
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"
 	desc = "A silver badge which shows honour and dedication."
-	id_type = "badge"
+	assignment = "badge"
 	assignment = "Deputy"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -896,7 +896,7 @@
 /obj/item/card/id/dogtag/sheriff
 	name = "sheriff's badge"
 	desc = "A golden Sheriff's badge."
-	id_type = "badge"
+	assignment = "badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
 
@@ -905,7 +905,7 @@
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
 	item_state = "card-doctor"
-	id_type = "citizenship permit"
+	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
 
 /obj/item/card/id/dogtag/town/mafia
@@ -913,7 +913,7 @@
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
 	item_state = "card-doctor"
-	id_type = "citizenship permit"
+	assignment = "citizenship permit"
 	assignment = "Settler"
 	obj_flags = UNIQUE_RENAME
 	access = list(ACCESS_BAR)
@@ -932,7 +932,7 @@
 	desc = "An silver encrusted ambassador's permit in a plastic holder."
 	icon_state = "silver"
 	item_state = "silver"
-	id_type = "ambassador's permit"
+	assignment = "ambassador's permit"
 
 /obj/item/card/id/dogtag/ncradmin
 	name = "Administrators ID"
@@ -979,49 +979,49 @@
 	name = "follower medallion"
 	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a camp follower."
 	icon_state = "legionmedallionrecruit"
-	id_type = "follower medallion"
+	assignment = "follower medallion"
 
 /obj/item/card/id/dogtag/legauxilia
 	name = "auxilia medallion"
 	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a respected auxilia of the Legion."
 	icon_state = "legionmedallionveteran"
-	id_type = "auxilia medallion"
+	assignment = "auxilia medallion"
 
 /obj/item/card/id/dogtag/legrecruit
 	name = "recruit medallion"
 	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a recruit."
 	icon_state = "legionmedallionrecruit"
-	id_type = "recruit medallion"
+	assignment = "recruit medallion"
 
 /obj/item/card/id/dogtag/legprime
 	name = "prime medallion"
 	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to a prime."
 	icon_state = "legionmedallionprime"
-	id_type = "prime medallion"
+	assignment = "prime medallion"
 
 /obj/item/card/id/dogtag/legslavemaster
 	name = "slavemaster medallion"
 	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to the dreaded Slavemaster."
 	icon_state = "legionmedallionprime"
-	id_type = "slavemaster medallion"
+	assignment = "slavemaster medallion"
 
 /obj/item/card/id/dogtag/legveteran
 	name = "veteran medallion"
 	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a veteran, and reeks of iron."
 	icon_state = "legionmedallionveteran"
-	id_type = "veteran medallion"
+	assignment = "veteran medallion"
 
 /obj/item/card/id/dogtag/legcenturion
 	name = "centurion medallion"
 	desc = "A golden disc awarded to the most fierce men in the whole legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
-	id_type = "centurion medallion"
+	assignment = "centurion medallion"
 
 /obj/item/card/id/dogtag/legvenator
 	name = "venator medallion"
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
-	id_type = "venator medallion"
+	assignment = "venator medallion"
 	assignment = "Venator"
 
 
@@ -1031,22 +1031,22 @@
 	icon_state = "legionmedallioncent"
 	item_state = "legionmedallioncent"
 	item_color = ""
-	id_type = "priestess medallion"
+	assignment = "priestess medallion"
 
 /obj/item/card/id/dogtag/legorator
 	name = "orator medallion"
 	desc = "A golden disc awarded to the one who is a dedicated ambassador for Caesar's Legion."
 	icon_state = "legionmedallioncent"
 	item_state = "legionmedallioncent"
-	id_type = "orator medallion"
+	assignment = "orator medallion"
 
 /obj/item/card/id/legionbrand
 	name = "Legion's brand"
 	desc = "A brand for identifying Caesar's Legion's slaves."
 	icon_state = "legionbrand"
 	item_state = "slave"
-	id_type = "Slave brand"
-	item_flags = NODROP
+	assignment = "Slave brand"
+
 
 ///OUTLAW TAGS////
 
@@ -1079,8 +1079,8 @@
 	desc = "A tattoo of the symbol of the Great Khans."
 	icon_state = "skin"
 	item_state = "skin"
-	id_type = "gang tattoo"
-	item_flags = NODROP
+	assignment = "gang tattoo"
+
 	access = list(ACCESS_KHAN)
 
 
@@ -1092,6 +1092,36 @@
 	desc = "A tattoo depicting the five machine spirits in harmony."
 	icon_state = "talisman"
 	item_state = "talisman"
-	id_type = "tribe tattoo"
-	item_flags = NODROP
+	assignment = "tribe tattoo"
+
 	access = list(ACCESS_TRIBE)
+
+/obj/item/card/id/silver/mayor
+	name = "Mayor's mayoral permit"
+	desc = "A silver encrusted identification permit reserved for the Mayor of Oasis."
+	icon_state = "silver"
+	item_state = "silver_id"
+	assignment = "mayoral permit"
+
+/obj/item/card/id/dendoctor
+	name = "doctor's name badge"
+	desc = "A plastic-sealed name badge certifying the medical expertise of its holder."
+	icon_state = "doctor"
+	item_state = "card-doctor"
+	assignment = "name badge"
+
+/obj/item/card/id/chief
+	name = "crimson identification card"
+	desc = "A red card which shows dedication and leadership to the Vaults safety and security."
+	icon_state = "chief"
+	item_state = "sec_id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+
+/obj/item/card/id/sec
+	name = "red identification card"
+	desc = "A red card which shows dedication to the Security department."
+	icon_state = "sec"
+	item_state = "sec_id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'

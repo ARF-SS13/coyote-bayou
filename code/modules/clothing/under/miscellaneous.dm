@@ -554,3 +554,19 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/suit_jacket/tan
+	name = "tan suit"
+	desc = "A tan suit with a yellow tie. Smart, but casual."
+	icon_state = "tan_suit"
+	item_state = "tan_suit"
+	item_color = "tan_suit"
+
+/obj/item/clothing/under/sailordress
+	name = "sailor dress"
+	desc = "Formal wear for a leading lady."
+	icon_state = "sailor_dress"
+	item_state = "sailor_dress"
+	item_color = "sailor_dress"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
