@@ -459,5 +459,55 @@
 	desc = "Used to create condiments and other cooking supplies."
 	condi = TRUE
 
+/obj/machinery/chem_master/advanced
+	name = "Old-World Refinery"
+	desc = "A high-tech device that uses nuclear-diffusion to seperate chemicals."
+	icon_state = "mixerad0"
+
+/obj/machinery/chem_master/advanced/update_icon()
+	cut_overlays()
+	if(beaker)
+		icon_state = "mixerad1"
+	else
+		icon_state = "mixerad0"
+
+/obj/machinery/chem_master/advanced/attackby(obj/item/I, mob/user, params)
+	if(default_deconstruction_screwdriver(user, "mixerad0_nopower", "mixerad0", I))
+		return
+
+	else if(default_deconstruction_crowbar(I))
+		return
+
+	if(default_unfasten_wrench(user, I))
+		return
+
+	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
+		. = 1 // no afterattack
+		if(panel_open)
+			to_chat(user, "<span class='warning'>You can't use the [src.name] while its panel is opened!</span>")
+			return
+		if(beaker)
+			to_chat(user, "<span class='warning'>A container is already loaded into [src]!</span>")
+			return
+		if(!user.transferItemToLoc(I, src))
+			return
+
+		beaker = I
+		to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
+		src.updateUsrDialog()
+		update_icon()
+
+	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
+		if(bottle)
+			to_chat(user, "<span class='warning'>A pill bottle is already loaded into [src]!</span>")
+			return
+		if(!user.transferItemToLoc(I, src))
+			return
+
+		bottle = I
+		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+		src.updateUsrDialog()
+	else
+		return ..()
 #undef PILL_STYLE_COUNT
 #undef RANDOM_PILL_STYLE

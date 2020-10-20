@@ -49,6 +49,13 @@
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
 
+#define FREQ_VAULT 1361 //Vault
+#define FREQ_NCR 1363 //NCR
+#define FREQ_BOS 1365 //BOS
+#define FREQ_ENCLAVE 1367 //ENCLAVE
+#define FREQ_DEN 1369 //TOWN
+#define FREQ_LEGION 1371 //LEGIO
+
 
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.

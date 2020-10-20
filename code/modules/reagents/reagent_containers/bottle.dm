@@ -439,3 +439,8 @@
 	desc = "A large bottle containing black powder."
 	volume = 60
 	list_reagents = list(/datum/reagent/blackpowder = 60)
+
+/obj/item/reagent_containers/glass/bottle/FEV_solution
+	name = " FEV bottle"
+	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
+	list_reagents = list("FEV_solution" = 30)

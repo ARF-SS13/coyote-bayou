@@ -666,3 +666,7 @@
 	name = "Pahrump train"
 	credit_cost = 2000
 	description = "A train to return the occupants back to New California."
+
+/datum/map_template/shuttle/bosbase/base
+	suffix = "base"
+	name = "brotherhood of steel (base)"

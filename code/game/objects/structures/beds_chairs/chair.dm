@@ -664,3 +664,91 @@
 	icon_state = "wooden_chair_generic_toppled"
 	item_state = "wooden_chair_old"
 	origin_type = /obj/structure/chair/wood/worn
+
+/obj/structure/chair/stool/f13stool
+	name = "bar stool"
+	desc = "It has some unsavory stains on it..."
+	icon_state = "f13stool"
+	item_chair = /obj/item/chair/stool/bar
+
+/obj/structure/chair/booth
+	name = "single booth"
+	desc = "A lone-some diner-styled booth."
+	icon_state = "booth_single"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	item_chair = null
+	var/mutable_appearance/overlay
+
+/obj/structure/chair/booth/proc/update_overlay()
+		add_overlay(overlay)
+
+/obj/structure/chair/booth/Initialize()
+	overlay = GetOverlay()
+	overlay.layer = ABOVE_ALL_MOB_LAYER
+	return ..()
+
+/obj/structure/chair/booth/Destroy()
+	QDEL_NULL(overlay)
+	return ..()
+
+/obj/structure/chair/booth/proc/GetOverlay()
+	return mutable_appearance('icons/obj/chairs.dmi', "booth_single_overlay")
+
+/obj/structure/chair/left
+	name = "booth"
+	desc = "A diner-styled end booth."
+	icon_state = "booth_leftend"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	item_chair = null
+	var/mutable_appearance/overlay
+
+/obj/structure/chair/left/proc/update_overlay()
+		add_overlay(overlay)
+
+/obj/structure/chair/left/Initialize()
+	overlay = GetOverlay()
+	overlay.layer = ABOVE_ALL_MOB_LAYER
+	return ..()
+
+/obj/structure/chair/left/Destroy()
+	QDEL_NULL(overlay)
+	return ..()
+
+/obj/structure/chair/left/proc/GetOverlay()
+	return mutable_appearance('icons/obj/chairs.dmi', "booth_leftend_overlay")
+
+/obj/structure/chair/stool/retro/tan
+	name = "bar stool"
+	icon_state = "nvbar_tan"
+	item_chair = /obj/item/chair/stool/retro/tan
+
+/obj/item/chair/stool/retro/tan
+	icon_state = "nvbar_tan_toppled"
+	item_state = "nvbar_tan"
+	origin_type = /obj/structure/chair/stool/retro/tan
+
+/obj/structure/chair/right
+	name = "booth"
+	desc = "A diner-styled end booth."
+	icon_state = "booth_rightend"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	item_chair = null
+	var/mutable_appearance/overlay
+
+/obj/structure/chair/right/proc/update_overlay()
+		add_overlay(overlay)
+
+/obj/structure/chair/right/Initialize()
+	overlay = GetOverlay()
+	overlay.layer = ABOVE_ALL_MOB_LAYER
+	return ..()
+
+/obj/structure/chair/right/Destroy()
+	QDEL_NULL(overlay)
+	return ..()
+
+/obj/structure/chair/right/proc/GetOverlay()
+	return mutable_appearance('icons/obj/chairs.dmi', "booth_rightend_overlay")

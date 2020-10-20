@@ -717,3 +717,87 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	faction = list("neutral")
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn
+	name = "big horner"
+	desc = "Mutated bighorn sheep that are often found in mountains, and are known for being foul-tempered even at the best of times."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "bighorner"
+	icon_living = "bighorner"
+	icon_dead = "bighorner_dead"
+	icon_gib = "bighorner_gib"
+	speak = list("EHEHEHEHEH","eh?")
+	speak_emote = list("brays")
+	emote_hear = list("brays.")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.", "grunts.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 4)
+	response_help_simple  = "pets"
+	response_disarm_simple = "gently pushes aside"
+	response_harm_simple   = "kicks"
+	faction = list("neutral", "bighorner")
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	attack_verb_simple = "rams"
+	attack_sound = 'sound/weapons/punch1.ogg'
+	health = 120
+	maxHealth = 120
+	melee_damage_lower = 25
+	melee_damage_upper = 20
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	stop_automated_movement_when_pulled = 1
+	blood_volume = BLOOD_VOLUME_NORMAL
+	var/is_calf = 0
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	var/has_calf = 0
+	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
+		udder.milkAnimal(O, user)
+		return 1
+	if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
+	else
+		return ..()
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/Life()
+	. = ..()
+	if(stat == CONSCIOUS)
+		if((prob(3) && has_calf))
+			has_calf++
+		if(has_calf > 10)
+			has_calf = 0
+			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			new young_type(get_turf(src))
+
+		if(is_calf)
+			if((prob(3)))
+				is_calf = 0
+				udder = new()
+				if(name == "bighorn lamb")
+					name = "bighorn"
+				else
+					name = "bighorn"
+				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+		else
+			udder.generateMilk()
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
+	name = "bighoner lamb"
+	resize = 0.7
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
+	. = ..()
+	resize = 0.7
+	update_transform()

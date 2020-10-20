@@ -33,6 +33,11 @@
 	. = ..()
 	update_desc()
 
+/obj/item/stack/spacecash/random
+	//Used to generate a random stack of dosh
+	var/min_dollars = 1
+	var/max_dollars = 500
+
 /obj/item/stack/spacecash/c1
 	icon_state = "spacecash"
 	singular_name = "one credit bill"

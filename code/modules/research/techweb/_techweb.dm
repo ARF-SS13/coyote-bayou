@@ -59,9 +59,25 @@
 	var/datum/techweb_node/alientech/Node = new()
 	research_node(Node, TRUE)
 
-/datum/techweb/science	//Global science techweb for RND consoles.
+/datum/techweb/unknown	//Global science techweb for RND consoles.
+	id = "UNKNOWN"
+	organization = "Unknown network"
+
+/datum/techweb/science	//science tech channel
 	id = "SCIENCE"
-	organization = "Nanotrasen"
+	organization = "Vault Tech"
+
+/datum/techweb/bos	//BOS tech "channel"
+	id = "BOS"
+	organization = "Brotherhood of Steel"
+
+/datum/techweb/enclave	//Enclave tech "channel"
+	id = "ENCLAVE"
+	organization = "Enclave"
+
+/datum/techweb/followers //Followers tech "channel"
+	id = "FOLLOWERS"
+	organization = "Followers of the Apocalypse"
 
 /datum/techweb/bepis	//Should contain only 1 BEPIS tech selected at random.
 	id = "EXPERIMENTAL"

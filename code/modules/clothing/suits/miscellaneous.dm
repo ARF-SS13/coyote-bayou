@@ -1200,3 +1200,20 @@
 	throw_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/holidaypriest
+	name = "holiday priest"
+	desc = "This is a nice holiday, my son."
+	icon_state = "holidaypriest"
+	item_state = "w_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/nun
+	name = "nun robe"
+	desc = "Maximum piety."
+	icon_state = "nun"
+	item_state = "nun"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)

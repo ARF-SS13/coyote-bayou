@@ -418,3 +418,29 @@
 
 /obj/item/ammo_box/tube/a357/empty
 	start_empty = 1
+
+//Boxes
+//.357 Magnum, .38 Special
+/obj/item/ammo_box/a357box
+	name = "ammo box (.357 Magnum FMJ)"
+	icon_state = "357box"
+	ammo_type = /obj/item/ammo_casing/a357
+	max_ammo = 30
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a357box/jhp
+	name = "ammo box (.357 Magnum JHP)"
+	ammo_type = /obj/item/ammo_casing/a357/jhp
+
+/obj/item/ammo_box/a357box/swc
+	name = "ammo box (.357 Magnum SWC)"
+	ammo_type = /obj/item/ammo_casing/a357/swc
+
+/obj/item/ammo_box/box38
+	name = "ammo box (.38 Spl)"
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/a357/c38
+	max_ammo = 30
+	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
+	w_class = WEIGHT_CLASS_NORMAL

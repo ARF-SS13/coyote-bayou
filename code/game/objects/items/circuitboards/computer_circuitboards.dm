@@ -424,3 +424,7 @@
 /obj/item/circuitboard/computer/vault113_control
 	name = "Vault 113 Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/vault113elevator
+
+/obj/item/circuitboard/computer/bos
+	name = "Brotherhood Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/bos

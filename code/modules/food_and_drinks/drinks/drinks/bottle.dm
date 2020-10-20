@@ -760,5 +760,12 @@
 	icon_state = "selling_bottle"
 	desc = "Ironic name as the fruit used is from ashy plants."
 
+/obj/item/reagent_containers/food/drinks/bottle/nukashine
+	name = "Nukashine"
+	desc = "You've really hit rock bottom now... yet theres nothing like homebrew nukashine in times like these!"
+	icon_state = "nukashine"
+	list_reagents = list("nukashine" = 100)
+
+
 
 

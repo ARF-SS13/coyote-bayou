@@ -44,6 +44,7 @@ Nothing else in the console has ID requirements.
 	var/searchstring = ""
 	var/searchtype = ""
 	var/ui_mode = RDCONSOLE_UI_MODE_NORMAL
+	var/matching_designs = null
 
 	var/research_control = TRUE
 
@@ -1154,3 +1155,25 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"
+
+//lettern's lazy way of adding more channels
+/obj/machinery/computer/rdconsole/core/bos/Initialize()
+	. = ..()
+	stored_research = SSresearch.bos_tech //lettern, note about this
+	stored_research.consoles_accessing[src] = TRUE
+	matching_designs = list()
+	SyncRDevices()
+
+/obj/machinery/computer/rdconsole/core/vault/Initialize()
+	. = ..()
+	stored_research = SSresearch.science_tech //lettern, note about this
+	stored_research.consoles_accessing[src] = TRUE
+	matching_designs = list()
+	SyncRDevices()
+
+/obj/machinery/computer/rdconsole/core/followers/Initialize()
+	. = ..()
+	stored_research = SSresearch.followers_tech
+	stored_research.consoles_accessing[src] = TRUE
+	matching_designs = list()
+	SyncRDevices()

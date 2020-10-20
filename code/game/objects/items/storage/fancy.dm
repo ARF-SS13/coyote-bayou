@@ -123,6 +123,57 @@
 /obj/item/storage/fancy/candle_box/attack_self(mob_user)
 	return
 
+/obj/item/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug rounds, designed for riot shotguns."
+	icon = 'icons/obj/ammo.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	var/icon_type = "l"
+	var/spawn_type = /obj/item/ammo_casing/shotgun
+	var/fancy_open = FALSE
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	for(var/i = 1 to STR.max_items)
+		new spawn_type(src)
+
+/obj/item/storage/box/slugshot/update_icon()
+	if(fancy_open)
+		icon_state = "[icon_type]box[contents.len]"
+//		materials = list(MAT_METAL = (contents.len * 1000) + 2000)
+	else
+		icon_state = "[icon_type]box"
+
+/obj/item/storage/box/slugshot/examine(mob/user)
+	..()
+	if(fancy_open)
+		if(length(contents) == 1)
+			to_chat(user, "There is one [icon_type] left.")
+		else
+			to_chat(user, "There are [contents.len <= 0 ? "no" : "[contents.len]"] [icon_type]s left.")
+
+/obj/item/storage/box/slugshot/attack_self(mob/user)
+	fancy_open = !fancy_open
+	update_icon()
+	. = ..()
+
+/obj/item/storage/box/slugshot/Exited()
+	. = ..()
+	fancy_open = TRUE
+	update_icon()
+
+/obj/item/storage/box/slugshot/Entered()
+	. = ..()
+	fancy_open = TRUE
+	update_icon()
+
+/obj/item/storage/box/slugshot/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 14
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun))
+
+
 ////////////
 //CIG PACK//
 ////////////
@@ -461,3 +512,56 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/beanbag))
+
+
+/obj/item/storage/fancy/magnumshot
+	name = "box of magnum buckshot shotgun shots"
+	desc = "A box full of lethal magnum buckshot rounds, designed for hunting shotguns."
+	icon = 'icons/obj/ammo.dmi'
+//	illustration = null
+	w_class = WEIGHT_CLASS_SMALL
+	icon_type = "g"
+	spawn_type = /obj/item/ammo_casing/shotgun/magnumshot
+	fancy_open = FALSE
+
+/obj/item/storage/fancy/magnumshot/PopulateContents()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	for(var/i = 1 to STR.max_items)
+		new spawn_type(src)
+
+/obj/item/storage/fancy/magnumshot/update_icon()
+	if(fancy_open)
+		icon_state = "[icon_type]box[contents.len]"
+		custom_materials = list()
+	else
+		icon_state = "[icon_type]box"
+
+/obj/item/storage/fancy/magnumshot/examine(mob/user)
+	..()
+	if(fancy_open)
+		if(length(contents) == 1)
+			to_chat(user, "There is one [icon_type] left.")
+		else
+			to_chat(user, "There are [contents.len <= 0 ? "no" : "[contents.len]"] [icon_type]s left.")
+
+/obj/item/storage/fancy/magnumshot/attack_self(mob/user)
+	fancy_open = !fancy_open
+	update_icon()
+	. = ..()
+
+/obj/item/storage/fancy/magnumshot/Exited()
+	. = ..()
+	fancy_open = TRUE
+	update_icon()
+
+/obj/item/storage/fancy/magnumshot/Entered()
+	. = ..()
+	fancy_open = TRUE
+	update_icon()
+
+/obj/item/storage/fancy/magnumshot/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 14
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/magnumshot))
+

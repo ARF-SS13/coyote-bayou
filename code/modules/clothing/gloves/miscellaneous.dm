@@ -12,6 +12,13 @@
 	strip_mod = 0.9
 	custom_price = PRICE_ALMOST_CHEAP
 
+/obj/item/clothing/gloves/Biker
+	name = "future gloves"
+	desc = "Gloves in a futuristic color."
+	icon_state = "biker_gloves"
+	item_state = "biker_gloves"
+	transfer_prints = FALSE
+
 /obj/item/clothing/gloves/fingerless/pugilist
 	name = "armwraps"
 	desc = "A series of armwraps. Makes you pretty keen to start punching people."

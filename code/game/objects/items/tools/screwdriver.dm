@@ -159,3 +159,30 @@
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.2
 	random_color = FALSE
+
+//DR2 TOOLS
+
+/obj/item/screwdriver/crude
+	name = "crude screwdriver"
+	desc = "A piece of junk metal sharpened to a point, worthwile as a shiv or crude turning device."
+	icon_state = "crudescrew"
+	item_state = "crudescrew"
+	toolspeed = 6
+	random_color = FALSE
+
+/obj/item/screwdriver/basic
+	name = "basic screwdriver"
+	desc = "A refined tip of a jerry-rigged screwdriver, pretty accurate."
+	icon_state = "basicscrew"
+	item_state = "basicscrew"
+	toolspeed = 2
+	random_color = FALSE
+
+/obj/item/screwdriver/hightech
+	name = "advanced drill"
+	desc = "An extremely precise micro-mechanised saturnite drill, capable of infinite force and pressure."
+	icon_state = "advancedscrew"
+	item_state = "advancedscrew"
+	usesound = 'sound/items/pshoom.ogg'
+	toolspeed = 0.1
+	random_color = FALSE

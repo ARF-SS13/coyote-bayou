@@ -126,3 +126,26 @@
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'
 	toolspeed = 0.2
+
+//DR2 TOOLS
+
+/obj/item/wrench/crude
+	name = "crude wrench"
+	desc = "A bent bar, finnicky to use and requires a lot of effort for consant adjustments, better than your bare hand though."
+	icon_state = "crudewrench"
+	item_state = "crudewrench"
+	toolspeed = 6
+
+/obj/item/wrench/basic
+	name = "basic wrench"
+	desc = "A pipe with an old, wrench head on it."
+	icon_state = "basicwrench"
+	item_state = "basicwrench"
+	toolspeed = 2
+
+/obj/item/wrench/hightech
+	name = "advanced locking device"
+	desc = "An advanced locking device that uses micro-mechanisms to grasp on and tighten objects with extreme torque accuracy and speed."
+	icon_state = "advancedwrench"
+	item_state = "advancedwrench"
+	toolspeed = 0.1

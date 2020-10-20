@@ -462,3 +462,33 @@
 /obj/structure/flora/rock/pile/largejungle/Initialize()
 	. = ..()
 	icon_state = "[initial(icon_state)][rand(1,3)]"
+
+/obj/item/twohanded/required/kirbyplants/photosynthetic
+	name = "photosynthetic potted plant"
+	desc = "A bioluminescent plant."
+	icon_state = "plant-09"
+	light_color = "#2cb2e8"
+	light_range = 3
+
+/obj/item/twohanded/required/kirbyplants/random
+	icon = 'icons/obj/flora/_flora.dmi'
+	icon_state = "random_plant"
+	var/list/static/states
+
+/obj/item/twohanded/required/kirbyplants/random/Initialize()
+	. = ..()
+	icon = 'icons/obj/flora/plants.dmi'
+	if(!states)
+		generate_states()
+	icon_state = pick(states)
+
+/obj/item/twohanded/required/kirbyplants/random/proc/generate_states()
+	states = list()
+	for(var/i in 1 to 25)
+		var/number
+		if(i < 10)
+			number = "0[i]"
+		else
+			number = "[i]"
+		states += "plant-[number]"
+	states += "applebush"

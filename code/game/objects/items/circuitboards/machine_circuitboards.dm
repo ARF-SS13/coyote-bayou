@@ -1155,3 +1155,6 @@
 /obj/item/circuitboard/machine/autolathe/constructionlathe
 	name = "Workshop (Machine Board)"
 	build_path = /obj/machinery/autolathe/constructionlathe
+
+/obj/item/circuitboard/machine/emitter/siege
+	name = "Siege Cannon (Machine Board)"

@@ -146,3 +146,30 @@
 	icon_state = "cutters"
 	toolspeed = 0.2
 	random_color = FALSE
+
+//DR2 TOOLS
+
+/obj/item/wirecutters/crude
+	name = "crude cutters"
+	desc = "Literally just a piece of bent and scraped junk metal, enough to cut something, but extremly unwieldly and worthless. Mainly just ripping with weight behind it."
+	item_state = "crudewire"
+	icon_state = "crudewire"
+	toolspeed = 6
+	random_color = FALSE
+
+/obj/item/wirecutters/basic
+	name = "basic cutters"
+	desc = "Almost sharpened cutters, maded of sharpened rusted metal and multiple parts."
+	icon_state = "basicwire"
+	item_state = "basicwire"
+	toolspeed = 2
+	random_color = FALSE
+
+/obj/item/wirecutters/hightech
+	name = "advanced snapping device"
+	desc = "A mechanically assisted snapping device, capable of cutting anything."
+	icon_state = "advancedwire"
+	item_state = "advancedwire"
+	toolspeed = 0.1
+	sharpness = IS_SHARP
+	random_color = FALSE

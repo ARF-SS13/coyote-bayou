@@ -22,7 +22,7 @@
 		M.grabbedby(src)
 		M.drop_all_held_items()
 		M.stop_pulling()
-
+/*
 	else if(get_dist(src, M) == 0)
 		if(refactory_period > 0)
 			..()
@@ -125,7 +125,7 @@
 	playsound(loc, "honk/sound/interactions/slap.ogg", 70, 1, -1)
 	visible_message("<span class='danger'>\The [src]</b> slaps \the [M] right on the ass!</span>", \
 			"<span class='userdanger'>\The [src]</b> slaps \the [M] right on the ass!</span>", null, COMBAT_MESSAGE_RANGE)
-
+*/
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)
 	if(W)

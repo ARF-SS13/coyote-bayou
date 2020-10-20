@@ -105,3 +105,25 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.2
+
+//DR2 TOOLS
+
+/obj/item/crowbar/crude
+	name = "crude crowbar"
+	desc = "A flattened piece of rusted pipe, barely enough to squeeze under most things, but helps get a firm grip."
+	icon_state = "crudebar"
+	toolspeed = 6
+
+/obj/item/crowbar/basic
+	name = "basic crowbar"
+	desc = "A flattened and reinforced piece of rebar, bent a to a firm point and pretty flat."
+	icon_state = "basicbar"
+	toolspeed = 2
+
+/obj/item/crowbar/hightech
+	name = "advanced prying device"
+	desc = "A mechanically assited prying device, capable of dislodging basically anything."
+	icon_state = "advancedbar"
+	item_state = "crowbaradvance"
+	usesound = 'sound/items/jaws_pry.ogg'
+	toolspeed = 0.1

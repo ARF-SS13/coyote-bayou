@@ -107,3 +107,11 @@
 	item_state = "engi_dep_jacket"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+
+/obj/item/clothing/suit/toggle/labcoat/fieldscribe
+	name = "fieldscribe suit"
+	desc = "A suit that protects against the weather, and looks stylish, but not much else."
+	icon_state = "fieldscribe"
+	body_parts_covered = CHEST|ARMS
+	allowed = list(/obj/item/gun)
+	armor = list("melee" = 15, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

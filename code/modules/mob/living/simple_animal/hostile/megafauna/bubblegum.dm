@@ -242,4 +242,10 @@ Difficulty: Hard
 		return 1
 	return 0
 
+
+/obj/effect/decal/cleanable/blood/bubblegum
+	bloodiness = 0
+
+/obj/effect/decal/cleanable/blood/bubblegum/can_bloodcrawl_in()
+	return TRUE
 #undef MEDAL_PREFIX

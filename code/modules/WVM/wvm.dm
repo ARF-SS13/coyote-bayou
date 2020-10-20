@@ -596,11 +596,11 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Reagent Scanner",	/obj/item/cartridge/chemistry,						50),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Health Scanner",	/obj/item/cartridge/medical,						50),
 		new /datum/data/wasteland_equipment("E.N.H.A.N.C.E. Your Pip-boy: Signaler",	/obj/item/cartridge/signal,								50),
-		
+
 
 		)
-		
-		
+
+
 /obj/machinery/mineral/wasteland_vendor/special
 	name = "Wasteland Vending Machine - Special"
 	icon_state = "liberationstation_idle"
@@ -656,7 +656,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Manual mining scanner",	/obj/item/mining_scanner,									25),
 		new /datum/data/wasteland_equipment("Automatic mining scanner",	/obj/item/t_scanner/adv_mining_scanner/lesser,				200),
 		new /datum/data/wasteland_equipment("Advanced mining scanner",	/obj/item/t_scanner/adv_mining_scanner,						300),
-		new /datum/data/wasteland_equipment("Proto-kinetic crusher",	/obj/item/twohanded/required/kinetic_crusher,				500),
+		new /datum/data/wasteland_equipment("Proto-kinetic crusher",	/obj/item/kinetic_crusher,				500),
 		new /datum/data/wasteland_equipment("ORM Board",				/obj/item/circuitboard/machine/ore_redemption,				150)
 		)
 

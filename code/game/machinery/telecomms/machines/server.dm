@@ -102,6 +102,36 @@
 	freq_listening = list()
 	autolinkers = list("common")
 
+/obj/machinery/telecomms/server/presets/vault
+	id = "Vault Server"
+	freq_listening = list(FREQ_VAULT)
+	autolinkers = list("vault")
+
+/obj/machinery/telecomms/server/presets/ncr
+	id = "NCR Server"
+	freq_listening = list(FREQ_NCR)
+	autolinkers = list("ncr")
+
+/obj/machinery/telecomms/server/presets/bos
+	id = "BOS Server"
+	freq_listening = list(FREQ_BOS)
+	autolinkers = list("bos")
+
+/obj/machinery/telecomms/server/presets/enclave
+	id = "Enclave Server"
+	freq_listening = list(FREQ_ENCLAVE)
+	autolinkers = list("enclave")
+
+/obj/machinery/telecomms/server/presets/den
+	id = "Town Server"
+	freq_listening = list(FREQ_DEN)
+	autolinkers = list("town")
+
+/obj/machinery/telecomms/server/presets/legion
+	id = "Legion Server"
+	freq_listening = list(FREQ_LEGION)
+	autolinkers = list("legion")
+
 //Common and other radio frequencies for people to freely use
 /obj/machinery/telecomms/server/presets/common/Initialize()
 	. = ..()

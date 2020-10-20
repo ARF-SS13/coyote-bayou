@@ -28,6 +28,68 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 
+/obj/item/clothing/under/sundress
+	name = "sundress"
+	desc = "Makes you want to frolic in a field of daisies."
+	icon_state = "sundress"
+	item_state = "sundress"
+	item_color = "sundress"
+	body_parts_covered = CHEST|GROIN
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/mailman
+	name = "mailman's jumpsuit"
+	desc = "<i>'Special delivery!'</i>"
+	icon_state = "mailman"
+	item_state = "b_suit"
+	item_color = "mailman"
+
+/obj/item/clothing/under/burial
+	name = "burial garments"
+	desc = "Traditional burial garments from the early 22nd century."
+	icon_state = "burial"
+	item_state = "burial"
+	item_color = "burial"
+	has_sensor = NO_SENSORS
+
+/obj/item/clothing/under/stripeddress
+	name = "striped dress"
+	desc = "Fashion in space."
+	icon_state = "striped_dress"
+	item_state = "stripeddress"
+	item_color = "striped_dress"
+	fitted = FEMALE_UNIFORM_FULL
+	can_adjust = FALSE
+
+/obj/item/clothing/under/singery
+	name = "yellow performer's outfit"
+	desc = "Just looking at this makes you want to sing."
+	icon_state = "ysing"
+	item_state = "ysing"
+	item_color = "ysing"
+	fitted = NO_FEMALE_UNIFORM
+	alternate_worn_layer = ABOVE_SHOES_LAYER
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/clown/sexy
+	name = "sexy-clown suit"
+	desc = "It makes you look HONKable!"
+	icon_state = "sexyclown"
+	item_state = "sexyclown"
+	item_color = "sexyclown"
+	body_parts_covered = CHEST|GROIN|LEGS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
+
+/obj/item/clothing/under/assistantformal
+	name = "assistant's formal uniform"
+	desc = "An assistant's formal-wear. Why an assistant needs formal-wear is still unknown."
+	icon_state = "assistant_formal"
+	item_state = "gy_suit"
+	item_color = "assistant_formal"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/rank/prisoner/skirt
 	name = "prison jumpskirt"
 	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."

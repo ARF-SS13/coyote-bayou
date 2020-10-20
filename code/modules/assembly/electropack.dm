@@ -9,7 +9,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_HUGE
-	materials = list(MAT_METAL=10000, MAT_GLASS=2500)
+	custom_materials = list()
 	var/on = TRUE
 	var/shock_cooldown = 0
 	code = 2
@@ -46,8 +46,8 @@
 
 		user.put_in_hands(A)
 		A.add_fingerprint(user)
-		if(item_flags & NODROP)
-			A.item_flags |= NODROP
+//		if(item_flags)// & NODROP)
+//			A.item_flags// |= NODROP
 	else
 		return ..()
 
@@ -101,7 +101,7 @@ Code:
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollar"
 	item_state = "slavecollar"
-	alternate_worn_icon = 'icons/mob/neck.dmi'
+//	alternate_worn_icon = 'icons/mob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK  //CEASE THE POCKET SHOCKER MEMES | Pocket shocker meme is hilarious. - Nappist
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
@@ -126,9 +126,9 @@ Code:
 			lock = TRUE
 		if(!ismob(src.loc))
 			return
-		var/mob/M = src.loc
-		if(M.get_item_by_slot(SLOT_NECK) == src)
-			item_flags = NODROP
+//		var/mob/M = src.loc
+//		if(M.get_item_by_slot(SLOT_NECK) == src)
+//			item_flags = NODROP
 	return
 
 /obj/item/assembly/signaler/electropack/shockcollar/attack_hand(mob/user)
@@ -197,7 +197,7 @@ Code:
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollarb"
 	item_state = "slavecollarb"
-	alternate_worn_icon = 'icons/mob/neck.dmi'
+//	alternate_worn_icon = 'icons/mob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
@@ -221,9 +221,9 @@ Code:
 		lock = TRUE
 		if(!ismob(src.loc))
 			return
-		var/mob/M = src.loc
-		if(M.get_item_by_slot(SLOT_NECK) == src)
-			item_flags = NODROP
+//		var/mob/M = src.loc
+//		if(M.get_item_by_slot(SLOT_NECK) == src)
+//			item_flags = NODROP
 
 /obj/item/assembly/signaler/electropack/boomcollar/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
@@ -278,3 +278,7 @@ Code:
 /obj/item/key/bcollar
 	name = "Explosive Collar Key"
 	desc = "A small key designed to work with explosive collars."
+
+/obj/item/key/scollar
+	name = "Shock Collar Key"
+	desc = "A small key designed to work with shock collars."

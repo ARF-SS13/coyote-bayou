@@ -48,6 +48,20 @@
 	component_type = /datum/component/storage/concrete/bluespace/bag_of_holding
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
+/obj/item/storage/backpack/spearquiver
+	name = "sturdy quiver"
+	desc = "A leather and iron quiver designed to hold throwing spears and bolas."
+	icon_state = "spearquiver"
+	item_state = "spearquiver"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+
+/obj/item/storage/backpack/spearquiver/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 12
+	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
+
+
 /obj/item/storage/backpack/holding/satchel
 	name = "satchel of holding"
 	desc = "A satchel that opens into a localized pocket of Blue Space."

@@ -278,7 +278,7 @@
 	name = "circuitry telescreen"
 	desc = "Used for watching the other eggheads from the safety of the circuitry lab."
 	network = list("rd")
-	
+
 /obj/machinery/computer/security/telescreen/ce
 	name = "\improper Chief Engineer's telescreen"
 	desc = "Used for watching the engine, telecommunications and the minisat."
@@ -342,3 +342,12 @@
 	for(var/i in network)
 		network -= i
 		network += "[idnum][i]"
+
+/obj/machinery/computer/security/bos
+	name = "brootherhood bunker camera terminal"
+	desc = "Used to access the various cameras inside the bunker"
+	icon_state = "terminal"
+	icon_keyboard = "terminal_key"
+	icon_screen = "terminal_on_alt"
+	network = list("BoS")
+	circuit = /obj/item/circuitboard/computer/bos

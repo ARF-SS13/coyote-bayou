@@ -122,7 +122,7 @@
 				reagents.remove_any(min(0.5, nutridrain))
 			else
 				reagents.remove_any(nutridrain)
-			
+
 			// Lack of nutrients hurts non-weeds
 			if(reagents.total_volume <= 0 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/weed_hardy))
 				adjustHealth(-rand(1,3))
@@ -493,7 +493,7 @@
 		if(visi_msg)
 			visible_message("<span class='notice'>[visi_msg].</span>")
 
-		
+
 		for(var/obj/machinery/hydroponics/H in trays)
 		//cause I don't want to feel like im juggling 15 tamagotchis and I can get to my real work of ripping flooring apart in hopes of validating my life choices of becoming a space-gardener
 			//This was originally in apply_chemicals, but due to apply_chemicals only holding nutrients, we handle it here now.
@@ -667,7 +667,7 @@
 			idle_power_usage = 0
 			self_sustaining = FALSE
 	update_icon()
-	
+
 /// Tray Setters - The following procs adjust the tray or plants variables, and make sure that the stat doesn't go out of bounds.///
 /obj/machinery/hydroponics/proc/adjustWater(adjustamt)
 	waterlevel = clamp(waterlevel + adjustamt, 0, maxwater)
@@ -718,3 +718,32 @@
 
 /obj/machinery/hydroponics/soil/CtrlClick(mob/user)
 	return //Dirt doesn't have electricity, last I checked.
+
+///////////////////////////////////////////////////////////////////////////////
+/obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
+	name = "soil"
+	desc = "A patch of dirt."
+	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon_state = "soil"
+	circuit = null
+	density = FALSE
+	use_power = NO_POWER_USE
+	flags_1 = NODECONSTRUCT_1
+	unwrenchable = FALSE
+
+//obj/machinery/hydroponics/soil/update_icon_hoses()
+//	return // Has no hoses
+
+/obj/machinery/hydroponics/soil/update_icon_lights()
+	return // Has no lights
+
+/obj/machinery/hydroponics/soil/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/shovel) && !istype(O, /obj/item/shovel/spade)) //Doesn't include spades because of uprooting plants
+		to_chat(user, "<span class='notice'>You clear up [src]!</span>")
+		qdel(src)
+	else
+		return ..()
+
+/obj/machinery/hydroponics/soil/crafted
+	waterlevel = 0
+//	nutrilevel = 0

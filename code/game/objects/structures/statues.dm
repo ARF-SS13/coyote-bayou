@@ -283,3 +283,8 @@
 	name = "snowman"
 	desc = "Several lumps of snow put together to form a snowman."
 	icon_state = "snowman"
+
+/obj/structure/statue/sandstone/mars
+	name = "statue of Mars"
+	desc = "A statue dedicated to Legion's God of War."
+	icon_state = "marsred"

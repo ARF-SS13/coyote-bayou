@@ -13,6 +13,13 @@ SUBSYSTEM_DEF(research)
 	var/datum/techweb_node/error_node/error_node	//These two are what you get if a node/design is deleted and somehow still stored in a console.
 	var/datum/design/error_design/error_design
 
+	var/datum/techweb/bos/bos_tech //BoS starting tech
+	var/datum/techweb/enclave/enclave_tech //Could probably be used if enclave ever gets implemented as a faction
+	var/datum/techweb/unknown/unknown_tech //Global tech; all newly built consoles, departmental crafters, imprinters and servers will use this
+	var/datum/techweb/followers/followers_tech //Followers starting tech
+
+
+
 	//ERROR LOGGING
 	var/list/invalid_design_ids = list()		//associative id = number of times
 	var/list/invalid_node_ids = list()			//associative id = number of times
@@ -314,6 +321,11 @@ SUBSYSTEM_DEF(research)
 	autosort_categories()
 	error_design = new
 	error_node = new
+
+	bos_tech = new /datum/techweb/bos
+	enclave_tech = new /datum/techweb/enclave
+	unknown_tech = new /datum/techweb/unknown
+	followers_tech = new /datum/techweb/followers
 
 	for(var/A in subtypesof(/obj/item/seeds))
 		var/obj/item/seeds/S = A

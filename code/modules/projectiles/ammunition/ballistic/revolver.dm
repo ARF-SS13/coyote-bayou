@@ -106,3 +106,19 @@
 	name = ".45-70 SWC bullet casing"
 	desc = "A .45-70 semi-wadcutter bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c4570/swc
+
+/obj/item/ammo_casing/a357/jhp
+	name = ".357 magnum JHP bullet casing"
+	desc = "A .357 magnum jacketed hollow point bullet casing."
+	caliber = "357"
+	projectile_type = /obj/item/projectile/bullet/a357/jhp
+
+/obj/item/ammo_casing/a357/swc
+	name = ".357 magnum SWC bullet casing"
+	desc = "A .357 magnum semi-wadcutter bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a357/swc
+
+/obj/item/ammo_casing/a357/c38
+	name = ".38 Spl. bullet casing"
+	desc = "A .38 special bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a38

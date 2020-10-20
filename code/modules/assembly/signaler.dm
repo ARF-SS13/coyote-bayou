@@ -18,6 +18,12 @@
 	var/suicide_mob
 	var/hearing_range = 1
 
+/obj/item/assembly/signaler/advanced
+	name = "advanced signaling device"
+	desc = "Used to remotely activate devices. This one can store five convenient signals at once!"
+	custom_materials = list()
+//	advanced = 1
+
 /obj/item/assembly/signaler/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] eats \the [src]! If it is signaled, [user.p_they()] will die!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
