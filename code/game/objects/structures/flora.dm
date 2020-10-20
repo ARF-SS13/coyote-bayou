@@ -343,6 +343,10 @@
 		states += "plant-[number]"
 	states += "applebush"
 
+/obj/item/twohanded/required/kirbyplants/dead
+	name = "RD's potted plant"
+	desc = "A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says \"Y'all come back now, y'hear?\"\nIt doesn't look very healthy..."
+	icon_state = "plant-25"
 
 /obj/item/kirbyplants/dead
 	name = "RD's potted plant"

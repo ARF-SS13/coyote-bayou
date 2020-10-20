@@ -852,6 +852,47 @@
 	desc = "A poster advertising the Vault-Tec Corporation. Vault-Tec: Revolutionizing safety for an uncertain future!"
 	icon_state = "poster51"
 
+/obj/structure/sign/poster/contraband/pinup_ride
+	name = "Pin-up - Sweet Ride"
+	desc = "A pin-up of a woman riding a rocket while holding two toy guns."
+	icon_state = "poster52"
+
+/obj/structure/sign/poster/contraband/pinup_couch
+	name = "Pin-up - Lounging"
+	desc = "A pin-up of a woman in revealing lingerie sprawled across a couch."
+	icon_state = "poster53"
+
+/obj/structure/sign/poster/contraband/pinup_bed
+	name = "Pin-up - Bed Time"
+	desc = "A pin-up of a woman holding a book while laying on a large pillow."
+	icon_state = "poster54"
+
+/obj/structure/sign/poster/contraband/pinup_pink
+	name = "Pin-up - Just Peachy"
+	desc = "A pin-up of a woman with bright pink clothing and a small crown in a suggestive pose."
+	icon_state = "poster55"
+
+/obj/structure/sign/poster/contraband/pinup_funk
+	name = "Pin-up - Funk"
+	desc = "A pin-up of an attractive woman, with the word 'funk' written over her. On second thought, that might not be 'funk'..."
+	icon_state = "poster56"
+
+/obj/structure/sign/poster/contraband/pinup_topless
+	name = "Pin-up - Topless Times"
+	desc = "A pin-up of a woman without a shirt, freed from the restraints of clothing."
+	icon_state = "poster57"
+
+/obj/structure/sign/poster/contraband/pinup_shower
+	name = "Pin-up - Take a Shower"
+	desc = "A pin-up of a woman peeking out from behind a curtain, it looks like she's inviting you in with her."
+	icon_state = "poster58"
+
+/obj/structure/sign/poster/contraband/pinup_vixen
+	name = "Pin-up - Space Vixen"
+	desc = "A pin-up of a woman in a space suit that's definately NOT spaceproof."
+	icon_state = "poster59"
+
+
 #undef PLACE_SPEED
 /*
 /obj/effect/landmark/poster_spawner/ncr

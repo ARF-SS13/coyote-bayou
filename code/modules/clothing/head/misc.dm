@@ -494,3 +494,19 @@
 	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
+
+//Fallout 13
+
+/obj/item/clothing/head/f13/police
+	name = "pre-War police hat"
+	desc = "It's the police hat of dark blue in color with a silver colored badge on the frontside.<br>The badge is inscripted with the words SPECIAL and POLICE."
+	icon_state = "retropolice"
+	item_state = "fedora"
+	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 25, bio = 0, rad = 0)
+	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/f13/stormchaser
+	name = "stormchaser hat"
+	icon_state = "stormchaser"
+	item_state = "fedora"
+	desc = "Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
