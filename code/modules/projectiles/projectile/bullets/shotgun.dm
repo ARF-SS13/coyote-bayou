@@ -139,3 +139,8 @@
 	name = "incapacitating pellet"
 	damage = 1
 	stamina = 6
+
+/obj/item/projectile/bullet/pellet/magnum_buckshot
+	name = "magnum buckshot pellet"
+	damage = 11.5
+	armour_penetration = 7

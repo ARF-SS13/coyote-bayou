@@ -894,7 +894,18 @@
 
 
 #undef PLACE_SPEED
-/*
+
+/obj/effect/landmark/poster_spawner
+	icon = 'icons/obj/contraband.dmi'
+	var/list/posters = list()
+
+/obj/effect/landmark/poster_spawner/Initialize()
+	. = ..()
+	var/obj/structure/sign/poster/P = pick(posters)
+	world << "[P]"
+	new P(loc)
+	qdel()
+
 /obj/effect/landmark/poster_spawner/ncr
 	posters = list(/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy, /obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded)
 
@@ -906,4 +917,3 @@
 		/obj/structure/sign/poster/contraband/pinup_bed, /obj/structure/sign/poster/contraband/pinup_pink,
 		/obj/structure/sign/poster/contraband/pinup_funk, /obj/structure/sign/poster/contraband/pinup_topless,
 		/obj/structure/sign/poster/contraband/pinup_shower, /obj/structure/sign/poster/contraband/pinup_vixen)
-*/

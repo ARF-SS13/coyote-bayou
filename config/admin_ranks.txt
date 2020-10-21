@@ -17,6 +17,7 @@
 # BEGIN_KEYWORDS
 # +ADMIN = general admin tools, verbs etc
 # +FUN = events, other event-orientated actions. Access to the fun secrets in the secrets panel.
+# +DJ = A tool that functions like +SOUND just with a couple changes and a volume selector.
 # +BAN = the ability to ban, jobban and fullban
 # +STEALTH = the ability to stealthmin (make yourself appear with a fake name to everyone but other admins
 # +POSSESS = the ability to possess objects
@@ -33,15 +34,17 @@
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 # END_KEYWORDS
 
-Admin Observer	= -AUTOLOGIN
-Moderator		= +ADMIN
-Admin Candidate	= +@
-Trial Admin		= +@ +SPAWN +VAREDIT +BAN
-Badmin			= +@ +POSSESS +POLL +BUILDMODE +SERVER +FUN
-Game Admin		= +@ +STEALTH +SOUNDS +DEBUG
-Game Master		= +EVERYTHING *EVERYTHING
-Lazy Master 	= +EVERYTHING -AUTOLOGIN *EVERYTHING
-
-Host			= +EVERYTHING *EVERYTHING
-
-Coder			= +DEBUG +VAREDIT +SERVER +SPAWN +POLL -AUTOLOGIN
+#Previous ranks on archive incase someone shits the proverbial bed. (once everyone has been switched over to the new ranks you're more than welcome to blitz these to reduce bloat)
+Mentor				= +ADMIN
+Head Mentor			= +@
+Trial Mod			= +ADMIN
+Moderator			= +ADMIN +FUN +BAN +SPAWN +POSSESS +BUILD +VAREDIT
+Head Moderator		= +@
+Admin				= +EVERYTHING *EVERYTHING
+Administrator		= +@
+Oversight			= +EVERYTHING *EVERYTHING
+Game Master			= +EVERYTHING *EVERYTHING
+Head Coder 			= +EVERYTHING *EVERYTHING
+Community Liaison	= +EVERYTHING *EVERYTHING
+Head of Staff		= +EVERYTHING *EVERYTHING
+Host 				= +EVERYTHING *EVERYTHING

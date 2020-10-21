@@ -28,6 +28,34 @@
 
 	update_cut_status()
 
+/obj/structure/fence/handrail_end
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+
+/obj/structure/fence/handrail_corner
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_corner"
+	cuttable = FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail"
+	cuttable= FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail_end/non_dense
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+	density = FALSE
+	layer = ABOVE_MOB_LAYER
+
 /obj/structure/fence/examine(mob/user)
 	. = ..()
 	switch(hole_size)

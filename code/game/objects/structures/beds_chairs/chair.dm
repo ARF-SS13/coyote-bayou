@@ -719,6 +719,31 @@
 /obj/structure/chair/left/proc/GetOverlay()
 	return mutable_appearance('icons/obj/chairs.dmi', "booth_leftend_overlay")
 
+/obj/structure/chair/middle
+	name = "booth"
+	desc = "A diner-styled middle booth."
+	icon_state = "booth_middle"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	item_chair = null
+	var/mutable_appearance/overlay
+
+/obj/structure/chair/middle/proc/update_overlay()
+		add_overlay(overlay)
+
+/obj/structure/chair/middle/Initialize()
+	overlay = GetOverlay()
+	overlay.layer = ABOVE_ALL_MOB_LAYER
+	return ..()
+
+/obj/structure/chair/middle/Destroy()
+	QDEL_NULL(overlay)
+	return ..()
+
+/obj/structure/chair/middle/proc/GetOverlay()
+	return mutable_appearance('icons/obj/chairs.dmi', "booth_middle_overlay")
+
+
 /obj/structure/chair/stool/retro/tan
 	name = "bar stool"
 	icon_state = "nvbar_tan"
@@ -752,3 +777,14 @@
 
 /obj/structure/chair/right/proc/GetOverlay()
 	return mutable_appearance('icons/obj/chairs.dmi', "booth_rightend_overlay")
+
+
+/obj/structure/chair/stool/retro/backed
+	name = "bar stool"
+	icon_state = "nv_backed"
+	item_chair = /obj/item/chair/stool/retro/backed
+
+/obj/item/chair/stool/retro/backed
+	icon_state = "nv_backed_toppled"
+	item_state = "nv_backed"
+	origin_type = /obj/structure/chair/stool/retro/backed

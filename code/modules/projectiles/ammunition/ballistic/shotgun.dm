@@ -164,3 +164,11 @@ obj/item/ammo_casing/shotgun/executioner
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
+
+/obj/item/ammo_casing/shotgun/magnumshot
+	name = "12 gauge magnum buckshot shell"
+	desc = "A 12 gauge magnum buckshot shell."
+	icon_state = "magshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/magnum_buckshot
+	pellets = 7
+	variance = 15

@@ -21,6 +21,11 @@
 	desc = "Designed to quickly reload revolvers. Usage of these rounds will constitute a war crime in your area."
 	ammo_type = /obj/item/ammo_casing/a357/dumdum
 
+/obj/item/ammo_box/c10mm/jhp
+	name = "ammo box (10mm JHP)"
+	ammo_type = /obj/item/ammo_casing/c10mm/hp
+
+
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 rubber)"
 	desc = "Designed to quickly reload revolvers."

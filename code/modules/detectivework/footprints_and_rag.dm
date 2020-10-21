@@ -1,8 +1,8 @@
-/mob
-	var/bloody_hands = 0
+//mob
+//	var/bloody_hands = 0
 
-/obj/item/clothing/gloves
-	var/transfer_blood = 0
+//obj/item/clothing/gloves
+//	var/transfer_blood = 0
 
 /obj/item/reagent_containers/glass/rag
 	name = "damp rag"
@@ -11,7 +11,7 @@
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "rag"
 	item_flags = NOBLUDGEON
-	container_type = OPENCONTAINER
+//	container_type = OPENCONTAINER
 	amount_per_transfer_from_this = 5
 	possible_transfer_amounts = list()
 	volume = 5

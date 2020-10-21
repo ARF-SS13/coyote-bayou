@@ -266,6 +266,12 @@
 	desc = "A cheap statue of sandstone for a greyshirt."
 	icon_state = "assist"
 
+/obj/structure/statue/sandstone/gravestone
+	name = "gravestone"
+	desc = "A stone grave marker, the name of the person buried here has long been lost to time."
+	icon = 'icons/obj/graveyard.dmi'
+	icon_state = "stone-1"
+
 
 /obj/structure/statue/sandstone/venus //call me when we add marble i guess
 	name = "statue of a pure maiden"

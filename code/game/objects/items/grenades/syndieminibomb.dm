@@ -23,6 +23,12 @@
 	ex_light = 3
 	ex_flame = 3
 
+/obj/item/grenade/syndieminibomb/concussion/frag
+	name = "frag grenade"
+	desc = "Fire in the hole."
+	icon_state = "frag"
+
+
 /obj/item/grenade/frag
 	name = "frag grenade"
 	desc = "An anti-personnel fragmentation grenade, this weapon excels at killing soft targets by shredding them with metal shrapnel."

@@ -142,6 +142,12 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
+/turf/closed/indestructible/vaultdoor
+	name = "vault wall"
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to give away around the door."
+	icon = 'icons/turf/walls/f13vault_reinforced_wall.dmi'
+	icon_state = "vaultwall"
+
 /turf/closed/indestructible/rock/snow/ice
 	name = "iced rock"
 	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
@@ -198,13 +204,13 @@
 	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
 	icon = 'icons/turf/walls/hierophant_wall.dmi'
 	icon_state = "wall"
-	
+
 /turf/closed/indestructible/rock/glacierrock
 	name = "unaturally hard ice wall"
 	desc = "Ice, hardened over thousands of years, you're not breaking through this."
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "snow_rock"
-	
+
 /turf/closed/indestructible/rock/glacierrock/blue
 	name = "blue ice wall"
 	desc = "The incredible compressive forces that formed this sturdy ice wall gave it a blue color."
