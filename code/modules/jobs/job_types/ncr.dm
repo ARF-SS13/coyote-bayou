@@ -72,7 +72,7 @@ Captain
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-
+	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 	outfit = /datum/outfit/job/ncr/f13captain
 
 	loadout_options = list(
@@ -142,7 +142,7 @@ Ambassador
 	description = "You are the political and diplomatic attaché to the NCR forces in the area. Though you are not part of the military, and should avoid conflict, you wield great bureaucratic power."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-
+	display_order = JOB_DISPLAY_ORDER_AMBASSADOR
 	outfit = /datum/outfit/job/ncr/f13ambassador
 
 /datum/outfit/job/ncr/f13ambassador
@@ -175,7 +175,7 @@ Lieutenant
 	description = "You are the direct superior to the Sergeant and Enlisted, working with the Captain and under special circumstances, Rangers. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
 	outfit = /datum/outfit/job/ncr/f13lieutenant
 
 	loadout_options = list(
@@ -276,7 +276,7 @@ Sergeant
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the enlisted follow them to the letter. Additionally, you are responsible for the wellbeing of the troops and their ongoing training with the NCR."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
 
 	loadout_options = list(
@@ -369,7 +369,7 @@ Corporal
 	description = "You are an experienced junior NCO with a specialized skill set. You work closely with your squad, taking orders from your Sergeant to achieve the NCR's goals."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_SPECIALIST
 	outfit = /datum/outfit/job/ncr/f13specialist
 
 	loadout_options = list(
@@ -577,7 +577,7 @@ Trooper
 	selection_color = "#fff5cc"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_NCR
-
+	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13trooper
 
 /*
@@ -636,7 +636,7 @@ Recruit
 	selection_color = "#fff5cc"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	display_order = JOB_DISPLAY_ORDER_RECRUIT
 	outfit = /datum/outfit/job/ncr/f13recruit
 
 /datum/outfit/job/ncr/f13recruit
@@ -665,7 +665,7 @@ Recruit
 	description = "As an Administrator, you perform managerial duties for the facilities of the city as well as the people who occupy it, ensure that people are listened to and their needs are met, and assist the military in a civilian capacity by corresponding and delegating others to complete tasks. "
 	supervisors = "Ambassador or Captain"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_NCRADMIN
 	outfit = /datum/outfit/job/ncr/f13ncradmin
 
 /datum/outfit/job/ncr/f13ncradmin
@@ -696,7 +696,7 @@ Recruit
 	selection_color = "#fff5cc"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_CREW
-
+	display_order = JOB_DISPLAY_ORDER_NCRCITIZEN
 	outfit = /datum/outfit/job/ncr/f13ncrcitizen
 
 	loadout_options = list(
@@ -776,7 +776,7 @@ Veteran Ranger
 	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. Your primary mission is to improve general opinion of the Republic and to neutralize slavers and raiders operating in the area."
 	supervisors = "Captain and above"
 	selection_color = "#ffeeaa"
-
+	display_order = JOB_DISPLAY_ORDER_VETRANGE
 	outfit = /datum/outfit/job/ncr/f13vetranger
 
 	loadout_options = list(
@@ -920,7 +920,7 @@ Ranger -- Split into Patrol and Scout
 	description = "As a Patrol Ranger, you patrol the wasteland, aid those in need, and capture, recover, or neutralize designated targets in service to the Republic. Your reason for being sent here is to improve public opinion of the Republic through acts of service to the community, and by putting down slavers and raiders in the region."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_RANGERPATROL
 	outfit = /datum/outfit/job/ncr/f13rangerpatrol
 
 /datum/job/ncr/f13rangerpatrol/after_spawn(mob/living/carbon/human/H, mob/M)
@@ -965,7 +965,7 @@ Ranger -- Split into Patrol and Scout
 	description = "As a Scout Ranger, you perform reconnaissance and assist in special operations for the Republic. Your reason for being sent here is to identify and neutralize threats to the Republic and to assist Patrol Rangers in identifying slavers and raiders so that they can be brought to justice."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
-
+	display_order = JOB_DISPLAY_ORDER_RANGERSCOUT
 	outfit = /datum/outfit/job/ncr/f13rangerscout
 
 	loadout_options = list(

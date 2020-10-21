@@ -243,3 +243,22 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+
+/obj/item/clothing/gloves/legion
+	name = "leather gloves"
+	desc = "Fingerless leather gloves to improve grip worn by legionaires."
+	icon_state = "legion"
+	item_state = "legion"
+	item_color = null	//So they don't wash.
+	transfer_prints = TRUE
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+
+/obj/item/clothing/gloves/legion/legate
+	name = "metal gauntlet"
+	desc = "Heavy handmade metal gloves."
+	icon_state = "legionlegat"
+	item_state = "legionlegat"
+	transfer_prints = FALSE

@@ -414,6 +414,63 @@
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
 
+//Legion Bandanas - We make these as much like normal bandanas as possible without repathing them.
+
+/obj/item/clothing/mask/bandana/legrecruit
+	name = "recruit bandana"
+	desc = "A fine recruit bandana."
+	icon_state = "legrecruit"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/legdecan
+	name = "decan bandana"
+	desc = "A fine decan bandana."
+	icon_state = "legdecan"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/oldredbandana
+	name = "old bandana"
+	desc = "A fine bandana."
+	icon_state = "legdecan"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/legcenturion
+	name = "centurion bandana"
+	desc = "A fine centurion bandana."
+	icon_state = "legcenturion"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/legvet
+	name = "veteran bandana"
+	desc = "A fine veteran bandana."
+	icon_state = "legvet"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/legprime
+	name = "prime bandana"
+	desc = "A fine prime bandana"
+	icon_state = "legdecan"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+
 //Desert facewrap
 
 /obj/item/clothing/mask/facewrap

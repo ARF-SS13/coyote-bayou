@@ -221,7 +221,7 @@
 	name = "ghoul meat"
 	icon_state = "flymeat"
 	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 6, "bad_food" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 6)
 	filling_color = "#FA8072"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
 	slice_path = null
@@ -230,7 +230,7 @@
 /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
 	name = "ghoul steak"
 	desc = "Why would you even cook this?"
-	list_reagents = list(/datum/reagent/medicine/nutriment = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	bonus_reagents = list(/datum/reagent/radium = 3)
 	foodtype = MEAT | GROSS
 
@@ -238,7 +238,7 @@
 	name = "centaur meat"
 	icon_state = "flymeat"
 	desc = "Absolutely disgusting"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 10, /datum/reagent/medicine/bad_food = 4, "FEV_solution" = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/radium = 10)
 	filling_color = "#FA8072"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
 	slice_path = null
@@ -248,7 +248,7 @@
 	name = "centaur steak"
 	desc = "No matter how much you cook, it doesn't seem safe to eat."
 	list_reagents = list("nutriment" = 4)
-	bonus_reagents = list(/datum/reagent/radium = 5, "FEV_solution" = 6)
+	bonus_reagents = list(/datum/reagent/radium = 5)
 	foodtype = MEAT | GROSS
 
 

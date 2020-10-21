@@ -4,7 +4,7 @@
 	name = "Macaco soup"
 	desc = "To think, the monkey would've beat you to death and steal your gun."
 	icon_state = "macaco"
-	bonus_reagents = list("nutriment" = 1, "omnizine" = 5, "vitamin" = 5)
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, "omnizine" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("Monkey" = 1)
 	foodtype = MEAT | VEGETABLES
 
@@ -13,8 +13,8 @@
 	name = "molerat stew"
 	desc = "A nice and warm stew. Healthy and strong."
 	icon_state = "stew"
-	bonus_reagents = list("nutriment" = 1, "tomatojuice" = 5, "vitamin" = 5)
-	list_reagents = list("nutriment" = 10, "oculine" = 5, "tomatojuice" = 5, "vitamin" = 5)
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, "tomatojuice" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, "oculine" = 5, "tomatojuice" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
 	bitesize = 7
 	volume = 100
 	tastes = list("gamey meat" = 1, "herbal notes" = 1, "filling stew" = 1)
@@ -24,7 +24,7 @@
 	name = "Buffalo gourd soup"
 	desc = "A tasty soup made with roasted gourd"
 	icon_state = "Gourd Soup"
-	bonus_reagents = list("nutriment" = 4, "vitamin" = 6)
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 4,  /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("buttery flesh" = 1, "creamy soup" = 1)
 	foodtype = VEGETABLES
 
@@ -47,7 +47,7 @@
 	icon_grow = "coyote-grow"
 	icon_dead = "coyote-dead"
 	icon_harvest = "coyote-harvest"
-	reagents_add = list("nicotine" = 0.03, "nutriment" = 0.03)
+	reagents_add = list("nicotine" = 0.03,  /datum/reagent/consumable/nutriment/vitamin = 0.03)
 
 /obj/item/reagent_containers/food/snacks/grown/coyotetobacco
 	seed = /obj/item/seeds/coyotetobacco
@@ -89,7 +89,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus/add_juice()
 	if(..())
-		reagents.add_reagent("nutriment", 3 + round((seed.potency / 20), 1))
+		reagents.add_reagent( /datum/reagent/consumable/nutriment/vitamin, 3 + round((seed.potency / 20), 1))
 		reagents.add_reagent("calomel", 3 + round((seed.potency / 20), 1))
 		reagents.add_reagent("radium", 0 + round((seed.potency / 20), 1))
 		bitesize = 3 + round(reagents.total_volume / 3, 1)
@@ -177,7 +177,7 @@
 	icon_dead = "horsenettle-dead"
 	icon_harvest = "horsenettle-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
-	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04,  /datum/reagent/consumable/nutriment/vitamin = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/horsenettle
 	seed = /obj/item/seeds/horsenettle
@@ -245,7 +245,7 @@
 	icon_dead = "pinyon-dead"
 	icon_harvest = "pinyon-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("nutriment" = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/pinyon
 	seed = /obj/item/seeds/pinyon
@@ -271,7 +271,7 @@
 	plantname = "prickly pear"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	product = /obj/item/reagent_containers/food/snacks/grown/pricklypear
-	reagents_add = list("vitamin" = 0.02, "nutriment" = 0.2, "water" = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.02,  /datum/reagent/consumable/nutriment/vitamin = 0.2, "water" = 0.04)
 	lifespan = 60
 	endurance = 20
 	yield = 2
@@ -322,7 +322,7 @@
 	icon_grow = "datura-grow"
 	icon_dead = "datura-dead"
 	icon_harvest = "datura-harvest"
-	reagents_add = list("morphine" = 0.35, "mushroomhallucinogen" = 0.12, "toxin" = 0.3, "nutriment" = 0.05)
+	reagents_add = list("morphine" = 0.35, "mushroomhallucinogen" = 0.12, "toxin" = 0.3,  /datum/reagent/consumable/nutriment/vitamin = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/datura
 	seed = /obj/item/seeds/datura
@@ -355,7 +355,7 @@
 	icon_dead = "punga-dead"
 	icon_harvest = "punga-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("charcoal" = 0.1, "phosphorus" = 0.1, "nutriment" = 0.04)
+	reagents_add = list("charcoal" = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	seed = /obj/item/seeds/punga
@@ -390,7 +390,7 @@
 	icon_dead = "yucca-dead"
 	icon_harvest = "yucca-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("vitamin" = 0.2, "sugar" = 0.1, "nutriment" = 0.2)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.2, "sugar" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.2)
 
 
 /obj/item/reagent_containers/food/snacks/grown/yucca
@@ -420,7 +420,7 @@
 	icon_dead = "tato-dead"
 	icon_harvest = "tato-harvest"
 	genes = list(/datum/plant_gene/trait/battery, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04,  /datum/reagent/consumable/nutriment/vitamin = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/tato
 	seed = /obj/item/seeds/tato
@@ -475,7 +475,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit/add_juice()
 	if(..())
-		reagents.add_reagent("nutriment", 3 + round((seed.potency / 20), 1))
+		reagents.add_reagent( /datum/reagent/consumable/nutriment/vitamin, 3 + round((seed.potency / 20), 1))
 		reagents.add_reagent("radium", 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
@@ -504,7 +504,7 @@
 	growthstages = 4
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("morphine" = 0.35, "charcoal" = 0.35, "nutriment" = 0)
+	reagents_add = list("morphine" = 0.35, "charcoal" = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/reishi
 	seed = /obj/item/seeds/reishi
@@ -530,7 +530,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/angel)
-	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.35, "nutriment" = 0, "growthserum" = 0.1)
+	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0, "growthserum" = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/amanita
 	seed = /obj/item/seeds/amanita
@@ -556,7 +556,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.1, "nutriment" = 0, "amanitin" = 0.2)
+	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0, "amanitin" = 0.2)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/angel
@@ -582,7 +582,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("mushroomhallucinogen" = 0.25, "nutriment" = 0.02)
+	reagents_add = list("mushroomhallucinogen" = 0.25,  /datum/reagent/consumable/nutriment/vitamin = 0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap
 	seed = /obj/item/seeds/liberty
@@ -608,7 +608,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/plump/walkingmushroom)
-	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04,  /datum/reagent/consumable/nutriment/vitamin = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/plumphelmet
 	seed = /obj/item/seeds/plump
@@ -632,7 +632,7 @@
 	yield = 1
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list()
-	reagents_add = list("vitamin" = 0.05, "nutriment" = 0.15)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.05,  /datum/reagent/consumable/nutriment/vitamin = 0.15)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/walkingmushroom
@@ -673,7 +673,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("nutriment" = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle
 	seed = /obj/item/seeds/chanter
@@ -702,7 +702,7 @@
 	genes = list(/datum/plant_gene/trait/glow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom)
-	reagents_add = list("radium" = 0.1, "phosphorus" = 0.1, "nutriment" = 0.04)
+	reagents_add = list("radium" = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	seed = /obj/item/seeds/glowshroom
@@ -747,7 +747,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
 	genes = list(/datum/plant_gene/trait/glow/red, /datum/plant_gene/trait/cell_charge, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list("teslium" = 0.1, "nutriment" = 0.04)
+	reagents_add = list("teslium" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
@@ -772,7 +772,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
 	genes = list(/datum/plant_gene/trait/glow/shadow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list("radium" = 0.2, "nutriment" = 0.04)
+	reagents_add = list("radium" = 0.2,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
@@ -804,7 +804,7 @@
 	potency = 15
 	growthstages = 3
 	rarity = 20
-	reagents_add = list("nutriment" = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.1)
 	resistance_flags = FIRE_PROOF
 
 /obj/item/seeds/lavaland/polypore

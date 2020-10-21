@@ -575,3 +575,22 @@
 		var/mob/living/carbon/human/H = user
 		H.update_sight()
 
+/obj/item/clothing/glasses/sunglasses/fakeblindfold
+	name = "priestess blindfold"
+	desc = "The coverings used to restrict the sight of the world, but see with the Sight of Mars."
+	icon_state = "blindfold"
+	item_state = "blindfold"
+
+/obj/item/clothing/glasses/sunglasses/fakeblindfold/equipped(mob/living/user, slot)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/U = user
+		if(U.job in list("Priestess of Mars"))
+		else
+			to_chat(user, "<span class='userdanger'>\"You want to be blind, do you?\"</span>")
+			user.dropItemToGround(src, TRUE)
+			user.Dizzy(30)
+			user.Knockdown(100)
+			user.blind_eyes(30)
+		return
+
