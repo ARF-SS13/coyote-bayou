@@ -143,3 +143,12 @@
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/nutriment = 5)
 	tastes = list("building heat" = 2, "savory meat and vegtables" = 1)
 	foodtype = GRAIN | MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/salad/desertsalad
+	name = "desert salad"
+	desc = "A tasty cactus salad topped with brahamin bits and roasted nuts."
+	icon_state = "Desert Salad"
+	bonus_reagents = list(/datum/reagent/medicine/earthsblood = 1, /datum/reagent/iron = 4)
+	list_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/nutriment = 5)
+	tastes = list("tender meat" = 1, "acidic cactus" = 3, "crunchy nuts" = 1)
+	foodtype = VEGETABLES | FRUIT | MEAT

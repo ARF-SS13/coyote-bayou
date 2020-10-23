@@ -518,3 +518,56 @@
 	to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
 	B.use(10)
 	icon_state = initial(icon_state)
+
+
+//Fallout 13
+
+/obj/item/clothing/shoes/legionleather
+	name = "legion leather boots"
+	desc = "A pair of boots worn by the Legion recruits."
+	icon_state = "legionleather"
+	item_state = "legionleather"
+	item_color = "cult"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/legionmetal
+	name = "legion metal boots"
+	desc = "A pair of boots worn by the Legion veterans."
+	icon_state = "legionmetal"
+	item_state = "legionmetal"
+	item_color = "cult"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/legionlegat
+	name = "legion legate boots"
+	desc = "A pair of boots worn by the Legion legates."
+	icon_state = "legionlegat"
+	item_state = "legionlegat"
+	item_color = "cult"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
+	name = "combat boots"
+	desc = "High speed, low drag combat boots."
+	icon_state = "combat"
+	item_state = "combat"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	strip_delay = 70
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	slowdown = -0.05
+
+/obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
+	name = "tactical boots"
+	desc = "High speed, no drag combat boots."
+	permeability_coefficient = 0.01
+
+/obj/item/clothing/shoes/combat/plate
+	name = "plated combat boots"
+	desc = "A pair of heavily worn leather boots with armored plates strapped around them, protecting the users feet from low flying shrapnel or projectiles."
+	icon_state = "legionmetal"
+	item_state = "legionmetal"
+	item_color = "cult"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes

@@ -11,6 +11,42 @@
 	strip_delay = 80
 	dog_fashion = null
 
+/obj/item/holybeacon
+	name = "armaments beacon"
+	desc = "Contains a set of armaments for the chaplain."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "gangtool-red"
+	item_state = "radio"
+
+/obj/item/holybeacon/attack_self(mob/user)
+	if(user.mind && (user.mind.isholy))
+		beacon_armor(user)
+	else
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, 1)
+
+/obj/item/holybeacon/proc/beacon_armor(mob/M)
+	var/list/holy_armor_list = typesof(/obj/item/storage/box/holy)
+	var/list/display_names = list()
+	for(var/V in holy_armor_list)
+		var/atom/A = V
+		display_names += list(initial(A.name) = A)
+
+	var/choice = input(M,"What holy armor kit would you like to order?","Holy Armor Theme") as null|anything in display_names
+	if(QDELETED(src) || !choice || M.stat || !in_range(M, src) || M.restrained())
+		return
+
+	var/index = display_names.Find(choice)
+//	var/A = holy_armor_list[index]
+
+//	SSreligion.holy_armor_type = A
+//	var/holy_armor_box = new A
+
+	SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
+
+//	if(holy_armor_box)
+//		qdel(src)
+//		M.put_in_active_hand(holy_armor_box)///YOU COMPILED
+
 // CITADEL CHANGES: More variants
 /obj/item/clothing/head/helmet/chaplain/bland
 	icon_state = "knight_generic"

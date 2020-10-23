@@ -168,7 +168,7 @@
 	icon_state = "stimpakpen"
 	volume = 10
 	amount_per_transfer_from_this = 10
-	list_reagents = list("stimpak" = 10)
+	list_reagents = list(/datum/reagent/medicine/stimulants = 10, /datum/reagent/medicine/omnizine = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	name = "super stimpak"

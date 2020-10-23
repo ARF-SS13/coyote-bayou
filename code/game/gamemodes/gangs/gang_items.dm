@@ -83,6 +83,187 @@
 			return
 	return TRUE
 
+
+//Great Khans
+
+/datum/gang_item/clothing/khan_boots
+	name = "Great Khan boots"
+	id = "khan_boots"
+	cost = 15
+	item_path = /obj/item/clothing/shoes/f13/khan
+
+/datum/gang_item/clothing/khan_helmet
+	name = "Great Khan helmet"
+	id = "khan_helmet"
+	cost = 20
+	item_path = /obj/item/clothing/head/helmet/f13/khan
+
+/datum/gang_item/clothing/khan_pants
+	name = "Great Khan pants"
+	id = "khan_pants"
+	cost = 25
+	item_path = /obj/item/clothing/under/pants/f13/khan
+
+/datum/gang_item/clothing/khan_uniform
+	name = "Great Khan uniform"
+	id = "khan_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/f13/khan
+
+/datum/gang_item/clothing/khan_jacket_armored
+	name = "Great Khan armored jacket"
+	id = "khan_jacket_armored"
+	cost = 100
+	item_path = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored
+
+/datum/gang_item/clothing/prostitute_dress
+	name = "Prostitute dress"
+	id = "prostitute_dress"
+	cost = 25
+	item_path = /obj/item/clothing/under/f13/female/flapper
+
+/datum/gang_item/clothing/hat
+	name = "Pimp Hat"
+	id = "hat"
+	cost = 30
+	item_path = /obj/item/clothing/head/collectable/petehat/gang
+
+/obj/item/clothing/head/collectable/petehat/gang
+	name = "pimpin' hat"
+	desc = "The undisputed king of style."
+
+/datum/gang_item/clothing/glasses/sunglasses
+	name = "Sunglasses"
+	id = "sunglasses"
+	cost = 40
+	item_path = /obj/item/clothing/glasses/sunglasses
+
+/datum/gang_item/clothing/raider_uniform
+	name = "Raider uniform"
+	id = "raider_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/f13/raider_leather
+
+/datum/gang_item/clothing/jester_uniform
+	name = "Jester suit"
+	id = "jester_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/jester
+
+/datum/gang_item/clothing/biker_uniform
+	name = "Biker uniform"
+	id = "biker_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/f13/Retro_Biker_Vest
+
+/datum/gang_item/clothing/scarecrow_uniform
+	name = "Scarecrow uniform"
+	id = "scarecrow_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/scarecrow
+
+/datum/gang_item/clothing/soviet_uniform
+	name = "Soviet uniform"
+	id = "soviet_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/soviet
+
+/datum/gang_item/clothing/chairmen_uniform
+	name = "Chairmen uniform"
+	id = "chairmen_uniform"
+	cost = 40
+	item_path = /obj/item/clothing/under/f13/bennys/gang
+
+/obj/item/clothing/under/f13/bennys/gang
+	name = "Chairmen uniform"
+	desc = "A black and white buffalo plaid suit, most often seen on the Chairmen."
+
+///////////////////
+//WEAPONS
+///////////////////
+
+/datum/gang_item/weapon
+	category = "Purchase Weapons:"
+
+/datum/gang_item/weapon/ammo
+
+/datum/gang_item/weapon/ammo/get_cost_display(mob/living/carbon/user, datum/gang/gang, obj/item/device/gangtool/gangtool)
+	return "&nbsp;&#8627;" + ..() //this is pretty hacky but it looks nice on the popup
+
+/datum/gang_item/weapon/shuriken
+	name = "Shuriken"
+	id = "shuriken"
+	cost = 30
+	item_path = /obj/item/throwing_star
+
+/datum/gang_item/weapon/switchblade
+	name = "Switchblade"
+	id = "switchblade"
+	cost = 20
+	item_path = /obj/item/switchblade
+
+/datum/gang_item/weapon/sappers
+	name = "Sappers"
+	id = "sappers"
+	cost = 75
+	item_path = /obj/item/melee/unarmed/sappers
+
+/datum/gang_item/weapon/greasegun
+	name = "Grease Gun"
+	id = "greasegun"
+	cost = 150
+	item_path = /obj/item/gun/ballistic/automatic/greasegun
+
+
+///////////////////
+//EQUIPMENT
+///////////////////
+
+/datum/gang_item/equipment
+	category = "Purchase Equipment:"
+
+/datum/gang_item/equipment/spraycan
+	name = "Spraycan"
+	id = "spraycan"
+	cost = 10
+	item_path = /obj/item/toy/crayon/spraycan
+
+/datum/gang_item/equipment/mentats
+	name = "Mentats"
+	id = "mentats"
+	cost = 30
+	item_path = /obj/item/storage/pill_bottle/chem_tin/mentats
+
+/datum/gang_item/equipment/fixer
+	name = "Fixer"
+	id = "fixer"
+	cost = 100
+	item_path = /obj/item/storage/pill_bottle/chem_tin/fixer
+
+/datum/gang_item/equipment/emp
+	name = "EMP Grenade"
+	id = "EMP"
+	cost = 95
+	item_path = /obj/item/grenade/empgrenade
+
+/datum/gang_item/equipment/necklace
+	name = "Gold Necklace"
+	id = "necklace"
+	cost = 150
+	item_path = /obj/item/clothing/neck/necklace/dope
+
+/datum/gang_item/equipment/c4
+	name = "C4 Explosive"
+	id = "c4"
+	cost = 200
+	item_path = /obj/item/grenade/plastic/c4
+
+
+///////////////////
+//EQUIPMENT
+///////////////////
+
+
 /datum/gang_item/clothing/hat
 	name = "Pimp Hat"
 	id = "hat"

@@ -8,11 +8,12 @@ SUBSYSTEM_DEF(job)
 	var/list/type_occupations = list()	//Dict of all jobs, keys are types
 	var/list/unassigned = list()		//Players who need jobs
 	var/initial_players_to_assign = 0 	//used for checking against population caps
+	var/list/factionless_jobs = list()
 
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
 
-	var/overflow_role = "Assistant"
+	var/overflow_role = "Wastelander" //CHANGE
 
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
@@ -43,27 +44,35 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/SetupOccupations(faction = "Station")
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
+
 	if(!all_jobs.len)
 		to_chat(world, "<span class='boldannounce'>Error setting up jobs, no job datums found</span>")
 		return 0
 
 	for(var/J in all_jobs)
 		var/datum/job/job = new J()
+
 		if(!job)
 			continue
-		if(job.faction != faction)
+
+		//if(job.faction != faction) //TGCLAW Change: Any faction can now join and have the appropriate faction tag IE BoS and Den -ma44
+		//	continue
+
+		if(job.faction == "None")  //This is checked later for map config
+			factionless_jobs[job.title] = job
 			continue
-		if(!job.config_check())
+
+		if(!job.config_check()) //Checks for AI allowed and shit. Barely used
 			continue
-		if(!job.map_check())	//Even though we initialize before mapping, this is fine because the config is loaded at new
-			testing("Removed [job.type] due to map config");
-			continue
+
+//		if(!job.map_check())	//Even though we initialize before mapping, this is fine because the config is loaded at new (obsolete)
+//			testing("Removed [job.type] due to map config");
+//			continue
 		occupations += job
 		name_occupations[job.title] = job
 		type_occupations[J] = job
 
 	return 1
-
 
 /datum/controller/subsystem/job/proc/GetJob(rank)
 	RETURN_TYPE(/datum/job)

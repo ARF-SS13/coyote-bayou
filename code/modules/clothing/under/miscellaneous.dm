@@ -36,6 +36,35 @@
 	item_color = "ek"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/scarecrow
+	name = "scarecrow clothes"
+	desc = "Perfect camouflage for hiding in botany."
+	icon_state = "scarecrow"
+	item_state = "scarecrow"
+	item_color = "scarecrow"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	fitted = NO_FEMALE_UNIFORM
+	can_adjust = FALSE
+	resistance_flags = NONE
+
+/obj/item/clothing/under/jester
+	name = "jester suit"
+	desc = "A jolly dress, well suited to entertain your master, nuncle."
+	icon_state = "jester"
+	item_state = "jester"
+	item_color = "jester"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/jester/alt
+	icon_state = "jester2"
+
+/obj/item/clothing/under/jester/dark
+	name = "chaos jester suit"
+	desc = "Filled with chaos, this outfit makes it feel like you can do anything!"
+	icon_state = "d_jester"
+	item_state = "dark_jester"
+	item_color = "d_jester"
+
 /obj/item/clothing/under/hosparademale
 	name = "head of security's parade uniform"
 	desc = "A male head of security's luxury-wear, for special occasions."

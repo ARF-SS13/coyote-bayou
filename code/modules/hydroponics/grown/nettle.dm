@@ -77,6 +77,14 @@
 		to_chat(usr, "All the leaves have fallen off the nettle from violent whacking.")
 		qdel(src)
 
+/obj/item/grown/nettle/basic
+	seed = /obj/item/seeds/nettle
+
+/obj/item/grown/nettle/basic/add_juice()
+	..()
+	force = round((5 + seed.potency / 5), 1)
+
+
 /obj/item/reagent_containers/food/snacks/grown/nettle/basic
 	seed = /obj/item/seeds/nettle
 

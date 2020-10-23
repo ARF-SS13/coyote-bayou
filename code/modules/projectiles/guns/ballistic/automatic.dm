@@ -1488,7 +1488,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 3
-//	burst_delay = 3
+	burst_shot_delay = 3
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -1528,7 +1528,7 @@
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 3
-//	burst_delay = 2.0
+	burst_shot_delay = 2.0
 	spread = 16
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -1595,3 +1595,40 @@
 	desc = "A DKS 501, chambered in .308 Winchester. This one has a gold trim and the words 'Old Cassius' engraved into the stock."
 	icon_state = "gold_sniper"
 	item_state = "gold_sniper"
+
+/obj/item/gun/ballistic/automatic/autopipe
+	name = "\improper auto pipe rifle"
+	desc = "An improvised rifle improved with automatic capability, highly innacurate and slow to fire"
+	icon_state = "auto_pipe_rifle"
+	item_state = "improvshotgun"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/autopipe
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	can_suppress = FALSE
+	burst_size = 4
+	fire_delay = 30
+	burst_shot_delay = 3
+	automatic = 1
+	spread = 24
+
+/obj/item/gun/ballistic/automatic/autopipe/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 4
+			spread = 24
+			fire_delay = 25
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 5
+			fire_delay = 8
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+

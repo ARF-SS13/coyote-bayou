@@ -60,6 +60,10 @@
 	var/cached_multiplicative_slowdown
 	/////////////////
 
+	var/social_faction = null //A social faction a mob is in, for special actions
+
+	var/gang = null // A gang a mob is in
+
 	var/name_archive //For admin things like possession
 
 	var/bodytemperature = BODYTEMP_NORMAL	//310.15K / 98.6F

@@ -767,5 +767,17 @@
 	list_reagents = list("nukashine" = 100)
 
 
+/obj/item/reagent_containers/food/drinks/bottle/brown/white
+	name = "white bottle"
+	desc = "A homemade and hand-crafted white glass bottle."
+	icon_state = "whitebottle"
 
+/obj/item/reagent_containers/food/drinks/bottle/brown/green
+	name = "green bottle"
+	desc = "A homemade and hand-crafted green glass bottle."
+	icon_state = "greenbottle"
 
+/obj/item/reagent_containers/food/drinks/bottle/brown/beer
+	name = "beer bottle"
+	desc = "A homemade and hand-crafted authentic beer bottle."
+	icon_state = "beerbottle"

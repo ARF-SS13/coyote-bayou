@@ -1625,3 +1625,22 @@ var/list/possible_colors = list("red")
     if(!istype(M))
         return
     M.apply_effect(300, EFFECT_IRRADIATE, 0)
+
+/obj/item/baseball/spiked
+	name = "spiked baseball bat"
+	desc = "There ain't a skull in the league that can withstand a swatter, especially with large nails drilled through the top of it."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "baseballspike0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force = 20
+	throwforce = 20
+	slot_flags = ITEM_SLOT_BACK
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = IS_BLUNT
+
+/obj/item/baseball/spiked/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 20, 105)
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="baseballspike")

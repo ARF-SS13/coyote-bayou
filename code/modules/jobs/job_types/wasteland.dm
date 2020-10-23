@@ -249,7 +249,7 @@ Raider
 		/obj/item/gun/ballistic/automatic/autopipe=1,
 		/obj/item/ammo_box/magazine/autopipe=2,
 		/obj/item/kitchen/knife/combat=1,
-		/obj/item/storage/pill_bottle/dice=1,
+		/obj/item/storage/box/dice=1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1)
 
 /datum/outfit/loadout/raider_yankee
