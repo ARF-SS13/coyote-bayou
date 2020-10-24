@@ -35,7 +35,7 @@
 	if(QDELETED(src) || !choice || M.stat || !in_range(M, src) || M.restrained())
 		return
 
-	var/index = display_names.Find(choice)
+//	var/index = display_names.Find(choice)
 //	var/A = holy_armor_list[index]
 
 //	SSreligion.holy_armor_type = A

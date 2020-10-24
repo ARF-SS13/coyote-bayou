@@ -754,6 +754,30 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 28
+			if (burst_improvement)
+				burst_size = 4
+			if (recoil_decrease)
+				spread = 20
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 10
+			if (recoil_decrease)
+				spread = 2
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+
 /obj/item/gun/ballistic/automatic/pps
 	spawnwithmagazine = FALSE
 	name = "\improper ancient SMG (standard)"
@@ -761,10 +785,10 @@
 	icon_state = "pps"
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
 	w_class = WEIGHT_CLASS_NORMAL
-	//can_scope = TRUE
-	//scopestate = "AEP7_scope"
-	//scope_x_offset = 9
-	//scope_y_offset = 21
+	can_scope = TRUE
+	scopestate = "AEP7_scope"
+	scope_x_offset = 9
+	scope_y_offset = 21
 	burst_size = 3
 	burst_shot_delay = 2
 	fire_delay = 6
@@ -1394,6 +1418,29 @@
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	can_bayonet = FALSE
 
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 8
+			if (recoil_decrease)
+				spread = 0
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
 	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
@@ -1403,6 +1450,29 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 8
+			if (recoil_decrease)
+				spread = 0
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/type93
 	name = "type 93 assault rifle"

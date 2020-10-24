@@ -400,3 +400,25 @@
 	icon_state = "smooth"
 	smooth = SMOOTH_TRUE|SMOOTH_DIAGONAL|SMOOTH_BORDER
 	canSmoothWith = null
+
+///OLD SMOOTH SYSTEM
+
+/atom
+	var/icon_type_smooth
+	var/junction
+
+/atom/proc/recalculate_junction()
+	junction = 0
+
+	for(var/cdir in GLOB.cardinals)
+		var/turf/T = get_step(src,cdir)
+		if(!T)
+			continue
+		for(var/a_type in canSmoothWith)
+			var/A = locate(a_type) in T
+			if(A || T.type == a_type)
+				junction |= cdir
+				break
+
+atom/proc/relative(custom_junction = junction)
+	icon_state = "[src.icon_type_smooth][custom_junction]"

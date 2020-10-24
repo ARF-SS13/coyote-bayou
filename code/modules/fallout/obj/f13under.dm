@@ -49,6 +49,9 @@
 /obj/item/clothing/under/f13/ncr/officer
 	name = "NCR desert officer fatigues"
 	desc = "A set of NCR officer fatigues"
+	icon_state = "ncr_uniform"
+	can_adjust = TRUE
+	item_state = "ncr_uniform"
 
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outfit"

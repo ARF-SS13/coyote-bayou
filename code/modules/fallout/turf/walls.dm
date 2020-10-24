@@ -14,11 +14,11 @@
 	desc = "All what has left from the good old days."
 	icon = 'icons/fallout/turfs/walls/ruins.dmi'
 	icon_state = "ruins0"
-//	icon_type_smooth = "ruins"
+	icon_type_smooth = "ruins"
 	hardness = 70
 	explosion_block = 2
-	smooth = SMOOTH_MORE
-//	disasemblable = 0
+	smooth = SMOOTH_TRUE
+	//	disasemblable = 0
 	girder_type = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	sheet_type = null
@@ -31,9 +31,9 @@
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
 	icon_state = "wood0"
-//	icon_type_smooth = "wood"
+	icon_type_smooth = "wood"
 	hardness = 60
-//	smooth = SMOOTH_OLD
+	smooth = SMOOTH_TRUE
 	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
@@ -46,8 +46,10 @@
 	desc = "A weathered pre-War house wall."
 	icon = 'icons/fallout/turfs/walls/house.dmi'
 	icon_state = "house0"
+	icon_type_smooth = "house"
 	hardness = 50
 	var/broken = 0
+	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall, /turf/closed/wall/f13/wood/house/clean)
 
 /turf/closed/wall/f13/wood/house/broken
 	broken = 1
@@ -72,8 +74,8 @@
 		broken = 1
 	..()
 
-// /turf/closed/wall/f13/wood/house/relative()
-//	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
+/turf/closed/wall/f13/wood/house/relative()
+	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
 
 /turf/closed/wall/f13/wood/house/update_icon()
 	if(broken)
@@ -88,65 +90,85 @@
 /turf/closed/wall/f13/wood/house/clean
 	icon_state = "house0-clean"
 
-//turf/closed/wall/f13/wood/house/clean/relative()
-//	icon_state = "[icon_type_smooth][junction]-clean"
+/turf/closed/wall/f13/wood/house/clean/relative()
+	icon_state = "[icon_type_smooth][junction]-clean"
 
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
 	icon = 'icons/fallout/turfs/walls/interior.dmi'
 	icon_state = "interior0"
+	icon_type_smooth = "interior"
 	hardness = 10
-
-
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
 
 /turf/closed/wall/f13/store
 	name = "store wall"
 	desc = "A pre-War store wall made of solid concrete."
 	icon = 'icons/fallout/turfs/walls/store.dmi'
 	icon_state = "store0"
-//	icon_type_smooth = "store"
+	icon_type_smooth = "store"
 	hardness = 80
+	smooth = SMOOTH_TRUE
+	//	disasemblable = 0
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall)
 
 /turf/closed/wall/f13/tentwall
 	name = "tent wall"
 	desc = "The walls of a portable tent."
 	icon = 'icons/fallout/turfs/walls/tent.dmi'
 	icon_state = "tent0"
+	icon_type_smooth = "tent"
 	hardness = 10
+	smooth = SMOOTH_TRUE
+	//	disasemblable = 0
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
 
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
 	desc = "A pre-War supermart wall made of reinforced concrete."
 	icon = 'icons/fallout/turfs/walls/superstore.dmi'
 	icon_state = "supermart0"
-//	icon_type_smooth = "supermart"
+	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
+	smooth = SMOOTH_TRUE
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall)
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
 	desc = "A sturdy metal wall with various pipes and wiring set inside a special groove."
 	icon = 'icons/fallout/turfs/walls/tunnel.dmi'
 	icon_state = "tunnel0"
+	icon_type_smooth = "tunnel"
 	hardness = 100
+	smooth = SMOOTH_TRUE
+	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall/f13/tunnel, /turf/closed/wall)
 
 /turf/closed/wall/f13/vault
 	name = "vault wall"
 	desc = "A sturdy and cold metal wall."
 	icon = 'icons/fallout/turfs/walls/vault.dmi'
 	icon_state = "vault0"
+	icon_type_smooth = "vault"
 	hardness = 130
 	explosion_block = 5
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 /turf/closed/wall/r_wall/f13
 	name = "glitch"
@@ -159,8 +181,11 @@
 	desc = "A wall built to withstand an atomic explosion."
 	icon = 'icons/fallout/turfs/walls/vault_reinforced.dmi'
 	icon_state = "vaultrwall0"
+	icon_type_smooth = "vaultrwall"
 	hardness = 230
 	explosion_block = 5
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 //Fallout 13 indestructible walls
 
