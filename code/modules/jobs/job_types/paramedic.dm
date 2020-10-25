@@ -3,7 +3,7 @@
 	flag = PARAMEDIC
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
-	faction = "Station"
+
 	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the chief medical officer"

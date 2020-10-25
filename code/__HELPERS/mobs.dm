@@ -451,3 +451,8 @@ GLOBAL_LIST_EMPTY(species_list)
 	REMOVE_TRAIT(L, TRAIT_PASSTABLE, source)
 	if(!HAS_TRAIT(L, TRAIT_PASSTABLE))
 		L.pass_flags &= ~PASSTABLE
+
+/mob/proc/get_preferences()
+	if (client && client.prefs)
+		return client.prefs
+	return null

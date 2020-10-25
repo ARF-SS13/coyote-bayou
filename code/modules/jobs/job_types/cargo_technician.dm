@@ -3,7 +3,7 @@
 	flag = CARGOTECH
 	department_head = list("Quartermaster")
 	department_flag = CIVILIAN
-	faction = "Station"
+
 	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the quartermaster"

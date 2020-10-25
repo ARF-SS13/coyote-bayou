@@ -4,7 +4,7 @@
 //	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY //:eyes:
 	department_head = list("CentCom")
 	department_flag = ENGSEC
-	faction = "Station"
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Nanotrasen officials and Space law"

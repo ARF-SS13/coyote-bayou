@@ -3,7 +3,7 @@
 	flag = AI_JF
 //	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	department_flag = ENGSEC
-	faction = "Station"
+
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ccffcc"

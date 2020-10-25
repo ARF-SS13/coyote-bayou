@@ -74,6 +74,17 @@ SUBSYSTEM_DEF(job)
 
 	return 1
 
+//We'll call this way late, probably in SSpersistence since it seems like the boot order is fucky
+/datum/controller/subsystem/job/proc/AddMapJobs()
+	if(LAZYLEN(SSmapping.config.added_jobs) && LAZYLEN(factionless_jobs))
+		for(var/Q in SSmapping.config.added_jobs)  //It's fastest to browse through the ones we need to add rather than all jobs
+			var/datum/job/job = factionless_jobs[Q]
+			if(istype(job) && !(job in occupations)) //Make sure it's not already in there
+				occupations += job
+				name_occupations[job.title] = job
+				type_occupations[job.type] = job
+
+
 /datum/controller/subsystem/job/proc/GetJob(rank)
 	RETURN_TYPE(/datum/job)
 	if(!occupations.len)

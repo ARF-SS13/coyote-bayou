@@ -4,18 +4,18 @@
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
-	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
+	var/smooth_icon = 'icons/turf/walls/f13rock.dmi'
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = null
-	baseturfs = /turf/open/floor/plating/asteroid/airless
-	initial_gas_mix = AIRLESS_ATMOS
+	baseturfs = /turf/open/indestructible/ground/inside/mountain
+	initial_gas_mix = "TEMP=2.7"
 	opacity = 1
 	density = TRUE
 	blocks_air = 1
 	layer = EDGED_TURF_LAYER
 	temperature = TCMB
 	var/environment_type = "asteroid"
-	var/turf/open/floor/plating/turf_type = /turf/open/floor/plating/asteroid/airless
+	var/turf/open/indestructible/ground/inside/mountain/turf_type = /turf/open/indestructible/ground/inside/mountain
 	var/mineralType = null
 	var/mineralAmt = 3
 	var/spread = 0 //will the seam spread?

@@ -43,6 +43,7 @@ SUBSYSTEM_DEF(persistence)
 		LoadAntagReputation()
 	LoadRandomizedRecipes()
 	LoadPanicBunker()
+	SSjob.AddMapJobs() //shut up
 	return ..()
 
 /datum/controller/subsystem/persistence/proc/LoadSatchels()

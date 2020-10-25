@@ -24,10 +24,28 @@
 	var/box // Internals box. Will be inserted at the start of backpack_contents
 	var/list/implants = null
 	var/accessory = null
-
+	var/contains_randomisation = FALSE //Used to redo asset loading with randomised outfits
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 
+////////F13 Randomization Edit
+	var/list/all_types = list()
+	var/list/all_possible_types = list()
+///////////////////////////////////////////////////
+//Simple randomisation support. If any of the piece types is a list, a random item is picked from that list
+//Supports weighted selection too, optionally
+/datum/outfit/New()
+	for (var/a in ALL_OUTFIT_SLOTS)
+		if (islist(vars[a]))
+			contains_randomisation = TRUE
+			all_possible_types += vars[a]
+			vars[a] = pickweight(vars[a])
+			all_types += vars[a]
+		else if(vars[a])
+			all_possible_types += vars[a]
+			all_types += vars[a]
+	.=..()
+//////////////////////////////////////////////////////
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	//to be overridden for customization depending on client prefs,species etc
 	return
@@ -118,6 +136,50 @@
 	H.update_body()
 	return TRUE
 
+
+//Returns a list of all the item paths this outfit contains, along with a quantity
+//Returned list is in the format path = quantity
+/datum/outfit/proc/get_all_item_paths()
+	var/list/data = list()
+	for (var/item in all_types)
+		data[item] = 1
+	for (var/implant in implants)
+		data[implant] = 1
+
+	data.Add(backpack_contents)
+	return data
+
+//Returns a list of all the paths this outfit could contain. This includes the entireity of random lists
+/datum/outfit/proc/get_all_possible_item_paths()
+	var/list/data = list()
+	for (var/item in all_possible_types)
+		data[item] = 1
+	for (var/implant in implants)
+		data[implant] = 1
+
+	data.Add(backpack_contents)
+	return data
+
+
+//Spawns the entire contents of the outfit into a location.
+//This could be a turf or a container, it should probably be one of those two
+/datum/outfit/proc/spawn_at(var/atom/location)
+	var/list/paths = get_all_item_paths()
+	var/list/items = list()
+	for (var/a in paths)
+		while (paths[a] > 0)
+			items.Add(new a)
+			paths[a]--
+
+	for (var/obj/a in items)
+		if (location.GetComponent(/datum/component/storage))
+			SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, a, null, TRUE, TRUE)
+		else
+			a.forceMove(location)
+
+
+
+
 /datum/outfit/proc/apply_fingerprints(mob/living/carbon/human/H)
 	if(!istype(H))
 		return
@@ -164,3 +226,20 @@
 	types += chameleon_extras
 	listclearnulls(types)
 	return types
+
+//Returns data useful for displaying the contents of this outfit in a UI
+//The return format is a list of lists, with each sublist being:
+	//"name" = name of the item
+	//"icon" = path of the cached icon for the typepath
+	//"quantity" = how many of the item there are. 1 in most cases
+/datum/outfit/ui_data()
+	var/list/data = list()
+	var/list/items = get_all_item_paths()
+	for (var/item in items)
+		var/list/subdata = list()
+		var/datum/outfit/d = item
+		subdata["name"] = initial(d.name)
+		subdata["icon"] = sanitize_filename("[item].png")
+		subdata["quantity"] = items[item]
+		data += list(subdata)
+	return data

@@ -10,7 +10,7 @@
 	var/datum/component/loadout_selector/LS = GetComponent(/datum/component/loadout_selector)
 	if (!istype(LS))
 		//Error message, shouldn't be seen but just incase
-		to_chat(src, SPAN_DANGER("You have either already selected a loadout, or have no options."))
+		to_chat(src, ("You have either already selected a loadout, or have no options."))
 
 		//If they don't have it, they shouldn't have this verb either
 		disable_loadout_select(src)
@@ -24,9 +24,9 @@
 /proc/enable_loadout_select(var/mob/M)
 	//Delay the notification message for a few seconds so players are less likely to miss it
 	spawn(50)
-		to_chat(M, SPAN_NOTICE("-------------------------------------------"))
-		to_chat(M, SPAN_NOTICE("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
-		to_chat(M, SPAN_NOTICE("-------------------------------------------"))
+		to_chat(src, ("-------------------------------------------"))
+		to_chat(src, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
+		to_chat(src, ("-------------------------------------------"))
 	M.verbs += /mob/proc/select_loadout
 	var/datum/component/loadout_selector/LS = M.AddComponent(/datum/component/loadout_selector) //Create the loadout selecting component
 	var/token = new /obj/item/loadout_token
@@ -228,7 +228,7 @@
 		else
 			cached_icons[dir2text(direction)] = "\ref[M]_[selected_datum.name]_[direction].png"
 		//Use send_asset with verify = true, to load it to the client, this will sleep until it arrives, preventing missing images
-		send_asset(M.client, cached_icons[dir2text(direction)], TRUE, preview)
+//		send_asset(M.client, cached_icons[dir2text(direction)], TRUE, preview)
 
 	preview_images[selected_datum.name] = cached_icons
 

@@ -5,7 +5,7 @@
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/boxstation.json"
+	var/config_filename = "_maps/Pahrump.json"
 	var/defaulted = TRUE  // set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -14,10 +14,13 @@
 	var/max_round_search_span = 0 //If this is nonzero, then if the map has been played more than max_rounds_played within the search span (max determined by define in persistence.dm), this map won't be available.
 	var/max_rounds_played = 0
 
+
 	// Config actually from the JSON - should default to Box
-	var/map_name = "Box Station"
-	var/map_path = "map_files/BoxStation"
-	var/map_file = "BoxStation.dmm"
+	var/map_name = "Pahrump"
+	var/map_path = "map_files/Pahrump"
+	var/map_file = "Pahrump.dmm"
+	var/list/added_jobs = list()     //Overrides the "none" faction using job name
+	var/list/removed_jobs = list()   //Removes the "none" faction using job name - can also use #all# (case sensitive)
 
 	var/traits = null
 	var/space_ruin_levels = 4
@@ -106,6 +109,22 @@
 			shuttles[key] = value
 	else if ("shuttles" in json)
 		log_world("map_config shuttles is not a list!")
+		return
+
+	if (islist(json["added_jobs"]))
+		var/list/J = json["added_jobs"]
+		for(var/key in J)
+			LAZYADD(added_jobs,key)
+	else if ("added_jobs" in json)
+		log_world("map_config added jobs is not a list! fuck!!")
+		return
+
+	if (islist(json["removed_jobs"]))
+		var/list/J = json["removed_jobs"]
+		for(var/key in J)
+			LAZYADD(removed_jobs,key)
+	else if ("removed_jobs" in json)
+		log_world("map_config removed jobs is not a list!")
 		return
 
 	traits = json["traits"]

@@ -5,7 +5,7 @@
 	department_head = list("Captain")
 	department_flag = MEDSCI
 	head_announce = list(RADIO_CHANNEL_SCIENCE)
-	faction = "Station"
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the captain"

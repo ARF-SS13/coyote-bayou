@@ -228,6 +228,17 @@
 	if(!signal_procs[target].len)
 		signal_procs -= target
 
+
+/datum/proc/RemoveComponentByType(var/path)
+	for (var/datum/component/dc in datum_components)
+		if (istype(dc, path))
+			var/datum/old_parent = dc.parent
+			dc.PreTransfer()
+			dc._RemoveFromParent()
+			dc.parent = null
+			SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, dc)
+
+
 /**
   * Called on a component when a component of the same type was added to the same parent
   * See `/datum/component/var/dupe_mode`

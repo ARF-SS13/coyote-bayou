@@ -3,7 +3,7 @@
 	flag = CYBORG
 //	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	department_flag = ENGSEC
-	faction = "Station"
+
 	total_positions = 0
 	spawn_positions = 3
 	supervisors = "your laws and the AI"	//Nodrak

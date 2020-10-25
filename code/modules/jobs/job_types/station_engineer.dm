@@ -3,7 +3,7 @@
 	flag = ENGINEER
 	department_head = list("Chief Engineer")
 	department_flag = ENGSEC
-	faction = "Station"
+
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "the chief engineer"

@@ -5,7 +5,7 @@ Assistant
 	title = "Assistant"
 	flag = ASSISTANT
 	department_flag = CIVILIAN
-	faction = "Station"
+
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "absolutely everyone"

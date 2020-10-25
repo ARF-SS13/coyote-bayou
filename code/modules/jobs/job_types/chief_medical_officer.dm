@@ -5,7 +5,7 @@
 	department_flag = MEDSCI
 //	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	head_announce = list(RADIO_CHANNEL_MEDICAL)
-	faction = "Station"
+
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the captain"
