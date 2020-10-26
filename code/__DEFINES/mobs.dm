@@ -333,3 +333,6 @@
 #define EXAMINE_MORE_TIME	1 SECONDS
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
+
+//Respawn timer
+#define RESPAWN_TIMER 6000 // in deciseconds, the time to wait before allowing respawn. 15 minutes = 15 * 60 (seconds in minute) * 15 (seconds to deciseconds)
