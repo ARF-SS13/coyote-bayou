@@ -18,9 +18,12 @@
 	hardness = 70
 	explosion_block = 2
 	smooth = SMOOTH_TRUE
+	//	disasemblable = 0
+	girder_type = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
+	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
-	unbreakable = 0
+//	unbreakable = 0
 
 
 /turf/closed/wall/f13/wood
@@ -31,7 +34,7 @@
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_TRUE
-	unbreakable = 0
+//	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
@@ -50,7 +53,7 @@
 
 /turf/closed/wall/f13/wood/house/broken
 	broken = 1
-	damage = 21
+//	damage = 21
 	icon_state = "house0-broken"
 
 /turf/closed/wall/f13/wood/house/broken/attackby(obj/item/W, mob/user, params)
@@ -66,10 +69,10 @@
 	. = ..()
 
 
-/turf/closed/wall/f13/wood/house/take_damage(dam)
-	if(damage + dam > hardness/2)
-		broken = 1
-	..()
+///turf/closed/wall/f13/wood/house/take_damage(dam)
+//	if(damage + dam > hardness/2)
+//		broken = 1
+//	..()
 
 /turf/closed/wall/f13/wood/house/relative()
 	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
@@ -79,10 +82,10 @@
 		set_opacity(0)
 	..()
 
-/turf/closed/wall/f13/wood/house/update_damage_overlay()
-	if(broken)
-		return
-	..()
+///turf/closed/wall/f13/wood/house/update_damage_overlay()
+//	if(broken)
+//		return
+//	..()
 
 /turf/closed/wall/f13/wood/house/clean
 	icon_state = "house0-clean"

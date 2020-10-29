@@ -149,20 +149,20 @@
 	desc = "The most popular flavored soft drink in the United States before the Great War."
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "nukacola"
-	list_reagents = list("nuka_cola" = 25, "radium" = 5)
+	list_reagents = list("nuka_cola" = 25, /datum/reagent/radium = 5)
 	foodtype = SUGAR
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."
-	list_reagents = list("nuka_cola" = 15, "radium" = 5)
+	list_reagents = list("nuka_cola" = 15, /datum/reagent/radium = 5)
 
 /obj/item/reagent_containers/food/drinks/bottle/sunset
 	name = "Sunset Sarsparilla"
 	desc = "The most popular flavored root beer in the West!"
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "sunset"
-	list_reagents = list("whiskey" = 1, "sunset" = 15, "salglu_solution" = 5)
+	list_reagents = list("whiskey" = 1, "sunset" = 15, /datum/reagent/medicine/salglu_solution = 5)
 	foodtype = SUGAR
 	isGlass = TRUE
 
@@ -466,7 +466,7 @@
 	name = "Silician Instatea"
 	desc = "Pre-war powerdered canned tea powder."
 	icon_state = "instatea"
-	list_reagents = list("teapowder" = 98, "radium" = 2)
+	list_reagents = list("teapowder" = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cream
 	name = "canned cream"
@@ -482,13 +482,13 @@
 	name = "Silician Instacocoa"
 	desc = "Pre-war powerdered canned dried chocolate mix."
 	icon_state = "instachoc"
-	list_reagents = list("cocoa" = 98, "radium" = 2)
+	list_reagents = list(/datum/reagent/consumable/coco = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/bottle/instacoffee
 	name = "Silician Instacoffee"
 	desc = "Pre-war powerdered canned coffee."
 	icon_state = "instacoffee"
-	list_reagents = list("coffeepowder" = 98, "radium" = 2)
+	list_reagents = list("coffeepowder" = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/bottle/vim
 	name = "Vim"

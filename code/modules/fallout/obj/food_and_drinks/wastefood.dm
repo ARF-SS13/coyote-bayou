@@ -91,7 +91,7 @@
 	if(..())
 		reagents.add_reagent( /datum/reagent/consumable/nutriment/vitamin, 3 + round((seed.potency / 20), 1))
 		reagents.add_reagent("calomel", 3 + round((seed.potency / 20), 1))
-		reagents.add_reagent("radium", 0 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/radium, 0 + round((seed.potency / 20), 1))
 		bitesize = 3 + round(reagents.total_volume / 3, 1)
 
 /obj/item/seeds/poppy/broc
@@ -476,7 +476,7 @@
 /obj/item/reagent_containers/food/snacks/grown/mutfruit/add_juice()
 	if(..())
 		reagents.add_reagent( /datum/reagent/consumable/nutriment/vitamin, 3 + round((seed.potency / 20), 1))
-		reagents.add_reagent("radium", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/radium, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /*HRP*/
@@ -702,7 +702,7 @@
 	genes = list(/datum/plant_gene/trait/glow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom)
-	reagents_add = list("radium" = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list(/datum/reagent/radium = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	seed = /obj/item/seeds/glowshroom
@@ -772,7 +772,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
 	genes = list(/datum/plant_gene/trait/glow/shadow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list("radium" = 0.2,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list(/datum/reagent/radium = 0.2,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom
@@ -907,7 +907,7 @@
 	icon_dead = "glow-dead"
 	icon_harvest = "glow-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow)
-	reagents_add = list("space_drugs" = 0.04, "mindbreaker" = 0.1, "mutagen" = 0.01, "radium" = 0.05)
+	reagents_add = list("space_drugs" = 0.04, "mindbreaker" = 0.1, "mutagen" = 0.01, /datum/reagent/radium = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/glow
 	seed = /obj/item/seeds/glow

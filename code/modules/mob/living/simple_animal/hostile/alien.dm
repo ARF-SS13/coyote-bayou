@@ -1,10 +1,10 @@
 /mob/living/simple_animal/hostile/alien
 	name = "alien hunter"
 	desc = "Hiss!"
-	icon = 'icons/mob/alien.dmi'
-	icon_state = "alienh"
-	icon_living = "alienh"
-	icon_dead = "alienh_dead"
+	icon = 'icons/mob/deathclaw.dmi'
+	icon_state = "wanamingo"
+	icon_living = "wanamingo"
+	icon_dead = "wanamingo_dead"
 	icon_gib = "syndicate_gib"
 	gender = FEMALE
 	response_help_continuous = "pokes"

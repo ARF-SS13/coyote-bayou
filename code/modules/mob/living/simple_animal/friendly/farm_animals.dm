@@ -558,6 +558,22 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	footstep_type = FOOTSTEP_MOB_SHOE
 
+/mob/living/simple_animal/cow/brahmin
+	name = "brahmin"
+	desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "brahmin"
+	icon_living = "brahmin"
+	icon_dead = "brahmin_dead"
+	icon_gib = "brahmin_gib"
+	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
+	var/young_type = /mob/living/simple_animal/cow/brahmin/calf
+	emote_hear = list("brays.")
+	var/obj/item/inventory_back
+	speak_chance = 0.4
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3)
+
+
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
 	is_calf = 1

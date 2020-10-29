@@ -49,7 +49,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom = 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -154,7 +154,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("toxin", 5)
+		H.reagents.add_reagent(/datum/reagent/toxin = 5)
 
 /mob/living/simple_animal/hostile/radscorpion/Initialize()
 	. = ..()

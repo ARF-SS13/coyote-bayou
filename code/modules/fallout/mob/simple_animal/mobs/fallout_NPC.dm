@@ -246,6 +246,7 @@
 	icon_dead = "bs_knight"
 	icon_gib = "bs_knight"
 	speak_chance = 0
+	faction = list("bos")
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -333,6 +334,7 @@
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper"
 	icon_gib = "ncr_trooper"
+	faction = list("NCR")
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -423,6 +425,7 @@
 	icon_living = "legion_prime"
 	icon_dead = "legion_prime"
 	icon_gib = "legion_prime"
+	faction = list("legion")
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -702,7 +705,7 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		var/choice = pick(1, 1, 1, 2, 3, 5)
-		H.reagents.add_reagent("FEV_solution", choice)
+		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
 
 /mob/living/simple_animal/hostile/abomination/Initialize()
 	. = ..()

@@ -27,7 +27,7 @@
 	filling_color = "#FFD700"
 	bitesize_mod = 2
 	foodtype = FRUIT
-	tastes = list("cocoa" = 1)
+	tastes = list(/datum/reagent/consumable/coco = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/creme_de_cacao
 
 // Vanilla Pod
