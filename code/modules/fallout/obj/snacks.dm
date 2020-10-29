@@ -43,3 +43,13 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("slow cooked liver" = 4, "delicious crunch" = 1)
 //	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/rawantbrain
+	name = "Raw Ant Brain"
+	desc = "Goppy reddish-grey flesh dug out of the brain case of a giant ant."
+	icon_state = "AntBrain"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("fat" = 4, "bitter meat" = 1)
+//	foodtype = MEAT
