@@ -18,7 +18,7 @@
 	icon = 'icons/obj/guns/energy.dmi'
 
 	var/obj/item/stock_parts/cell/cell //What type of power cell this uses
-	var/cell_type = /obj/item/stock_parts/cell
+	var/cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	var/modifystate = 0
 	/// = TRUE/FALSE decides if the user can switch to it of their own accord
 	var/list/ammo_type = list(/obj/item/ammo_casing/energy = TRUE)
@@ -340,3 +340,63 @@
 		select_fire(user)
 		return TRUE
 	return ..()
+
+/obj/item/gun/energy/AltClick(mob/user)
+	if (!ishuman(user))
+		return
+	if (get_dist(src, user)<2)
+		if(cell)
+			if(can_charge == 0)
+				to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
+				return
+			cell.forceMove(drop_location())
+			user.put_in_hands(cell)
+			cell.update_icon()
+			cell = null
+			to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+			playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
+		else
+			to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
+		return
+	else 
+		return
+
+/obj/item/gun/energy/attack_self(mob/living/user)
+	if (!ishuman(user))
+		return
+	if(cell)
+		if(can_charge == 0)
+			to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
+			return
+		cell.forceMove(drop_location())
+		user.put_in_hands(cell)
+		cell.update_icon()
+		cell = null
+		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
+	else
+		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
+	return
+
+
+/obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
+	..()
+	if (istype(A, /obj/item/stock_parts/cell/ammo))
+		var/obj/item/stock_parts/cell/ammo/AM = A
+		if (!cell && istype(AM, cell_type))
+			if(user.transferItemToLoc(AM, src))
+				cell = AM
+				to_chat(user, "<span class='notice'>You load a new cell into \the [src].</span>")
+				A.update_icon()
+				update_icon()
+				return 1
+			else
+				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				return
+		//else if (cell)
+			//to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
+
+/obj/item/gun/energy/examine(mob/user)
+	..()
+	if(can_charge == 1)
+		to_chat(user, "<span class='notice'>Alt-click to eject the battery.</span>")

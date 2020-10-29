@@ -468,6 +468,29 @@
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/automatic/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 18
+			if (recoil_decrease)
+				spread = 10
+			if (burst_improvement)
+				burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			if (recoil_decrease)
+				spread = 0
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
 /obj/item/gun/ballistic/automatic/greasegun/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
@@ -551,55 +574,6 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 
-/obj/item/gun/ballistic/automatic/greasegun/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 18
-			if (recoil_decrease)
-				spread = 10
-			if (burst_improvement)
-				burst_size = 3
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			if (recoil_decrease)
-				spread = 0
-			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
-
-
-
-/obj/item/gun/ballistic/automatic/greasegun/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 18
-			if (recoil_decrease)
-				spread = 10
-			if (burst_improvement)
-				burst_size = 3
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			if (recoil_decrease)
-				spread = 0
-			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
 	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56."
@@ -656,7 +630,6 @@
 	can_bayonet = FALSE
 	force = 15
 
-
 /obj/item/gun/ballistic/automatic/infiltrator/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
@@ -698,6 +671,7 @@
 	randomspread = 10
 	knife_x_offset = 22
 	knife_y_offset = 12
+	burst_size = 1
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/mid
 	name = "service rifle (improved)"
@@ -1277,7 +1251,6 @@
 	item_state = "fnfal"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 2
 	automatic = 1

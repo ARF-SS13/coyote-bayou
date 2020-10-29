@@ -349,6 +349,27 @@
 	fire_delay = 4
 	can_scope = TRUE
 
+/obj/item/gun/ballistic/shotgun/remington
+	name = "hunting rifle"
+	desc = "A sturdy hunting rifle, chambered in .308. and in use before the war."
+	icon_state = "308"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
+	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 3
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	can_scope = TRUE
+
+/obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
 
 /obj/item/gun/ballistic/shotgun/remington/scoped
 	name = "scoped hunting rifle"
@@ -363,6 +384,26 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+
+/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia
+	name = "Paciencia"
+	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
+	icon_state = "paciencia"
+	item_state = "paciencia"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
+	fire_delay = 5
+	extra_damage = 20 //60 damage- hits as hard as an AMR!
+	extra_penetration = 10
+
+/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		return
+	else if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			return
+	else
+		..()
 
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
@@ -414,26 +455,6 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 6
 	can_scope = FALSE
-
-/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia
-	name = "Paciencia"
-	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
-	icon_state = "paciencia"
-	item_state = "paciencia"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
-	fire_delay = 5
-	extra_damage = 20 //60 damage- hits as hard as an AMR!
-	extra_penetration = 10
-
-/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
-	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
-		return
-	else if(istype(A, /obj/item/melee/transforming/energy))
-		var/obj/item/melee/transforming/energy/W = A
-		if(W.active)
-			return
-	else
-		..()
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "brush gun"

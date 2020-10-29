@@ -107,6 +107,7 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 71
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/pps9mm/empty
 	start_empty = 1
