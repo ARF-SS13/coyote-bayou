@@ -64,3 +64,16 @@
 	max_ammo = 10
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/mm762
+	name = "ammo belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 80
+	caliber = "a762"
+
+/obj/item/ammo_box/magazine/mm762/can_load()
+	return 0
+
+/obj/item/ammo_box/magazine/mm762/update_icon()
+	..()
+	icon_state = "762belt-[round(ammo_count(),20)]"

@@ -503,19 +503,19 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	fire_delay = 3
-	zoomed = TRUE
+	can_scope = TRUE
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	item_state = "44magnum"
 	icon_state = "mysterious_m29"
-	zoomed = FALSE
+	can_scope = FALSE
 
 /obj/item/gun/ballistic/revolver/m29/coltwalker
 	name = "Colt Walker 1847"
 	desc = "A legendary gun of the west. The Colt Walker bears a fearsome reputation for a very good reason, finding itself in the hands of everyone from ancient army officials to outlaws throughout the years. An antique when the bombs dropped, the weapon is now incredibly outdated. Still, that doesn't make it any less lethal."
 	item_state = "coltwalker"
 	icon_state = "coltwalker"
-	zoomed = FALSE
+	can_scope = FALSE
 
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	name = "Peacekeeper"
@@ -526,10 +526,9 @@
 	extra_penetration = 5
 	fire_delay = 10
 	burst_size = 1
-
 	var/select = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	zoomed = FALSE
+	can_scope = FALSE
 
 /obj/item/gun/ballistic/revolver/m29/peacekeeper/ui_action_click()
 	burst_select()
@@ -560,7 +559,17 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	zoomed = FALSE
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/m29/snub
+	name = "\improper snubnose .44 magnum revolver"
+	desc = "A snubnose variant of the common place .44 magnum. An excellent holdout weapon for self defense."
+	icon_state = "m29_snub"
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT
+	extra_damage = -5 //Smaller barrel, smaller bullet velocity
+	extra_penetration = -5 //See above
+	spread = 10
 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
@@ -587,6 +596,18 @@
 			return 1
 	return 0
 */
+/obj/item/gun/ballistic/revolver/shotgunrevolver
+	name = "\improper revolver shotgun"
+	desc = "A large revolver that fires shotgun shells."
+	icon_state = "judge"
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/shotgunrevolver
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	fire_delay = 10
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT
+	spread = 40
+
 /obj/item/gun/ballistic/revolver/needler
 	name = "needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
@@ -672,6 +693,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
 	fire_delay = 0
 	extra_damage = 20
-	burst_size = 2
 	extra_penetration = 5
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
