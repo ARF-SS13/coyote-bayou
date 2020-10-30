@@ -1,3 +1,5 @@
+#define REM REAGENTS_EFFECT_MULTIPLIER
+
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 
@@ -11,7 +13,7 @@
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR))
-			M.adjustToxLoss(3.75*reac_volume) //increased from 0.5*reac_volume, which was amusingly low since stimpak heals toxins. now a pill at safe max crits and then heals back up to low health within a few seconds
+			M.adjustToxLoss(3.75*reac_volume*REM) //increased from 0.5*reac_volume, which was amusingly low since stimpak heals toxins. now a pill at safe max crits and then heals back up to low health within a few seconds
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
@@ -19,19 +21,19 @@
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	if(!M.reagents.has_reagent("healing_powder")) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-4)
-		M.adjustFireLoss(-4)
-		M.adjustToxLoss(-1)
-		M.AdjustStun(-5, 0)
-		M.AdjustKnockdown(-5, 0)
-		M.adjustStaminaLoss(-2)
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustBruteLoss(-4*REM)
+		M.adjustFireLoss(-4*REM)
+		M.adjustToxLoss(-1*REM)
+		M.AdjustStun(-5*REM, 0)
+		M.AdjustKnockdown(-5*REM, 0)
+		M.adjustStaminaLoss(-2*REM)
 		. = 1
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(5)
-	M.adjustOxyLoss(8)
+	M.adjustToxLoss(5*REM)
+	M.adjustOxyLoss(8*REM)
 	..()
 	. = 1
 
@@ -48,19 +50,19 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0 && M.getOxyLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-6)
-		M.adjustFireLoss(-6)
-		M.adjustOxyLoss(-2)
-		M.adjustToxLoss(-2)
-		M.AdjustStun(-10, 0)
-		M.AdjustKnockdown(-10, 0)
-		M.adjustStaminaLoss(-4)
+		M.adjustBruteLoss(-6*REM)
+		M.adjustFireLoss(-6*REM)
+		M.adjustOxyLoss(-2*REM)
+		M.adjustToxLoss(-2*REM)
+		M.AdjustStun(-10*REM, 0)
+		M.AdjustKnockdown(-10*REM, 0)
+		M.adjustStaminaLoss(-4*REM)
 		. = 1
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(10)
-	M.adjustOxyLoss(12)
+	M.adjustToxLoss(10*REM)
+	M.adjustOxyLoss(12*REM)
 	..()
 	. = 1
 
@@ -78,15 +80,15 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) //should prevent stacking with healing powder and stimpaks
-		M.adjustFireLoss(-3)
-		M.adjustBruteLoss(-3)
+		M.adjustFireLoss(-3*REM)
+		M.adjustBruteLoss(-3*REM)
 		M.hallucination = max(M.hallucination, 5)
 		. = 1
 	..()
 
 /datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
-	M.adjustToxLoss(2)
-	M.adjustOxyLoss(4)
+	M.adjustToxLoss(2*REM)
+	M.adjustOxyLoss(4*REM)
 	..()
 	. = 1
 
@@ -103,8 +105,8 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	M.adjustFireLoss(-3)
-	M.adjustBruteLoss(-3)
+	M.adjustFireLoss(-3*REM)
+	M.adjustBruteLoss(-3*REM)
 	M.hallucination = max(M.hallucination, 5)
 	. = 1
 	..()
@@ -112,14 +114,14 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/healing_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjustToxLoss(3*reac_volume) //also increased from 0.5, reduced from 6
+			M.adjustToxLoss(3*reac_volume*REM) //also increased from 0.5, reduced from 6
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(2)
-	M.adjustOxyLoss(4)
+	M.adjustToxLoss(2*REM)
+	M.adjustOxyLoss(4*REM)
 	..()
 	. = 1
 
@@ -136,16 +138,16 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getOxyLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustFireLoss(-4)
-		M.adjustBruteLoss(-4)
-		M.adjustOxyLoss(-2)
+		M.adjustFireLoss(-4*REM)
+		M.adjustBruteLoss(-4*REM)
+		M.adjustOxyLoss(-2*REM)
 		M.hallucination = max(M.hallucination, 5)
 	..()
 
 /datum/reagent/medicine/healing_poultice/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjustToxLoss(4.5*reac_volume) //changed from 0.5*reac_volume, reduced from 6
+			M.adjustToxLoss(4.5*reac_volume*REM) //changed from 0.5*reac_volume, reduced from 6
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
@@ -161,7 +163,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
 		M.radiation -= min(M.radiation, 8)
-	M.adjustToxLoss(-0.5)
+	M.adjustToxLoss(-0.5*REM)
 	. = 1
 	..()
 
@@ -174,7 +176,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3)
+	M.adjustToxLoss(-3*REM)
 	M.radiation -= min(M.radiation, 16)
 	if(ishuman(M) && prob(7))
 		var/mob/living/carbon/human/H = M
@@ -219,7 +221,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.losebreath += 8
 //			M.adjust_eye_damage(6)
 			M.set_disgust(12)
-			M.adjustStaminaLoss(30)
+			M.adjustStaminaLoss(30*REM)
 			M.vomit(0, 1, 1, 1, 0, 0, 0, 1)
 			to_chat(M, "<span class='danger'>Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
 		if(51 to 100)
@@ -228,7 +230,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.losebreath += 10
 //			M.adjust_eye_damage(12)
 			M.set_disgust(25)
-			M.adjustStaminaLoss(30)
+			M.adjustStaminaLoss(30*REM)
 			M.vomit(30, 1, 1, 5, 0, 0, 0, 1)
 			M.Unconscious(200)
 			M.Jitter(1000)
@@ -247,10 +249,10 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-30, 0)
-	M.AdjustKnockdown(-30, 0)
-	M.AdjustUnconscious(-30, 0)
-	M.adjustStaminaLoss(-5, 0)
+	M.AdjustStun(-30*REM, 0)
+	M.AdjustKnockdown(-30*REM, 0)
+	M.AdjustUnconscious(-30*REM, 0)
+	M.adjustStaminaLoss(-5*REM, 0)
 	..()
 	. = 1
 
@@ -270,7 +272,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(1)
+		M.adjustToxLoss(1*REM)
 		. = 1
 		M.Dizzy(3)
 		M.Jitter(3)
@@ -279,7 +281,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2)
+		M.adjustToxLoss(2*REM)
 		. = 1
 		M.Dizzy(4)
 		M.Jitter(4)
@@ -288,7 +290,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(3)
+		M.adjustToxLoss(3*REM)
 		. = 1
 		M.Dizzy(5)
 		M.Jitter(5)
@@ -319,10 +321,10 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-20, 0)
-	M.AdjustKnockdown(-20, 0)
-	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-3, 0)
+	M.AdjustStun(-20*REM, 0)
+	M.AdjustKnockdown(-20*REM, 0)
+	M.AdjustUnconscious(-20*REM, 0)
+	M.adjustStaminaLoss(-3*REM, 0)
 	..()
 	. = 1
 
@@ -342,7 +344,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/legionmedx/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(1)
+		M.adjustToxLoss(1*REM)
 		. = 1
 		M.Dizzy(3)
 		M.Jitter(3)
@@ -351,7 +353,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/legionmedx/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2)
+		M.adjustToxLoss(2*REM)
 		. = 1
 		M.Dizzy(4)
 		M.Jitter(4)
@@ -360,7 +362,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/legionmedx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(3)
+		M.adjustToxLoss(3*REM)
 		. = 1
 		M.Dizzy(5)
 		M.Jitter(5)
@@ -376,7 +378,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	addiction_threshold = 20
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3)
+	M.adjustOxyLoss(-3*REM)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
@@ -422,7 +424,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 
 /datum/reagent/medicine/mentat/addiction_act_stage3(mob/living/M)
 	if(prob(33))
-		M.adjustToxLoss(1)
+		M.adjustToxLoss(1*REM)
 //		M.adjustBrainLoss(2)
 //		. = 1
 		M.Dizzy(4)
@@ -432,7 +434,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/mentat/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2)
+		M.adjustToxLoss(2*REM)
 //		M.adjustBrainLoss(4)
 //		. = 1
 		M.Dizzy(5)
