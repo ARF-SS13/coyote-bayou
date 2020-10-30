@@ -104,3 +104,14 @@
 
 /obj/item/ammo_box/magazine/a50/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/m9mmds
+	name = "doublestack pistol magazine (9mm)"
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 15
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m9mmds/empty
+	start_empty = 1

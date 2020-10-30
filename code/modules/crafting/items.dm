@@ -409,23 +409,23 @@
 	if(istype(W, /obj/item/wrench))
 		if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockplastic)//service
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/service
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/service/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/service/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockwood)//varmint
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/varmint
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)

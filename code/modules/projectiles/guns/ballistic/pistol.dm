@@ -59,6 +59,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
+	fire_delay = 2
+	can_attachments = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -185,6 +187,39 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	can_attachments = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/beretta
+	name = "beretta M9FS"
+	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
+	icon_state = "beretta"
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 2
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	can_attachments = TRUE
+	extra_damage = 3
+
+/obj/item/gun/ballistic/automatic/pistol/sig
+	name = "sig p220"
+	desc = "The P220 Sig Sauer. A Swiss designed pistol, the Sig Sauer benefits from compact and lightweight construction."
+	icon_state = "sig"
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	w_class = WEIGHT_CLASS_SMALL
+	fire_delay = 0
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	can_attachments = TRUE
+	extra_damage = 2
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/maria
+	name = "Maria"
+	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
+	icon_state = "maria"
+	w_class = WEIGHT_CLASS_SMALL
+	fire_delay = 0
+	extra_damage = 10 //40 damage, 20 AP- hits like a 7.62 and fires faster
+	extra_penetration = 20
 
 /obj/item/gun/ballistic/automatic/pistol/type17
 	name = "type 17"
