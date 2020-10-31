@@ -1,3 +1,4 @@
+#define REM REAGENTS_EFFECT_MULTIPLIER
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 
@@ -7,6 +8,7 @@
 	taste_description = "grossness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
+	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)

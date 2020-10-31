@@ -16,7 +16,7 @@
 	bitesize = 3
 	filling_color = "#CD853F"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	list_reagents = list("nutriment" = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/cookedbrahmintongue
 	tastes = list("top quality beef" = 4, "tender meat" = 1, "tasty gravy" = 1)
 //	foodtype = MEAT
