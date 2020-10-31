@@ -213,7 +213,7 @@
 	healable = 1
 	ranged = 1
 	attack_verb_simple = "power-fists"
-	projectiletype = /obj/item/projectile/plasma/repeater
+	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
 
 /mob/living/simple_animal/hostile/enclave/soldier_ca

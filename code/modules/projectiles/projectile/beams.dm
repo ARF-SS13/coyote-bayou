@@ -319,7 +319,7 @@
 	damage = 21
 	armour_penetration = 10
 
-/obj/item/projectile/plasma //Plasma rifle
+/obj/item/projectile/f13plasma //Plasma rifle
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
@@ -339,7 +339,7 @@
 	eyeblur = 0
 	is_reflectable = TRUE
 
-/obj/item/projectile/plasma/repeater //Plasma repeater
+/obj/item/projectile/f13plasma/repeater //Plasma repeater
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
@@ -349,15 +349,15 @@
 	eyeblur = 0
 	is_reflectable = FALSE
 
-/obj/item/projectile/plasma/pistol //Plasma pistol
+/obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 45
 	armour_penetration = 3
 
-/obj/item/projectile/plasma/pistol/glock //Glock (streamlined plasma pistol)
+/obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 30
 	armour_penetration = 15
 
-/obj/item/projectile/plasma/scatter //Multiplas, fires 3 shots, will melt you
+/obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 31
 	armour_penetration = 10
 
