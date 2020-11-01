@@ -677,7 +677,7 @@
 				)
 
 	var/loot11 = list(
-				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint,
+				/obj/item/gun/ballistic/automatic/varmint,
 				//obj/item/ammo_box/magazine/m556/rifle/small,
 				/obj/item/ammo_box/magazine/m556/rifle/small)
 

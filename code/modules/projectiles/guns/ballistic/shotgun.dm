@@ -336,18 +336,97 @@
 	var/obj/item/gun/magic/hook/bounty/hook
 	var/toggled = FALSE
 
-/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
-	name = "cowboy repeater"
-	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
-	icon_state = "cowboyrepeater"
-	item_state = "cowboyrepeater"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-//	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+// Fallout 13 //
+
+/obj/item/gun/ballistic/revolver/caravan_shotgun
+	name = "caravan shotgun"
+	desc = "An common over-under double barreled shotgun."
+	icon_state = "caravan_shotgun"
+	item_state = "dshotgun1"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	sawn_desc = "Omar's coming!"
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 4
+	fire_delay = 1
+//	distro = 1
+
+/obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
+/obj/item/gun/ballistic/revolver/single_shotgun
+	name = "single shotgun"
+	desc = "A dirt cheap single shot shotgun."
+	icon_state = "single_shotgun"
+	item_state = "singleshot"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+//	distro = 1
+
+/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
+	name = "city-killer combat shotgun"
+	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses an internal feeding tube instead of a magazine."
+	icon_state = "citykiller"
+	item_state = "cshotgun1"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/hunting
+	name = "hunting shotgun"
+	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
+	icon_state = "hunting"
+	item_state = "huntingshotgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	sawn_desc = "A concealed hand blaster, for any situation."
+
+/obj/item/gun/ballistic/shotgun/hunting/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
+/obj/item/gun/ballistic/shotgun/trench
+	name = "lever action shotgun"
+	desc = "A lever action hunting shotgun with a five-shell capacity underneath plus one in chamber."
+	icon_state = "trenchgun"
+	item_state = "trenchgun"
 	can_scope = TRUE
+	scopestate = "AEP7_scope"
+	scope_x_offset = 8
+	scope_y_offset = 19
+	can_bayonet = TRUE
+//	bayonetstate = "trenchgun"
+	knife_x_offset = 23
+	knife_y_offset = 14
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/shotgun/remington
 	name = "hunting rifle"
@@ -376,10 +455,8 @@
 	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war. This one has a 8x scope mounted to it."
 	icon_state = "rifle308_scope"
 	item_state = "scoped308"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	fire_delay = 3
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -405,30 +482,29 @@
 	else
 		..()
 
-/obj/item/gun/ballistic/shotgun/hunting
-	name = "hunting shotgun"
-	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
-	icon_state = "hunting"
-	item_state = "huntingshotgun"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	name = "cowboy repeater"
+	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
+	icon_state = "cowboyrepeater"
+	item_state = "cowboyrepeater"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+//	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	sawn_desc = "A concealed hand blaster, for any situation."
+	fire_delay = 4
+	can_scope = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	name = "scoped cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
 	icon_state = "scopedcowboyrepeater"
 	item_state = "scopedcowboyrepeater"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	fire_delay = 6
 	can_scope = FALSE
+
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
@@ -443,17 +519,11 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
 	name = "scoped trail carbine"
-	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "scopedtrailcarbine"
 	item_state = "scopedtrailcarbine"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-	fire_sound = 'sound/f13weapons/44mag.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	fire_delay = 6
 	can_scope = FALSE
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
@@ -469,23 +539,14 @@
 	can_scope = TRUE
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
-	name = "scoped brush gun (standard)"
-	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
+	name = "scoped brush gun"
 	icon_state = "scopedbrushgun"
 	item_state = "scopedbrushgun"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	fire_delay = 6
 	can_scope = FALSE
-	extra_penetration = -5
-	extra_damage = -5
 
-//Anti-Materiel Rifle (NCR)
 /obj/item/gun/ballistic/shotgun/antimateriel
 	name = "anti-materiel rifle"
 	desc = "A heavy, high-powered sniper rifle chambered in .50 caliber ammunition, custom-made for use by the New California Republic Rangers. Although relatively austere, you're still pretty sure it could take the head off a deathclaw."
@@ -504,65 +565,42 @@
 	fire_delay = 6
 //	projectile_speed = 0 //basically hitscan
 
-//Fallout 13
-
-// Trenchgun //
-/obj/item/gun/ballistic/shotgun/trench
-	name = "lever action shotgun"
-	desc = "A lever action hunting shotgun with a five-shell capacity underneath plus one in chamber."
-	icon_state = "trenchgun"
-	item_state = "trenchgun"
+/obj/item/gun/ballistic/shotgun/kar98k
+	name = "\improper karabiner 98k"
+	desc = "An old military service rifle from World War 2. This model was rechambered in .308."
+	icon_state = "kar98"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/kar98
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 5
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
-	scope_x_offset = 8
-	scope_y_offset = 19
-	can_bayonet = TRUE
-//	bayonetstate = "trenchgun"
-	knife_x_offset = 23
-	knife_y_offset = 14
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_LIGHT
+	extra_damage = 10
+	extra_penetration = 10
 
-//Double Barrel Caravan Shotgun
-/obj/item/gun/ballistic/revolver/caravan_shotgun
-	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun."
-	icon_state = "caravan_shotgun"
+/obj/item/gun/ballistic/shotgun/kar98k/scoped
+	name = "\improper scoped karabiner 98k"
+	icon_state = "kar98scope"
+	item_state = "scoped308"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/widowmaker
+	name = "winchester widowmaker"
+	desc = "A Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
+	icon_state = "widowmaker"
 	item_state = "dshotgun1"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	sawn_desc = "Omar's coming!"
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 1
-//	distro = 1
 
-//Single Shot Shotgun
-/obj/item/gun/ballistic/revolver/single_shotgun
-	name = "single shotgun"
-	desc = "A dirt cheap single shot shotgun."
-	icon_state = "single_shotgun"
-	item_state = "singleshot"
-	force = 20
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
-	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-//	distro = 1
-
-/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
-		sawoff(user)
-	if(istype(A, /obj/item/melee/transforming/energy))
-		var/obj/item/melee/transforming/energy/W = A
-		if(W.active)
-			sawoff(user)
-
-/obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		sawoff(user)
