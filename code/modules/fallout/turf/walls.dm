@@ -30,7 +30,7 @@
 	name = "wooden wall"
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
-	icon_state = "wood0"
+	icon_state = "wood"
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_TRUE
@@ -97,7 +97,7 @@
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
 	icon = 'icons/fallout/turfs/walls/interior.dmi'
-	icon_state = "interior0"
+	icon_state = "interior"
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_TRUE
@@ -135,7 +135,7 @@
 	name = "supermart wall"
 	desc = "A pre-War supermart wall made of reinforced concrete."
 	icon = 'icons/fallout/turfs/walls/superstore.dmi'
-	icon_state = "supermart0"
+	icon_state = "supermart"
 	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
