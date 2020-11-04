@@ -373,7 +373,6 @@
 			else
 				to_chat(user,"<span class='danger'>It's empty.</span>")
 
-	to_chat(user, .)
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user)
 
 /**
