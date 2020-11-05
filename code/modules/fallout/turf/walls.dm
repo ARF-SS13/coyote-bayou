@@ -12,8 +12,8 @@
 /turf/closed/wall/f13/ruins
 	name = "ruins"
 	desc = "All what has left from the good old days."
-	icon = 'icons/fallout/turfs/walls/ruins.dmi'
-	icon_state = "ruins0"
+	icon = 'icons/turf/walls/f13composite.dmi'
+	icon_state = "ruins"
 	icon_type_smooth = "ruins"
 	hardness = 70
 	explosion_block = 2
@@ -30,7 +30,7 @@
 	name = "wooden wall"
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
-	icon_state = "wood0"
+	icon_state = "wood"
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_TRUE
@@ -44,8 +44,8 @@
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
 	desc = "A weathered pre-War house wall."
-	icon = 'icons/fallout/turfs/walls/house.dmi'
-	icon_state = "house0"
+	icon = 'icons/turf/walls/f13wood_wall.dmi'
+	icon_state = "house"
 	icon_type_smooth = "house"
 	hardness = 50
 	var/broken = 0
@@ -96,8 +96,8 @@
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
-	icon = 'icons/fallout/turfs/walls/interior.dmi'
-	icon_state = "interior0"
+	icon = 'icons/turf/walls/f13interior.dmi'
+	icon_state = "interior"
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_TRUE
@@ -106,8 +106,8 @@
 /turf/closed/wall/f13/store
 	name = "store wall"
 	desc = "A pre-War store wall made of solid concrete."
-	icon = 'icons/fallout/turfs/walls/store.dmi'
-	icon_state = "store0"
+	icon = 'icons/turf/walls/f13store.dmi'
+	icon_state = "store"
 	icon_type_smooth = "store"
 	hardness = 80
 	smooth = SMOOTH_TRUE
@@ -134,8 +134,8 @@
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
 	desc = "A pre-War supermart wall made of reinforced concrete."
-	icon = 'icons/fallout/turfs/walls/superstore.dmi'
-	icon_state = "supermart0"
+	icon = 'icons/turf/walls/f13superstore.dmi'
+	icon_state = "supermart"
 	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2

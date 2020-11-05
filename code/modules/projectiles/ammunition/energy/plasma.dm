@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/energy/plasma
-	projectile_type = /obj/item/projectile/plasma
+	projectile_type = /obj/item/projectile/f13plasma
 	select_name = "plasma burst"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	delay = 15
@@ -23,19 +23,19 @@
 	e_cost = 160//12
 
 /obj/item/ammo_casing/energy/plasma/scatter
-	projectile_type = /obj/item/projectile/plasma/scatter
+	projectile_type = /obj/item/projectile/f13plasma/scatter
 	pellets = 3
 	variance = 14
 	select_name = "scatter"
 	e_cost = 200 //10 shots
 
 /obj/item/ammo_casing/energy/plasma/pistol
-	projectile_type = /obj/item/projectile/plasma/pistol
+	projectile_type = /obj/item/projectile/f13plasma/pistol
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 200 //8 shots
 
 /obj/item/ammo_casing/energy/plasma/pistol/glock
-	projectile_type = /obj/item/projectile/plasma/pistol/glock
+	projectile_type = /obj/item/projectile/f13plasma/pistol/glock
 	e_cost = 160 //10 shots
 
 /obj/item/ammo_casing/energy/plasma/pistol/glock/extended
