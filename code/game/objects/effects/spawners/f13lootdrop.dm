@@ -826,8 +826,7 @@
 
 	var/loot3 = list(
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
-				/obj/item/ammo_box/magazine/a50,
-				//obj/item/ammo_box/magazine/a50
+				/obj/item/ammo_box/magazine/m50
 				)
 
 	var/loot4 = list(
@@ -1030,7 +1029,7 @@
 
 	loot = list(
 				/obj/item/ammo_box/magazine/d12g,
-				/obj/item/ammo_box/magazine/a50,
+				/obj/item/ammo_box/magazine/m50,
 				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570,
