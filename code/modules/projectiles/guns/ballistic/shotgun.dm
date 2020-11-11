@@ -133,13 +133,19 @@
 	can_bayonet = FALSE
 	var/slung = FALSE
 
-/obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
+/*/obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
 	if(bolt_open)
 		pump_reload(M)
 	else
 		pump_unload(M)
 	bolt_open = !bolt_open
+	update_icon()	//I.E. fix the desc
+	return 1*/
+/obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
+	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	pump_unload(M)
+	pump_reload(M)
 	update_icon()	//I.E. fix the desc
 	return 1
 
