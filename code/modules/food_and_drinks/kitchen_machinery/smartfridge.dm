@@ -48,11 +48,11 @@
 				if(0)
 					icon_state = "[initial(icon_state)]"
 				if(1 to 25)
-					icon_state = "[initial(icon_state)]1"
+					icon_state = "[initial(icon_state)]-1"
 				if(26 to 75)
-					icon_state = "[initial(icon_state)]2"
+					icon_state = "[initial(icon_state)]-2"
 				if(76 to INFINITY)
-					icon_state = "[initial(icon_state)]3"
+					icon_state = "[initial(icon_state)]-3"
 		else
 			icon_state = "[initial(icon_state)]"
 	else

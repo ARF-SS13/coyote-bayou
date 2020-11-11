@@ -1254,6 +1254,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sledgehammer0"
+	item_state = "sledgehammer0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	force = 25

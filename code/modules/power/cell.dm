@@ -11,13 +11,14 @@
 	throw_speed = 2
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	var/charge = 0	// note %age conveted to actual charge in New
+	var/charge = 0	// note %age converted to actual charge in New
 	var/maxcharge = 1000
 	custom_materials = list(/datum/material/iron=700, /datum/material/glass=50)
 	var/start_charged = TRUE
 	grind_results = list(/datum/reagent/lithium = 15, /datum/reagent/iron = 5, /datum/reagent/silicon = 5)
 	var/rigged = FALSE	// true if rigged to explode
 	var/chargerate = 100 //how much power is given every tick in a recharger
+	var/cancharge = 1 //set to 0 if you do not want this battery to be able to charge
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
@@ -28,8 +29,7 @@
 
 /obj/item/stock_parts/cell/Initialize(mapload, override_maxcharge)
 	. = ..()
-	if(self_recharge)
-		START_PROCESSING(SSobj, src)
+	START_PROCESSING(SSobj, src)
 	create_reagents(5, INJECTABLE | DRAINABLE)
 	if (override_maxcharge)
 		maxcharge = override_maxcharge
@@ -58,16 +58,17 @@
 	else
 		return PROCESS_KILL
 
-/obj/item/stock_parts/cell/update_overlays()
-	. = ..()
+/obj/item/stock_parts/cell/update_icon()
+	cut_overlays()
 	if(grown_battery)
-		. += image('icons/obj/power.dmi',"grown_wires")
+		add_overlay(image('icons/obj/power.dmi',"grown_wires"))
 	if(charge < 0.01)
 		return
-	else if(charge/maxcharge >=0.995)
-		. += "cell-o2"
-	else
-		. += "cell-o1"
+	else if (maxcharge == 1000 || maxcharge == 2500 || maxcharge == 5000)
+		if(charge/maxcharge >=0.995)
+			add_overlay("cell-o2")
+		else
+			add_overlay("cell-o1")
 
 /obj/item/stock_parts/cell/proc/percent()		// return % charge of cell
 	return 100*charge/maxcharge
@@ -98,9 +99,9 @@
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
 	if(rigged)
-		. += "<span class='danger'>This power cell seems to be faulty!</span>"
+		to_chat(user, "<span class='danger'>This power cell seems to be faulty!</span>")
 	else
-		. += "The charge meter reads [round(src.percent() )]%."
+		to_chat(user, "The charge meter reads [round(src.percent() )]%.")
 
 /obj/item/stock_parts/cell/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -414,19 +415,30 @@
 	name = "toy mag burst rifle power supply"
 	maxcharge = 4000
 
+/obj/item/stock_parts/cell/ammo
+	name = "ammo cell"
+	desc = "You shouldn't be holding this."
+	cancharge = 0
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stock_parts/cell/ammo/update_icon()
+	if(charge > 1)
+		name = "[initial(name)]"
+	else
+		name = "used [initial(name)]"
+	. = ..()
+
+/obj/item/stock_parts/cell/ammo/New()
+	..()
+	return
+
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons."
 	icon_state = "mfc-full"
 	maxcharge = 2000
 
-/obj/item/stock_parts/cell/ammo/ultracite
-	name = "ultracite cell"
-	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."
-	icon_state = "ultracite"
-	maxcharge = 2000
-
-/obj/item/stock_parts/cell/ammo/mfc/process()
+/obj/item/stock_parts/cell/ammo/mfc/update_icon()
 	switch(charge)
 		if (1001 to 2000)
 			icon_state = "mfc-full"
@@ -436,13 +448,19 @@
 			icon_state = "mfc-empty"
 	. = ..()
 
+/obj/item/stock_parts/cell/ammo/ultracite
+	name = "ultracite cell"
+	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."
+	icon_state = "ultracite"
+	maxcharge = 2000
+
 /obj/item/stock_parts/cell/ammo/ec
 	name = "energy cell"
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
 	icon_state = "ec-full"
 	maxcharge = 1600
 
-/obj/item/stock_parts/cell/ammo/ec/process()
+/obj/item/stock_parts/cell/ammo/ec/update_icon()
 	switch(charge)
 		if (1101 to 1600)
 			icon_state = "ec-full"
