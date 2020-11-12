@@ -104,7 +104,7 @@
 	var/dualwield_spread_mult = 1		//dualwield spread multiplier
 
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
-	var/projectile_damage_multiplier = 1
+//	var/projectile_damage_multiplier = 1
 
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 
@@ -341,7 +341,7 @@
 		if(chambered)
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
 			before_firing(target,user)
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
+			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
