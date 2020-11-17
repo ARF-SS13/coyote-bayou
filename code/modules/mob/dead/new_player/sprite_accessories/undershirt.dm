@@ -62,6 +62,7 @@
 	icon_state = "undershirt"
 	has_color = TRUE
 
+/*
 /datum/sprite_accessory/underwear/top/alienshirt
 	name = "Shirt - Alien"
 	icon_state = "shirt_alien"
@@ -118,11 +119,12 @@
 /datum/sprite_accessory/underwear/top/lover
 	name = "Shirt - Lover"
 	icon_state = "lover"
+*/
 
 /datum/sprite_accessory/underwear/top/matroska
 	name = "Shirt - Matroska"
 	icon_state = "matroska"
-
+/*
 /datum/sprite_accessory/underwear/top/meat
 	name = "Shirt - Meat"
 	icon_state = "shirt_meat"
@@ -151,12 +153,14 @@
 /datum/sprite_accessory/underwear/top/skull
 	name = "Shirt - Skull"
 	icon_state = "shirt_skull"
+*/
 
 /datum/sprite_accessory/underwear/top/shortsleeve
 	name = "Shirt - Short Sleeved"
 	icon_state = "shortsleeve"
 	has_color = TRUE
 
+/*
 /datum/sprite_accessory/underwear/top/blueshirtsport
 	name = "Shirt, Sports - Blue"
 	icon_state = "blueshirtsport"
@@ -189,6 +193,7 @@
 /datum/sprite_accessory/underwear/top/usa
 	name = "Shirt - USA"
 	icon_state = "shirt_assblastusa"
+*/
 
 /datum/sprite_accessory/underwear/top/tanktop
 	name = "Tank Top"
@@ -200,9 +205,11 @@
 	icon_state = "tanktop_alt"
 	has_color = TRUE
 
+/*
 /datum/sprite_accessory/underwear/top/tankfire
 	name = "Tank Top - Fire"
 	icon_state = "tank_fire"
+*/
 
 /datum/sprite_accessory/underwear/top/tanktop_midriff
 	name = "Tank Top - Midriff"
@@ -216,6 +223,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
+/*
 /datum/sprite_accessory/underwear/top/tankstripe
 	name = "Tank Top - Striped"
 	icon_state = "tank_stripes"
@@ -223,6 +231,7 @@
 /datum/sprite_accessory/underwear/top/tank_top_sun
 	name = "Tank top - Sun"
 	icon_state = "tank_sun"
+*/
 
 //feminine accessories from here on
 
@@ -244,10 +253,12 @@
 	has_color = TRUE
 	gender = FEMALE
 
+/*
 /datum/sprite_accessory/underwear/top/bra_beekini
 	name = "Bra - Bee-kini"
 	icon_state = "bra_bee-kini"
 	gender = FEMALE
+*/
 
 /datum/sprite_accessory/underwear/top/bra_binder
 	name = "Bra (binder)"
@@ -259,7 +270,7 @@
 	icon_state = "bra_binder_strapless"
 	has_color = TRUE
 
-
+/*
 /datum/sprite_accessory/underwear/top/bra_commie
 	name = "Bra - Commie"
 	icon_state = "bra_commie"
@@ -269,6 +280,7 @@
 	name = "Bra - Freedom"
 	icon_state = "bra_assblastusa"
 	gender = FEMALE
+*/
 
 /datum/sprite_accessory/underwear/top/halterneck_bra
 	name = "Bra - Halterneck"
@@ -317,6 +329,7 @@
 	has_color = TRUE
 	gender = FEMALE
 
+/*
 /datum/sprite_accessory/underwear/top/bra_neko
 	name = "Bra - Neko"
 	icon_state = "bra_neko"
@@ -327,6 +340,7 @@
 	name = "Bra - UK"
 	icon_state = "bra_uk"
 	gender = FEMALE
+*/
 
 /datum/sprite_accessory/underwear/top/fishnet_gloves
 	name = "Fishnet - gloves"
