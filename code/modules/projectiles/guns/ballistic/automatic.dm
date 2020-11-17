@@ -565,6 +565,7 @@
 	extra_damage = -6
 	extra_penetration = -6
 	can_bayonet = TRUE
+	bayonet_state = "rifles"
 	knife_x_offset = 23
 	knife_y_offset = 11
 	automatic = 1
@@ -611,6 +612,7 @@
 	weapon_weight = WEAPON_HEAVY
 	spawnwithmagazine = FALSE
 	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
 	can_attachments = TRUE
 	knife_x_offset = 22
 	knife_y_offset = 12
@@ -631,6 +633,7 @@
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
 	can_bayonet = TRUE
+	bayonet_state = "rifles"
 	knife_x_offset = 22
 	knife_y_offset = 12
 	burst_size = 1
@@ -715,7 +718,7 @@
 	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
-//	bayonetstate = "lasmusket"
+	bayonet_state = "lasmusket"
 	spawnwithmagazine = FALSE
 	knife_x_offset = 24
 	knife_y_offset = 21
@@ -771,7 +774,7 @@
 //	auto_eject = 1
 //	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	can_bayonet = TRUE
-//	bayonetstate = "lasmusket"
+	bayonet_state = "lasmusket"
 	knife_x_offset = 22
 	knife_y_offset = 21
 
@@ -908,7 +911,8 @@
 	item_state = "R82"
 	automatic = 1
 	burst_size = 2
-	can_bayonet = FALSE
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/m72
 	name = "\improper M72 gauss rifle"
@@ -983,6 +987,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	force = 40
+	automatic_burst_overlay = FALSE
+	actions_types = list()
+	automatic = 0
 
 /obj/item/gun/ballistic/automatic/lmg/m1919
 	name = "Browning M1919"
@@ -1032,3 +1039,87 @@
 	update_icon()
 	return
 	
+/obj/item/gun/ballistic/automatic/p90
+	name = "FN P90c"
+	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
+	icon_state = "p90"
+	item_state = "m90"
+	burst_size = 3
+	fire_delay = 1
+	automatic = 1
+	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
+	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_LIGHT
+	extra_damage = 5
+	extra_penetration = 5
+
+/obj/item/gun/ballistic/automatic/m1carbine
+	name = "m1 carbine"
+	desc = "The M1 Carbine is a renowned carbine that has been in service since WW2. Recently retired, these guns were transferred to National Guard Armouries and rechambered to 10mm."
+	icon_state = "m1carbine"
+	item_state = "rifle"
+	burst_size = 1
+	fire_delay = 2
+	automatic = 0
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	extra_damage = 4
+	extra_penetration = 4
+	automatic_burst_overlay = FALSE
+	actions_types = list()
+	automatic = 0
+	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
+	knife_x_offset = 22
+	knife_y_offset = 21
+
+/obj/item/gun/ballistic/automatic/m1carbine/automatic
+	name = "m2 carbine"
+	desc = "The M2 carbine is the select-fire variant of the common M1 carbine. Chambered in 10mm."
+	burst_size = 2
+	automatic = 1
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact
+	name = "m1a1 carbine"
+	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."
+	icon_state = "m1a1carbine"
+	var/stock = FALSE
+	spread = 5
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	toggle_stock(user)
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to toggle the stock.</span>"
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact/proc/toggle_stock(mob/living/user)
+	stock = !stock
+	if(stock)
+		w_class = WEIGHT_CLASS_BULKY
+		to_chat(user, "You unfold the stock.")
+		spread = 0
+	else
+		w_class = WEIGHT_CLASS_NORMAL
+		to_chat(user, "You fold the stock.")
+		spread = 20
+	update_icon()
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()
+	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""][stock ? "" : "-f"]"
+
+/obj/item/gun/ballistic/automatic/m1carbine/compact/automatic
+	name = "m2a1 carbine"
+	desc = "The M2A1 carbine is the select fire variant of the M1A1. Chambered in 10mm."
+	burst_size = 2
+	automatic = 1
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)

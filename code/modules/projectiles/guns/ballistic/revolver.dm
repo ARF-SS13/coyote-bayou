@@ -20,6 +20,7 @@
 	..()
 	chamber_round(1)
 
+/*
 /obj/item/gun/ballistic/revolver/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(.)
@@ -31,6 +32,7 @@
 		A.update_icon()
 		update_icon()
 		chamber_round(0)
+*/
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
 	var/num_unloaded = 0

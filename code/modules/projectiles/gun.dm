@@ -72,7 +72,10 @@
 	var/obj/item/kitchen/knife/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
+	var/bayonet_state = null
 	var/can_scope = FALSE
+	var/scope_state = "scope"
+
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/mutable_appearance/flashlight_overlay
 	var/can_attachments = FALSE
@@ -435,7 +438,13 @@
 			return
 		to_chat(user, "<span class='notice'>You attach \the [K] to the front of \the [src].</span>")
 		bayonet = K
-		update_icon()
+		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
+			bayonet_state = bayonet.icon_state
+		var/icon/bayonet_icons = 'icons/obj/guns/bayonets.dmi'
+		knife_overlay = mutable_appearance(bayonet_icons, bayonet_state)
+		knife_overlay.pixel_x = knife_x_offset
+		knife_overlay.pixel_y = knife_y_offset
+		add_overlay(knife_overlay, TRUE)
 	else if(istype(I, /obj/item/screwdriver))
 		if(gun_light)
 			var/obj/item/flashlight/seclite/S = gun_light

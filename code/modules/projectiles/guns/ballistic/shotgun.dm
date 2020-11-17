@@ -417,22 +417,36 @@
 		if(W.active)
 			sawoff(user)
 
-/obj/item/gun/ballistic/shotgun/trench
+/obj/item/gun/ballistic/shotgun/lever
 	name = "lever action shotgun"
 	desc = "A lever action hunting shotgun with a five-shell capacity underneath plus one in chamber."
-	icon_state = "trenchgun"
+	icon_state = "lever"
 	item_state = "trenchgun"
-	can_scope = TRUE
-	scopestate = "AEP7_scope"
-	scope_x_offset = 8
-	scope_y_offset = 19
-	can_bayonet = TRUE
-//	bayonetstate = "trenchgun"
-	knife_x_offset = 23
-	knife_y_offset = 14
+	//can_scope = TRUE //why tho
+	//scopestate = "AEP7_scope"	
+	//scope_x_offset = 8
+	//scope_y_offset = 19
+	//can_bayonet = TRUE
+	//bayonetstate = "trenchgun"
+	//knife_x_offset = 23
+	//knife_y_offset = 14
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
+
+/obj/item/gun/ballistic/shotgun/trench
+	name = "trench shotgun"
+	desc = "A military shotgun designed for close-quarters sweeping. A relic of WW2, equipped with a bayonet lug for closer quarters combat."
+	icon_state = "trench"
+	item_state = "trenchgun"
+	can_bayonet = TRUE
+	bayonet_state = "rifles"
+	knife_x_offset = 23
+	knife_y_offset = 14
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
 
 /obj/item/gun/ballistic/shotgun/remington
 	name = "hunting rifle"
