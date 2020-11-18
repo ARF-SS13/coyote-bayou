@@ -332,6 +332,7 @@
 	// All good, turn it on.
 	if(.)
 		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		playsound(loc, 'sound/effects/flare_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
 		START_PROCESSING(SSobj, src)

@@ -68,6 +68,9 @@
 			else
 				to_chat(user, "<span class='warning'>You fail to collect anything!</span>")
 	else
+		if(istype(I, /obj/item/wrench)) //FO13 - salvaging blackpowder/metal from ammo
+			new /obj/item/stack/crafting/powder(user.drop_location())
+			qdel(src)
 		return ..()
 
 /obj/item/ammo_casing/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
