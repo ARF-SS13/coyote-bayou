@@ -51,7 +51,17 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
-	if (istype(A, /obj/item/ammo_box/magazine))
+	if(istype(src.magazine,/obj/item/ammo_box/magazine/internal))
+		if(.)
+			return
+		var/num_loaded = magazine.attackby(A, user, params, 0, 1)
+		if(num_loaded)
+			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
+			A.update_icon()
+			update_icon()
+			chamber_round(0)
+	else if (istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine && istype(AM, mag_type))
 			if(user.transferItemToLoc(AM, src))
