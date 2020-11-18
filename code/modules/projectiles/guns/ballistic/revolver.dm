@@ -19,6 +19,7 @@
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
 	chamber_round(1)
+
 /*
 /obj/item/gun/ballistic/revolver/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -32,6 +33,7 @@
 		update_icon()
 		chamber_round(0)
 */
+
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
 	var/num_unloaded = 0
 	chambered = null
