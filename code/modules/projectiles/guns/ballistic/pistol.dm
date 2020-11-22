@@ -229,3 +229,31 @@
 	fire_delay = 1
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/pistol127
+	name = "12.7mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, likely designed for long-range pistol hunting or target shooting."
+	icon_state = "pistol127"
+	force = 14
+	mag_type = /obj/item/ammo_box/magazine/m127mm
+	fire_delay = 5
+	can_suppress = FALSE
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/pistol127/compact
+	name = "compact 12.7mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, likely designed for long-range pistol hunting or target shooting. This one is a compact model for concealed carry."
+	icon_state = "pistol127_compact"
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = -3 //Smaller barrel, smaller bullet velocity
+	extra_penetration = -3 //See above
+	spread = 3
+
+/obj/item/gun/ballistic/automatic/pistol/pistol127/lildevil
+	name= "\improper tactical 12.7mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, likely designed for long-range pistol hunting or target shooting. A finely tuned firearm from the Gunrunners."
+	icon_state = "lildev"
+	w_class = WEIGHT_CLASS_SMALL
+	fire_delay = 2
+	extra_damage = 8
+	extra_penetration = 8

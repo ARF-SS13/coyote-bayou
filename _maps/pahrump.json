@@ -1,12 +1,23 @@
 {
     "map_name": "Pahrump",
-    "map_path": "map_files/Pahrump",
-    "map_file": ["Pahrump.dmm",
-	      "Dungeons.dmm"
-		  ]
+	"map_path": "map_files/Pahrump",
+    "map_file": [
+		"Pahrump.dmm",
+	    "Dungeons.dmm"
+		],
     "shuttles": {
-		"cargo":"cargo_box",
-	   	"emergency": "emergency_box",
+		"cargo":"cargo_pahrump",
+	   	"emergency": "emergency_pahrump",
 	    "ferry": "ferry_fancy"
-    }
+	},
+	"traits":[
+		{
+			"Gravity":true,
+		},
+		{
+			"Gravity":true,
+			"Baseturf":"/turf/open/indestructible/ground/inside/mountain"
+		}
+	],
+	"minetype":"none"
 }
