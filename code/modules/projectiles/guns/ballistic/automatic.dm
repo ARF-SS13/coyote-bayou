@@ -584,17 +584,23 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	can_suppress = FALSE
+	can_unsuppress = FALSE
+	suppressed = 1
 	suppressed = 1
 	fire_delay = 3
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	can_bayonet = FALSE
 	force = 15
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
 
-/obj/item/gun/ballistic/automatic/assault_rifle/enable_burst()
+/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator/enable_burst()
 	. = ..()
 	spread = 1
 
-/obj/item/gun/ballistic/automatic/assault_rifle/disable_burst()
+/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator/disable_burst()
 	. = ..()
 	spread = 0
 
@@ -1123,3 +1129,35 @@
 	automatic = 1
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+/obj/item/gun/ballistic/automatic/commando
+	name = "commando carbine"
+	desc = "An integrally supressed bolt action carbine, perfect for quiet varmint hunting. Uses .45 pistol magazines."
+	icon_state = "delisle"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/m45
+	extra_damage = 3
+	extra_penetration = 3
+	fire_delay = 6
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	can_suppress = FALSE
+	can_unsuppress = FALSE
+	suppressed = 1
+	can_attachments = FALSE
+	burst_size = 1
+	automatic_burst_overlay = FALSE
+	actions_types = list()
+	automatic = 0
+
+/obj/item/gun/ballistic/automatic/mp5
+	name = "mp5sd"
+	desc = "An integrally suppressed sub machine chambered in 9mm. A classic."
+	icon_state = "mp5"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	burst_size = 2
+	automatic = 1
+	can_attachments = TRUE
+	suppressed = 1
+	can_suppress = FALSE
+	can_unsuppress = FALSE

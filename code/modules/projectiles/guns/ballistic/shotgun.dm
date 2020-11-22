@@ -447,6 +447,48 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/shotgun/neostead
+	name = "neostead 2000"
+	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
+	icon_state = "neostead"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
+	w_class = WEIGHT_CLASS_HUGE
+	var/toggled = FALSE
+	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
+
+/obj/item/gun/ballistic/shotgun/neostead/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to pump it.</span>"
+
+/obj/item/gun/ballistic/shotgun/neostead/Initialize()
+	. = ..()
+	if (!alternate_magazine)
+		alternate_magazine = new mag_type(src)
+
+/obj/item/gun/ballistic/shotgun/neostead/attack_self(mob/living/user)
+	if(!chambered && magazine.contents.len)
+		pump()
+	else
+		toggle_tube(user)
+
+/obj/item/gun/ballistic/shotgun/neostead/proc/toggle_tube(mob/living/user)
+	var/current_mag = magazine
+	var/alt_mag = alternate_magazine
+	magazine = alt_mag
+	alternate_magazine = current_mag
+	toggled = !toggled
+	if(toggled)
+		to_chat(user, "You switch to tube B.")
+	else
+		to_chat(user, "You switch to tube A.")
+
+/obj/item/gun/ballistic/shotgun/neostead/AltClick(mob/living/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	pump()
+	return TRUE
+
 
 /obj/item/gun/ballistic/shotgun/remington
 	name = "hunting rifle"

@@ -58,6 +58,7 @@
 	icon_state = "random_loot"
 
 
+
 /obj/item/loadout_token/attack_self(var/mob/user)
 	user.select_loadout()
 

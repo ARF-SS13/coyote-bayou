@@ -94,13 +94,13 @@
 /obj/item/ammo_box/magazine/m9mm/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/a50
-	name = "handgun magazine (.50 AE)"
-	icon_state = "50ae"
-	ammo_type = /obj/item/ammo_casing/a50AE
-	caliber = "50AE"
+/obj/item/ammo_box/magazine/m127mm
+	name = "handgun magazine (12.7)"
+	icon_state = "magnum"
+	ammo_type = /obj/item/ammo_casing/a127mm
+	caliber = "12.7"
 	max_ammo = 7
-	multiple_sprites = 1
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/a50/empty
 	start_empty = 1
@@ -115,3 +115,12 @@
 
 /obj/item/ammo_box/magazine/m9mmds/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/m50
+	name = "handgun magazine (.44 magnum)"
+	icon_state = "50ae"
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = "44"
+	max_ammo = 8
+	multiple_sprites = 2
+

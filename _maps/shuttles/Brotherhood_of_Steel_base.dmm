@@ -1,17 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/closed/wall/f13/vault,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "b" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
 	id = "NW"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "c" = (
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "d" = (
 /obj/structure/ladder/unbreakable{
 	anchored = 1;
@@ -19,11 +19,11 @@
 	id = "NE"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "e" = (
 /obj/machinery/computer/shuttle/bos,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "f" = (
 /obj/machinery/light{
 	dir = 8;
@@ -34,21 +34,21 @@
 	id = "SW"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "g" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
 	id = "SE"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "h" = (
 /turf/template_noop,
 /area/template_noop)
 "i" = (
 /obj/item/flag/bos,
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 "j" = (
 /obj/docking_port/mobile/bos{
 	dwidth = 1;
@@ -58,7 +58,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/brotherhood_of_steel)
+/area/f13/brotherhood)
 
 (1,1,1) = {"
 a
