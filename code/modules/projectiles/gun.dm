@@ -92,7 +92,7 @@
 
 	var/scopestate = "scope"
 
-	var/equipsound = null
+	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
