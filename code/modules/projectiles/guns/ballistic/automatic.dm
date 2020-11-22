@@ -7,6 +7,7 @@
 	burst_size = 3
 	burst_shot_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "\improper Nanotrasen Saber SMG"

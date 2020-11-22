@@ -55,14 +55,15 @@ SUBSYSTEM_DEF(economy)
 	return ..()
 
 /datum/controller/subsystem/economy/fire(resumed = 0)
-	eng_payout()  // Payout based on nothing. What will replace it? Surplus power, powered APC's, air alarms? Who knows.
-	sci_payout() // Payout based on slimes.
-	secmedsrv_payout() // Payout based on crew safety, health, and mood.
-	civ_payout() // Payout based on ??? Profit
-	car_payout() // Cargo's natural gain in the cash moneys.
-	for(var/account in bank_accounts)
-		var/datum/bank_account/bank_account = account
-		bank_account.payday(1)
+	//eng_payout()  // Payout based on nothing. What will replace it? Surplus power, powered APC's, air alarms? Who knows.
+	//sci_payout() // Payout based on slimes.
+	//secmedsrv_payout() // Payout based on crew safety, health, and mood.
+	//civ_payout() // Payout based on ??? Profit
+	//car_payout() // Cargo's natural gain in the cash moneys.
+	//for(var/account in bank_accounts)
+	//	var/datum/bank_account/bank_account = account
+	//	bank_account.payday(1)
+	//disabled payday
 
 
 /datum/controller/subsystem/economy/proc/get_dep_account(dep_id)
