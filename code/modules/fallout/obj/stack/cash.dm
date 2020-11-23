@@ -111,7 +111,7 @@
 			icon_state = "[initial(icon_state)]4"
 		if(101 to 500)
 			icon_state = "[initial(icon_state)]5"
-		if(501 to max_amount)
+		if(501 to 15000)
 			icon_state = "[initial(icon_state)]6"
 
 
@@ -225,7 +225,7 @@
 			icon_state = "[initial(icon_state)]100"
 		if(200 to 499)
 			icon_state = "[initial(icon_state)]200"
-		if(500 to max_amount)
+		if(500 to 15000)
 			icon_state = "[initial(icon_state)]500"
 
 /obj/item/stack/f13Cash/random/ncr

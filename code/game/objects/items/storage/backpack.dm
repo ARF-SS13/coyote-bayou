@@ -22,11 +22,13 @@
 	max_integrity = 300
 
 /obj/item/storage/backpack/ComponentInitialize()
-	. = ..()
+	. = ..()	
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
+	//STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
+	STR.max_items = 21
+	
 
 /*
  * Backpack Types
