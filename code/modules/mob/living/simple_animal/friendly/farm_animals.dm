@@ -566,7 +566,23 @@
 	icon_living = "brahmin"
 	icon_dead = "brahmin_dead"
 	icon_gib = "brahmin_gib"
-	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
+	speak = list("moo?","moo","MOOOOOO")
+	speak_emote = list("moos","moos hauntingly")
+	emote_hear = list("brays.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
+	response_help_continuous  = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	attack_sound = 'sound/weapons/punch1.ogg'
 	var/young_type = /mob/living/simple_animal/cow/brahmin/calf
 	emote_hear = list("brays.")
 	var/obj/item/inventory_back

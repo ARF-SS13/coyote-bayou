@@ -182,6 +182,34 @@
 	can_be_bought = FALSE
 	suffix = "taxi"
 
+/datum/map_template/shuttle/bosbase
+	port_id = "Brotherhood_of_Steel"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/vault
+	port_id = "vault"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/enclavefort
+	port_id = "enclavefort"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/bos
+	port_id = "bos"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/bunker
+	port_id = "bunker"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/northbunker
+	port_id = "northbunker"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/vault113
+	port_id = "vault113"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/backup

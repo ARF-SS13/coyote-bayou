@@ -189,7 +189,7 @@
 	icon_state = "soldier_ghoul"
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
-	icon_gib = "gib"
+	icon_gib = "syndicate_gib"
 	maxHealth = 90
 	health = 90
 
@@ -200,7 +200,7 @@
 	icon_state = "soldier_ghoul_a"
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
-	icon_gib = "gib"
+	icon_gib = "syndicate_gib"
 	maxHealth = 100
 	health = 100
 
@@ -211,7 +211,7 @@
 	icon_state = "scorched_m"
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
-	icon_gib = "gib"
+	icon_gib = "syndicate_gib"
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
@@ -237,7 +237,7 @@
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
-	icon_gib = "gib"
+	icon_gib = "syndicate_gib"
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0

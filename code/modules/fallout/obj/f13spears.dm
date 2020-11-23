@@ -13,7 +13,7 @@
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	armour_penetration = 0
-	custom_materials = list(MAT_METAL=1150, MAT_GLASS=2075)
+	custom_materials = list(/datum/material/iron=1150, /datum/material/glass=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
