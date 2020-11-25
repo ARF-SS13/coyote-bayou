@@ -124,7 +124,7 @@ Captain
 	head = 		/obj/item/clothing/head/beret/ncr
 	gloves = 	/obj/item/clothing/gloves/f13/leather/ncr_officer
 	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	l_hand = 	/obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault=2)
 
@@ -309,7 +309,7 @@ Sergeant
 	name = "Infantry"
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	/obj/item/gun/ballistic/automatic/service
 	belt = 			/obj/item/storage/belt/military/NCR_Bandolier
 	head = 			/obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
@@ -421,7 +421,7 @@ Corporal
 	gloves = 		/obj/item/clothing/gloves/color/yellow
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	/obj/item/gun/ballistic/automatic/service
 	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	backpack_contents = list(
 		/obj/item/grenade/plastic=1,
@@ -595,7 +595,7 @@ Trooper
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	/obj/item/gun/ballistic/automatic/service
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	glasses = 		null
 	backpack_contents = list(

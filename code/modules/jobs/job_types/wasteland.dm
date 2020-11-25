@@ -322,7 +322,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/exile
 	id = /obj/item/card/id/rusted
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/marksman/servicerifle=1,
+		/obj/item/gun/ballistic/automatic/service=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 
 /datum/outfit/loadout/raider_legion

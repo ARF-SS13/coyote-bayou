@@ -628,6 +628,20 @@
 	actions_types = list()
 	automatic = 0
 
+/obj/item/gun/ballistic/automatic/service/r82
+	name = "R82 heavy service rifle"
+	desc = "A top of the line 5.56x45 automatic service rifle manufactured by the NCR and issued to high ranking personnel."
+	fire_delay = 1 //faster ROF, superior to regular service rifle
+//	projectile_speed = 0.6 //faster velocity, superior to regular service rifle
+//	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	icon_state = "R82"
+	item_state = "R82"
+	automatic = 1
+	burst_size = 2
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
 	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and lacks select fire.automatic = "
@@ -906,20 +920,6 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-
-/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
-	name = "R82 heavy service rifle"
-	desc = "A top of the line 5.56x45 automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 1 //faster ROF, superior to regular service rifle
-//	projectile_speed = 0.6 //faster velocity, superior to regular service rifle
-//	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	icon_state = "R82"
-	item_state = "R82"
-	automatic = 1
-	burst_size = 2
-	automatic_burst_overlay = TRUE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/m72
 	name = "\improper M72 gauss rifle"

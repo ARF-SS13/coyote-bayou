@@ -729,7 +729,7 @@
 				)
 
 	var/loot8 = list(
-				/obj/item/gun/ballistic/automatic/marksman/servicerifle,
+				/obj/item/gun/ballistic/automatic/service,
 				//obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
