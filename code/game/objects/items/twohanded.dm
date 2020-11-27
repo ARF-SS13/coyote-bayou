@@ -456,7 +456,7 @@
 
 /obj/item/twohanded/dualsaber/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/multitool))
-		if(!hacked)
+		if(!hacked) 
 			hacked = TRUE
 			to_chat(user, "<span class='warning'>2XRNBW_ENGAGE</span>")
 			item_color = "rainbow"
