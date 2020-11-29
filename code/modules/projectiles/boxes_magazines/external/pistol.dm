@@ -116,11 +116,11 @@
 /obj/item/ammo_box/magazine/m9mmds/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/m50
+/obj/item/ammo_box/magazine/m44
 	name = "handgun magazine (.44 magnum)"
 	icon_state = "50ae"
 	ammo_type = /obj/item/ammo_casing/m44
 	caliber = "44"
-	max_ammo = 8
+	max_ammo = 7
 	multiple_sprites = 2
 

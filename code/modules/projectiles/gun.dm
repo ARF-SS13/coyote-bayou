@@ -72,7 +72,7 @@
 	var/obj/item/kitchen/knife/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
-	var/bayonet_state = null
+	var/bayonet_state = "bayonet"
 	var/can_scope = FALSE
 	var/scope_state = "scope"
 

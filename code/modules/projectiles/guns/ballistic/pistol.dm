@@ -73,10 +73,10 @@
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "\improper Desert Eagle"
-	desc = "A robust .50 AE handgun."
+	desc = "A robust .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	force = 14
-	mag_type = /obj/item/ammo_box/magazine/m50
+	mag_type = /obj/item/ammo_box/magazine/m44
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 

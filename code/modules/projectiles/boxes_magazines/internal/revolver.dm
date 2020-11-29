@@ -18,8 +18,14 @@
 	multiload = 0
 
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev6250
-	name = "6250 10mm cylinder"
+/obj/item/ammo_box/magazine/internal/cylinder/rev6520
+	name = "6520 10mm cylinder"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = list("10mm")
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/internal/cylinder/zhurong
+	name = "zhurong 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list("10mm")
 	max_ammo = 6

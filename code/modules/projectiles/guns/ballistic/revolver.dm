@@ -626,11 +626,11 @@
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/gun/ballistic/revolver/colt6250
-	name = "colt 6250"
+/obj/item/gun/ballistic/revolver/colt6520
+	name = "colt 6520"
 	desc = "The Colt 6520 10mm autoloading pistol is a highly durable and efficient weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
-	icon_state = "colt6250"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	icon_state = "colt6520"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	fire_delay = 3
 
@@ -692,7 +692,7 @@
 	desc = "The earlier model of the Chinese pistol found in the East Coast, which was known to be the model before all the simplifications of the design, making it smoother, packing a harderer punch. Chambered in 10mm."
 	icon_state = "zhurong"
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/zhurong
 	fire_delay = 0
 	extra_damage = 20
 	extra_penetration = 5

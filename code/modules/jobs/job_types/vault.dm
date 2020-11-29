@@ -116,14 +116,14 @@ Head of Security
 	head = 			/obj/item/clothing/head/collectable/police/cos
 	belt = 			/obj/item/storage/belt/security
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	r_hand =		/obj/item/gun/ballistic/revolver/colt6250
+	r_hand =		/obj/item/gun/ballistic/revolver/colt6520
 	r_pocket = 		/obj/item/assembly/flash/handheld
 	l_pocket = 		/obj/item/restraints/handcuffs
 	backpack = 		/obj/item/storage/backpack/security
 	satchel = 		/obj/item/storage/backpack/satchel/sec
 	duffelbag = 	/obj/item/storage/backpack/duffelbag/sec
 	box = 			/obj/item/storage/box/security
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/restraints/handcuffs = 2, /obj/item/ammo_box/l10mm = 2)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/restraints/handcuffs = 2, /obj/item/ammo_box/magazine/m10mm_adv = 2)
 
 	implants = list(/obj/item/implant/mindshield)
 

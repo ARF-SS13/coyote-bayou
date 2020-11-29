@@ -1574,9 +1574,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 */
-/datum/crafting_recipe/colt6250
-	name = "colt 6250"
-	result = /obj/item/gun/ballistic/revolver/colt6250
+/datum/crafting_recipe/colt6520
+	name = "colt 6520"
+	result = /obj/item/gun/ballistic/revolver/colt6520
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 5,
 				/datum/reagent/blackpowder = 10,

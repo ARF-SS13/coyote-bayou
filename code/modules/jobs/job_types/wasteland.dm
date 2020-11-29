@@ -269,9 +269,9 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/fireaxe=1,
-		/obj/item/gun/ballistic/revolver/colt6250=1,
+		/obj/item/gun/ballistic/revolver/colt6520=1,
 		/obj/item/grenade/iedcasing=2,
-		/obj/item/ammo_box/l10mm=2)
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 /datum/outfit/loadout/raider_sadist
 	name = "Sadist"
