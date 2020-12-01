@@ -320,7 +320,7 @@ Sergeant
 	name = "Military Police"
 	accessory = 	/obj/item/clothing/accessory/ncr/SGT
 	accessory = 	/obj/item/clothing/accessory/armband/black
-	head = 			/obj/item/clothing/head/f13/ncr/mp
+	head = 			/obj/item/clothing/head/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/riot
 	belt = 			/obj/item/storage/belt/military/assault/ncr
@@ -400,7 +400,7 @@ Corporal
 /datum/outfit/loadout/specmedic
 	name = "Medic"
 	glasses = 		/obj/item/clothing/glasses/hud/health
-	head = 			/obj/item/clothing/head/f13/ncr/medic
+	head = 			/obj/item/clothing/head/f13/ncr
 	gloves = 		/obj/item/clothing/gloves/color/latex/nitrile
 	mask = 			/obj/item/clothing/mask/surgical
 	belt = 			/obj/item/storage/belt/military/assault/ncr
@@ -422,7 +422,7 @@ Corporal
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	suit_store = 	/obj/item/gun/ballistic/automatic/service
-	head = 			/obj/item/clothing/head/f13/ncr/goggles
+	head = 			/obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/grenade/plastic=1,
 		/obj/item/stack/sheet/metal/fifty=2,
@@ -448,7 +448,7 @@ Corporal
 /datum/outfit/loadout/specmp
 	name = "Military Police"
 	accessory = 	/obj/item/clothing/accessory/armband/black
-	head = 			/obj/item/clothing/head/f13/ncr/mp
+	head = 			/obj/item/clothing/head/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	suit_store = 	/obj/item/gun/ballistic/shotgun/hunting
 	belt = 			/obj/item/storage/belt/military/assault/ncr
@@ -593,7 +593,7 @@ Trooper
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
-	head = 			/obj/item/clothing/head/f13/ncr/goggles
+	head = 			/obj/item/clothing/head/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	suit_store = 	/obj/item/gun/ballistic/automatic/service
 	belt =          /obj/item/storage/belt/military/assault/ncr

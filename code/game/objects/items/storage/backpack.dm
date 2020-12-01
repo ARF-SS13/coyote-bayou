@@ -63,6 +63,14 @@
 	STR.max_items = 12
 	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
 
+/obj/item/storage/backpack/spearquiver/PopulateContents()
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
 
 /obj/item/storage/backpack/holding/satchel
 	name = "satchel of holding"

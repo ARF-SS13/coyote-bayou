@@ -1,8 +1,8 @@
 /obj/item/clothing/head/f13/ncr
-	name = "NCR patrol helmet"
-	desc = "A standard issue NCR Infantry helmet."
-	icon_state = "ncr_infantry_helmet"
-	item_state = "ncr_infantry_helmet"
+	name = "NCR steelpot helmet"
+	desc = "A standard issue NCR steel helmet."
+	icon_state = "ncr_steelpot"
+	item_state = "ncr_steelpot"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
 

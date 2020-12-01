@@ -187,6 +187,15 @@
 			else
 				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 
+//Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
+/obj/item/gun/pickup(mob/living/user)
+	. = ..()
+	weapondraw(src, user)
+
+/obj/item/gun/pickup(mob/living/user)
+	. = ..()
+	play_equip_sound(src)
+
 /obj/item/gun/emp_act(severity)
 	. = ..()
 	if(!(. & EMP_PROTECT_CONTENTS))

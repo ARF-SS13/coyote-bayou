@@ -30,6 +30,22 @@
 	for(var/i = 0, i < 5, i++)
 		new /obj/item/stack/spacecash/c1000(src)
 
+/obj/item/storage/bag/money/small
+	name = "money stash"
+	icon_state = "moneypouch"
+	force = 10
+	throwforce = 0
+	resistance_flags = FLAMMABLE
+	max_integrity = 100
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_ID
+
+/obj/item/storage/bag/money/small/Initialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 20
+	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()

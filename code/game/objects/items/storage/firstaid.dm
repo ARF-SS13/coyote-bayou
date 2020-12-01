@@ -18,7 +18,7 @@
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
-	var/list/possible_icons = list("firstaid","firstaid2","firstaid3","firstaid4")
+	var/list/possible_icons = list("firstaid")
 
 /obj/item/storage/firstaid/Initialize(mapload)
 	. = ..()
@@ -39,9 +39,9 @@
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/suture(src)
-	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/reagent_containers/hypospray/medipen/ekit(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/firstaid/emergency
@@ -71,16 +71,16 @@
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/suture(src)
-	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/stack/medical/mesh(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
 
 /obj/item/storage/firstaid/fire
 	name = "burn treatment kit"
 	desc = "A specialized medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
-	icon_state = "burn"
+	icon_state = "ointment"
 	item_state = "firstaid-ointment"
-	possible_icons = list("burn","burn2","burn3","burn4")
+	possible_icons = list("ointment","firefirstaid")
 
 /obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
@@ -99,9 +99,9 @@
 /obj/item/storage/firstaid/toxin
 	name = "toxin treatment kit"
 	desc = "Used to treat toxic blood content and radiation poisoning."
-	icon_state = "toxin"
+	icon_state = "antitoxin"
 	item_state = "firstaid-toxin"
-	possible_icons = list("toxin","toxin2","toxin3","toxin4")
+	possible_icons = list("antitoxin","antitoxfirstaid")
 
 /obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -119,9 +119,9 @@
 /obj/item/storage/firstaid/radbgone
 	name = "radiation treatment kit"
 	desc = "Used to treat minor toxic blood content and major radiation poisoning."
-	icon_state = "rad"
+	icon_state = "radfirstaid"
 	item_state = "firstaid-toxin"
-	possible_icons = list("rad","rad2","rad3")
+	possible_icons = list("radfirstaid","radfirstaid2")
 
 /obj/item/storage/firstaid/radbgone/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -145,9 +145,9 @@
 /obj/item/storage/firstaid/o2
 	name = "oxygen deprivation treatment kit"
 	desc = "A box full of oxygen goodies."
-	icon_state = "oxy"
+	icon_state = "o2"
 	item_state = "firstaid-o2"
-	possible_icons = list("oxy", "oxy2", "oxy3", "oxy4")
+	possible_icons = null
 
 /obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -167,7 +167,7 @@
 	desc = "A first aid kit for when you get toolboxed."
 	icon_state = "brute"
 	item_state = "firstaid-brute"
-	possible_icons = list("brute", "brute2", "brute3", "brute4")
+	possible_icons = list("brute", "brute2")
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -185,7 +185,7 @@
 /obj/item/storage/firstaid/tactical
 	name = "combat medical kit"
 	desc = "I hope you've got insurance."
-	icon_state = "tactical"
+	icon_state = "bezerk"
 	possible_icons = null
 
 /obj/item/storage/firstaid/tactical/ComponentInitialize()
