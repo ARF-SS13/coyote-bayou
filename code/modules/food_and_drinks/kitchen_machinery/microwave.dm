@@ -368,6 +368,20 @@
 		return
 	..()
 
+/obj/machinery/microwave/stove/update_icon_state()
+	if(broken)
+		icon_state = "stoveb"
+	else if(dirty_anim_playing)
+		icon_state = "stovebloody1"
+	else if(dirty == 100)
+		icon_state = "stovebloody"
+	else if(operating)
+		icon_state = "stove1"
+	else if(panel_open)
+		icon_state = "stove"
+	else
+		icon_state = "stove"
+
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK
 #undef MICROWAVE_PRE

@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(nightcycle_turfs, typecacheof(list(
 
 SUBSYSTEM_DEF(nightcycle)
 	name = "Day/Night Cycle"
-	wait = 20 //20 ticks in between checks, this thing doesn't need to fire so fast, as it's tied to gameclock not its own ticker
+	wait = 5 //5 ticks in between checks, this thing doesn't need to fire so fast, as it's tied to gameclock not its own ticker
 	//This will also give the game time to light up the columns and not choke
 	//var/flags = 0			//see MC.dm in __DEFINES Most flags must be set on world start to take full effect. (You can also restart the mc to force them to process again
 	can_fire = TRUE
@@ -27,20 +27,21 @@ SUBSYSTEM_DEF(nightcycle)
 	var/sunPower
 	var/sunRange
 	var/currentColumn
-	var/working = 3
+	var/working = 0
 	var/doColumns //number of columns to do at a time
 	var/newTime
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
-	if (working)
-		doWork()
-		return
-	if (nextBracket())
+	if(nextBracket())
 		working = 1
 		currentColumn = 1
 
+	CHECK_TICK
+	if (working)
+		doWork()
+
 /datum/controller/subsystem/nightcycle/proc/nextBracket()
-	var/Time = station_time()
+	var/Time = world.time
 
 	switch (Time)
 		if (CYCLE_SUNRISE 	to CYCLE_MORNING - 1)
@@ -72,11 +73,17 @@ SUBSYSTEM_DEF(nightcycle)
 /datum/controller/subsystem/nightcycle/proc/doWork()
 	var/list/currentTurfs = list()
 	var/x = min(currentColumn + doColumns, world.maxx)
-	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
-		currentTurfs += block(locate(currentColumn,1,z), locate(x,world.maxy,z)) //this is probably brutal on the overhead
-	for (var/t in currentTurfs)
-		var/turf/T = t
-		if(T.type in GLOB.nightcycle_turfs)
+//	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
+	//HACK. Z level 2 is always surface and nobody sets their fucking traits correctly.
+	//This should be done with a ztrait for surface/subsurface
+	var/z = 2
+	var/start_turf = locate(x,world.maxy,z)
+	var/end_turf = locate(x,1,z)
+
+//	currentTurfs = block(locate(currentColumn,1,z), locate(x,world.maxy,z)) //this is probably brutal on the overhead
+	currentTurfs = getline(start_turf,end_turf)
+	for (var/turf/T in currentTurfs)
+		if(T.turf_light_range && !QDELETED(T)) //Turfs are qdeleted on changeturf
 			T.set_light(T.turf_light_range, sunPower, sunColour)
 
 	currentColumn = x + 1

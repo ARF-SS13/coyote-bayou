@@ -11,7 +11,7 @@
 	shoes = 		/obj/item/clothing/shoes/f13/rag
 	gloves =        /obj/item/clothing/gloves/f13/handwraps
 	id = null
-	box = null
+	box = /obj/item/storage/survivalkit_tribal
 	ears = null
 
 /datum/outfit/job/tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

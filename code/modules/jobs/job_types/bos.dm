@@ -22,6 +22,7 @@ Main doors: ACCESS_CAPTAIN 20
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/dogtag
+	box = /obj/item/storage/survivalkit_adv
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

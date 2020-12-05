@@ -39,7 +39,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	name = "needler internal mag"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
-	caliber = "needle"
+	caliber = list("needle")
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/internal/rus357/Initialize()
@@ -48,35 +48,35 @@
 /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
 	name = "improvised internal magazine"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
+	caliber = list("9mm")
 	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	name = "improvised internal magazine"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = list("10mm")
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	name = ".223 pistol cylinder"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
+	caliber = list("a556")
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	name = "44 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = "44"
+	caliber = list("44")
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = "357"
+	caliber = list("357")
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/shotgunrevolver
 	name = "revolver shotgun cylinder"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+	caliber = list("shotgun")
 	max_ammo = 3

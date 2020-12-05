@@ -111,6 +111,12 @@
 	G.Grant(user)
 	onlearned(user)
 
+/obj/item/book/granter/trait/onlearned(mob/living/user)
+	..()
+	if(oneuse)
+		user.visible_message("<span class='caution'>[src]'s is useless to you now. You throw the book away.</span>")
+		qdel(src)
+
 /obj/item/book/granter/action/drink_fling
 	granted_action = /datum/action/innate/drink_fling
 	name = "Tapper: This One's For You"

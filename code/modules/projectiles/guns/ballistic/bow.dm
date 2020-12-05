@@ -15,6 +15,7 @@
 	pin = null
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it
+	spawnwithmagazine = TRUE
 
 /obj/item/gun/ballistic/bow/shoot_with_empty_chamber()
 	return

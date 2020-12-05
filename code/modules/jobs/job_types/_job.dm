@@ -141,7 +141,7 @@
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
-	// F13 EDIT: GHOULS CANNOT BE LEGION
+	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD OR VAULT
 	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
 		if(H.dna.species.id == "ghoul")
 			H.set_species(/datum/species/human)
@@ -152,6 +152,10 @@
 	var/datum/outfit/job/O = outfit_override || outfit
 	if(O)
 		H.equipOutfit(O, visualsOnly, preference_source) //mob doesn't have a client yet.
+	
+	//If we have any additional loadouts, notify the player
+	if (!visualsOnly && loadout_options)
+		enable_loadout_select(H)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 
@@ -233,7 +237,7 @@
 	belt = /obj/item/pda
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
-	box = /obj/item/storage/box/survival
+	box = /obj/item/storage/survivalkit
 
 	var/backpack = /obj/item/storage/backpack
 	var/satchel  = /obj/item/storage/backpack/satchel
