@@ -252,7 +252,7 @@ Lieutenant
 /datum/outfit/loadout/ltmp
 	name = "Military Police"
 	accessory = 	/obj/item/clothing/accessory/armband/black
-	head = 			/obj/item/clothing/head/f13/ncr/mp
+	head = 			/obj/item/clothing/head/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
 	belt = 			/obj/item/storage/belt/military/assault/ncr

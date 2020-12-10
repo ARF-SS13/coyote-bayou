@@ -370,7 +370,7 @@
 	gloves = /obj/item/clothing/gloves/f13/ncr
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/f13/ncr/goggles
+	head = /obj/item/clothing/head/f13/ncr
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/ncr/trooper
@@ -415,7 +415,7 @@
 	gloves = /obj/item/clothing/gloves/f13/ncr
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/f13/ncr/goggles
+	head = /obj/item/clothing/head/f13/ncr
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/legion

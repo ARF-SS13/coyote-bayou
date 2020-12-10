@@ -146,6 +146,7 @@
 		if(H.dna.species.id == "ghoul")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
+
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
@@ -154,7 +155,7 @@
 		H.equipOutfit(O, visualsOnly, preference_source) //mob doesn't have a client yet.
 	
 	//If we have any additional loadouts, notify the player
-	if (!visualsOnly && loadout_options)
+	if(!visualsOnly && loadout_options.len)
 		enable_loadout_select(H)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)

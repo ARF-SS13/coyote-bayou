@@ -6,6 +6,7 @@
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
 
+/*
 /obj/item/clothing/head/f13/ncr/medic
 	name = "NCR medical helmet"
 	desc = "A standard issue NCR Infantry helmet, colored to suit a medical officer."
@@ -75,6 +76,7 @@
 				while(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
 					sleep(15)
+*/
 
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"
@@ -114,7 +116,7 @@
 /obj/item/clothing/head/f13/ranger
 	name = "NCR ranger campaign hat"
 	desc = "An NCR ranger hat, standard issue amongst all but the most elite rangers."
-	icon_state = "drill_hat"
+	icon_state = "drillhat"
 	item_state = "drillhat"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
@@ -124,3 +126,10 @@
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/head/f13/ncr_cap
+	name = "NCR garrison cap"
+	desc = "A simple cloth garrison cap to be worn when a helmet isn't necessary."
+	icon_state = "ncr_cap"
+	item_state = "ncr_cap"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)

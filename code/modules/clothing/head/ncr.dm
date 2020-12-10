@@ -6,6 +6,7 @@
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
 
+/*
 /obj/item/clothing/head/f13/ncr/medic
 	name = "NCR medical helmet"
 	desc = "A standard issue NCR Infantry helmet, colored to suit a medical officer."
@@ -75,6 +76,7 @@
 				while(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
 					sleep(15)
+*/
 
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"

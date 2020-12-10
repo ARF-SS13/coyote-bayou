@@ -24,9 +24,9 @@
 /proc/enable_loadout_select(var/mob/M)
 	//Delay the notification message for a few seconds so players are less likely to miss it
 	spawn(50)
-		to_chat(src, ("-------------------------------------------"))
-		to_chat(src, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
-		to_chat(src, ("-------------------------------------------"))
+		to_chat(M, ("-------------------------------------------"))
+		to_chat(M, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
+		to_chat(M, ("-------------------------------------------"))
 	M.verbs += /mob/proc/select_loadout
 	var/datum/component/loadout_selector/LS = M.AddComponent(/datum/component/loadout_selector) //Create the loadout selecting component
 	var/token = new /obj/item/loadout_token

@@ -131,7 +131,7 @@
 		H.equipOutfit(outfit, visualsOnly)
 
 	//If we have any additional loadouts, notify the player
-	if (!visualsOnly && loadout_options.len)
+	if(!visualsOnly && loadout_options.len)
 		enable_loadout_select(H)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
