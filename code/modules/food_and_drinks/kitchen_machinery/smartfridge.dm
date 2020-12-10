@@ -530,6 +530,51 @@
 	else
 		return FALSE
 
+// -------------------------
+//  Rack - Unpowered Smartfridge
+// -------------------------
+/obj/machinery/smartfridge/bottlerack
+	name = "bottle rack"
+	desc = "The organised way of mass storing your brews."
+	icon = 'icons/obj/rack.dmi'
+	icon_state = "rack"
+	layer = BELOW_OBJ_LAYER
+	density = TRUE
+	use_power = NO_POWER_USE
+	max_n_of_items = 30
+
+/obj/machinery/smartfridge/bottlerack/Initialize()
+	. = ..()
+	if(component_parts && component_parts.len)
+		component_parts.Cut()
+	component_parts = null
+
+	if(islist(initial_contents))
+		for(var/typekey in initial_contents)
+			var/amount = initial_contents[typekey]
+			if(isnull(amount))
+				amount = 1
+			for(var/i in 1 to amount)
+				if(prob(50))
+					load(new typekey(src))
+
+/obj/machinery/smartfridge/bottlerack/on_deconstruction()
+	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
+	..()
+
+
+/obj/machinery/smartfridge/bottlerack/RefreshParts()
+/obj/machinery/smartfridge/bottlerack/default_deconstruction_screwdriver()
+/obj/machinery/smartfridge/bottlerack/exchange_parts()
+/obj/machinery/smartfridge/bottlerack/spawn_frame()
+
+/obj/machinery/smartfridge/bottlerack/default_deconstruction_crowbar(obj/item/crowbar/C, ignore_panel = 1)
+
+/obj/machinery/smartfridge/bottlerack/accept_check(obj/item/O)
+	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
+		return FALSE
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/food/condiment))
+		return TRUE
 
 // -------------------------
 //  Gardentool Rack
