@@ -185,3 +185,12 @@
 /obj/item/spear/bonespear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=20, icon_wielded="[icon_prefix]1")
+
+/obj/item/spear/bonespear/deathclaw
+	name = "Deathclaw bonespear"
+	desc = "This spear seems to be several long deathclaw femurs tied together by leather, with three wicked sharp looking claws crudely tied to the end."
+	force = 5
+
+/obj/item/spear/bonespear/deathclaw/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded = 5, force_wielded = 50)
