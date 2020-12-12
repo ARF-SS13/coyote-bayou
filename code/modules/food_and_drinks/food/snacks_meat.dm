@@ -81,7 +81,7 @@
 	icon_state = "AntBrain"
 	bitesize = 3
 	filling_color = "#CD853F"
-	list_reagents = list("nutriment" = 3, "vitamin" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("fat" = 4, "bitter meat" = 1)
 	foodtype = MEAT
 

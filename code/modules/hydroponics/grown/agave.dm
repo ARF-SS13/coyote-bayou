@@ -17,7 +17,7 @@
 	icon_grow = "agave-grow"
 	icon_dead = "agave-dead"
 	icon_harvest = "agave-harvest"
-	reagents_add = list("kelotane" = 0.05, "lipolicide" = 0.05)
+	reagents_add = list(/datum/reagent/medicine/kelotane = 0.05, /datum/reagent/toxin/lipolicide = 0.05)
 
 
 /obj/item/reagent_containers/food/snacks/grown/agave
@@ -26,5 +26,5 @@
 	desc = "A strange kind of fleshy grass often used as a primitive burn medication that rapidly depletes stored nutrients in the body."
 	icon_state = "Agave Leaf"
 	icon = 'icons/obj/flora/wastelandflora.dmi'
-	juice_results = list("agavetea" = 0)
-	distill_reagent = "tequila"
+	juice_results = list(/datum/reagent/agavetea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/tequila

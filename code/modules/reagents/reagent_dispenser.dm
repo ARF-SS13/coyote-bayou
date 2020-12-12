@@ -313,7 +313,7 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "compostbin"
 	anchored = TRUE
-	reagent_id = "compost"
+	reagent_id = /datum/reagent/compost
 	var/seed_value = 4
 	var/produce_value = 10
 
@@ -341,10 +341,10 @@
 /obj/structure/reagent_dispensers/compostbin/proc/process_compost()
 	for(var/obj/item/C in contents)
 		if(istype(C, /obj/item/seeds))
-			reagents.add_reagent("compost", seed_value)
+			reagents.add_reagent(/datum/reagent/compost, seed_value)
 			qdel(C)
 		else if(istype(C, /obj/item/reagent_containers/food/snacks/grown))
-			reagents.add_reagent("compost", produce_value)
+			reagents.add_reagent(/datum/reagent/compost, produce_value)
 			qdel(C)
 		else //Not sure how we got here, but there's only one reasonable thing to do.
 			qdel(C)

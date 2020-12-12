@@ -438,7 +438,7 @@
 /obj/item/rig_module/welding_tank/Initialize()
 	..()
 	create_reagents(max_fuel)
-	reagents.add_reagent("fuel", max_fuel)
+	reagents.add_reagent(/datum/reagent/fuel, max_fuel)
 
 /obj/item/rig_module/welding_tank/engage(atom/target)
 	if(!..() || !reagents)

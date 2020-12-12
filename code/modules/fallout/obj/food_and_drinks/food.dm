@@ -107,7 +107,7 @@
 	desc = "A Big Pops branded bubblegum."
 	icon_state = "bubblegum"
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, "sugar" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/bubblegum
 
@@ -116,7 +116,7 @@
 	desc = "A large \"Extra\" Big Pops branded bubblegum."
 	icon_state = "bubblegum_large"
 	bonus_reagents = list(/datum/reagent/radium = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, "sugar" = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 4)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/bubblegum_large
 
@@ -161,7 +161,7 @@
 	desc = "Sugar Bombs is a pre-War breakfast cereal that can be found all around the wasteland, packaged in white and blue boxes with a red ovoid logo at the top, fully labeled as \"Sugar Bombs breakfast cereal\"."
 	icon_state = "sugarbombs"
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, "sugar" = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/sugarbombs
 
@@ -188,7 +188,7 @@
 	desc = "Dandy Apples Special are a product from the pre-War company Dandy Boy. On the sides of the box there is some sort of apple mascot with a bowler hat, monocle and mustache."
 	icon_state = "specialapples"
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, "tricordrazine" = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/tricordrazine = 10)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/specialapples
 
@@ -197,7 +197,7 @@
 	desc = "Dandy Boy Apples are a product from the pre-War company Dandy Boy, consisting of candied apples packaged in a red cardboard box."
 	icon_state = "dandyapples"
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 10, "sugar" = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/dandyapples
 
@@ -268,7 +268,7 @@
 	name = "MRE"
 	desc = "The Meal, Ready-to-Eat : commonly known as the MRE - is a self-contained, individual field ration in lightweight packaging.<br>It's commonly used by military groups for service members to use in combat or other field conditions where organized food facilities are not available."
 	icon_state = "mre"
-	bonus_reagents = list("silver_sulfadiazine" = 10, "tricordrazine" = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 10, /datum/reagent/medicine/tricordrazine = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/mre
@@ -277,7 +277,7 @@
 	name = "dehydrated pea soup"
 	desc = "A piece of military food ration.<br>Faded label on the front says: \"Dehydrated peas. Chew well, take with water. 60g.\""
 	icon_state = "galette"
-	bonus_reagents = list("sodiumchloride" = 2, "sugar" = 2, "tricordrazine" = 2)
+	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 2, /datum/reagent/consumable/sugar = 2, /datum/reagent/medicine/tricordrazine = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
 
@@ -287,8 +287,8 @@
     name = "Deathclaw Egg"
     desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
     icon_state = "deathclawegg"
-    bonus_reagents = list("toxin" = 30)
-    list_reagents = list("eggyolk" = 40)
+    bonus_reagents = list(/datum/reagent/toxin = 30)
+    list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
     filling_color = "#F0E68C"
 
 //WASTELAND PREPARED MEALS
@@ -361,7 +361,7 @@
 	name = "Mirelurk Stew"
 	desc = "A hearty stew made from de-shelled Mirelurk meat, onions, butter, and other such delights."
 	icon_state = "Mirelurk_stew"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, "tricordrazine" = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/tricordrazine = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	tastes = list("crab" = 5, "onions" = 1)
 	filling_color = "#406618"

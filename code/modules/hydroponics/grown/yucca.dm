@@ -17,7 +17,7 @@
 	icon_dead = "yucca-dead"
 	icon_harvest = "yucca-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("vitamin" = 0.2, "sugar" = 0.1, "nutriment" = 0.2)
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.2, /datum/reagent/consumable/sugar = 0.1, /datum/reagent/consumable/nutriment = 0.2)
 
 
 /obj/item/reagent_containers/food/snacks/grown/yucca
@@ -27,5 +27,5 @@
 	icon_state = "Bannana Yucca"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	bitesize = 100
-	juice_results = list("yuccajuice" = 0)
-	distill_reagent = "yuccajuice"
+	juice_results = list(/datum/reagent/yuccajuice = 0)
+	distill_reagent = /datum/reagent/consumable/yuccajuice

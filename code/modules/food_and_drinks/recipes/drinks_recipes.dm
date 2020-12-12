@@ -55,7 +55,7 @@
 	name = "Vodka"
 	id = /datum/reagent/consumable/ethanol/vodka
 	results = list(/datum/reagent/consumable/ethanol/vodka = 10)
-	required_reagents = list(/datum/reagent/consumable/potato_juice = 10)
+	required_reagents = list(/datum/reagent/consumable/tato_juice = 10)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 
 /datum/chemical_reaction/kahlua

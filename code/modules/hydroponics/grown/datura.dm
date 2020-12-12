@@ -14,7 +14,7 @@
 	icon_grow = "datura-grow"
 	icon_dead = "datura-dead"
 	icon_harvest = "datura-harvest"
-	reagents_add = list("morphine" = 0.35, "mushroomhallucinogen" = 0.12, "toxin" = 0.3, "nutriment" = 0.05)
+	reagents_add = list(/datum/reagent/medicine/morphine = 0.35, /datum/reagent/drug/mushroomhallucinogen = 0.12, /datum/reagent/toxin = 0.3, /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/datura
 	seed = /obj/item/seeds/datura
@@ -24,5 +24,5 @@
 	filling_color = "#FFA500"
 	bitesize_mod = 2
 	foodtype = VEGETABLES
-	juice_results = list("daturatea" = 0)
-	distill_reagent = "daturatea"
+	juice_results = list(/datum/reagent/consumable/ethanol/daturatea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/daturatea

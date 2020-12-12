@@ -21,13 +21,13 @@
 	desc = "Xander roots are large, hardy, turnip-like roots with mild healing properties."
 	icon_state = "xander"
 	filling_color = "#FF6347"
-	juice_results = list("xandertea" = 0)
-	distill_reagent = "salgam"
+	juice_results = list(/datum/reagent/xandertea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/salgam
 
 /obj/item/reagent_containers/food/snacks/grown/xander/add_juice()
 	if(..())
-		reagents.add_reagent("antitoxin", 1 + round((seed.potency / 5), 1))
-		reagents.add_reagent("salglu_solution", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/antitoxin, 1 + round((seed.potency / 5), 1))
+		reagents.add_reagent(/datum/reagent/medicine/salglu, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /*HRP*/

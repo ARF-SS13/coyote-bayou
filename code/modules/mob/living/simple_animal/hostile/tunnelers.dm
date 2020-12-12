@@ -68,4 +68,4 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("toxin", 5)
+		H.reagents.add_reagent(/datum/reagent/toxin, 5)

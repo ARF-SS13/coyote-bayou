@@ -2323,7 +2323,7 @@
 "Ty" = (/obj/structure/sign/departments/examroom,/turf/closed/wall/r_wall/f13vault{icon_state = "2-i"},/area/f13/vault)
 "Tz" = (/obj/structure/rack{dir = 8; layer = 2.9},/obj/structure/bedsheetbin,/turf/open/floor/f13/wood{icon_state = "housewood2"; tag = "icon-housewood2"},/area/f13/bunker)
 "TA" = (/obj/machinery/door/airlock/medical{name = "Operating Theatre"; req_access_txt = "45; 5"},/turf/open/floor/plasteel/f13/vault_floor/floor,/area/f13/vault)
-"TB" = (/obj/item/spear/bonespear{desc = "This spear seems to be several long deathclaw femurs tied together by leather, with three wicked sharp looking claws crudely tied to the end."; force = 5; force_unwielded = 5; force_wielded = 50; name = "Deathclaw bonespear"},/turf/open/indestructible/ground/outside/dirt,/area/f13/ruins)
+"TB" = (/obj/item/spear/bonespear/deathclaw,/turf/open/indestructible/ground/outside/dirt,/area/f13/ruins)
 "TC" = (/obj/machinery/vending/wardrobe/chem_wardrobe,/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,/area/f13/vault)
 "TD" = (/obj/structure/closet/crate/bin,/obj/machinery/light/broken,/turf/open/floor/f13{icon_state = "bar"},/area/f13/bunker)
 "TE" = (/obj/structure/rack,/obj/item/reagent_containers/food/snacks/f13/dandyapples,/obj/item/reagent_containers/food/snacks/f13/dandyapples,/obj/item/reagent_containers/food/snacks/f13/dandyapples,/obj/item/reagent_containers/food/snacks/f13/dandyapples,/obj/item/reagent_containers/food/snacks/f13/dandyapples,/turf/open/floor/f13{icon_state = "bar"},/area/f13/bunker)

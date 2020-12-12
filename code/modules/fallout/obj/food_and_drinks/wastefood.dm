@@ -4,7 +4,7 @@
 	name = "Macaco soup"
 	desc = "To think, the monkey would've beat you to death and steal your gun."
 	icon_state = "macaco"
-	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, "omnizine" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/medicine/omnizine = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("Monkey" = 1)
 	foodtype = MEAT | VEGETABLES
 
@@ -13,8 +13,8 @@
 	name = "molerat stew"
 	desc = "A nice and warm stew. Healthy and strong."
 	icon_state = "stew"
-	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, "tomatojuice" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, "oculine" = 5, "tomatojuice" = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/tomatojuice = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/tomatojuice = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
 	bitesize = 7
 	volume = 100
 	tastes = list("gamey meat" = 1, "herbal notes" = 1, "filling stew" = 1)
@@ -47,7 +47,7 @@
 	icon_grow = "coyote-grow"
 	icon_dead = "coyote-dead"
 	icon_harvest = "coyote-harvest"
-	reagents_add = list("nicotine" = 0.03,  /datum/reagent/consumable/nutriment/vitamin = 0.03)
+	reagents_add = list(/datum/reagent/drug/nicotine = 0.03,  /datum/reagent/consumable/nutriment/vitamin = 0.03)
 
 /obj/item/reagent_containers/food/snacks/grown/coyotetobacco
 	seed = /obj/item/seeds/coyotetobacco
@@ -55,8 +55,8 @@
 	desc = "This tobacco like plant is commonly used by tribals for a great variety of medicinal and ceremonial purposes."
 	icon_state = "Coyote Tobacco"
 	filling_color = "#008000"
-	juice_results = list("coyotetea" = 0)
-	distill_reagent = "deathroach"
+	juice_results = list(/datum/reagent/consumable/tea/coyotetea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/deathroach
 
 
 /obj/item/seeds/feracactus
@@ -84,13 +84,13 @@
 	desc = "Barrel cactus fruit are found on spherical barrel cacti and are both nutritious and highly toxic."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"
-	juice_results = list("feratea" = 0)
-	distill_reagent = "yellowpulque"
+	juice_results = list(/datum/reagent/consumable/tea/feratea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/yellowpulque
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus/add_juice()
 	if(..())
 		reagents.add_reagent( /datum/reagent/consumable/nutriment/vitamin, 3 + round((seed.potency / 20), 1))
-		reagents.add_reagent("calomel", 3 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/calomel, 3 + round((seed.potency / 20), 1))
 		reagents.add_reagent(/datum/reagent/radium, 0 + round((seed.potency / 20), 1))
 		bitesize = 3 + round(reagents.total_volume / 3, 1)
 
@@ -117,14 +117,14 @@
 	icon_state = "broc"
 	//slot_flags = SLOT_HEAD
 	filling_color = "#FF6347"
-	juice_results = list("broctea" = 0)
-	distill_reagent = "brocbrew"
+	juice_results = list(/datum/reagent/consumable/tea/broctea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/brocbrew
 
 
 /obj/item/reagent_containers/food/snacks/grown/broc/add_juice()
 	if(..())
-		reagents.add_reagent("dexalin", 1 + round((seed.potency / 5), 1))
-		reagents.add_reagent("salglu_solution", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/dexalin, 1 + round((seed.potency / 5), 1))
+		reagents.add_reagent(/datum/reagent/medicine/salglu_solution, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /obj/item/seeds/xander
@@ -150,13 +150,13 @@
 	desc = "Xander roots are large, hardy, turnip-like roots with mild healing properties."
 	icon_state = "xander"
 	filling_color = "#FF6347"
-	juice_results = list("xandertea" = 0)
-	distill_reagent = "salgam"
+	juice_results = list(/datum/reagent/consumable/tea/xandertea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/salgam
 
 /obj/item/reagent_containers/food/snacks/grown/xander/add_juice()
 	if(..())
-		reagents.add_reagent("antitoxin", 1 + round((seed.potency / 5), 1))
-		reagents.add_reagent("salglu_solution", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/antitoxin, 1 + round((seed.potency / 5), 1))
+		reagents.add_reagent(/datum/reagent/medicine/salglu_solution, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /*HRP*/
@@ -187,9 +187,9 @@
 	filling_color = "#FF00FF"
 	bitesize_mod = 2
 	foodtype = FRUIT
-	juice_results = list("yeast" = 1)
+	juice_results = list(/datum/reagent/consumable/enzyme = 1)
 	tastes = list("searing pain" = 1)
-	distill_reagent = "yeast"
+	distill_reagent = /datum/reagent/consumable/enzyme
 
 
 /obj/item/seeds/mesquite
@@ -221,14 +221,14 @@
 	filling_color = "#F0E68C"
 	bitesize_mod = 2
 	foodtype = VEGETABLES
-	juice_results = list("honey" = 0)
+	juice_results = list(/datum/reagent/consumable/honey = 0)
 	tastes = list("crunchy sweetness" = 1)
-	distill_reagent = "wastemead"
+	distill_reagent = /datum/reagent/consumable/ethanol/wastemead
 
 
 /obj/item/seeds/pinyon
 	name = "pack of pinyon pine seeds"
-	desc = "The seeds of the pinyon pine, known as pine nuts or piñóns, are an important food for settlers and tribes living in the mountains of the North American Southwest. All species of pine produce edible seeds, but in North America only the pinyon produces seeds large enough to be a major source of food."
+	desc = "The seeds of the pinyon pine, known as pine nuts or piï¿½ï¿½ns, are an important food for settlers and tribes living in the mountains of the North American Southwest. All species of pine produce edible seeds, but in North America only the pinyon produces seeds large enough to be a major source of food."
 	icon_state = "seed-pinyon"
 	species = "pinyon pine"
 	plantname = "Pinyon Pine"
@@ -250,13 +250,13 @@
 /obj/item/reagent_containers/food/snacks/grown/pinyon
 	seed = /obj/item/seeds/pinyon
 	name = "pinyon nuts"
-	desc = "The seeds of the pinyon pine, known as pine nuts or piñóns, are an important food for settlers and tribes living in the mountains of the North American Southwest. All species of pine produce edible seeds, but in North America only the pinyon produces seeds large enough to be a major source of food."
+	desc = "The seeds of the pinyon pine, known as pine nuts or piï¿½ï¿½ns, are an important food for settlers and tribes living in the mountains of the North American Southwest. All species of pine produce edible seeds, but in North America only the pinyon produces seeds large enough to be a major source of food."
 	gender = PLURAL
 	icon_state = "Pinyon Nuts"
 	filling_color = "#F0E68C"
 	bitesize_mod = 2
 	foodtype = GRAIN
-	grind_results = list("flour" = 0)
+	grind_results = list(/datum/reagent/consumable/flour = 0)
 	tastes = list("pine nuts" = 1)
 
 /obj/item/seeds/pricklypear
@@ -271,7 +271,7 @@
 	plantname = "prickly pear"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	product = /obj/item/reagent_containers/food/snacks/grown/pricklypear
-	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.02,  /datum/reagent/consumable/nutriment/vitamin = 0.2, "water" = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.02,  /datum/reagent/consumable/nutriment/vitamin = 0.2, /datum/reagent/water = 0.04)
 	lifespan = 60
 	endurance = 20
 	yield = 2
@@ -287,9 +287,9 @@
 	filling_color = "#FF6347"
 	foodtype = FRUIT
 	bitesize_mod = 2
-	juice_results = list("pricklytea" = 0)
+	juice_results = list(/datum/reagent/consumable/tea/pricklytea = 0)
 	tastes = list("sweet cactus" = 1)
-	distill_reagent = "pinkpulque"
+	distill_reagent = /datum/reagent/consumable/ethanol/pinkpulque
 
 /obj/item/grown/pricklypear/pickup(mob/living/user)
 	..()
@@ -322,7 +322,7 @@
 	icon_grow = "datura-grow"
 	icon_dead = "datura-dead"
 	icon_harvest = "datura-harvest"
-	reagents_add = list("morphine" = 0.35, "mushroomhallucinogen" = 0.12, "toxin" = 0.3,  /datum/reagent/consumable/nutriment/vitamin = 0.05)
+	reagents_add = list(/datum/reagent/medicine/morphine = 0.35, /datum/reagent/drug/mushroomhallucinogen = 0.12, /datum/reagent/toxin = 0.3,  /datum/reagent/consumable/nutriment/vitamin = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/datura
 	seed = /obj/item/seeds/datura
@@ -332,8 +332,8 @@
 	filling_color = "#FFA500"
 	bitesize_mod = 2
 	foodtype = VEGETABLES
-	juice_results = list("daturatea" = 0)
-	distill_reagent = "daturatea"
+	juice_results = list(/datum/reagent/consumable/ethanol/daturatea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/daturatea
 
 /obj/item/seeds/punga
 	name = "pack of punga seeds"
@@ -355,20 +355,20 @@
 	icon_dead = "punga-dead"
 	icon_harvest = "punga-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("charcoal" = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list(/datum/reagent/medicine/charcoal = 0.1, /datum/reagent/phosphorus = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	seed = /obj/item/seeds/punga
 	name = "pungafruit"
-	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin. They are common throughout Point Lookout, due to the unique conditions offered by the swamps, and the further unique function of scrubbing radiation from the system"
+	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin. They are common throughout Point Lookout, due to the unique conditions offered by the swamps, and scrub radiation when ingested."
 	icon_state = "Punga Fruit"
 	filling_color = "#FF6347"
-	distill_reagent = "pungajuice"
+	distill_reagent = /datum/reagent/consumable/ethanol/pungajuice
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit/add_juice()
 	if(..())
-		reagents.add_reagent("charcoal", 1 + round((seed.potency / 20), 1))
-		reagents.add_reagent("mutadone", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/charcoal, 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/mutadone, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /obj/item/seeds/yucca
@@ -390,7 +390,7 @@
 	icon_dead = "yucca-dead"
 	icon_harvest = "yucca-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.2, "sugar" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.2)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.2, /datum/reagent/consumable/sugar = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.2)
 
 
 /obj/item/reagent_containers/food/snacks/grown/yucca
@@ -400,8 +400,8 @@
 	icon_state = "Bannana Yucca"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	bitesize = 100
-	juice_results = list("yuccajuice" = 0)
-	distill_reagent = "yuccajuice"
+	juice_results = list(/datum/reagent/consumable/yuccajuice = 0)
+	distill_reagent = /datum/reagent/consumable/yuccajuice
 
 /obj/item/seeds/tato
 	name = "pack of tato seeds"
@@ -430,8 +430,8 @@
 	filling_color = "#E9967A"
 	bitesize = 100
 	foodtype = VEGETABLES
-	juice_results = list("tato" = 0)
-	distill_reagent = "tatovodka"
+	juice_results = list(/datum/reagent/consumable/tato_juice = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/tatovodka
 
 /obj/item/reagent_containers/food/snacks/grown/tato/wedges
 	name = "tato wedges"
@@ -470,8 +470,8 @@
 	desc = "Mutfruit provides both hydration and sustenance, but the mutated plant also carries small amounts of radiation."
 	icon_state = "mutfruit"
 	filling_color = "#FF6347"
-	distill_reagent = "purplecider"
-	juice_results = list("mutjuice" = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/purplecider
+	juice_results = list(/datum/reagent/consumable/mutjuice = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit/add_juice()
 	if(..())
@@ -504,7 +504,7 @@
 	growthstages = 4
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("morphine" = 0.35, "charcoal" = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0)
+	reagents_add = list(/datum/reagent/medicine/morphine = 0.35, /datum/reagent/medicine/charcoal = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/reishi
 	seed = /obj/item/seeds/reishi
@@ -530,7 +530,7 @@
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/angel)
-	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0, "growthserum" = 0.1)
+	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.04, /datum/reagent/toxin/amatoxin = 0.35,  /datum/reagent/consumable/nutriment/vitamin = 0, /datum/reagent/growthserum = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/amanita
 	seed = /obj/item/seeds/amanita
@@ -556,7 +556,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("mushroomhallucinogen" = 0.04, "amatoxin" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0, "amanitin" = 0.2)
+	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.04, /datum/reagent/toxin/amatoxin = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0, /datum/reagent/toxin/amanitin = 0.2)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/angel
@@ -582,7 +582,7 @@
 	growthstages = 3
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list("mushroomhallucinogen" = 0.25,  /datum/reagent/consumable/nutriment/vitamin = 0.02)
+	reagents_add = list(/datum/reagent/drug/mushroomhallucinogen = 0.25,  /datum/reagent/consumable/nutriment/vitamin = 0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap
 	seed = /obj/item/seeds/liberty
@@ -616,7 +616,7 @@
 	desc = "<I>Plumus Hellmus</I>: Plump, soft and s-so inviting~"
 	icon_state = "plumphelmet"
 	filling_color = "#9370DB"
-	distill_reagent = "manlydorf"
+	distill_reagent = /datum/reagent/consumable/ethanol/manly_dorf
 
 // Walking Mushroom
 /obj/item/seeds/plump/walkingmushroom
@@ -702,7 +702,7 @@
 	genes = list(/datum/plant_gene/trait/glow, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	mutatelist = list(/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom)
-	reagents_add = list(/datum/reagent/radium = 0.1, "phosphorus" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list(/datum/reagent/radium = 0.1, /datum/reagent/phosphorus = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom
 	seed = /obj/item/seeds/glowshroom
@@ -747,7 +747,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
 	genes = list(/datum/plant_gene/trait/glow/red, /datum/plant_gene/trait/cell_charge, /datum/plant_gene/trait/plant_type/fungal_metabolism)
 	mutatelist = list()
-	reagents_add = list("teslium" = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list(/datum/reagent/teslium = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04)
 	rarity = 30
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
@@ -884,8 +884,8 @@
 
 /obj/item/reagent_containers/food/snacks/grown/fungus/add_juice()
 	if(..())
-		reagents.add_reagent("charcoal", 1 + round((seed.potency / 20), 1))
-		reagents.add_reagent("mutadone", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/charcoal, 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/mutadone, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /obj/item/seeds/glow
@@ -907,7 +907,7 @@
 	icon_dead = "glow-dead"
 	icon_harvest = "glow-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow)
-	reagents_add = list("space_drugs" = 0.04, "mindbreaker" = 0.1, "mutagen" = 0.01, /datum/reagent/radium = 0.05)
+	reagents_add = list(/datum/reagent/drug/space_drugs = 0.04, /datum/reagent/toxin/mindbreaker = 0.1, /datum/reagent/toxin/mutagen = 0.01, /datum/reagent/radium = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/glow
 	seed = /obj/item/seeds/glow
@@ -938,7 +938,7 @@
 	icon_grow = "agave-grow"
 	icon_dead = "agave-dead"
 	icon_harvest = "agave-harvest"
-	reagents_add = list("kelotane" = 0.05, "lipolicide" = 0.05)
+	reagents_add = list(/datum/reagent/medicine/kelotane = 0.05, /datum/reagent/toxin/lipolicide = 0.05)
 
 
 /obj/item/reagent_containers/food/snacks/grown/agave
@@ -947,5 +947,5 @@
 	desc = "A strange kind of fleshy grass often used as a primitive burn medication that rapidly depletes stored nutrients in the body."
 	icon_state = "Agave Leaf"
 	icon = 'icons/obj/flora/wastelandflora.dmi'
-	juice_results = list("agavetea" = 0)
-	distill_reagent = "tequila"
+	juice_results = list(/datum/reagent/consumable/tea/agavetea = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/tequila
