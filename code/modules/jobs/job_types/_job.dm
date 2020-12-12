@@ -91,7 +91,7 @@
 	var/enforces = ""
 	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
 	//This is ontop of the base job outfit
-	var/list/datum/outfit/loadout_options = list()
+	var/list/datum/outfit/loadout_options
 
 
 //Only override this proc
@@ -155,8 +155,8 @@
 		H.equipOutfit(O, visualsOnly, preference_source) //mob doesn't have a client yet.
 	
 	//If we have any additional loadouts, notify the player
-	if(!visualsOnly && loadout_options.len)
-		enable_loadout_select(H)
+	if(!visualsOnly && LAZYLEN(loadout_options))
+		H.enable_loadout_select()
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 

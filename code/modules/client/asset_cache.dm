@@ -608,23 +608,3 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		Insert(initial(D.id), I)
 	return ..()
-
-
-/datum/asset/simple/loadout_icons/register()
-	var/list/outfits = list()
-	for(var/j in subtypesof(/datum/job))
-		var/datum/job/J = new j
-		for (var/D in J.loadout_options)
-			if (D in outfits)
-				continue
-			outfits += D
-			var/datum/outfit/O = new D
-			var/list/types = O.get_all_possible_item_paths()
-
-			for (var/item in types)
-				var/filename = sanitize_filename("[item].png")
-				var/icon/I = getFlatTypeIcon(item)
-				register_asset(filename, I)
-				assets[filename] = I
-
-				//design.ui_data["icon"] = filename

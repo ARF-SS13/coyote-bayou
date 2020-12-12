@@ -455,3 +455,45 @@
 /datum/asset/spritesheet/mafia/register()
 	InsertAll("", 'icons/obj/mafia.dmi')
 	..()
+
+/datum/asset/spritesheet/loadout
+	name = "loadout"
+
+/datum/asset/spritesheet/loadout/register()
+	var/list/outfits = list()
+	var/list/itypes = list()
+	for(var/j in subtypesof(/datum/job))
+		var/datum/job/J = new j
+		for (var/D in J.loadout_options)
+			if (D in outfits)
+				continue
+			outfits += D
+			var/datum/outfit/O = new D
+			itypes |= O.get_all_possible_item_paths()
+	for (var/k in itypes)
+		var/obj/item = k
+		if (!ispath(item, /obj/item))
+			continue
+
+		var/icon_file = initial(item.icon)
+		var/icon_state = initial(item.icon_state)
+		var/icon/I
+
+		var/icon_states_list = icon_states(icon_file)
+		if(icon_state in icon_states_list)
+			I = icon(icon_file, icon_state, SOUTH)
+			var/c = initial(item.color)
+			if (!isnull(c) && c != "#FFFFFF")
+				I.Blend(c, ICON_MULTIPLY)
+		else
+			var/icon_states_string
+			for (var/an_icon_state in icon_states_list)
+				if (!icon_states_string)
+					icon_states_string = "[json_encode(an_icon_state)](\ref[an_icon_state])"
+				else
+					icon_states_string += ", [json_encode(an_icon_state)](\ref[an_icon_state])"
+			stack_trace("[item] does not have a valid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state]), icon_states=[icon_states_string]")
+			I = icon('icons/turf/floors.dmi', "", SOUTH)
+		var/imgid = replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-")
+		Insert(imgid, I)
+	return ..()
