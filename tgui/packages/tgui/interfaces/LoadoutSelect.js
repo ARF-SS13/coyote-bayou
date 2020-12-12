@@ -37,7 +37,7 @@ export const LoadoutSelect = (props, context) => {
               {!data.preview && "No outfit selected."
               || (
                 <div style={{ "text-align": "center" }}>
-                  <img src={`data:image/jpeg;base64,${data.preview}`} style={{ "image-rendering": "pixelated" }} width={192} height={192} /><br />
+                  <img src={`data:image/jpeg;base64,${data.preview}`} style={{ "image-rendering": "pixelated", "-ms-interpolation-mode": "nearest-neighbor" }} width={220} height={220} /><br />
                   <br />
                   <div style={{ "display": "table", "width": "100%", "text-align": "center" }}>
                     <Button style={{ "display": "table-cell", "text-align": "center" }} content={"<<"} onClick={() => act('loadout_preview_direction', { direction: -1 })} />
