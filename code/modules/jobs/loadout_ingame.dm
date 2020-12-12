@@ -21,32 +21,32 @@
 
 
 //Called when someone spawns in, or maybe if an admin does a thing
-/proc/enable_loadout_select(var/mob/M)
+/mob/proc/enable_loadout_select()
 	//Delay the notification message for a few seconds so players are less likely to miss it
 	spawn(50)
-		to_chat(M, ("-------------------------------------------"))
-		to_chat(M, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
-		to_chat(M, ("-------------------------------------------"))
-	M.verbs += /mob/proc/select_loadout
-	var/datum/component/loadout_selector/LS = M.AddComponent(/datum/component/loadout_selector) //Create the loadout selecting component
+		to_chat(src, ("-------------------------------------------"))
+		to_chat(src, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
+		to_chat(src, ("-------------------------------------------"))
+	verbs += /mob/proc/select_loadout
+	var/datum/component/loadout_selector/LS = AddComponent(/datum/component/loadout_selector) //Create the loadout selecting component
 	var/token = new /obj/item/loadout_token
 	LS.token = token
-	M.put_in_hands(token)
+	put_in_hands(token)
 
 //Cleans up the verbs, objects and components
 //Called after a loadout is selected, or if the user tries to do some exploit to pick a second loadout
-/proc/disable_loadout_select(var/mob/M)
-	var/datum/component/loadout_selector/LS = M.GetComponent(/datum/component/loadout_selector)
+/mob/proc/disable_loadout_select()
+	var/datum/component/loadout_selector/LS = GetComponent(/datum/component/loadout_selector)
 	if (LS)
 		//Lets close the open UI
-		var/datum/tgui/ui = SStgui.try_update_ui(M, LS, "loadout_select", null, 0)
+		var/datum/tgui/ui = SStgui.try_update_ui(src, LS, "loadout_select", null, 0)
 		if (ui)
 			ui.close()
 
-		M.deleteWornItem(LS.token)
+		deleteWornItem(LS.token)
 
-	M.verbs -= /mob/proc/select_loadout //Remove the verb
-	M.RemoveComponentByType(/datum/component/loadout_selector) //Remove component
+	verbs -= /mob/proc/select_loadout //Remove the verb
+	RemoveComponentByType(/datum/component/loadout_selector) //Remove component
 
 /****************
 	Object
@@ -84,12 +84,14 @@
 
 	var/obj/item/loadout_token/token = null
 
+	var/confirming = FALSE // Whether or not we have the confirmation window open.
+
 //Lets check that the assigned parent is a mob with a job
 /datum/component/loadout_selector/Initialize()
 	var/mob/living/L = parent
 	if (istype(L))
 		var/datum/job/J = L.GetJob()
-		if (J)
+		if (J && LAZYLEN(J.loadout_options))
 			for (var/a in J.loadout_options) //Copy the options from the job
 				var/datum/outfit/o = a
 				loadout_options[initial(o.name)] = a
@@ -114,7 +116,7 @@
 	kitbox.w_class = WEIGHT_CLASS_BULKY
 	selected_datum.spawn_at(kitbox)
 	M.put_in_hands(kitbox)
-	disable_loadout_select(M)
+	M.disable_loadout_select()
 
 /obj/item/storage/box/large/ComponentInitialize() //same storage as a backpack, to allow it to hold loadout items
 	. = ..()
@@ -150,11 +152,12 @@
 			select_outfit(params["name"])
 			. = TRUE
 		if("loadout_confirm")
-		/*	if (selected_datum)			//Confirmation for loadout is bugged, can click a loadout multiple times then click finish multiple times.
-				var/response = alert(usr, "Are you sure you wish to finish loadout selection? The currently selected outfit will be spawned in a box, which will be placed in your hand.", "Confirm Loadout Select", "Yes I'm done", "No, wait!")
-				if (response == "Yes I'm done")
-					finish()	*/
-			finish()
+			if (selected_datum && !confirming)
+				confirming = TRUE
+				var/response = alert(usr, "Are you sure you wish to finish loadout selection? The currently selected outfit will be spawned in a box, which will be placed in your hand.", "Confirm Loadout Select", "Yes, I'm done.", "No, wait!")
+				if (response == "Yes, I'm done.")
+					finish()
+				confirming = FALSE
 			. = TRUE
 		if("loadout_preview_direction")
 			selected_direction = turn(selected_direction, 90 * text2num(params["direction"]))
@@ -212,9 +215,6 @@
 	selected_datum.equip(mannequin, visualsOnly = TRUE, overwrite = TRUE)
 
 	COMPILE_OVERLAYS(mannequin)
-	//mannequin.loc = M.loc //Debug
-
-	//This is a mild hack, something is making dummies not initialise properly
 
 	//Now we have our mannequin, photoshoot time!
 	var/list/cached_icons = list()
