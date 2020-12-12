@@ -861,7 +861,7 @@ Ranger -- Split into Patrol and Scout
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK)
 
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"

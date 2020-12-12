@@ -169,7 +169,7 @@
 /obj/effect/decal/cleanable/cum/Initialize()
 	. = ..()
 	dir = pick(1,2,4,8)
-	reagents.add_reagent("cum", rand(8,13))
+	reagents.add_reagent(/datum/reagent/consumable/semen, rand(8,13))
 	add_blood_DNA(list("Unknown DNA" = "O+"))
 
 /* Eventually TODO: make snowflake trails like baycode's

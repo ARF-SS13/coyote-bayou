@@ -243,22 +243,22 @@
 		backpack_contents[box] = 1
 
 	if(chemwhiz == TRUE)
-		H.add_trait(TRAIT_CHEMWHIZ)
+		ADD_TRAIT(H, TRAIT_CHEMWHIZ)
 
 	if(pa_wear == TRUE)
-		H.add_trait(TRAIT_PA_WEAR)
+		ADD_TRAIT(H, TRAIT_PA_WEAR)
 
 	if(gunsmith_one == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_ONE)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_ONE)
 
 	if(gunsmith_two == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_TWO)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_TWO)
 
 	if(gunsmith_three == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_THREE)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_THREE)
 
 	if(gunsmith_four == TRUE)
-		H.add_trait(TRAIT_GUNSMITH_FOUR)
+		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -286,10 +286,10 @@
 		PDA.update_label()
 
 	if(chemwhiz == TRUE)
-		H.add_trait(TRAIT_CHEMWHIZ)
+		ADD_TRAIT(H, TRAIT_CHEMWHIZ)
 
 	if(pa_wear == TRUE)
-		H.add_trait(TRAIT_PA_WEAR)
+		ADD_TRAIT(H, TRAIT_PA_WEAR)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()

@@ -15,7 +15,7 @@
 	icon_dead = "tato-dead"
 	icon_harvest = "tato-harvest"
 	genes = list(/datum/plant_gene/trait/battery, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
+	reagents_add = list(/datum/reagent/consumable/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/tato
 	seed = /obj/item/seeds/tato
@@ -25,8 +25,8 @@
 	filling_color = "#E9967A"
 	bitesize = 100
 	foodtype = VEGETABLES
-	juice_results = list("tato" = 0)
-	distill_reagent = "tatovodka"
+	juice_results = list(/datum/reagent/tato = 0)
+	distill_reagent = /datum/reagent/consumable/ethanol/tatovodka
 
 /obj/item/reagent_containers/food/snacks/grown/tato/wedges
 	name = "tato wedges"

@@ -443,4 +443,4 @@
 /obj/item/reagent_containers/glass/bottle/FEV_solution
 	name = " FEV bottle"
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
-	list_reagents = list("FEV_solution" = 30)
+	list_reagents = list(/datum/reagent/toxin/FEV_solution = 30)

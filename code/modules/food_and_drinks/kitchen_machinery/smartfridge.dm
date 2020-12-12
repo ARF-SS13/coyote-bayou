@@ -147,7 +147,7 @@
 		else
 			return TRUE
 	else
-		if(SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE))
+		if(O.loc && SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE))
 			return SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, src)
 		else
 			O.forceMove(src)

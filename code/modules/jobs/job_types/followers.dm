@@ -29,7 +29,7 @@
 //	..()
 //	if(visualsOnly)
 //		return
-	//H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	//ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Administrator
@@ -206,7 +206,7 @@ Practitioner
 //	..()
 //	if(visualsOnly)
 //		return
-//	H.add_trait(TRAIT_MEDICALEXPERT)
+//	ADD_TRAIT(H, TRAIT_MEDICALEXPERT)
 
 /*
 Follower Volunteer

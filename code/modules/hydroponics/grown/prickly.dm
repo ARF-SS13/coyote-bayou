@@ -10,7 +10,7 @@
 	plantname = "prickly pear"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	product = /obj/item/reagent_containers/food/snacks/grown/pricklypear
-	reagents_add = list("vitamin" = 0.02, "nutriment" = 0.2, "water" = 0.04)
+	reagents_add = list(/datum/reagent/nutriment/vitamin = 0.02, /datum/reagent/consumable/nutriment = 0.2, /datum/reagent/water = 0.04)
 	lifespan = 60
 	endurance = 20
 	yield = 2
@@ -26,9 +26,9 @@
 	filling_color = "#FF6347"
 	foodtype = FRUIT
 	bitesize_mod = 2
-	juice_results = list("pricklytea" = 0)
+	juice_results = list(/datum/reagent/pricklytea = 0)
 	tastes = list("sweet cactus" = 1)
-	distill_reagent = "pinkpulque"
+	distill_reagent = /datum/reagent/consumable/ethanol/pinkpulque
 
 /obj/item/grown/pricklypear/pickup(mob/living/user)
 	..()

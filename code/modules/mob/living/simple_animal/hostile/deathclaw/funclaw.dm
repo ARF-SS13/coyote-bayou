@@ -94,19 +94,19 @@
 		if(CUM_TARGET_THROAT_FUNCLAW)
 			if(M.has_mouth() && M.mouth_is_free())
 				message = "shoves their fat reptillian cock deep down \the [M]'s throat and cums."
-				M.reagents.add_reagent("cum", rand(9,15))
+				M.reagents.add_reagent(/datum/reagent/consumable/semen, rand(9,15))
 			else
 				message = "cums on \the [M]'s face."
 		if(CUM_TARGET_VAGINA_FUNCLAW)
 			if(M.is_bottomless() && M.has_vulva())
 				message = "rams its meaty cock into \the [M]'s vulva and fills it with sperm."
-				M.reagents.add_reagent("cum", rand(8,12))
+				M.reagents.add_reagent(/datum/reagent/consumable/semen, rand(8,12))
 			else
 				message = "cums on \the [M]'s belly."
 		if(CUM_TARGET_ANUS_FUNCLAW)
 			if(M.is_bottomless() && M.has_anus())
 				message = "hilts its knot into \the [M]'s ass and floods it with Deathclaw jizz."
-				M.reagents.add_reagent("cum", rand(8,12))
+				M.reagents.add_reagent(/datum/reagent/consumable/semen, rand(8,12))
 			else
 				message = "cums on \the [M]'s backside."
 		else

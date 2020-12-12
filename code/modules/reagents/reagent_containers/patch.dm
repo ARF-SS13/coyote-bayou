@@ -47,13 +47,13 @@
 /obj/item/reagent_containers/pill/patch/jet
 	name = "Jet"
 	desc = "A highly addictive meta-amphetamine that produces a fast-acting, intense euphoric high on the user."
-	list_reagents = list("jet" = 10)
+	list_reagents = list(/datum/reagent/drug/jet = 10)
 	icon_state = "bandaid_jet"
 
 /obj/item/reagent_containers/pill/patch/turbo
 	name = "Turbo"
 	desc = "A chem that vastly increases the user's reflexes and slows their perception of time."
-	list_reagents = list("turbo" = 5)
+	list_reagents = list(/datum/reagent/drug/turbo = 5)
 	icon_state = "bandaid_turbo"
 
 /obj/item/reagent_containers/pill/patch/healingpowder

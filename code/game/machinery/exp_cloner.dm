@@ -42,11 +42,11 @@
 	icon_state = "pod_1"
 	//Get the clone body ready
 	maim_clone(H)
-	H.add_trait(TRAIT_STABLEHEART, "cloning")
-	H.add_trait(TRAIT_EMOTEMUTE, "cloning")
-	H.add_trait(TRAIT_MUTE, "cloning")
-	H.add_trait(TRAIT_NOBREATH, "cloning")
-	H.add_trait(TRAIT_NOCRITDAMAGE, "cloning")
+	ADD_TRAIT(H, TRAIT_STABLEHEART, "cloning")
+	ADD_TRAIT(H, TRAIT_EMOTEMUTE, "cloning")
+	ADD_TRAIT(H, TRAIT_MUTE, "cloning")
+	ADD_TRAIT(H, TRAIT_NOBREATH, "cloning")
+	ADD_TRAIT(H, TRAIT_NOCRITDAMAGE, "cloning")
 	H.faction |= factions
 	H.Unconscious(80)
 

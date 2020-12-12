@@ -9,7 +9,7 @@
 	icon_grow = "gourd-grow"
 	icon_dead = "gourd-dead"
 	icon_harvest = "tato-harvest"
-	reagents_add = list("water" = 0.2, "vitamin" = 0.04, "nutriment" = 0.2)
+	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
 	lifespan = 50
 	endurance = 40
 	maturation = 10
@@ -26,4 +26,4 @@
 	filling_color = "#008000"
 	bitesize_mod = 3
 	foodtype = FRUIT
-	distill_reagent = "buffalo"
+	distill_reagent = /datum/reagent/consumable/ethanol/buffalo"

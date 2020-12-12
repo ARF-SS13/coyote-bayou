@@ -89,7 +89,7 @@
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "slag"
 	desc = "Someone's gotten on the naughty list."
-	grind_results = list("carbon" = 20)
+	grind_results = list(/datum/reagent/carbon = 20)
 
 /obj/item/trash/coal/burn()
 	visible_message("[src] fuses into a diamond! Someone wasn't so naughty after all...")
