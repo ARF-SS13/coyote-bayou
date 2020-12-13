@@ -46,12 +46,12 @@
 	item_color = "ncr_uniform"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/ncr/officer
-	name = "NCR desert officer fatigues"
-	desc = "A set of NCR officer fatigues"
-	icon_state = "ncr_uniform"
-	can_adjust = TRUE
-	item_state = "ncr_uniform"
+/obj/item/clothing/under/f13/ncr/scout
+	name = "NCR scout fatigues"
+	desc = "A standard duty uniform for scouts of the New California Republic."
+	icon_state = "scoutclothes"
+	item_state = "scoutclothes"
+	item_color = "scoutclothes"
 
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outfit"
@@ -59,13 +59,6 @@
 	icon_state = "caravaneer"
 	item_state = "caravaneer"
 	item_color = "caravaneer"
-
-/obj/item/clothing/under/f13/ncr/scout
-	name = "NCR scouting fatigues"
-	desc = "A standard duty uniform for members of the 3rd Scout Battalion."
-	icon_state = "scoutclothes"
-	item_state = "scoutclothes"
-	item_color = "scoutclothes"
 
 //Settlers
 
@@ -115,6 +108,7 @@
 
 //The City
 
+//Ranger
 /obj/item/clothing/under/f13/ranger
 	name = "ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman."
@@ -123,29 +117,26 @@
 	item_color = "ranger"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/trailranger
+/obj/item/clothing/under/f13/ranger/trail
 	name = "ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. Worn often by NCR rangers."
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	item_color = "cowboyrang"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/patrolranger
+/obj/item/clothing/under/f13/ranger/patrol
 	name = "patrol ranger outfit"
 	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under NCR patrol ranger armour."
 	icon_state = "patrolranger"
 	item_state = "patrolranger"
 	item_color = "patrolranger"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/vetranger
-	name = "veteran ranger outfit"
+/obj/item/clothing/under/f13/ranger/vet
+	name = "ranger flannel outfit"
 	desc = "Simple rustic clothes for any big iron packin' ranger."
 	icon_state = "vetranger"
 	item_state = "vetranger"
 	item_color = "vetranger"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 70)
 
 /obj/item/clothing/under/f13/rustic
 	name = "rustic outfit"
@@ -416,7 +407,6 @@
 	item_state = "chiefrags"
 
 /obj/item/clothing/under/f13/tribe_shaman
-
 	name = "tribal shaman robes"
 	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
 	icon_state = "shamanrags"

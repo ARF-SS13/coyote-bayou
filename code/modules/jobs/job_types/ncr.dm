@@ -15,7 +15,7 @@
 	satchel = /obj/item/storage/backpack/satchel/trekker
 	ears = /obj/item/radio/headset/headset_ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	gloves = /obj/item/clothing/gloves/f13/ncr
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 
 /*
 Colonel
@@ -42,7 +42,7 @@ Colonel
 /datum/outfit/job/ncr/f13colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
-	uniform		= /obj/item/clothing/under/f13/ncr/officer
+	uniform		= /obj/item/clothing/under/f13/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr
 	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	head 		= /obj/item/clothing/head/beret/ncr
@@ -50,7 +50,7 @@ Colonel
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store  = /obj/item/gun/ballistic/automatic/marksman
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
-	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
+	gloves      = /obj/item/clothing/gloves/f13/leather
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/m556/rifle=2, \
@@ -90,13 +90,13 @@ Captain
 	name = "NCR Captain"
 	jobtype 	= /datum/job/ncr/f13captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
-	uniform		= /obj/item/clothing/under/f13/ncr/officer
+	uniform		= /obj/item/clothing/under/f13/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	suit_store 	= /obj/item/gun/ballistic/automatic/pistol/ninemil
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
-	neck = 		/obj/item/storage/belt/holster
+	neck 		= /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -112,17 +112,17 @@ Captain
 
 /datum/outfit/loadout/captscout
 	name = "Scout"
-	head = 			/obj/item/clothing/head/beret/ncr_scout_lt
-	shoes = 		/obj/item/clothing/shoes/f13/military/ncr_scout
-	gloves = 		/obj/item/clothing/gloves/rifleman
-	l_hand 	= 		/obj/item/gun/ballistic/automatic/m1garand/republicspride
+	head 		= /obj/item/clothing/head/beret/ncr_scout_lt
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_scout
+	gloves 		= /obj/item/clothing/gloves/f13/leather/fingerless
+	l_hand 		= /obj/item/gun/ballistic/automatic/m1garand/republicspride
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/garand308=3)
 
 /datum/outfit/loadout/captinf
 	name = "Infantry"
 	head = 		/obj/item/clothing/head/beret/ncr
-	gloves = 	/obj/item/clothing/gloves/f13/leather/ncr_officer
+	gloves = 	/obj/item/clothing/gloves/f13/leather
 	belt = 		/obj/item/storage/belt/military/assault/ncr
 	l_hand = 	/obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
@@ -195,13 +195,13 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype	= /datum/job/ncr/f13lieutenant
 	id = 		/obj/item/card/id/dogtag/ncrlieutenant
-	uniform	= 	/obj/item/clothing/under/f13/ncr/officer
+	uniform	= 	/obj/item/clothing/under/f13/ncr
 	accessory = /obj/item/clothing/accessory/ncr/LT
 	head = 		/obj/item/clothing/head/beret/ncr
 	neck = 		/obj/item/storage/belt/holster
 	glasses = 	/obj/item/clothing/glasses/sunglasses/big
 	shoes = 	/obj/item/clothing/shoes/f13/military/ncr_officer
-	gloves = 	/obj/item/clothing/gloves/f13/leather/ncr_officer
+	gloves = 	/obj/item/clothing/gloves/f13/leather
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -295,7 +295,7 @@ Sergeant
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	neck = 			/obj/item/storage/belt/holster
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
-	gloves =        /obj/item/clothing/gloves/f13/ncr
+	gloves =        /obj/item/clothing/gloves/f13/leather/fingerless
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -759,7 +759,7 @@ Recruit
 		/obj/item/clothing/under/f13/cowboyt=1,
 		/obj/item/clothing/suit/det_suit=1,
 		/obj/item/clothing/shoes/f13/military/ncr=1,
-		/obj/item/clothing/gloves/f13/ncr=1,
+		/obj/item/clothing/gloves/f13/leather/fingerless=1,
 		/obj/item/kitchen/knife/combat=1
 		)
 
@@ -800,7 +800,7 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
 	id = 			/obj/item/card/id/dogtag/ncrranger
-	uniform =  		/obj/item/clothing/under/f13/vetranger
+	uniform =  		/obj/item/clothing/under/f13/ranger/vet
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -936,7 +936,7 @@ Ranger -- Split into Patrol and Scout
 	name = "NCR Patrol Ranger"
 	jobtype = /datum/job/ncr/f13rangerpatrol
 	id = 			/obj/item/card/id/dogtag/ncrranger
-	uniform =  		/obj/item/clothing/under/f13/patrolranger
+	uniform =  		/obj/item/clothing/under/f13/ranger/patrol
 	suit =			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head =			/obj/item/clothing/head/f13/ranger
 	belt =			/obj/item/storage/belt/military/assault/ncr
@@ -987,7 +987,7 @@ Ranger -- Split into Patrol and Scout
 	name = "NCR Scout Ranger"
 	jobtype = /datum/job/ncr/f13rangerscout
 	id = 			/obj/item/card/id/dogtag/ncrranger
-	uniform = 		/obj/item/clothing/under/f13/trailranger
+	uniform = 		/obj/item/clothing/under/f13/ranger/trail
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses

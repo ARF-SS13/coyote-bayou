@@ -6,6 +6,10 @@
 	name = "Fingerless Gloves"
 	path = /obj/item/clothing/gloves/fingerless
 
+/datum/gear/gloves/handwraps
+	name = "handwraps"
+	path = /obj/item/clothing/gloves/f13/handwraps
+
 /datum/gear/gloves/evening
 	name = "Evening gloves"
 	path = /obj/item/clothing/gloves/evening

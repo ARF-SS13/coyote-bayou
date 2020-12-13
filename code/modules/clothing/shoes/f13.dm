@@ -42,10 +42,6 @@
 	icon_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
-/obj/item/clothing/shoes/f13/explorer/militia
-	name = "worn ODF boots"
-	desc = "A pair of slightly worn, steel-toed work boots issued to members of the Oasis Defense Force. Good at keeping toes safe from those who seek to guzzle them."
-
 /obj/item/clothing/shoes/f13/khan
 	name = "Great Khan boots"
 	desc = "A pair of leather boots reinforced with metal plates.<br>These are commonly worn by Great Khans raiders."
