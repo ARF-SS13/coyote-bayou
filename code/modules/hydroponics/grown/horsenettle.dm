@@ -14,7 +14,7 @@
 	icon_dead = "horsenettle-dead"
 	icon_harvest = "horsenettle-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/weed_hardy)
-	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/horsenettle
 	seed = /obj/item/seeds/horsenettle
@@ -24,6 +24,6 @@
 	filling_color = "#FF00FF"
 	bitesize_mod = 2
 	foodtype = FRUIT
-	juice_results = list("yeast" = 1)
+	juice_results = list(/datum/reagent/consumable/enzyme = 1)
 	tastes = list("searing pain" = 1)
-	distill_reagent = "yeast"
+	distill_reagent = /datum/reagent/consumable/enzyme

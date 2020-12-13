@@ -38,7 +38,9 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/retaliate/goat/Initialize(/datum/reagent/milk_reagent)
-	udder = new (null, milk_reagent)
+	if(milk_reagent)
+		src.milk_reagent = milk_reagent
+	udder = new (null, src.milk_reagent)
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Destroy()
@@ -823,7 +825,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 					name = "bighorn"
 				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
 		else
-			udder.generateMilk()
+			udder.generateMilk(milk_reagent)
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	name = "bighoner lamb"

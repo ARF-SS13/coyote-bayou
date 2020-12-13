@@ -49,7 +49,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -96,7 +96,6 @@
 
 /datum/reagent/toxin/cazador_venom
 	name = "Cazador venom"
-	id = "cazador_venom"
 	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
 	color = "#801E28" // rgb: 128, 30, 40
 	toxpwr = 1
@@ -154,7 +153,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("toxin", 5)
+		H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 /mob/living/simple_animal/hostile/radscorpion/Initialize()
 	. = ..()
@@ -336,7 +335,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("napalm", 0.1)
+		H.reagents.add_reagent(/datum/reagent/napalm, 0.1)
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -414,7 +413,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
 
 /datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
 	if(volume >= 20)
@@ -470,7 +469,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
 
 /datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
 	if(volume >= 16)

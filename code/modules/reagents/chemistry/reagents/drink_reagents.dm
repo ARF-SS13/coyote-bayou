@@ -187,7 +187,7 @@
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
 	..()
 
-/datum/reagent/consumable/potato_juice
+/datum/reagent/consumable/tato_juice
 	name = "Potato Juice"
 	description = "Juice of the potato. Bleh."
 	nutriment_factor = 2 * REAGENTS_METABOLISM

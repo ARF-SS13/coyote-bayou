@@ -248,7 +248,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	desc = "Thick insect chitin, tough but light."
 	singular_name = "piece of insect chitin"
 	icon_state = "sheet-chitin"
-	grind_results = list("sodium" = 3, "chlorine" = 3)
+	grind_results = list(/datum/reagent/sodium = 3, /datum/reagent/chlorine = 3)
 
 /obj/item/stack/sheet/animalhide/ashdrake
 	name = "ash drake hide"

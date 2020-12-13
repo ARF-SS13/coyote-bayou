@@ -387,22 +387,22 @@
 /obj/item/reagent_containers/food/drinks/sillycup/smallcarton/on_reagent_change(changetype)
 	if (reagents.reagent_list.len)
 		switch(reagents.get_master_reagent_id())
-			if("orangejuice")
+			if(/datum/reagent/consumable/orangejuice)
 				icon_state = "orangebox"
 				name = "orange juice box"
 				desc = "A great source of vitamins. Stay healthy!"
 				foodtype = FRUIT | BREAKFAST
-			if("milk")
+			if(/datum/reagent/consumable/milk)
 				icon_state = "milkbox"
 				name = "carton of milk"
 				desc = "An excellent source of calcium for growing space explorers."
 				foodtype = DAIRY | BREAKFAST
-			if("applejuice")
+			if(/datum/reagent/consumable/applejuice)
 				icon_state = "juicebox"
 				name = "apple juice box"
 				desc = "Sweet apple juice. Don't be late for school!"
 				foodtype = FRUIT | BREAKFAST
-			if("grapejuice")
+			if(/datum/reagent/consumable/grapejuice)
 				icon_state = "grapebox"
 				name = "grape juice box"
 				desc = "Tasty grape juice in a fun little container. Non-alcoholic!"
@@ -412,7 +412,7 @@
 				name = "pineapple juice box"
 				desc = "Why would you even want this?"
 				foodtype = FRUIT | PINEAPPLE
-			if("chocolate_milk")
+			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
 				desc = "Milk for cool kids!"

@@ -6,7 +6,7 @@
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "single"
 	tank_volume = 500
-	reagent_id = "stablemutationtoxin"
+	reagent_id = /datum/reagent/mutationtoxin
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/dangerous
@@ -48,7 +48,7 @@
 	desc = "A rather odd-looking metal barrel, made of strange metal that somehow hasn't rusted after all this time.<br>There is a label on it, with a drawing of flames.<br>You wonder if there is anything left in it..."
 	icon_state = "explosive"
 	tank_volume = 500
-	reagent_id = "welding_fuel"
+	reagent_id = /datum/reagent/fuel
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/explosive/boom()
@@ -82,12 +82,12 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 
 /obj/structure/reagent_dispensers/barrel/explosive/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
-		if(!reagents.has_reagent("welding_fuel"))
+		if(!reagents.has_reagent(/datum/reagent/fuel))
 			to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
 			return
 		var/obj/item/weldingtool/W = I
 		if(!W.welding)
-			if(W.reagents.has_reagent("welding_fuel", W.max_fuel))
+			if(W.reagents.has_reagent(/datum/reagent/fuel, W.max_fuel))
 				to_chat(user, "<span class='warning'>Your [W.name] is already full!</span>")
 				return
 			reagents.trans_to(W, W.max_fuel)
@@ -113,7 +113,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "An old barrel. Oddly enough, it stands undamaged after all this time.<br>You wonder if there is anything left in it."
 	icon_state = "one_b"
 	tank_volume = 500
-	reagent_id = "water"
+	reagent_id = /datum/reagent/water
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/two
@@ -121,7 +121,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "A couple of old barrels. Oddly enough, they stand undamaged after all this time.<br>You wonder if there is anything left in these."
 	icon_state = "two_b"
 	tank_volume = 1000
-	reagent_id = "lube"
+	reagent_id = /datum/reagent/lube
 	anchored = 1
 //	self_weight = 400
 
@@ -130,7 +130,7 @@ obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, how would you know that..."
 	icon_state = "three_b"
 	tank_volume = 1500
-	reagent_id = "water"
+	reagent_id = /datum/reagent/water
 	anchored = 1
 //	self_weight = 600
 

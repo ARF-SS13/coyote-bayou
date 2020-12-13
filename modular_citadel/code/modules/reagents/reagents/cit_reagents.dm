@@ -171,16 +171,16 @@
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
 	if(prob(30))
-		M.adjustBrainLoss(2)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/M)
 	if(prob(30))
-		M.adjustBrainLoss(3)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3)
 
 		..()
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage4(mob/living/M)
 	if(prob(30))
-		M.adjustBrainLoss(4)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/M)
@@ -238,7 +238,7 @@
 	name = "crocin"
 	id = "aphro"
 	results = list("aphro" = 6)
-	required_reagents = list("carbon" = 2, "hydrogen" = 2, "oxygen" = 2, "water" = 1)
+	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/water = 1)
 	required_temp = 400
 	mix_message = "The mixture boils off a pink vapor..."//The water boils off, leaving the crocin
 
@@ -246,7 +246,7 @@
 	name = "hexacrocin"
 	id = "aphro+"
 	results = list("aphro+" = 1)
-	required_reagents = list("aphro" = 6, "phenol" = 1)
+	required_reagents = list(/datum/reagent/aphro = 6, /datum/reagent/phenol = 1)
 	required_temp = 400
 	mix_message = "The mixture rapidly condenses and darkens in color..."
 
@@ -254,7 +254,7 @@
 	name = "camphor"
 	id = "anaphro"
 	results = list("anaphro" = 6)
-	required_reagents = list("carbon" = 2, "hydrogen" = 2, "oxygen" = 2, "sulfur" = 1)
+	required_reagents = list(/datum/reagent/carbon = 2, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 2, /datum/reagent/sulfur = 1)
 	required_temp = 400
 	mix_message = "The mixture boils off a yellow, smelly vapor..."//Sulfur burns off, leaving the camphor
 
@@ -262,6 +262,6 @@
 	name = "pentacamphor"
 	id = "anaphro+"
 	results = list("anaphro+" = 1)
-	required_reagents = list("anaphro" = 5, "acetone" = 1)
+	required_reagents = list(/datum/reagent/anaphro = 5, /datum/reagent/acetone = 1)
 	required_temp = 300
 	mix_message = "The mixture thickens and heats up slighty..."

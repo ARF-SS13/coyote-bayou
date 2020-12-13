@@ -467,7 +467,7 @@
 		return ..()
 
 //spears
-/obj/item/twohanded/spear
+/obj/item/spear
 	icon_state = "spearglass0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
@@ -492,11 +492,11 @@
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
 
-/obj/item/twohanded/spear/Initialize()
+/obj/item/spear/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 
-/obj/item/twohanded/spear/suicide_act(mob/living/carbon/user)
+/obj/item/spear/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	if(explosive)
 		user.say("[war_cry]")
@@ -507,18 +507,18 @@
 		return BRUTELOSS
 	return BRUTELOSS
 
-/obj/item/twohanded/spear/examine(mob/user)
+/obj/item/spear/examine(mob/user)
 	..()
 	if(explosive)
 		to_chat(user, "<span class='notice'>Alt-click to set your war cry.</span>")
 
-/obj/item/twohanded/spear/update_icon()
+/obj/item/spear/update_icon()
 	if(explosive)
 		icon_state = "spearbomb[wielded]"
 	else
 		icon_state = "spearglass[wielded]"
 
-/obj/item/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
+/obj/item/spear/afterattack(atom/movable/AM, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
@@ -531,14 +531,14 @@
 		qdel(src)
 
  //THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
-/obj/item/twohanded/spear/throw_impact(atom/target)
+/obj/item/spear/throw_impact(atom/target)
 	. = ..()
 	if(!.) //not caught
 		if(explosive)
 			explosive.prime()
 			qdel(src)
 
-/obj/item/twohanded/spear/AltClick(mob/user)
+/obj/item/spear/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
 		..()
 		if(!explosive)
@@ -548,8 +548,8 @@
 			if(input)
 				src.war_cry = input
 
-/obj/item/twohanded/spear/CheckParts(list/parts_list)
-	var/obj/item/twohanded/spear/S = locate() in parts_list
+/obj/item/spear/CheckParts(list/parts_list)
+	var/obj/item/spear/S = locate() in parts_list
 	if(S)
 		if(S.explosive)
 			S.explosive.forceMove(get_turf(src))
@@ -564,7 +564,7 @@
 		desc = "A makeshift spear with [G] attached to it."
 	update_icon()
 
-/obj/item/twohanded/spear/ultra
+/obj/item/spear/ultra
 	icon_state = "ultraglaive0"
 	name = "Ultracite glaive"
 	desc = "An ultracite enhanced metal glaive that can be wielded."
@@ -572,10 +572,10 @@
 	force_unwielded = 35
 	force_wielded = 55
 
-/obj/item/twohanded/spear/ultra/update_icon()
+/obj/item/spear/ultra/update_icon()
 	icon_state = "ultraglaive[wielded]"
 
-/obj/item/twohanded/spear/ultra/attack(mob/living/M, mob/living/user)
+/obj/item/spear/ultra/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
@@ -705,7 +705,7 @@
 	return 0
 
 //GREY TIDE
-/obj/item/twohanded/spear/grey_tide
+/obj/item/spear/grey_tide
 	icon_state = "spearglass0"
 	name = "\improper metal spear"
 	desc = "A improvised metal spear."
@@ -717,7 +717,7 @@
 	attack_verb = list("gored")
 
 /* Im not removing it, but commenting it out. Its a good example of stuff, but it isnt really good for the server, no?
-/obj/item/twohanded/spear/grey_tide/afterattack(atom/movable/AM, mob/living/user, proximity)
+/obj/item/spear/grey_tide/afterattack(atom/movable/AM, mob/living/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
@@ -923,9 +923,9 @@
 /obj/item/twohanded/bonespear/venom/Initialize()
 	. = ..()
 	create_reagents(72) //mix that causes quick incap without significant risk of death, at least with one attacker. 4-5 attacks on a single target typically causes histamine symptoms, fatigue, sleep, as well as minor suffocation, toxins, and possible liver damage
-	reagents.add_reagent("venom",12)
-	reagents.add_reagent("sodium_thiopental", 50)
-	reagents.add_reagent("pancuronium", 10)
+	reagents.add_reagent(/datum/reagent/venom,12)
+	reagents.add_reagent(/datum/reagent/sodium_thiopental, 50)
+	reagents.add_reagent(/datum/reagent/pancuronium, 10)
 //end of Viper spear. Venom mix is interesting but a simpler poisoned weapon solution might be more generally useful, with injectable or open container weapons that have lower volume but can be easily refilled with small doses of venom or something
 
 //Baeball

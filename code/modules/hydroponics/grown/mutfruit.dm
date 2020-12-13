@@ -21,13 +21,13 @@
 	desc = "Mutfruit provides both hydration and sustenance, but the mutated plant also carries small amounts of radiation."
 	icon_state = "mutfruit"
 	filling_color = "#FF6347"
-	distill_reagent = "purplecider"
-	juice_results = list("mutjuice" = 0)
+	distill_reagent = /datum/reagent/consumable/purplecider
+	juice_results = list(/datum/reagent/consumable/mutjuice = 0)
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit/add_juice()
 	if(..())
-		reagents.add_reagent("nutriment", 3 + round((seed.potency / 20), 1))
-		reagents.add_reagent("radium", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/consumable/nutriment, 3 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/radium, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /*HRP*/

@@ -567,7 +567,7 @@
 // MASQUERADE	Appear as human!
 //				** examine.dm /examine() <-- Change "blood_volume < BLOOD_VOLUME_SAFE" to a new examine
 //
-// NOSFERATU ** human.add_trait(TRAIT_DISFIGURED, "insert_vamp_datum_here") <-- Makes you UNKNOWN unless your ID says otherwise.
+// NOSFERATU ** ADD_TRAIT(human, TRAIT_DISFIGURED, "insert_vamp_datum_here") <-- Makes you UNKNOWN unless your ID says otherwise.
 // STEALTH   ** human_helpers.dm /get_visible_name()     ** shadowpeople.dm has rules for Light.
 //
 // FRENZY	** living.dm /update_mobility() (USED TO be update_canmove)

@@ -426,4 +426,4 @@
 	..()
 	if(get_fuel() < max_fuel && nextrefueltick < world.time)
 		nextrefueltick = world.time + 10
-		reagents.add_reagent("welding_fuel", 1)
+		reagents.add_reagent(/datum/reagent/fuel, 1)

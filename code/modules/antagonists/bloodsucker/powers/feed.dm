@@ -199,7 +199,7 @@
 	var/blood_take_mult = amSilent ? 0.3 : 1 // Quantity to take per tick, based on Silent or not.
 	var/was_alive = target.stat < DEAD && ishuman(target)
 	// Activate Effects
-	//target.add_trait(TRAIT_MUTE, "bloodsucker_victim")  // <----- Make mute a power you buy?
+	//ADD_TRAIT(target, TRAIT_MUTE, "bloodsucker_victim")  // <----- Make mute a power you buy?
 
 	// FEEEEEEEEED!!! //
 	bloodsuckerdatum.poweron_feed = TRUE

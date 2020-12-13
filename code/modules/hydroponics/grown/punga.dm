@@ -18,7 +18,7 @@
 	icon_dead = "punga-dead"
 	icon_harvest = "punga-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("charcoal" = 0.1, "phosphorus" = 0.1, "nutriment" = 0.04)
+	reagents_add = list(/datum/reagent/medicine/charcoal = 0.1, /datum/reagent/phosphorus = 0.1, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	seed = /obj/item/seeds/punga
@@ -26,10 +26,10 @@
 	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin. They are common throughout Point Lookout, due to the unique conditions offered by the swamps, and the further unique function of scrubbing radiation from the system"
 	icon_state = "Punga Fruit"
 	filling_color = "#FF6347"
-	distill_reagent = "pungajuice"
+	distill_reagent = /datum/reagent/consumable/ethanol/pungajuice
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit/add_juice()
 	if(..())
-		reagents.add_reagent("charcoal", 1 + round((seed.potency / 20), 1))
-		reagents.add_reagent("mutadone", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/charcoal, 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/mutadone, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
