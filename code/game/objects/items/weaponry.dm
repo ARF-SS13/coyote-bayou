@@ -1461,22 +1461,7 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	item_flags = SLOWS_WHILE_IN_HAND
 	slowdown = 0.3
 	embedding = list("embedded_pain_multiplier" = 2, "embed_chance" = 60, "embedded_fall_chance" = 20)
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/throwing_star/spear
-	name = "throwing spear"
-	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	icon_state = "throw_spear"
-	item_state = "tribalspear"
-	force = 20
-	throwforce = 35
-	reach = 2
-	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 0.3
-	embedding = list("embedded_pain_multiplier" = 2, "embed_chance" = 60, "embedded_fall_chance" = 20)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 //THERMIC LANCE
 /obj/item/twohanded/required/thermic_lance
