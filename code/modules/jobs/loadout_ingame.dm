@@ -110,21 +110,14 @@
 		return
 
 	var/mob/M = parent
-	var/obj/item/storage/box/large/kitbox = new
-	kitbox.name = "Outfit: [selected_datum.name]"
-	kitbox.desc = "A box, supplying what you need."
-	kitbox.w_class = WEIGHT_CLASS_BULKY
-	selected_datum.spawn_at(kitbox)
+	var/obj/item/storage/backpack/duffelbag/duffelkit = new
+	duffelkit.name = "equipment duffelbag"
+	duffelkit.desc = "A duffelbag containing necessary equipment."
+	duffelkit.w_class = WEIGHT_CLASS_BULKY
+	selected_datum.spawn_at(duffelkit)
 	M.dropItemToGround(token)
-	M.put_in_hands(kitbox)
+	M.put_in_hands(duffelkit)
 	M.disable_loadout_select()
-
-/obj/item/storage/box/large/ComponentInitialize() //same storage as a backpack, to allow it to hold loadout items
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 21
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 21
 
 /datum/component/loadout_selector/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

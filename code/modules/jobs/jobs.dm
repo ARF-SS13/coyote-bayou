@@ -55,8 +55,8 @@ GLOBAL_LIST_INIT(command_positions, list(
     "Priestess of Mars",
 
     "NCR Captain",
-    "NCR Ambassador",
-	"NCR Administrator",
+	"NCR Lieutenant",
+	"NCR First Sergeant",
 
     "Overseer",
     "Chief of Security",
@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(command_positions, list(
     "Shaman",
     "Head Hunter",
 
-	"Lead Practitioner"
+	"Followers Administrator"
     ))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -106,14 +106,11 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Auxilia",
 
 "NCR Captain",
-"NCR Ambassador",
-"NCR Administrator",
 "NCR Lieutenant",
+"NCR First Sergeant",
 "NCR Sergeant",
-"NCR Military Police",
-"NCR Heavy Trooper",
 "NCR Corporal",
-"NCR Trooper",
+"NCR Specialist",
 
 "Mayor",
 "Sheriff",
@@ -127,12 +124,16 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Shaman",
 "Head Hunter",
 
-"Lead Practitioner",
+"Followers Administrator",
+"Followers Doctor",
 
 "Cyborg",
-"Vault-tec Security",
+"Overseer",
 "Chief of Security",
-"Overseer"
+"Vault-tec Doctor",
+"Vault-tec Scientist",
+"Vault-tec Security",
+"Vault-tec Engineer"
 ))
 
 GLOBAL_LIST_INIT(faction_player_positions, list(
@@ -155,12 +156,9 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Legion Explorer",
 "Auxilia",
 
-"NCR Lieutenant",
 "NCR Sergeant",
 "NCR Corporal",
-"NCR Military Police",
-"NCR Heavy Trooper",
-"NCR Trooper",
+"NCR Specialist",
 
 "Deputy",
 "Shopkeeper",
@@ -168,8 +166,13 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Prospector",
 "Detective",
 
+"Followers Doctor",
+
 "Cyborg",
-"Vault-tec Security"
+"Vault-tec Doctor",
+"Vault-tec Scientist",
+"Vault-tec Security",
+"Vault-tec Engineer"
 ))
 
 //Whitelisted positions list FO13 anything that shows up here requires that the user have an entry in the 'role_whitelist' table of id,ckey,"antagonist"
@@ -238,7 +241,8 @@ GLOBAL_LIST_INIT(legion_positions, list(
 
 GLOBAL_LIST_INIT(ncr_command_positions, list(
     "NCR Captain",
-    "NCR Ambassador",
+    "NCR Lieutenant",
+	"NCR First Sergeant",
     "NCR Veteran Ranger"
 ))
 
@@ -254,15 +258,11 @@ GLOBAL_LIST_INIT(ncr_ranger_positions, list(
 GLOBAL_LIST_INIT(ncr_positions, list(
     "NCR Lieutenant",
     "NCR Sergeant",
-    "NCR Military Police",
-    "NCR Heavy Trooper",
     "NCR Corporal",
+	"NCR Specialist",
     "NCR Trooper",
     "NCR Patrol Ranger",
 	"NCR Scout Ranger",
-    "NCR Recruit",
-    "NCR Citizen",
-    "NCR Administrator"
 ))
 
 GLOBAL_LIST_INIT(vault_command_positions, list(
@@ -301,7 +301,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 ))
 
 GLOBAL_LIST_INIT(followers_command_positions, list(
-    "Followers Administrator",
+    "Followers Administrator"
 ))
 GLOBAL_LIST_INIT(followers_positions, list(
     "Followers Doctor",
@@ -335,8 +335,8 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
     EXP_TYPE_DECANUS       = list("titles" = list("Legion Decanus")),
 
     EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
-    EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Lead Practitioner")),
-  	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Captain","NCR Ambassador"))
+    EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Followers Administrator")),
+  	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR First Sergeant","NCR Captain", "NCR Veteran Ranger"))
 
 
 ))
