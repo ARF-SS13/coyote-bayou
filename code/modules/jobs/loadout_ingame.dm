@@ -115,7 +115,7 @@
 	kitbox.desc = "A box, supplying what you need."
 	kitbox.w_class = WEIGHT_CLASS_BULKY
 	selected_datum.spawn_at(kitbox)
-	M.dropItemtoGround(token)
+	M.dropItemToGround(token)
 	M.put_in_hands(kitbox)
 	M.disable_loadout_select()
 
