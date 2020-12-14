@@ -267,7 +267,7 @@
 	throwforce = 5
 	hitsound = 'sound/weapons/klonk.ogg'
 	attack_verb = list("klonked", "donked", "bonked")
-	distill_reagent = "creme_de_coconut"
+	distill_reagent = /datum/reagent/consumable/ethanol/creme_de_coconut
 	var/opened = FALSE
 	var/carved = FALSE
 	var/chopped = FALSE

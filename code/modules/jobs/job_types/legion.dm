@@ -690,7 +690,7 @@ Prime Legionairy
 
 /datum/outfit/loadout/legline
 	name = "Lineman"
-	suit_store = /obj/item/twohanded/spear
+	suit_store = /obj/item/spear
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \

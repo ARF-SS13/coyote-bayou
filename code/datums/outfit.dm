@@ -28,6 +28,8 @@
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
 
+	var/static/datum/asset/spritesheet/loadout/loadout_sheet
+
 ////////F13 Randomization Edit
 	var/list/all_types = list()
 	var/list/all_possible_types = list()
@@ -233,13 +235,15 @@
 	//"icon" = path of the cached icon for the typepath
 	//"quantity" = how many of the item there are. 1 in most cases
 /datum/outfit/ui_data()
+	if(!loadout_sheet)
+		loadout_sheet = get_asset_datum(/datum/asset/spritesheet/loadout)
 	var/list/data = list()
 	var/list/items = get_all_item_paths()
 	for (var/item in items)
 		var/list/subdata = list()
 		var/datum/outfit/d = item
 		subdata["name"] = initial(d.name)
-		subdata["icon"] = sanitize_filename("[item].png")
+		subdata["icon"] = loadout_sheet.icon_class_name(replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-"))
 		subdata["quantity"] = items[item]
 		data += list(subdata)
 	return data

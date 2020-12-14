@@ -572,3 +572,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		return
 	return TRUE
 
+/mob/living/GetJob()
+	if (mind && mind.assigned_role)
+		return SSjob.GetJob(mind.assigned_role)

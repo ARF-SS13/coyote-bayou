@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(nightcycle)
 		doWork()
 
 /datum/controller/subsystem/nightcycle/proc/nextBracket()
-	var/Time = world.time
+	var/Time = station_time()
 
 	switch (Time)
 		if (CYCLE_SUNRISE 	to CYCLE_MORNING - 1)

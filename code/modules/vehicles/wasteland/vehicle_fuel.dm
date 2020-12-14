@@ -90,7 +90,7 @@
 
 /obj/item/reagent_containers/fuel_tank/New(var/volume, var/fuel)
 	src.volume = volume
-	list_reagents = list("welding_fuel" = fuel)
+	list_reagents = list(/datum/reagent/fuel = fuel)
 	..()
 
 /obj/item/reagent_containers/fuel_tank/attackby(obj/item/weapon/W, mob/user, params)

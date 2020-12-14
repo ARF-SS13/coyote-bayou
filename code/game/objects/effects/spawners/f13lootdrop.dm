@@ -539,7 +539,7 @@
 
 	loot = list(
 				/obj/item/weldingtool,
-				/obj/item/twohanded/spear,
+				/obj/item/spear,
 				/obj/item/bostaff,
 				/obj/item/baseball,
 				/obj/item/kitchen/knife/butcher,

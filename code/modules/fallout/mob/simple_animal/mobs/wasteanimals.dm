@@ -336,7 +336,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("napalm", 0.1)
+		H.reagents.add_reagent(/datum/reagent/napalm, 0.1)
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -414,7 +414,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 2)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
 
 /datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
 	if(volume >= 20)
@@ -470,7 +470,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent("cazador_venom", 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
 
 /datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
 	if(volume >= 16)

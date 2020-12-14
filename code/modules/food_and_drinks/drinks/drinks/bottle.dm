@@ -149,20 +149,20 @@
 	desc = "The most popular flavored soft drink in the United States before the Great War."
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "nukacola"
-	list_reagents = list("nuka_cola" = 25, /datum/reagent/radium = 5)
+	list_reagents = list(/datum/reagent/consumable/nuka_cola = 25, /datum/reagent/radium = 5)
 	foodtype = SUGAR
 	isGlass = TRUE
 
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."
-	list_reagents = list("nuka_cola" = 15, /datum/reagent/radium = 5)
+	list_reagents = list(/datum/reagent/consumable/nuka_cola = 15, /datum/reagent/radium = 5)
 
 /obj/item/reagent_containers/food/drinks/bottle/sunset
 	name = "Sunset Sarsparilla"
 	desc = "The most popular flavored root beer in the West!"
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "sunset"
-	list_reagents = list("whiskey" = 1, "sunset" = 15, /datum/reagent/medicine/salglu_solution = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/sunset = 15, /datum/reagent/medicine/salglu_solution = 5)
 	foodtype = SUGAR
 	isGlass = TRUE
 
@@ -448,7 +448,7 @@
 	desc = "To give you that Bounce!"
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "bawls"
-	list_reagents = list("coffee" = 10, "bawls" = 15)
+	list_reagents = list(/datum/reagent/consumable/coffee = 10, /datum/reagent/consumable/bawls = 15)
 	foodtype = SUGAR
 	isGlass = TRUE
 
@@ -459,14 +459,14 @@
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = TRUE
-	list_reagents = list("limejuice" = 100)
+	list_reagents = list(/datum/reagent/consumable/limejuice = 100)
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/instatea
 	name = "Silician Instatea"
 	desc = "Pre-war powerdered canned tea powder."
 	icon_state = "instatea"
-	list_reagents = list("teapowder" = 98, /datum/reagent/radium = 2)
+	list_reagents = list(/datum/reagent/toxin/teapowder = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cream
 	name = "canned cream"
@@ -474,7 +474,7 @@
 	icon_state = "cream"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	list_reagents = list("cream" = 100)
+	list_reagents = list(/datum/reagent/consumable/cream = 100)
 	foodtype = DAIRY
 
 
@@ -488,14 +488,14 @@
 	name = "Silician Instacoffee"
 	desc = "Pre-war powerdered canned coffee."
 	icon_state = "instacoffee"
-	list_reagents = list("coffeepowder" = 98, /datum/reagent/radium = 2)
+	list_reagents = list(/datum/reagent/toxin/coffeepowder = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/bottle/vim
 	name = "Vim"
 	desc = "You've got Vim!"
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "vim"
-	list_reagents = list("sugar" = 5, "vim" = 15)
+	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/vim = 15)
 	foodtype = SUGAR
 	isGlass = TRUE
 
@@ -764,7 +764,7 @@
 	name = "Nukashine"
 	desc = "You've really hit rock bottom now... yet theres nothing like homebrew nukashine in times like these!"
 	icon_state = "nukashine"
-	list_reagents = list("nukashine" = 100)
+	list_reagents = list(/datum/reagent/consumable/ethanol/nukashine = 100)
 
 
 /obj/item/reagent_containers/food/drinks/bottle/brown/white
