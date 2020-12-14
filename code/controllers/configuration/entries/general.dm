@@ -204,19 +204,22 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	config_entry_value = "https://katlin.dog/citadel-wiki"
+	config_entry_value = "https://desert-rose-fallout-13.fandom.com/wiki/Desert_Rose_-_Fallout_13_Wiki"
+
+/datum/config_entry/string/discordurl
+	config_entry_value = "https://discord.gg/NGpP36m"
 
 /datum/config_entry/string/wikiurltg
 	config_entry_value = "http://www.tgstation13.org/wiki"
 
 /datum/config_entry/string/forumurl
-	config_entry_value = "http://tgstation13.org/phpBB/index.php"
+	config_entry_value = "https://desertrosefallout13.boards.net"
 
 /datum/config_entry/string/rulesurl
 	config_entry_value = "http://www.tgstation13.org/wiki/Rules"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://www.github.com/tgstation/-tg-station"
+	config_entry_value = "https://github.com/Superballs69/Desert-Rose-Rebase"
 
 /datum/config_entry/string/roundstatsurl
 

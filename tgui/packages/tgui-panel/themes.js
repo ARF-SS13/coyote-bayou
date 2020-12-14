@@ -68,6 +68,11 @@ export const setClientTheme = name => {
       'github.text-color': COLOR_WHITE_TEXT,
       'report-issue.background-color': '#EF7F7F',
       'report-issue.text-color': COLOR_WHITE_TEXT,
+      'tgwiki.background-color': COLOR_WHITE_INFO_BUTTONS_BG,
+      'tgwiki.text-color': COLOR_WHITE_TEXT,
+      'discord.background-color': COLOR_WHITE_INFO_BUTTONS_BG,
+      'discord.text-color': COLOR_WHITE_TEXT,
+
       // Status and verb tabs
       'output.background-color': COLOR_WHITE_BG,
       'output.text-color': COLOR_WHITE_TEXT,
@@ -118,6 +123,10 @@ export const setClientTheme = name => {
       'github.text-color': COLOR_DARK_TEXT,
       'report-issue.background-color': '#A92C2C',
       'report-issue.text-color': COLOR_DARK_TEXT,
+      'tgwiki.background-color': COLOR_DARK_INFO_BUTTONS_BG,
+      'tgwiki.text-color': COLOR_DARK_TEXT,
+      'discord.background-color': COLOR_DARK_INFO_BUTTONS_BG,
+      'discord.text-color': COLOR_DARK_TEXT,
       // Status and verb tabs
       'output.background-color': COLOR_DARK_BG,
       'output.text-color': COLOR_DARK_TEXT,
@@ -168,6 +177,10 @@ export const setClientTheme = name => {
       'github.text-color': COLOR_DARK_TEXT,
       'report-issue.background-color': '#A92C2C',
       'report-issue.text-color': COLOR_DARK_TEXT,
+      'tgwiki.background-color': COLOR_DARK_INFO_BUTTONS_BG,
+      'tgwiki.text-color': COLOR_DARK_TEXT,
+      'discord.background-color': COLOR_DARK_INFO_BUTTONS_BG,
+      'discord.text-color': COLOR_DARK_TEXT,
       // Status and verb tabs
       'output.background-color': COLOR_DARK_BG,
       'output.text-color': COLOR_DARK_TEXT,

@@ -1,21 +1,45 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
-/client/verb/wiki(query as text)
-	set name = "wiki"
+/client/verb/tgwiki(query as text)
+	set name = "tgwiki"
 	set desc = "Type what you want to know about.  This will open the wiki in your web browser. Type nothing to go to the main page."
 	set hidden = 1
-	var/wikiurl = CONFIG_GET(string/wikiurl)
 	var/wikiurltg = CONFIG_GET(string/wikiurltg)
-	if(wikiurl)
+	if(wikiurltg)
 		if(query)
-			var/output = wikiurl + "?search=" + query
+			var/output = wikiurltg + "?search=" + query
 			src << link(output)
 			output = wikiurltg + "/index.php?title=Special%3ASearch&profile=default&search=" + query
 			src << link(output)
 		else if (query != null)
 			src << link(wikiurltg)
-			src << link(wikiurl)
 	else
 		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
+	return
+
+/client/verb/wiki()
+	set name = "wiki"
+	set desc = "Opens the Wiki in your browser."
+	set hidden = 1
+	var/wikiurl = CONFIG_GET(string/wikiurl)
+	if(wikiurl)
+		if(alert("This will open the Wiki in your browser. Are you sure?",,"Yes","No")!="Yes")
+			return
+		src << link(wikiurl)
+	else
+		to_chat(src, "<span class='danger'>The Wiki URL is not set in the server configuration.</span>")
+	return
+
+/client/verb/discord()
+	set name = "discord"
+	set desc = "Visit the Discord."
+	set hidden = 1
+	var/discordurl = CONFIG_GET(string/discordurl)
+	if(discordurl)
+		if(alert("This will open the Discord in your browser. Are you sure?",,"Yes","No")!="Yes")
+			return
+		src << link(discordurl)
+	else
+		to_chat(src, "<span class='danger'>The discord URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/forum()
@@ -36,13 +60,14 @@
 	set desc = "Show Server Rules."
 	set hidden = 1
 	var/rulesurl = CONFIG_GET(string/rulesurl)
-	if(rulesurl)
-		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")!="Yes")
-			return
-		src << link(rulesurl)
-	else
-		to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
-	return
+	switch(alert("Where would you like to see the rules?", null, "Discord (external link)", "View here", "Cancel"))
+		if("Discord (external link)")
+			if(!rulesurl)
+				to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
+				return
+			src << link(rulesurl)
+		if("View here")
+			src << browse('html/rules.html', "window=changes")
 
 /client/verb/github()
 	set name = "github"
