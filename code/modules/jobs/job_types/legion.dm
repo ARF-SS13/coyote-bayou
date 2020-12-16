@@ -17,7 +17,7 @@
 	belt = /obj/item/storage/belt/military/assault/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
-	shoes = 		/obj/item/clothing/shoes/f13/military/legionmetal
+	shoes = 		/obj/item/clothing/shoes/f13/military/plated
 	gloves =		/obj/item/clothing/gloves/legion
 	box = 			/obj/item/storage/survivalkit_tribal
 
@@ -68,7 +68,7 @@ Needs whitelist
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
-	shoes = 		/obj/item/clothing/shoes/f13/military/legionlegate
+	shoes = 		/obj/item/clothing/shoes/f13/military/legate
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/legate
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legate
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -741,7 +741,7 @@ Recruit Legionary
 	name = "Recruit Legionary"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13recleg
 	id = 			/obj/item/card/id/dogtag/legrecruit
-	shoes = 		/obj/item/clothing/shoes/f13/military/legionleather
+	shoes = 		/obj/item/clothing/shoes/f13/military/leather
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/recruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/recruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit

@@ -49,3 +49,27 @@
 /datum/gear/shoes/romansandals
 	name = "roman sandals"
 	path = /obj/item/clothing/shoes/roman
+
+/datum/gear/shoes/diesel
+	name = "male diesel boots"
+	path = /obj/item/clothing/shoes/f13/diesel
+
+/datum/gear/shoes/diesel_alt
+	name = "female diesel boots"
+	path = /obj/item/clothing/shoes/f13/diesel/alt
+
+//It would be a pain in the ass and people would complain if we locked these behind certain roles to get as a loadout, due to their non-slip nature we'll just increase their cost for now. -Superballs
+/datum/gear/shoes/military
+	name = "military boots"
+	path = /obj/item/clothing/shoes/f13/military
+	cost = 2
+
+/datum/gear/shoes/military_plated
+	name = "plated metal boots"
+	path = /obj/item/clothing/shoes/f13/military/plated
+	cost = 2
+
+/datum/gear/shoes/military_leather
+	name = "leather combat boots"
+	path = /obj/item/clothing/shoes/f13/military/leather
+	cost = 2

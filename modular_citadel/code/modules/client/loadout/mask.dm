@@ -13,4 +13,4 @@
 /datum/gear/mask/joy
 	name = "Joy mask"
 	path = /obj/item/clothing/mask/joy
-	cost = 3
+	cost = 10 //fuck you memers. -Superballs

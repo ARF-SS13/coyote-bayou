@@ -42,37 +42,13 @@
 	icon_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
-/obj/item/clothing/shoes/f13/khan
-	name = "Great Khan boots"
-	desc = "A pair of leather boots reinforced with metal plates.<br>These are commonly worn by Great Khans raiders."
-	icon_state = "legionmetal" //It's that simple
-	item_state = "legionmetal"
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
-
 /obj/item/clothing/shoes/f13/raidertreads
 	name = "raider treads"
 	desc = "A decrepit boot on one foot, fuckall on the other, the height of raider fashion."
 	icon_state = "raidertreads"
 	item_state = "raidertreads"
 
-/obj/item/clothing/shoes/f13/military
-	name = "military boots"
-	desc = "High speed, no-drag combat boots designed for use by the U.S. Army before the Great War."
-	icon_state = "military"
-	item_state = "military"
-	permeability_coefficient = 0.01
-	clothing_flags = NOSLIP
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
-	strip_delay = 40
-	resistance_flags = 0
-
-/obj/item/clothing/shoes/f13/military/light
-	name = "advanced combat boots"
-	desc = "High speed, no-drag combat boots designed for use by U.S. special forces before the Great War.<br>The soles are made of aerated rubber to silence the movement of the wearer."
-//	stepsound = FALSE
-	clothing_flags = NOSLIP
-
-/obj/item/clothing/shoes/f13/military/diesel
+/obj/item/clothing/shoes/f13/diesel
 	name = "male diesel boots"
 	desc = "Fancy mens' steel-toed boots."
 	icon_state = "diesel_m"
@@ -81,14 +57,25 @@
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
-/obj/item/clothing/shoes/f13/military/female/diesel
+/obj/item/clothing/shoes/f13/diesel/alt
 	name = "female diesel boots"
 	desc = "Fancy womens' knee-high platform boots with shiny steel clasps."
 	icon_state = "diesel_f"
 	item_state = "diesel_f"
-	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
+
+/obj/item/clothing/shoes/f13/military
+	name = "military boots"
+	desc = "High speed, no-drag combat boots designed for use by the U.S. Army before the Great War."
+	icon_state = "military"
+	item_state = "military"
+	permeability_coefficient = 0.05
+	clothing_flags = NOSLIP
+	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+	strip_delay = 40
+	resistance_flags = NONE
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/f13/military/ncr
 	name = "patrol boots"
@@ -96,43 +83,25 @@
 	icon_state = "ncr_boots"
 	item_state = "ncr"
 
-/obj/item/clothing/shoes/f13/military/ncr_officer
-	name = "NCR officer boots"
-	desc = "A pair of calf high black, highly polished, leather boot that have been tightly laced. These definitely belong to a officer."
-	icon_state = "ncr_officer_boots"
-	item_state = "explorer"
-
-/obj/item/clothing/shoes/f13/military/ncr_scout
-	name = "NCR scout boots"
-	desc = "A pair of thick-soled leather boots, well-worn by the wearer."
-	icon_state = "laced"
-	item_state = "laced"
-
-/obj/item/clothing/shoes/f13/military/legionleather
-	name = "leather boots"
-	desc = "A pair of leather boots that appear to be mostly intact and lightly used. These belong to a Recruit Legionary of Caesar's Legion"
-	icon_state = "legionleather"
-	item_state = "legionleather"
-
-/obj/item/clothing/shoes/f13/military/legionmetal
+/obj/item/clothing/shoes/f13/military/plated
 	name = "plated metal boots"
 	desc = "A pair of leather boots that have been patched heavily and reinforced with light metal plates around the heel and ankles to protect the user."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 
-/obj/item/clothing/shoes/f13/military/legionlegate
+/obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
 	desc = "A pair of heavy leather boots with overlapping steel plates affixed to the front, sides, and back of them, in size 14. These belong to a Legatus of Caesar's Legion."
 	icon_state = "legionlegate"
 	item_state = "legionlegate"
 	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 10, fire = 30, acid = 10)
 
-/obj/item/clothing/shoes/f13/military/generalboot
-	name = "Militia Boots"
-	desc = "testing"
-	icon_state = "militiaboots"
-	item_state = "militiaboots"
+/obj/item/clothing/shoes/f13/military/leather
+	name = "leather combat boots"
+	desc = "A pair of laced, heavy-duty leather boots designed for hard combat."
+	icon_state = "laced"
+	item_state = "laced"
 
 //Fluff
 

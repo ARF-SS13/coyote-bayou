@@ -110,7 +110,7 @@ Captain
 /datum/outfit/loadout/captline
 	name = "Line Officer"
 	head 		= /obj/item/clothing/head/beret/ncr
-	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_scout
+	shoes 		= /obj/item/clothing/shoes/f13/military/leather
 	gloves 		= /obj/item/clothing/gloves/f13/leather
 	belt 		= /obj/item/storage/belt/military/assault/ncr
 	l_hand 		= /obj/item/gun/ballistic/automatic/m1garand/republicspride
@@ -138,7 +138,7 @@ Captain
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/greasegun=3,
 	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/magazine/a50=2
+	/obj/item/ammo_box/magazine/m44=2
 	)
 /*
 Lieutenant
@@ -341,7 +341,7 @@ Sergeant
 	name = "Scout"
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
 	head = 			/obj/item/clothing/head/beret/ncr_scout
-	shoes = 		/obj/item/clothing/shoes/f13/military/ncr_scout
+	shoes = 		/obj/item/clothing/shoes/f13/military/leather
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	belt = 			/obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
@@ -567,7 +567,7 @@ Veteran Ranger
 	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/rifleman
-	shoes =			/obj/item/clothing/shoes/laced
+	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	r_pocket = 		/obj/item/twohanded/binocs
 	backpack_contents = list(
@@ -625,7 +625,7 @@ Veteran Ranger
 	head =			/obj/item/clothing/head/f13/ranger
 	belt =			/obj/item/storage/belt/military/assault/ncr
 	gloves =		/obj/item/clothing/gloves/patrol
-	shoes =			/obj/item/clothing/shoes/laced
+	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
 	r_pocket = /obj/item/twohanded/binocs
@@ -671,7 +671,7 @@ Veteran Ranger
 	id = 			/obj/item/card/id/dogtag/ncrranger
 	uniform = 		/obj/item/clothing/under/f13/ranger/trail
 	gloves =		/obj/item/clothing/gloves/patrol
-	shoes =			/obj/item/clothing/shoes/laced
+	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	r_pocket = 		/obj/item/twohanded/binocs
 	backpack_contents = list(

@@ -39,7 +39,7 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	casingtype = /obj/item/ammo_casing/n762
+	casingtype = /obj/item/ammo_casing/a357
 
 
 /mob/living/simple_animal/hostile/russian/ranged/mosin

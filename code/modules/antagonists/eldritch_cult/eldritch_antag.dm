@@ -30,7 +30,7 @@
 
 /datum/antagonist/heretic/on_gain()
 	var/mob/living/current = owner.current
-	owner.teach_crafting_recipe(/datum/crafting_recipe/heretic/codex)
+//	owner.teach_crafting_recipe(/datum/crafting_recipe/heretic/codex)
 	if(ishuman(current))
 		forge_primary_objectives()
 		gain_knowledge(/datum/eldritch_knowledge/spell/basic)

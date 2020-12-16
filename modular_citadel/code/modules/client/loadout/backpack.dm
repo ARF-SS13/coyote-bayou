@@ -74,16 +74,6 @@
 	path = /obj/item/pen/fountain
 	cost = 2
 
-/datum/gear/backpack/modular_tablet
-	name = "A modular tablet"
-	path = /obj/item/modular_computer/tablet/preset/cheap/
-	cost = 4
-
-/datum/gear/backpack/modular_laptop
-	name = "A modular laptop"
-	path = /obj/item/modular_computer/laptop/preset/civilian
-	cost = 7
-
 /datum/gear/backpack/ringbox_gold
 	name = "A gold ring box"
 	path = /obj/item/storage/fancy/ringbox

@@ -385,9 +385,9 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/F13/c308mmBullet
+	projectiletype = /obj/item/projectile/bullet/a762
 	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/F13/m308
+	casingtype = /obj/item/ammo_casing/a762
 
 /mob/living/simple_animal/hostile/ncr/sergeant
 	name = "NCR Sergeant"
@@ -457,7 +457,7 @@
 	name = "Legion Prime"
 	uniform = /obj/item/clothing/under/f13/rag
 	suit = /obj/item/clothing/suit/armor/f13/legion/recruit
-	shoes = /obj/item/clothing/shoes/f13/military/legionleather
+	shoes = /obj/item/clothing/shoes/f13/military/leather
 	//gloves = /obj/item/clothing/gloves/f13/ncr
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
@@ -478,7 +478,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/F13/c308mmBullet
 	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/F13/m308
+	casingtype = /obj/item/ammo_casing/a762
 
 /mob/living/simple_animal/hostile/legion/decan
 	name = "Legion Decan"
@@ -496,13 +496,13 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/F13/c308mmBullet
 	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/F13/m308
+	casingtype = /obj/item/ammo_casing/a762
 
 /obj/effect/mob_spawn/human/corpse/legion/decan
 	name = "Legion Decan"
 	uniform = /obj/item/clothing/under/f13/rag
 	suit = /obj/item/clothing/suit/armor/f13/legion/vet
-	shoes = /obj/item/clothing/shoes/f13/military/legionleather
+	shoes = /obj/item/clothing/shoes/f13/military/leather
 	gloves = /obj/item/clothing/gloves/f13/doom
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
