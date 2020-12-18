@@ -3,6 +3,7 @@
 	var/active = FALSE
 	var/force_on = 30 //force when active
 	var/faction_bonus_force = 0 //Bonus force dealt against certain factions
+	var/reach_on = 1
 	var/throwforce_on = 20
 	var/icon_state_on = "axe1"
 	var/hitsound_on = 'sound/weapons/blade1.ogg'
@@ -47,6 +48,7 @@
 	active = !active
 	if(active)
 		force = force_on
+		reach = reach_on
 		total_mass = total_mass_on
 		throwforce = throwforce_on
 		hitsound = hitsound_on
@@ -59,6 +61,7 @@
 		w_class = w_class_on
 	else
 		force = initial(force)
+		reach = initial(reach)
 		throwforce = initial(throwforce)
 		hitsound = initial(hitsound)
 		throw_speed = initial(throw_speed)

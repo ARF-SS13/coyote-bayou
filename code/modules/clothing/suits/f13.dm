@@ -347,3 +347,23 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/suit/hooded/cloak/hhunter
+	name = "Razorclaw armour"
+	icon_state = "rcarmour"
+	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/spear, /obj/item/melee/transforming/cleaving_saw)
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/hhunter
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/head/hooded/cloakhood/hhunter
+	name = "Razorclaw helm"
+	icon_state = "rchelmet"
+	desc = "The skull of a legendary deathclaw."
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	heat_protection = HEAD
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
