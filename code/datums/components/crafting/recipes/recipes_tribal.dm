@@ -73,6 +73,7 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
 
+/*
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
 	result = /obj/item/twohanded/bonespear
@@ -90,6 +91,7 @@
 				 /obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
+*/
 
 /datum/crafting_recipe/bonepestle
 	name = "Bone Pestle"
@@ -124,6 +126,7 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/*
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
@@ -145,6 +148,7 @@
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
+*/
 
 /datum/crafting_recipe/headpikelegion
 	name = "Spike Head (Throwing Spear)"
@@ -177,6 +181,7 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
 
+/*
 /datum/crafting_recipe/talisman
 	name = "Hunter's talisman"
 	result = /obj/item/clothing/neck/cloak/amulet
@@ -185,6 +190,7 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
+*/
 
 /datum/crafting_recipe/cloakbrown
 	name = "Cloak"
@@ -271,6 +277,7 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/*
 /datum/crafting_recipe/warmace
 	name = "Carve Wooden Warmace"
 	result = /obj/item/twohanded/sledgehammer/warmace
@@ -280,6 +287,7 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
+*/
 
 /datum/crafting_recipe/training_machete
 	name = "Carve Training Machete"
@@ -308,7 +316,7 @@
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO_FIVE
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/arrowpoison
 	name = "Poison Arrow"
@@ -318,7 +326,7 @@
 				/obj/item/grown/nettle/basic = 5)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO_FIVE
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/arrowburn
 	name = "Burn Posion Arrow"
@@ -329,8 +337,9 @@
 				/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 4)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO_FIVE
+	subcategory = CAT_AMMO
 
+/*
 /datum/crafting_recipe/voodoo
     name = "Voodoo"
     result = /obj/item/reagent_containers/pill/patch/voodoo
@@ -350,3 +359,4 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
+*/
