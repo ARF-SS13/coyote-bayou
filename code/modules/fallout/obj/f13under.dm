@@ -163,7 +163,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/follower
-	name = "citzen outfit"
+	name = "citizen outfit"
 	desc = "A civilized well cared for outfit that good citzens wear."
 	icon_state = "follower"
 	item_state = "follower"
@@ -590,7 +590,7 @@
 
 /obj/item/clothing/under/f13/batter //I guess we're going OFF limits.
 	name = "worn baseball uniform"
-	desc = "<b>Purification in progress...</b>"
+	desc = "SWING BATTA, BATTA! SWING!!"
 	icon_state = "batter"
 	item_state = "w_suit"
 	item_color = "batter"

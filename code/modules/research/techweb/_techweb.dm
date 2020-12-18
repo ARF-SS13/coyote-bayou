@@ -402,7 +402,7 @@
 
 /datum/techweb/specialized/autounlocking/autolathe
 	design_autounlock_buildtypes = AUTOLATHE
-	allowed_buildtypes = AUTOLATHE|TOYLATHE
+	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE
 
 /datum/techweb/specialized/autounlocking/autolathe/public
 	design_autounlock_skip_types = NO_PUBLIC_LATHE
@@ -431,3 +431,6 @@
 /datum/techweb/specialized/autounlocking/autobottler
 	design_autounlock_buildtypes = AUTOBOTTLER
 	allowed_buildtypes = AUTOBOTTLER
+
+/datum/techweb/specialized/autounlocking/autolathe/ammo
+	design_autounlock_buildtypes = AMMOLATHE

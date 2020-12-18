@@ -97,7 +97,7 @@ Great Khan
 		/obj/item/gun/ballistic/revolver/m29, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil)
 	head = /obj/item/clothing/head/helmet/f13/khan
-	shoes = /obj/item/clothing/shoes/f13/khan
+	shoes = /obj/item/clothing/shoes/f13/military/plated
 
 
 /datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

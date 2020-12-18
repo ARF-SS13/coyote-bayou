@@ -212,7 +212,7 @@
 /obj/item/book/granter/crafting_recipe/boneyard_notes
 	name = "The Complete Works of Lavaland Bone Architecture"
 	desc = "Pried from the lead  Archaeologist's cold, dead hands, this seems to explain how ancient bone architecture was erected long ago."
-	crafting_recipe_types = list(/datum/crafting_recipe/rib, /datum/crafting_recipe/boneshovel, /datum/crafting_recipe/halfskull, /datum/crafting_recipe/skull)
+//	crafting_recipe_types = list(/datum/crafting_recipe/rib, /datum/crafting_recipe/boneshovel, /datum/crafting_recipe/halfskull, /datum/crafting_recipe/skull)
 	icon = 'icons/obj/library.dmi'
 	icon_state = "boneworking_learing"
 	oneuse = FALSE

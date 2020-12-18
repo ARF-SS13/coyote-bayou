@@ -127,33 +127,33 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-	elem "changelog"
+	elem "rules"
 		type = BUTTON
 		pos = 16,5
 		size = 104x20
 		anchor1 = 3,0
 		anchor2 = 19,0
 		saved-params = "is-checked"
-		text = "Changelog"
-		command = "changelog"
-	elem "rules"
+		text = "Rules"
+		command = "rules"
+	elem "wiki"
 		type = BUTTON
 		pos = 120,5
 		size = 100x20
 		anchor1 = 19,0
 		anchor2 = 34,0
 		saved-params = "is-checked"
-		text = "Rules"
-		command = "rules"
-	elem "wiki"
+		text = "Wiki"
+		command = "wiki"
+	elem "tgwiki"
 		type = BUTTON
 		pos = 220,5
 		size = 100x20
 		anchor1 = 34,0
 		anchor2 = 50,0
 		saved-params = "is-checked"
-		text = "Wiki"
-		command = "wiki"
+		text = "TG Wiki"
+		command = "tgwiki"
 	elem "forum"
 		type = BUTTON
 		pos = 320,5
@@ -172,15 +172,15 @@ window "infowindow"
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
-	elem "report-issue"
+	elem "discord"
 		type = BUTTON
 		pos = 520,5
 		size = 100x20
 		anchor1 = 81,0
 		anchor2 = 97,0
 		saved-params = "is-checked"
-		text = "Report Issue"
-		command = "report-issue"
+		text = "Discord"
+		command = "discord"
 
 window "outputwindow"
 	elem "outputwindow"

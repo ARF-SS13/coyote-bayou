@@ -843,7 +843,7 @@ Off-Duty
 	suit = /obj/item/clothing/suit/armor/f13/combat/mk2
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/deagle/camo=1,
-		/obj/item/ammo_box/magazine/a50=2,
+		/obj/item/ammo_box/magazine/m44=2,
 		/obj/item/clothing/accessory/bos/knightcaptain=1
 		)
 

@@ -1,55 +1,74 @@
-// 9mm (Stechkin APS)
-
-/obj/item/projectile/bullet/c9mm
-	name = "9mm bullet"
-	damage = 20
-	embedding = list(embed_chance=15, fall_chance=3, jostle_chance=4, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.4, pain_mult=5, jostle_pain_mult=6, rip_time=10)
-
-/obj/item/projectile/bullet/c9mm_ap
-	name = "9mm armor-piercing bullet"
-	damage = 15
-	armour_penetration = 40
-	embedding = null
-
-/obj/item/projectile/bullet/incendiary/c9mm
-	name = "9mm incendiary bullet"
-	damage = 10
-	fire_stacks = 1
-
-// 10mm (Stechkin)
-
+// 10mm 
 /obj/item/projectile/bullet/c10mm
 	name = "10mm bullet"
-	damage = 30
+	damage = 36
+	armour_penetration = -5
 
-/obj/item/projectile/bullet/c10mm_ap
+/obj/item/projectile/bullet/c10mm/ap
 	name = "10mm armor-piercing bullet"
-	damage = 27
-	armour_penetration = 40
+	damage = 25
+	armour_penetration = 30
 
-/obj/item/projectile/bullet/c10mm_hp
+/obj/item/projectile/bullet/c10mm/hp
 	name = "10mm hollow-point bullet"
+	damage = 47
+	armour_penetration = -30
+	wound_bonus = -20
+	bare_wound_bonus = 10
+
+// 9mm 
+/obj/item/projectile/bullet/c9mm
+	name = "9mm bullet"
+	damage = 29
+
+/obj/item/projectile/bullet/c9mm/ap
+	name = "9mm armor-piercing bullet"
+	damage = 23
+	armour_penetration = 27
+
+/obj/item/projectile/bullet/c9mm/jhp
+	name = "9mm hollow-point bullet"
 	damage = 40
-	armour_penetration = -50
+	armour_penetration = -30
+	wound_bonus = -20
+	bare_wound_bonus = 10
 
-/obj/item/projectile/bullet/incendiary/c10mm
-	name = "10mm incendiary bullet"
+/obj/item/projectile/bullet/c9mm/op
+	name = "9mm overpressure bullet"
+	damage = 35
+	wound_bonus = -10
+	bare_wound_bonus = 5
+
+// 12.7mm
+/obj/item/projectile/bullet/a127mm
+	name = "12.7mm FMJ bullet"
+	damage = 55
+	armour_penetration = 20
+
+/obj/item/projectile/bullet/a127mm/jhp
+	name = "12.7mm JHP bullet"
+	damage = 70
+	armour_penetration = -30
+	wound_bonus = -20
+	bare_wound_bonus = 10
+
+// 22 long rifle (lmao)
+/obj/item/projectile/bullet/c22
+	name = ".22lr bullet"
 	damage = 15
-	fire_stacks = 2
+	armour_penetration = 0
 
-/obj/item/projectile/bullet/c10mm/soporific
-	name ="10mm soporific bullet"
-	nodamage = TRUE
+/obj/item/projectile/bullet/c22/hp
+	name = ".22lr hollow-point bullet"
+	damage = 25
+	armour_penetration = -20
+	wound_bonus = -20
+	bare_wound_bonus = 10
 
-/obj/item/projectile/bullet/c10mm/soporific/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if((blocked != 100) && isliving(target))
-		var/mob/living/L = target
-		L.blur_eyes(6)
-		if(L.getStaminaLoss() >= 60)
-			L.Sleeping(300)
-		else
-			L.adjustStaminaLoss(25)
+/obj/item/projectile/bullet/c22/plinking
+	name = ".22lr plinking bullet"
+	damage = 11
+	armour_penetration = 0
 
 // Needler
 /obj/item/projectile/bullet/needle

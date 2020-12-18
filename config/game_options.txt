@@ -359,7 +359,7 @@ SEC_START_BRIG
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
 ## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
-DEFAULT_LAWS 0
+DEFAULT_LAWS 1
 
 ## RANDOM LAWS ##
 ## ------------------------------------------------------------------------------------------
@@ -438,15 +438,15 @@ SILICON_MAX_LAW_AMOUNT 12
 ROUNDSTART_RACES human
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
-ROUNDSTART_RACES lizard
-ROUNDSTART_RACES synthliz
+#ROUNDSTART_RACES lizard
+#ROUNDSTART_RACES synthliz
 #ROUNDSTART_RACES fly
 #ROUNDSTART_RACES insect
-ROUNDSTART_RACES plasmaman
+#ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES shadow
-ROUNDSTART_RACES felinid
-ROUNDSTART_RACES dwarf
-ROUNDSTART_RACES ethereal
+#ROUNDSTART_RACES felinid
+#ROUNDSTART_RACES dwarf
+#ROUNDSTART_RACES ethereal
 
 ## Races that are better than humans in some ways, but worse in others
 #ROUNDSTART_RACES jelly
@@ -469,15 +469,15 @@ ROUNDSTART_RACES ethereal
 #ROUNDSTART_RACES agent
 
 ## CITADEL Races
-ROUNDSTART_RACES mammal
-ROUNDSTART_RACES avian
-ROUNDSTART_RACES aquatic
-ROUNDSTART_RACES insect
-ROUNDSTART_RACES xeno
-ROUNDSTART_RACES slimeperson
-ROUNDSTART_RACES guilmon
-ROUNDSTART_RACES ipc
-ROUNDSTART_RACES arachnid
+#ROUNDSTART_RACES mammal
+#ROUNDSTART_RACES avian
+#ROUNDSTART_RACES aquatic
+#ROUNDSTART_RACES insect
+#ROUNDSTART_RACES xeno
+#ROUNDSTART_RACES slimeperson
+#ROUNDSTART_RACES guilmon
+#ROUNDSTART_RACES ipc
+#ROUNDSTART_RACES arachnid
 
 ##-------------------------------------------------------------------------------------------
 

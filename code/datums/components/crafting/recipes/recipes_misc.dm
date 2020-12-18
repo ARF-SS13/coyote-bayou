@@ -2,6 +2,14 @@
 //Large Objects//
 /////////////////
 
+/datum/crafting_recipe/rags
+	name = "Cut clothing into rags"
+	result = /obj/item/stack/sheet/cloth/three
+	reqs = list(/obj/item/clothing/under = 1)
+	time = 20
+	category = CAT_MISC
+	subcategory = CAT_MISC
+
 /datum/crafting_recipe/plunger
 	name = "Plunger"
 	result = /obj/item/plunger

@@ -94,7 +94,7 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/user, params)
-	if (busy)
+	if(busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
@@ -199,7 +199,7 @@
 			if(materials.has_materials(materials_used))
 				busy = TRUE
 				use_power(power)
-				icon_state = "autolathe_n"
+				icon_state = "[icon_state]_n"
 				var/time = is_stack ? 10 : base_print_speed * coeff * multiplier
 				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack), time)
 			else
@@ -547,3 +547,116 @@
 		else
 			. = ..()
 */
+
+/obj/machinery/autolathe/ammo
+	name = "ammo bench"
+	icon = 'icons/obj/machines/reloadingbench.dmi'
+	desc = "An ammo bench that utilizes metal and other materials to make ammo and magazines."
+	circuit = /obj/item/circuitboard/machine/autolathe/ammo
+	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo
+	categories = list(
+					"Simple Ammo",
+					"Simple Magazines",
+					"Basic Ammo",
+					"Basic Magazines",
+					"Intermediate Ammo",
+					"Intermediate Magazines",
+					"Advanced Ammo",
+					"Advanced Magazines"
+					)
+	allowed_materials = list(
+		/datum/material/iron,
+		/datum/material/titanium
+		)
+	var/simple = 0
+	var/basic = 0
+	var/intermediate = 0
+	var/advanced = 0
+
+/obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
+	..()
+	if(!simple && panel_open)
+		if(istype(O, /obj/item/book/granter/trait/gunsmith_one))
+			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
+			simple = 1
+			qdel(O)
+	if(!basic && panel_open)
+		if(istype(O, /obj/item/book/granter/trait/gunsmith_two))
+			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
+			basic = 1
+			qdel(O)
+	if(!intermediate && panel_open)
+		if(istype(O, /obj/item/book/granter/trait/gunsmith_three))
+			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
+			intermediate = 1
+			qdel(O)
+	if(!advanced && panel_open)
+		if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
+			advanced = 1
+			qdel(O)
+	if(panel_open)
+		default_deconstruction_crowbar(O)
+		return TRUE
+	else
+		attack_hand(user)
+		return TRUE
+
+/obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
+	if("Simple Ammo" in D.category)
+		if(simple == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Simple Magazines" in D.category)
+		if(simple == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Basic Ammo" in D.category)
+		if(basic == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Basic Magazines" in D.category)
+		if(basic == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Intermediate Ammo" in D.category)
+		if(intermediate == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Intermediate Magazines" in D.category)
+		if(intermediate == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Advanced Ammo" in D.category)
+		if(advanced == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+	if("Advanced Magazines" in D.category)
+		if(advanced == 0)
+			return FALSE
+		else
+			. = ..()
+	else
+		. = ..()
+

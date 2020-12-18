@@ -33,6 +33,7 @@
 /datum/gear/hands/skub
 	name = "Skub"
 	path = /obj/item/skub
+	cost = 5 // :thinking: -Superballs
 
 /datum/gear/hands/wallet
 	name = "Wallet"
@@ -41,14 +42,10 @@
 /datum/gear/hands/flask
 	name = "Flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
-	cost = 2
 
 /datum/gear/hands/zippolighter
 	name = "Zippo Lighter"
 	path = /obj/item/lighter
-	cost = 2
-
 /datum/gear/hands/cigar
 	name = "Cigar"
 	path = /obj/item/clothing/mask/cigarette/cigar
-	cost = 4 //smoking is bad mkay

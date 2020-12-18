@@ -520,7 +520,7 @@
 /obj/item/book/granter/crafting_recipe/threads //Durathread crafting book
 	name = "Credible Threads"
 	desc = "A simple book about sewing and usefull clothing crafting with cloth and durathreads."
-	crafting_recipe_types = list(/datum/crafting_recipe/durathread_duffelbag, /datum/crafting_recipe/durathread_toolbelt, /datum/crafting_recipe/durathread_bandolier, /datum/crafting_recipe/durathread_helmet, /datum/crafting_recipe/durathread_vest)
+//	crafting_recipe_types = list(/datum/crafting_recipe/durathread_duffelbag, /datum/crafting_recipe/durathread_toolbelt, /datum/crafting_recipe/durathread_bandolier, /datum/crafting_recipe/durathread_helmet, /datum/crafting_recipe/durathread_vest)
 	icon_state = "tailers_art1"
 	oneuse = FALSE
 	remarks = list("Durathread is cloth thats also fire-resistant?", "Strong threads that can be used with leather for some light weight storage!", "The cloth can withstand a beating it said but not that much...")
@@ -544,7 +544,7 @@
 /obj/item/book/granter/crafting_recipe/bone_bow //Bow crafting for non-ashwalkers
 	name = "bowyery sandstone slab" // this is an actual word
 	desc = "A sandstone slab with inscriptions describing the Ash Walkers of Lavaland's bowyery."
-	crafting_recipe_types = list(/datum/crafting_recipe/bone_arrow, /datum/crafting_recipe/bone_bow, /datum/crafting_recipe/ashen_arrow, /datum/crafting_recipe/quiver, /datum/crafting_recipe/bow_tablet)
+//	crafting_recipe_types = list(/datum/crafting_recipe/bone_arrow, /datum/crafting_recipe/bone_bow, /datum/crafting_recipe/ashen_arrow, /datum/crafting_recipe/quiver, /datum/crafting_recipe/bow_tablet)
 	icon_state = "stone_tablet"
 	oneuse = FALSE
 	remarks = list("Sticking burning arrows into the sand makes them stronger...", "Breaking the bone apart to get shards, not sharpening the bone...", "Sinew is just like rope...")

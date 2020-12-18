@@ -1040,6 +1040,14 @@
 	item_state = "legionmedallioncent"
 	assignment = "orator medallion"
 
+//For PilotBland's frumentarii custom loadout
+/obj/item/card/id/dogtag/legfrumentariiremus
+	name = "Remus Amius' frumentarius medallion"
+	desc = "A golden disc with a string threaded through the top, displaying official markings confirming a frumentarius' status."
+	icon_state = "legionmedallioncent"
+	item_state = "legionmedallioncent"
+	assignment = "frumentarius medallion"
+
 /obj/item/card/id/legionbrand
 	name = "Legion's brand"
 	desc = "A brand for identifying Caesar's Legion's slaves."

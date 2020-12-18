@@ -26,8 +26,8 @@
 			to_chat(owner, "This [src] has already been claimed by another.")
 		return FALSE
 	// Bloodsucker Learns new Recipes!
-	owner.teach_crafting_recipe(/datum/crafting_recipe/bloodsucker/vassalrack)
-	owner.teach_crafting_recipe(/datum/crafting_recipe/bloodsucker/candelabrum)
+//	owner.teach_crafting_recipe(/datum/crafting_recipe/bloodsucker/vassalrack)
+//	owner.teach_crafting_recipe(/datum/crafting_recipe/bloodsucker/candelabrum)
 	// This is my Lair
 	coffin = claimed
 	lair = get_area(claimed)
