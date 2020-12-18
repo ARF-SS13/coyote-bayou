@@ -47,21 +47,8 @@
 				),
 				CAT_DRINK = CAT_NONE,
 				CAT_CLOTHING = CAT_NONE,
-				CAT_TRIBAL = list(
-					CAT_TRIBAL_WEAPONS,
-				),
-				CAT_MEDICAL = list(
-					CAT_MEDS,
-				),
-				CAT_ASSEM = list(
-					CAT_ASSEMBLIES,
-					CAT_MACHINES,
-				),
-				CAT_FORGE = list(
-					CAT_FORGEARMOR,
-					CAT_FORGEWEAPON,
-					CAT_FORGEMISC,
-				)
+				CAT_MEDICAL = CAT_NONE,
+				CAT_BOTTLE = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE

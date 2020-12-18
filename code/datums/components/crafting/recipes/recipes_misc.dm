@@ -7,8 +7,8 @@
 	result = /obj/item/stack/sheet/cloth/three
 	reqs = list(/obj/item/clothing/under = 1)
 	time = 20
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-	subcategory = CAT_MISC
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"

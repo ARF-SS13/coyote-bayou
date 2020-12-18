@@ -293,8 +293,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/AEP7)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //lever action
 
@@ -307,8 +307,8 @@
 				/datum/reagent/blackpowder = 20)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/lever_action)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //trail carbine
 /*
@@ -448,8 +448,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/plasmapistol)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/PlasmaPistol_lim
 	name = "Plasma Pistol"
@@ -462,8 +462,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //uzi
 /*
@@ -558,8 +558,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/marksmanrifle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/marksmanrifle_lim
 	name = "Marksman rifle"
@@ -572,8 +572,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //brush gun
 
@@ -587,8 +587,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/brush)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/brush_lim
 	name = "Brush gun"
@@ -601,8 +601,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //high tier
 
@@ -651,8 +651,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/lmg)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/lmg_lim
 	name = "R84 LMG"
@@ -666,8 +666,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //breacher
 
@@ -683,8 +683,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/breacher)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/breacher_lim
 	name = "Breacher shotgun"
@@ -699,8 +699,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //sniper
 
@@ -716,8 +716,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/sniper)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/sniper_lim
 	name = "Sniper rifle"
@@ -732,8 +732,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //r82
 
@@ -749,8 +749,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/R82)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/R82_lim
 	name = "R82 heavy service rifle"
@@ -764,8 +764,8 @@
 				 /obj/item/blueprint/weapon/R82/limited = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 //desert eagle
 
 /datum/crafting_recipe/deagle
@@ -780,8 +780,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/deagle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/deagle_lim
 	name = "Desert Eagle"
@@ -796,8 +796,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 
 //very high tier
@@ -814,8 +814,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/R91, /obj/item/blueprint/weapon/marksmanrifle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 //aer9
 /datum/crafting_recipe/AER9
 	name = "AER9"
@@ -828,8 +828,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/AER9)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/AER9_lim
 	name = "AER9"
@@ -843,8 +843,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 //plasma rifle
 /datum/crafting_recipe/PlasmaRifle
 	name = "Plasma Rifle"
@@ -858,8 +858,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/plasmarifle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/PlasmaRifle_lim
 	name = "Plasma Rifle"
@@ -874,8 +874,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //tribeam
 
@@ -891,9 +891,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/AER9, /obj/item/blueprint/weapon/AEP7)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
-
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 //AM rifle
 /datum/crafting_recipe/AM_rifle
 	name = "AM Rifle"
@@ -907,8 +906,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/AM_rifle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/AM_rifle_lim
 	name = "AM Rifle"
@@ -923,8 +922,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //city killer
 
@@ -940,8 +939,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/city_killer)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/city_killer_lim
 
@@ -957,8 +956,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //rangemaster
 /*
@@ -1007,8 +1006,8 @@
 				)
 	tools = list(TOOL_WORKBENCH, /obj/item/blueprint/weapon/bozar)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/bozar_lim
 	name = "Bozar"
@@ -1023,8 +1022,8 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BPWEAPON_ONEUSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //BP copy
 /datum/crafting_recipe/bpcopy	
@@ -1033,8 +1032,8 @@
 	reqs = list(/obj/item/paper = 1)
 	tools = list(TOOL_AWORKBENCH, TOOL_GUNTIER3, /obj/item/blueprint/weapon/marksmanrifle)
 	time = 120
-	category = CAT_BLUEPRINTS
-	subcategory = CAT_BP_COPY
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/bpcopy/plasmapistol
 	result = /obj/item/blueprint/weapon/plasmapistol/limited

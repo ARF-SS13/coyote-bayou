@@ -7,8 +7,8 @@
 				/obj/item/wrench = 1)
 	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/bottle
 	name = "brown bottle"
@@ -17,8 +17,7 @@
 				/obj/item/stack/f13Cash = 1)
 	tools = list(TOOL_BOTTLER)
 	time = 10
-	category = CAT_MISC
-	subcategory = CAT_BOTTLE
+	category = CAT_BOTTLE
 
 /datum/crafting_recipe/bottle/darkbrown
 	name = "dark brown bottle"
