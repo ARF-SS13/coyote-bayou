@@ -137,7 +137,6 @@
 											  /obj/item/projectile/beam/emitter = 15,
 //											  /obj/item/projectile/magic/flying = 15,
 											  /obj/item/projectile/energy/net = 15,
-											  /obj/item/projectile/bullet/incendiary/c9mm = 15,
 											  /obj/item/projectile/temp/hot = 15,
 											  /obj/item/projectile/beam/disabler = 15)
 

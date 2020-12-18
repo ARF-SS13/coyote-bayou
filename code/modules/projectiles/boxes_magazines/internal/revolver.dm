@@ -6,7 +6,6 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev762
 	name = "\improper Nagant revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/n762
 	caliber = list("n762")
 	max_ammo = 7
 
@@ -72,7 +71,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list("357")
+	caliber = list("357", "38")
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/shotgunrevolver

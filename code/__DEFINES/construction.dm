@@ -97,6 +97,22 @@
 #define CAT_SOUP	"Soups"
 #define CAT_SPAGHETTI	"Spaghettis"
 #define CAT_ICE	"Frozen"
+#define CAT_TRIBAL "Tribal"
+#define CAT_TRIBAL_WEAPONS "Tribal Weapons"
+#define CAT_MEDICAL "Medical"
+#define CAT_MEDS "Medicine"
+#define CAT_ASSEM "Assembling"
+#define CAT_ASSEMBLIES "Assemblies"
+#define CAT_MACHINES "Machines/Objects"
+#define CAT_FORGE   "Forge"
+#define CAT_FORGEWEAPON   "Forge Weapon"
+#define CAT_FORGEARMOR   "Forge Armor"
+#define CAT_FORGEMISC   "Forge Misc"
+#define CAT_BOTTLE "Bottling"
+#define CAT_BLUEPRINTS	"Blueprints"
+#define CAT_BPWEAPON	"Weapons"
+#define CAT_BPWEAPON_ONEUSE	"Weapons - Damaged"
+#define CAT_BP_COPY	"Copy Blueprints"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

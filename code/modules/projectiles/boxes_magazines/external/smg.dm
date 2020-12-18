@@ -12,7 +12,6 @@
 /obj/item/ammo_box/magazine/wt550m9/wtap
 	name = "wt550 magazine (Armour Piercing 4.6x30mm)"
 	icon_state = "46x30mmtA-20"
-	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
 /obj/item/ammo_box/magazine/wt550m9/wtap/update_icon()
 	..()
@@ -21,8 +20,6 @@
 /obj/item/ammo_box/magazine/wt550m9/wtic
 	name = "wt550 magazine (Incendiary 4.6x30mm)"
 	icon_state = "46x30mmtI-20"
-	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
-
 /obj/item/ammo_box/magazine/wt550m9/wtic/update_icon()
 	..()
 	icon_state = "46x30mmtI-[round(20*(ammo_count()/max_ammo),4)]"
@@ -37,6 +34,9 @@
 /obj/item/ammo_box/magazine/uzim9mm/update_icon()
 	..()
 	icon_state = "uzi9mm-[round(ammo_count(),4)]"
+
+/obj/item/ammo_box/magazine/uzim9mm/empty
+	start_empty = 1
 
 /obj/item/ammo_box/magazine/smgm9mm
 	name = "SMG magazine (9mm)"
@@ -55,7 +55,6 @@
 
 /obj/item/ammo_box/magazine/smgm9mm/fire
 	name = "SMG Magazine (Incendiary 9mm)"
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/smgm45
 	name = "SMG magazine (.45)"

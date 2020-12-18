@@ -1158,3 +1158,11 @@
 
 /obj/item/circuitboard/machine/emitter/siege
 	name = "Siege Cannon (Machine Board)"
+
+/obj/item/circuitboard/machine/autolathe/ammo
+	name = "Ammo Bench (Machine Board)"
+	build_path = /obj/machinery/autolathe/ammo
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 3,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/sheet/glass = 1)
