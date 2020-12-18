@@ -404,7 +404,7 @@ Specialist
 	title = "NCR Specialist"
 	flag = F13SPECIALIST
 	total_positions = 3
-	spawn_positions = 3
+	spawn_positions = 4
 	description = "You are a veteran enlisted with a specialized skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -482,7 +482,7 @@ Trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	total_positions = 4
-	spawn_positions = 4
+	spawn_positions = 10
 	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by officers such as the Lieutenant and Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"

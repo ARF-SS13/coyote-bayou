@@ -538,9 +538,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Colonel"
 	icon_state = "NCR Colonel"
 
-/obj/effect/landmark/start/f13/ncrambassador
-	name = "NCR Ambassador"
-
 /obj/effect/landmark/start/f13/ncrcaptain
 	name = "NCR Captain"
 	icon_state = "NCR Captain"
@@ -549,33 +546,25 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
+/obj/effect/landmark/start/f13/ncrfirstsergeant
+	name = "NCR First Sergeant"
+	icon_state = "NCR Sergeant"
+
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
-
-/obj/effect/landmark/start/f13/ncrspecialist
-	name = "NCR Specialist"
-	icon_state = "NCR Trooper"
-
-/obj/effect/landmark/start/f13/ncrmp
-	name = "NCR Military Police"
-	icon_state = "NCR Trooper"
-
-/obj/effect/landmark/start/f13/ncrht
-	name = "NCR Heavy Trooper"
-	icon_state = "NCR Trooper"
 
 /obj/effect/landmark/start/f13/ncrcorporal
 	name = "NCR Corporal"
 	icon_state = "NCR Trooper"
 
+/obj/effect/landmark/start/f13/ncrspecialist
+	name = "NCR Specialist"
+	icon_state = "NCR Trooper"
+
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
 	icon_state = "NCR Trooper"
-
-/obj/effect/landmark/start/f13/ncrrecruit
-	name = "NCR Recruit"
-	icon_state = "NCR Recruit"
 
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
@@ -588,14 +577,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ncrrangerscout
 	name = "NCR Scout Ranger"
 	icon_state = "NCR Patrol Ranger"
-
-/obj/effect/landmark/start/f13/ncrcitizen
-	name = "NCR Citizen"
-	icon_state = "NCR Citizen"
-
-/obj/effect/landmark/start/f13/ncradmin
-	name = "NCR Administrator"
-	icon_state = "NCR Administrator"
 
 // Legion
 

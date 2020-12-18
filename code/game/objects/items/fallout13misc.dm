@@ -185,6 +185,20 @@
 	item_state = "oasisflag"
 	faction = "Oasis"
 
+/obj/item/flag/followers
+	name = "Followers of the Apocalypse flag"
+	desc = "A white flag with the black Follower's of the Apocalpyse cross on it."
+	icon_state = "followersflag"
+	item_state = "followersflag"
+	faction = "Followers"
+
+/obj/item/flag/locust
+	name = "Locust flag"
+	desc = " A flag with a skull, the symbol of Locusts."
+	icon_state = "locustflag"
+	item_state = "locustflag"
+	faction = "Locust"
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")
