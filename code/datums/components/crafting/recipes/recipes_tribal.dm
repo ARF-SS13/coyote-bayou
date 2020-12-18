@@ -3,22 +3,19 @@
 	result = /obj/item/stack/rods
 	time = 600
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/scavengemetal
 	name = "Scavenge For Plating"
 	result = /obj/item/stack/sheet/metal
 	time = 600
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonearmor
 	name = "Bone Armor"
 	result = /obj/item/clothing/suit/armor/bone
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 6)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/chitinarmor
 	name = "Insect Chitin Armor"
@@ -27,8 +24,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,
 				/obj/item/stack/sheet/cloth = 4)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
@@ -37,7 +33,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
 
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
@@ -46,7 +41,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
 
 /datum/crafting_recipe/bracers
 	name = "Bone Bracers"
@@ -54,24 +48,22 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/skullhelm
 	name = "Skull Helmet"
 	result = /obj/item/clothing/head/helmet/skull
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/bonedagger
 	name = "Bone Dagger"
 	result = /obj/item/kitchen/knife/combat/bone
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /*
 /datum/crafting_recipe/bonespear
@@ -99,7 +91,6 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonemortar
 	name = "Bone Mortar"
@@ -107,7 +98,6 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 3)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
@@ -115,7 +105,6 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/handheld_torch
 	name = "Handheld Torch"
@@ -124,7 +113,6 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /*
 /datum/crafting_recipe/headpike
@@ -159,7 +147,6 @@
 			/obj/item/throwing_star/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/goliathcloak
 	name = "Deathclaw cloak"
@@ -168,8 +155,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/deathclaw = 4)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/tatteredredcloak
 	name = "Tattered red cloak"
@@ -178,8 +164,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/sheet/sinew = 1,
 				/obj/item/stack/sheet/cloth = 2)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /*
 /datum/crafting_recipe/talisman
@@ -198,8 +183,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/cloakdark
 	name = "Dark Cloak"
@@ -207,8 +191,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/bonedie
 	name = "Carve Bone Die"
@@ -217,7 +200,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/warclub
 	name = "Carve Wooden Warclub"
@@ -227,7 +209,6 @@
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
 
 /datum/crafting_recipe/tribe_bow
 	name = "String Wooden Bow"
@@ -236,8 +217,8 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/tribe_quiver
 	name = "Craft Quiver and Arrows"
@@ -247,8 +228,8 @@
 				/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/tribe_armor
 	name = "Tribe Armor"
@@ -256,8 +237,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/leather = 6)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/tribaloutfit
 	name = "Male Tribal Outfit"
@@ -265,8 +245,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	category = CAT_CLOTHING
 
 /datum/crafting_recipe/tribaloutfitfemale
 	name = "Female Tribal Outfit"
@@ -274,8 +253,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
+	category = CAT_CLOTHING
 
 /*
 /datum/crafting_recipe/warmace
@@ -296,8 +274,8 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/spearquiver
 	name = "Spear Quiver"
@@ -305,8 +283,8 @@
 	time = 60
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/arrowap
 	name = "Sturdy Arrow"
