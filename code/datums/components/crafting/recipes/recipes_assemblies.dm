@@ -10,8 +10,8 @@
 				/obj/item/wirecutters = 1,
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/stove
 	name = "cook stove"
@@ -24,8 +24,8 @@
 				/obj/item/assembly/igniter = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/bellystove
 	name = "pot belly stove"
@@ -35,8 +35,8 @@
 				/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_WELDER, TOOL_WORKBENCH)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/trading_machine
 	name = "vending machine"
@@ -48,8 +48,8 @@
 				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_WELDER, TOOL_WORKBENCH, TOOL_SCREWDRIVER)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/shower
 	name = "shower"
@@ -58,8 +58,8 @@
 				/obj/item/stack/crafting/metalparts = 10)
 	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/grill
 	name = "grill"
@@ -69,8 +69,8 @@
 				/obj/item/stack/crafting/goodparts = 5)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/barrelfire
 	name = "stoke barrel fire"
@@ -78,8 +78,8 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 15,
 				/obj/item/stack/sheet/metal = 10)
 	time = 80
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/USAeyebot
 	name = "Propaganda eyebot"
@@ -89,15 +89,14 @@
 				/obj/item/stack/crafting/goodparts = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 40
-	category = CAT_ASSEM
-	subcategory = CAT_ROBOT
+	category = CAT_ROBOT
 
 /datum/crafting_recipe/showercurtain
 	name = "Shower Curtains"
 	reqs = 	list(/obj/item/stack/sheet/cloth = 2, /obj/item/stack/sheet/plastic = 2, /obj/item/stack/rods = 1)
 	result = /obj/structure/curtain
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
@@ -107,8 +106,8 @@
 				  /obj/item/stack/tile/plasteel = 1,
 				  /obj/item/stack/cable_coil = 2,
 				  /obj/item/assembly/igniter = 1)
-	category = CAT_ASSEM
-	subcategory = CAT_MACHINES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/mousetrap
 	name = "Mousetrap"
@@ -116,8 +115,8 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/igniter
 	name = "Igniter"
@@ -127,8 +126,8 @@
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/cable_coil = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/health_sensor
 	name = "Health sensor"
@@ -137,8 +136,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/timer
 	name = "Timer"
@@ -147,8 +146,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/signaler
 	name = "Remote signaling device"
@@ -158,8 +157,8 @@
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/cable_coil = 2)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/infrared
 	name = "Infrared emitter"
@@ -168,8 +167,8 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/proximity
 	name = "Proximity sensor"
@@ -178,5 +177,5 @@
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/rods = 1)
 	time = 10
-	category = CAT_ASSEM
-	subcategory = CAT_ASSEMBLIES
+	category = CAT_MISC
+	subcategory = CAT_TOOL
