@@ -213,7 +213,6 @@
 	if(!is_operational()) //Autoeject if power is lost
 		if(mob_occupant)
 			go_out()
-			mob_occupant.copy_from_prefs_vr()
 			connected_message("Clone Ejected: Loss of power.")
 
 	else if(mob_occupant && (mob_occupant.loc == src))
@@ -237,7 +236,6 @@
 				SPEAK("The cloning has been \
 					aborted due to unrecoverable tissue failure.")
 			go_out()
-			mob_occupant.copy_from_prefs_vr()
 
 		else if(mob_occupant && mob_occupant.cloneloss > (100 - heal_level))
 			mob_occupant.Unconscious(80)
@@ -280,7 +278,6 @@
 					BP.attach_limb(mob_occupant)
 
 			go_out()
-			mob_occupant.copy_from_prefs_vr()
 
 	else if (!mob_occupant || mob_occupant.loc != src)
 		occupant = null
@@ -328,7 +325,6 @@
 			SPEAK("An emergency ejection of the current clone has occurred. Survival not guaranteed.")
 			to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
 			go_out()
-			mob_occupant.copy_from_prefs_vr()
 	else
 		return ..()
 
@@ -434,7 +430,6 @@
 		if(mob_occupant && prob((25+severity/1.34)/efficiency))
 			connected_message(Gibberish("EMP-caused Accidental Ejection", 0))
 			SPEAK(Gibberish("Exposure to electromagnetic fields has caused the ejection of, ERROR: John Doe, prematurely." ,0))
-			mob_occupant.copy_from_prefs_vr()
 			go_out()
 
 /obj/machinery/clonepod/ex_act(severity, target)

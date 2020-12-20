@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_chaos = null
 	var/pda_style = MONO
 	var/pda_color = "#808000"
-	var/pda_skin = PDA_SKIN_ALT
+	var/pda_skin = PDA_SKIN_CLASSIC
 
 	var/uses_glasses_colour = 0
 
@@ -213,12 +213,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/action_buttons_screen_locs = list()
 
 	//bad stuff
-	var/vore_flags = 0
-	var/list/belly_prefs = list()
-	var/vore_taste = "nothing in particular"
-	var/toggleeatingnoise = TRUE
-	var/toggledigestionnoise = TRUE
-	var/hound_sleeper = TRUE
 	var/cit_toggles = TOGGLES_CITADEL
 
 	//backgrounds
@@ -888,10 +882,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Fetish content prefs</h2>"
 			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 			dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-			dat += "<b>Vore examine text</b>:<a href='?_src_=prefs;preference=vore_examine'>[(cit_toggles & VORE_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-			dat += "<b>Voracious MediHound sleepers:</b> <a href='?_src_=prefs;preference=hound_sleeper'>[(cit_toggles & MEDIHOUND_SLEEPER) ? "Yes" : "No"]</a><br>"
-			dat += "<b>Hear Vore Sounds:</b> <a href='?_src_=prefs;preference=toggleeatingnoise'>[(cit_toggles & EATING_NOISES) ? "Yes" : "No"]</a><br>"
-			dat += "<b>Hear Vore Digestion Sounds:</b> <a href='?_src_=prefs;preference=toggledigestionnoise'>[(cit_toggles & DIGESTION_NOISES) ? "Yes" : "No"]</a><br>"
 			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
@@ -2521,18 +2511,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("genital_examine")
 					cit_toggles ^= GENITAL_EXAMINE
-
-				if("vore_examine")
-					cit_toggles ^= VORE_EXAMINE
-
-				if("hound_sleeper")
-					cit_toggles ^= MEDIHOUND_SLEEPER
-
-				if("toggleeatingnoise")
-					cit_toggles ^= EATING_NOISES
-
-				if("toggledigestionnoise")
-					cit_toggles ^= DIGESTION_NOISES
 
 				if("breast_enlargement")
 					cit_toggles ^= BREAST_ENLARGEMENT
