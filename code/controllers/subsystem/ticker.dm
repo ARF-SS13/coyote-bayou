@@ -177,8 +177,8 @@ SUBSYSTEM_DEF(ticker)
 			if(start_immediately)
 				timeLeft = 0
 
-			if(!modevoted)
-				send_gamemode_vote()
+			//clampif(!modevoted)
+				//send_gamemode_vote()
 			//countdown
 			if(timeLeft < 0)
 				return

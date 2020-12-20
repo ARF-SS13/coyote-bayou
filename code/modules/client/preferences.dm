@@ -253,6 +253,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/hide_ckey = FALSE //pref for hiding if your ckey shows round-end or not
 
+	var/special_s = 3
+	var/special_p = 3
+	var/special_e = 3
+	var/special_c = 3
+	var/special_i = 3
+	var/special_a = 3
+	var/special_l = 3
+
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -330,6 +338,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<center><h2>Quirk Setup</h2>"
 				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
 				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
+			dat += "<center><h2>S.P.E.C.I.A.L</h2>"
+			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
 			if(jobban_isbanned(user, "appearance"))
@@ -687,6 +697,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat +="<td width='300px' height='300px' valign='top'>"
 			dat += "<h2>Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
+			dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 //			dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
@@ -1245,10 +1256,42 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)]<br>"
 		dat += "<br><center><a href='?_src_=prefs;preference=trait;task=reset'>Reset Quirks</a></center>"
 
-	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Quirk Preferences</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	user << browse(null, "window=preferences")
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>SPECIAL</div>", 900, 600) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
-	popup.open(FALSE)
+	popup.open(0)
+	return
+
+/datum/preferences/proc/SetSpecial(mob/user)
+//	if(!SSquirks)
+	//	to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
+//		return
+
+	var/list/dat = list()
+
+	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
+
+	dat += "<center><b>Allocate points</b></center><br>"
+	dat += "<center>[total] out of 40 possible</center><br>"
+	dat += "<b>Strength	   :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
+	dat += "<b>Perception  :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
+	dat += "<b>Endurance   :</b> <a href='?_src_=prefs;preference=special_e;task=input'>[special_e]</a><BR>"
+	dat += "<b>Charisma    :</b> <a href='?_src_=prefs;preference=special_c;task=input'>[special_c]</a><BR>"
+	dat += "<b>Intelligence:</b> <a href='?_src_=prefs;preference=special_i;task=input'>[special_i]</a><BR>"
+	dat += "<b>Agility     :</b> <a href='?_src_=prefs;preference=special_a;task=input'>[special_a]</a><BR>"
+	dat += "<b>Luck        :</b> <a href='?_src_=prefs;preference=special_l;task=input'>[special_l]</a><BR>"
+	if (total>40)
+		dat += "<center>Maximum exceeded, please change until your total is at or below 40<center>"
+	else
+		dat += "<center><a href='?_src_=prefs;preference=special;task=close'>Done</a></center>"
+
+	user << browse(null, "window=preferences")
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>S.P.E.C.I.A.L</div>", 300, 400) //no reason not to reuse the occupation window, as it's cleaner that way
+	popup.set_window_options("can_close=0")
+	popup.set_content(dat.Join())
+	popup.open(0)
+	return
 
 /datum/preferences/proc/GetQuirkBalance()
 	var/bal = 0
@@ -1360,6 +1403,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				SetQuirks(user)
 		return TRUE
 
+	else if(href_list["preference"] == "special")
+		switch(href_list["task"])
+			if("close")
+				user << browse(null, "window=mob_occupation")
+				ShowChoices(user)
+			if("update")
+			if("reset")
+			else
+				SetSpecial(user)
+		return TRUE
+
 	switch(href_list["task"])
 		if("random")
 			switch(href_list["preference"])
@@ -1402,9 +1456,49 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if(href_list["preference"] in GLOB.preferences_custom_names)
 				ask_for_custom_name(user,href_list["preference"])
-
-
 			switch(href_list["preference"])
+				if("special_s")
+					var/new_point = input(user, "Choose Amount(1-9)", "Strength") as num|null
+					if(new_point)
+						special_s = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_p")
+					var/new_point = input(user, "Choose Amount(1-9)", "Perception") as num|null
+					if(new_point)
+						special_p = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_e")
+					var/new_point = input(user, "Choose Amount(1-9)", "Endurance") as num|null
+					if(new_point)
+						special_e = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_c")
+					var/new_point = input(user, "Choose Amount(1-9)", "Charisma") as num|null
+					if(new_point)
+						special_c = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_i")
+					var/new_point = input(user, "Choose Amount(1-9)", "Intelligence") as num|null
+					if(new_point)
+						special_i = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_a")
+					var/new_point = input(user, "Choose Amount(1-9)", "Agility") as num|null
+					if(new_point)
+						special_a = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
+				if("special_l")
+					var/new_point = input(user, "Choose Amount(1-9)", "Luck") as num|null
+					if(new_point)
+						special_l = max(min(round(text2num(new_point)), 9),1)
+					SetSpecial(user)
+					return 1
 				if("ghostform")
 					if(unlock_content)
 						var/new_form = input(user, "Thanks for supporting BYOND - Choose your ghostly form:","Thanks for supporting BYOND",null) as null|anything in GLOB.ghost_forms
@@ -2564,6 +2658,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.gender = gender
 	character.age = age
+	//special stuff
+	character.special_s = special_s
+	character.special_p = special_p
+	character.special_e = special_e
+	character.special_c = special_c
+	character.special_i = special_i
+//	if (character.special_i<3)
+//		character.dna.add_mutation(UNINTELLIGIBLE)
+	character.special_a = special_a
+	character.special_l = special_l
 
 	character.left_eye_color = left_eye_color
 	character.right_eye_color = right_eye_color
