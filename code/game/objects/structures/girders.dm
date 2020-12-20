@@ -11,6 +11,7 @@
 	max_integrity = 200
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_VERY_LIGHT_INSULATION
+	proj_pass_rate = 40
 
 /obj/structure/girder/examine(mob/user)
 	. = ..()
@@ -335,6 +336,7 @@
 	state = GIRDER_DISPLACED
 	girderpasschance = 25
 	max_integrity = 120
+	proj_pass_rate = 65
 
 /obj/structure/girder/reinforced
 	name = "reinforced girder"
@@ -342,6 +344,7 @@
 	state = GIRDER_REINF
 	girderpasschance = 0
 	max_integrity = 350
+	proj_pass_rate = 20
 
 
 

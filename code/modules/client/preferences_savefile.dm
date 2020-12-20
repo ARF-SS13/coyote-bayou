@@ -657,6 +657,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				continue
 			chosen_gear += path
 			gear_points -= init_cost
+	//special
+	S["special_s"]			>> special_s
+	S["special_p"]			>> special_p
+	S["special_e"]			>> special_e
+	S["special_c"]			>> special_c
+	S["special_i"]			>> special_i
+	S["special_a"]			>> special_a
+	S["special_l"]			>> special_l
 
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
@@ -690,6 +698,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	socks							= sanitize_inlist(socks, GLOB.socks_list)
 	socks_color						= sanitize_hexcolor(socks_color, 6, FALSE, initial(socks_color))
 	age								= sanitize_integer(age, AGE_MIN, AGE_MAX, initial(age))
+	special_s		= sanitize_integer(special_s, 1, 10, initial(special_s))
+	special_p		= sanitize_integer(special_p, 1, 10, initial(special_p))
+	special_e		= sanitize_integer(special_e, 1, 10, initial(special_e))
+	special_c		= sanitize_integer(special_c, 1, 10, initial(special_c))
+	special_i		= sanitize_integer(special_i, 1, 10, initial(special_i))
+	special_a		= sanitize_integer(special_a, 1, 10, initial(special_a))
+	special_l		= sanitize_integer(special_l, 1, 10, initial(special_l))
 	hair_color						= sanitize_hexcolor(hair_color, 6, FALSE)
 	facial_hair_color				= sanitize_hexcolor(facial_hair_color, 6, FALSE)
 	left_eye_color					= sanitize_hexcolor(left_eye_color, 6, FALSE)
@@ -890,6 +905,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_has_womb"], features["has_womb"])
 
 	WRITE_FILE(S["feature_ooc_notes"], features["ooc_notes"])
+
+	//special
+	WRITE_FILE(S["special_s"]		,special_s)
+	WRITE_FILE(S["special_p"]		,special_p)
+	WRITE_FILE(S["special_e"]		,special_e)
+	WRITE_FILE(S["special_c"]		,special_c)
+	WRITE_FILE(S["special_i"]		,special_i)
+	WRITE_FILE(S["special_a"]		,special_a)
+	WRITE_FILE(S["special_l"]		,special_l)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

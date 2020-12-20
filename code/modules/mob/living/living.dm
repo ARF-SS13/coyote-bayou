@@ -486,6 +486,19 @@
 	update_canmove()
 */
 
+/mob/living/proc/surrender()
+	set name = "Surrender"
+	set category = "IC"
+
+	var/mob/living/M
+	if(CHECK_MOBILITY(M, MOBILITY_STAND))
+		if(!lying)
+			lay_down()
+
+		Knockdown(200)
+		visible_message("<span class='big bold'>[src] surrenders!</span>")
+		playsound(loc, 'sound/f13effects/surrender.ogg', 50, 1)
+
 //Recursive function to find everything a mob is holding. Really shitty proc tbh.
 /mob/living/get_contents()
 	var/list/ret = list()
