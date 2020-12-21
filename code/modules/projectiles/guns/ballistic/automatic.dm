@@ -622,7 +622,7 @@
 	bayonet_state = "lasmusket"
 	can_attachments = TRUE
 	knife_x_offset = 22
-	knife_y_offset = 12
+	knife_y_offset = 21
 	burst_size = 1
 	automatic_burst_overlay = FALSE
 	actions_types = list()
