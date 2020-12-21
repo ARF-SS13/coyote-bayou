@@ -257,6 +257,7 @@ GLOBAL_LIST_INIT(ncr_ranger_positions, list(
 
 GLOBAL_LIST_INIT(ncr_positions, list(
     "NCR Lieutenant",
+	"NCR First Sergeant",
     "NCR Sergeant",
     "NCR Corporal",
 	"NCR Specialist",
