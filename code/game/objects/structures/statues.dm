@@ -371,6 +371,6 @@
 		overlays += O
 		name = "[initial(name)] ([Dogtags.registered_name])"
 	if(Helmet)
-		var/icon/O = new('icons/mob/head.dmi', icon_state = "[Helmet.icon_state]")
+		var/icon/O = new('icons/mob/clothing/head.dmi', icon_state = "[Helmet.icon_state]")
 		O.Shift(SOUTH, 6)
 		overlays += O

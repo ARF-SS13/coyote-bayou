@@ -710,11 +710,15 @@
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box,
-		/obj/item/toy/gun,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/ballistic/automatic/magrifle/pistol,
-		/obj/item/gun/energy/disabler,
-		/obj/item/gun/energy/taser
+		/obj/item/gun/energy/laser/solar,
+		/obj/item/gun/energy/laser/pistol,
+		/obj/item/gun/energy/laser/plasma/pistol,
+		/obj/item/gun/energy/laser/plasma/glock,
+		/obj/item/gun/energy/laser/plasma/glock/extended,
+		/obj/item/gun/energy/laser/wattz,
+		/obj/item/gun/energy/laser/wattz/magneto,
+		/obj/item/gun/energy/laser/plasma/alien,
+		/obj/item/stock_parts/cell/ammo/ec
 		))
 
 /obj/item/storage/belt/holster/full/PopulateContents()
