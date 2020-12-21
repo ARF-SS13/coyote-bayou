@@ -14,7 +14,7 @@
 	anchored = TRUE
 	density = TRUE
 	max_integrity = 100
-	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
+//	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	var/bar_material = METAL
 
 /obj/structure/barricade/deconstruct(disassembled = TRUE)
@@ -34,25 +34,17 @@
 			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 			if(I.use_tool(src, user, 40, volume=40))
 				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
+	else if(istype(I, /obj/item/stack/ore/glass) && bar_material == SAND)
+		if(obj_integrity < max_integrity)
+			to_chat(user, "<span class='notice'>You begin packing sand into the damaged \the [src], repairing them...</span>")
+			if(do_after(user, 30, target = src))
+				obj_integrity = clamp(obj_integrity + 30, 0, max_integrity)
+				user.visible_message("<span class='notice'>[user] repairs [src] with some sand.</span>","<span class='notice'>You repair [src] with some sand.</span>")
+				I.use(1)
+		else
+			to_chat(user, "<span class='notice'>The [src] doesn't need to be repaired.</span>")
 	else
 		return ..()
-
-/obj/structure/barricade/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
-	if(locate(/obj/structure/barricade) in get_turf(mover))
-		return 1
-	else if(istype(mover, /obj/item/projectile))
-		if(!anchored)
-			return 1
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
-		if(prob(proj_pass_rate))
-			return 1
-		return 0
-	else
-		return !density
-
-
 
 /////BARRICADE TYPES///////
 

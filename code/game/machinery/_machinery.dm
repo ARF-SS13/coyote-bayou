@@ -130,6 +130,8 @@ Class Procs:
 	var/fair_market_price = 69
 	var/market_verb = "Customer"
 	var/payment_department = ACCOUNT_ENG
+	var/barricade = TRUE //if true, acts as barricade
+	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
 	if(!armor)
@@ -288,6 +290,21 @@ Class Procs:
 
 /obj/machinery/proc/nap_violation(mob/violator)
 	return
+
+/obj/machinery/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+	if(barricade == FALSE)
+		return !density
+	else if(density == FALSE)
+		return 1
+	else if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+		if(prob(proj_pass_rate))
+			return 1
+		return 0
+	else
+		return !density
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 

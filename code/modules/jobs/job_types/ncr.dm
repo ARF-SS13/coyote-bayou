@@ -71,7 +71,7 @@ Captain
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-	display_order = JOB_DISPLAY_ORDER_CAPTAIN
+	display_order = JOB_DISPLAY_ORDER_CAPTAIN_NCR
 	outfit = /datum/outfit/job/ncr/f13captain
 
 	loadout_options = list(
@@ -257,7 +257,7 @@ First Sergeant
 	name = "NCR First Sergeant"
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/SGT
+	accessory =     /obj/item/clothing/accessory/ncr/FSGT
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(

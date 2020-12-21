@@ -513,6 +513,13 @@
 	name = "medical armband (O-1 Medical Officer)"
 	desc = "An armband worn by NCR Medical Officers to diplay their rank and specialty. This one is white."
 
+/obj/item/clothing/accessory/ncr/FSGT
+	name = "(E-8) First Sergeant rank pins"
+	desc = "A trooper holding the rank of Staff Sergeant should wear this."
+	icon_state = "ncrenlisted"
+	item_color = "ncrenlisted"
+	minimize_when_attached = TRUE
+
 /obj/item/clothing/accessory/ncr/SSGT
     name = "(E-6) Staff Sergeant rank pins"
     desc = "A trooper holding the rank of Staff Sergeant should wear this."
@@ -539,7 +546,7 @@
     minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/ncr/SPC
-    name = "(E-3) Private First Class rank pins"
+    name = "(E-4) Specialist rank pins"
     desc = "A Specialist should wear this."
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
