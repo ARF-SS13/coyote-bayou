@@ -318,7 +318,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			result = A.examine_more(src)
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
-
+	if(!result)
+		stack_trace("[A] returned invalid examinate result!")
 	to_chat(src, result.Join("\n"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 

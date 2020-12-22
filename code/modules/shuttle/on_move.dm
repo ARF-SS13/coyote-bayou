@@ -75,7 +75,9 @@ All ShuttleMove procs go here
 
 	if(rotation)
 		shuttleRotate(rotation) //see shuttle_rotate.dm
-
+	if(proximity_monitor)
+		proximity_monitor.HandleMove()
+	
 	return TRUE
 
 /turf/proc/lateShuttleMove(turf/oldT)
@@ -363,7 +365,7 @@ All ShuttleMove procs go here
 		LateInitialize()
 
 /obj/structure/ladder/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
-	if (resistance_flags & INDESTRUCTIBLE)
+	if (!move_me)
 		// simply don't be moved
 		return FALSE
 	return ..()

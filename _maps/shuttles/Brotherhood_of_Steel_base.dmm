@@ -1,29 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /turf/closed/wall/f13/vault,
-/area/f13/brotherhood)
-"b" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/area/shuttle/bos_foyer)
 "c" = (
 /turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
-"d" = (
+/area/shuttle/bos_foyer)
+"e" = (
 /obj/structure/ladder/unbreakable{
-	anchored = 1;
 	height = 2;
-	id = "NE"
+	id = "SE";
+	move_me = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
-"e" = (
-/obj/machinery/computer/shuttle/bos,
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/area/shuttle/bos_foyer)
 "f" = (
 /obj/machinery/light{
 	dir = 8;
@@ -31,31 +20,45 @@
 	},
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "SW"
+	id = "SW";
+	move_me = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
-"g" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/area/shuttle/bos_foyer)
 "h" = (
 /turf/template_noop,
 /area/template_noop)
 "i" = (
 /obj/item/flag/bos,
 /turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/area/shuttle/bos_foyer)
 "j" = (
-/obj/docking_port/mobile/bos,
+/obj/docking_port/mobile/elevator/bos,
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
+/area/shuttle/bos_foyer)
+"u" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NW";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"w" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NE";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"D" = (
+/obj/machinery/computer/shuttle/bos,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
 
 (1,1,1) = {"
 a
@@ -84,8 +87,8 @@ a
 (4,1,1) = {"
 a
 c
+u
 c
-b
 f
 a
 "}
@@ -99,10 +102,10 @@ a
 "}
 (6,1,1) = {"
 a
+D
 c
 c
-d
-g
+c
 a
 "}
 (7,1,1) = {"
@@ -116,7 +119,7 @@ a
 (8,1,1) = {"
 a
 i
-c
+w
 c
 e
 a

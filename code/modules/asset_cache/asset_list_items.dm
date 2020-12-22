@@ -334,58 +334,41 @@
 	name = "design"
 
 /datum/asset/spritesheet/research_designs/register()
-	for (var/path in subtypesof(/datum/design))
-		var/datum/design/D = path
+	for (var/id in SSresearch.techweb_designs)
+		var/datum/design/D = SSresearch.techweb_designs[id]
+		var/asset_path = D.get_asset_path()
+		if(sprites[asset_path])
+			continue
+		// construct the icon and slap it into the resource cache
+		var/atom/item = initial(D.build_path)
+		if (!ispath(item, /atom))
+			// biogenerator outputs to beakers by default
+			if (initial(D.build_type) & BIOGENERATOR)
+				item = /obj/item/reagent_containers/glass/beaker/large
+			else
+				continue  // shouldn't happen, but just in case
 
-		var/icon_file
-		var/icon_state
-		var/icon/I
+		// circuit boards become their resulting machines or computers
+		if (ispath(item, /obj/item/circuitboard))
+			var/obj/item/circuitboard/C = item
+			var/machine = initial(C.build_path)
+			if (machine)
+				item = machine
+		var/icon_file = initial(item.icon)
+		var/icon/I = icon(icon_file, initial(item.icon_state), SOUTH)
 
-		if(initial(D.research_icon) && initial(D.research_icon_state)) //If the design has an icon replacement skip the rest
-			icon_file = initial(D.research_icon)
-			icon_state = initial(D.research_icon_state)
-			if(!(icon_state in icon_states(icon_file)))
-				warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
-				continue
-			I = icon(icon_file, icon_state, SOUTH)
+		// computers (and snowflakes) get their screen and keyboard sprites
+		if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
+			var/obj/machinery/computer/C = item
+			var/screen = initial(C.icon_screen)
+			var/keyboard = initial(C.icon_keyboard)
+			var/all_states = icon_states(icon_file)
+			if (screen && (screen in all_states))
+				I.Blend(icon(icon_file, screen, SOUTH), ICON_OVERLAY)
+			if (keyboard && (keyboard in all_states))
+				I.Blend(icon(icon_file, keyboard, SOUTH), ICON_OVERLAY)
 
-		else
-			// construct the icon and slap it into the resource cache
-			var/atom/item = initial(D.build_path)
-			if (!ispath(item, /atom))
-				// biogenerator outputs to beakers by default
-				if (initial(D.build_type) & BIOGENERATOR)
-					item = /obj/item/reagent_containers/glass/beaker/large
-				else
-					continue  // shouldn't happen, but just in case
-
-			// circuit boards become their resulting machines or computers
-			if (ispath(item, /obj/item/circuitboard))
-				var/obj/item/circuitboard/C = item
-				var/machine = initial(C.build_path)
-				if (machine)
-					item = machine
-
-			icon_file = initial(item.icon)
-			icon_state = initial(item.icon_state)
-
-			if(!(icon_state in icon_states(icon_file)))
-				warning("design [D] with icon '[icon_file]' missing state '[icon_state]'")
-				continue
-			I = icon(icon_file, icon_state, SOUTH)
-
-			// computers (and snowflakes) get their screen and keyboard sprites
-			if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
-				var/obj/machinery/computer/C = item
-				var/screen = initial(C.icon_screen)
-				var/keyboard = initial(C.icon_keyboard)
-				var/all_states = icon_states(icon_file)
-				if (screen && (screen in all_states))
-					I.Blend(icon(icon_file, screen, SOUTH), ICON_OVERLAY)
-				if (keyboard && (keyboard in all_states))
-					I.Blend(icon(icon_file, keyboard, SOUTH), ICON_OVERLAY)
-
-		Insert(initial(D.id), I)
+		Insert(asset_path, I)
 	return ..()
 
 /datum/asset/spritesheet/vending
@@ -400,7 +383,6 @@
 		var/icon_file = initial(item.icon)
 		var/icon_state = initial(item.icon_state)
 		var/icon/I
-
 		var/icon_states_list = icon_states(icon_file)
 		if(icon_state in icon_states_list)
 			I = icon(icon_file, icon_state, SOUTH)
@@ -408,13 +390,7 @@
 			if (!isnull(c) && c != "#FFFFFF")
 				I.Blend(c, ICON_MULTIPLY)
 		else
-			var/icon_states_string
-			for (var/an_icon_state in icon_states_list)
-				if (!icon_states_string)
-					icon_states_string = "[json_encode(an_icon_state)](\ref[an_icon_state])"
-				else
-					icon_states_string += ", [json_encode(an_icon_state)](\ref[an_icon_state])"
-			stack_trace("[item] does not have a valid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state]), icon_states=[icon_states_string]")
+			//stack_trace("[item] does not have a valid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state])")
 			I = icon('icons/turf/floors.dmi', "", SOUTH)
 
 		var/imgid = replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-")
@@ -456,12 +432,57 @@
 	InsertAll("", 'icons/obj/mafia.dmi')
 	..()
 
+// Representative icons for each research design
+/datum/asset/spritesheet/research_designs
+	name = "design"
+
+/datum/asset/spritesheet/research_designs/register()
+	var/list/used_asset_paths = list()
+	for (var/id in SSresearch.techweb_designs)
+		var/datum/design/D = SSresearch.techweb_designs[id]
+		var/asset_path = D.get_asset_path()
+		if(asset_path in used_asset_paths)
+			continue
+		used_asset_paths += asset_path
+		// construct the icon and slap it into the resource cache
+		var/atom/item = initial(D.build_path)
+		if (!ispath(item, /atom))
+			// biogenerator outputs to beakers by default
+			if (initial(D.build_type) & BIOGENERATOR)
+				item = /obj/item/reagent_containers/glass/beaker/large
+			else
+				continue  // shouldn't happen, but just in case
+
+		// circuit boards become their resulting machines or computers
+		if (ispath(item, /obj/item/circuitboard))
+			var/obj/item/circuitboard/C = item
+			var/machine = initial(C.build_path)
+			if (machine)
+				item = machine
+		var/icon_file = initial(item.icon)
+		var/icon/I = icon(icon_file, initial(item.icon_state), SOUTH)
+
+		// computers (and snowflakes) get their screen and keyboard sprites
+		if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
+			var/obj/machinery/computer/C = item
+			var/screen = initial(C.icon_screen)
+			var/keyboard = initial(C.icon_keyboard)
+			var/all_states = icon_states(icon_file)
+			if (screen && (screen in all_states))
+				I.Blend(icon(icon_file, screen, SOUTH), ICON_OVERLAY)
+			if (keyboard && (keyboard in all_states))
+				I.Blend(icon(icon_file, keyboard, SOUTH), ICON_OVERLAY)
+
+		Insert(asset_path, I)
+	return ..()
+
+
 /datum/asset/spritesheet/loadout
 	name = "loadout"
 
 /datum/asset/spritesheet/loadout/register()
 	var/list/outfits = list()
-	var/list/itypes = list()
+	var/list/ics = list() // We can afford the processing here to avoid using unnecessary bandwidth.
 	for(var/j in subtypesof(/datum/job))
 		var/datum/job/J = new j
 		for (var/D in J.loadout_options)
@@ -469,31 +490,38 @@
 				continue
 			outfits += D
 			var/datum/outfit/O = new D
-			itypes |= O.get_all_possible_item_paths()
-	for (var/k in itypes)
-		var/obj/item = k
-		if (!ispath(item, /obj/item))
-			continue
-
-		var/icon_file = initial(item.icon)
-		var/icon_state = initial(item.icon_state)
+			for(var/itemtype in O.get_all_possible_item_paths())
+				var/obj/item/I = itemtype
+				if(!istype(I))
+					continue
+				if(isnull(initial(I.icon)))
+					world.log << "MISSING ICON FOR [initial(I.name)] IN [j]"
+					continue
+				if(isnull(initial(I.icon_state)))
+					world.log << "MISSING ICON STATE FOR [itemtype]"
+					continue
+				var/ic_string = "[initial(I.icon)]*[initial(I.icon_state)]" // delimiter must be illegal to use in filenames
+				var/c = initial(I.color)
+				if(!isnull(c) && c != "#ffffff")
+					ic_string += "*[c]"
+				ics |= ic_string
+	for (var/i in ics)
+		var/list/tmp = splittext(i, "*")
+		if(length(tmp) < 2) continue
+		var/icon_file = tmp[1]
+		var/icon_state = tmp[2]
+		var/c = LAZYACCESS(tmp, 3)
+		var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]-[icon_state]"
 		var/icon/I
 
 		var/icon_states_list = icon_states(icon_file)
 		if(icon_state in icon_states_list)
 			I = icon(icon_file, icon_state, SOUTH)
-			var/c = initial(item.color)
-			if (!isnull(c) && c != "#FFFFFF")
+			if (!isnull(c) && uppertext(c) != "#FFFFFF")
 				I.Blend(c, ICON_MULTIPLY)
+				icon_string += "-[c]"
 		else
-			var/icon_states_string
-			for (var/an_icon_state in icon_states_list)
-				if (!icon_states_string)
-					icon_states_string = "[json_encode(an_icon_state)](\ref[an_icon_state])"
-				else
-					icon_states_string += ", [json_encode(an_icon_state)](\ref[an_icon_state])"
-			stack_trace("[item] does not have a valid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state]), icon_states=[icon_states_string]")
+			stack_trace("Invalid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state])")
 			I = icon('icons/turf/floors.dmi', "", SOUTH)
-		var/imgid = replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-")
-		Insert(imgid, I)
+		Insert(icon_string, I)
 	return ..()
