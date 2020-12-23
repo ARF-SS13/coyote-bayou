@@ -121,3 +121,14 @@
 
 /obj/item/ammo_box/magazine/m10mm_p90/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/m22smg
+	name = "toploader magazine (.22lr)"
+	icon_state = "smg22"
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = "22lr"
+	max_ammo = 180
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m22smg/empty
+	start_empty = 1

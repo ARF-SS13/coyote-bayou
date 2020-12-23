@@ -104,3 +104,13 @@
 
 /obj/item/ammo_box/magazine/m762/ext/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/m473
+	name = "g11 magazine (4.73mm)"
+	icon_state = "473mm"
+	caliber = "473mm"
+	max_ammo = 50
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m473/empty
+	start_empty = 1

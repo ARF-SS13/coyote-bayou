@@ -642,7 +642,7 @@
 
 /datum/crafting_recipe/lmg
 	name = "R84 LMG"
-	result = /obj/item/gun/ballistic/automatic/lmg
+	result = /obj/item/gun/ballistic/automatic/r84
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
@@ -656,7 +656,7 @@
 
 /datum/crafting_recipe/lmg_lim
 	name = "R84 LMG"
-	result = /obj/item/gun/ballistic/automatic/lmg
+	result = /obj/item/gun/ballistic/automatic/r84
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
