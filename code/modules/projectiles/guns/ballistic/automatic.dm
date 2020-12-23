@@ -1,5 +1,6 @@
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = 0
 	var/alarmed = 0
 	var/select = 1
 	var/automatic_burst_overlay = TRUE
@@ -1130,7 +1131,7 @@
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 
-/obj/item/gun/ballistic/automatic/mp5
+/obj/item/gun/ballistic/automatic/sten
 	name = "sten gun"
 	desc = "A low-cost 9mm submachine gun that has seen use throughout the world since WW2."
 	icon_state = "sten"

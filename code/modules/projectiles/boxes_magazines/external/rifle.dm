@@ -109,6 +109,7 @@
 	name = "g11 magazine (4.73mm)"
 	icon_state = "473mm"
 	caliber = "473mm"
+	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
 	multiple_sprites = 2
 
