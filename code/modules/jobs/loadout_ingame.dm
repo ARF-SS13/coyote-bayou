@@ -57,6 +57,9 @@
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"
 
+/obj/item/loadout_token/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 
 /obj/item/loadout_token/attack_self(var/mob/user)

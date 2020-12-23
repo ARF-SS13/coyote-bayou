@@ -459,7 +459,7 @@
 
 /obj/item/gun/ballistic/shotgun/neostead/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
+	. += "<span class='notice'>Alt-click to switch tubes.</span>"
 
 /obj/item/gun/ballistic/shotgun/neostead/Initialize()
 	. = ..()
@@ -467,9 +467,8 @@
 		alternate_magazine = new mag_type(src)
 
 /obj/item/gun/ballistic/shotgun/neostead/attack_self(mob/living/user)
-	if(!chambered && magazine.contents.len)
-		pump()
-	else
+	. = ..()
+	if(!magazine.contents.len)
 		toggle_tube(user)
 
 /obj/item/gun/ballistic/shotgun/neostead/proc/toggle_tube(mob/living/user)
@@ -484,11 +483,9 @@
 		to_chat(user, "You switch to tube A.")
 
 /obj/item/gun/ballistic/shotgun/neostead/AltClick(mob/living/user)
-	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
-	pump()
-	return TRUE
+	toggle_tube(user)
 
 
 /obj/item/gun/ballistic/shotgun/remington

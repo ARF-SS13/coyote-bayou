@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	caliber = list("shotgun")
+	caliber = "shotgun"
 	max_ammo = 4
 	multiload = 0
 
@@ -67,20 +67,20 @@
 /obj/item/ammo_box/magazine/internal/shot/tube44
 	name = ".44 magnum internal tube magazine" //trail carbine
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = list("44")
+	caliber = "44"
 	max_ammo = 8
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list("357", "38")
+	caliber = "357"
 	max_ammo = 10
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube4570
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
-	caliber = list("4570")
+	caliber = "4570"
 	max_ammo = 8
 	multiload = 1

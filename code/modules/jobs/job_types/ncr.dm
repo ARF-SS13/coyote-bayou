@@ -227,7 +227,7 @@ Lieutenant
 	name = "Support Officer"
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t45b
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/ncr
-	suit_store = 	/obj/item/gun/ballistic/automatic/lmg
+	suit_store = 	/obj/item/gun/ballistic/automatic/r84
 	uniform = 		/obj/item/clothing/under/f13/recon
 	belt = 			/obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
@@ -255,6 +255,7 @@ First Sergeant
 
 /datum/outfit/job/ncr/f13firstsergeant
 	name = "NCR First Sergeant"
+	jobtype = /datum/job/ncr/f13firstsergeant
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/FSGT
@@ -453,7 +454,7 @@ Specialist
 	name = "Support"
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t45b
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/ncr
-	suit_store = 	/obj/item/gun/ballistic/automatic/lmg
+	suit_store = 	/obj/item/gun/ballistic/automatic/r84
 	uniform = 		/obj/item/clothing/under/f13/recon
 	belt = 			/obj/item/storage/belt/military/assault/ncr
 	gloves = 		/obj/item/clothing/gloves/f13/leather

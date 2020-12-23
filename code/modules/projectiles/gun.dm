@@ -69,10 +69,13 @@
 	var/obj/item/flashlight/gun_light
 	var/can_flashlight = FALSE
 	var/gunlight_state = "flight"
+
 	var/obj/item/kitchen/knife/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
 	var/bayonet_state = "bayonet"
+
+	var/mutable_appearance/scope_overlay
 	var/can_scope = FALSE
 	var/scope_state = "scope"
 
@@ -93,9 +96,9 @@
 	var/scopestate = "scope"
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
+	var/isenergy = null
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
-
 
 	//Zooming
 	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
@@ -121,6 +124,7 @@
 		alight = new (src)
 	if(zoomable)
 		azoom = new (src)
+	build_zooming()
 
 /obj/item/gun/Destroy()
 	if(pin)
@@ -166,8 +170,12 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*click*</span>")
-	playsound(src, "gun_dry_fire", 30, 1)
+	if (isenergy == TRUE)
+		to_chat(user, "<span class='danger'>*power failure*</span>")
+		playsound(src, 'sound/f13weapons/noammoenergy.ogg', 30, 1)
+	else
+		to_chat(user, "<span class='danger'>*click*</span>")
+		playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(recoil)
@@ -323,6 +331,9 @@
 
 	if(on_cooldown())
 		return
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return
 	firing = TRUE
 	. = do_fire(target, user, message, params, zone_override, bonus_spread, stam_cost)
 	firing = FALSE
@@ -407,7 +418,7 @@
 	update_icon()
 	return TRUE
 
-/obj/item/gun/attack(mob/living/M, mob/user)
+/obj/item/gun/attack(mob/M as mob, mob/user)
 	if(user.a_intent == INTENT_HARM) //Flogging
 		if(bayonet)
 			M.attackby(bayonet, user)
@@ -418,8 +429,38 @@
 /obj/item/gun/attack_obj(obj/O, mob/user)
 	if(user.a_intent == INTENT_HARM)
 		if(bayonet)
-			return O.attackby(bayonet, user)
+			O.attackby(bayonet, user)
+			return
 	return ..()
+
+/obj/item/gun/proc/combine_items(mob/user, obj/item/gun/A, obj/item/gun/B, obj/item/gun/C)
+
+//	if (B.bullet_speed)
+//		C.desc += " It has an improved barrel installed."
+//		C.projectile_speed -= 0.15
+	if (B.recoil_decrease)
+		C.desc += " It has a recoil compensator installed."
+		if (C.spread > 8)
+			C.spread -= 8
+		else
+			C.spread = 0
+
+	for(var/obj/item/D in B.contents)//D - old item
+		if(istype(D,/obj/item/attachments))
+			user.transferItemToLoc(D,C)//old attmns to new gun
+			if(istype(D,/obj/item/attachments/bullet_speed))
+				C.bullet_speed = D
+			if(istype(D,/obj/item/attachments/recoil_decrease))
+				C.recoil_decrease = D
+		if(istype(D,/obj/item/ammo_box/magazine))
+			for(var/obj/item/ammo_box/magazine/X in C.contents)
+				var/obj/item/ammo_box/magazine/oldmag = D
+				X.stored_ammo = oldmag.stored_ammo
+				X.contents = oldmag.contents
+
+	qdel(A)
+	qdel(B)
+	user.put_in_hand(C,user.active_hand_index)
 
 /obj/item/gun/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)
@@ -454,6 +495,81 @@
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
 		add_overlay(knife_overlay, TRUE)
+	else if(istype(I, /obj/item/attachments/scope))
+		if(!can_scope)
+			return ..()
+		//trail carbine, brush gun, cowboy repeater, .44 revolver, rangemaster, hunting rifle
+		if (istype(src, /obj/item/gun/ballistic/revolver/m29))//weapons with existing scoped variants
+			combine_items(user,I,src, new /obj/item/gun/ballistic/revolver/m29/scoped)//44 revolver
+			return
+		if (istype(src, /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy))
+			combine_items(user,I,src, new /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped)//cowboy repeater
+			return
+		if (istype(src, /obj/item/gun/ballistic/shotgun/automatic/hunting/trail))
+			combine_items(user,I,src, new /obj/item/gun/ballistic/shotgun/automatic/hunting/trail)//trail carbine
+			return
+		if (istype(src, /obj/item/gun/ballistic/shotgun/automatic/hunting/brush))
+			combine_items(user,I,src, new /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped)//brush gun
+			return
+		if (istype(src, /obj/item/gun/ballistic/automatic/rangemaster))
+			combine_items(user,I,src, new /obj/item/gun/ballistic/automatic/rangemaster/scoped)//rangemaster
+			return
+		if (istype(src, /obj/item/gun/ballistic/shotgun/remington))
+			combine_items(user,I,src, new /obj/item/gun/ballistic/shotgun/remington/scoped)//hunting rifle
+			return
+//		if (istype(src,/obj/item/gun/ballistic/shotgun/ww2rifle))
+//			combine_items(user,I,src, new /obj/item/gun/ballistic/shotgun/ww2rifle/scoped)//kar98
+		var/obj/item/attachments/scope/C = I
+		if(!scope)
+			if(!user.transferItemToLoc(I, src))
+				return
+			to_chat(user, "<span class='notice'>You attach \the [C] to the top of \the [src].</span>")
+			scope = C
+			fire_delay += 3
+			src.zoomable = TRUE
+			src.zoom_amt = 10
+			src.zoom_out_amt = 13
+			src.build_zooming()
+			if(scope.icon_state in icon_states('icons/obj/guns/scopes.dmi'))
+				scope_overlay = scope.icon_state
+			var/icon/scope_icons = 'icons/obj/guns/scopes.dmi'
+			scope_overlay = mutable_appearance(scope_icons, scopestate)
+			scope_overlay.pixel_x = scope_x_offset
+			scope_overlay.pixel_y = scope_y_offset
+			add_overlay(scope_overlay, TRUE)
+	else if(istype(I, /obj/item/attachments/recoil_decrease))
+		var/obj/item/attachments/recoil_decrease/R = I
+		if(!recoil_decrease && can_attachments)
+			if(!user.transferItemToLoc(I, src))
+				return
+			recoil_decrease = R
+			src.desc += " It has a recoil compensator installed."
+			if (src.spread > 8)
+				src.spread -= 8
+			else
+				src.spread = 0
+			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
+/*
+	else if(istype(I, /obj/item/attachments/bullet_speed))
+		var/obj/item/attachments/bullet_speed/B = I
+		if(!bullet_speed && can_attachments)
+			if(!user.transferItemToLoc(I, src))
+				return
+			bullet_speed = B
+			src.desc += " It has an improved barrel installed."
+			src.projectile_speed -= 0.15
+			to_chat(user, "<span class='notice'>You attach \the [B] to \the [src].</span>")
+*/
+	else if(istype(I, /obj/item/attachments/burst_improvement))
+		var/obj/item/attachments/burst_improvement/T = I
+		if(!burst_improvement && burst_size > 1 && can_attachments)
+			if(!user.transferItemToLoc(I, src))
+				return
+			burst_improvement = T
+			src.desc += " It has a modified burst cam installed."
+			src.burst_size += 1
+			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
+			add_overlay(scope_overlay, TRUE)
 	else if(istype(I, /obj/item/screwdriver))
 		if(gun_light)
 			var/obj/item/flashlight/seclite/S = gun_light
@@ -468,7 +584,17 @@
 			var/obj/item/kitchen/knife/K = bayonet
 			K.forceMove(get_turf(user))
 			bayonet = null
+			cut_overlay(knife_overlay, TRUE)
 			update_icon()
+		if(scope)
+			to_chat(user, "<span class='notice'>You unscrew the scope from \the [src].</span>")
+			var/obj/item/attachments/scope/C = scope
+			C.forceMove(get_turf(user))
+			src.zoomable = FALSE
+			azoom.Remove(user)
+			scope = null
+			cut_overlay(scope_overlay, TRUE)
+			scope_overlay = null
 	else
 		return ..()
 
@@ -503,6 +629,7 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/*
 /obj/item/gun/update_overlays()
 	. = ..()
 	if(gun_light)
@@ -524,7 +651,8 @@
 		knife_overlay = mutable_appearance(bayonet_icons, state)
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
-		. += knife_overlay
+		add_overlay(knife_overlay, TRUE)
+*/
 
 /obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)
@@ -584,6 +712,7 @@
 	name = "Toggle Scope"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
+	var/obj/item/gun/gun = null
 
 /datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
 	. = ..()
@@ -627,6 +756,15 @@
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
+
+//Proc, so that gun accessories/scopes/etc. can easily add zooming.
+/obj/item/gun/proc/build_zooming()
+	if(azoom)
+		return
+
+	if(zoomable)
+		azoom = new()
+		azoom.gun = src
 
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)
