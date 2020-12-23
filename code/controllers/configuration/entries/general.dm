@@ -216,7 +216,7 @@
 	config_entry_value = "https://desertrosefallout13.boards.net"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "http://www.tgstation13.org/wiki/Rules"
+	config_entry_value = "https://discord.gg/NGpP36m"
 
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://github.com/Superballs69/Desert-Rose-Rebase"

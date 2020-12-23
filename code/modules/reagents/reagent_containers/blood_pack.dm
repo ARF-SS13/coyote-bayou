@@ -4,6 +4,7 @@
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
+	w_class = WEIGHT_CLASS_SMALL
 	reagent_flags = DRAINABLE
 	var/blood_type = null
 	var/labelled = 0

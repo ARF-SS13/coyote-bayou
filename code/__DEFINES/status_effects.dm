@@ -52,6 +52,10 @@
 
 #define STATUS_EFFECT_PARALYZED /datum/status_effect/incapacitating/paralyzed //the affected is unable to move, use items, or stand up.
 
+#define STATUS_EFFECT_WEAPON_DRAW_DELAYED /datum/status_effect/incapacitating/weapon_draw_delayed //The affected can't fire a weapon
+
+#define STATUS_EFFECT_THROW_DELAYED /datum/status_effect/incapacitating/throw_delayed //The affected can't throw something
+
 /// The affected is unable to use or pickup items
 #define STATUS_EFFECT_DAZED /datum/status_effect/incapacitating/dazed
 

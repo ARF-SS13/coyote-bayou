@@ -200,6 +200,15 @@
 	can_attachments = TRUE
 	extra_damage = 3
 
+/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
+	name = "beretta M93R"
+	desc = "A rare select fire variant of the M93R."
+	icon_state = "m93r"
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	burst_size = 3
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	automatic_burst_overlay = TRUE
+
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "sig p220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol, the Sig Sauer benefits from compact and lightweight construction."
@@ -257,3 +266,16 @@
 	fire_delay = 2
 	extra_damage = 8
 	extra_penetration = 8
+
+/obj/item/gun/ballistic/automatic/pistol/pistol22
+	name = ".22 pistol"
+	desc = "The silenced .22 pistol is a .22LR round handgun with an integrated silencer."
+	icon_state = "22pistol"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	w_class = WEIGHT_CLASS_SMALL
+	fire_delay = 0
+	can_suppress = FALSE
+	can_unsuppress = FALSE
+	suppressed = 1
+	fire_sound = 'sound/f13weapons/22pistol.ogg'
+	can_attachments = TRUE
