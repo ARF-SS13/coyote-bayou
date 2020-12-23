@@ -205,22 +205,22 @@
 
 /obj/screen/alert/hot
 	name = "Too Hot"
-	desc = "The air around you is pretty toasty! Consider putting on some insulating clothing, or moving to a cooler area."
+	desc = "The air around you is painfully hot! Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "hot"
 
 /obj/screen/alert/cold
 	name = "Too Cold"
-	desc = "The air around you is pretty cold! Consider wearing a coat, or moving to a warmer area."
+	desc = "The air around you is painfully cold! Get somewhere warmer and take off any insulating clothing like a space suit."
 	icon_state = "cold"
 
 /obj/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating! Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating! Consider putting on some insulating clothing, or moving to a cooler area."
 	icon_state = "sweat"
 
 /obj/screen/alert/shiver
 	name = "Shivering"
-	desc = "You're shivering! Get somewhere warmer and take off any insulating clothing like a space suit." 
+	desc = "You're shivering! Consider wearing a coat, or moving to a warmer area."
 
 /obj/screen/alert/lowpressure
 	name = "Low Pressure"
