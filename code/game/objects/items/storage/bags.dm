@@ -389,10 +389,10 @@
  */
 
 /obj/item/storage/bag/chemistry
-	name = "chemistry bag"
+	name = "medical bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bag"
-	desc = "A bag for storing pills, patches, and bottles."
+	desc = "A bag for holding a variety of medical supplies."
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
 	resistance_flags = FLAMMABLE
 
@@ -402,7 +402,7 @@
 	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_volume = STORAGE_VOLUME_CHEMISTRY_BAG
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
 
 /*
  *  Biowaste bag (mostly for xenobiologists)
@@ -412,7 +412,7 @@
 	name = "bio bag"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "biobag"
-	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
+	desc = "A well-insulated bag for the safe carrying of organs, limbs and IV bags."
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
 	resistance_flags = FLAMMABLE
 
@@ -420,10 +420,10 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL //Allows you to pick up Lungs, Liver, and Stomach
-	STR.max_combined_w_class = 200
-	STR.max_items = 25
+	STR.max_combined_w_class = 30
+	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/slime_extract, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart))
+	STR.can_hold = typecacheof(list(/obj/item/slime_extract, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart))
 	STR.cant_hold = typecacheof(list(/obj/item/organ/brain, /obj/item/organ/liver/cybernetic, /obj/item/organ/heart/cybernetic, /obj/item/organ/lungs/cybernetic, /obj/item/organ/tongue/cybernetic, /obj/item/organ/ears/cybernetic, /obj/item/organ/eyes/robotic, /obj/item/organ/cyberimp))
 
 /obj/item/storage/bag/bio/holding
