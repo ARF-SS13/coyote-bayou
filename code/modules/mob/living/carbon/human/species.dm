@@ -1974,7 +1974,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.adjust_bodytemperature((thermal_protection+1)*natural + min(thermal_protection * (loc_temp - H.bodytemperature) / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX))
 			else //we're sweating, insulation hinders out ability to reduce heat - but will reduce the amount of heat we get from the environment
 				H.adjust_bodytemperature(natural*(1/(thermal_protection+1)) + min(thermal_protection * (loc_temp - H.bodytemperature) / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX))
-		var/adjusted_temp = Clamp(H.bodytemperature, BODYTEMP_COLD_DAMAGE_LIMIT, BODYTEMP_HEAT_DAMAGE_LIMIT)
+		var/adjusted_temp = clamp(H.bodytemperature, BODYTEMP_COLD_DAMAGE_LIMIT, BODYTEMP_HEAT_DAMAGE_LIMIT)
 		switch((loc_temp - adjusted_temp)*thermal_protection)
 			if(-INFINITY to -50)
 				H.throw_alert("tempfeel", /obj/screen/alert/cold, 3)
