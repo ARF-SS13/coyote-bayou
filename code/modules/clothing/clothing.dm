@@ -24,6 +24,9 @@
 	var/ispowerarmor
 	var/obj/item/flashlight/F = null
 	var/can_flashlight = 0
+	var/darkness_view = 0
+	var/lighting_alpha
+	var/glass_colour_type //colors your vision when worn
 
 
 	var/blocks_shove_knockdown = FALSE //Whether wearing the clothing item blocks the ability for shove to knock down.
