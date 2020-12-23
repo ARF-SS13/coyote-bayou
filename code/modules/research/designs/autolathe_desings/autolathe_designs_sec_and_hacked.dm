@@ -5,6 +5,7 @@
 ////Secgear//
 /////////////
 
+/*
 /datum/design/beanbag_slug
 	name = "Beanbag Slug"
 	id = "beanbag_slug"
@@ -29,6 +30,7 @@
 	materials = list(/datum/material/iron = 20000)
 	build_path = /obj/item/ammo_box/c38
 	category = list("initial", "Security")
+*/
 
 /////////////////
 ///Hacked Gear //
@@ -42,6 +44,7 @@
 	build_path = /obj/item/weldingtool/largetank
 	category = list("hacked", "Tools")
 
+/*
 /datum/design/flamethrower
 	name = "Flamethrower"
 	id = "flamethrower"
@@ -49,6 +52,7 @@
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/flamethrower/full
 	category = list("hacked", "Security")
+*/
 
 /datum/design/rcd
 	name = "Rapid Construction Device (RCD)"
@@ -74,6 +78,7 @@
 	build_path = /obj/item/restraints/handcuffs
 	category = list("hacked", "Security")
 
+/*
 /datum/design/rifle_receiver
 	name = "Rifle Receiver"
 	id = "rifle_receiver"
@@ -113,6 +118,7 @@
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
+*/
 
 /////////////////
 //   Bullets   //
@@ -134,6 +140,7 @@
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
 
+/*
 /datum/design/a357
 	name = "Revolver Bullet (.357)"
 	id = "a357"
@@ -173,6 +180,7 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
+*/
 
 /datum/design/electropack
 	name = "Electropack"

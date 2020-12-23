@@ -74,7 +74,7 @@
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = list("357", "38")
+	caliber = list("357")
 	max_ammo = 10
 	multiload = 1
 

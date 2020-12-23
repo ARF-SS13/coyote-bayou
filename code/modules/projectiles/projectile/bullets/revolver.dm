@@ -2,7 +2,10 @@
 
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
-	damage = 25
+	damage = 28
+	armour_penetration = 4
+	wound_bonus = 7
+	bare_wound_bonus = -7
 /*
 	ricochets_max = 2
 	ricochet_chance = 50
@@ -17,38 +20,64 @@
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
 	damage = 35
-	armour_penetration = 0
+	armour_penetration = 7
+	wound_bonus = 14
+	bare_wound_bonus = -14
 
 /obj/item/projectile/bullet/a357/jhp
 	name = ".357 JHP bullet"
 	damage = 40
-	armour_penetration = -25
+	armour_penetration = -14
+	wound_bonus = -28
+	bare_wound_bonus = 28
 
 /obj/item/projectile/bullet/a357/jfp
 	name = ".357 JFP bullet"
+	damage = 42
+	armour_penetration = 14
+	wound_bonus = 14
+	bare_wound_bonus = 14
 
 // .44 Magnum
 /obj/item/projectile/bullet/m44
-	damage = 41 //35
-	armour_penetration = -5 //5
+	name = ".44 FMJ bullet"
+	damage = 41
+	armour_penetration = 10
+	wound_bonus = 20
+	bare_wound_bonus = -20
 
 /obj/item/projectile/bullet/m44/jhp
-	damage = 60 //40
-	armour_penetration = -40 //-15
+	name = ".44 JHP bullet"
+	damage = 49
+	armour_penetration = -20
+	wound_bonus = -40
+	bare_wound_bonus = 40
 
 /obj/item/projectile/bullet/m44/swc
-	damage = 40
-	armour_penetration = 5
+	name = ".44 SWC bullet"
+	damage = 49
+	armour_penetration = 10
+	wound_bonus = 40
+	bare_wound_bonus = 40
 
 //45-70
 /obj/item/projectile/bullet/c4570
+	name = ".45-70 FMJ bullet"
 	damage = 50
-	armour_penetration = 15//10
+	armour_penetration = 12
+	wound_bonus = 24
+	bare_wound_bonus = -24
 
 /obj/item/projectile/bullet/c4570/jhp
-	damage = 55
-	armour_penetration = -10
+	name = ".45-70 JHP bullet"
+	damage = 60
+	armour_penetration = -24
+	wound_bonus = -48
+	bare_wound_bonus = 48
 
 /obj/item/projectile/bullet/c4570/swc
-	damage = 55
-	armour_penetration = 10
+	name = ".45-70 SWC bullet"
+	damage = 60
+	armour_penetration = 24
+	wound_bonus = 48
+	bare_wound_bonus = 48
