@@ -131,7 +131,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "pipe"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
 	force = 25
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/claymore/machete/pipe/Initialize()
 	. = ..()
@@ -151,7 +151,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 25
 	block_chance = 10
 	armour_penetration = 5
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/claymore/machete/warclub/Initialize()
 	. = ..()
@@ -189,7 +189,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "golf9"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
 	force = 25
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/claymore/machete/golf/Initialize()
 	. = ..()
@@ -1262,7 +1262,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/sledgehammer/ComponentInitialize()
 	. = ..()
@@ -1299,7 +1299,7 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/baseball/ComponentInitialize()
 	. = ..()
@@ -1439,7 +1439,7 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	force = 20
 	block_chance = 50
 	slot_flags = ITEM_SLOT_BACK
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	hitsound = "swing_hit"
 	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -1528,7 +1528,7 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/sledgehammer/shamanstaff/ComponentInitialize()
 	. = ..()
@@ -1546,7 +1546,7 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	hitsound = "swing_hit"
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "enlightened")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/sledgehammer/marsstaff/ComponentInitialize()
 	. = ..()
@@ -1563,7 +1563,7 @@ var/list/possible_colors = list("red")
 		light_color = LIGHT_COLOR_RED
 		START_PROCESSING(SSobj, src)
 		set_light(brightness_on)
-		sharpness = IS_BLUNT
+		sharpness = SHARP_NONE
 */
 /obj/item/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -1586,7 +1586,7 @@ var/list/possible_colors = list("red")
 		return
 /*
 /obj/item/sledgehammer/marsstaff/unwield() //Specific unwield () to switch hitsounds.
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	..()
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)
@@ -1624,7 +1624,7 @@ var/list/possible_colors = list("red")
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/baseball/spiked/ComponentInitialize()
 	. = ..()

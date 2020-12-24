@@ -171,5 +171,5 @@
 	icon_state = "advancedwire"
 	item_state = "advancedwire"
 	toolspeed = 0.1
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	random_color = FALSE

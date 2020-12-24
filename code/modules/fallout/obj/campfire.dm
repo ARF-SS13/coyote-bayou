@@ -21,8 +21,8 @@
 	..()
 
 /obj/structure/campfire/attackby(obj/item/P, mob/user, params)
-//	if(P.is_hot())
-//		fire(user)
+	if(P.get_temperature())
+		fire(user)
 	if(istype(P, /obj/item/shovel))
 		to_chat(user, "You remove some campfire ashes.")
 		qdel(src)
