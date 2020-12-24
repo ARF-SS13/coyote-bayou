@@ -41,11 +41,11 @@
 	return TRUE
 
 /datum/component/forensics/proc/clean_act(strength)
-	if(strength >= CLEAN_STRENGTH_FINGERPRINTS)
+	if(strength >= CLEAN_IMPRESSIVE)
 		wipe_fingerprints()
-	if(strength >= CLEAN_STRENGTH_BLOOD)
+	if(strength >= CLEAN_WEAK)
 		wipe_blood_DNA()
-	if(strength >= CLEAN_STRENGTH_FIBERS)
+	if(strength >= CLEAN_IMPRESSIVE)
 		wipe_fibers()
 
 /datum/component/forensics/proc/add_fingerprint_list(list/_fingerprints)	//list(text)

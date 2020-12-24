@@ -11,6 +11,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	runlevels = RUNLEVEL_GAME
 	var/list/eligible_zlevels = list()
 	var/list/next_hit_by_zlevel = list() //Used by barometers to know when the next storm is coming
+	var/weather_on_start = FALSE
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..()		//Active weather is handled by . = ..() processing subsystem base fire().
@@ -19,10 +20,11 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	for(var/z in eligible_zlevels)
 		var/possible_weather = eligible_zlevels[z]
 		var/datum/weather/W = pickweight(possible_weather)
-		run_weather(W, list(text2num(z)))
+		if(weather_on_start)
+			run_weather(W, list(text2num(z)), initial(W.weather_duration_upper))
 		eligible_zlevels -= z
-		var/randTime = rand(3000, 6000)
-		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 5-10 minutes between weathers
+		var/randTime = rand(15000, 18000)
+		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
 
 /datum/controller/subsystem/processing/weather/Initialize(start_timeofday)
@@ -38,7 +40,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 				eligible_zlevels["[z]"][W] = probability
 	return ..()
 
-/datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
+/datum/controller/subsystem/processing/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels, duration)
 	if (istext(weather_datum_type))
 		for (var/V in subtypesof(/datum/weather))
 			var/datum/weather/W = V
@@ -55,7 +57,10 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	else if (!islist(z_levels))
 		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
 
-	var/datum/weather/W = new weather_datum_type(z_levels)
+	if(duration && !isnum(duration))
+		CRASH("run_weather called with invalid duration: [duration || "null"]")
+
+	var/datum/weather/W = new weather_datum_type(z_levels, duration)
 	W.telegraph()
 
 /datum/controller/subsystem/processing/weather/proc/make_eligible(z, possible_weather)
@@ -66,7 +71,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/datum/weather/A
 	for(var/V in processing)
 		var/datum/weather/W = V
-		if((z in W.impacted_z_levels) && W.area_type == active_area.type)
+		if((z in W.impacted_z_levels) && is_path_in_list(active_area.type, W.area_types))
 			A = W
 			break
 	return A

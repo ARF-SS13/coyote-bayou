@@ -116,22 +116,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(digi == "Digitigrade Legs")
 			WRITE_FILE(S["feature_lizard_legs"], "Digitigrade")
 
-	if(current_version < 26)
-		var/vr_path = "data/player_saves/[parent.ckey[1]]/[parent.ckey]/vore/character[default_slot].json"
-		if(fexists(vr_path))
-			var/list/json_from_file = json_decode(file2text(vr_path))
-			if(json_from_file)
-				if(json_from_file["digestable"])
-					ENABLE_BITFIELD(vore_flags,DIGESTABLE)
-				if(json_from_file["devourable"])
-					ENABLE_BITFIELD(vore_flags,DEVOURABLE)
-				if(json_from_file["feeding"])
-					ENABLE_BITFIELD(vore_flags,FEEDING)
-				if(json_from_file["lickable"])
-					ENABLE_BITFIELD(vore_flags,LICKABLE)
-				belly_prefs = json_from_file["belly_prefs"]
-				vore_taste = json_from_file["vore_taste"]
-
 		for(var/V in all_quirks) // quirk migration
 			switch(V)
 				if("Acute hepatic pharmacokinesis")
@@ -164,24 +148,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			features["cock_shape"] = malformed_hockeys[hockey]
 			features["cock_taur"] = TRUE
 
-	if(current_version < 29)
-		var/digestable
-		var/devourable
-		var/feeding
-		var/lickable
-		S["digestable"]						>> digestable
-		S["devourable"]						>> devourable
-		S["feeding"]						>> feeding
-		S["lickable"]						>> lickable
-		if(digestable)
-			ENABLE_BITFIELD(vore_flags,DIGESTABLE)
-		if(devourable)
-			ENABLE_BITFIELD(vore_flags,DEVOURABLE)
-		if(feeding)
-			ENABLE_BITFIELD(vore_flags,FEEDING)
-		if(lickable)
-			ENABLE_BITFIELD(vore_flags,LICKABLE)
-
 	if(current_version < 30)
 		switch(features["taur"])
 			if("Husky", "Lab", "Shepherd", "Fox", "Wolf")
@@ -212,7 +178,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!ckey)
 		return
 	path = "data/player_saves/[ckey[1]]/[ckey]/[filename]"
-	vr_path = "data/player_saves/[ckey[1]]/[ckey]/vore"
 
 /datum/preferences/proc/load_preferences()
 	if(!path)
@@ -334,7 +299,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_special		= SANITIZE_LIST(be_special)
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
-	pda_skin		= sanitize_inlist(pda_skin, GLOB.pda_reskins, PDA_SKIN_ALT)
+	pda_skin		= sanitize_inlist(pda_skin, GLOB.pda_reskins, PDA_SKIN_CLASSIC)
 	screenshake			= sanitize_integer(screenshake, 0, 800, initial(screenshake))
 	damagescreenshake	= sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	widescreenpref		= sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
@@ -636,13 +601,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_ooc_notes"]				>> features["ooc_notes"]
 	S["silicon_flavor_text"] >> features["silicon_flavor_text"]
 
-	S["vore_flags"]						>> vore_flags
-	S["vore_taste"]						>> vore_taste
-	var/char_vr_path = "[vr_path]/character_[default_slot]_v2.json"
-	if(fexists(char_vr_path))
-		var/list/json_from_file = json_decode(file2text(char_vr_path))
-		if(json_from_file)
-			belly_prefs = json_from_file["belly_prefs"]
 	//gear loadout
 	var/text_to_load
 	S["loadout"] >> text_to_load
@@ -802,10 +760,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	all_quirks = SANITIZE_LIST(all_quirks)
 
-	vore_flags						= sanitize_integer(vore_flags, 0, MAX_VORE_FLAG, 0)
-	vore_taste						= copytext(vore_taste, 1, MAX_TASTE_LEN)
-	belly_prefs 					= SANITIZE_LIST(belly_prefs)
-
 	cit_character_pref_load(S)
 
 	return 1
@@ -931,14 +885,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)
-
-	WRITE_FILE(S["vore_flags"]			, vore_flags)
-	WRITE_FILE(S["vore_taste"]			, vore_taste)
-	var/char_vr_path = "[vr_path]/character_[default_slot]_v2.json"
-	var/belly_prefs_json = safe_json_encode(list("belly_prefs" = belly_prefs))
-	if(fexists(char_vr_path))
-		fdel(char_vr_path)
-	text2file(belly_prefs_json,char_vr_path)
 
 	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
 	WRITE_FILE(S["scars1"]						, scars_list["1"])
