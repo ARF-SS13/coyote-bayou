@@ -24,8 +24,8 @@
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RADIMMUNE,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NOBREATH,TRAIT_NODEATH,TRAIT_FAKEDEATH)
 
 /datum/species/zombie/notspaceproof/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
+//	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+//		return TRUE
 	return ..()
 
 /datum/species/zombie/infectious

@@ -20,16 +20,46 @@
 	tastes = list("gamey meat" = 1, "herbal notes" = 1, "filling stew" = 1)
 	foodtype = VEGETABLES | MEAT
 
-/obj/item/reagent_containers/food/snacks/grown/buffalogourd
+/obj/item/reagent_containers/food/snacks/soup/buffalogourd
 	name = "Buffalo gourd soup"
 	desc = "A tasty soup made with roasted gourd"
-	icon_state = "Gourd Soup"
+	icon_state = "Buffalo Soup"
 	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 4,  /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("buttery flesh" = 1, "creamy soup" = 1)
 	foodtype = VEGETABLES
 
 
 /////PLANTS Fallout 13///////
+
+/obj/item/seeds/buffalogourd
+	name = "pack of buffalo gourd seeds"
+	desc = "These seeds grow into buffalo vines."
+	icon_state = "seed-gourd"
+	species = "buffalo gourd"
+	plantname = "buffalo vines"
+	product = /obj/item/reagent_containers/food/snacks/grown/buffalogourd
+	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
+	icon_grow = "gourd-grow"
+	icon_dead = "gourd-dead"
+	icon_harvest = "tato-harvest"
+	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
+	lifespan = 50
+	endurance = 40
+	maturation = 10
+	production = 1
+	yield = 3
+	growthstages = 3
+
+/obj/item/reagent_containers/food/snacks/grown/buffalogourd
+	seed = /obj/item/seeds/buffalogourd
+	name = "buffalo gourd"
+	desc = "It's full of watery goodness."
+	icon_state = "Buffalo Gourd"
+	filling_color = "#008000"
+	bitesize_mod = 3
+	foodtype = FRUIT
+	distill_reagent = "buffalo"
+
 /obj/item/seeds/coyotetobacco
 	name = "pack of coyote tobacco seeds"
 	desc = "These seeds grow into coyote tobacco plants."
@@ -399,7 +429,7 @@
 	desc = "The fleshy banana banana like fruit, rougly 8 cm long and 6 cm across. It smells tastes similar to a sweet potato."
 	icon_state = "Bannana Yucca"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
-	bitesize = 100
+	bitesize = 3
 	juice_results = list(/datum/reagent/consumable/yuccajuice = 0)
 	distill_reagent = /datum/reagent/consumable/yuccajuice
 
