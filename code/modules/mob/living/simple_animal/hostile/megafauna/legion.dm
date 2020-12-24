@@ -181,7 +181,7 @@ Difficulty: Medium
 	var/datum/weather/A
 	for(var/V in SSweather.processing)
 		var/datum/weather/W = V
-		if((user_turf.z in W.impacted_z_levels) && W.area_type == user_area.type)
+		if((user_turf.z in W.impacted_z_levels) && is_path_in_list(user_area.type, W.area_types))
 			A = W
 			break
 
@@ -202,7 +202,7 @@ Difficulty: Medium
 		log_game("[user] ([key_name(user)]) has summoned [A] at [AREACOORD(user_turf)]")
 		if (is_special_character(user))
 			message_admins("[A] has been summoned in [ADMIN_VERBOSEJMP(user_turf)] by [user] ([key_name_admin(user)], a non-antagonist")
-		A.area_type = user_area.type
+		A.area_types = list(user_area.type)
 		A.telegraph_duration = 100
 		A.end_duration = 100
 

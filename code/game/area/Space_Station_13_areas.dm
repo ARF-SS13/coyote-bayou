@@ -1750,6 +1750,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/shuttle/mining_elevator
 	name = "Mining Elevator"
 
+
+/area/shuttle/bos_foyer
+	name = "Brotherhood of Steel Foyer"
+
+
 /area/f13/underground/cave/vault
 	name = "Vault Mine"
 	icon_state = "caves"

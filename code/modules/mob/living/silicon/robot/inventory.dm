@@ -26,20 +26,6 @@
 		update_sight()
 	else if(istype(O, /obj/item/storage/bag/tray/))
 		SEND_SIGNAL(O, COMSIG_TRY_STORAGE_QUICK_EMPTY)
-	//CITADEL EDIT reee proc, Dogborg modules
-	if(istype(O,/obj/item/gun/energy/laser/cyborg))
-		laser = FALSE
-		update_icons()
-	else if(istype(O,/obj/item/gun/energy/disabler/cyborg) || istype(O,/obj/item/gun/energy/e_gun/advtaser/cyborg))
-		disabler = FALSE
-		update_icons() //PUT THE GUN AWAY
-	else if(istype(O,/obj/item/dogborg/sleeper))
-		sleeper_g = FALSE
-		sleeper_r = FALSE
-		update_icons()
-		var/obj/item/dogborg/sleeper/S = O
-		S.go_out() //this should stop edgecase deletions
-	//END CITADEL EDIT
 	if(client)
 		client.screen -= O
 	observer_screen_update(O,FALSE)
@@ -68,14 +54,6 @@
 	. = FALSE
 	if(!(O in module.modules))
 		return
-	//CITADEL EDIT Dogborg lasers
-	if(istype(O,/obj/item/gun/energy/laser/cyborg))
-		laser = TRUE
-		update_icons() //REEEEEEACH FOR THE SKY
-	if(istype(O,/obj/item/gun/energy/disabler/cyborg) || istype(O,/obj/item/gun/energy/e_gun/advtaser/cyborg))
-		disabler = TRUE
-		update_icons()
-	//END CITADEL EDIT
 	if(activated(O))
 		to_chat(src, "<span class='warning'>That module is already activated.</span>")
 		return

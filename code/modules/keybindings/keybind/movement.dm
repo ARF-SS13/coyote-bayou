@@ -123,11 +123,12 @@
 	return TRUE
 
 /datum/keybinding/living/hold_sprint
-	hotkey_keys = list("Shift")
+	hotkey_keys = list("Unbound")
 	name = "hold_sprint"
 	full_name = "Sprint (hold down)"
 	description = "Hold down to sprint"
 	category = CATEGORY_MOVEMENT
+	var/list/client/is_down = list()
 
 /datum/keybinding/living/hold_sprint/can_use(client/user)
 	return ishuman(user.mob) || iscyborg(user.mob)
@@ -135,26 +136,34 @@
 /datum/keybinding/living/hold_sprint/down(client/user)
 	var/mob/living/L = user.mob
 	L.sprint_hotkey(TRUE)
+	is_down |= user
 	return TRUE
 
 /datum/keybinding/living/hold_sprint/up(client/user)
 	var/mob/living/L = user.mob
 	L.sprint_hotkey(FALSE)
+	is_down -= user
 	return TRUE
 
 /datum/keybinding/living/toggle_sprint
-	hotkey_keys = list()
+	hotkey_keys = list("Shift")
 	name = "toggle_sprint"
 	full_name = "Sprint (toggle)"
 	description = "Press to toggle sprint"
 	category = CATEGORY_MOVEMENT
+	var/list/client/is_down = list()
 
 /datum/keybinding/living/toggle_sprint/can_use(client/user)
 	return ishuman(user.mob) || iscyborg(user.mob)
 
 /datum/keybinding/living/toggle_sprint/down(client/user)
+	is_down |= user
 	var/mob/living/L = user.mob
 	L.default_toggle_sprint(TRUE)
+	return TRUE
+
+/datum/keybinding/living/toggle_sprint/up(client/user)
+	is_down -= user
 	return TRUE
 
 /datum/keybinding/mob/toggle_move_intent

@@ -148,7 +148,6 @@
 	user.name = friendlyName
 	user.module.cyborg_base_icon = disguise
 	user.module.cyborg_icon_override = disguise_icon_override
-	user.module.cyborg_pixel_offset = disguise_pixel_offset
 	user.bubble_icon = "robot"
 	active = TRUE
 	user.update_icons()
@@ -172,7 +171,6 @@
 	user.bubble_icon = "syndibot"
 	active = FALSE
 	user.update_icons()
-	user.pixel_x = 0 //this solely exists because of dogborgs. I want anyone who ever reads this code later on to know this. Don't ask me why it's here, doesn't work above update_icons()
 	src.user = user
 
 /obj/item/borg_chameleon/proc/disrupt(mob/living/silicon/robot/user)
