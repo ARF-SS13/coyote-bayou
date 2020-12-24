@@ -1,12 +1,3 @@
-/obj/docking_port/mobile/elevator
-	name = "elevator"
-	id = "elevator"
-//	timid = FALSE
-	dwidth = 3
-	width = 7
-	height = 7
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0)
-
 /obj/machinery/computer/shuttle/vaultelevator
 	name = "elevator controls"
 	desc = "Controls the elevator."

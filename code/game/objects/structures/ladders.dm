@@ -7,6 +7,7 @@
 	anchored = TRUE
 	var/obj/structure/ladder/down   //the ladder below this one
 	var/obj/structure/ladder/up     //the ladder above this one
+	var/move_me = TRUE
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -152,6 +153,7 @@
 	name = "sturdy ladder"
 	desc = "An extremely sturdy metal ladder."
 	resistance_flags = INDESTRUCTIBLE
+	move_me = FALSE
 	var/id
 	var/height = 0  // higher numbers are considered physically higher
 

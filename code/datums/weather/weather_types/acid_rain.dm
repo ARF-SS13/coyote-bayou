@@ -17,7 +17,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = /area
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protect_indoors = TRUE
 	target_trait = ZTRAIT_ACIDRAIN
 

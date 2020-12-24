@@ -82,7 +82,7 @@
 
 /datum/design/ammolathe/a357
 	name = ".357 Magnum FMJ ammo box"
-	id = "a357"
+	id = "a357_lathe"
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/ammo_box/a357box
 	category = list("initial", "Simple Ammo")
@@ -96,7 +96,7 @@
 
 /datum/design/ammolathe/c10mm
 	name = "10mm FMJ ammo box"
-	id = "c10mm"
+	id = "c10mm_lathe"
 	materials = list(/datum/material/iron = 10000)
 	build_path = /obj/item/ammo_box/c10mm
 	category = list("initial", "Simple Ammo")
@@ -211,7 +211,7 @@
 
 /datum/design/ammolathe/a762
 	name = "7.62 FMJ ammo box"
-	id = "a762"
+	id = "a762_lathe"
 	materials = list(/datum/material/iron = 16000)
 	build_path = /obj/item/ammo_box/a762box
 	category = list("initial", "Basic Ammo")

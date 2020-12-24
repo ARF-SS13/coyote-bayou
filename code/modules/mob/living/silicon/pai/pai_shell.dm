@@ -88,12 +88,6 @@
 			if(!choice)
 				return FALSE
 			chassis = choice
-		if("Preset - Dynamic")
-			var/choice = input(src, "What would you like to use for your holochassis composite?") as null|anything in dynamic_chassis_icons
-			if(!choice)
-				return FALSE
-			chassis = "dynamic"
-			dynamic_chassis = choice
 	resist_a_rest(FALSE, TRUE)
 	update_icon()
 	if(possible_chassis[old_chassis])
@@ -120,22 +114,6 @@
 	else
 		set_light(0)
 		to_chat(src, "<span class='notice'>You disable your integrated light.</span>")
-
-/mob/living/silicon/pai/verb/toggle_chassis_sit()
-	set name = "Toggle Chassis Sit"
-	set category = "IC"
-	set desc = "Whether or not to try to use a sitting icon versus a resting icon. Takes priority over belly-up resting."
-	dynamic_chassis_sit = !dynamic_chassis_sit
-	to_chat(usr, "<span class='boldnotice'>You are now [dynamic_chassis_sit? "sitting" : "lying down"].</span>")
-	update_icon()
-
-/mob/living/silicon/pai/verb/toggle_chassis_bellyup()
-	set name = "Toggle Chassis Belly Up"
-	set category = "IC"
-	set desc = "Whether or not to try to use a belly up icon while resting. Overridden by sitting."
-	dynamic_chassis_bellyup = !dynamic_chassis_bellyup
-	to_chat(usr, "<span class='boldnotice'>You are now lying on your [dynamic_chassis_bellyup? "back" : "front"].</span>")
-	update_icon()
 
 /mob/living/silicon/pai/can_buckle_others(mob/living/target, atom/buckle_to)
 	return ispAI(target) && ..()

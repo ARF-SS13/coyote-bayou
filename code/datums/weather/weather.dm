@@ -46,8 +46,8 @@
 	/// Area overlay while weather is ending
 	var/end_overlay
 
-	/// Types of area to affect
-	var/area_type = /area/space
+	/// Types of area(s) to affect
+	var/area_types = list(/area/space)
 	/// TRUE value protects areas with outdoors marked as false, regardless of area type
 	var/protect_indoors = FALSE
 	/// Areas to be affected by the weather, calculated when the weather begins
@@ -79,6 +79,10 @@
 	var/barometer_predictable = FALSE
 	/// For barometers to know when the next storm will hit
 	var/next_hit_time = 0
+	
+	var/affects_turfs = FALSE //Does this weather affect turfs at all?
+	var/turfs_impacted = FALSE // Did this weather already impact turfs?
+	var/carbons_only = FALSE //Does this weather affect only carbon mobs?
 
 /datum/weather/New(z_levels)
 	..()
@@ -96,11 +100,12 @@
 		return
 	stage = STARTUP_STAGE
 	var/list/affectareas = list()
-	for(var/V in get_areas(area_type))
-		var/area/A = V
-		affectareas |= A
-		if(A.sub_areas)
-			affectareas |= A.sub_areas
+	for(var/area_type in area_types)
+		for(var/V in get_areas(area_type))
+			var/area/A = V
+			affectareas |= A
+			if(A.sub_areas)
+				affectareas |= A.sub_areas
 	for(var/V in protected_areas)
 		affectareas -= get_areas(V)
 	for(var/V in affectareas)
@@ -180,7 +185,13 @@
 /datum/weather/process()
 	if(aesthetic || (stage != MAIN_STAGE))
 		return
-	for(var/i in GLOB.mob_living_list)
+	if(!turfs_impacted && affects_turfs)
+		turfs_impacted = TRUE
+		for(var/i in impacted_areas)
+			var/area/A = i
+			for(var/turf/T in get_area_turfs(A))
+				weather_act_turf(T)
+	for(var/i in (carbons_only ? GLOB.carbon_list : GLOB.mob_living_list))
 		var/mob/living/L = i
 		if(can_weather_act(L))
 			weather_act(L)
@@ -205,6 +216,14 @@
   */
 /datum/weather/proc/weather_act(mob/living/L)
 	return
+
+/**
+  * Affects a turf, ONCE, with whatever the weather does
+  *
+  */
+/datum/weather/proc/weather_act_turf(turf/T)
+	return
+
 
 /**
   * Updates the overlays on impacted areas

@@ -116,6 +116,14 @@
 			return TRUE
 	return FALSE
 
+/proc/is_path_in_list(p, list/L)
+	if(isemptylist(L) || !p)
+		return FALSE
+	for(var/path in L)
+		if(ispath(p, path))
+			return TRUE
+	return FALSE
+
 //Checks for specific types in specifically structured (Assoc "type" = TRUE) lists ('typecaches')
 #define is_type_in_typecache(A, L) (A && length(L) && L[(ispath(A) ? A : A:type)])
 

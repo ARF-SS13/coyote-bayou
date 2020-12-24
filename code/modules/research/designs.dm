@@ -62,10 +62,38 @@ other types of metals and chemistry for reagents).
 			temp_list[i] = amount
 	materials = temp_list
 
+/datum/design/proc/get_asset_path()
+	if(research_icon && research_icon_state)
+		return "[research_icon]-[research_icon_state]"
+	var/atom/item = initial(build_path)
+	if (!ispath(item, /atom))
+		// biogenerator outputs to beakers by default
+		if (initial(build_type) & BIOGENERATOR)
+			item = /obj/item/reagent_containers/glass/beaker/large
+		else
+			CRASH("Invalid path and build type for [src]")  // shouldn't happen, but just in case
+
+	// circuit boards become their resulting machines or computers
+	if (ispath(item, /obj/item/circuitboard))
+		var/obj/item/circuitboard/C = item
+		var/machine = initial(C.build_path)
+		if (machine)
+			item = machine
+	var/icon_file = "[initial(item.icon)]"
+	var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]-[initial(item.icon_state)]"
+	// computers (and snowflakes) get their screen and keyboard sprites
+	if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
+		var/obj/machinery/computer/C = item
+		var/screen = initial(C.icon_screen)
+		var/keyboard = initial(C.icon_keyboard)
+		icon_string += "-[screen]"
+		icon_string += "-[keyboard]"
+	return icon_string
+
 /datum/design/proc/icon_html(client/user)
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/research_designs)
 	sheet.send(user)
-	return sheet.icon_tag(id)
+	return sheet.icon_tag(get_asset_path())
 
 ////////////////////////////////////////
 //Disks for transporting design datums//

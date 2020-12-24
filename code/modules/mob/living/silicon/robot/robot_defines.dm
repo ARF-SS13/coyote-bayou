@@ -109,17 +109,6 @@
 	buckle_lying = FALSE
 	var/static/list/can_ride_typecache = typecacheof(/mob/living/carbon/human)
 
-	var/sitting = 0
-	var/bellyup = 0
-	var/dogborg = FALSE
-
 	var/cansprint = 1
 
 	var/orebox = null
-
-	//doggie borg stuff.
-	var/disabler
-	var/laser
-	var/sleeper_g
-	var/sleeper_r
-	var/sleeper_nv
