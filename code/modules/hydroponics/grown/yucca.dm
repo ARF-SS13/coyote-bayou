@@ -26,6 +26,6 @@
 	desc = "The fleshy banana banana like fruit, rougly 8 cm long and 6 cm across. It smells tastes similar to a sweet potato."
 	icon_state = "Bannana Yucca"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
-	bitesize = 100
+	bitesize = 3
 	juice_results = list(/datum/reagent/yuccajuice = 0)
 	distill_reagent = /datum/reagent/consumable/yuccajuice
