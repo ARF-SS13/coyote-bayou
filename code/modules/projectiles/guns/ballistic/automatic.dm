@@ -1144,7 +1144,7 @@
 	can_attachments = TRUE
 	can_suppress = FALSE
 
-/obj/item/gun/ballistic/automatic/tommygun
+/obj/item/gun/ballistic/automatic/smg22
 	name = "american 180"
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle."
 	icon_state = "smg22"
