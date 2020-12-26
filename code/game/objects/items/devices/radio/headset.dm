@@ -304,7 +304,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_legion
 	name = "Legion radio headset"
-	desc = "This is used by Caesar's Legion.\nTo access the Legion channel, use :e."
+	desc = "This is used by Caesar's Legion.\nTo access the Legion channel, use :l."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_legion
 

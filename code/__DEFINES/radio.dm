@@ -37,7 +37,6 @@
 #define RADIO_KEY_AI_PRIVATE "o"
 #define RADIO_TOKEN_AI_PRIVATE ":o"
 
-
 #define RADIO_CHANNEL_SYNDICATE "Syndicate"
 #define RADIO_KEY_SYNDICATE "t"
 #define RADIO_TOKEN_SYNDICATE ":t"
@@ -45,6 +44,32 @@
 #define RADIO_CHANNEL_CENTCOM "CentCom"
 #define RADIO_KEY_CENTCOM "y"
 #define RADIO_TOKEN_CENTCOM ":y"
+
+#define RADIO_CHANNEL_VAULT "Vault"
+#define RADIO_KEY_VAULT "b"
+#define RADIO_TOKEN_VAULT ":b"
+
+#define RADIO_CHANNEL_NCR "NCR"
+#define RADIO_KEY_NCR "w"
+#define RADIO_TOKEN_NCR ":w"
+
+#define RADIO_CHANNEL_BOS "BOS"
+#define RADIO_KEY_BOS "q"
+#define RADIO_TOKEN_BOS ":q"
+
+#define RADIO_CHANNEL_ENCLAVE "Enclave"
+#define RADIO_KEY_ENCLAVE "z"
+#define RADIO_TOKEN_ENCLAVE ":z"
+
+#define RADIO_CHANNEL_TOWN "Oasis"
+#define RADIO_KEY_TOWN "f"
+#define RADIO_TOKEN_TOWN ":f"
+
+#define RADIO_CHANNEL_LEGION "Legion"
+#define RADIO_KEY_LEGION "l"
+#define RADIO_TOKEN_LEGION ":l"
+
+
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
