@@ -5,7 +5,6 @@
 	armour_penetration = 5
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
-	embedding = list("pain_mult" = 1, "embed_chance" = 100, "fall_chance" = 20)
 
 //CIT ARROWS
 /obj/item/projectile/bullet/reusable/arrow/ash
