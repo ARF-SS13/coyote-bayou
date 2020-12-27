@@ -219,7 +219,7 @@
 /datum/export/weapon/quiver
 	cost = 100
 	unit_name = "quiver"
-	export_types = list(/obj/item/storage/belt/quiver)
+	export_types = list(/obj/item/storage/belt/tribe_quiver)
 
 
 /////////////////////////

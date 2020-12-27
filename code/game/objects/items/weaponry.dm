@@ -1460,8 +1460,8 @@ obj/item/sledgehammer/supersledge/ComponentInitialize()
 	reach = 2
 	item_flags = SLOWS_WHILE_IN_HAND
 	slowdown = 0.3
-	embedding = list("embedded_pain_multiplier" = 2, "embed_chance" = 60, "embedded_fall_chance" = 20)
-	w_class = WEIGHT_CLASS_SMALL
+	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20)
+	w_class = WEIGHT_CLASS_NORMAL
 
 //THERMIC LANCE
 /obj/item/twohanded/required/thermic_lance

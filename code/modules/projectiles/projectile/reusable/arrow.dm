@@ -1,10 +1,13 @@
 /obj/item/projectile/bullet/reusable/arrow
-	name = "wooden arrow"
-	desc = "Woosh!"
-	damage = 15
+	name = "metal arrow"
+	desc = "a simple arrow with a metal head."
+	damage = 40
+	armour_penetration = 5
 	icon_state = "arrow"
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/wood
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	embedding = list("pain_mult" = 1, "embed_chance" = 100, "fall_chance" = 20)
 
+//CIT ARROWS
 /obj/item/projectile/bullet/reusable/arrow/ash
 	name = "ashen arrow"
 	desc = "Fire harderned arrow."
@@ -24,28 +27,29 @@
 	armour_penetration = 10
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bronze
 
+//FO13 ARROWS
 /obj/item/projectile/bullet/reusable/arrow/ap
-    name = "sturdy arrow"
-    desc = "A reinforced arrow with a metal shaft and heavy duty head."
-    damage = 45
-    armour_penetration = 35
-    icon_state = "arrow"
-    ammo_type = /obj/item/ammo_casing/caseless/arrow/ap
+	name = "sturdy arrow"
+	desc = "A reinforced arrow with a metal shaft and heavy duty head."
+	damage = 45
+	armour_penetration = 35
+	icon_state = "arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/ap
 
 /obj/item/projectile/bullet/reusable/arrow/poison
-    name = "poison arrow"
-    desc = "A simple arrow, tipped in a poisonous paste."
-    damage = 35
-    armour_penetration = 5
-    damage_type = TOX
-    icon_state = "arrow"
-    ammo_type = /obj/item/ammo_casing/caseless/arrow/poison
+	name = "poison arrow"
+	desc = "A simple arrow, tipped in a poisonous paste."
+	damage = 35
+	armour_penetration = 5
+	damage_type = TOX
+	icon_state = "arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/poison
 
 /obj/item/projectile/bullet/reusable/arrow/burning
-    name = "burn arrow"
-    desc = "A sumple arrow slathered in a paste that burns skin on contact."
-    damage = 35
-    armour_penetration = 5
-    damage_type = BURN
-    icon_state = "arrow"
-    ammo_type = /obj/item/ammo_casing/caseless/arrow/burning
+	name = "burn arrow"
+	desc = "A sumple arrow slathered in a paste that burns skin on contact."
+	damage = 35
+	armour_penetration = 5
+	damage_type = BURN
+	icon_state = "arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/burning
