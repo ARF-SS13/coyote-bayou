@@ -270,7 +270,7 @@
 
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "deathclaw cloak"
-	icon_state = "goliath_cloak"
+	icon_state = "clawsuitcloak"
 	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
 	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/spear)
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
@@ -279,7 +279,7 @@
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "deathclaw cloak hood"
-	icon_state = "golhood"
+	icon_state = "clawheadcloak"
 	desc = "A protective & concealing hood."
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
@@ -318,12 +318,14 @@
 
 /obj/item/clothing/suit/hooded/cloak/goliath/tatteredred
 	name = "tattered red cloak"
+	icon_state = "goliath_cloak"
 	desc = "An old ragged, tattered red cloak that is covered in burns and bullet holes."
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
 	name = "tattered red cloak hood"
+	icon_state = "golhood"
 	desc = "A tattered hood, better than nothing in the waste."
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 

@@ -94,7 +94,7 @@
 /datum/crafting_recipe/quiver
 	name = "Quiver"
 	always_availible = FALSE
-	result = /obj/item/storage/belt/quiver
+	result = /obj/item/storage/belt/tribe_quiver
 	time = 80
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				 /obj/item/stack/sheet/sinew = 4)
