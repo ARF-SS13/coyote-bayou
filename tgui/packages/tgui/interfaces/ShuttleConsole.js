@@ -119,6 +119,7 @@ const ShuttleConsoleContent = (props, context) => {
               </Box>
             ) || (
               <Dropdown
+                mb={1.7}
                 over
                 width="240px"
                 options={locations.map(location => location.name)}

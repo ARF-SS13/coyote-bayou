@@ -15,7 +15,7 @@
 	end_duration = 100
 	end_message = "<span class='boldannounce'>The snowfall dies down, it should be safe to go outside again.</span>"
 
-	area_type = /area
+	area_types = list(/area)
 	protect_indoors = TRUE
 	target_trait = ZTRAIT_SNOWSTORM
 

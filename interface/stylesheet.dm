@@ -58,6 +58,12 @@ em						{font-style: normal;	font-weight: bold;}
 .aiprivradio			{color: #ff00ff;}
 .redteamradio			{color: #ff0000;}
 .blueteamradio			{color: #0000ff;}
+.vaultradio				{color: #6eaa2c;}
+.ncrradio				{color: #eaaa54;}
+.bosradio				{color: #686868;}
+.enclaveradio			{color: #003000;}
+.denradio				{color: #a8732b;}
+.legionradio			{color: #c24d44;}
 
 .yell					{					font-weight: bold;}
 

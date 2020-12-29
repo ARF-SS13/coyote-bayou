@@ -39,7 +39,6 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
-	hook_vr("mob_new",list(src))
 
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
@@ -138,7 +137,7 @@
 
 	if(target_message && target && istype(target) && target.client)
 		hearers -= target
-		//This entire if/else chain could be in two lines but isn't for readibilties sake.
+		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = target_message
 		if(target.see_invisible<invisibility) //if src is invisible to us,
 			msg = blind_message
@@ -152,10 +151,9 @@
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
-		//This entire if/else chain could be in two lines but isn't for readibilties sake.
+		//This entire if/else chain could be in two lines but isn't for readabilty's sake.
 		var/msg = message
-		//CITADEL EDIT, required for vore code to remove (T != loc && T != src)) as a check
-		if(M.see_invisible<invisibility) //if src is invisible to us,
+		if(M.see_invisible<invisibility || (T != loc && T != src))//if src is invisible to us or is inside something (and isn't a turf),
 			msg = blind_message
 		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit() && !in_range(T,M)) //the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 			msg = blind_message
@@ -320,7 +318,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 			result = A.examine_more(src)
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
-
+	if(!result)
+		stack_trace("[A] returned invalid examinate result!")
 	to_chat(src, result.Join("\n"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 

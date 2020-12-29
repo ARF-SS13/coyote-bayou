@@ -237,7 +237,7 @@
 	force_wielded = 50
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
@@ -355,7 +355,7 @@
 		icon_state = "dualsaber[item_color][wielded]"
 	else
 		icon_state = "dualsaber0"
-	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+	SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 
 /obj/item/twohanded/dualsaber/attack(mob/target, mob/living/carbon/human/user)
 	if(user.has_dna())
@@ -401,7 +401,7 @@
 			return
 	..()
 	if(wielded)
-		sharpness = IS_SHARP
+		sharpness = SHARP_EDGED
 		w_class = w_class_on
 		hitsound = 'sound/weapons/blade1.ogg'
 		START_PROCESSING(SSobj, src)
@@ -486,7 +486,7 @@
 	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	var/obj/item/grenade/explosive = null
@@ -647,7 +647,7 @@
 	materials = list(MAT_METAL=13000)
 	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
 	hitsound = "swing_hit"
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	actions_types = list(/datum/action/item_action/startchainsaw)
 	var/on = FALSE
 
@@ -747,7 +747,7 @@
 	force_wielded = 30
 	attack_verb = list("attacked", "impaled", "pierced", "perforated")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
@@ -825,7 +825,7 @@
 	block_chance = 40
 	throwforce = 20
 	throw_speed = 4
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 	attack_verb = list("cut", "sliced", "diced", "dissected")
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -884,7 +884,7 @@
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
-	sharpness = IS_SHARP
+	sharpness = SHARP_EDGED
 
 /obj/item/twohanded/bonespear/update_icon()
 	icon_state = "bone_spear[wielded]"
@@ -944,7 +944,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/twohanded/baseball/update_icon()  //Currently only here to fuck with the on-mob icons.
 	icon_state = "baseball[wielded]"
@@ -964,7 +964,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/twohanded/baseball/spiked/update_icon()  //Currently only here to fuck with the on-mob icons.
 	icon_state = "baseballspike[wielded]"
@@ -984,7 +984,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/twohanded/sledgehammer/update_icon()
 	icon_state = "sledgehammer[wielded]"
@@ -1052,7 +1052,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/twohanded/sledgehammer/warmace/update_icon()
 	icon_state = "warmace[wielded]"
@@ -1070,7 +1070,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 /obj/item/twohanded/sledgehammer/shamanstaff/update_icon()
 	icon_state = "shamanstaff[wielded]"
@@ -1088,7 +1088,7 @@
 	hitsound = "swing_hit"
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "enlightened")
 	w_class = WEIGHT_CLASS_BULKY
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 
 var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
 var/list/possible_colors = list("red")
@@ -1100,7 +1100,7 @@ var/list/possible_colors = list("red")
 		light_color = LIGHT_COLOR_RED
 		START_PROCESSING(SSobj, src)
 		set_light(brightness_on)
-		sharpness = IS_BLUNT
+		sharpness = SHARP_NONE
 /obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
@@ -1122,7 +1122,7 @@ var/list/possible_colors = list("red")
 		return
 
 /obj/item/twohanded/sledgehammer/marsstaff/unwield() //Specific unwield () to switch hitsounds.
-	sharpness = IS_BLUNT
+	sharpness = SHARP_NONE
 	..()
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)

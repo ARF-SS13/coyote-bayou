@@ -63,12 +63,12 @@
 	var/max = world.maxx-TRANSITIONEDGE
 	var/min = 1+TRANSITIONEDGE
 
-	var/list/possible_transtitons = list()
+	var/list/possible_transitons = list()
 	for(var/A in SSmapping.z_list)
 		var/datum/space_level/D = A
 		if (D.linkage == CROSSLINKED)
-			possible_transtitons += D.z_value
-	var/_z = pick(possible_transtitons)
+			possible_transitons += D.z_value
+	var/_z = pick(possible_transitons)
 
 	//now select coordinates for a border turf
 	var/_x

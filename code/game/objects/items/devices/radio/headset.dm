@@ -11,7 +11,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SUPPLY = RADIO_TOKEN_SUPPLY,
 	RADIO_CHANNEL_SERVICE = RADIO_TOKEN_SERVICE,
 	MODE_BINARY = MODE_TOKEN_BINARY,
-	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE
+	RADIO_CHANNEL_AI_PRIVATE = RADIO_TOKEN_AI_PRIVATE,
+	RADIO_CHANNEL_VAULT = RADIO_TOKEN_VAULT,
+	RADIO_CHANNEL_NCR = RADIO_TOKEN_NCR,
+	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
+	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
+	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
+	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION
 ))
 
 /obj/item/radio/headset
@@ -304,7 +310,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_legion
 	name = "Legion radio headset"
-	desc = "This is used by Caesar's Legion.\nTo access the Legion channel, use :e."
+	desc = "This is used by Caesar's Legion.\nTo access the Legion channel, use :l."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_legion
 

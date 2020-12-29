@@ -79,7 +79,7 @@
 
 		if(H.gloves) //Check if the gloves (if any) hide fingerprints
 			var/obj/item/clothing/gloves/G = H.gloves
-			if(G.transfer_prints)
+			if(istype(G) && G.transfer_prints)
 				ignoregloves = TRUE
 
 			if(!ignoregloves)

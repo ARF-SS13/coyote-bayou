@@ -17,8 +17,8 @@
 	species_type = "undead"
 
 /datum/species/vampire/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
+//	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
+//		return TRUE
 	return FALSE
 
 /datum/species/vampire/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)

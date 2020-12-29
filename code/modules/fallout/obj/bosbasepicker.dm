@@ -11,20 +11,20 @@
 /obj/machinery/computer/shuttle/bos/Topic(href, href_list)
 	if(href_list["move"])
 		if(!is_centcom_level(z))
-			to_chat(usr, "<span class='warning'>The controls have malfunctioned. And you cannot seem to lock the base down!</span>")
+			to_chat(usr, "<span class='warning'>The controls have malfunctioned, and you cannot seem to lock the base down!</span>")
 			return 0
 	..()
 	
-/obj/docking_port/mobile/bos
+/obj/docking_port/mobile/elevator/bos
+	name = "Brotherhood of Steel Foyer"
 	width = 6
 	height = 9
 	dwidth = 1
 	dheight = 0
 	dir = EAST
 	id = "Brotherhood_of_Steel"
-	callTime = 0
-	ignitionTime = 0
-	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
+	preferred_direction = EAST
+
 /obj/docking_port/stationary/bos/
 	name = "Brotherhood_of_Steel"
 	id = "Brotherhood_Home"

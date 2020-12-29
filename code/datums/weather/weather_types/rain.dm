@@ -18,7 +18,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. The rain is over.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -33,7 +33,7 @@
 /datum/weather/rain/weather_act(mob/living/L)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
-		SEND_SIGNAL(C, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+		SEND_SIGNAL(C, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 		C.wash_cream()
 		C.ExtinguishMob()
 		C.adjust_fire_stacks(-20) //Douse ourselves with water to avoid fire more easily
@@ -71,7 +71,7 @@
 			else if(H.w_uniform && wash_obj(H.w_uniform))
 				H.update_inv_w_uniform()
 			if(washgloves)
-				SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+				SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 			if(H.shoes && washshoes && wash_obj(H.shoes))
 				H.update_inv_shoes()
 			if(H.wear_mask && washmask && wash_obj(H.wear_mask))
@@ -92,7 +92,7 @@
 			qdel(O)
 
 /datum/weather/rain/proc/wash_obj(obj/O)
-	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 	O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 	if(isitem(O))
 		var/obj/item/I = O

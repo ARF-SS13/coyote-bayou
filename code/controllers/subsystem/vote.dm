@@ -25,6 +25,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/saved = list()
 	var/list/generated_actions = list()
 	var/next_pop = 0
+	var/min_restart_time = 180 MINUTES
 
 	var/display_votes = SHOW_RESULTS|SHOW_VOTES|SHOW_WINNER|SHOW_ABSTENTION //CIT CHANGE - adds obfuscated/admin-only votes
 
@@ -545,7 +546,7 @@ SUBSYSTEM_DEF(vote)
 			choice_statclicks[choice] = "[i]"
 		//
 		for(var/c in GLOB.clients)
-			SEND_SOUND(c, sound('sound/misc/server-ready.ogg'))
+//			SEND_SOUND(c, sound('sound/misc/server-ready.ogg'))
 			var/client/C = c
 			var/datum/action/vote/V = new
 			if(question)
@@ -692,7 +693,10 @@ SUBSYSTEM_DEF(vote)
 				CONFIG_SET(flag/allow_vote_mode, !CONFIG_GET(flag/allow_vote_mode))
 		if("restart")
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
-				initiate_vote("restart",usr.key)
+				if(min_restart_time < world.time)
+					initiate_vote("restart",usr.key)
+				else
+					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
 				initiate_vote("gamemode",usr.key)

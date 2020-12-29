@@ -135,9 +135,6 @@
 #define ATTACK_EFFECT_MECHTOXIN	"mech_toxin"
 #define ATTACK_EFFECT_BOOP		"boop" //Honk
 
-#define IS_BLUNT			0
-#define IS_SHARP			1
-#define IS_SHARP_ACCURATE	2
 //intent defines
 #define INTENT_HELP   "help"
 #define INTENT_GRAB   "grab"
