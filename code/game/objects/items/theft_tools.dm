@@ -183,6 +183,18 @@
 	playsound(get_turf(user), 'sound/effects/supermatter.ogg', 50, 1)
 	ded.dust()
 
+/obj/item/nuke_core/supermatter_sliver/supermatter_crocs
+	name = "supermatter crocs"
+	desc = "What ARE those?"
+	icon = 'icons/obj/sm_croc.dmi'
+	icon_state = "sm_croc"
+	item_state = "supermattersliver"
+	pulseicon = "sm_croc"
+
+/obj/item/nuke_core/supermatter_sliver/supermatter_crocs/Initialize()
+	. = ..()
+	set_light(5, 7, COLOR_ASSEMBLY_YELLOW)
+
 /obj/item/nuke_core_container/supermatter
 	name = "supermatter bin"
 	desc = "A tiny receptacle that releases an inert hyper-noblium mix upon sealing, allowing a sliver of a supermatter crystal to be safely stored.."
