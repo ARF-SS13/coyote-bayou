@@ -46,9 +46,12 @@
 	item_color = "ncr_uniform"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/ncr/officer
-	name = "NCR desert officer fatigues"
-	desc = "A set of NCR officer fatigues"
+/obj/item/clothing/under/f13/ncr/scout
+	name = "NCR scout fatigues"
+	desc = "A standard duty uniform for scouts of the New California Republic."
+	icon_state = "scoutclothes"
+	item_state = "scoutclothes"
+	item_color = "scoutclothes"
 
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outfit"
@@ -56,13 +59,6 @@
 	icon_state = "caravaneer"
 	item_state = "caravaneer"
 	item_color = "caravaneer"
-
-/obj/item/clothing/under/f13/ncr/scout
-	name = "NCR scouting fatigues"
-	desc = "A standard duty uniform for members of the 3rd Scout Battalion."
-	icon_state = "scoutclothes"
-	item_state = "scoutclothes"
-	item_color = "scoutclothes"
 
 //Settlers
 
@@ -112,6 +108,7 @@
 
 //The City
 
+//Ranger
 /obj/item/clothing/under/f13/ranger
 	name = "ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman."
@@ -120,29 +117,26 @@
 	item_color = "ranger"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/trailranger
+/obj/item/clothing/under/f13/ranger/trail
 	name = "ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. Worn often by NCR rangers."
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	item_color = "cowboyrang"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/patrolranger
+/obj/item/clothing/under/f13/ranger/patrol
 	name = "patrol ranger outfit"
 	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under NCR patrol ranger armour."
 	icon_state = "patrolranger"
 	item_state = "patrolranger"
 	item_color = "patrolranger"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/vetranger
-	name = "veteran ranger outfit"
+/obj/item/clothing/under/f13/ranger/vet
+	name = "ranger flannel outfit"
 	desc = "Simple rustic clothes for any big iron packin' ranger."
 	icon_state = "vetranger"
 	item_state = "vetranger"
 	item_color = "vetranger"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 70)
 
 /obj/item/clothing/under/f13/rustic
 	name = "rustic outfit"
@@ -400,6 +394,7 @@
 	icon_state = "warriors"
 	item_state = "warriors"
 
+//WAYFARER TRIBAL
 /obj/item/clothing/under/f13/tribe
 	name = "tribal rags"
 	desc = "Dusty rags decorated with strips of leather and small pieces of turquoise."
@@ -413,12 +408,81 @@
 	item_state = "chiefrags"
 
 /obj/item/clothing/under/f13/tribe_shaman
-
 	name = "tribal shaman robes"
 	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
 	icon_state = "shamanrags"
 	item_state = "shamanrags"
+/obj/item/clothing/under/f13/wayfarerf
+	name = "loincloth"
+	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin and breasts. Well suited for a simpler life lived by the Wayfarer tribe."
+	icon_state = "gatherer"
+	item_state = "gatherer"
+	item_color = "gatherer"
 
+/obj/item/clothing/under/f13/wayfarerm
+	name = "loincloth"
+	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin. Well suited for a simpler life lived by the Wayfarer tribe."
+	icon_state = "gatherer_d"
+	item_state = "gatherer_d"
+	item_color = "gatherer_d"
+
+/obj/item/clothing/under/f13/wayfarer/shamanbluef
+	name = "blue shaman garbs"
+	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	icon_state = "shamanblue"
+	item_state = "shamanblue"
+	item_color = "shamanblue"
+
+/obj/item/clothing/under/f13/wayfarer/shamanbluem
+	name = "blue shaman garbs"
+	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	icon_state = "shamanblue_d"
+	item_state = "shamanblue_d"
+	item_color = "shamanblue_d"
+
+/obj/item/clothing/under/f13/wayfarer/shamanredf
+	name = "red shaman garbs"
+	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	icon_state = "shamanred"
+	item_state = "shamanred"
+	item_color = "shamanred"
+
+/obj/item/clothing/under/f13/wayfarer/shamanredm
+	name = "red shaman garbs"
+	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	icon_state = "shamanred_d"
+	item_state = "shamanred_d"
+	item_color = "shamanred_d"
+
+/obj/item/clothing/under/f13/wayfarer/acolytef
+	name = "acolyte's garbs"
+	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth. Well suited for a simpler life lived by the Wayfarer tribe."
+	icon_state = "acolyte"
+	item_state = "acolyte"
+	item_color = "acolyte"
+
+/obj/item/clothing/under/f13/wayfarer/acolytem
+	name = "acolyte's garbs"
+	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth. Well suited for a simpler life lived by the Wayfarer tribe."
+	icon_state = "acolyte_d"
+	item_state = "acolyte_d"
+	item_color = "acolyte_d"
+
+/obj/item/clothing/under/f13/wayfarer/hunterf
+	name = "rugged loincloth"
+	desc = "Minimal yet hardy clothing, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
+	icon_state = "hunter"
+	item_state = "hunter"
+	item_color = "hunter"
+
+/obj/item/clothing/under/f13/wayfarer/hunterm
+	name = "rugged loincloth"
+	desc = "Minimal yet hardy clothing padded in places by leather, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
+	icon_state = "hunter_d"
+	item_state = "hunter_d"
+	item_color = "hunter_d"
+
+//OUTLAW DESERTERS
 /obj/item/clothing/under/f13/exile
 	name = "disheveled NCR fatigues"
 	desc = "A disheveled and modified duty uniform resembling NCR fatigues."
@@ -824,7 +888,7 @@
 	item_color = "vault42"
 
 /obj/item/clothing/under/f13/followers
-	name = "followers outfit "
+	name = "followers outfit"
 	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by Followers of the Apocalypse.<br><i>Nihil boni sine labore.</i>"
 	icon_state = "followers"
 	item_state = "bar_suit"
