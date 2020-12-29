@@ -120,6 +120,36 @@ export const RADIO_CHANNELS = [
     freq: 1459,
     color: '#1ecc43',
   },
+  {
+    name: 'Vault',
+    freq: 1361,
+    color: '#6eaa2c',
+  },
+  {
+    name: 'NCR',
+    freq: 1363,
+    color: '#eaaa54',
+  },
+  {
+    name: 'BOS',
+    freq: 1365,
+    color: '#686868',
+  },
+  {
+    name: 'Enclave',
+    freq: 1367,
+    color: '#003000',
+  },
+  {
+    name: 'Oasis',
+    freq: 1369,
+    color: '#a8732b',
+  },
+  {
+    name: 'Legion',
+    freq: 1371,
+    color: '#c24d44',
+  },
 ];
 
 const GASES = [
