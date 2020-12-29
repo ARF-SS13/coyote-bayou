@@ -47,6 +47,8 @@
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, params)
+	if(linked_attack_parent)
+		linked_attack_parent.attackby(W, user)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return STOP_ATTACK_PROC_CHAIN
 
