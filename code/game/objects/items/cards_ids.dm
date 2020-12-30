@@ -858,6 +858,7 @@
 	desc = "An advanced holographic dogtag, that shows the duty of a BoS member."
 	icon_state = "holodogtag"
 	assignment = "ID tags"
+	uses_overlays = FALSE
 
 /obj/item/card/id/selfassign/attack_self(mob/user)
     if(isliving(user))
@@ -1054,6 +1055,7 @@
 	icon_state = "legionbrand"
 	item_state = "slave"
 	assignment = "Slave brand"
+	uses_overlays = FALSE
 
 
 ///OUTLAW TAGS////
@@ -1063,24 +1065,28 @@
 	desc = "Decrepit uncared for NCR dogtags, kept as a reminder to something."
 	icon_state = "rustedncrtag"
 	item_state = "rustedncrtag"
+	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/rustedmedallion
 	name = "rusted medallion"
 	desc = "A battered and unkempt legion medallion, kept as a reminder to something."
 	icon_state = "rustedmedallion"
 	item_state = "rustedmedallion"
+	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/fadedvaultid
 	name = "faded id card"
 	desc = "A and worn Vault-Tech issued ID card, broken beyond use, kept as a reminder to something."
 	icon_state = "fadedvaultid"
 	item_state = "fadedvaultid"
+	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/brokenholodog
 	name = "broken holotag"
 	desc = "A BoS issue holotag, it isnt working now though, kept as a reminder to something."
 	icon_state = "brokenholodog"
 	item_state = "brokenholodog"
+	uses_overlays = FALSE
 
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"
@@ -1088,6 +1094,7 @@
 	icon_state = "skin"
 	item_state = "skin"
 	assignment = "gang tattoo"
+	uses_overlays = FALSE
 
 	access = list(ACCESS_KHAN)
 
@@ -1101,6 +1108,7 @@
 	icon_state = "talisman"
 	item_state = "talisman"
 	assignment = "tribe tattoo"
+	uses_overlays = FALSE
 
 	access = list(ACCESS_TRIBE)
 
@@ -1110,6 +1118,7 @@
 	icon_state = "silver"
 	item_state = "silver_id"
 	assignment = "mayoral permit"
+	uses_overlays = FALSE
 
 /obj/item/card/id/dendoctor
 	name = "doctor's name badge"
@@ -1117,6 +1126,7 @@
 	icon_state = "doctor"
 	item_state = "card-doctor"
 	assignment = "name badge"
+	uses_overlays = FALSE
 
 /obj/item/card/id/chief
 	name = "crimson identification card"
@@ -1125,6 +1135,7 @@
 	item_state = "sec_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	uses_overlays = FALSE
 
 /obj/item/card/id/sec
 	name = "red identification card"
@@ -1133,3 +1144,4 @@
 	item_state = "sec_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	uses_overlays = FALSE
