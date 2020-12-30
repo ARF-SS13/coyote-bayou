@@ -148,11 +148,21 @@
 		return GLOB.contained_state
 	return GLOB.default_state
 
-/obj/machinery/sleeper/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/sleeper/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Sleeper", name)
 		ui.open()
+	else
+		if(!user.has_quirk(/datum/quirk/chemwhiz))
+			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			return
+		if(!user.IsAdvancedToolUser())
+			to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+			return
+		if(!ui)
+			ui = new(user, src, "Sleeper", name)
+			ui.open()
 
 /obj/machinery/sleeper/AltClick(mob/user)
 	if(!user.canUseTopic(src, !issilicon(user)))
