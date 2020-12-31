@@ -315,7 +315,7 @@
 
 ///////////Civilians//////////////////////
 
-/obj/effect/mob_spawn/human/corpse/assistant
+/*/obj/effect/mob_spawn/human/corpse/assistant
 	name = "Assistant"
 	outfit = /datum/outfit/job/assistant
 
@@ -334,7 +334,7 @@
 
 /obj/effect/mob_spawn/human/cook
 	name = "Cook"
-	outfit = /datum/outfit/job/cook
+	outfit = /datum/outfit/job/wasteland/f13wastelander
 
 
 /obj/effect/mob_spawn/human/doctor
@@ -363,10 +363,10 @@
 
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
-	outfit = /datum/outfit/job/engineer/gloved
+	outfit = /datum/outfit/job/vault/f13vaultengineer
 
 /obj/effect/mob_spawn/human/engineer/rig
-	outfit = /datum/outfit/job/engineer/gloved/rig
+	outfit = /datum/outfit/job/vault/f13vaultengineer
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
@@ -386,7 +386,7 @@
 /obj/effect/mob_spawn/human/miner/explorer
 	outfit = /datum/outfit/job/miner/equipped
 
-
+*/
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
@@ -451,13 +451,13 @@
 	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank;
 	uniform = /obj/item/clothing/under/pants/youngfolksjeans
 	id = /obj/item/card/id
-
+/*
 /datum/outfit/beachbum/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 	if(visualsOnly)
 		return
 	H.dna.add_mutation(STONER)
-
+*/
 /////////////////Officers+Nanotrasen Security//////////////////////
 
 /obj/effect/mob_spawn/human/bridgeofficer

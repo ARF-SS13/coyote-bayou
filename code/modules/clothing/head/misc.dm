@@ -465,7 +465,7 @@
 
 /obj/item/clothing/head/maid
 	name = "maid headband"
-	desc = "Maid in China."
+	desc = "Maid in the USA!"
 	icon_state = "maid"
 	item_state = "maid"
 	dynamic_hair_suffix = ""
@@ -503,20 +503,3 @@
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
-
-//Fallout 13
-
-/obj/item/clothing/head/f13/police
-	name = "pre-War police hat"
-	desc = "It's the police hat of dark blue in color with a silver colored badge on the frontside.<br>The badge is inscripted with the words SPECIAL and POLICE."
-	icon_state = "retropolice"
-	item_state = "fedora"
-	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 25, bio = 0, rad = 0)
-	dynamic_hair_suffix = ""
-
-/obj/item/clothing/head/f13/stormchaser
-	name = "stormchaser hat"
-	icon_state = "stormchaser"
-	item_state = "fedora"
-	desc = "Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."

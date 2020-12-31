@@ -1057,6 +1057,9 @@
 	assignment = "Slave brand"
 	uses_overlays = FALSE
 
+/obj/item/card/id/legionbrand/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 ///OUTLAW TAGS////
 
@@ -1098,6 +1101,9 @@
 
 	access = list(ACCESS_KHAN)
 
+/obj/item/card/id/khantattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /* Tribal Tags
 */
@@ -1111,6 +1117,10 @@
 	uses_overlays = FALSE
 
 	access = list(ACCESS_TRIBE)
+
+/obj/item/card/id/tribetattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"

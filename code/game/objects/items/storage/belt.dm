@@ -445,14 +445,14 @@
 	STR.max_items = 6
 
 
-/obj/item/storage/belt/security/follower/PopulateContents()
+/obj/item/storage/belt/military/followers/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/melee/classic_baton(src)
 	new /obj/item/kitchen/knife/combat(src)
-	new /obj/item/storage/box/rubbershot/beanbag(src)
+	new /obj/item/ammo_box/magazine/m9mmds(src)
 	update_icon()
-
+	
 /obj/item/storage/belt/durathread
 	name = "durathread toolbelt"
 	desc = "A toolbelt made out of durathread, it seems robust enough to hold bigger tools like RCDs or RPDs, with enough pouches to hold more gear than a normal belt."

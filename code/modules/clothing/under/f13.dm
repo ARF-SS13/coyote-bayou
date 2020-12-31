@@ -202,6 +202,13 @@
 	alt_covers_chest = TRUE
 	can_adjust = TRUE
 
+/obj/item/clothing/under/f13/legskirt/tac //whoaaa mama humina humina
+	name = "\improper ''tactical'' combat skirt"
+	desc = "A leathery skirt below a thick, black, long-sleeve cotton shirt. Perfect for operatives favoring wardrobe malfunctions."
+	icon_state = "tacskirt"
+	item_state = "tacskirt"
+	item_color = "tacskirt"
+
 /obj/item/clothing/under/f13/priestess
 	name = "priestess robes"
 	desc = "The robes worn by a Priestess of Mars."
@@ -218,6 +225,27 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	flags_inv = HIDEGLOVES|HIDESHOES
+
+//Roma Legion
+
+/obj/item/clothing/under/f13/romaskirt
+	name = "roma legionary fatigues"
+	desc = "A worn and abused pair of fatigues, leftover from the legionary's service to Caesar."
+	icon_state = "roma_legion"
+	item_state = "roma_legion"
+	item_color = "roma_legion"
+
+/obj/item/clothing/under/f13/romaskirt/auxilia
+	name = "roma auxilia fatigues"
+	desc = "A black skirt and a thick long sleeve cotton shirt."
+	icon_state = "roma_auxilia"
+	item_state = "roma_auxilia"
+	item_color = "roma_auxilia"
+	var/sleeves_adjusted = 0
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	alt_covers_chest = TRUE
+	can_adjust = TRUE
 
 // Generic
 
@@ -359,14 +387,6 @@
 	item_state = "raider_leather"
 	item_color = "raider_leather"
 
-/obj/item/clothing/suit/armor/fluff/chestplate/rusty
-	name = "rusty armor"
-	desc = "scrap beaten together until it becomes something wearable"
-	icon_state = "rusty_armor"
-	item_state = "rustyl_armor"
-	item_color = "rusty_armor"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
-
 /obj/item/clothing/under/f13/raiderrags
 	name = "raider rags"
 	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
@@ -382,18 +402,6 @@
 	item_color = "khan"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
-/obj/item/clothing/suit/armor/khan_jacket
-	name = "khan armored jacket"
-	desc = "The symbol of the greatest pushers."
-	icon_state = "khan_jacket"
-	item_state = "khan_jacket"
-
-/obj/item/clothing/suit/armor/warriors
-	name = "warriors armored vest"
-	desc = "The symbol of the greatest gangers."
-	icon_state = "warriors"
-	item_state = "warriors"
-
 //WAYFARER TRIBAL
 /obj/item/clothing/under/f13/tribe
 	name = "tribal rags"
@@ -407,19 +415,25 @@
 	icon_state = "chiefrags"
 	item_state = "chiefrags"
 
+/obj/item/clothing/under/f13/tribe_Hhunter
+	name = "Razorclaw robes"
+	desc = "Tanned leather robes, decorated with bones of deathclaws and marked with the great machine spirit of earth."
+	icon_state = "hhunterrags"
+	item_state = "hhunterrags"
+
 /obj/item/clothing/under/f13/tribe_shaman
 	name = "tribal shaman robes"
 	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
 	icon_state = "shamanrags"
 	item_state = "shamanrags"
-/obj/item/clothing/under/f13/wayfarerf
+/obj/item/clothing/under/f13/wayfarer //female
 	name = "loincloth"
 	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin and breasts. Well suited for a simpler life lived by the Wayfarer tribe."
 	icon_state = "gatherer"
 	item_state = "gatherer"
 	item_color = "gatherer"
 
-/obj/item/clothing/under/f13/wayfarerm
+/obj/item/clothing/under/f13/wayfarer/m //male
 	name = "loincloth"
 	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin. Well suited for a simpler life lived by the Wayfarer tribe."
 	icon_state = "gatherer_d"
@@ -1173,3 +1187,35 @@
 	desc = "A harness made out of a number of black belts sewn together end on end to form a coiling piece of clothing. A symbol in red has been painted on the front, and a pair of hide pants go with it."
 	icon_state = "raven_harness"
 	item_state = "raven_harness"
+
+/obj/item/clothing/under/f13/ravenharness
+	name = "raven harness"
+	desc = "A harness made out of a number of black belts sewn together end on end to form a coiling piece of clothing. A symbol in red has been painted on the front, and a pair of hide pants go with it."
+	icon_state = "raven_harness"
+	item_state = "raven_harness"
+
+/obj/item/clothing/under/f13/jamrock
+	name = "Disco-Ass Shirt and Pants"
+	desc = "This white satin shirt used to be fancy. It used to really catch the light. Now it smells like someone took a piss in the armpits while the golden brown trousers are flare-cut. Normal bell-bottom trousers would be boot-cut, but these are far from normal. They are someone's piss-soaked, cum-stained party pants."
+	icon_state = "jamrock_uniform"
+	item_state = "jamrock_uniform"
+
+/obj/item/clothing/under/f13/keksweater
+	name = "Red Sweater"
+	desc = "A dark red-sweater with some cargo-pants. Perfect for when it just gets too cold down in local air-conditioned areas."
+	icon_state = "brahminsss"
+	item_state = "brahminsss"
+
+/obj/item/clothing/under/f13/locust
+	name = "locust uniform"
+	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
+	icon_state = "locust"
+	item_state = "locust"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
+
+/obj/item/clothing/under/f13/gunner
+	name = "gunner combat uniform"
+	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
+	icon_state = "GunnerPlates"
+	item_state = "GunnerPlates"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)

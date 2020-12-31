@@ -289,39 +289,35 @@
 				/obj/item/clothing/head/helmet/f13/metalmask/mk2
 				)
 	var/loot2 = list(
-				/obj/item/clothing/suit/armor/f13/metalarmor/strange,
-				/obj/item/clothing/head/helmet/knight/fluff/metal/strange
-				)
-	var/loot3 = list(
 				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat,
 				)
-	var/loot4 = list(
+	var/loot3 = list(
 				/obj/item/clothing/head/helmet/f13/combat/swat,
 				/obj/item/clothing/suit/armor/f13/combat/swat
 				)
-	var/loot5 = list(
+	var/loot4 = list(
 				/obj/item/clothing/suit/armor/f13/combat,
 				/obj/item/clothing/head/helmet/f13/combat
 				)
-	var/loot6 = list(
+	var/loot5 = list(
 				/obj/item/clothing/suit/armor/bulletproof,
 				/obj/item/clothing/head/helmet/alt
 				)
-	var/loot7 = list(
+	var/loot6 = list(
 				/obj/item/clothing/suit/armor/f13/combat/dark,
 				/obj/item/clothing/head/helmet/f13/combat/dark
 				)
-	var/loot8 = list(
+	var/loot7 = list(
 				/obj/item/clothing/suit/armor/f13/combat/mk2/dark,
 				/obj/item/clothing/head/helmet/f13/combat/mk2/dark
 				)
-	var/loot9 = list(
+	var/loot8 = list(
 				/obj/item/clothing/suit/armor/f13/sulphitearmor,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
@@ -387,7 +383,7 @@
             /obj/effect/spawner/lootdrop/f13/armor/tier2 = 59,
             /obj/effect/spawner/lootdrop/f13/armor/tier3 = 30,
             /obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
-            /obj/item/ring = 1 //one ring to rule them all
+            /obj/item/traumapack = 1 //one ring to rule them all
             )
 
 /* ------------------------------------------------

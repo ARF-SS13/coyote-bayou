@@ -271,7 +271,7 @@
 	speed = 1
 	maxHealth = 160
 	health = 160
-	harm_intent_damage = 15
+	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -379,7 +379,7 @@
 	speed = -1
 	maxHealth = 50
 	health = 100
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -441,7 +441,7 @@
 	speed = -1
 	maxHealth = 250
 	health = 250
-	harm_intent_damage = 30
+	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 10
 	melee_damage_upper = 20
@@ -497,7 +497,7 @@
 	speed = -1
 	maxHealth = 40
 	health = 40
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8

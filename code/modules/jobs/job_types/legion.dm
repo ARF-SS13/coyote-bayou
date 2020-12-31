@@ -14,8 +14,9 @@
 	box = null
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
-	belt = /obj/item/storage/belt/military/assault/legion
-	backpack = /obj/item/storage/backpack/satchel/explorer
+	belt = 			/obj/item/storage/belt/military/assault/legion
+	backpack = 		/obj/item/storage/backpack/explorer
+	satchel = 		/obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/f13/military/plated
 	gloves =		/obj/item/clothing/gloves/legion
@@ -374,7 +375,7 @@ Decanii
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 
-/datum/job/CaesarsLegion/Legionnaire/f13decanrec/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/CaesarsLegion/Legionnaire/f13decan/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Big Leagues")
 	H.add_quirk("Iron Fist")
 

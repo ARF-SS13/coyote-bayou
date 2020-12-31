@@ -16,7 +16,7 @@
 	robust_searching = 1
 	maxHealth = 100
 	health = 100
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_verb_simple = "punches"
@@ -135,7 +135,7 @@
 	robust_searching = 1
 	maxHealth = 150
 	health = 150
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	attack_verb_simple = "thrusts"
@@ -256,7 +256,7 @@
 	robust_searching = 1
 	maxHealth = 250
 	health = 250
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_verb_simple = "áüåò"
@@ -345,7 +345,7 @@
 	robust_searching = 1
 	maxHealth = 150
 	health = 150
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_verb_simple = "áüåò"
@@ -436,7 +436,7 @@
 	robust_searching = 1
 	maxHealth = 150
 	health = 150
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_verb_simple = "attacks"
@@ -525,7 +525,7 @@
 	robust_searching = 1
 	maxHealth = 150
 	health = 150
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	attack_verb_simple = "attacks"
@@ -556,7 +556,7 @@
 	robust_searching = 1
 	maxHealth = 220
 	health = 220
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 40
 	melee_damage_upper = 55
 	attack_verb_simple = "attacks"
@@ -648,7 +648,7 @@
 	//gloves = /obj/item/clothing/gloves/f13/doom
 	//radio = /obj/item/device/radio/headset
 	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/yankee
+	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/raider/biker
@@ -689,7 +689,7 @@
 	robust_searching = 1
 	maxHealth = 1000
 	health = 1000
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	melee_damage_lower = 75
 	melee_damage_upper = 75
 	attack_verb_simple = "eviscerates"
@@ -736,7 +736,7 @@
 	robust_searching = 1
 	maxHealth = 700
 	health = 700
-	harm_intent_damage = 20
+	harm_intent_damage = 8
 	melee_damage_lower = 50
 	melee_damage_upper = 50
 	attack_verb_simple = "eviscerates"

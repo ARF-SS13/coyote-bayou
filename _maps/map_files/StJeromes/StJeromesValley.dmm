@@ -5670,7 +5670,7 @@
 "cfb" = (/obj/structure/barricade/wooden/strong,/turf/open/indestructible/ground/outside/road{icon_state = "verticalleftborderright0"},/area/f13/city)
 "cfc" = (/obj/structure/barricade/wooden/strong,/turf/open/indestructible/ground/outside/road,/area/f13/city)
 "cfd" = (/obj/item/storage/trash_stack,/turf/open/indestructible/ground/inside/subway,/area/f13/tunnel)
-"cfe" = (/obj/item/ring{desc = "One ring to rush them all, one ring to find them,<br>One rusher to bring them all and in the darkness bind them..."; name = "Meta Ring"; slowdown = 9999; throw_range = 1; throw_speed = 1; w_class = 5},/turf/open/floor/plasteel/elevatorshaft,/area/f13/city{name = "museum"})
+"cfe" = (/turf/open/floor/plasteel/elevatorshaft,/area/f13/city{name = "museum"})
 "cff" = (/obj/structure/ladder/unbreakable{height = 2; id = "Waster"},/turf/open/floor/plasteel/barber{icon = 'icons/turf/f13floors2.dmi'; icon_state = "bluerustychess2"; tag = "icon-bluerustychess2"},/area/f13/underground/mountain)
 "cfg" = (/obj/structure/simple_door/metal/barred,/turf/open/floor/plasteel/barber{icon = 'icons/turf/f13floors2.dmi'; icon_state = "bluerustychess2"; tag = "icon-bluerustychess2"},/area/f13/underground/mountain)
 "cfh" = (/obj/effect/turf_decal/weather/snow/corner{dir = 9; icon_state = "snow_corner"},/obj/effect/turf_decal/weather/snow/corner,/turf/open/indestructible/ground/outside/dirt,/area/f13/wasteland)

@@ -84,3 +84,16 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+
+/obj/item/clothing/gloves/f13/blacksmith
+	name = "blacksmith gloves"
+	desc = "A pair of heavy duty leather gloves designed to protect the wearer when metalforging."
+	icon_state = "opifex_gloves"
+	item_state = "opifex_gloves"
+	item_color = null
+	transfer_prints = FALSE
+	strip_delay = 10
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
