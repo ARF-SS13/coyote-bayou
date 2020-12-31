@@ -35,6 +35,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
@@ -255,6 +256,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
 
@@ -779,3 +781,4 @@ Detective
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)

@@ -151,6 +151,8 @@ Practitioner
 	exp_requirements = 1080
 	exp_type = EXP_TYPE_FOLLOWERS
 
+	outfit = /datum/outfit/job/followers/f13practitioner
+
 	loadout_options = list(
 	/datum/outfit/loadout/physician,
 	/datum/outfit/loadout/pharmacist,
@@ -158,10 +160,13 @@ Practitioner
 	/datum/outfit/loadout/medical_researcher
 	)
 
-/datum/outfit/job/followers/f13practitioner/pre_equip(mob/living/carbon/human/H, mob/M)
-	ADD_TRAIT(H, TRAIT_PRACTITIONER, M)
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, M)
-	ADD_TRAIT(H, TRAIT_GENERIC, M)
+/datum/outfit/job/followers/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PRACTITIONER, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 	//the follower practitioner doesn't need access because it's already set in the /datum/job/follower
 	//personally, I don't think a practitioner should have more access than a volunteer.
