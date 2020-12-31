@@ -158,11 +158,23 @@
 		get_asset_datum(/datum/asset/spritesheet/simple/pills),
 	)
 
-/obj/machinery/chem_master/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/chem_master/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "ChemMaster", name)
 		ui.open()
+	else
+		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_dispenser/drinks))
+			to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+			return
+		if(!user.has_quirk(/datum/quirk/chemwhiz) && !istype(src, /obj/machinery/chem_dispenser/drinks))
+			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			return
+		if(!ui)
+			ui = new(user, src, "ChemMaster", name)
+			if(user.hallucinating())
+				ui.set_autoupdate(FALSE) //to not ruin the immersion by constantly changing the fake chemicals
+			ui.open()
 
 /obj/machinery/chem_master/ui_data(mob/user)
 	var/list/data = list()

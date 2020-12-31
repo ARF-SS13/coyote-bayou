@@ -65,22 +65,6 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
-/obj/item/clothing/suit/hooded/cloak/goliath
-	name = "goliath cloak"
-	icon_state = "goliath_cloak"
-	desc = "A staunch, practical cape made out of numerous monster materials, it is coveted amongst exiles & hermits."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/spear, /obj/item/spear/bonespear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
-	body_parts_covered = CHEST|ARMS|LEGS
-
-/obj/item/clothing/head/hooded/cloakhood/goliath
-	name = "goliath cloak hood"
-	icon_state = "golhood"
-	desc = "A protective & concealing hood."
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
 /obj/item/clothing/suit/hooded/cloak/drake
 	name = "drake armour"
 	icon_state = "dragon"
@@ -116,14 +100,14 @@
 /obj/item/clothing/neck/cloak/alt
 	name = "cloak"
 	desc = "A ragged up white cloak. It reminds you of a place not far from here."
-	icon_state = "cloak"
-	item_state = "cloak"
+	icon_state = "cloakc"
+	item_state = "cloakc"
 
 /obj/item/clothing/neck/cloak/alt/polychromic
 	name = "polychromic cloak"
 	desc = "A ragged up cloak. It reminds you of a place not far from here."
-	icon_state = "cloak"
-	item_state = "cloak"
+	icon_state = "cloakc"
+	item_state = "cloakc"
 	var/list/poly_colors = list("#FFFFFF", "#676767", "#4C4C4C")
 
 /obj/item/clothing/neck/cloak/alt/polychromic/ComponentInitialize()
