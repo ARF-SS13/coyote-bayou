@@ -64,7 +64,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/stunmod = 1		// multiplier for stun duration
 	var/punchdamagelow = 1       //lowest possible punch damage. if this is set to 0, punches will always miss
 	var/punchdamagehigh = 8      //highest possible punch damage
-	var/punchstunthreshold = 10//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
+	var/punchstunthreshold = 8//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
 	var/siemens_coeff = 1 //base electrocution coefficient
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
 	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
