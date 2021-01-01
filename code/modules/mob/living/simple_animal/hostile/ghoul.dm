@@ -118,6 +118,7 @@
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()
 	set_light(2)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
@@ -171,6 +172,7 @@
 
 /mob/living/simple_animal/hostile/ghoul/hot/Initialize()
 	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
 
 /mob/living/simple_animal/hostile/ghoul/hot/Aggro()
 	..()
