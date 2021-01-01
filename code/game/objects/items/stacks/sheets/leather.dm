@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
  * Plates
  */
 
- /obj/item/stack/sheet/animalhide/ragstag
+/obj/item/stack/sheet/animalhide/ragstag
 	name = "radstag hide"
 	desc = "A raw pelt taken from a radstag."
 	singular_name = "ragstag hide piece"
