@@ -34,7 +34,7 @@
 	owner.stuttering = 0
 	..()
 
-/datum/brain_trauma/mild/dumbness
+/*/datum/brain_trauma/mild/dumbness
 	name = "Dumbness"
 	desc = "Patient has reduced brain activity, making them less intelligent."
 	scan_desc = "reduced brain activity"
@@ -74,7 +74,7 @@
 /datum/brain_trauma/mild/speech_impediment/on_lose()
 	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 	..()
-
+*/
 /datum/brain_trauma/mild/concussion
 	name = "Concussion"
 	desc = "Patient's brain is concussed."

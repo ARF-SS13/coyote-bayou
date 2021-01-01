@@ -35,6 +35,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
@@ -255,6 +256,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
 
@@ -588,7 +590,7 @@ Mayor
 /datum/outfit/loadout/propergent
 	name = "Respectable Gent"
 	head = /obj/item/clothing/head/f13/beaver
-	suit = /obj/item/clothing/suit/fluff/cowboybvest
+	suit = /obj/item/clothing/suit/f13/cowboybvest
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack_contents = list(/obj/item/storage/box/matches, /obj/item/storage/fancy/cigarettes/cigars)
@@ -779,3 +781,4 @@ Detective
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)

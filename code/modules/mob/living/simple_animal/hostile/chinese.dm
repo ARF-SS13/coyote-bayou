@@ -14,7 +14,7 @@
 	speed = 1
 	maxHealth = 100
 	health = 100
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 50
 	attack_verb_simple = "punches"

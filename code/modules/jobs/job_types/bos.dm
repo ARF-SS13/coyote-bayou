@@ -15,14 +15,15 @@ Main doors: ACCESS_CAPTAIN 20
 
 /datum/outfit/job/bos
 	name = "bosdatums"
-	jobtype = /datum/job/bos
-	backpack = /obj/item/storage/backpack/explorer
-	ears = /obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/syndicate/brotherhood
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/combat
-	id = /obj/item/card/id/dogtag
-	box = /obj/item/storage/survivalkit_adv
+	jobtype = 	/datum/job/bos
+	backpack = 	/obj/item/storage/backpack/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/explorer
+	ears = 		/obj/item/radio/headset/headset_bos
+	uniform =	/obj/item/clothing/under/syndicate/brotherhood
+	shoes = 	/obj/item/clothing/shoes/combat/swat
+	gloves = 	/obj/item/clothing/gloves/combat
+	id = 		/obj/item/card/id/dogtag
+	box = 		/obj/item/storage/survivalkit_adv
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -116,7 +117,7 @@ Sentinel
 	uniform = 		/obj/item/clothing/under/f13/recon
 	accessory = 	/obj/item/clothing/accessory/bos/sentinel
 	glasses =       /obj/item/clothing/glasses/night
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t60
+	r_hand = 			/obj/item/clothing/suit/armor/f13/power_armor/t60
 	belt =			/obj/item/storage/belt/military/assault
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t60
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
@@ -335,7 +336,7 @@ Senior Paladin
 	name = "Senior Paladin"
 	jobtype = /datum/job/bos/f13seniorpaladin
 	pa_wear = TRUE
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	r_hand = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t51b
 	accessory = 	/obj/item/clothing/accessory/bos/seniorpaladin
 	uniform = 		/obj/item/clothing/under/f13/recon
@@ -398,7 +399,7 @@ Paladin
 	name = "Paladin"
 	jobtype = /datum/job/bos/f13paladin
 	pa_wear = TRUE
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
+	r_hand = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t45d
 	uniform = 		/obj/item/clothing/under/f13/recon
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat

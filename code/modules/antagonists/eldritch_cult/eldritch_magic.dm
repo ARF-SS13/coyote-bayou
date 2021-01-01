@@ -637,7 +637,7 @@
 	range = 10
 	invocation = "AK'LIS"
 	action_background_icon_state = "bg_ecult"
-
+/*
 /obj/effect/proc_holder/spell/pointed/trigger/mute/eldritch
 	name = "Silence"
 	desc = "Using the power of the mansus, silences a selected unbeliever for twenty seconds."
@@ -669,7 +669,7 @@
 			to_chat(user, "<span class='warning'>You can only silence living beings!</span>")
 		return FALSE
 	return TRUE
-
+*/
 
 /obj/effect/temp_visual/dir_setting/entropic
 	icon = 'icons/effects/160x160.dmi'

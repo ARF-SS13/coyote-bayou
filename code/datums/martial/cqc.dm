@@ -187,7 +187,7 @@
 			D.apply_damage(damage*0.5, BRUTE)
 		else
 			D.visible_message("<span class='danger'>[A] strikes [D] in the chest!</span>", \
-							"<span class='userdanger'>[A] strikes in chest!</span>")
+							"<span class='userdanger'>[A] strikes you in the chest!</span>")
 			playsound(D, 'sound/weapons/cqchit1.ogg', 25, 1, -1)
 			D.apply_damage(damage + 15, STAMINA)
 			D.apply_damage(damage*0.5, BRUTE)

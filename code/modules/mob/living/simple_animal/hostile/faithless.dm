@@ -24,7 +24,7 @@
 	robust_searching = 1
 	blood_volume = 0
 
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	obj_damage = 50
 	melee_damage_lower = 15
 	melee_damage_upper = 15

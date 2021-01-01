@@ -573,7 +573,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MACHINE_SPIRITS
 	traitname = "The Machine Spirits"
-	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honour and love those blessed by the machine spirits.")
+	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honor and love those blessed by the machine spirits.")
 
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
@@ -581,11 +581,11 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
-	remarks = list("Try turning it off and on again...","Alwyas craft in good form.", "Dont forget PPE.", "Keep your mechanisms OILED.", "Stay organised.")
+	remarks = list("Try turning it off and on again...", "Always craft in good form.", "Don't forget PPE.", "Keep your mechanisms OILED.", "Stay organized.")
 
 /obj/item/book/granter/trait/pa_wear
 	name = "Advanced Armor and You"
-	desc = "An indepth look into how power armor functions."
+	desc = "An in-depth look into how power armor functions."
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
@@ -597,7 +597,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
-	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
+	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
 /*
 /obj/item/book/granter/trait/iron_fist

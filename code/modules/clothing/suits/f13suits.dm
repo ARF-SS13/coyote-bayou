@@ -1,3 +1,119 @@
+//ARMOR, AND ALL PATREON/CUSTOM/DONOR STUFF (EVEN IF SUIT AND NOT ARMOR) TO GO INTO f13armor.dm
+/*FOR REFERENCE
+/obj/item/clothing/suit
+	icon = 'icons/obj/clothing/suits.dmi'
+	name = "suit"
+	block_priority = BLOCK_PRIORITY_WEAR_SUIT
+	var/fire_resist = T0C+100
+	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST
+	var/blood_overlay_type = "suit"
+	var/togglename = null
+	var/suittoggled = FALSE
+	limb_integrity = 0 // disabled for most exo-suits
+	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/suit/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
+	. = ..()
+	if(!isinhands)
+		if(damaged_clothes)
+			. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]")
+		if(blood_DNA)
+			var/file2use = (style_flags & STYLE_ALL_TAURIC) ? 'modular_citadel/icons/mob/64x32_effects.dmi' : 'icons/effects/blood.dmi'
+			. += mutable_appearance(file2use, "[blood_overlay_type]blood", color = blood_DNA_to_color())
+		var/mob/living/carbon/human/M = loc
+		if(ishuman(M) && M.w_uniform)
+			var/obj/item/clothing/under/U = M.w_uniform
+			if(istype(U) && U.attached_accessory)
+				var/obj/item/clothing/accessory/A = U.attached_accessory
+				if(A.above_suit)
+					. += U.accessory_overlay
+
+/obj/item/clothing/suit/update_clothes_damaged_state()
+	..()
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_wear_suit()
+*/
+
+/obj/item/clothing/suit/f13
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/fluff
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/fluff/vest
+	name = "tan vest"
+	desc = "It's a vest made of tanned leather."
+	icon_state = "tanleather"
+	item_state = "det_suit"
+	body_parts_covered = CHEST
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/pen,/obj/item/gun,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/box/dice,/obj/item/dice)
+
+/obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
+	name = "captain's coat"
+	desc = "Battlecruiser operational!"
+	icon_state = "battlecruiser"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|ARMS
+	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun/energy,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+
+/obj/item/clothing/suit/f13/cowboybvest //Originally cowboy stuff by Nienhaus
+	name = "brown vest"
+	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboybvest"
+	item_state = "lb_suit"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/fluff/westender
+	name = "bartenders vest"
+	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
+	icon_state = "westender"
+	item_state = "lb_suit"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/f13/cowboygvest
+	name = "grey vest"
+	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboygvest"
+	item_state = "gy_suit"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/ghost_sheet
+	name = "ghost sheet"
+	desc = "The hands float by themselves, so it's extra spooky."
+	icon_state = "ghost_sheet"
+	item_state = "ghost_sheet"
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/holidaypriest
+	name = "holiday priest"
+	desc = "This is a nice holiday, my son."
+	icon_state = "holidaypriest"
+	item_state = "w_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/nun
+	name = "nun robe"
+	desc = "Maximum piety."
+	icon_state = "nun"
+	item_state = "nun"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+
 //Fallout 13 various suits directory
 
 /obj/item/clothing/suit/f13
@@ -16,15 +132,6 @@
 	item_state = "det_suit"
 	allowed = list(/obj/item/pen,/obj/item/gun,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/box/dice,/obj/item/dice)
 
-/obj/item/clothing/suit/f13/vest
-	name = "tan vest"
-	desc = "A vest made of tanned leather."
-	icon_state = "tanleather"
-	item_state = "det_suit"
-	body_parts_covered = CHEST
-	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	allowed = list(/obj/item/pen,/obj/item/gun,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/box/dice,/obj/item/dice)
-
 /obj/item/clothing/suit/f13/puffer
 	name = "puffer vest"
 	desc = "A thick, worn-down vest with a rubbery water-resistant shell."
@@ -32,30 +139,6 @@
 	item_state = "det_suit"
 	body_parts_covered = CHEST
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-/obj/item/storage/box/dice
-
-/obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
-	name = "captain's coat"
-	desc = "Battlecruiser operational!"
-	icon_state = "battlecruiser"
-	item_state = "hostrench"
-	body_parts_covered = CHEST|ARMS
-	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
-	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/melee,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun/energy,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
-
-/obj/item/clothing/suit/f13/cowboybvest //Originally cowboy stuff by Nienhaus
-	name = "brown vest"
-	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboybvest"
-	item_state = "lb_suit"
-/obj/item/storage/box/dice
-
-/obj/item/clothing/suit/f13/cowboygvest
-	name = "grey vest"
-	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboygvest"
-	item_state = "gy_suit"
-/obj/item/storage/box/dice
 
 /obj/item/clothing/suit/f13/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
@@ -95,7 +178,7 @@
 	icon_state = "duster"
 	item_state = "det_suit"
 	body_parts_covered = CHEST|LEGS|FEET|ARMS
-	armor = list(melee = 20, bullet = 20, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
+	armor = list(melee = 20, bullet = 20, laser = 15, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/f13/sheriff
@@ -139,6 +222,31 @@
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
 	body_parts_covered = CHEST
+
+/obj/item/clothing/suit/f13/blacksmith_apron
+	name = "blacksmith apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging."
+	icon_state = "opifex_apron"
+	item_state = "opifex_apron"
+	body_parts_covered = CHEST|GROIN
+	blood_overlay_type = "armor"
+	allowed = list(/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/multitool,
+		/obj/item/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/t_scanner,
+		/obj/item/analyzer,
+		/obj/item/geiger_counter,
+		/obj/item/extinguisher/mini,
+		/obj/item/radio,
+		/obj/item/clothing/gloves,
+		/obj/item/holosign_creator,
+		/obj/item/assembly/signaler
+	) //robust storage options!! -superballs
 
 //Special Biosuit
 
@@ -257,7 +365,6 @@
 	icon_state = "raven_hood"
 	item_state = "raven_hood"
 
-
 /obj/item/clothing/suit/hooded/cloak/desert/bridgekeeper
 	name = "tattered cloak"
 	desc = "An old ragged cloak that is covered in plasma burns and scorches."
@@ -369,3 +476,11 @@
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
+/obj/item/clothing/suit/f13/jamrock
+	name = "disco-ass blazer"
+	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
+	icon_state = "jamrock_blazer"
+	item_state = "jamrock_blazer"
+	body_parts_covered = CHEST|LEGS|FEET|ARMS
+	armor = list(melee = 20, bullet = 20, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)

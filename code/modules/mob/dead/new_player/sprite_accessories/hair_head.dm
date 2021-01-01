@@ -51,7 +51,7 @@
 
 /datum/sprite_accessory/hair/bedhead_longer
 	name = "Bedhead (Longer)"
-	icon_state = "hair_bedhead_s"
+	icon_state = "long_bedhead_s"
 
 /datum/sprite_accessory/hair/bedhead2
 	name = "Bedhead 2"

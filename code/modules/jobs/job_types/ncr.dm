@@ -24,7 +24,7 @@ Colonel
 /datum/job/ncr/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
-//	faction = "Station"
+	faction = "NCR"
 	head_announce = list("Security")
 	supervisors = "the general"
 	req_admin_notify = 1
@@ -39,13 +39,16 @@ Colonel
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
+	pa_wear = TRUE
+	id 			= /obj/item/card/id/dogtag/ncrcolonel
 	uniform		= /obj/item/clothing/under/f13/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr
-	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	r_hand 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
@@ -85,6 +88,7 @@ Captain
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
@@ -167,6 +171,7 @@ Lieutenant
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13lieutenant
 	name = "NCR Lieutenant"
@@ -558,6 +563,7 @@ Veteran Ranger
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
@@ -616,6 +622,7 @@ Veteran Ranger
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13rangerpatrol
 	name = "NCR Patrol Ranger"
@@ -665,6 +672,7 @@ Veteran Ranger
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13rangerscout
 	name = "NCR Scout Ranger"

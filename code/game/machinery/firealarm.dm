@@ -70,7 +70,7 @@
 
 	if(stat & NOPOWER)
 		return
-
+/*
 /obj/machinery/firealarm/update_overlays()
 	. = ..()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -96,7 +96,7 @@
 	else
 		. += "fire_on"
 		SSvis_overlays.add_vis_overlay(src, icon, "fire_on", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
-
+*/
 /obj/machinery/firealarm/emp_act(severity)
 	. = ..()
 

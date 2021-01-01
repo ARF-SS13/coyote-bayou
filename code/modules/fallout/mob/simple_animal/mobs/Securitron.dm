@@ -25,7 +25,7 @@
 	emote_hear = list("Beeps.")
 	speak = list("Stop Right There Criminal.")
 	death_sound = null
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	minimum_distance = 4

@@ -23,7 +23,7 @@
 
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	melee_damage_lower = 2
 	melee_damage_upper = 3
 	minimum_distance = 6

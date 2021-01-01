@@ -57,7 +57,6 @@
 	..()
 	if(visualsOnly)
 		return
-	H.dna.add_mutation(SMILE)
 	H.faction |= "clown"
 
 /datum/outfit/syndicate/clownop/leader
