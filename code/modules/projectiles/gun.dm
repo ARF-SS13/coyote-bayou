@@ -828,7 +828,6 @@
 
 /obj/item/twohanded/binocs/proc/on_wield(mob/user)
 	wielded = TRUE
-	..()
 	addZoom(user)
 
 
@@ -838,7 +837,6 @@
 
 /obj/item/twohanded/binocs/proc/on_unwield(mob/user, show_message)
 	wielded = FALSE
-	..()
 	removeZoom(user)
 
 /obj/item/twohanded/binocs/proc/addZoom(mob/user)

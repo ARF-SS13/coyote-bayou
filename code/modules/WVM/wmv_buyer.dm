@@ -93,7 +93,7 @@
 	var/final_value = 0
 	var/value_per = 0
 
-	if(!I?.type in goods_list)
+	if(!(I?.type in goods_list))
 		to_chat(usr, "<span class='notice'>[src] is not buying that!</span>")
 		return
 
