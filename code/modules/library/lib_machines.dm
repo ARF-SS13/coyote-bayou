@@ -27,6 +27,7 @@
 	var/author
 	var/SQLquery
 	clockwork = TRUE //it'd look weird
+	connectable = FALSE
 
 /obj/machinery/computer/libraryconsole/ui_interact(mob/user)
 	. = ..()

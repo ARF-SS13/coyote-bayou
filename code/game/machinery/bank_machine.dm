@@ -10,6 +10,7 @@
 	var/radio_channel = RADIO_CHANNEL_COMMON
 	var/minimum_time_between_warnings = 400
 	var/syphoning_credits = 0
+	connectable = FALSE
 
 /obj/machinery/computer/bank_machine/Initialize()
 	. = ..()

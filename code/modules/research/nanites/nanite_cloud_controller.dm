@@ -4,6 +4,7 @@
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "nanite_cloud_controller"
 	circuit = /obj/item/circuitboard/computer/nanite_cloud_controller
+	connectable = FALSE
 
 	var/obj/item/disk/nanite_program/disk
 	var/list/datum/nanite_cloud_backup/cloud_backups = list()
