@@ -105,10 +105,13 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
 
-/datum/job/den/f13sheriff/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Self-Aware")
+/datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
 /*--------------------------------------------------------------*/
 
@@ -151,8 +154,11 @@ Mayor
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat)
 
-/datum/job/den/f13deputy/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
+/datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /*--------------------------------------------------------------*/
 

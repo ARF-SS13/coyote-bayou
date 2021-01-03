@@ -94,6 +94,8 @@
 	if(hud_icon)
 		hud_icon.combat_on = TRUE
 		hud_icon.update_icon()
+	var/mob/living/L = source
+	L.toggle_combat_mode()
 
 /// Disables combat mode. Please use 'safe_disable_combat_mode' instead, if you wish to also disable the toggle flag.
 /datum/component/combat_mode/proc/disable_combat_mode(mob/living/source, silent = TRUE, forced = TRUE, visible = FALSE, locked = FALSE, playsound = FALSE)
@@ -121,6 +123,8 @@
 		hud_icon.update_icon()
 	source.stop_active_blocking()
 	source.end_parry_sequence()
+	var/mob/living/L = source
+	L.toggle_combat_mode()
 
 ///Changes the user direction to (try) keep match the pointer.
 /datum/component/combat_mode/proc/on_move(atom/movable/source, dir, atom/oldloc, forced)

@@ -77,6 +77,7 @@
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
+	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
 	name = "The Neo-Russian Rifleman\'s Primer"

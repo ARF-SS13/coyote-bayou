@@ -83,12 +83,15 @@ Captain
 	/datum/outfit/loadout/captpistol //Grease Gun, Deagle
 	)
 
-/datum/outfit/job/ncr/f13captain/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
@@ -105,11 +108,6 @@ Captain
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/clothing/mask/ncr_facewrap)
-
-/datum/job/ncr/f13captain/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Self-Aware")
 
 /datum/outfit/loadout/captline
 	name = "Line Officer"
@@ -553,15 +551,13 @@ Veteran Ranger
 	/datum/outfit/loadout/vrbrush //Scoped Brushgun and Sequoia
 	)
 
-/datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Iron Fist")
-
-/datum/outfit/job/ncr/f13vetranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -614,13 +610,11 @@ Veteran Ranger
 	display_order = JOB_DISPLAY_ORDER_RANGERPATROL
 	outfit = /datum/outfit/job/ncr/f13rangerpatrol
 
-/datum/job/ncr/f13rangerpatrol/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
-/datum/outfit/job/ncr/f13ranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -663,14 +657,12 @@ Veteran Ranger
 	/datum/outfit/loadout/rangertrail //M1 Garand and .44,
 	)
 
-/datum/job/ncr/f13rangerscout/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Light Step")
-
-/datum/outfit/job/ncr/f13ranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 

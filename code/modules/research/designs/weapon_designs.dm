@@ -6,6 +6,7 @@
 //Ammo Boxes//
 //////////////
 
+/*
 /datum/design/c38/sec
 	id = "sec_38"
 	build_type = PROTOLATHE
@@ -46,11 +47,13 @@
 	build_path = /obj/item/ammo_box/c38/iceblox
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 //////////////////
 //Mag-Rifle Mags//
 //////////////////
 
+/*
 /datum/design/mag_magrifle
 	name = "Magrifle Magazine (Lethal)"
 	desc = "A 24-round magazine for the Magrifle."
@@ -130,6 +133,7 @@
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtrubber
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 //////////////
 //Ammo Shells/
@@ -144,6 +148,7 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/*
 /datum/design/beanbag_slug/sec
 	id = "sec_beanbag"
 	build_type = PROTOLATHE
@@ -179,6 +184,7 @@
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 /datum/design/stunshell
 	name = "Stun Shell"
@@ -248,6 +254,7 @@
 //Guns////////
 //////////////
 
+/*
 /datum/design/lasercarbine
 	name = "Laser Carbine"
 	desc = "Beefed up version of a standard laser gun."
@@ -287,6 +294,7 @@
 	build_path = /obj/item/gun/energy/beam_rifle
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 /datum/design/decloner
 	name = "Decloner"
@@ -330,6 +338,7 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_SCIENCE
 
+/*
 /datum/design/xray
 	name = "X-ray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
@@ -339,6 +348,7 @@
 	build_path = /obj/item/gun/energy/xray
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 /datum/design/ioncarbine
 	name = "Ion Carbine"
@@ -370,6 +380,7 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/*
 /datum/design/largecrossbow
 	name = "Energy Crossbow"
 	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."
@@ -399,6 +410,7 @@
 	build_path = /obj/item/gun/ballistic/automatic/magrifle/nopin
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
 
 ///////////
 //Grenades/
@@ -501,6 +513,7 @@
 	build_path = /obj/item/melee/cleric_mace
 	category = list("Imported")
 
+/*
 /datum/design/stun_boomerang
 	name = "OZtek Boomerang"
 	desc = "Uses reverse flow gravitodynamics to flip its personal gravity back to the thrower mid-flight. Also functions similar to a stun baton."
@@ -510,3 +523,4 @@
 	build_path = /obj/item/melee/baton/boomerang
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+*/
