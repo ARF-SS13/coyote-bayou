@@ -400,7 +400,7 @@
 
 /obj/item/clothing/mask/ncr_facewrap
 	name = "desert facewrap"
-	desc = "A facewrap commonly employed by NCR troops in the Mojave."
+	desc = "A facewrap commonly employed by NCR troops in desert environments."
 	icon_state = "ncr_facewrap"
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEFACE
