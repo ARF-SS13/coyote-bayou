@@ -158,8 +158,10 @@
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
-	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE)
+			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -789,7 +791,7 @@
 		base_inaccuracy *= 1 + (stamloss - STAMINA_NEAR_SOFTCRIT)/(STAMINA_NEAR_CRIT - STAMINA_NEAR_SOFTCRIT)*0.5
 	if(HAS_TRAIT(user, TRAIT_POOR_AIM)) //nice shootin' tex
 		if(!HAS_TRAIT(user, TRAIT_INSANE_AIM))
-			bonus_spread += 25
+			bonus_spread += 60
 		else
 			//you have both poor aim and insane aim, why?
 			bonus_spread += rand(0,50)

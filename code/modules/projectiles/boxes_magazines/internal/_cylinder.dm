@@ -31,7 +31,7 @@
 		rotate()
 
 /obj/item/ammo_box/magazine/internal/cylinder/give_round(obj/item/ammo_casing/R, replace_spent = 0)
-	if(!R || (caliber && !(R.caliber in caliber)) || (!caliber && R.type != ammo_type))
+	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return FALSE
 
 	for(var/i in 1 to stored_ammo.len)
@@ -45,3 +45,4 @@
 			return TRUE
 
 	return FALSE
+

@@ -567,7 +567,7 @@ Veteran Legionary
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You answer to the Decani and the Centurion. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a hardened warrior, and have been waging war with the Legion for many years."
+	description = "You answer to the Decani and the Centurion. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Sonora. You are a hardened warrior, and have been waging war with the Legion for many years."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_VETLEGIONARY
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegionary
@@ -637,7 +637,7 @@ Prime Legionairy
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You answer to the Decani and the Centurion, as well as Veterans above you. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You have been through enough battles to call yourself a prime, but you are by no means yet a Veteran."
+	description = "You answer to the Decani and the Centurion, as well as Veterans above you. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Sonora. You have been through enough battles to call yourself a prime, but you are by no means yet a Veteran."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_LEGIONARY
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
