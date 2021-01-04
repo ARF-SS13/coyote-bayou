@@ -25,7 +25,7 @@
 
 /datum/species/human/spec_life(mob/living/carbon/human/H)
 	if (H.radiation>2500 && prob(10))
-		to_chat(H, "<span class='danger'>You feel strange!</span>")
+		to_chat(H, "<span class='danger'>Your skin becomes to peel and fall off from radiation, also turning your voice into a rasp...</span>")
 		H.set_species(/datum/species/ghoul)
 		H.Stun(40)
 		H.radiation = 0

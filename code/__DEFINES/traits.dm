@@ -243,6 +243,7 @@
 #define TRAIT_PRACTITIONER		"Practitioner" //Has access to FoA specific surgeries
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 #define TRAIT_HARD_YARDS        "hard_yards"
+#define	TRAIT_LIFEGIVER			"lifegiver"
 
 // fallout crafting traits
 #define TRAIT_GUNSMITH_ONE      "gunsmith_one"

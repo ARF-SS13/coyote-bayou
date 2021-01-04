@@ -54,19 +54,19 @@
 	if(istype(src.magazine,/obj/item/ammo_box/magazine/internal))
 		if(.)
 			return
-		var/num_loaded = magazine.attackby(A, user, params, 0, 1)
+		var/num_loaded = magazine.attackby(A, user, params, 1)
 		if(num_loaded)
 			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
 			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
 			A.update_icon()
 			update_icon()
 			chamber_round(0)
-	else if (istype(A, /obj/item/ammo_box/magazine))
+	else if(istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine && istype(AM, mag_type))
 			if(user.transferItemToLoc(AM, src))
 				magazine = AM
-				to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
 				if(magazine.ammo_count())
 					playsound(src, "gun_insert_full_magazine", 70, 1)
 					if(!chambered)
@@ -81,7 +81,7 @@
 				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 				return
 		else if (magazine)
-			to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
+			to_chat(user, "<span class='notice'>There's already a magazine in \the [src].</span>")
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
 		if(!can_suppress)

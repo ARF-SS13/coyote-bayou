@@ -15721,7 +15721,7 @@
 /area/f13/village)
 "llj" = (
 /obj/structure/closet,
-/obj/item/clothing/head/helmet/f13/supaflyhelmet,
+/obj/item/clothing/head/helmet/f13/raider/supafly,
 /obj/item/clothing/suit/armor/f13/raider/supafly,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -19039,7 +19039,7 @@
 /area/f13/legion)
 "nMl" = (
 /obj/structure/window/fulltile/house,
-/obj/item/clothing/head/helmet/f13/supaflyhelmet,
+/obj/item/clothing/head/helmet/f13/raider/supafly,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "nME" = (
@@ -29068,6 +29068,13 @@
 	tag = "icon-floorrusty"
 	},
 /area/f13/building)
+"uJN" = (
+/obj/structure/table/wood/settler,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/ncr)
 "uJP" = (
 /obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/dirt,
@@ -32359,7 +32366,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xcX" = (
-/obj/structure/punching_bag/dummy,
+/obj/structure/target_stake,
+/obj/item/target,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 4;
 	icon_state = "dirt"
@@ -35470,7 +35478,6 @@ ktB
 gcK
 gcK
 gcK
-uuI
 btN
 btN
 btN
@@ -35480,7 +35487,8 @@ btN
 btN
 btN
 btN
-oQl
+btN
+btN
 hkl
 fCO
 dyr
@@ -35727,7 +35735,7 @@ ktB
 gcK
 gcK
 gcK
-uuI
+vzk
 oTn
 xcX
 xbV
@@ -35737,7 +35745,7 @@ xcX
 xbV
 xcX
 rhi
-oQl
+btN
 hkl
 fCO
 dyr
@@ -35994,7 +36002,7 @@ kjs
 kjs
 kjs
 jKK
-ddr
+oQl
 hkl
 fCO
 dyr
@@ -37528,13 +37536,13 @@ gcK
 gcK
 vzk
 ksD
-kjs
-kjs
-kjs
-kjs
-kjs
-kjs
-kjs
+xMD
+eJf
+xMD
+eJf
+xMD
+eJf
+xMD
 dxG
 ddr
 hkl
@@ -37785,13 +37793,13 @@ gcK
 gcK
 vzk
 ksD
-xMD
+kjs
 eJf
-xMD
+kjs
 eJf
-xMD
+kjs
 eJf
-xMD
+kjs
 dxG
 ddr
 hkl
@@ -39584,13 +39592,13 @@ gcK
 uuI
 uuI
 ksD
-xMD
+uJN
 kjs
 kjs
 kjs
 kjs
 kjs
-xMD
+uJN
 dxG
 oQl
 hkl

@@ -22,9 +22,10 @@
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Trapper")
-	H.add_quirk("Spirit Blessed")
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_TRAPPER, src)
+	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+
 /*
 Tribal Chief
 */
@@ -45,8 +46,11 @@ Tribal Chief
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
-/datum/job/tribals/f13chief/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
+/datum/outfit/job/tribal/f13chief/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13chief
 	name = "Chief"
@@ -84,9 +88,12 @@ Tribal Shaman
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
-/datum/job/tribals/f13shaman/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Spiritual")
+/datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
@@ -123,9 +130,12 @@ Tribal Head Hunter
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
-/datum/job/tribal/f13Hhunter/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Big Leagues")
+/datum/outfit/job/tribal/f13Hhunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hhunter"
@@ -220,8 +230,11 @@ Hunter
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
-/datum/job/tribal/f13hunter/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Lifegiver")
+/datum/outfit/job/tribal/f13hunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
