@@ -432,7 +432,7 @@
 			if(HM && HM.timed)
 				dna.remove_mutation(HM.type)
 
-	radiation -= min(radiation, RAD_LOSS_PER_TICK)
+	//radiation -= min(radiation, RAD_LOSS_PER_TICK) nope, you need radx or radaway. small change to make rads *more*
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
 
