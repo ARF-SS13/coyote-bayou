@@ -827,7 +827,7 @@
 		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
 		user.take_bodypart_damage(10)
 
-/obj/item/melee/transforming/cleaving_saw/nemesis_effects(mob/living/user, mob/living/target)
+/*/obj/item/melee/transforming/cleaving_saw/nemesis_effects(mob/living/user, mob/living/target)
 	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
 	if(!B)
 		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
@@ -852,7 +852,7 @@
 				if(user.Adjacent(L) && L.density)
 					melee_attack_chain(user, L)
 		swiping = FALSE
-
+*/
 //Dragon
 
 /obj/structure/closet/crate/necropolis/dragon
