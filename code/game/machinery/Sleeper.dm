@@ -150,11 +150,12 @@
 
 /obj/machinery/sleeper/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "Sleeper", name)
-		ui.open()
+	if(istype(user, /mob/dead/observer))
+		if(!ui)
+			ui = new(user, src, "Sleeper", name)
+			ui.open()
 	else
-		if(!user.has_quirk(/datum/quirk/chemwhiz))
+		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
 			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
 			return
 		if(!user.IsAdvancedToolUser())

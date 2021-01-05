@@ -14,7 +14,7 @@
 	maxHealth = 40
 	health = 40
 	speed = 2
-	harm_intent_damage = 15
+	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attack_verb_simple = "claw"
@@ -47,7 +47,7 @@
 	speed = 2
 	maxHealth = 100
 	health = 100
-	harm_intent_damage = 6
+	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
@@ -68,7 +68,7 @@
 	speed = 1.5
 	maxHealth = 200
 	health = 200
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
@@ -82,7 +82,7 @@
 	speed = 1.5
 	maxHealth = 200
 	health = 200
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
@@ -95,7 +95,7 @@
 	maxHealth = 80
 	health = 80
 	speed = 2
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 
@@ -109,7 +109,7 @@
 	maxHealth = 600
 	health = 600
 	speed = 2.5
-	harm_intent_damage = 20
+	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	mob_size = 5
@@ -118,6 +118,7 @@
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()
 	set_light(2)
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
@@ -138,7 +139,7 @@
 	maxHealth = 80
 	health = 80
 	speed = 2
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 
@@ -165,12 +166,13 @@
 	maxHealth = 80
 	health = 80
 	speed = 2
-	harm_intent_damage = 10
+	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 
 /mob/living/simple_animal/hostile/ghoul/hot/Initialize()
 	. = ..()
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
 
 /mob/living/simple_animal/hostile/ghoul/hot/Aggro()
 	..()

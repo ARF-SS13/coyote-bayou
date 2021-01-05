@@ -46,7 +46,7 @@
 	var/response_harm_continuous = "hits"
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
-	var/harm_intent_damage = 3
+	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
 	///Minimum force required to deal any damage.
 	var/force_threshold = 0
 

@@ -50,5 +50,4 @@
 			H.equip_to_slot_or_del(C, SLOT_WEAR_MASK)
 
 		H.dna.add_mutation(CLOWNMUT)
-		H.dna.add_mutation(SMILE)
 		H.gain_trauma(/datum/brain_trauma/mild/phobia/clowns, TRAUMA_RESILIENCE_LOBOTOMY) //MWA HA HA

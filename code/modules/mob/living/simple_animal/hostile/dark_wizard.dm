@@ -12,7 +12,7 @@
 	ranged_cooldown_time = 20
 	maxHealth = 50
 	health = 50
-	harm_intent_damage = 5
+	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 5
 	melee_damage_upper = 5

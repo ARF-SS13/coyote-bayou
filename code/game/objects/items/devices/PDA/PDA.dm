@@ -815,9 +815,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// Log it in our logs
 	tnote += "<i><b>&rarr; To [target_text]:</b></i><br>[signal.format_message()]<br>"
 	// Show it to ghosts
-	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>PDA Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
+	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>Pip-Boy 3000 Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
 	for(var/i in GLOB.dead_mob_list)
 		var/mob/M = i
+		if(user != M && istype(user) && isliving(M) && M.client && M.z == user.z && get_dist(user,M) < 6)
+			var/mob/living/ML = M
+			if(ML.enabled_combat_indicator)
+				to_chat(ML, "<span class='notice'>[user] taps quietly on [src].")
 		if(M?.client && M.client.prefs.chat_toggles & CHAT_GHOSTPDA)
 			to_chat(M, "[FOLLOW_LINK(M, user)] [ghost_message]")
 	to_chat(user, "<span class='info'>Message sent to [target_text]: \"[message]\"</span>")

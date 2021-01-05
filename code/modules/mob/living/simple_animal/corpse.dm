@@ -215,14 +215,12 @@
 	shoes = /obj/item/clothing/shoes/sneakers/yellow
 	gloves = /obj/item/clothing/gloves/color/yellow
 	ears = /obj/item/radio/headset
-	belt = /obj/item/storage/belt/fannypack/yellow/bee_terrorist
 	id = /obj/item/card/id
-	l_pocket = /obj/item/paper/fluff/bee_objectives
 	mask = /obj/item/clothing/mask/rat/bee
 
 obj/effect/mob_spawn/human/corpse/raider
     uniform = /obj/item/clothing/under/jabroni
-    suit = /obj/item/clothing/suit/armor/fluff/chestplate
+    suit = /obj/item/clothing/suit/armor/f13/metalarmor
     shoes = /obj/item/clothing/shoes/jackboots
     head = /obj/item/clothing/head/helmet/f13/metalmask
     hair_style = "Bald"

@@ -14,7 +14,7 @@
 	maxHealth = 100
 	health = 100
 	speed = 2
-	harm_intent_damage = 15
+	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	ranged = 1

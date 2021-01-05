@@ -58,10 +58,10 @@
 	msg = "<b>[user]</b> " + msg
 
 	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
+		if(!M.client || isnewplayer(M) || !user.client)
 			continue
 		var/T = get_turf(user)
-		if(M.stat == DEAD && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
+		if(M.stat == DEAD && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
 			M.show_message(msg)
 
 	if(emote_type == EMOTE_AUDIBLE)

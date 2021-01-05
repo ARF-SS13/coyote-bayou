@@ -160,14 +160,15 @@
 
 /obj/machinery/chem_master/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "ChemMaster", name)
-		ui.open()
+	if(istype(user, /mob/dead/observer))
+		if(!ui)
+			ui = new(user, src, "ChemMaster", name)
+			ui.open()
 	else
-		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_dispenser/drinks))
+		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
 			return
-		if(!user.has_quirk(/datum/quirk/chemwhiz) && !istype(src, /obj/machinery/chem_dispenser/drinks))
+		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
 			return
 		if(!ui)

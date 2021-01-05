@@ -362,20 +362,6 @@
 	. = ..()
 	if(mining_points)
 		. += "There's [mining_points] mining equipment redemption point\s loaded onto this card."
-	if(!bank_support || (bank_support == ID_LOCKED_BANK_ACCOUNT && !registered_account))
-		. += "<span class='info'>This ID has no banking support whatsover, must be an older model...</span>"
-	else if(registered_account)
-		. += "The account linked to the ID belongs to '[registered_account.account_holder]' and reports a balance of [registered_account.account_balance] cr."
-		if(registered_account.account_job)
-			var/datum/bank_account/D = SSeconomy.get_dep_account(registered_account.account_job.paycheck_department)
-			if(D)
-				. += "The [D.account_holder] reports a balance of [D.account_balance] cr."
-		. += "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>"
-		. += "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>"
-		if(registered_account.account_holder == user.real_name)
-			. += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
-	else
-		. += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
 
 /obj/item/card/id/GetAccess()
 	return access
@@ -976,6 +962,11 @@
 	desc = "A dog tag that invokes fear in those who see it, belonging to someone with a big iron on their hip."
 	icon_state = "ncrdogtagranger"
 
+/obj/item/card/id/dogtag/ncrcolonel
+	name = "colonel's tags"
+	desc = "A dog tag that demands respect from all those subordinate to it. This one belongs to an NCR colonel."
+	icon_state = "ncrdogtagcaptain"
+
 /obj/item/card/id/dogtag/legfollower
 	name = "follower medallion"
 	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a camp follower."
@@ -1057,6 +1048,9 @@
 	assignment = "Slave brand"
 	uses_overlays = FALSE
 
+/obj/item/card/id/legionbrand/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 ///OUTLAW TAGS////
 
@@ -1098,6 +1092,9 @@
 
 	access = list(ACCESS_KHAN)
 
+/obj/item/card/id/khantattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /* Tribal Tags
 */
@@ -1111,6 +1108,10 @@
 	uses_overlays = FALSE
 
 	access = list(ACCESS_TRIBE)
+
+/obj/item/card/id/tribetattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/card/id/silver/mayor
 	name = "Mayor's mayoral permit"

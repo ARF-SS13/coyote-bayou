@@ -99,10 +99,6 @@
 			src.set_typing_indicator(TRUE)
 		if("M")
 			src.set_typing_indicator(TRUE)
-		if("C")
-			var/mob/living/L = src
-			if(istype(L))
-				L.toggle_combat_mode()
 		if("N")
 			src.toggle_typing_indicator()
 	return ..()

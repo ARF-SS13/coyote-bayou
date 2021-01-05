@@ -4,7 +4,7 @@ AI
 /datum/job/ai
 	title = "AI"
 	flag = AI_JF
-	department_flag = ENGSEC
+	department_flag = VAULT
 	//
 	total_positions = 1
 	spawn_positions = 1
@@ -15,10 +15,15 @@ AI
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SILICON
+	display_order = JOB_DISPLAY_ORDER_AI
 	var/do_special_check = TRUE
+	
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/basic)
 
-/datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin)
-	. = H.AIize(latejoin)
+/datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
+	if(visualsOnly)
+		CRASH("dynamic preview is unsupported")
+	. = H.AIize(latejoin,preference_source)
 
 /datum/job/ai/after_spawn(mob/H, mob/M, latejoin)
 	. = ..()
@@ -35,6 +40,7 @@ AI
 			qdel(lateJoinCore)
 	var/mob/living/silicon/ai/AI = H
 	AI.apply_pref_name("ai", M.client)			//If this runtimes oh well jobcode is fucked.
+	AI.set_core_display_icon(null, M.client)
 
 	ADD_TRAIT(AI, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
@@ -91,6 +97,7 @@ Cyborg
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)
+	R.gender = NEUTER
 
 /*
 Mr. Handy
@@ -114,3 +121,4 @@ Mr. Handy
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	ADD_TRAIT(R, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)
+	R.gender = NEUTER
