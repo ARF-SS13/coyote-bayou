@@ -7790,11 +7790,11 @@
 /area/f13/building)
 "fIF" = (
 /obj/structure/table/wood,
-/obj/item/twohanded/binocs{
+/obj/item/binoculars{
 	pixel_y = -2
 	},
-/obj/item/twohanded/binocs,
-/obj/item/twohanded/binocs{
+/obj/item/binoculars,
+/obj/item/binoculars{
 	pixel_y = 1
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle{
@@ -12186,7 +12186,7 @@
 	dir = 1;
 	tag = "icon-toilet00 (NORTH)"
 	},
-/obj/item/twohanded/binocs,
+/obj/item/binoculars,
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -16461,7 +16461,7 @@
 /area/f13/village)
 "lJM" = (
 /obj/structure/table/wood,
-/obj/item/twohanded/binocs,
+/obj/item/binoculars,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},

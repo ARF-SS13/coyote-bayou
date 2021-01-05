@@ -782,7 +782,7 @@ Venator
 	mask		=	/obj/item/clothing/mask/bandana/black
 	glasses 	=	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
-	r_pocket 	= 	/obj/item/twohanded/binocs
+	r_pocket 	= 	/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/reagent_containers/pill/patch/healpoultice=2, \
@@ -849,7 +849,7 @@ Explorer
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted,
 		/obj/item/radio)
-	r_pocket = /obj/item/twohanded/binocs
+	r_pocket = /obj/item/binoculars
 
 /datum/outfit/loadout/explinfil
 	name = "Infiltrator Explorer"

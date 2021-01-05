@@ -1209,7 +1209,7 @@
 
 /datum/crafting_recipe/binoculars
 	name = "Binoculars"
-	result = /obj/item/twohanded/binocs
+	result = /obj/item/binoculars
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/glass = 5)
@@ -1732,7 +1732,7 @@
 	name = "scoped hunting rifle"
 	result = /obj/item/gun/ballistic/shotgun/remington/scoped
 	reqs = list(/obj/item/gun/ballistic/shotgun/remington = 1,
-				/obj/item/twohanded/binocs,
+				/obj/item/binoculars,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_GUNTIER2)
 	traits = list(TRAIT_GUNSMITH_TWO)
