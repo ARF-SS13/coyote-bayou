@@ -805,6 +805,7 @@
 	if(user && !user.has_gravity())
 		. = recoil*5
 
+/*Replacing with obj/item/binoculars
 /* TODO: Make a twohanded component to handle basic wield/unwield capability, idk */
 /obj/item/twohanded/binocs
 	name = "binoculars"
@@ -922,3 +923,4 @@
 	if(zoomable)
 		azoom = new()
 		azoom.B = src
+*/

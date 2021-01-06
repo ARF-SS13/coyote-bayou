@@ -304,7 +304,7 @@ CHECK_RANDOMIZER
 #POPUP_ADMIN_PM
 
 ## Uncomment to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
-ALLOW_HOLIDAYS
+#ALLOW_HOLIDAYS
 
 ## Uncomment to show the names of the admin sending a pm from IRC instead of showing as a stealthmin.
 #SHOW_IRC_NAME
@@ -374,6 +374,9 @@ NOTIFY_NEW_PLAYER_ACCOUNT_AGE 1
 
 ##Name of the place to send people rejected by the bunker
 #PANIC_SERVER_NAME [Put the name here]
+
+##Automated age verification, comment this out to not ask new users if they are 18+
+#AGE_VERIFICATION
 
 ## Uncomment to have the changelog file automatically open when a user connects and hasn't seen the latest changelog
 #AGGRESSIVE_CHANGELOG

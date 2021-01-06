@@ -23,9 +23,9 @@
 /obj/item/binoculars/Destroy()
 	listeningTo = null
 	return ..()
-
+//Removing losing zoom on moving, may re-add later but to all scopes or implement slowdown instead
 /obj/item/binoculars/proc/on_wield(obj/item/source, mob/user)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/unwield)
+	//RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/unwield)
 	listeningTo = user
 	user.visible_message("<span class='notice'>[user] holds [src] up to [user.p_their()] eyes.</span>", "<span class='notice'>You hold [src] up to your eyes.</span>")
 	item_state = "binoculars_wielded"
@@ -51,9 +51,9 @@
 	unwield(user)
 
 /obj/item/binoculars/proc/unwield(mob/user)
-	if(listeningTo)
+	/*if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-		listeningTo = null
+		listeningTo = null*/
 	user.visible_message("<span class='notice'>[user] lowers [src].</span>", "<span class='notice'>You lower [src].</span>")
 	item_state = "binoculars"
 	user.regenerate_icons()

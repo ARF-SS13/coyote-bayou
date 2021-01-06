@@ -105,7 +105,7 @@ Captain
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/twohanded/binocs=1, \
+		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/clothing/mask/ncr_facewrap)
 
@@ -187,7 +187,7 @@ Lieutenant
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/twohanded/binocs=1, \
+		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 
@@ -572,7 +572,7 @@ Veteran Ranger
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
-	r_pocket = 		/obj/item/twohanded/binocs
+	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=3, \
@@ -630,7 +630,7 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
-	r_pocket = /obj/item/twohanded/binocs
+	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/item/ammo_box/m44=2, \
@@ -674,7 +674,7 @@ Veteran Ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	r_pocket = 		/obj/item/twohanded/binocs
+	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/item/ammo_box/m44=2, \
