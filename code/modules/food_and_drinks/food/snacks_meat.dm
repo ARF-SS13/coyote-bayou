@@ -17,7 +17,7 @@
 
 /obj/item/reagent_containers/food/snacks/carpmeat
 	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+	desc = "A fillet of carp meat."
 	icon_state = "fishfillet"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 6
