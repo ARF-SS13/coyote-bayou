@@ -4,6 +4,7 @@
 	icon_state = "terminal"
 	icon_keyboard = "terminal_key"
 	icon_screen = "terminal_on_alt"
+	connectable = FALSE
 	light_color = LIGHT_COLOR_GREEN
 	circuit = /obj/item/circuitboard/computer/robco_terminal
 	var/broken = FALSE // Used for pre-broken terminals

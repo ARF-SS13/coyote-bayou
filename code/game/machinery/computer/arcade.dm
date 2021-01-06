@@ -71,6 +71,7 @@
 		/obj/item/clothing/suit/hooded/wintercoat/ratvar/fake = ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/suit/hooded/wintercoat/narsie/fake = ARCADE_WEIGHT_TRICK
 	)
+	connectable = FALSE
 
 	light_color = LIGHT_COLOR_GREEN
 
