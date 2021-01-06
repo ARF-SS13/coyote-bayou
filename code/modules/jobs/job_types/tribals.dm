@@ -24,7 +24,7 @@
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
-	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 
 /*
 Tribal Chief
@@ -135,7 +135,7 @@ Tribal Head Hunter
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	//ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src) //Disabled until Big Leagues can be changed to armour penetration instead of bonus damage, as having +5 damage per attack on a role that gets a melee weapon with a superfast attack speed is kind of broken.
 
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hhunter"

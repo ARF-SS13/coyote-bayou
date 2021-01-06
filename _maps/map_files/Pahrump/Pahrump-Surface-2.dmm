@@ -2863,8 +2863,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bWN" = (
-/obj/item/candle/tribal_torch,
-/obj/structure/dresser,
+/obj/structure/rack,
+/obj/item/spear/bonespear,
+/obj/item/spear/bonespear,
+/obj/item/spear/bonespear,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "bWS" = (
@@ -8501,10 +8503,12 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "gke" = (
-/obj/structure/simple_door/metal/store,
-/obj/structure/simple_door/metal/store,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/ncr)
+/obj/structure/rack,
+/obj/item/fireaxe/bmprsword,
+/obj/item/fireaxe/bmprsword,
+/obj/item/fireaxe/bmprsword,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "gkh" = (
 /obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
@@ -16867,9 +16871,12 @@
 	},
 /area/f13/wasteland)
 "lZX" = (
-/obj/structure/simple_door/wood,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/structure/rack,
+/obj/item/fireaxe/boneaxe,
+/obj/item/fireaxe/boneaxe,
+/obj/item/fireaxe/boneaxe,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "lZY" = (
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/indestructible/ground/outside/road{
@@ -19990,19 +19997,9 @@
 	},
 /area/f13/wasteland)
 "otr" = (
-/obj/structure/rack,
-/obj/item/seeds/ambrosia,
-/obj/item/seeds/ambrosia,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/cannabis,
-/obj/item/seeds/nettle,
-/obj/item/seeds/nettle,
-/obj/item/seeds/poppy,
-/obj/item/seeds/poppy,
-/obj/item/seeds/tobacco,
-/obj/item/seeds/tobacco,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/machinery/alchemy_table,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "otA" = (
 /obj/machinery/light{
 	dir = 8;
@@ -41489,7 +41486,7 @@ peu
 peu
 peu
 qFk
-bWN
+bcK
 peu
 xqy
 peu
@@ -41500,7 +41497,7 @@ qOV
 qFk
 gVt
 peu
-peu
+xqy
 peu
 sLr
 jQm
@@ -41755,7 +41752,7 @@ mEy
 fyf
 jQm
 krS
-xqy
+peu
 peu
 uKq
 peu
@@ -42287,7 +42284,7 @@ jQz
 jQz
 jQz
 jQz
-otr
+gcK
 gcK
 gcK
 gcK
@@ -45594,7 +45591,7 @@ gcK
 gcK
 gcK
 qFk
-peu
+otr
 peu
 peu
 ram
@@ -47135,7 +47132,7 @@ gcK
 gcK
 gcK
 qFk
-mVv
+bWN
 peu
 pFa
 rcE
@@ -48420,7 +48417,7 @@ gcK
 gcK
 gcK
 qFk
-mVv
+gke
 peu
 peu
 uuU
@@ -48677,7 +48674,7 @@ gcK
 gcK
 gcK
 qFk
-mVv
+lZX
 peu
 peu
 peu
@@ -51260,7 +51257,7 @@ fyf
 fyf
 gcK
 gcK
-lZX
+gcK
 gcK
 gcK
 gcK
@@ -54294,7 +54291,7 @@ aDY
 aDY
 aDY
 aDY
-gke
+fEP
 uCW
 uaf
 tpD
