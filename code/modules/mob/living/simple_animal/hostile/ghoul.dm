@@ -118,7 +118,9 @@
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()
 	set_light(2)
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
+	//so T,F,F,F for the type_healing... because simple_animals have those go straight to adjustHealth
+	//this means if it was T,T,T,T, it would heal for 40 percent, instead of 10 percent
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = TRUE, restrict_faction = null, type_healing = list(TRUE, FALSE, FALSE, FALSE))
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
@@ -172,7 +174,9 @@
 
 /mob/living/simple_animal/hostile/ghoul/hot/Initialize()
 	. = ..()
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul)
+	//so T,F,F,F for the type_healing... because simple_animals have those go straight to adjustHealth
+	//this means if it was T,T,T,T, it would heal for 40 percent, instead of 10 percent
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = TRUE, restrict_faction = null, type_healing = list(TRUE, FALSE, FALSE, FALSE))
 
 /mob/living/simple_animal/hostile/ghoul/hot/Aggro()
 	..()

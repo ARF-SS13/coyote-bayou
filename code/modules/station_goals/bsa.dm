@@ -238,6 +238,7 @@
 	circuit = /obj/item/circuitboard/computer/bsa_control
 	icon = 'icons/obj/machines/particle_accelerator.dmi'
 	icon_state = "control_boxp"
+	connectable = FALSE
 
 	var/obj/machinery/bsa/full/cannon
 	var/notice
