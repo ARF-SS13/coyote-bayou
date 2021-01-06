@@ -9,7 +9,7 @@
 	description = "NT default research technologies."
 	design_ids = list("basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani",
 	"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "design_disk", "tech_disk", "rdserver", "rdservercontrol",
-	"space_heater", "xlarge_beaker", "sec_rshot", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", "sec_38", "headset")			//Default research tech, prevents bricking
+	"space_heater", "xlarge_beaker", "headset")			//Default research tech, prevents bricking
 
 
 /////////////////////////Biotech/////////////////////////
@@ -488,6 +488,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
+/*
 /datum/techweb_node/electric_weapons
 	id = "electronic_weapons"
 	display_name = "Electric Weapons"
@@ -496,7 +497,7 @@
 	design_ids = list("stunrevolver")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
 	display_name = "Medical Weaponry"
