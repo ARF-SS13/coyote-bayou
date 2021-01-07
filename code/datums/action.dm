@@ -225,6 +225,9 @@
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "rcl_gui"
 
+/datum/action/item_action/toggle_lance
+	name = "Toggle Lance"
+
 /datum/action/item_action/startchainsaw
 	name = "Pull The Starting Cord"
 

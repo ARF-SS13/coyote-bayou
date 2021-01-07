@@ -20,7 +20,7 @@
 
 /datum/crafting_recipe/forgeglaive
 	name = "Improvised Metal Glaive"
-	result = /obj/item/spear
+	result = /obj/item/twohanded/spear
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/mineral/wood = 4)
