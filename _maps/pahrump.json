@@ -3,8 +3,7 @@
 	"map_path": "map_files/Pahrump",
     "map_file": [
 		"Pahrump-Surface-2.dmm",
-		"Pahrump-Underground-1.dmm",
-	    "Dungeons.dmm"
+		"Pahrump-Underground-1.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -18,10 +17,6 @@
 		{
 			"Gravity":true,
 			"Station":1
-		},
-		{
-			"Gravity":true,
-			"Baseturf":"/turf/open/indestructible/ground/inside/mountain"
 		},
 		{
 			"Gravity":true,
