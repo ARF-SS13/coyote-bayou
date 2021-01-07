@@ -829,9 +829,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO_THREE
 
-/datum/crafting_recipe/spear
+/datum/crafting_recipe/twohanded/spear
 	name = "Spear"
-	result = /obj/item/spear
+	result = /obj/item/twohanded/spear
 	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
 				/obj/item/shard = 1,
 				/obj/item/stack/rods = 1)
@@ -1090,10 +1090,10 @@
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
-	reqs = list(/obj/item/spear = 1,
+	reqs = list(/obj/item/twohanded/spear = 1,
 				/obj/item/bodypart/head = 1)
 	parts = list(/obj/item/bodypart/head = 1,
-			/obj/item/spear = 1)
+			/obj/item/twohanded/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
@@ -2587,7 +2587,7 @@
 
 /datum/crafting_recipe/forgeglaive
 	name = "Metal Glaive"
-	result = /obj/item/spear
+	result = /obj/item/twohanded/spear
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/mineral/wood = 4)

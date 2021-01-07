@@ -130,7 +130,7 @@ Great Khan
 	name = "Brawler"
 	gloves =	/obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/baseball/spiked=1, \
+		/obj/item/twohanded/baseball/spiked=1, \
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
 /*
@@ -257,7 +257,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/yankee
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	backpack_contents = list(
-		/obj/item/baseball/spiked=1,
+		/obj/item/twohanded/baseball/spiked=1,
 		/obj/item/gun/ballistic/shotgun/remington/scoped=1,
 		/obj/item/ammo_box/a308=2,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1,
@@ -268,7 +268,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/blastmaster
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
-		/obj/item/fireaxe=1,
+		/obj/item/twohanded/fireaxe=1,
 		/obj/item/gun/ballistic/revolver/colt6520=1,
 		/obj/item/grenade/iedcasing=2,
 		/obj/item/ammo_box/magazine/m10mm_adv=2)

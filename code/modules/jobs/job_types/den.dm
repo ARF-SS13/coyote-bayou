@@ -334,7 +334,7 @@ Mayor
 
 /datum/outfit/loadout/atompreacher
 	name = "Atom's Devout"
-	l_hand = /obj/item/sledgehammer/atomsjudgement
+	l_hand = /obj/item/twohanded/sledgehammer/atomsjudgement
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/atombeliever=1,
 		/obj/item/clothing/under/f13/atomfaithful=3,
