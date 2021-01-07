@@ -107,7 +107,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/last_shopper
 	var/tilted = FALSE
 	var/tiltable = TRUE
-	var/squish_damage = 75
+	var/squish_damage = 40
 	var/forcecrit = 0
 	var/num_shards = 7
 	var/list/pinned_mobs = list()

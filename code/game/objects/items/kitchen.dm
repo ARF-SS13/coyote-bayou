@@ -18,7 +18,7 @@
 	name = "fork"
 	desc = "Pointy."
 	icon_state = "fork"
-	force = 4
+	force = 5
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	throw_speed = 3
@@ -69,9 +69,9 @@
 	icon_state = "kitchen_knife"
 	desc = "A general purpose Chef's Knife made by VaultCook Incorporated. Guaranteed to stay sharp for years to come."
 	flags_1 = CONDUCT_1
-	force = 10
+	force = 15
 	w_class = WEIGHT_CLASS_SMALL
-	throwforce = 10
+	throwforce = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 6
@@ -137,8 +137,8 @@
 	icon_state = "butch"
 	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown by-products."
 	flags_1 = CONDUCT_1
-	force = 15
-	throwforce = 10
+	force = 25
+	throwforce = 20
 	custom_materials = list(/datum/material/iron=18000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
@@ -150,8 +150,8 @@
 	item_state = "knife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 20
-	throwforce = 20
+	force = 30
+	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
@@ -161,8 +161,8 @@
 	item_state = "knife"
 	desc = "A hunting grade survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 15
-	throwforce = 15
+	force = 25
+	throwforce = 25
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/bowie
@@ -191,8 +191,8 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	desc = "A sharpened bone. The bare minimum in survival."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 15
-	throwforce = 15
+	force = 20
+	throwforce = 20
 	custom_materials = null
 
 /obj/item/kitchen/knife/combat/bone/plastic

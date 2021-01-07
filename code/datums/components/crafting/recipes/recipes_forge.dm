@@ -123,7 +123,7 @@
 
 /datum/crafting_recipe/bmprsword
 	name = "Bumper Sword"
-	result = /obj/item/fireaxe/bmprsword 
+	result = /obj/item/twohanded/fireaxe/bmprsword 
 	reqs = list(/obj/item/stack/sheet/metal = 25,
 				/obj/item/stack/sheet/cloth = 2)
 	time = 600
@@ -295,7 +295,7 @@
 /*
 /datum/crafting_recipe/fire_axe
 	name = "Wood Axe"
-	result = /obj/item/twohanded/fireaxe
+	result = /obj/item/twohanded/twohanded/fireaxe
 	time = 300
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/wood = 1)

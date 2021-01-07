@@ -589,7 +589,7 @@
 /obj/machinery/smartfridge/bottlerack/gardentool/default_deconstruction_crowbar(obj/item/crowbar/C, ignore_panel = 1)
 
 /obj/machinery/smartfridge/bottlerack/gardentool/accept_check(obj/item/O)
-	if(istype(O, /obj/item/plant_analyzer) || istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/cultivator) || istype(O, /obj/item/hatchet) || istype(O, /obj/item/scythe) || istype(O, /obj/item/reagent_containers/glass/bottle/nutrient) || istype(O, /obj/item/reagent_containers/glass/bottle/killer) || istype(O, /obj/item/shovel) || istype(O, /obj/item/fireaxe) || istype(O, /obj/item/reagent_containers/glass/bucket) || istype(O, /obj/item/storage/bag/plants) || istype(O, /obj/item/storage/bag/plants/portaseeder))
+	if(istype(O, /obj/item/plant_analyzer) || istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/cultivator) || istype(O, /obj/item/hatchet) || istype(O, /obj/item/scythe) || istype(O, /obj/item/reagent_containers/glass/bottle/nutrient) || istype(O, /obj/item/reagent_containers/glass/bottle/killer) || istype(O, /obj/item/shovel) || istype(O, /obj/item/twohanded/fireaxe) || istype(O, /obj/item/reagent_containers/glass/bucket) || istype(O, /obj/item/storage/bag/plants) || istype(O, /obj/item/storage/bag/plants/portaseeder))
 		return TRUE
 	return FALSE
 /obj/machinery/smartfridge/bottlerack/gardentool/proc/can_be_rotated(mob/user,rotation_type)
@@ -694,8 +694,8 @@
 		/obj/item/hatchet = 1,
 		/obj/item/pickaxe/mini = 1,
 		/obj/item/wrench = 1,
-		/obj/item/fireaxe = 1,
-		/obj/item/sledgehammer = 1,
+		/obj/item/twohanded/fireaxe = 1,
+		/obj/item/twohanded/sledgehammer = 1,
 		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
 		/obj/item/clothing/gloves/color/yellow = 1,
 		/obj/item/flashlight = 1,
