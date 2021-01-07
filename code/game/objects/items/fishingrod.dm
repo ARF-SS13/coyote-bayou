@@ -1,3 +1,11 @@
+GLOBAL_LIST_INIT(fish_rates, list(
+	/obj/item/fishy/carp		=9,
+	/obj/item/fishy/salmon		=9,
+	/obj/item/fishy/eel			=1,
+	/obj/item/fishy/lobster		=9,
+	/obj/item/fishy/shrimp		=9,
+	/obj/item/fishy/clownfish	=1
+))
 //I have tried to have variables be highly influential so that customization can happen
 //customization, maybe some rods are better than others ;)
 /obj/item/fishingrod
@@ -23,8 +31,8 @@
 	var/current_wait = 0
 	var/current_waitfail = 0
 	//customization, some rods catch trash better than others, if you really want that I guess
-	//default is 50, which is 50 (fifty) percent chance
-	var/trash_chance = 50
+	//default is 40, which is 40 percent chance
+	var/trash_chance = 40
 
 /obj/item/fishingrod/equipped(mob/user, slot)
 	. = ..()
@@ -58,7 +66,7 @@
 				if(2)
 					to_chat(current_user, "<span class='warning'>You got nothing, lame...</span>")
 				if(3)
-					to_chat(current_user, "<span class='notice'>You got a fish, nice!</span>")
+					to_chat(current_user, "<span class='green'>You got a fish, nice!</span>")
 		to_chat(current_user, "<span class='notice'>You pull back your line!</span>")
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
@@ -75,18 +83,18 @@
 
 /obj/item/fishingrod/proc/play_readysound()
 	if(inuse)
-		playsound(src.loc, 'sound/f13items/fishready.ogg', 50, TRUE, -1)
+		playsound(src.loc, 'sound/f13items/fishready.ogg', 100, TRUE, -1)
 
 /obj/item/fishingrod/proc/complete_fishing()
-	var/junk_got = prob(trash_chance)
-	switch(junk_got)
-		if(TRUE)
+	var/fish_got = prob(trash_chance)
+	switch(fish_got)
+		if(FALSE)
 			if(prob(trash_chance))
 				var/junk_item = pick(GLOB.trash_list)
 				new junk_item(current_turf)
 				return 1
 			return 2
-		if(FALSE)
-			var/pick_fish = pick(/obj/item/fishy/carp) //add your fish here
+		if(TRUE)
+			var/pick_fish = pickweight(GLOB.fish_rates) //add your in the global list
 			new pick_fish(current_turf)
 			return 3

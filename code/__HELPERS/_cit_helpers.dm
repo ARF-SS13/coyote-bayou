@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(dildo_colors, list(//mostly neon colors
 
 GLOBAL_LIST_INIT(meat_types, list(
 	"Mammalian" = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/mammal,
-	"Aquatic" = /obj/item/reagent_containers/food/snacks/carpmeat/aquatic,
+	"Aquatic" = /obj/item/reagent_containers/food/snacks/fishmeat/carp/aquatic,
 	"Avian" = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/avian,
 	"Insect" = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/insect))
 
