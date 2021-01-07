@@ -42,9 +42,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/datum/crafting_recipe/spear
+/datum/crafting_recipe/twohanded/spear
 	name = "Spear"
-	result = /obj/item/spear
+	result = /obj/item/twohanded/spear
 	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
 				/obj/item/shard = 1,
 				/obj/item/stack/rods = 1)
@@ -114,7 +114,7 @@
 
 /datum/crafting_recipe/chainsaw
 	name = "Chainsaw"
-	result = /obj/item/chainsaw
+	result = /obj/item/twohanded/chainsaw
 	reqs = list(/obj/item/circular_saw = 1,
 				/obj/item/stack/cable_coil = 3,
 				/obj/item/stack/sheet/plasteel = 5)
@@ -179,10 +179,10 @@
 
 /datum/crafting_recipe/lance
 	name = "Explosive Lance (Grenade)"
-	result = /obj/item/spear
-	reqs = list(/obj/item/spear = 1,
+	result = /obj/item/twohanded/spear
+	reqs = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
-	parts = list(/obj/item/spear = 1,
+	parts = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
 	time = 15
 	category = CAT_WEAPONRY

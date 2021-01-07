@@ -31,7 +31,7 @@
 	description = "CentCom's security forces are going through budget cuts. You will be paid if you ship a set of spears."
 	reward = 1000
 	required_count = 5
-	wanted_types = list(/obj/item/spear)
+	wanted_types = list(/obj/item/twohanded/spear)
 
 /datum/bounty/item/assistant/toolbox
 	name = "Toolboxes"
@@ -155,13 +155,13 @@
 	reward = 2000
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/monkeycube)
-*/
+
 /datum/bounty/item/assistant/chainsaw
 	name = "Chainsaw"
 	description = "The chef at CentCom is having trouble butchering her animals. She requests one chainsaw, please."
 	reward = 2500
-	wanted_types = list(/obj/item/chainsaw)
-
+	wanted_types = list(obj/item/twohanded/chainsaw)
+*/
 /datum/bounty/item/assistant/ied
 	name = "IED"
 	description = "Nanotrasen's maximum security prison at CentCom is undergoing personnel training. Ship a handful of IEDs to serve as a training tools."
