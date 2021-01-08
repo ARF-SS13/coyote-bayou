@@ -1422,10 +1422,10 @@
 	loot = list(/obj/item/book/granter/trait/chemistry = 10,
 	/obj/item/book/granter/trait/trekking = 10,
 	/obj/item/book/granter/trait/pa_wear = 1,
-	/obj/item/book/granter/trait/gunsmith_one = 50,
-	/obj/item/book/granter/trait/gunsmith_two = 20,
-	/obj/item/book/granter/trait/gunsmith_three = 10,
-	/obj/item/book/granter/trait/gunsmith_four = 10)
+	/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
+	/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
+	/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
+	/obj/item/book/granter/crafting_recipe/gunsmith_four = 10)
 
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"
@@ -1443,62 +1443,55 @@
 		/obj/item/attachments/burst_improvement,
 		/obj/item/attachments/recoil_decrease
 	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintMid
 	name = "blueprint-tier(Mid) item spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		/obj/item/blueprint/weapon/marksmanrifle,
-		/obj/item/blueprint/weapon/plasmapistol,
-		/obj/item/blueprint/weapon/brush,
-		/obj/item/blueprint/weapon/AER9,
-		//obj/item/blueprint/weapon/grease_gun,
-		///obj/item/blueprint/weapon/pps,
-		/obj/item/blueprint/weapon/mg34
+		/obj/item/book/granter/crafting_recipe/blueprint/marksman,
+		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
+		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+		/obj/item/book/granter/crafting_recipe/blueprint/greasegun,
+		/obj/item/book/granter/crafting_recipe/blueprint/pps,
+		//obj/item/blueprint/weapon/mg34
 	)
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited
-	name = "blueprint-tier(MidLimited) item spawner"
-	icon_state = "blueprint_loot"
-	lootcount = 1
-	loot = list(
-		/obj/item/blueprint/weapon/marksmanrifle/limited,
-		/obj/item/blueprint/weapon/plasmapistol/limited,
-		/obj/item/blueprint/weapon/brush/limited,
-		/obj/item/blueprint/weapon/AER9/limited,
-		//obj/item/blueprint/weapon/grease_gun/limited,
-		/obj/item/blueprint/weapon/mg34/limited
-	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
 	name = "blueprint-tier(High) item spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		//obj/item/blueprint/weapon/R91,
-		/obj/item/blueprint/weapon/sniper,
-		/obj/item/blueprint/weapon/breacher,
-		/obj/item/blueprint/weapon/lmg,
-		/obj/item/blueprint/weapon/R82,
-		/obj/item/blueprint/weapon/deagle
+		/obj/item/book/granter/crafting_recipe/blueprint/r91,
+		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
+		/obj/item/book/granter/crafting_recipe/blueprint/breacher,
+		/obj/item/book/granter/crafting_recipe/blueprint/r84,
+		/obj/item/book/granter/crafting_recipe/blueprint/r82,
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle
 	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh
 	name = "blueprint-tier(VHigh) item spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		/obj/item/blueprint/weapon/plasmarifle,
-		/obj/item/blueprint/weapon/AM_rifle,
-		/obj/item/blueprint/weapon/city_killer
-		//obj/item/blueprint/weapon/rangemaster
+		/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle,
+		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
+		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
+		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster
 	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics
 	name = "blueprint-tier(VHighBallistics) item spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		/obj/item/blueprint/weapon/AM_rifle,
-		/obj/item/blueprint/weapon/city_killer,
-		//obj/item/blueprint/weapon/rangemaster,
-		/obj/item/blueprint/weapon/bozar
+		/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle,
+		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
+		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
+		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,
+		/obj/item/book/granter/crafting_recipe/blueprint/bozar
 	)
 
 /obj/effect/spawner/lootdrop/f13/advcrafting

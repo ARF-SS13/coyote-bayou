@@ -1251,7 +1251,6 @@
 	burst_size = 2
 	automatic = 1
 	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/m762
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY

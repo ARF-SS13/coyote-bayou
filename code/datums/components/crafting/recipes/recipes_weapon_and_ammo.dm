@@ -828,3 +828,151 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+//////////////////////////////////
+///GUN ATTACHMENT/PARTS CRAFTING//
+//////////////////////////////////
+/datum/crafting_recipe/scope
+	name = "Weapon Optics"
+	result = /obj/item/attachments/scope
+	reqs = list(
+				/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/glass = 3,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 1
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/suppressor
+	name = "suppressor"
+	result = /obj/item/suppressor
+	reqs = list(
+				/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/goodparts = 1
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/burst_improvement
+	name = "Burst Cam"
+	result = /obj/item/attachments/burst_improvement
+	reqs = list(
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/recoil_decrease
+	name = "Recoil Compensator"
+	result = /obj/item/attachments/recoil_decrease
+	reqs = list(
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/flux
+	name = "Flux capacitor"
+	result = /obj/item/advanced_crafting_components/flux
+	reqs = list(
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/electronicparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/lenses
+	name = "Focused crystal lenses"
+	result = /obj/item/advanced_crafting_components/lenses
+	reqs = list(
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/electronicparts = 1,
+				/obj/item/stack/sheet/glass = 10
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/conductors
+	name = "Superconductor coil"
+	result = /obj/item/advanced_crafting_components/conductors
+	reqs = list(
+				/obj/item/stack/cable_coil = 30,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/electronicparts = 2
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/receiver
+	name = "Advanced modular receiver"
+	result = /obj/item/advanced_crafting_components/receiver
+	reqs = list(
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/metalparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/assembly
+	name = "Pre-war weapon assembly"
+	result = /obj/item/advanced_crafting_components/assembly
+	reqs = list(
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/plastic = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/alloys
+	name = "Superlight alloys"
+	result = /obj/item/advanced_crafting_components/alloys
+	reqs = list(
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/mineral/titanium = 5,
+				/obj/item/stack/sheet/plasteel = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_availible = FALSE
+

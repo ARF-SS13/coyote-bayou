@@ -567,31 +567,35 @@
 
 /obj/item/book/granter/crafting_recipe/gunsmith_one
 	name = "Guns and Bullets, Part 1"
-	desc = "A rare issue of Guns and Bullets detailing the basic manufacture of firearms, allowing the reader to craft Tier 2 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	desc = "A rare issue of Guns and Bullets detailing the basic manufacture of firearms, allowing the reader to craft firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
 	icon_state = "gab1"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/widowmaker)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_two
 	name = "Guns and Bullets, Part 2"
-	desc = "A rare issue of Guns and Bullets following up Part 1, going further indepth into weapon mechanics, allowing the reader to craft Tier 3 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	desc = "A rare issue of Guns and Bullets following up Part 1, going further indepth into weapon mechanics, allowing the reader to craft certain firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
 	icon_state = "gab2"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/colt6520)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_three
 	name = "Guns and Bullets, Part 3"
-	desc = "A rare issue of Guns and Bullets following up Part 2, explaining difficult ballistics theory and weapon mechanics, allowing the reader to craft Tier 4 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	desc = "A rare issue of Guns and Bullets following up Part 2, explaining difficult ballistics theory and weapon mechanics, allowing the reader to craft weapon attachments. It's barely holding up, and looks like only one person can study the knowledge from it."
 	icon_state = "gab3"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/burst_improvement, /datum/crafting_recipe/recoil_decrease)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_four
 	name = "Guns and Bullets, Part 4"
-	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft Tier 5 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft weapon crafting components. It's barely holding up, and looks like only one person can study the knowledge from it."
 	icon_state = "gab4"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
 
 // New Blueprints, yay! -Superballs
 /obj/item/book/granter/crafting_recipe/blueprint
@@ -734,6 +738,26 @@
 	name = "bozar blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/bozar)
+
+/obj/item/book/granter/crafting_recipe/blueprint/m1garand
+	name = "battle rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/m1garand)
+
+/obj/item/book/granter/crafting_recipe/blueprint/infiltrator
+	name = "infiltrator blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/infiltrator)
+
+/obj/item/book/granter/crafting_recipe/blueprint/fnfal
+	name = "fn fal blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
+
+/obj/item/book/granter/crafting_recipe/blueprint/caws
+	name = "h&k caws blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/caws)
 
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
