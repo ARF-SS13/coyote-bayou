@@ -992,7 +992,7 @@ obj/item/storage/box/stingbangs
 							  /obj/item/reagent_containers/food/snacks/meat/slab/bear,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/spider,
 							  /obj/item/reagent_containers/food/snacks/spidereggs,
-							  /obj/item/reagent_containers/food/snacks/carpmeat,
+							  /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/corgi,
 							  /obj/item/reagent_containers/food/snacks/grown/oat,
@@ -1107,7 +1107,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1117,7 +1117,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1128,7 +1128,7 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/ingredients/sushi/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/sea_weed(src)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/rawcrab(src)
 
 /obj/item/storage/box/emptysandbags
