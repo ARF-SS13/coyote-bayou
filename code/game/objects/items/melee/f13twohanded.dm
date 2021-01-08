@@ -243,7 +243,7 @@
 	custom_materials = null
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_POINTY
 	icon_prefix = "bone_spear"
 
 /obj/item/twohanded/spear/bonespear/ComponentInitialize()
