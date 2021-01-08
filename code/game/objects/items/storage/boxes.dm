@@ -439,6 +439,14 @@ obj/item/storage/box/stingbangs
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/food/drinks/sillycup( src )
 
+/obj/item/storage/box/bowls
+	name = "box of bowls"
+	desc = "It has a picture of a bowl on it."
+
+/obj/item/storage/box/bowls/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/glass/bowl(src)
+	
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
 	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"

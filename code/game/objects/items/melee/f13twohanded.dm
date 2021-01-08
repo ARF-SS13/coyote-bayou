@@ -251,10 +251,12 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=30, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/bonespear/deathclaw
-	name = "Deathclaw bonespear"
-	desc = "This spear seems to be several long deathclaw femurs tied together by leather, with three wicked sharp looking claws crudely tied to the end."
+	name = "deathclaw spear"
+	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	force = 20
 	armour_penetration = 15
+	icon_state = "clawspear0"
+	icon_prefix = "clawspear"
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
 	. = ..()
@@ -263,7 +265,7 @@
 //Ultracite
 /obj/item/twohanded/spear/ultra
 	icon_state = "ultraglaive0"
-	name = "Ultracite glaive"
+	name = "ultracite glaive"
 	desc = "An ultracite enhanced metal glaive that can be wielded."
 	force = 30
 	armour_penetration = 5

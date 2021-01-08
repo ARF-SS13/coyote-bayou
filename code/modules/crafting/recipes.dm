@@ -1,4 +1,4 @@
-
+//FILE NOT IN USE / NOT ON tgstation.dme
 /datum/crafting_recipe
 	var/name = "" //in-game display name
 	var/reqs[] = list() //type paths of items consumed associated with how many are needed
@@ -2943,7 +2943,7 @@
 
 /datum/crafting_recipe/plateboot
 	name = "Plate Boots"
-	result = /obj/item/clothing/shoes/f13/military/legionmetal
+	result = /obj/item/clothing/shoes/f13/military/plated
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/cloth = 5)

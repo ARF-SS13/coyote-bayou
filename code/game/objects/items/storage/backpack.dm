@@ -25,8 +25,8 @@
 	. = ..()	
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	//STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_volume = STORAGE_VOLUME_BACKPACK
-	STR.max_w_class = MAX_WEIGHT_CLASS_BACKPACK
+	STR.max_combined_w_class = 21
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
 	
 
@@ -50,6 +50,13 @@
 	component_type = /datum/component/storage/concrete/bluespace/bag_of_holding
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
+/obj/item/storage/backpack/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.allow_big_nesting = TRUE
+	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
+	STR.max_combined_w_class = 35
+
 /obj/item/storage/backpack/spearquiver
 	name = "sturdy quiver"
 	desc = "A leather and iron quiver designed to hold throwing spears and bolas."
@@ -61,7 +68,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
-	STR.max_combined_w_class = 35
 	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
@@ -107,13 +113,6 @@
 	desc = "A duffel bag that opens into a localized pocket of Blue Space."
 	icon_state = "holdingduffel"
 	item_state = "holdingduffel"
-
-/obj/item/storage/backpack/holding/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = MAX_WEIGHT_CLASS_BAG_OF_HOLDING
-	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
 /obj/item/storage/backpack/holding/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
@@ -391,7 +390,7 @@
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_DUFFLEBAG
+	STR.max_combined_w_class = 30
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"
