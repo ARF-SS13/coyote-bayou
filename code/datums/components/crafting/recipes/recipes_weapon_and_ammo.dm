@@ -192,6 +192,225 @@
 ///GUNS CRAFTING//
 //////////////////
 
+//zipgun
+/datum/crafting_recipe/zipgun
+	name = "zip gun"
+	result = /obj/item/gun/ballistic/revolver/zipgun
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+	/datum/reagent/blackpowder = 1,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+//pipe rifle
+/datum/crafting_recipe/piperifle
+	name = "pipe rifle"
+	result = /obj/item/gun/ballistic/revolver/pipe_rifle
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+	/datum/reagent/blackpowder = 1,
+				/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+//browning hi-power
+/datum/crafting_recipe/ninemil
+	name = "9mm pistol"
+	result = /obj/item/gun/ballistic/automatic/pistol/ninemil
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//colt 6520
+/datum/crafting_recipe/colt6520
+	name = "colt 6520"
+	result = /obj/item/gun/ballistic/revolver/colt6520
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/datum/reagent/blackpowder = 10,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//m1911
+/datum/crafting_recipe/m1911
+	name = "M1911"
+	result = /obj/item/gun/ballistic/automatic/pistol/m1911
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//n99
+/datum/crafting_recipe/n99
+	name = "10mm pistol"
+	result = /obj/item/gun/ballistic/automatic/pistol/n99
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//hunting rifle
+/datum/crafting_recipe/huntingrifle
+	name = "hunting rifle"
+	result = /obj/item/gun/ballistic/shotgun/remington
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 4,
+				/datum/reagent/blackpowder = 20,
+				/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//battle rifle
+/datum/crafting_recipe/m1garand
+	name = "M1 Garand"
+	result = /obj/item/gun/ballistic/automatic/m1garand
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 2,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//varmint rifle
+/datum/crafting_recipe/varmintrifle
+	name = "varmint rifle"
+	result = /obj/item/gun/ballistic/automatic/varmint
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 4,
+				/obj/item/stack/sheet/metal = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//rangemaster
+/datum/crafting_recipe/rangemaster
+	name = "colt rangemaster"
+	result = /obj/item/gun/ballistic/automatic/rangemaster
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 4,
+				/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//r91
+/datum/crafting_recipe/r91
+	name = "r91 assault rifle"
+	result = /obj/item/gun/ballistic/automatic/assault_rifle
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/metal = 4,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/mineral/titanium = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//infiltrator
+/datum/crafting_recipe/infiltrator
+	name = "infiltrator"
+	result = /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
+	reqs = list(/obj/item/gun/ballistic/automatic/assault_rifle = 1,
+				/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/suppressor = 1,
+				/obj/item/stack/sheet/plastic = 3,
+				/datum/reagent/blackpowder = 30)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//fn fal
+/datum/crafting_recipe/fnfal
+	name = "fn fal"
+	result = /obj/item/gun/ballistic/automatic/fnfal
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/mineral/titanium = 2,
+				/datum/reagent/blackpowder = 30)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//widowmaker
+/datum/crafting_recipe/widowmaker
+	name = "winchester widowmaker double barrel"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/datum/reagent/blackpowder = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//hunting shotgun
+/datum/crafting_recipe/huntingshotgun
+	name = "hunting shotgun"
+	result = /obj/item/gun/ballistic/shotgun/hunting
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/sheet/metal = 3,
+				/datum/reagent/blackpowder = 15)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//h&k caws
+/datum/crafting_recipe/caws
+	name = "h&k caws"
+	result = /obj/item/gun/ballistic/automatic/shotgun/caws
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/mineral/titanium = 2,
+				/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 3)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
 	name = "r82 heavy service rifle"
@@ -585,3 +804,27 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
+
+//magneto 
+/datum/crafting_recipe/magnetowattz
+	name = "wattz 1000 magneto-laser pistol"
+	result = /obj/item/gun/energy/laser/wattz/magneto
+	reqs = list(/obj/item/gun/energy/laser/wattz = 1,
+				/obj/item/stack/crafting/electronicparts = 2)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+//extendo GLOCK
+/datum/crafting_recipe/glock86a
+	name = "glock 86a"
+	result = /obj/item/gun/energy/laser/plasma/glock/extended
+	reqs = list(/obj/item/gun/energy/laser/plasma/glock = 1,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/crafting/electronicparts = 3)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
