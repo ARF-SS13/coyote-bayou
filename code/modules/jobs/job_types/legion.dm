@@ -153,7 +153,7 @@ Centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/rangercent
 	suit_store = /obj/item/gun/ballistic/automatic/mini_uzi
 	backpack_contents = list(
-		/obj/item/twohanded/required/thermic_lance=1,
+		/obj/item/twohanded/thermic_lance=1,
 		/obj/item/ammo_box/magazine/uzim9mm=2)
 
 /datum/outfit/loadout/centbreacher
@@ -162,7 +162,7 @@ Centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	suit_store = /obj/item/gun/ballistic/automatic/shotgun/riot
 	backpack_contents = list(
-		/obj/item/fireaxe=1,
+		/obj/item/twohanded/fireaxe=1,
 		/obj/item/ammo_box/magazine/d12g=2)
 
 /*
@@ -221,7 +221,7 @@ Priestess of Mars
 	gloves	= /obj/item/clothing/gloves/fingerless
 	jobtype = /datum/job/CaesarsLegion/f13priestess
 	id = /obj/item/card/id/dogtag/legpriest
-	r_hand = /obj/item/sledgehammer/marsstaff
+	r_hand = /obj/item/twohanded/sledgehammer/marsstaff
 	shoes = /obj/item/clothing/shoes/sandal
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=3, \
@@ -442,7 +442,7 @@ Decanii
 	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
 	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/fireaxe/bmprsword=1, \
+		/obj/item/twohanded/fireaxe/bmprsword=1, \
 		/obj/item/ammo_box/magazine/greasegun=1, \
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
@@ -683,7 +683,7 @@ Prime Legionairy
 
 /datum/outfit/loadout/legline
 	name = "Lineman"
-	suit_store = /obj/item/spear
+	suit_store = /obj/item/twohanded/spear
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \

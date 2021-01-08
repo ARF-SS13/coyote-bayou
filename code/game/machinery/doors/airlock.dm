@@ -1061,7 +1061,7 @@
 		to_chat(user, "<span class='warning'>The airlock's bolts prevent it from being forced!</span>")
 	else if( !welded && !operating)
 		if(!beingcrowbarred) //being fireaxe'd
-			var/obj/item/fireaxe/axe = I
+			var/obj/item/twohanded/fireaxe/axe = I
 			if(!axe.wielded)
 				to_chat(user, "<span class='warning'>You need to be wielding \the [axe] to do that!</span>")
 				return

@@ -105,10 +105,10 @@
 /obj/item/ammo_box/l10mm
 	name = "speed loader (10mm)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "10mm"
+	icon_state = "10mm2"
 	caliber = "10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	max_ammo = 6
+	max_ammo = 12
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 50000)
 

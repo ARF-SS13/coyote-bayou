@@ -535,9 +535,9 @@
 
 	loot = list(
 				/obj/item/weldingtool,
-				/obj/item/spear,
+				/obj/item/twohanded/spear,
 				/obj/item/bostaff,
-				/obj/item/baseball,
+				/obj/item/twohanded/baseball,
 				/obj/item/kitchen/knife/butcher,
 				/obj/item/claymore/machete/golf,
 				/obj/item/claymore/machete,
@@ -553,9 +553,9 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/fireaxe,
-				/obj/item/sledgehammer,
-				/obj/item/fireaxe/bmprsword,
+				/obj/item/twohanded/fireaxe,
+				/obj/item/twohanded/sledgehammer,
+				/obj/item/twohanded/fireaxe/bmprsword,
 				/obj/item/melee/unarmed/lacerator,
 				/obj/item/melee/unarmed/maceglove,
 				/obj/item/melee/unarmed/punchdagger,
@@ -567,14 +567,14 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/twohanded/required/thermic_lance,
-				/obj/item/chainsaw,
+				/obj/item/twohanded/thermic_lance,
+				/obj/item/twohanded/chainsaw,
 				/obj/item/kinetic_crusher,
 				/obj/item/nullrod/claymore/chainsaw_sword,
 				/obj/item/melee/powerfist,
 				/obj/item/melee/transforming/energy/axe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
-				/obj/item/sledgehammer/supersledge,
+				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
 				/obj/item/melee/powerfist/moleminer

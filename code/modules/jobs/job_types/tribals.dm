@@ -60,7 +60,7 @@ Tribal Chief
 	neck =			/obj/item/clothing/neck/cloak/chiefcloak
 	id = 			/obj/item/card/id/tribetattoo
 	suit =			/obj/item/clothing/suit/armor/f13/tribe_armor
-	suit_store =	/obj/item/spear/bonespear/deathclaw
+	suit_store =	/obj/item/twohanded/spear/bonespear/deathclaw
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
