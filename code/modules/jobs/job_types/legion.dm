@@ -688,7 +688,7 @@ Prime Legionairy
 	name = "Lineman"
 	suit_store = /obj/item/twohanded/spear
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99,
+		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv=2,
 		/obj/item/claymore/machete/reinforced=1)
 
@@ -747,7 +747,7 @@ Recruit Legionary
 		/obj/item/kitchen/knife/butcher=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/restraints/handcuffs)
+		/obj/item/restraints/handcuffs=1)
 
 /*
 Venator
