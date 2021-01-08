@@ -96,3 +96,13 @@
     tools = list(TOOL_WORKBENCH)
     category = CAT_MISC
     subcategory = CAT_TOOL
+
+/datum/crafting_recipe/fishingrod
+    name = "Basic Fishingrod"
+    result = /obj/item/fishingrod
+    time = 80
+    reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/cloth = 3)
+    tools = list(TOOL_WORKBENCH)
+    category = CAT_MISC
+    subcategory = CAT_TOOL

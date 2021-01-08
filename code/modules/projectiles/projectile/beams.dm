@@ -391,3 +391,8 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 
+/obj/item/projectile/beam/laser/wattz2k
+	name = "laser bolt"
+	damage = 40
+	armour_penetration = 25
+
