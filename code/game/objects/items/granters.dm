@@ -558,6 +558,148 @@
 	oneuse = FALSE
 	remarks = list()
 
+// New Blueprints, yay! -Superballs
+
+/obj/item/book/granter/crafting_recipe/blueprint
+	name = "blueprint"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	desc = "A detailed schematic for crafting an item."
+	w_class = WEIGHT_CLASS_TINY
+	oneuse = TRUE
+	remarks = list()
+
+/obj/item/book/granter/crafting_recipe/blueprint/r82
+	name = "r82 heavy service rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/R82)
+
+/obj/item/book/granter/crafting_recipe/blueprint/marksman
+	name = "marksman carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/marksmancarbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/r84
+	name = "r84 lmg blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/lmg)
+
+/obj/item/book/granter/crafting_recipe/blueprint/service
+	name = "service rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/servicerifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aep7
+	name = "aep7 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AEP7)
+
+/obj/item/book/granter/crafting_recipe/blueprint/leveraction
+	name = "lever action shotgun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/lever_action)
+
+/obj/item/book/granter/crafting_recipe/blueprint/trailcarbine
+	name = "trail carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/trail_carbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/thatgun
+	name = ".223 pistol blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/thatgun)
+
+/obj/item/book/granter/crafting_recipe/blueprint/pps
+	name = "ppsh41 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/pps)
+
+/*
+/obj/item/book/granter/crafting_recipe/blueprint/mg34
+	name = "mg34 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/mg34)
+*/
+
+/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol
+	name = "plasma pistol blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmapistol)
+
+/obj/item/book/granter/crafting_recipe/blueprint/uzi
+	name = "mini uzi blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/uzi)
+
+/obj/item/book/granter/crafting_recipe/blueprint/smg10mm
+	name = "10mm smg blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/smg10mm)
+
+/obj/item/book/granter/crafting_recipe/blueprint/greasegun
+	name = "m3a1 grease gun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/grease_gun)
+
+/obj/item/book/granter/crafting_recipe/blueprint/brushgun
+	name = "brush gun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/brush)
+
+/obj/item/book/granter/crafting_recipe/blueprint/r91
+	name = "r91 assault rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/r91)
+
+/obj/item/book/granter/crafting_recipe/blueprint/breacher
+	name = "breacher shotgun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/breacher)
+
+/obj/item/book/granter/crafting_recipe/blueprint/sniper
+	name = "sniper rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/sniper)
+
+/obj/item/book/granter/crafting_recipe/blueprint/deagle
+	name = "desert eagle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/deagle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aer9
+	name = "aer9 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AER9)
+
+/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle
+	name = "plasma rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmarifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/tribeam
+	name = "tribeam laser rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribeam)
+
+/obj/item/book/granter/crafting_recipe/blueprint/am_rifle
+	name = "anti-materiel rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/am_rifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/citykiller
+	name = "citykiller blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/city_killer)
+
+/obj/item/book/granter/crafting_recipe/blueprint/rangemaster
+	name = "colt rangemaster blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/rangemaster)
+
+/obj/item/book/granter/crafting_recipe/blueprint/bozar
+	name = "bozar blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/bozar)
 
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"

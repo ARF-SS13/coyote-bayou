@@ -392,7 +392,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-
 /obj/item/gun/energy/laser/plasma/carbine
 	name ="plasma carbine"
 	item_state = "plasma"
@@ -586,3 +585,24 @@
 	ammo_x_offset = 3
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/gun/energy/laser/wattz2k
+	name = "wattz 2000"
+	desc = "Wattz 2000 Laser Rifle. Uses micro fusion cells for more powerful lasers, and an extended barrel for additional range."
+	icon_state = "wattz2k"
+	item_state = "sniper_rifle"
+	fire_delay = 3.5
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+
+/obj/item/gun/energy/laser/wattz2k/extended
+	name = "wattz 2000e"
+	desc = "This Wattz 2000 laser rifle has had its recharging system upgraded and a special recycling chip installed that reduces the drain on the micro fusion cell by 50%."
+	icon_state = "wattz2k_ext"
+	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended)

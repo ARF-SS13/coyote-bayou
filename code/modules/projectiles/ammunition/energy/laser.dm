@@ -150,6 +150,14 @@
 	e_cost = 75
 	fire_sound = 'sound/weapons/laser3.ogg'
 
+/obj/item/ammo_casing/energy/wattz2k
+	projectile_type = /obj/item/projectile/beam/laser/wattz2k
+	e_cost = 125
+
+/obj/item/ammo_casing/energy/wattz2k/extended
+	projectile_type = /obj/item/projectile/beam/laser/wattz2k
+	e_cost = 62.5
+
 //musket
 
 /obj/item/ammo_casing/energy/laser/musket

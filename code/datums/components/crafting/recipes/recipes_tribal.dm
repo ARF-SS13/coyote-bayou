@@ -58,12 +58,12 @@
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/bonedagger
-	name = "Bone Dagger"
+	name = "bone dagger"
 	result = /obj/item/kitchen/knife/combat/bone
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_MELEE
 
 /*
 /datum/crafting_recipe/bonespear
@@ -268,14 +268,14 @@
 */
 
 /datum/crafting_recipe/training_machete
-	name = "Carve Training Machete"
+	name = "training machete"
 	result = /obj/item/claymore/machete/training
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/spearquiver
 	name = "Spear Quiver"
