@@ -587,11 +587,11 @@
 
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "R82 heavy service rifle"
-	desc = "A top of the line 5.56x45 automatic service rifle manufactured by the NCR and issued to high ranking personnel."
+	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	fire_delay = 1 //faster ROF, superior to regular service rifle
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	icon_state = "R82"
-	item_state = "R82"
+	item_state = "R84"
 	automatic = 1
 	burst_size = 2
 	automatic_burst_overlay = TRUE
@@ -1242,3 +1242,42 @@
 	burst_shot_delay = 1
 	can_suppress = FALSE
 	spread = 5
+
+/obj/item/gun/ballistic/automatic/fnfal
+	name = "FN FAL"
+	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable assault weapon for any terrain or tactical situation."
+	icon_state = "fnfal"
+	item_state = "fnfal"
+	burst_size = 2
+	automatic = 1
+	mag_type = /obj/item/ammo_box/magazine/m762
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 10
+	fire_delay = 3
+
+/obj/item/gun/ballistic/automatic/shotgun/pancor
+	name = "Pancor Jackhammer"
+	desc = "A select fire automatic shotgun, the pinnacle of turning things into swiss cheese."
+	icon_state = "pancor"
+	item_state = "cshotgun1"
+	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	burst_size = 3 //Who keeps nerfing this? S.B.
+	automatic = 1
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/shotgun/caws
+	name = "H&K CAWS"
+	desc = "A select fire automatic shotgun, a modern variant of the Pancor Jackhammer."
+	icon_state = "caws"
+	item_state = "cshotgun1"
+	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	burst_size = 2
+	fire_delay = 4
+	automatic = 1
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY

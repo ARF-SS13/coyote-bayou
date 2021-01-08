@@ -224,7 +224,7 @@ Lieutenant
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 		/obj/item/grenade/plastic=1,
-		/obj/item/book/granter/trait/gunsmith_four=1)
+		/obj/item/book/granter/crafting_recipe/gunsmith_four=1)
 
 /datum/outfit/loadout/ltsup
 	name = "Support Officer"
@@ -475,7 +475,7 @@ Specialist
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556=3,
 		/obj/item/grenade/plastic=1,
-		/obj/item/book/granter/trait/gunsmith_four=1
+		/obj/item/book/granter/crafting_recipe/gunsmith_four=1
 		)
 
 /*

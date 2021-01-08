@@ -757,8 +757,8 @@ Initiate
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/book/granter/trait/gunsmith_one=1,
-		/obj/item/book/granter/trait/gunsmith_two=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_two=1,
 		/obj/item/clothing/accessory/bos/initiateK=1
 		)
 
