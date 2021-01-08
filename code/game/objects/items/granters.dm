@@ -517,6 +517,7 @@
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
 		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
+	onlearned(user)
 
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
