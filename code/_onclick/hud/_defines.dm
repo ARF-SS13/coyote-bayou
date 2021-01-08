@@ -83,9 +83,9 @@
 #define ui_acti "EAST-3:24,SOUTH:5"
 #define ui_zonesel "EAST-1:28,SOUTH:5"
 #define ui_acti_alt "EAST-1:28,SOUTH:5"	//alternative intent switcher for when the interface is hidden (F12)
-#define ui_crafting	"EAST-2:10,SOUTH+1:5"//CIT CHANGE - moves this over one tile to accommodate for combat mode toggle
-#define ui_building "EAST-2:26,SOUTH+1:21"//CIT CHANGE - ditto
-#define ui_language_menu "EAST-2:26,SOUTH+1:5"//CIT CHANGE - ditto
+#define ui_crafting	"EAST-1:27,SOUTH+3:5"
+#define ui_building "EAST-1:27,SOUTH+2:7"
+#define ui_language_menu "EAST-1:27,SOUTH+2:22"
 
 #define ui_borg_pull "EAST-2:26,SOUTH+1:7"
 #define ui_borg_radio "EAST-1:28,SOUTH+1:7"

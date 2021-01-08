@@ -39,7 +39,7 @@
 
 /obj/item/reagent_containers/food/snacks/sushie_adv
 	name = "Funa Nigiri"
-	desc = "A pice of carp lightly placed on some rice."
+	desc = "A piece of carp lightly placed on some rice."
 	icon_state = "sushie_adv"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -50,7 +50,7 @@
 
 /obj/item/reagent_containers/food/snacks/sushie_pro
 	name = "Funa Nigiri"
-	desc = "A well prepared pice of the best of the carp fillet placed on rice. Looks fancy and fresh!"
+	desc = "A well prepared piece of the best of the carp fillet placed on rice. Looks fancy and fresh!"
 	icon_state = "sushie_pro"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -85,3 +85,39 @@
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1, "hot peppers" = 1)
 	foodtype = MEAT | TOXIC
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi
+	icon = 'icons/obj/fish/seafood.dmi'
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sodiumchloride = 2)
+	tastes = list("rice" = 4, "salt" = 2, "seaweed" = 2, "fish" = 2)
+	foodtype = GRAIN | MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi //salmon
+	name = "sake sushi"
+	desc = "Sushi that has been made with salmon."
+	icon_state = "sushi_Sake"
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon
+	name = "cooked salmon sushi"
+	desc = "Rather than wanting raw fish, you ordered a cooked salmon sushi."
+	icon_state = "sushi_SmokedSalmon"
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi //cooked shrimp
+	name = "ebi sushi"
+	desc = "Sushi that has been made with cooked shrimp."
+	icon_state = "sushi_Ebi"
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi //salmon roe
+	name = "ikura sushi"
+	desc = "Sushi that has been made with salmon roe."
+	icon_state = "sushi_Ikura"
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi //tuna
+	name = "maguro sushi"
+	desc = "Sushi that has been made with tuna."
+	icon_state = "sushi_Maguro"
+
+/obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi //any roe(?)
+	name = "masago sushi"
+	desc = "Sushi that has been made with some kind of roe?"
+	icon_state = "sushi_Masago"

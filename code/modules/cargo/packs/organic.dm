@@ -196,7 +196,7 @@
 					/obj/item/reagent_containers/food/snacks/spidereggs,
 					/obj/item/reagent_containers/food/snacks/meat/rawcrab,
 					/obj/item/reagent_containers/food/snacks/spiderleg,
-					/obj/item/reagent_containers/food/snacks/carpmeat,
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
 					/obj/item/reagent_containers/food/snacks/meat/slab/human)
 	crate_name = "exotic meat crate"
 
@@ -228,10 +228,10 @@
 					/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
 					/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
 					/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
-					/obj/item/reagent_containers/food/snacks/carpmeat/imitation,
-					/obj/item/reagent_containers/food/snacks/carpmeat/imitation,
-					/obj/item/reagent_containers/food/snacks/carpmeat/imitation,
-					/obj/item/reagent_containers/food/snacks/carpmeat/imitation)
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation)
 	crate_name = "meaty crate"
 	crate_type = /obj/structure/closet/crate/freezer
 

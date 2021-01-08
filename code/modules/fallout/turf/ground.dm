@@ -32,18 +32,20 @@
 			ChangeTurf(/turf/open/floor/plating)
 		else
 			to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
-
-///turf/ground/Entered(go/A)
-//	..()
+	else
+		return ..()
+/*
+/turf/ground/Entered(go/A)
+	..()
 
 /turf/open/indestructible/ground/handle_slip()
 	return
-
+*/
 /turf/open/indestructible/ground/singularity_act()
 	return
 
 /turf/open/indestructible/ground/can_have_cabling()
-	return 1
+	return TRUE
 
 //////////////////////////////////////////////////////////////////////
 
@@ -140,7 +142,7 @@
 		. = TRUE
 
 /turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
-	return
+	return //I mean, it makes sense that deserts don't get slippery, I guess... :(
 
 //Make sure we delete the plant if we ever change turfs
 /turf/open/indestructible/ground/outside/desert/ChangeTurf(path, list/new_baseturfs, flags)
@@ -161,7 +163,7 @@
 	clawfootstep = FOOTSTEP_SAND
 
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
-	return
+	return //same thing here, dirt absorbs the liquid... :(
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"

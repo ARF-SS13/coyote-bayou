@@ -170,7 +170,7 @@
 	tastes = list("pure electricity" = 2, "meat" = 1)
 	foodtype = RAW | MEAT | TOXIC
 
-/obj/item/reagent_containers/food/snacks/carpmeat/aquatic
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/aquatic
 	name = "fillet"
 	desc = "A fillet of one of the local water dwelling species."
 

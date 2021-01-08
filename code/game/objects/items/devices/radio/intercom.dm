@@ -1,5 +1,5 @@
 /obj/item/radio/intercom
-	name = "station intercom"
+	name = "intercom"
 	desc = "Talk through this."
 	icon_state = "intercom"
 	plane = ABOVE_WALL_PLANE
