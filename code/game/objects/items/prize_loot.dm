@@ -65,17 +65,20 @@
 
 /obj/item/locked_box/examine(mob/user)
 	. = ..()
-	switch(lock_tier)
-		if(1)
-			. += "The lock looks simple."
-		if(2)
-			. += "The lock looks somewhat easy."
-		if(3)
-			. += "The lock looks average."
-		if(4)
-			. += "The lock looks a little hard."
-		if(5)
-			. += "The lock looks very difficult."
+	if(locked)
+		switch(lock_tier)
+			if(1)
+				. += "The lock looks simple."
+			if(2)
+				. += "The lock looks somewhat easy."
+			if(3)
+				. += "The lock looks average."
+			if(4)
+				. += "The lock looks a little hard."
+			if(5)
+				. += "The lock looks very difficult."
+	if(!locked)
+		. += "[src] appears to be unlocked."
 	if(fragile)
 		. += "There are cracks, [src] may crumble from any sudden movements."
 	if(user.client.prefs.special_p >= 8)
@@ -105,6 +108,8 @@
 
 /obj/item/locked_box/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/screwdriver))
+		if(!locked)
+			return
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) / 2 //the higher the lock tier, the harder it is, down to a max of 0, divided by 2
 		if(!prob(success_after_tier))
 			if(fragile)
@@ -118,6 +123,8 @@
 		locked = FALSE
 		return
 	else if(istype(W, /obj/item/lockpick_set))
+		if(!locked)
+			return
 		var/obj/item/lockpick_set/lockpickW = W
 		if(!lockpickW.use_duration(user))
 			to_chat(user, "<span class='warning'>[lockpickW] breaks while trying to unlock [src]")

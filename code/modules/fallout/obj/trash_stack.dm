@@ -22,6 +22,7 @@
 	. = ..()
 	icon_state = "Junk_[rand(1,12)]"
 	GLOB.trash_piles += src
+	initialize_lootable_trash()
 
 /obj/item/storage/trash_stack/Destroy()
 	GLOB.trash_piles -= src
