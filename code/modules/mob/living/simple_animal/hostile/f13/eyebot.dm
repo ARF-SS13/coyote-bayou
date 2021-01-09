@@ -20,6 +20,7 @@
 	maxHealth = 70
 	health = 70
 	healable = 0
+	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 
@@ -97,7 +98,7 @@
 	health = 60
 	speak_chance = 8
 	gender = NEUTER
-	mob_biotypes = list(MOB_ROBOTIC)
+	mob_biotypes = MOB_ROBOTIC
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 	speak = list("America will never fall to communist invasion.", "Democracy is truth. Communism is death.", "Communism is the very definition of failure!", "Freedom is always worth fighting for.", "Memorial site recognized. Patriotism subroutines engaged. Honoring the fallen is the duty of every red blooded American.", "Cultural database accessed. Quoting New England poet Robert Frost: 'Freedom lies in being bold.'", "Defending Life, Liberty, and the pursuit of Happiness.")
 	speak_emote = list("states")

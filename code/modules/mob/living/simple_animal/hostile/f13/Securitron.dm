@@ -22,6 +22,7 @@
 	del_on_death = 1
 	healable = 0
 	faction = list("wastebot")
+	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	emote_hear = list("Beeps.")
 	speak = list("Stop Right There Criminal.")
 	death_sound = null

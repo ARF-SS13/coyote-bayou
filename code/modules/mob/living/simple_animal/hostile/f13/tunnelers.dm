@@ -5,7 +5,7 @@
 	icon_state = "troglodyte"
 	icon_living = "troglodyte"
 	icon_dead = "trog_dead"
-	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("growls")
