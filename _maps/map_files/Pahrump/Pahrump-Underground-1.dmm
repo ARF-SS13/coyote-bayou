@@ -4927,8 +4927,8 @@
 /area/f13/clinic)
 "pR" = (
 /obj/machinery/workbench/advanced,
-/obj/item/book/granter/trait/gunsmith_three,
-/obj/item/book/granter/trait/gunsmith_two,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_two,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "pS" = (
@@ -5953,7 +5953,7 @@
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/item/book/granter/trait/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -6313,7 +6313,7 @@
 /area/f13/followers)
 "uG" = (
 /obj/structure/rack,
-/obj/item/book/granter/trait/gunsmith_one,
+/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "uH" = (
@@ -6417,7 +6417,7 @@
 "va" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/book/granter/trait/gunsmith_one,
+/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "vb" = (
@@ -7174,7 +7174,7 @@
 	dir = 1
 	},
 /obj/machinery/workbench/advanced,
-/obj/item/book/granter/trait/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
@@ -8864,7 +8864,7 @@
 "CS" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/item/book/granter/trait/gunsmith_four,
+/obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -9894,7 +9894,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Gv" = (
-/obj/item/book/granter/trait/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/structure/table,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
@@ -10287,7 +10287,7 @@
 /area/f13/radiation)
 "HN" = (
 /obj/structure/table,
-/obj/item/book/granter/trait/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull";
 	tag = "icon-yellowdirtyfull"

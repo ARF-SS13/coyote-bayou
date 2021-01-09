@@ -6885,7 +6885,7 @@
 	},
 /area/f13/wasteland)
 "fbN" = (
-/obj/item/book/granter/trait/gunsmith_two,
+/obj/item/book/granter/crafting_recipe/gunsmith_two,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "fbY" = (
@@ -13367,6 +13367,10 @@
 	icon_state = "horizontaloutermain1";
 	tag = "icon-horizontaloutermain1"
 	},
+/area/f13/wasteland)
+"jwY" = (
+/obj/structure/pondlily_small,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "jxd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21053,7 +21057,7 @@
 "pfb" = (
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/stripes/white/box,
-/obj/item/blueprint/weapon/R82,
+/obj/item/book/granter/crafting_recipe/blueprint/r82,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "pfd" = (
@@ -21977,6 +21981,10 @@
 	tag = "icon-outerbordercorner"
 	},
 /area/f13/followers)
+"pKK" = (
+/obj/structure/pondlily_big,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "pKP" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
@@ -33760,7 +33768,7 @@
 /area/f13/wasteland)
 "xXp" = (
 /obj/machinery/workbench,
-/obj/item/book/granter/trait/gunsmith_two,
+/obj/item/book/granter/crafting_recipe/gunsmith_two,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -40195,7 +40203,7 @@ uXj
 uXj
 uXj
 uXj
-uXj
+jwY
 uXj
 lwj
 oen
@@ -41997,10 +42005,10 @@ iRT
 mEy
 jQm
 bpD
+jwY
 uXj
 uXj
-uXj
-uXj
+jwY
 uXj
 voV
 lqV
@@ -42514,7 +42522,7 @@ oen
 uXj
 uXj
 uXj
-uXj
+jwY
 uXj
 rMK
 bYO
@@ -42768,7 +42776,7 @@ uXj
 uXj
 oen
 oen
-uXj
+pKK
 uXj
 uXj
 uXj
@@ -43285,7 +43293,7 @@ oen
 uXj
 uXj
 uXj
-uXj
+pKK
 uXj
 rMK
 vjO
@@ -43539,7 +43547,7 @@ qFk
 qGw
 qNk
 bpD
-uXj
+jwY
 uXj
 uXj
 uXj
@@ -43797,7 +43805,7 @@ mvv
 mvv
 bpD
 fyf
-uXj
+pKK
 uXj
 fyf
 fyf
