@@ -8,6 +8,9 @@
 	burst_size = 3
 	burst_shot_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	force = 20
+	var/auto_eject = 0
+	var/auto_eject_sound = null
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
 /obj/item/gun/ballistic/automatic/proto
@@ -94,6 +97,21 @@
 		alarmed = 1
 	return
 
+/obj/item/gun/ballistic/automatic/afterattack(atom/target, mob/living/user)
+	..()
+	if(auto_eject && magazine && magazine.stored_ammo && !magazine.stored_ammo.len && !chambered)
+		magazine.dropped()
+		user.visible_message(
+			"[magazine] falls out and clatters on the floor!",
+			"<span class='notice'>[magazine] falls out and clatters on the floor!</span>"
+		)
+		if(auto_eject_sound)
+			playsound(user, auto_eject_sound, 40, 1)
+		magazine.forceMove(get_turf(src.loc))
+		magazine.update_icon()
+		magazine = null
+		update_icon()
+
 /obj/item/gun/ballistic/automatic/c20r
 	name = "\improper C-20r SMG"
 	desc = "A bullpup two-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
@@ -146,13 +164,6 @@
 
 /obj/item/gun/ballistic/automatic/wt550/update_icon_state()
 	icon_state = "wt550[magazine ? "-[CEILING(((get_ammo(FALSE) / magazine.max_ammo) * 20) /4, 1)*4]" : "-0"]" //Sprites only support up to 20.
-
-/obj/item/gun/ballistic/automatic/mini_uzi
-	name = "\improper Type U3 Uzi"
-	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
-	icon_state = "mini-uzi"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
 
 /obj/item/gun/ballistic/automatic/m90
 	name = "\improper M-90gl Carbine"
@@ -739,13 +750,17 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 6
 	burst_size = 1
-//	en_bloc = 1
-//	auto_eject = 1
-//	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
+	en_bloc = 1
+	auto_eject = 1
+	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	can_bayonet = TRUE
 	bayonet_state = "lasmusket"
 	knife_x_offset = 22
 	knife_y_offset = 21
+	can_scope = TRUE
+	scopestate = "rifle_scope"
+	scope_x_offset = 5
+	scope_y_offset = 14
 
 /obj/item/gun/ballistic/automatic/m1garand/update_icon()
 	..()
@@ -1050,6 +1065,10 @@
 	bayonet_state = "lasmusket"
 	knife_x_offset = 22
 	knife_y_offset = 21
+	can_scope = TRUE
+	scopestate = "lasmusket_scope"
+	scope_x_offset = 5
+	scope_y_offset = 14
 
 /obj/item/gun/ballistic/automatic/m1carbine/automatic
 	name = "m2 carbine"
@@ -1117,6 +1136,10 @@
 	automatic_burst_overlay = FALSE
 	actions_types = list()
 	automatic = 0
+	can_scope = TRUE
+	scopestate = "lasmusket_scope"
+	scope_x_offset = 6
+	scope_y_offset = 14
 
 /obj/item/gun/ballistic/automatic/mp5
 	name = "mp5sd"
