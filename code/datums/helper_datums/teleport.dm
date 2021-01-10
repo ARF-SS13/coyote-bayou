@@ -167,7 +167,8 @@
 			continue
 		if(locate(/obj/machinery) in F.contents)
 			continue
-
+		if(locate(/mob/living/carbon/human) in range(7, F))
+			continue
 		return F
 
 /proc/get_teleport_turfs(turf/center, precision = 0)
