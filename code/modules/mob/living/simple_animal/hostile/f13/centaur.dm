@@ -5,7 +5,7 @@
 	icon_state = "centaur"
 	icon_living = "centaur"
 	icon_dead = "centaur_d"
-	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("growls")
@@ -41,6 +41,7 @@
 	idlesound = list('sound/f13npc/centaur/idle1.ogg', 'sound/f13npc/centaur/idle2.ogg')
 	death_sound = 'sound/f13npc/centaur/centaur_death.ogg'
 	attack_sound = 'sound/f13npc/centaur/lash.ogg'
+	wound_bonus = 0
 
 /obj/item/projectile/neurotox
 	name = "spit"

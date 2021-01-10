@@ -8,7 +8,7 @@
 	icon_gib = "deathclaw_gib"
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	robust_searching = 1
 	anchored = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
@@ -27,7 +27,7 @@
 	response_harm_simple   = "hits"
 	maxHealth = 550
 	health = 550
-	obj_damage = 60
+	obj_damage = 200
 	armour_penetration = 40
 	melee_damage_lower = 60
 	melee_damage_upper = 65
@@ -38,6 +38,9 @@
 	unsuitable_atmos_damage = 5
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/charging = FALSE
+	wound_bonus = 0 //This might be a TERRIBLE idea
+	bare_wound_bonus = 0 //is already 0 from simple_animal.dm but putting it here for ease of adjustment
+	sharpness = SHARP_EDGED
 
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )

@@ -7,7 +7,7 @@
 	icon_gib = "vault_dweller"
 	speak_chance = 0
 	turns_per_move = 5
-
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
@@ -125,6 +125,7 @@
 	icon_living = "enclave_scientist"
 	icon_dead = "enclave_scientist"
 	icon_gib = "enclave_scientist"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -246,6 +247,7 @@
 	icon_dead = "bs_knight"
 	icon_gib = "bs_knight"
 	speak_chance = 0
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	faction = list("bos")
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -335,6 +337,7 @@
 	icon_dead = "ncr_trooper"
 	icon_gib = "ncr_trooper"
 	faction = list("NCR")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -426,6 +429,7 @@
 	icon_dead = "legion_prime"
 	icon_gib = "legion_prime"
 	faction = list("legion")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
@@ -516,6 +520,7 @@
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider"
 	icon_gib = "firefighter_raider"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -686,6 +691,7 @@
 	icon_state = "abomination"
 	icon_living = "abomination"
 	icon_dead = "abomination_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	maxHealth = 1000
 	health = 1000
@@ -733,6 +739,7 @@
 	icon_state = "horror"
 	icon_living = "horror"
 	icon_dead = "horror_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	maxHealth = 700
 	health = 700

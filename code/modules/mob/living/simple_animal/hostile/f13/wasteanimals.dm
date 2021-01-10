@@ -5,7 +5,7 @@
 	icon_state = "cazador"
 	icon_living = "cazador"
 	icon_dead = "cazador_dead1"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 3)
@@ -49,7 +49,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom = 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 5)
 
 /mob/living/simple_animal/hostile/cazador/death(gibbed)
 	icon_dead = "cazador_dead[rand(1,5)]"
@@ -96,7 +96,6 @@
 
 /datum/reagent/toxin/cazador_venom
 	name = "Cazador venom"
-//	id = "cazador_venom"
 	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
 	color = "#801E28" // rgb: 128, 30, 40
 	toxpwr = 1
@@ -115,7 +114,7 @@
 	icon_state = "radscorpion"
 	icon_living = "radscorpion"
 	icon_dead = "radscorpion_dead"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
@@ -154,7 +153,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin = 5)
+		H.reagents.add_reagent(/datum/reagent/toxin, 5)
 
 /mob/living/simple_animal/hostile/radscorpion/Initialize()
 	. = ..()
@@ -174,7 +173,7 @@
 	icon_state = "gekkon"
 	icon_living = "gekkon"
 	icon_dead = "gekkon_dead"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/geckohide = 1)
@@ -223,7 +222,7 @@
 	icon_living = "radroach"
 	icon_dead = "radroach_dead"
 	icon_gib = "radroach_gib"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2, /obj/item/stack/sheet/sinew = 1)
@@ -258,7 +257,7 @@
 	icon_living = "GiantAnt"
 	icon_dead = "GiantAnt_dead"
 	icon_gib = "GiantAnt_gib"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
@@ -299,7 +298,7 @@
 	icon_living = "FireAnt"
 	icon_dead = "FireAnt_dead"
 	icon_gib = "FireAnt_gib"
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
@@ -368,7 +367,7 @@
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker_dead"
 	icon_gib = null
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1)
@@ -429,7 +428,7 @@
 	icon_living = "nightstalker"
 	icon_dead = "nightstalker-dead"
 	icon_gib = null
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/clothing/head/f13/stalkerpelt = 1)
@@ -485,7 +484,7 @@
 	icon_living = "bloatfly"
 	icon_dead = "bloatfly_dead"
 	icon_gib = null
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1)
@@ -526,7 +525,7 @@
 	icon_living = "mole_rat"
 	icon_dead = "mole_rat_dead"
 	icon_gib = null
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1)

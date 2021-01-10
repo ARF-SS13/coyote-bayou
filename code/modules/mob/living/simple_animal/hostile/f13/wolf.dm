@@ -8,6 +8,7 @@
 	icon_living = "dog_angry"
 	icon_dead = "dog_dead"
 	icon_gib = "gib"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
