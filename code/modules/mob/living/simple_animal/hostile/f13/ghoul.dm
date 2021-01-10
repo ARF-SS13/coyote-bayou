@@ -24,6 +24,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("ghoul")
 	decompose = TRUE
+	sharpness = SHARP_EDGED //They need to cut their finger nails
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
@@ -114,6 +115,8 @@
 	melee_damage_upper = 35
 	mob_size = 5
 	faction = list("hostile")
+	wound_bonus = 0
+	bare_wound_bonus = 0
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()

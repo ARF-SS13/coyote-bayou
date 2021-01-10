@@ -347,12 +347,6 @@
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 
-/obj/item/clothing/head/helmet/f13/deathskull
-	name = "eerie helm"
-	desc = "A helmet fastened from the skull of a deer. Something about it doesn't look right."
-	icon_state = "shamskull"
-	item_state = "shamskull"
-	armor = list("melee" = 15, "bullet" = 20, "laser" = 15, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/tribal
 	name = "tribal power helmet"

@@ -514,7 +514,7 @@
 	flash_protect = 1
 	glass_colour_type = /datum/client_colour/glass_colour/red
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
-	darkness_view = 128
+	darkness_view = 24
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
@@ -632,62 +632,72 @@
 	AddComponent(/datum/component/armor_plate)
 
 //Wayfarer WIP (only clothing specific to the faction, generic tribal themed things are in f13head.dm)
+/obj/item/clothing/head/helmet/f13/deathskull
+	name = "eerie helm"
+	desc = "A helmet fastened from the skull of a deer. Something about it doesn't look right."
+	icon_state = "shamskull"
+	item_state = "shamskull"
+	armor = list("melee" = 15, "bullet" = 20, "laser" = 15, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
+
 /obj/item/clothing/head/f13/helmet/wayfarer
 
 /obj/item/clothing/head/helmet/f13/wayfarer/hunter
-	name = "hunter's headwear"
-	desc = ""
+	name = "hunter headdress"
+	desc = "Azure decorations dangle from the sturdy cap, it is sung that the wearers of these are watched over by the spirits."
 	icon_state = "hunterhelm"
 	item_state = "hunterhelm"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 15, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/antler
-	name = "antler helmet"
-	desc = ""
+	name = "antler skullcap"
+	desc = "An antler skull headdress traditionally worn by the spiritually inclined."
 	icon_state = "antlerhelm"
 	item_state = "antlerhelm"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 0, "bullet" = 25, "laser" = 15, "energy" = 0, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/shamanblue
-	name = "blue shaman's headdress"
-	desc = ""
+	name = "ritual headdress"
+	desc = "An ancient mask fashioned at the coasts of the Great Salt Water, imbued with the ancestral blessing through a long forgotten ritual."
 	icon_state = "shamanblue"
 	item_state = "shamanblue"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 10, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmetf13/wayfarer/shamanred
-	name = "red shaman's headdress"
-	desc = ""
+	name = "crimson mask"
+	desc = "An uncanny helm passed down through generations, originating from a tribal culture once situated at the top of a Sonoran mesa."
 	icon_state = "shamanred"
 	item_state = "shamanred"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief
-	name = "blue chief's helmet"
-	desc = ""
+	name = "helm of the steady walk"
+	desc = "A chief who chooses this protectron mantle embodies the defensive, a stalwart heart that protects their village above all other goals, even if it means hampering the growth of the village to do it."
 	icon_state = "chiefblue"
 	item_state = "chiefblue"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 50, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	actions_types = list(/datum/action/item_action/toggle)
-	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
 	
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/red
-	name = "red chief's helmet"
-	desc = ""
+	name = "helm of the piercing gaze"
+	desc = "A chief who wears this assaultron helm is known for their prowess in battle, aggressiveness, intimidation and raw power in command. They are bold and strong."
 	icon_state = "chiefred"
 	item_state = "chiefred"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 50, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/green
-	name = "green chief's helmet"
-	desc = ""
+	name = "helm of the helping hand"
+	desc = "The many eyed helper to the village and all, the Chief that chooses this Mr. Handy based mantle is clever and kind in equal measure, they embody industry and diplomacy. Though they aren't defensive, they are surgically precise in eliminating those who oppose them."
 	icon_state = "chiefgreen"
 	item_state = "chiefgreen"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //PLACEHOLDER PLEASE MAKE NOT SHIT
+	armor = list("melee" = 50, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 //Followers
 
