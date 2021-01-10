@@ -150,6 +150,26 @@
 		// DING! You have passed the gauntlet, and are "probably" safe.
 		return F
 
+/proc/quick_safe_turf()
+	var/station_zlevel = SSmapping.levels_by_trait(ZTRAIT_STATION)
+	var/cycles = 1000
+	for(var/cycle in 1 to cycles)
+		// DRUNK DIALLING WOOOOOOOOO
+		var/x = rand(1, world.maxx)
+		var/y = rand(1, world.maxy)
+		var/z = pick(station_zlevel)
+		var/random_location = locate(x,y,z)
+
+		if(!isfloorturf(random_location) && !istype(random_location, /turf/open/indestructible/ground))
+			continue
+		var/turf/open/floor/F = random_location
+		if(locate(/obj/structure) in F.contents)
+			continue
+		if(locate(/obj/machinery) in F.contents)
+			continue
+
+		return F
+
 /proc/get_teleport_turfs(turf/center, precision = 0)
 	if(!precision)
 		return list(center)
