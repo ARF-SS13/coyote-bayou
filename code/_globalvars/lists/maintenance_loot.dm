@@ -562,6 +562,10 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo/ec
+	/obj/item/gun/ballistic/automatic/m1carbine,
+	/obj/item/ammo_box/magazine/m10mm_adv,
+	/obj/item/gun/ballistic/automatic/commando,
+	/obj/item/ammo_box/magazine/m45
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
