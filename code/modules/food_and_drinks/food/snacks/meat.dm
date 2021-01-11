@@ -622,7 +622,7 @@
 	name = "cazador meat"
 	desc = "A slab of cazador meat."
 	icon_state = "mothmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
 	tastes = list("insect guts" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
 	slice_path = null
