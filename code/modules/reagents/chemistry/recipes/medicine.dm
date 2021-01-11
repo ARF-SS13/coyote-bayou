@@ -368,3 +368,10 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/medical/mesh/(location)
+
+/datum/chemical_reaction/stimpak
+	name = "Stimpak Fluid"
+	id = /datum/reagent/medicine/stimpak
+	results = list(/datum/reagent/medicine/stimpak = 1)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/spaceacillin = 1)
+	required_temp = 300
