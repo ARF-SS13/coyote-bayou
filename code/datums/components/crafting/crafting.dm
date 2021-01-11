@@ -145,6 +145,10 @@
 					for(var/datum/reagent/A in RC.reagents.reagent_list)
 						.["other"][A.type] += A.volume
 			.["other"][I.type] += 1
+	for(var/obj/machinery/M in get_environment(a))
+		if(M.machine_tool_behaviour)
+			.["tool_behaviour"] += M.machine_tool_behaviour
+			.["other"][M.type] += 1
 
 /datum/component/personal_crafting/proc/check_tools(atom/a, datum/crafting_recipe/R, list/contents)
 	if(!R.tools.len)
@@ -163,6 +167,8 @@
 
 		if(I.tool_behaviour)
 			present_qualities.Add(I.tool_behaviour)
+	for(var/obj/machinery/M in a.contents)
+		present_qualities.Add(M.machine_tool_behaviour)
 
 	possible_tools |= contents["other"]
 

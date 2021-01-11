@@ -31,7 +31,7 @@
 /area/f13/bunker)
 "ae" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /obj/effect/spawner/lootdrop/clothing_high,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
@@ -66,7 +66,7 @@
 /area/f13/brotherhood)
 "ak" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/item/locked_box/misc/blueprints/tier1,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "al" = (
@@ -190,8 +190,8 @@
 "aI" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/range/any_random,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -358,7 +358,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bj" = (
@@ -450,7 +450,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bx" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -490,7 +490,7 @@
 /area/f13/brotherhood)
 "bF" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bG" = (
@@ -514,9 +514,9 @@
 /area/f13/brotherhood)
 "bM" = (
 /obj/structure/guncase,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
+/obj/item/locked_box/weapon/range/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
@@ -531,8 +531,8 @@
 	},
 /area/f13/tunnel)
 "bQ" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/range/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bR" = (
@@ -712,7 +712,7 @@
 /area/f13/bunker)
 "cw" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken";
 	tag = "icon-housewood2-broken"
@@ -843,8 +843,8 @@
 /area/f13/tunnel)
 "cS" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "cT" = (
@@ -906,14 +906,14 @@
 /area/f13/tunnel)
 "db" = (
 /obj/structure/chair/right,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
 "dc" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -1046,7 +1046,7 @@
 /area/f13/brotherhood)
 "dA" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dB" = (
@@ -1164,7 +1164,7 @@
 /turf/open/water,
 /area/f13/tunnel)
 "dS" = (
-/obj/effect/spawner/lootdrop/f13/cash_legion_med,
+/obj/item/locked_box/misc/money/legion/medium,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -1462,7 +1462,7 @@
 /area/f13/tunnel)
 "eR" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "eS" = (
@@ -1560,7 +1560,7 @@
 /obj/structure/handrail/g_central{
 	pixel_y = -16
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "fn" = (
@@ -1570,11 +1570,11 @@
 /area/f13/caves)
 "fo" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier3,
+/obj/item/locked_box/weapon/range/tier1,
+/obj/item/locked_box/weapon/range/tier1,
+/obj/item/locked_box/weapon/range/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "fp" = (
@@ -1980,11 +1980,11 @@
 	},
 /area/f13/tunnel)
 "gz" = (
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gB" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "gC" = (
@@ -2359,7 +2359,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/obj/item/locked_box/misc/money/all/medium,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hI" = (
@@ -2409,7 +2409,7 @@
 	},
 /area/f13/tunnel)
 "hR" = (
-/obj/effect/spawner/lootdrop/f13/cash_legion_low,
+/obj/item/locked_box/misc/money/legion/low,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hS" = (
@@ -2425,7 +2425,7 @@
 /area/f13/tunnel)
 "hU" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "hV" = (
@@ -2585,7 +2585,7 @@
 /area/f13/clinic)
 "ix" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -2593,7 +2593,7 @@
 /area/f13/clinic)
 "iy" = (
 /obj/machinery/light/small,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/item/locked_box/armor/tier4,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "iz" = (
@@ -2620,8 +2620,8 @@
 /area/f13/building)
 "iC" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "iD" = (
@@ -2655,7 +2655,7 @@
 	tag = "icon-toilet00 (WEST)"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2692,8 +2692,8 @@
 /area/f13/brotherhood)
 "iN" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
+/obj/item/locked_box/misc/money/all/high,
+/obj/item/locked_box/misc/money/all/high,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "iP" = (
@@ -2702,7 +2702,7 @@
 	},
 /area/f13/tunnel)
 "iQ" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "iR" = (
@@ -2724,7 +2724,7 @@
 /turf/open/water,
 /area/f13/tunnel)
 "iT" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "iU" = (
@@ -2740,7 +2740,7 @@
 /area/f13/tunnel)
 "iV" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/locked_box/armor/prewar_clothes,
 /obj/item/dildo,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken";
@@ -2782,7 +2782,7 @@
 /area/f13/tunnel)
 "jd" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "je" = (
@@ -2833,7 +2833,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/item/clothing/under/f13/raider_leather,
-/obj/effect/spawner/lootdrop/f13/armor/costumes,
+/obj/item/locked_box/armor/prewar_costumes,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken";
 	tag = "icon-housewood2-broken"
@@ -2977,7 +2977,7 @@
 /obj/item/clothing/head/hooded/human_head{
 	pixel_y = -10
 	},
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /obj/item/organ/heart,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -2999,15 +2999,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "jP" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
+/obj/item/locked_box/misc/money/all/high,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "jQ" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
-"jR" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "jS" = (
@@ -3051,7 +3047,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "jY" = (
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -3087,7 +3083,7 @@
 /area/f13/tunnel)
 "ke" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/item/locked_box/weapon/range/tier5,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -3150,7 +3146,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ko" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -3167,8 +3163,8 @@
 /area/f13/tunnel)
 "ks" = (
 /obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
+/obj/item/locked_box/misc/food,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -3190,7 +3186,7 @@
 /area/f13/tunnel)
 "kv" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "kw" = (
@@ -3207,7 +3203,7 @@
 /area/f13/tunnel)
 "ky" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
 	dir = 8;
 	icon_state = "neutralrusty"
@@ -3218,7 +3214,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "kA" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "kB" = (
@@ -3236,7 +3232,7 @@
 /area/f13/tunnel)
 "kD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -3291,7 +3287,7 @@
 /obj/structure/closet/crate/trashcart{
 	storage_capacity = 10
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "kM" = (
@@ -3340,7 +3336,7 @@
 	icon_state = "goo10";
 	tag = "icon-goo10"
 	},
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/item/locked_box/armor/tier4,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kS" = (
@@ -3352,7 +3348,7 @@
 /obj/structure/booth{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "kU" = (
@@ -3391,7 +3387,7 @@
 	},
 /area/f13/tunnel)
 "kZ" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "la" = (
@@ -3444,7 +3440,7 @@
 /area/f13/bunker)
 "lh" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -3511,12 +3507,12 @@
 /area/f13/tunnel)
 "lv" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
 /obj/item/stack/sheet/prewar/five,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
@@ -3595,7 +3591,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "lI" = (
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -3666,10 +3662,10 @@
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/item/radio,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lU" = (
@@ -3756,9 +3752,9 @@
 	name = "Disguise Closet"
 	},
 /obj/effect/turf_decal/bot_red,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/item/locked_box/armor/tier2,
+/obj/item/locked_box/armor/tier2,
+/obj/item/locked_box/armor/tier2,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "md" = (
@@ -3781,7 +3777,7 @@
 	},
 /area/f13/followers)
 "mg" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -3891,7 +3887,7 @@
 /area/f13/tunnel)
 "mv" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "mw" = (
@@ -3917,7 +3913,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "mz" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -3984,7 +3980,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "mK" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mL" = (
@@ -4092,7 +4088,7 @@
 /area/f13/brotherhood)
 "na" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "nb" = (
@@ -4110,7 +4106,7 @@
 /area/f13/caves)
 "nd" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -4157,7 +4153,7 @@
 /area/f13/brotherhood)
 "nk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -4251,7 +4247,7 @@
 /area/f13/tcoms)
 "ny" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nA" = (
@@ -4268,7 +4264,7 @@
 	},
 /area/f13/brotherhood)
 "nB" = (
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -4316,7 +4312,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress6"
 	},
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken";
 	tag = "icon-housewood4-broken"
@@ -4454,7 +4450,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ok" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ol" = (
@@ -4621,7 +4617,7 @@
 /area/f13/brotherhood)
 "oN" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/item/locked_box/weapon/range/tier4,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -4858,7 +4854,7 @@
 /area/f13/tunnel)
 "pC" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
 	dir = 5;
 	icon_state = "neutralrusty"
@@ -4933,7 +4929,7 @@
 /area/f13/tunnel)
 "pS" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -5063,7 +5059,7 @@
 /obj/structure/booth{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "qq" = (
@@ -5081,11 +5077,11 @@
 /area/f13/brotherhood)
 "qu" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "qv" = (
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -5382,7 +5378,7 @@
 /area/f13/tunnel)
 "rz" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -5435,7 +5431,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken";
 	tag = "icon-housewood4-broken"
@@ -5448,7 +5444,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rK" = (
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "rL" = (
@@ -5507,7 +5503,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
 	tag = "icon-housewood2"
@@ -5536,7 +5532,7 @@
 /area/f13/brotherhood)
 "rW" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken";
 	tag = "icon-housewood2-broken"
@@ -5585,14 +5581,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "sf" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/item/locked_box/armor/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/tunnel)
 "sg" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
 	tag = "icon-housewood2"
@@ -5600,8 +5596,8 @@
 /area/f13/sewer)
 "sh" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "si" = (
@@ -5697,7 +5693,7 @@
 /area/f13/brotherhood)
 "sv" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "sx" = (
@@ -5785,7 +5781,7 @@
 /area/f13/sewer)
 "sO" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "sP" = (
@@ -5926,7 +5922,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "tp" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
@@ -5949,14 +5945,14 @@
 /area/f13/followers)
 "tt" = (
 /obj/machinery/workbench,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/item/locked_box/misc/blueprints/tier3,
+/obj/item/locked_box/misc/blueprints/tier3,
+/obj/item/locked_box/misc/blueprints/tier2,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
@@ -5987,7 +5983,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "tz" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "tA" = (
@@ -6039,7 +6035,7 @@
 /area/f13/tunnel)
 "tG" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -6098,8 +6094,8 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/item/locked_box/weapon/range/tier3,
+/obj/item/locked_box/misc/blueprints/tier1,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "tX" = (
@@ -6161,7 +6157,7 @@
 /area/f13/tunnel)
 "uh" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "ui" = (
@@ -6231,7 +6227,7 @@
 	},
 /area/f13/tunnel)
 "us" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/item/locked_box/armor/tier2,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ut" = (
@@ -6440,8 +6436,8 @@
 "vd" = (
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/weapon/melee/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ve" = (
@@ -6451,8 +6447,8 @@
 /area/f13/caves)
 "vf" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "vg" = (
@@ -6460,7 +6456,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "vi" = (
@@ -6512,7 +6508,7 @@
 /area/f13/tunnel)
 "vq" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vr" = (
@@ -6576,9 +6572,9 @@
 "vy" = (
 /obj/effect/decal/waste,
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "vz" = (
@@ -6767,7 +6763,7 @@
 	dir = 8
 	},
 /obj/item/stack/f13Cash/random/bottle_cap/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "wc" = (
@@ -6794,9 +6790,9 @@
 "wg" = (
 /obj/structure/rack,
 /obj/item/twohanded/sledgehammer,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "wh" = (
@@ -6848,7 +6844,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "wo" = (
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wp" = (
@@ -6923,8 +6919,8 @@
 /area/f13/brotherhood)
 "wA" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/item/locked_box/weapon/melee/any_random,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -6957,7 +6953,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "wG" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -6998,7 +6994,7 @@
 /area/f13/bunker)
 "wM" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wN" = (
@@ -7030,10 +7026,10 @@
 /area/f13/tunnel)
 "wR" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /obj/item/storage/fancy/candle_box,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/melee/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "wS" = (
@@ -7125,7 +7121,7 @@
 /area/f13/caves)
 "xi" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "xj" = (
@@ -7189,20 +7185,20 @@
 /area/f13/brotherhood)
 "xs" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xt" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/item/locked_box/weapon/melee/tier4,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
 	},
 /area/f13/clinic)
 "xu" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -7303,8 +7299,8 @@
 /area/f13/caves)
 "xK" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -7347,7 +7343,7 @@
 /area/f13/tunnel)
 "xQ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken";
 	tag = "icon-housewood4-broken"
@@ -7381,10 +7377,10 @@
 "xW" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/item/locked_box/weapon/range/tier4,
+/obj/item/locked_box/weapon/range/tier4,
+/obj/item/locked_box/weapon/range/tier4,
+/obj/item/locked_box/weapon/range/tier4,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "xX" = (
@@ -7409,7 +7405,7 @@
 	name = "light tube"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "yb" = (
@@ -7420,7 +7416,7 @@
 /area/f13/ncr)
 "yd" = (
 /obj/structure/chair/bench,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ye" = (
@@ -7466,7 +7462,7 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
 "yk" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /obj/structure/closet,
 /mob/living/simple_animal/hostile/alien,
 /turf/open/indestructible/ground/inside/mountain,
@@ -7485,7 +7481,7 @@
 	},
 /area/f13/bunker)
 "yr" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier1,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "yt" = (
@@ -7540,11 +7536,11 @@
 /area/f13/tunnel)
 "yC" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "yD" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "yE" = (
@@ -7671,12 +7667,12 @@
 	},
 /area/f13/tunnel)
 "yX" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/obj/item/locked_box/weapon/melee/tier4,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "yY" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "yZ" = (
@@ -7724,7 +7720,7 @@
 /area/f13/building)
 "zf" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -7770,7 +7766,7 @@
 	},
 /area/f13/tunnel)
 "zo" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /obj/structure/closet,
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -7824,7 +7820,7 @@
 /area/f13/clinic)
 "zy" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "zz" = (
@@ -8016,7 +8012,7 @@
 "Af" = (
 /obj/structure/table,
 /obj/item/book/granter/trait/pa_wear,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "purplefull";
 	tag = "icon-purplefull"
@@ -8123,16 +8119,16 @@
 /area/f13/brotherhood)
 "AA" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "AB" = (
@@ -8154,7 +8150,7 @@
 /turf/closed/wall/f13/wood,
 /area/f13/sewer)
 "AF" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "AG" = (
@@ -8165,7 +8161,7 @@
 	},
 /area/f13/tunnel)
 "AH" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -8214,7 +8210,7 @@
 	},
 /area/f13/tunnel)
 "AP" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "AQ" = (
@@ -8329,7 +8325,7 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "Bq" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
+/obj/item/locked_box/weapon/melee/tier2,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Br" = (
@@ -8362,7 +8358,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "Bw" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -8401,10 +8397,10 @@
 "BB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
+/obj/item/locked_box/misc/food,
+/obj/item/locked_box/misc/food,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "BC" = (
@@ -8450,7 +8446,7 @@
 "BI" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical/old,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -8545,8 +8541,8 @@
 /area/f13/sewer)
 "Cb" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -8574,9 +8570,9 @@
 "Cg" = (
 /obj/structure/closet/fridge/standard,
 /obj/item/reagent_containers/food/condiment/yeast,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/alcohol,
+/obj/item/locked_box/misc/food,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -8658,8 +8654,8 @@
 /area/f13/tunnel)
 "Cr" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/ammo/tier4,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Ct" = (
@@ -8724,7 +8720,7 @@
 	pixel_x = -12;
 	tag = "icon-sink (WEST)"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -8750,7 +8746,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "CH" = (
@@ -8815,7 +8811,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "CK" = (
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "CL" = (
@@ -8863,7 +8859,7 @@
 /area/f13/brotherhood)
 "CS" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/item/locked_box/weapon/ammo/tier4,
 /obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -9206,7 +9202,7 @@
 /area/f13/brotherhood)
 "Ed" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -9217,7 +9213,7 @@
 	dir = 4;
 	tag = "icon-tracks (EAST)"
 	},
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "Ef" = (
@@ -9341,9 +9337,9 @@
 /area/f13/brotherhood)
 "Ey" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/weapon/melee/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "Ez" = (
@@ -9359,7 +9355,7 @@
 	},
 /area/f13/tunnel)
 "EB" = (
-/obj/effect/spawner/lootdrop/f13/cash_ncr_med,
+/obj/item/locked_box/misc/money/ncr/medium,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "EC" = (
@@ -9428,7 +9424,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "EO" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "EP" = (
@@ -9446,7 +9442,7 @@
 /area/f13/brotherhood)
 "ER" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -9571,7 +9567,7 @@
 /area/f13/ncr)
 "Fj" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -9579,7 +9575,7 @@
 /area/f13/clinic)
 "Fk" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -9600,7 +9596,7 @@
 "Fq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/booth/middle,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Fr" = (
@@ -9630,7 +9626,7 @@
 /area/f13/caves)
 "Fw" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
 	dir = 10;
 	icon_state = "neutralrusty"
@@ -9665,13 +9661,13 @@
 "FC" = (
 /obj/structure/rack,
 /obj/item/clothing/glasses/welding,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/locked_box/misc/crafting/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "FD" = (
 /obj/structure/table/wood/poker,
 /obj/item/storage/fancy/cigarettes/cigpack_cannabis,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -9745,7 +9741,7 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/stack/f13Cash/random/bottle_cap/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /obj/machinery/light/fo13colored/Aqua{
 	bulb_colour = "#800080";
 	dir = 4;
@@ -9889,8 +9885,8 @@
 /area/f13/tunnel)
 "Gu" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/ammo/tier2,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Gv" = (
@@ -9924,7 +9920,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "GA" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "GB" = (
@@ -9987,7 +9983,7 @@
 /area/f13/clinic)
 "GK" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -10051,8 +10047,8 @@
 /area/f13/tunnel)
 "GW" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/item/locked_box/weapon/range/tier2,
+/obj/item/locked_box/misc/blueprints/tier1,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "GX" = (
@@ -10086,9 +10082,9 @@
 /area/f13/tunnel)
 "Hd" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/item/locked_box/weapon/ammo/tier3,
+/obj/item/locked_box/misc/blueprints/tier2,
+/obj/item/locked_box/misc/blueprints/tier2,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -10160,7 +10156,7 @@
 /area/f13/tunnel)
 "Hq" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /obj/item/stack/sheet/metal/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -10181,7 +10177,7 @@
 	},
 /area/f13/brotherhood)
 "Hu" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Hv" = (
@@ -10241,14 +10237,14 @@
 /area/f13/tunnel)
 "HD" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
 "HE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -10363,7 +10359,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor/t45d,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/helmet/f13/power_armor/t45d,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/item/locked_box/misc/blueprints/tier2,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -10459,7 +10455,7 @@
 /area/f13/tunnel)
 "Ip" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "Iq" = (
@@ -10572,7 +10568,7 @@
 "IJ" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -10605,7 +10601,7 @@
 	},
 /area/f13/clinic)
 "IN" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "IO" = (
@@ -10640,7 +10636,7 @@
 "IS" = (
 /obj/structure/table,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -10741,7 +10737,7 @@
 /area/f13/tunnel)
 "Ji" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "Jj" = (
@@ -10834,7 +10830,7 @@
 	},
 /area/f13/tunnel)
 "Jw" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
+/obj/item/locked_box/misc/money/all/high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Jy" = (
@@ -10861,7 +10857,7 @@
 	},
 /area/f13/brotherhood)
 "JC" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -10939,8 +10935,8 @@
 "JQ" = (
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "JR" = (
@@ -10959,7 +10955,7 @@
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
 "JU" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
+/obj/item/locked_box/weapon/melee/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "JV" = (
@@ -11013,7 +11009,7 @@
 /area/f13/caves)
 "Kd" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
@@ -11275,7 +11271,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "KU" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "KW" = (
@@ -11405,7 +11401,7 @@
 /area/f13/clinic)
 "Lt" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Lv" = (
@@ -11847,9 +11843,9 @@
 /area/f13/tunnel)
 "ML" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "MM" = (
@@ -12008,7 +12004,7 @@
 /area/f13/tunnel)
 "Nl" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Nm" = (
@@ -12031,7 +12027,7 @@
 	},
 /area/f13/tunnel)
 "Np" = (
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/locked_box/misc/skillbook,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Nq" = (
@@ -12048,9 +12044,9 @@
 /area/f13/brotherhood)
 "Ns" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/item/locked_box/armor/tier4,
+/obj/item/locked_box/misc/blueprints/tier2,
+/obj/item/locked_box/misc/blueprints/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Nt" = (
@@ -12231,8 +12227,8 @@
 "NN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/crafting,
 /obj/item/stack/crafting/electronicparts/three,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
@@ -12493,9 +12489,9 @@
 /area/f13/tunnel)
 "Oz" = (
 /obj/structure/guncase,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
+/obj/item/locked_box/weapon/range/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -12579,7 +12575,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "OL" = (
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /obj/structure/table/wood/poker,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -12638,14 +12634,14 @@
 "OT" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/item/locked_box/weapon/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier4,
+/obj/item/locked_box/weapon/ammo/tier4,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "OU" = (
@@ -12888,7 +12884,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/brotherhood)
 "PN" = (
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/locked_box/misc/alcohol,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "PO" = (
@@ -12906,7 +12902,7 @@
 "PQ" = (
 /obj/structure/booth,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "PR" = (
@@ -13104,7 +13100,7 @@
 /area/f13/brotherhood)
 "Qz" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken";
 	tag = "icon-housewood3-broken"
@@ -13222,33 +13218,33 @@
 /area/f13/sewer)
 "QW" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
+/obj/item/locked_box/weapon/ammo/tier5,
+/obj/item/locked_box/weapon/ammo/tier5,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
 "QX" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/tunnel)
 "QY" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/garbage,
+/obj/item/locked_box/misc/garbage,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "QZ" = (
@@ -13261,7 +13257,7 @@
 /area/f13/brotherhood)
 "Ra" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Rb" = (
@@ -13411,7 +13407,7 @@
 /area/f13/tcoms)
 "Rx" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -13476,7 +13472,7 @@
 /area/f13/tunnel)
 "RI" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "RJ" = (
@@ -13594,7 +13590,7 @@
 	},
 /area/f13/clinic)
 "RZ" = (
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken";
 	tag = "icon-housewood2-broken"
@@ -13683,7 +13679,7 @@
 /area/f13/brotherhood)
 "Sl" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/item/locked_box/armor/tier2,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -13811,7 +13807,7 @@
 /area/f13/brotherhood)
 "SG" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -13854,7 +13850,7 @@
 	},
 /area/f13/tunnel)
 "SN" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/obj/item/locked_box/misc/money/all/medium,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "SO" = (
@@ -13929,7 +13925,7 @@
 /area/f13/brotherhood)
 "SZ" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull";
 	tag = "icon-greenrustyfull"
@@ -13967,7 +13963,7 @@
 "Tf" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/ammo,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Tg" = (
@@ -14045,9 +14041,9 @@
 /obj/item/advanced_crafting_components/flux,
 /obj/item/advanced_crafting_components/lenses,
 /obj/item/advanced_crafting_components/receiver,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
+/obj/item/locked_box/misc/crafting/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "To" = (
@@ -14169,10 +14165,10 @@
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/five,
 /obj/item/stack/sheet/plastic/five,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "TH" = (
@@ -14201,7 +14197,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "TM" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
 	tag = "icon-housewood2"
@@ -14546,7 +14542,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -14580,7 +14576,7 @@
 	},
 /area/f13/clinic)
 "UR" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/item/locked_box/weapon/range/tier1,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "US" = (
@@ -14668,7 +14664,7 @@
 	},
 /area/f13/bunker)
 "Vd" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/item/locked_box/weapon/range/tier2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -14707,7 +14703,7 @@
 /obj/item/clothing/suit/armor/f13/combat/mk2,
 /obj/item/clothing/head/helmet/f13/combat/mk2,
 /obj/item/clothing/mask/gas/syndicate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Vj" = (
@@ -14726,7 +14722,7 @@
 "Vl" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -14760,7 +14756,7 @@
 /area/f13/tunnel)
 "Vp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/garbage,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken";
 	tag = "icon-housewood3-broken"
@@ -15140,7 +15136,7 @@
 /area/f13/tunnel)
 "WF" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -15226,7 +15222,7 @@
 /area/f13/brotherhood)
 "WS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull";
 	tag = "icon-reddirtyfull"
@@ -15250,15 +15246,15 @@
 /area/f13/tunnel)
 "WX" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/item/locked_box/weapon/range/tier3_5,
+/obj/item/locked_box/weapon/range/tier3_5,
+/obj/item/locked_box/weapon/range/tier3_5,
+/obj/item/locked_box/weapon/range/tier3_5,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "WZ" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Xa" = (
@@ -15268,7 +15264,7 @@
 /area/f13/tunnel)
 "Xb" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Xc" = (
@@ -15319,15 +15315,15 @@
 /area/f13/tunnel)
 "Xl" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "Xm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/f13/female/flapper,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/any_random,
 /obj/item/clothing/under/f13/raiderharness,
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13/wood{
@@ -15360,7 +15356,7 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "Xq" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
 	icon_state = "purplefull";
 	tag = "icon-purplefull"
@@ -15455,7 +15451,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "XF" = (
-/obj/effect/spawner/lootdrop/f13/cash_ncr_low,
+/obj/item/locked_box/misc/money/ncr/low,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "XG" = (
@@ -15510,7 +15506,7 @@
 	tag = "icon-floor6-old"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/locked_box/medical/drugs,
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -15576,7 +15572,7 @@
 "XY" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/item/locked_box/weapon/ammo/tier1,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "Ya" = (
@@ -15675,7 +15671,7 @@
 /area/f13/ncr)
 "Yu" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
@@ -15697,10 +15693,10 @@
 /turf/open/water,
 /area/f13/tunnel)
 "Yz" = (
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
+/obj/item/locked_box/misc/crafting,
 /obj/item/stack/sheet/hay/fifty,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -15727,7 +15723,7 @@
 /area/f13/brotherhood)
 "YD" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -15876,7 +15872,7 @@
 /area/f13/tunnel)
 "Zi" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
+/obj/item/locked_box/weapon/melee/tier2,
 /obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
@@ -16057,7 +16053,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "ZJ" = (
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/item/locked_box/misc/blueprints/tier1,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "ZK" = (
@@ -16072,11 +16068,11 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/resource,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ZN" = (
@@ -55958,7 +55954,7 @@ ku
 ku
 Qf
 Qf
-jR
+EO
 Qf
 Qf
 Fz
@@ -56972,7 +56968,7 @@ Qf
 Qf
 mh
 ku
-jR
+EO
 Qf
 Qf
 Qf

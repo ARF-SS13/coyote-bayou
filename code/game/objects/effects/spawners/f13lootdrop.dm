@@ -739,10 +739,18 @@
 				/obj/item/gun/energy/laser/pistol,
 				/obj/item/stock_parts/cell/ammo/ec,
 				""
-				)
+	)
+	var/loot11 = list(
+				/obj/item/gun/ballistic/automatic/m1carbine,
+				/obj/item/ammo_box/magazine/m10mm_adv,
+	)
+	var/loot12 = list(
+				/obj/item/gun/ballistic/automatic/commando,
+				/obj/item/ammo_box/magazine/m45,
+	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 //TIER 3 GUN
