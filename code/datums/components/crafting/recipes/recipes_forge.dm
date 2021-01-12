@@ -371,6 +371,26 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/datum/crafting_recipe/cosmicknife
+	name = "cosmic knife"
+	result = /obj/item/kitchen/knife/cosmic
+	reqs = list(/obj/item/kitchen/knife/cosmicdirty = 1,
+				/obj/item/crafting/abraxo = 1)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	time = 30
+
+/datum/crafting_recipe/cosmicknifeheated
+	name = "superheated cosmic knife"
+	result = /obj/item/kitchen/knife/cosmicheated
+	reqs = list(/obj/item/kitchen/knife/cosmic = 1,
+				/datum/reagent/fuel = 25)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	time = 40
+
 //armorhelmets
 
 /datum/crafting_recipe/salvagePA

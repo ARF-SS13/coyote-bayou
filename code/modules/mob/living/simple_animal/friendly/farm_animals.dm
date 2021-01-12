@@ -737,7 +737,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	icon_dead = "radstag_dead"
 	icon_gib = "radstag_gib"
 	gender = FEMALE
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 5
 	see_in_dark = 6
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/ragstag = 2)
@@ -772,7 +772,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
 	faction = list("neutral", "bighorner")
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_simple = "rams"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 120

@@ -78,9 +78,9 @@
 	desc = "An optical meson scanner fitted with an amplified visible light spectrum overlay, providing greater visual clarity in darkness."
 	icon_state = "nvgmeson"
 	item_state = "nvgmeson"
-	darkness_view = 8
+	darkness_view = 24
 	flash_protect = -2
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/meson/gar
@@ -120,9 +120,9 @@
 	desc = "You can totally see in the dark now! Just don't look too closely at bright lights. This lacks any flash correction."
 	icon_state = "night"
 	item_state = "glasses"
-	darkness_view = 8
+	darkness_view = 24
 	flash_protect = -2
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/night/prescription
@@ -477,9 +477,9 @@
 	icon_state = "godeye"
 	item_state = "godeye"
 	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS
-	darkness_view = 8
+	darkness_view = 24
 	clothing_flags = SCAN_REAGENTS
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/glasses/godeye/Initialize()
@@ -536,9 +536,9 @@
 	icon_state = "nvgmeson"
 	item_state = "nvgmeson"
 	flags_cover = GLASSESCOVERSEYES
-	darkness_view = 8
+	darkness_view = 24
 	flash_protect = 2
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = FALSE
 	clothing_flags = SCAN_REAGENTS
 	vision_flags = SEE_TURFS

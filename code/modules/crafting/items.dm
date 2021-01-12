@@ -44,7 +44,7 @@
     icon_state = "blueprint1"
 
 //low tier
-
+/*
 /obj/item/blueprint/weapon/AEP7
 	name = "AEP7 blueprint"
 
@@ -188,6 +188,7 @@
 
 /obj/item/blueprint/weapon/bozar/limited
 	name = "Damaged bozar blueprint"
+*/
 //armor blueprints
 /obj/item/blueprint/armor
     name = "armor blueprint"

@@ -489,7 +489,7 @@
 	..()
 	if(DRM && panel_open)
 		if(constage == 0)
-			if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
 				constage = 1
 				qdel(O)
@@ -576,22 +576,22 @@
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()
 	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_one))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
 			simple = 1
 			qdel(O)
 	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_two))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
 			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
 			basic = 1
 			qdel(O)
 	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_three))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
 			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
 			intermediate = 1
 			qdel(O)
 	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
 			advanced = 1
 			qdel(O)

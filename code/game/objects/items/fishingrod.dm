@@ -52,7 +52,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 //I wish I didnt have to use afterattack
 //when using pre_attack, it went wonky
 /obj/item/fishingrod/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	if(!istype(target, /turf/open/water))
+	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))
 		return ..()
 	if(!(target in range(fish_range, user)))
 		to_chat(current_user, "<span class='warning'The line cannot reach that far, move closer!</span>")
@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	switch(fish_got)
 		if(FALSE)
 			if(prob(trash_chance))
-				var/junk_item = pick(GLOB.trash_list)
+				var/junk_item = pick(GLOB.loot_garbage)
 				new junk_item(current_turf)
 				return 1
 			return 2
