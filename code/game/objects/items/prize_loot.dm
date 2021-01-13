@@ -60,7 +60,7 @@
 	//this is the probability that the lockbox will just open on spawn
 	var/prob_open = 40
 
-/obj/item/locked_box/Initialize(mapload)
+/obj/item/locked_box/Initialize()
 	. = ..()
 	name = "[easy_naming][initial(name)]"
 	if(enable_loot_initialize)
