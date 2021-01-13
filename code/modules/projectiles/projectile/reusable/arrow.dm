@@ -35,20 +35,37 @@
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ap
 
+/obj/item/projectile/bullet/reusable/arrow/ap/on_hit(atom/target, blocked)
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/targetHuman = target
+		targetHuman.adjustStaminaLoss(25) //I imagine getting hit by one of these would really, REALLY, sting; actual damage and stamina damage
+
 /obj/item/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
 	desc = "A simple arrow, tipped in a poisonous paste."
-	damage = 35
+	damage = 10 //really gotta balance this, holy cow
 	armour_penetration = 5
-	damage_type = TOX
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/poison
+
+/obj/item/projectile/bullet/reusable/arrow/poison/on_hit(atom/target, blocked)
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/targetHuman = target
+		targetHuman.reagents.add_reagent(/datum/reagent/toxin, 10) //so you get some toxin damage! around 30
 
 /obj/item/projectile/bullet/reusable/arrow/burning
 	name = "burn arrow"
 	desc = "A sumple arrow slathered in a paste that burns skin on contact."
-	damage = 35
+	damage = 10 //gotta balance it!
 	armour_penetration = 5
-	damage_type = BURN
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/burning
+
+/obj/item/projectile/bullet/reusable/arrow/burning/on_hit(atom/target, blocked)
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/targetHuman = target
+		targetHuman.adjust_fire_stacks(5)
+		targetHuman.IgniteMob() //you just got burned!
