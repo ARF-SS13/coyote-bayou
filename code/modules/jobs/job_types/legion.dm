@@ -138,8 +138,8 @@ Centurion
 		/obj/item/key/scollar=1,
 		/obj/item/key/bcollar=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
-		/obj/item/assembly/signaler/electropack/shockcollar=1,
-		/obj/item/assembly/signaler/electropack/boomcollar=2,
+		/obj/item/electropack/shockcollar=1,
+		/obj/item/electropack/shockcollar/explosive=2,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
 /datum/outfit/loadout/centheavy
@@ -290,7 +290,7 @@ Priestess of Mars
 		/obj/item/storage/box/handcuffs=1, \
 		/obj/item/flashlight/lantern=1, \
 		/obj/item/key/scollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
+		/obj/item/electropack/shockcollar=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
 /datum/outfit/loadout/decancharger
@@ -369,7 +369,7 @@ Decanii
 		/obj/item/binoculars=1,
 		/obj/item/claymore/machete/gladius=1,
 		/obj/item/key/scollar=1,
-		/obj/item/assembly/signaler/electropack/shockcollar=1,
+		/obj/item/electropack/shockcollar=1,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
 
@@ -414,7 +414,7 @@ Decanii
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/key/scollar=1,
-		/obj/item/assembly/signaler/electropack/shockcollar=1,
+		/obj/item/electropack/shockcollar=1,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
 
@@ -458,7 +458,7 @@ Decanii
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/key/scollar=1,
-		/obj/item/assembly/signaler/electropack/shockcollar=1,
+		/obj/item/electropack/shockcollar=1,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
 
@@ -1058,7 +1058,7 @@ Slave
 	jobtype		= /datum/job/CaesarsLegion/slave
 	id			= /obj/item/card/id/legionbrand
 	uniform		= /obj/item/clothing/under/f13/rag
-	neck		= /obj/item/assembly/signaler/electropack/shockcollar
+	neck		= /obj/item/electropack/shockcollar
 	shoes		= /obj/item/clothing/shoes/f13/rag
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack = /obj/item/storage/backpack/satchel/explorer
