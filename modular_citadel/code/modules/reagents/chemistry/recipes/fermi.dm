@@ -104,7 +104,7 @@
 	name = "Eigenstasium"
 	id = /datum/reagent/fermi/eigenstate
 	results = list(/datum/reagent/fermi/eigenstate = 1)
-	required_reagents = list(/datum/reagent/bluespace = 1, /datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1)
+	//required_reagents = list(/datum/reagent/bluespace = 1, /datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1)
 	mix_message = "the reaction zaps suddenly!"
 	//FermiChem vars:
 	OptimalTempMin 		= 350 // Lower area of bell curve for determining heat based rate reactions
@@ -138,7 +138,7 @@
 	name = "Synthetic-derived growth factor"
 	id = /datum/reagent/fermi/SDGF
 	results = list(/datum/reagent/fermi/SDGF = 3)
-	required_reagents = list(/datum/reagent/stable_plasma = 1.5, /datum/reagent/medicine/clonexadone = 1.5, /datum/reagent/uranium = 1.5, /datum/reagent/medicine/synthflesh = 1.5)
+	//required_reagents = list(/datum/reagent/stable_plasma = 1.5, /datum/reagent/medicine/clonexadone = 1.5, /datum/reagent/uranium = 1.5, /datum/reagent/medicine/synthflesh = 1.5)
 	mix_message = "the reaction gives off a blorble!"
 	required_temp = 1
 	//FermiChem vars:
@@ -177,7 +177,7 @@
 	name = "Sucubus milk"
 	id = /datum/reagent/fermi/breast_enlarger
 	results = list(/datum/reagent/fermi/breast_enlarger = 8)
-	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 5)
+	//required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 5)
 	mix_message = "the reaction gives off a mist of milk."
 	//FermiChem vars:
 	OptimalTempMin 			= 200
@@ -217,7 +217,7 @@
 	name = "Incubus draft"
 	id = /datum/reagent/fermi/penis_enlarger
 	results = list(/datum/reagent/fermi/penis_enlarger = 8)
-	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 5, /datum/reagent/medicine/salglu_solution = 2)
+	//required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 5, /datum/reagent/medicine/salglu_solution = 2)
 	mix_message = "the reaction gives off a spicy mist."
 	//FermiChem vars:
 	OptimalTempMin 			= 200
@@ -351,7 +351,7 @@
 	name = "Hat growth serum"
 	id = /datum/reagent/fermi/hatmium
 	results = list(/datum/reagent/fermi/hatmium = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/cooking_oil = 2, /datum/reagent/iron = 1, /datum/reagent/gold = 3)
+	//required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/cooking_oil = 2, /datum/reagent/iron = 1, /datum/reagent/gold = 3)
 	//mix_message = ""
 	//FermiChem vars:
 	OptimalTempMin 	= 500
@@ -384,7 +384,7 @@
 	name = "Furranium"
 	id = /datum/reagent/fermi/furranium
 	results = list(/datum/reagent/fermi/furranium = 5)
-	required_reagents = list(/datum/reagent/pax/catnip = 1, /datum/reagent/silver = 2, /datum/reagent/medicine/salglu_solution = 2)
+	//required_reagents = list(/datum/reagent/pax/catnip = 1, /datum/reagent/silver = 2, /datum/reagent/medicine/salglu_solution = 2)
 	mix_message = "You think you can hear a howl come from the beaker."
 	//FermiChem vars:
 	OptimalTempMin 	= 350
@@ -410,7 +410,7 @@
 	name = "Naninte bain"
 	id = /datum/reagent/fermi/nanite_b_gone
 	results = list(/datum/reagent/fermi/nanite_b_gone = 4)
-	required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/uranium = 1, /datum/reagent/iron = 1, /datum/reagent/medicine/salglu_solution = 1)
+	//required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/uranium = 1, /datum/reagent/iron = 1, /datum/reagent/medicine/salglu_solution = 1)
 	mix_message = "the reaction gurgles, encapsulating the reagents in flesh before the emp can be set off."
 	required_temp = 450//To force fermireactions before EMP.
 	//FermiChem vars:
@@ -521,7 +521,7 @@
 	name = "secretcatchem"
 	id = /datum/reagent/fermi/secretcatchem
 	results = list(/datum/reagent/fermi/secretcatchem = 5)
-	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/medicine/clonexadone = 1)//Yes this will make a kitty if you don't lucky guess. It'll eat all your reagents too.
+	//required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/medicine/clonexadone = 1)//Yes this will make a kitty if you don't lucky guess. It'll eat all your reagents too.
 	required_catalysts = list(/datum/reagent/fermi/SDGF = 1)
 	required_temp = 500
 	mix_message = "the reaction gives off a meow!"
@@ -553,8 +553,8 @@
 	HIonRelease 		+= (rand(-25, 25)/100)
 	RateUpLim 			+= (rand(1, 1000)/100)
 	PurityMin 			+= (rand(-1, 1)/10)
-	var/picked = pick(/datum/reagent/aluminium, /datum/reagent/silver, /datum/reagent/gold, /datum/reagent/toxin/plasma, /datum/reagent/silicon, /datum/reagent/uranium, /datum/reagent/consumable/milk)
-	required_reagents[picked] = rand(1, 5)//weird
+	//var/picked = pick(/datum/reagent/aluminium, /datum/reagent/silver, /datum/reagent/gold, /datum/reagent/toxin/plasma, /datum/reagent/silicon, /datum/reagent/uranium, /datum/reagent/consumable/milk)
+	//required_reagents[picked] = rand(1, 5)//weird
 
 /datum/chemical_reaction/fermi/secretcatchem/FermiFinish(datum/reagents/holder, var/atom/my_atom)
 	SSblackbox.record_feedback("tally", "catgirlium")//log
@@ -572,7 +572,7 @@
 	name = "Yamerol"
 	id = /datum/reagent/fermi/yamerol
 	results = list(/datum/reagent/fermi/yamerol = 3)
-	required_reagents = list(/datum/reagent/medicine/perfluorodecalin = 1, /datum/reagent/medicine/salbutamol = 1, /datum/reagent/water = 1)
+	//required_reagents = list(/datum/reagent/medicine/perfluorodecalin = 1, /datum/reagent/medicine/salbutamol = 1, /datum/reagent/water = 1)
 	//FermiChem vars:
 	OptimalTempMin 	= 300
 	OptimalTempMax 	= 500
@@ -592,7 +592,7 @@
 	name = "Zeolites"
 	id = /datum/reagent/fermi/zeolites
 	results = list(/datum/reagent/fermi/zeolites = 5) //We make a lot!
-	required_reagents = list(/datum/reagent/medicine/potass_iodide = 1, /datum/reagent/aluminium = 1, /datum/reagent/silicon = 1, /datum/reagent/oxygen = 1)
+	//required_reagents = list(/datum/reagent/medicine/potass_iodide = 1, /datum/reagent/aluminium = 1, /datum/reagent/silicon = 1, /datum/reagent/oxygen = 1)
 	//FermiChem vars:
 	OptimalTempMin 	= 300
 	OptimalTempMax 	= 900
