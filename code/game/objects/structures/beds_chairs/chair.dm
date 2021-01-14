@@ -260,6 +260,7 @@
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
+	drag_delay = 0.05 SECONDS //Pulling something on wheels is easy
 
 /obj/structure/chair/f13foldupchair
 	icon_state = "f13foldupchair"

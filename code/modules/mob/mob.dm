@@ -1064,3 +1064,12 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
   */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
+
+//Movement slowdown
+/mob/Move_Pulled(atom/A)
+	var/pulling_delay = pulling.drag_delay
+	. = ..()
+	if(!.)
+		return
+	if(client && pulling_delay)
+		client.move_delay += pulling_delay

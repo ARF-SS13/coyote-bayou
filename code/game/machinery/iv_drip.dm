@@ -8,6 +8,7 @@
 	icon_state = "iv_drip"
 	anchored = FALSE
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
+	drag_delay = 0.05 SECONDS
 	var/mob/living/carbon/attached
 	var/mode = IV_INJECTING
 	var/dripfeed = FALSE

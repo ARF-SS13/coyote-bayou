@@ -96,6 +96,7 @@ Class Procs:
 	flags_ricochet = RICOCHET_HARD
 	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 	ricochet_chance_mod = 0.3
+	drag_delay = 0.15 SECONDS
 
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
