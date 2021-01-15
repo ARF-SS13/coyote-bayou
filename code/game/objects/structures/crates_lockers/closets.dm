@@ -40,6 +40,7 @@
 	var/should_populate_contents = TRUE
 	barricade = TRUE
 	proj_pass_rate = 65
+	drag_delay = 0.2 SECONDS
 
 /obj/structure/closet/Initialize(mapload)
 	. = ..()

@@ -182,6 +182,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			var/datum/skill/S = GLOB.skill_datums[path]
 			LAZYADD(used_skills[path], S.skill_traits)
 
+	if(w_class <= WEIGHT_CLASS_NORMAL) //pulling small items doesn't slow you down much
+		drag_delay = 0.05 SECONDS
+
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
 	if(ismob(loc))

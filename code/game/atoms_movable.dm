@@ -47,6 +47,8 @@
 	///Internal holder for emissive blocker object, do not use directly use blocks_emissive
 	var/atom/movable/emissive_blocker/em_block
 
+	var/drag_delay = 0.15 SECONDS
+
 
 /atom/movable/Initialize(mapload)
 	. = ..()
@@ -193,19 +195,19 @@
 
 /atom/movable/proc/Move_Pulled(atom/A)
 	if(!pulling)
-		return
+		return FALSE
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
-		return
+		return FALSE
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
 			stop_pulling()
-			return
+			return FALSE
 	if(A == loc && pulling.density)
-		return
+		return FALSE
 	if(!Process_Spacemove(get_dir(pulling.loc, A)))
-		return
+		return FALSE
 	step(pulling, get_dir(pulling.loc, A))
 	return TRUE
 
