@@ -246,8 +246,8 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/supafly
 	head = /obj/item/clothing/head/helmet/f13/raider
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/autopipe=1,
-		/obj/item/ammo_box/magazine/autopipe=2,
+		/obj/item/gun/ballistic/automatic/mini_uzi=1,
+		/obj/item/ammo_box/magazine/uzim9mm=3,
 		/obj/item/kitchen/knife/combat=1,
 		/obj/item/storage/box/dice=1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1)
@@ -278,12 +278,11 @@ Raider
 	suit = /obj/item/clothing/suit/armor/f13/raider/sadist
 	head = /obj/item/clothing/head/helmet/f13/raider/arclight
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/colt357=1,
-		/obj/item/ammo_box/a357=2,
+		/obj/item/gun/ballistic/revolver/m29 = 1,
+		/obj/item/ammo_box/m44 = 2,
 		/obj/item/clothing/mask/gas/explorer/folded=1,
-		/obj/item/throwing_star/spear=1,
-		/obj/item/grenade/chem_grenade/teargas=1,
-		/obj/item/dildo=1)
+		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/twohanded/spear = 1)
 
 /datum/outfit/loadout/raider_badlands
 	name = "Badlands"
@@ -291,8 +290,8 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1,
-		/obj/item/gun/ballistic/revolver/police=1,
-		/obj/item/ammo_box/a357=1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
+		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/reagent_containers/hypospray/medipen/psycho=1,
 		/obj/item/reagent_containers/pill/patch/turbo=1)
 
@@ -323,7 +322,7 @@ Raider
 	id = /obj/item/card/id/rusted
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/service=1,
-		/obj/item/ammo_box/magazine/m556/rifle=2)
+		/obj/item/ammo_box/magazine/m556/rifle=3)
 
 /datum/outfit/loadout/raider_legion
 	name = "Punished Legionnaire"
@@ -384,7 +383,7 @@ Raider
 	loadout_options = list(
 	/datum/outfit/loadout/vault_refugee,
 	/datum/outfit/loadout/petro,
-	/datum/outfit/loadout/follower,
+	//datum/outfit/loadout/follower,
 	/datum/outfit/loadout/merchant,
 	/datum/outfit/loadout/gambler,
 	/datum/outfit/loadout/citizen,
