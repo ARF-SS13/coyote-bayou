@@ -352,7 +352,7 @@
 	req_one_access_txt = "124"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = followershutters;
+	id = "followershutters";
 	name = "followers shutters"
 	},
 /turf/open/floor/f13{
@@ -8934,7 +8934,7 @@
 /area/f13/ncr)
 "gzx" = (
 /obj/structure/window/fulltile/wood{
-	color = #fc0303
+	color = "#fc0303"
 	},
 /obj/structure/curtain{
 	color = "#c40e0e"
@@ -10999,7 +10999,7 @@
 "hPL" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = followersdeskshutters;
+	id = "followersdeskshutters";
 	name = "followers shutters"
 	},
 /turf/open/floor/f13{
@@ -14283,7 +14283,7 @@
 /area/f13/building)
 "kfh" = (
 /obj/machinery/door/poddoor/shutters{
-	id = followershutters;
+	id = "followershutters";
 	name = "followers shutters"
 	},
 /turf/open/floor/f13{
@@ -15211,7 +15211,7 @@
 /area/f13/wasteland)
 "kOJ" = (
 /obj/machinery/door/poddoor/gate/preopen{
-	id = ncr_gate
+	id = "ncr_gate"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2top";
@@ -25935,7 +25935,7 @@
 	termtag = "Secret"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = followersdeskshutters;
+	id = "followersdeskshutters";
 	name = "followers shutters"
 	},
 /turf/open/floor/f13{
@@ -25944,7 +25944,7 @@
 /area/f13/followers)
 "sGq" = (
 /obj/machinery/door/poddoor/shutters{
-	id = followershutters;
+	id = "followershutters";
 	name = "followers shutters"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30675,7 +30675,7 @@
 "vUA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = ncr_gate;
+	id = "ncr_gate";
 	name = "gate button";
 	pixel_x = 25
 	},
