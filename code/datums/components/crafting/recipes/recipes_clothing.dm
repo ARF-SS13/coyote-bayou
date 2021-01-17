@@ -17,6 +17,7 @@
 	time = 10
 	reqs = list(/obj/item/organ/tail/lizard = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/lizardhat_alternate
 	name = "Lizard Cloche Hat"
@@ -24,6 +25,7 @@
 	time = 10
 	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/kittyears
 	name = "Kitty Ears"
@@ -32,6 +34,7 @@
 	reqs = list(/obj/item/organ/tail/cat = 1,
 				/obj/item/organ/ears/cat = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/papermask
 	name = "Paper Mask"
@@ -73,6 +76,7 @@
 				/obj/item/stack/sheet/sinew = 1,
 				/obj/item/stack/sheet/mineral/gold = 50)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 ////////
 //Huds//
@@ -89,6 +93,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunsecremoval
 	name = "Security HUD removal"
@@ -97,6 +102,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunmed
 	name = "Medical HUDsunglasses"
@@ -109,6 +115,7 @@
 				/obj/item/clothing/glasses/sunglasses = 1,
 				/obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunmedremoval
 	name = "Medical HUD removal"
@@ -117,6 +124,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/health/sunglasses = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/beergoggles
 	name = "Beer Goggles"
@@ -127,6 +135,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/beergogglesremoval
 	name = "Beer Goggles removal"
@@ -135,6 +144,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/diagnostic_sunglasses
 	name = "Diagnostic HUDsunglasses"
@@ -147,6 +157,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/diagnostic_sunglasses_removal
 	name = "Diagnostic HUDsunglasses removal"
@@ -155,6 +166,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/sunglasses = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /* //Kevinz doesn't want it as a recipe for now, leaving it in if anything ever changes to let it in
 /datum/crafting_recipe/stunglasses
@@ -180,6 +192,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/secpatch_removal
 	name = "Security HUDpatch Removal"
@@ -188,6 +201,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/medpatch
 	name = "Medical Eyepatch HUD"
@@ -199,6 +213,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/health = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/medpatch_removal
 	name = "Medical HUDpatch Removal"
@@ -207,6 +222,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/health/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/diagpatch
 	name = "Diagnostic Eyepatch HUD"
@@ -218,6 +234,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/diagpatch_removal
 	name = "Diagnostic HUDpatch Removal"
@@ -226,6 +243,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/mesonpatch
 	name = "Meson Scanner Eyepatch"
@@ -237,6 +255,7 @@
 	reqs = list(/obj/item/clothing/glasses/meson = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/mesonpatch_removal
 	name = "Meson Scanner patch Removal"
@@ -245,6 +264,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/meson/eyepatch = 1)
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/ghostsheet
 	name = "Ghost Sheet"
@@ -298,6 +318,7 @@
 				/obj/item/stack/sheet/leather = 3)
 	time = 70
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_toolbelt
 	name = "Durathread Toolbelt"
@@ -306,6 +327,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 30
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_bandolier
 	name = "Durathread Bandolier"
@@ -314,6 +336,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 50
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_helmet
 	name = "Makeshift Durathread Helmet"
@@ -322,6 +345,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 30
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Durathread Armour"
@@ -330,6 +354,7 @@
 				/obj/item/stack/sheet/leather = 3)
 	time = 50
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_wintercoat
 	name = "Durathread Winter Coat"
@@ -338,6 +363,7 @@
 				/obj/item/stack/sheet/leather = 10)
 	time = 70
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 /datum/crafting_recipe/wintercoat_cosmic
 	name = "Cosmic Winter Coat"
@@ -346,6 +372,7 @@
 				/obj/item/bedsheet/cosmos = 1)
 	time = 60
 	category = CAT_CLOTHING
+	always_availible = FALSE
 
 
 /datum/crafting_recipe/garlic_necklace
@@ -368,3 +395,4 @@
 	category = CAT_CLOTHING
 	tools = list(TOOL_WIRECUTTER)
 	time = 20
+	always_availible = FALSE
