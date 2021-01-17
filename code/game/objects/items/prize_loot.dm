@@ -30,7 +30,7 @@
 	name = "locked box"
 	desc = "An object that contains objects that may be useful."
 	icon = 'icons/obj/fallout/lockbox.dmi'
-	icon_state = "lockbox"
+	icon_state = "locked_safe"
 
 	//the lists the locked crate will combine
 	//this uses pick, not pickweight, so no weighted lists please
@@ -93,7 +93,7 @@
 		for(var/ii in i)
 			potential_prizes += ii
 	for(var/iii in 1 to prize_amount) //go back up to understand why we populate prizes
-		prizes += pick(potential_prizes) 
+		prizes += pick(potential_prizes)
 
 /obj/item/locked_box/proc/spawn_prizes()
 	if(trapped) //gnarly
