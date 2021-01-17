@@ -1,51 +1,51 @@
 /obj/item/stack/crafting
-	 "crafting part"
-	 'icons/fallout/objects/items.dmi'
-	 = 1
-	ount = 50
-	speed = 3
-	range = 7
-	s = WEIGHT_CLASS_TINY
-	ants = TRUE
+    name = "crafting part"
+    icon = 'icons/fallout/objects/items.dmi'
+    amount = 1
+    max_amount = 50
+    throw_speed = 3
+    throw_range = 7
+    w_class = WEIGHT_CLASS_TINY
+    novariants = TRUE
 
 /obj/item/stack/crafting/metalparts
-	 "metal parts"
-	tate = "sheet-metalparts"
-	ar_name = "metal part"
-	_materials = list(/datum/material/iron = 20000)
-	1 = CONDUCT_1
+    name = "metal parts"
+    icon_state = "sheet-metalparts"
+    singular_name = "metal part"
+    custom_materials = list(/datum/material/iron = 20000)
+    flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/metalparts/three
-	 = 3
+    amount = 3
 
 /obj/item/stack/crafting/metalparts/five
-	 = 5
+    amount = 5
 
 /obj/item/stack/crafting/goodparts
-	 "high quality metal parts"
-	tate = "sheet-goodparts"
-	ar_name = "high quality metal part"
-	_materials = list(/datum/material/iron = 20000)
-	1 = CONDUCT_1
+    name = "high quality metal parts"
+    icon_state = "sheet-goodparts"
+    singular_name = "high quality metal part"
+    custom_materials = list(/datum/material/iron = 20000)
+    flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/goodparts/three
-	 = 3
+    amount = 3
 
 /obj/item/stack/crafting/goodparts/five
-	 = 5
+    amount = 5
 
 /obj/item/stack/crafting/electronicparts
-	 "electronic parts"
-	tate = "sheet-electronicparts"
-	ar_name = "electronic part"
-	_materials = list(/datum/material/glass = 20000)
-	1 = CONDUCT_1
+    name = "electronic parts"
+    icon_state = "sheet-electronicparts"
+    singular_name = "electronic part"
+    custom_materials = list(/datum/material/glass = 20000)
+    flags_1 = CONDUCT_1
 
 /obj/item/stack/crafting/electronicparts/three
-	 = 3
+    amount = 3
 
 /obj/item/stack/crafting/electronicparts/five
-	 = 5
+    amount = 5
 
 /obj/item/stack/crafting/powder
 	name = "bullet remnants"

@@ -13198,9 +13198,7 @@
 /area/f13/ncr)
 "aQx" = (
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQy" = (
 /obj/structure/fence{
 	dir = 8;
@@ -13212,9 +13210,7 @@
 /area/f13/wasteland)
 "aQz" = (
 /turf/open/floor/plating/ice,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQA" = (
 /turf/open/indestructible/ground/outside/road,
 /area/f13/casino)
@@ -13286,9 +13282,7 @@
 /area/f13/ncr)
 "aQJ" = (
 /turf/open/indestructible/ground/outside/road,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQK" = (
 /obj/structure/table/reinforced/brass,
 /turf/open/floor/carpet/black,
@@ -13307,9 +13301,7 @@
 /area/f13/casino)
 "aQN" = (
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQO" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/paper_bin,
@@ -13323,41 +13315,29 @@
 "aQQ" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQR" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQS" = (
 /obj/structure/bookcase,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQT" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQU" = (
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQV" = (
 /obj/structure/chair/wood/fancy,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQW" = (
 /obj/structure/fluff/drake_statue{
 	dir = 1
@@ -13369,35 +13349,25 @@
 	dir = 1;
 	icon_state = "outerturn"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQZ" = (
 /turf/open/floor/plating/ice/smooth,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRa" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRb" = (
 /obj/structure/chair/wood/fancy,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRc" = (
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -13406,108 +13376,78 @@
 /obj/item/pen,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRd" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRe" = (
 /obj/item/lighter,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/structure/table/wood,
 /obj/item/stack/f13Cash/random/bottle_cap/med,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRf" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRg" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRh" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRi" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2left"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRj" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRk" = (
 /obj/structure/chair/wood/fancy{
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRl" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRm" = (
 /obj/structure/chair/wood/fancy{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRn" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRo" = (
 /obj/structure/chair/wood/worn{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRp" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRq" = (
 /obj/structure/safe,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRr" = (
 /obj/structure/table,
 /obj/item/defibrillator,
@@ -13636,15 +13576,11 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRN" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRP" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
@@ -13656,9 +13592,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRR" = (
 /obj/structure/showcase/cyborg/old,
 /obj/machinery/light{
@@ -13668,33 +13602,25 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRS" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRT" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRU" = (
 /obj/structure/bookcase/random/nonfiction,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRV" = (
 /obj/structure/flora/wasteplant/wild_xander,
 /turf/open/indestructible/ground/outside/dirt{
@@ -13709,17 +13635,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRX" = (
 /obj/item/holosign_creator/engineering,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 7;
@@ -13747,38 +13669,28 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSd" = (
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSe" = (
 /obj/structure/simple_door/blast,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSf" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSg" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSh" = (
 /obj/item/folder/yellow,
 /obj/item/folder/yellow,
@@ -13787,72 +13699,52 @@
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSi" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSj" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSk" = (
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSm" = (
 /obj/structure/sign/poster/official/random,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSn" = (
 /obj/structure/chair/wood/fancy{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSo" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSp" = (
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSq" = (
 /obj/structure/simple_door/metal,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSr" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSs" = (
 /obj/machinery/light{
 	dir = 8;
@@ -13861,17 +13753,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSt" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSv" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 6;
@@ -13902,15 +13790,11 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSA" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSB" = (
 /obj/structure/mirror{
 	pixel_y = 32
@@ -13922,9 +13806,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSC" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -13932,9 +13814,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSD" = (
 /obj/structure/tires/half,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -13967,25 +13847,19 @@
 "aSI" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSJ" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSK" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSL" = (
 /obj/machinery/light{
 	dir = 4
@@ -13993,29 +13867,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSM" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSN" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSO" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSP" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -14024,9 +13890,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSR" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/indestructible/ground/outside/dirt,
@@ -14037,9 +13901,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aST" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/lattice/catwalk,
@@ -14047,29 +13909,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSU" = (
 /obj/structure/sign/poster/prewar/protectron,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSV" = (
 /obj/structure/sign/poster/prewar/corporate_espionage,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSW" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSX" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	desc = "An advanced propulsion engine from before the war."
@@ -14079,9 +13933,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSY" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	desc = "An advanced propulsion engine from before the war."
@@ -14090,28 +13942,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSZ" = (
 /obj/structure/chair/wood/worn,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTa" = (
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTb" = (
 /obj/structure/fluff/paper/stack{
 	desc = "A stack of various papers, all saying you really shouldnt see this. The name Dr. Possum is signed at the bottom."
 	},
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTc" = (
 /obj/structure/chair/wood/worn{
 	dir = 4
@@ -14120,16 +13964,12 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTd" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTe" = (
 /obj/structure/chair/wood/worn{
 	dir = 8
@@ -14138,59 +13978,43 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTf" = (
 /obj/structure/flora/stump,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTg" = (
 /obj/structure/chair/wood/worn{
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTh" = (
 /obj/structure/chair/wood/worn{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTi" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_3"
 	},
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTj" = (
 /obj/machinery/door/airlock/glass_large,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTk" = (
 /obj/structure/sign/warning/nosmoking/circle,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTl" = (
 /obj/structure/sign/map/left,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTm" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
@@ -14201,39 +14025,29 @@
 "aTn" = (
 /obj/structure/sign/map/right,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTo" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTp" = (
 /obj/structure/sign/warning/enginesafety,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTq" = (
 /obj/structure/beebox,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTr" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/beekeeper_suit,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTs" = (
 /obj/machinery/light{
 	dir = 1;
@@ -14242,25 +14056,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTt" = (
 /obj/structure/billboard/cola/pristine,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTu" = (
 /obj/item/fakeartefact,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTv" = (
 /obj/structure/beebox,
 /obj/machinery/light{
@@ -14269,26 +14077,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTw" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTx" = (
 /obj/structure/shuttle/engine/router,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTy" = (
 /obj/structure/shuttle/engine/router,
 /obj/structure/lattice/catwalk,
@@ -14296,76 +14098,58 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTz" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTA" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTB" = (
 /obj/structure/altar,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTC" = (
 /obj/item/banner/command/mundane,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTD" = (
 /obj/structure/showcase/perfect_employee,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTE" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTF" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/hooded/wintercoat/blue113,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTG" = (
 /obj/structure/table/wood,
 /obj/structure/showcase/machinery/tv,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTH" = (
 /obj/structure/shuttle/engine/large{
 	desc = "A very large bluespace engine made by Aerojet before the war."
@@ -14375,9 +14159,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTI" = (
 /obj/structure/shuttle/engine/large{
 	desc = "A very large bluespace engine made by Aerojet before the war."
@@ -14386,26 +14168,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTJ" = (
 /obj/structure/mecha_wreckage/odysseus,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTK" = (
 /obj/structure/fluff/arc,
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTL" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -14415,17 +14191,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTM" = (
 /obj/structure/displaycase/trophy,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTN" = (
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/f13/outside/desert,
@@ -14448,26 +14220,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTR" = (
 /obj/structure/showcase/machinery/cloning_pod,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTS" = (
 /obj/structure/showcase/machinery/oldpod,
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTT" = (
 /obj/machinery/vending/nukacolavendfull,
 /turf/open/floor/f13/wood{
@@ -14479,17 +14245,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTV" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTW" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
@@ -14543,132 +14305,100 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUe" = (
 /obj/structure/fluff/empty_terrarium,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUf" = (
 /obj/structure/fluff/empty_terrarium,
 /obj/machinery/light/fo13colored/Pink,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUg" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUh" = (
 /obj/structure/janitorialcart,
 /obj/item/caution,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUi" = (
 /obj/structure/showcase/machinery/microwave,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUj" = (
 /obj/item/dna_probe,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUk" = (
 /obj/item/beacon,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUl" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/structure/holosign/barrier,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUm" = (
 /obj/structure/holosign/barrier,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUn" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUo" = (
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUp" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/random/bottle_cap/med,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUq" = (
 /obj/structure/bookcase/random/reference,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUr" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUs" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUt" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -14681,9 +14411,7 @@
 "aUu" = (
 /obj/structure/sign/plaques/thunderdome,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUv" = (
 /obj/effect/landmark/start/f13/preacher,
 /turf/open/floor/wood/f13/old,
@@ -14693,35 +14421,27 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUy" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/magboots,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUz" = (
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUA" = (
 /obj/machinery/light{
 	dir = 1
@@ -14729,25 +14449,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUB" = (
 /obj/structure/mecha_wreckage/ripley/firefighter,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUC" = (
 /obj/structure/showcase/mecha/marauder,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUD" = (
 /obj/structure/table/wood,
 /obj/item/clothing/shoes/magboots,
@@ -14757,33 +14471,25 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUE" = (
 /obj/structure/guillotine,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUF" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUG" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUH" = (
 /obj/structure/flora/wasteplant/wild_broc,
 /turf/open/indestructible/ground/outside/dirt{
@@ -14800,18 +14506,14 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/fluff/broken_flooring,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUK" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUL" = (
 /obj/structure/rack,
 /obj/machinery/light{
@@ -14821,38 +14523,28 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUN" = (
 /obj/machinery/door/poddoor/shutters{
 	id = 99;
 	name = "Vault 223 armory shutters"
 	},
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUO" = (
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUP" = (
 /mob/living/simple_animal/hostile/hivebot/range,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUQ" = (
 /obj/machinery/light{
 	dir = 8
@@ -14860,44 +14552,32 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUR" = (
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUU" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUV" = (
 /mob/living/simple_animal/hostile/bear/wasteland,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUW" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/ladder/unbreakable{
@@ -14910,9 +14590,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUY" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -14976,9 +14654,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVj" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/den)
@@ -15009,9 +14685,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVp" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/inside/subway,
@@ -15023,24 +14697,18 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2bottom"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVs" = (
 /obj/machinery/light/fo13colored/Pink,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVu" = (
 /turf/open/floor/grass/snow,
 /area/f13/den)
@@ -16760,9 +16428,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbd" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -16836,9 +16502,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbp" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -16877,72 +16541,56 @@
 /area/f13/city)
 "bbu" = (
 /turf/closed/indestructible/ncrwall,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbv" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/engineering,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbw" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/bowler_or_that,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bby" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbz" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/aimodule_neutral,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbA" = (
 /obj/item/paicard,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbB" = (
 /obj/item/nuke_core_container,
 /obj/effect/spawner/structure/window/hollow/plasma/reinforced/end,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbC" = (
 /obj/machinery/light{
 	dir = 4;
@@ -16951,52 +16599,40 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbD" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/twentyfive_percent_cyborg_mask,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbE" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbF" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbG" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbI" = (
 /turf/closed/indestructible/ncrwall,
 /area/shuttle/bunker_elevator)
@@ -17009,18 +16645,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbK" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbL" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/shuttle/bunker_elevator)
@@ -17054,25 +16686,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbQ" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbR" = (
 /obj/effect/turf_decal/caution/red,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbS" = (
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
@@ -17080,9 +16706,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbT" = (
 /obj/machinery/light{
 	dir = 8;
@@ -17119,9 +16743,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbY" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17132,9 +16754,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbZ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -17142,9 +16762,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bca" = (
 /obj/item/restraints/legcuffs/beartrap/energy,
 /obj/item/restraints/legcuffs/beartrap/energy,
@@ -17153,18 +16771,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcb" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcc" = (
 /obj/item/inducer/sci,
 /obj/structure/rack,
@@ -17176,9 +16790,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcd" = (
 /obj/item/janiupgrade,
 /obj/structure/rack,
@@ -17186,9 +16798,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bce" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/ammo,
@@ -17196,18 +16806,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcf" = (
 /obj/item/mecha_parts/chassis/gygax,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcg" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
@@ -17215,9 +16821,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bch" = (
 /obj/structure/rack,
 /obj/item/paicard,
@@ -17225,9 +16829,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bci" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/engineering,
@@ -17235,9 +16837,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcj" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/aimodule_neutral,
@@ -17245,9 +16845,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bck" = (
 /obj/item/laser_pointer/green,
 /obj/item/laser_pointer/green,
@@ -17256,32 +16854,24 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcl" = (
 /obj/machinery/ntnet_relay,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcm" = (
 /obj/item/inducer,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcn" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bco" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/twentyfive_percent_cyborg_mask,
@@ -17289,9 +16879,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcp" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17299,18 +16887,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcq" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/bomb_suit/security,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcr" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -17318,9 +16902,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcs" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
@@ -17328,9 +16910,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bct" = (
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
 /obj/structure/rack,
@@ -17341,26 +16921,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcu" = (
 /obj/item/lighter/slime,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcv" = (
 /obj/machinery/gibber,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcw" = (
 /obj/item/laser_pointer/blue,
 /obj/item/laser_pointer/blue,
@@ -17369,18 +16943,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcx" = (
 /obj/item/megaphone/command,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcy" = (
 /turf/closed/wall/f13/store,
 /area/shuttle/bunker_elevator)
@@ -17398,9 +16968,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcB" = (
 /obj/item/modular_computer/laptop/buildable,
 /obj/structure/rack,
@@ -17411,26 +16979,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcC" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/kindleKicks,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcD" = (
 /mob/living/simple_animal/hostile/hivebot,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcE" = (
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/plasteel/barber{
@@ -17459,18 +17021,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcH" = (
 /obj/structure/closet/cardboard/metal,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17478,34 +17036,26 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcJ" = (
 /obj/item/mecha_parts/part/gygax_armor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcK" = (
 /obj/item/mecha_parts/part/phazon_armor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcL" = (
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcM" = (
 /obj/structure/rack,
 /obj/machinery/light{
@@ -17515,18 +17065,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcN" = (
 /obj/item/modular_computer/laptop/buildable,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcO" = (
 /obj/effect/turf_decal/bot{
 	dir = 1
@@ -17534,27 +17080,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcP" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/cardboard/metal,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcQ" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcR" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/engineering,
@@ -17565,9 +17105,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcS" = (
 /obj/machinery/light{
 	dir = 4
@@ -17736,9 +17274,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bds" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/wood/f13/old,
@@ -17840,9 +17376,7 @@
 "bdJ" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bdK" = (
 /obj/machinery/light/lampost{
 	dir = 1;
@@ -18102,9 +17636,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /obj/item/clothing/under/rank/curator,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beE" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/city)
@@ -18125,27 +17657,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beJ" = (
 /obj/structure/table/wood,
 /obj/item/coin/uranium,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beK" = (
 /obj/structure/rack,
 /obj/item/clothing/under/rank/curator/treasure_hunter,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beL" = (
 /obj/structure/tires/five,
 /turf/open/floor/grass/snow,
@@ -18155,9 +17681,7 @@
 /obj/machinery/light/fo13colored/Pink,
 /obj/item/coin/twoheaded,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beN" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
@@ -20677,9 +20201,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bnh" = (
 /obj/structure/simple_door/wood,
 /obj/structure/fans/tiny/invisible,
@@ -20741,9 +20263,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bnp" = (
 /obj/effect/spawner/structure/window/ice,
 /obj/structure/curtain{

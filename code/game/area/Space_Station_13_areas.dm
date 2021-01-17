@@ -1760,6 +1760,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "caves"
 	outdoors = TRUE
 
+/area/f13/underground/cave/vault/fourfivefour
+	name = "Vault 454"
+	icon_state = "vaulttec"
+	outdoors = FALSE
+
 /area/f13/underground/cave
 	name = "Cave"
 	icon_state = "cave"
