@@ -757,11 +757,36 @@
 		user.client.change_view(zoom_out_amt)
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk)
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		user.visible_message("<span class='notice'>[user] looks down the scope of [src].</span>", "<span class='notice'>You look down the scope of [src].</span>")
 	else
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
+		user.visible_message("<span class='notice'>[user] looks up from the scope of [src].</span>", "<span class='notice'>You look up from the scope of [src].</span>")
 
+/obj/item/gun/proc/on_walk(mob/living/L)
+	zoom(L, FALSE)
+
+/obj/item/gun/proc/rotate(mob/living/user, old_dir, direction = FALSE)
+	var/_x = 0
+	var/_y = 0
+	switch(direction)
+		if(NORTH)
+			_y = zoom_amt
+		if(EAST)
+			_x = zoom_amt
+		if(SOUTH)
+			_y = -zoom_amt
+		if(WEST)
+			_x = -zoom_amt
+	user.client.change_view(zoom_out_amt)
+	user.client.pixel_x = world.icon_size*_x
+	user.client.pixel_y = world.icon_size*_y
+		
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/gun/proc/build_zooming()
 	if(azoom)
@@ -804,123 +829,3 @@
 	. = recoil
 	if(user && !user.has_gravity())
 		. = recoil*5
-
-/*Replacing with obj/item/binoculars
-/* TODO: Make a twohanded component to handle basic wield/unwield capability, idk */
-/obj/item/twohanded/binocs
-	name = "binoculars"
-	desc = "Lets you see trouble coming - or get into it - from a distance."
-	icon = 'icons/obj/clothing/glasses.dmi'
-	icon_state = "binocs"
-	item_state = "binocs"
-	slot_flags = ITEM_SLOT_BELT
-//	materials = list(MAT_METAL=400)
-	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("struck", "hit", "zoomed")
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 5
-	force = 5
-	var/wielded = FALSE // track wielded status on item
-
-	var/zoomable = TRUE //whether the binoc generates a Zoom action on creation - it would be pretty awful if it didn't
-	var/zoomed = FALSE //Zoom toggle
-	var/zoom_amt = 10 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
-	var/zoom_out_amt = 13
-	var/datum/action/toggle_binoc_zoom/azoom
-
-/obj/item/twohanded/binocs/proc/on_wield(mob/user)
-	wielded = TRUE
-	addZoom(user)
-
-
-/obj/item/twohanded/binocs/dropped(mob/user)
-	..()
-	removeZoom(user)
-
-/obj/item/twohanded/binocs/proc/on_unwield(mob/user, show_message)
-	wielded = FALSE
-	removeZoom(user)
-
-/obj/item/twohanded/binocs/proc/addZoom(mob/user)
-	if(azoom)
-		azoom.Grant(user)
-
-/obj/item/twohanded/binocs/proc/removeZoom(mob/user)
-	if(zoomed)
-		zoom(user,FALSE)
-	if(azoom)
-		azoom.Remove(user)
-
-/obj/item/twohanded/binocs/equipped(mob/living/user, slot)
-	. = ..()
-	if(user.get_active_held_item() != src)
-		removeZoom(user)
-
-/datum/action/toggle_binoc_zoom
-	name = "Use Binoculars"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "binoc_zoom"
-	var/obj/item/twohanded/binocs/B = null
-
-/datum/action/toggle_binoc_zoom/Trigger()
-	B.zoom(owner)
-
-/datum/action/toggle_binoc_zoom/IsAvailable()
-	. = ..()
-	if(!. && B)
-		B.zoom(owner, FALSE)
-
-/datum/action/toggle_binoc_zoom/Remove(mob/living/L)
-	B.zoom(L, FALSE)
-	..()
-
-/obj/item/twohanded/binocs/proc/zoom(mob/living/user, forced_zoom)
-	if(!user || !user.client)
-		return
-
-	switch(forced_zoom)
-		if(FALSE)
-			zoomed = FALSE
-		if(TRUE)
-			zoomed = TRUE
-		else
-			zoomed = !zoomed /* WHAT!??? */
-
-	if(zoomed)
-		var/_x = 0
-		var/_y = 0
-		switch(user.dir)
-			if(NORTH)
-				_y = zoom_amt
-			if(EAST)
-				_x = zoom_amt
-			if(SOUTH)
-				_y = -zoom_amt
-			if(WEST)
-				_x = -zoom_amt
-
-		user.client.change_view(zoom_out_amt)
-		user.client.pixel_x = world.icon_size*_x
-		user.client.pixel_y = world.icon_size*_y
-	else
-		user.client.change_view(CONFIG_GET(string/default_view))
-		user.client.pixel_x = 0
-		user.client.pixel_y = 0
-	return zoomed
-
-/obj/item/twohanded/binocs/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-	build_zooming()
-
-/obj/item/twohanded/binocs/proc/build_zooming()
-	if(azoom)
-		return
-
-	if(zoomable)
-		azoom = new()
-		azoom.B = src
-*/

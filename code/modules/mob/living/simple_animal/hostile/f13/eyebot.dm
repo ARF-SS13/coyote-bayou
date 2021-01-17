@@ -21,6 +21,7 @@
 	health = 70
 	healable = 0
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
+	blood_volume = 0
 
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 
@@ -109,6 +110,7 @@
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
+	blood_volume = 0
 
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200

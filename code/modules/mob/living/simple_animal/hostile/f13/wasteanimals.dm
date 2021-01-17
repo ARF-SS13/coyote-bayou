@@ -35,6 +35,7 @@
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/cazador/playable
 	emote_taunt_sound = null
@@ -139,7 +140,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
-
+	blood_volume = 0
 	emote_taunt = list("snips")
 	emote_taunt_sound = list('sound/f13npc/scorpion/taunt1.ogg', 'sound/f13npc/scorpion/taunt2.ogg', 'sound/f13npc/scorpion/taunt3.ogg')
 
@@ -282,6 +283,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	decompose = TRUE
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -323,6 +325,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = TRUE
 	a_intent = INTENT_HARM
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
 	. = ..()
@@ -507,6 +510,7 @@
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/bloatfly/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -583,6 +587,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 20
 	gold_core_spawnable = HOSTILE_SPAWN
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/fireant/Initialize()
 	. = ..()
