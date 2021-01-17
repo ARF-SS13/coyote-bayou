@@ -6000,10 +6000,6 @@
 	tag = "icon-dirt (WEST)"
 	},
 /area/f13/wasteland)
-"eyu" = (
-/obj/item/storage/box/drinkingglasses,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "eyv" = (
 /obj/item/candle/tribal_torch{
 	anchored = 1;
@@ -8498,10 +8494,6 @@
 "gjP" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/village)
-"gkb" = (
-/obj/machinery/microwave/stove,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "gke" = (
 /obj/structure/rack,
 /obj/item/twohanded/fireaxe/bmprsword,
@@ -10532,10 +10524,10 @@
 "hxX" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/random/bottle_cap/low,
-/obj/item/assembly/signaler/electropack/shockcollar,
-/obj/item/assembly/signaler/electropack/shockcollar,
-/obj/item/assembly/signaler/electropack/shockcollar,
-/obj/item/assembly/signaler/electropack/boomcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
 /obj/item/key/bcollar,
 /obj/item/key/collar,
 /obj/item/key/collar,
@@ -28814,10 +28806,6 @@
 	},
 /turf/open/floor/wood,
 /area/f13/village)
-"uBM" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "uCe" = (
 /obj/structure/table/wood,
 /obj/structure/table/wood,
@@ -46916,7 +46904,7 @@ tqS
 kBU
 gcK
 gcK
-bCx
+gcK
 gcK
 gcK
 gcK
@@ -85013,9 +85001,9 @@ gcK
 gcK
 gcK
 gcK
-eyu
 gcK
-eyu
+gcK
+gcK
 gcK
 gcK
 gcK
@@ -87864,7 +87852,7 @@ gcK
 gcK
 gcK
 gcK
-gkb
+gcK
 gcK
 gcK
 gcK
@@ -93261,7 +93249,7 @@ gcK
 gcK
 gcK
 gcK
-uBM
+gcK
 gcK
 gcK
 gcK
