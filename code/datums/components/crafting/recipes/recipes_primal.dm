@@ -30,6 +30,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
 	category = CAT_PRIMAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/drakecloak
 	name = "Ash Drake Armour"
@@ -39,6 +40,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/ashdrake = 5)
 	category = CAT_PRIMAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/bonebag
 	name = "Bone Satchel"

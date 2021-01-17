@@ -179,33 +179,6 @@
 //Tools & Storage//
 ///////////////////
 
-/datum/crafting_recipe/upgraded_gauze
-	name = "Improved Gauze"
-	result = /obj/item/stack/medical/gauze/adv/one
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/space_cleaner/sterilizine = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/brute_pack
-	name = "Suture Pack"
-	result = /obj/item/stack/medical/suture/five
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/medicine/styptic_powder = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/burn_pack
-	name = "Regenerative Mesh"
-	result = /obj/item/stack/medical/mesh/five
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/medicine/silver_sulfadiazine = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
 /datum/crafting_recipe/ghettojetpack
 	name = "Improvised Jetpack"
 	result = /obj/item/tank/jetpack/improvised
@@ -217,6 +190,7 @@
 	category = CAT_MISC
 	subcategory = CAT_TOOL
 	tools = list(TOOL_WRENCH, TOOL_WELDER, TOOL_WIRECUTTER)
+	always_availible = FALSE
 
 /datum/crafting_recipe/goldenbox
 	name = "Gold Plated Toolbox"
@@ -268,6 +242,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_welder
 	name = "Bronze Plated Welding Tool"
@@ -280,6 +255,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_wirecutters
 	name = "Bronze Plated Wirecutters"
@@ -292,6 +268,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_crowbar
 	name = "Bronze Plated Crowbar"
@@ -304,6 +281,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_wrench
 	name = "Bronze Plated Wrench"
@@ -316,6 +294,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/rcl
 	name = "Makeshift Rapid Cable Layer"
@@ -343,6 +322,7 @@
 	time = 5
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/heretic/codex
 	name = "Codex Cicatrix"
@@ -355,6 +335,7 @@
 	time = 150
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	always_availible = FALSE
 	always_availible = FALSE
 
 ////////////
