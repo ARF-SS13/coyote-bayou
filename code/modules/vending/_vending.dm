@@ -163,7 +163,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/light_mask
 
 /obj/item/circuitboard
-    ///determines if the circuit board originated from a vendor off station or not.
+	///determines if the circuit board originated from a vendor off station or not.
 	var/onstation = FALSE
 
 /**

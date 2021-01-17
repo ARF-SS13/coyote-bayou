@@ -51,7 +51,7 @@
 			if (LAZYLEN(buckled_mobs))
 				if (user.a_intent == INTENT_HARM)
 					user.visible_message("<span class='warning'>[user] begins to pull the lever!</span>",
-						                 "<span class='warning'>You begin to the pull the lever.</span>")
+									 	"<span class='warning'>You begin to the pull the lever.</span>")
 					current_action = BREAKER_ACTION_INUSE
 
 					if (do_after(user, BREAKER_ACTIVATE_DELAY, target = src) && slat_status == BREAKER_SLAT_RAISED)

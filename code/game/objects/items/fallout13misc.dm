@@ -18,8 +18,8 @@
 	var/soundFile = 'sound/f13music/mysterious_stranger.ogg'
 
 /obj/item/weapon/holodisk/New()
-        src.name = "holodisk #[rand(1,999)]"
-        return ..()
+		src.name = "holodisk #[rand(1,999)]"
+		return ..()
 
 /obj/item/weapon/holodisk/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	src.playAudio(user)

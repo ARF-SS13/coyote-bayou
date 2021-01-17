@@ -1,47 +1,47 @@
 /obj/item/components
-    name = "crafting items"
-    icon = 'icons/fallout/objects/items.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting items"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/blueprint
-    name = "crafting blueprint"
-    icon = 'icons/fallout/objects/items.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting blueprint"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/prefabs
-    name = "crafting prefabs"
-    icon = 'icons/fallout/objects/crafting.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting prefabs"
+	icon = 'icons/fallout/objects/crafting.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stack/prefabs
-    name = "crafting prefabs"
-    icon = 'icons/fallout/objects/crafting.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting prefabs"
+	icon = 'icons/fallout/objects/crafting.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 //misc blueprints
 /obj/item/blueprint/misc
-    name = "weapon blueprint"
-    desc = "A crafting blueprint for a weapon design."
-    icon_state = "blueprint2"
+	name = "weapon blueprint"
+	desc = "A crafting blueprint for a weapon design."
+	icon_state = "blueprint2"
 
 /obj/item/blueprint/misc/stim
-    name = "Stimpack blueprint"
-    desc = "Stimpacks"
+	name = "Stimpack blueprint"
+	desc = "Stimpacks"
 
 
 /obj/item/blueprint/misc/superstims
-    name = "Super Stimpack blueprint"
-    desc = "Super stims"
+	name = "Super Stimpack blueprint"
+	desc = "Super stims"
 
 //weapon blueprints
 /obj/item/blueprint/weapon
-    name = "weapon blueprint"
-    desc = "A crafting blueprint for a weapon design."
-    icon_state = "blueprint1"
+	name = "weapon blueprint"
+	desc = "A crafting blueprint for a weapon design."
+	icon_state = "blueprint1"
 
 //low tier
 /*
@@ -191,20 +191,20 @@
 */
 //armor blueprints
 /obj/item/blueprint/armor
-    name = "armor blueprint"
-    icon_state = "blueprint4"
+	name = "armor blueprint"
+	icon_state = "blueprint4"
 
 /obj/item/blueprint/armor/combat
-    name = "combat armor blueprint"
+	name = "combat armor blueprint"
 
 /obj/item/blueprint/armor/reinforced
-    name = "reinforced armor blueprint"
+	name = "reinforced armor blueprint"
 
 /obj/item/advanced_crafting_components
-    name = "crafting blueprint"
-    icon = 'icons/fallout/objects/crafting.dmi'
-    icon_state = "blueprint_empty"
-    w_class = WEIGHT_CLASS_TINY
+	name = "crafting blueprint"
+	icon = 'icons/fallout/objects/crafting.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stack/prefabs/mWeaponParts
 	name = "Metal Weapon Parts"
@@ -845,10 +845,10 @@
 	icon_state = "alloys"
 
 /obj/item/attachments
-    name = "attachment"
-    icon = 'icons/fallout/objects/crafting.dmi'
-    icon_state = "alloys"
-    w_class = WEIGHT_CLASS_TINY
+	name = "attachment"
+	icon = 'icons/fallout/objects/crafting.dmi'
+	icon_state = "alloys"
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/attachments/scope
 	name = "Weapon Optics"

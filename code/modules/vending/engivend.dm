@@ -10,7 +10,7 @@
 					/obj/item/grenade/chem_grenade/smart_metal_foam = 10,
 					/obj/item/geiger_counter = 6,
 					/obj/item/stock_parts/cell/high = 10,
-    		        /obj/item/electronics/airlock = 10,
+					/obj/item/electronics/airlock = 10,
 					/obj/item/electronics/apc = 10,
 					/obj/item/electronics/airalarm = 10,
 					/obj/item/electronics/firealarm = 10,

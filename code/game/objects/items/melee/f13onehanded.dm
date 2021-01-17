@@ -658,10 +658,10 @@ var/list/possible_colors = list("red")
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="atom_hammer")
 
 /obj/item/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
-    . = ..()
-    if(!istype(M))
-        return
-    M.apply_effect(300, EFFECT_IRRADIATE, 0)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 /obj/item/baseball/spiked
 	name = "spiked baseball bat"

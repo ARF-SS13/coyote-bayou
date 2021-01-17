@@ -319,15 +319,15 @@
 
 /*
 /datum/crafting_recipe/voodoo
-    name = "Voodoo"
-    result = /obj/item/reagent_containers/pill/patch/voodoo
-    time = 20
-    reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
-                /obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
-                /obj/item/reagent_containers/food/snacks/grown/yucca = 1)
-    tools = list(TOOL_WORKBENCH)
-    category = CAT_PRIMAL
-    subcategory = CAT_TRIBAL
+	name = "Voodoo"
+	result = /obj/item/reagent_containers/pill/patch/voodoo
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
+				/obj/item/reagent_containers/food/snacks/grown/yucca = 1)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/coyotechew
 	name = "Coyote Tobacco Chew"

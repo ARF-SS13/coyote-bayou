@@ -253,21 +253,21 @@
 		return 0
 
 /obj/structure/handrail/b_central/CanPass(atom/movable/mover, turf/target)
-    if(istype(mover) && (mover.pass_flags & PASSGLASS))
-        return 1
-    if(get_dir(loc, target) == dir)
-        return !density
-    if(istype(mover, /obj/structure/handrail/b_central))
-        var/obj/structure/window/W = mover
-        if(!valid_window_location(loc, W.ini_dir))
-            return FALSE
-    else if(istype(mover, /obj/structure/windoor_assembly))
-        var/obj/structure/windoor_assembly/W = mover
-        if(!valid_window_location(loc, W.ini_dir))
-            return FALSE
-    else if(istype(mover, /obj/machinery/door/window) && !valid_window_location(loc, mover.dir))
-        return FALSE
-    return 1
+	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+		return 1
+	if(get_dir(loc, target) == dir)
+		return !density
+	if(istype(mover, /obj/structure/handrail/b_central))
+		var/obj/structure/window/W = mover
+		if(!valid_window_location(loc, W.ini_dir))
+			return FALSE
+	else if(istype(mover, /obj/structure/windoor_assembly))
+		var/obj/structure/windoor_assembly/W = mover
+		if(!valid_window_location(loc, W.ini_dir))
+			return FALSE
+	else if(istype(mover, /obj/machinery/door/window) && !valid_window_location(loc, mover.dir))
+		return FALSE
+	return 1
 
 /obj/structure/handrail/b_intersect
 	name = "handrails"
@@ -406,21 +406,21 @@
 	layer = 4.2
 
 /obj/structure/handrail/g_central/Initialize() //window hack to make collision work
-    . = ..()
-    switch(dir)
-        if(NORTH)
-            pixel_y = 23
-        if(SOUTH)
-            pixel_y = -16
-        if(EAST)
-            pixel_x = 20
-        if(WEST)
-            pixel_x = -20
-    var/obj/structure/window/W = new /obj/structure/window(get_turf(src))
-    W.alpha = 0
-    W.anchored = 1
-    W.resistance_flags = INDESTRUCTIBLE
-    W.dir = src.dir
+	. = ..()
+	switch(dir)
+		if(NORTH)
+			pixel_y = 23
+		if(SOUTH)
+			pixel_y = -16
+		if(EAST)
+			pixel_x = 20
+		if(WEST)
+			pixel_x = -20
+	var/obj/structure/window/W = new /obj/structure/window(get_turf(src))
+	W.alpha = 0
+	W.anchored = 1
+	W.resistance_flags = INDESTRUCTIBLE
+	W.dir = src.dir
 
 /* obsoleted by the window hack
 /obj/structure/handrail/g_central/CanPass(atom/movable/mover, turf/target, height=0)

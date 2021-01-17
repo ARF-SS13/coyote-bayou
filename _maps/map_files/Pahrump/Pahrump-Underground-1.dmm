@@ -6,14 +6,12 @@
 /area/f13/caves)
 "ab" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken (NORTHEAST)"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/decoration/rag,
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "ac" = (
@@ -34,8 +32,7 @@
 /obj/item/locked_box/armor/any_random,
 /obj/effect/spawner/lootdrop/clothing_high,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "ag" = (
@@ -74,14 +71,12 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "am" = (
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -99,15 +94,13 @@
 "ar" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "as" = (
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
 "au" = (
@@ -142,8 +135,7 @@
 /area/f13/tunnel)
 "aA" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor4-old";
-	tag = "icon-floor4-old"
+	icon_state = "floor4-old"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -153,16 +145,14 @@
 "aB" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	icon_state = "gib5-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "aD" = (
 /mob/living/simple_animal/hostile/handy/protectron,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "aE" = (
@@ -179,8 +169,7 @@
 /area/f13/tunnel)
 "aH" = (
 /obj/structure/window/fulltile/ruins{
-	icon_state = "ruinswindowbroken";
-	tag = "icon-ruinswindowbroken (NORTHEAST)"
+	icon_state = "ruinswindowbroken"
 	},
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -216,21 +205,18 @@
 	pixel_y = 19
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "aN" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "aO" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	icon_state = "gib5-old"
 	},
 /obj/structure/handrail/g_central{
 	pixel_y = -16
@@ -289,8 +275,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/head/ushanka,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "aW" = (
@@ -346,8 +331,7 @@
 "bg" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "bh" = (
@@ -402,13 +386,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
-"bq" = (
-/obj/structure/chair{
-	dir = 4;
-	tag = "icon-chair (EAST)"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
 "br" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
@@ -421,8 +398,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "bu" = (
@@ -432,14 +408,12 @@
 	},
 /obj/structure/decoration/hatch,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "bv" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -457,8 +431,7 @@
 "by" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibleg";
-	tag = "icon-gibleg"
+	icon_state = "gibleg"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whiterustysolid"
@@ -504,8 +477,7 @@
 "bJ" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "bK" = (
@@ -526,8 +498,7 @@
 /obj/item/clothing/under/f13/raider_leather,
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "bQ" = (
@@ -537,8 +508,7 @@
 /area/f13/tunnel)
 "bR" = (
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "bS" = (
@@ -573,8 +543,7 @@
 "bZ" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "ca" = (
@@ -582,8 +551,7 @@
 	req_access = null
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "cb" = (
@@ -625,15 +593,13 @@
 /area/f13/tunnel)
 "ci" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "cj" = (
@@ -657,8 +623,7 @@
 "cm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
@@ -668,8 +633,7 @@
 /obj/structure/chair/bench,
 /obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "cp" = (
@@ -690,8 +654,7 @@
 /area/f13/tunnel)
 "ct" = (
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "cu" = (
@@ -706,16 +669,14 @@
 "cv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "cw" = (
 /obj/structure/table/wood/settler,
 /obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "cy" = (
@@ -821,8 +782,7 @@
 "cN" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "cO" = (
@@ -934,8 +894,7 @@
 "de" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "dg" = (
@@ -945,8 +904,7 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
 "di" = (
@@ -967,13 +925,11 @@
 "dm" = (
 /obj/structure/toilet{
 	dir = 4;
-	pixel_x = -3;
-	tag = "icon-toilet00 (EAST)"
+	pixel_x = -3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "dn" = (
@@ -1011,15 +967,13 @@
 /area/f13/tunnel)
 "du" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "dv" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	icon_state = "floor6-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -1071,8 +1025,7 @@
 	},
 /obj/effect/spawner/lootdrop/clothing_middle,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "dE" = (
@@ -1082,8 +1035,7 @@
 	},
 /obj/structure/barricade/sandbags,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "dF" = (
@@ -1130,8 +1082,7 @@
 /area/f13/brotherhood)
 "dM" = (
 /obj/structure/chair/wood{
-	dir = 4;
-	tag = "icon-wooden_chair_settler (EAST)"
+	dir = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
@@ -1142,8 +1093,7 @@
 "dO" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "dP" = (
@@ -1202,8 +1152,7 @@
 /area/f13/tunnel)
 "ea" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -1225,8 +1174,7 @@
 "ee" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "eg" = (
@@ -1260,12 +1208,10 @@
 /area/f13/brotherhood)
 "ek" = (
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_0";
-	tag = "icon-pod_0"
+	icon_state = "pod_0"
 	},
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "em" = (
@@ -1335,8 +1281,7 @@
 /area/f13/tcoms)
 "ew" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -1346,8 +1291,7 @@
 /area/f13/tunnel)
 "ey" = (
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/tunnel)
 "ez" = (
@@ -1381,13 +1325,11 @@
 /area/f13/ncr)
 "eF" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	icon_state = "floor6-old"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "eH" = (
@@ -1422,8 +1364,7 @@
 	},
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "eN" = (
@@ -1431,12 +1372,10 @@
 	dir = 4
 	},
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_0_maintenance";
-	tag = "icon-pod_0_maintenance"
+	icon_state = "pod_0_maintenance"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "eO" = (
@@ -1448,8 +1387,7 @@
 "eP" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/sewer)
 "eQ" = (
@@ -1534,8 +1472,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -1604,8 +1541,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "fu" = (
@@ -1630,8 +1566,7 @@
 "fx" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -1640,8 +1575,7 @@
 "fy" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	icon_state = "gibup1"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -1653,16 +1587,14 @@
 /area/f13/tcoms)
 "fA" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso";
-	tag = "icon-gibtorso"
+	icon_state = "gibtorso"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "fB" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "fC" = (
@@ -1687,8 +1619,7 @@
 /area/f13/tunnel)
 "fI" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibleg";
-	tag = "icon-gibleg"
+	icon_state = "gibleg"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -1698,8 +1629,7 @@
 	obj_damage = 100
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "fK" = (
@@ -1715,8 +1645,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "fM" = (
@@ -1748,8 +1677,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "fR" = (
@@ -1771,15 +1699,13 @@
 "fV" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "fW" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "fX" = (
@@ -1816,16 +1742,14 @@
 /area/f13/tunnel)
 "gd" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	icon_state = "gib5-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
 "ge" = (
 /obj/structure/sink{
 	dir = 8;
-	pixel_x = -13;
-	tag = "icon-sink (WEST)"
+	pixel_x = -13
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
@@ -1839,16 +1763,14 @@
 "gg" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "gh" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "gi" = (
@@ -1861,8 +1783,7 @@
 "gj" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "gk" = (
@@ -1893,12 +1814,10 @@
 /area/f13/brotherhood)
 "go" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso";
-	tag = "icon-gibtorso"
+	icon_state = "gibtorso"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "gp" = (
@@ -1975,8 +1894,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "gz" = (
@@ -2025,18 +1943,15 @@
 /obj/structure/simple_door/bunker,
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "gI" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "gJ" = (
@@ -2076,8 +1991,7 @@
 /area/f13/brotherhood)
 "gQ" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -2163,8 +2077,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -2176,8 +2089,7 @@
 	icon_state = "tall_grass_8";
 	layer = 2;
 	pixel_x = -8;
-	pixel_y = 7;
-	tag = "icon-tall_grass_8"
+	pixel_y = 7
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -2265,14 +2177,12 @@
 /area/f13/tunnel)
 "hr" = (
 /obj/structure/window/fulltile/house{
-	dir = 2;
-	tag = "icon-housewindow"
+	dir = 2
 	},
 /obj/structure/decoration/rag,
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "hs" = (
@@ -2287,12 +2197,10 @@
 /area/f13/tunnel)
 "hu" = (
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_1";
-	tag = "icon-pod_1"
+	icon_state = "pod_1"
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/clinic)
 "hv" = (
@@ -2307,8 +2215,7 @@
 "hy" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "hz" = (
@@ -2331,8 +2238,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "hE" = (
@@ -2454,8 +2360,7 @@
 /area/f13/tunnel)
 "ic" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -2472,8 +2377,7 @@
 /obj/structure/table,
 /obj/item/storage/belt/utility/full,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "ig" = (
@@ -2485,8 +2389,7 @@
 	pixel_x = -19
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "ii" = (
@@ -2536,8 +2439,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "ir" = (
@@ -2579,16 +2481,14 @@
 /obj/item/clothing/suit/toggle/labcoat,
 /obj/item/clothing/glasses/sunglasses,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "ix" = (
 /obj/structure/closet,
 /obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "iy" = (
@@ -2651,8 +2551,7 @@
 /area/f13/caves)
 "iF" = (
 /obj/structure/toilet{
-	dir = 8;
-	tag = "icon-toilet00 (WEST)"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/locked_box/medical/drugs,
@@ -2663,8 +2562,7 @@
 "iG" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "iK" = (
@@ -2710,8 +2608,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "iS" = (
@@ -2734,8 +2631,7 @@
 	pixel_y = -32
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "iV" = (
@@ -2743,8 +2639,7 @@
 /obj/item/locked_box/armor/prewar_clothes,
 /obj/item/dildo,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "iW" = (
@@ -2763,8 +2658,7 @@
 /obj/item/storage/firstaid/ancient,
 /obj/item/storage/firstaid/ancient,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "jb" = (
@@ -2776,8 +2670,7 @@
 "jc" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "jd" = (
@@ -2788,8 +2681,7 @@
 "je" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "jf" = (
@@ -2821,8 +2713,7 @@
 /area/f13/radiation)
 "jk" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -2835,8 +2726,7 @@
 /obj/item/clothing/under/f13/raider_leather,
 /obj/item/locked_box/armor/prewar_costumes,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "jn" = (
@@ -2875,8 +2765,7 @@
 /area/f13/brotherhood)
 "jv" = (
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -2901,8 +2790,7 @@
 "jz" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "jA" = (
@@ -2913,8 +2801,7 @@
 /area/f13/brotherhood)
 "jC" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	icon_state = "gib5-old"
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2931,8 +2818,7 @@
 "jE" = (
 /obj/machinery/chem_master/advanced,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "jF" = (
@@ -2971,8 +2857,7 @@
 /area/f13/tunnel)
 "jL" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibmid1";
-	tag = "icon-gibmid1"
+	icon_state = "gibmid1"
 	},
 /obj/item/clothing/head/hooded/human_head{
 	pixel_y = -10
@@ -3017,15 +2902,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
-	layer = 5;
-	tag = "icon-tall_grass_4"
+	layer = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_8";
 	layer = 2;
 	pixel_x = -8;
-	pixel_y = 7;
-	tag = "icon-tall_grass_8"
+	pixel_y = 7
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -3057,13 +2940,11 @@
 "jZ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/decoration/rag,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "kb" = (
@@ -3092,8 +2973,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "kg" = (
@@ -3148,8 +3028,7 @@
 "ko" = (
 /obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "kp" = (
@@ -3177,8 +3056,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "ku" = (
@@ -3242,8 +3120,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "kF" = (
@@ -3271,8 +3148,7 @@
 "kI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -3292,8 +3168,7 @@
 /area/f13/tunnel)
 "kM" = (
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "kN" = (
@@ -3327,14 +3202,12 @@
 "kQ" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "kR" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /obj/item/locked_box/armor/tier4,
 /turf/open/indestructible/ground/inside/mountain,
@@ -3382,8 +3255,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/hatch,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "kZ" = (
@@ -3401,8 +3273,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "lc" = (
@@ -3442,8 +3313,7 @@
 /obj/structure/closet,
 /obj/item/locked_box/armor/any_random,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "li" = (
@@ -3471,8 +3341,7 @@
 "ln" = (
 /obj/structure/bed/mattress,
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	icon_state = "gibup1"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -3485,8 +3354,7 @@
 /area/f13/tunnel)
 "lp" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -3521,8 +3389,7 @@
 "lw" = (
 /obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "lx" = (
@@ -3548,8 +3415,7 @@
 /area/f13/brotherhood)
 "lA" = (
 /obj/structure/chair/wood/modern{
-	dir = 8;
-	tag = "icon-wooden_chair_new (WEST)"
+	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -3683,16 +3549,14 @@
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "lY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old";
-	tag = "icon-gib6-old"
+	icon_state = "gib6-old"
 	},
 /obj/structure/fermenting_barrel,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
@@ -3704,8 +3568,7 @@
 	dir = 5
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "ma" = (
@@ -3759,15 +3622,13 @@
 /area/f13/brotherhood)
 "md" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
 "me" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/sewer)
 "mf" = (
@@ -3779,8 +3640,7 @@
 "mg" = (
 /obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "mh" = (
@@ -3930,8 +3790,7 @@
 /area/f13/brotherhood)
 "mC" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	icon_state = "gibup1"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -3959,8 +3818,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/tunnel)
 "mH" = (
@@ -3970,8 +3828,7 @@
 "mI" = (
 /obj/structure/chair/wood/modern{
 	dir = 1;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (NORTH)"
+	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -4011,8 +3868,7 @@
 /area/f13/tunnel)
 "mO" = (
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/building)
 "mP" = (
@@ -4043,8 +3899,7 @@
 "mT" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "mU" = (
@@ -4061,8 +3916,7 @@
 /obj/structure/rack,
 /obj/item/stack/crafting/electronicparts/three,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "mX" = (
@@ -4072,8 +3926,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "mY" = (
@@ -4197,8 +4050,7 @@
 	pixel_x = 20
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "nr" = (
@@ -4211,8 +4063,7 @@
 "ns" = (
 /obj/structure/decoration/vent/rusty,
 /obj/machinery/shower{
-	dir = 8;
-	tag = "icon-shower (WEST)"
+	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
@@ -4280,8 +4131,7 @@
 "nF" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "nG" = (
@@ -4314,8 +4164,7 @@
 	},
 /obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "nN" = (
@@ -4340,8 +4189,7 @@
 "nS" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "nT" = (
@@ -4408,8 +4256,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "oe" = (
@@ -4441,8 +4288,7 @@
 "oi" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "oj" = (
@@ -4455,8 +4301,7 @@
 /area/f13/tunnel)
 "ol" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -4469,12 +4314,10 @@
 "on" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -4496,8 +4339,7 @@
 "oq" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "or" = (
@@ -4510,8 +4352,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "ot" = (
@@ -4522,8 +4363,7 @@
 /area/f13/tunnel)
 "ou" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib1-old";
-	tag = "icon-gib1-old"
+	icon_state = "gib1-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4545,8 +4385,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "oy" = (
@@ -4571,8 +4410,7 @@
 	layer = 2
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "oC" = (
@@ -4619,8 +4457,7 @@
 /obj/structure/closet,
 /obj/item/locked_box/weapon/range/tier4,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "oP" = (
@@ -4632,8 +4469,7 @@
 "oS" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "oT" = (
@@ -4676,8 +4512,7 @@
 	req_one_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "oY" = (
@@ -4707,12 +4542,10 @@
 /area/f13/tunnel)
 "pc" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso";
-	tag = "icon-gibtorso"
+	icon_state = "gibtorso"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -4740,15 +4573,13 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "ph" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "pi" = (
@@ -4757,8 +4588,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "pj" = (
@@ -4778,8 +4608,7 @@
 "pn" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "po" = (
@@ -4840,16 +4669,14 @@
 /area/f13/tcoms)
 "pA" = (
 /obj/structure/simple_door/house{
-	icon_state = "glassclosing";
-	tag = "icon-glassclosing"
+	icon_state = "glassclosing"
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "pB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "pC" = (
@@ -4862,8 +4689,7 @@
 /area/f13/tunnel)
 "pE" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "pG" = (
@@ -4906,8 +4732,7 @@
 "pP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
-	pixel_x = -6;
-	tag = "icon-tall_grass_2"
+	pixel_x = -6
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -4917,8 +4742,7 @@
 	},
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "pR" = (
@@ -4931,8 +4755,7 @@
 /obj/structure/closet,
 /obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "pU" = (
@@ -5047,8 +4870,7 @@
 	icon_state = "mattress3"
 	},
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	icon_state = "floor6-old"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -5101,8 +4923,7 @@
 /obj/item/storage/firstaid/fire,
 /obj/structure/table/reinforced,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "qz" = (
@@ -5112,22 +4933,19 @@
 "qA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greendirtyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greendirtyfull"
 	},
 /area/f13/tunnel)
 "qB" = (
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "qC" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
-	pixel_x = -6;
-	tag = "icon-tall_grass_2"
+	pixel_x = -6
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -5140,8 +4958,7 @@
 "qE" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "qF" = (
@@ -5152,8 +4969,7 @@
 "qH" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
-	icon_state = "greendirtyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greendirtyfull"
 	},
 /area/f13/tunnel)
 "qI" = (
@@ -5209,8 +5025,7 @@
 	},
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "qS" = (
@@ -5278,8 +5093,7 @@
 "rh" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "ri" = (
@@ -5351,8 +5165,7 @@
 /area/f13/tunnel)
 "rv" = (
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_7";
-	tag = "icon-tall_grass_7"
+	icon_state = "tall_grass_7"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -5369,8 +5182,7 @@
 /area/f13/brotherhood)
 "ry" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -5393,8 +5205,7 @@
 "rC" = (
 /obj/structure/frame/machine,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "rD" = (
@@ -5411,15 +5222,13 @@
 "rF" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
-	pixel_x = -6;
-	tag = "icon-tall_grass_2"
+	pixel_x = -6
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "rG" = (
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "rH" = (
@@ -5433,8 +5242,7 @@
 	},
 /obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "rJ" = (
@@ -5454,8 +5262,7 @@
 "rM" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "rN" = (
@@ -5477,8 +5284,7 @@
 /area/f13/tunnel)
 "rQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	tag = "icon-tracks (EAST)"
+	dir = 4
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -5505,8 +5311,7 @@
 	},
 /obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "rT" = (
@@ -5520,8 +5325,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "rV" = (
@@ -5534,8 +5338,7 @@
 /obj/structure/rack,
 /obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "rX" = (
@@ -5549,8 +5352,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/tunnel)
 "rZ" = (
@@ -5590,8 +5392,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/sewer)
 "sh" = (
@@ -5613,8 +5414,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "sk" = (
@@ -5636,16 +5436,14 @@
 /area/f13/tunnel)
 "sn" = (
 /obj/machinery/shower{
-	dir = 8;
-	tag = "icon-shower (WEST)"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "so" = (
@@ -5706,8 +5504,7 @@
 /obj/structure/table/optable/abductor,
 /obj/item/restraints/handcuffs,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "sz" = (
@@ -5731,14 +5528,12 @@
 "sE" = (
 /obj/structure/closet,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "sG" = (
 /obj/structure/chair/comfy/black{
-	dir = 8;
-	tag = "icon-comfychair (WEST)"
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -5832,8 +5627,7 @@
 /area/f13/tunnel)
 "sZ" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "ta" = (
@@ -5852,8 +5646,7 @@
 /area/f13/brotherhood)
 "td" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -5865,8 +5658,7 @@
 "tf" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "tg" = (
@@ -5896,8 +5688,7 @@
 "tj" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibmid1";
-	tag = "icon-gibmid1"
+	icon_state = "gibmid1"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -5916,8 +5707,7 @@
 /area/f13/caves)
 "to" = (
 /obj/structure/chair/comfy/black{
-	dir = 8;
-	tag = "icon-comfychair (WEST)"
+	dir = 8
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -5925,8 +5715,7 @@
 /obj/item/locked_box/misc/garbage,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "tq" = (
@@ -5973,8 +5762,7 @@
 /area/f13/sewer)
 "tw" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -5989,8 +5777,7 @@
 "tA" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -6017,8 +5804,7 @@
 "tD" = (
 /obj/effect/mine/stun,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "tE" = (
@@ -6072,8 +5858,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "tQ" = (
@@ -6102,8 +5887,7 @@
 /obj/structure/table,
 /obj/item/storage/box/bodybags,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "tY" = (
@@ -6114,8 +5898,7 @@
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "ua" = (
@@ -6151,8 +5934,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "uh" = (
@@ -6222,8 +6004,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "us" = (
@@ -6232,16 +6013,14 @@
 /area/f13/tunnel)
 "ut" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/stack/sheet/sinew,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "uu" = (
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6";
-	tag = "icon-tall_grass_6"
+	icon_state = "tall_grass_6"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -6252,8 +6031,7 @@
 /area/f13/tunnel)
 "ux" = (
 /obj/structure/chair/office{
-	dir = 4;
-	tag = "icon-chair (EAST)"
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -6296,15 +6074,13 @@
 	},
 /obj/effect/landmark/start/f13/followersadministrator,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "uF" = (
 /obj/machinery/vending/wardrobe/chem_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "uG" = (
@@ -6349,8 +6125,7 @@
 /area/f13/brotherhood)
 "uP" = (
 /obj/effect/decal/waste{
-	icon_state = "goo8";
-	tag = "icon-goo8"
+	icon_state = "goo8"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -6375,8 +6150,7 @@
 "uU" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetUSA";
-	tag = "icon-sheetUSA"
+	icon_state = "sheetUSA"
 	},
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -6421,8 +6195,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "vc" = (
@@ -6487,18 +6260,15 @@
 /area/f13/brotherhood)
 "vo" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibmid1";
-	tag = "icon-gibmid1"
+	icon_state = "gibmid1"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/sewer)
 "vp" = (
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /obj/structure/chair/booth{
 	dir = 8
@@ -6517,8 +6287,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "vs" = (
@@ -6526,14 +6295,12 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "vt" = (
 /obj/structure/chair/wood/modern{
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler"
+	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6560,8 +6327,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "vx" = (
@@ -6613,8 +6379,7 @@
 "vF" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	icon_state = "floor6-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -6633,8 +6398,7 @@
 "vI" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "vJ" = (
@@ -6662,15 +6426,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
-	layer = 5;
-	tag = "icon-tall_grass_4"
+	layer = 5
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vN" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -6681,8 +6443,7 @@
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/toxin,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "vP" = (
@@ -6736,8 +6497,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "wa" = (
@@ -6797,8 +6557,7 @@
 /area/f13/tunnel)
 "wh" = (
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/tunnel)
 "wi" = (
@@ -6827,8 +6586,7 @@
 "wk" = (
 /obj/item/flashlight/flare/torch,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "wl" = (
@@ -6838,8 +6596,7 @@
 "wn" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /obj/effect/decal/waste{
-	icon_state = "goo8";
-	tag = "icon-goo8"
+	icon_state = "goo8"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -6849,8 +6606,7 @@
 /area/f13/caves)
 "wp" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 6;
-	tag = "icon-tracks (NORTHEAST)"
+	dir = 6
 	},
 /obj/effect/mine/stun,
 /turf/open/indestructible/ground/inside/mountain,
@@ -6894,13 +6650,11 @@
 	dir = 1
 	},
 /obj/structure/toilet{
-	dir = 4;
-	tag = "icon-toilet00 (EAST)"
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "wz" = (
@@ -6922,8 +6676,7 @@
 /obj/item/locked_box/weapon/melee/any_random,
 /obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "wC" = (
@@ -6962,8 +6715,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "wI" = (
@@ -6973,12 +6725,10 @@
 /area/f13/brotherhood)
 "wJ" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibleg";
-	tag = "icon-gibleg"
+	icon_state = "gibleg"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "wK" = (
@@ -6988,8 +6738,7 @@
 /area/f13/tunnel)
 "wL" = (
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "wM" = (
@@ -7007,8 +6756,7 @@
 /area/f13/tunnel)
 "wO" = (
 /obj/structure/toilet{
-	dir = 1;
-	tag = "icon-toilet00 (NORTH)"
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -7127,8 +6875,7 @@
 "xj" = (
 /obj/item/clothing/under/f13/rag,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "xk" = (
@@ -7193,8 +6940,7 @@
 /obj/item/locked_box/weapon/melee/tier4,
 /obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "xu" = (
@@ -7205,8 +6951,7 @@
 /area/f13/tunnel)
 "xv" = (
 /obj/structure/chair{
-	dir = 8;
-	tag = "icon-chair (WEST)"
+	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
@@ -7217,8 +6962,7 @@
 "xx" = (
 /obj/machinery/vending/wardrobe/medi_wardrobe,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "xy" = (
@@ -7237,8 +6981,7 @@
 /area/f13/building)
 "xB" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -7316,8 +7059,7 @@
 /area/f13/brotherhood)
 "xN" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/molerat,
 /obj/effect/decal/cleanable/blood,
@@ -7329,13 +7071,11 @@
 	},
 /obj/structure/sink{
 	dir = 8;
-	pixel_x = -13;
-	tag = "icon-sink (WEST)"
+	pixel_x = -13
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "xP" = (
@@ -7345,8 +7085,7 @@
 /obj/structure/rack,
 /obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "xR" = (
@@ -7356,15 +7095,13 @@
 /area/f13/brotherhood)
 "xS" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xT" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 9;
-	tag = "icon-tracks (NORTHWEST)"
+	dir = 9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -7444,14 +7181,12 @@
 	pixel_y = 23
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "yh" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -7530,8 +7265,7 @@
 	layer = 2.5
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "yC" = (
@@ -7553,8 +7287,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "yG" = (
@@ -7589,14 +7322,12 @@
 "yL" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "yM" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -7604,8 +7335,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "yO" = (
@@ -7614,8 +7344,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "yQ" = (
@@ -7626,8 +7355,7 @@
 /area/f13/brotherhood)
 "yR" = (
 /obj/structure/chair/office{
-	dir = 4;
-	tag = "icon-chair (EAST)"
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -7639,15 +7367,13 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "yT" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "yU" = (
@@ -7662,8 +7388,7 @@
 "yW" = (
 /obj/effect/spawner/lootdrop/clothing_low,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "yX" = (
@@ -7678,8 +7403,7 @@
 "yZ" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/sewer)
 "za" = (
@@ -7696,12 +7420,10 @@
 	dir = 8
 	},
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_0";
-	tag = "icon-pod_0"
+	icon_state = "pod_0"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "zd" = (
@@ -7712,8 +7434,7 @@
 /area/f13/caves)
 "ze" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso";
-	tag = "icon-gibtorso"
+	icon_state = "gibtorso"
 	},
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13/wood,
@@ -7745,8 +7466,7 @@
 /area/f13/tunnel)
 "zk" = (
 /obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	icon_state = "gibup1"
 	},
 /obj/structure/kitchenspike,
 /turf/open/floor/f13/wood,
@@ -7781,8 +7501,7 @@
 "zq" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "zr" = (
@@ -7810,8 +7529,7 @@
 "zv" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "zx" = (
@@ -7833,15 +7551,13 @@
 "zB" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "zC" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "zD" = (
@@ -7878,8 +7594,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "zK" = (
@@ -7938,8 +7653,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/flashlight,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "zV" = (
@@ -7950,14 +7664,12 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/structure/timeddoor,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "zX" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "zY" = (
@@ -7973,8 +7685,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Aa" = (
@@ -8014,8 +7725,7 @@
 /obj/item/book/granter/trait/pa_wear,
 /obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "Ag" = (
@@ -8025,12 +7735,10 @@
 /area/f13/tunnel)
 "Ah" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibleg";
-	tag = "icon-gibleg"
+	icon_state = "gibleg"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "Aj" = (
@@ -8088,8 +7796,7 @@
 "Au" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Av" = (
@@ -8103,8 +7810,7 @@
 	},
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Ax" = (
@@ -8201,12 +7907,10 @@
 /area/f13/tunnel)
 "AO" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor4-old";
-	tag = "icon-floor4-old"
+	icon_state = "floor4-old"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "AP" = (
@@ -8219,8 +7923,7 @@
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "AR" = (
@@ -8237,20 +7940,17 @@
 "AU" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "AX" = (
 /obj/machinery/shower{
-	dir = 4;
-	tag = "icon-shower (EAST)"
+	dir = 4
 	},
 /mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "AY" = (
@@ -8266,8 +7966,7 @@
 /area/f13/brotherhood)
 "Ba" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 9;
-	tag = "icon-tracks (NORTHWEST)"
+	dir = 9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -8294,14 +7993,12 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Bf" = (
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Bl" = (
@@ -8335,8 +8032,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Bs" = (
@@ -8347,8 +8043,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Bu" = (
@@ -8371,8 +8066,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "By" = (
@@ -8417,8 +8111,7 @@
 "BD" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "BE" = (
@@ -8457,8 +8150,7 @@
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "BM" = (
@@ -8489,12 +8181,10 @@
 /area/f13/tunnel)
 "BS" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibup1";
-	tag = "icon-gibup1"
+	icon_state = "gibup1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "BT" = (
@@ -8535,8 +8225,7 @@
 "Ca" = (
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "Cb" = (
@@ -8544,8 +8233,7 @@
 /obj/item/locked_box/misc/crafting,
 /obj/item/locked_box/misc/crafting,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Cd" = (
@@ -8557,8 +8245,7 @@
 "Ce" = (
 /obj/item/flashlight/flare,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Cf" = (
@@ -8579,12 +8266,10 @@
 /area/f13/bunker)
 "Ch" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 10;
-	tag = "icon-tracks (NORTHEAST)"
+	dir = 10
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Ci" = (
@@ -8601,8 +8286,7 @@
 /area/f13/brotherhood)
 "Ck" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -8647,8 +8331,7 @@
 /area/f13/brotherhood)
 "Cq" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
@@ -8661,15 +8344,13 @@
 "Ct" = (
 /obj/structure/nest/ghoul,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Cu" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Cv" = (
@@ -8717,8 +8398,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sink{
 	dir = 8;
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -8728,8 +8408,7 @@
 "CE" = (
 /obj/machinery/light/fo13colored/Red,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "CF" = (
@@ -8817,8 +8496,7 @@
 "CL" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -8843,8 +8521,7 @@
 /obj/structure/table/optable/abductor,
 /obj/effect/decal/remains/xeno,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "CR" = (
@@ -8871,8 +8548,7 @@
 /area/f13/tunnel)
 "CU" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor2-old";
-	tag = "icon-floor2-old"
+	icon_state = "floor2-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -8940,8 +8616,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Dh" = (
@@ -8999,8 +8674,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "Dp" = (
@@ -9010,8 +8684,7 @@
 	pixel_x = -20
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Dq" = (
@@ -9037,8 +8710,7 @@
 /area/f13/tunnel)
 "Du" = (
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "Dw" = (
@@ -9095,8 +8767,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "DI" = (
@@ -9127,8 +8798,7 @@
 "DQ" = (
 /obj/structure/campfire/barrel,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "DR" = (
@@ -9136,8 +8806,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "DS" = (
@@ -9155,12 +8824,10 @@
 /area/f13/tcoms)
 "DU" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 9;
-	tag = "icon-tracks (NORTHWEST)"
+	dir = 9
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "DW" = (
@@ -9173,8 +8840,7 @@
 "DY" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "DZ" = (
@@ -9184,8 +8850,7 @@
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Eb" = (
@@ -9204,14 +8869,12 @@
 /obj/structure/closet,
 /obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Ee" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	tag = "icon-tracks (EAST)"
+	dir = 4
 	},
 /obj/item/locked_box/armor/any_random,
 /turf/open/indestructible/ground/inside/subway,
@@ -9219,8 +8882,7 @@
 "Ef" = (
 /obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "Eg" = (
@@ -9294,8 +8956,7 @@
 /area/f13/tunnel)
 "Es" = (
 /obj/machinery/shower{
-	dir = 8;
-	tag = "icon-shower (WEST)"
+	dir = 8
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/water,
@@ -9306,8 +8967,7 @@
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Eu" = (
@@ -9350,8 +9010,7 @@
 /area/f13/brotherhood)
 "EA" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "EB" = (
@@ -9444,8 +9103,7 @@
 /obj/structure/closet,
 /obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "ES" = (
@@ -9497,8 +9155,7 @@
 	layer = 2.5
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Fb" = (
@@ -9507,8 +9164,7 @@
 	id = "S1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Fc" = (
@@ -9525,15 +9181,13 @@
 "Fd" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "Fe" = (
 /obj/structure/sink{
 	dir = 1;
-	pixel_y = 15;
-	tag = "icon-sink (NORTH)"
+	pixel_y = 15
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -9569,16 +9223,14 @@
 /obj/structure/closet,
 /obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Fk" = (
 /obj/structure/rack,
 /obj/item/locked_box/weapon/range/tier3,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Fo" = (
@@ -9639,8 +9291,7 @@
 /area/f13/caves)
 "Fy" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/wolf,
 /obj/effect/decal/cleanable/blood,
@@ -9676,8 +9327,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "FG" = (
@@ -9757,16 +9407,14 @@
 "FU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "FV" = (
 /obj/structure/chair/stool/f13stool,
 /obj/effect/landmark/start/f13/followersdoctor,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "FW" = (
@@ -9775,8 +9423,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "FX" = (
@@ -9809,8 +9456,7 @@
 /area/f13/tunnel)
 "Gd" = (
 /obj/structure/chair/wood/modern{
-	dir = 1;
-	tag = "icon-wooden_chair_new (NORTH)"
+	dir = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -9831,12 +9477,10 @@
 "Gh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Gj" = (
@@ -9857,8 +9501,7 @@
 	color = "#845f58"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Gq" = (
@@ -9871,8 +9514,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Gr" = (
@@ -9893,8 +9535,7 @@
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Gw" = (
@@ -9932,8 +9573,7 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "GC" = (
@@ -9977,8 +9617,7 @@
 "GJ" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "GK" = (
@@ -10003,8 +9642,7 @@
 /area/f13/tunnel)
 "GP" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 9;
-	tag = "icon-tracks (NORTHWEST)"
+	dir = 9
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -10020,8 +9658,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "GT" = (
@@ -10054,8 +9691,7 @@
 "GX" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "GY" = (
@@ -10064,8 +9700,7 @@
 "GZ" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib6-old";
-	pixel_x = 8;
-	tag = "icon-gib6-old"
+	pixel_x = 8
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -10086,8 +9721,7 @@
 /obj/item/locked_box/misc/blueprints/tier2,
 /obj/item/locked_box/misc/blueprints/tier2,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "He" = (
@@ -10112,8 +9746,7 @@
 "Hh" = (
 /obj/structure/rack,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Hi" = (
@@ -10209,8 +9842,7 @@
 	pixel_x = 12
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "HB" = (
@@ -10253,8 +9885,7 @@
 /obj/machinery/light/small,
 /obj/structure/window/spawner/east,
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -10270,14 +9901,12 @@
 	id = "followerladder"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "HM" = (
 /obj/effect/decal/waste{
-	icon_state = "goo12";
-	tag = "icon-goo12"
+	icon_state = "goo12"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -10285,8 +9914,7 @@
 /obj/structure/table,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "HO" = (
@@ -10307,8 +9935,7 @@
 /obj/structure/table,
 /obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "HR" = (
@@ -10395,8 +10022,7 @@
 "If" = (
 /obj/structure/campfire/barrel,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Ig" = (
@@ -10421,8 +10047,7 @@
 "Ij" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Ik" = (
@@ -10442,17 +10067,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
-"Io" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12;
-	tag = "icon-sink (EAST)"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
-	},
-/area/f13/tunnel)
 "Ip" = (
 /obj/structure/table,
 /obj/item/locked_box/misc/food,
@@ -10488,8 +10102,7 @@
 "Ix" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Iy" = (
@@ -10518,12 +10131,10 @@
 	dir = 4
 	},
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_1";
-	tag = "icon-pod_1"
+	icon_state = "pod_1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "IC" = (
@@ -10537,8 +10148,7 @@
 "IE" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "IF" = (
@@ -10582,8 +10192,7 @@
 	},
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "IL" = (
@@ -10596,8 +10205,7 @@
 "IM" = (
 /obj/structure/chair,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "IN" = (
@@ -10609,8 +10217,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "IP" = (
@@ -10706,8 +10313,7 @@
 /area/f13/tunnel)
 "Jc" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "Jd" = (
@@ -10764,8 +10370,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "Jn" = (
@@ -10842,8 +10447,7 @@
 "Jz" = (
 /obj/structure/timeddoor,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "JA" = (
@@ -10852,8 +10456,7 @@
 /area/f13/tcoms)
 "JB" = (
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "JC" = (
@@ -10864,12 +10467,10 @@
 /area/f13/tunnel)
 "JD" = (
 /obj/machinery/shower{
-	dir = 4;
-	tag = "icon-shower (EAST)"
+	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "JE" = (
@@ -10900,8 +10501,7 @@
 "JJ" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "JK" = (
@@ -10924,8 +10524,7 @@
 "JO" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/clinic)
 "JP" = (
@@ -10987,15 +10586,13 @@
 "JZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/toilet{
-	dir = 8;
-	tag = "icon-toilet00 (WEST)"
+	dir = 8
 	},
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "Ka" = (
@@ -11018,8 +10615,7 @@
 "Ke" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Kf" = (
@@ -11084,8 +10680,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Ks" = (
@@ -11128,16 +10723,14 @@
 "Kw" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/clinic)
 "Kx" = (
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/protolathe/department/medical,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Kz" = (
@@ -11146,18 +10739,15 @@
 	},
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "KA" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	dir = 6;
-	tag = "icon-tracks (NORTHEAST)"
+	dir = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "KB" = (
@@ -11187,8 +10777,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "KH" = (
@@ -11200,8 +10789,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "KL" = (
@@ -11239,14 +10827,12 @@
 	},
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "KP" = (
 /obj/structure/chair/office{
-	dir = 8;
-	tag = "icon-chair (EAST)"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -11254,8 +10840,7 @@
 "KQ" = (
 /obj/structure/decoration/hatch,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "KR" = (
@@ -11329,8 +10914,7 @@
 /area/f13/tcoms)
 "Lj" = (
 /obj/machinery/shower{
-	dir = 8;
-	tag = "icon-shower (WEST)"
+	dir = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -11395,8 +10979,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Lt" = (
@@ -11438,8 +11021,7 @@
 "LB" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "LC" = (
@@ -11451,13 +11033,11 @@
 /area/f13/tunnel)
 "LD" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "LE" = (
@@ -11465,8 +11045,7 @@
 	icon_state = "mattress4"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "LF" = (
@@ -11480,8 +11059,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "LH" = (
@@ -11540,8 +11118,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "LP" = (
@@ -11552,8 +11129,7 @@
 "LQ" = (
 /obj/structure/reagent_dispensers/barrel/two,
 /obj/effect/decal/waste{
-	icon_state = "goo8";
-	tag = "icon-goo8"
+	icon_state = "goo8"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -11583,8 +11159,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "LV" = (
@@ -11628,8 +11203,7 @@
 	layer = 2.5
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Mc" = (
@@ -11644,8 +11218,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Mf" = (
@@ -11682,8 +11255,7 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
 "Mm" = (
@@ -11714,8 +11286,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Mr" = (
@@ -11726,8 +11297,7 @@
 /obj/item/clothing/under/rank/research_director/alt,
 /obj/item/clothing/suit/toggle/labcoat,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "Ms" = (
@@ -11777,8 +11347,7 @@
 /area/f13/caves)
 "MB" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/ground/inside/mountain,
@@ -11786,8 +11355,7 @@
 "MC" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "MD" = (
@@ -11798,8 +11366,7 @@
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/structure/closet/crate{
-	icon_state = "medicalcrate";
-	tag = "icon-medicalcrate"
+	icon_state = "medicalcrate"
 	},
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -11817,8 +11384,7 @@
 "MH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
@@ -11856,8 +11422,7 @@
 "MN" = (
 /obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/tunnel)
 "MO" = (
@@ -11878,8 +11443,7 @@
 	},
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "MQ" = (
@@ -11912,8 +11476,7 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "MV" = (
@@ -11933,8 +11496,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "MZ" = (
@@ -11997,8 +11559,7 @@
 /area/f13/tunnel)
 "Nk" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbear1";
-	tag = "icon-gibbear1"
+	icon_state = "gibbear1"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -12010,8 +11571,7 @@
 "Nm" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/toilet{
-	dir = 1;
-	tag = "icon-toilet00 (NORTH)"
+	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/mineral/plastitanium,
@@ -12033,8 +11593,7 @@
 "Nq" = (
 /obj/structure/curtain,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "Nr" = (
@@ -12076,8 +11635,7 @@
 /area/f13/tunnel)
 "Nv" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /obj/structure/reagent_dispensers/barrel/three,
 /obj/effect/decal/cleanable/dirt,
@@ -12134,8 +11692,7 @@
 "NB" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "NC" = (
@@ -12152,14 +11709,12 @@
 "NE" = (
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "NF" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbear1";
-	tag = "icon-gibbear1"
+	icon_state = "gibbear1"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -12190,15 +11745,13 @@
 	pixel_x = -25
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "NK" = (
 /obj/structure/bodycontainer/morgue,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "NL" = (
@@ -12244,8 +11797,7 @@
 "NP" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "NQ" = (
@@ -12258,8 +11810,7 @@
 /obj/structure/table,
 /obj/item/clothing/glasses/sunglasses,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "NR" = (
@@ -12312,8 +11863,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Oa" = (
@@ -12321,8 +11871,7 @@
 	icon_state = "mattress3"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "Ob" = (
@@ -12330,19 +11879,16 @@
 	dir = 8
 	},
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_1";
-	tag = "icon-pod_1"
+	icon_state = "pod_1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Oc" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Od" = (
@@ -12353,8 +11899,7 @@
 	layer = 2.5
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Oe" = (
@@ -12367,8 +11912,7 @@
 "Of" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Oh" = (
@@ -12416,8 +11960,7 @@
 /obj/item/storage/box/gloves,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "Oo" = (
@@ -12448,8 +11991,7 @@
 "Os" = (
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "Ou" = (
@@ -12465,8 +12007,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Ow" = (
@@ -12504,8 +12045,7 @@
 	},
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "OC" = (
@@ -12513,8 +12053,7 @@
 	pixel_y = -16
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "OD" = (
@@ -12599,8 +12138,7 @@
 	color = "#845f58"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "OQ" = (
@@ -12656,8 +12194,7 @@
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/tunnel)
 "OX" = (
@@ -12697,8 +12234,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Pe" = (
@@ -12722,8 +12258,7 @@
 "Pj" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Pk" = (
@@ -12732,8 +12267,7 @@
 /area/f13/tunnel)
 "Pm" = (
 /turf/open/floor/f13{
-	icon_state = "greendirtyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greendirtyfull"
 	},
 /area/f13/tunnel)
 "Pn" = (
@@ -12765,12 +12299,10 @@
 /area/f13/tunnel)
 "Pr" = (
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_0";
-	tag = "icon-pod_0"
+	icon_state = "pod_0"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Ps" = (
@@ -12781,8 +12313,7 @@
 "Pt" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "Pu" = (
@@ -12800,8 +12331,7 @@
 	name = "Followers Research Server"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Py" = (
@@ -12814,8 +12344,7 @@
 	pixel_y = -16
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "PB" = (
@@ -12827,8 +12356,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "PD" = (
@@ -12866,8 +12394,7 @@
 "PK" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/gibs{
-	icon_state = "gibtorso";
-	tag = "icon-gibtorso"
+	icon_state = "gibtorso"
 	},
 /obj/item/stack/sheet/animalhide/human,
 /obj/item/stack/sheet/animalhide/human,
@@ -12889,8 +12416,7 @@
 /area/f13/sewer)
 "PO" = (
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "PP" = (
@@ -12935,8 +12461,7 @@
 "PU" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -12984,8 +12509,7 @@
 /area/f13/tunnel)
 "Qd" = (
 /obj/structure/toilet{
-	dir = 4;
-	tag = "icon-toilet00 (EAST)"
+	dir = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -13053,8 +12577,7 @@
 "Qq" = (
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Qs" = (
@@ -13093,8 +12616,7 @@
 "Qy" = (
 /obj/structure/sink{
 	dir = 4;
-	pixel_x = 10;
-	tag = "icon-sink (EAST)"
+	pixel_x = 10
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood)
@@ -13102,8 +12624,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "QA" = (
@@ -13115,8 +12636,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/flashlight,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "QC" = (
@@ -13124,8 +12644,7 @@
 /area/f13/tunnel)
 "QD" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -13136,16 +12655,14 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "QF" = (
 /obj/structure/table/wood/settler,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "QG" = (
@@ -13160,8 +12677,7 @@
 	pixel_x = 32
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "QL" = (
@@ -13199,8 +12715,7 @@
 /area/f13/tunnel)
 "QT" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor6-old";
-	tag = "icon-floor6-old"
+	icon_state = "floor6-old"
 	},
 /obj/item/clothing/head/helmet/skull,
 /mob/living/simple_animal/hostile/poison/giant_spider,
@@ -13211,8 +12726,7 @@
 /area/f13/brotherhood)
 "QV" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -13262,8 +12776,7 @@
 /area/f13/tunnel)
 "Rb" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "Rc" = (
@@ -13273,19 +12786,16 @@
 /area/f13/caves)
 "Rd" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibmid1";
-	tag = "icon-gibmid1"
+	icon_state = "gibmid1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Re" = (
 /obj/structure/bodycontainer/crematorium,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "Rf" = (
@@ -13338,8 +12848,7 @@
 	},
 /obj/machinery/light/fo13colored/Red,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Rn" = (
@@ -13352,8 +12861,7 @@
 /obj/machinery/workbench/advanced,
 /obj/item/storage/part_replacer,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Rp" = (
@@ -13368,8 +12876,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib6-old";
-	pixel_x = 8;
-	tag = "icon-gib6-old"
+	pixel_x = 8
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -13385,8 +12892,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/warning,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Rt" = (
@@ -13409,15 +12915,13 @@
 /obj/structure/table,
 /obj/item/locked_box/weapon/ammo/tier2,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Ry" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Rz" = (
@@ -13432,8 +12936,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibmid3";
 	pixel_x = -10;
-	pixel_y = -2;
-	tag = "icon-gibmid3"
+	pixel_y = -2
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -13448,8 +12951,7 @@
 "RF" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "RG" = (
@@ -13491,8 +12993,7 @@
 /area/f13/tunnel)
 "RM" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibmid1";
-	tag = "icon-gibmid1"
+	icon_state = "gibmid1"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -13516,8 +13017,7 @@
 "RP" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "RQ" = (
@@ -13534,8 +13034,7 @@
 "RR" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "RS" = (
@@ -13585,15 +13084,13 @@
 	termtag = "Secret"
 	},
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "RZ" = (
 /obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Sa" = (
@@ -13619,16 +13116,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Sf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "Sg" = (
@@ -13645,8 +13140,7 @@
 	pixel_x = 20
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Sj" = (
@@ -13664,8 +13158,7 @@
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/circuitboard/machine/mining_equipment_vendor,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Sk" = (
@@ -13681,14 +13174,12 @@
 /obj/structure/rack,
 /obj/item/locked_box/armor/tier2,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Sm" = (
 /obj/structure/chair{
-	dir = 1;
-	tag = "icon-chair (NORTH)"
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
@@ -13738,8 +13229,7 @@
 /area/f13/tunnel)
 "Su" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibmid3";
-	tag = "icon-gibmid3"
+	icon_state = "gibmid3"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -13769,8 +13259,7 @@
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "SB" = (
@@ -13788,8 +13277,7 @@
 "SC" = (
 /obj/structure/chair/wood/modern{
 	dir = 8;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (WEST)"
+	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -13814,12 +13302,10 @@
 /area/f13/tunnel)
 "SH" = (
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_1";
-	tag = "icon-pod_1"
+	icon_state = "pod_1"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "SJ" = (
@@ -13836,14 +13322,12 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "SM" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib5-old";
-	tag = "icon-gib5-old"
+	icon_state = "gib5-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -13901,8 +13385,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "SW" = (
@@ -13919,16 +13402,14 @@
 "SY" = (
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "SZ" = (
 /obj/structure/table,
 /obj/item/locked_box/weapon/range/any_random,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Ta" = (
@@ -13938,8 +13419,7 @@
 "Tb" = (
 /obj/structure/chair/wood,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Tc" = (
@@ -13956,8 +13436,7 @@
 "Te" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Tf" = (
@@ -13973,8 +13452,7 @@
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
-	layer = 5;
-	tag = "icon-tall_grass_4"
+	layer = 5
 	},
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/light/small{
@@ -13993,8 +13471,7 @@
 /area/f13/tunnel)
 "Ti" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -14007,12 +13484,10 @@
 /area/f13/tunnel)
 "Tm" = (
 /obj/structure/showcase/horrific_experiment{
-	icon_state = "pod_0";
-	tag = "icon-pod_0"
+	icon_state = "pod_0"
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/clinic)
 "Tn" = (
@@ -14077,8 +13552,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Tt" = (
@@ -14088,8 +13562,7 @@
 /area/f13/tunnel)
 "Tu" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -14101,8 +13574,7 @@
 /area/f13/tunnel)
 "Tw" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -14199,14 +13671,12 @@
 "TM" = (
 /obj/item/locked_box/misc/garbage,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "TN" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -14251,8 +13721,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
-	pixel_x = -6;
-	tag = "icon-tall_grass_2"
+	pixel_x = -6
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -14319,15 +13788,13 @@
 	pixel_y = 23
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Ud" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "Ue" = (
@@ -14396,8 +13863,7 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
 "Up" = (
@@ -14430,8 +13896,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Uv" = (
@@ -14457,8 +13922,7 @@
 "Uy" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/tunnel)
 "Uz" = (
@@ -14469,8 +13933,7 @@
 "UA" = (
 /obj/machinery/vending/sovietsoda,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "UB" = (
@@ -14483,14 +13946,12 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "UE" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -14552,8 +14013,7 @@
 	icon_state = "mattress1"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "UO" = (
@@ -14571,8 +14031,7 @@
 /obj/structure/table/optable/abductor,
 /obj/effect/decal/remains/xeno/larva,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "UR" = (
@@ -14597,8 +14056,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/shoes/f13/raidertreads,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "UU" = (
@@ -14614,8 +14072,7 @@
 "UV" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
-	pixel_x = -15;
-	tag = "icon-sink_alt (EAST)"
+	pixel_x = -15
 	},
 /turf/open/floor/f13{
 	icon_state = "dark"
@@ -14634,8 +14091,7 @@
 	obj_damage = 100
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "UZ" = (
@@ -14655,12 +14111,10 @@
 /area/f13/building)
 "Vc" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Vd" = (
@@ -14691,8 +14145,7 @@
 "Vh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "Vi" = (
@@ -14709,8 +14162,7 @@
 "Vj" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Vk" = (
@@ -14724,8 +14176,7 @@
 /obj/effect/decal/remains/human,
 /obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
 "Vm" = (
@@ -14758,22 +14209,19 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/locked_box/misc/garbage,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "Vq" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore";
-	tag = "icon-gibbearcore"
+	icon_state = "gibbearcore"
 	},
 /obj/structure/handrail/g_central{
 	dir = 4;
 	pixel_x = 20
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Vr" = (
@@ -14788,8 +14236,7 @@
 /obj/item/clothing/suit/toggle/labcoat,
 /obj/item/clothing/glasses/red,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "Vt" = (
@@ -14830,8 +14277,7 @@
 "VA" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "VB" = (
@@ -14856,8 +14302,7 @@
 "VE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "VG" = (
@@ -14869,8 +14314,7 @@
 "VH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor4-old";
-	tag = "icon-floor4-old"
+	icon_state = "floor4-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -14919,8 +14363,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
 "VR" = (
@@ -14932,8 +14375,7 @@
 /area/f13/brotherhood)
 "VS" = (
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -14965,8 +14407,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/sewer)
 "VZ" = (
@@ -15016,8 +14457,7 @@
 /area/f13/bunker)
 "Wi" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbear1";
-	tag = "icon-gibbear1"
+	icon_state = "gibbear1"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
@@ -15058,8 +14498,7 @@
 "Ws" = (
 /mob/living/simple_animal/chick,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "Wt" = (
@@ -15086,8 +14525,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Wy" = (
@@ -15096,8 +14534,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
 "Wz" = (
@@ -15117,8 +14554,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "WD" = (
@@ -15129,8 +14565,7 @@
 /area/f13/brotherhood)
 "WE" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -15155,8 +14590,7 @@
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/f13/clinic)
 "WJ" = (
@@ -15167,25 +14601,21 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "WK" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "WL" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "WM" = (
@@ -15199,8 +14629,7 @@
 "WO" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheethos";
-	tag = "icon-sheethos"
+	icon_state = "sheethos"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -15212,8 +14641,7 @@
 	layer = 2
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "WR" = (
@@ -15224,8 +14652,7 @@
 /obj/structure/rack,
 /obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "WT" = (
@@ -15234,12 +14661,10 @@
 /area/f13/brotherhood)
 "WU" = (
 /obj/effect/decal/waste{
-	icon_state = "goo10";
-	tag = "icon-goo10"
+	icon_state = "goo10"
 	},
 /obj/machinery/shower{
-	dir = 8;
-	tag = "icon-shower (WEST)"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -15304,8 +14729,7 @@
 "Xj" = (
 /mob/living/simple_animal/chicken,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
 "Xk" = (
@@ -15327,15 +14751,13 @@
 /obj/item/clothing/under/f13/raiderharness,
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Xn" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "Xo" = (
@@ -15358,8 +14780,7 @@
 "Xq" = (
 /obj/item/locked_box/weapon/ammo/tier3,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "Xr" = (
@@ -15400,8 +14821,7 @@
 "Xx" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /obj/effect/decal/waste{
-	icon_state = "goo5";
-	tag = "icon-goo5"
+	icon_state = "goo5"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -15442,8 +14862,7 @@
 "XD" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
 "XE" = (
@@ -15474,12 +14893,10 @@
 	dir = 1
 	},
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "XK" = (
@@ -15502,8 +14919,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old";
 	pixel_x = 5;
-	pixel_y = 6;
-	tag = "icon-floor6-old"
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/locked_box/medical/drugs,
@@ -15518,8 +14934,7 @@
 	},
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "XS" = (
@@ -15556,8 +14971,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "XX" = (
@@ -15612,8 +15026,7 @@
 /area/f13/caves)
 "Yi" = (
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "Yj" = (
@@ -15628,12 +15041,10 @@
 /area/f13/tunnel)
 "Yl" = (
 /obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "Yn" = (
@@ -15644,8 +15055,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
 "Yq" = (
@@ -15658,8 +15068,7 @@
 "Ys" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Yt" = (
@@ -15685,8 +15094,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Yx" = (
@@ -15711,8 +15119,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "YC" = (
@@ -15753,8 +15160,7 @@
 "YM" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -15765,18 +15171,15 @@
 /area/f13/brotherhood)
 "YO" = (
 /turf/open/floor/f13{
-	icon_state = "redmark";
-	tag = "icon-redmark"
+	icon_state = "redmark"
 	},
 /area/f13/clinic)
 "YP" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
 "YQ" = (
@@ -15811,8 +15214,7 @@
 /area/f13/ncr)
 "YX" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "YZ" = (
@@ -15829,8 +15231,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
 "Zc" = (
@@ -15887,8 +15288,7 @@
 "Zk" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "Zl" = (
@@ -15907,15 +15307,13 @@
 /obj/structure/rack,
 /obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
 "Zp" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
-	layer = 5;
-	tag = "icon-tall_grass_4"
+	layer = 5
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -15946,14 +15344,12 @@
 "Zw" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
 "Zx" = (
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/clinic)
 "Zy" = (
@@ -15988,8 +15384,7 @@
 "ZA" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "ZB" = (
@@ -16001,21 +15396,18 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "greenrustyfull";
-	tag = "icon-greenrustyfull"
+	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
 "ZD" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "ZE" = (
 /obj/structure/toilet{
-	dir = 8;
-	tag = "icon-toilet00 (WEST)"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -16037,8 +15429,7 @@
 /area/f13/brotherhood)
 "ZG" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib1-old";
-	tag = "icon-gib1-old"
+	icon_state = "gib1-old"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -16077,8 +15468,7 @@
 /area/f13/tunnel)
 "ZN" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -16091,14 +15481,12 @@
 /obj/structure/table,
 /obj/item/kitchen/knife/butcher,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
 "ZR" = (
 /obj/effect/decal/waste{
-	icon_state = "goo8";
-	tag = "icon-goo8"
+	icon_state = "goo8"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -16106,8 +15494,7 @@
 /obj/structure/table,
 /obj/item/phone,
 /turf/open/floor/f13{
-	icon_state = "yellowdirtyfull";
-	tag = "icon-yellowdirtyfull"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
 "ZT" = (
@@ -52507,7 +51894,7 @@ QC
 QC
 GX
 Vh
-Io
+HA
 QC
 QC
 QC
@@ -67559,11 +66946,11 @@ NT
 NT
 Nr
 wj
-bq
-bq
-bq
-bq
-bq
+wj
+wj
+wj
+wj
+wj
 wj
 mP
 sU

@@ -503,7 +503,7 @@ I'm escaping into the very thing that brought all this trouble to my doorstep in
 I'll be in <u>[uppertext(num2hex(GLOB.hhmysteryRoomNumber, 0))]</u> (That will make sense to anyone who should know)
 I'm sorry that I must go like this. Maybe one day things will be different and it will be safe to return... maybe...
 Goodbye
-     _Doctor Hilbert_"}
+	 _Doctor Hilbert_"}
 
 /obj/item/paper/crumpled/robertsworkjournal
 	name = "Work Journal"

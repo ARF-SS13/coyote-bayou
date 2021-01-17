@@ -122,11 +122,11 @@
 /datum/crafting_recipe/food/grapetart
 	name = "Grape tart"
 	reqs = list(
-            /datum/reagent/consumable/milk = 5,
-            /datum/reagent/consumable/sugar = 5,
-            /obj/item/reagent_containers/food/snacks/pie/plain = 1,
-	        /obj/item/reagent_containers/food/snacks/grown/grapes = 3
-	        )
+			/datum/reagent/consumable/milk = 5,
+			/datum/reagent/consumable/sugar = 5,
+			/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+			/obj/item/reagent_containers/food/snacks/grown/grapes = 3
+			)
 	result = /obj/item/reagent_containers/food/snacks/pie/grapetart
 	subcategory = CAT_PIE
 

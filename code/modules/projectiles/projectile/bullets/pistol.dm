@@ -88,21 +88,21 @@
 
 // Needler
 /obj/item/projectile/bullet/needle
-    name = "needle"
-    icon_state = "cbbolt"
-    damage = 40
-    armour_penetration = 15
-    wound_bonus = 30
-    bare_wound_bonus = 30
+	name = "needle"
+	icon_state = "cbbolt"
+	damage = 40
+	armour_penetration = 15
+	wound_bonus = 30
+	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/needle/ap
-    name = "armour piercing needle"
-    damage = 32
-    armour_penetration = 30
-    wound_bonus = 60
-    bare_wound_bonus = -60
+	name = "armour piercing needle"
+	damage = 32
+	armour_penetration = 30
+	wound_bonus = 60
+	bare_wound_bonus = -60
 
 /obj/item/projectile/bullet/needle/ultra
-    name = "ultracite needle"
-    damage = 50
-    armour_penetration = 25
+	name = "ultracite needle"
+	damage = 50
+	armour_penetration = 25

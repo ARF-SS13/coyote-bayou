@@ -52,13 +52,13 @@
 	slice_path = null
 
 /obj/item/reagent_containers/food/snacks/meat/slab/squirrel
-    name = "squirrel meat"
-    desc = "Squirrel meat, the staple of many wasteland dishes."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
-    bitesize = 2
-    filling_color = "#FA8072"
-    cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
-    slice_path = null
+	name = "squirrel meat"
+	desc = "Squirrel meat, the staple of many wasteland dishes."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bitesize = 2
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
+	slice_path = null
 
 
 //WASTELAND STEAKS
@@ -82,10 +82,10 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10) //It wouldn't make sense for it to be worse than the normal
 
 /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
-    name = "squirrel steak"
-    desc = "A steak made from a small slab of squirrel meat. It is, unsurprisingly, small."
-    list_reagents = list(/datum/reagent/consumable/nutriment = 9)
-    bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
+	name = "squirrel steak"
+	desc = "A steak made from a small slab of squirrel meat. It is, unsurprisingly, small."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/mirelurk
 	name = "mirelurk roast"
@@ -284,47 +284,47 @@
 //WASTELAND EGGS
 
 /obj/item/reagent_containers/food/snacks/f13/deathclawegg
-    name = "Deathclaw Egg"
-    desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
-    icon_state = "deathclawegg"
-    bonus_reagents = list(/datum/reagent/toxin = 30)
-    list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
-    filling_color = "#F0E68C"
+	name = "Deathclaw Egg"
+	desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
+	icon_state = "deathclawegg"
+	bonus_reagents = list(/datum/reagent/toxin = 30)
+	list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
+	filling_color = "#F0E68C"
 
 //WASTELAND PREPARED MEALS
 
 /obj/item/reagent_containers/food/snacks/f13/molejerky
-    name = "Molerat Wondermeat"
-    desc = "Molerat meat cured with wonderglue in a metal container. Has a nutty aftertaste."
-    icon_state = "baconcookedb"
-    bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
-    list_reagents = list(/datum/reagent/consumable/nutriment = 12)
-    filling_color = "#B22222"
+	name = "Molerat Wondermeat"
+	desc = "Molerat meat cured with wonderglue in a metal container. Has a nutty aftertaste."
+	icon_state = "baconcookedb"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	filling_color = "#B22222"
 
 /obj/item/reagent_containers/food/snacks/f13/caravanlunch
-    name = "Caravan Lunch"
-    desc = "A collection of food conveniently assembled into a lunchbox with the radiation removed. Simple, fast and filling. Often eaten by merchants."
-    icon_state = "caravanlunch"
-    bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
-    list_reagents = list(/datum/reagent/consumable/nutriment = 50)
-    filling_color = "B#22222"
-    trash = /obj/item/crafting/lunchbox
+	name = "Caravan Lunch"
+	desc = "A collection of food conveniently assembled into a lunchbox with the radiation removed. Simple, fast and filling. Often eaten by merchants."
+	icon_state = "caravanlunch"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
+	filling_color = "B#22222"
+	trash = /obj/item/crafting/lunchbox
 
 /obj/item/reagent_containers/food/snacks/f13/wastelandwellington
-    name = "Wasteland Wellington"
-    desc = "Meat from wasteland critters wrapped in puffy pastry. Delicious, rich and certainly high class."
-    icon_state = "meatbun"
-    bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine = 5")
-    list_reagents = list(/datum/reagent/consumable/nutriment = 30)
-    filling_color = "B#22222"
+	name = "Wasteland Wellington"
+	desc = "Meat from wasteland critters wrapped in puffy pastry. Delicious, rich and certainly high class."
+	icon_state = "meatbun"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine = 5")
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
-    name = "Deathclaw Omelette"
-    desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
-    icon_state = "deathclawomlette"
-    bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, "omnizine" = 40, "dexalin" = 10)
-    list_reagents = list(/datum/reagent/consumable/nutriment = 60)
-    filling_color = "B#22222"
+	name = "Deathclaw Omelette"
+	desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
+	icon_state = "deathclawomlette"
+	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, "omnizine" = 40, "dexalin" = 10)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 60)
+	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/moleratstew
    name = "Molerat Stew"

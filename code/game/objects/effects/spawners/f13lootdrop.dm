@@ -366,25 +366,25 @@
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/random
-    name = "random armor loot"
-    lootcount = 1
+	name = "random armor loot"
+	lootcount = 1
 
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/armor/tier1 = 80,
-            /obj/effect/spawner/lootdrop/f13/armor/tier2 = 19,
-            /obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
-            )
+	loot = list(
+			/obj/effect/spawner/lootdrop/f13/armor/tier1 = 80,
+			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 19,
+			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
+			)
 
 /obj/effect/spawner/lootdrop/f13/armor/random_high
-    name = "high tier random armor loot"
-    lootcount = 1
+	name = "high tier random armor loot"
+	lootcount = 1
 
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/armor/tier2 = 59,
-            /obj/effect/spawner/lootdrop/f13/armor/tier3 = 30,
-            /obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
-            /obj/item/traumapack = 1 //one ring to rule them all
-            )
+	loot = list(
+			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 59,
+			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 30,
+			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
+			/obj/item/traumapack = 1 //one ring to rule them all
+			)
 
 /* ------------------------------------------------
    ---------------MEDICAL SPAWNERS-----------------
@@ -581,25 +581,25 @@
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random
-    name = "random melee loot"
-    lootcount = 1
+	name = "random melee loot"
+	lootcount = 1
 
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1 = 40,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2 = 30,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 20,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 10,
-            )
+	loot = list(
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1 = 40,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2 = 30,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 20,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 10,
+			)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high
-    name = "high tier random melee loot"
-    lootcount = 1
+	name = "high tier random melee loot"
+	lootcount = 1
 
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 45,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 35,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 20
-            )
+	loot = list(
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 45,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 35,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 20
+			)
 
 /* ------------------------------------------------
    -------------GUN WEAPON SPAWNERS----------------
@@ -794,7 +794,7 @@
 
 	var/loot7 = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/trail,
-			    //obj/item/ammo_box/tube/m44,
+				//obj/item/ammo_box/tube/m44,
 				/obj/item/ammo_box/tube/m44
 				)
 
@@ -939,28 +939,28 @@
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random
-    name = "random gun loot"
-    lootcount = 1
+	name = "random gun loot"
+	lootcount = 1
 
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 80,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 14,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 4,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 1,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 1
-            )
+	loot = list(
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 80,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 14,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 4,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 1,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 1
+			)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high
 	name = "high tier random gun loot"
 	lootcount = 1
 
 	loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 55,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 35,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 5,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 4,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/unique = 1
-            )
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 55,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 35,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 5,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 4,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/unique = 1
+			)
 
 /* ------------------------------------------------
    ------------WEAPON AMMO SPAWNERS----------------
@@ -992,7 +992,7 @@
 	loot = list(
 				/obj/item/ammo_box/magazine/m45,
 				/obj/item/ammo_box/a762,
-        		/obj/item/ammo_box/a308,
+				/obj/item/ammo_box/a308,
 				/obj/item/ammo_box/magazine/m10mm_adv,
 				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c38,
@@ -1120,11 +1120,11 @@
 
 /obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload) // This will spawn gatfruit sometimes.
 	loot = list(/obj/item/seeds/ambrosia,
-		            /obj/item/seeds/apple,
-		            /obj/item/seeds/banana,
-		            /obj/item/seeds/cotton,
-		            /obj/item/seeds/berry,
-		            /obj/item/seeds/poppy/broc,
+					/obj/item/seeds/apple,
+					/obj/item/seeds/banana,
+					/obj/item/seeds/cotton,
+					/obj/item/seeds/berry,
+					/obj/item/seeds/poppy/broc,
 					/obj/item/seeds/cabbage,
 					/obj/item/seeds/carrot,
 					/obj/item/seeds/carrot/parsnip,
@@ -1160,9 +1160,9 @@
 					/obj/item/seeds/xander,
 					/obj/item/seeds/mutfruit,
 					/obj/item/seeds/amanita,
-		            /obj/item/seeds/glowshroom,
-		            /obj/item/seeds/liberty,
-		            /obj/item/seeds/nettle,
+					/obj/item/seeds/glowshroom,
+					/obj/item/seeds/liberty,
+					/obj/item/seeds/nettle,
 					/obj/item/seeds/plump,
 					/obj/item/seeds/reishi,
 					/obj/item/seeds/cannabis,
@@ -1445,7 +1445,7 @@
 		/obj/item/advanced_crafting_components/conductors,
 		/obj/item/advanced_crafting_components/receiver,
 		/obj/item/advanced_crafting_components/assembly,
-	    /obj/item/advanced_crafting_components/alloys,
+		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/attachments/scope,
 		/obj/item/attachments/bullet_speed,
 		/obj/item/attachments/burst_improvement,
@@ -1512,7 +1512,7 @@
 		/obj/item/advanced_crafting_components/conductors,
 		/obj/item/advanced_crafting_components/receiver,
 		/obj/item/advanced_crafting_components/assembly,
-	    /obj/item/advanced_crafting_components/alloys,
+		/obj/item/advanced_crafting_components/alloys,
 	)
 
 /obj/effect/spawner/lootdrop/f13/attachments

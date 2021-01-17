@@ -474,10 +474,10 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
-    . = ..()
-    if(!istype(M))
-        return
-    M.apply_effect(300, EFFECT_IRRADIATE, 0)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 /obj/item/twohanded/sledgehammer/warmace
 	name = "war mace"

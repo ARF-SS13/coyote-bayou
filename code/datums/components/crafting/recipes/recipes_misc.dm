@@ -33,8 +33,8 @@
 	result = /obj/structure/guillotine
 	time = 150 // Building a functioning guillotine takes time
 	reqs = list(/obj/item/stack/sheet/plasteel = 3,
-		        /obj/item/stack/sheet/mineral/wood = 20,
-		        /obj/item/stack/cable_coil = 10)
+				/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -44,7 +44,7 @@
 	result = /obj/structure/femur_breaker
 	time = 150
 	reqs = list(/obj/item/stack/sheet/metal = 20,
-		        /obj/item/stack/cable_coil = 30)
+				/obj/item/stack/cable_coil = 30)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -144,7 +144,7 @@
 	result = /obj/structure/anvil/obtainable/table
 	time = 300
 	reqs = list(/obj/item/stack/sheet/metal = 4,
-		        /obj/item/stack/rods = 2)
+				/obj/item/stack/rods = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

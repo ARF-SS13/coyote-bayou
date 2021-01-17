@@ -62,9 +62,9 @@
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/combat/remnant
-    desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops. Worn by CAG or OS members."
-    icon_state = "remnant_helmet"
-    item_state = "remnant_helmet"
+	desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops. Worn by CAG or OS members."
+	icon_state = "remnant_helmet"
+	item_state = "remnant_helmet"
 
 /obj/item/clothing/head/soft/f13/enclave
 	name = "officer hat"

@@ -285,15 +285,15 @@
 	desc = "A small key designed to work with shock collars."
 /* I'LL COME BACK TO THIS MAYBE. TODAYS DATE IS 9th JAN 2021. IF I DIDN'T COME BACK TO THIS GET RID OF THE KEY STUFF
 /obj/item/key/scollar/attack(mob/living/M, mob/living/user)
-    if(!istype(M.get_item_by_slot(SLOT_NECK), /obj/item/electropack/shockcollar))
-        return ..()
-    var/obj/item/electropack/shockcollar/shockCollar = M.get_item_by_slot(SLOT_NECK)
-    shockCollar.lock = !shockCollar.lock
-    visible_message("<span class='warning'>[shockCollar] [shockCollar.lock ? "locks" : "unlocks"] around [M]'s neck.</span>")
-    if(shockCollar.lock)
-        ADD_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
-        return
-    REMOVE_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
+	if(!istype(M.get_item_by_slot(SLOT_NECK), /obj/item/electropack/shockcollar))
+		return ..()
+	var/obj/item/electropack/shockcollar/shockCollar = M.get_item_by_slot(SLOT_NECK)
+	shockCollar.lock = !shockCollar.lock
+	visible_message("<span class='warning'>[shockCollar] [shockCollar.lock ? "locks" : "unlocks"] around [M]'s neck.</span>")
+	if(shockCollar.lock)
+		ADD_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
+		return
+	REMOVE_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
 */
 /obj/item/key/bcollar
 	name = "Explosive Collar Key"
