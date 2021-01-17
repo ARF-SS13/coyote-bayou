@@ -159,9 +159,9 @@
 	return ..()
 
 /**
-  * Checks if a projectile should ricochet off of us. Projectiles get final say.
-  * [__DEFINES/projectiles.dm] for return values.
-  */
+ * Checks if a projectile should ricochet off of us. Projectiles get final say.
+ * [__DEFINES/projectiles.dm] for return values.
+ */
 /atom/proc/check_projectile_ricochet(obj/item/projectile/P)
 	return (flags_1 & DEFAULT_RICOCHET_1)? PROJECTILE_RICOCHET_YES : PROJECTILE_RICOCHET_NO
 
@@ -379,13 +379,13 @@
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
 /**
-  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
-  *
-  * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
-  * moments, while allowing people to manually double-examine to take a closer look
-  *
-  * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
-  */
+ * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
+ *
+ * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
+ * moments, while allowing people to manually double-examine to take a closer look
+ *
+ * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
+ */
 /atom/proc/examine_more(mob/user)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
@@ -631,10 +631,10 @@
 	return FALSE
 
 /**
-  * Respond to a electric bolt action on our item
-  *
-  * Default behaviour is to return, we define here to allow for cleaner code later on
-  */
+ * Respond to a electric bolt action on our item
+ *
+ * Default behaviour is to return, we define here to allow for cleaner code later on
+ */
 /atom/proc/zap_act(power, zap_flags, shocked_targets)
 	return
 
@@ -893,13 +893,13 @@
 	return
 
 /**
-  * Called after a shuttle is loaded **from map template initially**.
-  *
-  * @params
-  * * port - Mobile port/shuttle
-  * * dock - Stationary dock the shuttle's at
-  * * idnum - ID number of the shuttle
-  */
+ * Called after a shuttle is loaded **from map template initially**.
+ *
+ * @params
+ * * port - Mobile port/shuttle
+ * * dock - Stationary dock the shuttle's at
+ * * idnum - ID number of the shuttle
+ */
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
 	return
 
@@ -965,15 +965,15 @@
 		target.log_talk(message, message_type, tag="[tag] from [key_name(source)]", log_globally=FALSE)
 
 /**
-  * Log a combat message in the attack log
-  *
-  * Arguments:
-  * * atom/user - argument is the actor performing the action
-  * * atom/target - argument is the target of the action
-  * * what_done - is a verb describing the action (e.g. punched, throwed, kicked, etc.)
-  * * atom/object - is a tool with which the action was made (usually an item)
-  * * addition - is any additional text, which will be appended to the rest of the log line
-  */
+ * Log a combat message in the attack log
+ *
+ * Arguments:
+ * * atom/user - argument is the actor performing the action
+ * * atom/target - argument is the target of the action
+ * * what_done - is a verb describing the action (e.g. punched, throwed, kicked, etc.)
+ * * atom/object - is a tool with which the action was made (usually an item)
+ * * addition - is any additional text, which will be appended to the rest of the log line
+ */
 /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	var/ssource = key_name(user)
 	var/starget = key_name(target)
@@ -998,19 +998,19 @@
 		target.log_message(reverse_message, LOG_ATTACK, color="orange", log_globally=FALSE)
 
 /**
-  * log_wound() is for when someone is *attacked* and suffers a wound. Note that this only captures wounds from damage, so smites/forced wounds aren't logged, as well as demotions like cuts scabbing over
-  *
-  * Note that this has no info on the attack that dealt the wound: information about where damage came from isn't passed to the bodypart's damaged proc. When in doubt, check the attack log for attacks at that same time
-  * TODO later: Add logging for healed wounds, though that will require some rewriting of healing code to prevent admin heals from spamming the logs. Not high priority
-  *
-  * Arguments:
-  * * victim- The guy who got wounded
-  * * suffered_wound- The wound, already applied, that we're logging. It has to already be attached so we can get the limb from it
-  * * dealt_damage- How much damage is associated with the attack that dealt with this wound.
-  * * dealt_wound_bonus- The wound_bonus, if one was specified, of the wounding attack
-  * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
-  * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
-  */
+ * log_wound() is for when someone is *attacked* and suffers a wound. Note that this only captures wounds from damage, so smites/forced wounds aren't logged, as well as demotions like cuts scabbing over
+ *
+ * Note that this has no info on the attack that dealt the wound: information about where damage came from isn't passed to the bodypart's damaged proc. When in doubt, check the attack log for attacks at that same time
+ * TODO later: Add logging for healed wounds, though that will require some rewriting of healing code to prevent admin heals from spamming the logs. Not high priority
+ *
+ * Arguments:
+ * * victim- The guy who got wounded
+ * * suffered_wound- The wound, already applied, that we're logging. It has to already be attached so we can get the limb from it
+ * * dealt_damage- How much damage is associated with the attack that dealt with this wound.
+ * * dealt_wound_bonus- The wound_bonus, if one was specified, of the wounding attack
+ * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
+ * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
+ */
 /proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, dealt_wound_bonus, dealt_bare_wound_bonus, base_roll)
 	if(QDELETED(victim) || !suffered_wound)
 		return
@@ -1079,19 +1079,19 @@
 	custom_materials = SSmaterials.FindOrCreateMaterialCombo(materials, multiplier)
 
 /**
-  * Returns true if this atom has gravity for the passed in turf
-  *
-  * Sends signals COMSIG_ATOM_HAS_GRAVITY and COMSIG_TURF_HAS_GRAVITY, both can force gravity with
-  * the forced gravity var
-  *
-  * Gravity situations:
-  * * No gravity if you're not in a turf
-  * * No gravity if this atom is in is a space turf
-  * * Gravity if the area it's in always has gravity
-  * * Gravity if there's a gravity generator on the z level
-  * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
-  * * otherwise no gravity
-  */
+ * Returns true if this atom has gravity for the passed in turf
+ *
+ * Sends signals COMSIG_ATOM_HAS_GRAVITY and COMSIG_TURF_HAS_GRAVITY, both can force gravity with
+ * the forced gravity var
+ *
+ * Gravity situations:
+ * * No gravity if you're not in a turf
+ * * No gravity if this atom is in is a space turf
+ * * Gravity if the area it's in always has gravity
+ * * Gravity if there's a gravity generator on the z level
+ * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
+ * * otherwise no gravity
+ */
 /atom/proc/has_gravity(turf/T)
 	if(!T || !isturf(T))
 		T = get_turf(src)
@@ -1125,10 +1125,10 @@
 	return SSmapping.level_trait(T.z, ZTRAIT_GRAVITY)
 
 /**
-  * Causes effects when the atom gets hit by a rust effect from heretics
-  *
-  * Override this if you want custom behaviour in whatever gets hit by the rust
-  */
+ * Causes effects when the atom gets hit by a rust effect from heretics
+ *
+ * Override this if you want custom behaviour in whatever gets hit by the rust
+ */
 /atom/proc/rust_heretic_act()
 	return
 

@@ -192,9 +192,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 
 
 /**
-  * Returns the base area the target is located in if there is one.
-  * Alternatively, returns the area as is.
-  */
+ * Returns the base area the target is located in if there is one.
+ * Alternatively, returns the area as is.
+ */
 /proc/get_base_area(atom/target)
 	var/area/A = get_area(target)
 	if(A?.base_area)
@@ -202,9 +202,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 	return A
 
 /**
-  * Returns either null, or a list containing every sub area associated with our base area.
-  * If include_base is TRUE, the base area will also be added to the return list.
-  */
+ * Returns either null, or a list containing every sub area associated with our base area.
+ * If include_base is TRUE, the base area will also be added to the return list.
+ */
 /proc/get_sub_areas(atom/target, include_base = TRUE)
 	var/area/A = get_area(target)
 	if(!A)
@@ -218,11 +218,11 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		. += A.sub_areas
 
 /**
-  * Proc used for purposes similar to get_areas_turfs(), but aimed to include associated areas.
-  * Only accepts area instances and paths for the first arg, no text strings.
-  * Returns a list of all turfs found in the sub areas (including the base's if include_base is TRUE)
-  * and located in a z level matching target_z, or anywhere if target_z is 0
-  */
+ * Proc used for purposes similar to get_areas_turfs(), but aimed to include associated areas.
+ * Only accepts area instances and paths for the first arg, no text strings.
+ * Returns a list of all turfs found in the sub areas (including the base's if include_base is TRUE)
+ * and located in a z level matching target_z, or anywhere if target_z is 0
+ */
 
 /proc/get_sub_areas_turfs(area/A, target_z = 0, include_base = TRUE)
 	var/list/contents = get_sub_areas_contents(A, include_base)
@@ -231,9 +231,9 @@ GLOBAL_LIST_INIT(typecache_powerfailure_safe_areas, typecacheof(/area/engine/eng
 		if(target_z == 0 || target_z == T.z)
 			. += T
 /**
-  * Simple proc that returns a sum of all contents from every sub area,
-  * Think of the above but for all contents, not just turfs, and without target z.
-  */
+ * Simple proc that returns a sum of all contents from every sub area,
+ * Think of the above but for all contents, not just turfs, and without target z.
+ */
 
 /proc/get_sub_areas_contents(area/A, include_base = TRUE)
 	if(ispath(A))

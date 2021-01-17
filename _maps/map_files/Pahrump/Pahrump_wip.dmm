@@ -4291,10 +4291,7 @@
 /area/f13/tunnel)
 "apk" = (
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/pda/heads/hos,
 /obj/item/storage/briefcase,
@@ -4323,10 +4320,7 @@
 "app" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/f13/bosformsilver_f,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/clothing/head/f13/boscap,
@@ -4792,10 +4786,7 @@
 /area/f13/followers)
 "aqW" = (
 /obj/item/clothing/head/f13/boscap,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/f13/bosformgold_m,
 /obj/item/clothing/shoes/laceup/bos,
 /obj/item/clothing/under/f13/bosformgold_f,
@@ -4990,26 +4981,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "arA" = (
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/shoes/laceup/bos,
 /obj/item/clothing/shoes/laceup/bos,
 /obj/item/clothing/shoes/laceup/bos,
@@ -5029,10 +5005,7 @@
 /area/f13/followers)
 "arD" = (
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/clothing/under/f13/bosformgold_f,
 /obj/item/clothing/under/f13/bosformgold_m,
@@ -5325,10 +5298,7 @@
 /obj/structure/rack,
 /obj/item/clothing/under/assistantformal,
 /obj/item/clothing/under/blacktango,
-/obj/item/clothing/under/f13/greendress{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/under/f13/greendress,
 /obj/item/clothing/under/f13/pinkdress,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -5463,10 +5433,7 @@
 /obj/structure/rack,
 /obj/item/clothing/under/f13/worn,
 /obj/item/clothing/under/sundress,
-/obj/item/clothing/under/f13/greendress{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/under/f13/greendress,
 /obj/item/clothing/under/f13/bluedress,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6493,10 +6460,7 @@
 	icon_state = "blackpants";
 	pixel_y = -10
 	},
-/obj/item/clothing/under/f13/greendress{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/under/f13/greendress,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "awl" = (
@@ -7528,8 +7492,7 @@
 /area/f13/village)
 "azJ" = (
 /obj/machinery/shower{
-	pixel_y = 17;
-	step_y = 0
+	pixel_y = 17
 	},
 /obj/structure/decoration/vent,
 /obj/machinery/light{
@@ -7898,14 +7861,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"aAJ" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2";
-	step_x = 0;
-	step_y = 0
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "aAK" = (
 /obj/item/ammo_casing/c10mm,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -13624,14 +13579,6 @@
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
-"aSj" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_3";
-	step_x = 0;
-	step_y = 0
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "aSk" = (
 /obj/machinery/deepfryer,
 /turf/open/floor/f13/wood,
@@ -16443,9 +16390,7 @@
 "baU" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/mechanical{
-	step_x = 0
-	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating/f13,
 /area/f13/followers)
 "baV" = (
@@ -58026,7 +57971,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -59057,7 +59002,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aAm
@@ -59564,10 +59509,10 @@ aat
 abz
 aat
 aat
-aAJ
+aeI
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -61116,7 +61061,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aae
@@ -61367,7 +61312,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -65522,7 +65467,7 @@ aat
 aat
 aat
 aat
-aSj
+acf
 aat
 aat
 aat
@@ -65745,7 +65690,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 agy
@@ -66560,7 +66505,7 @@ aat
 aat
 aat
 aat
-aSj
+acf
 aat
 aat
 aat
@@ -67801,7 +67746,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -68052,7 +67997,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -68554,7 +68499,7 @@ abN
 aiu
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -68600,7 +68545,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aXF
@@ -68875,7 +68820,7 @@ ahF
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -69402,7 +69347,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -69843,7 +69788,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -69908,7 +69853,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -70156,7 +70101,7 @@ acv
 acv
 ads
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -70943,7 +70888,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -71179,7 +71124,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -71706,7 +71651,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -73322,7 +73267,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -73517,7 +73462,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 agy
@@ -73559,7 +73504,7 @@ aae
 aae
 aae
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -74337,7 +74282,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -74530,13 +74475,13 @@ aJD
 aKw
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -75313,7 +75258,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 abP
 abP
 abP
@@ -75373,7 +75318,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -75816,14 +75761,14 @@ aaQ
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -76846,7 +76791,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -76854,7 +76799,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 abP
 alc
@@ -80543,7 +80488,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -81832,7 +81777,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -82598,7 +82543,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -84138,7 +84083,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -85939,7 +85884,7 @@ aat
 aat
 aat
 aat
-aAJ
+aeI
 aat
 aat
 aat
@@ -88257,7 +88202,7 @@ aat
 aat
 aat
 aat
-aSj
+acf
 aat
 aat
 aae

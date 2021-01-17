@@ -25,11 +25,11 @@
 	pixel_y = rand(-4, 4)
 
 /**
-  * Called on the glass sheet upon solar construction (duh):
-  * Different glass sheets can modify different stas/vars, such as obj_integrity or efficiency
-  * and possibly extra effects if you wish to code them.
-  * Keep in mind the solars' max_integrity is set equal to the obj_integrity later,
-  * so you won't have to do so here.
-  */
+ * Called on the glass sheet upon solar construction (duh):
+ * Different glass sheets can modify different stas/vars, such as obj_integrity or efficiency
+ * and possibly extra effects if you wish to code them.
+ * Keep in mind the solars' max_integrity is set equal to the obj_integrity later,
+ * so you won't have to do so here.
+ */
 /obj/item/stack/sheet/proc/on_solar_construction(/obj/machinery/power/solar/S)
 	return

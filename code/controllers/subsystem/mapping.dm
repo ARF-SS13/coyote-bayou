@@ -594,9 +594,9 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		seedStation() //I'm sure we can trust everyone not to insert a 1x1 rooms which loads a landmark which loads a landmark which loads a la...
 
 /**
-  * Generates an obfuscated but constant id for an original id for cases where you don't want players codediving for an id.
-  * WARNING: MAKE SURE PLAYERS ARE NOT ABLE TO ACCESS THIS. To save performance, it's just secret + an incrementing number. Very guessable if you know what the secret is.
-  */
+ * Generates an obfuscated but constant id for an original id for cases where you don't want players codediving for an id.
+ * WARNING: MAKE SURE PLAYERS ARE NOT ABLE TO ACCESS THIS. To save performance, it's just secret + an incrementing number. Very guessable if you know what the secret is.
+ */
 /datum/controller/subsystem/mapping/proc/get_obfuscated_id(original, id_type = "GENERAL")
 	if(!original)
 		return	//no.

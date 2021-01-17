@@ -140,10 +140,10 @@
 	return
 
 /**
-  * Called after something followable has been spawned by an event
-  * Provides ghosts a follow link to an atom if possible
-  * Only called once.
-  */
+ * Called after something followable has been spawned by an event
+ * Provides ghosts a follow link to an atom if possible
+ * Only called once.
+ */
 /datum/round_event/proc/announce_to_ghosts(atom/atom_of_interest)
 	if(control.alert_observers)
 		if (atom_of_interest)

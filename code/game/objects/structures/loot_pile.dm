@@ -1,7 +1,7 @@
  /*
-  * Loot piles structures, somewhat inspired from Polaris 13 ones but without the one search per pile ckey/mind restriction
-  * because the actual code is located its own element and has enough variables already. the piles themselves merely cosmetical.
-  */
+ * Loot piles structures, somewhat inspired from Polaris 13 ones but without the one search per pile ckey/mind restriction
+ * because the actual code is located its own element and has enough variables already. the piles themselves merely cosmetical.
+ */
 /obj/structure/loot_pile
 	name = "pile of junk"
 	desc = "Lots of junk lying around. They say one man's trash is another man's treasure."
@@ -18,15 +18,15 @@
 	var/list/loot
 
  /*
-  * Associated values in this list are not weights but numbers of times the kery can be rolled
-  * before being removed from ALL piles with same kind. This is why I wanted 'scavenging' to be an element and not a component.
-  */
+ * Associated values in this list are not weights but numbers of times the kery can be rolled
+ * before being removed from ALL piles with same kind. This is why I wanted 'scavenging' to be an element and not a component.
+ */
 	var/list/unique_loot
 
  /*
-  * used for restrictions such as "one per mind", "one per ckey". Depending on the setting, these can be either limited to
-  * the current pile or shared throughout all atoms attached to this element.
-  */
+ * used for restrictions such as "one per mind", "one per ckey". Depending on the setting, these can be either limited to
+ * the current pile or shared throughout all atoms attached to this element.
+ */
 	var/loot_restriction = NO_LOOT_RESTRICTION
 	var/maximum_loot_per_player = 1
 

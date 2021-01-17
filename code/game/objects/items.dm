@@ -967,8 +967,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return TRUE
 
 /**
-  * Sets our slowdown and updates equipment slowdown of any mob we're equipped on.
-  */
+ * Sets our slowdown and updates equipment slowdown of any mob we're equipped on.
+ */
 /obj/item/proc/set_slowdown(new_slowdown)
 	slowdown = new_slowdown
 	if(CHECK_BITFIELD(item_flags, IN_INVENTORY))
@@ -998,35 +998,35 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 
 
-  * tryEmbed() is for when you want to try embedding something without dealing with the damage + hit messages of calling hitby() on the item while targetting the target.
+ * tryEmbed() is for when you want to try embedding something without dealing with the damage + hit messages of calling hitby() on the item while targetting the target.
 
 
 
-  *
+ *
 
 
 
-  * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
+ * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
 
 
 
-  *
+ *
 
 
 
-  * Arguments:
+ * Arguments:
 
 
 
-  * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
+ * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
 
 
 
-  * * forced- Do we want this to go through 100%?
+ * * forced- Do we want this to go through 100%?
 
 
 
-  */
+ */
 
 
 

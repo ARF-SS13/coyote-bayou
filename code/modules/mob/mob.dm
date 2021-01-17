@@ -108,24 +108,24 @@
 	to_chat(src, msg)
 
 /**
-  * Generate a visible message from this atom
-  *
-  * Show a message to all player mobs who sees this atom
-  *
-  * Show a message to the src mob (if the src is a mob)
-  *
-  * Use for atoms performing visible actions
-  *
-  * message is output to anyone who can see, e.g. "The [src] does something!"
-  *
-  * Vars:
-  * * self_message (optional) is what the src mob sees e.g. "You do something!"
-  * * blind_message (optional) is what blind people will hear e.g. "You hear something!"
-  * * vision_distance (optional) define how many tiles away the message can be seen.
-  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
-  * * target (optional) is the other mob involved with the visible message. For example, the attacker in many combat messages.
-  * * target_message (optional) is what the target mob will see e.g. "[src] does something to you!"
-  */
+ * Generate a visible message from this atom
+ *
+ * Show a message to all player mobs who sees this atom
+ *
+ * Show a message to the src mob (if the src is a mob)
+ *
+ * Use for atoms performing visible actions
+ *
+ * message is output to anyone who can see, e.g. "The [src] does something!"
+ *
+ * Vars:
+ * * self_message (optional) is what the src mob sees e.g. "You do something!"
+ * * blind_message (optional) is what blind people will hear e.g. "You hear something!"
+ * * vision_distance (optional) define how many tiles away the message can be seen.
+ * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
+ * * target (optional) is the other mob involved with the visible message. For example, the attacker in many combat messages.
+ * * target_message (optional) is what the target mob will see e.g. "[src] does something to you!"
+ */
 /atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, ignored_mobs, mob/target, target_message)
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -170,16 +170,16 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 /**
-  * Show a message to all mobs in earshot of this atom
-  *
-  * Use for objects performing audible actions
-  *
-  * vars:
-  * * message is the message output to anyone who can hear.
-  * * deaf_message (optional) is what deaf people will see.
-  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
-  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
-  */
+ * Show a message to all mobs in earshot of this atom
+ *
+ * Use for objects performing audible actions
+ *
+ * vars:
+ * * message is the message output to anyone who can hear.
+ * * deaf_message (optional) is what deaf people will see.
+ * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
+ * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
+ */
 /atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, ignored_mobs)
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -194,17 +194,17 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
-  * Show a message to all mobs in earshot of this one
-  *
-  * This would be for audible actions by the src mob
-  *
-  * vars:
-  * * message is the message output to anyone who can hear.
-  * * self_message (optional) is what the src mob hears.
-  * * deaf_message (optional) is what deaf people will see.
-  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
-  * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
-  */
+ * Show a message to all mobs in earshot of this one
+ *
+ * This would be for audible actions by the src mob
+ *
+ * vars:
+ * * message is the message output to anyone who can hear.
+ * * self_message (optional) is what the src mob hears.
+ * * deaf_message (optional) is what deaf people will see.
+ * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
+ * * ignored_mobs (optional) doesn't show any message to any given mob in the list.
+ */
 /mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, list/ignored_mobs)
 	. = ..()
 	if(self_message)
@@ -286,12 +286,12 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	SEND_SIGNAL(src, COMSIG_MOB_FOV_VIEW, .)
 
 /**
-  * Examine a mob
-  *
-  * mob verbs are faster than object verbs. See
-  * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
-  * for why this isn't atom/verb/examine()
-  */
+ * Examine a mob
+ *
+ * mob verbs are faster than object verbs. See
+ * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
+ * for why this isn't atom/verb/examine()
+ */
 /mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
 	set name = "Examine"
 	set category = "IC"
@@ -329,12 +329,12 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	LAZYREMOVE(client.recent_examines, A)
 
 /**
-  * handle_eye_contact() is called when we examine() something. If we examine an alive mob with a mind who has examined us in the last second within 5 tiles, we make eye contact!
-  *
-  * Note that if either party has their face obscured, the other won't get the notice about the eye contact
-  * Also note that examine_more() doesn't proc this or extend the timer, just because it's simpler this way and doesn't lose much.
-  *	The nice part about relying on examining is that we don't bother checking visibility, because we already know they were both visible to each other within the last second, and the one who triggers it is currently seeing them
-  */
+ * handle_eye_contact() is called when we examine() something. If we examine an alive mob with a mind who has examined us in the last second within 5 tiles, we make eye contact!
+ *
+ * Note that if either party has their face obscured, the other won't get the notice about the eye contact
+ * Also note that examine_more() doesn't proc this or extend the timer, just because it's simpler this way and doesn't lose much.
+ *	The nice part about relying on examining is that we don't bother checking visibility, because we already know they were both visible to each other within the last second, and the one who triggers it is currently seeing them
+ */
 /mob/proc/handle_eye_contact(mob/living/examined_mob)
 	return
 
@@ -611,10 +611,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	. += get_spells_for_statpanel(mob_spell_list)
 
 /**
-  * Convert a list of spells into a displyable list for the statpanel
-  *
-  * Shows charge and other important info
-  */
+ * Convert a list of spells into a displyable list for the statpanel
+ *
+ * Shows charge and other important info
+ */
 /mob/proc/get_spells_for_statpanel(list/spells)
 	var/list/L = list()
 	for(var/obj/effect/proc_holder/spell/S in spells)
@@ -1059,9 +1059,9 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 			. += I.slowdown
 
 /**
-  * Mostly called by doUnEquip()
-  * Like item dropped() on mob side.
-  */
+ * Mostly called by doUnEquip()
+ * Like item dropped() on mob side.
+ */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
 

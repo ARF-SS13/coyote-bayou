@@ -259,11 +259,11 @@
 		to_chat(owner, "<span class='notice'>[src] hums, its internal magic supply restored.</span>")
 
 /**
-  * Rallies your army of stickmen to whichever target the user is pointing.
-  * Should the user be on harm intent and the target be a living mob that's not the user or a fellow stickman,
-  * said target will be added to a list of foes which the stickmen will gladly dispose regardless of faction.
-  * This is designed so stickmen will move toward whatever you point at even when you don't want to, that's the downside.
-  */
+ * Rallies your army of stickmen to whichever target the user is pointing.
+ * Should the user be on harm intent and the target be a living mob that's not the user or a fellow stickman,
+ * said target will be added to a list of foes which the stickmen will gladly dispose regardless of faction.
+ * This is designed so stickmen will move toward whatever you point at even when you don't want to, that's the downside.
+ */
 /datum/action/item_action/stickmen/proc/rally(mob/source, atom/A)
 	var/turf/T = get_turf(A)
 	var/list/surrounding_turfs = block(locate(T.x - 1, T.y - 1, T.z), locate(T.x + 1, T.y + 1, T.z))

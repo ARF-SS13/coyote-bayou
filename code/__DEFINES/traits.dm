@@ -226,8 +226,8 @@
 #define TRAIT_SWIMMING			"swimming"			//only applied by /datum/element/swimming, for checking
 
 /**
-  * COMBAT MODE/SPRINT MODE TRAITS
-  */
+ * COMBAT MODE/SPRINT MODE TRAITS
+ */
 
 /// Prevents combat mode from being active.
 #define TRAIT_COMBAT_MODE_LOCKED		"combatmode_locked"

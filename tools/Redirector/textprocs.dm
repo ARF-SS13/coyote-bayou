@@ -4,7 +4,7 @@
 
 	NOTE: The below functions are part of BYOND user Deadron's "TextHandling" library.
 		[ http://www.byond.com/developer/Deadron/TextHandling ]
- */
+*/
 
 
 proc

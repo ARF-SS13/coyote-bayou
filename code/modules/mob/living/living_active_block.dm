@@ -63,8 +63,8 @@
 			. -= 8
 
 /**
-  * Proc called by keybindings to toggle active blocking.
-  */
+ * Proc called by keybindings to toggle active blocking.
+ */
 /mob/living/proc/keybind_toggle_active_blocking()
 	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
 		return keybind_stop_active_blocking()
@@ -72,8 +72,8 @@
 		return keybind_start_active_blocking()
 
 /**
-  * Proc called by keybindings to start active blocking.
-  */
+ * Proc called by keybindings to start active blocking.
+ */
 /mob/living/proc/keybind_start_active_blocking()
 	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
 		return FALSE
@@ -112,8 +112,8 @@
 	active_block_start(I)
 
 /**
-  * Gets the first item we can that can block, but if that fails, default to active held item.COMSIG_ENABLE_COMBAT_MODE
-  */
+ * Gets the first item we can that can block, but if that fails, default to active held item.COMSIG_ENABLE_COMBAT_MODE
+ */
 /mob/living/proc/find_active_block_item()
 	var/obj/item/held = get_active_held_item()
 	if(!held?.can_active_block())
@@ -124,8 +124,8 @@
 		return held
 
 /**
-  * Proc called by keybindings to stop active blocking.
-  */
+ * Proc called by keybindings to stop active blocking.
+ */
 /mob/living/proc/keybind_stop_active_blocking()
 	combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)
@@ -133,14 +133,14 @@
 	return TRUE
 
 /**
-  * Returns if we can actively block.
-  */
+ * Returns if we can actively block.
+ */
 /obj/item/proc/can_active_block()
 	return block_parry_data && (item_flags & ITEM_CAN_BLOCK)
 
 /**
-  * Calculates FINAL ATTACK DAMAGE after mitigation
-  */
+ * Calculates FINAL ATTACK DAMAGE after mitigation
+ */
 /obj/item/proc/active_block_calculate_final_damage(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	var/datum/block_parry_data/data = get_block_parry_data()
 	var/absorption = data.attack_type_list_scan(data.block_damage_absorption_override, attack_type)
@@ -252,19 +252,19 @@
 	block_return[BLOCK_RETURN_ACTIVE_BLOCK_DAMAGE_MITIGATED] = damage - active_block_calculate_final_damage(owner, object, damage, attack_text, attack_type, armour_penetration, attacker, def_zone, final_block_chance, block_return)
 
 /**
-  * Gets the block direction bitflags of what we can block.
-  */
+ * Gets the block direction bitflags of what we can block.
+ */
 /obj/item/proc/blockable_directions()
 	var/datum/block_parry_data/data = get_block_parry_data()
 	return data.can_block_directions
 
 /**
-  * Checks if we can block from a specific direction from our direction.
-  *
-  * @params
-  * * our_dir - our direction.
-  * * their_dir - their direction. Must be a single direction, or NONE for an attack from the same tile. This is incoming direction.
-  */
+ * Checks if we can block from a specific direction from our direction.
+ *
+ * @params
+ * * our_dir - our direction.
+ * * their_dir - their direction. Must be a single direction, or NONE for an attack from the same tile. This is incoming direction.
+ */
 /obj/item/proc/can_block_direction(our_dir, their_dir)
 	their_dir = turn(their_dir, 180)
 	if(our_dir != NORTH)
@@ -275,12 +275,12 @@
 	return (DIR2BLOCKDIR(their_dir) & blockable_directions())
 
 /**
-  * can_block_direction but for "compound" directions to check all of them and return the number of directions that were blocked.
-  *
-  * @params
-  * * our_dir - our direction.
-  * * their_dirs - list of their directions as we cannot use bitfields here.
-  */
+ * can_block_direction but for "compound" directions to check all of them and return the number of directions that were blocked.
+ *
+ * @params
+ * * our_dir - our direction.
+ * * their_dirs - list of their directions as we cannot use bitfields here.
+ */
 /obj/item/proc/can_block_directions_multiple(our_dir, list/their_dirs)
 	. = FALSE
 	for(var/i in their_dirs)

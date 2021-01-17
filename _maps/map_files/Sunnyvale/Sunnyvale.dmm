@@ -4884,7 +4884,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "Bot Control APC";
-	pixel_z = 25
+	pixel_y = 25
 	},
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
@@ -32694,8 +32694,7 @@
 "bNU" = (
 /obj/machinery/firealarm{
 	name = "INTRUDER ALERT";
-	pixel_x = 1;
-	pixel_z = 0
+	pixel_x = 1
 	},
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
@@ -36353,10 +36352,7 @@
 /area/f13/brotherhood)
 "bYl" = (
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/pda/heads/hos,
 /obj/item/storage/briefcase,
@@ -36397,10 +36393,7 @@
 "bYp" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/f13/bosformsilver_f,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/clothing/head/f13/boscap,
@@ -37513,10 +37506,7 @@
 "jwD" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/f13/bosformsilver_f,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/clothing/head/f13/boscap,
@@ -38524,10 +38514,7 @@
 "qJm" = (
 /obj/item/clothing/under/f13/bosformsilver_m,
 /obj/item/clothing/shoes/laceup/bos,
-/obj/item/clothing/gloves/color/white/bos{
-	step_x = 0;
-	step_y = 0
-	},
+/obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/f13/bosformsilver_f,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/clothing/head/f13/boscap,

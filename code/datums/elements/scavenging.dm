@@ -1,10 +1,10 @@
  /*
-  * Scavenging element. Its scope shouldn't elude your imagination.
-  * Basically loot piles that can be searched through for some items.
-  * In my opinion, these are more engaging than normal maintenance loot spawners.
-  * The loot doesn't have to be strictly made of items and objects, you could also use it to invoke some "events"
-  * such as mice, rats, an halloween spook, persistent relics, traps, etcetera, go wild.
-  */
+ * Scavenging element. Its scope shouldn't elude your imagination.
+ * Basically loot piles that can be searched through for some items.
+ * In my opinion, these are more engaging than normal maintenance loot spawners.
+ * The loot doesn't have to be strictly made of items and objects, you could also use it to invoke some "events"
+ * such as mice, rats, an halloween spook, persistent relics, traps, etcetera, go wild.
+ */
 /datum/element/scavenging
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
 	id_arg_index = 3

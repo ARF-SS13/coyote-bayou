@@ -1,7 +1,7 @@
 /**
-  * Skill holder datums
-  * All procs are tied to the mind, since they are always expected to have a skill holder anyway.
-  */
+ * Skill holder datums
+ * All procs are tied to the mind, since they are always expected to have a skill holder anyway.
+ */
 /datum/skill_holder
 	/// Our list of skills and values. Lazylist. Associative. Keys are datum typepaths to the skill.
 	var/list/skills
@@ -34,8 +34,8 @@
 	src.owner = owner
 
 /**
-  * Grabs the value of a skill.
-  */
+ * Grabs the value of a skill.
+ */
 /datum/mind/proc/get_skill_value(skill, apply_modifiers = TRUE)
 	if(!ispath(skill))
 		CRASH("Invalid get_skill_value call. Use typepaths.")		//until a time when we somehow need text ids for dynamic skills, I'm enforcing this.
@@ -50,8 +50,8 @@
 			. = M.apply_modifier(., skill, skill_holder, MODIFIER_TARGET_VALUE)
 
 /**
-  * Grabs the level of a skill. Only supported by skills with tiers or levels.
-  */
+ * Grabs the level of a skill. Only supported by skills with tiers or levels.
+ */
 /datum/mind/proc/get_skill_level(skill, apply_modifiers = TRUE, round = FALSE)
 	if(!ispath(skill, /datum/skill))
 		CRASH("Invalid get_skill_value call. Use skill typepaths.")	//until a time when we somehow need text ids for dynamic skills, I'm enforcing this.
@@ -67,8 +67,8 @@
 		. = SANITIZE_SKILL_LEVEL(skill, round ? round(., 1) : .)
 
 /**
-  * Grabs our affinity for a skill. !!This is a multiplier!!
-  */
+ * Grabs our affinity for a skill. !!This is a multiplier!!
+ */
 /datum/mind/proc/get_skill_affinity(skill, apply_modifiers = TRUE)
 	. = 1
 	if(!ispath(skill, /datum/skill))
@@ -84,8 +84,8 @@
 
 
 /**
-  * Sets the value of a skill.
-  */
+ * Sets the value of a skill.
+ */
 /datum/mind/proc/set_skill_value(skill, value, silent = FALSE)
 	if(!ispath(skill, /datum/skill))
 		CRASH("Invalid set_skill_value call. Use skill typepaths.")	//until a time when we somehow need text ids for dynamic skills, I'm enforcing this.
@@ -99,8 +99,8 @@
 	return FALSE
 
 /**
-  * Boosts a skill to a value if not aobve
-  */
+ * Boosts a skill to a value if not aobve
+ */
 /datum/mind/proc/boost_skill_value_to(skill, value, silent = FALSE, current)
 	current = current || get_skill_value(skill, FALSE)
 	if(!IS_SKILL_VALUE_GREATER(skill, current, value))
@@ -109,9 +109,9 @@
 	return TRUE
 
 /**
-  * Automatic skill increase, multiplied by skill affinity if existing.
-  * Only works if skill is numerical or levelled..
-  */
+ * Automatic skill increase, multiplied by skill affinity if existing.
+ * Only works if skill is numerical or levelled..
+ */
 /datum/mind/proc/auto_gain_experience(skill, value, maximum, silent = FALSE)
 	if(!ispath(skill, /datum/skill))
 		CRASH("Invalid set_skill_value call. Use skill typepaths.")
@@ -126,12 +126,12 @@
 	boost_skill_value_to(skill, target_value, silent, current)
 
 /**
-  * Generic value modifier proc that uses one skill.
-  * Args:
-  * * value : the value to modify, may be a delay, damage, probability.
-  * * threshold : The difficulty of the action, in short. Refer to __DEFINES/skills/defines.dm for the defines.
-  * * modifier_is_multiplier : wheter the modifier is a multiplier or a divisor.
-  */
+ * Generic value modifier proc that uses one skill.
+ * Args:
+ * * value : the value to modify, may be a delay, damage, probability.
+ * * threshold : The difficulty of the action, in short. Refer to __DEFINES/skills/defines.dm for the defines.
+ * * modifier_is_multiplier : wheter the modifier is a multiplier or a divisor.
+ */
 /datum/mind/proc/action_skill_mod(skill, value, threshold, modifier_is_multiplier = TRUE)
 	var/datum/skill/S = GLOB.skill_datums[skill]
 	if(!S)
@@ -152,15 +152,15 @@
 	. = modifier_is_multiplier ? value*mod : value/mod
 
 /**
-  * Generic value modifier proc that uses several skills, intended for items.
-  * Args:
-  * * item/I : the item used in this action. its used_skills list variable contains the skills exercised with it.
-  * * value : the value to modify, may be a delay, damage, probability.
-  * * traits : the required traits each skill (either in I.used_skills or the skill datum skill_traits) must have to influence
-  * * 			the value.
-  * * bad_traits : the opposite of the above.
-  * * modifier_is_multiplier : wheter the modifier is a multiplier or a divisor.
-  */
+ * Generic value modifier proc that uses several skills, intended for items.
+ * Args:
+ * * item/I : the item used in this action. its used_skills list variable contains the skills exercised with it.
+ * * value : the value to modify, may be a delay, damage, probability.
+ * * traits : the required traits each skill (either in I.used_skills or the skill datum skill_traits) must have to influence
+ * * 			the value.
+ * * bad_traits : the opposite of the above.
+ * * modifier_is_multiplier : wheter the modifier is a multiplier or a divisor.
+ */
 /datum/mind/proc/item_action_skills_mod(obj/item/I, value, traits, bad_traits, modifier_is_multiplier = TRUE)
 	. = value
 	var/sum = 0
