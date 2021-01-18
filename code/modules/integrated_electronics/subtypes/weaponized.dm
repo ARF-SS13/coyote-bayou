@@ -42,7 +42,7 @@
 	qdel(installed_gun)
 	return ..()
 
-/obj/item/integrated_circuit/weaponized/weapon_firing/attackby(var/obj/O, var/mob/user)
+/obj/item/integrated_circuit/weaponized/weapon_firing/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/gun/energy))
 		var/obj/item/gun/gun = O
 		if(!gun.can_circuit)
@@ -71,7 +71,7 @@
 	else
 		..()
 
-/obj/item/integrated_circuit/weaponized/weapon_firing/attack_self(var/mob/user)
+/obj/item/integrated_circuit/weaponized/weapon_firing/attack_self(mob/user)
 	if(installed_gun)
 		installed_gun.forceMove(drop_location())
 		to_chat(user, "<span class='notice'>You slide \the [installed_gun] out of the firing mechanism.</span>")
@@ -170,7 +170,7 @@
 	detach_grenade()
 	return ..()
 
-/obj/item/integrated_circuit/weaponized/grenade/attackby(var/obj/item/grenade/G, var/mob/user)
+/obj/item/integrated_circuit/weaponized/grenade/attackby(obj/item/grenade/G, mob/user)
 	if(istype(G))
 		if(attached_grenade)
 			to_chat(user, "<span class='warning'>There is already a grenade attached!</span>")
@@ -181,7 +181,7 @@
 	else
 		return ..()
 
-/obj/item/integrated_circuit/weaponized/grenade/attack_self(var/mob/user)
+/obj/item/integrated_circuit/weaponized/grenade/attack_self(mob/user)
 	if(attached_grenade)
 		user.visible_message("<span class='warning'>\The [user] removes \an [attached_grenade] from \the [src]!</span>", "<span class='notice'>You remove \the [attached_grenade] from \the [src].</span>")
 		user.put_in_hands(attached_grenade)

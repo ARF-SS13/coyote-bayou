@@ -249,7 +249,7 @@
 	itemqualitymax = 0
 
 
-/obj/structure/anvil/obtainable/table/do_shaping(mob/user, var/qualitychange)
+/obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
 	if(prob(5))
 		to_chat(user, "The [src] breaks under the strain!")
 		take_damage(max_integrity)

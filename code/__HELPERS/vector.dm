@@ -4,7 +4,7 @@
 	var/x = 0
 	var/y = 0
 
-/datum/vector/New(var/x, var/y)
+/datum/vector/New(x, y)
 	src.x = x
 	src.y = y
 

@@ -114,7 +114,7 @@
 	arrest_emote = "ARREST_TYPE wevel THREAT_LEVEL scwumbwag CRIMINAL in LOCATION. Nya."
 	ignore_sound = TRUE //we instead make the stunned person fire the nya emote
 
-/datum/beepsky_fashion/cat/stun_attack(var/mob/living/carbon/C) //makes a fake table under you on hit, makes cat people nya when hit
+/datum/beepsky_fashion/cat/stun_attack(mob/living/carbon/C) //makes a fake table under you on hit, makes cat people nya when hit
 	if(iscatperson(C))
 		C.emote("nya")
 	var/turf/target_turf = get_turf(C)

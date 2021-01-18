@@ -425,7 +425,7 @@
 		boots.attack_self(wearer)
 	if(istype(helmet) && !(item_flags & NODROP) && helmet.on) //If we have an (active) headlamp and unsealed the suit, we deactivate the headlamp.
 		helmet.toggle_light(wearer)
-	//for(var/obj/item/piece in list(helmet,boots,gloves,chest))
+	//for(obj/item/piece in list(helmet,boots,gloves,chest))
 	//	if(!(item_flags & NODROP))
 	//		piece.flags &= ~(STOPSPRESSUREDMAGE | AIRTIGHT)
 	//	else

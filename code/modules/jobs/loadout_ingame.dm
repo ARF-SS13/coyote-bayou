@@ -62,7 +62,7 @@
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 
-/obj/item/loadout_token/attack_self(var/mob/user)
+/obj/item/loadout_token/attack_self(mob/user)
 	user.select_loadout()
 
 /****************

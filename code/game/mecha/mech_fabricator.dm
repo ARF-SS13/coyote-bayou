@@ -533,7 +533,7 @@
 
 	return data
 
-/obj/machinery/mecha_part_fabricator/ui_act(action, var/list/params)
+/obj/machinery/mecha_part_fabricator/ui_act(action, list/params)
 	if(..())
 		return TRUE
 

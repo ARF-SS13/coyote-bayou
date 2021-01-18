@@ -72,7 +72,7 @@
 	var/mob/original_character
 
 
-/datum/mind/New(var/key)
+/datum/mind/New(key)
 	skill_holder = new(src)
 	src.key = key
 	soulOwner = src

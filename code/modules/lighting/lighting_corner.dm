@@ -117,7 +117,7 @@
 	return
 
 
-/datum/lighting_corner/Destroy(var/force)
+/datum/lighting_corner/Destroy(force)
 	if (!force)
 		return QDEL_HINT_LETMELIVE
 

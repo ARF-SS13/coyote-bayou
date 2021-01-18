@@ -9,7 +9,7 @@
 	action_icon_state = "alien_whisper"
 	action_background_icon_state = "bg_ling"
 
-/obj/effect/proc_holder/changeling/hivemind_comms/sting_action(var/mob/living/user)
+/obj/effect/proc_holder/changeling/hivemind_comms/sting_action(mob/living/user)
 	if (HAS_TRAIT(user, CHANGELING_HIVEMIND_MUTE))
 		to_chat(user, "<span class='warning'>The poison in the air hinders our ability to interact with the hivemind.</span>")
 		return
@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(hivemind_bank)
 	action_icon_state = "ling_upload"
 	action_background_icon_state = "bg_ling"
 
-/obj/effect/proc_holder/changeling/hivemind_upload/sting_action(var/mob/living/user)
+/obj/effect/proc_holder/changeling/hivemind_upload/sting_action(mob/living/user)
 	if (HAS_TRAIT(user, CHANGELING_HIVEMIND_MUTE))
 		to_chat(user, "<span class='warning'>The poison in the air hinders our ability to interact with the hivemind.</span>")
 		return

@@ -55,7 +55,7 @@
 		return FALSE
 	return TRUE
 
-/datum/round_event_control/wizard/canSpawnEvent(var/players_amt, var/gamemode)
+/datum/round_event_control/wizard/canSpawnEvent(players_amt, gamemode)
 	if(istype(SSticker.mode, /datum/game_mode/dynamic))
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if (locate(/datum/dynamic_ruleset/midround/from_ghosts/wizard) in mode.executed_rules)

@@ -139,7 +139,7 @@
 	melee_damage_lower = 22.5 + (0.5 * consumed_buff)
 	melee_damage_upper = 22.5 + (1 * consumed_buff)
 
-/mob/living/simple_animal/slaughter/bloodcrawl_swallow(var/mob/living/victim)
+/mob/living/simple_animal/slaughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
 		// Keep their corpse so rescue is possible
 		consumed_mobs += victim
@@ -245,7 +245,7 @@
 	melee_damage_lower -= 0.5 // JAPES
 	melee_damage_upper += 1
 
-/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(var/mob/living/victim)
+/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
 		// Keep their corpse so rescue is possible
 		consumed_mobs += victim

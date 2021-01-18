@@ -137,7 +137,7 @@
 	cast_time = 40
 	rite_cast_sound = 'sound/magic/blind.ogg'
 
-/datum/clockwork_rite/advancement/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/advancement/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	var/obj/item/organ/O = locate(/obj/item/organ) in T
 	if(!O)
 		return FALSE
@@ -161,7 +161,7 @@
 	cast_time = 80
 	rite_cast_sound = 'sound/magic/staff_healing.ogg'
 
-/datum/clockwork_rite/treat_wounds/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/treat_wounds/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	if(!target)
 		return FALSE
 	if(!target.all_wounds.len)
@@ -185,7 +185,7 @@
 	limit = 4
 	rite_cast_sound = 'sound/magic/clockwork/fellowship_armory.ogg'
 
-/datum/clockwork_rite/summon_claw/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/summon_claw/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	. = ..()
 	if(!.)
 		return FALSE

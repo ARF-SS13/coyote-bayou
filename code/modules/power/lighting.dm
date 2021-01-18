@@ -914,7 +914,7 @@
 		if(prob(damage_amount * 10))
 			flicker(damage_amount*rand(1,3))
 
-/obj/machinery/light/flicker(var/amount = rand(10, 20))
+/obj/machinery/light/flicker(amount = rand(10, 20))
 	set waitfor = 0
 	if(flickering)
 		return

@@ -61,7 +61,7 @@
 	remove_cached_overlay("padlock")
 
 
-/obj/structure/simple_door/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/simple_door/bullet_act(obj/item/projectile/Proj)
 	..()
 
 /obj/structure/simple_door/Bumped(atom/user)

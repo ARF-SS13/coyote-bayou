@@ -30,7 +30,7 @@
 
 	//var/split = round(amount/trays.len)
 
-	//for(var/obj/machinery/hydroponics/H in trays)
+	//for(obj/machinery/hydroponics/H in trays)
 		//var/datum/reagents/temp_reagents = new /datum/reagents()
 		//temp_reagents.my_atom = H
 
@@ -734,7 +734,7 @@
 	var/obj/item/reagent_containers/glass/beaker/current_beaker
 
 
-/obj/item/integrated_circuit/input/beaker_connector/attackby(var/obj/item/reagent_containers/I, var/mob/living/user)
+/obj/item/integrated_circuit/input/beaker_connector/attackby(obj/item/reagent_containers/I, mob/living/user)
 	//Check if it truly is a reagent container
 	if(!istype(I,/obj/item/reagent_containers/glass/beaker))
 		to_chat(user,"<span class='warning'>The [I.name] doesn't seem to fit in here.</span>")

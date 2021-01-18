@@ -690,7 +690,7 @@ obj/item/integrated_circuit/atmospherics/connector/portableConnectorReturnAir()
 /obj/item/integrated_circuit/input/tank_slot/process()
 	push_pressure()
 
-/obj/item/integrated_circuit/input/tank_slot/attackby(var/obj/item/tank/internals/I, var/mob/living/user)
+/obj/item/integrated_circuit/input/tank_slot/attackby(obj/item/tank/internals/I, mob/living/user)
 	//Check if it truly is a tank
 	if(!istype(I,/obj/item/tank/internals))
 		to_chat(user,"<span class='warning'>The [I.name] doesn't seem to fit in here.</span>")
