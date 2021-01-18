@@ -908,7 +908,7 @@
 			to_chat(wearer, "<span class='warning'>The [source] has damaged your [dam_module.interface_name]!</span>")
 	dam_module.deactivate()
 
-/obj/item/rig/proc/malfunction_check(var/mob/living/carbon/human/user)
+/obj/item/rig/proc/malfunction_check(mob/living/carbon/human/user)
 	if(malfunction_delay)
 		if(offline)
 			to_chat(user, "<span class='danger'>The suit is completely unresponsive.</span>")
@@ -917,7 +917,7 @@
 		return 1
 	return 0
 
-/obj/item/rig/proc/ai_can_move_suit(var/mob/user, var/check_user_module = 0, var/check_for_ai = 0)
+/obj/item/rig/proc/ai_can_move_suit(mob/user, check_user_module = 0, check_for_ai = 0)
 
 	if(check_for_ai)
 		if(!(locate(/obj/item/rig_module/ai_container) in contents))
@@ -1029,7 +1029,7 @@
 	var/obj/item/rig/T = get_rig()
 	return T.do_emergency_release(usr)
 
-/obj/item/rig/proc/do_emergency_release(var/mob/living/user)
+/obj/item/rig/proc/do_emergency_release(mob/living/user)
 	if(!can_touch(user, wearer) || !has_emergency_release)
 		return can_touch(user,wearer)
 	usr.visible_message("<span class='warning'>[user] starts activating \the [src] emergency seals release!</span>")

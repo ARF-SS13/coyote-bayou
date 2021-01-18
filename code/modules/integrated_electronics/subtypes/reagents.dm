@@ -680,7 +680,7 @@
 	addtimer(CALLBACK(src, /obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles, water_particles), 2)
 
 //This whole proc is a loop
-/obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles(var/list/particles, var/repetitions=0)
+/obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles(list/particles, repetitions=0)
 	//Check if there's anything in here first
 	if(!particles || particles.len == 0)
 		return

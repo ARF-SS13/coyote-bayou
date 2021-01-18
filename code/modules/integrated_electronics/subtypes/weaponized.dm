@@ -202,7 +202,7 @@
 		message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
 
 // These procs do not relocate the grenade, that's the callers responsibility
-/obj/item/integrated_circuit/weaponized/grenade/proc/attach_grenade(var/obj/item/grenade/G)
+/obj/item/integrated_circuit/weaponized/grenade/proc/attach_grenade(obj/item/grenade/G)
 	attached_grenade = G
 	G.forceMove(src)
 	desc += " \An [attached_grenade] is attached to it!"
@@ -335,7 +335,7 @@
 	else
 		activate_pin(3)
 
-/obj/item/integrated_circuit/weaponized/proc/attempt_stun(var/mob/living/L,var/stunforce = 70) //Copied from stunbaton code.
+/obj/item/integrated_circuit/weaponized/proc/attempt_stun(mob/living/L,stunforce = 70) //Copied from stunbaton code.
 
 	if(!L || !isliving(L))
 		return 0

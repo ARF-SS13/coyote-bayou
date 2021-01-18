@@ -30,7 +30,7 @@
 	//BOT = the name of the bot (this can be used on any of the emotes)
 	//THREAT_LEVEL = the level of the threat detected (can be used on arrest_emote and infraction)
 
-/datum/beepsky_fashion/proc/get_overlay(var/dir)
+/datum/beepsky_fashion/proc/get_overlay(dir)
 	if(icon_file && obj_icon_state)
 		var/image/beepsky_overlay = image(icon_file, obj_icon_state, dir = dir)
 		beepsky_overlay.alpha = obj_alpha

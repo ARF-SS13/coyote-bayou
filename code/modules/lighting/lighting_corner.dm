@@ -69,7 +69,7 @@
 		active = TRUE
 
 // God that was a mess, now to do the rest of the corner code! Hooray!
-/datum/lighting_corner/proc/update_lumcount(var/delta_r, var/delta_g, var/delta_b)
+/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b)
 
 	if ((abs(delta_r)+abs(delta_g)+abs(delta_b)) == 0)
 		return

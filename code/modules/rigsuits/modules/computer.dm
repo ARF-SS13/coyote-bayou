@@ -154,7 +154,7 @@
 	eject_ai()
 	..()
 
-/obj/item/rig_module/ai_container/proc/eject_ai(var/mob/user)
+/obj/item/rig_module/ai_container/proc/eject_ai(mob/user)
 
 	if(ai_card)
 		if(istype(ai_card, /obj/item/aicard))
@@ -175,7 +175,7 @@
 
 
 
-/obj/item/rig_module/ai_container/proc/integrate_ai(var/obj/item/ai,var/mob/user)
+/obj/item/rig_module/ai_container/proc/integrate_ai(obj/item/ai,mob/user)
 	if(!ai) return
 
 	// The ONLY THING all the different AI systems have in common is that they all store the mob inside an item.
@@ -288,7 +288,7 @@
 		return 1
 	return 0
 
-/obj/item/rig_module/datajack/proc/load_data(var/incoming_data)
+/obj/item/rig_module/datajack/proc/load_data(incoming_data)
 
 	if(islist(incoming_data))
 		for(var/entry in incoming_data)
@@ -452,7 +452,7 @@
 
 	return 1
 
-/obj/item/rig_module/power_sink/proc/drain_complete(var/mob/living/M)
+/obj/item/rig_module/power_sink/proc/drain_complete(mob/living/M)
 
 	if(!interfaced_with)
 		to_chat(if(M) M, "<font color='blue'><b>Total power drained:</b> [round(total_power_drained/1000)]kJ.</font>")

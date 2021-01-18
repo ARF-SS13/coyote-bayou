@@ -1,4 +1,4 @@
- /*
+/**
  * Scavenging element. Its scope shouldn't elude your imagination.
  * Basically loot piles that can be searched through for some items.
  * In my opinion, these are more engaging than normal maintenance loot spawners.

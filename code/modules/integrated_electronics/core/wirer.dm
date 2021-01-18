@@ -18,7 +18,7 @@
 /obj/item/integrated_electronics/wirer/update_icon_state()
 	icon_state = "wirer-[mode]"
 
-/obj/item/integrated_electronics/wirer/proc/wire(var/datum/integrated_io/io, mob/user)
+/obj/item/integrated_electronics/wirer/proc/wire(datum/integrated_io/io, mob/user)
 	if(!io.holder.assembly)
 		to_chat(user, "<span class='warning'>\The [io.holder] needs to be secured inside an assembly first.</span>")
 		return

@@ -87,7 +87,7 @@
 	else
 		. += "[icon_state]_door"
 
-/obj/structure/closet/supplypod/proc/setStyle(chosenStyle, var/duringInit = FALSE) //Used to give the sprite an icon state, name, and description
+/obj/structure/closet/supplypod/proc/setStyle(chosenStyle, duringInit = FALSE) //Used to give the sprite an icon state, name, and description
 	if (!duringInit && style == chosenStyle) //Check if the input style is already the same as the pod's style. This happens in centcom_podlauncher, and as such we set the style to STYLE_CENTCOM.
 		setStyle(STYLE_CENTCOM) //We make sure to not check this during initialize() so the standard supplypod works correctly.
 		return

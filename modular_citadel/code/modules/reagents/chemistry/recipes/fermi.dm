@@ -6,7 +6,7 @@
 	return
 
 //Called when reaction STOP_PROCESSING
-/datum/chemical_reaction/proc/FermiFinish(datum/reagents/holder, var/atom/my_atom, reactVol)
+/datum/chemical_reaction/proc/FermiFinish(datum/reagents/holder, atom/my_atom, reactVol)
 	if(clear_conversion == REACTION_CLEAR_IMPURE | REACTION_CLEAR_INVERSE)
 		for(var/id in results)
 			var/datum/reagent/R = my_atom.reagents.has_reagent(id)
@@ -27,7 +27,7 @@
 				R.purity = 1
 
 //Called when temperature is above a certain threshold, or if purity is too low.
-/datum/chemical_reaction/proc/FermiExplode(datum/reagents/R0, var/atom/my_atom, volume, temp, pH, Exploding = FALSE)
+/datum/chemical_reaction/proc/FermiExplode(datum/reagents/R0, atom/my_atom, volume, temp, pH, Exploding = FALSE)
 	if (Exploding == TRUE)
 		return
 

@@ -35,7 +35,7 @@
 /datum/vector/proc/is_integer()
 	return ISINTEGER(x) && ISINTEGER(y)
 
-/atom/movable/proc/vector_translate(var/datum/vector/V, var/delay)
+/atom/movable/proc/vector_translate(datum/vector/V, delay)
 	var/turf/T = get_turf(src)
 	var/turf/destination = locate(T.x + V.x, T.y + V.y, z)
 	var/datum/vector/V_norm = V.duplicate()
@@ -49,9 +49,9 @@
 		T = get_turf(src)
 		sleep(delay + world.tick_lag) // Shortest possible time to sleep
 
-/atom/proc/get_translated_turf(var/datum/vector/V)
+/atom/proc/get_translated_turf(datum/vector/V)
 	var/turf/T = get_turf(src)
 	return locate(T.x + V.x, T.y + V.y, z)
 
-/proc/atoms2vector(var/atom/A, var/atom/B)
+/proc/atoms2vector(atom/A, atom/B)
 	return new /datum/vector((B.x - A.x), (B.y - A.y)) // Vector from A -> B

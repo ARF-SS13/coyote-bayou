@@ -1,5 +1,5 @@
 // ported from BeeStation
-proc/msg2url(var/msg as text)
+proc/msg2url(msg as text)
 	var/list/conversions = list(
 	"\[fwslash]"="/",
 	"\[colon]"=",",
@@ -14,7 +14,7 @@ proc/msg2url(var/msg as text)
 		msg = replacetext(msg, conversions[c], c)
 	return msg
 	
-proc/discordsendmsg(var/channel as text, var/msg as text)
+proc/discordsendmsg(channel as text, msg as text)
 	if(!CONFIG_GET(flag/using_discord))
 		return
 	msg = msg2url(msg)

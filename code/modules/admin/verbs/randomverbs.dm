@@ -81,7 +81,7 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_mod_antag_rep(client/C in GLOB.clients, var/operation)
+/client/proc/cmd_admin_mod_antag_rep(client/C in GLOB.clients, operation)
 	set category = "Special Verbs"
 	set name = "Modify Antagonist Reputation"
 
@@ -1511,7 +1511,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	divine_wrath.preparePixelProjectile(target, source_turf)
 	divine_wrath.fire()
 
-/client/proc/punish_log(var/whom, var/punishment)
+/client/proc/punish_log(whom, punishment)
 	var/msg = "[key_name_admin(usr)] punished [key_name_admin(whom)] with [punishment]."
 	message_admins(msg)
 	admin_ticket_log(whom, msg)

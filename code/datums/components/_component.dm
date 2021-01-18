@@ -229,7 +229,7 @@
 		signal_procs -= target
 
 
-/datum/proc/RemoveComponentByType(var/path)
+/datum/proc/RemoveComponentByType(path)
 	for (var/datum/component/dc in datum_components)
 		if (istype(dc, path))
 			var/datum/old_parent = dc.parent

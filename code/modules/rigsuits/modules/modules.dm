@@ -243,7 +243,7 @@
 	..()
 	src.module = module
 
-/stat_rig_module/proc/AddHref(var/list/href_list)
+/stat_rig_module/proc/AddHref(list/href_list)
 	return
 
 /stat_rig_module/proc/CanUse()

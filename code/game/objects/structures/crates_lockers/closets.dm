@@ -146,7 +146,7 @@
 			return FALSE
 	return TRUE
 
-/obj/structure/closet/proc/can_lock(mob/living/user, var/check_access = TRUE) //set check_access to FALSE if you only need to check if a locker has a functional lock rather than access
+/obj/structure/closet/proc/can_lock(mob/living/user, check_access = TRUE) //set check_access to FALSE if you only need to check if a locker has a functional lock rather than access
 	if(!secure)
 		return FALSE
 	if(broken)
@@ -174,7 +174,7 @@
 	"<span class='notice'>You [locked ? null : "un"]lock [src].</span>")
 	update_icon()
 
-/obj/structure/closet/proc/dump_contents(var/override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
+/obj/structure/closet/proc/dump_contents(override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
 	var/atom/L = drop_location()
 	for(var/atom/movable/AM in src)
 		if(AM == lockerelectronics && override)

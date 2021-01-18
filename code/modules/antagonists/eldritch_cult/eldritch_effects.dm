@@ -164,7 +164,7 @@
  *
  * Use this whenever you want to add someone to the list
  */
-/datum/reality_smash_tracker/proc/AddMind(var/datum/mind/M)
+/datum/reality_smash_tracker/proc/AddMind(datum/mind/M)
 	RegisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN,.proc/ReworkNetwork)
 	targets |= M
 	_Generate()
@@ -178,7 +178,7 @@
  *
  * Use this whenever you want to remove someone from the list
  */
-/datum/reality_smash_tracker/proc/RemoveMind(var/datum/mind/M)
+/datum/reality_smash_tracker/proc/RemoveMind(datum/mind/M)
 	UnregisterSignal(M.current,COMSIG_MOB_CLIENT_LOGIN)
 	targets -= M
 	for(var/obj/effect/reality_smash/RS in smashes)
@@ -268,7 +268,7 @@
 	new /obj/effect/broken_illusion(drop_location())
 
 ///Makes the mind able to see this effect
-/obj/effect/reality_smash/proc/AddMind(var/datum/mind/cultie)
+/obj/effect/reality_smash/proc/AddMind(datum/mind/cultie)
 	minds |= cultie
 	if(cultie.current.client)
 		cultie.current.client.images |= img
@@ -276,7 +276,7 @@
 
 
 ///Makes the mind not able to see this effect
-/obj/effect/reality_smash/proc/RemoveMind(var/datum/mind/cultie)
+/obj/effect/reality_smash/proc/RemoveMind(datum/mind/cultie)
 	minds -= cultie
 	if(cultie.current.client)
 		cultie.current.client.images -= img

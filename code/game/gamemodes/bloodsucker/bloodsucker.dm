@@ -254,7 +254,7 @@
 	// WHEN YOU DELETE THE ABOVE: Remove the 3 second timer on converting the vassal too.
 	return FALSE
 
-/datum/game_mode/proc/make_vassal(var/mob/living/target, var/datum/mind/creator)
+/datum/game_mode/proc/make_vassal(mob/living/target, datum/mind/creator)
 	if(!can_make_vassal(target, creator))
 		return FALSE
 	// Make Vassal

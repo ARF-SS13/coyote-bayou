@@ -199,7 +199,7 @@ SUBSYSTEM_DEF(persistence)
 		return
 	antag_rep = json_decode(json)
 
-/datum/controller/subsystem/persistence/proc/LoadSavedVote(var/ckey)
+/datum/controller/subsystem/persistence/proc/LoadSavedVote(ckey)
 	var/json_file = file("data/player_saves/[copytext(ckey,1,2)]/[ckey]/SavedVotes.json")
 	if(!fexists(json_file))
 		return
@@ -418,7 +418,7 @@ SUBSYSTEM_DEF(persistence)
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
 
-/datum/controller/subsystem/persistence/proc/CollectStoryteller(var/datum/game_mode/dynamic/mode)
+/datum/controller/subsystem/persistence/proc/CollectStoryteller(datum/game_mode/dynamic/mode)
 	saved_storytellers.len = 3
 	saved_storytellers[3] = saved_storytellers[2]
 	saved_storytellers[2] = saved_storytellers[1]
@@ -430,7 +430,7 @@ SUBSYSTEM_DEF(persistence)
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
 
-/datum/controller/subsystem/persistence/proc/CollectRulesets(var/datum/game_mode/dynamic/mode)
+/datum/controller/subsystem/persistence/proc/CollectRulesets(datum/game_mode/dynamic/mode)
 	saved_dynamic_rules[3] = saved_dynamic_rules[2]
 	saved_dynamic_rules[2] = saved_dynamic_rules[1]
 	saved_dynamic_rules[1] = list()

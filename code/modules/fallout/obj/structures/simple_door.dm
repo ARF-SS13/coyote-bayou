@@ -43,7 +43,7 @@
 		padlock = null
 	return ..()
 
-/obj/structure/simple_door/proc/attach_padlock(var/obj/item/lock_construct/P, force = FALSE, mob/user)
+/obj/structure/simple_door/proc/attach_padlock(obj/item/lock_construct/P, force = FALSE, mob/user)
 	if(!force && (!can_hold_padlock || !P ))
 		return FALSE
 	if(padlock)

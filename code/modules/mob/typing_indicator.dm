@@ -64,7 +64,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 
 	var/static/mutable_appearance/typing_indicator
 
-/mob/proc/set_typing_indicator(var/state)
+/mob/proc/set_typing_indicator(state)
 	if(!typing_indicator)
 		typing_indicator = mutable_appearance('icons/mob/talk.dmi', "normal_typing", FLY_LAYER)
 	if(client && !stat)

@@ -740,7 +740,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(mind)
 		return mind.grab_ghost(force = force)
 
-/mob/proc/notify_ghost_cloning(var/message = "Someone is trying to revive you. Re-enter your corpse if you want to be revived!", var/sound = 'sound/effects/genetics.ogg', var/atom/source = null, flashwindow)
+/mob/proc/notify_ghost_cloning(message = "Someone is trying to revive you. Re-enter your corpse if you want to be revived!", sound = 'sound/effects/genetics.ogg', atom/source = null, flashwindow)
 	var/mob/dead/observer/ghost = get_ghost()
 	if(ghost)
 		ghost.notify_cloning(message, sound, source, flashwindow)
@@ -1021,7 +1021,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	nutrition = clamp(nutrition + change, 0, max)
 
 ///Force set the mob nutrition
-/mob/proc/set_nutrition(var/change) //Seriously fuck you oldcoders.
+/mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.
 	nutrition = max(0, change)
 
 /mob/setMovetype(newval)

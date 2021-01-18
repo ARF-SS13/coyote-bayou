@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(dummy_mob_list)
 	//Post-spawn body changes, eg mutations gained or limbs lost during a round
 	//Items held in the hand
 	//Items stored in any container on the person
-/proc/duplicate_human(var/mob/living/carbon/human/H)
+/proc/duplicate_human(mob/living/carbon/human/H)
 
 	// First, create the dummy
 	var/mob/living/carbon/human/dummy/mannequin = new /mob/living/carbon/human/dummy

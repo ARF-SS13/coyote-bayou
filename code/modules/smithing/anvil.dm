@@ -110,7 +110,7 @@
 	return TRUE
 
 
-/obj/structure/anvil/proc/do_shaping(mob/user, var/qualitychange)
+/obj/structure/anvil/proc/do_shaping(mob/user, qualitychange)
 	busy = TRUE
 	currentquality += qualitychange
 	var/list/shapingsteps = list("weak hit", "strong hit", "heavy hit", "fold", "draw", "shrink", "bend", "punch", "upset") //weak/strong/heavy hit affect strength. All the other steps shape.

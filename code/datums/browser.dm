@@ -277,7 +277,7 @@
 	opentime = 0
 	close()
 
-/proc/presentpicker(var/mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1,Timeout = 6000,list/values, inputtype = "checkbox", width, height, slidecolor)
+/proc/presentpicker(mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1,Timeout = 6000,list/values, inputtype = "checkbox", width, height, slidecolor)
 	if (!istype(User))
 		if (istype(User, /client/))
 			var/client/C = User
@@ -290,7 +290,7 @@
 	if (A.selectedbutton)
 		return list("button" = A.selectedbutton, "values" = A.valueslist)
 
-/proc/input_bitfield(var/mob/User, title, bitfield, current_value, nwidth = 350, nheight = 350, nslidecolor, allowed_edit_list = null)
+/proc/input_bitfield(mob/User, title, bitfield, current_value, nwidth = 350, nheight = 350, nslidecolor, allowed_edit_list = null)
 	if (!User || !(bitfield in GLOB.bitfields))
 		return
 	var/list/pickerlist = list()
@@ -401,7 +401,7 @@
 	opentime = 0
 	close()
 
-/proc/presentpreflikepicker(var/mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1,Timeout = 6000,list/settings, width, height, slidecolor)
+/proc/presentpreflikepicker(mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1,Timeout = 6000,list/settings, width, height, slidecolor)
 	if (!istype(User))
 		if (istype(User, /client/))
 			var/client/C = User

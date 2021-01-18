@@ -79,7 +79,7 @@
 	else
 		icon_state = "holstered"
 
-/obj/item/minigunpack/proc/attach_gun(var/mob/user)
+/obj/item/minigunpack/proc/attach_gun(mob/user)
 	if(!gun)
 		gun = new(src)
 	gun.forceMove(src)

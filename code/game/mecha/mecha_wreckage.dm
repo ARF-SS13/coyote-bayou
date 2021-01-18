@@ -83,7 +83,7 @@
 	if(!..())
 		return
 
- //Proc called on the wreck by the AI card.
+	//Proc called on the wreck by the AI card.
 	if(interaction == AI_TRANS_TO_CARD) //AIs can only be transferred in one direction, from the wreck to the card.
 		if(!AI) //No AI in the wreck
 			to_chat(user, "<span class='warning'>No AI backups found.</span>")

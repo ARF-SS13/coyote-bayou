@@ -123,7 +123,7 @@
 		if(HERALD_MIRROR)
 			herald_mirror()
 
-/mob/living/simple_animal/hostile/asteroid/elite/herald/proc/shoot_projectile(turf/marker, set_angle, var/is_teleshot)
+/mob/living/simple_animal/hostile/asteroid/elite/herald/proc/shoot_projectile(turf/marker, set_angle, is_teleshot)
 	var/turf/startloc = get_turf(src)
 	var/obj/item/projectile/herald/H = null
 	if(!is_teleshot)

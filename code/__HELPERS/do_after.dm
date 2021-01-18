@@ -222,7 +222,7 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, var/delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
+/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -304,7 +304,7 @@
 	. = 1
 	return
 
-/proc/do_after_mob(mob/user, var/list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
+/proc/do_after_mob(mob/user, list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
 	if(!user || !targets)
 		return 0
 	if(!islist(targets))

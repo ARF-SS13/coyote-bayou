@@ -927,7 +927,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /* TODO: Snowflake trail marks
 // Impliments different trails for species depending on if they're wearing shoes.
-/datum/species/proc/get_move_trail(var/mob/living/carbon/human/H)
+/datum/species/proc/get_move_trail(mob/living/carbon/human/H)
 	if(H.lying)
 		return /obj/effect/decal/cleanable/blood/footprints/tracks/body
 	if(H.shoes || (H.wear_suit && (H.wear_suit.body_parts_covered & FEET)))

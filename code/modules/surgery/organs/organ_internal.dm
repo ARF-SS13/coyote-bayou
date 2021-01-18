@@ -180,7 +180,7 @@
 	return //so we don't grant the organ's action to mobs who pick up the organ.
 
 ///Adjusts an organ's damage by the amount "d", up to a maximum amount, which is by default max damage
-/obj/item/organ/proc/applyOrganDamage(var/d, var/maximum = maxHealth)	//use for damaging effects
+/obj/item/organ/proc/applyOrganDamage(d, maximum = maxHealth)	//use for damaging effects
 	if(!d || maximum < damage) //Micro-optimization.
 		return FALSE
 	damage = clamp(damage + d, 0, maximum)
@@ -191,7 +191,7 @@
 	return TRUE
 
 ///SETS an organ's damage to the amount "d", and in doing so clears or sets the failing flag, good for when you have an effect that should fix an organ if broken
-/obj/item/organ/proc/setOrganDamage(var/d)	//use mostly for admin heals
+/obj/item/organ/proc/setOrganDamage(d)	//use mostly for admin heals
 	applyOrganDamage(d - damage)
 
 /** check_damage_thresholds
@@ -228,11 +228,11 @@
 			return now_fixed
 
 //Runs some code on the organ when damage is taken/healed
-/obj/item/organ/proc/onDamage(var/d, var/maximum = maxHealth)
+/obj/item/organ/proc/onDamage(d, maximum = maxHealth)
 	return
 
 //Runs some code on the organ when damage is taken/healed
-/obj/item/organ/proc/onSetDamage(var/d, var/maximum = maxHealth)
+/obj/item/organ/proc/onSetDamage(d, maximum = maxHealth)
 	return
 
 //Looking for brains?
