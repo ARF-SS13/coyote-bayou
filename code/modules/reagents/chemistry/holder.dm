@@ -723,7 +723,7 @@
 	return (reactedVol)
 
 //Currently calculates it irrespective of required reagents at the start
-/datum/reagents/proc/reactant_purity(var/datum/chemical_reaction/C, holder)
+/datum/reagents/proc/reactant_purity(datum/chemical_reaction/C, holder)
 	var/list/cached_reagents = reagent_list
 	var/i = 0
 	var/cachedPurity
@@ -1136,7 +1136,7 @@
 
 	return english_list(out, "something indescribable")
 
-/datum/reagents/proc/expose_temperature(var/temperature, var/coeff=0.02)
+/datum/reagents/proc/expose_temperature(temperature, coeff=0.02)
 	var/temp_delta = (temperature - chem_temp) * coeff
 	if(temp_delta > 0)
 		chem_temp = min(chem_temp + max(temp_delta, 1), temperature)

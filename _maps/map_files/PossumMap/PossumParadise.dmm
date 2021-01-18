@@ -724,8 +724,7 @@
 "acl" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	icon_state = "comfychair"
 	},
 /obj/effect/landmark/start/f13/overseer,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
@@ -1006,8 +1005,7 @@
 	pixel_y = 24
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	tag = "icon-0-2"
+	icon_state = "0-2"
 	},
 /obj/item/banner/command,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -1019,8 +1017,7 @@
 	pixel_x = 25
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	tag = "icon-0-2"
+	icon_state = "0-2"
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1620,8 +1617,7 @@
 /obj/structure/sink{
 	dir = 1;
 	icon_state = "sink";
-	pixel_y = 15;
-	tag = "icon-sink (NORTH)"
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault/overseer)
@@ -1771,8 +1767,7 @@
 "afz" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
-	icon_state = "0-2";
-	tag = "icon-0-2"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/security/prison)
@@ -2360,8 +2355,7 @@
 	pixel_y = 24
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	tag = "icon-0-2"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/vault/medical)
@@ -2444,8 +2438,7 @@
 	pixel_x = -24
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	tag = "icon-0-2"
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/vault/medical/chemistry)
@@ -4695,8 +4688,7 @@
 /obj/structure/sink{
 	dir = 1;
 	icon_state = "sink";
-	pixel_y = 15;
-	tag = "icon-sink (NORTH)"
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/vault/lavatory)
@@ -6017,8 +6009,7 @@
 /area/f13/tunnel)
 "asg" = (
 /obj/effect/decal/marking{
-	icon_state = "doublevertical";
-	tag = "icon-doublevertical"
+	icon_state = "doublevertical"
 	},
 /turf/closed/indestructible/f13/matrix,
 /area/f13/tunnel)
@@ -6145,8 +6136,7 @@
 /area/f13/tunnel)
 "asD" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/road,
@@ -6406,8 +6396,7 @@
 "atn" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/tunnel)
 "ato" = (
@@ -6429,8 +6418,7 @@
 	pixel_x = -32
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	icon_state = "verticalrightborderright1"
 	},
 /area/f13/tunnel)
 "atq" = (
@@ -6461,8 +6449,7 @@
 /area/f13/brotherhood)
 "atu" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -6518,8 +6505,7 @@
 /obj/structure/table/reinforced,
 /obj/item/gun/energy/laser/practice,
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/brotherhood)
 "atA" = (
@@ -6532,8 +6518,7 @@
 	light_color = "#706891"
 	},
 /turf/open/floor/f13{
-	icon_state = "floordirtysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floordirtysolid"
 	},
 /area/f13/brotherhood)
 "atC" = (
@@ -6928,8 +6913,7 @@
 "auM" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetcmo";
-	tag = "icon-sheetcmo"
+	icon_state = "sheetcmo"
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/brotherhood)
@@ -7024,21 +7008,18 @@
 /area/f13/brotherhood)
 "avb" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/tunnel)
 "avc" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/tunnel)
 "avd" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	icon_state = "verticalrightborderright1"
 	},
 /area/f13/tunnel)
 "ave" = (
@@ -7160,20 +7141,17 @@
 /area/f13/brotherhood)
 "avx" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
+	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
 "avy" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "avz" = (
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "avA" = (
@@ -7189,15 +7167,13 @@
 /area/f13/wasteland)
 "avD" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "avE" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	icon_state = "verticalrightborderright1"
 	},
 /area/f13/wasteland)
 "avF" = (
@@ -7344,8 +7320,7 @@
 "awf" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -7356,8 +7331,7 @@
 "awh" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -7438,8 +7412,7 @@
 "awv" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (NORTH)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -7545,8 +7518,7 @@
 /area/f13/brotherhood)
 "awN" = (
 /obj/structure/cable{
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -7603,8 +7575,7 @@
 "awX" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /obj/machinery/light{
 	dir = 4;
@@ -7816,8 +7787,7 @@
 "axH" = (
 /obj/structure/toilet{
 	dir = 1;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (NORTH)"
+	icon_state = "toilet00"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13{
@@ -8125,8 +8095,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "ayB" = (
@@ -8139,8 +8108,7 @@
 	obj_integrity = 1000
 	},
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "ayC" = (
@@ -8325,8 +8293,7 @@
 "azk" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheethos";
-	tag = "icon-sheethos"
+	icon_state = "sheethos"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
@@ -8406,8 +8373,7 @@
 /area/f13/klamat)
 "azz" = (
 /obj/structure/simple_door/house{
-	icon_state = "interioropening";
-	tag = "icon-interioropening"
+	icon_state = "interioropening"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
@@ -8543,8 +8509,7 @@
 "azX" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	icon_state = "sheetgrey"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
@@ -8577,8 +8542,7 @@
 /area/f13/klamat)
 "aAe" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/klamat)
 "aAf" = (
@@ -8767,8 +8731,7 @@
 /area/f13/klamat)
 "aAM" = (
 /obj/structure/simple_door/house{
-	icon_state = "room";
-	tag = "icon-room"
+	icon_state = "room"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
@@ -8982,8 +8945,7 @@
 /area/f13/klamat)
 "aBA" = (
 /obj/structure/simple_door/house{
-	icon_state = "glass";
-	tag = "icon-glass"
+	icon_state = "glass"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
@@ -9008,15 +8970,6 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/carpet,
 /area/f13/klamat)
-"aBF" = (
-/obj/structure/cable{
-	icon_state = "1-2";
-	tag = "icon-1-2"
-	},
-/turf/closed/wall/r_wall/f13vault{
-	icon_state = "2-i"
-	},
-/area/f13/vault)
 "aBG" = (
 /obj/machinery/light/sign,
 /turf/closed/wall/mineral/wood,
@@ -9052,8 +9005,7 @@
 "aBN" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetcmo";
-	tag = "icon-sheetcmo"
+	icon_state = "sheetcmo"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/clinic)
@@ -9071,8 +9023,7 @@
 "aBQ" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetcmo";
-	tag = "icon-sheetcmo"
+	icon_state = "sheetcmo"
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -9281,8 +9232,7 @@
 "aCy" = (
 /obj/structure/chair/comfy/brown{
 	dir = 4;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/wood/f13/stage_l,
 /area/f13/ncr)
@@ -9297,8 +9247,7 @@
 "aCB" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/wood/f13/stage_r,
 /area/f13/ncr)
@@ -9392,8 +9341,7 @@
 "aCU" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (NORTH)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/wood/f13/stage_b,
 /area/f13/ncr)
@@ -9444,8 +9392,7 @@
 /area/f13/klamat)
 "aDg" = (
 /obj/structure/simple_door/house{
-	icon_state = "room";
-	tag = "icon-room"
+	icon_state = "room"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/ncr)
@@ -9470,8 +9417,7 @@
 /area/f13/ncr)
 "aDl" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
@@ -9576,8 +9522,7 @@
 "aDC" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/clinic)
@@ -9658,8 +9603,7 @@
 	},
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/clinic)
@@ -9779,8 +9723,7 @@
 "aEp" = (
 /obj/structure/holohoop{
 	dir = 4;
-	icon_state = "hoop";
-	tag = "icon-hoop (EAST)"
+	icon_state = "hoop"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/klamat)
@@ -9818,8 +9761,7 @@
 "aEw" = (
 /obj/structure/chair/comfy/black{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/ncr)
@@ -9854,8 +9796,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	icon_state = "1-2";
-	tag = "icon-1-2"
+	icon_state = "1-2"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -10040,8 +9981,7 @@
 /area/f13/city)
 "aFh" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /obj/structure/decoration/reflector,
 /turf/open/indestructible/ground/outside/road,
@@ -10066,16 +10006,14 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 9;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTHWEST)"
+	icon_state = "dirt"
 	},
 /area/f13/underground/mountain)
 "aFm" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
+	icon_state = "dirt"
 	},
 /area/f13/underground/mountain)
 "aFn" = (
@@ -10090,8 +10028,7 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTHEAST)"
+	icon_state = "dirt"
 	},
 /area/f13/underground/mountain)
 "aFq" = (
@@ -10151,8 +10088,7 @@
 "aFC" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -10161,8 +10097,7 @@
 /area/f13/klamat)
 "aFD" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/casino)
@@ -10184,8 +10119,7 @@
 /area/f13/tunnel)
 "aFI" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/ncr)
@@ -10260,8 +10194,7 @@
 /obj/structure/sink{
 	dir = 1;
 	icon_state = "sink";
-	pixel_y = 15;
-	tag = "icon-sink (NORTH)"
+	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/casino)
@@ -10333,8 +10266,7 @@
 "aGn" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aGo" = (
@@ -10367,41 +10299,35 @@
 /area/f13/wasteland)
 "aGv" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermainleft";
-	tag = "icon-horizontalinnermainleft"
+	icon_state = "horizontalinnermainleft"
 	},
 /area/f13/wasteland)
 "aGw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (WEST)"
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "aGx" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
+	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
 "aGy" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder";
-	tag = "icon-outerborder"
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "aGz" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 4;
-	icon_state = "innermaincornerinner";
-	tag = "icon-innermaincornerinner (EAST)"
+	icon_state = "innermaincornerinner"
 	},
 /area/f13/wasteland)
 "aGA" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 1;
-	icon_state = "innermaincornerinner";
-	tag = "icon-innermaincornerinner (NORTH)"
+	icon_state = "innermaincornerinner"
 	},
 /area/f13/wasteland)
 "aGB" = (
@@ -10430,15 +10356,13 @@
 "aGG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "aGH" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	tag = "icon-outerturn"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "aGI" = (
@@ -10464,8 +10388,7 @@
 /area/f13/wasteland)
 "aGM" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_2";
-	tag = "icon-tree_2"
+	icon_state = "tree_2"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/wasteland)
@@ -10563,57 +10486,49 @@
 "aHd" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTHEAST)"
+	icon_state = "dirt"
 	},
 /area/f13/underground/mountain)
 "aHf" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (NORTH)"
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "aHg" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "aHh" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "aHi" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2left";
-	tag = "icon-horizontaloutermain2left"
+	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland)
 "aHj" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "aHk" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "aHl" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "aHm" = (
@@ -10622,8 +10537,7 @@
 	pixel_x = -32
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	icon_state = "verticalrightborderright1"
 	},
 /area/f13/wasteland)
 "aHn" = (
@@ -10635,21 +10549,18 @@
 /area/f13/wasteland)
 "aHp" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright2bottom";
-	tag = "icon-verticalrightborderright2bottom"
+	icon_state = "verticalrightborderright2bottom"
 	},
 /area/f13/wasteland)
 "aHq" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner"
+	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
 "aHr" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
-	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (WEST)"
+	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
 "aHs" = (
@@ -10672,15 +10583,13 @@
 /obj/structure/wreck/car,
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right (WEST)"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
 "aHx" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right (WEST)"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
 "aHy" = (
@@ -10689,8 +10598,7 @@
 /area/f13/wasteland)
 "aHz" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright2";
-	tag = "icon-verticalrightborderright2"
+	icon_state = "verticalrightborderright2"
 	},
 /area/f13/wasteland)
 "aHA" = (
@@ -10722,37 +10630,32 @@
 /area/f13/underground/mountain)
 "aHG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright3";
-	tag = "icon-verticalrightborderright3"
+	icon_state = "verticalrightborderright3"
 	},
 /area/f13/wasteland)
 "aHH" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right (WEST)"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
 "aHI" = (
 /obj/structure/wreck/trash/five_tires,
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right (WEST)"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
 "aHJ" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 4;
-	icon_state = "innermaincornerouter";
-	tag = "icon-innermaincornerouter (EAST)"
+	icon_state = "innermaincornerouter"
 	},
 /area/f13/wasteland)
 "aHK" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermainbottom";
-	tag = "icon-verticalinnermainbottom"
+	icon_state = "verticalinnermainbottom"
 	},
 /area/f13/wasteland)
 "aHL" = (
@@ -10769,16 +10672,14 @@
 "aHN" = (
 /mob/living/simple_animal/hostile/radscorpion,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermainbottom";
-	tag = "icon-verticalinnermainbottom"
+	icon_state = "verticalinnermainbottom"
 	},
 /area/f13/wasteland)
 "aHO" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
-	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHWEST)"
+	icon_state = "dirt"
 	},
 /area/f13/underground/mountain)
 "aHP" = (
@@ -10790,8 +10691,7 @@
 /area/f13/underground/mountain)
 "aHQ" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical (NORTHEAST)"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/dirt,
@@ -10801,8 +10701,7 @@
 /area/f13/underground/mountain)
 "aHS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft1";
-	tag = "icon-verticalleftborderleft1"
+	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland)
 "aHT" = (
@@ -10812,28 +10711,24 @@
 "aHU" = (
 /obj/structure/flora/tree/wasteland,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "hole";
-	tag = "icon-hole"
+	icon_state = "hole"
 	},
 /area/f13/wasteland)
 "aHV" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontalleft";
-	tag = "icon-doublehorizontalleft"
+	icon_state = "doublehorizontalleft"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "aHW" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontaldegraded";
-	tag = "icon-doublehorizontaldegraded"
+	icon_state = "doublehorizontaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "aHX" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontal";
-	tag = "icon-doublehorizontal"
+	icon_state = "doublehorizontal"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -10847,8 +10742,7 @@
 /area/f13/casino)
 "aHZ" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontalright";
-	tag = "icon-doublehorizontalright"
+	icon_state = "doublehorizontalright"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -10870,8 +10764,7 @@
 /area/f13/underground/mountain)
 "aId" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2";
-	tag = "icon-verticalleftborderleft2"
+	icon_state = "verticalleftborderleft2"
 	},
 /area/f13/wasteland)
 "aIe" = (
@@ -10880,8 +10773,7 @@
 /area/f13/wasteland)
 "aIf" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/dirt,
@@ -10903,20 +10795,17 @@
 /area/f13/underground/mountain)
 "aIj" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop2";
-	tag = "icon-horizontalbottombordertop2"
+	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/wasteland)
 "aIk" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop3";
-	tag = "icon-horizontalbottombordertop3"
+	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland)
 "aIl" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2";
-	tag = "icon-verticalinnermain2"
+	icon_state = "verticalinnermain2"
 	},
 /area/f13/wasteland)
 "aIm" = (
@@ -10964,15 +10853,13 @@
 /area/f13/casino)
 "aIv" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/casino)
 "aIw" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/casino)
@@ -10985,8 +10872,7 @@
 "aIy" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/dirt,
@@ -10994,15 +10880,13 @@
 "aIz" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (EAST)"
+	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
 "aIA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "aIB" = (
@@ -11023,8 +10907,7 @@
 /area/f13/ncr)
 "aIE" = (
 /obj/effect/decal/marking{
-	icon_state = "doubleverticaltop";
-	tag = "icon-doubleverticaltop"
+	icon_state = "doubleverticaltop"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -11037,8 +10920,7 @@
 	icon_state = "rwindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aIG" = (
@@ -11052,8 +10934,7 @@
 	icon_state = "rwindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aII" = (
@@ -11065,8 +10946,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aIJ" = (
@@ -11109,8 +10989,7 @@
 /area/f13/casino)
 "aIQ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2";
-	tag = "icon-horizontalbottomborderbottom2"
+	icon_state = "horizontalbottomborderbottom2"
 	},
 /area/f13/wasteland)
 "aIR" = (
@@ -11125,8 +11004,7 @@
 "aIT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (NORTH)"
+	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
 "aIU" = (
@@ -11186,16 +11064,14 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJg" = (
 /obj/structure/flora/tree/pine/xmas,
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJh" = (
@@ -11203,8 +11079,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJi" = (
@@ -11259,15 +11134,13 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJs" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJt" = (
@@ -11276,8 +11149,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "grass2";
-	tag = "icon-grass2"
+	icon_state = "grass2"
 	},
 /area/f13/klamat)
 "aJu" = (
@@ -11507,8 +11379,7 @@
 /area/f13/klamat)
 "aKg" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/carpet,
 /area/f13/casino)
@@ -11693,14 +11564,12 @@
 "aKL" = (
 /obj/machinery/space_heater,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aKM" = (
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aKN" = (
@@ -11775,8 +11644,7 @@
 "aKY" = (
 /obj/structure/chair{
 	dir = 1;
-	icon_state = "chair";
-	tag = "icon-chair (NORTH)"
+	icon_state = "chair"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
@@ -11838,8 +11706,7 @@
 /obj/item/pickaxe,
 /obj/item/stack/sheet/plastic/fifty,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLh" = (
@@ -11852,8 +11719,7 @@
 /obj/item/stack/sheet/mineral/snow,
 /obj/item/stack/sheet/mineral/snow,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLi" = (
@@ -11865,8 +11731,7 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLj" = (
@@ -11929,8 +11794,7 @@
 "aLr" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetbrown";
-	tag = "icon-sheetbrown"
+	icon_state = "sheetbrown"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
@@ -11991,8 +11855,7 @@
 /obj/item/pickaxe,
 /obj/item/stack/sheet/plastic/fifty,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLC" = (
@@ -12009,8 +11872,7 @@
 /obj/item/toy/snowball,
 /obj/item/toy/snowball,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLD" = (
@@ -12022,8 +11884,7 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/klamat)
 "aLE" = (
@@ -12069,8 +11930,7 @@
 /area/f13/ncr)
 "aLN" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_2";
-	tag = "icon-tree_2"
+	icon_state = "tree_2"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/ncr)
@@ -12094,8 +11954,7 @@
 /area/f13/ncr)
 "aLS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/casino)
 "aLT" = (
@@ -12127,14 +11986,12 @@
 /area/f13/casino)
 "aLY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2bottom";
-	tag = "icon-verticalleftborderleft2bottom"
+	icon_state = "verticalleftborderleft2bottom"
 	},
 /area/f13/wasteland)
 "aLZ" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright2bottom";
-	tag = "icon-verticalleftborderright2bottom"
+	icon_state = "verticalleftborderright2bottom"
 	},
 /area/f13/wasteland)
 "aMa" = (
@@ -12143,28 +12000,24 @@
 /area/f13/wasteland)
 "aMb" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft2";
-	tag = "icon-verticalrightborderleft2"
+	icon_state = "verticalrightborderleft2"
 	},
 /area/f13/wasteland)
 "aMc" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2left";
-	tag = "icon-horizontaltopbordertop2left"
+	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/wasteland)
 "aMd" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "aMe" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/dirt,
@@ -12193,8 +12046,7 @@
 "aMk" = (
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /turf/closed/mineral/random,
 /area/f13/underground/mountain)
@@ -12235,8 +12087,7 @@
 "aMq" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -12295,8 +12146,7 @@
 /area/f13/wasteland)
 "aMD" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/underground/mountain)
@@ -12316,12 +12166,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/underground/mountain)
-"aMH" = (
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt";
-	tag = "icon-dirt"
-	},
-/area/f13/wasteland)
 "aMI" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 8;
@@ -12395,8 +12239,7 @@
 "aMW" = (
 /obj/structure/chair/wood{
 	dir = 4;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (EAST)"
+	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/underground/mountain)
@@ -12427,8 +12270,7 @@
 "aNc" = (
 /obj/structure/chair/wood{
 	dir = 1;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (NORTH)"
+	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/underground/mountain)
@@ -12504,8 +12346,7 @@
 "aNq" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (NORTH)"
+	icon_state = "outerborder"
 	},
 /area/f13/ncr)
 "aNr" = (
@@ -12515,8 +12356,7 @@
 "aNs" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
@@ -12547,21 +12387,18 @@
 "aNy" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (NORTH)"
+	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
 "aNz" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "hole";
-	tag = "icon-hole"
+	icon_state = "hole"
 	},
 /area/f13/wasteland)
 "aNA" = (
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder";
-	tag = "icon-outerborder"
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "aNB" = (
@@ -12571,27 +12408,23 @@
 /area/f13/underground/mountain)
 "aNC" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2left";
-	tag = "icon-horizontalinnermain2left"
+	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
 "aND" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain2top";
-	tag = "icon-verticalinnermain2top"
+	icon_state = "verticalinnermain2top"
 	},
 /area/f13/wasteland)
 "aNE" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/ncr)
 "aNF" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
+	icon_state = "outerborder"
 	},
 /area/f13/ncr)
 "aNG" = (
@@ -12603,8 +12436,7 @@
 "aNI" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2left";
-	tag = "icon-horizontalinnermain2left (WEST)"
+	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
 "aNJ" = (
@@ -12628,14 +12460,12 @@
 /area/f13/klamat/mine)
 "aNO" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2left";
-	tag = "icon-horizontaloutermain2left"
+	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland)
 "aNP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland)
 "aNQ" = (
@@ -12679,20 +12509,12 @@
 /area/f13/tunnel)
 "aNY" = (
 /turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner"
+	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
 "aNZ" = (
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirt"
-	},
-/area/f13/wasteland)
-"aOa" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 6;
-	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHEAST)"
 	},
 /area/f13/wasteland)
 "aOb" = (
@@ -12816,8 +12638,7 @@
 "aOB" = (
 /obj/structure/chair{
 	dir = 8;
-	icon_state = "chair";
-	tag = "icon-chair (WEST)"
+	icon_state = "chair"
 	},
 /obj/effect/decal/remains/human,
 /obj/machinery/light/small{
@@ -12828,8 +12649,7 @@
 "aOC" = (
 /obj/structure/chair{
 	dir = 8;
-	icon_state = "chair";
-	tag = "icon-chair (WEST)"
+	icon_state = "chair"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -12846,8 +12666,7 @@
 "aOF" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -12858,8 +12677,7 @@
 	termtag = "Public"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aOH" = (
@@ -12884,8 +12702,7 @@
 /area/f13/wasteland)
 "aOM" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -12945,8 +12762,7 @@
 /area/f13/wasteland)
 "aOX" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
+	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/casino)
 "aOY" = (
@@ -12969,8 +12785,7 @@
 "aPb" = (
 /obj/structure/chair{
 	dir = 8;
-	icon_state = "chair";
-	tag = "icon-chair (WEST)"
+	icon_state = "chair"
 	},
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
@@ -12989,8 +12804,7 @@
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aPe" = (
@@ -13052,16 +12866,14 @@
 "aPq" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/wasteland)
 "aPr" = (
 /obj/structure/simple_door/interior,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -13074,8 +12886,7 @@
 "aPt" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
@@ -13095,8 +12906,7 @@
 "aPw" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/f13/wood,
@@ -13116,8 +12926,7 @@
 "aPz" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -13139,15 +12948,13 @@
 "aPE" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowleft";
-	tag = "icon-storewindowleft"
+	icon_state = "storewindowleft"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "aPF" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "storewindowright";
-	tag = "icon-storewindowright (NORTHEAST)"
+	icon_state = "storewindowright"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -13170,8 +12977,7 @@
 "aPK" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/wasteland)
@@ -13185,29 +12991,25 @@
 /area/f13/wasteland)
 "aPN" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /turf/closed/mineral/random,
 /area/f13/city)
 "aPO" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "aPP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1";
-	tag = "icon-horizontaloutermain1"
+	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
 "aPQ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0";
-	tag = "icon-horizontaloutermain0"
+	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
 "aPR" = (
@@ -13265,19 +13067,16 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aQb" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -13294,8 +13093,7 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = -3;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -13312,16 +13110,14 @@
 "aQh" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "aQi" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -13332,8 +13128,7 @@
 "aQk" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
@@ -13362,8 +13157,7 @@
 /area/f13/city)
 "aQp" = (
 /obj/structure/simple_door/house{
-	icon_state = "glassclosing";
-	tag = "icon-glassclosing"
+	icon_state = "glassclosing"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -13372,26 +13166,22 @@
 /area/f13/ncr)
 "aQr" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
+	icon_state = "verticalrightborderright1"
 	},
 /area/f13/ncr)
 "aQs" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0";
-	tag = "icon-horizontaltopborderbottom0"
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/ncr)
 "aQt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/ncr)
 "aQu" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0";
-	tag = "icon-horizontaltopborderbottom0"
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/casino)
 "aQv" = (
@@ -13403,30 +13193,24 @@
 /area/f13/casino)
 "aQw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft3";
-	tag = "icon-verticalleftborderleft3"
+	icon_state = "verticalleftborderleft3"
 	},
 /area/f13/ncr)
 "aQx" = (
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQy" = (
 /obj/structure/fence{
 	dir = 8;
 	icon_state = "straight"
 	},
 /turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt";
-	tag = "icon-dirt"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aQz" = (
 /turf/open/floor/plating/ice,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQA" = (
 /turf/open/indestructible/ground/outside/road,
 /area/f13/casino)
@@ -13498,9 +13282,7 @@
 /area/f13/ncr)
 "aQJ" = (
 /turf/open/indestructible/ground/outside/road,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQK" = (
 /obj/structure/table/reinforced/brass,
 /turf/open/floor/carpet/black,
@@ -13519,9 +13301,7 @@
 /area/f13/casino)
 "aQN" = (
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQO" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/paper_bin,
@@ -13535,41 +13315,29 @@
 "aQQ" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQR" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQS" = (
 /obj/structure/bookcase,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQT" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQU" = (
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQV" = (
 /obj/structure/chair/wood/fancy,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQW" = (
 /obj/structure/fluff/drake_statue{
 	dir = 1
@@ -13579,39 +13347,27 @@
 "aQX" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aQZ" = (
 /turf/open/floor/plating/ice/smooth,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRa" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRb" = (
 /obj/structure/chair/wood/fancy,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRc" = (
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -13620,111 +13376,78 @@
 /obj/item/pen,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRd" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRe" = (
 /obj/item/lighter,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/structure/table/wood,
 /obj/item/stack/f13Cash/random/bottle_cap/med,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRf" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRg" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright2";
-	tag = "icon-verticalrightborderright2"
+	icon_state = "verticalrightborderright2"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRh" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1";
-	tag = "icon-horizontaloutermain1"
+	icon_state = "horizontaloutermain1"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRi" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2left";
-	tag = "icon-horizontaloutermain2left"
+	icon_state = "horizontaloutermain2left"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRj" = (
 /mob/living/simple_animal/hostile/eyebot/floatingeye,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRk" = (
 /obj/structure/chair/wood/fancy{
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRl" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRm" = (
 /obj/structure/chair/wood/fancy{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRn" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRo" = (
 /obj/structure/chair/wood/worn{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRp" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRq" = (
 /obj/structure/safe,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRr" = (
 /obj/structure/table,
 /obj/item/defibrillator,
@@ -13763,8 +13486,7 @@
 /obj/structure/fence/post,
 /obj/structure/fence/corner,
 /turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt";
-	tag = "icon-dirt"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aRw" = (
@@ -13832,8 +13554,7 @@
 /obj/structure/tires/half,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aRJ" = (
@@ -13853,30 +13574,17 @@
 /area/f13/city)
 "aRM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
+	icon_state = "verticalrightborderright0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRN" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
-"aRO" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 9;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTHWEST)"
-	},
-/area/f13/wasteland)
+/area/f13/city/museum)
 "aRP" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTHEAST)"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aRQ" = (
@@ -13884,9 +13592,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRR" = (
 /obj/structure/showcase/cyborg/old,
 /obj/machinery/light{
@@ -13896,39 +13602,30 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRS" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRT" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRU" = (
 /obj/structure/bookcase/random/nonfiction,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRV" = (
 /obj/structure/flora/wasteplant/wild_xander,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aRW" = (
@@ -13938,17 +13635,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRX" = (
 /obj/item/holosign_creator/engineering,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aRY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 7;
@@ -13976,38 +13669,28 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSd" = (
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSe" = (
 /obj/structure/simple_door/blast,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSf" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSg" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSh" = (
 /obj/item/folder/yellow,
 /obj/item/folder/yellow,
@@ -14016,72 +13699,52 @@
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSi" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSj" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSk" = (
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSm" = (
 /obj/structure/sign/poster/official/random,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSn" = (
 /obj/structure/chair/wood/fancy{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSo" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSp" = (
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSq" = (
 /obj/structure/simple_door/metal,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSr" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSs" = (
 /obj/machinery/light{
 	dir = 8;
@@ -14090,24 +13753,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSt" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
-"aSu" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHWEST)"
-	},
-/area/f13/wasteland)
+/area/f13/city/museum)
 "aSv" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 6;
@@ -14138,15 +13790,11 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSA" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSB" = (
 /obj/structure/mirror{
 	pixel_y = 32
@@ -14158,9 +13806,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSC" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -14168,9 +13814,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSD" = (
 /obj/structure/tires/half,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -14184,13 +13828,11 @@
 /area/f13/city)
 "aSF" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aSG" = (
@@ -14198,33 +13840,26 @@
 /area/f13/city)
 "aSH" = (
 /obj/structure/simple_door/house{
-	icon_state = "interioropening";
-	tag = "icon-interioropening"
+	icon_state = "interioropening"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "aSI" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSJ" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSK" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSL" = (
 /obj/machinery/light{
 	dir = 4
@@ -14232,41 +13867,30 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSM" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSN" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSO" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSP" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSR" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/indestructible/ground/outside/dirt,
@@ -14277,9 +13901,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aST" = (
 /obj/structure/shuttle/engine/heater,
 /obj/structure/lattice/catwalk,
@@ -14287,29 +13909,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSU" = (
 /obj/structure/sign/poster/prewar/protectron,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSV" = (
 /obj/structure/sign/poster/prewar/corporate_espionage,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSW" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSX" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	desc = "An advanced propulsion engine from before the war."
@@ -14319,9 +13933,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSY" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	desc = "An advanced propulsion engine from before the war."
@@ -14330,28 +13942,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aSZ" = (
 /obj/structure/chair/wood/worn,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTa" = (
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTb" = (
 /obj/structure/fluff/paper/stack{
 	desc = "A stack of various papers, all saying you really shouldnt see this. The name Dr. Possum is signed at the bottom."
 	},
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTc" = (
 /obj/structure/chair/wood/worn{
 	dir = 4
@@ -14360,16 +13964,12 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTd" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTe" = (
 /obj/structure/chair/wood/worn{
 	dir = 8
@@ -14378,60 +13978,43 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTf" = (
 /obj/structure/flora/stump,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTg" = (
 /obj/structure/chair/wood/worn{
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTh" = (
 /obj/structure/chair/wood/worn{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTi" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_3";
-	tag = "icon-tree_3"
+	icon_state = "tree_3"
 	},
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTj" = (
 /obj/machinery/door/airlock/glass_large,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTk" = (
 /obj/structure/sign/warning/nosmoking/circle,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTl" = (
 /obj/structure/sign/map/left,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTm" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
@@ -14442,39 +14025,29 @@
 "aTn" = (
 /obj/structure/sign/map/right,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTo" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTp" = (
 /obj/structure/sign/warning/enginesafety,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTq" = (
 /obj/structure/beebox,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTr" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/beekeeper_suit,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTs" = (
 /obj/machinery/light{
 	dir = 1;
@@ -14483,25 +14056,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTt" = (
 /obj/structure/billboard/cola/pristine,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTu" = (
 /obj/item/fakeartefact,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTv" = (
 /obj/structure/beebox,
 /obj/machinery/light{
@@ -14510,26 +14077,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTw" = (
 /mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTx" = (
 /obj/structure/shuttle/engine/router,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTy" = (
 /obj/structure/shuttle/engine/router,
 /obj/structure/lattice/catwalk,
@@ -14537,76 +14098,58 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTz" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTA" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTB" = (
 /obj/structure/altar,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTC" = (
 /obj/item/banner/command/mundane,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTD" = (
 /obj/structure/showcase/perfect_employee,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTE" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTF" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/hooded/wintercoat/blue113,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTG" = (
 /obj/structure/table/wood,
 /obj/structure/showcase/machinery/tv,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTH" = (
 /obj/structure/shuttle/engine/large{
 	desc = "A very large bluespace engine made by Aerojet before the war."
@@ -14616,9 +14159,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTI" = (
 /obj/structure/shuttle/engine/large{
 	desc = "A very large bluespace engine made by Aerojet before the war."
@@ -14627,26 +14168,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTJ" = (
 /obj/structure/mecha_wreckage/odysseus,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTK" = (
 /obj/structure/fluff/arc,
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTL" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -14656,17 +14191,13 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTM" = (
 /obj/structure/displaycase/trophy,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTN" = (
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating/f13/outside/desert,
@@ -14681,8 +14212,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aTQ" = (
@@ -14690,31 +14220,24 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTR" = (
 /obj/structure/showcase/machinery/cloning_pod,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTS" = (
 /obj/structure/showcase/machinery/oldpod,
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTT" = (
 /obj/machinery/vending/nukacolavendfull,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aTU" = (
@@ -14722,22 +14245,17 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTV" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aTW" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aTX" = (
@@ -14746,8 +14264,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aTY" = (
@@ -14768,8 +14285,7 @@
 "aUb" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aUc" = (
@@ -14777,8 +14293,7 @@
 /obj/item/stock_parts/cell,
 /obj/item/stock_parts/cell{
 	icon_state = "hpcell";
-	pixel_y = 0;
-	tag = "icon-hpcell"
+	pixel_y = 0
 	},
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
@@ -14790,132 +14305,100 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUe" = (
 /obj/structure/fluff/empty_terrarium,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUf" = (
 /obj/structure/fluff/empty_terrarium,
 /obj/machinery/light/fo13colored/Pink,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUg" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUh" = (
 /obj/structure/janitorialcart,
 /obj/item/caution,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUi" = (
 /obj/structure/showcase/machinery/microwave,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUj" = (
 /obj/item/dna_probe,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUk" = (
 /obj/item/beacon,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUl" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/structure/holosign/barrier,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUm" = (
 /obj/structure/holosign/barrier,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUn" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUo" = (
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUp" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/random/bottle_cap/med,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUq" = (
 /obj/structure/bookcase/random/reference,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUr" = (
 /obj/structure/bookcase/random/religion,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUs" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUt" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -14928,9 +14411,7 @@
 "aUu" = (
 /obj/structure/sign/plaques/thunderdome,
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUv" = (
 /obj/effect/landmark/start/f13/preacher,
 /turf/open/floor/wood/f13/old,
@@ -14940,35 +14421,27 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUy" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/magboots,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUz" = (
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUA" = (
 /obj/machinery/light{
 	dir = 1
@@ -14976,25 +14449,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUB" = (
 /obj/structure/mecha_wreckage/ripley/firefighter,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUC" = (
 /obj/structure/showcase/mecha/marauder,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUD" = (
 /obj/structure/table/wood,
 /obj/item/clothing/shoes/magboots,
@@ -15004,39 +14471,30 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUE" = (
 /obj/structure/guillotine,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUF" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUG" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUH" = (
 /obj/structure/flora/wasteplant/wild_broc,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
-	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
+	icon_state = "dirt"
 	},
 /area/f13/wasteland)
 "aUI" = (
@@ -15048,18 +14506,14 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/fluff/broken_flooring,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUK" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUL" = (
 /obj/structure/rack,
 /obj/machinery/light{
@@ -15069,39 +14523,28 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUM" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2";
-	tag = "icon-verticalleftborderleft2"
+	icon_state = "verticalleftborderleft2"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUN" = (
 /obj/machinery/door/poddoor/shutters{
 	id = 99;
 	name = "Vault 223 armory shutters"
 	},
 /turf/closed/wall/f13/store,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUO" = (
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUP" = (
 /mob/living/simple_animal/hostile/hivebot/range,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUQ" = (
 /obj/machinery/light{
 	dir = 8
@@ -15109,47 +14552,32 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUR" = (
 /obj/machinery/light/floor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner"
+	icon_state = "outerbordercorner"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
+	icon_state = "horizontaltopbordertop0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUU" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder";
-	tag = "icon-outerborder"
+	icon_state = "outerborder"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUV" = (
 /mob/living/simple_animal/hostile/bear/wasteland,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUW" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/ladder/unbreakable{
@@ -15160,12 +14588,9 @@
 /area/f13/city)
 "aUX" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft1";
-	tag = "icon-verticalleftborderleft1"
+	icon_state = "verticalleftborderleft1"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aUY" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -15179,8 +14604,7 @@
 	pixel_y = 3
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aVa" = (
@@ -15195,21 +14619,18 @@
 "aVc" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aVd" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aVe" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /obj/structure/spider/stickyweb,
 /obj/structure/fans/tiny/invisible,
@@ -15233,9 +14654,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVj" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/den)
@@ -15246,8 +14665,7 @@
 	termtag = "Business"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aVl" = (
@@ -15267,9 +14685,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVp" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/inside/subway,
@@ -15279,28 +14695,20 @@
 /area/f13/wasteland)
 "aVr" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2bottom";
-	tag = "icon-verticalleftborderleft2bottom"
+	icon_state = "verticalleftborderleft2bottom"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVs" = (
 /obj/machinery/light/fo13colored/Pink,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "aVu" = (
 /turf/open/floor/grass/snow,
 /area/f13/den)
@@ -15338,8 +14746,7 @@
 "aVB" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -15366,8 +14773,7 @@
 "aVG" = (
 /obj/machinery/shower{
 	dir = 8;
-	icon_state = "shower";
-	tag = "icon-shower (WEST)"
+	icon_state = "shower"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -15394,8 +14800,7 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13{
@@ -15410,8 +14815,7 @@
 /area/f13/den)
 "aVL" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aVM" = (
@@ -15421,19 +14825,16 @@
 	dir = 4
 	},
 /obj/item/bedsheet{
-	icon_state = "sheetbrown";
-	tag = "icon-sheetbrown"
+	icon_state = "sheetbrown"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aVN" = (
 /obj/machinery/shower{
 	dir = 4;
-	icon_state = "shower";
-	tag = "icon-shower (EAST)"
+	icon_state = "shower"
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -15458,8 +14859,7 @@
 "aVS" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/desert,
@@ -15478,8 +14878,7 @@
 "aVW" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aVX" = (
@@ -15487,8 +14886,7 @@
 	dir = 8;
 	icon_state = "sink";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-sink (WEST)"
+	pixel_y = 0
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -15497,16 +14895,14 @@
 "aVY" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aVZ" = (
 /obj/structure/sink{
 	dir = 1;
 	icon_state = "sink";
-	pixel_y = 25;
-	tag = "icon-sink (NORTH)"
+	pixel_y = 25
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15540,12 +14936,10 @@
 "aWe" = (
 /obj/structure/bed,
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/bedsheet{
-	icon_state = "sheetblue";
-	tag = "icon-sheetblue"
+	icon_state = "sheetblue"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
@@ -15556,14 +14950,12 @@
 	dir = 8
 	},
 /obj/item/bedsheet{
-	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	icon_state = "sheetgrey"
 	},
 /obj/item/clothing/suit/nerdshirt,
 /obj/item/clothing/suit/nerdshirt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWg" = (
@@ -15573,26 +14965,22 @@
 	},
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWh" = (
 /obj/item/chair{
 	dir = 8;
-	icon_state = "wooden_chair";
-	tag = "icon-wooden_chair (WEST)"
+	icon_state = "wooden_chair"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWi" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWj" = (
@@ -15603,8 +14991,7 @@
 "aWk" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -15634,15 +15021,13 @@
 "aWp" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWq" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWr" = (
@@ -15659,8 +15044,7 @@
 "aWt" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -15673,8 +15057,7 @@
 "aWv" = (
 /obj/structure/chair/comfy{
 	dir = 4;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (EAST)"
+	icon_state = "comfychair"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15716,8 +15099,7 @@
 "aWC" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWD" = (
@@ -15732,8 +15114,7 @@
 "aWF" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -15751,8 +15132,7 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /obj/machinery/light/small,
 /obj/item/storage/fancy/heart_box,
@@ -15763,13 +15143,11 @@
 "aWJ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWK" = (
@@ -15797,8 +15175,7 @@
 "aWO" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetUSA";
-	tag = "icon-sheetUSA"
+	icon_state = "sheetUSA"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15809,12 +15186,10 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/item/bedsheet{
-	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	icon_state = "sheetgrey"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWQ" = (
@@ -15824,8 +15199,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aWR" = (
@@ -15869,14 +15243,12 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aWY" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15891,8 +15263,7 @@
 "aXa" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	icon_state = "sheetgrey"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15900,8 +15271,7 @@
 /obj/structure/dresser,
 /obj/item/clothing/under/f13/detectivealt,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXc" = (
@@ -15940,8 +15310,7 @@
 "aXg" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetbrown";
-	tag = "icon-sheetbrown"
+	icon_state = "sheetbrown"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -15999,8 +15368,7 @@
 "aXo" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheetblue";
-	tag = "icon-sheetblue"
+	icon_state = "sheetblue"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/den)
@@ -16013,22 +15381,19 @@
 "aXq" = (
 /obj/structure/chair/comfy,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXr" = (
 /obj/machinery/vending/snack,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXs" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXt" = (
@@ -16047,12 +15412,10 @@
 "aXv" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/backpack{
-	icon_state = "satchel";
-	tag = "icon-satchel"
+	icon_state = "satchel"
 	},
 /obj/item/storage/backpack{
-	icon_state = "satchel";
-	tag = "icon-satchel"
+	icon_state = "satchel"
 	},
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
@@ -16078,8 +15441,7 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXA" = (
@@ -16092,8 +15454,7 @@
 	},
 /obj/item/phone,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXB" = (
@@ -16104,8 +15465,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXC" = (
@@ -16137,8 +15497,7 @@
 /area/f13/den)
 "aXH" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical (NORTHEAST)"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -16149,12 +15508,10 @@
 	dir = 8
 	},
 /obj/item/bedsheet{
-	icon_state = "sheetgrey";
-	tag = "icon-sheetgrey"
+	icon_state = "sheetgrey"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXJ" = (
@@ -16164,8 +15521,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXK" = (
@@ -16173,23 +15529,20 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXL" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXM" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXN" = (
@@ -16202,8 +15555,7 @@
 /area/f13/den)
 "aXP" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
@@ -16212,16 +15564,14 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/item/storage/box/drinkingglasses,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXR" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXS" = (
@@ -16236,8 +15586,7 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 10;
-	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	pixel_y = 0
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
@@ -16245,14 +15594,12 @@
 "aXU" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "aXV" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken (NORTHEAST)"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
@@ -16278,16 +15625,14 @@
 /obj/item/stack/cable_coil,
 /obj/item/reagent_containers/food/condiment/soymilk,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aXY" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aYa" = (
@@ -16312,21 +15657,18 @@
 "aYd" = (
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/legion)
 "aYe" = (
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/legion)
@@ -16383,15 +15725,13 @@
 	pixel_y = 0
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aYq" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aYr" = (
@@ -16404,8 +15744,7 @@
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "aYt" = (
@@ -16738,8 +16077,7 @@
 /area/f13/legion)
 "aZH" = (
 /obj/structure/simple_door/house{
-	icon_state = "interior";
-	tag = "icon-interior"
+	icon_state = "interior"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
@@ -16896,8 +16234,7 @@
 /area/f13/legion)
 "bam" = (
 /obj/structure/simple_door/house{
-	icon_state = "room";
-	tag = "icon-room"
+	icon_state = "room"
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
@@ -17051,8 +16388,7 @@
 /obj/item/stack/sheet/metal,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "baV" = (
@@ -17092,9 +16428,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbd" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -17109,30 +16443,26 @@
 /area/f13/city)
 "bbg" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbh" = (
 /obj/structure/showcase/machinery/tv,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbi" = (
 /obj/machinery/workbench/advanced,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbj" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbk" = (
@@ -17141,22 +16471,19 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbl" = (
 /obj/structure/table/glass,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbm" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbn" = (
@@ -17164,8 +16491,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbo" = (
@@ -17176,9 +16502,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbp" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -17190,22 +16514,19 @@
 "bbq" = (
 /mob/living/simple_animal/hostile/handy/protectron,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbr" = (
 /mob/living/simple_animal/hostile/ghoul/hot,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbs" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbt" = (
@@ -17215,78 +16536,61 @@
 /obj/structure/bed,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bbu" = (
 /turf/closed/indestructible/ncrwall,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbv" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/engineering,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbw" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/bowler_or_that,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bby" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbz" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/aimodule_neutral,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbA" = (
 /obj/item/paicard,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbB" = (
 /obj/item/nuke_core_container,
 /obj/effect/spawner/structure/window/hollow/plasma/reinforced/end,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbC" = (
 /obj/machinery/light{
 	dir = 4;
@@ -17295,52 +16599,40 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbD" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/twentyfive_percent_cyborg_mask,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbE" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbF" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbG" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbI" = (
 /turf/closed/indestructible/ncrwall,
 /area/shuttle/bunker_elevator)
@@ -17353,18 +16645,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbK" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbL" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/shuttle/bunker_elevator)
@@ -17389,8 +16677,7 @@
 "bbO" = (
 /obj/structure/simple_door/bunker/glass,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1";
-	tag = "icon-horizontaloutermain1"
+	icon_state = "horizontaloutermain1"
 	},
 /area/shuttle/bunker_elevator)
 "bbP" = (
@@ -17399,25 +16686,19 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbQ" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbR" = (
 /obj/effect/turf_decal/caution/red,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbS" = (
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
@@ -17425,9 +16706,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbT" = (
 /obj/machinery/light{
 	dir = 8;
@@ -17464,9 +16743,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbY" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17477,9 +16754,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bbZ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -17487,9 +16762,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bca" = (
 /obj/item/restraints/legcuffs/beartrap/energy,
 /obj/item/restraints/legcuffs/beartrap/energy,
@@ -17498,18 +16771,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcb" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcc" = (
 /obj/item/inducer/sci,
 /obj/structure/rack,
@@ -17521,9 +16790,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcd" = (
 /obj/item/janiupgrade,
 /obj/structure/rack,
@@ -17531,9 +16798,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bce" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/ammo,
@@ -17541,18 +16806,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcf" = (
 /obj/item/mecha_parts/chassis/gygax,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcg" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
@@ -17560,9 +16821,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bch" = (
 /obj/structure/rack,
 /obj/item/paicard,
@@ -17570,9 +16829,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bci" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/techstorage/engineering,
@@ -17580,9 +16837,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcj" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/aimodule_neutral,
@@ -17590,9 +16845,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bck" = (
 /obj/item/laser_pointer/green,
 /obj/item/laser_pointer/green,
@@ -17601,32 +16854,24 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcl" = (
 /obj/machinery/ntnet_relay,
 /turf/open/floor/grass/snow,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcm" = (
 /obj/item/inducer,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcn" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bco" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/minor/twentyfive_percent_cyborg_mask,
@@ -17634,9 +16879,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcp" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17644,18 +16887,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcq" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/bomb_suit/security,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcr" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -17663,9 +16902,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcs" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
@@ -17673,9 +16910,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bct" = (
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
 /obj/structure/rack,
@@ -17686,26 +16921,20 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcu" = (
 /obj/item/lighter/slime,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcv" = (
 /obj/machinery/gibber,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcw" = (
 /obj/item/laser_pointer/blue,
 /obj/item/laser_pointer/blue,
@@ -17714,18 +16943,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcx" = (
 /obj/item/megaphone/command,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcy" = (
 /turf/closed/wall/f13/store,
 /area/shuttle/bunker_elevator)
@@ -17735,8 +16960,7 @@
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/shuttle/bunker_elevator)
 "bcA" = (
@@ -17744,9 +16968,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcB" = (
 /obj/item/modular_computer/laptop/buildable,
 /obj/structure/rack,
@@ -17757,32 +16979,25 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcC" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/kindleKicks,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcD" = (
 /mob/living/simple_animal/hostile/hivebot,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcE" = (
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2";
-	tag = "icon-bluerustychess2"
+	icon_state = "bluerustychess2"
 	},
 /area/shuttle/bunker_elevator)
 "bcF" = (
@@ -17806,18 +17021,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcH" = (
 /obj/structure/closet/cardboard/metal,
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcI" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
@@ -17825,34 +17036,26 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcJ" = (
 /obj/item/mecha_parts/part/gygax_armor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcK" = (
 /obj/item/mecha_parts/part/phazon_armor,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcL" = (
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/scattershot,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcM" = (
 /obj/structure/rack,
 /obj/machinery/light{
@@ -17862,18 +17065,14 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcN" = (
 /obj/item/modular_computer/laptop/buildable,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcO" = (
 /obj/effect/turf_decal/bot{
 	dir = 1
@@ -17881,27 +17080,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcP" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/cardboard/metal,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcQ" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcR" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/engineering,
@@ -17912,9 +17105,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bcS" = (
 /obj/machinery/light{
 	dir = 4
@@ -18083,9 +17274,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bds" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/wood/f13/old,
@@ -18093,8 +17282,7 @@
 "bdt" = (
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -18106,15 +17294,13 @@
 "bdv" = (
 /obj/structure/wreck/car/bike,
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "bdw" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedvertical";
-	tag = "icon-dottedvertical"
+	icon_state = "dottedvertical"
 	},
 /obj/structure/tires/two,
 /turf/open/indestructible/ground/outside/road,
@@ -18153,8 +17339,7 @@
 /area/f13/ahs)
 "bdD" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedverticalcorroded";
-	tag = "icon-dottedverticalcorroded"
+	icon_state = "dottedverticalcorroded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -18172,8 +17357,7 @@
 /area/f13/ahs)
 "bdG" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_3";
-	tag = "icon-tree_3"
+	icon_state = "tree_3"
 	},
 /turf/open/floor/grass/snow,
 /area/f13/wasteland)
@@ -18181,8 +17365,7 @@
 /obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 2;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "bdI" = (
@@ -18193,9 +17376,7 @@
 "bdJ" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bdK" = (
 /obj/machinery/light/lampost{
 	dir = 1;
@@ -18203,15 +17384,13 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "bdL" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 2;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "bdM" = (
@@ -18231,8 +17410,7 @@
 /area/f13/wasteland)
 "bdP" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0";
-	tag = "icon-horizontaltopborderbottom0"
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
 "bdQ" = (
@@ -18259,22 +17437,19 @@
 "bdV" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
-	icon_state = "sheethos";
-	tag = "icon-sheethos"
+	icon_state = "sheethos"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ahs)
 "bdW" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontalcorroded";
-	tag = "icon-doublehorizontalcorroded"
+	icon_state = "doublehorizontalcorroded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "bdX" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft2top";
-	tag = "icon-verticalleftborderleft2top"
+	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/wasteland)
 "bdY" = (
@@ -18301,8 +17476,7 @@
 	pixel_y = 21
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/shack)
 "bed" = (
@@ -18343,8 +17517,7 @@
 /area/f13/shack)
 "bel" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical (NORTHEAST)"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/f13/wood,
@@ -18374,8 +17547,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/shack)
 "beq" = (
@@ -18385,8 +17557,7 @@
 "ber" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/under/pants/f13/ghoul,
@@ -18394,8 +17565,7 @@
 /area/f13/shack)
 "bes" = (
 /obj/effect/decal/marking{
-	icon_state = "doubleverticalcorroded";
-	tag = "icon-doubleverticalcorroded"
+	icon_state = "doubleverticalcorroded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -18406,8 +17576,7 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
+	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
 "beu" = (
@@ -18432,8 +17601,7 @@
 	dir = 10;
 	icon_state = "sS-casing";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-sS-casing (SOUTHWEST)"
+	pixel_y = 0
 	},
 /turf/open/floor/f13/wood,
 /area/f13/shack)
@@ -18468,9 +17636,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /obj/item/clothing/under/rank/curator,
 /turf/open/floor/f13/wood,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beE" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/city)
@@ -18491,27 +17657,21 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beJ" = (
 /obj/structure/table/wood,
 /obj/item/coin/uranium,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beK" = (
 /obj/structure/rack,
 /obj/item/clothing/under/rank/curator/treasure_hunter,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beL" = (
 /obj/structure/tires/five,
 /turf/open/floor/grass/snow,
@@ -18521,9 +17681,7 @@
 /obj/machinery/light/fo13colored/Pink,
 /obj/item/coin/twoheaded,
 /turf/open/floor/plasteel/elevatorshaft,
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "beN" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
@@ -18546,15 +17704,13 @@
 "beS" = (
 /obj/structure/chair/stool{
 	dir = 2;
-	icon_state = "bench";
-	tag = "icon-bench"
+	icon_state = "bench"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "beT" = (
 /obj/structure/simple_door/room{
-	icon_state = "glass";
-	tag = "icon-glass"
+	icon_state = "glass"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -18574,8 +17730,7 @@
 /area/f13/city)
 "beX" = (
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar";
-	tag = "icon-rubblepillar"
+	icon_state = "rubblepillar"
 	},
 /area/f13/ruins)
 "beY" = (
@@ -18596,8 +17751,7 @@
 "bfc" = (
 /obj/structure/chair/stool{
 	dir = 8;
-	icon_state = "bench_center";
-	tag = "icon-bench_center (WEST)"
+	icon_state = "bench_center"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -18635,8 +17789,7 @@
 /area/f13/wasteland)
 "bfk" = (
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleslab";
-	tag = "icon-rubbleslab"
+	icon_state = "rubbleslab"
 	},
 /area/f13/ruins)
 "bfl" = (
@@ -18666,8 +17819,7 @@
 "bfq" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 2;
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner (WEST)"
+	icon_state = "rubblecorner"
 	},
 /area/f13/ruins)
 "bfr" = (
@@ -18676,8 +17828,7 @@
 /area/f13/ruins)
 "bfs" = (
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate";
-	tag = "icon-rubbleplate"
+	icon_state = "rubbleplate"
 	},
 /area/f13/ruins)
 "bft" = (
@@ -18699,8 +17850,7 @@
 "bfx" = (
 /obj/structure/chair/stool{
 	dir = 8;
-	icon_state = "bench_center";
-	tag = "icon-bench_center (WEST)"
+	icon_state = "bench_center"
 	},
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/f13/wood,
@@ -18713,15 +17863,13 @@
 "bfz" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 4;
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner (EAST)"
+	icon_state = "rubblecorner"
 	},
 /area/f13/ruins)
 "bfA" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
-	icon_state = "rubble";
-	tag = "icon-rubble (NORTH)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bfB" = (
@@ -18731,8 +17879,7 @@
 "bfC" = (
 /obj/structure/chair/stool{
 	dir = 1;
-	icon_state = "bench";
-	tag = "icon-bench (NORTH)"
+	icon_state = "bench"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -18749,16 +17896,14 @@
 "bfF" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bfG" = (
 /obj/structure/table/wood,
 /obj/item/pda/clown,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bfH" = (
@@ -18771,8 +17916,7 @@
 /obj/item/clothing/under/f13/agent47,
 /obj/item/pda/shaftminer,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bfJ" = (
@@ -18818,37 +17962,31 @@
 /area/f13/ruins)
 "bfR" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken";
-	tag = "icon-housewood3-broken"
+	icon_state = "housewood3-broken"
 	},
 /area/f13/city)
 "bfS" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housebase";
-	tag = "icon-housebase"
+	icon_state = "housebase"
 	},
 /area/f13/city)
 "bfT" = (
 /obj/machinery/light,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bfU" = (
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken";
-	tag = "icon-housewood2-broken"
+	icon_state = "housewood2-broken"
 	},
 /area/f13/city)
 "bfV" = (
 /obj/structure/simple_door/house{
-	icon_state = "glassclosing";
-	tag = "icon-glassclosing"
+	icon_state = "glassclosing"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken";
-	tag = "icon-housewood4-broken"
+	icon_state = "housewood4-broken"
 	},
 /area/f13/city)
 "bfW" = (
@@ -18887,28 +18025,24 @@
 "bgd" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 4;
-	icon_state = "rubble";
-	tag = "icon-rubble (EAST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bge" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 8;
-	icon_state = "rubble";
-	tag = "icon-rubble (WEST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bgf" = (
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner"
+	icon_state = "rubblecorner"
 	},
 /area/f13/ruins)
 "bgg" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 8;
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner"
+	icon_state = "rubblecorner"
 	},
 /area/f13/ruins)
 "bgh" = (
@@ -18939,18 +18073,10 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"bgo" = (
-/turf/open/indestructible/ground/outside/ruins{
-	dir = 4;
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner (WEST)"
-	},
-/area/f13/ruins)
 "bgp" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
-	icon_state = "rubblecorner";
-	tag = "icon-rubblecorner (NORTH)"
+	icon_state = "rubblecorner"
 	},
 /area/f13/ruins)
 "bgq" = (
@@ -18977,8 +18103,7 @@
 /obj/item/pda/bar,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bgv" = (
@@ -18987,8 +18112,7 @@
 	id = "ES2"
 	},
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/city)
 "bgw" = (
@@ -18998,8 +18122,7 @@
 "bgx" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleslab";
-	tag = "icon-rubbleslab"
+	icon_state = "rubbleslab"
 	},
 /area/f13/ruins)
 "bgy" = (
@@ -19108,8 +18231,7 @@
 "bgS" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 6;
-	icon_state = "rubble";
-	tag = "icon-rubble (SOUTHEAST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bgT" = (
@@ -19185,8 +18307,7 @@
 "bhj" = (
 /mob/living/simple_animal/radstag,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/f13/den)
 "bhk" = (
@@ -19206,15 +18327,13 @@
 "bhn" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 9;
-	icon_state = "rubble";
-	tag = "icon-rubble (NORTHWEST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bho" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 5;
-	icon_state = "rubble";
-	tag = "icon-rubble (NORTHEAST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bhp" = (
@@ -19224,21 +18343,18 @@
 "bhq" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 10;
-	icon_state = "rubble";
-	tag = "icon-rubble (SOUTHWEST)"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bhr" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubble";
-	tag = "icon-rubble"
+	icon_state = "rubble"
 	},
 /area/f13/ruins)
 "bhs" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1";
-	tag = "icon-horizontalinnermain1"
+	icon_state = "horizontalinnermain1"
 	},
 /area/f13/city)
 "bht" = (
@@ -19272,14 +18388,12 @@
 "bhz" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2left";
-	tag = "icon-horizontalinnermain2left (WEST)"
+	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/city)
 "bhA" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/city)
 "bhB" = (
@@ -19295,14 +18409,12 @@
 "bhD" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
-	icon_state = "horizontalinnermain2right";
-	tag = "icon-horizontalinnermain2right (WEST)"
+	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/city)
 "bhE" = (
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop3";
-	tag = "icon-horizontalbottombordertop3"
+	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/city)
 "bhF" = (
@@ -19327,8 +18439,7 @@
 "bhK" = (
 /obj/structure/fence{
 	dir = 4;
-	icon_state = "straight";
-	tag = "icon-metal_fence3"
+	icon_state = "straight"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/den)
@@ -19360,22 +18471,19 @@
 /area/f13/city)
 "bhR" = (
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	icon_state = "brokenstore"
 	},
 /turf/open/floor/wood/f13/old/ruinedstraightsouth,
 /area/f13/ruins)
 "bhS" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate";
-	tag = "icon-rubbleplate"
+	icon_state = "rubbleplate"
 	},
 /area/f13/ruins)
 "bhT" = (
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	icon_state = "brokenstore"
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/ruins)
@@ -19496,8 +18604,7 @@
 "biq" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plating/wooden,
@@ -19505,8 +18612,7 @@
 "bir" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/outside/ruins,
@@ -19524,8 +18630,7 @@
 "biv" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
+	icon_state = "housewindowvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
@@ -19535,8 +18640,7 @@
 "biw" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbrokenvertical";
-	tag = "icon-housewindowbrokenvertical"
+	icon_state = "housewindowbrokenvertical"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
@@ -19566,8 +18670,7 @@
 "biA" = (
 /obj/structure/chair{
 	dir = 8;
-	icon_state = "chair";
-	tag = "icon-chair (WEST)"
+	icon_state = "chair"
 	},
 /obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/f13{
@@ -19645,8 +18748,7 @@
 "biK" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "housewindowbroken";
-	tag = "icon-housewindowbroken"
+	icon_state = "housewindowbroken"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
@@ -19706,8 +18808,7 @@
 /area/f13/city)
 "biS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0";
-	tag = "icon-horizontaloutermain0"
+	icon_state = "horizontaloutermain0"
 	},
 /area/f13/city)
 "biT" = (
@@ -19814,22 +18915,19 @@
 "bjg" = (
 /obj/structure/wreck/car/bike,
 /obj/effect/decal/marking{
-	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	icon_state = "dottedverticaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "bjh" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	icon_state = "dottedverticaldegraded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "bji" = (
 /obj/effect/decal/marking{
-	icon_state = "dottedverticaldegraded";
-	tag = "icon-dottedverticaldegraded"
+	icon_state = "dottedverticaldegraded"
 	},
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/road,
@@ -19848,34 +18946,29 @@
 /area/f13/ncr)
 "bjl" = (
 /obj/effect/decal/marking{
-	icon_state = "doubleverticalbottom";
-	tag = "icon-doubleverticalbottom"
+	icon_state = "doubleverticalbottom"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
 "bjm" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/city)
 "bjn" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottomright";
-	tag = "icon-horizontalbottomborderbottomright"
+	icon_state = "horizontalbottomborderbottomright"
 	},
 /area/f13/city)
 "bjo" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottomleft";
-	tag = "icon-horizontalbottomborderbottomleft"
+	icon_state = "horizontalbottomborderbottomleft"
 	},
 /area/f13/city)
 "bjp" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
+	icon_state = "outerborder"
 	},
 /area/f13/city)
 "bjq" = (
@@ -19884,15 +18977,13 @@
 /area/f13/underground/mountain)
 "bjr" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontal";
-	tag = "icon-doublehorizontal"
+	icon_state = "doublehorizontal"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
 "bjs" = (
 /obj/effect/decal/marking{
-	icon_state = "doublehorizontalcorroded";
-	tag = "icon-doublehorizontalcorroded"
+	icon_state = "doublehorizontalcorroded"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
@@ -19921,20 +19012,17 @@
 /area/f13/city)
 "bjw" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0";
-	tag = "icon-verticaloutermain0"
+	icon_state = "verticaloutermain0"
 	},
 /area/f13/city)
 "bjx" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermainright";
-	tag = "icon-horizontaloutermainright"
+	icon_state = "horizontaloutermainright"
 	},
 /area/f13/city)
 "bjy" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermainleft";
-	tag = "icon-horizontaloutermainleft"
+	icon_state = "horizontaloutermainleft"
 	},
 /area/f13/city)
 "bjz" = (
@@ -19942,8 +19030,7 @@
 /area/f13/city)
 "bjA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/city)
 "bjB" = (
@@ -20086,15 +19173,13 @@
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 10;
-	pixel_y = 0;
-	tag = "icon-sink (EAST)"
+	pixel_y = 0
 	},
 /obj/structure/mirror{
 	pixel_x = 32
 	},
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13{
@@ -20104,28 +19189,24 @@
 "bkb" = (
 /obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain0";
-	tag = "icon-verticaloutermain0"
+	icon_state = "verticaloutermain0"
 	},
 /area/f13/city)
 "bkc" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
-	icon_state = "outermaincornerinner";
-	tag = "icon-outermaincornerinner (EAST)"
+	icon_state = "outermaincornerinner"
 	},
 /area/f13/city)
 "bkd" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermaintop";
-	tag = "icon-verticaloutermaintop"
+	icon_state = "verticaloutermaintop"
 	},
 /area/f13/city)
 "bke" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
-	icon_state = "outermaincornerinner";
-	tag = "icon-outermaincornerinner (NORTH)"
+	icon_state = "outermaincornerinner"
 	},
 /area/f13/city)
 "bkf" = (
@@ -20153,8 +19234,7 @@
 /area/f13/tribe)
 "bkl" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	icon_state = "horizontaloutermain2"
 	},
 /area/f13/city)
 "bkm" = (
@@ -20170,21 +19250,18 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/city)
 "bko" = (
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/city)
 "bkp" = (
 /obj/item/target,
 /turf/open/floor/f13{
-	icon_state = "redmark";
-	tag = "icon-redmark"
+	icon_state = "redmark"
 	},
 /area/f13/city)
 "bkq" = (
@@ -20194,8 +19271,7 @@
 "bkr" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	icon_state = "horizontaloutermain2"
 	},
 /area/f13/city)
 "bks" = (
@@ -20212,14 +19288,12 @@
 	icon_state = "tube"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2";
-	tag = "icon-horizontaloutermain2"
+	icon_state = "horizontaloutermain2"
 	},
 /area/f13/city)
 "bkv" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20228,29 +19302,25 @@
 "bkw" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/city)
 "bkx" = (
 /obj/item/stack/f13Cash/random/bottle_cap/med,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/city)
 "bky" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube"
 	},
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/city)
 "bkz" = (
@@ -20269,21 +19339,18 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/city)
 "bkC" = (
 /obj/structure/wreck/trash/secway,
 /turf/open/floor/f13{
-	icon_state = "reddirtyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "reddirtyfull"
 	},
 /area/f13/city)
 "bkD" = (
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	icon_state = "brokenstore"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
@@ -20358,8 +19425,7 @@
 "bkN" = (
 /obj/structure/chair{
 	dir = 4;
-	icon_state = "chair";
-	tag = "icon-chair (EAST)"
+	icon_state = "chair"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20375,8 +19441,7 @@
 /area/f13/city)
 "bkP" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
@@ -20403,8 +19468,7 @@
 /area/f13/wasteland)
 "bkT" = (
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/item/storage/backpack/satchel/leather,
 /turf/open/floor/f13{
@@ -20421,12 +19485,10 @@
 "bkV" = (
 /obj/structure/chair{
 	dir = 1;
-	icon_state = "chair";
-	tag = "icon-chair (NORTH)"
+	icon_state = "chair"
 	},
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20439,8 +19501,7 @@
 "bkX" = (
 /obj/structure/chair/stool{
 	dir = 2;
-	icon_state = "bench";
-	tag = "icon-bench"
+	icon_state = "bench"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20449,8 +19510,7 @@
 "bkY" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	icon_state = "storewindowtop"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -20460,8 +19520,7 @@
 "bkZ" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowleft";
-	tag = "icon-storewindowleft"
+	icon_state = "storewindowleft"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -20471,8 +19530,7 @@
 "bla" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowright";
-	tag = "icon-storewindowright"
+	icon_state = "storewindowright"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -20483,8 +19541,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20501,12 +19558,10 @@
 "bld" = (
 /obj/structure/chair/stool{
 	dir = 1;
-	icon_state = "bench";
-	tag = "icon-bench (NORTH)"
+	icon_state = "bench"
 	},
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -20514,8 +19569,7 @@
 /area/f13/city)
 "ble" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "storewindowbottom";
-	tag = "icon-storewindowbottom (NORTHEAST)"
+	icon_state = "storewindowbottom"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -20641,12 +19695,10 @@
 "blx" = (
 /obj/structure/bed/mattress/pregame,
 /obj/item/restraints/handcuffs{
-	icon_state = "handcuffGag";
-	tag = "icon-handcuffGag"
+	icon_state = "handcuffGag"
 	},
 /obj/effect/decal/remains{
-	icon_state = "remains";
-	tag = "icon-remains"
+	icon_state = "remains"
 	},
 /obj/machinery/light/small{
 	dir = 8
@@ -20696,8 +19748,7 @@
 /area/f13/underground/mountain)
 "blG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
+	icon_state = "verticalrightborderright0"
 	},
 /area/f13/tunnel)
 "blH" = (
@@ -20770,16 +19821,14 @@
 /area/f13/city)
 "blY" = (
 /obj/structure/simple_door/house{
-	icon_state = "dirtystore";
-	tag = "icon-dirtystore"
+	icon_state = "dirtystore"
 	},
 /turf/open/floor/plasteel/cmo,
 /area/f13/city)
 "blZ" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /turf/open/floor/plasteel/cmo,
 /area/f13/city)
@@ -20813,16 +19862,14 @@
 /area/f13/city)
 "bmf" = (
 /obj/structure/simple_door/house{
-	icon_state = "dirtystore";
-	tag = "icon-dirtystore"
+	icon_state = "dirtystore"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "bmg" = (
 /obj/structure/toilet{
 	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
+	icon_state = "toilet00"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -20900,8 +19947,7 @@
 /area/f13/city)
 "bmw" = (
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "gib2-old";
-	tag = "icon-gib2-old"
+	icon_state = "gib2-old"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -20917,8 +19963,7 @@
 "bmz" = (
 /obj/item/ammo_casing/caseless{
 	dir = 4;
-	icon_state = "sS-casing";
-	tag = "icon-sS-casing (EAST)"
+	icon_state = "sS-casing"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/shack)
@@ -20941,8 +19986,7 @@
 "bmD" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	icon_state = "storewindowtop"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -20962,8 +20006,7 @@
 /area/f13/clinic)
 "bmG" = (
 /obj/structure/window/fulltile/house{
-	icon_state = "storewindowbottom";
-	tag = "icon-storewindowbottom (NORTHEAST)"
+	icon_state = "storewindowbottom"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -21012,8 +20055,7 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0";
-	tag = "icon-verticalleftborderleft0"
+	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
 "bmN" = (
@@ -21050,8 +20092,7 @@
 /area/f13/clinic)
 "bmS" = (
 /obj/structure/simple_door/house{
-	icon_state = "dirtystore";
-	tag = "icon-dirtystore"
+	icon_state = "dirtystore"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -21121,8 +20162,7 @@
 /area/f13/clinic)
 "bnb" = (
 /obj/structure/simple_door/house{
-	icon_state = "glass";
-	tag = "icon-glass"
+	icon_state = "glass"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
@@ -21161,9 +20201,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bnh" = (
 /obj/structure/simple_door/wood,
 /obj/structure/fans/tiny/invisible,
@@ -21225,9 +20263,7 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
-/area/f13/city{
-	name = "museum"
-	})
+/area/f13/city/museum)
 "bnp" = (
 /obj/effect/spawner/structure/window/ice,
 /obj/structure/curtain{
@@ -155035,7 +154071,7 @@ awN
 atu
 atu
 atu
-aBF
+afX
 aEC
 aEP
 ats
@@ -162536,7 +161572,7 @@ aGc
 aGc
 aMu
 aGc
-aMH
+aNZ
 asl
 asl
 asl
@@ -164816,8 +163852,8 @@ asl
 asl
 asl
 asl
-aRO
-aSu
+aNx
+aNi
 asl
 asl
 asl
@@ -165215,8 +164251,8 @@ asl
 asl
 asl
 asl
-aRO
-aSu
+aNx
+aNi
 asl
 asl
 asl
@@ -165823,13 +164859,13 @@ asl
 asl
 asl
 asl
-aRO
+aNx
 aTm
 aTm
 aMQ
 aMQ
 aMQ
-aSu
+aNi
 asl
 asl
 bdt
@@ -166057,7 +165093,7 @@ aVU
 aVU
 aVU
 bgf
-bgo
+bfz
 aVU
 aVU
 bgS
@@ -167033,8 +166069,8 @@ asl
 asl
 asl
 asl
-aRO
-aSu
+aNx
+aNi
 aGn
 aTN
 aTN
@@ -168821,7 +167857,7 @@ aNu
 aGx
 aNR
 aNR
-aOa
+aSv
 asl
 asl
 aOr
@@ -169234,7 +168270,7 @@ aGc
 aPe
 aPh
 aPj
-aMH
+aNZ
 asl
 asl
 aHf
@@ -169436,7 +168472,7 @@ aGc
 aGc
 aGc
 aGc
-aMH
+aNZ
 asl
 asl
 aHg
@@ -172162,7 +171198,7 @@ avC
 aHW
 aNz
 aHK
-aMH
+aNZ
 asl
 asl
 asl

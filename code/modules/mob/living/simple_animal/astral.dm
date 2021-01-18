@@ -41,7 +41,7 @@
 	incorporeal_move = 0
 	to_chat(src, "<span class='notice'>Your astral projection is interrupted and your mind is sent back to your body with a shock!</span>")
 
-/mob/living/simple_animal/astral/ClickOn(var/atom/A, var/params)
+/mob/living/simple_animal/astral/ClickOn(atom/A, params)
 	. = ..()
 	attempt_possess(A)
 

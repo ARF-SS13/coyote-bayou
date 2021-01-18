@@ -30,7 +30,7 @@
 	//BOT = the name of the bot (this can be used on any of the emotes)
 	//THREAT_LEVEL = the level of the threat detected (can be used on arrest_emote and infraction)
 
-/datum/beepsky_fashion/proc/get_overlay(var/dir)
+/datum/beepsky_fashion/proc/get_overlay(dir)
 	if(icon_file && obj_icon_state)
 		var/image/beepsky_overlay = image(icon_file, obj_icon_state, dir = dir)
 		beepsky_overlay.alpha = obj_alpha
@@ -114,7 +114,7 @@
 	arrest_emote = "ARREST_TYPE wevel THREAT_LEVEL scwumbwag CRIMINAL in LOCATION. Nya."
 	ignore_sound = TRUE //we instead make the stunned person fire the nya emote
 
-/datum/beepsky_fashion/cat/stun_attack(var/mob/living/carbon/C) //makes a fake table under you on hit, makes cat people nya when hit
+/datum/beepsky_fashion/cat/stun_attack(mob/living/carbon/C) //makes a fake table under you on hit, makes cat people nya when hit
 	if(iscatperson(C))
 		C.emote("nya")
 	var/turf/target_turf = get_turf(C)

@@ -22,8 +22,8 @@
 /datum/crafting_recipe/showercurtain
 	name = "Shower Curtains"
 	reqs = 	list(/obj/item/stack/sheet/cloth = 2,
-				 /obj/item/stack/sheet/plastic = 2,
-				 /obj/item/stack/rods = 1)
+				/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/rods = 1)
 	result = /obj/structure/curtain
 	subcategory = CAT_FURNITURE
 	category = CAT_MISC
@@ -33,8 +33,8 @@
 	result = /obj/structure/guillotine
 	time = 150 // Building a functioning guillotine takes time
 	reqs = list(/obj/item/stack/sheet/plasteel = 3,
-		        /obj/item/stack/sheet/mineral/wood = 20,
-		        /obj/item/stack/cable_coil = 10)
+				/obj/item/stack/sheet/mineral/wood = 20,
+				/obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -44,7 +44,7 @@
 	result = /obj/structure/femur_breaker
 	time = 150
 	reqs = list(/obj/item/stack/sheet/metal = 20,
-		        /obj/item/stack/cable_coil = 30)
+				/obj/item/stack/cable_coil = 30)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -54,7 +54,7 @@
 	name = "Black Coffin"
 	result = /obj/structure/closet/crate/coffin/blackcoffin
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/screwdriver)
+				/obj/item/screwdriver)
 	reqs = list(/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/metal = 1)
@@ -69,7 +69,7 @@
 	name = "Meat Coffin"
 	result =/obj/structure/closet/crate/coffin/meatcoffin
 	tools = list(/obj/item/kitchen/knife,
-				 /obj/item/kitchen/rollingpin)
+				/obj/item/kitchen/rollingpin)
 	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab = 5,
 				/obj/item/restraints/handcuffs/cable = 1)
 	time = 150
@@ -81,7 +81,7 @@
 	name = "Metal Coffin"
 	result =/obj/structure/closet/crate/coffin/metalcoffin
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/screwdriver)
+				/obj/item/screwdriver)
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	time = 100
 	subcategory = CAT_FURNITURE
@@ -93,9 +93,9 @@
 	//desc = "For converting crewmembers into loyal Vassals."
 	result = /obj/structure/bloodsucker/vassalrack
 	tools = list(/obj/item/weldingtool,
-				 	//obj/item/screwdriver,
+					//obj/item/screwdriver,
 					/obj/item/wrench
-					 )
+					)
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
 				/obj/item/stack/sheet/metal = 2,
 				/obj/item/restraints/handcuffs/cable = 2,
@@ -117,7 +117,7 @@
 	//desc = "For converting crewmembers into loyal Vassals."
 	result = /obj/structure/bloodsucker/candelabrum
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/wrench
+				/obj/item/wrench
 				)
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/rods = 1,
@@ -144,7 +144,7 @@
 	result = /obj/structure/anvil/obtainable/table
 	time = 300
 	reqs = list(/obj/item/stack/sheet/metal = 4,
-		        /obj/item/stack/rods = 2)
+				/obj/item/stack/rods = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -179,33 +179,6 @@
 //Tools & Storage//
 ///////////////////
 
-/datum/crafting_recipe/upgraded_gauze
-	name = "Improved Gauze"
-	result = /obj/item/stack/medical/gauze/adv/one
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/space_cleaner/sterilizine = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/brute_pack
-	name = "Suture Pack"
-	result = /obj/item/stack/medical/suture/five
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/medicine/styptic_powder = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/burn_pack
-	name = "Regenerative Mesh"
-	result = /obj/item/stack/medical/mesh/five
-	time = 1
-	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/medicine/silver_sulfadiazine = 10)
-	category = CAT_MISC
-	subcategory = CAT_TOOL
-
 /datum/crafting_recipe/ghettojetpack
 	name = "Improvised Jetpack"
 	result = /obj/item/tank/jetpack/improvised
@@ -217,6 +190,7 @@
 	category = CAT_MISC
 	subcategory = CAT_TOOL
 	tools = list(TOOL_WRENCH, TOOL_WELDER, TOOL_WIRECUTTER)
+	always_availible = FALSE
 
 /datum/crafting_recipe/goldenbox
 	name = "Gold Plated Toolbox"
@@ -268,6 +242,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_welder
 	name = "Bronze Plated Welding Tool"
@@ -280,6 +255,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_wirecutters
 	name = "Bronze Plated Wirecutters"
@@ -292,6 +268,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_crowbar
 	name = "Bronze Plated Crowbar"
@@ -304,6 +281,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/bronze_wrench
 	name = "Bronze Plated Wrench"
@@ -316,6 +294,7 @@
 	time = 40
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/rcl
 	name = "Makeshift Rapid Cable Layer"
@@ -343,6 +322,7 @@
 	time = 5
 	subcategory = CAT_TOOL
 	category = CAT_MISC
+	always_availible = FALSE
 
 /datum/crafting_recipe/heretic/codex
 	name = "Codex Cicatrix"
@@ -355,6 +335,7 @@
 	time = 150
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+	always_availible = FALSE
 	always_availible = FALSE
 
 ////////////

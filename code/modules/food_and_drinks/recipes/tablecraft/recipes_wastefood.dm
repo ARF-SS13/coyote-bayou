@@ -80,10 +80,10 @@
 /datum/crafting_recipe/food/squirrelstew
 	name = "Squirrel Stew"
 	reqs = list(
-    	/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 1,
-    	/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
-    	/obj/item/reagent_containers/food/snacks/grown/potato = 1,
-    	/obj/item/reagent_containers/glass/bowl = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/squirrelstew
 	category = CAT_FOOD
@@ -92,9 +92,9 @@
 /datum/crafting_recipe/food/pemmican
 	name = "pemmican"
 	reqs = list(
-    	/obj/item/reagent_containers/food/snacks/grown/corn = 1,
-    	/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
-    	/obj/item/reagent_containers/food/snacks/tallow = 1
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
+		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
+		/obj/item/reagent_containers/food/snacks/tallow = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pemmican
 	category = CAT_FOOD
@@ -103,9 +103,9 @@
 /datum/crafting_recipe/food/crunchymutfruit
 	name = "crunchy mutfruit"
 	reqs = list(
-    	/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-    	/obj/item/reagent_containers/food/snacks/butter = 1,
-    	/datum/reagent/consumable/sugar = 5
+		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/datum/reagent/consumable/sugar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
 	category = CAT_FOOD
@@ -114,8 +114,8 @@
 /datum/crafting_recipe/food/tatofries
 	name = "tato fries"
 	reqs = list(
-    	/obj/item/reagent_containers/food/snacks/grown/tato = 2,
-    	/obj/item/reagent_containers/food/snacks/butter = 1
+		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/tatofries
 	category = CAT_FOOD

@@ -7,3 +7,7 @@ html/changelog.html merge=union
 
 # force all files to be LF 
 * text=auto
+
+##Force tab indents on dm files
+*.dm whitespace=indent-with-non-tab
+

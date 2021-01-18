@@ -847,15 +847,15 @@
 	uses_overlays = FALSE
 
 /obj/item/card/id/selfassign/attack_self(mob/user)
-    if(isliving(user))
-        var/mob/living/living_user = user
-        if(alert(user, "Action", "Agent ID", "Show", "Forge") == "Forge")
-            registered_name = living_user.real_name
-            assignment = living_user.job
-            update_label()
-            to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
-            return
-    ..()
+	if(isliving(user))
+		var/mob/living/living_user = user
+		if(alert(user, "Action", "Agent ID", "Show", "Forge") == "Forge")
+			registered_name = living_user.real_name
+			assignment = living_user.job
+			update_label()
+			to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
+			return
+	..()
 
 /obj/item/card/id/selfassign
 	icon_state = "silver"

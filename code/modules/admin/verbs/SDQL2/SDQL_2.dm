@@ -691,11 +691,11 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null
 	state = SDQL2_STATE_SWITCHING
 
 /**
-  * Recursively prints out an object to text list for SDQL2 output to admins, with VV links and all.
-  * Recursion limit: 50
-  * Limit imposed by callers should be around 10000 objects
-  * Seriously, if you hit those limits, you're doing something wrong.
-  */
+ * Recursively prints out an object to text list for SDQL2 output to admins, with VV links and all.
+ * Recursion limit: 50
+ * Limit imposed by callers should be around 10000 objects
+ * Seriously, if you hit those limits, you're doing something wrong.
+ */
 /datum/SDQL2_query/proc/SDQL_print(datum/object, list/text_list, print_nulls = TRUE, recursion = 1, linebreak = TRUE)
 	if(recursion > 50)
 		text_list += "<br><font color='red'><b>RECURSION LIMIT REACHED.</font></b><br>"

@@ -1,20 +1,20 @@
 /**
-  * Higher overhead "advanced" version of do_after.
-  * @params
-  * - atom/user is the atom doing the action or the "physical" user
-  * - delay is time in deciseconds
-  * - atom/target is the atom the action is being done to, defaults to user
-  * - do_after_flags see __DEFINES/flags/do_after.dm for details.
-  * - datum/callback/extra_checks - Every time this ticks, extra_checks() is invoked with (user, delay, target, time_left, do_after_flags, required_mobility_flags, required_combat_flags, mob_redirect, stage, initially_held_item, tool).
-  * 	Stage can be DO_AFTER_STARTING, DO_AFTER_PROGRESSING, DO_AFTER_FINISHING
-  * 	If it returns DO_AFTER_STOP, this breaks.
-  * 	If it returns nothing, all other checks are done.
-  * 	If it returns DO_AFTER_PROCEED, all other checks are ignored.
-  * - required_mobility_flags is checked with CHECK_ALL_MOBILITY. Will immediately fail if the user isn't a mob.
-  * - requried_combat_flags is checked with CHECK_MULTIPLE_BITFIELDS. Will immediately fail if the user isn't a mob.
-  * - mob/living/mob_redirect - advanced option: If this is specified, movement and mobility/combat flag checks will use this instead of user. Progressbars will also go to this.
-  * - obj/item/tool - The tool we're using. See do_after flags for details.
-  */
+ * Higher overhead "advanced" version of do_after.
+ * @params
+ * - atom/user is the atom doing the action or the "physical" user
+ * - delay is time in deciseconds
+ * - atom/target is the atom the action is being done to, defaults to user
+ * - do_after_flags see __DEFINES/flags/do_after.dm for details.
+ * - datum/callback/extra_checks - Every time this ticks, extra_checks() is invoked with (user, delay, target, time_left, do_after_flags, required_mobility_flags, required_combat_flags, mob_redirect, stage, initially_held_item, tool).
+ * 	Stage can be DO_AFTER_STARTING, DO_AFTER_PROGRESSING, DO_AFTER_FINISHING
+ * 	If it returns DO_AFTER_STOP, this breaks.
+ * 	If it returns nothing, all other checks are done.
+ * 	If it returns DO_AFTER_PROCEED, all other checks are ignored.
+ * - required_mobility_flags is checked with CHECK_ALL_MOBILITY. Will immediately fail if the user isn't a mob.
+ * - requried_combat_flags is checked with CHECK_MULTIPLE_BITFIELDS. Will immediately fail if the user isn't a mob.
+ * - mob/living/mob_redirect - advanced option: If this is specified, movement and mobility/combat flag checks will use this instead of user. Progressbars will also go to this.
+ * - obj/item/tool - The tool we're using. See do_after flags for details.
+ */
 #define INVOKE_CALLBACK cb_return = extra_checks?.Invoke(user, delay, target, world.time - starttime, do_after_flags, required_mobility_flags, required_combat_flags, mob_redirect, stage, initially_held_item, tool)
 #define CHECK_FLAG_FAILURE ((required_mobility_flags || required_combat_flags) && (!living_user || (required_mobility_flags && !CHECK_ALL_MOBILITY(living_user, required_mobility_flags)) || (required_combat_flags && !CHECK_MULTIPLE_BITFIELDS(living_user.combat_flags, required_combat_flags))))
 #define TIMELEFT (world.time - starttime)
@@ -222,7 +222,7 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, var/delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
+/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -304,7 +304,7 @@
 	. = 1
 	return
 
-/proc/do_after_mob(mob/user, var/list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
+/proc/do_after_mob(mob/user, list/targets, time = 30, uninterruptible = 0, progress = 1, datum/callback/extra_checks)
 	if(!user || !targets)
 		return 0
 	if(!islist(targets))

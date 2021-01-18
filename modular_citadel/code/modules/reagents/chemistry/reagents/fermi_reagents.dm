@@ -1,4 +1,4 @@
- //Fermichem!!
+//Fermichem!!
 //Fun chems for all the family
 
 /datum/reagent/fermi
@@ -440,7 +440,7 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 	log_reagent("FERMICHEM: [H] ckey: [H.key] has returned to normal")
 
 
-/datum/reagent/fermi/secretcatchem/reaction_mob(var/mob/living/L)
+/datum/reagent/fermi/secretcatchem/reaction_mob(mob/living/L)
 	if(istype(L, /mob/living/simple_animal/pet/cat/custom_cat) && cached_purity >= 0.85)
 		var/mob/living/simple_animal/pet/cat/custom_cat/catto = L
 		if(catto.origin)

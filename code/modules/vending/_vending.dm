@@ -18,10 +18,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 #define MAX_VENDING_INPUT_AMOUNT 30
 /**
-  * # vending record datum
-  *
-  * A datum that represents a product that is vendable
-  */
+ * # vending record datum
+ *
+ * A datum that represents a product that is vendable
+ */
 /datum/data/vending_product
 	name = "generic"
 	///Typepath of the product that is created when this record "sells"
@@ -36,10 +36,10 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/custom_premium_price
 
 /**
-  * # vending machines
-  *
-  * Captalism in the year 2525, everything in a vending machine, even love
-  */
+ * # vending machines
+ *
+ * Captalism in the year 2525, everything in a vending machine, even love
+ */
 /obj/machinery/vending
 	name = "\improper Vendomat"
 	desc = "A generic vending machine."
@@ -136,16 +136,16 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/extra_price = 50
 	///cost multiplier per department or access
 	var/list/cost_multiplier_per_dept = list()
-  	/**
+	/**
 	  * Is this item on station or not
 	  *
 	  * if it doesn't originate from off-station during mapload, everything is free
 	  */
 	var/onstation = FALSE //if it doesn't originate from off-station during mapload, everything is free
-  ///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
+	///A variable to change on a per instance basis on the map that allows the instance to force cost and ID requirements
 	var/onstation_override = FALSE //change this on the object on the map to override the onstation check. DO NOT APPLY THIS GLOBALLY.
 
-  ///ID's that can load this vending machine wtih refills
+	///ID's that can load this vending machine wtih refills
 	var/list/canload_access_list
 
 
@@ -163,18 +163,18 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/light_mask
 
 /obj/item/circuitboard
-    ///determines if the circuit board originated from a vendor off station or not.
+	///determines if the circuit board originated from a vendor off station or not.
 	var/onstation = FALSE
 
 /**
-  * Initialize the vending machine
-  *
-  * Builds the vending machine inventory, sets up slogans and other such misc work
-  *
-  * This also sets the onstation var to:
-  * * FALSE - if the machine was maploaded on a zlevel that doesn't pass the is_station_level check
-  * * TRUE - all other cases
-  */
+ * Initialize the vending machine
+ *
+ * Builds the vending machine inventory, sets up slogans and other such misc work
+ *
+ * This also sets the onstation var to:
+ * * FALSE - if the machine was maploaded on a zlevel that doesn't pass the is_station_level check
+ * * TRUE - all other cases
+ */
 /obj/machinery/vending/Initialize(mapload)
 	var/build_inv = FALSE
 	if(!refill_canister)
@@ -282,14 +282,14 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 GLOBAL_LIST_EMPTY(vending_products)
 /**
-  * Build the inventory of the vending machine from it's product and record lists
-  *
-  * This builds up a full set of /datum/data/vending_products from the product list of the vending machine type
-  * Arguments:
-  * * productlist - the list of products that need to be converted
-  * * recordlist - the list containing /datum/data/vending_product datums
-  * * startempty - should we set vending_product record amount from the product list (so it's prefilled at roundstart)
-  */
+ * Build the inventory of the vending machine from it's product and record lists
+ *
+ * This builds up a full set of /datum/data/vending_products from the product list of the vending machine type
+ * Arguments:
+ * * productlist - the list of products that need to be converted
+ * * recordlist - the list containing /datum/data/vending_product datums
+ * * startempty - should we set vending_product record amount from the product list (so it's prefilled at roundstart)
+ */
 /obj/machinery/vending/proc/build_inventory(list/productlist, list/recordlist, start_empty = FALSE)
 	for(var/typepath in productlist)
 		var/amount = productlist[typepath]
@@ -308,13 +308,13 @@ GLOBAL_LIST_EMPTY(vending_products)
 		R.custom_premium_price = initial(temp.custom_premium_price)
 		recordlist += R
 /**
-  * Refill a vending machine from a refill canister
-  *
-  * This takes the products from the refill canister and then fills the products,contraband and premium product categories
-  *
-  * Arguments:
-  * * canister - the vending canister we are refilling from
-  */
+ * Refill a vending machine from a refill canister
+ *
+ * This takes the products from the refill canister and then fills the products,contraband and premium product categories
+ *
+ * Arguments:
+ * * canister - the vending canister we are refilling from
+ */
 /obj/machinery/vending/proc/restock(obj/item/vending_refill/canister)
 	if (!canister.products)
 		canister.products = products.Copy()
@@ -327,12 +327,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 	. += refill_inventory(canister.contraband, hidden_records)
 	. += refill_inventory(canister.premium, coin_records)
 /**
-  * Refill our inventory from the passed in product list into the record list
-  *
-  * Arguments:
-  * * productlist - list of types -> amount
-  * * recordlist - existing record datums
-  */
+ * Refill our inventory from the passed in product list into the record list
+ *
+ * Arguments:
+ * * productlist - list of types -> amount
+ * * recordlist - existing record datums
+ */
 /obj/machinery/vending/proc/refill_inventory(list/productlist, list/recordlist)
 	. = 0
 	for(var/R in recordlist)
@@ -343,10 +343,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 			record.amount += diff
 			. += diff
 /**
-  * Set up a refill canister that matches this machines products
-  *
-  * This is used when the machine is deconstructed, so the items aren't "lost"
-  */
+ * Set up a refill canister that matches this machines products
+ *
+ * This is used when the machine is deconstructed, so the items aren't "lost"
+ */
 /obj/machinery/vending/proc/update_canister()
 	if (!component_parts)
 		return
@@ -360,8 +360,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 	R.premium = unbuild_inventory(coin_records)
 
 /**
-  * Given a record list, go through and and return a list of type -> amount
-  */
+ * Given a record list, go through and and return a list of type -> amount
+ */
 /obj/machinery/vending/proc/unbuild_inventory(list/recordlist)
 	. = list()
 	for(var/R in recordlist)
@@ -602,11 +602,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 	. = ..()
 
 /**
-  * Is the passed in user allowed to load this vending machines compartments
-  *
-  * Arguments:
-  * * user - mob that is doing the loading of the vending machine
-  */
+ * Is the passed in user allowed to load this vending machines compartments
+ *
+ * Arguments:
+ * * user - mob that is doing the loading of the vending machine
+ */
 /obj/machinery/vending/proc/compartmentLoadAccessCheck(mob/user)
 	if(!canload_access_list)
 		return TRUE
@@ -851,13 +851,13 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(shoot_inventory && prob(shoot_inventory_chance))
 		throw_item()
 /**
-  * Speak the given message verbally
-  *
-  * Checks if the machine is powered and the message exists
-  *
-  * Arguments:
-  * * message - the message to speak
-  */
+ * Speak the given message verbally
+ *
+ * Checks if the machine is powered and the message exists
+ *
+ * Arguments:
+ * * message - the message to speak
+ */
 /obj/machinery/vending/proc/speak(message)
 	if(stat & (BROKEN|NOPOWER))
 		return
@@ -867,13 +867,13 @@ GLOBAL_LIST_EMPTY(vending_products)
 	say(message)
 
 /**
-  * Gets the best discount from a given ID card, comparing its access and paycheck depart with cost_multiplier_per_dept.
-  * It only applies to the regular selection, not premium or contraband. And a bank account is still required.
-  * But it can also be used to charge more to certain departments or accesses. :)
-  *
-  * Arguments:
-  * * list/dept_access_list - the list to compare
-  */
+ * Gets the best discount from a given ID card, comparing its access and paycheck depart with cost_multiplier_per_dept.
+ * It only applies to the regular selection, not premium or contraband. And a bank account is still required.
+ * But it can also be used to charge more to certain departments or accesses. :)
+ *
+ * Arguments:
+ * * list/dept_access_list - the list to compare
+ */
 /obj/machinery/vending/proc/get_best_discount(obj/item/card/id/C)
 	var/list/discounts = NUMLIST2TEXTLIST(C.GetAccess())
 	if(C.registered_account?.account_job)
@@ -892,11 +892,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /**
-  * Throw an item from our internal inventory out in front of us
-  *
-  * This is called when we are hacked, it selects a random product from the records that has an amount > 0
-  * This item is then created and tossed out in front of us with a visible message
-  */
+ * Throw an item from our internal inventory out in front of us
+ *
+ * This is called when we are hacked, it selects a random product from the records that has an amount > 0
+ * This item is then created and tossed out in front of us with a visible message
+ */
 /obj/machinery/vending/proc/throw_item()
 	var/obj/throw_item = null
 	var/mob/living/target = locate() in view(7, src)
@@ -920,25 +920,25 @@ GLOBAL_LIST_EMPTY(vending_products)
 	visible_message("<span class='danger'>[src] launches [throw_item] at [target]!</span>")
 	return TRUE
 /**
-  * A callback called before an item is tossed out
-  *
-  * Override this if you need to do any special case handling
-  *
-  * Arguments:
-  * * I - obj/item being thrown
-  */
+ * A callback called before an item is tossed out
+ *
+ * Override this if you need to do any special case handling
+ *
+ * Arguments:
+ * * I - obj/item being thrown
+ */
 /obj/machinery/vending/proc/pre_throw(obj/item/I)
 	return
 /**
-  * Shock the passed in user
-  *
-  * This checks we have power and that the passed in prob is passed, then generates some sparks
-  * and calls electrocute_mob on the user
-  *
-  * Arguments:
-  * * user - the user to shock
-  * * prb - probability the shock happens
-  */
+ * Shock the passed in user
+ *
+ * This checks we have power and that the passed in prob is passed, then generates some sparks
+ * and calls electrocute_mob on the user
+ *
+ * Arguments:
+ * * user - the user to shock
+ * * prb - probability the shock happens
+ */
 /obj/machinery/vending/proc/shock(mob/living/user, prb)
 	if(!istype(user) || stat & (BROKEN|NOPOWER))		// unpowered, no shock
 		return FALSE
@@ -951,12 +951,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 	else
 		return FALSE
 /**
-  * Are we able to load the item passed in
-  *
-  * Arguments:
-  * * I - the item being loaded
-  * * user - the user doing the loading
-  */
+ * Are we able to load the item passed in
+ *
+ * Arguments:
+ * * I - the item being loaded
+ * * user - the user doing the loading
+ */
 /obj/machinery/vending/proc/canLoadItem(obj/item/I, mob/user)
 	return FALSE
 

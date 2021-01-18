@@ -30,8 +30,8 @@
 	list("honkpod", "\improper HONK pod", "A brightly-colored supply pod. It likely originated from the Clown Federation."),\
 	list("fruitpod", "\improper Orange", "An angry orange."),\
 	list("", "\improper S.T.E.A.L.T.H. pod MKVII", "A supply pod that, under normal circumstances, is completely invisible to conventional methods of detection. How are you even seeing this?"),\
-    list("gondolapod", "gondola", "The silent walker. This one seems to be part of a delivery agency."),\
-    list("", "", "")\
+	list("gondolapod", "gondola", "The silent walker. This one seems to be part of a delivery agency."),\
+	list("", "", "")\
 )
 
 #define PACK_GOODY_NONE		0

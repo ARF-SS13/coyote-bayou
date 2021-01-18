@@ -166,8 +166,8 @@
 	icon_state = "hair_largebun"
 
 /datum/sprite_accessory/hair/lowbun
-    name = "Bun Head (Low)"
-    icon_state = "hair_bun_s"
+	name = "Bun Head (Low)"
+	icon_state = "hair_bun_s"
 
 /datum/sprite_accessory/hair/tightbun
 	name = "Bun Head (Tight)"
@@ -673,8 +673,8 @@
 	icon_state = "hair_scully"
 
 /datum/sprite_accessory/hair/shaggy
-    name = "Shaggy"
-    icon_state = "hair_shaggy"
+	name = "Shaggy"
+	icon_state = "hair_shaggy"
 
 /datum/sprite_accessory/hair/shaved
 	name = "Shaved"

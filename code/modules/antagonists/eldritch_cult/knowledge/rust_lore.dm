@@ -189,12 +189,12 @@
 
 
 /**
-  * #Rust spread datum
-  *
-  * Simple datum that automatically spreads rust around it
-  *
-  * Simple implementation of automatically growing entity
-  */
+ * #Rust spread datum
+ *
+ * Simple datum that automatically spreads rust around it
+ *
+ * Simple implementation of automatically growing entity
+ */
 /datum/rust_spread
 	var/list/edge_turfs = list()
 	var/list/turfs = list()
@@ -223,10 +223,10 @@
 		turfs += get_turf(T)
 
 /**
-  * Compile turfs
-  *
-  * Recreates all edge_turfs as well as normal turfs.
-  */
+ * Compile turfs
+ *
+ * Recreates all edge_turfs as well as normal turfs.
+ */
 /datum/rust_spread/proc/compile_turfs()
 	edge_turfs = list()
 	for(var/X in turfs)

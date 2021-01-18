@@ -97,17 +97,17 @@
 		ui_interact(usr)
 		return
 
-/obj/machinery/computer/custom_shuttle/proc/calculateDistance(var/obj/docking_port/stationary/port)
+/obj/machinery/computer/custom_shuttle/proc/calculateDistance(obj/docking_port/stationary/port)
 	var/deltaX = port.x - x
 	var/deltaY = port.y - y
 	var/deltaZ = (port.z - z) * Z_DIST
 	return sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * distance_multiplier
 
-/obj/machinery/computer/custom_shuttle/proc/linkShuttle(var/new_id)
+/obj/machinery/computer/custom_shuttle/proc/linkShuttle(new_id)
 	shuttleId = new_id
 	possible_destinations = "whiteship_home;shuttle[new_id]_custom"
 
-/obj/machinery/computer/custom_shuttle/proc/calculateStats(var/useFuel = FALSE, var/dist = 0, var/ignore_cooldown = FALSE)
+/obj/machinery/computer/custom_shuttle/proc/calculateStats(useFuel = FALSE, dist = 0, ignore_cooldown = FALSE)
 	if(!ignore_cooldown && stat_calc_cooldown >= world.time)
 		to_chat(usr, "<span>You are using this too fast, please slow down</span>")
 		return
@@ -148,7 +148,7 @@
 	calculated_speed = (calculated_dforce*1000) / (calculated_mass*100)
 	return TRUE
 
-/obj/machinery/computer/custom_shuttle/proc/consumeFuel(var/dist)
+/obj/machinery/computer/custom_shuttle/proc/consumeFuel(dist)
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	if(!M)
 		return FALSE
@@ -166,7 +166,7 @@
 			resolvedHeater?.consumeFuel(dist * shuttle_machine.fuel_use)
 		shuttle_machine.fireEngine()
 
-/obj/machinery/computer/custom_shuttle/proc/SetTargetLocation(var/newTarget)
+/obj/machinery/computer/custom_shuttle/proc/SetTargetLocation(newTarget)
 	if(!(newTarget in params2list(possible_destinations)))
 		log_admin("[usr] attempted to href dock exploit on [src] with target location \"[newTarget]\"")
 		message_admins("[usr] just attempted to href dock exploit on [src] with target location \"[newTarget]\"")
@@ -262,6 +262,6 @@
 		return
 	return ..()
 
-/obj/machinery/computer/camera_advanced/shuttle_docker/custom/proc/linkShuttle(var/new_id)
+/obj/machinery/computer/camera_advanced/shuttle_docker/custom/proc/linkShuttle(new_id)
 	shuttleId = new_id
 	shuttlePortId = "shuttle[new_id]_custom"

@@ -11,8 +11,8 @@ GLOBAL_LIST_INIT_TYPED(skill_datums, /datum/skill, init_skill_datums())
 	. = sortTim(., /proc/cmp_skill_categories, TRUE)
 
 /**
-  * Skill datums
-  */
+ * Skill datums
+ */
 
 /datum/skill
 	/// Our name
@@ -43,29 +43,29 @@ GLOBAL_LIST_INIT_TYPED(skill_datums, /datum/skill, init_skill_datums())
 	var/ui_category = SKILL_UI_CAT_MISC
 
 /**
-  * Ensures what someone's setting as a value for this skill is valid.
-  */
+ * Ensures what someone's setting as a value for this skill is valid.
+ */
 /datum/skill/proc/sanitize_value(new_value)
 	return new_value
 
 /**
-  * Sets the new value of this skill in the holder skills list.
-  * As well as possible feedback messages or secondary effects on value change, that's on you.
-  */
+ * Sets the new value of this skill in the holder skills list.
+ * As well as possible feedback messages or secondary effects on value change, that's on you.
+ */
 /datum/skill/proc/set_skill_value(datum/skill_holder/H, value, mob/owner)
 	H.skills[type] = value
 
 /**
-  * Checks if a value is greater
-  */
+ * Checks if a value is greater
+ */
 /datum/skill/proc/is_value_greater(existing, new_value)
 	if(!existing)
 		return TRUE
 	return new_value > existing
 
 /**
-  * Get a list of data used in the skill panel menu.
-  */
+ * Get a list of data used in the skill panel menu.
+ */
 /datum/skill/proc/get_skill_data(datum/skill_holder/H)
 	var/skill_value = H.owner.get_skill_value(type, FALSE)
 	. = list(
@@ -136,8 +136,8 @@ GLOBAL_LIST_INIT_TYPED(skill_datums, /datum/skill, init_skill_datums())
 		return new_value
 
 /**
-  * Classing r p g styled skills, tiered by lvl, and current/nextlvl experience.
-  */
+ * Classing r p g styled skills, tiered by lvl, and current/nextlvl experience.
+ */
 /datum/skill/level
 	abstract_type = /datum/skill/level
 	progression_type = SKILL_PROGRESSION_LEVEL
@@ -244,8 +244,8 @@ GLOBAL_LIST_INIT_TYPED(skill_datums, /datum/skill, init_skill_datums())
 		.["xp_next_lvl_mod"] = "\[[skill_value_mod - current_lvl_xp_sum]/[next_lvl_xp]\]"
 
 /**
-  * Gets the base value required to reach a level specified by the 'num' arg.
-  */
+ * Gets the base value required to reach a level specified by the 'num' arg.
+ */
 /datum/skill/level/proc/get_skill_level_value(num)
 	switch(level_up_method)
 		if(STANDARD_LEVEL_UP)

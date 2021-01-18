@@ -2,8 +2,8 @@
 /* Also, a terrain class or something needs to be used as the common parent  for asteroid and outside */
 /* lazy Saturday coding */
 
-/* Planetary atmos makes the gas infinite basicaly, if you're siphoning it, the world will
-   just spawn more.
+/*	Planetary atmos makes the gas infinite basicaly, if you're siphoning it, the world will
+	just spawn more.
 */
 
 /turf/open/floor/plating/f13 // don't use this for anything, /f13/ is essentially just the new /unsimulated/ but for planets and should probably be phased out entirely everywhere
