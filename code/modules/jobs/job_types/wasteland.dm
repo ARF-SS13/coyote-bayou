@@ -346,16 +346,16 @@ Raider
 		/obj/item/ammo_box/tube/a357=2)
 
 /datum/outfit/loadout/raider_mafia
-    name = "Town Mafia"
-    suit = /obj/item/clothing/suit/armor/f13/leather_jacket
-    uniform = /obj/item/clothing/under/f13/bennys
-    glasses = /obj/item/clothing/glasses/sunglasses
-    shoes = /obj/item/clothing/shoes/f13/fancy
-    backpack_contents = list(
-        /obj/item/gun/ballistic/automatic/pistol/ninemil=1,
-        /obj/item/ammo_box/magazine/m9mm=2,
+	name = "Town Mafia"
+	suit = /obj/item/clothing/suit/armor/f13/leather_jacket
+	uniform = /obj/item/clothing/under/f13/bennys
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1,
+		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/card/id/dogtag/town/mafia=1,
-        /obj/item/toy/cards/deck=1)
+		/obj/item/toy/cards/deck=1)
 
 /datum/outfit/loadout/raider_vault
 	name = "Vault Outcast"
@@ -484,7 +484,7 @@ Raider
 	suit = /obj/item/clothing/suit/f13/cowboygvest
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	head = list(/obj/item/clothing/head/fedora,
- 	/obj/item/clothing/head/f13/gambler)
+	/obj/item/clothing/head/f13/gambler)
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents =  list(
 		/obj/item/ammo_box/magazine/m9mm=2)
@@ -500,7 +500,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/welding
 	l_hand = /obj/item/shield/legion/buckler
 	backpack_contents = list(
-        /obj/item/claymore/machete/reinforced=1)
+		/obj/item/claymore/machete/reinforced=1)
 
 
 

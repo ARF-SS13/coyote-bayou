@@ -3,7 +3,7 @@
 	typepath = /datum/round_event/brain_trauma
 	weight = 25
 
-/datum/round_event_control/brain_trauma/canSpawnEvent(var/players_amt, var/gamemode)
+/datum/round_event_control/brain_trauma/canSpawnEvent(players_amt, gamemode)
 	var/list/enemy_roles = list("Medical Doctor","Chief Medical Officer","Paramedic")
 	for (var/mob/M in GLOB.alive_mob_list)
 		if(M.stat != DEAD && (M.mind?.assigned_role in enemy_roles))

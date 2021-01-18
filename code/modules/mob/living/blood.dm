@@ -368,7 +368,7 @@
 		return
 	blood_ratio = 1
 
-/mob/living/proc/AdjustBloodVol(var/value)
+/mob/living/proc/AdjustBloodVol(value)
 	if(blood_ratio == value)
 		return
 	blood_ratio = value

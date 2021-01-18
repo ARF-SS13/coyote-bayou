@@ -195,7 +195,7 @@ obj/structure/destructible/clockwork/massive/celestial_gateway/Destroy()
 	var/damage = max((obj_integrity * 0.7) / severity, 100) //requires multiple bombs to take down
 	take_damage(damage, BRUTE, "bomb", 0)
 
-/obj/structure/destructible/clockwork/massive/celestial_gateway/proc/get_arrival_time(var/deciseconds = TRUE)
+/obj/structure/destructible/clockwork/massive/celestial_gateway/proc/get_arrival_time(deciseconds = TRUE)
 	if(seconds_until_activation)
 		. = seconds_until_activation
 	else if(GATEWAY_RATVAR_ARRIVAL - progress_in_seconds > 0)

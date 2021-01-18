@@ -30,7 +30,7 @@
 
 	//var/split = round(amount/trays.len)
 
-	//for(var/obj/machinery/hydroponics/H in trays)
+	//for(obj/machinery/hydroponics/H in trays)
 		//var/datum/reagents/temp_reagents = new /datum/reagents()
 		//temp_reagents.my_atom = H
 
@@ -680,7 +680,7 @@
 	addtimer(CALLBACK(src, /obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles, water_particles), 2)
 
 //This whole proc is a loop
-/obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles(var/list/particles, var/repetitions=0)
+/obj/item/integrated_circuit/reagent/extinguisher/proc/move_particles(list/particles, repetitions=0)
 	//Check if there's anything in here first
 	if(!particles || particles.len == 0)
 		return
@@ -734,7 +734,7 @@
 	var/obj/item/reagent_containers/glass/beaker/current_beaker
 
 
-/obj/item/integrated_circuit/input/beaker_connector/attackby(var/obj/item/reagent_containers/I, var/mob/living/user)
+/obj/item/integrated_circuit/input/beaker_connector/attackby(obj/item/reagent_containers/I, mob/living/user)
 	//Check if it truly is a reagent container
 	if(!istype(I,/obj/item/reagent_containers/glass/beaker))
 		to_chat(user,"<span class='warning'>The [I.name] doesn't seem to fit in here.</span>")

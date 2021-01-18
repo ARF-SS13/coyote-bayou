@@ -329,12 +329,12 @@
 	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/box/dice,/obj/item/dice)
 
 /obj/item/clothing/suit/armor/f13/generaluniform
-    name = "Yuma 1st Irregular General Uniform"
-    desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
-    icon_state = "gen_uniform"
-    item_state = "gen_uniform"
-    body_parts_covered = CHEST|LEGS|FEET|ARMS
-    armor = list(melee = 18, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0) //change those values
+	name = "Yuma 1st Irregular General Uniform"
+	desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
+	icon_state = "gen_uniform"
+	item_state = "gen_uniform"
+	body_parts_covered = CHEST|LEGS|FEET|ARMS
+	armor = list(melee = 18, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0) //change those values
 
 /obj/item/clothing/suit/hooded/cloak/desert
 	name = "desert cloak"

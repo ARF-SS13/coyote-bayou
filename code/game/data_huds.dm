@@ -78,13 +78,13 @@
 
 /* MED/SEC/DIAG HUD HOOKS */
 
-/*
+/**
  * THESE HOOKS SHOULD BE CALLED BY THE MOB SHOWING THE HUD
  */
 
-/***********************************************
- Medical HUD! Basic mode needs suit sensors on.
-************************************************/
+/************************************************
+ *Medical HUD! Basic mode needs suit sensors on.*
+ ************************************************/
 
 //HELPERS
 
@@ -234,8 +234,8 @@
 			radholder.icon_state = "hudradnuke"
 
 /***********************************************
- Security HUDs! Basic mode shows only the job.
-************************************************/
+ *Security HUDs! Basic mode shows only the job.*
+ ***********************************************/
 
 //HOOKS
 
@@ -293,9 +293,9 @@
 					return
 	holder.icon_state = null
 
-/***********************************************
- Diagnostic HUDs!
-************************************************/
+/************************************************
+ *				Diagnostic HUDs!				*
+ ************************************************/
 
 /mob/living/proc/hud_set_nanite_indicator()
 	var/image/holder = hud_list[NANITE_HUD]

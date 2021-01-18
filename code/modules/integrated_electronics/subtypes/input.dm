@@ -947,7 +947,7 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	power_draw_per_use = 20
 
-/obj/item/integrated_circuit/input/obj_scanner/attackby_react(var/atom/A,var/mob/user,intent)
+/obj/item/integrated_circuit/input/obj_scanner/attackby_react(atom/A,mob/user,intent)
 	if(intent!=INTENT_HELP)
 		return FALSE
 	if(!check_then_do_work())
@@ -1181,8 +1181,8 @@
 	name = "data card reader"
 	desc = "A circuit that can read from and write to data cards."
 	extended_desc = "Setting the \"write mode\" boolean to true will cause any data cards that are used on the assembly to replace\
- their existing function and data strings with the given strings, if it is set to false then using a data card on the assembly will cause\
- the function and data strings stored on the card to be written to the output pins."
+	their existing function and data strings with the given strings, if it is set to false then using a data card on the assembly will cause\
+	the function and data strings stored on the card to be written to the output pins."
 	icon_state = "card_reader"
 	complexity = 4
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH

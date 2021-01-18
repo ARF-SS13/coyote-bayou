@@ -43,13 +43,13 @@
 		return 0
 
 /**
-  * Convert random parts of a passed in message to stars
-  *
-  * * phrase - the string to convert
-  * * probability - probability any character gets changed
-  *
-  * This proc is dangerously laggy, avoid it or die
-  */
+ * Convert random parts of a passed in message to stars
+ *
+ * * phrase - the string to convert
+ * * probability - probability any character gets changed
+ *
+ * This proc is dangerously laggy, avoid it or die
+ */
 /proc/stars(phrase, probability = 25)
 	if(probability <= 0)
 		return phrase
@@ -66,8 +66,8 @@
 	return sanitize(.)
 
 /**
-  * Makes you speak like you're drunk
-  */
+ * Makes you speak like you're drunk
+ */
 /proc/slur(phrase, strength = 50)
 	strength = min(50, strength)
 	phrase = html_decode(phrase)
@@ -395,7 +395,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
 
 
-/proc/IsAdminGhost(var/mob/user)
+/proc/IsAdminGhost(mob/user)
 	if(!user)		//Are they a mob? Auto interface updates call this with a null src
 		return
 	if(!user.client) // Do they have a client?
@@ -509,7 +509,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 /mob/proc/can_hear()
 	. = TRUE
 
-/proc/bloodtype_to_color(var/type)
+/proc/bloodtype_to_color(type)
 	. = BLOOD_COLOR_HUMAN
 	switch(type)
 		if("U")//Universal blood; a bit orange

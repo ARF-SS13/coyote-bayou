@@ -727,7 +727,7 @@
 			to_chat(user, "[parent] now picks up one item at a time.")
 
 /**
-  * Gets our max volume
-  */
+ * Gets our max volume
+ */
 /datum/component/storage/proc/get_max_volume()
 	return max_volume || AUTO_SCALE_STORAGE_VOLUME(max_w_class, max_combined_w_class)

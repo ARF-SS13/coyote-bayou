@@ -169,7 +169,7 @@
 	initial_accents += pick(phomeme_types)
 	. = ..()
 
-/obj/item/organ/tongue/bone/applyOrganDamage(var/d, var/maximum = maxHealth)
+/obj/item/organ/tongue/bone/applyOrganDamage(d, maximum = maxHealth)
 	if(d < 0)
 		return
 	if(!owner)

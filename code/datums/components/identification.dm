@@ -1,6 +1,6 @@
 /**
-  * Identification components
-  */
+ * Identification components
+ */
 /datum/component/identification
 	/// General flags for how we should work.
 	var/identification_flags = NONE
@@ -76,10 +76,10 @@
 		return COMPONENT_DEEPSCAN_UNCOVERED_INFORMATION
 
 /**
-  * Identification component subtype - Syndicate
-  *
-  * Checks if the user is a traitor.
-  */
+ * Identification component subtype - Syndicate
+ *
+ * Checks if the user is a traitor.
+ */
 /datum/component/identification/syndicate
 
 /datum/component/identification/syndicate/check_knowledge(mob/user)

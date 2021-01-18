@@ -225,7 +225,7 @@
 	else
 		..()
 
-/obj/item/organ/brain/applyOrganDamage(var/d, var/maximum = maxHealth)
+/obj/item/organ/brain/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
 	if(!. || !owner)
 		return

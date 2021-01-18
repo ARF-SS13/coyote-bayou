@@ -88,7 +88,7 @@
 	amount_per_transfer_from_this = 25
 	var/inside = 1
 
-/obj/item/reagent_containers/fuel_tank/New(var/volume, var/fuel)
+/obj/item/reagent_containers/fuel_tank/New(volume, fuel)
 	src.volume = volume
 	list_reagents = list(/datum/reagent/fuel = fuel)
 	..()

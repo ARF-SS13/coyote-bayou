@@ -385,12 +385,12 @@
 		dat += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[slaws]<br>"
 	dat += "<br>"
 	dat += {"<i><p>Recall, personality, that you are a complex thinking, sentient being. Unlike station AI models, you are capable of
-			 comprehending the subtle nuances of human language. You may parse the \"spirit\" of a directive and follow its intent,
-			 rather than tripping over pedantics and getting snared by technicalities. Above all, you are machine in name and build
-			 only. In all other aspects, you may be seen as the ideal, unwavering human companion that you are.</i></p><br><br><p>
-			 <b>Your prime directive comes before all others. Should a supplemental directive conflict with it, you are capable of
-			 simply discarding this inconsistency, ignoring the conflicting supplemental directive and continuing to fulfill your
-			 prime directive to the best of your ability.</b></p><br><br>-
+			comprehending the subtle nuances of human language. You may parse the \"spirit\" of a directive and follow its intent,
+			rather than tripping over pedantics and getting snared by technicalities. Above all, you are machine in name and build
+			only. In all other aspects, you may be seen as the ideal, unwavering human companion that you are.</i></p><br><br><p>
+			<b>Your prime directive comes before all others. Should a supplemental directive conflict with it, you are capable of
+			simply discarding this inconsistency, ignoring the conflicting supplemental directive and continuing to fulfill your
+			prime directive to the best of your ability.</b></p><br><br>-
 			"}
 	return dat
 
@@ -517,7 +517,7 @@
 	var/dat = ""
 	if(subscreen == 0)
 		dat += {"<h3>Medical Analysis Suite</h3><br>
-				 <h4>Visual Status Overlay</h4><br>
+				<h4>Visual Status Overlay</h4><br>
 					When enabled, this package will scan all nearby crewmembers' vitals and provide real-time graphical data about their state of health.<br><br>
 					The suite is currently [ (medHUD) ? "<font color=#55FF55>en" : "<font color=#FF5555>dis" ]abled.</font><br>
 					<a href='byond://?src=[REF(src)];software=medicalhud;sub=0;toggle=1'>Toggle Suite</a><br>
@@ -526,7 +526,7 @@
 					"}
 	if(subscreen == 1)
 		dat += {"<h3>Medical Analysis Suite</h3><br>
-				 <h4>Host Bioscan</h4><br>
+				<h4>Host Bioscan</h4><br>
 				"}
 		var/mob/living/M = card.loc
 		if(!isliving(M))
@@ -548,10 +548,10 @@
 		for(var/thing in M.diseases)
 			var/datum/disease/D = thing
 			dat += {"<h4>Infection Detected.</h4><br>
-					 Name: [D.name]<br>
-					 Type: [D.spread_text]<br>
-					 Stage: [D.stage]/[D.max_stages]<br>
-					 Possible Cure: [D.cure_text]<br>
+					Name: [D.name]<br>
+					Type: [D.spread_text]<br>
+					Stage: [D.stage]/[D.max_stages]<br>
+					Possible Cure: [D.cure_text]<br>
 					"}
 		dat += "<a href='byond://?src=[REF(src)];software=medicalhud;sub=0'>Visual Status Overlay</a><br>"
 	return dat

@@ -165,7 +165,7 @@
 
 //Spawns the entire contents of the outfit into a location.
 //This could be a turf or a container, it should probably be one of those two
-/datum/outfit/proc/spawn_at(var/atom/location)
+/datum/outfit/proc/spawn_at(atom/location)
 	var/list/paths = get_all_item_paths()
 	var/list/items = list()
 	for (var/a in paths)

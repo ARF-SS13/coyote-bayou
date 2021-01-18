@@ -139,7 +139,7 @@
 	melee_damage_lower = 22.5 + (0.5 * consumed_buff)
 	melee_damage_upper = 22.5 + (1 * consumed_buff)
 
-/mob/living/simple_animal/slaughter/bloodcrawl_swallow(var/mob/living/victim)
+/mob/living/simple_animal/slaughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
 		// Keep their corpse so rescue is possible
 		consumed_mobs += victim
@@ -171,7 +171,7 @@
 	if(M != user)
 		return ..()
 	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-						 "<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
+						"<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == /obj/effect/proc_holder/spell/bloodcrawl)
@@ -179,7 +179,7 @@
 			qdel(src)
 			return
 	user.visible_message("<span class='warning'>[user]'s eyes flare a deep crimson!</span>", \
-						 "<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
+						"<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 
@@ -245,7 +245,7 @@
 	melee_damage_lower -= 0.5 // JAPES
 	melee_damage_upper += 1
 
-/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(var/mob/living/victim)
+/mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(mob/living/victim)
 	if(consumed_mobs)
 		// Keep their corpse so rescue is possible
 		consumed_mobs += victim

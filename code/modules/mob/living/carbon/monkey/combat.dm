@@ -62,7 +62,7 @@
 		for(var/mob/living/carbon/monkey/M in view(7,src))
 			M.next_battle_screech = world.time + battle_screech_cooldown
 
-/mob/living/carbon/monkey/proc/equip_item(var/obj/item/I)
+/mob/living/carbon/monkey/proc/equip_item(obj/item/I)
 
 	if(I.loc == src)
 		return TRUE
@@ -93,7 +93,7 @@
 		MarkResistTime()
 		cuff_resist(I)
 
-/mob/living/carbon/monkey/proc/should_target(var/mob/living/L)
+/mob/living/carbon/monkey/proc/should_target(mob/living/L)
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
 
@@ -282,7 +282,7 @@
 
 	return IsStandingStill()
 
-/mob/living/carbon/monkey/proc/pickpocket(var/mob/M)
+/mob/living/carbon/monkey/proc/pickpocket(mob/M)
 	if(do_mob(src, M, MONKEY_ITEM_SNATCH_DELAY) && pickupTarget)
 		for(var/obj/item/I in M.held_items)
 			if(I == pickupTarget)
@@ -413,7 +413,7 @@
 		return
 	..()
 
-/mob/living/carbon/monkey/proc/monkeyDrop(var/obj/item/A)
+/mob/living/carbon/monkey/proc/monkeyDrop(obj/item/A)
 	if(A)
 		dropItemToGround(A, TRUE)
 		update_icons()

@@ -239,11 +239,11 @@
 	var/module_mode = ""
 	var/obj/item/rig_module/module
 
-/stat_rig_module/New(var/obj/item/rig_module/module)
+/stat_rig_module/New(obj/item/rig_module/module)
 	..()
 	src.module = module
 
-/stat_rig_module/proc/AddHref(var/list/href_list)
+/stat_rig_module/proc/AddHref(list/href_list)
 	return
 
 /stat_rig_module/proc/CanUse()
@@ -261,7 +261,7 @@
 /stat_rig_module/DblClick()
 	return Click()
 
-/stat_rig_module/activate/New(var/obj/item/rig_module/module)
+/stat_rig_module/activate/New(obj/item/rig_module/module)
 	..()
 	name = module.activate_string
 	if(module.active_power_cost)
@@ -271,7 +271,7 @@
 /stat_rig_module/activate/CanUse()
 	return module.toggleable && !module.active
 
-/stat_rig_module/deactivate/New(var/obj/item/rig_module/module)
+/stat_rig_module/deactivate/New(obj/item/rig_module/module)
 	..()
 	name = module.deactivate_string
 	// Show cost despite being 0, if it means changing from an active cost.
@@ -283,7 +283,7 @@
 /stat_rig_module/deactivate/CanUse()
 	return module.toggleable && module.active
 
-/stat_rig_module/engage/New(var/obj/item/rig_module/module)
+/stat_rig_module/engage/New(obj/item/rig_module/module)
 	..()
 	name = module.engage_string
 	if(module.use_power_cost)
@@ -309,7 +309,7 @@
 	name = "Change Charge"
 	module_mode = "select_charge_type"
 
-/stat_rig_module/charge/AddHref(var/list/href_list)
+/stat_rig_module/charge/AddHref(list/href_list)
 	var/charge_index = module.charges.Find(module.charge_selected)
 	if(!charge_index)
 		charge_index = 0

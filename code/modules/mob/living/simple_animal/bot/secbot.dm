@@ -63,7 +63,7 @@
 	resize = 0.8
 	update_transform()
 
-/mob/living/simple_animal/bot/secbot/proc/process_emote(var/emote_type, var/atom/criminal, var/threat, var/arrest = -1, var/location)
+/mob/living/simple_animal/bot/secbot/proc/process_emote(emote_type, atom/criminal, threat, arrest = -1, location)
 	var/emote = "The continuity of space itself collapses around [src]. You should probably report that to someone higher up."
 	switch(emote_type)
 		if("DEATH")
@@ -98,7 +98,7 @@
 		emote = replacetext(emote, "LOCATION", location)
 	return emote
 
-/mob/living/simple_animal/bot/secbot/proc/apply_fashion(var/datum/beepsky_fashion/fashion)
+/mob/living/simple_animal/bot/secbot/proc/apply_fashion(datum/beepsky_fashion/fashion)
 	stored_fashion = new fashion
 	if(stored_fashion.name)
 		name = stored_fashion.name
@@ -558,7 +558,7 @@ Auto Patrol: []"},
 		else
 			continue
 
-/mob/living/simple_animal/bot/secbot/proc/check_for_weapons(var/obj/item/slot_item)
+/mob/living/simple_animal/bot/secbot/proc/check_for_weapons(obj/item/slot_item)
 	if(slot_item && (slot_item.item_flags & NEEDS_PERMIT))
 		return TRUE
 	return FALSE
@@ -584,7 +584,7 @@ Auto Patrol: []"},
 	new /obj/effect/decal/cleanable/oil(loc)
 	..()
 
-/mob/living/simple_animal/bot/secbot/attack_alien(var/mob/living/carbon/alien/user as mob)
+/mob/living/simple_animal/bot/secbot/attack_alien(mob/living/carbon/alien/user as mob)
 	..()
 	if(!isalien(target))
 		target = user

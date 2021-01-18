@@ -197,7 +197,7 @@
 				return
 
 			var/new_obj = pick(subtypesof(/obj))
-			//for(var/item in blacklist)
+			//for(item in blacklist)
 			//	if(new_obj == item)
 			//  	panic()
 			var/reward = new new_obj(C.loc)

@@ -225,7 +225,7 @@
 
 	to_chat(user, "<span class='notice'>\The [src] begins to tighten it's seals.</span>")
 	wearer.visible_message("<span class='notice'>\The [wearer]'s suit emits a quiet hum as it begins to tighten it's seals.</span>",
-					  	   "<span class='notice'>With a quiet hum, your suit begins to seal.")
+						   "<span class='notice'>With a quiet hum, your suit begins to seal.")
 
 	if(seal_delay && !do_after(user, seal_delay, target = wearer))
 		to_chat(user, "<span class='warning'>You must remain still to seal \the [src]!</span>")
@@ -332,7 +332,7 @@
 		if(user != wearer)
 			to_chat(user, "<span class='notice'>\The [src] begins to loosen it's seals.</span>")
 		wearer.visible_message("<span class='notice'>\The [wearer]'s suit emits a quiet hum as it begins to loosen it's seals.</span>",
-						  	   "<span class='notice'>With a quiet hum, your suit begins to unseal.")
+							   "<span class='notice'>With a quiet hum, your suit begins to unseal.")
 
 		if(seal_delay && !do_after(user, seal_delay, target = wearer))
 			to_chat(user, "<span class='warning'>You must remain still to unseal \the [src]!</span>")
@@ -425,7 +425,7 @@
 		boots.attack_self(wearer)
 	if(istype(helmet) && !(item_flags & NODROP) && helmet.on) //If we have an (active) headlamp and unsealed the suit, we deactivate the headlamp.
 		helmet.toggle_light(wearer)
-	//for(var/obj/item/piece in list(helmet,boots,gloves,chest))
+	//for(obj/item/piece in list(helmet,boots,gloves,chest))
 	//	if(!(item_flags & NODROP))
 	//		piece.flags &= ~(STOPSPRESSUREDMAGE | AIRTIGHT)
 	//	else
@@ -908,7 +908,7 @@
 			to_chat(wearer, "<span class='warning'>The [source] has damaged your [dam_module.interface_name]!</span>")
 	dam_module.deactivate()
 
-/obj/item/rig/proc/malfunction_check(var/mob/living/carbon/human/user)
+/obj/item/rig/proc/malfunction_check(mob/living/carbon/human/user)
 	if(malfunction_delay)
 		if(offline)
 			to_chat(user, "<span class='danger'>The suit is completely unresponsive.</span>")
@@ -917,7 +917,7 @@
 		return 1
 	return 0
 
-/obj/item/rig/proc/ai_can_move_suit(var/mob/user, var/check_user_module = 0, var/check_for_ai = 0)
+/obj/item/rig/proc/ai_can_move_suit(mob/user, check_user_module = 0, check_for_ai = 0)
 
 	if(check_for_ai)
 		if(!(locate(/obj/item/rig_module/ai_container) in contents))
@@ -1029,7 +1029,7 @@
 	var/obj/item/rig/T = get_rig()
 	return T.do_emergency_release(usr)
 
-/obj/item/rig/proc/do_emergency_release(var/mob/living/user)
+/obj/item/rig/proc/do_emergency_release(mob/living/user)
 	if(!can_touch(user, wearer) || !has_emergency_release)
 		return can_touch(user,wearer)
 	usr.visible_message("<span class='warning'>[user] starts activating \the [src] emergency seals release!</span>")

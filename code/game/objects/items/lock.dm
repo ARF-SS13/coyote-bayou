@@ -53,7 +53,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 /obj/item/lock_construct/proc/pry_off(mob/living/user, atom/A)
 	if(!prying)
 		user.visible_message("<span class='notice'>[user] starts prying [src] off [A].</span>", \
-							 "<span class='notice'>You start prying [src] off [A].</span>")
+							"<span class='notice'>You start prying [src] off [A].</span>")
 		var/time_to_open = 50
 		if(locked)
 			time_to_open = 500

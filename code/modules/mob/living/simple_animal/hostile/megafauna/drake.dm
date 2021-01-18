@@ -20,14 +20,14 @@ It acts as a melee creature, chasing down and attacking its target while also us
 Whenever possible, the drake will breathe fire in the four cardinal directions, igniting and heavily damaging anything caught in the blast.
 It also often causes fire to rain from the sky - many nearby turfs will flash red as a fireball crashes into them, dealing damage to anything on the turfs.
 The drake also utilizes its wings to fly into the sky, flying after its target and attempting to slam down on them. Anything near when it slams down takes huge damage.
- - Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
- - Sometimes, it will spew fire while flying at its target.
+- Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
+- Sometimes, it will spew fire while flying at its target.
 
 When an ash drake dies, it leaves behind a chest that can contain four things:
- 1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
- 2. A lava staff that allows its wielder to create lava
- 3. A spellbook and wand of fireballs
- 4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
+1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
+2. A lava staff that allows its wielder to create lava
+3. A spellbook and wand of fireballs
+4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
 
 When butchered, they leave behind diamonds, sinew, bone, and ash drake hide. Ash drake hide can be used to create a hooded cloak that protects its wearer from ash storms.
 

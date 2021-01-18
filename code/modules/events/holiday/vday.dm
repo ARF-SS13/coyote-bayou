@@ -42,7 +42,7 @@
 		else
 			L.mind.add_antag_datum(/datum/antagonist/heartbreaker)
 
-/proc/forge_valentines_objective(mob/living/lover,mob/living/date,var/chemLove = FALSE)
+/proc/forge_valentines_objective(mob/living/lover,mob/living/date,chemLove = FALSE)
 	lover.mind.special_role = "valentine"
 	if (chemLove == TRUE)
 		var/datum/antagonist/valentine/chem/V = new //Changes text and EOG check basically.

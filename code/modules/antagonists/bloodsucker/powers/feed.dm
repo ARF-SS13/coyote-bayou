@@ -171,8 +171,8 @@
 		//else
 		var/deadmessage = target.stat == DEAD ? "" : " <i>[target.p_they(TRUE)] looks dazed, and will not remember this.</i>"
 		user.visible_message("<span class='notice'>[user] puts [target]'s wrist up to [user.p_their()] mouth.</span>", \
-						 	 "<span class='notice'>You secretly slip your fangs into [target]'s wrist.[deadmessage]</span>", \
-						 	 vision_distance = notice_range, ignored_mobs = target) // Only people who AREN'T the target will notice this action.
+							"<span class='notice'>You secretly slip your fangs into [target]'s wrist.[deadmessage]</span>", \
+							vision_distance = notice_range, ignored_mobs = target) // Only people who AREN'T the target will notice this action.
 		// Warn Feeder about Witnesses...
 		var/was_unnoticed = TRUE
 		for(var/mob/living/M in fov_viewers(notice_range, owner) - owner - target)
@@ -186,7 +186,7 @@
 
 	else						 // /atom/proc/visible_message(message, self_message, blind_message, vision_distance, ignored_mobs)
 		user.visible_message("<span class='warning'>[user] closes [user.p_their()] mouth around [target]'s neck!</span>", \
-						 "<span class='warning'>You sink your fangs into [target]'s neck.</span>")
+						"<span class='warning'>You sink your fangs into [target]'s neck.</span>")
 	// My mouth is full!
 	ADD_TRAIT(user, TRAIT_MUTE, "bloodsucker_feed")
 
@@ -217,7 +217,7 @@
 			else
 				to_chat(user, "<span class='warning'>Your feeding has been interrupted!</span>")
 				user.visible_message("<span class='danger'>[user] is ripped from [target]'s throat. [target.p_their(TRUE)] blood sprays everywhere!</span>", \
-						 			 "<span class='userdanger'>Your teeth are ripped from [target]'s throat. [target.p_their(TRUE)] blood sprays everywhere!</span>")
+									"<span class='userdanger'>Your teeth are ripped from [target]'s throat. [target.p_their(TRUE)] blood sprays everywhere!</span>")
 
 				// Deal Damage to Target (should have been more careful!)
 				if(iscarbon(target))
@@ -292,7 +292,7 @@
 		to_chat(user, "<span class='notice'>You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.</span>" : ""))
 	else
 		user.visible_message("<span class='warning'>[user] unclenches their teeth from [target]'s neck.</span>", \
-							 "<span class='warning'>You retract your fangs and release [target] from your bite.</span>")
+							"<span class='warning'>You retract your fangs and release [target] from your bite.</span>")
 
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, target, "fed on blood", addition="(and took [amount_taken] blood)")

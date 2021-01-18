@@ -528,7 +528,7 @@
 
 /obj/structure/sign/poster/official/work_for_a_future
 	name = "Work For A Future"
-	desc = " A poster encouraging you to work for your future."
+	desc = "A poster encouraging you to work for your future."
 	icon_state = "poster17_legit"
 
 /obj/structure/sign/poster/official/soft_cap_pop_art

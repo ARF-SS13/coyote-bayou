@@ -100,8 +100,8 @@
 		return
 
 /**
-  *Checks the mouse cap, if it's above the cap, doesn't spawn a mouse. If below, spawns a mouse and adds it to cheeserats.
-  */
+ *Checks the mouse cap, if it's above the cap, doesn't spawn a mouse. If below, spawns a mouse and adds it to cheeserats.
+ */
 
 /mob/living/simple_animal/mouse/proc/be_fruitful()
 	var/cap = CONFIG_GET(number/ratcap)
@@ -113,8 +113,8 @@
 	visible_message("<span class='notice'>[src] nibbles through the cheese, attracting another mouse!</span>")
 
 /**
-  *Spawns a new regal rat, says some good jazz, and if sentient, transfers the relivant mind.
-  */
+ *Spawns a new regal rat, says some good jazz, and if sentient, transfers the relivant mind.
+ */
 /mob/living/simple_animal/mouse/proc/evolve()
 	var/mob/living/simple_animal/hostile/regalrat = new /mob/living/simple_animal/hostile/regalrat(loc)
 	visible_message("<span class='warning'>[src] devours the cheese! He morphs into something... greater!</span>")
