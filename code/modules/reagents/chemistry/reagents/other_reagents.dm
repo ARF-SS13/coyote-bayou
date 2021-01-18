@@ -2657,3 +2657,11 @@ datum/reagent/eldritch
 	M.SetSleeping(0, 0)
 	..()
 
+/datum/reagent/nutracid
+	name = "Nutracid"
+	description = "A slightly yellow liquid that seems to bubble frequently. It is not recommended to consume Nutracid."
+	color = "#fff566"
+
+/datum/reagent/nutracid/on_mob_life(mob/living/carbon/M)
+	M.adjust_nutrition(-5)
+	..()

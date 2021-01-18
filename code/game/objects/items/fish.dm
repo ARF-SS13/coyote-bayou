@@ -104,6 +104,7 @@
 	name = "parent fish egg"
 	desc = "debug, report to coders (or jake) if you see this."
 	icon = 'icons/obj/fish/fish_items.dmi'
+	grind_results = list(/datum/reagent/nutracid = 1)
 
 /obj/item/fishyegg/carp
 	name = "carp fish egg"
