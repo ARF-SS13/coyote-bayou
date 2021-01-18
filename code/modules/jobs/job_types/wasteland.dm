@@ -484,7 +484,7 @@ Raider
 	suit = /obj/item/clothing/suit/f13/cowboygvest
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	head = list(/obj/item/clothing/head/fedora,
- 	/obj/item/clothing/head/f13/gambler)
+	/obj/item/clothing/head/f13/gambler)
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents =  list(
 		/obj/item/ammo_box/magazine/m9mm=2)

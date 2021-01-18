@@ -110,10 +110,10 @@
 	name = "Damaged Brush Gun blueprint"
 
 /obj/item/blueprint/weapon/grease_gun
- 	name = "Grease Gun blueprint"
+	name = "Grease Gun blueprint"
 
 /obj/item/blueprint/weapon/grease_gun/limited
- 	name = "Damaged Grease Gun blueprint"
+	name = "Damaged Grease Gun blueprint"
 
 //high tier
 /obj/item/blueprint/weapon/R82

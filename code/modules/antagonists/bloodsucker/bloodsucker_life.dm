@@ -265,13 +265,13 @@
 
 /datum/antagonist/proc/AmFinalDeath()
 	// Standard Antags can be dead OR final death
- 	return owner && (owner.current && owner.current.stat >= DEAD || owner.AmFinalDeath())
+	return owner && (owner.current && owner.current.stat >= DEAD || owner.AmFinalDeath())
 
 /datum/antagonist/bloodsucker/AmFinalDeath()
- 	return owner && owner.AmFinalDeath()
+	return owner && owner.AmFinalDeath()
 
 /datum/mind/proc/AmFinalDeath()
- 	return !current || QDELETED(current) || !isliving(current) || isbrain(current) || !get_turf(current) // NOTE: "isliving()" is not the same as STAT == CONSCIOUS. This is to make sure you're not a BORG (aka silicon)
+	return !current || QDELETED(current) || !isliving(current) || isbrain(current) || !get_turf(current) // NOTE: "isliving()" is not the same as STAT == CONSCIOUS. This is to make sure you're not a BORG (aka silicon)
 
 /datum/antagonist/bloodsucker/proc/FinalDeath()
 		//Dont bother if we are already supposed to be dead

@@ -1,9 +1,9 @@
-/* -------------------------------------------------
-   ---------F13 SPAWNERS, READABLE EDITION----------
-   -old ported spawners read level is kevcode level-
-   --so i just made this new one, based on tg one---
-   --oh and, if it rutines about "not enough shit---
-   -----------to spawn", it is fine(tm)-------------
+/*	-------------------------------------------------
+	---------F13 SPAWNERS, READABLE EDITION----------
+	-old ported spawners read level is kevcode level-
+	--so i just made this new one, based on tg one---
+	--oh and, if it rutines about "not enough shit---
+	-----------to spawn", it is fine(tm)-------------
  */
 
 //Stop using lootspawners in dungeons improperly. If you put guns in a dungeon, people will want to use them, which will result in them shooting people. You'll have to put in nests or something to constantly give people stuff to shoot at. - Nappist
@@ -43,9 +43,9 @@
 		qdel(src) //make sure it is deleted at all cost
 	qdel(src)
 
-/* ------------------------------------------------
-   ----------------ARMOR SPAWNERS------------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	----------------ARMOR SPAWNERS------------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/armor
 	name = "armor spawners - DO NOT USE THIS"
@@ -386,9 +386,9 @@
 			/obj/item/traumapack = 1 //one ring to rule them all
 			)
 
-/* ------------------------------------------------
-   ---------------MEDICAL SPAWNERS-----------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	---------------MEDICAL SPAWNERS-----------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/medical
 	name = "medical spawners - DO NOT USE THIS"
@@ -474,17 +474,17 @@
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/syringe/medx
 				)
-/* ------------------------------------------------
-   --------------WEAPON SPAWNERS-------------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	--------------WEAPON SPAWNERS-------------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/weapon
 	name = "weapon spawners - DO NOT USE THIS"
 	icon_state = "gun_loot"
 
-/* ------------------------------------------------
-   -----------MELEE WEAPON SPAWNERS----------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	-----------MELEE WEAPON SPAWNERS----------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee
 	name = "melee spawners - DO NOT USE THIS"
@@ -601,9 +601,9 @@
 			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 = 20
 			)
 
-/* ------------------------------------------------
-   -------------GUN WEAPON SPAWNERS----------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	-------------GUN WEAPON SPAWNERS----------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun
 	name = "gun spawners - DO NOT USE THIS"
@@ -962,9 +962,9 @@
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/unique = 1
 			)
 
-/* ------------------------------------------------
-   ------------WEAPON AMMO SPAWNERS----------------
-   ------------------------------------------------ */
+/*	------------------------------------------------
+	------------WEAPON AMMO SPAWNERS----------------
+	------------------------------------------------ */
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo
 	name = "ammo spawners - DO NOT USE THIS"

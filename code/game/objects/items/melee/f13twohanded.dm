@@ -184,7 +184,7 @@
 	nade.forceMove(get_turf(src))
 	qdel(src)
 /*
- //THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
+//THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
 /obj/item/twohanded/spear/throw_impact(atom/target)
 	. = ..()
 	if(!.) //not caught
@@ -610,10 +610,10 @@ var/list/possible_colors = list("red")
 
 
 /obj/item/twohanded/bonespear/venom //added for Viper raiders -Thes
- 	container_type = INJECTABLE
- 	name = "Viper spear"
- 	desc = "A bone spear which has been modified to envenomate targets without drawing as much blood. Wielding it with both hands allows for stronger blows, but renders the venom ineffective.<br>It has been designed to allow for easily refitting the tip with a typical spear blade after the venom is dry."
- 	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
+	container_type = INJECTABLE
+	name = "Viper spear"
+	desc = "A bone spear which has been modified to envenomate targets without drawing as much blood. Wielding it with both hands allows for stronger blows, but renders the venom ineffective.<br>It has been designed to allow for easily refitting the tip with a typical spear blade after the venom is dry."
+	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
 
 
 /obj/item/twohanded/bonespear/venom/attack(mob/living/L, mob/user)

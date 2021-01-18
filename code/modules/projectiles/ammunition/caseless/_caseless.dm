@@ -33,7 +33,7 @@
 	projectile_type = /obj/item/projectile/bullet/needle/ultra
 
 /obj/item/ammo_casing/caseless/musketball
- 	name = "Musketball"
- 	desc = "This is a lead ball for a musket."
- 	caliber = "musketball"
- 	projectile_type = /obj/item/projectile/bullet/F13/musketball
+	name = "Musketball"
+	desc = "This is a lead ball for a musket."
+	caliber = "musketball"
+	projectile_type = /obj/item/projectile/bullet/F13/musketball

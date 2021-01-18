@@ -329,15 +329,15 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_NCR           = list("titles" = ncr_positions),
 	EXP_TYPE_VAULT         = list("titles" = vault_positions),
 	EXP_TYPE_WASTELAND     = list("titles" = wasteland_positions),
-  	EXP_TYPE_TRIBAL        = list("titles" = tribal_positions),
-  	EXP_TYPE_FOLLOWERS     = list("titles" = followers_positions),
+	EXP_TYPE_TRIBAL        = list("titles" = tribal_positions),
+	EXP_TYPE_FOLLOWERS     = list("titles" = followers_positions),
 	EXP_TYPE_RANGER        = list("titles" = list("NCR Veteran Ranger","NCR Patrol Ranger", "NCR Scout Ranger")),
 	EXP_TYPE_SCRIBE        = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS       = list("titles" = list("Legion Decanus")),
 
 	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Hunter")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Followers Administrator")),
-  	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR First Sergeant","NCR Captain", "NCR Veteran Ranger"))
+	EXP_TYPE_NCRCOMMAND    = list("titles" = list("NCR Lieutenant","NCR First Sergeant","NCR Captain", "NCR Veteran Ranger"))
 
 
 ))
