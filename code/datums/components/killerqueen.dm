@@ -1,9 +1,9 @@
 /**
-  * KILLER QUEEN
-  * 
-  * Simple contact bomb component
-  * Blows up the first person to touch it.
-  */
+ * KILLER QUEEN
+ * 
+ * Simple contact bomb component
+ * Blows up the first person to touch it.
+ */
 /datum/component/killerqueen
 	can_transfer = TRUE
 	/// strength of explosion on the touch-er. 0 to disable. usually only used if the normal explosion is disabled (this is the default).

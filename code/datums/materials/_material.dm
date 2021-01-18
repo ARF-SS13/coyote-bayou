@@ -68,7 +68,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 /atom/proc/mat_update_desc(/datum/material/mat)
 	return
 ///This proc is called when the material is added to an object specifically.
-/datum/material/proc/on_applied_obj(var/obj/o, amount, material_flags)
+/datum/material/proc/on_applied_obj(obj/o, amount, material_flags)
 	if(material_flags & MATERIAL_AFFECT_STATISTICS)
 		var/new_max_integrity = CEILING(o.max_integrity * integrity_modifier, 1)
 		o.modify_max_integrity(new_max_integrity)
@@ -93,7 +93,7 @@ Simple datum which is instanced once per type and is used for every object of sa
 	I.usesound = item_sound_override
 	I.throwhitsound = item_sound_override
 
-/datum/material/proc/on_applied_turf(var/turf/T, amount, material_flags)
+/datum/material/proc/on_applied_turf(turf/T, amount, material_flags)
 	if(isopenturf(T))
 		if(!turf_sound_override)
 			return

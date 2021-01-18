@@ -87,7 +87,7 @@
 	else
 		. += "[icon_state]_door"
 
-/obj/structure/closet/supplypod/proc/setStyle(chosenStyle, var/duringInit = FALSE) //Used to give the sprite an icon state, name, and description
+/obj/structure/closet/supplypod/proc/setStyle(chosenStyle, duringInit = FALSE) //Used to give the sprite an icon state, name, and description
 	if (!duringInit && style == chosenStyle) //Check if the input style is already the same as the pod's style. This happens in centcom_podlauncher, and as such we set the style to STYLE_CENTCOM.
 		setStyle(STYLE_CENTCOM) //We make sure to not check this during initialize() so the standard supplypod works correctly.
 		return
@@ -187,7 +187,7 @@
 	else
 		addtimer(CALLBACK(src, .proc/open, src), openingDelay) //After the openingDelay passes, we use the open proc from this supplypod, while referencing this supplypod's contents
 
-/obj/structure/closet/supplypod/open(atom/movable/holder, var/broken = FALSE, var/forced = FALSE) //The holder var represents an atom whose contents we will be working with
+/obj/structure/closet/supplypod/open(atom/movable/holder, broken = FALSE, forced = FALSE) //The holder var represents an atom whose contents we will be working with
 	var/turf/T = get_turf(holder) //Get the turf of whoever's contents we're talking about
 	if (!holder)
 		return

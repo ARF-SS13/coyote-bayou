@@ -28,7 +28,7 @@
 
 /datum/element/art/proc/apply_moodlet(atom/source, mob/M, impress)
 	M.visible_message("<span class='notice'>[M] stops and looks intently at [source].</span>", \
-						 "<span class='notice'>You stop to take in [source].</span>")
+						"<span class='notice'>You stop to take in [source].</span>")
 	switch(impress)
 		if (0 to BAD_ART)
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
@@ -56,7 +56,7 @@
 
 /datum/element/art/rev/apply_moodlet(atom/source, mob/M, impress)
 	M.visible_message("<span class='notice'>[M] stops to inspect [source].</span>", \
-						 "<span class='notice'>You take in [source], inspecting the fine craftsmanship of the proletariat.</span>")
+						"<span class='notice'>You take in [source], inspecting the fine craftsmanship of the proletariat.</span>")
 
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)

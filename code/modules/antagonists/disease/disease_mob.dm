@@ -105,7 +105,7 @@ the new instance inside the host to be updated to the template's stats.
 			if(istype(B))
 				. += "<span class='notice'>[B.name]</span>"
 
-/mob/camera/disease/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/camera/disease/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	return
 
 /mob/camera/disease/Move(NewLoc, Dir = 0)
@@ -282,13 +282,13 @@ the new instance inside the host to be updated to the template's stats.
 	if(T)
 		forceMove(T)
 
-/mob/camera/disease/DblClickOn(var/atom/A, params)
+/mob/camera/disease/DblClickOn(atom/A, params)
 	if(hosts[A])
 		set_following(A)
 	else
 		..()
 
-/mob/camera/disease/ClickOn(var/atom/A, params)
+/mob/camera/disease/ClickOn(atom/A, params)
 	if(freemove && ishuman(A))
 		confirm_initial_infection(A)
 	else

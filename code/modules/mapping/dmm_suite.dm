@@ -53,7 +53,7 @@
 
 		*/
 
-	verb/load_map(var/dmm_file as file, var/x_offset as num, var/y_offset as num, var/z_offset as num, var/cropMap as num, var/measureOnly as num, no_changeturf as num){
+	verb/load_map(dmm_file as file, x_offset as num, y_offset as num, z_offset as num, cropMap as num, measureOnly as num, no_changeturf as num){
 		// dmm_file: A .dmm file to load (Required).
 		// z_offset: A number representing the z-level on which to start loading the map (Optional).
 		// cropMap: When true, the map will be cropped to fit the existing world dimensions (Optional).

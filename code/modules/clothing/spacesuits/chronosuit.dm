@@ -259,7 +259,7 @@
 		qdel(target_ui)
 		target_ui = null
 
-/obj/effect/chronos_cam/relaymove(var/mob/user, direction)
+/obj/effect/chronos_cam/relaymove(mob/user, direction)
 	if(!holder)
 		qdel(src)
 		return
@@ -305,7 +305,7 @@
 	color = "#ff3311"
 	blend_mode = BLEND_SUBTRACT
 
-/obj/screen/chronos_target/New(loc, var/mob/living/carbon/human/user)
+/obj/screen/chronos_target/New(loc, mob/living/carbon/human/user)
 	if(user)
 		var/icon/user_icon = getFlatIcon(user)
 		icon = user_icon

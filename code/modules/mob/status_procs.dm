@@ -8,10 +8,10 @@
 	jitteriness = max(jitteriness,amount,0)
 
 /**
-  * Set the dizzyness of a mob to a passed in amount
-  *
-  * Except if dizziness is already higher in which case it does nothing
-  */
+ * Set the dizzyness of a mob to a passed in amount
+ *
+ * Except if dizziness is already higher in which case it does nothing
+ */
 /mob/proc/Dizzy(amount)
 	dizziness = max(dizziness,amount,0)
 
@@ -20,8 +20,8 @@
 	dizziness = max(amount, 0)
 
 /**
-  * Sets a mob's blindness to an amount if it was not above it already, similar to how status effects work
-  */
+ * Sets a mob's blindness to an amount if it was not above it already, similar to how status effects work
+ */
 /mob/proc/blind_eyes(amount)
 	var/old_blind = eye_blind
 	eye_blind = max((!eye_blind && stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : eye_blind , amount)
@@ -30,18 +30,18 @@
 		update_blindness()
 
 /**
-  * Adjust a mobs blindness by an amount
-  *
-  * Will apply the blind alerts if needed
-  */
+ * Adjust a mobs blindness by an amount
+ *
+ * Will apply the blind alerts if needed
+ */
 /mob/proc/adjust_blindness(amount)
 	var/old_eye_blind = eye_blind
 	eye_blind = max((stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : 0, eye_blind + amount)
 	if(!old_eye_blind || !eye_blind)
 		update_blindness()
 /**
-  * Force set the blindness of a mob to some level
-  */
+ * Force set the blindness of a mob to some level
+ */
 /mob/proc/set_blindness(amount)
 	var/old_eye_blind = eye_blind
 	eye_blind = max(amount, (stat == UNCONSCIOUS || HAS_TRAIT(src, TRAIT_BLIND)) ? 1 : 0)
@@ -61,16 +61,16 @@
 		clear_fullscreen("blind")
 		// remove_client_colour(/datum/client_colour/monochrome/blind)
 /**
-  * Make the mobs vision blurry
-  */
+ * Make the mobs vision blurry
+ */
 /mob/proc/blur_eyes(amount)
 	if(amount>0)
 		eye_blurry = max(amount, eye_blurry)
 	update_eyeblur()
 
 /**
-  * Adjust the current blurriness of the mobs vision by amount
-  */
+ * Adjust the current blurriness of the mobs vision by amount
+ */
 /mob/proc/adjust_blurriness(amount)
 	eye_blurry = max(eye_blurry+amount, 0)
 	update_eyeblur()

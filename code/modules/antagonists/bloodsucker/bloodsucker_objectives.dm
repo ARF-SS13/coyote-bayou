@@ -22,7 +22,7 @@
 /datum/objective/bloodsucker/proc/return_possible_targets()
 	var/list/possible_targets = list()
 
-	 // Look at all crew members, and for/loop through.
+	// Look at all crew members, and for/loop through.
 	for(var/datum/mind/possible_target in get_crewmember_minds())
 		// Check One: Default Valid User
 		if(possible_target != owner && ishuman(possible_target.current) && possible_target.current.stat != DEAD)// && is_unique_objective(possible_target))

@@ -18,9 +18,9 @@
 	var/languages // The Message's language
 	var/mode = 1
 	var/static/list/modes = list("inclusive",
-								 "exclusive",
-								 "recognizer",
-								 "voice sensor")
+								"exclusive",
+								"recognizer",
+								"voice sensor")
 
 /obj/item/assembly/voice/examine(mob/user)
 	. = ..()

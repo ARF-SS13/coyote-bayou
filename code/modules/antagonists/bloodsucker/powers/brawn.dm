@@ -118,7 +118,7 @@
 			var/obj/item/clothing/suit/straight_jacket/S = user_H.get_item_by_slot(ITEM_SLOT_ICLOTHING)
 			if(istype(S))
 				user_C.visible_message("<span class='warning'>[user_C] attempts to remove [S]!</span>", \
-						 			"<span class='warning'>You rip through [S] like it's nothing!</span>")
+									"<span class='warning'>You rip through [S] like it's nothing!</span>")
 				user_C.clear_cuffs(S,TRUE)
 				playsound(get_turf(usr), 'sound/effects/grillehit.ogg', 80, 1, -1)
 				return TRUE */
@@ -149,7 +149,7 @@
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, M, "used Brawn power")
 	owner.visible_message("<span class='warning'>[owner] tears free of [M]'s grasp!</span>", \
-			 			"<span class='warning'>You shrug off [M]'s grasp!</span>")
+						"<span class='warning'>You shrug off [M]'s grasp!</span>")
 	owner.pulledby = null // It's already done, but JUST IN CASE.
 	return TRUE
 /* Doesnt work

@@ -1,11 +1,11 @@
 /**
-  * The virtual reality turned component.
-  * Originally created to overcome issues of mob polymorphing locking the player inside virtual reality
-  * and allow for a more "immersive" virtual reality in a virtual reality experience.
-  * It relies on comically complex order of logic, expect things to break if procs such as mind/transfer_to() are revamped.
-  * In short, a barebone not so hardcoded VR framework.
-  * If you plan to add more devices that make use of this component, remember to isolate their code outta here where possible.
-  */
+ * The virtual reality turned component.
+ * Originally created to overcome issues of mob polymorphing locking the player inside virtual reality
+ * and allow for a more "immersive" virtual reality in a virtual reality experience.
+ * It relies on comically complex order of logic, expect things to break if procs such as mind/transfer_to() are revamped.
+ * In short, a barebone not so hardcoded VR framework.
+ * If you plan to add more devices that make use of this component, remember to isolate their code outta here where possible.
+ */
 /datum/component/virtual_reality
 	can_transfer = TRUE
 	//the player's mind (not the parent's), should something happen to them or to their mob.
@@ -73,9 +73,9 @@
 	REMOVE_TRAIT(parent, TRAIT_NO_MIDROUND_ANTAG, VIRTUAL_REALITY_TRAIT)
 
 /**
-  * Called when attempting to connect a mob to a virtual reality mob.
-  * This will return FALSE if the mob is without player or dead. TRUE otherwise
-  */
+ * Called when attempting to connect a mob to a virtual reality mob.
+ * This will return FALSE if the mob is without player or dead. TRUE otherwise
+ */
 /datum/component/virtual_reality/proc/connect(mob/M)
 	var/mob/vr_M = parent
 	if(!M.mind || M.stat == DEAD || !vr_M.mind || vr_M.stat == DEAD)
@@ -95,8 +95,8 @@
 	return TRUE
 
 /**
-  * emag_act() hook. Makes the game deadlier, killing the mastermind mob too should the parent die.
-  */
+ * emag_act() hook. Makes the game deadlier, killing the mastermind mob too should the parent die.
+ */
 /datum/component/virtual_reality/proc/you_only_live_once()
 	if(you_die_in_the_game_you_die_for_real)
 		return FALSE
@@ -104,9 +104,9 @@
 	return TRUE
 
 /**
-  * Called when the mastermind mind is transferred to another mob.
-  * This is pretty much just going to simply quit the session until machineries support polymorphed occupants etcetera.
-  */
+ * Called when the mastermind mind is transferred to another mob.
+ * This is pretty much just going to simply quit the session until machineries support polymorphed occupants etcetera.
+ */
 /datum/component/virtual_reality/proc/switch_player(datum/source, mob/new_mob, mob/old_mob)
 	if(session_paused)
 		return
@@ -120,10 +120,10 @@
 	new_mob.audiovisual_redirect = parent
 
 /**
-  * Called to stop the player mind from being transferred should the new mob happen to be one of our masterminds'.
-  * Since the target's mind.current is going to be null'd in the mind transfer process,
-  * This has to be done in a different signal proc than on_player_transfer(), by then the mastermind.current will be null.
-  */
+ * Called to stop the player mind from being transferred should the new mob happen to be one of our masterminds'.
+ * Since the target's mind.current is going to be null'd in the mind transfer process,
+ * This has to be done in a different signal proc than on_player_transfer(), by then the mastermind.current will be null.
+ */
 /datum/component/virtual_reality/proc/pre_player_transfer(datum/source, mob/new_mob, mob/old_mob)
 	if(!mastermind || session_paused)
 		return
@@ -140,9 +140,9 @@
 		VR = VR.level_above
 
 /**
-  * Called when someone or something else is somewhat about to replace the mastermind's mob key somehow.
-  * And potentially lock the player in a broken virtual reality plot. Not really something to be proud of.
-  */
+ * Called when someone or something else is somewhat about to replace the mastermind's mob key somehow.
+ * And potentially lock the player in a broken virtual reality plot. Not really something to be proud of.
+ */
 /datum/component/virtual_reality/proc/player_hijacked(datum/source, mob/our_character, mob/their_character)
 	if(session_paused)
 		return
@@ -160,22 +160,22 @@
 		quit(cleanup = TRUE)
 
 /**
-  * Takes care of moving the component from a mob to another when their mind or ckey is transferred.
-  * The very reason this component even exists (else one would be stuck playing as a monky if monkyified)
-  */
+ * Takes care of moving the component from a mob to another when their mind or ckey is transferred.
+ * The very reason this component even exists (else one would be stuck playing as a monky if monkyified)
+ */
 /datum/component/virtual_reality/proc/on_player_transfer(datum/source, mob/new_mob, mob/old_mob)
 	new_mob.TakeComponent(src)
 
 /**
-  * Required for the component to be transferable from mob to mob.
-  */
+ * Required for the component to be transferable from mob to mob.
+ */
 /datum/component/virtual_reality/PostTransfer()
 	if(!ismob(parent))
 		return COMPONENT_INCOMPATIBLE
 
 /**
-  *The following procs simply acts as hooks for quit(), since components do not use callbacks anymore
-  */
+ *The following procs simply acts as hooks for quit(), since components do not use callbacks anymore
+ */
 /datum/component/virtual_reality/proc/action_trigger(datum/action/source, obj/target)
 	quit()
 	return COMPONENT_ACTION_BLOCK_TRIGGER
@@ -196,15 +196,15 @@
 	quit(cleanup = TRUE)
 
 /**
-  * Takes care of deleting itself, moving the player back to the mastermind's current and queueing the parent for deletion.
-  * It supports nested virtual realities by recursively calling vr_in_a_vr(), which in turns calls quit(),
-  * up to the deepest level, where the ckey will be transferred back to our mastermind's mob instead.
-  * The above operation is skipped when session_paused is TRUE (ergo no player in control of the current mob).
-  * vars:
-  * * deathcheck is used to kill the master, you want this FALSE unless for stuff that doesn't involve emagging.
-  * * cleanup is used to queue the parent for the next vr_clean_master's run, where they'll be deleted should they be dead.
-  * * mob/override is used for the recursive virtual reality explained above and shouldn't be used outside of vr_in_a_vr().
-  */
+ * Takes care of deleting itself, moving the player back to the mastermind's current and queueing the parent for deletion.
+ * It supports nested virtual realities by recursively calling vr_in_a_vr(), which in turns calls quit(),
+ * up to the deepest level, where the ckey will be transferred back to our mastermind's mob instead.
+ * The above operation is skipped when session_paused is TRUE (ergo no player in control of the current mob).
+ * vars:
+ * * deathcheck is used to kill the master, you want this FALSE unless for stuff that doesn't involve emagging.
+ * * cleanup is used to queue the parent for the next vr_clean_master's run, where they'll be deleted should they be dead.
+ * * mob/override is used for the recursive virtual reality explained above and shouldn't be used outside of vr_in_a_vr().
+ */
 /datum/component/virtual_reality/proc/quit(deathcheck = FALSE, cleanup = FALSE, mob/override)
 	var/mob/M = parent
 	if(!session_paused)
@@ -237,8 +237,8 @@
 		qdel(src)
 
 /**
-  * Used for recursive virtual realities shenanigeans and should be called by the above proc.
-  */
+ * Used for recursive virtual realities shenanigeans and should be called by the above proc.
+ */
 /datum/component/virtual_reality/proc/vr_in_a_vr(mob/player, deathcheck = FALSE, lethal_cleanup = FALSE)
 	var/mob/M = parent
 	quit(deathcheck, lethal_cleanup, player)

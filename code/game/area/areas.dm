@@ -97,11 +97,11 @@
 	var/minimap_color
 
 /**
-  * These two vars allow for multiple unique areas to be linked to a master area
-  * and share some functionalities such as APC powernet nodes, fire alarms etc, without sacrificing
-  * their own flags, statuses, variables and more snowflakes.
-  * Friendly reminder: no map edited areas.
-  */
+ * These two vars allow for multiple unique areas to be linked to a master area
+ * and share some functionalities such as APC powernet nodes, fire alarms etc, without sacrificing
+ * their own flags, statuses, variables and more snowflakes.
+ * Friendly reminder: no map edited areas.
+ */
 	var/list/area/sub_areas //list of typepaths of the areas you wish to link here, will be replaced with a list of references on mapload.
 	var/area/base_area //The area we wish to use in place of src for certain actions such as APC area linking.
 
@@ -411,11 +411,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 /area/proc/updateicon()
 /**
-  * Update the icon state of the area
-  *
-  * Im not sure what the heck this does, somethign to do with weather being able to set icon
-  * states on areas?? where the heck would that even display?
-  */
+ * Update the icon state of the area
+ *
+ * Im not sure what the heck this does, somethign to do with weather being able to set icon
+ * states on areas?? where the heck would that even display?
+ */
 /area/update_icon_state()
 	var/weather_icon
 	for(var/V in SSweather.processing)
@@ -427,8 +427,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		icon_state = null
 
 /**
-  * Update the icon of the area (overridden to always be null for space
-  */
+ * Update the icon of the area (overridden to always be null for space
+ */
 /area/space/update_icon_state()
 	icon_state = null
 

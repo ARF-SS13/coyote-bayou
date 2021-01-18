@@ -155,11 +155,11 @@
 		detach(user)
 
 /**
-  * activate: Activates biomass processing and converts all inserted grown products into biomass
-  *
-  * Arguments:
-  * * user The mob starting the biomass processing
-  */
+ * activate: Activates biomass processing and converts all inserted grown products into biomass
+ *
+ * Arguments:
+ * * user The mob starting the biomass processing
+ */
 /obj/machinery/biogenerator/proc/activate(mob/user)
 	if(user.stat != CONSCIOUS)
 		return

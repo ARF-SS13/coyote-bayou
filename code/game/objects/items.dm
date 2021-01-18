@@ -142,11 +142,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/list/grind_results //A reagent list containing the reagents this item produces when ground up in a grinder - this can be an empty list to allow for reagent transferring only
 	var/list/juice_results //A reagent list containing blah blah... but when JUICED in a grinder!
 
-	/* Our block parry data. Should be set in init, or something if you are using it.
-	 * This won't be accessed without ITEM_CAN_BLOCK or ITEM_CAN_PARRY so do not set it unless you have to to save memory.
-	 * If you decide it's a good idea to leave this unset while turning the flags on, you will runtime. Enjoy.
-	 * If this is set to a path, it'll run get_block_parry_data(path). YOU MUST RUN [get_block_parry_data(this)] INSTEAD OF DIRECTLY ACCESSING!
-	 */
+/* Our block parry data. Should be set in init, or something if you are using it.
+ * This won't be accessed without ITEM_CAN_BLOCK or ITEM_CAN_PARRY so do not set it unless you have to to save memory.
+ * If you decide it's a good idea to leave this unset while turning the flags on, you will runtime. Enjoy.
+ * If this is set to a path, it'll run get_block_parry_data(path). YOU MUST RUN [get_block_parry_data(this)] INSTEAD OF DIRECTLY ACCESSING!
+ */
 	var/datum/block_parry_data/block_parry_data
 
 	///Skills vars
@@ -803,8 +803,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/grind_requirements(obj/machinery/reagentgrinder/R) //Used to check for extra requirements for grinding an object
 	return TRUE
 
- //Called BEFORE the object is ground up - use this to change grind results based on conditions
- //Use "return -1" to prevent the grinding from occurring
+//Called BEFORE the object is ground up - use this to change grind results based on conditions
+//Use "return -1" to prevent the grinding from occurring
 /obj/item/proc/on_grind()
 
 /obj/item/proc/on_juice()
@@ -948,7 +948,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			dropped(M)
 	return ..()
 
-/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=TRUE, diagonals_first = FALSE, var/datum/callback/callback)
+/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=TRUE, diagonals_first = FALSE, datum/callback/callback)
 	if (HAS_TRAIT(src, TRAIT_NODROP))
 		return
 	return ..()
@@ -967,8 +967,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return TRUE
 
 /**
-  * Sets our slowdown and updates equipment slowdown of any mob we're equipped on.
-  */
+ * Sets our slowdown and updates equipment slowdown of any mob we're equipped on.
+ */
 /obj/item/proc/set_slowdown(new_slowdown)
 	slowdown = new_slowdown
 	if(CHECK_BITFIELD(item_flags, IN_INVENTORY))
@@ -998,35 +998,35 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 
 
-  * tryEmbed() is for when you want to try embedding something without dealing with the damage + hit messages of calling hitby() on the item while targetting the target.
+ * tryEmbed() is for when you want to try embedding something without dealing with the damage + hit messages of calling hitby() on the item while targetting the target.
 
 
 
-  *
+ *
 
 
 
-  * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
+ * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
 
 
 
-  *
+ *
 
 
 
-  * Arguments:
+ * Arguments:
 
 
 
-  * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
+ * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
 
 
 
-  * * forced- Do we want this to go through 100%?
+ * * forced- Do we want this to go through 100%?
 
 
 
-  */
+ */
 
 
 

@@ -8,10 +8,10 @@
 	idle_power_usage = 100
 	/// list of medipen subtypes it can refill
 	var/list/allowed = list(/obj/item/reagent_containers/hypospray/medipen = /datum/reagent/medicine/epinephrine,
-						    /obj/item/reagent_containers/hypospray/medipen/ekit = /datum/reagent/medicine/epinephrine,
-						    /obj/item/reagent_containers/hypospray/medipen/firelocker = /datum/reagent/medicine/oxandrolone,
-						    /obj/item/reagent_containers/hypospray/medipen/stimpack = /datum/reagent/medicine/ephedrine,
-						    /obj/item/reagent_containers/hypospray/medipen/blood_loss = /datum/reagent/medicine/coagulant/weak)
+							/obj/item/reagent_containers/hypospray/medipen/ekit = /datum/reagent/medicine/epinephrine,
+							/obj/item/reagent_containers/hypospray/medipen/firelocker = /datum/reagent/medicine/oxandrolone,
+							/obj/item/reagent_containers/hypospray/medipen/stimpack = /datum/reagent/medicine/ephedrine,
+							/obj/item/reagent_containers/hypospray/medipen/blood_loss = /datum/reagent/medicine/coagulant/weak)
 	/// var to prevent glitches in the animation
 	var/busy = FALSE
 
@@ -81,9 +81,9 @@
 	return TRUE
 
 /obj/machinery/medipen_refiller/screwdriver_act(mob/living/user, obj/item/I)
-    . = ..()
-    if(!.)
-        return default_deconstruction_screwdriver(user, "medipen_refiller_open", "medipen_refiller", I)
+	. = ..()
+	if(!.)
+		return default_deconstruction_screwdriver(user, "medipen_refiller_open", "medipen_refiller", I)
 
 /// refills the medipen
 /obj/machinery/medipen_refiller/proc/refill(obj/item/reagent_containers/hypospray/medipen/P, mob/user)

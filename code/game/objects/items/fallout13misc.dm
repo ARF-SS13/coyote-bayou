@@ -18,8 +18,8 @@
 	var/soundFile = 'sound/f13music/mysterious_stranger.ogg'
 
 /obj/item/weapon/holodisk/New()
-        src.name = "holodisk #[rand(1,999)]"
-        return ..()
+		src.name = "holodisk #[rand(1,999)]"
+		return ..()
 
 /obj/item/weapon/holodisk/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	src.playAudio(user)
@@ -173,7 +173,7 @@
 
 /obj/item/flag/legion
 	name = "Legion flag"
-	desc = " A flag with a golden bull, the symbol of Caesar's Legion."
+	desc = "A flag with a golden bull, the symbol of Caesar's Legion."
 	icon_state = "legionflag"
 	item_state = "legionflag"
 	faction = "Legion"
@@ -194,7 +194,7 @@
 
 /obj/item/flag/locust
 	name = "Locust flag"
-	desc = " A flag with a skull, the symbol of Locusts."
+	desc = "A flag with a skull, the symbol of Locusts."
 	icon_state = "locustflag"
 	item_state = "locustflag"
 	faction = "Locust"

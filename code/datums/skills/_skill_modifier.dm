@@ -3,9 +3,9 @@ GLOBAL_LIST_EMPTY(potential_skills_per_mod)
 GLOBAL_LIST_EMPTY(potential_mods_per_skill)
 
 /**
-  * Base skill modifier datum, used to modify a player skills without directly touching their values, levels and affinity
-  * and cause lots of edge cases. These are fairly simple overall... make a subtype though, don't use this one.
-  */
+ * Base skill modifier datum, used to modify a player skills without directly touching their values, levels and affinity
+ * and cause lots of edge cases. These are fairly simple overall... make a subtype though, don't use this one.
+ */
 /datum/skill_modifier
 	/// Name and description of the skill modifier, used in the UI
 	var/name = "???"

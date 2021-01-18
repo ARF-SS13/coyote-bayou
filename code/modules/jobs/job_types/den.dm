@@ -482,7 +482,7 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
-    /datum/outfit/loadout/frontier,
+	/datum/outfit/loadout/frontier,
 	/datum/outfit/loadout/richmantender,
 	/datum/outfit/loadout/diner)
 
@@ -559,10 +559,10 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/provisioner,
-    /datum/outfit/loadout/bum,
-    /datum/outfit/loadout/properlady,
-    /datum/outfit/loadout/propergent,
-    /datum/outfit/loadout/hombre,
+	/datum/outfit/loadout/bum,
+	/datum/outfit/loadout/properlady,
+	/datum/outfit/loadout/propergent,
+	/datum/outfit/loadout/hombre,
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
@@ -626,9 +626,9 @@ Mayor
 			/obj/item/kitchen/knife/combat, \
 			/obj/item/gun/ballistic/automatic/pistol/n99, \
 			/obj/item/ammo_box/magazine/m10mm_adv=2)
-/*--------------------------------------------------------------*/
-Detective
-
+/*----------------------------------------------------------------
+--							Detective							--
+----------------------------------------------------------------*/
 /datum/job/wasteland/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
@@ -686,7 +686,7 @@ Detective
 
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
-    /datum/outfit/loadout/loanshark,
+	/datum/outfit/loadout/loanshark,
 	/datum/outfit/loadout/investor,
 	)
 
@@ -752,35 +752,35 @@ Detective
 /*--------------------------------------------------------------*/
 
 /datum/job/den/f13shopkeeper
-    title = "Shopkeeper"
-    flag = F13SHOPKEEPER
-    department_flag = DEN
-    faction = "Town"
-    total_positions = 2
-    spawn_positions = 2
-    supervisors = "law and order"
-    description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
-    selection_color = "#dcba97"
+	title = "Shopkeeper"
+	flag = F13SHOPKEEPER
+	department_flag = DEN
+	faction = "Town"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "law and order"
+	description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
+	selection_color = "#dcba97"
 
-    outfit = /datum/outfit/job/den/f13shopkeeper
-    access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-    minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	outfit = /datum/outfit/job/den/f13shopkeeper
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 
 /datum/outfit/job/den/f13shopkeeper
-    name = "Shopkeeper"
-    jobtype = /datum/job/den/f13shopkeeper
+	name = "Shopkeeper"
+	jobtype = /datum/job/den/f13shopkeeper
 
-    id = /obj/item/card/id/dogtag/town
-    uniform = /obj/item/clothing/under/f13/roving
-    ears = /obj/item/radio/headset/headset_den
-    backpack = /obj/item/storage/backpack
-    satchel = /obj/item/storage/backpack/satchel
-    duffelbag = /obj/item/storage/backpack/duffelbag
-    gloves = /obj/item/clothing/gloves/fingerless
-    l_pocket = /obj/item/storage/bag/money/small/den
-    r_pocket = /obj/item/flashlight/flare
-    shoes = /obj/item/clothing/shoes/f13/explorer
-    backpack_contents = list()
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/roving
+	ears = /obj/item/radio/headset/headset_den
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	gloves = /obj/item/clothing/gloves/fingerless
+	l_pocket = /obj/item/storage/bag/money/small/den
+	r_pocket = /obj/item/flashlight/flare
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	backpack_contents = list()
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

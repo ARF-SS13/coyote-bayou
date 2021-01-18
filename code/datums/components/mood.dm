@@ -276,7 +276,7 @@
 	qdel(event)
 	update_mood()
 
-/datum/component/mood/proc/remove_temp_moods() //Removes all temp moodsfor(var/i in mood_events)
+/datum/component/mood/proc/remove_temp_moods() //Removes all temp moodsfor(i in mood_events)
 	for(var/i in mood_events)
 		var/datum/mood_event/moodlet = mood_events[i]
 		if(!moodlet || !moodlet.timeout)

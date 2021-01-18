@@ -2,11 +2,11 @@
 
 // HULL SHIELD GENERATION HELPERS
 /**
-  * Gets hull exterior adjacent tiles of a certain area
-  * Area method.
-  * EXPENSIVE.
-  * If the area itself is already considered exterior, it'll find all tiles inside it that's next to an interior area.
-  */
+ * Gets hull exterior adjacent tiles of a certain area
+ * Area method.
+ * EXPENSIVE.
+ * If the area itself is already considered exterior, it'll find all tiles inside it that's next to an interior area.
+ */
 /proc/hull_shielding_get_tiles_around_area(area/instance, check_tick = FALSE)
 	var/list/cache = list()
 	var/area/A
@@ -31,10 +31,10 @@
 		. += i			// strip assoc value
 
 /**
-  * Gets hull adjacent exterior tiles of an entire zlevel
-  * EXPENSIVE.
-  * Gets the tiles in the exterior area touching to a non-exterior area
-  */
+ * Gets hull adjacent exterior tiles of an entire zlevel
+ * EXPENSIVE.
+ * Gets the tiles in the exterior area touching to a non-exterior area
+ */
 /proc/hull_shielding_get_tiles_in_z(zlevel, check_tick = FALSE, recurse = FALSE, list/outlist = list(), list/scanned_zlevels = list())
 	. = outlist
 	if(zlevel in scanned_zlevels)

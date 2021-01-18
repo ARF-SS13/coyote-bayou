@@ -110,7 +110,7 @@
 	return TRUE
 
 
-/obj/structure/anvil/proc/do_shaping(mob/user, var/qualitychange)
+/obj/structure/anvil/proc/do_shaping(mob/user, qualitychange)
 	busy = TRUE
 	currentquality += qualitychange
 	var/list/shapingsteps = list("weak hit", "strong hit", "heavy hit", "fold", "draw", "shrink", "bend", "punch", "upset") //weak/strong/heavy hit affect strength. All the other steps shape.
@@ -249,7 +249,7 @@
 	itemqualitymax = 0
 
 
-/obj/structure/anvil/obtainable/table/do_shaping(mob/user, var/qualitychange)
+/obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
 	if(prob(5))
 		to_chat(user, "The [src] breaks under the strain!")
 		take_damage(max_integrity)

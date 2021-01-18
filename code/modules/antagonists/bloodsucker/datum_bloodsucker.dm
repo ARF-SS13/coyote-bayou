@@ -153,7 +153,7 @@
 /datum/antagonist/bloodsucker/proc/AmFledgling()
 	return !bloodsucker_title
 
-/datum/antagonist/bloodsucker/proc/ReturnFullName(var/include_rep=0)
+/datum/antagonist/bloodsucker/proc/ReturnFullName(include_rep=0)
 
 	var/fullname
 	// Name First
@@ -394,7 +394,7 @@
 	add_objective(survive_objective)
 
 
-/datum/antagonist/bloodsucker/proc/add_objective(var/datum/objective/O)
+/datum/antagonist/bloodsucker/proc/add_objective(datum/objective/O)
 	objectives += O
 	objectives_given += O
 

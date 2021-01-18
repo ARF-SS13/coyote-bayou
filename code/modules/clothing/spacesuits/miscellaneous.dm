@@ -1,19 +1,19 @@
 //miscellaneous spacesuits
 /*
 Contains:
- - Captain's spacesuit
- - Death squad's hardsuit
- - SWAT suit
- - Officer's beret/spacesuit
- - NASA Voidsuit
- - Father Christmas' magical clothes
- - Pirate's spacesuit
- - ERT hardsuit: Command, Sec, Engi, Med
- - ERT High Alarm - Command, Sec, Engi, Med
- - EVA spacesuit
- - Radiation Spacesuit
- - Freedom's spacesuit (freedom from vacuum's oppression)
- - Carp hardsuit
+- Captain's spacesuit
+- Death squad's hardsuit
+- SWAT suit
+- Officer's beret/spacesuit
+- NASA Voidsuit
+- Father Christmas' magical clothes
+- Pirate's spacesuit
+- ERT hardsuit: Command, Sec, Engi, Med
+- ERT High Alarm - Command, Sec, Engi, Med
+- EVA spacesuit
+- Radiation Spacesuit
+- Freedom's spacesuit (freedom from vacuum's oppression)
+- Carp hardsuit
 */
 
 	//Death squad armored space suits, not hardsuits!
