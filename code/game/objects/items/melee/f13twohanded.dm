@@ -520,7 +520,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 
 /obj/item/twohanded/sledgehammer/marsstaff
 	name = "Staff of Mars"
-	desc = " A staff crafted by the guidance of Mars."
+	desc = "A staff crafted by the guidance of Mars."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "mars_staff0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
