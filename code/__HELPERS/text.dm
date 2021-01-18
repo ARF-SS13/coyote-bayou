@@ -114,8 +114,8 @@
 		return trim(html_encode(name), max_length)
 
 /**
-  * stripped_multiline_input but reflects to the user instead if it's too big and returns null.
-  */
+ * stripped_multiline_input but reflects to the user instead if it's too big and returns null.
+ */
 /proc/stripped_multiline_input_or_reflect(mob/user, message = "", title = "", default = "", max_length=MAX_MESSAGE_LEN, no_trim=FALSE)
 	var/name = input(user, message, title, default) as message|null
 	if(isnull(name)) // Return null if canceled.

@@ -26,6 +26,8 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		var/randTime = rand(15000, 18000)
 		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
+	if(!weather_on_start)
+		weather_on_start = TRUE
 
 /datum/controller/subsystem/processing/weather/Initialize(start_timeofday)
 	for(var/V in subtypesof(/datum/weather))

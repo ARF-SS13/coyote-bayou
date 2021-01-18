@@ -5,7 +5,7 @@
 	maxHealth = 20
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
-	blood_volume = 550
+	blood_volume = 425 //blood will smeared only a little bit from body dragging
 
 	status_flags = CANPUSH
 
@@ -219,7 +219,7 @@
 						turns_since_move = 0
 			return 1
 
-/mob/living/simple_animal/proc/handle_automated_speech(var/override)
+/mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
 	if(speak_chance)
 		if(prob(speak_chance) || override)

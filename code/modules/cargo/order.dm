@@ -116,7 +116,7 @@
 	generateManifest(C, paying_account, pack)
 	return C
 
-/datum/supply_order/proc/generateCombo(var/miscbox, var/misc_own, var/misc_contents)
+/datum/supply_order/proc/generateCombo(miscbox, misc_own, misc_contents)
 	for (var/I in misc_contents)
 		new I(miscbox)
 	generateManifest(miscbox, misc_own, "")

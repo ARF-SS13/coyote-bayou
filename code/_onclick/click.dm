@@ -21,8 +21,8 @@
 		usr.MouseWheelOn(src, delta_x, delta_y, params)
 
 /**
-  * Common mob click code
-  */
+ * Common mob click code
+ */
 /mob/proc/CommonClickOn(atom/A, params)
 	//SHOULD_NOT_SLEEP(TRUE)
 	if(mob_transforming)

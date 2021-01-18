@@ -36,7 +36,7 @@
 	else
 		return 0
 
-/obj/item/lock_part/proc/set_open(var/newopen)
+/obj/item/lock_part/proc/set_open(newopen)
 	if(is_open != newopen)
 		is_open = newopen
 

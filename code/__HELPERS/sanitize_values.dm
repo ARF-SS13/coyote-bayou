@@ -56,15 +56,15 @@
 #define RGB_FORMAT_LONG 2
 
 /**
-  * Sanitizes a hexadecimal color. Always outputs lowercase.
-  *
-  * @params
-  * * color - input color, 3 or 6 characters without the #.
-  * * desired_format - 3 or 6 characters without the potential #. can only put in 3 or 6 here.
-  * * include_crunch - do we put a # at the start
-  * * default - default color. must be 3 or 6 characters with or without #.
-  * * default_replacement - what we replace broken letters with.
-  */
+ * Sanitizes a hexadecimal color. Always outputs lowercase.
+ *
+ * @params
+ * * color - input color, 3 or 6 characters without the #.
+ * * desired_format - 3 or 6 characters without the potential #. can only put in 3 or 6 here.
+ * * include_crunch - do we put a # at the start
+ * * default - default color. must be 3 or 6 characters with or without #.
+ * * default_replacement - what we replace broken letters with.
+ */
 /proc/sanitize_hexcolor(color, desired_format = 3, include_crunch = 0, default = rgb(218, 72, 255), default_replacement = "f")
 	if(!istext(default) || (length(default) < 3))
 		CRASH("Default should be a text string of RGB format, with or without the crunch, 3 or 6 characters. Default was instead [default]")

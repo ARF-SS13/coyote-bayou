@@ -150,7 +150,7 @@
 
 	var/obj/item/mmi/installed_brain
 
-/obj/item/integrated_circuit/input/mmi_tank/attackby(var/obj/item/mmi/O, var/mob/user)
+/obj/item/integrated_circuit/input/mmi_tank/attackby(obj/item/mmi/O, mob/user)
 	if(!istype(O,/obj/item/mmi))
 		to_chat(user,"<span class='warning'>You can't put that inside.</span>")
 		return
@@ -165,7 +165,7 @@
 	O.brainmob.remote_control=src
 	set_pin_data(IC_OUTPUT, 1, O)
 
-/obj/item/integrated_circuit/input/mmi_tank/attack_self(var/mob/user)
+/obj/item/integrated_circuit/input/mmi_tank/attack_self(mob/user)
 	if(installed_brain)
 		RemoveBrain()
 		to_chat(user, "<span class='notice'>You slowly lift [installed_brain] out of the MMI tank.</span>")
@@ -179,7 +179,7 @@
 	RemoveBrain()
 	..()
 
-/obj/item/integrated_circuit/input/mmi_tank/relaymove(var/n,var/dir)
+/obj/item/integrated_circuit/input/mmi_tank/relaymove(n,dir)
 	set_pin_data(IC_OUTPUT, 2, dir)
 	do_work(1)
 	switch(dir)
@@ -188,7 +188,7 @@
 		if(1)	activate_pin(4)
 		if(2)	activate_pin(5)
 
-/obj/item/integrated_circuit/input/mmi_tank/do_work(var/n)
+/obj/item/integrated_circuit/input/mmi_tank/do_work(n)
 	push_data()
 	activate_pin(n)
 
@@ -279,7 +279,7 @@
 
 	var/obj/item/paicard/installed_pai
 
-/obj/item/integrated_circuit/input/pAI_connector/attackby(var/obj/item/paicard/O, var/mob/user)
+/obj/item/integrated_circuit/input/pAI_connector/attackby(obj/item/paicard/O, mob/user)
 	if(!istype(O,/obj/item/paicard))
 		to_chat(user,"<span class='warning'>You can't put that inside.</span>")
 		return
@@ -294,7 +294,7 @@
 	O.pai.remote_control=src
 	set_pin_data(IC_OUTPUT, 1, O)
 
-/obj/item/integrated_circuit/input/pAI_connector/attack_self(var/mob/user)
+/obj/item/integrated_circuit/input/pAI_connector/attack_self(mob/user)
 	if(installed_pai)
 		RemovepAI()
 		to_chat(user, "<span class='notice'>You slowly disconnect the circuit's pins from the [installed_pai].</span>")
@@ -304,7 +304,7 @@
 	else
 		to_chat(user, "<span class='notice'>The connection port is empty.</span>")
 
-/obj/item/integrated_circuit/input/pAI_connector/relaymove(var/n,var/dir)
+/obj/item/integrated_circuit/input/pAI_connector/relaymove(n,dir)
 	set_pin_data(IC_OUTPUT, 2, dir)
 	do_work(1)
 	switch(dir)
@@ -313,7 +313,7 @@
 		if(1)	activate_pin(4)
 		if(2)	activate_pin(5)
 
-/obj/item/integrated_circuit/input/pAI_connector/do_work(var/n)
+/obj/item/integrated_circuit/input/pAI_connector/do_work(n)
 	push_data()
 	activate_pin(n)
 

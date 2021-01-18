@@ -86,7 +86,7 @@
 
 /obj/machinery/mineral/wasteland_trader/attackby(obj/item/I, mob/user, params)
 	add_caps(I)
- //not sure why anything else was here anyways?
+	//not sure why anything else was here anyways?
 
 /* Adding a caps to caps storage and release vending item. */
 /obj/machinery/mineral/wasteland_trader/proc/add_caps(obj/item/I)

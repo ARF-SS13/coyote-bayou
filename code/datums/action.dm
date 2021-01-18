@@ -816,7 +816,7 @@
 	target.plane = old_plane
 	current_button.appearance_cache = target.appearance
 
-/proc/get_action_of_type(mob/M, var/action_type)
+/proc/get_action_of_type(mob/M, action_type)
 	if(!M.actions || !ispath(action_type, /datum/action))
 		return
 	for(var/datum/action/A in M.actions)

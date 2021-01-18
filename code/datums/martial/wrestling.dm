@@ -17,7 +17,7 @@
 	var/datum/action/strike/strike = new/datum/action/strike()
 	var/datum/action/drop/drop = new/datum/action/drop()
 
-/datum/martial_art/wrestling/proc/check_streak(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+/datum/martial_art/wrestling/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!can_use(A, D))
 		return FALSE
 	switch(streak)
@@ -506,7 +506,7 @@
 	style = new /datum/martial_art/wrestling/holodeck
 
 //Make sure that moves can only be used on people wearing the holodeck belt
-/datum/martial_art/wrestling/holodeck/can_use(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+/datum/martial_art/wrestling/holodeck/can_use(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!(istype(D.mind?.martial_art, /datum/martial_art/wrestling/holodeck)))
 		return FALSE
 	else

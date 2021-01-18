@@ -46,7 +46,7 @@
 	var/damage = (damage_roll(A,D) + 5)
 	if(CHECK_MOBILITY(D, MOBILITY_STAND))
 		D.visible_message("<span class='warning'>[A] slams [D] into the ground!</span>", \
-						  	"<span class='userdanger'>[A] slams you into the ground!</span>")
+							"<span class='userdanger'>[A] slams you into the ground!</span>")
 		playsound(get_turf(A), 'sound/weapons/slam.ogg', 50, 1, -1)
 		D.apply_damage(damage, BRUTE)
 		D.DefaultCombatKnockdown(120)
@@ -60,7 +60,7 @@
 	if(!CHECK_MOBILITY(D, MOBILITY_STAND) && CHECK_MOBILITY(D, MOBILITY_USE))
 		log_combat(A, D, "knocked out (Head kick)(CQC)")
 		D.visible_message("<span class='warning'>[A] kicks [D]'s head, knocking [D.p_them()] out!</span>", \
-					  		"<span class='userdanger'>[A] kicks your head, knocking you out!</span>")
+							"<span class='userdanger'>[A] kicks your head, knocking you out!</span>")
 		playsound(get_turf(A), 'sound/weapons/genhit1.ogg', 50, 1, -1)
 		D.SetSleeping(300)
 		D.apply_damage(damage + 5, BRUTE)

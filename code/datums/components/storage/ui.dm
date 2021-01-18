@@ -1,6 +1,6 @@
 /**
-  * Generates a list of numbered_display datums for the numerical display system.
-  */
+ * Generates a list of numbered_display datums for the numerical display system.
+ */
 /datum/component/storage/proc/_process_numerical_display()
 	. = list()
 	for(var/obj/item/I in accessible_items())
@@ -14,8 +14,8 @@
 	. = sortTim(., /proc/cmp_numbered_displays_name_asc, associative = TRUE)
 
 /**
-  * Orients all objects in legacy mode, and returns the objects to show to the user.
-  */
+ * Orients all objects in legacy mode, and returns the objects to show to the user.
+ */
 /datum/component/storage/proc/orient2hud_legacy(mob/user, maxcolumns)
 	. = list()
 	var/list/accessible_contents = accessible_items()
@@ -74,8 +74,8 @@
 					break
 
 /**
-  * Orients all objects in .. volumetric mode. Does not support numerical display!
-  */
+ * Orients all objects in .. volumetric mode. Does not support numerical display!
+ */
 /datum/component/storage/proc/orient2hud_volumetric(mob/user, maxcolumns)
 	. = list()
 
@@ -183,8 +183,8 @@
 	. += ui_close
 
 /**
-  * Shows our UI to a mob.
-  */
+ * Shows our UI to a mob.
+ */
 /datum/component/storage/proc/ui_show(mob/M, set_screen_size = TRUE)
 	if(!M.client)
 		return FALSE
@@ -211,8 +211,8 @@
 	return TRUE
 
 /**
-  * VV hooked to ensure no lingering screen objects.
-  */
+ * VV hooked to ensure no lingering screen objects.
+ */
 /datum/component/storage/vv_edit_var(var_name, var_value)
 	var/list/old
 	if(var_name == NAMEOF(src, storage_flags))
@@ -225,14 +225,14 @@
 			ui_show(i)
 
 /**
-  * Proc triggered by signal to ensure logging out clients don't linger.
-  */
+ * Proc triggered by signal to ensure logging out clients don't linger.
+ */
 /datum/component/storage/proc/on_logout(datum/source, client/C)
 	ui_hide(source)
 
 /**
-  * Hides our UI from a mob
-  */
+ * Hides our UI from a mob
+ */
 /datum/component/storage/proc/ui_hide(mob/M)
 	if(!M.client)
 		return TRUE
@@ -244,15 +244,15 @@
 	return TRUE
 
 /**
-  * Returns TRUE if we are using volumetric UI instead of box UI
-  */
+ * Returns TRUE if we are using volumetric UI instead of box UI
+ */
 /datum/component/storage/proc/volumetric_ui()
 	var/atom/real_location = real_location()
 	return (storage_flags & STORAGE_LIMIT_VOLUME) && (length(real_location.contents) <= MAXIMUM_VOLUMETRIC_ITEMS) && !display_numerical_stacking
 
 /**
-  * Gets the ui item objects to ui_hide.
-  */
+ * Gets the ui item objects to ui_hide.
+ */
 /datum/component/storage/proc/get_ui_item_objects_hide(mob/M)
 	if(!volumetric_ui() || M.client?.prefs?.no_tetris_storage)
 		var/atom/real_location = real_location()
@@ -265,32 +265,32 @@
 			. += i
 
 /**
-  * Gets our ui_boxes, making it if it doesn't exist.
-  */
+ * Gets our ui_boxes, making it if it doesn't exist.
+ */
 /datum/component/storage/proc/get_ui_boxes()
 	if(!ui_boxes)
 		ui_boxes = new(null, src)
 	return ui_boxes
 
 /**
-  * Gets our ui_left, making it if it doesn't exist.
-  */
+ * Gets our ui_left, making it if it doesn't exist.
+ */
 /datum/component/storage/proc/get_ui_left()
 	if(!ui_left)
 		ui_left = new(null, src)
 	return ui_left
 
 /**
-  * Gets our ui_close, making it if it doesn't exist.
-  */
+ * Gets our ui_close, making it if it doesn't exist.
+ */
 /datum/component/storage/proc/get_ui_close()
 	if(!ui_close)
 		ui_close = new(null, src)
 	return ui_close
 
 /**
-  * Gets our ui_continuous, making it if it doesn't exist.
-  */
+ * Gets our ui_continuous, making it if it doesn't exist.
+ */
 /datum/component/storage/proc/get_ui_continuous()
 	if(!ui_continuous)
 		ui_continuous = new(null, src)

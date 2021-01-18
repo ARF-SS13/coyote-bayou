@@ -111,10 +111,10 @@
 			if(loaded)
 				if(contents.len >= max_n_of_items)
 					user.visible_message("<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-									 "<span class='notice'>You fill \the [src] with \the [O].</span>")
+									"<span class='notice'>You fill \the [src] with \the [O].</span>")
 				else
 					user.visible_message("<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-										 "<span class='notice'>You load \the [src] with \the [O].</span>")
+										"<span class='notice'>You load \the [src] with \the [O].</span>")
 				if(O.contents.len > 0)
 					to_chat(user, "<span class='warning'>Some items are refused.</span>")
 				if (visible_contents)
@@ -649,13 +649,13 @@
 		/obj/item/reagent_containers/food/drinks/bottle/limejuice = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 2,
-        /obj/item/reagent_containers/food/drinks/soda_cans/tonic = 3,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 3,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 2,
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/bawls = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/vim = 3,
-        /obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
+		/obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
 
 ////cans
 
@@ -669,7 +669,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/instacocoa = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cream = 3,
 		/obj/item/reagent_containers/food/snacks/f13/porknbeans = 3,
-	    /obj/item/reagent_containers/food/snacks/f13/borscht = 1,
+		/obj/item/reagent_containers/food/snacks/f13/borscht = 1,
 		/obj/item/reagent_containers/food/snacks/f13/dog = 3,
 		/obj/item/reagent_containers/food/snacks/beans = 3,)
 
@@ -685,7 +685,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/vodka = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/tequila = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/rum = 1,
-	    /obj/item/reagent_containers/food/drinks/bottle/vermouth = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/vermouth = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/cognac = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/lizardwine = 1,

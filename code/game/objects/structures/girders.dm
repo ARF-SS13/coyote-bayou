@@ -232,8 +232,8 @@
 	. = FALSE
 	if(state == GIRDER_DISPLACED)
 		user.visible_message("<span class='warning'>[user] disassembles the girder.</span>",
-							 "<span class='notice'>You start to disassemble the girder...</span>",
-							 "You hear clanking and banging noises.")
+							"<span class='notice'>You start to disassemble the girder...</span>",
+							"You hear clanking and banging noises.")
 		if(tool.use_tool(src, user, 40, volume=100))
 			if(state != GIRDER_DISPLACED)
 				return

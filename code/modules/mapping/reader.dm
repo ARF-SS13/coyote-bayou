@@ -80,11 +80,11 @@
 	return parsed
 
 /**
-  * Parse a map, possibly cropping it.
-  * Do not use the crop function unless strictly necessary.
-  * WARNING: Crop function crops based on the tiles you'd see in the map editor. If you're planning to load it in in a different orientation later, you better have done the math.
-  * It's recommended that you do not crop using this at all.
-  */
+ * Parse a map, possibly cropping it.
+ * Do not use the crop function unless strictly necessary.
+ * WARNING: Crop function crops based on the tiles you'd see in the map editor. If you're planning to load it in in a different orientation later, you better have done the math.
+ * It's recommended that you do not crop using this at all.
+ */
 /datum/parsed_map/New(tfile, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, z_lower = -INFINITY, z_upper = INFINITY, measureOnly = FALSE)
 	_parse(tfile, x_lower, x_upper, y_lower, y_upper, z_lower, z_upper, measureOnly)
 

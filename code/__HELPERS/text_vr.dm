@@ -1,5 +1,5 @@
 //Readds quotes and apostrophes to HTML-encoded strings
-/proc/readd_quotes(var/t)
+/proc/readd_quotes(t)
 	var/list/repl_chars = list("&#34;" = "\"","&#39;" = "'")
 	for(var/char in repl_chars)
 		var/index = findtext(t, char)

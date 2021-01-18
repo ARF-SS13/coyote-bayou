@@ -1,19 +1,19 @@
 
 /**
-  * Applies damage to this mob
-  *
-  * Sends [COMSIG_MOB_APPLY_DAMGE]
-  *
-  * Arguuments:
-  * * damage - amount of damage
-  * * damagetype - one of [BRUTE], [BURN], [TOX], [OXY], [CLONE], [STAMINA]
-  * * def_zone - zone that is being hit if any
-  * * blocked - armor value applied
-  * * forced - bypass hit percentage
-  * * spread_damage - used in overrides
-  *
-  * Returns TRUE if damage applied
-  */
+ * Applies damage to this mob
+ *
+ * Sends [COMSIG_MOB_APPLY_DAMGE]
+ *
+ * Arguuments:
+ * * damage - amount of damage
+ * * damagetype - one of [BRUTE], [BURN], [TOX], [OXY], [CLONE], [STAMINA]
+ * * def_zone - zone that is being hit if any
+ * * blocked - armor value applied
+ * * forced - bypass hit percentage
+ * * spread_damage - used in overrides
+ *
+ * Returns TRUE if damage applied
+ */
 /mob/living/proc/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (hit_percent <= 0))

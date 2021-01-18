@@ -52,8 +52,8 @@
 		var/obj/item/weldingtool/WT = W
 		if(WT.use(0))//remove_fuel(0,user))
 			user.visible_message("[user.name] scorched the pointy end of [src] with the welding tool.", \
-						 "<span class='notice'>You scorch the pointy end of [src] with the welding tool.</span>", \
-						 "<span class='italics'>You hear welding.</span>")
+						"<span class='notice'>You scorch the pointy end of [src] with the welding tool.</span>", \
+						"<span class='italics'>You hear welding.</span>")
 		// 8 Second Timer
 		if(!do_mob(user, src, 80))
 			return
@@ -85,7 +85,7 @@
 		return
 	// Drop & Embed Stake
 	user.visible_message("<span class='danger'>[user.name] drives the [src] into [target]'s chest!</span>", \
-			 "<span class='danger'>You drive the [src] into [target]'s chest!</span>")
+			"<span class='danger'>You drive the [src] into [target]'s chest!</span>")
 	playsound(get_turf(target), 'sound/effects/splat.ogg', 40, 1)
 	user.dropItemToGround(src, TRUE) //user.drop_item() // "drop item" doesn't seem to exist anymore. New proc is user.dropItemToGround() but it doesn't seem like it's needed now?
 	var/obj/item/bodypart/B = C.get_bodypart("chest")  // This was all taken from hitby() in human_defense.dm

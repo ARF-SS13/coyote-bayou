@@ -58,12 +58,12 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 	/// The blocked variable of on_hit() on projectiles is impacted by this. Higher is better, 0 to 100, percentage.
 	var/block_projectile_mitigation = 50
 
-	/*
-	 * NOTE: Overrides for attack types for most the block_stamina variables were removed,
-	 * because at the time of writing nothing needed to use it. Add them if you need it,
-	 * it should be pretty easy, just copy [active_block_damage_mitigation]
-	 * for how to override with list.
-	 */
+/*
+ * NOTE: Overrides for attack types for most the block_stamina variables were removed,
+ * because at the time of writing nothing needed to use it. Add them if you need it,
+ * it should be pretty easy, just copy [active_block_damage_mitigation]
+ * for how to override with list.
+ */
 
 	/// Default damage-to-stamina coefficient, higher is better. This is based on amount of damage BLOCKED, not initial damage, to prevent damage from "double dipping".
 	var/block_stamina_efficiency = 2
@@ -152,8 +152,8 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 	var/parry_failed_clickcd_duration = 2 SECONDS
 
 /**
-  * Quirky proc to get average of flags in list that are in attack_type because why is attack_type a flag.
-  */
+ * Quirky proc to get average of flags in list that are in attack_type because why is attack_type a flag.
+ */
 /datum/block_parry_data/proc/attack_type_list_scan(list/L, attack_type)
 	var/total = 0
 	var/div = 0
@@ -168,14 +168,14 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 
 
 /**
-  * Gets the percentage efficiency of our parry.
-  *
-  * Returns a percentage in normal 0 to 100 scale, but not clamped to just 0 to 100.
-  * This is a proc to allow for overriding.
-  * @params
-  * * attack_type - int, bitfield of the attack type(s)
-  * * parry_time - deciseconds since start of the parry.
-  */
+ * Gets the percentage efficiency of our parry.
+ *
+ * Returns a percentage in normal 0 to 100 scale, but not clamped to just 0 to 100.
+ * This is a proc to allow for overriding.
+ * @params
+ * * attack_type - int, bitfield of the attack type(s)
+ * * parry_time - deciseconds since start of the parry.
+ */
 /datum/block_parry_data/proc/get_parry_efficiency(attack_type, parry_time)
 	var/difference = abs(parry_time - (parry_time_perfect + parry_time_windup))
 	var/leeway = attack_type_list_scan(parry_time_perfect_leeway_override, attack_type)
@@ -232,10 +232,10 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 		B.open()
 
 /**
-  * Generates a HTML render of this datum for self-documentation
-  * Maybe make this tgui-next someday haha god this is ugly as sin.
-  * Does NOT include the popout or title or anything. Just the variables and explanations..
-  */
+ * Generates a HTML render of this datum for self-documentation
+ * Maybe make this tgui-next someday haha god this is ugly as sin.
+ * Does NOT include the popout or title or anything. Just the variables and explanations..
+ */
 /datum/block_parry_data/proc/render_html_readout(block_data = FALSE, parry_data = FALSE)
 	var/list/dat = list()
 	if(block_data)
@@ -302,8 +302,8 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 // MOB PROCS
 
 /**
-  * Called every life tick to handle blocking/parrying effects.
-  */
+ * Called every life tick to handle blocking/parrying effects.
+ */
 /mob/living/proc/handle_block_parry(seconds = 1)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)
 		var/datum/block_parry_data/data = return_block_parry_datum(active_block_item.block_parry_data)

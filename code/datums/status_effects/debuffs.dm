@@ -449,10 +449,10 @@
 	return ..()
 
 /**
-  * What happens when this mark gets popped
-  *
-  * Adds actual functionality to each mark
-  */
+ * What happens when this mark gets popped
+ *
+ * Adds actual functionality to each mark
+ */
 /datum/status_effect/eldritch/proc/on_effect()
 	playsound(owner, 'sound/magic/repulse.ogg', 75, TRUE)
 	qdel(src) //what happens when this is procced.

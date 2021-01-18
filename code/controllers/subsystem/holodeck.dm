@@ -19,9 +19,9 @@ SUBSYSTEM_DEF(holodeck)
 		target_holodeck_area[path] = pop(get_areas(initial(H.holodeck_type)), FALSE)
 
 
- /*
-  * The sole scope of this datum is to generate lists of holodeck programs caches per holodeck computer type.
-  */
+/**
+ * The sole scope of this datum is to generate lists of holodeck programs caches per holodeck computer type.
+ */
 
 /datum/holodeck_cache
 	var/area/holodeck/master_type //the /area/holodeck typepath we'll be using for typesof loop.

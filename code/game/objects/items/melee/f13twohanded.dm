@@ -184,7 +184,7 @@
 	nade.forceMove(get_turf(src))
 	qdel(src)
 /*
- //THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
+//THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
 /obj/item/twohanded/spear/throw_impact(atom/target)
 	. = ..()
 	if(!.) //not caught
@@ -474,10 +474,10 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
-    . = ..()
-    if(!istype(M))
-        return
-    M.apply_effect(300, EFFECT_IRRADIATE, 0)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 /obj/item/twohanded/sledgehammer/warmace
 	name = "war mace"
@@ -520,7 +520,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 
 /obj/item/twohanded/sledgehammer/marsstaff
 	name = "Staff of Mars"
-	desc = " A staff crafted by the guidance of Mars."
+	desc = "A staff crafted by the guidance of Mars."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "mars_staff0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -610,10 +610,10 @@ var/list/possible_colors = list("red")
 
 
 /obj/item/twohanded/bonespear/venom //added for Viper raiders -Thes
- 	container_type = INJECTABLE
- 	name = "Viper spear"
- 	desc = "A bone spear which has been modified to envenomate targets without drawing as much blood. Wielding it with both hands allows for stronger blows, but renders the venom ineffective.<br>It has been designed to allow for easily refitting the tip with a typical spear blade after the venom is dry."
- 	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
+	container_type = INJECTABLE
+	name = "Viper spear"
+	desc = "A bone spear which has been modified to envenomate targets without drawing as much blood. Wielding it with both hands allows for stronger blows, but renders the venom ineffective.<br>It has been designed to allow for easily refitting the tip with a typical spear blade after the venom is dry."
+	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
 
 
 /obj/item/twohanded/bonespear/venom/attack(mob/living/L, mob/user)

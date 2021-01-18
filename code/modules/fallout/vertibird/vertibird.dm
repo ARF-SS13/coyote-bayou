@@ -26,7 +26,7 @@
 
 	getIn(user)
 
-/obj/vertibird/proc/toggleLock(var/mob/user)
+/obj/vertibird/proc/toggleLock(mob/user)
 	if(locked)
 		locked = FALSE
 		to_chat(user, "You unlock the vertibird.")

@@ -62,7 +62,7 @@
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 
-/obj/item/loadout_token/attack_self(var/mob/user)
+/obj/item/loadout_token/attack_self(mob/user)
 	user.select_loadout()
 
 /****************
@@ -163,7 +163,7 @@
 			. = TRUE
 
 //Selects an outfit and loads the preview of it
-/datum/component/loadout_selector/proc/select_outfit(var/newname)
+/datum/component/loadout_selector/proc/select_outfit(newname)
 	//First of all, lets not do unnecessary work.
 	//Don't reselect the one we already have selected
 	if (newname == selected_name)

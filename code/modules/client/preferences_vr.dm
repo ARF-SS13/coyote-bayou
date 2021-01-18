@@ -3,7 +3,7 @@
 	var/biological_gender = MALE
 	var/identifying_gender = MALE
 
-/datum/preferences/proc/set_biological_gender(var/gender)
+/datum/preferences/proc/set_biological_gender(gender)
 	biological_gender = gender
 	identifying_gender = gender
 

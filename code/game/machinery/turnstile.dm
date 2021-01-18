@@ -18,7 +18,7 @@
 /obj/machinery/turnstile/CanAtmosPass(turf/T)
 	return TRUE
 
-/obj/machinery/turnstile/proc/allowed_access(var/mob/B)
+/obj/machinery/turnstile/proc/allowed_access(mob/B)
 	if(B.pulledby && ismob(B.pulledby))
 		return allowed(B.pulledby) | allowed(B)
 	else

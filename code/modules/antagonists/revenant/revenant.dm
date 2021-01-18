@@ -151,7 +151,7 @@
 /mob/living/simple_animal/revenant/med_hud_set_status()
 	return //we use no hud
 
-/mob/living/simple_animal/revenant/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/simple_animal/revenant/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(!message)
 		return
 	src.log_talk(message, LOG_SAY)
@@ -362,7 +362,7 @@
 	if(!reforming || inert)
 		return ..()
 	user.visible_message("<span class='notice'>[user] scatters [src] in all directions.</span>", \
-						 "<span class='notice'>You scatter [src] across the area. The particles slowly fade away.</span>")
+						"<span class='notice'>You scatter [src] across the area. The particles slowly fade away.</span>")
 	user.dropItemToGround(src)
 	scatter()
 
@@ -455,16 +455,16 @@
 
 /datum/objective/revenantFluff/New()
 	var/list/explanationTexts = list("Assist and exacerbate existing threats at critical moments.", \
-									 "Avoid killing in plain sight.", \
-									 "Cause as much chaos and anger as you can without being killed.", \
-									 "Damage and render as much of the station rusted and unusable as possible.", \
-									 "Disable and cause malfunctions in as many machines as possible.", \
-									 "Ensure that any holy weapons are rendered unusable.", \
-									 "Hinder the crew while attempting to avoid being noticed.", \
-									 "Make the crew as miserable as possible.", \
-									 "Make the clown as miserable as possible.", \
-									 "Make the captain as miserable as possible.", \
-									 "Prevent the use of energy weapons where possible.")
+									"Avoid killing in plain sight.", \
+									"Cause as much chaos and anger as you can without being killed.", \
+									"Damage and render as much of the station rusted and unusable as possible.", \
+									"Disable and cause malfunctions in as many machines as possible.", \
+									"Ensure that any holy weapons are rendered unusable.", \
+									"Hinder the crew while attempting to avoid being noticed.", \
+									"Make the crew as miserable as possible.", \
+									"Make the clown as miserable as possible.", \
+									"Make the captain as miserable as possible.", \
+									"Prevent the use of energy weapons where possible.")
 	explanation_text = pick(explanationTexts)
 	..()
 

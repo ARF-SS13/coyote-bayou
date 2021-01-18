@@ -81,7 +81,7 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/client/proc/cmd_admin_mod_antag_rep(client/C in GLOB.clients, var/operation)
+/client/proc/cmd_admin_mod_antag_rep(client/C in GLOB.clients, operation)
 	set category = "Special Verbs"
 	set name = "Modify Antagonist Reputation"
 
@@ -1315,9 +1315,9 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 		ADMIN_PUNISHMENT_SHOES,
 		ADMIN_PUNISHMENT_PICKLE,
 		ADMIN_PUNISHMENT_FRY,
-    ADMIN_PUNISHMENT_CRACK,
-    ADMIN_PUNISHMENT_BLEED,
-    ADMIN_PUNISHMENT_SCARIFY)
+	ADMIN_PUNISHMENT_CRACK,
+	ADMIN_PUNISHMENT_BLEED,
+	ADMIN_PUNISHMENT_SCARIFY)
 
 	var/punishment = input("Choose a punishment", "DIVINE SMITING") as null|anything in punishment_list
 
@@ -1487,17 +1487,17 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	punish_log(target, punishment)
 
 /**
-  * firing_squad is a proc for the :B:erforate smite to shoot each individual bullet at them, so that we can add actual delays without sleep() nonsense
-  *
-  * Hilariously, if you drag someone away mid smite, the bullets will still chase after them from the original spot, possibly hitting other people. Too funny to fix imo
-  *
-  * Arguments:
-  * * target- guy we're shooting obviously
-  * * source_turf- where the bullet begins, preferably on a turf next to the target
-  * * body_zone- which bodypart we're aiming for, if there is one there
-  * * wound_bonus- the wounding power we're assigning to the bullet, since we don't care about the base one
-  * * damage- the damage we're assigning to the bullet, since we don't care about the base one
-  */
+ * firing_squad is a proc for the :B:erforate smite to shoot each individual bullet at them, so that we can add actual delays without sleep() nonsense
+ *
+ * Hilariously, if you drag someone away mid smite, the bullets will still chase after them from the original spot, possibly hitting other people. Too funny to fix imo
+ *
+ * Arguments:
+ * * target- guy we're shooting obviously
+ * * source_turf- where the bullet begins, preferably on a turf next to the target
+ * * body_zone- which bodypart we're aiming for, if there is one there
+ * * wound_bonus- the wounding power we're assigning to the bullet, since we don't care about the base one
+ * * damage- the damage we're assigning to the bullet, since we don't care about the base one
+ */
 /proc/firing_squad(mob/living/carbon/target, turf/source_turf, body_zone, wound_bonus, damage)
 	if(!target.get_bodypart(body_zone))
 		return
@@ -1511,7 +1511,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	divine_wrath.preparePixelProjectile(target, source_turf)
 	divine_wrath.fire()
 
-/client/proc/punish_log(var/whom, var/punishment)
+/client/proc/punish_log(whom, punishment)
 	var/msg = "[key_name_admin(usr)] punished [key_name_admin(whom)] with [punishment]."
 	message_admins(msg)
 	admin_ticket_log(whom, msg)
