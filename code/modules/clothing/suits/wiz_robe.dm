@@ -204,7 +204,7 @@
 	examine_list += "<span class='notice'>Making sure you are properly wearing or holding it, \
 					point at whatever you want to rally your minions to its position."
 	examine_list += "While on <b>harm</b> intent, pointed mobs (minus you and the minions) \
-					 will also be marked as foes for your minions to attack for the next 2 minutes.</span>"
+					will also be marked as foes for your minions to attack for the next 2 minutes.</span>"
 
 /datum/action/item_action/stickmen/Grant(mob/M)
 	. = ..()

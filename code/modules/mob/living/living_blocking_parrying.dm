@@ -58,12 +58,12 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 	/// The blocked variable of on_hit() on projectiles is impacted by this. Higher is better, 0 to 100, percentage.
 	var/block_projectile_mitigation = 50
 
-	/*
-	 * NOTE: Overrides for attack types for most the block_stamina variables were removed,
-	 * because at the time of writing nothing needed to use it. Add them if you need it,
-	 * it should be pretty easy, just copy [active_block_damage_mitigation]
-	 * for how to override with list.
-	 */
+/*
+ * NOTE: Overrides for attack types for most the block_stamina variables were removed,
+ * because at the time of writing nothing needed to use it. Add them if you need it,
+ * it should be pretty easy, just copy [active_block_damage_mitigation]
+ * for how to override with list.
+ */
 
 	/// Default damage-to-stamina coefficient, higher is better. This is based on amount of damage BLOCKED, not initial damage, to prevent damage from "double dipping".
 	var/block_stamina_efficiency = 2

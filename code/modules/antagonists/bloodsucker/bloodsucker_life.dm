@@ -293,15 +293,15 @@
 	// Elders get Dusted
 	if(bloodsucker_level >= 4) // (bloodsucker_title)
 		owner.current.visible_message("<span class='warning'>[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a dry, crackling sound.</span>")
+			"<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
+			"<span class='italics'>You hear a dry, crackling sound.</span>")
 		sleep(50)
 		owner.current.dust()
 	// Fledglings get Gibbed
 	else
 		owner.current.visible_message("<span class='warning'>[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a wet, bursting sound.</span>")
+			"<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
+			"<span class='italics'>You hear a wet, bursting sound.</span>")
 		owner.current.gib(TRUE, FALSE, FALSE) //Brain cloning is wierd and allows hellbounds. Lets destroy the brain for safety.
 	playsound(owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE)
 
@@ -365,7 +365,7 @@
 				C.Stun(13)
 			if(3)
 				to_chat(C, "<span class='warning'>You purge the food of the living from your viscera! You've never felt worse.</span>")
-				 //Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
+				//Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
 					C.blood_volume = max(0, C.blood_volume - foodInGut * 2)
 					C.vomit(foodInGut * 4, foodInGut * 2, 0)

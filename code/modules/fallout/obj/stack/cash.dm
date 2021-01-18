@@ -58,7 +58,7 @@
 			if(loc == oldloc && user && !user.incapacitated())
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
  								 "<span class='notice'>You flip [src]. It lands on [coinflip].</span>", \
-								 "<span class='italics'>You hear the clattering of loose change.</span>")
+								"<span class='italics'>You hear the clattering of loose change.</span>")
 		return TRUE//did the coin flip? useful for suicide_act
 
 /obj/item/stack/f13Cash/fivezerozero

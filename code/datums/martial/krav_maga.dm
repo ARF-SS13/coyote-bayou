@@ -103,7 +103,7 @@
 	if(!CHECK_MOBILITY(D, MOBILITY_STAND))
 		return FALSE
 	D.visible_message("<span class='warning'>[A] leg sweeps [D]!</span>", \
-					  	"<span class='userdanger'>[A] leg sweeps you!</span>")
+						"<span class='userdanger'>[A] leg sweeps you!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)
 	D.apply_damage(damage, STAMINA, affecting, armor_block)
 	D.DefaultCombatKnockdown(80, override_hardstun = 1, override_stamdmg = 0)
@@ -113,7 +113,7 @@
 /datum/martial_art/krav_maga/proc/quick_choke(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)//is actually lung punch
 	var/damage = damage_roll(A,D)
 	D.visible_message("<span class='warning'>[A] pounds [D] on the chest!</span>", \
-				  	"<span class='userdanger'>[A] slams your chest! You can't breathe!</span>")
+					"<span class='userdanger'>[A] slams your chest! You can't breathe!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, 1, -1)
 	if(D.losebreath <= 10)
 		D.losebreath = clamp(D.losebreath + 5, 0, 10)
@@ -124,7 +124,7 @@
 /datum/martial_art/krav_maga/proc/neck_chop(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
 	var/damage = (damage_roll(A,D)*0.5)
 	D.visible_message("<span class='warning'>[A] karate chops [D]'s neck!</span>", \
-				  	"<span class='userdanger'>[A] karate chops your neck, rendering you unable to speak!</span>")
+					"<span class='userdanger'>[A] karate chops your neck, rendering you unable to speak!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, 1, -1)
 	D.apply_damage(damage, BRUTE)
 	if(D.silent <= 10)

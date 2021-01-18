@@ -8,9 +8,9 @@ Class Variables:
    use_power (num)
   	current state of auto power use.
   	Possible Values:
-	 	NO_POWER_USE -- no auto power use
-	 	IDLE_POWER_USE -- machine is using power at its idle power level
-	 	ACTIVE_POWER_USE -- machine is using power at its active power level
+		NO_POWER_USE -- no auto power use
+		IDLE_POWER_USE -- machine is using power at its idle power level
+		ACTIVE_POWER_USE -- machine is using power at its active power level
 
    active_power_usage (num)
   	Value for the amount of power to use when in active power mode
@@ -21,9 +21,9 @@ Class Variables:
    power_channel (num)
   	What channel to draw from when drawing power for power mode
   	Possible Values:
-	 	EQUIP:0 -- Equipment Channel
-	 	LIGHT:2 -- Lighting Channel
-	 	ENVIRON:3 -- Environment Channel
+		EQUIP:0 -- Equipment Channel
+		LIGHT:2 -- Lighting Channel
+		ENVIRON:3 -- Environment Channel
 
    component_parts (list)
   	A list of component parts of machine used by frame based machines.
@@ -31,10 +31,10 @@ Class Variables:
    stat (bitflag)
   	Machine status bit flags.
   	Possible bit flags:
-	 	BROKEN -- Machine is broken
-	 	NOPOWER -- No power is being supplied to machine.
-	 	MAINT -- machine is currently under going maintenance.
-	 	EMPED -- temporary broken by EMP pulse
+		BROKEN -- Machine is broken
+		NOPOWER -- No power is being supplied to machine.
+		MAINT -- machine is currently under going maintenance.
+		EMPED -- temporary broken by EMP pulse
 
 Class Procs:
    Initialize()                     'game/machinery/machine.dm'
@@ -47,8 +47,8 @@ Class Procs:
   	tick.
 
   	Return Value:
-	 	return:1 -- if object is powered
-	 	return:0 -- if object is not powered.
+		return:1 -- if object is powered
+		return:0 -- if object is not powered.
 
   	Default definition uses 'use_power', 'power_channel', 'active_power_usage',
   	'idle_power_usage', 'powered()', and 'use_power()' implement behavior.

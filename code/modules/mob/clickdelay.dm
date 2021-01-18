@@ -34,10 +34,10 @@
 
 	// Resisting - While resisting will give generic clickdelay, it is also on its own resist delay system. However, resisting does not check generic movedelay.
 	// Resist cooldown should only be set at the start of a resist chain - whether this is clicking an alert button, pressing or hotkeying the resist button, or moving to resist out of a locker.
-	/*
-	 * Special clickdelay variable for resisting. Last time we did a special action like resisting. This should only be set using [MarkResistTime()].
-	 * Use [CheckResistCooldown()] to check cooldowns, this should only be used for the resist action bar visual.
-	 */
+/*
+ * Special clickdelay variable for resisting. Last time we did a special action like resisting. This should only be set using [MarkResistTime()].
+ * Use [CheckResistCooldown()] to check cooldowns, this should only be used for the resist action bar visual.
+ */
 	var/last_resist = 0
 	/// How long we should wait before allowing another resist. This should only be manually modified using multipliers.
 	var/resist_cooldown = CLICK_CD_RESIST

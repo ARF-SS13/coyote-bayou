@@ -49,14 +49,14 @@
 					(isnull(rad) ? src.rad : rad),\
 					(isnull(fire) ? src.fire : fire),\
 					(isnull(acid) ? src.acid : acid),\
-				  (isnull(magic) ? src.magic : magic),\
-				  (isnull(wound) ? src.wound : wound))
+					(isnull(magic) ? src.magic : magic),\
+					(isnull(wound) ? src.wound : wound))
 
 /datum/armor/proc/getRating(rating)
 	return vars[rating]
 
 /datum/armor/proc/getList()
-	 return list("melee" = melee, "bullet" = bullet, "laser" = laser, "energy" = energy, "bomb" = bomb, "bio" = bio, "rad" = rad, "fire" = fire, "acid" = acid, "magic" = magic, "wound" = wound)
+	return list("melee" = melee, "bullet" = bullet, "laser" = laser, "energy" = energy, "bomb" = bomb, "bio" = bio, "rad" = rad, "fire" = fire, "acid" = acid, "magic" = magic, "wound" = wound)
 
 /datum/armor/proc/attachArmor(datum/armor/AA)
 	return getArmor(melee+AA.melee, bullet+AA.bullet, laser+AA.laser, energy+AA.energy, bomb+AA.bomb, bio+AA.bio, rad+AA.rad, fire+AA.fire, acid+AA.acid, magic+AA.magic, wound+AA.wound)

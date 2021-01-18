@@ -71,9 +71,9 @@
 					mobCount ++
 					if (mobCount >= mobMax) // Already at max
 						break
-			 Spawn One
+			Spawn One
 			if(mobCount < mobMax)
-				 Seek Out Location
+				Seek Out Location
 				while(area_turfs.len > 0)
 					var/turf/T = pick(area_turfs) // We use while&pick instead of a for/loop so it's random, rather than from the top of the list.
 					if(T && !T.density)

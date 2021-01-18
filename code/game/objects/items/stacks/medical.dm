@@ -169,8 +169,8 @@
 			return
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
-					 "<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
-					 "<span class='italics'>You hear cutting.</span>")
+					"<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
+					"<span class='italics'>You hear cutting.</span>")
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine, 10))

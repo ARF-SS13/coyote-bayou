@@ -858,10 +858,10 @@
 				)
 
 	var/loot8 = list(
-				 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
-				 //obj/item/ammo_box/tube/c4570,
-				 /obj/item/ammo_box/tube/c4570
-				 )
+				/obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
+				//obj/item/ammo_box/tube/c4570,
+				/obj/item/ammo_box/tube/c4570
+				)
 
 	var/loot9 = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped,

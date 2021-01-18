@@ -27,7 +27,7 @@
 		if(prob(40))
 			if(prob(25))
 				audible_message("<span class='warning'>You hear something rumbling inside [src]'s stomach...</span>", \
-							 "<span class='warning'>You hear something rumbling.</span>", 4,\
+							"<span class='warning'>You hear something rumbling.</span>", 4,\
 							  "<span class='userdanger'>Something is rumbling inside your stomach!</span>")
 			var/obj/item/I = user.get_active_held_item()
 			if(I && I.force)

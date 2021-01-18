@@ -225,7 +225,7 @@
 
 	to_chat(user, "<span class='notice'>\The [src] begins to tighten it's seals.</span>")
 	wearer.visible_message("<span class='notice'>\The [wearer]'s suit emits a quiet hum as it begins to tighten it's seals.</span>",
-					  	   "<span class='notice'>With a quiet hum, your suit begins to seal.")
+						   "<span class='notice'>With a quiet hum, your suit begins to seal.")
 
 	if(seal_delay && !do_after(user, seal_delay, target = wearer))
 		to_chat(user, "<span class='warning'>You must remain still to seal \the [src]!</span>")
@@ -332,7 +332,7 @@
 		if(user != wearer)
 			to_chat(user, "<span class='notice'>\The [src] begins to loosen it's seals.</span>")
 		wearer.visible_message("<span class='notice'>\The [wearer]'s suit emits a quiet hum as it begins to loosen it's seals.</span>",
-						  	   "<span class='notice'>With a quiet hum, your suit begins to unseal.")
+							   "<span class='notice'>With a quiet hum, your suit begins to unseal.")
 
 		if(seal_delay && !do_after(user, seal_delay, target = wearer))
 			to_chat(user, "<span class='warning'>You must remain still to unseal \the [src]!</span>")

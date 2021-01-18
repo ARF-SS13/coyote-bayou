@@ -22,8 +22,8 @@
 /datum/crafting_recipe/showercurtain
 	name = "Shower Curtains"
 	reqs = 	list(/obj/item/stack/sheet/cloth = 2,
-				 /obj/item/stack/sheet/plastic = 2,
-				 /obj/item/stack/rods = 1)
+				/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/rods = 1)
 	result = /obj/structure/curtain
 	subcategory = CAT_FURNITURE
 	category = CAT_MISC
@@ -54,7 +54,7 @@
 	name = "Black Coffin"
 	result = /obj/structure/closet/crate/coffin/blackcoffin
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/screwdriver)
+				/obj/item/screwdriver)
 	reqs = list(/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/metal = 1)
@@ -69,7 +69,7 @@
 	name = "Meat Coffin"
 	result =/obj/structure/closet/crate/coffin/meatcoffin
 	tools = list(/obj/item/kitchen/knife,
-				 /obj/item/kitchen/rollingpin)
+				/obj/item/kitchen/rollingpin)
 	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab = 5,
 				/obj/item/restraints/handcuffs/cable = 1)
 	time = 150
@@ -81,7 +81,7 @@
 	name = "Metal Coffin"
 	result =/obj/structure/closet/crate/coffin/metalcoffin
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/screwdriver)
+				/obj/item/screwdriver)
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	time = 100
 	subcategory = CAT_FURNITURE
@@ -93,9 +93,9 @@
 	//desc = "For converting crewmembers into loyal Vassals."
 	result = /obj/structure/bloodsucker/vassalrack
 	tools = list(/obj/item/weldingtool,
-				 	//obj/item/screwdriver,
+					//obj/item/screwdriver,
 					/obj/item/wrench
-					 )
+					)
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
 				/obj/item/stack/sheet/metal = 2,
 				/obj/item/restraints/handcuffs/cable = 2,
@@ -117,7 +117,7 @@
 	//desc = "For converting crewmembers into loyal Vassals."
 	result = /obj/structure/bloodsucker/candelabrum
 	tools = list(/obj/item/weldingtool,
-				 /obj/item/wrench
+				/obj/item/wrench
 				)
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/rods = 1,

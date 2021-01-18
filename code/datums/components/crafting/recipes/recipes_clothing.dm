@@ -388,7 +388,7 @@
 	reqs = list(
 			/obj/item/clothing/gloves/fingerless = 1,
 //		    /obj/item/stack/sticky_tape = 1
-		 	/obj/item/stack/cable_coil = 5,
+			/obj/item/stack/cable_coil = 5,
 			/obj/item/stack/sheet/cloth = 2,
 	)
 	result = /obj/item/clothing/gloves/tackler/offbrand

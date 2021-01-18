@@ -54,7 +54,7 @@
 		if(do_after(user,50, target = src))
 			playsound(loc, 'sound/items/Wirecutter.ogg', 100, 1)
 			user.visible_message("<span class='notice'>[user] cuts a hole in the fence.</span>", \
-								 "<span class='notice'>You cut a hole in the fence.</span>")
+								"<span class='notice'>You cut a hole in the fence.</span>")
 			density = 0
 			icon_state = "cut_fence"
 			desc = "You have no idea what could make that hole..."

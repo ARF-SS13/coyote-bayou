@@ -35,7 +35,7 @@
 
 /obj/structure/destructible/clockwork/reflector/proc/auto_reflect(obj/item/projectile/P, pdir, turf/ploc, pangle)
 
-	 //Yell at me if this exists already.
+	//Yell at me if this exists already.
 
 	var/real_angle = 0
 

@@ -27,7 +27,7 @@ Property weights are added to the config weight of the ruleset. They are:
 "trust" -- How much it makes the crew trust each other. Negative values means they're suspicious. Team antags are like this.
 "chaos" -- How chaotic it makes the round. Has some overlap with "valid" and somewhat contradicts "extended".
 "valid" -- How likely the non-antag-enemy crew are to get involved, e.g. nukies encouraging the warden to
-	   	let everyone into the armory, wizard moving around and being a nuisance, nightmare busting lights.
+		let everyone into the armory, wizard moving around and being a nuisance, nightmare busting lights.
 "extended" -- How much the antag is conducive to a long round. Nukies and cults are bad for this; Wizard is less bad; and so on.
 "conversion" -- Basically a bool. Conversion antags, well, convert. It's in its own class 'cause people kinda hate conversion.
 */

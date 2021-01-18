@@ -165,7 +165,7 @@
 		else
 			if(user.transferItemToLoc(I, src))
 				user.visible_message("<span class='notice'>[user] adds [I] to [src].</span>", \
-								 "<span class='notice'>You add [I] to [src].</span>")
+								"<span class='notice'>You add [I] to [src].</span>")
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I
