@@ -327,35 +327,35 @@
 	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/moleratstew
-   name = "Molerat Stew"
-   desc = "A hearty stew, simmered in beer with some vegetables. It's good, if you can get over the bitter taste of the meat."
-   icon_state = "moleratstew"
-   bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine" = 5)
-   list_reagents = list(/datum/reagent/consumable/nutriment = 20)
-   filling_color = "B#22222"
+	name = "Molerat Stew"
+	desc = "A hearty stew, simmered in beer with some vegetables. It's good, if you can get over the bitter taste of the meat."
+	icon_state = "moleratstew"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine" = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/crispysquirrel
-   name = "Crispy Squirrel Bits"
-   desc = "Bits of squirrel meat roasted on a skewer. Tasty."
-   icon_state = "squrrielbits"
-   list_reagents = list(/datum/reagent/consumable/nutriment = 12)
-   filling_color = "B#22222"
+	name = "Crispy Squirrel Bits"
+	desc = "Bits of squirrel meat roasted on a skewer. Tasty."
+	icon_state = "squrrielbits"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/squirrelstick
-   name = "Squirrel on a Stick"
-   desc = "It's a whole squirrel roasted on a stick. Tastes of home on the wastes."
-   icon_state = "squrrielstick"
-   list_reagents = list(/datum/reagent/consumable/nutriment = 24)
-   filling_color = "B#22222"
+	name = "Squirrel on a Stick"
+	desc = "It's a whole squirrel roasted on a stick. Tastes of home on the wastes."
+	icon_state = "squrrielstick"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 24)
+	filling_color = "B#22222"
 
 /obj/item/reagent_containers/food/snacks/f13/squirrelstew
-   name = "Squirrel Stew"
-   desc = "Stewed squirrel meat with veggies. There's more vegetable than meat."
-   icon_state = "squrrielsoup"
-   bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
-   list_reagents = list(/datum/reagent/consumable/nutriment = 32)
-   filling_color = "B#22222"
-   trash = /obj/item/reagent_containers/glass/bowl
+	name = "Squirrel Stew"
+	desc = "Stewed squirrel meat with veggies. There's more vegetable than meat."
+	icon_state = "squrrielsoup"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 32)
+	filling_color = "B#22222"
+	trash = /obj/item/reagent_containers/glass/bowl
 
 /obj/item/reagent_containers/food/snacks/f13/mirelurkstew
 	name = "Mirelurk Stew"

@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 //SEC_LEVEL_RED = code red
 //SEC_LEVEL_DELTA = code delta
 
- /*
+/*
  * All security levels, per ascending alert. Nothing too fancy, really.
  * Their positions should also match their numerical values.
  */

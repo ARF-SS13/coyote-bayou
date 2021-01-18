@@ -1,4 +1,4 @@
- /*
+/*
  * Loot piles structures, somewhat inspired from Polaris 13 ones but without the one search per pile ckey/mind restriction
  * because the actual code is located its own element and has enough variables already. the piles themselves merely cosmetical.
  */
@@ -17,13 +17,13 @@
 	var/icon_states_to_use = list("junk_pile1", "junk_pile2", "junk_pile3", "junk_pile4", "junk_pile5")
 	var/list/loot
 
- /*
+/*
  * Associated values in this list are not weights but numbers of times the kery can be rolled
  * before being removed from ALL piles with same kind. This is why I wanted 'scavenging' to be an element and not a component.
  */
 	var/list/unique_loot
 
- /*
+/*
  * used for restrictions such as "one per mind", "one per ckey". Depending on the setting, these can be either limited to
  * the current pile or shared throughout all atoms attached to this element.
  */
