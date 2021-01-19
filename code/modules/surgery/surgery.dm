@@ -156,8 +156,8 @@
 		if(initial(beep.requires_tech))
 			surgeries += beep
 
-/obj/item/disk/surgery/oasis
-    name = "oasis surgery disk"
+/obj/item/disk/surgery/oasis 
+	name = "oasis surgery disk"
     surgeries = list(   /datum/surgery/advanced/lobotomy,
                         /datum/surgery/advanced/pacify,
                         /datum/surgery/advanced/reconstruction,
