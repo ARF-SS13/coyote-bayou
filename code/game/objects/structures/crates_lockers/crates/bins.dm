@@ -9,6 +9,8 @@
 	anchored = TRUE
 	horizontal = FALSE
 	delivery_icon = null
+	storage_capacity = 30 //Gets reduced when unanchored
+	anchored_storage_capacity = 30
 
 /obj/structure/closet/crate/bin/New()
 	..()

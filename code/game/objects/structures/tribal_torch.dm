@@ -47,3 +47,8 @@
 
 /obj/structure/destructible/tribal_torch/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
+
+/obj/structure/destructible/tribal_torch/lit //ALREADY LIT TORCH FOR USE IN MAPPING
+		burning = TRUE
+		icon_state = "torch_lit"
+		light_range = 7
