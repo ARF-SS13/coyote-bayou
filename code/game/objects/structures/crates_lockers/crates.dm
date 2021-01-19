@@ -125,6 +125,8 @@
 	desc = "A medical crate."
 	name = "medical crate"
 	icon_state = "medicalcrate"
+	anchored = TRUE
+	storage_capacity = 30
 
 /obj/structure/closet/crate/freezer
 	desc = "A freezer."
