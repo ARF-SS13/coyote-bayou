@@ -5491,6 +5491,12 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"etN" = (
+/obj/structure/closet/crate/trashcart{
+	name = "corpse cart"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/city)
 "euj" = (
 /obj/structure/fence{
 	dir = 4
@@ -13344,7 +13350,7 @@
 /obj/item/tank/internals/anesthetic,
 /obj/item/tank/internals/anesthetic,
 /obj/item/tank/internals/anesthetic,
-/obj/item/disk/surgery/brainwashing,
+/obj/item/disk/surgery/oasis,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "kiq" = (
@@ -29165,7 +29171,7 @@
 "wFf" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic";
-	req_one_access_txt = "25"
+	req_one_access_txt = "133"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
@@ -29200,7 +29206,7 @@
 "wHu" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic";
-	req_one_access_txt = "25"
+	req_one_access_txt = "133"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "clinicfrontdoor";
@@ -49798,7 +49804,7 @@ wSC
 iGN
 iGN
 cNH
-iGN
+etN
 wSC
 pjQ
 cpL

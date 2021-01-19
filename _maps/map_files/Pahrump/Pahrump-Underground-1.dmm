@@ -1133,6 +1133,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"dW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/bedsheet{
+	icon_state = "sheetcmo"
+	},
+/obj/structure/bed,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "dX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2132,6 +2140,20 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
+"hk" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 5
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
 /area/f13/tunnel)
 "hl" = (
 /obj/effect/decal/fakelattice{
@@ -3330,7 +3352,6 @@
 	},
 /area/f13/tunnel)
 "ll" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -3888,7 +3909,7 @@
 "mS" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic";
-	req_one_access_txt = "25"
+	req_one_access_txt = "133"
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "clinicstorage";
@@ -4730,12 +4751,12 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
 "pP" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_2";
-	pixel_x = -6
-	},
-/turf/open/floor/f13/wood,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/glass,
+/obj/item/fermichem/pHmeter,
+/obj/item/fermichem/pHmeter,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "pQ" = (
 /obj/structure/chair{
 	dir = 4
@@ -5082,7 +5103,7 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood)
 "re" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/structure/dresser,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rg" = (
@@ -5426,12 +5447,12 @@
 "sm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
-/obj/item/storage/box/gloves,
 /obj/item/storage/box/syringes,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/flashlight/pen,
 /obj/item/clothing/mask/gas,
 /obj/item/storage/box/pillbottles,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "sn" = (
@@ -5836,6 +5857,10 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"tJ" = (
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "tK" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/beakers,
@@ -6030,10 +6055,22 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ux" = (
-/obj/structure/chair/office{
+/obj/structure/decoration/vent{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/machinery/shower{
 	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
 /area/f13/tunnel)
 "uy" = (
 /obj/structure/table/reinforced,
@@ -6058,6 +6095,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/bodybags,
 /obj/structure/table,
+/obj/item/stack/sheet/cardboard/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uC" = (
@@ -6111,6 +6149,18 @@
 /area/f13/caves)
 "uK" = (
 /turf/closed/wall,
+/area/f13/tunnel)
+"uL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/glass,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/folder/white,
+/obj/item/folder/white,
+/obj/item/folder/white,
+/obj/item/folder/white,
+/obj/item/flashlight/pen,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uM" = (
 /obj/machinery/light/small/broken,
@@ -8391,6 +8441,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"CB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "CD" = (
 /obj/structure/mirror{
 	pixel_x = -32
@@ -9851,9 +9908,6 @@
 	id = "clinicladder"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "HC" = (
@@ -10699,8 +10753,8 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/structure/table,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Kt" = (
@@ -11541,7 +11595,7 @@
 "Ng" = (
 /obj/machinery/door/airlock/medical{
 	name = "Clinic";
-	req_one_access_txt = "25"
+	req_one_access_txt = "133"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -12982,10 +13036,8 @@
 	dir = 4
 	},
 /obj/structure/closet,
-/obj/item/storage/box/gloves,
 /obj/item/storage/box/syringes,
 /obj/item/reagent_containers/spray/cleaner,
-/obj/item/flashlight/pen,
 /obj/item/storage/belt/medical,
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/bag/chemistry,
@@ -14050,6 +14102,7 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/dropper,
+/obj/item/reagent_containers/glass/beaker/plastic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "UT" = (
@@ -14626,6 +14679,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
+"WN" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "WO" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
@@ -14927,6 +14986,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
+/area/f13/tunnel)
+"XP" = (
+/obj/structure/table/glass,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "XQ" = (
 /obj/machinery/light/small{
@@ -30659,8 +30722,8 @@ Fz
 qh
 dP
 dP
-Iz
-Iz
+EL
+EL
 EL
 bD
 bD
@@ -30911,16 +30974,16 @@ qT
 tk
 Py
 Fz
-Fz
 Bs
 Bs
 Bs
 Bs
 Bs
+Ng
 Bs
 Bs
-bD
-bD
+Bs
+Bs
 bD
 oP
 Fz
@@ -31169,14 +31232,14 @@ Wu
 EL
 Fz
 Bs
-Bs
+ll
 US
 Al
 dZ
-ll
+Lx
 ux
-Bs
-La
+hk
+dW
 QL
 bD
 Fz
@@ -31685,9 +31748,9 @@ TQ
 Bs
 SB
 Wy
-Lx
-Hl
-Lx
+pP
+XP
+uL
 Hl
 Hl
 mN
@@ -31944,7 +32007,7 @@ Fo
 pB
 Lx
 aZ
-Lx
+CB
 xy
 Hl
 Vm
@@ -33744,8 +33807,8 @@ Bs
 hK
 hK
 Bs
-Bs
-Bs
+WN
+tJ
 Bs
 pX
 pX
@@ -34001,9 +34064,9 @@ Bs
 Bs
 Bs
 Bs
-Fz
-Fz
-pP
+Bs
+Bs
+Bs
 xh
 ig
 oT
