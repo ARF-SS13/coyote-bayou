@@ -1032,14 +1032,8 @@
 	},
 /area/f13/tunnel)
 "dE" = (
-/obj/structure/handrail/g_central{
-	dir = 8;
-	pixel_x = -20
-	},
-/obj/structure/barricade/sandbags,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dF" = (
 /turf/closed/indestructible/rock,
@@ -2276,6 +2270,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
+"hD" = (
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "hE" = (
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120"
@@ -2370,7 +2368,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "hV" = (
-/obj/structure/table/optable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/box/bodybags,
+/obj/structure/table,
+/obj/item/stack/sheet/cardboard/twenty,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "hW" = (
@@ -2379,6 +2381,11 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"hY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "ia" = (
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/supermart,
@@ -2600,6 +2607,11 @@
 	icon_state = "grass2"
 	},
 /area/f13/brotherhood)
+"iJ" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "iK" = (
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
@@ -3893,11 +3905,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "mN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/bodybags,
-/obj/structure/table,
-/obj/item/stack/sheet/cardboard/twenty,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/smartfridge/organ,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mO" = (
@@ -3920,7 +3928,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mS" = (
-/obj/machinery/smartfridge/organ,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "clinicstorage";
+	name = "shutters button";
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mT" = (
@@ -4296,11 +4309,13 @@
 	},
 /area/f13/tunnel)
 "of" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "133"
+	},
+/obj/machinery/door/poddoor/shutters{
 	id = "clinicstorage";
-	name = "shutters button";
-	pixel_x = 32
+	name = "storage shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -5114,14 +5129,7 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood)
 "re" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "133"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "clinicstorage";
-	name = "storage shutters"
-	},
+/obj/machinery/vending/wardrobe/medi_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rg" = (
@@ -5483,11 +5491,11 @@
 	},
 /area/f13/tunnel)
 "so" = (
-/obj/machinery/light/fo13colored/Pink{
-	dir = 8;
-	name = "light tube"
+/obj/structure/booth{
+	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/misc/resource,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "sp" = (
@@ -6072,7 +6080,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ux" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/structure/curtain{
+	open = 0
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uy" = (
@@ -6334,13 +6344,9 @@
 	},
 /area/f13/sewer)
 "vp" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
 /obj/structure/chair/booth{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "vq" = (
@@ -6522,9 +6528,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vQ" = (
-/obj/structure/curtain{
-	open = 0
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "vR" = (
@@ -7116,6 +7121,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
+"xL" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "xM" = (
 /obj/structure/toilet{
 	dir = 4
@@ -8001,7 +8010,7 @@
 /area/f13/brotherhood)
 "AS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul,
+/obj/item/flashlight/lamp,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "AU" = (
@@ -8495,11 +8504,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "CG" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/booth,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/locked_box/misc/resource,
+/obj/item/locked_box/misc/crafting,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "CH" = (
@@ -9005,8 +9012,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "En" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/freezer/blood,
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/backpack/duffelbag/med,
+/obj/item/clothing/accessory/medal/ribbon/medical_doctor{
+	desc = "A faded award from long ago";
+	name = "faded medical award"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Eo" = (
@@ -9309,7 +9322,7 @@
 /area/f13/bunker)
 "Fo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lamp,
+/obj/effect/decal/cleanable/ash/crematorium,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Fp" = (
@@ -9342,14 +9355,10 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "Fv" = (
-/obj/structure/closet/crate/medical/anchored,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/storage/backpack/duffelbag/med,
-/obj/item/clothing/accessory/medal/ribbon/medical_doctor{
-	desc = "A faded award from long ago";
-	name = "faded medical award"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/book/manual/wiki/cit/chemistry,
+/obj/structure/table/glass,
+/obj/item/book/manual/wiki/circuitry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Fw" = (
@@ -9525,10 +9534,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Gb" = (
-/obj/structure/chair/booth{
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/closet/crate/large,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Gd" = (
 /obj/structure/chair/wood/modern{
@@ -9922,10 +9929,7 @@
 	},
 /area/f13/tunnel)
 "HB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/book/manual/wiki/cit/chemistry,
-/obj/structure/table/glass,
-/obj/item/book/manual/wiki/circuitry,
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "HC" = (
@@ -10268,12 +10272,8 @@
 	},
 /area/f13/clinic)
 "IL" = (
-/obj/structure/barricade/bars{
-	layer = 5
-	},
-/obj/structure/barricade/wooden/planks,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
+/turf/closed/wall/rust,
+/area/space)
 "IM" = (
 /obj/structure/chair,
 /turf/open/floor/f13{
@@ -11335,8 +11335,14 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "Mn" = (
-/obj/structure/closet/crate/large,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/obj/structure/chair/booth{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "Mo" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
@@ -12105,6 +12111,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"OA" = (
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "OB" = (
 /obj/structure/handrail/g_central{
 	pixel_y = -16
@@ -12492,10 +12502,14 @@
 	},
 /area/f13/followers)
 "PQ" = (
-/obj/structure/booth,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/locked_box/misc/crafting,
-/turf/open/indestructible/ground/inside/dirt,
+/obj/structure/decoration/warning{
+	pixel_y = -2
+	},
+/obj/structure/sign/warning{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/tunnel)
 "PR" = (
 /mob/living/simple_animal/hostile/supermutant,
@@ -13171,15 +13185,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Se" = (
-/obj/structure/handrail/g_central{
-	dir = 8;
-	pixel_x = -20
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "Sf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -14023,7 +14031,8 @@
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "UG" = (
-/obj/structure/bed/roller,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "UH" = (
@@ -14234,6 +14243,11 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
+"Vm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "Vn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -14572,6 +14586,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"Wy" = (
+/obj/structure/girder,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "Wz" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
@@ -14660,6 +14680,21 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
+/area/f13/tunnel)
+"WN" = (
+/obj/structure/sign/warning{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/structure/decoration/warning{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/obj/structure/decoration/warning{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/tunnel)
 "WO" = (
 /obj/structure/bed,
@@ -25842,14 +25877,14 @@ ug
 ug
 Za
 Za
-dE
-Aw
-Aw
+ug
+ug
+ug
 oB
 WC
 WC
 WC
-Se
+WC
 xP
 MA
 "}
@@ -32509,9 +32544,9 @@ Lx
 Hl
 uV
 Bs
+vQ
 En
-Fv
-Mn
+Gb
 Mu
 bD
 ku
@@ -32762,12 +32797,12 @@ Bs
 Hl
 RJ
 sm
-of
+mS
 Lx
 Hl
-vQ
+ux
 Lx
-Lx
+Fo
 Hl
 Mu
 EL
@@ -33020,12 +33055,12 @@ Ng
 Bs
 Bs
 Bs
-re
+of
 Bs
 Bs
-Fo
+AS
+Fv
 HB
-UG
 Bs
 bD
 ku
@@ -33275,7 +33310,7 @@ nh
 Bs
 Lx
 uB
-hV
+dE
 Bs
 Lx
 La
@@ -33532,7 +33567,7 @@ Uv
 ia
 Lx
 Hl
-mN
+hV
 Bs
 dq
 La
@@ -33789,10 +33824,10 @@ Uv
 Bs
 hK
 hK
-mS
+mN
 Bs
 tJ
-ux
+re
 Bs
 pX
 In
@@ -38947,7 +38982,7 @@ Rs
 Aw
 Ry
 zJ
-Ry
+Wy
 Uu
 ug
 ug
@@ -39193,19 +39228,19 @@ QC
 QC
 QC
 QC
-ez
+nC
+QC
 QC
 QC
 QC
 QC
 QC
 IL
-IL
-IL
 QC
-lq
-lq
-lq
+QC
+PQ
+WN
+QC
 Us
 QC
 QC
@@ -39457,7 +39492,7 @@ Fz
 Fz
 QC
 Jq
-PQ
+ah
 CG
 so
 wl
@@ -39714,11 +39749,11 @@ Fz
 Fz
 QC
 Jq
-Gb
+ah
 vp
-wl
-wl
-Vn
+Mn
+Se
+iJ
 Vn
 Vn
 Tu
@@ -40230,13 +40265,13 @@ QC
 dB
 wl
 wl
-AS
 Lx
+UG
 bv
 Hl
 GA
 bw
-Vn
+hY
 QC
 Fz
 sS
@@ -40745,7 +40780,7 @@ qT
 AP
 Lx
 Lx
-Vn
+Vm
 Jq
 QC
 pB
@@ -41779,7 +41814,7 @@ wo
 PJ
 bD
 Fz
-bD
+xL
 Fz
 Fz
 Fz
@@ -42032,7 +42067,7 @@ sS
 Fz
 MA
 Fz
-bD
+hD
 bD
 PJ
 bD
@@ -42291,7 +42326,7 @@ MA
 Fz
 Fz
 bD
-bD
+OA
 bD
 Av
 Fz
