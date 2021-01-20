@@ -2948,11 +2948,18 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "jV" = (
+/obj/item/defibrillator/loaded,
+/obj/item/storage/box/syringes,
+/obj/item/cane,
+/obj/item/soap,
+/obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/bodybags,
-/obj/structure/table,
-/obj/item/stack/sheet/cardboard/twenty,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/defibrillator/loaded,
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/gloves,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "jW" = (
@@ -3886,14 +3893,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "mN" = (
-/obj/item/defibrillator/loaded,
-/obj/item/storage/box/syringes,
-/obj/item/cane,
-/obj/item/soap,
-/obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/defibrillator/loaded,
-/obj/structure/closet/crate/medical/anchored,
+/obj/item/storage/box/bodybags,
+/obj/structure/table,
+/obj/item/stack/sheet/cardboard/twenty,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mO" = (
@@ -4760,6 +4764,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/glass,
 /obj/item/fermichem/pHmeter,
+/obj/item/storage/bag/chemistry,
 /obj/item/fermichem/pHmeter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -5460,11 +5465,8 @@
 "sm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet,
-/obj/item/storage/box/syringes,
 /obj/item/reagent_containers/spray/cleaner,
-/obj/item/flashlight/pen,
 /obj/item/clothing/mask/gas,
-/obj/item/storage/box/pillbottles,
 /obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -6160,6 +6162,7 @@
 /obj/item/folder/white,
 /obj/item/folder/white,
 /obj/item/flashlight/pen,
+/obj/item/flashlight/pen,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uM" = (
@@ -6207,9 +6210,27 @@
 	},
 /area/f13/bunker)
 "uV" = (
-/obj/structure/curtain{
-	open = 0
-	},
+/obj/item/storage/firstaid/ancient,
+/obj/item/storage/firstaid/ancient,
+/obj/item/storage/firstaid/ancient,
+/obj/effect/turf_decal/box/white,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/silver_sulf,
+/obj/item/reagent_containers/medspray/silver_sulf,
+/obj/item/reagent_containers/medspray/styptic,
+/obj/item/reagent_containers/medspray/styptic,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/storage/pill_bottle/chem_tin/fixer,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/storage/pill_bottle/mannitol,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uW" = (
@@ -6501,8 +6522,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/freezer/blood,
+/obj/structure/curtain{
+	open = 0
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "vR" = (
@@ -8984,7 +9006,7 @@
 /area/f13/caves)
 "En" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lamp,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Eo" = (
@@ -9286,14 +9308,8 @@
 	},
 /area/f13/bunker)
 "Fo" = (
-/obj/structure/closet/crate/medical/anchored,
-/obj/item/reagent_containers/food/drinks/bottle/vodka,
-/obj/item/clothing/neck/stethoscope,
-/obj/item/storage/backpack/duffelbag/med,
-/obj/item/clothing/accessory/medal/ribbon/medical_doctor{
-	desc = "A faded award from long ago";
-	name = "\"excellence in medicine\" award"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lamp,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Fp" = (
@@ -9326,10 +9342,14 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "Fv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/book/manual/wiki/cit/chemistry,
-/obj/structure/table/glass,
-/obj/item/book/manual/wiki/circuitry,
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/backpack/duffelbag/med,
+/obj/item/clothing/accessory/medal/ribbon/medical_doctor{
+	desc = "A faded award from long ago";
+	name = "faded medical award"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Fw" = (
@@ -9902,7 +9922,10 @@
 	},
 /area/f13/tunnel)
 "HB" = (
-/obj/structure/closet/crate/large,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/book/manual/wiki/cit/chemistry,
+/obj/structure/table/glass,
+/obj/item/book/manual/wiki/circuitry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "HC" = (
@@ -11312,7 +11335,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "Mn" = (
-/obj/structure/bed/roller,
+/obj/structure/closet/crate/large,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Mo" = (
@@ -13028,8 +13051,6 @@
 /obj/item/storage/box/syringes,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/storage/belt/medical,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/bag/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "RM" = (
@@ -14001,6 +14022,10 @@
 	},
 /turf/open/floor/plating,
 /area/f13/brotherhood)
+"UG" = (
+/obj/structure/bed/roller,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "UH" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -14209,31 +14234,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
-"Vm" = (
-/obj/item/storage/firstaid/ancient,
-/obj/item/storage/firstaid/ancient,
-/obj/item/storage/firstaid/ancient,
-/obj/effect/turf_decal/box/white,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/silver_sulf,
-/obj/item/reagent_containers/medspray/silver_sulf,
-/obj/item/reagent_containers/medspray/styptic,
-/obj/item/reagent_containers/medspray/styptic,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/storage/pill_bottle/chem_tin/fixer,
-/obj/item/reagent_containers/syringe/medx,
-/obj/item/reagent_containers/syringe/medx,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/structure/closet/crate/medical/anchored,
-/obj/item/storage/pill_bottle/mannitol,
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "Vn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -31736,7 +31736,7 @@ XP
 uL
 Hl
 Hl
-mN
+Hl
 Bs
 pX
 hd
@@ -31993,7 +31993,7 @@ aZ
 CB
 xy
 Hl
-Vm
+Pe
 Bs
 EL
 dU
@@ -32250,7 +32250,7 @@ Lx
 Lx
 Hl
 Hl
-Hl
+jV
 Bs
 Mu
 Bs
@@ -32507,11 +32507,11 @@ Lx
 Hl
 Lx
 Hl
-Hl
+uV
 Bs
-vQ
-Fo
-HB
+En
+Fv
+Mn
 Mu
 bD
 ku
@@ -32765,7 +32765,7 @@ sm
 of
 Lx
 Hl
-uV
+vQ
 Lx
 Lx
 Hl
@@ -33023,9 +33023,9 @@ Bs
 re
 Bs
 Bs
-En
-Fv
-Mn
+Fo
+HB
+UG
 Bs
 bD
 ku
@@ -33532,7 +33532,7 @@ Uv
 ia
 Lx
 Hl
-jV
+mN
 Bs
 dq
 La
