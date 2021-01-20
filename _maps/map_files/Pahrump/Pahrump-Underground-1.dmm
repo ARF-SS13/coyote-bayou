@@ -942,8 +942,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dq" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/effect/turf_decal/box/white,
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "clinicladder"
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dr" = (
@@ -1134,12 +1137,18 @@
 	},
 /area/f13/tunnel)
 "dW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/bedsheet{
-	icon_state = "sheetcmo"
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 5
 	},
-/obj/structure/bed,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
 /area/f13/tunnel)
 "dX" = (
 /obj/structure/disposalpipe/segment{
@@ -2142,15 +2151,19 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "hk" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 5
+/obj/structure/decoration/vent{
+	pixel_x = -7;
+	pixel_y = -3
+	},
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -2357,12 +2370,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "hV" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "hW" = (
 /obj/item/storage/trash_stack{
 	layer = 2
@@ -2409,6 +2419,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/chem_pile{
 	pixel_x = -19
+	},
+/obj/structure/chair/office/dark{
+	dir = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
@@ -2935,15 +2948,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "jV" = (
-/obj/structure/closet/crate/medical,
-/obj/item/defibrillator/loaded,
-/obj/item/storage/box/syringes,
-/obj/item/cane,
-/obj/item/soap,
-/obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light,
-/obj/item/defibrillator/loaded,
+/obj/item/storage/box/bodybags,
+/obj/structure/table,
+/obj/item/stack/sheet/cardboard/twenty,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "jW" = (
@@ -3352,7 +3361,8 @@
 	},
 /area/f13/tunnel)
 "ll" = (
-/obj/machinery/smartfridge/chemistry,
+/obj/machinery/chem_dispenser,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lm" = (
@@ -3876,15 +3886,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "mN" = (
-/obj/item/reagent_containers/medspray/styptic,
-/obj/item/reagent_containers/medspray/styptic,
-/obj/item/reagent_containers/medspray/silver_sulf,
-/obj/item/reagent_containers/medspray/silver_sulf,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/structure/closet/crate/medical,
+/obj/item/defibrillator/loaded,
+/obj/item/storage/box/syringes,
+/obj/item/cane,
+/obj/item/soap,
 /obj/effect/turf_decal/box/white,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/defibrillator/loaded,
+/obj/structure/closet/crate/medical/anchored,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mO" = (
@@ -3907,14 +3916,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mS" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "133"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "clinicstorage";
-	name = "storage shutters"
-	},
+/obj/machinery/smartfridge/organ,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mT" = (
@@ -4290,9 +4292,13 @@
 	},
 /area/f13/tunnel)
 "of" = (
-/obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/machinery/button/door{
+	id = "clinicstorage";
+	name = "shutters button";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "og" = (
 /obj/structure/bed/mattress{
@@ -5103,7 +5109,14 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood)
 "re" = (
-/obj/structure/dresser,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "133"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "clinicstorage";
+	name = "storage shutters"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rg" = (
@@ -5858,7 +5871,9 @@
 	},
 /area/f13/tunnel)
 "tJ" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "tK" = (
@@ -6055,22 +6070,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ux" = (
-/obj/structure/decoration/vent{
-	pixel_x = -7;
-	pixel_y = -3
-	},
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uy" = (
 /obj/structure/table/reinforced,
@@ -6092,10 +6093,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "uB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/box/bodybags,
-/obj/structure/table,
-/obj/item/stack/sheet/cardboard/twenty,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uC" = (
@@ -6207,13 +6207,9 @@
 	},
 /area/f13/bunker)
 "uV" = (
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
-/obj/structure/closet/crate/medical,
-/obj/effect/turf_decal/box/white,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	open = 0
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uW" = (
@@ -6506,7 +6502,7 @@
 /area/f13/tunnel)
 "vQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "vR" = (
@@ -7808,8 +7804,7 @@
 	},
 /area/f13/brotherhood)
 "Al" = (
-/obj/structure/table,
-/obj/item/storage/pill_bottle/mannitol,
+/obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "An" = (
@@ -8988,10 +8983,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "En" = (
-/obj/structure/table/wood,
-/obj/item/chair/wood/modern,
-/turf/open/floor/f13/wood,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lamp,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "Eo" = (
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -9291,10 +9286,13 @@
 	},
 /area/f13/bunker)
 "Fo" = (
-/obj/machinery/chem_heater,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/clothing/neck/stethoscope,
+/obj/item/storage/backpack/duffelbag/med,
+/obj/item/clothing/accessory/medal/ribbon/medical_doctor{
+	desc = "A faded award from long ago";
+	name = "\"excellence in medicine\" award"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -9328,11 +9326,12 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "Fv" = (
-/obj/structure/chair/wood/worn{
-	dir = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/book/manual/wiki/cit/chemistry,
+/obj/structure/table/glass,
+/obj/item/book/manual/wiki/circuitry,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "Fw" = (
 /obj/structure/closet,
 /obj/item/locked_box/misc/money/all/low,
@@ -9903,11 +9902,7 @@
 	},
 /area/f13/tunnel)
 "HB" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "clinicladder"
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "HC" = (
@@ -10927,8 +10922,9 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/caves)
 "La" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/supermart,
+/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Lb" = (
 /obj/machinery/light{
@@ -11316,12 +11312,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "Mn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "clinicstorage";
-	name = "shutters button";
-	pixel_x = 32
-	},
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Mo" = (
@@ -11365,10 +11356,8 @@
 /area/f13/tunnel)
 "Mu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/item/clothing/head/helmet/f13/tribal,
-/turf/open/floor/f13/wood,
-/area/f13/caves)
+/turf/closed/wall/f13/supermart,
+/area/f13/tunnel)
 "Mv" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 8
@@ -13315,14 +13304,10 @@
 	},
 /area/f13/clinic)
 "SB" = (
-/obj/machinery/chem_master,
+/obj/machinery/chem_heater,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/chem_pile{
-	pixel_x = -12;
-	pixel_y = 10
-	},
-/obj/structure/sign/poster/prewar/poster92{
-	pixel_y = 32
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -14016,14 +14001,6 @@
 	},
 /turf/open/floor/plating,
 /area/f13/brotherhood)
-"UG" = (
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/ancient,
-/obj/item/storage/firstaid/ancient,
-/obj/item/storage/firstaid/ancient,
-/obj/effect/turf_decal/box/white,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "UH" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -14233,14 +14210,28 @@
 	},
 /area/f13/clinic)
 "Vm" = (
-/obj/item/reagent_containers/syringe/medx,
-/obj/item/reagent_containers/syringe/medx,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/structure/closet/crate/medical,
-/obj/item/storage/pill_bottle/chem_tin/fixer,
+/obj/item/storage/firstaid/ancient,
+/obj/item/storage/firstaid/ancient,
+/obj/item/storage/firstaid/ancient,
 /obj/effect/turf_decal/box/white,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/silver_sulf,
+/obj/item/reagent_containers/medspray/silver_sulf,
+/obj/item/reagent_containers/medspray/styptic,
+/obj/item/reagent_containers/medspray/styptic,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/storage/pill_bottle/chem_tin/fixer,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/structure/closet/crate/medical/anchored,
+/obj/item/storage/pill_bottle/mannitol,
+/obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "Vn" = (
@@ -14581,15 +14572,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"Wy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/tunnel)
 "Wz" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
@@ -14678,12 +14660,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
-/area/f13/tunnel)
-"WN" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "WO" = (
 /obj/structure/bed,
@@ -15451,8 +15427,15 @@
 	},
 /area/f13/clinic)
 "ZB" = (
-/obj/machinery/chem_dispenser,
+/obj/machinery/chem_master,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/chem_pile{
+	pixel_x = -12;
+	pixel_y = 10
+	},
+/obj/structure/sign/poster/prewar/poster92{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ZC" = (
@@ -31237,7 +31220,7 @@ US
 Al
 dZ
 Lx
-ux
+Hl
 hk
 dW
 QL
@@ -31496,7 +31479,7 @@ pB
 pB
 Hl
 Hl
-re
+Hl
 Bs
 pX
 bD
@@ -31747,7 +31730,7 @@ rF
 TQ
 Bs
 SB
-Wy
+pB
 pP
 XP
 uL
@@ -31757,9 +31740,9 @@ mN
 Bs
 pX
 hd
-Fz
-Fz
-Fz
+bD
+bD
+bD
 BR
 BR
 kp
@@ -32003,7 +31986,7 @@ JR
 ig
 Xr
 Bs
-Fo
+BV
 pB
 Lx
 aZ
@@ -32014,9 +31997,9 @@ Vm
 Bs
 EL
 dU
-Fz
-ME
-ME
+bD
+bD
+bD
 Fz
 ME
 ME
@@ -32267,13 +32250,13 @@ Lx
 Lx
 Hl
 Hl
-jV
-ia
-In
-dU
-ME
-Qx
-of
+Hl
+Bs
+Mu
+Bs
+Bs
+Mu
+bD
 Qx
 vE
 Qu
@@ -32524,13 +32507,13 @@ Lx
 Hl
 Lx
 Hl
-uV
+Hl
 Bs
-In
-Fz
-Fz
-wl
-ku
+vQ
+Fo
+HB
+Mu
+bD
 ku
 wS
 GM
@@ -32779,15 +32762,15 @@ Bs
 Hl
 RJ
 sm
+of
 Lx
-Mn
-UG
-Bs
-pX
-In
-ig
-wl
-Qx
+Hl
+uV
+Lx
+Lx
+Hl
+Mu
+EL
 ku
 Qx
 Qx
@@ -33036,15 +33019,15 @@ Bs
 Ng
 Bs
 Bs
-mS
+Bs
+re
 Bs
 Bs
+En
+Fv
+Mn
 Bs
-pX
-In
-ig
-Fz
-ku
+bD
 ku
 Qx
 Qx
@@ -33292,16 +33275,16 @@ nh
 Bs
 Lx
 uB
+hV
 Bs
 Lx
-dq
 La
 Mu
-Fv
-xh
-qC
-Fz
-Fz
+Bs
+Bs
+Bs
+Bs
+bD
 ME
 ME
 ku
@@ -33548,17 +33531,17 @@ Wu
 Uv
 ia
 Lx
-vQ
+Hl
+jV
 Bs
-HB
 dq
+La
 Bs
-En
 xh
 ig
 dI
-Fz
-Fz
+bD
+bD
 Fz
 Fz
 KR
@@ -33806,11 +33789,11 @@ Uv
 Bs
 hK
 hK
+mS
 Bs
-WN
 tJ
+ux
 Bs
-pX
 pX
 In
 Rc
@@ -34067,7 +34050,7 @@ Bs
 Bs
 Bs
 Bs
-xh
+Bs
 ig
 oT
 bD
@@ -34325,7 +34308,7 @@ In
 pX
 pX
 In
-Fz
+ig
 Fz
 bD
 Fz
@@ -43307,7 +43290,7 @@ Fz
 Fz
 Fz
 Fz
-hV
+Fz
 Fz
 Fz
 Fz
@@ -43564,7 +43547,7 @@ Fz
 Fz
 Fz
 Fz
-hV
+Fz
 Fz
 Fz
 Fz
@@ -43821,7 +43804,7 @@ sS
 Fz
 Fz
 Fz
-hV
+Fz
 Fz
 Fz
 Fz
