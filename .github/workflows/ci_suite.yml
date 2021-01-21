@@ -86,6 +86,8 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
+          sudo apt install build-essential
+          bash tools/ci/build_bsql.sh
       - name: Install rust-g
         run: |
           sudo dpkg --add-architecture i386
