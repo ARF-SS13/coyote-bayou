@@ -5,6 +5,7 @@
 	reqs = list(/obj/item/stack/medical/gauze = 1,
 				/datum/reagent/space_cleaner/sterilizine = 10)
 	category = CAT_MEDICAL
+	blacklist = list(/obj/item/stack/medical/gauze/improvised)
 
 /datum/crafting_recipe/brute_pack
 	name = "Suture Pack"
@@ -40,7 +41,6 @@
 	time = 80
 	category = CAT_MEDICAL
 
-
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
@@ -50,7 +50,6 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 50
 	category = CAT_MEDICAL
-
 
 /datum/crafting_recipe/superstimpak
 	name = "Super Stimpak"
