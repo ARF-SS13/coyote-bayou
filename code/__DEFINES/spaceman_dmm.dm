@@ -29,4 +29,4 @@
 #endif
 
 /proc/enable_debugging()
-    CRASH("Auxtools not found")
+	CRASH("Auxtools not found")
