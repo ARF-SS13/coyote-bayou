@@ -590,7 +590,7 @@
 	name = "m16a1"
 	desc = "The pre-war predecessor of the NCR service rifle. Select fire with three round burst. Chambered in 5.56."
 	icon_state = "m16a1"
-	fire_delay = 3
+	fire_delay = 1
 	burst_size = 3
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -605,12 +605,13 @@
 	item_state = "R84"
 	automatic = 1
 	burst_size = 2
+	fire_delay = 3
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
-	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and lacks select fire.automatic = "
+	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and is semi-auto only."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -630,7 +631,15 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	extra_damage = 5
+	extra_damage = 2
+
+/obj/item/gun/ballistic/automatic/marksman/automatic
+	name = "assault marksman carbine"
+	desc = "An automatic variant of the marksman carbine, from the Gunrunners. Made by contract for the New California Republic. Chambered in 5.56."
+	automatic = 1
+	burst_size = 2
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/varmint
 	name = "varmint rifle"
@@ -701,8 +710,6 @@
 	weapon_weight = WEAPON_HEAVY
 	burst_size = 1
 	fire_delay = 5
-	extra_penetration = -10
-	extra_damage = -10
 	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
@@ -800,7 +807,6 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
-
 
 /obj/item/gun/ballistic/automatic/r84
 	name = "R84 LMG"
@@ -1058,9 +1064,9 @@
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 4
 	extra_penetration = 4
-	automatic_burst_overlay = FALSE
-	actions_types = list()
-	automatic = 0
+	automatic_burst_overlay = TRUE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	automatic = 1
 	can_bayonet = TRUE
 	bayonet_state = "lasmusket"
 	knife_x_offset = 22
@@ -1069,14 +1075,7 @@
 	scopestate = "lasmusket_scope"
 	scope_x_offset = 5
 	scope_y_offset = 14
-
-/obj/item/gun/ballistic/automatic/m1carbine/automatic
-	name = "m2 carbine"
-	desc = "The M2 carbine is the select-fire variant of the common M1 carbine. Chambered in 10mm."
-	burst_size = 2
-	automatic = 1
-	automatic_burst_overlay = TRUE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	can_attachments = TRUE
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "m1a1 carbine"
@@ -1119,7 +1118,7 @@
 
 /obj/item/gun/ballistic/automatic/commando
 	name = "commando carbine"
-	desc = "An integrally supressed bolt action carbine, perfect for quiet varmint hunting. Uses .45 pistol magazines."
+	desc = "An integrally suppressed bolt action carbine, perfect for quiet varmint hunting. Uses .45 pistol magazines."
 	icon_state = "delisle"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m45
@@ -1236,7 +1235,7 @@
 
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"
-	desc = "This gun revolutionized assault weapon design. The weapon fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The resultant weight and space savings allow this weapon to have a very high magazine capacity."
+	desc = "This gun revolutionized assault weapon design. The weapon fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The resultant weight and space savings allow this weapon to have a very high magazine capacity. Chambered in 4.73mm."
 	icon_state = "g11"
 	item_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/m473
@@ -1255,12 +1254,13 @@
 	zoom_out_amt = 13
 	can_attachments = TRUE
 	can_scope = FALSE
+	burst_size = 1 //Starts semi, but can add a burst cam to get select fire.
 
 /obj/item/gun/ballistic/automatic/g11/upgraded
 	name = "g11e"
 	icon_state = "g11e"
 	item_state = "g11e"
-	burst_size = 3
+	burst_size = 2
 	fire_delay = 1
 	burst_shot_delay = 1
 	can_suppress = FALSE

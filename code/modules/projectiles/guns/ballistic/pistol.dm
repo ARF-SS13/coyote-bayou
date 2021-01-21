@@ -53,7 +53,7 @@
 		. += "[unique_reskin[current_skin]]-magazine"
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "\improper M1911"
+	name = "m1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -61,6 +61,19 @@
 	can_suppress = FALSE
 	fire_delay = 2
 	can_attachments = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/custom
+	name = "\improper M1911 Custom"
+	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
+	icon_state = "m1911_custom"
+	fire_delay = 1
+	extra_damage = 3
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/compact
+	name = "m1911 compact"
+	desc = "The compact version of the classic .45 handgun."
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = -1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -79,6 +92,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m44
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
+	fire_sound = 'sound/f13weapons/deagle.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/update_overlays()
 	. = ..()
@@ -208,6 +222,7 @@
 	burst_size = 3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
+	can_attachments = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "sig p220"
@@ -270,7 +285,7 @@
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
 	desc = "The silenced .22 pistol is a .22LR round handgun with an integrated silencer."
-	icon_state = "22pistol"
+	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0

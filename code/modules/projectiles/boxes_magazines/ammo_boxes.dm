@@ -17,8 +17,6 @@
 /obj/item/ammo_box/a357/dumdum
 	name = "speed loader (.357 DumDum)"
 	desc = "Designed to quickly reload revolvers. Usage of these rounds will constitute a war crime in your area."
-/obj/item/ammo_box/c10mm/jhp
-	name = "ammo box (10mm JHP)"
 
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 rubber)"
@@ -67,19 +65,17 @@
 	caliber = "10mm"
 	max_ammo = 20
 
+/obj/item/ammo_box/c10mm/jhp
+	name = "ammo box (10mm JHP)"
+	ammo_type = /obj/item/ammo_casing/c10mm/jhp
+
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm Incendiary)"
 	icon_state = "10mmbox"
 	max_ammo = 20
 
-/obj/item/ammo_box/c10mm/hp
-	name = "ammo box (10mm Hollow Point)"
-	icon_state = "10mmbox"
-	max_ammo = 20
-
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm Armour Piercing)"
-	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 	max_ammo = 20
 
@@ -406,8 +402,12 @@
 	name = "ammo box (5.56 AP)"
 	ammo_type = /obj/item/ammo_casing/a556/ap
 
-/obj/item/ammo_box/a556/sport
+/obj/item/ammo_box/a556/match
 	name = "ammo box (5.56 match)"
+	ammo_type = /obj/item/ammo_casing/a556/match
+
+/obj/item/ammo_box/a556/sport
+	name = "ammo box (.223)"
 	ammo_type = /obj/item/ammo_casing/a556/sport
 
 //Needler
@@ -603,3 +603,29 @@
 	ammo_type = /obj/item/ammo_casing/a127mm
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/c45rev
+	name = "speed loader (.45 ACP)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 6
+	multiple_sprites = 1
+
+/obj/item/ammo_box/c45rev/empty
+	start_empty = 1
+
+/obj/item/ammo_box/m22
+	name = "ammo box (.22lr)"
+	icon_state = "9mmbox"
+	ammo_type = /obj/item/ammo_casing/a22
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/m22/plinking
+	name = "ammo box (.22lr plinking)"
+	ammo_type = /obj/item/ammo_casing/a22/plinking
+
+/obj/item/ammo_box/m22/hp
+	name = "ammo box (.22lr hollow point)"
+	ammo_type = /obj/item/ammo_casing/a22/hp
