@@ -70,5 +70,5 @@
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak/super(src)
 	new /obj/item/stack/medical/gauze/adv(src)
-	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh(src)
