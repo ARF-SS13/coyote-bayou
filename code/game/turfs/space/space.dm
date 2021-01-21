@@ -4,15 +4,15 @@
 	name = "\proper space"
 	intact = 0
 
-	temperature = TCMB
-	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
+	initial_temperature = TCMB
+	thermal_conductivity = 0
 	heat_capacity = 700000
 
 	var/destination_z
 	var/destination_x
 	var/destination_y
 
-	var/static/datum/gas_mixture/immutable/space/space_gas = new
+	var/static/datum/gas_mixture/immutable/space/space_gas
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	light_power = 0.25
@@ -25,9 +25,12 @@
 	return
 
 /turf/open/space/Initialize()
+	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE
+	if(!space_gas)
+		space_gas = new
 	air = space_gas
-	update_air_ref()
+	update_air_ref(0)
 	vis_contents.Cut() //removes inherited overlays
 	visibilityChanged()
 
@@ -38,9 +41,6 @@
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
-
-	if(requires_activation)
-		SSair.add_to_active(src)
 
 	if (light_power && light_range)
 		update_light()
@@ -58,7 +58,7 @@
 		var/turf/T = locate(destination_x, destination_y, destination_z)
 		user.forceMove(T)
 
-/turf/open/space/Initalize_Atmos(times_fired)
+/turf/open/space/Initialize_Atmos(times_fired)
 	return
 
 /turf/open/space/TakeTemperature(temp)

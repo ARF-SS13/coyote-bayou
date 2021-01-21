@@ -13,7 +13,7 @@
 	density = TRUE
 	blocks_air = 1
 	layer = EDGED_TURF_LAYER
-	temperature = TCMB
+	initial_temperature = T20C
 	var/environment_type = "asteroid"
 	var/turf/open/indestructible/ground/inside/mountain/turf_type = /turf/open/indestructible/ground/inside/mountain
 	var/mineralType = null
