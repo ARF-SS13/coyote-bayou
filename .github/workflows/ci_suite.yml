@@ -86,13 +86,19 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
-          sudo apt install libc6-dev
+      - name: Install bsql
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update || true
+          sudo apt-get install build-essential
+          sudo apt-get install gcc-multilib
+          sudo apt-get install g++-multilib
+          sudo apt-get install gcc-4.8-multilib
+          sudo apt-get install g++-4.8-multilib
           bash tools/ci/build_bsql.sh
       - name: Install rust-g
         run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install libssl1.1:i386
+          sudo apt-get install libssl1.1:i386
           bash tools/ci/install_rust_g.sh
       - name: Compile and run tests
         run: |
