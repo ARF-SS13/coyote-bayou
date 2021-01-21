@@ -2,7 +2,7 @@
 	name = "pile of garbage"
 	desc = "a pile of garbage. Smells as good, as it looks, though it may contain something useful. Or may not"
 	icon = 'icons/fallout/objects/crafting.dmi'
-	icon_state = "Junk_1"
+	icon_state = "trash_1"
 	anchored = TRUE
 	density = FALSE
 	var/list/loot_players = list()
@@ -20,7 +20,7 @@
 
 /obj/item/storage/trash_stack/Initialize()
 	. = ..()
-	icon_state = "Junk_[rand(1,12)]"
+	icon_state = "trash_[rand(1,3)]"
 	GLOB.trash_piles += src
 	initialize_lootable_trash()
 

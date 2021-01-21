@@ -24,7 +24,9 @@
 	var/dense_when_open = FALSE //if it's dense when open or not
 	var/max_mob_size = MOB_SIZE_HUMAN //Biggest mob_size accepted by the container
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
-	var/storage_capacity = 6 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
+	var/storage_capacity = 8 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
+	var/base_storage_capacity = 8 //F13: With wrenching changing storage_capacity, this is to record what the standard storage capacity is. Make it the same value as var/storage_capacity
+	var/anchored_storage_capacity = 30
 	var/cutting_tool = /obj/item/weldingtool
 	var/open_sound = 'sound/machines/click.ogg'
 	var/close_sound = 'sound/machines/click.ogg'
@@ -357,6 +359,23 @@
 
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
+	if(istype(W, /obj/item/wrench) && anchorable)
+		if(isinspace() && !anchored)
+			return
+		if((contents.len > base_storage_capacity) && anchored) //Prevents filling a locker, closing it, and then unanchoring it to move large stacks of objects. Can't just make the locker dump its contents as this could be used to empty locked/welded lockers
+			user.visible_message("<span class='notice'>[user] attempts to unanchor \the [src], however it is too weighed down by its contents.</span>", \
+						"<span class='notice'>You attempt to unanchor \the [src], however it is too weighed down by its contents.</span>")
+			return
+		setAnchored(!anchored)
+		W.play_tool_sound(src, 75)
+		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
+						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
+						"<span class='italics'>You hear a ratchet.</span>")
+		if(anchored)
+			storage_capacity = anchored_storage_capacity
+		else
+			storage_capacity = base_storage_capacity
+
 	if(opened)
 		if(istype(W, cutting_tool))
 			var/welder = FALSE
@@ -399,14 +418,7 @@
 							"<span class='notice'>You [welded ? "weld" : "unwelded"] \the [src] with \the [W].</span>",
 							"<span class='italics'>You hear welding.</span>")
 			update_icon()
-	else if(istype(W, /obj/item/wrench) && anchorable)
-		if(isinspace() && !anchored)
-			return
-		setAnchored(!anchored)
-		W.play_tool_sound(src, 75)
-		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
-						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
-						"<span class='italics'>You hear a ratchet.</span>")
+
 	else if(user.a_intent != INTENT_HARM && !(W.item_flags & NOBLUDGEON))
 		if(W.GetID() || !toggle(user))
 			togglelock(user)
@@ -625,3 +637,7 @@
 
 /obj/structure/closet/canReachInto(atom/user, atom/target, list/next, view_only, obj/item/tool)
 	return ..() && opened
+
+/obj/structure/closet/anchored //For mappers to easily placed anchored closets
+	anchored = TRUE
+	storage_capacity = 30
