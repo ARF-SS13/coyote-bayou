@@ -3,12 +3,8 @@ set -euo pipefail
 
 source dependencies.sh
 
-mkdir -p BSQL
+git clone https://github.com/DesertRose2/BSQL --depth=1
 cd BSQL
-git init
-git remote add origin https://github.com/tgstation/BSQL
-git fetch --depth 1 origin $BSQL_VERSION
-git checkout FETCH_HEAD
 
 mkdir -p artifacts
 cd artifacts
