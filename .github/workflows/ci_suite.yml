@@ -6,6 +6,11 @@ on:
   pull_request:
     branches:
     - master
+
+env: 
+  target: i686-unknown-linux-gnu
+  toolchain: stable-i686-unknown-linux-gnu
+
 jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -60,9 +65,63 @@ jobs:
           tgui/bin/tgui --build
           bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS tgstation.dme
 
+  auxmaptick:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    name: Build Auxmaptick
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'Putnam3145/auxmaptick'
+          ref: '940575c4f02aac7db5f2dfe89feca83566e1538f'
+          path: 'auxmaptick'
+
+      - name: Cache cargo registry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/registry
+          key: auxmaptick-registry-${{ hashFiles('auxmaptick/Cargo.lock') }}
+
+      - name: Cache cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git
+          key: auxmaptick-index-${{ hashFiles('auxmaptick/Cargo.lock') }}
+
+      - name: Cache cargo build
+        uses: actions/cache@v2
+        with:
+          path: auxmaptick/target
+          key: auxmaptick-build-target-${{ hashFiles('auxmaptick/Cargo.lock') }}
+
+      - name: Install Ubuntu Deps
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{env.toolchain}}
+          target: ${{env.target}}
+          override: true
+
+      - name: Build
+        run: |
+          cargo build --manifest-path=auxmaptools/Cargo.toml --target=${{env.target}} --release --verbose
+      
+      - name: Upload libauxmaptick artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: libauxmaptick
+          path: auxmaptick/target/${{env.target}}/release/libauxmaptick.so
+
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
+    needs: auxmaptick
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -102,6 +161,12 @@ jobs:
         run: |
           sudo apt install libssl1.1:i386
           bash tools/ci/install_rust_g.sh
+
+      - name: Download auxmaptick library
+        uses: actions/download-artifact@v2
+        with:
+          name: libauxmaptick
+
       - name: Compile and run tests
         run: |
           bash tools/ci/install_byond.sh
