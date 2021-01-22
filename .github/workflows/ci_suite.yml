@@ -127,7 +127,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: 'DesertRose2/auxmos'
+          repository: 'Putnam3145/auxmos'
           ref: 'master'
           path: 'auxmos'
 
