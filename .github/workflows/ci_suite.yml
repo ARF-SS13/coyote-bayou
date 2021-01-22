@@ -81,19 +81,19 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cargo/registry
-          key: auxmaptick-registry-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          key: auxmaptick-registry-${{ hashFiles('Cargo.lock') }}
 
       - name: Cache cargo index
         uses: actions/cache@v2
         with:
           path: ~/.cargo/git
-          key: auxmaptick-index-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          key: auxmaptick-index-${{ hashFiles('Cargo.lock') }}
 
       - name: Cache cargo build
         uses: actions/cache@v2
         with:
-          path: auxmaptick/target
-          key: auxmaptick-build-target-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          path: target
+          key: auxmaptick-build-target-${{ hashFiles('Cargo.lock') }}
 
       - name: Install Ubuntu Deps
         run: |
@@ -110,13 +110,13 @@ jobs:
 
       - name: Build
         run: |
-          cargo build --manifest-path=auxmaptools/Cargo.toml --target=${{env.target}} --release --verbose
+          cargo build --target=${{env.target}} --release --verbose
       
       - name: Upload libauxmaptick artifact
         uses: actions/upload-artifact@v2
         with:
           name: libauxmaptick
-          path: auxmaptick/target/${{env.target}}/release/libauxmaptick.so
+          path: target/${{env.target}}/release/libauxmaptick.so
 
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -133,11 +133,13 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v2
+      
       - name: Setup cache
         uses: actions/cache@v2
         with:
           path: $HOME/BYOND
           key: ${{ runner.os }}-byond
+
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -145,6 +147,7 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
+
       - name: Install bsql
         run: |
           sudo dpkg --add-architecture i386
@@ -157,6 +160,7 @@ jobs:
           sudo apt install gcc-4.8-multilib
           sudo apt install g++-4.8-multilib
           bash tools/ci/build_bsql.sh
+
       - name: Install rust-g
         run: |
           sudo apt install libssl1.1:i386
