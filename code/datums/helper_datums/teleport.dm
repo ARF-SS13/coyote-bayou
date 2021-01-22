@@ -167,7 +167,7 @@
 			continue
 		if(locate(/obj/machinery) in F.contents)
 			continue
-		if(locate(/mob/living/carbon/human) in range(7, F))
+		if(locate(/mob/living/carbon/human) in range(12, F))
 			continue
 		return F
 

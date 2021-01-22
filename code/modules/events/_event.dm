@@ -38,7 +38,7 @@
 
 // Checks if the event can be spawned. Used by event controller and "false alarm" event.
 // Admin-created events override this.
-/datum/round_event_control/proc/canSpawnEvent(var/players_amt, var/gamemode)
+/datum/round_event_control/proc/canSpawnEvent(players_amt, gamemode)
 	if(occurrences >= max_occurrences)
 		return FALSE
 	if(earliest_start >= world.time-SSticker.round_start_time)
@@ -55,7 +55,7 @@
 		return FALSE
 	return TRUE
 
-/datum/round_event_control/wizard/canSpawnEvent(var/players_amt, var/gamemode)
+/datum/round_event_control/wizard/canSpawnEvent(players_amt, gamemode)
 	if(istype(SSticker.mode, /datum/game_mode/dynamic))
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if (locate(/datum/dynamic_ruleset/midround/from_ghosts/wizard) in mode.executed_rules)
@@ -140,10 +140,10 @@
 	return
 
 /**
-  * Called after something followable has been spawned by an event
-  * Provides ghosts a follow link to an atom if possible
-  * Only called once.
-  */
+ * Called after something followable has been spawned by an event
+ * Provides ghosts a follow link to an atom if possible
+ * Only called once.
+ */
 /datum/round_event/proc/announce_to_ghosts(atom/atom_of_interest)
 	if(control.alert_observers)
 		if (atom_of_interest)

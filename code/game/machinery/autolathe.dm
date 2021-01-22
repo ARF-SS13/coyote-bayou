@@ -220,7 +220,7 @@
 
 	return
 
-/obj/machinery/autolathe/proc/make_item(power, var/list/materials_used, var/list/picked_materials, multiplier, coeff, is_stack)
+/obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/atom/A = drop_location()
 	use_power(power)
@@ -472,19 +472,20 @@
 	super_advanced_technology = FALSE
 	resistance_flags = NONE
 	var/constage = 0 //construction stage for upgrading into a regular lathe
-	DRM = 1
+	//DRM = 1
 	categories = list(
 							"Tools",
 							"Electronics",
 							"Construction",
 							"T-Comm",
-							"Security",
+							//"Security",
 							"Machinery",
 							"Medical",
 							"Misc",
 							"Dinnerware",
 							)
 
+/*
 /obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
 	..()
 	if(DRM && panel_open)
@@ -529,6 +530,7 @@
 		attack_hand(user)
 		return TRUE
 
+
 /obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
 	if("Security" in D.category)
 		if(DRM == 1)
@@ -537,7 +539,7 @@
 			. = ..()
 	else
 		. = ..()
-/*
+
 /obj/machinery/autolathe/ui_interact(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
@@ -549,7 +551,7 @@
 */
 
 /obj/machinery/autolathe/ammo
-	name = "ammo bench"
+	name = "reloading bench"
 	icon = 'icons/obj/machines/reloadingbench.dmi'
 	desc = "An ammo bench that utilizes metal and other materials to make ammo and magazines."
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo

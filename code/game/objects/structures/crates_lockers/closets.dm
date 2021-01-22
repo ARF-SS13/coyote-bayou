@@ -24,7 +24,9 @@
 	var/dense_when_open = FALSE //if it's dense when open or not
 	var/max_mob_size = MOB_SIZE_HUMAN //Biggest mob_size accepted by the container
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
-	var/storage_capacity = 6 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
+	var/storage_capacity = 8 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
+	var/base_storage_capacity = 8 //F13: With wrenching changing storage_capacity, this is to record what the standard storage capacity is. Make it the same value as var/storage_capacity
+	var/anchored_storage_capacity = 30
 	var/cutting_tool = /obj/item/weldingtool
 	var/open_sound = 'sound/machines/click.ogg'
 	var/close_sound = 'sound/machines/click.ogg'
@@ -40,6 +42,7 @@
 	var/should_populate_contents = TRUE
 	barricade = TRUE
 	proj_pass_rate = 65
+	drag_delay = 0.2 SECONDS
 
 /obj/structure/closet/Initialize(mapload)
 	. = ..()
@@ -145,7 +148,7 @@
 			return FALSE
 	return TRUE
 
-/obj/structure/closet/proc/can_lock(mob/living/user, var/check_access = TRUE) //set check_access to FALSE if you only need to check if a locker has a functional lock rather than access
+/obj/structure/closet/proc/can_lock(mob/living/user, check_access = TRUE) //set check_access to FALSE if you only need to check if a locker has a functional lock rather than access
 	if(!secure)
 		return FALSE
 	if(broken)
@@ -173,7 +176,7 @@
 	"<span class='notice'>You [locked ? null : "un"]lock [src].</span>")
 	update_icon()
 
-/obj/structure/closet/proc/dump_contents(var/override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
+/obj/structure/closet/proc/dump_contents(override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
 	var/atom/L = drop_location()
 	for(var/atom/movable/AM in src)
 		if(AM == lockerelectronics && override)
@@ -356,6 +359,23 @@
 
 /obj/structure/closet/proc/tool_interact(obj/item/W, mob/user)//returns TRUE if attackBy call shouldnt be continued (because tool was used/closet was of wrong type), FALSE if otherwise
 	. = TRUE
+	if(istype(W, /obj/item/wrench) && anchorable)
+		if(isinspace() && !anchored)
+			return
+		if((contents.len > base_storage_capacity) && anchored) //Prevents filling a locker, closing it, and then unanchoring it to move large stacks of objects. Can't just make the locker dump its contents as this could be used to empty locked/welded lockers
+			user.visible_message("<span class='notice'>[user] attempts to unanchor \the [src], however it is too weighed down by its contents.</span>", \
+						"<span class='notice'>You attempt to unanchor \the [src], however it is too weighed down by its contents.</span>")
+			return
+		setAnchored(!anchored)
+		W.play_tool_sound(src, 75)
+		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
+						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
+						"<span class='italics'>You hear a ratchet.</span>")
+		if(anchored)
+			storage_capacity = anchored_storage_capacity
+		else
+			storage_capacity = base_storage_capacity
+
 	if(opened)
 		if(istype(W, cutting_tool))
 			var/welder = FALSE
@@ -398,14 +418,7 @@
 							"<span class='notice'>You [welded ? "weld" : "unwelded"] \the [src] with \the [W].</span>",
 							"<span class='italics'>You hear welding.</span>")
 			update_icon()
-	else if(istype(W, /obj/item/wrench) && anchorable)
-		if(isinspace() && !anchored)
-			return
-		setAnchored(!anchored)
-		W.play_tool_sound(src, 75)
-		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
-						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
-						"<span class='italics'>You hear a ratchet.</span>")
+
 	else if(user.a_intent != INTENT_HARM && !(W.item_flags & NOBLUDGEON))
 		if(W.GetID() || !toggle(user))
 			togglelock(user)
@@ -438,13 +451,13 @@
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='italics'>You hear clanging.</span>")
+						"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
+						"<span class='italics'>You hear clanging.</span>")
 	if(actuallyismob)
 		if(do_after_mob(user, targets, 40))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
-							 	 "<span class='notice'>You stuff [O] into [src].</span>", \
-							 	 "<span class='italics'>You hear a loud metal bang.</span>")
+								"<span class='notice'>You stuff [O] into [src].</span>", \
+								"<span class='italics'>You hear a loud metal bang.</span>")
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.DefaultCombatKnockdown(40)
@@ -624,3 +637,7 @@
 
 /obj/structure/closet/canReachInto(atom/user, atom/target, list/next, view_only, obj/item/tool)
 	return ..() && opened
+
+/obj/structure/closet/anchored //For mappers to easily placed anchored closets
+	anchored = TRUE
+	storage_capacity = 30

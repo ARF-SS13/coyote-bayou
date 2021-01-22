@@ -141,7 +141,7 @@
 			icon_state = "board_mess[rand(1, 9)]"
 			content = "Draw"
 
-/obj/structure/chalkboard/proc/parsepencode(var/t)
+/obj/structure/chalkboard/proc/parsepencode(t)
 
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")

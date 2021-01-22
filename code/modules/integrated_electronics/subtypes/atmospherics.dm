@@ -227,7 +227,7 @@
 /obj/item/integrated_circuit/atmospherics/connector
 	name = "integrated connector"
 	desc = "Creates an airtight seal with standard connectors found on the floor, \
-		 	allowing the assembly to exchange gases with a pipe network."
+			allowing the assembly to exchange gases with a pipe network."
 	extended_desc = "This circuit will automatically attempt to locate and connect to ports on the floor beneath it when activated. \
 					You <b>must</b> set a target before connecting."
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -690,7 +690,7 @@ obj/item/integrated_circuit/atmospherics/connector/portableConnectorReturnAir()
 /obj/item/integrated_circuit/input/tank_slot/process()
 	push_pressure()
 
-/obj/item/integrated_circuit/input/tank_slot/attackby(var/obj/item/tank/internals/I, var/mob/living/user)
+/obj/item/integrated_circuit/input/tank_slot/attackby(obj/item/tank/internals/I, mob/living/user)
 	//Check if it truly is a tank
 	if(!istype(I,/obj/item/tank/internals))
 		to_chat(user,"<span class='warning'>The [I.name] doesn't seem to fit in here.</span>")

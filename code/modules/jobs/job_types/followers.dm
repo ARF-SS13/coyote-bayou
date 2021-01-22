@@ -349,7 +349,7 @@ Follower Guard
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-	    /obj/item/gun/ballistic/automatic/pistol/beretta=1, \
+		/obj/item/gun/ballistic/automatic/pistol/beretta=1, \
 		/obj/item/flashlight/seclite=1, \
 		/obj/item/storage/firstaid/ancient=1)
 

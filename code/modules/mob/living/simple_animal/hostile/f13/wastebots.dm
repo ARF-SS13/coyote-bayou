@@ -26,6 +26,7 @@
 	var/isrobot = 1
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three)
 	taunt_chance = 30
+	blood_volume = 0
 
 	emote_taunt_sound = list('sound/f13npc/handy/taunt1.ogg', 'sound/f13npc/handy/taunt2.ogg')
 	emote_taunt = list("raises a saw")
@@ -335,6 +336,7 @@
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
+	blood_volume = 0
 
 /mob/living/simple_animal/hostile/handy/sentrybot
 	name = "sentry bot"

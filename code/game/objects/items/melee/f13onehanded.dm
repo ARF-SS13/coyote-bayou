@@ -588,7 +588,7 @@
 
 /obj/item/sledgehammer/marsstaff
 	name = "Staff of Mars"
-	desc = " A staff crafted by the guidance of Mars."
+	desc = "A staff crafted by the guidance of Mars."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "mars_staff0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -658,10 +658,10 @@ var/list/possible_colors = list("red")
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="atom_hammer")
 
 /obj/item/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
-    . = ..()
-    if(!istype(M))
-        return
-    M.apply_effect(300, EFFECT_IRRADIATE, 0)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 /obj/item/baseball/spiked
 	name = "spiked baseball bat"

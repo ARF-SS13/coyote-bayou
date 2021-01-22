@@ -193,7 +193,7 @@
 	return ..()
 
 
-/obj/item/dice/d20/fate/proc/effect(var/mob/living/carbon/human/user,roll)
+/obj/item/dice/d20/fate/proc/effect(mob/living/carbon/human/user,roll)
 	if(!reusable)
 		used = 1
 	visible_message("<span class='userdanger'>The die flare briefly.</span>")

@@ -478,7 +478,7 @@
 	else
 		H.visible_message("<span class='notice'>[owner] gains a look of \
 		concentration while standing perfectly still.\
-		 Their body seems to shift and starts getting more goo-like.</span>",
+		Their body seems to shift and starts getting more goo-like.</span>",
 		"<span class='notice'>You focus intently on altering your body while \
 		standing perfectly still...</span>")
 		change_form()

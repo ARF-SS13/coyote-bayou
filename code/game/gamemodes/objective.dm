@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/completable = TRUE				//Whether this objective shows greentext when completed
 	var/martyr_compatible = FALSE		//If the objective is compatible with martyr objective, i.e. if you can still do it while dead.
 
-/datum/objective/New(var/text)
+/datum/objective/New(text)
 	GLOB.objectives += src // CITADEL EDIT FOR CRYOPODS
 	if(text)
 		explanation_text = text

@@ -57,7 +57,7 @@
 				return
 		//sleep(50)
 		warn_daylight(4,"<span class = 'userdanger'>Solar flares bombard the station with deadly UV light!</span><br><span class = ''>Stay in cover for the next [TIME_BLOODSUCKER_DAY / 60] minutes or risk Final Death!</span>",\
-				  	  "<span class = 'danger'>Solar flares bombard the station with UV light!</span>")
+					  "<span class = 'danger'>Solar flares bombard the station with UV light!</span>")
 
 		// Part 4: Day
 		amDay = TRUE
@@ -78,7 +78,7 @@
 				vamps_rank_up()
 
 		warn_daylight(5,"<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>",\
-				  	  "<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>")
+					  "<span class = 'announce'>The solar flare has ended, and the daylight danger has passed...for now.</span>")
 		amDay = FALSE
 		day_end()   // Remove VANISHING ACT power from all vamps who have it! Clear Warnings (sunlight, locker protection)
 		nightime_duration += 100 //Each day makes the night a minute longer.

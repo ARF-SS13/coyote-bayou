@@ -119,11 +119,16 @@
 	desc = "A heavy, metal trashcart with wheels."
 	name = "trash cart"
 	icon_state = "trashcart"
+	drag_delay = 0.0 SECONDS //Heavy, but wheeled.
 
 /obj/structure/closet/crate/medical
 	desc = "A medical crate."
 	name = "medical crate"
 	icon_state = "medicalcrate"
+
+/obj/structure/closet/crate/medical/anchored
+	anchored = TRUE
+	storage_capacity = 30
 
 /obj/structure/closet/crate/freezer
 	desc = "A freezer."
@@ -154,22 +159,20 @@
 	desc = "A freezer containing packs of blood."
 	icon_state = "surgery"
 
+/obj/structure/closet/crate/freezer/blood/anchored
+	anchored = TRUE
+	storage_capacity = 30
+
 /obj/structure/closet/crate/freezer/blood/fake
 	should_populate_contents = FALSE
 
 /obj/structure/closet/crate/freezer/blood/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/blood(src)
-	new /obj/item/reagent_containers/blood(src)
-	new /obj/item/reagent_containers/blood/AMinus(src)
-	new /obj/item/reagent_containers/blood/BMinus(src)
-	new /obj/item/reagent_containers/blood/BPlus(src)
-	new /obj/item/reagent_containers/blood/OMinus(src)
-	new /obj/item/reagent_containers/blood/OPlus(src)
-	new /obj/item/reagent_containers/blood/lizard(src)
-	new /obj/item/reagent_containers/blood/jellyblood(src)
-	new /obj/item/reagent_containers/blood/insect(src)
-	new /obj/item/reagent_containers/blood/synthetics(src)
+	new /obj/item/reagent_containers/blood/random(src) //Welcome to blood pack roulette!
+	new /obj/item/reagent_containers/blood/random(src)
+	new /obj/item/reagent_containers/blood/random(src)
+	new /obj/item/reagent_containers/blood/random(src)
+	new /obj/item/reagent_containers/blood/random(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/blood/random(src)
 

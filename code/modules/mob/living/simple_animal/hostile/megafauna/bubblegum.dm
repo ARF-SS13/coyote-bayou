@@ -15,9 +15,9 @@ To make this possible, it sprays streams of blood at random.
 From these blood pools Bubblegum may summon slaughterlings - weak, low-damage minions designed to impede the target's progress.
 
 When Bubblegum dies, it leaves behind a H.E.C.K. suit+helmet as well as a chest that can contain three things:
- 1. A spellblade that can slice off limbs at range
- 2. A bottle that, when activated, drives everyone nearby into a frenzy
- 3. A super double-barrel shotgun that shoots both shells at the same time.
+1. A spellblade that can slice off limbs at range
+2. A bottle that, when activated, drives everyone nearby into a frenzy
+3. A super double-barrel shotgun that shoots both shells at the same time.
 
 Difficulty: Hard
 

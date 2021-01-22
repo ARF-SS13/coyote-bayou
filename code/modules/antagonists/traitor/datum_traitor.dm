@@ -38,7 +38,7 @@
 		traitor_kind.greet(src)
 		owner.announce_objectives()
 
-/proc/get_random_traitor_kind(var/list/blacklist = list())
+/proc/get_random_traitor_kind(list/blacklist = list())
 	var/chaos_weight = 0
 	if(istype(SSticker.mode,/datum/game_mode/dynamic))
 		var/datum/game_mode/dynamic/mode = SSticker.mode
@@ -175,7 +175,7 @@
 	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
 	killer.add_malf_picker()
 
-/datum/antagonist/traitor/proc/equip(var/silent = FALSE)
+/datum/antagonist/traitor/proc/equip(silent = FALSE)
 	owner.equip_traitor(traitor_kind, silent, src)
 
 /datum/antagonist/traitor/proc/assign_exchange_role()

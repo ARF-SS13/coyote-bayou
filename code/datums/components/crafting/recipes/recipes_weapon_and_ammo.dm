@@ -89,7 +89,7 @@
 	name = "Tail Club"
 	result = /obj/item/tailclub
 	reqs = list(/obj/item/organ/tail/lizard = 1,
-	            /obj/item/stack/sheet/metal = 1)
+				/obj/item/stack/sheet/metal = 1)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE

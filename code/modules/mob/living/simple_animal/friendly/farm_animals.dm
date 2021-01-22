@@ -31,7 +31,7 @@
 	melee_damage_upper = 2
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
+	blood_volume = 480
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 
@@ -145,7 +145,7 @@
 	var/is_calf = 0
 	var/has_calf = 0
 //	var/young_type = /mob/living/simple_animal/cow/calf
-	blood_volume = BLOOD_VOLUME_NORMAL
+	blood_volume = 480
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -781,7 +781,6 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	melee_damage_upper = 20
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0

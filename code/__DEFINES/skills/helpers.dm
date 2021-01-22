@@ -18,10 +18,10 @@
 #define GET_SKILL_MOD_ID(path, id) (id ? "[path]&[id]" : path)
 
 /**
-  * A simple universal comsig for body bound skill modifiers.
-  * Technically they are still bound to the mind, but other signal procs will take care of adding and removing the modifier
-  * from/to new/old minds.
-  */
+ * A simple universal comsig for body bound skill modifiers.
+ * Technically they are still bound to the mind, but other signal procs will take care of adding and removing the modifier
+ * from/to new/old minds.
+ */
 #define ADD_SKILL_MODIFIER_BODY(path, id, body, prototype) \
 	prototype = GLOB.skill_modifiers[GET_SKILL_MOD_ID(path, id)] || new path(id, TRUE);\
 	if(body.mind){\

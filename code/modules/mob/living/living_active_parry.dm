@@ -1,19 +1,19 @@
 // Active parry system goes in here.
 /**
-  * Determines if we can actively parry.
-  */
+ * Determines if we can actively parry.
+ */
 /obj/item/proc/can_active_parry()
 	return block_parry_data && (item_flags & ITEM_CAN_PARRY)
 
 /**
-  * Called from keybindings.
-  */
+ * Called from keybindings.
+ */
 /mob/living/proc/keybind_parry()
 	initiate_parry_sequence()
 
 /**
-  * Initiates a parrying sequence.
-  */
+ * Initiates a parrying sequence.
+ */
 /mob/living/proc/initiate_parry_sequence()
 	if(parrying)
 		return		// already parrying
@@ -85,23 +85,23 @@
 	return TRUE
 
 /**
-  * Tries to find a backup parry item.
-  * Does not look at active held item.
-  */
+ * Tries to find a backup parry item.
+ * Does not look at active held item.
+ */
 /mob/living/proc/find_backup_parry_item()
 	for(var/obj/item/I in held_items - get_active_held_item())
 		if(I.can_active_parry())
 			return I
 
 /**
-  * Check if we can unarmed parry
-  */
+ * Check if we can unarmed parry
+ */
 /mob/living/proc/check_unarmed_parry_activation_special()
 	return TRUE
 
 /**
-  * Called via timer when the parry sequence ends.
-  */
+ * Called via timer when the parry sequence ends.
+ */
 /mob/living/proc/end_parry_sequence()
 	if(!parrying)
 		return
@@ -130,8 +130,8 @@
 	successful_parries = null
 
 /**
-  * Handles starting effects for parrying.
-  */
+ * Handles starting effects for parrying.
+ */
 /mob/living/proc/handle_parry_starting_effects(datum/block_parry_data/data)
 	playsound(src, data.parry_start_sound, 75, 1)
 	parry_visual_effect = new /obj/effect/abstract/parry/main(null, TRUE, src, data.parry_effect_icon_state, data.parry_time_windup_visual_override || data.parry_time_windup, data.parry_time_active_visual_override || data.parry_time_active, data.parry_time_spindown_visual_override || data.parry_time_spindown)
@@ -142,54 +142,54 @@
 			visible_message("<span class='warning'>[src] rushes forwards!</span>")
 
 /**
-  * Handles ending effects for parrying.
-  */
+ * Handles ending effects for parrying.
+ */
 /mob/living/proc/handle_parry_ending_effects(datum/block_parry_data/data, list/failed_effect_text)
 	if(length(successful_parries))
 		return
 	visible_message("<span class='warning'>[src] fails to connect their parry[failed_effect_text? ", [english_list(failed_effect_text)]" : ""]!")
 
 /**
-  * Gets this item's datum/block_parry_data
-  */
+ * Gets this item's datum/block_parry_data
+ */
 /obj/item/proc/get_block_parry_data()
 	return return_block_parry_datum(block_parry_data)
 
 //Stubs.
 
 /**
-  * Called when an attack is parried using this, whether or not the parry was successful.
-  */
+ * Called when an attack is parried using this, whether or not the parry was successful.
+ */
 /obj/item/proc/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 
 /**
-  * Called when an attack is parried innately, whether or not the parry was successful.
-  */
+ * Called when an attack is parried innately, whether or not the parry was successful.
+ */
 /mob/living/proc/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 
 /**
-  * Called when an attack is parried using this, whether or not the parry was successful.
-  */
+ * Called when an attack is parried using this, whether or not the parry was successful.
+ */
 /datum/martial_art/proc/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
 
 /**
-  * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
-  */
+ * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
+ */
 /obj/item/proc/active_parry_reflex_counter(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/return_list, parry_efficiency, list/effect_text)
 
 /**
-  * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
-  */
+ * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
+ */
 /mob/living/proc/active_parry_reflex_counter(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/return_list, parry_efficiency, list/effect_text)
 
 /**
-  * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
-  */
+ * Called when an attack is parried and block_parra_data indicates to use a proc to handle counterattack.
+ */
 /datum/martial_art/proc/active_parry_reflex_counter(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/return_list, parry_efficiency, list/effect_text)
 
 /**
-  * Gets the stage of our parry sequence we're currently in.
-  */
+ * Gets the stage of our parry sequence we're currently in.
+ */
 /mob/living/proc/get_parry_stage()
 	if(!parrying)
 		return NOT_PARRYING
@@ -211,8 +211,8 @@
 		return NOT_PARRYING
 
 /**
-  * Gets the current decisecond "frame" of an active parry.
-  */
+ * Gets the current decisecond "frame" of an active parry.
+ */
 /mob/living/proc/get_parry_time()
 	return world.time - parry_start_time
 

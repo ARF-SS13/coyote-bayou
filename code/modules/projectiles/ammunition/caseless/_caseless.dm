@@ -17,12 +17,22 @@
 /obj/item/ammo_casing/caseless/needle
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
+	icon_state = "needler-casing"
 	caliber = "needle"
 	projectile_type = /obj/item/projectile/bullet/needle
+	var/reagent_amount = 15
+
+/obj/item/ammo_casing/caseless/needle/Initialize()
+	. = ..()
+	create_reagents(reagent_amount, OPENCONTAINER)
+
+/obj/item/ammo_casing/caseless/needle/attackby()
+	return
 
 /obj/item/ammo_casing/caseless/needle/ap
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
+	icon_state = "apneedler-casing"
 	caliber = "needle"
 	projectile_type = /obj/item/projectile/bullet/needle/ap
 
@@ -33,7 +43,7 @@
 	projectile_type = /obj/item/projectile/bullet/needle/ultra
 
 /obj/item/ammo_casing/caseless/musketball
- 	name = "Musketball"
- 	desc = "This is a lead ball for a musket."
- 	caliber = "musketball"
- 	projectile_type = /obj/item/projectile/bullet/F13/musketball
+	name = "Musketball"
+	desc = "This is a lead ball for a musket."
+	caliber = "musketball"
+	projectile_type = /obj/item/projectile/bullet/F13/musketball

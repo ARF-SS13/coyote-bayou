@@ -28,11 +28,12 @@ obj/dugpit/New(lnk)
 		else
 			to_chat(user, "<span class='danger'>The ground is too heavy!</span>")
 
+/*
 /obj/dugpit/return_air()
 	var/datum/gas_mixture/GM = new
 	GM.temperature = parent.temperature
 	return GM
-
+*/
 
 /turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/usr)
 	if(!istype(W))
@@ -144,14 +145,14 @@ obj/dugpit/New(lnk)
 					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 						finishBody()
-				for(var/mob/H in oview(src, 7))
+				/*for(var/mob/H in oview(src, 7))
 					for(var/F in gravebody.faction)
 						if(F in H.faction)
 							if(F != "neutral") // I don't know why but this won't fit in the above if statement
 								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "buried_faction_member", /datum/mood_event/buried_faction_member)
 								LAZYREMOVE(H.faction_deaths, gravebody.real_name)
 								if(LAZYLEN(H.faction_deaths) < 3)
-									SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "saw_many_unburied_faction")
+									SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "saw_many_unburied_faction")*/
 			else if (gravecoffin != null)
 				user.show_message("<span class='notice'>You start burying the coffin...</span>", 1)
 				if (do_after(user, (50 * digging_speed), target=gravebody))
@@ -200,8 +201,8 @@ obj/dugpit/New(lnk)
 				coil.place_turf(src, user)
 				return TRUE
 
-			else if(istype(W, /obj/item/twohanded/rcl))
-				handleRCL(W, user)
+			//else if(istype(W, /obj/item/twohanded/rcl))
+				//handleRCL(W, user)
 
 			return FALSE
 

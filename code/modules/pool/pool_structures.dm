@@ -64,7 +64,7 @@
 		else
 			if(Adjacent(jumper))
 				jumper.visible_message("<span class='notice'>[user] climbs up \the [src]!</span>", \
-									 "<span class='notice'>You climb up \the [src] and prepares to jump!</span>")
+									"<span class='notice'>You climb up \the [src] and prepares to jump!</span>")
 				jumper.Stun(40)
 				jumping = TRUE
 				var/original_layer = jumper.layer
@@ -83,7 +83,7 @@
 	switch(rand(1, 100))
 		if(1 to 20)
 			jumper.visible_message("<span class='notice'>[jumper] goes for a small dive!</span>", \
-								 "<span class='notice'>You go for a small dive.</span>")
+								"<span class='notice'>You go for a small dive.</span>")
 			sleep(15)
 			backswim()
 			var/atom/throw_target = get_edge_target_turf(src, dir)
@@ -91,7 +91,7 @@
 
 		if(21 to 40)
 			jumper.visible_message("<span class='notice'>[jumper] goes for a dive!</span>", \
-								 "<span class='notice'>You're going for a dive!</span>")
+								"<span class='notice'>You're going for a dive!</span>")
 			sleep(20)
 			backswim()
 			var/atom/throw_target = get_edge_target_turf(src, dir)
@@ -107,7 +107,7 @@
 
 		if(61 to 80)
 			jumper.visible_message("<span class='notice'>[jumper] goes for an awesome dive! Don't stand in [jumper.p_their()] way!</span>", \
-								 "<span class='notice'>You feel like this dive will be awesome</span>")
+								"<span class='notice'>You feel like this dive will be awesome</span>")
 			sleep(30)
 			backswim()
 			var/atom/throw_target = get_edge_target_turf(src, dir)
@@ -116,7 +116,7 @@
 			sleep(20)
 			backswim()
 			jumper.visible_message("<span class='danger'>[jumper] misses [jumper.p_their()] step!</span>", \
-							 "<span class='userdanger'>You misstep!</span>")
+							"<span class='userdanger'>You misstep!</span>")
 			var/atom/throw_target = get_edge_target_turf(src, dir)
 			jumper.throw_at(throw_target, 0, 1, callback = CALLBACK(src, .proc/on_finish_jump, jumper))
 			jumper.DefaultCombatKnockdown(100)
@@ -124,14 +124,14 @@
 
 		if(91 to 100)
 			jumper.visible_message("<span class='notice'>[jumper] is preparing for the legendary dive! Can [jumper.p_they()] make it?</span>", \
-								 "<span class='userdanger'>You start preparing for a legendary dive!</span>")
+								"<span class='userdanger'>You start preparing for a legendary dive!</span>")
 			jumper.SpinAnimation(7,1)
 
 			sleep(30)
 			if(prob(75))
 				backswim()
 				jumper.visible_message("<span class='notice'>[jumper] fails!</span>", \
-						 "<span class='userdanger'>You can't quite do it!</span>")
+						"<span class='userdanger'>You can't quite do it!</span>")
 				var/atom/throw_target = get_edge_target_turf(src, dir)
 				jumper.throw_at(throw_target, 1, 1, callback = CALLBACK(src, .proc/on_finish_jump, jumper))
 			else
@@ -140,7 +140,7 @@
 				sleep(5)
 				backswim()
 				jumper.visible_message("<span class='danger'>[jumper] bursts into flames of pure awesomness!</span>", \
-					 "<span class='userdanger'>No one can stop you now!</span>")
+					"<span class='userdanger'>No one can stop you now!</span>")
 				var/atom/throw_target = get_edge_target_turf(src, dir)
 				jumper.throw_at(throw_target, 6, 1, callback = CALLBACK(src, .proc/on_finish_jump, jumper))
 	addtimer(CALLBACK(src, .proc/togglejumping), 35)

@@ -151,6 +151,10 @@
 	environment = 16
 	grow_chance = 5
 
+/area/f13/city/museum
+	name = "Museum"
+	outdoors = FALSE
+
 /area/f13/citycaves
 	name = "City Caves"
 	icon_state = "citycaves"
@@ -226,6 +230,12 @@
 	'sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_13.ogg')
 	environment = 11
 	grow_chance = 5
+
+/area/f13/bunker/bunkertwo
+	name = "Bunker Two"
+
+/area/f13/bunker/museum
+	name = "Bunker Museum"
 
 /area/f13/tunnel
 	name = "Tunnel"

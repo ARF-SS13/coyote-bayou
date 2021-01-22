@@ -13,5 +13,5 @@
 		activated = TRUE
 		empulse_using_range(get_turf(src),1,TRUE)
 
-/obj/structure/destructible/clockwork/trap/power_nullifier/emp_act(var/strength=1)
+/obj/structure/destructible/clockwork/trap/power_nullifier/emp_act(strength=1)
 	activate()

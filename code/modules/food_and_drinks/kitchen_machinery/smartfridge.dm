@@ -111,10 +111,10 @@
 			if(loaded)
 				if(contents.len >= max_n_of_items)
 					user.visible_message("<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-									 "<span class='notice'>You fill \the [src] with \the [O].</span>")
+									"<span class='notice'>You fill \the [src] with \the [O].</span>")
 				else
 					user.visible_message("<span class='notice'>[user] loads \the [src] with \the [O].</span>", \
-										 "<span class='notice'>You load \the [src] with \the [O].</span>")
+										"<span class='notice'>You load \the [src] with \the [O].</span>")
 				if(O.contents.len > 0)
 					to_chat(user, "<span class='warning'>Some items are refused.</span>")
 				if (visible_contents)
@@ -542,6 +542,9 @@
 	density = TRUE
 	use_power = NO_POWER_USE
 	max_n_of_items = 30
+	//remember, you have initial_contents, which gets loaded by citadel, and ALWAYS spawns those items
+	//the chance_initial_contents will take each item and give it a 50 percent chance of not spawning
+	var/list/chance_initial_contents
 
 /obj/machinery/smartfridge/bottlerack/Initialize()
 	. = ..()
@@ -549,26 +552,36 @@
 		component_parts.Cut()
 	component_parts = null
 
-	if(islist(initial_contents))
-		for(var/typekey in initial_contents)
-			var/amount = initial_contents[typekey]
+	if(islist(chance_initial_contents))
+		for(var/typekey in chance_initial_contents)
+			var/amount = chance_initial_contents[typekey]
 			if(isnull(amount))
 				amount = 1
 			for(var/i in 1 to amount)
 				if(prob(50))
 					load(new typekey(src))
+	//because after we load the objects, we need to update the icon
+	update_icon()
 
 /obj/machinery/smartfridge/bottlerack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
 	..()
 
-
+//god, don't just put the procs, at least put a return there!
 /obj/machinery/smartfridge/bottlerack/RefreshParts()
+	return //because we don't want the parent refresh parts giving us a shit ton of space
+
 /obj/machinery/smartfridge/bottlerack/default_deconstruction_screwdriver()
+	return FALSE //because... we don't want it to default deconstruct?
+
 /obj/machinery/smartfridge/bottlerack/exchange_parts()
+	return FALSE //because it shouldn't exchange parts!
+
 /obj/machinery/smartfridge/bottlerack/spawn_frame()
+	return //because we won't spawn a frame because we shouldn't be deconstructable
 
 /obj/machinery/smartfridge/bottlerack/default_deconstruction_crowbar(obj/item/crowbar/C, ignore_panel = 1)
+	. = ..()
 
 /obj/machinery/smartfridge/bottlerack/accept_check(obj/item/O)
 	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
@@ -586,12 +599,11 @@
 	layer = ABOVE_OBJ_LAYER
 	max_n_of_items = 30
 
-/obj/machinery/smartfridge/bottlerack/gardentool/default_deconstruction_crowbar(obj/item/crowbar/C, ignore_panel = 1)
-
 /obj/machinery/smartfridge/bottlerack/gardentool/accept_check(obj/item/O)
 	if(istype(O, /obj/item/plant_analyzer) || istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/cultivator) || istype(O, /obj/item/hatchet) || istype(O, /obj/item/scythe) || istype(O, /obj/item/reagent_containers/glass/bottle/nutrient) || istype(O, /obj/item/reagent_containers/glass/bottle/killer) || istype(O, /obj/item/shovel) || istype(O, /obj/item/twohanded/fireaxe) || istype(O, /obj/item/reagent_containers/glass/bucket) || istype(O, /obj/item/storage/bag/plants) || istype(O, /obj/item/storage/bag/plants/portaseeder))
 		return TRUE
 	return FALSE
+
 /obj/machinery/smartfridge/bottlerack/gardentool/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
 		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the wall!</span>")
@@ -632,19 +644,18 @@
 	return FALSE
 
 /obj/machinery/smartfridge/bottlerack/lootshelf
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/reagent_containers/food/drinks/bottle/lemonjuice = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/limejuice = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 2,
-        /obj/item/reagent_containers/food/drinks/soda_cans/tonic = 3,
+		/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 3,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 2,
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 1,
-
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/bawls = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/vim = 3,
-        /obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
+		/obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
 
 ////cans
 
@@ -652,13 +663,13 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about canned goods. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/reagent_containers/food/drinks/bottle/instacoffee = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/instatea = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/instacocoa = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cream = 3,
 		/obj/item/reagent_containers/food/snacks/f13/porknbeans = 3,
-	    /obj/item/reagent_containers/food/snacks/f13/borscht = 1,
+		/obj/item/reagent_containers/food/snacks/f13/borscht = 1,
 		/obj/item/reagent_containers/food/snacks/f13/dog = 3,
 		/obj/item/reagent_containers/food/snacks/beans = 3,)
 
@@ -668,13 +679,13 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about alchohol. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/reagent_containers/food/drinks/bottle/gin = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/vodka = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/tequila = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/rum = 1,
-	    /obj/item/reagent_containers/food/drinks/bottle/vermouth = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/vermouth = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/cognac = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/lizardwine = 1,
@@ -689,7 +700,7 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about DIY. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/diy
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/extinguisher = 1,
 		/obj/item/hatchet = 1,
 		/obj/item/pickaxe/mini = 1,
@@ -710,9 +721,8 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about materials. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/construction
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/stack/sheet/metal/ten = 1,
-
 		/obj/item/stack/sheet/glass/ten = 1,
 		/obj/item/stack/sheet/plasteel/five = 1,
 		/obj/item/stack/sheet/plastic/five = 1,
@@ -727,7 +737,7 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about cooking. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/reagent_containers/food/condiment/flour = 1,
 		/obj/item/reagent_containers/food/condiment/rice = 1,
 		/obj/item/reagent_containers/food/condiment/yeast = 1,
@@ -739,10 +749,10 @@
 	desc = "A rusted pre-war shelf, this one has a faded label about magazines. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
-	initial_contents = list(
+	chance_initial_contents = list(
 		/obj/item/book/granter/trait/chemistry = 1,
-			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
-	/obj/item/book/granter/trait/trekking = 1,
-	/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
-	/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
-	/obj/item/book/granter/crafting_recipe/gunsmith_three = 1,)
+		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1,)

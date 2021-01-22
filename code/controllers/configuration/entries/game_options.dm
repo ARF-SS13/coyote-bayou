@@ -351,7 +351,7 @@
 	min_val = -1
 
 /datum/config_entry/string/overflow_job
-	config_entry_value = "Assistant"
+	config_entry_value = "Wastelander"
 
 /datum/config_entry/flag/starlight
 /datum/config_entry/flag/grey_assistants
@@ -524,9 +524,9 @@
 	config_entry_value = 10
 
 /**
-  * Enables the FoV component, which hides objects and mobs behind the parent from their sight, unless they turn around, duh.
-  * Camera mobs, AIs, ghosts and some other are of course exempt from this. This also doesn't influence simplemob AI, for the best.
-  */
+ * Enables the FoV component, which hides objects and mobs behind the parent from their sight, unless they turn around, duh.
+ * Camera mobs, AIs, ghosts and some other are of course exempt from this. This also doesn't influence simplemob AI, for the best.
+ */
 /datum/config_entry/flag/use_field_of_vision
 
 //Shuttle size limiter

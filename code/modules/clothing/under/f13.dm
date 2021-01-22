@@ -736,7 +736,7 @@
 	icon_state = "tribal_m"
 	item_state = "lgloves"
 	item_color = "tribal_m"
-	can_adjust = 0
+	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/female/tribal
 	name = "female tribal outfit"

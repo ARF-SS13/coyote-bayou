@@ -30,7 +30,7 @@
 	name = "locked box"
 	desc = "An object that contains objects that may be useful."
 	icon = 'icons/obj/fallout/lockbox.dmi'
-	icon_state = "lockbox"
+	icon_state = "locked_safe"
 
 	//the lists the locked crate will combine
 	//this uses pick, not pickweight, so no weighted lists please
@@ -48,20 +48,26 @@
 	var/fragile = FALSE
 	//oh boy, somebody trapped this poor crate and it will give the next 'winner' a real 'prize'
 	var/trapped = FALSE
-	//so, maybe we want locked crates... to spawn unlocked? don't question it
+	//whether its locked or not, will allow it to either open or not
 	var/locked = TRUE
 	//so you can't spam click the locked crate
 	var/used = FALSE
 	//this will just add whatever is here right before locked crate
 	//example: prewar clothing locked crate
 	var/easy_naming = ""
+	//this makes it to where one can either allow or disallow the addition of the loot tables
 	var/enable_loot_initialize = TRUE
+	//this is the probability that the lockbox will just open on spawn
+	var/prob_open = 40
 
-/obj/item/locked_box/Initialize()
+/obj/item/locked_box/Initialize(mapload)
 	. = ..()
 	name = "[easy_naming][initial(name)]"
 	if(enable_loot_initialize)
 		initialize_prizes()
+	if(mapload)
+		if(!locked || prob(prob_open))
+			spawn_prizes()
 
 /obj/item/locked_box/examine(mob/user)
 	. = ..()
@@ -93,7 +99,7 @@
 		for(var/ii in i)
 			potential_prizes += ii
 	for(var/iii in 1 to prize_amount) //go back up to understand why we populate prizes
-		prizes += pick(potential_prizes) 
+		prizes += pick(potential_prizes)
 
 /obj/item/locked_box/proc/spawn_prizes()
 	if(trapped) //gnarly
@@ -513,6 +519,7 @@
 
 /obj/item/locked_box/misc/money/all/low
 	lock_tier = 1
+	locked = FALSE
 
 /obj/item/locked_box/misc/money/all/low/initialize_prizes()
 	global_loot_lists = list(GLOB.loot_t1_money)
@@ -538,6 +545,7 @@
 /obj/item/locked_box/misc/money/legion/low
 	lock_tier = 1
 	prizes = list(/obj/item/stack/f13Cash/random/denarius/low)
+	locked = FALSE
 
 /obj/item/locked_box/misc/money/legion/medium
 	lock_tier = 2
@@ -553,6 +561,7 @@
 /obj/item/locked_box/misc/money/ncr/low
 	lock_tier = 1
 	prizes = list(/obj/item/stack/f13Cash/random/ncr/low)
+	locked = FALSE
 
 /obj/item/locked_box/misc/money/ncr/medium
 	lock_tier = 2

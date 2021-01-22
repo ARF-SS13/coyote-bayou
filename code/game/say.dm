@@ -1,7 +1,7 @@
 /*
- 	Miauw's big Say() rewrite.
-	This file has the basic atom/movable level speech procs.
-	And the base of the send_speech() proc, which is the core of saycode.
+Miauw's big Say() rewrite.
+This file has the basic atom/movable level speech procs.
+And the base of the send_speech() proc, which is the core of saycode.
 */
 GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_SCIENCE]" = "sciradio",
@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_LEGION]" = "legionradio"
 	))
 
-/atom/movable/proc/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(!can_speak())
 		return
 	if(message == "" || !message)

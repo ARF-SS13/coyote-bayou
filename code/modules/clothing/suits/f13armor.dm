@@ -98,14 +98,14 @@
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/metalarmor/reinforced
-    name = "metal armor mark 2"
-    desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
-    icon_state = "metal_chestplate2"
-    item_state = "metal_chestplate2"
-    body_parts_covered = CHEST|GROIN|ARMS|LEGS
-    armor = list("melee" = 45, "bullet" = 45, "laser" = 55, "energy" = 50, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-    slowdown = 0
-    strip_delay = 10
+	name = "metal armor mark 2"
+	desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
+	icon_state = "metal_chestplate2"
+	item_state = "metal_chestplate2"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 55, "energy" = 50, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	slowdown = 0
+	strip_delay = 10
 
 //Combat armor (Faction specific is on f13factionarmor.dm)
 /obj/item/clothing/suit/armor/f13/combat
@@ -184,16 +184,16 @@
 	var/requires_training = TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-    var/mob/living/carbon/human/H = user
-    if(src == H.wear_suit) //Suit is already equipped
-        return TRUE
-    if (!HAS_TRAIT(usr, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-        return 0
-    if(slot == SLOT_WEAR_SUIT)
-        ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
-        ADD_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
-        return ..()
+	var/mob/living/carbon/human/H = user
+	if(src == H.wear_suit) //Suit is already equipped
+		return TRUE
+	if (!HAS_TRAIT(usr, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_WEAR_SUIT)
+		ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
+		ADD_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
+		return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 //	var/mob/living/carbon/human/H = user
@@ -654,8 +654,8 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "reptiliatenebris"
 
 /obj/item/clothing/suit/armor/f13/raider/reptiliatenebris/Initialize()
-    . = ..()
-    AddComponent(/datum/component/armor_plate)
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/toggle/armor/f13/rangercustomdark
 	name = "tattered recon duster"

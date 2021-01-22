@@ -320,7 +320,7 @@
 				var/id_max = text2num(href_list["maxid"])
 
 				if( (id_max - id_min) > 100 )	//Basic exploit prevention
-					                            //(protip, this stops no exploits)
+												//(protip, this stops no exploits)
 					to_chat(usr, "The option ID difference is too big. Please contact administration or the database admin.")
 					return
 
@@ -578,7 +578,7 @@
 	for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
 		if(prioritized_job.current_positions >= prioritized_job.total_positions)
 			SSjob.prioritized_jobs -= prioritized_job
- 	if(length(SSjob.prioritized_jobs))
+	if(length(SSjob.prioritized_jobs))
 		dat += "<div class='notice red'>The station has flagged these jobs as high priority:<br>"
 		var/amt = length(SSjob.prioritized_jobs)
 		var/amt_count

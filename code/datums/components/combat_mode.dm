@@ -1,8 +1,8 @@
 /**
-  * Combat mode component. It makes the user face whichever atom the mouse pointer is hovering,
-  * amongst other things designed outside of this file, namely PvP and PvE stuff, hence the name.
-  * Can be toggled on and off by clicking the screen hud object or by pressing the assigned hotkey (default 'C')
-  */
+ * Combat mode component. It makes the user face whichever atom the mouse pointer is hovering,
+ * amongst other things designed outside of this file, namely PvP and PvE stuff, hence the name.
+ * Can be toggled on and off by clicking the screen hud object or by pressing the assigned hotkey (default 'C')
+ */
 /datum/component/combat_mode
 	var/mode_flags = COMBAT_MODE_INACTIVE
 	var/combatmessagecooldown

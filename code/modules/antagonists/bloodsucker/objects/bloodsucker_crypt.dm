@@ -167,7 +167,7 @@
 		return
 	// Attempt Buckle
 	user.visible_message("<span class='notice'>[user] straps [M] into the rack, immobilizing them.</span>", \
-			  		 "<span class='boldnotice'>You secure [M] tightly in place. They won't escape you now.</span>")
+					"<span class='boldnotice'>You secure [M] tightly in place. They won't escape you now.</span>")
 
 	playsound(src.loc, 'sound/effects/pop_expl.ogg', 25, 1)
 	//M.forceMove(drop_location()) <--- CANT DO! This cancels the buckle_mob() we JUST did (even if we foced the move)
@@ -316,7 +316,7 @@
 	target.add_mob_blood(user, "<span class='danger'>Youve used [CONVERT_COST] amount of blood to gain a new vassal!</span>")
 	to_chat(user, )
 	user.visible_message("<span class='notice'>[user] marks a bloody smear on [target]'s forehead and puts a wrist up to [target.p_their()] mouth!</span>", \
-				  	  "<span class='notice'>You paint a bloody marking across [target]'s forehead, place your wrist to [target.p_their()] mouth, and subject [target.p_them()] to the Dark Communion.</span>")
+					  "<span class='notice'>You paint a bloody marking across [target]'s forehead, place your wrist to [target.p_their()] mouth, and subject [target.p_them()] to the Dark Communion.</span>")
 	if(!do_mob(user, src, 50))
 		to_chat(user, "<span class='danger'><i>The ritual has been interrupted!</i></span>")
 		useLock = FALSE
