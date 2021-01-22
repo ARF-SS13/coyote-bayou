@@ -117,6 +117,59 @@ jobs:
         with:
           name: libauxmaptick
           path: auxmaptick/target/${{env.target}}/release/libauxmaptick.so
+  
+  auxmos:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    name: Build Auxmos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'Putnam3145/auxmos'
+          ref: '89170ea013d5340b593c1979470aac77ecfb3aa4'
+          path: 'auxmos'
+
+      - name: Cache cargo registry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/registry
+          key: auxmos-registry-${{ hashFiles('auxmos/Cargo.lock') }}
+
+      - name: Cache cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git
+          key: auxmos-index-${{ hashFiles('auxmos/Cargo.lock') }}
+
+      - name: Cache cargo build
+        uses: actions/cache@v2
+        with:
+          path: auxmos/target
+          key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
+
+      - name: Install Ubuntu Deps
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{env.toolchain}}
+          target: ${{env.target}}
+          override: true
+
+      - name: Build
+        run: |
+          cargo build --manifest-path auxmos/Cargo.toml --target=${{env.target}} --release --verbose
+      
+      - name: Upload libauxmos artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: libauxmos
+          path: auxmos/target/${{env.target}}/release/libauxmos.so
 
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -170,6 +223,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: libauxmaptick
+
+      - name: Download libauxmos library
+        uses: actions/download-artifact@v2
+        with:
+          name: libauxmos
 
       - name: Compile and run tests
         run: |
