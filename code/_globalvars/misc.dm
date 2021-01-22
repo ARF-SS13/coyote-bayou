@@ -34,4 +34,4 @@ GLOBAL_VAR(bible_item_state)
 GLOBAL_VAR(holy_weapon_type)
 GLOBAL_VAR(holy_armor_type)
 
-/* THIS SHOULD NOT BE A MANAGED GLOBAL*/ var/internal_tick_usage = 0.2 * world.tick_lag
+GLOBAL_VAR_INIT(internal_tick_usage, 0.2 * world.tick_lag)
