@@ -298,7 +298,7 @@ SUBSYSTEM_DEF(air)
 	*/
 
 /datum/controller/subsystem/air/proc/process_turfs(resumed = 0)
-	if(process_turfs_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_turfs_extools(resumed,MC_TICK_REMAINING_MS))
 		pause()
 	/*
 	//cache for sanic speed
@@ -329,7 +329,7 @@ SUBSYSTEM_DEF(air)
 		pause()
 
 /datum/controller/subsystem/air/proc/finish_turf_processing_auxtools()
-/datum/controller/subsystem/air/proc/process_turfs_auxtools()
+/datum/controller/subsystem/air/proc/process_turfs_extools()
 /datum/controller/subsystem/air/proc/post_process_turfs_auxtools()
 /datum/controller/subsystem/air/proc/process_turf_equalize_auxtools()
 /datum/controller/subsystem/air/proc/process_excited_groups_extools()
