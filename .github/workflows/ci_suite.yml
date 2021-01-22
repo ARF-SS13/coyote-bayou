@@ -127,7 +127,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'Putnam3145/auxmos'
-          ref: '89170ea013d5340b593c1979470aac77ecfb3aa4'
+          ref: '38484ddf475be3c02dc3b2524e4a7cafd9bad391'
           path: 'auxmos'
 
       - name: Cache cargo registry
@@ -174,7 +174,7 @@ jobs:
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
-    needs: auxmaptick
+    needs: auxmaptick, auxmos
     runs-on: ubuntu-latest
     services:
       mysql:
