@@ -180,6 +180,7 @@
 	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
+	isbow = TRUE
 
 /obj/item/gun/ballistic/automatic/tribalbow/update_icon()
 	return
@@ -190,6 +191,6 @@
 /obj/item/gun/ballistic/automatic/tribalbow/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] spear\s into \the [src].</span>")
+		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
 		update_icon()
 		chamber_round()

@@ -23,6 +23,23 @@
 	if(istype(mover) && (mover.pass_flags & PASSCLOSEDTURF))
 		return TRUE
 	return ..()
+//remember folks, numbers are always balance-able
+/turf/closed/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum) //don't get thrown into walls, you'll give yourself a concussion
+	. = ..()
+	if(ishuman(AM))
+		var/mob/living/carbon/human/humanAM = AM
+		humanAM.adjustBruteLoss(10)
+		humanAM.AdjustKnockdown(25)
+		visible_message("<span class='warning'>[humanAM] smashes into [src]!</span>")
+
+/turf/closed/Bumped(atom/movable/AM) //don't run into walls, you'll give yourself a concussion
+	. = ..()
+	if(ishuman(AM))
+		var/mob/living/carbon/human/humanAM = AM
+		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
+			humanAM.disable_sprint_mode()
+			humanAM.AdjustKnockdown(25)
+			visible_message("<span class='warning'>[humanAM] runs straight into [src]!</span>")
 
 /turf/closed/indestructible
 	name = "wall"

@@ -224,7 +224,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	src.ui_interact(usr)
 
 /* Switch machine to service mode */
-/obj/machinery/trading_machine/proc/set_service(var/newMode)
+/obj/machinery/trading_machine/proc/set_service(newMode)
 	switch(machine_state)
 		if(0)
 			if(newMode)
@@ -257,7 +257,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 			add_overlay(image(icon, "[initial(icon_state)]-panel"))
 
 /* Seting machine state and update icon */
-/obj/machinery/trading_machine/proc/set_state(var/new_state)
+/obj/machinery/trading_machine/proc/set_state(new_state)
 	if(machine_state == new_state)
 		return
 
@@ -373,7 +373,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(user)
 
 /* Find item by name and price in content and return type */
-/obj/machinery/trading_machine/proc/find_item(var/item_name, var/item_price)
+/obj/machinery/trading_machine/proc/find_item(item_name, item_price)
 	for(var/obj/item/Itm in content)
 		if(content[Itm] == item_price && sanitize(Itm.name) == sanitize(item_name))
 			return Itm
@@ -389,7 +389,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	popup.set_content(get_ui_content(machine_state))
 	popup.open()
 
-/obj/machinery/trading_machine/proc/get_ui_content(var/state)
+/obj/machinery/trading_machine/proc/get_ui_content(state)
 	var/dat = ""
 	switch(state)
 		// --- Work
@@ -524,10 +524,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("survival knife",				/obj/item/kitchen/knife/combat/survival, 							70),
 		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					150),
 		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						170),
-		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/trait/gunsmith_one, 							100),
-		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/trait/gunsmith_two,							200),
-		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/trait/gunsmith_three, 						300),
-		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",		/obj/item/book/granter/trait/gunsmith_four, 							400)
+		new /datum/data/wasteland_equipment("Guns and Bullets, Part 1",		/obj/item/book/granter/crafting_recipe/gunsmith_one, 				100),
+		new /datum/data/wasteland_equipment("Guns and Bullets, Part 2",		/obj/item/book/granter/crafting_recipe/gunsmith_two,				200),
+		new /datum/data/wasteland_equipment("Guns and Bullets, Part 3",		/obj/item/book/granter/crafting_recipe/gunsmith_three, 				300),
+		new /datum/data/wasteland_equipment("Guns and Bullets, Part 4",		/obj/item/book/granter/crafting_recipe/gunsmith_four, 				400)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo

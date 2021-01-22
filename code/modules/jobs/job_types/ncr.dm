@@ -24,7 +24,7 @@ Colonel
 /datum/job/ncr/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
-//	faction = "Station"
+	faction = "NCR"
 	head_announce = list("Security")
 	supervisors = "the general"
 	req_admin_notify = 1
@@ -39,13 +39,16 @@ Colonel
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
+	pa_wear = TRUE
+	id 			= /obj/item/card/id/dogtag/ncrcolonel
 	uniform		= /obj/item/clothing/under/f13/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr
-	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	r_hand 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
@@ -80,11 +83,15 @@ Captain
 	/datum/outfit/loadout/captpistol //Grease Gun, Deagle
 	)
 
-/datum/outfit/job/ncr/f13captain/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
@@ -98,14 +105,9 @@ Captain
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/twohanded/binocs=1, \
+		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/clothing/mask/ncr_facewrap)
-
-/datum/job/ncr/f13captain/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Self-Aware")
 
 /datum/outfit/loadout/captline
 	name = "Line Officer"
@@ -167,6 +169,7 @@ Lieutenant
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13lieutenant
 	name = "NCR Lieutenant"
@@ -184,7 +187,7 @@ Lieutenant
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/twohanded/binocs=1, \
+		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 
@@ -221,7 +224,7 @@ Lieutenant
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 		/obj/item/grenade/plastic=1,
-		/obj/item/book/granter/trait/gunsmith_four=1)
+		/obj/item/book/granter/crafting_recipe/gunsmith_four=1)
 
 /datum/outfit/loadout/ltsup
 	name = "Support Officer"
@@ -472,7 +475,7 @@ Specialist
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556=3,
 		/obj/item/grenade/plastic=1,
-		/obj/item/book/granter/trait/gunsmith_four=1
+		/obj/item/book/granter/crafting_recipe/gunsmith_four=1
 		)
 
 /*
@@ -548,16 +551,15 @@ Veteran Ranger
 	/datum/outfit/loadout/vrbrush //Scoped Brushgun and Sequoia
 	)
 
-/datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Iron Fist")
-
-/datum/outfit/job/ncr/f13vetranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
@@ -570,7 +572,7 @@ Veteran Ranger
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
-	r_pocket = 		/obj/item/twohanded/binocs
+	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=3, \
@@ -608,14 +610,13 @@ Veteran Ranger
 	display_order = JOB_DISPLAY_ORDER_RANGERPATROL
 	outfit = /datum/outfit/job/ncr/f13rangerpatrol
 
-/datum/job/ncr/f13rangerpatrol/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
-/datum/outfit/job/ncr/f13ranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13rangerpatrol
 	name = "NCR Patrol Ranger"
@@ -629,7 +630,7 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
-	r_pocket = /obj/item/twohanded/binocs
+	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/item/ammo_box/m44=2, \
@@ -656,15 +657,14 @@ Veteran Ranger
 	/datum/outfit/loadout/rangertrail //M1 Garand and .44,
 	)
 
-/datum/job/ncr/f13rangerscout/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Light Step")
-
-/datum/outfit/job/ncr/f13ranger/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13rangerscout
 	name = "NCR Scout Ranger"
@@ -674,7 +674,7 @@ Veteran Ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	r_pocket = 		/obj/item/twohanded/binocs
+	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/item/ammo_box/m44=2, \

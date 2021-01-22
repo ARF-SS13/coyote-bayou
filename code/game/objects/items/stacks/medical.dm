@@ -169,8 +169,8 @@
 			return
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
-					 "<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
-					 "<span class='italics'>You hear cutting.</span>")
+					"<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
+					"<span class='italics'>You hear cutting.</span>")
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine, 10))
@@ -196,6 +196,11 @@
 	other_delay = 30
 	absorption_rate = 0.15
 	absorption_capacity = 4
+
+/obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
+	..()
+	new /obj/item/stack/medical/gauze(drop_location(), amount)
+	qdel(src)
 
 /obj/item/stack/medical/gauze/adv
 	name = "sterilized medical gauze"

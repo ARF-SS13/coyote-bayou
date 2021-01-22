@@ -16,9 +16,12 @@
 	var/icon_screen = "generic"
 	var/clockwork = FALSE
 	var/authenticated = FALSE
+	var/connectable = TRUE
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
+	for(var/obj/machinery/computer/pickComputer in range(1, src))
+		addtimer(CALLBACK(pickComputer, .proc/why_overlays), 5)
 	power_change()
 	if(!QDELETED(C))
 		qdel(circuit)
@@ -27,6 +30,8 @@
 
 /obj/machinery/computer/Destroy()
 	QDEL_NULL(circuit)
+	for(var/obj/machinery/computer/pickComputer in range(1, src))
+		addtimer(CALLBACK(pickComputer, .proc/why_overlays), 5)
 	return ..()
 
 /obj/machinery/computer/process()
@@ -61,10 +66,39 @@
 	// This whole block lets screens ignore lighting and be visible even in the darkest room
 	// We can't do this for many things that emit light unfortunately because it layers over things that would be on top of it
 	var/overlay_state = icon_screen
+	//so, connecting computers code be funky yo!
+	icon_state = update_connection()
 	if(stat & BROKEN)
 		overlay_state = "[icon_state]_broken"
 	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, layer, plane, dir)
 	SSvis_overlays.add_vis_overlay(src, icon, overlay_state, EMISSIVE_LAYER, EMISSIVE_PLANE, dir, alpha=128)
+
+/obj/machinery/computer/proc/why_overlays()
+	update_overlays()
+
+/obj/machinery/computer/proc/update_connection()
+	if(connectable)
+		icon_state = initial(icon_state)
+		var/obj/machinery/computer/left_turf = null
+		var/obj/machinery/computer/right_turf = null
+		switch(dir)
+			if(NORTH)
+				left_turf = locate(/obj/machinery/computer) in get_step(src, WEST)
+				right_turf = locate(/obj/machinery/computer) in get_step(src, EAST)
+			if(EAST)
+				left_turf = locate(/obj/machinery/computer) in get_step(src, NORTH)
+				right_turf = locate(/obj/machinery/computer) in get_step(src, SOUTH)
+			if(SOUTH)
+				left_turf = locate(/obj/machinery/computer) in get_step(src, EAST)
+				right_turf = locate(/obj/machinery/computer) in get_step(src, WEST)
+			if(WEST)
+				left_turf = locate(/obj/machinery/computer) in get_step(src, SOUTH)
+				right_turf = locate(/obj/machinery/computer) in get_step(src, NORTH)
+		if(left_turf?.dir == dir && left_turf.connectable)
+			icon_state = "[icon_state]_L"
+		if(right_turf?.dir == dir && right_turf.connectable)
+			icon_state = "[icon_state]_R"
+	return icon_state
 
 /obj/machinery/computer/power_change()
 	..()
@@ -134,5 +168,6 @@
 			circuit = null
 		for(var/obj/C in src)
 			C.forceMove(loc)
-
+	for(var/obj/machinery/computer/pickComputer in range(1, src))
+		addtimer(CALLBACK(pickComputer, .proc/why_overlays), 5)
 	qdel(src)

@@ -140,6 +140,18 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "CTF red team")
 		if(FREQ_CTF_BLUE)
 			record_feedback("tally", "radio_usage", 1, "CTF blue team")
+		if(FREQ_VAULT)
+			record_feedback("tally", "radio_usage", 1, "vault")
+		if(FREQ_NCR)
+			record_feedback("tally", "radio_usage", 1, "ncr")
+		if(FREQ_BOS)
+			record_feedback("tally", "radio_usage", 1, "bos")
+		if(FREQ_ENCLAVE)
+			record_feedback("tally", "radio_usage", 1, "enclave")
+		if(FREQ_DEN)
+			record_feedback("tally", "radio_usage", 1, "town")
+		if(FREQ_LEGION)
+			record_feedback("tally", "radio_usage", 1, "legion")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 
@@ -169,7 +181,7 @@ feedback data can be recorded in 5 formats:
 "tally"
 	used to track the number of occurances of multiple related values i.e. how many times each type of gun is fired
 	further calls to the same key will:
-	 	add or subtract from the saved value of the data key if it already exists
+		add or subtract from the saved value of the data key if it already exists
 		append the key and it's value if it doesn't exist
 	calls:	SSblackbox.record_feedback("tally", "example", 1, "sample data")
 			SSblackbox.record_feedback("tally", "example", 4, "sample data")
@@ -181,7 +193,7 @@ feedback data can be recorded in 5 formats:
 	the final element in the data list is used as the tracking key, all prior elements are used for nesting
 	all data list elements must be strings
 	further calls to the same key will:
-	 	add or subtract from the saved value of the data key if it already exists in the same multi-dimensional position
+		add or subtract from the saved value of the data key if it already exists in the same multi-dimensional position
 		append the key and it's value if it doesn't exist
 	calls: 	SSblackbox.record_feedback("nested tally", "example", 1, list("fruit", "orange", "apricot"))
 			SSblackbox.record_feedback("nested tally", "example", 2, list("fruit", "orange", "orange"))

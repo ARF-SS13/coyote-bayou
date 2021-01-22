@@ -170,7 +170,7 @@
 	tastes = list("pure electricity" = 2, "meat" = 1)
 	foodtype = RAW | MEAT | TOXIC
 
-/obj/item/reagent_containers/food/snacks/carpmeat/aquatic
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/aquatic
 	name = "fillet"
 	desc = "A fillet of one of the local water dwelling species."
 
@@ -622,7 +622,7 @@
 	name = "cazador meat"
 	desc = "A slab of cazador meat."
 	icon_state = "mothmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
 	tastes = list("insect guts" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
 	slice_path = null
@@ -653,7 +653,7 @@
 	name = "gecko meat"
 	desc = "Perfect for a Kebab."
 	icon_state = "lizardmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/toxin/carpotoxin = 2)
 	filling_color = "#6B8E23"
 	tastes = list("meat" = 4, "scales" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/gecko
@@ -669,7 +669,7 @@
 	name = "molerat meat"
 	desc = "A lot friendlier than the live thing."
 	icon_state = "bearmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
 	filling_color = "#6B8E23"
 	tastes = list("meat" = 3)
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/molerat

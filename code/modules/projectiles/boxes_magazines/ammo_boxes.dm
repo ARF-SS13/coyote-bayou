@@ -17,8 +17,6 @@
 /obj/item/ammo_box/a357/dumdum
 	name = "speed loader (.357 DumDum)"
 	desc = "Designed to quickly reload revolvers. Usage of these rounds will constitute a war crime in your area."
-/obj/item/ammo_box/c10mm/jhp
-	name = "ammo box (10mm JHP)"
 
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 rubber)"
@@ -56,6 +54,7 @@
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	icon_state = "9mmbox"
+	caliber = "9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
 
@@ -63,21 +62,20 @@
 	name = "ammo box (10mm)"
 	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
 	max_ammo = 20
+
+/obj/item/ammo_box/c10mm/jhp
+	name = "ammo box (10mm JHP)"
+	ammo_type = /obj/item/ammo_casing/c10mm/jhp
 
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm Incendiary)"
 	icon_state = "10mmbox"
 	max_ammo = 20
 
-/obj/item/ammo_box/c10mm/hp
-	name = "ammo box (10mm Hollow Point)"
-	icon_state = "10mmbox"
-	max_ammo = 20
-
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm Armour Piercing)"
-	icon_state = "10mmbox"
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 	max_ammo = 20
 
@@ -87,12 +85,14 @@
 
 /obj/item/ammo_box/c45
 	name = "ammo box (.45)"
+	caliber = ".45"
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 20
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
+	caliber = "40mm"
 	icon_state = "40mm"
 	ammo_type = /obj/item/ammo_casing/a40mm
 	max_ammo = 4
@@ -101,9 +101,10 @@
 /obj/item/ammo_box/l10mm
 	name = "speed loader (10mm)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "10mm"
+	icon_state = "10mm2"
+	caliber = "10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	max_ammo = 6
+	max_ammo = 12
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 50000)
 
@@ -113,6 +114,7 @@
 /obj/item/ammo_box/a762
 	name = "stripper clip (7.62mm)"
 	desc = "A stripper clip."
+	caliber = "a762"
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 5
@@ -243,6 +245,7 @@
 /obj/item/ammo_box/m44box
 	name = "ammo box (.44 Magnum FMJ)"
 	icon_state = "44box"
+	caliber = "44"
 	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -259,6 +262,7 @@
 /obj/item/ammo_box/a308box
 	name = "ammo box (.308)"
 	icon_state = "308box"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -266,6 +270,7 @@
 /obj/item/ammo_box/a762box
 	name = "ammo box (7.62x51 FMJ)"
 	icon_state = "762box"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -282,6 +287,7 @@
 /obj/item/ammo_box/c4570box
 	name = "ammo box (.45-70 FMJ)"
 	icon_state = "4570box"
+	caliber = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -301,6 +307,7 @@
 	name = "stripper clip (7.62)"
 	desc = "A stripper clip."
 	icon_state = "762"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 5
 	multiple_sprites = 1
@@ -319,6 +326,7 @@
 /obj/item/ammo_box/a308box
 	name = "ammo box (.308)"
 	icon_state = "308box"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -326,6 +334,7 @@
 /obj/item/ammo_box/a762box
 	name = "ammo box (7.62x51 FMJ)"
 	icon_state = "762box"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
@@ -360,6 +369,7 @@
 	name = "double stack stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "762a"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 10
 	multiple_sprites = 1
@@ -379,6 +389,7 @@
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"
 	icon_state = "556box"
+	caliber = "a556"
 	ammo_type = /obj/item/ammo_casing/a556
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
@@ -391,14 +402,19 @@
 	name = "ammo box (5.56 AP)"
 	ammo_type = /obj/item/ammo_casing/a556/ap
 
-/obj/item/ammo_box/a556/sport
+/obj/item/ammo_box/a556/match
 	name = "ammo box (5.56 match)"
+	ammo_type = /obj/item/ammo_casing/a556/match
+
+/obj/item/ammo_box/a556/sport
+	name = "ammo box (.223)"
 	ammo_type = /obj/item/ammo_casing/a556/sport
 
 //Needler
 /obj/item/ammo_box/needle
 	name = "needler stripper clip (needle darts)"
 	icon_state = "needler"
+	caliber = "needle"
 	ammo_type = /obj/item/ammo_casing/caseless/needle
 	max_ammo = 5
 	multiple_sprites = 1
@@ -407,6 +423,7 @@
 /obj/item/ammo_box/needleap
 	name = "armour-piercing needler stripper clip (needle darts)"
 	icon_state = "apneedler"
+	caliber = "needle"
 	ammo_type = /obj/item/ammo_casing/caseless/needle/ap
 	max_ammo = 5
 	multiple_sprites = 1
@@ -415,6 +432,7 @@
 /obj/item/ammo_box/needleultra
 	name = "ultracite needler stripper clip (needle darts)"
 	icon_state = "ultraneedler"
+	caliber = "needle"
 	ammo_type = /obj/item/ammo_casing/caseless/needle/ultra
 	max_ammo = 5
 	multiple_sprites = 1
@@ -424,6 +442,7 @@
 	name = "stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "308"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 5
 	multiple_sprites = 1
@@ -451,6 +470,7 @@
 	name = "double stack stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "762a"
+	caliber = "a762"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 10
 	multiple_sprites = 1
@@ -485,6 +505,7 @@
 	name = "speed loader tube (.45-70)"
 	desc = "Designed to quickly reload repeaters."
 	icon_state = "44tube"
+	caliber = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 8
 	multiple_sprites = 1
@@ -498,6 +519,7 @@
 	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "50mg"
+	caliber = "a50mg"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 5
 	multiple_sprites = 1
@@ -548,6 +570,7 @@
 /obj/item/ammo_box/a357box
 	name = "ammo box (.357 Magnum FMJ)"
 	icon_state = "357box"
+	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 40000, /datum/material/glass = 50000)
@@ -568,6 +591,7 @@
 /obj/item/ammo_box/a50MGbox
 	name = "ammo box (.50 MG)"
 	icon_state = "50box"
+	caliber = "a50MG"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 25
 	w_class = WEIGHT_CLASS_NORMAL
@@ -575,6 +599,33 @@
 /obj/item/ammo_box/m127mm
 	name = "ammo box (12.7mm)"
 	icon_state = "50aebox"
+	caliber = "12.7"
 	ammo_type = /obj/item/ammo_casing/a127mm
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/c45rev
+	name = "speed loader (.45 ACP)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 6
+	multiple_sprites = 1
+
+/obj/item/ammo_box/c45rev/empty
+	start_empty = 1
+
+/obj/item/ammo_box/m22
+	name = "ammo box (.22lr)"
+	icon_state = "9mmbox"
+	ammo_type = /obj/item/ammo_casing/a22
+	max_ammo = 40
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/m22/plinking
+	name = "ammo box (.22lr plinking)"
+	ammo_type = /obj/item/ammo_casing/a22/plinking
+
+/obj/item/ammo_box/m22/hp
+	name = "ammo box (.22lr hollow point)"
+	ammo_type = /obj/item/ammo_casing/a22/hp

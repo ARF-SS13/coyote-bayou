@@ -70,7 +70,7 @@
 
 	if(stat & NOPOWER)
 		return
-
+/*
 /obj/machinery/firealarm/update_overlays()
 	. = ..()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
@@ -96,7 +96,7 @@
 	else
 		. += "fire_on"
 		SSvis_overlays.add_vis_overlay(src, icon, "fire_on", EMISSIVE_LAYER, EMISSIVE_PLANE, dir)
-
+*/
 /obj/machinery/firealarm/emp_act(severity)
 	. = ..()
 
@@ -249,7 +249,7 @@
 
 				else if(istype(W, /obj/item/wrench))
 					user.visible_message("[user] removes the fire alarm assembly from the wall.", \
-										 "<span class='notice'>You remove the fire alarm assembly from the wall.</span>")
+										"<span class='notice'>You remove the fire alarm assembly from the wall.</span>")
 					var/obj/item/wallframe/firealarm/frame = new /obj/item/wallframe/firealarm()
 					frame.forceMove(user.drop_location())
 					W.play_tool_sound(src)

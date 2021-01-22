@@ -21,10 +21,10 @@
 		usr.MouseWheelOn(src, delta_x, delta_y, params)
 
 /**
-  * Common mob click code
-  */
+ * Common mob click code
+ */
 /mob/proc/CommonClickOn(atom/A, params)
-	SHOULD_NOT_SLEEP(TRUE)
+	//SHOULD_NOT_SLEEP(TRUE)
 	if(mob_transforming)
 		return
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLICKON, A, params) & COMSIG_MOB_CANCEL_CLICKON)
@@ -49,7 +49,7 @@
 	* mob/RangedAttack(atom,params) - used only ranged, only used for tk and laser eyes but could be changed
 */
 /mob/proc/ClickOn(atom/A, params)
-	SHOULD_NOT_SLEEP(TRUE)
+	//SHOULD_NOT_SLEEP(TRUE)
 	if(check_click_intercept(params,A))
 		return
 

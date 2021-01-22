@@ -170,9 +170,9 @@
 		updateEmbedding()
 
 /**
-  * Artificially modified to be called at around every world.icon_size pixels of movement.
-  * WARNING: Range() can only be called once per pixel_increment_amount pixels.
-  */
+ * Artificially modified to be called at around every world.icon_size pixels of movement.
+ * WARNING: Range() can only be called once per pixel_increment_amount pixels.
+ */
 /obj/item/projectile/proc/Range()
 	range--
 	if(wound_bonus != CANT_WOUND)
@@ -593,11 +593,11 @@
 		pixel_move(ttm, TRUE, hitscan_movement_decisecond_equivalency)
 
 /**
-  * The proc to make the projectile go, using a simulated pixel movement line trace.
-  * Note: deciseconds_equivalent is currently only used for homing, times is the number of times to move pixel_increment_amount.
-  * Trajectory multiplier directly modifies the factor of pixel_increment_amount to go per time.
-  * It's complicated, so probably just don't mess with this unless you know what you're doing.
-  */
+ * The proc to make the projectile go, using a simulated pixel movement line trace.
+ * Note: deciseconds_equivalent is currently only used for homing, times is the number of times to move pixel_increment_amount.
+ * Trajectory multiplier directly modifies the factor of pixel_increment_amount to go per time.
+ * It's complicated, so probably just don't mess with this unless you know what you're doing.
+ */
 /obj/item/projectile/proc/pixel_move(times, hitscanning = FALSE, deciseconds_equivalent = world.tick_lag, trajectory_multiplier = 1, allow_animation = TRUE)
 	if(!loc || !trajectory)
 		return

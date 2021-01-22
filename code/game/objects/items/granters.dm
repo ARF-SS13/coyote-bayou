@@ -77,6 +77,7 @@
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
+	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
 	name = "The Neo-Russian Rifleman\'s Primer"
@@ -114,7 +115,7 @@
 /obj/item/book/granter/trait/onlearned(mob/living/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src]'s is useless to you now. You throw the book away.</span>")
+		user.visible_message("<span class='caution'>[src] is useless to you now. You throw the book away.</span>")
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -516,6 +517,14 @@
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
 		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
+	onlearned(user)
+
+/obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
+	..()
+	if(oneuse)
+		user.visible_message("<span class='caution'>[src] is useless to you now. You throw it away.</span>")
+		qdel(src)
+
 
 /obj/item/book/granter/crafting_recipe/threads //Durathread crafting book
 	name = "Credible Threads"
@@ -557,6 +566,199 @@
 	oneuse = FALSE
 	remarks = list()
 
+/obj/item/book/granter/crafting_recipe/gunsmith_one
+	name = "Guns and Bullets, Part 1"
+	desc = "A rare issue of Guns and Bullets detailing the basic manufacture of firearms, allowing the reader to craft firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab1"
+	oneuse = TRUE
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/widowmaker)
+
+/obj/item/book/granter/crafting_recipe/gunsmith_two
+	name = "Guns and Bullets, Part 2"
+	desc = "A rare issue of Guns and Bullets following up Part 1, going further indepth into weapon mechanics, allowing the reader to craft certain firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab2"
+	oneuse = TRUE
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/colt6520)
+
+/obj/item/book/granter/crafting_recipe/gunsmith_three
+	name = "Guns and Bullets, Part 3"
+	desc = "A rare issue of Guns and Bullets following up Part 2, explaining difficult ballistics theory and weapon mechanics, allowing the reader to craft weapon attachments. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab3"
+	oneuse = TRUE
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/burst_improvement, /datum/crafting_recipe/recoil_decrease)
+
+/obj/item/book/granter/crafting_recipe/gunsmith_four
+	name = "Guns and Bullets, Part 4"
+	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft weapon crafting components. It's barely holding up, and looks like only one person can study the knowledge from it."
+	icon_state = "gab4"
+	oneuse = TRUE
+	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
+	crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
+
+// New Blueprints, yay! -Superballs
+/obj/item/book/granter/crafting_recipe/blueprint
+	name = "blueprint"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	desc = "A detailed schematic for crafting an item."
+	w_class = WEIGHT_CLASS_TINY
+	oneuse = TRUE
+	remarks = list()
+
+/obj/item/book/granter/crafting_recipe/blueprint/r82
+	name = "r82 heavy service rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/R82)
+
+/obj/item/book/granter/crafting_recipe/blueprint/marksman
+	name = "marksman carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/marksmancarbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/r84
+	name = "r84 lmg blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/lmg)
+
+/obj/item/book/granter/crafting_recipe/blueprint/service
+	name = "service rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/servicerifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aep7
+	name = "aep7 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AEP7)
+
+/obj/item/book/granter/crafting_recipe/blueprint/leveraction
+	name = "lever action shotgun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/lever_action)
+
+/obj/item/book/granter/crafting_recipe/blueprint/trailcarbine
+	name = "trail carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/trail_carbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/thatgun
+	name = ".223 pistol blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/thatgun)
+
+/obj/item/book/granter/crafting_recipe/blueprint/pps
+	name = "ppsh41 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/pps)
+
+/*
+/obj/item/book/granter/crafting_recipe/blueprint/mg34
+	name = "mg34 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/mg34)
+*/
+
+/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol
+	name = "plasma pistol blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmapistol)
+
+/obj/item/book/granter/crafting_recipe/blueprint/uzi
+	name = "mini uzi blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/uzi)
+
+/obj/item/book/granter/crafting_recipe/blueprint/smg10mm
+	name = "10mm smg blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/smg10mm)
+
+/obj/item/book/granter/crafting_recipe/blueprint/greasegun
+	name = "m3a1 grease gun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/grease_gun)
+
+/obj/item/book/granter/crafting_recipe/blueprint/brushgun
+	name = "brush gun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/brush)
+
+/obj/item/book/granter/crafting_recipe/blueprint/r91
+	name = "r91 assault rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/r91)
+
+/obj/item/book/granter/crafting_recipe/blueprint/breacher
+	name = "breacher shotgun blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/breacher)
+
+/obj/item/book/granter/crafting_recipe/blueprint/sniper
+	name = "sniper rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/sniper)
+
+/obj/item/book/granter/crafting_recipe/blueprint/deagle
+	name = "desert eagle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/deagle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/aer9
+	name = "aer9 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/AER9)
+
+/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle
+	name = "plasma rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/plasmarifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/tribeam
+	name = "tribeam laser rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribeam)
+
+/obj/item/book/granter/crafting_recipe/blueprint/am_rifle
+	name = "anti-materiel rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/am_rifle)
+
+/obj/item/book/granter/crafting_recipe/blueprint/citykiller
+	name = "citykiller blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/city_killer)
+
+/obj/item/book/granter/crafting_recipe/blueprint/rangemaster
+	name = "colt rangemaster blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/rangemaster)
+
+/obj/item/book/granter/crafting_recipe/blueprint/bozar
+	name = "bozar blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/bozar)
+
+/obj/item/book/granter/crafting_recipe/blueprint/m1garand
+	name = "battle rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/m1garand)
+
+/obj/item/book/granter/crafting_recipe/blueprint/infiltrator
+	name = "infiltrator blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/infiltrator)
+
+/obj/item/book/granter/crafting_recipe/blueprint/fnfal
+	name = "fn fal blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
+
+/obj/item/book/granter/crafting_recipe/blueprint/caws
+	name = "h&k caws blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/caws)
 
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
@@ -573,7 +775,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MACHINE_SPIRITS
 	traitname = "The Machine Spirits"
-	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honour and love those blessed by the machine spirits.")
+	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honor and love those blessed by the machine spirits.")
 
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
@@ -581,11 +783,11 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
-	remarks = list("Try turning it off and on again...","Alwyas craft in good form.", "Dont forget PPE.", "Keep your mechanisms OILED.", "Stay organised.")
+	remarks = list("Try turning it off and on again...", "Always craft in good form.", "Don't forget PPE.", "Keep your mechanisms OILED.", "Stay organized.")
 
 /obj/item/book/granter/trait/pa_wear
 	name = "Advanced Armor and You"
-	desc = "An indepth look into how power armor functions."
+	desc = "An in-depth look into how power armor functions."
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
@@ -597,7 +799,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
-	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
+	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
 /*
 /obj/item/book/granter/trait/iron_fist
@@ -608,44 +810,4 @@
 	traitname = "punching"
 	remarks = list("Keep your fists up...", "Don't clench your thumb in your fist, or you might break it...", "Turn into your punch, and put your body weight behind it...", "Footwork is everything, make sure to step into your punches...", "Aim for their jaw for an easy K-O...")
 */
-
-/obj/item/book/granter/trait/gunsmith_one
-	name = "Guns and Bullets, Part 1"
-	desc = "A rare issue of Guns and Bullets detailing the basic manufacture of firearms, allowing the reader to craft Tier 2 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
-	icon_state = "gab1"
-	oneuse = FALSE
-	granted_trait = TRAIT_GUNSMITH_ONE
-	tool_behaviour = TOOL_GUNTIER1
-	traitname = "Basic Gunsmithing"
-	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-
-/obj/item/book/granter/trait/gunsmith_two
-	name = "Guns and Bullets, Part 2"
-	desc = "A rare issue of Guns and Bullets following up Part 1, going further indepth into weapon mechanics, allowing the reader to craft Tier 3 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
-	icon_state = "gab2"
-	oneuse = FALSE
-	granted_trait = TRAIT_GUNSMITH_TWO
-	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2)
-	traitname = "Intermediate Gunsmithing"
-	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-
-/obj/item/book/granter/trait/gunsmith_three
-	name = "Guns and Bullets, Part 3"
-	desc = "A rare issue of Guns and Bullets following up Part 2, explaining difficult ballistics theory and weapon mechanics, allowing the reader to craft Tier 4 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
-	icon_state = "gab3"
-	oneuse = FALSE
-	granted_trait = TRAIT_GUNSMITH_THREE
-	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2, TOOL_GUNTIER3)
-	traitname = "Experienced Gunsmithing"
-	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-
-/obj/item/book/granter/trait/gunsmith_four
-	name = "Guns and Bullets, Part 4"
-	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft Tier 5 firearms. It's barely holding up, and looks like only one person can study the knowledge from it."
-	icon_state = "gab4"
-	oneuse = FALSE
-	granted_trait = TRAIT_GUNSMITH_FOUR
-	tool_behaviour = list(TOOL_GUNTIER1, TOOL_GUNTIER2, TOOL_GUNTIER3, TOOL_GUNTIER4)
-	traitname = "Expert Gunsmithing"
-	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
 

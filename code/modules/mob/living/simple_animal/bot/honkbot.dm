@@ -339,7 +339,7 @@ Maintenance panel panel is [open ? "opened" : "closed"]"},
 	new /obj/effect/decal/cleanable/oil(loc)
 	..()
 
-/mob/living/simple_animal/bot/honkbot/attack_alien(var/mob/living/carbon/alien/user as mob)
+/mob/living/simple_animal/bot/honkbot/attack_alien(mob/living/carbon/alien/user as mob)
 	..()
 	if(!isalien(target))
 		target = user
@@ -352,12 +352,12 @@ Maintenance panel panel is [open ? "opened" : "closed"]"},
 			if(!istype(C) || !C || in_range(src, target))
 				return
 			C.visible_message("<span class='warning'>[pick( \
-						  	"[C] dives out of [src]'s way!", \
-						  	"[C] stumbles over [src]!", \
-						  	"[C] jumps out of [src]'s path!", \
-						  	"[C] trips over [src] and falls!", \
-						  	"[C] topples over [src]!", \
-						  	"[C] leaps out of [src]'s way!")]</span>")
+							"[C] dives out of [src]'s way!", \
+							"[C] stumbles over [src]!", \
+							"[C] jumps out of [src]'s path!", \
+							"[C] trips over [src] and falls!", \
+							"[C] topples over [src]!", \
+							"[C] leaps out of [src]'s way!")]</span>")
 			C.DefaultCombatKnockdown(10)
 			playsound(loc, 'sound/misc/sadtrombone.ogg', 50, 1, -1)
 			if(!client)

@@ -416,7 +416,8 @@
 					if(R)
 						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a>"
 					if(traitstring)
-						. += "<span class='info'>Detected physiological traits:\n[traitstring]</span>"
+						msg += "<span class='info'>Detected physiological traits:<br></span>"
+						msg += "<span class='info'>[traitstring]</span><br>"
 
 
 

@@ -257,7 +257,7 @@ SUBSYSTEM_DEF(job)
 /** Proc DivideOccupations
  *  fills var "assigned_role" for all ready players.
  *  This proc must not have any side effect besides of modifying "assigned_role".
- **/
+ */
 /datum/controller/subsystem/job/proc/DivideOccupations(list/required_jobs)
 	//Setup new player list and get the jobs list
 	JobDebug("Running DO")
@@ -528,7 +528,7 @@ SUBSYSTEM_DEF(job)
 		return C.holder.auto_deadmin()*/
 
 /datum/controller/subsystem/job/proc/setup_officer_positions()
-	var/datum/job/J = SSjob.GetJob("Security Officer")
+	var/datum/job/J = SSjob.GetJob("Vault-tec Security")
 	if(!J)
 		CRASH("setup_officer_positions(): Security officer job is missing")
 

@@ -90,7 +90,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 			return FALSE
 
 		//R.speed = -2 // Gotta go fast.
-        //Citadel change - makes vtecs give an ability rather than reducing the borg's speed instantly
+		//Citadel change - makes vtecs give an ability rather than reducing the borg's speed instantly
 		R.AddAbility(new/obj/effect/proc_holder/silicon/cyborg/vtecControl)
 		R.cansprint = 0
 

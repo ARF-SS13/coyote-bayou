@@ -37,8 +37,8 @@
 	name = "Anti Tank Pistol"
 	desc = "Essentially amounting to a sniper rifle with no stock and barrel (or indeed, any rifling at all), \
 			this extremely dubious pistol is guaranteed to dislocate your wrists and hit the broad side of a barn! \
-	 		Uses sniper ammo. \
-	 		Bullets tend to veer off-course. We are not responsible for any unintentional damage or injury resulting from inaacuracy."
+			Uses sniper ammo. \
+			Bullets tend to veer off-course. We are not responsible for any unintentional damage or injury resulting from inaacuracy."
 	item = /obj/item/gun/ballistic/automatic/pistol/antitank/syndicate
 	cost = 14
 	surplus = 25
@@ -84,7 +84,7 @@
 /datum/uplink_item/dangerous/throwingweapons
 	name = "Box of Throwing Weapons"
 	desc = "A box of shurikens and reinforced bolas from ancient Earth martial arts. They are highly effective \
-			 throwing weapons. The bolas can knock a target down and the shurikens will embed into limbs."
+			throwing weapons. The bolas can knock a target down and the shurikens will embed into limbs."
 	item = /obj/item/storage/box/syndie_kit/throwing_weapons
 	cost = 3
 
@@ -219,9 +219,9 @@
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
 	desc = "The power-fist is a metal gauntlet with a built-in piston-ram powered by an external gas supply.\
-		 Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
-		 Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
-		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
+		Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
+		Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
+		deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
 	cost = 8
 	exclude_modes = list(/datum/game_mode/traitor/internal_affairs)

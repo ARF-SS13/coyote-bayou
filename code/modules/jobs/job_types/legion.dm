@@ -14,8 +14,9 @@
 	box = null
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
-	belt = /obj/item/storage/belt/military/assault/legion
-	backpack = /obj/item/storage/backpack/satchel/explorer
+	belt = 			/obj/item/storage/belt/military/assault/legion
+	backpack = 		/obj/item/storage/backpack/explorer
+	satchel = 		/obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/f13/military/plated
 	gloves =		/obj/item/clothing/gloves/legion
@@ -62,8 +63,15 @@ Needs whitelist
 	minimal_access = list()
 
 
-/datum/job/CaesarsLegion/Legionnaire/f13legate/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13legate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name = "Legate"
@@ -74,14 +82,13 @@ Needs whitelist
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears =			/obj/item/radio/headset/headset_legion
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=2, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/melee/powerfist=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/m556/rifle=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legion)
+		/obj/item/restraints/legcuffs/bola=2,
+		/obj/item/melee/powerfist=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/storage/bag/money/small/legion=1)
 
 /*
 Centurion
@@ -106,11 +113,15 @@ Centurion
 	/datum/outfit/loadout/centbreacher //breacher shotgun and fire axe
 	)
 
-/datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Iron Fist")
-	H.add_quirk("Big Leagues")
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
@@ -120,43 +131,46 @@ Centurion
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears = 			/obj/item/radio/headset/headset_legion
 	r_pocket =      /obj/item/restraints/handcuffs
+	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/lantern=1, \
-		/obj/item/key/scollar=1, \
-		/obj/item/key/bcollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
-		/obj/item/assembly/signaler/electropack/boomcollar=2, \
-		/obj/item/storage/bag/money/small/legofficers=1, \
-		)
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/melee/powerfist/goliath=1,
+		/obj/item/key/scollar=1,
+		/obj/item/key/bcollar=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/electropack/shockcollar=1,
+		/obj/item/electropack/shockcollar/explosive=2,
+		/obj/item/storage/bag/money/small/legofficers=1)
 
 /datum/outfit/loadout/centheavy
 	name = "Paladin-Slayer Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/palacent
 	head = 			/obj/item/clothing/head/helmet/f13/legion/palacent
-	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
+	suit_store = /obj/item/gun/energy/laser/aer9
 	backpack_contents = list(
-		/obj/item/melee/powerfist/goliath=1,
-		/obj/item/ammo_box/magazine/m10mm_auto=2)
+		/obj/item/stock_parts/cell/ammo/mfc=2,
+		/obj/item/gun/energy/laser/plasma/glock=1,
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 /datum/outfit/loadout/centassault
 	name = "Ranger-Hunter Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/rangercent
 	head = 			/obj/item/clothing/head/helmet/f13/legion/rangercent
-	suit_store = /obj/item/gun/ballistic/automatic/mini_uzi
+	suit_store = /obj/item/gun/ballistic/shotgun/antimateriel
 	backpack_contents = list(
-		/obj/item/twohanded/required/thermic_lance=1,
-		/obj/item/ammo_box/magazine/uzim9mm=2)
-
+		/obj/item/ammo_box/a50MG=2,	
+		/obj/item/gun/ballistic/automatic/pistol/deagle=1,
+		/obj/item/ammo_box/magazine/m44=1
+	)
 /datum/outfit/loadout/centbreacher
 	name = "Standard Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
-	suit_store = /obj/item/gun/ballistic/automatic/shotgun/riot
+	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/fireaxe=1,
-		/obj/item/ammo_box/magazine/d12g=2)
+		/obj/item/ammo_box/magazine/mm762=2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1,
+		/obj/item/ammo_box/magazine/m9mm=3)
 
 /*
 Orator
@@ -178,11 +192,14 @@ Orator
 	suit = 	/obj/item/clothing/suit/armor/f13/legion/vet/orator
 	ears =	/obj/item/radio/headset/headset_legion
 	id = /obj/item/card/id/dogtag/legorator
+	belt = /obj/item/claymore/machete/gladius
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/type17
+	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=3, \
-		/obj/item/flashlight/lantern=1,
-		/obj/item/storage/box/ids/follower=1
-		)
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/ammo_box/magazine/m9mm=3,
+		/obj/item/storage/box/ids/follower=1,
+		/obj/item/storage/bag/money/small/legion=1)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -214,14 +231,12 @@ Priestess of Mars
 	gloves	= /obj/item/clothing/gloves/fingerless
 	jobtype = /datum/job/CaesarsLegion/f13priestess
 	id = /obj/item/card/id/dogtag/legpriest
-	r_hand = /obj/item/sledgehammer/marsstaff
-	shoes = /obj/item/clothing/shoes/sandal
+	r_hand = /obj/item/twohanded/sledgehammer/marsstaff
+	shoes = /obj/item/clothing/shoes/roman
+	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=3, \
-		/obj/item/flashlight/lantern=1, \
-		/obj/item/clothing/under/f13/pmarsrobe=1, \
-		/obj/item/clothing/shoes/roman=1
-	)
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/clothing/under/f13/pmarsrobe=1)
 
 /datum/outfit/job/CaesarsLegion/f13priestess/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -235,10 +250,8 @@ Priestess of Mars
 			var/obj/item/card/id/dogtag/L = H.wear_id
 			L.registered_name = H.name
 			L.update_label()
-
-/datum/job/CaesarsLegion/f13priestess/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Spiritual")
-
+	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /* Decanus
 /datum/job/CaesarsLegion/Legionnaire/f13decan
@@ -277,7 +290,7 @@ Priestess of Mars
 		/obj/item/storage/box/handcuffs=1, \
 		/obj/item/flashlight/lantern=1, \
 		/obj/item/key/scollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
+		/obj/item/electropack/shockcollar=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
 /datum/outfit/loadout/decancharger
@@ -328,16 +341,15 @@ Decanii
 	display_order = JOB_DISPLAY_ORDER_DECANVET
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 
-/datum/job/CaesarsLegion/Legionnaire/f13decanvet/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
-	H.add_quirk("Iron Fist")
-
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decanvet
@@ -347,19 +359,18 @@ Decanii
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears = 			/obj/item/radio/headset/headset_legion
-	suit_store = 	/obj/item/gun/ballistic/revolver/ballisticfist
+	suit_store = 	/obj/item/gun/ballistic/automatic/service/r82
 	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=1,	\
-		/obj/item/storage/box/slugshot=1, \
-		/obj/item/shield/riot/roman=1, \
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/storage/box/handcuffs=1, \
-		/obj/item/key/scollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
-		/obj/item/storage/bag/money/small/legofficers)
+		/obj/item/ammo_box/magazine/m556/rifle=3,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/restraints/handcuffs=2,
+		/obj/item/binoculars=1,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/key/scollar=1,
+		/obj/item/electropack/shockcollar=1,
+		/obj/item/storage/bag/money/small/legofficers=1)
 
 
 //Prime Decanus
@@ -374,14 +385,12 @@ Decanii
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 
-/datum/job/CaesarsLegion/Legionnaire/f13decanrec/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
-	H.add_quirk("Iron Fist")
-
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -394,18 +403,19 @@ Decanii
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears = 			/obj/item/radio/headset/headset_legion
-	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
+	suit_store =	/obj/item/gun/ballistic/automatic/m1garand
 	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete/gladius, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/storage/box/handcuffs=1, \
-		/obj/item/key/scollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
-		/obj/item/storage/bag/money/small/legofficers)
+		/obj/item/ammo_box/magazine/garand308=3,
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
+		/obj/item/ammo_box/magazine/m45=3,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/restraints/handcuffs=2,
+		/obj/item/key/scollar=1,
+		/obj/item/electropack/shockcollar=1,
+		/obj/item/storage/bag/money/small/legofficers=1)
 
 
 //Recruit Decanus
@@ -420,17 +430,14 @@ Decanii
 	display_order = JOB_DISPLAY_ORDER_DECANREC
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec
 
-/datum/job/CaesarsLegion/Legionnaire/f13decanrec/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
-	H.add_quirk("Iron Fist")
-
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec
 	name = "Legion Recruit Decanus"
@@ -441,18 +448,18 @@ Decanii
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears = 			/obj/item/radio/headset/headset_legion
-	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
+	suit_store = 	/obj/item/gun/ballistic/automatic/mini_uzi
 	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/fireaxe/bmprsword=1, \
-		/obj/item/ammo_box/magazine/greasegun=1, \
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/storage/box/handcuffs=1, \
-		/obj/item/key/scollar=1, \
-		/obj/item/assembly/signaler/electropack/shockcollar=1, \
-		/obj/item/storage/bag/money/small/legofficers)
+		/obj/item/ammo_box/magazine/uzim9mm=3,
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/gun/ballistic/revolver/m29/snub=1,
+		/obj/item/ammo_box/m44=2,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/restraints/handcuffs=2,
+		/obj/item/key/scollar=1,
+		/obj/item/electropack/shockcollar=1,
+		/obj/item/storage/bag/money/small/legofficers=1)
 
 
 /*
@@ -474,15 +481,13 @@ Vexillarius
 		/datum/outfit/loadout/vexsupport //trail carbine, smoke bombs
 		)
 
-/datum/job/CaesarsLegion/Legionnaire/f13vexillarius/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Big Leagues")
-	H.add_quirk("Iron Fist")
-
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -494,14 +499,14 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	ears = 			/obj/item/radio/headset/headset_legion
-	backpack_contents = list(
-		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/lantern=1, \
-		/obj/item/megaphone/cornu=1, \
-		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(
+		/obj/item/throwing_star/spear=1,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/flashlight/lantern=1,
+		/obj/item/megaphone/cornu=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
 
 /datum/outfit/loadout/vexassault
 	name = "Assault Vexillarius"
@@ -540,6 +545,7 @@ datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -552,16 +558,13 @@ datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	head = 			/obj/item/clothing/head/helmet/gladiator
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears	=		/obj/item/radio/headset/headset_legion
-	backpack_contents = list(
-		/obj/item/claymore/machete/reinforced=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/lantern=1, \
-		/obj/item/storage/bag/money/small/legenlisted,
-		/obj/item/radio)
 	r_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(
+		/obj/item/claymore/machete/reinforced=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/flashlight/lantern=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
 
-/datum/job/CaesarsLegion/Legionnaire/f13slavemaster/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
 
 /*
 Veteran Legionary
@@ -573,7 +576,7 @@ Veteran Legionary
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You answer to the Decani and the Centurion. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a hardened warrior, and have been waging war with the Legion for many years."
+	description = "You answer to the Decani and the Centurion. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Sonora. You are a hardened warrior, and have been waging war with the Legion for many years."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_VETLEGIONARY
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegionary
@@ -588,6 +591,8 @@ Veteran Legionary
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -600,40 +605,31 @@ Veteran Legionary
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears	=		/obj/item/radio/headset/headset_legion
-	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=3, \
-		/obj/item/flashlight/lantern=1, \
-		/obj/item/storage/bag/money/small/legenlisted,
-		/obj/item/radio)
 	r_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/flashlight/lantern=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
 
 /datum/outfit/loadout/vetlegassault
 	name = "Assault Legionary"
-	suit_store = /obj/item/gun/ballistic/automatic/mini_uzi
+	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm=2 ,
-		)
+		/obj/item/ammo_box/magazine/m10mm_auto=3,
+		/obj/item/shield/riot/roman=1)
 
 /datum/outfit/loadout/vetlegrange
 	name = "Ranged Legionary"
-	suit_store = /obj/item/gun/ballistic/automatic/marksman
+	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=2,
-		)
+		/obj/item/ammo_box/magazine/m556/rifle=3)
 
 /datum/outfit/loadout/vetlegclose
 	name = "Protector Legionary"
-	suit_store = /obj/item/gun/ballistic/shotgun/trench
+	suit_store = /obj/item/gun/ballistic/automatic/shotgun/riot
 	backpack_contents = list(
-		/obj/item/storage/box/slugshot=1, \
-		/obj/item/storage/box/beanbag=1, \
-		/obj/item/shield/riot/roman=1
-		)
-
-/datum/job/CaesarsLegion/Legionnaire/f13vetlegionary/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
-	H.add_quirk("Hard Yards")
+		/obj/item/ammo_box/magazine/d12g=2)
 
 /*
 Prime Legionairy
@@ -645,15 +641,15 @@ Prime Legionairy
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You answer to the Decani and the Centurion, as well as Veterans above you. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You have been through enough battles to call yourself a prime, but you are by no means yet a Veteran."
+	description = "You answer to the Decani and the Centurion, as well as Veterans above you. Acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Sonora. You have been through enough battles to call yourself a prime, but you are by no means yet a Veteran."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_LEGIONARY
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 
 	loadout_options = list(
-	/datum/outfit/loadout/legassault, //.357 revolver
-	/datum/outfit/loadout/legline, //glaive
-	/datum/outfit/loadout/legbreach, //hunting shotgun
+	/datum/outfit/loadout/legassault, //5.56 pistol, spear quiver
+	/datum/outfit/loadout/legline, //Glaive, extended 10mm
+	/datum/outfit/loadout/legbreach, //Lever-action shotgun
 	/datum/outfit/loadout/legrange //trail carbine
 	)
 
@@ -661,6 +657,7 @@ Prime Legionairy
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -673,46 +670,43 @@ Prime Legionairy
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears	=		/obj/item/radio/headset/headset_legion
-	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/radio)
 	r_pocket = /obj/item/restraints/handcuffs
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/legassault
 	name = "Foot Legionary"
 	suit_store = /obj/item/gun/ballistic/revolver/thatgun
 	backpack_contents = list(
-		/obj/item/storage/backpack/spearquiver=1, \
-		/obj/item/claymore/machete/reinforced=1, \
+		/obj/item/storage/backpack/spearquiver=1,
+		/obj/item/claymore/machete/reinforced=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 
 /datum/outfit/loadout/legline
 	name = "Lineman"
-	suit_store = /obj/item/spear
+	suit_store = /obj/item/twohanded/spear
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv=2, \
-		/obj/item/claymore/machete/reinforced)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1,
+		/obj/item/ammo_box/magazine/m10mm_adv=2,
+		/obj/item/claymore/machete/reinforced=1)
 
 /datum/outfit/loadout/legbreach
 	name = "Close Quarters Legionary"
-	suit_store = /obj/item/gun/ballistic/shotgun/hunting
+	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
-		/obj/item/storage/box/slugshot=1, \
-		/obj/item/storage/box/beanbag=1, \
+		/obj/item/storage/box/slugshot=1,
+		/obj/item/storage/box/beanbag=1,
 		/obj/item/claymore/machete/gladius=1)
 
 /datum/outfit/loadout/legrange
 	name = "Ranged Legionary"
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44=2, \
-		/obj/item/claymore/machete/reinforced)
-
-/datum/job/CaesarsLegion/Legionnaire/f13legionary/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Big Leagues")
+		/obj/item/ammo_box/tube/m44=2,
+		/obj/item/ammo_box/m44box=1,
+		/obj/item/claymore/machete/reinforced=1)
 /*
 Recruit Legionary
 */
@@ -750,10 +744,10 @@ Recruit Legionary
 	r_pocket =      /obj/item/restraints/handcuffs
 	suit_store =	/obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
-		/obj/item/kitchen/knife/butcher=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/restraints/handcuffs)
+		/obj/item/kitchen/knife/butcher=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/restraints/handcuffs=1)
 
 /*
 Venator
@@ -775,13 +769,11 @@ Venator
 	/datum/outfit/loadout/venassault //Bulldog assault shotgun and C4
 	)
 
-/datum/job/CaesarsLegion/Legionnaire/f13venator/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -794,12 +786,11 @@ Venator
 	mask		=	/obj/item/clothing/mask/bandana/black
 	glasses 	=	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
-	r_pocket 	= 	/obj/item/twohanded/binocs
+	r_pocket 	= 	/obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/reagent_containers/pill/patch/healpoultice=2, \
-		/obj/item/storage/bag/money/small/legenlisted,
-		/obj/item/radio)
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
 
 /datum/outfit/loadout/vensniper
 	name = "Venator Assassin"
@@ -813,8 +804,7 @@ Venator
 	suit_store	=	/obj/item/gun/ballistic/automatic/shotgun/bulldog
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m12g=2,
-		/obj/item/claymore/machete/gladius=1,
-		/obj/item/grenade/plastic=1)
+		/obj/item/claymore/machete/gladius=1)
 
 /*
 Explorer
@@ -833,20 +823,17 @@ Explorer
 
 	loadout_options = list(
 	/datum/outfit/loadout/explinfil, //C4, engineering supplies
-	/datum/outfit/loadout/explscout, //.44 trail carbine
-	//datum/outfit/loadout/explassassin //.308 DKS sniper rifle
+	/datum/outfit/loadout/explscout //.44 trail carbine
 	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-
-/datum/job/CaesarsLegion/Legionnaire/f13explorer/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Big Leagues")
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
@@ -856,14 +843,14 @@ Explorer
 	head = 		/obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	glasses = 	/obj/item/clothing/glasses/legiongoggles
 	ears	=	/obj/item/radio/headset/headset_legion
+	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/claymore/machete/reinforced=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legenlisted,
-		/obj/item/radio)
-	r_pocket = /obj/item/twohanded/binocs
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/claymore/machete/reinforced=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
+
 
 /datum/outfit/loadout/explinfil
 	name = "Infiltrator Explorer"
@@ -897,7 +884,10 @@ Auxilia
 
 	loadout_options = list(
 	/datum/outfit/loadout/auxmedic, //Healing poultices and surgical tools
-	/datum/outfit/loadout/auxengi //Toolbelt, wood, metal, leather
+	/datum/outfit/loadout/auxengi, //Toolbelt, wood, metal, leather
+	/datum/outfit/loadout/auxchef, //Flour, rice, bowls, rolling pin, knife and eggs
+	/datum/outfit/loadout/auxfarm, //Ambrosia, cultivator, spade, plant bags
+	/datum/outfit/loadout/auxassist //Four color pen, briefcase, sunglasses, natural paper
 	)
 
 /datum/outfit/job/CaesarsLegion/f13auxilia
@@ -909,34 +899,67 @@ Auxilia
 	ears	=		/obj/item/radio/headset/headset_legion
 	gloves =		null
 	belt =			null
-	backpack = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=1, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legenlisted,
-		/obj/item/radio)
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/storage/bag/money/small/legenlisted=1)
 
 /datum/outfit/loadout/auxmedic
 	name = "Medicus Auxilia"
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice=3,
-		/obj/item/reagent_containers/pill/patch/healingpowder=3,
 		/obj/item/scalpel=1,
 		/obj/item/hemostat=1,
 		/obj/item/retractor=1,
 		/obj/item/circular_saw=1,
 		/obj/item/cautery=1,
-		/obj/item/surgical_drapes=1)
+		/obj/item/surgical_drapes=1,
+		/obj/item/storage/firstaid/ancient=1)
 
 /datum/outfit/loadout/auxengi
-	name = "Architecti Auxilia"
+	name = "Opifex Auxilia"
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility/full/engi
+	suit = /obj/item/clothing/suit/f13/blacksmith_apron
+	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	backpack_contents = list(
 		/obj/item/stack/sheet/metal/twenty=1,
-		/obj/item/stack/sheet/plasteel/five=1,
+		/obj/item/stack/sheet/mineral/wood/twenty=1,
 		/obj/item/stack/sheet/leather/twenty=1,
-		/obj/item/stack/sheet/mineral/wood/fifty=1)
+		/obj/item/stack/sheet/cloth/thirty=1,
+		/obj/item/stack/sheet/prewar=1)
+
+/datum/outfit/loadout/auxchef
+	name = "Archimagirus Auxilia"
+	head = /obj/item/clothing/head/chefhat
+	suit = /obj/item/clothing/suit/toggle/chef
+	suit_store = /obj/item/kitchen/rollingpin
+	belt = /obj/item/kitchen/knife/cosmic
+	backpack_contents = list(
+		/obj/item/reagent_containers/food/condiment/flour=2,
+		/obj/item/reagent_containers/food/condiment/rice=1,
+		/obj/item/storage/box/bowls=1,
+		/obj/item/reagent_containers/glass/beaker/large=1,
+		/obj/item/storage/fancy/egg_box=1)
+
+/datum/outfit/loadout/auxfarm
+	name = "Cultor Auxilia"
+	head = /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
+	backpack_contents = list(
+		/obj/item/cultivator=1,
+		/obj/item/shovel/spade=1,
+		/obj/item/reagent_containers/glass/beaker/large=1,
+		/obj/item/storage/bag/plants=2)
+
+/datum/outfit/loadout/auxassist
+	name = "Exceptor Auxilia"
+	glasses = /obj/item/clothing/glasses/sunglasses
+	r_hand = /obj/item/storage/briefcase
+	backpack_contents = list(
+		/obj/item/folder/red=1,
+		/obj/item/paper_bin/bundlenatural=1,
+		/obj/item/pen/fourcolor=1,
+		/obj/item/taperecorder=1)
 
 /*
 Camp Follower
@@ -1035,7 +1058,7 @@ Slave
 	jobtype		= /datum/job/CaesarsLegion/slave
 	id			= /obj/item/card/id/legionbrand
 	uniform		= /obj/item/clothing/under/f13/rag
-	neck		= /obj/item/assembly/signaler/electropack/shockcollar
+	neck		= /obj/item/electropack/shockcollar
 	shoes		= /obj/item/clothing/shoes/f13/rag
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1045,7 +1068,7 @@ Slave
 	suit = /obj/item/clothing/suit/apron/chef
 	belt = /obj/item/kitchen/knife
 	backpack_contents = list(
-		/obj/item/radio=1, \
+		/obj/item/radio=1,
 		/obj/item/claymore/machete/pipe/pan=1)
 
 /datum/outfit/loadout/slfarmer
@@ -1061,11 +1084,11 @@ Slave
 	suit = /obj/item/clothing/suit/fluff/vest
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack_contents = list(
-		/obj/item/radio=1, \
-		/obj/item/screwdriver=1, \
-		/obj/item/wrench=1, \
-		/obj/item/crowbar=1, \
-		/obj/item/radio=1, \
+		/obj/item/radio=1,
+		/obj/item/screwdriver=1,
+		/obj/item/wrench=1,
+		/obj/item/crowbar=1,
+		/obj/item/radio=1,
 		/obj/item/wirecutters=1)
 
 /datum/outfit/loadout/slhealer
@@ -1073,7 +1096,7 @@ Slave
 	suit = /obj/item/clothing/suit/apron/surgical
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack_contents = list(
-		/obj/item/radio=1, \
+		/obj/item/radio=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=4,
 		/obj/item/stack/medical/gauze/improvised = 2)
 
@@ -1082,10 +1105,10 @@ Slave
 	suit = /obj/item/clothing/suit/f13/robe_liz
 	belt = /obj/item/radio
 	backpack_contents = list(
-		/obj/item/soap/homemade=1, \
-		/obj/item/melee/flyswatter=1, \
-		/obj/item/reagent_containers/glass/rag=1, \
-		/obj/item/reagent_containers/glass/bucket=1, \
+		/obj/item/soap/homemade=1,
+		/obj/item/melee/flyswatter=1,
+		/obj/item/reagent_containers/glass/rag=1,
+		/obj/item/reagent_containers/glass/bucket=1,
 		/obj/item/stack/medical/gauze/improvised=1)
 
 /datum/outfit/loadout/slminer
@@ -1094,5 +1117,5 @@ Slave
 	belt = /obj/item/storage/bag/ore
 
 	backpack_contents = list(
-		/obj/item/pickaxe=1, \
+		/obj/item/pickaxe=1,
 		/obj/item/radio=1)

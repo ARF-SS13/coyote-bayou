@@ -32,18 +32,20 @@
 			ChangeTurf(/turf/open/floor/plating)
 		else
 			to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
-
-///turf/ground/Entered(go/A)
-//	..()
+	else
+		return ..()
+/*
+/turf/ground/Entered(go/A)
+	..()
 
 /turf/open/indestructible/ground/handle_slip()
 	return
-
+*/
 /turf/open/indestructible/ground/singularity_act()
 	return
 
 /turf/open/indestructible/ground/can_have_cabling()
-	return 1
+	return TRUE
 
 //////////////////////////////////////////////////////////////////////
 
@@ -64,7 +66,7 @@
 	name = "desert"
 	icon_state = "wasteland"
 //	step_sounds = list("human" = "dirtfootsteps")
-//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit, \
+//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
 //	/obj/item/seeds/feracactus, /obj/item/seeds/corn,/obj/item/seeds/shroom, /obj/item/seeds/agave)
 	slowdown = 1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
@@ -140,19 +142,19 @@
 		. = TRUE
 
 /turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
-	return
+	return //I mean, it makes sense that deserts don't get slippery, I guess... :(
 
 //Make sure we delete the plant if we ever change turfs
-/turf/open/indestructible/ground/outside/desert/ChangeTurf()
+/turf/open/indestructible/ground/outside/desert/ChangeTurf(path, list/new_baseturfs, flags)
 	if(turfPlant)
 		qdel(turfPlant)
-	. =  ..()
+	return ..()
 
 /turf/open/indestructible/ground/outside/dirt
 	name = "dirt"
 	icon_state = "dirtfull"
 //	step_sounds = list("human" = "dirtfootsteps")
-//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit, \
+//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
 //	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
 	slowdown = 0.2
 	flags_1 = CAN_HAVE_NATURE
@@ -161,7 +163,7 @@
 	clawfootstep = FOOTSTEP_SAND
 
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
-	return
+	return //same thing here, dirt absorbs the liquid... :(
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"
@@ -276,7 +278,7 @@
 	name = "dirt"
 	icon_state = "dirtfull"
 //	step_sounds = list("human" = "dirtfootsteps")
-//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit, \
+//	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
 //	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
 	slowdown = 0.2
 	flags_1 = CAN_HAVE_NATURE

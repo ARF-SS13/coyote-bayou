@@ -56,7 +56,7 @@
 
 	//Allows mobs to move through dense areas without restriction. For instance, in space or out of holder objects.
 	var/incorporeal_move = FALSE //FALSE is off, INCORPOREAL_MOVE_BASIC is normal, INCORPOREAL_MOVE_SHADOW is for ninjas
-								 //and INCORPOREAL_MOVE_JAUNT is blocked by holy water/salt
+								//and INCORPOREAL_MOVE_JAUNT is blocked by holy water/salt
 
 	var/list/roundstart_quirks = list()
 
@@ -154,7 +154,7 @@
 	//Sprint buffer---
 	var/sprint_buffer = 42					//Tiles
 	var/sprint_buffer_max = 42
-	var/sprint_buffer_regen_ds = 0.3		//Tiles per world.time decisecond
+	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond
 	var/sprint_buffer_regen_last = 0		//last world.time this was regen'd for math.
 	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.
 	//---End

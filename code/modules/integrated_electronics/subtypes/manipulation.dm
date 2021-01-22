@@ -208,7 +208,7 @@
 	set_pin_data(IC_OUTPUT, 4, contents)
 	push_data()
 
-/obj/item/integrated_circuit/manipulation/grabber/attack_self(var/mob/user)
+/obj/item/integrated_circuit/manipulation/grabber/attack_self(mob/user)
 	drop_all()
 	update_outputs()
 	push_data()
@@ -549,7 +549,7 @@
 	power_draw_per_use = 1
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/integrated_circuit/manipulation/renamer/do_work(var/n)
+/obj/item/integrated_circuit/manipulation/renamer/do_work(n)
 	if(!assembly)
 		return
 	switch(n)
@@ -579,7 +579,7 @@
 	activators = list("redescribe" = IC_PINTYPE_PULSE_IN,"get description" = IC_PINTYPE_PULSE_IN,"pulse out" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/integrated_circuit/manipulation/redescribe/do_work(var/n)
+/obj/item/integrated_circuit/manipulation/redescribe/do_work(n)
 	if(!assembly)
 		return
 
@@ -605,7 +605,7 @@
 	activators = list("repaint" = IC_PINTYPE_PULSE_IN,"get color" = IC_PINTYPE_PULSE_IN,"pulse out" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/integrated_circuit/manipulation/repaint/do_work(var/n)
+/obj/item/integrated_circuit/manipulation/repaint/do_work(n)
 	if(!assembly)
 		return
 

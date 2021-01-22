@@ -62,7 +62,7 @@
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 
-/obj/item/loadout_token/attack_self(var/mob/user)
+/obj/item/loadout_token/attack_self(mob/user)
 	user.select_loadout()
 
 /****************
@@ -149,19 +149,21 @@
 			select_outfit(params["name"])
 			. = TRUE
 		if("loadout_confirm")
-			if (selected_datum && !confirming)
+			if(confirming)
+				return
+			if (selected_datum)
 				confirming = TRUE
 				var/response = alert(usr, "Are you sure you wish to finish loadout selection? The currently selected outfit will be spawned in a box, which will be placed in your hand.", "Confirm Loadout Select", "Yes, I'm done.", "No, wait!")
 				if (response == "Yes, I'm done.")
 					finish()
-				confirming = FALSE
+			confirming = FALSE
 			. = TRUE
 		if("loadout_preview_direction")
 			selected_direction = turn(selected_direction, 90 * text2num(params["direction"]))
 			. = TRUE
 
 //Selects an outfit and loads the preview of it
-/datum/component/loadout_selector/proc/select_outfit(var/newname)
+/datum/component/loadout_selector/proc/select_outfit(newname)
 	//First of all, lets not do unnecessary work.
 	//Don't reselect the one we already have selected
 	if (newname == selected_name)

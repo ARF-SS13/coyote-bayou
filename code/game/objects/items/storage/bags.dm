@@ -385,7 +385,7 @@
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/bluespace = 500)
 
 /*
- *	Chemistry bag
+ *	Chemistry bag - IT'S A MEDICAL BAG NOW, IN YOUR FACE SCIENCE
  */
 
 /obj/item/storage/bag/chemistry
@@ -399,8 +399,8 @@
 /obj/item/storage/bag/chemistry/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_volume = STORAGE_VOLUME_CHEMISTRY_BAG
+	STR.max_combined_w_class = 30
+	STR.max_items = 14
 	STR.insert_preposition = "in"
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
 

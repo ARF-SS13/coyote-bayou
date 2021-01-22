@@ -88,7 +88,7 @@
 	loot = list(
 	/obj/item/weapon/machete = 1,
 	/obj/item/weapon/golf9 = 1,
-	/obj/item/weapon/spear = 1)
+	/obj/item/weapon/twohanded/spear = 1)
 */
 /obj/effect/spawner/lootdrop/wmelee_high
 /*	color = "#FF0000"

@@ -36,7 +36,7 @@
 	contraband = list(
 				/obj/item/clothing/neck/petcollar/locked = 2,
 				/obj/item/key/collar = 2,
-				/obj/item/clothing/head/kitty = 3,
+				/obj/item/clothing/head/simplekitty = 3,
 				/obj/item/clothing/head/rabbitears = 3,
 				/obj/item/clothing/under/misc/keyholesweater = 2,
 				/obj/item/clothing/under/misc/stripper/mankini = 2,

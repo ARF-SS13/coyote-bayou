@@ -10,6 +10,7 @@ GLOBAL_LIST_INIT(possible_uplinker_IDs, list("Alfa","Bravo","Charlie","Delta","E
 	icon_screen = "syndie"
 	clockwork = TRUE //it'd look weird, at least if ratvar ever got there
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	connectable = FALSE
 
 	light_color = LIGHT_COLOR_RED
 

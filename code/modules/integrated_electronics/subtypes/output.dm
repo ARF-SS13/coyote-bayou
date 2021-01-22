@@ -290,7 +290,7 @@
 	QDEL_NULL(camera)
 	return ..()
 
-/obj/item/integrated_circuit/output/video_camera/proc/set_camera_status(var/status)
+/obj/item/integrated_circuit/output/video_camera/proc/set_camera_status(status)
 	if(camera)
 		camera.status = status
 		GLOB.cameranet.updatePortableCamera(camera)

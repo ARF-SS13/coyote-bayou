@@ -8,6 +8,7 @@
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
+	var/en_bloc = 0
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -54,19 +55,19 @@
 	if(istype(src.magazine,/obj/item/ammo_box/magazine/internal))
 		if(.)
 			return
-		var/num_loaded = magazine.attackby(A, user, params, 0, 1)
+		var/num_loaded = magazine.attackby(A, user, params, 1)
 		if(num_loaded)
 			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
 			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
 			A.update_icon()
 			update_icon()
 			chamber_round(0)
-	else if (istype(A, /obj/item/ammo_box/magazine))
+	else if(istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
 		if (!magazine && istype(AM, mag_type))
 			if(user.transferItemToLoc(AM, src))
 				magazine = AM
-				to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
 				if(magazine.ammo_count())
 					playsound(src, "gun_insert_full_magazine", 70, 1)
 					if(!chambered)
@@ -81,7 +82,7 @@
 				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 				return
 		else if (magazine)
-			to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
+			to_chat(user, "<span class='notice'>There's already a magazine in \the [src].</span>")
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
 		if(!can_suppress)
@@ -125,15 +126,23 @@
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(magazine)
-		magazine.forceMove(drop_location())
-		user.put_in_hands(magazine)
-		magazine.update_icon()
-		if(magazine.ammo_count())
-			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, 1)
+		if(en_bloc)
+			magazine.forceMove(drop_location())
+			user.dropItemToGround(magazine)
+			magazine.update_icon()
+			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
+			magazine = null
+			to_chat(user, "<span class='notice'>You eject the enbloc clip out of \the [src].</span>")
 		else
-			playsound(src, "gun_remove_empty_magazine", 70, 1)
-		magazine = null
-		to_chat(user, "<span class='notice'>You pull the magazine out of \the [src].</span>")
+			magazine.forceMove(drop_location())
+			user.put_in_hands(magazine)
+			magazine.update_icon()
+			if(magazine.ammo_count())
+				playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, 1)
+			else
+				playsound(src, "gun_remove_empty_magazine", 70, 1)
+			magazine = null
+			to_chat(user, "<span class='notice'>You pull the magazine out of \the [src].</span>")
 	else if(chambered)
 		AC.forceMove(drop_location())
 		AC.bounce_away()

@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/list/hidden_shuttle_turfs = list() //all turfs hidden from navigation computers associated with a list containing the image hiding them and the type of the turf they are pretending to be
 	var/list/hidden_shuttle_turf_images = list() //only the images from the above list
 
-	var/datum/round_event/shuttle_loan/shuttle_loan
+	//var/datum/round_event/shuttle_loan/shuttle_loan
 
 	var/shuttle_purchased = FALSE //If the station has purchased a replacement escape shuttle this round
 	var/list/shuttle_purchase_requirements_met = list() //For keeping track of ingame events that would unlock new shuttles, such as defeating a boss or discovering a secret item
@@ -486,10 +486,10 @@ SUBSYSTEM_DEF(shuttle)
 	// Then create a transit docking port in the middle
 	var/coords = M.return_coords(0, 0, dock_dir)
 	/*  0------2
-        |      |
-        |      |
-        |  x   |
-        3------1
+		|      |
+		|      |
+		|  x   |
+		3------1
 	*/
 
 	var/x0 = coords[1]
@@ -560,8 +560,8 @@ SUBSYSTEM_DEF(shuttle)
 	if (istype(SSshuttle.orderhistory))
 		orderhistory = SSshuttle.orderhistory
 
-	if (istype(SSshuttle.shuttle_loan))
-		shuttle_loan = SSshuttle.shuttle_loan
+	//if (istype(SSshuttle.shuttle_loan))
+	//	shuttle_loan = SSshuttle.shuttle_loan
 
 	if (istype(SSshuttle.shuttle_purchase_requirements_met))
 		shuttle_purchase_requirements_met = SSshuttle.shuttle_purchase_requirements_met

@@ -17,12 +17,22 @@
 /obj/item/ammo_casing/caseless/needle
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
+	icon_state = "needler-casing"
 	caliber = "needle"
 	projectile_type = /obj/item/projectile/bullet/needle
+	var/reagent_amount = 15
+
+/obj/item/ammo_casing/caseless/needle/Initialize()
+	. = ..()
+	create_reagents(reagent_amount, OPENCONTAINER)
+
+/obj/item/ammo_casing/caseless/needle/attackby()
+	return
 
 /obj/item/ammo_casing/caseless/needle/ap
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
+	icon_state = "apneedler-casing"
 	caliber = "needle"
 	projectile_type = /obj/item/projectile/bullet/needle/ap
 
@@ -32,40 +42,8 @@
 	caliber = "ultraneedle"
 	projectile_type = /obj/item/projectile/bullet/needle/ultra
 
-/obj/item/ammo_casing/caseless/arrow
-	name = "metal arrow"
-	desc = "A simple arrow with a metal head."
-	caliber = "arrow"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow
-	icon_state = "arrow"
-	w_class = 3
-
-/obj/item/ammo_casing/caseless/arrow/ap
-	name = "sturdy arrow"
-	desc = "A reinforced arrow with a metal shaft and heavy duty head."
-	caliber = "arrow"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/ap
-	icon_state = "arrow_ap"
-	w_class = 3
-
-/obj/item/ammo_casing/caseless/arrow/poison
-	name = "poison arrow"
-	desc = "A simple arrow, tipped in a poisonous paste."
-	caliber = "arrow"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/poison
-	icon_state = "arrow_poison"
-	w_class = 3
-
-/obj/item/ammo_casing/caseless/arrow/burning
-	name = "burn arrow"
-	desc = "A sumple arrow slathered in a paste that burns skin on contact."
-	caliber = "arrow"
-	projectile_type = /obj/item/projectile/bullet/reusable/arrow/burning
-	icon_state = "arrow_burning"
-	w_class = 3
-
 /obj/item/ammo_casing/caseless/musketball
- 	name = "Musketball"
- 	desc = "This is a lead ball for a musket."
- 	caliber = "musketball"
- 	projectile_type = /obj/item/projectile/bullet/F13/musketball
+	name = "Musketball"
+	desc = "This is a lead ball for a musket."
+	caliber = "musketball"
+	projectile_type = /obj/item/projectile/bullet/F13/musketball

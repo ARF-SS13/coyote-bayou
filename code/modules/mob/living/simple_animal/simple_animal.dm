@@ -5,7 +5,7 @@
 	maxHealth = 20
 	gender = PLURAL //placeholder
 	///How much blud it has for bloodsucking
-	blood_volume = 550
+	blood_volume = 425 //blood will smeared only a little bit from body dragging
 
 	status_flags = CANPUSH
 
@@ -46,7 +46,7 @@
 	var/response_harm_continuous = "hits"
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
-	var/harm_intent_damage = 3
+	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
 	///Minimum force required to deal any damage.
 	var/force_threshold = 0
 
@@ -219,7 +219,7 @@
 						turns_since_move = 0
 			return 1
 
-/mob/living/simple_animal/proc/handle_automated_speech(var/override)
+/mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
 	if(speak_chance)
 		if(prob(speak_chance) || override)

@@ -11,7 +11,7 @@
 	environment_smash = 0
 	speak_chance = 0
 	turns_per_move = 3
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 3)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/fishmeat/carp = 3)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -35,7 +35,7 @@
 
 	faction = list("shark")
 
-/mob/living/simple_animal/hostile/shark/Process_Spacemove(var/movement_dir = 0)
+/mob/living/simple_animal/hostile/shark/Process_Spacemove(movement_dir = 0)
 	return 1   //No drifting in space for space sharks....either!
 
 /mob/living/simple_animal/hostile/shark/FindTarget()

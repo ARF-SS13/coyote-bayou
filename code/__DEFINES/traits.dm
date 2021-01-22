@@ -226,8 +226,8 @@
 #define TRAIT_SWIMMING			"swimming"			//only applied by /datum/element/swimming, for checking
 
 /**
-  * COMBAT MODE/SPRINT MODE TRAITS
-  */
+ * COMBAT MODE/SPRINT MODE TRAITS
+ */
 
 /// Prevents combat mode from being active.
 #define TRAIT_COMBAT_MODE_LOCKED		"combatmode_locked"
@@ -243,6 +243,7 @@
 #define TRAIT_PRACTITIONER		"Practitioner" //Has access to FoA specific surgeries
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 #define TRAIT_HARD_YARDS        "hard_yards"
+#define	TRAIT_LIFEGIVER			"lifegiver"
 
 // fallout crafting traits
 #define TRAIT_GUNSMITH_ONE      "gunsmith_one"
@@ -252,7 +253,7 @@
 #define TRAIT_MASTER_GUNSMITH   "master_gunsmith"
 
 
- //non-mob traits
+//non-mob traits
 #define TRAIT_PARALYSIS				"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
 #define VEHICLE_TRAIT "vehicle" // inherited from riding vehicles
 #define INNATE_TRAIT "innate"

@@ -1,12 +1,12 @@
 /**
-  *This is the proc that handles the order of an item_attack.
-  *The order of procs called is:
-  *tool_act on the target. If it returns TRUE, the chain will be stopped.
-  *pre_attack() on src. If this returns TRUE, the chain will be stopped.
-  *attackby on the target. If it returns TRUE, the chain will be stopped.
-  *and lastly
-  *afterattack. The return value does not matter.
-  */
+ *This is the proc that handles the order of an item_attack.
+ *The order of procs called is:
+ *tool_act on the target. If it returns TRUE, the chain will be stopped.
+ *pre_attack() on src. If this returns TRUE, the chain will be stopped.
+ *attackby on the target. If it returns TRUE, the chain will be stopped.
+ *and lastly
+ *afterattack. The return value does not matter.
+ */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params, attackchain_flags, damage_multiplier = 1)
 	if(isliving(user))
 		var/mob/living/L = user
@@ -47,6 +47,8 @@
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, params)
+	if(linked_attack_parent)
+		linked_attack_parent.attackby(W, user)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return STOP_ATTACK_PROC_CHAIN
 
@@ -66,16 +68,16 @@
 		I.ApplyAttackCooldown(user, src, attackchain_flags)
 
 /**
-  * Called when someone uses us to attack a mob in melee combat.
-  *
-  * This proc respects CheckAttackCooldown() default clickdelay handling.
-  *
-  * @params
-  * * mob/living/M - target
-  * * mob/living/user - attacker
-  * * attackchain_Flags - see [code/__DEFINES/_flags/return_values.dm]
-  * * damage_multiplier - what to multiply the damage by
-  */
+ * Called when someone uses us to attack a mob in melee combat.
+ *
+ * This proc respects CheckAttackCooldown() default clickdelay handling.
+ *
+ * @params
+ * * mob/living/M - target
+ * * mob/living/user - attacker
+ * * attackchain_Flags - see [code/__DEFINES/_flags/return_values.dm]
+ * * damage_multiplier - what to multiply the damage by
+ */
 /obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
@@ -85,6 +87,9 @@
 	if(force && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
+		force = force + 5
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
@@ -99,6 +104,9 @@
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
+		force = force - 5
 
 	var/weight = getweight(user, STAM_COST_ATTACK_MOB_MULT) //CIT CHANGE - makes attacking things cause stamina loss
 	if(weight)
@@ -216,17 +224,17 @@
 		user.mind.auto_gain_experience(skill, I.skill_gain*S.item_skill_gain_multi)
 
 /**
-  * Called after attacking something if the melee attack chain isn't interrupted before.
-  * Also called when clicking on something with an item without being in melee range
-  *
-  * WARNING: This does not automatically check clickdelay if not in a melee attack! Be sure to account for this!
-  *
-  * @params
-  * * target - The thing we clicked
-  * * user - mob of person clicking
-  * * proximity_flag - are we in melee range/doing it in a melee attack
-  * * click_parameters - mouse control parameters, check BYOND ref.
-  */
+ * Called after attacking something if the melee attack chain isn't interrupted before.
+ * Also called when clicking on something with an item without being in melee range
+ *
+ * WARNING: This does not automatically check clickdelay if not in a melee attack! Be sure to account for this!
+ *
+ * @params
+ * * target - The thing we clicked
+ * * user - mob of person clicking
+ * * proximity_flag - are we in melee range/doing it in a melee attack
+ * * click_parameters - mouse control parameters, check BYOND ref.
+ */
 /obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)

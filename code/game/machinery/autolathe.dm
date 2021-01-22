@@ -220,7 +220,7 @@
 
 	return
 
-/obj/machinery/autolathe/proc/make_item(power, var/list/materials_used, var/list/picked_materials, multiplier, coeff, is_stack)
+/obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/atom/A = drop_location()
 	use_power(power)
@@ -472,24 +472,25 @@
 	super_advanced_technology = FALSE
 	resistance_flags = NONE
 	var/constage = 0 //construction stage for upgrading into a regular lathe
-	DRM = 1
+	//DRM = 1
 	categories = list(
 							"Tools",
 							"Electronics",
 							"Construction",
 							"T-Comm",
-							"Security",
+							//"Security",
 							"Machinery",
 							"Medical",
 							"Misc",
 							"Dinnerware",
 							)
 
+/*
 /obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
 	..()
 	if(DRM && panel_open)
 		if(constage == 0)
-			if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
 				constage = 1
 				qdel(O)
@@ -529,6 +530,7 @@
 		attack_hand(user)
 		return TRUE
 
+
 /obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
 	if("Security" in D.category)
 		if(DRM == 1)
@@ -537,7 +539,7 @@
 			. = ..()
 	else
 		. = ..()
-/*
+
 /obj/machinery/autolathe/ui_interact(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
@@ -549,7 +551,7 @@
 */
 
 /obj/machinery/autolathe/ammo
-	name = "ammo bench"
+	name = "reloading bench"
 	icon = 'icons/obj/machines/reloadingbench.dmi'
 	desc = "An ammo bench that utilizes metal and other materials to make ammo and magazines."
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo
@@ -576,22 +578,22 @@
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()
 	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_one))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
 			simple = 1
 			qdel(O)
 	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_two))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
 			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
 			basic = 1
 			qdel(O)
 	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_three))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
 			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
 			intermediate = 1
 			qdel(O)
 	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/trait/gunsmith_four))
+		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
 			advanced = 1
 			qdel(O)

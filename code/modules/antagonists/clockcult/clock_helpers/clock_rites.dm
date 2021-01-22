@@ -17,7 +17,7 @@
 	var/times_used = 0 //How often has the rite already been used this shift?
 	var/rite_cast_sound = 'sound/items/bikehorn.ogg' //The sound played when successfully casting the rite. If it honks, the one adding the rite forgot to set one (or was just lazy).
 
-/datum/clockwork_rite/proc/try_cast(var/obj/effect/clockwork/sigil/rite/R, var/mob/living/invoker) //Performs a ton of checks to see if the invoker can cast the rite
+/datum/clockwork_rite/proc/try_cast(obj/effect/clockwork/sigil/rite/R, mob/living/invoker) //Performs a ton of checks to see if the invoker can cast the rite
 	if(!istype(R))
 		return FALSE
 	if(!R || !R.loc)
@@ -76,7 +76,7 @@
 	R.performing_rite = FALSE
 	return
 
-/datum/clockwork_rite/proc/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target) //Casts the rite and uses up ingredients. Doublechecks some things to prevent bypassing some restrictions via funky timing or badminnery.
+/datum/clockwork_rite/proc/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target) //Casts the rite and uses up ingredients. Doublechecks some things to prevent bypassing some restrictions via funky timing or badminnery.
 	if(!T || !invoker)
 		return FALSE
 	if(requires_human && !target)
@@ -99,7 +99,7 @@
 	playsound(T, rite_cast_sound, 50, 2)
 	return TRUE
 
-/datum/clockwork_rite/proc/post_cast(var/cast_succeeded)
+/datum/clockwork_rite/proc/post_cast(cast_succeeded)
 	if(cast_succeeded)
 		times_used++
 	return TRUE
@@ -137,7 +137,7 @@
 	cast_time = 40
 	rite_cast_sound = 'sound/magic/blind.ogg'
 
-/datum/clockwork_rite/advancement/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/advancement/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	var/obj/item/organ/O = locate(/obj/item/organ) in T
 	if(!O)
 		return FALSE
@@ -161,7 +161,7 @@
 	cast_time = 80
 	rite_cast_sound = 'sound/magic/staff_healing.ogg'
 
-/datum/clockwork_rite/treat_wounds/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/treat_wounds/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	if(!target)
 		return FALSE
 	if(!target.all_wounds.len)
@@ -185,7 +185,7 @@
 	limit = 4
 	rite_cast_sound = 'sound/magic/clockwork/fellowship_armory.ogg'
 
-/datum/clockwork_rite/summon_claw/cast(var/mob/living/invoker, var/turf/T, var/mob/living/carbon/human/target)
+/datum/clockwork_rite/summon_claw/cast(mob/living/invoker, turf/T, mob/living/carbon/human/target)
 	. = ..()
 	if(!.)
 		return FALSE

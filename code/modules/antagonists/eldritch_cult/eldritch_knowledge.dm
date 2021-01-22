@@ -1,11 +1,11 @@
 
 /**
-  * #Eldritch Knwoledge
-  *
-  * Datum that makes eldritch cultist interesting.
-  *
-  * Eldritch knowledge aren't instantiated anywhere roundstart, and are initalized and destroyed as the round goes on.
-  */
+ * #Eldritch Knwoledge
+ *
+ * Datum that makes eldritch cultist interesting.
+ *
+ * Eldritch knowledge aren't instantiated anywhere roundstart, and are initalized and destroyed as the round goes on.
+ */
 /datum/eldritch_knowledge
 	///Name of the knowledge
 	var/name = "Basic knowledge"
@@ -35,41 +35,41 @@
 	required_atoms = temp_list
 
 /**
-  * What happens when this is assigned to an antag datum
-  *
-  * This proc is called whenever a new eldritch knowledge is added to an antag datum
-  */
+ * What happens when this is assigned to an antag datum
+ *
+ * This proc is called whenever a new eldritch knowledge is added to an antag datum
+ */
 /datum/eldritch_knowledge/proc/on_gain(mob/user)
 	to_chat(user, "<span class='warning'>[gain_text]</span>")
 	return
 /**
-  * What happens when you loose this
-  *
-  * This proc is called whenever antagonist looses his antag datum, put cleanup code in here
-  */
+ * What happens when you loose this
+ *
+ * This proc is called whenever antagonist looses his antag datum, put cleanup code in here
+ */
 /datum/eldritch_knowledge/proc/on_lose(mob/user)
 	return
 /**
-  * What happens every tick
-  *
-  * This proc is called on SSprocess in eldritch cultist antag datum. SSprocess happens roughly every second
-  */
+ * What happens every tick
+ *
+ * This proc is called on SSprocess in eldritch cultist antag datum. SSprocess happens roughly every second
+ */
 /datum/eldritch_knowledge/proc/on_life(mob/user)
 	return
 
 /**
-  * Special check for recipes
-  *
-  * If you are adding a more complex summoning or something that requires a special check that parses through all the atoms in an area override this.
-  */
+ * Special check for recipes
+ *
+ * If you are adding a more complex summoning or something that requires a special check that parses through all the atoms in an area override this.
+ */
 /datum/eldritch_knowledge/proc/recipe_snowflake_check(list/atoms,loc)
 	return TRUE
 
 /**
-  * What happens once the recipe is succesfully finished
-  *
-  * By default this proc creates atoms from result_atoms list. Override this is you want something else to happen.
-  */
+ * What happens once the recipe is succesfully finished
+ *
+ * By default this proc creates atoms from result_atoms list. Override this is you want something else to happen.
+ */
 /datum/eldritch_knowledge/proc/on_finished_recipe(mob/living/user,list/atoms,loc)
 	if(result_atoms.len == 0)
 		return FALSE
@@ -80,10 +80,10 @@
 	return TRUE
 
 /**
-  * Used atom cleanup
-  *
-  * Overide this proc if you dont want ALL ATOMS to be destroyed. useful in many situations.
-  */
+ * Used atom cleanup
+ *
+ * Overide this proc if you dont want ALL ATOMS to be destroyed. useful in many situations.
+ */
 /datum/eldritch_knowledge/proc/cleanup_atoms(list/atoms)
 	for(var/X in atoms)
 		var/atom/A = X
@@ -93,19 +93,19 @@
 	return
 
 /**
-  * Mansus grasp act
-  *
-  * Gives addtional effects to mansus grasp spell
-  */
+ * Mansus grasp act
+ *
+ * Gives addtional effects to mansus grasp spell
+ */
 /datum/eldritch_knowledge/proc/on_mansus_grasp(atom/target, mob/user, proximity_flag, click_parameters)
 	return FALSE
 
 
 /**
-  * Sickly blade act
-  *
-  * Gives addtional effects to sickly blade weapon
-  */
+ * Sickly blade act
+ *
+ * Gives addtional effects to sickly blade weapon
+ */
 /datum/eldritch_knowledge/proc/on_eldritch_blade(target,user,proximity_flag,click_parameters)
 	return
 
@@ -224,7 +224,7 @@
 	name = "Break of Dawn"
 	desc = "Starts your journey in the mansus. Allows you to select a target using a living heart on a transmutation rune."
 	gain_text = "Gates of Mansus open up to your mind."
-	next_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/spell/silence)
+	next_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh/*,/datum/eldritch_knowledge/spell/silence*/)
 	cost = 0
 	spell_to_add = /obj/effect/proc_holder/spell/targeted/touch/mansus_grasp
 	required_atoms = list(/obj/item/living_heart)
@@ -302,7 +302,7 @@
 	required_atoms = list(/obj/item/shard,/obj/item/stack/rods)
 	result_atoms = list(/obj/item/melee/sickly_blade)
 	route = "Start"
-
+/*
 /datum/eldritch_knowledge/spell/silence
 	name = "Silence"
 	desc = "Allows you to use the power of the Mansus to force an individual's tongue to be held down for up to twenty seconds. They'll notice quickly, however."
@@ -310,3 +310,4 @@
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/pointed/trigger/mute/eldritch
 	route = PATH_SIDE
+*/

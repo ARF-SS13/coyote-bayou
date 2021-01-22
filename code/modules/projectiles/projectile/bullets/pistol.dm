@@ -88,21 +88,47 @@
 
 // Needler
 /obj/item/projectile/bullet/needle
-    name = "needle"
-    icon_state = "cbbolt"
-    damage = 40
-    armour_penetration = 15
-    wound_bonus = 30
-    bare_wound_bonus = 30
+	name = "needle"
+	icon_state = "cbbolt"
+	damage = 8
+	armour_penetration = 15
+	var/piercing = FALSE
+
+/obj/item/projectile/bullet/needle/Initialize()
+	. = ..()
+	create_reagents(50, NO_REACT, NO_REAGENTS_VALUE)
+
+/obj/item/projectile/bullet/needle/on_hit(atom/target, blocked = FALSE, skip = FALSE)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		if(blocked != 100) // not completely blocked
+			if(M.can_inject(null, FALSE, def_zone, piercing)) // Pass the hit zone to see if it can inject by whether it hit the head or the body.
+				..()
+				if(skip == TRUE)
+					return BULLET_ACT_HIT
+				reagents.reaction(M, INJECT)
+				reagents.trans_to(M, reagents.total_volume)
+				return TRUE
+			else
+				blocked = 100
+				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
+									   "<span class='userdanger'>You were protected against \the [src]!</span>")
+
+	..(target, blocked)
+	DISABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
+	reagents.handle_reactions()
+	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/needle/ap
-    name = "armour piercing needle"
-    damage = 32
-    armour_penetration = 30
-    wound_bonus = 60
-    bare_wound_bonus = -60
+	name = "armour piercing needle"
+	damage = 5
+	armour_penetration = 30
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	piercing = TRUE
 
 /obj/item/projectile/bullet/needle/ultra
-    name = "ultracite needle"
-    damage = 50
-    armour_penetration = 25
+	name = "ultracite needle"
+	damage = 50
+	armour_penetration = 25
+	piercing = TRUE

@@ -577,13 +577,34 @@
 	extra_penetration = -5 //See above
 	spread = 10
 
+/obj/item/gun/ballistic/revolver/revolver44
+	name = "\improper .44 magnum single-action revolver"
+	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44..."
+	item_state = "44colt"
+	icon_state = "44colt"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	fire_delay = 4
+	extra_damage = 3
+	fire_sound = 'sound/f13weapons/44revolver.ogg'
+
+/obj/item/gun/ballistic/revolver/revolver45
+	name = "\improper .45 colt revolver"
+	desc = "A Colt Single Action Army retooled to accept .45 ACP catridges. A classic piece of Americana."
+	item_state = "45revolver"
+	icon_state = "45revolver"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	fire_delay = 4
+	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
 	desc = "A relatively primitive .357 magnum revolver."
-	item_state = "colt357"
-	icon_state = "colt357"
+	item_state = "357colt"
+	icon_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	fire_delay = 5
+	var/select = 0
+	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
 /obj/item/gun/ballistic/revolver/colt357/lucky
 	name = "Lucky"

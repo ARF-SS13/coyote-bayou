@@ -1,0 +1,59 @@
+SUBSYSTEM_DEF(monster_wave)
+	name = "Monster Wave"
+	wait = 1 HOURS //change to either 30 MINUTES or 1 HOURS
+	var/successful_firing = 0
+	var/allowed_firings = 2
+	var/chance_of_fire = 50
+
+//So admins, you want to be a tough guy, like it really rough guy?
+//just know you can't modify the time in between each fire
+//but you can allow it to always fire, by changing chance_of_fire to 0
+//and changing allowed_firings to like.... 12? 
+
+/datum/controller/subsystem/monster_wave/fire(resumed = 0)
+	if(times_fired <= 0)
+		message_admins("The Monster Wave has fired the first time. Next fire (in an hour) will spawn a monster pit.")
+		log_game("The Monster Wave has fired the first time. Next fire (in an hour) will spawn a monster pit.")
+		return
+	if(successful_firing >= allowed_firings)
+		message_admins("The Monster Wave has been disabled, maximum amount of waves spawned.")
+		log_game("The Monster Wave has been disabled, maximum amount of waves spawned.")
+		can_fire = FALSE
+		return
+	if(prob(chance_of_fire))
+		return // 50/50 chance for it to either fire or not fire
+	successful_firing++
+	addtimer(CALLBACK(src, .proc/spawn_monsterwave), 10 SECONDS)
+	priority_announce("WARNING: A large amount of monster activity has been detected. It is estimated that the monsters will breach the ground in a few moments. Please report the location of the breach once found.", "Monster Alert", sender_override = "Monster Reporting Division")
+
+/datum/controller/subsystem/monster_wave/proc/spawn_monsterwave()
+	var/pick_unfortune = pick("Ghoul", "Deathclaw")
+	switch(pick_unfortune)
+		if("Ghoul")
+			ghoul_wave()
+		if("Deathclaw")
+			deathclaw_wave()
+
+/datum/controller/subsystem/monster_wave/proc/ghoul_wave()
+	var/spawn_amount = CEILING(GLOB.player_list.len / 5, 1)
+	var/turf/choose_turf = quick_safe_turf()
+	var/turf/pixel_turf = get_turf_pixel(choose_turf)
+	for(var/i in 1 to spawn_amount)
+		new /mob/living/simple_animal/hostile/ghoul(choose_turf)
+		if(prob(10))
+			new /mob/living/simple_animal/hostile/ghoul/glowing(choose_turf)
+	new /obj/structure/nest/ghoul(choose_turf)
+	message_admins("The Monster Wave has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
+	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")
+
+/datum/controller/subsystem/monster_wave/proc/deathclaw_wave()
+	var/spawn_amount = CEILING(GLOB.player_list.len / 10, 1)
+	var/turf/choose_turf = quick_safe_turf()
+	var/turf/pixel_turf = get_turf_pixel(choose_turf)
+	for(var/i in 1 to spawn_amount)
+		new /mob/living/simple_animal/hostile/deathclaw(choose_turf)
+		if(prob(10))
+			new /mob/living/simple_animal/hostile/deathclaw/mother(choose_turf)
+	new /obj/structure/nest/deathclaw(choose_turf)
+	message_admins("The Monster Wave has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
+	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")

@@ -174,10 +174,10 @@ GLOBAL_LIST_INIT(leather_recipes, list ( \
  * Sinew
  */
 /obj/item/stack/sheet/sinew
-	name = "watcher sinew"
+	name = "sinew"
 	icon = 'icons/obj/mining.dmi'
-	desc = "Long stringy filaments which presumably came from a watcher's wings."
-	singular_name = "watcher sinew"
+	desc = "Long stringy filaments which presumably came from a insect's."
+	singular_name = "sinew"
 	icon_state = "sinew"
 	novariants = TRUE
 
@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
  * Plates
  */
 
- /obj/item/stack/sheet/animalhide/ragstag
+/obj/item/stack/sheet/animalhide/ragstag
 	name = "radstag hide"
 	desc = "A raw pelt taken from a radstag."
 	singular_name = "ragstag hide piece"

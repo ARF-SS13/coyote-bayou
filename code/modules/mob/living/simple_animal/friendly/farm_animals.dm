@@ -31,7 +31,7 @@
 	melee_damage_upper = 2
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
+	blood_volume = 480
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 
@@ -145,7 +145,7 @@
 	var/is_calf = 0
 	var/has_calf = 0
 //	var/young_type = /mob/living/simple_animal/cow/calf
-	blood_volume = BLOOD_VOLUME_NORMAL
+	blood_volume = 480
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -737,7 +737,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	icon_dead = "radstag_dead"
 	icon_gib = "radstag_gib"
 	gender = FEMALE
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 5
 	see_in_dark = 6
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/ragstag = 2)
@@ -772,7 +772,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
 	faction = list("neutral", "bighorner")
-	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_simple = "rams"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 120
@@ -781,7 +781,6 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	melee_damage_upper = 20
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0

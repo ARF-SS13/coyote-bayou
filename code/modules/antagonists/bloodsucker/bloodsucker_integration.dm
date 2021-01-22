@@ -16,7 +16,7 @@
 	return TRUE
 
 // 			EXAMINING
-/mob/living/carbon/human/proc/ReturnVampExamine(var/mob/viewer)
+/mob/living/carbon/human/proc/ReturnVampExamine(mob/viewer)
 	if(!mind || !viewer.mind)
 		return ""
 	// Target must be a Vamp
@@ -44,7 +44,7 @@
 	return returnIcon + returnString
 
 
-/mob/living/carbon/human/proc/ReturnVassalExamine(var/mob/viewer)
+/mob/living/carbon/human/proc/ReturnVassalExamine(mob/viewer)
 	if(!mind || !viewer.mind)
 		return ""
 	// Am I not even a Vassal? Then I am not marked.

@@ -115,7 +115,7 @@
 	if(exposed_temperature > 300)
 		PlasmaBurn(exposed_temperature)
 
-/turf/closed/wall/mineral/plasma/bullet_act(var/obj/item/projectile/Proj)
+/turf/closed/wall/mineral/plasma/bullet_act(obj/item/projectile/Proj)
 	if(istype(Proj, /obj/item/projectile/beam))
 		PlasmaBurn(2500)
 	else if(istype(Proj, /obj/item/projectile/ion))
@@ -136,7 +136,7 @@
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.sharpness && W.force)
 		var/duration = (48/W.force) * 2 //In seconds, for now.
-		if(istype(W, /obj/item/hatchet) || istype(W, /obj/item/fireaxe))
+		if(istype(W, /obj/item/hatchet) || istype(W, /obj/item/twohanded/fireaxe))
 			duration /= 4 //Much better with hatchets and axes.
 		var/src_type = type
 		if(do_after(user, duration*10, target=src) && type == src_type) //Into deciseconds.

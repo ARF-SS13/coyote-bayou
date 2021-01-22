@@ -43,7 +43,7 @@
 		padlock = null
 	return ..()
 
-/obj/structure/simple_door/proc/attach_padlock(var/obj/item/lock_construct/P, force = FALSE, mob/user)
+/obj/structure/simple_door/proc/attach_padlock(obj/item/lock_construct/P, force = FALSE, mob/user)
 	if(!force && (!can_hold_padlock || !P ))
 		return FALSE
 	if(padlock)
@@ -61,7 +61,7 @@
 	remove_cached_overlay("padlock")
 
 
-/obj/structure/simple_door/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/simple_door/bullet_act(obj/item/projectile/Proj)
 	..()
 
 /obj/structure/simple_door/Bumped(atom/user)
@@ -126,7 +126,7 @@
 	return 1
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
-	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/fireaxe)))
+	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/twohanded/fireaxe)))
 		try_to_crowbar(I, user)
 		return TRUE
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
@@ -165,7 +165,7 @@
 		else
 			if(user.transferItemToLoc(I, src))
 				user.visible_message("<span class='notice'>[user] adds [I] to [src].</span>", \
-								 "<span class='notice'>You add [I] to [src].</span>")
+								"<span class='notice'>You add [I] to [src].</span>")
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I

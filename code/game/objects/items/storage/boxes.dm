@@ -439,6 +439,14 @@ obj/item/storage/box/stingbangs
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/food/drinks/sillycup( src )
 
+/obj/item/storage/box/bowls
+	name = "box of bowls"
+	desc = "It has a picture of a bowl on it."
+
+/obj/item/storage/box/bowls/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/reagent_containers/glass/bowl(src)
+	
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
 	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"
@@ -928,12 +936,12 @@ obj/item/storage/box/stingbangs
 	return ..()
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  * * P The pen used to interact with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ * * P The pen used to interact with a menu
+ */
 /obj/item/storage/box/papersack/proc/check_menu(mob/user, obj/item/pen/P)
 	if(!istype(user))
 		return FALSE
@@ -992,7 +1000,7 @@ obj/item/storage/box/stingbangs
 							  /obj/item/reagent_containers/food/snacks/meat/slab/bear,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/spider,
 							  /obj/item/reagent_containers/food/snacks/spidereggs,
-							  /obj/item/reagent_containers/food/snacks/carpmeat,
+							  /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/xeno,
 							  /obj/item/reagent_containers/food/snacks/meat/slab/corgi,
 							  /obj/item/reagent_containers/food/snacks/grown/oat,
@@ -1107,7 +1115,7 @@ obj/item/storage/box/stingbangs
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1117,7 +1125,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1128,7 +1136,7 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/ingredients/sushi/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/food/snacks/sea_weed(src)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/rawcrab(src)
 
 /obj/item/storage/box/emptysandbags

@@ -31,7 +31,7 @@
 	result = /obj/item/clothing/accessory/talisman
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				 /obj/item/stack/sheet/sinew = 1)
+				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/bonecodpiece
@@ -39,7 +39,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				 /obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
+				/obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/bracers
@@ -47,7 +47,7 @@
 	result = /obj/item/clothing/gloves/bracer
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				 /obj/item/stack/sheet/sinew = 1)
+				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/skullhelm
@@ -58,12 +58,12 @@
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/bonedagger
-	name = "Bone Dagger"
+	name = "bone dagger"
 	result = /obj/item/kitchen/knife/combat/bone
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_MELEE
 
 /*
 /datum/crafting_recipe/bonespear
@@ -71,16 +71,16 @@
 	result = /obj/item/twohanded/bonespear
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
-				 /obj/item/stack/sheet/sinew = 1)
+				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
 
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
-	result = /obj/item/twohanded/fireaxe/boneaxe
+	result = /obj/item/twohanded/twohanded/fireaxe/boneaxe
 	time = 50
 	reqs = list(/obj/item/stack/sheet/bone = 6,
-				 /obj/item/stack/sheet/sinew = 3)
+				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
 */
@@ -268,14 +268,14 @@
 */
 
 /datum/crafting_recipe/training_machete
-	name = "Carve Training Machete"
+	name = "training machete"
 	result = /obj/item/claymore/machete/training
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/spearquiver
 	name = "Spear Quiver"
@@ -319,15 +319,15 @@
 
 /*
 /datum/crafting_recipe/voodoo
-    name = "Voodoo"
-    result = /obj/item/reagent_containers/pill/patch/voodoo
-    time = 20
-    reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
-                /obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
-                /obj/item/reagent_containers/food/snacks/grown/yucca = 1)
-    tools = list(TOOL_WORKBENCH)
-    category = CAT_PRIMAL
-    subcategory = CAT_TRIBAL
+	name = "Voodoo"
+	result = /obj/item/reagent_containers/pill/patch/voodoo
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
+				/obj/item/reagent_containers/food/snacks/grown/yucca = 1)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/coyotechew
 	name = "Coyote Tobacco Chew"

@@ -17,6 +17,7 @@
 	multiload = 0
 
 
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	name = "6520 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -79,3 +80,9 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 3
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45
+	name = ".45 ACP revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 6

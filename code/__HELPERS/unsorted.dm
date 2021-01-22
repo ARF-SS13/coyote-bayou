@@ -421,16 +421,16 @@ Turf and target are separate in case you want to teleport some distance from a t
 	return locate(x,y,A.z)
 
 /**
-  * Get ranged target turf, but with direct targets as opposed to directions
-  *
-  * Starts at atom A and gets the exact angle between A and target
-  * Moves from A with that angle, Range amount of times, until it stops, bound to map size
-  * Arguments:
-  * * A - Initial Firer / Position
-  * * target - Target to aim towards
-  * * range - Distance of returned target turf from A
-  * * offset - Angle offset, 180 input would make the returned target turf be in the opposite direction
-  */
+ * Get ranged target turf, but with direct targets as opposed to directions
+ *
+ * Starts at atom A and gets the exact angle between A and target
+ * Moves from A with that angle, Range amount of times, until it stops, bound to map size
+ * Arguments:
+ * * A - Initial Firer / Position
+ * * target - Target to aim towards
+ * * range - Distance of returned target turf from A
+ * * offset - Angle offset, 180 input would make the returned target turf be in the opposite direction
+ */
 /proc/get_ranged_target_turf_direct(atom/A, atom/target, range, offset)
 	var/angle = arctan(target.x - A.x, target.y - A.y)
 	if(offset)
@@ -455,7 +455,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	Gets all contents of contents and returns them all in a list.
 */
 
-/atom/proc/GetAllContents(var/T)
+/atom/proc/GetAllContents(T)
 	var/list/processing_list = list(src)
 	if(T)
 		. = list()
@@ -610,20 +610,18 @@ Turf and target are separate in case you want to teleport some distance from a t
 	else
 		return zone
 
-/*
+/**
+ * Gets the turf this atom's *ICON* appears to inhabit
+ * It takes into account:
+ * * Pixel_x/y
+ * * Matrix x/y
 
- Gets the turf this atom's *ICON* appears to inhabit
- It takes into account:
- * Pixel_x/y
- * Matrix x/y
-
- NOTE: if your atom has non-standard bounds then this proc
- will handle it, but:
+ * NOTE: if your atom has non-standard bounds then this proc
+ * will handle it, but:
  * if the bounds are even, then there are an even amount of "middle" turfs, the one to the EAST, NORTH, or BOTH is picked
- (this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
+ * (this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
  * if the bounds are odd, the true middle turf of the atom is returned
-
-*/
+ */
 
 /proc/get_turf_pixel(atom/AM)
 	if(!istype(AM))
@@ -675,9 +673,9 @@ Turf and target are separate in case you want to teleport some distance from a t
 		loc = loc.loc
 	return null
 
-/*
-Checks if that loc and dir has an item on the wall
-*/
+/**
+ * Checks if that loc and dir has an item on the wall
+ */
 GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
 	/obj/machinery/power/apc, /obj/machinery/airalarm, /obj/item/radio/intercom,
 	/obj/structure/extinguisher_cabinet, /obj/structure/reagent_dispensers/peppertank,
@@ -697,7 +695,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	/obj/structure/light_construct, /obj/machinery/light)))
 
 
-/proc/gotwallitem(loc, dir, var/check_external = 0)
+/proc/gotwallitem(loc, dir, check_external = 0)
 	var/locdir = get_step(loc, dir)
 	for(var/obj/O in loc)
 		if(is_type_in_typecache(O, GLOB.WALLITEMS) && check_external != 2)
@@ -825,22 +823,22 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 /*
 rough example of the "cone" made by the 3 dirs checked
 
- B
-  \
-   \
-    >
-      <
-       \
-        \
-B --><-- A
-        /
-       /
-      <
-     >
-    /
-   /
- B
-
+| B
+|  \
+|   \
+|	>
+|  	<
+|   	\
+|		\
+|B --><-- A
+|		/
+|   	/
+|  	<
+| 	>
+|	/
+|   /
+| B
+|
 */
 
 
@@ -852,7 +850,7 @@ B --><-- A
 // eg: center_image(I, 32,32)
 // eg2: center_image(I, 96,96)
 
-/proc/center_image(var/image/I, x_dimension = 0, y_dimension = 0)
+/proc/center_image(image/I, x_dimension = 0, y_dimension = 0)
 	if(!I)
 		return
 
@@ -1010,7 +1008,7 @@ B --><-- A
 
 	return L
 
-/atom/proc/contains(var/atom/A)
+/atom/proc/contains(atom/A)
 	if(!A)
 		return 0
 	for(var/atom/location = A.loc, location, location = location.loc)
@@ -1178,7 +1176,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 	animate(src, transform = M, time = halftime, easing = BOUNCE_EASING)
 	animate(src, transform = OM, time = halftime, easing = BOUNCE_EASING)
 
-/proc/weightclass2text(var/w_class)
+/proc/weightclass2text(w_class)
 	switch(w_class)
 		if(WEIGHT_CLASS_TINY)
 			. = "tiny"
@@ -1198,7 +1196,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 //Version of view() which ignores darkness, because BYOND doesn't have it (I actually suggested it but it was tagged redundant, BUT HEARERS IS A T- /rant).
-/proc/dview(var/range = world.view, var/center, var/invis_flags = 0)
+/proc/dview(range = world.view, center, invis_flags = 0)
 	if(!center)
 		return
 
@@ -1599,7 +1597,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		world.TgsChatBroadcast()
 
 //Checks to see if either the victim has a garlic necklace or garlic in their blood
-/proc/blood_sucking_checks(var/mob/living/carbon/target, check_neck, check_blood)
+/proc/blood_sucking_checks(mob/living/carbon/target, check_neck, check_blood)
 	//Bypass this if the target isnt carbon.
 	if(!iscarbon(target))
 		return TRUE

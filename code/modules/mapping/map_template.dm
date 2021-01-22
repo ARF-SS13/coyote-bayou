@@ -112,17 +112,17 @@
 	loaded++
 
 /**
-  * Proc to trigger a load at a specific area. Calls on_map_loaded(T.z, loaded_bounds) afterwards.
-  *
-  * @params
-  * * turf/T - Turf to load at
-  * * centered - Center at T or load with the bottomright corner being at T
-  * * orientation - SOUTH is default, anything else rotates the map to face it with the point of reference being the map itself is facing south by default. Cardinals only, don't be a 4head and put in multiple flags. It won't work or be pretty if you try.
-  * * annihilate - Should we destroy stuff in our bounds while loading
-  * * force_cache - Should we force the parsed shuttle to cache instead of being GC'd post loading if it wasn't going to be cached by default
-  * * rotate_placement_to_orientation - Has no effect if centered. Should we rotate where we load it around the turf we're loading at? Used for stuff like engine submaps when the station is rotated.
-  *
-  */
+ * Proc to trigger a load at a specific area. Calls on_map_loaded(T.z, loaded_bounds) afterwards.
+ *
+ * @params
+ * * turf/T - Turf to load at
+ * * centered - Center at T or load with the bottomright corner being at T
+ * * orientation - SOUTH is default, anything else rotates the map to face it with the point of reference being the map itself is facing south by default. Cardinals only, don't be a 4head and put in multiple flags. It won't work or be pretty if you try.
+ * * annihilate - Should we destroy stuff in our bounds while loading
+ * * force_cache - Should we force the parsed shuttle to cache instead of being GC'd post loading if it wasn't going to be cached by default
+ * * rotate_placement_to_orientation - Has no effect if centered. Should we rotate where we load it around the turf we're loading at? Used for stuff like engine submaps when the station is rotated.
+ *
+ */
 /datum/map_template/proc/load(turf/T, centered = FALSE, orientation = SOUTH, annihilate = default_annihilate, force_cache = FALSE, rotate_placement_to_orientation = FALSE)
 	var/old_T = T
 	if(centered)

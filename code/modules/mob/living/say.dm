@@ -20,6 +20,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
 
+	// Fallout 13
+	RADIO_KEY_VAULT = RADIO_CHANNEL_VAULT,
+	RADIO_KEY_NCR = RADIO_CHANNEL_NCR,
+	RADIO_KEY_BOS = RADIO_CHANNEL_BOS,
+	RADIO_KEY_ENCLAVE = RADIO_CHANNEL_ENCLAVE,
+	RADIO_KEY_TOWN = RADIO_CHANNEL_TOWN,
+	RADIO_KEY_LEGION = RADIO_CHANNEL_LEGION,
+
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
 	MODE_KEY_DEADMIN = MODE_DEADMIN,
@@ -81,7 +89,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return new_msg
 
-/mob/living/say(message, bubble_type,var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	var/static/list/crit_allowed_modes = list(MODE_WHISPER = TRUE, MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
@@ -204,10 +212,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(radio_return & ITALICS)
 		spans |= SPAN_ITALICS
 	if(radio_return & REDUCE_RANGE)
-		message_range = 1
+		message_range = 3
 	if(radio_return & NOPASS)
 		return 1
-
+/*Optimisation as we don't use space
 	//No screams in space, unless you're next to someone.
 	var/turf/T = get_turf(src)
 	var/datum/gas_mixture/environment = T.return_air()
@@ -217,7 +225,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
-
+*/
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mode)
 
 	if(succumbed)

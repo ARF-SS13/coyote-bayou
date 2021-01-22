@@ -418,7 +418,7 @@
 	clear_conversion	= REACTION_CLEAR_INVERSE
 
 /*
-/datum/chemical_reaction/neurotoxin/FermiFinish(datum/reagents/holder, var/atom/my_atom)
+/datum/chemical_reaction/neurotoxin/FermiFinish(datum/reagents/holder, atom/my_atom)
 	var/datum/reagent/consumable/ethanol/neurotoxin/Nt = locate(/datum/reagent/consumable/ethanol/neurotoxin) in my_atom.reagents.reagent_list
 	var/cached_volume = Nt.volume
 	if(Nt.purity < 0.5)
@@ -426,7 +426,7 @@
 		holder.add_reagent(/datum/reagent/consumable/ethanol/neuroweak, cached_volume)
 */
 
-/datum/chemical_reaction/neurotoxin/FermiExplode(datum/reagents, var/atom/my_atom, volume, temp, pH)//reduced size
+/datum/chemical_reaction/neurotoxin/FermiExplode(datum/reagents, atom/my_atom, volume, temp, pH)//reduced size
 	volume = volume/10
 	..()
 

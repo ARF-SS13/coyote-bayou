@@ -27,14 +27,15 @@ Mayor
 	selection_color = "#d7b088"
 
 	outfit = /datum/outfit/job/den/f13mayor
-	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
@@ -74,7 +75,7 @@ Mayor
 	outfit = /datum/outfit/job/den/f13sheriff
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/den/f13sheriff
 	name = "Sheriff"
@@ -104,10 +105,13 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
 
-/datum/job/den/f13sheriff/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-	H.add_quirk("Lifegiver")
-	H.add_quirk("Self-Aware")
+/datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
 /*--------------------------------------------------------------*/
 
@@ -150,8 +154,11 @@ Mayor
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat)
 
-/datum/job/den/f13deputy/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
+/datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /*--------------------------------------------------------------*/
 
@@ -255,6 +262,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
 
@@ -273,8 +281,8 @@ Mayor
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/den/f13dendoc
-	access = list(ACCESS_BAR, ACCESS_CLONING)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLONING)
+	access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING)
 
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
@@ -326,7 +334,7 @@ Mayor
 
 /datum/outfit/loadout/atompreacher
 	name = "Atom's Devout"
-	l_hand = /obj/item/sledgehammer/atomsjudgement
+	l_hand = /obj/item/twohanded/sledgehammer/atomsjudgement
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/atombeliever=1,
 		/obj/item/clothing/under/f13/atomfaithful=3,
@@ -474,7 +482,7 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
-    /datum/outfit/loadout/frontier,
+	/datum/outfit/loadout/frontier,
 	/datum/outfit/loadout/richmantender,
 	/datum/outfit/loadout/diner)
 
@@ -551,10 +559,10 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/provisioner,
-    /datum/outfit/loadout/bum,
-    /datum/outfit/loadout/properlady,
-    /datum/outfit/loadout/propergent,
-    /datum/outfit/loadout/hombre,
+	/datum/outfit/loadout/bum,
+	/datum/outfit/loadout/properlady,
+	/datum/outfit/loadout/propergent,
+	/datum/outfit/loadout/hombre,
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
@@ -588,7 +596,7 @@ Mayor
 /datum/outfit/loadout/propergent
 	name = "Respectable Gent"
 	head = /obj/item/clothing/head/f13/beaver
-	suit = /obj/item/clothing/suit/fluff/cowboybvest
+	suit = /obj/item/clothing/suit/f13/cowboybvest
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack_contents = list(/obj/item/storage/box/matches, /obj/item/storage/fancy/cigarettes/cigars)
@@ -618,9 +626,9 @@ Mayor
 			/obj/item/kitchen/knife/combat, \
 			/obj/item/gun/ballistic/automatic/pistol/n99, \
 			/obj/item/ammo_box/magazine/m10mm_adv=2)
-/*--------------------------------------------------------------*/
-Detective
-
+/*----------------------------------------------------------------
+--							Detective							--
+----------------------------------------------------------------*/
 /datum/job/wasteland/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
@@ -678,7 +686,7 @@ Detective
 
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
-    /datum/outfit/loadout/loanshark,
+	/datum/outfit/loadout/loanshark,
 	/datum/outfit/loadout/investor,
 	)
 
@@ -744,38 +752,39 @@ Detective
 /*--------------------------------------------------------------*/
 
 /datum/job/den/f13shopkeeper
-    title = "Shopkeeper"
-    flag = F13SHOPKEEPER
-    department_flag = DEN
-    faction = "Town"
-    total_positions = 2
-    spawn_positions = 2
-    supervisors = "law and order"
-    description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
-    selection_color = "#dcba97"
+	title = "Shopkeeper"
+	flag = F13SHOPKEEPER
+	department_flag = DEN
+	faction = "Town"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "law and order"
+	description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
+	selection_color = "#dcba97"
 
-    outfit = /datum/outfit/job/den/f13shopkeeper
-    access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
-    minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	outfit = /datum/outfit/job/den/f13shopkeeper
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 
 /datum/outfit/job/den/f13shopkeeper
-    name = "Shopkeeper"
-    jobtype = /datum/job/den/f13shopkeeper
+	name = "Shopkeeper"
+	jobtype = /datum/job/den/f13shopkeeper
 
-    id = /obj/item/card/id/dogtag/town
-    uniform = /obj/item/clothing/under/f13/roving
-    ears = /obj/item/radio/headset/headset_den
-    backpack = /obj/item/storage/backpack
-    satchel = /obj/item/storage/backpack/satchel
-    duffelbag = /obj/item/storage/backpack/duffelbag
-    gloves = /obj/item/clothing/gloves/fingerless
-    l_pocket = /obj/item/storage/bag/money/small/den
-    r_pocket = /obj/item/flashlight/flare
-    shoes = /obj/item/clothing/shoes/f13/explorer
-    backpack_contents = list()
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/roving
+	ears = /obj/item/radio/headset/headset_den
+	backpack = /obj/item/storage/backpack
+	satchel = /obj/item/storage/backpack/satchel
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	gloves = /obj/item/clothing/gloves/fingerless
+	l_pocket = /obj/item/storage/bag/money/small/den
+	r_pocket = /obj/item/flashlight/flare
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	backpack_contents = list()
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)

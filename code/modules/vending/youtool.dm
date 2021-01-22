@@ -3,17 +3,18 @@
 	desc = "Tools for tools."
 	icon_state = "tool"
 	icon_deny = "tool-deny"
-	products = list(/obj/item/stack/cable_coil/random = 15,
-					/obj/item/crowbar = 10,
-					/obj/item/weldingtool = 6,
-					/obj/item/wirecutters = 10,
-					/obj/item/wrench = 10,
-					/obj/item/analyzer = 10,
-					/obj/item/t_scanner = 10,
-					/obj/item/screwdriver = 10,
-					/obj/item/flashlight/glowstick = 6,
-					/obj/item/flashlight/glowstick/red = 6,
-					/obj/item/flashlight = 7)
+	products = list(/obj/item/stack/cable_coil/random = 10,
+					/obj/item/crowbar = 5,
+					/obj/item/weldingtool = 3,
+					/obj/item/wirecutters = 5,
+					/obj/item/wrench = 5,
+					/obj/item/analyzer = 5,
+					/obj/item/t_scanner = 5,
+					/obj/item/screwdriver = 5,
+					/obj/item/flashlight/glowstick = 3,
+					/obj/item/flashlight/glowstick/red = 3,
+					/obj/item/flashlight = 5,
+					/obj/item/clothing/gloves/color/yellow = 3)
 	contraband = list(/obj/item/weldingtool/largetank = 4,
 					/obj/item/clothing/gloves/color/fyellow = 4,
 					/obj/item/multitool = 2)

@@ -163,11 +163,11 @@
 		examine_list += "[I] has a fine point, and could probably embed in someone if thrown properly!"
 
 /**
-  * checkEmbedProjectile() is what we get when a projectile with a defined shrapnel_type impacts a target.
-  *
-  * If we hit a valid target (carbon or closed turf), we create the shrapnel_type object and immediately call tryEmbed() on it, targeting what we impacted. That will lead
-  *	it to call tryForceEmbed() on its own embed element (it's out of our hands here, our projectile is done), where it will run through all the checks it needs to.
-  */
+ * checkEmbedProjectile() is what we get when a projectile with a defined shrapnel_type impacts a target.
+ *
+ * If we hit a valid target (carbon or closed turf), we create the shrapnel_type object and immediately call tryEmbed() on it, targeting what we impacted. That will lead
+ *	it to call tryForceEmbed() on its own embed element (it's out of our hands here, our projectile is done), where it will run through all the checks it needs to.
+ */
 /datum/element/embed/proc/checkEmbedProjectile(obj/item/projectile/P, atom/movable/firer, atom/hit, angle, hit_zone)
 	if(!iscarbon(hit))
 		Detach(P)
@@ -187,12 +187,12 @@
 	Detach(P)
 
 /**
-  * Arguments:
-  * * I- the item we're trying to insert into the target
-  * * target- what we're trying to shish-kabob, either a bodypart or a carbon
-  * * hit_zone- if our target is a carbon, try to hit them in this zone, if we don't have one, pick a random one. If our target is a bodypart, we already know where we're hitting.
-  * * forced- if we want this to succeed 100%
-  */
+ * Arguments:
+ * * I- the item we're trying to insert into the target
+ * * target- what we're trying to shish-kabob, either a bodypart or a carbon
+ * * hit_zone- if our target is a carbon, try to hit them in this zone, if we don't have one, pick a random one. If our target is a bodypart, we already know where we're hitting.
+ * * forced- if we want this to succeed 100%
+ */
 /datum/element/embed/proc/tryForceEmbed(obj/item/I, atom/target, hit_zone, forced=FALSE)
 	var/obj/item/bodypart/limb
 	var/mob/living/carbon/C

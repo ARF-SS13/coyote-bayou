@@ -2,20 +2,20 @@
 // and similar "stop this attack before it actually impacts the target" as opposed to "defend once it has hit".
 
 /** The actual proc for block checks. DO NOT USE THIS DIRECTLY UNLESS YOU HAVE VERY GOOD REASON TO. To reduce copypaste for differences between handling for real attacks and virtual checks.
-  * Automatically checks all held items for /obj/item/proc/run_block() with the same parameters.
-  * @params
-  * real_attack - If this attack is real. This one is quirky; If it's real, run_block is called. If it's not, check_block is called and none of the regular checks happen, and this is effectively only useful
-  * 	for populating return_list with blocking metadata.
-  * object - Whatever /atom is actually hitting us, in essence. For example, projectile if gun, item if melee, structure/whatever if it's a thrown, etc.
-  * damage - The nominal damage this would do if it was to hit. Obviously doesn't take into effect explosions/magic/similar things.. unless you implement it to raise the value.
-  * attack_text - The text that this attack should show, in the context of something like "[src] blocks [attack_text]!"
-  * attack_type - See __DEFINES/combat.dm - Attack types, to distinguish between, for example, someone throwing an item at us vs bashing us with it.
-  * armour_penetration - 0-100 value of how effectively armor penetrating the attack should be.
-  * attacker - Set to the mob attacking IF KNOWN. Do not expect this to always be set!
-  * def_zone - The zone this'll impact.
-  * return_list - If something wants to grab things from what items/whatever put into list/block_return on obj/item/run_block and the comsig, pass in a list so you can grab anything put in it after block runs.
-  * attack_direction - Direction of the attack. It is highly recommended to put this in, as the automatic guesswork that's done otherwise is quite inaccurate at times.
-  */
+ * Automatically checks all held items for /obj/item/proc/run_block() with the same parameters.
+ * @params
+ * real_attack - If this attack is real. This one is quirky; If it's real, run_block is called. If it's not, check_block is called and none of the regular checks happen, and this is effectively only useful
+ * 	for populating return_list with blocking metadata.
+ * object - Whatever /atom is actually hitting us, in essence. For example, projectile if gun, item if melee, structure/whatever if it's a thrown, etc.
+ * damage - The nominal damage this would do if it was to hit. Obviously doesn't take into effect explosions/magic/similar things.. unless you implement it to raise the value.
+ * attack_text - The text that this attack should show, in the context of something like "[src] blocks [attack_text]!"
+ * attack_type - See __DEFINES/combat.dm - Attack types, to distinguish between, for example, someone throwing an item at us vs bashing us with it.
+ * armour_penetration - 0-100 value of how effectively armor penetrating the attack should be.
+ * attacker - Set to the mob attacking IF KNOWN. Do not expect this to always be set!
+ * def_zone - The zone this'll impact.
+ * return_list - If something wants to grab things from what items/whatever put into list/block_return on obj/item/run_block and the comsig, pass in a list so you can grab anything put in it after block runs.
+ * attack_direction - Direction of the attack. It is highly recommended to put this in, as the automatic guesswork that's done otherwise is quite inaccurate at times.
+ */
 /mob/living/proc/do_run_block(real_attack = TRUE, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/return_list = list(), attack_direction)
 	if(real_attack)
 		. = run_parry(object, damage, attack_text, attack_type, armour_penetration, attacker, def_zone, return_list)			//Parry - Highest priority!
@@ -96,8 +96,8 @@
 // HELPER PROCS
 
 /**
-  * Considers a block return_list and calculates damage to use from that.
-  */
+ * Considers a block return_list and calculates damage to use from that.
+ */
 /proc/block_calculate_resultant_damage(damage, list/block_return)
 	if(!isnull(block_return[BLOCK_RETURN_SET_DAMAGE_TO]))	// higher priority
 		return block_return[BLOCK_RETURN_SET_DAMAGE_TO]

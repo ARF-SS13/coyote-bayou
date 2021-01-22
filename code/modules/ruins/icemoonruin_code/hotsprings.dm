@@ -1,13 +1,13 @@
 GLOBAL_LIST_EMPTY(cursed_minds)
 
 /**
-  * Turns whoever enters into a mob
-  *
-  * If mob is chosen, turns the person into a random animal type
-  * Once the spring is used, it cannot be used by the same mind ever again
-  * After usage, teleports the user back to a random safe turf (so mobs are not killed by ice moon atmosphere)
-  *
-  */
+ * Turns whoever enters into a mob
+ *
+ * If mob is chosen, turns the person into a random animal type
+ * Once the spring is used, it cannot be used by the same mind ever again
+ * After usage, teleports the user back to a random safe turf (so mobs are not killed by ice moon atmosphere)
+ *
+ */
 
 /turf/open/water/cursed_spring
 	baseturfs = /turf/open/water/cursed_spring
@@ -30,8 +30,8 @@ GLOBAL_LIST_EMPTY(cursed_minds)
 	to_chat(L, "<span class='notice'>You blink and find yourself in [get_area_name(T)].</span>")
 
 /**
-  * Deletes minds from the cursed minds list after their deletion
-  *
-  */
+ * Deletes minds from the cursed minds list after their deletion
+ *
+ */
 /turf/open/water/cursed_spring/proc/remove_from_cursed(datum/mind/M)
 	GLOB.cursed_minds -= M

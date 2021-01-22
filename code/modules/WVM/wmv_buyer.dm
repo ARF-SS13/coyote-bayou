@@ -86,14 +86,14 @@
 
 /obj/machinery/mineral/wasteland_trader/attackby(obj/item/I, mob/user, params)
 	add_caps(I)
- //not sure why anything else was here anyways?
+	//not sure why anything else was here anyways?
 
 /* Adding a caps to caps storage and release vending item. */
 /obj/machinery/mineral/wasteland_trader/proc/add_caps(obj/item/I)
 	var/final_value = 0
 	var/value_per = 0
 
-	if(!I?.type in goods_list)
+	if(!(I?.type in goods_list))
 		to_chat(usr, "<span class='notice'>[src] is not buying that!</span>")
 		return
 

@@ -254,6 +254,7 @@
 	gain_text = "<span class='notice'>The mysteries of chemistry are revealed to you.</span>"
 	lose_text = "<span class='danger'>You forget how the periodic table works.</span>"
 	locked = TRUE
+
 /datum/quirk/pa_wear
 	name = "PA Wear"
 	desc = "You've being around the wastes and have learned the importance of defense."
@@ -281,6 +282,19 @@
 	lose_text = "<span class='danger'>You walk with a less sure gait, the ground seeming less firm somehow.</span>"
 	locked = TRUE
 
+/datum/quirk/lifegiver
+	name = "Lifegiver"
+	desc = "You embody wellness! Instantly gain +15 maximum Health"
+	value = 3
+	mob_trait = TRAIT_LIFEGIVER
+	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
+	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
+
+/datum/quirk/lifegiver/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 15
+	mob_tar.health += 15
+
 /datum/quirk/iron_fist
 	name = "Iron Fist"
 	desc = "You have fists of kung-fury! Increases unarmed damage."
@@ -292,5 +306,13 @@
 
 /datum/quirk/iron_fist/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 3
-	mob_tar.dna.species.punchdamagehigh = 10
+	mob_tar.dna.species.punchdamagelow = 4
+	mob_tar.dna.species.punchdamagehigh = 11
+
+/datum/quirk/light_step
+	name = "Light Step"
+	desc = "You walk with a gentle step, making stepping on sharp objects quieter and less painful."
+	value = 1
+	mob_trait = TRAIT_LIGHT_STEP
+	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
+	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"

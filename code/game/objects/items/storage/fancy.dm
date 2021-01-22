@@ -195,6 +195,23 @@
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/beanbag))
 
+/obj/item/storage/box/rubbershot/beanbag/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return
+	var/obj/item/ammo_casing/shotgun/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take a [L] out of the box.</span>")
+		return TRUE
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the box.</span>")
+	return TRUE
+
 /obj/item/storage/box/lethalshot
 	name = "box of buckshot shotgun shots"
 	desc = "A box full of lethal buckshot rounds, designed for riot shotguns."
@@ -244,6 +261,23 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/buckshot))
+
+/obj/item/storage/box/lethalshot/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return
+	var/obj/item/ammo_casing/shotgun/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take a [L] out of the box.</span>")
+		return TRUE
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the box.</span>")
+	return TRUE
 
 /obj/item/storage/box/magnumshot
 	name = "box of magnum buckshot shotgun shots"
@@ -295,6 +329,22 @@
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/magnumshot))
 
+/obj/item/storage/box/magnumshot/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return
+	var/obj/item/ammo_casing/shotgun/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take a [L] out of the box.</span>")
+		return TRUE
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the box.</span>")
+	return TRUE
 
 /obj/item/storage/box/slugshot
 	name = "box of slug shotgun shots"
@@ -344,6 +394,23 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun))
+
+/obj/item/storage/box/slugshot/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return	
+	var/obj/item/ammo_casing/shotgun/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take \a [L] out of the box.</span>")
+		return TRUE
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the box.</span>")
+	return TRUE	
 
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
@@ -395,6 +462,23 @@
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/shotgun/beanbag))
 
+/obj/item/storage/box/beanbag/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return
+	var/obj/item/ammo_casing/shotgun/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take a [L] out of the box.</span>")
+		return TRUE
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the box.</span>")
+	return TRUE	
+
 ////////////
 //CIG PACK//
 ////////////
@@ -443,6 +527,9 @@
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return	
 	var/obj/item/lighter/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)

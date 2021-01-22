@@ -72,7 +72,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	if(icon_state == "honk1" || icon_state == "honk2")
 		var/mob/living/carbon/human/H = usr
 		H.dna.add_mutation(CLOWNMUT)
-		H.dna.add_mutation(SMILE)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/clown_hat(H), SLOT_WEAR_MASK)
 
 	GLOB.bible_icon_state = icon_state
@@ -80,10 +79,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	SSblackbox.record_feedback("text", "religion_book", 1, "[choice]")
 
 /**
-  * Checks if we are allowed to interact with the radial
-  *
-  * Arguements: user The mob interacting with the menu
-  */
+ * Checks if we are allowed to interact with the radial
+ *
+ * Arguements: user The mob interacting with the menu
+ */
 
 /obj/item/storage/book/bible/proc/check_menu(mob/living/carbon/human/user)
 	if(GLOB.bible_icon_state)
