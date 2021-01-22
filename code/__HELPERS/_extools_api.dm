@@ -9,9 +9,13 @@
 
 GLOBAL_LIST_EMPTY(auxtools_initialized)
 
-#define AUXTOOLS_CHECK(LIB)\
-	if (!GLOB.auxtools_initialized[LIB] && fexists(LIB) && findtext(call(LIB,"auxtools_init")(),"SUCCESS"))\
-		GLOB.auxtools_initialized[LIB] = TRUE;\
+/proc/AUXTOOLS_CHECK(LIB)
+	if (!GLOB.auxtools_initialized[LIB] && fexists(LIB))
+		var/result = call(LIB,"auxtools_init")()
+		if(findtext(result,"SUCCESS"))
+			GLOB.auxtools_initialized[LIB] = TRUE
+		else
+			world.log << result
 
 #define AUXTOOLS_SHUTDOWN(LIB)\
 	if (GLOB.auxtools_initialized[LIB] && fexists(LIB))\
