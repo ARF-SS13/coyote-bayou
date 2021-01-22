@@ -126,8 +126,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: 'Putnam3145/auxmos'
-          ref: '38484ddf475be3c02dc3b2524e4a7cafd9bad391'
+          repository: 'DesertRose2/auxmos'
+          ref: 'master'
           path: 'auxmos'
 
       - name: Cache cargo registry
