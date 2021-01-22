@@ -81,19 +81,19 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cargo/registry
-          key: auxmaptick-registry-${{ hashFiles('auxmaptools/Cargo.lock') }}
+          key: auxmaptick-registry-${{ hashFiles('auxmaptick/Cargo.lock') }}
 
       - name: Cache cargo index
         uses: actions/cache@v2
         with:
           path: ~/.cargo/git
-          key: auxmaptick-index-${{ hashFiles('auxmaptools/Cargo.lock') }}
+          key: auxmaptick-index-${{ hashFiles('auxmaptick/Cargo.lock') }}
 
       - name: Cache cargo build
         uses: actions/cache@v2
         with:
-          path: auxmaptools/target
-          key: auxmaptick-build-target-${{ hashFiles('auxmaptools/Cargo.lock') }}
+          path: auxmaptick/target
+          key: auxmaptick-build-target-${{ hashFiles('auxmaptick/Cargo.lock') }}
 
       - name: Install Ubuntu Deps
         run: |
@@ -116,7 +116,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: libauxmaptick
-          path: auxmaptools/target/${{env.target}}/release/libauxmaptick.so
+          path: auxmaptick/target/${{env.target}}/release/libauxmaptick.so
 
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
