@@ -67,33 +67,33 @@ jobs:
 
   auxmaptick:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Build Auxmaptick
+    name: Build Auxtools_tg
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: 'Putnam3145/auxmaptick'
-          ref: '940575c4f02aac7db5f2dfe89feca83566e1538f'
-          path: 'auxmaptick'
+          repository: 'willox/auxtools_tg'
+          ref: '83b317412033f6ac28ac6c1ffbb08ef3d524202e'
+          path: 'auxtools_tg'
 
       - name: Cache cargo registry
         uses: actions/cache@v2
         with:
           path: ~/.cargo/registry
-          key: auxmaptick-registry-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          key: auxtools_tg-registry-${{ hashFiles('auxtools_tg/Cargo.lock') }}
 
       - name: Cache cargo index
         uses: actions/cache@v2
         with:
           path: ~/.cargo/git
-          key: auxmaptick-index-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          key: auxtools_tg-index-${{ hashFiles('auxtools_tg/Cargo.lock') }}
 
       - name: Cache cargo build
         uses: actions/cache@v2
         with:
-          path: auxmaptick/target
-          key: auxmaptick-build-target-${{ hashFiles('auxmaptick/Cargo.lock') }}
+          path: auxtools_tg/target
+          key: auxtools_tg-build-target-${{ hashFiles('auxtools_tg/Cargo.lock') }}
 
       - name: Install Ubuntu Deps
         run: |
@@ -110,13 +110,13 @@ jobs:
 
       - name: Build
         run: |
-          cargo build --manifest-path auxmaptick/Cargo.toml --target=${{env.target}} --release --verbose
+          cargo build --manifest-path auxtools_tg/Cargo.toml --target=${{env.target}} --release --verbose
       
-      - name: Upload libauxmaptick artifact
+      - name: Upload libauxtools_tg artifact
         uses: actions/upload-artifact@v2
         with:
-          name: libauxmaptick
-          path: auxmaptick/target/${{env.target}}/release/libauxmaptick.so
+          name: libauxtools_tg
+          path: auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
   
   auxmos:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -201,7 +201,7 @@ jobs:
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
 
-      - name: Install bsql
+      - name: Install ubuntu dependencies
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
@@ -212,6 +212,9 @@ jobs:
           sudo apt install g++-multilib
           sudo apt install gcc-4.8-multilib
           sudo apt install g++-4.8-multilib
+      
+      - name: Install bsql
+        run: |
           bash tools/ci/build_bsql.sh
 
       - name: Install rust-g
@@ -219,10 +222,10 @@ jobs:
           sudo apt install libssl1.1:i386
           bash tools/ci/install_rust_g.sh
 
-      - name: Download auxmaptick library
+      - name: Download auxtools_tg library
         uses: actions/download-artifact@v2
         with:
-          name: libauxmaptick
+          name: libauxtools_tg
 
       - name: Download libauxmos library
         uses: actions/download-artifact@v2
