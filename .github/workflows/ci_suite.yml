@@ -164,7 +164,7 @@ jobs:
 
       - name: Build
         run: |
-          cargo build --manifest-path auxmos/Cargo.toml --target=${{env.target}} --release --verbose
+          cargo build --manifest-path auxmos/Cargo.toml --target=${{env.target}} --verbose
           ldd auxmos/target/${{env.target}}/release/libauxmos.so
       
       - name: Upload libauxmos artifact
