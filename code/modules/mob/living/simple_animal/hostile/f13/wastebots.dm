@@ -7,7 +7,7 @@
 	icon_dead = "gib7"
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
-	anchored = TRUE //unpullable
+	move_resist = MOVE_FORCE_OVERPOWERING //unpullable
 	health = 160
 	maxHealth = 160
 	healable = 0

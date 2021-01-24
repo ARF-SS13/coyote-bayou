@@ -46,7 +46,7 @@
 /datum/uplink_item/ammo/pistolhp/box
 	name = "Ammo Box - 10mm Hollow Point"
 	desc = "An additional box of 10mm Hollow Point ammo. The box has 20 cases inside, does not come with a magazine."
-	item = /obj/item/ammo_box/c10mm/hp
+	item = /obj/item/ammo_box/c10mm/jhp
 	illegal_tech = FALSE
 
 /datum/uplink_item/ammo/pistolfire
