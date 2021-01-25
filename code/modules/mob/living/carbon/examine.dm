@@ -66,30 +66,36 @@
 	var/temp = getBruteLoss()
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
-			if (temp < 25)
+			if(temp < 25)
 				msg += "[t_He] [t_has] minor bruising.\n"
-			else if (temp < 50)
+			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> bruising!\n"
-			else
+			else if(temp < 180)
 				msg += "<B>[t_He] [t_has] severe bruising!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] extreme bruising!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
-			if (temp < 25)
+			if(temp < 25)
 				msg += "[t_He] [t_has] minor burns.\n"
-			else if (temp < 50)
+			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> burns!\n"
-			else
+			else if(temp < 180)
 				msg += "<B>[t_He] [t_has] severe burns!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] extreme burns!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
 			if(temp < 25)
 				msg += "[t_He] [t_is] slightly deformed.\n"
-			else if (temp < 50)
+			else if(temp < 50)
 				msg += "[t_He] [t_is] <b>moderately</b> deformed!\n"
-			else
+			else if(temp < 180)
 				msg += "<b>[t_He] [t_is] severely deformed!</b>\n"
+			else
+				msg += "<b>[t_He] [t_is] extremely deformed!</b>\n"
 
 	if(HAS_TRAIT(src, TRAIT_DUMB))
 		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
