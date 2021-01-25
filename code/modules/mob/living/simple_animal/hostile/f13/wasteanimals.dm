@@ -37,6 +37,18 @@
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
 
+/mob/living/simple_animal/hostile/cazador/ranged
+	name = "gun cazador"
+	desc = "A mutated insect known for its fast speed, deadly st-HOLY SHIT IT HAS A GUN."
+	ranged = 1
+	retreat_distance = 5
+	minimum_distance = 5
+	casingtype = /obj/item/ammo_casing/c10mm
+	projectilesound = 'sound/weapons/gunshot.ogg'
+	loot = list(/obj/item/gun/ballistic/automatic/pistol)
+	dodging = TRUE
+	rapid_melee = 1
+
 /mob/living/simple_animal/hostile/cazador/playable
 	emote_taunt_sound = null
 	emote_taunt = null
