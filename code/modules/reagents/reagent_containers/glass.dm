@@ -411,16 +411,16 @@
 //Mortar & Pestle
 
 /obj/item/pestle
-	name = "pestle"
+	name = "bone pestle"
 	desc = "An ancient, simple tool used in conjunction with a mortar to grind or juice items."
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "pestle"
-	force = 4
+	icon_state = "bone_pestle"
+	force = 6
 
 /obj/item/reagent_containers/glass/mortar
-	name = "mortar"
+	name = "bone mortar"
 	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
-	icon_state = "mortar"
+	icon_state = "bone_mortar"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
 	item_flags = NO_MAT_REDEMPTION
