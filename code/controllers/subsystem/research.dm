@@ -353,12 +353,21 @@ SUBSYSTEM_DEF(research)
 			if(miner.working)
 				bitcoins = single_server_income.Copy()
 				break			//Just need one to work.
-	if (!isnull(last_income))
-		var/income_time_difference = world.time - last_income
-		science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
-		for(var/i in bitcoins)
-			bitcoins[i] *= income_time_difference / 10
-		science_tech.add_point_list(bitcoins)
+	var/income_time_difference = world.time - last_income
+		
+	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
+	bos_tech.last_bitcoins = bitcoins
+	unknown_tech.last_bitcoins = bitcoins
+	followers_tech.last_bitcoins = bitcoins
+
+	for(var/i in bitcoins)
+		bitcoins[i] *= income_time_difference / 10
+
+	science_tech.add_point_list(bitcoins)
+	bos_tech.add_point_list(bitcoins)
+	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
+	followers_tech.add_point_list(bitcoins)
+
 	last_income = world.time
 
 /datum/controller/subsystem/research/proc/calculate_server_coefficient()	//Diminishing returns.

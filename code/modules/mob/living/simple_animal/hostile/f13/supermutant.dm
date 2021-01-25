@@ -29,7 +29,7 @@
 	melee_damage_lower = 45
 	melee_damage_upper = 55
 	mob_size = MOB_SIZE_LARGE
-	anchored = TRUE //unpullable
+	move_resist = MOVE_FORCE_OVERPOWERING
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	idlesound = list('sound/f13npc/supermutant/idle1.ogg', 'sound/f13npc/supermutant/idle2.ogg', 'sound/f13npc/supermutant/idle3.ogg', 'sound/f13npc/supermutant/idle4.ogg' )
@@ -80,7 +80,7 @@
 	maxHealth = 300
 	health = 300
 	speak_chance = 7 //30 //Oh my god he never shuts up.
-	anchored = TRUE
+	move_resist = MOVE_FORCE_OVERPOWERING
 	mob_size = MOB_SIZE_LARGE
 	speak = list("Hey! These my brahmins!", "And I say, HEY-YEY-AAEYAAA-EYAEYAA! HEY-YEY-AAEYAAA-EYAEYAA! I SAID HEY, what's going on?", "What do you want from my brahmins?!", "Me gonna clean brahmin poop again now!", "I love brahmins, brahmins are good, just poop much!", "Do not speak to my brahmins ever again, you hear?!", "Bad raiders come to steal my brahmins - I crush with shovel!", "Do not come to my brahmins! Do not touch my brahmins! Do not look at my brahmins!", "I'm watching you, and my brahmins watch too!", "Brahmins say moo, and I'm saying - hey, get your ugly face out of my way!", "I... I remember, before the fire... THERE WERE NO BRAHMINS!", "No! No wind brahmin here! Wind brahmin lie!")
 	speak_emote = list("shouts", "yells")

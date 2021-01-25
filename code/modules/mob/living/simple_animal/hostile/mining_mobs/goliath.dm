@@ -52,7 +52,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/goliath/revive(full_heal = 0, admin_revive = 0)
 	if(..())
-		anchored = TRUE
+		move_resist = MOVE_FORCE_OVERPOWERING
 		. = 1
 
 /mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
