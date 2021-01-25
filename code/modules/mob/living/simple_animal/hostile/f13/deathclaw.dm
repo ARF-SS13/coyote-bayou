@@ -10,7 +10,6 @@
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	robust_searching = 1
-	anchored = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
@@ -55,7 +54,6 @@
 	see_in_dark = 8
 	environment_smash = 2 //can smash walls
 	wander = 0
-	anchored = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
