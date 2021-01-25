@@ -197,6 +197,11 @@
 	absorption_rate = 0.15
 	absorption_capacity = 4
 
+/obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
+	..()
+	new /obj/item/stack/medical/gauze(drop_location(), amount)
+	qdel(src)
+
 /obj/item/stack/medical/gauze/adv
 	name = "sterilized medical gauze"
 	singular_name = "sterilized medical gauze"

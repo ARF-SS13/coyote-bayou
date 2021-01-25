@@ -875,3 +875,16 @@
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/cellulose = 1)
 	required_temp = 512
+
+/datum/chemical_reaction/nutracid_reaction
+	name = "Nutracid Nutriment Reaction"
+	id = "nutracid"
+	results = list(/datum/reagent/nutracid = 1)
+	required_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/nutracid = 1)
+
+//why... why doesn't it work for vitamin the top one? who knows, god knows.
+/datum/chemical_reaction/nutracid_reaction_vit
+	name = "Nutracid Vitamin Reaction"
+	id = "nutracid_vit"
+	results = list(/datum/reagent/nutracid = 1)
+	required_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/nutracid = 1)
