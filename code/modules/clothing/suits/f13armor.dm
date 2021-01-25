@@ -186,14 +186,15 @@
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
 	if(src == H.wear_suit) //Suit is already equipped
-		return TRUE
-	if (!HAS_TRAIT(usr, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+		return ..()
+	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return 0
 	if(slot == SLOT_WEAR_SUIT)
 		ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
 		ADD_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
 		return ..()
+	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 //	var/mob/living/carbon/human/H = user
