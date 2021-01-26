@@ -50,6 +50,11 @@
 	desc = "This is the overseers cloak.  Issued by the Vault-tec corporation to easily identify the overseer. This cloak has been passed down from overseer to overseer"
 	icon_state = "overseercloak"
 
+/obj/item/clothing/neck/cloak/bos
+	name = "Brotherhood of Steel cape"
+	desc = "Issued to the stars and higher in the Brotherhood. Style over substance is important."
+	icon_state = "boscape"
+
 /obj/item/clothing/neck/cloak/chiefcloak
 	name = "wayfarer cloak"
 	desc = "A symbol of the authority of the Wayfarer Chief."
