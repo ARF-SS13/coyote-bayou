@@ -27,7 +27,7 @@
 		/obj/item/toy/minimeteor = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/nuke = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/redbutton = ARCADE_WEIGHT_TRICK,
-		/obj/item/toy/spinningtoy = ARCADE_WEIGHT_TRICK,
+//		/obj/item/toy/spinningtoy = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/sword = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/sword/cx = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/talking/AI = ARCADE_WEIGHT_USELESS,
