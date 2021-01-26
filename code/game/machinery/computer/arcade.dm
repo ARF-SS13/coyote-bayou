@@ -52,8 +52,8 @@
 		/obj/item/storage/box/fakesyndiesuit = ARCADE_WEIGHT_TRICK,
 		/obj/item/storage/crayons = ARCADE_WEIGHT_USELESS,
 		/obj/item/coin/antagtoken = ARCADE_WEIGHT_USELESS,
-		/obj/item/stack/tile/fakespace/loaded = ARCADE_WEIGHT_TRICK,
-		/obj/item/stack/tile/fakepit/loaded = ARCADE_WEIGHT_TRICK,
+//		/obj/item/stack/tile/fakespace/loaded = ARCADE_WEIGHT_TRICK,
+//		/obj/item/stack/tile/fakepit/loaded = ARCADE_WEIGHT_TRICK,
 		/obj/item/restraints/handcuffs/fake = ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/gloves/fingerless/pugilist/hug = ARCADE_WEIGHT_TRICK,
 
