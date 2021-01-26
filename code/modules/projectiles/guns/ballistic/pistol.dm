@@ -189,7 +189,7 @@
 	icon_state = "executive"
 	can_suppress = FALSE
 	burst_size = 2
-	extra_penetration = 10 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
+	extra_penetration = 0.2 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "browning hi-power"
@@ -243,7 +243,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0
 	extra_damage = 10 //40 damage, 20 AP- hits like a 7.62 and fires faster
-	extra_penetration = 20
+	extra_penetration = 0.3
 
 /obj/item/gun/ballistic/automatic/pistol/type17
 	name = "type 17"
@@ -270,7 +270,7 @@
 	icon_state = "pistol127_compact"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = -3 //Smaller barrel, smaller bullet velocity
-	extra_penetration = -3 //See above
+	extra_penetration = -0.06 //See above
 	spread = 3
 
 /obj/item/gun/ballistic/automatic/pistol/pistol127/lildevil
@@ -280,7 +280,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 2
 	extra_damage = 8
-	extra_penetration = 8
+	extra_penetration = 0.15
 
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
