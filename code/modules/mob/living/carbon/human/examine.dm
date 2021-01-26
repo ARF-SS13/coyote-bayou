@@ -199,17 +199,21 @@
 				msg += "[t_He] [t_has] minor bruising.\n"
 			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> bruising!\n"
-			else
+			else if(temp < 180)
 				msg += "<B>[t_He] [t_has] severe bruising!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] extreme bruising!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
 			if(temp < 25)
 				msg += "[t_He] [t_has] minor burns.\n"
-			else if (temp < 50)
+			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> burns!\n"
-			else
+			else if(temp < 180)
 				msg += "<B>[t_He] [t_has] severe burns!</B>\n"
+			else
+				msg += "<B>[t_He] [t_has] extreme burns!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
@@ -217,8 +221,11 @@
 				msg += "[t_He] [t_has] minor cellular damage.\n"
 			else if(temp < 50)
 				msg += "[t_He] [t_has] <b>moderate</b> cellular damage!\n"
-			else
+			else if(temp < 180)
 				msg += "<b>[t_He] [t_has] severe cellular damage!</b>\n"
+			else
+				msg += "<b>[t_He] [t_has] extreme cellular damage!</b>\n"
+			
 
 
 	if(fire_stacks > 0)

@@ -123,7 +123,7 @@
 	attack_sound = 'sound/items/welder.ogg'
 	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
-	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet/heap
+	projectiletype = /obj/item/projectile/bullet/a556/ap/simple
 	extra_projectiles = 3
 	ranged = TRUE
 	retreat_distance = 2
@@ -136,8 +136,6 @@
 	idlesound = null
 	death_sound = null
 	attack_sound = null
-
-
 
 /mob/living/simple_animal/hostile/handy/securitron/AttackingTarget()
 	. = ..()
@@ -197,8 +195,6 @@
 	death_sound = null
 	attack_sound = null
 
-
-
 /mob/living/simple_animal/hostile/handy/liberator_yellow/AttackingTarget()
 	. = ..()
 
@@ -229,41 +225,7 @@
 	death_sound = null
 	attack_sound = null
 
-
-
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
-	. = ..()
-
-/mob/living/simple_animal/hostile/handy/securitron
-	name = "Securitron"
-	desc = "A pre-war combat robot based commonly"
-	icon_state = "Securitron"
-	icon_living = "Securitron"
-	icon_dead = "gib7"
-	health = 250
-	maxHealth = 250
-	melee_damage_lower = 72
-	melee_damage_upper = 72
-	attack_sound = 'sound/items/welder.ogg'
-	attack_verb_simple = "shoots a burst of flame at"
-	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
-	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet/heap
-	extra_projectiles = 3
-	ranged = TRUE
-	retreat_distance = 2
-	minimum_distance = 2
-	check_friendly_fire = TRUE
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
-	emote_taunt_sound = null
-	emote_taunt = list("readies its arm gun")
-	aggrosound = null
-	idlesound = null
-	death_sound = null
-	attack_sound = null
-
-
-
-/mob/living/simple_animal/hostile/handy/securitron/AttackingTarget()
 	. = ..()
 
 /mob/living/simple_animal/hostile/handy/protectron
