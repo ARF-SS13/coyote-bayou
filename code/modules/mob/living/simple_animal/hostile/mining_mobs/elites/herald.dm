@@ -215,7 +215,7 @@
 	name ="death bolt"
 	icon_state= "chronobolt"
 	damage = 15
-	armour_penetration = 60
+	armour_penetration = 0.9
 	pixels_per_second = TILES_TO_PIXELS(5)
 	eyeblur = 0
 	damage_type = BRUTE

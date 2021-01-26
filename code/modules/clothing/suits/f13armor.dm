@@ -299,6 +299,14 @@
 	slowdown = 0.16
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
+/obj/item/clothing/suit/armour/f13/power_armor/t60/tesla
+	name = "T-60b tesla armor"
+	desc = "Developed in early 2077 after the Anchorage Reclamation, the T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal. This particular design sports an array of tesla coils."
+	icon_state = "t60powerarmor"
+	item_state = "t60tesla"
+	slowdown = 0.15
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 65, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."

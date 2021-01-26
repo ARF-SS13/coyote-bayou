@@ -529,7 +529,7 @@
 	item_state = "m29peace"
 	icon_state = "m29peace"
 	extra_damage = 15
-	extra_penetration = 5
+	extra_penetration = 0.1
 	fire_delay = 10
 	burst_size = 1
 	var/select = 0
@@ -554,7 +554,7 @@
 			burst_size = 1
 			spread = 0
 			extra_damage = 15 //50 damage, 10 AP - equivalent to a .45-70 Govt round. Strong, but slow.
-			extra_penetration = 5
+			extra_penetration = 0.1
 			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
 	update_icon()
 
@@ -574,7 +574,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	extra_damage = -5 //Smaller barrel, smaller bullet velocity
-	extra_penetration = -5 //See above
+	extra_penetration = -0.1 //See above
 	spread = 10
 
 /obj/item/gun/ballistic/revolver/revolver44
@@ -710,7 +710,7 @@
 	icon_state = "thatgun"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	extra_penetration = 13
+	extra_penetration = 0.25
 
 /obj/item/gun/ballistic/revolver/zhurong
 	name = "Zhu-Rong v417"
@@ -720,5 +720,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/zhurong
 	fire_delay = 0
 	extra_damage = 20
-	extra_penetration = 5
+	extra_penetration = 0.1
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
