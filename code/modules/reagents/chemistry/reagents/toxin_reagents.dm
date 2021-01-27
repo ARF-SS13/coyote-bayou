@@ -940,7 +940,7 @@
 
 /datum/reagent/toxin/acid/fantiacid
 	name = "Fluoroantimonic acid"
-	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
+	description = "Over 1 billion times more powerful than sulfuric acid it ranks as one of the most caustic substances on Earth."
 	color = "#11FF00"
 	toxpwr = 2
 	acidpwr = 150.0
