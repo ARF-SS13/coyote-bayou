@@ -123,8 +123,6 @@
 		pin = new pin(src)
 	if(gun_light)
 		alight = new (src)
-	if(zoomable)
-		azoom = new (src)
 	build_zooming()
 
 /obj/item/gun/Destroy()
@@ -155,13 +153,6 @@
 		. += "It has \a [pin] installed."
 	else
 		. += "It doesn't have a firing pin installed, and won't fire."
-
-/obj/item/gun/equipped(mob/living/user, slot)
-	. = ..()
-	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
-		zoom(user, FALSE)
-		if(zoomable == TRUE)
-			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -530,7 +521,6 @@
 				return
 			to_chat(user, "<span class='notice'>You attach \the [C] to the top of \the [src].</span>")
 			scope = C
-			fire_delay += 3
 			src.zoomable = TRUE
 			src.zoom_amt = 10
 			src.zoom_out_amt = 13
@@ -634,6 +624,29 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/obj/item/gun/pickup(mob/user)
+	..()
+	if(azoom)
+		azoom.Grant(user)
+	if(alight)
+		alight.Grant(user)
+
+/obj/item/gun/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE)
+			azoom.Remove(user)
+
+/obj/item/gun/dropped(mob/user)
+	. = ..()
+	if(zoomed)
+		zoom(user,FALSE)
+	if(azoom)
+		azoom.Remove(user)
+	if(alight)
+		alight.Remove(user)
+
 /*
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -715,20 +728,22 @@
 
 /datum/action/item_action/toggle_scope_zoom
 	name = "Toggle Scope"
+	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
 	var/obj/item/gun/gun = null
 
+/datum/action/item_action/toggle_scope_zoom/Trigger()
+	gun.zoom(owner)
+
 /datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
 	. = ..()
-	if(!.)
-		var/obj/item/gun/G = target
-		G.zoom(owner, FALSE)
+	if(!. && gun)
+		gun.zoom(owner, FALSE)
 
 /datum/action/item_action/toggle_scope_zoom/Remove(mob/living/L)
-	var/obj/item/gun/G = target
-	G.zoom(L, FALSE)
-	return ..()
+	gun.zoom(L, FALSE)
+	..()
 
 /obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
 	if(!(user?.client))

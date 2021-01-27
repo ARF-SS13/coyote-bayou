@@ -21,6 +21,14 @@
 	mix_message = "The mixture dries into a pale blue powder."
 	required_temp = 380
 
+/datum/chemical_reaction/heroin
+	name = "Heroin"
+	id = /datum/reagent/drug/heroin
+	results = list(/datum/reagent/drug/heroin = 6)
+	required_reagents = list(/datum/reagent/medicine/morphine = 1, /datum/reagent/medicine/spaceacillin = 1, /datum/reagent/hydrogen = 1)
+	mix_message = "The mixture dries turns into a pale white powder and then melts into a honey gold liquid."
+	required_temp = 500
+
 /datum/chemical_reaction/methamphetamine
 	name = "methamphetamine"
 	id = /datum/reagent/drug/methamphetamine
