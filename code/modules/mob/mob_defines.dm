@@ -158,6 +158,8 @@
 	var/has_field_of_vision = FALSE
 	var/field_of_vision_type = FOV_90_DEGREES
 
+	///Whether the mob is updating glide size when movespeed updates or not
+	var/updating_glide_size = TRUE
 
 	///////TYPING INDICATORS///////
 	/// Set to true if we want to show typing indicators.

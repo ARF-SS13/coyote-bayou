@@ -206,9 +206,10 @@
 			return FALSE
 	if(A == loc && pulling.density)
 		return FALSE
-	if(!Process_Spacemove(get_dir(pulling.loc, A)))
+	var/move_dir = get_dir(pulling.loc, A)
+	if(!Process_Spacemove(move_dir))
 		return FALSE
-	step(pulling, get_dir(pulling.loc, A))
+	pulling.Move(get_step(pulling.loc, move_dir), move_dir, glide_size)
 	return TRUE
 
 /atom/movable/proc/check_pulling()
@@ -229,6 +230,14 @@
 			return
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
+
+/atom/movable/proc/set_glide_size(target = 8)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_UPDATE_GLIDE_SIZE, target)
+	glide_size = target
+
+	for(var/m in buckled_mobs)
+		var/mob/buckled_mob = m
+		buckled_mob.set_glide_size(target)
 
 /atom/movable/Destroy(force)
 	QDEL_NULL(proximity_monitor)
