@@ -943,7 +943,7 @@
 	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
 	color = "#11FF00"
 	toxpwr = 2
-	acidpwr = 100.0
+	acidpwr = 150.0
 	value = REAGENT_VALUE_COMMON
 
 // ACID II: UNHEEDED WARNINGS
