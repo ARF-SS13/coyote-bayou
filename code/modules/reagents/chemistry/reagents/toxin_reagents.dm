@@ -938,6 +938,14 @@
 	acidpwr = 42.0
 	value = REAGENT_VALUE_COMMON
 
+/datum/reagent/toxin/acid/fantiacid
+	name = "Fluoroantimonic acid"
+	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
+	color = "#11FF00"
+	toxpwr = 2
+	acidpwr = 100.0
+	value = REAGENT_VALUE_COMMON
+
 // ACID II: UNHEEDED WARNINGS
 /datum/reagent/toxin/acid/fluacid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -949,6 +957,11 @@
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/M)
 	M.adjustFireLoss(current_cycle/10, 0)
 	. = 1
+	..()
+
+/datum/reagent/toxin/acid/fantiacid/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(current_cycle/10, 0)
+	. = 8
 	..()
 
 /datum/reagent/toxin/delayed
