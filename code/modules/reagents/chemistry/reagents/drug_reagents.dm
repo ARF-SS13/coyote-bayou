@@ -155,6 +155,50 @@
 	..()
 	. = 1
 
+/datum/reagent/drug/heroin
+	name = "Heroin"
+	description = "Makes life feel like a beautiful dream."
+	reagent_state = LIQUID
+	color = "#c7AB00"
+	overdose_threshold = 31
+	addiction_threshold = 20
+	pH = 9
+	value = REAGENT_VALUE_UNCOMMON
+
+
+/datum/reagent/drug/heroin/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("You feel like you're floating.", "Life feels like a beautiful dream.", "Everything seems right with the world.")
+	if(prob(5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+		M.emote(pick("twitch","drool","moan"))
+	..()
+
+/datum/reagent/drug/heroin/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
+	M.adjustToxLoss(0.25*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/drug/heroin/addiction_act_stage1(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	M.adjustToxLoss(2*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/drug/heroin/addiction_act_stage2(mob/living/M)
+	if(prob(25))
+		to_chat(M, "<span class='danger'>Life feels so hard</span>")
+	M.adjustToxLoss(3*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/drug/heroin/addiction_act_stage3(mob/living/M)
+	if(prob(25))
+		to_chat(M, "<span class='danger'>YOU CAN'T TAKE THIS ANYMORE!!</span>")
+	M.adjustToxLoss(4*REM, 0)
+	..()
+	. = 1
+
 /datum/reagent/drug/methamphetamine
 	name = "Methamphetamine"
 	description = "Reduces stun times by about 300%, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
