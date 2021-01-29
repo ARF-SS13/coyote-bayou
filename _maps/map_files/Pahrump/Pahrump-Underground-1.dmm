@@ -103,6 +103,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
+"at" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/wood,
+/area/f13/tunnel)
 "au" = (
 /obj/machinery/telecomms/server/presets/ncr,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
@@ -2385,6 +2391,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
+/area/f13/tunnel)
+"hZ" = (
+/obj/machinery/door/unpowered/wooddoor{
+	autoclose = 1;
+	name = "Public Forge";
+	req_one_access_txt = "25"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ia" = (
 /obj/structure/decoration/vent/rusty,
@@ -28432,7 +28446,7 @@ qT
 rA
 mH
 sI
-sI
+at
 mH
 Ms
 BR
@@ -28684,7 +28698,7 @@ Fz
 EL
 bD
 ps
-KT
+hZ
 qT
 qT
 qT
