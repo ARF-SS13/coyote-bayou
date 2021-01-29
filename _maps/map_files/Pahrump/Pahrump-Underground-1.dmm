@@ -1807,6 +1807,14 @@
 /obj/structure/rack,
 /turf/open/floor/plating/f13,
 /area/f13/followers)
+"gm" = (
+/obj/machinery/door/unpowered/wooddoor{
+	autoclose = 1;
+	name = "Town Forge";
+	req_one_access_txt = "25"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "gn" = (
 /obj/structure/closet/crate/secure/weapon{
 	anchored = 1
@@ -2996,14 +3004,6 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
-/area/f13/tunnel)
-"ka" = (
-/obj/machinery/door/unpowered/wooddoor{
-	autoclose = 1;
-	name = "Public Forge";
-	req_one_access_txt = "25"
-	},
-/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "kb" = (
 /obj/item/pet_carrier,
@@ -11756,6 +11756,12 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"Nx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/wood,
+/area/f13/tunnel)
 "Ny" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/brotherhood)
@@ -13382,12 +13388,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"SI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/obj/item/stack/sheet/metal/fifty,
-/turf/open/floor/wood,
-/area/f13/tunnel)
 "SJ" = (
 /obj/machinery/light{
 	dir = 8
@@ -28446,7 +28446,7 @@ qT
 rA
 mH
 sI
-SI
+Nx
 mH
 Ms
 BR
@@ -28698,7 +28698,7 @@ Fz
 EL
 bD
 ps
-ka
+gm
 qT
 qT
 qT
