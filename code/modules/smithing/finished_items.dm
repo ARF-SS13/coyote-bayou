@@ -244,7 +244,7 @@
 	icon_state = "sabre"
 	sharpness = SHARP_EDGED
 	overlay_state = "sabrehilt"
-	armour_penetration = 15
+	armour_penetration = 0.3
 	force = 9
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
@@ -257,7 +257,7 @@
 	overlay_state = "rapierhilt"
 	force = 6 //less force, stronger parry
 	sharpness = SHARP_POINTY
-	armour_penetration = 30
+	armour_penetration = 0.6
 	block_parry_data = /datum/block_parry_data/smithrapier
 
 /datum/block_parry_data/smithrapier //parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.

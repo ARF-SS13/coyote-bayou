@@ -2,12 +2,22 @@
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration, penetrated_text = "Your armor was penetrated!", silent=FALSE)
 	var/armor = getarmor(def_zone, attack_flag)
 
-	if(silent)
-		return max(0, armor - armour_penetration)
+	if(silent && armor > 0)
+		if(armour_penetration > 1)
+			armour_penetration = 1//Penetrating more than 100% of armour is a bit funky, let's just cap it -- DR2 LINEARMOR
+		if(armor >= 100)//The formula doesn't work for armour values 100 or more and dividing by zero is not fun -- DR2 LINEARMOR
+			return max(0, armor*(1-armour_penetration))
+		if(armor < 100)//Formula turns armor in to linearmor, reduces it by AP%, turns it back into armor -- DR2 LINEARMOR
+			return max(0, (100*(armor/(-armor+100)*(1-armour_penetration)))/((armor/(-armor+100)*(1-armour_penetration))+1))//This might be excessive brackets but I'm taking no chances
 
 	//the if "armor" check is because this is used for everything on /living, including humans
-	if(armor && armour_penetration)
-		armor = max(0, armor - armour_penetration)
+	if(armor > 0 && armour_penetration)
+		if(armour_penetration > 1)
+			armour_penetration = 1
+		if(armor >= 100)
+			armor = max(0, armor*(1-armour_penetration))
+		if(armor < 100)
+			armor = max(0, (100*(armor/(-armor+100)*(1-armour_penetration)))/((armor/(-armor+100)*(1-armour_penetration))+1))
 		if(penetrated_text)
 			to_chat(src, "<span class='danger'>[penetrated_text]</span>")
 	else if(armor >= 100)

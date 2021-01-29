@@ -59,7 +59,7 @@
 	burst_size = 3
 	fire_delay = 2
 	burst_shot_delay = 2
-	extra_penetration = 5
+	extra_penetration = 0.1
 	extra_damage = 5
 
 /obj/item/gun/ballistic/automatic/greasegun/mid/enable_burst()
@@ -156,7 +156,7 @@
 	fire_delay = 2
 	burst_shot_delay = 2
 	extra_damage = 6
-	extra_penetration = 6
+	extra_penetration = 0.12
 
 /obj/item/gun/ballistic/automatic/smg10mm/high/enable_burst()
 	. = ..()
@@ -251,7 +251,7 @@
 /obj/item/gun/ballistic/automatic/pps/high
 	name = "advanced ppsh41"
 	extra_damage = 0
-	extra_penetration = 5
+	extra_penetration = 0.1
 	burst_shot_delay = 1.5
 
 /obj/item/gun/ballistic/automatic/pps/high/enable_burst()
@@ -370,7 +370,7 @@
 	name = "advanced uzi"
 	fire_delay = 3
 	extra_damage = 5
-	extra_penetration = 5
+	extra_penetration = 0.1
 
 /obj/item/gun/ballistic/automatic/mini_uzi/high/enable_burst()
 	. = ..()
@@ -493,7 +493,7 @@
 	name = "advanced r91 assault rifle"
 	fire_delay = 3
 	extra_damage = 6
-	extra_penetration = 6
+	extra_penetration = 0.12
 	burst_shot_delay = 2
 	burst_size = 3
 
@@ -561,7 +561,7 @@
 	randomspread = 0
 	fire_delay = 3
 	extra_damage = 10
-	extra_penetration = 10
+	extra_penetration = 0.2
 	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/automatic/service/high/attackby(obj/item/W, mob/user, params)
@@ -641,7 +641,7 @@
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high
 	name = "advanced colt rangemaster"
 	fire_delay = 4
-	extra_penetration = 7
+	extra_penetration = 0.14
 	extra_damage = 7
 
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high/attackby(obj/item/W, mob/user, params)
