@@ -72,6 +72,15 @@
 	projectiletype = /obj/item/projectile/bullet/c9mm
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 
+/mob/living/simple_animal/hostile/raider/legendary
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/kitchen/knife/combat/survival, /obj/item/reagent_containers/food/snacks/kebab/human)
+	name = "Legendary Raider"
+	desc = "Another murderer churned out by the wastes - this one seems a bit faster than the average..."
+	color = "#FFFF00"
+	maxHealth = 450
+	health = 450
+	speed = 1.2
+
 /mob/living/simple_animal/hostile/raider/ranged/legendary
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes, wielding a decent pistol and looking very strong"
