@@ -29,7 +29,8 @@
 
 /obj/effect/decal/remains/examine_more()
 	if(LAZYLEN(debris_result))
-		. += SPAN_NOTICE("You think you can see some [initial(pick(debris_result).name)] in it.")
+		var/obj/item/show = pick(debris_result)
+		. += SPAN_NOTICE("You think you can see some [initial(show.name)] in it.")
 	if(drop_amount && (drop_amount <= initial(drop_amount)))
 		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
 	. = ..()
