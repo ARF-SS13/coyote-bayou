@@ -731,17 +731,19 @@
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	var/obj/item/gun/gun = null
 
 /datum/action/item_action/toggle_scope_zoom/Trigger()
+	var/obj/item/gun/gun = target
 	gun.zoom(owner)
 
 /datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
 	. = ..()
-	if(!. && gun)
+	if(!. && target)
+		var/obj/item/gun/gun = target
 		gun.zoom(owner, FALSE)
 
 /datum/action/item_action/toggle_scope_zoom/Remove(mob/living/L)
+	var/obj/item/gun/gun = target
 	gun.zoom(L, FALSE)
 	..()
 
@@ -808,8 +810,7 @@
 		return
 
 	if(zoomable)
-		azoom = new()
-		azoom.gun = src
+		azoom = new(src)
 
 /obj/item/gun/handle_atom_del(atom/A)
 	if(A == chambered)

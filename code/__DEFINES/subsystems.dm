@@ -153,7 +153,7 @@
 
 // |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
 #define COMPILE_OVERLAYS(A)\
-	if (TRUE) {\
+	do {\
 		var/list/ad = A.add_overlays;\
 		var/list/rm = A.remove_overlays;\
 		if(LAZYLEN(rm)){\
@@ -165,4 +165,4 @@
 			A.add_overlays = null;\
 		}\
 		A.flags_1 &= ~OVERLAY_QUEUED_1;\
-	}
+	} while (FALSE)
