@@ -27,7 +27,7 @@
 	drop_amount--
 	return new debris_result (get_turf(src))
 
-/obj/effect/decal/remains/proc/examine_more()
+/obj/effect/decal/remains/examine_more()
 	if(LAZYLEN(debris_result))
 		. += SPAN_NOTICE("You think you can see some [initial(pick(debris_result).name)] in it.")
 	if(drop_amount && (drop_amount <= initial(drop_amount)))
