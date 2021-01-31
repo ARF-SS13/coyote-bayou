@@ -19,7 +19,7 @@
 			break
 	return pseudo_z_axis
 
-/mob/living/Move(atom/newloc, direct)
+/mob/living/Move(atom/newloc, direct, glide_size_override)
 	. = ..()
 	if(.)
 		pseudo_z_axis = newloc.get_fake_z()

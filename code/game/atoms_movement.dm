@@ -5,7 +5,7 @@
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion
 // All this work to prevent a second bump
-/atom/movable/Move(atom/newloc, direct=0)
+/atom/movable/Move(atom/newloc, direct=0, glide_size_override = 0)
 	set waitfor = FALSE			//n o
 	. = FALSE
 	if(!newloc || newloc == loc)
@@ -52,7 +52,7 @@
 //
 ////////////////////////////////////////
 
-/atom/movable/Move(atom/newloc, direct)
+/atom/movable/Move(atom/newloc, direct, glide_size_override = 0)
 	set waitfor = FALSE			//n o
 	var/atom/movable/pullee = pulling
 	var/turf/T = loc
@@ -61,6 +61,9 @@
 	if(!loc || !newloc)
 		return FALSE
 	var/atom/oldloc = loc
+	//Early override for some cases like diagonal movement
+	if(glide_size_override)
+		set_glide_size(glide_size_override)
 
 	if(loc != newloc)
 		if (!(direct & (direct - 1))) //Cardinal move
@@ -127,7 +130,7 @@
 		last_move = direct
 		setDir(direct)
 
-		if(has_buckled_mobs() && !handle_buckled_mob_movement(loc,direct)) //movement failed due to buckled mob(s)
+		if(has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
 			return FALSE
 
 		if(pulling && pulling == pullee && pulling != moving_from_pull) //we were pulling a thing and didn't lose it during our move.
@@ -138,14 +141,19 @@
 				//puller and pullee more than one tile away or in diagonal position
 				if(get_dist(src, pulling) > 1 || (moving_diagonally != SECOND_DIAG_STEP && ((pull_dir - 1) & pull_dir)))
 					pulling.moving_from_pull = src
-					pulling.Move(T, get_dir(pulling, T)) //the pullee tries to reach our previous position
+					pulling.Move(T, get_dir(pulling, T), glide_size) //the pullee tries to reach our previous position
 					pulling.moving_from_pull = null
 		Moved(oldloc, direct)
 
-/atom/movable/proc/handle_buckled_mob_movement(newloc,direct)
+	//glide_size strangely enough can change mid movement animation and update correctly while the animation is playing
+	//This means that if you don't override it late like this, it will just be set back by the movement update that's called when you move turfs.
+	if(glide_size_override)
+		set_glide_size(glide_size_override)
+
+/atom/movable/proc/handle_buckled_mob_movement(newloc, direct, glide_size_override)
 	for(var/m in buckled_mobs)
 		var/mob/living/buckled_mob = m
-		if(!buckled_mob.Move(newloc, direct))
+		if(!buckled_mob.Move(newloc, direct, glide_size_override))
 			forceMove(buckled_mob.loc)
 			last_move = buckled_mob.last_move
 			inertia_dir = last_move

@@ -58,16 +58,16 @@
 	user.last_action = world.time
 	user.newtonian_move(get_dir(A, user))
 	var/turf/T = get_turf(src)
-	if(reagents.has_reagent(/datum/reagent/toxin/acid))
-		message_admins("[ADMIN_LOOKUPFLW(user)] fired sulphuric acid from \a [src] at [ADMIN_VERBOSEJMP(T)].")
+	if(reagents.has_reagent(/datum/reagent/toxin/acid))		
 		log_game("[key_name(user)] fired sulphuric acid from \a [src] at [AREACOORD(T)].")
 	if(reagents.has_reagent(/datum/reagent/toxin/acid/fluacid))
-		message_admins("[ADMIN_LOOKUPFLW(user)] fired Fluacid from \a [src] at [ADMIN_VERBOSEJMP(T)].")
 		log_game("[key_name(user)] fired Fluacid from \a [src] at [AREACOORD(T)].")
 	if(reagents.has_reagent(/datum/reagent/lube))
 		message_admins("[ADMIN_LOOKUPFLW(user)] fired Space lube from \a [src] at [ADMIN_VERBOSEJMP(T)].")
 		log_game("[key_name(user)] fired Space lube from \a [src] at [AREACOORD(T)].")
-
+	if(reagents.has_reagent(/datum/reagent/toxin/acid/fantiacid))
+		message_admins("[ADMIN_LOOKUPFLW(user)] fired fluoroantimonic acid from \a [src] at [ADMIN_VERBOSEJMP(T)].")
+		log_game("[key_name(user)] fired fluoroantimonic acid from \a [src] at [AREACOORD(T)].")
 /obj/item/reagent_containers/spray/proc/spray(atom/A)
 	if((last_spray + spray_cooldown) > world.time)
 		return
