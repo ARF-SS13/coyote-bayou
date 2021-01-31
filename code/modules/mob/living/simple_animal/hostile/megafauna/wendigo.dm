@@ -16,7 +16,7 @@ Difficulty: Hard
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	weather_immunities = list("snow")
 	speak_emote = list("roars")
-	armour_penetration = 40
+	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 40
 	vision_range = 9

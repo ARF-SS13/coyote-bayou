@@ -6,7 +6,7 @@
 	damage = 70
 	knockdown = 100
 	dismemberment = 50
-	armour_penetration = 50
+	armour_penetration = 0.85
 	zone_accuracy_factor = 100		//guarunteed 100%
 	var/breakthings = TRUE
 
@@ -48,11 +48,11 @@
 
 /obj/item/projectile/bullet/a50MG
 	damage = 60
-	armour_penetration = 60
+	armour_penetration = 0.9
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = 40
-	armour_penetration = 20
+	armour_penetration = 0.5
 	var/fire_stacks = 4
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -69,7 +69,7 @@
 
 /obj/item/projectile/bullet/a50MG/explosive
 	damage = 30
-	armour_penetration = 0
+	armour_penetration = 0.6
 
 /obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
