@@ -492,10 +492,11 @@
 			var/datum/outfit/O = new D
 			for(var/itemtype in O.get_all_possible_item_paths())
 				var/obj/item/I = itemtype
-				if(!istype(I))
+				if(!ispath(itemtype, /obj/item))
+					world.log << "NON-ITEM \"[itemtype]\" IN [O.type] OF [j]"
 					continue
 				if(isnull(initial(I.icon)))
-					world.log << "MISSING ICON FOR [initial(I.name)] IN [j]"
+					world.log << "MISSING ICON FOR [initial(I.name)] IN [O.type] OF [j]"
 					continue
 				if(isnull(initial(I.icon_state)))
 					world.log << "MISSING ICON STATE FOR [itemtype]"
