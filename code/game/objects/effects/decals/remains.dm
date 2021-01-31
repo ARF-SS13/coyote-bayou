@@ -2,7 +2,7 @@
 	name = "remains"
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
-	debris_result = /obj/item/stack/sheet/bone
+	var/list/obj/item/debris_result = list(/obj/item/stack/sheet/bone)
 	var/drop_amount = 1
 
 /obj/effect/decal/remains/acid_act()
@@ -25,12 +25,14 @@
 		qdel(src)
 		return
 	drop_amount--
-	return new debris_result (get_turf(src), 1)
+	return new debris_result (get_turf(src))
 
-/obj/effect/decal/remains/proc/examine()
-	. = ..()
+/obj/effect/decal/remains/proc/examine_more()
+	if(LAZYLEN(debris_result))
+		. += SPAN_NOTICE("You think you can see some [initial(pick(debris_result).name)] in it.")
 	if(drop_amount && (drop_amount <= initial(drop_amount)))
-		. += SPAN_NOTICE("It looks like someone has already picked through it.")
+		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
+	. = ..()
 
 /obj/effect/decal/remains/human
 	desc = "They look like human remains. They have a strange aura about them."
@@ -53,7 +55,8 @@
 	desc = "They look like the remains of something mechanical. They have a strange aura about them."
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "remainsrobot"
-	drop_amount = 0
+	debris_result = list(/obj/item/stack/sheet/metal, /obj/item/stack/cable_coil, /obj/item/stack/rods)
+	drop_amount = 2
 
 /obj/effect/decal/cleanable/robot_debris/old
 	name = "dusty robot debris"
