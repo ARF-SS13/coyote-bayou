@@ -29,7 +29,7 @@ Difficulty: Medium
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	speak_emote = list("echoes")
-	armour_penetration = 50
+	armour_penetration = 0.8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	speed = 1
@@ -49,7 +49,7 @@ Difficulty: Medium
 	vision_range = 10
 	wander = FALSE
 	elimination = 1
-	appearance_flags = 0
+	appearance_flags = LONG_GLIDE
 	mouse_opacity = MOUSE_OPACITY_ICON
 	wound_bonus = -40
 	bare_wound_bonus = 20

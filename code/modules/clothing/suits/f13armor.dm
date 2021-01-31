@@ -186,14 +186,15 @@
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
 	if(src == H.wear_suit) //Suit is already equipped
-		return TRUE
-	if (!HAS_TRAIT(usr, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+		return ..()
+	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return 0
 	if(slot == SLOT_WEAR_SUIT)
 		ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
 		ADD_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
 		return ..()
+	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 //	var/mob/living/carbon/human/H = user
@@ -297,6 +298,14 @@
 	item_state = "t60powerarmor"
 	slowdown = 0.16
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 60, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+
+/obj/item/clothing/suit/armour/f13/power_armor/t60/tesla
+	name = "T-60b tesla armor"
+	desc = "Developed in early 2077 after the Anchorage Reclamation, the T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal. This particular design sports an array of tesla coils."
+	icon_state = "t60powerarmor"
+	item_state = "t60tesla"
+	slowdown = 0.15
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 65, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"

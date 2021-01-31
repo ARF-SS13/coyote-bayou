@@ -10,7 +10,6 @@
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	robust_searching = 1
-	anchored = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
@@ -28,7 +27,7 @@
 	maxHealth = 550
 	health = 550
 	obj_damage = 200
-	armour_penetration = 40
+	armour_penetration = 0.7
 	melee_damage_lower = 60
 	melee_damage_upper = 65
 	attack_verb_simple = "claws"
@@ -55,7 +54,6 @@
 	see_in_dark = 8
 	environment_smash = 2 //can smash walls
 	wander = 0
-	anchored = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
@@ -66,7 +64,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 76
 	melee_damage_upper = 78
-	armour_penetration = 45
+	armour_penetration = 0.75
 	color = rgb(95,104,94)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
@@ -80,7 +78,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 80
 	melee_damage_upper = 85
-	armour_penetration = 65
+	armour_penetration = 0.85
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
 	var/turf/T = get_turf(src)

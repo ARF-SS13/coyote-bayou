@@ -33,6 +33,13 @@
 	required_reagents = list(/datum/reagent/toxin/acid = 1, /datum/reagent/fluorine = 1, /datum/reagent/hydrogen = 1, /datum/reagent/potassium = 1)
 	required_temp = 380
 
+/datum/chemical_reaction/fantiacid
+	name = "Fluoroantimonic acid"
+	id = /datum/reagent/toxin/acid/fantiacid
+	results = list(/datum/reagent/toxin/acid/fantiacid = 1)
+	required_reagents = list(/datum/reagent/toxin/acid/fluacid = 30, /datum/reagent/fluorine = 30, /datum/reagent/hydrogen = 30)
+	required_temp = 580
+
 /datum/chemical_reaction/sulfonal
 	name = "sulfonal"
 	id = /datum/reagent/toxin/sulfonal
