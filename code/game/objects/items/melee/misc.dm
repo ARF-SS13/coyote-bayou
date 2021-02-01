@@ -63,7 +63,7 @@
 	force = 18
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY
-	armour_penetration = 0.95
+	armour_penetration = 75
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -164,7 +164,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 15
 	throwforce = 25
-	armour_penetration = 1
+	armour_penetration = 200 //Apparently this gives it the ability to pierce block
 	flags_1 = CONDUCT_1
 	obj_flags = UNIQUE_RENAME
 	w_class = WEIGHT_CLASS_BULKY
@@ -485,7 +485,7 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_BULKY
 	force = 0.001
-	armour_penetration = 1
+	armour_penetration = 1000
 	var/obj/machinery/power/supermatter_crystal/shard
 	var/balanced = 1
 	force_string = "INFINITE"
@@ -705,7 +705,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 8
 	block_chance = 10
-	armour_penetration = 1
+	armour_penetration = 50
 	attack_verb = list("smacked", "struck", "cracked", "beaten")
 	var/overlay_state = "mace_handle"
 	var/mutable_appearance/overlay

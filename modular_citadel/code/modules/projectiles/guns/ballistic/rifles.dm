@@ -88,13 +88,13 @@
 /obj/item/projectile/bullet/cflechetteap	//shreds armor
 	name = "flechette (armor piercing)"
 	damage = 8
-	armour_penetration = 0.95
+	armour_penetration = 80
 
 /obj/item/projectile/bullet/cflechettes		//shreds flesh and forces bleeding
 	name = "flechette (serrated)"
 	damage = 15
 	dismemberment = 10
-	armour_penetration = -2
+	armour_penetration = -80
 
 /obj/item/projectile/bullet/cflechettes/on_hit(atom/target, blocked = FALSE)
 	if((blocked != 100) && iscarbon(target))

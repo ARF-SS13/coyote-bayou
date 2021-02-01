@@ -14,7 +14,7 @@
 	throwforce = 0 //haha yes lets be safe about this
 	throw_range = 0
 	throw_speed = 0
-	armour_penetration = 0.5
+	armour_penetration = 20
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED

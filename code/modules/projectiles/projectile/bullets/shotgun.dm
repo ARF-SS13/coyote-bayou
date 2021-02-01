@@ -2,7 +2,7 @@
 	name = "12g shotgun slug"
 	damage = 50
 	sharpness = SHARP_POINTY
-	armour_penetration = 0.33
+	armour_penetration = 13
 	wound_bonus = 26
 	bare_wound_bonus = -26
 
@@ -145,6 +145,6 @@
 /obj/item/projectile/bullet/pellet/magnum_buckshot
 	name = "magnum buckshot pellet"
 	damage = 11.5
-	armour_penetration = 0.15
+	armour_penetration = 7
 	wound_bonus = 10
 	bare_wound_bonus = 10

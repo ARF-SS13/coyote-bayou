@@ -14,7 +14,7 @@
 	icon_state= "84mm-hedp"
 	damage = 80
 	var/anti_armour_damage = 200
-	armour_penetration = 1
+	armour_penetration = 100
 	dismemberment = 100
 	ricochets_max = 0
 

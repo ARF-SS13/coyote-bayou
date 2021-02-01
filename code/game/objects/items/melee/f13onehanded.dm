@@ -139,7 +139,7 @@
 	force = 35
 	throwforce = 25
 	block_chance = 10
-	armour_penetration = 0.1
+	armour_penetration = 5
 	sharpness = SHARP_NONE
 
 /obj/item/claymore/machete/warclub/Initialize()

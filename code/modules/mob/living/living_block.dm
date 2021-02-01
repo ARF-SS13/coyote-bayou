@@ -33,7 +33,7 @@
 	if(real_attack)
 		for(var/obj/item/I in tocheck)
 			// i don't like this too
-			var/final_block_chance = I.block_chance - (clamp(((armour_penetration*50)-(I.armour_penetration*50))/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example --- DR AP overhaul, multiplied AP values by 50; bandaid fix.
+			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
 			var/results
 			if(I == active_block_item)
 				results = I.active_block(src, object, damage, attack_text, attack_type, armour_penetration, attacker, def_zone, final_block_chance, return_list, attack_direction)

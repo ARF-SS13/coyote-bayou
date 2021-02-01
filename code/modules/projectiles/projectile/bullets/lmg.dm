@@ -26,19 +26,19 @@
 /obj/item/projectile/bullet/mm195x129
 	name = "1.95x129mm bullet"
 	damage = 40
-	armour_penetration = 0.1
+	armour_penetration = 5
 	wound_bonus = -50
 	wound_falloff_tile = 0
 
 /obj/item/projectile/bullet/mm195x129_ap
 	name = "1.95x129mm armor-piercing bullet"
 	damage = 40
-	armour_penetration = 1
+	armour_penetration = 75
 
 /obj/item/projectile/bullet/mm195x129_hp
 	name = "1.95x129mm hollow-point bullet"
 	damage = 50
-	armour_penetration = -2
+	armour_penetration = -60
 	sharpness = SHARP_EDGED
 	wound_bonus = -40
 	bare_wound_bonus = 30

@@ -530,7 +530,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
 	fire_delay = 5
 	extra_damage = 20 //60 damage- hits as hard as an AMR!
-	extra_penetration = 0.2
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/remington/scoped/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -637,7 +637,7 @@
 	weapon_weight = WEAPON_HEAVY
 	can_scope = TRUE
 	extra_damage = 10
-	extra_penetration = 0.2
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/kar98k/scoped
 	name = "\improper scoped karabiner 98k"

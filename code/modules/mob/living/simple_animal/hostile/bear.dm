@@ -74,7 +74,7 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 20
 	wound_bonus = 0
-	armour_penetration = 0.4
+	armour_penetration = 20
 	health = 120
 	maxHealth = 120
 	armored = TRUE
@@ -101,7 +101,7 @@
 		A.armored = TRUE
 		A.maxHealth += 60
 		A.health += 60
-		A.armour_penetration += 0.4
+		A.armour_penetration += 20
 		A.melee_damage_lower += 3
 		A.melee_damage_upper += 5
 		A.wound_bonus += 5

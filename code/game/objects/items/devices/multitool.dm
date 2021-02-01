@@ -37,7 +37,7 @@
 	desc = "Used for pulsing wires to test which to cut. Also emits microwaves to fry some brains!"
 	damtype = BRAIN
 	force = 18
-	armour_penetration = 0.65
+	armour_penetration = 35
 	hitsound = 'sound/effects/sparks4.ogg'
 	var/chaplain_spawnable = TRUE
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON

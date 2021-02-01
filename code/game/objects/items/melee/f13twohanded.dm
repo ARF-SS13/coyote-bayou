@@ -239,7 +239,7 @@
 	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 0.24				//Enhanced armor piercing
+	armour_penetration = 12				//Enhanced armor piercing
 	custom_materials = null
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
@@ -254,7 +254,7 @@
 	name = "deathclaw spear"
 	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	force = 20
-	armour_penetration = 0.3
+	armour_penetration = 15
 	icon_state = "clawspear0"
 	icon_prefix = "clawspear"
 
@@ -268,7 +268,7 @@
 	name = "ultracite glaive"
 	desc = "An ultracite enhanced metal glaive that can be wielded."
 	force = 30
-	armour_penetration = 0.1
+	armour_penetration = 5
 	icon_prefix = "ultraglaive"
 
 /obj/item/twohanded/spear/ultra/Initialize()
@@ -488,7 +488,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	force = 25
 	throwforce = 20
-	armour_penetration = 0.5
+	armour_penetration = 20
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 	w_class = WEIGHT_CLASS_BULKY
@@ -653,7 +653,7 @@ var/list/possible_colors = list("red")
 /obj/item/twohanded/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 1
+	armour_penetration = 100
 	force_on = 30
 
 /obj/item/twohanded/chainsaw/doomslayer/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)

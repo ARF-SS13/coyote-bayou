@@ -20,7 +20,7 @@
 	throw_speed = 0
 	throw_range = 1
 	force = 200
-	armour_penetration = 1
+	armour_penetration = 1000
 	resistance_flags = INDESTRUCTIBLE
 	anchored = TRUE
 	var/team = WHITE_TEAM
@@ -472,7 +472,7 @@
 // MELEE GANG
 /obj/item/claymore/ctf
 	slot_flags = ITEM_SLOT_BACK
-	armour_penetration = 1
+	armour_penetration = 100
 	total_mass = 1
 
 /obj/item/claymore/ctf/pre_attack(atom/target, mob/user, params)

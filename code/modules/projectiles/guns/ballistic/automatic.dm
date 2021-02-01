@@ -499,7 +499,7 @@
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
 	extra_damage = -14
-	extra_penetration = -0.15
+	extra_penetration = -5
 	can_scope = TRUE
 	scopestate = "AEP7_scope"
 	scope_x_offset = 9
@@ -647,8 +647,8 @@
 	icon_state = "varmint_rifle"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	extra_damage = 0
-	extra_penetration = 0
+	extra_damage = -7
+	extra_penetration = -7
 	fire_delay = 8
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -802,7 +802,7 @@
 	icon_state = "republics_pride"
 	item_state = "scoped308"
 	extra_damage = 8
-	extra_penetration = 0.1
+	extra_penetration = 5
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -1048,7 +1048,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
 	extra_damage = 5
-	extra_penetration = 0.1
+	extra_penetration = 5
 
 /obj/item/gun/ballistic/automatic/m1carbine
 	name = "m1 carbine"
@@ -1063,7 +1063,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 4
-	extra_penetration = 0.08
+	extra_penetration = 4
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic = 1
@@ -1123,7 +1123,7 @@
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m45
 	extra_damage = 3
-	extra_penetration = 0.06
+	extra_penetration = 3
 	fire_delay = 6
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY

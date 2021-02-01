@@ -36,7 +36,7 @@
 	throwforce = 25
 	wound_bonus = -30
 	bare_wound_bonus = 30
-	armour_penetration = 0.65
+	armour_penetration = 35
 	actions_types = list(/datum/action/item_action/cult_dagger)
 
 /obj/item/melee/cultblade/dagger/Initialize()
@@ -111,7 +111,7 @@
 	block_chance = 50
 	throwforce = 20
 	force = 35
-	armour_penetration = 0.75
+	armour_penetration = 45
 	throw_speed = 1
 	throw_range = 3
 	sharpness = SHARP_EDGED
@@ -705,7 +705,7 @@
 	force = 17
 	throwforce = 40
 	throw_speed = 2
-	armour_penetration = 0.65
+	armour_penetration = 30
 	block_chance = 30
 	attack_verb = list("attacked", "impaled", "stabbed", "torn", "gored")
 	sharpness = SHARP_EDGED
