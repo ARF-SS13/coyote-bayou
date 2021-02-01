@@ -406,7 +406,7 @@
 	health = 200
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/F13/c556Bullet
+	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	casingtype = /obj/item/ammo_casing/a556
 
@@ -480,7 +480,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/F13/c308mmBullet
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/weapons/garandshot.ogg'
 	casingtype = /obj/item/ammo_casing/a762
 
@@ -498,7 +498,7 @@
 	health = 225
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/F13/c308mmBullet
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/weapons/garandshot.ogg'
 	casingtype = /obj/item/ammo_casing/a762
 
@@ -670,7 +670,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/raider/biker)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/F13/c44mmBullet
+	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	casingtype = /obj/item/ammo_casing/m44
 

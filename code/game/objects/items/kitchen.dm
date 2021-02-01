@@ -255,7 +255,7 @@
 	item_state = "knife"
 	force = 15
 	throwforce = 10
-	armour_penetration = 10
+	armour_penetration = 0.2
 
 /obj/item/kitchen/knife/cosmic
 	name = "cosmic knife"
@@ -264,7 +264,7 @@
 	item_state = "knife"
 	force = 25
 	throwforce = 15
-	armour_penetration = 10
+	armour_penetration = 0.2
 
 /obj/item/kitchen/knife/cosmicheated
 	name = "superheated cosmic knife"
@@ -274,7 +274,7 @@
 	damtype = BURN
 	force = 35
 	throwforce = 20
-	armour_penetration = 20
+	armour_penetration = 0.4
 
 /obj/item/kitchen/knife/ritualdagger
 	name = "ritual dagger"
@@ -283,4 +283,4 @@
 	item_state = "crysknife"
 	force = 25
 	throwforce = 20
-	armour_penetration = 10
+	armour_penetration = 0.2

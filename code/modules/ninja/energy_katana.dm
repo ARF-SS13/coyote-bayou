@@ -8,7 +8,7 @@
 	force = 40
 	throwforce = 20
 	block_chance = 50
-	armour_penetration = 50
+	armour_penetration = 0.8
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")

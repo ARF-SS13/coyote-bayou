@@ -258,7 +258,7 @@
 	health = 80
 	ranged = 1
 	ranged_cooldown_time = 200
-	projectiletype = /obj/item/projectile/bullet/F13/c9mmBullet
+	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	faction = list("scorched", "hostile")
 	melee_damage_lower = 15
