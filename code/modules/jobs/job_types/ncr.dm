@@ -632,13 +632,13 @@ Veteran Ranger
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
 	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29,
+		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers = 1)
 
 //Scout Ranger
 /datum/job/ncr/f13rangerscout
@@ -676,13 +676,13 @@ Veteran Ranger
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29,
+		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers = 1)
 
 /datum/outfit/loadout/rangerrecon
 	name = "Recon Ranger"
