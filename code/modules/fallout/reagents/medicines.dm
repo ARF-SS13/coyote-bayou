@@ -196,18 +196,14 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.physiology.armor.melee += 25
-		M.physiology.armor.bullet += 20
-		M.physiology.armor.laser += 25
-		M.physiology.armor.energy += 20
+		M.maxHealth += 50
+		M.health += 50
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.physiology.armor.melee -= 25
-		M.physiology.armor.bullet -= 20
-		M.physiology.armor.laser -= 25
-		M.physiology.armor.energy -= 20
+		M.maxHealth -= 50
+		M.health -= 50
 	switch(current_cycle)
 		if(1 to 25)
 			M.confused += 20

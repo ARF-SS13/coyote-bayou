@@ -1,8 +1,8 @@
 /datum/component/armor_plate
 	var/amount = 0
 	var/maxamount = 3
-	var/upgrade_item = /obj/item/stack/sheet/animalhide/goliath_hide
-	var/datum/armor/added_armor = list("melee" = 10)
+	var/upgrade_item = /obj/item/stack/crafting/goodparts
+	var/datum/armor/added_armor = list("linemelee" = 10, "linebullet" = 10, "linelaser" = 10)
 	var/upgrade_name
 
 /datum/component/armor_plate/Initialize(_maxamount,obj/item/_upgrade_item,datum/armor/_added_armor)
@@ -40,7 +40,7 @@
 			else
 				examine_list += "<span class='notice'>It's wearing a fearsome carapace entirely composed of [upgrade_name] - its pilot must be an experienced monster hunter.</span>"
 		else
-			examine_list += "<span class='notice'>It has attachment points for strapping monster hide on for added protection.</span>"
+			examine_list += "<span class='notice'>You could probably use high-quality metal parts to reinforce it.</span>"
 	else
 		if(amount)
 			examine_list += "<span class='notice'>It has been strengthened with [amount]/[maxamount] [upgrade_name].</span>"
@@ -71,7 +71,7 @@
 		R.update_icon()
 		to_chat(user, "<span class='info'>You strengthen [R], improving its resistance against melee, bullet and laser damage.</span>")
 	else
-		to_chat(user, "<span class='info'>You strengthen [O], improving its resistance against melee attacks.</span>")
+		to_chat(user, "<span class='info'>You strengthen [O], improving its resistance against attacks.</span>")
 
 
 /datum/component/armor_plate/proc/dropplates(datum/source, force)
@@ -87,3 +87,4 @@
 		if(!mech.occupant)
 			overlay_string += "-open"
 		overlays += overlay_string
+
