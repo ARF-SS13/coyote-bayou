@@ -155,11 +155,15 @@
 /datum/outfit/proc/get_all_possible_item_paths()
 	var/list/data = list()
 	for (var/item in all_possible_types)
+		if(!ispath(item))
+			world.log << "BAD ITEM IN [type] slots: \"[item]\""
 		data[item] = 1
 	for (var/implant in implants)
+		if(!ispath(implant))
+			world.log << "BAD IMPLANT IN [type]: \"[implant]\""
 		data[implant] = 1
-
-	data.Add(backpack_contents)
+	if(LAZYLEN(backpack_contents))
+		data.Add(backpack_contents)
 	return data
 
 
@@ -244,7 +248,7 @@
 		var/atom/I = item
 		subdata["name"] = initial(I.name)
 		var/iconfile = "[initial(I.icon)]" // doesn't work if you directly embed it
-		var/icon_string = "[sanitize_filename(replacetext(replacetext(iconfile, "icons/", ""), ".dmi", ""))]-[initial(I.icon_state)]"
+		var/icon_string = "[sanitize_filename(replacetext(iconfile, ".dmi", ""))]-[initial(I.icon_state)]"
 		var/c = initial(I.color)
 		if(!isnull(c) && uppertext(c) != "#FFFFFF")
 			icon_string += "-[c]"

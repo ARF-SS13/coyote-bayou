@@ -53,10 +53,10 @@ Mayor
 	suit = /obj/item/clothing/suit/armor/f13/town/mayor
 	head = /obj/item/clothing/head/f13/town/mayor
 	backpack_contents = list(
-		/obj/item/clothing/head/f13/town/big, \
-		/obj/item/storage/box/citizenship_permits, \
+		/obj/item/clothing/head/f13/town/big = 1, \
+		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/ammo_box/a357=2, \
-		/obj/item/pen/fountain/captain)
+		/obj/item/pen/fountain/captain = 1)
 
 /*--------------------------------------------------------------*/
 
@@ -500,9 +500,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/settler,
-		/obj/item/storage/box/beanbag,
-		/obj/item/storage/box/beanbag
+		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/storage/box/beanbag = 2
 		)
 
 /datum/outfit/loadout/rugged
@@ -574,7 +573,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/merca
 	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask)
+	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1)
 
 /datum/outfit/loadout/bum
 	name = "Bum"
@@ -583,7 +582,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/rag
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/f13/rag
-	backpack_contents = list(/obj/item/storage/bag/trash, /obj/item/reagent_containers/food/drinks/bottle/whiskey)
+	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 1)
 
 /datum/outfit/loadout/properlady
 	name = "Proper Lady"
@@ -591,7 +590,7 @@ Mayor
 	suit = /obj/item/clothing/under/sailordress
 	gloves = /obj/item/clothing/gloves/f13/lace
 	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/wine)
+	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/wine = 1)
 
 /datum/outfit/loadout/propergent
 	name = "Respectable Gent"
@@ -599,7 +598,7 @@ Mayor
 	suit = /obj/item/clothing/suit/f13/cowboybvest
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/storage/box/matches, /obj/item/storage/fancy/cigarettes/cigars)
+	backpack_contents = list(/obj/item/storage/box/matches = 1, /obj/item/storage/fancy/cigarettes/cigars = 1)
 
 /datum/outfit/loadout/hombre
 	name = "Hombre"
@@ -622,9 +621,9 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
-			/obj/item/storage/bag/money/small/settler, \
-			/obj/item/kitchen/knife/combat, \
-			/obj/item/gun/ballistic/automatic/pistol/n99, \
+			/obj/item/storage/bag/money/small/settler = 1, \
+			/obj/item/kitchen/knife/combat = 1, \
+			/obj/item/gun/ballistic/automatic/pistol/n99 = 1, \
 			/obj/item/ammo_box/magazine/m10mm_adv=2)
 /*----------------------------------------------------------------
 --							Detective							--
