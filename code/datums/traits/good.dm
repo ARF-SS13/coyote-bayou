@@ -284,7 +284,7 @@
 
 /datum/quirk/lifegiver
 	name = "Lifegiver"
-	desc = "You embody wellness! Instantly gain +15 maximum Health"
+	desc = "You embody wellness! Instantly gain +10 maximum Health"
 	value = 3
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
@@ -292,8 +292,8 @@
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth += 15
-	mob_tar.health += 15
+	mob_tar.maxHealth += 10
+	mob_tar.health += 10
 
 /datum/quirk/iron_fist
 	name = "Iron Fist"
