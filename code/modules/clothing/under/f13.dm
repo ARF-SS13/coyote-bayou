@@ -1,5 +1,5 @@
 /obj/item/clothing/under/f13
-	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0) //Base type has no armor as well
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //Base type has no armor as well
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -503,7 +503,7 @@
 	icon_state = "ncr_uniformexile"
 	item_state = "ncr_uniformexile"
 	item_color = "ncr_uniformexile"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/exile/legion
 	name = "disheveled Legion fatigues"
@@ -809,16 +809,6 @@
 	item_color = "mercc_m"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
-/* Missing a worn sprite
-/obj/item/clothing/under/f13/female/merccharm //Female version
-	name = "female merc charmer outfit"
-	desc = "A ripped and torn blue female business suit, it still gives ladies a rather sexy look.<br>Fitted for female wastelanders."
-	icon_state = "mercc_f"
-	item_state = "bl_suit"
-	item_color = "mercc_f"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-*/
-
 /obj/item/clothing/under/f13/mechanic
 	name = "worn blue jumpsuit"
 	desc = "A worn jumpsuit, made of soft-blue colored cloth, with old machine oil stains on it.<br>Long time ago it could have belonged to a repair mechanic."
@@ -842,16 +832,6 @@
 	item_state = "syndicate-blue"
 	item_color = "caravaneer"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
-
-/* Same as /obj/item/clothing/under/f13/roving but with a sprite that doesn't work
-/obj/item/clothing/under/f13/trader
-	name = "roving trader outfit "
-	desc = "An outfit commonly worn by various wastelanders, but it still looks pretty badass!"
-	icon_state = "trader"
-	item_state = "bl_suit"
-	item_color = "trader"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-*/
 
 /obj/item/clothing/under/f13/merchant
 	name = "merchant outfit "

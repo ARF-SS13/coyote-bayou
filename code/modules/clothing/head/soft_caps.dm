@@ -4,6 +4,7 @@
 	icon_state = "cargosoft"
 	item_state = "helmet"
 	var/soft_type = "cargo"
+	armor = list("tier" = 1)
 
 	dog_fashion = /datum/dog_fashion/head/cargo_tech
 

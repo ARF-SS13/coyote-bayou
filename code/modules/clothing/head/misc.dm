@@ -3,10 +3,10 @@
 /obj/item/clothing/head/centhat
 	name = "\improper CentCom hat"
 	icon_state = "centcom"
-	desc = "It's good to be emperor."
+	desc = "(VI) It's good to be emperor."
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("tier" = 6, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 80
 
 /obj/item/clothing/head/powdered_wig
@@ -17,24 +17,27 @@
 
 /obj/item/clothing/head/that
 	name = "top-hat"
-	desc = "It's an amish looking hat."
+	desc = "(I) It's an amish looking hat."
 	icon_state = "tophat"
 	item_state = "that"
 	throwforce = 1
-
+	armor = list("tier" = 1)
 	dog_fashion = /datum/dog_fashion/head
 	beepsky_fashion = /datum/beepsky_fashion/tophat
 
 /obj/item/clothing/head/canada
 	name = "striped red tophat"
-	desc = "It smells like fresh donut holes. / <i>Il sent comme des trous de beignets frais.</i>"
+	desc = "(I) It smells like fresh donut holes. / <i>Il sent comme des trous de beignets frais.</i>"
 	icon_state = "canada"
 	item_state = "canada"
+	armor = list("tier" = 1)
+
 
 /obj/item/clothing/head/redcoat
 	name = "redcoat's hat"
 	icon_state = "redcoat"
-	desc = "<i>'I guess it's a redhead.'</i>"
+	desc = "(I) <i>'I guess it's a redhead.'</i>"
+	armor = list("tier" = 1)
 
 /obj/item/clothing/head/mailman
 	name = "mailman's hat"
@@ -43,9 +46,11 @@
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
-	desc = "These were once used by plague doctors. They're pretty much useless."
+	desc = "(I) These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
 	permeability_coefficient = 0.01
+	armor = list("tier" = 1)
+
 
 /obj/item/clothing/head/hasturhood
 	name = "hastur's hood"
@@ -164,6 +169,7 @@
 	icon_state = "chickenhead"
 	item_state = "chickensuit"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	armor = list("tier" = 1)
 
 /obj/item/clothing/head/griffin
 	name = "griffon head"
@@ -177,6 +183,7 @@
 	desc = "Fuzzy."
 	icon_state = "bearpelt"
 	item_state = "bearpelt"
+	armor = list("tier" = 1)
 
 /obj/item/clothing/head/xenos
 	name = "xenos helmet"
@@ -292,9 +299,9 @@
 
 /obj/item/clothing/head/crown
 	name = "crown"
-	desc = "A crown fit for a king, a petty king maybe."
+	desc = "(I) A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = list("tier" = 1,"energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
 
@@ -448,10 +455,10 @@
 
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
-	desc = "Ain't nobody gonna cheat the hangman in my town."
+	desc = "(I) Ain't nobody gonna cheat the hangman in my town."
 	icon_state = "hunter"
 	item_state = "hunter"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("tier" = 1, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/kepi
@@ -485,21 +492,23 @@
 
 /obj/item/clothing/head/fluff/bandit
 	name = "bandit hat"
-	desc = "A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
+	desc = "(I) A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
 	icon_state = "bandit"
 	item_state = "fedora"
+	armor = list("tier" = 1)
 
 /obj/item/clothing/head/fluff/gambler
 	name = "gambler hat"
-	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	desc = "(I) Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
+	armor = list("tier" = 1)
 
 /obj/item/clothing/head/fluff/Bikerhelmet
 	name = "Future Helmet"
-	desc = "A helmet of some sort as if from the distant future."
+	desc = "(II) A helmet of some sort as if from the distant future."
 	icon_state = "biker_helmet"
 	item_state = "biker_helmet"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	armor = list("tier" = 2,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR

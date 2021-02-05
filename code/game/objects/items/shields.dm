@@ -3,7 +3,7 @@
 	icon = 'icons/obj/shields.dmi'
 	item_flags = ITEM_CAN_BLOCK
 	block_parry_data = /datum/block_parry_data/shield
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
+	armor = list("linemelee" = 150, "linebullet" = 150, "linelaser" = 150, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	/// Shield flags
 	var/shield_flags = SHIELD_FLAGS_DEFAULT
 	/// Last shieldbash world.time
@@ -248,7 +248,7 @@
 /obj/item/shield/riot/laser_proof
 	name = "laser resistant shield"
 	desc = "A far more frail shield made of dark glass meant to block lasers but suffers from being being weak to ballistic projectiles."
-	armor = list("melee" = 30, "bullet" = -10, "laser" = 80, "energy" = 80, "bomb" = -40, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("linemelee" = 80, "linebullet" = -20, "linelaser" = 400, "energy" = 80, "bomb" = -40, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	icon_state = "riot_laser"
 	item_state = "riot_laser"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -259,7 +259,7 @@
 obj/item/shield/riot/bullet_proof
 	name = "bullet resistant shield"
 	desc = "A far more frail shield made of resistant plastics and kevlar meant to block ballistics."
-	armor = list("melee" = 30, "bullet" = 80, "laser" = 0, "energy" = 0, "bomb" = -40, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("linemelee" = 80, "linebullet" = 400, "laser" = 0, "energy" = 0, "bomb" = -40, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	max_integrity = 300
 
 /obj/item/shield/riot/roman
@@ -347,7 +347,7 @@ obj/item/shield/riot/bullet_proof
 /obj/item/shield/makeshift
 	name = "metal shield"
 	desc = "A large shield made of wired and welded sheets of metal. The handle is made of cloth and leather making it unwieldy."
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 5, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 80)
+	armor = list("linemelee" = 70, "linebullet" = 70, "linelaser" = 70, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 80)
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	item_state = "metal"
@@ -361,7 +361,7 @@ obj/item/shield/riot/bullet_proof
 /obj/item/shield/riot/tower
 	name = "tower shield"
 	desc = "A massive shield that can block a lot of attacks, can take a lot of abuse before braking."
-	armor = list("melee" = 95, "bullet" = 95, "laser" = 75, "energy" = 60, "bomb" = 90, "bio" = 90, "rad" = 0, "fire" = 90, "acid" = 10) //Armor for the item, dosnt transfer to user
+	armor = list("linemelee" = 900, "linebullet" = 900, "linelaser" = 300, "energy" = 60, "bomb" = 90, "bio" = 90, "rad" = 0, "fire" = 90, "acid" = 10) //Armor for the item, dosnt transfer to user
 	item_state = "metal"
 	icon_state = "metal"
 	force = 16
@@ -463,7 +463,7 @@ obj/item/shield/riot/bullet_proof
 	throw_speed = 4
 	throw_range = 7
 	block_chance = 25
-	armor = list("melee" = 30, "bullet" = 20, "laser" = 10, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 70)
+	armor = list("linemelee" = 80, "linebullet" = 80, "linelaser" = 80, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 70)
 
 
 /obj/item/shield/energy
