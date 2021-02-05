@@ -41,7 +41,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "gourd-grow"
 	icon_dead = "gourd-dead"
-	icon_harvest = "tato-harvest"
+	icon_harvest = "gourd-harvest"
 	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
 	lifespan = 50
 	endurance = 40
