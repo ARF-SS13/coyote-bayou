@@ -3,15 +3,18 @@
 	name = "suit"
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
 	var/fire_resist = T0C+100
-	allowed = list(/obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/reagent_containers/food/drinks/flask, /obj/item/melee, /obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/fancy/cigarettes, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/storage/box/matches, /obj/item/lighter, /obj/item/storage/book/bible)
+	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	slot_flags = ITEM_SLOT_OCLOTHING
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
 	limb_integrity = 0 // disabled for most exo-suits
 	mutantrace_variation = STYLE_DIGITIGRADE
+	var/obj/item/clothing/armoraccessory/attached_accessory
+	var/mutable_appearance/accessory_overlay
+	var/dummy_thick = FALSE // is able to hold accessories on its item
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
@@ -34,3 +37,94 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inv_wear_suit()
+
+//Suit/armor accessories
+
+/obj/item/clothing/suit/attackby(obj/item/I, mob/user, params)
+	if(!attach_accessory(I, user))
+		return ..()
+
+/obj/item/clothing/suit/equipped(mob/user, slot)
+	..()
+
+	if(attached_accessory && slot != SLOT_HANDS && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		attached_accessory.on_suit_equip(src, user)
+		if(attached_accessory.above_suit)
+			H.update_inv_wear_suit()
+
+/obj/item/clothing/suit/dropped(mob/user)
+	if(attached_accessory)
+		attached_accessory.on_suit_dropped(src, user)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(attached_accessory.above_suit)
+				H.update_inv_wear_suit()
+
+	..()
+
+/obj/item/clothing/suit/proc/attach_accessory(obj/item/I, mob/user, notifyAttach = 1)
+	. = FALSE
+	if(istype(I, /obj/item/clothing/armoraccessory))
+		var/obj/item/clothing/armoraccessory/A = I
+		if(attached_accessory)
+			if(user)
+				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+			return
+		if(dummy_thick)
+			if(user)
+				to_chat(user, "<span class='warning'>[src] is too bulky and cannot have accessories attached to it!</span>")
+			return
+
+		else
+			if(user && !user.temporarilyRemoveItemFromInventory(I))
+				return
+			if(!A.attach(src, user))
+				return
+
+			if(user && notifyAttach)
+				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+
+			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
+				return TRUE
+
+			accessory_overlay = mutable_appearance('icons/mob/clothing/accessories.dmi', attached_accessory.icon_state)
+			accessory_overlay.alpha = attached_accessory.alpha
+			accessory_overlay.color = attached_accessory.color
+
+			if(ishuman(loc))
+				var/mob/living/carbon/human/H = loc
+				H.update_inv_w_uniform()
+				H.update_inv_wear_suit()
+
+			return TRUE
+
+/obj/item/clothing/suit/proc/remove_accessory(mob/user)
+	if(!isliving(user))
+		return
+	if(!can_use(user))
+		return
+
+	if(attached_accessory)
+		var/obj/item/clothing/armoraccessory/A = attached_accessory
+		attached_accessory.detach(src, user)
+		if(user.put_in_hands(A))
+			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+		else
+			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+
+		if(ishuman(loc))
+			var/mob/living/carbon/human/H = loc
+			H.update_inv_w_uniform()
+			H.update_inv_wear_suit()
+
+/obj/item/clothing/suit/examine(mob/user)
+	. = ..()
+	if(attached_accessory)
+		. += "\A [attached_accessory] is attached to it."
+
+
+/obj/item/clothing/suit/AltClick(mob/user)
+	. = ..()
+	if(attached_accessory)
+		remove_accessory(user)
