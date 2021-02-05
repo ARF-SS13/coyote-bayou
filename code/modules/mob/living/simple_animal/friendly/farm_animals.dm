@@ -575,7 +575,6 @@
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6)
 	response_help_continuous  = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -589,7 +588,7 @@
 	emote_hear = list("brays.")
 	var/obj/item/inventory_back
 	speak_chance = 0.4
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3)
 
 
 /mob/living/simple_animal/cow/brahmin/calf
@@ -600,6 +599,12 @@
 	. = ..()
 	resize = 0.7
 	update_transform()
+
+/mob/living/simple_animal/cow/brahmin/sgtsillyhorn
+	name = "Sergeant Sillyhorn"
+	desc = "A distinguished war veteran alongside his junior enlisted sidekick, Corporal McCattle. The two of them wear a set of golden rings, smelted from captured Centurions."
+	emote_see = list("shakes its head.","swishes its tail eagerly.")
+	speak_chance = 2
 
 //////
 //Tangle of mess for brahmin packs
@@ -740,7 +745,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/ragstag = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/ragstag = 2)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
@@ -767,7 +772,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 4)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 4)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"

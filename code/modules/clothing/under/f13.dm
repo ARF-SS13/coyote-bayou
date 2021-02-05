@@ -53,6 +53,14 @@
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
 
+/obj/item/clothing/under/f13/ncr/pants
+	name = "NCR fatigue pants"
+	desc = "A set of standard issue fatigue pants without the upper overcoat. For when you really need to show off your guns."
+	can_adjust = FALSE
+	icon_state = "ncr_fatigue_pants"
+	item_state = "ncr_fatigue_pants"
+	item_color = "ncr_fatigue_pants"
+
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outfit"
 	desc = "A soft outfit used by NCR caravaneers."
