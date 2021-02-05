@@ -13,6 +13,10 @@
 	name = "Bald"
 	icon_state = "bald"
 
+/datum/sprite_accessory/hair/adhara
+	name = "Adhara"
+	icon_state = "hair_adhara"
+
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
 	icon_state = "hair_afro"
@@ -28,6 +32,10 @@
 /datum/sprite_accessory/hair/amazon
 	name = "Amazon"
 	icon_state = "amazon"
+
+/datum/sprite_accessory/hair/anita
+	name = "Anita"
+	icon_state = "hair_anita"
 
 /datum/sprite_accessory/hair/antenna
 	name = "Ahoge"
@@ -68,6 +76,10 @@
 /datum/sprite_accessory/hair/beehive2
 	name = "Beehive 2"
 	icon_state = "hair_beehive2"
+
+/datum/sprite_accessory/hair/belle
+	name = "Belle"
+	icon_state = "hair_belle"
 
 /datum/sprite_accessory/hair/bigflattop
 	name = "Big Flat Top"
@@ -401,6 +413,10 @@
 	name = "Hitop"
 	icon_state = "hair_hitop"
 
+/datum/sprite_accessory/hair/inkling
+	name = "Inkling"
+	icon_state = "hair_inkling"
+
 /datum/sprite_accessory/hair/jade
 	name = "Jade"
 	icon_state = "hair_jade"
@@ -420,6 +436,10 @@
 /datum/sprite_accessory/hair/keanu
 	name = "Keanu"
 	icon_state = "hair_keanu"
+
+/datum/sprite_accessory/hair/kleeia
+	name = "Kleeia"
+	icon_state = "hair_kleeia"
 
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi"
@@ -496,6 +516,10 @@
 /datum/sprite_accessory/hair/mulder
 	name = "Mulder"
 	icon_state = "hair_mulder"
+
+/datum/sprite_accessory/hair/newyou
+	name = "New You"
+	icon_state = "hair_newyou"
 
 /datum/sprite_accessory/hair/nia
 	name = "Nia"
@@ -627,6 +651,10 @@
 /datum/sprite_accessory/hair/spikytail
 	name = "Ponytail (Spiky)"
 	icon_state = "hair_spikyponytail"
+
+/datum/sprite_accessory/hair/supernova
+	name = "Supernova"
+	icon_state = "hair_supernova"
 
 /datum/sprite_accessory/hair/poofy
 	name = "Poofy"
@@ -796,6 +824,10 @@
 	name = "Trimmed (Flat)"
 	icon_state = "hair_trimflat"
 
+/datum/sprite_accessory/hair/twincurls
+	name = "Twincurls"
+	icon_state = "hair_twincurls"
+
 /datum/sprite_accessory/hair/twintails
 	name = "Twintails"
 	icon_state = "hair_twintail"
@@ -839,6 +871,10 @@
 /datum/sprite_accessory/hair/short_oe_alt
 	name = "Very Short Over Eye (Alt)"
 	icon_state = "hair_veryshortovereyealternate"
+
+/datum/sprite_accessory/hair/vivi
+	name = "Vivi"
+	icon_state = "hair_vivi"
 
 /datum/sprite_accessory/hair/volaju
 	name = "Volaju"
