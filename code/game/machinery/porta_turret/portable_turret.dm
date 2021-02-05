@@ -857,6 +857,33 @@
 	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
 	desc = "A ballistic machine gun auto-turret."
 
+/obj/machinery/porta_turret/xray
+	installation = null
+	always_up = 1
+	use_power = NO_POWER_USE
+	has_cover = 0
+	scan_range = 9
+	req_access = list(ACCESS_SYNDICATE)
+	mode = TURRET_LETHAL
+	stun_projectile = /obj/item/projectile/bullet
+	lethal_projectile = /obj/item/projectile/bullet
+	lethal_projectile_sound = 'sound/weapons/gunshot.ogg'
+	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	faction = list("xray")
+	desc = "A ballistic machine gun auto-turret."
+
+/obj/machinery/porta_turret/xray/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
+
+/obj/machinery/porta_turret/xray/setup()
+	return
+
+/obj/machinery/porta_turret/xray/assess_perp(mob/living/carbon/human/perp)
+	return 10 //Syndicate turrets shoot everything not in their faction
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////
