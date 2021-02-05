@@ -83,7 +83,7 @@
 
 /datum/gear/head/ncr_sapper
 	name = "NCR sapper beret"
-	path = /obj/item/clothing/head/f13/ncr_sapper
+	path = /obj/item/clothing/head/beret/ncr_sapper
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",

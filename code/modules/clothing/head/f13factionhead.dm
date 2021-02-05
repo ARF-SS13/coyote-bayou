@@ -317,11 +317,13 @@
 
 /obj/item/clothing/head/f13/ncr
 	name = "NCR steelpot helmet"
-	desc = "(V) A standard issue NCR steel helmet."
+	desc = "(V) A standard issue NCR steel helmet. Looks like you can write on it and strap a few items on the helmet band."
 	icon_state = "ncr_steelpot"
 	item_state = "ncr_steelpot"
 	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
+	obj_flags = UNIQUE_RENAME
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"
@@ -351,13 +353,35 @@
 	item_state = "scoutberet"
 	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/head/beret/ncr_sapper
+	name = "NCR Sapper beret"
+	desc = "(VII) A grey beret, issued to troopers that have passed Sapper School."
+	icon_state = "ncr_sapper_beret"
+	item_state = "ncr_sapper_beret"
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/beret/ncr_sof
+	name = "NCR SOF beret"
+	desc = "(VII) A tan beret, issued members of the New California Republic Special Operations Command."
+	icon_state = "ncr_sof_beret"
+	item_state = "ncr_sof_beret"
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/f13/ncr_stetson
+	name = "NCR air cavalry stetson"
+	desc = "(VII) A black brahmin leather stetson, authorized for usage amongst all troopers assigned to Air Cavalry units."
+	icon_state = "ncr_stetson"
+	item_state = "ncr_stetson"
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 /obj/item/clothing/head/f13/ncr_cap
 	name = "NCR garrison cap"
 	desc = "(I) A simple cloth garrison cap to be worn when a helmet isn't necessary."
 	icon_state = "ncr_cap"
 	item_state = "ncr_cap"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	flags_inv = HIDEHAIR
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 //NCR Ranger
 
@@ -374,7 +398,6 @@
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
-
 
 /obj/item/clothing/head/f13/ranger
 	name = "NCR ranger campaign hat"
