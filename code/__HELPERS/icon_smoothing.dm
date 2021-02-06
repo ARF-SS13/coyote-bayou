@@ -39,6 +39,7 @@
 #define SMOOTH_DIAGONAL	(1<<2)	//if atom should smooth diagonally, this should be present in 'smooth' var
 #define SMOOTH_BORDER	(1<<3)	//atom will smooth with the borders of the map
 #define SMOOTH_QUEUED	(1<<4)	//atom is currently queued to smooth.
+#define SMOOTH_OLD		(1<<5)	//If the icon uses the old junction stuff.
 
 #define NULLTURF_BORDER 123456789
 
@@ -117,6 +118,11 @@
 		return
 	if(QDELETED(A))
 		return
+
+	if(A.smooth & SMOOTH_OLD)
+		A:recalculate_junction()
+		A:relative()
+		
 	if(A.smooth & (SMOOTH_TRUE | SMOOTH_MORE))
 		var/adjacencies = calculate_adjacencies(A)
 

@@ -23,7 +23,7 @@
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
-//	unbreakable = 0
+	unbreakable = 0
 
 
 /turf/closed/wall/f13/wood
@@ -33,8 +33,8 @@
 	icon_state = "wood"
 	icon_type_smooth = "wood"
 	hardness = 60
-	smooth = SMOOTH_TRUE
-//	unbreakable = 0
+	smooth = SMOOTH_OLD
+	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
@@ -44,7 +44,7 @@
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
 	desc = "A weathered pre-War house wall."
-	icon = 'icons/turf/walls/f13wood_wall.dmi'
+	icon = 'icons/fallout/turfs/walls/house.dmi'
 	icon_state = "house"
 	icon_type_smooth = "house"
 	hardness = 50
@@ -53,7 +53,7 @@
 
 /turf/closed/wall/f13/wood/house/broken
 	broken = 1
-//	damage = 21
+	damage = 21
 	icon_state = "house0-broken"
 
 /turf/closed/wall/f13/wood/house/broken/attackby(obj/item/W, mob/user, params)
@@ -69,10 +69,10 @@
 	. = ..()
 
 
-///turf/closed/wall/f13/wood/house/take_damage(dam)
-//	if(damage + dam > hardness/2)
-//		broken = 1
-//	..()
+/turf/closed/wall/f13/wood/house/take_damage(dam)
+	if(damage + dam > hardness/2)
+		broken = 1
+	..()
 
 /turf/closed/wall/f13/wood/house/relative()
 	icon_state = "[icon_type_smooth][junction][broken ? "-broken" : ""]"
@@ -82,10 +82,10 @@
 		set_opacity(0)
 	..()
 
-///turf/closed/wall/f13/wood/house/update_damage_overlay()
-//	if(broken)
-//		return
-//	..()
+turf/closed/wall/f13/wood/house/update_damage_overlay()
+	if(broken)
+		return
+	..()
 
 /turf/closed/wall/f13/wood/house/clean
 	icon_state = "house0-clean"
@@ -96,11 +96,11 @@
 /turf/closed/wall/f13/wood/interior
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
-	icon = 'icons/turf/walls/f13interior.dmi'
+	icon = 'icons/fallout/turfs/walls/interior.dmi'
 	icon_state = "interior"
 	icon_type_smooth = "interior"
 	hardness = 10
-	smooth = SMOOTH_TRUE
+	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
 
 /turf/closed/wall/f13/store
@@ -124,7 +124,7 @@
 	icon_state = "tent0"
 	icon_type_smooth = "tent"
 	hardness = 10
-	smooth = SMOOTH_TRUE
+	smooth = SMOOTH_OLD
 	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
@@ -153,7 +153,7 @@
 	icon_state = "tunnel0"
 	icon_type_smooth = "tunnel"
 	hardness = 100
-	smooth = SMOOTH_TRUE
+	smooth = SMOOTH_OLD
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null
@@ -167,7 +167,7 @@
 	icon_type_smooth = "vault"
 	hardness = 130
 	explosion_block = 5
-	smooth = SMOOTH_TRUE
+	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 /turf/closed/wall/r_wall/f13
@@ -184,7 +184,7 @@
 	icon_type_smooth = "vaultrwall"
 	hardness = 230
 	explosion_block = 5
-	smooth = SMOOTH_TRUE
+	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
 
 //Fallout 13 indestructible walls
