@@ -777,36 +777,6 @@ obj/item/storage/box/stingbangs
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
 
-/obj/item/storage/box/rubbershot
-	name = "box of rubber shots"
-	desc = "A box full of rubber shots, designed for riot shotguns."
-	icon_state = "rubbershot_box"
-	illustration = null
-
-/obj/item/storage/box/rubbershot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/rubbershot(src)
-
-/obj/item/storage/box/lethalshot
-	name = "box of buckshot (Lethal)"
-	desc = "A box full of lethal shots, designed for riot shotguns."
-	icon_state = "lethalshot_box"
-	illustration = null
-
-/obj/item/storage/box/lethalshot/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_casing/shotgun/buckshot(src)
-
-/obj/item/storage/box/beanbag
-	name = "box of beanbags"
-	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
-	illustration = null
-
-/obj/item/storage/box/beanbag/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_casing/shotgun/beanbag(src)
-
 /obj/item/storage/box/lethalslugs
 	name = "box of 12g shotgun slugs"
 	desc = "A box full of lethal 12g slug, designed for riot shotguns."

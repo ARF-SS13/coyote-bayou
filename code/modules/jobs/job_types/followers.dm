@@ -364,6 +364,6 @@ Follower Guard
 	name = "Followers Close Protection Guard"
 	suit_store = /obj/item/gun/ballistic/shotgun/hunting
 	backpack_contents = list(
-		/obj/item/storage/box/rubbershot/beanbag=1,
-		/obj/item/storage/box/lethalshot=1
+		/obj/item/storage/fancy/ammobox/beanbag=1,
+		/obj/item/storage/fancy/ammobox/lethalshot=1
 	)

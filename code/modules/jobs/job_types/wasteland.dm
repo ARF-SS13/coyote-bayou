@@ -121,8 +121,8 @@ Great Khan
 	name = "Enforcer"
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=1, \
-		/obj/item/storage/box/rubbershot/beanbag=1, \
+		/obj/item/storage/fancy/ammobox/lethalshot=1, \
+		/obj/item/storage/fancy/ammobox/beanbag=1, \
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/restraints/handcuffs=2)
 
@@ -301,8 +301,8 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/psychotic
 	backpack_contents = list(
 		/obj/item/gun/ballistic/shotgun/trench=1,
-		/obj/item/storage/box/lethalshot=1,
-		/obj/item/storage/box/beanbag=1,
+		/obj/item/storage/fancy/ammobox/lethalshot=1,
+		/obj/item/storage/fancy/ammobox/beanbag=1,
 		/obj/item/claymore/machete/pipe/tireiron=1,
 		/obj/item/claymore/machete/pipe/pan=1,
 		/obj/item/grenade/chem_grenade/cleaner=1)
@@ -472,7 +472,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/f13/biker
 	l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents =  list(
-		/obj/item/storage/box/lethalshot=1)
+		/obj/item/storage/fancy/ammobox/lethalshot=1)
 
 
 

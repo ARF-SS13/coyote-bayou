@@ -81,6 +81,86 @@
 	restricted_desc = "Rangers"
 	restricted_roles = list("NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Scout Ranger")
 
+/datum/gear/head/ncr_sapper
+	name = "NCR sapper beret"
+	path = /obj/item/clothing/head/beret/ncr_sapper
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Specialist",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Patrol Ranger",
+							"NCR Scout Ranger"
+						)
+
+/datum/gear/head/ncr_cap
+	name = "NCR garrison cap"
+	path = /obj/item/clothing/head/f13/ncr_cap
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Specialist",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Patrol Ranger",
+							"NCR Scout Ranger"
+						)
+
+/datum/gear/head/ncr_recon
+	name = "NCR recon beret"
+	path = /obj/item/clothing/head/beret/ncr_recon
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Specialist",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Patrol Ranger",
+							"NCR Scout Ranger"
+						)
+
+/datum/gear/head/ncr_stetson
+	name = "NCR air cavalry stetson"
+	path = /obj/item/clothing/head/f13/ncr_stetson
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Specialist",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Patrol Ranger",
+							"NCR Scout Ranger"
+						)
+
 /datum/gear/head/wkepi
 	name = "white kepi"
 	path = /obj/item/clothing/head/kepi

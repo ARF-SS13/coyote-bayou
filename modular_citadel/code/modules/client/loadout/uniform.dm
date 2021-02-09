@@ -27,6 +27,26 @@
 	name = "settler outfit"
 	path = /obj/item/clothing/under/f13/settler
 
+/datum/gear/uniform/ncr_fatigue_pants
+	name = "NCR fatigue pants"
+	path = /obj/item/clothing/under/f13/ncr/pants
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain", 
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR First Sergeant",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Specialist",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Patrol Ranger",
+							"NCR Scout Ranger"
+						)
+
 /datum/gear/uniform/ranger
 	name = "ranger outfit"
 	path = /obj/item/clothing/under/f13/ranger

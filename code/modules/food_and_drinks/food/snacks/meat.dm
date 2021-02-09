@@ -351,16 +351,6 @@
 	tastes = list("bacon" = 1)
 	foodtype = MEAT | BREAKFAST
 
-/obj/item/reagent_containers/food/snacks/meat/slab/gondola
-	name = "gondola meat"
-	desc = "According to legends of old, consuming raw gondola flesh grants one inner peace."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/tranquility = 5, /datum/reagent/consumable/cooking_oil = 3)
-	tastes = list("meat" = 4, "tranquility" = 1)
-	filling_color = "#9A6750"
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/gondola
-	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/gondola
-	foodtype = RAW | MEAT
-
 /obj/item/reagent_containers/food/snacks/meat/slab/wisdomcow
 	name = "wisdom cow meat"
 	desc = "The meat from the legendary creature known as the wisdom cow. You monster."

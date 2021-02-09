@@ -318,8 +318,8 @@ Priestess of Mars
 	head = 			/obj/item/clothing/head/helmet/f13/legion/heavy
 	suit_store = 	/obj/item/gun/ballistic/revolver/ballisticfist
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=1,
-		/obj/item/storage/box/slugshot=1,
+		/obj/item/storage/fancy/ammobox/lethalshot=1,
+		/obj/item/storage/fancy/ammobox/slugshot=1,
 		/obj/item/shield/riot/roman=1)
 
 */
@@ -696,8 +696,8 @@ Prime Legionairy
 	name = "Close Quarters Legionary"
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
-		/obj/item/storage/box/slugshot=1,
-		/obj/item/storage/box/beanbag=1,
+		/obj/item/storage/fancy/ammobox/slugshot=1,
+		/obj/item/storage/fancy/ammobox/beanbag=1,
 		/obj/item/claymore/machete/gladius=1)
 
 /datum/outfit/loadout/legrange

@@ -17,8 +17,8 @@
 	max_integrity = maxplanks * 50
 
 /obj/structure/barricade/wooden/planks/examine()
-	..()
-	usr << "<span class='notice'>There are [planks] boards left.</span>"
+	. = ..()
+	. += SPAN_NOTICE("There are [planks] boards left.")
 
 /obj/structure/barricade/wooden/planks/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crowbar))

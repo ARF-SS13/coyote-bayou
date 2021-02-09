@@ -313,11 +313,11 @@
 	var/obj/item/card/id/dogtag/Dogtags = null
 
 /obj/structure/statue/wood/headstonewood/examine(mob/user)
-	..()
+	. = ..()
 	if(Helmet)
-		to_chat(user, "<span class='notice'>It has [Helmet] on it.</span>")
+		. += SPAN_NOTICE("It has [Helmet] on it.")
 	if(Dogtags)
-		to_chat(user, "<span class='notice'>It has [Dogtags] on it.</span>")
+		. += SPAN_NOTICE("It has [Dogtags] on it.")
 
 /obj/structure/statue/wood/headstonewood/Destroy()
 	if(Helmet)

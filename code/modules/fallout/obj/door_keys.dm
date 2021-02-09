@@ -113,7 +113,7 @@
 			if(id == K.id)
 				to_chat(user, "<span class='notice'>You begin [open ? "locking" : "unlocking"] padlock.</span>")
 				if(do_after(user, 15, target = loc))
-					toogle()
+					toggle()
 			else
 				to_chat(user, "<span class='warning'>Wrong key!</span>")
 		else
@@ -133,7 +133,7 @@
 	src.id = id
 	src.name = "padlock"
 
-/obj/item/lock/proc/toogle()
+/obj/item/lock/proc/toggle()
 	open = !open
 	update_icon()
 

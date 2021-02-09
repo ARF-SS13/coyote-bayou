@@ -85,7 +85,7 @@ export const CentcomPodLauncherContent = (props, context) => {
                 `}
                 onClick={() => act('clearDropoffTurf')} />
               <p>
-                Reverse Drop-off Location: 
+                Reverse Drop-off Location:
                 {data.dropoff_turf ? data.dropoff_turf : 'None'}
               </p>
             </LabeledList.Item>
@@ -96,7 +96,7 @@ export const CentcomPodLauncherContent = (props, context) => {
                 [Enable Reverse Mode for this feature]
               </p>
             </LabeledList.Item>
-          )} 
+          )}
           <LabeledList.Item label="Teleport to">
             <Button
               content={data.bay}
@@ -191,7 +191,7 @@ export const CentcomPodLauncherContent = (props, context) => {
               content="Projectile Cloud"
               selected={data.effectShrapnel}
               tooltip={multiline`
-                This will create a cloud of shrapnel on landing, 
+                This will create a cloud of shrapnel on landing,
                 of any projectile you'd like!
               `}
               onClick={() => act('effectShrapnel')} />
@@ -460,16 +460,6 @@ export const CentcomPodLauncherContent = (props, context) => {
                 with the "Stealth" and "Quiet Landing" effects.
               `}
               onClick={() => act('styleInvisible')} />
-            <Button
-              content="Gondola"
-              selected={data.styleChoice === 13}
-              tooltip={multiline`
-                This gondola can control when he wants to deliver his supplies
-                if he has a smart enough mind, so offer up his body to ghosts
-                for maximum enjoyment. (Make sure to turn off bluespace and
-                set an arbitrarily high open-time if you do!
-              `}
-              onClick={() => act('styleGondola')} />
             <Button
               content="Show Contents (See Through Pod)"
               selected={data.styleChoice === 14}

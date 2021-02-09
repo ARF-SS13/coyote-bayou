@@ -18,10 +18,10 @@
 	var/state = FALSE
 
 /obj/item/bottlecap_mine/attack_self(mob/user as mob)
-	toogle_activate(user)
+	toggle_activate(user)
 
 
-/obj/item/bottlecap_mine/proc/toogle_activate(mob/user)
+/obj/item/bottlecap_mine/proc/toggle_activate(mob/user)
 	switch(state)
 		if(DISABLED)
 			state = PREACTIVE
@@ -72,5 +72,5 @@
 			icon_state = "capmine_active"
 
 /obj/item/bottlecap_mine/examine(mob/user)
-	..()
-	to_chat(user, "<span class='warning'>It seems activated!</span>")
+	. = ..()
+	. += SPAN_WARNING("It seems activated!")

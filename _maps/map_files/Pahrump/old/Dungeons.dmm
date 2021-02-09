@@ -2763,10 +2763,10 @@
 /area/f13/bunker)
 "hy" = (
 /obj/structure/rack,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -4964,10 +4964,10 @@
 /area/f13/bunker)
 "mP" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
+/obj/item/storage/fancy/ammobox,
+/obj/item/storage/fancy/ammobox,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
@@ -12263,8 +12263,8 @@
 /obj/structure/table,
 /obj/item/stamp/hos,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "Ia" = (
@@ -17934,12 +17934,12 @@
 "Wh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},

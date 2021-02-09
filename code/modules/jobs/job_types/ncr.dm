@@ -123,7 +123,7 @@ Captain
 
 /datum/outfit/loadout/captscout
 	name = "Scout Officer"
-	head = 		/obj/item/clothing/head/beret/ncr_scout_lt
+	head = 		/obj/item/clothing/head/beret/ncr_scout
 	belt = 		/obj/item/storage/belt/military/NCR_Bandolier
 	l_hand = 	/obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
@@ -133,7 +133,7 @@ Captain
 
 /datum/outfit/loadout/captpistol
 	name = "Pistoleer Officer"
-	head =		/obj/item/clothing/head/beret/ncr_scout_lt
+	head =		/obj/item/clothing/head/f13/ncr_cap
 	gloves =	/obj/item/clothing/gloves/f13/leather
 	belt = 		/obj/item/storage/belt/military/assault/ncr
 	l_hand =	/obj/item/ammo_box/magazine/greasegun
@@ -398,8 +398,8 @@ Corporal
 /datum/outfit/loadout/corpclose
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=2,
-		/obj/item/storage/box/rubbershot/beanbag=1)
+		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/storage/fancy/ammobox/beanbag=1)
 /*
 Specialist
 */
@@ -527,8 +527,113 @@ Trooper
 	name = "Close Quarters"
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=2,
-		/obj/item/storage/box/rubbershot/beanbag=1)
+		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/storage/fancy/ammobox/beanbag=1)
+
+/*
+Rear Echelon
+*/
+
+/datum/job/ncr/f13rearechelon
+	title = "NCR Rear Echelon"
+	flag = F13REARECHELON
+	total_positions = 4
+	spawn_positions = 10
+	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or your specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
+	supervisors = "Corporals and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 12
+	exp_type = EXP_TYPE_NCR
+	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
+	outfit = /datum/outfit/job/ncr/f13rearechelon
+
+	loadout_options = list(
+	/datum/outfit/loadout/rearlog,
+	/datum/outfit/loadout/reartech,
+	/datum/outfit/loadout/rearcorps,
+	/datum/outfit/loadout/rearstatic
+	)
+
+/datum/outfit/job/ncr/f13rearechelon
+	name = "NCR Rear Echelon"
+	jobtype = /datum/job/ncr/f13rearechelon
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/TPR
+	head = 			/obj/item/clothing/head/f13/ncr_cap
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
+	glasses = 		null
+	backpack_contents = list(
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted=1, \
+		/obj/item/clothing/mask/ncr_facewrap=1
+		)
+
+//Supply and base management
+/datum/outfit/loadout/rearlog
+	name = "Logistics"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/ammo_box/magazine/m9mm=3 )
+
+//Technical repairs and engineering
+/datum/outfit/loadout/reartech
+	name = "Technician"
+	belt = /obj/item/storage/belt/utility/full
+	gloves = /obj/item/clothing/gloves/color/yellow
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/ammo_box/magazine/m9mm=3 )
+
+//Medical
+/datum/outfit/loadout/rearcorps
+	name = "Corpsman"
+	belt = /obj/item/storage/belt/medical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/ammo_box/magazine/m9mm=3, \
+		/obj/item/storage/survivalkit_aid=1)
+
+//Guard duty
+/datum/outfit/loadout/rearstatic
+	name = "Static Infantry"
+	head = /obj/item/clothing/head/f13/ncr
+	belt = /obj/item/storage/belt/military/NCR_Bandolier
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/m1carbine=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=3)
+
+/*
+Trooper
+*/
+
+/datum/job/ncr/f13ncroffduty
+	title = "NCR Off-Duty"
+	flag = F13NCROFFDUTY
+	total_positions = 8
+	spawn_positions = 8
+	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
+	supervisors = "All NCOs and COs"
+	selection_color = "#fff5cc"
+	exp_requirements = 12
+	exp_type = EXP_TYPE_NCR
+	display_order = JOB_DISPLAY_ORDER_NCR_OFF_DUTY
+	outfit = /datum/outfit/job/ncr/f13trooper
+
+/datum/outfit/job/ncr/f13ncroffduty
+	name = "NCR Off-Duty"
+	jobtype = /datum/job/ncr/f13ncroffduty
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	backpack_contents = list(
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted, \
+		/obj/item/clothing/mask/ncr_facewrap)
 
 /*
 Veteran Ranger
@@ -687,7 +792,7 @@ Veteran Ranger
 /datum/outfit/loadout/rangerrecon
 	name = "Recon Ranger"
 	suit =	/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
-	head =	/obj/item/clothing/head/beret/ncr_recon_ranger
+	head =	/obj/item/clothing/head/beret/ncr_scout
 	belt =	/obj/item/storage/belt/military/reconbandolier
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(

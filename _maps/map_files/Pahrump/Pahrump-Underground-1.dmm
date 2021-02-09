@@ -1976,7 +1976,7 @@
 "gJ" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/box/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
 	},
@@ -9942,12 +9942,12 @@
 /area/f13/tunnel)
 "HC" = (
 /obj/structure/table/wood,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
@@ -14423,7 +14423,7 @@
 /area/f13/brotherhood)
 "VP" = (
 /obj/structure/table,
-/obj/item/storage/box/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
