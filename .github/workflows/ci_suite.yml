@@ -149,6 +149,9 @@ jobs:
         with:
           path: auxmos/target
           key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
+      
+      - name: ldd auxmos
+        if: steps.maptick_build_cache.outputs.cache-hit == 'true'
         run: ldd auxmos/target/${{env.target}}/release/libauxmos.so
 
       - name: Install Ubuntu Deps
@@ -197,6 +200,9 @@ jobs:
         with:
           path: auxtools_tg/target
           key: auxtools_tg-build-target-${{ hashFiles('auxtools_tg/Cargo.lock') }}
+        
+      - name: ldd auxtools_tg
+        if: steps.maptick_build_cache.outputs.cache-hit == 'true'
         run: ldd auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
 
       - uses: actions-rs/toolchain@v1
