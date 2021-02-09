@@ -98,7 +98,7 @@ jobs:
         id: bsql_build_cache
         uses: actions/cache@v2
         with:
-          path: ~/.byond/bin/libBSQL.so
+          path: libBSQL.so
           key: bsql
 
       - name: Install bsql dependencies
