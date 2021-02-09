@@ -151,7 +151,7 @@ jobs:
           key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
       
       - name: ldd auxmos
-        if: steps.maptick_build_cache.outputs.cache-hit == 'true'
+        if: steps.auxmos_build_cache.outputs.cache-hit == 'true'
         run: ldd auxmos/target/${{env.target}}/release/libauxmos.so
 
       - name: Install Ubuntu Deps
