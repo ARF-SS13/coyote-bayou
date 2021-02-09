@@ -65,118 +65,9 @@ jobs:
           tgui/bin/tgui --build
           bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS tgstation.dme
 
-  auxmaptick:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Build Auxtools_tg
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: 'willox/auxtools_tg'
-          ref: '83b317412033f6ac28ac6c1ffbb08ef3d524202e'
-          path: 'auxtools_tg'
-
-      - name: Cache cargo registry
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/registry
-          key: auxtools_tg-registry-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Cache cargo index
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/git
-          key: auxtools_tg-index-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Cache cargo build
-        uses: actions/cache@v2
-        with:
-          path: auxtools_tg/target
-          key: auxtools_tg-build-target-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Install Ubuntu Deps
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt-get update
-          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
-
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: ${{env.toolchain}}
-          target: ${{env.target}}
-          override: true
-
-      - name: Build
-        run: |
-          cargo build --manifest-path auxtools_tg/Cargo.toml --target=${{env.target}} --release --verbose
-          ldd auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
-      
-      - name: Upload libauxtools_tg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: libauxtools_tg
-          path: auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
-  
-  auxmos:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Build Auxmos
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: 'Putnam3145/auxmos'
-          ref: 'master'
-          path: 'auxmos'
-
-      - name: Cache cargo registry
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/registry
-          key: auxmos-registry-${{ hashFiles('auxmos/Cargo.lock') }}
-
-      - name: Cache cargo index
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/git
-          key: auxmos-index-${{ hashFiles('auxmos/Cargo.lock') }}
-
-      - name: Cache cargo build
-        uses: actions/cache@v2
-        with:
-          path: auxmos/target
-          key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
-
-      - name: Install Ubuntu Deps
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt-get update
-          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
-
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: ${{env.toolchain}}
-          target: ${{env.target}}
-          override: true
-
-      - name: Build
-        run: |
-          cargo build --manifest-path auxmos/Cargo.toml --target=${{env.target}} --release --verbose
-          ldd auxmos/target/${{env.target}}/release/libauxmos.so
-      
-      - name: Upload libauxmos artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: libauxmos
-          path: auxmos/target/${{env.target}}/release/libauxmos.so
-
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
-    needs: [auxmaptick, auxmos]
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -203,7 +94,15 @@ jobs:
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
 
-      - name: Install ubuntu dependencies
+      - name: Cache bsql
+        id: bsql_build_cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.byond/bin/libBSQL.so
+          key: bsql
+
+      - name: Install bsql dependencies
+        if: steps.bsql_build_cache.outputs.cache-hit != 'true'
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
@@ -214,26 +113,104 @@ jobs:
           sudo apt install g++-multilib
           sudo apt install gcc-4.8-multilib
           sudo apt install g++-4.8-multilib
-      
+
       - name: Install bsql
+        if: steps.bsql_build_cache.outputs.cache-hit != 'true'
         run: |
           bash tools/ci/build_bsql.sh
-
+      
       - name: Install rust-g
         run: |
           sudo apt install libssl1.1:i386
           bash tools/ci/install_rust_g.sh
 
-      - name: Download auxtools_tg library
-        uses: actions/download-artifact@v2
+      - name: Checkout auxmos
+        uses: actions/checkout@v2
         with:
-          name: libauxtools_tg
+          repository: 'Putnam3145/auxmos'
+          ref: 'master'
+          path: 'auxmos'
 
-      - name: Download libauxmos library
-        uses: actions/download-artifact@v2
+      - name: Cache auxmos cargo registry
+        uses: actions/cache@v2
         with:
-          name: libauxmos
+          path: ~/.cargo/registry
+          key: auxmos-registry-${{ hashFiles('auxmos/Cargo.lock') }}
 
+      - name: Cache auxmos cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git
+          key: auxmos-index-${{ hashFiles('auxmos/Cargo.lock') }}
+
+      - name: Cache auxmos cargo build
+        id: auxmos_build_cache
+        uses: actions/cache@v2
+        with:
+          path: auxmos/target
+          key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
+
+      - name: Install Ubuntu Deps
+        if: steps.auxmos_build_cache.outputs.cache-hit != 'true' || steps.maptick_build_cache.outputs.cache-hit != 'true'
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
+
+      - uses: actions-rs/toolchain@v1
+        if: steps.auxmos_build_cache.outputs.cache-hit != 'true'
+        with:
+          profile: minimal
+          toolchain: ${{env.toolchain}}
+          target: ${{env.target}}
+          override: true
+
+      - name: Build Auxmos
+        if: steps.auxmos_build_cache.outputs.cache-hit != 'true'
+        run: |
+          cargo build --manifest-path auxmos/Cargo.toml --target=${{env.target}} --release --verbose
+          ldd auxmos/target/${{env.target}}/release/libauxmos.so
+          
+      - name: Checkout auxtools_tg
+        uses: actions/checkout@v2
+        with:
+          repository: 'willox/auxtools_tg'
+          ref: '83b317412033f6ac28ac6c1ffbb08ef3d524202e'
+          path: 'auxtools_tg'
+
+      - name: Cache auxtools_tg cargo registry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/registry
+          key: auxtools_tg-registry-${{ hashFiles('auxtools_tg/Cargo.lock') }}
+
+      - name: Cache auxtools_tg cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git
+          key: auxtools_tg-index-${{ hashFiles('auxtools_tg/Cargo.lock') }}
+
+      - name: Cache auxtools_tg cargo build
+        id: maptick_build_cache
+        uses: actions/cache@v2
+        with:
+          path: auxtools_tg/target
+          key: auxtools_tg-build-target-${{ hashFiles('auxtools_tg/Cargo.lock') }}
+
+      - uses: actions-rs/toolchain@v1
+        if: steps.maptick_build_cache.outputs.cache-hit != 'true'
+        with:
+          profile: minimal
+          toolchain: ${{env.toolchain}}
+          target: ${{env.target}}
+          override: true
+
+      - name: Build auxtools_tg
+        if: steps.maptick_build_cache.outputs.cache-hit != 'true'
+        run: |
+          cargo build --manifest-path auxtools_tg/Cargo.toml --target=${{env.target}} --release --verbose
+          ldd auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
+          
       - name: Compile and run tests
         run: |
           bash tools/ci/install_byond.sh
@@ -250,12 +227,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: Compile
         run: pwsh tools/ci/build.ps1
-      - name: Create artifact
-        run: |
-          md deploy
-          bash tools/deploy.sh ./deploy
-      - name: Deploy artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: deploy
-          path: deploy
