@@ -214,7 +214,7 @@
 				)
 	var/loot3 = list(
 				/obj/item/clothing/suit/armor/f13/raider/supafly,
-				/obj/item/clothing/head/helmet/f13/raider
+				/obj/item/clothing/head/helmet/f13/raider/supafly
 				)
 	var/loot4 = list(
 				/obj/item/clothing/suit/armor/f13/raider/sadist,
@@ -229,6 +229,7 @@
 				/obj/item/clothing/head/helmet/f13/raider/yankee
 				)
 	var/loot7 = list(
+				/obj/item/clothing/suit/armor/f13/raider/badlands,
 				/obj/item/clothing/head/helmet/f13/fiend
 				)
 	var/loot8 = list(
@@ -236,20 +237,16 @@
 				/obj/item/clothing/head/helmet/f13/raider/psychotic
 				)
 	var/loot9 = list(
-				/obj/item/clothing/suit/armor/f13/raider/supafly,
-				/obj/item/clothing/head/helmet/f13/raider
-				)
-	var/loot10 = list(
 				/obj/item/clothing/suit/f13/duster,
 				""
 				)
-	var/loot11 = list(
+	var/loot10 = list(
 				/obj/item/clothing/suit/armor/f13/raider/iconoclast,
 				""
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier2 //TIER 2 ARMOR

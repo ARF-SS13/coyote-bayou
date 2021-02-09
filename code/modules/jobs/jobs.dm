@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Knight",
 "Senior Scribe",
 "Scribe",
-"Off-Duty",
+"BoS Off-Duty",
 
 "Legion Centurion",
 "Legion Orator",
@@ -111,6 +111,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "NCR Sergeant",
 "NCR Corporal",
 "NCR Specialist",
+"NCR Trooper",
 
 "Mayor",
 "Sheriff",
@@ -143,7 +144,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Knight",
 "Senior Scribe",
 "Scribe",
-"Off-Duty",
+"BoS Off-Duty",
 
 "Legion Veteran Decanus",
 "Veteran Legionary",
@@ -197,7 +198,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Senior Scribe",
 	"Scribe",
 	"Initiate",
-	"Off-Duty"
+	"BoS Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(den_command_positions, list(
@@ -262,8 +263,10 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Corporal",
 	"NCR Specialist",
 	"NCR Trooper",
+	"NCR Rear Echelon",
+	"NCR Off-Duty",
 	"NCR Patrol Ranger",
-	"NCR Scout Ranger",
+	"NCR Scout Ranger"
 ))
 
 GLOBAL_LIST_INIT(vault_command_positions, list(

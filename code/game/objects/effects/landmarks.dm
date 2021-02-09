@@ -578,6 +578,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Scout Ranger"
 	icon_state = "NCR Patrol Ranger"
 
+/obj/effect/landmark/start/f13/ncrrearechelon
+	name = "NCR Rear Echelon"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncroffduty
+	name = "NCR Off-Duty"
+	icon_state = "NCR Trooper"
+
 // Legion
 
 /obj/effect/landmark/start/f13/legate
@@ -691,7 +699,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Initiate_Scribe"
 
 /obj/effect/landmark/start/f13/offduty
-	name = "Off-Duty"
+	name = "BoS Off-Duty"
 	icon_state = "Off-Duty"
 
 // Vault

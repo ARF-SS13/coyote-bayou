@@ -28,7 +28,7 @@
 /obj/item/clothing/gloves/f13/leather/fingerless
 	name = "fingerless leather gloves"
 	desc = "Gloves made out of wasteland animal hides, tanned and stitched together without any fingers."
-	item_state = "ncr_gloves"
+	icon_state = "ncr_gloves"
 	item_state = "ncr_gloves"
 	transfer_prints = TRUE
 
