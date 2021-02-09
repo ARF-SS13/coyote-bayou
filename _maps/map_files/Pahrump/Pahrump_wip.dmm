@@ -19058,12 +19058,12 @@
 /obj/item/gun/ballistic/shotgun/hunting,
 /obj/item/gun/ballistic/shotgun/hunting,
 /obj/item/gun/ballistic/shotgun/hunting,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/legion)
 "biX" = (
@@ -28748,7 +28748,7 @@
 "bQh" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/box/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
 	},
@@ -36409,7 +36409,7 @@
 /area/f13/tunnel)
 "ggk" = (
 /obj/structure/table,
-/obj/item/storage/box/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -43128,12 +43128,12 @@
 /area/f13/building)
 "rrb" = (
 /obj/structure/table/wood,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
@@ -44916,8 +44916,8 @@
 /area/f13/tunnel)
 "unQ" = (
 /obj/structure/rack,
-/obj/item/storage/box/slugshot,
-/obj/item/storage/box/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
+/obj/item/storage/fancy/ammobox/slugshot,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"

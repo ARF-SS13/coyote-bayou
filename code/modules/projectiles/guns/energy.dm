@@ -398,6 +398,6 @@
 			//to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
 
 /obj/item/gun/energy/examine(mob/user)
-	..()
+	. = ..()
 	if(can_charge == 1)
-		to_chat(user, "<span class='notice'>Alt-click to eject the battery.</span>")
+		. += SPAN_NOTICE("Alt-click to eject the battery.")

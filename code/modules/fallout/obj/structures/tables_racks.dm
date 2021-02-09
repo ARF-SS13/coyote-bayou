@@ -308,11 +308,11 @@
 	var/deconstruction_ready = 1
 
 /obj/structure/booth/examine(mob/user)
-	..()
-	deconstruction_hints(user)
+	. = ..()
+	. += deconstruction_hints(user)
 
 /obj/structure/booth/proc/deconstruction_hints(mob/user)
-	to_chat(user, "<span class='notice'>The top is panelled together and could likely be taken apart with a crowbar. The spinning mechanism is secured with bolts.</span>")
+	return SPAN_NOTICE("The top is panelled together and could likely be taken apart with a crowbar. The spinning mechanism is secured with bolts.")
 
 /obj/structure/booth/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))

@@ -515,6 +515,9 @@
 		var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]-[icon_state]"
 		var/icon/I
 
+		if(!fexists(icon_file))
+			stack_trace("Invalid icon file [icon_file]")
+			continue
 		var/icon_states_list = icon_states(icon_file)
 		if(icon_state in icon_states_list)
 			I = icon(icon_file, icon_state, SOUTH)

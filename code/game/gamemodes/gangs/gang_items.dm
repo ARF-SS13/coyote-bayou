@@ -375,7 +375,7 @@ datum/gang_item/clothing/shades //Addition: Why not have cool shades on a gang m
 	name = "Box of Buckshot"
 	id = "buckshot"
 	cost = 5
-	item_path = /obj/item/storage/box/lethalshot
+	item_path = /obj/item/storage/fancy/ammobox/lethalshot
 
 /datum/gang_item/weapon/pistol
 	name = "10mm Pistol"

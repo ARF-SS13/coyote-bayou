@@ -512,9 +512,9 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 
 GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/revolver/single_shotgun,
-	/obj/item/storage/box/rubbershot/beanbag,
+	/obj/item/storage/fancy/ammobox/beanbag,
 	/obj/item/gun/ballistic/revolver/caravan_shotgun,
-	/obj/item/storage/box/rubbershot/beanbag,
+	/obj/item/storage/fancy/ammobox/beanbag,
 	/obj/item/gun/ballistic/shotgun/boltaction,
 	/obj/item/ammo_box/a762,
 	/obj/item/gun/ballistic/revolver/zipgun,
@@ -535,7 +535,7 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/shotgun/hunting,
-	/obj/item/storage/box/lethalshot,
+	/obj/item/storage/fancy/ammobox/lethalshot,
 	/obj/item/gun/ballistic/revolver/m29,
 	/obj/item/ammo_box/m44,
 	/obj/item/gun/ballistic/shotgun/remington/scoped,
@@ -568,7 +568,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
-	/obj/item/storage/box/lethalshot,
+	/obj/item/storage/fancy/ammobox/lethalshot,
 	/obj/item/gun/energy/laser/wattz,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/revolver/needler,
@@ -633,9 +633,9 @@ GLOBAL_LIST_INIT(loot_unique_range, list(
 
 GLOBAL_LIST_INIT(loot_t1_ammo, list(
 	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/storage/box/lethalshot,
-	/obj/item/storage/box/rubbershot,
-	/obj/item/storage/box/rubbershot/beanbag,
+	/obj/item/storage/fancy/ammobox/lethalshot,
+	/obj/item/storage/fancy/ammobox,
+	/obj/item/storage/fancy/ammobox/beanbag,
 	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/magazine/m10mm_adv,
 	/obj/item/ammo_box/magazine/m556/rifle/small
@@ -656,7 +656,7 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
-	/obj/item/storage/box/lethalshot,
+	/obj/item/storage/fancy/ammobox/lethalshot,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/ammo_box/magazine/m10mm_adv,
 	/obj/item/ammo_box/magazine/greasegun,

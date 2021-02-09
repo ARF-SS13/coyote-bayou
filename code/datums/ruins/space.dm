@@ -250,12 +250,6 @@
 	name = "Ordinary Space Tile"
 	description = "Absolutely nothing strange going on here please move along, plenty more space to see right this way!"
 
-/datum/map_template/ruin/space/gondoland
-	id = "gondolaasteroid"
-	suffix = "gondolaasteroid.dmm"
-	name = "Gondoland"
-	description = "Just an ordinary rock- wait, what's that thing?"
-
 /datum/map_template/ruin/space/whiteshipruin_box
 	id = "whiteshipruin_box"
 	suffix = "whiteshipruin_box.dmm"

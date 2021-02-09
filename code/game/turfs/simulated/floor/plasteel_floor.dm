@@ -5,8 +5,8 @@
 	burnt_states = list("floorscorched1", "floorscorched2")
 
 /turf/open/floor/plasteel/examine(mob/user)
-	..()
-	to_chat(user, "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
+	. = ..()
+	. += SPAN_NOTICE("There's a <b>small crack</b> on the edge of it.")
 
 /turf/open/floor/plasteel/airless
 	initial_gas_mix = "TEMP=2.7"
