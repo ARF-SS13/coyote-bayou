@@ -142,7 +142,7 @@
 	desc = "A rounded, dense, donut-like loop of bread. Perfect for toasting, as they're rather chewy untoasted."
 	icon_state = "donut1"// need bagel sprite pfffffffffffffff
 	bitesize = 3
-	list_reagents = list("nutriment" = 6, "vitamin" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("bagelness" = 1)
 	foodtype = GRAIN
 	throwforce = 10 //Bonk
