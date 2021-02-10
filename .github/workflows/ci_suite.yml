@@ -96,6 +96,7 @@ jobs:
           key: auxtools_tg-index-${{ hashFiles('auxtools_tg/Cargo.lock') }}
 
       - name: Cache cargo build
+        id: auxtools_tg-cache
         uses: actions/cache@v2
         with:
           path: auxtools_tg/target
