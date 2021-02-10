@@ -1378,6 +1378,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				user.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
 
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
+		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
+			damage = user.dna.species.punchdamagehigh
 		var/puncherstam = user.getStaminaLoss()
 		var/puncherbrute = user.getBruteLoss()
 		var/punchedstam = target.getStaminaLoss()
@@ -1403,6 +1405,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		else
 			if(user.dna.species.punchdamagelow)
 				if(atk_verb == ATTACK_EFFECT_KICK) //kicks never miss (provided your species deals more than 0 damage)
+					miss_chance = 0
+				else if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
 					miss_chance = 0
 				else if(HAS_TRAIT(user, TRAIT_PUGILIST)) //pugilists have a flat 10% miss chance
 					miss_chance = 10
