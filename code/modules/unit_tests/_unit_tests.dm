@@ -1,5 +1,4 @@
 //include unit test files in this module in this ifdef
-//Keep this sorted alphabetically
 
 #if defined(UNIT_TESTS) || defined(SPACEMAN_DMM)
 
@@ -39,6 +38,7 @@
 #define UNIT_TEST_FAILED 1
 #define UNIT_TEST_SKIPPED 2
 
+//Keep this sorted alphabetically
 #include "anchored_mobs.dm"
 #include "character_saving.dm"
 #include "combat.dm"
