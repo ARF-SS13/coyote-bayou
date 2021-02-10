@@ -38,8 +38,6 @@
 #define UNIT_TEST_FAILED 1
 #define UNIT_TEST_SKIPPED 2
 
-#include "unit_test.dm"
-
 //Keep this sorted alphabetically
 #include "anchored_mobs.dm"
 #include "character_saving.dm"
@@ -64,6 +62,7 @@
 #include "subsystem_init.dm"
 #include "surgeries.dm"
 #include "timer_sanity.dm"
+#include "unit_test.dm"
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
