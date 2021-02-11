@@ -21,12 +21,12 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	connectionHistory = list()
 
 /datum/chatOutput/proc/start()
+	set waitfor = FALSE
 	//Check for existing chat
 	if(!owner)
 		return FALSE
 
 	if(!winexists(owner, "browseroutput")) // Oh goddamnit.
-		set waitfor = FALSE
 		broken = TRUE
 		message_admins("Couldn't start chat for [key_name_admin(owner)]!")
 		. = FALSE
