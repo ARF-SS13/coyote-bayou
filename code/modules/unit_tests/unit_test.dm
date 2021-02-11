@@ -18,24 +18,40 @@ GLOBAL_VAR(test_log)
 /datum/unit_test
 	//Bit of metadata for the future maybe
 	var/list/procs_tested
-	
-	//usable vars
+
+	/// The bottom left turf of the testing zone
 	var/turf/run_loc_bottom_left
+
+	/// The top right turf of the testing zone
 	var/turf/run_loc_top_right
 
+	/// The type of turf to allocate for the testing zone
+	var/test_turf_type = /turf/open/floor/plasteel
+
 	//internal shit
+	var/focus = FALSE
 	var/succeeded = TRUE
 	var/list/allocated
 	var/list/fail_reasons
 
+	var/static/datum/turf_reservation/turf_reservation
+
 /datum/unit_test/New()
-	run_loc_bottom_left = locate(1, 1, 1)
-	run_loc_top_right = locate(5, 5, 1)
+	if (isnull(turf_reservation))
+		turf_reservation = SSmapping.RequestBlockReservation(5, 5)
+
+	for (var/turf/reserved_turf in turf_reservation.reserved_turfs)
+		reserved_turf.ChangeTurf(test_turf_type)
+
+	allocated = new
+	run_loc_bottom_left = locate(turf_reservation.bottom_left_coords[1], turf_reservation.bottom_left_coords[2], turf_reservation.bottom_left_coords[3])
+	run_loc_top_right = locate(turf_reservation.top_right_coords[1], turf_reservation.top_right_coords[2], turf_reservation.top_right_coords[3])
 
 /datum/unit_test/Destroy()
 	//clear the test area
 	for(var/atom/movable/AM in block(run_loc_bottom_left, run_loc_top_right))
 		qdel(AM)
+	QDEL_LIST(allocated)
 	return ..()
 
 /datum/unit_test/proc/Run()
