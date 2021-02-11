@@ -476,6 +476,16 @@
 	item_color = "overalls"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/plaid_skirt
+	name = "red plaid skirt"
+	desc = "A preppy red skirt with a white blouse."
+	icon_state = "plaid_red"
+	item_state = "plaid_red"
+	item_color = "plaid_red"
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
+	alt_covers_chest = TRUE
+
 /obj/item/clothing/under/plaid_skirt/green
 	name = "green plaid skirt"
 	desc = "A preppy green skirt with a white blouse."
