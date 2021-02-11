@@ -482,7 +482,6 @@
 
 /datum/asset/spritesheet/loadout/register()
 	var/list/outfits = list()
-	var/list/ics = list() // We can afford the processing here to avoid using unnecessary bandwidth.
 	for(var/j in subtypesof(/datum/job))
 		var/datum/job/J = new j
 		for (var/D in J.loadout_options)
@@ -495,34 +494,26 @@
 				if(!ispath(itemtype, /obj/item))
 					world.log << "NON-ITEM \"[itemtype]\" IN [O.type] OF [j]"
 					continue
-				if(isnull(initial(I.icon)))
+				var/icon_file = initial(I.icon)
+				if(isnull(icon_file))
 					world.log << "MISSING ICON FOR [initial(I.name)] IN [O.type] OF [j]"
 					continue
-				if(isnull(initial(I.icon_state)))
-					world.log << "MISSING ICON STATE FOR [itemtype]"
+				var/icon_state = initial(I.icon_state)
+				if(isnull(icon_state) || !(icon_state in icon_states(icon_file)))
+					world.log << "MISSING ICON STATE[isnull(icon_state) ? null : " "][icon_state] FOR [itemtype]"
 					continue
-				var/ic_string = "[initial(I.icon)]*[initial(I.icon_state)]" // delimiter must be illegal to use in filenames
 				var/c = initial(I.color)
-				if(!isnull(c) && c != "#ffffff")
-					ic_string += "*[c]"
-				ics |= ic_string
-	for (var/i in ics)
-		var/list/tmp = splittext(i, "*")
-		if(length(tmp) < 2) continue
-		var/icon_file = tmp[1]
-		var/icon_state = tmp[2]
-		var/c = LAZYACCESS(tmp, 3)
-		var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]-[icon_state]"
-		var/icon/I
-
-		var/icon_states_list = icon_states(icon_file)
-		if(icon_state in icon_states_list)
-			I = icon(icon_file, icon_state, SOUTH)
-			if (!isnull(c) && uppertext(c) != "#FFFFFF")
-				I.Blend(c, ICON_MULTIPLY)
-				icon_string += "-[c]"
-		else
-			stack_trace("Invalid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state])")
-			I = icon('icons/turf/floors.dmi', "", SOUTH)
-		Insert(icon_string, I)
+				var/genColor = FALSE
+				var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]"
+				if(sprites[icon_string]) // save us some work generating the icon if we already have it
+					continue
+				if (!isnull(c) && uppertext(c) != "#FFFFFF" && uppertext(c) != "#FFFFFFFF")
+					if(sprites["[icon_string]-[c]"]) // save us an expensive icon.Blend() operation
+						continue
+					genColor = TRUE
+				var/icon/Ic = icon(icon_file, icon_state, SOUTH)
+				if (genColor)
+					Ic.Blend(c, ICON_MULTIPLY)
+					icon_string += "-[c]"
+				Insert(icon_string, Ic)
 	return ..()

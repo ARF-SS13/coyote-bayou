@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(food_reagents, build_reagents_to_food()) //reagentid = related 
 		for(var/r in item.list_reagents)
 			if (!.[r])
 				.[r] = list()
-			.[r] += type
+			.[r] |= type
 		qdel(item)
 	//dang plant snowflake
 	for (var/type in subtypesof(/obj/item/seeds))

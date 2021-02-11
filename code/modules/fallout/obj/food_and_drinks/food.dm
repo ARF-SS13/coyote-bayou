@@ -314,7 +314,7 @@
 	name = "Wasteland Wellington"
 	desc = "Meat from wasteland critters wrapped in puffy pastry. Delicious, rich and certainly high class."
 	icon_state = "meatbun"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine = 5")
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/tricordrazine = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "B#22222"
 
@@ -322,7 +322,7 @@
 	name = "Deathclaw Omelette"
 	desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
 	icon_state = "deathclawomlette"
-	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, "omnizine" = 40, "dexalin" = 10)
+	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/omnizine = 40, /datum/reagent/medicine/dexalin = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 60)
 	filling_color = "B#22222"
 
@@ -330,7 +330,7 @@
 	name = "Molerat Stew"
 	desc = "A hearty stew, simmered in beer with some vegetables. It's good, if you can get over the bitter taste of the meat."
 	icon_state = "moleratstew"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, "tricordrazine" = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/tricordrazine = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	filling_color = "B#22222"
 

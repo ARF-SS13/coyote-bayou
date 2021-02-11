@@ -42,11 +42,11 @@
 	. = ..()
 
 /obj/item/trash/f13/electronic/toaster/examine(mob/user)
-	..()
+	. = ..()
 	if(is_toasting)
-		to_chat(user, "<span class='notice'>The smell of something being toasted wafts from the slot.</span>")
+		. += SPAN_NOTICE("The smell of something being toasted wafts from the slot.")
 	if(!cell || cell.charge <= 0)
-		to_chat(user, "<span class='warning'>The power cell seems to be faulty.</span>")
+		. += SPAN_WARNING("The power cell seems to be faulty.")
 
 /obj/item/trash/f13/electronic/toaster/attackby(obj/item/W, mob/user, params)
 	var/mob/living/carbon/human/U = user
@@ -142,7 +142,7 @@
 	desc = "A rounded, dense, donut-like loop of bread. Perfect for toasting, as they're rather chewy untoasted."
 	icon_state = "donut1"// need bagel sprite pfffffffffffffff
 	bitesize = 3
-	list_reagents = list("nutriment" = 6, "vitamin" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("bagelness" = 1)
 	foodtype = GRAIN
 	throwforce = 10 //Bonk

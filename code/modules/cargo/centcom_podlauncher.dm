@@ -462,9 +462,6 @@
 		if("styleInvisible")
 			temp_pod.setStyle(STYLE_INVISIBLE)
 			. = TRUE
-		if("styleGondola")
-			temp_pod.setStyle(STYLE_GONDOLA)
-			. = TRUE
 		if("styleSeeThrough")
 			temp_pod.setStyle(STYLE_SEETHROUGH)
 			. = TRUE

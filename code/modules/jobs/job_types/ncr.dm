@@ -398,8 +398,8 @@ Corporal
 /datum/outfit/loadout/corpclose
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=2,
-		/obj/item/storage/box/rubbershot/beanbag=1)
+		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/storage/fancy/ammobox/beanbag=1)
 /*
 Specialist
 */
@@ -527,8 +527,8 @@ Trooper
 	name = "Close Quarters"
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot=2,
-		/obj/item/storage/box/rubbershot/beanbag=1)
+		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/storage/fancy/ammobox/beanbag=1)
 
 /*
 Rear Echelon

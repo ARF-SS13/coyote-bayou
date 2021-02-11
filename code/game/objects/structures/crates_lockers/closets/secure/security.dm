@@ -233,7 +233,7 @@
 	..()
 	new /obj/item/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
-		new /obj/item/storage/box/rubbershot(src)
+		new /obj/item/storage/fancy/ammobox(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/ballistic/shotgun/riot(src)
 /obj/structure/closet/secure_closet/armory3
@@ -268,7 +268,7 @@
 	new /obj/item/electrostaff(src)
 	new /obj/item/electrostaff(src)
 	for(var/i in 1 to 3)
-		new /obj/item/storage/box/lethalshot(src)
+		new /obj/item/storage/fancy/ammobox/lethalshot(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

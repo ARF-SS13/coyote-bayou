@@ -611,13 +611,13 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/storage/box/rubbershot/beanbag,
+				/obj/item/storage/fancy/ammobox/beanbag,
 				""
 				)
 
 	var/loot2 = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/storage/box/rubbershot/beanbag,
+				/obj/item/storage/fancy/ammobox/beanbag,
 				""
 				)
 
@@ -700,7 +700,7 @@
 
 	var/loot1 = list(
 				/obj/item/gun/ballistic/shotgun/hunting,
-				/obj/item/storage/box/lethalshot,
+				/obj/item/storage/fancy/ammobox/lethalshot,
 				""
 				)
 
@@ -793,7 +793,7 @@
 
 	var/loot4 = list(
 				/obj/item/gun/ballistic/shotgun/trench,
-				/obj/item/storage/box/lethalshot,
+				/obj/item/storage/fancy/ammobox/lethalshot,
 				)
 
 	var/loot5 = list(
@@ -843,8 +843,8 @@
 				)
 	var/loot14 = list(
 				/obj/item/gun/ballistic/shotgun/neostead,
-				/obj/item/storage/box/lethalshot,
-				/obj/item/storage/box/slugshot
+				/obj/item/storage/fancy/ammobox/lethalshot,
+				/obj/item/storage/fancy/ammobox/slugshot
 	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
@@ -1015,9 +1015,9 @@
 
 	loot = list(
 				/obj/item/ammo_box/magazine/m9mm,
-				/obj/item/storage/box/lethalshot,
-				/obj/item/storage/box/rubbershot,
-				/obj/item/storage/box/rubbershot/beanbag,
+				/obj/item/storage/fancy/ammobox/lethalshot,
+				/obj/item/storage/fancy/ammobox,
+				/obj/item/storage/fancy/ammobox/beanbag,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m10mm_adv,
 				/obj/item/ammo_box/magazine/m556/rifle/small
@@ -1050,7 +1050,7 @@
 	lootdoubles = TRUE
 
 	loot = list(
-				/obj/item/storage/box/lethalshot,
+				/obj/item/storage/fancy/ammobox/lethalshot,
 				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/m10mm_adv,
 				/obj/item/ammo_box/magazine/greasegun,

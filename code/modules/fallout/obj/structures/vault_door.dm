@@ -59,7 +59,7 @@
 			src.density = 1
 			is_busy = 0
 
-/obj/structure/vault_door/proc/toogle()
+/obj/structure/vault_door/proc/toggle()
 	if(destroyed)
 		usr << "<span class='warning'>[src] is broken.</span>"
 		return
@@ -87,7 +87,7 @@
 	icon_state = "lever0"
 	for(var/obj/structure/vault_door/door in world)
 		if(door.id == id)
-			door.toogle()
+			door.toggle()
 			opened = !door.density
 	spawn(50)
 		if(opened)
