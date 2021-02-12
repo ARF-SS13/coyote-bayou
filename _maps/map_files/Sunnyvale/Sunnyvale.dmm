@@ -2683,7 +2683,7 @@
 	},
 /area/f13/underground/mountain)
 "aif" = (
-/obj/structure/sign/bilboards/klamat,
+/obj/structure/billboard/klamat,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
 "aig" = (
@@ -3574,7 +3574,7 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/farmhouse)
 "akV" = (
-/obj/structure/sign/bilboards/ads/rita4,
+/obj/structure/billboard/ritas,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
 "akW" = (
@@ -6373,7 +6373,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/crew_quarters/bar/atrium)
 "asN" = (
-/obj/effect/spawner/lootdrop/f13/discomeme,
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/crew_quarters/bar/atrium)
 "asO" = (
@@ -14765,7 +14765,7 @@
 	},
 /area/f13/sunny_dale)
 "aOn" = (
-/obj/structure/sign/bilboards/ads/cola1,
+/obj/structure/billboard/cola/pristine,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
 "aOo" = (
@@ -15011,7 +15011,7 @@
 	},
 /area/f13/sunny_dale)
 "aOZ" = (
-/obj/effect/spawner/lootdrop/f13/discomeme,
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -16057,7 +16057,7 @@
 	},
 /area/f13/desert)
 "aRV" = (
-/obj/structure/sign/bilboards/den{
+/obj/structure/billboard/den{
 	desc = "A sprayed metal sheet that says \"Den\".";
 	name = "Den Sign"
 	},

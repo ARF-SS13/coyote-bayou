@@ -171,9 +171,7 @@
 					/obj/item/clothing/mask/russian_balaclava,
 					/obj/item/clothing/head/helmet/rus_ushanka,
 					/obj/item/clothing/suit/armor/vest/russian_coat,
-					/obj/effect/spawner/bundle/crate/mosin,
 					/obj/item/storage/toolbox/ammo,
-					/obj/effect/spawner/bundle/crate/surplusrifle,
 					/obj/item/storage/toolbox/ammo/surplus)
 	crate_name = "surplus military crate"
 

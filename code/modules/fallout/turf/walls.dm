@@ -30,7 +30,7 @@
 	name = "wooden wall"
 	desc = "A traditional wooden wall."
 	icon = 'icons/fallout/turfs/walls/wood.dmi'
-	icon_state = "wood"
+	icon_state = "wood0"
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_OLD
@@ -45,7 +45,7 @@
 	name = "house wall"
 	desc = "A weathered pre-War house wall."
 	icon = 'icons/fallout/turfs/walls/house.dmi'
-	icon_state = "house"
+	icon_state = "house0"
 	icon_type_smooth = "house"
 	hardness = 50
 	var/broken = 0
@@ -97,7 +97,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	name = "interior wall"
 	desc = "Interesting, what kind of material they have used - these wallpapers still look good after all the centuries..."
 	icon = 'icons/fallout/turfs/walls/interior.dmi'
-	icon_state = "interior"
+	icon_state = "interior0"
 	icon_type_smooth = "interior"
 	hardness = 10
 	smooth = SMOOTH_OLD

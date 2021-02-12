@@ -100,29 +100,6 @@
 	crate_name = "surplus russian clothing"
 	crate_type = /obj/structure/closet/crate/internals
 
-/datum/supply_pack/security/russian_partisan
-	name = "Russian Partisan Gear"
-	desc = "An old russian partisan equipment crate, comes with a full russian outfit, a loaded surplus rifle and a second magazine."
-	contraband = TRUE
-	access = FALSE
-	cost = 6500
-	contains = list(/obj/item/clothing/suit/armor/navyblue/russian,
-					/obj/item/clothing/shoes/combat,
-					/obj/item/clothing/head/ushanka,
-					/obj/item/clothing/suit/armor/bulletproof,
-					/obj/item/clothing/head/helmet/alt,
-					/obj/item/clothing/gloves/tackler/combat/insulated,
-					/obj/item/clothing/mask/gas)
-	crate_name = "surplus russian gear"
-	crate_type = /obj/structure/closet/crate/internals
-
-/datum/supply_pack/security/russian_partisan/fill(obj/structure/closet/crate/C)
-	..()
-	if(prob(20))
-		new /obj/effect/spawner/bundle/crate/mosin(C)
-	else
-		new /obj/effect/spawner/bundle/crate/surplusrifle(C)
-
 /datum/supply_pack/security/sechardsuit
 	name = "Sec Hardsuit"
 	desc = "One Sec Hardsuit with a small air tank and mask."

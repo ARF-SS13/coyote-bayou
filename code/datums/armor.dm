@@ -27,12 +27,9 @@
 /datum/armor/New(linemelee = 0, linebullet = 0, linelaser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0, melee = 0, bullet = 0, laser = 0, tier = 0)
 	
 	if(tier) //ASSIGNS ARMOR VALUES BASED ON TIER, IT WILL USE ARMOR VALUES INSTEAD OF THE TIER FOR THAT VALUE IF THE ARMOR VALUE IS PRESENT
-		if(!linemelee)
-			linemelee = tierline[tier]
-		if(!linebullet)
-			linebullet = tierline[tier]
-		if(!linelaser)
-			linelaser = tierline[tier]
+		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
+		linebullet = linebullet+tierline[tier]
+		linelaser = linelaser+tierline[tier]
 
 	src.linemelee = linemelee
 	src.linebullet = linebullet

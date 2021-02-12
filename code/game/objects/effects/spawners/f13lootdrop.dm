@@ -12,37 +12,6 @@
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
 
-/obj/effect/spawner/lootdrop/f13/discomeme
-	name = "dancemachine or piano"
-	lootcount = 1
-	loot = list(
-//				/obj/structure/piano = 3,
-				/obj/machinery/jukebox = 1
-				)
-
-/obj/effect/spawner/lootdrop/f13/discomeme/Initialize(mapload) //dont want it to init same time as piano
-	return
-
-/obj/effect/spawner/lootdrop/f13/discomeme/New()
-	..()
-	if(loot && loot.len)
-		var/turf/T = get_turf(src)
-		var/loot_spawned = 0
-		while((lootcount-loot_spawned) && loot.len)
-			var/lootspawn = pickweight(loot)
-			if(!lootdoubles)
-				loot.Remove(lootspawn)
-
-			if(lootspawn)
-				var/atom/movable/spawned_loot = new lootspawn(T)
-				if(pixel_x != 0)
-					spawned_loot.pixel_x = pixel_x
-				if(pixel_y != 0)
-					spawned_loot.pixel_y = pixel_y
-			loot_spawned++
-		qdel(src) //make sure it is deleted at all cost
-	qdel(src)
-
 /*	------------------------------------------------
 	----------------ARMOR SPAWNERS------------------
 	------------------------------------------------ */
@@ -53,314 +22,418 @@
 
 /obj/effect/spawner/lootdrop/f13/armor/clothes
 	name = "pre-war clothes spawner"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(			
+				/obj/effect/spawner/bundle/f13/worker,
+				/obj/effect/spawner/bundle/f13/plaidskirt,
+				/obj/item/clothing/under/blacktango,
+				/obj/item/clothing/under/redeveninggown,
+				/obj/item/clothing/under/janimaid,
+				/obj/effect/spawner/bundle/f13/badass,
+				/obj/effect/spawner/bundle/f13/puffer,
+				/obj/effect/spawner/bundle/f13/that,
+				/obj/effect/spawner/bundle/f13/benny,
+				/obj/effect/spawner/bundle/f13/burgundysuit,
+				/obj/effect/spawner/bundle/f13/scratch,
+				/obj/effect/spawner/bundle/f13/hoodie,
+				/obj/item/clothing/under/pants/camo,
+				/obj/effect/spawner/bundle/f13/bartender_purple,
+				/obj/effect/spawner/bundle/f13/plaidskirt/bluered,
+				/obj/effect/spawner/bundle/f13/navysuit,
+				/obj/effect/spawner/bundle/f13/femsuit,
+				/obj/effect/spawner/bundle/f13/owo
+	)
+
+/obj/effect/spawner/bundle/f13/worker
+	name = "overalls and flat cap"
+	items = list(
 				/obj/item/clothing/under/overalls,
 				/obj/item/clothing/head/flatcap
 				)
-	var/loot2 = list(
+
+/obj/effect/spawner/bundle/f13/plaidskirt
+	name = "green and purple plaid skirt"
+	items = list(
 				/obj/item/clothing/under/plaid_skirt/green,
 				/obj/item/clothing/under/plaid_skirt/purple
 				)
-	var/loot3 = list(
-				/obj/item/clothing/under/blacktango,
-				""
-				)
-	var/loot4 = list(
-				/obj/item/clothing/under/redeveninggown,
-				""
-				)
-	var/loot5 = list(
-				/obj/item/clothing/under/janimaid,
-				""
-				)
-	var/loot6 = list(
+
+/obj/effect/spawner/bundle/f13/badass
+	name = "leather jacket and fingerless gloves"
+	items = list(
 				/obj/item/clothing/suit/jacket/leather,
 				/obj/item/clothing/gloves/fingerless
 				)
-	var/loot7 = list(
+
+/obj/effect/spawner/bundle/f13/puffer
+	name = "puffer vest, jeans, and grey cloak"
+	items = list(
 				/obj/item/clothing/suit/jacket/puffer/vest,
 				/obj/item/clothing/under/pants/jeans,
 				/obj/item/clothing/neck/cloak/grey
 				)
-	var/loot8 = list(
+
+/obj/effect/spawner/bundle/f13/that
+	name = "charcoal suit and hat"
+	items = list(
 				/obj/item/clothing/under/suit_jacket/charcoal,
 				/obj/item/clothing/head/that
 				)
-	var/loot9 = list(
+
+/obj/effect/spawner/bundle/f13/benny
+	name = "checkered suit and shoes"
+	items = list(
 				/obj/item/clothing/under/suit_jacket/checkered, // It's Benny time!
 				/obj/item/clothing/shoes/laceup
 				)
-	var/loot10 = list(
+
+/obj/effect/spawner/bundle/f13/burgundysuit
+	name = "burgundy suit, shoes, and cloak"
+	items = list(
 				/obj/item/clothing/under/suit_jacket/burgundy,
 				/obj/item/clothing/shoes/laceup,
 				/obj/item/clothing/neck/cloak
 				)
-	var/loot11 = list(
+
+/obj/effect/spawner/bundle/f13/scratch
+	name = "white suit and shoes"
+	items = list(
 				/obj/item/clothing/under/scratch,
 				/obj/item/clothing/shoes/sneakers/white
 				)
-	var/loot12 = list(
+
+/obj/effect/spawner/bundle/f13/hoodie
+	name = "hoodie"
+	items = list(
 				/obj/item/clothing/head/beanie/black,
 				/obj/item/clothing/suit/hooded/chaplain_hoodie
 				)
-	var/loot13 = list(
-				/obj/item/clothing/under/pants/camo,
-				""
-				)
-	var/loot14 = list(
+
+/obj/effect/spawner/bundle/f13/bartender_purple
+	name = "purple bartender's outfit spawner"
+	items = list(
 				/obj/item/clothing/suit/apron/purple_bartender,
 				/obj/item/clothing/under/rank/bartender/purple
 				)
-	var/loot15 = list(
+
+/obj/effect/spawner/bundle/f13/plaidskirt/bluered
+	name = "blue and red plaid skirts"
+	items = list(
 				/obj/item/clothing/under/plaid_skirt/blue,
 				/obj/item/clothing/under/plaid_skirt
 				)
-	var/loot16 = list(
+
+/obj/effect/spawner/bundle/f13/navysuit
+	name = "navy suit and shoes"
+	items = list(
 				/obj/item/clothing/under/suit_jacket/navy,
 				/obj/item/clothing/shoes/laceup
 				)
-	var/loot17 = list(
+
+/obj/effect/spawner/bundle/f13/femsuit
+	name = "female executive suit and shoes"
+	items = list(
 				/obj/item/clothing/under/suit_jacket/female,
 				/obj/item/clothing/shoes/laceup
 				)
-	var/loot18 = list(
+
+/obj/effect/spawner/bundle/f13/owo
+	name = "bandage dress and shoes"
+	items = list(
 				/obj/item/clothing/under/f13/erpdress,
 				/obj/item/clothing/shoes/laceup
 				)
 
-/obj/effect/spawner/lootdrop/f13/armor/clothes/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14, loot15, loot16, loot17, loot18)
-	. = ..()
-
 /obj/effect/spawner/lootdrop/f13/armor/costumes
 	name = "pre-war costumes spawner"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/soviet,
+				/obj/effect/spawner/bundle/f13/geisha,
+				/obj/item/clothing/under/blacktango,
+				/obj/item/clothing/under/redeveninggown,
+				/obj/effect/spawner/bundle/f13/mexican,
+				/obj/item/clothing/under/sailor,
+				/obj/effect/spawner/lootdrop/f13/schoolgirl,
+				/obj/effect/spawner/bundle/f13/hats,
+				/obj/effect/spawner/bundle/f13/jabroni,
+				/obj/effect/spawner/bundle/f13/romeaboo,
+				/obj/item/clothing/under/maid,
+				/obj/effect/spawner/bundle/f13/vampire,
+				/obj/item/clothing/under/kilt,
+				/obj/effect/spawner/bundle/f13/pirate
+	)
+
+/obj/effect/spawner/bundle/f13/soviet
+	name = "soviet costume"
+	items = list(
 				/obj/item/clothing/head/ushanka,
 				/obj/item/clothing/under/soviet,
 				/obj/item/clothing/neck/cloak/grey
 				)
-	var/loot2 = list(
+
+/obj/effect/spawner/bundle/f13/geisha
+	name = "geisha costume"
+	items = list(
 				/obj/item/clothing/under/geisha,
 				/obj/item/clothing/shoes/sandal
 				)
-	var/loot3 = list(
-				/obj/item/clothing/under/blacktango,
-				""
-				)
-	var/loot4 = list(
-				/obj/item/clothing/under/redeveninggown,
-				""
-				)
-	var/loot5 = list(
+
+/obj/effect/spawner/bundle/f13/mexican
+	name = "sombrero and poncho"
+	items = list(
 				/obj/item/clothing/head/sombrero,
 				/obj/item/clothing/suit/poncho
 				)
-	var/loot6 = list(
-				/obj/item/clothing/under/sailor,
-				""
-				)
-	var/loot7 = list(
+
+/obj/effect/spawner/lootdrop/f13/schoolgirl
+	name = "schoolgirl outfit spawner"
+	loot = list(
 				/obj/item/clothing/under/schoolgirl/red,
 				/obj/item/clothing/under/schoolgirl
 				)
-	var/loot8 = list(
+
+/obj/effect/spawner/bundle/f13/hats
+	name = "hats"
+	items = list(
 				/obj/item/clothing/head/fluff/bandit,
 				/obj/item/clothing/head/fluff/gambler
 				)
-	var/loot9 = list(
+
+/obj/effect/spawner/bundle/f13/jabroni
+	name = "jabroni outfit spawner"
+	items = list(
 				/obj/item/clothing/under/jabroni,
 				/obj/item/clothing/glasses/sunglasses/blindfold
 				)
-	var/loot10 = list(
+
+/obj/effect/spawner/bundle/f13/romeaboo
+	name = "roman gladiator outfit spawner"
+	items = list(
 				/obj/item/clothing/under/gladiator,
 				/obj/item/clothing/shoes/roman
 				)
-	var/loot11 = list(
-				/obj/item/clothing/under/maid,
-				""
-				)
-	var/loot12 = list(
+
+/obj/effect/spawner/bundle/f13/vampire
+	name = "vampire outfit spawner"
+	items = list(
 				/obj/item/clothing/under/draculass,
-				/obj/item/clothing/neck/cloak/grey,
-				""
+				/obj/item/clothing/neck/cloak/grey
 				)
-	var/loot13 = list(
-				/obj/item/clothing/under/kilt,
-				""
-				)
-	var/loot14 = list(
+
+/obj/effect/spawner/bundle/f13/pirate
+	name = "pirate outfit spawner"
+	items = list(
 				/obj/item/clothing/under/pirate,
 				/obj/item/clothing/suit/pirate
 				)
 
-/obj/effect/spawner/lootdrop/f13/armor/costumes/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14)
-	. = ..()
-
 
 /obj/effect/spawner/lootdrop/f13/armor/tier1 //TIER 1 ARMOR
 	name = "tier 1 armor"
-	lootcount = 2 //guranteeing it /will/ spawn
-	var/loot1 = list(
+	loot = list(
 				/obj/item/clothing/suit/armor/f13/leather_jacket,
-				""
-				)
-				//"" returns absolutley nothing
-	var/loot2 = list(
 				/obj/item/clothing/suit/armor/f13/kit,
-				""
-				)
-	var/loot3 = list(
+				/obj/effect/spawner/bundle/f13/armor/supafly,
+				/obj/effect/spawner/bundle/f13/armor/sadist,
+				/obj/effect/spawner/bundle/f13/armor/blastmaster,
+				/obj/effect/spawner/bundle/f13/armor/yankee,
+				/obj/effect/spawner/bundle/f13/armor/badlands,
+				/obj/effect/spawner/bundle/f13/armor/psycho,
+				/obj/item/clothing/suit/f13/duster,
+				/obj/item/clothing/suit/armor/f13/raider/iconoclast
+	)
+
+/obj/effect/spawner/bundle/f13/armor/supafly
+	name = "supafly raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/supafly,
 				/obj/item/clothing/head/helmet/f13/raider/supafly
 				)
-	var/loot4 = list(
+
+/obj/effect/spawner/bundle/f13/armor/sadist
+	name = "blastmaster raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/sadist,
 				/obj/item/clothing/head/helmet/f13/raider/arclight
 				)
-	var/loot5 = list(
+
+/obj/effect/spawner/bundle/f13/armor/blastmaster
+	name = "blastmaster raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/blastmaster,
 				/obj/item/clothing/head/helmet/f13/raider/blastmaster
 				)
-	var/loot6 = list(
+
+/obj/effect/spawner/bundle/f13/armor/yankee
+	name = "yankee raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/yankee,
 				/obj/item/clothing/head/helmet/f13/raider/yankee
 				)
-	var/loot7 = list(
+
+/obj/effect/spawner/bundle/f13/armor/badlands
+	name = "badlands raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/badlands,
 				/obj/item/clothing/head/helmet/f13/fiend
 				)
-	var/loot8 = list(
+
+/obj/effect/spawner/bundle/f13/armor/psycho
+	name = "knight armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/painspike,
 				/obj/item/clothing/head/helmet/f13/raider/psychotic
 				)
-	var/loot9 = list(
-				/obj/item/clothing/suit/f13/duster,
-				""
-				)
-	var/loot10 = list(
-				/obj/item/clothing/suit/armor/f13/raider/iconoclast,
-				""
-				)
-
-/obj/effect/spawner/lootdrop/f13/armor/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
-	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier2 //TIER 2 ARMOR
 	name = "tier 2 armor"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/armor/knight,
+				/obj/effect/spawner/bundle/f13/armor/metal,
+				/obj/item/clothing/suit/armor/f13/leatherarmor,
+				/obj/item/clothing/suit/armor/f13/leather_jacket/combat,
+				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
+				)
+
+/obj/effect/spawner/bundle/f13/armor/knight
+	name = "knight armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/metalarmor,
 				/obj/item/clothing/head/helmet/knight/fluff/metal
 				)
 
-	var/loot2 = list(
+/obj/effect/spawner/bundle/f13/armor/metal
+	name = "metal armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/metalarmor,
 				/obj/item/clothing/head/helmet/f13/metalmask
 				)
 
-	var/loot3 = list(
-				/obj/item/clothing/suit/armor/f13/leatherarmor,
-				""
-				)
-	var/loot4 = list(
-				/obj/item/clothing/suit/armor/f13/leather_jacket/combat,
-				""
-				)
-	var/loot5 = list(
-				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat,
-				)
-
-/obj/effect/spawner/lootdrop/f13/armor/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5)
-	. = ..()
-
 /obj/effect/spawner/lootdrop/f13/armor/tier3 //TIER 3 ARMOR
 	name = "tier 3 armor"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/armor/metal/reinforced,
+				/obj/effect/spawner/bundle/f13/armor/swat,
+				/obj/effect/spawner/bundle/f13/armor/combat,
+				/obj/effect/spawner/bundle/f13/armor/bulletproof,
+				/obj/effect/spawner/bundle/f13/armor/combat/dark,
+				/obj/effect/spawner/bundle/f13/armor/sulphite
+				)	
+
+/obj/effect/spawner/bundle/f13/armor/metal/reinforced
+	items = list(
 				/obj/item/clothing/suit/armor/f13/metalarmor/reinforced,
 				/obj/item/clothing/head/helmet/f13/metalmask/mk2
 				)
-	var/loot2 = list(
-				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat,
-				)
-	var/loot3 = list(
+
+/obj/effect/spawner/bundle/f13/armor/swat
+	items = list(
 				/obj/item/clothing/head/helmet/f13/combat/swat,
 				/obj/item/clothing/suit/armor/f13/combat/swat
 				)
-	var/loot4 = list(
+
+/obj/effect/spawner/bundle/f13/armor/combat
+	name = "combat armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/combat,
 				/obj/item/clothing/head/helmet/f13/combat
 				)
-	var/loot5 = list(
+
+/obj/effect/spawner/bundle/f13/armor/bulletproof
+	name = "bulletproof armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/bulletproof,
 				/obj/item/clothing/head/helmet/alt
 				)
-	var/loot6 = list(
+
+/obj/effect/spawner/bundle/f13/armor/combat/dark
+	name = "dark combat armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/combat/dark,
 				/obj/item/clothing/head/helmet/f13/combat/dark
 				)
-	var/loot7 = list(
-				/obj/item/clothing/suit/armor/f13/combat/mk2/dark,
-				/obj/item/clothing/head/helmet/f13/combat/mk2/dark
-				)
-	var/loot8 = list(
+
+/obj/effect/spawner/bundle/f13/armor/sulphite
+	name = "sulphite raider armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/sulphitearmor,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
 
-/obj/effect/spawner/lootdrop/f13/armor/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8)
-	. = ..()
-
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
 	name = "tier 4 armor"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/armor/t45b,
+				/obj/effect/spawner/bundle/f13/armor/riot,
+				/obj/effect/spawner/bundle/f13/armor/combat/mk2,
+				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
+				/obj/effect/spawner/bundle/f13/armor/raiderpa,
+				/obj/effect/spawner/bundle/f13/armor/hotrodpa
+				)
+
+/obj/effect/spawner/bundle/f13/armor/t45b
+	name = "t45b power armor spawner"
+	items = list(
 				/obj/item/clothing/head/helmet/f13/power_armor/t45b,
 				/obj/item/clothing/suit/armor/f13/power_armor/t45b
 				)
-	var/loot2 = list(
+
+/obj/effect/spawner/bundle/f13/armor/riot
+	name = "riot armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice,
 				/obj/item/clothing/head/helmet/f13/rangerbroken
 				)
-	var/loot3 = list(
+
+/obj/effect/spawner/bundle/f13/armor/combat/mk2
+	name = "MkII combat armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/combat/mk2,
 				/obj/item/clothing/head/helmet/f13/combat/mk2
 				)
-	var/loot4 = list(
+
+/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark
+	name = "dark MkII combat armor spawner"
+	items = list(
+				/obj/item/clothing/suit/armor/f13/combat/mk2/dark,
+				/obj/item/clothing/head/helmet/f13/combat/mk2/dark
+				)
+
+/obj/effect/spawner/bundle/f13/armor/raiderpa
+	name = "raider power armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/raiderpa,
 				/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 				)
-	var/loot5 = list(
+
+/obj/effect/spawner/bundle/f13/armor/hotrodpa
+	name = "hotrod power armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/hotrod,
 				/obj/item/clothing/head/helmet/f13/power_armor/hotrod
 				)
 
-/obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5)
-	. = ..()
-
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
 	name = "tier 5 armor"
-	lootcount = 2
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/armor/t45d,
+				/obj/effect/spawner/bundle/f13/armor/t51b
+				)
+	
+/obj/effect/spawner/bundle/f13/armor/t45d
+	name = "t45d power armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45d
 				)
-	var/loot2 = list(
+
+/obj/effect/spawner/bundle/f13/armor/t51b
+	name = "t51b power armor spawner"
+	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
 				/obj/item/clothing/head/helmet/f13/power_armor/t51b
 				)
 
-/obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2)
-	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/random
 	name = "random armor loot"
@@ -608,347 +681,448 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 //TIER 1 GUN
 	name = "tier 1 gun"
-	lootcount = 3
-	var/loot1 = list(
-				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/storage/fancy/ammobox/beanbag,
-				""
-				)
-
-	var/loot2 = list(
-				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/storage/fancy/ammobox/beanbag,
-				""
-				)
-
-	var/loot3 = list(
-				/obj/item/gun/ballistic/shotgun/boltaction,
-				/obj/item/ammo_box/a762,
-				//obj/item/ammo_box/a762
-				)
-
-	var/loot4 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/single_shotgun,
+				/obj/effect/spawner/bundle/f13/caravan_shotgun,
+				/obj/effect/spawner/bundle/f13/mosin,
 				/obj/item/gun/ballistic/revolver/zipgun,
-				"",
-				""
-				)
-
-	var/loot5 = list(
 				/obj/item/gun/ballistic/revolver/pipe_rifle,
-				"",
-				""
+				/obj/effect/spawner/bundle/f13/remington,
+				/obj/effect/spawner/bundle/f13/n99,
+				/obj/effect/spawner/bundle/f13/m1911,
+				/obj/effect/spawner/bundle/f13/ninemil,
+				/obj/effect/spawner/bundle/f13/colt6520,
+				/obj/effect/spawner/bundle/f13/varmint,
+				/obj/effect/spawner/bundle/f13/pistol22,
+				/obj/effect/spawner/bundle/f13/m1911c,
+				/obj/effect/spawner/bundle/f13/beretta,
+				/obj/effect/spawner/bundle/f13/sig
 				)
 
-	var/loot6 = list(
+/obj/effect/spawner/bundle/f13/single_shotgun
+	name = "single single-shot single shotgun and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/single_shotgun,
+				/obj/item/storage/fancy/ammobox/beanbag
+				)
+
+/obj/effect/spawner/bundle/f13/caravan_shotgun
+	name = "caravan shotgun and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/caravan_shotgun,
+				/obj/item/storage/fancy/ammobox/beanbag
+				)
+
+/obj/effect/spawner/bundle/f13/mosin
+	name = "mosin nagant and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/shotgun/boltaction,
+				/obj/item/ammo_box/a762
+				)
+
+/obj/effect/spawner/bundle/f13/remington
+	name = "remington rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/remington,
-				/obj/item/ammo_box/a308,
-				//obj/item/ammo_box/a308
+				/obj/item/ammo_box/a308
 				)
 
-	var/loot7 = list(
+/obj/effect/spawner/bundle/f13/n99
+	name = "10mm pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/n99,
-				/obj/item/ammo_box/magazine/m10mm_adv,
-				//obj/item/ammo_box/magazine/m10mm_adv
+				/obj/item/ammo_box/magazine/m10mm_adv
 				)
 
-	var/loot8 = list(
+/obj/effect/spawner/bundle/f13/m1911
+	name = "m1911 and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/m1911,
-				/obj/item/ammo_box/magazine/m45,
-				//obj/item/ammo_box/magazine/m45
+				/obj/item/ammo_box/magazine/m45
 				)
 
-	var/loot9 = list(
+/obj/effect/spawner/bundle/f13/ninemil
+	name = "9mm pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/ninemil,
-				/obj/item/ammo_box/magazine/m9mm,
-				//obj/item/ammo_box/magazine/m9mm
+				/obj/item/ammo_box/magazine/m9mm
 				)
 
-	var/loot10 = list(
+/obj/effect/spawner/bundle/f13/colt6520
+	name = "Colt 6520 and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/revolver/colt6520,
-				/obj/item/ammo_box/magazine/m10mm_adv,
-				//obj/item/ammo_box/l10mm
+				/obj/item/ammo_box/magazine/m10mm_adv
 				)
 
-	var/loot11 = list(
+/obj/effect/spawner/bundle/f13/varmint
+	name = "varmint rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/varmint,
 				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
-	var/loot12 = list(
+
+/obj/effect/spawner/bundle/f13/pistol22
+	name = ".22 pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/pistol22,
 				/obj/item/ammo_box/magazine/m22
 				)
-	var/loot13 = list(
+
+/obj/effect/spawner/bundle/f13/m1911c
+	name = "compact m1911 and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/m1911/compact,
 				/obj/item/ammo_box/magazine/m45
 				)
-	var/loot14 = list(
+
+/obj/effect/spawner/bundle/f13/beretta
+	name = "beretta pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/beretta,
 				/obj/item/ammo_box/magazine/m9mmds
 				)
-	var/loot15 = list(
+
+/obj/effect/spawner/bundle/f13/sig
+	name = "sig p220 pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/sig,
 				/obj/item/ammo_box/magazine/m9mm
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot13, loot14, loot15)
-	. = ..()
-
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 //TIER 2 GUN
 	name = "tier 2 gun"
-	lootcount = 3
+	loot = list(
+		/obj/effect/spawner/bundle/f13/huntingshotgun,
+		/obj/effect/spawner/bundle/f13/revolverm29,
+		/obj/effect/spawner/bundle/f13/remingtonscoped,
+		/obj/effect/spawner/bundle/f13/m29scoped,
+		/obj/effect/spawner/bundle/f13/cowboy,
+		/obj/effect/spawner/bundle/f13/cowboy/scoped,
+		/obj/effect/spawner/bundle/f13/colt357,
+		/obj/effect/spawner/bundle/f13/service,
+		/obj/effect/spawner/bundle/f13/miniuzi,
+		/obj/effect/spawner/bundle/f13/laserpistol,
+		/obj/effect/spawner/bundle/f13/m1carbine,
+		/obj/effect/spawner/bundle/f13/commando,
+		/obj/item/gun/ballistic/automatic/smg22
+	)
 
-	var/loot1 = list(
+/obj/effect/spawner/bundle/f13/huntingshotgun
+	name = "hunting shotgun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/hunting,
-				/obj/item/storage/fancy/ammobox/lethalshot,
-				""
+				/obj/item/storage/fancy/ammobox/lethalshot
 				)
 
-	var/loot2 = list(
+/obj/effect/spawner/bundle/f13/revolverm29
+	name = "m29 revolver and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/revolver/m29,
-				/obj/item/ammo_box/m44,
-				//obj/item/ammo_box/m44
-				)
-
-	var/loot3 = list(
-				/obj/item/gun/ballistic/shotgun/remington/scoped,
-				//obj/item/ammo_box/a308,
-				/obj/item/ammo_box/a308
-				)
-
-	var/loot4 = list(
-				/obj/item/gun/ballistic/revolver/m29/scoped,
-				//obj/item/ammo_box/m44,
 				/obj/item/ammo_box/m44
 				)
 
-	var/loot5 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,
-				//obj/item/ammo_box/tube/a357,
+/obj/effect/spawner/bundle/f13/remingtonscoped
+	name = "scoped remington shotgun and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/shotgun/remington/scoped,
+				/obj/item/ammo_box/a308
+				)
+
+/obj/effect/spawner/bundle/f13/m29scoped
+	name = "scoped m29 revolver and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/m29/scoped,
+				/obj/item/ammo_box/m44
+				)
+
+/obj/effect/spawner/bundle/f13/cowboy
+	name = "cowboy repeater and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,
 				/obj/item/ammo_box/a357
 				)
 
-	var/loot6 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped,
-				//obj/item/ammo_box/tube/a357,
+/obj/effect/spawner/bundle/f13/cowboy/scoped
+	name = "scoped cowboy repeater and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped,
 				/obj/item/ammo_box/a357
 				)
 
-	var/loot7 = list(/obj/item/gun/ballistic/revolver/colt357,
-				//obj/item/ammo_box/a357,
+/obj/effect/spawner/bundle/f13/colt357
+	name = "colt 357 and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/colt357,
 				/obj/item/ammo_box/a357
 				)
 
-	var/loot8 = list(
+/obj/effect/spawner/bundle/f13/service
+	name = "NCR service rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/service,
-				//obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
-	var/loot9 = list(
+/obj/effect/spawner/bundle/f13/miniuzi
+	name = "police revolver and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/revolver/police,
-				//obj/item/ammo_box/a357,
 				/obj/item/ammo_box/a357
 	)
-	var/loot10 = list(
+
+/obj/effect/spawner/bundle/f13/laserpistol
+	name = "AEP7 laser pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/pistol,
-				/obj/item/stock_parts/cell/ammo/ec,
-				""
-	)
-	var/loot11 = list(
-				/obj/item/gun/ballistic/automatic/m1carbine,
-				/obj/item/ammo_box/magazine/m10mm_adv,
-	)
-	var/loot12 = list(
-				/obj/item/gun/ballistic/automatic/commando,
-				/obj/item/ammo_box/magazine/m45,
-	)
-	var/loot13 = list(
-				/obj/item/gun/ballistic/automatic/smg22
+				/obj/item/stock_parts/cell/ammo/ec
 	)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13)
-	. = ..()
+/obj/effect/spawner/bundle/f13/m1carbine
+	name = "m1 carbine and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/m1carbine,
+				/obj/item/ammo_box/magazine/m10mm_adv
+	)
+
+/obj/effect/spawner/bundle/f13/commando
+	name = "commando carbine and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/commando,
+				/obj/item/ammo_box/magazine/m45
+	)
+
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 //TIER 3 GUN
 	name = "tier 3 gun"
-	lootcount = 3
-
-	var/loot1 = list(
-				/obj/item/gun/ballistic/automatic/mini_uzi,
-				/obj/item/ammo_box/magazine/uzim9mm,
-				//obj/item/ammo_box/magazine/uzim9mm
+	loot = list(
+				/obj/effect/spawner/bundle/f13/miniuzi,
+				/obj/effect/spawner/bundle/f13/smg10mm,
+				/obj/effect/spawner/bundle/f13/greasegun,
+				/obj/effect/spawner/bundle/f13/trenchshotgun,
+				/obj/effect/spawner/bundle/f13/wattz,
+				/obj/effect/spawner/bundle/f13/needler,
+				/obj/effect/spawner/bundle/f13/trail,
+				/obj/effect/spawner/bundle/f13/trail/scoped,
+				/obj/effect/spawner/bundle/f13/revolver44,
+				/obj/effect/spawner/bundle/f13/mp5,
+				/obj/effect/spawner/bundle/f13/beretta/select,
+				/obj/effect/spawner/bundle/f13/deagle,
+				/obj/effect/spawner/bundle/f13/neostead
 				)
 
-	var/loot2 = list(
+/obj/effect/spawner/bundle/f13/miniuzi
+	name = "mini uzi and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/mini_uzi,
+				/obj/item/ammo_box/magazine/uzim9mm,
+				)
+
+/obj/effect/spawner/bundle/f13/smg10mm
+	name = "10mm SMG and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/smg10mm,
-				//obj/item/ammo_box/magazine/m10mm_auto,
 				/obj/item/ammo_box/magazine/m10mm_auto
 				)
 
-	var/loot3 = list(
+/obj/effect/spawner/bundle/f13/greasegun
+	name = "m3a1 grease gun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/greasegun,
-				//obj/item/ammo_box/magazine/greasegun,
 				/obj/item/ammo_box/magazine/greasegun
 				)
 
-	var/loot4 = list(
+/obj/effect/spawner/bundle/f13/trenchshotgun
+	name = "trench shotgun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/trench,
 				/obj/item/storage/fancy/ammobox/lethalshot,
 				)
 
-	var/loot5 = list(
+/obj/effect/spawner/bundle/f13/wattz
+	name = "Wattz laser rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/wattz,
-				/obj/item/stock_parts/cell/ammo/ec,
-				""
+				/obj/item/stock_parts/cell/ammo/ec
 				)
 
-	var/loot6 = list(
+/obj/effect/spawner/bundle/f13/needler
+	name = "needler and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/revolver/needler,
-				//obj/item/ammo_box/needle,
 				/obj/item/ammo_box/needle
 				)
 
-	var/loot7 = list(
+/obj/effect/spawner/bundle/f13/trail
+	name = "trail carbine and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/trail,
 				//obj/item/ammo_box/tube/m44,
 				/obj/item/ammo_box/tube/m44
 				)
 
-	var/loot8 = list(
+/obj/effect/spawner/bundle/f13/trail/scoped
+	name = "scoped trail carbine and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped,
-				//obj/item/ammo_box/tube/m44,
 				/obj/item/ammo_box/tube/m44
 				)
-	var/loot9 = list(
-				/obj/item/gun/energy/laser/aer9,
-				/obj/item/stock_parts/cell/ammo/mfc,
-				""
-				)
-	var/loot10 = list(
+
+
+/obj/effect/spawner/bundle/f13/revolver44
+	name = ".44 revolver and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/revolver/revolver44,
 				/obj/item/ammo_box/m44
 				)
-	var/loot11 = list(
+
+/obj/effect/spawner/bundle/f13/mp5
+	name = "mp5 and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/mp5,
 				/obj/item/ammo_box/magazine/uzim9mm
 				)
 	
-	var/loot12 = list(
+/obj/effect/spawner/bundle/f13/beretta/select
+	name = "select-fire beretta pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,
 				/obj/item/ammo_box/magazine/m9mmds
 				)
-	var/loot13 = list(
+
+/obj/effect/spawner/bundle/f13/deagle
+	name = "Desert Eagle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/ammo_box/magazine/m44
 				)
-	var/loot14 = list(
+
+/obj/effect/spawner/bundle/f13/neostead
+	name = "Neostead 2000 shotgun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/neostead,
 				/obj/item/storage/fancy/ammobox/lethalshot,
 				/obj/item/storage/fancy/ammobox/slugshot
 	)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14)
-	. = ..()
-
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 //TIER 4 GUN
 	name = "tier 4 gun"
-	lootcount = 3
-	var/loot1 = list(
+	loot = list(
+				/obj/effect/spawner/bundle/f13/assault_rifle,
+				/obj/effect/spawner/bundle/f13/marksman,
+				/obj/effect/spawner/bundle/f13/rcw,
+				/obj/effect/spawner/bundle/f13/plasmapistol,
+				/obj/effect/spawner/bundle/f13/aer9,
+				/obj/effect/spawner/bundle/f13/infiltrator,
+				/obj/effect/spawner/bundle/f13/brushgun,
+				/obj/effect/spawner/bundle/f13/brushgun/scoped,
+				/obj/effect/spawner/bundle/f13/ams,
+				/obj/effect/spawner/bundle/f13/rangemaster,
+				/obj/effect/spawner/bundle/f13/riotshotgun,
+				/obj/effect/spawner/bundle/f13/ionrifle,
+				/obj/effect/spawner/bundle/f13/plasmaglock,
+				/obj/item/gun/medbeam,
+				/obj/effect/spawner/bundle/f13/wattz2k
+	)
+
+/obj/effect/spawner/bundle/f13/assault_rifle
+	name = "assault rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle,
-				//obj/item/ammo_box/magazine/m556/rifle/assault,
 				/obj/item/ammo_box/magazine/m556/rifle/assault
 				)
 
-	var/loot2 = list(
+/obj/effect/spawner/bundle/f13/marksman
+	name = "marksman rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/marksman,
-				//obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
-	var/loot3 = list(
+/obj/effect/spawner/bundle/f13/rcw
+	name = "laser RCW and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/rcw,
-				/obj/item/stock_parts/cell/ammo/ecp,
-				""
+				/obj/item/stock_parts/cell/ammo/ecp
 				)
 
-	var/loot4 = list(
+/obj/effect/spawner/bundle/f13/plasmapistol
+	name = "plasma pistol and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/plasma/pistol,
-				/obj/item/stock_parts/cell/ammo/ec,
-				""
+				/obj/item/stock_parts/cell/ammo/ec
 				)
 
-	var/loot5 = list(
+/obj/effect/spawner/bundle/f13/aer9
+	name = "AER9 laser rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/aer9,
-				/obj/item/stock_parts/cell/ammo/mfc,
-				""
+				/obj/item/stock_parts/cell/ammo/mfc
 				)
 
-	var/loot6 = list(
+/obj/effect/spawner/bundle/f13/infiltrator
+	name = "infiltrator rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator,
-				//obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
-	var/loot7 = list(
+/obj/effect/spawner/bundle/f13/brushgun
+	name = "brush gun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
-				//obj/item/ammo_box/tube/c4570,
 				/obj/item/ammo_box/tube/c4570
 				)
 
-	var/loot8 = list(
+/obj/effect/spawner/bundle/f13/brushgun/scoped
+	name = "scoped brush gun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped,
-				/obj/item/ammo_box/tube/c4570,
-				//obj/item/ammo_box/tube/c4570,
-				""
+				/obj/item/ammo_box/tube/c4570
 				)
 
-	var/loot9 = list(
+/obj/effect/spawner/bundle/f13/ams
+	name = "anti-material shotgun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/shotgun/antimateriel,
-				//obj/item/ammo_box/a50MG,
-				/obj/item/ammo_box/a50MG,
-				""
+				/obj/item/ammo_box/a50MG
 				)
 
-	var/loot10 = list(
+/obj/effect/spawner/bundle/f13/rangemaster
+	name = "rangemaster rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/rangemaster,
-				//obj/item/ammo_box/magazine/m762,
-				/obj/item/ammo_box/magazine/m762,
-				""
+				/obj/item/ammo_box/magazine/m762
 				)
 
-	var/loot11 = list(
+/obj/effect/spawner/bundle/f13/riotshotgun
+	name = "riot shotgun and ammo spawner"
+	items = list(
 				/obj/item/gun/ballistic/automatic/shotgun/riot,
-				//obj/item/ammo_box/magazine/d12g,
-				/obj/item/ammo_box/magazine/d12g,
-				""
+				/obj/item/ammo_box/magazine/d12g
 				)
 
-	var/loot12 = list(
+/obj/effect/spawner/bundle/f13/ionrifle
+	name = "ion rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/ionrifle,
-				/obj/item/stock_parts/cell/ammo/mfc,
-				""
+				/obj/item/stock_parts/cell/ammo/mfc
 				)
 
-	var/loot13 = list(
+/obj/effect/spawner/bundle/f13/plasmaglock
+	name = "plasma glock and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/plasma/glock,
-				//obj/item/stock_parts/cell/ammo/ec,
-				/obj/item/stock_parts/cell/ammo/ec,
-				)
-
-	var/loot14 = list(
-				/obj/item/gun/medbeam,
-				""
+				/obj/item/stock_parts/cell/ammo/ec
 				)
 	
-	var/loot15 = list(
+/obj/effect/spawner/bundle/f13/wattz2k
+	name = "Wattz 2000 laser rifle and ammo spawner"
+	items = list(
 				/obj/item/gun/energy/laser/wattz2k,
 				/obj/item/stock_parts/cell/ammo/mfc
 	)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14, loot15)
-	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 //TIER 5 GUN
 	name = "tier 5 gun"
@@ -1466,12 +1640,13 @@
 	name = "trait book spawner"
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/chemistry = 10,
-	/obj/item/book/granter/trait/trekking = 10,
-	/obj/item/book/granter/trait/pa_wear = 1,
-	/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
-	/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
-	/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
-	/obj/item/book/granter/crafting_recipe/gunsmith_four = 10)
+				/obj/item/book/granter/trait/trekking = 10,
+				/obj/item/book/granter/trait/pa_wear = 1,
+				/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
+				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
+				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
+				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
+				)
 
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"
