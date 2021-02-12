@@ -222,35 +222,24 @@
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
-	desc = "Cheap sterile gloves made from latex. Transfers basic paramedical knowledge to the wearer via the use of nanochips."
+	desc = "Cheap sterile gloves made from latex."
 	icon_state = "latex"
 	item_state = "lgloves"
 	siemens_coefficient = 0.3
 	permeability_coefficient = 0.01
 	transfer_prints = TRUE
 	resistance_flags = NONE
-	var/carrytrait = TRAIT_QUICK_CARRY
-
-/obj/item/clothing/gloves/color/latex/equipped(mob/user, slot)
-	..()
-	if(slot == SLOT_GLOVES)
-		ADD_TRAIT(user, carrytrait, GLOVE_TRAIT)
-
-/obj/item/clothing/gloves/color/latex/dropped(mob/user)
-	..()
-	REMOVE_TRAIT(user, carrytrait, GLOVE_TRAIT)
 
 /obj/item/clothing/gloves/color/latex/nitrile
 	name = "nitrile gloves"
-	desc = "Pricy sterile gloves that are stronger than latex. Transfers advanced paramedical knowledge to the wearer via the use of nanochips."
+	desc = "Pricy sterile gloves that are stronger than latex."
 	icon_state = "nitrile"
 	item_state = "nitrilegloves"
 	transfer_prints = FALSE
-	carrytrait = TRAIT_QUICKER_CARRY
 
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "insidious combat gloves"
-	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge to the user via the use of nanochips."
+	desc = "Specialized combat gloves for carrying people around."
 	icon_state = "infiltrator"
 	item_state = "infiltrator"
 	siemens_coefficient = 0
@@ -259,14 +248,23 @@
 
 /obj/item/clothing/gloves/color/latex/engineering
 	name = "tinker's gloves"
-	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
+	desc = "Overdesigned engineering gloves that have automated construction subroutines dialed in, allowing for faster construction while worn."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
 	item_state = "clockwork_gauntlets"
 	siemens_coefficient = 0.8
 	permeability_coefficient = 0.3
-	carrytrait = TRAIT_QUICK_BUILD
+	var/carrytrait = TRAIT_QUICK_BUILD
 	custom_materials = list(/datum/material/iron=2000, /datum/material/silver=1500, /datum/material/gold = 1000)
+
+/obj/item/clothing/gloves/color/latex/engineering/equipped(mob/user, slot)
+	. = ..()
+	if(slot == SLOT_GLOVES)
+		ADD_TRAIT(user, carrytrait, GLOVE_TRAIT)
+
+/obj/item/clothing/gloves/color/latex/engineering/dropped(mob/user)
+	. = ..()
+	REMOVE_TRAIT(user, carrytrait, GLOVE_TRAIT)
 
 /obj/item/clothing/gloves/color/white
 	name = "white gloves"
