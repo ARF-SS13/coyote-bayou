@@ -286,7 +286,7 @@
 /obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
 	name = "NCR 3rd Scout veteran combat armor"
 	desc = "(VI) A specialized variant of combat armor issued to veteran members of the 3rd Scout Battalion."
-	armor = list("tier" = 6, , "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
 	name = "(VII) NCR 3rd Scout officer combat armor"
