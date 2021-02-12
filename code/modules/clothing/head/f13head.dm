@@ -535,7 +535,7 @@
 	icon_state = "motorcycle"
 	item_state = "motorcycle"
 	flags_cover = HEADCOVERSEYES
-	armor = list("tier" = 2, "linemelee" = 50, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("tier" = 2, "linemelee" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEHAIR
 	strip_delay = 10
 
