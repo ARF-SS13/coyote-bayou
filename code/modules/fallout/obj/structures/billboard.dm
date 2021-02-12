@@ -63,3 +63,14 @@
 /obj/structure/billboard/cola/cola_shop/New()
 	..()
 	icon_state = "cola_shop"
+
+//Taken from removed F13billboards.dm
+/obj/structure/billboard/den
+	name = "Kebab sign"
+	desc =  "A sprayed metal sheet that says \"Kebab \"."
+	icon_state = "den"
+
+/obj/structure/billboard/klamat
+	name = "Klamat sign"
+	desc =  "A ruined sign that says \"Klamat \"."
+	icon_state = "klamat"
