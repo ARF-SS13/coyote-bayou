@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/alien
-	name = "alien hunter"
+	name = "wanamingo"
 	desc = "Hiss!"
 	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "wanamingo"
@@ -14,14 +14,13 @@
 	response_harm_continuous = "hits"
 	response_harm_simple = "hit"
 	speed = 0
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4,
-							/obj/item/stack/sheet/animalhide/xeno = 1)
-	maxHealth = 125
-	health = 125
-	harm_intent_damage = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
+	maxHealth = 275
+	health = 275
+	harm_intent_damage = 8
 	obj_damage = 60
-	melee_damage_lower = 25
-	melee_damage_upper = 25
+	melee_damage_lower = 60
+	melee_damage_upper = 60
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	speak_emote = list("hisses")
