@@ -1341,7 +1341,7 @@
 					/obj/item/seeds/carrot,
 					/obj/item/seeds/carrot/parsnip,
 					/obj/item/seeds/cherry,
-					/obj/item/seeds/chanter,
+					/obj/item/seeds/chanterelle,
 					/obj/item/seeds/chili,
 					/obj/item/seeds/cocoapod,
 					/obj/item/seeds/coffee,
