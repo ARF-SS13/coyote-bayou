@@ -210,21 +210,25 @@
 	name = "Metal Weapon Parts"
 	desc = ""
 	//icon_state = ""
+	merge_type = /obj/item/stack/prefabs/mWeaponParts
 
 /obj/item/stack/prefabs/wWeaponParts
 	name = "Wooden Weapon Parts"
 	desc = ""
 	//icon_state = ""
+	merge_type = /obj/item/stack/prefabs/wWeaponParts
 
 /obj/item/stack/prefabs/pWeaponParts
 	name = "Plastic Weapon Parts"
 	desc = ""
 	//icon_state = ""
+	merge_type = /obj/item/stack/prefabs/pWeaponParts
 
 /obj/item/stack/prefabs/psWeaponParts
 	name = "Plasteel Weapon Parts"
 	desc = ""
 	//icon_state = ""
+	merge_type = /obj/item/stack/prefabs/psWeaponParts
 
 /obj/item/prefabs/complex/simpleWeaponFrame
 

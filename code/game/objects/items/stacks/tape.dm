@@ -76,6 +76,7 @@
 	icon_state = "tape_spikes"
 	prefix = "super pointy"
 	conferred_embed = EMBED_POINTY_SUPERIOR
+	merge_type = /obj/item/stack/sticky_tape/pointy/super
 
 /obj/item/stack/sticky_tape/surgical
 	name = "surgical tape"

@@ -12,6 +12,7 @@
 	max_integrity = 40
 	novariants = FALSE
 	item_flags = NOBLUDGEON
+	merge_type = /obj/item/stack/medical
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE

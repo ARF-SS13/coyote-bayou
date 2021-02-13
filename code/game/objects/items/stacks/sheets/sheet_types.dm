@@ -170,6 +170,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	custom_materials = null
 	is_cyborg = 1
 	cost = 500
+	merge_type = /obj/item/stack/sheet/metal/cyborg
 
 /obj/item/stack/sheet/metal/get_main_recipes()
 	. = ..()

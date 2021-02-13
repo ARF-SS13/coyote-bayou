@@ -6,6 +6,7 @@
 							  /obj/item/stack/spacecash/random,
 							  /obj/item/stack/tile/mineral,
 							  /obj/item/stack/tile,
+							  /obj/item/stack/sheet/animalhide,
 							  /obj/item/stack/crafting,
 							  /obj/item/stack/prefabs,
 							  /obj/item/stack/f13Cash/fivezerozero,
