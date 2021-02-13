@@ -263,8 +263,6 @@
 	. = ..()
 
 /atom/proc/animate_atom_living(mob/living/owner = null)
-	if(isnull(loc))
-		return // we don't make simplemobs in nullspace.
 	if((isitem(src) || isstructure(src)) && !is_type_in_list(src, GLOB.protected_objects))
 		if(istype(src, /obj/structure/statue/petrified))
 			var/obj/structure/statue/petrified/P = src
