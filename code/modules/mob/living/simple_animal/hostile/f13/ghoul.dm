@@ -29,7 +29,7 @@
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
 
-//	loot = list(/obj/effect/gibspawner/human, /obj/item/stack/f13Cash/random/bottle_cap/low)   // not quite ready for cap drops on ghouls
+//	loot = list(/obj/effect/gibspawner/human, /obj/item/stack/f13Cash/random/low)   // not quite ready for cap drops on ghouls
 
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
 	emote_taunt = list("gurgles", "stares")

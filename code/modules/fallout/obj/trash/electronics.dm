@@ -20,7 +20,7 @@
 	var/list/toastables = list()
 
 /obj/item/trash/f13/electronic/toaster/Initialize()
-	..()
+	. = ..()
 	cell = new /obj/item/stock_parts/cell(src)
 
 	toastables = typecacheof(list(/obj/item/reagent_containers/food/snacks/breadslice,

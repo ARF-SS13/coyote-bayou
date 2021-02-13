@@ -710,6 +710,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 
 /obj/item/stack/tile/brass/fifty
 	amount = 50
+	merge_type = /obj/item/stack/tile/brass
 
 /*
  * Bronze
@@ -771,6 +772,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	icon_state = "sheet-lessergem"
 	item_state = "sheet-lessergem"
 	novariants = TRUE
+	merge_type = /obj/item/stack/sheet/lessergem
 
 
 /obj/item/stack/sheet/greatergem
@@ -780,6 +782,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	icon_state = "sheet-greatergem"
 	item_state = "sheet-greatergem"
 	novariants = TRUE
+	merge_type = /obj/item/stack/sheet/greatergem
 
 	/*
  * Bones

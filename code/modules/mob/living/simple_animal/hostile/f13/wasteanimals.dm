@@ -189,7 +189,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/geckohide = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/gecko = 1)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"

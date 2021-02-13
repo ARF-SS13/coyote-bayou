@@ -162,7 +162,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	if(machine_state != STATE_VEND)
 		return
 
-	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
+	if(istype(I, /obj/item/stack/f13Cash))
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -178,7 +178,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/trading_machine/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/bottle_cap/C = new /obj/item/stack/f13Cash/bottle_cap
+	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)
@@ -327,7 +327,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 		if(STATE_VEND) // vending
 			// Caps
-			if(istype(OtherItem, /obj/item/stack/f13Cash/bottle_cap))
+			if(istype(OtherItem, /obj/item/stack/f13Cash))
 				add_caps(OtherItem)
 			else
 				attack_hand(user)
@@ -726,8 +726,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /* Adding a caps to caps storage and release vending item. */
 /obj/machinery/mineral/wasteland_vendor/proc/add_caps(obj/item/I)
-	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
-		var/obj/item/stack/f13Cash/bottle_cap/currency = I
+	if(istype(I, /obj/item/stack/f13Cash))
+		var/obj/item/stack/f13Cash/currency = I
 		var/inserted_value = FLOOR(currency.amount * CASH_CAP_VENDOR, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
@@ -766,7 +766,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/mineral/wasteland_vendor/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/bottle_cap/C = new /obj/item/stack/f13Cash/bottle_cap
+	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)

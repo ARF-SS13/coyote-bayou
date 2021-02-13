@@ -35,7 +35,7 @@
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/item/reagent_containers/food/snacks/nugget,
-					/obj/item/toy/plush/random)
+					/obj/effect/spawner/lootdrop/plush)
 	crate_name = "combo meal w/toy"
 	crate_type = /obj/structure/closet/crate/wooden
 

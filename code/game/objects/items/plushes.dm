@@ -441,23 +441,14 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 			continue
 		. += i
 
-/obj/item/toy/plush/random
-	name = "Illegal plushie"
-	desc = "Something fucked up"
-	can_random_spawn = FALSE
+/obj/effect/spawner/lootdrop/plush
+	name = "random plushie spawner"
 
-/obj/item/toy/plush/random/Initialize()
-	var/newtype
-	var/list/snowflake_list = CONFIG_GET(keyed_list/snowflake_plushies)
-
-	/// If there are no snowflake plushies we'll default to base plush, so we grab from the valid list
-	if (snowflake_list.len)
-		newtype = prob(CONFIG_GET(number/snowflake_plushie_prob)) ? /obj/item/toy/plush/random_snowflake : pick(GLOB.valid_plushie_paths)
-	else
-		newtype = pick(GLOB.valid_plushie_paths)
-
-	new newtype(loc)
-	return INITIALIZE_HINT_QDEL
+/obj/effect/spawner/lootdrop/plush/Initialize(mapload)
+	loot = GLOB.valid_plushie_paths
+	if (length(CONFIG_GET(keyed_list/snowflake_plushies)) && prob(CONFIG_GET(number/snowflake_plushie_prob)))
+		loot = list(/obj/item/toy/plush/random_snowflake)
+	. = ..()
 
 /obj/item/toy/plush/carpplushie
 	name = "space carp plushie"
