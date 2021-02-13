@@ -228,8 +228,8 @@ GLOBAL_LIST_INIT(trash_gun, list(
 ))
 
 GLOBAL_LIST_INIT(trash_money, list(
-	/obj/item/stack/f13Cash/random/bottle_cap/low = 40,
-	/obj/item/stack/f13Cash/random/bottle_cap/med = 10,
+	/obj/item/stack/f13Cash/random/low = 40,
+	/obj/item/stack/f13Cash/random/med = 10,
 	/obj/item/stack/f13Cash/random/ncr/med = 20,
 	/obj/item/stack/f13Cash/random/denarius/low = 20
 ))
@@ -872,21 +872,21 @@ GLOBAL_LIST_INIT(loot_material, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t1_money, list(
-	/obj/item/stack/f13Cash/random/bottle_cap/low,
+	/obj/item/stack/f13Cash/random/low,
 	/obj/item/stack/f13Cash/random/ncr/low,
 	/obj/item/stack/f13Cash/random/denarius/low,
 	/obj/item/stack/f13Cash/random/aureus/low
 ))
 
 GLOBAL_LIST_INIT(loot_t2_money, list(
-	/obj/item/stack/f13Cash/random/bottle_cap/med,
+	/obj/item/stack/f13Cash/random/med,
 	/obj/item/stack/f13Cash/random/ncr/med,
 	/obj/item/stack/f13Cash/random/denarius/med,
 	/obj/item/stack/f13Cash/random/aureus/med
 ))
 
 GLOBAL_LIST_INIT(loot_t3_money, list(
-	/obj/item/stack/f13Cash/random/bottle_cap/high,
+	/obj/item/stack/f13Cash/random/high,
 	/obj/item/stack/f13Cash/random/ncr/high,
 	/obj/item/stack/f13Cash/random/denarius/high,
 	/obj/item/stack/f13Cash/random/aureus/high

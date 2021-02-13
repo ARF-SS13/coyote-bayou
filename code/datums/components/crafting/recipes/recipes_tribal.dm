@@ -250,7 +250,7 @@
 	name = "Male Tribal Outfit"
 	result = /obj/item/clothing/under/f13/tribal
 	time = 20
-	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2)
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
 
@@ -258,7 +258,7 @@
 	name = "Female Tribal Outfit"
 	result = /obj/item/clothing/under/f13/female/tribal
 	time = 20
-	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2)
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
 

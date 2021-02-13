@@ -4856,7 +4856,7 @@
 /obj/item/restraints/legcuffs/bola,
 /obj/item/restraints/legcuffs/bola,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/f13Cash/random/bottle_cap/med,
+/obj/item/stack/f13Cash/random/med,
 /obj/item/megaphone,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
@@ -6603,7 +6603,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/item/stack/f13Cash/random/bottle_cap/med,
+/obj/item/stack/f13Cash/random/med,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
@@ -7129,10 +7129,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
-"xL" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "xM" = (
 /obj/structure/toilet{
 	dir = 4
@@ -8520,13 +8516,13 @@
 "CH" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
-/obj/item/stack/f13Cash/random/bottle_cap/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
+/obj/item/stack/f13Cash/random/high,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -9483,7 +9479,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/stack/f13Cash/random/bottle_cap/med,
+/obj/item/stack/f13Cash/random/med,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/machinery/light/fo13colored/Aqua{
 	bulb_colour = "#800080";
@@ -41828,7 +41824,7 @@ wo
 PJ
 bD
 Fz
-xL
+mK
 Fz
 Fz
 Fz

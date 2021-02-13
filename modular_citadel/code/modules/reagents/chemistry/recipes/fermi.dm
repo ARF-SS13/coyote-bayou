@@ -501,7 +501,7 @@
 
 /datum/chemical_reaction/fermi/plushmium/FermiExplode(datum/reagents, atom/my_atom, volume, temp, pH)
 	if(volume < 20) //It creates a normal plush at low volume.. at higher amounts, things get slightly more interesting.
-		new /obj/item/toy/plush/random(get_turf(my_atom))
+		new /obj/effect/spawner/lootdrop/plush(get_turf(my_atom))
 	else
 		new /obj/item/toy/plush/plushling(get_turf(my_atom))
 	my_atom.visible_message("<span class='warning'>The reaction suddenly zaps, creating a plushie!</b></span>")
