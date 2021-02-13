@@ -120,6 +120,7 @@ GLOBAL_LIST_INIT(xeno_recipes, list ( \
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
 	novariants = TRUE
+	merge_type = /obj/item/stack/sheet/xenochitin
 
 /obj/item/xenos_claw
 	name = "alien claw"
