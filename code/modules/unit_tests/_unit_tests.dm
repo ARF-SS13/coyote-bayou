@@ -54,7 +54,6 @@
 #include "reagent_mod_procs.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
-#include "spawn_humans.dm"
 #include "spawn_mobs.dm"
 #include "subsystem_init.dm"
 #include "surgeries.dm"
