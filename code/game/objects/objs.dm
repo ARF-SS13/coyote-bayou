@@ -239,9 +239,13 @@
 		if (islist(result))
 			if (result["button"] != 2) // If the user pressed the cancel button
 				// text2num conveniently returns a null on invalid values
-				armor = armor.setRating(linemelee = text2num(result["values"]["linemelee"]),\
+				armor = armor.setRating(tier = text2num(result["values"]["tier"]),\
+							linemelee = text2num(result["values"]["linemelee"]),\
 							linebullet = text2num(result["values"]["linebullet"]),\
 							linelaser = text2num(result["values"]["linelaser"]),\
+							melee = text2num(result["values"]["melee"]),\
+							bullet = text2num(result["values"]["bullet"]),\
+							laser = text2num(result["values"]["laser"]),\
 							energy = text2num(result["values"]["energy"]),\
 							bomb = text2num(result["values"]["bomb"]),\
 							bio = text2num(result["values"]["bio"]),\
@@ -250,8 +254,8 @@
 							acid = text2num(result["values"]["acid"]),\
 							melee = text2num(result["values"]["melee"]),\
 							bullet = text2num(result["values"]["bullet"]),\
-							laser = text2num(result["values"]["laser"]),\
-							tier = text2num(result["values"]["tier"]))
+							laser = text2num(result["values"]["laser"])
+							)
 				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to linemelee: [armor.linemelee], linebullet: [armor.linebullet], linelaser: [armor.linelaser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid], melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser]")
 				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to linemelee: [armor.linemelee], linebullet: [armor.linebullet], linelaser: [armor.linelaser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid], melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser]</span>")
 	if(href_list[VV_HK_MASS_DEL_TYPE])
