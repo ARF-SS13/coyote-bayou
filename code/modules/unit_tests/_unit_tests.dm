@@ -56,7 +56,6 @@
 #include "resist.dm"
 #include "spawn_humans.dm"
 #include "spawn_mobs.dm"
-#include "stomach.dm"
 #include "subsystem_init.dm"
 #include "surgeries.dm"
 #include "timer_sanity.dm"
