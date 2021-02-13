@@ -15,7 +15,7 @@
 	var/datum/effect_system/trail_follow/ion/ion_trail
 
 /obj/item/tank/jetpack/Initialize()
-	..()
+	. = ..()
 	ion_trail = new
 	ion_trail.set_up(src)
 

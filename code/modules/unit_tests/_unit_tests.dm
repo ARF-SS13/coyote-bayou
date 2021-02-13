@@ -45,7 +45,6 @@
 #include "component_tests.dm"
 #include "designs.dm"
 #include "initialize_sanity.dm"
-#include "keybinding_init.dm"
 #include "medical_wounds.dm"
 #include "merge_type.dm"
 #include "metabolizing.dm"

@@ -91,8 +91,8 @@
 
 /* Converting currency to the gang influence */
 /obj/item/device/gangtool/proc/add_caps(obj/item/I)
-	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
-		var/obj/item/stack/f13Cash/bottle_cap/currency = I
+	if(istype(I, /obj/item/stack/f13Cash))
+		var/obj/item/stack/f13Cash/currency = I
 		var/inserted_value = currency.amount * CASH_CAP_GANG
 		gang.influence += inserted_value
 		I.use(currency.amount)

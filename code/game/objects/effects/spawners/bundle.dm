@@ -7,7 +7,8 @@
 	var/list/items
 
 /obj/effect/spawner/bundle/Initialize(mapload)
-	if(items && items.len)
+	. = ..()
+	if(items?.len)
 		var/turf/T = get_turf(src)
 		for(var/path in items)
 			new path(T)
@@ -169,6 +170,10 @@
 		/obj/item/clothing/under/rank/civilian/mime/sexy)
 
 /obj/effect/spawner/bundle/crate/Initialize(mapload)
+	SHOULD_CALL_PARENT(FALSE)
+	if(flags_1 & INITIALIZED_1)
+		stack_trace("Warning: [src]([type]) initialized multiple times!")
+	flags_1 |= INITIALIZED_1
 	if(items && items.len)
 		var/turf/T = get_turf(src)
 		var/obj/structure/closet/LC = locate(/obj/structure/closet) in T

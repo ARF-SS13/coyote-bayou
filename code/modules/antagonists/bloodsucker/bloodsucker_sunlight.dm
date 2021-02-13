@@ -13,6 +13,7 @@
 	var/nightime_duration = 900 //15 Minutes
 
 /obj/effect/sunlight/Initialize()
+	. = ..()
 	countdown()
 	hud_tick()
 

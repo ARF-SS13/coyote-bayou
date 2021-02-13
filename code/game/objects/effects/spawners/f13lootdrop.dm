@@ -1509,15 +1509,15 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/stack/f13Cash/random/bottle_cap/low = 50,
+				/obj/item/stack/f13Cash/random/low = 50,
 				/obj/item/stack/f13Cash/random/ncr/low = 30,
 				/obj/item/stack/f13Cash/random/denarius/low = 30,
 				/obj/item/stack/f13Cash/random/aureus/low = 10,
-				/obj/item/stack/f13Cash/random/bottle_cap/med = 25,
+				/obj/item/stack/f13Cash/random/med = 25,
 				/obj/item/stack/f13Cash/random/ncr/med = 15,
 				/obj/item/stack/f13Cash/random/denarius/med = 15,
 				/obj/item/stack/f13Cash/random/aureus/med = 5,
-				/obj/item/stack/f13Cash/random/bottle_cap/high = 10,
+				/obj/item/stack/f13Cash/random/high = 10,
 				/obj/item/stack/f13Cash/random/ncr/high = 5,
 				/obj/item/stack/f13Cash/random/denarius/high = 5,
 				/obj/item/stack/f13Cash/random/aureus/high = 1,
@@ -1528,15 +1528,15 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/stack/f13Cash/random/bottle_cap/med = 50,
+				/obj/item/stack/f13Cash/random/med = 50,
 				/obj/item/stack/f13Cash/random/ncr/med = 30,
 				/obj/item/stack/f13Cash/random/denarius/med = 30,
 				/obj/item/stack/f13Cash/random/aureus/med = 10,
-				/obj/item/stack/f13Cash/random/bottle_cap/low = 25,
+				/obj/item/stack/f13Cash/random/low = 25,
 				/obj/item/stack/f13Cash/random/ncr/low = 15,
 				/obj/item/stack/f13Cash/random/denarius/low = 15,
 				/obj/item/stack/f13Cash/random/aureus/low = 5,
-				/obj/item/stack/f13Cash/random/bottle_cap/high = 10,
+				/obj/item/stack/f13Cash/random/high = 10,
 				/obj/item/stack/f13Cash/random/ncr/high = 5,
 				/obj/item/stack/f13Cash/random/denarius/high = 5,
 				/obj/item/stack/f13Cash/random/aureus/high = 1,
@@ -1547,15 +1547,15 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/stack/f13Cash/random/bottle_cap/high = 50,
+				/obj/item/stack/f13Cash/random/high = 50,
 				/obj/item/stack/f13Cash/random/ncr/high = 30,
 				/obj/item/stack/f13Cash/random/denarius/high = 30,
 				/obj/item/stack/f13Cash/random/aureus/high = 10,
-				/obj/item/stack/f13Cash/random/bottle_cap/med = 25,
+				/obj/item/stack/f13Cash/random/med = 25,
 				/obj/item/stack/f13Cash/random/ncr/med = 15,
 				/obj/item/stack/f13Cash/random/denarius/med = 15,
 				/obj/item/stack/f13Cash/random/aureus/med = 5,
-				/obj/item/stack/f13Cash/random/bottle_cap/low = 10,
+				/obj/item/stack/f13Cash/random/low = 10,
 				/obj/item/stack/f13Cash/random/ncr/low = 5,
 				/obj/item/stack/f13Cash/random/denarius/low = 5,
 				/obj/item/stack/f13Cash/random/aureus/low = 1,
@@ -1567,10 +1567,10 @@
 	loot = list(
 			/obj/item/stack/f13Cash/random/denarius/low = 50,
 			/obj/item/stack/f13Cash/random/aureus/low = 30,
-			/obj/item/stack/f13Cash/random/bottle_cap/low = 10,
+			/obj/item/stack/f13Cash/random/low = 10,
 			/obj/item/stack/f13Cash/random/denarius/med = 10,
 			/obj/item/stack/f13Cash/random/aureus/med = 5,
-			/obj/item/stack/f13Cash/random/bottle_cap/med = 1,
+			/obj/item/stack/f13Cash/random/med = 1,
 			)
 
 /obj/effect/spawner/lootdrop/f13/cash_legion_med
@@ -1579,13 +1579,13 @@
 	loot = list(
 			/obj/item/stack/f13Cash/random/denarius/med = 50,
 			/obj/item/stack/f13Cash/random/aureus/med = 30,
-			/obj/item/stack/f13Cash/random/bottle_cap/med = 10,
+			/obj/item/stack/f13Cash/random/med = 10,
 			/obj/item/stack/f13Cash/random/denarius/high = 10,
 			/obj/item/stack/f13Cash/random/aureus/high = 5,
-			/obj/item/stack/f13Cash/random/bottle_cap/high = 1,
+			/obj/item/stack/f13Cash/random/high = 1,
 			/obj/item/stack/f13Cash/random/denarius/low = 10,
 			/obj/item/stack/f13Cash/random/aureus/low = 5,
-			/obj/item/stack/f13Cash/random/bottle_cap/low = 1,
+			/obj/item/stack/f13Cash/random/low = 1,
 			)
 
 /obj/effect/spawner/lootdrop/f13/cash_legion_high
@@ -1594,10 +1594,10 @@
 	loot = list(
 		/obj/item/stack/f13Cash/random/denarius/high = 50,
 		/obj/item/stack/f13Cash/random/aureus/high = 30,
-		/obj/item/stack/f13Cash/random/bottle_cap/high = 10,
+		/obj/item/stack/f13Cash/random/high = 10,
 		/obj/item/stack/f13Cash/random/denarius/med = 10,
 		/obj/item/stack/f13Cash/random/aureus/med = 5,
-		/obj/item/stack/f13Cash/random/bottle_cap/med = 1,
+		/obj/item/stack/f13Cash/random/med = 1,
 		)
 
 
@@ -1606,9 +1606,9 @@
 	lootcount = 1
 	loot = list(
 			/obj/item/stack/f13Cash/random/ncr/low = 50,
-			/obj/item/stack/f13Cash/random/bottle_cap/low = 10,
+			/obj/item/stack/f13Cash/random/low = 10,
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
-			/obj/item/stack/f13Cash/random/bottle_cap/med = 5,
+			/obj/item/stack/f13Cash/random/med = 5,
 			)
 
 /obj/effect/spawner/lootdrop/f13/cash_ncr_med
@@ -1616,9 +1616,9 @@
 	lootcount = 1
 	loot = list(
 			/obj/item/stack/f13Cash/random/ncr/med = 50,
-			/obj/item/stack/f13Cash/random/bottle_cap/med = 10,
+			/obj/item/stack/f13Cash/random/med = 10,
 			/obj/item/stack/f13Cash/random/ncr/high = 25,
-			/obj/item/stack/f13Cash/random/bottle_cap/high = 5,
+			/obj/item/stack/f13Cash/random/high = 5,
 			)
 
 /obj/effect/spawner/lootdrop/f13/cash_ncr_high
@@ -1626,9 +1626,9 @@
 	lootcount = 1
 	loot = list(
 			/obj/item/stack/f13Cash/random/ncr/high = 50,
-			/obj/item/stack/f13Cash/random/bottle_cap/high = 10,
+			/obj/item/stack/f13Cash/random/high = 10,
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
-			/obj/item/stack/f13Cash/random/bottle_cap/med = 5,
+			/obj/item/stack/f13Cash/random/med = 5,
 			)
 
 /obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk

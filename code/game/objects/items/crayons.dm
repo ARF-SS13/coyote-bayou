@@ -843,7 +843,7 @@
 	post_noise = TRUE // Its even more stealthy just a tad.
 
 /obj/item/toy/crayon/spraycan/gang/Initialize(loc, datum/team/gang/G)
-	..()
+	. = ..()
 	if(G)
 		gang = G
 		paint_color = G.color

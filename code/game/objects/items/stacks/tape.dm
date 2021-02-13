@@ -58,6 +58,7 @@
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR
 	splint_factor = 0.6
+	merge_type = /obj/item/stack/sticky_tape/super
 
 /obj/item/stack/sticky_tape/pointy
 	name = "pointy tape"
@@ -66,6 +67,7 @@
 	icon_state = "tape_evil"
 	prefix = "pointy"
 	conferred_embed = EMBED_POINTY
+	merge_type = /obj/item/stack/sticky_tape/pointy
 
 /obj/item/stack/sticky_tape/pointy/super
 	name = "super pointy tape"

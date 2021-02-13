@@ -366,6 +366,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	w_class = WEIGHT_CLASS_BULKY
 	///id for linking
 	var/id = ""
+	merge_type = /obj/item/stack/conveyor
 
 /obj/item/stack/conveyor/Initialize(mapload, new_amount, merge = TRUE, _id)
 	. = ..()

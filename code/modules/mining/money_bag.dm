@@ -83,36 +83,36 @@
 // Den reserves. Spawns with the Sheriff.
 /obj/item/storage/bag/money/small/den/PopulateContents()
 	// ~225 worth of assorted money
-	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
+	new /obj/item/stack/f13Cash/random/med(src)
 	new /obj/item/stack/f13Cash/random/denarius/med(src)
 	new /obj/item/stack/f13Cash/random/ncr/med(src)
 
 // Standard Wastelander money bag. They have more but are liable to get robbed for it.
 /obj/item/storage/bag/money/small/wastelander/PopulateContents()
 	// ~48 worth of assorted money
-	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
-	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
+	new /obj/item/stack/f13Cash/random/low(src)
+	new /obj/item/stack/f13Cash/random/low(src)
 	new /obj/item/stack/f13Cash/random/denarius/low(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
 
 // Standard Great Khan money bag. They have a little more caps than common raiders. Average 75.
 /obj/item/storage/bag/money/small/khan/PopulateContents()
-	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
+	new /obj/item/stack/f13Cash/random/med(src)
 
 // Standard Settler money bag. They are pretty wealthy, with NCR bucks and caps, no Legion money.
 /obj/item/storage/bag/money/small/settler/PopulateContents()
 	// ~162 worth of non legion money
-	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
-	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
+	new /obj/item/stack/f13Cash/random/med(src)
+	new /obj/item/stack/f13Cash/random/med(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
 
 // Standard Banker money bag. They are insanely wealthy, Caps only and only for RP purposes.
 /obj/item/storage/bag/money/small/banker/PopulateContents()
 	// ~162 worth of non legion money
-	new /obj/item/stack/f13Cash/random/bottle_cap/banker(src)
+	new /obj/item/stack/f13Cash/random/banker(src)
 
 // Standard Raider money bag. They blew it all on chems and armor mods.
 /obj/item/storage/bag/money/small/raider/PopulateContents()
 	// ~12 worth of caps
-	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
+	new /obj/item/stack/f13Cash/random/low(src)
 
