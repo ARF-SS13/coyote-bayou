@@ -241,9 +241,7 @@
 						item_to_add.forceMove(drop_location())
 						if(prob(25))
 							step_rand(item_to_add)
-						for(var/i in list(1,2,4,8,4,8,4,dir))
-							setDir(i)
-							sleep(1)
+						dance_rotate(src, set_original_dir=TRUE)
 						return
 
 					item_to_add.forceMove(src)
@@ -263,7 +261,7 @@
 /mob/living/simple_animal/pet/dog/corgi/proc/place_on_head(obj/item/item_to_add, mob/user)
 
 	if(istype(item_to_add, /obj/item/grenade/plastic)) // last thing he ever wears, I guess
-		item_to_add.afterattack(src,user,1)
+		INVOKE_ASYNC(item_to_add, /obj/item.proc/afterattack, src,user,1)
 		return
 
 	if(inventory_head)
@@ -303,7 +301,7 @@
 			step_rand(item_to_add)
 		for(var/i in list(1,2,4,8,4,8,4,dir))
 			setDir(i)
-			sleep(1)
+			dance_rotate(src, set_original_dir=TRUE)
 
 	return valid
 
@@ -470,10 +468,7 @@
 
 		if(prob(1))
 			emote("me", EMOTE_VISIBLE, pick("dances around.","chases its tail!"))
-			spawn(0)
-				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
-					setDir(i)
-					sleep(1)
+			INVOKE_ASYNC(GLOBAL_PROC, .proc/dance_rotate, src, null, TRUE)
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/narsie_act()
 	playsound(src, 'sound/magic/demon_dies.ogg', 75, TRUE)
