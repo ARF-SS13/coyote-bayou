@@ -98,10 +98,11 @@ SUBSYSTEM_DEF(monster_wave)
 	for(var/i in 1 to spawn_amount)
 		new /mob/living/simple_animal/hostile/giantant(choose_turf)
 		if(prob(1))
-			new /mob/living/simple_animal/hostile/giantantqueen
+			new /mob/living/simple_animal/hostile/giantantqueen(choose_turf)
 	new /obj/structure/nest/fireant(choose_turf)
 	message_admins("The Monster Wave has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
 	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")
+
 
 /datum/controller/subsystem/monster_wave/proc/molerat_wave()
 	var/spawn_amount = CEILING(GLOB.player_list.len / 5, 1)
@@ -120,9 +121,9 @@ SUBSYSTEM_DEF(monster_wave)
 	for(var/i in 1 to spawn_amount)
 		new /mob/living/simple_animal/hostile/mirelurk/baby(choose_turf)
 		if(prob(20))
-			new /mob/living/simple_animal/hostile/mirelurk
+			new /mob/living/simple_animal/hostile/mirelurk(choose_turf)
 		if(prob(8))
-			new /mob/living/simple_animal/hostile/mirelurk/hunter
+			new /mob/living/simple_animal/hostile/mirelurk/hunter(choose_turf)
 	new /obj/structure/nest/mirelurk(choose_turf)
 	message_admins("The Monster Wave has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
 	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")

@@ -408,6 +408,10 @@
 	GLOB.mob_nests -= src
 	. = ..()
 
+/mob/living/simple_animal/hostile/giantantqueen/Destroy()
+	GLOB.mob_nests -= src
+	. = ..()
+
 /mob/living/simple_animal/hostile/giantantqueen/Aggro()
 	..()
 	summon_backup(10)
@@ -424,7 +428,7 @@
 	if(spawned_mobs.len >= max_mobs)
 		return FALSE
 	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(src.loc)
+	var/mob/living/simple_animal/L = new chosen_mob_type(get_turf(src))
 	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
 	spawned_mobs += L
 	L.nest = src
