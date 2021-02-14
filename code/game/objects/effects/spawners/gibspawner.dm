@@ -18,7 +18,9 @@
 	if(gibamounts.len != gibdirections.len)
 		stack_trace("Gib list dir length mismatch!")
 		return
+	INVOKE_ASYNC(src, .proc/do_gibs) // shitty hack
 
+/obj/effect/gibspawner/proc/do_gibs(mob/living/source_mob, list/datum/disease/diseases, list/blood_dna)
 	var/obj/effect/decal/cleanable/blood/gibs/gib = null
 
 	if(sound_to_play && isnum(sound_vol))
