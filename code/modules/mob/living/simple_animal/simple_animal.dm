@@ -370,7 +370,7 @@
 		if(death_sound)
 			playsound(get_turf(src),death_sound, 200, 1)
 		if(deathmessage || !del_on_death)
-			emote("deathgasp")
+			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
 		..()
 		//Prevent infinite loops if the mob Destroy() is overridden in such
