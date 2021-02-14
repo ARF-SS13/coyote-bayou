@@ -45,10 +45,12 @@
 /obj/item/clothing/head/hattip/dropped(mob/M)
 	. = ..()
 	UnregisterSignal(M, COMSIG_MOB_SAY)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/root_and_toot, src, src, 200))
+	addtimer(CALLBACK(src, .proc/root_and_toot), 200)
 
-/obj/item/clothing/head/hattip/proc/root_and_toot(obj/item/clothing/head/hattip/hat)
-	hat.animate_atom_living()
+/obj/item/clothing/head/hattip/proc/root_and_toot()
+	if(QDELETED(src) || isnull(loc))
+		return
+	src.animate_atom_living()
 	var/mob/living/simple_animal/hostile/mimic/M = loc
 	M.say(pick("Whooee! Time for a hootenanny!", "Rough 'em up boys!", "Yeehaw! Freedom at last!", "Y'all about to get a good old fashioned spanking!"))
 

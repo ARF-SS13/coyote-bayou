@@ -1,7 +1,7 @@
 /datum/admins/proc/open_shuttlepanel()
 	set category = "Admin.Events"
-	set name = "Shuttle Manipulator"
-	set desc = "Opens the shuttle manipulator UI."
+	set name = "Train Manipulator"
+	set desc = "Opens the train manipulator UI."
 
 	if(!check_rights(R_ADMIN))
 		return

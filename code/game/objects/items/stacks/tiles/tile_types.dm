@@ -92,6 +92,7 @@
 	icon_state = "tile_grass"
 	turf_type = /turf/open/floor/grass
 	resistance_flags = FLAMMABLE
+	merge_type = /obj/item/stack/tile/grass
 
 //Fairygrass
 /obj/item/stack/tile/fairygrass
@@ -103,6 +104,7 @@
 	turf_type = /turf/open/floor/grass/fairy
 	resistance_flags = FLAMMABLE
 	color = "#33CCFF"
+	merge_type = /obj/item/stack/tile/fairygrass
 
 /obj/item/stack/tile/fairygrass/white
 	name = "white fairygrass tile"
@@ -110,6 +112,7 @@
 	desc = "A patch of odd, glowing white grass."
 	turf_type = /turf/open/floor/grass/fairy/white
 	color = "#FFFFFF"
+	merge_type = /obj/item/stack/tile/fairygrass/white
 
 /obj/item/stack/tile/fairygrass/red
 	name = "red fairygrass tile"
@@ -117,6 +120,7 @@
 	desc = "A patch of odd, glowing red grass."
 	turf_type = /turf/open/floor/grass/fairy/red
 	color = "#FF3333"
+	merge_type = /obj/item/stack/tile/fairygrass/red
 
 /obj/item/stack/tile/fairygrass/yellow
 	name = "yellow fairygrass tile"
@@ -124,6 +128,7 @@
 	desc = "A patch of odd, glowing yellow grass."
 	turf_type = /turf/open/floor/grass/fairy/yellow
 	color = "#FFFF66"
+	merge_type = /obj/item/stack/tile/fairygrass/yellow
 
 /obj/item/stack/tile/fairygrass/green
 	name = "green fairygrass tile"
@@ -131,12 +136,14 @@
 	desc = "A patch of odd, glowing green grass."
 	turf_type = /turf/open/floor/grass/fairy/green
 	color = "#99FF99"
+	merge_type = /obj/item/stack/tile/fairygrass/green
 
 /obj/item/stack/tile/fairygrass/blue
 	name = "blue fairygrass tile"
 	singular_name = "blue fairygrass floor tile"
 	desc = "A patch of odd, glowing blue grass."
 	turf_type = /turf/open/floor/grass/fairy/blue
+	merge_type = /obj/item/stack/tile/fairygrass/blue
 
 /obj/item/stack/tile/fairygrass/purple
 	name = "purple fairygrass tile"
@@ -144,6 +151,7 @@
 	desc = "A patch of odd, glowing purple grass."
 	turf_type = /turf/open/floor/grass/fairy/purple
 	color = "#D966FF"
+	merge_type = /obj/item/stack/tile/fairygrass/purple
 
 /obj/item/stack/tile/fairygrass/pink
 	name = "pink fairygrass tile"
@@ -151,6 +159,7 @@
 	desc = "A patch of odd, glowing pink grass."
 	turf_type = /turf/open/floor/grass/fairy/pink
 	color = "#FFB3DA"
+	merge_type = /obj/item/stack/tile/fairygrass/pink
 
 //Wood
 /obj/item/stack/tile/wood
@@ -160,24 +169,28 @@
 	icon_state = "tile-wood"
 	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
+	merge_type = /obj/item/stack/tile/wood
 
 /obj/item/stack/tile/wood/wood_large
 	name = "large wooden plank floor tile"
 	singular_name = "large wooden plank floor tile"
 	icon_state = "tile-wood_large"
 	turf_type = /turf/open/floor/wood/wood_large
+	merge_type = /obj/item/stack/tile/wood/wood_large
 
 /obj/item/stack/tile/wood/wood_tiled
 	name = "tiled wooden plank floor tile"
 	singular_name = "tiled wooden plank floor tile"
 	icon_state = "tile-wood_tile"
 	turf_type = /turf/open/floor/wood/wood_tiled
+	merge_type = /obj/item/stack/tile/wood/wood_tiled
 
 /obj/item/stack/tile/wood/wood_diagonal
 	name = "diagonal wooden plank floor tile"
 	singular_name = "diagonal wooden plank floor tile"
 	icon_state = "tile-wood_diagonal"
 	turf_type = /turf/open/floor/wood/wood_diagonal
+	merge_type = /obj/item/stack/tile/wood/wood_diagonal
 
 //Cloth Floors
 
@@ -186,6 +199,7 @@
 	desc = "These are soft and cushy, they'd make good pillows. They look very comfortable, although what they're used for is discomforting."
 	icon_state = "tile_padded"
 	turf_type = /turf/open/floor/padded
+	merge_type = /obj/item/stack/tile/padded
 
 //Basalt
 /obj/item/stack/tile/basalt
@@ -194,6 +208,7 @@
 	desc = "Artificially made ashy soil themed on a hostile environment."
 	icon_state = "tile_basalt"
 	turf_type = /turf/open/floor/grass/fakebasalt
+	merge_type = /obj/item/stack/tile/basalt
 
 //Carpets
 /obj/item/stack/tile/carpet
@@ -204,30 +219,35 @@
 	turf_type = /turf/open/floor/carpet
 	resistance_flags = FLAMMABLE
 	tableVariant = /obj/structure/table/wood/fancy
+	merge_type = /obj/item/stack/tile/carpet
 
 /obj/item/stack/tile/carpet/black
 	name = "black carpet"
 	icon_state = "tile-carpet-black"
 	turf_type = /turf/open/floor/carpet/black
 	tableVariant = /obj/structure/table/wood/fancy/black
+	merge_type = /obj/item/stack/tile/carpet/black
 
 /obj/item/stack/tile/carpet/arcade
 	name = "arcade carpet"
 	icon_state = "tile-carpet-arcade"
 	turf_type = /turf/open/floor
 	tableVariant = null
+	merge_type = /obj/item/stack/tile/carpet/arcade
 
 /obj/item/stack/tile/carpet/blackred
 	name = "red carpet"
 	icon_state = "tile-carpet-blackred"
 	turf_type = /turf/open/floor/carpet/blackred
 	tableVariant = /obj/structure/table/wood/fancy/blackred
+	merge_type = /obj/item/stack/tile/carpet/blackred
 
 /obj/item/stack/tile/carpet/monochrome
 	name = "monochrome carpet"
 	icon_state = "tile-carpet-monochrome"
 	turf_type = /turf/open/floor/carpet/monochrome
 	tableVariant = /obj/structure/table/wood/fancy/monochrome
+	merge_type = /obj/item/stack/tile/carpet/monochrome
 
 /obj/item/stack/tile/carpet/blue
 	name = "blue carpet"
@@ -235,6 +255,7 @@
 	item_state = "tile-carpet-blue"
 	turf_type = /turf/open/floor/carpet/blue
 	tableVariant = /obj/structure/table/wood/fancy/blue
+	merge_type = /obj/item/stack/tile/carpet/blue
 
 /obj/item/stack/tile/carpet/cyan
 	name = "cyan carpet"
@@ -242,6 +263,7 @@
 	item_state = "tile-carpet-cyan"
 	turf_type = /turf/open/floor/carpet/cyan
 	tableVariant = /obj/structure/table/wood/fancy/cyan
+	merge_type = /obj/item/stack/tile/carpet/cyan
 
 /obj/item/stack/tile/carpet/green
 	name = "green carpet"
@@ -249,6 +271,7 @@
 	item_state = "tile-carpet-green"
 	turf_type = /turf/open/floor/carpet/green
 	tableVariant = /obj/structure/table/wood/fancy/green
+	merge_type = /obj/item/stack/tile/carpet/green
 
 /obj/item/stack/tile/carpet/orange
 	name = "orange carpet"
@@ -256,6 +279,7 @@
 	item_state = "tile-carpet-orange"
 	turf_type = /turf/open/floor/carpet/orange
 	tableVariant = /obj/structure/table/wood/fancy/orange
+	merge_type = /obj/item/stack/tile/carpet/orange
 
 /obj/item/stack/tile/carpet/purple
 	name = "purple carpet"
@@ -263,6 +287,7 @@
 	item_state = "tile-carpet-purple"
 	turf_type = /turf/open/floor/carpet/purple
 	tableVariant = /obj/structure/table/wood/fancy/purple
+	merge_type = /obj/item/stack/tile/carpet/purple
 
 /obj/item/stack/tile/carpet/red
 	name = "red carpet"
@@ -270,6 +295,7 @@
 	item_state = "tile-carpet-red"
 	turf_type = /turf/open/floor/carpet/red
 	tableVariant = /obj/structure/table/wood/fancy/red
+	merge_type = /obj/item/stack/tile/carpet/red
 
 /obj/item/stack/tile/carpet/royalblack
 	name = "royal black carpet"
@@ -277,6 +303,7 @@
 	item_state = "tile-carpet-royalblack"
 	turf_type = /turf/open/floor/carpet/royalblack
 	tableVariant = /obj/structure/table/wood/fancy/royalblack
+	merge_type = /obj/item/stack/tile/carpet/royalblack
 
 /obj/item/stack/tile/carpet/royalblue
 	name = "royal blue carpet"
@@ -284,6 +311,7 @@
 	item_state = "tile-carpet-royalblue"
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
+	merge_type = /obj/item/stack/tile/carpet/royalblue
 
 /obj/item/stack/tile/carpet/ten
 	amount = 10
@@ -475,6 +503,7 @@
 	desc = "A blue circuit tile."
 	icon_state = "tile_bcircuit"
 	turf_type = /turf/open/floor/circuit
+	merge_type = /obj/item/stack/tile/circuit
 
 /obj/item/stack/tile/circuit/green
 	name = "green circuit tile"
@@ -482,9 +511,11 @@
 	desc = "A green circuit tile."
 	icon_state = "tile_gcircuit"
 	turf_type = /turf/open/floor/circuit/green
+	merge_type = /obj/item/stack/tile/circuit/green
 
 /obj/item/stack/tile/circuit/green/anim
 	turf_type = /turf/open/floor/circuit/green/anim
+	merge_type = /obj/item/stack/tile/circuit/green/anim
 
 /obj/item/stack/tile/circuit/red
 	name = "red circuit tile"
@@ -492,9 +523,11 @@
 	desc = "A red circuit tile."
 	icon_state = "tile_rcircuit"
 	turf_type = /turf/open/floor/circuit/red
+	merge_type = /obj/item/stack/tile/circuit/red
 
 /obj/item/stack/tile/circuit/red/anim
 	turf_type = /turf/open/floor/circuit/red/anim
+	merge_type = /obj/item/stack/tile/circuit/red/anim
 
 //Pod floor
 /obj/item/stack/tile/pod
@@ -503,6 +536,7 @@
 	desc = "A grooved floor tile."
 	icon_state = "tile_pod"
 	turf_type = /turf/open/floor/pod
+	merge_type = /obj/item/stack/tile/pod
 
 /obj/item/stack/tile/pod/light
 	name = "light pod floor tile"
@@ -510,6 +544,7 @@
 	desc = "A lightly colored grooved floor tile."
 	icon_state = "tile_podlight"
 	turf_type = /turf/open/floor/pod/light
+	merge_type = /obj/item/stack/tile/pod/light
 
 /obj/item/stack/tile/pod/dark
 	name = "dark pod floor tile"
@@ -517,6 +552,7 @@
 	desc = "A darkly colored grooved floor tile."
 	icon_state = "tile_poddark"
 	turf_type = /turf/open/floor/pod/dark
+	merge_type = /obj/item/stack/tile/pod/dark
 
 //Plasteel (normal)
 /obj/item/stack/tile/plasteel
@@ -532,11 +568,13 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	merge_type = /obj/item/stack/tile/plasteel
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
 	is_cyborg = 1
 	cost = 125
+	merge_type = /obj/item/stack/tile/plasteel/cyborg
 
 /obj/item/stack/tile/material
 	name = "floor tile"
@@ -546,6 +584,7 @@
 	icon_state = "material_tile"
 	turf_type = /turf/open/floor/material
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	merge_type = /obj/item/stack/tile/material
 
 /obj/item/stack/tile/bronze
 	name = "bronze tile"
@@ -555,3 +594,4 @@
 	color = "#92661A"
 	turf_type = /turf/open/floor/bronze
 	custom_materials = list(/datum/material/bronze = 250)
+	merge_type = /obj/item/stack/tile/bronze

@@ -858,6 +858,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/item/stack/cable_coil/cut/white
 	color = "white"
+	merge_type = /obj/item/stack/cable_coil/cut/white
 
 /obj/item/stack/cable_coil/cut/random
 	color = "#ffffff"

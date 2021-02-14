@@ -685,34 +685,6 @@
 	qdel(src)
 	to_chat(user, "<span class='notice'>You plant the walking mushroom.</span>")
 
-
-// Chanterelle
-/obj/item/seeds/chanter
-	name = "pack of chanterelle mycelium"
-	desc = "This mycelium grows into chanterelle mushrooms."
-	icon_state = "mycelium-chanter"
-	species = "chanter"
-	plantname = "Chanterelle Mushrooms"
-	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle
-	lifespan = 35
-	endurance = 20
-	maturation = 7
-	production = 1
-	yield = 5
-	potency = 15
-	growthstages = 3
-	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
-	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
-	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.1)
-
-/obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle
-	seed = /obj/item/seeds/chanter
-	name = "chanterelle cluster"
-	desc = "<I>Cantharellus Cibarius</I>: These jolly yellow little shrooms sure look tasty!"
-	icon_state = "chanterelle"
-	filling_color = "#FFA500"
-
-
 // Glowshroom
 /obj/item/seeds/glowshroom
 	name = "pack of glowshroom mycelium"

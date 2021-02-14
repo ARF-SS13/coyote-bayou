@@ -347,7 +347,7 @@
 		if(10 to 11)
 			myseed = new /obj/item/seeds/amanita(src)
 		if(8 to 9)
-			myseed = new /obj/item/seeds/chanter(src)
+			myseed = new /obj/item/seeds/chanterelle(src)
 		if(6 to 7)
 			myseed = new /obj/item/seeds/tower(src)
 		if(4 to 5)

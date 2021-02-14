@@ -8,21 +8,18 @@ GLOBAL_LIST(topic_status_cache)
 
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
+
 /world/New()
-	if (fexists(EXTOOLS))
-		call(EXTOOLS, "maptick_initialize")()
-	#ifdef EXTOOLS_LOGGING
-		call(EXTOOLS, "init_logging")()
-	else
-		CRASH("[EXTOOLS] does not exist!")
-	#endif
-	enable_debugger()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_init")()
+		enable_debugging()
+	AUXTOOLS_CHECK(AUXMOS)
 #ifdef REFERENCE_TRACKING
 	enable_reference_tracking()
 #endif
 
 	world.Profile(PROFILE_START)
-
 	log_world("World loaded at [TIME_STAMP("hh:mm:ss", FALSE)]!")
 
 	GLOB.config_error_log = GLOB.world_manifest_log = GLOB.world_pda_log = GLOB.world_job_debug_log = GLOB.sql_error_log = GLOB.world_href_log = GLOB.world_runtime_log = GLOB.world_attack_log = GLOB.world_game_log = "data/logs/config_error.[GUID()].log" //temporary file used to record errors with loading config, moved to log directory once logging is set bl
@@ -69,8 +66,9 @@ GLOBAL_LIST(topic_status_cache)
 
 	Master.Initialize(10, FALSE, TRUE)
 
-	if(TEST_RUN_PARAMETER in params)
-		HandleTestRun()
+	#ifdef UNIT_TESTS
+	HandleTestRun()
+	#endif
 
 /world/proc/InitTgs()
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
@@ -243,9 +241,10 @@ GLOBAL_LIST(topic_status_cache)
 
 	TgsReboot()
 
-	if(TEST_RUN_PARAMETER in params)
-		FinishTestRun()
-		return
+	#ifdef UNIT_TESTS
+	FinishTestRun()
+	return
+	#endif
 
 	if(TgsAvailable())
 		var/do_hard_reboot
@@ -274,6 +273,11 @@ GLOBAL_LIST(topic_status_cache)
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+	AUXTOOLS_SHUTDOWN(AUXMOS)
+	AUXTOOLS_SHUTDOWN(AUXMAPTICK)
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		call(debug_server, "auxtools_shutdown")()
 	..()
 
 /world/proc/update_status()

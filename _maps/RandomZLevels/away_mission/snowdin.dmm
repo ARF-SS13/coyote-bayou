@@ -2665,29 +2665,8 @@
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/wood,
 /area/awaymission/snowdin/outside)
-"gc" = (
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
-"gd" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "ge" = (
 /turf/closed/mineral/iron/ice,
-/area/awaymission/snowdin/cave/cavern)
-"gf" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/snowdin/dungeonheavy,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
 /area/awaymission/snowdin/cave/cavern)
 "gg" = (
 /obj/structure/bed,
@@ -3040,20 +3019,6 @@
 /obj/item/clothing/head/cone,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
-"gU" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
-"gV" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "gW" = (
 /turf/closed/mineral/diamond/ice,
 /area/awaymission/snowdin/cave/cavern)
@@ -3347,13 +3312,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
-"hF" = (
-/obj/structure/destructible/cult/pylon,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "hG" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/hooded/wintercoat/captain{
@@ -3607,34 +3565,6 @@
 	},
 /turf/open/floor/plasteel/dark/snowdin,
 /area/awaymission/snowdin/cave)
-"il" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
-"im" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/structure/spawner/nether{
-	max_mobs = 5
-	},
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
-"in" = (
-/mob/living/simple_animal/hostile/netherworld/blankbody{
-	desc = "It's Caleb Reed, but their flesh has an ashy texture, and their face is featureless save an eerie smile.";
-	name = "Caleb Reed"
-	},
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "io" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -4442,16 +4372,6 @@
 /obj/effect/spawner/lootdrop/snowdin/dungeonmisc,
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"jO" = (
-/mob/living/simple_animal/hostile/netherworld/blankbody{
-	desc = "It's Jacob Ullman, but their flesh has an ashy texture, and their face is featureless save an eerie smile.";
-	name = "Jacob Ullman"
-	},
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "jP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	piping_layer = 3;
@@ -5569,14 +5489,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"lT" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/snowdin/dungeonlite,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "lU" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -6540,23 +6452,6 @@
 "oc" = (
 /turf/closed/wall,
 /area/awaymission/snowdin/post/secpost)
-"od" = (
-/obj/item/gun/ballistic/shotgun/boltaction,
-/obj/item/ammo_box/a762,
-/obj/item/ammo_box/a762,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "security officer's locker";
-	req_access_txt = "201"
-	},
-/obj/item/restraints/handcuffs,
-/obj/item/assembly/flash,
-/obj/item/storage/fancy/ammobox,
-/obj/structure/fireaxecabinet{
-	pixel_y = 32
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/secpost)
 "oe" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -7469,13 +7364,6 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
-"qg" = (
-/obj/structure/flora/rock/pile/icy,
-/turf/open/floor/engine/cult{
-	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
-	temperature = 120
-	},
-/area/awaymission/snowdin/cave/cavern)
 "qh" = (
 /obj/structure/fence,
 /obj/effect/turf_decal/stripes/line{
@@ -7658,25 +7546,6 @@
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/snowdin/post/cavern2)
-"qJ" = (
-/obj/structure/rack,
-/obj/item/storage/fancy/ammobox,
-/obj/machinery/light/small,
-/obj/item/storage/fancy/ammobox{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/turf/open/floor/plasteel/dark,
-/area/awaymission/snowdin/post/secpost)
-"qK" = (
-/obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/turf/open/floor/plasteel/dark,
-/area/awaymission/snowdin/post/secpost)
 "qL" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post)
@@ -13134,34 +13003,6 @@
 /obj/item/toy/plush/nukeplushie,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/cave)
-"EF" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/item/clothing/suit/hooded/wintercoat/security,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/structure/rack,
-/turf/open/floor/mineral/plastitanium{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	planetary_atmos = 1;
-	temperature = 180
-	},
-/area/awaymission/snowdin/cave)
-"EG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/obj/effect/turf_decal/weather/snow,
-/obj/item/clothing/suit/hooded/wintercoat/security,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/structure/rack,
-/turf/open/floor/mineral/plastitanium{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	planetary_atmos = 1;
-	temperature = 180
-	},
-/area/awaymission/snowdin/cave)
 "EH" = (
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/cave)
@@ -13598,6 +13439,13 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/plating/asteroid/snow/ice,
+/area/awaymission/snowdin/cave/cavern)
+"FP" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
 /area/awaymission/snowdin/cave/cavern)
 "FQ" = (
 /obj/effect/light_emitter{
@@ -15665,6 +15513,21 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
+"Lf" = (
+/obj/structure/destructible/cult/pylon,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"Lg" = (
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/lootdrop/snowdin/dungeonlite,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
 "Lw" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -15679,6 +15542,34 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
+"LP" = (
+/mob/living/simple_animal/hostile/netherworld/blankbody{
+	desc = "It's Jacob Ullman, but their flesh has an ashy texture, and their face is featureless save an eerie smile.";
+	name = "Jacob Ullman"
+	},
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"Nc" = (
+/obj/structure/rack,
+/obj/item/storage/fancy/ammobox,
+/obj/machinery/light/small,
+/obj/item/storage/fancy/ammobox{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/snowdin/post/secpost)
+"NB" = (
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/lootdrop/snowdin/dungeonmid,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
 "OF" = (
 /obj/machinery/door/airlock/external{
 	name = "Ready Room";
@@ -15699,6 +15590,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/cave)
+"Pq" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/spawner/nether{
+	max_mobs = 5
+	},
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
 "PR" = (
 /obj/machinery/door/airlock/external{
 	name = "Ready Room";
@@ -15717,6 +15618,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/cave)
+"QH" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"QL" = (
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
 "SX" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -15724,12 +15638,77 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_main)
+"Tg" = (
+/obj/item/gun/ballistic/shotgun/boltaction,
+/obj/item/ammo_box/a762,
+/obj/item/ammo_box/a762,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "security officer's locker";
+	req_access_txt = "201"
+	},
+/obj/item/restraints/handcuffs,
+/obj/item/assembly/flash,
+/obj/item/storage/fancy/ammobox,
+/obj/structure/fireaxecabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/plating,
+/area/awaymission/snowdin/post/secpost)
+"To" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"UZ" = (
+/mob/living/simple_animal/hostile/netherworld/blankbody{
+	desc = "It's Caleb Reed, but their flesh has an ashy texture, and their face is featureless save an eerie smile.";
+	name = "Caleb Reed"
+	},
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"VV" = (
+/obj/structure/rack,
+/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/storage/fancy/ammobox/lethalshot{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/turf/open/floor/plasteel/dark,
+/area/awaymission/snowdin/post/secpost)
 "VW" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/structure/fans/tiny,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
+"Xj" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/structure/rack,
+/turf/open/floor/mineral/plastitanium{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	planetary_atmos = 1;
+	initial_temperature = 180
+	},
+/area/awaymission/snowdin/cave)
+"XM" = (
+/obj/structure/closet/crate/wooden,
+/obj/effect/spawner/lootdrop/snowdin/dungeonheavy,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
 "Yn" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -15740,6 +15719,27 @@
 "Ys" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/awaymission/snowdin/post/mining_dock)
+"ZB" = (
+/obj/structure/flora/rock/pile/icy,
+/turf/open/floor/engine/cult{
+	initial_gas_mix = "o2=0;n2=82;plasma=24;TEMP=120";
+	initial_temperature = 120
+	},
+/area/awaymission/snowdin/cave/cavern)
+"ZI" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow,
+/obj/item/clothing/suit/hooded/wintercoat/security,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/structure/rack,
+/turf/open/floor/mineral/plastitanium{
+	initial_gas_mix = "o2=22;n2=82;TEMP=180";
+	planetary_atmos = 1;
+	initial_temperature = 180
+	},
+/area/awaymission/snowdin/cave)
 
 (1,1,1) = {"
 aa
@@ -24517,12 +24517,12 @@ md
 mH
 nc
 nF
-od
+Tg
 oB
 pj
 pI
 qp
-qJ
+Nc
 pH
 af
 am
@@ -24779,7 +24779,7 @@ oC
 pk
 pJ
 qo
-qK
+VV
 pH
 ak
 af
@@ -35988,7 +35988,7 @@ CC
 El
 an
 an
-EF
+ZI
 CC
 ae
 ae
@@ -36245,7 +36245,7 @@ CC
 Em
 Dp
 an
-EF
+ZI
 CC
 AJ
 Cr
@@ -36502,7 +36502,7 @@ OF
 En
 Es
 Dp
-EF
+ZI
 CC
 zh
 af
@@ -36759,7 +36759,7 @@ DH
 Eo
 Et
 Dp
-EG
+Xj
 CC
 zh
 af
@@ -53547,13 +53547,13 @@ eJ
 eJ
 eK
 eK
-gc
-il
-gc
-gd
+QL
+NB
+QL
+To
 eK
 eJ
-gc
+QL
 eJ
 eJ
 eJ
@@ -53802,12 +53802,12 @@ bh
 bh
 eJ
 eJ
-gc
-gc
-gV
-gV
-gc
-gc
+QL
+QL
+QH
+QH
+QL
+QL
 eK
 eK
 eJ
@@ -54060,14 +54060,14 @@ bh
 eJ
 eK
 eJ
-gU
-hF
-im
-gc
-gc
-gc
+FP
+Lf
+Pq
+QL
+QL
+QL
 eK
-gc
+QL
 eK
 eK
 eK
@@ -54080,7 +54080,7 @@ eJ
 eJ
 eJ
 oZ
-gc
+QL
 oZ
 oZ
 sX
@@ -54316,16 +54316,16 @@ bh
 bh
 eK
 eK
-gd
-gc
-gc
-gV
-gU
-gV
-gc
+To
+QL
+QL
+QH
+FP
+QH
+QL
 eJ
 eK
-gc
+QL
 eK
 eK
 eK
@@ -54338,9 +54338,9 @@ eJ
 eK
 oZ
 oZ
-gc
+QL
 oZ
-gc
+QL
 oZ
 oZ
 oZ
@@ -54573,30 +54573,30 @@ bh
 bh
 eK
 eK
-gc
-gc
-gV
-gc
-gc
-jO
-gc
-gc
-gc
-gc
-gc
+QL
+QL
+QH
+QL
+QL
+LP
+QL
+QL
+QL
+QL
+QL
 eK
 eK
-gc
+QL
 eK
 eK
 eJ
-gc
-gV
+QL
+QH
 oZ
-gc
+QL
 oZ
 oZ
-gc
+QL
 oZ
 oZ
 oZ
@@ -54831,28 +54831,28 @@ bh
 eJ
 eK
 eK
-gc
-gc
-gc
-gc
-gc
-gc
-gV
-gc
-gc
-gV
-gc
-gc
-gc
+QL
+QL
+QL
+QL
+QL
+QL
+QH
+QL
+QL
+QH
+QL
+QL
+QL
 eJ
 eK
-gc
-gc
-gV
+QL
+QL
+QH
 oZ
-gU
-gc
-gc
+FP
+QL
+QL
 oZ
 oZ
 oZ
@@ -55088,29 +55088,29 @@ bh
 eJ
 eK
 eK
-gc
-gc
-gd
-gV
-gc
-gc
+QL
+QL
+To
+QH
+QL
+QL
 eK
 ge
-gc
-gc
-gU
-gV
-gV
-gc
-gc
-gV
-gc
+QL
+QL
+FP
+QH
+QH
+QL
+QL
+QH
+QL
 oZ
 oZ
-gc
+QL
 oZ
 oZ
-gc
+QL
 sY
 sY
 oZ
@@ -55345,25 +55345,25 @@ bh
 eJ
 eK
 ge
-gc
-gc
-in
-gc
-gc
+QL
+QL
+UZ
+QL
+QL
 ge
 ge
 eK
-gc
-gc
+QL
+QL
 ge
-gc
-gc
-gc
-gc
-gV
-gc
-gc
-gc
+QL
+QL
+QL
+QL
+QH
+QL
+QL
+QL
 oZ
 oZ
 oZ
@@ -55601,28 +55601,28 @@ bh
 bh
 eJ
 eJ
-gc
-gV
-gU
-gc
-gc
-gc
+QL
+QH
+FP
+QL
+QL
+QL
 eK
 ge
-gc
-gc
-gV
+QL
+QL
+QH
 eK
 eK
-gc
+QL
 eJ
-gc
-gc
-gU
-gV
-gc
+QL
+QL
+FP
+QH
+QL
 oZ
-gc
+QL
 eK
 oY
 eJ
@@ -55858,23 +55858,23 @@ bh
 bh
 eJ
 eJ
-gf
-gc
-gc
-gV
-gc
-gc
-gc
+XM
+QL
+QL
+QH
+QL
+QL
+QL
 eK
-lT
+Lg
 eK
 eK
 ge
-gc
-gc
-gc
+QL
+QL
+QL
 eK
-qg
+ZB
 oZ
 oZ
 oZ
@@ -56116,13 +56116,13 @@ bh
 eK
 eK
 eJ
-gc
-hF
-im
-gV
-gc
+QL
+Lf
+Pq
+QH
+QL
 eK
-gc
+QL
 eK
 eK
 eK
@@ -56131,11 +56131,11 @@ ge
 eK
 ge
 eJ
-gc
+QL
 oZ
-gc
+QL
 oZ
-gc
+QL
 eK
 eJ
 eJ
@@ -56374,10 +56374,10 @@ eJ
 eJ
 eK
 eJ
-gc
-gc
-gc
-gU
+QL
+QL
+QL
+FP
 eK
 eK
 eK
@@ -56389,7 +56389,7 @@ eK
 ge
 eK
 oZ
-gc
+QL
 oZ
 oZ
 oZ
@@ -56631,9 +56631,9 @@ eJ
 eK
 eK
 eK
-gc
-gc
-gc
+QL
+QL
+QL
 eK
 eK
 eK
@@ -56646,9 +56646,9 @@ eK
 eJ
 eJ
 oZ
-gc
+QL
 oZ
-gc
+QL
 oZ
 oZ
 eL
@@ -56889,8 +56889,8 @@ eK
 eK
 eK
 eJ
-gc
-gd
+QL
+To
 eK
 eK
 eK
@@ -56904,9 +56904,9 @@ eJ
 eJ
 eK
 eJ
-gc
+QL
 oZ
-gc
+QL
 oZ
 fr
 fr
@@ -57162,7 +57162,7 @@ eJ
 eJ
 eJ
 oZ
-gc
+QL
 oZ
 fr
 fr

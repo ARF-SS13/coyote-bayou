@@ -322,7 +322,7 @@
 
 //Checks to see if organs are new on the mob, and changes their colours so that they don't get crazy colours.
 /mob/living/carbon/human/proc/emergent_genital_call()
-	if(!client.prefs.arousable)
+	if(!client?.prefs?.arousable)
 		return FALSE
 
 	var/organCheck = locate(/obj/item/organ/genital) in internal_organs

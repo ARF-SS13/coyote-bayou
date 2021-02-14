@@ -6,6 +6,7 @@
 	turf_type = /turf/open/floor/mineral/plasma
 	mineralType = "plasma"
 	custom_materials = list(/datum/material/plasma=500)
+	merge_type = /obj/item/stack/tile/mineral/plasma
 
 /obj/item/stack/tile/mineral/uranium
 	name = "uranium tile"
@@ -15,6 +16,7 @@
 	turf_type = /turf/open/floor/mineral/uranium
 	mineralType = "uranium"
 	custom_materials = list(/datum/material/uranium=500)
+	merge_type = /obj/item/stack/tile/mineral/uranium
 
 /obj/item/stack/tile/mineral/gold
 	name = "gold tile"
@@ -24,6 +26,7 @@
 	turf_type = /turf/open/floor/mineral/gold
 	mineralType = "gold"
 	custom_materials = list(/datum/material/gold=500)
+	merge_type = /obj/item/stack/tile/mineral/gold
 
 /obj/item/stack/tile/mineral/silver
 	name = "silver tile"
@@ -33,6 +36,7 @@
 	turf_type = /turf/open/floor/mineral/silver
 	mineralType = "silver"
 	custom_materials = list(/datum/material/silver=500)
+	merge_type = /obj/item/stack/tile/mineral/silver
 
 /obj/item/stack/tile/mineral/diamond
 	name = "diamond tile"
@@ -42,6 +46,7 @@
 	turf_type = /turf/open/floor/mineral/diamond
 	mineralType = "diamond"
 	custom_materials = list(/datum/material/diamond=500)
+	merge_type = /obj/item/stack/tile/mineral/diamond
 
 /obj/item/stack/tile/mineral/bananium
 	name = "bananium tile"
@@ -51,6 +56,7 @@
 	turf_type = /turf/open/floor/mineral/bananium
 	mineralType = "bananium"
 	custom_materials = list(/datum/material/bananium=500)
+	merge_type = /obj/item/stack/tile/mineral/bananium
 
 /obj/item/stack/tile/mineral/abductor
 	name = "alien floor tile"
@@ -60,6 +66,7 @@
 	icon_state = "tile_abductor"
 	turf_type = /turf/open/floor/mineral/abductor
 	mineralType = "abductor"
+	merge_type = /obj/item/stack/tile/mineral/abductor
 
 /obj/item/stack/tile/mineral/titanium
 	name = "titanium tile"
@@ -69,6 +76,7 @@
 	turf_type = /turf/open/floor/mineral/titanium
 	mineralType = "titanium"
 	custom_materials = list(/datum/material/titanium=500)
+	merge_type = /obj/item/stack/tile/mineral/titanium
 
 /obj/item/stack/tile/mineral/plastitanium
 	name = "plastitanium tile"
@@ -78,3 +86,4 @@
 	turf_type = /turf/open/floor/mineral/plastitanium
 	mineralType = "plastitanium"
 	custom_materials = list(/datum/material/titanium=250, /datum/material/plasma=250)
+	merge_type = /obj/item/stack/tile/mineral/plastitanium

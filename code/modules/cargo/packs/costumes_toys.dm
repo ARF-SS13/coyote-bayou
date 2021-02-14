@@ -203,11 +203,11 @@
 	desc = "Plush tide station wide. Contains 5 random plushies for you to love. Warranty void if your love violates the terms of use."
 	cost = 1500 // or play the arcade machines ya lazy bum
 	num_contained = 5
-	contains = list(/obj/item/toy/plush/random,
-					/obj/item/toy/plush/random,
-					/obj/item/toy/plush/random,
-					/obj/item/toy/plush/random,
-					/obj/item/toy/plush/random) //I'm lazy
+	contains = list(/obj/effect/spawner/lootdrop/plush,
+					/obj/effect/spawner/lootdrop/plush,
+					/obj/effect/spawner/lootdrop/plush,
+					/obj/effect/spawner/lootdrop/plush,
+					/obj/effect/spawner/lootdrop/plush) //I'm lazy
 	crate_name = "plushie crate"
 	crate_type = /obj/structure/closet/crate/wooden
 

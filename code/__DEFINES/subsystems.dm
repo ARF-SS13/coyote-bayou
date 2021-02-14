@@ -94,7 +94,6 @@
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
 
-#define FIRE_PRIORITY_VORE			5
 #define FIRE_PRIORITY_IDLE_NPC		10
 #define FIRE_PRIORITY_SERVER_MAINT	10
 #define FIRE_PRIORITY_RESEARCH		10
@@ -125,6 +124,7 @@
 #define FIRE_PRIORITY_STATPANEL		390
 #define FIRE_PRIORITY_CHAT			400
 #define FIRE_PRIORITY_OVERLAYS		500
+#define FIRE_PRIORITY_CALLBACKS		600
 #define FIRE_PRIORITY_INPUT			1000 // This must always always be the max highest priority. Player input must never be lost.
 
 // SS runlevels
@@ -143,10 +143,13 @@
 #define SSAIR_EXCITEDGROUPS 3
 #define SSAIR_HIGHPRESSURE 4
 #define SSAIR_HOTSPOTS 5
-#define SSAIR_SUPERCONDUCTIVITY 6
+#define SSAIR_TURF_CONDUCTION 6
 #define SSAIR_REBUILD_PIPENETS 7
 #define SSAIR_EQUALIZE 8
 #define SSAIR_ACTIVETURFS 9
+#define SSAIR_TURF_POST_PROCESS 10
+#define SSAIR_FINALIZE_TURFS 11
+#define SSAIR_ATMOSMACHINERY_AIR 12
 
 // |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
 #define COMPILE_OVERLAYS(A)\

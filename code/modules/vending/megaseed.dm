@@ -12,7 +12,7 @@
 					/obj/item/seeds/cabbage = 3,
 					/obj/item/seeds/carrot = 3,
 					/obj/item/seeds/cherry = 3,
-					/obj/item/seeds/chanter = 3,
+					/obj/item/seeds/chanterelle = 3,
 					/obj/item/seeds/chili = 3,
 					/obj/item/seeds/cocoapod = 3,
 					/obj/item/seeds/coconut = 3,
