@@ -27,7 +27,7 @@
 	var/space_empty_levels = 1
 	var/station_ruin_budget = -1 // can be set to manually override the station ruins budget on maps that don't support station ruins, stopping the error from being unable to place the ruins.
 
-	var/minetype = "lavaland"
+	var/minetype// = "lavaland" // we don't want lavaland
 
 	var/maptype = MAP_TYPE_STATION //This should be used to adjust ingame behavior depending on the specific type of map being played. For instance, if an overmap were added, it'd be appropriate for it to only generate with a MAP_TYPE_SHIP
 

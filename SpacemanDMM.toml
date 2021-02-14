@@ -1,2 +1,8 @@
 [langserver]
 dreamchecker = true
+
+[debugger]
+engine = "auxtools"
+
+[dmdoc]
+use_typepath_names = true
