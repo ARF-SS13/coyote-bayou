@@ -222,7 +222,7 @@
 				visible_message("<b>[src]</b> raises an eyebrow, <span class='spooky'>\"It's 1 candy per plushie [gender]! Thems the rules!\"</span>")
 				return
 
-			new /obj/item/toy/plush/random(C.loc)
+			new /obj/effect/spawner/lootdrop/plush(C.loc)
 			visible_message("<b>[src]</b> waves her hands, magicking up a plushie from thin air, <span class='spooky'>\"There ye are [gender], enjoy! \"</span>")
 			sleep(20)
 			poof()

@@ -12,6 +12,7 @@
 	max_integrity = 40
 	novariants = FALSE
 	item_flags = NOBLUDGEON
+	merge_type = /obj/item/stack/medical
 	var/self_delay = 50
 	var/other_delay = 0
 	var/repeating = FALSE
@@ -83,6 +84,7 @@
 	self_delay = 40
 	other_delay = 20
 	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
+	merge_type = /obj/item/stack/medical/bruise_pack
 
 /obj/item/stack/medical/bruise_pack/one
 	amount = 1
@@ -129,6 +131,7 @@
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = list(/datum/reagent/cellulose = 2)
+	merge_type = /obj/item/stack/medical/gauze
 
 // gauze is only relevant for wounds, which are handled in the wounds themselves
 /obj/item/stack/medical/gauze/try_heal(mob/living/M, mob/user, silent)
@@ -196,6 +199,7 @@
 	other_delay = 30
 	absorption_rate = 0.15
 	absorption_capacity = 4
+	merge_type = /obj/item/stack/medical/gauze/improvised
 
 /obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
 	..()
@@ -211,6 +215,7 @@
 	other_delay = 15
 	absorption_rate = 0.4
 	absorption_capacity = 6
+	merge_type = /obj/item/stack/medical/gauze/adv
 
 /obj/item/stack/medical/gauze/adv/one
 	amount = 1
@@ -219,6 +224,7 @@
 	custom_materials = null
 	is_cyborg = 1
 	cost = 250
+	merge_type = /obj/item/stack/medical/gauze/cyborg
 
 /obj/item/stack/medical/suture
 	name = "suture"
@@ -234,6 +240,7 @@
 	heal_brute = 10
 	stop_bleeding = 0.6
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
+	merge_type = /obj/item/stack/medical/suture
 
 /obj/item/stack/medical/suture/emergency
 	name = "emergency suture"
@@ -241,6 +248,7 @@
 	heal_brute = 5
 	amount = 5
 	max_amount = 5
+	merge_type = /obj/item/stack/medical/suture/emergency
 
 /obj/item/stack/medical/suture/one
 	amount = 1
@@ -254,6 +262,7 @@
 	desc = "A suture infused with drugs that speed up wound healing of the treated laceration."
 	heal_brute = 15
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
+	merge_type = /obj/item/stack/medical/suture/medicated
 
 /obj/item/stack/medical/suture/one
 	amount = 1
@@ -290,6 +299,7 @@
 	max_amount = 12
 	self_delay = 40
 	other_delay = 20
+	merge_type = /obj/item/stack/medical/ointment
 
 	heal_burn = 5
 	flesh_regeneration = 2.5
@@ -324,6 +334,7 @@
 	flesh_regeneration = 3
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
+	merge_type = /obj/item/stack/medical/mesh
 
 /obj/item/stack/medical/mesh/one
 	amount = 1
@@ -339,6 +350,7 @@
 	icon_state = "aloe_mesh"
 	heal_burn = 15
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
+	merge_type = /obj/item/stack/medical/mesh/advanced
 
 /obj/item/stack/medical/mesh/advanced/one
 	amount = 1
@@ -443,6 +455,7 @@
 	custom_materials = null
 	is_cyborg = 1
 	cost = 250
+	merge_type = /obj/item/stack/medical/bone_gel/cyborg
 
 /obj/item/stack/medical/aloe
 	name = "aloe cream"

@@ -637,6 +637,10 @@
 		M.say(pick("Shit was SO cash.", "You are everything bad in the world.", "What sports do you play, other than 'jack off to naked drawn Japanese people?'", "Don’t be a stranger. Just hit me with your best shot.", "My name is John and I hate every single one of you."), forced = "spraytan")
 	return ..()
 
+#define MUT_MSG_IMMEDIATE 1
+#define MUT_MSG_EXTENDED 2
+#define MUT_MSG_ABOUT2TURN 3
+
 /datum/reagent/mutationtoxin
 	name = "Stable Mutation Toxin"
 	description = "A humanizing toxin."
@@ -645,17 +649,45 @@
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
 	var/datum/species/race = /datum/species/human
-	var/mutationtext = "<span class='danger'>The pain subsides. You feel... human.</span>"
+	var/list/mutationtexts =   list("You don't feel very well." = MUT_MSG_IMMEDIATE,
+									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
+									"Your limbs begin to take on a different shape." = MUT_MSG_EXTENDED,
+									"Your appendages begin morphing." = MUT_MSG_EXTENDED,
+									"You feel as though you're about to change at any moment!" = MUT_MSG_ABOUT2TURN)
+	var/mutationtext
+	var/cycles_to_turn = 20 //the current_cycle threshold / iterations needed before one can transform
 
 /datum/reagent/mutationtoxin/on_mob_life(mob/living/carbon/human/H)
-	..()
+	. = TRUE
 	if(!istype(H))
 		return
-	to_chat(H, "<span class='warning'><b>You crumple in agony as your flesh wildly morphs into new forms!</b></span>")
-	H.visible_message("<b>[H]</b> falls to the ground and screams as [H.p_their()] skin bubbles and froths!") //'froths' sounds painful when used with SKIN.
-	H.DefaultCombatKnockdown(60)
-	addtimer(CALLBACK(src, .proc/mutate, H), 30)
-	return
+	if(!(H.dna?.species) || !(H.mob_biotypes & MOB_ORGANIC))
+		return
+
+	if(prob(10))
+		var/list/pick_ur_fav = list()
+		if(mutationtext)
+			pick_ur_fav[mutationtext] = 3
+		var/filter = NONE
+		if(current_cycle <= (cycles_to_turn*0.3))
+			filter = MUT_MSG_IMMEDIATE
+		else if(current_cycle <= (cycles_to_turn*0.8))
+			filter = MUT_MSG_EXTENDED
+		else
+			filter = MUT_MSG_ABOUT2TURN
+
+		for(var/i in mutationtexts)
+			if(mutationtexts[i] == filter)
+				pick_ur_fav += i
+		to_chat(H, "<span class='warning'>[pick(pick_ur_fav)]</span>")
+
+	if(current_cycle >= cycles_to_turn)
+		var/datum/species/species_type = race
+		H.set_species(species_type)
+		holder.del_reagent(type)
+		to_chat(H, "<span class='warning'>You've become \a [lowertext(initial(species_type.name))]!</span>")
+		return
+	..()
 
 /datum/reagent/mutationtoxin/proc/mutate(mob/living/carbon/human/H)
 	if(QDELETED(H))
@@ -715,6 +747,21 @@
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/jelly
 	mutationtext = "<span class='danger'>The pain subsides. You feel... wobbly.</span>"
+
+/datum/reagent/mutationtoxin/jelly/on_mob_life(mob/living/carbon/human/H)
+	if(isjellyperson(H))
+		to_chat(H, "<span class='warning'>Your jelly shifts and morphs, turning you into another subspecies!</span>")
+		var/species_type = pick(subtypesof(/datum/species/jelly))
+		H.set_species(species_type)
+		holder.del_reagent(type)
+		return TRUE
+	if(current_cycle >= cycles_to_turn) //overwrite since we want subtypes of jelly
+		var/datum/species/species_type = pick(subtypesof(race))
+		H.set_species(species_type)
+		holder.del_reagent(type)
+		to_chat(H, "<span class='warning'>You've become \a [initial(species_type.name)]!</span>")
+		return TRUE
+	return ..()
 
 /datum/reagent/mutationtoxin/golem
 	name = "Golem Mutation Toxin"
@@ -2304,7 +2351,7 @@
 	value = REAGENT_VALUE_GLORIOUS
 
 /datum/reagent/changeling_string/on_mob_metabolize(mob/living/carbon/C)
-	if(ishuman(C) && C.dna && data["desired_dna"])
+	if(ishuman(C) && C.dna && LAZYACCESS(data, "desired_dna"))
 		original_dna = new C.dna.type
 		C.dna.copy_dna(original_dna)
 		var/datum/dna/new_dna = data["desired_dna"]

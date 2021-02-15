@@ -152,7 +152,7 @@ SUBSYSTEM_DEF(shuttle)
 		return //no players no autoevac
 
 	if(alive / total <= threshold)
-		var/msg = "Automatically dispatching emergency shuttle due to crew death."
+		var/msg = "Automatically dispatching train due to mass death."
 		message_admins(msg)
 		log_shuttle("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
 		emergencyNoRecall = TRUE
@@ -182,41 +182,41 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/canEvac(mob/user)
 	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
 	if(world.time - SSticker.round_start_time < srd)
-		to_chat(user, "<span class='alert'>The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before trying again.</span>")
+		to_chat(user, "<span class='alert'>The train is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before trying again.</span>")
 		return FALSE
 
 	switch(emergency.mode)
 		if(SHUTTLE_RECALL)
-			to_chat(user, "<span class='alert'>The emergency shuttle may not be called while returning to CentCom.</span>")
+			to_chat(user, "<span class='alert'>The train may not be called while returning to CentCom.</span>")
 			return FALSE
 		if(SHUTTLE_CALL)
-			to_chat(user, "<span class='alert'>The emergency shuttle is already on its way.</span>")
+			to_chat(user, "<span class='alert'>The train is already on its way.</span>")
 			return FALSE
 		if(SHUTTLE_DOCKED)
-			to_chat(user, "<span class='alert'>The emergency shuttle is already here.</span>")
+			to_chat(user, "<span class='alert'>The train is already here.</span>")
 			return FALSE
 		if(SHUTTLE_IGNITING)
-			to_chat(user, "<span class='alert'>The emergency shuttle is firing its engines to leave.</span>")
+			to_chat(user, "<span class='alert'>The train is firing its engines to leave.</span>")
 			return FALSE
 		if(SHUTTLE_ESCAPE)
-			to_chat(user, "<span class='alert'>The emergency shuttle is moving away to a safe distance.</span>")
+			to_chat(user, "<span class='alert'>The train is moving away to a safe distance.</span>")
 			return FALSE
 		if(SHUTTLE_STRANDED)
-			to_chat(user, "<span class='alert'>The emergency shuttle has been disabled by CentCom.</span>")
+			to_chat(user, "<span class='alert'>The train has been disabled by CentCom.</span>")
 			return FALSE
 
 	return TRUE
 
 /datum/controller/subsystem/shuttle/proc/requestEvac(mob/user, call_reason)
 	if(!emergency)
-		WARNING("requestEvac(): There is no emergency shuttle, but the \
-			shuttle was called. Using the backup shuttle instead.")
+		WARNING("requestEvac(): There is no train, but the \
+			train was called. Using the backup train instead.")
 		if(!backup_shuttle)
-			CRASH("requestEvac(): There is no emergency shuttle, \
-			or backup shuttle! The game will be unresolvable. This is \
+			CRASH("requestEvac(): There is no train, \
+			or backup train! The game will be unresolvable. This is \
 			possibly a mapping error, more likely a bug with the shuttle \
 			manipulation system, or badminry. It is possible to manually \
-			resolve this problem by loading an emergency shuttle template \
+			resolve this problem by loading an train template \
 			manually, and then calling register() on the mobile docking port. \
 			Good luck.")
 		emergency = backup_shuttle
@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	var/area/A = get_area(user)
 
-	log_shuttle("[key_name(user)] has called the emergency shuttle.")
+	log_shuttle("[key_name(user)] has called the train.")
 	deadchat_broadcast(" has called the shuttle at <span class='name'>[A.name]</span>.", "<span class='name'>[user.real_name]</span>", user)
 	if(call_reason)
 		SSblackbox.record_feedback("text", "shuttle_reason", 1, "[call_reason]")
@@ -286,9 +286,9 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/cancelEvac(mob/user)
 	if(canRecall())
 		emergency.cancel(get_area(user))
-		log_shuttle("[key_name(user)] has recalled the shuttle.")
-		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the shuttle.")
-		deadchat_broadcast(" has recalled the shuttle from <span class='name'>[get_area_name(user, TRUE)]</span>.", "<span class='name'>[user.real_name]</span>", user)
+		log_shuttle("[key_name(user)] has recalled the train.")
+		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the train.")
+		deadchat_broadcast(" has recalled the train from <span class='name'>[get_area_name(user, TRUE)]</span>.", "<span class='name'>[user.real_name]</span>", user)
 		return 1
 
 /datum/controller/subsystem/shuttle/proc/canRecall()
@@ -336,8 +336,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(callShuttle)
 		if(EMERGENCY_IDLE_OR_RECALLED)
 			emergency.request(null, set_coefficient = 2.5)
-			log_shuttle("There is no means of calling the emergency shuttle anymore. Shuttle automatically called.")
-			message_admins("All the communications consoles were destroyed and all AIs are inactive. Shuttle called.")
+			log_shuttle("There is no means of calling the train anymore. Train automatically called.")
+			message_admins("All the communications consoles were destroyed and all AIs are inactive. Train called.")
 
 /datum/controller/subsystem/shuttle/proc/registerHostileEnvironment(datum/bad)
 	hostileEnvironments[bad] = TRUE
@@ -381,15 +381,15 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
 		emergency.sound_played = FALSE
-		priority_announce("Hostile environment detected. \
+		priority_announce("Sensors aboard the train indictate the Vault has been compromised. \
 			Departure has been postponed indefinitely pending \
-			conflict resolution.", null, 'sound/misc/notice1.ogg', "Priority")
+			conflict resolution.", null, 'sound/misc/notice1.ogg', "Vault-Tec")
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergencyDockTime)
 		priority_announce("Hostile environment resolved. \
-			You have 3 minutes to board the Emergency Shuttle.",
-			null, "shuttledock", "Priority")
+			You have 3 minutes to board the Train.",
+			null, 'sound/f13/quest.ogg', "Vault-Tec")
 
 //try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons
 /datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)
@@ -658,9 +658,9 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The shift has come to an end and the shuttle called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "shuttlecalled", "Priority")
-		log_game("Round end vote passed. Shuttle has been auto-called.")
-		message_admins("Round end vote passed. Shuttle has been auto-called.")
+		priority_announce("The week has come to an end and the train called. [GLOB.security_level == SEC_LEVEL_RED ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [emergency.timeLeft(600)] minutes.", null, "sound/f13/quest.ogg", "Vault-Tec")
+		log_game("Round end vote passed. Train has been auto-called.")
+		message_admins("Round end vote passed. Train has been auto-called.")
 	emergencyNoRecall = TRUE
 	endvote_passed = TRUE
 
@@ -719,6 +719,8 @@ SUBSYSTEM_DEF(shuttle)
 	preview_shuttle.mode = mode
 
 	preview_shuttle.register()
+
+	preview_shuttle.reset_air()
 
 	// TODO indicate to the user that success happened, rather than just
 	// blanking the modification tab

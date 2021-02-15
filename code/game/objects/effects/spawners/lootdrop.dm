@@ -456,7 +456,7 @@
 		/obj/item/poster/random_contraband = 1,
 		/obj/item/clothing/glasses/sunglasses/blindfold = 4,
 		/obj/item/clothing/glasses/sunglasses = 1,
-		/obj/item/toy/plush/random = 5,
+		/obj/effect/spawner/lootdrop/plush = 5,
 		/obj/effect/spawner/lootdrop/gloves/no_turf = 5,
 		/obj/effect/spawner/lootdrop/glowstick/no_turf = 5,
 		/obj/effect/spawner/lootdrop/coin/no_turf = 3,

@@ -412,8 +412,9 @@
 /obj/item/nullrod/claymore/chainsaw_sword
 	icon_state = "chainswordon"
 	item_state = "chainswordon"
-	name = "sacred chainsaw sword"
-	desc = "Suffer not a heretic to live."
+	name = "ripper"
+	desc = "A miniature chainsaw, as amazing as it sounds."
+	force = 45
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'

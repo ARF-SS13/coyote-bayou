@@ -299,39 +299,6 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 	T.acid_act(acidstr, volume)
 	..()
 
-/datum/reagent/fermi/fermiTest
-	name = "Fermis Test Reagent"
-	description = "You should be really careful with this...! Also, how did you get this?"
-	chemical_flags = REAGENT_FORCEONNEW
-	can_synth = FALSE
-
-/datum/reagent/fermi/fermiTest/on_new(datum/reagents/holder)
-	..()
-	if(LAZYLEN(holder.reagent_list) == 1)
-		return
-	else
-		holder.del_reagent(type)//Avoiding recurrsion
-	var/location = get_turf(holder.my_atom)
-	if(cached_purity < 0.34 || cached_purity == 1)
-		var/datum/effect_system/foam_spread/s = new()
-		s.set_up(volume*2, location, holder)
-		s.start()
-	if((cached_purity < 0.67 && cached_purity >= 0.34)|| cached_purity == 1)
-		var/datum/effect_system/smoke_spread/chem/s = new()
-		s.set_up(holder, volume*2, location)
-		s.start()
-	if(cached_purity >= 0.67)
-		for (var/datum/reagent/reagent in holder.reagent_list)
-			if (istype(reagent, /datum/reagent/fermi))
-				var/datum/chemical_reaction/fermi/Ferm  = GLOB.chemical_reagents_list[reagent.type]
-				Ferm.FermiExplode(src, holder.my_atom, holder, holder.total_volume, holder.chem_temp, holder.pH)
-			else
-				var/datum/chemical_reaction/Ferm  = GLOB.chemical_reagents_list[reagent.type]
-				Ferm.on_reaction(holder, reagent.volume)
-	holder.my_atom.visible_message("<span class='danger'>The solution reacts dramatically, with a meow!</span>")
-	playsound(holder.my_atom, 'modular_citadel/sound/voice/merowr.ogg', 50, 1)
-	holder.clear_reagents()
-
 /datum/reagent/fermi/acidic_buffer
 	name = "Acidic buffer"
 	description = "This reagent will consume itself and move the pH of a beaker towards acidity when added to another."
@@ -397,7 +364,7 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 		playsound(get_turf(H), 'modular_citadel/sound/voice/merowr.ogg', 50, 1, -1)
 	to_chat(H, "<span class='notice'>You suddenly turn into a cat!</span>")
 	catto = new(get_turf(H.loc))
-	H.mind.transfer_to(catto)
+	H?.mind?.transfer_to(catto)
 	catto.name = H.name
 	catto.desc = "A cute catto! They remind you of [H] somehow."
 	catto.color = "#[H.dna.features["mcolor"]]"
@@ -417,7 +384,7 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 		return ..()
 	if(catto.health <= 0) //So the dead can't ghost
 		if(prob(10))
-			to_chat(catto, "<span class='notice'>You feel your body start to slowly shift back from it's dead form.</span>")
+			to_chat(catto, "<span class='notice'>You feel your body start to slowly shift back from its dead form.</span>")
 		perma = FALSE
 		metabolization_rate = 1
 	else if(prob(5))
@@ -427,11 +394,11 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 
 /datum/reagent/fermi/secretcatchem/on_mob_delete(mob/living/carbon/H)
 	if(perma)
-		to_chat(H, "<span class='notice'>You feel your body settle into it's new form. You won't be able to shift back on death anymore.</span>")
+		to_chat(H, "<span class='notice'>You feel your body settle into its new form. You won't be able to shift back on death anymore.</span>")
 		return
 	var/words = "Your body shifts back to normal."
 	H.forceMove(catto.loc)
-	catto.mind.transfer_to(H)
+	catto?.mind?.transfer_to(H)
 	if(catshift == TRUE)
 		words += " ...But wait, are those cat ears?"
 		H.say("*wag")//force update sprites.
@@ -449,7 +416,7 @@ datum/reagent/fermi/nanite_b_gone/reaction_obj(obj/O, reac_volume)
 			log_reagent("FERMICHEM: [catto] ckey: [catto.key] has returned to normal.")
 			to_chat(catto, "<span class='notice'>Your body shifts back to normal!</span>")
 			H.forceMove(catto.loc)
-			catto.mind.transfer_to(H)
+			catto?.mind?.transfer_to(H)
 			if(!L.mind) //Just in case
 				qdel(L)
 			else //This should never happen, but just in case, so their game isn't ruined.

@@ -38,12 +38,14 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/flavor_desc = ""
+	var/flavor_desc =	"A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
+					A common unit of exchange, backed by water in the Hub."
 	var/value = CASH_CAP
 	var/flippable = TRUE
 	var/cooldown = 0
 	var/coinflip
 	var/list/sideslist = list("heads","tails")
+	merge_type = /obj/item/stack/f13Cash
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)
@@ -63,6 +65,7 @@
 
 /obj/item/stack/f13Cash/fivezerozero
 	amount = 500
+	merge_type = /obj/item/stack/f13Cash
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
@@ -114,28 +117,19 @@
 		if(501 to 15000)
 			icon_state = "[initial(icon_state)]6"
 
-
-/* same as base, just classed for merging reasons */
-/obj/item/stack/f13Cash/bottle_cap
-	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
-		A common unit of exchange, backed by water in the Hub"
-
-/obj/item/stack/f13Cash/random/bottle_cap
-	money_type = /obj/item/stack/f13Cash/bottle_cap
-
-/obj/item/stack/f13Cash/random/bottle_cap/low
+/obj/item/stack/f13Cash/random/low
 	min_qty = LOW_MIN / CASH_CAP
 	max_qty = LOW_MAX / CASH_CAP
 
-/obj/item/stack/f13Cash/random/bottle_cap/med
+/obj/item/stack/f13Cash/random/med
 	min_qty = MED_MIN / CASH_CAP
 	max_qty = MED_MAX / CASH_CAP
 
-/obj/item/stack/f13Cash/random/bottle_cap/high
+/obj/item/stack/f13Cash/random/high
 	min_qty = HIGH_MIN / CASH_CAP
 	max_qty = HIGH_MAX / CASH_CAP
 
-/obj/item/stack/f13Cash/random/bottle_cap/banker
+/obj/item/stack/f13Cash/random/banker
 	min_qty = BANKER_MIN / CASH_CAP
 	max_qty = BANKER_MAX / CASH_CAP
 
@@ -149,6 +143,7 @@
 		'Caesar Dictator' on the front and\n\
 		'Magnum Chasma' on the back."
 	value = CASH_DEN * CASH_CAP
+	merge_type = /obj/item/stack/f13Cash/denarius
 
 /obj/item/stack/f13Cash/random/denarius
 	money_type = /obj/item/stack/f13Cash/denarius
@@ -187,6 +182,7 @@
 					'Aeternit Imperi' on the front and\n\
 					'Pax Per Bellum' on the back."
 	value = CASH_AUR * CASH_CAP
+	merge_type = /obj/item/stack/f13Cash/aureus
 
 /obj/item/stack/f13Cash/random/aureus
 	money_type = /obj/item/stack/f13Cash/aureus
@@ -210,6 +206,7 @@
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
 	value = CASH_NCR * CASH_CAP
 	flippable = FALSE
+	merge_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/ncr/update_icon()
 	switch(amount)

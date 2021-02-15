@@ -14,6 +14,7 @@
 	singular_name = "metal part"
 	custom_materials = list(/datum/material/iron = 20000)
 	flags_1 = CONDUCT_1
+	merge_type = /obj/item/stack/crafting/metalparts
 
 /obj/item/stack/crafting/metalparts/three
 	amount = 3
@@ -27,6 +28,7 @@
 	singular_name = "high quality metal part"
 	custom_materials = list(/datum/material/iron = 20000)
 	flags_1 = CONDUCT_1
+	merge_type = /obj/item/stack/crafting/goodparts
 
 /obj/item/stack/crafting/goodparts/three
 	amount = 3
@@ -40,6 +42,7 @@
 	singular_name = "electronic part"
 	custom_materials = list(/datum/material/glass = 20000)
 	flags_1 = CONDUCT_1
+	merge_type = /obj/item/stack/crafting/electronicparts
 
 /obj/item/stack/crafting/electronicparts/three
 	amount = 3
@@ -54,6 +57,7 @@
 	singular_name = "bullet remnant"
 	max_amount = 60
 	full_w_class = WEIGHT_CLASS_SMALL
+	merge_type = /obj/item/stack/crafting/powder
 
 GLOBAL_LIST_INIT(powder_recipes, list ( \
 	new/datum/stack_recipe("scavenge blackpowder", /obj/item/reagent_containers/glass/bottle/blackpowder, 60), \

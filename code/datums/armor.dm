@@ -1,9 +1,9 @@
-#define ARMORID "armor-[linemelee]-[linebullet]-[linelaser]-[energy]-[bomb]-[bio]-[rad]-[fire]-[acid]-[magic]-[wound]-[melee]-[bullet]-[laser]-[tier]"
+#define ARMORID "armor-[tier]-[linemelee]-[linebullet]-[linelaser]-[melee]-[bullet]-[laser]-[energy]-[bomb]-[bio]-[rad]-[fire]-[acid]-[magic]-[wound]"
 
-/proc/getArmor(linemelee = 0, linebullet = 0, linelaser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0, melee = 0, bullet = 0, laser = 0, tier = 0,)
+/proc/getArmor(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	. = locate(ARMORID)
 	if (!.)
-		. = new /datum/armor(linemelee, linebullet, linelaser, energy, bomb, bio, rad, fire, acid, magic, wound, melee, bullet, laser, tier)
+		. = new /datum/armor(tier, linemelee, linebullet, linelaser, melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic, wound)
 
 /datum/armor
 	datum_flags = DF_USE_TAG
@@ -11,6 +11,9 @@
 	var/linemelee
 	var/linebullet
 	var/linelaser 
+	var/melee
+	var/bullet
+	var/laser
 	var/energy
 	var/bomb
 	var/bio
@@ -19,20 +22,14 @@
 	var/acid
 	var/magic
 	var/wound
-	var/melee
-	var/bullet
-	var/laser
 	var/tierline = list(10, 20, 45, 60, 75, 90, 105, 125, 150, 175, 200)
 
-/datum/armor/New(linemelee = 0, linebullet = 0, linelaser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0, melee = 0, bullet = 0, laser = 0, tier = 0)
+/datum/armor/New(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0,  energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	
 	if(tier) //ASSIGNS ARMOR VALUES BASED ON TIER, IT WILL USE ARMOR VALUES INSTEAD OF THE TIER FOR THAT VALUE IF THE ARMOR VALUE IS PRESENT
-		if(!linemelee)
-			linemelee = tierline[tier]
-		if(!linebullet)
-			linebullet = tierline[tier]
-		if(!linelaser)
-			linelaser = tierline[tier]
+		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
+		linebullet = linebullet+tierline[tier]
+		linelaser = linelaser+tierline[tier]
 
 	src.linemelee = linemelee
 	src.linebullet = linebullet
@@ -54,16 +51,20 @@
 	src.tier = 0
 	tag = ARMORID
 
-/datum/armor/proc/modifyRating(linemelee = 0, linebullet = 0, linelaser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
-	return getArmor(src.linemelee+linemelee, src.linebullet+linebullet, src.linelaser+linelaser, src.energy+energy, src.bomb+bomb, src.bio+bio, src.rad+rad, src.fire+fire, src.acid+acid, src.magic+magic, src.wound+wound)
+/datum/armor/proc/modifyRating(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
+	return getArmor(tier, src.linemelee+linemelee, src.linebullet+linebullet, src.linelaser+linelaser, src.melee+melee, src.bullet+bullet, src.laser+laser, src.energy+energy, src.bomb+bomb, src.bio+bio, src.rad+rad, src.fire+fire, src.acid+acid, src.magic+magic, src.wound+wound)
 
 /datum/armor/proc/modifyAllRatings(modifier = 0)
-	return getArmor(linemelee+modifier, linebullet+modifier, linelaser+modifier, energy+modifier, bomb+modifier, bio+modifier, rad+modifier, fire+modifier, acid+modifier, magic+modifier, wound+modifier)
+	return getArmor(tier, linemelee+modifier, linebullet+modifier, linelaser+modifier, melee, bullet, laser, energy+modifier, bomb+modifier, bio+modifier, rad+modifier, fire+modifier, acid+modifier, magic+modifier, wound+modifier)
 
-/datum/armor/proc/setRating(linemelee, linebullet, linelaser, energy, bomb, bio, rad, fire, acid, magic, wound, melee, bullet, laser, tier)
-	return getArmor((isnull(linemelee) ? src.linemelee : linemelee),\
+/datum/armor/proc/setRating(tier, linemelee, linebullet, linelaser, melee, bullet, laser, energy, bomb, bio, rad, fire, acid, magic, wound)
+	return getArmor((isnull(tier) ? src.tier : tier),\
+					(isnull(linemelee) ? src.linemelee : linemelee),\
 					(isnull(linebullet) ? src.linebullet : linebullet),\
 					(isnull(linelaser) ? src.linelaser : linelaser),\
+					(isnull(melee) ? src.melee : melee),\
+					(isnull(bullet) ? src.bullet : bullet),\
+					(isnull(laser) ? src.laser : laser),\
 					(isnull(energy) ? src.energy : energy),\
 					(isnull(bomb) ? src.bomb : bomb),\
 					(isnull(bio) ? src.bio : bio),\
@@ -71,23 +72,19 @@
 					(isnull(fire) ? src.fire : fire),\
 					(isnull(acid) ? src.acid : acid),\
 					(isnull(magic) ? src.magic : magic),\
-					(isnull(wound) ? src.wound : wound),\
-					(isnull(melee) ? src.melee : melee),\
-					(isnull(bullet) ? src.bullet : bullet),\
-					(isnull(laser) ? src.laser : laser),\
-					(isnull(tier) ? src.tier : tier))
+					(isnull(wound) ? src.wound : wound))
 
 /datum/armor/proc/getRating(rating)
 	return vars[rating]
 
 /datum/armor/proc/getList()
-	return list("linemelee" = linemelee, "linebullet" = linebullet, "linelaser" = linelaser, "energy" = energy, "bomb" = bomb, "bio" = bio, "rad" = rad, "fire" = fire, "acid" = acid, "magic" = magic, "wound" = wound, "melee" = melee, "bullet" = bullet, "laser" = laser, "tier" = tier)
+	return list("tier" = tier, "linemelee" = linemelee, "linebullet" = linebullet, "linelaser" = linelaser, "melee" = melee, "bullet" = bullet, "laser" = laser, "energy" = energy, "bomb" = bomb, "bio" = bio, "rad" = rad, "fire" = fire, "acid" = acid, "magic" = magic, "wound" = wound)
 
 /datum/armor/proc/attachArmor(datum/armor/AA)
-	return getArmor(linemelee+AA.linemelee, linebullet+AA.linebullet, linelaser+AA.linelaser, energy+AA.energy, bomb+AA.bomb, bio+AA.bio, rad+AA.rad, fire+AA.fire, acid+AA.acid, magic+AA.magic, wound+AA.wound, melee, bullet, laser, tier)
+	return getArmor(tier, linemelee+AA.linemelee, linebullet+AA.linebullet, linelaser+AA.linelaser, melee+AA.melee, bullet+AA.bullet, laser+AA.laser, energy+AA.energy, bomb+AA.bomb, bio+AA.bio, rad+AA.rad, fire+AA.fire, acid+AA.acid, magic+AA.magic, wound+AA.wound)
 
 /datum/armor/proc/detachArmor(datum/armor/AA)
-	return getArmor(linemelee-AA.linemelee, linebullet-AA.linebullet, linelaser-AA.linelaser, energy-AA.energy, bomb-AA.bomb, bio-AA.bio, rad-AA.rad, fire-AA.fire, acid-AA.acid, magic-AA.magic, wound-AA.wound, melee, bullet, laser, tier)
+	return getArmor(tier, linemelee-AA.linemelee, linebullet-AA.linebullet, linelaser-AA.linelaser, melee+AA.melee, bullet+AA.bullet, laser+AA.laser, energy-AA.energy, bomb-AA.bomb, bio-AA.bio, rad-AA.rad, fire-AA.fire, acid-AA.acid, magic-AA.magic, wound-AA.wound)
 
 /datum/armor/vv_edit_var(var_name, var_value)
 	if (var_name == NAMEOF(src, tag))

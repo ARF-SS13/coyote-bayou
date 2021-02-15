@@ -94,7 +94,7 @@
 		return INITIALIZE_HINT_QDEL
 	//The below object acts as a spawner with a wide array of possible picks, most being uninspired references to past/current player characters.
 	//Nevertheless, this keeps its ratio constant with the sum of all the others prizes.
-	prizes[/obj/item/toy/plush/random] = counterlist_sum(prizes) * ARCADE_RATIO_PLUSH
+	prizes[/obj/effect/spawner/lootdrop/plush] = counterlist_sum(prizes) * ARCADE_RATIO_PLUSH
 	Reset()
 
 /obj/machinery/computer/arcade/proc/prizevend(mob/user, list/rarity_classes)

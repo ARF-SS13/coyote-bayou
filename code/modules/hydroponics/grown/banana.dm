@@ -131,8 +131,9 @@
 /obj/item/seeds/banana/exotic_banana
 	name = "pack of exotic banana seeds"
 	desc = "They're seeds that grow into banana trees. However, those bananas might be alive."
-	icon_state = "seed_exoticbanana"
+	icon_state = "seed-exoticbanana"
 	species = "exoticbanana"
+	icon_harvest = "banana-harvest"
 	icon_grow = "banana-grow"
 	plantname = "Exotic Banana Tree"
 	product = /obj/item/reagent_containers/food/snacks/grown/banana/banana_spider_spawnable

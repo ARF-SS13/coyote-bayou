@@ -769,6 +769,7 @@
 	name = "Tend Wounds"
 	desc = "An upgraded version of the original surgery."
 	id = "surgery_healing_base" //holder because travis cries otherwise. Not used in techweb unlocks.
+	surgery = /datum/surgery/healing
 	research_icon_state = "surgery_chest"
 
 /datum/design/surgery/healing/brute_upgrade

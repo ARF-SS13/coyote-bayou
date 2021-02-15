@@ -12,11 +12,13 @@
 	var/blink_range = 8 // The teleport range when crushed/thrown at someone.
 	refined_type = /obj/item/stack/sheet/bluespace_crystal
 	grind_results = list(/datum/reagent/bluespace = 20)
+	merge_type = /obj/item/stack/ore/bluespace_crystal
 
 /obj/item/stack/ore/bluespace_crystal/refined
 	name = "refined bluespace crystal"
 	points = 0
 	refined_type = null
+	merge_type = /obj/item/stack/ore/bluespace_crystal/refined
 
 /obj/item/stack/ore/bluespace_crystal/Initialize()
 	. = ..()
@@ -55,6 +57,7 @@
 	points = 0 //nice try
 	refined_type = null
 	grind_results = list(/datum/reagent/bluespace = 10, /datum/reagent/silicon = 20)
+	merge_type = /obj/item/stack/ore/bluespace_crystal/artificial
 
 //Polycrystals, aka stacks
 /obj/item/stack/sheet/bluespace_crystal
@@ -70,6 +73,7 @@
 	grind_results = list(/datum/reagent/bluespace = 20)
 	point_value = 30
 	var/crystal_type = /obj/item/stack/ore/bluespace_crystal/refined
+	merge_type = /obj/item/stack/sheet/bluespace_crystal
 
 /obj/item/stack/sheet/bluespace_crystal/attack_self(mob/user)// to prevent the construction menu from ever happening
 	to_chat(user, "<span class='warning'>You cannot crush the polycrystal in-hand, try breaking one off.</span>")

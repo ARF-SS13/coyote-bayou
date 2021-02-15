@@ -130,7 +130,8 @@
 	job = "AI"
 
 	create_eye()
-	apply_pref_name("ai")
+	if(client)
+		INVOKE_ASYNC(src, .proc/apply_pref_name,"ai",client)
 
 	set_core_display_icon()
 

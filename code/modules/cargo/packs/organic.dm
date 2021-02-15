@@ -35,7 +35,7 @@
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/item/reagent_containers/food/snacks/nugget,
-					/obj/item/toy/plush/random)
+					/obj/effect/spawner/lootdrop/plush)
 	crate_name = "combo meal w/toy"
 	crate_type = /obj/structure/closet/crate/wooden
 
@@ -340,7 +340,7 @@
 					/obj/item/seeds/wheat/rice,
 					/obj/item/seeds/carrot,
 					/obj/item/seeds/sunflower,
-					/obj/item/seeds/chanter,
+					/obj/item/seeds/chanterelle,
 					/obj/item/seeds/potato,
 					/obj/item/seeds/sugarcane,
 					/obj/item/seeds/ambrosia)

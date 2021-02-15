@@ -52,17 +52,20 @@
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
 	strengthdiv = 10
 
-/datum/chemical_reaction/reagent_explosion/potassium_explosion/holyboom
+/datum/chemical_reaction/reagent_explosion/holyboom
 	name = "Holy Explosion"
 	id = "holyboom"
 	required_reagents = list(/datum/reagent/water/holywater = 1, /datum/reagent/potassium = 1)
 
-/datum/chemical_reaction/reagent_explosion/potassium_explosion/holyboom/on_reaction(datum/reagents/holder, multiplier)
-	var/turf/T = get_turf(holder.my_atom)
-	if(multiplier >= 150)
-		playsound(get_turf(holder.my_atom), 'sound/effects/pray.ogg', 80, 0, round(multiplier/48))
+/datum/chemical_reaction/reagent_explosion/holyboom/on_reaction(datum/reagents/holder, created_volume)
+	if(created_volume >= 150)
 		strengthdiv = 8
-		for(var/mob/living/simple_animal/revenant/R in get_hearers_in_view(7,get_turf(holder.my_atom)))
+		///turf where to play sound
+		var/turf/T = get_turf(holder.my_atom)
+		///special size for anti cult effect
+		var/effective_size = round(created_volume/48)
+		playsound(T, 'sound/effects/pray.ogg', 80, FALSE, effective_size)
+		for(var/mob/living/simple_animal/revenant/R in get_hearers_in_view(7,T))
 			var/deity
 			if(GLOB.deity)
 				deity = GLOB.deity
@@ -72,14 +75,13 @@
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
-		sleep(20)
-		for(var/mob/living/carbon/C in get_hearers_in_view(round(multiplier/48,1),get_turf(holder.my_atom)))
+		for(var/mob/living/carbon/C in get_hearers_in_view(effective_size,T))
 			if(iscultist(C))
 				to_chat(C, "<span class='userdanger'>The divine explosion sears you!</span>")
-				C.DefaultCombatKnockdown(40)
+				C.Paralyze(40)
 				C.adjust_fire_stacks(5)
 				C.IgniteMob()
-	..(holder, multiplier, T)
+	..()
 
 
 /datum/chemical_reaction/blackpowder
@@ -429,23 +431,26 @@
 	mix_sound = 'sound/machines/defib_zap.ogg'
 	var/zap_flags = ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE | ZAP_MOB_STUN
 
-/datum/chemical_reaction/reagent_explosion/teslium_lightning/on_reaction(datum/reagents/holder, multiplier)
-	var/T1 = multiplier * 20		//100 units : Zap 3 times, with powers 2000/5000/12000. Tesla revolvers have a power of 10000 for comparison.
-	var/T2 = multiplier * 50
-	var/T3 = multiplier * 120
-	sleep(5)
-	if(multiplier >= 75)
-		tesla_zap(holder.my_atom, 7, T1, zap_flags)
-		playsound(holder.my_atom, 'sound/machines/defib_zap.ogg', 50, 1)
-		sleep(15)
-	if(multiplier >= 40)
-		tesla_zap(holder.my_atom, 7, T2, zap_flags)
-		playsound(holder.my_atom, 'sound/machines/defib_zap.ogg', 50, 1)
-		sleep(15)
-	if(multiplier >= 10)			//10 units minimum for lightning, 40 units for secondary blast, 75 units for tertiary blast.
-		tesla_zap(holder.my_atom, 7, T3, zap_flags)
-		playsound(holder.my_atom, 'sound/machines/defib_zap.ogg', 50, 1)
+/datum/chemical_reaction/reagent_explosion/teslium_lightning/on_reaction(datum/reagents/holder, created_volume)
+	var/T1 = created_volume * 20		//100 units : Zap 3 times, with powers 2000/5000/12000. Tesla revolvers have a power of 10000 for comparison.
+	var/T2 = created_volume * 50
+	var/T3 = created_volume * 120
+	var/added_delay = 0.5 SECONDS
+	if(created_volume >= 75)
+		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T1), added_delay)
+		added_delay += 1.5 SECONDS
+	if(created_volume >= 40)
+		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T2), added_delay)
+		added_delay += 1.5 SECONDS
+	if(created_volume >= 10)			//10 units minimum for lightning, 40 units for secondary blast, 75 units for tertiary blast.
+		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T3), added_delay)
 	..()
+
+/datum/chemical_reaction/reagent_explosion/teslium_lightning/proc/zappy_zappy(datum/reagents/holder, power)
+	if(QDELETED(holder.my_atom))
+		return
+	tesla_zap(holder.my_atom, 7, power, zap_flags)
+	playsound(holder.my_atom, 'sound/machines/defib_zap.ogg', 50, TRUE)
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning/heat
 	id = "teslium_lightning2"

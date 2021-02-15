@@ -12,11 +12,17 @@
 	icon_state = "random_book"
 	var/amount = 1
 	var/category = null
+	var/random_loaded = FALSE
 
-/obj/item/book/random/Initialize()
-	..()
-	create_random_books(amount, src.loc, TRUE, category)
-	return INITIALIZE_HINT_QDEL
+/obj/item/book/random/Initialize(mapload)
+	. = ..()
+	icon_state = "book[rand(1,8)]"
+
+/obj/item/book/random/attack_self()
+	if(!random_loaded)
+		create_random_books(amount, src.loc, TRUE, category)
+		random_loaded = TRUE
+	return ..()
 
 /obj/item/book/random/triple
 	amount = 3
@@ -30,11 +36,8 @@
 
 /obj/structure/bookcase/random/Initialize(mapload)
 	. = ..()
-	if(!book_count || !isnum(book_count))
-		update_icon()
-		return
-	book_count += pick(-1,-1,0,1,1)
-	create_random_books(book_count, src, FALSE, category)
+	if(book_count && isnum(book_count))
+		book_count += pick(-1,-1,0,1,1)
 	update_icon()
 
 /proc/create_random_books(amount = 2, location, fail_loud = FALSE, category = null)

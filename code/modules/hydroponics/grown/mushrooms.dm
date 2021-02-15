@@ -176,7 +176,7 @@
 
 
 // Chanterelle
-/obj/item/seeds/chanter
+/obj/item/seeds/chanterelle
 	name = "pack of chanterelle mycelium"
 	desc = "This mycelium grows into chanterelle mushrooms."
 	icon_state = "mycelium-chanter"
@@ -199,7 +199,7 @@
 	mutatelist = list(/obj/item/seeds/chanterelle/jupitercup)
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/chanterelle
-	seed = /obj/item/seeds/chanter
+	seed = /obj/item/seeds/chanterelle
 	name = "chanterelle cluster"
 	desc = "<I>Cantharellus Cibarius</I>: These jolly yellow little shrooms sure look tasty!"
 	icon_state = "chanterelle"
