@@ -74,10 +74,6 @@
 /area/space)
 "aR" = (
 /obj/structure/rack,
-/obj/item/storage/box/magnumshot,
-/obj/item/storage/box/magnumshot,
-/obj/item/storage/box/slugshot,
-/obj/item/storage/box/slugshot,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -3177,10 +3173,10 @@
 /obj/structure/closet/cabinet/anchored,
 /obj/item/gun/ballistic/revolver/widowmaker,
 /obj/item/gun/ballistic/automatic/varmint,
-/obj/effect/spawner/lootdrop/ammo/shotgun,
 /obj/item/ammo_box/magazine/m556/rifle/small,
 /obj/item/clothing/under/overalls,
 /obj/item/clothing/shoes/workboots,
+/obj/effect/spawner/lootdrop/ammo/shotgun,
 /turf/open/floor/f13/wood,
 /area/space)
 "yu" = (
