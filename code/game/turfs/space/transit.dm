@@ -63,12 +63,16 @@
 	var/max = world.maxx-TRANSITIONEDGE
 	var/min = 1+TRANSITIONEDGE
 
-	var/list/possible_transitons = list()
+	var/list/possible_transitions = list()
 	for(var/A in SSmapping.z_list)
 		var/datum/space_level/D = A
 		if (D.linkage == CROSSLINKED)
-			possible_transitons += D.z_value
-	var/_z = pick(possible_transitons)
+			possible_transitions += D.z_value
+	if(!length(possible_transitions)) //No space to throw them to - try throwing them onto mining
+		possible_transitions = SSmapping.levels_by_trait(ZTRAIT_MINING)
+		if(!length(possible_transitions)) //Just throw them back on station, if not just runtime.
+			possible_transitions = SSmapping.levels_by_trait(ZTRAIT_STATION)
+	var/_z = pick(possible_transitions)
 
 	//now select coordinates for a border turf
 	var/_x

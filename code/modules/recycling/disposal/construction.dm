@@ -30,7 +30,7 @@
 
 	if(flip)
 		var/datum/component/simple_rotation/rotcomp = GetComponent(/datum/component/simple_rotation)
-		rotcomp.BaseRot(null,ROTATION_FLIP)
+		INVOKE_ASYNC(CALLBACK(rotcomp, /datum/component/simple_rotation.proc/BaseRot, ROTATION_FLIP))
 
 	update_icon()
 

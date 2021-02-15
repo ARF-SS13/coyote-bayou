@@ -509,6 +509,10 @@
 	suffix = "birdboat"
 	name = "supply shuttle (Birdboat)"
 
+/datum/map_template/shuttle/cargo/pahrump
+	suffix = "pahrump"
+	name = "supply train (Pahrump)"
+
 /datum/map_template/shuttle/emergency/delta
 	suffix = "delta"
 	name = "Delta Station Emergency Shuttle"

@@ -219,6 +219,9 @@
 
 /obj/effect/temp_visual/goliath_tentacle/broodmother/patch/Initialize(mapload, new_spawner)
 	. = ..()
+	INVOKE_ASYNC(src, .proc/do_spiral) // shitty hack because we don't do sleeps in init
+
+/obj/effect/temp_visual/goliath_tentacle/broodmother/patch/proc/do_spiral()
 	var/tentacle_locs = spiral_range_turfs(1, get_turf(src))
 	for(var/T in tentacle_locs)
 		new /obj/effect/temp_visual/goliath_tentacle/broodmother(T, spawner)

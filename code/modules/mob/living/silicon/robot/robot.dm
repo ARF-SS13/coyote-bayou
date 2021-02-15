@@ -63,7 +63,7 @@
 		mmi.brainmob.real_name = src.real_name
 		mmi.brainmob.container = mmi
 
-	updatename()
+	INVOKE_ASYNC(src, .proc/updatename)
 
 	equippable_hats = typecacheof(equippable_hats)
 
@@ -931,7 +931,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	updatename()
+	INVOKE_ASYNC(src, .proc/updatename)
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)
