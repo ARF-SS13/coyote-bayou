@@ -30,6 +30,10 @@
 /obj/item/bodypart/chest,
 /turf/open/floor/f13,
 /area/space)
+"fN" = (
+/obj/structure/stairs/north,
+/turf/open/floor/f13/wood,
+/area/space)
 "gH" = (
 /turf/open/indestructible/ground/outside/water,
 /area/space)
@@ -143,6 +147,10 @@
 /obj/effect/decal/cleanable/blood/gibs/down,
 /turf/open/floor/f13,
 /area/space)
+"um" = (
+/obj/structure/stairs/north,
+/turf/open/floor/f13,
+/area/space)
 "vj" = (
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -172,6 +180,14 @@
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
+/area/space)
+"xt" = (
+/obj/structure/closet/fridge/cannibal,
+/turf/open/floor/f13/wood,
+/area/space)
+"yd" = (
+/obj/structure/bed/mattress/pregame,
+/turf/open/floor/f13/wood,
 /area/space)
 "yg" = (
 /turf/open/floor/f13/wood,
@@ -233,12 +249,22 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13/wood,
 /area/space)
+"Ez" = (
+/obj/structure/stairs,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/space)
 "EV" = (
 /obj/structure/table,
 /obj/item/chair,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
+/area/space)
+"Fr" = (
+/mob/living/simple_animal/hostile/raider/biker,
+/turf/open/floor/f13/wood,
 /area/space)
 "Fz" = (
 /obj/structure/simple_door/house,
@@ -290,6 +316,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"Mm" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbrokenvertical"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/f13/wood,
+/area/space)
 "My" = (
 /obj/machinery/door/airlock/silver,
 /turf/open/floor/f13{
@@ -316,6 +349,13 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/space)
+"Qk" = (
+/obj/structure/bed/mattress/pregame,
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Raider Leader"
+	},
+/turf/open/floor/f13/wood,
+/area/space)
 "Qw" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -327,6 +367,10 @@
 "QF" = (
 /obj/item/bodypart/l_arm,
 /turf/open/floor/f13,
+/area/space)
+"QG" = (
+/obj/structure/closet/fridge/standard,
+/turf/open/floor/f13/wood,
 /area/space)
 "Rf" = (
 /turf/closed/wall/f13/store{
@@ -356,11 +400,19 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/space)
+"Yd" = (
+/obj/structure/rack,
+/turf/open/floor/f13/wood,
+/area/space)
 "Yo" = (
 /obj/structure/table/optable,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
+/area/space)
+"YI" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13/wood,
 /area/space)
 "YL" = (
 /obj/structure/rack,
@@ -14714,10 +14766,10 @@ hm
 hm
 hm
 ro
-hm
-hm
-hm
-hm
+ro
+Yd
+yd
+yg
 hm
 hm
 ro
@@ -14970,14 +15022,14 @@ hm
 hm
 hm
 hm
+ro
+yg
+yg
+yg
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+ro
 hm
 hm
 hm
@@ -15227,15 +15279,15 @@ hm
 hm
 hm
 hm
+ro
+yg
 hm
 hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
+ro
+yg
 hm
 hm
 hm
@@ -15484,16 +15536,16 @@ hm
 hm
 hm
 hm
+Mm
+yg
 hm
 hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+yg
+yg
+yg
 hm
 hm
 hm
@@ -15741,16 +15793,16 @@ hm
 hm
 hm
 hm
+Mm
+yg
+yg
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Fr
+yg
+yg
+yg
 hm
 hm
 hm
@@ -15998,15 +16050,15 @@ hm
 hm
 hm
 hm
+Mm
+yg
+yg
+ro
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yg
+YI
+yg
 hm
 hm
 hm
@@ -16230,7 +16282,7 @@ aj
 hj
 Jz
 Rf
-vj
+Ez
 Rf
 Rf
 vj
@@ -16255,15 +16307,15 @@ hm
 hm
 hm
 hm
+ro
+yd
+yg
+yg
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yg
+yg
+yg
+yg
 hm
 hm
 hm
@@ -16512,15 +16564,15 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+ro
+yg
+yg
+yg
+yg
+yg
+ro
+ro
+yg
 hm
 hm
 hm
@@ -16769,15 +16821,15 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+ro
+yd
+yg
+yg
+yg
+yg
+fN
+ro
+yg
 hm
 hm
 hm
@@ -17027,14 +17079,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yg
+Fr
+yg
+yg
+yg
+ro
+ro
+yg
 hm
 hm
 hm
@@ -17283,15 +17335,15 @@ hm
 hm
 hm
 hm
+yg
+yg
+yg
+yg
+ro
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yg
+Qk
+yg
 hm
 hm
 hm
@@ -17540,16 +17592,16 @@ hm
 hm
 hm
 hm
+Mm
+yg
+yg
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+yg
+yg
+yg
+yg
 hm
 hm
 hm
@@ -17797,15 +17849,15 @@ hm
 hm
 hm
 hm
+ro
+QG
+yg
 hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+yg
+yg
 hm
 hm
 hm
@@ -18054,14 +18106,14 @@ hm
 hm
 hm
 hm
+ro
+xt
+yg
+yg
+yg
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
+ro
 hm
 hm
 hm
@@ -18312,14 +18364,14 @@ hm
 hm
 hm
 ro
-hm
-hm
-hm
-hm
-hm
-hm
+ro
+ro
+ro
+yd
 ro
 hm
+ro
+YI
 hm
 hm
 hm
@@ -52503,7 +52555,7 @@ hL
 yI
 zF
 Bi
-hL
+um
 Bi
 rX
 Bi
