@@ -242,4 +242,96 @@
 			untie_mob(L)
 	return ..()
 
+// Non-Legion Flavour execution.
+
+/obj/structure/kitchenspike/gallow
+	name = "gallow"
+	icon = 'icons/obj/gallows.dmi'
+	icon_state = "gallow"
+	desc = "A post made to make a statement."
+	anchored = TRUE
+	bound_height = 64
+
+/obj/structure/kitchenspike/gallow/crowbar_act(mob/living/user, obj/item/I)
+	if(has_buckled_mobs())
+		to_chat(user, "<span class='notice'>You can't do that while something's on the gallow!</span>")
+		return FALSE
+	if(I.use_tool(src, user, 20, volume=100))
+		deconstruct()
+	return TRUE
+
+/obj/structure/kitchenspike/gallow/deconstruct()
+	new /obj/item/stack/sheet/mineral/wood(src.loc, 10)
+	qdel(src)
+
+/obj/structure/kitchenspike/gallow/attack_hand(mob/user)
+	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
+		var/mob/living/L = user.pulling
+		if(do_mob(user, src, 120))
+			if(has_buckled_mobs()) //to prevent spam/queing up attacks
+				return
+			if(L.buckled)
+				return
+			if(user.pulling != L)
+				return
+			playsound(src.loc, "sound/effects/crossed.ogg", 20, 1) // thanks hippie
+			L.visible_message("<span class='danger'>[user] hangs [L] on the gallow!</span>", "<span class='userdanger'>[user] hangs you on the gallow!</span>")
+			L.forceMove(drop_location())
+			L.setDir(2)
+			buckle_mob(L, force=1)
+			L.pixel_y = 19
+			L.pixel_x = 6
+			L.overlays += image('icons/obj/gallows.dmi', "noose")
+			L.adjustOxyLoss(80)
+			L.losebreath = 200 //there's a noose around your neck, goodluck breathing
+		to_chat(user, "<span class='danger'>You can't use that on the gallow!</span>")
+	else if (has_buckled_mobs())
+		for(var/mob/living/L in buckled_mobs)
+			user_unbuckle_mob(L, user)
+	else
+		..()
+
+/obj/structure/kitchenspike/gallow/user_unbuckle_mob(mob/living/buckled_mob, mob/living/carbon/human/user)
+	if(buckled_mob && buckled_mob.buckled == src)
+		var/mob/living/M = buckled_mob
+		if(M != user)
+			M.visible_message(\
+				"[user] tries to unhang [M] from the [src]!",\
+				"<span class='notice'>[user.name] is trying to unhang you off the [src]!</span>",\
+				"<span class='italics'>You hear rope being unraveled.</span>")
+			if(!do_after(user, 300, target = src))
+				if(M && M.buckled)
+					M.visible_message(\
+					"[user] fails to free [M]!",\
+					"<span class='notice'>[user] fails to unhang you off of the [src].</span>")
+				return
+
+		else
+			M.visible_message(\
+			"<span class='warning'>[M] struggles to break free from the [src]!</span>",\
+			"<span class='notice'>You struggle to break free from the [src], tightening the rope around your neck! (Stay still for two minutes.)</span>",\
+			"<span class='italics'>You hear violent choking and struggling.</span>")
+			M.adjustOxyLoss(40)
+			if(!do_after(M, 1200, target = src))
+				if(M && M.buckled)
+					to_chat(M, "<span class='warning'>You fail to free yourself!</span>")
+				return
+		if(!M.buckled)
+			return
+		untie_mob(M)
+
+/obj/structure/kitchenspike/gallow/proc/untie_mob(mob/living/M)
+	M.pixel_y = M.get_standard_pixel_y_offset()
+	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
+	unbuckle_mob(M,force=1)
+	M.losebreath = 0
+	M.emote("collapse")
+	M.overlays -= image('icons/obj/gallows.dmi', "noose")
+
+/obj/structure/kitchenspike/gallow/Destroy()
+	if(has_buckled_mobs())
+		for(var/mob/living/L in buckled_mobs)
+			untie_mob(L)
+	return ..()
+
 #undef VIABLE_MOB_CHECK
