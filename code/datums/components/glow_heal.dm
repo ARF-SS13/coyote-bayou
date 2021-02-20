@@ -20,7 +20,7 @@
 	//glow colour
 	var/glow_color = "#d9ff00" //I want yellow because glowing, can be overridden
 
-/datum/component/glow_heal/Initialize(mob/living/simple_animal/chosen_targets, allow_revival = TRUE, restrict_faction = null, list/type_healing = BRUTELOSS | BURNLOSS | TOXLOSS | OXYLOSS, color_glow = null)
+/datum/component/glow_heal/Initialize(mob/living/simple_animal/chosen_targets, allow_revival = TRUE, restrict_faction = null, list/type_healing = BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS, color_glow = null)
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 	living_owner = parent
