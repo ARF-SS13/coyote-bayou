@@ -1,5 +1,5 @@
 /obj/mecha/medical/medigax
-	desc = "A Gygax with it's actuator overload stripped and a slick white paint scheme, for medical use, These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
+	desc = "A Gygax with its actuator overload stripped and a slick white paint scheme, for medical use, These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
 	name = "\improper Medical Gygax"
 	icon_state = "medigax"
 	step_in = 1.75 // a little faster than an odysseus

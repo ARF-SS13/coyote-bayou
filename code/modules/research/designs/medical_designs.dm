@@ -94,7 +94,7 @@
 
 /datum/design/medicinalsmartdart
 	name = "Medicinal Smartdart"
-	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient using it's smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented."
+	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient, using its smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented."
 	id = "medicinalsmartdart"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/glass = 100, /datum/material/plastic = 100, /datum/material/iron = 100)
@@ -104,7 +104,7 @@
 
 /datum/design/bluespacesmartdart
 	name = "bluespace smartdart"
-	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient using it's smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented. Has an extended volume capacity thanks to bluespace foam."
+	desc = "A non-harmful dart that can administer medication from a range. Once it hits a patient, using its smart nanofilter technology only medicines contained within the dart are administered to the patient. Additonally, due to capillary action, injection of chemicals past the overdose limit is prevented. Has an extended volume capacity thanks to bluespace foam."
 	id = "bluespacesmartdart"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/glass = 250, /datum/material/plastic = 250, /datum/material/iron = 250, /datum/material/bluespace = 250)
