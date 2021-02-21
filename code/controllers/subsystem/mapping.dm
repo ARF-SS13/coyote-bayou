@@ -275,7 +275,10 @@ SUBSYSTEM_DEF(mapping)
 	LoadGroup(FailedZs, "Dungeons", config.map_path, "Dungeons.dmm", default_traits = ZTRAITS_DUNGEON)
 
 	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery("UPDATE [format_table_name("round")] SET map_name = '[config.map_name]' WHERE id = [GLOB.round_id]")
+		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery(
+			"UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = [GLOB.round_id]",
+			list("map_name" = config.map_name)
+		)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 
