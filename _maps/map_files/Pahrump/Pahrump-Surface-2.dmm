@@ -3282,6 +3282,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"cxy" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
+/area/f13/wasteland)
 "cxL" = (
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -7353,12 +7363,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
 "fKN" = (
+/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/wolf/alpha{
 	desc = "Legion mongrels are dogs owned and bred by the Houndmasters of Caesar's Legion. Mongrels are mainly used in combat and scouting missions by the Legion.";
 	faction = list("neutral");
 	name = "Brutus"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "fLc" = (
@@ -7368,6 +7378,7 @@
 	},
 /area/f13/wasteland)
 "fLB" = (
+/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/wolf{
 	desc = "Legion mongrels are dogs owned and bred by the Houndmasters of Caesar's Legion. Mongrels are mainly used in combat and scouting missions by the Legion.";
 	faction = list("neutral");
@@ -7376,7 +7387,6 @@
 	name = "Lupa";
 	tame = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "fLC" = (
@@ -74085,9 +74095,9 @@ ktX
 bQV
 kdi
 grC
-grC
+cxy
 isL
-grC
+cxy
 xuM
 qyR
 hpj
