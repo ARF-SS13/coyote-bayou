@@ -46,8 +46,8 @@ SUBSYSTEM_DEF(blackbox)
 	var/admincount = GLOB.admins.len
 	var/datum/DBQuery/query_record_playercount = SSdbcore.NewQuery({"
 		INSERT INTO [format_table_name("legacy_population")] (playercount, admincount, time, server_ip, server_port, round_id)
-		VALUES (:playercount, :admincount, :time, INET_ATON(IF(:internet_address LIKE '', '0', :internet_address)), :port, :round_id')
-	"}, list("playercount" = playercount, "admincount" = admincount, "time" = SQLtime(), "internet_address" = world.internet_address, "port" = world.port, "round_id" = GLOB.round_id)
+		VALUES (:playercount, :admincount, :time, INET_ATON(:internet_address), :port, :round_id')
+	"}, list("playercount" = playercount, "admincount" = admincount, "time" = SQLtime(), "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id)
 	)
 	query_record_playercount.Execute()
 	qdel(query_record_playercount)
@@ -317,7 +317,7 @@ Versioning
 
 	var/datum/DBQuery/query_report_death = SSdbcore.NewQuery({"
 		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, mapname, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words, suicide)
-		VALUES (:pod, :x_coord, :y_coord, :z_coord, :map, INET_ATON(IF(:internet_address LIKE '', '0', :internet_address)), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words, :suicide)
+		VALUES (:pod, :x_coord, :y_coord, :z_coord, :map, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words, :suicide)
 	"}, list(
 		"name" = L.real_name,
 		"key" = L.ckey,
@@ -339,7 +339,7 @@ Versioning
 		"last_words" = L.last_words,
 		"suicide" = L.suiciding,
 		"map" = SSmapping.config.map_name,
-		"internet_address" = world.internet_address,
+		"internet_address" = world.internet_address || "0",
 		"port" = world.port,
 		"round_id" = GLOB.round_id,
 		"time" = SQLtime()
