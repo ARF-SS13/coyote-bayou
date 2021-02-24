@@ -279,6 +279,7 @@ Delayed insert mode was removed in mysql 7 and only works with MyISAM type table
 	Activity("Created")
 	item = list()
 
+	src.connection = connection
 	src.sql = sql
 	src.arguments = arguments
 
