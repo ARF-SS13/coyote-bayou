@@ -574,7 +574,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "atl" = (
-/mob/living/simple_animal/hostile/gecko,
+/obj/machinery/computer/slot_machine,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "atL" = (
@@ -5251,9 +5251,13 @@
 	},
 /area/f13/caves)
 "eix" = (
-/obj/structure/debris/v3,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/structure/flora/tree/tall{
+	icon_state = "tree_3";
+	pixel_x = -19;
+	pixel_y = 9
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "ejp" = (
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/f13/wood{
@@ -12094,12 +12098,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
-"iVZ" = (
-/mob/living/simple_animal/hostile/handy{
-	name = "Li'l Sir Marshmallow"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "iWc" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
@@ -12344,17 +12342,6 @@
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
-"jil" = (
-/mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Oasis.";
-	name = "oasis eyebot";
-	speak = list("Welcome to Oasis! Please enjoy your stay!","Remember to follow the Law! We wouldn't want any unfortunate incidents!","The free Town of Oasis shall never fall!","Remember to stop in at the shop!","Howdy Partner! Welcome to the Town of Oasis! Grab a drink at our Bar, or have your wounds tended to at the Clinic!","Come on in and trade! Welcome to the last refuge for the free market!","Remember: have patience at the gate!");
-	speak_chance = 4
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1"
-	},
-/area/f13/wasteland)
 "jiv" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/f13/tunnel,
@@ -17458,12 +17445,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/wasteland)
-"nij" = (
-/obj/structure/debris/v4,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/building)
 "nip" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress2";
@@ -18067,15 +18048,6 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"nLM" = (
-/obj/structure/rack,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/village)
 "nLP" = (
 /obj/structure/closet{
 	pixel_x = -9;
@@ -18436,12 +18408,6 @@
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
-"nZC" = (
-/obj/machinery/computer/arcade/orion_trail,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/building)
 "nZJ" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -18905,11 +18871,6 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"ooF" = (
-/obj/structure/table/wood/settler,
-/obj/item/clothing/under/schoolgirl,
-/turf/open/floor/wood/f13/old,
-/area/f13/bar)
 "opa" = (
 /obj/item/candle/tribal_torch{
 	anchored = 1;
@@ -22464,16 +22425,6 @@
 /obj/item/clothing/head/helmet/f13/tribal,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"qWi" = (
-/mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Oasis.";
-	name = "oasis eyebot";
-	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Oasis!")
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermainbottom"
-	},
-/area/f13/wasteland)
 "qWG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -22583,11 +22534,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/legion)
-"rbP" = (
-/obj/structure/table/wood/settler,
-/obj/item/clothing/under/schoolgirl/green,
-/turf/open/floor/wood/f13/old,
-/area/f13/bar)
 "rco" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -22814,7 +22760,6 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /obj/effect/spawner/lootdrop/f13/crafting,
-/obj/item/stack/f13Cash/random/med,
 /turf/open/floor/wood/f13/old,
 /area/f13/bar)
 "rkr" = (
@@ -24309,10 +24254,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
-"ssF" = (
-/obj/machinery/computer/arcade/battle,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "stg" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/farm)
@@ -24652,11 +24593,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "sHO" = (
-/obj/item/circuitboard/computer/arcade/orion_trail,
-/obj/item/stack/sheet/glass/ten,
-/obj/item/stack/sheet/metal/ten,
-/obj/structure/frame/computer,
-/obj/item/stack/cable_coil/red,
+/obj/machinery/computer/slot_machine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -24836,12 +24773,6 @@
 /mob/living/simple_animal/pet/dog/protectron,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
-"sND" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "sNM" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -26126,12 +26057,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"tHR" = (
-/obj/structure/wreck/trash/engine,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
-/area/f13/wasteland)
 "tIr" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -27778,11 +27703,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "uRQ" = (
-/obj/item/circuitboard/computer/arcade/battle,
-/obj/item/stack/sheet/glass/ten,
-/obj/item/stack/sheet/metal/ten,
-/obj/structure/frame/computer,
-/obj/item/stack/cable_coil/red,
+/obj/machinery/computer/slot_machine,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -29747,11 +29668,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"wwD" = (
-/obj/structure/table/wood/settler,
-/obj/item/clothing/under/schoolgirl/orange,
-/turf/open/floor/wood/f13/old,
-/area/f13/bar)
 "wwF" = (
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30852,11 +30768,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"xfd" = (
-/obj/structure/table/wood/settler,
-/obj/item/clothing/under/schoolgirl/red,
-/turf/open/floor/wood/f13/old,
-/area/f13/bar)
 "xff" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -31271,13 +31182,6 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland)
-"xtq" = (
-/obj/structure/car/rubbish1,
-/obj/structure/wreck/trash/five_tires,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "xtw" = (
 /obj/structure/table/wood,
 /obj/item/lighter/greyscale{
@@ -31667,9 +31571,6 @@
 /obj/structure/rack,
 /obj/item/clothing/head/bunnyhead,
 /obj/item/clothing/head/nursehat,
-/obj/item/clothing/under/schoolgirl,
-/obj/item/clothing/under/schoolgirl/red,
-/obj/item/clothing/under/schoolgirl/green,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -31982,8 +31883,7 @@
 /area/f13/clinic)
 "xUq" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_2";
-	
+	icon_state = "tree_2"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -34134,7 +34034,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 gcK
 ktB
 gcK
@@ -37984,7 +37884,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -42965,7 +42865,7 @@ erY
 ubg
 koD
 dMW
-sND
+xUq
 fyf
 gcK
 gcK
@@ -44270,7 +44170,7 @@ gOs
 uKA
 wrG
 idu
-tHR
+idu
 fjC
 idu
 erY
@@ -44526,7 +44426,7 @@ iGt
 cpK
 ajD
 hbW
-xtq
+erY
 erY
 wGJ
 nnh
@@ -46202,7 +46102,7 @@ faW
 lLv
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 gcK
@@ -46844,7 +46744,7 @@ uMZ
 uMZ
 uMZ
 sOD
-jil
+wGJ
 sQX
 wGJ
 wGJ
@@ -47738,7 +47638,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -49344,7 +49244,7 @@ tQU
 one
 jvw
 qDt
-ooF
+rBN
 xrh
 fsU
 joX
@@ -49601,7 +49501,7 @@ oav
 ykH
 qDt
 qDt
-rbP
+rBN
 kBU
 iGS
 lnc
@@ -49855,10 +49755,10 @@ gcK
 gcK
 gcK
 tQU
-xfd
+rBN
 jvw
 qDt
-wwD
+rBN
 kBU
 rQx
 lnc
@@ -52892,7 +52792,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -53640,7 +53540,7 @@ uCW
 nPX
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -53686,7 +53586,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 uey
@@ -53961,7 +53861,7 @@ hAC
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54450,7 +54350,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 thG
 fyf
@@ -54488,7 +54388,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54929,7 +54829,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54994,7 +54894,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -55242,7 +55142,7 @@ mvv
 mvv
 bpD
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56029,7 +55929,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56265,7 +56165,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56792,7 +56692,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -58408,7 +58308,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -58603,7 +58503,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 thG
@@ -58645,7 +58545,7 @@ gcK
 gcK
 gcK
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -59423,7 +59323,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -59616,13 +59516,13 @@ boN
 azC
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -60399,7 +60299,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 sYX
 sYX
 sYX
@@ -60459,7 +60359,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -60902,14 +60802,14 @@ gjP
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -61932,7 +61832,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -61940,7 +61840,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 sYX
 rpu
@@ -62252,7 +62152,7 @@ fyf
 fyf
 dWt
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -63190,7 +63090,7 @@ lCv
 ehN
 hOl
 dmL
-qWi
+pfl
 hAC
 tBN
 xlb
@@ -63380,7 +63280,7 @@ gcK
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 ilu
 trd
@@ -65816,7 +65716,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+xUq
 fyf
 fyf
 fyf
@@ -66067,12 +65967,12 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+uey
+qOV
+cWG
+hpm
+cWG
+wDc
 fyf
 fyf
 fyf
@@ -66320,16 +66220,16 @@ fyf
 fyf
 fyf
 fyf
+xUq
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+qOV
+daU
+mvv
+haP
+wUv
+bpD
 fyf
 fyf
 fyf
@@ -66581,12 +66481,12 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+tBN
+mvv
+mvv
+aBH
+mfD
+hCg
 fyf
 fyf
 fyf
@@ -66838,10 +66738,10 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
+tBN
+mvv
+mvv
+bpD
 fyf
 fyf
 fyf
@@ -67095,10 +66995,10 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
+nlO
+mfD
+mfD
+hCg
 fyf
 fyf
 fyf
@@ -67356,11 +67256,11 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+qOV
+cWG
+cWG
+cWG
+wDc
 fyf
 fyf
 fyf
@@ -67613,11 +67513,11 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+tBN
+mvv
+mvv
+mvv
+bpD
 fyf
 fyf
 fyf
@@ -67870,11 +67770,11 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+tBN
+mvv
+mvv
+kzR
+bpD
 fyf
 fyf
 fyf
@@ -68127,11 +68027,11 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+nlO
+xGH
+mvv
+mvv
+bpD
 fyf
 fyf
 fyf
@@ -68380,15 +68280,15 @@ fyf
 fyf
 fyf
 fyf
+eix
 fyf
 fyf
 fyf
 fyf
-fyf
-fyf
-fyf
-fyf
-fyf
+nlO
+mfD
+mfD
+hCg
 fyf
 fyf
 fyf
@@ -68529,7 +68429,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 nJW
@@ -69515,7 +69415,7 @@ gcK
 uRa
 mvv
 bpD
-sND
+xUq
 dLO
 dCV
 dCV
@@ -69789,7 +69689,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -70177,7 +70077,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+xUq
 fyf
 fyf
 fyf
@@ -71566,7 +71466,7 @@ gcK
 gcK
 gcK
 ftr
-sND
+xUq
 tBN
 mvv
 uRa
@@ -71727,7 +71627,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+sqA
 fyf
 fyf
 fyf
@@ -72343,7 +72243,7 @@ mvv
 mvv
 hXW
 fyf
-sND
+xUq
 eHF
 eVP
 sYV
@@ -72880,7 +72780,7 @@ eeo
 jZN
 fyf
 fyf
-sND
+xUq
 nlO
 mfD
 mfD
@@ -73258,7 +73158,7 @@ xLY
 fyf
 fyf
 fyf
-fyf
+eix
 fyf
 fyf
 fyf
@@ -74413,7 +74313,7 @@ jxH
 jxH
 fyf
 fyf
-sND
+xUq
 gcK
 gcK
 gcK
@@ -74909,7 +74809,7 @@ mvv
 bpD
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -74960,7 +74860,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 kGc
 unI
 hbW
@@ -80662,7 +80562,7 @@ fyf
 fyf
 fyf
 ijg
-nLM
+cvx
 pJd
 tbe
 gjP
@@ -87890,7 +87790,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -88085,7 +87985,7 @@ veD
 dOA
 sDp
 eGX
-atl
+rpu
 sKH
 trr
 rpu
@@ -88159,7 +88059,7 @@ fyf
 rtR
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -88709,7 +88609,7 @@ erY
 koD
 dMW
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -95555,7 +95455,7 @@ gcK
 gcK
 gcK
 giZ
-nZC
+aug
 sYV
 dbO
 aMT
@@ -96069,7 +95969,7 @@ gcK
 gcK
 gcK
 giZ
-ssF
+rpu
 rpu
 rpu
 ltv
@@ -96326,8 +96226,8 @@ gcK
 gcK
 gcK
 gcK
-boD
-iVZ
+atl
+rpu
 pNw
 rpu
 rpu
@@ -96841,12 +96741,12 @@ gbL
 gcK
 gts
 rpu
-eix
+rpu
 kEO
 sYV
 kYH
 rpu
-nij
+vXh
 boD
 gcK
 gbL
@@ -97357,11 +97257,11 @@ gts
 gcK
 gts
 gcK
-gcK
+trF
 gts
 gts
 gts
-gcK
+trF
 gts
 gcK
 gcK
