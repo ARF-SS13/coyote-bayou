@@ -179,7 +179,7 @@ obj/structure/flora/wasteplant/wild_punga
 /////FALLOUT 13 TREES////
 /obj/structure/flora/tree/joshua
 	name = "joshua tree"
-	desc = "A tree named by mormons, who said it's branches mimiced the biblical Joshua, raising his hands in prayer."
+	desc = "A tree named by Msormons, who said its branches looked like the biblical Joshua with his hands raised in prayer."
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	log_amount = 3
 	icon_state = "joshua_1"

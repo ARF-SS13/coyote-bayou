@@ -158,7 +158,7 @@
 
 /obj/effect/proc_holder/spell/aimed/rust_wave
 	name = "Patron's Reach"
-	desc = "Channels energy into your gauntlet - firing it results in a wave of rust being created in it's wake."
+	desc = "Channels energy into your gauntlet - firing it results in a wave of rust being created in its wake."
 	projectile_type = /obj/item/projectile/magic/spell/rust_wave
 	charge_max = 350
 	clothes_req = FALSE

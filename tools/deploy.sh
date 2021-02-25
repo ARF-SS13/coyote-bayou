@@ -39,4 +39,3 @@ cp *auxtools_tg.* $1/ || true
 
 #dlls on windows.
 cp rust_g* $1/ || true
-cp *BSQL.* $1/ || true

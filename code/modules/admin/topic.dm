@@ -1264,8 +1264,10 @@
 	else if(href_list["messageedits"])
 		if(!check_rights(R_ADMIN))
 			return
-		var/message_id = sanitizeSQL("[href_list["messageedits"]]")
-		var/datum/DBQuery/query_get_message_edits = SSdbcore.NewQuery("SELECT edits FROM [format_table_name("messages")] WHERE id = '[message_id]'")
+		var/datum/DBQuery/query_get_message_edits = SSdbcore.NewQuery(
+			"SELECT edits FROM [format_table_name("messages")] WHERE id = :id",
+			list("id" = "[href_list["messageedits"]]")
+		)
 		if(!query_get_message_edits.warn_execute())
 			qdel(query_get_message_edits)
 			return
@@ -2962,7 +2964,10 @@
 			to_chat(usr, "<span class='danger'>The client chosen is an admin! Cannot mentorize.</span>")
 			return
 	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_get_mentor = SSdbcore.NewQuery("SELECT id FROM [format_table_name("mentor")] WHERE ckey = '[ckey]'")
+		var/datum/DBQuery/query_get_mentor = SSdbcore.NewQuery(
+			"SELECT id FROM [format_table_name("mentor")] WHERE ckey = :ckey",
+			list("ckey" = ckey)
+		)
 		if(!query_get_mentor.warn_execute())
 			return
 		if(query_get_mentor.NextRow())
@@ -2995,7 +3000,10 @@
 		C.mentor_datum = null
 		GLOB.mentors -= C
 	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_remove_mentor = SSdbcore.NewQuery("DELETE FROM [format_table_name("mentor")] WHERE ckey = '[ckey]'")
+		var/datum/DBQuery/query_remove_mentor = SSdbcore.NewQuery(
+			"DELETE FROM [format_table_name("mentor")] WHERE ckey = :ckey",
+			list("ckey" = ckey)
+		)
 		if(!query_remove_mentor.warn_execute())
 			return
 		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery("INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Removed mentor [ckey]');")

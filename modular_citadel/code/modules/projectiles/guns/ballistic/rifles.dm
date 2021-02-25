@@ -204,7 +204,7 @@
 
 /obj/item/gun/ballistic/automatic/AM4B
 	name = "AM4-B"
-	desc = "A Relic from a bygone age. Nobody quite knows why it's here. Has a polychromic coating."
+	desc = "A relic from a bygone age. Nobody quite knows why it's here. Has a polychromic coating."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "AM4"
 	item_state = "arg"
