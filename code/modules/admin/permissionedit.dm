@@ -412,8 +412,8 @@
 			old_can_edit_flags = text2num(query_get_rank_flags.item[3])
 		qdel(query_get_rank_flags)
 		var/datum/DBQuery/query_change_rank_flags = SSdbcore.NewQuery(
-			"UPDATE [format_table_name("admin_ranks")] SET flags = :flags, exclude_flags = :exclude_flags, can_edit_flags = :can_edit_flags WHERE rank = :rank",
-			list("flags" = new_flags, "exclude_flags" = new_exclude_flags, "can_edit_flags" = new_can_edit_flags, "rank" = D.rank.name)
+			"UPDATE [format_table_name("admin_ranks")] SET flags = :new_flags, exclude_flags = :new_exclude_flags, can_edit_flags = :new_can_edit_flags WHERE rank = :rank_name",
+			list("new_flags" = new_flags, "new_exclude_flags" = new_exclude_flags, "new_can_edit_flags" = new_can_edit_flags, "rank_name" = D.rank.name)
 		)
 		if(!query_change_rank_flags.warn_execute())
 			qdel(query_change_rank_flags)

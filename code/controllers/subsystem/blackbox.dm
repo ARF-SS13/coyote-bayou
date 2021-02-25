@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(blackbox)
 	var/admincount = GLOB.admins.len
 	var/datum/DBQuery/query_record_playercount = SSdbcore.NewQuery({"
 		INSERT INTO [format_table_name("legacy_population")] (playercount, admincount, time, server_ip, server_port, round_id)
-		VALUES (:playercount, :admincount, :time, INET_ATON(:internet_address), :port, :round_id')
+		VALUES (:playercount, :admincount, :time, INET_ATON(:internet_address), :port, :round_id)
 	"}, list("playercount" = playercount, "admincount" = admincount, "time" = SQLtime(), "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id)
 	)
 	query_record_playercount.Execute()
