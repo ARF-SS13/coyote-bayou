@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/ghoul
 	name = "feral ghoul"
-	desc = "A ghoul that has lost it's mind and become aggressive."
+	desc = "A ghoul that has lost its mind and become aggressive."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "feralghoul"
 	icon_living = "feralghoul"
@@ -40,7 +40,7 @@
 
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
-	desc = "A ghoul that has lost it's mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
@@ -61,7 +61,7 @@
 
 /mob/living/simple_animal/hostile/ghoul/coldferal
 	name = "cold ghoul feral"
-	desc = "A ghoul that has lost it's mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "cold_feral"
 	icon_living = "cold_feral"
@@ -75,7 +75,7 @@
 
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
 	name = "frozen ghoul reaver"
-	desc = "A ghoul that has lost it's mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
+	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
@@ -87,22 +87,9 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
-/mob/living/simple_animal/hostile/ghoul/glowing
-	name = "glowing feral ghoul"
-	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
-	icon_state = "glowinghoul"
-	icon_living = "glowinghoul"
-	icon_dead = "glowinghoul_dead"
-	maxHealth = 80
-	health = 80
-	speed = 2
-	harm_intent_damage = 8
-	melee_damage_lower = 20
-	melee_damage_upper = 20
-
 /mob/living/simple_animal/hostile/ghoul/legendary
 	name = "legendary ghoul"
-	desc = "A ghoul that has lost it's mind and become aggressive. This one is exceptionally large, bulging muscles. It looks quite strong."
+	desc = "A ghoul that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
@@ -118,12 +105,27 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 
+/mob/living/simple_animal/hostile/ghoul/glowing
+	name = "glowing feral ghoul"
+	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	icon_state = "glowinghoul"
+	icon_living = "glowinghoul"
+	icon_dead = "glowinghoul_dead"
+	maxHealth = 80
+	health = 80
+	speed = 2
+	harm_intent_damage = 8
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()
 	set_light(2)
-	//so T,F,F,F for the type_healing... because simple_animals have those go straight to adjustHealth
-	//this means if it was T,T,T,T, it would heal for 40 percent, instead of 10 percent
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = TRUE, restrict_faction = null, type_healing = list(TRUE, FALSE, FALSE, FALSE))
+	// we only heal BRUTELOSS because each type directly heals a simplemob's health
+	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
+	// aka 40% of max life every tick, which is basically unkillable
+	// TODO: refactor this if simple_animals ever get damage types
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
@@ -135,64 +137,8 @@
 		var/mob/living/carbon/human/H = target
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
-/mob/living/simple_animal/hostile/ghoul/frozen
-	name = "frozen feral ghoul"
-	desc = "A feral ghoul that has absorbed massive amounts of cold and Radiates Cold Air.."
-	icon_state = "frozen_feral"
-	icon_living = "frozen feral"
-	icon_dead = "frozen_feral_dead"
-	maxHealth = 80
-	health = 80
-	speed = 2
-	harm_intent_damage = 8
-	melee_damage_lower = 20
-	melee_damage_upper = 20
-
-/mob/living/simple_animal/hostile/ghoul/frozen/Initialize()
-	. = ..()
-
-/mob/living/simple_animal/hostile/ghoul/frozen/Aggro()
-	..()
-	summon_backup(10)
-
-/mob/living/simple_animal/hostile/ghoul/frozen/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
-
-
-/mob/living/simple_animal/hostile/ghoul/hot
-	name = "hot glowing ghoul"
-	desc = "A feral ghoul that has absorbed massive amounts of cold and Radiates Cold Air.."
-	icon_state = "hot_glowing_one"
-	icon_living = "hot_glowing_one"
-	icon_dead = "hot_glowing_one_dead"
-	maxHealth = 80
-	health = 80
-	speed = 2
-	harm_intent_damage = 8
-	melee_damage_lower = 20
-	melee_damage_upper = 20
-
-/mob/living/simple_animal/hostile/ghoul/hot/Initialize()
-	. = ..()
-	//so T,F,F,F for the type_healing... because simple_animals have those go straight to adjustHealth
-	//this means if it was T,T,T,T, it would heal for 40 percent, instead of 10 percent
-	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = TRUE, restrict_faction = null, type_healing = list(TRUE, FALSE, FALSE, FALSE))
-
-/mob/living/simple_animal/hostile/ghoul/hot/Aggro()
-	..()
-	summon_backup(10)
-
-/mob/living/simple_animal/hostile/ghoul/hot/AttackingTarget()
-	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.apply_effect(20, EFFECT_IRRADIATE, 0)
-
 /mob/living/simple_animal/hostile/ghoul/soldier
-	name = "Ghoul Soldier"
+	name = "ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "soldier_ghoul"
@@ -203,7 +149,7 @@
 	health = 90
 
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
-	name = "Armored Ghoul Soldier"
+	name = "armored ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "soldier_ghoul_a"
@@ -214,7 +160,7 @@
 	health = 100
 
 /mob/living/simple_animal/hostile/ghoul/scorched
-	name = "Scorched Ghoul Soldier"
+	name = "scorched ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "scorched_m"

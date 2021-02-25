@@ -468,7 +468,7 @@
 
 /obj/item/clothing/head/kepi/old
 	icon_state = "kepi_old"
-	desc = "A flat, white circular cap with a visor, that demands some honor from it's wearer."
+	desc = "A flat, white circular cap with a visor. It demands some honor from its wearer."
 
 /obj/item/clothing/head/maid
 	name = "maid headband"

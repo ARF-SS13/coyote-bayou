@@ -12,22 +12,25 @@
 	//perhaps someone wants to make a healing effect smaller/larger(?)
 	var/heal_range = 3
 	//customization
-	var/revive_allowed = TRUE
+	var/revive_allowed = FALSE
 	//faction healing only
 	var/faction_only = null
 	//allows healing of types: Brute, Burn, Toxin, Oxygen. 
-	var/healing_types = list(TRUE, TRUE, TRUE, TRUE)
+	var/healing_types = BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS
+	//glow colour
+	var/glow_color = "#d9ff00" //I want yellow because glowing, can be overridden
 
-/datum/component/glow_heal/Initialize(mob/living/simple_animal/chosen_targets, allow_revival = TRUE, restrict_faction = null, list/type_healing = list(TRUE, TRUE, TRUE, TRUE))
+/datum/component/glow_heal/Initialize(mob/living/simple_animal/chosen_targets, allow_revival = TRUE, restrict_faction = null, list/type_healing = BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS, color_glow = null)
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 	living_owner = parent
 	if(chosen_targets)
 		living_targets = chosen_targets
-	if(!allow_revival)
-		revive_allowed = FALSE
+	revive_allowed = allow_revival
 	if(restrict_faction)
 		faction_only = restrict_faction
+	if(color_glow)
+		glow_color = color_glow
 	healing_types = type_healing
 	START_PROCESSING(SSobj, src)
 	RegisterSignal(living_owner, COMSIG_LIVING_REVIVE, .proc/restart_process)
@@ -36,8 +39,7 @@
 	START_PROCESSING(SSobj, src)
 
 /datum/component/glow_heal/process()
-	var/mob/living/srcLive = living_owner
-	if(srcLive.stat == DEAD)
+	if(living_owner.stat == DEAD)
 		STOP_PROCESSING(SSobj, src)
 		return //cmon, only living things are allowed use this process
 	if(!living_targets)
@@ -50,15 +52,15 @@
 			continue
 		if(faction_only && !(faction_only in livingMob.faction))
 			continue //if you don't have the faction listed in the intial, then you aren't getting targeted 
-		if(healing_types[1])
+		if(healing_types && BRUTELOSS)
 			livingMob.adjustBruteLoss(-livingMob.maxHealth*0.1)
-		if(healing_types[2])	
+		if(healing_types && FIRELOSS)	
 			livingMob.adjustFireLoss(-livingMob.maxHealth*0.1)
-		if(healing_types[3])	
+		if(healing_types && TOXLOSS)	
 			livingMob.adjustToxLoss(-livingMob.maxHealth*0.1)
-		if(healing_types[4])	
+		if(healing_types && OXYLOSS)	
 			livingMob.adjustOxyLoss(-livingMob.maxHealth*0.1)
 		if(livingMob.stat == DEAD && revive_allowed)
 			livingMob.revive(full_heal = TRUE)
 		var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(livingMob)) //shameless copy from blobbernaut
-		H.color = "#d9ff00" //I want yellow because glowing; sidenote: maybe this should be a var so it can be multiple things
+		H.color = glow_color

@@ -21,11 +21,12 @@
 	. = ..()
 
 /obj/effect/decal/remains/proc/make_debris()
-	if(drop_amount == 0)
+	if(drop_amount == 0 || isemptylist(debris_result))
 		qdel(src)
 		return
 	drop_amount--
-	return new debris_result (get_turf(src))
+	var/type_to_spawn = pick(debris_result)
+	return new type_to_spawn (get_turf(src))
 
 /obj/effect/decal/remains/examine_more()
 	if(LAZYLEN(debris_result))
@@ -33,7 +34,7 @@
 		. += SPAN_NOTICE("You think you can see some [initial(show.name)] in it.")
 	if(drop_amount && (drop_amount <= initial(drop_amount)))
 		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
-	. = ..()
+	return ..()
 
 /obj/effect/decal/remains/human
 	desc = "They look like human remains. They have a strange aura about them."

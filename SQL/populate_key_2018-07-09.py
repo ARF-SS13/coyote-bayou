@@ -24,7 +24,7 @@ import MySQLdb
 import argparse
 import re
 import sys
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from datetime import datetime
 
 if sys.version_info[0] < 3:
@@ -60,7 +60,7 @@ print("Beginning script at {0}".format(start_time.strftime("%Y-%m-%d %H:%M:%S"))
 if not ckey_list:
     print("Query returned no rows")
 for current_ckey in ckey_list:
-    link = urlopen("https://secure.byond.com/members/{0}/?format=text".format(current_ckey[0]))
+    link = urlopen(Request("https://secure.byond.com/members/{0}/?format=text".format(current_ckey[0]), headers={'User-Agent': 'Mozilla/5.0'}))
     data = link.read()
     data = data.decode("ISO-8859-1")
     match = re.search("\tkey = \"(.+)\"", data)
