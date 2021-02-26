@@ -511,7 +511,7 @@
 /datum/admins/proc/sync_lastadminrank(admin_ckey, admin_key, datum/admins/D)
 	var/datum/DBQuery/query_sync_lastadminrank = SSdbcore.NewQuery(
 		"UPDATE [format_table_name("player")] SET lastadminrank = :lastadminrank WHERE ckey = :ckey",
-		list("lastadminrank" = D.rank.name || "Player", "ckey" = admin_ckey)
+		list("lastadminrank" = D?.rank?.name || "Player", "ckey" = admin_ckey)
 	)
 	if(!query_sync_lastadminrank.warn_execute())
 		qdel(query_sync_lastadminrank)
