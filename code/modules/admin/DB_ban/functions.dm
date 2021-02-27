@@ -520,10 +520,10 @@
 				(:player_cid IS NULL OR computerid = :player_cid)
 			ORDER BY bantime DESC LIMIT :skip, :take
 			"}, list(
-			"player_key" = ckey(playerckey),
-			"admin_key" = ckey(adminckey),
-			"player_ip" = ip,
-			"player_cid" = cid,
+			"player_key" = ckey(playerckey) || null, // we need to use || null in case it's the empty string
+			"admin_key" = ckey(adminckey) || null,   // because SQL expects null, not ''
+			"player_ip" = ip || null,
+			"player_cid" = cid || null,
 			"skip" = bansperpage * page,
 			"take" = bansperpage,
 		))

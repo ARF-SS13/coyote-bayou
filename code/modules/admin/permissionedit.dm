@@ -140,7 +140,7 @@
 		to_chat(usr, "<span class='admin prefix'>Admin Edit blocked: Advanced ProcCall detected.</span>")
 		return
 	var/datum/asset/permissions_assets = get_asset_datum(/datum/asset/simple/permissions)
-	permissions_assets.send(src)
+	permissions_assets.send(owner)
 	var/admin_key = href_list["key"]
 	var/admin_ckey = ckey(admin_key)
 	var/datum/admins/D = GLOB.admin_datums[admin_ckey]
@@ -395,7 +395,7 @@
 		return
 	var/m1 = "[key_name_admin(usr)] edited the permissions of [use_db ? " rank [D.rank.name] permanently" : "[admin_key] temporarily"]"
 	var/m2 = "[key_name(usr)] edited the permissions of [use_db ? " rank [D.rank.name] permanently" : "[admin_key] temporarily"]"
-	if(use_db || legacy_only)
+	if(use_db && !legacy_only)
 		var/old_flags
 		var/old_exclude_flags
 		var/old_can_edit_flags
