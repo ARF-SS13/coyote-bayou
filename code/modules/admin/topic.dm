@@ -195,6 +195,8 @@
 		var/cid = href_list["dbsearchcid"]
 		var/page = href_list["dbsearchpage"]
 
+		message_admins("DB_ban_panel(playerckey = [playerckey], adminckey = [adminckey], ip = [ip], cid = [cid], page = [page])")
+
 		DB_ban_panel(playerckey, adminckey, ip, cid, page)
 		return
 

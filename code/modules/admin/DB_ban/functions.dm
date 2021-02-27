@@ -446,6 +446,7 @@
 	output += "Please note that all jobban bans or unbans are in-effect the following round."
 
 	if(adminckey || playerckey || ip || cid)
+		message_admins("checkpoint 1: adminckey = [adminckey], playerckey = [playerckey], ip = [ip], cid = [cid]")
 		var/bancount = 0
 		var/bansperpage = 15
 		var/pagecount = 0
@@ -465,12 +466,14 @@
 			"player_cid" = cid,
 		))
 		if(!query_count_bans.warn_execute())
+			message_admins("oh no! 1")
 			qdel(query_count_bans)
 			return
 		if(query_count_bans.NextRow())
 			bancount = text2num(query_count_bans.item[1])
 		qdel(query_count_bans)
 		if(bancount > bansperpage)
+			message_admins("checkpoint 2")
 			output += "<br><b>Page: </b>"
 			while(bancount > 0)
 				output+= "|<a href='?_src_=holder;[HrefToken()];dbsearchckey=[playerckey];dbsearchadmin=[adminckey];dbsearchpage=[pagecount]'>[pagecount == page ? "<b>\[[pagecount]\]</b>" : "\[[pagecount]\]"]</a>"
@@ -528,10 +531,14 @@
 			"take" = bansperpage,
 		))
 		if(!query_search_bans.warn_execute())
+			message_admins("oh no! 2")
 			qdel(query_search_bans)
 			return
 
+		message_admins("checkpoint 1: adminckey = [adminckey], playerckey = [playerckey], ip = [ip], cid = [cid]")
+
 		while(query_search_bans.NextRow())
+			message_admins("E!!")
 			var/banid = query_search_bans.item[1]
 			var/bantime = query_search_bans.item[2]
 			var/bantype  = query_search_bans.item[3]
