@@ -12,7 +12,7 @@
 	fluid_id = /datum/reagent/consumable/milk
 	fluid_rate = MILK_RATE
 	shape = DEF_BREASTS_SHAPE
-	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
+	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
 	masturbation_verb = "massage"
 	arousal_verb = "Your breasts start feeling sensitive"
 	unarousal_verb = "Your breasts no longer feel sensitive"
@@ -48,7 +48,7 @@
 		else
 			desc += " You estimate that they're [uppertext(size)]-cups."
 
-	if(CHECK_BITFIELD(genital_flags, GENITAL_FUID_PRODUCTION) && aroused_state)
+	if(CHECK_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION) && aroused_state)
 		var/datum/reagent/R = GLOB.chemical_reagents_list[fluid_id]
 		if(R)
 			desc += " They're leaking [lowertext(R.name)]."
@@ -57,7 +57,7 @@
 	var/icon_size = clamp(breast_values[size], BREASTS_ICON_MIN_SIZE, BREASTS_ICON_MAX_SIZE)
 	icon_state = "breasts_[icon_shape]_[icon_size]"
 	if(owner)
-		if(owner.dna.species.use_skintones && owner.dna.features["genitals_use_skintone"])
+		if(owner.dna.species.use_skintones)
 			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
 				var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
 				color = SKINTONE2HEX(H.skin_tone)
@@ -117,14 +117,14 @@
 
 /obj/item/organ/genital/breasts/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna
-	if(D.species.use_skintones && D.features["genitals_use_skintone"])
+	if(D.species.use_skintones)
 		color = SKINTONE2HEX(H.skin_tone)
 	else
 		color = "#[D.features["breasts_color"]]"
 	size = D.features["breasts_size"]
 	shape = D.features["breasts_shape"]
 	if(!D.features["breasts_producing"])
-		DISABLE_BITFIELD(genital_flags, GENITAL_FUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
+		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
 	if(!isnum(size))
 		cached_size = breast_values[size]
 	else
