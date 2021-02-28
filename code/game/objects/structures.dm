@@ -117,20 +117,19 @@
 				return  "<span class='warning'>It's falling apart!</span>"
 
 /obj/structure/rust_heretic_act()
-	take_damage(500, BRUTE, "melee", 1) 
+	take_damage(500, BRUTE, "melee", 1)
 
 /obj/structure/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
-	if(barricade == FALSE)
-		return !density
-	else if(density == FALSE)
-		return 1
-	else if(istype(mover, /obj/item/projectile))
+	if(istype(mover, /obj/item/projectile)) // Treats especifically projectiles
 		var/obj/item/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer))
 			return 1
-		if(prob(proj_pass_rate))
+		else if(prob(proj_pass_rate))
+			return 1
+		else if(barricade == FALSE)
+			return !density
+		else if(density == FALSE)
 			return 1
 		return 0
-	else
-		return !density
-
+	else // All other than projectiles should use the regular CanPass inheritance
+		return ..()

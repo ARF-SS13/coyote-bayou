@@ -714,34 +714,7 @@
 	results = list(/datum/reagent/pax = 3)
 	required_reagents  = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/water = 1)
 
-/datum/chemical_reaction/cat
-	name = "felinid mutation toxic"
-	id = /datum/reagent/mutationtoxin/felinid
-	results = list(/datum/reagent/mutationtoxin/felinid = 1)
-	required_reagents  = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/ammonia = 1, /datum/reagent/water = 1, /datum/reagent/pax/catnip = 1, /datum/reagent/mutationtoxin = 1)
-	required_temp = 450
-
-/datum/chemical_reaction/moff
-	name = "insect mutation toxic"
-	id = /datum/reagent/mutationtoxin/insect
-	results = list(/datum/reagent/mutationtoxin/insect = 1)
-	required_reagents  = list(/datum/reagent/liquid_dark_matter = 2, /datum/reagent/ammonia = 5, /datum/reagent/lithium = 1, /datum/reagent/mutationtoxin = 1)
-	required_temp = 320
-
-/datum/chemical_reaction/notlight //Harder to make do to it being a hard race to play
-	name = "shadow muatatuin toxic"
-	id = /datum/reagent/mutationtoxin/shadow
-	results = list(/datum/reagent/mutationtoxin/shadow = 1)
-	required_reagents  = list(/datum/reagent/liquid_dark_matter = 5, /datum/reagent/medicine/synaptizine = 10, /datum/reagent/medicine/oculine = 10, /datum/reagent/mutationtoxin = 1)
-	required_temp = 600
-
-/datum/chemical_reaction/slime_extractification
-	required_reagents = list(/datum/reagent/toxin/slimejelly = 30, /datum/reagent/consumable/frostoil = 5, /datum/reagent/toxin/plasma = 5)
-	mix_message = "The mixture condenses into a ball."
-
-/datum/chemical_reaction/slime_extractification/on_reaction(datum/reagents/holder, created_volume)
-	var/location = get_turf(holder.my_atom)
-	new /obj/item/slime_extract/grey(location)
+// TODO: Add some kind of ghoulification mutation toxin? Iunno.
 
 // Liquid Carpets
 
