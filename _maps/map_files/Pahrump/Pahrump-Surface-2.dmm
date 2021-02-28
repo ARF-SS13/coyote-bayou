@@ -3241,7 +3241,7 @@
 	},
 /area/f13/wasteland)
 "cwr" = (
-/obj/machinery/door/airlock/hatch,
+/obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
 	},
@@ -10464,9 +10464,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "hSg" = (
-/obj/structure/simple_door/metal/store{
+/obj/machinery/door/airlock/security/glass{
 	name = "Holding Facility";
-	req_one_access_txt = "121"
+	req_access_txt = "121"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -11526,6 +11526,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"iGe" = (
+/obj/structure/simple_door/metal/store,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "iGi" = (
 /obj/machinery/light,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -20275,10 +20281,6 @@
 	icon_state = "verticaloutermain3"
 	},
 /area/f13/wasteland)
-"pqM" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "pqO" = (
 /obj/item/ammo_casing/c10mm/ap,
 /turf/open/indestructible/ground/outside/road{
@@ -25130,6 +25132,7 @@
 "sYQ" = (
 /obj/structure/barricade/bars,
 /obj/structure/decoration/rag,
+/obj/structure/table,
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
@@ -29427,7 +29430,7 @@
 	},
 /area/f13/building)
 "wlj" = (
-/obj/machinery/door/airlock/hatch,
+/obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "wmJ" = (
@@ -35503,11 +35506,11 @@ mnf
 cjB
 mpE
 mpE
+hSg
 mpE
 mpE
 mpE
-mpE
-mpE
+hSg
 mpE
 mpE
 mpE
@@ -36535,7 +36538,7 @@ ezX
 gxK
 fvD
 rgu
-mpE
+iGe
 mpE
 mpE
 kkz
@@ -40386,7 +40389,7 @@ fiB
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 inI
@@ -40645,7 +40648,7 @@ dyg
 sPO
 sPO
 sPO
-pqM
+rZK
 cas
 oBh
 oBh
@@ -42701,7 +42704,7 @@ aKN
 sPO
 sPO
 sPO
-pqM
+rZK
 cas
 xgg
 oBh
@@ -42712,7 +42715,7 @@ evR
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 fiB
@@ -42956,7 +42959,7 @@ fiB
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 fQk
@@ -43229,7 +43232,7 @@ dms
 dms
 dms
 sPO
-pqM
+rZK
 nWO
 nWO
 nWO
@@ -43737,7 +43740,7 @@ xgg
 fCN
 oBh
 cas
-pqM
+rZK
 sPO
 dms
 jGV
