@@ -132,4 +132,4 @@
 	var/datum/gas_mixture/G = new
 	G.parse_gas_string(text)
 
-	air.merge(G)
+	assume_air(G)

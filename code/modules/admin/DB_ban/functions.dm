@@ -148,7 +148,7 @@
 		ip = "0.0.0.0"
 	var/datum/DBQuery/query_add_ban = SSdbcore.NewQuery(
 		"INSERT INTO [format_table_name("ban")] (`bantime`,`server_ip`,`server_port`,`round_id`,`bantype`,`reason`,`job`,`duration`,`expiration_time`,`ckey`,`computerid`,`ip`,`a_ckey`,`a_computerid`,`a_ip`,`who`,`adminwho`) VALUES (Now(), INET_ATON(:internet_address), :port, :round_id, :bantype, :reason, :job, IFNULL(:duration, \"0\"), Now() + INTERVAL IF(:duration > 0, :duration, 0) MINUTE, :ckey, :computerid, INET_ATON(:ip), :a_ckey, :a_computerid, INET_ATON(:a_ip), :who, :adminwho)",
-		list("internet_address" = world.internet_address || "0", "port" = "world.port", "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = reason, "job" = job, "duration" = duration, "ckey" = ckey, "computerid" = computerid, "ip" = ip, "a_ckey" = a_ckey, "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = who, "adminwho" = adminwho)
+		list("internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "bantype" = bantype_str, "reason" = reason, "job" = job, "duration" = duration, "ckey" = ckey, "computerid" = computerid, "ip" = ip, "a_ckey" = a_ckey, "a_computerid" = a_computerid, "a_ip" = a_ip, "who" = who, "adminwho" = adminwho)
 	)
 	if(!query_add_ban.warn_execute())
 		qdel(query_add_ban)
@@ -520,10 +520,10 @@
 				(:player_cid IS NULL OR computerid = :player_cid)
 			ORDER BY bantime DESC LIMIT :skip, :take
 			"}, list(
-			"player_key" = ckey(playerckey),
-			"admin_key" = ckey(adminckey),
-			"player_ip" = ip,
-			"player_cid" = cid,
+			"player_key" = ckey(playerckey) || null, // we need to use || null in case it's the empty string
+			"admin_key" = ckey(adminckey) || null,   // because SQL expects null, not ''
+			"player_ip" = ip || null,
+			"player_cid" = cid || null,
 			"skip" = bansperpage * page,
 			"take" = bansperpage,
 		))

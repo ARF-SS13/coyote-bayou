@@ -2333,12 +2333,6 @@
 	taste_description = "synthetic catnip"
 	value = REAGENT_VALUE_UNCOMMON
 
-/datum/reagent/moonsugar/on_mob_life(mob/living/carbon/M)
-	if(prob(20))
-		to_chat(M, "You find yourself unable to supress the desire to meow!")
-		M.emote("nya")
-	..()
-
 /datum/reagent/changeling_string
 	name = "UNKNOWN"
 	description = "404: Chemical not found."
@@ -2385,13 +2379,6 @@
 	description = "A colorless liquid that makes people more peaceful and felines more happy."
 	metabolization_rate = 1.75 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_COMMON
-
-/datum/reagent/pax/catnip/on_mob_life(mob/living/carbon/M)
-	if(prob(20))
-		M.emote("nya")
-	if(prob(20))
-		to_chat(M, "<span class = 'notice'>[pick("Headpats feel nice.", "The feeling of a hairball...", "Backrubs would be nice.", "Whats behind those doors?")]</span>")
-	..()
 
 /datum/reagent/preservahyde
 	name = "Preservahyde"

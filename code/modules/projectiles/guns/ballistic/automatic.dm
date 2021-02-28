@@ -615,7 +615,7 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
 	can_attachments = TRUE
