@@ -35,10 +35,14 @@ OOC_DURING_ROUND
 RUN_DELAY 1.5
 WALK_DELAY 2.5
 
-## This is subtracted from the run speed to get the final speed.
+## This is subtracted from the run speed to get the final sprint speed.
 SPRINT_SPEED_INCREASE 0.6
-SPRINT_BUFFER_REGEN_DS 0.06
-SPRINT_STAMINA_COST 2.8
+## Size of sprint buffer, in tiles.
+SPRINT_BUFFER_MAX 16
+## Number of sprint buffer tiles regained per second.
+SPRINT_BUFFER_REGEN_PER_DS 0.08
+## Cost in stamina per tile sprinted.
+SPRINT_STAMINA_COST 3
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
