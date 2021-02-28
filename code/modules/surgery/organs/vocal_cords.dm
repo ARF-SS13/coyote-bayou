@@ -699,7 +699,7 @@
 		to_chat(world, "[user]'s power is [power_multiplier].")
 
 	//Mixables
-	var/static/regex/enthral_words = regex("relax|obey|love|serve|so easy|ara ara")
+	var/static/regex/enthrall_words = regex("relax|obey|love|serve|so easy|ara ara")
 	var/static/regex/reward_words = regex("good boy|good girl|good pet|good job|splendid|jolly good|bloody brilliant")
 	var/static/regex/punish_words = regex("bad boy|bad girl|bad pet|bad job|spot of bother|gone and done it now|blast it|buggered it up")
 	//phase 0
@@ -743,7 +743,7 @@
 
 	//Tier 1
 	//ENTHRAL mixable (works I think)
-	if(findtext(message, enthral_words))
+	if(findtext(message, enthrall_words))
 		for(var/V in listeners)
 			var/mob/living/L = V
 			var/datum/status_effect/chem/enthrall/E = L.has_status_effect(/datum/status_effect/chem/enthrall)
