@@ -101,7 +101,7 @@
 	produce = /obj/item/reagent_containers/food/snacks/grown/horsenettle
 
 /obj/structure/flora/wasteplant/wild_mesquite
-	name = "wild horsenettle"
+	name = "wild mesquite"
 	icon_state = "wild_mesquite"
 	desc = "The honey mesquite pod grows on a short tree with willow-like branches. Trees with pickable pods will appear bushier in foliage and have strings of pods on them, resembling a fern pattern. Pods can be eaten or used in recipes"
 	produce = /obj/item/reagent_containers/food/snacks/grown/mesquite
