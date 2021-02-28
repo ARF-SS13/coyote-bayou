@@ -150,6 +150,7 @@
 #define SSAIR_TURF_POST_PROCESS 10
 #define SSAIR_FINALIZE_TURFS 11
 #define SSAIR_ATMOSMACHINERY_AIR 12
+#define SSAIR_DEFERRED_AIRS 13
 
 // |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
 #define COMPILE_OVERLAYS(A)\
