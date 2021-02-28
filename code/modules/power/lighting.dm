@@ -221,6 +221,9 @@
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 	var/hijacked = FALSE	// if true, the light is in a hijacked area
 
+	var/flicker_chance = 100/90 // the chance to flicker every tick (2 seconds) as a percentage;
+	// 100/90 is once every 90 ticks/three minutes, roughly.
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -283,6 +286,8 @@
 					break_light_tube(1)
 		spawn(1)
 			update(0)
+	if(flicker_chance)
+		START_PROCESSING(SSmachines, src)
 
 /obj/machinery/light/Destroy()
 	var/area/A = get_area(src)
@@ -378,8 +383,10 @@
 	update()
 
 /obj/machinery/light/process()
-	if (!cell)
-		return PROCESS_KILL
+	if (flicker_chance && !flickering && prob(flicker_chance))
+		flicker(amount = rand(3, 8), spark = FALSE, sounds = FALSE, loud = FALSE)
+	if(!cell)
+		return flicker_chance ? null : PROCESS_KILL // only kill if we don't flicker or have a cell
 	if(has_power())
 		if (cell.charge == cell.maxcharge)
 			return PROCESS_KILL
@@ -566,23 +573,6 @@
 	cell.use(pwr)
 	set_light(brightness * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)), bulb_emergency_colour)
 	return TRUE
-
-
-/obj/machinery/light/proc/flicker(amount = rand(10, 20))
-	set waitfor = 0
-	if(flickering)
-		return
-	flickering = 1
-	if(on && status == LIGHT_OK)
-		for(var/i = 0; i < amount; i++)
-			if(status != LIGHT_OK)
-				break
-			on = !on
-			update(0)
-			sleep(rand(5, 15))
-		on = (status == LIGHT_OK)
-		update(0)
-	flickering = 0
 
 // ai attack - make lights flicker, because why not
 
@@ -914,22 +904,24 @@
 		if(prob(damage_amount * 10))
 			flicker(damage_amount*rand(1,3))
 
-/obj/machinery/light/flicker(amount = rand(10, 20))
+/obj/machinery/light/proc/flicker(amount = rand(10, 20), spark = TRUE, sounds = TRUE, loud = TRUE)
 	set waitfor = 0
 	if(flickering)
 		return
 	flickering = TRUE
 	if(on && status == LIGHT_OK)
-		visible_message("<span class='warning'>[src] begins flickering!</span>","<span class='italics'>You hear an electrical sparking.</span>")
+		if(loud)
+			visible_message("<span class='warning'>[src] begins flickering!</span>","<span class='italics'>You hear an electrical sparking.</span>")
 		for(var/i = 0; i < amount; i++)
 			if(status != LIGHT_OK)
 				break
 			on = !on
-			if(prob(18) && !on)//only spark when off so it doesn't occur too much
+			if(prob(18) && !on && spark)//only spark when off so it doesn't occur too much
 				do_sparks(1, FALSE, src)
 			else if(prob(40))
 				bulb_colour = LIGHT_COLOR_BROWN
-				playsound(src, pick('sound/effects/sparks1.ogg', 'sound/effects/sparks2.ogg', 'sound/effects/sparks3.ogg', 'sound/effects/sparks4.ogg', 'sound/effects/light_flicker.ogg'), 100, 1)
+				if(sounds)
+					playsound(src, pick('sound/effects/sparks1.ogg', 'sound/effects/sparks2.ogg', 'sound/effects/sparks3.ogg', 'sound/effects/sparks4.ogg', 'sound/effects/light_flicker.ogg'), 100, 1)
 			update(FALSE)
 			sleep(rand(1, 5))
 		on = (status == LIGHT_OK)

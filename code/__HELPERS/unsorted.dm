@@ -689,10 +689,12 @@ GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
 
 GLOBAL_LIST_INIT(WALLITEMS_EXTERNAL, typecacheof(list(
 	/obj/machinery/camera, /obj/structure/camera_assembly,
-	/obj/structure/light_construct, /obj/machinery/light)))
+	/obj/structure/light_construct, /obj/machinery/light,
+	/obj/structure/destructible/tribal_torch/wall)))
 
 GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
-	/obj/structure/light_construct, /obj/machinery/light)))
+	/obj/structure/light_construct, /obj/machinery/light,
+	/obj/structure/destructible/tribal_torch/wall)))
 
 
 /proc/gotwallitem(loc, dir, check_external = 0)
@@ -702,28 +704,28 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 			//Direction works sometimes
 			if(is_type_in_typecache(O, GLOB.WALLITEMS_INVERSE))
 				if(O.dir == turn(dir, 180))
-					return 1
+					return TRUE
 			else if(O.dir == dir)
-				return 1
+				return TRUE
 
 			//Some stuff doesn't use dir properly, so we need to check pixel instead
 			//That's exactly what get_turf_pixel() does
 			if(get_turf_pixel(O) == locdir)
-				return 1
+				return TRUE
 
 		if(is_type_in_typecache(O, GLOB.WALLITEMS_EXTERNAL) && check_external)
 			if(is_type_in_typecache(O, GLOB.WALLITEMS_INVERSE))
 				if(O.dir == turn(dir, 180))
-					return 1
+					return TRUE
 			else if(O.dir == dir)
-				return 1
+				return TRUE
 
 	//Some stuff is placed directly on the wallturf (signs)
 	for(var/obj/O in locdir)
 		if(is_type_in_typecache(O, GLOB.WALLITEMS) && check_external != 2)
 			if(O.pixel_x == 0 && O.pixel_y == 0)
-				return 1
-	return 0
+				return TRUE
+	return FALSE
 
 /proc/format_text(text)
 	return replacetext(replacetext(text,"\proper ",""),"\improper ","")
