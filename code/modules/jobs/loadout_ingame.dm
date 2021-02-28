@@ -156,6 +156,7 @@
 				var/response = alert(usr, "Are you sure you wish to finish loadout selection? The currently selected outfit will be spawned in a box, which will be placed in your hand.", "Confirm Loadout Select", "Yes, I'm done.", "No, wait!")
 				if (response == "Yes, I'm done.")
 					finish()
+				return
 			confirming = FALSE
 			. = TRUE
 		if("loadout_preview_direction")
