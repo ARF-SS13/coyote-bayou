@@ -287,7 +287,7 @@
 			if(do_center)
 				genital_overlay = center_image(genital_overlay, dim_x, dim_y)
 
-			if(dna.species.use_skintones && dna.features["genitals_use_skintone"])
+			if(dna.species.use_skintones)
 				genital_overlay.color = SKINTONE2HEX(skin_tone)
 			else
 				switch(S.color_src)
@@ -330,8 +330,6 @@
 	var/willyCheck = getorganslot(ORGAN_SLOT_PENIS)
 
 	if(organCheck == FALSE)
-		if(ishuman(src) && dna.species.use_skintones)
-			dna.features["genitals_use_skintone"] = TRUE
 		if(src.dna.species.fixed_mut_color)
 			dna.features["cock_color"] = "[dna.species.fixed_mut_color]"
 			dna.features["breasts_color"] = "[dna.species.fixed_mut_color]"
