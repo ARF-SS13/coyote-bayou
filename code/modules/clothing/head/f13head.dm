@@ -653,3 +653,20 @@
 	icon_state = "jasonmask"
 	item_state = "jasonmask"
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
+
+/obj/item/clothing/head/welding/f13/fire
+	name = "cremator welding helmet"
+	desc = "(III) A welding helmet with flames painted on it.<br>It sure is creepy but also badass."
+	icon_state = "welding_fire"
+	item_state = "welding"
+	tint = 1
+	armor = list("tier" = 3, "energy" = 5, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/atombeliever
+	name = "believer headdress"
+	desc = "(II) The headwear of the true faith."
+	icon_state = "atombeliever"
+	item_state = "atombeliever"
+	armor = list("tier" = 2, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
