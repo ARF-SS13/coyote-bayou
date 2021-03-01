@@ -413,7 +413,7 @@
 
 /datum/crafting_recipe/metalhelmet
 	name = "Metal Helmet"
-	result = /obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
+	result = /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 2)

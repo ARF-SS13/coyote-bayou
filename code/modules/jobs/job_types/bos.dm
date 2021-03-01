@@ -904,7 +904,7 @@ Off-Duty
 /datum/outfit/loadout/offi
 	name = "Junior Paladin"
 	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
+	head = /obj/item/clothing/head/helmet/knight/f13/metal
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
@@ -914,7 +914,7 @@ Off-Duty
 /datum/outfit/loadout/offj
 	name = "Paladin"
 	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
+	head = /obj/item/clothing/head/helmet/knight/f13/metal
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
@@ -924,7 +924,7 @@ Off-Duty
 /datum/outfit/loadout/offk
 	name = "Senior Paladin"
 	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
+	head = /obj/item/clothing/head/helmet/knight/f13/metal
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
@@ -934,7 +934,7 @@ Off-Duty
 /datum/outfit/loadout/offl
 	name = "Sentinel"
 	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
+	head = /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,

@@ -268,7 +268,7 @@ obj/effect/mob_spawn/human/corpse/raiderbossalt
 	suit = /obj/item/clothing/suit/armor/f13/metalarmor/reinforced
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
+	head = /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
 

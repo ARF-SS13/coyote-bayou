@@ -209,12 +209,12 @@
 /obj/item/gun/attack(mob/living/M, mob/user)
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
-		user.DelayNextAction(melee_attack_speed)
+		user.DelayNextAction(CLICK_CD_MELEE)
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
 	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
-		user.DelayNextAction(melee_attack_speed)
+		user.DelayNextAction(CLICK_CD_MELEE)
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
