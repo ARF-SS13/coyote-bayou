@@ -718,6 +718,10 @@
 /obj/item/clothing/under/syndicate/brotherhood,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
+"cD" = (
+/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "cE" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -2704,7 +2708,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/ncrrangerpatrol,
+/obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "jg" = (
@@ -12252,7 +12256,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/ncrrangerpatrol,
+/obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "Pp" = (
@@ -78676,7 +78680,7 @@ BP
 JA
 au
 uz
-mE
+cD
 mE
 EC
 py

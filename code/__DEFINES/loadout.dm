@@ -53,7 +53,7 @@
 #define LOADOUT_CATEGORY_GLASSES	"Glasses"
 
 //donator items
-#define LOADOUT_CATEGORY_DONATOR	"Donator"
+#define LOADOUT_CATEGORY_DONATOR	"Special"
 
 //how many prosthetics can we have
 #define MAXIMUM_LOADOUT_PROSTHETICS	2

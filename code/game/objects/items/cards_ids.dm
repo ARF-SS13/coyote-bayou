@@ -958,9 +958,14 @@
 	icon_state = "ncrdogtagcaptain"
 
 /obj/item/card/id/dogtag/ncrranger
-	name = "ranger tags"
-	desc = "A dog tag that invokes fear in those who see it, belonging to someone with a big iron on their hip."
-	icon_state = "ncrdogtagranger"
+	name = "ranger badge"
+	desc = "A badge formed out of a Legion denarius that invokes fear in those who see it, belonging to someone with a big iron on their hip."
+	icon_state = "ranger"
+
+/obj/item/card/id/dogtag/ncrvetranger
+	name = "veteran ranger badge"
+	desc = "A badge formed out of a Legion aureus that is worn by the most feared men and women of the Republic."
+	icon_state = "vetranger"
 
 /obj/item/card/id/dogtag/ncrcolonel
 	name = "colonel's tags"

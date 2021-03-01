@@ -705,7 +705,7 @@
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
+	STR.max_items = 4
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.can_hold = typecacheof(list(
 		/obj/item/gun/ballistic/automatic/pistol,
@@ -742,6 +742,30 @@
 	new /obj/item/ammo_box/c38(src)
 	new /obj/item/ammo_box/c38(src)
 
+/obj/item/storage/belt/holster/ranger44/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/belt/holster/ranger357/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/belt/holster/ranger45/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/ammo_box/c45rev(src)
+
+/obj/item/storage/belt/holster/ranger4570/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/sequoia(src)
+	new /obj/item/ammo_box/c4570(src)
+	new /obj/item/ammo_box/c4570(src)
+	new /obj/item/ammo_box/c4570(src)
+	
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
 	desc = "A dorky fannypack for keeping small items in."

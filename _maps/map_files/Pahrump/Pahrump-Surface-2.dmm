@@ -3204,10 +3204,6 @@
 /obj/effect/landmark/start/f13/ncrcorporal,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
-"cvb" = (
-/obj/effect/landmark/start/f13/ncrrangerscout,
-/turf/open/floor/carpet/black,
-/area/f13/ncr)
 "cvx" = (
 /obj/structure/rack,
 /turf/open/floor/f13/wood{
@@ -13659,7 +13655,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "kim" = (
-/obj/effect/landmark/start/f13/ncrrangerpatrol,
+/obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "kin" = (
@@ -19956,7 +19952,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/ncrrangerscout,
+/obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pdz" = (
@@ -24836,12 +24832,6 @@
 /mob/living/simple_animal/pet/dog/protectron,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
-"sND" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "sNM" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -31982,8 +31972,7 @@
 /area/f13/clinic)
 "xUq" = (
 /obj/structure/flora/tree/tall{
-	icon_state = "tree_2";
-	
+	icon_state = "tree_2"
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -34134,7 +34123,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 gcK
 ktB
 gcK
@@ -37984,7 +37973,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -42965,7 +42954,7 @@ erY
 ubg
 koD
 dMW
-sND
+xUq
 fyf
 gcK
 gcK
@@ -46202,7 +46191,7 @@ faW
 lLv
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 gcK
@@ -47738,7 +47727,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -52892,7 +52881,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -53640,7 +53629,7 @@ uCW
 nPX
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -53686,7 +53675,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 uey
@@ -53961,7 +53950,7 @@ hAC
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54450,7 +54439,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 thG
 fyf
@@ -54488,7 +54477,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54929,7 +54918,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -54994,7 +54983,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -55242,7 +55231,7 @@ mvv
 mvv
 bpD
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56029,7 +56018,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56265,7 +56254,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -56792,7 +56781,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -58408,7 +58397,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -58603,7 +58592,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 thG
@@ -58645,7 +58634,7 @@ gcK
 gcK
 gcK
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -59423,7 +59412,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -59616,13 +59605,13 @@ boN
 azC
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -60171,7 +60160,7 @@ btN
 btN
 jbr
 nPZ
-cvb
+kim
 nPZ
 xKV
 btN
@@ -60399,7 +60388,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 sYX
 sYX
 sYX
@@ -60459,7 +60448,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -60902,14 +60891,14 @@ gjP
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -61932,7 +61921,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -61940,7 +61929,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 sYX
 rpu
@@ -62252,7 +62241,7 @@ fyf
 fyf
 dWt
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -63380,7 +63369,7 @@ gcK
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 ilu
 trd
@@ -68529,7 +68518,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 nJW
@@ -69515,7 +69504,7 @@ gcK
 uRa
 mvv
 bpD
-sND
+xUq
 dLO
 dCV
 dCV
@@ -69789,7 +69778,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -71566,7 +71555,7 @@ gcK
 gcK
 gcK
 ftr
-sND
+xUq
 tBN
 mvv
 uRa
@@ -72343,7 +72332,7 @@ mvv
 mvv
 hXW
 fyf
-sND
+xUq
 eHF
 eVP
 sYV
@@ -72880,7 +72869,7 @@ eeo
 jZN
 fyf
 fyf
-sND
+xUq
 nlO
 mfD
 mfD
@@ -74413,7 +74402,7 @@ jxH
 jxH
 fyf
 fyf
-sND
+xUq
 gcK
 gcK
 gcK
@@ -74909,7 +74898,7 @@ mvv
 bpD
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -74960,7 +74949,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 kGc
 unI
 hbW
@@ -87890,7 +87879,7 @@ fyf
 fyf
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -88159,7 +88148,7 @@ fyf
 rtR
 fyf
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
@@ -88709,7 +88698,7 @@ erY
 koD
 dMW
 fyf
-sND
+xUq
 fyf
 fyf
 fyf
