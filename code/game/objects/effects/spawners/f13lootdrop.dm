@@ -22,7 +22,7 @@
 
 /obj/effect/spawner/lootdrop/f13/armor/clothes
 	name = "pre-war clothes spawner"
-	loot = list(			
+	loot = list(
 				/obj/effect/spawner/bundle/f13/worker,
 				/obj/effect/spawner/bundle/f13/plaidskirt,
 				/obj/item/clothing/under/blacktango,
@@ -317,7 +317,7 @@
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/combat/dark,
 				/obj/effect/spawner/bundle/f13/armor/sulphite
-				)	
+				)
 
 /obj/effect/spawner/bundle/f13/armor/metal/reinforced
 	items = list(
@@ -419,7 +419,7 @@
 				/obj/effect/spawner/bundle/f13/armor/t45d,
 				/obj/effect/spawner/bundle/f13/armor/t51b
 				)
-	
+
 /obj/effect/spawner/bundle/f13/armor/t45d
 	name = "t45d power armor spawner"
 	items = list(
@@ -983,7 +983,7 @@
 				/obj/item/gun/ballistic/automatic/mp5,
 				/obj/item/ammo_box/magazine/uzim9mm
 				)
-	
+
 /obj/effect/spawner/bundle/f13/beretta/select
 	name = "select-fire beretta pistol and ammo spawner"
 	items = list(
@@ -1124,7 +1124,7 @@
 				/obj/item/gun/energy/laser/plasma/glock,
 				/obj/item/stock_parts/cell/ammo/ec
 				)
-	
+
 /obj/effect/spawner/bundle/f13/wattz2k
 	name = "Wattz 2000 laser rifle and ammo spawner"
 	items = list(
@@ -1521,15 +1521,7 @@
 				/obj/item/stack/f13Cash/random/low = 50,
 				/obj/item/stack/f13Cash/random/ncr/low = 30,
 				/obj/item/stack/f13Cash/random/denarius/low = 30,
-				/obj/item/stack/f13Cash/random/aureus/low = 10,
-				/obj/item/stack/f13Cash/random/med = 25,
-				/obj/item/stack/f13Cash/random/ncr/med = 15,
-				/obj/item/stack/f13Cash/random/denarius/med = 15,
-				/obj/item/stack/f13Cash/random/aureus/med = 5,
-				/obj/item/stack/f13Cash/random/high = 10,
-				/obj/item/stack/f13Cash/random/ncr/high = 5,
-				/obj/item/stack/f13Cash/random/denarius/high = 5,
-				/obj/item/stack/f13Cash/random/aureus/high = 1,
+				/obj/item/stack/f13Cash/random/aureus/low = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/cash_random_med

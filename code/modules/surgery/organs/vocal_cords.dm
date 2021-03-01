@@ -252,11 +252,6 @@
 	var/static/regex/salute_words = regex("salute")
 	var/static/regex/deathgasp_words = regex("play dead")
 	var/static/regex/clap_words = regex("clap|applaud")
-	var/static/regex/honk_words = regex("ho+nk") //hooooooonk
-	var/static/regex/multispin_words = regex("like a record baby|right round")
-	var/static/regex/dab_words = regex("dab|mood") //CITADEL CHANGE
-	var/static/regex/snap_words = regex("snap") //CITADEL CHANGE
-	var/static/regex/bwoink_words = regex("what the fuck are you doing|bwoink|hey you got a moment?") //CITADEL CHANGE
 
 	var/i = 0
 	//STUN
@@ -556,42 +551,6 @@
 			addtimer(CALLBACK(L, /mob/living/.proc/emote, "clap"), 5 * i)
 			i++
 
-	//HONK
-	else if((findtext(message, honk_words)))
-		cooldown = COOLDOWN_MEME
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, get_turf(user), 'sound/items/bikehorn.ogg', 300, 1), 25)
-		if(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY))
-			for(var/mob/living/carbon/C in listeners)
-				C.slip(140 * power_multiplier)
-			cooldown = COOLDOWN_MEME
-
-	//RIGHT ROUND
-	else if((findtext(message, multispin_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/L = V
-			L.SpinAnimation(speed = 10, loops = 5)
-
-	//DAB
-	else if((findtext(message, dab_words)))
-		cooldown = COOLDOWN_DAMAGE
-		for(var/V in listeners)
-			var/mob/living/M = V
-			M.say("*dab")
-
-	//SNAP
-	else if((findtext(message, snap_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/M = V
-			M.say("*snap")
-
-	//BWOINK
-	else if((findtext(message, bwoink_words)))
-		cooldown = COOLDOWN_MEME
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, get_turf(user), 'sound/effects/adminhelp.ogg', 300, 1), 25)
-	//END CITADEL CHANGES
-
 	else
 		cooldown = COOLDOWN_NONE
 
@@ -740,7 +699,7 @@
 		to_chat(world, "[user]'s power is [power_multiplier].")
 
 	//Mixables
-	var/static/regex/enthral_words = regex("relax|obey|love|serve|so easy|ara ara")
+	var/static/regex/enthrall_words = regex("relax|obey|love|serve|so easy|ara ara")
 	var/static/regex/reward_words = regex("good boy|good girl|good pet|good job|splendid|jolly good|bloody brilliant")
 	var/static/regex/punish_words = regex("bad boy|bad girl|bad pet|bad job|spot of bother|gone and done it now|blast it|buggered it up")
 	//phase 0
@@ -755,8 +714,6 @@
 	var/static/regex/forget_words = regex("forget|muddled|awake and forget")
 	var/static/regex/attract_words = regex("come here|come to me|get over here|attract")
 	//phase 2
-	var/static/regex/awoo_words = regex("howl|awoo|bark")
-	var/static/regex/nya_words = regex("nya|meow|mewl")
 	var/static/regex/sleep_words = regex("sleep|slumber|rest")
 	var/static/regex/strip_words = regex("strip|derobe|nude|at ease|suit off")
 	var/static/regex/walk_words = regex("slow down|walk")
@@ -786,7 +743,7 @@
 
 	//Tier 1
 	//ENTHRAL mixable (works I think)
-	if(findtext(message, enthral_words))
+	if(findtext(message, enthrall_words))
 		for(var/V in listeners)
 			var/mob/living/L = V
 			var/datum/status_effect/chem/enthrall/E = L.has_status_effect(/datum/status_effect/chem/enthrall)
@@ -1080,27 +1037,6 @@
 			E.cooldown += 3
 			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, L, "<span class='notice'>You are drawn towards [user]!</b></span>"), 5)
 			to_chat(user, "<span class='notice'><i>You draw [L] towards you!</i></span>")
-
-	//awoo
-	else if((findtext(message, awoo_words)))
-		for(var/V in listeners)
-			var/mob/living/carbon/human/H = V
-			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
-			switch(E.phase)
-				if(2 to INFINITY)
-					H.say("*awoo")
-					E.cooldown += 1
-
-	//Nya
-	else if((findtext(message, nya_words)))
-		for(var/V in listeners)
-			var/mob/living/carbon/human/H = V
-			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
-			switch(E.phase)
-				if(2 to INFINITY)
-					playsound(get_turf(H), pick('sound/effects/meow1.ogg', 'modular_citadel/sound/voice/nya.ogg'), 50, 1, -1) //I'm very tempted to write a Fermis clause that makes them merowr.ogg if it's me. But, I also don't think snowflakism is okay. I would've gotten away for it too, if it wern't for my morals.
-					H.emote("me", EMOTE_VISIBLE, "lets out a nya!")
-					E.cooldown += 1
 
 	//SLEEP
 	else if((findtext(message, sleep_words)))

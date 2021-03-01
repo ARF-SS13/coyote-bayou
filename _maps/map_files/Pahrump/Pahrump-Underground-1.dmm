@@ -1444,8 +1444,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "fd" = (
-/obj/structure/timeddoor,
-/turf/open/indestructible/ground/inside/subway,
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "fe" = (
 /obj/structure/closet/crate/bin,
@@ -2508,7 +2508,7 @@
 "iy" = (
 /obj/machinery/light/small,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
-/turf/open/floor/plasteel/floorgrime,
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "iz" = (
 /obj/structure/closet/cabinet,
@@ -2656,7 +2656,6 @@
 "iV" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/item/dildo,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -3497,9 +3496,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "lL" = (
-/obj/structure/closet/crate/coffin,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/neutral,
+/area/f13/tunnel)
 "lM" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -4221,7 +4224,6 @@
 /obj/structure/closet{
 	storage_capacity = 10
 	},
-/obj/item/dildo,
 /obj/item/dildo{
 	icon_state = "dildo"
 	},
@@ -7252,6 +7254,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
+/area/f13/tunnel)
+"yv" = (
+/obj/structure/timeddoor,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "yw" = (
 /obj/structure/rack,
@@ -15213,8 +15219,13 @@
 	},
 /area/f13/brotherhood)
 "Zh" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/floorgrime,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/neutral/side{
+	dir = 8
+	},
 /area/f13/tunnel)
 "Zi" = (
 /obj/structure/rack,
@@ -30862,7 +30873,7 @@ Bs
 Bs
 Bs
 Bs
-Ng
+of
 Bs
 Bs
 Bs
@@ -39156,17 +39167,17 @@ ce
 sK
 sK
 sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
 DW
 DW
 DW
@@ -39404,26 +39415,26 @@ Uf
 ap
 kJ
 kJ
-Uf
+lL
 kJ
 wf
 kJ
 ij
 sW
-nT
-nT
-nT
-nT
-nT
-nT
+GY
+GY
+yv
+GY
+GY
+GY
 Zv
-nT
-nT
-nT
-nT
 GY
 GY
-fd
+GY
+GY
+GY
+GY
+GY
 Pv
 GY
 GY
@@ -39667,9 +39678,9 @@ GO
 GO
 GO
 NH
-Zc
 GY
-Zc
+GY
+yv
 GY
 Wo
 GY
@@ -39677,10 +39688,10 @@ GY
 GY
 GY
 Pv
-Zc
 GY
 GY
-fd
+GY
+GY
 GY
 GY
 GY
@@ -39918,26 +39929,26 @@ eg
 JY
 Sv
 Sv
-eg
+Zh
 Sv
 xz
 Sv
 NL
 BY
-nT
-nT
-nT
-nT
-nT
-nT
-GY
-nT
-nT
-nT
-nT
 GY
 GY
-fd
+yv
+GY
+GY
+GY
+GY
+GY
+GY
+GY
+GY
+GY
+GY
+GY
 GY
 GY
 GY
@@ -40173,6 +40184,7 @@ Pk
 nT
 nT
 nT
+fd
 nT
 nT
 nT
@@ -40180,21 +40192,20 @@ nT
 nT
 nT
 nT
-nT
 sK
 sK
 sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
-sK
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
+jG
 DW
 DW
 DW
@@ -40429,9 +40440,9 @@ sK
 Mm
 Mm
 nT
-un
-un
-un
+DZ
+DZ
+DZ
 nT
 XA
 DZ
@@ -40686,8 +40697,8 @@ sK
 Mm
 aE
 nT
-un
-Zh
+DZ
+QP
 iy
 nT
 DZ
@@ -40943,9 +40954,9 @@ sK
 Mm
 Mm
 nT
-un
-un
-un
+QP
+DZ
+DZ
 nT
 DZ
 DZ
@@ -42569,7 +42580,7 @@ Fz
 Fz
 Fz
 Fz
-lL
+Fz
 UH
 qq
 xk
