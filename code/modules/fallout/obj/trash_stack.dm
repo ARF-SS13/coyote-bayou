@@ -37,7 +37,7 @@
 		for(var/i=0, i<rand(1,4), i++)
 			var/itemtype= pickweight(lootable_trash)
 			if(itemtype)
-				to_chat(user, "<span class='notice'>You scavenge through the filthy [src].</span>")
+				to_chat(user, "<span class='notice'>You scavenge through [src].</span>")
 				var/obj/item/item = new itemtype(ST)
 				if(istype(item))
 					item.from_trash = TRUE
