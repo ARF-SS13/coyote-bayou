@@ -206,9 +206,19 @@
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 
+/obj/item/gun/attack(mob/living/M, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(CLICK_CD_MELEE)
+
+/obj/item/gun/attack_obj(obj/O, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(CLICK_CD_MELEE)
+
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
-	if(!CheckAttackCooldown(user, target))
+	if(!CheckAttackCooldown(user, target, TRUE))
 		return
 	process_afterattack(target, user, flag, params)
 

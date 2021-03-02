@@ -29,12 +29,13 @@
 	return new type_to_spawn (get_turf(src))
 
 /obj/effect/decal/remains/examine_more()
+	. = list(SPAN_NOTICE("<i>You examine [src] closer, and note the following...</i>"))
 	if(LAZYLEN(debris_result))
 		var/obj/item/show = pick(debris_result)
 		. += SPAN_NOTICE("You think you can see some [initial(show.name)] in it.")
 	if(drop_amount && (drop_amount <= initial(drop_amount)))
 		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
-	return ..()
+	return .
 
 /obj/effect/decal/remains/human
 	desc = "They look like human remains. They have a strange aura about them."
