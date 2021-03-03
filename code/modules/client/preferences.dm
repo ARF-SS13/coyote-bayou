@@ -208,6 +208,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/exp = list()
 	var/list/menuoptions
 
+	var/list/job_whitelists = list()
+
 	var/action_buttons_screen_locs = list()
 
 	//bad stuff
