@@ -1313,7 +1313,8 @@
 "bQL" = (
 /obj/structure/table,
 /obj/machinery/camera/autoname{
-	dir = 10
+	dir = 10;
+	network = list("Vault")
 	},
 /obj/machinery/button/door{
 	id = 103;
@@ -2304,7 +2305,8 @@
 /area/f13/vault)
 "dqk" = (
 /obj/machinery/camera/autoname{
-	dir = 10
+	dir = 10;
+	network = list("Vault")
 	},
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -2347,6 +2349,10 @@
 /area/f13/tunnel)
 "drn" = (
 /obj/effect/turf_decal/stripes/line,
+/obj/machinery/camera/autoname{
+	dir = 5;
+	network = list("Vault")
+	},
 /turf/open/floor/plasteel/darkred/side{
 	dir = 8
 	},
@@ -3016,7 +3022,8 @@
 "eoa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname{
-	dir = 9
+	dir = 9;
+	network = list("Vault")
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
@@ -5185,7 +5192,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname{
 	dir = 9;
-	network = "vault"
+	network = list("Vault")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -9232,7 +9239,8 @@
 	dir = 1
 	},
 /obj/machinery/camera/autoname{
-	dir = 1
+	dir = 1;
+	network = list("Vault")
 	},
 /obj/item/grenade/barrier{
 	pixel_x = -5;
@@ -10478,13 +10486,6 @@
 	name = "Hydroponics"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
-/area/f13/vault)
-"pwv" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "pxp" = (
 /obj/item/radio/intercom{
@@ -15996,7 +15997,9 @@
 /obj/machinery/newscaster/security_unit{
 	pixel_y = 32
 	},
-/obj/machinery/camera/autoname,
+/obj/machinery/camera/autoname{
+	network = list("Vault")
+	},
 /obj/structure/rack,
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
@@ -25458,7 +25461,7 @@ mAN
 mAN
 hrW
 kaO
-pwv
+tEQ
 pML
 mAN
 mAN

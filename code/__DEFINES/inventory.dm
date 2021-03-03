@@ -188,6 +188,21 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)))
 
+GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
+	/obj/item/pen,
+	/obj/item/paper,
+	/obj/item/stamp,
+	/obj/item/reagent_containers/food/drinks/flask,
+	/obj/item/melee,
+	/obj/item/storage/box/matches,
+	/obj/item/lighter,
+	/obj/item/clothing/mask/cigarette,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/flashlight,
+	/obj/item/gun,
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing)))
+
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
 	/obj/item/ammo_casing,
