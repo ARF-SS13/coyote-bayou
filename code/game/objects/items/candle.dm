@@ -149,9 +149,6 @@
 	if(!(ndir in GLOB.cardinals))
 		return
 	var/turf/user_turf = get_turf(user)
-	if(!istype(/turf/open, user_turf) || isspaceturf(user_turf))
-		to_chat(user, SPAN_WARNING("You cannot place [src] on this spot!"))
-		return
 	if(gotwallitem(user_turf, ndir, 2))
 		to_chat(user, SPAN_WARNING("There's already an item on this wall!"))
 		return

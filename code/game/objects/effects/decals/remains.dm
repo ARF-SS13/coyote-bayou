@@ -5,6 +5,11 @@
 	var/list/obj/item/debris_result = list(/obj/item/stack/sheet/bone)
 	var/drop_amount = 1
 
+/obj/effect/decal/remains/Initialize()
+	if(isemptylist(debris_result))
+		return INITIALIZE_HINT_QDEL
+	. = ..()
+
 /obj/effect/decal/remains/acid_act()
 	visible_message(SPAN_WARNING("[src] dissolve[gender==PLURAL?"":"s"] into a puddle of sizzling goop!"))
 	playsound(src, 'sound/items/welder.ogg', 150, 1)
@@ -17,13 +22,13 @@
 		var/atom/find = make_debris()
 		if(find)
 			to_chat(user, SPAN_NOTICE("You find \a [find] in [src]!"))
+			if(drop_amount == 0)
+				qdel(src)
+				return
 		return
 	. = ..()
 
 /obj/effect/decal/remains/proc/make_debris()
-	if(drop_amount == 0 || isemptylist(debris_result))
-		qdel(src)
-		return
 	drop_amount--
 	var/type_to_spawn = pick(debris_result)
 	return new type_to_spawn (get_turf(src))
@@ -33,7 +38,7 @@
 	if(LAZYLEN(debris_result))
 		var/obj/item/show = pick(debris_result)
 		. += SPAN_NOTICE("You think you can see some [initial(show.name)] in it.")
-	if(drop_amount && (drop_amount <= initial(drop_amount)))
+	if(drop_amount && (drop_amount < initial(drop_amount)))
 		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
 	return .
 
