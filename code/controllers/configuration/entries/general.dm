@@ -199,6 +199,8 @@
 
 /datum/config_entry/flag/use_exp_restrictions_admin_bypass
 
+/datum/config_entry/flag/use_role_whitelist  //Use role whitelists?
+
 /datum/config_entry/string/server
 
 /datum/config_entry/string/banappeals

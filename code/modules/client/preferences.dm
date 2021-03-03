@@ -287,6 +287,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/ShowChoices(mob/user)
 	if(!user || !user.client)
 		return
+
+	if(CONFIG_GET(flag/use_role_whitelist))
+		user.client.set_job_whitelist_from_db()
+
 	update_preview_icon(current_tab != 2)
 	var/list/dat = list("<center>")
 
