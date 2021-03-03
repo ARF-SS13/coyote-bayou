@@ -120,7 +120,7 @@
 		if(istype(a, /mob/living/carbon/human))
 			var/mob/living/carbon/human/user = a
 			var/found = FALSE
-			for(var/slot in ALL_EQUIP_SLOTS - ALL_STORE_SLOTS)
+			for(var/slot in ALL_EQUIP_SLOTS - list("l_store", "r_store"))
 				if(user.vars[slot] == AM)
 					found = TRUE
 					break

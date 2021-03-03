@@ -27,7 +27,6 @@
 //A list of the variable names of all slots people can equip things in. This is used to massively reduce code complexity when checking all slots
 #define ALL_EQUIP_SLOTS list("w_uniform", "wear_suit", "back", "belt", "gloves", "shoes", "head", "wear_mask", "wear_neck", "ears", \
 "glasses", "wear_id", "l_store", "r_store", "s_store")
-#define ALL_STORE_SLOTS list("l_store", "r_store", "s_store") // used in crafting
 #define ALL_OUTFIT_SLOTS list("uniform", "suit", "back", "belt", "gloves", "shoes", "head", "mask", "neck", "ears", \
 "glasses", "id", "l_pocket", "r_pocket", "suit_store", "r_hand", "l_hand", "internals_slot")
 
