@@ -8723,6 +8723,13 @@
 	icon_state = "floordirtysolid"
 	},
 /area/f13/tunnel)
+"Dv" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/offduty,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "Dw" = (
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 9
@@ -10841,6 +10848,13 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"KS" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/offduty,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "KT" = (
 /obj/machinery/door/unpowered/wooddoor{
 	autoclose = 1;
@@ -12039,7 +12053,7 @@
 	},
 /area/f13/tunnel)
 "OF" = (
-/obj/item/clothing/head/helmet/knight/fluff/metal/reinforced,
+/obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowrustyfull"
 	},
@@ -66898,13 +66912,13 @@ NT
 NT
 NT
 Nr
+Dv
 wj
+Dv
 wj
+Dv
 wj
-wj
-wj
-wj
-wj
+Dv
 mP
 sU
 oM
@@ -67412,13 +67426,13 @@ eW
 NT
 NT
 Nr
+KS
 WD
+KS
 WD
+KS
 WD
-WD
-WD
-WD
-WD
+KS
 mP
 mP
 lQ

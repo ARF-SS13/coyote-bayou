@@ -91,6 +91,133 @@
 	if(foundrecord)
 		foundrecord.fields["rank"] = assignment
 
+/datum/datacore/proc/get_manifest_dr(monochrome, OOC)
+	var/list/command = list()
+	var/list/bos = list()
+	var/list/den = list()
+	var/list/leg = list()
+	var/list/ncr = list()
+	var/list/vault = list()
+	var/list/flw = list()
+	var/list/tribe = list()
+	var/list/khan = list()
+	var/list/was = list()
+	var/list/misc = list()
+	var/dat = {"
+	<head><style>
+		.manifest {border-collapse:collapse;}
+		.manifest td, th {border:1px solid [monochrome?"black":"#DEF; background-color:white; color:black"]; padding:.25em}
+		.manifest th {height: 2em; [monochrome?"border-top-width: 3px":"background-color: #48C; color:white"]}
+		.manifest tr.head th { [monochrome?"border-top-width: 1px":"background-color: #488;"] }
+		.manifest td:first-child {text-align:right}
+		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: #DEF"]}
+	</style></head>
+	<table class="manifest" width='350px'>
+	<tr class='head'><th>Name</th><th>Occupation</th></tr>
+	"}
+	var/even = 0
+	// sort mobs
+	for(var/datum/data/record/t in GLOB.data_core.general)
+		var/name = t.fields["name"]
+		var/rank = t.fields["rank"]
+		var/department = 0
+		if(rank in GLOB.command_positions)
+			command[name] = rank
+			department = 1
+		if(rank in GLOB.ncr_rangervet_positions)
+			command[name] = rank
+			department = 1
+		if(rank in GLOB.brotherhood_positions)
+			bos[name] = rank
+			department = 1
+		if(rank in GLOB.den_positions)
+			den[name] = rank
+			department = 1
+		if(rank in GLOB.legion_positions)
+			leg[name] = rank
+			department = 1
+		if(rank in GLOB.ncr_positions)
+			ncr[name] = rank
+			department = 1
+		if(rank in GLOB.followers_positions)
+			flw[name] = rank
+			department = 1
+		if(rank in GLOB.tribal_positions)
+			tribe[name] = rank
+			department = 1
+		if (rank == "Great Khan")
+			khan[name] = rank
+			department = 1
+		if(rank in GLOB.vault_positions)
+			vault[name] = rank
+			department = 1
+		if(rank in GLOB.wasteland_positions)
+			was[name] = rank
+			department = 1
+		if(!department && !(name in command))
+			misc[name] = rank
+	if(length(command))
+		dat += "<tr><th colspan=3>Leaders</th></tr>"
+		for(var/name in command)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[command[name]]</td></tr>"
+			even = !even
+	if(length(bos))
+		dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
+		for(var/name in bos)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
+			even = !even
+	if(length(den))
+		dat += "<tr><th colspan=3>Oasis</th></tr>"
+		for(var/name in den)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
+			even = !even
+	if(length(leg))
+		dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"
+		for(var/name in leg)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
+			even = !even
+	if(length(ncr))
+		dat += "<tr><th colspan=3>New California Republic</th></tr>"
+		for(var/name in ncr)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
+			even = !even
+	if(length(flw))
+		dat += "<tr><th colspan=3>Followers of the Apocalypse</th></tr>"
+		for(var/name in flw)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[flw[name]]</td></tr>"
+			even = !even
+	if(length(tribe))
+		dat += "<tr><th colspan=3>Wayfarer Tribe</th></tr>"
+		for(var/name in tribe)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[tribe[name]]</td></tr>"
+			even = !even
+	if(length(khan))
+		dat += "<tr><th colspan=3>Great Khans</th></tr>"
+		for(var/name in khan)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[khan[name]]</td></tr>"
+			even = !even
+	if(length(vault))
+		dat += "<tr><th colspan=3>Vault</th></tr>"
+		for(var/name in vault)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[vault[name]]</td></tr>"
+			even = !even
+	if(length(was))
+		dat += "<tr><th colspan=3>Wasteland</th></tr>"
+		for(var/name in was)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[was[name]]</td></tr>"
+			even = !even
+	// misc guys
+	if(length(misc))
+		dat += "<tr><th colspan=3>Miscellaneous</th></tr>"
+		for(var/name in misc)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[misc[name]]</td></tr>"
+			even = !even
+
+	dat += "</table>"
+	dat = replacetext(dat, "\n", "")
+	dat = replacetext(dat, "\t", "")
+	return dat
+
 /datum/datacore/proc/get_manifest_tg() //copypasted from tg, renamed to avoid namespace conflicts
 	var/list/manifest_out = list()
 	var/list/departments = list(

@@ -7,7 +7,7 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'> Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
 	if(!mob)
@@ -18,7 +18,7 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		return
 
 	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, "<span class='danger'> You have OOC muted.</span>")
+		to_chat(src, "<span class='danger'>You have OOC muted.</span>")
 		return
 	if(jobban_isbanned(mob, "OOC"))
 		to_chat(src, "<span class='danger'>You have been banned from OOC.</span>")
@@ -26,10 +26,10 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 
 	if(!holder)
 		if(!GLOB.looc_allowed)
-			to_chat(src, "<span class='danger'> LOOC is globally muted</span>")
+			to_chat(src, "<span class='danger'>LOOC is globally muted</span>")
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'> You cannot use OOC (muted).</span>")
+			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return

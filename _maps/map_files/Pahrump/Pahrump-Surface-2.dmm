@@ -2669,6 +2669,12 @@
 /obj/item/toner,
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"bVz" = (
+/obj/structure/simple_door/metal/store,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "bVJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/booth/single,
@@ -3331,12 +3337,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
-"cwr" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/f13{
-	icon_state = "whitebluechess"
-	},
-/area/f13/ncr)
 "cwB" = (
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
@@ -9039,6 +9039,12 @@
 	icon_state = "verticalinnermain3"
 	},
 /area/f13/wasteland)
+"gPT" = (
+/obj/structure/simple_door/metal/store,
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitebluechess"
+	},
+/area/f13/ncr)
 "gPV" = (
 /obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood{
@@ -10091,6 +10097,10 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
+"hyt" = (
+/obj/structure/simple_door/metal/store,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "hyG" = (
 /obj/item/reagent_containers/food/drinks/bottle/sunset,
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola{
@@ -10503,15 +10513,6 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"hSg" = (
-/obj/structure/simple_door/metal/store{
-	name = "Holding Facility";
-	req_one_access_txt = "121"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/ncr)
 "hSC" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -13447,6 +13448,20 @@
 	icon_state = "wasteland32"
 	},
 /area/f13/wasteland)
+"kcy" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/clothing/under/f13/shiny,
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/chaplain/nun,
+/obj/item/clothing/head/nun_hood,
+/obj/item/clothing/suit/chaplain/holidaypriest,
+/obj/item/storage/backpack/cultpack,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/clothing/shoes/f13/fancy,
+/obj/item/storage/box/matches,
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "kcB" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -14480,6 +14495,14 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"kPC" = (
+/obj/structure/barricade/bars,
+/obj/structure/decoration/rag,
+/obj/structure/table,
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
+/area/f13/ncr)
 "kPZ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -16710,20 +16733,6 @@
 	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland)
-"mDh" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/obj/item/clothing/under/f13/shiny,
-/obj/structure/closet/cabinet,
-/obj/item/clothing/suit/chaplain/nun,
-/obj/item/clothing/head/nun_hood,
-/obj/item/clothing/suit/chaplain/holidaypriest,
-/obj/item/storage/backpack/cultpack,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/clothing/shoes/f13/fancy,
-/obj/item/storage/box/matches,
-/turf/open/floor/f13/wood,
-/area/f13/caves)
 "mDr" = (
 /obj/machinery/trading_machine/armor,
 /turf/open/floor/f13/wood,
@@ -16802,6 +16811,15 @@
 /obj/item/instrument/trumpet,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"mHA" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Holding Facility";
+	req_access_txt = "121"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "mHS" = (
 /obj/machinery/vending/tool,
 /turf/open/floor/plasteel/barber{
@@ -20292,10 +20310,6 @@
 	icon_state = "verticaloutermain3"
 	},
 /area/f13/wasteland)
-"pqM" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "pqO" = (
 /obj/item/ammo_casing/c10mm/ap,
 /turf/open/indestructible/ground/outside/road{
@@ -23133,14 +23147,6 @@
 	icon_state = "verticalleftborderleft2top"
 	},
 /area/f13/city)
-"rzH" = (
-/obj/structure/rack,
-/obj/item/clothing/head/nun_hood,
-/obj/item/clothing/suit/chaplain/nun,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "rzN" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -25148,13 +25154,6 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
-"sYQ" = (
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
-/area/f13/ncr)
 "sYV" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -26088,6 +26087,14 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"tHB" = (
+/obj/structure/rack,
+/obj/item/clothing/head/nun_hood,
+/obj/item/clothing/suit/chaplain/nun,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "tIr" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -29455,10 +29462,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
-"wlj" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
 "wmJ" = (
 /obj/item/toy/beach_ball/holoball,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -33459,10 +33462,10 @@ xnt
 gJe
 pOM
 mnf
-sYQ
+kPC
 iut
 mnf
-sYQ
+kPC
 iut
 mnf
 uuI
@@ -34230,10 +34233,10 @@ pOM
 pOM
 xnt
 mnf
-sYQ
+kPC
 iut
 mAk
-sYQ
+kPC
 iut
 mnf
 uuI
@@ -35511,11 +35514,11 @@ mnf
 cjB
 mpE
 mpE
+mHA
 mpE
 mpE
 mpE
-mpE
-mpE
+mHA
 mpE
 mpE
 mpE
@@ -35958,7 +35961,7 @@ gcK
 gcK
 gcK
 gcK
-mDh
+kcy
 kjR
 kjR
 dau
@@ -36543,7 +36546,7 @@ ezX
 gxK
 fvD
 rgu
-mpE
+bVz
 mpE
 mpE
 kkz
@@ -37059,7 +37062,7 @@ mnf
 mnf
 mnf
 ezX
-hSg
+mHA
 mnf
 mnf
 mnf
@@ -39127,8 +39130,8 @@ fiB
 fiB
 fiB
 fiB
-wlj
-wlj
+hyt
+hyt
 fiB
 fiB
 eAD
@@ -40153,7 +40156,7 @@ rgu
 bEo
 rgu
 rgu
-cwr
+gPT
 nWO
 nWO
 nWO
@@ -40394,7 +40397,7 @@ fiB
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 inI
@@ -40653,7 +40656,7 @@ dyg
 sPO
 sPO
 sPO
-pqM
+rZK
 cas
 oBh
 oBh
@@ -40665,7 +40668,7 @@ fiB
 fiB
 fiB
 fiB
-cwr
+gPT
 fiB
 fiB
 aIh
@@ -41438,7 +41441,7 @@ scN
 scN
 scN
 oBh
-wlj
+hyt
 nWO
 nWO
 nWO
@@ -41952,7 +41955,7 @@ scN
 scN
 scN
 oBh
-wlj
+hyt
 nWO
 nWO
 nWO
@@ -42709,7 +42712,7 @@ aKN
 sPO
 sPO
 sPO
-pqM
+rZK
 cas
 xgg
 oBh
@@ -42720,7 +42723,7 @@ evR
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 fiB
@@ -42964,7 +42967,7 @@ fiB
 fiB
 fiB
 fiB
-pqM
+rZK
 fiB
 fiB
 fQk
@@ -43237,7 +43240,7 @@ dms
 dms
 dms
 sPO
-pqM
+rZK
 nWO
 nWO
 nWO
@@ -43745,7 +43748,7 @@ xgg
 fCN
 oBh
 cas
-pqM
+rZK
 sPO
 dms
 jGV
@@ -44267,8 +44270,8 @@ vAb
 fiB
 fiB
 fiB
-wlj
-wlj
+hyt
+hyt
 fiB
 fiB
 qpf
@@ -69466,7 +69469,7 @@ fyf
 gts
 qPp
 qIv
-rzH
+tHB
 dsh
 uVE
 oXe
