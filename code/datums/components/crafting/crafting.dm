@@ -114,10 +114,18 @@
 
 	if(!isturf(a.loc))
 		return
-
 	for(var/atom/movable/AM in range(radius_range, a))
-		if(AM.flags_1 & HOLOGRAM_1)
+		if(AM.flags_1 & HOLOGRAM_1 || LAZYISIN(blacklist, AM.type))
 			continue
+		if(istype(a, /mob/living/carbon/human))
+			var/mob/living/carbon/human/user = a
+			var/found = FALSE
+			for(var/slot in ALL_EQUIP_SLOTS - ALL_STORE_SLOTS)
+				if(user.vars[slot] == AM)
+					found = TRUE
+					break
+			if(found)
+				continue
 		. += AM
 
 /datum/component/personal_crafting/proc/get_surroundings(atom/a)
