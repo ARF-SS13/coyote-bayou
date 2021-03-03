@@ -460,8 +460,6 @@
 			LAZYADD(caught_string, "Cultist")
 		if(is_devil(target))
 			LAZYADD(caught_string, "Devil")
-		if(target.mind.has_antag_datum(/datum/antagonist/gang))
-			LAZYADD(caught_string, "Gangster")
 		if(target.mind.has_antag_datum(/datum/antagonist/rev/head))
 			LAZYADD(caught_string, "Head Revolutionary")
 		if(target.mind.has_antag_datum(/datum/antagonist/rev))
