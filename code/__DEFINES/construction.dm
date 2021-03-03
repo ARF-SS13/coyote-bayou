@@ -98,6 +98,12 @@
 #define CAT_ICE	"Frozen"
 #define CAT_MEDICAL "Medical"
 #define CAT_BOTTLE "Bottling"
+#define CAT_GENCLOTHES "General Clothing"
+#define CAT_ARMOR "Armor"
+#define CAT_BELTS	"Belts"
+#define CAT_WASTELAND	"Wasteland Clothing"
+#define CAT_SHOES "Shoes"
+#define CAT_MISCCLOTHING "Misc Clothing"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

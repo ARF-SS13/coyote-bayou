@@ -736,7 +736,8 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
-	r_pocket = /obj/item/binoculars
+	r_pocket =		/obj/item/binoculars
+	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \
@@ -781,6 +782,7 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	r_pocket = 		/obj/item/binoculars
+	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \
