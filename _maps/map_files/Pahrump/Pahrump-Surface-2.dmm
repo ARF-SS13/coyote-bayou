@@ -1127,6 +1127,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/smelling_salts/wayfarer,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "aOE" = (
@@ -1393,6 +1394,11 @@
 /obj/structure/bed/dogbed,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aXV" = (
+/obj/structure/table/wood,
+/obj/item/smelling_salts,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "aYk" = (
 /obj/structure/sink{
 	pixel_y = 15
@@ -93887,7 +93893,7 @@ gcK
 gcK
 hom
 gsV
-tHw
+aXV
 xNm
 hom
 gcK
