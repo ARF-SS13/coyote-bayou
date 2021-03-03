@@ -6359,14 +6359,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"aus" = (
-/obj/structure/rack,
-/obj/item/clothing/head/nun_hood,
-/obj/item/clothing/suit/nun,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "aut" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/muzzle,
@@ -19386,20 +19378,6 @@
 /obj/structure/noticeboard,
 /turf/closed/wall/f13/wood/house,
 /area/f13/bar)
-"bnl" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/obj/item/clothing/under/f13/shiny,
-/obj/structure/closet/cabinet,
-/obj/item/clothing/suit/nun,
-/obj/item/clothing/head/nun_hood,
-/obj/item/clothing/suit/holidaypriest,
-/obj/item/storage/backpack/cultpack,
-/obj/item/storage/fancy/candle_box,
-/obj/item/storage/fancy/candle_box,
-/obj/item/clothing/shoes/f13/fancy,
-/obj/item/storage/box/matches,
-/turf/open/floor/f13/wood,
-/area/f13/caves)
 "bnm" = (
 /obj/structure/barricade/bars,
 /obj/effect/decal/cleanable/generic,
@@ -24940,12 +24918,6 @@
 /area/f13/ncr)
 "bHK" = (
 /turf/open/floor/plasteel/floorgrime,
-/area/f13/tunnel)
-"bHL" = (
-/obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/yellow{
-	icon_state = "yellowrustyfull"
-	},
 /area/f13/tunnel)
 "bHN" = (
 /obj/structure/table/glass,
@@ -34925,6 +34897,14 @@
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
+"eZO" = (
+/obj/structure/rack,
+/obj/item/clothing/head/nun_hood,
+/obj/item/clothing/suit/chaplain/nun,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "faD" = (
 /obj/structure/table/wood/poker,
 /obj/item/chair/stool/retro,
@@ -46641,6 +46621,20 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/city)
+"wob" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/clothing/under/f13/shiny,
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/chaplain/nun,
+/obj/item/clothing/head/nun_hood,
+/obj/item/clothing/suit/chaplain/holidaypriest,
+/obj/item/storage/backpack/cultpack,
+/obj/item/storage/fancy/candle_box,
+/obj/item/storage/fancy/candle_box,
+/obj/item/clothing/shoes/f13/fancy,
+/obj/item/storage/box/matches,
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "woj" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -46769,6 +46763,12 @@
 /obj/item/storage/box/drinkingglasses,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
+"wzW" = (
+/obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
+/turf/open/floor/plasteel/f13/vault_floor/yellow{
+	icon_state = "yellowrustyfull"
+	},
+/area/f13/tunnel)
 "wAf" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/f13{
@@ -51474,7 +51474,7 @@ aae
 aae
 aae
 aae
-bnl
+wob
 aGd
 aGd
 bRv
@@ -84982,7 +84982,7 @@ aat
 agk
 atn
 atN
-aus
+eZO
 auV
 avl
 avG
@@ -154719,7 +154719,7 @@ aae
 aae
 aae
 bsC
-bHL
+wzW
 wxX
 wxX
 nyY

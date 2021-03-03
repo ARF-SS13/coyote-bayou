@@ -595,7 +595,8 @@ Rear Echelon
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/storage/survivalkit_aid=1)
+		/obj/item/storage/survivalkit_aid=1, \
+		/obj/item/book/granter/trait/chemistry = 1)
 
 //Guard duty
 /datum/outfit/loadout/rearstatic
@@ -621,7 +622,7 @@ Trooper
 	exp_requirements = 12
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_NCR_OFF_DUTY
-	outfit = /datum/outfit/job/ncr/f13trooper
+	outfit = /datum/outfit/job/ncr/f13ncroffduty
 
 /datum/outfit/job/ncr/f13ncroffduty
 	name = "NCR Off-Duty"

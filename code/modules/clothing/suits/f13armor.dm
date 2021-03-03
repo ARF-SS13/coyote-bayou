@@ -17,14 +17,13 @@
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed
 */
-/obj/item/clothing/suit/armor/f13
-
 //Leather and metal
 /obj/item/clothing/suit/armor/f13/leather_jacket
 	name = "leather jacket"
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
 	desc = "(II) A black, heavy leather jacket."
+	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/leather_jacket/combat
@@ -53,6 +52,7 @@
 	desc = "(III) Separate armor parts you can wear over the clothing to get the most basic protection from the dangers of wasteland.<br>It is unable to reflect laser beams and probably won't shield you from a random bullet, but it sure is better than going into the battle without any armor at all."
 	icon_state = "armorkit"
 	item_state = "armorkit"
+	body_parts_covered = CHEST|GROIN
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	strip_delay = 30
 
@@ -78,6 +78,7 @@
 	desc = "(III) Your basic all leather apparel. Finely crafted from tanned brahmin hide."
 	icon_state = "leather_armor"
 	item_state = "leather_armor"
+	body_parts_covered = CHEST|GROIN
 	armor = list("tier" = 3, "energy" = 25, "bomb" = 32, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 35)
 	strip_delay = 40
 
@@ -93,8 +94,9 @@
 	desc = "(IV) A set of plates formed together to form a crude chestplate."
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
+	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("tier" = 4, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
-	slowdown = 0.05
+	slowdown = 0.25
 	strip_delay = 10
 
 /obj/item/clothing/suit/armor/fluff/metalarmor/Initialize()
@@ -111,6 +113,7 @@
 	desc = "(V) A set of polished plates formed together to provide effective protection."
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("tier" = 5, "energy" = 50, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.05
 	strip_delay = 10
@@ -121,6 +124,7 @@
 	desc = "(V) An old military grade pre war combat armor."
 	icon_state = "combat_armor"
 	item_state = "combat_armor"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/suit/armor/f13/combat/dark
@@ -155,6 +159,7 @@
 	desc = "(V) A custom version of the pre-war combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
 	icon_state = "armoralt"
 	item_state = "armoralt"
+	body_parts_covered = CHEST|GROIN
 	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/chinese
@@ -386,6 +391,7 @@
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor2"
 	item_state = "advpowerarmor2"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("linemelee" = 400, "linebullet" = 400, "linelaser" = 400, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2/wbos
@@ -420,15 +426,18 @@
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
 	icon = 'icons/fallout/clothing/suits.dmi'
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)
 
 /obj/item/clothing/suit/armor/f13/chitinarmor
 	name = "insect chitin armor"
 	desc = "(IV) A set of light armor made of insect chitin. Tough and light, it provides some moderate protection from trauma while allowing the user to remain mobile and protected from the elements."
 	icon_state = "insect_armor"
 	item_state = "insect_armor"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)
 
 //Various
 
@@ -455,17 +464,12 @@
 	desc = "(VI) A combination of what seems to be raider metal armor with a jerry-rigged flame-exhaust system and ceramic plating."
 	icon_state = "sulphitearmor"
 	item_state = "sulphitearmor"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
-
-/obj/item/clothing/suit/armor/f13/battlecoat
-	name = "battlecoat"
-	desc = "(II) A padded leather coat with gold buttons. For style rather then protection."
-	icon_state = "maxson_battlecoat"
-	item_state = "maxson_battlecoat"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/toggle/armor
 	allowed = null
+	body_parts_covered = CHEST
 	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN
@@ -475,6 +479,7 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	armor = list("tier" = 2, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	allowed = list(/obj/item/gun)
 	togglename = "collar"
 
 /obj/item/clothing/suit/armor/f13/vaquero
@@ -483,6 +488,7 @@
 	icon_state = "vaquero"
 	item_state = "vaquero"
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/f13/slam
@@ -500,9 +506,11 @@
 	desc = "(III) A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future."
 	icon_state = "battlecoat"
 	item_state = "battlecoat"
+	body_parts_covered = CHEST
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 30)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
+	allowed = list(/obj/item/gun)
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault
 	name = "command coat"
@@ -564,6 +572,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A set of well maintained though still quite clearly worn armor consisting of a metal vest, a Centurion's shoulder pad, a pair of Centurion's arm guards and an incredibly large, perhaps even over-sized fur cloak. Upon basic examination, one can see that every piece of metal bar the buckles on the leather straps and whatever scratches and blemishes are yet to be retouched is masterfully decorated with silver, in complete contrast to the blackness of the cloak. Though only upon closer examination can the intricacies of the armor set be observed. The most obvious piece is the metal vest which has clearly been engraved, mostly decorationally besides the name 'Iudex Flammae' near the top. Though the engravings provide no tactical advantage whatsoever, the sharp geometric shapes accompanied by smooth, tastefully placed curves would catch the eye of even the most skeptical engraving enjoyer. As for the shoulder pad and arm guards, they hold the same engravings, and though they are recognizable as salvage, they still look incredibly beautiful yet simultaneously sturdy. Not much of the metal seems to exist on the back though that is only due to the fact that the incredibly thick, durable and flexible bear pelt that covers it would definitely provide ample protection. The pelt itself is absolutely covered in thick, almost jet black fur. One can tell from touch that the skin underneath is about as sturdy as skin gets. The pelt hangs across the wearer's back, held up by the neck and shoulders. This armor was competently made, and it shows."
 	icon_state = "exilecust0m"
 	item_state = "exilecust0m"
+	allowed = list(/obj/item/gun,/obj/item/claymore,/obj/item/throwing_star/spear,/obj/item/restraints/legcuffs/bola,/obj/item/twohanded)
 	var/adjusted = FALSE
 
 /obj/item/clothing/suit/armor/f13/exile/cust0m/verb/armor_adjust()
@@ -608,6 +617,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "(III) A thicker than average duster worn by rangers out in the field. This one has been dyed black and appears to be a little more heavily armoured."
 	icon_state = "duster_recon_custom"
 	item_state = "duster_recon_custom"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = -0.1
 
@@ -622,14 +632,16 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "(III) A resistant, tan greatcoat, typically worn by pre-War Generals."
 	icon_state = "soldier"
 	item_state = "soldier"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-
-
-
-
-
-
-
+	allowed = list(/obj/item/gun,
+	/obj/item/melee/classic_baton/telescopic,
+	/obj/item/kitchen/knife/combat,
+	/obj/item/clothing/glasses,
+	/obj/item/assembly/flash/handheld,
+	/obj/item/restraints/handcuffs,
+	/obj/item/flashlight,
+	/obj/item/grenade)
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

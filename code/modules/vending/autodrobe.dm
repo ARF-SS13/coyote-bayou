@@ -135,7 +135,6 @@
 					/obj/item/clothing/under/costume/roman = 1,
 					/obj/item/clothing/shoes/roman = 1,
 					/obj/item/shield/riot/roman/fake = 1,
-					/obj/item/skub = 1,
 					/obj/item/clothing/under/costume/lobster = 1,
 					/obj/item/clothing/head/lobsterhat = 1,
 					/obj/item/clothing/head/drfreezehat = 1,
