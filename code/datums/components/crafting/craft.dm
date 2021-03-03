@@ -49,7 +49,14 @@
 					CAT_SPAGHETTI,
 				),
 				CAT_DRINK = CAT_NONE,
-				CAT_CLOTHING = CAT_NONE,
+				CAT_CLOTHING = list(
+					CAT_GENCLOTHING,
+					CAT_SHOES,
+					CAT_MISCCLOTHING,
+					CAT_ARMOR,
+					CAT_WASTELAND,
+					CAT_BELTS
+				),
 			)
 
 	var/cur_category = CAT_NONE
