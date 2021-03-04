@@ -505,7 +505,9 @@
 		/datum/reagent/consumable/limejuice,
 		/datum/reagent/consumable/tomatojuice,
 		/datum/reagent/consumable/lemonjuice,
-		/datum/reagent/consumable/menthol
+		/datum/reagent/consumable/menthol,
+		/datum/reagent/consumable/sunset,
+		/datum/reagent/consumable/nuka_cola
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
