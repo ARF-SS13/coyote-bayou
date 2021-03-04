@@ -779,7 +779,7 @@ Off-Duty
 */
 
 /datum/job/bos/f13offdutybos
-	title = "Off-Duty"
+	title = "BoS Off-Duty"
 	flag = F13OFFDUTYBOS
 	faction = "BOS"
 	total_positions = 8
