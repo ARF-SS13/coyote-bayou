@@ -55,16 +55,21 @@
 	add_movespeed_modifier((m_intent == MOVE_INTENT_WALK)? /datum/movespeed_modifier/config_walk_run/walk : /datum/movespeed_modifier/config_walk_run/run)
 
 /mob/living/proc/update_turf_movespeed(turf/open/T)
-	if(isopenturf(T))
+	if(isopenturf(T) && !HAS_TRAIT(src, TRAIT_HARD_YARDS))
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown, multiplicative_slowdown = T.slowdown)
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
 /mob/living/proc/update_pull_movespeed()
-	if(pulling && isliving(pulling))
-		var/mob/living/L = pulling
-		if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
-			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
+	if(pulling)
+		var/should_slow = FALSE
+		if(isliving(pulling))
+			var/mob/living/L = pulling
+			should_slow = (drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE) ? PULL_PRONE_SLOWDOWN : FALSE
+		else
+			should_slow = pulling.drag_delay
+		if(should_slow)
+			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = should_slow)
 			return
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
 

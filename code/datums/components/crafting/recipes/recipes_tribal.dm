@@ -16,6 +16,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 6)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/chitinarmor
 	name = "Insect Chitin Armor"
@@ -25,6 +26,7 @@
 				/obj/item/stack/sheet/sinew = 4,
 				/obj/item/stack/sheet/cloth = 4)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
@@ -49,6 +51,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/skullhelm
 	name = "Skull Helmet"
@@ -56,6 +59,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/bonedagger
 	name = "bone dagger"
@@ -163,6 +167,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/deathclaw = 4)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/tatteredredcloak
 	name = "Tattered red cloak"
@@ -172,6 +177,7 @@
 				/obj/item/stack/sheet/sinew = 1,
 				/obj/item/stack/sheet/cloth = 2)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /*
 /datum/crafting_recipe/talisman
@@ -191,6 +197,7 @@
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
 	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
 
 /datum/crafting_recipe/cloakdark
 	name = "Dark Cloak"
@@ -199,6 +206,7 @@
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
 	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
 
 /datum/crafting_recipe/bonedie
 	name = "Carve Bone Die"
@@ -245,6 +253,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 6)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/tribaloutfit
 	name = "Male Tribal Outfit"
@@ -253,6 +262,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
 
 /datum/crafting_recipe/tribaloutfitfemale
 	name = "Female Tribal Outfit"
@@ -261,6 +271,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
 
 /*
 /datum/crafting_recipe/warmace

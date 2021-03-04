@@ -142,6 +142,7 @@
 	else
 		item_overlay.color = "#00ff00"
 
+	cut_overlay(object_overlay)
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
 

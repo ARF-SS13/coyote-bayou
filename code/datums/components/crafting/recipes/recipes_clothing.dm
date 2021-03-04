@@ -5,6 +5,7 @@
 	tools = list(/obj/item/nullrod/egyptian)
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/mummy/body
 	name = "Mummification Bandages (Body)"
@@ -17,6 +18,7 @@
 	time = 10
 	reqs = list(/obj/item/organ/tail/lizard = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/lizardhat_alternate
@@ -25,6 +27,7 @@
 	time = 10
 	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/kittyears
@@ -34,6 +37,7 @@
 	reqs = list(/obj/item/organ/tail/cat = 1,
 				/obj/item/organ/ears/cat = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/papermask
@@ -42,6 +46,7 @@
 	time = 10
 	reqs = list(/obj/item/paper = 20)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/balaclavabreath
 	name = "Breathaclava"
@@ -50,6 +55,7 @@
 	reqs = list(/obj/item/clothing/mask/balaclava = 1,
 				/obj/item/clothing/mask/breath = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 
 
@@ -62,6 +68,7 @@
 				/obj/item/stack/sticky_tape = 2,
 				/obj/item/stack/sheet/leather = 2)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/armwrapsplusone
 	name = "Armwraps of Mighty Fists"
@@ -76,6 +83,7 @@
 				/obj/item/stack/sheet/sinew = 1,
 				/obj/item/stack/sheet/mineral/gold = 50)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 ////////
@@ -93,6 +101,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunsecremoval
@@ -102,6 +111,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunmed
@@ -115,6 +125,7 @@
 				/obj/item/clothing/glasses/sunglasses = 1,
 				/obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/hudsunmedremoval
@@ -124,6 +135,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/health/sunglasses = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/beergoggles
@@ -135,6 +147,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/beergogglesremoval
@@ -144,6 +157,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/diagnostic_sunglasses
@@ -157,6 +171,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/diagnostic_sunglasses_removal
@@ -166,6 +181,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/sunglasses = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /* //Kevinz doesn't want it as a recipe for now, leaving it in if anything ever changes to let it in
@@ -178,6 +194,7 @@
 				  /obj/item/clothing/glasses/sunglasses = 1,
 				  /obj/item/stack/cable_coil = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 */
 
 // Eyepatch Glasses
@@ -192,6 +209,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/secpatch_removal
@@ -201,6 +219,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/medpatch
@@ -213,6 +232,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/health = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/medpatch_removal
@@ -222,6 +242,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/health/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/diagpatch
@@ -234,6 +255,7 @@
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/diagpatch_removal
@@ -243,6 +265,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/mesonpatch
@@ -255,6 +278,7 @@
 	reqs = list(/obj/item/clothing/glasses/meson = 1,
 				/obj/item/clothing/glasses/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/mesonpatch_removal
@@ -264,6 +288,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/meson/eyepatch = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/ghostsheet
@@ -273,6 +298,7 @@
 	tools = list(TOOL_WIRECUTTER)
 	reqs = list(/obj/item/bedsheet = 1)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/briefcase
 	name = "Hand made Briefcase"
@@ -283,6 +309,7 @@
 				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 5)
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/medolier
 	name = "Medolier"
@@ -292,6 +319,7 @@
 	/obj/item/stack/sheet/plastic = 4)
 	time = 30
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/twinsheath
 	name = "Twin Sword Sheath"
@@ -301,6 +329,7 @@
 	tools = list(TOOL_WIRECUTTER)
 	time = 70
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 
 /datum/crafting_recipe/durathread_reinforcement_kit
@@ -310,6 +339,7 @@
 	tools = list(/obj/item/stack/sheet/mineral/titanium, TOOL_WIRECUTTER) // tough needle for a tough fabric
 	time = 40
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/durathread_duffelbag
 	name = "Durathread Dufflebag"
@@ -318,6 +348,7 @@
 				/obj/item/stack/sheet/leather = 3)
 	time = 70
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_toolbelt
@@ -327,6 +358,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 30
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_bandolier
@@ -336,6 +368,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 50
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_helmet
@@ -345,6 +378,7 @@
 				/obj/item/stack/sheet/leather = 2)
 	time = 30
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_vest
@@ -354,6 +388,7 @@
 				/obj/item/stack/sheet/leather = 3)
 	time = 50
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/durathread_wintercoat
@@ -363,6 +398,7 @@
 				/obj/item/stack/sheet/leather = 10)
 	time = 70
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 /datum/crafting_recipe/wintercoat_cosmic
@@ -372,6 +408,7 @@
 				/obj/item/bedsheet/cosmos = 1)
 	time = 60
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
 
@@ -382,6 +419,7 @@
 				/obj/item/stack/cable_coil = 10)
 	time = 100 //Takes awhile to put all the garlics on the coil and knot it.
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/gripperoffbrand
 	name = "Improvised Gripper Gloves"
@@ -393,6 +431,7 @@
 	)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 	tools = list(TOOL_WIRECUTTER)
 	time = 20
 	always_availible = FALSE
