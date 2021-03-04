@@ -808,7 +808,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	qdel(query_get_notes)
 	//regardless of above, make sure their last note is not from us, as no point in repeating the same note over and over.
 	query_get_notes = SSdbcore.NewQuery(
-		"SELECT adminckey FROM [format_table_name("messages")] WHERE targetckey = :ckey AND deleted = 0 AND expire_timestamp > NOW() ORDER BY timestamp DESC LIMIT 1",
+		"SELECT adminckey FROM [format_table_name("messages")] WHERE targetckey = :targetckey AND deleted = 0 AND expire_timestamp > NOW() ORDER BY timestamp DESC LIMIT 1",
 		list("targetckey" = ckey)
 	)
 	if(!query_get_notes.Execute())

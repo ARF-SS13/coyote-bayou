@@ -199,6 +199,8 @@
 
 /datum/config_entry/flag/use_exp_restrictions_admin_bypass
 
+/datum/config_entry/flag/use_role_whitelist  //Use role whitelists?
+
 /datum/config_entry/string/server
 
 /datum/config_entry/string/banappeals
@@ -219,7 +221,7 @@
 	config_entry_value = "https://discord.gg/NGpP36m"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/Superballs69/Desert-Rose-Rebase"
+	config_entry_value = "https://github.com/DesertRose2/desertrose"
 
 /datum/config_entry/string/roundstatsurl
 

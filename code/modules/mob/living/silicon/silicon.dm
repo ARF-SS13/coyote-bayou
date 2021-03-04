@@ -404,7 +404,7 @@
 
 	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
 
-	dat += GLOB.data_core.get_manifest()
+	dat += GLOB.data_core.get_manifest_dr()
 	dat += "</body></html>"
 
 	src << browse(dat, "window=airoster")

@@ -35,16 +35,25 @@ OOC_DURING_ROUND
 RUN_DELAY 1.8
 WALK_DELAY 2.8
 
+## This is subtracted from the run speed to get the final sprint speed.
+SPRINT_SPEED_INCREASE 0.9
+## Size of sprint buffer, in tiles.
+SPRINT_BUFFER_MAX 16
+## Number of sprint buffer tiles regained per second.
+SPRINT_BUFFER_REGEN_PER_DS 0.08
+## Cost in stamina per tile sprinted.
+SPRINT_STAMINA_COST 3
+
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
 ## This means if you put /mob 0 on the last entry, it will null out all changes, while if you put /mob as the first entry and
 ## /mob/living/carbon/human on the last entry, the last entry will override the first.
-MULTIPLICATIVE_MOVESPEED /mob/living/carbon/human 1
+##MULTIPLICATIVE_MOVESPEED /mob/living/carbon/human 1
 ##MULTIPLICATIVE_MOVESPEED /mob/living/silicon/robot 0
 ##MULTIPLICATIVE_MOVESPEED /mob/living/carbon/monkey 0
 ##MULTIPLICATIVE_MOVESPEED /mob/living/carbon/alien 0
 ##MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal/slime 0
-MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 1
+##MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 1
 
 
 ## NAMES ###

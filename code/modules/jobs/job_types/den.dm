@@ -517,7 +517,7 @@ Mayor
 	head = /obj/item/clothing/head/bowler
 	mask = /obj/item/clothing/mask/fakemoustache
 	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/fluff/westender
+	suit = /obj/item/clothing/suit/f13/westender
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/f13/fancy
 

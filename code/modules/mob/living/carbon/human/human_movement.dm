@@ -18,11 +18,6 @@
 		. -= SSI.config_entry_value
 	if(m_intent == MOVE_INTENT_WALK && HAS_TRAIT(src, TRAIT_SPEEDY_STEP))
 		. -= 1.5
-	if(isopenturf(loc) && !is_flying() && HAS_TRAIT(src, TRAIT_HARD_YARDS)) //check the turf, checks if you're flying, and if you have the trait
-		var/turf/open/T = loc //locate your turf...
-		. += T.slowdown * 0.5 //apply your slowdown
-	if(pulling?.drag_delay)
-		. += pulling.drag_delay
 
 /mob/living/carbon/human/slip(knockdown_amount, obj/O, lube)
 	if(HAS_TRAIT(src, TRAIT_NOSLIPALL))

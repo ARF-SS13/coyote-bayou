@@ -298,7 +298,7 @@
 	name = "knight armor spawner"
 	items = list(
 				/obj/item/clothing/suit/armor/f13/metalarmor,
-				/obj/item/clothing/head/helmet/knight/fluff/metal
+				/obj/item/clothing/head/helmet/knight/f13/metal
 				)
 
 /obj/effect/spawner/bundle/f13/armor/metal

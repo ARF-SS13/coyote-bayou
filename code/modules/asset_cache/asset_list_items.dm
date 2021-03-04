@@ -504,11 +504,11 @@
 					continue
 				var/c = initial(I.color)
 				var/genColor = FALSE
-				var/icon_string = "[sanitize_filename(replacetext(icon_file, ".dmi", ""))]"
-				if(sprites[icon_string]) // save us some work generating the icon if we already have it
+				var/icon_string = "[sanitize_filename(replacetext("[icon_file]", ".dmi", ""))]-[icon_state]"
+				if(icon_string in sprites) // save us some work generating the icon if we already have it
 					continue
 				if (!isnull(c) && uppertext(c) != "#FFFFFF" && uppertext(c) != "#FFFFFFFF")
-					if(sprites["[icon_string]-[c]"]) // save us an expensive icon.Blend() operation
+					if("[icon_string]-[c]" in sprites) // save us an expensive icon.Blend() operation
 						continue
 					genColor = TRUE
 				var/icon/Ic = icon(icon_file, icon_state, SOUTH)
