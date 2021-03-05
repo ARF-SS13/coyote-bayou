@@ -26,6 +26,7 @@
 	design_ids = list("secdata", "med_data", "prisonmanage", "vendor", "automated_announcement")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1250)
 
+/*
 /datum/techweb_node/telecomms
 	id = "telecomms"
 	display_name = "Telecommunications Technology"
@@ -34,6 +35,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 	design_ids = list("s-receiver", "s-bus", "s-broadcaster", "s-processor", "s-hub", "s-server", "s-relay", "comm_monitor", "comm_server",
 	"s-ansible", "s-filter", "s-amplifier", "ntnet_relay", "s-treatment", "s-analyzer", "s-crystal", "s-transmitter", "message_monitor")
+*/
 
 /datum/techweb_node/integrated_HUDs
 	id = "integrated_HUDs"
@@ -43,6 +45,7 @@
 	design_ids = list("health_hud", "security_hud", "diagnostic_hud", "scigoggles", "health_hud_prescription", "security_hud_prescription", "diagnostic_hud_prescription")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
 
+/*
 /datum/techweb_node/NVGtech
 	id = "NVGtech"
 	display_name = "Night Vision Technology"
@@ -50,6 +53,7 @@
 	prereq_ids = list("integrated_HUDs", "adv_engi", "emp_adv")
 	design_ids = list("health_hud_night", "security_hud_night", "diagnostic_hud_night", "night_visision_goggles", "nvgmesons", "night_visision_goggles_glasses")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+*/
 
 /datum/techweb_node/computer_board_gaming
 	id = "computer_board_gaming"

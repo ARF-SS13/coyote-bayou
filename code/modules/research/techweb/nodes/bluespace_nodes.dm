@@ -2,36 +2,37 @@
 /////////////////////////Bluespace tech/////////////////////////
 /datum/techweb_node/bluespace_basic //Bluespace-memery
 	id = "bluespace_basic"
-	display_name = "Basic Bluespace Theory"
-	description = "Basic studies into the mysterious alternate dimension known as bluespace."
+	display_name = "Basic Quantum Theory"
+	description = "Basic studies into the mysterious realm known as Quantum Theory."
 	prereq_ids = list("base", "datatheory")
 	design_ids = list("beacon", "xenobioconsole", "telesci_gps", "xenobio_monkeys")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/practical_bluespace
 	id = "practical_bluespace"
-	display_name = "Applied Bluespace Research"
-	description = "Using bluespace to make things faster and better."
+	display_name = "Applied Quantum Research"
+	description = "Using quantum technology to make things faster and better."
 	prereq_ids = list("bluespace_basic", "engineering")
-	design_ids = list("bs_rped","biobag_holding","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "bluespacesmartdart", "xenobio_slimebasic", "bluespace_tray", "bluespace_carrier")
+	design_ids = list("bs_rped", "bluespacebeaker", "bluespacesyringe", "phasic_scanning", "xenobio_slimebasic")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 
 /datum/techweb_node/adv_bluespace
 	id = "adv_bluespace"
-	display_name = "Advanced Bluespace Research"
-	description = "Deeper understanding of how the Bluespace dimension works"
+	display_name = "Advanced Quantum Research"
+	description = "Deeper understanding of how the Quantum Theory works"
 	prereq_ids = list("practical_bluespace", "high_efficiency")
 	design_ids = list("bluespace_matter_bin", "femto_mani", "triphasic_scanning", "bluespace_crystal", "xenobio_slimeadv")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 
 /datum/techweb_node/bluespace_power
 	id = "bluespace_power"
-	display_name = "Bluespace Power Technology"
+	display_name = "Quantum Power Technology"
 	description = "Even more powerful.. power!"
 	prereq_ids = list("adv_power", "adv_bluespace")
 	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
+/*8
 /datum/techweb_node/bluespace_holding
 	id = "bluespace_holding"
 	display_name = "Bluespace Pockets"
@@ -63,8 +64,11 @@
 	prereq_ids = list("bluespace_warping", "syndicate_basic")
 	design_ids = list("desynchronizer")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+*/
 
 /////////////////////////shuttle tech/////////////////////////
+
+/*
 /datum/techweb_node/basic_shuttle_tech
 	id = "basic_shuttle"
 	display_name = "Basic Shuttle Research"
@@ -96,3 +100,4 @@
 	prereq_ids = list("shuttle_route_upgrade_hyper", "alientech")
 	design_ids = list("disk_shuttle_route_void", "engine_void")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12500)
+*/
