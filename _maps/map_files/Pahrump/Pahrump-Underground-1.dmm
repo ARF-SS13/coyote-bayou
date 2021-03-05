@@ -6060,13 +6060,13 @@
 	},
 /area/f13/clinic)
 "tO" = (
-/obj/machinery/door/airlock/medical{
-	id_tag = admindoor;
-	name = "adminroom"
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "fadmin";
 	name = "Follower Admin shutters"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
