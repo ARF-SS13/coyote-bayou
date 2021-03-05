@@ -557,7 +557,7 @@
 	name = "Electron Charge Pack"
 	id = "ecp"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/ironL = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000)
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
