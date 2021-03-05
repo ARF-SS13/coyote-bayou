@@ -86,6 +86,12 @@
 	item_state = "waistcoat"
 	minimize_when_attached = FALSE
 
+/obj/item/clothing/accessory/waistcoat/sheepskin
+	name = "sheepskin vest"
+	desc = "A warm, homemade, bighorner skin vest."
+	icon_state = "sheepskin_vest"
+	item_state = "sheepskin_vest"
+
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
 	desc = "The best part of a maid costume."
