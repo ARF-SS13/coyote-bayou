@@ -17,7 +17,8 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
-	attack_speed = CLICK_CD_RANGE
+	attack_speed = CLICK_CD_MELEE
+	var/ranged_attack_speed = CLICK_CD_RANGE
 
 	var/fire_sound = "gunshot"
 	var/suppressed = null					//whether or not a message is displayed when fired
@@ -206,6 +207,16 @@
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 
+/obj/item/gun/attack(mob/living/M, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(attack_speed)
+
+/obj/item/gun/attack_obj(obj/O, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(attack_speed)
+
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
 	if(!CheckAttackCooldown(user, target))
@@ -260,7 +271,7 @@
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
 		return
 
-	user.DelayNextAction()
+	user.DelayNextAction(ranged_attack_speed)
 
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
