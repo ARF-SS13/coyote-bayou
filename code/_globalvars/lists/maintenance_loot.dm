@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 	/obj/item/clothing/glasses/sunglasses/big = 5,
 	/obj/item/clothing/glasses/sunglasses = 5,
 	/obj/item/clothing/glasses/eyepatch = 5,
-	/obj/item/clothing/head/helmet/knight/fluff/rider = 5,
+	/obj/item/clothing/head/helmet/knight/f13/rider = 5,
 	/obj/item/clothing/shoes/f13/cowboy = 5,
 	/obj/item/clothing/shoes/f13/explorer = 5,
 	/obj/item/clothing/shoes/f13/diesel = 5,
@@ -228,10 +228,7 @@ GLOBAL_LIST_INIT(trash_gun, list(
 ))
 
 GLOBAL_LIST_INIT(trash_money, list(
-	/obj/item/stack/f13Cash/random/low = 40,
-	/obj/item/stack/f13Cash/random/med = 10,
-	/obj/item/stack/f13Cash/random/ncr/med = 20,
-	/obj/item/stack/f13Cash/random/denarius/low = 20
+	/obj/item/stack/f13Cash/random/low = 40
 ))
 
 GLOBAL_LIST_INIT(trash_tool, list(
@@ -362,7 +359,7 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/f13/metalarmor,
-	/obj/item/clothing/head/helmet/knight/fluff/metal,
+	/obj/item/clothing/head/helmet/knight/f13/metal,
 	/obj/item/clothing/suit/armor/f13/metalarmor,
 	/obj/item/clothing/head/helmet/f13/metalmask,
 	/obj/item/clothing/suit/armor/f13/leatherarmor,

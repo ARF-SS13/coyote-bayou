@@ -49,7 +49,7 @@
 	return genit_list
 
 /obj/item/organ/genital/proc/climaxable(mob/living/carbon/human/H, silent = FALSE) //returns the fluid source (ergo reagents holder) if found.
-	if(CHECK_BITFIELD(genital_flags, GENITAL_FUID_PRODUCTION))
+	if(CHECK_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION))
 		. = reagents
 	else
 		if(linked_organ)

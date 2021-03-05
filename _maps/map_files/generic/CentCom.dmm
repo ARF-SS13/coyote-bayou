@@ -1074,9 +1074,9 @@
 /area/holodeck/rec_center/chapelcourt)
 "dw" = (
 /obj/structure/table/wood/fancy,
-/obj/item/clothing/suit/nun,
+/obj/item/clothing/suit/chaplain/nun,
 /obj/item/clothing/head/nun_hood,
-/obj/item/clothing/suit/holidaypriest,
+/obj/item/clothing/suit/chaplain/holidaypriest,
 /turf/open/floor/holofloor{
 	dir = 8;
 	icon_state = "dark"
@@ -10406,9 +10406,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/grass,
 /area/centcom/evac)
-"Dt" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/mountain)
 "Du" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10728,9 +10725,6 @@
 "EF" = (
 /turf/open/floor/wood/f13,
 /area/f13/underground/mountain)
-"EG" = (
-/turf/open/floor/wood/f13,
-/area/f13/underground/mountain)
 "EH" = (
 /obj/structure/flora/wasteplant/wild_mutfruit,
 /turf/open/floor/wood/f13,
@@ -10852,10 +10846,6 @@
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/underground/mountain)
-"Fg" = (
-/obj/structure/rack,
-/turf/open/floor/wood/f13/old,
-/area/f13/underground/mountain)
 "Fh" = (
 /turf/open/floor/plasteel/cafeteria,
 /area/centcom/holding)
@@ -10876,18 +10866,7 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/wood/f13/old/ruinedstraightwest,
 /area/f13/underground/mountain)
-"Fl" = (
-/turf/open/floor/wood/f13/old/ruinedstraighteast,
-/area/f13/underground/mountain)
 "Fm" = (
-/obj/structure/rack,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/mountain)
-"Fn" = (
-/obj/structure/rack,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/mountain)
-"Fo" = (
 /obj/structure/rack,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/underground/mountain)
@@ -33867,7 +33846,7 @@ rb
 rb
 rb
 rc
-Dt
+rY
 rY
 rY
 rY
@@ -33890,7 +33869,7 @@ EE
 EE
 ER
 EE
-Fg
+ER
 rc
 rb
 rb
@@ -34143,8 +34122,8 @@ tc
 rY
 EA
 EF
-EG
-EG
+EF
+EF
 EE
 EE
 Fk
@@ -34402,7 +34381,7 @@ EB
 EE
 EH
 EE
-EG
+EF
 EE
 YF
 rc
@@ -34661,7 +34640,7 @@ EA
 EL
 EA
 EE
-Fl
+Fd
 rc
 rb
 rb
@@ -38259,7 +38238,7 @@ EI
 EN
 ES
 rY
-Fn
+Fm
 EA
 rb
 rb
@@ -38773,7 +38752,7 @@ rY
 rY
 rY
 rY
-Fn
+Fm
 rc
 rb
 rb
@@ -39801,7 +39780,7 @@ EA
 rY
 rY
 EZ
-Fo
+Fm
 EA
 rb
 rb
@@ -40058,7 +40037,7 @@ EA
 rY
 rY
 EZ
-Fo
+Fm
 EA
 rb
 rb

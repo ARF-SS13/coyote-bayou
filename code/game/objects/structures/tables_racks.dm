@@ -139,8 +139,6 @@
 	if(!ishuman(pushed_mob))
 		return
 	var/mob/living/carbon/human/H = pushed_mob
-	if(iscatperson(H))
-		H.emote("nya")
 	SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
 
 /obj/structure/table/proc/tablelimbsmash(mob/living/user, mob/living/pushed_mob)

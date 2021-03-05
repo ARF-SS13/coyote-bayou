@@ -141,6 +141,7 @@
 	maxHealth = 50
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/is_calf = 0
 	var/has_calf = 0
@@ -162,6 +163,17 @@
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
 		udder.milkAnimal(O, user)
 		return 1
+	else if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
 	else
 		return ..()
 

@@ -200,7 +200,7 @@ LINEN BINS
 
 /obj/item/bedsheet/runtime
 	icon_state = "sheetruntime"
-	dream_messages = list("a kitty", "a cat", "meow", "purr", "nya~")
+	dream_messages = list("a kitty", "a cat", "meow", "purr")
 
 /obj/item/bedsheet/pirate
 	name = "pirate's bedsheet"

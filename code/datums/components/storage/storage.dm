@@ -64,6 +64,7 @@
 
 	var/attack_hand_interact = TRUE					//interact on attack hand.
 	var/quickdraw = FALSE							//altclick interact
+	var/clickopen = FALSE							//instantly open with a click
 
 	var/datum/action/item_action/storage_gather_mode/modeswitch_action
 
@@ -639,6 +640,11 @@
 	var/atom/A = parent
 	if(!attack_hand_interact)
 		return
+
+	if (clickopen == TRUE)
+		ui_show(user)
+		return
+
 	if(user.active_storage == src && A.loc == user) //if you're already looking inside the storage item
 		user.active_storage.close(user)
 		close(user)

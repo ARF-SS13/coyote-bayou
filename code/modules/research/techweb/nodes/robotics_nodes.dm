@@ -15,6 +15,7 @@
 	description = "A slightly Frankensteinian device that allows human brains to interface natively with software APIs."
 	design_ids = list("mmi")
 
+/*
 /datum/techweb_node/cyborg
 	id = "cyborg"
 	starting_node = TRUE
@@ -30,6 +31,7 @@
 	prereq_ids = list("robotics")
 	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_advancedmop", "borg_upgrade_advcutter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+*/
 
 /datum/techweb_node/neural_programming
 	id = "neural_programming"
@@ -46,6 +48,7 @@
 	design_ids = list("mmi_posi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
+/*
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
 	display_name = "Cyborg Upgrades: Utility"
@@ -79,3 +82,4 @@
 	"reset_module", "purge_module", "remove_module", "freeformcore_module", "asimov_module", "paladin_module", "tyrant_module", "corporate_module",
 	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+*/

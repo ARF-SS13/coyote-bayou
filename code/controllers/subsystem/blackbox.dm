@@ -328,7 +328,7 @@ Versioning
 		"lakey" = L.lastattackerckey,
 		"brute" = L.getBruteLoss(),
 		"fire" = L.getFireLoss(),
-		"brain" = L.getOrganLoss(ORGAN_SLOT_BRAIN),
+		"brain" = L.getOrganLoss(ORGAN_SLOT_BRAIN) || 0,
 		"oxy" = L.getOxyLoss(),
 		"tox" = L.getToxLoss(),
 		"clone" = L.getCloneLoss(),

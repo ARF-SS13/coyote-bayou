@@ -50,6 +50,7 @@
 	hidden = TRUE
 	experimental = TRUE
 
+/*
 /datum/techweb_node/nanite_replication_protocols
 	id = "nanite_replication_protocols"
 	display_name = "Nanite Replication Protocols"
@@ -80,6 +81,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	hidden = TRUE
 	experimental = TRUE
+*/
 
 /datum/techweb_node/sticky_advanced
 	id = "sticky_advanced"
