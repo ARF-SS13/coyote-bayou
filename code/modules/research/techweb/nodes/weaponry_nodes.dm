@@ -5,7 +5,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "tele_shield")
+	design_ids = list("pin_testing", "tele_shield", "mfc", "ec")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 
 /datum/techweb_node/adv_weaponry
@@ -13,7 +13,7 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty", "laser_shield", "bullet_shield")
+	design_ids = list("pin_loyalty", "bullet_shield", "ecp")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 
 /datum/techweb_node/electric_weapons
@@ -21,7 +21,7 @@
 	display_name = "Electric Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power"  , "emp_basic")
-	design_ids = list("stunshell",  "ioncarbine")
+	design_ids = list("stunshell")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
 
 /*
@@ -94,6 +94,7 @@
 	design_ids = list("techshotshell")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
 
+/*
 /datum/techweb_node/gravity_gun
 	id = "gravity_gun"
 	display_name = "One-point Bluespace-gravitational Manipulator"
@@ -101,3 +102,4 @@
 	prereq_ids = list("adv_weaponry", "adv_bluespace")
 	design_ids = list("gravitygun", "mech_gravcatapult")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+*/

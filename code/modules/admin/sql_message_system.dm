@@ -73,12 +73,12 @@
 				expiry = query_validate_expire_time.item[1]
 			qdel(query_validate_expire_time)
 	if(type == "note" && isnull(note_severity))
-		note_severity = input("Set the severity of the note.", "Severity", null, null) as null|anything in list("High", "Medium", "Minor", "None")
+		note_severity = lowertext(input("Set the severity of the note.", "Severity", null, null) as null|anything in list("High", "Medium", "Minor", "None"))
 		if(!note_severity)
 			return
 	var/datum/DBQuery/query_create_message = SSdbcore.NewQuery(
 		"INSERT INTO [format_table_name("messages")] (type, targetckey, adminckey, text, timestamp, server, server_ip, server_port, round_id, secret, expire_timestamp, severity) VALUES (:type, :target_ckey, :admin_ckey, :text, :timestamp, :server, INET_ATON(:internet_address), :port, :round_id, :secret, :expiry, :note_severity)",
-		list("type" = type, "target_ckey" = target_ckey, "admin_ckey" = admin_ckey, "text" = text, "timestamp" = timestamp, "server" = server, "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "secret" = secret, "expiry" = expiry || "NULL", "note_severity" = note_severity || "NULL")
+		list("type" = type, "target_ckey" = target_ckey, "admin_ckey" = admin_ckey, "text" = text, "timestamp" = timestamp, "server" = server, "internet_address" = world.internet_address || "0", "port" = world.port, "round_id" = GLOB.round_id, "secret" = secret, "expiry" = expiry || null, "note_severity" = note_severity)
 	)
 	var/pm = "[key_name(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]: [text]"
 	var/header = "[key_name_admin(usr)] has created a [type][(type == "note" || type == "message" || type == "watchlist entry") ? " for [target_key]" : ""]"
@@ -226,8 +226,10 @@
 				new_expiry = query_validate_expire_time_edit.item[1]
 			qdel(query_validate_expire_time_edit)
 		var/datum/DBQuery/query_edit_message_expiry = SSdbcore.NewQuery(
-			"UPDATE [format_table_name("messages")] SET expire_timestamp = :new_expiry, lasteditor = :lasteditor, edits = CONCAT(IFNULL(edits,''),'Expiration time edited by :lasteditor on :time from :old_expiry to :new_expiry<hr>') WHERE id = :message_id AND deleted = 0",
-			list("lasteditor" = usr.ckey, "new_expiry" = new_expiry || "NULL", "time" = SQLtime(), "old_expiry" = old_expiry)
+			{"UPDATE [format_table_name("messages")]
+			SET expire_timestamp = :new_expiry, lasteditor = :lasteditor, edits = CONCAT(IFNULL(edits,''),'Expiration time edited by :lasteditor on :time from :old_expiry to :new_expiry<hr>')
+			WHERE id = :message_id AND deleted = 0"},
+			list("lasteditor" = usr.ckey, "new_expiry" = (new_expiry == "non-expiring" ? null : new_expiry), "time" = SQLtime(), "old_expiry" = old_expiry)
 		)
 		if(!query_edit_message_expiry.warn_execute())
 			qdel(query_edit_message_expiry)

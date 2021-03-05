@@ -115,9 +115,9 @@ Captain
 	shoes 		= /obj/item/clothing/shoes/f13/military/leather
 	gloves 		= /obj/item/clothing/gloves/f13/leather
 	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/m1garand/republicspride
+	l_hand 		= /obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/garand308=3,
+	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 	/obj/item/gun/ballistic/revolver/m29=1,
 	/obj/item/ammo_box/m44=2)
 
@@ -125,9 +125,9 @@ Captain
 	name = "Scout Officer"
 	head = 		/obj/item/clothing/head/beret/ncr_scout
 	belt = 		/obj/item/storage/belt/military/NCR_Bandolier
-	l_hand = 	/obj/item/gun/ballistic/automatic/service/r82
+	l_hand = 	/obj/item/gun/ballistic/automatic/m1garand/republicspride
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
+	/obj/item/ammo_box/magazine/garand308=3,
 	/obj/item/gun/ballistic/revolver/m29=1,
 	/obj/item/ammo_box/m44=2)
 
@@ -136,7 +136,7 @@ Captain
 	head =		/obj/item/clothing/head/f13/ncr_cap
 	gloves =	/obj/item/clothing/gloves/f13/leather
 	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand =	/obj/item/ammo_box/magazine/greasegun
+	l_hand =	/obj/item/gun/ballistic/automatic/greasegun
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/greasegun=3,
 	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
@@ -595,7 +595,8 @@ Rear Echelon
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/storage/survivalkit_aid=1)
+		/obj/item/storage/survivalkit_aid=1, \
+		/obj/item/book/granter/trait/chemistry = 1)
 
 //Guard duty
 /datum/outfit/loadout/rearstatic
@@ -621,7 +622,7 @@ Trooper
 	exp_requirements = 12
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_NCR_OFF_DUTY
-	outfit = /datum/outfit/job/ncr/f13trooper
+	outfit = /datum/outfit/job/ncr/f13ncroffduty
 
 /datum/outfit/job/ncr/f13ncroffduty
 	name = "NCR Off-Duty"
@@ -735,7 +736,8 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/orange
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman
-	r_pocket = /obj/item/binoculars
+	r_pocket =		/obj/item/binoculars
+	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \
@@ -780,6 +782,7 @@ Veteran Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/leather
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	r_pocket = 		/obj/item/binoculars
+	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29 = 1,
 		/obj/item/ammo_box/m44=2, \

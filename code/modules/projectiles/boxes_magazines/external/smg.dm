@@ -126,7 +126,7 @@
 	name = "toploader magazine (.22lr)"
 	icon_state = "smg22"
 	ammo_type = /obj/item/ammo_casing/a22
-	caliber = "22lr"
+	caliber = ".22lr"
 	max_ammo = 180
 	multiple_sprites = 2
 

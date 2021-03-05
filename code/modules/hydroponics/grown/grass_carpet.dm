@@ -8,8 +8,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/grass
 	lifespan = 40
 	endurance = 40
-	maturation = 2
-	production = 5
+	production = 2
 	yield = 5
 	instability = 10
 	growthstages = 2

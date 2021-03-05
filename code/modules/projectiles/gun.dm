@@ -206,9 +206,19 @@
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 
+/obj/item/gun/attack(mob/living/M, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(CLICK_CD_MELEE)
+
+/obj/item/gun/attack_obj(obj/O, mob/user)
+	. = ..()
+	if(!(. & DISCARD_LAST_ACTION))
+		user.DelayNextAction(CLICK_CD_MELEE)
+
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
-	if(!CheckAttackCooldown(user, target))
+	if(!CheckAttackCooldown(user, target, TRUE))
 		return
 	process_afterattack(target, user, flag, params)
 
@@ -484,13 +494,7 @@
 			return
 		to_chat(user, "<span class='notice'>You attach \the [K] to the front of \the [src].</span>")
 		bayonet = K
-		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
-			bayonet_state = bayonet.icon_state
-		var/icon/bayonet_icons = 'icons/obj/guns/bayonets.dmi'
-		knife_overlay = mutable_appearance(bayonet_icons, bayonet_state)
-		knife_overlay.pixel_x = knife_x_offset
-		knife_overlay.pixel_y = knife_y_offset
-		add_overlay(knife_overlay, TRUE)
+		update_icon()
 	else if(istype(I, /obj/item/attachments/scope))
 		if(!can_scope)
 			return ..()
@@ -525,13 +529,7 @@
 			src.zoom_amt = 10
 			src.zoom_out_amt = 13
 			src.build_zooming()
-			if(scope.icon_state in icon_states('icons/obj/guns/scopes.dmi'))
-				scope_overlay = scope.icon_state
-			var/icon/scope_icons = 'icons/obj/guns/scopes.dmi'
-			scope_overlay = mutable_appearance(scope_icons, scopestate)
-			scope_overlay.pixel_x = scope_x_offset
-			scope_overlay.pixel_y = scope_y_offset
-			add_overlay(scope_overlay, TRUE)
+			update_icon()
 	else if(istype(I, /obj/item/attachments/recoil_decrease))
 		var/obj/item/attachments/recoil_decrease/R = I
 		if(!recoil_decrease && can_attachments)
@@ -564,7 +562,7 @@
 			src.desc += " It has a modified burst cam installed."
 			src.burst_size += 1
 			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
-			add_overlay(scope_overlay, TRUE)
+			update_icon()
 	else if(istype(I, /obj/item/screwdriver))
 		if(gun_light)
 			var/obj/item/flashlight/seclite/S = gun_light
@@ -579,7 +577,6 @@
 			var/obj/item/kitchen/knife/K = bayonet
 			K.forceMove(get_turf(user))
 			bayonet = null
-			cut_overlay(knife_overlay, TRUE)
 			update_icon()
 		if(scope)
 			to_chat(user, "<span class='notice'>You unscrew the scope from \the [src].</span>")
@@ -588,8 +585,7 @@
 			src.zoomable = FALSE
 			azoom.Remove(user)
 			scope = null
-			cut_overlay(scope_overlay, TRUE)
-			scope_overlay = null
+			update_icon()
 	else
 		return ..()
 
@@ -647,11 +643,9 @@
 	if(alight)
 		alight.Remove(user)
 
-/*
 /obj/item/gun/update_overlays()
 	. = ..()
 	if(gun_light)
-		var/mutable_appearance/flashlight_overlay
 		var/state = "[gunlight_state][gun_light.on? "_on":""]"	//Generic state.
 		if(gun_light.icon_state in icon_states('icons/obj/guns/flashlights.dmi'))	//Snowflake state?
 			state = gun_light.icon_state
@@ -659,6 +653,8 @@
 		flashlight_overlay.pixel_x = flight_x_offset
 		flashlight_overlay.pixel_y = flight_y_offset
 		. += flashlight_overlay
+	else
+		flashlight_overlay = null
 
 	if(bayonet)
 		var/mutable_appearance/knife_overlay
@@ -669,8 +665,20 @@
 		knife_overlay = mutable_appearance(bayonet_icons, state)
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
-		add_overlay(knife_overlay, TRUE)
-*/
+		. += knife_overlay
+	else
+		knife_overlay = null
+	
+	if(scope)
+		if(scope.icon_state in icon_states('icons/obj/guns/scopes.dmi'))
+			scope_overlay = scope.icon_state
+		var/icon/scope_icons = 'icons/obj/guns/scopes.dmi'
+		scope_overlay = mutable_appearance(scope_icons, scopestate)
+		scope_overlay.pixel_x = scope_x_offset
+		scope_overlay.pixel_y = scope_y_offset
+		. += scope_overlay
+	else
+		scope_overlay = null
 
 /obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)

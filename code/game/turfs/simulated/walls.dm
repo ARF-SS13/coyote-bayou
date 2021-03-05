@@ -229,6 +229,10 @@
 		var/obj/item/electronic_assembly/wallmount/A = W
 		A.mount_assembly(src, user)
 		return TRUE
+	else if(istype(W, /obj/item/candle/tribal_torch))
+		var/obj/item/candle/tribal_torch/torch = W
+		torch.do_wallmount(src, user)
+		return TRUE
 
 	return FALSE
 

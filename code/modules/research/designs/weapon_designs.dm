@@ -524,3 +524,40 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 */
+
+/datum/design/mindshield
+	name = "Mindshield Implant"
+	desc = "A mindshield implant."
+	id = "implant_loyal"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/implantcase/mindshield
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/mfc
+	name = "Microfusion Cell"
+	id = "mfc"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000)
+	build_path =/obj/item/stock_parts/cell/ammo/mfc
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ec
+	name = "Energy Cell"
+	id = "ec"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
+	build_path =/obj/item/stock_parts/cell/ammo/ec
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/ecp
+	name = "Electron Charge Pack"
+	id = "ecp"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
+	build_path = /obj/item/stock_parts/cell/ammo/ecp
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

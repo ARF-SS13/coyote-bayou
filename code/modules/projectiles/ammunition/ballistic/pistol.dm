@@ -53,7 +53,7 @@
 /obj/item/ammo_casing/a22
 	name = ".22lr bullet casing"
 	desc = "A .22lr bullet casing."
-	caliber = ".22"
+	caliber = ".22lr"
 	projectile_type = /obj/item/projectile/bullet/c22
 
 /obj/item/ammo_casing/a22/hp

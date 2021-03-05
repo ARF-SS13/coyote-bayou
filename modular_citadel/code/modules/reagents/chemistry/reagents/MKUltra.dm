@@ -1,6 +1,6 @@
 /*
 ////////////////////////////////////////
-//				MKULTA				  //
+//				MKULTRA				  //
 ////////////////////////////////////////
 The magnum opus of FermiChem -
 Long and complicated, I highly recomend you look at the two other files heavily involved in this
@@ -21,7 +21,7 @@ This handles when the enchanter speaks - basically uses code from voice of god, 
 list of commands:
 
 -mixables-
-enthral_words
+enthrall_words
 reward_words
 punish_words
 0
@@ -35,8 +35,6 @@ forget_words
 attract_words
 orgasm_words
 2
-awoo_words
-nya_words
 sleep_words
 strip_words
 walk_words
@@ -55,10 +53,10 @@ getup_words
 pacify_words
 charge_words
 
-Mixables can be used intersperced with other commands, 0 is commands that work on sleeper against (i.e. players enthralled to state 3, then ordered to wake up and forget, they can be triggered back instantly)
+Mixables can be used intersperced with other commands, 0 is commands that work on sleeper agents (i.e. players enthralled to state 3, then ordered to wake up and forget, they can be triggered back instantly)
 1 is for players who immediately are injected with the chem - no stuns, only a silence and something that draws them towrds them. This is the best time to try to fight it and you're likely to win by spamming resist, unless the enchantress has plans.
-2 is the seconds stage, which allows removal of clothes, slowdown and light stunning. You can also make them nya and awoo, because cute.
-3 is the finaly state, which allows application of a few status effects (see chem.dm) and allows custom triggers to be installed (kind of like nanites), again, see chem.dm
+2 is the seconds stage, which allows removal of clothes, slowdown and light stunning.
+3 is the final stage, which allows application of a few status effects (see chem.dm) and allows custom triggers to be installed (kind of like nanites), again, see chem.dm
 In a nutshell, this is the way you enthrall people, by typing messages into chat and managing cooldowns on the stronger words. You have to type words and your message strength is increases with the number of characters - if you type short messages the cooldown will be too much and the other player will overcome the chem.
 I suppose people could spam gdjshogndjoadphgiuaodp but, the truth of this chem is that it mostly allows a casus beli for subs to give in, and everyones a sub on cit (mostly), so if you aujigbnadjgipagdsjk then they might resist harder cause you're a baddie and baddies don't deserve pets.
 Also, the use of this chem as a murder aid is antithetic to it's design, the subject gains bonus resistance if they're hurt or hungry (I'd like to expland this more, I like the idea that you have to look after all of them otherwise they aren't as effective, kind of like tamagachis!). If this becomes a problem, I'll deal with it, I'm not happy with people abusing this chem for an easy murder. (I might make it so you an't strike your pet when health is too low.)

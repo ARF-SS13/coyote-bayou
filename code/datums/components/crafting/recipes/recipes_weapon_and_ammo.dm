@@ -6,7 +6,7 @@
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 50
 	category = CAT_WEAPONRY
-	subcategory = CAT_OTHER
+	subcategory = CAT_MISCWEP
 
 /datum/crafting_recipe/pin_removal/check_requirements(mob/user, list/collected_requirements)
 	var/obj/item/gun/G = collected_requirements[/obj/item/gun][1]
@@ -138,7 +138,7 @@
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
 	time = 30
 	category = CAT_WEAPONRY
-	subcategory = CAT_OTHER
+	subcategory = CAT_MISCWEP
 
 /*
 /datum/crafting_recipe/chemical_payload2
@@ -152,7 +152,7 @@
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
 	time = 50
 	category = CAT_WEAPONRY
-	subcategory = CAT_OTHER
+	subcategory = CAT_MISCWEP
 */
 
 /datum/crafting_recipe/molotov

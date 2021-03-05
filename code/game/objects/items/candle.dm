@@ -14,6 +14,7 @@
 	var/infinite = FALSE
 	var/start_lit = FALSE
 	var/heats_space = TRUE
+	var/light_level = CANDLE_LUMINOSITY
 
 /obj/item/candle/Initialize()
 	. = ..()
@@ -43,7 +44,7 @@
 		lit = TRUE
 		if(show_message)
 			usr.visible_message(show_message)
-		set_light(CANDLE_LUMINOSITY)
+		set_light(light_level)
 		START_PROCESSING(SSobj, src)
 		update_icon()
 
@@ -92,20 +93,35 @@
 	w_class = WEIGHT_CLASS_BULKY
 	light_color = LIGHT_COLOR_FIRE
 	infinite = TRUE
-	heat = 2000
+	heat = T0C + 400
+	light_level = 7
+	var/flicker_chance = 1
+	var/flickering = FALSE
 
 /obj/item/candle/tribal_torch/attackby(obj/item/W, mob/user, params)
 	..()
 	var/msg = W.ignition_effect(src, user)
 	if(msg)
 		light(msg)
-		set_light(7)
 
 /obj/item/candle/tribal_torch/fire_act(exposed_temperature, exposed_volume)
 	if(!src.lit)
 		light() //honk
-		set_light(7)
 	..()
+
+/obj/item/candle/tribal_torch/process()
+	. = ..()
+	if(!flickering && prob(flicker_chance))
+		flicker(rand(1, 4)) // 0.1 to 0.4 seconds
+
+/obj/item/candle/tribal_torch/proc/flicker(duration)
+	flickering = TRUE
+	addtimer(CALLBACK(src, .proc/unflicker, light_range), duration)
+	set_light(light_range - rand(1, 2))
+
+/obj/item/candle/tribal_torch/proc/unflicker(new_range)
+	set_light(new_range)
+	flickering = FALSE
 
 /obj/item/candle/attack_self(mob/user)
 	if(!src.lit)
@@ -114,7 +130,7 @@
 			qdel(src)
 			new /obj/structure/destructible/tribal_torch(get_turf(user))
 			light_color = LIGHT_COLOR_ORANGE
-			user.visible_message("<span class='notice'>[user] plants \the [src] firmly in the ground.</span>", "<span class='notice'>You plant \the [src] firmly in the ground.</span>")
+			user.visible_message("<span class='notice'>[user] plants [src] firmly in the ground.</span>", "<span class='notice'>You plant [src] firmly in the ground.</span>")
 			return
 	else if(lit)
 		user.visible_message(
@@ -125,9 +141,26 @@
 
 
 /obj/item/candle/tribal_torch/update_icon()
-	icon_state = "torch[lit ? "_lit" : "_unlit"]"
-	item_state = "torch[lit ? "-on" : ""]"
+	icon_state = "torch_[lit ? null : "un"]lit"
+	item_state = "torch[lit ? "-on" : null]"
 
-
+/obj/item/candle/tribal_torch/proc/do_wallmount(turf/T, mob/user)
+	var/ndir = turn(get_dir(T, user), 180)
+	if(!(ndir in GLOB.cardinals))
+		return
+	var/turf/user_turf = get_turf(user)
+	if(gotwallitem(user_turf, ndir, 2))
+		to_chat(user, SPAN_WARNING("There's already an item on this wall!"))
+		return
+	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
+	user.visible_message("[user.name] attaches [src] to the wall.",
+		SPAN_NOTICE("You attach [src] to the wall."),
+		"<span class='italics'>You hear clicking.</span>")
+	var/type_to_make = lit ? /obj/structure/destructible/tribal_torch/wall/lit : /obj/structure/destructible/tribal_torch/wall
+	var/obj/structure/destructible/tribal_torch/wall/wall_torch = new type_to_make (user_turf)
+	wall_torch.dir = ndir
+	wall_torch.update_icon()
+	qdel(src)
+	return
 
 #undef CANDLE_LUMINOSITY
