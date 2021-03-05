@@ -17,7 +17,6 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
-	attack_speed = CLICK_CD_MELEE
 	var/ranged_attack_speed = CLICK_CD_RANGE
 
 	var/fire_sound = "gunshot"
