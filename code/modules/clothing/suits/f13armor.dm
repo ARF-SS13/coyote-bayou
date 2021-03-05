@@ -616,7 +616,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
 /obj/item/clothing/suit/toggle/armor/f13/cloakranger
-	name = "ranger cloak"
+	name = "ranger poncho"
 	desc = "(IV) A durable muslin poncho. Tough enough to bear the elements and serve as handy blanket."
 	icon_state = "ranger_cloak"
 	item_state = "ranger_cloak"
