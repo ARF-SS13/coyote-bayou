@@ -141,12 +141,6 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
-"ala" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
 "alO" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/snacks/doughslice,
@@ -493,13 +487,6 @@
 /obj/machinery/vending/robotics,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"aIF" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "aIS" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -533,6 +520,10 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/radiation)
+"aLh" = (
+/obj/structure/table/booth,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/vault)
 "aLF" = (
 /obj/structure/rack,
 /obj/item/crafting/diode,
@@ -559,16 +550,6 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"aPN" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "aQa" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1090,6 +1071,13 @@
 	icon_state = "showroomfloor"
 	},
 /area/space)
+"bzV" = (
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/snacks/enchiladas{
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/vault)
 "bAz" = (
 /obj/structure/kitchenspike,
 /turf/open/floor/f13{
@@ -1310,17 +1298,14 @@
 	icon_state = "floorgrime"
 	},
 /area/space)
-"bQL" = (
-/obj/structure/table,
+"bQQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname{
-	dir = 10;
+	dir = 9;
 	network = list("Vault")
 	},
-/obj/machinery/button/door{
-	id = 103;
-	name = "Blast Doors"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "bRz" = (
 /obj/structure/cable{
@@ -2284,6 +2269,16 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/vault)
+"dnA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/autoname{
+	dir = 9;
+	network = list("Vault")
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "rampdowntop"
+	},
+/area/f13/vault)
 "dnG" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/turf_decal/stripes/line{
@@ -2302,21 +2297,6 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/clothing_middle,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/vault)
-"dqk" = (
-/obj/machinery/camera/autoname{
-	dir = 10;
-	network = list("Vault")
-	},
-/obj/item/radio/intercom{
-	frequency = 1361;
-	name = "Vault Intercom";
-	pixel_y = -32
-	},
-/obj/structure/chair/f13foldupchair{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "dqu" = (
 /obj/structure/closet/radiation,
@@ -2347,16 +2327,6 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/tunnel)
-"drn" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/autoname{
-	dir = 5;
-	network = list("Vault")
-	},
-/turf/open/floor/plasteel/darkred/side{
-	dir = 8
-	},
-/area/f13/vault)
 "drs" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -2465,15 +2435,6 @@
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
-"dCo" = (
-/obj/structure/booth{
-	dir = 4
-	},
-/obj/item/reagent_containers/food/snacks/enchiladas{
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/vault)
 "dCv" = (
 /obj/effect/decal/remains/human,
 /mob/living/simple_animal/hostile/ghoul,
@@ -2492,6 +2453,27 @@
 	icon_state = "plating"
 	},
 /area/f13/bunker)
+"dCI" = (
+/obj/structure/table,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	network = list("Vault")
+	},
+/obj/item/grenade/barrier{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/item/grenade/barrier,
+/obj/item/grenade/barrier{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/turf/open/floor/plasteel/darkred/side,
+/area/f13/vault)
 "dCU" = (
 /obj/item/radio/intercom{
 	dir = 4
@@ -3019,16 +3001,6 @@
 	icon_state = "floorrusty"
 	},
 /area/space)
-"eoa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 9;
-	network = list("Vault")
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "rampdowntop"
-	},
-/area/f13/vault)
 "eoK" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -3436,6 +3408,10 @@
 	icon_state = "redrustyfull"
 	},
 /area/space)
+"eYz" = (
+/obj/machinery/rnd/server/vault,
+/turf/open/floor/plasteel/dark,
+/area/f13/vault)
 "eZg" = (
 /obj/machinery/computer/security/wooden_tv{
 	desc = "";
@@ -4533,6 +4509,16 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
+"gAT" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/snacks/waffles{
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/vault)
 "gAV" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin/construction,
@@ -4849,6 +4835,21 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
+/area/f13/vault)
+"gYe" = (
+/obj/machinery/camera/autoname{
+	dir = 10;
+	network = list("Vault")
+	},
+/obj/item/radio/intercom{
+	frequency = 1361;
+	name = "Vault Intercom";
+	pixel_y = -32
+	},
+/obj/structure/chair/f13foldupchair{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "gYI" = (
 /obj/structure/chair/stool,
@@ -5187,15 +5188,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/f13/bunker)
-"hAW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/autoname{
-	dir = 9;
-	network = list("Vault")
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
 "hBG" = (
 /obj/item/stack/sheet/plasteel/twenty,
 /obj/structure/rack,
@@ -5929,6 +5921,13 @@
 	icon_state = "showroomfloor"
 	},
 /area/space)
+"iLq" = (
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "iMf" = (
 /obj/structure/sign/departments/chemistry,
 /turf/closed/wall/r_wall/f13/vault,
@@ -7089,6 +7088,18 @@
 	icon_state = "showroomfloor"
 	},
 /area/space)
+"kCt" = (
+/obj/structure/table,
+/obj/machinery/camera/autoname{
+	dir = 10;
+	network = list("Vault")
+	},
+/obj/machinery/button/door{
+	id = 103;
+	name = "Blast Doors"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/vault)
 "kCB" = (
 /obj/item/detective_scanner,
 /obj/structure/closet,
@@ -8478,6 +8489,10 @@
 	icon_state = "plating"
 	},
 /area/space)
+"mBk" = (
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "mCu" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -9232,27 +9247,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
-"nGc" = (
-/obj/structure/table,
-/obj/structure/cable,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/camera/autoname{
-	dir = 1;
-	network = list("Vault")
-	},
-/obj/item/grenade/barrier{
-	pixel_x = -5;
-	pixel_y = 3
-	},
-/obj/item/grenade/barrier,
-/obj/item/grenade/barrier{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/turf/open/floor/plasteel/darkred/side,
-/area/f13/vault)
 "nGl" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/barber{
@@ -9266,13 +9260,6 @@
 	icon_state = "plating"
 	},
 /area/f13/bunker)
-"nHs" = (
-/obj/structure/booth{
-	dir = 8
-	},
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/vault)
 "nIB" = (
 /obj/item/radio/intercom{
 	dir = 4
@@ -9395,12 +9382,6 @@
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
-/area/f13/vault)
-"nPQ" = (
-/obj/structure/booth/middle{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "nQe" = (
 /obj/machinery/door/airlock{
@@ -10037,10 +10018,6 @@
 /obj/machinery/blackbox_recorder,
 /turf/open/floor/plasteel/freezer,
 /area/space)
-"oQv" = (
-/obj/machinery/rnd/server/vault,
-/turf/open/floor/plasteel/dark,
-/area/f13/vault)
 "oRq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -10232,6 +10209,16 @@
 	icon_state = "grass2"
 	},
 /area/f13/vault)
+"phL" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/camera/autoname{
+	dir = 5;
+	network = list("Vault")
+	},
+/turf/open/floor/plasteel/darkred/side{
+	dir = 8
+	},
+/area/f13/vault)
 "pix" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate,
@@ -10307,6 +10294,16 @@
 /obj/structure/mirror,
 /turf/closed/wall/r_wall/rust,
 /area/space)
+"pnn" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "pnz" = (
 /obj/structure/sink,
 /turf/open/floor/plasteel/freezer,
@@ -10427,16 +10424,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/space)
-"ptD" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/booth/single,
-/obj/item/reagent_containers/food/snacks/waffles{
-	pixel_y = 6
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/vault)
 "puo" = (
 /obj/structure/sink{
 	dir = 4;
@@ -11074,6 +11061,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
+"quA" = (
+/obj/structure/table/booth,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/vault)
 "qvb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11563,6 +11555,31 @@
 	icon_state = "housewood2"
 	},
 /area/f13/bunker)
+"rfO" = (
+/obj/machinery/newscaster/security_unit{
+	pixel_y = 32
+	},
+/obj/machinery/camera/autoname{
+	network = list("Vault")
+	},
+/obj/structure/rack,
+/obj/item/clothing/under/f13/vault,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/gloves/color/black,
+/obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/assembly/flash/handheld,
+/obj/item/restraints/handcuffs,
+/obj/item/gun/ballistic/automatic/pistol/n99,
+/obj/item/ammo_box/magazine/m10mm_adv,
+/obj/item/ammo_box/magazine/m10mm_adv,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/riot/vaultsec,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/turf/open/floor/plasteel/dark,
+/area/f13/vault)
 "rgv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -12548,19 +12565,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"sFs" = (
-/obj/structure/cable,
-/obj/structure/booth/single,
-/obj/machinery/light{
-	light_color = "#e8eaff"
+"sFp" = (
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
 	},
-/obj/item/radio/intercom{
-	frequency = 1361;
-	name = "Vault Intercom";
-	pixel_y = -30
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/vault)
+/area/f13/bunker)
 "sGb" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/remains/human,
@@ -13845,10 +13855,6 @@
 /obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
-"uLx" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "uMj" = (
 /obj/structure/chair/left,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -15997,31 +16003,6 @@
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
-"xIC" = (
-/obj/machinery/newscaster/security_unit{
-	pixel_y = 32
-	},
-/obj/machinery/camera/autoname{
-	network = list("Vault")
-	},
-/obj/structure/rack,
-/obj/item/clothing/under/f13/vault,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/gloves/color/black,
-/obj/item/storage/belt/security,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/assembly/flash/handheld,
-/obj/item/restraints/handcuffs,
-/obj/item/gun/ballistic/automatic/pistol/n99,
-/obj/item/ammo_box/magazine/m10mm_adv,
-/obj/item/ammo_box/magazine/m10mm_adv,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/helmet/riot/vaultsec,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/turf/open/floor/plasteel/dark,
-/area/f13/vault)
 "xID" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/vault/v113,
@@ -16154,6 +16135,19 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"xSY" = (
+/obj/structure/cable,
+/obj/structure/table/booth,
+/obj/machinery/light{
+	light_color = "#e8eaff"
+	},
+/obj/item/radio/intercom{
+	frequency = 1361;
+	name = "Vault Intercom";
+	pixel_y = -30
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/vault)
 "xTC" = (
 /obj/structure/chair/wood/modern{
 	dir = 1
@@ -21791,7 +21785,7 @@ aUx
 hXc
 kmK
 aUx
-aPN
+pnn
 xzw
 aUx
 wII
@@ -22819,7 +22813,7 @@ aHh
 wII
 wII
 aUx
-aIF
+iLq
 wII
 aUx
 oqf
@@ -23323,7 +23317,7 @@ tnQ
 izh
 aUx
 qtH
-aIF
+iLq
 qtH
 aUx
 wSD
@@ -25208,7 +25202,7 @@ mAN
 mAN
 vwT
 mwr
-drn
+phL
 anY
 mAN
 mAN
@@ -26240,7 +26234,7 @@ ahh
 ahh
 ahh
 vNt
-nGc
+dCI
 mAN
 xsH
 xsH
@@ -27001,7 +26995,7 @@ mAN
 xSr
 ahh
 oxp
-oQv
+eYz
 pet
 dog
 mAN
@@ -27268,7 +27262,7 @@ wxF
 fbt
 vqj
 rCd
-dqk
+gYe
 mAN
 mAN
 xsH
@@ -28040,7 +28034,7 @@ sDY
 yjg
 jDJ
 xMF
-bQL
+kCt
 mAN
 xsH
 xsH
@@ -28714,7 +28708,7 @@ lhx
 fpl
 kDt
 tbT
-ala
+sFp
 hGb
 aRU
 rWJ
@@ -29066,13 +29060,13 @@ kFl
 sLM
 kot
 fwu
-hAW
+bQQ
 nIX
 akw
 pQJ
 xsH
 fhA
-eoa
+dnA
 hpf
 mct
 xop
@@ -30045,7 +30039,7 @@ exl
 lsc
 mAN
 nBr
-dCo
+bzV
 fTR
 qWq
 poG
@@ -30302,12 +30296,12 @@ exl
 lsc
 mAN
 rxx
-nPQ
+aLh
 feS
 qWq
-ptD
+gAT
 usf
-sFs
+xSY
 mAN
 kcN
 hKr
@@ -30559,7 +30553,7 @@ pwr
 mAN
 mAN
 uMj
-nHs
+quA
 sKJ
 qWq
 fky
@@ -33359,7 +33353,7 @@ cll
 mVq
 hAT
 aUx
-ala
+sFp
 wqa
 bue
 heT
@@ -35729,7 +35723,7 @@ mAN
 nKy
 faZ
 mAN
-xIC
+rfO
 oxp
 mAN
 bZy
@@ -76521,7 +76515,7 @@ heT
 heT
 wYe
 kGP
-aIF
+iLq
 wII
 wII
 iII
@@ -77547,7 +77541,7 @@ heT
 heT
 heT
 dOV
-uLx
+mBk
 wYe
 esb
 mqp
@@ -78317,7 +78311,7 @@ heT
 heT
 heT
 esS
-uLx
+mBk
 jSG
 wYe
 pkU
@@ -78578,7 +78572,7 @@ kRy
 oZR
 wYe
 rdg
-aIF
+iLq
 mqp
 wII
 nZr
@@ -80898,7 +80892,7 @@ wYe
 vih
 pkU
 wII
-aIF
+iLq
 wII
 wYe
 heT

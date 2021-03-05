@@ -6802,10 +6802,7 @@
 	},
 /area/f13/mountain_bunker)
 "sj" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -7256,10 +7253,7 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tE" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/machinery/light,
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
 /turf/open/floor/wood/f13/old,
@@ -7281,10 +7275,7 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tH" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tI" = (
@@ -7317,10 +7308,7 @@
 	},
 /area/f13/wasteland)
 "tP" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/salad/ricepork,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -7342,10 +7330,7 @@
 	},
 /area/f13/bunker)
 "tS" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -7354,10 +7339,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tU" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -7372,10 +7354,7 @@
 	},
 /area/f13/wasteland)
 "tW" = (
-/obj/structure/booth{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/machinery/light,
 /obj/item/reagent_containers/food/snacks/salad/oatmeal,
 /turf/open/floor/wood/f13/old,
@@ -10232,9 +10211,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "CC" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/item/reagent_containers/food/snacks/enchiladas{
 	pixel_y = 4
 	},
@@ -10247,9 +10224,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "CE" = (
-/obj/structure/booth{
-	dir = 8
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
