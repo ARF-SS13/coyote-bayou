@@ -1,5 +1,6 @@
 
 /////////////////////////Nanites/////////////////////////
+/*
 /datum/techweb_node/nanite_base
 	id = "nanite_base"
 	display_name = "Basic Nanite Programming"
@@ -74,3 +75,4 @@
 	prereq_ids = list("nanite_harmonic", "alientech")
 	design_ids = list("spreading_nanites","mindcontrol_nanites","mitosis_nanites")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+*/
