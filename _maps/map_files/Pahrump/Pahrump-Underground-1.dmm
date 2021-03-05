@@ -1514,7 +1514,7 @@
 	pixel_x = 6
 	},
 /obj/machinery/button/door{
-	id = fadmin;
+	id = "fadmin";
 	name = "Door lockdown button";
 	pixel_x = -5
 	},
@@ -6065,7 +6065,7 @@
 	name = "adminroom"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = fadmin;
+	id = "fadmin";
 	name = "Follower Admin shutters"
 	},
 /turf/open/floor/f13{
