@@ -5922,19 +5922,6 @@
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"auG" = (
-/obj/structure/booth{
-	dir = 4;
-	icon_state = "booth_table_middle"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/space)
-"auH" = (
-/obj/structure/booth{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/space)
 "auI" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/shiny,
@@ -20025,9 +20012,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "bmJ" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -20667,9 +20652,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "boV" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "boW" = (
@@ -42754,9 +42737,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
 "qII" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -43393,9 +43374,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/space)
 "rPe" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /turf/open/indestructible/ground/inside/dirt,
@@ -45559,9 +45538,7 @@
 	},
 /area/f13/wasteland)
 "vmT" = (
-/obj/structure/booth{
-	dir = 8
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -46738,9 +46715,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "xpl" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/space)
 "xqw" = (
@@ -47134,9 +47109,7 @@
 	},
 /area/f13/city)
 "xYR" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -67199,7 +67172,7 @@ xFS
 xfv
 atB
 auf
-auH
+xpl
 rsd
 xfv
 awj
@@ -69512,7 +69485,7 @@ xfv
 xfv
 atB
 rOT
-auG
+xpl
 ave
 xfv
 doi
@@ -69769,7 +69742,7 @@ xFS
 xfv
 cNq
 auf
-auH
+xpl
 rsd
 xfv
 doi

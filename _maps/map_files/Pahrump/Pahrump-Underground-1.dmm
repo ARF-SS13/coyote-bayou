@@ -1197,9 +1197,7 @@
 	},
 /area/f13/clinic)
 "em" = (
-/obj/structure/booth/middle{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -3232,9 +3230,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "kT" = (
-/obj/structure/booth{
-	dir = 8
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -3486,10 +3482,7 @@
 /area/f13/tcoms)
 "lK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/booth/middle{
-	dir = 1;
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "lL" = (
@@ -4883,9 +4876,7 @@
 	},
 /area/f13/tunnel)
 "qp" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -5449,9 +5440,7 @@
 	},
 /area/f13/tunnel)
 "so" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /turf/open/indestructible/ground/inside/dirt,
@@ -6803,9 +6792,7 @@
 /area/f13/tunnel)
 "wS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/booth/middle{
-	icon_state = "booth_table_end"
-	},
+/obj/structure/table/booth,
 /obj/item/flashlight/lamp,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -7653,9 +7640,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "zT" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -8432,7 +8417,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "CG" = (
-/obj/structure/booth,
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/indestructible/ground/inside/dirt,
@@ -9254,7 +9239,7 @@
 /area/f13/caves)
 "Fq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/booth/middle,
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -9640,7 +9625,7 @@
 	},
 /area/f13/tunnel)
 "GM" = (
-/obj/structure/booth/middle,
+/obj/structure/table/booth,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "GO" = (
@@ -11058,9 +11043,7 @@
 	},
 /area/f13/brotherhood)
 "LJ" = (
-/obj/structure/booth/middle{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/item/flashlight,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"

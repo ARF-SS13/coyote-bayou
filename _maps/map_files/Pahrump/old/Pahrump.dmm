@@ -4954,12 +4954,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"apF" = (
-/obj/structure/booth{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/ncr)
 "apG" = (
 /obj/item/flag/ncr,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -12151,13 +12145,6 @@
 /obj/structure/dresser,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"aMF" = (
-/obj/structure/booth{
-	dir = 4;
-	icon_state = "booth_table_middle"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/ncr)
 "aMG" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -12270,9 +12257,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "aMY" = (
-/obj/structure/booth{
-	dir = 8
-	},
+/obj/structure/table/booth,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -19247,9 +19232,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "bmJ" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -19869,9 +19852,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "boV" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "boW" = (
@@ -37993,13 +37974,6 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
-"jvH" = (
-/obj/structure/booth{
-	dir = 4;
-	icon_state = "booth_table_middle"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/ncr)
 "jvQ" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood,
@@ -41224,9 +41198,7 @@
 	},
 /area/f13/wasteland)
 "orZ" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/ncr)
 "ose" = (
@@ -41313,9 +41285,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "oAb" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
 "oAw" = (
@@ -42812,9 +42782,7 @@
 	},
 /area/f13/tunnel)
 "qII" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -43537,9 +43505,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "rPe" = (
-/obj/structure/booth{
-	dir = 1
-	},
+/obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /turf/open/indestructible/ground/inside/dirt,
@@ -45930,9 +45896,7 @@
 	},
 /area/f13/ncr)
 "vmT" = (
-/obj/structure/booth{
-	dir = 8
-	},
+/obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -47672,9 +47636,7 @@
 	},
 /area/f13/city)
 "xYR" = (
-/obj/structure/booth{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -56715,7 +56677,7 @@ aat
 xLa
 cmN
 ckU
-apF
+orZ
 osu
 xLa
 agl
@@ -59028,7 +58990,7 @@ xLa
 xLa
 cmN
 cEo
-jvH
+orZ
 haR
 xLa
 aat
@@ -59285,7 +59247,7 @@ ads
 xLa
 itH
 ckU
-apF
+orZ
 osu
 xLa
 akd
@@ -59757,7 +59719,7 @@ amz
 lZB
 lZB
 awA
-aMF
+oAb
 aYz
 aoC
 bbJ
@@ -60014,7 +59976,7 @@ xLa
 lZB
 lZB
 awA
-aMF
+oAb
 aYA
 lZB
 bfL
