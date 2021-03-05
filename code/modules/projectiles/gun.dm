@@ -209,11 +209,17 @@
 
 /obj/item/gun/attack(mob/living/M, mob/user)
 	. = ..()
+	if(bayonet && user.a_intent == INTENT_HARM)
+		M.attackby(bayonet, user) // handles cooldown
+		return
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
 	. = ..()
+	if(bayonet && user.a_intent == INTENT_HARM)
+		O.attackby(bayonet, user) // handles cooldown
+		return
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
@@ -424,21 +430,6 @@
 	process_chamber(user)
 	update_icon()
 	return TRUE
-
-/obj/item/gun/attack(mob/M as mob, mob/user)
-	if(user.a_intent == INTENT_HARM) //Flogging
-		if(bayonet)
-			M.attackby(bayonet, user)
-			return
-		else
-			return ..()
-
-/obj/item/gun/attack_obj(obj/O, mob/user)
-	if(user.a_intent == INTENT_HARM)
-		if(bayonet)
-			O.attackby(bayonet, user)
-			return
-	return ..()
 
 /obj/item/gun/proc/combine_items(mob/user, obj/item/gun/A, obj/item/gun/B, obj/item/gun/C)
 
