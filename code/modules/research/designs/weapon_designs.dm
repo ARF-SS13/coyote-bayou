@@ -530,7 +530,7 @@
 	desc = "A mindshield implant."
 	id = "implant_loyal"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 500)
 	build_path = /obj/item/implantcase/mindshield
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -539,7 +539,7 @@
 	name = "Microfusion Cell"
 	id = "mfc"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000)
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -548,7 +548,7 @@
 	name = "Energy Cell"
 	id = "ec"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000)
 	build_path =/obj/item/stock_parts/cell/ammo/ec
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -557,7 +557,7 @@
 	name = "Electron Charge Pack"
 	id = "ecp"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/diamond = 2000)
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
