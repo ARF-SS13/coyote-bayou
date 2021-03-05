@@ -13251,15 +13251,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/desert)
-"aJQ" = (
-/obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/tier1,
-/obj/item/clothing/suit/nun,
-/obj/item/clothing/suit/nun,
-/obj/item/clothing/accessory/pocketprotector,
-/obj/item/clothing/accessory/pocketprotector,
-/turf/open/floor/wood/f13/old,
-/area/f13/desert)
 "aJR" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/wood/f13/old,
@@ -31846,11 +31837,6 @@
 /mob/living/simple_animal/hostile/stalker,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
-"bLl" = (
-/obj/structure/chair/stool,
-/obj/item/clothing/head/helmet/knight/fluff/metal/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
 "bLm" = (
 /obj/machinery/light{
 	dir = 8
@@ -37376,6 +37362,15 @@
 /obj/structure/simple_door/wood,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
+"iHm" = (
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/item/clothing/suit/chaplain/nun,
+/obj/item/clothing/suit/chaplain/nun,
+/obj/item/clothing/accessory/pocketprotector,
+/obj/item/clothing/accessory/pocketprotector,
+/turf/open/floor/wood/f13/old,
+/area/f13/desert)
 "iMB" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -38972,6 +38967,11 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/mountain_bunker)
+"uyE" = (
+/obj/structure/chair/stool,
+/obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
+/area/f13/tunnel)
 "uDn" = (
 /obj/structure/light_construct,
 /obj/structure/table/reinforced,
@@ -131620,7 +131620,7 @@ aag
 bjb
 agh
 aIQ
-aJQ
+iHm
 bjb
 aJT
 biw
@@ -191448,7 +191448,7 @@ auv
 bKJ
 vNX
 bAQ
-bLl
+uyE
 auv
 vNX
 bLt

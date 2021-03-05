@@ -1007,17 +1007,17 @@ Camp Follower
 		backpack = /obj/item/pickaxe
 		l_hand = /obj/item/radio
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "farmer")
 		belt = /obj/item/storage/bag/plants
 		l_hand = /obj/item/radio
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "smith")
 		backpack = /obj/item/storage/backpack/satchel/explorer
 		backpack_contents = list(/obj/item/radio, /obj/item/screwdriver, /obj/item/wrench, /obj/item/crowbar, /obj/item/wirecutters)
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "healer")
 		backpack = /obj/item/storage/backpack/satchel/explorer
 		backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/pill/patch/healingpowder=4, /obj/item/stack/medical/gauze/improvised = 2)
@@ -1081,7 +1081,7 @@ Slave
 
 /datum/outfit/loadout/slsmith
 	name = "Smith"
-	suit = /obj/item/clothing/suit/fluff/vest
+	suit = /obj/item/clothing/suit/f13/vest
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack_contents = list(
 		/obj/item/radio=1,
@@ -1113,7 +1113,7 @@ Slave
 
 /datum/outfit/loadout/slminer
 	name = "Miner"
-	suit = /obj/item/clothing/suit/fluff/vest
+	suit = /obj/item/clothing/suit/f13/vest
 	belt = /obj/item/storage/bag/ore
 
 	backpack_contents = list(

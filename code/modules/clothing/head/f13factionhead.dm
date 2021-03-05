@@ -402,8 +402,8 @@
 /obj/item/clothing/head/f13/ranger
 	name = "NCR ranger campaign hat"
 	desc = "(VI) An NCR ranger hat, standard issue amongst all but the most elite rangers."
-	icon_state = "drill_hat"
-	item_state = "drillhat"
+	icon_state = "drillhat"
+	item_state = "drill_hat"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat

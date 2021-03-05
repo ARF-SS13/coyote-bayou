@@ -311,7 +311,7 @@
 
 /obj/item/clothing/head/beret/viro
 	name = "virologist's beret"
-	desc = "A fancy beret with a green gross, hopefully it's virus free!"
+	desc = "A fancy beret with a green cross, hopefully it's virus free!"
 	icon_state = "beret_viro"
 
 //Research Director

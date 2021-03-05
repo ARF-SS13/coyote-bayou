@@ -138,6 +138,9 @@
 	production = 4
 	maturation = 4
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
+	icon_harvest = "broc-harvest"
+	icon_grow = "broc-grow"
+	icon_dead = "broc-dead"
 	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
 
 /obj/item/reagent_containers/food/snacks/grown/broc
@@ -168,11 +171,11 @@
 	endurance = 10
 	yield = 3
 	growthstages = 4
-	production = 2
-	maturation = 2
+	production = 1
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
-	icon_grow = "potato-grow"
-	icon_dead = "potato-dead"
+	icon_grow = "xander-grow"
+	icon_harvest = "xander-harvest"
+	icon_dead = "xander-dead"
 
 /obj/item/reagent_containers/food/snacks/grown/xander
 	seed = /obj/item/seeds/xander
@@ -224,7 +227,7 @@
 
 /obj/item/seeds/mesquite
 	name = "pack of honey mesquite seeds"
-	desc = "This mycelium grows into tower-cap mushrooms."
+	desc = "These seeds grows into a mesquite plant."
 	icon_state = "mycelium-tower"
 	species = "honey mesquite"
 	plantname = "honey mesquite"
@@ -241,6 +244,7 @@
 	icon_dead = "mesquite-dead"
 	icon_harvest = "mesquite-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	reagents_add = list(/datum/reagent/consumable/honey = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/mesquite
 	seed = /obj/item/seeds/mesquite
@@ -251,7 +255,7 @@
 	filling_color = "#F0E68C"
 	bitesize_mod = 2
 	foodtype = VEGETABLES
-	juice_results = list(/datum/reagent/consumable/honey = 0)
+	juice_results = list(/datum/reagent/consumable/honey = 0.1)
 	tastes = list("crunchy sweetness" = 1)
 	distill_reagent = /datum/reagent/consumable/ethanol/wastemead
 
@@ -301,7 +305,7 @@
 	plantname = "prickly pear"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	product = /obj/item/reagent_containers/food/snacks/grown/pricklypear
-	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.02,  /datum/reagent/consumable/nutriment/vitamin = 0.2, /datum/reagent/water = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.2, /datum/reagent/water = 0.04)
 	lifespan = 60
 	endurance = 20
 	yield = 2
@@ -403,7 +407,7 @@
 
 /obj/item/seeds/yucca
 	name = "pack of banana yucca seeds"
-	desc = "These seeds grow into an agave plant."
+	desc = "These seeds grow into a yucca plant."
 	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "seed-yucca"
 	species = "banna yucca"
@@ -413,8 +417,7 @@
 	endurance = 30
 	yield = 5
 	growthstages = 4
-	production = 2
-	maturation = 1
+	production = 1
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "yucca-grow"
 	icon_dead = "yucca-dead"
@@ -426,7 +429,7 @@
 /obj/item/reagent_containers/food/snacks/grown/yucca
 	seed = /obj/item/seeds/yucca
 	name = "banana yucca fruit"
-	desc = "The fleshy banana banana like fruit, rougly 8 cm long and 6 cm across. It smells tastes similar to a sweet potato."
+	desc = "The fleshy banana like fruit, rougly 8 cm long and 6 cm across. It tastes similar to a sweet potato."
 	icon_state = "Bannana Yucca"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	bitesize = 3

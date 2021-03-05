@@ -254,8 +254,6 @@
 		Move(get_step(loc, t), t)
 	if(current_dir)
 		AM.setDir(current_dir)
-	if(client && AM.drag_delay)
-		client.move_delay += AM.drag_delay
 	now_pushing = FALSE
 
 /mob/living/start_pulling(atom/movable/AM, state, force = pull_force, supress_message = FALSE)

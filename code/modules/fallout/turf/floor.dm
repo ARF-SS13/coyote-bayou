@@ -2,7 +2,7 @@
 
 /turf/open/floor/f13
 	name = "floor"
-
+	planetary_atmos = 1
 	icon_state = "floor"
 	icon_regular_floor = "floor"
 	icon_plating = "plating"

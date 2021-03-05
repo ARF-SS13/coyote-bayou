@@ -264,11 +264,3 @@
 	for(var/V in plushies_set_two)
 		plushie_list[V] = V //easiest way to do this which works with how selecting options works, despite being snowflakey to have the key equal the value
 	return plushie_list
-
-/obj/item/skub
-	desc = "It's skub."
-	name = "skub"
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "skub"
-	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("skubbed")

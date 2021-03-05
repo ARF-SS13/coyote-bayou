@@ -93,13 +93,13 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/medical
 	name = "medical's plasma envirosuit helmet"
-	desc = "An envriohelmet designed for plasmaman medical doctors, having two stripes down it's length to denote as much."
+	desc = "An envirohelmet designed for plasmaman medical doctors, having two stripes down its length to denote as much."
 	icon_state = "doctor_envirohelm"
 	item_state = "doctor_envirohelm"
 
 /obj/item/clothing/head/helmet/space/plasmaman/cmo
 	name = "chief medical officer's plasma envirosuit helmet"
-	desc = "A blue and white envriohelmet designed for the chief medical officer."
+	desc = "A blue and white envirohelmet designed for the chief medical officer."
 	icon_state = "cmo_envirohelm"
 	item_state = "cmo_envirohelm"
 
@@ -117,7 +117,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/chemist
 	name = "chemistry plasma envirosuit helmet"
-	desc = "A plasmaman envirosuit designed for chemists, two orange stripes going down it's face."
+	desc = "A plasmaman envirosuit designed for chemists, two orange stripes going down its face."
 	icon_state = "chemist_envirohelm"
 	item_state = "chemist_envirohelm"
 
@@ -206,7 +206,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/botany
 	name = "botany plasma envirosuit helmet"
-	desc = "A green and blue envirohelmet designating it's wearer as a botanist. While not specially designed for it, it would protect against minor planet-related injuries."
+	desc = "A green and blue envirohelmet designating its wearer as a botanist. While not specially designed for it, it would protect against minor planet-related injuries."
 	icon_state = "botany_envirohelm"
 	item_state = "botany_envirohelm"
 

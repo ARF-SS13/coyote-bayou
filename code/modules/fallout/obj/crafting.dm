@@ -15,8 +15,8 @@
 
 //The following items are in "crafting" type just to keep code clean.
 /obj/item/crafting
-	name = "Shitspawn"
-	desc = "Why it's here?!<br>Badmins spawn shit!<br>Tell someone about it."
+	name = "crafting item"
+	desc = "This should not be visible. Tell someone about it."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	item_state = "null"
 	w_class = WEIGHT_CLASS_TINY
@@ -49,7 +49,7 @@
 	name = "fuse"
 	desc = "A tiny glass tube with some wiring stuck inside of it.<br>I have no idea what it is."
 	icon_state = "fuse_1"
-/obj/item/crafting/furse/New()
+/obj/item/crafting/fuse/New()
 	..()
 	icon_state = "fuse_[rand(1,3)]"
 
@@ -65,7 +65,7 @@
 	name = "switch"
 	desc = "A common switch, used to light up the flashlight or activate a bomb timer." //Why i code it?
 	icon_state = "switch_1"
-/obj/item/crafting/switch_crafting_crafting/New()
+/obj/item/crafting/switch_crafting/New()
 	..()
 	icon_state = "switch_[rand(1,3)]"
 

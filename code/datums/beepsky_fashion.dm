@@ -115,8 +115,6 @@
 	ignore_sound = TRUE //we instead make the stunned person fire the nya emote
 
 /datum/beepsky_fashion/cat/stun_attack(mob/living/carbon/C) //makes a fake table under you on hit, makes cat people nya when hit
-	if(iscatperson(C))
-		C.emote("nya")
 	var/turf/target_turf = get_turf(C)
 	if(target_turf) //slams you on a fake table
 		playsound(src, 'sound/weapons/sonic_jackhammer.ogg', 50, 1)

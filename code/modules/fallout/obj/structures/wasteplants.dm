@@ -101,7 +101,7 @@
 	produce = /obj/item/reagent_containers/food/snacks/grown/horsenettle
 
 /obj/structure/flora/wasteplant/wild_mesquite
-	name = "wild horsenettle"
+	name = "wild mesquite"
 	icon_state = "wild_mesquite"
 	desc = "The honey mesquite pod grows on a short tree with willow-like branches. Trees with pickable pods will appear bushier in foliage and have strings of pods on them, resembling a fern pattern. Pods can be eaten or used in recipes"
 	produce = /obj/item/reagent_containers/food/snacks/grown/mesquite
@@ -179,7 +179,7 @@ obj/structure/flora/wasteplant/wild_punga
 /////FALLOUT 13 TREES////
 /obj/structure/flora/tree/joshua
 	name = "joshua tree"
-	desc = "A tree named by mormons, who said it's branches mimiced the biblical Joshua, raising his hands in prayer."
+	desc = "A tree named by Msormons, who said its branches looked like the biblical Joshua with his hands raised in prayer."
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	log_amount = 3
 	icon_state = "joshua_1"

@@ -47,9 +47,6 @@
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_HEAD))*/
 
-/obj/item/clothing/head/helmet/f13
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
 //Combat Armor FACTION SPECIFIC COMBAT ARMOR IN f13factionhead.dm
 
 /obj/item/clothing/head/helmet/f13/combat
@@ -59,7 +56,7 @@
 	item_state = "combat_helmet"
 	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
@@ -67,6 +64,7 @@
 /obj/item/clothing/head/helmet/f13/combat/dark
 	name = "combat helmet"
 	color = "#302E2E" // Dark Grey
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/combat/Initialize()
 	. = ..()
@@ -111,7 +109,6 @@
 	desc = "(V) A full head helmet and gas mask, developed for use in heavily contaminated environments."
 	icon_state = "env_helmet"
 	item_state = "env_helmet"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("tier" = 5,"energy" = 45, "bomb" = 55, "bio" = 70, "rad" = 100, "fire" = 60, "acid" = 50)
 	strip_delay = 60
 	equip_delay_other = 60
@@ -134,7 +131,7 @@
 
 //Metal
 
-/obj/item/clothing/head/helmet/knight/fluff/metal
+/obj/item/clothing/head/helmet/knight/f13/metal
 	name = "metal helmet"
 	desc = "(III) An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
 	icon_state = "metalhelmet"
@@ -142,14 +139,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("tier" = 3, "energy" = 20, "bomb" = 16, "bio" = 0, "rad" = 0)
 
-/obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
+/obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	name = "reinforced metal helmet"
 	desc = "(IV) An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
 	icon_state = "metalhelmet_r"
 	item_state = "metalhelmet_r"
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 0)
 
-/obj/item/clothing/head/helmet/knight/fluff/rider
+/obj/item/clothing/head/helmet/knight/f13/rider
 	name = "rider helmet" //Not raider. Rider.
 	desc = "(III) It's a fancy dark metal helmet with orange spray painted flames."
 	icon_state = "rider"
@@ -190,11 +187,12 @@
 
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
-	desc = "(V) A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the high energy weapons resistance."
+	desc = "(V) A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
 	armor = list("tier" = 5, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 10
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	var/hit_reflect_chance = 20
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
@@ -310,7 +308,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
-	desc = "(IX) This helmet once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated."
+	desc = "(IX) This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."
 	icon_state = "midwestgrey_helm"
 	item_state = "midwestgrey_helm"
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
@@ -368,7 +366,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2
 	name = "advanced power helmet MK2"
-	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	armor = list("linemelee" = 400, "linebullet" = 400, "linelaser" = 400, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
@@ -409,27 +407,14 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
-//Various
-/obj/item/clothing/head/helmet/knight/f13/metal
-	name = "metal helmet"
-	desc = "(III) A metal helmet forged in fire.<br>Specially designed for the most fearsome and strongest warriors of the wasteland."
-	icon_state = "metalhelmet"
-	item_state = "metalhelmet"
-
-/obj/item/clothing/head/helmet/knight/f13/rider
-	name = "rider helmet" //Not raider. Rider.
-	desc = "(III) A fancy dark metal helmet with orange spray-painted flames."
-	icon_state = "rider"
-	item_state = "rider"
-
 /obj/item/clothing/head/f13
+	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
 	desc = "(I) <font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
 	icon_state = "rastacap"
 	item_state = "fedora"
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
 	cold_protection = HEAD //This tam brings the warm reggae and Jamaican sun with it.
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
@@ -462,21 +447,18 @@
 	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by regular troops."
 	icon_state = "chinese_s"
 	item_state = "secsoft"
-	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/chinese_officer
 	name = "chinese officer cap"
 	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by low rank officers."
 	icon_state = "chinese_o"
 	item_state = "secsoft"
-	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/chinese_commander
 	name = "chinese peaked cap"
 	desc = "(I) A peaked cap of dark green in color with a red star on the frontside.<br>It obviously belonged to a high rank officer of People's Liberation Army."
 	icon_state = "chinese_c"
 	item_state = "fedora"
-	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/f13/stormchaser
 	name = "stormchaser hat"
@@ -560,6 +542,7 @@
 	icon_state = "vaquerohat"
 	item_state = "vaquerohat"
 	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/hoodedmask
 	name = "hooded mask"
@@ -577,6 +560,7 @@
 	icon_state = "brahmin_leather_cowboy_hat"
 	item_state = "brahmin_leather_cowboy_hat"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	name = "Rusted Cowboy Hat"
@@ -584,6 +568,7 @@
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/police
 	name = "pre-War police hat"
@@ -591,6 +576,7 @@
 	icon_state = "retropolice"
 	item_state = "fedora"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/simplekitty
 	name = "Kitty Headband"
@@ -601,6 +587,7 @@
 
 //Soft caps
 /obj/item/clothing/head/soft/f13
+	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/soft/f13/baseball
 	name = "baseball cap"
@@ -656,7 +643,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	name = "hardened midwestern power helmet"
-	desc = "This helmet once belonged to the Mid Western branch of the Brotherhood of Steel now residing wherever it's user currently is situated. This particular one has gone through a chemical hardening process, increasing it's armor capabilities."
+	desc = "This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"
 	
@@ -667,17 +654,6 @@
 	item_state = "jasonmask"
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 
-
-
-
-
-
-//THE GRAVEYARD
-//UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
-//////////////////////////////////
-
-/obj/item/clothing/head/welding/f13
-
 /obj/item/clothing/head/welding/f13/fire
 	name = "cremator welding helmet"
 	desc = "(III) A welding helmet with flames painted on it.<br>It sure is creepy but also badass."
@@ -685,52 +661,6 @@
 	item_state = "welding"
 	tint = 1
 	armor = list("tier" = 3, "energy" = 5, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-
-/obj/item/clothing/head/welding/f13/japan
-	name = "nippon welding helmet"
-	desc = "(III) Kojin no ato wo motomezu, kojin no motometaru no tokoro wo motome yo."
-	icon_state = "welding_japan"
-	item_state = "welding"
-	tint = 1
-	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-
-
-/obj/item/clothing/head/f13/battlecruiser
-	name = "captain's hat"
-	desc = "(II) The Yamato is loaded. And so am I."
-	icon_state = "battlecruiser"
-	item_state = "battlecruiser"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/head/f13/generalcap
-	name = "Militia cap"
-	desc = "(II)"
-	icon_state = "militiacap"
-	item_state = "militiacap"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	flags_inv = HIDEHAIR
-
-/obj/item/clothing/head/f13/safari //Referencing the Jebediah from Mad Max 3 1985
-	name = "pith helmet"
-	desc = "(II) A lightweight, cloth-covered helmet made of pith.<br>Suitable for explorers or batshit crazy pilots."
-	icon_state = "safari"
-	item_state = "dethat"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-
-/obj/item/clothing/head/f13/general
-	name = "general cap"
-	desc = "(II) A military peaked cap of dark green in color with a golden colored badge on the frontside.<br>The badge is inscripted with the words New California Republic."
-	icon_state = "general"
-	item_state = "fedora"
-	flags_inv = HIDEHAIR
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/atomzealot
-	name = "zealot helm"
-	desc = "(IV) The helmet of an agent of the Division."
-	icon_state = "atomzealot"
-	item_state = "atomzealot"
-	armor = list("tier" = 4, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/atombeliever
 	name = "believer headdress"
@@ -740,49 +670,3 @@
 	armor = list("tier" = 2, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-
-/obj/item/clothing/head/helmet/f13/ranger/old
-	name = "old ranger helmet"
-	desc = "(IV) An old military helmet, commonly worn by Desert Rangers, that went through the fire and the flames, saving a single life amongst heavy bloodshed.<br>This particular helmet has a \"Forgive me mama\" inscription on the side."
-	icon_state = "oldranger"
-	item_state = "oldranger"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 10)
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
-
-/obj/item/clothing/head/f13/strange
-	name = "strange helmet"
-	desc = "(V) A very strange metal helmet...<br>I want to believe."
-	icon = 'icons/fallout/clothing/hats.dmi'
-	icon_state = "strange"
-	item_state = "helmet"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 20, "bio" = 100, "rad" = 40, "fire" = 90, "acid" = 100)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
-	heat_protection = HEAD
-	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
-	strip_delay = 50
-	resistance_flags = FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
-
-/obj/item/clothing/head/helmet/f13/doom
-	name = "marine helmet"
-	desc = "(V) A helmet made of an unknown alloy.<br>You feel like this helmet would allow you to survive through Hell on Mars... er, Earth."
-	icon_state = "doom"
-	item_state = "doom"
-	armor = list("tier" = 5, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	strip_delay = 10
-	resistance_flags = UNACIDABLE
-
-/obj/item/clothing/head/helmet/f13/magneto
-	name = "magneto's helmet"
-	desc = "(V) This helmet allows its wearer to resist all but the strongest or most unexpected telepathic attacks.<br>This is achieved due to technology wired into the helmet itself."
-	icon_state = "magneto"
-	item_state = "magneto"
-	armor = list("tier" = 5, "energy" = 50, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 30, "acid" = 100)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	resistance_flags = UNACIDABLE

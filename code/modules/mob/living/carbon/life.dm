@@ -262,12 +262,6 @@
 	if(breath.get_moles(/datum/gas/miasma))
 		var/miasma_partialpressure = (breath.get_moles(/datum/gas/miasma)/breath.total_moles())*breath_pressure
 		if(miasma_partialpressure > MINIMUM_MOLES_DELTA_TO_MOVE)
-
-			if(prob(0.05 * miasma_partialpressure))
-				var/datum/disease/advance/miasma_disease = new /datum/disease/advance/random(TRUE, 2,3)
-				miasma_disease.name = "Unknown"
-				ForceContractDisease(miasma_disease, TRUE, TRUE)
-
 			//Miasma side effects
 			switch(miasma_partialpressure)
 				if(1 to 5)
