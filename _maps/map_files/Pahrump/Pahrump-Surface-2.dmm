@@ -14831,7 +14831,7 @@
 	req_one_access_txt = "124"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = botany;
+	id = "botany";
 	name = "Botany shutters"
 	},
 /turf/open/floor/f13{
@@ -15175,7 +15175,7 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	id = botany;
+	id = "botany";
 	name = "Botany button";
 	pixel_y = -25
 	},
@@ -26408,7 +26408,7 @@
 "tWu" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = botany;
+	id = "botany";
 	name = "Botany shutters"
 	},
 /turf/open/floor/f13{
