@@ -646,7 +646,7 @@
 	desc = "This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"
-	
+
 /obj/item/clothing/head/helmet/f13/jasonmask
 	name = "jasons mask"
 	desc = "(II) A metal mask made specifically for jason."
@@ -670,3 +670,11 @@
 	armor = list("tier" = 2, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/f13/flatranger
+	name = "NCR gambler ranger hat"
+	desc = "(IV) A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
+	icon_state = "gamblerrang"
+	item_state = "gamblerrang"
+	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
