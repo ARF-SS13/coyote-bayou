@@ -2822,7 +2822,10 @@
 	},
 /area/f13/tunnel)
 "iI" = (
-/obj/structure/mirror,
+/obj/structure/mirror{
+	pixel_x = 5;
+	pixel_y = 4
+	},
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
 "iJ" = (
@@ -10189,6 +10192,9 @@
 	color = "#845f58";
 	pixel_x = 31
 	},
+/obj/structure/window/reinforced/tinted{
+	pixel_y = -7
+	},
 /turf/open/floor/plasteel/darkred/side{
 	dir = 6
 	},
@@ -11488,6 +11494,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"KV" = (
+/obj/structure/window/reinforced/tinted{
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/darkred/side,
+/area/f13/brotherhood)
 "KW" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -11532,6 +11544,14 @@
 /obj/structure/closet,
 /obj/item/circlegame,
 /turf/open/floor/plating,
+/area/f13/brotherhood)
+"Lf" = (
+/obj/effect/spawner/structure/window/hollow,
+/obj/structure/grille,
+/obj/structure/window/reinforced/tinted{
+	pixel_y = -7
+	},
+/turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "Lh" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
@@ -70615,7 +70635,7 @@ Sk
 EG
 jo
 mP
-Ex
+KV
 ir
 Lk
 PZ
@@ -71129,7 +71149,7 @@ NT
 NT
 qm
 vn
-qm
+Lf
 xY
 Na
 Qs
