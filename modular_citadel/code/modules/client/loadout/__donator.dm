@@ -97,7 +97,7 @@
 /datum/gear/donator/foxrangerhelmet
 	name = "Fox's Custom Riot Helmet"
 	slot = SLOT_HEAD
-	path = /obj/item/cloting/head/helmet/f13/ncr/rangercombat/foxcustom
+	path = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom
 	ckeywhitelist = list("superballs")
 	restricted_roles = list("NCR Veteran Ranger")
 

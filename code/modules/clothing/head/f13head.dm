@@ -633,11 +633,16 @@
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
 
-/obj/item/cloting/head/helmet/f13/ncr/rangercombat/foxcustom
-	name = "veiled ranger combat helmet"
-	desc = "A reclaimed Ranger-Hunter centurion helmet, carefully and lovingly restored to working condition with a sniper's veil on it. 'DE OPPRESSO LIBER' is stenciled on the front."
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom
+	name = "reclaimed ranger-hunter combat helmet"
+	desc = "A reclaimed Ranger-Hunter centurion helmet, carefully and lovingly restored to working condition with a sniper's veil wrapped around the neck. 'DE OPPRESSO LIBER' is stenciled on the front."
 	icon_state = "foxranger"
 	item_state = "foxranger"
+	actions_types = list(/datum/action/item_action/toggle)
+	toggle_message = "You put the sniper's veil on"
+	alt_toggle_message = "You take the sniper's veil off"
+	can_toggle = 1
+	toggle_cooldown = 0
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
 	name = "veteran patrol stetson"
