@@ -1566,7 +1566,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/darkred/side{
-	dir = 5
+	dir = 1
 	},
 /area/f13/brotherhood)
 "fi" = (
@@ -2078,6 +2078,7 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/darkgreen/side{
 	dir = 5
 	},
@@ -2797,6 +2798,7 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/darkgreen/side{
 	dir = 6
 	},
@@ -3045,6 +3047,7 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/brotherhood)
 "jC" = (
@@ -4530,9 +4533,7 @@
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plasteel/darkred/side{
-	dir = 5
-	},
+/turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "on" = (
 /obj/structure/window/fulltile/house{
@@ -6629,6 +6630,7 @@
 	name = "brig";
 	req_access_txt = "120"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "vo" = (
@@ -11097,6 +11099,12 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/darkred/side,
 /area/f13/brotherhood)
+"JI" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/darkgreen/side{
+	dir = 9
+	},
+/area/f13/brotherhood)
 "JJ" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -13894,6 +13902,7 @@
 /obj/machinery/door/airlock/medical/glass{
 	req_access_txt = "120"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "St" = (
@@ -15639,7 +15648,10 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "XM" = (
-/obj/machinery/mineral/ore_redemption,
+/obj/machinery/mineral/ore_redemption{
+	input_dir = 2;
+	output_dir = 1
+	},
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
@@ -65964,7 +65976,7 @@ Fz
 Fz
 NT
 NT
-aJ
+JI
 sk
 Cp
 Dd
