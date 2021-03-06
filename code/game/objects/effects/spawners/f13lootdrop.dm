@@ -752,7 +752,7 @@
 	name = "Colt 6520 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/colt6520,
-				/obj/item/ammo_box/magazine/m10mm_adv
+				/obj/item/ammo_box/l10mm
 				)
 
 /obj/effect/spawner/bundle/f13/varmint

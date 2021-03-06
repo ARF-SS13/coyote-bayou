@@ -28,6 +28,7 @@
 /datum/gear/donator/ranger44
 	name = ".44 Magnum Service Revolver"
 	slot = SLOT_NECK
+	path = /obj/item/storage/belt/holster/ranger44
 	ckeywhitelist = list("pilotbland",
 						"poots13",
 						"panzer1944",
@@ -42,6 +43,7 @@
 /datum/gear/donator/ranger45
 	name = ".45 ACP Service Revolver"
 	slot = SLOT_NECK
+	path = /obj/item/storage/belt/holster/ranger45
 	ckeywhitelist = list("seabass390",
 						"poots13",
 						"julwaters",
@@ -51,7 +53,15 @@
 /datum/gear/donator/ranger357
 	name = ".357 Magnum Service Revolver"
 	slot = SLOT_NECK
+	path = /obj/item/storage/belt/holster/ranger357
 	ckeywhitelist = list("shoi87")
+	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
+
+/datum/gear/donator/ranger10mm
+	name = "10mm Service Revolver"
+	slot = SLOT_NECK
+	path = /obj/item/storage/belt/holster/ranger10mm
+	ckeywhitelist = list("hawkwestheimer")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/rangercaptainpins
