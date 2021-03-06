@@ -35,16 +35,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
-"ag" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/flasher{
-	id = SW CELL;
-	pixel_x = -30
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/f13/brotherhood)
 "ah" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
@@ -56,12 +46,10 @@
 /area/f13/tunnel)
 "aj" = (
 /obj/machinery/button{
-	id = NW CELL;
 	pixel_x = -5;
 	pixel_y = 30
 	},
 /obj/machinery/button{
-	id = NE CELL;
 	pixel_x = 5;
 	pixel_y = 30
 	},
@@ -1578,7 +1566,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/darkred/side{
-	dir = 1
+	dir = 5
 	},
 /area/f13/brotherhood)
 "fi" = (
@@ -2090,7 +2078,6 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/darkgreen/side{
 	dir = 5
 	},
@@ -2810,7 +2797,6 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/darkgreen/side{
 	dir = 6
 	},
@@ -3001,16 +2987,6 @@
 	dir = 1
 	},
 /area/f13/brotherhood)
-"jp" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/flasher{
-	id = NE CELL;
-	pixel_x = -30
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/f13/brotherhood)
 "jq" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -3069,7 +3045,6 @@
 	name = "Hydroponics";
 	req_access_txt = "120"
 	},
-/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/brotherhood)
 "jC" = (
@@ -4555,7 +4530,9 @@
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/darkred/side{
+	dir = 5
+	},
 /area/f13/brotherhood)
 "on" = (
 /obj/structure/window/fulltile/house{
@@ -7105,7 +7082,6 @@
 /area/f13/brotherhood)
 "wE" = (
 /obj/machinery/button{
-	id = SW CELL;
 	pixel_y = -30
 	},
 /turf/open/floor/plasteel/darkred/side,
@@ -8351,12 +8327,6 @@
 "AD" = (
 /turf/closed/wall/f13/wood,
 /area/f13/sewer)
-"AE" = (
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/plasteel/darkgreen/side{
-	dir = 9
-	},
-/area/f13/brotherhood)
 "AF" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -13866,7 +13836,6 @@
 	dir = 8
 	},
 /obj/machinery/flasher{
-	id = NW CELL;
 	pixel_x = -30
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -15670,10 +15639,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "XM" = (
-/obj/machinery/mineral/ore_redemption{
-	input_dir = 2;
-	output_dir = 1
-	},
+/obj/machinery/mineral/ore_redemption,
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
@@ -65998,7 +65964,7 @@ Fz
 Fz
 NT
 NT
-AE
+aJ
 sk
 Cp
 Dd
@@ -69868,7 +69834,7 @@ qF
 Rf
 IV
 DN
-ag
+Sk
 ES
 NT
 Fr
@@ -70633,7 +70599,7 @@ YC
 Nb
 NT
 ES
-jp
+Sk
 EG
 jo
 mP
