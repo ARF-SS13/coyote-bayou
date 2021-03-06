@@ -244,3 +244,11 @@
 	item_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/mask/gas/ranger
+	name = "ranger gas mask"
+	desc = "A close-fitting tactical mask issued to all NCR Rangers."
+	icon_state = "rangermask"
+	item_state = "rangermask"
+	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+	visor_flags_inv = 0

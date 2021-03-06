@@ -146,6 +146,13 @@
 	item_state = "vetranger"
 	item_color = "vetranger"
 
+/obj/item/clothing/under/f13/ranger/vet/foxflannel
+	name = "black ranger flannel outfit"
+	desc = "A black flannel ontop of a pair of slim-fitting pre-war jeans that were kept in excellent condition. The back leather panel is worn out but you can barely make out: '512'."
+	icon_state = "foxflannel"
+	item_state = "foxflannel"
+	item_color = "foxflannel"
+
 /obj/item/clothing/under/f13/ranger/blue
 	name = "blue ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. A blue collar shirt with tan slacks."

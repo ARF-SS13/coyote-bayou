@@ -43,15 +43,14 @@
 							"NCR Trooper",
 							"NCR Rear Echelon",
 							"NCR Off-Duty",
-							"NCR Patrol Ranger",
-							"NCR Scout Ranger"
+							"NCR Ranger"
 						)
 
 /datum/gear/uniform/ranger
 	name = "ranger outfit"
 	path = /obj/item/clothing/under/f13/ranger
 	restricted_desc = "Rangers"
-	restricted_roles = list("NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Scout Ranger")
+	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger")
 
 /datum/gear/uniform/ranger/trail
 	name = "trail ranger outfit"
