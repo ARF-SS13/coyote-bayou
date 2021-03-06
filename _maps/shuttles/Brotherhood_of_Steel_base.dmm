@@ -6,34 +6,32 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "e" = (
-/obj/docking_port/mobile/elevator/bos,
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
+/obj/machinery/computer/shuttle/bos,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "f" = (
-/obj/item/flag/bos,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SW";
+	move_me = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "h" = (
 /turf/template_noop,
 /area/template_noop)
 "i" = (
-/turf/closed/indestructible/rock,
-/area/template_noop)
-"j" = (
-/turf/closed/indestructible/rock,
-/area/space)
-"s" = (
-/obj/machinery/computer/shuttle/bos,
+/obj/item/flag/bos,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
-"t" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE";
-	move_me = 1
+"j" = (
+/obj/docking_port/mobile/elevator/bos,
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
@@ -54,128 +52,83 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "D" = (
-/turf/open/space/basic,
-/area/space)
-"X" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = "SW";
+	id = "SE";
 	move_me = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 
 (1,1,1) = {"
+a
 j
-j
-j
-j
-j
-D
-D
-D
+a
+h
+h
+h
 "}
 (2,1,1) = {"
-j
 a
-e
+c
 a
-i
 h
 h
-D
+h
 "}
 (3,1,1) = {"
-j
 a
 c
 a
-i
-i
-i
-j
+a
+a
+a
 "}
 (4,1,1) = {"
-j
-a
-c
-a
-a
-a
-a
-j
-"}
-(5,1,1) = {"
-j
 a
 c
 c
 u
-X
+f
 a
-j
+"}
+(5,1,1) = {"
+a
+c
+c
+c
+c
+a
 "}
 (6,1,1) = {"
-j
-a
-c
-c
-c
-c
-a
-j
-"}
-(7,1,1) = {"
-j
 a
 c
 c
 w
-t
+D
 a
-j
+"}
+(7,1,1) = {"
+a
+c
+c
+c
+c
+a
 "}
 (8,1,1) = {"
-j
 a
+i
 c
 c
-c
-c
+e
 a
-j
 "}
 (9,1,1) = {"
-j
-a
-f
-c
-c
-s
-a
-j
-"}
-(10,1,1) = {"
-j
 a
 a
 a
 a
 a
 a
-j
-"}
-(11,1,1) = {"
-j
-j
-j
-j
-j
-j
-j
-j
 "}
