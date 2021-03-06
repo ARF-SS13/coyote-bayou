@@ -1,10 +1,10 @@
 //Bluespace crystals, used in telescience and when crushed it will blink you to a random turf.
 /obj/item/stack/ore/bluespace_crystal
-	name = "bluespace crystal"
-	desc = "A glowing bluespace crystal, not much is known about how they work. It looks very delicate."
+	name = "quantum mesh"
+	desc = "A glowing quantum mesh, not much is known about how they work. It looks very delicate."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "bluespace_crystal"
-	singular_name = "bluespace crystal"
+	singular_name = "quantum mesh"
 	dye_color = DYE_COSMIC
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
@@ -15,7 +15,7 @@
 	merge_type = /obj/item/stack/ore/bluespace_crystal
 
 /obj/item/stack/ore/bluespace_crystal/refined
-	name = "refined bluespace crystal"
+	name = "refined quantum mesh"
 	points = 0
 	refined_type = null
 	merge_type = /obj/item/stack/ore/bluespace_crystal/refined
@@ -50,8 +50,8 @@
 
 //Artificial bluespace crystal, doesn't give you much research.
 /obj/item/stack/ore/bluespace_crystal/artificial
-	name = "artificial bluespace crystal"
-	desc = "An artificially made bluespace crystal, it looks delicate."
+	name = "artificial quantum mesh"
+	desc = "An artificially made quantum mesh, it looks delicate."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT*0.5)
 	blink_range = 4 // Not as good as the organic stuff!
 	points = 0 //nice try
@@ -61,12 +61,12 @@
 
 //Polycrystals, aka stacks
 /obj/item/stack/sheet/bluespace_crystal
-	name = "bluespace polycrystal"
+	name = "quantum polymesh"
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "polycrystal"
 	item_state = "sheet-polycrystal"
 	singular_name = "bluespace polycrystal"
-	desc = "A stable polycrystal, made of fused-together bluespace crystals. You could probably break one off."
+	desc = "A stable polycrystal, made of fused-together quantum mesh. You could probably break one off."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
 	attack_verb = list("bluespace polybashed", "bluespace polybattered", "bluespace polybludgeoned", "bluespace polythrashed", "bluespace polysmashed")
 	novariants = TRUE

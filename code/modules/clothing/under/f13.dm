@@ -153,6 +153,13 @@
 	item_state = "foxflannel"
 	item_color = "foxflannel"
 
+/obj/item/clothing/under/f13/ranger/blue
+	name = "blue ranger outfit"
+	desc = "Simple rustic clothes for a big iron packin' lawman. A blue collar shirt with tan slacks."
+	icon_state = "blueranger"
+	item_state = "blueranger"
+	item_color = "blueranger"
+
 /obj/item/clothing/under/f13/rustic
 	name = "rustic outfit"
 	desc = "Simple rustic clothes for your day to day life in the wastes."
