@@ -633,6 +633,12 @@
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
 
+/obj/item/cloting/head/helmet/f13/ncr/rangercombat/foxcustom
+	name = "veiled ranger combat helmet"
+	desc = "A reclaimed Ranger-Hunter centurion helmet, carefully and lovingly restored to working condition with a sniper's veil on it. 'DE OPPRESSO LIBER' is stenciled on the front."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
 	name = "veteran patrol stetson"
 	desc = "A weathered campaign hat tightly fitted over the viscera of a ranger combat helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies."

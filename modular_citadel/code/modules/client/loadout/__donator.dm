@@ -35,7 +35,8 @@
 						"svenja",
 						"idiocityinc",
 						"zeronetalpha",
-						"mrmatrixman")
+						"mrmatrixman",
+						"thegreatcoward")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/ranger45
@@ -82,9 +83,31 @@
 						"idiocityinc",
 						"zeronetalpha",
 						"mrmatrixman",
-						"asterixcodix")
+						"asterixcodix",
+						"thegreatcoward")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
+/datum/gear/donator/foxrangersuit
+	name = "Fox's Custom Riot Armor"
+	slot = SLOT_WEAR_SUIT
+	path = /obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
+	ckeywhitelist = list("superballs")
+	restricted_roles = list("NCR Veteran Ranger")
+
+/datum/gear/donator/foxrangerhelmet
+	name = "Fox's Custom Riot Helmet"
+	slot = SLOT_HEAD
+	path = /obj/item/cloting/head/helmet/f13/ncr/rangercombat/foxcustom
+	ckeywhitelist = list("superballs")
+	restricted_roles = list("NCR Veteran Ranger")
+
+/datum/gear/donator/foxuniform
+	name = "Fox's Flannel"
+	slot = SLOT_W_UNIFORM
+	path = /obj/item/clothing/under/f13/ranger/vet/foxflannel
+	ckeywhitelist = list("superballs")
+	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger", "NCR Off-Duty")
+		
 ////////////////////////////
 ///Ranger items end here.///
 ////////////////////////////

@@ -615,6 +615,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "soldier"
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
+	name = "sniper riot gear"
+	desc = "A customized suit of riot gear with parts of the suit reinforced with pieces of leather armor and former Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
