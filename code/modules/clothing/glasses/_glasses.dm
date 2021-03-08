@@ -575,8 +575,8 @@
 /obj/item/clothing/glasses/sunglasses/fakeblindfold
 	name = "priestess blindfold"
 	desc = "The coverings used to restrict the sight of the world, but see with the Sight of Mars."
-	icon_state = "blindfold"
-	item_state = "blindfold"
+	icon_state = "legpriestess"
+	item_state = "legpriestess"
 
 /obj/item/clothing/glasses/sunglasses/fakeblindfold/equipped(mob/living/user, slot)
 	..()

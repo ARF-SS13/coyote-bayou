@@ -8,7 +8,7 @@
 
 /obj/item/clothing/shoes/f13/rag
 	name = "footcloths"
-	desc = "A footcloths made of ripped cloth.<br>It has soaked in smelly sweat, and it is rather repulsive.<br>Only the poorest of settlers, mostly the drug addicts or slaves wear something like that."
+	desc = "Ripped cloth used as improvised foot strips, instead of shoes. Crude and gets dirty fast."
 	icon_state = "rag"
 	item_state = "rag"
 
@@ -85,7 +85,7 @@
 
 /obj/item/clothing/shoes/f13/military/plated
 	name = "plated metal boots"
-	desc = "A pair of leather boots that have been patched heavily and reinforced with light metal plates around the heel and ankles to protect the user."
+	desc = "A pair of leather boots reinforced with metal toe caps and shin guards."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
