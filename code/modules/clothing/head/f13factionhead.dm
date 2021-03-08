@@ -222,12 +222,9 @@
 	flags_cover = HEADCOVERSEYES
 	dog_fashion = null
 
-<<<<<<< Updated upstream
 //Legacy trash line?
 /obj/item/clothing/head/helmet/redtaghelm
 
-=======
->>>>>>> Stashed changes
 /obj/item/clothing/head/helmet/f13/legion/vet
 	name = "legion veteran helmet"
 	desc = "(V) It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
@@ -235,7 +232,6 @@
 	item_state = "legvet"
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-//WIP
 /obj/item/clothing/head/helmet/f13/legion/heavy
 	name = "legion veteran decan helmet"
 	desc = "(VI) A metal helmet with ballistic visor and a plume, denoting veteran Decanus status."
