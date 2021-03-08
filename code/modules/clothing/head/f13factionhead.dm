@@ -166,10 +166,6 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 //Legion
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 /obj/item/clothing/head/f13/legion/servant
 	name = "servant headwear"
 	desc = "A simple uncoloured linen cloth wrapped around the head, the mark of a servant slave trained in household work."
@@ -225,12 +221,6 @@
 	flags_cover = HEADCOVERSEYES
 	dog_fashion = null
 
-<<<<<<< Updated upstream
-//Legacy trash line?
-/obj/item/clothing/head/helmet/redtaghelm
-
-=======
->>>>>>> Stashed changes
 /obj/item/clothing/head/helmet/f13/legion/vet
 	name = "legion veteran helmet"
 	desc = "(V) It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
