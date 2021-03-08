@@ -615,6 +615,21 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "soldier"
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
+	name = "sniper riot gear"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+
+/obj/item/clothing/suit/toggle/armor/f13/cloakranger
+	name = "ranger poncho"
+	desc = "(IV) A durable muslin poncho. Tough enough to bear the elements and serve as handy blanket."
+	icon_state = "ranger_cloak"
+	item_state = "ranger_cloak"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0) //Same armor as trail ranger gear
+	slowdown = -0.10 //Same speed boost as recon ranger gear. Lower than trail ranger speed to balance it protecting arms.
+
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE

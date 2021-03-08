@@ -8,7 +8,7 @@
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = null
 	baseturfs = /turf/open/indestructible/ground/inside/mountain
-	initial_gas_mix = "TEMP=2.7"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS // OOPS
 	opacity = 1
 	density = TRUE
 	blocks_air = 1

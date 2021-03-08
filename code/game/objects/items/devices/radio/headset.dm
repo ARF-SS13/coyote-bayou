@@ -17,7 +17,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
-	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION
+	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION,
+	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER
 ))
 
 /obj/item/radio/headset
@@ -305,6 +306,27 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_ncr
 
 /obj/item/radio/headset/headset_ncr/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
+/obj/item/radio/headset/headset_ranger
+	name = "Ranger radio headset"
+	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_ranger
+
+/obj/item/radio/headset/headset_ranger/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
+/obj/item/radio/headset/headset_ncr_com
+	name = "NCR Command radio headset"
+	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+	keyslot = new /obj/item/encryptionkey/headset_ranger
+
+/obj/item/radio/headset/headset_ncr_com/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 

@@ -633,6 +633,17 @@
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
 
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom
+	name = "reclaimed ranger-hunter combat helmet"
+	desc = "A reclaimed Ranger-Hunter centurion helmet, carefully and lovingly restored to working condition with a sniper's veil wrapped around the neck. 'DE OPPRESSO LIBER' is stenciled on the front."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+	actions_types = list(/datum/action/item_action/toggle)
+	toggle_message = "You put the sniper's veil on"
+	alt_toggle_message = "You take the sniper's veil off"
+	can_toggle = 1
+	toggle_cooldown = 0
+
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
 	name = "veteran patrol stetson"
 	desc = "A weathered campaign hat tightly fitted over the viscera of a ranger combat helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies."
@@ -646,7 +657,7 @@
 	desc = "This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"
-	
+
 /obj/item/clothing/head/helmet/f13/jasonmask
 	name = "jasons mask"
 	desc = "(II) A metal mask made specifically for jason."
@@ -670,3 +681,11 @@
 	armor = list("tier" = 2, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/f13/flatranger
+	name = "NCR gambler ranger hat"
+	desc = "(IV) A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
+	icon_state = "gamblerrang"
+	item_state = "gamblerrang"
+	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+

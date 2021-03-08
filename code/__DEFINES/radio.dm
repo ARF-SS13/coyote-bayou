@@ -53,6 +53,10 @@
 #define RADIO_KEY_NCR "w"
 #define RADIO_TOKEN_NCR ":w"
 
+#define RADIO_CHANNEL_RANGER "Ranger"
+#define RADIO_KEY_RANGER "r"
+#define RADIO_TOKEN_RANGER ":r"
+
 #define RADIO_CHANNEL_BOS "BOS"
 #define RADIO_KEY_BOS "q"
 #define RADIO_TOKEN_BOS ":q"
@@ -92,6 +96,7 @@
 #define FREQ_ENCLAVE 1367 //ENCLAVE
 #define FREQ_DEN 1369 //TOWN
 #define FREQ_LEGION 1371 //LEGIO
+#define FREQ_RANGER 1373 //Ranger
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435

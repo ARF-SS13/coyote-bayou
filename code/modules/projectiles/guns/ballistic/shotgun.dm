@@ -383,6 +383,15 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5
+	name = "browning auto-5"
+	desc = "A semi automatic shotgun with a four round tube."
+	icon_state = "auto5"
+	item_state = "huntingshotgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."

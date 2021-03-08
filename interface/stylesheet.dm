@@ -64,6 +64,7 @@ em						{font-style: normal;	font-weight: bold;}
 .enclaveradio			{color: #003000;}
 .denradio				{color: #a8732b;}
 .legionradio			{color: #c24d44;}
+.rangerradio			{color: #422005;}
 
 .yell					{					font-weight: bold;}
 

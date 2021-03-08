@@ -42,7 +42,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		playsound(src, pshoom_or_beepboopblorpzingshadashwoosh, 40, 1)
 
 /obj/item/storage/part_replacer/bluespace
-	name = "bluespace rapid part exchange device"
+	name = "quantum rapid part exchange device"
 	desc = "A version of the RPED that allows for replacement of parts and scanning from a distance, along with higher capacity for parts. Definitely not just a BSRPED painted orange."
 	icon_state = "BS_RPED"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -267,7 +267,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
-	name = "bluespace matter bin"
+	name = "quantum matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "bluespace_matter_bin"
 	rating = 4
