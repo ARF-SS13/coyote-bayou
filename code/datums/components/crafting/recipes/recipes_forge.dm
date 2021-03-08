@@ -565,7 +565,7 @@
 
 /datum/crafting_recipe/plateglove
 	name = "Plate Gloves"
-	result = /obj/item/clothing/gloves/legion/legate
+	result = /obj/item/clothing/gloves/legion/plated
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/cloth = 5)

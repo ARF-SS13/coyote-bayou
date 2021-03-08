@@ -248,7 +248,40 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	flags_inv = HIDEGLOVES|HIDESHOES
 
-//Roma Legion
+/obj/item/clothing/under/f13/legauxilia
+	name = "male auxilia robes"
+	desc = "Thin cotton robe for males, short sleeved with a leather belt, ends just above the knees."
+	icon_state = "legaux"
+	item_state = "legaux"
+	item_color = "legskirt"
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+
+/obj/item/clothing/under/f13/legauxiliaf
+	name = "female auxilia robes"
+	desc = "Thin cotton robe for females, kneelength and held together by a black sash."
+	icon_state = "legauxf"
+	item_state = "legauxf"
+	item_color = "legskirt"
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+
+/obj/item/clothing/under/f13/legslave
+	name = "simple male slave clothing"
+	desc = "A roughly made long tunic, held in place by a rope, its marked with a big red X signaling its wearer is property of the Legion."
+	icon_state = "legslave"
+	item_state = "legslave"
+	item_color = "rag"
+
+/obj/item/clothing/under/f13/legslavef
+	name = "simple female slave clothing"
+	desc = "A roughly made long tunic, held in place by a rope, its marked with a big red X signaling its wearer is property of the Legion."
+	icon_state = "legslavef"
+	item_state = "legslavef"
+	item_color = "rag"
+
+
+//Roma Legion Legacy delete?
 
 /obj/item/clothing/under/f13/romaskirt
 	name = "roma legionary fatigues"
