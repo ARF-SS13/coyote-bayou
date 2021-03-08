@@ -136,6 +136,43 @@
 
 //Legion
 
+/obj/item/clothing/suit/armor/f13/medicus
+	name = "medicus apron"
+	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia."
+	icon_state = "legmedicus"
+	armor = list("energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
+
+/obj/item/clothing/suit/armor/f13/opifex
+	name = "opifex apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as a Opifex."
+	icon_state = "opifex_apron"
+	item_state = "opifex_apron"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 5)
+	allowed = list(/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/stack/cable_coil,
+		/obj/item/clothing/gloves)
+
+/obj/item/clothing/suit/armor/f13/slavelabor
+	name = "old leather strips"
+	desc = "worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
+	icon_state = "legslaveleather"
+	item_state = "legslaveleather"
+
+/obj/item/clothing/neck/cloak/treasurer
+	name = "treasurers cloak"
+	desc = "The grey and black cloak with gold thread trimming shows the wearer is entrusted with matters of money and records."
+	icon = 'icons/obj/clothing/cloaks.dmi'
+	icon_state = "legtrescloak"
+	item_state = "legtrescloak"
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+
 /obj/item/clothing/suit/armor/f13/legion
 	name = "legion armor"
 	desc = "Unadorned Legion armor."

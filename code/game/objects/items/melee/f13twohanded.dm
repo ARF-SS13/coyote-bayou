@@ -222,6 +222,14 @@
 		desc = "A makeshift spear with \a [G] attached to it."
 	update_icon()
 
+/obj/item/twohanded/spear/lance
+	icon_state = "lance0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	name = "legion lance"
+	desc = "A long spear made in the Legions war foundries. Useful for fighting tribals and hunting when ammunition is scarce."
+	icon_prefix = "lance"
+
 /*
  * Bone Spear
  */
