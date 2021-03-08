@@ -4076,8 +4076,8 @@
 /area/f13/wasteland)
 "dfR" = (
 /obj/structure/table/wood/settler,
-/obj/structure/closet/crate/wicker,
-/turf/open/floor/wood/f13/stage_tr,
+/obj/structure/gallow,
+/turf/open/floor/wood/f13/stage_b,
 /area/f13/wasteland)
 "dfY" = (
 /obj/structure/simple_door/wood,
@@ -4373,7 +4373,7 @@
 	},
 /area/f13/building)
 "dpN" = (
-/obj/structure/kitchenspike/cross,
+/obj/structure/cross,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -8420,7 +8420,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "gxn" = (
-/obj/structure/kitchenspike/cross,
+/obj/structure/cross,
 /obj/effect/mob_spawn/human/corpse,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -8612,11 +8612,6 @@
 "gEr" = (
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
-"gEt" = (
-/obj/structure/guillotine,
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/wasteland)
 "gEv" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/indestructible/ground/outside/dirt,
@@ -16258,11 +16253,6 @@
 /obj/item/clothing/under/f13/raider_leather,
 /turf/open/floor/f13,
 /area/f13/building)
-"mkk" = (
-/obj/structure/table/wood/settler,
-/obj/structure/guillotine,
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/wasteland)
 "mkw" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag,
@@ -46154,8 +46144,8 @@ fyf
 fyf
 fyf
 tFR
-gEt
-azk
+nCx
+dfR
 kGc
 xUW
 uOF
@@ -46669,7 +46659,7 @@ fyf
 fyf
 tFR
 nCx
-azk
+dfR
 kGc
 rPM
 uOF
@@ -47182,8 +47172,8 @@ fyf
 fyf
 fyf
 fyf
-mkk
-azk
+nCx
+dfR
 kGc
 rPM
 uOF
@@ -47439,7 +47429,7 @@ fyf
 fyf
 fyf
 fyf
-dfR
+dKR
 xPh
 kGc
 kwe
