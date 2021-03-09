@@ -243,8 +243,8 @@
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion explorer hood"
-	desc = "(V) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
+	name = "legion explorer cap"
+	desc = "(V) A rugged leather cap with metal reinforcments and built in headphones to plug the radio into."
 	icon_state = "legexplorer"
 	item_state = "legexplorer"
 
@@ -261,8 +261,8 @@
 	item_state = "legvexil_alt"
 
 /obj/item/clothing/head/helmet/f13/legion/venator
-	name = "legion venator hood"
-	desc = "(VI) A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
+	name = "legion venator cap"
+	desc = "(VI) A rugged leather cap with a sturdy metal skullcap and a gold bull insignia in the front."
 	icon_state = "legvenator"
 	item_state = "legvenator"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)

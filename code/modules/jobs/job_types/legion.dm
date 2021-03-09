@@ -903,19 +903,21 @@ Auxilia
 /datum/outfit/loadout/auxmedic
 	name = "Medicus Healer"
 	head = /obj/item/clothing/head/f13/legion/auxilia
-	mask = /obj/item/clothing/mask/bandana/auxilia
 	suit = /obj/item/clothing/suit/armor/f13/medicus
 	gloves = /obj/item/clothing/gloves/color/white
 	r_hand = /obj/item/clothing/under/f13/legauxilia
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healpoultice=3,
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/scalpel=1,
 		/obj/item/hemostat=1,
 		/obj/item/retractor=1,
 		/obj/item/circular_saw=1,
 		/obj/item/cautery=1,
 		/obj/item/surgical_drapes=1,
-		/obj/item/storage/firstaid/ancient=1)
+		/obj/item/stack/sticky_tape/surgical=2,
+		/obj/item/stack/medical/bone_gel=2,
+		/obj/item/bonesetter=1,
+		/obj/item/storage/medical/ancientfirstaid=1)
 
 /datum/outfit/loadout/auxengi
 	name = "Opifex Blacksmith"
@@ -957,7 +959,7 @@ Auxilia
 		/obj/item/folder/red=1,
 		/obj/item/paper_bin/bundlenatural=1,
 		/obj/item/pen/fourcolor=1,
-		/obj/item/storage/bag/money/small/legofficers=1,
+		/obj/item/storage/bag/money/small/legofficers=2,
 		/obj/item/taperecorder=1)
 
 /*
