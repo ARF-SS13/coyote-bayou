@@ -231,7 +231,7 @@
 	icon_state = "arm_laser"
 	contents = newlist(/obj/item/gun/energy/laser/mounted)
 
-/obj/item/organ/cyberimp/arm/gun/taser
+/*/obj/item/organ/cyberimp/arm/gun/taser
 	name = "arm-mounted taser implant"
 	desc = "A variant of the arm cannon implant that fires electrodes and disabler shots. The cannon emerges from the subject's arm and remains inside when not in use."
 	icon_state = "arm_taser"
@@ -262,7 +262,7 @@
 	. = ..()
 	if(locate(/obj/item/assembly/flash/armimplant) in items_list)
 		var/obj/item/assembly/flash/armimplant/F = locate(/obj/item/assembly/flash/armimplant) in items_list
-		F.I = src
+		F.I = src */
 
 /obj/item/organ/cyberimp/arm/esword
 	name = "arm-mounted energy blade"

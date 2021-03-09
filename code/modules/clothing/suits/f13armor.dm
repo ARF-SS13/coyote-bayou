@@ -276,6 +276,14 @@
 	slowdown = 0.4
 	requires_training = FALSE
 
+/obj/item/clothing/suit/armor/f13/power_armor/vaulttec
+	name = "Vault-Tec technical power armour"
+	desc = "(VIII) ."
+	icon_state = "vaultpa"
+	item_state = "vault_pa"
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	slowdown = 0
+
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
 	desc = "(VIII) Developed by Garrahan Mining Co. in collaboration with West Tek, the Excavator-class power armor was designed to protect miners from rockfalls and airborne contaminants while increasing the speed at which they could work. "
