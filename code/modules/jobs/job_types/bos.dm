@@ -779,7 +779,7 @@ Off-Duty
 */
 
 /datum/job/bos/f13offdutybos
-	title = "Off-Duty"
+	title = "BoS Off-Duty"
 	flag = F13OFFDUTYBOS
 	faction = "BOS"
 	total_positions = 8
@@ -821,122 +821,80 @@ Off-Duty
 	gloves = 		/obj/item/clothing/gloves/combat
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
+		/obj/item/stack/medical/gauze=1,
 		/obj/item/encryptionkey/headset_bos=1,
+		/obj/item/kitchen/knife/combat=1
 		)
 
 /datum/outfit/loadout/offa
 	name = "Junior Knight"
-	head = /obj/item/clothing/head/helmet/f13/combat
-	suit = /obj/item/clothing/suit/armor/f13/combat
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
 		/obj/item/clothing/accessory/bos/juniorknight=1
 		)
 
 /datum/outfit/loadout/offb
 	name = "Knight"
-	head = /obj/item/clothing/head/helmet/f13/combat
-	suit = /obj/item/clothing/suit/armor/f13/combat
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
 		/obj/item/clothing/accessory/bos/knight=1
 		)
 
 /datum/outfit/loadout/offc
 	name = "Senior Knight"
-	head = /obj/item/clothing/head/helmet/f13/combat
-	suit = /obj/item/clothing/suit/armor/f13/combat
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
 		/obj/item/clothing/accessory/bos/seniorknight=1
 		)
 
 /datum/outfit/loadout/offd
 	name = "Knight-Captain"
-	head = /obj/item/clothing/head/helmet/f13/combat/mk2
-	suit = /obj/item/clothing/suit/armor/f13/combat/mk2
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/deagle/camo=1,
-		/obj/item/ammo_box/magazine/m44=2,
 		/obj/item/clothing/accessory/bos/knightcaptain=1
 		)
 
 /datum/outfit/loadout/offe
 	name = "Junior Scribe"
-	suit = /obj/item/clothing/suit/armor/f13/battlecoat
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz/magneto=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/juniorscribe=1
 		)
 
 /datum/outfit/loadout/offf
 	name = "Scribe"
-	suit = /obj/item/clothing/suit/armor/f13/battlecoat
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz/magneto=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/scribe=1
 		)
 
 /datum/outfit/loadout/offg
 	name = "Senior Scribe"
-	suit = /obj/item/clothing/suit/armor/f13/battlecoat
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz/magneto=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/seniorscribe=1
 		)
 
 /datum/outfit/loadout/offh
 	name = "Head Scribe"
-	suit = /obj/item/clothing/suit/armor/f13/battlecoat
 	backpack_contents = list(
-		/obj/item/gun/energy/ionrifle/carbine=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/headscribe=1
 		)
 
 /datum/outfit/loadout/offi
 	name = "Junior Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
 /datum/outfit/loadout/offj
 	name = "Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
 /datum/outfit/loadout/offk
 	name = "Senior Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/seniorpaladin=1
 		)
 
 /datum/outfit/loadout/offl
 	name = "Sentinel"
-	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice
-	head = /obj/item/clothing/head/helmet/knight/fluff/metal/reinforced
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/plasma/glock=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/sentinel=1
 		)

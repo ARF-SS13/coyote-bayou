@@ -1,5 +1,7 @@
 
 ////////////////////////Medical////////////////////////
+
+/*
 /datum/techweb_node/cloning
 	id = "cloning"
 	display_name = "Genetic Engineering"
@@ -7,6 +9,7 @@
 	prereq_ids = list("biotech")
 	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+*/
 
 /datum/techweb_node/cryotech
 	id = "cryotech"
@@ -103,8 +106,8 @@
 	id = "combat_cyber_implants"
 	display_name = "Combat Cybernetic Implants"
 	description = "Military grade combat implants to improve performance."
-	prereq_ids = list("adv_cyber_implants","weaponry","NVGtech","high_efficiency")
-	design_ids = list("ci-xray", "ci-thermals", "ci-antidrop", "ci-antistun", "ci-thrusters", "ci-shield")
+	prereq_ids = list("adv_cyber_implants","weaponry","high_efficiency")
+	design_ids = list("ci-antidrop", "ci-antistun")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /////////////////////////Advanced Surgery/////////////////////////

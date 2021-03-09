@@ -5,6 +5,7 @@
 /obj/item/clothing/suit/armor/f13/raider
 	name = "base raider armor"
 	desc = "for testing"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 4, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 40
 
@@ -83,6 +84,7 @@
 /obj/item/clothing/suit/armor/f13/exile
 	name = "base faction exile armor"
 	desc = "this is for testing."
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
@@ -134,6 +136,43 @@
 
 //Legion
 
+/obj/item/clothing/suit/armor/f13/medicus
+	name = "medicus apron"
+	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia."
+	icon_state = "legmedicus"
+	armor = list("energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
+
+/obj/item/clothing/suit/armor/f13/opifex
+	name = "opifex apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as a Opifex."
+	icon_state = "opifex_apron"
+	item_state = "opifex_apron"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 5)
+	allowed = list(/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/stack/cable_coil,
+		/obj/item/clothing/gloves)
+
+/obj/item/clothing/suit/armor/f13/slavelabor
+	name = "old leather strips"
+	desc = "worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
+	icon_state = "legslaveleather"
+	item_state = "legslaveleather"
+
+/obj/item/clothing/neck/cloak/treasurer
+	name = "treasurers cloak"
+	desc = "The grey and black cloak with gold thread trimming shows the wearer is entrusted with matters of money and records."
+	icon = 'icons/obj/clothing/cloaks.dmi'
+	icon_state = "legtrescloak"
+	item_state = "legtrescloak"
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+
 /obj/item/clothing/suit/armor/f13/legion
 	name = "legion armor"
 	desc = "Unadorned Legion armor."
@@ -141,6 +180,8 @@
 	item_state = "legarmor"
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
 	
 
@@ -161,6 +202,11 @@
 	icon_state = "legprime"
 	slowdown = -0.13
 	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
+	name = "slavemaster armor"
+	desc = "(IV) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
+	icon_state = "legslavemaster"
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
@@ -231,6 +277,7 @@
 	name = "legion legate armor"
 	desc = "(VIII) The armor appears to be a full suit of heavy gauge steel and offers full body protection. It also has a cloak in excellent condition, but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
 	icon_state = "leglegat"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 //NCR
@@ -239,6 +286,7 @@
 	desc = "(IV) A standard issue NCR Infantry vest."
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -268,6 +316,7 @@
 	icon_state = "ncr_labcoat"
 	item_state = "ncr_labcoat"
 	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	allowed = list(/obj/item/gun, /obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	name = "NCR reinforced officer vest"
@@ -332,6 +381,7 @@
 	desc = "(VII) The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 7, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20)
 
 //Brotherhood of Steel (PA in f13armor.dm)
@@ -341,6 +391,7 @@
 	desc = "(II) A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
 	icon_state = "headscribe"
 	item_state = "headscribe"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/suit/f13/scribe
@@ -348,6 +399,7 @@
 	desc = "(II) A red cloth robe worn by the Brotherhood of Steel Scribes."
 	icon_state = "scribe"
 	item_state = "scribe"
+	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/seniorscribe
@@ -355,6 +407,7 @@
 	desc = "(II) A red cloth robe with silver gildings worn by the Brotherhood of Steel Senior Scribes."
 	icon_state = "seniorscribe"
 	item_state = "seniorscribe"
+	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/elder
@@ -362,7 +415,9 @@
 	desc = "(II) A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
 	icon_state = "elder"
 	item_state = "elder"
+	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood
 	name = "brotherhood combat armor"
@@ -384,6 +439,7 @@
 	desc = "(III) A non-descript black trenchcoat."
 	icon_state = "towntrench"
 	item_state = "hostrench"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("tier" = 3, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/town/mayor
@@ -417,7 +473,9 @@
 	desc = "(IV) Light armor made of leather stips and a large, flat piece of turquoise.Armor commonplace among the Wayfinders."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
+	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)
 
 /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
 	name = "heavy tribal armor"
@@ -426,6 +484,7 @@
 	item_state = "heavy_tribal_armor"
 	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	flags_inv = HIDEJUMPSUIT
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear)
 
 //Followers
 

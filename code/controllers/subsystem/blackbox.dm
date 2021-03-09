@@ -166,6 +166,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "town")
 		if(FREQ_LEGION)
 			record_feedback("tally", "radio_usage", 1, "legion")
+		if(FREQ_RANGER)
+			record_feedback("tally", "radio_usage", 1, "ranger")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 
@@ -328,7 +330,7 @@ Versioning
 		"lakey" = L.lastattackerckey,
 		"brute" = L.getBruteLoss(),
 		"fire" = L.getFireLoss(),
-		"brain" = L.getOrganLoss(ORGAN_SLOT_BRAIN),
+		"brain" = L.getOrganLoss(ORGAN_SLOT_BRAIN) || 0,
 		"oxy" = L.getOxyLoss(),
 		"tox" = L.getToxLoss(),
 		"clone" = L.getCloneLoss(),

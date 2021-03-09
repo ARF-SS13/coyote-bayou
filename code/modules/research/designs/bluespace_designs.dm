@@ -57,7 +57,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/bluespace_crystal
-	name = "Artificial Bluespace Crystal"
+	name = "Artificial Quantum Mesh"
 	desc = "A small blue crystal with mystical properties."
 	id = "bluespace_crystal"
 	build_type = PROTOLATHE

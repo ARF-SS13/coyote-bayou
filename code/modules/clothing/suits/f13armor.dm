@@ -17,8 +17,6 @@
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed
 */
-/obj/item/clothing/suit/armor/f13
-
 //Leather and metal
 /obj/item/clothing/suit/armor/f13/leather_jacket
 	name = "leather jacket"
@@ -94,7 +92,7 @@
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
 	armor = list("tier" = 4, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
-	slowdown = 0.05
+	slowdown = 0.25
 	strip_delay = 10
 
 /obj/item/clothing/suit/armor/fluff/metalarmor/Initialize()
@@ -457,15 +455,8 @@
 	item_state = "sulphitearmor"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
-/obj/item/clothing/suit/armor/f13/battlecoat
-	name = "battlecoat"
-	desc = "(II) A padded leather coat with gold buttons. For style rather then protection."
-	icon_state = "maxson_battlecoat"
-	item_state = "maxson_battlecoat"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/suit/toggle/armor
-	allowed = null
+	body_parts_covered = CHEST|GROIN
 	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN
@@ -624,12 +615,20 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "soldier"
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
+	name = "sniper riot gear"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
+	icon_state = "foxranger"
+	item_state = "foxranger"
 
-
-
-
-
-
+/obj/item/clothing/suit/toggle/armor/f13/cloakranger
+	name = "ranger poncho"
+	desc = "(IV) A durable muslin poncho. Tough enough to bear the elements and serve as handy blanket."
+	icon_state = "ranger_cloak"
+	item_state = "ranger_cloak"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0) //Same armor as trail ranger gear
+	slowdown = -0.10 //Same speed boost as recon ranger gear. Lower than trail ranger speed to balance it protecting arms.
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

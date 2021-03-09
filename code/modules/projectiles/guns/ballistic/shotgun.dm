@@ -13,27 +13,11 @@
 	weapon_weight = WEAPON_HEAVY
 	spawnwithmagazine = TRUE
 
-/obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
-	var/num_loaded = magazine.attackby(A, user, params, 1)
-	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-		playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
-		A.update_icon()
-		update_icon()
-
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
 
-/obj/item/gun/ballistic/shotgun/chamber_round()
-	return
-
 /obj/item/gun/ballistic/shotgun/can_shoot()
-	if(!chambered)
-		return 0
-	return (chambered.BB ? 1 : 0)
+	return !!chambered?.BB
 
 /obj/item/gun/ballistic/shotgun/attack_self(mob/living/user)
 	if(recentpump > world.time)
@@ -396,6 +380,15 @@
 	icon_state = "citykiller"
 	item_state = "cshotgun1"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5
+	name = "browning auto-5"
+	desc = "A semi automatic shotgun with a four round tube."
+	icon_state = "auto5"
+	item_state = "huntingshotgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 

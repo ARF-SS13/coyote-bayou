@@ -100,7 +100,7 @@ Centurion
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the commander of the Centuria and are the direct superior to the Decanii, working with them and your soldiers to establish a strong foothold within the region for Caesar's glory. You oversee all Legion operations in the area, and lead the charge against Caesar's foes."
+	description = "You are the commander of the Centuria and the direct superior to the Decanii, working with them and your soldiers to establish a strong foothold within the region for Caesar's glory. You oversee all Legion operations in the area, and lead the charge against Caesar's foes."
 	supervisors = "the Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
@@ -192,7 +192,7 @@ Orator
 	suit = 	/obj/item/clothing/suit/armor/f13/legion/vet/orator
 	ears =	/obj/item/radio/headset/headset_legion
 	id = /obj/item/card/id/dogtag/legorator
-	belt = /obj/item/claymore/machete/gladius
+	belt = /obj/item/claymore/machete/spatha
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/type17
 	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
@@ -365,12 +365,12 @@ Decanii
 		/obj/item/ammo_box/magazine/m556/rifle=3,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/restraints/handcuffs=2,
+		/obj/item/restraints/handcuffs=1,
 		/obj/item/binoculars=1,
-		/obj/item/claymore/machete/gladius=1,
+		/obj/item/claymore/machete/spatha=1,
 		/obj/item/key/scollar=1,
-		/obj/item/electropack/shockcollar=1,
-		/obj/item/storage/bag/money/small/legofficers=1)
+		/obj/item/storage/bag/money/small/legion=1,
+		/obj/item/electropack/shockcollar=1)
 
 
 //Prime Decanus
@@ -401,7 +401,7 @@ Decanii
 	suit =			/obj/item/clothing/suit/armor/f13/legion/vet
 	head =			/obj/item/clothing/head/helmet/f13/legion/prime/decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears = 			/obj/item/radio/headset/headset_legion
 	suit_store =	/obj/item/gun/ballistic/automatic/m1garand
 	r_pocket =		/obj/item/flashlight/lantern
@@ -414,8 +414,7 @@ Decanii
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/key/scollar=1,
-		/obj/item/electropack/shockcollar=1,
-		/obj/item/storage/bag/money/small/legofficers=1)
+		/obj/item/electropack/shockcollar=1)
 
 
 //Recruit Decanus
@@ -446,7 +445,7 @@ Decanii
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/recruit/decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	ears = 			/obj/item/radio/headset/headset_legion
 	suit_store = 	/obj/item/gun/ballistic/automatic/mini_uzi
 	r_pocket =		/obj/item/flashlight/lantern
@@ -459,7 +458,7 @@ Decanii
 		/obj/item/restraints/handcuffs=2,
 		/obj/item/key/scollar=1,
 		/obj/item/electropack/shockcollar=1,
-		/obj/item/storage/bag/money/small/legofficers=1)
+		/obj/item/claymore/machete/gladius=1)
 
 
 /*
@@ -497,16 +496,14 @@ Vexillarius
 	id = 			/obj/item/card/id/dogtag/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears = 			/obj/item/radio/headset/headset_legion
 	r_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(
-		/obj/item/throwing_star/spear=1,
 		/obj/item/claymore/machete/gladius=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/flashlight/lantern=1,
-		/obj/item/megaphone/cornu=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/megaphone/cornu=1)
 
 /datum/outfit/loadout/vexassault
 	name = "Assault Vexillarius"
@@ -553,17 +550,19 @@ datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	name = "Legion Slavemaster"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	id =			/obj/item/card/id/dogtag/legslavemaster
-	uniform =		/obj/item/clothing/under/gladiator
-	belt = 			/obj/item/melee/curator_whip
-	head = 			/obj/item/clothing/head/helmet/gladiator
+	head = 			/obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
+	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	ears	=		/obj/item/radio/headset/headset_legion
-	r_pocket = /obj/item/restraints/handcuffs
+	ears =			/obj/item/radio/headset/headset_legion
+	r_pocket =		 /obj/item/restraints/handcuffs
 	backpack_contents = list(
-		/obj/item/claymore/machete/reinforced=1,
+		/obj/item/claymore/machete/gladius=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/flashlight/lantern=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/melee/curator_whip=1,
+		/obj/item/razor=1,
+		/obj/item/restraints/legcuffs/bola=1,
+		/obj/item/stack/medical/gauze/improvised = 1)
 
 
 /*
@@ -609,14 +608,13 @@ Veteran Legionary
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
-		/obj/item/flashlight/lantern=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/flashlight/lantern=1)
 
 /datum/outfit/loadout/vetlegassault
 	name = "Assault Legionary"
 	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_auto=3,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=3,
 		/obj/item/shield/riot/roman=1)
 
 /datum/outfit/loadout/vetlegrange
@@ -668,7 +666,7 @@ Prime Legionairy
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/prime
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime
-	glasses = 		/obj/item/clothing/glasses/sunglasses
+	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	ears	=		/obj/item/radio/headset/headset_legion
 	r_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(
@@ -686,7 +684,7 @@ Prime Legionairy
 
 /datum/outfit/loadout/legline
 	name = "Lineman"
-	suit_store = /obj/item/twohanded/spear
+	suit_store = /obj/item/twohanded/spear/lance
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv=2,
@@ -783,14 +781,14 @@ Venator
 	id 			= 	/obj/item/card/id/dogtag/legvenator
 	suit 		= 	/obj/item/clothing/suit/armor/f13/legion/venator
 	head 		= 	/obj/item/clothing/head/helmet/f13/legion/venator
-	mask		=	/obj/item/clothing/mask/bandana/black
+	mask 		=	/obj/item/clothing/mask/bandana/legdecan
 	glasses 	=	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
 	r_pocket 	= 	/obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/storage/bag/money/small/legion=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1)
 
 /datum/outfit/loadout/vensniper
 	name = "Venator Assassin"
@@ -849,7 +847,7 @@ Explorer
 		/obj/item/claymore/machete/reinforced=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/storage/bag/money/small/legion=1)
 
 
 /datum/outfit/loadout/explinfil
@@ -886,7 +884,6 @@ Auxilia
 	/datum/outfit/loadout/auxmedic, //Healing poultices and surgical tools
 	/datum/outfit/loadout/auxengi, //Toolbelt, wood, metal, leather
 	/datum/outfit/loadout/auxchef, //Flour, rice, bowls, rolling pin, knife and eggs
-	/datum/outfit/loadout/auxfarm, //Ambrosia, cultivator, spade, plant bags
 	/datum/outfit/loadout/auxassist //Four color pen, briefcase, sunglasses, natural paper
 	)
 
@@ -895,17 +892,21 @@ Auxilia
 	jobtype = /datum/job/CaesarsLegion/f13auxilia
 	id =			/obj/item/card/id/dogtag/legauxilia
 	shoes = 		/obj/item/clothing/shoes/roman
-	uniform = 		/obj/item/clothing/under/f13/legskirt
+	uniform = 		/obj/item/clothing/under/f13/legauxiliaf
 	ears	=		/obj/item/radio/headset/headset_legion
 	gloves =		null
 	belt =			null
+	r_pocket =      /obj/item/flashlight/flare/torch
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
-		/obj/item/flashlight/flare/torch=1,
-		/obj/item/storage/bag/money/small/legenlisted=1)
+		/obj/item/reagent_containers/pill/patch/healingpowder=2)
 
 /datum/outfit/loadout/auxmedic
-	name = "Medicus Auxilia"
+	name = "Medicus Healer"
+	head = /obj/item/clothing/head/f13/legion/auxilia
+	mask = /obj/item/clothing/mask/bandana/auxilia
+	suit = /obj/item/clothing/suit/armor/f13/medicus
+	gloves = /obj/item/clothing/gloves/color/white
+	r_hand = /obj/item/clothing/under/f13/legauxilia
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice=3,
 		/obj/item/scalpel=1,
@@ -917,11 +918,13 @@ Auxilia
 		/obj/item/storage/firstaid/ancient=1)
 
 /datum/outfit/loadout/auxengi
-	name = "Opifex Auxilia"
+	name = "Opifex Blacksmith"
+	head = /obj/item/clothing/head/f13/legion/auxilia
 	glasses = /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/utility/full/engi
-	suit = /obj/item/clothing/suit/f13/blacksmith_apron
+	suit = /obj/item/clothing/suit/armor/f13/opifex
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
+	r_hand = /obj/item/clothing/under/f13/legauxilia
 	backpack_contents = list(
 		/obj/item/stack/sheet/metal/twenty=1,
 		/obj/item/stack/sheet/mineral/wood/twenty=1,
@@ -930,35 +933,31 @@ Auxilia
 		/obj/item/stack/sheet/prewar=1)
 
 /datum/outfit/loadout/auxchef
-	name = "Archimagirus Auxilia"
-	head = /obj/item/clothing/head/chefhat
-	suit = /obj/item/clothing/suit/toggle/chef
-	suit_store = /obj/item/kitchen/rollingpin
-	belt = /obj/item/kitchen/knife/cosmic
+	name = "Matron"
+	head = /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
+	suit = /obj/item/clothing/suit/apron/chef
+	belt = 	/obj/item/kitchen/knife/butcher
+	r_hand = /obj/item/clothing/under/f13/legauxilia
 	backpack_contents = list(
 		/obj/item/reagent_containers/food/condiment/flour=2,
-		/obj/item/reagent_containers/food/condiment/rice=1,
 		/obj/item/storage/box/bowls=1,
 		/obj/item/reagent_containers/glass/beaker/large=1,
-		/obj/item/storage/fancy/egg_box=1)
-
-/datum/outfit/loadout/auxfarm
-	name = "Cultor Auxilia"
-	head = /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
-	backpack_contents = list(
+		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,
 		/obj/item/shovel/spade=1,
-		/obj/item/reagent_containers/glass/beaker/large=1,
-		/obj/item/storage/bag/plants=2)
+		/obj/item/storage/fancy/egg_box=1)
 
 /datum/outfit/loadout/auxassist
-	name = "Exceptor Auxilia"
-	glasses = /obj/item/clothing/glasses/sunglasses
-	r_hand = /obj/item/storage/briefcase
+	name = "Treasurer"
+	head = /obj/item/clothing/head/f13/legion/auxilia
+	neck = /obj/item/clothing/neck/cloak/treasurer
+	r_hand = /obj/item/clothing/under/f13/legauxilia
+	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/folder/red=1,
 		/obj/item/paper_bin/bundlenatural=1,
 		/obj/item/pen/fourcolor=1,
+		/obj/item/storage/bag/money/small/legofficers=1,
 		/obj/item/taperecorder=1)
 
 /*
@@ -1007,17 +1006,17 @@ Camp Follower
 		backpack = /obj/item/pickaxe
 		l_hand = /obj/item/radio
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "farmer")
 		belt = /obj/item/storage/bag/plants
 		l_hand = /obj/item/radio
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "smith")
 		backpack = /obj/item/storage/backpack/satchel/explorer
 		backpack_contents = list(/obj/item/radio, /obj/item/screwdriver, /obj/item/wrench, /obj/item/crowbar, /obj/item/wirecutters)
 		if (prob(50))
-			suit = /obj/item/clothing/suit/fluff/vest
+			suit = /obj/item/clothing/suit/f13/vest
 	else if (follower_job == "healer")
 		backpack = /obj/item/storage/backpack/satchel/explorer
 		backpack_contents = list(/obj/item/radio, /obj/item/reagent_containers/pill/patch/healingpowder=4, /obj/item/stack/medical/gauze/improvised = 2)
@@ -1046,76 +1045,35 @@ Slave
 
 	loadout_options = list(
 	/datum/outfit/loadout/slcook, //Apron Chef, Knife, Frying Pan, radio
-	/datum/outfit/loadout/slfarmer, //Coveralls, bag plants,radio
-	/datum/outfit/loadout/slsmith, //vest, screwdriver, wrench, crowbar wirecutters, radio
-	/datum/outfit/loadout/slhealer, //Apron Surgical, Healing powder 4,improvized gauze 2 radio
-	/datum/outfit/loadout/slcaretaker, //robe_liz, soap, flyswatter, rag, bucket, gauze, radio
-	/datum/outfit/loadout/slminer) //vest, ore bag, pickaxe
-
+	/datum/outfit/loadout/slfarmer //Coveralls, bag plants,radio
+)
 
 /datum/outfit/job/CaesarsLegion/slave
 	name		= "Legion Slave"
 	jobtype		= /datum/job/CaesarsLegion/slave
 	id			= /obj/item/card/id/legionbrand
-	uniform		= /obj/item/clothing/under/f13/rag
+	uniform		= /obj/item/clothing/under/f13/legslave
 	neck		= /obj/item/electropack/shockcollar
 	shoes		= /obj/item/clothing/shoes/f13/rag
 	r_hand = /obj/item/flashlight/flare/torch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 
 /datum/outfit/loadout/slcook
-	name = "Cook"
-	suit = /obj/item/clothing/suit/apron/chef
+	name = "Servant"
+	head = /obj/item/clothing/head/f13/legion/servant
 	belt = /obj/item/kitchen/knife
 	backpack_contents = list(
 		/obj/item/radio=1,
-		/obj/item/claymore/machete/pipe/pan=1)
+		/obj/item/claymore/machete/pipe/pan=1,
+		/obj/item/stack/medical/gauze/improvised=1,
+		/obj/item/clothing/under/f13/legslavef=1,
+		/obj/item/soap/homemade=1)
 
 /datum/outfit/loadout/slfarmer
-	name = "Farmer"
-	suit = /obj/item/clothing/suit/apron/overalls
-	belt = /obj/item/storage/bag/plants
-	r_hand = /obj/item/flashlight/flare/torch
+	name = "Laborer"
+	suit = /obj/item/clothing/suit/armor/f13/slavelabor
+	belt = /obj/item/hatchet
 	backpack_contents = list(
-		/obj/item/radio=1)
-
-/datum/outfit/loadout/slsmith
-	name = "Smith"
-	suit = /obj/item/clothing/suit/fluff/vest
-	r_hand = /obj/item/flashlight/flare/torch
-	backpack_contents = list(
-		/obj/item/radio=1,
-		/obj/item/screwdriver=1,
-		/obj/item/wrench=1,
-		/obj/item/crowbar=1,
-		/obj/item/radio=1,
-		/obj/item/wirecutters=1)
-
-/datum/outfit/loadout/slhealer
-	name = "Cleric"
-	suit = /obj/item/clothing/suit/apron/surgical
-	r_hand = /obj/item/flashlight/flare/torch
-	backpack_contents = list(
-		/obj/item/radio=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=4,
-		/obj/item/stack/medical/gauze/improvised = 2)
-
-/datum/outfit/loadout/slcaretaker
-	name = "Caretaker"
-	suit = /obj/item/clothing/suit/f13/robe_liz
-	belt = /obj/item/radio
-	backpack_contents = list(
-		/obj/item/soap/homemade=1,
-		/obj/item/melee/flyswatter=1,
-		/obj/item/reagent_containers/glass/rag=1,
-		/obj/item/reagent_containers/glass/bucket=1,
-		/obj/item/stack/medical/gauze/improvised=1)
-
-/datum/outfit/loadout/slminer
-	name = "Miner"
-	suit = /obj/item/clothing/suit/fluff/vest
-	belt = /obj/item/storage/bag/ore
-
-	backpack_contents = list(
-		/obj/item/pickaxe=1,
+		/obj/item/storage/bag/plants=1,
+		/obj/item/clothing/under/f13/legslavef=1,		
 		/obj/item/radio=1)

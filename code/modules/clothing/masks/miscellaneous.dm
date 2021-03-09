@@ -416,6 +416,15 @@
 
 //Legion Bandanas - We make these as much like normal bandanas as possible without repathing them.
 
+/obj/item/clothing/mask/bandana/auxilia
+	name = "auxilia bandana"
+	desc = "Simple black cloth intended for auxilia."
+	icon_state = "legaux"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
 /obj/item/clothing/mask/bandana/legrecruit
 	name = "recruit bandana"
 	desc = "A fine recruit bandana."

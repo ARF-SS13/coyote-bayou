@@ -18,6 +18,7 @@
 				CAT_WEAPONRY = list(
 					CAT_WEAPON,
 					CAT_AMMO,
+					CAT_MISCWEP
 				),
 				CAT_ROBOT = CAT_NONE,
 				CAT_MISC = list(
@@ -46,7 +47,14 @@
 					CAT_SPAGHETTI,
 				),
 				CAT_DRINK = CAT_NONE,
-				CAT_CLOTHING = CAT_NONE,
+				CAT_CLOTHING = list(
+					CAT_GENCLOTHES,
+					CAT_SHOES,
+					CAT_MISCCLOTHING,
+					CAT_ARMOR,
+					CAT_WASTELAND,
+					CAT_BELTS
+				),
 				CAT_MEDICAL = CAT_NONE,
 				CAT_BOTTLE = CAT_NONE,
 			)
@@ -114,10 +122,18 @@
 
 	if(!isturf(a.loc))
 		return
-
 	for(var/atom/movable/AM in range(radius_range, a))
-		if(AM.flags_1 & HOLOGRAM_1)
+		if(AM.flags_1 & HOLOGRAM_1 || LAZYISIN(blacklist, AM.type))
 			continue
+		if(istype(a, /mob/living/carbon/human))
+			var/mob/living/carbon/human/user = a
+			var/found = FALSE
+			for(var/slot in ALL_EQUIP_SLOTS - list("l_store", "r_store"))
+				if(user.vars[slot] == AM)
+					found = TRUE
+					break
+			if(found)
+				continue
 		. += AM
 
 /datum/component/personal_crafting/proc/get_surroundings(atom/a)

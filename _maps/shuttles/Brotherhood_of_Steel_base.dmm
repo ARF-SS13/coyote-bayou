@@ -6,11 +6,7 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "e" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE";
-	move_me = 1
-	},
+/obj/machinery/computer/shuttle/bos,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "f" = (
@@ -56,7 +52,11 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "D" = (
-/obj/machinery/computer/shuttle/bos,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SE";
+	move_me = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 
@@ -87,8 +87,8 @@ a
 (4,1,1) = {"
 a
 c
-u
 c
+u
 f
 a
 "}
@@ -102,10 +102,10 @@ a
 "}
 (6,1,1) = {"
 a
+c
+c
+w
 D
-c
-c
-c
 a
 "}
 (7,1,1) = {"
@@ -119,7 +119,7 @@ a
 (8,1,1) = {"
 a
 i
-w
+c
 c
 e
 a

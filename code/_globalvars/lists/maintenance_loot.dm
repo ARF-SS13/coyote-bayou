@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 	/obj/item/clothing/glasses/sunglasses/big = 5,
 	/obj/item/clothing/glasses/sunglasses = 5,
 	/obj/item/clothing/glasses/eyepatch = 5,
-	/obj/item/clothing/head/helmet/knight/fluff/rider = 5,
+	/obj/item/clothing/head/helmet/knight/f13/rider = 5,
 	/obj/item/clothing/shoes/f13/cowboy = 5,
 	/obj/item/clothing/shoes/f13/explorer = 5,
 	/obj/item/clothing/shoes/f13/diesel = 5,
@@ -359,7 +359,7 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/f13/metalarmor,
-	/obj/item/clothing/head/helmet/knight/fluff/metal,
+	/obj/item/clothing/head/helmet/knight/f13/metal,
 	/obj/item/clothing/suit/armor/f13/metalarmor,
 	/obj/item/clothing/head/helmet/f13/metalmask,
 	/obj/item/clothing/suit/armor/f13/leatherarmor,
@@ -561,7 +561,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/mini_uzi,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/gun/ballistic/automatic/smg10mm,
-	/obj/item/ammo_box/magazine/m10mm_auto,
+	/obj/item/ammo_box/magazine/m10mm_adv/ext,
 	/obj/item/gun/ballistic/automatic/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
@@ -660,7 +660,7 @@ GLOBAL_LIST_INIT(loot_t3_ammo, list(
 	/obj/item/ammo_box/needle,
 	/obj/item/ammo_box/magazine/tommygunm45,
 	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/magazine/m10mm_auto,
+	/obj/item/ammo_box/magazine/m10mm_adv/ext,
 	/obj/item/stock_parts/cell/ammo/ec
 ))
 

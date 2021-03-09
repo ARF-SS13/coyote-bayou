@@ -5,7 +5,7 @@
 	name = "suit"
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
 	var/fire_resist = T0C+100
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/reagent_containers/food/drinks/flask, /obj/item/melee, /obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/fancy/cigarettes, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola)
+	allowed = null
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
@@ -14,6 +14,11 @@
 	var/suittoggled = FALSE
 	limb_integrity = 0 // disabled for most exo-suits
 	mutantrace_variation = STYLE_DIGITIGRADE
+
+/obj/item/clothing/suit/Initialize()
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.f13_coat_allowed
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
@@ -37,17 +42,12 @@
 		var/mob/M = loc
 		M.update_inv_wear_suit()
 */
-
-/obj/item/clothing/suit/f13
-
-/obj/item/clothing/suit/fluff
-
-
-/obj/item/clothing/suit/fluff/vest
+/obj/item/clothing/suit/f13/vest
 	name = "tan vest"
 	desc = "(I) It's a vest made of tanned leather."
 	icon_state = "tanleather"
 	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
@@ -63,8 +63,9 @@
 	icon_state = "cowboybvest"
 	item_state = "lb_suit"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/fluff/westender
+/obj/item/clothing/suit/f13/westender
 	name = "bartenders vest"
 	desc = "(I) A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
@@ -76,6 +77,7 @@
 	desc = "(I) A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboygvest"
 	item_state = "gy_suit"
+	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/ghost_sheet
@@ -89,25 +91,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/suit/holidaypriest
-	name = "holiday priest"
-	desc = "This is a nice holiday, my son."
-	icon_state = "holidaypriest"
-	item_state = "w_suit"
-	flags_inv = HIDEJUMPSUIT
-
-/obj/item/clothing/suit/nun
-	name = "nun robe"
-	desc = "(I) Maximum piety."
-	icon_state = "nun"
-	item_state = "nun"
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	armor = list("tier" = 1)
-
 //Fallout 13 various suits directory
-
-/obj/item/clothing/suit/f13
-
 /obj/item/clothing/suit/f13/robe_liz
 	name = "tan robe"
 	desc = "(I) Only a monk would find this robe nice and comfortable."
@@ -154,6 +138,7 @@
 	icon_state = "duster"
 	item_state = "det_suit"
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/f13/sheriff
 	name = "sheriff duster"
@@ -161,6 +146,7 @@
 	icon_state = "sheriff"
 	item_state = "det_suit"
 	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/f13/banker
 	name = "bankers tailcoat"
@@ -168,12 +154,14 @@
 	icon_state = "banker"
 	item_state = "banker"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/f13/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
 	desc = "(III) A heavy-duty tan trenchcoat typically worn by pre-War generals."
 	icon_state = "autumn"
 	item_state = "autumn"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 3, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/hubologist
@@ -189,6 +177,7 @@
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
+	body_parts_covered = CHEST
 
 /obj/item/clothing/suit/f13/blacksmith_apron
 	name = "blacksmith apron"
@@ -196,6 +185,23 @@
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron"
 	blood_overlay_type = "armor"
+	allowed = list(/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/multitool,
+		/obj/item/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/t_scanner,
+		/obj/item/analyzer,
+		/obj/item/geiger_counter,
+		/obj/item/extinguisher/mini,
+		/obj/item/radio,
+		/obj/item/clothing/gloves,
+		/obj/item/holosign_creator,
+		/obj/item/assembly/signaler
+	) //robust storage options!! -superballs
 
 //Special Biosuit
 
@@ -215,9 +221,6 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 //Fallout 13 toggle apparel directory
-
-/obj/item/clothing/suit/toggle/labcoat/f13
-
 /obj/item/clothing/suit/toggle/labcoat/f13/emergency
 	name = "first responder jacket"
 	desc = "(I) A high-visibility jacket worn by medical first responders."

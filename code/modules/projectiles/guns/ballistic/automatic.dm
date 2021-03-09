@@ -382,7 +382,7 @@
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	inaccuracy_modifier = 0.5
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -449,7 +449,7 @@
 
 /obj/item/gun/ballistic/automatic/greasegun
 	name = "m3a1 grease gun"
-	desc = "An inexpensive submachine gun chambered in .45 ACP. Slow fire rate allows the operator conserve ammunition in controllable bursts."
+	desc = "An inexpensive submachine gun chambered in .45 ACP. Slow fire rate allows the operator to conserve ammunition in controllable bursts."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
@@ -471,7 +471,8 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM //You should be able to dual-wield these.
@@ -600,6 +601,8 @@
 	name = "R82 heavy service rifle"
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	fire_delay = 1 //faster ROF, superior to regular service rifle
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	icon_state = "R82"
 	item_state = "R84"
@@ -739,13 +742,13 @@
 	icon_state = "type93"
 	item_state = "handmade_rifle"
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	can_suppress = FALSE
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 2
 	fire_delay = 3
 	spread = 10
-	weapon_weight = WEAPON_HEAVY
 	extra_damage = 2
 
 /obj/item/gun/ballistic/automatic/m1garand
@@ -768,6 +771,8 @@
 	scopestate = "rifle_scope"
 	scope_x_offset = 5
 	scope_y_offset = 14
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/m1garand/update_icon()
 	..()
@@ -787,6 +792,8 @@
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_LIGHT
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
@@ -1082,6 +1089,7 @@
 	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."
 	icon_state = "m1a1carbine"
 	var/stock = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
 	spread = 5
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
@@ -1172,12 +1180,13 @@
 	icon_state = "smg22"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	fire_sound = 'sound/f13weapons/american180.ogg'
 	can_suppress = FALSE
 	can_unsuppress = FALSE
-	burst_size = 4
+	burst_size = 2
 	burst_shot_delay = 1
 	suppressed = 1
 

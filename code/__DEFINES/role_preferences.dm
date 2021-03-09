@@ -35,7 +35,6 @@
 #define ROLE_DEATHSQUAD             "deathsquad"
 #define ROLE_LAVALAND               "lavaland"
 #define ROLE_INTERNAL_AFFAIRS		"internal affairs agent"
-#define ROLE_GANG					"gangster"
 #define ROLE_BLOODSUCKER			"bloodsucker"
 //#define ROLE_MONSTERHUNTER			"monster hunter" Disabled for now
 #define ROLE_GHOSTCAFE				"ghostcafe"
@@ -64,7 +63,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_OVERTHROW = /datum/game_mode/overthrow,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE,
-	ROLE_GANG = /datum/game_mode/gang,
 	ROLE_HERETIC = /datum/game_mode/heretics,
 	ROLE_BLOODSUCKER = /datum/game_mode/bloodsucker
 	//ROLE_MONSTERHUNTER Disabled for now

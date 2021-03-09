@@ -41,6 +41,7 @@
 	output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
+	/*
 		switch(ready)
 			if(PLAYER_NOT_READY)
 				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | <b>Not Ready</b> | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
@@ -48,6 +49,9 @@
 				output += "<p>\[ <b>Ready</b> | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | [LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)] \]</p>"
 			if(PLAYER_READY_TO_OBSERVE)
 				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
+	*/
+		output += "<p>Please be patient, the game is starting soon!</p>"
+		output += "<p><a href='byond://?src=[REF(src)];refresh=1'>(Refresh)</a></p>"
 	else
 		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
@@ -436,6 +440,8 @@
 			return "[jobtitle] is already filled to capacity."
 		if(JOB_UNAVAILABLE_SPECIESLOCK)
 			return "Your species cannot play as a [jobtitle]."
+		if(JOB_UNAVAILABLE_WHITELIST)
+			return "[jobtitle] requires a whitelist."
 	return "Error: Unknown job availability."
 
 /mob/dead/new_player/proc/IsJobUnavailable(rank, latejoin = FALSE)
@@ -459,6 +465,8 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(job.required_playtime_remaining(client))
 		return JOB_UNAVAILABLE_PLAYTIME
+	if(job.whitelist_locked(client,job.title) && (CONFIG_GET(flag/use_role_whitelist)))  //x check if this user should have access to this job via whitelist
+		return JOB_UNAVAILABLE_WHITELIST
 	if(latejoin && !job.special_check_latejoin(client))
 		return JOB_UNAVAILABLE_GENERIC
 	if(!client.prefs.pref_species.qualifies_for_rank(rank, client.prefs.features))
@@ -689,7 +697,7 @@
 
 	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>"
 	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest(OOC = 1)
+	dat += GLOB.data_core.get_manifest_dr(OOC = 1)
 
 	src << browse(dat, "window=manifest;size=387x420;can_close=1")
 

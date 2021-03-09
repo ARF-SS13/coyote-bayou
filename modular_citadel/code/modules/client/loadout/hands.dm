@@ -30,11 +30,6 @@
 	name = "Playing cards"
 	path = /obj/item/toy/cards/deck
 
-/datum/gear/hands/skub
-	name = "Skub"
-	path = /obj/item/skub
-	cost = 5 // :thinking: -Superballs
-
 /datum/gear/hands/wallet
 	name = "Wallet"
 	path = /obj/item/storage/wallet

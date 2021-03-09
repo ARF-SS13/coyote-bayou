@@ -3,7 +3,7 @@
 	name = "suit"
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
 	var/fire_resist = T0C+100
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/reagent_containers/food/drinks/flask, /obj/item/melee, /obj/item/flashlight, /obj/item/tank/internals, /obj/item/storage/fancy/cigarettes, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/storage/box/matches, /obj/item/lighter, /obj/item/storage/book/bible)
+	allowed = null
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
@@ -15,6 +15,11 @@
 	var/obj/item/clothing/armoraccessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/dummy_thick = FALSE // is able to hold accessories on its item
+
+/obj/item/clothing/suit/Initialize()
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.f13_coat_allowed
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()

@@ -37,14 +37,6 @@
 	make_reagents = list(/datum/reagent/consumable/enzyme = 10)
 	category = list("initial","Food")
 
-/datum/design/monkey_cube
-	name = "Monkey Cube"
-	id = "mcube"
-	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 250)
-	build_path = /obj/item/reagent_containers/food/snacks/cube/monkey
-	category = list("initial", "Food")
-
 /datum/design/smeat
 	name = "Biomass Meat Slab"
 	id = "smeat"
@@ -153,7 +145,7 @@
 	name = "Sheet of Leather"
 	id = "leather"
 	build_type = BIOGENERATOR
-	materials = list(/datum/material/biomass = 150)
+	materials = list(/datum/material/biomass = 1200)
 	build_path = /obj/item/stack/sheet/leather
 	category = list("initial","Organic Materials")
 
