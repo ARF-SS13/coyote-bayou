@@ -112,6 +112,7 @@
 	STR.clickopen = TRUE
 
 /obj/item/storage/medical/ancientfirstaid
+	name = "ancient first aid box"
 	icon_state = "ancientfirstaid"
 	desc = "A rusty, scratched old tin case with a faded cross, containing various medical things if you are lucky."
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'

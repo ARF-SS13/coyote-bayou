@@ -128,7 +128,7 @@ Centurion
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	id =			/obj/item/card/id/dogtag/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/legionpolarizing
 	ears = 			/obj/item/radio/headset/headset_legion
 	r_pocket =      /obj/item/restraints/handcuffs
 	l_pocket = 		/obj/item/flashlight/lantern
@@ -904,7 +904,7 @@ Auxilia
 	name = "Medicus Healer"
 	head = /obj/item/clothing/head/f13/legion/auxilia
 	suit = /obj/item/clothing/suit/armor/f13/medicus
-	gloves = /obj/item/clothing/gloves/color/white
+	gloves = /obj/item/clothing/gloves/f13/crudemedical
 	r_hand = /obj/item/clothing/under/f13/legauxilia
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
@@ -958,7 +958,7 @@ Auxilia
 	backpack_contents = list(
 		/obj/item/folder/red=1,
 		/obj/item/paper_bin/bundlenatural=1,
-		/obj/item/pen/fourcolor=1,
+		/obj/item/pen/fountain=1,
 		/obj/item/storage/bag/money/small/legofficers=2,
 		/obj/item/taperecorder=1)
 
