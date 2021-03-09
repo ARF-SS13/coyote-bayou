@@ -6,6 +6,7 @@
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
+	cost = 0
 
 /datum/gear/donator/donortestingbikehorn
 	name = "Donor item testing bikehorn"

@@ -923,7 +923,7 @@
 	name = "10mm SMG and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg10mm,
-				/obj/item/ammo_box/magazine/m10mm_auto
+				/obj/item/ammo_box/magazine/m10mm_adv/ext
 				)
 
 /obj/effect/spawner/bundle/f13/greasegun
@@ -1240,7 +1240,7 @@
 				/obj/item/ammo_box/needle,
 				/obj/item/ammo_box/magazine/tommygunm45,
 				/obj/item/ammo_box/tube/m44,
-				/obj/item/ammo_box/magazine/m10mm_auto,
+				/obj/item/ammo_box/magazine/m10mm_adv/ext,
 				/obj/item/stock_parts/cell/ammo/ec
 				)
 

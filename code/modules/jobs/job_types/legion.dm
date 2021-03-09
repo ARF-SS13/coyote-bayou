@@ -616,7 +616,7 @@ Veteran Legionary
 	name = "Assault Legionary"
 	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_auto=3,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=3,
 		/obj/item/shield/riot/roman=1)
 
 /datum/outfit/loadout/vetlegrange

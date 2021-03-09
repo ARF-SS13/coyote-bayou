@@ -2902,6 +2902,10 @@
 /mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/neutral/side,
 /area/f13/tunnel)
+"iZ" = (
+/obj/machinery/autolathe/ammo/unlocked,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "ja" = (
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
@@ -6278,6 +6282,10 @@
 	dir = 1
 	},
 /area/f13/brotherhood)
+"uf" = (
+/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "ug" = (
 /obj/structure/handrail/g_central{
 	dir = 8;
@@ -35874,7 +35882,7 @@ MA
 Fz
 pX
 JR
-Hl
+iZ
 iA
 Xv
 Lx
@@ -79594,7 +79602,7 @@ BP
 JA
 au
 uz
-mE
+uf
 mE
 EC
 py
