@@ -598,6 +598,18 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"avx" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/reagent_containers/medspray/sterilizine,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -30
+	},
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/followers)
 "awj" = (
 /obj/structure/bed/dogbed,
 /turf/open/floor/f13/wood{
@@ -2956,6 +2968,15 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/farm)
+"cmF" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -10
+	},
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/followers)
 "cmI" = (
 /obj/structure/girder,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -4624,13 +4645,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "dyO" = (
-/obj/structure/table/reinforced,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
+/obj/machinery/vending/snack,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "dyQ" = (
@@ -5284,6 +5301,10 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"eip" = (
+/obj/structure/sign/poster/prewar/poster88,
+/turf/closed/wall/f13/supermart,
+/area/f13/followers)
 "eiw" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 9;
@@ -8206,9 +8227,6 @@
 	},
 /area/f13/city)
 "grj" = (
-/obj/item/bedsheet{
-	icon_state = "sheetcmo"
-	},
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/f13{
@@ -8820,6 +8838,12 @@
 /area/f13/building)
 "gLH" = (
 /obj/structure/table,
+/obj/item/roller,
+/obj/item/roller,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 30;
+	pixel_y = -3
+	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -16217,9 +16241,6 @@
 	},
 /area/f13/wasteland)
 "mhL" = (
-/obj/item/bedsheet{
-	icon_state = "sheetcmo"
-	},
 /obj/structure/bed/roller,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -25763,6 +25784,9 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/reagent_containers/medspray/sterilizine,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 25
+	},
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -28540,10 +28564,7 @@
 	},
 /area/f13/building)
 "vxd" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -5;
-	pixel_y = -3
-	},
+/obj/structure/sign/poster/prewar/poster85,
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "vxC" = (
@@ -30572,12 +30593,8 @@
 	},
 /area/f13/caves)
 "xbA" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = -30
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/sign/poster/prewar/poster83,
+/turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "xbR" = (
 /obj/structure/tires/five,
@@ -52878,7 +52895,7 @@ uVo
 snB
 koD
 dGZ
-dDF
+dyO
 dDF
 dDF
 gmW
@@ -53149,7 +53166,7 @@ sQo
 xsD
 bqw
 bqw
-bqw
+cmF
 unr
 gKG
 cTc
@@ -53402,8 +53419,8 @@ rJU
 rJU
 rJU
 ahK
-dyO
-gKG
+oDR
+eip
 euL
 bqw
 bqw
@@ -53651,7 +53668,7 @@ koD
 lun
 dDF
 dDF
-xbA
+dDF
 gKG
 gKG
 cKN
@@ -53921,7 +53938,7 @@ gKG
 tAz
 bqw
 bqw
-tAz
+avx
 gKG
 ovE
 umW
@@ -54423,7 +54440,7 @@ dGZ
 dUk
 dDF
 dDF
-gKG
+vxd
 urY
 xMz
 xMz
@@ -54680,7 +54697,7 @@ oWn
 kNV
 dDF
 dDF
-gKG
+xbA
 gTC
 tsF
 tsF
@@ -55198,7 +55215,7 @@ gKG
 gKG
 gKG
 gKG
-vxd
+gKG
 gKG
 dDF
 dDF
