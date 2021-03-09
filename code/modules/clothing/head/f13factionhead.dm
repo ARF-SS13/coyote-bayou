@@ -441,6 +441,8 @@
 	desc = "(V) A combat helmet hand-manufactured in the NCR and issued to patrol rangers."
 	icon_state = "ncr_patrol_helmet"
 	item_state = "ncr_patrol_helmet"
+	flags_inv = HIDEEARS|HIDEHAIR
+	flags_cover = null
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	name = "ranger combat helmet"

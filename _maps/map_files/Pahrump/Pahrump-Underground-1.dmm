@@ -35,6 +35,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
+"ag" = (
+/obj/structure/sign/poster/prewar/poster92,
+/turf/closed/wall/f13/supermart,
+/area/f13/followers)
 "ah" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
@@ -214,6 +218,13 @@
 /obj/machinery/recharge_station,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"aM" = (
+/obj/structure/table/glass,
+/obj/item/pda,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "aN" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13{
@@ -577,9 +588,8 @@
 /area/f13/brotherhood)
 "bT" = (
 /obj/machinery/door/airlock/medical{
-	name = "Morgue";
-	req_access_txt = "45; 5";
-	req_one_access_txt = ""
+	name = "Clinic";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -672,12 +682,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "ch" = (
-/obj/structure/chair/f13chair1{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/followersvolunteer,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
 "ci" = (
@@ -1438,6 +1447,13 @@
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/rust,
 /area/f13/tunnel)
+"eI" = (
+/obj/structure/chair/stool/f13stool,
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "eJ" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -2902,6 +2918,13 @@
 /mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/neutral/side,
 /area/f13/tunnel)
+"iZ" = (
+/obj/machinery/autolathe/ammo/unlocked,
+/obj/item/book/granter/crafting_recipe/gunsmith_two,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
+/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "ja" = (
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
@@ -3144,6 +3167,12 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"jP" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "jQ" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/indestructible/ground/inside/mountain,
@@ -4371,6 +4400,9 @@
 "nH" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/f13/battlecoat,
+/obj/item/circuitboard/machine/autolathe/ammo,
+/obj/item/circuitboard/machine/autolathe/ammo,
+/obj/item/circuitboard/machine/autolathe/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "nI" = (
@@ -4716,6 +4748,7 @@
 /area/f13/caves)
 "oQ" = (
 /obj/structure/frame/machine,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -5201,6 +5234,13 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
+"qt" = (
+/obj/structure/table,
+/obj/machinery/processor/chopping_block,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
 "qu" = (
@@ -5798,6 +5838,12 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
+"sw" = (
+/obj/structure/bookcase/manuals/research_and_development,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "sx" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -6278,6 +6324,10 @@
 	dir = 1
 	},
 /area/f13/brotherhood)
+"uf" = (
+/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "ug" = (
 /obj/structure/handrail/g_central{
 	dir = 8;
@@ -6679,7 +6729,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vu" = (
-/obj/structure/table,
+/obj/structure/dresser,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -6993,6 +7043,10 @@
 /obj/effect/mine/stun,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"wq" = (
+/obj/structure/sign/poster/prewar/poster89,
+/turf/closed/wall/f13/supermart,
+/area/f13/followers)
 "wr" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7658,6 +7712,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"ys" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/followers)
 "yt" = (
 /obj/structure/window/spawner/east{
 	dir = 2
@@ -9316,9 +9376,15 @@
 	},
 /area/f13/tunnel)
 "DG" = (
-/obj/structure/simple_door/bunker,
+/obj/structure/simple_door/bunker/glass,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
+	},
+/area/f13/followers)
+"DH" = (
+/obj/structure/bookcase/random/adult,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
 "DI" = (
@@ -9800,6 +9866,9 @@
 "Fn" = (
 /obj/structure/sink{
 	pixel_y = 19
+	},
+/obj/structure/mirror{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/followers)
@@ -11478,6 +11547,7 @@
 /area/f13/tunnel)
 "KS" = (
 /obj/structure/table/glass,
+/obj/item/storage/box/syringes,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -12040,7 +12110,8 @@
 /area/f13/tunnel)
 "MI" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/syringes,
+/obj/item/fermichem/pHmeter,
+/obj/item/fermichem/pHmeter,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -12209,10 +12280,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood)
 "Nn" = (
-/obj/effect/landmark/start/f13/followersvolunteer,
-/obj/structure/chair/f13chair1,
+/obj/structure/simple_door/bunker/glass,
 /turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
 "No" = (
@@ -12386,12 +12456,8 @@
 	},
 /area/f13/tcoms)
 "NJ" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -25
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/sign/poster/prewar/poster91,
+/turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "NL" = (
 /obj/machinery/light/small{
@@ -12890,8 +12956,6 @@
 /area/f13/tunnel)
 "Pc" = (
 /obj/structure/table/glass,
-/obj/item/fermichem/pHmeter,
-/obj/item/fermichem/pHmeter,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -13556,6 +13620,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"Ri" = (
+/obj/structure/sign/poster/prewar/poster90{
+	pixel_y = 32
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "Rj" = (
 /obj/structure/car,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -14168,7 +14240,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Tk" = (
-/obj/structure/bookcase/random,
+/obj/structure/bookcase/manuals/medical,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -35874,7 +35946,7 @@ MA
 Fz
 pX
 JR
-Hl
+iZ
 iA
 Xv
 Lx
@@ -36385,7 +36457,7 @@ Bp
 pt
 pt
 pt
-MA
+KZ
 xh
 bD
 pX
@@ -36637,7 +36709,7 @@ mf
 sJ
 yl
 Gi
-pt
+ag
 oh
 sJ
 oh
@@ -36894,11 +36966,11 @@ oh
 oh
 oh
 oh
-pu
+Nn
 oh
 oh
 oh
-DP
+Tk
 pt
 jM
 nD
@@ -37155,7 +37227,7 @@ OP
 oh
 FB
 oh
-Tk
+sw
 pt
 Oi
 nD
@@ -37402,7 +37474,7 @@ nu
 nu
 nu
 pt
-oh
+ch
 oh
 oh
 oh
@@ -37669,7 +37741,7 @@ ef
 oh
 oh
 oh
-DP
+DH
 pt
 kN
 nD
@@ -37918,8 +37990,8 @@ bT
 pt
 zA
 Rw
-pt
-pt
+Nn
+NJ
 zA
 Rw
 pt
@@ -38175,7 +38247,7 @@ bR
 Am
 bR
 bR
-vb
+bR
 bR
 bR
 bR
@@ -38183,7 +38255,7 @@ bR
 bR
 bR
 pH
-NJ
+bR
 bR
 vb
 bR
@@ -38432,7 +38504,7 @@ bR
 Am
 bR
 bR
-bR
+yF
 bR
 bR
 bR
@@ -40747,7 +40819,7 @@ Fz
 Fz
 pt
 pD
-Nn
+Ld
 Aq
 cQ
 Ld
@@ -41007,7 +41079,7 @@ pD
 Ld
 Aq
 cQ
-Nn
+Ld
 Aq
 cQ
 pD
@@ -41261,7 +41333,7 @@ Fz
 Fz
 pt
 pD
-Nn
+Ld
 Aq
 cQ
 Ld
@@ -41523,7 +41595,7 @@ Aq
 cQ
 Ld
 Aq
-ch
+cQ
 pD
 sc
 Yi
@@ -41534,7 +41606,7 @@ oh
 oh
 oh
 oh
-pt
+wq
 Bk
 Bk
 Bk
@@ -41788,7 +41860,7 @@ Yi
 pt
 vU
 uE
-KS
+aM
 Wm
 oh
 pt
@@ -42805,9 +42877,9 @@ pt
 pt
 lO
 Dv
-Bj
+qt
 Is
-Is
+ys
 pt
 pt
 pt
@@ -43328,7 +43400,7 @@ pt
 pu
 pt
 pt
-bR
+Ri
 bR
 bR
 bR
@@ -43587,9 +43659,9 @@ Di
 pt
 wt
 mc
+eI
 mc
-mc
-bR
+jP
 bR
 bR
 fW
@@ -79594,7 +79666,7 @@ BP
 JA
 au
 uz
-mE
+uf
 mE
 EC
 py
