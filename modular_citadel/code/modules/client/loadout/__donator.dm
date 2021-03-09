@@ -118,6 +118,20 @@
 	path = /obj/item/clothing/under/f13/ranger/vet/foxflannel
 	ckeywhitelist = list("superballs")
 	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger", "NCR Off-Duty")
+
+/datum/gear/donator/thaxuniform
+	name = "Thaxton's Flannel"
+	slot = SLOT_W_UNIFORM
+	path = /obj/item/clothing/under/f13/ranger/vet/thaxflannel
+	ckeywhitelist = list("svenja")
+	restricted_roles = list("NCR Ranger", "NCR Off-Duty")
+
+/datum/gear/donator/zirilliuniform
+	name = "Major Zirilli's service uniform"
+	slot = SLOT_W_UNIFORM
+	path = /obj/item/clothing/under/f13/ncr_formal_uniform/majzirilli
+	ckeywhitelist = list("shoi87")
+	restricted_roles = list("NCR Off-Duty", "NCR Lieutenant", "NCR Colonel", "NCR Captain")
 		
 ////////////////////////////
 ///Ranger items end here.///

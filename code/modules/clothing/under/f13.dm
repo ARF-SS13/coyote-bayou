@@ -153,12 +153,26 @@
 	item_state = "foxflannel"
 	item_color = "foxflannel"
 
+/obj/item/clothing/under/f13/ranger/vet/thaxflannel
+    name = "Thaxton's ranger flannel outfit"
+    desc = "A simple outfit for a burly, big iron packin' lawman. A golden belt-buckle in the rough shape of a medallion is proudly presented atop a leather gunbelt."
+    icon_state = "thaxflannel"
+    item_state = "thaxflannel"
+    item_color = "thaxflannel"
+
 /obj/item/clothing/under/f13/ranger/blue
 	name = "blue ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. A blue collar shirt with tan slacks."
 	icon_state = "blueranger"
 	item_state = "blueranger"
 	item_color = "blueranger"
+
+/obj/item/clothing/under/f13/ncr_formal_uniform/majzirilli
+    name = "Major Zirilli's service uniform"
+    desc = "An immaculately maintained service uniform."
+    icon_state = "majzirilli"
+    item_state = "majzirilli"
+    item_color = "majzirilli"
 
 /obj/item/clothing/under/f13/rustic
 	name = "rustic outfit"
