@@ -97,3 +97,11 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+
+obj/item/clothing/gloves/f13/crudemedical
+	name = "crude medical gloves"
+	desc = "Cotton gloves waxed to prevent the blood from soaking through immediatly. Better than nothing."
+	icon_state = "offwhite"
+	item_state = "offwhite"
+	siemens_coefficient = 0.5
+	permeability_coefficient = 0.1
