@@ -516,6 +516,13 @@
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
 
+/obj/item/gun/ballistic/revolver/lucky37
+	name = "Lucky 37"
+	desc = "One of the few weapons designed and created purely in the post-war world, it takes .38 ad .357 rounds, adjusting the rifling and boring based upon which is loaded."
+	item_state = ""
+	icon_state = ""
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lucky37
+
 /obj/item/gun/ballistic/revolver/m29/coltwalker
 	name = "Colt Walker 1847"
 	desc = "A legendary gun of the west. The Colt Walker bears a fearsome reputation for a very good reason, finding itself in the hands of everyone from ancient army officials to outlaws throughout the years. An antique when the bombs dropped, the weapon is now incredibly outdated. Still, that doesn't make it any less lethal."
