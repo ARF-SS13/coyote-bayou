@@ -615,6 +615,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "soldier"
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
+	name = "sniper riot gear"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+
 /obj/item/clothing/suit/toggle/armor/f13/cloakranger
 	name = "ranger poncho"
 	desc = "(IV) A durable muslin poncho. Tough enough to bear the elements and serve as handy blanket."

@@ -752,7 +752,7 @@
 	name = "Colt 6520 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/colt6520,
-				/obj/item/ammo_box/magazine/m10mm_adv
+				/obj/item/ammo_box/l10mm
 				)
 
 /obj/effect/spawner/bundle/f13/varmint
@@ -908,7 +908,8 @@
 				/obj/effect/spawner/bundle/f13/mp5,
 				/obj/effect/spawner/bundle/f13/beretta/select,
 				/obj/effect/spawner/bundle/f13/deagle,
-				/obj/effect/spawner/bundle/f13/neostead
+				/obj/effect/spawner/bundle/f13/neostead,
+				/obj/effect/spawner/bundle/f13/auto5
 				)
 
 /obj/effect/spawner/bundle/f13/miniuzi
@@ -922,7 +923,7 @@
 	name = "10mm SMG and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg10mm,
-				/obj/item/ammo_box/magazine/m10mm_auto
+				/obj/item/ammo_box/magazine/m10mm_adv/ext
 				)
 
 /obj/effect/spawner/bundle/f13/greasegun
@@ -1001,6 +1002,14 @@
 	name = "Neostead 2000 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/neostead,
+				/obj/item/storage/fancy/ammobox/lethalshot,
+				/obj/item/storage/fancy/ammobox/slugshot
+	)
+
+/obj/effect/spawner/bundle/f13/auto5
+	name = "Auto 5 shotgun and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
 				/obj/item/storage/fancy/ammobox/lethalshot,
 				/obj/item/storage/fancy/ammobox/slugshot
 	)
@@ -1231,7 +1240,7 @@
 				/obj/item/ammo_box/needle,
 				/obj/item/ammo_box/magazine/tommygunm45,
 				/obj/item/ammo_box/tube/m44,
-				/obj/item/ammo_box/magazine/m10mm_auto,
+				/obj/item/ammo_box/magazine/m10mm_adv/ext,
 				/obj/item/stock_parts/cell/ammo/ec
 				)
 

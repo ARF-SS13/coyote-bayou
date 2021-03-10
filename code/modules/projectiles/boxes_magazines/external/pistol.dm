@@ -80,6 +80,17 @@
 /obj/item/ammo_box/magazine/m10mm_adv/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m10mm_adv/ext
+	name = "10mm pistol extended magazine (10mm)"
+	icon_state = "smg10mm"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 24
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m10mm_adv/ext/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m9mm
 	name = "9mm pistol magazine (9mm)"
 	icon_state = "9mmp"

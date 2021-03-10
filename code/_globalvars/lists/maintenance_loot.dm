@@ -561,7 +561,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/mini_uzi,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/gun/ballistic/automatic/smg10mm,
-	/obj/item/ammo_box/magazine/m10mm_auto,
+	/obj/item/ammo_box/magazine/m10mm_adv/ext,
 	/obj/item/gun/ballistic/automatic/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
@@ -660,7 +660,7 @@ GLOBAL_LIST_INIT(loot_t3_ammo, list(
 	/obj/item/ammo_box/needle,
 	/obj/item/ammo_box/magazine/tommygunm45,
 	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/magazine/m10mm_auto,
+	/obj/item/ammo_box/magazine/m10mm_adv/ext,
 	/obj/item/stock_parts/cell/ammo/ec
 ))
 

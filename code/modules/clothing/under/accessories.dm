@@ -577,3 +577,43 @@
 	desc = "An armband issued to NCR Military Police, signifying their alignment with NCROSI rather than the typical chain of command."
 	icon_state = "blackband"
 	item_color = "blackband"
+
+/obj/item/clothing/accessory/ranger
+	name = "'Ranger' rank pins"
+	desc = "A ranger should wear this."
+	icon_state = "ncrenlisted"
+	item_color = "ncrenlisted"
+
+/obj/item/clothing/accessory/ranger/SGT
+	name = "'Ranger-Sergeant' rank pins"
+	desc = "A Ranger-Sergeant should wear this."
+
+/obj/item/clothing/accessory/ranger/LT
+	name = "'Ranger-Lieutenant' rank pins"
+	desc = "A Ranger-Lieutenant should wear this."
+	icon_state = "lieutenantrank"
+	item_color = "lieutenantrank"
+
+/obj/item/clothing/accessory/ranger/CPT
+	name = "'Ranger-Captain' rank pins"
+	desc = "A Ranger-Captain should wear this."
+	icon_state = "captainrank"
+	item_color = "captainrank"
+
+/obj/item/clothing/accessory/ranger/MAJ
+	name = "'Ranger-Major' rank pins"
+	desc = "A Ranger-Major should wear this."
+	icon_state = "majorrank"
+	item_color = "majorrank"
+
+/obj/item/clothing/accessory/ranger/ACR
+	name = "'Assistant-Chief Ranger' rank pins"
+	desc = "An Assistant-Chief Ranger should wear this."
+	icon_state = "colonelrank" //TO-DO: Add a new sprite
+	item_color = "colonelrank"
+
+/obj/item/clothing/accessory/ranger/CR
+	name = "'Chief Ranger' rank pins"
+	desc = "A Chief Ranger should wear this."
+	icon_state = "colonelrank" //TO-DO: Add a new sprite
+	item_color = "colonelrank"

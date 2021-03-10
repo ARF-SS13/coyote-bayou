@@ -471,7 +471,8 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM //You should be able to dual-wield these.
@@ -1179,12 +1180,13 @@
 	icon_state = "smg22"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	fire_sound = 'sound/f13weapons/american180.ogg'
 	can_suppress = FALSE
 	can_unsuppress = FALSE
-	burst_size = 4
+	burst_size = 2
 	burst_shot_delay = 1
 	suppressed = 1
 
