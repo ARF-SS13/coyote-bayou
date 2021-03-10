@@ -109,7 +109,7 @@ Sentinel
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	
+
 /datum/outfit/job/bos/f13sentinel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -213,7 +213,7 @@ Head Scribe
 	name = "Medicinal Expert"
 	backpack_contents = list(
 		/obj/item/gun/energy/ionrifle/carbine=1,
-		/obj/item/stock_parts/cell/ammo/mfc=2,
+		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/gun/medbeam=1
 		)
 
@@ -338,7 +338,7 @@ Senior Paladin
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	
+
 /datum/outfit/job/bos/f13seniorpaladin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -409,7 +409,7 @@ Paladin
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	
+
 /datum/outfit/job/bos/f13paladin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -602,13 +602,13 @@ datum/job/bos/f13seniorknight
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
 	jobtype = /datum/job/bos/f13seniorknight
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
 	accessory = 	/obj/item/clothing/accessory/bos/seniorknight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	glasses =       /obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	belt = 			/obj/item/storage/belt/military
-	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
+	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE
 	gunsmith_two = TRUE

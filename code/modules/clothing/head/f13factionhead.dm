@@ -192,7 +192,7 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	
+
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
 	desc = "(III) It's a leather skullcap issued to recruits."
@@ -494,6 +494,12 @@
 	item_state = "brotherhood_helmet"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
+	name = "brotherhood senior knight combat helmet"
+	desc = "(VI) An improved combat helmet, bearing the symbol of the Knights in silver."
+	icon_state = "brotherhood_helmet_senior"
+	item_state = "brotherhood_helmet_senior"
+
 /obj/item/clothing/head/helmet/f13/combat/knightcap
 	name = "knight-captain combat helmet"
 	desc = "(VII) The specialized combat helmet of the Knight-Captain, with a golden crest."
@@ -614,7 +620,7 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-	
+
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
 

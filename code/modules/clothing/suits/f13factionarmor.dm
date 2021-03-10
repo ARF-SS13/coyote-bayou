@@ -183,7 +183,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
-	
+
 
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
@@ -425,6 +425,12 @@
 	icon_state = "brotherhood_armor"
 	item_state = "brotherhood_armor"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
+	name = "brotherhood senior knight combat armor"
+	desc = "(VI) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe, and the crest of the Brotherhood of Steel."
+	icon_state = "brotherhood_armor_senior"
+	item_state = "brotherhood_armor_senior"
 
 /obj/item/clothing/suit/armor/f13/combat/knightcap
 	name = "knight-captain combat armor"
