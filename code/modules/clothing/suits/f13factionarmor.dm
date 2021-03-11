@@ -81,6 +81,16 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/raider/combatduster
+	name = "combat duster"
+	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	icon_state = "combatduster"
+	item_state = "combatduster"
+
+/obj/item/clothing/suit/armor/f13/raider/combatduster/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/f13/exile
 	name = "base faction exile armor"
 	desc = "this is for testing."
@@ -183,8 +193,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
-
-
+	
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
 	desc = "(III) Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
@@ -280,6 +289,18 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/combat/legion
+	name = "Legion combat armor"
+	desc = "(V) An old military grade pre war combat armor and, repainted to the colour scheme of Caesar's Legion."
+	icon_state = "legion_armor"
+	item_state = "legion_armor"
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/legion
+	name = "reinforced Legion combat armor"
+	desc = "(VI) A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of Caesar's Legion."
+	icon_state = "legion_armor_mk2"
+	item_state = "legion_armor_mk2"
+
 //NCR
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR patrol vest"
@@ -344,13 +365,17 @@
 	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
 	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/combat/ncr
+	name = "NCR combat armor"
+	desc = "(V) An old military grade pre war combat armor and, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_armor"
+	item_state = "ncr_armor"
+
 /obj/item/clothing/suit/armor/f13/combat/mk2/ncr
-	name = "combat armor mk2"
-	desc = "(VI) An old military grade pre war combat armor, modified to the NCR's standard."
-	icon_state = "combat_armor_mk2_ncr"
-	item_state = "combat_armor_mk2_ncr"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-	icon = 'icons/fallout/clothing/suits.dmi'
+	name = "reinforced NCR combat armor"
+	desc = "(VI) A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_armor_mk2"
+	item_state = "ncr_armor_mk2"
 
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
@@ -369,12 +394,18 @@
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = -0.14
 
-/obj/item/clothing/suit/armor/f13/combat/ncr
+/obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	name = "ranger patrol armor"
 	desc = "(VI) A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
+/obj/item/clothing/suit/armor/f13/combat/ncr_patrol/thax
+	name = "modified patrol armor"
+	desc = "A customized and moderately-worn suit of patrol ranger armor. A sun-worn thick olive duster is worn over the armor."
+	icon_state = "thaxarmor"
+	item_state = "thaxarmor"
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "veteran ranger combat armor"
@@ -420,24 +451,37 @@
 	allowed = list(/obj/item/gun)
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood
-	name = "brotherhood combat armor"
-	desc = "(VI) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Knights. It bears a red stripe."
-	icon_state = "brotherhood_armor"
-	item_state = "brotherhood_armor"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	name = "brotherhood armor"
+	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Knights. It bears a red stripe."
+	icon_state = "brotherhood_armor_knight"
+	item_state = "brotherhood_armor_knight"
+	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
-	name = "brotherhood senior knight combat armor"
-	desc = "(VI) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe, and the crest of the Brotherhood of Steel."
+	name = "brotherhood senior knight armor"
+	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe."
 	icon_state = "brotherhood_armor_senior"
 	item_state = "brotherhood_armor_senior"
 
-/obj/item/clothing/suit/armor/f13/combat/knightcap
-	name = "knight-captain combat armor"
-	desc = "(VII) A customized set of combat armor designed for the Knight-Captain, with golden embroidery."
-	icon_state = "knightcap"
-	item_state = "knightcap"
-	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/captain
+	name = "brotherhood knight-captain armor"
+	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Knight-Captains. It bears golden embroidery."
+	icon_state = "brotherhood_armor_cap"
+	item_state = "brotherhood_armor_cap"
+
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate
+	name = "initiate armor"
+	desc = "(V) An old military grade pre war combat armor, repainted to the colour scheme of the Brotherhood of Steel."
+	icon_state = "brotherhood_armor"
+	item_state = "brotherhood_armor"
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate/mk2
+	name = "reinforced initiate armor"
+	desc = "(VI) A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
+	icon_state = "brotherhood_armor_mk2"
+	item_state = "brotherhood_armor_mk2"
+	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 //Oasis/Town
 /obj/item/clothing/suit/armor/f13/town
@@ -514,14 +558,6 @@
 	flags_inv = HIDEJUMPSUIT|HIDENECK
 	icon = 'icons/fallout/clothing/suits.dmi'
 	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-
-/obj/item/clothing/suit/armor/f13/combat/mk2/leg
-	name = "legatus armor mk2"
-	desc = "(VI) An old military grade pre war combat armor, specially designed for a Legionary Legatus."
-	icon_state = "combat_armor_mk2_leg"
-	item_state = "combat_armor_mk2_leg"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/caeserpelt
 	name = "Caesars' Pelt"
