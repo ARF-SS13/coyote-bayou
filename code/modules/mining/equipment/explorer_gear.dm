@@ -142,7 +142,7 @@
 	icon_state = "seva"
 	item_state = "seva"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	armor = list("tier" = 3, "energy" = 45, "bomb" = 35, "bio" = 75, "rad" = 75, "fire" = 100, "acid" = 2505)
+	armor = list("tier" = 3, "energy" = 45, "bomb" = 35, "bio" = 75, "rad" = 75, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF | GOLIATH_WEAKNESS
 
 /obj/item/clothing/mask/gas/seva
