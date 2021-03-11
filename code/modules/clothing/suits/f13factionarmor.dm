@@ -82,14 +82,14 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster
-    name = "combat duster"
-    desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
-    icon_state = "combatduster"
-    item_state = "combatduster"
+	name = "combat duster"
+	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	icon_state = "combatduster"
+	item_state = "combatduster"
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster/Initialize()
-    . = ..()
-    AddComponent(/datum/component/armor_plate)
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/exile
 	name = "base faction exile armor"
@@ -402,10 +402,10 @@
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/ncr_patrol/thax
-    name = "modified patrol armor"
-    desc = "A customized and moderately-worn suit of patrol ranger armor. A sun-worn thick olive duster is worn over the armor."
-    icon_state = "thaxarmor"
-    item_state = "thaxarmor"
+	name = "modified patrol armor"
+	desc = "A customized and moderately-worn suit of patrol ranger armor. A sun-worn thick olive duster is worn over the armor."
+	icon_state = "thaxarmor"
+	item_state = "thaxarmor"
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "veteran ranger combat armor"
