@@ -18,6 +18,16 @@
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 
+/datum/outfit/job/ncr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmetmk2)
+
 /*
 Colonel
 */
@@ -783,7 +793,7 @@ Veteran Ranger
 
 /datum/outfit/loadout/rangerpatrol
 	name = "Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	head = /obj/item/clothing/head/f13/ranger
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
 	belt =	/obj/item/storage/belt/military/assault/ncr
@@ -796,7 +806,7 @@ Veteran Ranger
 
 /datum/outfit/loadout/rangerpatrolcqb
 	name = "CQB Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	head = /obj/item/clothing/head/f13/ranger
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
 	belt =	/obj/item/storage/belt/military/assault/ncr
@@ -810,7 +820,7 @@ Veteran Ranger
 
 /datum/outfit/loadout/rangermedic
 	name = "Medic Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	head = /obj/item/clothing/head/f13/ranger
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
 	belt =	/obj/item/storage/belt/military/assault/ncr
