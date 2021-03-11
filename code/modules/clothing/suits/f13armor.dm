@@ -604,8 +604,8 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	strip_delay = 40
 
 /obj/item/clothing/suit/armor/f13/shankduster/Initialize()
-    . = ..()
-    AddComponent(/datum/component/armor_plate)
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/toggle/armor/f13/rangercustomdark
 	name = "tattered recon duster"
