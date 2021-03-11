@@ -172,6 +172,7 @@
 	icon_state = "legslaveservant"
 	item_state = "legslaveservant"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/f13/legion/auxilia
 	name = "auxilia headwear"
@@ -179,6 +180,7 @@
 	icon_state = "legaux"
 	item_state = "legaux"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/helmet/f13/legion
 	name = "legion helmet"
