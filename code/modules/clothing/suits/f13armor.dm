@@ -276,6 +276,14 @@
 	slowdown = 0.4
 	requires_training = FALSE
 
+/obj/item/clothing/suit/armor/f13/power_armor/vaulttec
+	name = "Vault-Tec technical power armour"
+	desc = "(VIII) ."
+	icon_state = "vaultpa"
+	item_state = "vault_pa"
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	slowdown = 0
+
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
 	desc = "(VIII) Developed by Garrahan Mining Co. in collaboration with West Tek, the Excavator-class power armor was designed to protect miners from rockfalls and airborne contaminants while increasing the speed at which they could work. "
@@ -594,6 +602,19 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/shankduster
+	name = "follower's duster"
+	desc = "An old military-grade pre-war combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	icon_state = "shank_follower"
+	item_state = "shank_follower"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	strip_delay = 40
+
+/obj/item/clothing/suit/armor/f13/shankduster/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/toggle/armor/f13/rangercustomdark
 	name = "tattered recon duster"
 	desc = "(III) A thicker than average duster worn by rangers out in the field. This one has been dyed black and appears to be a little more heavily armoured."
@@ -620,6 +641,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
 	icon_state = "foxranger"
 	item_state = "foxranger"
+
+/obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
+	name = "11th armored calvary armor"
+	desc = "A suit of special military grade riot control gear and a duster, worn by 11th Armored Calvary Regiment members in The Divide before the war. Yellow markings are painted on the shoulderpads and forearm guards."
+	icon_state = "rigscustom_suit"
+	item_state = "rigscustom_suit"
 
 /obj/item/clothing/suit/toggle/armor/f13/cloakranger
 	name = "ranger poncho"

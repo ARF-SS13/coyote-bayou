@@ -239,6 +239,7 @@
 				/obj/effect/spawner/bundle/f13/armor/badlands,
 				/obj/effect/spawner/bundle/f13/armor/psycho,
 				/obj/item/clothing/suit/f13/duster,
+				/obj/effect/spawner/bundle/f13/armor/combatduster,
 				/obj/item/clothing/suit/armor/f13/raider/iconoclast
 	)
 
@@ -275,6 +276,13 @@
 	items = list(
 				/obj/item/clothing/suit/armor/f13/raider/badlands,
 				/obj/item/clothing/head/helmet/f13/fiend
+				)
+
+/obj/effect/spawner/bundle/f13/armor/combatduster
+	name = "combat duster raider armor spawner"
+	items = list(
+				/obj/item/clothing/suit/armor/f13/raider/combatduster,
+				/obj/item/clothing/head/helmet/f13/raidercombathelmet
 				)
 
 /obj/effect/spawner/bundle/f13/armor/psycho
