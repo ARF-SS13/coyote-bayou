@@ -36,6 +36,10 @@ Main doors: ACCESS_CAPTAIN 20
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmetmk2)
 /*
 Elder
 */
@@ -268,13 +272,13 @@ Knight-Captain
 	gunsmith_two = TRUE
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/knightcap
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/captain
 	glasses =       /obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	accessory = 	/obj/item/clothing/accessory/bos/knightcaptain
 	belt = 			/obj/item/storage/belt/security/full
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
-	head =			/obj/item/clothing/head/helmet/f13/combat/knightcap
+	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -293,7 +297,7 @@ Knight-Captain
 	name = "Close Support"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/ar=1,
-		/obj/item/ammo_box/magazine/m556=2,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2,
 		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/ec=2
 		)
@@ -753,7 +757,8 @@ Initiate
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate
+	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
