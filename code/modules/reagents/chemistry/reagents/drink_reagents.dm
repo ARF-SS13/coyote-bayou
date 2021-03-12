@@ -504,16 +504,6 @@
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 	value = REAGENT_VALUE_COMMON
 
-/datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
-	M.set_drugginess(30)
-	M.dizziness +=1.5
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = 1
-
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."
