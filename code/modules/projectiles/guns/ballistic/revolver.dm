@@ -519,7 +519,7 @@
 /obj/item/gun/ballistic/revolver/lucky37
 	name = "Lucky 37"
 	desc = "One of the few weapons designed and created purely in the post-war world, it takes .38 ad .357 rounds, adjusting the rifling and boring based upon which is loaded."
-	item_state = ""
+	item_state = "lucky37"
 	icon_state = ""
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lucky37
 
