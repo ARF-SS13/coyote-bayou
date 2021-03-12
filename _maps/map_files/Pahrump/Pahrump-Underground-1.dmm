@@ -3586,9 +3586,7 @@
 /area/f13/tunnel)
 "kL" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/brotherhood)
 "kM" = (
 /turf/open/floor/f13{
@@ -6445,9 +6443,7 @@
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/freezer,
 /area/f13/brotherhood)
 "tV" = (
 /obj/structure/chair/wood/worn{
@@ -14487,6 +14483,12 @@
 /obj/structure/barricade/wooden,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
+"SX" = (
+/obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/firedoor/heavy,
+/obj/structure/simple_door/room,
+/turf/open/floor/f13/wood,
+/area/f13/brotherhood)
 "SY" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/structure/simple_door/bunker,
@@ -69551,7 +69553,7 @@ fl
 Ye
 NT
 NT
-NT
+gX
 NT
 NT
 NT
@@ -70579,8 +70581,8 @@ YN
 YN
 NT
 NT
-gX
-Ue
+NT
+mj
 NT
 NT
 NT
@@ -81103,7 +81105,7 @@ NT
 rR
 NT
 NT
-rR
+SX
 NT
 IY
 pL
