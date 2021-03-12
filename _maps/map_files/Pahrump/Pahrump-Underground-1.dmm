@@ -768,7 +768,6 @@
 /area/f13/tunnel)
 "cq" = (
 /obj/structure/closet/crate/freezer/blood,
-/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -1577,10 +1576,6 @@
 /obj/structure/table,
 /obj/item/hemostat,
 /obj/item/retractor,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
 /turf/open/floor/plasteel/white/side{
 	dir = 9
 	},
@@ -1642,14 +1637,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
-"fk" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
-/area/f13/brotherhood)
 "fl" = (
 /obj/machinery/iv_drip{
 	pixel_x = 16;
@@ -2969,9 +2956,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "iO" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white/side{
 	dir = 6
 	},
@@ -3543,10 +3527,6 @@
 	},
 /area/f13/bunker)
 "kG" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
 /turf/open/floor/plasteel/white/side{
 	dir = 10
 	},
@@ -6305,11 +6285,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "tu" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+/turf/open/floor/plasteel/vault/side{
+	dir = 4
 	},
 /area/f13/brotherhood)
 "tv" = (
@@ -6797,23 +6777,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"uZ" = (
-/obj/effect/turf_decal/stripes/red/end{
-	dir = 4
-	},
-/obj/machinery/sleeper{
-	density = 1;
-	dir = 4;
-	pixel_y = 8
-	},
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
-	},
-/area/f13/brotherhood)
 "va" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/healingpowder,
@@ -7429,10 +7392,6 @@
 "wQ" = (
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_x = -32
-	},
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -13016,9 +12975,6 @@
 /area/f13/brotherhood)
 "Ow" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lamp{
-	pixel_y = 9
-	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "Ox" = (
@@ -15610,9 +15566,6 @@
 /obj/item/tank/internals/anesthetic,
 /obj/item/tank/internals/anesthetic,
 /obj/item/tank/internals/anesthetic,
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/plasteel/white/side{
 	dir = 5
 	},
@@ -16089,9 +16042,6 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetcmo"
-	},
-/obj/machinery/light{
-	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/brotherhood)
@@ -69539,7 +69489,7 @@ Ak
 Ws
 Ye
 XS
-uZ
+XS
 Ye
 WG
 wQ
@@ -70565,7 +70515,7 @@ NT
 LA
 eW
 NT
-tu
+Ye
 Ye
 Ye
 NT
@@ -71598,9 +71548,9 @@ XL
 Mg
 NT
 iM
-fk
+YN
 ik
-fk
+YN
 qk
 NT
 Sh
@@ -80577,10 +80527,10 @@ BH
 ei
 mA
 mA
-Dy
+tu
 mA
 mA
-Dy
+tu
 mA
 mA
 mA
