@@ -2302,7 +2302,9 @@
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
 "gX" = (
-/obj/machinery/button/crematorium,
+/obj/machinery/button/crematorium{
+	id = null
+	},
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/brotherhood)
 "gY" = (
@@ -7131,7 +7133,9 @@
 	},
 /area/f13/brotherhood)
 "vX" = (
-/obj/structure/bodycontainer/crematorium,
+/obj/structure/bodycontainer/crematorium{
+	id = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "vY" = (
