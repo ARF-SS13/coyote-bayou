@@ -297,7 +297,7 @@ Knight-Captain
 	name = "Close Support"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/ar=1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2,
+		/obj/item/ammo_box/magazine/m556=2,
 		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/ec=2
 		)
