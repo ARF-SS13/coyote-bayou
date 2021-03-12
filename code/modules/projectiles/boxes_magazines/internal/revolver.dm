@@ -16,7 +16,11 @@
 	max_ammo = 6
 	multiload = 0
 
-
+/obj/item/ammo_box/magazine/internal/cylinder/lucky37
+	name = "\improper Lucky 37 cylinder"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "357"
+	max_ammo = 8
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	name = "6520 10mm cylinder"
