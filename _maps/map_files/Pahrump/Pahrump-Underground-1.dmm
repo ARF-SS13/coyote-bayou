@@ -1008,7 +1008,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 10
 	},
 /area/f13/brotherhood)
@@ -1462,7 +1462,7 @@
 /obj/machinery/computer/operating{
 	dir = 8
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
 /area/f13/brotherhood)
@@ -1561,7 +1561,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 9
 	},
 /area/f13/brotherhood)
@@ -2582,7 +2582,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hS" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/wood,
 /area/f13/brotherhood)
 "hT" = (
@@ -4495,7 +4495,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "nR" = (
-/turf/open/floor/plasteel/airless/white/side,
+/turf/open/floor/plasteel/white/side,
 /area/f13/brotherhood)
 "nS" = (
 /obj/structure/dresser,
@@ -5631,7 +5631,7 @@
 	},
 /area/f13/brotherhood)
 "rC" = (
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
 /area/f13/brotherhood)
@@ -8688,7 +8688,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 6
 	},
 /area/f13/brotherhood)
@@ -9766,7 +9766,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "Ez" = (
-/obj/structure/closet/crate/medical,
+/obj/structure/closet/crate/medical{
+	anchored = 1
+	},
 /obj/effect/turf_decal/bot_red,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -12186,7 +12188,9 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/cautery,
 /obj/item/surgical_drapes,
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
 /area/f13/brotherhood)
 "Mk" = (
 /obj/structure/sink{
@@ -14074,7 +14078,9 @@
 	pixel_x = 7;
 	pixel_y = 11
 	},
-/turf/open/floor/plasteel/freezer,
+/turf/open/floor/plasteel/white/side{
+	dir = 1
+	},
 /area/f13/brotherhood)
 "RW" = (
 /obj/structure/closet,
@@ -15352,7 +15358,7 @@
 	dir = 4;
 	pixel_x = -15
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
 /area/f13/brotherhood)
@@ -15466,7 +15472,7 @@
 	},
 /area/f13/brotherhood)
 "Wg" = (
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 8
 	},
 /area/f13/brotherhood)
@@ -15544,7 +15550,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/plasteel/airless/white/side{
+/turf/open/floor/plasteel/white/side{
 	dir = 5
 	},
 /area/f13/brotherhood)
@@ -15556,6 +15562,9 @@
 /obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetcmo"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/brotherhood)
@@ -80540,10 +80549,10 @@ BH
 ck
 mA
 mA
+Dy
 mA
 mA
-mA
-mA
+Dy
 mA
 mA
 mA
