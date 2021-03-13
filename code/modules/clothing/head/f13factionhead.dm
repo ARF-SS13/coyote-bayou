@@ -172,6 +172,7 @@
 	icon_state = "legslaveservant"
 	item_state = "legslaveservant"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/f13/legion/auxilia
 	name = "auxilia headwear"
@@ -179,6 +180,7 @@
 	icon_state = "legaux"
 	item_state = "legaux"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/helmet/f13/legion
 	name = "legion helmet"
@@ -519,14 +521,14 @@
 	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
-	name = "brotherhood senior knight helmet"
-	desc = "(VII) An improved combat helmet, bearing the symbol of a Senior Knight."
+	name = "brotherhood star knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of a Star Knight."
 	icon_state = "brotherhood_helmet_senior"
 	item_state = "brotherhood_helmet_senior"
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
-	name = "brotherhood knight-captain helmet"
-	desc = "(VII) An improved combat helmet, bearing the symbol of the Knight-Captain."
+	name = "brotherhood head knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of the Head Knight."
 	icon_state = "brotherhood_helmet_captain"
 	item_state = "brotherhood_helmet_captain"
 
