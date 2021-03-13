@@ -9766,7 +9766,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "Ez" = (
-/obj/structure/closet/crate/medical,
+/obj/structure/closet/crate/medical{
+	anchored = 1
+	},
 /obj/effect/turf_decal/bot_red,
 /obj/structure/window/reinforced{
 	dir = 4
