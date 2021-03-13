@@ -143,7 +143,7 @@ Centurion
 	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/melee/powerfist/goliath=1,
+		/obj/item/melee/goliath=1,
 		/obj/item/key/scollar=1,
 		/obj/item/key/bcollar=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
