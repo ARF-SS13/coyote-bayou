@@ -688,3 +688,9 @@
 	item_state = "gamblerrang"
 	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
+/obj/item/clothing/head/helmet/f13/legion/venator/diohelmet
+	name = "galerum lacertarex"
+	desc = "(VI) The hide of a deadly green gecko affixed over a reinforced legion helmet. Its ghastly appearance serves as an intimidating gesture to those who do not yet fear the Lizard King."
+	icon_state = "diohelmet"
+	item_state = "diohelmet"
+	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)

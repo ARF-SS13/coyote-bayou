@@ -172,6 +172,7 @@
 	icon_state = "legslaveservant"
 	item_state = "legslaveservant"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/f13/legion/auxilia
 	name = "auxilia headwear"
@@ -179,6 +180,7 @@
 	icon_state = "legaux"
 	item_state = "legaux"
 	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
 
 /obj/item/clothing/head/helmet/f13/legion
 	name = "legion helmet"
@@ -192,7 +194,7 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	
+
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
 	desc = "(III) It's a leather skullcap issued to recruits."
@@ -343,6 +345,18 @@
 	item_state = "mars_headdress"
 	dynamic_hair_suffix = "+generic"
 
+/obj/item/clothing/head/helmet/f13/combat/legion
+	name = "Legion combat helmet"
+	desc = "(V) An old military grade pre-war combat helmet, repainted to the colour scheme of Caesar's Legion."
+	icon_state = "legion_helmet"
+	item_state = "legion_helmet"
+
+/obj/item/clothing/head/helmet/f13/combat/mk2/legion
+	name = "reinforced Legion combat helmet"
+	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of Caesar's Legion."
+	icon_state = "legion_helmet"
+	item_state = "legion_helmet"
+
 //NCR
 
 /obj/item/clothing/head/f13/ncr
@@ -413,6 +427,13 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/f13/ncr_campaign
+	name = "NCR campaign hat"
+	desc = "(VII) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
+	icon_state = "ncr_campaign"
+	item_state = "ncr_campaign"
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 //NCR Ranger
 
 /obj/item/clothing/head/beret/ncr_recon_ranger
@@ -443,6 +464,18 @@
 	item_state = "ncr_patrol_helmet"
 	flags_inv = HIDEEARS|HIDEHAIR
 	flags_cover = null
+
+/obj/item/clothing/head/helmet/f13/combat/ncr
+	name = "NCR combat helmet"
+	desc = "(V) An old military grade pre-war combat helmet, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_helmet"
+	item_state = "ncr_helmet"
+
+/obj/item/clothing/head/helmet/f13/combat/mk2/ncr
+	name = "reinforced NCR combat helmet"
+	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_helmet"
+	item_state = "ncr_helmet"
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	name = "ranger combat helmet"
@@ -488,18 +521,37 @@
 //Brotherhood of Steel (PA in f13head.dm)
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood
-	name = "brotherhood combat helmet"
+	name = "brotherhood helmet"
 	desc = "(VI) An improved combat helmet, bearing the symbol of the Knights."
+	icon_state = "brotherhood_helmet_knight"
+	item_state = "brotherhood_helmet_knight"
+	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
+	name = "brotherhood star knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of a Star Knight."
+	icon_state = "brotherhood_helmet_senior"
+	item_state = "brotherhood_helmet_senior"
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
+	name = "brotherhood head knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of the Head Knight."
+	icon_state = "brotherhood_helmet_captain"
+	item_state = "brotherhood_helmet_captain"
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
+	name = "initiate helmet"
+	desc = "(V) An old military grade pre-war combat helmet, repainted to the colour scheme of the Brotherhood of Steel."
+	icon_state = "brotherhood_helmet"
+	item_state = "brotherhood_helmet"
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate/mk2
+	name = "reinforced initiate helmet"
+	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_helmet"
 	item_state = "brotherhood_helmet"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
-
-/obj/item/clothing/head/helmet/f13/combat/knightcap
-	name = "knight-captain combat helmet"
-	desc = "(VII) The specialized combat helmet of the Knight-Captain, with a golden crest."
-	icon_state = "knightcap"
-	item_state = "knightcap"
-	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/f13/boscap
 	name = "brotherhood formal cap"
@@ -614,7 +666,7 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-	
+
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
 
