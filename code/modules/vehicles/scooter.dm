@@ -9,18 +9,18 @@
 	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0), TEXT_SOUTH = list(-2), TEXT_EAST = list(0), TEXT_WEST = list( 2)))
 
 
-/obj/vehicle/ridden/scooter/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You begin to remove the handlebars...</span>")
-	if(I.use_tool(src, user, 40, volume=50))
-		//var/obj/vehicle/ridden/scooter/skateboard/S = new(drop_location())
-		new /obj/item/stack/rods(drop_location(), 2)
-		to_chat(user, "<span class='notice'>You remove the handlebars from [src].</span>")
-		if(has_buckled_mobs())
-			var/mob/living/carbon/H = buckled_mobs[1]
-			unbuckle_mob(H)
-			S.buckle_mob(H)
-		qdel(src)
-	return TRUE
+//obj/vehicle/ridden/scooter/wrench_act(mob/living/user, obj/item/I)
+//	to_chat(user, "<span class='notice'>You begin to remove the handlebars...</span>")
+//	if(I.use_tool(src, user, 40, volume=50))
+//		//var/obj/vehicle/ridden/scooter/skateboard/S = new(drop_location())
+//		new /obj/item/stack/rods(drop_location(), 2)
+//		to_chat(user, "<span class='notice'>You remove the handlebars from [src].</span>")
+//		if(has_buckled_mobs())
+//			var/mob/living/carbon/H = buckled_mobs[1]
+//			unbuckle_mob(H)
+//			S.buckle_mob(H)
+//		qdel(src)
+//	return TRUE
 
 /obj/vehicle/ridden/scooter/Moved()
 	. = ..()
