@@ -29,14 +29,6 @@
 
 /obj/item/clothing/head/hooded/explorer/standard
 
-/obj/item/clothing/suit/hooded/explorer/standard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
-/obj/item/clothing/head/hooded/explorer/standard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
 /obj/item/clothing/mask/gas/explorer
 	name = "explorer gas mask"
 	desc = "A military-grade gas mask that can be connected to an air supply."
