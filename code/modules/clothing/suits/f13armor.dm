@@ -657,6 +657,19 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0) //Same armor as trail ranger gear
 	slowdown = -0.10 //Same speed boost as recon ranger gear. Lower than trail ranger speed to balance it protecting arms.
 
+/obj/item/clothing/suit/armor/f13/herbertranger //Armor wise, it's reskinned raider armor.
+	name = "weathered desert ranger armor"
+	desc = "(IV) A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "usmc_riot_gear"
+	item_state = "usmc_riot_gear"
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	strip_delay = 40
+
+/obj/item/clothing/suit/armor/f13/herbertranger/Initialize() //HQ parts reinforcement, just like raider gear
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
