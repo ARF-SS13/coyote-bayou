@@ -7,11 +7,11 @@
 	wanted_types = list(/obj/vehicle/ridden/scooter)
 	include_subtypes = FALSE
 
-/datum/bounty/item/assistant/skateboard
-	name = "Skateboard"
-	description = "Nanotrasen has determined walking to be wasteful. Ship a skateboard to CentCom to speed operations up."
-	reward = 800 // the tony hawk
-	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard)
+///datum/bounty/item/assistant/skateboard
+//	name = "Skateboard"
+//	description = "Nanotrasen has determined walking to be wasteful. Ship a skateboard to CentCom to speed operations up."
+//	reward = 800 // the tony hawk
+//	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard)
 
 /datum/bounty/item/assistant/stunprod
 	name = "Stunprod"
