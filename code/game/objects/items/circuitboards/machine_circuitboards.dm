@@ -970,7 +970,7 @@
 	req_components = list(
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/scanning_module = 1)
-/*
+
 /obj/item/circuitboard/machine/bsa/back
 	name = "Bluespace Artillery Generator (Machine Board)"
 	build_path = /obj/machinery/bsa/back //No freebies!
@@ -999,7 +999,7 @@
 		/obj/item/stock_parts/capacitor/super = 5,
 		/obj/item/stock_parts/manipulator/pico = 5,
 		/obj/item/stack/cable_coil = 2)
-*/
+
 /obj/item/circuitboard/machine/microwave
 	name = "Microwave (Machine Board)"
 	build_path = /obj/machinery/microwave
