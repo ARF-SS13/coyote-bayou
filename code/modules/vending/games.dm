@@ -9,8 +9,8 @@
 					/obj/item/toy/cards/deck/cas/black = 3,
 					/obj/item/toy/cards/deck/unum = 3)
 	contraband = list(/obj/item/dice/fudge = 9)
-	premium = list(/obj/item/melee/skateboard/pro = 3,
-					/obj/item/melee/skateboard/hoverboard = 1)
+//	premium = list(/obj/item/melee/skateboard/pro = 3,
+//					/obj/item/melee/skateboard/hoverboard = 1)
 	refill_canister = /obj/item/vending_refill/games
 	default_price = PRICE_CHEAP
 	extra_price = PRICE_ALMOST_EXPENSIVE
