@@ -153,7 +153,7 @@
 	cost = 1200
 	crate_name = "toolbox crate"
 	special = TRUE //Department resupply shuttle loan event.
-
+/*
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
 	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
@@ -211,3 +211,4 @@
 	cost = 4000
 	contains = list(/obj/item/circuitboard/computer/sat_control)
 	crate_name= "shield control board crate"
+*/
