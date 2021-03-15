@@ -110,3 +110,25 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_items = 5
 	STR.clickopen = TRUE
+
+/obj/item/storage/medical/ancientfirstaid
+	name = "ancient first aid box"
+	icon_state = "ancientfirstaid"
+	desc = "A rusty, scratched old tin case with a faded cross, containing various medical things if you are lucky."
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	throw_speed = 3
+	throw_range = 7
+	var/empty = FALSE
+
+/obj/item/storage/medical/ancientfirstaid/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+	new /obj/item/stack/medical/ointment(src)
+

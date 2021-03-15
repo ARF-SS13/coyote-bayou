@@ -13,6 +13,51 @@
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/bikehorn
 	geargroupID = list("DONORTEST") //This is a list mainly for the sake of testing, but geargroupID works just fine with ordinary strings
+/////////////////////
+///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
+/////////////////////
+/datum/gear/donator/kits
+	slot = SLOT_IN_BACKPACK
+
+/datum/gear/donator/kits/terryklip
+	name = "Terry Klip's belongings"
+	path = /obj/item/storage/box/large/custom_kit/terryklip
+	ckeywhitelist = list("luckydente")
+
+/datum/gear/donator/kits/stephaniemoui
+	name = "Stephanie Moui's belongings"
+	path = /obj/item/storage/box/large/custom_kit/stephaniemoui
+	ckeywhitelist = list("xerdies")
+
+/datum/gear/donator/kits/danaseshata
+	name = "Dana Seshata's belongings"
+	path = /obj/item/storage/box/large/custom_kit/danaseshata
+	ckeywhitelist = list("s1lv3rv1x3n")
+
+/datum/gear/donator/kits/ashtonfox
+	name = "Ashton Fox's belongings"
+	path = /obj/item/storage/box/large/custom_kit/ashtonfox
+	ckeywhitelist = list("superballs")
+
+/datum/gear/donator/kits/averyamadeus
+	name = "Avery Amadeus' belongings"
+	path = /obj/item/storage/box/large/custom_kit/averyamadeus
+	ckeywhitelist = list("topbirb")
+
+/datum/gear/donator/kits/rigs
+	name = "Rigs' belongings"
+	path = /obj/item/storage/box/large/custom_kit/rigs
+	ckeywhitelist = list("topbirb")
+
+/datum/gear/donator/kits/sangarinusofkanab
+	name = "Sangarinus of Kanab's belongings"
+	path = /obj/item/storage/box/large/custom_kit/sangarinusofkanab
+	ckeywhitelist = list("topbirb")
+
+/datum/gear/donator/kits/johnthaxton
+	name = "John Thaxton's belongings"
+	path = /obj/item/storage/box/large/custom_kit/johnthaxton
+	ckeywhitelist = list("svenja")
 
 //////////////////////////////
 ///Ranger items start here.///
@@ -97,34 +142,6 @@
 						"asterixcodix",
 						"thegreatcoward")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
-
-/datum/gear/donator/foxrangersuit
-	name = "Fox's Custom Riot Armor"
-	slot = SLOT_WEAR_SUIT
-	path = /obj/item/clothing/suit/armor/f13/rangercombat/foxcustom
-	ckeywhitelist = list("superballs")
-	restricted_roles = list("NCR Veteran Ranger")
-
-/datum/gear/donator/foxrangerhelmet
-	name = "Fox's Custom Riot Helmet"
-	slot = SLOT_HEAD
-	path = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom
-	ckeywhitelist = list("superballs")
-	restricted_roles = list("NCR Veteran Ranger")
-
-/datum/gear/donator/foxuniform
-	name = "Fox's Flannel"
-	slot = SLOT_W_UNIFORM
-	path = /obj/item/clothing/under/f13/ranger/vet/foxflannel
-	ckeywhitelist = list("superballs")
-	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger", "NCR Off-Duty")
-
-/datum/gear/donator/thaxuniform
-	name = "Thaxton's Flannel"
-	slot = SLOT_W_UNIFORM
-	path = /obj/item/clothing/under/f13/ranger/vet/thaxflannel
-	ckeywhitelist = list("svenja")
-	restricted_roles = list("NCR Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/zirilliuniform
 	name = "Major Zirilli's service uniform"

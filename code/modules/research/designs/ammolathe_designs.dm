@@ -498,12 +498,14 @@
 
 /datum/design/ammolathe/a762match
 	name = "7.62mm Match ammo box"
+	id = "a762match"
 	materials = list(/datum/material/iron = 28000)
 	build_path = /obj/item/ammo_box/a762box/match
 	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/a556match
 	name = "5.56 Match ammo box"
+	id = "a556match"
 	materials = list(/datum/material/iron = 28000)
 	build_path = /obj/item/ammo_box/a556/match
 	category = list("initial", "Advanced Ammo")

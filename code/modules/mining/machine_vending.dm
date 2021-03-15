@@ -39,7 +39,7 @@
 		new /datum/data/mining_equipment("Advanced Scanner",			/obj/item/t_scanner/adv_mining_scanner,								800),
 		new /datum/data/mining_equipment("Resonator",					/obj/item/resonator,												800),
 		new /datum/data/mining_equipment("Mini Extinguisher",			/obj/item/extinguisher/mini,										1000),
-		new /datum/data/mining_equipment("Fulton Pack",					/obj/item/extraction_pack,											1000),
+//		new /datum/data/mining_equipment("Fulton Pack",					/obj/item/extraction_pack,											1000),
 //		new /datum/data/mining_equipment("Lazarus Injector",			/obj/item/lazarus_injector,											1000),
 		new /datum/data/mining_equipment("Silver Pickaxe",				/obj/item/pickaxe/silver,											1000),
 		new /datum/data/mining_equipment("Mining Conscription Kit",		/obj/item/storage/backpack/duffelbag/mining_conscript,				1000),
@@ -337,7 +337,7 @@
 	new /obj/item/clothing/glasses/meson(src)
 	new /obj/item/t_scanner/adv_mining_scanner/lesser(src)
 	new /obj/item/storage/bag/ore(src)
-	new /obj/item/clothing/suit/hooded/explorer/standard(src)
+	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/encryptionkey/headset_cargo(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/mining_access_card(src)
@@ -362,7 +362,7 @@
 	new /obj/item/storage/firstaid/regular(src)
 	new /obj/item/reagent_containers/hypospray/medipen/survival(src)
 	new /obj/item/t_scanner/adv_mining_scanner(src)
-	new /obj/item/clothing/suit/hooded/explorer/standard(src)
+	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/encryptionkey/headset_cargo(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/id/mining(src)
