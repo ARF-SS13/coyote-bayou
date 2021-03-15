@@ -245,7 +245,7 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass)
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
-
+/*
 /datum/supply_pack/emergency/spacesuit
 	name = "Space Suit Crate"
 	desc = "Contains two aging suits from Space-Goodwill. Requires EVA access to open."
@@ -284,7 +284,7 @@
 					/obj/item/tank/jetpack/carbondioxide/eva)
 	crate_name = "eva jetpacks crate"
 	crate_type = /obj/structure/closet/crate/secure
-
+*/
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
 	desc = "(*!&@#NEED SOMETHING TO DEAL WITH THE GREYTIDE, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
