@@ -655,7 +655,7 @@
 /////////////////////////////////////////
 /////////////////Meteors/////////////////
 /////////////////////////////////////////
-
+/*
 /datum/design/meteor_defence
 	name = "Meteor Defence"
 	desc = "A blue print of a early model of the Meteor defence turret."
@@ -683,7 +683,7 @@
 	build_path = /obj/item/circuitboard/computer/sat_control
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
-
+*/
 
 
 /////////////////////////////////////////
