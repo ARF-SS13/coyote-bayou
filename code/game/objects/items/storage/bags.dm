@@ -404,6 +404,25 @@
 	STR.insert_preposition = "in"
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
 
+/*	Now in tribal mode!*/
+
+obj/item/storage/bag/chemistry/tribal
+	name = "tribal medicinal bag"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "tribal_chembag"
+	desc = "A bag for holding a variety of tribal medical supplies."
+	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
+	resistance_flags = FLAMMABLE
+
+/obj/item/storage/bag/chemistry/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 30
+	STR.max_items = 14
+	STR.insert_preposition = "in"
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
+
+
 /*
  *  Biowaste bag (mostly for xenobiologists)
  */

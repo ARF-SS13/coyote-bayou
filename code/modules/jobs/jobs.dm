@@ -46,8 +46,8 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 GLOBAL_LIST_INIT(command_positions, list(
 	"Elder",
 	"Head Scribe",
-	"Sentinel",
-	"Knight-Captain",
+	"Head Paladin",
+	"Head Knight",
 
 	"Legion Centurion",
 	"Legion Orator",
@@ -79,14 +79,14 @@ GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
 GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Head Scribe",
 "Elder",
-"Sentinel",
-"Knight-Captain",
+"Head Paladin",
+"Head Knight",
 "Head Scribe",
-"Senior Paladin",
+"Star Paladin",
 "Paladin",
-"Senior Knight",
+"Star Knight",
 "Knight",
-"Senior Scribe",
+"Proctor",
 "Scribe",
 "BoS Off-Duty",
 
@@ -138,11 +138,11 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 ))
 
 GLOBAL_LIST_INIT(faction_player_positions, list(
-"Senior Paladin",
+"Star Paladin",
 "Paladin",
-"Senior Knight",
+"Star Knight",
 "Knight",
-"Senior Scribe",
+"Proctor",
 "Scribe",
 "BoS Off-Duty",
 
@@ -185,17 +185,17 @@ GLOBAL_LIST_INIT(antagonist_whitelist_positions, list(
 
 GLOBAL_LIST_INIT(brotherhood_command_positions, list(
 	"Elder",
-	"Sentinel",
-	"Knight-Captain",
+	"Head Paladin",
+	"Head Knight",
 	"Head Scribe"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Senior Paladin",
+	"Star Paladin",
 	"Paladin",
-	"Senior Knight",
+	"Star Knight",
 	"Knight",
-	"Senior Scribe",
+	"Proctor",
 	"Scribe",
 	"Initiate",
 	"BoS Off-Duty"

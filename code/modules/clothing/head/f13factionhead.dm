@@ -194,7 +194,7 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	
+
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
 	desc = "(III) It's a leather skullcap issued to recruits."
@@ -427,6 +427,13 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/f13/ncr_campaign
+	name = "NCR campaign hat"
+	desc = "(VII) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
+	icon_state = "ncr_campaign"
+	item_state = "ncr_campaign"
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 //NCR Ranger
 
 /obj/item/clothing/head/beret/ncr_recon_ranger
@@ -521,14 +528,14 @@
 	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
-	name = "brotherhood senior knight helmet"
-	desc = "(VII) An improved combat helmet, bearing the symbol of a Senior Knight."
+	name = "brotherhood star knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of a Star Knight."
 	icon_state = "brotherhood_helmet_senior"
 	item_state = "brotherhood_helmet_senior"
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
-	name = "brotherhood knight-captain helmet"
-	desc = "(VII) An improved combat helmet, bearing the symbol of the Knight-Captain."
+	name = "brotherhood head knight helmet"
+	desc = "(VII) An improved combat helmet, bearing the symbol of the Head Knight."
 	icon_state = "brotherhood_helmet_captain"
 	item_state = "brotherhood_helmet_captain"
 
@@ -659,7 +666,7 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-	
+
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
 
