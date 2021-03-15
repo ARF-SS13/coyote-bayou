@@ -153,11 +153,11 @@
 	cost = 1200
 	crate_name = "toolbox crate"
 	special = TRUE //Department resupply shuttle loan event.
-/*
+
 /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
 	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
-	cost = 15000
+	cost = 45000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
 					/obj/item/circuitboard/machine/bsa/middle,
@@ -165,7 +165,7 @@
 					/obj/item/circuitboard/computer/bsa_control
 					)
 	crate_name= "bluespace artillery parts crate"
-*/
+/*
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"
 	desc = "Secure the longevity of the current state of civilization within this massive library of scientific knowledge, capable of granting superhuman powers and abilities. Highly advanced research is required for proper construction. Also contains five DNA probes." //C'mon now, it's nae just humans on the station these days
@@ -193,7 +193,7 @@
 					/obj/item/dna_probe
 					)
 	crate_name= "dna samplers crate"
-/*
+
 /datum/supply_pack/engineering/shield_sat
 	name = "Shield Generator Satellite"
 	desc = "Protect the very existence of this station with these Anti-Meteor defenses. Contains three Shield Generator Satellites."
