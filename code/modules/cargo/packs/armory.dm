@@ -227,6 +227,6 @@
 /datum/supply_pack/security/armory/hell_single
 	name = "Hellgun Single-Pack"
 	crate_name = "hellgun crate"
-	desc = "Contains one hellgun, an old pattern of laser gun infamous for its ability to horribly disfigure targets with burns. Technically violates the Space Geneva Convention when used on humanoids."
+	desc = "Contains one hellgun, an old pattern of laser gun infamous for its ability to horribly disfigure targets with burns. Technically violates the Geneva Convention when used on humanoids."
 	cost = 1500
 	contains = list(/obj/item/gun/energy/laser/hellgun)
