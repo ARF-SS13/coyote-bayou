@@ -709,7 +709,7 @@ Prime Legionairy
 
 /datum/outfit/loadout/legrange
 	name = "Ranged Legionary"
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44=2,
 		/obj/item/ammo_box/m44box=1,
@@ -870,7 +870,7 @@ Explorer
 
 /datum/outfit/loadout/explscout
 	name = "Scout Explorer"
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44=2)
 

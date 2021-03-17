@@ -442,7 +442,7 @@
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 7
 
 
 /obj/item/storage/belt/military/followers/PopulateContents()
@@ -907,6 +907,15 @@
 	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
+
+/obj/item/storage/belt/military/assault/ncr/engineer/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/multitool(src)
+	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 
 /obj/item/storage/belt/military/reconbandolier
 	name = "NCR recon ranger bandolier"

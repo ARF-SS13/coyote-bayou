@@ -7,10 +7,10 @@
 	can_suppress = TRUE
 	burst_size = 1
 	fire_delay = 0
-	actions_types = list()
 	automatic_burst_overlay = FALSE
 	slot_flags = ITEM_SLOT_BELT
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
+	semi_auto = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -156,7 +156,6 @@
 	burst_size = 1
 	can_suppress = 0
 	w_class = WEIGHT_CLASS_NORMAL
-	actions_types = list()
 	fire_sound = 'sound/weapons/blastcannon.ogg'
 	spread = 20		//damn thing has no rifling.
 	automatic_burst_overlay = FALSE
@@ -184,6 +183,7 @@
 	can_attachments = TRUE
 	fire_delay = 2
 	can_suppress = TRUE
+	can_automatic = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
 	name = "\improper Executive" //'the Executive'
@@ -191,6 +191,7 @@
 	icon_state = "executive"
 	can_suppress = FALSE
 	burst_size = 2
+	can_automatic = FALSE
 	extra_penetration = 0.2 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -296,3 +297,15 @@
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
 	can_attachments = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/mk23
+	name = "\improper mk23"
+	desc = "A sleek looking handgun chambered in .45 ACP for all your operating needs."
+	icon_state = "mk23"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/m45exp
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
+	fire_delay = 1
+	extra_damage = 5
+	extra_penetration = 5
+	can_suppress = TRUE
