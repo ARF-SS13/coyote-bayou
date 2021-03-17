@@ -256,8 +256,20 @@
 	},
 /area/f13/bunker)
 "auT" = (
-/obj/structure/spider/stickyweb,
-/turf/open/space/basic,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/crate{
+	anchored = 1;
+	can_be_unanchored = 1
+	},
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "avm" = (
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -1210,8 +1222,6 @@
 /obj/machinery/button/door{
 	id = 93
 	},
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -3186,6 +3196,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
+"eGN" = (
+/obj/effect/decal/remains/human,
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "eHa" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/food/snacks/f13/borscht,
@@ -7312,6 +7330,10 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/bunker)
+"kOZ" = (
+/mob/living/simple_animal/hostile/molerat,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "kPN" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
@@ -10806,6 +10828,10 @@
 	icon_state = "2-i"
 	},
 /area/f13/vault)
+"qaD" = (
+/obj/structure/nest/ghoul,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "qaG" = (
 /obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/freezer,
@@ -10974,9 +11000,7 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "qof" = (
 /obj/structure/cable{
@@ -11494,7 +11518,9 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "rar" = (
-/mob/living/simple_animal/hostile/ghoul/glowing,
+/mob/living/simple_animal/hostile/ghoul/glowing{
+	faction = list("hostile")
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "rat" = (
@@ -12227,8 +12253,9 @@
 	},
 /area/f13/bunker)
 "rYU" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating/tunnel,
+/obj/structure/nest/scorpion,
+/obj/structure/spider/stickyweb,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "rZP" = (
 /turf/closed/indestructible/opshuttle,
@@ -12351,7 +12378,7 @@
 /area/f13/vault)
 "snY" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
-/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "soK" = (
@@ -13418,8 +13445,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "ucL" = (
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/structure/closet,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -14452,6 +14478,14 @@
 /obj/structure/chair/stool/retro,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
+"vCh" = (
+/obj/structure/rack,
+/obj/item/tank/internals/anesthetic,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "vCD" = (
 /obj/structure/table,
 /obj/item/clothing/head/soft/black,
@@ -14952,6 +14986,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
+"wqE" = (
+/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/radscorpion,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "wqH" = (
 /turf/open/floor/plasteel/freezer,
 /area/space)
@@ -47107,7 +47146,7 @@ wvj
 msD
 pqC
 diW
-rYU
+mYL
 bjT
 xzS
 cIT
@@ -47364,7 +47403,7 @@ aUx
 iJV
 nBV
 iCR
-rYU
+mYL
 uXT
 uau
 kOH
@@ -47621,7 +47660,7 @@ aUx
 uGH
 diW
 diW
-rYU
+mYL
 iOE
 gEI
 nmg
@@ -72449,7 +72488,7 @@ wYe
 heT
 heT
 cIT
-cIT
+sSH
 cIT
 cIT
 cIT
@@ -72707,7 +72746,7 @@ izh
 izh
 izh
 qmK
-cIT
+sSH
 cIT
 izh
 izh
@@ -72962,10 +73001,10 @@ mnC
 tNM
 plg
 gCF
-auT
+hjg
 snY
-ulM
-cIT
+sSH
+sSH
 cIT
 sSH
 hSq
@@ -73221,9 +73260,9 @@ nAA
 plg
 wmI
 wmI
-okW
-cIT
-cIT
+rYU
+sSH
+sSH
 cIT
 sSH
 okW
@@ -74763,7 +74802,7 @@ heT
 heT
 izh
 wsi
-wmI
+wqE
 hjg
 izh
 heT
@@ -75301,7 +75340,7 @@ cIT
 cIT
 izh
 wII
-wUu
+wII
 izh
 heT
 heT
@@ -75558,7 +75597,7 @@ cIT
 cIT
 izh
 wII
-kRy
+qaD
 izh
 heT
 heT
@@ -75789,7 +75828,7 @@ heT
 heT
 heT
 wYe
-kGP
+auT
 wII
 mqp
 wII
@@ -75815,7 +75854,7 @@ izh
 izh
 izh
 bKP
-hWm
+efJ
 izh
 izh
 heT
@@ -76046,7 +76085,7 @@ heT
 heT
 heT
 wYe
-qxi
+aRp
 wII
 ttw
 pkU
@@ -76064,7 +76103,7 @@ cIT
 cIT
 heT
 cIT
-okW
+kOZ
 ulM
 cIT
 cIT
@@ -76310,7 +76349,7 @@ wII
 wII
 nZr
 dYg
-uCw
+okW
 ciZ
 kRy
 wKk
@@ -77083,7 +77122,7 @@ wYe
 eUU
 dLD
 eqK
-qxi
+vCh
 jEu
 ylm
 rZP
@@ -77590,7 +77629,7 @@ dOV
 mBk
 wYe
 esb
-mqp
+eGN
 tnQ
 rlV
 ipT
@@ -78105,7 +78144,7 @@ pcr
 wYe
 kcw
 lTw
-hQD
+lTw
 ays
 wYe
 kkJ
@@ -78889,7 +78928,7 @@ kcw
 pkU
 wII
 wII
-wII
+dDR
 wII
 nZr
 wII
