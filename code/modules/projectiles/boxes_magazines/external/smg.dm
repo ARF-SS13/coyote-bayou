@@ -74,6 +74,9 @@
 	caliber = ".45"
 	max_ammo = 50
 
+/obj/item/ammo_box/magazine/tommygunm45/empty
+	start_empty = 1
+
 /*
 ---Fallout 13---
 */

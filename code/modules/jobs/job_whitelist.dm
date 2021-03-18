@@ -1,7 +1,7 @@
 /proc/job_is_whitelist_locked(jobtitle)
-	if(!CONFIG_GET(flag/use_role_whitelist) && (jobtitle in (GLOB.faction_whitelist_positions | GLOB.antagonist_whitelist_positions | GLOB.faction_player_positions | GLOB.command_positions | GLOB.ncr_ranger_positions | GLOB.ncr_rangervet_positions | list("AI"))))
+	if(!CONFIG_GET(flag/use_role_whitelist) && (jobtitle in (GLOB.faction_whitelist_positions | GLOB.antagonist_whitelist_positions | GLOB.faction_player_positions | GLOB.command_positions | GLOB.ncr_ranger_positions | GLOB.ncr_rangervet_positions | GLOB.ncr_general_positions | GLOB.ncr_upper_command_positions | GLOB.ncr_lower_command_positions | list("AI"))))
 		return FALSE
-	if(!CONFIG_GET(flag/use_role_whitelist) && !(jobtitle in (GLOB.faction_whitelist_positions | GLOB.antagonist_whitelist_positions | GLOB.faction_player_positions | GLOB.command_positions | GLOB.ncr_ranger_positions | GLOB.ncr_rangervet_positions | list("AI"))))
+	if(!CONFIG_GET(flag/use_role_whitelist) && !(jobtitle in (GLOB.faction_whitelist_positions | GLOB.antagonist_whitelist_positions | GLOB.faction_player_positions | GLOB.command_positions | GLOB.ncr_ranger_positions | GLOB.ncr_rangervet_positions | GLOB.ncr_general_positions | GLOB.ncr_upper_command_positions | GLOB.ncr_lower_command_positions | list("AI"))))
 		return FALSE
 	return TRUE
 
@@ -54,6 +54,18 @@
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)	// if they do not have ranger whitelist, remove ranger whitelist positions
 			play_records[rtypeWL] = 0
 
+	if(!whitelists["ncrgeneral"])
+		for(var/rtypeWL in GLOB.ncr_general_positions)		// if they do not have an NCR general whitelist, remove NCR general whitelist positions
+			play_records[rtypeWL] = 0
+	
+	if(!whitelists["ncrlower"])
+		for(var/rtypeWL in GLOB.ncr_lower_command_positions)	// if they do not have an NCR lower command whitelist, remove NCR lower command whitelist positions
+			play_records[rtypeWL] = 0
+	
+	if(!whitelists["ncrupper"])
+		for(var/rtypeWL in GLOB.ncr_upper_command_positions)	//if they do not have an NCR upper command whitelist, remove NCR upper command whitelist positions
+			play_records[rtypeWL] = 0
+
 	/*
 	if(!whitelists["leadership_bos"])					// if they do not have leadership_bos whitelist, remove leadership_bos whitelist positions
 		for(var/rtypeWL in GLOB.brotherhood_command_positions)
@@ -77,14 +89,6 @@
 
 	if(!whitelists["faction_legion"])					// if they do not have faction_legion whitelist, remove faction_legion whitelist positions
 		for(var/rtypeWL in GLOB.legion_positions)
-			play_records[rtypeWL] = 0
-
-	if(!whitelists["leadership_ncr"])					// if they do not have leadership_ncr whitelist, remove leadership_ncr whitelist positions
-		for(var/rtypeWL in GLOB.ncr_command_positions)
-			play_records[rtypeWL] = 0
-
-	if(!whitelists["faction_ncr"])					// if they do not have faction_ncr whitelist, remove faction_ncr whitelist positions
-		for(var/rtypeWL in GLOB.ncr_command_positions)
 			play_records[rtypeWL] = 0
 
 	if(!whitelists["leadership_vault"])					// if they do not have leadership_vault whitelist, remove leadership_vault whitelist positions
@@ -126,6 +130,18 @@
 
 	if(whitelists["vetranger"])
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)
+			play_records[rtypeWL] = rtypeWL
+	
+	if(whitelists["ncrgeneral"])
+		for(var/rtypeWL in GLOB.ncr_general_positions)
+			play_records[rtypeWL] = rtypeWL
+	
+	if(whitelists["ncrlower"])
+		for(var/rtypeWL in GLOB.ncr_lower_command_positions)
+			play_records[rtypeWL] = rtypeWL
+	
+	if(whitelists["ncrupper"])
+		for(var/rtypeWL in GLOB.ncr_upper_command_positions)
 			play_records[rtypeWL] = rtypeWL
 
 	prefs.job_whitelists = play_records
