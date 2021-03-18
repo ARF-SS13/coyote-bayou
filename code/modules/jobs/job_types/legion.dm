@@ -137,7 +137,7 @@ Centurion
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	id =			/obj/item/card/id/dogtag/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
-    neck =          /obj/item/storage/belt/holster
+	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/legionpolarizing
 	ears = 			/obj/item/radio/headset/headset_legion
 	r_pocket =      /obj/item/restraints/handcuffs
@@ -201,7 +201,7 @@ Orator
 	name = "Legion Orator"
 	suit = 	     /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	ears =	     /obj/item/radio/headset/headset_legion
-	neck =		 /obj/item/storage/belt/holster
+	neck =	     /obj/item/storage/belt/holster
 	id =         /obj/item/card/id/dogtag/legorator
 	belt =       /obj/item/claymore/machete/spatha
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/type17
@@ -616,7 +616,7 @@ Veteran Legionary
 	id = 			/obj/item/card/id/dogtag/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
-	neck =			/obj/item/storage/belt/holster
+	neck = 			/obj/item/storage/belt/holster
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears	=		/obj/item/radio/headset/headset_legion
@@ -681,7 +681,7 @@ Prime Legionairy
 	id = 			/obj/item/card/id/dogtag/legprime
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/prime
-	neck =			/obj/item/storage/belt/holster
+	neck = 			/obj/item/storage/belt/holster
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	ears	=		/obj/item/radio/headset/headset_legion
@@ -799,7 +799,7 @@ Venator
 	suit 		= 	/obj/item/clothing/suit/armor/f13/legion/venator
 	head 		= 	/obj/item/clothing/head/helmet/f13/legion/venator
 	mask 		=	/obj/item/clothing/mask/bandana/legdecan
-	neck        =	/obj/item/storage/belt/holster
+	neck 		=	/obj/item/storage/belt/holster
 	glasses 	=	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
 	r_pocket 	= 	/obj/item/binoculars
@@ -857,7 +857,7 @@ Explorer
 	id = 		/obj/item/card/id/dogtag/legprime
 	suit = 		/obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	head = 		/obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	neck =		/obj/item/storage/belt/holster
+	neck = 		/obj/item/storage/belt/holster
 	glasses = 	/obj/item/clothing/glasses/legiongoggles
 	ears	=	/obj/item/radio/headset/headset_legion
 	r_pocket = /obj/item/binoculars
