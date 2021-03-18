@@ -298,6 +298,12 @@
 	icon_state = "posibrain-ipc"
 
 
+/obj/item/organ/brain/gen2synth
+	name = "synthetic organism central processor"
+	desc = "A cube of shining metal, four inches to a side and covered in shallow grooves."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "posibrain-ipc"
+
 ////////////////////////////////////TRAUMAS////////////////////////////////////////
 
 /obj/item/organ/brain/proc/has_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience = TRAUMA_RESILIENCE_ABSOLUTE)
