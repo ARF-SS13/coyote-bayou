@@ -499,8 +499,7 @@
 	can_suppress = FALSE
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
-	extra_damage = -14
-	extra_penetration = -0.15
+	extra_damage = -4
 	can_scope = TRUE
 	scopestate = "AEP7_scope"
 	scope_x_offset = 9
@@ -800,7 +799,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 10
 	burst_size = 1
-	projectile_speed = 0.2
+	//projectile_speed = 0
 	can_bayonet = FALSE
 
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
@@ -889,7 +888,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	projectile_speed = 0.2
+	//projectile_speed = 0
 	recoil = 2
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
