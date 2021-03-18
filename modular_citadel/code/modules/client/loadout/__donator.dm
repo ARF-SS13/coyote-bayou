@@ -70,7 +70,9 @@
 	ckeywhitelist = list("superballs",
 						"allakai",
 						"shoi87",
-						"svenja")
+						"svenja",
+						"panzer1944",
+						"topbirb")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/ranger44
@@ -134,7 +136,9 @@
 	path = /obj/item/clothing/accessory/ranger/LT
 	ckeywhitelist = list("allakai",
 						"shoi87",
-						"svenja")
+						"svenja",
+						"panzer1944",
+						"topbirb")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/rangerpins
