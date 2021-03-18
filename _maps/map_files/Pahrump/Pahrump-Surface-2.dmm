@@ -10323,6 +10323,18 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "hJd" = (
@@ -10514,7 +10526,6 @@
 /area/f13/village)
 "hSC" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
 /obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -20968,6 +20979,7 @@
 /obj/machinery/light,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "pSj" = (
@@ -24486,7 +24498,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -25319,12 +25330,9 @@
 	},
 /area/f13/building)
 "tkm" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
+/mob/living/simple_animal/hostile/handy,
+/turf/open/floor/f13/wood,
+/area/f13/clinic)
 "tkS" = (
 /obj/structure/table/wood,
 /obj/item/mining_scanner,
@@ -29574,12 +29582,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/city)
-"wqv" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "wqL" = (
 /obj/item/stack/f13Cash/random/low,
 /turf/open/indestructible/ground/outside/dirt,
@@ -50138,14 +50140,14 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+ktB
+ktB
+ktB
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -50395,6 +50397,19 @@ gcK
 gcK
 gcK
 gcK
+ktB
+gcK
+gcK
+gcK
+gcK
+gcK
+gcK
+gcK
+ktB
+ktB
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -50433,20 +50448,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 ezX
 cpK
@@ -50680,6 +50682,9 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -50690,19 +50695,16 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
 gcK
+ktB
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 ezX
@@ -50939,6 +50941,7 @@ gcK
 gcK
 gcK
 gcK
+ktB
 gcK
 gcK
 gcK
@@ -50955,8 +50958,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -51164,6 +51166,7 @@ gcK
 gcK
 gcK
 gcK
+ktB
 gcK
 gcK
 gcK
@@ -51193,26 +51196,25 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+gcK
+ktB
+ktB
 gcK
 gcK
 gcK
 gcK
 gcK
+ktB
+ktB
 gcK
 gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51420,6 +51422,8 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51434,6 +51438,7 @@ gcK
 gcK
 gcK
 gcK
+ktB
 gcK
 gcK
 gcK
@@ -51446,6 +51451,7 @@ gcK
 gcK
 gcK
 gcK
+ktB
 gcK
 gcK
 gcK
@@ -51454,13 +51460,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51675,6 +51677,8 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51691,6 +51695,10 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51699,13 +51707,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -51929,6 +51931,8 @@ ktB
 (77,1,1) = {"
 ktB
 gcK
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51954,6 +51958,12 @@ gcK
 gcK
 gcK
 gcK
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -51976,16 +51986,8 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ktB
+ktB
 gcK
 gMR
 oIu
@@ -52243,7 +52245,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+ktB
 gMR
 aDY
 tcj
@@ -64541,7 +64543,7 @@ ggK
 dCV
 tYt
 hhx
-wqv
+tYt
 dCV
 gcK
 gcK
@@ -71464,7 +71466,7 @@ gcK
 gcK
 oFP
 gQy
-tkm
+gQy
 sYV
 sYV
 tul
@@ -73217,7 +73219,7 @@ pud
 tJx
 qij
 qij
-qij
+tkm
 qij
 nRc
 bIh

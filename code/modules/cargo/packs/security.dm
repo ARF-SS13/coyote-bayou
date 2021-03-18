@@ -99,7 +99,7 @@
 					/obj/item/clothing/mask/gas)
 	crate_name = "surplus russian clothing"
 	crate_type = /obj/structure/closet/crate/internals
-
+/*
 /datum/supply_pack/security/sechardsuit
 	name = "Sec Hardsuit"
 	desc = "One Sec Hardsuit with a small air tank and mask."
@@ -108,7 +108,7 @@
 					/obj/item/tank/internals/air,
 					/obj/item/clothing/mask/gas)
 	crate_name = "sec hardsuit crate"
-
+*/
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
 	desc = "Stem the tide with four Security Barrier grenades. Requires Security access to open."
