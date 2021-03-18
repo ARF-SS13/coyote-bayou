@@ -800,7 +800,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 10
 	burst_size = 1
-//	projectile_speed = 0 //basically hitscan
+	projectile_speed = 0.2
 	can_bayonet = FALSE
 
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
@@ -889,7 +889,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-//	projectile_speed = 0
+	projectile_speed = 0.2
 	recoil = 2
 
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold
@@ -1041,7 +1041,7 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-	
+
 /obj/item/gun/ballistic/automatic/p90
 	name = "FN P90c"
 	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
@@ -1155,9 +1155,12 @@
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
+	burst_shot_delay = 1
 	automatic = 1
-	can_attachments = TRUE
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	suppressed = 1
+	can_attachments = TRUE
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 
