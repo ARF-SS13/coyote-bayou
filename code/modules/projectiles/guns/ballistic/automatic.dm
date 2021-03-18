@@ -24,7 +24,7 @@
 				return
 			auto_sear = A
 			src.desc += " It has an automatic sear installed."
-			src.burst_size = 2
+			src.burst_size += 1
 			src.automatic_burst_overlay = TRUE
 			src.semi_auto = FALSE
 			to_chat(user, "<span class='notice'>You attach \the [A] to \the [src].</span>")
@@ -105,8 +105,12 @@
 
 /obj/item/gun/ballistic/automatic/proc/enable_burst()
 	burst_size = initial(burst_size)
-	if (burst_improvement)
+	if(auto_sear)
 		burst_size = 1 + initial(burst_size)
+	if(burst_improvement)
+		burst_size = 1 + initial(burst_size)
+	if(burst_improvement && auto_sear)
+		burst_size = 2 + initial(burst_size)
 
 /obj/item/gun/ballistic/automatic/proc/disable_burst()
 	burst_size = 1
@@ -824,6 +828,7 @@
 //	projectile_speed = 0 //basically hitscan
 	can_bayonet = FALSE
 	semi_auto = TRUE
+	can_automatic = FALSE
 
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
 	name = "Republic's Pride"
