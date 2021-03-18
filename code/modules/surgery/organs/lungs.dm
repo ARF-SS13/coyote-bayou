@@ -528,6 +528,21 @@
 		if(2)
 			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
 
+/obj/item/organ/lungs/gen2synth
+	name = "synth cooling system"
+	icon_state = "lungs-c"
+
+/obj/item/organ/lungs/gen2synth/emp_act(severity) //Should probably put it somewhere else later
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	to_chat(owner, "<span class='warning'>Alert: Critical cooling system failure!</span>")
+	switch(severity)
+		if(1)
+			owner.adjust_bodytemperature(100*TEMPERATURE_DAMAGE_COEFFICIENT)
+		if(2)
+			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
+
 /obj/item/organ/lungs/plasmaman
 	name = "plasma filter"
 	desc = "A spongy rib-shaped mass for filtering plasma from the air."

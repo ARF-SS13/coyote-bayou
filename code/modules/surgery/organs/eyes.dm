@@ -430,6 +430,19 @@
 	if(severity >= 70)
 		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
 
+/obj/item/organ/eyes/gen2synth
+	name = "synth eyes"
+	icon_state = "cybernetic_eyeballs"
+
+/obj/item/organ/eyes/gen2synth/emp_act(severity)
+	. = ..()
+	if(!owner || . & EMP_PROTECT_SELF)
+		return
+	to_chat(owner, "<span class='warning'>Alert: Perception visuals damaged!</span>")
+	owner.flash_act(visual = 1)
+	if(severity >= 70)
+		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+
 #undef BLURRY_VISION_ONE
 #undef BLURRY_VISION_TWO
 #undef BLIND_VISION_THREE

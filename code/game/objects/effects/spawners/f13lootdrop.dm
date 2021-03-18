@@ -666,7 +666,7 @@
 			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier1 = 40,
 			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2 = 30,
 			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 20,
-			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 10,
+			/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 10
 			)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high
@@ -1116,7 +1116,7 @@
 	loot = list(
 				/obj/item/gun/energy/laser/plasma,
 				/obj/item/gun/ballistic/automatic/tommygun,
-				/obj/item/gun/ballistic/automatic/shotgun/riot,
+				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
 				/obj/item/gun/energy/laser/scatter,
 				/obj/item/gun/ballistic/revolver/hunting,
 				/obj/item/gun/ballistic/automatic/bozar,
@@ -1143,8 +1143,8 @@
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 80,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 14,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 4,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 1,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 1
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 1
+			///obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 1 //no more generic school locker bozar 4 u
 			)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high
