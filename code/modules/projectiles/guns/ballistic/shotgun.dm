@@ -417,7 +417,7 @@
 	icon_state = "lever"
 	item_state = "trenchgun"
 	//can_scope = TRUE //why tho
-	//scopestate = "AEP7_scope"	
+	//scopestate = "AEP7_scope"
 	//scope_x_offset = 8
 	//scope_y_offset = 19
 	//can_bayonet = TRUE
@@ -446,7 +446,8 @@
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "neostead"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
@@ -616,7 +617,7 @@
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
 	fire_delay = 6
-//	projectile_speed = 0 //basically hitscan
+	//projectile_speed = 0
 
 /obj/item/gun/ballistic/shotgun/kar98k
 	name = "\improper karabiner 98k"
