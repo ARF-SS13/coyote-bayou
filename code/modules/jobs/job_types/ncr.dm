@@ -419,7 +419,7 @@ Combat Engineer
 	head			= /obj/item/clothing/head/f13/ncr
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	glasses			= /obj/item/clothing/glasses/welding
-	belt 			= /obj/item/storage/belt/utility/full
+	belt 			= /obj/item/storage/belt/military/assault/ncr/engineer
 	gloves			= /obj/item/clothing/gloves/color/yellow
 	accessory		= /obj/item/clothing/accessory/ncr/SPC
 	suit_store		= /obj/item/gun/ballistic/automatic/service
@@ -755,7 +755,7 @@ Veteran Ranger
 	head = /obj/item/clothing/head/f13/ranger
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
 	belt =	/obj/item/storage/belt/military/assault/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv = 2,
 		/obj/item/storage/firstaid/ancient = 1,

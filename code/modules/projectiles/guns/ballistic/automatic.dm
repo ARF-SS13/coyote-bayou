@@ -674,6 +674,7 @@
 	extra_damage = 2
 	can_automatic = TRUE
 	semi_auto = TRUE
+	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/varmint
 	name = "varmint rifle"
@@ -1181,6 +1182,7 @@
 	suppressed = 1
 	can_suppress = FALSE
 	can_unsuppress = FALSE
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 
 /obj/item/gun/ballistic/automatic/sten
 	name = "sten gun"
