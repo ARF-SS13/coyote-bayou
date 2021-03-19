@@ -39,6 +39,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/*
 /datum/crafting_recipe/femur_breaker
 	name = "Femur Breaker"
 	result = /obj/structure/femur_breaker
@@ -48,6 +49,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+*/
 
 // Blood Sucker stuff //
 /datum/crafting_recipe/bloodsucker/blackcoffin
@@ -65,6 +67,7 @@
 	category = CAT_MISC
 	always_availible = TRUE
 
+/*
 /datum/crafting_recipe/bloodsucker/meatcoffin
 	name = "Meat Coffin"
 	result =/obj/structure/closet/crate/coffin/meatcoffin
@@ -76,6 +79,7 @@
 	subcategory = CAT_FURNITURE
 	category = CAT_MISC
 	always_availible = TRUE
+*/
 
 /datum/crafting_recipe/bloodsucker/metalcoffin
 	name = "Metal Coffin"
@@ -179,6 +183,7 @@
 //Tools & Storage//
 ///////////////////
 
+/*
 /datum/crafting_recipe/ghettojetpack
 	name = "Improvised Jetpack"
 	result = /obj/item/tank/jetpack/improvised
@@ -191,6 +196,7 @@
 	subcategory = CAT_TOOL
 	tools = list(TOOL_WRENCH, TOOL_WELDER, TOOL_WIRECUTTER)
 	always_availible = FALSE
+*/
 
 /datum/crafting_recipe/goldenbox
 	name = "Gold Plated Toolbox"
@@ -314,6 +320,7 @@
 	subcategory = CAT_TOOL
 	category = CAT_MISC
 
+/*
 /datum/crafting_recipe/electrochromatic_kit
 	name = "Electrochromatic Kit"
 	result = /obj/item/electronics/electrochromatic_kit
@@ -337,6 +344,7 @@
 	category = CAT_MISC
 	always_availible = FALSE
 	always_availible = FALSE
+*/
 
 ////////////
 //Vehicles//
@@ -351,14 +359,15 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-//datum/crafting_recipe/skateboard
-//	name = "Skateboard"
-//	result = /obj/vehicle/ridden/scooter/skateboard
-//	time = 60
-//	reqs = list(/obj/item/stack/sheet/metal = 5,
-//				/obj/item/stack/rods = 10)
-//	subcategory = CAT_MISCELLANEOUS
-//	category = CAT_MISC
+/*
+/datum/crafting_recipe/skateboard
+	name = "Skateboard"
+	result = /obj/vehicle/ridden/scooter/skateboard
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/rods = 10)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/scooter
 	name = "Scooter"
@@ -368,11 +377,12 @@
 				/obj/item/stack/rods = 12)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
-
+*/
 /////////
 //Toys///
 /////////
 
+/*
 /datum/crafting_recipe/toysword
 	name = "Toy Sword"
 	reqs = list(/obj/item/light/bulb = 1, /obj/item/stack/cable_coil = 1, /obj/item/stack/sheet/plastic = 4)
@@ -400,6 +410,7 @@
 	result = /obj/item/toy/plush/catgirl
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+*/
 
 ////////////
 //Unsorted//
@@ -448,6 +459,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/*
 /datum/crafting_recipe/bluespacehonker
 	name = "Bluespace Bike horn"
 	result = /obj/item/bikehorn/bluespacehonker
@@ -457,6 +469,7 @@
 				/obj/item/bikehorn = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+*/
 
 /datum/crafting_recipe/mousetrap
 	name = "Mouse Trap"
@@ -467,6 +480,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/*
 /datum/crafting_recipe/flashlight_eyes
 	name = "Flashlight Eyes"
 	result = /obj/item/organ/eyes/robotic/flashlight
@@ -477,6 +491,7 @@
 	)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+*/
 
 /datum/crafting_recipe/pressureplate
 	name = "Pressure Plate"
@@ -514,6 +529,16 @@
 	reqs = list(/obj/item/stack/sheet/mineral/bamboo = 2,
 				/obj/item/reagent_containers/food/snacks/grown/coconut = 1)
 	time = 70
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/binoculars
+	name = "Binoculars"
+	result = /obj/item/binoculars
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/sheet/glass = 5)
+	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 

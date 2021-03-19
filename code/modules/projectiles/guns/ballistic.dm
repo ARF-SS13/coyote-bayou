@@ -109,7 +109,7 @@
 	suppressed = S
 	S.oldsound = fire_sound
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
-	w_class += S.w_class //so pistols do not fit in pockets when suppressed
+	//w_class += S.w_class //so pistols do not fit in pockets when suppressed
 	update_icon()
 
 /obj/item/gun/ballistic/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
