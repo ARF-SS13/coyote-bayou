@@ -14,11 +14,6 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SW";
-	move_me = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "h" = (
@@ -29,36 +24,11 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "j" = (
-/obj/docking_port/mobile/elevator/bos,
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/dark,
-/area/shuttle/bos_foyer)
-"u" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NW";
-	move_me = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos_foyer)
-"w" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NE";
-	move_me = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos_foyer)
-"D" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE";
-	move_me = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos_foyer)
+/area/space)
 
 (1,1,1) = {"
 a
@@ -88,7 +58,7 @@ a
 a
 c
 c
-u
+c
 f
 a
 "}
@@ -104,8 +74,8 @@ a
 a
 c
 c
-w
-D
+c
+c
 a
 "}
 (7,1,1) = {"
