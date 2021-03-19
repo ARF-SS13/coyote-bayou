@@ -50,9 +50,19 @@
 	desc = "This is the overseers cloak.  Issued by the Vault-tec corporation to easily identify the overseer. This cloak has been passed down from overseer to overseer"
 	icon_state = "overseercloak"
 
-/obj/item/clothing/neck/cloak/bos
-	name = "Brotherhood of Steel cape"
-	desc = "Issued to the stars and higher in the Brotherhood. Style over substance is important."
+/obj/item/clothing/neck/cloak/bos/left
+	name = "Brotherhood of Steel shoulder cape"
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
+	icon_state = "bosshouldercape_l"
+
+/obj/item/clothing/neck/cloak/bos/right
+	name = "Brotherhood of Steel shoulder cape"
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
+	icon_state = "bosshouldercape_r"
+
+/obj/item/clothin/neck/cloak/bos
+	name = "Brotherhood of Steel shoulder cape"
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important."
 	icon_state = "boscape"
 
 /obj/item/clothing/neck/cloak/chiefcloak

@@ -523,7 +523,7 @@
 	name = "Lucky 37"
 	desc = "One of the few weapons designed and created purely in the post-war world, it takes .38 ad .357 rounds, adjusting the rifling and boring based upon which is loaded."
 	item_state = "lucky37"
-	icon_state = ""
+	icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lucky37
 
 /obj/item/gun/ballistic/revolver/m29/coltwalker
