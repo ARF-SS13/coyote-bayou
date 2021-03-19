@@ -1,8 +1,8 @@
 //.45 ACP
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
-	damage = 35
-	armour_penetration = 0.15
+	damage = 32 //35
+	armour_penetration = 0.12 //0.15
 	wound_bonus = 14
 	bare_wound_bonus = -14
 
@@ -15,8 +15,8 @@
 
 /obj/item/projectile/bullet/c45/op
 	name = ".45 +P bullet"
-	damage = 42
-	armour_penetration = 0.36
+	damage = 40 //42
+	armour_penetration = 0.3 //0.36
 	wound_bonus = 28
 	bare_wound_bonus = 28
 

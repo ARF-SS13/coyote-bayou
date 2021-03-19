@@ -275,7 +275,8 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	can_suppress = FALSE
 	burst_size = 4
-	burst_shot_delay = 1
+	burst_shot_delay = 2.5
+	fire_delay = 2.5
 
 /obj/item/gun/ballistic/automatic/ar
 	name = "\improper NT-ARG 'Boarder'"
@@ -486,7 +487,7 @@
 	weapon_weight = WEAPON_MEDIUM
 	force = 15
 	burst_size = 2
-	fire_delay = 3
+	fire_delay = 2.5
 	burst_shot_delay = 3
 	can_suppress = FALSE
 	can_attachments = TRUE
@@ -506,8 +507,8 @@
 	weapon_weight = WEAPON_MEDIUM //You should be able to dual-wield these.
 	force = 15
 	burst_size = 2
-	fire_delay = 4
-	burst_shot_delay = 3
+	fire_delay = 5
+	burst_shot_delay = 2.5
 	can_suppress = FALSE //we dont have sprites therefore cease
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
@@ -648,6 +649,7 @@
 	fire_delay = 3
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	burst_shot_delay = 2.2 //Was 2 before.
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
@@ -747,7 +749,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	burst_size = 1
-	fire_delay = 5
+	fire_delay = 4.5
 	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
