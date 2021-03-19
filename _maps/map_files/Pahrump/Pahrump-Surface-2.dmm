@@ -1845,6 +1845,18 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"brq" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SW";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "brE" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt{
@@ -2775,6 +2787,14 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/village)
+"cgs" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NW";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "cht" = (
 /obj/structure/fence{
 	dir = 1
@@ -5507,6 +5527,14 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"eqD" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NE";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "eqE" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -7659,6 +7687,9 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/village)
+"fVd" = (
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/brotherhood)
 "fVn" = (
 /turf/closed/wall/f13/wood,
 /area/f13/city)
@@ -7828,12 +7859,8 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "gda" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "mine"
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
+/turf/closed/wall/f13/vault,
+/area/f13/brotherhood)
 "gdN" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/indestructible/ground/outside/desert,
@@ -7874,6 +7901,10 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/f13/village)
+"gfp" = (
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "gfB" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowright"
@@ -8067,9 +8098,9 @@
 	},
 /area/f13/wasteland)
 "glH" = (
-/obj/machinery/autolathe/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
+/obj/item/flag/bos,
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "glZ" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -15790,6 +15821,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"lOK" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/brotherhood)
 "lOY" = (
 /obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
@@ -18938,6 +18976,13 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland)
+"osS" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "otr" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
@@ -20399,6 +20444,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"pxX" = (
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "pya" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -23433,6 +23484,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"rRq" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SE";
+	move_me = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "rRt" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -24787,6 +24846,14 @@
 	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland)
+"sRB" = (
+/obj/structure/chair/stool,
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/building)
 "sRD" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -24802,9 +24869,8 @@
 	},
 /area/f13/building)
 "sSf" = (
-/obj/item/flag/locust,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "sSr" = (
 /obj/structure/sign/poster/prewar/poster61{
 	pixel_y = 32
@@ -25994,6 +26060,12 @@
 /obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"tIt" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/f13/brotherhood)
 "tIu" = (
 /obj/machinery/door/unpowered/wooddoor{
 	autoclose = 1;
@@ -30041,6 +30113,7 @@
 	icon_state = "mattress4";
 	pixel_y = -2
 	},
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "wLu" = (
@@ -58617,8 +58690,8 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
+ktB
+ktB
 gcK
 gcK
 gbL
@@ -58871,17 +58944,17 @@ ktB
 ktB
 gcK
 gcK
+ktB
 gcK
+ktB
 gcK
+ktB
+gcK
+ktB
+gcK
+ktB
 gbL
-gcK
-gcK
-gcK
-gbL
-gcK
-gbL
-gbL
-gbL
+ktB
 gcK
 gcK
 gcK
@@ -59129,18 +59202,18 @@ ktB
 gcK
 gcK
 gcK
+ktB
+gbL
+gcK
+ktB
 gcK
 gbL
 gcK
 gcK
-gcK
+ktB
 gbL
-gcK
-gcK
-gbL
-gbL
-gbL
-gbL
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -59383,7 +59456,7 @@ ktB
 "}
 (106,1,1) = {"
 ktB
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -59397,7 +59470,7 @@ gcK
 gbL
 gcK
 gbL
-gbL
+ktB
 gcK
 gcK
 gcK
@@ -59905,15 +59978,15 @@ gcK
 gbL
 gcK
 gcK
-gcK
+gda
+gda
+gda
+gda
+gda
+gda
 gbL
 gcK
-gcK
-gcK
-gbL
-gbL
-gcK
-gcK
+ktB
 gbL
 gcK
 gcK
@@ -60162,15 +60235,15 @@ gbL
 gcK
 gcK
 gbL
+gda
+sSf
+sSf
+cgs
+brq
+gda
 gcK
 gbL
-gcK
-gbL
-gbL
-gcK
-gcK
-gbL
-gcK
+ktB
 gcK
 gbL
 gcK
@@ -60419,16 +60492,16 @@ gbL
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gbL
-gcK
-gcK
-gbL
+gda
+sSf
+sSf
+sSf
+sSf
+gda
 gcK
 gbL
+gcK
+ktB
 gbL
 gcK
 gcK
@@ -60676,17 +60749,17 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gbL
-gcK
-gcK
-gbL
+gda
+sSf
+sSf
+eqD
+rRq
+gda
 gcK
 gbL
 gcK
+gbL
+ktB
 gcK
 gcK
 gcK
@@ -60933,17 +61006,17 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gda
+tIt
+sSf
+sSf
+sSf
+gda
 gcK
 gcK
 gbL
 gbL
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -61190,16 +61263,16 @@ gcK
 gcK
 gbL
 gbL
+gda
+sSf
+sSf
+sSf
+glH
+gda
 gbL
 gcK
-gbL
 gcK
-gbL
-gcK
-gbL
-gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -61447,16 +61520,16 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gda
+sSf
+gda
+gda
+gda
+gda
 gcK
 gbL
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -61704,16 +61777,16 @@ gcK
 gcK
 gcK
 gcK
+gda
+sSf
+gda
 gcK
 gcK
 gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 gbL
 gcK
@@ -61961,16 +62034,16 @@ gcK
 gcK
 gcK
 gcK
+gda
+pxX
+gda
 gcK
 gcK
 gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -62218,9 +62291,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-ggK
-hBr
+lOK
+fVd
+lOK
 gcK
 gcK
 gcK
@@ -62228,7 +62301,7 @@ gcK
 gcK
 gbL
 gcK
-gcK
+ktB
 gcK
 gbL
 gcK
@@ -62999,9 +63072,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
+ktB
+ktB
+ktB
 gcK
 gbL
 gbL
@@ -63258,7 +63331,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+ktB
 gbL
 gcK
 gcK
@@ -63504,7 +63577,7 @@ gcK
 ggK
 qiz
 qiz
-gda
+qiz
 qiz
 jIf
 xKr
@@ -63516,7 +63589,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -63775,7 +63848,7 @@ gcK
 gbL
 gcK
 gcK
-gcK
+ktB
 gbL
 gcK
 gcK
@@ -64033,7 +64106,7 @@ dCV
 dCV
 gcK
 gcK
-gcK
+ktB
 gbL
 gcK
 gcK
@@ -64285,11 +64358,11 @@ wnA
 wnA
 dCV
 tYt
-hhx
+gfp
 hSC
 dCV
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -64803,7 +64876,7 @@ hhx
 uef
 dCV
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -65061,8 +65134,8 @@ ykh
 dCV
 gcK
 gcK
-gcK
-gcK
+ktB
+ktB
 gcK
 gcK
 gcK
@@ -65312,13 +65385,13 @@ dCV
 ggK
 ggK
 dCV
-glH
+hhx
 hhx
 hhx
 dCV
 gcK
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -65575,7 +65648,7 @@ hsY
 dCV
 gcK
 gcK
-gbL
+ktB
 gcK
 gcK
 gbL
@@ -65833,7 +65906,7 @@ dCV
 gcK
 gcK
 gcK
-gcK
+ktB
 gbL
 gcK
 gcK
@@ -66089,8 +66162,8 @@ nfR
 dCV
 gcK
 gcK
-gbL
-gcK
+ktB
+ktB
 gcK
 gbL
 gcK
@@ -66604,7 +66677,7 @@ dCV
 dCV
 dCV
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
@@ -66862,7 +66935,7 @@ amx
 dCV
 gcK
 gbL
-gcK
+ktB
 gcK
 ggK
 gcK
@@ -67118,7 +67191,7 @@ dUR
 wlb
 dCV
 gcK
-gbL
+ktB
 gcK
 ggK
 ekI
@@ -67366,7 +67439,7 @@ hhx
 hhx
 ffu
 hhx
-hhx
+gfp
 nwg
 tOv
 mZD
@@ -67375,8 +67448,8 @@ iWC
 iWC
 dCV
 gcK
-gbL
-gcK
+ktB
+ktB
 ggK
 ggK
 kex
@@ -67628,12 +67701,12 @@ nwg
 tOv
 mZD
 oIm
-amx
+sRB
 amx
 dCV
 gcK
 gbL
-gcK
+ktB
 gcK
 xRg
 ggK
@@ -67879,7 +67952,7 @@ wIA
 hhx
 eJI
 dCV
-hhx
+gfp
 hhx
 pls
 dCV
@@ -67891,7 +67964,7 @@ dCV
 gcK
 gcK
 gcK
-gbL
+ktB
 gcK
 gcK
 ggK
@@ -70716,7 +70789,7 @@ sBC
 tBN
 mvv
 mvv
-ofL
+osS
 gcK
 ktB
 gcK
@@ -74316,7 +74389,7 @@ fyf
 fyf
 mCI
 thG
-sSf
+fyf
 srk
 jxH
 jxH
@@ -75095,7 +75168,7 @@ xGH
 mvv
 bpD
 fyf
-sSf
+fyf
 fyf
 fyf
 fyf
@@ -75344,7 +75417,7 @@ jxH
 fyf
 mCI
 thG
-sSf
+fyf
 ftr
 fyf
 fyf
@@ -76123,7 +76196,7 @@ gcK
 fyf
 fyf
 fyf
-sSf
+fyf
 fyf
 fyf
 jxH
