@@ -54,10 +54,6 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Legion Venator",
 	"Priestess of Mars",
 
-	"NCR Captain",
-	"NCR Lieutenant",
-	"NCR First Sergeant",
-
 	"Overseer",
 	"Chief of Security",
 
@@ -104,14 +100,6 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Slavemaster",
 "Legion Explorer",
 "Auxilia",
-
-"NCR Captain",
-"NCR Lieutenant",
-"NCR First Sergeant",
-"NCR Sergeant",
-"NCR Corporal",
-"NCR Specialist",
-"NCR Trooper",
 
 "Mayor",
 "Sheriff",
@@ -237,28 +225,33 @@ GLOBAL_LIST_INIT(legion_positions, list(
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
-	"NCR Veteran Ranger"
+	"NCR Veteran Ranger",
+	"NCR Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(ncr_ranger_positions, list(
-	"NCR Ranger"
+	"NCR Ranger",
+	"NCR Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(ncr_upper_command_positions, list(
 	"NCR Lieutenant",
-	"NCR Sergeant First Class"
+	"NCR Sergeant First Class",
+	"NCR Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(ncr_lower_command_positions, list(
 	"NCR Medical Officer",
 	"NCR Sergeant",
-	"NCR Corporal"
+	"NCR Corporal",
+	"NCR Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(ncr_general_positions, list(
 	"NCR Combat Medic",
 	"NCR Combat Engineer",
-	"NCR Trooper"
+	"NCR Trooper",
+	"NCR Off-Duty"
 ))
 
 GLOBAL_LIST_INIT(ncr_positions, list(
@@ -272,6 +265,7 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Trooper",
 	"NCR Rear Echelon",
 	"NCR Off-Duty",
+	"NCR Veteran Ranger",
 	"NCR Ranger"
 ))
 

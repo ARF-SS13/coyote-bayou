@@ -300,7 +300,7 @@
 	icon_state = "laser"
 	item_state = "laser-rifle9"
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
+	scope_state = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
 	fire_delay = 3
@@ -334,7 +334,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
+	scope_state = "AEP7_scope"
 	scope_x_offset = 7
 	scope_y_offset = 22
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
@@ -406,7 +406,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 	can_scope = TRUE
-	scopestate = "plasma_scope"
+	scope_state = "plasma_scope"
 	scope_x_offset = 13
 	scope_y_offset = 16
 
@@ -565,7 +565,7 @@
 	icon_state = "aer14"
 	item_state = "laser-rifle9"
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
+	scope_state = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
 	fire_delay = 3.5

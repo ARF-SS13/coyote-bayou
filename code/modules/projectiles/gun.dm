@@ -95,8 +95,6 @@
 	var/scope_x_offset = 0
 	var/scope_y_offset = 0
 
-	var/scopestate = "scope"
-
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	var/isenergy = null
 	var/isbow = null
@@ -604,12 +602,10 @@
 		flashlight_overlay = null
 
 	if(bayonet)
-		var/mutable_appearance/knife_overlay
-		var/state = "bayonet"							//Generic state.
 		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
-			state = bayonet.icon_state
+			knife_overlay = bayonet.icon_state
 		var/icon/bayonet_icons = 'icons/obj/guns/bayonets.dmi'
-		knife_overlay = mutable_appearance(bayonet_icons, state)
+		knife_overlay = mutable_appearance(bayonet_icons, bayonet_state)
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
 		. += knife_overlay
@@ -620,7 +616,7 @@
 		if(scope.icon_state in icon_states('icons/obj/guns/scopes.dmi'))
 			scope_overlay = scope.icon_state
 		var/icon/scope_icons = 'icons/obj/guns/scopes.dmi'
-		scope_overlay = mutable_appearance(scope_icons, scopestate)
+		scope_overlay = mutable_appearance(scope_icons, scope_state)
 		scope_overlay.pixel_x = scope_x_offset
 		scope_overlay.pixel_y = scope_y_offset
 		. += scope_overlay

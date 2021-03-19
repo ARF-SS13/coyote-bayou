@@ -371,7 +371,7 @@ Combat Engineer
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATMEDIC
-	outfit = /datum/job/ncr/f13combatmedic
+	outfit = /datum/outfit/job/ncr/f13combatmedic
 
 /datum/outfit/job/ncr/f13combatmedic
 	name = "NCR Combat Medic"
@@ -415,7 +415,7 @@ Combat Engineer
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
-	outfit = /datum/job/ncr/f13combatengineer
+	outfit = /datum/outfit/job/ncr/f13combatengineer
 
 /datum/outfit/job/ncr/f13combatengineer
 	name = "NCR Combat Engineer"
