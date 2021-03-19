@@ -289,7 +289,7 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionsimple&&m4570barrel)//hunting revolver
 			if(istype(src,/obj/item/prefabs/complex/simpleWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/revolver/sequoia/scoped
+				var/obj/item/B = new /obj/item/gun/ballistic/revolver/hunting
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
@@ -855,21 +855,26 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/attachments/scope
-	name = "Weapon Optics"
+	name = "weapon optics"
 	desc = "A long-range scope, attach to a compatible weapon. Remove with a screwdriver. Makes the weapon slightly slower to fire."
 	icon_state = "scope"
 
 /obj/item/attachments/recoil_decrease
-	name = "Recoil Compensator"
+	name = "recoil compensator"
 	desc = "Improves stability and recoil, attach to a compatible weapon. Cannot be removed."
 	icon_state = "recoilcomp"
 
 /obj/item/attachments/bullet_speed
-	name = "Improved Barrel"
+	name = "improved barrel"
 	desc = "Improves bullet speed, attach to a compatible weapon. Cannot be removed."
 	icon_state = "barrel"
 
 /obj/item/attachments/burst_improvement
-	name = "Burst Cam"
+	name = "burst cam"
 	desc = "Increases burst size, attach to a compatible weapon. Cannot be removed."
 	icon_state = "burstcam"
+
+/obj/item/attachments/auto_sear
+	name = "auto sear"
+	desc = "A rare gun part that allows certain weapons to have select fire capabilities. Cannot be removed."
+	icon_state = "auto_sear"

@@ -78,7 +78,7 @@
 	cost = 800
 	contains = list(/obj/machinery/iv_drip)
 	crate_name = "iv drip crate"
-
+/*
 /datum/supply_pack/medical/medicalhardsuit
 	name = "Medical Hardsuit"
 	desc = "Got people being spaced left and right? Hole in the same room as the dead body of Hos or cap? Fear not, now you can buy one medical hardsuit with a mask and air tank to save your fellow crewmembers. Requires medical access to open."
@@ -89,7 +89,7 @@
 					/obj/item/clothing/suit/space/hardsuit/medical)
 	crate_name = "medical hardsuit"
 	crate_type = /obj/structure/closet/crate/secure/medical
-
+*/
 /datum/supply_pack/medical/supplies
 	name = "Medical Supplies Crate"
 	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze, as well as a bottle of stimulant pills for long, hard work days. German doctor not included."

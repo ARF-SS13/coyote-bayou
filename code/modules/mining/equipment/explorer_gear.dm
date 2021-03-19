@@ -24,19 +24,6 @@
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50, "wound" = 10)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/hooded/explorer/standard
-	hoodtype = /obj/item/clothing/head/hooded/explorer/standard
-
-/obj/item/clothing/head/hooded/explorer/standard
-
-/obj/item/clothing/suit/hooded/explorer/standard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
-/obj/item/clothing/head/hooded/explorer/standard/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
 /obj/item/clothing/mask/gas/explorer
 	name = "explorer gas mask"
 	desc = "A military-grade gas mask that can be connected to an air supply."

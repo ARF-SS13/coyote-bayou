@@ -92,6 +92,11 @@
 	name = "reagent processing liver"
 	icon_state = "liver-c"
 
+/obj/item/organ/liver/gen2synth
+	name = "reagent processing liver"
+	icon_state = "liver-c"
+	desc = "A small metal box, appearing to be a small scale dialysis machine."
+
 /obj/item/organ/liver/cybernetic
 	name = "cybernetic liver"
 	icon_state = "liver-c"

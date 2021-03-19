@@ -234,13 +234,13 @@
 	if(emped == 0)
 		if(ismob(loc))
 			to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
-			slowdown += 15
-			armor = armor.modifyRating(linemelee = -50, linebullet = -50, linelaser = -50)
+			slowdown += 30
+			armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
 			emped = 1
 			spawn(50) //5 seconds of being slow and weak
 				to_chat(loc, "<span class='warning'>Armor power reroute successful. All systems operational.</span>")
-				slowdown -= 15
-				armor = armor.modifyRating(linemelee = 50, linebullet = 50, linelaser = 50)
+				slowdown -= 30
+				armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
 				emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
@@ -248,7 +248,7 @@
 	desc = "(VIII) It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 	slowdown = 1.40
 	armor_block_chance = 25
@@ -275,7 +275,7 @@
 	desc = "(VIII) It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
 	icon_state = "ncrpowerarmor"
 	item_state = "ncrpowerarmor"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 	slowdown = 1.40
 	armor_block_chance = 25
@@ -300,7 +300,7 @@
 	desc = "(VIII) It's a set of T-45b power armor with some of its plating heavily reconditioned. This set has seen better days, metal scrap has been spot welded to the chassis "
 	icon_state = "raiderpa"
 	item_state = "raiderpa"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	slowdown = 0.4
 	requires_training = FALSE
 	armor_block_chance = 20
@@ -325,7 +325,7 @@
 	desc = "(VIII) It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	slowdown = 0.4
 	requires_training = FALSE
 	armor_block_chance = 20
@@ -398,7 +398,8 @@
 	desc = "(IX) Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	slowdown = 0.24
+	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
 	armor_block_chance = 80
 	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
@@ -436,14 +437,14 @@
 	icon_state = "t45dkc"
 	item_state = "t45dkc"
 	slowdown = 0.16
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
 	name = "midwestern power armor"
 	desc = "(IX) This set of power armor once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."
 	icon_state = "midwestgrey_pa"
 	item_state = "midwestgrey_pa"
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
 
 	armor_block_chance = 80
 	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
@@ -485,6 +486,7 @@
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
+	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/wbos
 	name = "Washington power armor"
@@ -511,7 +513,7 @@
 	icon_state = "t60powerarmor"
 	item_state = "t60powerarmor"
 	slowdown = 0.16
-	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 
 	armor_block_chance = 95
 	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
@@ -536,7 +538,7 @@
 	icon_state = "t60tesla"
 	item_state = "t60tesla"
 	slowdown = 0.15
-	armor = list("tier" = 10, "linelaser" = 25, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
+	armor = list("tier" = 10, "linelaser" = 25, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 	var/hit_reflect_chance = 20
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
@@ -551,7 +553,7 @@
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
-	armor = list("linemelee" = 300, "linebullet" = 300, "linelaser" = 300, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+	armor = list("linemelee" = 300, "linebullet" = 300, "linelaser" = 300, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
 
 	armor_block_chance = 100 //Enclave. 'nuff said
 	deflection_chance = 40 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
@@ -575,7 +577,7 @@
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor2"
 	item_state = "advpowerarmor2"
-	armor = list("linemelee" = 400, "linebullet" = 400, "linelaser" = 400, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+	armor = list("linemelee" = 400, "linebullet" = 400, "linelaser" = 400, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2/wbos
 	name = "advanced Washington power armor"
@@ -588,7 +590,7 @@
 	desc = "A variant of the Enclave's advanced power armor Mk I, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks.<br>As it's made of complex composite materials designed to block most of energy damage - it's notably weaker against kinetic impacts."
 	icon_state = "tesla"
 	item_state = "tesla"
-	armor = list("linemelee" = 200, "linebullet" = 200, "linelaser" = 300, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+	armor = list("linemelee" = 200, "linebullet" = 200, "linelaser" = 300, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 80)
 	var/hit_reflect_chance = 35
 
 /obj/item/clothing/suit/armor/f13/power_armor/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
@@ -838,6 +840,19 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0) //Same armor as trail ranger gear
 	slowdown = -0.10 //Same speed boost as recon ranger gear. Lower than trail ranger speed to balance it protecting arms.
+
+/obj/item/clothing/suit/armor/f13/herbertranger //Armor wise, it's reskinned raider armor.
+	name = "weathered desert ranger armor"
+	desc = "(IV) A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "usmc_riot_gear"
+	item_state = "usmc_riot_gear"
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	strip_delay = 40
+
+/obj/item/clothing/suit/armor/f13/herbertranger/Initialize() //HQ parts reinforcement, just like raider gear
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

@@ -292,7 +292,22 @@
 		/obj/item/organ/regenerative_core,
 		/obj/item/wormhole_jaunter,
 		/obj/item/storage/bag/plants,
-		/obj/item/stack/marker_beacon
+		/obj/item/stack/marker_beacon,
+		/obj/item/melee/baton,
+		/obj/item/melee/classic_baton,
+		/obj/item/grenade,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/restraints/handcuffs,
+		/obj/item/assembly/flash/handheld,
+		/obj/item/clothing/glasses,
+		/obj/item/ammo_casing/shotgun,
+		/obj/item/ammo_box,
+		/obj/item/reagent_containers/food/snacks/donut,
+		/obj/item/flashlight/seclite,
+		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/radio,
+		/obj/item/clothing/gloves,
+		/obj/item/restraints/legcuffs/bola
 		))
 
 
@@ -442,7 +457,7 @@
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 7
 
 
 /obj/item/storage/belt/military/followers/PopulateContents()
@@ -452,7 +467,7 @@
 	new /obj/item/kitchen/knife/combat(src)
 	new /obj/item/ammo_box/magazine/m9mmds(src)
 	update_icon()
-	
+
 /obj/item/storage/belt/durathread
 	name = "durathread toolbelt"
 	desc = "A toolbelt made out of durathread, it seems robust enough to hold bigger tools like RCDs or RPDs, with enough pouches to hold more gear than a normal belt."
@@ -772,7 +787,7 @@
 	new /obj/item/ammo_box/l10mm(src)
 	new /obj/item/ammo_box/l10mm(src)
 
-	
+
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
 	desc = "A dorky fannypack for keeping small items in."
@@ -907,6 +922,15 @@
 	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
+
+/obj/item/storage/belt/military/assault/ncr/engineer/PopulateContents()
+	new /obj/item/screwdriver(src)
+	new /obj/item/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/crowbar(src)
+	new /obj/item/wirecutters(src)
+	new /obj/item/multitool(src)
+	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 
 /obj/item/storage/belt/military/reconbandolier
 	name = "NCR recon ranger bandolier"
