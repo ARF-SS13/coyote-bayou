@@ -23,6 +23,7 @@
 	wound_bonus = 20
 	sharpness = SHARP_NONE
 	embedding = null
+	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
@@ -42,6 +43,7 @@
 	icon_state = "spark"
 	color = "#FFFF00"
 	var/tase_duration = 50
+	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/shotgun_stunslug/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -90,6 +92,7 @@
 /obj/item/projectile/bullet/pellet
 	var/tile_dropoff = 0.45
 	var/tile_dropoff_s = 1.25
+	power_armor_blocks = TRUE //Buckshot ain't getting through that suit
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
@@ -148,3 +151,4 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
+	power_armor_blocks = FALSE //Okay fine, magnum buckshot'll hurt. You're welcome.

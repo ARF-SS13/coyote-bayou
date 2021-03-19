@@ -204,6 +204,9 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/emped = 0
 	var/requires_training = TRUE
+	var/armor_block_chance = 0
+	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	var/deflection_chance = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -248,6 +251,24 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
 	slowdown = 1.40
+	armor_block_chance = 25
+	list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
+
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr
 	name = "salvaged NCR power armor"
@@ -257,6 +278,22 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	requires_training = FALSE
 	slowdown = 1.40
+	armor_block_chance = 25
+	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+
+/obj/item/clothing/suit/armor/f13/power_armor/ncr/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
 	name = "raider T-45b power armor"
@@ -266,6 +303,22 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	slowdown = 0.4
 	requires_training = FALSE
+	armor_block_chance = 20
+	deflection_chance = 5 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+
+/obj/item/clothing/suit/armor/f13/power_armor/raiderpa/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/hotrod
 	name = "hotrod T-45b power armor"
@@ -275,6 +328,22 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	slowdown = 0.4
 	requires_training = FALSE
+	armor_block_chance = 20
+	deflection_chance = 5 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+
+/obj/item/clothing/suit/armor/f13/power_armor/hotrod/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/vaulttec
 	name = "Vault-Tec technical power armour"
@@ -283,6 +352,22 @@
 	item_state = "vault_pa"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	slowdown = 0
+	armor_block_chance = 40
+	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
+
+/obj/item/clothing/suit/armor/f13/power_armor/vaulttec/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
@@ -291,6 +376,22 @@
 	item_state = "excavator"
 	slowdown = 0.5 //+0.1 from helmet
 	armor = list("tier" = 8, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	armor_block_chance = 40
+	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
+
+/obj/item/clothing/suit/armor/f13/power_armor/excavator/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
@@ -298,6 +399,22 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
+	armor_block_chance = 80
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b"
@@ -328,6 +445,23 @@
 	item_state = "midwestgrey_pa"
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
 
+	armor_block_chance = 80
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+
+/obj/item/clothing/suit/armor/f13/power_armor/midwest/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "(X) The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
@@ -335,6 +469,22 @@
 	item_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
+	armor_block_chance = 90
+	deflection_chance = 35 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/wbos
 	name = "Washington power armor"
@@ -363,6 +513,23 @@
 	slowdown = 0.16
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 
+	armor_block_chance = 95
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
+
+/obj/item/clothing/suit/armor/f13/power_armor/t60/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
+
 /obj/item/clothing/suit/armor/f13/power_armor/t60/tesla
 	name = "T-60b tesla armor"
 	desc = "(X*) An experimental variant of T-60a power armor featuring an array of tesla coils. A small amount of protection has been sacrificed to give a chance to deflect energy projectiles."
@@ -371,7 +538,6 @@
 	slowdown = 0.15
 	armor = list("tier" = 10, "linelaser" = 25, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0)
 	var/hit_reflect_chance = 20
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
@@ -386,6 +552,23 @@
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
 	armor = list("linemelee" = 300, "linebullet" = 300, "linelaser" = 300, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
+
+	armor_block_chance = 100 //Enclave. 'nuff said
+	deflection_chance = 40 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
+
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(armor_block_chance))
+			var/ratio = rand(0,100)
+			if(ratio <= deflection_chance)
+				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			else
+				if(ismob(loc))
+					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
 	name = "advanced power armor mark II"
@@ -407,7 +590,6 @@
 	item_state = "tesla"
 	armor = list("linemelee" = 200, "linebullet" = 200, "linelaser" = 300, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 	var/hit_reflect_chance = 35
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/suit/armor/f13/power_armor/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
