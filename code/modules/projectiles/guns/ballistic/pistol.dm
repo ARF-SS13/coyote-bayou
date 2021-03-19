@@ -213,7 +213,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
 	can_suppress = FALSE
-	fire_sound = 'sound/f13weapons/ninemil.ogg'
+	fire_sound = 'sound/f13weapons/9mm.ogg'
 	can_attachments = TRUE
 	extra_damage = 3
 
@@ -221,11 +221,10 @@
 	name = "beretta M93R"
 	desc = "A rare select fire variant of the M93R."
 	icon_state = "m93r"
-	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	burst_size = 3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
-	can_attachments = TRUE
+	can_attachments = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "sig p220"

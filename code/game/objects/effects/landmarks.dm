@@ -546,8 +546,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
+/obj/effect/landmark/start/f13/ncrmedofficer
+	name = "NCR Medical Officer"
+	icon_state = "NCR Lieutenant"
+
 /obj/effect/landmark/start/f13/ncrfirstsergeant
-	name = "NCR First Sergeant"
+	name = "NCR Sergeant First Class"
 	icon_state = "NCR Sergeant"
 
 /obj/effect/landmark/start/f13/ncrsergeant
@@ -558,8 +562,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Corporal"
 	icon_state = "NCR Trooper"
 
-/obj/effect/landmark/start/f13/ncrspecialist
-	name = "NCR Specialist"
+/obj/effect/landmark/start/f13/ncrcombatengineer
+	name = "NCR Combat Engineer"
+	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrcombatmedic
+	name = "NCR Combat Medic"
 	icon_state = "NCR Trooper"
 
 /obj/effect/landmark/start/f13/ncrtrooper

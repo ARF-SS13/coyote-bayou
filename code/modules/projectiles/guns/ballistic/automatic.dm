@@ -529,7 +529,7 @@
 	spawnwithmagazine = FALSE
 	extra_damage = -4
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
+	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
 	spread = 20
@@ -549,7 +549,7 @@
 	can_attachments = TRUE
 	spawnwithmagazine = FALSE
 	can_scope = TRUE
-	scopestate = "AEP7_scope"
+	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
 	spread = 10
@@ -792,7 +792,7 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	can_scope = TRUE
-	scopestate = "rifle_scope"
+	scope_state = "rifle_scope"
 	scope_x_offset = 5
 	scope_y_offset = 14
 	w_class = WEIGHT_CLASS_BULKY
@@ -1106,7 +1106,7 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	can_scope = TRUE
-	scopestate = "lasmusket_scope"
+	scope_state = "lasmusket_scope"
 	scope_x_offset = 5
 	scope_y_offset = 14
 	can_attachments = TRUE
@@ -1164,10 +1164,11 @@
 	automatic_burst_overlay = FALSE
 	//automatic = 0
 	can_scope = TRUE
-	scopestate = "lasmusket_scope"
+	scope_state = "lasmusket_scope"
 	scope_x_offset = 6
 	scope_y_offset = 14
 	semi_auto = TRUE
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /obj/item/gun/ballistic/automatic/mp5
 	name = "mp5sd"
@@ -1183,7 +1184,7 @@
 	can_attachments = TRUE
 	can_suppress = FALSE
 	can_unsuppress = FALSE
-	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
+	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 
 /obj/item/gun/ballistic/automatic/sten
 	name = "sten gun"

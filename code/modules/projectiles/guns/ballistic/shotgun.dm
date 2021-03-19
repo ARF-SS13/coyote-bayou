@@ -12,7 +12,8 @@
 	var/recentpump = 0 // to prevent spammage
 	weapon_weight = WEAPON_HEAVY
 	spawnwithmagazine = TRUE
-	var/pump_sound
+	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -392,6 +393,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
@@ -499,6 +501,7 @@
 	scope_state = "rifle_scope"
 	scope_x_offset = 4
 	scope_y_offset = 12
+	pump_sound = 'sound/weapons/boltpump.ogg'
 
 /obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
 	..()
@@ -601,7 +604,7 @@
 	icon_state = "kar98"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/kar98
-	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	fire_delay = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -611,6 +614,7 @@
 	scope_state = "kar_scope"
 	scope_x_offset = 12
 	scope_y_offset = 23
+	pump_sound = 'sound/weapons/boltpump.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "winchester widowmaker"
@@ -623,6 +627,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 1
+	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -632,3 +637,23 @@
 		var/obj/item/melee/transforming/energy/W = A
 		if(W.active)
 			sawoff(user)
+
+/obj/item/gun/ballistic/shotgun/mosin
+	name = "mosin nagant m38"
+	desc = "A classic Russian bolt action chambered in 7.62. Now all you need is some vodka."
+	icon_state = "moistnugget"
+	item_state = "moistnugget"
+	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
+	inaccuracy_modifier = 0.5
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	can_scope = TRUE
+	scope_state = "mosin_scope"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	extra_damage = 5
+	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
