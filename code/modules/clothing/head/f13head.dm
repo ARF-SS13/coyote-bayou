@@ -305,6 +305,12 @@
 	slowdown = 0
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
+	name = "sierra power helmet"
+	desc = "(IX) A pre-war power armor helmet, issued to special NCR officers.."
+	icon_state = "sierra"
+	item_state = "sierra"
+
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
 	desc = "(IX) This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."

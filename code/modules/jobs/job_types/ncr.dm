@@ -51,27 +51,28 @@ Colonel
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/outfit/job/ncr/f13colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
-	pa_wear = TRUE
 	id 			= /obj/item/card/id/dogtag/ncrcolonel
 	uniform		= /obj/item/clothing/under/f13/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr
-	r_hand 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
-	head 		= /obj/item/clothing/head/beret/ncr
+	head 		= /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store  = /obj/item/gun/ballistic/automatic/marksman
 	gloves      = /obj/item/clothing/gloves/f13/leather
+	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/storage/bag/money/small/ncr)
+		/obj/item/storage/bag/money/small/ncr=1, \
+		/obj/item/clothing/head/beret/ncr=1)
 
 /*
 Captain
@@ -243,6 +244,12 @@ Medical Officer
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/storage/firstaid/regular=1)
 
+/datum/outfit/job/ncr/f13medicalofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+
 /*
 First Sergeant
 */
@@ -340,7 +347,7 @@ Corporal
 	accessory 		= /obj/item/clothing/accessory/ncr/CPL
 	head 			= /obj/item/clothing/head/f13/ncr
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	belt 			= /obj/item/storage/belt/military/assault/ncr/engineer
+	belt 			= /obj/item/storage/belt/military/assault/ncr
 	suit_store		= /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -452,7 +459,7 @@ Trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	total_positions = 6
-	spawn_positions = 10
+	spawn_positions = 6
 	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by the Lieutenant."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -486,7 +493,7 @@ Rear Echelon
 	title = "NCR Rear Echelon"
 	flag = F13REARECHELON
 	total_positions = 4
-	spawn_positions = 10
+	spawn_positions = 4
 	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or your specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -656,7 +663,7 @@ Veteran Ranger
 	title = "NCR Ranger"
 	flag = F13RANGER
 	total_positions = 4
-	spawn_positions = 4
+	spawn_positions = 5
 	description = "As an NCR Ranger, you are the premier special forces unit of the NCR. You are the forward observations and support the Army in it's campaigns, as well as continuing the tradition of stopping slavery in it's tracks."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
