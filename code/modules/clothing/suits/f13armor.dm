@@ -43,8 +43,8 @@
 	name = "combat body armor"
 	icon_state = "combat_coat"
 	item_state = "combat_coat"
-	desc = "(V) A heavy armor with ballistic inserts, sewn into a padded riot police coat."
-	armor = list("tier" = 5, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 35)
+	desc = "(VII) A heavy armor with ballistic inserts, sewn into a padded riot police coat."
+	armor = list("tier" = 7, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 35)
 
 /obj/item/clothing/suit/armor/f13/kit
 	name = "armor kit"
