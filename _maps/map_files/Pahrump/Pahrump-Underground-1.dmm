@@ -771,10 +771,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"cr" = (
-/obj/docking_port/stationary/bosaway/twelve,
-/turf/closed/wall/rust,
-/area/f13/tunnel)
 "cs" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/warning,
@@ -2338,10 +2334,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"ha" = (
-/obj/docking_port/stationary/bosaway/seven,
-/turf/closed/wall/rust,
-/area/f13/tunnel)
 "hb" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -3341,10 +3333,6 @@
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/wood,
 /area/f13/brotherhood)
-"kd" = (
-/obj/docking_port/stationary/bosaway/six,
-/turf/closed/wall/rust,
-/area/f13/tunnel)
 "ke" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
@@ -4513,10 +4501,6 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
-"nK" = (
-/obj/docking_port/stationary/bosaway/ten,
-/turf/closed/wall/f13/ruins,
-/area/f13/tunnel)
 "nL" = (
 /obj/item/electronics/apc,
 /obj/item/stack/cable_coil,
@@ -7647,10 +7631,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"xI" = (
-/obj/docking_port/stationary/bosaway/eleven,
-/turf/closed/wall/f13/ruins,
-/area/f13/tunnel)
 "xJ" = (
 /obj/effect/decal/waste{
 	icon_state = "goo5"
@@ -8157,10 +8137,6 @@
 	icon_state = "dark"
 	},
 /area/f13/bunker)
-"zg" = (
-/obj/docking_port/stationary/bosaway/four,
-/turf/closed/wall/f13/ruins,
-/area/f13/tunnel)
 "zh" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/darkpurple/side,
@@ -11554,10 +11530,6 @@
 /obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/brotherhood)
-"JT" = (
-/obj/docking_port/stationary/bosaway/three,
-/turf/closed/wall/f13/tunnel,
-/area/f13/tunnel)
 "JU" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -12016,10 +11988,6 @@
 	dir = 4
 	},
 /area/f13/brotherhood)
-"Ln" = (
-/obj/docking_port/stationary/bosaway/two,
-/turf/closed/wall/f13/ruins,
-/area/f13/tunnel)
 "Lo" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -13441,10 +13409,6 @@
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
-/area/f13/tunnel)
-"PB" = (
-/obj/docking_port/stationary/bosaway/nine,
-/turf/closed/wall/rust,
 /area/f13/tunnel)
 "PC" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -15013,10 +14977,6 @@
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/wood/house,
 /area/f13/tunnel)
-"Uk" = (
-/obj/docking_port/stationary/bosaway/five,
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
 "Ul" = (
 /obj/machinery/autolathe/ammo,
 /turf/open/floor/f13/wood,
@@ -22689,7 +22649,7 @@ Fz
 Fz
 Kn
 Kn
-JT
+Kn
 Kn
 Kn
 Kn
@@ -23687,7 +23647,7 @@ GY
 GY
 DW
 px
-Ln
+DW
 DW
 DW
 DW
@@ -41210,7 +41170,7 @@ ri
 ri
 DW
 DW
-zg
+DW
 DW
 DW
 DW
@@ -48178,7 +48138,7 @@ jG
 jG
 QC
 QC
-PB
+QC
 QC
 QC
 QC
@@ -48313,7 +48273,7 @@ QC
 QC
 QC
 QC
-ha
+QC
 QC
 QC
 Fz
@@ -50218,7 +50178,7 @@ GY
 GY
 DW
 DW
-nK
+DW
 DW
 DW
 DW
@@ -54950,7 +54910,7 @@ Fz
 QC
 QC
 QC
-cr
+QC
 QC
 QC
 QC
@@ -59198,7 +59158,7 @@ DW
 DW
 DW
 DW
-xI
+DW
 DW
 DW
 DW
@@ -64759,7 +64719,7 @@ QC
 QC
 QC
 QC
-kd
+QC
 QC
 QC
 Fz
@@ -69797,7 +69757,7 @@ Fz
 Fz
 Jp
 Jp
-Uk
+Jp
 Jp
 Jp
 Fz
