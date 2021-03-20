@@ -189,10 +189,11 @@
 	name = "\improper Executive" //'the Executive'
 	desc = "A gas-operated N99 pistol chambered in 10mm rounds. It has an accurate two-round-burst and a blue Vault-Tec finish, for only the most robust overseers."
 	icon_state = "executive"
-	can_suppress = FALSE
+	can_suppress = TRUE
 	burst_size = 2
 	can_automatic = FALSE
 	extra_penetration = 0.2 //2x 35 damage, 10 AP- hits like a 2rd burst 5.56, but more accurate
+	semi_auto = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "browning hi-power"

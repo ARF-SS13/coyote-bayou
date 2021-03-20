@@ -648,6 +648,7 @@
 	fire_delay = 3
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	semi_auto = FALSE
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
@@ -758,6 +759,9 @@
 	burst_size = 1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
+	scope_state = "rifle_scope"
+	scope_x_offset = 4
+	scope_y_offset = 11
 	//automatic = 0
 
 /obj/item/gun/ballistic/automatic/type93

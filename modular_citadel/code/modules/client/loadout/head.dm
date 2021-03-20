@@ -89,12 +89,13 @@
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
-							"NCR First Sergeant",
+							"NCR Medical Officer",
+							"NCR Sergeant First Class",
 							"NCR Lieutenant",
-							"NCR First Sergeant",
 							"NCR Sergeant",
 							"NCR Corporal",
-							"NCR Specialist",
+							"NCR Combat Engineer",
+							"NCR Combat Medic",
 							"NCR Trooper",
 							"NCR Rear Echelon",
 							"NCR Off-Duty"
@@ -117,7 +118,7 @@
 	name = "NCR campaign hat"
 	path = /obj/item/clothing/head/f13/ncr_campaign
 	restricted_desc = "NCR"
-	restricted_roles = list("NCR First Sergeant",
+	restricted_roles = list("NCR Sergeant First Class",
 						"NCR Off-Duty")
 
 /datum/gear/head/ncr_stetson
