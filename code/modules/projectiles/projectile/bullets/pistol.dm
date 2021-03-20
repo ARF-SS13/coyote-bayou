@@ -1,21 +1,21 @@
 // 10mm 
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
-	damage = 36
-	armour_penetration = 0.2
+	damage = 32 //36
+	armour_penetration = 0.1 //0.2
 	wound_bonus = 18
 	bare_wound_bonus = -18
 
 /obj/item/projectile/bullet/c10mm/ap
 	name = "10mm AP bullet"
 	damage = 27
-	armour_penetration = 0.45
+	armour_penetration = 0.60 //0.45
 	wound_bonus = 36
 	bare_wound_bonus = -36
 
 /obj/item/projectile/bullet/c10mm/hp
 	name = "10mm JHP bullet"
-	damage = 45
+	damage = 48 //45
 	armour_penetration = -0.7
 	wound_bonus = -36
 	wound_bonus = 36
@@ -24,14 +24,14 @@
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
 	damage = 29
-	armour_penetration = 0.15
+	armour_penetration = 0.05 //0.15
 	wound_bonus = 15
 	bare_wound_bonus = -15
 
 /obj/item/projectile/bullet/c9mm/ap
 	name = "9mm AP bullet"
 	damage = 23
-	armour_penetration = 0.4
+	armour_penetration = 0.6 //0.4
 	wound_bonus = 30
 	bare_wound_bonus = -30
 
@@ -44,8 +44,8 @@
 
 /obj/item/projectile/bullet/c9mm/op
 	name = "9mm +P bullet"
-	damage = 39
-	armour_penetration = 0.4
+	damage = 35 //39
+	armour_penetration = 0.35 //0.4
 	wound_bonus = 30
 	bare_wound_bonus = 30
 
