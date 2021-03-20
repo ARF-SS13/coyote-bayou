@@ -52,12 +52,12 @@
 
 /obj/item/clothin/neck/cloak/bos
 	name = "Brotherhood of Steel shoulder cape"
-	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important.This one is designed to be worn over the shoulder."
 	icon_state = "bosshouldercape_l"
 
-/obj/item/clothing/neck/cloak/bos/left
+/obj/item/clothin/neck/cloak/bos/left
 	name = "Brotherhood of Steel shoulder cape"
-	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important.This one is designed to be worn over the shoulder."
 	icon_state = "bosshouldercape_l"
 
 /obj/item/clothing/neck/cloak/bos/right
@@ -67,7 +67,7 @@
 
 /obj/item/clothing/neck/cloak/bos/paladin
 	name = "Paladin cape"
-	desc = "This stylish deep crimson cape is made to be worn below a power armor pauldron, a shoulder holster is added for utility."
+	desc = "A deep crimson cape designed by the brotherhood to fit on a power armor. The perfect mix of style and utility, with an attached holster."
 	icon_state = "BoScape"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
