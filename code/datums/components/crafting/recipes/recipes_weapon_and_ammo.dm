@@ -471,6 +471,21 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
+//scout carbine
+/datum/crafting_recipe/scoutcarbine
+	name = "scout carbine"
+	result = /obj/item/gun/ballistic/automatic/service/carbine
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/sheet/mineral/wood = 5,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
 //aep7
 /datum/crafting_recipe/AEP7
 	name = "aep7"

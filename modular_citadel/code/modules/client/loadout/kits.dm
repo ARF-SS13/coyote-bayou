@@ -47,3 +47,27 @@
 /obj/item/storage/box/large/custom_kit/johnthaxton/PopulateContents()
 	new /obj/item/modkit/thax_patrol(src)
 	new /obj/item/clothing/under/f13/ranger/vet/thaxflannel(src)
+
+//Pipera Rivera - purplepineapple
+/obj/item/storage/box/large/custom_kit/piperrivera/PopulateContents()
+	new /obj/item/modkit/piper_hat(src)
+	new /obj/item/modkit/piper_vest(src)
+	new /obj/item/clothing/accessory/waistcoat/sheepskin(src)
+	new /obj/item/clothing/under/f13/ranger/blue(src)
+	new /obj/item/clothing/shoes/f13/cowboy(src)
+
+//Digger - entityatlas
+/obj/item/storage/box/large/custom_kit/digger/PopulateContents()
+	new /obj/item/modkit/digger_helm(src)
+	new /obj/item/modkit/digger_vest(src)
+
+//Orven Cross - covert0ddity
+/obj/item/storage/box/large/custom_kit/orvencross/PopulateContents()
+	new /obj/item/clothing/mask/bandana/black(src)
+	new /obj/item/clothing/under/syndicate(src)
+	new /obj/item/clothing/accessory/armband(src)
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/storage/belt/military/army(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_robustgold(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_robustgold(src)
+	new /obj/item/clothing/suit/armor/bulletproof(src)

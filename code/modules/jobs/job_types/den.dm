@@ -93,7 +93,7 @@ Mayor
 	suit = 			/obj/item/clothing/suit/armor/f13/town/sheriff
 	head = 			/obj/item/clothing/head/f13/town/sheriff
 	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_hand = 		/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
+	l_hand = 		/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges=1, \

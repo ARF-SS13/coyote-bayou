@@ -58,6 +58,13 @@
 	build_path = /obj/item/ammo_box/magazine/m556/rifle/small/empty
 	category = list("initial", "Simple Magazines")
 
+/datum/design/ammolathe/m45magazine
+	name = "empty handgun magazine (.45)"
+	id = "m45magazine"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m45/empty
+	category = list("initial", "Simple Magazines")
+
 //Tier 1 Ammo
 /datum/design/ammolathe/beanbag
 	name = "beanbag shotgun box"
@@ -171,6 +178,13 @@
 	id = "pistol22mag"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/m22/empty
+	category = list("initial", "Basic Magazines")
+
+/datum/design/ammolathe/m45expmagazine
+	name = "empty socom magazine (.45)"
+	id = "m45expmagazine"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/m45exp/empty
 	category = list("initial", "Basic Magazines")
 
 //Tier 2 Ammo
@@ -359,6 +373,13 @@
 	build_path = /obj/item/ammo_box/magazine/w308/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/garand308
+	name = "empty en-bloc clip (7.62x51)"
+	id = "garand308"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/garand308/empty
+	category = list("initial", "Intermediate Magazines")
+
 //Tier 3 Ammo
 /datum/design/ammolathe/c4570
 	name = ".45-70 FMJ ammo box"
@@ -465,6 +486,20 @@
 	id = "m762ext"
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/magazine/m762/ext/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/tommygunm45
+	name = "empty drum magazine (.45)"
+	id = "tommygunm45"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/tommygunm45/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/lmg556
+	name = "empty ammo box (5.56)"
+	id = "lmg556"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/lmg/empty
 	category = list("initial", "Advanced Magazines")
 
 //Tier 4 Ammo
