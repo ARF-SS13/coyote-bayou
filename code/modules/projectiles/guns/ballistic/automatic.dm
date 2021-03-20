@@ -7,7 +7,7 @@
 	burst_size = 3
 	burst_shot_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	force = -100
+	force = 20
 	var/auto_eject = 0
 	var/auto_eject_sound = null
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
