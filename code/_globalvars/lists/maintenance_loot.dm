@@ -221,7 +221,7 @@ GLOBAL_LIST_INIT(trash_craft, list(
 GLOBAL_LIST_INIT(trash_gun, list(
 	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/revolver/colt6520 = 1,
-	/obj/item/gun/ballistic/shotgun/boltaction = 1,
+	/obj/item/gun/ballistic/shotgun/mosin = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1
@@ -512,7 +512,7 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/storage/fancy/ammobox/beanbag,
 	/obj/item/gun/ballistic/revolver/caravan_shotgun,
 	/obj/item/storage/fancy/ammobox/beanbag,
-	/obj/item/gun/ballistic/shotgun/boltaction,
+	/obj/item/gun/ballistic/shotgun/mosin,
 	/obj/item/ammo_box/a762,
 	/obj/item/gun/ballistic/revolver/zipgun,
 	/obj/item/gun/ballistic/revolver/pipe_rifle,
@@ -535,13 +535,10 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/storage/fancy/ammobox/lethalshot,
 	/obj/item/gun/ballistic/revolver/m29,
 	/obj/item/ammo_box/m44,
-	/obj/item/gun/ballistic/shotgun/remington/scoped,
 	/obj/item/ammo_box/a308,
-	/obj/item/gun/ballistic/revolver/m29/scoped,
 	/obj/item/ammo_box/m44,
 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,
 	/obj/item/ammo_box/a357,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped,
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/revolver/colt357,
 	/obj/item/ammo_box/a357,
@@ -572,7 +569,6 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/ammo_box/needle,
 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail,
 	/obj/item/ammo_box/tube/m44,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc
@@ -595,7 +591,6 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/magazine/m556/rifle,
 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
 	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/gun/ballistic/shotgun/antimateriel,
 	/obj/item/ammo_box/a50MG,
@@ -615,7 +610,7 @@ GLOBAL_LIST_INIT(loot_t5_range, list(
 	/obj/item/gun/ballistic/automatic/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
-	/obj/item/gun/ballistic/revolver/sequoia/scoped,
+	/obj/item/gun/ballistic/revolver/hunting,
 	/obj/item/gun/ballistic/automatic/bozar,
 	/obj/item/gun/energy/gammagun
 ))
@@ -623,7 +618,7 @@ GLOBAL_LIST_INIT(loot_t5_range, list(
 GLOBAL_LIST_INIT(loot_unique_range, list(
 	/obj/item/gun/ballistic/revolver/colt357/lucky,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
-	/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia,
+	/obj/item/gun/ballistic/shotgun/remington/paciencia,
 	/obj/item/gun/energy/laser/solar,
 	/obj/item/gun/energy/laser/plasma/alien
 ))
@@ -912,7 +907,8 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/attachments/scope,
 	/obj/item/attachments/bullet_speed,
 	/obj/item/attachments/burst_improvement,
-	/obj/item/attachments/recoil_decrease
+	/obj/item/attachments/recoil_decrease,
+	/obj/item/attachments/auto_sear
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

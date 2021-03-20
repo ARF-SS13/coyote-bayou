@@ -236,6 +236,13 @@
 	electronics_magic = FALSE
 	organ_flags = ORGAN_SYNTHETIC
 
+/obj/item/organ/tongue/robot/gen2synth
+	name = "electronic tongue"
+	say_mod = "says"
+	desc = "A voice synthesizer used by second generation synths in order to communicate."
+	electronics_magic = FALSE
+	organ_flags = ORGAN_SYNTHETIC
+
 /obj/item/organ/tongue/ethereal
 	name = "electric discharger"
 	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."

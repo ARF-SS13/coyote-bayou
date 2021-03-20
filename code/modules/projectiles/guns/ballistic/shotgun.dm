@@ -12,6 +12,8 @@
 	var/recentpump = 0 // to prevent spammage
 	weapon_weight = WEAPON_HEAVY
 	spawnwithmagazine = TRUE
+	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -43,7 +45,7 @@
 /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
 		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, pump_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -391,6 +393,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
@@ -417,7 +420,7 @@
 	icon_state = "lever"
 	item_state = "trenchgun"
 	//can_scope = TRUE //why tho
-	//scopestate = "AEP7_scope"	
+	//scopestate = "AEP7_scope"
 	//scope_x_offset = 8
 	//scope_y_offset = 19
 	//can_bayonet = TRUE
@@ -427,6 +430,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
@@ -446,7 +450,8 @@
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "neostead"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
@@ -493,6 +498,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	can_scope = TRUE
+	scope_state = "rifle_scope"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	pump_sound = 'sound/weapons/boltpump.ogg'
 
 /obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
 	..()
@@ -503,19 +512,7 @@
 		if(W.active)
 			sawoff(user)
 
-/obj/item/gun/ballistic/shotgun/remington/scoped
-	name = "scoped hunting rifle"
-	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war. This one has a 8x scope mounted to it."
-	icon_state = "rifle308_scope"
-	item_state = "scoped308"
-	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
-	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
-
-/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia
+/obj/item/gun/ballistic/shotgun/remington/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
 	icon_state = "paciencia"
@@ -525,7 +522,7 @@
 	extra_damage = 20 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
 
-/obj/item/gun/ballistic/shotgun/remington/scoped/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
+/obj/item/gun/ballistic/shotgun/remington/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		return
 	else if(istype(A, /obj/item/melee/transforming/energy))
@@ -542,21 +539,14 @@
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-//	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
 	can_scope = TRUE
-
-/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
-	name = "scoped cowboy repeater"
-	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
-	icon_state = "scopedcowboyrepeater"
-	item_state = "scopedcowboyrepeater"
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
+	scope_state = "leveraction_scope"
+	scope_x_offset = 11
+	scope_y_offset = 21
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "trail carbine"
@@ -565,19 +555,14 @@
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
 	can_scope = TRUE
-
-/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
-	name = "scoped trail carbine"
-	icon_state = "scopedtrailcarbine"
-	item_state = "scopedtrailcarbine"
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
+	scope_state = "leveraction_scope"
+	scope_x_offset = 11
+	scope_y_offset = 21
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "brush gun"
@@ -586,19 +571,14 @@
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
 	can_scope = TRUE
-
-/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
-	name = "scoped brush gun"
-	icon_state = "scopedbrushgun"
-	item_state = "scopedbrushgun"
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
+	scope_state = "leveraction_scope"
+	scope_x_offset = 11
+	scope_y_offset = 21
 
 /obj/item/gun/ballistic/shotgun/antimateriel
 	name = "anti-materiel rifle"
@@ -607,7 +587,7 @@
 	item_state = "sniper"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-//	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -616,7 +596,7 @@
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
 	fire_delay = 6
-//	projectile_speed = 0 //basically hitscan
+	//projectile_speed = 0
 
 /obj/item/gun/ballistic/shotgun/kar98k
 	name = "\improper karabiner 98k"
@@ -624,22 +604,17 @@
 	icon_state = "kar98"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/kar98
-	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	fire_delay = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	can_scope = TRUE
 	extra_damage = 10
 	extra_penetration = 0.2
-
-/obj/item/gun/ballistic/shotgun/kar98k/scoped
-	name = "\improper scoped karabiner 98k"
-	icon_state = "kar98scope"
-	item_state = "scoped308"
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
+	scope_state = "kar_scope"
+	scope_x_offset = 12
+	scope_y_offset = 23
+	pump_sound = 'sound/weapons/boltpump.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "winchester widowmaker"
@@ -652,6 +627,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 1
+	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -661,3 +637,23 @@
 		var/obj/item/melee/transforming/energy/W = A
 		if(W.active)
 			sawoff(user)
+
+/obj/item/gun/ballistic/shotgun/mosin
+	name = "mosin nagant m38"
+	desc = "A classic Russian bolt action chambered in 7.62. Now all you need is some vodka."
+	icon_state = "moistnugget"
+	item_state = "moistnugget"
+	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
+	inaccuracy_modifier = 0.5
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	can_scope = TRUE
+	scope_state = "mosin_scope"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	extra_damage = 5
+	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'

@@ -3,6 +3,7 @@
 //to keep them, you can't cure your other traumas
 /datum/brain_trauma/special
 
+/*
 /datum/brain_trauma/special/godwoken
 	name = "Godwoken Syndrome"
 	desc = "Patient occasionally and uncontrollably channels an eldritch god when speaking."
@@ -118,6 +119,7 @@
 		user.forceMove(get_turf(linked_to))
 		user.visible_message("<span class='warning'>[user] [slip_in_message].</span>", null, null, null, user)
 		user.visible_message("<span class='warning'>[user] [slip_out_message].</span>", "<span class='notice'>...and find your way to the other side.</span>")
+*/
 
 /datum/brain_trauma/special/psychotic_brawling
 	name = "Violent Psychosis"
