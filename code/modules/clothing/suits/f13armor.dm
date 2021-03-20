@@ -337,6 +337,14 @@
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
+/obj/item/clothing/suit/armor/f13/power_armor/t51b/tesla
+	name = "T-51b tesla armor"
+	desc = "(X) The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer, with the added benefit of tesla coils."
+	icon_state = "t51tesla"
+	item_state = "t51tesla"
+	slowdown = 0.15 //+0.1 from helmet = total 0.25
+	armor = list("tier" = 10, "energy" = 70, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/wbos
 	name = "Washington power armor"
 	desc = "(X) A dark mirror to the pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
