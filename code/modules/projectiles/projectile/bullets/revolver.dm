@@ -80,7 +80,7 @@
 
 /obj/item/projectile/bullet/c4570/swc
 	name = ".45-70 SWC bullet"
-	damage = 60
-	armour_penetration = 0.22
+	damage = 58 //60
+	armour_penetration = 0.18 //0.22
 	wound_bonus = 48
 	bare_wound_bonus = 48
