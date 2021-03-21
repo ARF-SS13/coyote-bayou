@@ -50,6 +50,11 @@
 	desc = "This is the overseers cloak.  Issued by the Vault-tec corporation to easily identify the overseer. This cloak has been passed down from overseer to overseer"
 	icon_state = "overseercloak"
 
+/obj/item/clothin/neck/cloak/bos
+	name = "Brotherhood of Steel shoulder cape"
+	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
+	icon_state = "bosshouldercape_l"
+
 /obj/item/clothing/neck/cloak/bos/left
 	name = "Brotherhood of Steel shoulder cape"
 	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
@@ -60,10 +65,11 @@
 	desc = "Issued to the Elders of the Brotherhood. Style over substance is important. This one is designed to be worn over the shoulder."
 	icon_state = "bosshouldercape_r"
 
-/obj/item/clothin/neck/cloak/bos
-	name = "Brotherhood of Steel shoulder cape"
-	desc = "Issued to the Elders of the Brotherhood. Style over substance is important."
-	icon_state = "boscape"
+/obj/item/clothing/neck/cloak/bos/paladin
+	name = "Paladin cape"
+	desc = "This stylish deep crimson cape is made to be worn below a power armor pauldron, a shoulder holster is added for utility."
+	icon_state = "BoScape"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
 /obj/item/clothing/neck/cloak/chiefcloak
 	name = "wayfarer cloak"
