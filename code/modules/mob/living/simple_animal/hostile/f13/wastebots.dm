@@ -113,8 +113,8 @@
 /mob/living/simple_animal/hostile/handy/securitron
 	name = "Securitron"
 	desc = "A private security robot created and mass-produced by the H&H Tools Factory"
-	icon_state = "securitron"
-	icon_living = "securitron"
+	icon_state = "Securitron"
+	icon_living = "Securitron"
 	icon_dead = "gib7"
 	health = 250
 	maxHealth = 250

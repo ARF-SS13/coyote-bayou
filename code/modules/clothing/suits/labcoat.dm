@@ -89,3 +89,9 @@
 	desc = "(II) A suit that protects against the weather, and looks stylish, but not much else."
 	icon_state = "fieldscribe"
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/suit/toggle/labcoat/scribecoat
+	name = "fieldscribe coat"
+	desc = "(II) A heavy-duty coat and chestrig fitted with tons of pockets for every scribe's storage needs."
+	icon_state = "scribecoat"
+	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
