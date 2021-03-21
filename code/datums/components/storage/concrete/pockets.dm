@@ -97,3 +97,37 @@
 	. = ..()
 	can_hold = typecacheof(list(/obj/item/reagent_containers/glass/bottle,
 								/obj/item/ammo_box/a762))
+
+/datum/component/storage/concrete/pockets/bos/paladin/Initialize()
+	. = ..()
+	max_items = 4
+	max_w_class = WEIGHT_CLASS_NORMAL
+	can_hold = typecacheof(list(
+		/obj/item/gun/ballistic/automatic/pistol,
+		/obj/item/gun/ballistic/revolver,
+		/obj/item/ammo_box/magazine,
+		/obj/item/ammo_box/tube,
+		/obj/item/ammo_box/a357,
+		/obj/item/ammo_box/c38,
+		/obj/item/ammo_box/l10mm,
+		/obj/item/ammo_box/a762,
+		/obj/item/ammo_box/shotgun,
+		/obj/item/ammo_box/m44,
+		/obj/item/ammo_box/a762,
+		/obj/item/ammo_box/a556/stripper,
+		/obj/item/ammo_box/needle,
+		/obj/item/ammo_box/needleap,
+		/obj/item/ammo_box/needleultra,
+		/obj/item/ammo_box/a308,
+		/obj/item/ammo_box/c4570,
+		/obj/item/ammo_box/a50MG,
+		/obj/item/gun/energy/laser/solar,
+		/obj/item/gun/energy/laser/pistol,
+		/obj/item/gun/energy/laser/plasma/pistol,
+		/obj/item/gun/energy/laser/plasma/glock,
+		/obj/item/gun/energy/laser/plasma/glock/extended,
+		/obj/item/gun/energy/laser/wattz,
+		/obj/item/gun/energy/laser/wattz/magneto,
+		/obj/item/gun/energy/laser/plasma/alien,
+		/obj/item/stock_parts/cell/ammo/ec
+		))
