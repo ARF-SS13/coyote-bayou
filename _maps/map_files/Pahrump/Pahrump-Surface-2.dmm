@@ -2032,6 +2032,10 @@
 "bzG" = (
 /turf/open/floor/plasteel/stairs/old,
 /area/f13/village)
+"bzK" = (
+/obj/effect/landmark/start/f13/ncrcombatmedic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/area/f13/ncr)
 "bzR" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -2342,6 +2346,10 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
+"bKy" = (
+/obj/effect/landmark/start/f13/ncroffduty,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/ncr)
 "bKE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/computer/slot_machine,
@@ -4563,6 +4571,8 @@
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/smelling_salts/wayfarer,
+/obj/item/smelling_salts/wayfarer,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "dAg" = (
@@ -5249,6 +5259,10 @@
 	},
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/caves)
+"ekn" = (
+/obj/effect/landmark/start/f13/ncrmedofficer,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/area/f13/ncr)
 "ekp" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -5585,6 +5599,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"ezG" = (
+/obj/structure/table/wood,
+/obj/item/smelling_salts,
+/obj/item/smelling_salts,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "ezX" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/ncr)
@@ -6726,6 +6746,14 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
+"fpg" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/legion)
 "fph" = (
 /obj/structure/rack,
 /obj/item/gun/ballistic/automatic/tribalbow,
@@ -9843,6 +9871,7 @@
 /obj/item/key/collar,
 /obj/item/key/collar,
 /obj/item/key/collar,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hyf" = (
@@ -10076,6 +10105,7 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -10770,6 +10800,7 @@
 "idE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/orator,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "ier" = (
@@ -12172,6 +12203,9 @@
 /obj/item/reagent_containers/food/snacks/f13/dog,
 /obj/item/reagent_containers/food/snacks/f13/dog,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "jfx" = (
@@ -17509,6 +17543,7 @@
 "nvL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/slavemaster,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "nwg" = (
@@ -17667,6 +17702,7 @@
 /area/f13/building)
 "nCl" = (
 /obj/structure/table,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -19003,6 +19039,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "oEX" = (
@@ -19582,6 +19619,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"oXV" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/legion)
 "oYb" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/legion)
@@ -20006,6 +20049,11 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/legion)
+"pqw" = (
+/obj/structure/bed,
+/obj/effect/landmark/start/f13/ncrrearechelon,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "pqL" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain3"
@@ -20574,6 +20622,13 @@
 "pMh" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"pMu" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/obj/effect/landmark/start/f13/ncrcombatengineer,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "pMz" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/item/storage/box/drinkingglasses,
@@ -20745,6 +20800,11 @@
 /obj/structure/flora/grass/wasteland,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"pSp" = (
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "pSu" = (
 /obj/structure/closet{
 	pixel_y = 10
@@ -22105,7 +22165,7 @@
 	},
 /area/f13/city)
 "qWU" = (
-/obj/structure/barricade/wooden,
+/obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "qWX" = (
@@ -26021,6 +26081,12 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"tQx" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/legion)
 "tQU" = (
 /obj/structure/mirror,
 /turf/closed/wall/f13/wood,
@@ -28593,6 +28659,10 @@
 /obj/item/clothing/under/f13/brahmin,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"vHe" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "vHh" = (
 /obj/machinery/vending/hydroseeds,
 /turf/open/floor/f13{
@@ -28909,6 +28979,13 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"vVR" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "vVU" = (
 /obj/machinery/hydroponics/soil{
 	mutmod = 0;
@@ -30826,6 +30903,7 @@
 /area/f13/city)
 "xox" = (
 /obj/item/twohanded/required/kirbyplants,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "xoF" = (
@@ -31418,6 +31496,7 @@
 	name = "NCR banner";
 	pixel_y = 32
 	},
+/obj/effect/landmark/start/f13/ncrcaptain,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "xMd" = (
@@ -33231,7 +33310,7 @@ bUH
 saD
 siE
 fiB
-aDY
+bKy
 wIP
 aDY
 oUe
@@ -39880,7 +39959,7 @@ fyf
 fiB
 klp
 qop
-qop
+ekn
 fiB
 ymi
 mfN
@@ -40137,7 +40216,7 @@ fyf
 fiB
 dca
 qop
-qop
+bzK
 fiB
 sPO
 uxU
@@ -40430,7 +40509,7 @@ fiB
 uUF
 hDT
 nWO
-uUF
+pqw
 vWK
 kGc
 cpK
@@ -40687,7 +40766,7 @@ fiB
 eOH
 hDT
 nWO
-uUF
+pqw
 vWK
 kGc
 cpK
@@ -42229,7 +42308,7 @@ fiB
 eOH
 hDT
 nWO
-uUF
+pqw
 vWK
 kGc
 cpK
@@ -42486,7 +42565,7 @@ fiB
 uUF
 hDT
 nWO
-uUF
+pqw
 vWK
 kGc
 cpK
@@ -47626,7 +47705,7 @@ tcs
 gkh
 fju
 nWO
-eyV
+pMu
 mnf
 fyf
 fyf
@@ -84055,7 +84134,7 @@ cLZ
 hom
 xNm
 vLc
-tQV
+vVR
 hom
 gcK
 gcK
@@ -84285,7 +84364,7 @@ hom
 fcI
 wcu
 qSM
-xNm
+vHe
 hom
 gcK
 gcK
@@ -84299,7 +84378,7 @@ hjc
 hvk
 hjc
 hjc
-hjc
+oXV
 hom
 ozI
 pIz
@@ -85051,7 +85130,7 @@ ktB
 ktB
 hom
 tQk
-xNm
+vHe
 hom
 hom
 hom
@@ -85065,7 +85144,7 @@ gcK
 gcK
 gcK
 hom
-xNm
+qWU
 xNm
 xNm
 xNm
@@ -85083,7 +85162,7 @@ xNm
 dvo
 xNm
 xNm
-xNm
+vHe
 hom
 gcK
 gcK
@@ -86084,7 +86163,7 @@ pIz
 dvo
 xNm
 xNm
-uIV
+tQx
 hom
 tHw
 rEd
@@ -86093,7 +86172,7 @@ syr
 syr
 gcK
 hom
-xNm
+qWU
 xNm
 xNm
 xNm
@@ -86344,7 +86423,7 @@ wxR
 xNm
 dvo
 wrt
-xNm
+vHe
 hom
 syr
 syr
@@ -86882,7 +86961,7 @@ xox
 hom
 aBk
 pck
-tHw
+pSp
 hom
 gcK
 gcK
@@ -87624,12 +87703,12 @@ pIz
 pIz
 frY
 hom
-kKs
+fpg
 kKs
 kKs
 jIn
 xNm
-xNm
+vHe
 hom
 syr
 syr
@@ -87649,7 +87728,7 @@ hom
 kpd
 xNm
 xNm
-xNm
+vHe
 hom
 hom
 hom
@@ -88167,7 +88246,7 @@ xNm
 hom
 xNm
 xNm
-tQV
+vVR
 hom
 gcK
 gcK
@@ -89191,7 +89270,7 @@ hom
 nMk
 xNm
 pRl
-xNm
+vHe
 hom
 gcK
 gcK
@@ -93535,7 +93614,7 @@ gcK
 hom
 xNm
 fqL
-xNm
+vHe
 hom
 gcK
 wPS
@@ -93791,7 +93870,7 @@ gcK
 gcK
 hom
 gsV
-tHw
+ezG
 xNm
 hom
 gcK
