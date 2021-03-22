@@ -29,6 +29,38 @@
 			to_chat(src, "Failed to place map")
 	images -= preview
 
+/client/proc/map_template_loadtest()
+	set category = "Debug"
+	set name = "Map template thing test"
+
+	var/datum/map_template/template
+
+	var/map = input(src, "Choose a Map Template to place","Place Map Template") as null|anything in SSmapping.map_templates
+	if(!map)
+		return
+	template = SSmapping.map_templates[map]
+
+	//var/turf/T = get_turf(mob)
+	var/turf/T = input(src, "Choose a dungeon to reload","Available dungeons") as null|anything in GLOB.dungeon_marks
+
+	if(!T)
+		return
+
+	//var/list/preview = list()
+	//for(var/S in template.get_affected_turfs(T,centered = TRUE))
+	//	var/image/item = image('icons/turf/overlays.dmi',S,"greenOverlay")
+	//	item.plane = ABOVE_LIGHTING_PLANE
+	//	preview += item
+	//var/list/orientations = list("South" = SOUTH, "North" = NORTH, "East" = EAST, "West" = WEST)
+	//var/choice = input(src, "Which orientation? Maps are normally facing SOUTH.", "Template Orientation", "South") as null|anything in orientations
+	//images += preview
+	if(alert(src,"Confirm.","Confirm","Yes","No") == "Yes")
+		if(template.load(T, centered = TRUE, orientation = SOUTH, annihilate = TRUE))
+			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
+		else
+			to_chat(src, "Failed to place map")
+	//images -= preview
+
 /client/proc/map_template_upload()
 	set category = "Debug"
 	set name = "Map Template - Upload"
@@ -65,6 +97,6 @@
 			alert(src, "The map failed validation and cannot be loaded.", "Map Errors", "Oh Darn")
 			return
 
-	SSmapping.map_templates[M.name] = M
+	SSmapping.map_templates[M.id] = M
 	message_admins("<span class='adminnotice'>[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link].</span>")
 	to_chat(src, "<span class='notice'>Map template '[map]' ready to place ([M.width]x[M.height])</span>")

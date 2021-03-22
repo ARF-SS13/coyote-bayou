@@ -15,6 +15,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\templates\dungeons\dungeons.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_extools.dm"
@@ -2417,6 +2418,7 @@
 #include "code\modules\mapping\map_config.dm"
 #include "code\modules\mapping\map_orientation_pattern.dm"
 #include "code\modules\mapping\map_template.dm"
+#include "code\modules\mapping\mapping_helpers.dm"
 #include "code\modules\mapping\minimaps.dm"
 #include "code\modules\mapping\preloader.dm"
 #include "code\modules\mapping\reader.dm"
