@@ -280,7 +280,7 @@
 	name = "Vault-Tec technical power armour"
 	desc = "(VIII) ."
 	icon_state = "vaultpa"
-	item_state = "vault_pa"
+	item_state = "vaultpa"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	slowdown = 0
 
