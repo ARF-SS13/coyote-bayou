@@ -265,9 +265,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 
@@ -289,9 +290,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
@@ -312,9 +314,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/hotrod
@@ -335,9 +338,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/vaulttec
@@ -357,9 +361,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
@@ -379,9 +384,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
@@ -401,9 +407,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger
@@ -445,9 +452,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
@@ -467,9 +475,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
@@ -518,9 +527,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/tesla
@@ -556,9 +566,10 @@
 			if(ratio <= deflection_chance)
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-			else
-				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+			if(ismob(loc))
+				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
+			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
