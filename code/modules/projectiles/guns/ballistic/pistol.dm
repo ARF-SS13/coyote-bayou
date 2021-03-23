@@ -16,7 +16,7 @@
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/update_icon_state()
-	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
 
 /obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
 	. = ..()
@@ -60,9 +60,12 @@
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
-	can_suppress = FALSE
+	can_suppress = TRUE
 	fire_delay = 2
 	can_attachments = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 21
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom
 	name = "\improper M1911 Custom"
@@ -74,8 +77,11 @@
 /obj/item/gun/ballistic/automatic/pistol/m1911/compact
 	name = "m1911 compact"
 	desc = "The compact version of the classic .45 handgun."
+	icon_state = "c1911"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = -1
+	suppressor_x_offset = 29
+	suppressor_y_offset = 21
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -184,6 +190,9 @@
 	fire_delay = 2
 	can_suppress = TRUE
 	can_automatic = TRUE
+	suppressor_state = "n99_suppressor"
+	suppressor_x_offset = 29
+	suppressor_y_offset = 15
 
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
 	name = "\improper Executive" //'the Executive'
@@ -202,9 +211,12 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
-	can_suppress = FALSE
+	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	can_attachments = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
 
 /obj/item/gun/ballistic/automatic/pistol/beretta
 	name = "beretta M9FS"
@@ -217,6 +229,9 @@
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 	can_attachments = TRUE
 	extra_damage = 3
+	can_suppress = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 20
 
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "beretta M93R"
@@ -226,6 +241,7 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
+	semi_auto = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "sig p220"
@@ -234,10 +250,13 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 0
-	can_suppress = FALSE
+	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 	can_attachments = TRUE
 	extra_damage = 2
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 20
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
 	name = "Maria"
@@ -264,8 +283,11 @@
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m127mm
 	fire_delay = 5
-	can_suppress = FALSE
+	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
+	suppressor_state = "n99_suppressor"
 
 /obj/item/gun/ballistic/automatic/pistol/pistol127/compact
 	name = "compact 12.7mm pistol"
@@ -275,6 +297,8 @@
 	extra_damage = -3 //Smaller barrel, smaller bullet velocity
 	extra_penetration = -0.06 //See above
 	spread = 3
+	suppressor_x_offset = 28
+	suppressor_y_offset = 19
 
 /obj/item/gun/ballistic/automatic/pistol/pistol127/lildevil
 	name= "\improper tactical 12.7mm pistol"
@@ -284,6 +308,8 @@
 	fire_delay = 2
 	extra_damage = 8
 	extra_penetration = 0.15
+	suppressor_x_offset = 28
+	suppressor_y_offset = 19
 
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
@@ -309,3 +335,6 @@
 	extra_damage = 5
 	extra_penetration = 5
 	can_suppress = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 28
+	suppressor_y_offset = 20
