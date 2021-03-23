@@ -71,3 +71,8 @@
 	new /obj/item/storage/fancy/cigarettes/cigpack_robustgold(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_robustgold(src)
 	new /obj/item/clothing/suit/armor/bulletproof(src)
+
+//Seris Seshata - afroterk
+/obj/item/storage/box/large/custom_kit/serisseshata/PopulateContents()
+	new /obj/item/clothing/mask/gas/seva(src)
+	new /obj/item/modkit/trenchcoatfollowers(src)
