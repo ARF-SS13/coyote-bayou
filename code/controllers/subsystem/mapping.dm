@@ -13,6 +13,9 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/map_templates = list()
 
+	var/list/map_load_marks = list()
+	var/list/dungeon_marks = list()
+
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
@@ -195,6 +198,7 @@ SUBSYSTEM_DEF(mapping)
 	initialized = SSmapping.initialized
 	map_templates = SSmapping.map_templates
 	ruins_templates = SSmapping.ruins_templates
+	map_templates = SSmapping.map_templates
 	space_ruins_templates = SSmapping.space_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	ice_ruins_templates = SSmapping.ice_ruins_templates
@@ -382,11 +386,16 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 
 	stat_map_name = "[config.map_name] (Next: [next_map_config.map_name])"
 
-/datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
+/*/datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
 	for(var/map in filelist)
 		var/datum/map_template/T = new(path = "[path][map]", rename = "[map]")
 		map_templates[T.name] = T
+*/
+/datum/controller/subsystem/mapping/proc/preloadTemplates()
+	for(var/item in subtypesof(/datum/map_template)) //Look for our template subtypes and fire them up to be used later
+		var/datum/map_template/template = new item()
+		map_templates[template.id] = template
 
 	preloadRuinTemplates()
 	preloadShuttleTemplates()
@@ -409,21 +418,21 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		if(banned.Find(R.mappath))
 			continue
 
-		map_templates[R.name] = R
-		ruins_templates[R.name] = R
+		map_templates[R.id] = R
+		ruins_templates[R.id] = R
 
 		if(istype(R, /datum/map_template/ruin/lavaland))
-			lava_ruins_templates[R.name] = R
+			lava_ruins_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/icemoon/underground))
-			ice_ruins_underground_templates[R.name] = R
+			ice_ruins_underground_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/icemoon))
-			ice_ruins_templates[R.name] = R
+			ice_ruins_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/space))
-			space_ruins_templates[R.name] = R
+			space_ruins_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/station))
-			station_room_templates[R.name] = R
+			station_room_templates[R.id] = R
 		else if(istype(R, /datum/map_template/ruin/spacenearstation))
-			station_ruins_templates[R.name] = R
+			station_ruins_templates[R.id] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	var/list/unbuyable = generateMapList("[global.config.directory]/unbuyableshuttles.txt")
@@ -607,3 +616,24 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	if(random_generated_ids_by_original[key])
 		return random_generated_ids_by_original[key]
 	. = random_generated_ids_by_original[key] = "[obfuscation_secret]%[obfuscation_next_id++]"
+
+/datum/controller/subsystem/mapping/proc/load_marks()
+	var/list/sites = SSmapping.map_load_marks
+
+	if(!LAZYLEN(sites)) //This should never happen unless the base map failed to load
+		return
+
+	for(var/M in sites) //Start it up
+		var/obj/effect/landmark/map_load_mark/mark = M
+
+		if(!LAZYLEN(mark.templates)) //Somehow our templates are empty
+			continue
+
+		var/datum/map_template/template = SSmapping.map_templates[pick(mark.templates)] //Find our actual existing template, it should be pre-loaded if it's enabled
+		//if(istype(template,/datum/map_template))
+		if(istype(template))
+			if(template.load(get_turf(mark))) //Fire it up. Should use bottom left corner
+				LAZYREMOVE(SSmapping.map_load_marks,mark)
+				qdel(mark) //Get rid of the mark
+			else
+				log_world("SSMapping: Failed to load template: [template.name] [template.mappath]")

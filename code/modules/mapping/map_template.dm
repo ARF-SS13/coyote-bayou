@@ -1,5 +1,6 @@
 /datum/map_template
 	var/name = "Default Template Name"
+	var/id = null
 	var/width = 0				//all these are for SOUTH!
 	var/height = 0
 	var/zdepth = 1
@@ -11,12 +12,18 @@
 	var/list/ztraits				//zlevel traits for load_new_z
 
 /datum/map_template/New(path = null, rename = null, cache = FALSE)
-	if(path)
+	if(path && !mappath)
 		mappath = path
+	if(!path && mappath)
+		path = mappath
 	if(mappath)
-		preload_size(mappath, cache)
+		preload_size(mappath)
 	if(rename)
 		name = rename
+	if(!name && id)
+		name = id
+	if(!id && name)
+		id = name
 
 /datum/map_template/Destroy()
 	QDEL_NULL(cached_map)
@@ -187,9 +194,12 @@
 	if(turfs_to_clean.len)
 		var/list/kill_these = list()
 		for(var/i in turfs_to_clean)
-			var/turf/T = i
+			var/turf/T = i			
 			kill_these += T.contents
 		for(var/i in kill_these)
+			if(istype(i,/obj/effect/landmark/dungeon_mark))
+				log_world("Found dungeon landmark... skipping")
+				return
 			qdel(i)
 			CHECK_TICK
 			deleted_atoms++
