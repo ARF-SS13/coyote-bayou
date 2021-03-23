@@ -252,7 +252,6 @@
 	requires_training = FALSE
 	slowdown = 1.40
 	armor_block_chance = 25
-	list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
@@ -470,7 +469,7 @@
 	item_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
-	armor_block_chance = 90
+	armor_block_chance = 85
 	deflection_chance = 35 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
@@ -523,7 +522,7 @@
 	slowdown = 0.16
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 
-	armor_block_chance = 95
+	armor_block_chance = 90
 	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
