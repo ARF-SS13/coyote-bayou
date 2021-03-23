@@ -7945,6 +7945,18 @@
 "giZ" = (
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
+"gjw" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_2";
+	pixel_x = 25;
+	pixel_y = 18
+	},
+/obj/structure/flora/tree/tall{
+	layer = 2;
+	pixel_y = 9
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "gjB" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/dirt{
@@ -11119,6 +11131,10 @@
 "iod" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/mattress{
+	icon_state = "mattress3"
+	},
+/obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
 	tag = "icon-housewood2"
@@ -64808,7 +64824,7 @@ uef
 iFr
 jJb
 iFr
-apX
+fyf
 iFr
 gcK
 gbL
@@ -68662,7 +68678,7 @@ hhx
 ykh
 fyf
 uey
-fyf
+lRT
 fyf
 fyf
 gcK
@@ -74059,7 +74075,7 @@ ykh
 fyf
 fyf
 uey
-ftr
+gjw
 fyf
 fyf
 ktB
