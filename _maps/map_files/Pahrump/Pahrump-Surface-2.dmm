@@ -15927,16 +15927,16 @@
 	},
 /area/f13/wasteland)
 "lUh" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "SW"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 5;
 	icon_state = "warningline_red"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "SW"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
