@@ -202,6 +202,10 @@
 	equip_delay_other = 60
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/emped = 0
 	var/requires_training = TRUE
 	var/armor_block_chance = 0
@@ -262,8 +266,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -288,8 +290,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -313,8 +313,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -338,8 +336,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -362,8 +358,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -386,8 +380,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -410,8 +402,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -456,8 +446,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -480,8 +468,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -533,8 +519,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -573,8 +557,6 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			else
-				if(ismob(loc))
-					to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 				block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 				return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
