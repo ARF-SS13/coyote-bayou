@@ -1156,10 +1156,6 @@
 	},
 /area/f13/ncr)
 "aRl" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "NE"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
@@ -1169,6 +1165,10 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 10;
 	icon_state = "warningline_red"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NE"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -2542,16 +2542,16 @@
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/city)
 "bSu" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "SE"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 9;
 	icon_state = "warningline_red"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SE"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -15935,7 +15935,7 @@
 	icon_state = "warningline_red"
 	},
 /obj/structure/ladder/unbreakable{
-	height = 1;
+	height = 2;
 	id = "SW"
 	},
 /turf/open/floor/f13{
@@ -30642,10 +30642,6 @@
 	},
 /area/f13/ncr)
 "xdr" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "NW"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
@@ -30655,6 +30651,10 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 6;
 	icon_state = "warningline_red"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NW"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
