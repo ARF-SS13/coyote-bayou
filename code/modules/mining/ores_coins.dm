@@ -19,7 +19,7 @@
 	novariants = TRUE // Ore stacks handle their icon updates themselves to keep the illusion that there's more going
 	var/list/stack_overlays
 
-/obj/item/stack/ore/update_overlays()
+/obj/item/stack/ore/update_overlays()//this is broken
 	. = ..()
 	var/difference = min(ORESTACK_OVERLAYS_MAX, amount) - (LAZYLEN(stack_overlays)+1)
 	if(difference == 0)
