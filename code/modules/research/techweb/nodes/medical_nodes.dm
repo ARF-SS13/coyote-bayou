@@ -52,7 +52,7 @@
 	description = "Basic fragile prosthetics for the impaired."
 	starting_node = TRUE
 	prereq_ids = list("biotech")
-	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg")
+	design_ids = list("basic_l_arm", "basic_r_arm", "basic_r_leg", "basic_l_leg", "autosurgeon")
 
 /datum/techweb_node/advance_limbs
 	id = "advance_limbs"
@@ -67,7 +67,7 @@
 	display_name = "Subdermal Implants"
 	description = "Electronic implants buried beneath the skin."
 	prereq_ids = list("biotech", "datatheory")
-	design_ids = list("implanter", "implantcase", "implant_chem", "implant_tracking", "locator")
+	design_ids = list("implanter", "implantcase", "implant_chem", "implant_tracking", "locator", "implant_loyal")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/cyber_organs
