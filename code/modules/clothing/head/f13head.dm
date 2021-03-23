@@ -301,6 +301,7 @@
 //	darkness_view = 0
 	armor_block_chance = 25
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+	requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
@@ -314,8 +315,6 @@
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
-
-	requires_training = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 	name = "raider T-45b power helmet"

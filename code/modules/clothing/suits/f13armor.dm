@@ -467,6 +467,7 @@
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0)
 	armor_block_chance = 85
 	deflection_chance = 35 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(can_penetrate_power_armor(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
@@ -480,7 +481,6 @@
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
-	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/tesla
 	name = "T-51b tesla armor"
