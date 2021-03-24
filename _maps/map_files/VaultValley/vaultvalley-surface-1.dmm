@@ -140,6 +140,10 @@
 	icon_state = "outermaincornerinner"
 	},
 /area/space)
+"aO" = (
+/obj/machinery/trading_machine/ammo,
+/turf/open/floor/f13/wood,
+/area/space)
 "aR" = (
 /obj/structure/rack,
 /obj/machinery/light/small,
@@ -1817,6 +1821,10 @@
 	icon_state = "outerbordercorner"
 	},
 /area/space)
+"hT" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/floor/wood/f13/old,
+/area/space)
 "hV" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/f13/wood,
@@ -3088,6 +3096,10 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/space)
+"nq" = (
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/space)
 "nr" = (
 /obj/structure/chair/wood/worn,
 /turf/open/floor/f13/wood,
@@ -3302,6 +3314,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/space)
+"oh" = (
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/obj/structure/simple_door/metal/dirtystore,
+/turf/open/floor/f13/wood,
+/area/space)
 "oi" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/floorgrime,
@@ -3433,6 +3452,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
+"oL" = (
+/obj/effect/turf_decal/arrows,
+/turf/open/floor/f13/wood,
+/area/space)
 "oN" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -3522,11 +3545,9 @@
 	},
 /area/space)
 "pl" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13,
+/obj/structure/table/reinforced,
+/obj/structure/barricade/bars,
+/turf/open/floor/f13/wood,
 /area/space)
 "po" = (
 /obj/structure/bed,
@@ -3614,6 +3635,13 @@
 "pG" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"pH" = (
+/obj/structure/chair/stool/f13stool{
+	icon_state = "bench";
+	name = "stool"
+	},
+/turf/open/floor/f13/wood,
 /area/space)
 "pK" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3755,6 +3783,10 @@
 	icon_state = "wooden_chair_new"
 	},
 /turf/open/floor/wood/f13/old,
+/area/space)
+"qn" = (
+/obj/effect/turf_decal/caution/stand_clear,
+/turf/open/floor/f13/wood,
 /area/space)
 "qo" = (
 /obj/structure/flora/ausbushes/stalkybush,
@@ -5233,6 +5265,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/space)
+"wz" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/wood/f13/old/ruinedstraighteast,
+/area/space)
 "wA" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -5713,6 +5749,13 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/space)
+"yF" = (
+/obj/effect/turf_decal/arrows{
+	dir = 4
+	},
+/obj/structure/railing,
+/turf/open/floor/f13/wood,
+/area/space)
 "yI" = (
 /obj/structure/bed/dogbed,
 /turf/open/floor/f13/wood,
@@ -5950,6 +5993,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/space)
+"zO" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/space)
 "zS" = (
 /mob/living/simple_animal/hostile/molerat,
 /turf/open/floor/wood/f13/old,
@@ -6037,6 +6087,10 @@
 /obj/structure/chair/wood/fancy{
 	dir = 4
 	},
+/turf/open/floor/f13/wood,
+/area/space)
+"An" = (
+/obj/machinery/trading_machine/weapon,
 /turf/open/floor/f13/wood,
 /area/space)
 "Ao" = (
@@ -6153,6 +6207,10 @@
 "AK" = (
 /obj/structure/sign/poster/contraband/pinup_funk,
 /turf/closed/wall/f13/store,
+/area/space)
+"AN" = (
+/obj/structure/simple_door/metal/store,
+/turf/open/floor/f13/wood,
 /area/space)
 "AO" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -6878,9 +6936,11 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "DX" = (
-/obj/structure/chair,
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13,
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/f13/wood,
 /area/space)
 "DY" = (
 /obj/structure/light_construct,
@@ -8938,6 +8998,12 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/space)
+"MQ" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/space)
 "MR" = (
 /obj/item/trash/candy,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -9733,6 +9799,12 @@
 	icon_state = "floorrusty"
 	},
 /area/space)
+"Qf" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/space)
 "Qh" = (
 /turf/open/floor/wood/f13/old/ruinedstraightnorth,
 /area/space)
@@ -9940,6 +10012,14 @@
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
+/area/space)
+"Ra" = (
+/obj/structure/chair/stool/f13stool{
+	dir = 1;
+	icon_state = "bench";
+	name = "stool"
+	},
+/turf/open/floor/f13/wood,
 /area/space)
 "Rb" = (
 /obj/structure/simple_door/interior,
@@ -10941,6 +11021,13 @@
 	icon_state = "bluerustysolid"
 	},
 /area/space)
+"VM" = (
+/obj/machinery/trading_machine/armor,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/space)
 "VN" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11094,6 +11181,10 @@
 "Wp" = (
 /obj/item/mop,
 /obj/structure/mopbucket,
+/turf/open/floor/f13/wood,
+/area/space)
+"Wr" = (
+/obj/machinery/trading_machine,
 /turf/open/floor/f13/wood,
 /area/space)
 "Ws" = (
@@ -11438,6 +11529,12 @@
 "XV" = (
 /obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/inside/dirt,
+/area/space)
+"XW" = (
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/space)
 "XY" = (
 /obj/item/folder/yellow,
@@ -37178,23 +37275,23 @@ hW
 hW
 hW
 hW
+pl
+iu
+iu
+iu
+pl
 uU
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
+uU
+uU
+uU
+uU
+aE
+uU
+uU
+uU
+uU
+uU
+uU
 iu
 iu
 uU
@@ -37435,23 +37532,23 @@ hW
 hW
 hW
 hW
+pl
+iu
+iu
+pl
+pl
+qn
+XW
+XW
+oh
+XW
+iu
+zO
+pH
+Ra
+pH
+Ra
 uU
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
 iu
 iu
 uU
@@ -37695,6 +37792,12 @@ hW
 uU
 iu
 iu
+uU
+iu
+yF
+Qf
+Qf
+HO
 iu
 iu
 iu
@@ -37702,13 +37805,7 @@ iu
 iu
 iu
 iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
+uU
 iu
 iu
 uU
@@ -37953,11 +38050,11 @@ uU
 uU
 uU
 uU
-iu
-iu
-iu
-iu
-iu
+DX
+yF
+MQ
+MQ
+HO
 iu
 iu
 iu
@@ -38211,17 +38308,17 @@ hW
 hW
 HO
 iu
+oL
+oL
+oL
+AN
 iu
 iu
 iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
-iu
+Wr
+An
+aO
+VM
 HO
 hW
 hW
@@ -38472,8 +38569,8 @@ HO
 HO
 HO
 HO
-iu
-iu
+AN
+AN
 HO
 HO
 HO
@@ -46336,9 +46433,9 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
+sk
+uw
+uw
 pq
 pq
 pq
@@ -46593,14 +46690,14 @@ ip
 ip
 ip
 wG
+sz
 rX
 rX
-rX
-rX
-rX
-rX
-rX
-rX
+CS
+iu
+iu
+iu
+iu
 "}
 (136,1,1) = {"
 rX
@@ -46850,13 +46947,13 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
-rX
-rX
-rX
-rX
+zC
+MK
+Kk
+CS
+iu
+iu
+iu
 bh
 "}
 (137,1,1) = {"
@@ -47108,12 +47205,12 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+Sa
+iu
+iu
+iu
+iu
 bh
 "}
 (138,1,1) = {"
@@ -47365,11 +47462,11 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+TK
+pq
 bh
 bh
 "}
@@ -47621,12 +47718,12 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
-rX
-rX
-rX
+hs
+eC
+iu
+iu
+iu
+pq
 bh
 bh
 "}
@@ -47878,12 +47975,12 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
-rX
-rX
-rX
+Qz
+hs
+eC
+iu
+iu
+pq
 bh
 bh
 "}
@@ -48135,12 +48232,12 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
-rX
-rX
-rX
+tn
+zC
+jb
+iu
+iu
+pq
 bh
 bh
 "}
@@ -48392,12 +48489,12 @@ ip
 ip
 ip
 wG
-rX
-rX
-rX
-rX
-rX
-rX
+tn
+CS
+iu
+iu
+iu
+pq
 bh
 bh
 "}
@@ -48640,7 +48737,7 @@ rX
 gy
 HO
 qk
-rX
+TK
 gy
 qk
 HO
@@ -48650,12 +48747,12 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
+jb
+iu
+pq
+pq
+pq
+pq
 bh
 "}
 (144,1,1) = {"
@@ -48907,13 +49004,13 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+iu
+pq
+iu
+iu
 "}
 (145,1,1) = {"
 rX
@@ -49164,13 +49261,13 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+iu
+pq
+iu
+iu
 "}
 (146,1,1) = {"
 rX
@@ -49421,12 +49518,12 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+iu
+pq
+iu
 bh
 "}
 (147,1,1) = {"
@@ -49664,7 +49761,7 @@ gy
 gy
 gy
 gy
-rX
+TK
 gy
 gy
 gy
@@ -49678,12 +49775,12 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+iu
+pq
+iu
 bh
 "}
 (148,1,1) = {"
@@ -49935,12 +50032,12 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
+iu
+iu
+iu
+iu
+iu
+iu
 bh
 "}
 (149,1,1) = {"
@@ -50171,7 +50268,7 @@ rX
 rX
 rX
 HO
-sF
+wz
 HO
 uc
 xQ
@@ -50192,13 +50289,13 @@ ip
 ip
 wG
 pq
-rX
-rX
-rX
-rX
-rX
-rX
-rX
+TK
+iu
+iu
+iu
+pq
+iu
+iu
 "}
 (150,1,1) = {"
 rX
@@ -50428,7 +50525,7 @@ rX
 rX
 rX
 Cm
-rX
+TK
 qB
 gy
 gy
@@ -50688,9 +50785,9 @@ qR
 gy
 Ks
 gy
-rX
+TK
 gy
-rX
+TK
 hI
 gy
 ag
@@ -50705,7 +50802,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -50953,7 +51050,7 @@ gy
 jx
 Zv
 Zv
-mp
+nq
 ZR
 gM
 HO
@@ -50962,7 +51059,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -51199,7 +51296,7 @@ rX
 HO
 rX
 QY
-rX
+TK
 HO
 Jr
 Jr
@@ -51219,7 +51316,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -51476,7 +51573,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 bh
@@ -51733,7 +51830,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 bh
@@ -51990,7 +52087,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -52241,13 +52338,13 @@ rX
 rX
 rX
 rX
-rX
+Id
 Nr
 ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -52504,7 +52601,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -52600,17 +52697,17 @@ hW
 hW
 hW
 hW
-hW
-nb
-nb
-nb
-nb
-nb
-nb
-nb
-nb
-nb
-nb
+ip
+ip
+ip
+ip
+ip
+ip
+ip
+ip
+ip
+ip
+ip
 nb
 ip
 ip
@@ -52761,7 +52858,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -52857,7 +52954,7 @@ hW
 hW
 hW
 hW
-hW
+In
 In
 In
 In
@@ -53018,7 +53115,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -53275,7 +53372,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -53532,7 +53629,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 bh
@@ -53789,7 +53886,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -54046,7 +54143,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -54303,7 +54400,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -54560,7 +54657,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -54817,7 +54914,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -55074,7 +55171,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -55331,7 +55428,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -55588,7 +55685,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -55845,7 +55942,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -56102,7 +56199,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -56359,7 +56456,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -56616,7 +56713,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -56873,7 +56970,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -57130,7 +57227,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -57387,7 +57484,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 bh
 bh
 bh
@@ -57644,7 +57741,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -57901,7 +57998,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 bh
 bh
@@ -58158,7 +58255,7 @@ ip
 ip
 ip
 wG
-rX
+tn
 rX
 rX
 rX
@@ -58414,8 +58511,8 @@ In
 In
 In
 In
-rX
-rX
+sk
+sz
 rX
 rX
 rX
@@ -58667,11 +58764,11 @@ uw
 uw
 uw
 uw
-rX
-rX
-rX
-rX
-rX
+uw
+uw
+uw
+uw
+sz
 rX
 rX
 rX
@@ -60460,7 +60557,7 @@ gy
 gy
 Ks
 gy
-gy
+hT
 rU
 ta
 rX
@@ -61928,7 +62025,7 @@ Rn
 Sy
 Po
 ec
-pl
+cw
 Rn
 sa
 jo
@@ -62440,7 +62537,7 @@ GG
 gs
 Rn
 Rn
-DX
+Po
 Cn
 cw
 Mw
