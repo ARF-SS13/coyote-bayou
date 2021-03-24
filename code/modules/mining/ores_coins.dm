@@ -89,7 +89,7 @@
 	singular_name = "lead ore chunk"
 	points = 3
 	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/metal
+	refined_type = /obj/item/stack/sheet/lead
 	merge_type = /obj/item/stack/ore/lead
 
 /obj/item/stack/ore/glass
