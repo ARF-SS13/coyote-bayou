@@ -12774,9 +12774,7 @@
 	},
 /area/f13/brotherhood)
 "kQy" = (
-/obj/structure/curtain{
-	color = #312d21
-	},
+/obj/structure/curtain,
 /obj/effect/turf_decal/loading_area/white,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -21779,9 +21777,7 @@
 	icon_state = "twindowold";
 	tag = "icon-twindowold (NORTH)"
 	},
-/obj/structure/curtain{
-	color = #312d21
-	},
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "neutralsolid"
 	},
