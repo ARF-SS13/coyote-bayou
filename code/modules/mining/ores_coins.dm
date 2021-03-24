@@ -93,6 +93,15 @@
 	w_class = WEIGHT_CLASS_TINY
 	merge_type = /obj/item/stack/ore/glass
 
+/obj/item/stack/ore/blackpowder
+	name = "blackpowder"
+	icon_state = "Blackpowder ore"
+	item_state = "Blackpowder ore"
+	singular_name = "blackpowder"
+	points = 1
+	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
+	w_class = WEIGHT_CLASS_TINY
+
 GLOBAL_LIST_INIT(sand_recipes, list(\
 	new/datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
 	))
