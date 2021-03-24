@@ -11,7 +11,6 @@
 	var/linemelee
 	var/linebullet
 	var/linelaser 
-	var/linewound
 	var/melee
 	var/bullet
 	var/laser
