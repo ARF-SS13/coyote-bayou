@@ -82,6 +82,16 @@
 	refined_type = /obj/item/stack/sheet/metal
 	merge_type = /obj/item/stack/ore/iron
 
+/obj/item/stack/ore/lead
+	name = "lead ore"
+	icon_state = "lead ore"
+	item_state = "lead ore"
+	singular_name = "lead ore chunk"
+	points = 3
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/metal
+	merge_type = /obj/item/stack/ore/lead
+
 /obj/item/stack/ore/glass
 	name = "sand pile"
 	icon_state = "Glass ore"

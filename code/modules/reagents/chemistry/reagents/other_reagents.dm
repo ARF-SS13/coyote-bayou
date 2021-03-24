@@ -1170,6 +1170,15 @@
 		new/obj/item/stack/medical/gauze/adv(get_turf(G), reac_volume)
 		G.use(reac_volume)
 
+/datum/reagent/lead
+	name = "Lead"
+	description = "Pure lead is a metal."
+	reagent_state = SOLID
+	taste_description = "lead"
+	pH = 6
+	overdose_threshold = 30
+	color = "#c2391d"
+	material = /datum/material/lead
 
 /datum/reagent/iron
 	name = "Iron"

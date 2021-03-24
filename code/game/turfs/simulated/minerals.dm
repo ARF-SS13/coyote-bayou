@@ -349,6 +349,12 @@
 
 
 
+/turf/closed/mineral/lead
+	mineralType = /obj/item/stack/ore/lead
+	spreadChance = 20
+	spread = 1
+	scan_state = "rock_Lead"
+
 /turf/closed/mineral/iron
 	mineralType = /obj/item/stack/ore/iron
 	spreadChance = 20
