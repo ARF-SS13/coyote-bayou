@@ -7421,8 +7421,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "gwq" = (
-/mob/living/simple_animal/chicken,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/chicken,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
 "gwB" = (
@@ -16241,7 +16241,7 @@
 /area/f13/bunker)
 "nQS" = (
 /obj/structure/noticeboard{
-	desc = "[FLOOR 1 - MILITARY PERSONNEL] [FLOOR 2 - WORKSHOPS & LIBRARIES] [FLOOR 3 - COUNCIL CHAMBERS & MESS HALL]";
+	desc = "\[FLOOR 1 - MILITARY PERSONNEL] \[FLOOR 2 - WORKSHOPS & LIBRARIES] \[FLOOR 3 - COUNCIL CHAMBERS & MESS HALL]";
 	name = "FLOOR INDEX"
 	},
 /turf/closed/wall/r_wall,
@@ -16633,13 +16633,13 @@
 	},
 /area/f13/tunnel)
 "oiI" = (
-/mob/living/simple_animal/cow/brahmin,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fence/wooden{
 	density = 0;
 	dir = 4;
 	pixel_y = 16
 	},
+/mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
 "oiP" = (
@@ -17613,12 +17613,12 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "pgH" = (
+/obj/structure/bed/dogbed,
 /mob/living/simple_animal/chicken/rabbit{
 	desc = "The hippiest hoppin' Proctor.";
 	dir = 8;
 	name = "Proctor Vree"
 	},
-/obj/structure/bed/dogbed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "pgS" = (
@@ -18117,8 +18117,8 @@
 	},
 /area/f13/brotherhood)
 "pAK" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/mob/living/simple_animal/hostile/raider/ranged/boss,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -20513,8 +20513,8 @@
 	},
 /area/f13/brotherhood)
 "rBs" = (
-/mob/living/simple_animal/cow/brahmin,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
 "rBS" = (
