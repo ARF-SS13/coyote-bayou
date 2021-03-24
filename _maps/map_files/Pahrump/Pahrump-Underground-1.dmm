@@ -9021,7 +9021,7 @@
 "hKS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = bosshop;
+	id = "bosshop";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -9656,6 +9656,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"ifX" = (
+/obj/machinery/button/door{
+	id = "bosshop";
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
 "igC" = (
 /obj/item/flashlight/flare/torch,
 /turf/open/indestructible/ground/inside/mountain,
@@ -13286,6 +13293,19 @@
 "lnr" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"lnF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "bosshop";
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "vault"
+	},
+/area/f13/brotherhood)
 "lnL" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -17808,7 +17828,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/poddoor/shutters{
-	id = bosshop;
+	id = "bosshop";
 	name = "brotherhood shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -86339,7 +86359,7 @@ rsM
 riY
 riY
 riY
-rsM
+lnF
 sll
 jZH
 jZH
@@ -86849,7 +86869,7 @@ jZH
 gbw
 cWT
 hiS
-rFJ
+ifX
 rEl
 hLL
 rEl
