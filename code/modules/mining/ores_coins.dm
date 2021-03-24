@@ -99,6 +99,7 @@
 	item_state = "Blackpowder ore"
 	singular_name = "blackpowder"
 	points = 1
+	merge_type = /obj/item/stack/ore/blackpowder
 	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
 	w_class = WEIGHT_CLASS_TINY
 
