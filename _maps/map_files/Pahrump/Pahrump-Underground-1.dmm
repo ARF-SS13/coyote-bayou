@@ -17,8 +17,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "abg" = (
@@ -97,8 +96,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/machinery/light/small,
 /turf/open/water,
@@ -125,12 +123,10 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/decal/cleanable/shreds,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "aeS" = (
@@ -190,8 +186,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "agD" = (
@@ -199,8 +194,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/structure/mirror{
 	pixel_x = -30
@@ -232,21 +226,6 @@
 	},
 /area/f13/brotherhood)
 "ahx" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/structure/flora/rock/pile/largejungle{
 	layer = 3.2;
 	pixel_x = 0
@@ -359,8 +338,7 @@
 	icon_state = "computer"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "anf" = (
@@ -593,8 +571,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
@@ -702,8 +679,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "aIn" = (
@@ -720,8 +696,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "aIU" = (
@@ -743,8 +718,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "aJR" = (
@@ -774,8 +748,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/grass/wasteland,
 /obj/structure/window/reinforced{
@@ -845,8 +818,7 @@
 /obj/item/target,
 /obj/structure/target_stake,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "aRj" = (
@@ -902,8 +874,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "aSZ" = (
@@ -919,8 +890,7 @@
 "aTP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "aUc" = (
@@ -978,17 +948,6 @@
 	},
 /obj/structure/bookcase/manuals/engineering,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
-/area/f13/brotherhood)
-"aZJ" = (
-/obj/structure/toilet{
-	dir = 8;
-	icon_state = "toilet00";
-	tag = "icon-toilet00 (WEST)"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
-	},
 /area/f13/brotherhood)
 "baZ" = (
 /obj/structure/fence/handrail{
@@ -1261,8 +1220,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "bjF" = (
@@ -1272,17 +1230,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "bjS" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -1403,8 +1350,7 @@
 "boe" = (
 /obj/structure/simple_door,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "bof" = (
@@ -1495,23 +1441,6 @@
 /area/f13/brotherhood)
 "bri" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -1632,8 +1561,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -1696,8 +1624,7 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "bxz" = (
@@ -1750,8 +1677,7 @@
 "bAo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil{
-	icon_state = "floor5";
-	tag = "icon-floor5"
+	icon_state = "floor5"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -1952,8 +1878,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "bJg" = (
@@ -2157,8 +2082,7 @@
 	},
 /obj/item/paper/crumpled,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "bUh" = (
@@ -2214,14 +2138,12 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "redmark";
-	tag = "icon-redmark"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "bVY" = (
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "bWk" = (
@@ -2379,8 +2301,7 @@
 "ckp" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6";
-	pixel_x = -28;
-	tag = "icon-floor6"
+	pixel_x = -28
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -2550,8 +2471,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/window/reinforced{
 	dir = 4;
-	icon_state = "twindowold";
-	tag = "icon-twindowold (EAST)"
+	icon_state = "twindowold"
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -2606,8 +2526,7 @@
 	layer = 3
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "cuj" = (
@@ -2680,14 +2599,6 @@
 	},
 /turf/open/floor/plating/f13,
 /area/f13/followers)
-"cxz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
-	},
-/area/f13/brotherhood)
 "cxQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2718,21 +2629,6 @@
 	},
 /area/f13/sewer)
 "cBm" = (
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v3,
 /obj/effect/decal/cleanable/cobweb{
@@ -2804,8 +2700,7 @@
 	products = list(/obj/item/reagent_containers/syringe = 3, /obj/item/reagent_containers/pill/patch/styptic = 10, /obj/item/reagent_containers/pill/patch/silver_sulf = 10, /obj/item/reagent_containers/medspray/styptic = 4, /obj/item/reagent_containers/medspray/silver_sulf = 4, /obj/item/reagent_containers/pill/charcoal = 2, /obj/item/reagent_containers/medspray/sterilizine = 2)
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "cCE" = (
@@ -2818,8 +2713,7 @@
 /obj/item/flashlight/lamp,
 /obj/item/trash/cheesie,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "cDp" = (
@@ -2834,8 +2728,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "cEm" = (
@@ -2896,8 +2789,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/brokenvendor,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "cHK" = (
@@ -2913,8 +2805,7 @@
 /obj/effect/decal/cleanable/robot_debris/up,
 /obj/item/paper/crumpled/ruins,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "cIi" = (
@@ -2972,8 +2863,7 @@
 "cKI" = (
 /obj/structure/chair/wood{
 	dir = 1;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (NORTH)"
+	icon_state = "wooden_chair_settler"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -3237,12 +3127,6 @@
 /obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"cWT" = (
-/turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
-	},
-/area/f13/brotherhood)
 "cXl" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/f13/wood,
@@ -3271,8 +3155,7 @@
 /obj/structure/table/wood,
 /obj/item/trash/f13/bubblegum,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "cZA" = (
@@ -3299,8 +3182,7 @@
 /obj/effect/decal/cleanable/robot_debris/up,
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "dbk" = (
@@ -3329,16 +3211,14 @@
 	products = list(/obj/item/reagent_containers/syringe = 3, /obj/item/reagent_containers/pill/patch/styptic = 10, /obj/item/reagent_containers/pill/patch/silver_sulf = 10, /obj/item/reagent_containers/medspray/styptic = 4, /obj/item/reagent_containers/medspray/silver_sulf = 4, /obj/item/reagent_containers/pill/charcoal = 2, /obj/item/reagent_containers/medspray/sterilizine = 2)
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "dcF" = (
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/side{
 	dir = 9
@@ -3351,8 +3231,7 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "dcV" = (
@@ -3443,8 +3322,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "djc" = (
@@ -3535,8 +3413,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "doi" = (
@@ -3576,8 +3453,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/shower{
 	dir = 8;
-	icon_state = "shower";
-	tag = "icon-shower (WEST)"
+	icon_state = "shower"
 	},
 /obj/structure/decoration/vent,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
@@ -3669,8 +3545,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "dwd" = (
@@ -4121,8 +3996,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -4179,8 +4053,7 @@
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "dLP" = (
@@ -4376,8 +4249,7 @@
 /obj/effect/decal/cleanable/robot_debris/up,
 /obj/structure/filingcabinet/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "dUn" = (
@@ -4479,8 +4351,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "dYi" = (
@@ -4570,8 +4441,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -4591,20 +4461,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "dZW" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -4686,12 +4547,10 @@
 	icon_state = "twindow"
 	},
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "eey" = (
@@ -4756,8 +4615,7 @@
 /obj/structure/table/wood/fancy,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "egg" = (
@@ -4829,8 +4687,7 @@
 "ejF" = (
 /obj/structure/wreck/trash/machinepile,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -5323,8 +5180,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "eDB" = (
@@ -5473,8 +5329,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -5506,8 +5361,7 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "eOh" = (
@@ -5537,8 +5391,7 @@
 	req_access = list(120)
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "eOW" = (
@@ -5569,8 +5422,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/f13{
@@ -5591,8 +5443,7 @@
 /area/f13/brotherhood)
 "eRI" = (
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "eSD" = (
@@ -5647,8 +5498,7 @@
 /area/f13/caves)
 "eWj" = (
 /turf/open/floor/f13{
-	icon_state = "redmark";
-	tag = "icon-redmark"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "eWN" = (
@@ -5738,8 +5588,7 @@
 /area/f13/followers)
 "fdp" = (
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood)
@@ -5779,8 +5628,7 @@
 "feM" = (
 /obj/effect/landmark/start/f13/offduty,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "feP" = (
@@ -5801,15 +5649,13 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/structure/mirror{
 	pixel_x = -32
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "ffJ" = (
@@ -5826,14 +5672,12 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "fhk" = (
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "fhn" = (
@@ -5912,8 +5756,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6";
-	pixel_x = -28;
-	tag = "icon-floor6"
+	pixel_x = -28
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -5949,8 +5792,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -5974,17 +5816,6 @@
 /area/f13/brotherhood)
 "flB" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -6022,8 +5853,7 @@
 	},
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "flF" = (
@@ -6138,8 +5968,7 @@
 "fpQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "fpU" = (
@@ -6305,8 +6134,7 @@
 "fAf" = (
 /obj/effect/ctf/flag_reset/red,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "fAs" = (
@@ -6344,8 +6172,7 @@
 /obj/effect/landmark/start/f13/sentinel,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "fCu" = (
@@ -6387,8 +6214,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "fDJ" = (
@@ -6396,12 +6222,10 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "fDW" = (
@@ -6412,15 +6236,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "fDZ" = (
 /obj/machinery/shower{
 	dir = 8;
-	icon_state = "shower";
-	tag = "icon-shower (WEST)"
+	icon_state = "shower"
 	},
 /obj/machinery/shower{
 	layer = 2.8;
@@ -6456,24 +6278,6 @@
 /area/f13/tunnel)
 "fFI" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -6566,8 +6370,7 @@
 "fHM" = (
 /obj/structure/punching_bag,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "fHP" = (
@@ -6722,8 +6525,7 @@
 	pixel_x = 16
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "fPj" = (
@@ -6799,8 +6601,7 @@
 "fTD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	icon_state = "brokenstore"
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/brotherhood)
@@ -6944,14 +6745,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "fZR" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -7161,8 +6954,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "gjQ" = (
@@ -7274,8 +7066,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "grT" = (
@@ -7290,8 +7081,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "grX" = (
@@ -7329,8 +7119,7 @@
 "gsw" = (
 /obj/structure/chair/wood{
 	dir = 4;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (EAST)"
+	icon_state = "wooden_chair_settler"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/seniorpaladin,
@@ -7351,8 +7140,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "stagestairs";
-	tag = "icon-stagestairs"
+	icon_state = "stagestairs"
 	},
 /area/f13/brotherhood)
 "gsV" = (
@@ -7386,8 +7174,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "guw" = (
@@ -7464,8 +7251,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "gyB" = (
@@ -7546,8 +7332,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/junglebush/b,
 /obj/structure/window/reinforced{
@@ -7591,8 +7376,7 @@
 "gCl" = (
 /obj/structure/closet/boxinggloves,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "gCT" = (
@@ -7617,8 +7401,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "gED" = (
@@ -7703,8 +7486,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "gHT" = (
@@ -7971,14 +7753,12 @@
 "gVy" = (
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
-	dir = 1;
-	tag = "icon-rwindow (NORTH)"
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/ausbushes/grassybush{
@@ -8040,8 +7820,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "gYV" = (
@@ -8057,8 +7836,7 @@
 /obj/structure/table/wood,
 /obj/item/toy/crayon/spraycan,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "gZF" = (
@@ -8162,8 +7940,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "hdP" = (
@@ -8319,8 +8096,7 @@
 "hiS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "hji" = (
@@ -8384,8 +8160,7 @@
 	anchored = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "hoj" = (
@@ -8409,13 +8184,6 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
-"hoZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
-	},
-/area/f13/brotherhood)
 "hpe" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -8435,8 +8203,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "hqd" = (
@@ -8592,8 +8359,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "huA" = (
@@ -8634,8 +8400,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "hwR" = (
@@ -8687,8 +8452,7 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -8736,8 +8500,7 @@
 /obj/machinery/light/small,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "hBC" = (
@@ -8754,21 +8517,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "hBG" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -8786,13 +8534,6 @@
 	layer = 3.2;
 	name = "mist";
 	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
 	},
 /turf/open/indestructible/ground/outside/water{
 	density = 1;
@@ -8839,8 +8580,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "hDO" = (
@@ -9014,8 +8754,7 @@
 "hKI" = (
 /obj/structure/table/wood/fancy,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "hKS" = (
@@ -9070,8 +8809,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/jukebox,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "hMw" = (
@@ -9097,8 +8835,7 @@
 	pixel_x = -16
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "hMQ" = (
@@ -9138,8 +8875,7 @@
 	pixel_y = 13
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "hND" = (
@@ -9153,8 +8889,7 @@
 	},
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "hOb" = (
@@ -9275,8 +9010,7 @@
 "hRK" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "hRT" = (
@@ -9379,21 +9113,6 @@
 	},
 /area/f13/bunker)
 "hXr" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -9456,8 +9175,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
@@ -9522,8 +9240,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "icj" = (
@@ -9566,23 +9283,6 @@
 /area/f13/tunnel)
 "ifp" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -9928,8 +9628,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /obj/structure/mirror{
 	pixel_x = -30
@@ -9998,8 +9697,7 @@
 "itP" = (
 /obj/structure/rack,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "itV" = (
@@ -10035,8 +9733,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "ivj" = (
@@ -10061,8 +9758,7 @@
 "iwe" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6";
-	pixel_x = -28;
-	tag = "icon-floor6"
+	pixel_x = -28
 	},
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -10076,8 +9772,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "iwu" = (
@@ -10135,8 +9830,7 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -10167,8 +9861,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "iCS" = (
@@ -10449,8 +10142,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/decoration/rag,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "iRb" = (
@@ -10477,8 +10169,7 @@
 	pixel_x = -15
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "iRE" = (
@@ -10556,8 +10247,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "iVb" = (
@@ -10591,8 +10281,7 @@
 	},
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	icon_state = "storewindowtop"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -10765,8 +10454,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "jdP" = (
@@ -11002,8 +10690,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "jos" = (
@@ -11014,8 +10701,7 @@
 	},
 /obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "joD" = (
@@ -11047,8 +10733,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepile,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "jqt" = (
@@ -11090,8 +10775,7 @@
 "jrX" = (
 /obj/structure/dresser,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "jta" = (
@@ -11116,8 +10800,7 @@
 "jtP" = (
 /obj/structure/simple_door,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "jug" = (
@@ -11376,17 +11059,6 @@
 /area/f13/tunnel)
 "jFH" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -11432,8 +11104,7 @@
 "jHA" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "jHN" = (
@@ -11456,10 +11127,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/temp_visual/steam_release,
 /obj/structure/flora/rock/pile/largejungle,
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/structure/spacevine{
 	name = "vines"
 	},
@@ -11496,8 +11163,7 @@
 	icon_state = "rwindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "jJT" = (
@@ -11553,15 +11219,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "jMM" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	icon_state = "storewindowtop"
 	},
 /obj/structure/table{
 	layer = 2.9
@@ -11601,8 +11265,7 @@
 	},
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "jNA" = (
@@ -11805,8 +11468,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "jWa" = (
@@ -11962,17 +11624,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "keR" = (
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -12021,8 +11672,7 @@
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/under/rank/prisoner,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "kgF" = (
@@ -12167,8 +11817,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "kny" = (
@@ -12236,8 +11885,7 @@
 "ksU" = (
 /obj/item/flag/bos,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "ktn" = (
@@ -12285,8 +11933,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/sign/poster/prewar/poster76,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "kvS" = (
@@ -12425,8 +12072,7 @@
 /obj/structure/bookcase/random,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "kCg" = (
@@ -12482,12 +12128,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "kDC" = (
@@ -12510,8 +12154,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "kDS" = (
@@ -12535,8 +12178,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/crumpled/ruins,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "kFg" = (
@@ -12558,8 +12200,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "kFA" = (
@@ -12597,8 +12238,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/offduty,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "kHS" = (
@@ -12614,8 +12254,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "kIy" = (
@@ -12659,8 +12298,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "kKx" = (
@@ -12680,8 +12318,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6";
-	pixel_x = -28;
-	tag = "icon-floor6"
+	pixel_x = -28
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -12709,8 +12346,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "kNK" = (
@@ -12769,8 +12405,7 @@
 	},
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "kQy" = (
@@ -12784,8 +12419,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "kQO" = (
@@ -12869,17 +12503,6 @@
 /area/f13/brotherhood)
 "kUz" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -12925,8 +12548,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "kVD" = (
@@ -12989,8 +12611,7 @@
 /obj/item/stack/sheet/mineral/sandbags,
 /obj/item/stack/sheet/mineral/sandbags,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "lbk" = (
@@ -13200,8 +12821,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "ljD" = (
@@ -13410,8 +13030,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lvr" = (
@@ -13546,8 +13165,7 @@
 	pixel_x = -16
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "lzc" = (
@@ -13557,8 +13175,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lzS" = (
@@ -13632,8 +13249,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/barricade/wooden/planks,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lBm" = (
@@ -13652,8 +13268,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "lCa" = (
@@ -13707,8 +13322,7 @@
 	name = "brotherhood shutters"
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "lFo" = (
@@ -13798,8 +13412,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lKk" = (
@@ -13831,8 +13444,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "lLs" = (
@@ -13920,8 +13532,7 @@
 	},
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lOt" = (
@@ -14024,8 +13635,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lRn" = (
@@ -14035,8 +13645,7 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lRu" = (
@@ -14069,8 +13678,7 @@
 	},
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "lSQ" = (
@@ -14196,8 +13804,7 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "maX" = (
@@ -14232,8 +13839,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "mbT" = (
@@ -14253,12 +13859,10 @@
 /area/f13/brotherhood)
 "mdm" = (
 /obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore";
-	tag = "icon-brokenstore"
+	icon_state = "brokenstore"
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "mdD" = (
@@ -14513,8 +14117,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "mql" = (
@@ -14535,8 +14138,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -14582,8 +14184,7 @@
 "msw" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "msK" = (
@@ -14598,8 +14199,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "muA" = (
@@ -14762,8 +14362,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "mDR" = (
@@ -14909,8 +14508,7 @@
 "mIY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil{
-	icon_state = "floor5";
-	tag = "icon-floor5"
+	icon_state = "floor5"
 	},
 /obj/structure/lattice{
 	density = 1
@@ -15048,8 +14646,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "mQX" = (
@@ -15078,8 +14675,7 @@
 "mRj" = (
 /obj/structure/chair/stool/f13stool,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "mRH" = (
@@ -15099,8 +14695,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "mRT" = (
@@ -15137,8 +14732,7 @@
 "mSU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redmark";
-	tag = "icon-redmark"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "mTq" = (
@@ -15182,8 +14776,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -15196,8 +14789,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookcase/random,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "mUo" = (
@@ -15256,12 +14848,10 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "mYV" = (
@@ -15418,8 +15008,7 @@
 	},
 /mob/living/simple_animal/mouse/white,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "nha" = (
@@ -15451,8 +15040,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "nhY" = (
@@ -15546,8 +15134,7 @@
 "non" = (
 /obj/item/kirbyplants,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "noH" = (
@@ -15558,8 +15145,7 @@
 	storage_capacity = 30
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "noI" = (
@@ -15732,8 +15318,7 @@
 	dir = 4;
 	icon_state = "toilet00";
 	pixel_x = 0;
-	pixel_y = 0;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
@@ -15775,8 +15360,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/ausbushes,
 /turf/open/indestructible/ground/inside/dirt,
@@ -15813,8 +15397,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/flasher/portable,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "nzX" = (
@@ -15851,8 +15434,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "nBk" = (
@@ -16002,8 +15584,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/junglebush/b,
@@ -16201,15 +15782,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "nPp" = (
 /obj/structure/window/reinforced{
 	dir = 1;
-	icon_state = "twindowold";
-	tag = "icon-twindowold (NORTH)"
+	icon_state = "twindowold"
 	},
 /obj/machinery/shower{
 	dir = 1;
@@ -16376,8 +15955,7 @@
 	icon_state = "tube"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "nWV" = (
@@ -16592,8 +16170,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -16608,8 +16185,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "ois" = (
@@ -16702,8 +16278,7 @@
 /obj/item/reagent_containers/food/snacks/f13/yumyum,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "olK" = (
@@ -16733,8 +16308,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "omL" = (
@@ -17021,8 +16595,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "oBU" = (
@@ -17454,8 +17027,7 @@
 /obj/structure/falsewall/reinforced,
 /obj/structure/sign/poster/prewar/poster78,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "oXG" = (
@@ -17472,8 +17044,7 @@
 "oZm" = (
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "oZF" = (
@@ -17536,16 +17107,14 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/item/paper/crumpled,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pcA" = (
 /obj/machinery/smartfridge/bottlerack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "pdh" = (
@@ -17686,8 +17255,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "pkl" = (
@@ -17695,8 +17263,7 @@
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "pkC" = (
@@ -17704,8 +17271,7 @@
 /obj/structure/wreck/trash/engine,
 /mob/living/simple_animal/mouse/gray,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pkL" = (
@@ -17733,8 +17299,7 @@
 	name = "Brotherhood Historical Archives"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "pmU" = (
@@ -17810,8 +17375,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "ppv" = (
@@ -17858,8 +17422,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "psj" = (
@@ -17879,8 +17442,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "psv" = (
@@ -17946,8 +17508,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/weightlifter,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pvH" = (
@@ -18045,8 +17606,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/brig,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "pyl" = (
@@ -18096,8 +17656,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -18112,8 +17671,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/temp_visual/paper_scatter,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pAK" = (
@@ -18207,12 +17765,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor6";
-	pixel_x = -28;
-	tag = "icon-floor6"
+	pixel_x = -28
 	},
 /obj/effect/decal/cleanable/oil{
-	icon_state = "floor5";
-	tag = "icon-floor5"
+	icon_state = "floor5"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -18338,8 +17894,7 @@
 "pQe" = (
 /obj/effect/landmark/start/f13/offduty,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "pQq" = (
@@ -18377,8 +17932,7 @@
 "pRz" = (
 /obj/structure/wreck/trash/two_tire,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pRM" = (
@@ -18416,8 +17970,7 @@
 "pTj" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pTK" = (
@@ -18435,8 +17988,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "pVA" = (
@@ -18462,8 +18014,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "pWc" = (
@@ -18547,8 +18098,7 @@
 "qaR" = (
 /obj/structure/chair/stool/retro/black,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "qaX" = (
@@ -18715,21 +18265,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "qhi" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -18849,8 +18384,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/ctf/flag_reset/blue,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "qlH" = (
@@ -19185,8 +18719,7 @@
 /obj/structure/closet/firecloset/full,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "qEd" = (
@@ -19211,8 +18744,7 @@
 "qEh" = (
 /obj/structure/chair/comfy/black{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -19276,8 +18808,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "qGe" = (
@@ -19556,8 +19087,7 @@
 	},
 /obj/structure/window/fulltile/house{
 	dir = 2;
-	icon_state = "storewindowtop";
-	tag = "icon-storewindowtop"
+	icon_state = "storewindowtop"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -19580,8 +19110,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/filingcabinet/filingcabinet,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "qUw" = (
@@ -19684,23 +19213,6 @@
 /area/f13/brotherhood)
 "qWR" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -19804,9 +19316,6 @@
 /area/f13/building)
 "raF" = (
 /obj/effect/particle_effect/steam,
-/obj/machinery/shower{
-	icon_state = "mist"
-	},
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
@@ -19854,8 +19363,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "rbE" = (
@@ -19868,8 +19376,7 @@
 	icon_state = "toilet00"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "rca" = (
@@ -19924,8 +19431,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "rex" = (
@@ -19962,8 +19468,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -20111,8 +19616,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "rkH" = (
@@ -20289,8 +19793,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "rtk" = (
@@ -20508,8 +20011,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "rBs" = (
@@ -20564,8 +20066,7 @@
 /obj/effect/decal/cleanable/robot_debris/up,
 /obj/item/paper/crumpled,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "rDR" = (
@@ -20659,8 +20160,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "rJn" = (
@@ -20898,8 +20398,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "rWE" = (
@@ -21002,8 +20501,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "rZF" = (
@@ -21303,8 +20801,7 @@
 /obj/effect/decal/cleanable/shreds,
 /obj/structure/decoration/rag,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "snJ" = (
@@ -21379,16 +20876,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
-"ssK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
-	},
-/area/f13/brotherhood)
 "ssQ" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowhorizontal"
@@ -21420,8 +20907,7 @@
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "suF" = (
@@ -21592,8 +21078,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/structure/bed,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "sEf" = (
@@ -21624,8 +21109,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "sGs" = (
@@ -21640,12 +21124,10 @@
 	termtag = "Business"
 	},
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "sGx" = (
@@ -21774,8 +21256,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 1;
-	icon_state = "twindowold";
-	tag = "icon-twindowold (NORTH)"
+	icon_state = "twindowold"
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
@@ -21873,8 +21354,7 @@
 	termtag = "Business"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "sNX" = (
@@ -21926,8 +21406,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "sPK" = (
@@ -21986,8 +21465,7 @@
 "sRA" = (
 /obj/structure/chair/wood{
 	dir = 4;
-	icon_state = "wooden_chair_settler";
-	tag = "icon-wooden_chair_settler (EAST)"
+	icon_state = "wooden_chair_settler"
 	},
 /obj/effect/landmark/start/f13/seniorknight,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -22024,8 +21502,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "sWp" = (
@@ -22040,8 +21517,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/offduty,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "sWr" = (
@@ -22054,8 +21530,7 @@
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -22102,8 +21577,7 @@
 "sZa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /obj/structure/rack,
 /turf/open/floor/f13{
@@ -22264,12 +21738,10 @@
 /obj/structure/sink{
 	dir = 8;
 	icon_state = "sink";
-	pixel_x = -12;
-	tag = "icon-sink (WEST)"
+	pixel_x = -12
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "thb" = (
@@ -22326,8 +21798,7 @@
 	icon_state = "rwindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tjt" = (
@@ -22354,8 +21825,7 @@
 "tkO" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tkU" = (
@@ -22372,8 +21842,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /turf/open/water,
 /area/f13/brotherhood)
@@ -22658,8 +22127,7 @@
 "tva" = (
 /obj/machinery/shower{
 	dir = 4;
-	icon_state = "shower";
-	tag = "icon-shower (EAST)"
+	icon_state = "shower"
 	},
 /obj/machinery/shower{
 	layer = 2.8;
@@ -22731,8 +22199,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3
 	},
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -22744,8 +22211,7 @@
 /obj/structure/table/wood,
 /obj/item/storage/box/matches,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "tvZ" = (
@@ -22792,8 +22258,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "tzl" = (
@@ -23110,8 +22575,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "tKF" = (
@@ -23123,8 +22587,7 @@
 /obj/structure/window/reinforced/spawner/north,
 /obj/item/trash/cheesie,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tKU" = (
@@ -23153,8 +22616,7 @@
 	pixel_y = 16
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tMw" = (
@@ -23173,8 +22635,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tMB" = (
@@ -23223,8 +22684,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/grass/jungle,
@@ -23253,8 +22713,7 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "tPY" = (
@@ -23310,8 +22769,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tSr" = (
@@ -23410,16 +22868,14 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "tXd" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "tXh" = (
@@ -23587,8 +23043,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "uej" = (
@@ -23669,8 +23124,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/caution/stand_clear/white,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "uhE" = (
@@ -23701,8 +23155,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "uiV" = (
@@ -23778,8 +23231,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/structure/bedsheetbin,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "umG" = (
@@ -23804,12 +23256,10 @@
 	icon_state = "twindow"
 	},
 /obj/structure/decoration/rag{
-	icon_state = "skulls";
-	tag = "icon-skulls"
+	icon_state = "skulls"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "unV" = (
@@ -23945,8 +23395,7 @@
 	},
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "utr" = (
@@ -24119,12 +23568,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
-	tag = "icon-skin"
+	icon_state = "skin"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "uAb" = (
@@ -24157,8 +23604,7 @@
 	},
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
-	dir = 1;
-	tag = "icon-rwindow (NORTH)"
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -24167,8 +23613,7 @@
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
 	dir = 1;
-	layer = 3.1;
-	tag = "icon-rwindow (NORTH)"
+	layer = 3.1
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/window/reinforced{
@@ -24203,8 +23648,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/mouse/white,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "uFj" = (
@@ -24250,12 +23694,10 @@
 /obj/structure/toilet{
 	dir = 4;
 	pixel_x = -3;
-	pixel_y = 5;
-	tag = "icon-toilet00 (EAST)"
+	pixel_y = 5
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "uGR" = (
@@ -24540,8 +23982,7 @@
 	},
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "uPY" = (
@@ -24823,8 +24264,7 @@
 "vcu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "vcL" = (
@@ -24931,8 +24371,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "vfU" = (
@@ -24979,21 +24418,6 @@
 /area/f13/tunnel)
 "viw" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -25092,8 +24516,7 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vmm" = (
@@ -25214,8 +24637,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/autoname,
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "vrC" = (
@@ -25267,8 +24689,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "vsW" = (
@@ -25287,17 +24708,6 @@
 /area/f13/tunnel)
 "vtA" = (
 /obj/effect/temp_visual/steam_release,
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -25488,15 +24898,13 @@
 	dir = 8
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "vBx" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop";
-	tag = "icon-floordirtysolid"
+	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood)
 "vBA" = (
@@ -25535,8 +24943,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "purplefull";
-	tag = "icon-purplefull"
+	icon_state = "purplefull"
 	},
 /area/f13/brotherhood)
 "vCi" = (
@@ -25639,8 +25046,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "vEJ" = (
@@ -25666,8 +25072,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "vFh" = (
@@ -25740,8 +25145,7 @@
 	},
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vIp" = (
@@ -25806,8 +25210,7 @@
 /obj/machinery/light,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "vKT" = (
@@ -25884,8 +25287,7 @@
 	},
 /obj/structure/wreck/trash/one_tire,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vOf" = (
@@ -25904,8 +25306,7 @@
 /obj/effect/decal/remains/xeno,
 /obj/item/paper/crumpled/ruins,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vOo" = (
@@ -26093,8 +25494,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/cattoy,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vWg" = (
@@ -26194,8 +25594,7 @@
 "vXX" = (
 /obj/effect/decal/cleanable/robot_debris/up,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "vYw" = (
@@ -26272,8 +25671,7 @@
 	icon_state = "twindow"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "wbe" = (
@@ -26503,18 +25901,7 @@
 "wmN" = (
 /obj/structure/weightlifter,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
-	},
-/area/f13/brotherhood)
-"wmO" = (
-/obj/structure/cable{
-	icon_state = "1-2";
-	tag = "icon-1-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/floor{
-	icon_state = "floordirty"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "wmT" = (
@@ -26661,10 +26048,6 @@
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/rock/pile/largejungle,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -26881,8 +26264,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "wGD" = (
@@ -27001,17 +26383,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "wMI" = (
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
@@ -27057,21 +26428,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "wOk" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -27282,8 +26638,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "wVl" = (
@@ -27304,8 +26659,7 @@
 /obj/effect/decal/cleanable/robot_debris/up,
 /obj/item/flashlight/lamp,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "wVD" = (
@@ -27337,8 +26691,7 @@
 /obj/structure/window/reinforced/tinted,
 /obj/item/paper/crumpled/bloody,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "wWF" = (
@@ -27408,8 +26761,7 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "wZH" = (
@@ -27626,8 +26978,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "xkd" = (
@@ -27751,10 +27102,6 @@
 "xoq" = (
 /obj/effect/temp_visual/steam_release,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xoU" = (
@@ -27895,8 +27242,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/tin,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "xwX" = (
@@ -27960,8 +27306,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor5-old";
-	tag = "icon-floor5-old"
+	icon_state = "floor5-old"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -28100,8 +27445,7 @@
 /obj/structure/barricade/wooden/planks,
 /obj/structure/decoration/rag,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "xGV" = (
@@ -28290,8 +27634,7 @@
 	pixel_y = 0
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "xPN" = (
@@ -28361,8 +27704,7 @@
 	layer = 2.9
 	},
 /turf/open/floor/f13{
-	icon_state = "redrustyfull";
-	tag = "icon-reddirtyfull"
+	icon_state = "redrustyfull"
 	},
 /area/f13/brotherhood)
 "xVt" = (
@@ -28386,8 +27728,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "xWQ" = (
@@ -28436,8 +27777,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/retro/backed,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "xYS" = (
@@ -28482,13 +27822,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy/black{
 	dir = 8;
-	icon_state = "comfychair";
-	tag = "icon-comfychair (WEST)"
+	icon_state = "comfychair"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "yay" = (
@@ -28511,16 +27849,14 @@
 	},
 /turf/open/floor/f13{
 	dir = 10;
-	icon_state = "redmark";
-	tag = "icon-redmark (SOUTHWEST)"
+	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
 "ybS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/temp_visual/paper_scatter,
 /turf/open/floor/f13{
-	icon_state = "floorrusty";
-	tag = "icon-floorrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "ycc" = (
@@ -28586,21 +27922,6 @@
 	},
 /area/f13/tunnel)
 "yfL" = (
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = -16
-	},
-/obj/machinery/shower{
-	icon_state = "water"
-	},
-/obj/machinery/shower{
-	icon_state = "water";
-	pixel_x = 6
-	},
 /obj/effect/decal/cleanable/cobweb{
 	icon_state = "smoke";
 	layer = 3.2;
@@ -28683,8 +28004,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid";
-	tag = "icon-floordirtysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "yhq" = (
@@ -76271,7 +75591,7 @@ sak
 sak
 sak
 ojS
-hoZ
+dTh
 bVY
 aSI
 jGs
@@ -76281,11 +75601,11 @@ syR
 nBM
 vcu
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 vcu
 eRI
 fhk
@@ -76528,7 +75848,7 @@ cRy
 cRy
 ygf
 ulx
-hoZ
+dTh
 fpQ
 pgu
 jGs
@@ -76539,11 +75859,11 @@ pNT
 vcu
 vcu
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 fhk
 eRI
 fhk
@@ -76551,7 +75871,7 @@ eRI
 fhk
 eRI
 fhk
-hoZ
+dTh
 vcu
 lLe
 dpR
@@ -76785,7 +76105,7 @@ sak
 sak
 sak
 ojS
-hoZ
+dTh
 bVY
 pgu
 jGs
@@ -76795,11 +76115,11 @@ wAB
 nBM
 vcu
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 vcu
-hoZ
+dTh
 vcu
 eRI
 fhk
@@ -76807,9 +76127,9 @@ eRI
 fhk
 eRI
 fhk
-hoZ
+dTh
 vcu
-hoZ
+dTh
 adR
 npK
 dpR
@@ -79688,7 +79008,7 @@ jZH
 due
 oCy
 nqk
-wmO
+ozX
 ozX
 ozX
 veN
@@ -82942,7 +82262,7 @@ jZH
 uPS
 aSW
 boe
-hoZ
+dTh
 eRI
 boe
 aSW
@@ -83711,7 +83031,7 @@ eLE
 rOj
 jZH
 fDZ
-aZJ
+rbI
 jZH
 eRI
 eRI
@@ -83721,15 +83041,15 @@ aOr
 jZH
 tKF
 cHK
-hoZ
-hoZ
+dTh
+dTh
 lJI
 wWf
-hoZ
+dTh
 gus
 sGs
 wVt
-hoZ
+dTh
 sGm
 tXd
 fAf
@@ -83978,15 +83298,15 @@ jZH
 jZH
 dcI
 vXX
-hoZ
-hoZ
+dTh
+dTh
 lSE
 rZE
-hoZ
-hoZ
+dTh
+dTh
 dcI
 tXd
-hoZ
+dTh
 qhw
 jZH
 jZH
@@ -84227,20 +83547,20 @@ xhA
 hPF
 tnk
 wIx
-ssK
-hoZ
+pfZ
+dTh
 vCh
 jfu
 phh
 jZH
 eet
 tSl
-hoZ
-hoZ
+dTh
+dTh
 rIV
 lQI
-hoZ
-hoZ
+dTh
+dTh
 oim
 fDC
 vWb
@@ -84484,28 +83804,28 @@ wIx
 upP
 wxE
 huv
-cxz
-cxz
+hDA
+hDA
 utF
 pnk
 oVE
 wIx
 qTn
 pkC
-hoZ
+dTh
 ybS
 fDJ
 xWz
 tMx
-cxz
-hoZ
-hoZ
-hoZ
+hDA
+dTh
+dTh
+dTh
 wIx
 sDK
-hoZ
+dTh
 eRI
-cxz
+hDA
 jZH
 uqO
 afw
@@ -84742,19 +84062,19 @@ wIx
 wIx
 wIx
 cCr
-hoZ
+dTh
 wIx
 uZa
 wIx
 jZH
 sNO
 wVt
-hoZ
-hoZ
+dTh
+dTh
 jos
 wVt
-hoZ
-hoZ
+dTh
+dTh
 sNO
 hwn
 jMp
@@ -84998,19 +84318,19 @@ qno
 hPF
 eDd
 wIx
-hoZ
-hoZ
+dTh
+dTh
 aHn
 jfu
 phh
 jZH
 dcI
 vIa
-cxz
-cxz
+hDA
+hDA
 dcI
 vIa
-cxz
+hDA
 pAJ
 smv
 vXX
@@ -85255,23 +84575,23 @@ jZH
 phh
 lZb
 lBX
-hoZ
-hoZ
+dTh
+dTh
 auO
 mkc
 gzZ
 jZH
 wad
 uef
-hoZ
+dTh
 dZU
 oim
 tSl
-hoZ
-hoZ
+dTh
+dTh
 lNO
 jJo
-hoZ
+dTh
 oZK
 rVE
 aTP
@@ -85512,23 +84832,23 @@ jZH
 wIx
 wIx
 wIx
-hoZ
-hoZ
+dTh
+dTh
 wIx
 wIx
 wIx
 jZH
 hDE
 cHx
-hoZ
+dTh
 dTh
 xWz
 jqs
 xvW
-hoZ
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
+dTh
 goQ
 pxS
 aTP
@@ -85769,22 +85089,22 @@ nTr
 hPF
 tnk
 wIx
-ssK
-hoZ
+pfZ
+dTh
 psg
 jfu
 phh
 jZH
 qkz
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
 iRe
-hoZ
+dTh
 uFg
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
 jMp
 wIx
 pxS
@@ -86026,8 +85346,8 @@ jZH
 phh
 jRI
 sWb
-hoZ
-hoZ
+dTh
+dTh
 kZq
 twR
 gzZ
@@ -86035,14 +85355,14 @@ jZH
 mRM
 knk
 lzc
-hoZ
+dTh
 sNO
 cHK
-hoZ
-hoZ
+dTh
+dTh
 mRM
 bTW
-hoZ
+dTh
 wIx
 tkO
 kvO
@@ -86284,7 +85604,7 @@ wIx
 wIx
 wIx
 dcg
-hoZ
+dTh
 wIx
 uZa
 wIx
@@ -86292,17 +85612,17 @@ jZH
 aeR
 vXX
 lzc
-hoZ
+dTh
 usy
 vIa
-hoZ
-hoZ
+dTh
+dTh
 aeR
 vXX
-hoZ
+dTh
 wIx
 tgY
-hoZ
+dTh
 ltR
 aTP
 kUd
@@ -86540,26 +85860,26 @@ esP
 hPF
 vrH
 wIx
-hoZ
-hoZ
+dTh
+dTh
 tyR
 jfu
 phh
 jZH
 dUm
 tjo
-hoZ
+dTh
 tMx
 flC
 joo
-hoZ
-hoZ
+dTh
+dTh
 lNO
 jJo
-hoZ
+dTh
 uJT
 hoh
-hoZ
+dTh
 aaA
 aTP
 jZH
@@ -86797,22 +86117,22 @@ jZH
 phh
 cxq
 vfQ
-hoZ
-hoZ
+dTh
+dTh
 ggq
 lDH
 gzZ
 jZH
-ssK
+pfZ
 gus
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
+dTh
+dTh
+dTh
+dTh
+dTh
 jMp
 wIx
 hNy
@@ -86863,7 +86183,7 @@ kBL
 jZH
 jZH
 gbw
-cWT
+kny
 hiS
 ifX
 rEl
@@ -87054,21 +86374,21 @@ jZH
 wIx
 wIx
 wIx
-hoZ
-hoZ
+dTh
+dTh
 wIx
 wnk
 oZK
 jZH
 vjk
-hoZ
-hoZ
+dTh
+dTh
 gYC
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
 tMx
-hoZ
+dTh
 dZU
 nyn
 wIx
@@ -87311,8 +86631,8 @@ vfU
 hPF
 eDd
 wIx
-ssK
-hoZ
+pfZ
+dTh
 gqR
 gZx
 gHh
@@ -87568,11 +86888,11 @@ jZH
 phh
 bMC
 mPa
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
+dTh
+dTh
 ber
 ptx
 rWH
@@ -87825,11 +87145,11 @@ jZH
 wIx
 wIx
 wIx
-hoZ
-hoZ
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
+dTh
+dTh
 pVV
 hiS
 lcX
@@ -88080,13 +87400,13 @@ eLE
 rOj
 gkZ
 feM
-hoZ
-hoZ
+dTh
+dTh
 eRI
-hoZ
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
+dTh
 hji
 toq
 rFJ
@@ -88337,13 +87657,13 @@ eLE
 rOj
 gkZ
 kHL
-hoZ
-hoZ
-hoZ
+dTh
+dTh
+dTh
 ulS
 mpX
 iBR
-cxz
+hDA
 pVV
 hpQ
 lcX
@@ -88356,7 +87676,7 @@ lcX
 uJY
 rFJ
 rFJ
-cWT
+kny
 rFJ
 nzX
 aER
@@ -88421,7 +87741,7 @@ qGz
 qGz
 qGz
 qGz
-cWT
+kny
 hiS
 hiS
 eZB
@@ -89948,7 +89268,7 @@ nNF
 jZH
 rFJ
 hiS
-cWT
+kny
 rFJ
 rFJ
 iIs
@@ -90694,7 +90014,7 @@ rFJ
 kQy
 wTF
 rFJ
-cWT
+kny
 oVJ
 qXo
 shO
@@ -90725,7 +90045,7 @@ qJI
 uLl
 sFc
 sLI
-cWT
+kny
 oUr
 ewy
 auO
@@ -90951,7 +90271,7 @@ rFJ
 kQy
 wTF
 uJY
-cWT
+kny
 oVJ
 oVJ
 oVJ
@@ -91445,7 +90765,7 @@ rFJ
 wUW
 pjI
 pjI
-cWT
+kny
 gsT
 vju
 rFJ
