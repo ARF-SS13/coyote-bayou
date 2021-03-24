@@ -4428,7 +4428,7 @@
 	color = "#5c131b"
 	},
 /obj/machinery/door/airlock/grunge{
-	id_tag = "sentdorm";
+	id_tag = null;
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -7715,19 +7715,6 @@
 	icon_state = "floorrusty";
 	tag = "icon-floorrusty"
 	},
-/area/f13/brotherhood)
-"gHC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "sentdorm";
-	normaldoorcontrol = 1;
-	pixel_y = 26;
-	specialfunctions = 4
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/wood,
 /area/f13/brotherhood)
 "gHT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -83226,7 +83213,7 @@ iqE
 lcX
 heI
 wIx
-gHC
+vwp
 bHQ
 tVL
 vyb
