@@ -656,7 +656,7 @@
 /area/f13/brotherhood)
 "aFu" = (
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -697,7 +697,7 @@
 /area/f13/tunnel)
 "aHn" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm2;
+	id_tag = "bosdorm2";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2016,7 +2016,7 @@
 "bMC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm9;
+	id = "bosdorm9";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -2599,7 +2599,7 @@
 "ctL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/structure/lattice{
@@ -3641,7 +3641,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4428,7 +4428,7 @@
 	color = "#5c131b"
 	},
 /obj/machinery/door/airlock/grunge{
-	id_tag = sentdorm;
+	id_tag = "sentdorm";
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -8596,7 +8596,7 @@
 "huv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm5;
+	id_tag = "bosdorm5";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -9990,7 +9990,7 @@
 /obj/effect/decal/cleanable/ash/snappop_phoenix,
 /obj/item/cigbutt/cigarbutt,
 /obj/machinery/button/door{
-	id = kcdorm;
+	id = "kcdorm";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -10885,7 +10885,7 @@
 /area/f13/tunnel)
 "jiw" = (
 /obj/machinery/door/poddoor/gate{
-	id = boscheckpoint;
+	id = "boscheckpoint";
 	name = "Checkpoint";
 	req_access_txt = "120";
 	req_one_access_txt = "120"
@@ -11740,7 +11740,7 @@
 "jRI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm7;
+	id = "bosdorm7";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -13638,7 +13638,7 @@
 /area/f13/tunnel)
 "lBX" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm6;
+	id_tag = "bosdorm6";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13683,7 +13683,7 @@
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm4;
+	id = "bosdorm4";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -13694,7 +13694,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /turf/open/floor/f13{
@@ -14039,7 +14039,7 @@
 /area/f13/tcoms)
 "lRC" = (
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -14176,7 +14176,7 @@
 "lZb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm6;
+	id = "bosdorm6";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -14357,7 +14357,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/machinery/button/door{
-	id = bosdorm2;
+	id = "bosdorm2";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -15034,7 +15034,7 @@
 /area/f13/tunnel)
 "mPa" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm9;
+	id_tag = "bosdorm9";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -17285,7 +17285,7 @@
 /area/f13/brotherhood)
 "oRt" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = sentdorm;
+	id_tag = null;
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -17747,7 +17747,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/machinery/button/door{
-	id = bosdorm1;
+	id = "bosdorm1";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -17844,7 +17844,7 @@
 /area/f13/clinic)
 "psg" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm3;
+	id_tag = "bosdorm3";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -22012,7 +22012,7 @@
 /area/f13/tunnel)
 "sWb" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm7;
+	id_tag = "bosdorm7";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -22272,7 +22272,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -22763,7 +22763,7 @@
 /obj/item/bedsheet/black,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm3;
+	id = "bosdorm3";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -22780,7 +22780,7 @@
 /area/f13/brotherhood)
 "tyR" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm4;
+	id_tag = "bosdorm4";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -23719,7 +23719,7 @@
 	color = "#5c131b"
 	},
 /obj/machinery/door/airlock/grunge{
-	id_tag = kcdorm;
+	id_tag = "kcdorm";
 	req_access_txt = "120"
 	},
 /turf/open/floor/wood/f13/stage_t,
@@ -25254,7 +25254,7 @@
 /area/f13/clinic)
 "vsT" = (
 /obj/machinery/door/poddoor/shutters{
-	id = bosdoors;
+	id = "bosdoors";
 	name = "brotherhood shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -25523,7 +25523,7 @@
 /area/f13/tunnel)
 "vCh" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm1;
+	id_tag = "bosdorm1";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -26670,7 +26670,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm5;
+	id = "bosdorm5";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -82709,7 +82709,7 @@ rFJ
 lcX
 ldi
 lcX
-lcX
+kyf
 aej
 wIx
 iHW
