@@ -26,13 +26,13 @@
 	//var/tierline = list(10, 20, 45, 60, 75, 90, 105, 125, 210, 235, 260)
 	var/tierline = list(30, 40, 65, 80, 95, 110, 135, 145, 230, 255, 285)
 
-/datum/armor/New(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, linewound = 0, melee = 0, bullet = 0, laser = 0,  energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
+/datum/armor/New(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0,  energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
 	
 	if(tier) //ASSIGNS ARMOR VALUES BASED ON TIER, IT WILL USE ARMOR VALUES INSTEAD OF THE TIER FOR THAT VALUE IF THE ARMOR VALUE IS PRESENT
 		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
 		linebullet = linebullet+tierline[tier]
 		linelaser = linelaser+tierline[tier]
-		wound = linewound+tierline[tier]
+		wound = (wound+tierline[tier])/3
 
 	src.linemelee = linemelee
 	src.linebullet = linebullet
