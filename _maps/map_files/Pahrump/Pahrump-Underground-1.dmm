@@ -230,31 +230,6 @@
 	layer = 3.2;
 	pixel_x = 0
 	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ahB" = (
@@ -726,21 +701,6 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood)
-"aKp" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "aKH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1229,39 +1189,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"bjS" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "bki" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood/normal{
@@ -1318,25 +1245,11 @@
 /obj/structure/flora/junglebush{
 	pixel_x = -15
 	},
-/obj/effect/temp_visual/small_smoke,
 /turf/open/water,
 /area/f13/brotherhood)
 "bmK" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
-"bmZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/handrail{
-	density = 0;
-	pixel_y = 16
-	},
-/obj/effect/temp_visual/small_smoke,
-/obj/structure/lattice{
-	layer = 3
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "boc" = (
 /obj/machinery/door/airlock/medical{
@@ -1442,44 +1355,6 @@
 "bri" = (
 /obj/effect/temp_visual/steam_release,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "brp" = (
@@ -1966,19 +1841,6 @@
 /obj/machinery/rnd/production/protolathe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"bOw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/brotherhood)
 "bPh" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/decoration/rag{
@@ -2014,18 +1876,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
-"bQZ" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "bRf" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
@@ -2116,18 +1966,9 @@
 	},
 /area/f13/tunnel)
 "bVN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/temp_visual/steam_release,
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -2328,14 +2169,7 @@
 	},
 /area/f13/brotherhood)
 "cmy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/junglebush/b,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "cmM" = (
@@ -2631,30 +2465,6 @@
 "cBm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v3,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "cBH" = (
@@ -3053,17 +2863,6 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/brotherhood)
-"cUh" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/temp_visual/small_smoke/halfsecond,
-/obj/structure/disposalpipe/junction/flip{
-	dir = 8
-	},
-/obj/effect/temp_visual/small_smoke,
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "cUk" = (
 /obj/machinery/light{
@@ -3519,25 +3318,11 @@
 /area/f13/brotherhood)
 "dur" = (
 /obj/structure/flora/grass/wasteland,
-/obj/effect/temp_visual/steam_release,
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
 	},
 /obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "dvP" = (
@@ -3762,22 +3547,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"dAz" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "dBy" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice/d20,
@@ -4158,8 +3927,6 @@
 	},
 /area/f13/clinic)
 "dQB" = (
-/obj/effect/decal/cleanable/oil,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/ripped,
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/r_wall/rust,
@@ -4354,26 +4121,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
-"dYi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "dYr" = (
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/protolathe/department/medical,
@@ -4464,25 +4211,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
-"dZW" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "eag" = (
 /obj/structure/simple_door/metal,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -5346,7 +5074,6 @@
 /obj/structure/disposalpipe/broken{
 	dir = 8
 	},
-/obj/effect/temp_visual/small_smoke,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "eNq" = (
@@ -5692,12 +5419,6 @@
 /obj/structure/lattice{
 	density = 1
 	},
-/obj/effect/temp_visual/small_smoke/halfsecond,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -5814,37 +5535,6 @@
 /obj/item/crafting/wonderglue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"flB" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "flC" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/north{
@@ -6000,28 +5690,6 @@
 "frS" = (
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/tcoms)
-"fsP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "fsQ" = (
 /obj/structure/lattice{
 	layer = 3
@@ -6276,56 +5944,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"fFI" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -22
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "fGA" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -6605,15 +6223,6 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/brotherhood)
-"fUz" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "fUZ" = (
 /obj/effect/decal/cleanable/blood,
 /obj/structure/barricade/wooden/strong,
@@ -6744,40 +6353,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"fZR" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "gaf" = (
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/wood,
@@ -7303,20 +6878,6 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"gzU" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/structure/disposalpipe/trunk{
-	layer = 3
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "gzZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -7969,19 +7530,6 @@
 	icon_state = "whiterustysolid"
 	},
 /area/f13/tunnel)
-"hel" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "hev" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -8207,25 +7755,6 @@
 	},
 /area/f13/brotherhood)
 "hqd" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
 /obj/structure/flora/junglebush/c,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -8516,31 +8045,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"hBG" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "hBU" = (
 /obj/structure/sign/poster/prewar/poster90{
 	pixel_y = 32
@@ -8714,18 +8218,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
-"hJM" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "hJV" = (
 /obj/effect/decal/waste,
 /turf/open/indestructible/ground/inside/mountain,
@@ -9112,33 +8604,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
-"hXr" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "hXZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/processor,
@@ -9281,56 +8746,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
-"ifp" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -17
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "ifD" = (
 /obj/structure/table,
 /obj/machinery/processor/chopping_block,
@@ -9936,38 +9351,6 @@
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
 	},
 /turf/open/floor/plating/ashplanet/wateryrock{
 	baseturfs = /turf/open/floor/plating/f13/outside/desert
@@ -11057,30 +10440,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
-"jFH" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "jFU" = (
 /obj/machinery/chem_master,
 /turf/open/floor/f13{
@@ -11123,36 +10482,6 @@
 	icon_state = "vault"
 	},
 /area/f13/brotherhood)
-"jJh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/temp_visual/steam_release,
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "jJo" = (
 /obj/structure/window/reinforced/spawner/north{
 	dir = 4;
@@ -11624,25 +10953,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "keR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
 /obj/structure/glowshroom/single,
 /obj/structure/campfire/barrel,
 /turf/open/indestructible/ground/outside/water,
@@ -12096,17 +11406,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
-"kCC" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "kCG" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
@@ -12502,33 +11801,6 @@
 /turf/closed/wall,
 /area/f13/brotherhood)
 "kUz" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
 /obj/structure/wreck/car{
 	layer = 2
 	},
@@ -12620,26 +11892,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
-"lcb" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "lcn" = (
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
@@ -13063,21 +12315,6 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
-"lwa" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "lwc" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -13328,12 +12565,6 @@
 "lFo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/debris/v4,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lGo" = (
@@ -13345,15 +12576,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/brotherhood)
-"lIm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/temp_visual/small_smoke,
-/obj/structure/lattice{
-	layer = 3
-	},
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "lIx" = (
 /obj/structure/simple_door/bunker,
@@ -13368,33 +12590,7 @@
 	},
 /area/f13/tunnel)
 "lIH" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/junglebush/large,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lJI" = (
@@ -14023,16 +13219,6 @@
 /obj/structure/disposalpipe/broken{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "mmL" = (
@@ -14467,40 +13653,6 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
-"mIz" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "mIV" = (
 /obj/structure/mirror,
 /turf/closed/wall/r_wall,
@@ -14616,20 +13768,6 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
-"mOB" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "mOF" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -14739,22 +13877,9 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/tunnel)
 "mTt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
 	},
 /obj/structure/glowshroom/single,
 /turf/open/indestructible/ground/inside/mountain,
@@ -15636,42 +14761,6 @@
 /obj/effect/decal/waste,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
-"nKd" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -17
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "nKy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -15865,18 +14954,6 @@
 /obj/machinery/bookbinder,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
-"nTl" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/machinery/light/small,
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "nTr" = (
 /obj/structure/sign/poster/prewar/poster61,
@@ -16218,28 +15295,6 @@
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
-"oiP" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "ojR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -16501,33 +15556,6 @@
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
-"oxE" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "oyr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/armor/tier3,
@@ -16742,17 +15770,6 @@
 /area/f13/tunnel)
 "oMK" = (
 /obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
 /obj/structure/glowshroom/single,
 /turf/open/floor/plating/ashplanet/wateryrock{
 	baseturfs = /turf/open/floor/plating/f13/outside/desert
@@ -17328,22 +16345,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
-"pnC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "pnL" = (
 /obj/structure/curtain{
 	open = 0
@@ -18264,49 +17265,6 @@
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"qhi" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "qhk" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/indestructible/ground/inside/mountain,
@@ -18515,11 +17473,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/trunk{
 	layer = 3
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -18924,12 +17877,6 @@
 /obj/structure/lattice{
 	density = 1
 	},
-/obj/effect/temp_visual/small_smoke/halfsecond,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -19126,17 +18073,6 @@
 /area/f13/tunnel)
 "qUL" = (
 /obj/structure/flora/junglebush/large,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
 /turf/open/indestructible/ground/outside/water{
 	density = 1;
 	desc = "Deep lake water, filled with who knows what...";
@@ -19211,36 +18147,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"qWR" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "qXo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/sleeper{
@@ -19314,40 +18220,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"raF" = (
-/obj/effect/particle_effect/steam,
-/obj/structure/flora/rock/jungle,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "rbg" = (
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/ruins,
@@ -19437,21 +18309,6 @@
 "rex" = (
 /turf/closed/indestructible/rock,
 /area/f13/bunker)
-"rfd" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/temp_visual/small_smoke/halfsecond,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "rfs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock/jungle{
@@ -20958,34 +19815,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"sya" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "syq" = (
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/indestructible/ground/inside/subway,
@@ -21436,20 +20265,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"sPZ" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "sQU" = (
 /obj/structure/lattice{
 	density = 1
@@ -21597,17 +20412,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood)
-"taE" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "taI" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -21658,11 +20462,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/broken{
 	dir = 2
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -21868,41 +20667,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "tmh" = (
-/obj/effect/particle_effect/steam,
 /obj/structure/flora/rock/jungle,
 /obj/structure/spacevine{
 	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_y = -14
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -22043,20 +20810,6 @@
 /obj/machinery/light/small{
 	brightness = 3;
 	dir = 8
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
-"tsd" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/machinery/light/small{
-	dir = 1
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -23022,11 +21775,6 @@
 /obj/structure/lattice{
 	density = 1
 	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 4
@@ -23088,16 +21836,6 @@
 	},
 /obj/structure/disposalpipe/broken{
 	dir = 4
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
@@ -24416,43 +23154,6 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
-"viw" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -22
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "vjk" = (
 /obj/structure/window/reinforced{
 	color = "#3e3d42";
@@ -24706,43 +23407,6 @@
 /obj/machinery/door/airlock/abandoned,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
-"vtA" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -22
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "vuf" = (
 /obj/structure/bodycontainer/morgue{
 	dir = 8
@@ -24773,16 +23437,6 @@
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
-"vvn" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "vvB" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib2-old"
@@ -24830,7 +23484,6 @@
 /area/f13/tunnel)
 "vxo" = (
 /obj/structure/flora/junglebush/large,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/junglebush/b,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -24976,16 +23629,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/broken{
 	dir = 2
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
 	},
 /obj/structure/lattice{
 	density = 1
@@ -25862,42 +24505,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood)
-"wmG" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -22
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "wmN" = (
 /obj/structure/weightlifter,
 /turf/open/floor/f13{
@@ -26047,13 +24654,6 @@
 "wxb" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/flora/rock/pile/largejungle,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wxE" = (
@@ -26233,21 +24833,6 @@
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/supermart,
 /area/f13/tunnel)
-"wFG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/handrail{
-	density = 0;
-	pixel_y = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	layer = 3
-	},
-/obj/effect/temp_visual/small_smoke,
-/obj/structure/lattice{
-	layer = 3
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "wFL" = (
 /obj/structure/chair{
 	dir = 8
@@ -26382,34 +24967,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"wMI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "wNs" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt,
@@ -26427,42 +24984,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"wOk" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "wOp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock/jungle{
@@ -26725,21 +25246,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/tunnel)
-"wXZ" = (
-/obj/structure/lattice{
-	density = 1
-	},
-/obj/structure/disposalpipe/junction{
-	dir = 1
-	},
-/obj/effect/temp_visual/small_smoke,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood)
 "wYl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can,
@@ -26837,16 +25343,9 @@
 	},
 /area/f13/brotherhood)
 "xdB" = (
-/obj/effect/temp_visual/steam_release,
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/spacevine{
 	name = "vines"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -27018,39 +25517,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"xme" = (
-/obj/structure/flora/junglebush/large,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -8;
-	pixel_y = -12
-	},
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
 "xmX" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -27099,11 +25565,6 @@
 /obj/machinery/computer/security/bos,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"xoq" = (
-/obj/effect/temp_visual/steam_release,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "xoU" = (
 /obj/structure/table/wood/fancy/black{
 	desc = "A set of thin pipes that no longer function.";
@@ -27310,18 +25771,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
-"xzv" = (
-/obj/structure/flora/junglebush/large,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = -24;
-	pixel_y = -24
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "xzX" = (
 /obj/item/storage/trash_stack,
 /obj/structure/handrail/g_central{
@@ -27354,7 +25803,10 @@
 /area/f13/brotherhood)
 "xBu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/furnace,
+/obj/structure/table{
+	layer = 2.9
+	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "xCd" = (
@@ -27650,21 +26102,6 @@
 	icon_state = "casino"
 	},
 /area/f13/brotherhood)
-"xRH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "harmless steam"
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "xSb" = (
 /obj/structure/bookcase/manuals,
 /turf/open/floor/f13{
@@ -27922,52 +26359,10 @@
 	},
 /area/f13/tunnel)
 "yfL" = (
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 16
-	},
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0;
-	pixel_y = -8
-	},
 /obj/structure/debris/v3{
 	layer = 2
 	},
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
-"yfX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb{
-	icon_state = "smoke";
-	layer = 3.2;
-	name = "mist";
-	pixel_x = 0
-	},
-/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ygf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -71215,7 +69610,7 @@ vDn
 amV
 tKq
 ejE
-bOw
+tKq
 ejE
 tKq
 ejE
@@ -72258,7 +70653,7 @@ vcu
 vcu
 fhk
 abN
-nTl
+blk
 jZH
 lPz
 jZH
@@ -72514,8 +70909,8 @@ abN
 vcu
 vcu
 fhk
-kCC
-gzU
+abN
+gPs
 jZH
 mUo
 jZH
@@ -73794,13 +72189,13 @@ dIf
 cWR
 jZH
 jZH
-tsd
+wKZ
 qNf
 vcu
 vcu
 vcu
 qNf
-hel
+ogO
 jZH
 lvv
 lPz
@@ -74051,12 +72446,12 @@ uKh
 cWR
 jZH
 jZH
-rAh
+iRb
 qNf
 vcu
 vcu
 vcu
-bQZ
+qNf
 qsg
 jZH
 jZH
@@ -74308,13 +72703,13 @@ jZH
 jZH
 jZH
 jZH
-bQZ
+qNf
 qNf
 vcu
 vcu
 vcu
 qNf
-bQZ
+qNf
 abN
 jZH
 jZH
@@ -74572,7 +72967,7 @@ sLI
 sLI
 qNf
 iYM
-bQZ
+qNf
 aUc
 jZH
 jZH
@@ -74821,14 +73216,14 @@ sak
 wne
 jZH
 bUR
-bQZ
+qNf
 hxe
 qNf
 vcu
 vcu
 vcu
 qNf
-bQZ
+qNf
 tcW
 jZm
 eBz
@@ -75086,12 +73481,12 @@ vcu
 vcu
 jVZ
 qNf
-bQZ
-bQZ
+qNf
+qNf
 abN
 blk
 hVC
-tsd
+wKZ
 abN
 abN
 ioj
@@ -76372,7 +74767,7 @@ mVX
 jVZ
 qNf
 qNf
-bQZ
+qNf
 qNf
 qNf
 xMm
@@ -76628,9 +75023,9 @@ vcu
 fhk
 vcu
 qNf
-bQZ
+qNf
 mmF
-bQZ
+qNf
 ogO
 wpH
 cLV
@@ -76898,8 +75293,8 @@ sLI
 epW
 epW
 epW
-wXZ
-wXZ
+epW
+epW
 epW
 jZH
 rOj
@@ -77392,7 +75787,7 @@ jZH
 jZH
 jZH
 jZH
-rAh
+iRb
 qNf
 vcu
 vcu
@@ -77649,7 +76044,7 @@ xtE
 cWR
 jZH
 jZH
-bQZ
+qNf
 qNf
 vcu
 vcu
@@ -79197,7 +77592,7 @@ vcu
 vcu
 vcu
 abN
-cUh
+gaz
 jZH
 fvW
 bHQ
@@ -79448,7 +77843,7 @@ kKK
 oWE
 nUD
 jZH
-rfd
+wKZ
 abN
 vcu
 vcu
@@ -85950,7 +84345,7 @@ oee
 jtk
 kBL
 lcX
-bmZ
+vum
 jZH
 paF
 paF
@@ -89287,7 +87682,7 @@ vRu
 jZH
 jZH
 jZH
-lIm
+qHR
 vFT
 lcX
 lcX
@@ -90062,7 +88457,7 @@ dmp
 vFT
 lcX
 kBL
-wFG
+sPU
 jZH
 rWH
 jZH
@@ -90072,8 +88467,8 @@ jZH
 jZH
 sUl
 uoO
-lcb
-lwa
+wEX
+xVz
 xVz
 xVz
 xVz
@@ -90329,9 +88724,9 @@ jZH
 jZH
 sUl
 uoO
-oxE
-wmG
-lwa
+wEX
+xVz
+xVz
 xVz
 xVz
 xVz
@@ -90586,10 +88981,10 @@ jZH
 jZH
 sUl
 uoO
-lcb
-nKd
-dAz
-lwa
+wEX
+xVz
+xVz
+xVz
 xVz
 xVz
 xVz
@@ -90843,11 +89238,11 @@ jZH
 jZH
 sUl
 uoO
-oxE
-lwa
+wEX
+xVz
 bfh
 lIH
-xRH
+sUl
 lFo
 eDw
 dWT
@@ -91100,12 +89495,12 @@ jZH
 jZH
 eDw
 uoO
-lcb
-oiP
 wEX
-xme
+xVz
+wEX
 qUL
-mOB
+qUL
+qGe
 tkU
 kqS
 mzK
@@ -91357,12 +89752,12 @@ jZH
 jZH
 sUl
 xVz
-sPZ
-sya
+xdB
+sUl
 isU
 oMK
 iGY
-mIz
+otf
 qxo
 oNu
 suF
@@ -91614,13 +90009,13 @@ jZH
 jZH
 nby
 sUl
-yfX
-fsP
+jFA
+jFA
 hqd
 xdB
 dur
 tmh
-aKp
+qxo
 qxo
 qxo
 xbz
@@ -91872,12 +90267,12 @@ slT
 slT
 sUl
 sUl
-dZW
+uoO
 yfL
-hBG
+otf
 kUz
 bri
-wMI
+iGu
 qxo
 qxo
 iGu
@@ -92129,12 +90524,12 @@ slT
 slT
 sUl
 xVz
-hJM
-wOk
-fZR
-vtA
-ifp
-wMI
+uoO
+otf
+otf
+xVz
+bri
+iGu
 qxo
 qxo
 iGu
@@ -92386,11 +90781,11 @@ jZH
 nby
 sUl
 sUl
-taE
-qhi
-hXr
-viw
-fFI
+uoO
+otf
+otf
+xVz
+iGu
 cBm
 qxo
 qxo
@@ -92643,11 +91038,11 @@ jZH
 sUl
 sUl
 sUl
-jFH
+sUl
 ahx
-bjS
-flB
-qWR
+otf
+xVz
+iGu
 keR
 qxo
 oNu
@@ -92901,11 +91296,11 @@ sUl
 wEX
 jFA
 wxb
-xoq
-jJh
+sUl
+xdB
 bVN
-raF
-fUz
+tmh
+qxo
 qxo
 oNu
 kqS
@@ -93158,11 +91553,11 @@ wEX
 uoO
 cmy
 vxo
-xzv
-pnC
+isU
+uoO
 mTt
-dYi
-vvn
+sUl
+nIl
 gbA
 dkT
 kqS
