@@ -2666,7 +2666,7 @@
 "cxq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = bosdorm8;
+	id = "bosdorm8";
 	normaldoorcontrol = 1;
 	pixel_x = 28;
 	specialfunctions = 4
@@ -24919,7 +24919,7 @@
 /area/f13/tunnel)
 "vfQ" = (
 /obj/machinery/door/airlock/grunge{
-	id_tag = bosdorm8;
+	id_tag = "bosdorm8";
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
