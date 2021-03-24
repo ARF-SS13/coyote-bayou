@@ -181,7 +181,7 @@ Lieutenant
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	gloves 		= /obj/item/clothing/gloves/f13/leather
 	ears 		= /obj/item/radio/headset/headset_ncr_com
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
+	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	suit_store	= /obj/item/gun/ballistic/automatic/service
 	belt		= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
@@ -653,7 +653,7 @@ Veteran Ranger
 
 /datum/outfit/loadout/vrbrush
 	name = "Brush Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush 
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570=3)
 
