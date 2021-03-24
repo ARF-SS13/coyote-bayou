@@ -326,11 +326,20 @@
 
 	if(href_list["strengthup"])
 		fuel_injection++
+		var/message = "[key_name(usr)] has changed the fuel injection to [fuel_injection] for the AM."
+		log_game(message)
+		log_admin(message)
+		message_admins(message)
 
 	if(href_list["strengthdown"])
 		fuel_injection--
 		if(fuel_injection < 0)
 			fuel_injection = 0
+		var/message = "[key_name(usr)] has changed the fuel injection to [fuel_injection] for the AM."
+		log_game(message)
+		log_admin(message)
+		message_admins(message)
+
 
 	if(href_list["refreshstability"])
 		check_core_stability()
