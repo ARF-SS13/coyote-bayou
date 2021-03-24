@@ -15587,7 +15587,7 @@
 	dir = 2;
 	dwidth = 1;
 	height = 4;
-	id = "bos_level_1";
+	id = "bos_level_3";
 	name = "Level 3: Archives; Recreation; Elders";
 	width = 5
 	},
@@ -19762,8 +19762,8 @@
 	dir = 2;
 	dwidth = 1;
 	height = 4;
-	id = "bos_level_3";
-	name = "Level 3: Engineering";
+	id = "bos_level_2";
+	name = "Level 2: Engineering";
 	width = 5
 	},
 /turf/open/floor/plasteel/elevatorshaft,
@@ -21445,8 +21445,8 @@
 	dir = 2;
 	dwidth = 1;
 	height = 4;
-	id = "bos_level_2";
-	name = "Level 2: Operations";
+	id = "bos_level_1";
+	name = "Level 1: Operations";
 	roundstart_template = /datum/map_template/shuttle/bos/elevator;
 	width = 5
 	},
@@ -25830,12 +25830,6 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
-/area/f13/brotherhood)
-"vLG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/rack,
-/obj/item/multitool,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "vLO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -77625,7 +77619,7 @@ uoO
 uoO
 jZH
 due
-vLG
+kYh
 sjk
 pis
 pis
@@ -87604,7 +87598,7 @@ jZH
 jZH
 jZH
 jZH
-gSh
+kIJ
 jZH
 jZH
 jZH
@@ -87657,7 +87651,7 @@ psv
 ryL
 jZH
 jZH
-kIJ
+gSh
 jZH
 jZH
 rWH
