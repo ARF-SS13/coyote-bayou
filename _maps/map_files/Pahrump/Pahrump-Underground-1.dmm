@@ -4428,7 +4428,7 @@
 	color = "#5c131b"
 	},
 /obj/machinery/door/airlock/grunge{
-	id_tag = null;
+	id_tag = sentdorm;
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11924,6 +11924,19 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"kbf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "sentdorm";
+	normaldoorcontrol = 1;
+	pixel_y = 26;
+	specialfunctions = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/f13/brotherhood)
 "kbm" = (
 /obj/machinery/door/airlock/command/glass{
 	name = "Control Room";
@@ -83213,7 +83226,7 @@ iqE
 lcX
 heI
 wIx
-vwp
+kbf
 bHQ
 tVL
 vyb
