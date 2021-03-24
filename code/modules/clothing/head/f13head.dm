@@ -234,7 +234,7 @@
 	var/emped = 0
 	var/requires_training = TRUE
 	var/armor_block_chance = 0
-	var/list/protected_zones = list(BODY_ZONE_HEAD)
+	var/const/list/protected_zones = list(BODY_ZONE_HEAD)
 	var/deflection_chance = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
