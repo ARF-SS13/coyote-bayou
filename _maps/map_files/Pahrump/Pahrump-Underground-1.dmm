@@ -2711,7 +2711,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "cUF" = (
-/obj/machinery/workbench/forge,
+/obj/machinery/workbench/forge{
+	desc = "A reactor-heated megafurnace used for forging metal items such as swords, spears and shields and more.";
+	icon_state = "generator_on";
+	name = "superheating forge"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "cVj" = (
@@ -9687,6 +9691,7 @@
 /area/f13/brotherhood)
 "jEM" = (
 /obj/structure/bookcase/manuals/medical,
+/obj/item/hand_labeler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "jFd" = (
@@ -11702,7 +11707,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
 "lDo" = (
-/obj/item/shovel,
+/obj/machinery/ore_silo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "engine"
 	},
@@ -13188,6 +13193,8 @@
 	dir = 4
 	},
 /obj/structure/rack,
+/obj/item/book/granter/crafting_recipe/blueprint/aep7,
+/obj/item/book/granter/crafting_recipe/blueprint/aer9,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -14281,6 +14288,7 @@
 	dir = 1;
 	layer = 3
 	},
+/obj/machinery/light/small,
 /turf/open/water,
 /area/f13/brotherhood)
 "ohO" = (
@@ -14563,9 +14571,9 @@
 /obj/machinery/door/airlock/clockwork{
 	desc = "A massive gear set into two heavy slabs of brass.";
 	name = "brotherhood airlock";
-	req_access = list(120);
+	req_access = null;
 	req_access_txt = "120";
-	req_one_access_txt = "120"
+	req_one_access_txt = null
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -15707,6 +15715,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
+"pIJ" = (
+/obj/machinery/door/airlock/grunge{
+	req_access_txt = "120"
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
 "pIX" = (
 /obj/structure/table{
 	layer = 2.9
@@ -22727,6 +22741,19 @@
 /obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"vZr" = (
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/brotherhood)
 "vZI" = (
 /obj/structure/table/wood/poker,
 /obj/effect/spawner/lootdrop/trash,
@@ -24315,6 +24342,10 @@
 /obj/structure/rack,
 /obj/item/crafting/timer,
 /obj/item/crafting/duct_tape,
+/obj/item/book/granter/crafting_recipe/blueprint/aep7,
+/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "xNg" = (
@@ -71512,10 +71543,10 @@ eBz
 eBz
 eBz
 jZH
-rOj
-rOj
-rOj
-rOj
+jZH
+jZH
+jZH
+jZH
 rOj
 rOj
 jZH
@@ -71768,9 +71799,9 @@ blk
 jZH
 wKZ
 abN
-bUR
-jZH
-jZH
+pIJ
+dpR
+dpR
 gPF
 jZH
 jZH
@@ -72025,7 +72056,7 @@ abN
 aSZ
 abN
 abN
-jZH
+bUR
 dpR
 dpR
 dpR
@@ -73053,7 +73084,7 @@ abN
 pVQ
 abN
 abN
-jZH
+bUR
 dpR
 dpR
 dpR
@@ -73310,7 +73341,7 @@ blk
 jZH
 wKZ
 abN
-bUR
+jZH
 jZH
 jZH
 jZH
@@ -81055,7 +81086,7 @@ mDr
 fDi
 qGz
 byA
-neP
+vZr
 neP
 bKF
 wUT
@@ -83336,7 +83367,7 @@ jZH
 jZH
 jZH
 jZH
-vQU
+wbe
 jZH
 jZH
 jZH
@@ -83593,8 +83624,8 @@ jZH
 jZH
 jZH
 jZH
-jZH
-jZH
+dpR
+dpR
 kIJ
 jZH
 jZH
@@ -83649,8 +83680,8 @@ ryL
 jZH
 jZH
 gSh
-jZH
-jZH
+dpR
+psj
 ryy
 jZH
 uoO
@@ -83883,7 +83914,7 @@ iqN
 aVe
 qWx
 fou
-fDi
+fFK
 gnY
 seJ
 rFJ
@@ -84911,7 +84942,7 @@ rFJ
 aVe
 qWx
 ekD
-fDi
+fFK
 gnY
 vid
 dyO
