@@ -2352,8 +2352,7 @@
 "cDx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/curtain{
-	color = "#5c131b";
-	open = 0
+	color = "#5c131b"
 	},
 /obj/structure/simple_door/bunker/glass,
 /turf/open/floor/f13{
@@ -3003,11 +3002,11 @@
 /area/f13/bunker)
 "dlT" = (
 /obj/machinery/door/poddoor/gate{
+	icon_state = "open";
 	id = "boscheckpoint";
 	name = "Checkpoint";
 	req_access_txt = "120";
-	req_one_access_txt = "120";
-	state_open = 1
+	req_one_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
@@ -9702,7 +9701,7 @@
 "jYZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/bunker{
-	name = "Head Scribe's Office"
+	name = "Ceremony Room"
 	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
@@ -9722,7 +9721,7 @@
 /area/f13/brotherhood)
 "jZL" = (
 /obj/structure/simple_door/bunker{
-	name = "Head Scribe's Office"
+	name = "Ceremony Room"
 	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
@@ -16498,6 +16497,15 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"rwn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/brotherhood)
 "rwA" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -81260,7 +81268,7 @@ eLE
 rOj
 gkZ
 feM
-geb
+rwn
 geb
 eRI
 ulS
