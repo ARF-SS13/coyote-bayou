@@ -6,6 +6,31 @@
 	AP = Armor Piercing, these should always cost titanium
 	JHP = Jacketed Hollow Point, should cost less than FMJ
 */
+//materials
+/datum/design/ammolathe/metal
+	name = "Metal"
+	id = "metal"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/stack/sheet/metal
+	category = list("initial", "Materials")
+	maxstack = 50
+
+/datum/design/ammolathe/blackpowder
+	name = "Blackpowder"
+	id = "blackpowder"
+	materials = list(/datum/material/blackpowder = 2000)
+	build_path = /obj/item/stack/ore/blackpowder
+	category = list("initial", "Materials")
+	maxstack = 50
+	
+/datum/design/ammolathe/titanium
+	name = "Titanium"
+	id = "titanium"
+	materials = list(/datum/material/titanium = 2000)
+	build_path = /obj/item/stack/sheet/mineral/titanium
+	category = list("initial", "Materials")
+	maxstack = 50
+
 
 /* --Tier 1 Ammo and Magazines-- */
 //Tier 1 Magazines

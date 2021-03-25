@@ -38,7 +38,6 @@
 	sheet_type = /obj/item/stack/ore/blackpowder
 	value_per_unit = 0.0025
 	beauty_modifier = 0.05
-	armor_modifiers = list("melee" = 0.2, "bullet" = 0.2, "laser" = 0, "energy" = 1, "bomb" = 0, "bio" = 0.2, "rad" = 0.2, "fire" = 1, "acid" = 0.2) // yeah ok
 
 
 /*

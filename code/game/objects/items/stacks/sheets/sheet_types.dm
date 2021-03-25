@@ -181,6 +181,17 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	//tableVariant = /obj/structure/table
 	material_type = /datum/material/lead
 
+/obj/item/stack/sheet/lead/fifty
+	amount = 50
+
+/obj/item/stack/sheet/lead/twenty
+	amount = 20
+
+/obj/item/stack/sheet/lead/ten
+	amount = 10
+
+/obj/item/stack/sheet/lead/five
+	amount = 5
 
 /obj/item/stack/sheet/metal/cyborg
 	custom_materials = null
