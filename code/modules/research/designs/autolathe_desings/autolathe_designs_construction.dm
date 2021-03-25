@@ -18,7 +18,7 @@
 
 /datum/design/blackpowder
 	name = "Blackpowder"
-	id = "blackpowder"
+	id = "blackpowder2"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/blackpowder = 2000)
 	build_path = /obj/item/stack/ore/blackpowder
