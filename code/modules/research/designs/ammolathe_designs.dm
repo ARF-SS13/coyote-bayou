@@ -7,7 +7,7 @@
 	JHP = Jacketed Hollow Point, should cost less than FMJ
 */
 //materials
-/datum/design/ammolathe/metal
+/datum/design/ammolathe/metalplate
 	name = "Metal"
 	id = "metal"
 	materials = list(/datum/material/iron = 2000)
