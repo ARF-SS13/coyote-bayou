@@ -20977,7 +20977,6 @@
 /area/f13/tunnel)
 "uFF" = (
 /obj/machinery/light/small,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whiterustysolid"
 	},
@@ -24165,6 +24164,15 @@
 	},
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
+"xBD" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whiterustysolid"
+	},
 /area/f13/brotherhood)
 "xCd" = (
 /obj/structure/table/wood,
@@ -67920,14 +67928,14 @@ jZH
 abN
 abN
 fhk
-iLO
-iLO
+fhk
+fhk
 abN
 abN
 jZH
 kqM
-eqw
-uwd
+xBD
+onB
 eey
 qys
 qys
@@ -68176,15 +68184,15 @@ pmk
 adR
 wKZ
 abN
-iLO
-iLO
-iLO
+fhk
+fhk
+fhk
 abN
 blk
 jZH
 jZH
 jZH
-uwd
+onB
 omE
 rgY
 qys
@@ -68433,15 +68441,15 @@ ugE
 rev
 ioj
 ioj
-iLO
-iLO
-iLO
+fhk
+fhk
+fhk
 ioj
 ioj
 aPa
 hPN
 jZH
-uwd
+onB
 omE
 gIb
 qys
@@ -68690,9 +68698,9 @@ pmk
 wKM
 abN
 abN
-iLO
-iLO
-iLO
+fhk
+fhk
+fhk
 abN
 abN
 adR
