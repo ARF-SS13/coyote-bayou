@@ -490,6 +490,13 @@
 	item_state = "brotherhood_armor_mk2"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/outcast
+	name = "brotherhood armor"
+	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, bearing a series of red markings."
+	icon_state = "brotherhood_armor_outcast"
+	item_state = "brotherhood_armor_outcast"
+	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
 //Oasis/Town
 /obj/item/clothing/suit/armor/f13/town
 	name = "town trenchcoat"

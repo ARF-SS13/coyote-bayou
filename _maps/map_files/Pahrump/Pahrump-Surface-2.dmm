@@ -2689,6 +2689,15 @@
 	icon_state = "verticalleftborderright0"
 	},
 /area/f13/wasteland)
+"cbj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/brotherhood)
 "cbk" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/village)
@@ -4040,11 +4049,12 @@
 /area/f13/legion)
 "dgX" = (
 /mob/living/simple_animal/hostile/radscorpion,
-/obj/structure/closet/gimmick/tacticool,
 /obj/structure/sign/poster/prewar/poster69{
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -12494,6 +12504,14 @@
 /obj/item/reagent_containers/glass/rag,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"jnP" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermaintop"
+	},
+/area/f13/wasteland)
 "jnX" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
@@ -26444,8 +26462,9 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib2-old"
 	},
-/obj/structure/closet/athletic_mixed,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -64816,7 +64835,7 @@ rRE
 rRE
 rRE
 rRE
-kdJ
+jnP
 uCW
 uCW
 uCW
@@ -67124,7 +67143,7 @@ rRE
 wcK
 oAo
 rRE
-xGt
+cbj
 fAA
 vIM
 ayz
@@ -70213,7 +70232,7 @@ rRE
 rRE
 rRE
 rRE
-kdJ
+jnP
 pjQ
 pjQ
 cNE
@@ -70474,7 +70493,7 @@ lae
 pjQ
 jPN
 pjQ
-nPX
+soC
 sYX
 sYX
 sYX
@@ -76884,7 +76903,7 @@ gcK
 gcK
 gcK
 csk
-csk
+ktB
 ktB
 gcK
 gcK
@@ -77140,8 +77159,8 @@ gcK
 gcK
 ktB
 ktB
-csk
-csk
+ktB
+gcK
 gcK
 gcK
 gcK
@@ -77397,8 +77416,8 @@ gcK
 ktB
 gcK
 gcK
-csk
-csk
+gcK
+gcK
 gcK
 gcK
 gcK
@@ -77654,8 +77673,8 @@ gcK
 gcK
 gcK
 gcK
-csk
-csk
+gcK
+gcK
 gcK
 gcK
 gcK
@@ -77911,8 +77930,8 @@ gcK
 gcK
 gcK
 gcK
-csk
-csk
+gcK
+gcK
 csk
 mTd
 mTd
