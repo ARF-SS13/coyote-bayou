@@ -277,12 +277,20 @@
 	requires_training = FALSE
 
 /obj/item/clothing/suit/armor/f13/power_armor/vaulttec
-	name = "Vault-Tec technical power armour"
-	desc = "(VIII) ."
+	name = "Vault-Tec power armour"
+	desc = "(VIII)  A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
 	icon_state = "vaultpa"
 	item_state = "vaultpa"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	slowdown = 0
+
+/obj/item/clothing/suit/armor/f13/power_armor/vaulttecta
+	name = "Vault-Tec technical armour"
+	desc = "(VIII)  A primative  suit of power armour, the first kind built by the residents of Vault-115 in order to fight off immediate threats."
+	icon_state = "vaultta"
+	item_state = "vaultta"
+	armor = list("tier" = 8, "energy" = 30, "bomb" = 38, "bio" = 40, "rad" = 20, "fire" = 100, "acid" = 0)
+	slowdown = 0.4
 
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
