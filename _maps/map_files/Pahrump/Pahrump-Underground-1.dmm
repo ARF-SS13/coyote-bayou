@@ -829,6 +829,15 @@
 	density = 0;
 	pixel_y = 16
 	},
+/obj/structure/fence/handrail{
+	density = 0;
+	pixel_y = 16
+	},
+/obj/structure/fence/handrail{
+	density = 0;
+	dir = 4;
+	pixel_x = -16
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "bbd" = (
@@ -2459,10 +2468,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
-"cIm" = (
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/brotherhood)
 "cIA" = (
 /obj/machinery/door/unpowered/wooddoor{
 	autoclose = 1;
@@ -20265,7 +20270,9 @@
 	name = "pipes"
 	},
 /obj/structure/simple_door/metal/ventilation,
-/obj/effect/decal/fakelattice,
+/obj/structure/lattice{
+	layer = 3
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "uel" = (
@@ -21620,13 +21627,6 @@
 	icon_state = "storewindowtop"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
-/area/f13/brotherhood)
-"vnx" = (
-/obj/structure/lattice{
-	layer = 3
-	},
-/obj/effect/decal/fakelattice,
-/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "vnJ" = (
 /obj/item/instrument/guitar,
@@ -81177,7 +81177,7 @@ paF
 paF
 paF
 jZH
-vnx
+fDi
 pFn
 sBO
 rFJ
@@ -83449,7 +83449,7 @@ kIJ
 jZH
 jZH
 jZH
-cIm
+vDC
 jZH
 rOj
 jZH
@@ -83706,7 +83706,7 @@ dpR
 dpR
 jZH
 jZH
-cIm
+vDC
 jZH
 rOj
 jZH
@@ -83963,7 +83963,7 @@ dpR
 dpR
 jZH
 jZH
-cIm
+vDC
 jZH
 rOj
 jZH
@@ -84220,7 +84220,7 @@ dpR
 dpR
 jZH
 jZH
-cIm
+vDC
 jZH
 rOj
 jZH
@@ -84734,7 +84734,7 @@ dpR
 dpR
 jZH
 jZH
-cIm
+vDC
 jZH
 rOj
 jZH
