@@ -522,7 +522,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood
 	name = "brotherhood helmet"
-	desc = "(VI) An improved combat helmet, bearing the symbol of the Knights."
+	desc = "(VII) An improved combat helmet, bearing the symbol of the Knights."
 	icon_state = "brotherhood_helmet_knight"
 	item_state = "brotherhood_helmet_knight"
 	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
@@ -552,6 +552,13 @@
 	icon_state = "brotherhood_helmet"
 	item_state = "brotherhood_helmet"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/outcast
+	name = "brotherhood helmet"
+	desc = "(VII) An improved combat helmet, bearing a series of red markings."
+	icon_state = "brotherhood_helmet_outcast"
+	item_state = "brotherhood_helmet_outcast"
+	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/f13/boscap
 	name = "brotherhood formal cap"
