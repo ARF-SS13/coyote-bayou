@@ -348,7 +348,7 @@
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	name = "NCR officer vest"
-	desc = "(VII) A reinforced set of NCR mantle armour, with added padding on the groin, neck, limbs and shoulders. Intended for use by the officer class."
+	desc = "(VII) A reinforced set of NCR mantle armour, with added padding on the groin, neck and shoulders. Intended for use by the officer class."
 	icon_state = "ncr_lt_armour"
 	item_state = "ncr_lt_armour"
 	armor = list("tier" = 7, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
