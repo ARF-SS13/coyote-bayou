@@ -91,7 +91,7 @@
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm AP)"
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
-	custom_materials = list(/datum/material/iron = 14000, /datum/material/titanium = 3500, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 14000, /datum/material/titanium = 3500, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/c10mm/soporific
 	name = "ammo box (10mm Soporific)"
@@ -274,7 +274,7 @@
 	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/iron = 14000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/m44box/jhp
 	name = "ammo box (.44 Magnum JHP)"
@@ -438,17 +438,17 @@
 	ammo_type = /obj/item/ammo_casing/a556
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/iron = 20000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/a556/jhp
 	name = "ammo box (5.56 JHP)"
 	ammo_type = /obj/item/ammo_casing/a556/jhp
-	custom_materials = list(/datum/material/iron = 16000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/a556/ap
 	name = "ammo box (5.56 AP)"
 	ammo_type = /obj/item/ammo_casing/a556/ap
-	custom_materials = list(/datum/material/iron = 24000, /datum/material/titanium = 6000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 24000, /datum/material/titanium = 6000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/a556/match
 	name = "ammo box (5.56 match)"
@@ -624,13 +624,13 @@
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 30
-	custom_materials = list(/datum/material/iron = 16000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/a357box/jhp
 	name = "ammo box (.357 Magnum JHP)"
 	ammo_type = /obj/item/ammo_casing/a357/jhp
-	custom_materials = list(/datum/material/iron = 12000, , /datum/material/blackpowder = 1500)
+	custom_materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/a357box/jfp
 	name = "ammo box (.357 Magnum JFP)"
