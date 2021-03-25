@@ -16,6 +16,15 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
+/datum/design/blackpowder
+	name = "Blackpowder"
+	id = "blackpowder"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/blackpowder = 2000)
+	build_path = /obj/item/stack/ore/blackpowder
+	category = list("initial","Construction")
+	maxstack = 50
+
 /datum/design/metal
 	name = "Metal"
 	id = "metal"
