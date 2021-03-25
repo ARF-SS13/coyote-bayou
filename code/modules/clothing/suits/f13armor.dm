@@ -164,10 +164,10 @@
 
 /obj/item/clothing/suit/armor/f13/combatrusted
 	name = "rusted combat armor"
-	desc = "(IV) An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates look sound and intact still."
+	desc = "(V) An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates look sound and intact still."
 	icon_state = "rusted_combat_armor"
 	item_state = "rusted_combat_armor"
-	armor = list("tier" = 4, "energy" = 38, "bomb" = 48, "bio" = 58, "rad" = 10, "fire" = 58, "acid" = 18)
+	armor = list("tier" = 5, "energy" = 38, "bomb" = 48, "bio" = 58, "rad" = 10, "fire" = 58, "acid" = 18)
 
 /obj/item/clothing/suit/armor/f13/combat/environmental
 	name = "environmental armor"
