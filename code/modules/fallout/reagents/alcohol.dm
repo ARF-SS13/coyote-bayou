@@ -36,8 +36,8 @@
 	glass_desc = "The glass contain punga juice, used to treat radiation sickness"
 
 /datum/reagent/consumable/ethanol/pungajuice/on_mob_life(mob/living/carbon/M)
-	M.radiation = max(M.radiation-5,0)
-	M.hallucination += 5
+	M.radiation = max(M.radiation-10,0)
+	//M.hallucination += 5
 	return ..()
 
 /datum/reagent/consumable/ethanol/purplecider
