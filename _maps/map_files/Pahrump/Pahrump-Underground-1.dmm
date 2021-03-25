@@ -4737,11 +4737,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ePz" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "AUX"
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "eQC" = (
 /obj/machinery/telecomms/server/presets/engineering,
@@ -4902,6 +4901,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -4990,6 +4990,7 @@
 	id = "AUX"
 	},
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -80271,8 +80272,8 @@ jZH
 jZH
 jZH
 fdp
-wbe
-wbe
+xGl
+xGl
 fhZ
 jZH
 jZH
@@ -80527,7 +80528,7 @@ jZH
 jZH
 jZH
 jZH
-wbe
+ePz
 jZH
 jZH
 jZH
@@ -81295,7 +81296,7 @@ aVe
 aVe
 aVe
 aVe
-ePz
+rFJ
 aVe
 aVe
 xsD
