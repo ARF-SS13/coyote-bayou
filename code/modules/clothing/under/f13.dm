@@ -68,6 +68,14 @@
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
+/obj/item/clothing/under/f13/ncrcf
+	name = "caravaneer outfit"
+	desc = "A cheap blue shirt and slacks, the letters 'NCRCF' emblazened on the back. A meek reminder of who owns you."
+	can_adjust = TRUE
+	icon_state = "ncrcf"
+	item_state = "ncrcf"
+	item_color = "ncrcf"
+
 //Settlers
 
 /obj/item/clothing/under/f13/brahminm
