@@ -1,5 +1,4 @@
 ///Has no special properties.
-//
 /datum/material/iron
 	name = "iron"
 	desc = "Common iron ore often found in sedimentary and igneous layers of the crust."
@@ -37,7 +36,7 @@
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	integrity_modifier = 0.1
 	sheet_type = /obj/item/stack/ore/blackpowder
-	value_per_unit = 0.0025
+	value_per_unit = 0.0050
 	beauty_modifier = 0.05
 
 
