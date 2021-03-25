@@ -12611,6 +12611,7 @@
 /area/f13/clinic)
 "mEm" = (
 /obj/structure/fence/handrail_corner{
+	density = 0;
 	dir = 4;
 	layer = 3.1;
 	pixel_x = 16;
@@ -21537,6 +21538,12 @@
 /obj/effect/landmark/start/f13/scribe,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
+"viJ" = (
+/obj/structure/falsewall/reinforced,
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/brotherhood)
 "vjk" = (
 /obj/structure/window/reinforced{
@@ -79093,7 +79100,7 @@ aVe
 jZH
 ljC
 aOr
-jZH
+viJ
 kLC
 kLC
 kLC
