@@ -237,14 +237,14 @@
 /datum/design/ammolathe/m44jhp
 	name = ".44 Magnum JHP ammo box"
 	id = "m44jhp"
-	materials = list(/datum/material/iron = 10000, , /datum/material/blackpowder = 1500)
+	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/m44box/jhp
 	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a357
 	name = ".357 Magnum FMJ ammo box"
 	id = "a357_lathe"
-	materials = list(/datum/material/iron = 16000, , /datum/material/blackpowder = 1500)
+	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/a357box
 	category = list("initial", "Basic Ammo")
 
