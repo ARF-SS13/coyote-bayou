@@ -20,9 +20,6 @@
 	var/ranged_attack_speed = CLICK_CD_RANGE
 
 	var/fire_sound = "gunshot"
-	var/suppressed = null					//whether or not a message is displayed when fired
-	var/can_suppress = FALSE
-	var/can_unsuppress = TRUE
 	var/recoil = 0						//boom boom shake the room
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
@@ -85,15 +82,22 @@
 	var/can_attachments = FALSE
 	var/can_automatic = FALSE
 
+	var/mutable_appearance/suppressor_overlay
+	var/suppressor_state = "suppressor"
+	var/suppressed = null					//whether or not a message is displayed when fired
+	var/can_suppress = FALSE
+	var/can_unsuppress = TRUE
+
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
 	var/flight_x_offset = 0
 	var/flight_y_offset = 0
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
-
 	var/scope_x_offset = 0
 	var/scope_y_offset = 0
+	var/suppressor_x_offset = 0
+	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	var/isenergy = null
@@ -413,7 +417,7 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params,suppressed, zone_override, sprd, extra_damage, extra_penetration))
+		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
 			shoot_with_empty_chamber(user)
 			firing = FALSE
 			return FALSE
@@ -622,6 +626,15 @@
 		. += scope_overlay
 	else
 		scope_overlay = null
+
+	if(suppressed)
+		var/icon/suppressor_icons = 'icons/obj/guns/suppressors.dmi'
+		suppressor_overlay = mutable_appearance(suppressor_icons, suppressor_state)
+		suppressor_overlay.pixel_x = suppressor_x_offset
+		suppressor_overlay.pixel_y = suppressor_y_offset
+		. += suppressor_overlay
+	else
+		suppressor_overlay = null
 
 /obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)
