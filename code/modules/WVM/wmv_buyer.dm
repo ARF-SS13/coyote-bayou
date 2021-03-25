@@ -14,11 +14,11 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 
-	var/list/goods_list = list( /obj/item/stack/ore/diamond = 50,
-								/obj/item/stack/ore/gold = 15,
-								/obj/item/stack/ore/silver = 5,
-								/obj/item/stack/ore/iron = 1.5,
-								/obj/item/stack/sheet/leather = 5,
+	var/list/goods_list = list( /obj/item/stack/ore/diamond = 25,
+								/obj/item/stack/ore/gold = 7,
+								/obj/item/stack/ore/silver = 2,
+								/obj/item/stack/ore/iron = 1,
+								/obj/item/stack/sheet/leather = 3,
 								/obj/item/reagent_containers/pill/patch/jet = 5,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 15,
 								/obj/item/reagent_containers/syringe/medx = 15
