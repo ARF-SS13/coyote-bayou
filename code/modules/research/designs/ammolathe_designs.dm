@@ -9,7 +9,7 @@
 //materials
 /datum/design/ammolathe/metalplate
 	name = "Metal"
-	id = "metal"
+	id = "metalplate"
 	materials = list(/datum/material/iron = 2000)
 	build_path = /obj/item/stack/sheet/metal
 	category = list("initial", "Materials")
