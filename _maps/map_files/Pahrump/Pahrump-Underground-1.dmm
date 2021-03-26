@@ -10733,8 +10733,10 @@
 	},
 /area/f13/bunker)
 "mhc" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
+/obj/machinery/computer/shuttle/boselevator{
+	dir = 1;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "miv" = (
@@ -16413,17 +16415,9 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "swY" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dir = 2;
-	dwidth = 1;
-	height = 4;
-	id = "bos_level_1";
-	name = "Level 1: Operations";
-	roundstart_template = /datum/map_template/shuttle/bos/elevator;
-	width = 5
-	},
-/turf/open/floor/plasteel/elevatorshaft,
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "sxs" = (
 /obj/structure/rack,
@@ -18418,11 +18412,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "usN" = (
-/obj/machinery/computer/shuttle/boselevator{
-	dir = 1;
-	pixel_y = -2
+/obj/docking_port/stationary{
+	area_type = /area/f13;
+	dir = 2;
+	dwidth = 1;
+	height = 4;
+	id = "bos_level_1";
+	name = "Level 1: Operations";
+	roundstart_template = /datum/map_template/shuttle/bos/elevator;
+	width = 5
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/brotherhood)
 "utr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21271,6 +21271,9 @@
 "xrz" = (
 /obj/machinery/smartfridge/food,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/brotherhood)
+"xss" = (
+/turf/closed/mineral/random/high_chance,
 /area/f13/brotherhood)
 "xsL" = (
 /mob/living/simple_animal/hostile/radroach,
@@ -76479,15 +76482,15 @@ rOj
 rOj
 rOj
 rOj
-uoO
-aoj
-aoj
-aoj
-aoj
-aoj
-uoO
-uoO
-uoO
+jZH
+jZH
+jZH
+jZH
+jZH
+jZH
+jZH
+jZH
+jZH
 rOj
 rOj
 uoO
@@ -77003,7 +77006,7 @@ psA
 qmh
 qmh
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -77260,7 +77263,7 @@ nld
 qmh
 qmh
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -77517,7 +77520,7 @@ hXf
 oAp
 jZH
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -78031,7 +78034,7 @@ vJX
 qRv
 tfd
 jZH
-uoO
+jZH
 uoO
 uoO
 aoj
@@ -78288,7 +78291,7 @@ vch
 uRE
 vrC
 jZH
-aoj
+jZH
 uoO
 uoO
 uoO
@@ -78545,7 +78548,7 @@ eaR
 ldA
 hcC
 jZH
-aoj
+xss
 uoO
 uoO
 uoO
@@ -78802,7 +78805,7 @@ oAp
 oAp
 jZH
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -79059,7 +79062,7 @@ dSr
 dSr
 spS
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -79316,7 +79319,7 @@ stU
 gim
 qUR
 jZH
-uoO
+jZH
 uoO
 uoO
 uoO
@@ -79573,7 +79576,7 @@ jZH
 jZH
 jZH
 jZH
-uoO
+jZH
 uoO
 uoO
 aoj
@@ -80858,7 +80861,7 @@ jZH
 jZH
 jZH
 jZH
-uoO
+rOj
 uoO
 uoO
 uoO
@@ -81061,13 +81064,13 @@ crH
 ryy
 qPC
 jZH
+rFJ
 aVe
 jsD
 dpR
 dpR
 dpR
 dpR
-jZH
 jZH
 vDC
 jZH
@@ -81115,7 +81118,7 @@ dpR
 dpR
 dpR
 jZH
-aoj
+rOj
 uoO
 uoO
 uoO
@@ -81318,13 +81321,13 @@ aVe
 rFJ
 aVe
 aVe
+aVe
 rFJ
 qqN
 dpR
 dpR
 dpR
 dpR
-jZH
 jZH
 vDC
 jZH
@@ -81372,7 +81375,7 @@ dpR
 dpR
 dpR
 jZH
-aoj
+jZH
 uoO
 uoO
 uoO
@@ -81575,13 +81578,13 @@ aVe
 rFJ
 aVe
 aVe
-usN
+aVe
 mhc
+swY
 dpR
 dpR
 dpR
 dpR
-jZH
 jZH
 vDC
 jZH
@@ -81629,7 +81632,7 @@ dpR
 dpR
 dpR
 jZH
-aoj
+jZH
 uoO
 uoO
 uoO
@@ -81833,12 +81836,12 @@ aVe
 aVe
 rFJ
 aVe
+aVe
 jZH
-swY
+usN
 dpR
 dpR
 dpR
-jZH
 jZH
 beN
 jZH
@@ -81886,7 +81889,7 @@ dpR
 dpR
 dpR
 jZH
-aoj
+jZH
 uoO
 uoO
 uoO
@@ -82089,13 +82092,13 @@ cfA
 cfA
 tgU
 jZH
+rFJ
 uJY
 jsD
 dpR
 dpR
 dpR
 dpR
-jZH
 jZH
 vDC
 jZH
@@ -82143,7 +82146,7 @@ dpR
 dpR
 dpR
 jZH
-uoO
+rOj
 uoO
 uoO
 uoO
@@ -82400,7 +82403,7 @@ jZH
 jZH
 jZH
 jZH
-uoO
+rOj
 uoO
 uoO
 uoO
