@@ -1671,6 +1671,11 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood)
+"bOd" = (
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
 "bOf" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -3115,6 +3120,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"drY" = (
+/obj/structure/lattice{
+	layer = 3
+	},
+/obj/structure/simple_door/metal/ventilation,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "dsy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -3455,6 +3467,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"dGf" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 5
+	},
+/obj/structure/mirror{
+	pixel_x = -27
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
 "dGD" = (
 /obj/structure/fence/handrail_end/non_dense{
 	pixel_x = -16;
@@ -3734,6 +3757,10 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
+"dQH" = (
+/obj/machinery/door/unpowered/wooddoor,
+/turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "dRM" = (
 /turf/open/floor/f13{
@@ -9138,6 +9165,16 @@
 	icon_state = "redmark"
 	},
 /area/f13/brotherhood)
+"jzz" = (
+/obj/structure/toilet{
+	pixel_y = 10
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "jzK" = (
 /obj/structure/window/fulltile/store,
 /turf/open/floor/wood,
@@ -11214,9 +11251,8 @@
 /area/f13/brotherhood)
 "lxD" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
-/obj/structure/lattice{
-	layer = 3
-	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "lyh" = (
@@ -13498,6 +13534,13 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/brotherhood)
+"nRt" = (
+/obj/structure/lattice{
+	layer = 3
+	},
+/obj/structure/lattice/catwalk,
+/turf/closed/wall/r_wall,
+/area/f13/brotherhood)
 "nRP" = (
 /obj/structure/sink{
 	pixel_y = 19
@@ -15167,6 +15210,12 @@
 /obj/structure/bus_door,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"pNY" = (
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
 "pOc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -16977,6 +17026,19 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"shN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/obj/structure/mirror{
+	pixel_x = 27
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/brotherhood)
 "shO" = (
 /obj/structure/closet,
 /obj/item/storage/box/gloves,
@@ -17883,6 +17945,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
+"tsw" = (
+/obj/structure/falsewall/reinforced,
+/turf/closed/wall/r_wall,
+/area/f13/brotherhood)
 "tsy" = (
 /obj/structure/simple_door/bunker{
 	name = "Star Paladin Office";
@@ -18559,7 +18625,6 @@
 	layer = 2.4;
 	name = "pipes"
 	},
-/obj/structure/simple_door/metal/ventilation,
 /obj/structure/lattice{
 	layer = 3
 	},
@@ -19107,9 +19172,16 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "uKR" = (
-/obj/structure/falsewall/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mirror{
+	pixel_x = 27
+	},
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
 /turf/open/floor/f13{
-	icon_state = "darkrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "uKU" = (
@@ -75347,7 +75419,7 @@ eLE
 eLE
 rOj
 jZH
-tuO
+jZH
 jZH
 jZH
 jZH
@@ -75373,7 +75445,7 @@ jZH
 jZH
 jZH
 jZH
-uKR
+jZH
 jZH
 jZH
 ujt
@@ -75867,9 +75939,9 @@ boe
 jHA
 aPa
 geb
-geb
-geb
-bbd
+uKR
+shN
+jZH
 xZY
 tSl
 aQN
@@ -80535,7 +80607,7 @@ jZH
 jZH
 jZH
 jZH
-vDC
+drY
 jZH
 rOj
 jZH
@@ -82074,10 +82146,10 @@ jZH
 jZH
 jZH
 jZH
-jZH
+tsw
 tuO
 jZH
-tuO
+oDP
 jZH
 rOj
 jZH
@@ -83393,11 +83465,11 @@ kwo
 jZH
 kFw
 jZH
-jZH
-jZH
-jZH
-fDi
-mbN
+dGf
+dGf
+bOd
+pNY
+jrn
 aVe
 aVe
 net
@@ -83648,13 +83720,13 @@ uLl
 sFc
 kwo
 kDi
-jZH
-jZH
-jZH
-jZH
-jZH
+jzz
+dQH
+fOD
+bOd
+bOd
 lxD
-tsq
+rFJ
 aVe
 aVe
 net
@@ -83905,10 +83977,10 @@ qFc
 lWC
 jZH
 jZH
-jZH
-jZH
-jZH
-jZH
+nRt
+nRt
+fOD
+fOD
 jZH
 hOX
 mbN
@@ -84162,10 +84234,10 @@ thO
 vfU
 jZH
 jZH
-jZH
-jZH
-jZH
-jZH
+jzz
+dQH
+fOD
+fOD
 jZH
 lwY
 lQB
@@ -85911,7 +85983,7 @@ ejY
 jZH
 jZH
 jZH
-tuO
+jZH
 oDP
 ryy
 pRW
@@ -86169,7 +86241,7 @@ eyt
 eDB
 gov
 jZH
-jZH
+oDP
 jZH
 jZH
 jZH
