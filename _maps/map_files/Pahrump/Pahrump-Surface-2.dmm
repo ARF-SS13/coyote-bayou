@@ -337,18 +337,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/legion)
-"alw" = (
-/obj/structure/simple_door{
-	icon_state = "brokenglass"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/brotherhood)
 "alE" = (
 /obj/structure/chair/comfy,
 /obj/structure/decoration/rag{
@@ -453,15 +441,6 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"aqc" = (
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "aqv" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -597,16 +576,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"avd" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/brotherhood)
 "avh" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -796,10 +765,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"aCY" = (
-/obj/structure/simple_door/interior,
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "aDb" = (
 /obj/effect/landmark/start/f13/slave,
 /turf/open/floor/f13/wood{
@@ -1291,9 +1256,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "aWg" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table,
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/storage/pill_bottle/chem_tin/radx,
@@ -1388,9 +1350,6 @@
 	},
 /area/f13/village)
 "aYV" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/wreck/car/bike{
 	pixel_x = -12;
 	pixel_y = 1
@@ -1761,9 +1720,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bmW" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -2603,15 +2559,6 @@
 	},
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/city)
-"bSa" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "bSR" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13{
@@ -2988,18 +2935,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"ckO" = (
-/obj/item/folder/yellow,
-/obj/item/folder/yellow,
-/obj/item/folder/yellow,
-/obj/structure/table/wood,
-/obj/structure/table/wood,
-/obj/machinery/light/small/broken,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "ckV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
@@ -3208,29 +3143,11 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"ctf" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "cts" = (
 /obj/structure/barricade/bars,
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
-"ctz" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "ctE" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -3416,15 +3333,6 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland)
-"cAD" = (
-/obj/structure/closet,
-/obj/item/clothing/under/f13/combat,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "cAI" = (
 /obj/machinery/light{
 	dir = 1;
@@ -3985,16 +3893,6 @@
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/brotherhood)
-"cYb" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table,
-/turf/open/indestructible/ground/outside/wood,
 /area/f13/brotherhood)
 "cYz" = (
 /obj/item/target,
@@ -4843,10 +4741,6 @@
 	},
 /area/f13/village)
 "dAo" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/closet{
 	pixel_x = -9;
 	pixel_y = 13
@@ -5159,13 +5053,6 @@
 /obj/structure/table,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"dQw" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/reagent_dispensers/barrel/three,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/brotherhood)
 "dRd" = (
 /obj/item/seeds/pumpkin,
 /obj/item/seeds/wheat,
@@ -5794,15 +5681,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"evy" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/rack,
-/obj/item/stack/sheet/glass,
-/obj/item/stack/sheet/metal,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "evV" = (
 /obj/structure/fence/corner/wooden{
 	dir = 8
@@ -6018,13 +5896,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ncr)
-"eFV" = (
-/obj/structure/filingcabinet/chestdrawer,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "eFW" = (
 /obj/structure/sign/poster/official/fruit_bowl{
 	pixel_x = -32
@@ -6046,17 +5917,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"eGR" = (
-/obj/structure/closet,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "eGX" = (
 /obj/item/trash/f13/steak,
 /turf/open/floor/f13/wood,
@@ -6141,15 +6001,6 @@
 /obj/structure/table/glass,
 /turf/open/floor/f13,
 /area/f13/building)
-"eJZ" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib1-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "eKs" = (
 /obj/structure/decoration/rag{
 	pixel_x = -14
@@ -6241,15 +6092,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland)
-"eMV" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "eNs" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -7244,15 +7086,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
-"fvh" = (
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "fvi" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Followers Clinic"
@@ -7261,15 +7094,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
-"fvj" = (
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "fvm" = (
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -7323,16 +7147,6 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
-"fxG" = (
-/obj/structure/bookcase,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/brotherhood)
 "fxK" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/under/f13/police,
@@ -9046,15 +8860,6 @@
 /obj/item/clothing/shoes/combat,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"gIN" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "gJe" = (
 /obj/structure/chair/f13foldupchair,
 /turf/open/floor/f13{
@@ -9145,15 +8950,6 @@
 	desc = "Deep, poorly filtered gardening water.";
 	name = "stagnant water"
 	},
-/area/f13/brotherhood)
-"gNj" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood)
 "gNA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -9551,17 +9347,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"gZy" = (
-/obj/structure/bookcase,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/brotherhood)
 "gZD" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -9582,24 +9367,6 @@
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"haV" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old"
-	},
-/obj/item/storage/belt/military/assault,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/window/fulltile,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "neutralrustyfull"
-	},
-/area/f13/brotherhood)
 "hbm" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/brotherhood)
@@ -9836,16 +9603,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
-"hiK" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/chair/wood,
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "hiS" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -9926,16 +9683,6 @@
 /obj/structure/chair/wood/worn,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"hlB" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/item/storage/belt/military/assault,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "hlI" = (
 /obj/structure/debris/v4,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -9977,18 +9724,6 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland)
-"hmr" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "hmy" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/metal/fifty,
@@ -10425,14 +10160,6 @@
 /area/f13/legion)
 "hzt" = (
 /obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj/item/storage/belt/military/assault,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/lattice/catwalk,
 /obj/machinery/vending/wardrobe/hydro_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -10578,13 +10305,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"hES" = (
-/obj/item/flag/bos,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "hET" = (
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/dirt,
@@ -10759,19 +10479,6 @@
 /obj/structure/campfire/barrel,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"hJu" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/lattice/catwalk,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/water{
-	desc = "Deep, poorly filtered gardening water.";
-	name = "stagnant water"
-	},
-/area/f13/brotherhood)
 "hJv" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
@@ -11377,15 +11084,6 @@
 /obj/effect/landmark/start/f13/shopkeeper,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"iie" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "iik" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -11425,9 +11123,6 @@
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/village)
 "ijj" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/sign/warning/securearea{
 	pixel_y = -33
 	},
@@ -11438,21 +11133,6 @@
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/city)
-"ijn" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table,
-/obj/item/kitchen/knife,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
-"iju" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "ijO" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
@@ -11722,9 +11402,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
 "itj" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
 	},
@@ -11823,15 +11500,6 @@
 	},
 /turf/open/floor/wood,
 /area/f13/village)
-"iwo" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "iwp" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -11854,20 +11522,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
-"ixn" = (
-/obj/structure/chair/wood/worn{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/old,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/brotherhood)
 "ixG" = (
 /obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
@@ -12023,13 +11677,6 @@
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood)
-"iDw" = (
-/obj/structure/closet/crate/bin,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "iEg" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -12039,15 +11686,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"iET" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "iFb" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
@@ -12356,11 +11994,6 @@
 	},
 /area/f13/ncr)
 "iNp" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/turbo,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/chair/wood,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/brotherhood)
@@ -13209,20 +12842,6 @@
 /obj/structure/chair/wood/fancy,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"jto" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibtorso"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/water{
-	desc = "Deep, poorly filtered gardening water.";
-	name = "stagnant water"
-	},
-/area/f13/brotherhood)
 "jts" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal{
@@ -13382,16 +13001,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"jzB" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/chair/stool{
-	dir = 1;
-	icon_state = "bench"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "jzN" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -14658,13 +14267,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/farm)
-"kvU" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "kvZ" = (
 /obj/item/bedsheet/random,
 /obj/structure/bed,
@@ -15124,13 +14726,6 @@
 	icon_state = "verticalleftborderright2top"
 	},
 /area/f13/ncr)
-"kOU" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "kPX" = (
 /obj/structure/fence/corner/wooden{
 	dir = 8
@@ -15265,16 +14860,6 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
-/area/f13/brotherhood)
-"kVP" = (
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_2"
-	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood)
 "kVS" = (
 /obj/structure/rack,
@@ -15516,14 +15101,6 @@
 /obj/structure/chair/wood/worn,
 /turf/open/floor/wood/f13/carpet,
 /area/f13/bar)
-"lhq" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "lhz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -15665,16 +15242,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"lnx" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "lnX" = (
 /obj/item/clothing/under/jabroni,
 /obj/structure/displaycase,
@@ -15920,15 +15487,6 @@
 	},
 /area/f13/followers)
 "luc" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -16042,27 +15600,6 @@
 /obj/item/chair/stool/retro,
 /turf/open/floor/carpet,
 /area/f13/city)
-"lwQ" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
-	icon_state = "warningline_red"
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 10;
-	icon_state = "warningline_red"
-	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NE"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/chair/stool{
-	icon_state = "bench"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "lxe" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -16435,16 +15972,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"lMc" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "bosgarage";
-	name = "shutters"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "lMn" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -16587,14 +16114,6 @@
 	},
 /area/f13/wasteland)
 "lRV" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer,
 /turf/open/indestructible/ground/outside/wood,
@@ -17629,21 +17148,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/tunnel)
-"mKj" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 5;
-	icon_state = "warningline_red"
-	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SW"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/tunnel,
-/area/f13/brotherhood)
 "mKm" = (
 /obj/structure/wreck/trash/halftire,
 /turf/open/indestructible/ground/outside/desert,
@@ -18490,9 +17994,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "nvH" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/closet/crate/freezer/blood{
 	pixel_y = 20
 	},
@@ -18877,21 +18378,6 @@
 /obj/item/clothing/mask/bandana/gold,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"nLx" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 9;
-	icon_state = "warningline_red"
-	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "nMk" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -18983,15 +18469,6 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
-"nPn" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "nPq" = (
 /obj/machinery/light{
 	dir = 1
@@ -19714,9 +19191,6 @@
 	},
 /area/f13/clinic)
 "oqp" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/chair/stool{
 	dir = 4;
 	icon_state = "bench"
@@ -19806,15 +19280,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"ovb" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "ovr" = (
 /obj/structure/table,
 /obj/item/kitchen/fork,
@@ -20637,17 +20102,6 @@
 /obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/city)
-"oYB" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
-/obj/structure/bed/mattress{
-	icon_state = "mattress3"
-	},
-/obj/effect/decal/remains/human,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "oYI" = (
 /obj/effect/decal/waste{
 	pixel_x = 20;
@@ -20751,12 +20205,8 @@
 	},
 /area/f13/followers)
 "pcV" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
-/obj/effect/spawner/lootdrop/clothing_middle,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -21644,19 +21094,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
-"pLK" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/item/clothing/shoes/f13/military,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/simple_door/bunker/glass,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "neutralrustyfull"
-	},
-/area/f13/brotherhood)
 "pMf" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -21755,16 +21192,6 @@
 	icon_state = "floordirtysolid"
 	},
 /area/f13/ncr)
-"pON" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
-	icon_state = "warningline_red"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "pPe" = (
 /obj/structure/fence{
 	dir = 4
@@ -22463,13 +21890,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"qqg" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "qqK" = (
 /obj/structure/chair/stool/f13stool{
 	pixel_x = -8
@@ -22711,24 +22131,6 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood)
-"qzO" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
-	icon_state = "warningline_red"
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 6;
-	icon_state = "warningline_red"
-	},
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NW"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "qAc" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -22766,12 +22168,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "qCb" = (
-/obj/structure/chair/wood/fancy{
-	icon_state = "officechair_dark"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/closet/crate/medical,
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -22976,15 +22372,6 @@
 	icon_state = "outermaincornerinner"
 	},
 /area/f13/wasteland)
-"qJs" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "qJB" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -23215,16 +22602,6 @@
 /obj/structure/simple_door/interior{
 	req_access_txt = "120"
 	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
-"qQI" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/brotherhood)
 "qQQ" = (
@@ -23462,19 +22839,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/legion)
-"rbT" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/water{
-	desc = "Deep, poorly filtered gardening water.";
-	name = "stagnant water"
-	},
-/area/f13/brotherhood)
 "rco" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -23889,13 +23253,6 @@
 	icon_state = "freezerfloor"
 	},
 /area/f13/ncr)
-"rtW" = (
-/obj/item/flag/bos,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "ruD" = (
 /obj/structure/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
@@ -25190,20 +24547,6 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
-"stv" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj/item/clothing/shoes/f13/military,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/brotherhood)
 "stG" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubble"
@@ -25355,19 +24698,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"syC" = (
-/obj/machinery/computer/terminal{
-	dir = 4;
-	termtag = "Security"
-	},
-/obj/structure/table{
-	layer = 2.9
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "syG" = (
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/f13{
@@ -25827,9 +25157,6 @@
 /obj/structure/sign/poster/prewar/poster69{
 	pixel_x = -32
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/brotherhood)
 "sQX" = (
@@ -26218,13 +25545,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"tdG" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/fans/tiny,
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "tdU" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -26397,16 +25717,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"tln" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/light/small,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 5;
-	icon_state = "dirt"
-	},
-/area/f13/brotherhood)
 "tlr" = (
 /obj/structure/sink{
 	pixel_y = 28
@@ -26835,17 +26145,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"tAb" = (
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "red";
-	pixel_y = 0
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "tAg" = (
 /obj/structure/fence{
 	dir = 4
@@ -27059,17 +26358,6 @@
 "tHU" = (
 /obj/effect/mine/stun,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
-"tIe" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "tIr" = (
 /obj/machinery/light/small{
@@ -27750,9 +27038,6 @@
 /turf/open/floor/wood/f13/stage_bl,
 /area/f13/bar)
 "uhh" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/machinery/light/small{
 	dir = 8
@@ -28123,14 +27408,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"utY" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "uug" = (
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -28287,15 +27564,6 @@
 /mob/living/simple_animal/hostile/raider,
 /turf/open/floor/wood/f13/old,
 /area/f13/bar)
-"uzf" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "uzn" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/plasteel/floorgrime,
@@ -28558,15 +27826,6 @@
 /obj/item/clothing/under/f13/bluedress,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"uHx" = (
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
-/obj/structure/rack,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table,
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "uHA" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13{
@@ -28692,18 +27951,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"uMg" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/lattice{
-	layer = 3
-	},
-/turf/open/indestructible/ground/outside/water{
-	desc = "Deep, poorly filtered gardening water.";
-	name = "stagnant water"
-	},
-/area/f13/brotherhood)
 "uMZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -28799,14 +28046,6 @@
 /obj/structure/bonfire,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"uPX" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/machinery/light/small,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "uQe" = (
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -29447,15 +28686,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"vnn" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gibdown1"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "vno" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/f13/wood,
@@ -29635,18 +28865,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"vvE" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/structure/sign/poster/prewar/poster69{
-	pixel_x = -32
-	},
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/brotherhood)
 "vvU" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road{
@@ -29983,15 +29201,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"vHW" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "vIb" = (
 /obj/structure/chair/wood/worn{
 	dir = 1
@@ -30286,12 +29495,6 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "vUX" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib2-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/machinery/deepfryer,
 /obj/machinery/light/small{
 	dir = 1
@@ -30453,13 +29656,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"wcY" = (
-/obj/structure/barricade/sandbags,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "wdl" = (
 /obj/structure/toilet{
 	pixel_y = 13
@@ -30542,12 +29738,6 @@
 	},
 /area/f13/wasteland)
 "whm" = (
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/sink/kitchen{
 	dir = 8;
 	pixel_x = 12
@@ -30558,13 +29748,6 @@
 /obj/item/reagent_containers/food/condiment/soymilk,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"whE" = (
-/obj/effect/turf_decal/caution/stand_clear/red,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "whO" = (
 /turf/open/floor/f13{
 	icon_state = "stagestairs"
@@ -30737,16 +29920,6 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"wqb" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4";
-	layer = 6
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "wqe" = (
 /obj/structure/table/wood,
 /obj/structure/wreck/trash/one_tire{
@@ -30781,16 +29954,6 @@
 "wqS" = (
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
-"wrd" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "wrg" = (
 /obj/structure/campfire,
 /turf/open/indestructible/ground/outside/desert,
@@ -30822,15 +29985,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "wsA" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib3-old"
-	},
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/lattice/catwalk,
 /obj/machinery/vending/nukacolavendfull,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -30846,16 +30000,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "wsM" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/blood/gibs/down{
-	icon_state = "gib6-old"
-	},
-/obj/item/clothing/shoes/f13/military,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /turf/open/floor/f13{
 	icon_state = "rampdowntop"
 	},
@@ -31622,13 +30766,6 @@
 	icon_state = "verticaloutermain2top"
 	},
 /area/f13/wasteland)
-"wVx" = (
-/obj/item/flag/bos,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "wVI" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/f13/brahmin,
@@ -32135,16 +31272,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/legion)
-"xke" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/light/small,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 9;
-	icon_state = "dirt"
-	},
-/area/f13/brotherhood)
 "xkj" = (
 /obj/machinery/mineral/wasteland_vendor/advcomponents,
 /turf/open/floor/f13{
@@ -32439,18 +31566,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"xtZ" = (
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/pen,
-/obj/structure/table/wood,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/brotherhood)
 "xuv" = (
 /obj/structure/barricade/wooden,
 /obj/structure/urinal,
@@ -32519,16 +31634,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"xww" = (
-/obj/structure/bed/pod,
-/obj/item/bedsheet/brown,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/under/f13/combat,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/brotherhood)
 "xwN" = (
 /obj/item/flag/bos,
 /turf/open/indestructible/ground/outside/wood,
@@ -33312,13 +32417,6 @@
 /obj/machinery/vending/hydronutrients,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
-"xYt" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/barricade/bars,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "xYN" = (
 /obj/structure/chair{
 	dir = 4
@@ -33528,9 +32626,6 @@
 	},
 /area/f13/wasteland)
 "yev" = (
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/structure/chair/stool{
 	dir = 8;
 	icon_state = "bench"
@@ -66641,11 +65736,11 @@ gcK
 gcK
 gcK
 iFI
-lnx
 iFI
-iwo
 iFI
-xtZ
+iFI
+iFI
+iFI
 uFB
 los
 los
@@ -66900,14 +65995,14 @@ gcK
 iFI
 qCb
 bXl
-ixn
-avd
-ckO
+bXl
+bXl
+iFI
 los
 los
 los
 iFI
-gIN
+jXh
 qPL
 qPL
 iFI
@@ -67159,7 +66254,7 @@ aWg
 bXl
 bXl
 bXl
-eFV
+iFI
 los
 los
 los
@@ -67416,7 +66511,7 @@ iFI
 nvH
 bXl
 bXl
-syC
+iFI
 los
 los
 los
@@ -67669,9 +66764,9 @@ gcK
 iFI
 dAo
 bXl
-gZy
+xwk
 bXl
-fxG
+bXl
 bXl
 moA
 los
@@ -67927,7 +67022,7 @@ iFI
 xeo
 bXl
 xwk
-alw
+bXl
 gEn
 txO
 iFI
@@ -68181,7 +67276,7 @@ gcK
 gcK
 gcK
 gcK
-lhq
+iFI
 iFI
 iFI
 iFI
@@ -68438,7 +67533,7 @@ gcK
 gcK
 gcK
 gcK
-tIe
+gcK
 iFI
 iku
 qPL
@@ -68695,10 +67790,10 @@ gcK
 gcK
 gcK
 gcK
-ctz
+gcK
 iFI
 qPL
-vHW
+qPL
 xtG
 qPL
 yev
@@ -68952,10 +68047,10 @@ gcK
 gcK
 gcK
 gcK
-cAD
+gcK
 iFI
 xZQ
-xYt
+oAB
 oAB
 qPL
 qPL
@@ -68963,7 +68058,7 @@ iFI
 anP
 qPL
 qPL
-iie
+daH
 qPL
 qPL
 qPL
@@ -69209,7 +68304,7 @@ gcK
 gcK
 gcK
 gcK
-eGR
+gcK
 iFI
 qPL
 qPL
@@ -69220,7 +68315,7 @@ goO
 qPL
 qPL
 qPL
-iie
+daH
 qPL
 qPL
 qPL
@@ -69475,7 +68570,7 @@ qPL
 lKO
 iFI
 qPL
-wcY
+qPL
 pcb
 iFI
 mEh
@@ -69729,7 +68824,7 @@ iFI
 iFI
 iFI
 qPL
-ijn
+lKO
 iFI
 qPL
 qPL
@@ -69986,10 +69081,10 @@ gcK
 iFI
 iFI
 goO
-nPn
+iFI
 iFI
 daH
-iie
+daH
 iFI
 iFI
 qPL
@@ -70240,10 +69335,10 @@ gcK
 gcK
 gcK
 gcK
-fvh
-utY
+iFI
 qPL
-utY
+qPL
+hlM
 iFI
 wLO
 ijj
@@ -70494,7 +69589,7 @@ gBd
 mwt
 gND
 tka
-wVx
+gcK
 gcK
 gcK
 iFI
@@ -70752,12 +69847,12 @@ mwt
 gND
 tka
 tka
-kVP
-aqc
-iwo
-evy
+dxJ
+gcK
 iFI
-hES
+qPL
+iFI
+iFI
 jem
 mwt
 mwt
@@ -71008,13 +70103,13 @@ laZ
 mwt
 gND
 tka
-gNj
-dQw
+tka
+xVC
 gcK
 iFI
-qzO
 iFI
-mKj
+iFI
+jem
 jem
 mwt
 mwt
@@ -71022,7 +70117,7 @@ gND
 dxJ
 iFI
 wpd
-lMc
+wpd
 wpd
 iFI
 gcK
@@ -71266,12 +70361,12 @@ mwt
 sNB
 hbm
 hbm
-whE
-fvj
 hbm
-pON
 hbm
-uPX
+hbm
+hbm
+hbm
+hbm
 hsj
 mwt
 mwt
@@ -71521,14 +70616,14 @@ prR
 yeL
 mwt
 mwt
-aCY
-rtW
+hDf
+cSU
 cSU
 hab
-tAb
-lwQ
-jzB
-nLx
+cSU
+eWH
+vNv
+hbm
 xCo
 mwt
 mwt
@@ -71536,7 +70631,7 @@ gND
 tka
 aYV
 mwt
-wqb
+cPZ
 mwt
 eUz
 gcK
@@ -72307,8 +71402,8 @@ mwt
 mwt
 mwt
 hvp
-qJs
-vnn
+mwt
+mwt
 sQO
 mwt
 vnR
@@ -72551,9 +71646,9 @@ mwt
 gND
 hbm
 lRV
-vvE
-uHx
-iDw
+cSU
+xHg
+cSU
 eWH
 paM
 hbm
@@ -72566,7 +71661,7 @@ mwt
 mwt
 mwt
 mwt
-qqg
+mwt
 mwt
 mwt
 mwt
@@ -72807,15 +71902,14 @@ hsj
 mwt
 gND
 hbm
-qQI
-eJZ
-cYb
-iET
+aqv
+cSU
+xHg
+cSU
 xHg
 xHg
 hbm
 hsj
-iju
 mwt
 mwt
 mwt
@@ -72823,7 +71917,8 @@ mwt
 mwt
 mwt
 mwt
-oYB
+mwt
+mwt
 mwt
 iyy
 mwt
@@ -73067,7 +72162,7 @@ hbm
 vUX
 whm
 luc
-hmr
+cSU
 eWH
 vNv
 hbm
@@ -73321,10 +72416,10 @@ gin
 mwt
 hft
 hbm
-xww
-wrd
 hbm
-hlB
+hbm
+hbm
+hbm
 hbm
 hbm
 hbm
@@ -73578,9 +72673,9 @@ mwt
 mwt
 mwt
 mwt
-bSa
 mwt
-uzf
+mwt
+sQv
 mwt
 mwt
 mwt
@@ -73588,7 +72683,7 @@ mUo
 mwt
 mwt
 mwt
-tln
+sNB
 hbm
 fkP
 cSU
@@ -73835,10 +72930,10 @@ qRg
 qRg
 iFI
 fOf
-ctf
-pLK
 iFI
-haV
+fOf
+iFI
+qRg
 qRg
 iFI
 iFI
@@ -73849,8 +72944,8 @@ mwt
 qQD
 cSU
 cSU
-kvU
-ovb
+cSU
+cSU
 cSU
 hbm
 gcK
@@ -74092,13 +73187,13 @@ tAN
 seE
 rOo
 sgw
-rbT
-jto
-hJu
-uMg
+sgw
+sgw
+rOo
+tAN
 seE
 seE
-tdG
+vCw
 hsj
 mwt
 mwt
@@ -74106,8 +73201,8 @@ mwt
 qQD
 cSU
 cSU
-kOU
-hiK
+cSU
+iNp
 dhj
 hbm
 gcK
@@ -74351,7 +73446,7 @@ gyd
 rmY
 hzt
 wsA
-stv
+gyd
 wsM
 nUm
 seE
@@ -74359,11 +73454,11 @@ qRg
 hsj
 hhC
 mwt
-xke
+vSH
 hbm
 xwN
 cSU
-eMV
+luc
 iNp
 jgY
 hbm
