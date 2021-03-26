@@ -4341,7 +4341,7 @@
 /obj/machinery/button/door{
 	id = "bosarmoryacc";
 	normaldoorcontrol = 1;
-	pixel_y = -22;
+	pixel_x = -23;
 	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4390,6 +4390,7 @@
 "euI" = (
 /obj/machinery/light/small,
 /obj/machinery/autolathe,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12580,6 +12581,15 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"mRU" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood)
 "mSs" = (
 /obj/structure/table,
 /obj/item/roller,
@@ -21005,6 +21015,17 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/followers)
+"xcc" = (
+/obj/machinery/workbench/forge{
+	desc = "A reactor-heated megafurnace used for forging metal items such as swords, spears and shields and more.";
+	icon_state = "generator_on";
+	name = "superheating forge"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood)
 "xcm" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -85488,9 +85509,9 @@ dYf
 dZz
 oZm
 uvD
+uvD
 eqw
-jZH
-jZH
+xcc
 jZH
 rOj
 jZH
@@ -85746,8 +85767,8 @@ uvD
 uvD
 uvD
 euI
-hji
-jZH
+mRU
+uvD
 jZH
 jZH
 jZH
