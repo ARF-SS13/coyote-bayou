@@ -957,10 +957,6 @@
 /area/f13/brotherhood)
 "beL" = (
 /obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 4
-	},
 /obj/machinery/light/fo13colored/Aqua{
 	dir = 8;
 	name = "light fixture"
@@ -5092,13 +5088,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "flC" = (
-/obj/structure/closet/cabinet{
-	anchored = 1;
-	name = "formal attire cabinet"
+/obj/machinery/shower{
+	pixel_y = 27
 	},
-/obj/item/clothing/under/f13/bosformgold_f,
-/obj/item/clothing/under/f13/bosformgold_m,
-/turf/open/floor/carpet/black,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/obj/structure/decoration/vent,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood)
 "flP" = (
 /obj/effect/landmark/start/f13/prospector,
@@ -5702,7 +5699,7 @@
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "gaz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6259,13 +6256,10 @@
 	},
 /area/f13/clinic)
 "gJk" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
-	dir = 4
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "casino"
-	},
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "gJz" = (
 /obj/effect/landmark/start/f13/prospector,
@@ -17872,6 +17866,15 @@
 "tnp" = (
 /turf/closed/wall/f13/wood,
 /area/f13/sewer)
+"tnE" = (
+/obj/structure/closet/cabinet{
+	anchored = 1;
+	name = "formal attire cabinet"
+	},
+/obj/item/clothing/under/f13/bosformgold_f,
+/obj/item/clothing/under/f13/bosformgold_m,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "toq" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/grass/jungle/b,
@@ -17974,10 +17977,6 @@
 /area/f13/tunnel)
 "ttW" = (
 /obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -18719,6 +18718,16 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"ulj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/grunge{
+	id_tag = null;
+	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "casino"
+	},
+/area/f13/brotherhood)
 "uls" = (
 /obj/structure/table,
 /obj/item/book/granter/trait/pa_wear,
@@ -85743,9 +85752,9 @@ jZH
 jZH
 jZH
 jZH
-gEf
-gEf
-gEf
+jZH
+ulj
+jZH
 vIL
 hae
 jzK
@@ -85997,12 +86006,12 @@ jZH
 jZH
 rOj
 jZH
-phh
-fDW
+jzz
+ryy
 gaj
-gEf
-gEf
-gEf
+gJk
+sCB
+jZH
 gVp
 hcC
 jzK
@@ -86255,11 +86264,11 @@ rOj
 rOj
 jZH
 flC
+ryy
+jZH
+tnE
 uWC
 jZH
-vIL
-gJk
-gEf
 gVy
 hdU
 jZH
