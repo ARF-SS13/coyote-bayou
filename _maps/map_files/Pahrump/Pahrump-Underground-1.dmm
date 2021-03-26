@@ -346,15 +346,11 @@
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood)
 "aue" = (
-/obj/structure/table{
-	layer = 2.9
+/obj/structure/fluff/railing{
+	dir = 4;
+	pixel_x = -29
 	},
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood)
 "auO" = (
 /obj/structure/sign/poster/prewar/poster68,
@@ -2673,7 +2669,9 @@
 /obj/structure/mirror{
 	pixel_x = -27
 	},
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/brotherhood)
 "dbk" = (
 /obj/structure/bed/dogbed,
@@ -4163,13 +4161,9 @@
 	},
 /area/f13/bunker)
 "eER" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/railing{
-	dir = 4;
-	pixel_x = 4
-	},
+/obj/machinery/light/small,
 /turf/open/floor/f13{
-	icon_state = "rampdowntop"
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood)
 "eFS" = (
@@ -4986,7 +4980,8 @@
 /area/f13/brotherhood)
 "fCf" = (
 /obj/structure/simple_door/bunker/glass{
-	name = "Archives"
+	name = "Archives";
+	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -8526,7 +8521,8 @@
 /area/f13/brotherhood)
 "jyg" = (
 /obj/structure/simple_door/bunker{
-	name = "Ceremony Room"
+	name = "Ceremony Room";
+	req_access_txt = "120"
 	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
@@ -11739,7 +11735,7 @@
 /obj/machinery/door/airlock/grunge{
 	id_tag = "headscribedorm";
 	name = "Head Scribe's Office";
-	req_one_access = "120"
+	req_access_txt = "120"
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -12840,12 +12836,11 @@
 	},
 /area/f13/tunnel)
 "owX" = (
-/obj/machinery/door/airlock/clockwork{
+/obj/machinery/door/airlock/vault{
 	desc = "A massive gear set into two heavy slabs of brass.";
-	name = "brotherhood airlock";
-	req_access = null;
-	req_access_txt = "120";
-	req_one_access_txt = null
+	icon = 'icons/obj/doors/airlocks/clockwork/pinion_airlock.dmi';
+	name = "Codex";
+	req_access_txt = "120"
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
@@ -17477,6 +17472,9 @@
 /obj/machinery/vending/dinnerware,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
+/obj/structure/sign/poster/contraband/eat{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood)
 "tAT" = (
@@ -17744,7 +17742,8 @@
 "tJT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/bunker{
-	name = "Ceremony Room"
+	name = "Ceremony Room";
+	req_access_txt = "120"
 	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
@@ -81559,7 +81558,7 @@ mpX
 iBR
 geb
 pXq
-eER
+qii
 aVe
 aVe
 hFb
@@ -81816,7 +81815,7 @@ sWX
 jZH
 jZH
 jZH
-jZH
+aue
 jZH
 jZH
 jZH
@@ -83942,8 +83941,8 @@ fmv
 tsq
 xGu
 gKJ
-jIe
-emg
+eRI
+eRI
 emg
 peK
 rFJ
@@ -84154,7 +84153,7 @@ eNq
 dbT
 jMM
 xqa
-aue
+xqa
 jMM
 aLN
 hFc
@@ -84199,8 +84198,8 @@ jZH
 jZH
 jZH
 jZH
-jIe
-jIe
+eRI
+eER
 jZH
 mUS
 uKn
@@ -84456,8 +84455,8 @@ jZH
 jZH
 xGu
 gKJ
-jIe
-jIe
+eRI
+eRI
 jZH
 uWA
 pFn
