@@ -659,6 +659,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "aQg" = (
@@ -671,6 +674,9 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood)
 "aRn" = (
@@ -1389,6 +1395,9 @@
 	name = "Security Checkpoint";
 	req_access_txt = "120"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood)
 "bxq" = (
@@ -1595,9 +1604,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood)
 "bHd" = (
@@ -1934,6 +1940,16 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"ccb" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Power Stores";
+	req_access_txt = "120"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "ccq" = (
 /obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -2146,9 +2162,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
@@ -4448,6 +4461,15 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"eVi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "eWj" = (
 /turf/open/floor/f13{
 	icon_state = "redmark"
@@ -5556,6 +5578,9 @@
 	name = "Engine Access Shutters"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/side{
 	dir = 8
 	},
@@ -6791,6 +6816,13 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"hIt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/white,
+/area/f13/brotherhood)
 "hIy" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/fifty,
@@ -7832,6 +7864,13 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/followers)
+"iPu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "iPH" = (
 /mob/living/simple_animal/hostile/raider/ranged,
 /turf/open/floor/f13{
@@ -8534,6 +8573,9 @@
 	},
 /area/f13/tunnel)
 "jzs" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/side{
 	dir = 8
 	},
@@ -9880,6 +9922,9 @@
 	anchored = 1
 	},
 /obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood)
 "lec" = (
@@ -11351,6 +11396,14 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"mLN" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	icon_state = "floordirty"
+	},
+/area/f13/brotherhood)
 "mLP" = (
 /obj/structure/chair/stool/retro/black,
 /obj/effect/decal/cleanable/dirt,
@@ -13465,6 +13518,15 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
+"poa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow/side{
+	dir = 8
+	},
+/area/f13/brotherhood)
 "poG" = (
 /obj/structure/window/fulltile/store,
 /obj/structure/barricade/wooden/planks,
@@ -14153,6 +14215,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"qeh" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowtop"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/white,
+/area/f13/brotherhood)
 "qez" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/cardboard/fifty,
@@ -16753,9 +16825,6 @@
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood)
 "sOq" = (
@@ -16895,6 +16964,13 @@
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/r_wall/rust,
 /area/f13/tunnel)
+"sZn" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/white,
+/area/f13/brotherhood)
 "sZJ" = (
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
@@ -19048,9 +19124,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "uZa" = (
@@ -20898,6 +20971,13 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
+"wVK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "wVN" = (
 /obj/effect/decal/cleanable/flour,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
@@ -77000,7 +77080,7 @@ qmh
 nkx
 aZl
 xkQ
-xkQ
+wVK
 uYd
 cqY
 wef
@@ -77257,15 +77337,15 @@ bGU
 aRj
 jZH
 xCf
-kYh
-kYh
+iPu
+xkQ
 aOT
-kYh
-kYh
-gcY
-qmh
-qmh
-qmh
+xkQ
+xkQ
+lkT
+qta
+qta
+hIt
 qmh
 qmh
 qmh
@@ -77522,7 +77602,7 @@ isG
 vFa
 pfv
 faR
-qmh
+nld
 ene
 eGI
 jZH
@@ -78036,7 +78116,7 @@ mzX
 jZH
 hYI
 qmh
-qmh
+nld
 qmh
 jEK
 jZH
@@ -78293,7 +78373,7 @@ kYh
 jZH
 hVy
 uay
-qmh
+nld
 rAt
 icI
 jZH
@@ -78550,7 +78630,7 @@ mzX
 jZH
 mII
 wfH
-jEK
+sZn
 ois
 fIV
 jZH
@@ -78807,12 +78887,12 @@ kYh
 jZH
 vna
 vna
-vna
+qeh
 vna
 vna
 jZH
 jZH
-oAp
+ccb
 oAp
 jZH
 jZH
@@ -79064,12 +79144,12 @@ kYh
 jZH
 oei
 tJL
-tJL
-tJL
-tJL
+eVi
+poa
+poa
 goG
 jzs
-dSr
+mLN
 dSr
 spS
 jZH
