@@ -1978,8 +1978,7 @@
 /turf/closed/wall/f13/store,
 /area/f13/city)
 "brJ" = (
-/obj/structure/table,
-/obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/workbench,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -13248,7 +13247,8 @@
 	},
 /area/f13/wasteland)
 "jIN" = (
-/obj/machinery/workbench,
+/obj/structure/table,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
