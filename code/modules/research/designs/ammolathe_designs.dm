@@ -6,6 +6,31 @@
 	AP = Armor Piercing, these should always cost titanium
 	JHP = Jacketed Hollow Point, should cost less than FMJ
 */
+//materials
+/datum/design/ammolathe/metalplate
+	name = "Metal"
+	id = "metalplate"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/stack/sheet/metal
+	category = list("initial", "Materials")
+	maxstack = 50
+
+/datum/design/ammolathe/blackpowder
+	name = "Blackpowder"
+	id = "blackpowder"
+	materials = list(/datum/material/blackpowder = 2000)
+	build_path = /obj/item/stack/ore/blackpowder
+	category = list("initial", "Materials")
+	maxstack = 50
+	
+/datum/design/ammolathe/titanium
+	name = "Titanium"
+	id = "titanium"
+	materials = list(/datum/material/titanium = 2000)
+	build_path = /obj/item/stack/sheet/mineral/titanium
+	category = list("initial", "Materials")
+	maxstack = 50
+
 
 /* --Tier 1 Ammo and Magazines-- */
 //Tier 1 Magazines
@@ -212,14 +237,14 @@
 /datum/design/ammolathe/m44jhp
 	name = ".44 Magnum JHP ammo box"
 	id = "m44jhp"
-	materials = list(/datum/material/iron = 10000, , /datum/material/blackpowder = 1500)
+	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/m44box/jhp
 	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a357
 	name = ".357 Magnum FMJ ammo box"
 	id = "a357_lathe"
-	materials = list(/datum/material/iron = 16000, , /datum/material/blackpowder = 1500)
+	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 	build_path = /obj/item/ammo_box/a357box
 	category = list("initial", "Basic Ammo")
 

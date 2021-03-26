@@ -113,6 +113,18 @@
 	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
 	w_class = WEIGHT_CLASS_TINY
 
+/obj/item/stack/ore/blackpowder/fifty
+	amount = 50
+
+/obj/item/stack/ore/blackpowder/twenty
+	amount = 20
+
+/obj/item/stack/ore/blackpowder/ten
+	amount = 10
+
+/obj/item/stack/ore/blackpowder/five
+	amount = 5
+
 GLOBAL_LIST_INIT(sand_recipes, list(\
 	new/datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
 	))
