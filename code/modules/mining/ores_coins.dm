@@ -82,6 +82,16 @@
 	refined_type = /obj/item/stack/sheet/metal
 	merge_type = /obj/item/stack/ore/iron
 
+/obj/item/stack/ore/lead
+	name = "lead ore"
+	icon_state = "lead ore"
+	item_state = "lead ore"
+	singular_name = "lead ore chunk"
+	points = 3
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/lead
+	merge_type = /obj/item/stack/ore/lead
+
 /obj/item/stack/ore/glass
 	name = "sand pile"
 	icon_state = "Glass ore"
@@ -92,6 +102,16 @@
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	merge_type = /obj/item/stack/ore/glass
+
+/obj/item/stack/ore/blackpowder
+	name = "blackpowder"
+	icon_state = "Blackpowder ore"
+	item_state = "Blackpowder ore"
+	singular_name = "blackpowder"
+	points = 1
+	merge_type = /obj/item/stack/ore/blackpowder
+	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
+	w_class = WEIGHT_CLASS_TINY
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 	new/datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\

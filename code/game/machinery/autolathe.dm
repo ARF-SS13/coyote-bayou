@@ -568,8 +568,8 @@
 					)
 	allowed_materials = list(
 		/datum/material/iron,
-		/datum/material/titanium
-		)
+		/datum/material/titanium,
+		/datum/material/blackpowder)
 	var/simple = 0
 	var/basic = 0
 	var/intermediate = 0
