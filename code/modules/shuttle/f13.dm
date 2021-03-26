@@ -30,7 +30,7 @@
 	light_color = LIGHT_COLOR_CYAN
 	circuit = /obj/item/circuitboard/computer/bos_control
 	shuttleId = "bos_elevator"
-	possible_destinations = "bos_level_1;bos_level_2;bos_level_3"
+	possible_destinations = "bos_level_1;bos_level_2;"
 	flags_1 = NODECONSTRUCT_1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
