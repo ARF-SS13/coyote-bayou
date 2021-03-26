@@ -582,7 +582,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							250),
 		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							600)
 		)
-	
+
 /obj/machinery/mineral/wasteland_vendor/general
 	name = "Wasteland Vending Machine - General"
 	icon_state = "generic_idle"
@@ -780,10 +780,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Vendor goods:</b><BR><table border='0' width='300'>"
-	if (GLOB.player_list.len>50)		
+	if (GLOB.player_list.len>50)
 		for(var/datum/data/wasteland_equipment/prize in highpop_list)
 			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
-	else 
+	else
 		for(var/datum/data/wasteland_equipment/prize in prize_list)
 			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	dat += "</table>"
@@ -823,9 +823,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /* Adding a caps to caps storage and release vending item. */
 /obj/machinery/mineral/wasteland_vendor/proc/add_caps(obj/item/I)
-	if(istype(I, /obj/item/stack/f13Cash))
+	if(istype(I, /obj/item/stack/f13Cash/caps))
 		var/obj/item/stack/f13Cash/currency = I
-		var/inserted_value = FLOOR(currency.amount * CASH_CAP_VENDOR, 1)
+		var/inserted_value = FLOOR(currency.amount * 1, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -833,7 +833,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
-		var/inserted_value = FLOOR(currency.amount * CASH_NCR_VENDOR, 1)
+		var/inserted_value = FLOOR(currency.amount * 0.4, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -841,7 +841,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * CASH_DEN_VENDOR, 1)
+		var/inserted_value = FLOOR(currency.amount * 4, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -849,7 +849,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
-		var/inserted_value = FLOOR(currency.amount * CASH_AUR_VENDOR, 1)
+		var/inserted_value = FLOOR(currency.amount * 100, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -863,7 +863,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/mineral/wasteland_vendor/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
+	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)
