@@ -64,10 +64,12 @@
 	path = /obj/item/storage/box/large/custom_kit/piperrivera
 	ckeywhitelist = list("purplepineapple")
 
+/*
 /datum/gear/donator/kits/digger
 	name = "Digger's belongings"
 	path = /obj/item/storage/box/large/custom_kit/digger
 	ckeywhitelist = list("entityatlas")
+*/
 
 /datum/gear/donator/kits/orvencross
 	name = "Orven Cross' belongings"
@@ -107,7 +109,8 @@
 						"melarinn",
 						"jackofoak",
 						"purplepineapple",
-						"lynuahsororitas")
+						"lynuahsororitas",
+						"prawn04")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/ranger45
