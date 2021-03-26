@@ -2309,13 +2309,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/f13/brotherhood)
-"cAO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "neutralrustyfull"
-	},
-/area/f13/brotherhood)
 "cBH" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -6971,7 +6964,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -8367,6 +8359,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"jrA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
 "jrV" = (
 /obj/machinery/light{
 	dir = 4
@@ -10032,6 +10030,23 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
+"llp" = (
+/obj/structure/fence/handrail{
+	density = 0;
+	dir = 4;
+	pixel_x = -16
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/brotherhood)
 "llv" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp,
@@ -10449,9 +10464,6 @@
 "lMT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -11509,6 +11521,9 @@
 /area/f13/brotherhood)
 "mWp" = (
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -19372,9 +19387,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -80851,7 +80863,7 @@ nHu
 qVC
 fDi
 vBG
-rFJ
+jrA
 aVe
 rFJ
 ryL
@@ -81110,7 +81122,7 @@ men
 rfs
 oUK
 oUK
-oUK
+euS
 kFc
 ydE
 dpR
@@ -82394,7 +82406,7 @@ qVC
 uWA
 bxX
 aVe
-aVe
+jrn
 sHk
 jZH
 jZH
@@ -83677,7 +83689,7 @@ cZP
 cZP
 emg
 hxe
-jrn
+aVe
 aVe
 aVe
 rFc
@@ -85477,7 +85489,7 @@ tnl
 jZH
 mrV
 mrV
-tAi
+llp
 tAi
 mrx
 mTF
@@ -85734,7 +85746,7 @@ ksU
 jZH
 xnb
 jZH
-cAO
+mTF
 ldP
 lMT
 ldP
@@ -85992,9 +86004,9 @@ jZH
 rjQ
 bJh
 mTF
+mTF
 ldP
-ldP
-cAO
+lMT
 aQg
 fwX
 slT
@@ -86249,7 +86261,7 @@ jZH
 tbg
 jZH
 ldP
-ldP
+mTF
 mTF
 mrV
 kpd
