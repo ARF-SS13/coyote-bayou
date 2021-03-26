@@ -83,7 +83,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster
 	name = "combat duster"
-	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "(IV) An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
 
@@ -155,7 +155,7 @@
 
 /obj/item/clothing/suit/armor/f13/opifex
 	name = "opifex apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as a Opifex."
+	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as an Opifex."
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron"
 	blood_overlay_type = "armor"
@@ -170,7 +170,7 @@
 
 /obj/item/clothing/suit/armor/f13/slavelabor
 	name = "old leather strips"
-	desc = "worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
+	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
 	icon_state = "legslaveleather"
 	item_state = "legslaveleather"
 
@@ -348,7 +348,7 @@
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	name = "NCR officer vest"
-	desc = "(VII) A reinforced set of NCR mantle armour, with added padding on the groin, neck, limbs and shoulders. Intended for use by the officer class."
+	desc = "(VII) A reinforced set of NCR mantle armour, with added padding on the groin, neck and shoulders. Intended for use by the officer class."
 	icon_state = "ncr_lt_armour"
 	item_state = "ncr_lt_armour"
 	armor = list("tier" = 7, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
@@ -421,6 +421,13 @@
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 7, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20)
+
+/obj/item/clothing/suit/armor/f13/ncrcfjacket
+	name = "NCRCF jacket"
+	icon_state = "ncrcfjacket"
+	item_state = "ncrcfjacket"
+	desc = "(I) A cheap, standard issue teal canvas jacket issued to poor suckers who find themselves at the butt-end of the NCR's judiciary system."
+	armor = list("tier" = 1, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //Brotherhood of Steel (PA in f13armor.dm)
 
@@ -625,13 +632,6 @@
 	desc = "(VII) This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-
-/obj/item/clothing/suit/armor/f13/ncrcfjacket
-	name = "NCRCF jacket"
-	icon_state = "ncrcfjacket"
-	item_state = "ncrcfjacket"
-	desc = "(I) A cheap, standard issue teal canvas jacket issued to poor suckers who find themselves at the butt-end of the NCR's judiciary system."
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/soldier
 	name = "standard issue trooper armor"
