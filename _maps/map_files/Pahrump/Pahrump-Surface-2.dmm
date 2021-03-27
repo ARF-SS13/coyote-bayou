@@ -25153,12 +25153,6 @@
 /obj/item/pen/fountain,
 /turf/open/floor/wood,
 /area/f13/village)
-"sQO" = (
-/obj/structure/sign/poster/prewar/poster69{
-	pixel_x = -32
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/brotherhood)
 "sQX" = (
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -25359,13 +25353,6 @@
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"sXo" = (
-/obj/item/stock_parts/cell,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood)
 "sXy" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -29833,6 +29820,11 @@
 /obj/item/clothing/under/f13/shiny,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"wmI" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
 "wmJ" = (
 /obj/item/toy/beach_ball/holoball,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -69338,7 +69330,7 @@ gcK
 iFI
 qPL
 qPL
-hlM
+wmI
 iFI
 wLO
 ijj
@@ -69593,8 +69585,8 @@ gcK
 gcK
 gcK
 iFI
-sXo
-qPL
+anP
+wmI
 iFI
 iFI
 mwt
@@ -69850,7 +69842,7 @@ tka
 dxJ
 gcK
 iFI
-qPL
+wmI
 iFI
 iFI
 jem
@@ -71404,7 +71396,7 @@ mwt
 hvp
 mwt
 mwt
-sQO
+mwt
 mwt
 vnR
 mwt
