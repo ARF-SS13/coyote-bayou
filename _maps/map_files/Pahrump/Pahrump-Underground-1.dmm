@@ -2682,6 +2682,7 @@
 /obj/structure/mirror{
 	pixel_x = -27
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -4175,6 +4176,7 @@
 /area/f13/bunker)
 "eER" = (
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5920,6 +5922,7 @@
 /area/f13/tunnel)
 "gKJ" = (
 /obj/machinery/door/unpowered/wooddoor,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
 "gMX" = (
@@ -15070,6 +15073,7 @@
 "qZY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -15815,6 +15819,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"rOc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/brotherhood)
 "rOj" = (
 /turf/closed/indestructible/opshuttle,
 /area/f13/brotherhood)
@@ -20721,6 +20732,17 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/brotherhood)
+"wJO" = (
+/obj/structure/toilet{
+	pixel_y = 10
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_x = -10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "wJQ" = (
 /obj/effect/decal/cleanable/generic,
@@ -81713,7 +81735,7 @@ qii
 uHP
 qii
 qii
-euS
+oUK
 euS
 oUK
 fcn
@@ -81971,8 +81993,8 @@ uHP
 qii
 qii
 sOf
-euS
 oUK
+rOc
 qZY
 jZH
 bbq
@@ -82485,7 +82507,7 @@ qVC
 uWA
 bxX
 aVe
-jrn
+aVe
 sHk
 jZH
 jZH
@@ -84019,10 +84041,10 @@ tKr
 vMi
 fmv
 tsq
-xGu
+wJO
 gKJ
-eRI
-eRI
+geb
+geb
 emg
 peK
 rFJ
@@ -84278,7 +84300,7 @@ jZH
 jZH
 jZH
 jZH
-eRI
+geb
 eER
 jZH
 mUS
@@ -84533,10 +84555,10 @@ qvg
 vfU
 jZH
 jZH
-xGu
+wJO
 gKJ
-eRI
-eRI
+geb
+geb
 jZH
 uWA
 pFn
