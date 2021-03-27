@@ -1,3 +1,24 @@
+/obj/item/metaldetector
+	name = "metal detector"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+
+/obj/item/metaldetector/attack_self(mob/user)
+	. = ..()
+	var/turf/t = get_turf(src)
+	salvage_scan_pulse(t, world.view)
+
+/obj/item/metaldetector/proc/salvage_scan_pulse(turf/T, range = world.view)
+	var/list/salvage = list()
+	for(var/turf/open/indestructible/ground/outside/desert/M in range(range, T))
+		if(M.salvage)
+			salvage += M
+	if(LAZYLEN(salvage))
+		for(var/turf/open/indestructible/ground/outside/desert/M in salvage)
+			M.icon = 'icons/fallout/objects/crafting.dmi'
+			M.icon_state = "metaldetector"
+
+
 /obj/item/components
 	name = "crafting items"
 	icon = 'icons/fallout/objects/items.dmi'
@@ -12,13 +33,19 @@
 
 /obj/item/prefabs
 	name = "crafting prefabs"
-	icon = 'icons/fallout/objects/crafting.dmi'
+	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "blueprint_empty"
 	w_class = WEIGHT_CLASS_TINY
 
+/obj/item/salvage
+	name = "salvage"
+	icon = 'icons/fallout/objects/items.dmi'
+	icon_state = "blueprint_empty"
+	w_class = WEIGHT_CLASS_NORMAL
+
 /obj/item/stack/prefabs
 	name = "crafting prefabs"
-	icon = 'icons/fallout/objects/crafting.dmi'
+	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "blueprint_empty"
 	w_class = WEIGHT_CLASS_TINY
 
@@ -28,10 +55,14 @@
 	desc = "A crafting blueprint for a weapon design."
 	icon_state = "blueprint2"
 
+/obj/item/blueprint/research
+	name = "mysterious blueprint"
+	desc = "..."
+	icon_state = "blueprint2"
+
 /obj/item/blueprint/misc/stim
 	name = "Stimpack blueprint"
 	desc = "Stimpacks"
-
 
 /obj/item/blueprint/misc/superstims
 	name = "Super Stimpack blueprint"
@@ -878,3 +909,10 @@
 	name = "auto sear"
 	desc = "A rare gun part that allows certain weapons to have select fire capabilities. Cannot be removed."
 	icon_state = "auto_sear"
+
+//salvage
+/obj/item/salvage/low
+	name = "Pre-war salvage"
+
+/obj/item/salvage/high
+	name = "Advanced pre-war salvage"

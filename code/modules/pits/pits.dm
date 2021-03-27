@@ -229,6 +229,11 @@ obj/dugpit/New(lnk)
 		if (user!=null)
 			to_chat(user, "<span class='notice'>You have uncovered a coffin from the grave.</span>")
 		gravecoffin.loc = mypit.loc
+	if (salvage!=null)
+		if (user!=null)
+			to_chat(user, "<span class='notice'>You have uncovered some salvage.</span>")
+		salvage.loc = mypit.loc
 	gravebody = null
 	gravecoffin = null
+	salvage = null
 	return

@@ -494,6 +494,12 @@
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 
+/turf/closed/mineral/lead
+	mineralType = /obj/item/stack/ore/lead
+	spreadChance = 5
+	spread = 1
+	scan_state = "rock_Lead"
+
 /turf/closed/mineral/silver
 	mineralType = /obj/item/stack/ore/silver
 	spreadChance = 5
