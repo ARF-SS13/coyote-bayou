@@ -780,8 +780,8 @@ Venator
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 
 	loadout_options = list(
-	/datum/outfit/loadout/vensniper, //.308 sniper and gladius
-	/datum/outfit/loadout/venassault //Neostead Shotgun + Gladius
+	/datum/outfit/loadout/vensniper, //Sniper Rifle + .45 Revolver (+Gladius)
+	/datum/outfit/loadout/venassault //Neostead Shotgun + Explosive + Tools (+Gladius)
 	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -812,15 +812,20 @@ Venator
 	name = "Venator Assassin"
 	suit_store	=	/obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308=2,
-		/obj/item/claymore/machete/gladius=1)
+		/obj/item/ammo_box/magazine/w308=3,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/gun/ballistic/revolver/revolver45=1,
+		/obj/item/ammo_box/c45rev=2)
 
 /datum/outfit/loadout/venassault
 	name = "Venator Assault"
 	suit_store	=	/obj/item/gun/ballistic/shotgun/neostead
 	backpack_contents = list(
 	    /obj/item/storage/fancy/ammobox/lethalshot=2,
-		/obj/item/claymore/machete/gladius=1)
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/grenade/plastic=1,
+		/obj/item/storage/belt/utility/full/engi=1,
+		/obj/item/clothing/glasses/welding=1)
 
 /*
 Explorer
