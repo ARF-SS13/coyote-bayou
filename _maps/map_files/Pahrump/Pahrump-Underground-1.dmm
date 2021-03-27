@@ -8685,6 +8685,13 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"jGQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "rampdowntop"
+	},
+/area/f13/brotherhood)
 "jHN" = (
 /obj/machinery/chem_dispenser,
 /obj/effect/decal/cleanable/dirt,
@@ -14891,6 +14898,19 @@
 /obj/item/flag/bos,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
+"qPN" = (
+/obj/structure/fence/handrail{
+	density = 0;
+	dir = 4;
+	layer = 3.1;
+	pixel_x = -16
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "rampdowntop"
+	},
+/area/f13/brotherhood)
 "qQF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -15819,13 +15839,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
-"rOc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "floorrustysolid"
-	},
-/area/f13/brotherhood)
 "rOj" = (
 /turf/closed/indestructible/opshuttle,
 /area/f13/brotherhood)
@@ -16821,9 +16834,6 @@
 "sOf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -16911,6 +16921,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"sUH" = (
+/obj/structure/toilet{
+	pixel_y = 10
+	},
+/obj/machinery/light/small{
+	dir = 1;
+	pixel_x = -10
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "sWb" = (
 /obj/machinery/door/airlock/grunge{
 	id_tag = "bosdorm7";
@@ -20732,17 +20753,6 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/brotherhood)
-"wJO" = (
-/obj/structure/toilet{
-	pixel_y = 10
-	},
-/obj/machinery/light/small{
-	dir = 1;
-	pixel_x = -10
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "wJQ" = (
 /obj/effect/decal/cleanable/generic,
@@ -81476,7 +81486,7 @@ bvC
 bvC
 bvC
 lYu
-bvC
+qPN
 bvC
 vqm
 qGz
@@ -81733,8 +81743,8 @@ qii
 qii
 qii
 uHP
-qii
-qii
+jGQ
+jGQ
 oUK
 euS
 oUK
@@ -81991,10 +82001,10 @@ qii
 qii
 uHP
 qii
-qii
+jGQ
 sOf
 oUK
-rOc
+sOf
 qZY
 jZH
 bbq
@@ -84041,7 +84051,7 @@ tKr
 vMi
 fmv
 tsq
-wJO
+sUH
 gKJ
 geb
 geb
@@ -84555,7 +84565,7 @@ qvg
 vfU
 jZH
 jZH
-wJO
+sUH
 gKJ
 geb
 geb
