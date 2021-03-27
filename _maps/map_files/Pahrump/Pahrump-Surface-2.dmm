@@ -31,9 +31,8 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/stack/medical/suture,
-/obj/item/stack/medical/suture,
-/obj/item/reagent_containers/food/snacks/grown/pungafruit,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -1597,9 +1596,10 @@
 	},
 /area/f13/bar)
 "biv" = (
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "bix" = (
 /obj/structure/reagent_dispensers/water_cooler,
@@ -7574,6 +7574,7 @@
 /area/f13/village)
 "fNB" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -10621,10 +10622,10 @@
 /area/f13/farm)
 "hNZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/curtain,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+/obj/structure/curtain{
+	color = "#845f58"
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "hOl" = (
 /turf/open/indestructible/ground/outside/road{
@@ -15090,6 +15091,12 @@
 	icon_state = "verticalrightborderleft1"
 	},
 /area/f13/village)
+"lez" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/bedsheet,
+/obj/structure/bed,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/legion)
 "leM" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -18040,10 +18047,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "ntJ" = (
-/obj/structure/curtain,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+/obj/structure/curtain{
+	color = "#845f58"
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "nuk" = (
 /obj/structure/barricade/wooden,
@@ -18223,12 +18230,7 @@
 "nCl" = (
 /obj/structure/table/optable,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "nCx" = (
 /obj/structure/table/wood/settler,
@@ -19222,9 +19224,8 @@
 /obj/machinery/iv_drip,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "opW" = (
 /obj/effect/turf_decal/stripes/line{
@@ -19588,9 +19589,8 @@
 "oFC" = (
 /obj/machinery/iv_drip,
 /obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "oFP" = (
 /turf/closed/wall/f13/tentwall,
@@ -26873,13 +26873,9 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tZW" = (
-/obj/structure/table/optable,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/obj/item/bedsheet,
+/obj/structure/bed,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "uaa" = (
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -27006,8 +27002,10 @@
 /area/f13/village)
 "udT" = (
 /obj/structure/table/wood,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/stack/medical/suture,
+/obj/item/stack/medical/suture,
+/obj/item/reagent_containers/food/snacks/grown/pungafruit,
+/obj/item/reagent_containers/food/snacks/grown/pungafruit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "udY" = (
@@ -27823,6 +27821,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
+"uFt" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "uFB" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -29267,6 +29271,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"vHR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/freezer/blood{
+	pixel_x = 4
+	},
+/obj/machinery/iv_drip,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "vIb" = (
 /obj/structure/chair/wood/worn{
 	dir = 1
@@ -29346,8 +29358,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "vKl" = (
-/obj/structure/destructible/tribal_torch/lit,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "vKm" = (
@@ -31214,9 +31228,10 @@
 /area/f13/wasteland)
 "xfy" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "xfA" = (
 /obj/item/reagent_containers/food/snacks/meat/slab/molerat,
@@ -93248,7 +93263,7 @@ gcK
 gcK
 hom
 ooz
-biv
+cjV
 ntJ
 xNm
 oMY
@@ -93507,9 +93522,9 @@ hom
 hom
 hom
 pqs
-qWU
+uFt
 eLb
-cWq
+xNm
 rgS
 pIz
 pIz
@@ -94019,7 +94034,7 @@ xNm
 gcK
 hom
 nCl
-xfy
+hbO
 ntJ
 eQH
 awT
@@ -94532,9 +94547,9 @@ mes
 xNm
 idC
 hom
-ooz
+hbO
 xfy
-hNZ
+hbO
 uIV
 oMY
 abC
@@ -94790,9 +94805,9 @@ fKN
 wPS
 hom
 tZW
-biv
-hNZ
-oMY
+tZW
+lez
+vHR
 xNm
 udT
 fBx
