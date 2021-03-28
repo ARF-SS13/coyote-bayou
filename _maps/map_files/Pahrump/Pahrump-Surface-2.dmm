@@ -16428,6 +16428,13 @@
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"lZw" = (
+/obj/machinery/camera{
+	dir = 1;
+	network = list("BoS")
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "lZP" = (
 /obj/structure/car,
 /turf/open/indestructible/ground/outside/road{
@@ -70797,7 +70804,7 @@ tka
 vYf
 fMu
 fMu
-fMu
+lZw
 jem
 fyf
 fyf
