@@ -3573,8 +3573,7 @@
 /turf/closed/wall/rust,
 /area/f13/caves)
 "dYr" = (
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/protolathe/department/medical,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -6567,8 +6566,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hsK" = (
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/destructive_analyzer,
+/obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -7852,15 +7850,11 @@
 "iPr" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
 /obj/item/circuitboard/machine/biogenerator,
 /obj/item/circuitboard/machine/seed_extractor,
 /obj/item/circuitboard/machine/chem_dispenser,
 /obj/item/circuitboard/machine/chem_master,
 /obj/item/circuitboard/machine/chem_heater,
-/obj/item/circuitboard/machine/techfab/department/medical,
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/circuitboard/machine/mining_equipment_vendor,
 /turf/open/floor/f13{
@@ -9534,6 +9528,8 @@
 /area/f13/brotherhood)
 "kCx" = (
 /obj/structure/table/glass,
+/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -12884,6 +12880,22 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
+"ovY" = (
+/obj/structure/closet{
+	name = "implants locker"
+	},
+/obj/item/organ/cyberimp/chest/nutriment,
+/obj/item/organ/cyberimp/chest/nutriment,
+/obj/item/organ/cyberimp/chest/nutriment,
+/obj/item/organ/cyberimp/chest/nutriment/plus,
+/obj/item/organ/cyberimp/eyes/hud/medical,
+/obj/item/organ/cyberimp/eyes/hud/medical,
+/obj/item/organ/cyberimp/eyes/hud/medical,
+/obj/item/organ/cyberimp/eyes/hud/medical,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "owa" = (
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -14078,14 +14090,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood)
-"pWi" = (
-/obj/machinery/rnd/server/followers{
-	name = "Followers Research Server"
-	},
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/followers)
 "pWr" = (
 /obj/structure/spider/stickyweb,
 /turf/open/indestructible/ground/inside/dirt,
@@ -19660,12 +19664,6 @@
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
-"vwL" = (
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/followers)
 "vxm" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -21546,9 +21544,36 @@
 	},
 /area/f13/followers)
 "xEd" = (
-/obj/machinery/computer/rdconsole/core/followers{
-	dir = 8
-	},
+/obj/structure/closet/crate/freezer,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -43298,7 +43323,7 @@ uoO
 aoj
 aoj
 oFg
-vwL
+pvV
 tFc
 jlt
 jlt
@@ -45617,7 +45642,7 @@ uoO
 uoO
 uoO
 oFg
-pWi
+hsK
 hsK
 dYr
 xEd
@@ -46408,7 +46433,7 @@ xSb
 hIl
 llv
 tKU
-tKU
+ovY
 oFg
 uug
 lhQ
