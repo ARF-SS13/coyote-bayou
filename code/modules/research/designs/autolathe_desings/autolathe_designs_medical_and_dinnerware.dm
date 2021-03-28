@@ -65,6 +65,23 @@
 ///Medical//
 ////////////
 
+/datum/design/largesyringe
+	name = "Large syringe"
+	id = "largesyringe"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 20, /datum/material/glass = 40)
+	build_path = /obj/item/scalpel
+	category = list("initial", "Medical")
+
+/datum/design/xlargesyringex
+	name = "X-Large syringe"
+	id = "xlargesyringe"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 30, /datum/material/glass = 60)
+	build_path = /obj/item/scalpel
+	category = list("initial", "Medical")
+
+
 /datum/design/scalpel
 	name = "Scalpel"
 	id = "scalpel"
