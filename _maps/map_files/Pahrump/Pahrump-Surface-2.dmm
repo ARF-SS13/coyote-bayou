@@ -5627,10 +5627,6 @@
 /area/f13/building)
 "esD" = (
 /obj/machinery/light/small,
-/obj/item/radio/intercom{
-	frequency = 1891;
-	pixel_y = -33
-	},
 /obj/structure/closet/crate/bin,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/brotherhood)
@@ -7955,6 +7951,13 @@
 /obj/item/reagent_containers/food/snacks/kebab/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"gdv" = (
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = -33
+	},
+/turf/open/indestructible/ground/outside/wood,
+/area/f13/brotherhood)
 "gdN" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/indestructible/ground/outside/desert,
@@ -13519,9 +13522,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "jUn" = (
-/obj/structure/simple_door/interior{
-	req_access_txt = "120"
-	},
+/obj/structure/simple_door/interior,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -15728,7 +15729,8 @@
 "lxW" = (
 /obj/machinery/button/door{
 	id = "bosgarage";
-	pixel_y = 30
+	pixel_y = 30;
+	req_access_txt = "120"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/brotherhood)
@@ -32384,7 +32386,14 @@
 /area/f13/wasteland)
 "xSV" = (
 /obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = -10
+	},
+/obj/machinery/computer/security/bos{
+	circuit = /obj/item/circuitboard/computer/security;
+	dir = 1;
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "xTj" = (
@@ -73113,7 +73122,7 @@ cSU
 cSU
 cSU
 cSU
-cSU
+gdv
 hbm
 gcK
 gcK
@@ -76199,7 +76208,7 @@ mwt
 yjt
 gND
 hbm
-qQD
+hDf
 jeO
 hbm
 qfo
