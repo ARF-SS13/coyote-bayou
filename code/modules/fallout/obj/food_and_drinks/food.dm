@@ -293,6 +293,39 @@
 
 //WASTELAND PREPARED MEALS
 
+/obj/item/reagent_containers/food/snacks/meatsalted
+	name = "salted meat"
+	desc = "Slab of meat preserved in salt. Makes you thirsty."
+	icon_state = "meatsalted"
+	bitesize = 5
+	filling_color = "#800000"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("meat" = 2, "salt" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meatsmoked
+	name = "smoked meat"
+	desc = "Slab of meat dried by smoking. Leathery consistency."
+	icon_state = "meatsmoked"
+	bitesize = 5
+	filling_color = "#800000"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("meat" = 2, "smoke" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/breadhard
+	name = "hard bread"
+	desc = "Flat dried bread, stores well."
+	icon_state = "breadhard"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 7)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	bitesize = 5
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("bread" = 1, "smoke" = 1)
+	foodtype = GRAIN
+
 /obj/item/reagent_containers/food/snacks/f13/molejerky
 	name = "Molerat Wondermeat"
 	desc = "Molerat meat cured with wonderglue in a metal container. Has a nutty aftertaste."
