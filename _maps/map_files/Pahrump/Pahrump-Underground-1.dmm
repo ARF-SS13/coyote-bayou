@@ -12521,6 +12521,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"nNi" = (
+/obj/structure/table/wood,
+/obj/machinery/bookbinder{
+	icon_state = "bigscanner";
+	pixel_y = 7
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "nNx" = (
 /obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -86406,7 +86414,7 @@ bEz
 owa
 lgv
 owa
-fOH
+nNi
 rwk
 nMG
 aCS
