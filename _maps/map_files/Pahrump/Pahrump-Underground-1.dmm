@@ -1372,7 +1372,9 @@
 	},
 /area/f13/brotherhood)
 "bvP" = (
-/obj/structure/closet/crate/secure/weapon,
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
 /obj/item/stock_parts/cell/ammo/ec,
 /obj/item/stock_parts/cell/ammo/ec,
 /obj/item/stock_parts/cell/ammo/ec,
@@ -3052,6 +3054,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/machinery/camera/autoname{
+	dir = 5;
+	name = "Foyer Camera";
+	network = list("BoS");
+	pixel_x = -1
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -5513,7 +5521,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "gjb" = (
-/obj/machinery/computer/security/wooden_tv,
+/obj/machinery/computer/security/wooden_tv{
+	network = list("BoS")
+	},
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood)
 "gjB" = (
@@ -5773,6 +5783,11 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/stack/sheet/prewar/five,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -6159,10 +6174,6 @@
 /area/f13/caves)
 "hac" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
-/obj/machinery/camera/autoname{
-	dir = 5;
-	icon_state = "camera"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
@@ -8088,15 +8099,15 @@
 /area/f13/sewer)
 "iZB" = (
 /obj/machinery/workbench/advanced,
-/obj/item/stack/sheet/prewar/five,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/camera/autoname{
+	dir = 1;
+	name = "Armory Camera";
+	network = list("BoS");
+	pixel_x = -1
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
 /area/f13/brotherhood)
 "iZD" = (
 /obj/structure/toilet{
@@ -11716,6 +11727,8 @@
 /obj/structure/rack,
 /obj/item/book/granter/crafting_recipe/blueprint/aep7,
 /obj/item/book/granter/crafting_recipe/blueprint/aer9,
+/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -11989,6 +12002,9 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -12659,6 +12675,7 @@
 "ois" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/security/bos{
+	circuit = /obj/item/circuitboard/computer/security;
 	dir = 8;
 	pixel_x = 7;
 	pixel_y = 8
@@ -13374,6 +13391,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mopbucket,
 /obj/item/mop,
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = 11
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -13753,7 +13774,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pyn" = (
-/obj/structure/closet/crate/secure/weapon,
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/stock_parts/cell/ammo/mfc,
@@ -14066,16 +14089,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
-"pUF" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
-	icon_state = "camera"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "rampdowntop"
-	},
-/area/f13/brotherhood)
 "pVA" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/structure/spider/stickyweb,
@@ -14803,18 +14816,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "qMn" = (
-/obj/machinery/camera/autoname{
-	dir = 5;
-	icon_state = "camera"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/storage/box/lights/tubes{
+	pixel_x = 8
 	},
-/obj/structure/lattice{
-	layer = 3
+/obj/item/storage/box/lights/bulbs{
+	pixel_x = -8
 	},
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "qME" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16660,6 +16672,11 @@
 /obj/structure/sign/poster/contraband/smoke{
 	pixel_y = -32
 	},
+/obj/machinery/camera/autoname{
+	dir = 1;
+	name = "RnD Checkpoint Camera";
+	network = list("BoS")
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "sHo" = (
@@ -16780,7 +16797,9 @@
 	},
 /area/f13/bunker)
 "sME" = (
-/obj/structure/closet/crate/secure/weapon,
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/item/stock_parts/cell/ammo/ecp,
@@ -16796,7 +16815,9 @@
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/item/stock_parts/cell/ammo/ecp,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
 /area/f13/brotherhood)
 "sMQ" = (
 /obj/structure/simple_door/bunker,
@@ -17167,7 +17188,7 @@
 /area/f13/tunnel)
 "thO" = (
 /obj/effect/turf_decal/stripes/white/line{
-	dir = 10
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "yellowrustysolid"
@@ -18207,13 +18228,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ucQ" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
-/obj/item/book/granter/crafting_recipe/blueprint/aep7,
-/obj/item/book/granter/crafting_recipe/blueprint/aer9,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
 "ucS" = (
@@ -20007,7 +20026,8 @@
 "vNU" = (
 /obj/machinery/camera/autoname{
 	dir = 5;
-	icon_state = "camera"
+	name = "Reactor Camera";
+	network = list("BoS")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
@@ -20266,6 +20286,8 @@
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -21340,7 +21362,9 @@
 /obj/structure/table{
 	layer = 2.9
 	},
-/obj/machinery/computer/security/bos,
+/obj/machinery/computer/security/bos{
+	circuit = /obj/item/circuitboard/computer/security
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "xoU" = (
@@ -21783,6 +21807,16 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8
+	},
+/obj/machinery/computer/security/bos{
+	circuit = /obj/item/circuitboard/computer/security;
+	dir = 4;
+	pixel_y = 10
+	},
+/obj/machinery/computer/terminal{
+	dir = 4;
+	pixel_y = -6;
+	termtag = "Secret"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -80232,10 +80266,10 @@ aVe
 uFO
 rFc
 jZH
-cus
+qMn
 oUK
 oUK
-cus
+ucQ
 jZH
 jZH
 uoO
@@ -82723,7 +82757,7 @@ dEm
 pWr
 qpX
 xNC
-qMn
+jbP
 nnH
 vDC
 mpn
@@ -82736,7 +82770,7 @@ eRI
 qii
 qii
 vqo
-pUF
+qii
 ojR
 eFS
 qii
@@ -85816,7 +85850,7 @@ ocY
 jZH
 qmL
 qQF
-ucQ
+mDt
 mDt
 sxs
 bvP
