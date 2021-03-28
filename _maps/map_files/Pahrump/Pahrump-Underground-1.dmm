@@ -218,6 +218,12 @@
 	icon_state = "dark"
 	},
 /area/f13/bunker)
+"ajJ" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/caves)
 "ajM" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -568,7 +574,9 @@
 "aHj" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/debris/v4,
-/turf/closed/mineral/random/low_chance,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
 /area/f13/caves)
 "aHn" = (
 /obj/machinery/door/airlock/grunge{
@@ -996,7 +1004,7 @@
 	name = "vines"
 	},
 /obj/structure/flora/rock/pile/largejungle,
-/turf/closed/mineral/random/low_chance,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bfL" = (
 /obj/structure/chair/f13foldupchair,
@@ -1258,9 +1266,8 @@
 /area/f13/brotherhood)
 "bri" = (
 /obj/effect/temp_visual/steam_release,
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
+/area/f13/wasteland)
 "brp" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -1888,14 +1895,6 @@
 	dir = 4
 	},
 /area/f13/brotherhood)
-"bVN" = (
-/obj/structure/flora/rock/jungle,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/effect/sunlight,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "bVO" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -2337,9 +2336,12 @@
 /turf/open/floor/plating/f13,
 /area/f13/followers)
 "cyA" = (
-/obj/structure/flora/junglebush/b,
-/obj/effect/sunlight,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
 /area/f13/caves)
 "cyG" = (
 /obj/structure/table/glass,
@@ -3007,9 +3009,8 @@
 	name = "vines"
 	},
 /obj/structure/flora/rock/pile/largejungle,
-/obj/effect/sunlight,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "dvP" = (
 /obj/machinery/door/airlock/hatch{
 	req_access_txt = "120"
@@ -3625,7 +3626,9 @@
 "dWT" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/junglebush/b,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
 /area/f13/caves)
 "dWV" = (
 /obj/item/flashlight/lantern,
@@ -4184,9 +4187,8 @@
 /area/f13/building)
 "eBP" = (
 /obj/structure/debris/v1,
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
+/area/f13/wasteland)
 "eCr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -4468,6 +4470,12 @@
 /obj/machinery/telecomms/server/presets/engineering,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"eRg" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/caves)
 "eRs" = (
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -7875,7 +7883,6 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/obj/effect/sunlight,
 /turf/open/floor/plating/ashplanet/wateryrock{
 	baseturfs = /turf/open/floor/plating/f13/outside/desert
 	},
@@ -8978,6 +8985,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
+"jPi" = (
+/obj/structure/flora/junglebush,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "jPx" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 9
@@ -9305,9 +9316,8 @@
 "keR" = (
 /obj/structure/glowshroom/single,
 /obj/structure/campfire/barrel,
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
+/area/f13/wasteland)
 "kfQ" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -9635,6 +9645,10 @@
 /obj/item/flag/bos,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood)
+"kAm" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "kAp" = (
 /obj/structure/table/wood,
 /obj/item/chair/stool,
@@ -12727,6 +12741,15 @@
 	icon_state = "housewood_stage_bottom_left"
 	},
 /area/f13/brotherhood)
+"nYw" = (
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/caves)
 "nYD" = (
 /obj/structure/simple_door/bunker/glass{
 	name = "Proctor's Offices"
@@ -12750,6 +12773,11 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"oaW" = (
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/caves)
 "obS" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -12826,6 +12854,13 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"ofI" = (
+/obj/structure/flora/rock/jungle,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "ohv" = (
 /obj/item/gun/ballistic/automatic/marksman/sniper/gold,
 /obj/structure/rack,
@@ -12873,9 +12908,8 @@
 /area/f13/brotherhood)
 "okm" = (
 /obj/structure/debris/v2,
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
+/area/f13/wasteland)
 "okO" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal{
@@ -14155,6 +14189,12 @@
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"pKf" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/caves)
 "pLC" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -15100,13 +15140,12 @@
 /turf/open/water,
 /area/f13/brotherhood)
 "qOT" = (
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water{
 	density = 1;
 	desc = "Deep lake water, filled with who knows what...";
 	name = "lake water"
 	},
-/area/f13/caves)
+/area/f13/wasteland)
 "qPh" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -15900,8 +15939,9 @@
 /area/f13/building)
 "rDr" = (
 /obj/structure/flora/rock/pile/largejungle,
-/obj/effect/sunlight,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
 /area/f13/caves)
 "rDu" = (
 /obj/machinery/door/airlock/grunge{
@@ -17484,9 +17524,8 @@
 /turf/open/water,
 /area/f13/brotherhood)
 "tln" = (
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
+/area/f13/wasteland)
 "tls" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -17506,9 +17545,8 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/obj/effect/sunlight,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/area/f13/wasteland)
 "tmM" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old"
@@ -19957,9 +19995,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vxR" = (
-/obj/effect/sunlight,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/turf/open/floor/plating/ashplanet/wateryrock{
+	baseturfs = /turf/open/floor/plating/f13/outside/desert
+	},
+/area/f13/wasteland)
 "vyb" = (
 /obj/structure/sign/poster/prewar/poster67,
 /turf/closed/wall/r_wall,
@@ -85163,7 +85202,7 @@ bfh
 lIH
 xVz
 xVz
-gbA
+eRg
 dWT
 xVz
 xVz
@@ -85416,13 +85455,13 @@ gbA
 uoO
 wEX
 xVz
-wEX
+cyA
 qUL
 qUL
 qGe
 tkU
-kqS
-nIl
+ajJ
+rDr
 qZA
 xVz
 xVz
@@ -85673,14 +85712,14 @@ xVz
 xVz
 xdB
 xVz
-isU
+pKf
 oMK
 iGY
 qOT
-qxo
+tln
 oNu
 suF
-gbA
+eRg
 uiV
 qZA
 xVz
@@ -85931,15 +85970,15 @@ xVz
 xVz
 xVz
 aHj
-xdB
+nYw
 dur
 tmh
-qxo
-qxo
+tln
+tln
 okm
+kAm
 gTy
-gTy
-xVz
+oaW
 qGe
 qGe
 qxo
@@ -86450,8 +86489,8 @@ vxR
 bri
 tln
 tln
-qxo
 tln
+qxo
 qxo
 qxo
 qxo
@@ -86701,7 +86740,7 @@ xVz
 xVz
 xVz
 uoO
-otf
+qOT
 qOT
 vxR
 tln
@@ -86709,11 +86748,11 @@ tln
 tln
 tln
 rDr
-nIl
-xVz
-nIl
-xVz
-nIl
+rDr
+oaW
+rDr
+oaW
+rDr
 uoO
 eLE
 uoO
@@ -86959,12 +86998,12 @@ xVz
 xVz
 xVz
 ahx
-qOT
+otf
 vxR
 tln
 keR
 tln
-oNu
+jPi
 dWT
 xVz
 xVz
@@ -87216,13 +87255,13 @@ wEX
 xVz
 wxb
 xVz
-xdB
-bVN
-tmh
-qxo
+nYw
+iGY
+ofI
+tln
 eBP
 oNu
-kqS
+ajJ
 qZA
 xVz
 xVz
@@ -87477,7 +87516,7 @@ uoO
 mTt
 xVz
 nIl
-cyA
+gbA
 dkT
 kqS
 uoO
