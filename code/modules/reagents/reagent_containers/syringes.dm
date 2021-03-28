@@ -260,6 +260,18 @@
 	amount_per_transfer_from_this = 20
 	volume = 60
 
+/obj/item/reagent_containers/syringe/large
+	name = "large syringe"
+	desc = "An advanced syringe that can hold 30 units of chemicals."
+	amount_per_transfer_from_this = 10
+	volume = 30
+
+/obj/item/reagent_containers/syringe/xlarge
+	name = "X-large syringe"
+	desc = "An advanced syringe that can hold 45 units of chemicals."
+	amount_per_transfer_from_this = 15
+	volume = 45
+
 /obj/item/reagent_containers/syringe/noreact
 	name = "cryo syringe"
 	desc = "An advanced syringe that stops reagents inside from reacting. It can hold up to 20 units."
