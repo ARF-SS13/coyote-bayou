@@ -30,7 +30,7 @@
 /obj/item/projectile/bullet/a762/jsp
 	name = "7.62 JSP bullet"
 	damage = 50 //48
-	armour_penetration = 0.4 //0.5
+	armour_penetration = 0.1 //0.5
 	wound_bonus = 20
 	bare_wound_bonus = 20
 
