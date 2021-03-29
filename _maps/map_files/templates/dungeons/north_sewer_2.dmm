@@ -1682,11 +1682,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
-"II" = (
-/mob/living/simple_animal/hostile/raider/ranged,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "IL" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/abomhorror{
@@ -2377,7 +2372,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "XH" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "XJ" = (
@@ -3950,7 +3945,7 @@ BH
 QU
 QU
 nQ
-II
+QO
 he
 Ko
 fV
