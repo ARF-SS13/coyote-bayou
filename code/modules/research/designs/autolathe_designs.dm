@@ -236,6 +236,15 @@
 	category = list("initial","Construction")
 	maxstack = 50
 
+/datum/design/lead
+	name = "Lead"
+	id = "lead"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/lead = 2000)
+	build_path = /obj/item/stack/sheet/lead
+	category = list("initial","Construction")
+	maxstack = 50
+
 /datum/design/rcd_ammo
 	name = "Compressed Matter Cartridge"
 	id = "rcd_ammo"

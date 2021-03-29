@@ -62,6 +62,17 @@
 	anchored = TRUE
 	machine_tool_behaviour = TOOL_WORKBENCH
 	var/wrenchable = 1
+	var/list/salvage_low = list("parts" = /obj/item/stack/crafting/metalparts/five,
+								"powder" = /obj/item/stack/ore/blackpowder/two,
+								"electronic"= /obj/item/stack/crafting/electronicparts/three,
+								"lead" = /obj/item/stack/sheet/lead/five)
+	
+	var/list/salvage_high = list("goodparts" = /obj/item/stack/crafting/goodparts/five, 
+								"research" = /obj/item/blueprint/research,
+								"reciever" = /obj/item/advanced_crafting_components/receiver,
+								"assembly" = /obj/item/advanced_crafting_components/assembly,
+								"alloys" = /obj/item/advanced_crafting_components/alloys)
+
 
 /obj/machinery/workbench/can_be_unfasten_wrench(mob/user, silent)
 	if (!wrenchable)  // case also covered by NODECONSTRUCT checks in default_unfasten_wrench
@@ -80,6 +91,16 @@
 		return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
+	if(istype(W,/obj/item/salvage/low))
+		if(do_after(user,80,target = src))
+			var/item_path = salvage_low[pick(salvage_low)]
+			new item_path(get_turf(src))
+			qdel(W)
+	if(istype(W,/obj/item/salvage/high))
+		if(do_after(user,80,target = src))
+			var/item_path = salvage_high[pick(salvage_high)]
+			new item_path(get_turf(src))
+			qdel(W)
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1
 
