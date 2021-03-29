@@ -2525,10 +2525,6 @@
 "bPH" = (
 /obj/structure/rack,
 /obj/item/flashlight/lantern,
-/obj/item/gun/ballistic/revolver/caravan_shotgun,
-/obj/item/gun/ballistic/revolver/caravan_shotgun,
-/obj/item/gun/ballistic/revolver/caravan_shotgun,
-/obj/item/gun/ballistic/revolver/caravan_shotgun,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
@@ -8651,13 +8647,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"gAn" = (
-/obj/structure/rack,
-/obj/item/storage/backpack/spearquiver,
-/obj/item/storage/backpack/spearquiver,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "gAU" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/metal{
@@ -26674,12 +26663,6 @@
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"tQq" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "tQr" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
@@ -27191,11 +27174,6 @@
 /area/f13/building)
 "uhW" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "uhY" = (
@@ -93074,7 +93052,7 @@ eXO
 pIz
 frY
 hom
-tQq
+uhW
 xNm
 hcr
 hom
@@ -93333,7 +93311,7 @@ rbJ
 hom
 bPH
 eQH
-gAn
+uhW
 hom
 gcK
 gcK
