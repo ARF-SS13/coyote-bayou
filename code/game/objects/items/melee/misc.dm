@@ -355,7 +355,7 @@
 			if(target.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, null) & BLOCK_SUCCESS)
 				playsound(target, 'sound/weapons/genhit.ogg', 50, 1)
 				return
-			if(ishuman(target))
+			if(ishuman(target) && !user.zone_selected ==	BODY_ZONE_L_LEG || !user.zone_selected == BODY_ZONE_R_LEG)
 				var/mob/living/carbon/human/H = target
 				if(check_martial_counter(H, user))
 					return
