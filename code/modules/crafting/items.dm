@@ -1,12 +1,13 @@
 /obj/item/metaldetector
 	name = "metal detector"
+	desc = "Detects burried salvage in a 5 tile radius."
 	icon = 'icons/fallout/objects/items.dmi'
-	icon_state = "blueprint_empty"
+	icon_state = "metaldetect"
 
 /obj/item/metaldetector/attack_self(mob/user)
 	. = ..()
 	var/turf/t = get_turf(src)
-	salvage_scan_pulse(t, world.view)
+	salvage_scan_pulse(t, 5)
 
 /obj/item/metaldetector/proc/salvage_scan_pulse(turf/T, range = world.view)
 	var/list/salvage = list()
