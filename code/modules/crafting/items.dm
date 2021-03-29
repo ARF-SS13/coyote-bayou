@@ -914,6 +914,10 @@
 //salvage
 /obj/item/salvage/low
 	name = "Pre-war salvage"
+	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
+	icon_state = "salvage"
 
 /obj/item/salvage/high
 	name = "Advanced pre-war salvage"
+	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
+	icon_state = "goodsalvage"

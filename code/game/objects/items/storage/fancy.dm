@@ -134,7 +134,7 @@
 	icon_type = "b"
 	spawn_type = /obj/item/ammo_casing/shotgun/rubbershot
 	var/foldable = /obj/item/stack/sheet/cardboard
-	custom_materials = list(/datum/material/iron=4000, /datum/material/blackpowder = 200)
+	custom_materials = list(/datum/material/iron=4000)
 
 /obj/item/storage/fancy/ammobox/attack_self(mob/user)
 	. = ..()

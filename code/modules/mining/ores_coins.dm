@@ -120,6 +120,9 @@
 /obj/item/stack/ore/blackpowder/twenty
 	amount = 20
 
+/obj/item/stack/ore/blackpowder/two
+	amount = 2
+
 /obj/item/stack/ore/blackpowder/five
 	amount = 5
 

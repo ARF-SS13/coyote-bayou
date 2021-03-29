@@ -63,9 +63,12 @@
 	machine_tool_behaviour = TOOL_WORKBENCH
 	var/wrenchable = 1
 	var/list/salvage_low = list("parts" = /obj/item/stack/crafting/metalparts/five,
-								"powder" = /obj/item/stack/ore/blackpowder/five)
+								"powder" = /obj/item/stack/ore/blackpowder/two)
 	var/list/salvage_high = list("goodparts" = /obj/item/stack/crafting/goodparts/five, 
-								"research" = /obj/item/blueprint/research)
+								"research" = /obj/item/blueprint/research,
+								"reciever" = /obj/item/advanced_crafting_components/receiver,
+								"assembly" = /obj/item/advanced_crafting_components/assembly,
+								"alloys" = /obj/item/advanced_crafting_components/alloys)
 
 
 /obj/machinery/workbench/can_be_unfasten_wrench(mob/user, silent)
