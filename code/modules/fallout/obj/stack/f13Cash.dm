@@ -9,9 +9,9 @@
 /* value of coins to spawn, use as-is for caps */
 /* LOW_MIN / AUR = amount in AUR */
 
-// A low value cash spawn is on average worth 12
-#define LOW_MIN 5
-#define LOW_MAX 20
+// A low value cash spawn is on average worth 25
+#define LOW_MIN 1
+#define LOW_MAX 50
 
 // A medium value cash spawn is on average worth 75
 #define MED_MIN 50
@@ -25,7 +25,7 @@
 #define BANKER_MIN 2000
 #define BANKER_MAX 15000
 
-/obj/item/stack/f13Cash
+/obj/item/stack/f13Cash //DO NOT USE THIS
 	name = "bottle cap"
 	singular_name = "cap"
 	icon = 'icons/obj/economy.dmi'
@@ -63,6 +63,9 @@
 									"<span class='italics'>You hear the clattering of loose change.</span>")
 		return TRUE//did the coin flip? useful for suicide_act
 
+/obj/item/stack/f13Cash/caps
+	merge_type = /obj/item/stack/f13Cash/caps
+
 /obj/item/stack/f13Cash/fivezerozero
 	amount = 500
 	merge_type = /obj/item/stack/f13Cash
@@ -73,7 +76,11 @@
 	update_icon()
 
 /obj/item/stack/f13Cash/proc/update_desc()
-	desc = "It's worth [amount] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s" : "")].\n[flavor_desc]"
+	var/total_worth = get_item_credit_value()
+	desc = "It's worth [total_worth] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s each" : "")].\n[flavor_desc]"
+
+/obj/item/stack/f13Cash/get_item_credit_value()
+	return (amount*value)
 
 /obj/item/stack/f13Cash/merge(obj/item/stack/S)
 	. = ..()
@@ -86,7 +93,7 @@
 	update_icon()
 
 /obj/item/stack/f13Cash/random
-	var/money_type = /obj/item/stack/f13Cash
+	var/money_type = /obj/item/stack/f13Cash/caps
 	var/min_qty = LOW_MIN
 	var/max_qty = LOW_MAX
 
@@ -202,6 +209,7 @@
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
 	singular_name = "NCR Dollar"  /* same for denarius, we can pretend the legion can't latin properly */
+	flavor_desc = "Paper money used by the NCR."
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
 	value = CASH_NCR * CASH_CAP

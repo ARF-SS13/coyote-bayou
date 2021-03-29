@@ -83,7 +83,7 @@
 			workpiece_material = notsword.custom_materials
 			to_chat(user, "You place the [notsword] on the [src].")
 			currentquality = anvilquality
-			var/skillmod = 0
+			var/skillmod = 4
 			if(user.mind.skill_holder)
 				skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2
 			currentquality += skillmod

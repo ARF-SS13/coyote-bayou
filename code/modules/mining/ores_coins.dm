@@ -113,7 +113,6 @@
 	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
 	w_class = WEIGHT_CLASS_TINY
 
-
 /obj/item/stack/ore/blackpowder/fifty
 	amount = 50
 

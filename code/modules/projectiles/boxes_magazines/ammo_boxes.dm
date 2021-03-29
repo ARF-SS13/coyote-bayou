@@ -313,7 +313,7 @@
 /obj/item/ammo_box/a762box/ap
 	name = "ammo box (7.62x51 AP)"
 	ammo_type = /obj/item/ammo_casing/a762/ap
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/titanium = 50000)
+	custom_materials = list(/datum/material/iron = 20000, /datum/material/titanium = 5000)
 
 /obj/item/ammo_box/a762box/jsp
 	name = "ammo box (7.62x51 JSP)"

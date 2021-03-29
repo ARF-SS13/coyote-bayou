@@ -8,9 +8,9 @@
 
 /obj/item/projectile/bullet/c10mm/ap
 	name = "10mm AP bullet"
-	damage = 27
-	armour_penetration = 0.60 //0.45
-	wound_bonus = 36
+	damage = 24
+	armour_penetration = 0.5 //0.45
+	wound_bonus = 30
 	bare_wound_bonus = -36
 
 /obj/item/projectile/bullet/c10mm/hp
@@ -30,8 +30,8 @@
 
 /obj/item/projectile/bullet/c9mm/ap
 	name = "9mm AP bullet"
-	damage = 23
-	armour_penetration = 0.6 //0.4
+	damage = 20
+	armour_penetration = 0.5 //0.4
 	wound_bonus = 30
 	bare_wound_bonus = -30
 

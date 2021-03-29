@@ -564,7 +564,8 @@
 					"Intermediate Ammo",
 					"Intermediate Magazines",
 					"Advanced Ammo",
-					"Advanced Magazines"
+					"Advanced Magazines",
+					"Materials"
 					)
 	allowed_materials = list(
 		/datum/material/iron,

@@ -145,7 +145,7 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/is_calf = 0
 	var/has_calf = 0
-//	var/young_type = /mob/living/simple_animal/cow/calf
+	var/young_type = null
 	blood_volume = 480
 
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -181,7 +181,24 @@
 	if(!(. = ..()))
 		return
 	if(stat == CONSCIOUS)
-		udder.generateMilk(milk_reagent)
+		if((prob(3) && has_calf))
+			has_calf++
+		if(has_calf > 10)
+			has_calf = 0
+			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			new young_type(get_turf(src))
+
+		if(is_calf)
+			if((prob(3)))
+				is_calf = 0
+				udder = new()
+				if (name == "brahmin calf")
+					name = "brahmin"
+				else
+					name = "cow"
+				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+		else
+			udder.generateMilk(milk_reagent)
 
 /mob/living/simple_animal/cow/on_attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
@@ -596,7 +613,7 @@
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	var/young_type = /mob/living/simple_animal/cow/brahmin/calf
+	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	emote_hear = list("brays.")
 	var/obj/item/inventory_back
 	speak_chance = 0.4

@@ -336,10 +336,10 @@
 	title = "Outdated Chemistry Textbook"
 	page_link = "Guide_to_chemistry"
 
-/obj/item/book/manual/wiki/chemistry/Initialize()
-	..()
-	new /obj/item/book/manual/wiki/cit/chemistry(loc)
-	new /obj/item/book/manual/wiki/cit/chem_recipies(loc)
+///obj/item/book/manual/wiki/chemistry/Initialize()
+//	..()
+//	new /obj/item/book/manual/wiki/cit/chemistry(loc)
+//	new /obj/item/book/manual/wiki/cit/chem_recipies(loc)
 
 /obj/item/book/manual/wiki/engineering_construction
 	name = "Station Repairs and Construction"
