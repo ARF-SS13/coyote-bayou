@@ -20,7 +20,7 @@
 		if(HAS_TRAIT(H, TRAIT_PACIFISM))
 			to_chat(H, "<span class='warning'>You don't want to harm other people!</span>")
 			return
-		owner.visible_message("<span class='danger'>[owner] assumes the Ranger Takedown stance!</span>", "<b><i>Your next attack will be a Ranger Takedwown leg sweep.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes the Ranger Takedown stance!</span>", "<b><i>Your next attack will be a Ranger Takedown.</i></b>")
 		H.mind.martial_art.streak = "ranger_takedown"
 
 /datum/martial_art/rangertakedown/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
