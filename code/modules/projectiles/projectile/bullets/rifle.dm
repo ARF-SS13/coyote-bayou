@@ -37,7 +37,7 @@
 /obj/item/projectile/bullet/a762/match
 	name = "7.62 match bullet"
 	damage = 43 //50
-	armour_penetration = 0
+	armour_penetration = 0.4
 	wound_bonus = 25
 	bare_wound_bonus = 25
 
@@ -61,15 +61,15 @@
 
 /obj/item/projectile/bullet/a556/jhp
 	name = "5.56 JHP bullet"
-	damage = 46
+	damage = 45
 	armour_penetration = -1
 	wound_bonus = -36
 	bare_wound_bonus = 36
 
 /obj/item/projectile/bullet/a556/match
 	name = "5.56 match bullet"
-	damage = 40 //46
-	armour_penetration = 0 //0.45
+	damage = 39 //46
+	armour_penetration = 0.4 //0.45
 	wound_bonus = 18
 	bare_wound_bonus = 18
 
