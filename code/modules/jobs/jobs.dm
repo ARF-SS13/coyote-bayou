@@ -110,6 +110,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Followers Administrator",
 "Followers Doctor",
+"Followers Guard",
 
 "Cyborg",
 "Overseer",
@@ -146,6 +147,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Detective",
 
 "Followers Doctor",
+"Followers Guard",
 
 "Cyborg",
 "Vault-tec Doctor",
