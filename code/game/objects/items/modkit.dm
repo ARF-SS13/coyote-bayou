@@ -93,3 +93,8 @@
 	name = "followers trenchcoat modkit"
 	target_item = /obj/item/clothing/suit/armor/vest
 	result_item = /obj/item/clothing/suit/armor/vest/trench
+
+/obj/item/modkit/patrolduster
+	name = "Patrol Duster modkit"
+	target_item = /obj/item/clothing/suit/armor/f13/raider
+	result_item = /obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
