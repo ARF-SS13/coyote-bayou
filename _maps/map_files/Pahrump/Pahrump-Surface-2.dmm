@@ -119,9 +119,8 @@
 	},
 /area/f13/ncr)
 "aep" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/auxilia,
-/turf/open/floor/f13/wood,
+/obj/effect/landmark/start/f13/slave,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/legion)
 "aeJ" = (
 /obj/structure/car/rubbish1,
@@ -139,6 +138,7 @@
 "afj" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/pda,
 /obj/item/pda,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
@@ -424,8 +424,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "aof" = (
-/obj/effect/landmark/start/f13/vetlegionary,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/venator,
+/turf/open/floor/f13/wood,
 /area/f13/legion)
 "aoD" = (
 /obj/structure/rack,
@@ -668,7 +671,9 @@
 /area/f13/wasteland)
 "awT" = (
 /obj/effect/landmark/start/f13/auxilia,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
 /area/f13/legion)
 "aya" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -791,10 +796,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aDb" = (
-/obj/effect/landmark/start/f13/slave,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/landmark/start/f13/explorer,
+/turf/open/floor/f13/wood,
 /area/f13/legion)
 "aDk" = (
 /obj/structure/rack,
@@ -1276,7 +1281,6 @@
 /area/f13/wasteland)
 "aVY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/centurion,
 /obj/machinery/light/small,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
@@ -2030,8 +2034,10 @@
 	},
 /area/f13/wasteland)
 "bwM" = (
-/obj/effect/landmark/start/f13/centurion,
-/turf/open/floor/carpet/black,
+/obj/effect/landmark/start/f13/auxilia,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
 /area/f13/legion)
 "bwW" = (
 /obj/structure/table/wood/settler,
@@ -6815,9 +6821,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/radiation)
 "fmn" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/obj/effect/landmark/start/f13/auxilia,
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/campfollower,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "fmr" = (
@@ -8294,7 +8301,6 @@
 /area/f13/caves)
 "gpo" = (
 /obj/structure/chair/bench,
-/obj/effect/landmark/start/f13/legionary,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 4;
 	icon_state = "dirtcorner"
@@ -10133,7 +10139,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hxQ" = (
-/obj/effect/landmark/start/f13/recleg,
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/campfollower,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hxU" = (
@@ -10774,7 +10783,7 @@
 /area/f13/building)
 "hUf" = (
 /obj/structure/chair/comfy/brown,
-/obj/effect/landmark/start/f13/recleg,
+/obj/effect/landmark/start/f13/vetlegionary,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "hUk" = (
@@ -11086,12 +11095,6 @@
 "idC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/legion)
-"idE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/orator,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/f13/wood,
 /area/f13/legion)
 "ier" = (
 /obj/structure/fence{
@@ -11990,10 +11993,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iJW" = (
-/obj/effect/landmark/start/f13/explorer,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
+/obj/structure/chair/comfy/brown{
+	dir = 1
 	},
+/obj/effect/landmark/start/f13/vetlegionary,
+/turf/open/floor/carpet/black,
 /area/f13/legion)
 "iKm" = (
 /obj/machinery/workbench,
@@ -13089,8 +13093,10 @@
 	},
 /area/f13/wasteland)
 "jxO" = (
-/obj/effect/landmark/start/f13/vexillarius,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/landmark/start/f13/decanvet,
+/turf/open/floor/f13/wood,
 /area/f13/legion)
 "jyC" = (
 /obj/structure/car/rubbish3,
@@ -13197,10 +13203,6 @@
 /obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/ncr)
-"jGg" = (
-/obj/effect/landmark/start/f13/decanvet,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "jGl" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert{
@@ -13309,13 +13311,6 @@
 "jMj" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/radiation)
-"jMl" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
-/obj/effect/landmark/start/f13/explorer,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "jMz" = (
 /obj/structure/table/wood/fancy,
 /obj/item/restraints/handcuffs,
@@ -14248,10 +14243,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
-"kqB" = (
-/obj/effect/landmark/start/f13/slavemaster,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "krb" = (
 /obj/machinery/computer/slot_machine,
 /turf/open/floor/f13/wood,
@@ -16743,13 +16734,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"mnb" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress3"
-	},
-/obj/effect/landmark/start/f13/slave,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "mnd" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
@@ -17883,7 +17867,6 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/effect/landmark/start/f13/slave,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "niD" = (
@@ -18146,7 +18129,6 @@
 /area/f13/brotherhood)
 "nvL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/slavemaster,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
@@ -20629,7 +20611,7 @@
 "poX" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/obj/effect/landmark/start/f13/decan,
+/obj/effect/landmark/start/f13/decanrec,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "ppg" = (
@@ -20758,10 +20740,6 @@
 /obj/item/pda,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
-"psO" = (
-/obj/effect/landmark/start/f13/legionary,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/legion)
 "psR" = (
 /obj/structure/fence/corner/wooden{
 	dir = 1
@@ -21365,7 +21343,7 @@
 "pQL" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/obj/effect/landmark/start/f13/decanrec,
+/obj/effect/landmark/start/f13/decan,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "pQX" = (
@@ -21383,7 +21361,7 @@
 "pRl" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/obj/effect/landmark/start/f13/vetlegionary,
+/obj/effect/landmark/start/f13/recleg,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "pRo" = (
@@ -22562,6 +22540,7 @@
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
+/obj/effect/landmark/start/f13/centurion,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "qLr" = (
@@ -29222,7 +29201,7 @@
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/recleg,
+/obj/effect/landmark/start/f13/vetlegionary,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "vDl" = (
@@ -29449,10 +29428,6 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
-"vLc" = (
-/obj/effect/landmark/start/f13/priestess,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "vLj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30129,10 +30104,6 @@
 /obj/structure/campfire,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"wrt" = (
-/obj/effect/landmark/start/f13/venator,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "wrG" = (
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/indestructible/ground/outside/road{
@@ -30808,11 +30779,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"wQI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/explorer,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "wQR" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -31934,6 +31900,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
+/obj/effect/landmark/start/f13/venator,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -32115,12 +32082,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
-"xJV" = (
-/obj/effect/landmark/start/f13/slave,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood3-broken"
-	},
-/area/f13/legion)
 "xJY" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
@@ -84873,7 +84834,7 @@ gts
 ktB
 hom
 afj
-idE
+nvL
 hom
 cjV
 cjV
@@ -84904,7 +84865,7 @@ xNm
 cLZ
 hom
 xNm
-vLc
+xNm
 vVR
 hom
 gcK
@@ -86157,12 +86118,12 @@ gcK
 gcK
 gcK
 hom
-tQV
+aof
 xNm
 uIV
 dvo
 oMY
-iJW
+fqL
 xNm
 hom
 gcK
@@ -86188,9 +86149,9 @@ xNm
 xNm
 xNm
 hom
-fmn
+oHR
 xNm
-fmn
+oHR
 hom
 gcK
 gcK
@@ -86677,7 +86638,7 @@ brE
 hom
 pSu
 xNm
-wQI
+oMY
 hom
 hom
 hom
@@ -86687,9 +86648,9 @@ syr
 gcK
 hom
 tQV
+fmn
 tQV
-tQV
-tQV
+fmn
 tQV
 eLb
 hom
@@ -86951,7 +86912,7 @@ xNm
 xNm
 saf
 pIz
-psO
+pIz
 frY
 hom
 hom
@@ -87180,7 +87141,7 @@ fyf
 fyf
 uqW
 pIz
-psO
+pIz
 pIz
 pIz
 pIz
@@ -87193,7 +87154,7 @@ pck
 wxR
 xNm
 dvo
-wrt
+xNm
 vHe
 hom
 syr
@@ -87201,9 +87162,9 @@ syr
 gcK
 hom
 bla
+hxQ
 bla
-bla
-bla
+hxQ
 bla
 xNm
 hom
@@ -87213,7 +87174,7 @@ frY
 rgS
 hUf
 let
-qKU
+iJW
 sme
 hom
 gcK
@@ -87443,12 +87404,12 @@ xAq
 xAq
 xAq
 xJY
-aof
+pIz
 frY
 rgS
 pck
 tHw
-jMl
+nbD
 hom
 xNm
 xNm
@@ -87471,7 +87432,7 @@ hom
 dUv
 vDg
 dUv
-hxQ
+xNm
 hom
 hom
 hom
@@ -87708,7 +87669,7 @@ hzr
 nbD
 hom
 aBk
-oHR
+aDb
 hom
 syr
 syr
@@ -87988,7 +87949,7 @@ xNm
 xNm
 dvo
 xNm
-jGg
+xNm
 tQV
 hom
 gcK
@@ -88209,7 +88170,7 @@ gxn
 ier
 mCG
 pIz
-pIz
+aep
 pIz
 pIz
 dTT
@@ -88246,7 +88207,7 @@ hom
 hom
 mHy
 xNm
-oHR
+jxO
 hom
 gcK
 gcK
@@ -88724,7 +88685,7 @@ gcK
 mCG
 pIz
 pIz
-pIz
+aep
 pIz
 uXa
 tnu
@@ -89264,7 +89225,7 @@ pIz
 ulc
 qip
 ozI
-aof
+pIz
 frY
 hom
 qBu
@@ -89763,7 +89724,7 @@ pIz
 pIz
 pIz
 pIz
-aof
+pIz
 pIz
 pIz
 xes
@@ -91325,7 +91286,7 @@ nfu
 nfu
 hBW
 xNm
-xJV
+fqL
 dRs
 gcK
 gcK
@@ -92344,12 +92305,12 @@ ulc
 adq
 hom
 dZE
-bwM
+dUv
 hom
 gcK
 gcK
 dRs
-mnb
+pOe
 xNm
 dRs
 gcK
@@ -92607,7 +92568,7 @@ gcK
 gcK
 dRs
 wzm
-aDb
+uIV
 dRs
 gcK
 gcK
@@ -93613,7 +93574,7 @@ hom
 hom
 pqs
 uFt
-eLb
+awT
 xNm
 rgS
 pIz
@@ -93870,7 +93831,7 @@ oFC
 biv
 hNZ
 oMY
-aep
+oMY
 cWq
 hom
 gcK
@@ -94127,7 +94088,7 @@ nCl
 hbO
 ntJ
 eQH
-awT
+xNm
 lAD
 hom
 gcK
@@ -94651,7 +94612,7 @@ syr
 wPS
 hom
 wFo
-uIV
+bwM
 sVl
 aWz
 xAq
@@ -94908,7 +94869,7 @@ syr
 wPS
 hom
 kIs
-awT
+xNm
 oMY
 lCw
 gcK
@@ -95665,7 +95626,7 @@ spC
 wPS
 ulU
 frz
-jxO
+wPS
 wPS
 wPS
 gcK
@@ -95924,7 +95885,7 @@ hom
 hom
 wPS
 wPS
-jxO
+wPS
 wPS
 wPS
 wPS
@@ -96434,7 +96395,7 @@ qCv
 nvL
 hom
 pck
-kqB
+xNm
 rgS
 wPS
 gcK
