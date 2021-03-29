@@ -355,7 +355,7 @@
 			if(target.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, null) & BLOCK_SUCCESS)
 				playsound(target, 'sound/weapons/genhit.ogg', 50, 1)
 				return
-			if(ishuman(target))
+			if(ishuman(target) && !user.zone_selected ==	BODY_ZONE_L_LEG || !user.zone_selected == BODY_ZONE_R_LEG)
 				var/mob/living/carbon/human/H = target
 				if(check_martial_counter(H, user))
 					return
@@ -363,9 +363,8 @@
 			if(stun_animation)
 				user.do_attack_animation(target)
 			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
-			target.DefaultCombatKnockdown(softstun_ds, TRUE, FALSE, hardstun_ds, stam_dmg)
+			target.adjustStaminaLoss(30)
 			additional_effects_carbon(target, user)
-			log_combat(user, target, "stunned", src)
 			add_fingerprint(user)
 			target.visible_message(desc["visible"], desc["local"])
 			if(!iscarbon(user))

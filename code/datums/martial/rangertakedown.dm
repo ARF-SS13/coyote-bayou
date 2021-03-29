@@ -1,8 +1,60 @@
 /datum/martial_art/rangertakedown
 	name = "Ranger Takedown"
 	id = MARTIALART_RANGERTAKEDOWN
+	var/datum/action/ranger_takedown/rangertakedown = new/datum/action/ranger_takedown()
+
+/datum/action/ranger_takedown
+	name = "Ranger Takedown - Trips the victim, knocking them down for a brief moment."
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
+	button_icon_state = "legsweep"
+
+/datum/action/ranger_takedown/Trigger()
+	if(owner.incapacitated())
+		to_chat(owner, "<span class='warning'>You can't use [name] while you're incapacitated.</span>")
+		return
+	var/mob/living/carbon/human/H = owner
+	if (H.mind.martial_art.streak == "ranger_takedown")
+		owner.visible_message("<span class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
+		H.mind.martial_art.streak = ""
+	else
+		if(HAS_TRAIT(H, TRAIT_PACIFISM))
+			to_chat(H, "<span class='warning'>You don't want to harm other people!</span>")
+			return
+		owner.visible_message("<span class='danger'>[owner] assumes the Ranger Takedown stance!</span>", "<b><i>Your next attack will be a Ranger Takedown.</i></b>")
+		H.mind.martial_art.streak = "ranger_takedown"
 
 /datum/martial_art/rangertakedown/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(check_streak(A,D))
+		return TRUE
+
+/datum/martial_art/rangertakedown/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(check_streak(A,D))
+		return TRUE
+	..()
+
+/datum/martial_art/rangertakedown/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(check_streak(A,D))
+		return TRUE
+
+/datum/martial_art/rangertakedown/proc/check_streak(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	switch(streak)
+		if("ranger_takedown")
+			streak = ""
+			ranger_takedown(A,D)
+			return TRUE
+	return FALSE
+
+/datum/martial_art/rangertakedown/teach(mob/living/carbon/human/H,make_temporary=0)
+	if(..())
+		to_chat(H, "<span class = 'userdanger'>You know the arts of [name]!</span>")
+		to_chat(H, "<span class = 'danger'>Place your cursor over a move at the top of the screen to see what it does.</span>")
+		rangertakedown.Grant(H)
+
+/datum/martial_art/rangertakedown/on_remove(mob/living/carbon/human/H)
+	to_chat(H, "<span class = 'userdanger'>You suddenly forget the arts of [name]...</span>")
+	rangertakedown.Remove(H)
+
+/datum/martial_art/rangertakedown/proc/ranger_takedown(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected)) //Applies damage to selected area.
 	var/armor_block = D.run_armor_check(affecting, "melee") //Checks Defender's armour.
 	var/damage = (damage_roll(A,D) + 5) //Rolls damage based on the Attacker and Defender and if they have combat mode on or not, along with a flat +5 brute damage.
