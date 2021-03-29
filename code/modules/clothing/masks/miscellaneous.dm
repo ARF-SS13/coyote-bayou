@@ -482,7 +482,7 @@
 /obj/item/clothing/mask/bandana/momentobandana
 	name = "momento bandana"
 	desc = "A bandana that serves the user as a reminder of the past."
-	icon_state = "legvet_old"
+	icon_state = "momento"
 	flags_inv = HIDEFACE
 	visor_flags_inv = HIDEFACE
 	adjusted_flags = null
