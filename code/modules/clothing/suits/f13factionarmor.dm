@@ -384,6 +384,20 @@
 	icon_state = "ncr_armor_mk2"
 	item_state = "ncr_armor_mk2"
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack
+	name = "NCR dress jacket"
+	desc = "(II) A brown dress uniform jacket intended for enlisted NCRA personnel."
+	icon_state = "ncr_dressjack"
+	item_state = "ncr_dressjack"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack
+	name = "NCR dress jacket"
+	desc = "(II) A brown dress uniform jacket for commissioned NCRA personnel."
+	icon_state = "ncr_codressjack"
+	item_state = "ncr_codressjack"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
 	name = "ranger recon duster"

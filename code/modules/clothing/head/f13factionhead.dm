@@ -434,6 +434,20 @@
 	item_state = "ncr_campaign"
 	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/head/beret/ncr_dresscap
+	name = "NCR peaked cap"
+	desc = "(II) A tan peaked cap with silver pin, designated for enlisted NCRA personnel."
+	icon_state = "ncr_dresscap"
+	item_state = "ncr_dresscap"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/beret/ncr_codresscap
+	name = "NCR peaked cap"
+	desc = "(II) A tan peaked cap with golden pin, designated for commissioned NCRA personnel."
+	icon_state = "ncr_codresscap"
+	item_state = "ncr_codresscap"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 //NCR Ranger
 
 /obj/item/clothing/head/beret/ncr_recon_ranger
