@@ -4578,7 +4578,7 @@
 	},
 /area/f13/building)
 "dtJ" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "badboys";
 	name = "Outlaw City"
 	},
@@ -32312,7 +32312,7 @@
 /area/f13/city)
 "xqk" = (
 /obj/structure/barricade/wooden,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "badboys";
 	name = "Outlaw City"
 	},
@@ -32437,7 +32437,7 @@
 	icon_state = "gib6-old";
 	pixel_y = 11
 	},
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/preopen{
 	id = "badboys";
 	name = "Outlaw City"
 	},
@@ -33614,6 +33614,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bedsheet/random,
 /obj/item/restraints/handcuffs/fake/kinky,
+/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ykq" = (
@@ -82631,7 +82632,7 @@ ugm
 uTq
 csO
 rpu
-qkP
+qsB
 sYX
 sKH
 sYX
