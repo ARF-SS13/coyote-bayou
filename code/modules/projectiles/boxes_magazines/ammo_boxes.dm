@@ -606,7 +606,7 @@
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
 	desc = "Designed to quickly reload repeaters."
-	icon_state = "44tube"
+	icon_state = "357tube"
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 7

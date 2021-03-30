@@ -328,6 +328,7 @@
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = TRUE
+	pixels_per_second = TILES_TO_PIXELS(27)
 
 /obj/item/projectile/plasmacarbine //Plasma carbine
 	name = "plasma bolt"
@@ -350,12 +351,12 @@
 	is_reflectable = FALSE
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
-	damage = 45
-	armour_penetration = 0.15
+	damage = 53
+	armour_penetration = 0.35
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
-	damage = 30
-	armour_penetration = 0.3
+	damage = 40
+	armour_penetration = 0.5
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 31

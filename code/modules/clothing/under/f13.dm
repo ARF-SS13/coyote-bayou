@@ -190,6 +190,13 @@
 	item_state = "majzirilli"
 	item_color = "majzirilli"
 
+/obj/item/clothing/under/f13/ranger/modif_ranger
+	name = "green ranger outfit"
+	desc = "A ranger outfit with a green cotton longshirt and dark grey jeans along with a black bandana around the neck."
+	icon_state = "modif_ranger"
+	item_state = "modif_ranger"
+	item_color = "modif_ranger"
+
 /obj/item/clothing/under/f13/rustic
 	name = "rustic outfit"
 	desc = "Simple rustic clothes for your day to day life in the wastes."

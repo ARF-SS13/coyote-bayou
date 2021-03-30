@@ -23,6 +23,14 @@
 				/datum/reagent/consumable/ethanol = 10)
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/ointment
+	name = "Handmade Ointment"
+	result = /obj/item/stack/medical/ointment
+	time = 30
+	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 1)
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
 	result = /obj/item/stack/medical/mesh/five
