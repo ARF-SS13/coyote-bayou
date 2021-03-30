@@ -460,8 +460,8 @@
 	loot = list(
 			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 59,
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 30,
-			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10,
-			/obj/item/traumapack = 1 //one ring to rule them all
+			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10
+			///obj/item/traumapack = 1 //one ring to rule them all
 			)
 
 /*	------------------------------------------------
@@ -1120,7 +1120,7 @@
 				/obj/item/gun/energy/laser/scatter,
 				/obj/item/gun/ballistic/revolver/hunting,
 				/obj/item/gun/ballistic/automatic/bozar,
-				/obj/item/gun/energy/gammagun
+				/obj/item/gun/energy/laser/aer14
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/unique //UNIQUE GUN
@@ -1128,7 +1128,6 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/gun/ballistic/revolver/colt357/lucky,
 				/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
 				/obj/item/gun/ballistic/shotgun/remington/paciencia,
 				/obj/item/gun/energy/laser/solar,
