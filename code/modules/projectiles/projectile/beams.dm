@@ -323,8 +323,8 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 42
-	armour_penetration = 0.35
+	damage = 55
+	armour_penetration = 0.55
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = TRUE
@@ -364,8 +364,8 @@
 /obj/item/projectile/beam/laser/rcw //RCW
 	name = "rapidfire beam"
 	icon_state = "xray"
-	damage = 24
-	armour_penetration = 0.35
+	damage = 35
+	armour_penetration = 0.55
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
@@ -385,8 +385,8 @@
 
 /obj/item/projectile/beam/laser/aer14 //AER14
 	name = "laser beam"
-	damage = 33
-	armour_penetration = 0.65
+	damage = 40
+	armour_penetration = 0.75
 	icon_state = "omnilaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE

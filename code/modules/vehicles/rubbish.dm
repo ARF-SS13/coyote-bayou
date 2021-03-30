@@ -99,7 +99,7 @@
 			if(prob(25))
 				new /obj/item/salvage/low(usr_turf)
 		for(var/i3 in 1 to 3) //this is just less lines for the same thing
-			if(prob(3))
+			if(prob(5))
 				new /obj/item/salvage/high(usr_turf)
 		uses_left--
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing

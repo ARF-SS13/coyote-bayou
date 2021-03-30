@@ -110,7 +110,8 @@
 						"jackofoak",
 						"purplepineapple",
 						"lynuahsororitas",
-						"prawn04")
+						"prawn04",
+						"nokele")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/ranger45
