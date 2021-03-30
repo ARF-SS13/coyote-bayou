@@ -9870,8 +9870,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "klQ" = (
-/obj/machinery/conveyor/inverted{
-	dir = 6
+/obj/machinery/conveyor/auto{
+	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "engine"
@@ -10296,6 +10296,10 @@
 	},
 /area/f13/brotherhood)
 "kLU" = (
+/obj/machinery/conveyor/auto{
+	dir = 4;
+	icon_state = "conveyor_map"
+	},
 /obj/structure/plasticflaps,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "engine"
@@ -11288,14 +11292,6 @@
 	icon_state = "poster89"
 	},
 /turf/closed/wall/r_wall,
-/area/f13/brotherhood)
-"lTX" = (
-/obj/machinery/conveyor/inverted{
-	dir = 10
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "engine"
-	},
 /area/f13/brotherhood)
 "lUq" = (
 /obj/structure/table/wood,
@@ -88557,7 +88553,7 @@ klQ
 iXC
 iXC
 iXC
-lTX
+iXC
 jZH
 jZH
 jZH
