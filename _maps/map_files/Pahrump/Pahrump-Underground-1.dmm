@@ -21856,7 +21856,9 @@
 	},
 /area/f13/followers)
 "xEd" = (
-/obj/structure/closet/crate/freezer,
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
+	},
 /obj/item/organ/heart,
 /obj/item/organ/heart,
 /obj/item/organ/heart,

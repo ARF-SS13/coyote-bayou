@@ -21549,6 +21549,13 @@
 "pGa" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/city)
+"pHc" = (
+/obj/structure/rack,
+/obj/item/storage/box/disks_plantgene,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "pHh" = (
 /obj/structure/sign/poster/prewar/poster94,
 /turf/closed/wall/f13/wood/house,
@@ -24530,7 +24537,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "rWQ" = (
-/obj/structure/rack,
+/obj/machinery/plantgenes,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -56765,7 +56772,7 @@ wKo
 erY
 koD
 gKG
-rWQ
+pHc
 rJU
 rJU
 cKN
