@@ -1,6 +1,6 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 50
+	damage = 60
 	sharpness = SHARP_POINTY
 	armour_penetration = 0.33
 	wound_bonus = 26
@@ -19,7 +19,7 @@
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
 	damage = 10
-	stamina = 70
+	stamina = 40
 	wound_bonus = 20
 	sharpness = SHARP_NONE
 	embedding = null
@@ -93,7 +93,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 7.5
+	damage = 11
 	wound_bonus = 5
 	bare_wound_bonus = 5
 	wound_falloff_tile = -2.5 // low damage + additional dropoff will already curb wounding potential anything past point blank
@@ -101,7 +101,7 @@
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = 2
-	stamina = 15
+	stamina = 10
 	sharpness = SHARP_NONE
 	embedding = null
 
@@ -144,7 +144,7 @@
 
 /obj/item/projectile/bullet/pellet/magnum_buckshot
 	name = "magnum buckshot pellet"
-	damage = 11.5
+	damage = 15
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10

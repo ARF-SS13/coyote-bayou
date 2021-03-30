@@ -58,7 +58,7 @@
 
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "..."
+	desc = "... (grants 25k research points when destructively analyzed - the BoS or Vault might want this.)"
 	icon_state = "blueprint2"
 
 /obj/item/blueprint/misc/stim

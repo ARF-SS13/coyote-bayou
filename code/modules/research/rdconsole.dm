@@ -1156,10 +1156,22 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"
 
+
+/obj/machinery/computer/rdconsole/core/bos
+	desc = "A console used by the scribes of the Brotherhood of Steel."
+	name = "Archive Terminal"
+	circuit = /obj/item/circuitboard/computer/rdconsole/bos
+
+/obj/machinery/computer/rdconsole/core/vault
+	circuit = /obj/item/circuitboard/computer/rdconsole/vault
+
+/obj/machinery/computer/rdconsole/core/followers
+	circuit = /obj/item/circuitboard/computer/rdconsole/followers
+
 //lettern's lazy way of adding more channels
 /obj/machinery/computer/rdconsole/core/bos/Initialize()
 	. = ..()
-	stored_research = SSresearch.bos_tech //lettern, note about this
+	stored_research = SSresearch.science_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
 	matching_designs = list()
 	SyncRDevices()

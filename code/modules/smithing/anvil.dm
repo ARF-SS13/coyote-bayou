@@ -270,8 +270,8 @@
 	desc = "A big block of sandstone. Useable as an anvil."
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
-	anvilquality = -1
-	itemqualitymax = 2
+	anvilquality = 1
+	itemqualitymax = 6
 
 /obj/structure/anvil/obtainable/basalt
 	name = "basalt brick anvil"
