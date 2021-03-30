@@ -50,9 +50,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Head Knight",
 
 	"Legion Centurion",
-	"Legion Orator",
 	"Legion Venator",
-	"Priestess of Mars",
 
 	"Overseer",
 	"Chief of Security",
@@ -87,19 +85,16 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "BoS Off-Duty",
 
 "Legion Centurion",
-"Legion Orator",
 "Legion Venator",
-"Priestess of Mars",
 "Legion Veteran Decanus",
 "Veteran Legionary",
 "Legion Prime Decanus",
 "Prime Legionary",
 "Legion Recruit Decanus",
-"Legion Vexillarius",
 "Legion Scout",
-"Legion Slavemaster",
 "Legion Explorer",
 "Auxilia",
+"Legion Slave",
 
 "Mayor",
 "Sheriff",
@@ -115,6 +110,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Followers Administrator",
 "Followers Doctor",
+"Followers Guard",
 
 "Cyborg",
 "Overseer",
@@ -138,12 +134,11 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Veteran Legionary",
 "Legion Prime Decanus",
 "Prime Legionary",
-"Legion Vexillarius",
 "Legion Recruit Decanus",
 "Legion Scout",
-"Legion Slavemaster",
 "Legion Explorer",
 "Auxilia",
+"Legion Slave",
 
 "Deputy",
 "Shopkeeper",
@@ -152,6 +147,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Detective",
 
 "Followers Doctor",
+"Followers Guard",
 
 "Cyborg",
 "Vault-tec Doctor",
@@ -204,9 +200,7 @@ GLOBAL_LIST_INIT(den_positions, list(
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
 	"Legion Centurion",
-	"Legion Venator",
-	"Priestess of Mars",
-	"Legion Orator"
+	"Legion Venator"
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
@@ -216,9 +210,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Prime Legionary",
 	"Legion Recruit Decanus",
 	"Recruit Legionary",
-	"Legion Vexillarius",
 	"Legion Explorer",
-	"Legion Slavemaster",
 	"Auxilia",
 	"Camp Follower",
 	"Legion Slave"

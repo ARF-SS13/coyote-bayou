@@ -68,6 +68,14 @@
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
+/obj/item/clothing/under/f13/ncr/ncr_dress
+	name = "NCR dress uniform"
+	desc = "A crisp tan NCRA dress uniform, complete with tie."
+	can_adjust = TRUE
+	icon_state = "ncr_dress"
+	item_state = "ncr_dress"
+	item_color = "ncr_dress"
+
 /obj/item/clothing/under/f13/ncrcf
 	name = "caravaneer outfit"
 	desc = "A cheap blue shirt and slacks, the letters 'NCRCF' emblazened on the back. A meek reminder of who owns you."
@@ -177,7 +185,7 @@
 
 /obj/item/clothing/under/f13/ncr_formal_uniform/majzirilli
 	name = "Major Zirilli's service uniform"
-	desc = "An immaculately maintained service uniform."
+	desc = "An immaculately maintained NCRA service uniform, weighted down with golden embellishments signifying their authority."
 	icon_state = "majzirilli"
 	item_state = "majzirilli"
 	item_color = "majzirilli"

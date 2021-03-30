@@ -79,12 +79,17 @@
 	var/storedindex = 0			//amount of stored items
 	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
+	var/obj/item/salvage/salvage //or salvage
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
+	if(prob(1))
+		salvage = new /obj/item/salvage/low()
+		if(prob(15))
+			salvage = new /obj/item/salvage/high()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 	if(icon_state != "wasteland")

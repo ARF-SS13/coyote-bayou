@@ -87,6 +87,12 @@
 	icon_state = "combatduster"
 	item_state = "combatduster"
 
+/obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
+	name = "Patrol Duster"
+	desc = "(IV) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
+	icon_state = "patrolduster"
+	item_state = "patrolduster"
+
 /obj/item/clothing/suit/armor/f13/raider/combatduster/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -383,6 +389,20 @@
 	desc = "(VI) A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_armor_mk2"
 	item_state = "ncr_armor_mk2"
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack
+	name = "NCR dress jacket"
+	desc = "(II) A brown dress uniform jacket intended for enlisted NCRA personnel."
+	icon_state = "ncr_dressjack"
+	item_state = "ncr_dressjack"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack
+	name = "NCR dress jacket"
+	desc = "(II) A brown dress uniform jacket for commissioned NCRA personnel."
+	icon_state = "ncr_codressjack"
+	item_state = "ncr_codressjack"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon

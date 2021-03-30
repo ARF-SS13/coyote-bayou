@@ -7,7 +7,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
-	custom_materials = list(/datum/material/iron = 500, /datum/material/blackpowder=50)
+	custom_materials = list(/datum/material/iron = 500, /datum/material/blackpowder=25)
 	var/fire_sound = null						//What sound should play when this ammo is fired
 	var/caliber = null							//Which kind of guns it can be loaded into
 	var/projectile_type = null					//The bullet type to create when New() is called
@@ -69,8 +69,9 @@
 				to_chat(user, "<span class='warning'>You fail to collect anything!</span>")
 	else
 		if(istype(I, /obj/item/wrench)) //FO13 - salvaging blackpowder/metal from ammo
-			new /obj/item/stack/crafting/powder(user.drop_location())
-			qdel(src)
+			for(var/obj/item/ammo_casing/C in src.loc.contents)
+				new /obj/item/stack/crafting/powder(user.drop_location())
+				qdel(C)
 		return ..()
 
 /obj/item/ammo_casing/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
