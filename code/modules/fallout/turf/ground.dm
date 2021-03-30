@@ -88,7 +88,7 @@
 	. = ..()
 	if(prob(1))
 		salvage = new /obj/item/salvage/low()
-		if(prob(7))
+		if(prob(15))
 			salvage = new /obj/item/salvage/high()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
