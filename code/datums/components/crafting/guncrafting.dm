@@ -63,7 +63,6 @@
 	machine_tool_behaviour = TOOL_WORKBENCH
 	var/wrenchable = 1
 	var/list/salvage_low = list("parts" = /obj/item/stack/crafting/metalparts/five,
-								"powder" = /obj/item/stack/ore/blackpowder/two,
 								"electronic"= /obj/item/stack/crafting/electronicparts/three,
 								"lead" = /obj/item/stack/sheet/lead/five)
 	

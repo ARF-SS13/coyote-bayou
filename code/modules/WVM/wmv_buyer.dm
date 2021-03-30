@@ -117,7 +117,7 @@
 /obj/machinery/mineral/wasteland_trader/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
+	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)

@@ -561,3 +561,64 @@
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+//weapon parts
+/datum/design/fluxcap
+	name = "Flux capacitator"
+	desc = "An advanced weapons part."
+	id = "fluxcap"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 20000, /datum/material/plastic = 5000)
+	build_path = /obj/item/advanced_crafting_components/flux
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/lenses
+	name = "Focused crystal lenses"
+	desc = "An advanced weapons part."
+	id = "focusedlenses"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 50000, /datum/material/plastic = 3000)
+	build_path = /obj/item/advanced_crafting_components/lenses
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/conductor
+	name = "Superconductor coil"
+	desc = "An advanced weapons part."
+	id = "superconductor"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000)
+	build_path = /obj/item/advanced_crafting_components/conductors
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/receiver
+	name = "Advanced modular receiver"
+	desc = "An advanced weapons part."
+	id = "advreceiver"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/titanium = 15000)
+	build_path = /obj/item/advanced_crafting_components/receiver
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/assembly
+	name = "Pre-war weapon assembly"
+	desc = "An advanced weapons part."
+	id = "preassembly"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/titanium = 15000, /datum/material/plastic = 5000)
+	build_path = /obj/item/advanced_crafting_components/assembly
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/alloys
+	name = "Superlight alloys"
+	desc = "An advanced weapons part."
+	id = "superalloys"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000, /datum/material/glass = 15000, /datum/material/titanium = 15000, /datum/material/plastic = 3000)
+	build_path = /obj/item/advanced_crafting_components/alloys
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
