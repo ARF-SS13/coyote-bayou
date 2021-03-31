@@ -67,10 +67,6 @@
 		return
 	else
 		grill_fuel -= 1
-		if(prob(1))
-			var/datum/effect_system/smoke_spread/bad/smoke = new
-			smoke.set_up(1, loc)
-			smoke.start()
 	if(grilled_item)
 		grill_time += 1
 		grilled_item.reagents.add_reagent(/datum/reagent/consumable/char, 1)
