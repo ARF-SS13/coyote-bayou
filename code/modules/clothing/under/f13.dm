@@ -526,75 +526,46 @@
 	desc = "Carefully hand wozen cloth robes with heavy turqoise jewelry drapped over top."
 	icon_state = "shamanrags"
 	item_state = "shamanrags"
-/obj/item/clothing/under/f13/wayfarer //female
+
+/obj/item/clothing/under/f13/wayfarer
 	name = "loincloth"
-	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin and breasts. Well suited for a simpler life lived by the Wayfarer tribe."
+	desc = "Hand-woven cotton ornated with pieces of turquoise form covering the groin, which can also be adjusted to cover the breasts as well. Well suited for a simpler life lived by the Wayfarer tribe."
 	icon_state = "gatherer"
 	item_state = "gatherer"
 	item_color = "gatherer"
+	can_adjust = TRUE
 
-/obj/item/clothing/under/f13/wayfarer/m //male
-	name = "loincloth"
-	desc = "Hand-woven cotton ornated with pieces of turquoise form, covering the groin. Well suited for a simpler life lived by the Wayfarer tribe."
-	icon_state = "gatherer_d"
-	item_state = "gatherer_d"
-	item_color = "gatherer_d"
-
-/obj/item/clothing/under/f13/wayfarer/shamanbluef
+/obj/item/clothing/under/f13/wayfarer/shamanblue
 	name = "blue shaman garbs"
-	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe. Can be adjusted to suit the wearer's preferences."
 	icon_state = "shamanblue"
 	item_state = "shamanblue"
 	item_color = "shamanblue"
+	can_adjust = TRUE
 
-/obj/item/clothing/under/f13/wayfarer/shamanbluem
-	name = "blue shaman garbs"
-	desc = "Finely crafted cotton clothing, dyed blue with anil. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
-	icon_state = "shamanblue_d"
-	item_state = "shamanblue_d"
-	item_color = "shamanblue_d"
-
-/obj/item/clothing/under/f13/wayfarer/shamanredf
+/obj/item/clothing/under/f13/wayfarer/shamanred
 	name = "red shaman garbs"
-	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
+	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe. Can be adjusted to suit the wearer's preferences."
 	icon_state = "shamanred"
 	item_state = "shamanred"
 	item_color = "shamanred"
+	can_adjust = TRUE
 
-/obj/item/clothing/under/f13/wayfarer/shamanredm
-	name = "red shaman garbs"
-	desc = "Finely crafted cotton clothing, dyed red with madder root. The care and craftsmanship put into such an outfit indicates high status in the Wayfarer tribe."
-	icon_state = "shamanred_d"
-	item_state = "shamanred_d"
-	item_color = "shamanred_d"
-
-/obj/item/clothing/under/f13/wayfarer/acolytef
+/obj/item/clothing/under/f13/wayfarer/acolyte
 	name = "acolyte's garbs"
-	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth. Well suited for a simpler life lived by the Wayfarer tribe."
+	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth, which can be adjusted depending on the wearer's preferences. Well suited for a simpler life lived by the Wayfarer tribe."
 	icon_state = "acolyte"
 	item_state = "acolyte"
 	item_color = "acolyte"
+	can_adjust = TRUE
 
-/obj/item/clothing/under/f13/wayfarer/acolytem
-	name = "acolyte's garbs"
-	desc = "Hand-woven cotton ornated with pieces of turquoise form little more than loincloth. Well suited for a simpler life lived by the Wayfarer tribe."
-	icon_state = "acolyte_d"
-	item_state = "acolyte_d"
-	item_color = "acolyte_d"
-
-/obj/item/clothing/under/f13/wayfarer/hunterf
+/obj/item/clothing/under/f13/wayfarer/hunter
 	name = "rugged loincloth"
-	desc = "Minimal yet hardy clothing, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
+	desc = "Minimal yet hardy clothing padded in places by leather which can be taken off if need be, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
 	icon_state = "hunter"
 	item_state = "hunter"
 	item_color = "hunter"
-
-/obj/item/clothing/under/f13/wayfarer/hunterm
-	name = "rugged loincloth"
-	desc = "Minimal yet hardy clothing padded in places by leather, covering no more than it needs to. Ideal for those of the Wayfarer tribe who spend their time away from the tribe in pursuit of the hunt."
-	icon_state = "hunter_d"
-	item_state = "hunter_d"
-	item_color = "hunter_d"
+	can_adjust = TRUE
 
 //OUTLAW DESERTERS
 /obj/item/clothing/under/f13/exile

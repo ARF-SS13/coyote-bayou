@@ -7744,6 +7744,11 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"fTx" = (
+/obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/spiritpledged,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "fTz" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowdestroyed"
@@ -28220,6 +28225,10 @@
 /obj/item/clothing/head/helmet/f13/deathskull,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
+"uKu" = (
+/obj/effect/landmark/start/f13/druid,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "uKA" = (
 /obj/structure/wreck/trash/bus_door,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -43655,7 +43664,7 @@ iAU
 iAU
 sLr
 uRJ
-uRJ
+uKu
 bMg
 bMg
 bMg
@@ -43917,7 +43926,7 @@ bMg
 uRJ
 uRJ
 uRJ
-uRJ
+uKu
 uRJ
 uRJ
 daU
@@ -44431,7 +44440,7 @@ bMg
 uRJ
 uRJ
 uRJ
-uRJ
+uKu
 uRJ
 uRJ
 xGH
@@ -44683,7 +44692,7 @@ iAU
 iAU
 mkw
 uRJ
-uRJ
+uKu
 bMg
 bMg
 bMg
@@ -48294,9 +48303,9 @@ mvv
 mvv
 mvv
 mvv
-hxO
+fTx
 mvv
-hxO
+fTx
 bpD
 fyf
 vpx
@@ -48808,9 +48817,9 @@ mvv
 mvv
 mvv
 mvv
-hxO
+fTx
 mvv
-hxO
+fTx
 bpD
 fyf
 akA
