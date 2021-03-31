@@ -34,7 +34,8 @@ SUBSYSTEM_DEF(research)
 	var/list/techweb_nodes_experimental = list()	//Node ids that are exclusive to the BEPIS.
 
 	var/list/techweb_point_items = list(		//path = list(point type = value)
-	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 25000),	
+	/obj/item/blueprint/research                   = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
+	/obj/item/scrap/research                       = list(TECHWEB_POINT_TYPE_GENERIC = 1000),
 	/obj/item/assembly/signaler/anomaly            = list(TECHWEB_POINT_TYPE_GENERIC = 10000),
 	//   -   Slime Extracts!   - Basics
 	/obj/item/slime_extract/grey                   = list(TECHWEB_POINT_TYPE_GENERIC = 500),
@@ -293,7 +294,7 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 0)	//citadel edit - techwebs nerf
+	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 3.5)	//citadel edit - techwebs nerf
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
