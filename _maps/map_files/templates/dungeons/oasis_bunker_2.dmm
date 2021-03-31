@@ -370,7 +370,6 @@
 "fR" = (
 /obj/machinery/light/fo13colored/Aqua,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/centaur,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/engine,
 /area/f13/radiation)
@@ -523,9 +522,9 @@
 /area/f13/bunker)
 "iU" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "jd" = (
@@ -644,10 +643,9 @@
 	},
 /area/f13/bunker)
 "ls" = (
-/obj/effect/decal/cleanable/blood/xtracks,
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/engine,
-/area/f13/radiation)
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
+/turf/closed/indestructible/rock,
+/area/f13/underground/cave)
 "lt" = (
 /obj/machinery/door/airlock/freezer,
 /obj/effect/step_trigger/message{
@@ -983,6 +981,7 @@
 /area/f13/bunker)
 "se" = (
 /obj/structure/rack,
+/obj/item/storage/pill_bottle/chem_tin/radx,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1343,6 +1342,7 @@
 /area/f13/bunker)
 "yt" = (
 /obj/effect/spawner/lootdrop/trash,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "yx" = (
@@ -2073,11 +2073,6 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/engine,
 /area/f13/radiation)
-"KR" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/abomhorror,
-/turf/open/floor/engine,
-/area/f13/radiation)
 "KU" = (
 /mob/living/simple_animal/hostile/regalrat,
 /turf/open/floor/plating/tunnel,
@@ -2153,7 +2148,7 @@
 /area/f13/bunker)
 "ME" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/centaur,
+/mob/living/simple_animal/hostile/abomhorror,
 /turf/open/floor/engine,
 /area/f13/radiation)
 "MJ" = (
@@ -2282,6 +2277,7 @@
 /area/f13/bunker)
 "OB" = (
 /obj/structure/closet/anchored,
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "OE" = (
@@ -2585,13 +2581,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"TE" = (
-/mob/living/simple_animal/hostile/abomhorror,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/radiation)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3090,7 +3079,7 @@ Zs
 Zs
 Zs
 Zs
-Zs
+ls
 Zs
 "}
 (3,1,1) = {"
@@ -3746,8 +3735,8 @@ Rp
 aJ
 VF
 AN
-KR
-ME
+PH
+PH
 Hy
 Hy
 kj
@@ -3788,7 +3777,7 @@ zX
 xT
 PH
 nS
-PH
+ME
 SN
 Hy
 Hy
@@ -3829,7 +3818,7 @@ Mz
 Bb
 hq
 IQ
-ls
+IQ
 ci
 DY
 fR
@@ -3908,7 +3897,7 @@ rW
 yA
 Mz
 Xi
-TE
+Mz
 Mz
 te
 aJ
@@ -3954,7 +3943,7 @@ Bb
 Yw
 Bb
 kQ
-PH
+ME
 Vx
 Ud
 Hy
