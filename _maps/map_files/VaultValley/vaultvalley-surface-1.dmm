@@ -61,10 +61,9 @@
 /turf/open/floor/wood/f13/old,
 /area/space)
 "av" = (
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/protolathe/department/medical,
+/obj/machinery/chem_heater,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "aw" = (
@@ -771,10 +770,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/space)
 "dt" = (
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder/constructed,
+/obj/structure/table,
+/obj/item/storage/belt/utility/full,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "du" = (
@@ -966,11 +965,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
 "et" = (
-/obj/structure/chair/office/dark{
-	dir = 4
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 25
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "floordirty"
 	},
 /area/space)
 "eu" = (
@@ -1592,7 +1591,7 @@
 	},
 /area/space)
 "gQ" = (
-/obj/machinery/iv_drip,
+/obj/structure/bed/roller,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2093,11 +2092,9 @@
 /turf/open/transparent/openspace,
 /area/space)
 "ja" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -25
-	},
+/obj/structure/table/wood,
 /turf/open/floor/f13{
-	icon_state = "floordirty"
+	icon_state = "floorrusty"
 	},
 /area/space)
 "jb" = (
@@ -2205,10 +2202,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/space)
 "jH" = (
-/obj/structure/table,
-/obj/item/storage/belt/utility/full,
+/obj/structure/table/glass,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/pillbottles,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "jI" = (
@@ -2226,11 +2224,12 @@
 	},
 /area/space)
 "jK" = (
-/obj/machinery/rnd/server/followers{
-	name = "Followers Research Server"
-	},
+/obj/structure/table/glass,
+/obj/item/storage/box/medsprays,
+/obj/item/storage/box/medsprays,
+/obj/item/storage/box/pillbottles,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "jL" = (
@@ -2521,22 +2520,16 @@
 	},
 /area/space)
 "kS" = (
-/obj/structure/table/wood,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
 /area/space)
 "kU" = (
-/obj/structure/bed,
-/obj/item/bedsheet{
-	icon_state = "sheetcmo"
+/obj/machinery/vending/medical{
+	req_access = null
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/turf/closed/wall/f13/supermart,
 /area/space)
 "kV" = (
 /obj/machinery/light/small{
@@ -2806,9 +2799,10 @@
 	},
 /area/space)
 "ma" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/pillbottles,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -3050,9 +3044,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
 "nf" = (
-/obj/structure/table/reinforced,
+/obj/structure/frame/machine,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "nh" = (
@@ -3068,9 +3062,9 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "nj" = (
-/obj/machinery/chem_dispenser,
+/obj/machinery/iv_drip,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrusty"
 	},
 /area/space)
 "nk" = (
@@ -3238,11 +3232,21 @@
 /turf/closed/wall/r_wall/rust,
 /area/space)
 "nW" = (
-/obj/structure/chair/f13chair1{
-	dir = 8
-	},
+/obj/structure/rack,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/machine/biogenerator,
+/obj/item/circuitboard/machine/seed_extractor,
+/obj/item/circuitboard/machine/chem_dispenser,
+/obj/item/circuitboard/machine/chem_master,
+/obj/item/circuitboard/machine/chem_heater,
+/obj/item/circuitboard/machine/techfab/department/medical,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/mining_equipment_vendor,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "nX" = (
@@ -3340,9 +3344,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/space)
 "op" = (
-/obj/structure/closet/crate/freezer/blood,
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "oq" = (
@@ -3555,11 +3561,10 @@
 /turf/open/floor/wood/f13/old,
 /area/space)
 "pp" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/protolathe/department/medical,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "pq" = (
@@ -3697,12 +3702,11 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "pU" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/reagent_containers/medspray/sterilizine,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/machinery/rnd/server/followers{
+	name = "Followers Research Server"
+	},
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "pV" = (
@@ -3920,12 +3924,10 @@
 	},
 /area/space)
 "qQ" = (
-/obj/structure/table/optable,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/workbench/advanced,
+/obj/item/storage/part_replacer,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "qR" = (
@@ -4730,9 +4732,11 @@
 	},
 /area/space)
 "up" = (
-/obj/effect/spawner/structure/window,
+/obj/machinery/computer/rdconsole/core/followers{
+	dir = 8
+	},
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "uq" = (
@@ -4890,9 +4894,11 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "uZ" = (
-/obj/structure/bed/roller,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "vb" = (
@@ -5541,7 +5547,10 @@
 	},
 /area/space)
 "xI" = (
-/obj/machinery/chem_heater,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -6137,7 +6146,7 @@
 /turf/open/floor/wood/f13/old,
 /area/space)
 "Au" = (
-/obj/structure/chair/office/dark,
+/obj/effect/spawner/structure/window,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -6866,9 +6875,8 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/space)
 "DG" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
+/obj/structure/chair/f13chair1{
+	dir = 8
 	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -6977,10 +6985,10 @@
 /turf/open/floor/f13,
 /area/space)
 "Eh" = (
-/obj/machinery/vending/medical{
-	req_access = null
+/obj/structure/chair/office/dark,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
 	},
-/turf/closed/wall/f13/supermart,
 /area/space)
 "Ei" = (
 /obj/structure/window/fulltile/house{
@@ -7139,11 +7147,9 @@
 	},
 /area/space)
 "EO" = (
-/obj/machinery/computer/rdconsole/core/followers{
-	dir = 8
-	},
+/obj/machinery/chem_master,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "EP" = (
@@ -8472,8 +8478,7 @@
 	},
 /area/space)
 "Ko" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/syringes,
+/obj/structure/table/reinforced,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9047,7 +9052,7 @@
 	},
 /area/space)
 "MY" = (
-/obj/structure/frame/machine,
+/obj/machinery/computer/operating,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9063,12 +9068,14 @@
 	},
 /area/space)
 "Nc" = (
-/obj/machinery/autolathe,
 /obj/machinery/light{
-	dir = 4
+	dir = 8
 	},
+/obj/structure/table/glass,
+/obj/item/storage/box/medsprays,
+/obj/item/storage/box/medsprays,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "Ne" = (
@@ -9112,10 +9119,7 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "Nm" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/medsprays,
-/obj/item/storage/box/medsprays,
-/obj/item/storage/box/pillbottles,
+/obj/structure/table/optable,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9228,7 +9232,10 @@
 /turf/open/floor/plasteel/darkbrown/side,
 /area/space)
 "NO" = (
-/obj/machinery/chem_master,
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/reagent_containers/medspray/sterilizine,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9403,10 +9410,10 @@
 	},
 /area/space)
 "Oz" = (
-/obj/machinery/workbench/advanced,
-/obj/item/storage/part_replacer,
+/obj/structure/table/glass,
+/obj/item/storage/box/syringes,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "OA" = (
@@ -9428,14 +9435,6 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/space)
-"OE" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = -30
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
 /area/space)
 "OG" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
@@ -9524,15 +9523,6 @@
 	icon_state = "whitepurplerustychess2"
 	},
 /area/space)
-"OW" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/space)
 "OY" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -9610,9 +9600,9 @@
 /turf/open/floor/f13,
 /area/space)
 "Pp" = (
-/obj/structure/frame/machine,
+/obj/machinery/chem_dispenser,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "Pq" = (
@@ -11058,17 +11048,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/space)
-"VS" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/table/glass,
-/obj/item/storage/box/medsprays,
-/obj/item/storage/box/medsprays,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/space)
 "VT" = (
 /mob/living/simple_animal/hostile/raider/baseball,
 /turf/open/floor/f13/wood,
@@ -11269,21 +11248,10 @@
 	},
 /area/space)
 "WI" = (
-/obj/structure/rack,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/biogenerator,
-/obj/item/circuitboard/machine/seed_extractor,
-/obj/item/circuitboard/machine/chem_dispenser,
-/obj/item/circuitboard/machine/chem_master,
-/obj/item/circuitboard/machine/chem_heater,
-/obj/item/circuitboard/machine/techfab/department/medical,
-/obj/item/circuitboard/machine/ore_redemption,
-/obj/item/circuitboard/machine/mining_equipment_vendor,
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder/constructed,
 /turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+	icon_state = "bluerustysolid"
 	},
 /area/space)
 "WJ" = (
@@ -11607,22 +11575,17 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/space)
 "Yl" = (
-/obj/machinery/computer/operating,
+/obj/machinery/autolathe,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "floorrustysolid"
 	},
 /area/space)
 "Ym" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road,
-/area/space)
-"Yo" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
 /area/space)
 "Yq" = (
 /obj/structure/rack,
@@ -36222,9 +36185,9 @@ pD
 bF
 dU
 dU
-GG
-Wk
-pD
+Li
+Li
+Li
 GG
 hW
 pq
@@ -36479,9 +36442,9 @@ pD
 GG
 dU
 dU
-bF
-pD
-pD
+dU
+Li
+Li
 GG
 hW
 pq
@@ -36734,11 +36697,11 @@ GG
 Wk
 pD
 GG
-gQ
-dU
-GG
-cI
-kU
+Li
+Li
+Li
+Li
+Li
 GG
 Mq
 pq
@@ -36991,11 +36954,11 @@ GG
 GG
 GG
 GG
-gQ
-dU
-GG
-GG
-GG
+Li
+Li
+Li
+Li
+Li
 GG
 Mq
 pq
@@ -37250,9 +37213,9 @@ aM
 YA
 Li
 dU
-bF
-pD
-Wk
+Li
+Li
+Li
 GG
 Mq
 pq
@@ -37506,10 +37469,10 @@ dU
 dU
 dU
 Li
-uZ
-GG
-pD
-cI
+Li
+Li
+Li
+Li
 GG
 Mq
 pq
@@ -37762,11 +37725,11 @@ dU
 dU
 dU
 dU
-Li
-kS
+dU
 GG
-pD
-kU
+GG
+GG
+GG
 GG
 Mq
 pq
@@ -38016,14 +37979,14 @@ hn
 GG
 GG
 GG
+GG
+Li
 dU
-Li
-Li
-Li
+dU
+GG
 uZ
-GG
-GG
-GG
+pD
+MY
 GG
 Mq
 pq
@@ -38271,16 +38234,16 @@ tj
 tj
 hn
 Yl
-pD
-OW
-dU
+Ta
+Ta
+ma
 dU
 dU
 Li
-dU
-bF
+ma
 pD
-bv
+pD
+Nm
 GG
 Mq
 pq
@@ -38528,16 +38491,16 @@ tj
 tj
 hn
 qQ
-OE
+Ta
+Ta
 GG
-dU
-dU
+gH
 dU
 Li
-dU
 GG
+xI
 pD
-cI
+NO
 GG
 Mq
 pq
@@ -38785,16 +38748,16 @@ tj
 tj
 hn
 pU
-DG
+Ta
+Ta
 GG
+gQ
 dU
 dU
-op
-op
-gH
 GG
-pD
-Wk
+Au
+Au
+Au
 GG
 Mq
 hW
@@ -39042,16 +39005,16 @@ Ai
 tj
 hn
 up
-up
+Ta
+dt
 GG
+ja
 dU
 dU
 GG
-GG
-Ak
-GG
-GG
-GG
+DG
+DG
+DG
 GG
 Mq
 hW
@@ -39299,16 +39262,16 @@ XD
 tj
 is
 nW
-nW
+Ta
+Ta
 GG
+gQ
 dU
 dU
-GG
-dt
 ma
-VS
 pD
-MY
+pD
+pD
 GG
 Mq
 hW
@@ -39556,16 +39519,16 @@ qT
 tj
 GG
 pp
-pD
-OW
+Ta
+Ta
+ma
 dU
 dU
-kN
+Li
+GG
+uZ
 pD
-Yo
 pD
-Au
-MY
 GG
 FB
 hW
@@ -39813,15 +39776,15 @@ FU
 tj
 GG
 nf
-nf
+Ta
+Ta
 GG
+kS
 dU
-dU
+nj
 GG
-pD
-pD
-pD
-pD
+Ko
+Ko
 Ko
 GG
 Mq
@@ -40072,14 +40035,14 @@ GG
 GG
 GG
 GG
-dU
-dU
 GG
-pD
+kS
+dU
 nj
-xI
-NO
-Nm
+GG
+GG
+GG
+GG
 GG
 jB
 hW
@@ -40331,12 +40294,12 @@ GG
 ZX
 dU
 dU
+dU
+dU
 GG
-Eh
-GG
-GG
-GG
-GG
+dU
+dU
+Vy
 GG
 GG
 hW
@@ -40588,7 +40551,7 @@ WD
 dU
 dU
 dU
-ja
+dU
 dx
 VL
 dU
@@ -41871,7 +41834,7 @@ GG
 eP
 GG
 bQ
-dU
+et
 dU
 dU
 dU
@@ -42130,7 +42093,7 @@ GG
 GG
 GG
 dU
-GG
+kU
 DL
 GG
 GG
@@ -42388,11 +42351,11 @@ pD
 JC
 dU
 GG
-Ta
+pD
 jH
 Nc
 Oz
-Ta
+pD
 ig
 Mq
 hW
@@ -42645,11 +42608,11 @@ fc
 GG
 dU
 uR
-Ta
-Ta
-Ta
-Ta
-Ta
+pD
+op
+pD
+Eh
+pD
 sj
 Mq
 hW
@@ -42902,11 +42865,11 @@ QZ
 GG
 dU
 GG
-Ta
-Ta
-Ta
-et
-Ta
+pD
+pD
+pD
+pD
+pD
 ig
 Mq
 hW
