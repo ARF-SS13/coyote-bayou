@@ -31371,6 +31371,12 @@
 "xaG" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"xaI" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 8;
+	icon_state = "outerturn"
+	},
+/area/f13/wasteland)
 "xbv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -39254,9 +39260,9 @@ sTa
 etV
 ybI
 ybI
-cpK
-unI
-hbW
+dkP
+hQr
+erY
 wGJ
 apk
 wwM
@@ -39511,9 +39517,9 @@ aJb
 tUb
 idu
 hOl
-cpK
-unI
-hbW
+wGJ
+wGJ
+erY
 erY
 ubg
 koD
@@ -39768,9 +39774,9 @@ sgz
 sgz
 kjQ
 ehN
-cpK
-unI
-hbW
+wGJ
+wGJ
+wGJ
 wGJ
 snB
 koD
@@ -40025,9 +40031,9 @@ dmL
 fvz
 kaM
 kaM
-cpK
-unI
-hbW
+wGJ
+wGJ
+wGJ
 wGJ
 snB
 koD
@@ -40282,9 +40288,9 @@ gQv
 jgx
 fsm
 fsm
-cpK
-unI
-hbW
+fsm
+xaI
+erY
 cdc
 snB
 sBk
@@ -46193,7 +46199,7 @@ fyf
 fyf
 fyf
 kGc
-cpK
+uCW
 unI
 hbW
 mmK
@@ -46450,7 +46456,7 @@ fyf
 fyf
 fyf
 kGc
-cpK
+uCW
 pBv
 box
 erY
@@ -46707,7 +46713,7 @@ fyf
 fyf
 fyf
 kGc
-cpK
+uCW
 ajD
 lSD
 erY
@@ -46964,8 +46970,8 @@ fyf
 fyf
 fyf
 kGc
-sJw
-onk
+cpK
+pBv
 hbW
 erY
 erY
@@ -47221,9 +47227,9 @@ fyf
 fyf
 fyf
 kGc
-idu
-idu
-ehN
+cpK
+ajD
+hbW
 dFQ
 gmX
 geM
@@ -47478,9 +47484,9 @@ fyf
 fyf
 fyf
 kGc
-hOl
-ehN
-ehN
+cpK
+ofX
+hbW
 cdc
 dFQ
 koD
@@ -47735,9 +47741,9 @@ fyf
 fyf
 fyf
 kGc
-kaM
-kaM
-ehN
+cpK
+ajD
+hbW
 cdc
 snB
 koD
@@ -47992,8 +47998,8 @@ fyf
 fyf
 fyf
 kGc
-fsm
-muk
+uCW
+unI
 dXy
 cdc
 vnc
