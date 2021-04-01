@@ -819,7 +819,7 @@
 	faction = list("raider");
 	name = "riot control sentry";
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg';
-	projectiletype = /obj/item/ammo_casing/shotgun/beanbag;
+	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag;
 	retreat_distance = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
