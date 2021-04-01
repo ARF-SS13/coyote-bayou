@@ -989,6 +989,7 @@
 	extra_projectiles = 6;
 	health = 700;
 	name = "Lil' Chew-Chew";
+	obj_damage = 300;
 	unique_name = 1
 	},
 /obj/machinery/light/fo13colored/Red{
@@ -14325,7 +14326,9 @@
 	},
 /area/f13/bunker)
 "xzS" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/handy/sentrybot{
+	obj_damage = 300
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
@@ -44916,7 +44919,7 @@ eRb
 xph
 aUx
 fku
-aUx
+qsb
 diW
 tal
 gEI
