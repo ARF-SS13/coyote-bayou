@@ -36,6 +36,7 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/doughslice
 	slices_num = 3
 	cooked_type = /obj/item/reagent_containers/food/snacks/pizzabread
+	dried_type = /obj/item/reagent_containers/food/snacks/breadhard
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("dough" = 1)

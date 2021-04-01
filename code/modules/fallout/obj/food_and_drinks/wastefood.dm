@@ -403,6 +403,7 @@
 	if(..())
 		reagents.add_reagent(/datum/reagent/medicine/charcoal, 1 + round((seed.potency / 20), 1))
 		reagents.add_reagent(/datum/reagent/medicine/mutadone, 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent(/datum/reagent/medicine/radaway, 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
 
 /obj/item/seeds/yucca

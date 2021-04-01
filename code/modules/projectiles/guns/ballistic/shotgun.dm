@@ -657,3 +657,7 @@
 	extra_damage = 5
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
+	suppressor_state = "rifle_suppressor"
+	can_suppress = TRUE
+	suppressor_x_offset = 25
+	suppressor_y_offset = 30

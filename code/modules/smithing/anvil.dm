@@ -83,7 +83,7 @@
 			workpiece_material = notsword.custom_materials
 			to_chat(user, "You place the [notsword] on the [src].")
 			currentquality = anvilquality
-			var/skillmod = 0
+			var/skillmod = 4
 			if(user.mind.skill_holder)
 				skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2
 			currentquality += skillmod
@@ -270,8 +270,8 @@
 	desc = "A big block of sandstone. Useable as an anvil."
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
-	anvilquality = -1
-	itemqualitymax = 2
+	anvilquality = 1
+	itemqualitymax = 6
 
 /obj/structure/anvil/obtainable/basalt
 	name = "basalt brick anvil"

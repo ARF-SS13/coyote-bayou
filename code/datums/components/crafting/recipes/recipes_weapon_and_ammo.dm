@@ -171,8 +171,8 @@
 	reqs = list(/datum/reagent/fuel = 50,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/igniter = 1,
-				/obj/item/reagent_containers/food/drinks/soda_cans = 1)
-	parts = list(/obj/item/reagent_containers/food/drinks/soda_cans = 1)
+				/obj/item/reagent_containers/food/drinks/bottle = 1)
+	parts = list(/obj/item/reagent_containers/food/drinks/bottle = 1)
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -904,7 +904,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_availible = FALSE
-
+/*
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"
 	result = /obj/item/advanced_crafting_components/flux
@@ -991,3 +991,4 @@
 	subcategory = CAT_PARTS
 	always_availible = FALSE
 
+*/

@@ -9,7 +9,7 @@
 	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
+	var/nutridrain = 0.5      // How many units of nutrient will be drained in the tray //test
 	var/maxnutri = 10		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
@@ -141,7 +141,7 @@
 
 //Water//////////////////////////////////////////////////////////////////
 			// Drink random amount of water
-			adjustWater(-rand(1,6) / rating)
+			adjustWater(-rand(1,3) / rating)//6
 
 			// If the plant is dry, it loses health pretty fast, unless mushroom
 			if(waterlevel <= 10 && !myseed.get_gene(/datum/plant_gene/trait/plant_type/fungal_metabolism))
@@ -154,7 +154,7 @@
 				adjustHealth(rand(1,2) / rating)
 				if(myseed && prob(myseed.weed_chance))
 					adjustWeeds(myseed.weed_rate)
-				else if(prob(5))  //5 percent chance the weed population will increase
+				else if(prob(2))  //5 percent chance the weed population will increase
 					adjustWeeds(1 / rating)
 
 //Toxins/////////////////////////////////////////////////////////////////

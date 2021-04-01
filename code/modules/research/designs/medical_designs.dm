@@ -1127,3 +1127,15 @@
 	build_path = /obj/item/construction/plumbing
 	category = list("Misc","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/autosurgeon
+	name = "Autosurgeon"
+	desc = "An automatic surgeon used to install organs or implants automatically."
+	id = "autosurgeon"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 5000, /datum/material/plastic = 2000)
+	construction_time = 100
+	build_path = /obj/item/autosurgeon
+	category = list("Misc","Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+

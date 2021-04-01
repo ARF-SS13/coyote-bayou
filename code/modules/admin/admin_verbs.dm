@@ -163,6 +163,7 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/debug_huds,
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
+	/client/proc/map_template_loadtest,
 	/client/proc/jump_to_ruin,
 	/client/proc/clear_dynamic_transit,
 	/client/proc/toggle_medal_disable,

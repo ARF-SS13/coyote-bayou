@@ -363,6 +363,10 @@
 	var/extended_icon_state = "switchblade_ext"
 	var/retracted_icon_state = "switchblade"
 
+/obj/item/switchblade/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 40, 105)
+
 /obj/item/switchblade/attack_self(mob/user)
 	extended = !extended
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)

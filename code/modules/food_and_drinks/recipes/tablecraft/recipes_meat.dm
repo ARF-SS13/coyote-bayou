@@ -66,6 +66,15 @@
 
 ////////////////////////////////////////////////MISC RECIPE's////////////////////////////////////////////////
 
+/datum/crafting_recipe/food/meatsalted
+	name = "Salted meat"
+	reqs = list(
+		/datum/reagent/consumable/sodiumchloride = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/meatsalted
+	subcategory = CAT_MEAT
+
 /datum/crafting_recipe/food/ribs
 	name = "BBQ Ribs"
 	reqs = list(

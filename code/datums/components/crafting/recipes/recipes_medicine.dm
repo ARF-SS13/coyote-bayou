@@ -15,6 +15,22 @@
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/suture
+	name = "Handmade Suture"
+	result = /obj/item/stack/medical/suture
+	time = 30
+	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
+				/datum/reagent/consumable/ethanol = 10)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/ointment
+	name = "Handmade Ointment"
+	result = /obj/item/stack/medical/ointment
+	time = 30
+	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 1)
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/burn_pack
 	name = "Regenerative Mesh"
 	result = /obj/item/stack/medical/mesh/five
@@ -26,8 +42,8 @@
 /datum/crafting_recipe/healpowder
 	name = "Healing powder"
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 3,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 3)
 	time = 50
 	category = CAT_MEDICAL
 
@@ -37,15 +53,16 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
+				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2)
 	time = 80
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 50

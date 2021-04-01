@@ -165,6 +165,34 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 /obj/item/stack/sheet/metal/five
 	amount = 5
 
+/obj/item/stack/sheet/lead
+	name = "lead"
+	desc = "Sheets made out of lead."
+	singular_name = "lead sheet"
+	icon_state = "sheet-lead"
+	item_state = "sheet-lead"
+	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	throwforce = 10
+	flags_1 = CONDUCT_1
+	resistance_flags = FIRE_PROOF
+	merge_type = /obj/item/stack/sheet/lead
+	grind_results = list(/datum/reagent/lead = 20)
+	point_value = 2
+	//tableVariant = /obj/structure/table
+	material_type = /datum/material/lead
+
+/obj/item/stack/sheet/lead/fifty
+	amount = 50
+
+/obj/item/stack/sheet/lead/twenty
+	amount = 20
+
+/obj/item/stack/sheet/lead/ten
+	amount = 10
+
+/obj/item/stack/sheet/lead/five
+	amount = 5
+
 /obj/item/stack/sheet/metal/cyborg
 	custom_materials = null
 	is_cyborg = 1
@@ -406,6 +434,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("mining satchel", /obj/item/storage/bag/ore, 4), \
 	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
 	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
+	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
 	new/datum/stack_recipe("improvised gauze", /obj/item/stack/medical/gauze/improvised, 1, 2, 6), \

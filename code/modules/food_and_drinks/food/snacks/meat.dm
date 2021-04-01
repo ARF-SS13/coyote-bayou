@@ -369,6 +369,7 @@
 	icon_state = "meatsteak"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
+	dried_type = /obj/item/reagent_containers/food/snacks/meatsmoked
 	trash = /obj/item/trash/plate
 	filling_color = "#B22222"
 	foodtype = MEAT

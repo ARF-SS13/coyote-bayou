@@ -504,6 +504,15 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/compressedpowder
+	name = "Compressed blackpowder"
+	result = /obj/item/stack/ore/blackpowder
+	time = 5
+	reqs = list(/obj/item/stack/sheet/cloth = 1,
+				/datum/reagent/blackpowder = 50)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/gold_horn
 	name = "Golden Bike Horn"
 	result = /obj/item/bikehorn/golden

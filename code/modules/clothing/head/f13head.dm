@@ -224,8 +224,33 @@
 	speechspan = SPAN_ROBOT //makes you sound like a robot
 //	darkness_view = 128
 //	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	var/on = FALSE
+	var/brightness_on = 5
+	var/power_on = 1
 	var/emped = 0
 	var/requires_training = TRUE
+
+/obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/living/user)
+	toggle_helmet_light(user)
+
+/obj/item/clothing/head/helmet/f13/power_armor/proc/toggle_helmet_light(mob/living/user)
+	on = !on
+	if(on)
+		turn_on(user)
+	else
+		turn_off(user)
+	update_icon()
+
+/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
+	set_light(brightness_on, power_on)
+
+/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
+	set_light(0)
+
 
 /obj/item/clothing/head/helmet/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -288,14 +313,24 @@
 
 	requires_training = FALSE
 
+/obj/item/clothing/head/helmet/f13/power_armor/vaulttec
+	name = "Vault-Tec power helmet"
+	desc = "(VIII) A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
+	icon_state = "vaultpahelm"
+	item_state = "vaultpahelm"
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
 	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it."
-	icon_state = "t45dhelmet"
-	item_state = "t45dhelmet"
+	icon_state = "t45dhelmet0"
+	item_state = "t45dhelmet0"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
-	var/brightness_on = 4 //luminosity when the light is on
-	var/on = 0
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
+	icon_state = "t45dhelmet[on]"
+	item_state = "t45dhelmet[on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b Helm"
@@ -304,12 +339,14 @@
 	item_state = "t51bgs"
 	slowdown = 0
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
 	name = "sierra power helmet"
 	desc = "(IX) A pre-war power armor helmet, issued to special NCR officers.."
 	icon_state = "sierra"
 	item_state = "sierra"
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
@@ -321,21 +358,28 @@
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
 	desc = "(X) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
-	icon_state = "t51bhelmet"
-	item_state = "t51bhelmet"
+	icon_state = "t51bhelmet0"
+	item_state = "t51bhelmet0"
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
+	icon_state = "t51bhelmet[on]"
+	item_state = "t51bhelmet[on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/wbos
 	name = "Washington power helmet"
 	desc = "(X) It's a Washington Brotherhood power helmet. It looks somewhat terrifying."
 	icon_state = "t51wboshelmet"
 	item_state = "t51wboshelmet"
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/reforgedwbos
 	name = "reforged Washington power helmet"
 	desc = "(X) It's a reforged Washington Brotherhood power helmet, designed to induce fear in a target."
 	icon_state = "t51matthelmet"
 	item_state = "t51matthelmet"
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/ultra
 	name = "Ultracite power helmet"
@@ -343,15 +387,19 @@
 	icon_state = "ultracitepa_helm"
 	item_state = "ultracitepa_helm"
 	slowdown = 0
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
 	desc = "(XI) The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
-	icon_state = "t60helmet"
-	item_state = "t60helmet"
+	icon_state = "t60helmet0"
+	item_state = "t60helmet0"
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
-	var/brightness_on = 4 //luminosity when the light is on
-	var/on = 0
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
+	icon_state = "t60helmet[on]"
+	item_state = "t60helmet[on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
 	name = "excavator power helmet"
@@ -359,8 +407,6 @@
 	icon_state = "excavator"
 	item_state = "excavator"
 	armor = list("tier" = 8, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
-	var/brightness_on = 4 //luminosity when the light is on
-	var/on = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
 	name = "advanced power helmet"
