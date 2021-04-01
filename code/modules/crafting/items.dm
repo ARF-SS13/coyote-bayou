@@ -1,3 +1,13 @@
+/obj/item/scrap/research
+	name = "strange object"
+	desc = "What mysteries could this hold?"
+	icon = 'icons/obj/assemblies.dmi'
+
+/obj/item/scrap/research/Initialize()
+	. = ..()
+	icon_state = pick("shock_kit","armor-igniter-analyzer","infra-igniter0","infra-igniter1","radio-multitool","prox-radio1","radio-radio","timer-multitool0","radio-igniter-tank")
+	name = "[pick("broken","twisted","spun","improved","silly","regular","badly made")] [pick("device","object","toy","illegal tech","weapon")]"
+
 /obj/item/metaldetector
 	name = "metal detector"
 	desc = "Detects burried salvage in a 5 tile radius."
@@ -52,7 +62,7 @@
 
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "... (grants 25k research points when destructively analyzed - the BoS or Vault might want this.)"
+	desc = "... (grants 10k research points when destructively analyzed - the BoS or Vault might want this.)"
 	icon_state = "blueprint2"
 
 /obj/item/blueprint/misc/stim
@@ -918,7 +928,7 @@
 	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
-				/obj/item/stack/ore/blackpowder/two,
+				/obj/item/stack/ore/blackpowder,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/lead/five,
 				/obj/item/stack/sheet/metal/five,
@@ -926,6 +936,7 @@
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/camera,
+				/obj/item/scrap/research
 				)
 
 /obj/item/salvage/crafting
