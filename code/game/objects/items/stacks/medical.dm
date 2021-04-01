@@ -243,12 +243,15 @@
 	merge_type = /obj/item/stack/medical/suture
 
 /obj/item/stack/medical/suture/emergency
-	name = "emergency suture"
-	desc = "A value pack of cheap sutures, not very good at repairing damage, but still decent at stopping bleeding."
+	name = "improvised suture"
+	desc = "A set of improvised sutures, not very good at repairing damage, but still decent at stopping bleeding."
 	heal_brute = 5
 	amount = 5
 	max_amount = 5
 	merge_type = /obj/item/stack/medical/suture/emergency
+
+/obj/item/stack/medical/suture/emergency/five
+	amount = 5
 
 /obj/item/stack/medical/suture/one
 	amount = 1
@@ -305,6 +308,9 @@
 	flesh_regeneration = 2.5
 	sanitization = 0.3
 	grind_results = list(/datum/reagent/medicine/kelotane = 10)
+
+/obj/item/stack/medical/ointment/five
+	amount = 5
 
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)

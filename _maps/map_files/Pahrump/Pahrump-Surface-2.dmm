@@ -8948,6 +8948,10 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"gLx" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "gLH" = (
 /obj/structure/table,
 /obj/item/roller,
@@ -14083,6 +14087,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "barshutters"
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
 "kmv" = (
@@ -25965,6 +25970,7 @@
 "tit" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "tiu" = (
@@ -29739,12 +29745,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vNH" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
+/obj/effect/decal/cleanable/generic,
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "vOq" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -30151,12 +30155,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wgO" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "whm" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -31371,12 +31373,6 @@
 "xaG" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"xaI" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 8;
-	icon_state = "outerturn"
-	},
-/area/f13/wasteland)
 "xbv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -35127,7 +35123,7 @@ wVT
 wVT
 wVT
 wVT
-wVT
+wWI
 xEc
 xEc
 xEc
@@ -35381,15 +35377,15 @@ wVT
 wVT
 fju
 wWI
-gTR
-gTR
-gTR
-eEM
+wVT
+wVT
+wVT
+wVT
 wVT
 siE
-vNH
+siS
 siE
-nGs
+wVT
 siE
 xEc
 unI
@@ -35895,10 +35891,10 @@ wVT
 wVT
 fju
 uru
-wVT
-wVT
-wVT
-wVT
+gTR
+gTR
+gTR
+eEM
 wVT
 wVT
 wVT
@@ -36409,15 +36405,15 @@ wVT
 wVT
 fju
 siE
-nGs
+wVT
 tXt
-nGs
+wVT
 siE
-wWI
+wVT
 siE
-wgO
+fIF
 siE
-nGs
+wVT
 siE
 xEc
 unI
@@ -39260,9 +39256,9 @@ sTa
 etV
 ybI
 ybI
-dkP
-hQr
-erY
+cpK
+unI
+hbW
 wGJ
 apk
 wwM
@@ -39517,9 +39513,9 @@ aJb
 tUb
 idu
 hOl
-wGJ
-wGJ
-erY
+cpK
+unI
+hbW
 erY
 ubg
 koD
@@ -39774,9 +39770,9 @@ sgz
 sgz
 kjQ
 ehN
-wGJ
-wGJ
-wGJ
+cpK
+unI
+hbW
 wGJ
 snB
 koD
@@ -40031,9 +40027,9 @@ dmL
 fvz
 kaM
 kaM
-wGJ
-wGJ
-wGJ
+cpK
+unI
+hbW
 wGJ
 snB
 koD
@@ -40288,9 +40284,9 @@ gQv
 jgx
 fsm
 fsm
-fsm
-xaI
-erY
+cpK
+unI
+hbW
 cdc
 snB
 sBk
@@ -44540,7 +44536,7 @@ hZo
 cGw
 tit
 eUp
-cGw
+wgO
 hHz
 bKE
 sfB
@@ -45822,13 +45818,13 @@ brH
 brH
 sfB
 pGa
-ruN
+vNH
+wgO
 cGw
 cGw
 cGw
-cGw
-cGw
-hHz
+wgO
+gLx
 vYE
 cpK
 nyZ
@@ -46199,7 +46195,7 @@ fyf
 fyf
 fyf
 kGc
-uCW
+cpK
 unI
 hbW
 mmK
@@ -46456,7 +46452,7 @@ fyf
 fyf
 fyf
 kGc
-uCW
+cpK
 pBv
 box
 erY
@@ -46713,7 +46709,7 @@ fyf
 fyf
 fyf
 kGc
-uCW
+cpK
 ajD
 lSD
 erY
@@ -46970,8 +46966,8 @@ fyf
 fyf
 fyf
 kGc
-cpK
-pBv
+sJw
+onk
 hbW
 erY
 erY
@@ -47227,9 +47223,9 @@ fyf
 fyf
 fyf
 kGc
-cpK
-ajD
-hbW
+idu
+idu
+ehN
 dFQ
 gmX
 geM
@@ -47484,9 +47480,9 @@ fyf
 fyf
 fyf
 kGc
-cpK
-ofX
-hbW
+hOl
+ehN
+ehN
 cdc
 dFQ
 koD
@@ -47741,9 +47737,9 @@ fyf
 fyf
 fyf
 kGc
-cpK
-ajD
-hbW
+kaM
+kaM
+ehN
 cdc
 snB
 koD
@@ -47998,8 +47994,8 @@ fyf
 fyf
 fyf
 kGc
-uCW
-unI
+fsm
+muk
 dXy
 cdc
 vnc
@@ -52876,7 +52872,7 @@ gcK
 usx
 aSo
 grf
-iOg
+gsj
 dbz
 usx
 uCW
@@ -53133,7 +53129,7 @@ ktB
 usx
 iOg
 eHk
-iOg
+gsj
 tpM
 usx
 uCW
@@ -55189,7 +55185,7 @@ dhC
 ljG
 iOg
 grf
-iOg
+gsj
 dbz
 usx
 uaf
@@ -55446,7 +55442,7 @@ usx
 usx
 iOg
 iau
-iOg
+gsj
 wGc
 usx
 uaf
@@ -55703,7 +55699,7 @@ fyf
 usx
 aSo
 eHk
-iOg
+gsj
 tpM
 usx
 uaf
