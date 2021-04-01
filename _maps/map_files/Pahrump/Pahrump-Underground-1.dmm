@@ -729,6 +729,16 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"aNm" = (
+/obj/structure/table/abductor{
+	desc = "The Brotherhood has released the latest iteration of their advanced table. Designed by Head Knight Envy Sin";
+	name = "Table 3"
+	},
+/obj/item/pen/fountain/captain{
+	name = "elder's fountain pen"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "aNI" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -841,6 +851,10 @@
 	pixel_x = 16;
 	pixel_y = 8;
 	termtag = "Business"
+	},
+/obj/item/pen{
+	pixel_x = -16;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/f13/carpet,
 /area/f13/brotherhood)
@@ -2259,6 +2273,9 @@
 	},
 /obj/item/paper_bin{
 	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -5926,6 +5943,10 @@
 	pixel_y = 5
 	},
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/pen/fountain{
+	pixel_x = 15;
+	pixel_y = 5
+	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "fYq" = (
@@ -8163,6 +8184,20 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"ipM" = (
+/obj/structure/table{
+	layer = 2.9
+	},
+/obj/item/paper_bin{
+	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood)
 "iqE" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -15220,11 +15255,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "pGd" = (
-/obj/item/candle/infinite{
-	lit = 1;
-	pixel_x = 7;
-	pixel_y = 10
-	},
 /obj/item/card/id/dogtag{
 	desc = "Never thirsty is the grave of the fallen Brother, for their kin floods the ground with the blood of the blind.";
 	name = "The Fallen Brother's Holotags";
@@ -15235,6 +15265,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood/fancy/blackred,
+/obj/item/candle{
+	pixel_x = 7;
+	pixel_y = 13
+	},
 /turf/open/floor/clockwork/reebe{
 	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
 	name = "cool metal floor"
@@ -16505,11 +16539,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "qWq" = (
-/obj/item/candle/infinite{
-	lit = 1;
-	pixel_x = -7;
-	pixel_y = 10
-	},
 /obj/item/reagent_containers/food/snacks/grown/poppy{
 	pixel_x = 4;
 	pixel_y = 2
@@ -16522,6 +16551,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood/fancy/blackred,
+/obj/item/candle{
+	pixel_x = -6;
+	pixel_y = 13
+	},
 /turf/open/floor/clockwork/reebe{
 	desc = "Cool coloured plating. You can feel it gently vibrating, as if machinery is on the other side.";
 	name = "cool metal floor"
@@ -21957,6 +21990,9 @@
 	},
 /obj/item/paper_bin{
 	pixel_y = 6
+	},
+/obj/item/pen{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
@@ -80579,7 +80615,7 @@ jZH
 jZH
 ioQ
 pOc
-vOf
+ipM
 pOc
 hYS
 vDC
@@ -86244,7 +86280,7 @@ cfA
 jZH
 fqM
 owa
-cLV
+aNm
 aqB
 aqB
 aqB
