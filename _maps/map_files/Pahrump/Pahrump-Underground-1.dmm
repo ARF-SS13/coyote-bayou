@@ -1884,7 +1884,7 @@
 	pixel_y = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/turf/open/floor/plasteel/stairs,
 /area/f13/brotherhood)
 "bKX" = (
 /obj/structure/curtain{
@@ -2030,11 +2030,9 @@
 /turf/open/water,
 /area/f13/tunnel)
 "bUn" = (
-/turf/closed/indestructible/opshuttle{
-	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
-	},
-/area/f13/caves)
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "bUR" = (
 /obj/structure/decoration/vent,
 /turf/closed/wall/r_wall,
@@ -5085,6 +5083,11 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood)
+"fcJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "fdN" = (
 /obj/structure/frame/machine,
 /obj/structure/cable{
@@ -6782,6 +6785,13 @@
 /obj/structure/mirror,
 /turf/closed/wall/f13/supermart,
 /area/f13/ncr)
+"gRE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/fo13colored/Red{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "gRQ" = (
 /obj/structure/sink/well,
 /turf/open/indestructible/ground/inside/subway,
@@ -7755,7 +7765,12 @@
 	},
 /area/f13/clinic)
 "hPn" = (
-/obj/structure/falsewall/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/toy/figure/warden{
+	desc = "A refurbished military action figure made to look like a member of the Brotherhood of Steel.";
+	name = "Knight Action Figure";
+	toysay = "Steel be with you."
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
 "hPD" = (
@@ -8387,6 +8402,16 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
+"itY" = (
+/obj/effect/decal/cleanable/shreds{
+	pixel_x = -6;
+	pixel_y = -12
+	},
+/obj/structure/lattice{
+	density = 1
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/brotherhood)
 "iue" = (
 /obj/machinery/light/fo13colored/Red,
 /turf/open/floor/plating/tunnel,
@@ -11029,6 +11054,11 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
+"ldo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille/broken,
+/turf/open/floor/plasteel/stairs,
+/area/f13/brotherhood)
 "ldA" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -14961,6 +14991,11 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"pkR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille/broken,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/brotherhood)
 "pkW" = (
 /obj/machinery/shower{
 	dir = 1;
@@ -15540,11 +15575,6 @@
 /obj/effect/decal/cleanable/shreds{
 	pixel_x = -6;
 	pixel_y = -12
-	},
-/obj/item/toy/figure/warden{
-	desc = "A refurbished military action figure made to look like a member of the Brotherhood of Steel.";
-	name = "Knight Action Figure";
-	toysay = "Steel be with you."
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood)
@@ -87731,7 +87761,7 @@ jZH
 jZH
 jZH
 jZH
-jZH
+oDP
 jZH
 acJ
 rRQ
@@ -87749,7 +87779,7 @@ jZH
 jZH
 rIS
 jZH
-hPn
+jZH
 iKQ
 cfA
 jZH
@@ -87984,20 +88014,20 @@ xSi
 tkD
 hUV
 jZH
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
-rOj
+jZH
+jZH
+bUn
 cfA
+cfA
+jZH
 rOj
+rOj
+rOj
+rOj
+rOj
+jZH
+cfA
+jZH
 rOj
 rOj
 rOj
@@ -88243,9 +88273,9 @@ ejQ
 qpd
 dLF
 jZH
-rOj
+hPn
 jZH
-jZH
+ryy
 jZH
 jZH
 jZH
@@ -88502,24 +88532,24 @@ gIK
 jZH
 jZH
 jZH
-ryy
 vnZ
+jZH
 cfA
 cfA
 cfA
-ryy
+bUn
 ukN
-cfA
+fcJ
 ryy
 bKT
-cfA
+pkR
 oDP
 vUF
-ryy
-cfA
+qOT
+ldo
 hcx
 ukN
-cfA
+fXs
 cfA
 jZH
 rOj
@@ -88757,13 +88787,13 @@ aWM
 gJD
 uuj
 jZH
-ryy
-ryy
+cfA
+cfA
 pRW
 jZH
-ryy
-jZH
-jZH
+cfA
+itY
+cfA
 jZH
 jZH
 jZH
@@ -89014,14 +89044,14 @@ uMR
 sFl
 uMR
 jZH
-oDP
+cIS
 jZH
 jZH
 jZH
-ryy
+cfA
+cfA
+cfA
 jZH
-rOj
-rOj
 rOj
 rOj
 rOj
@@ -89274,12 +89304,12 @@ jZH
 ryy
 cfA
 cfA
-ryy
-ryy
+oDP
+cfA
+gRE
+cfA
 jZH
 rOj
-jZH
-jZH
 jZH
 jZH
 jZH
@@ -89534,9 +89564,9 @@ jZH
 jZH
 jZH
 jZH
-rOj
 jZH
-uoO
+jZH
+rOj
 uoO
 uoO
 uoO
@@ -89768,32 +89798,32 @@ eLE
 eLE
 eLE
 eLE
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-bUn
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+iKQ
+rOj
+rOj
+rOj
+rOj
+rOj
+rOj
+rOj
+rOj
+rOj
 eLE
 eLE
 eLE
