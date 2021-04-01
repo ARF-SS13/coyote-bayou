@@ -288,8 +288,10 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Chief",
 	"Shaman",
 	"Head Hunter",
+	"Druid",
 	"Villager",
-	"Hunter"
+	"Hunter",
+	"Spirit-Pledged"
 ))
 
 GLOBAL_LIST_INIT(followers_command_positions, list(
