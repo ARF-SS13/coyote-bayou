@@ -4547,13 +4547,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "enl" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /obj/machinery/power/apc{
 	dir = 1;
 	pixel_x = 32;
 	start_charge = 500
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/leisure)
@@ -8302,16 +8302,16 @@
 "hVk" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/ash/snappop_phoenix,
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_x = -32;
-	start_charge = 500
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_x = -32;
+	start_charge = 500
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/offices1st)
