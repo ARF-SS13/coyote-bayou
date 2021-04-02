@@ -83,7 +83,10 @@
 		return ..()
 	if(istype(W,/obj/item/salvage))
 		var/obj/item/salvage/S = W
-		if(do_after(user,50,target = src))
+		if(do_after(user,50,target = src))		
+			if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+				var/obj/I = pick(S.Loot)
+				new I (src.loc)
 			var/obj/I = pick(S.Loot)
 			new I (src.loc)
 			if(prob(50))
