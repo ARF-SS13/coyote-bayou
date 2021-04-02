@@ -7264,6 +7264,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/city)
+"fAZ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/landmark/start/f13/priestess,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "fBl" = (
 /obj/structure/rack,
 /obj/item/camera,
@@ -25275,6 +25281,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/city)
+"sKB" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/orator,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "sKH" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
@@ -84918,7 +84931,7 @@ pck
 xNm
 xNm
 hom
-oHR
+fAZ
 pck
 oWU
 hom
@@ -85401,7 +85414,7 @@ vYv
 gts
 ktB
 hom
-qCv
+sKB
 oMY
 hom
 fcI
