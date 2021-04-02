@@ -26,6 +26,9 @@ SUBSYSTEM_DEF(research)
 	var/list/invalid_node_boost = list()		//associative id = error message
 
 	var/list/obj/machinery/rnd/server/servers = list()
+	var/list/obj/machinery/rnd/server/VAULTservers = list()
+	var/list/obj/machinery/rnd/server/BOSservers = list()
+
 
 	var/list/techweb_nodes_starting = list()	//associative id = TRUE
 	var/list/techweb_categories = list()		//category name = list(node.id = TRUE)
@@ -294,7 +297,8 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 3.5)	//citadel edit - techwebs nerf
+	var/list/BOSsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 3.5)	//citadel edit - techwebs nerf
+	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 35)
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
@@ -343,6 +347,8 @@ SUBSYSTEM_DEF(research)
 
 /datum/controller/subsystem/research/fire()
 	var/list/bitcoins = list()
+	var/list/BOSbitcoins = list()
+	var/list/VAULTbitcoins = list()
 	if(multiserver_calculation)
 		var/eff = calculate_server_coefficient()
 		for(var/obj/machinery/rnd/server/miner in servers)
@@ -351,22 +357,30 @@ SUBSYSTEM_DEF(research)
 				result[i] *= eff
 				bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
 	else
-		for(var/obj/machinery/rnd/server/miner in servers)
+		for(var/obj/machinery/rnd/server/miner in BOSservers)
 			if(miner.working)
-				bitcoins = single_server_income.Copy()
-				break			//Just need one to work.
+				BOSbitcoins = BOSsingle_server_income.Copy()
+				break
+		for(var/obj/machinery/rnd/server/miner in VAULTservers)
+			if(miner.working)
+				VAULTbitcoins = VAULTsingle_server_income.Copy()
+				break	
 	var/income_time_difference = world.time - last_income
 		
-	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
-	bos_tech.last_bitcoins = bitcoins
+	science_tech.last_bitcoins = VAULTbitcoins  // Doesn't take tick drift into account
+	bos_tech.last_bitcoins = BOSbitcoins
 	unknown_tech.last_bitcoins = bitcoins
 	followers_tech.last_bitcoins = bitcoins
 
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
+	for(var/i in BOSbitcoins)
+		BOSbitcoins[i] *= income_time_difference / 10
+	for(var/i in VAULTbitcoins)
+		VAULTbitcoins[i] *= income_time_difference / 10
 
-	science_tech.add_point_list(bitcoins)
-	bos_tech.add_point_list(bitcoins)
+	science_tech.add_point_list(VAULTbitcoins)
+	bos_tech.add_point_list(BOSbitcoins)
 	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
 	followers_tech.add_point_list(bitcoins)
 
