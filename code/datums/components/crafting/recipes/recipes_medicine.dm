@@ -16,16 +16,16 @@
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/suture
-	name = "Handmade Suture"
-	result = /obj/item/stack/medical/suture
+	name = "Improvised Suture"
+	result = /obj/item/stack/medical/suture/emergency/five
 	time = 30
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
 				/datum/reagent/consumable/ethanol = 10)
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/ointment
-	name = "Handmade Ointment"
-	result = /obj/item/stack/medical/ointment
+	name = "Improvised Ointment"
+	result = /obj/item/stack/medical/ointment/five
 	time = 30
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
 				/obj/item/reagent_containers/food/snacks/grown/agave = 1)

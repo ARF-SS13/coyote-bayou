@@ -8948,6 +8948,10 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"gLx" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "gLH" = (
 /obj/structure/table,
 /obj/item/roller,
@@ -14083,6 +14087,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "barshutters"
 	},
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
 "kmv" = (
@@ -25965,6 +25970,7 @@
 "tit" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "tiu" = (
@@ -29739,12 +29745,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vNH" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
+/obj/effect/decal/cleanable/generic,
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "vOq" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -30151,12 +30155,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wgO" = (
-/obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/settler,
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "whm" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -35121,7 +35123,7 @@ wVT
 wVT
 wVT
 wVT
-wVT
+wWI
 xEc
 xEc
 xEc
@@ -35375,15 +35377,15 @@ wVT
 wVT
 fju
 wWI
-gTR
-gTR
-gTR
-eEM
+wVT
+wVT
+wVT
+wVT
 wVT
 siE
-vNH
+siS
 siE
-nGs
+wVT
 siE
 xEc
 unI
@@ -35889,10 +35891,10 @@ wVT
 wVT
 fju
 uru
-wVT
-wVT
-wVT
-wVT
+gTR
+gTR
+gTR
+eEM
 wVT
 wVT
 wVT
@@ -36403,15 +36405,15 @@ wVT
 wVT
 fju
 siE
-nGs
+wVT
 tXt
-nGs
+wVT
 siE
-wWI
+wVT
 siE
-wgO
+fIF
 siE
-nGs
+wVT
 siE
 xEc
 unI
@@ -44534,7 +44536,7 @@ hZo
 cGw
 tit
 eUp
-cGw
+wgO
 hHz
 bKE
 sfB
@@ -45816,13 +45818,13 @@ brH
 brH
 sfB
 pGa
-ruN
+vNH
+wgO
 cGw
 cGw
 cGw
-cGw
-cGw
-hHz
+wgO
+gLx
 vYE
 cpK
 nyZ
@@ -52870,7 +52872,7 @@ gcK
 usx
 aSo
 grf
-iOg
+gsj
 dbz
 usx
 uCW
@@ -53127,7 +53129,7 @@ ktB
 usx
 iOg
 eHk
-iOg
+gsj
 tpM
 usx
 uCW
@@ -55183,7 +55185,7 @@ dhC
 ljG
 iOg
 grf
-iOg
+gsj
 dbz
 usx
 uaf
@@ -55440,7 +55442,7 @@ usx
 usx
 iOg
 iau
-iOg
+gsj
 wGc
 usx
 uaf
@@ -55697,7 +55699,7 @@ fyf
 usx
 aSo
 eHk
-iOg
+gsj
 tpM
 usx
 uaf
