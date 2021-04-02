@@ -360,11 +360,11 @@ SUBSYSTEM_DEF(research)
 		for(var/obj/machinery/rnd/server/miner in BOSservers)
 			if(miner.working)
 				BOSbitcoins = BOSsingle_server_income.Copy()
-				//break
+				break
 		for(var/obj/machinery/rnd/server/miner in VAULTservers)
 			if(miner.working)
 				VAULTbitcoins = VAULTsingle_server_income.Copy()
-				//break	
+				break	
 	var/income_time_difference = world.time - last_income
 		
 	science_tech.last_bitcoins = VAULTbitcoins  // Doesn't take tick drift into account
