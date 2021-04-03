@@ -31,7 +31,7 @@
 		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
 		linebullet = linebullet+tierline[tier]
 		linelaser = linelaser+tierline[tier]
-		wound = wound+(tier*10)
+		wound = wound+(tier*5)
 
 	src.linemelee = linemelee
 	src.linebullet = linebullet
