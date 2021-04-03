@@ -710,7 +710,7 @@
 	custom_materials = list(MAT_METAL = 1000)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/lasmusket
+/obj/item/ammo_box/plasmamusket
 	name = "Battery Box (Plasma)"
 	icon_state = "Batbox"
 	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster

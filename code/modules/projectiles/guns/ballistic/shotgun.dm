@@ -672,7 +672,7 @@
 	//nocase = TRUE
 	var/bolt_open = FALSE
 	can_bayonet = TRUE
-	fire_delay = 20
+	fire_delay = 15
 	knife_x_offset = 23
 	knife_y_offset = 21
 	bayonet_state = "lasmusket"
@@ -688,18 +688,24 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 /obj/item/gun/ballistic/shotgun/plasmacaster
-	name = "Plasma Caster"
-	desc = "Test"
+	name = "Plasma Musket"
+	desc = "An experimental weapon..."
 	icon_state = "las_musket"
 	item_state = "las_musket"
 	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
 	mag_type = /obj/item/ammo_box/magazine/internal/plasmacaster
 	var/bolt_open = FALSE
-	can_bayonet = FALSE
-	fire_delay = 30
+	can_bayonet = TRUE
+	fire_delay = 20
+	knife_x_offset = 23
+	knife_y_offset = 21
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	isenergy = TRUE
+	can_scope = TRUE
+	scope_state = "lasmusket_scope"
+	scope_x_offset = 9
+	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
