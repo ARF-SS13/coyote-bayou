@@ -698,6 +698,10 @@
 "QU" = (
 /turf/closed/indestructible/rock,
 /area/f13/caves)
+"QX" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/tunnel)
 "Rj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
@@ -829,7 +833,7 @@
 /area/f13/tunnel)
 "Yr" = (
 /obj/structure/simple_door/bunker,
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/water,
 /area/f13/tunnel)
 "YH" = (
@@ -910,16 +914,16 @@ BH
 BH
 BH
 QU
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
 QU
 BH
 BH
@@ -948,7 +952,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 UM
 Pl
 Qs
@@ -957,7 +961,7 @@ Ca
 Pl
 Qs
 Vl
-PS
+iY
 QU
 BH
 BH
@@ -986,7 +990,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 UM
 Qs
 CJ
@@ -995,7 +999,7 @@ iu
 zV
 Pl
 Zk
-PS
+iY
 QU
 BH
 BH
@@ -1024,7 +1028,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 pb
 Pl
 Pl
@@ -1033,7 +1037,7 @@ Zk
 Qs
 Qs
 Xm
-PS
+iY
 QU
 BH
 BH
@@ -1062,7 +1066,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 Pd
 qY
 Qs
@@ -1071,7 +1075,7 @@ Pl
 Qs
 Pl
 qv
-PS
+iY
 QU
 BH
 BH
@@ -1100,7 +1104,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 Zk
 Pl
 lw
@@ -1109,7 +1113,7 @@ Qs
 Qs
 CJ
 lW
-PS
+iY
 QU
 BH
 BH
@@ -1138,7 +1142,7 @@ BH
 BH
 BH
 QU
-PS
+iY
 CJ
 Qs
 Xm
@@ -1147,7 +1151,7 @@ Qs
 Zk
 Nb
 Mv
-PS
+iY
 QU
 BH
 BH
@@ -1176,16 +1180,16 @@ BH
 BH
 BH
 QU
-PS
-PS
-PS
-PS
+iY
+iY
+iY
+iY
 SZ
-PS
-PS
-PS
-PS
-PS
+iY
+iY
+iY
+iY
+iY
 QU
 BH
 BH
@@ -1217,9 +1221,9 @@ QU
 QU
 QU
 QU
-PS
+iY
 VK
-PS
+iY
 QU
 QU
 QU
@@ -1255,9 +1259,9 @@ BH
 BH
 BH
 QU
-PS
+iY
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1293,9 +1297,9 @@ BH
 BH
 BH
 QU
-PS
+iY
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1331,9 +1335,9 @@ QU
 QU
 QU
 QU
-PS
+iY
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1358,20 +1362,20 @@ BH
 "}
 (14,1,1) = {"
 QU
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
 SZ
-PS
+iY
 QU
 BH
 BH
@@ -1396,7 +1400,7 @@ BH
 "}
 (15,1,1) = {"
 QU
-PS
+iY
 HK
 Tx
 iY
@@ -1409,7 +1413,7 @@ VM
 PW
 mj
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1434,7 +1438,7 @@ BH
 "}
 (16,1,1) = {"
 QU
-PS
+iY
 uT
 rU
 iY
@@ -1447,7 +1451,7 @@ Qs
 Qs
 TX
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1472,7 +1476,7 @@ BH
 "}
 (17,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 hA
@@ -1485,7 +1489,7 @@ CJ
 CJ
 Cf
 kz
-PS
+iY
 QU
 BH
 BH
@@ -1510,7 +1514,7 @@ BH
 "}
 (18,1,1) = {"
 QU
-PS
+iY
 AS
 rU
 iY
@@ -1523,7 +1527,7 @@ Qs
 CJ
 TX
 Wl
-PS
+iY
 QU
 BH
 BH
@@ -1548,7 +1552,7 @@ BH
 "}
 (19,1,1) = {"
 QU
-PS
+iY
 Tx
 rU
 iY
@@ -1561,7 +1565,7 @@ wM
 wM
 mj
 VK
-PS
+iY
 QU
 BH
 BH
@@ -1586,7 +1590,7 @@ BH
 "}
 (20,1,1) = {"
 QU
-PS
+iY
 Fx
 Tx
 iY
@@ -1599,7 +1603,7 @@ iY
 iY
 iY
 mU
-PS
+iY
 QU
 BH
 BH
@@ -1624,7 +1628,7 @@ BH
 "}
 (21,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 iY
@@ -1637,7 +1641,7 @@ qb
 KB
 qv
 Qs
-PS
+iY
 QU
 BH
 BH
@@ -1662,7 +1666,7 @@ BH
 "}
 (22,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 iY
@@ -1675,7 +1679,7 @@ nz
 Qs
 Qs
 Qs
-PS
+iY
 QU
 BH
 BH
@@ -1700,7 +1704,7 @@ BH
 "}
 (23,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 iY
@@ -1713,7 +1717,7 @@ Hi
 Hi
 Qs
 Qs
-PS
+iY
 QU
 QU
 BH
@@ -1738,7 +1742,7 @@ BH
 "}
 (24,1,1) = {"
 QU
-PS
+iY
 Gr
 iY
 iY
@@ -1751,8 +1755,8 @@ iY
 iY
 iY
 hA
-PS
-PS
+iY
+iY
 PS
 wI
 wI
@@ -1776,7 +1780,7 @@ Ns
 "}
 (25,1,1) = {"
 QU
-PS
+iY
 No
 PJ
 vD
@@ -1814,7 +1818,7 @@ SR
 "}
 (26,1,1) = {"
 QU
-PS
+iY
 pi
 sw
 sw
@@ -1852,7 +1856,7 @@ kE
 "}
 (27,1,1) = {"
 QU
-PS
+iY
 pJ
 In
 TD
@@ -1890,7 +1894,7 @@ Kb
 "}
 (28,1,1) = {"
 QU
-PS
+iY
 Gr
 iY
 iY
@@ -1903,8 +1907,8 @@ iY
 iY
 iY
 iY
-PS
-PS
+iY
+iY
 PS
 wI
 wI
@@ -1928,7 +1932,7 @@ Ns
 "}
 (29,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 iY
@@ -1941,7 +1945,7 @@ Qs
 Qs
 Qs
 Qs
-PS
+iY
 QU
 QU
 BH
@@ -1966,7 +1970,7 @@ BH
 "}
 (30,1,1) = {"
 QU
-PS
+iY
 rU
 Tx
 iY
@@ -1979,7 +1983,7 @@ Qs
 Qs
 Qs
 Qs
-PS
+iY
 QU
 BH
 BH
@@ -2004,7 +2008,7 @@ BH
 "}
 (31,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 iY
@@ -2017,7 +2021,7 @@ Qs
 Qs
 Qs
 Qs
-PS
+iY
 QU
 BH
 BH
@@ -2042,7 +2046,7 @@ BH
 "}
 (32,1,1) = {"
 QU
-PS
+iY
 Fx
 rU
 iY
@@ -2055,7 +2059,7 @@ iY
 iY
 iY
 iY
-PS
+iY
 QU
 BH
 BH
@@ -2080,7 +2084,7 @@ BH
 "}
 (33,1,1) = {"
 QU
-PS
+iY
 Tx
 Tx
 iY
@@ -2093,7 +2097,7 @@ qY
 wr
 QT
 QT
-PS
+iY
 QU
 BH
 BH
@@ -2118,7 +2122,7 @@ BH
 "}
 (34,1,1) = {"
 QU
-PS
+iY
 AS
 rU
 iY
@@ -2131,7 +2135,7 @@ Qs
 Wq
 CJ
 Tu
-PS
+iY
 QU
 BH
 BH
@@ -2156,7 +2160,7 @@ BH
 "}
 (35,1,1) = {"
 QU
-PS
+iY
 rU
 rU
 hA
@@ -2169,7 +2173,7 @@ CJ
 Qs
 va
 YQ
-PS
+iY
 QU
 BH
 BH
@@ -2194,7 +2198,7 @@ BH
 "}
 (36,1,1) = {"
 QU
-PS
+iY
 uT
 rU
 iY
@@ -2207,7 +2211,7 @@ qv
 NT
 LU
 LU
-PS
+iY
 QU
 BH
 BH
@@ -2232,7 +2236,7 @@ BH
 "}
 (37,1,1) = {"
 QU
-PS
+iY
 dx
 Tx
 iY
@@ -2245,7 +2249,7 @@ OU
 mj
 LU
 LU
-PS
+iY
 QU
 QU
 BH
@@ -2270,20 +2274,20 @@ BH
 "}
 (38,1,1) = {"
 QU
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
-PS
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+iY
+QX
+QX
 Yr
-PS
+QX
 BH
 QU
 BH
