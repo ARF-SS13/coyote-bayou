@@ -5,7 +5,6 @@
 	armour_penetration = 0.1 //0.2
 	wound_bonus = 18
 	bare_wound_bonus = -18
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/c10mm/ap
 	name = "10mm AP bullet"
@@ -20,7 +19,6 @@
 	armour_penetration = -0.7
 	wound_bonus = -36
 	wound_bonus = 36
-	power_armor_blocks = TRUE
 
 // 9mm
 /obj/item/projectile/bullet/c9mm
@@ -29,7 +27,6 @@
 	armour_penetration = 0.05 //0.15
 	wound_bonus = 15
 	bare_wound_bonus = -15
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/c9mm/ap
 	name = "9mm AP bullet"
@@ -37,7 +34,6 @@
 	armour_penetration = 0.6 //0.4
 	wound_bonus = 30
 	bare_wound_bonus = -30
-	power_armor_blocks = FALSE
 
 /obj/item/projectile/bullet/c9mm/jhp
 	name = "9mm JHP bullet"
@@ -78,7 +74,6 @@
 	armour_penetration = 0.05
 	wound_bonus = 6
 	bare_wound_bonus = -6
-	power_armor_blocks = TRUE //Yeah haha good luck
 
 /obj/item/projectile/bullet/c22/hp
 	name = ".22lr HP bullet"
@@ -101,7 +96,6 @@
 	damage = 8
 	armour_penetration = 0.3
 	var/piercing = FALSE
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/needle/Initialize()
 	. = ..()
@@ -135,11 +129,9 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	piercing = TRUE
-	power_armor_blocks = FALSE
 
 /obj/item/projectile/bullet/needle/ultra
 	name = "ultracite needle"
 	damage = 50
 	armour_penetration = 0.4
 	piercing = TRUE
-	power_armor_blocks = FALSE //What is this absolute meme

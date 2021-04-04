@@ -6,7 +6,6 @@
 	armour_penetration = 0.05
 	wound_bonus = 7
 	bare_wound_bonus = -7
-	power_armor_blocks = TRUE
 /*
 	ricochets_max = 2
 	ricochet_chance = 50
@@ -31,7 +30,6 @@
 	armour_penetration = -0.56
 	wound_bonus = -28
 	bare_wound_bonus = 28
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/a357/jfp
 	name = ".357 JFP bullet"
@@ -54,7 +52,6 @@
 	armour_penetration = -0.75
 	wound_bonus = -40
 	bare_wound_bonus = 40
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/m44/swc
 	name = ".44 SWC bullet"
@@ -80,7 +77,6 @@
 	armour_penetration = -0.75
 	wound_bonus = -48
 	bare_wound_bonus = 48
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/c4570/swc
 	name = ".45-70 SWC bullet"

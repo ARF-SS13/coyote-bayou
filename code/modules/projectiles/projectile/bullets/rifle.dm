@@ -19,7 +19,6 @@
 	armour_penetration = -1
 	wound_bonus = -40
 	bare_wound_bonus = 40
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/a762/sport //.308 Winchester
 	name = ".308 bullet"
@@ -66,7 +65,6 @@
 	armour_penetration = -1
 	wound_bonus = -36
 	bare_wound_bonus = 36
-	power_armor_blocks = TRUE
 
 /obj/item/projectile/bullet/a556/match
 	name = "5.56 match bullet"

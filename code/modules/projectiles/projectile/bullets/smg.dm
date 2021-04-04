@@ -5,7 +5,6 @@
 	armour_penetration = 0.12 //0.15
 	wound_bonus = 14
 	bare_wound_bonus = -14
-	power_armor_blocks = TRUE //45 ACP is a slooooow moving bullet. That ain't beating power armor any day of the week
 
 /obj/item/projectile/bullet/c45/jhp
 	name = ".45 JHP bullet"

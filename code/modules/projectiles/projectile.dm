@@ -127,10 +127,6 @@
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/is_reflectable = FALSE // Can it be reflected or not?
 
-	/*###DR ADDITIONS###*/
-	var/power_armor_blocks = FALSE //Does power armor stop this bullet?
-	/*###DR ADDITIONS###*/
-
 	/// factor to multiply by for zone accuracy percent.
 	var/zone_accuracy_factor = 1
 
@@ -840,10 +836,10 @@
 	var/obj/item/projectile/P = A
 	return istype(P) && P.is_reflectable
 
-//Bullet types that are blocked/deflected by power armor
-/proc/can_penetrate_power_armor(atom/A)
+//Check armor penetration
+/proc/check_armor_penetration(atom/A)
 	var/obj/item/projectile/P = A
-	return istype(P) && P.power_armor_blocks
+	return istype(P) && P.armour_penetration
 
 /obj/item/projectile/bullet/F13
 	name = "bullet"
