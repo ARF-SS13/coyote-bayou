@@ -78,8 +78,7 @@
 	throwforce = 25
 
 /obj/item/claymore/machete/training
-
-name = "training machete"
+	name = "training machete"
 	desc = "A training machete made of tough wood."
 	icon_state = "machete_training"
 	force = 0
