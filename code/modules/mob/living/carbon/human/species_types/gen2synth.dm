@@ -1,13 +1,14 @@
 /datum/species/gen2synth
 	name = "second generation synth"
 	id = "gen2synth"
-	say_mod = "says"
+	say_mod = "states"
+	limbs_id = "gen2synth"
 	default_color = "F5F5DC"
 	blacklisted = 0
-	sexes = 0
+	sexes = 1
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_NO_PROCESS_FOOD,TRAIT_VIRUSIMMUNE,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	species_traits = list(NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
-	hair_alpha = 210
+	hair_alpha = 0
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
