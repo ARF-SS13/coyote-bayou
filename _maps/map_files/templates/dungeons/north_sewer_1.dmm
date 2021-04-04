@@ -271,7 +271,16 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
+/obj/item/clothing/suit/armor/f13/power_armor/t45d{
+	color = "#C1C1C1";
+	desc = "(IX) Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This set looks somewhat bashed up and worn";
+	item_color = "#C1C1C1"
+	},
+/obj/item/clothing/head/helmet/f13/power_armor/t45d{
+	color = "#C1C1C1";
+	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it. Nice.";
+	item_color = "#C1C1C1"
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -479,6 +488,10 @@
 	},
 /obj/item/conveyor_switch_construct,
 /turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"Cx" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/r_wall/f13/vault,
 /area/f13/tunnel)
 "CJ" = (
 /mob/living/simple_animal/hostile/centaur,
@@ -698,10 +711,6 @@
 "QU" = (
 /turf/closed/indestructible/rock,
 /area/f13/caves)
-"QX" = (
-/obj/structure/timeddoor/sixtyminute,
-/turf/closed/wall/r_wall/f13/vault,
-/area/f13/tunnel)
 "Rj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
@@ -2284,10 +2293,10 @@ iY
 iY
 iY
 iY
-QX
-QX
+Cx
+Cx
 Yr
-QX
+Cx
 BH
 QU
 BH
