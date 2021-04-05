@@ -319,7 +319,7 @@
 	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
 	icon_state = "palacent"
 	item_state = "palacent"
-	armor = list("tier" = 7, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/palacent/custom_excess
