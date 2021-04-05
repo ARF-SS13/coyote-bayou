@@ -208,9 +208,9 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/emped = 0
 	var/requires_training = TRUE
-	var/armor_block_chance = 0
+	var/armor_block_chance = 0 //Chance for the power armor to block a low penetration projectile
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/deflection_chance = 0
+	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
