@@ -151,7 +151,7 @@ Centurion
 		/obj/item/electropack/shockcollar/explosive=2,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
-/*
+
 /datum/outfit/loadout/centheavy
 	name = "Paladin-Slayer Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/palacent
@@ -161,7 +161,6 @@ Centurion
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/ec=2)
-*/
 
 /datum/outfit/loadout/centassault
 	name = "Ranger-Hunter Centurion"
