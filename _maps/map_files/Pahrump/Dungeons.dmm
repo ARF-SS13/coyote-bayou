@@ -9070,7 +9070,10 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "oxi" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/handy/sentrybot{
+	faction = list("raider");
+	obj_damage = 300
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
