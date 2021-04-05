@@ -165,7 +165,7 @@
 /obj/item/smithing/scytheblade/startfinish()
 	finalitem = new /obj/item/scythe/smithed(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/shovelhead
@@ -269,7 +269,7 @@
 /obj/item/smithing/shortswordblade/startfinish()
 	finalitem = new /obj/item/melee/smith/shortsword(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/scimitarblade
@@ -281,7 +281,7 @@
 /obj/item/smithing/scimitarblade/startfinish()
 	finalitem = new /obj/item/melee/smith/shortsword/scimitar(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/wakiblade
@@ -293,7 +293,7 @@
 /obj/item/smithing/wakiblade/startfinish()
 	finalitem = new /obj/item/melee/smith/wakizashi(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/sabreblade
@@ -305,7 +305,7 @@
 /obj/item/smithing/sabreblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sabre(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/rapierblade
@@ -317,7 +317,7 @@
 /obj/item/smithing/rapierblade/startfinish()
 	finalitem = new /obj/item/melee/smith/sabre/rapier(src)
 	finalitem.force += quality*5
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	..()
 
 /obj/item/smithing/knifeblade
@@ -329,7 +329,7 @@
 /obj/item/smithing/knifeblade/startfinish()
 	finalitem = new /obj/item/kitchen/knife(src)
 	finalitem.force = 4 + quality/2
-	finalforreal.armour_penetration += quality*0.1
+	finalitem.armour_penetration += quality*0.1
 	finalitem.icon = 'icons/obj/smith.dmi'
 	finalitem.icon_state = "dagger"
 	finalitem.name = "dagger"
