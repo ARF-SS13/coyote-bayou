@@ -121,7 +121,6 @@
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/pda,
-/obj/item/pda,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "afL" = (
@@ -417,7 +416,7 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/venator,
+/obj/effect/landmark/start/f13/explorer,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "aoD" = (
@@ -780,9 +779,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aDb" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/obj/effect/landmark/start/f13/explorer,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/venator,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "aDk" = (
@@ -32259,7 +32257,6 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/venator,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -87487,7 +87484,7 @@ wxR
 xNm
 dvo
 xNm
-vHe
+aDb
 hom
 syr
 syr
@@ -88001,7 +87998,7 @@ hzr
 nbD
 hom
 aBk
-aDb
+oHR
 hom
 syr
 syr
