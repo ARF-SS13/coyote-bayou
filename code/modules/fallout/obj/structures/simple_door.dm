@@ -237,6 +237,24 @@
 
 // Fallout 13 general doors directory
 
+/obj/structure/simple_door/tentflap_leather
+	name = "brahminskin tent entrance"
+	icon_state = "tentflap_leather"
+	door_type = "tentflap_leather"
+	can_disasemble = FALSE
+	can_hold_padlock = FALSE
+	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
+	close_sound = 'sound/effects/footstep/hardbarefoot5.ogg'
+
+/obj/structure/simple_door/tentflap_cloth
+	name = "cotton tent entrance"
+	icon_state = "tentflap_cloth"
+	door_type = "tentflap_cloth"
+	can_disasemble = FALSE
+	can_hold_padlock = FALSE
+	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
+	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
+
 /obj/structure/simple_door/house
 	icon_state = "house"
 	door_type = "house"
@@ -262,7 +280,7 @@
 	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/fakeglass
-	name = "damaged wooden door"
+	name = "old damaged door"
 	desc = "It still somehow opens and closes."
 	icon_state = "fakeglass"
 	door_type = "fakeglass"
@@ -312,7 +330,7 @@
 
 /obj/structure/simple_door/metal/iron
 	name = "iron door"
-	desc = "A heavy metal door."
+	desc = "A heavy iron door."
 	icon_state = "metal"
 	door_type = "metal"
 	explosion_block = 5

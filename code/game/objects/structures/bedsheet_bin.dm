@@ -1,8 +1,25 @@
 /*
 CONTAINS:
+BLANKETS - for low comfort beds like Legion/Khans
 BEDSHEETS
 LINEN BINS
 */
+
+/obj/item/blanket
+	name = "blanket"
+	desc = "A undyed rough blanket."
+	icon = 'icons/obj/bedsheets.dmi'
+	icon_state = "blanket1"
+	item_state = "bedsheet"
+	layer = MOB_LAYER
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = FLAMMABLE
+
+/obj/item/blanket/blanketalt
+	icon_state = "blanket2"
 
 /obj/item/bedsheet
 	name = "bedsheet"
