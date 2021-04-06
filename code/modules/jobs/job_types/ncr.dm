@@ -249,7 +249,6 @@ Medical Officer
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /*
 Sergeant First Class
@@ -402,7 +401,6 @@ Combat Engineer
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /*
 Combat Engineer

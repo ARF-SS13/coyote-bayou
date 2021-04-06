@@ -10,7 +10,6 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_CIRCULATION
-	requires_trait = 3
 /datum/surgery_step/thread_veins
 	name = "thread veins"
 	accept_hand = TRUE

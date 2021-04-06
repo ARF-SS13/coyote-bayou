@@ -4,7 +4,6 @@
 	scan_desc = "partial schizophrenia"
 	gain_text = "<span class='notice'>You feel in good company, for some reason.</span>"
 	lose_text = "<span class='warning'>You feel lonely again.</span>"
-	random_gain = TRUE
 	var/mob/camera/imaginary_friend/friend
 	var/friend_initialized = FALSE
 

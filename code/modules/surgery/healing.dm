@@ -13,7 +13,6 @@
 	ignore_clothes = TRUE
 	var/healing_step_type
 	var/antispam = FALSE
-	requires_trait = 1
 
 /datum/surgery/healing/New(surgery_target, surgery_location, surgery_bodypart)
 	..()
