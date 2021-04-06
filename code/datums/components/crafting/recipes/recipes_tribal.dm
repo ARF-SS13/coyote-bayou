@@ -103,7 +103,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 3)
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/bonemortar
+/datum/crafting_recipe/primitive_chem_isolator
 	name = "Bone Chemical Isolator"
 	result = /obj/item/reagent_containers/glass/primitive_chem_isolator
 	time = 20
