@@ -15,6 +15,7 @@
 	var/obj/item/storage/pill_bottle/bottle = null
 	var/mode = 1
 	var/condi = FALSE
+	var/advanced = FALSE
 	var/chosenPillStyle = 1
 	var/screen = "home"
 	var/analyzeVars[0]
@@ -289,9 +290,14 @@
 			vol_each_max = min(10, vol_each_max)
 		else if (item_type == "condimentBottle")
 			vol_each_max = min(50, vol_each_max)
-		else if (item_type == "hypoVial")
+		/*else if (item_type == "hypoVial")
 			vol_each_max = min(60, vol_each_max)
 		else if (item_type == "smartDart")
+			vol_each_max = min(20, vol_each_max)
+		*/
+		else if (item_type == "stimPak")
+			vol_each_max = min(10, vol_each_max)
+		else if (item_type == "superStimpak")
 			vol_each_max = min(20, vol_each_max)
 		else
 			return FALSE
@@ -377,6 +383,7 @@
 				P.name = trim("[name] bottle")
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 			return TRUE
+		/*
 		if(item_type == "hypoVial")
 			var/obj/item/reagent_containers/glass/bottle/vial/small/P
 			for(var/i = 0; i < amount; i++)
@@ -393,6 +400,25 @@
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 				P.mode=!mode
+				P.update_icon()
+			return TRUE
+		*/
+		if(item_type == "stimPak")
+			var/obj/item/reagent_containers/hypospray/medipen/stimpak/custom/P
+			for(var/i=0; i <amount; i++)
+				P = new /obj/item/reagent_containers/hypospray/medipen/stimpak/custom(drop_location())
+				P.name = trim ("[name] stimpak")
+				adjust_item_drop_location(P)
+				reagents.trans_to(P, vol_each)
+				P.update_icon()
+			return TRUE
+		if(item_type == "superStimpak")
+			var/obj/item/reagent_containers/hypospray/medipen/stimpak/super/custom/P
+			for(var/i=0; i <amount; i++)
+				P = new /obj/item/reagent_containers/hypospray/medipen/stimpak/super/custom(drop_location())
+				P.name = trim ("[name] super stimpak")
+				adjust_item_drop_location(P)
+				reagents.trans_to(P, vol_each)
 				P.update_icon()
 			return TRUE
 		return FALSE
@@ -476,6 +502,7 @@
 	name = "Old-World Refinery"
 	desc = "A high-tech device that uses nuclear-diffusion to seperate chemicals."
 	icon_state = "mixerad0"
+	advanced = TRUE
 
 /obj/machinery/chem_master/advanced/update_icon()
 	cut_overlays()

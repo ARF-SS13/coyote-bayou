@@ -237,15 +237,16 @@ const PackagingControls = (props, context) => {
     setPackAmount,
   ] = useSharedState(context, 'packAmount', 1);
   const [
-    vialAmount,
-    setvialAmount,
-  ] = useSharedState(context, 'setvialAmount', 1);
+    stimpakAmount,
+    setstimpakAmount,
+  ] = useSharedState(context, 'setstimpakAmount', 1);
   const [
-    dartAmount,
-    setdartAmount,
-  ] = useSharedState(context, 'setdartAmount', 1);
+    superstimpakAmount,
+    setsuperstimpakAmount,
+  ] = useSharedState(context, 'setsuperstimpakAmount', 1);
   const {
     condi,
+    advanced,
     chosenPillStyle,
     pillStyles = [],
   } = data;
@@ -307,27 +308,27 @@ const PackagingControls = (props, context) => {
       )}
       {!condi && (
         <PackagingControlsItem
-          label="Hypovials"
-          amount={vialAmount}
-          amountUnit="vials"
-          sideNote="max 60u"
-          onChangeAmount={(e, value) => setvialAmount(value)}
+          label="Stimpaks"
+          amount={stimpakAmount}
+          amountUnit="stimpaks"
+          sideNote="max 10u"
+          onChangeAmount={(e, value) => setstimpakAmount(value)}
           onCreate={() => act('create', {
-            type: 'hypoVial',
-            amount: vialAmount,
+            type: 'stimPak',
+            amount: stimpakAmount,
             volume: 'auto',
           })} />
       )}
       {!condi && (
         <PackagingControlsItem
-          label="Smartdarts"
-          amount={dartAmount}
-          amountUnit="darts"
+          label="Super Stimpaks"
+          amount={superstimpakAmount}
+          amountUnit="super stimpaks"
           sideNote="max 20u"
-          onChangeAmount={(e, value) => setdartAmount(value)}
+          onChangeAmount={(e, value) => setsuperstimpakAmount(value)}
           onCreate={() => act('create', {
-            type: 'smartDart',
-            amount: dartAmount,
+            type: 'superStimpak',
+            amount: superstimpakAmount,
             volume: 'auto',
           })} />
       )}

@@ -180,12 +180,35 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/medicine/stimpak = 10, /datum/reagent/medicine/stimulants = 10, /datum/reagent/medicine/omnizine = 10)
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/on_reagent_change(changetype)
+	update_icon()
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/update_overlays()
+	. = ..()
+	var/mutable_appearance/stimpak_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "stimfilling", color = mix_color_from_reagents(reagents.reagent_list))
+	if(reagents.total_volume)
+		. += stimpak_overlay
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/custom
+	desc = "A handheld delivery system for medicine, this particular one will deliver a tailored cocktail."
+	list_reagents = null
+
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	name = "super stimpak"
 	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
 	icon_state = "superstimpakpen"
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/medicine/super_stimpak = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super/custom
+	desc = "The super version comes in a hypodermic, but with an additional vial to inject more drugs than the basic model and a leather belt to strap the needle to a limb. This particular one will deliver a tailored cocktail."
+	volume = 20
+	amount_per_transfer_from_this = 20
+	list_reagents = null
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 	desc = "A modified stimulants autoinjector for use in combat situations. Has a mild healing effect."
