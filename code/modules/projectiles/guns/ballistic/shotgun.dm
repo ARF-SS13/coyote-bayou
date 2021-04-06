@@ -564,8 +564,6 @@
 	scope_state = "leveraction_scope"
 	scope_x_offset = 11
 	scope_y_offset = 21
-	extra_damage = 5
-	extra_damage = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "brush gun"
@@ -582,7 +580,6 @@
 	scope_state = "leveraction_scope"
 	scope_x_offset = 11
 	scope_y_offset = 21
-	extra_damage = 15
 
 /obj/item/gun/ballistic/shotgun/antimateriel
 	name = "anti-materiel rifle"

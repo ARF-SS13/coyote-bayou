@@ -82,7 +82,7 @@
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
 	caliber = "4570"
-	max_ammo = 12
+	max_ammo = 10
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/lasmusket
