@@ -1,5 +1,5 @@
 //Chain link fences
-//Sprites ported from /VG/
+//Sprites derivative from unweathered VG originals.
 
 
 #define CUT_TIME 100
@@ -18,7 +18,7 @@
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
 	barricade = TRUE
-	proj_pass_rate = 40
+	proj_pass_rate = 95
 
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
@@ -205,6 +205,7 @@
 	icon_state = "straight_wood"
 	cuttable = FALSE
 	climbable = TRUE
+	proj_pass_rate = 80
 
 /obj/structure/fence/end/wooden
 	icon_state = "end_wood"
