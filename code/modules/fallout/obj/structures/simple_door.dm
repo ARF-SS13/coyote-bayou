@@ -277,7 +277,7 @@
 	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/glass
-	desc = "A glass is quite clean, someone took care of this door."
+	desc = "The glass is quite clean, someone took care of this door."
 	icon_state = "glass"
 	door_type = "glass"
 	opaque = 0
@@ -291,6 +291,7 @@
 
 /obj/structure/simple_door/metal
 	name = "metal door"
+	icon_state = "metal"
 	material_type = /obj/item/stack/sheet/metal
 	open_sound = "sound/f13machines/doorstore_open.ogg"
 	close_sound = "sound/f13machines/doorstore_close.ogg"
@@ -308,6 +309,17 @@
 	opaque = 0
 	can_disasemble = 1
 	can_hold_padlock = TRUE
+
+/obj/structure/simple_door/metal/iron
+	name = "iron door"
+	desc = "A heavy metal door."
+	icon_state = "metal"
+	door_type = "metal"
+	explosion_block = 5
+	can_hold_padlock = TRUE
+	opening_time = 15
+	closing_time = 10
+	hard_open = 0
 
 /obj/structure/simple_door/metal/barred
 	name = "barred door"
