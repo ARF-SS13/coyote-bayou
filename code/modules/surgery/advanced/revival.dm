@@ -13,6 +13,7 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
 /datum/surgery/advanced/revival/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
+	return FALSE
 	if(!..())
 		return FALSE
 	if(target.stat != DEAD)
@@ -23,6 +24,7 @@
 	if(!B)
 		return FALSE
 	return TRUE
+
 /datum/surgery_step/revive
 	name = "electrically stimulate brain"
 	implements = list(/obj/item/shockpaddles = 100, /obj/item/abductor/gizmo = 100, /obj/item/melee/baton = 75, /obj/item/organ/cyberimp/arm/baton = 75, /obj/item/organ/cyberimp/arm/gun/taser = 60, /obj/item/gun/energy/e_gun/advtaser = 60, /obj/item/gun/energy/taser = 60)
