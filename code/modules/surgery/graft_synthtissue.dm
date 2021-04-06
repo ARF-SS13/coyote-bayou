@@ -15,7 +15,7 @@
 	/datum/surgery_step/graft_synthtissue,
 	/datum/surgery_step/close
 	)
-	requires_trait = 2
+
 //repair organs
 /datum/surgery_step/graft_synthtissue
 	name = "graft synthtissue"

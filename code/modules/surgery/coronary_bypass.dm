@@ -4,7 +4,6 @@
 				/datum/surgery_step/incise_heart, /datum/surgery_step/coronary_bypass, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
-	requires_trait = 2
 
 /datum/surgery/coronary_bypass/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)

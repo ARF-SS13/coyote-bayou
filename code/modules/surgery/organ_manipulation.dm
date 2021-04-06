@@ -14,7 +14,6 @@
 		//there should be bone fixing
 		/datum/surgery_step/close
 		)
-	requires_trait = 2
 /datum/surgery/organ_manipulation/soft
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
 	steps = list(

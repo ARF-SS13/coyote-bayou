@@ -151,7 +151,6 @@
 	scan_desc = "traumatic neuropathy"
 	gain_text = "<span class='warning'>You suddenly stop feeling pain.</span>"
 	lose_text = "<span class='warning'>You realize you can feel pain again.</span>"
-	random_gain = TRUE
 
 /datum/brain_trauma/special/tenacity/on_gain()
 	ADD_TRAIT(owner, TRAIT_NOSOFTCRIT, TRAUMA_TRAIT)

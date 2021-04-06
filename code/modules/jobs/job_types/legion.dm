@@ -262,7 +262,6 @@ Priestess of Mars
 			L.update_label()
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /* Decanus
 /datum/job/CaesarsLegion/Legionnaire/f13decan
@@ -864,11 +863,6 @@ Auxilia
 		/obj/item/stack/medical/bone_gel=2,
 		/obj/item/bonesetter=1
 	)
-/datum/outfit/loadout/auxacolyte/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /*
 Camp Follower
@@ -927,12 +921,6 @@ Camp Follower
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/smelling_salts/crafted=1
 	)
-
-/datum/outfit/loadout/campfollowerhealer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /datum/outfit/loadout/campfolloweroffduty
 	name = "Off-Duty Legionary"

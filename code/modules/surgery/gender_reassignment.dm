@@ -8,7 +8,7 @@
 		/datum/surgery_step/lower_surgery,
 		/datum/surgery_step/close
 		)
-	requires_trait = 3
+
 /datum/surgery_step/lower_surgery
 	name = "lower surgery"
 	implements = list(/obj/item/scalpel = 100, /obj/item/hatchet = 50, /obj/item/wirecutters = 35)
@@ -90,7 +90,7 @@
 		/datum/surgery_step/top_surgery,
 		/datum/surgery_step/close
 		)
-	requires_trait = 3
+
 /datum/surgery_step/top_surgery
 	name = "top surgery"
 	implements = list(/obj/item/scalpel = 100, /obj/item/hatchet = 50, /obj/item/wirecutters = 35)
@@ -140,7 +140,7 @@
 		/datum/surgery_step/facial_assignment,
 		/datum/surgery_step/close
 		)
-	requires_trait = 3
+
 /datum/surgery_step/facial_assignment
 	name = "facial assignment surgery"
 	implements = list(/obj/item/scalpel = 100, /obj/item/hatchet = 50, /obj/item/wirecutters = 35)

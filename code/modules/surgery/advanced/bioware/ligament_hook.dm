@@ -11,7 +11,6 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_LIGAMENTS
-	requires_trait = 3
 
 /datum/surgery_step/reshape_ligaments
 	name = "reshape ligaments"
