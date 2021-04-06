@@ -10,6 +10,7 @@
 	scan_desc = "schizophrenia"
 	gain_text = "<span class='warning'>You feel your grip on reality slipping...</span>"
 	lose_text = "<span class='notice'>You feel more grounded.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/hallucinations/on_life()
 	owner.hallucination = min(owner.hallucination + 10, 50)
@@ -25,6 +26,7 @@
 	scan_desc = "reduced mouth coordination"
 	gain_text = "<span class='warning'>Speaking clearly is getting harder.</span>"
 	lose_text = "<span class='notice'>You feel in control of your speech.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/stuttering/on_life()
 	owner.stuttering = min(owner.stuttering + 5, 25)
@@ -59,13 +61,14 @@
 	owner.derpspeech = 0
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "dumb")
 	..()
-
+*/
 /datum/brain_trauma/mild/speech_impediment
 	name = "Speech Impediment"
 	desc = "Patient is unable to form coherent sentences."
 	scan_desc = "communication disorder"
 	gain_text = "<span class='danger'>You can't seem to form any coherent thoughts!</span>"
 	lose_text = "<span class='danger'>Your mind feels more clear.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/speech_impediment/on_gain()
 	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
@@ -74,13 +77,14 @@
 /datum/brain_trauma/mild/speech_impediment/on_lose()
 	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 	..()
-*/
+
 /datum/brain_trauma/mild/concussion
 	name = "Concussion"
 	desc = "Patient's brain is concussed."
 	scan_desc = "concussion"
 	gain_text = "<span class='warning'>Your head hurts!</span>"
 	lose_text = "<span class='notice'>The pressure inside your head starts fading.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/concussion/on_life()
 	if(prob(5))
@@ -109,6 +113,7 @@
 	scan_desc = "self-awareness deficit"
 	gain_text = "<span class='notice'>You feel great!</span>"
 	lose_text = "<span class='warning'>You no longer feel perfectly healthy.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/healthy/on_gain()
 	owner.set_screwyhud(SCREWYHUD_HEALTHY)
@@ -129,6 +134,7 @@
 	scan_desc = "weak motor nerve signal"
 	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
 	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/muscle_weakness/on_life()
 	var/fall_chance = 1
@@ -171,6 +177,7 @@
 	scan_desc = "nervous cough"
 	gain_text = "<span class='warning'>Your throat itches incessantly...</span>"
 	lose_text = "<span class='notice'>Your throat stops itching.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/nervous_cough/on_life()
 	if(prob(12) && !HAS_TRAIT(owner, TRAIT_SOOTHED_THROAT))
@@ -235,6 +242,7 @@
 	lose_text = "<span class='notice'>The faint echo fades away.</span>"
 	var/list/hear_dejavu = list()
 	var/list/speak_dejavu = list()
+	random_gain = TRUE
 
 /datum/brain_trauma/mild/mind_echo/handle_hearing(datum/source, list/hearing_args)
 	if(owner == hearing_args[HEARING_SPEAKER])

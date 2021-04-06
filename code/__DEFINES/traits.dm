@@ -245,6 +245,9 @@
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 #define TRAIT_HARD_YARDS        "hard_yards"
 #define	TRAIT_LIFEGIVER			"lifegiver"
+#define TRAIT_SURGERY_LOW		"lowsurgery"
+#define TRAIT_SURGERY_MID		"midsurgery"
+#define TRAIT_SURGERY_HIGH		"highsurgery"
 
 // fallout crafting traits
 #define TRAIT_GUNSMITH_ONE      "gunsmith_one"
