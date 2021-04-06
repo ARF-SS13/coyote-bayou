@@ -12,7 +12,7 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ORGANIC
 
-	//requires_trait = 3
+	requires_trait = 3
 
 /datum/surgery_step/fix_brain
 	name = "fix brain"
