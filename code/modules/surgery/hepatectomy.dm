@@ -11,7 +11,7 @@
 		/datum/surgery_step/hepatectomy,
 		/datum/surgery_step/close
 		)
-
+	requires_trait = 2
 /datum/surgery/hepatectomy/can_start(mob/user, mob/living/carbon/target)
 	var/obj/item/organ/liver/L = target.getorganslot(ORGAN_SLOT_LIVER)
 	if(L?.damage > 50 && !(L.organ_flags & ORGAN_FAILING))

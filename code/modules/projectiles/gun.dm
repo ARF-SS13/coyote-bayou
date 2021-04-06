@@ -173,11 +173,12 @@
 	if (isenergy == TRUE)
 		to_chat(user, "<span class='danger'>*power failure*</span>")
 		playsound(src, 'sound/f13weapons/noammoenergy.ogg', 30, 1)
+		return
 	if (isbow == TRUE)
 		to_chat(user, "<span class='danger'>*no arrows*</span>") //Insert cool plink plink sound here
-	else
-		to_chat(user, "<span class='danger'>*click*</span>")
-		playsound(src, "gun_dry_fire", 30, 1)
+		return
+	to_chat(user, "<span class='danger'>*click*</span>")
+	playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(recoil)

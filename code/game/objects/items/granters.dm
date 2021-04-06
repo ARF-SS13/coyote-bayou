@@ -773,6 +773,22 @@
 	traitname = "chemistry"
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
 
+/obj/item/book/granter/trait/lowsurgery
+	name = "Surgery for Wastelanders"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_LOW
+	traitname = "lowsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+
+/obj/item/book/granter/trait/midsurgery
+	name = "Surgery for Experts"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_MID
+	traitname = "midsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"
 	desc = "A book all about tribal life among the Machine Spirits."

@@ -98,7 +98,6 @@
 	path = /obj/item/storage/belt/holster/ranger44
 	ckeywhitelist = list("pilotbland",
 						"poots13",
-						"panzer1944",
 						"nbveh123",
 						"svenja",
 						"idiocityinc",
@@ -108,7 +107,6 @@
 						"usotsukihime",
 						"melarinn",
 						"jackofoak",
-						"purplepineapple",
 						"lynuahsororitas",
 						"prawn04",
 						"nokele")
@@ -122,6 +120,8 @@
 						"poots13",
 						"julwaters",
 						"asterixcodix",
+						"panzer1944",
+						"purplepineapple",
 						"edisnij")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
@@ -199,7 +199,7 @@
 	path = /obj/item/modkit/diohelmet
 	ckeywhitelist = list("dioclex")
 	restricted_roles = list("Legion Venator")
-		
+
 ////////////////////////////
 ///Ranger items end here.///
 ////////////////////////////

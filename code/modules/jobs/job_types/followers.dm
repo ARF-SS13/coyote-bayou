@@ -64,6 +64,7 @@ Administrator
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_PRACTITIONER, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
 	name = "Followers Administrator"
@@ -167,6 +168,7 @@ Practitioner
 	ADD_TRAIT(H, TRAIT_PRACTITIONER, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 	//the follower practitioner doesn't need access because it's already set in the /datum/job/follower
 	//personally, I don't think a practitioner should have more access than a volunteer.

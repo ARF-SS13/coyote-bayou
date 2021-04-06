@@ -13,6 +13,7 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	requires_real_bodypart = TRUE
 	targetable_wound = /datum/wound/pierce
+	requires_trait = 1
 
 /datum/surgery/repair_puncture/can_start(mob/living/user, mob/living/carbon/target)
 	. = ..()

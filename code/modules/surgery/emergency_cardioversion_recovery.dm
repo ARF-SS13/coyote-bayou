@@ -4,6 +4,7 @@
 				/datum/surgery_step/incise_heart, /datum/surgery_step/ventricular_electrotherapy, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
+	requires_trait = 2
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "ventricular electrotherapy"

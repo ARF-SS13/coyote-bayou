@@ -86,3 +86,34 @@
 	time = 20
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+
+
+/datum/crafting_recipe/jet
+	name = "Jet"
+	result = /obj/item/reagent_containers/pill/patch/jet
+	reqs = list(/obj/item/clothing/mask/cigarette = 2,
+				/datum/reagent/consumable/soymilk = 15,
+				/obj/item/toy/crayon/spraycan = 1)
+	time = 35
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/turbo
+	name = "Turbo"
+	result = /obj/item/reagent_containers/pill/patch/turbo
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 2,
+				/datum/reagent/consumable/ethanol/whiskey = 15)
+	time = 35
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/psycho
+	name = "Psycho"
+	result = /obj/item/reagent_containers/hypospray/medipen/psycho
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
+				/datum/reagent/consumable/nuka_cola = 10)
+	time = 35
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
