@@ -117,6 +117,12 @@ Tribal Shaman
 		/obj/item/reagent_containers/pill/patch/healpoultice=2
 	)
 
+/datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+
 /datum/outfit/loadout/invoker
 	name = "Invoker"
 	backpack_contents = list(
@@ -159,7 +165,7 @@ Tribal Head Hunter
 	//ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src) //Disabled until Big Leagues can be changed to armour penetration instead of bonus damage, as having +5 damage per attack on a role that gets a melee weapon with a superfast attack speed is kind of broken.
 
 /datum/outfit/job/tribal/f13Hhunter
-	name = "Hhunter"
+	name = "Hunter"
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	suit = 		/obj/item/clothing/suit/hooded/cloak/hhunter
@@ -192,11 +198,12 @@ Druid
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
 
-/datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/tribal/f13druid/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /datum/outfit/job/tribal/f13druid
 	name = "Druid"

@@ -1615,7 +1615,8 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/chemistry = 10,
+	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
+				/obj/item/book/granter/trait/chemistry = 10,
 				/obj/item/book/granter/trait/trekking = 10,
 				/obj/item/book/granter/trait/pa_wear = 1,
 				/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
