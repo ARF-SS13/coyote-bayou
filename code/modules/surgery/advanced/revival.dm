@@ -12,9 +12,10 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
+
 /datum/surgery/advanced/revival/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	return FALSE
-	if(!..())
+	/*if(!..())
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
@@ -23,7 +24,7 @@
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
 		return FALSE
-	return TRUE
+	return TRUE*/
 
 /datum/surgery_step/revive
 	name = "electrically stimulate brain"
