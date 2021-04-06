@@ -231,6 +231,7 @@
 	scan_desc = "extreme discoordination"
 	gain_text = "<span class='warning'>You can barely control your hands!</span>"
 	lose_text = "<span class='notice'>You feel in control of your hands again.</span>"
+	random_gain = TRUE
 
 /datum/brain_trauma/severe/discoordination/on_gain()
 	ADD_TRAIT(owner, TRAIT_MONKEYLIKE, TRAUMA_TRAIT)

@@ -197,6 +197,7 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -502,6 +503,7 @@ Proctor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name = "Proctor"
@@ -568,6 +570,12 @@ Scribe
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/energy/laser/pistol=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+
+/datum/outfit/job/bos/f13scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"
@@ -782,6 +790,12 @@ Initiate
 		/obj/item/book/granter/trait/chemistry=1,
 		/obj/item/clothing/accessory/bos/initiateS=1
 		)
+
+/datum/outfit/loadout/initiates/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /*
 Off-Duty

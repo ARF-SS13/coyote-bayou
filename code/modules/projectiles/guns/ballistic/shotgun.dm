@@ -542,11 +542,12 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 4
+	fire_delay = 3
 	can_scope = TRUE
 	scope_state = "leveraction_scope"
 	scope_x_offset = 11
 	scope_y_offset = 21
+	extra_damage = 5
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "trail carbine"
@@ -558,7 +559,7 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 4
+	fire_delay = 3
 	can_scope = TRUE
 	scope_state = "leveraction_scope"
 	scope_x_offset = 11
@@ -574,7 +575,7 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 4
+	fire_delay = 3
 	can_scope = TRUE
 	scope_state = "leveraction_scope"
 	scope_x_offset = 11
@@ -697,6 +698,7 @@
 	var/bolt_open = FALSE
 	can_bayonet = TRUE
 	fire_delay = 20
+	bayonet_state = "lasmusket"
 	knife_x_offset = 23
 	knife_y_offset = 21
 	w_class = WEIGHT_CLASS_BULKY

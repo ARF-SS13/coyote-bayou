@@ -10,6 +10,7 @@
 				/datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	bioware_target = BIOWARE_NERVES
+	requires_trait = 3
 /datum/surgery_step/splice_nerves
 	name = "splice nerves"
 	accept_hand = TRUE
