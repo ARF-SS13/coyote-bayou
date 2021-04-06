@@ -151,7 +151,7 @@ Centurion
 		/obj/item/electropack/shockcollar/explosive=2,
 		/obj/item/storage/bag/money/small/legofficers=1)
 
-/*
+
 /datum/outfit/loadout/centheavy
 	name = "Paladin-Slayer Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/palacent
@@ -161,7 +161,6 @@ Centurion
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/ec=2)
-*/
 
 /datum/outfit/loadout/centassault
 	name = "Ranger-Hunter Centurion"
@@ -707,8 +706,8 @@ Venator
 	title = "Legion Venator"
 	flag = F13VENATOR
 	faction = "Legion"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are the Venator -- the Hunter. With your powerful rifle and your many years of experience, you are a formidable killing machine, capable of taking down even the most formidable targets. Note that you are not a rank-and-file legionary, and you should not be operating as such -- your job is special operations, not fighting alongside the hordes of the Legion."
 	supervisors = "the Centurion"
 	selection_color = "#ffdddd"
@@ -732,7 +731,7 @@ Venator
 	head 		= 	/obj/item/clothing/head/helmet/f13/legion/venator
 	mask 		=	/obj/item/clothing/mask/bandana/legdecan
 	neck 		=	/obj/item/storage/belt/holster
-	glasses 	= 	/obj/item/clothing/glasses/legiongoggles
+	glasses 	= 	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
 	r_pocket 	= 	/obj/item/binoculars
 	suit_store	= /obj/item/gun/ballistic/automatic/marksman/sniper

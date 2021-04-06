@@ -282,7 +282,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "toolbox"
 	overlay_state = "hammerhandle"
-	qualitymod = -2
+	qualitymod = 0
 
 /obj/item/melee/smith/hammer/narsie
 	name = "runemetal hammer"

@@ -663,6 +663,18 @@
 	else
 		. = ..()
 
+/obj/machinery/autolathe/ammo/on_deconstruction()
+	..()
+	if(simple)
+		new /obj/item/book/granter/crafting_recipe/gunsmith_one(src)
+	if(basic)
+		new /obj/item/book/granter/crafting_recipe/gunsmith_two(src)
+	if(intermediate)
+		new /obj/item/book/granter/crafting_recipe/gunsmith_three(src)
+	if(advanced)
+		new /obj/item/book/granter/crafting_recipe/gunsmith_four(src)
+	return
+	
 /obj/machinery/autolathe/ammo/unlocked
 	simple = 1
 	basic = 1

@@ -264,11 +264,11 @@
 	armour_penetration = 0.5
 
 //plasma caster
-/obj/item/projectile/plasmacaster
+/obj/item/projectile/f13plasma/plasmacaster
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 50
+	damage = 70
 	armour_penetration = 0.6
 	flag = "laser"
 	eyeblur = 0
@@ -397,3 +397,7 @@
 	damage = 40
 	armour_penetration = 0.5
 
+/obj/item/projectile/beam/laser/musket //musket
+	name = "laser bolt"
+	damage = 55
+	armour_penetration = 0.6

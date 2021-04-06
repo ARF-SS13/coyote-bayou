@@ -47,3 +47,19 @@
 	desc = "This is a lead ball for a musket."
 	caliber = "musketball"
 	projectile_type = /obj/item/projectile/bullet/F13/musketball
+
+/obj/item/ammo_casing/caseless/lasermusket
+	name = "Battery"
+	desc = "A single use battery for the lasmusket"
+	caliber = "lasmusket"
+	icon_state = "lasmusketbat"
+	projectile_type = /obj/item/projectile/beam/laser/musket
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy
+
+/obj/item/ammo_casing/caseless/plasmacaster
+	name = "Battery"
+	desc = "A single use battery for the plasma caster"
+	caliber = "plasmacaster"
+	icon_state = "lasmusketbat"
+	projectile_type = /obj/item/projectile/f13plasma/plasmacaster
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/energy

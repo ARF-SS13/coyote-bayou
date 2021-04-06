@@ -107,6 +107,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Chief",
 "Shaman",
 "Head Hunter",
+"Druid",
+"Hunter",
 
 "Followers Administrator",
 "Followers Doctor",
@@ -145,6 +147,9 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Doctor",
 "Prospector",
 "Detective",
+
+"Druid",
+"Hunter",
 
 "Followers Doctor",
 "Followers Guard",
