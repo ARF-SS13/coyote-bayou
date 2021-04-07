@@ -97,6 +97,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/turbo
 	name = "Turbo"
@@ -107,17 +108,46 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/psycho
 	name = "Psycho"
 	result = /obj/item/reagent_containers/hypospray/medipen/psycho
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 3,
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 3,
 				/datum/reagent/consumable/nuka_cola = 10)
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	
+	always_availible = FALSE
+
+/datum/crafting_recipe/medx
+	name = "Med-X"
+	result = /obj/item/reagent_containers/syringe/medx
+	reqs = list(/obj/item/reagent_containers/syringe = 1,
+				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 2,
+				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+				/obj/item/reagent_containers/food/snacks/grown/broc = 2)
+	time = 35
+	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
+	category = CAT_MEDICAL
+	always_availible = FALSE
+
+/datum/crafting_recipe/buffout
+	name = "Buffout"
+	result = /obj/item/storage/pill_bottle/chem_tin/buffout
+	reqs = list(/obj/item/storage/pill_bottle = 1,
+				/obj/item/reagent_containers/food/snacks/grown/buffalogourd = 10,
+				/obj/item/reagent_containers/food/snacks/grown/yucca = 10,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 5,
+				/datum/reagent/consumable/nuka_cola = 60)
+	time = 50
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+	always_availible = FALSE
+
 /datum/crafting_recipe/extract_gaia
 	name = "Extract gaia"
 	result = /obj/item/reagent_containers/glass/bottle/gaia
