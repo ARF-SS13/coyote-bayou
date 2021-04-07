@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "radio headset"
 	desc = "An updated, modular intercom that fits over the head. Takes encryption keys."
 	icon_state = "headset"
-	item_state = "headset_alt"
+	item_state = "headset"
 	custom_materials = list(/datum/material/iron=75)
 	subspace_transmission = TRUE
 	canhear_range = 0 // can't hear headsets from very far away
@@ -303,7 +303,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "NCR radio headset"
 	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w."
 	icon_state = "mine_headset"
-	item_state = "headset"
 	keyslot = new /obj/item/encryptionkey/headset_ncr
 
 /obj/item/radio/headset/headset_ncr/ComponentInitialize()
@@ -314,7 +313,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "Ranger radio headset"
 	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
 	icon_state = "mine_headset"
-	item_state = "headset"
 	keyslot = new /obj/item/encryptionkey/headset_ranger
 
 /obj/item/radio/headset/headset_ranger/ComponentInitialize()
@@ -336,6 +334,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "Legion radio headset"
 	desc = "This is used by Caesar's Legion.\nTo access the Legion channel, use :l."
 	icon_state = "sec_headset"
+	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_legion
 
 /obj/item/radio/headset/headset_legion/ComponentInitialize()
@@ -346,7 +345,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "brotherhood radio headset"
 	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q."
 	icon_state = "cent_headset"
-	item_state = "headset"
 	keyslot = new /obj/item/encryptionkey/headset_bos
 
 /obj/item/radio/headset/headset_bos/ComponentInitialize()
@@ -367,7 +365,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "town radio headset"
 	desc = "This is used by the town.\nTo access the town channel, use :f."
 	icon_state = "mine_headset"
-	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_den
 
 /obj/item/radio/headset/headset_cent

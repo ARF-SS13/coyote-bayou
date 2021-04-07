@@ -14,28 +14,6 @@
 			new path(T)
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/spawner/bundle/costume/nurse
-	name = "50s nurse costume spawner"
-	items = list(
-		/obj/item/clothing/shoes/sneakers/white,
-		/obj/item/clothing/under/rank/medical/doctor/nurse,
-		/obj/item/clothing/head/f13/nursehat)
-
-/obj/effect/spawner/bundle/costume/hollywood50s
-	name = "50s housewife costume spawner"
-	items = list(
-		/obj/item/clothing/glasses/sunglasses,
-		/obj/item/clothing/under/f13/picnicdress50s,
-		/obj/item/clothing/shoes/sneakers/red)
-
-/obj/effect/spawner/bundle/costume/housewife50s
-	name = "50s housewife costume spawner"
-	items = list(
-		/obj/item/clothing/suit/f13/apron50shousewife,
-		/obj/item/clothing/under/f13/housewifedress50s,
-		/obj/item/clothing/shoes/laceup,
-		/obj/item/clothing/head/f13/hairband)
-
 /obj/effect/spawner/bundle/costume/chicken
 	name = "chicken costume spawner"
 	items = list(
@@ -78,12 +56,19 @@
 		/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
 		/obj/item/clothing/glasses/sunglasses/blindfold)
 
+
 /obj/effect/spawner/bundle/costume/butler
 	name = "butler costume spawner"
 	items = list(
 		/obj/item/clothing/accessory/waistcoat,
 		/obj/item/clothing/under/suit/black,
 		/obj/item/clothing/head/that)
+
+/obj/effect/spawner/bundle/costume/highlander
+	name = "highlander costume spawner"
+	items = list(
+		/obj/item/clothing/under/costume/kilt,
+		/obj/item/clothing/head/beret)
 
 /obj/effect/spawner/bundle/costume/prig
 	name = "prig costume spawner"

@@ -42,14 +42,6 @@
 		var/mob/M = loc
 		M.update_inv_wear_suit()
 */
-
-//Fallout 50s
-/obj/item/clothing/suit/f13/apron50shousewife
-	name = "housewife apron"
-	desc = "Cutesy pink checkered apron."
-	icon_state = "apron50s"
-	item_state = "brownjsuit"
-
 /obj/item/clothing/suit/f13/vest
 	name = "tan vest"
 	desc = "(I) It's a vest made of tanned leather."
