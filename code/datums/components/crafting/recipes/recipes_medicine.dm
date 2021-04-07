@@ -119,6 +119,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/medx
 	name = "Med-X"
