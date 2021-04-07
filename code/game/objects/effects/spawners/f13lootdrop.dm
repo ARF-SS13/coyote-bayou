@@ -897,7 +897,6 @@
 				/obj/effect/spawner/bundle/f13/needler,
 				/obj/effect/spawner/bundle/f13/trail,
 				/obj/effect/spawner/bundle/f13/revolver44,
-				/obj/effect/spawner/bundle/f13/mp5,
 				/obj/effect/spawner/bundle/f13/beretta/select,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/neostead,
@@ -1005,7 +1004,7 @@
 				/obj/effect/spawner/bundle/f13/riotshotgun,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/plasmaglock,
-				/obj/effect/spawner/bundle/f13/mp5
+				/obj/item/gun/ballistic/automatic/mp5
 				/obj/item/gun/medbeam,
 				/obj/effect/spawner/bundle/f13/wattz2k
 	)
@@ -1085,13 +1084,6 @@
 	items = list(
 				/obj/item/gun/energy/laser/plasma/glock,
 				/obj/item/stock_parts/cell/ammo/ec
-				)
-
-/obj/effect/spawner/bundle/f13/mp5
-	name = "mp5 and ammo spawner"
-	items = list(
-				/obj/item/gun/ballistic/automatic/mp5,
-				/obj/item/ammo_box/magazine/uzim9mm
 				)
 
 /obj/effect/spawner/bundle/f13/wattz2k
