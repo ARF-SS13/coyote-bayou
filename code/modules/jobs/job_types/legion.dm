@@ -819,6 +819,12 @@ Auxilia
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2)
 
+/datum/outfit/job/CaesarsLegion/f13auxilia/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+
 /datum/outfit/loadout/auxengi
 	name = "Opifex (Blacksmith)"
 	head = /obj/item/clothing/head/f13/legion/auxilia
@@ -864,11 +870,6 @@ Auxilia
 		/obj/item/stack/medical/bone_gel=2,
 		/obj/item/bonesetter=1
 	)
-/datum/outfit/loadout/auxacolyte/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 
 /*
 Camp Follower
@@ -902,6 +903,12 @@ Camp Follower
 	ears = 			/obj/item/radio/headset/headset_legion
 	gloves = /obj/item/clothing/gloves/legion
 
+/datum/outfit/job/CaesarsLegion/f13campfollower/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+
 /datum/outfit/loadout/campfollowermatron
 	name = "Mater (Matron)"
 	suit = /obj/item/clothing/suit/apron/chef
@@ -927,12 +934,6 @@ Camp Follower
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/smelling_salts/crafted=1
 	)
-
-/datum/outfit/loadout/campfollowerhealer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /datum/outfit/loadout/campfolloweroffduty
 	name = "Off-Duty Legionary"

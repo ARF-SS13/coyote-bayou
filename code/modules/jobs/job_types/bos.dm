@@ -766,6 +766,13 @@ Initiate
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 
+/datum/outfit/job/bos/f13initiate/post_equip(mob/living/carbon/human/H, visualsOnly)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+
+
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
 	belt = 			/obj/item/storage/belt/utility/full/engi
@@ -790,12 +797,6 @@ Initiate
 		/obj/item/book/granter/trait/chemistry=1,
 		/obj/item/clothing/accessory/bos/initiateS=1
 		)
-
-/datum/outfit/loadout/initiates/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /*
 Off-Duty
