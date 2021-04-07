@@ -107,6 +107,7 @@
 						"usotsukihime",
 						"melarinn",
 						"jackofoak",
+						"muhsollini",
 						"lynuahsororitas",
 						"prawn04",
 						"nokele")
@@ -160,6 +161,15 @@
 						"topbirb")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
+/datum/gear/donator/rangersergeantpins
+	name = "Ranger-Sergeant Pins"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/clothing/accessory/ranger/SGT
+	ckeywhitelist = list("usotsukihime",
+						"seabass390",
+						"panzer1944")
+	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
+
 /datum/gear/donator/rangerpins
 	name = "Ranger Pins"
 	slot = SLOT_IN_BACKPACK
@@ -183,6 +193,7 @@
 						"edisnij",
 						"melarinn",
 						"someonewithapen",
+						"muhsollini",
 						"lynuahsororitas")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
