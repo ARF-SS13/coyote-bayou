@@ -76,6 +76,46 @@
 	path = /obj/item/storage/box/large/custom_kit/orvencross
 	ckeywhitelist = list("covert0ddity")
 
+/datum/gear/donator/kits/samwebb
+	name ="Sam Webb's belongings"
+	path = /obj/item/storage/box/large/custom_kit/samwebb
+	ckeywhitelist = list("thegreatcoward")
+
+/datum/gear/donator/kits/wolfemerson
+	name = "Wolf Emerson's belonings"
+	path = /obj/item/storage/box/large/custom_kit/wolfemerson
+	ckeywhitelist = list("seabass390")
+
+/datum/gear/donator/kits/donnykennedey
+	name = "Donny Kennedey's belongings"
+	path = /obj/item/storage/box/large/custom_kit/donnykennedey
+	ckeywhitelist = list("panzer1944")
+
+/datum/gear/donator/kits/serisseshata
+	name = "Seris Seshata's belongings"
+	path = /obj/item/storage/box/large/custom_kit/serisseshata
+	ckeywhitelist = list("afroterk")
+
+/datum/gear/donator/kits/vess
+	name = "Vess' belongings"
+	path = /obj/item/modkit/patrolduster
+	ckeywhitelist = list("afroterk")
+
+/datum/gear/donator/kits/tychosiricus
+	name = "Tycho Siricus belongings"
+	path = /obj/item/storage/box/large/custom_kit/tychosiricus
+	ckeywhitelist = list("seabass390")
+
+/datum/gear/donator/kits/yahirpinney
+	name = "Yahir Pinney's belongings"
+	path = /obj/item/storage/box/large/custom_kit/yahirpinney
+	ckeywhitelist = list("murderfox")
+
+/datum/gear/donator/kits/katharinelamb
+	name = "Katharine Lamb's belongings"
+	path = /obj/item/storage/box/large/custom_kit/katharinelamb
+	ckeywhitelist = list("elizabethdame")
+
 //////////////////////////////
 ///Ranger items start here.///
 //////////////////////////////
