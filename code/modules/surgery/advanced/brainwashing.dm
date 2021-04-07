@@ -16,6 +16,8 @@
 	target_mobtypes = list(/mob/living/carbon/human)
 	possible_locs = list(BODY_ZONE_HEAD)
 
+	requires_trait = 3
+
 /datum/surgery/advanced/brainwashing/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())
 		return FALSE

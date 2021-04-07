@@ -303,7 +303,11 @@ Mayor
 		/obj/item/storage/firstaid/regular,
 		/obj/item/clothing/accessory/armband/medblue  \
 		)
-
+/datum/outfit/job/den/f13dendoc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 /*--------------------------------------------------------------*/
 
 /datum/job/den/f13preacher
@@ -331,6 +335,7 @@ Mayor
 
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
+
 
 /datum/outfit/loadout/atompreacher
 	name = "Atom's Devout"

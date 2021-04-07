@@ -62,6 +62,7 @@
 /obj/item/book/granter/trait
 	var/granted_trait
 	var/traitname = "being cool"
+	var/list/crafting_recipe_types = list()
 
 /obj/item/book/granter/trait/already_known(mob/user)
 	if(!granted_trait)
@@ -75,8 +76,15 @@
 	to_chat(user, "<span class='notice'>You start reading about [traitname]...</span>")
 
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
+	. = ..()
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
+	if(!user.mind)
+		return
+	for(var/crafting_recipe_type in crafting_recipe_types)
+		var/datum/crafting_recipe/R = crafting_recipe_type
+		user.mind.teach_crafting_recipe(crafting_recipe_type)
+		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
 	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
@@ -772,6 +780,23 @@
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
+	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+
+/obj/item/book/granter/trait/lowsurgery
+	name = "Surgery for Wastelanders"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_LOW
+	traitname = "lowsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+
+/obj/item/book/granter/trait/midsurgery
+	name = "Surgery for Experts"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_MID
+	traitname = "midsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
 
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"

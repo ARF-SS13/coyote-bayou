@@ -46,7 +46,28 @@
 	else
 		return ..()
 
-/////BARRICADE TYPES///////
+/////BARRICADE TYPES AND TENTS///////
+//Yeah the new tents go here. Sue me. Use cloth for more posh places like NCR, brahmin skin for tribals/legion//
+
+/obj/structure/barricade/tentleathercorner
+	name = "brahmin skin tent"
+	icon = 'icons/fallout/turfs/walls/tents.dmi'
+	icon_state = "leather_corner"
+
+/obj/structure/barricade/tentleatheredge
+	name = "brahmin skin tent"
+	icon = 'icons/fallout/turfs/walls/tents.dmi'
+	icon_state = "leather_edge"
+
+/obj/structure/barricade/tentclothcorner
+	name = "cotton tent"
+	icon = 'icons/fallout/turfs/walls/tents.dmi'
+	icon_state = "cloth_corner"
+
+/obj/structure/barricade/tentclothedge
+	name = "cotton tent"
+	icon = 'icons/fallout/turfs/walls/tents.dmi'
+	icon_state = "cloth_edge"
 
 /obj/structure/barricade/wooden
 	name = "wooden barricade"

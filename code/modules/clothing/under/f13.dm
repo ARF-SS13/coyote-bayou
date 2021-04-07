@@ -11,6 +11,18 @@
 
 //Vault
 
+/obj/item/clothing/under/f13/housewifedress50s
+	name = "50s style dress"
+	desc = "Fancy checkered yellow dress with small shoulder puffs."
+	icon_state = "dress50s"
+	item_state = "dress50s"
+
+/obj/item/clothing/under/f13/picnicdress50s
+	name = "50s style dress"
+	desc = "Cheery polkadot casual dress."
+	icon_state = "dresspicnic50s"
+	item_state = "dresspicnic50s"
+
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
@@ -34,6 +46,12 @@
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
+
+/obj/item/clothing/under/f13/vaultmutie
+	name = "torn vault 113 jumpsuit"
+	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
+	icon_state = "mutie_vault_jumspuit"
+	item_state = "mutie_vault_jumspuit"
 
 //NCR
 
@@ -256,6 +274,18 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 80)
 
 //Legion
+
+/obj/item/clothing/under/f13/campfollowermale
+	name = "camp follower male robe"
+	desc = "Olive colored cloth with a red belt."
+	icon_state = "legcamp"
+	item_state = "brownjsuit"
+
+/obj/item/clothing/under/f13/campfollowerfemale
+	name = "camp follower female robe"
+	desc = "Olive colored cloth with a red sash."
+	icon_state = "legcamp_f"
+	item_state = "legcamp_f"
 
 /obj/item/clothing/under/f13/legskirt
 	name = "legionary fatigues"
@@ -952,6 +982,17 @@
 	icon_state = "vault42"
 	item_color = "vault42"
 
+/obj/item/clothing/under/f13/vault/vcity
+	name = "VTCC jumpsuit"
+	desc = "The regulation clothing worn by the vault dwellers, of Vault-Tec vaults. It's made of sturdy leather. <br>This jumpsuit bears the symbol of the Vault-Tec City Coalition on the back."
+	icon_state = "vaultcity"
+	item_state = "vaultcity"
+
+/obj/item/clothing/under/f13/vault/vcity/skirt
+	name = "VTCC jumpskirt"
+	icon_state = "vaultcity_skirt"
+	item_state = "vaultcity_skirt"
+
 /obj/item/clothing/under/f13/followers
 	name = "followers outfit"
 	desc = "A white shirt with a pair of dark brown cargo pants - an outfit commonly worn by Followers of the Apocalypse.<br><i>Nihil boni sine labore.</i>"
@@ -1270,3 +1311,17 @@
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
+
+//Super Mutants
+
+/obj/item/clothing/under/f13/mutieshorts
+	name = "large torn shorts"
+	desc = "An incredibly damaged pair of shorts, large enough to fit a super mutant."
+	icon_state = "mutie_shorts"
+	item_state = "mutie_shorts"
+
+/obj/item/clothing/under/f13/mutiesanta
+	name = "red and white jumspuit"
+	desc = "A fairly damaged red and white shirt with matching shorts, large enough to fit a super mutant."
+	icon_state = "mutie_santa"
+	item_state = "mutie_santa"

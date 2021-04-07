@@ -97,3 +97,4 @@
 /obj/item/projectile/bullet/c2mm
 	damage = 55
 	armour_penetration = 0.85
+	pixels_per_second = TILES_TO_PIXELS(100)

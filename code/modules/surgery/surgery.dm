@@ -20,6 +20,7 @@
 	var/replaced_by
 	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
 	var/datum/wound/targetable_wound							//The wound type this surgery targets
+	var/requires_trait = 1						//0 = none, 1 = low, 2 = mid, 3 = high
 
 /datum/surgery/New(surgery_target, surgery_location, surgery_bodypart)
 	..()
@@ -48,7 +49,26 @@
 	. = TRUE
 	if(replaced_by == /datum/surgery)
 		return FALSE
+		//	
+		
+	if(requires_trait>2)
+		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
+			return TRUE
+		else 
+			return FALSE
 
+	if(requires_trait>1)
+		if(HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
+			return TRUE
+		else 
+			return FALSE
+
+	if(requires_trait>0)
+		if(HAS_TRAIT(user,TRAIT_SURGERY_LOW)||HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
+			return TRUE
+		else 
+			return FALSE
+		//
 	if(HAS_TRAIT(user, TRAIT_SURGEON) || HAS_TRAIT(user.mind, TRAIT_SURGEON))
 		if(replaced_by)
 			return FALSE
@@ -132,7 +152,7 @@
 
 /datum/surgery/advanced
 	name = "advanced surgery"
-	requires_tech = TRUE
+	requires_tech = FALSE
 
 /obj/item/disk/surgery
 	name = "Surgery Procedure Disk"

@@ -828,13 +828,13 @@
 //city killer
 /datum/crafting_recipe/city_killer
 	name = "City-Killer shotgun"
-	result = /obj/item/gun/ballistic/shotgun/automatic/combat
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5
+				/obj/item/stack/crafting/goodparts = 10
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -866,8 +866,8 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/goodparts = 5, 
-				
+				/obj/item/stack/crafting/goodparts = 5,
+
 				)
 	tools = list(TOOL_AWORKBENCH)
 	time = 120
@@ -875,7 +875,7 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//magneto 
+//magneto
 /datum/crafting_recipe/magnetowattz
 	name = "wattz 1000 magneto-laser pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto

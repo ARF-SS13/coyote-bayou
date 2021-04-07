@@ -26,8 +26,8 @@
 			salvage += M
 	if(LAZYLEN(salvage))
 		for(var/turf/open/indestructible/ground/outside/desert/M in salvage)
-			M.icon = 'icons/fallout/objects/crafting.dmi'
-			M.icon_state = "metaldetector"
+			M.icon = 'icons/effects/landmarks_static.dmi'
+			M.icon_state = "scan"
 
 
 /obj/item/components
