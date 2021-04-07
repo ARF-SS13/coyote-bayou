@@ -156,4 +156,3 @@
 	time = 20
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	always_availible = FALSE
