@@ -1093,7 +1093,6 @@
 				/obj/item/stock_parts/cell/ammo/mfc
 	)
 
-
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 //TIER 5 GUN
 	name = "tier 5 gun"
 	lootcount = 1
