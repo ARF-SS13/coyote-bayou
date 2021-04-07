@@ -640,7 +640,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/buffout
 	name = "Buffout"
-	icon_state = "pill_canister"
+	icon_state = "pill_canister_buffout"
 	desc = "Contains pills used to increase muscle mass."
 
 /obj/item/storage/pill_bottle/chem_tin/buffout/PopulateContents()

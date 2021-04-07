@@ -289,5 +289,5 @@
 	name = "Buffout pill"
 	desc = "A metallic tasting pill that greatly increases bloodflow and builds muscle mass. \
 	Side effects may include sore muscles and increased irritability."
-	icon_state = "pill17"
+	icon_state = "buffoutpill"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
