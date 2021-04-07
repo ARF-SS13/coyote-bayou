@@ -1004,8 +1004,8 @@
 				/obj/effect/spawner/bundle/f13/riotshotgun,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/plasmaglock,
-				/obj/item/gun/ballistic/automatic/mp5
 				/obj/item/gun/medbeam,
+				/obj/item/gun/ballistic/automatic/mp5,
 				/obj/effect/spawner/bundle/f13/wattz2k
 	)
 
@@ -1092,6 +1092,7 @@
 				/obj/item/gun/energy/laser/wattz2k,
 				/obj/item/stock_parts/cell/ammo/mfc
 	)
+
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 //TIER 5 GUN
 	name = "tier 5 gun"
@@ -1600,7 +1601,8 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks
 	name = "trait book spawner"
 	lootcount = 1
-	loot = list(/obj/item/book/granter/trait/chemistry = 10,
+	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
+				/obj/item/book/granter/trait/chemistry = 10,
 				/obj/item/book/granter/trait/trekking = 10,
 				/obj/item/book/granter/trait/pa_wear = 1,
 				/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
