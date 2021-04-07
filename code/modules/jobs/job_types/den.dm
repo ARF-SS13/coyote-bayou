@@ -346,24 +346,12 @@ Mayor
 		/obj/item/clothing/head/helmet/f13/atombeliever=1
 		)
 
-/datum/outfit/loadout/atompreacher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-
 /datum/outfit/loadout/standardpreacher
 	name = "Protector of the Faith"
 	l_hand = /obj/item/nullrod
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2
 		)
-
-/datum/outfit/loadout/standardpreacher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 
 /datum/job/den/f13preacher/after_spawn(mob/living/H, mob/M)
 	if(H.mind)
