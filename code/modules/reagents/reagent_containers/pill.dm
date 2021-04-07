@@ -284,3 +284,10 @@
 	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
 	icon_state = "pill18"
 	list_reagents = list(/datum/reagent/medicine/radx = 20)
+
+/obj/item/reagent_containers/pill/buffout
+	name = "Buffout pill"
+	desc = "A metallic tasting pill that greatly increases bloodflow and builds muscle mass. \
+	Side effects may include sore muscles and increased irritability."
+	icon_state = "pill17"
+	list_reagents = list(/datum/reagent/drug/buffout = 10)
