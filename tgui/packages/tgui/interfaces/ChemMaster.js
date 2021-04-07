@@ -280,7 +280,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && (
+      {!condi && !!advanced &&(
         <PackagingControlsItem
           label="Patches"
           amount={patchAmount}
@@ -319,7 +319,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && (
+      {!condi && !!advanced && (
         <PackagingControlsItem
           label="Super Stimpaks"
           amount={superstimpakAmount}
