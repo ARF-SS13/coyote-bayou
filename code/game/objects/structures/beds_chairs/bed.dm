@@ -1,4 +1,4 @@
-/* Beds... get your mind out of the gutter, they're for sleeping!
+/* Beds
  * Contains:
  * 		Beds
  *		Roller beds
@@ -42,6 +42,28 @@
 		deconstruct(TRUE)
 	else
 		return ..()
+
+/*
+ * Wooden beds and old beds - Use wood for low tech like Oasis and Legion. Old for ruins.
+ */
+
+/obj/structure/bed/wooden
+	name = "simple wooden bed"
+	desc = "Wooden frame with a mattress"
+	icon_state = "bed_wood"
+	max_integrity = 80
+
+/obj/structure/bed/old
+	name = "ancient bed"
+	desc = "Filthy beyond belief."
+	icon_state = "bed_old1"
+	max_integrity = 50
+
+/obj/structure/bed/oldalt
+	name = "ancient bed"
+	desc = "Filthy beyond belief."
+	icon_state = "bed_old2"
+	max_integrity = 50
 
 /*
  * Roller beds
