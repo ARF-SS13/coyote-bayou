@@ -117,3 +117,12 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+	
+/datum/crafting_recipe/extract_gaia
+	name = "Extract gaia"
+	result = /obj/item/reagent_containers/glass/bottle/gaia
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia  = 6,
+	/datum/reagent/water = 50)
+	time = 20
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL

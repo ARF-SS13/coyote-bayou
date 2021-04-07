@@ -455,3 +455,24 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = TRUE
+	
+/datum/reagent/medicine/gaia
+	name = "Gaia Extract"
+
+	description = "Liquid extracted from a gaia branch. Provides a slow but reliable healing effect"
+	reagent_state = LIQUID
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	taste_description = "deliciousness"
+	overdose_threshold = 30
+	color = "##DBCE18"
+
+/datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
+/datum/reagent/medicine/gaia/overdose_start(mob/living/M)
+	metabolization_rate = 15 * REAGENTS_METABOLISM
+	..()
