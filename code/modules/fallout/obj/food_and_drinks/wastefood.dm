@@ -419,7 +419,7 @@
 	endurance = 30
 	yield = 5
 	growthstages = 4
-	maturation = 6
+	maturation = 5
 	production = 4
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "yucca-grow"
