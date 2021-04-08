@@ -916,7 +916,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	can_suppress = FALSE
 	burst_size = 1
-	fire_delay = 4
+	fire_delay = 3
 	burst_shot_delay = 3
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
