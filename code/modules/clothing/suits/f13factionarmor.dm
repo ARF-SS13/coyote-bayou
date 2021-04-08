@@ -414,6 +414,14 @@
 	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = -0.1
 
+/obj/item/clothing/suit/armor/f13/rangerrig
+	name = "chest gear harness"
+	desc = "(III) A handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
+	icon_state = "r_gear_rig"
+	item_state = "r_gear_rig"
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	slowdown = -0.1
+
 /obj/item/clothing/suit/armor/f13/trailranger
 	name = "ranger vest"
 	desc = "(IV) A quaint little jacket and scarf worn by NCR trail rangers."
