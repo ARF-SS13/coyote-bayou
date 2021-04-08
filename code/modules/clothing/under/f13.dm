@@ -189,7 +189,7 @@
 	item_state = "blueranger"
 	item_color = "blueranger"
 
-/obk/item/clothing/under/f13/ranger/erin
+/obj/item/clothing/under/f13/ranger/erin
 	name = "desert pants"
 	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
 	icon_state = "erin_pants"
