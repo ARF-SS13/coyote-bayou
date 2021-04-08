@@ -124,8 +124,6 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 ))
 
 GLOBAL_LIST_INIT(faction_player_positions, list(
-"Star Paladin",
-"Paladin",
 "Star Knight",
 "Knight",
 "Proctor",
@@ -166,6 +164,11 @@ GLOBAL_LIST_INIT(antagonist_whitelist_positions, list(
 	"Raider",
 	"Outlaw",
 	"Great Khan" //DA KHANZ, BAY BEEEEEEE
+))
+
+GLOBAL_LIST_INIT(brotherhood_paladin_positions, list(
+	"Star Paladin",
+	"Paladin"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_command_positions, list(
