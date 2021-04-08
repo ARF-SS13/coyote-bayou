@@ -978,7 +978,7 @@ Nothing else in the console has ID requirements.
 	if(ls["research_node"])
 		if(!research_control)
 			return				//honestly should call them out for href exploiting :^)
-		if(!SSresearch.science_tech.available_nodes[ls["research_node"]])
+		if(!stored_research.available_nodes[ls["research_node"]])
 			return			//Nope!
 		research_node(ls["research_node"], usr)
 	if(ls["clear_tech"]) //Erase la on the technology disk.
@@ -1156,24 +1156,38 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"
 
+
+/obj/machinery/computer/rdconsole/core/bos
+	desc = "A console used by the scribes of the Brotherhood of Steel."
+	name = "Archive Terminal"
+	circuit = /obj/item/circuitboard/computer/rdconsole/bos
+	req_access = null
+	req_access_txt = "120"
+
+/obj/machinery/computer/rdconsole/core/vault
+	circuit = /obj/item/circuitboard/computer/rdconsole/vault
+
+/obj/machinery/computer/rdconsole/core/followers
+	circuit = /obj/item/circuitboard/computer/rdconsole/followers
+
 //lettern's lazy way of adding more channels
 /obj/machinery/computer/rdconsole/core/bos/Initialize()
 	. = ..()
 	stored_research = SSresearch.bos_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
-	matching_designs = list()
+	matching_design_ids = list()
 	SyncRDevices()
 
 /obj/machinery/computer/rdconsole/core/vault/Initialize()
 	. = ..()
 	stored_research = SSresearch.science_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
-	matching_designs = list()
+	matching_design_ids = list()
 	SyncRDevices()
 
 /obj/machinery/computer/rdconsole/core/followers/Initialize()
 	. = ..()
 	stored_research = SSresearch.followers_tech
 	stored_research.consoles_accessing[src] = TRUE
-	matching_designs = list()
+	matching_design_ids = list()
 	SyncRDevices()

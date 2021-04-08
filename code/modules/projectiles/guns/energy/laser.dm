@@ -384,7 +384,7 @@
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
-	fire_delay = 3.5
+	fire_delay = 2.5
 	desc = "A top of line miniaturized plasma caster built by REPCONN in the wake of the Z43-521P failure. It is supperior to all previous rifles to enter service in the USCC."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc

@@ -76,3 +76,42 @@
 /obj/item/storage/box/large/custom_kit/serisseshata/PopulateContents()
 	new /obj/item/clothing/mask/gas/seva(src)
 	new /obj/item/modkit/trenchcoatfollowers(src)
+
+//Sam Webb - thegreatcoward
+/obj/item/storage/box/large/custom_kit/samwebb/PopulateContents()
+	new /obj/item/clothing/head/beret/ncr(src)
+	new /obj/item/clothing/accessory/ncr/LT2(src)
+
+//Wolf Emerson - seabass390
+/obj/item/storage/box/large/custom_kit/wolfemerson/PopulateContents()
+	new /obj/item/clothing/gloves/modif_patrol(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger(src)
+	new /obj/item/modkit/wolfvest(src)
+
+//Donny Kennedey - panzer1944
+/obj/item/storage/box/large/custom_kit/donnykennedey/PopulateContents()
+	new /obj/item/clothing/head/f13/ncr/goggles(src)
+	new /obj/item/storage/belt/military(src)
+	new /obj/item/clothing/mask/ncr_facewrap(src)
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/clothing/gloves/combat(src)
+
+//Tycho Siricus - seabass390
+/obj/item/storage/box/large/custom_kit/tychosiricus/PopulateContents()
+	new /obj/item/clothing/glasses/sunglasses(src)
+	new /obj/item/clothing/head/beret/headband(src)
+	new /obj/item/clothing/mask/bandana/momentobandana(src)
+
+//Yahir Pinney - murderfox
+/obj/item/storage/box/large/custom_kit/yahirpinney/PopulateContents()
+	new /obj/item/clothing/under/jabroni(src)
+	new /obj/item/clothing/head/welding/f13/fire(src)
+
+//Katharine Lamb - elizabethdame
+/obj/item/storage/box/large/custom_kit/katharinelamb/PopulateContents()
+	new /obj/item/clothing/shoes/f13/military(src)
+	new /obj/item/clothing/under/rank/civilian/util/greyshirt(src)
+	new /obj/item/storage/backpack/explorer(src)
+	new /obj/item/storage/belt/military/alt(src)
+	new /obj/item/clothing/suit/armor/vest(src)
+

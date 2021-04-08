@@ -30,6 +30,14 @@
 	build_path = /obj/item/flashlight
 	category = list("initial","Tools")
 
+/datum/design/metaldetector
+	name = "Metal Detector"
+	id = "metaldetector"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 6000, /datum/material/glass = 500)
+	build_path = /obj/item/metaldetector
+	category = list("initial","Tools")
+
 /datum/design/extinguisher
 	name = "Fire Extinguisher"
 	id = "extinguisher"

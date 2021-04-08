@@ -71,7 +71,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	force = 40
-	force_on = 150
+	force_on = 80
 	throwforce = 25
 	throwforce_on = 30
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -80,7 +80,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 1
+	armour_penetration = 0.5
 	attack_verb_off = list("attacked", "chopped", "cleaved", "torn", "cut")
 	attack_verb_on = list()
 	light_color = "#40ceff"

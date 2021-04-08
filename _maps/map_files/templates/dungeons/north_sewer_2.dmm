@@ -25,6 +25,7 @@
 "aI" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -60,9 +61,6 @@
 /area/f13/bunker)
 "aX" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	faction = list("raider")
-	},
 /obj/structure/chair/f13chair2,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -112,6 +110,10 @@
 "ck" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/bunker)
+"cr" = (
+/obj/structure/decoration/smokeold,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "cs" = (
 /obj/structure/wreck/trash/three_barrels,
@@ -287,7 +289,9 @@
 /area/f13/bunker)
 "fu" = (
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
@@ -321,6 +325,15 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"gc" = (
+/obj/structure/barricade/wooden/strong,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/decoration/rag,
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "gB" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -331,18 +344,25 @@
 /mob/living/simple_animal/hostile/raider/ranged/legendary{
 	desc = "A notorious cannibal raider, with a strong revolver. Oh no.";
 	name = "Bob";
+	obj_damage = 300;
 	retreat_distance = 0;
 	speed = 1.5
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "gM" = (
+/obj/machinery/light/broken,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
-/obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "gP" = (
@@ -370,9 +390,10 @@
 /area/f13/tunnel)
 "hy" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -407,7 +428,9 @@
 "iK" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
@@ -424,9 +447,19 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "je" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/water,
-/area/f13/caves)
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
+	faction = list("raider");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "jj" = (
 /obj/structure/kitchenspike,
 /obj/effect/mob_spawn/human/corpse/raidermelee,
@@ -461,6 +494,11 @@
 "jB" = (
 /obj/structure/girder/reinforced,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
+"jE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "jG" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
@@ -506,6 +544,12 @@
 "kE" = (
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"kI" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
 "kO" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/tunnel{
@@ -514,12 +558,18 @@
 /area/f13/bunker)
 "ld" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
-/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lh" = (
@@ -527,6 +577,10 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"ll" = (
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "ln" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
@@ -560,6 +614,11 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"mn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "mt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
@@ -606,6 +665,15 @@
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"ne" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skulls"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/caves)
 "np" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden/strong,
@@ -629,6 +697,7 @@
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/generic,
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/indestructible/ground/inside/subway,
@@ -707,12 +776,18 @@
 	},
 /area/f13/bunker)
 "pv" = (
+/obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
-/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "pC" = (
@@ -735,6 +810,19 @@
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
+/area/f13/bunker)
+"qb" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/sentrybot{
+	aggro_vision_range = 15;
+	desc = "A pre-war military robot armed with a modified breacher shotgun and covered in thick armor plating.";
+	faction = list("raider");
+	name = "riot control sentry";
+	projectilesound = 'sound/f13weapons/riot_shotgun.ogg';
+	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag;
+	retreat_distance = 0
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qt" = (
 /obj/item/trash/f13/yumyum,
@@ -772,13 +860,21 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "qL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/legendary,
+/mob/living/simple_animal/hostile/raider/legendary{
+	obj_damage = 300
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qN" = (
@@ -800,11 +896,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rb" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
-	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
+	},
+/mob/living/simple_animal/hostile/handy/assaultron{
+	aggro_vision_range = 15;
+	faction = list("raider")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -832,6 +929,15 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/radiation)
+"rE" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/assaultron{
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "rM" = (
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -865,7 +971,10 @@
 /area/f13/bunker)
 "sK" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/legendary,
+/mob/living/simple_animal/hostile/raider/ranged/legendary{
+	aggro_vision_range = 15;
+	obj_damage = 300
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sR" = (
@@ -954,8 +1063,20 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"uG" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/securitron{
+	aggro_vision_range = 15;
+	faction = list("raider");
+	retreat_distance = 0;
+	vision_range = 15
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/bunker)
 "uJ" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
+/mob/living/simple_animal/hostile/deathclaw/legendary{
+	speed = -1.5
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "uL" = (
@@ -1101,9 +1222,11 @@
 /area/f13/radiation)
 "wv" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
 /obj/effect/decal/cleanable/blood,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
+/mob/living/simple_animal/hostile/deathclaw{
+	speed = -2
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wy" = (
@@ -1157,6 +1280,7 @@
 	desc = "A notorious cannibal raider, with a BIG knife. Oh no.";
 	health = 600;
 	name = "Jim";
+	obj_damage = 300;
 	speed = 1.5
 	},
 /turf/open/floor/plasteel/freezer,
@@ -1221,6 +1345,7 @@
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/floor/plating/tunnel{
@@ -1249,24 +1374,28 @@
 "yW" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "yY" = (
 /obj/item/storage/trash_stack,
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
 "zi" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "zo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/destructible/tribal_torch/lit,
@@ -1292,6 +1421,9 @@
 	name = "door shutters"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1306,6 +1438,11 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"zZ" = (
+/obj/effect/decal/fakelattice,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/bunker)
 "Af" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -1333,6 +1470,10 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/freezer,
+/area/f13/bunker)
+"AU" = (
+/obj/structure/decoration/clock,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "Ba" = (
 /obj/effect/decal/remains/human,
@@ -1364,6 +1505,13 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"BM" = (
+/mob/living/simple_animal/hostile/handy/sentrybot{
+	aggro_vision_range = 15;
+	faction = list("raider")
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "BW" = (
 /mob/living/simple_animal/hostile/raider/thief,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -1441,6 +1589,10 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
+"Dm" = (
+/obj/structure/decoration/rag,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
 "Dn" = (
 /obj/structure/girder/reinforced,
 /turf/open/water,
@@ -1498,6 +1650,7 @@
 "Ee" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/indestructible/ground/inside/subway,
@@ -1595,6 +1748,13 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"Gt" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/deathclaw{
+	speed = -2
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "Gw" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/tunnel{
@@ -1621,6 +1781,7 @@
 /area/f13/tunnel)
 "He" = (
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -1650,7 +1811,9 @@
 /area/f13/bunker)
 "HM" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw,
+/mob/living/simple_animal/hostile/deathclaw{
+	speed = -2
+	},
 /turf/open/water,
 /area/f13/caves)
 "HX" = (
@@ -1682,26 +1845,22 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
-"II" = (
-/mob/living/simple_animal/hostile/raider/ranged,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "IL" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/abomhorror{
-	faction = list("raider")
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
 /area/f13/radiation)
 "IR" = (
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	faction = list("raider")
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "IW" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/inside/subway,
@@ -1711,6 +1870,12 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
+"Jd" = (
+/obj/structure/barricade/wooden/strong,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "Jf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1728,6 +1893,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/freezer,
+/area/f13/bunker)
+"Jt" = (
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "Jx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1759,7 +1928,13 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
@@ -1776,8 +1951,11 @@
 /area/f13/tunnel)
 "KA" = (
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "KD" = (
@@ -1805,7 +1983,9 @@
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	name = "Repaired Turret";
+	scan_range = 9;
+	throw_range = 9
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -1827,11 +2007,13 @@
 /mob/living/simple_animal/hostile/abomhorror{
 	desc = "A terrible fusion of man and something else entirely. It looks to be in great pain.";
 	faction = list("raider");
-	health = 900;
+	health = 2000;
 	icon_living = "abomination";
 	icon_state = "abomination";
 	name = "Abomination";
-	speed = -1
+	obj_damage = 300;
+	speed = -1;
+	wound_bonus = 0
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
@@ -1839,7 +2021,9 @@
 /area/f13/radiation)
 "KP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/deathclaw/mother{
+	speed = -1.5
+	},
 /turf/open/water,
 /area/f13/caves)
 "KQ" = (
@@ -1850,6 +2034,7 @@
 "KW" = (
 /obj/effect/decal/fakelattice,
 /mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/floor/plating/tunnel{
@@ -1925,12 +2110,18 @@
 /area/f13/bunker)
 "MC" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
 	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
 	faction = list("raider");
-	name = "Repaired Turret"
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
 	},
-/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "MR" = (
@@ -1950,6 +2141,14 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
+/area/f13/bunker)
+"Nf" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy{
+	aggro_vision_range = 15;
+	faction = list("raider")
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ni" = (
 /obj/machinery/light/broken,
@@ -1993,13 +2192,17 @@
 /area/f13/caves)
 "Pp" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw/legendary,
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
+/mob/living/simple_animal/hostile/deathclaw/legendary{
+	speed = -1.5
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Pr" = (
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -2025,6 +2228,11 @@
 "PI" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"Qd" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/water,
+/area/f13/caves)
 "Qh" = (
 /obj/effect/decal/fakelattice,
 /turf/open/indestructible/ground/inside/subway,
@@ -2038,8 +2246,13 @@
 "Qk" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/ash/large,
+/obj/effect/decal/cleanable/oil/slippery,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"Qr" = (
+/obj/structure/decoration/shock,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
 "QB" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -2066,6 +2279,7 @@
 	item_color = "#C1C1C1"
 	},
 /obj/item/defibrillator/compact/combat/loaded,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -2089,11 +2303,10 @@
 	anchored = 1;
 	can_be_unanchored = 1
 	},
-/obj/item/gun/energy/laser/aer14,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/armor/random_high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "QU" = (
@@ -2123,6 +2336,13 @@
 /mob/living/simple_animal/hostile/raider/thief,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"RF" = (
+/mob/living/simple_animal/hostile/raider/ranged/legendary{
+	aggro_vision_range = 15;
+	obj_damage = 300
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "RH" = (
 /obj/item/paper,
 /obj/item/paper/crumpled,
@@ -2135,6 +2355,7 @@
 /area/f13/bunker)
 "RR" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/raider/thief,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -2209,6 +2430,10 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
+"TH" = (
+/obj/structure/decoration/warning,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "TO" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2288,6 +2513,7 @@
 /area/f13/tunnel)
 "Vd" = (
 /obj/item/fishingrod,
+/mob/living/simple_animal/hostile/raider/thief,
 /turf/open/water,
 /area/f13/tunnel)
 "Vp" = (
@@ -2310,15 +2536,28 @@
 	anchored = 1;
 	can_be_unanchored = 1
 	},
-/obj/item/gun/ballistic/automatic/m1garand/oldglory,
+/obj/item/gun/ballistic/automatic/m1garand/oldglory{
+	desc = "Arguably the most patriotic garand in existence, flag and well-known satisfying ping included, all the while hitting like a truck";
+	name = "M1 Garand"
+	},
 /obj/item/clothing/suit/armor/f13/battlecoat,
 /obj/item/ammo_box/a762box,
 /obj/item/ammo_box/a762box,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"VL" = (
+/obj/structure/girder/reinforced,
+/obj/structure/decoration/rag,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "VN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/raider/ranged/legendary,
+/mob/living/simple_animal/hostile/raider/ranged/legendary{
+	aggro_vision_range = 15;
+	obj_damage = 300
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -2331,14 +2570,22 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
+"Wj" = (
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/water,
+/area/f13/caves)
 "WG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
-"WY" = (
-/obj/structure/nest/deathclaw{
-	desc = "A nest... full of deathclaws. Genuine pain."
+"WO" = (
+/obj/structure/decoration/rag{
+	icon_state = "skulls"
 	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
+"WY" = (
+/obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Xa" = (
@@ -2357,9 +2604,18 @@
 /mob/living/simple_animal/hostile/raider/biker,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"Xn" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
 "Xr" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/deathclaw/mother{
+	speed = -1.5
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Xs" = (
@@ -2372,12 +2628,22 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
+"XC" = (
+/obj/structure/simple_door/metal/ventilation,
+/obj/structure/barricade/wooden/planks/pregame,
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "XE" = (
 /mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "XH" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "XJ" = (
@@ -2462,6 +2728,7 @@
 "ZB" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/sentrybot{
+	aggro_vision_range = 15;
 	faction = list("raider")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -2497,7 +2764,9 @@
 /area/f13/radiation)
 "ZZ" = (
 /mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
+	aggro_vision_range = 15;
+	faction = list("raider");
+	obj_damage = 300
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -2886,7 +3155,7 @@ QU
 QU
 Yn
 Yn
-Yn
+Qr
 qQ
 Yn
 Yn
@@ -3277,7 +3546,7 @@ Yn
 Xy
 aJ
 pC
-yg
+Nf
 Hw
 Yn
 QU
@@ -3353,7 +3622,7 @@ Yn
 vI
 Yn
 gP
-PI
+ll
 yu
 Yn
 QU
@@ -3383,13 +3652,13 @@ nQ
 wI
 uL
 Cr
-Yn
+kI
 Yn
 Cc
-Yn
+Xn
 Yn
 op
-Yn
+WO
 Yn
 mx
 Yn
@@ -3420,7 +3689,7 @@ BH
 BH
 kE
 wI
-Cr
+gc
 FV
 vj
 Tq
@@ -3457,10 +3726,10 @@ oo
 BH
 BH
 wI
-Cr
+Jd
 Em
 Ps
-UM
+IR
 Tq
 Tq
 Tq
@@ -3543,7 +3812,7 @@ Yn
 Yn
 Yn
 st
-Yn
+kI
 Yn
 Pv
 Lg
@@ -3611,7 +3880,7 @@ nQ
 vb
 Sx
 Tq
-Yn
+kI
 hc
 XE
 vS
@@ -3695,7 +3964,7 @@ lo
 PI
 Yn
 po
-Yn
+WO
 LR
 Yn
 QU
@@ -3725,7 +3994,7 @@ db
 Sx
 cW
 Tq
-Yn
+cr
 Yn
 Yn
 Yn
@@ -3777,7 +4046,7 @@ Yn
 Yn
 Yn
 Yn
-Yn
+WO
 Yn
 Yn
 Yn
@@ -3796,7 +4065,7 @@ BH
 "}
 (35,1,1) = {"
 QU
-nQ
+ne
 pv
 kE
 mP
@@ -3805,7 +4074,7 @@ uz
 PI
 bE
 Cx
-Yn
+Dm
 vB
 DV
 XJ
@@ -3820,7 +4089,7 @@ Za
 ki
 ki
 Rq
-Yn
+Jt
 by
 Yn
 pe
@@ -3850,7 +4119,7 @@ Yn
 Yn
 vk
 Yn
-Yn
+kI
 Yn
 mt
 GT
@@ -3858,7 +4127,7 @@ lw
 jj
 iT
 SS
-op
+XC
 Af
 op
 pC
@@ -3896,11 +4165,11 @@ sH
 xv
 Jj
 eU
-Yn
+Jt
 dp
 Yn
 aU
-pC
+qb
 vh
 nc
 Yn
@@ -3950,7 +4219,7 @@ BH
 QU
 QU
 nQ
-II
+QO
 he
 Ko
 fV
@@ -3976,7 +4245,7 @@ Yn
 yI
 Yn
 tG
-IG
+rE
 RU
 Ni
 Yn
@@ -4000,7 +4269,7 @@ Zo
 Yn
 Yn
 Yn
-zH
+VL
 dp
 Yn
 Yn
@@ -4032,7 +4301,7 @@ Sx
 Tt
 KK
 sK
-PI
+RF
 zz
 dT
 zH
@@ -4045,7 +4314,7 @@ Yn
 Yn
 Yn
 Yn
-Yn
+kI
 Yn
 Yn
 Yn
@@ -4064,7 +4333,7 @@ BH
 QU
 BH
 nQ
-kE
+je
 vv
 QN
 Tt
@@ -4108,16 +4377,16 @@ Sx
 Yn
 Yn
 Yn
+AU
 Yn
 Yn
+Jt
 Yn
 Yn
-Yn
-Yn
-Yn
+kI
 Yn
 zF
-Yn
+Jt
 Yn
 Yn
 Yn
@@ -4164,7 +4433,7 @@ uO
 pC
 ka
 YP
-Qh
+zZ
 BH
 BH
 BH
@@ -4180,7 +4449,7 @@ BH
 BH
 wI
 wI
-zX
+zi
 kE
 Tq
 cW
@@ -4188,7 +4457,7 @@ Gp
 Gx
 Tq
 oO
-yg
+Nf
 pC
 pC
 ZB
@@ -4197,8 +4466,8 @@ ck
 dc
 Pr
 PI
-IR
 PI
+BM
 PI
 KA
 EO
@@ -4256,14 +4525,14 @@ BH
 BH
 Yn
 Dh
+Jt
 Yn
 Yn
 Yn
 Yn
 Yn
 Yn
-Yn
-Yn
+TH
 Yn
 Yn
 jB
@@ -4294,7 +4563,7 @@ BH
 BH
 Pv
 Qh
-ck
+jE
 HX
 eu
 dx
@@ -4305,7 +4574,7 @@ BH
 WG
 Ed
 ck
-Jf
+uG
 yW
 WG
 ck
@@ -4395,8 +4664,8 @@ BH
 BH
 BH
 BH
-DD
-zi
+Wj
+cA
 QU
 QU
 BH
@@ -4564,17 +4833,17 @@ QU
 QU
 BH
 BH
-cA
+mn
 sR
 sR
 sR
 sR
 lP
 DD
+Wj
 DD
 DD
-DD
-DD
+Wj
 sR
 sR
 sR
@@ -4601,8 +4870,8 @@ BH
 BH
 BH
 BH
-sR
-cA
+WY
+mn
 BH
 BH
 BH
@@ -4617,8 +4886,8 @@ DD
 DD
 cA
 sR
-lP
-je
+Qd
+DD
 sR
 sR
 yp
@@ -4647,7 +4916,7 @@ QU
 BH
 BH
 sR
-WY
+sR
 cA
 cA
 sR
@@ -4683,7 +4952,7 @@ QU
 QU
 Hr
 cA
-cA
+Gt
 sR
 BH
 BH

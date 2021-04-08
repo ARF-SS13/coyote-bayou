@@ -223,7 +223,7 @@
 			outrightfailchance = 1
 			artifactrolled = FALSE
 			if(user.mind.skill_holder)
-				user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 50, 10000000, silent = FALSE)
+				user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 150, 10000000, silent = FALSE)
 			break
 
 /obj/structure/anvil/debugsuper
@@ -270,8 +270,8 @@
 	desc = "A big block of sandstone. Useable as an anvil."
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
-	anvilquality = -1
-	itemqualitymax = 2
+	anvilquality = 1
+	itemqualitymax = 8
 
 /obj/structure/anvil/obtainable/basalt
 	name = "basalt brick anvil"

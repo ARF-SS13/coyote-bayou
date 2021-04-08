@@ -434,6 +434,42 @@
 	environment = 6
 	grow_chance = 5
 
+/area/f13/brotherhood/rnd
+	name = "Brotherhood of Steel RnD Department"//Brother Hood
+	icon_state = "brotherhoodrnddepartment"
+
+/area/f13/brotherhood/offices1st
+	name = "Brotherhood of Steel 1st Floor Offices"//Brother Hood
+	icon_state = "brotherhoodoffices1st"
+
+/area/f13/brotherhood/offices2nd
+	name = "Brotherhood of Steel 1st Floor Offices"//Brother Hood
+	icon_state = "brotherhoodoffices2nd"
+
+/area/f13/brotherhood/surface
+	name = "Brotherhood of Steel Surface Outpost"//Brother Hood
+	icon_state = "brotherhood"
+
+/area/f13/brotherhood/medical
+	name = "Brotherhood of Steel Medbay"//Brother Hood
+	icon_state = "brotherhoodmedbay"
+
+/area/f13/brotherhood/operations
+	name = "Brotherhood of Steel Operations Department"//Brother Hood
+	icon_state = "brotherhoodoperationsdepartment"
+
+/area/f13/brotherhood/leisure
+	name = "Brotherhood of Steel Leisure Areas"//Brother Hood
+	icon_state = "brotherhoodleisure"
+
+/area/f13/brotherhood/reactor
+	name = "Brotherhood of Steel Reactor"//Brother Hood
+	icon_state = "brotherhoodreactor"
+
+/area/f13/brotherhood/mining
+	name = "Brotherhood of Steel Mining"//Brother Hood
+	icon_state = "brotherhoodmining"
+
 /area/f13/enclave
 	name = "Enclave"
 	icon_state = "enclave"

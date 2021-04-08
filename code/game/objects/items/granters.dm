@@ -62,6 +62,7 @@
 /obj/item/book/granter/trait
 	var/granted_trait
 	var/traitname = "being cool"
+	var/list/crafting_recipe_types = list()
 
 /obj/item/book/granter/trait/already_known(mob/user)
 	if(!granted_trait)
@@ -75,8 +76,15 @@
 	to_chat(user, "<span class='notice'>You start reading about [traitname]...</span>")
 
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
+	. = ..()
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
+	if(!user.mind)
+		return
+	for(var/crafting_recipe_type in crafting_recipe_types)
+		var/datum/crafting_recipe/R = crafting_recipe_type
+		user.mind.teach_crafting_recipe(crafting_recipe_type)
+		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
 	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
@@ -592,11 +600,11 @@
 
 /obj/item/book/granter/crafting_recipe/gunsmith_four
 	name = "Guns and Bullets, Part 4"
-	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them, allowing the reader to craft weapon crafting components. It's barely holding up, and looks like only one person can study the knowledge from it."
+	desc = "An extremely rare issue of Guns and Bullets, showing some design flaws of weapons and how to rectify them. It's barely holding up, and looks like only one person can study the knowledge from it."
 	icon_state = "gab4"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
+	//crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
 
 // New Blueprints, yay! -Superballs
 /obj/item/book/granter/crafting_recipe/blueprint
@@ -772,6 +780,23 @@
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
+	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+
+/obj/item/book/granter/trait/lowsurgery
+	name = "Surgery for Wastelanders"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_LOW
+	traitname = "lowsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+
+/obj/item/book/granter/trait/midsurgery
+	name = "Surgery for Experts"
+	desc = "A useful book on surgery."
+	oneuse = TRUE
+	granted_trait = TRAIT_SURGERY_MID
+	traitname = "midsurgery"
+	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
 
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"

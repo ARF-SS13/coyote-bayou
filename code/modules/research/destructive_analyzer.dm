@@ -139,10 +139,10 @@ Note: Must be placed within 3 tiles of the R&D Console
 			return FALSE
 		if(QDELETED(loaded_item) || QDELETED(linked_console) || !user.Adjacent(linked_console) || QDELETED(src))
 			return FALSE
-		var/loaded_type = loaded_item.type
+		//var/loaded_type = loaded_item.type
 		if(destroy_item(loaded_item))
 			linked_console.stored_research.add_point_list(point_value)
-			linked_console.stored_research.deconstructed_items[loaded_type] = point_value
+			//linked_console.stored_research.deconstructed_items[loaded_type] = point_value
 	else if(id == RESEARCH_DEEP_SCAN_ID)
 		var/list/return_list = list()
 		. = SEND_SIGNAL(loaded_item, COMSIG_ITEM_DECONSTRUCTOR_DEEPSCAN, src, user, return_list)

@@ -20,6 +20,8 @@
 	bitesize = 6
 	filling_color = "#FA8072"
 	foodtype = MEAT
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("fish" = 1)
 
 /obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
 	. = ..()
@@ -80,12 +82,18 @@
 	name = "lobster deluxe"
 	desc = "A fancy lobster dish, served with some greens and a lemon."
 	icon_state = "lobster_steamed_deluxe"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("fish" = 2, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRUIT
 
 /obj/item/reagent_containers/food/snacks/fishing/lobster_roll
 	name = "lobster roll"
 	desc = "A wonderful cooked lobster inbetween a toasted roll."
 	icon_state = "lobster_roll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	tastes = list("fish" = 1, "breadcrumbs" = 1)
 	foodtype = MEAT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/fishfingers

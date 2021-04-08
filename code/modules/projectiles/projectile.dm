@@ -836,6 +836,11 @@
 	var/obj/item/projectile/P = A
 	return istype(P) && P.is_reflectable
 
+//Check armor penetration
+/proc/check_armor_penetration(atom/A)
+	var/obj/item/projectile/P = A
+	return istype(P) && P.armour_penetration
+
 /obj/item/projectile/bullet/F13
 	name = "bullet"
 //Bullets library

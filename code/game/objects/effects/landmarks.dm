@@ -836,6 +836,20 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Villager"
 	icon_state = "Villager"
 
+/obj/effect/landmark/start/f13/hunter
+	name = "Hunter"
+	icon_state = "Hunter"
+
+/obj/effect/landmark/start/f13/Hhunter
+	name = "Head Hunter"
+	icon_state = "Head Hunter"
+
+/obj/effect/landmark/start/f13/druid
+	name = "Druid"
+
+/obj/effect/landmark/start/f13/spiritpledged
+	name = "Spirit-Pledged"
+
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator
 	name = "Followers Administrator"
@@ -851,11 +865,3 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
-
-/obj/effect/landmark/start/f13/hunter
-	name = "Hunter"
-	icon_state = "Hunter"
-
-/obj/effect/landmark/start/f13/Hhunter
-	name = "Head Hunter"
-	icon_state = "Head Hunter"

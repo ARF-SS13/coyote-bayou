@@ -180,6 +180,18 @@
 	name = "R&D Console (Computer Board)"
 	build_path = /obj/machinery/computer/rdconsole/core
 
+/obj/item/circuitboard/computer/rdconsole/bos
+	name = "R&D Console (Computer Board)"
+	build_path = /obj/machinery/computer/rdconsole/core/bos
+
+/obj/item/circuitboard/computer/rdconsole/vault
+	name = "R&D Console (Computer Board)"
+	build_path = /obj/machinery/computer/rdconsole/core/vault
+
+/obj/item/circuitboard/computer/rdconsole/followers
+	name = "R&D Console (Computer Board)"
+	build_path = /obj/machinery/computer/rdconsole/core/followers
+
 /obj/item/circuitboard/computer/rdconsole/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		if(build_path == /obj/machinery/computer/rdconsole/core)

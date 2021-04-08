@@ -55,12 +55,12 @@
 	desc = "A pouch containing some scoops of blackpowder and empty shell casings."
 	icon_state = "sheet-powder"
 	singular_name = "bullet remnant"
-	max_amount = 120
+	max_amount = 200
 	full_w_class = WEIGHT_CLASS_SMALL
 	merge_type = /obj/item/stack/crafting/powder
 
 GLOBAL_LIST_INIT(powder_recipes, list ( \
-	new/datum/stack_recipe("Scavenge blackpowder", /obj/item/reagent_containers/glass/bottle/blackpowder, 60),\
+	new/datum/stack_recipe("Scavenge blackpowder", /obj/item/reagent_containers/glass/bottle/blackpowder, 100),\
 ))
 
 ///obj/item/stack/crafting/powder/Initialize(mapload, new_amount, merge = TRUE)

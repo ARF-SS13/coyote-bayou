@@ -212,3 +212,31 @@
 	aggro_vision_range = 10
 	attack_verb_simple = "shoots"
 	attack_sound = "punch"
+
+/mob/living/simple_animal/hostile/ghoul/wyomingghost
+	name = "ghost soldier"
+	desc = "A figure clad in armor that stands silent except for the slight wheezing coming from them, a dark orange and black liquid pumps through a clear tube into the gas mask. The armor they wear seems to be sealed to their skin."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "wyomingghost"
+	icon_living = "wyomingghost"
+	icon_dead = "wyomingghost_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	robust_searching = 1
+	turns_per_move = 5
+	speak_emote = list("wheezes")
+	emote_see = list("stares")
+	a_intent = INTENT_HARM
+	maxHealth = 150
+	health = 150
+	speed = 2
+	harm_intent_damage = 8
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	attack_verb_simple = "attacks"
+	attack_sound = 'sound/hallucinations/growl1.ogg'
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	unsuitable_atmos_damage = 20
+	gold_core_spawnable = HOSTILE_SPAWN
+	faction = list("supermutant","ghoul")
+	decompose = FALSE
+	sharpness = SHARP_EDGED //They need to cut their finger nails

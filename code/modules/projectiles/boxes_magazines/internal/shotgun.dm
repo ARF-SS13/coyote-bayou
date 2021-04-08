@@ -68,19 +68,35 @@
 	name = ".44 magnum internal tube magazine" //trail carbine
 	ammo_type = /obj/item/ammo_casing/m44
 	caliber = "44"
-	max_ammo = 8
+	max_ammo = 12
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = "357"
-	max_ammo = 10
+	max_ammo = 12
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube4570
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
 	caliber = "4570"
-	max_ammo = 8
+	max_ammo = 10
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/lasmusket
+	name = "lasmusket magazine"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
+	caliber = "lasmusket"
+	max_ammo = 6
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/plasmacaster
+	name = "plasmacaster magazine"
+	desc = "Oh god, this shouldn't be here"
+	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
+	caliber = "plasmacaster"
+	max_ammo = 2
 	multiload = 1

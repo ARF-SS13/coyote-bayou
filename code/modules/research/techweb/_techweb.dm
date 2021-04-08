@@ -65,7 +65,7 @@
 
 /datum/techweb/science	//science tech channel
 	id = "SCIENCE"
-	organization = "Vault Tech"
+	organization = "Global"
 
 /datum/techweb/bos	//BOS tech "channel"
 	id = "BOS"

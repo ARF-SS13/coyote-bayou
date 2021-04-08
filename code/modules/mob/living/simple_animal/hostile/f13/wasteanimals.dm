@@ -708,7 +708,7 @@
 	icon_living = "mirelurkbaby"
 	icon_dead = "mirelurkbaby_d"
 	icon_gib = "gib"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
 	speed = 1
 	maxHealth = 50
 	health = 50

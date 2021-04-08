@@ -606,7 +606,7 @@
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
 	desc = "Designed to quickly reload repeaters."
-	icon_state = "44tube"
+	icon_state = "357tube"
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 7
@@ -701,3 +701,19 @@
 	icon_state = "38box" //temporary until new sprite comes along
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
+
+/obj/item/ammo_box/lasmusket
+	name = "Battery Box (Musket)"
+	icon_state = "Batbox"
+	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
+	max_ammo = 18
+	custom_materials = list(MAT_METAL = 1000)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/plasmamusket
+	name = "Battery Box (Plasma)"
+	icon_state = "Batbox"
+	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
+	max_ammo = 6
+	custom_materials = list(MAT_METAL = 1000)
+	w_class = WEIGHT_CLASS_NORMAL

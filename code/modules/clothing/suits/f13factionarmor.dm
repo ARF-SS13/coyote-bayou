@@ -87,6 +87,12 @@
 	icon_state = "combatduster"
 	item_state = "combatduster"
 
+/obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
+	name = "Patrol Duster"
+	desc = "(IV) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
+	icon_state = "patrolduster"
+	item_state = "patrolduster"
+
 /obj/item/clothing/suit/armor/f13/raider/combatduster/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -266,7 +272,8 @@
 	name = "paladin-slayer centurion armor"
 	desc = "(VII) The armor of a Centurion who has bested one or more Brotherhood Paladins, adding pieces of his prizes to his own defense. The symbol of the Legion is crudely painted on this once-marvelous suit of armor."
 	icon_state = "palacent"
-	armor = list("tier" = 7, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	slowdown = -0.13
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
@@ -414,6 +421,13 @@
 	item_state = "cowboyrang"
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = -0.14
+
+/obj/item/clothing/suit/armor/f13/modif_r_vest
+	name = "subdued ranger vest"
+	desc = "(IV) A quaint little jacket and scarf worn by NCR trail rangers. This one has the leather bleached and the scarf dyed black."
+	icon_state = "modif_r_vest"
+	item_state = "modif_r_vest"
+	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	name = "ranger patrol armor"

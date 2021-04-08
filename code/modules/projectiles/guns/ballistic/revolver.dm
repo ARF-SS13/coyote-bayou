@@ -700,6 +700,11 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 15
 
+/obj/item/gun/ballistic/revolver/pipe_rifle/attackby(obj/item/A, mob/user, params)
+	..()
+	if(A.tool_behaviour == TOOL_SAW || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+
 /obj/item/gun/ballistic/revolver/police
 	name = "police pistol"
 	desc = "An old pre-war double action police revolver. Uses .357 and .38 special rounds."

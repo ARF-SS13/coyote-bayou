@@ -475,6 +475,25 @@
 
 // Fallout 13 //
 
+//Was intended for Legion replacement to Uzis/10mm SMGs. No current implementation.
+/obj/item/gun/ballistic/automatic/cg45
+	name = "carl gustaf 10mm"
+	desc = "Post-war submachine gun made in Flagstaff workshops based on a simple old design. Chambered in 10mm."
+	icon_state = "cg45"
+	item_state = "cg45"
+	mag_type = /obj/item/ammo_box/magazine/cg45
+	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_MEDIUM
+	force = 15
+	burst_size = 2
+	fire_delay = 5
+	burst_shot_delay = 2.5
+	spread = 9
+	can_suppress = FALSE
+	can_attachments = TRUE
+	spread = 9
+
 /obj/item/gun/ballistic/automatic/greasegun
 	name = "m3a1 grease gun"
 	desc = "An inexpensive submachine gun chambered in .45 ACP. Slow fire rate allows the operator to conserve ammunition in controllable bursts."
@@ -978,6 +997,8 @@
 	icon_state = "gold_sniper"
 	item_state = "gold_sniper"
 
+
+
 /obj/item/gun/ballistic/automatic/autopipe
 	name = "\improper auto pipe rifle"
 	desc = "An improvised rifle improved with automatic capability, highly innacurate and slow to fire"
@@ -992,6 +1013,7 @@
 	burst_size = 4
 	fire_delay = 30
 	burst_shot_delay = 3
+	sawn_desc = "An improvised rifle improved with automatic capability, highly innacurate and slow to fire. This one has been sawn off"
 	//automatic = 1
 	spread = 24
 

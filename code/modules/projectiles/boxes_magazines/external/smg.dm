@@ -81,6 +81,14 @@
 ---Fallout 13---
 */
 
+/obj/item/ammo_box/magazine/cg45
+	name = "Carl Gustaf magazine (10mm)"
+	icon_state = "cg45"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 36
+	multiple_sprites = 2
+
 /obj/item/ammo_box/magazine/greasegun
 	name = "45 submachine gun magazine (.45)"
 	icon_state = "grease"

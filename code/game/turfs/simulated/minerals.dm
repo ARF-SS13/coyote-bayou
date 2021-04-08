@@ -238,7 +238,7 @@
 	mineralChance = 6
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
-		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40,
+		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40, /turf/closed/mineral/lead = 30,
 		/*/turf/closed/mineral/gibtonite = 2, *//turf/closed/mineral/bscrystal = 1)
 
 /turf/closed/mineral/random/low_chance/earth_like
@@ -493,6 +493,12 @@
 	turf_type = /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	baseturfs = /turf/open/floor/plating/asteroid/snow/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/closed/mineral/lead
+	mineralType = /obj/item/stack/ore/lead
+	spreadChance = 5
+	spread = 1
+	scan_state = "rock_Lead"
 
 /turf/closed/mineral/silver
 	mineralType = /obj/item/stack/ore/silver

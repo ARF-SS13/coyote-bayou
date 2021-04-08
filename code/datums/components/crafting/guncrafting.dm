@@ -63,6 +63,7 @@
 	machine_tool_behaviour = TOOL_WORKBENCH
 	var/wrenchable = 1
 
+
 /obj/machinery/workbench/can_be_unfasten_wrench(mob/user, silent)
 	if (!wrenchable)  // case also covered by NODECONSTRUCT checks in default_unfasten_wrench
 		return CANT_UNFASTEN
@@ -80,6 +81,21 @@
 		return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
+	if(istype(W,/obj/item/salvage))
+		var/obj/item/salvage/S = W
+		if(do_after(user,50,target = src))		
+			if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
+				var/obj/I = pick(S.Loot)
+				new I (src.loc)
+			var/obj/I = pick(S.Loot)
+			new I (src.loc)
+			if(prob(50))
+				var/obj/J = pick(S.Loot)
+				new J (src.loc)
+				if(prob(30))
+					var/obj/K = pick(S.Loot)
+					new K (src.loc)
+			qdel(W)
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1
 

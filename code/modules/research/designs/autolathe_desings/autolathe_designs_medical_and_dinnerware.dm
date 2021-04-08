@@ -70,7 +70,7 @@
 	id = "largesyringe"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 20, /datum/material/glass = 40)
-	build_path = /obj/item/scalpel
+	build_path = /obj/item/reagent_containers/syringe/large
 	category = list("initial", "Medical")
 
 /datum/design/xlargesyringex
@@ -78,7 +78,7 @@
 	id = "xlargesyringe"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 30, /datum/material/glass = 60)
-	build_path = /obj/item/scalpel
+	build_path = /obj/item/reagent_containers/syringe/xlarge
 	category = list("initial", "Medical")
 
 
