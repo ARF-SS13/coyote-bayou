@@ -230,6 +230,15 @@
 	icon_state = "circle_glasses"
 	item_state = "circle_glasses"
 
+/obj/item/clothing/glasses/regular/protected
+	name = "prescription sunglasses"
+	desc = "Regular glasses with tinted glasses to help prevent from ever present sun and bright flashes."
+	icon_state = "presc_sun"
+	item_state = "presc_sun"
+	flash_protect = 1
+	tint = 1
+	darkness_view = 1
+
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses

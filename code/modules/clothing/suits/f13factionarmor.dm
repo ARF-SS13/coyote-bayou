@@ -443,6 +443,13 @@
 	icon_state = "thaxarmor"
 	item_state = "thaxarmor"
 
+/obj/item/clothing/suit/armor/f13/combat/ncr_patrol/scout
+	name = "ranger scout armor"
+	desc = "(VI) An old refurbished third scouts armor, now with rangers bear on its chest and bit of added plating"
+	icon_state = "refurb_scout"
+	item_state = "refurb_scout"
+	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "veteran ranger combat armor"
 	desc = "(VII) The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."

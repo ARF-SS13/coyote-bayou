@@ -71,6 +71,12 @@
 	icon_state = "BoScape"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
+/obj/item/clothing/neck/cloak/ranger
+	name = "NCR ranger cape"
+	desc = "Ranger cape made from what looks like old poncho fitted with star, stripes and a bear. Most likely has a holster hidden underneath."
+	icon_state = "ncrr_cape"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
+
 /obj/item/clothing/neck/cloak/chiefcloak
 	name = "wayfarer cloak"
 	desc = "A symbol of the authority of the Wayfarer Chief."
