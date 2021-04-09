@@ -9,7 +9,7 @@
 	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
-	var/nutridrain = 0.5      // How many units of nutrient will be drained in the tray //test
+	var/nutridrain = 0.3      // How many units of nutrient will be drained in the tray //test // lowering it further
 	var/maxnutri = 10		//The maximum nutrient of water in the tray
 	var/pestlevel = 0		//The amount of pests in the tray (max 10)
 	var/weedlevel = 0		//The amount of weeds in the tray (max 10)
@@ -119,7 +119,7 @@
 			// Nutrients deplete at a constant rate, since new nutrients can boost stats far easier.
 			apply_chemicals(lastuser)
 			if(self_sustaining)
-				reagents.remove_any(min(0.5, nutridrain))
+				reagents.remove_any(min(0.3, nutridrain))
 			else
 				reagents.remove_any(nutridrain)
 
@@ -230,7 +230,7 @@
 			if(prob(5))  // On each tick, there's a 5 percent chance the pest population will increase
 				adjustPests(1 / rating)
 		else
-			if(waterlevel > 10 && reagents.total_volume > 0 && prob(10))  // If there's no plant, the percentage chance is 10%
+			if(waterlevel > 10 && reagents.total_volume > 0 && prob(3))  // If there's no plant, the percentage chance is 10% / SIKE, THAT'S WHAT YOU THOUGHT. 3% NOW.
 				adjustWeeds(1 / rating)
 
 		// Weeeeeeeeeeeeeeedddssss
@@ -697,7 +697,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
 	name = "soil"
-	desc = "A patch of dirt."
+	desc = "A patch of dirt. <b>Alt-Click</b> to empty the soil's nutrients."
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "soil"
 	circuit = null
@@ -722,7 +722,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
 	name = "soil"
-	desc = "A patch of dirt."
+	desc = "A patch of dirt. <b>Alt-Click</b> to empty the soil's nutrients."
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "soil"
 	circuit = null
