@@ -216,7 +216,7 @@
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/flag = alert(user, "Please choose which faction flag you wish to create.", "Flag type", "NCR", "Legion", "Oasis", "BOS", "Vault-Tec Cities",)
+				var/flag = alert(user, "Please choose which faction flag you wish to create.", "NCR", "Legion", "Oasis", "BOS",)
 				switch(flag)
 					if("NCR")
 						name = "NCR flag"
@@ -242,12 +242,6 @@
 						icon_state = "bosflag"
 						item_state = "bosflag"
 						faction = "BOS"
-					if("Vault-Tec Cities")
-						name = "Vault-Tec Cityscape Coalition flag"
-						desc = "A flag reminiscent of that from old America. The symbol of Vault-Tec appropriated in place of the old stars, 4 stripes in 2 colours."
-						icon_state = "vtccflag"
-						item_state = "vtccflag"
-						faction = "VTCC"
 				update_icon()
 	else
 		attack_hand(user)
