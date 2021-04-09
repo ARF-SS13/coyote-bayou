@@ -49,19 +49,22 @@
 	. = TRUE
 	if(replaced_by == /datum/surgery)
 		return FALSE
-		//
-	if(requires_trait>0)
-		if(HAS_TRAIT(user,TRAIT_SURGERY_LOW)||HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
+		//	
+		
+	if(requires_trait>2)
+		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
 			return TRUE
 		else 
 			return FALSE
+
 	if(requires_trait>1)
 		if(HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
 			return TRUE
 		else 
 			return FALSE
-	if(requires_trait>2)
-		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
+
+	if(requires_trait>0)
+		if(HAS_TRAIT(user,TRAIT_SURGERY_LOW)||HAS_TRAIT(user,TRAIT_SURGERY_MID)||HAS_TRAIT(user,TRAIT_SURGERY_HIGH))
 			return TRUE
 		else 
 			return FALSE

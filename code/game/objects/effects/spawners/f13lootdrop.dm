@@ -897,7 +897,6 @@
 				/obj/effect/spawner/bundle/f13/needler,
 				/obj/effect/spawner/bundle/f13/trail,
 				/obj/effect/spawner/bundle/f13/revolver44,
-				/obj/effect/spawner/bundle/f13/mp5,
 				/obj/effect/spawner/bundle/f13/beretta/select,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/neostead,
@@ -961,13 +960,6 @@
 				/obj/item/ammo_box/m44
 				)
 
-/obj/effect/spawner/bundle/f13/mp5
-	name = "mp5 and ammo spawner"
-	items = list(
-				/obj/item/gun/ballistic/automatic/mp5,
-				/obj/item/ammo_box/magazine/uzim9mm
-				)
-
 /obj/effect/spawner/bundle/f13/beretta/select
 	name = "select-fire beretta pistol and ammo spawner"
 	items = list(
@@ -1008,12 +1000,12 @@
 				/obj/effect/spawner/bundle/f13/aer9,
 				/obj/effect/spawner/bundle/f13/infiltrator,
 				/obj/effect/spawner/bundle/f13/brushgun,
-				/obj/effect/spawner/bundle/f13/ams,
 				/obj/effect/spawner/bundle/f13/rangemaster,
 				/obj/effect/spawner/bundle/f13/riotshotgun,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/plasmaglock,
 				/obj/item/gun/medbeam,
+				/obj/item/gun/ballistic/automatic/mp5,
 				/obj/effect/spawner/bundle/f13/wattz2k
 	)
 
@@ -1066,13 +1058,6 @@
 				/obj/item/ammo_box/tube/c4570
 				)
 
-/obj/effect/spawner/bundle/f13/ams
-	name = "anti-material shotgun and ammo spawner"
-	items = list(
-				/obj/item/gun/ballistic/shotgun/antimateriel,
-				/obj/item/ammo_box/a50MG
-				)
-
 /obj/effect/spawner/bundle/f13/rangemaster
 	name = "rangemaster rifle and ammo spawner"
 	items = list(
@@ -1120,6 +1105,7 @@
 				/obj/item/gun/energy/laser/scatter,
 				/obj/item/gun/ballistic/revolver/hunting,
 				/obj/item/gun/ballistic/automatic/bozar,
+				/obj/item/gun/ballistic/shotgun/antimateriel,
 				/obj/item/gun/energy/laser/aer14
 				)
 

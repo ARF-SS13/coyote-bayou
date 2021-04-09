@@ -211,6 +211,8 @@
 #define TRAIT_NO_PROCESS_FOOD	"no-process-food" // You don't get benefits from nutriment, nor nutrition from reagent consumables
 #define TRAIT_NICE_SHOT			"nice_shot" //hnnnnnnnggggg..... you're pretty good...
 #define TRAIT_PERFECT_ATTACKER	"perfect_attacker"
+#define TRAIT_BUFFOUT_BUFF		"buffout_buff"
+#define TRAIT_UNARMED_WEAPON	"unarmed_weapon"
 
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
@@ -245,6 +247,7 @@
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 #define TRAIT_HARD_YARDS        "hard_yards"
 #define	TRAIT_LIFEGIVER			"lifegiver"
+
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
 #define TRAIT_SURGERY_HIGH		"highsurgery"

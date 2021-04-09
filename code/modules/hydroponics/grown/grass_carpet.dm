@@ -9,6 +9,7 @@
 	lifespan = 40
 	endurance = 40
 	production = 2
+	maturation = 3
 	yield = 5
 	instability = 10
 	growthstages = 2

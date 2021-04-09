@@ -444,3 +444,10 @@
 	name = " FEV bottle"
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
 	list_reagents = list(/datum/reagent/toxin/FEV_solution = 30)
+	
+/obj/item/reagent_containers/glass/bottle/gaia
+	name = "gaia bottle"
+	desc = "A large bottle containing gaia."
+	volume = 60
+	list_reagents = list(/datum/reagent/medicine/gaia = 60)
+
