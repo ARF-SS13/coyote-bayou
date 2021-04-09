@@ -847,7 +847,7 @@
 	desc = "Your private diary, reminding you of the knowledge you previously had."
 	granted_trait = null
 
-/obj/item/book/granter/trait/selection/attack_self(mob/user/living/carbon/human/M)
+/obj/item/book/granter/trait/selection/attack_self(mob/user)
 	var/list/choices = list("Hard Yards","Minor Surgery","Power Armor","Chemistry","Salvager","Melee Expert")
 	if(granted_trait == null)	
 		var/choice = input("Choose a trait:") in choices
