@@ -66,7 +66,7 @@ Great Khan
 	minimal_access = list(ACCESS_KHAN)
 
 	loadout_options = list(
-	/datum/outfit/loadout/pusher,
+	///datum/outfit/loadout/pusher,
 	/datum/outfit/loadout/enforcer,
 	/datum/outfit/loadout/brawler)
 
@@ -83,6 +83,7 @@ Great Khan
 
 /datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
+	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
 	l_pocket = /obj/item/storage/bag/money/small/khan
 	backpack_contents = list(
@@ -110,13 +111,13 @@ Great Khan
 		GLOB.all_gangs |= GK
 		GK.add_member(H)
 		H.gang = GK
-
+/*
 /datum/outfit/loadout/pusher
 	name = "Chemist"
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/beaker/large=2, \
 		/obj/item/book/granter/trait/chemistry=1)
-
+*/
 /datum/outfit/loadout/enforcer
 	name = "Enforcer"
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
@@ -177,6 +178,7 @@ Raider
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+	r_hand = /obj/item/book/granter/trait/selection
 
 /datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -401,11 +403,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
-	r_hand = pick(
-		/obj/item/claymore/machete/pipe, \
-		/obj/item/claymore/machete/golf, \
-		/obj/item/switchblade, \
-		/obj/item/kitchen/knife)
+	r_hand = /obj/item/book/granter/trait/selection
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -423,7 +421,8 @@ Raider
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/pill/radx=1, \
-		/obj/item/storage/bag/money/small/wastelander)
+		/obj/item/storage/bag/money/small/wastelander, \
+		/obj/item/kitchen/knife)
 	suit_store = pick(
 	/obj/item/gun/ballistic/revolver/detective, \
 	/obj/item/gun/ballistic/shotgun/remington, \
