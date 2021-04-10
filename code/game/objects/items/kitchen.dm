@@ -165,7 +165,7 @@
 	throwforce = 25
 	bayonet = TRUE
 
-	/obj/item/kitchen/knife/combat/survival
+/obj/item/kitchen/knife/combat/bayonet
 	name = "bayonet knife"
 	icon_state = "knife_bayonet"
 	item_state = "knife"
@@ -187,7 +187,7 @@
 	icon_state = "knife_trench"
 	item_state = "knife"
 	desc = "This blade is designed for brutal close quarters combat."
-	force = 35
+	force = 37
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
