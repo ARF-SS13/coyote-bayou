@@ -1,42 +1,42 @@
 // 7.62
 /obj/item/projectile/bullet/a762
 	name = "7.62 FMJ bullet"
-	damage = 40 //42
-	armour_penetration = 0.20 //0.22
+	damage = 44 //42
+	armour_penetration = 0.25 //0.22
 	wound_bonus = 20
 	bare_wound_bonus = -20
 
 /obj/item/projectile/bullet/a762/ap
 	name = "7.62 AP bullet"
-	damage = 30 //32
-	armour_penetration = 0.5
+	damage = 37 //32
+	armour_penetration = 0.6
 	wound_bonus = 30
 	bare_wound_bonus = -30
 
 /obj/item/projectile/bullet/a762/jhp
 	name = "7.62 JHP bullet"
-	damage = 50 //48
+	damage = 55 //48
 	armour_penetration = -1
 	wound_bonus = -40
 	bare_wound_bonus = 40
 
 /obj/item/projectile/bullet/a762/sport //.308 Winchester
 	name = ".308 bullet"
-	damage = 32
+	damage = 35
 	armour_penetration = 0.08
 	wound_bonus = 10
 	bare_wound_bonus = -10
 
 /obj/item/projectile/bullet/a762/jsp
 	name = "7.62 JSP bullet"
-	damage = 50 //48
+	damage = 55 //48
 	armour_penetration = 0.1 //0.5
 	wound_bonus = 20
 	bare_wound_bonus = 20
 
 /obj/item/projectile/bullet/a762/match
 	name = "7.62 match bullet"
-	damage = 43 //50
+	damage = 47 //50
 	armour_penetration = 0.4
 	wound_bonus = 25
 	bare_wound_bonus = 25
@@ -97,3 +97,4 @@
 /obj/item/projectile/bullet/c2mm
 	damage = 55
 	armour_penetration = 0.85
+	pixels_per_second = TILES_TO_PIXELS(100)

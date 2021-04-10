@@ -845,7 +845,7 @@
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/garand308
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	fire_delay = 6
+	fire_delay = 4
 	burst_size = 1
 	en_bloc = 1
 	auto_eject = 1

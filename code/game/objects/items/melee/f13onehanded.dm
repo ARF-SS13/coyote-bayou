@@ -63,7 +63,7 @@
 /obj/item/claymore/machete
 	name = "machete"
 	desc = "A makeshift machete made of a lawn mower blade."
-	icon_state = "imp_machete"
+	icon_state = "machete_imp"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	item_state = "salvagedmachete"
@@ -74,6 +74,7 @@
 /obj/item/claymore/machete/reinforced
 	name = "reinforced machete"
 	desc = "A reinforced machete made of high quality steel."
+	icon_state = "machete"
 	force = 35
 	throwforce = 25
 
@@ -197,6 +198,15 @@
 	throw_range = 2
 	throwforce = 20
 	w_class = 2
+
+/obj/item/bostaff/ncr_flag
+	name = "NCR flagpole"
+	desc = "The proud standard of the New California Republic. Used as a tool by patriots, used as a weapon by legends."
+	attack_verb = list("smacked", "thwacked", "democratized", "freedomed")
+	icon_state = "ncr_flag"
+	item_state = "ncr_flag"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 
 /obj/item/claymore/Initialize()
 	. = ..()

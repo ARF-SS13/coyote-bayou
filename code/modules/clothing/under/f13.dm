@@ -189,6 +189,12 @@
 	item_state = "blueranger"
 	item_color = "blueranger"
 
+/obj/item/clothing/under/f13/ranger/erin
+	name = "desert pants"
+	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
+	icon_state = "erin_pants"
+	item_state = "erin_pants"
+
 /obj/item/clothing/under/f13/ncr_formal_uniform/majzirilli
 	name = "Major Zirilli's service uniform"
 	desc = "An immaculately maintained NCRA service uniform, weighted down with golden embellishments signifying their authority."
