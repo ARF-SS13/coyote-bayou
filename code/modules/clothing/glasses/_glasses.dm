@@ -232,7 +232,7 @@
 
 /obj/item/clothing/glasses/regular/protected
 	name = "prescription sunglasses"
-	desc = "Regular glasses with tinted glasses to help prevent from ever present sun and bright flashes."
+	desc = "A pair of tinted glasses to help prevent from the ever present sun and bright flashes."
 	icon_state = "presc_sun"
 	item_state = "presc_sun"
 	flash_protect = 1

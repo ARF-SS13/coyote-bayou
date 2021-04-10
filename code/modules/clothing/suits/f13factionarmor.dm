@@ -445,7 +445,7 @@
 
 /obj/item/clothing/suit/armor/f13/combat/ncr_patrol/scout
 	name = "ranger scout armor"
-	desc = "(VI) An old refurbished third scouts armor, now with rangers bear on its chest and bit of added plating"
+	desc = "(VI) A refurbished set of NCRA 3rd Scouts armor, now with heavier plating together with arm and leg guards. A two-headed bear has been painted on its chest."
 	icon_state = "refurb_scout"
 	item_state = "refurb_scout"
 	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
