@@ -153,7 +153,6 @@
 /obj/item/melee/smith/twohand/pike
 	name = "pike"
 	icon_state = "pike"
-	w_class = WEIGHT_CLASS_HUGE
 	overlay_state = "longhandle"
 	reach = 2 //yeah ok
 	wielded_mult = 1.3
