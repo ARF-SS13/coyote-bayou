@@ -115,12 +115,14 @@
 	icon_state = "halberd"
 	w_class = WEIGHT_CLASS_HUGE
 	overlay_state = "spearhandle"
+	reach = 2 
 	slot_flags = ITEM_SLOT_BACK
-	wielded_mult = 2.5
+	wielded_mult = 1.8
 
 /obj/item/melee/smith/twohand/halberd/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/jousting)
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
 /obj/item/melee/smith/twohand/javelin
 	name = "javelin"
@@ -139,8 +141,9 @@
 	name = "glaive"
 	icon_state = "glaive"
 	overlay_state = "longhandle"
+	reach = 2 
 	slot_flags = ITEM_SLOT_BACK
-	wielded_mult = 2
+	wielded_mult = 1.5
 
 /obj/item/melee/smith/twohand/glaive/ComponentInitialize()
 	. = ..()
@@ -153,6 +156,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	overlay_state = "longhandle"
 	reach = 2 //yeah ok
+	wielded_mult = 1.3
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = SHARP_POINTY
 
@@ -227,7 +231,7 @@
 	overlay_state = "zweihilt"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
 	force = 4
-	wielded_mult = 3 //affected more by quality. a -1 is 25% less damage, a +1 is 25% more. These bonuses are tripled when wielded.
+	wielded_mult = 2 //affected more by quality. a -1 is 25% less damage, a +1 is 25% more. These bonuses are tripled when wielded.
 
 /obj/item/melee/smith/twohand/katana
 	name = "katana"
