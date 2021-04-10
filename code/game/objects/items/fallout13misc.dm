@@ -199,13 +199,24 @@
 	item_state = "locustflag"
 	faction = "Locust"
 
+/obj/item/flag/vtcc
+	name = "Vault-Tec Cityscape Coalition flag"
+	desc = "A flag reminiscent of that from old America. The symbol of Vault-Tec appropriated in place of the old stars sharing their colour, with 4 stripes in 2 colours."
+	icon_state = "vtccflag"
+	item_state = "vtccflag"
+	faction = "VTCC"
+
+/obj/item/flag/vtcc/highvhills
+	name = "High Valley Hills flag"
+	desc = "A flag with two white stripes, blue border and a red centre with a white Vault-Tec logo, turned on its side and stretched out."
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/flag = alert(user, "Please choose which faction flag you wish to create.", "Flag type", "NCR", "Legion", "Oasis",)
+				var/flag = alert(user, "Please choose which faction flag you wish to create.", "NCR", "Legion", "Oasis", "BOS",)
 				switch(flag)
 					if("NCR")
 						name = "NCR flag"
@@ -225,6 +236,12 @@
 						icon_state = "oasisflag"
 						item_state = "oasisflag"
 						faction = "Oasis"
+					if("BOS")
+						name = "BOS flag"
+						desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."
+						icon_state = "bosflag"
+						item_state = "bosflag"
+						faction = "BOS"
 				update_icon()
 	else
 		attack_hand(user)
