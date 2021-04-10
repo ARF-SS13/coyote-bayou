@@ -74,6 +74,8 @@
 	var/account_id
 	var/last_fire_update
 
+	var/busy= FALSE
+
 /// Unarmed parry data for human
 /datum/block_parry_data/unarmed/human
 	parry_respect_clickdelay = TRUE
