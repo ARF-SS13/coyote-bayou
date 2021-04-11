@@ -62,6 +62,57 @@
 //	distro = 1
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 
+/obj/item/melee/unarmed
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
+
+/obj/item/melee/unarmed/equipped(mob/user, slot)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(unarmed_adjusted)
+		mob_overlay_icon = righthand_file
+	if(!unarmed_adjusted)
+		mob_overlay_icon = lefthand_file
+	if(ishuman(user) && slot == SLOT_GLOVES)
+		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh = force + 8 //The +8 damage is what brings up your punch damage to the unarmed weapon's force fully
+			H.dna.species.punchdamagelow = force + 8
+			H.dna.species.attack_sound = hitsound
+			if(sharpness == SHARP_POINTY || sharpness ==  SHARP_EDGED)
+				H.dna.species.attack_verb = pick("slash","slice","rip","tear","cut","dice")
+			if(sharpness == SHARP_NONE)
+				H.dna.species.attack_verb = pick("punch","jab","whack")
+	if(ishuman(user) && slot != SLOT_GLOVES && !H.gloves)
+		REMOVE_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
+		if(!HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
+			H.dna.species.punchdamagehigh = 1
+			H.dna.species.punchdamagelow = 10
+		if(HAS_TRAIT(user, TRAIT_IRONFIST))
+			H.dna.species.punchdamagehigh = 4
+			H.dna.species.punchdamagelow = 11
+		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
+		H.dna.species.attack_verb = "punch"
+
+/obj/item/melee/unarmed/examine(mob/user)
+	. = ..()
+	if(can_adjust_unarmed == TRUE)
+		if(unarmed_adjusted == TRUE)
+			. += "<span class='notice'>Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.</span>"
+		else
+			. += "<span class='notice'>Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.</span>"
+
+/obj/item/melee/unarmed/AltClick(mob/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ishuman(user)))
+		return
+	if(can_adjust_unarmed == TRUE)
+		toggle_unarmed_adjust()
+
+/obj/item/melee/unarmed/proc/toggle_unarmed_adjust()
+	unarmed_adjusted = !unarmed_adjusted
+	to_chat(usr, "<span class='notice'>[src] is ready to be worn on another hand.</span>")
+
 /obj/item/melee/unarmed/brass
 	name = "brass knuckles"
 	desc = "Hardened knuckle grip that is actually made out of steel. They protect your hand, and do more damage, in unarmed combat."
@@ -176,7 +227,7 @@
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_POINTY
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/melee/unarmed/deathclawgauntlet
