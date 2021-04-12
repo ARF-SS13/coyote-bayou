@@ -824,6 +824,7 @@ Auxilia
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/loadout/auxengi
 	name = "Opifex (Blacksmith)"
