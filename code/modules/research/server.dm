@@ -166,21 +166,21 @@
 
 /obj/machinery/rnd/server/bos/Initialize()
 	. = ..()
-	SSresearch.servers |= src
+	SSresearch.BOSservers |= src
 	stored_research = SSresearch.bos_tech //note this lettern
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
 
 /obj/machinery/rnd/server/vault/Initialize()
 	. = ..()
-	SSresearch.servers |= src
+	SSresearch.VAULTservers |= src
 	stored_research = SSresearch.science_tech //note this lettern
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
 
 /obj/machinery/rnd/server/followers/Initialize()
 	. = ..()
-	SSresearch.servers |= src
+	SSresearch.VAULTservers |= src
 	stored_research = SSresearch.followers_tech
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)

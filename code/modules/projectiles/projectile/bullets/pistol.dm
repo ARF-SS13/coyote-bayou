@@ -1,4 +1,4 @@
-// 10mm 
+// 10mm
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
 	damage = 32 //36
@@ -20,7 +20,7 @@
 	wound_bonus = -36
 	wound_bonus = 36
 
-// 9mm 
+// 9mm
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
 	damage = 29

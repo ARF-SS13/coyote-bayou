@@ -165,7 +165,7 @@
 			return
 		var/datum/DBQuery/query_edit_message = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("messages")] SET text = :text, lasteditor = :lasteditor, edits = CONCAT(IFNULL(edits,''), 'Edited by :lasteditor on :time from<br>:old_text<br>to<br>:text<hr>') WHERE id = :message_id AND deleted = 0",
-			list("text" = new_text, "lasteditor" = usr.ckey, "time" = SQLtime(), "old_text" = old_text)
+			list("text" = new_text, "lasteditor" = usr.ckey, "time" = SQLtime(), "old_text" = old_text, "message_id" = message_id)
 		)
 		if(!query_edit_message.warn_execute())
 			qdel(query_edit_message)

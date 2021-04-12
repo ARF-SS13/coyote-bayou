@@ -188,58 +188,57 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage."
 	reagent_state = LIQUID
 	color = "#6D6374"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 20
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 16
 	addiction_threshold = 6
 
 /datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.maxHealth += 50
-		M.health += 50
+		M.maxHealth += 100
+		M.health += 100
+		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.maxHealth -= 50
-		M.health -= 50
+		M.maxHealth -= 100
+		M.health -= 100
+		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 	switch(current_cycle)
 		if(1 to 25)
-			M.confused += 20
+			M.confused += 10
 			M.blur_eyes(20)
 			to_chat(M, "<span class='notice'>Your head is pounding. Med-X is hard on the body. </span>")
 		if(26 to 50)
-			M.confused +=30
+			M.confused +=20
 			M.blur_eyes(30)
 			M.losebreath += 8
 //			M.adjust_eye_damage(6)
 			M.set_disgust(12)
 			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
-			M.vomit(0, 1, 1, 1, 0, 0, 0, 1)
 			to_chat(M, "<span class='danger'>Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
-		if(51 to 100)
-			M.confused +=50
+		if(51 to INFINITY)
+			M.confused +=40
 			M.blur_eyes(30)
 			M.losebreath += 10
 //			M.adjust_eye_damage(12)
 			M.set_disgust(25)
-			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
-			M.vomit(30, 1, 1, 5, 0, 0, 0, 1)
-			M.Unconscious(200)
+			M.adjustStaminaLoss(40*REAGENTS_EFFECT_MULTIPLIER)
+			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 			M.Jitter(1000)
-			var/datum/disease/D = new /datum/disease/heart_failure
-			M.ForceContractDisease(D)
 			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
-			M.visible_message("<span class='userdanger'>[M] collapses to the ground, bloody froth covering their lips!</span>")
+			M.visible_message("<span class='userdanger'>[M] clutches their stomach and vomits violently onto the ground, bloody froth covering their lips!</span>")
 			to_chat(M, "<span class='userdanger'>You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too. </span>")
-		if(101 to INFINITY)
+/*		if(101 to INFINITY)
 //			M.adjust_eye_damage(30)
 			M.Unconscious(400)
 			M.Jitter(1000)
 			M.set_heartattack(TRUE)
 			M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
 			to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
+			*/
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
@@ -250,11 +249,16 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
-/datum/reagent/medicine/medx/overdose_process(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.Dizzy(2)
-		M.Jitter(2)
+/datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
+	M.set_blurriness(30)
+	M.Unconscious(400)
+	M.Jitter(1000)
+	M.set_heartattack(TRUE)
+	M.drop_all_held_items()
+	M.Dizzy(2)
+	M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
+	if(prob(10))
+		to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
 	..()
 
 /datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
@@ -368,12 +372,13 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	description = "A powerful drug that heals and increases the perception and intelligence of the user."
 	color = "#C8A5DC"
 	reagent_state = SOLID
-	overdose_threshold = 30
-	addiction_threshold = 20
+	overdose_threshold = 25
+	addiction_threshold = 15
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -50)
 	if (!eyes)
 		return
 /*	if(HAS_TRAIT(M, TRAIT_BLIND, TRAIT_GENERIC))
@@ -389,6 +394,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
 		M.set_blurriness(0)
+		to_chat(M, "<span class='warning'>Your vision slowly returns to normal...</span>")
 //	else if(eyes.eye_damage > 0)
 //		M.adjust_eye_damage(-1)
 //	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2)
@@ -398,10 +404,10 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	. = TRUE
 
 /datum/reagent/medicine/mentat/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15)
 	if(prob(33))
 		M.Dizzy(2)
 		M.Jitter(2)
-//		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	..()
 
 /datum/reagent/medicine/mentat/addiction_act_stage1(mob/living/M)
@@ -455,3 +461,24 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = TRUE
+	
+/datum/reagent/medicine/gaia
+	name = "Gaia Extract"
+
+	description = "Liquid extracted from a gaia branch. Provides a slow but reliable healing effect"
+	reagent_state = LIQUID
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	taste_description = "deliciousness"
+	overdose_threshold = 30
+	color = "##DBCE18"
+
+/datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
+/datum/reagent/medicine/gaia/overdose_start(mob/living/M)
+	metabolization_rate = 15 * REAGENTS_METABOLISM
+	..()

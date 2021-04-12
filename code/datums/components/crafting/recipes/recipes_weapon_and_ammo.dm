@@ -216,6 +216,61 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/plasmamusket //lasmusket ammo
+	name = "Plasma Musket"
+	result = /obj/item/gun/ballistic/shotgun/plasmacaster
+	reqs = list(/obj/item/gun/ballistic/shotgun/lasmusket = 1,
+				/obj/item/advanced_crafting_components/conductors = 1)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 20
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/batteryboxplasma //lasmusket ammo
+	name = "Plasma Musket battery pack"
+	result = /obj/item/ammo_box/plasmamusket
+	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/sheet/glass = 6,
+				/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 20
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/batterybox //lasmusket ammo
+	name = "Laser Musket battery pack"
+	result = /obj/item/ammo_box/lasmusket
+	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/sheet/glass = 6,
+				/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 20
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/lasmusket
+	name = "Laser Musket"
+	result = /obj/item/gun/ballistic/shotgun/lasmusket
+	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
+	/obj/item/gun/ballistic/revolver/pipe_rifle = 1,
+	/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,
+	/obj/item/stack/cable_coil = 3)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/autopiperifle
+	name = "auto pipe rifle"
+	result = /obj/item/gun/ballistic/automatic/autopipe
+	reqs = list(/datum/reagent/blackpowder = 30,
+	/obj/item/stack/sheet/metal = 5,
+	/obj/item/stack/sheet/mineral/wood = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 //browning hi-power
 /datum/crafting_recipe/ninemil
 	name = "9mm pistol"
@@ -773,13 +828,13 @@
 //city killer
 /datum/crafting_recipe/city_killer
 	name = "City-Killer shotgun"
-	result = /obj/item/gun/ballistic/shotgun/automatic/combat
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 5
+				/obj/item/stack/crafting/goodparts = 10
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -811,8 +866,8 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/goodparts = 5, 
-				
+				/obj/item/stack/crafting/goodparts = 5,
+
 				)
 	tools = list(TOOL_AWORKBENCH)
 	time = 120
@@ -820,7 +875,7 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//magneto 
+//magneto
 /datum/crafting_recipe/magnetowattz
 	name = "wattz 1000 magneto-laser pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto

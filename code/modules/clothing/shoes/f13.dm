@@ -103,6 +103,12 @@
 	icon_state = "laced"
 	item_state = "laced"
 
+/obj/item/clothing/shoes/f13/military/desert
+	name = "desert combat boots"
+	desc = "An old pair of desert combat boots. This one seems to have a tighter fit, and a padded interior."
+	icon_state = "erin_boot"
+	item_state = "erin_boot"
+
 //Fluff
 
 /obj/item/clothing/shoes/f13/swimfins
@@ -153,3 +159,25 @@
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+
+/obj/item/clothing/shoes/f13/mutie
+	name = "super mutant sandals"
+	desc = "A pair of oversized sandals, likely designed for super mutants."
+	icon_state = "mutie_sandals"
+	icon_state = "mutie_sandals"
+
+/obj/item/clothing/shoes/f13/mutie/boots
+	name = "super mutant boots"
+	icon_state = "mutie_boots"
+	icon_state = "mutie_boots"
+	armor = list("tier" = 1)
+	cold_protection = FEET
+
+/obj/item/clothing/shoes/f13/mutie/boots/dark
+	icon_state = "mutie_boots_dark"
+	icon_state = "mutie_boots_dark"
+
+/obj/item/clothing/shoes/f13/mutie/boots/ncr
+	icon_state = "mutie_boots_ncr"
+	icon_state = "mutie_boots_ncr"
+	armor = list("tier" = 2)

@@ -264,11 +264,11 @@
 	armour_penetration = 0.5
 
 //plasma caster
-/obj/item/projectile/plasmacaster
+/obj/item/projectile/f13plasma/plasmacaster
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 50
+	damage = 70
 	armour_penetration = 0.6
 	flag = "laser"
 	eyeblur = 0
@@ -386,14 +386,18 @@
 
 /obj/item/projectile/beam/laser/aer14 //AER14
 	name = "laser beam"
-	damage = 40
-	armour_penetration = 0.75
+	damage = 38
+	armour_penetration = 0.6
 	icon_state = "omnilaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/wattz2k
 	name = "laser bolt"
-	damage = 40
+	damage = 35
 	armour_penetration = 0.5
 
+/obj/item/projectile/beam/laser/musket //musket
+	name = "laser bolt"
+	damage = 40
+	armour_penetration = 0.6

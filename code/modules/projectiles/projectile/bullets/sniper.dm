@@ -47,8 +47,8 @@
 	range = 16
 
 /obj/item/projectile/bullet/a50MG
-	damage = 60
-	armour_penetration = 0.9
+	damage = 55
+	armour_penetration = 0.85
 	pixels_per_second = TILES_TO_PIXELS(100)
 
 /obj/item/projectile/bullet/a50MG/incendiary

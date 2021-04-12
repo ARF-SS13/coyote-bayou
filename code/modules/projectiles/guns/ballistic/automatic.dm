@@ -845,7 +845,7 @@
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/garand308
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	fire_delay = 6
+	fire_delay = 4
 	burst_size = 1
 	en_bloc = 1
 	auto_eject = 1
@@ -997,6 +997,8 @@
 	icon_state = "gold_sniper"
 	item_state = "gold_sniper"
 
+
+
 /obj/item/gun/ballistic/automatic/autopipe
 	name = "\improper auto pipe rifle"
 	desc = "An improvised rifle improved with automatic capability, highly innacurate and slow to fire"
@@ -1011,6 +1013,7 @@
 	burst_size = 4
 	fire_delay = 30
 	burst_shot_delay = 3
+	sawn_desc = "An improvised rifle improved with automatic capability, highly innacurate and slow to fire. This one has been sawn off"
 	//automatic = 1
 	spread = 24
 
