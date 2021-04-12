@@ -799,6 +799,14 @@
 	traitname = "intermediate surgery"
 	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
 
+/obj/item/book/granter/trait/tinkering
+	name = "Tinkering for Wastelander"
+	desc = "A useful book on tinkering."
+	oneuse = TRUE
+	granted_trait = TRAIT_MASTER_GUNSMITH
+	traitname = "tinkering"
+	remarks = list("Experiment!", "You can always try 3 times...", "Be careful with loaded guns...")
+
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"
 	desc = "A book all about tribal life among the Machine Spirits."
@@ -848,7 +856,7 @@
 	granted_trait = null
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
-	var/list/choices = list("Hard Yards","Minor Surgery","Power Armor","Chemistry","Salvager","Melee Expert")
+	var/list/choices = list("Hard Yards","Minor Surgery","Power Armor","Chemistry","Salvager","Melee Expert", "Tinkerer")
 	if(granted_trait == null)	
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
@@ -872,6 +880,9 @@
 			if("Power Armor")
 				granted_trait = TRAIT_PA_WEAR
 				traitname = "advanced armor"
+			if("Tinkerer")
+				granted_trait = TRAIT_MASTER_GUNSMITH
+				traitname = "tinkering"
 	else 
 		. = ..()
 		
