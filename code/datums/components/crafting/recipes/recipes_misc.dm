@@ -551,6 +551,15 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/experimental
+	name = "Tinker"
+	result = /obj/item/experimental
+	time = 30
+	reqs = list(/obj/item/crafting = 10)
+	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 //////////////
 //Banners/////
 //////////////
