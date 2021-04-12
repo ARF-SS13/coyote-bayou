@@ -555,7 +555,7 @@
 	name = "Tinker"
 	result = /obj/item/experimental
 	time = 30
-	reqs = list(/obj/item/crafting = 10)
+	reqs = list(/obj/item/crafting = 5)
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
