@@ -2,7 +2,6 @@
 	projectile_type = /obj/item/projectile/f13plasma
 	select_name = "plasma burst"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
-	delay = 4.5
 	e_cost = 25
 
 /obj/item/ammo_casing/energy/plasma/adv
