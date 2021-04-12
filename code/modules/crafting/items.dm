@@ -1082,7 +1082,7 @@
 	E.extra_damage += dmgmod
 	E.extra_penetration += penmod
 	E.fire_delay += spdmod
-	E.ammo_type[1].delay += spdmod
+	E.ammo_type.delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
 
