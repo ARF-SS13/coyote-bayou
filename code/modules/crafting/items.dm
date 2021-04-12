@@ -1040,7 +1040,7 @@
 	B.name = prefix + B.name
 	B.tinkered += 1
 
-	to_chat(usr, "You tinker with the gun making a [W.name]...")
+	to_chat(usr, "You tinker with the gun making [W.name]...")
 	qdel(src)
 
 
@@ -1086,7 +1086,7 @@
 	E.name = prefix + E.name
 	E.tinkered += 1
 
-	to_chat(usr, "You tinker with the energy gun making a [W.name]...")
+	to_chat(usr, "You tinker with the energy gun making [W.name]...")
 	qdel(src)
 
 /obj/item/experimental/proc/armor(obj/item/W, mob/user)
@@ -1122,7 +1122,7 @@
 	A.name = prefix + A.name
 	A.tinkered += 1
 
-	to_chat(usr, "You tinker with the armor making a [W.name]...")
+	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
 
 			/*
@@ -1137,3 +1137,46 @@
 
 
 */
+
+/obj/item/invention
+	name = "Invention"
+	desc = "What could this be..."
+	icon = 'icons/obj/assemblies.dmi'
+	icon_state = "radio-multitool"
+
+/obj/item/invention/attack_self(mob/user)
+	. = ..()
+	makething(user)
+
+/obj/item/invention/proc/makething(mob/user)
+	qdel(src)
+
+	var/obj/item/item
+
+	var/list/vhigh = list(/obj/item/melee/powerfist)
+
+	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
+	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer)
+
+	var/list/mid = list(/obj/item/twohanded/fireaxe/bmprsword, /obj/item/twohanded/sledgehammer, /obj/item/shield/makeshift,/obj/item/gun/ballistic/automatic/autopipe,
+	/obj/item/gun/ballistic/shotgun/lasmusket, /obj/item/gun/ballistic/shotgun/plasmacaster, /obj/item/clothing/suit/armor/f13/metalarmor,
+	/obj/item/clothing/head/helmet/f13/raider/eyebot, /obj/item/clothing/head/helmet/knight/f13/metal/reinforced)
+
+	var/list/low = list(/obj/item/gun/ballistic/revolver/zipgun,/obj/item/gun/ballistic/revolver/pipe_rifle,/obj/item/fishingrod,/obj/item/grenade/iedcasing,
+	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
+	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
+
+	if(prob(60))
+		item = pick(low)
+		new item(user.loc)
+	if(prob(30))
+		item = pick(mid)
+		new item(user.loc)
+	if(prob(9.5))
+		item = pick(high)
+		new item(user.loc)
+	if(prob(0.5))
+		item = pick(vhigh)
+		new item(user.loc)
+
+	to_chat(usr, "You tinker and manage to create [item.name].")
