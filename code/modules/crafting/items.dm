@@ -1012,7 +1012,7 @@
 		dmgmod += 3
 		penmod += 0.1
 		spdmod += 0.5
-		overall = dmgmod+penmod-(spdmod*5)
+		overall = dmgmod+(penmod*100)-(spdmod*5)
 
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1057,7 +1057,7 @@
 		dmgmod += 3
 		penmod += 0.1
 		spdmod += 0.5
-		overall = dmgmod+penmod-(spdmod*5)
+		overall = dmgmod+(penmod*100)-(spdmod*5)
 	
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
