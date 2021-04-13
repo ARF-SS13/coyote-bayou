@@ -441,7 +441,7 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/t65
 	name = "T-65 power armor"
-	desc = "(XI) An experimental set of armor based off of early-stage schematics found deep in the Archives, this armor sacrifices weight for extreme protection. It has been painted for exclusive use by the Head Knight."
+	desc = "(XI) An experimental set of armor based off of early-stage schematics found deep in the Archives, This armor sacrifices weight for extreme protection. It has been painted for exclusive use by the Head Knight."
 	icon_state = "t65powerarmor"
 	item_state = "t65powerarmor"
 	slowdown = 0.6
