@@ -302,6 +302,8 @@
 			vol_each_max = min(10, vol_each_max)
 		else if (item_type == "superStimpak")
 			vol_each_max = min(20, vol_each_max)
+		else if (item_type == "bottle_primitive")
+			vol_each_max = min(60, vol_each_max)
 		else
 			return FALSE
 		if(vol_each_text == "auto")
