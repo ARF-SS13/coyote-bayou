@@ -16,6 +16,7 @@
 	var/mode = 1
 	var/condi = FALSE
 	var/advanced = FALSE
+	var/primitive = FALSE
 	var/chosenPillStyle = 1
 	var/screen = "home"
 	var/analyzeVars[0]
@@ -185,6 +186,8 @@
 	data["beakerMaxVolume"] = beaker ? beaker.volume : null
 	data["mode"] = mode
 	data["condi"] = condi
+	data["advanced"] = advanced
+	data["primitive"] = primitive
 	data["screen"] = screen
 	data["analyzeVars"] = analyzeVars
 	data["fermianalyze"] = fermianalyze
@@ -421,6 +424,21 @@
 				reagents.trans_to(P, vol_each)
 				P.update_icon()
 			return TRUE
+		if(item_type == "bag")
+			var/obj/item/reagent_containers/pill/patch/P
+			for(var/i = 0; i < amount; i++)
+				P = new/obj/item/reagent_containers/pill/patch/healingpowder/custom(drop_location())
+				P.name = trim("[name] patch")
+				adjust_item_drop_location(P)
+				reagents.trans_to(P, vol_each)//, transfered_by = usr)
+			return TRUE
+		if(item_type == "bottle_primitive")
+			var/obj/item/reagent_containers/glass/bottle/P
+			for(var/i = 0; i < amount; i++)
+				P = new/obj/item/reagent_containers/glass/bottle/primitive(drop_location())
+				P.name = trim("[name] bottle")
+				adjust_item_drop_location(P)
+				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 		return FALSE
 
 	if(action == "analyze")
@@ -498,6 +516,41 @@
 	desc = "Used to create condiments and other cooking supplies."
 	condi = TRUE
 
+/obj/machinery/chem_master/primitive
+	name = "alchemy table"
+	desc = "A wooden table with various bone mortars and pistles, as well as other tools."
+	icon_state = "alchemy_table"
+	primitive = TRUE
+	use_power = FALSE
+	idle_power_usage = 0
+	flags_1 = NODECONSTRUCT_1
+	can_be_unanchored = TRUE
+
+/obj/machinery/chem_master/primitive/update_icon_state()
+	if(beaker)
+		icon_state = "alchemy_table"
+	else
+		icon_state = "alchemy_table"
+
+/obj/machinery/chem_master/primitive/attackby(obj/item/I, mob/user, params)
+		return
+
+/obj/machinery/chem_master/primitive/ui_interact(mob/living/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(istype(user, /mob/dead/observer))
+		if(!ui)
+			ui = new(user, src, "ChemMaster", name)
+			ui.open()
+	else
+		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !istype(src, /obj/machinery/chem_dispenser/drinks))
+			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			return
+		if(!ui)
+			ui = new(user, src, "ChemMaster", name)
+			if(user.hallucinating())
+				ui.set_autoupdate(FALSE) //to not ruin the immersion by constantly changing the fake chemicals
+			ui.open()
+
 /obj/machinery/chem_master/advanced
 	name = "Old-World Refinery"
 	desc = "A high-tech device that uses nuclear-diffusion to seperate chemicals."
@@ -549,5 +602,6 @@
 		src.updateUsrDialog()
 	else
 		return ..()
+
 #undef PILL_STYLE_COUNT
 #undef RANDOM_PILL_STYLE

@@ -13,6 +13,7 @@
 	var/obj/item/storage/pill_bottle/bottle = null
 	var/mode = 1
 	var/condi = FALSE
+	var/primitive = TRUE
 	var/chosenPillStyle = 1
 	var/screen = "home"
 	var/analyzeVars[0]
@@ -189,6 +190,7 @@ obj/machinery/alchemy_table/ui_interact(mob/living/user, datum/tgui/ui)
 	data["beakerMaxVolume"] = beaker ? beaker.volume : null
 	data["mode"] = mode
 	data["condi"] = condi
+	data["primitive"] = primitive
 	data["screen"] = screen
 	data["analyzeVars"] = analyzeVars
 	data["fermianalyze"] = fermianalyze
@@ -284,20 +286,10 @@ obj/machinery/alchemy_table/ui_interact(mob/living/user, datum/tgui/ui)
 		var/vol_each = text2num(params["volume"])
 		var/vol_each_text = params["volume"]
 		var/vol_each_max = reagents.total_volume / amount
-		if (item_type == "pill")
-			vol_each_max = min(50, vol_each_max)
-		else if (item_type == "patch")
-			vol_each_max = min(40, vol_each_max)
-		else if (item_type == "bottle")
+		if (item_type == "bottle_primitive")
 			vol_each_max = min(30, vol_each_max)
-		else if (item_type == "condimentPack")
-			vol_each_max = min(10, vol_each_max)
-		else if (item_type == "condimentBottle")
-			vol_each_max = min(50, vol_each_max)
-		else if (item_type == "hypoVial")
-			vol_each_max = min(60, vol_each_max)
-		else if (item_type == "smartDart")
-			vol_each_max = min(20, vol_each_max)
+		else if (item_type == "bag")
+			vol_each_max = min(40, vol_each_max)
 		else
 			return FALSE
 		if(vol_each_text == "auto")
@@ -325,80 +317,21 @@ obj/machinery/alchemy_table/ui_interact(mob/living/user, datum/tgui/ui)
 		if(!name || !reagents.total_volume || !src || QDELETED(src) || !usr.canUseTopic(src, !issilicon(usr)))
 			return FALSE
 		// Start filling
-		if(item_type == "pill")
-			var/obj/item/reagent_containers/pill/P
-			var/target_loc = drop_location()
-			var/drop_threshold = INFINITY
-			if(bottle)
-				var/datum/component/storage/STRB = bottle.GetComponent(
-					/datum/component/storage)
-				if(STRB)
-					drop_threshold = STRB.max_items - bottle.contents.len
-			for(var/i = 0; i < amount; i++)
-				if(i < drop_threshold)
-					P = new/obj/item/reagent_containers/pill(target_loc)
-				else
-					P = new/obj/item/reagent_containers/pill(drop_location())
-				P.name = trim("[name] pill")
-				if(chosenPillStyle == RANDOM_PILL_STYLE)
-					P.icon_state ="pill[rand(1,21)]"
-				else
-					P.icon_state = "pill[chosenPillStyle]"
-				if(P.icon_state == "pill4")
-					P.desc = "A tablet or capsule, but not just any, a red one, one taken by the ones not scared of knowledge, freedom, uncertainty and the brutal truths of reality."
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "patch")
+		if(item_type == "bag")
 			var/obj/item/reagent_containers/pill/patch/P
 			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/pill/patch(drop_location())
+				P = new/obj/item/reagent_containers/pill/patch/healingpowder/custom(drop_location())
 				P.name = trim("[name] patch")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 			return TRUE
-		if(item_type == "bottle")
+		if(item_type == "bottle_primitive")
 			var/obj/item/reagent_containers/glass/bottle/P
 			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/glass/bottle(drop_location())
+				P = new/obj/item/reagent_containers/glass/bottle/primitive(drop_location())
 				P.name = trim("[name] bottle")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "condimentPack")
-			var/obj/item/reagent_containers/food/condiment/pack/P
-			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/food/condiment/pack(drop_location())
-				P.originalname = name
-				P.name = trim("[name] pack")
-				P.desc = "A small condiment pack. The label says it contains [name]."
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "condimentBottle")
-			var/obj/item/reagent_containers/food/condiment/P
-			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/food/condiment(drop_location())
-				P.originalname = name
-				P.name = trim("[name] bottle")
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "hypoVial")
-			var/obj/item/reagent_containers/glass/bottle/vial/small/P
-			for(var/i = 0; i < amount; i++)
-				P = new/obj/item/reagent_containers/glass/bottle/vial/small(drop_location())
-				P.name = trim("[name] hypovial")
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-			return TRUE
-		if(item_type == "smartDart")
-			var/obj/item/reagent_containers/syringe/dart/P
-			for(var/i = 0; i < amount; i++)
-				P = new /obj/item/reagent_containers/syringe/dart(drop_location())
-				P.name = trim("[name] SmartDart")
-				adjust_item_drop_location(P)
-				reagents.trans_to(P, vol_each)//, transfered_by = usr)
-				P.mode=!mode
-				P.update_icon()
 			return TRUE
 		return FALSE
 

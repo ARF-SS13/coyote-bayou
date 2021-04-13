@@ -244,15 +244,24 @@ const PackagingControls = (props, context) => {
     superstimpakAmount,
     setsuperstimpakAmount,
   ] = useSharedState(context, 'setsuperstimpakAmount', 1);
+  const [
+    powderbagAmount,
+    setPowderbagAmount,
+  ] = useSharedState(context, 'setPowderbagAmount', 1);
+  const [
+    primitiveBottleAmount,
+    setprimitiveBottleAmount,
+  ] = useSharedState(context, 'setprimitiveBottleAmount', 1);
   const {
     condi,
     advanced,
+    primitive,
     chosenPillStyle,
     pillStyles = [],
   } = data;
   return (
     <LabeledList>
-      {!condi && (
+      {!condi && !primitive && (
         <LabeledList.Item label="Pill type">
           {pillStyles.map(pill => (
             <Button
@@ -267,7 +276,7 @@ const PackagingControls = (props, context) => {
           ))}
         </LabeledList.Item>
       )}
-      {!condi && (
+      {!condi && !primitive && (
         <PackagingControlsItem
           label="Pills"
           amount={pillAmount}
@@ -280,7 +289,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !!advanced &&(
+      {!condi && !!advanced && !primitive &&(
         <PackagingControlsItem
           label="Patches"
           amount={patchAmount}
@@ -293,7 +302,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && (
+      {!condi && !primitive &&(
         <PackagingControlsItem
           label="Bottles"
           amount={bottleAmount}
@@ -306,7 +315,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && (
+      {!condi && !primitive &&(
         <PackagingControlsItem
           label="Stimpaks"
           amount={stimpakAmount}
@@ -319,7 +328,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !!advanced && (
+      {!condi && !!advanced && !primitive &&(
         <PackagingControlsItem
           label="Super Stimpaks"
           amount={superstimpakAmount}
@@ -355,6 +364,32 @@ const PackagingControls = (props, context) => {
           onCreate={() => act('create', {
             type: 'condimentBottle',
             amount: bottleAmount,
+            volume: 'auto',
+          })} />
+      )}
+      {!!primitive &&(
+        <PackagingControlsItem
+          label="Powder Bag"
+          amount={patchAmount}
+          amountUnit="powderbags"
+          sideNote="max 40u"
+          onChangeAmount={(e, value) => setPowderbagAmount(value)}
+          onCreate={() => act('create', {
+            type: 'bag',
+            amount: powderbagAmount,
+            volume: 'auto',
+          })} />
+      )}
+      {!!primitive && (
+        <PackagingControlsItem
+          label="Primitive Bottles"
+          amount={bottleAmount}
+          amountUnit="bottles"
+          sideNote="max 60u"
+          onChangeAmount={(e, value) => setprimitiveBottleAmount(value)}
+          onCreate={() => act('create', {
+            type: 'bottle_primitive',
+            amount: primitiveBottleAmount,
             volume: 'auto',
           })} />
       )}
