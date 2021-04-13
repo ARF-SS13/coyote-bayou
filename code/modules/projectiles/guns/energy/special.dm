@@ -1,10 +1,10 @@
 /obj/item/gun/energy/ionrifle
-	name = "ion rifle"
-	desc = "A man-portable anti-armor weapon designed to disable mechanical threats at range."
+	name = "YK-42b Pulse Rifle"
+	desc = "The YK42B rifle is an electrical pulse weapon that was developed by the Yuma Flats Energy Consortium. It excels in damage against heavily armored opponents, especially power armor."
 	icon_state = "ionrifle"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	can_flashlight = 1
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
