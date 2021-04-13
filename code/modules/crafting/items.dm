@@ -999,6 +999,8 @@
 		egun(W, user)
 	if(istype(W, /obj/item/clothing/suit/armor))
 		armor(W, user)
+	if(istype(W, /obj/item/clothing/head))
+		hat(W, user)
 	//if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
 	//	parmor(W)
 
@@ -1006,16 +1008,16 @@
 	var/obj/item/gun/ballistic/B = W 
 
 	var/dmgmod = rand(-10,10)
-	var/penmod = rand(-0.1,0.1)
-	var/spdmod = rand(-2,2)
-	var/overall = dmgmod+(penmod*100)-(spdmod*5)
+	var/penmod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/overall = dmgmod+penmod-spdmod
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 3
-		penmod += 0.1
-		spdmod += 0.5
-		overall = dmgmod+(penmod*100)-(spdmod*5)
+		dmgmod += 2
+		penmod += 2
+		spdmod += 2
+		overall = dmgmod+penmod-spdmod
 
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1037,9 +1039,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	B.extra_damage += dmgmod
-	B.extra_penetration += penmod
-	B.fire_delay += spdmod
+	B.extra_damage += (dmgmod)
+	B.extra_penetration += (penmod/30)
+	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
 
@@ -1051,16 +1053,16 @@
 	var/obj/item/gun/energy/E = W
 
 	var/dmgmod = rand(-10,10)
-	var/penmod = rand(-0.1,0.1)
-	var/spdmod = rand(-2,2)
-	var/overall = dmgmod+(penmod*100)-(spdmod*5)
+	var/penmod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/overall = dmgmod+penmod-spdmod
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 3
-		penmod += 0.1
-		spdmod += 0.5
-		overall = dmgmod+(penmod*100)-(spdmod*5)
+		dmgmod += 2
+		penmod += 2
+		spdmod += 2
+		overall = dmgmod+penmod-spdmod
 	
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1082,9 +1084,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	E.extra_damage += dmgmod
-	E.extra_penetration += penmod
-	E.fire_delay += spdmod
+	E.extra_damage += (dmgmod)
+	E.extra_penetration += (penmod/30)
+	E.fire_delay += (spdmod/5)
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
@@ -1095,11 +1097,14 @@
 /obj/item/experimental/proc/armor(obj/item/W, mob/user)
 	var/obj/item/clothing/suit/armor/A = W
 
-	var/tiermod = rand(-2,2)
+	var/tiermod = rand(-10,10)
+	var/spdmod = rand(-10,10)
 	var/prefix
+	var/overall = tiermod - spdmod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		tiermod += 0.5
+		tiermod += 2
+		spdmod += -2
 
 	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1109,25 +1114,65 @@
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
-	switch(tiermod)
-		if(-2 to -1)
+	switch(overall)
+		if(-20 to -10)
 			prefix = "Ruined "
-		if(-1 to 0)
+		if(-10 to 0)
 			prefix = "Inferior "
-		if(0 to 1)
+		if(0 to 10)
 			prefix = "Improved "
-		if(1 to 2)
+		if(10 to 20)
 			prefix = "Superior "
-		if(2 to 10)
+		if(20 to 100)
 			prefix = "Legendary "
 
-	A.armor.modifyAllRatings(tiermod*25)
+	A.armor.modifyAllRatings(tiermod*2.5)
+	A.slowdown += (spdmod/25)
 	A.name = prefix + A.name
 	A.tinkered += 1
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
 
+/obj/item/experimental/proc/hat(obj/item/W, mob/user)
+	var/obj/item/clothing/head/H = W
+
+	var/tiermod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/prefix
+	var/overall = tiermod - spdmod
+
+	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		tiermod += 2
+		spdmod += -2
+
+	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+	if(H.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item too much.")
+		return
+
+	switch(overall)
+		if(-20 to -10)
+			prefix = "Ruined "
+		if(-10 to 0)
+			prefix = "Inferior "
+		if(0 to 10)
+			prefix = "Improved "
+		if(10 to 20)
+			prefix = "Superior "
+		if(20 to 100)
+			prefix = "Legendary "
+
+	H.armor.modifyAllRatings(tiermod*2.5)
+	H.slowdown += (spdmod/25)
+	H.name = prefix + H.name
+	H.tinkered += 1
+
+	to_chat(usr, "You tinker with the armor making [W.name]...")
+	qdel(src)
 			/*
 /obj/item/experimental/parmor(obj/item/W)
 	var/obj/item/clothing/suit/armor/power_armor/A = W
