@@ -408,10 +408,18 @@
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
 	name = "ranger recon duster"
-	desc = "(III) A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
+	desc = "(IV) A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
 	icon_state = "duster_recon"
 	item_state = "duster_recon"
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	slowdown = -0.1
+
+/obj/item/clothing/suit/armor/f13/rangerrig
+	name = "chest gear harness"
+	desc = "(IV) A handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
+	icon_state = "r_gear_rig"
+	item_state = "r_gear_rig"
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = -0.1
 
 /obj/item/clothing/suit/armor/f13/trailranger
@@ -424,23 +432,30 @@
 
 /obj/item/clothing/suit/armor/f13/modif_r_vest
 	name = "subdued ranger vest"
-	desc = "(IV) A quaint little jacket and scarf worn by NCR trail rangers. This one has the leather bleached and the scarf dyed black."
+	desc = "(V) A quaint little jacket and scarf worn by NCR trail rangers. This one has the leather bleached and the scarf dyed black."
 	icon_state = "modif_r_vest"
 	item_state = "modif_r_vest"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
 	name = "ranger patrol armor"
-	desc = "(VI) A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
+	desc = "(V) A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/ncr_patrol/thax
 	name = "modified patrol armor"
 	desc = "A customized and moderately-worn suit of patrol ranger armor. A sun-worn thick olive duster is worn over the armor."
 	icon_state = "thaxarmor"
 	item_state = "thaxarmor"
+
+/obj/item/clothing/suit/armor/f13/combat/ncr_patrol/scout
+	name = "ranger scout armor"
+	desc = "(V) A refurbished set of NCRA 3rd Scouts armor, now with heavier plating together with arm and leg guards. A two-headed bear has been painted on its chest."
+	icon_state = "refurb_scout"
+	item_state = "refurb_scout"
+	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "veteran ranger combat armor"

@@ -11,6 +11,18 @@
 
 //Vault
 
+/obj/item/clothing/under/f13/housewifedress50s
+	name = "50s style dress"
+	desc = "Fancy checkered yellow dress with small shoulder puffs."
+	icon_state = "dress50s"
+	item_state = "dress50s"
+
+/obj/item/clothing/under/f13/picnicdress50s
+	name = "50s style dress"
+	desc = "Cheery polkadot casual dress."
+	icon_state = "dresspicnic50s"
+	item_state = "dresspicnic50s"
+
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "A blue jumpsuit with a yellow vault pattern printed on it."
@@ -182,6 +194,12 @@
 	item_state = "thaxflannel"
 	item_color = "thaxflannel"
 
+/obj/item/clothing/under/f13/ranger/erin
+	name = "desert pants"
+	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
+	icon_state = "erin_pants"
+	item_state = "erin_pants"
+
 /obj/item/clothing/under/f13/ranger/blue
 	name = "blue ranger outfit"
 	desc = "Simple rustic clothes for a big iron packin' lawman. A blue collar shirt with tan slacks."
@@ -262,6 +280,18 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 80)
 
 //Legion
+
+/obj/item/clothing/under/f13/campfollowermale
+	name = "camp follower male robe"
+	desc = "Olive colored cloth with a red belt."
+	icon_state = "legcamp"
+	item_state = "brownjsuit"
+
+/obj/item/clothing/under/f13/campfollowerfemale
+	name = "camp follower female robe"
+	desc = "Olive colored cloth with a red sash."
+	icon_state = "legcamp_f"
+	item_state = "legcamp_f"
 
 /obj/item/clothing/under/f13/legskirt
 	name = "legionary fatigues"

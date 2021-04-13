@@ -193,13 +193,13 @@
 	build_path = /obj/item/assembly/prox_sensor
 	category = list("initial", "Misc")
 
-/datum/design/foam_dart
-	name = "Box of Foam Darts"
-	id = "foam_dart"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 500)
-	build_path = /obj/item/ammo_box/foambox
-	category = list("initial", "Misc")
+//datum/design/foam_dart
+	//name = "Box of Foam Darts"
+	//id = "foam_dart"
+	//build_type = AUTOLATHE
+	//materials = list(/datum/material/iron = 500)
+	//build_path = /obj/item/ammo_box/foambox
+	//category = list("initial", "Misc")
 
 /datum/design/laptop
 	name = "Laptop Frame"
