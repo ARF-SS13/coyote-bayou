@@ -1003,9 +1003,9 @@
 	var/obj/item/gun/ballistic/B = W 
 
 	var/dmgmod = rand(-10,10)
-	var/penmod = rand(-0.2,0.2)
+	var/penmod = rand(-0.1,0.1)
 	var/spdmod = rand(-2,2)
-	var/overall = dmgmod+penmod-(spdmod*5)
+	var/overall = dmgmod+(penmod*100)-(spdmod*5)
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
@@ -1048,9 +1048,9 @@
 	var/obj/item/gun/energy/E = W
 
 	var/dmgmod = rand(-10,10)
-	var/penmod = rand(-0.2,0.2)
+	var/penmod = rand(-0.1,0.1)
 	var/spdmod = rand(-2,2)
-	var/overall = dmgmod+penmod-(spdmod*5)
+	var/overall = dmgmod+(penmod*100)-(spdmod*5)
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
