@@ -1201,7 +1201,7 @@
 
 	var/obj/item/item
 
-	var/list/vhigh = list(/obj/item/melee/powerfist)
+	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/nullrod/claymore/chainsaw_sword)
 
 	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
 	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer)
@@ -1220,10 +1220,10 @@
 	if(prob(30))
 		item = pick(mid)
 		new item(user.loc)
-	if(prob(9.5))
+	if(prob(9))
 		item = pick(high)
 		new item(user.loc)
-	if(prob(0.5))
+	if(prob(1))
 		item = pick(vhigh)
 		new item(user.loc)
 
