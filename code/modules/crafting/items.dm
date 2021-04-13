@@ -990,6 +990,9 @@
 
 /obj/item/experimental/attackby(obj/item/W, mob/user, params)
 	. = ..()
+	if(istype(W, /obj/item/gun/ballistic/shotgun))
+		to_chat(usr, "You can't improve [W.name]...")
+		return
 	if(istype(W, /obj/item/gun/ballistic))
 		gun(W, user)
 	if(istype(W, /obj/item/gun/energy))
