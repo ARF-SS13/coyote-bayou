@@ -447,7 +447,7 @@
 	slowdown = 0.6
 	armor = list("tier" = 11, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 85)
 
-	armor_block_chance = 83
+	armor_block_chance = 90
 	deflection_chance = 15
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
