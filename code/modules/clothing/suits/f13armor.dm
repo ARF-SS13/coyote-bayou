@@ -439,6 +439,17 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+/obj/item/clothing/suit/armor/f13/power_armor/t65
+	name = "T-65 power armor"
+	desc = "(XI) An experimental set of armor based off of early-stage schematics found deep in the Archives, This armor sacrifices weight for extreme protection. It has been painted for exclusive use by the Head Knight."
+	icon_state = "t65powerarmor"
+	item_state = "t65powerarmor"
+	slowdown = 0.6
+	armor = list("tier" = 11, "energy" = 75, "bomb" = 85, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 85)
+
+	armor_block_chance = 90
+	deflection_chance = 15
+
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."

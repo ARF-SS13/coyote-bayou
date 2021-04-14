@@ -434,6 +434,20 @@
 	icon_state = "t60helmet[on]"
 	item_state = "t60helmet[on]"
 
+/obj/item/clothing/head/helmet/f13/power_armor/t65
+	name = "T-65 power helmet"
+	desc = "(XI) The T-65 prototype helmet, with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
+	icon_state = "t65helmet"
+	item_state = "t65helmet"
+	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 85)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor_block_chance = 90
+	deflection_chance = 15
+
+/obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
+	icon_state = "t65helmet[on]"
+	item_state = "t65helmet[on]"
+
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
 	name = "excavator power helmet"
 	desc = "(VIII) The helmet of the excavator power armor suit."
@@ -496,7 +510,7 @@
 
 /obj/item/clothing/head/f13
 	flags_inv = HIDEHAIR
-	
+
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
 	desc = "(I) <font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
