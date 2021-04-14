@@ -374,7 +374,7 @@
 	icon_dead = "punga-dead"
 	icon_harvest = "punga-harvest"
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/medicine/charcoal = 0.1, /datum/reagent/phosphorus = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/medicine/radaway = 0.05)
+	reagents_add = list(/datum/reagent/medicine/charcoal = 0.1, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/radaway = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	seed = /obj/item/seeds/punga
@@ -382,7 +382,7 @@
 	desc = "Punga fruit plants flower at a single point at the terminus of their stems, gradually developing into large, fleshy fruits with a yellow/brown, thick skin. They are common throughout Point Lookout, due to the unique conditions offered by the swamps, and scrub radiation when ingested."
 	icon_state = "Punga Fruit"
 	filling_color = "#FF6347"
-	distill_reagent = /datum/reagent/consumable/ethanol/pungajuice
+	juice_results = list(/datum/reagent/consumable/ethanol/pungajuice = 0)
 
 /obj/item/seeds/yucca
 	name = "pack of banana yucca seeds"
@@ -454,11 +454,15 @@
 	bitesize = 100
 
 /obj/item/reagent_containers/food/snacks/grown/tato/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness())
 		to_chat(user, "<span class='notice'>You cut the tato into wedges with [W].</span>")
 		var/obj/item/reagent_containers/food/snacks/grown/tato/wedges/Wedges = new /obj/item/reagent_containers/food/snacks/grown/tato/wedges
 		remove_item_from_storage(user)
 		qdel(src)
 		user.put_in_hands(Wedges)
+	else
+		return ..()
+
 
 /obj/item/seeds/mutfruit
 	name = "pack of mutfruit seeds"
