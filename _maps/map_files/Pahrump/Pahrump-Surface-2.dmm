@@ -293,9 +293,7 @@
 /area/f13/brotherhood/surface)
 "ako" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/flashlight/lantern,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "aku" = (
@@ -2526,7 +2524,6 @@
 /area/f13/legion)
 "bPH" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
@@ -5165,6 +5162,13 @@
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"dYv" = (
+/obj/structure/rack,
+/obj/item/clothing/under/f13/legslave,
+/obj/item/clothing/under/f13/legslavef,
+/obj/item/clothing/head/f13/legion/servant,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "dZk" = (
 /obj/structure/table/wood,
 /obj/item/stack/f13Cash/random/ncr/low,
@@ -9472,10 +9476,8 @@
 	},
 /area/f13/wasteland)
 "hcr" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hcx" = (
@@ -10151,15 +10153,9 @@
 /area/f13/city)
 "hxX" = (
 /obj/structure/rack,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar/explosive,
-/obj/item/key/bcollar,
-/obj/item/key/collar,
-/obj/item/key/collar,
-/obj/item/key/collar,
-/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hyf" = (
@@ -11140,10 +11136,12 @@
 	},
 /area/f13/wasteland)
 "igU" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/structure/rack,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "ihm" = (
 /obj/effect/landmark/start/f13/shopkeeper,
 /turf/open/floor/f13/wood,
@@ -15450,12 +15448,6 @@
 /area/f13/ncr)
 "loU" = (
 /obj/machinery/chem_heater,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_2";
-	layer = 6;
-	pixel_x = -6;
-	pixel_y = 13
-	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -26804,6 +26796,20 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"tKT" = (
+/obj/structure/rack,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
+/obj/item/key/bcollar,
+/obj/item/key/collar,
+/obj/item/key/collar,
+/obj/item/key/collar,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "tKZ" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
@@ -86439,7 +86445,7 @@ fyf
 fyf
 fyf
 fyf
-igU
+jxH
 fyf
 fyf
 fyf
@@ -92897,7 +92903,7 @@ hom
 hom
 hom
 hom
-gcK
+hom
 gcK
 dRs
 wzm
@@ -93151,10 +93157,10 @@ pIz
 frY
 hom
 uhW
-oMY
-ako
+hcr
+uhW
+hxX
 hom
-gcK
 gcK
 dRs
 gfY
@@ -93407,11 +93413,11 @@ eXO
 pIz
 frY
 hom
-uhW
+ako
 xNm
-hcr
+oMY
+igU
 hom
-gcK
 gcK
 dRs
 dRs
@@ -93666,9 +93672,9 @@ rbJ
 hom
 bPH
 eQH
-uhW
+oMY
+dYv
 hom
-gcK
 gcK
 gcK
 gcK
@@ -93923,9 +93929,9 @@ frY
 dvo
 xNm
 xNm
-hxX
+xNm
+tKT
 hom
-gcK
 gcK
 gcK
 gcK
@@ -94182,7 +94188,7 @@ hom
 hom
 hom
 hom
-gcK
+hom
 gcK
 gcK
 gcK
