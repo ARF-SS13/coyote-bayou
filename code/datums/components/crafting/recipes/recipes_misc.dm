@@ -560,7 +560,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-/datum/crafting_recipe/experimental
+/datum/crafting_recipe/experimentalinvent
 	name = "Invent"
 	result = /obj/item/invention
 	time = 30
