@@ -219,8 +219,8 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mesquite
 	lifespan = 80
 	endurance = 50
-	maturation = 15
-	production = 1
+	maturation = 6
+	production = 5
 	yield = 5
 	potency = 50
 	growthstages = 4
@@ -254,8 +254,8 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/pinyon
 	lifespan = 80
 	endurance = 50
-	maturation = 12
-	production = 1
+	maturation = 9
+	production = 6
 	yield = 5
 	potency = 50
 	growthstages = 4
@@ -333,8 +333,8 @@
 	plantname = "Datura"
 	product = /obj/item/reagent_containers/food/snacks/grown/datura
 	lifespan = 30
-	maturation = 10
-	production = 1
+	maturation = 6
+	production = 5
 	yield = 4
 	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
@@ -363,8 +363,8 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/pungafruit
 	lifespan = 100
 	endurance = 30
-	maturation = 15
-	production = 1
+	maturation = 10
+	production = 5
 	yield = 3
 	potency = 30
 	growthstages = 4
@@ -424,8 +424,8 @@
 	plantname = "Tato Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/tato
 	lifespan = 30
-	maturation = 10
-	production = 1
+	maturation = 7
+	production = 3
 	yield = 4
 	growthstages = 4
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
