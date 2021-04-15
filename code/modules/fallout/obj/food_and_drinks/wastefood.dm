@@ -77,7 +77,7 @@
 	icon_grow = "coyote-grow"
 	icon_dead = "coyote-dead"
 	icon_harvest = "coyote-harvest"
-	reagents_add = list(/datum/reagent/drug/nicotine = 0.03,  /datum/reagent/consumable/nutriment/vitamin = 0.03)
+	reagents_add = list(/datum/reagent/drug/nicotine = 0.1,  /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/coyotetobacco
 	seed = /obj/item/seeds/coyotetobacco
@@ -264,7 +264,7 @@
 	icon_dead = "pinyon-dead"
 	icon_harvest = "pinyon-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/pinyon
 	seed = /obj/item/seeds/pinyon
@@ -639,7 +639,7 @@
 	icon_grow = "agave-grow"
 	icon_dead = "agave-dead"
 	icon_harvest = "agave-harvest"
-	reagents_add = list(/datum/reagent/medicine/kelotane = 0.1, /datum/reagent/toxin/lipolicide = 0.1, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/medicine/kelotane = 0.1, /datum/reagent/toxin/lipolicide = 0.1, /datum/reagent/consumable/nutriment = 0.1)
 
 
 /obj/item/reagent_containers/food/snacks/grown/agave
