@@ -196,7 +196,10 @@
 	id = "hell";
 	name = "Door Control"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
+	},
 /area/f13/caves)
 "dk" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -649,10 +652,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "mn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden/strong,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
+	},
+/area/f13/bunker)
 "mt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
@@ -1282,13 +1286,18 @@
 /area/f13/radiation)
 "wv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/food/snacks/meat/slab/human,
-/mob/living/simple_animal/hostile/deathclaw{
-	speed = -2
+/mob/living/simple_animal/hostile/abomhorror{
+	bare_wound_bonus = 20;
+	faction = list("raider");
+	melee_damage_lower = 60;
+	melee_damage_upper = 70;
+	obj_damage = 300;
+	wound_bonus = 20
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
+	},
+/area/f13/radiation)
 "wx" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1493,13 +1502,12 @@
 /area/f13/bunker)
 "zF" = (
 /obj/structure/simple_door/metal/ventilation,
-/obj/machinery/door/poddoor/shutters{
-	id = "pain";
-	name = "door shutters"
-	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/decoration/rag{
 	icon_state = "skin"
+	},
+/obj/machinery/door/poddoor{
+	id = "pain"
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -1939,8 +1947,12 @@
 "IL" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/abomhorror{
+	bare_wound_bonus = 20;
 	faction = list("raider");
-	obj_damage = 300
+	melee_damage_lower = 60;
+	melee_damage_upper = 70;
+	obj_damage = 300;
+	wound_bonus = 20
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -1951,7 +1963,10 @@
 	id = "okay";
 	name = "Door Control"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
+	},
 /area/f13/bunker)
 "IR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2103,15 +2118,18 @@
 /area/f13/bunker)
 "KO" = (
 /mob/living/simple_animal/hostile/abomhorror{
+	bare_wound_bonus = 20;
 	desc = "A terrible fusion of man and something else entirely. It looks to be in great pain.";
 	faction = list("raider");
 	health = 2000;
 	icon_living = "abomination";
 	icon_state = "abomination";
+	melee_damage_lower = 60;
+	melee_damage_upper = 70;
 	name = "Abomination";
 	obj_damage = 300;
 	speed = -1;
-	wound_bonus = 0
+	wound_bonus = 20
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
@@ -2357,7 +2375,10 @@
 /area/f13/tunnel)
 "Qr" = (
 /obj/structure/decoration/shock,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
+	},
 /area/f13/bunker)
 "QB" = (
 /obj/machinery/light/broken{
@@ -2584,13 +2605,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "UD" = (
-/obj/structure/simple_door/metal/ventilation,
-/obj/machinery/door/poddoor/shutters{
-	id = "pain";
-	name = "door shutters"
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
 	},
 /area/f13/bunker)
 "UM" = (
@@ -2705,7 +2723,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "WY" = (
-/obj/structure/barricade/wooden/strong,
+/obj/structure/nest/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Xa" = (
@@ -2731,6 +2749,12 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
+"Xo" = (
+/turf/closed/wall/r_wall/rust{
+	explosion_block = 50;
+	unbreakable = null
+	},
+/area/f13/caves)
 "Xr" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/deathclaw/mother{
@@ -2949,11 +2973,11 @@ BH
 "}
 (2,1,1) = {"
 QU
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+mn
 QU
 BH
 BH
@@ -2987,11 +3011,11 @@ BH
 "}
 (3,1,1) = {"
 QU
-Yn
+mn
 df
-ZN
+wv
 jM
-Yn
+mn
 QU
 BH
 BH
@@ -3025,11 +3049,11 @@ QU
 "}
 (4,1,1) = {"
 QU
-Yn
+mn
 wm
 ZR
 KI
-Yn
+mn
 QU
 BH
 BH
@@ -3063,11 +3087,11 @@ BH
 "}
 (5,1,1) = {"
 QU
-Yn
+mn
 wm
 ZN
 Df
-Yn
+mn
 QU
 BH
 BH
@@ -3101,11 +3125,11 @@ BH
 "}
 (6,1,1) = {"
 QU
-Yn
+mn
 wm
 ZN
 wm
-Yn
+mn
 QU
 BH
 BH
@@ -3139,11 +3163,11 @@ BH
 "}
 (7,1,1) = {"
 QU
-Yn
+mn
 dr
 KO
 DB
-Yn
+mn
 QU
 QU
 QU
@@ -3177,16 +3201,16 @@ qz
 "}
 (8,1,1) = {"
 QU
-Yn
+mn
 QG
 ZN
 oq
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
 IN
-Yn
+mn
 Yn
 Yn
 Yn
@@ -3215,11 +3239,11 @@ qz
 "}
 (9,1,1) = {"
 QU
-Yn
+mn
 cs
 ln
-ZN
-Yn
+wv
+mn
 jX
 yl
 yR
@@ -3253,7 +3277,7 @@ BH
 "}
 (10,1,1) = {"
 QU
-Yn
+mn
 nC
 ZN
 ru
@@ -3262,7 +3286,7 @@ UO
 IL
 UR
 vQ
-Yn
+mn
 dL
 iK
 Ba
@@ -3291,16 +3315,16 @@ QU
 "}
 (11,1,1) = {"
 QU
-Yn
-Yn
+mn
+mn
 Qr
 qQ
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+mn
+mn
 QB
 Vp
 OT
@@ -4532,13 +4556,13 @@ Yn
 Yn
 Yn
 Yn
-UD
+XA
 Yn
-Yn
-Yn
+mn
+mn
 aD
-Yn
-Yn
+mn
+mn
 QU
 BH
 BH
@@ -4661,15 +4685,15 @@ BH
 QU
 BH
 BH
-Yn
+mn
 Dh
-Jt
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+UD
+mn
+mn
+mn
+mn
+mn
+mn
 TH
 Yn
 Yn
@@ -4728,7 +4752,7 @@ QU
 OX
 DD
 DD
-nQ
+Xo
 QU
 BH
 BH
@@ -4766,7 +4790,7 @@ BH
 sR
 DD
 lP
-nQ
+Xo
 QU
 BH
 BH
@@ -4802,7 +4826,7 @@ BH
 BH
 BH
 BH
-Wj
+DD
 cA
 QU
 QU
@@ -4895,7 +4919,7 @@ BH
 BH
 BH
 QU
-BH
+sR
 sR
 cA
 lP
@@ -4933,7 +4957,7 @@ BH
 BH
 QU
 BH
-BH
+sR
 cA
 lP
 DD
@@ -4970,8 +4994,8 @@ BH
 QU
 QU
 BH
-BH
-mn
+sR
+cA
 sR
 sR
 sR
@@ -5007,10 +5031,10 @@ ga
 BH
 BH
 BH
-BH
-WY
-mn
-BH
+sR
+sR
+cA
+sR
 BH
 BH
 BH
@@ -5030,7 +5054,7 @@ sR
 sR
 yp
 oV
-wv
+yp
 vi
 BH
 QU
@@ -5047,14 +5071,14 @@ cA
 cA
 cA
 uJ
+sR
 BH
-BH
 QU
 QU
 QU
 QU
 QU
-BH
+sR
 fn
 cA
 sR
@@ -5069,7 +5093,7 @@ BH
 cA
 ZF
 cA
-sR
+WY
 BH
 QU
 BH
