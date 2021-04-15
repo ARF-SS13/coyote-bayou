@@ -29,6 +29,12 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"dP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "es" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -84,6 +90,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
+/mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gM" = (
@@ -201,6 +208,10 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
+/area/f13/tunnel)
+"mT" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "mU" = (
 /obj/machinery/conveyor/auto{
@@ -380,6 +391,13 @@
 /turf/open/floor/plasteel/neutral/side{
 	dir = 4
 	},
+/area/f13/tunnel)
+"vE" = (
+/obj/machinery/button/door{
+	id = "pain";
+	name = "Door Control"
+	},
+/turf/closed/wall/r_wall/f13/vault,
 /area/f13/tunnel)
 "wa" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -704,6 +722,10 @@
 	dir = 8
 	},
 /area/f13/tunnel)
+"QO" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "QT" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating/tunnel,
@@ -843,6 +865,9 @@
 "Yr" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor/sixtyminute,
+/obj/machinery/door/poddoor{
+	id = "pain"
+	},
 /turf/open/water,
 /area/f13/tunnel)
 "YH" = (
@@ -1376,7 +1401,7 @@ iY
 iY
 iY
 iY
-iY
+vE
 iY
 iY
 iY
@@ -1490,7 +1515,7 @@ rU
 rU
 hA
 Qs
-Oe
+QO
 Qs
 hA
 Qs
@@ -1686,7 +1711,7 @@ iY
 Qs
 nz
 Qs
-Qs
+QO
 Qs
 iY
 QU
@@ -2019,7 +2044,7 @@ BH
 QU
 iY
 rU
-rU
+mT
 iY
 Oe
 Qs
@@ -2311,7 +2336,7 @@ Ev
 ZL
 Rj
 Rj
-Aw
+dP
 tO
 DW
 BH

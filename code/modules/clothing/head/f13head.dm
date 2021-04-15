@@ -496,7 +496,7 @@
 
 /obj/item/clothing/head/f13
 	flags_inv = HIDEHAIR
-
+	
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
 	desc = "(I) <font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
@@ -505,11 +505,17 @@
 	cold_protection = HEAD //This tam brings the warm reggae and Jamaican sun with it.
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
-/obj/item/clothing/head/f13/fez
-	name = "fez"
-	desc = "(I) Fezzes are cool!"
-	icon_state = "fez"
-	item_state = "secsoft"
+/obj/item/clothing/head/f13/hairband
+	name = "hairband"
+	desc = "Pretty yellow hairband"
+	icon_state = "50shairband"
+	item_state = "50shairband"
+
+/obj/item/clothing/head/f13/nursehat
+	name = "nursehat"
+	desc = "White cloth headdress for nurses"
+	icon_state = "nursehat"
+	item_state = "nursehat"
 
 /obj/item/clothing/head/f13/beaver
 	name = "beaverkin"

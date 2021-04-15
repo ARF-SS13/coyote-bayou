@@ -8,6 +8,7 @@
 	var/reading = FALSE //sanity
 	var/oneuse = TRUE //default this is true, but admins can var this to 0 if we wanna all have a pass around of the rod form book
 	var/used = FALSE //only really matters if oneuse but it might be nice to know if someone's used it for admin investigations perhaps
+	var/select = FALSE
 
 /obj/item/book/granter/proc/turn_page(mob/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
@@ -787,7 +788,7 @@
 	desc = "A useful book on surgery."
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_LOW
-	traitname = "lowsurgery"
+	traitname = "minor surgery"
 	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
 
 /obj/item/book/granter/trait/midsurgery
@@ -795,8 +796,16 @@
 	desc = "A useful book on surgery."
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_MID
-	traitname = "midsurgery"
+	traitname = "intermediate surgery"
 	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+
+/obj/item/book/granter/trait/tinkering
+	name = "Tinkering for Wastelander"
+	desc = "A useful book on tinkering."
+	oneuse = TRUE
+	granted_trait = TRAIT_MASTER_GUNSMITH
+	traitname = "tinkering"
+	remarks = list("Experiment!", "You can always try 3 times...", "Be careful with loaded guns...")
 
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"
@@ -841,3 +850,42 @@
 	remarks = list("Keep your fists up...", "Don't clench your thumb in your fist, or you might break it...", "Turn into your punch, and put your body weight behind it...", "Footwork is everything, make sure to step into your punches...", "Aim for their jaw for an easy K-O...")
 */
 
+/obj/item/book/granter/trait/selection
+	name = "Private Diary"
+	desc = "Your private diary, reminding you of the knowledge you previously had."
+	granted_trait = null
+
+/obj/item/book/granter/trait/selection/attack_self(mob/user)
+	var/list/choices = list("Hard Yards","Minor Surgery","Power Armor","Chemistry","Salvager","Melee Expert", "Tinkerer")
+	if(granted_trait == null)	
+		var/choice = input("Choose a trait:") in choices
+		switch(choice)
+			if(null)
+				return 0
+			if("Hard Yards")
+				granted_trait = TRAIT_HARD_YARDS
+				traitname = "trekking"
+			if("Minor Surgery")
+				granted_trait = TRAIT_SURGERY_LOW
+				traitname = "intermediate surgery"
+			if("Chemistry")
+				granted_trait = TRAIT_CHEMWHIZ
+				traitname = "chemistry"
+			if("Salvager")
+				granted_trait = TRAIT_TECHNOPHREAK
+				traitname = "salvaging"
+			if("Melee Expert")
+				granted_trait = TRAIT_BIG_LEAGUES
+				traitname = "hitting things"
+			if("Power Armor")
+				granted_trait = TRAIT_PA_WEAR
+				traitname = "advanced armor"
+			if("Tinkerer")
+				granted_trait = TRAIT_MASTER_GUNSMITH
+				traitname = "tinkering"
+	else 
+		. = ..()
+		
+/obj/item/book/granter/trait/selection/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)

@@ -979,7 +979,253 @@
 				/obj/item/weldingtool/advanced,
 				/obj/item/stock_parts/cell/ammo/mfc,
 				/obj/item/stock_parts/cell/ammo/ec,
+				/obj/item/stock_parts/cell/ammo/ecp,
 				/obj/item/megaphone)
 
+/obj/item/experimental
+	name = "Experimental component"
+	desc = "What could this do..."
+	icon = 'icons/obj/assemblies.dmi'
+	icon_state = "radio-multitool"
+
+/obj/item/experimental/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W, /obj/item/gun/ballistic/shotgun))
+		to_chat(usr, "You can't improve [W.name]...")
+		return
+	if(istype(W, /obj/item/gun/ballistic))
+		gun(W, user)
+	if(istype(W, /obj/item/gun/energy))
+		egun(W, user)
+	if(istype(W, /obj/item/clothing/suit/armor))
+		armor(W, user)
+	if(istype(W, /obj/item/clothing/head))
+		hat(W, user)
+	//if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
+	//	parmor(W)
+
+/obj/item/experimental/proc/gun(obj/item/W, mob/user)
+	var/obj/item/gun/ballistic/B = W 
+
+	var/dmgmod = rand(-10,10)
+	var/penmod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/overall = dmgmod+penmod-spdmod
+	var/prefix
+
+	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		dmgmod += 2
+		penmod += 2
+		spdmod += 2
+		overall = dmgmod+penmod-spdmod
+
+	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+	if(B.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item too much.")
+		return
+
+	switch(overall)
+		if(-30 to -15)
+			prefix = "Ruined "
+		if(-15 to 0)
+			prefix = "Inferior "
+		if(0 to 15)
+			prefix = "Improved "
+		if(15 to 30)
+			prefix = "Superior "
+		if(30 to 100)
+			prefix = "Legendary "
+	
+	B.extra_damage += (dmgmod)
+	B.extra_penetration += (penmod/30)
+	B.fire_delay += (spdmod/5)
+	B.name = prefix + B.name
+	B.tinkered += 1
+
+	to_chat(usr, "You tinker with the gun making [W.name]...")
+	qdel(src)
 
 
+/obj/item/experimental/proc/egun(obj/item/W, mob/user)
+	var/obj/item/gun/energy/E = W
+
+	var/dmgmod = rand(-10,10)
+	var/penmod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/overall = dmgmod+penmod-spdmod
+	var/prefix
+
+	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		dmgmod += 2
+		penmod += 2
+		spdmod += 2
+		overall = dmgmod+penmod-spdmod
+	
+	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+	if(E.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item too much.")
+		return
+
+	switch(overall)
+		if(-30 to -15)
+			prefix = "Ruined "
+		if(-15 to 0)
+			prefix = "Inferior "
+		if(0 to 15)
+			prefix = "Improved "
+		if(15 to 30)
+			prefix = "Superior "
+		if(30 to 100)
+			prefix = "Legendary "
+	
+	E.extra_damage += (dmgmod)
+	E.extra_penetration += (penmod/30)
+	E.fire_delay += (spdmod/5)
+	//E.ammo_type[1].delay += spdmod
+	E.name = prefix + E.name
+	E.tinkered += 1
+
+	to_chat(usr, "You tinker with the energy gun making [W.name]...")
+	qdel(src)
+
+/obj/item/experimental/proc/armor(obj/item/W, mob/user)
+	var/obj/item/clothing/suit/armor/A = W
+
+	var/tiermod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/prefix
+	var/overall = tiermod - spdmod
+
+	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		tiermod += 2
+		spdmod += -2
+
+	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+	if(A.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item too much.")
+		return
+
+	switch(overall)
+		if(-20 to -10)
+			prefix = "Ruined "
+		if(-10 to 0)
+			prefix = "Inferior "
+		if(0 to 10)
+			prefix = "Improved "
+		if(10 to 20)
+			prefix = "Superior "
+		if(20 to 100)
+			prefix = "Legendary "
+
+	A.armor.modifyAllRatings(tiermod*2.5)
+	A.slowdown += (spdmod/25)
+	A.name = prefix + A.name
+	A.tinkered += 1
+
+	to_chat(usr, "You tinker with the armor making [W.name]...")
+	qdel(src)
+
+/obj/item/experimental/proc/hat(obj/item/W, mob/user)
+	var/obj/item/clothing/head/H = W
+
+	var/tiermod = rand(-10,10)
+	var/spdmod = rand(-10,10)
+	var/prefix
+	var/overall = tiermod - spdmod
+
+	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		tiermod += 2
+		spdmod += -2
+
+	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+	if(H.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		to_chat(usr, "You have already tinkered with this item too much.")
+		return
+
+	switch(overall)
+		if(-20 to -10)
+			prefix = "Ruined "
+		if(-10 to 0)
+			prefix = "Inferior "
+		if(0 to 10)
+			prefix = "Improved "
+		if(10 to 20)
+			prefix = "Superior "
+		if(20 to 100)
+			prefix = "Legendary "
+
+	H.armor.modifyAllRatings(tiermod*2.5)
+	H.slowdown += (spdmod/25)
+	H.name = prefix + H.name
+	H.tinkered += 1
+
+	to_chat(usr, "You tinker with the armor making [W.name]...")
+	qdel(src)
+			/*
+/obj/item/experimental/parmor(obj/item/W)
+	var/obj/item/clothing/suit/armor/power_armor/A = W
+
+	var/prefix
+
+	if(W.tinkered)
+		to_chat(usr, "You have already tinkered with this item.")
+		return
+
+
+*/
+
+/obj/item/invention
+	name = "Invention"
+	desc = "What could this be..."
+	icon = 'icons/obj/assemblies.dmi'
+	icon_state = "radio-multitool"
+
+/obj/item/invention/attack_self(mob/user)
+	. = ..()
+	makething(user)
+
+/obj/item/invention/proc/makething(mob/user)
+	qdel(src)
+
+	var/obj/item/item
+
+	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/nullrod/claymore/chainsaw_sword)
+
+	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
+	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/machinery/chem_master, 
+	/obj/machinery/cell_charger)
+
+	var/list/mid = list(/obj/item/twohanded/fireaxe/bmprsword, /obj/item/twohanded/sledgehammer, /obj/item/shield/makeshift,/obj/item/gun/ballistic/automatic/autopipe,
+	/obj/item/gun/ballistic/shotgun/lasmusket, /obj/item/gun/ballistic/shotgun/plasmacaster, /obj/item/clothing/suit/armor/f13/metalarmor,
+	/obj/item/clothing/head/helmet/f13/raider/eyebot, /obj/item/clothing/head/helmet/knight/f13/metal/reinforced)
+
+	var/list/low = list(/obj/item/gun/ballistic/revolver/zipgun,/obj/item/gun/ballistic/revolver/pipe_rifle,/obj/item/fishingrod,/obj/item/grenade/iedcasing,
+	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
+	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
+
+	if(prob(60))
+		item = pick(low)
+		new item(user.loc)
+	if(prob(30))
+		item = pick(mid)
+		new item(user.loc)
+	if(prob(9))
+		item = pick(high)
+		new item(user.loc)
+	if(prob(1))
+		item = pick(vhigh)
+		new item(user.loc)
+
+	to_chat(usr, "You tinker and manage to create [item.name].")

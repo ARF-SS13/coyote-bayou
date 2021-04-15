@@ -293,9 +293,7 @@
 /area/f13/brotherhood/surface)
 "ako" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/flashlight/lantern,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "aku" = (
@@ -966,6 +964,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"aLs" = (
+/obj/effect/turf_decal/stripes/white/box,
+/obj/machinery/workbench,
+/obj/item/book/granter/crafting_recipe/blueprint/r84,
+/obj/item/book/granter/crafting_recipe/blueprint/r82,
+/obj/item/book/granter/crafting_recipe/blueprint/service,
+/obj/item/book/granter/crafting_recipe/blueprint/m1garand,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "aLA" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/dirt{
@@ -2517,7 +2524,6 @@
 /area/f13/legion)
 "bPH" = (
 /obj/structure/rack,
-/obj/item/flashlight/lantern,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
 /obj/item/claymore/machete/training,
@@ -5156,6 +5162,13 @@
 /obj/structure/stone_tile/slab,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"dYv" = (
+/obj/structure/rack,
+/obj/item/clothing/under/f13/legslave,
+/obj/item/clothing/under/f13/legslavef,
+/obj/item/clothing/head/f13/legion/servant,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "dZk" = (
 /obj/structure/table/wood,
 /obj/item/stack/f13Cash/random/ncr/low,
@@ -9463,10 +9476,8 @@
 	},
 /area/f13/wasteland)
 "hcr" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hcx" = (
@@ -10142,15 +10153,9 @@
 /area/f13/city)
 "hxX" = (
 /obj/structure/rack,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar,
-/obj/item/electropack/shockcollar/explosive,
-/obj/item/key/bcollar,
-/obj/item/key/collar,
-/obj/item/key/collar,
-/obj/item/key/collar,
-/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hyf" = (
@@ -11131,10 +11136,12 @@
 	},
 /area/f13/wasteland)
 "igU" = (
-/obj/structure/barricade/sandbags,
-/obj/structure/barricade/sandbags,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/structure/rack,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "ihm" = (
 /obj/effect/landmark/start/f13/shopkeeper,
 /turf/open/floor/f13/wood,
@@ -14449,6 +14456,18 @@
 "kzu" = (
 /obj/effect/turf_decal/stripes/white/box,
 /obj/structure/rack,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/radio/headset/headset_ncr,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
+/obj/item/clothing/mask/ncr_facewrap,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "kzB" = (
@@ -15429,12 +15448,6 @@
 /area/f13/ncr)
 "loU" = (
 /obj/machinery/chem_heater,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_2";
-	layer = 6;
-	pixel_x = -6;
-	pixel_y = 13
-	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -16156,11 +16169,8 @@
 	},
 /area/f13/building)
 "lMn" = (
-/obj/machinery/workbench,
 /obj/effect/turf_decal/stripes/white/box,
-/obj/item/book/granter/crafting_recipe/blueprint/service,
-/obj/item/book/granter/crafting_recipe/blueprint/r82,
-/obj/item/book/granter/crafting_recipe/blueprint/r84,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "lMp" = (
@@ -16215,8 +16225,8 @@
 	},
 /area/f13/building)
 "lOY" = (
-/obj/machinery/workbench/forge,
 /obj/effect/turf_decal/stripes/white/box,
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "lPu" = (
@@ -16255,7 +16265,12 @@
 	},
 /area/f13/wasteland)
 "lRd" = (
+/obj/structure/rack,
 /obj/effect/turf_decal/stripes/white/box,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "lRB" = (
@@ -16478,22 +16493,10 @@
 /area/f13/wasteland)
 "lZl" = (
 /obj/effect/turf_decal/stripes/white/box,
-/obj/structure/rack,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/radio/headset/headset_ncr,
-/obj/item/radio/headset/headset_ncr,
-/obj/item/radio/headset/headset_ncr,
-/obj/item/radio/headset/headset_ncr,
-/obj/item/radio/headset/headset_ncr,
-/obj/item/radio/headset/headset_ncr,
-/obj/item/clothing/mask/ncr_facewrap,
-/obj/item/clothing/mask/ncr_facewrap,
-/obj/item/clothing/mask/ncr_facewrap,
-/obj/item/clothing/mask/ncr_facewrap,
-/obj/item/clothing/mask/ncr_facewrap,
-/obj/item/clothing/mask/ncr_facewrap,
+/obj/machinery/photocopier,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "lZw" = (
@@ -19103,12 +19106,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/city)
 "odW" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/stripes/white/box,
 /obj/machinery/light,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/glasses/welding,
+/obj/machinery/workbench/forge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "odZ" = (
@@ -19202,12 +19202,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ohV" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/item/stamp/denied,
-/obj/item/stamp,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/effect/turf_decal/stripes/white/box,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "oic" = (
 /obj/structure/kitchenspike,
@@ -19350,7 +19346,11 @@
 	},
 /area/f13/wasteland)
 "onx" = (
-/obj/structure/filingcabinet,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/stamp,
+/obj/item/stamp/denied,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "onz" = (
@@ -23923,10 +23923,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"rLH" = (
-/obj/machinery/autolathe/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
 "rLP" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/light/small{
@@ -24027,7 +24023,9 @@
 	},
 /area/f13/wasteland)
 "rPR" = (
-/obj/machinery/autolathe,
+/obj/structure/chair/wood{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "rQe" = (
@@ -24265,9 +24263,8 @@
 	},
 /area/f13/radiation)
 "rZK" = (
-/obj/effect/turf_decal/stripes/white/box,
-/obj/machinery/photocopier,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "saf" = (
 /obj/structure/simple_door/wood,
@@ -26799,6 +26796,20 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"tKT" = (
+/obj/structure/rack,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar,
+/obj/item/electropack/shockcollar/explosive,
+/obj/item/key/bcollar,
+/obj/item/key/collar,
+/obj/item/key/collar,
+/obj/item/key/collar,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "tKZ" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
@@ -42578,13 +42589,13 @@ qQf
 qQf
 qQf
 wVT
-wVT
+aLs
 wVT
 wVT
 oVQ
 wVT
 wVT
-nGs
+rPR
 ezX
 cpK
 dMW
@@ -42841,7 +42852,7 @@ odW
 ezX
 pRS
 wVT
-nGs
+rPR
 rhr
 cpK
 dMW
@@ -43092,13 +43103,13 @@ qQf
 qQf
 qQf
 wVT
-lRd
+wVT
 wVT
 ohV
 pfb
 wVT
 wVT
-nGs
+rPR
 ezX
 cpK
 dMW
@@ -43355,7 +43366,7 @@ dcj
 pfp
 wVT
 wVT
-rLH
+rPR
 rhr
 cpK
 jkJ
@@ -43604,7 +43615,7 @@ ezX
 qQf
 iGU
 qQf
-qQf
+lRd
 kzu
 lZl
 rZK
@@ -86434,7 +86445,7 @@ fyf
 fyf
 fyf
 fyf
-igU
+jxH
 fyf
 fyf
 fyf
@@ -92892,7 +92903,7 @@ hom
 hom
 hom
 hom
-gcK
+hom
 gcK
 dRs
 wzm
@@ -93146,10 +93157,10 @@ pIz
 frY
 hom
 uhW
-oMY
-ako
+hcr
+uhW
+hxX
 hom
-gcK
 gcK
 dRs
 gfY
@@ -93402,11 +93413,11 @@ eXO
 pIz
 frY
 hom
-uhW
+ako
 xNm
-hcr
+oMY
+igU
 hom
-gcK
 gcK
 dRs
 dRs
@@ -93661,9 +93672,9 @@ rbJ
 hom
 bPH
 eQH
-uhW
+oMY
+dYv
 hom
-gcK
 gcK
 gcK
 gcK
@@ -93918,9 +93929,9 @@ frY
 dvo
 xNm
 xNm
-hxX
+xNm
+tKT
 hom
-gcK
 gcK
 gcK
 gcK
@@ -94177,7 +94188,7 @@ hom
 hom
 hom
 hom
-gcK
+hom
 gcK
 gcK
 gcK
