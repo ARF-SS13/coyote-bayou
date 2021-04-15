@@ -871,6 +871,7 @@
 			if("Chemistry")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 			if("Salvager")
 				granted_trait = TRAIT_TECHNOPHREAK
 				traitname = "salvaging"
