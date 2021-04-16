@@ -1207,20 +1207,20 @@
 /obj/item/experimental/proc/pahat(obj/item/W, mob/user)
 	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
 	if(prob(15))
-		if(istype(A,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa))//ups raider to salvaged
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
-			qdel(A)
+			qdel(H)
 			return
-		if(istype(A,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
-			qdel(A)
+			qdel(H)
 			return
-		if(istype(A, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
+		if(istype(H, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
-			qdel(A)
+			qdel(H)
 			return
 	if(prob(5))
-		qdel(A)
+		qdel(H)
 		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
 	qdel(src)
 
