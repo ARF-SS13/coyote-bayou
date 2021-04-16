@@ -2975,7 +2975,7 @@
 		if(!query_add_mentor.warn_execute())
 			return
 		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime`, `round_id` ,`adminckey` ,`adminip` ,`log`, `mentorkey`)
+			INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime`, `round_id` ,`adminckey` ,`adminip` ,`log`, `target`)
 			VALUES (NULL , NOW( ), :round_id, :adminckey, :addr, CONCAT('Added new mentor ', :mentorkey));"},
 			list("adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
 		)
