@@ -995,14 +995,23 @@
 		return
 	if(istype(W, /obj/item/gun/ballistic))
 		gun(W, user)
+		return
 	if(istype(W, /obj/item/gun/energy))
 		egun(W, user)
+		return
+	if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
+		parmor(W, user)
+		return
+	if(istype(W, /obj/item/clothing/head/helmet/f13/power_armor))
+		pahat(W, user)
+		return
 	if(istype(W, /obj/item/clothing/suit/armor))
 		armor(W, user)
+		return
 	if(istype(W, /obj/item/clothing/head))
 		hat(W, user)
-	//if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
-	//	parmor(W)
+		return
+	
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
 	var/obj/item/gun/ballistic/B = W 
@@ -1173,18 +1182,47 @@
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
-			/*
-/obj/item/experimental/parmor(obj/item/W)
-	var/obj/item/clothing/suit/armor/power_armor/A = W
+			
+/obj/item/experimental/proc/parmor(obj/item/W, mob/user)
+	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
+	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
+	if(prob(15))
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A, /obj/item/clothing/suit/armor/f13/power_armor/t45b))
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
+			qdel(A)
+			return
+	if(prob(5))
+		qdel(A)
+		to_chat(user,"You ruin the armor completely, destroying it in the process...")
+	qdel(src)
 
-	var/prefix
-
-	if(W.tinkered)
-		to_chat(usr, "You have already tinkered with this item.")
-		return
-
-
-*/
+/obj/item/experimental/proc/pahat(obj/item/W, mob/user)
+	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
+	if(prob(15))
+		if(istype(A,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa))//ups raider to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
+			qdel(A)
+			return
+	if(prob(5))
+		qdel(A)
+		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
+	qdel(src)
 
 /obj/item/invention
 	name = "Invention"
