@@ -196,7 +196,7 @@
 	id = "hell";
 	name = "Door Control"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
 "dk" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -649,10 +649,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "mn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden/strong,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/bunker)
 "mt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
@@ -706,7 +704,7 @@
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
 "np" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -745,9 +743,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/radiation)
-"nQ" = (
-/turf/closed/wall/r_wall/rust,
-/area/f13/caves)
 "oo" = (
 /obj/structure/timeddoor/sixtyminute,
 /turf/closed/mineral/random/low_chance,
@@ -1220,7 +1215,7 @@
 	id = "soup";
 	name = "Door Control"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
 "vu" = (
 /obj/structure/closet/crate{
@@ -1282,13 +1277,11 @@
 /area/f13/radiation)
 "wv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood,
-/obj/item/reagent_containers/food/snacks/meat/slab/human,
-/mob/living/simple_animal/hostile/deathclaw{
-	speed = -2
+/mob/living/simple_animal/hostile/abomhorror/nsb,
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/area/f13/radiation)
 "wx" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1377,6 +1370,12 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
+/area/f13/bunker)
+"yj" = (
+/obj/structure/decoration/rag{
+	icon_state = "skulls"
+	},
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
 "yk" = (
 /obj/structure/barricade/wooden/strong,
@@ -1493,13 +1492,12 @@
 /area/f13/bunker)
 "zF" = (
 /obj/structure/simple_door/metal/ventilation,
-/obj/machinery/door/poddoor/shutters{
-	id = "pain";
-	name = "door shutters"
-	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/decoration/rag{
 	icon_state = "skin"
+	},
+/obj/machinery/door/poddoor{
+	id = "pain"
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -1686,7 +1684,7 @@
 /area/f13/bunker)
 "DA" = (
 /obj/structure/timeddoor/sixtyminute,
-/turf/closed/wall/f13/ruins,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/tunnel)
 "DB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1938,10 +1936,7 @@
 /area/f13/bunker)
 "IL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/abomhorror{
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/abomhorror/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1951,7 +1946,7 @@
 	id = "okay";
 	name = "Door Control"
 	},
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
 "IR" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2102,21 +2097,11 @@
 	},
 /area/f13/bunker)
 "KO" = (
-/mob/living/simple_animal/hostile/abomhorror{
-	desc = "A terrible fusion of man and something else entirely. It looks to be in great pain.";
-	faction = list("raider");
-	health = 2000;
-	icon_living = "abomination";
-	icon_state = "abomination";
-	name = "Abomination";
-	obj_damage = 300;
-	speed = -1;
-	wound_bonus = 0
+/obj/structure/decoration/rag{
+	icon_state = "skin"
 	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/radiation)
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/bunker)
 "KP" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/deathclaw/mother{
@@ -2357,7 +2342,7 @@
 /area/f13/tunnel)
 "Qr" = (
 /obj/structure/decoration/shock,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
 "QB" = (
 /obj/machinery/light/broken{
@@ -2542,9 +2527,12 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"TE" = (
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/tunnel)
 "TH" = (
 /obj/structure/decoration/warning,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
 "TO" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2584,14 +2572,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "UD" = (
-/obj/structure/simple_door/metal/ventilation,
-/obj/machinery/door/poddoor/shutters{
-	id = "pain";
-	name = "door shutters"
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
 "UM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2705,7 +2687,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "WY" = (
-/obj/structure/barricade/wooden/strong,
+/obj/structure/nest/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Xa" = (
@@ -2729,8 +2711,11 @@
 	icon_state = "skin"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
+"Xo" = (
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/caves)
 "Xr" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/deathclaw/mother{
@@ -2895,6 +2880,7 @@
 "ZR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste,
+/mob/living/simple_animal/hostile/abomhorror/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -2949,11 +2935,11 @@ BH
 "}
 (2,1,1) = {"
 QU
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+mn
 QU
 BH
 BH
@@ -2987,11 +2973,11 @@ BH
 "}
 (3,1,1) = {"
 QU
-Yn
+mn
 df
 ZN
 jM
-Yn
+mn
 QU
 BH
 BH
@@ -3025,11 +3011,11 @@ QU
 "}
 (4,1,1) = {"
 QU
-Yn
+mn
 wm
 ZR
 KI
-Yn
+mn
 QU
 BH
 BH
@@ -3063,11 +3049,11 @@ BH
 "}
 (5,1,1) = {"
 QU
-Yn
+mn
 wm
 ZN
 Df
-Yn
+mn
 QU
 BH
 BH
@@ -3101,11 +3087,11 @@ BH
 "}
 (6,1,1) = {"
 QU
-Yn
+mn
 wm
 ZN
 wm
-Yn
+mn
 QU
 BH
 BH
@@ -3139,11 +3125,11 @@ BH
 "}
 (7,1,1) = {"
 QU
-Yn
+mn
 dr
-KO
+ln
 DB
-Yn
+mn
 QU
 QU
 QU
@@ -3177,22 +3163,22 @@ qz
 "}
 (8,1,1) = {"
 QU
-Yn
+mn
 QG
-ZN
+wv
 oq
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
 IN
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
 QU
 BH
 BH
@@ -3215,11 +3201,11 @@ qz
 "}
 (9,1,1) = {"
 QU
-Yn
+mn
 cs
 ln
-ZN
-Yn
+wv
+mn
 jX
 yl
 yR
@@ -3230,7 +3216,7 @@ OT
 tI
 tI
 fk
-Yn
+mn
 QU
 BH
 BH
@@ -3253,7 +3239,7 @@ BH
 "}
 (10,1,1) = {"
 QU
-Yn
+mn
 nC
 ZN
 ru
@@ -3262,13 +3248,13 @@ UO
 IL
 UR
 vQ
-Yn
+mn
 dL
 iK
 Ba
 OT
 ew
-Yn
+mn
 QU
 BH
 BH
@@ -3291,22 +3277,22 @@ QU
 "}
 (11,1,1) = {"
 QU
-Yn
-Yn
+mn
+mn
 Qr
 qQ
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+mn
+mn
 QB
 Vp
 OT
 qF
 wy
-Yn
+mn
 QU
 BH
 BH
@@ -3330,7 +3316,7 @@ BH
 (12,1,1) = {"
 QU
 QU
-Yn
+mn
 hc
 xg
 PI
@@ -3344,7 +3330,7 @@ OT
 yh
 yh
 MZ
-Yn
+mn
 QU
 BH
 BH
@@ -3368,7 +3354,7 @@ BH
 (13,1,1) = {"
 BH
 QU
-Yn
+mn
 ER
 aU
 pC
@@ -3382,7 +3368,7 @@ OT
 yh
 KM
 fu
-Yn
+mn
 QU
 BH
 BH
@@ -3406,7 +3392,7 @@ BH
 (14,1,1) = {"
 BH
 QU
-nQ
+Xo
 Tq
 Ai
 vv
@@ -3420,7 +3406,7 @@ JI
 VS
 gS
 tx
-Yn
+mn
 QU
 BH
 BH
@@ -3444,7 +3430,7 @@ BH
 (15,1,1) = {"
 BH
 QU
-nQ
+Xo
 BL
 kE
 Cp
@@ -3458,7 +3444,7 @@ Yn
 Yn
 aN
 aJ
-Yn
+mn
 QU
 BH
 BH
@@ -3482,7 +3468,7 @@ BH
 (16,1,1) = {"
 BH
 QU
-nQ
+Xo
 Ls
 he
 SK
@@ -3496,7 +3482,7 @@ yI
 yL
 vf
 xl
-Yn
+mn
 QU
 BH
 BH
@@ -3520,11 +3506,11 @@ BH
 (17,1,1) = {"
 BH
 QU
-nQ
+Xo
 he
 he
 Xf
-Yn
+mn
 Yn
 Yn
 XA
@@ -3534,7 +3520,7 @@ Yn
 Yn
 Yn
 Yn
-Yn
+mn
 QU
 BH
 BH
@@ -3558,11 +3544,11 @@ BH
 (18,1,1) = {"
 BH
 QU
-nQ
+Xo
 ZK
 Xf
 Va
-Yn
+mn
 fI
 HE
 RH
@@ -3572,7 +3558,7 @@ Yn
 eY
 Tm
 LP
-Yn
+mn
 QU
 BH
 BH
@@ -3596,11 +3582,11 @@ BH
 (19,1,1) = {"
 BH
 QU
-nQ
+Xo
 Dg
 he
 Va
-Yn
+mn
 wC
 rM
 PI
@@ -3610,7 +3596,7 @@ Yn
 QX
 YU
 nd
-Yn
+mn
 QU
 BH
 BH
@@ -3634,11 +3620,11 @@ BH
 (20,1,1) = {"
 BH
 QU
-nQ
+Xo
 XO
 aM
 kE
-Yn
+mn
 Sy
 XH
 Mc
@@ -3672,11 +3658,11 @@ BH
 (21,1,1) = {"
 BH
 QU
-nQ
+Xo
 mP
 Va
 Qk
-Yn
+mn
 Rx
 Fo
 pC
@@ -3686,7 +3672,7 @@ aJ
 pC
 Nf
 Hw
-Yn
+mn
 QU
 BH
 BH
@@ -3710,11 +3696,11 @@ BH
 (22,1,1) = {"
 BH
 QU
-nQ
+Xo
 Va
 kE
 Tq
-Yn
+mn
 sh
 PI
 QK
@@ -3724,7 +3710,7 @@ Yn
 KD
 pC
 LP
-Yn
+mn
 QU
 BH
 BH
@@ -3748,11 +3734,11 @@ BH
 (23,1,1) = {"
 BH
 QU
-nQ
+Xo
 jc
 he
 Uv
-Yn
+mn
 Jz
 ZP
 Ik
@@ -3762,7 +3748,7 @@ Yn
 gP
 ll
 yu
-Yn
+mn
 QU
 BH
 BH
@@ -3786,24 +3772,24 @@ BH
 (24,1,1) = {"
 oo
 oo
-nQ
+Xo
 wI
 uL
 Cr
-kI
-Yn
+KO
+mn
 Cc
 Xn
-Yn
+mn
 eg
-WO
-Yn
+yj
+mn
 mx
-Yn
-Yn
+mn
+mn
 DA
-Re
-Re
+TE
+TE
 wI
 Re
 Re
@@ -3938,7 +3924,7 @@ Kb
 (28,1,1) = {"
 QU
 BH
-nQ
+Xo
 Fw
 UM
 Sx
@@ -3976,7 +3962,7 @@ Ns
 (29,1,1) = {"
 QU
 BH
-nQ
+Xo
 FP
 Sx
 Tq
@@ -3990,7 +3976,7 @@ Yn
 fs
 TO
 vf
-Yn
+mn
 QU
 BH
 BH
@@ -4014,7 +4000,7 @@ BH
 (30,1,1) = {"
 QU
 BH
-nQ
+Xo
 vb
 Sx
 Tq
@@ -4028,7 +4014,7 @@ Yn
 Yn
 Yn
 fD
-Yn
+mn
 QU
 BH
 BH
@@ -4051,8 +4037,8 @@ BH
 "}
 (31,1,1) = {"
 QU
-nQ
-nQ
+Xo
+Xo
 Tq
 If
 RZ
@@ -4066,7 +4052,7 @@ Yn
 dP
 Ix
 cb
-Yn
+mn
 QU
 BH
 BH
@@ -4089,7 +4075,7 @@ BH
 "}
 (32,1,1) = {"
 QU
-nQ
+Xo
 ld
 Sx
 Fj
@@ -4104,7 +4090,7 @@ Yn
 po
 WO
 LR
-Yn
+mn
 QU
 BH
 BH
@@ -4127,7 +4113,7 @@ BH
 "}
 (33,1,1) = {"
 QU
-nQ
+Xo
 db
 Sx
 cW
@@ -4142,7 +4128,7 @@ Yn
 vm
 Gw
 vf
-Yn
+mn
 QU
 QU
 QU
@@ -4165,7 +4151,7 @@ BH
 "}
 (34,1,1) = {"
 QU
-nQ
+Xo
 Ps
 Sx
 vv
@@ -4180,23 +4166,23 @@ Yn
 Yn
 Yn
 RR
-Yn
-Yn
-Yn
-Yn
-WO
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+mn
+mn
+mn
+mn
+yj
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+mn
 QU
 BH
 BH
@@ -4242,7 +4228,7 @@ BH
 (36,1,1) = {"
 QU
 QU
-nQ
+Xo
 Va
 UM
 kE
@@ -4356,7 +4342,7 @@ BH
 (39,1,1) = {"
 QU
 QU
-nQ
+Xo
 QO
 he
 Ko
@@ -4394,7 +4380,7 @@ BH
 (40,1,1) = {"
 QU
 BH
-nQ
+Xo
 nq
 Sx
 Tq
@@ -4432,7 +4418,7 @@ BH
 (41,1,1) = {"
 QU
 BH
-nQ
+Xo
 oJ
 Fj
 Sx
@@ -4470,7 +4456,7 @@ BH
 (42,1,1) = {"
 QU
 BH
-nQ
+Xo
 je
 vv
 QN
@@ -4508,7 +4494,7 @@ BH
 (43,1,1) = {"
 QU
 BH
-nQ
+Xo
 wI
 kE
 Sx
@@ -4518,27 +4504,27 @@ Yn
 AU
 Yn
 Yn
-Jt
-Yn
-Yn
-kI
-Yn
-zF
-Jt
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
 UD
-Yn
-Yn
-Yn
+mn
+mn
+KO
+mn
+zF
+UD
+mn
+mn
+mn
+mn
+mn
+mn
+mn
+XA
+mn
+mn
+mn
 aD
-Yn
-Yn
+mn
+mn
 QU
 BH
 BH
@@ -4659,20 +4645,20 @@ BH
 "}
 (47,1,1) = {"
 QU
+QU
 BH
-BH
-Yn
+mn
 Dh
-Jt
-Yn
-Yn
-Yn
-Yn
-Yn
-Yn
+UD
+mn
+mn
+mn
+mn
+mn
+mn
 TH
-Yn
-Yn
+mn
+mn
 jB
 xw
 ag
@@ -4698,7 +4684,7 @@ BH
 (48,1,1) = {"
 QU
 BH
-BH
+QU
 Pv
 Qh
 jE
@@ -4728,7 +4714,7 @@ QU
 OX
 DD
 DD
-nQ
+Xo
 QU
 BH
 BH
@@ -4766,7 +4752,7 @@ BH
 sR
 DD
 lP
-nQ
+Xo
 QU
 BH
 BH
@@ -4802,7 +4788,7 @@ BH
 BH
 BH
 BH
-Wj
+DD
 cA
 QU
 QU
@@ -4895,7 +4881,7 @@ BH
 BH
 BH
 QU
-BH
+sR
 sR
 cA
 lP
@@ -4933,7 +4919,7 @@ BH
 BH
 QU
 BH
-BH
+sR
 cA
 lP
 DD
@@ -4970,8 +4956,8 @@ BH
 QU
 QU
 BH
-BH
-mn
+sR
+cA
 sR
 sR
 sR
@@ -5007,10 +4993,10 @@ ga
 BH
 BH
 BH
-BH
-WY
-mn
-BH
+sR
+sR
+cA
+sR
 BH
 BH
 BH
@@ -5030,7 +5016,7 @@ sR
 sR
 yp
 oV
-wv
+yp
 vi
 BH
 QU
@@ -5047,14 +5033,14 @@ cA
 cA
 cA
 uJ
+sR
 BH
-BH
-QU
-QU
-QU
-QU
-QU
-BH
+Xo
+Xo
+Xo
+Xo
+Xo
+sR
 fn
 cA
 sR
@@ -5069,7 +5055,7 @@ BH
 cA
 ZF
 cA
-sR
+WY
 BH
 QU
 BH
@@ -5087,7 +5073,7 @@ PF
 BH
 BH
 QU
-nQ
+Xo
 Cs
 uP
 Gt
@@ -5125,10 +5111,10 @@ BH
 BH
 BH
 QU
-nQ
+Xo
 vo
 VE
-nQ
+Xo
 QU
 QU
 BH

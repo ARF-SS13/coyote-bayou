@@ -660,6 +660,7 @@
 	scope_x_offset = 4
 	scope_y_offset = 15
 	extra_damage = -4
+	fire_delay = 4
 	suppressor_x_offset = 26
 	suppressor_y_offset = 28
 
