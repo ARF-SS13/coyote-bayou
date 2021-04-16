@@ -752,3 +752,35 @@
 	speed = -0.5
 	var/static/list/abom_sounds
 	deathmessage = "wails as its form shudders and violently comes to a stop."
+
+/mob/living/simple_animal/hostile/abomhorror/nsb
+	maxHealth = 1000
+	health = 1000
+	desc = "A terrible fusion of man, animal, and something else entirely. It looks to be in great pain, constantly shuddering violently and seeming relatively docile to the robots and raiders of the bunker. Huh."
+	harm_intent_damage = 8
+	melee_damage_lower = 60
+	melee_damage_upper = 70
+	obj_damage = 300
+	faction = list("raider")
+	wound_bonus = 20
+	speed = -1
+	deathmessage = "wails as its form shudders and violently comes to a stop."
+
+/mob/living/simple_animal/hostile/abomhorror/nsb/Initialize()
+	. = ..()
+	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')
+
+/mob/living/simple_animal/hostile/abomhorror/nsb/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null)
+	..()
+	if(stat)
+		return
+	var/chosen_sound = pick(abom_sounds)
+	playsound(src, chosen_sound, 50, TRUE)
+
+/mob/living/simple_animal/hostile/abomhorror/nsb/Life()
+	..()
+	if(stat)
+		return
+	if(prob(10))
+		var/chosen_sound = pick(abom_sounds)
+		playsound(src, chosen_sound, 70, TRUE)

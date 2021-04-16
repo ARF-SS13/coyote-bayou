@@ -149,6 +149,14 @@
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
 
+/turf/closed/indestructible/f13vaultrusted
+	name = "rusty vault wall"
+	desc = "A rusty chunk of metal used to separate rooms."
+	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
+	icon_state = "r_wall"
+	baseturfs = /turf/open/floor/plating
+	smooth = SMOOTH_TRUE
+
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
 	desc = "An extremely densely-packed rock, sheeted over with centuries worth of ice and snow."
