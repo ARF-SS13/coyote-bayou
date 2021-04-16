@@ -1199,7 +1199,7 @@
 			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
-	if(prob(5))
+	if(prob(10))
 		qdel(A)
 		to_chat(user,"You ruin the armor completely, destroying it in the process...")
 	qdel(src)
@@ -1219,7 +1219,7 @@
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return
-	if(prob(5))
+	if(prob(10))
 		qdel(H)
 		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
 	qdel(src)
