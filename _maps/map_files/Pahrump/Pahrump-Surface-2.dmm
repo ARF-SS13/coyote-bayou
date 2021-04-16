@@ -652,6 +652,11 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"axX" = (
+/obj/structure/rack,
+/obj/item/storage/pill_bottle/chem_tin/buffout,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "aya" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/rock/jungle,
@@ -7728,6 +7733,7 @@
 /area/f13/ncr)
 "fRx" = (
 /obj/structure/table,
+/obj/item/storage/pill_bottle/chem_tin/buffout,
 /turf/open/floor/f13,
 /area/f13/building)
 "fSq" = (
@@ -15160,6 +15166,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
+/obj/item/storage/pill_bottle/chem_tin/buffout,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -62147,7 +62154,7 @@ fyf
 tKZ
 rdc
 rpu
-cSH
+axX
 rpu
 fLN
 rpu
