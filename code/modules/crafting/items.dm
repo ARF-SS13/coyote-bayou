@@ -1127,7 +1127,7 @@
 			prefix = "Legendary "
 
 	A.armor.modifyAllRatings(tiermod*2.5)
-	A.slowdown += (spdmod/25)
+	A.slowdown += (spdmod/75)
 	A.name = prefix + A.name
 	A.tinkered += 1
 
@@ -1167,7 +1167,7 @@
 			prefix = "Legendary "
 
 	H.armor.modifyAllRatings(tiermod*2.5)
-	H.slowdown += (spdmod/25)
+	H.slowdown += (spdmod/75)
 	H.name = prefix + H.name
 	H.tinkered += 1
 
