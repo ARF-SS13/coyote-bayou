@@ -931,11 +931,9 @@
 				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/lead/five,
-				/obj/item/stack/sheet/metal/five,
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
-				/obj/item/camera,
 				/obj/item/scrap/research
 				)
 
