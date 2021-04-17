@@ -79,6 +79,14 @@
 	item_state = "ncr_fatigue_pants"
 	item_color = "ncr_fatigue_pants"
 
+/obj/item/clothing/under/f13/ncr/ncr_shorts
+	name = "NCR fatigue shorts"
+	desc = "A set of uniform shorts and lightweight shirt for NCR troopers deployed in hot climates."
+	can_adjust = TRUE
+	icon_state = "ncr_shorts"
+	item_state = "ncr_shorts"
+	item_color = "ncr_shorts"
+
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outfit"
 	desc = "A soft outfit used by NCR caravaneers."

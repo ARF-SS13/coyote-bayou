@@ -568,7 +568,7 @@
 	scope_state = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
-	fire_delay = 8
+	fire_delay = 3.5
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -591,7 +591,7 @@
 	desc = "Wattz 2000 Laser Rifle. Uses micro fusion cells for more powerful lasers, and an extended barrel for additional range."
 	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
-	fire_delay = 8
+	fire_delay = 3.5
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
