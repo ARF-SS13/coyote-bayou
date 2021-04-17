@@ -1253,16 +1253,16 @@
 	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
 	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
 
-	if(prob(60))
+	if(prob(60)||prob(30)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(low)
 		new item(user.loc)
-	if(prob(30))
+	if(prob(30)||prob(15)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(mid)
 		new item(user.loc)
-	if(prob(9))
+	if(prob(9)||prob(4.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(high)
 		new item(user.loc)
-	if(prob(1))
+	if(prob(1)||prob(0.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(vhigh)
 		new item(user.loc)
 
