@@ -928,7 +928,7 @@
 	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
-				/obj/item/stack/ore/blackpowder,
+				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/lead/five,
 				/obj/item/stack/sheet/metal/five,
