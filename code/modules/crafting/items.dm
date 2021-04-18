@@ -1042,7 +1042,7 @@
 	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
-	B.desc += " Attempt[A.tinkered] - Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
+	B.desc += " Attempt[B.tinkered] - Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
 
 	to_chat(usr, "You tinker with the gun making [W.name]...")
 	qdel(src)
@@ -1089,7 +1089,7 @@
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
-	E.desc += " Attempt[A.tinkered] - Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
+	E.desc += " Attempt[E.tinkered] - Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
 
 	to_chat(usr, "You tinker with the energy gun making [W.name]...")
 	qdel(src)
@@ -1175,7 +1175,7 @@
 	H.slowdown += (spdmod/50)
 	H.name = prefix + H.name
 	H.tinkered += 1
-	H.desc += " Attempt[A.tinkered] - Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
+	H.desc += " Attempt[H.tinkered] - Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
