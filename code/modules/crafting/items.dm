@@ -1042,6 +1042,7 @@
 	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
+	B.desc += " Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
 
 	to_chat(usr, "You tinker with the gun making [W.name]...")
 	qdel(src)
@@ -1088,6 +1089,7 @@
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
+	E.desc += " Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
 
 	to_chat(usr, "You tinker with the energy gun making [W.name]...")
 	qdel(src)
@@ -1124,10 +1126,13 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	A.armor.modifyAllRatings(tiermod*2.5)
+	A.armor.linemelee += tiermod*2.5
+	A.armor.linebullet += tiermod*2.5
+	A.armor.linelaser += tiermod*2.5
 	A.slowdown += (spdmod/50)
 	A.name = prefix + A.name
 	A.tinkered += 1
+	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1164,13 +1169,17 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	H.armor.modifyAllRatings(tiermod*2.5)
+	H.armor.linemelee += tiermod*2.5
+	H.armor.linebullet += tiermod*2.5
+	H.armor.linelaser += tiermod*2.5
 	H.slowdown += (spdmod/50)
 	H.name = prefix + H.name
 	H.tinkered += 1
+	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
+
 			/*
 /obj/item/experimental/parmor(obj/item/W)
 	var/obj/item/clothing/suit/armor/power_armor/A = W
