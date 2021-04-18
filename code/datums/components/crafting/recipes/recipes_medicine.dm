@@ -44,7 +44,7 @@
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 3,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 3)
-	time = 50
+	time = 35
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/healpoultice
@@ -55,7 +55,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2)
-	time = 80
+	time = 40
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak
@@ -65,7 +65,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 50
+	time = 45
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/superstimpak
@@ -75,7 +75,7 @@
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 80
+	time = 50
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super)
 

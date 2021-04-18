@@ -809,7 +809,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
 	name = "soil"
-	desc = "A patch of dirt. <b>Alt-Click</b> to empty the soil's nutrients."
+	desc = "A patch of dirt."
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "soil"
 	circuit = null
