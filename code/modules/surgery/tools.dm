@@ -16,6 +16,13 @@
 		return
 	return ..()
 
+/obj/item/retractor/tribal
+	name = "skin-puller"
+	desc = "You don't want to be at the recieving end of this."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "retractor_tribe"
+	toolspeed = 2
+
 /obj/item/retractor/advanced
 	name = "mechanical pinches"
 	desc = "An agglomerate of rods and gears."
@@ -66,6 +73,13 @@
 		to_chat(user, "<span class='warning'>You refrain from hitting [L] with [src], as you are in help intent.</span>")
 		return
 	return ..()
+
+/obj/item/hemostat/tribal
+	name = "flesh-poker"
+	desc = "The shaman knows what he's doing... Right?"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "hemostat_tribe"
+	toolspeed = 2
 
 /obj/item/hemostat/augment
 	name = "hemostat"
