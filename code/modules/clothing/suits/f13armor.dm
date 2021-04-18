@@ -571,6 +571,26 @@
 	item_state = "vault_commandcoat"
 	armor = list("tier" = 3)
 
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer
+	name = "command coat"
+	desc = "(III) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
+	icon_state = "overseer_commandcoat"
+	item_state = "overseer_commandcoat"
+
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
+	name = "command coat"
+	desc = "(V) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	icon_state = "marhsal_commandcoat"
+	item_state = "marshal_commandcoat"
+	armor = list("tier" = 5, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/armoured
+	name = "command coat"
+	desc = "(IV) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	icon_state = "armouredvault_commandcoat"
+	item_state = "armouredvault_commandcoat"
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+
 /obj/item/clothing/suit/armor/f13/battlecoat/tan
 	name = "tan battlecoat"
 	desc = "(III) A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future. This one's colors have faded somewhat."
