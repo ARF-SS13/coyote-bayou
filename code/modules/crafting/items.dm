@@ -1012,16 +1012,16 @@
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 2
-		penmod += 2
-		spdmod += 2
+		dmgmod += 4
+		penmod += 4
+		spdmod += 4
 		overall = dmgmod+penmod-spdmod
 
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(B.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(B.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1057,16 +1057,16 @@
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 2
-		penmod += 2
-		spdmod += 2
+		dmgmod += 4
+		penmod += 4
+		spdmod += 4
 		overall = dmgmod+penmod-spdmod
 	
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(E.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(E.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1101,14 +1101,14 @@
 	var/overall = tiermod - spdmod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		tiermod += 2
-		spdmod += -2
+		tiermod += 4
+		spdmod += -4
 
 	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(A.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(A.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1125,7 +1125,7 @@
 			prefix = "Legendary "
 
 	A.armor.modifyAllRatings(tiermod*2.5)
-	A.slowdown += (spdmod/75)
+	A.slowdown += (spdmod/50)
 	A.name = prefix + A.name
 	A.tinkered += 1
 
@@ -1141,14 +1141,14 @@
 	var/overall = tiermod - spdmod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		tiermod += 2
-		spdmod += -2
+		tiermod += 4
+		spdmod += -4
 
 	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(H.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(H.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1165,7 +1165,7 @@
 			prefix = "Legendary "
 
 	H.armor.modifyAllRatings(tiermod*2.5)
-	H.slowdown += (spdmod/75)
+	H.slowdown += (spdmod/50)
 	H.name = prefix + H.name
 	H.tinkered += 1
 
