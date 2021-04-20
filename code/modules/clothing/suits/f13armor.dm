@@ -187,6 +187,12 @@
 	. = ..()
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
+/obj/item/clothing/suit/armor/f13/combat/mk2/raider
+	name = "raider combat armor"
+	desc = "(VI) An old set of reinforced combat armor with some parts supplanted with painspike armor."
+	icon_state = "combat_armor_raider"
+	item_state = "combat_armor_raider"
+
 //Power armors, including salvaged and faction
 
 /obj/item/clothing/suit/armor/f13/power_armor
@@ -270,6 +276,14 @@
 	slowdown = 1.40
 	armor_block_chance = 25
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45b/restored
+	name = "restored T-45b power armor"
+	desc = "(VIII) It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
+	requires_training = TRUE
+	slowdown = 0.24
+	armor_block_chance = 80
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr

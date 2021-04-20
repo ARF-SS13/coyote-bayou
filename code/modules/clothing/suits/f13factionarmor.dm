@@ -71,7 +71,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/f13/raider/iconoclast/
+/obj/item/clothing/suit/armor/f13/raider/iconoclast
 	name = "iconoclast raider armor"
 	desc = "(IV) A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
