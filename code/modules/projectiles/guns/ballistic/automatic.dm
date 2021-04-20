@@ -817,7 +817,7 @@
 	scope_x_offset = 4
 	scope_y_offset = 11
 	can_suppress = TRUE
-	scope_state = "rifle_suppressor"
+	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
 	suppressor_y_offset = 27
 	//automatic = 0

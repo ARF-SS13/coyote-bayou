@@ -187,6 +187,12 @@
 	. = ..()
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
+/obj/item/clothing/suit/armor/f13/combat/mk2/raider
+	name = "raider combat armor"
+	desc = "(VI) An old set of reinforced combat armor with some parts supplanted with painspike armor."
+	icon_state = "combat_armor_raider"
+	item_state = "combat_armor_raider"
+
 //Power armors, including salvaged and faction
 
 /obj/item/clothing/suit/armor/f13/power_armor
@@ -270,6 +276,14 @@
 	slowdown = 1.40
 	armor_block_chance = 25
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45b/restored
+	name = "restored T-45b power armor"
+	desc = "(VIII) It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
+	requires_training = TRUE
+	slowdown = 0.24
+	armor_block_chance = 80
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr
@@ -570,6 +584,26 @@
 	icon_state = "vault_commandcoat"
 	item_state = "vault_commandcoat"
 	armor = list("tier" = 3)
+
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer
+	name = "Overseer's battlecoat"
+	desc = "(III) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
+	icon_state = "overseer_commandcoat"
+	item_state = "overseer_commandcoat"
+
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
+	name = "Marhsal's battlecoat"
+	desc = "(V) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	icon_state = "marhsal_commandcoat"
+	item_state = "marshal_commandcoat"
+	armor = list("tier" = 5, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+
+/obj/item/clothing/suit/armor/f13/battlecoat/vault/armoured
+	name = "armoured vault battlecoat"
+	desc = "(IV) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	icon_state = "armouredvault_commandcoat"
+	item_state = "armouredvault_commandcoat"
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/armor/f13/battlecoat/tan
 	name = "tan battlecoat"

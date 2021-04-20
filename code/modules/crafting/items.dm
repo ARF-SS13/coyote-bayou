@@ -928,14 +928,12 @@
 	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
-				/obj/item/stack/ore/blackpowder,
+				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/lead/five,
-				/obj/item/stack/sheet/metal/five,
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
-				/obj/item/camera,
 				/obj/item/scrap/research
 				)
 
@@ -995,14 +993,23 @@
 		return
 	if(istype(W, /obj/item/gun/ballistic))
 		gun(W, user)
+		return
 	if(istype(W, /obj/item/gun/energy))
 		egun(W, user)
+		return
+	if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
+		parmor(W, user)
+		return
+	if(istype(W, /obj/item/clothing/head/helmet/f13/power_armor))
+		pahat(W, user)
+		return
 	if(istype(W, /obj/item/clothing/suit/armor))
 		armor(W, user)
+		return
 	if(istype(W, /obj/item/clothing/head))
 		hat(W, user)
-	//if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
-	//	parmor(W)
+		return
+	
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
 	var/obj/item/gun/ballistic/B = W 
@@ -1014,16 +1021,16 @@
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 2
-		penmod += 2
-		spdmod += 2
+		dmgmod += 4
+		penmod += 4
+		spdmod += 4
 		overall = dmgmod+penmod-spdmod
 
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(B.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(B.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1044,6 +1051,7 @@
 	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
+	B.desc += " Attempt[B.tinkered] - Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
 
 	to_chat(usr, "You tinker with the gun making [W.name]...")
 	qdel(src)
@@ -1059,16 +1067,16 @@
 	var/prefix
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		dmgmod += 2
-		penmod += 2
-		spdmod += 2
+		dmgmod += 4
+		penmod += 4
+		spdmod += 4
 		overall = dmgmod+penmod-spdmod
 	
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(E.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(E.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1090,6 +1098,7 @@
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
+	E.desc += " Attempt[E.tinkered] - Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
 
 	to_chat(usr, "You tinker with the energy gun making [W.name]...")
 	qdel(src)
@@ -1103,14 +1112,14 @@
 	var/overall = tiermod - spdmod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		tiermod += 2
-		spdmod += -2
+		tiermod += 4
+		spdmod += -4
 
 	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(A.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(A.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1126,10 +1135,13 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	A.armor.modifyAllRatings(tiermod*2.5)
-	A.slowdown += (spdmod/25)
+	A.armor.linemelee += tiermod*2.5
+	A.armor.linebullet += tiermod*2.5
+	A.armor.linelaser += tiermod*2.5
+	A.slowdown += (spdmod/50)
 	A.name = prefix + A.name
 	A.tinkered += 1
+	A.desc += " Attempt[A.tinkered] - Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1143,14 +1155,14 @@
 	var/overall = tiermod - spdmod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
-		tiermod += 2
-		spdmod += -2
+		tiermod += 4
+		spdmod += -4
 
 	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
 
-	if(H.tinkered > 2 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+	if(H.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
 
@@ -1166,25 +1178,57 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	H.armor.modifyAllRatings(tiermod*2.5)
-	H.slowdown += (spdmod/25)
+	H.armor.linemelee += tiermod*2.5
+	H.armor.linebullet += tiermod*2.5
+	H.armor.linelaser += tiermod*2.5
+	H.slowdown += (spdmod/50)
 	H.name = prefix + H.name
 	H.tinkered += 1
+	H.desc += " Attempt[H.tinkered] - Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
-			/*
-/obj/item/experimental/parmor(obj/item/W)
-	var/obj/item/clothing/suit/armor/power_armor/A = W
+			
+/obj/item/experimental/proc/parmor(obj/item/W, mob/user)
+	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
+	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
+	if(prob(15))
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A, /obj/item/clothing/suit/armor/f13/power_armor/t45b))
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
+			qdel(A)
+			return
+	if(prob(10))
+		qdel(A)
+		to_chat(user,"You ruin the armor completely, destroying it in the process...")
+	qdel(src)
 
-	var/prefix
-
-	if(W.tinkered)
-		to_chat(usr, "You have already tinkered with this item.")
-		return
-
-
-*/
+/obj/item/experimental/proc/pahat(obj/item/W, mob/user)
+	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
+	if(prob(15))
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(H)
+			return
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(H)
+			return
+		if(istype(H, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
+			qdel(H)
+			return
+	if(prob(10))
+		qdel(H)
+		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
+	qdel(src)
 
 /obj/item/invention
 	name = "Invention"
@@ -1215,16 +1259,16 @@
 	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
 	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
 
-	if(prob(60))
+	if(prob(60)||prob(30)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(low)
 		new item(user.loc)
-	if(prob(30))
+	if(prob(30)||prob(15)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(mid)
 		new item(user.loc)
-	if(prob(9))
+	if(prob(9)||prob(4.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(high)
 		new item(user.loc)
-	if(prob(1))
+	if(prob(1)||prob(0.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(vhigh)
 		new item(user.loc)
 
