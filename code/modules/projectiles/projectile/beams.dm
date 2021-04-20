@@ -366,7 +366,7 @@
 	name = "rapidfire beam"
 	icon_state = "xray"
 	damage = 35
-	armour_penetration = 0.55
+	armour_penetration = 0.40
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
