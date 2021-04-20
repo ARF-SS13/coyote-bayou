@@ -316,6 +316,13 @@
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 	requires_training = FALSE
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
+	name = "restored T-45b helmet"
+	desc = "(VIII) It's a restored T-45b power armor helmet."
+	armor_block_chance = 80
+	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+	requires_training = TRUE
+
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 	name = "raider T-45b power helmet"
 	desc = "(VIII) This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"

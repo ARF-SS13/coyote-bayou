@@ -993,14 +993,23 @@
 		return
 	if(istype(W, /obj/item/gun/ballistic))
 		gun(W, user)
+		return
 	if(istype(W, /obj/item/gun/energy))
 		egun(W, user)
+		return
+	if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
+		parmor(W, user)
+		return
+	if(istype(W, /obj/item/clothing/head/helmet/f13/power_armor))
+		pahat(W, user)
+		return
 	if(istype(W, /obj/item/clothing/suit/armor))
 		armor(W, user)
+		return
 	if(istype(W, /obj/item/clothing/head))
 		hat(W, user)
-	//if(istype(W, /obj/item/clothing/suit/armor/f13/power_armor))
-	//	parmor(W)
+		return
+	
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
 	var/obj/item/gun/ballistic/B = W 
@@ -1179,19 +1188,47 @@
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
+			
+/obj/item/experimental/proc/parmor(obj/item/W, mob/user)
+	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
+	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
+	if(prob(15))
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			qdel(A)
+			return
+		if(istype(A, /obj/item/clothing/suit/armor/f13/power_armor/t45b))
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
+			qdel(A)
+			return
+	if(prob(10))
+		qdel(A)
+		to_chat(user,"You ruin the armor completely, destroying it in the process...")
+	qdel(src)
 
-			/*
-/obj/item/experimental/parmor(obj/item/W)
-	var/obj/item/clothing/suit/armor/power_armor/A = W
-
-	var/prefix
-
-	if(W.tinkered)
-		to_chat(usr, "You have already tinkered with this item.")
-		return
-
-
-*/
+/obj/item/experimental/proc/pahat(obj/item/W, mob/user)
+	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
+	if(prob(15))
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(H)
+			return
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			qdel(H)
+			return
+		if(istype(H, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
+			qdel(H)
+			return
+	if(prob(10))
+		qdel(H)
+		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
+	qdel(src)
 
 /obj/item/invention
 	name = "Invention"
@@ -1222,16 +1259,16 @@
 	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
 	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
 
-	if(prob(60))
+	if(prob(60)||prob(30)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(low)
 		new item(user.loc)
-	if(prob(30))
+	if(prob(30)||prob(15)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(mid)
 		new item(user.loc)
-	if(prob(9))
+	if(prob(9)||prob(4.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(high)
 		new item(user.loc)
-	if(prob(1))
+	if(prob(1)||prob(0.5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		item = pick(vhigh)
 		new item(user.loc)
 
