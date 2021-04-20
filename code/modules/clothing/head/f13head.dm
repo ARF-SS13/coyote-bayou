@@ -509,7 +509,7 @@
 
 /obj/item/clothing/head/f13
 	flags_inv = HIDEHAIR
-	
+
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
 	desc = "(I) <font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
@@ -738,6 +738,12 @@
 	icon_state = "rigscustom_helmet"
 	item_state = "rigscustom_helmet"
 	icon = 'icons/fallout/clothing/hats.dmi'
+
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/pricecustom
+	name = "spider riot helmet"
+	desc = "A customised riot helmet reminiscient of the more advanced riot helmets found in the Divide, sporting purple lenses over the traditional red or green and a pair of red fangs painted over the respirator. The back of the helmet has a the face of an albino spider painted over it."
+	icon_state = "price_ranger"
+	item_state = "price_ranger"
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom
 	name = "reclaimed ranger-hunter combat helmet"

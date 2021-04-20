@@ -743,6 +743,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	icon_state = "rigscustom_suit"
 	item_state = "rigscustom_suit"
 
+/obj/item/clothing/suit/armor/f13/rangercombat/pricecustom
+	name = "spider riot gear"
+	desc = "A customised and faded suit of riot gear, reminiscient of that found near Hopeville in the Divide, with a pair of wrist mounted ammo pouches for easy access to spare munitions with a pair of stripes down the back made from a fire-proof material."
+	icon_state = "price_ranger"
+	item_state = "price_ranger"
+
 /obj/item/clothing/suit/toggle/armor/f13/cloakranger //Reskinned trail ranger gear
 	name = "ranger poncho"
 	desc = "(IV) A durable muslin poncho. Tough enough to bear the elements and serve as handy blanket."
