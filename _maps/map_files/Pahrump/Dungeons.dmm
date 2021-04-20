@@ -42,6 +42,7 @@
 	},
 /obj/structure/closet/crate/radiation,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -2306,8 +2307,6 @@
 "dQy" = (
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "dRb" = (
@@ -8651,8 +8650,8 @@
 "nSw" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -10980,7 +10979,7 @@
 /area/f13/vault)
 "rAP" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rBV" = (
@@ -13777,10 +13776,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /obj/effect/spawner/lootdrop/f13/armor/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/structure/closet/crate/radiation,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -14313,11 +14312,11 @@
 	},
 /area/f13/bunker)
 "xea" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /obj/structure/closet/crate/radiation,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/plating/f13/inside/mountain{
 	icon_state = "mountain2"
 	},

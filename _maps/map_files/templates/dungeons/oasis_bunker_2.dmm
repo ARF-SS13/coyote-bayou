@@ -341,8 +341,8 @@
 /area/f13/bunker)
 "fD" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fG" = (
@@ -816,8 +816,8 @@
 /area/f13/bunker)
 "on" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1122,6 +1122,11 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"ut" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "uH" = (
 /obj/effect/decal/cleanable/blood/splatter/xeno,
@@ -2271,8 +2276,8 @@
 /area/f13/bunker)
 "Ow" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /obj/item/poster/random_contraband,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "OB" = (
@@ -2399,7 +2404,7 @@
 /area/f13/bunker)
 "Ro" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -2712,8 +2717,8 @@
 /turf/open/floor/engine,
 /area/f13/radiation)
 "Vy" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/engine,
 /area/f13/radiation)
 "VA" = (
@@ -2817,7 +2822,7 @@
 /area/f13/bunker)
 "WS" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -3261,7 +3266,7 @@ rW
 Zz
 Un
 uf
-uf
+ut
 tO
 uf
 uI

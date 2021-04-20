@@ -2,7 +2,7 @@
 
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
-	damage = 28
+	damage = 35
 	armour_penetration = 0.05
 	wound_bonus = 7
 	bare_wound_bonus = -7
@@ -19,14 +19,14 @@
 // .357 magnum
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = 35
+	damage = 38
 	armour_penetration = 0.15
 	wound_bonus = 14
 	bare_wound_bonus = -14
 
 /obj/item/projectile/bullet/a357/jhp
 	name = ".357 JHP bullet"
-	damage = 40
+	damage = 45
 	armour_penetration = -0.56
 	wound_bonus = -28
 	bare_wound_bonus = 28
@@ -41,7 +41,7 @@
 // .44 Magnum
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = 41
+	damage = 43
 	armour_penetration = 0.22
 	wound_bonus = 20
 	bare_wound_bonus = -20

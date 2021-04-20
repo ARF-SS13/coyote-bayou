@@ -2320,6 +2320,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"clz" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/turf/open/floor/f13{
+	icon_state = "dark"
+	},
+/area/f13/bunker)
 "clT" = (
 /obj/structure/sign/poster/prewar/poster83,
 /turf/closed/wall/r_wall,
@@ -4731,6 +4738,7 @@
 "exq" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -4931,7 +4939,6 @@
 /area/f13/brotherhood/operations)
 "eDV" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -7197,6 +7204,9 @@
 	},
 /obj/item/clothing/under/f13/bosformgold_f,
 /obj/item/clothing/under/f13/bosformgold_m,
+/obj/item/clothing/head/f13/boscap,
+/obj/item/clothing/gloves/color/white/bos,
+/obj/item/clothing/shoes/laceup,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "gUf" = (
@@ -8455,7 +8465,7 @@
 /area/f13/bunker)
 "ibr" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -19538,7 +19548,7 @@
 /area/f13/brotherhood/operations)
 "sxA" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -21495,7 +21505,7 @@
 /area/f13/brotherhood/reactor)
 "uaL" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -22018,7 +22028,7 @@
 "uuo" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/ammo,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "uuN" = (
@@ -25090,7 +25100,7 @@
 /area/f13/sewer)
 "xkk" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -25933,8 +25943,8 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/leisure)
 "xZH" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xZI" = (
@@ -29595,7 +29605,7 @@ dRM
 ndp
 niF
 dRM
-eDV
+clz
 vaH
 ndp
 ndp
