@@ -85,6 +85,12 @@
 	name = "reinforced combat helmet"
 	color = "#302E2E" // Dark Grey
 
+/obj/item/clothing/head/helmet/f13/combat/mk2/raider
+	name = "customized raider combat helmet"
+	desc = "(VI) A reinforced combat helmet painted black with the laser designator removed."
+	icon_state = "combat_helmet_raider"
+	item_state = "combat_helmet_raider"
+
 /obj/item/clothing/head/helmet/f13/rangerbroken
 	name = "broken riot helmet"
 	icon_state = "ranger_broken"
