@@ -14,7 +14,7 @@
 	description = "Better than Efficiency V."
 	prereq_ids = list("engineering", "basic_plasma")
 	design_ids = list("drill", "superresonator", "triggermod", "damagemod", "cooldownmod", "rangemod", "ore_redemption", "mining_equipment_vendor", "cargoexpress", "plasmacutter")//e a r l y    g a  m e)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
 
 /datum/techweb_node/adv_mining
 	id = "adv_mining"
@@ -54,4 +54,4 @@
 	description = "Standard equipment used by security."
 	design_ids = list("seclite", "pepperspray", "zipties", "evidencebag")
 	prereq_ids = list("base")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 750)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)

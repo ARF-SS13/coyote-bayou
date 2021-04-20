@@ -31,7 +31,27 @@
 	name = "NCR fatigue pants"
 	path = /obj/item/clothing/under/f13/ncr/pants
 	restricted_desc = "NCR"
-	restricted_roles = list("NCR Captain", 
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR Medical Officer",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR Sergeant First Class",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Combat Engineer",
+							"NCR Combat Medic",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+							"NCR Ranger"
+						)
+
+/datum/gear/uniform/ncr_shorts
+	name = "NCR fatigue shorts"
+	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
 							"NCR Medical Officer",
 							"NCR Veteran Ranger",

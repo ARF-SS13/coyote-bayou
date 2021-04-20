@@ -7,6 +7,15 @@
 /obj/item/reagent_containers/food/snacks/f13/deathclawegg,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"aT" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"bi" = (
+/obj/structure/simple_door/bunker,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
+/area/f13/tunnel)
 "bS" = (
 /obj/machinery/light/small,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
@@ -28,6 +37,12 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
+"dP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "es" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -84,11 +99,17 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
+/mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gM" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/neutral,
+/area/f13/tunnel)
+"hx" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "hA" = (
 /obj/structure/simple_door/bunker,
@@ -113,6 +134,10 @@
 	dir = 5
 	},
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
+"iV" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "iY" = (
 /turf/closed/wall/r_wall/f13/vault,
@@ -154,6 +179,10 @@
 /obj/item/stack/sheet/cardboard/fifty,
 /obj/item/stack/sheet/cardboard/fifty,
 /turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"ll" = (
+/mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/water,
 /area/f13/tunnel)
 "lw" = (
 /obj/effect/decal/waste{
@@ -202,6 +231,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"mT" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/plasteel/grimy,
+/area/f13/tunnel)
 "mU" = (
 /obj/machinery/conveyor/auto{
 	dir = 4
@@ -215,6 +248,7 @@
 /area/f13/tunnel)
 "nd" = (
 /obj/structure/simple_door/bunker,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/tunnel)
 "nz" = (
@@ -381,6 +415,13 @@
 	dir = 4
 	},
 /area/f13/tunnel)
+"vE" = (
+/obj/machinery/button/door{
+	id = "pain";
+	name = "Door Control"
+	},
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/tunnel)
 "wa" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor7-old"
@@ -424,8 +465,8 @@
 	},
 /area/f13/tunnel)
 "yY" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
-/turf/open/water,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "za" = (
 /turf/open/floor/plasteel/neutral/corner{
@@ -491,7 +532,7 @@
 /area/f13/tunnel)
 "Cx" = (
 /obj/structure/timeddoor/sixtyminute,
-/turf/closed/wall/r_wall/f13/vault,
+/turf/closed/mineral/random/low_chance,
 /area/f13/tunnel)
 "CJ" = (
 /mob/living/simple_animal/hostile/centaur,
@@ -547,6 +588,10 @@
 "Hu" = (
 /mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/neutral,
+/area/f13/tunnel)
+"HI" = (
+/obj/structure/nest/deathclaw,
+/turf/open/water,
 /area/f13/tunnel)
 "HK" = (
 /obj/machinery/light/small{
@@ -604,6 +649,10 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"KL" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/indestructible/rock,
+/area/f13/tunnel)
 "LU" = (
 /turf/open/water,
 /area/f13/tunnel)
@@ -640,6 +689,8 @@
 /area/f13/tunnel)
 "NT" = (
 /obj/machinery/door/window/southright,
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Oe" = (
@@ -660,7 +711,8 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "OU" = (
-/obj/machinery/portable_atmospherics/pump,
+/obj/structure/simple_door/bunker,
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Pd" = (
@@ -703,6 +755,10 @@
 /turf/open/floor/plasteel/neutral/side{
 	dir = 8
 	},
+/area/f13/tunnel)
+"QO" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "QT" = (
 /obj/machinery/portable_atmospherics/scrubber,
@@ -809,6 +865,9 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"Wv" = (
+/turf/closed/indestructible/rock,
+/area/f13/tunnel)
 "Xm" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -843,6 +902,9 @@
 "Yr" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor/sixtyminute,
+/obj/machinery/door/poddoor{
+	id = "pain"
+	},
 /turf/open/water,
 /area/f13/tunnel)
 "YH" = (
@@ -858,6 +920,7 @@
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
+/obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Zh" = (
@@ -1376,7 +1439,7 @@ iY
 iY
 iY
 iY
-iY
+vE
 iY
 iY
 iY
@@ -1490,7 +1553,7 @@ rU
 rU
 hA
 Qs
-Oe
+QO
 Qs
 hA
 Qs
@@ -1686,7 +1749,7 @@ iY
 Qs
 nz
 Qs
-Qs
+QO
 Qs
 iY
 QU
@@ -1756,14 +1819,14 @@ Gr
 iY
 iY
 iY
-lE
+bi
 iY
 iY
 iY
 iY
 iY
 iY
-hA
+OU
 iY
 iY
 PS
@@ -1841,7 +1904,7 @@ sw
 sw
 Hu
 kE
-kE
+iV
 NS
 kE
 kE
@@ -1942,7 +2005,7 @@ Ns
 (29,1,1) = {"
 QU
 iY
-rU
+yY
 rU
 iY
 Qs
@@ -2019,7 +2082,7 @@ BH
 QU
 iY
 rU
-rU
+mT
 iY
 Oe
 Qs
@@ -2141,7 +2204,7 @@ Oe
 iY
 hL
 Qs
-Wq
+hx
 CJ
 Tu
 iY
@@ -2172,8 +2235,8 @@ QU
 iY
 rU
 rU
-hA
-Qs
+OU
+aT
 Qs
 Qs
 hA
@@ -2182,7 +2245,7 @@ CJ
 Qs
 va
 YQ
-iY
+wI
 QU
 BH
 BH
@@ -2219,8 +2282,8 @@ iu
 qv
 NT
 LU
-LU
-iY
+wI
+wI
 QU
 BH
 BH
@@ -2254,11 +2317,11 @@ Qs
 Qs
 iY
 gC
-OU
-mj
+wI
+wI
 LU
 LU
-iY
+Wv
 QU
 QU
 BH
@@ -2291,12 +2354,12 @@ iY
 iY
 iY
 iY
-iY
-iY
+wI
+wI
 Cx
-Cx
+KL
 Yr
-Cx
+KL
 BH
 QU
 BH
@@ -2311,7 +2374,7 @@ Ev
 ZL
 Rj
 Rj
-Aw
+dP
 tO
 DW
 BH
@@ -2331,8 +2394,8 @@ QU
 QU
 QU
 QU
-BH
-BH
+QU
+QU
 LU
 LU
 BH
@@ -2446,7 +2509,7 @@ BH
 QU
 BH
 BH
-LU
+VP
 LU
 BH
 QU
@@ -2527,7 +2590,7 @@ QU
 BH
 BH
 LU
-VP
+LU
 LU
 LU
 BH
@@ -2569,7 +2632,7 @@ LU
 LU
 LU
 LU
-BH
+LU
 BH
 QU
 BH
@@ -2606,7 +2669,7 @@ LU
 BH
 BH
 LU
-LU
+HI
 LU
 BH
 QU
@@ -2643,7 +2706,7 @@ LU
 qz
 BH
 QU
-BH
+LU
 LU
 LU
 BH
@@ -2673,9 +2736,9 @@ BH
 QU
 BH
 LU
-VP
 LU
 LU
+ll
 LU
 qz
 BH
@@ -2758,7 +2821,7 @@ QU
 BH
 qz
 LU
-yY
+LU
 qz
 BH
 QU
@@ -2802,12 +2865,12 @@ BH
 QU
 BH
 qz
-VP
 LU
 LU
 LU
 LU
-fU
+LU
+qz
 qz
 qz
 BH
@@ -2881,7 +2944,7 @@ LU
 LU
 LU
 LU
-LU
+HI
 LU
 LU
 qz
@@ -2923,7 +2986,7 @@ LU
 LU
 LU
 qz
-zs
+qz
 BH
 QU
 "}
@@ -2947,7 +3010,7 @@ QU
 BH
 BH
 qz
-LU
+ll
 LU
 LU
 LU
@@ -2985,7 +3048,7 @@ BH
 QU
 BH
 qz
-VP
+LU
 LU
 LU
 LU
