@@ -76,6 +76,7 @@
 
 /obj/structure/car/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
+		var/obj/item/weldingtool/W = I
 		if(inuse || uses_left <= 0) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
 			return
 		inuse = TRUE //one at a time boys, this isn't some kind of weird party
@@ -87,7 +88,7 @@
 			inuse = FALSE
 			return //you can't use the tool, so stop
 		for(var/i1 in 1 to 2) //so, I hate waiting 30 seconds straight... what if we wait 10 seconds 3 times? (yes, its the same, but it'll feel more!)
-			if(!do_after(user, 7 SECONDS, target = src)) //this is my work around, because do_After does have a move away
+			if(!do_after(user, 10 SECONDS * W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
 				user.visible_message("[user] stops disassembling [src].")
 				inuse = FALSE
 				return //you did something, like moving, so stop
@@ -97,8 +98,12 @@
 		var/turf/usr_turf = get_turf(user)
 		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
 			for(var/i3 in 1 to 5) //this is just less lines for the same thing
-				if(prob(10))
+				if(prob(3))
 					new /obj/item/salvage/high(usr_turf)
+				if(prob(5))
+					new /obj/item/salvage/crafting(usr_turf)
+				if(prob(5))
+					new /obj/item/salvage/low(usr_turf)
 		for(var/i2 in 1 to rand(3,5)) //also changing this a little. IDEA: perhaps a mechanic skill could affect the amount dropped instead
 			if(prob(25))
 				if(prob(50))
