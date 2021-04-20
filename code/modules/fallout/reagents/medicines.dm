@@ -131,7 +131,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = 3 //Multiplier if you have the right perk.
+	var/heal_factor_perk = -3 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	var/is_technophobe = FALSE
@@ -167,7 +167,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 	heal_factor = -2
-	heal_factor_perk = 4
+	heal_factor_perk = -4
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
