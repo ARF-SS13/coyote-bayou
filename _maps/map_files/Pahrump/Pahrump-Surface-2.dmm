@@ -1603,10 +1603,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
 "biN" = (
-/obj/item/radio/intercom{
-	frequency = 1891
-	},
-/turf/closed/wall/f13/tunnel,
+/obj/machinery/hydroponics/constructable,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/lattice/catwalk,
+/obj/machinery/light,
+/turf/open/water,
 /area/f13/brotherhood)
 "bjg" = (
 /obj/structure/rack,
@@ -5437,6 +5438,7 @@
 	desc = "It doesn't look very healthy...";
 	name = "Dead potted plant"
 	},
+/obj/machinery/light,
 /turf/open/water,
 /area/f13/brotherhood)
 "elF" = (
@@ -9026,11 +9028,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "gNe" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -9968,13 +9970,6 @@
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirt"
 	},
-/area/f13/brotherhood)
-"hsq" = (
-/obj/machinery/light/small,
-/obj/machinery/hydroponics/constructable,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/lattice/catwalk,
-/turf/open/water,
 /area/f13/brotherhood)
 "hsy" = (
 /obj/structure/barricade/sandbags,
@@ -11944,12 +11939,11 @@
 	},
 /area/f13/building)
 "iHR" = (
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 9
-	},
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "iHS" = (
@@ -12764,6 +12758,10 @@
 /area/f13/legion)
 "jix" = (
 /obj/machinery/autolathe/constructionlathe,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "jiP" = (
@@ -17334,9 +17332,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "mEh" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -17990,13 +17985,9 @@
 /obj/machinery/button/door{
 	id = "bosdoorshutter2";
 	name = "shutters button";
-	pixel_x = -25;
-	pixel_y = -9;
+	pixel_x = -23;
+	pixel_y = -4;
 	req_access_txt = "120"
-	},
-/obj/item/radio/intercom{
-	frequency = 1891;
-	pixel_x = -28
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
@@ -20342,11 +20333,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "oVv" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/workbench,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -23650,12 +23641,11 @@
 "rrl" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
 /obj/item/kirbyplants/dead{
 	desc = "It doesn't look very healthy...";
 	name = "Dead potted plant"
 	},
+/obj/structure/lattice/catwalk,
 /turf/open/water,
 /area/f13/brotherhood)
 "rrE" = (
@@ -24122,7 +24112,7 @@
 /area/f13/village)
 "rOo" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/light/small{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -24839,7 +24829,9 @@
 /turf/open/floor/carpet/black,
 /area/f13/city)
 "snR" = (
-/obj/machinery/light/small,
+/obj/machinery/light{
+	light_color = "#e8eaff"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "soh" = (
@@ -25416,12 +25408,12 @@
 	},
 /area/f13/building)
 "sLi" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hydroponics/constructable,
 /obj/structure/lattice/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/water,
 /area/f13/brotherhood)
 "sLm" = (
@@ -27143,6 +27135,16 @@
 /obj/structure/safe,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"tUh" = (
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = 24
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "tUk" = (
 /obj/machinery/light{
 	dir = 8
@@ -68399,7 +68401,7 @@ iFI
 anP
 qPL
 qPL
-snR
+qPL
 iFI
 gcK
 ktB
@@ -68913,7 +68915,7 @@ daH
 qPL
 uFn
 qPL
-qPL
+snR
 iFI
 gcK
 gbL
@@ -72775,8 +72777,8 @@ jem
 jem
 jem
 jem
-biN
-mfD
+jem
+tUh
 mfD
 mfD
 mfD
@@ -75071,7 +75073,7 @@ nUm
 nUm
 nUm
 nUm
-hsq
+kAh
 dvQ
 ahh
 mwt
@@ -75328,7 +75330,7 @@ nUm
 nUm
 nUm
 nUm
-kAh
+biN
 qRg
 lDv
 wYn
