@@ -63,13 +63,13 @@
 /mob/living/simple_animal/hostile/raider/ranged
 	icon_state = "raiderranged"
 	icon_living = "raiderranged"
-	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/gun/ballistic/automatic/pistol/ninemil)
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/effect/spawner/lootdrop/f13/npc_raider)
 	ranged = 1
 	maxHealth = 115
 	health = 115
 	retreat_distance = 4
 	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/c9mm
+	projectiletype = /obj/item/projectile/bullet/c9mm/op
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 
 /mob/living/simple_animal/hostile/raider/legendary
