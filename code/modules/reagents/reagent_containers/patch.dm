@@ -66,7 +66,7 @@
 /obj/item/reagent_containers/pill/patch/healpoultice
 	name = "Healing poultice"
 	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
-	list_reagents = list(/datum/reagent/medicine/healing_poultice = 10)
+	list_reagents = list(/datum/reagent/medicine/healing_powder/poultice = 10)
 	icon_state = "bandaid_healingpoultice"
 	self_delay = 0
 
