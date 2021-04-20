@@ -65,6 +65,7 @@ Colonel
 	suit_store  = /obj/item/gun/ballistic/automatic/marksman
 	gloves      = /obj/item/clothing/gloves/f13/leather
 	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	shoes		 = /obj/item/clothing/shoes/f13/military/ncr_officer_boot
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/m556/rifle=2, \
@@ -112,6 +113,7 @@ Captain
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boot
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	neck 		= /obj/item/storage/belt/holster
 	ears = 		/obj/item/radio/headset/headset_ncr_com
@@ -183,6 +185,7 @@ Lieutenant
 	ears 		= /obj/item/radio/headset/headset_ncr_com
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	suit_store	= /obj/item/gun/ballistic/automatic/service
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boot
 	belt		= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -230,6 +233,7 @@ Medical Officer
 	gloves		= /obj/item/clothing/gloves/color/latex/nitrile
 	ears 		= /obj/item/radio/headset/headset_ncr_com
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boot
 	belt		= /obj/item/storage/belt/military/assault/ncr
 	r_hand 		= /obj/item/storage/backpack/duffelbag/med/surgery
 	mask 		= /obj/item/clothing/mask/surgical
