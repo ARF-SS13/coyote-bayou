@@ -57,7 +57,7 @@ Colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
 	id 			= /obj/item/card/id/dogtag/ncrcolonel
-	uniform		= /obj/item/clothing/under/f13/ncr
+	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
 	accessory 	= /obj/item/clothing/accessory/ncr
 	head 		= /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
 	belt        = /obj/item/storage/belt/military/assault/ncr
@@ -109,7 +109,7 @@ Captain
 	name = "NCR Captain"
 	jobtype 	= /datum/job/ncr/f13captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
-	uniform		= /obj/item/clothing/under/f13/ncr
+	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
@@ -174,7 +174,7 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype	= /datum/job/ncr/f13lieutenant
 	id			= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform		= /obj/item/clothing/under/f13/ncr
+	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
 	accessory 	= /obj/item/clothing/accessory/ncr/LT1
 	head 		= /obj/item/clothing/head/beret/ncr
 	neck 		= /obj/item/storage/belt/holster
@@ -222,7 +222,7 @@ Medical Officer
 	name = "NCR Medical Officer"
 	jobtype		= /datum/job/ncr/f13medicalofficer
 	id			= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform		= /obj/item/clothing/under/f13/ncr
+	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
 	accessory 	= /obj/item/clothing/accessory/ncr/LT2
 	head 		= /obj/item/clothing/head/beret/ncr
 	neck 		= /obj/item/storage/belt/holster
@@ -382,7 +382,7 @@ Combat Engineer
 	neck 			= /obj/item/storage/belt/holster
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	belt 			= /obj/item/storage/belt/military/assault/ncr
-	head			= /obj/item/clothing/head/f13/ncr
+	head			= /obj/item/clothing/head/f13/ncr/steelpot_med
 	gloves			= /obj/item/clothing/gloves/color/latex/nitrile
 	accessory		= /obj/item/clothing/accessory/armband/med/ncr
 	suit_store		= /obj/item/gun/ballistic/automatic/service

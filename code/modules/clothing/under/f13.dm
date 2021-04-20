@@ -64,6 +64,14 @@
 	item_color = "ncr_uniform"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
+/obj/item/clothing/under/f13/ncr/ncr_officer
+	name = "NCR officer fatigues"
+	desc = "A standard service uniform for commissioned officers of the New California Republic."
+	can_adjust = TRUE
+	icon_state = "ncr_officer"
+	item_state = "ncr_officer"
+	item_color = "ncr_officer"
+
 /obj/item/clothing/under/f13/ncr/scout
 	name = "NCR scout fatigues"
 	desc = "A standard duty uniform for scouts of the New California Republic."
