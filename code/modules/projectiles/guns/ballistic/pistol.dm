@@ -61,6 +61,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = TRUE
+	extra_damage = 5
 	fire_delay = 2
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -79,7 +80,7 @@
 	desc = "The compact version of the classic .45 handgun."
 	icon_state = "c1911"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = -1
+	extra_damage = 4
 	suppressor_x_offset = 29
 	suppressor_y_offset = 21
 
@@ -183,7 +184,7 @@
 	name = "10mm pistol"
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	can_attachments = TRUE
@@ -282,7 +283,7 @@
 	icon_state = "pistol127"
 	force = 14
 	mag_type = /obj/item/ammo_box/magazine/m127mm
-	fire_delay = 5
+	fire_delay = 4
 	can_suppress = TRUE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	suppressor_x_offset = 30
@@ -332,8 +333,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m45exp
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	fire_delay = 1
-	extra_damage = 5
-	extra_penetration = 5
+	extra_damage = 7
+	extra_penetration = 0.3
 	can_suppress = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 28

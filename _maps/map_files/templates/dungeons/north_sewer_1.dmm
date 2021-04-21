@@ -58,10 +58,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
-"eA" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/turf/open/floor/plating/tunnel,
-/area/f13/tunnel)
 "eW" = (
 /obj/machinery/autolathe/constructionlathe,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -259,7 +255,7 @@
 /area/f13/tunnel)
 "nD" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -281,7 +277,7 @@
 "pb" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "pi" = (
@@ -366,7 +362,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "rU" = (
@@ -443,7 +439,6 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -452,7 +447,6 @@
 /area/f13/tunnel)
 "wM" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "wO" = (
@@ -536,6 +530,11 @@
 /area/f13/tunnel)
 "CJ" = (
 /mob/living/simple_animal/hostile/centaur,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"Dy" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "DW" = (
@@ -741,7 +740,7 @@
 /obj/structure/closet/crate/trashcart{
 	storage_capacity = 10
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Qs" = (
@@ -815,7 +814,6 @@
 /area/f13/tunnel)
 "Uj" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plating/tunnel,
@@ -838,12 +836,6 @@
 /obj/machinery/conveyor/auto{
 	dir = 4
 	},
-/turf/open/floor/plating/tunnel,
-/area/f13/tunnel)
-"VM" = (
-/obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "VP" = (
@@ -870,7 +862,7 @@
 /area/f13/tunnel)
 "Xm" = (
 /obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "XD" = (
@@ -1217,7 +1209,7 @@ QU
 iY
 CJ
 Qs
-Xm
+Dy
 VK
 Qs
 Zk
@@ -1481,7 +1473,7 @@ Qs
 aD
 iY
 rQ
-VM
+Mv
 PW
 mj
 VK
@@ -1594,7 +1586,7 @@ Qs
 NG
 Qs
 iY
-eA
+Qs
 Qs
 CJ
 TX
@@ -1633,7 +1625,7 @@ aD
 Qs
 iY
 wt
-wM
+Dy
 wM
 mj
 VK

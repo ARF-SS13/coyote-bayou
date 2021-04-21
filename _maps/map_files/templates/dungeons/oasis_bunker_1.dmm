@@ -86,7 +86,7 @@
 "da" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "dl" = (
@@ -636,7 +636,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "tD" = (
@@ -780,7 +780,6 @@
 "ys" = (
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
@@ -1069,8 +1068,8 @@
 	can_be_unanchored = 1
 	},
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1136,7 +1135,7 @@
 "LH" = (
 /obj/effect/decal/waste,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "LJ" = (
@@ -1423,7 +1422,7 @@
 	dir = 1
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "Td" = (
