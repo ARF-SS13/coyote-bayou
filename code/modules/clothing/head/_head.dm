@@ -11,7 +11,7 @@
 	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
 	var/list/speechspan = null
 	armor = list("tier" = 1)
-	var/tinkered = 0
+	//var/tinkered = 0
 
 /obj/item/clothing/head/Initialize()
 	. = ..()
