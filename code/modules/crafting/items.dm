@@ -1010,6 +1010,16 @@
 		hat(W, user)
 		return
 	
+/obj/item
+	var/tinkered = 0
+
+/obj/item/experimental/proc/reroll(obj/item/W, mob/user)
+	var/obj/item/item = W.type
+	qdel(W)
+	if(prob(70))
+		new item(user.loc)
+		return
+	to_chat(user,"You destroy the item in the process.")
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
 	var/obj/item/gun/ballistic/B = W 
@@ -1029,7 +1039,9 @@
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
-
+	if(B.tinkered == 1)
+		reroll(B,user)
+		return
 	if(B.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
@@ -1051,7 +1063,7 @@
 	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
-	B.desc += " Attempt[B.tinkered] - Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
+	B.desc += " Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
 
 	to_chat(usr, "You tinker with the gun making [W.name]...")
 	qdel(src)
@@ -1075,7 +1087,9 @@
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
-
+	if(E.tinkered == 1)
+		reroll(E,user)
+		return
 	if(E.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
@@ -1098,7 +1112,7 @@
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
-	E.desc += " Attempt[E.tinkered] - Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
+	E.desc += " Extra damage: [E.extra_damage]; Extra penetration: [E.extra_penetration]; Fire delay: [E.fire_delay]"
 
 	to_chat(usr, "You tinker with the energy gun making [W.name]...")
 	qdel(src)
@@ -1118,7 +1132,9 @@
 	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
-
+	if(A.tinkered == 1)
+		reroll(A,user)
+		return
 	if(A.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
@@ -1141,7 +1157,7 @@
 	A.slowdown += (spdmod/50)
 	A.name = prefix + A.name
 	A.tinkered += 1
-	A.desc += " Attempt[A.tinkered] - Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
+	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1161,7 +1177,9 @@
 	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
-
+	if(H.tinkered == 1)
+		reroll(H,user)
+		return
 	if(H.tinkered > 1 && HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item too much.")
 		return
@@ -1184,7 +1202,7 @@
 	H.slowdown += (spdmod/50)
 	H.name = prefix + H.name
 	H.tinkered += 1
-	H.desc += " Attempt[H.tinkered] - Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
+	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1192,7 +1210,7 @@
 /obj/item/experimental/proc/parmor(obj/item/W, mob/user)
 	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
 	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
-	if(prob(15))
+	if(prob(20))
 		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
 			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
 			qdel(A)
@@ -1205,14 +1223,17 @@
 			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
-	if(prob(10))
+	if(prob(10)&&!HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		qdel(A)
+		to_chat(user,"You ruin the armor completely, destroying it in the process...")
+	if(prob(5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		qdel(A)
 		to_chat(user,"You ruin the armor completely, destroying it in the process...")
 	qdel(src)
 
 /obj/item/experimental/proc/pahat(obj/item/W, mob/user)
 	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
-	if(prob(15))
+	if(prob(20))
 		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
 			qdel(H)
@@ -1225,7 +1246,10 @@
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return
-	if(prob(10))
+	if(prob(10)&&!HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
+		qdel(H)
+		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
+	if(prob(5)&&HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		qdel(H)
 		to_chat(user,"You ruin the helmet completely, destroying it in the process...")
 	qdel(src)
