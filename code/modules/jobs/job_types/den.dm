@@ -196,7 +196,7 @@ Mayor
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -248,7 +248,7 @@ Mayor
 		/obj/item/shovel=1, \
 		/obj/item/kitchen/knife/combat, \
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -630,7 +630,7 @@ Mayor
 			/obj/item/storage/bag/money/small/settler = 1, \
 			/obj/item/kitchen/knife/combat = 1, \
 			/obj/item/gun/ballistic/automatic/pistol/n99 = 1, \
-			/obj/item/ammo_box/magazine/m10mm_adv=2)
+			/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/

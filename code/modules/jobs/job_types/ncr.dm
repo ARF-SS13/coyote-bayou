@@ -570,7 +570,7 @@ Rear Echelon
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m1carbine=1, \
-		/obj/item/ammo_box/magazine/m10mm_adv=3)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=3)
 
 /*
 Trooper
