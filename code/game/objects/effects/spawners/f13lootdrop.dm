@@ -1269,11 +1269,12 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 35,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 20,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 20,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 30,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 25,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 20,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8 = 4,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8 = 15,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9 = 6,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10 = 3,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/unique = 1
 			)
 
