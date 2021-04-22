@@ -4257,6 +4257,10 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -4947,9 +4951,6 @@
 	},
 /area/f13/building)
 "eBP" = (
-/obj/structure/bodycontainer/crematorium{
-	dir = 8
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -5021,6 +5022,10 @@
 /area/f13/brotherhood/operations)
 "eDy" = (
 /obj/structure/closet/crate/bin,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = 24
+	},
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood/offices1st)
 "eDA" = (
@@ -11294,6 +11299,16 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"kAW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/rnd)
 "kBo" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -11594,6 +11609,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
+"kSz" = (
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/offices1st)
 "kTF" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
@@ -12356,6 +12378,16 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/leisure)
+"lEl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = -33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/rnd)
 "lGo" = (
 /obj/structure/sign/poster/prewar/poster88,
 /turf/closed/wall/r_wall,
@@ -13056,6 +13088,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -15531,7 +15567,7 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/offices1st)
 "oOw" = (
-/obj/machinery/atmospherics/components/unary/cryo_cell{
+/obj/structure/bodycontainer/morgue{
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -16005,6 +16041,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -17402,7 +17442,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "qBQ" = (
-/obj/machinery/atmospherics/components/unary/thermomachine,
+/obj/machinery/button/crematorium{
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -17480,6 +17522,10 @@
 /obj/structure/window/reinforced/spawner/north{
 	dir = 4;
 	icon_state = "rwindow"
+	},
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/brotherhood/rnd)
@@ -17626,6 +17672,10 @@
 "qME" = (
 /obj/machinery/rnd/destructive_analyzer,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "qMO" = (
@@ -19448,6 +19498,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/rnd)
+"shc" = (
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = -33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/offices1st)
 "shl" = (
 /obj/machinery/telecomms/server/presets/service,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
@@ -20015,6 +20072,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
+"sNB" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/brotherhood/medical)
 "sNF" = (
 /obj/structure/closet/fridge,
 /obj/item/storage/fancy/egg_box,
@@ -21498,6 +21561,10 @@
 /obj/structure/closet/cabinet{
 	anchored = 1;
 	name = "formal attire cabinet"
+	},
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_y = -33
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
@@ -23155,6 +23222,17 @@
 	},
 /turf/open/water,
 /area/f13/brotherhood/rnd)
+"vng" = (
+/obj/structure/closet/crate/bin,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/offices1st)
 "vnJ" = (
 /obj/item/instrument/guitar,
 /obj/structure/rack,
@@ -23801,6 +23879,16 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/sewer)
+"vNF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red{
+	icon_state = "darkyellowfull"
+	},
+/area/f13/brotherhood/offices1st)
 "vNU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -24565,6 +24653,14 @@
 	icon_state = "purplefull"
 	},
 /area/f13/clinic)
+"wwp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom{
+	frequency = 1891;
+	pixel_x = 33
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/rnd)
 "wwU" = (
 /obj/item/flashlight/flare/torch,
 /turf/open/indestructible/ground/inside/subway,
@@ -25223,6 +25319,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"xfh" = (
+/obj/structure/bodycontainer/crematorium,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/brotherhood/medical)
 "xfu" = (
 /obj/structure/handrail/g_central{
 	dir = 8;
@@ -81410,7 +81512,7 @@ xcx
 vYw
 iIs
 dbk
-edO
+vng
 pIX
 mZX
 cly
@@ -82214,7 +82316,7 @@ xhA
 xhA
 xhA
 yaO
-jPB
+lEl
 jPB
 jPB
 jPB
@@ -82965,7 +83067,7 @@ vYw
 vYw
 vYw
 jGX
-tKy
+vNF
 jgd
 tKy
 dvK
@@ -83217,7 +83319,7 @@ aYS
 wOp
 vYw
 bri
-mZX
+shc
 bxq
 rIl
 bEz
@@ -84013,7 +84115,7 @@ xhA
 xhA
 xhA
 xhA
-jPB
+kAW
 jPB
 lnF
 riY
@@ -84502,7 +84604,7 @@ bdP
 fXs
 vYw
 gXH
-mZX
+kSz
 bxq
 rIl
 edO
@@ -87076,7 +87178,7 @@ pyl
 bhq
 boI
 hDX
-oVJ
+xfh
 oIP
 hPn
 guw
@@ -87335,7 +87437,7 @@ nzw
 hPn
 qBQ
 oVJ
-sdz
+sNB
 oVJ
 oVJ
 tJM
@@ -87592,7 +87694,7 @@ hPn
 hPn
 oOw
 oVJ
-sdz
+hPn
 oVJ
 dUW
 oVJ
@@ -87612,7 +87714,7 @@ kic
 iKl
 tnF
 tnF
-iKl
+wwp
 mxa
 qrl
 xpu
@@ -87847,8 +87949,8 @@ jEM
 rsj
 tFl
 hPn
-oVJ
-oVJ
+hPn
+hPn
 pzO
 sdz
 hPn
