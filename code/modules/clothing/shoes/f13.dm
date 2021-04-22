@@ -83,6 +83,12 @@
 	icon_state = "ncr_boots"
 	item_state = "ncr"
 
+/obj/item/clothing/shoes/f13/military/ncr_officer_boots
+	name = "officer boots"
+	desc = "A pair of well-polished brown leather calf boots fitted with straps."
+	icon_state = "ncr_officer_boots"
+	item_state = "ncr_officer_boots"
+
 /obj/item/clothing/shoes/f13/military/plated
 	name = "plated metal boots"
 	desc = "A pair of leather boots reinforced with metal toe caps and shin guards."
