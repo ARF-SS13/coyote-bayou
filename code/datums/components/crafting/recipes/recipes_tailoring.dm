@@ -424,7 +424,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
-	
+/*
 /datum/crafting_recipe/backsheath
 	name = "back sheath"
 	result = /obj/item/storage/backpack/backsheath
@@ -444,7 +444,7 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
-
+*/
 /datum/crafting_recipe/settler
 	name = "settler outfit"
 	result = /obj/item/clothing/under/f13/settler
