@@ -145,14 +145,14 @@ Head Paladin
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=3,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 /datum/outfit/loadout/sentvet
 	name = "Veteran Head Paladin"
 	backpack_contents = list(
 		/obj/item/gun/energy/ionrifle=1,
 		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		)
 
@@ -294,7 +294,7 @@ Head Knight
 		/obj/item/gun/energy/laser/aer14=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
-		/obj/item/ammo_box/magazine/m10mm_adv=2
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
 		)
 
 /datum/outfit/loadout/capsap
@@ -382,7 +382,7 @@ Star Paladin
 		/obj/item/gun/energy/laser/aer14=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
 		)
 
 /*
@@ -454,7 +454,7 @@ Paladin
 		/obj/item/gun/energy/laser/rcw=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
@@ -474,7 +474,7 @@ Paladin
 		/obj/item/gun/energy/laser/rcw=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
@@ -643,7 +643,7 @@ datum/job/bos/f13seniorknight
 		/obj/item/gun/energy/laser/rcw=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv=2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		)
 
 /datum/outfit/loadout/sknightb
