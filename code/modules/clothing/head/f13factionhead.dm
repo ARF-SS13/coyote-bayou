@@ -374,13 +374,35 @@
 	desc = "(V) A standard issue NCR steel helmet, issued with an additional pair of storm goggles for weather resistance."
 	icon_state = "steelpot_goggles"
 	item_state = "steelpot_goggles"
+	alt_toggle_message = "You push the goggles down "
+	can_toggle = 1
+	flags_inv = HIDEEARS
 	actions_types = list(/datum/action/item_action/toggle)
+	toggle_cooldown = 0
+	flags_cover = HEADCOVERSEYES
+	visor_flags_cover = HEADCOVERSEYES
+	dog_fashion = null
 
 /obj/item/clothing/head/f13/ncr/steelpot_goggles/attack_self(mob/user)
-	weldingvisortoggle(user)
-	icon_state = "steelpot_gogglesup"
-	item_state = "steelpot_gogglesup"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 70, "acid" = 0)
+	if(can_toggle && !user.incapacitated())
+		if(world.time > cooldown + toggle_cooldown)
+			cooldown = world.time
+			up = !up
+			flags_1 ^= visor_flags
+			flags_inv ^= visor_flags_inv
+			flags_cover ^= visor_flags_cover
+			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
+
+			user.update_inv_head()
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				C.head_update(src, forced = 1)
+
+			if(active_sound)
+				while(up)
+					playsound(src.loc, "[active_sound]", 100, 0, 4)
+					sleep(15)
 
 /obj/item/clothing/head/f13/ncr/steelpot_med
 	name = "NCR medic steelpot helmet"
@@ -407,7 +429,7 @@
 	item_state = "steelpot_bandolier"
 
 /obj/item/clothing/head/f13/ncr/steelpot_patriot
-	name = "NCR bandolier steelpot helmet"
+	name = "NCR patriot steelpot helmet"
 	desc = "(V) A standard issue NCR steel helmet. This one has been patriotically customised to feature the NCR's flag prominently across its front."
 	icon_state = "steelpot_patriot"
 	item_state = "steelpot_patriot"
@@ -415,18 +437,11 @@
 /obj/item/clothing/head/f13/ncr_flapcap
 	name = "NCR field cap"
 	desc = "(V) A special issue canvas NCR field cap with cotton neckflap, for sun protection in arid climates."
-	icon_state = "ncr_stetson"
-	item_state = "ncr_stetson"
+	icon_state = "ncr_flapcap"
+	item_state = "ncr_flapcap"
 	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-	icon_state = "steelpot_goggles"
-	item_state = "steelpot_goggles"
-	actions_types = list(/datum/action/item_action/toggle)
-
-/obj/item/clothing/head/f13/ncr_flapcapup/attack_self(mob/user)
-	weldingvisortoggle(user)
-	icon_state = "ncr_flapcapup"
-	item_state = "ncr_flapcapup"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	icon_state = "ncr_flapcap"
+	item_state = "ncr_flapcap"
 
 /obj/item/clothing/head/f13/ncr_slouch
 	name = "NCR slouch hat"
