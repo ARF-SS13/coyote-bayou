@@ -117,7 +117,7 @@ Centurion
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 
 	loadout_options = list(
-	///datum/outfit/loadout/centheavy, //10mm SMG and powerfist
+	/datum/outfit/loadout/centheavy, //10mm SMG and powerfist
 	/datum/outfit/loadout/centassault, //9mm uzi and thermic lance
 	/datum/outfit/loadout/centbreacher //breacher shotgun and fire axe
 	)
