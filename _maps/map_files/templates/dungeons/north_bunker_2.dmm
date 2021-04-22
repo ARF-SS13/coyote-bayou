@@ -1,57 +1,55 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aH" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"aJ" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
+"az" = (
+/turf/open/floor/plasteel/dark/corner{
+	dir = 4
 	},
 /area/f13/bunker)
-"aM" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
+"bv" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 732
 	},
+/turf/open/floor/plasteel,
 /area/f13/bunker)
-"aQ" = (
-/obj/machinery/door/window{
-	dir = 1
+"bB" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 180
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/structure/closet,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plasteel,
 /area/f13/bunker)
-"aW" = (
-/obj/machinery/light/small,
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"bD" = (
+/obj/effect/decal/cleanable/blood,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
-"bC" = (
-/obj/structure/closet,
+"bE" = (
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"bG" = (
-/obj/structure/closet/crate/radiation,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+"bH" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 806
 	},
+/turf/open/floor/plasteel/dark/snowdin,
+/area/f13/bunker)
+"bN" = (
+/obj/effect/decal/cleanable/blood/gibs/ipc/limb,
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"bP" = (
+/obj/item/ingot/silver,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"bS" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 455
+	},
+/turf/open/floor/plasteel/dark/snowdin,
 /area/f13/bunker)
 "bW" = (
 /obj/structure/table,
@@ -61,677 +59,918 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"cf" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
+"cd" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
-/mob/living/simple_animal/hostile/handy,
+/area/f13/bunker)
+"cl" = (
+/obj/machinery/workbench/forge,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"cq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"cz" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/plasteel/twenty,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"cK" = (
+/obj/structure/spider/stickyweb,
+/obj/item/storage/trash_stack,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"cQ" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"cZ" = (
+/obj/machinery/autolathe,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "dj" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "dv" = (
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/bunker)
-"dE" = (
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"dV" = (
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"dZ" = (
+"dw" = (
+/obj/structure/timeddoor,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
-/area/f13/bunker)
-"ed" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"ef" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"eg" = (
-/obj/structure/barricade/sandbags{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"eI" = (
-/obj/structure/table,
-/obj/item/reagent_containers/syringe/medx,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"eK" = (
-/obj/structure/falsewall/reinforced,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"eN" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"fe" = (
-/obj/structure/barricade/sandbags{
+"dA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
+/turf/open/floor/grass,
+/area/f13/bunker)
+"dD" = (
+/mob/living/simple_animal/hostile/radscorpion,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"dE" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"dV" = (
+/obj/item/seeds/ambrosia/gaia,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"eq" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"eu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"ey" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"eD" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"eG" = (
+/obj/item/reagent_containers/food/snacks/banana_split,
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"eN" = (
+/mob/living/simple_animal/hostile/handy,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"fd" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
+"fe" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	icon_state = "tracks"
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"fj" = (
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"fq" = (
+/obj/effect/spawner/lootdrop/weapon_parts,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"fx" = (
+/obj/structure/chair/left{
+	dir = 8
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"fG" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+"fy" = (
+/mob/living/simple_animal/hostile/cazador/young,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"fH" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"fB" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/fireant,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"fQ" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/ground/outside/sidewalk,
+"fI" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"gh" = (
-/obj/effect/decal/remains/human,
-/obj/item/clothing/suit/radiation,
-/obj/item/clothing/head/radiation,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
-	},
+"fN" = (
+/obj/structure/wreck/trash/brokenvendor,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"gl" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+"fT" = (
+/obj/machinery/jukebox,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"gv" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"gA" = (
+"fW" = (
+/obj/machinery/door/poddoor/preopen,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"gd" = (
+/obj/structure/sink{
+	dir = 1;
+	icon_state = "sink";
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"gk" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"go" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"gq" = (
+/obj/item/cultivator,
+/obj/item/shovel/spade,
+/obj/item/shovel,
+/obj/structure/rack,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"gu" = (
+/obj/machinery/iv_drip,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"gv" = (
+/obj/structure/wreck/trash/one_barrel,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"gA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/mob/living/simple_animal/hostile/cazador/young,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"gB" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "gH" = (
-/obj/structure/closet,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/combat,
+/obj/structure/wreck/trash/brokenvendor,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"gR" = (
+/obj/item/blueprint/research,
+/obj/item/blueprint/research,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"gS" = (
+/obj/machinery/door/poddoor{
+	id = 84
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"hd" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+"hj" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"ht" = (
+/obj/structure/barricade/wooden/strong,
+/obj/machinery/door/poddoor{
+	id = 455
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"hy" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"hI" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"hS" = (
+/mob/living/simple_animal/hostile/alien,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"ia" = (
+/mob/living/simple_animal/hostile/handy,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ho" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"iO" = (
-/obj/machinery/chem_dispenser,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+"ic" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	id = 806
 	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"ij" = (
+/obj/structure/wreck/trash/machinepile,
+/obj/item/circuitboard/machine/seed_extractor,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"iq" = (
+/obj/structure/grille/broken,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"is" = (
+/obj/structure/table,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"iJ" = (
+/obj/item/storage/box/gloves,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"iP" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/structure/decoration/vent/rusty,
+/obj/structure/curtain,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"jc" = (
+/obj/machinery/vending/nukacolavendfull,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "jf" = (
-/obj/structure/door_assembly/door_assembly_hatch,
+/obj/effect/decal/cleanable/blood/gibs/human/lizard/up,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ju" = (
-/obj/effect/decal/remains/human,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+"jn" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"jx" = (
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 5
-	},
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plating,
+"jy" = (
+/obj/machinery/hydroponics/soil,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"jA" = (
+/obj/structure/debris/v4,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"jF" = (
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "jQ" = (
-/obj/machinery/door/airlock/hatch,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"jS" = (
+/obj/structure/grille,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = 44
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "jX" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/spider/stickyweb,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"kv" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"lk" = (
-/obj/item/grenade/syndieminibomb/concussion/frag,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
-/area/f13/bunker)
-"lw" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"lH" = (
-/obj/structure/chair,
-/obj/effect/decal/remains/human,
-/obj/item/stack/sheet/animalhide/human,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"lI" = (
+"kj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"lS" = (
-/obj/effect/decal/cleanable/oil/streak,
+"kU" = (
+/obj/item/circuitboard/machine/chem_heater,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"lc" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"lk" = (
+/obj/item/reagent_containers/food/snacks/grown/buffalogourd,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"ln" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	icon_state = "tracks"
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"lx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"ly" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/barrel,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "lU" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"ma" = (
+/obj/structure/wreck/trash/brokenvendor,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"mb" = (
-/obj/effect/decal/cleanable/oil/streak,
-/turf/open/indestructible/ground/outside/sidewalk,
+"mc" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
-"mi" = (
+"mj" = (
 /obj/structure/table,
-/obj/item/reagent_containers/blood/radaway,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+/obj/machinery/button/door{
+	id = 160
 	},
+/turf/open/floor/plasteel,
 /area/f13/bunker)
-"mw" = (
-/obj/effect/decal/waste{
-	icon_state = "goo8"
-	},
-/obj/structure/reagent_dispensers/barrel/four,
-/turf/open/floor/plating,
+"mx" = (
+/obj/structure/flora/stump,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"na" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"ne" = (
-/obj/machinery/door/window,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"no" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"nD" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"nK" = (
-/obj/structure/closet,
-/obj/item/storage/box/gloves,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"nS" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"nV" = (
-/obj/structure/table,
-/obj/item/clothing/accessory/armband/med,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"nW" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"oa" = (
-/obj/item/clothing/under/f13/rag,
-/turf/open/floor/plating,
-/area/f13/bunker)
-"oh" = (
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"op" = (
-/obj/machinery/light/small{
+"mX" = (
+/turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
 /area/f13/bunker)
-"oy" = (
-/obj/structure/barricade/sandbags{
-	dir = 8
-	},
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"mZ" = (
+/obj/effect/decal/cleanable/blood/gibs/human/body,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
-"oP" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"nf" = (
+/mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"pd" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+"nh" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"po" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"pq" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"pz" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"pB" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"pL" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/clothing/under/f13/rag,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"pP" = (
-/turf/closed/wall/r_wall,
-/area/f13/bunker)
-"pQ" = (
-/obj/effect/decal/waste{
-	icon_state = "goo8"
-	},
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"pS" = (
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
-	},
-/area/f13/bunker)
-"qj" = (
-/turf/closed/indestructible/fakeglass,
-/area/f13/bunker)
-"qk" = (
-/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"qu" = (
-/obj/effect/decal/waste,
+"nm" = (
+/mob/living/simple_animal/hostile/handy,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"qy" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/closet,
-/obj/item/reagent_containers/food/snacks/f13/galette,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+"nr" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plasteel/dark/corner{
+	dir = 8
 	},
 /area/f13/bunker)
-"qA" = (
-/obj/structure/chair,
-/obj/effect/decal/remains/human,
+"ns" = (
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"nu" = (
+/turf/open/floor/grass,
+/area/f13/bunker)
+"ny" = (
+/obj/item/seeds/sunflower/novaflower,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"nW" = (
+/mob/living/simple_animal/opossum{
+	name = "Fudge"
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"nX" = (
+/obj/structure/grille,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = 455
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"nY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"of" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"oh" = (
+/turf/closed/mineral/random/low_chance,
+/area/f13/bunker)
+"oj" = (
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"on" = (
+/obj/item/pizzabox/vegetable,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"oq" = (
+/obj/machinery/door/poddoor,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"oK" = (
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"oP" = (
+/mob/living/simple_animal/hostile/deathclaw/legendary,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"oS" = (
+/mob/living/simple_animal/opossum{
+	name = "Mimi"
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"pj" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"pO" = (
+/obj/item/circuitboard/machine/chem_dispenser,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"pP" = (
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"pR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"qb" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"qh" = (
+/obj/effect/decal/cleanable/blood/innards,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"qj" = (
+/turf/closed/indestructible/fakeglass,
+/area/f13/bunker)
+"qp" = (
+/mob/living/simple_animal/hostile/radscorpion,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/snowdin,
+/area/f13/bunker)
+"qw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"qy" = (
+/obj/structure/anvil/obtainable/sandstone,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "qJ" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"qM" = (
+/obj/structure/chair/middle,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "qN" = (
-/obj/structure/table,
-/obj/machinery/computer/terminal{
-	dir = 1;
-	termtag = "Business"
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"rr" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"rG" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/radiation)
-"sy" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/barrel,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ti" = (
-/obj/structure/closet/crate/bin,
+"qV" = (
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"qW" = (
+/obj/machinery/door/poddoor{
+	id = 180
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"rm" = (
+/obj/item/storage/trash_stack,
+/turf/open/transparent/glass,
+/area/f13/bunker)
+"rB" = (
+/mob/living/simple_animal/radstag{
+	faction = list("hostile","goodboy")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"rC" = (
+/obj/machinery/porta_turret/syndicate,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"rJ" = (
+/obj/structure/wreck/trash/two_barrels,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"rL" = (
+/obj/structure/flora/tree/wasteland,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"rM" = (
+/obj/machinery/porta_turret/syndicate,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"rY" = (
+/obj/machinery/door/poddoor{
+	id = 455
+	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"tx" = (
-/mob/living/simple_animal/hostile/centaur,
+"sg" = (
+/obj/structure/chair/left,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"tJ" = (
-/mob/living/simple_animal/hostile/radscorpion,
+"si" = (
+/obj/structure/filingcabinet/security,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"tM" = (
-/obj/structure/door_assembly/door_assembly_hatch,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
+"sl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"tQ" = (
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"ud" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"un" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
-	},
-/area/f13/bunker)
-"us" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/plating,
-/area/f13/bunker)
-"uu" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
+"sr" = (
+/obj/structure/sign/poster/contraband/pinup_shower,
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
-"uC" = (
+"sJ" = (
+/obj/effect/decal/cleanable/blood/gibs/human/up,
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"ti" = (
+/obj/structure/grille,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor{
+	id = 90
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"tm" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"tn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/weapon_parts,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"tp" = (
+/obj/structure/spider/cocoon,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"ts" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"tz" = (
+/obj/structure/reagent_dispensers/water_cooler,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"tD" = (
+/obj/structure/toilet/secret/high_loot,
+/obj/item/grenade,
+/obj/item/grenade/flashbang,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"tK" = (
+/obj/item/pizzabox/mushroom,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"tQ" = (
+/obj/machinery/gibber,
+/obj/effect/decal/cleanable/blood/gibs/slime,
+/obj/effect/decal/cleanable/blood/gibs/slime,
+/obj/effect/decal/cleanable/blood/gibs/slime/torso,
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"tZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"ua" = (
 /obj/structure/table,
-/obj/item/paper,
+/obj/item/storage/box/cups,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"uQ" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -10
-	},
-/obj/structure/mirror{
-	pixel_x = -32
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/bunker)
-"uS" = (
-/obj/machinery/vending/nukacolavend,
+"ux" = (
+/obj/structure/filingcabinet/medical,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"vh" = (
-/obj/machinery/door/airlock/hatch,
+"uA" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/mineral/random/low_chance,
+/area/f13/bunker)
+"uI" = (
+/obj/item/reagent_containers/food/snacks/grown/bungofruit,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"uO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /obj/structure/barricade/wooden/strong,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"vg" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "vp" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 320
 	},
+/turf/open/floor/plasteel,
 /area/f13/bunker)
-"vt" = (
+"vF" = (
+/obj/structure/fluff/broken_flooring,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"vH" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 89
+	},
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"wb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/fireant,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"we" = (
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"vO" = (
-/turf/open/floor/plating,
-/area/f13/bunker)
-"wh" = (
-/obj/effect/decal/cleanable/blood/old,
+"wl" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "wD" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/indestructible/ground/outside/sidewalk,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
-"wJ" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+"wE" = (
+/obj/item/seeds/starthistle/corpse_flower,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"wH" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
 	},
 /area/f13/bunker)
 "wN" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/obj/structure/wreck/trash/four_barrels,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"wO" = (
-/obj/effect/spawner/lootdrop/trash,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"wP" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "wQ" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/structure/rack,
+/obj/item/stack/sheet/plastic/five,
+/obj/item/stack/sheet/plastic/five,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "wU" = (
@@ -743,121 +982,196 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"xf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"xy" = (
+/obj/item/reagent_containers/food/snacks/spiderling,
+/obj/structure/spider/stickyweb,
+/obj/structure/table,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "xG" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
-"xL" = (
+"xJ" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"xS" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 5
-	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"yb" = (
+/mob/living/simple_animal/hostile/handy/robobrain,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"xV" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"yf" = (
-/obj/structure/chair/stool{
-	dir = 8;
-	icon_state = "bench"
-	},
-/obj/effect/decal/remains/human,
+"yr" = (
+/obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"yp" = (
+"yu" = (
+/obj/structure/wreck/trash/machinepile,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"yS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"yV" = (
+/obj/item/storage/box/hug,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"zq" = (
+/obj/structure/timeddoor,
+/obj/item/kirbyplants/random,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"yq" = (
-/obj/structure/janitorialcart,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/bunker)
-"yB" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"yT" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"zm" = (
-/obj/effect/decal/waste,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"zu" = (
-/obj/structure/table,
-/obj/item/storage/pill_bottle/chem_tin/radx,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "zw" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plating,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "zJ" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
+	},
+/area/f13/bunker)
+"zR" = (
+/obj/structure/wreck/trash/machinepile,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"zX" = (
+/mob/living/simple_animal/hostile/handy/securitron,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Ae" = (
+"Ab" = (
 /obj/structure/table,
-/obj/item/surgical_drapes,
-/obj/item/surgicaldrill,
+/obj/item/reagent_containers/food/snacks/chips,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"As" = (
-/obj/effect/decal/waste,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/plating,
+"Aj" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"Bo" = (
-/mob/living/simple_animal/hostile/supermutant,
+"Aq" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/donut/jelly/caramel,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Bp" = (
-/obj/structure/chair/stool{
-	dir = 4;
-	icon_state = "bench"
+"Az" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/reagent_dispensers/barrel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"AB" = (
+/obj/structure/furnace,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"AE" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"AF" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"AG" = (
+/obj/item/storage/box/pillbottles,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"AI" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"AS" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 4
+	},
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"Ba" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Bk" = (
+/mob/living/simple_animal/hostile/handy/gutsy,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Bq" = (
-/obj/machinery/door/airlock/hatch,
-/obj/structure/barricade/wooden/planks,
+/obj/machinery/door/poddoor{
+	id = 233
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Bu" = (
+/obj/item/chair,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -870,30 +1184,26 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Bx" = (
-/obj/structure/bed,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
 "By" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"BA" = (
-/obj/effect/decal/cleanable/vomit/old,
+/obj/structure/rack,
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"BH" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/indestructible/ground/outside/sidewalk,
+"BA" = (
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"BN" = (
+/turf/open/floor/plasteel/dark/snowdin,
+/area/f13/bunker)
+"BR" = (
+/obj/machinery/door/poddoor{
+	id = 732
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "BS" = (
 /obj/machinery/computer/shuttle/northbunkerelevator{
@@ -905,152 +1215,206 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"BV" = (
+/obj/item/storage/box/beakers/variety,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "BZ" = (
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/smokebomb,
-/obj/item/grenade/syndieminibomb/concussion/frag,
-/obj/item/grenade/syndieminibomb/concussion/frag,
-/obj/item/grenade/syndieminibomb/concussion/frag,
+/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Cd" = (
+/obj/machinery/door/poddoor{
+	id = 732
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Cm" = (
-/obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 455
 	},
-/area/f13/bunker)
-"Dv" = (
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/turf/open/floor/plating,
-/area/f13/bunker)
-"Dx" = (
-/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Dz" = (
-/obj/machinery/door/window{
+"Co" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Cp" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radscorpion,
+/turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/structure/closet,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
 /area/f13/bunker)
-"DA" = (
-/obj/item/paper,
-/obj/item/pen,
+"Cy" = (
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"DS" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
+"CA" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"DZ" = (
-/obj/structure/table,
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
+"CB" = (
+/obj/machinery/biogenerator,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Eb" = (
-/obj/structure/bed,
+"CM" = (
+/obj/structure/debris/v3,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Du" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/giantantqueen,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Dv" = (
+/obj/structure/rack,
+/obj/item/clothing/glasses/meson/engine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Dx" = (
+/obj/structure/flora/tree/tall,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"DG" = (
+/mob/living/simple_animal/hostile/handy/protectron,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"DM" = (
+/mob/living/simple_animal/hostile/alien,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"DY" = (
+/obj/structure/barricade/wooden/strong,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "Ed" = (
-/obj/structure/closet,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Ee" = (
+/obj/item/circuitboard/machine/chem_master,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Eg" = (
-/turf/closed/wall/f13/tunnel,
+/mob/living/simple_animal/hostile/alien{
+	faction = list("hostile","goodboy")
+	},
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
-"En" = (
-/obj/effect/decal/waste,
-/turf/open/floor/plating,
+"Eo" = (
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"EB" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/turf/open/floor/plating,
+"Eu" = (
+/obj/structure/chair/right,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "EG" = (
+/obj/effect/decal/cleanable/blood/xtracks,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"EW" = (
+/obj/item/reagent_containers/food/snacks/burger/rat,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"EY" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Fe" = (
+/obj/item/broken_bottle,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Fp" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg1"
-	},
-/area/f13/bunker)
-"EP" = (
-/obj/structure/closet,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/effect/spawner/lootdrop/f13/armor/tier2,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"ER" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
-"ES" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"Ff" = (
-/obj/structure/door_assembly/door_assembly_hatch,
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Fr" = (
-/obj/item/stack/sheet/animalhide/human,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"FR" = (
-/obj/item/clothing/under/f13/rag,
+/obj/item/reagent_containers/food/snacks/spiderleg,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"Fs" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 71
+	},
+/turf/open/floor/plasteel/dark/snowdin,
+/area/f13/bunker)
+"FC" = (
+/obj/machinery/door/poddoor{
+	id = 71
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"FK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"FS" = (
+/turf/open/floor/plasteel/dark/side{
+	dir = 1
+	},
+/area/f13/bunker)
+"FV" = (
+/obj/item/storage/box/syringes,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Gc" = (
 /obj/structure/simple_door/bunker/glass,
@@ -1060,48 +1424,42 @@
 	},
 /area/f13/bunker)
 "Gg" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/mob/living/simple_animal/hostile/venus_human_trap,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/grass,
 /area/f13/bunker)
-"Gm" = (
-/obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"GX" = (
+/obj/structure/wreck/trash/machinepile,
+/turf/open/transparent/glass,
 /area/f13/bunker)
-"Gn" = (
-/obj/machinery/chem_heater,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
-	},
+"Hf" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
-"GI" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+"Hm" = (
+/obj/machinery/door/poddoor{
+	id = 806
 	},
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
-"He" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/vomit/old,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"Hu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/giantant,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "HB" = (
-/obj/structure/girder/reinforced,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+/obj/machinery/door/poddoor{
+	id = 455
 	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"HC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "HO" = (
 /obj/machinery/workbench/advanced,
@@ -1110,148 +1468,289 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ID" = (
-/obj/item/seeds/tower/steel,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+"Is" = (
+/obj/structure/flora/ausbushes/brflowers{
+	pixel_x = 17
+	},
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Iz" = (
+/obj/machinery/door/poddoor{
+	id = 33
+	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
+"IG" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"IH" = (
+/mob/living/simple_animal/hostile/venus_human_trap{
+	faction = list("hostile","goodboy")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"IR" = (
+/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "IT" = (
-/obj/effect/decal/remains/human,
-/obj/item/flashlight/flare/torch,
-/mob/living/simple_animal/hostile/radscorpion,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "IZ" = (
-/obj/structure/table,
-/obj/item/scalpel,
-/obj/item/cautery,
-/obj/item/razor,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"Ja" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "Jq" = (
-/obj/structure/spider/stickyweb,
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
-/area/f13/bunker)
-"Jv" = (
 /obj/structure/table,
-/obj/machinery/light/small,
-/obj/machinery/recharger,
+/obj/machinery/button/door{
+	id = 90
+	},
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"JN" = (
+/obj/structure/table/rolling,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"JF" = (
+"JP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"JX" = (
+/obj/machinery/vending/hydroseeds,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Ky" = (
+/mob/living/simple_animal/radstag{
+	faction = list("hostile","goodboy")
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"KE" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"KH" = (
+/obj/structure/closet/crate/freezer/blood/anchored,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"KI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/barrel/four,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"KK" = (
 /mob/living/simple_animal/hostile/radscorpion,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"Kk" = (
-/obj/effect/decal/waste{
-	icon_state = "goo10"
-	},
-/obj/structure/reagent_dispensers/barrel/old,
-/turf/open/floor/plating,
-/area/f13/bunker)
-"KA" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"LC" = (
-/obj/structure/table/optable,
+"KN" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"KO" = (
+/mob/living/simple_animal/hostile/alien,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"KY" = (
+/obj/item/reagent_containers/food/snacks/grown/pungafruit,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Lk" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 44
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"LF" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
-	},
+"Ln" = (
+/obj/structure/fluff/broken_flooring,
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"LS" = (
-/obj/structure/chair/stool{
-	dir = 1;
-	icon_state = "bench_center"
-	},
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/vomit/old,
+"Lo" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/chair/comfy,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"Lt" = (
+/obj/machinery/plantgenes,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Lx" = (
+/mob/living/simple_animal/opossum{
+	name = "lil'Wompus"
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"LG" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/barrel/four,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"LI" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"LL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"LP" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/barrel/four,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"LU" = (
+/obj/item/seeds/tower/steel,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"LV" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"LW" = (
+/obj/structure/barricade/wooden/strong,
+/obj/effect/decal/cleanable/blood/gibs/human,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Mf" = (
+/obj/structure/nest/wanamingo,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Mj" = (
-/obj/machinery/shower{
-	pixel_y = 22
-	},
-/obj/effect/decal/cleanable/vomit/old,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/splats,
+/obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ME" = (
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+"MC" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Ny" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/mob/living/simple_animal/hostile/supermutant,
+"MJ" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/trash,
+/obj/structure/reagent_dispensers/barrel,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"MN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
+	},
+/area/f13/bunker)
+"MQ" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"MU" = (
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/reagentgrinder,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Ng" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/transparent/glass,
+/area/f13/bunker)
+"Ny" = (
+/turf/open/floor/plasteel/dark/corner{
+	dir = 1
+	},
+/area/f13/bunker)
+"ND" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"NO" = (
+/obj/structure/spider/stickyweb,
+/obj/item/storage/trash_stack,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Od" = (
 /obj/structure/timeddoor,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"Oh" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1268,40 +1767,110 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/bunker)
-"Oz" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/machinery/light/small{
-	dir = 4
+"Om" = (
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Or" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 84
 	},
+/turf/open/floor/plasteel/dark/snowdin,
+/area/f13/bunker)
+"Ou" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/chair/comfy,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"OD" = (
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "OG" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/mob/living/simple_animal/hostile/handy/sentrybot/playable,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg2"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"OV" = (
-/obj/structure/table,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/beakers,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+"OK" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/bubblegum,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"OR" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Pd" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 17
+	},
+/turf/open/floor/plasteel/dark/snowdin,
 /area/f13/bunker)
 "Pl" = (
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
-"Pw" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+"Pp" = (
+/obj/machinery/door/poddoor{
+	id = 180
 	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Pw" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Px" = (
+/mob/living/simple_animal/hostile/molerat{
+	desc = "An extra-large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas. This one is specifically large and older than the others";
+	health = 100;
+	melee_damage_lower = 20;
+	melee_damage_upper = 20;
+	mob_size = 3;
+	name = "The giant molerat";
+	obj_damage = 30;
+	resize = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"PF" = (
+/obj/structure/table_frame,
+/obj/item/ingot/silver,
+/obj/item/surgical_drapes,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "PH" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
@@ -1313,33 +1882,72 @@
 "PW" = (
 /turf/closed/indestructible/opshuttle,
 /area/f13/bunker)
+"Qa" = (
+/obj/machinery/door/poddoor{
+	id = 233
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Qb" = (
+/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plasteel/dark/corner,
+/area/f13/bunker)
+"Qd" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "Qe" = (
-/obj/structure/closet,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/combat,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Qi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"QE" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/blood/xtracks,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"QA" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
-/area/f13/bunker)
-"QC" = (
-/obj/structure/table,
-/obj/item/retractor,
-/obj/item/hemostat,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"QF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "QJ" = (
-/mob/living/simple_animal/hostile/supermutant,
+/obj/item/seeds/sunflower/moonflower,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"QO" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"QR" = (
+/obj/structure/chair/right{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"QU" = (
+/obj/machinery/door/poddoor{
+	id = 33
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1352,203 +1960,249 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Re" = (
-/obj/effect/decal/waste{
-	icon_state = "goo8"
+"Rd" = (
+/obj/machinery/door/poddoor{
+	id = 17
 	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"Rk" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/snowdin,
 /area/f13/bunker)
 "Rl" = (
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
-"RD" = (
+"Rq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"RB" = (
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"RH" = (
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"RK" = (
 /obj/structure/table,
-/obj/item/storage/belt/medical,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = 444
+	},
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"Sa" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 33
+	},
+/turf/open/floor/plasteel,
+/area/f13/bunker)
+"Sl" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -15;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"SB" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/obj/item/reagent_containers/blood/radaway,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"Su" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"SD" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"SE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/transparent/glass,
 /area/f13/bunker)
 "SI" = (
-/obj/machinery/chem_master,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
+/obj/structure/flora/tree/wasteland,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Tm" = (
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Tz" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/dark/side{
+	dir = 4
 	},
 /area/f13/bunker)
-"SV" = (
-/obj/structure/table,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"TL" = (
-/obj/effect/decal/waste{
-	icon_state = "goo12"
-	},
-/obj/structure/closet/crate/solarpanel_small,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"TQ" = (
-/obj/structure/chair/stool{
-	dir = 8;
-	icon_state = "bench"
-	},
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+"TH" = (
+/obj/structure/nest/molerat,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "TU" = (
-/obj/effect/decal/cleanable/blood/old,
-/obj/structure/barricade/sandbags{
-	dir = 8
-	},
+/obj/structure/wreck/trash/machinepiletwo,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"TV" = (
+/obj/structure/table,
+/obj/machinery/button/door{
+	id = 233
+	},
+/turf/open/floor/plasteel/dark/snowdin,
 /area/f13/bunker)
 "TZ" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	icon_state = "tracks"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Ub" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Uf" = (
+/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"Ui" = (
+/mob/living/simple_animal/hostile/alien{
+	faction = list("hostile","goodboy")
+	},
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/showroomfloor,
+/area/f13/bunker)
+"Uw" = (
+/turf/open/transparent/glass,
 /area/f13/bunker)
 "UE" = (
-/obj/structure/table,
-/obj/machinery/computer/terminal{
-	dir = 8;
-	termtag = "Business"
-	},
+/obj/machinery/door/poddoor/preopen,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"UG" = (
+/mob/living/simple_animal/radstag{
+	faction = list("hostile","goodboy")
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "UX" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"Vh" = (
-/obj/structure/closet/crate/radiation,
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 5
-	},
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 5
-	},
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 5
-	},
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"Vu" = (
-/obj/machinery/shower{
-	pixel_y = 22
-	},
-/obj/effect/decal/cleanable/vomit/old,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"Vy" = (
 /obj/structure/table,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/storage/pill_bottle/chem_tin/radx,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"VJ" = (
-/obj/effect/spawner/lootdrop/trash,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"VZ" = (
-/obj/structure/closet,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+"Ve" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Wj" = (
-/obj/structure/chair,
+"Vf" = (
+/obj/effect/decal/cleanable/blood/splats,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Wr" = (
-/obj/structure/toilet{
-	dir = 8
+"Vi" = (
+/obj/item/reagent_containers/blood{
+	pixel_x = 3
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Vw" = (
+/obj/item/storage/trash_stack,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"Vx" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"VB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/gibs/human/lizard/up,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"WC" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+"VE" = (
+/obj/effect/decal/cleanable/blood/gibs/human/body,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"VN" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Wa" = (
+/obj/structure/mirror,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
+"Wb" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "WD" = (
-/obj/effect/decal/remains/human,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"WH" = (
+/obj/effect/decal/cleanable/blood/gibs/human/limb,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "Xc" = (
-/obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"Xv" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
-/turf/open/floor/plasteel/barber{
-	icon_state = "plating"
-	},
-/area/f13/bunker)
-"XL" = (
-/obj/effect/decal/cleanable/oil/streak,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"XL" = (
+/obj/machinery/door/poddoor{
+	id = 160
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "XM" = (
 /turf/open/floor/plasteel/barber{
@@ -1556,31 +2210,70 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"XY" = (
-/turf/closed/indestructible/rock,
-/area/f13/bunker)
-"XZ" = (
-/obj/effect/decal/waste{
-	icon_state = "goo5"
-	},
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/floor/plating,
-/area/f13/bunker)
-"Yv" = (
-/obj/machinery/door/window,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/structure/closet,
+"XN" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"YG" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+"XR" = (
+/obj/machinery/door/poddoor{
+	id = 806
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"XY" = (
+/turf/closed/indestructible/rock,
+/area/f13/bunker)
+"XZ" = (
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Yi" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Ym" = (
+/obj/machinery/door/poddoor{
+	id = 44
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Yx" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"YO" = (
+/mob/living/simple_animal/hostile/handy/protectron,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"YR" = (
+/obj/item/storage/trash_stack,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"YT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 10
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
+"YU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/water_cooler,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Zc" = (
@@ -1590,1351 +2283,1371 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"Zf" = (
+/obj/item/reagent_containers/food/snacks/cakeslice/clown_slice,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "Zg" = (
-/obj/machinery/door/window{
-	dir = 4
-	},
+/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Zp" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
+"Zh" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/donut/jelly,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"Zn" = (
+/turf/open/floor/plasteel/dark/side,
+/area/f13/bunker)
+"Zu" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/cola_float,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Zx" = (
-/obj/structure/chair/stool{
-	dir = 1;
-	icon_state = "bench_center"
+/obj/machinery/door/poddoor{
+	id = 84
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"ZO" = (
+/obj/machinery/door/poddoor{
+	id = 90
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ZV" = (
-/obj/structure/reagent_dispensers/barrel/dangerous,
-/turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
-	},
+"ZP" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass,
 /area/f13/bunker)
 
 (1,1,1) = {"
 Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (2,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (3,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-Eg
-Eg
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (4,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-ID
-qk
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (5,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-qJ
-qJ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (6,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (7,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-xV
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (8,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-tQ
-tQ
-mb
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
 "}
 (9,1,1) = {"
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-mb
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
 xG
 xG
 xG
 xG
 xG
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
+Qe
+go
+xS
+nf
+oj
+xG
+XY
+XY
+XY
+XY
 "}
 (10,1,1) = {"
-Rl
-Rl
-Eg
-yB
-tQ
-tQ
-tQ
-nW
-aH
-tQ
-tQ
-wD
-tQ
-tQ
-nW
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
 xG
-As
-EB
-jx
-mw
+oS
+nu
+tK
+nu
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
+oj
+oP
+oj
+go
+Uw
+xG
+XY
+XY
+XY
+XY
 "}
 (11,1,1) = {"
-Rl
-Rl
-Eg
-tQ
-tQ
-tQ
-tQ
-tQ
-mb
-tQ
-tQ
-tQ
-tQ
-tQ
-BH
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
 xG
-us
-oa
+Vw
+nu
+nu
+nu
+xG
+XY
+XY
+XY
+xG
+xG
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
 XZ
 Dv
+YR
+go
+Eo
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
 "}
 (12,1,1) = {"
-Rl
-Rl
-Eg
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
 xG
-En
-vO
+nu
+Vw
+Lx
+nu
+xG
+XY
+XY
+XY
+xG
+bN
+Hf
+Eg
+tQ
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
 zw
-Kk
+oj
+oj
+fI
+oj
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
 "}
 (13,1,1) = {"
-Rl
-Rl
-Eg
+XY
+xG
+on
 nW
-tQ
-tQ
+nu
+nu
+xG
+XY
+XY
+XY
+xG
+qV
+Ui
 wD
-tQ
-fQ
-tQ
-tQ
-ER
-tQ
-wD
-tQ
-Eg
-Rl
-Rl
-Rl
+mZ
 xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
+IG
+go
+oj
+LV
+oj
 xG
-xG
-xG
-vh
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
 "}
 (14,1,1) = {"
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-mb
-tQ
-tQ
-nW
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
+XY
 xG
-uQ
-ME
-fG
-XM
-XM
+nu
+nu
+nu
+nu
 xG
-hd
-Eb
+XY
+XY
+XY
+xG
+eG
+sJ
+qV
+Eg
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+xG
+oj
+SE
 Qe
-Eb
+oj
 oP
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
 "}
 (15,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-ho
-tQ
-tQ
-mb
-xV
-tQ
-Eg
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
 xG
-yq
-ME
 xG
-lS
-oy
 xG
-gv
-XM
-Zc
-XM
+KE
+KE
+xG
+xG
+xG
+xG
+xG
+xG
+Hm
+Hm
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+oj
+go
+go
+oj
 dE
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
 "}
 (16,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-nW
-tQ
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
+XY
+XY
+XY
 xG
-xG
-xG
-xG
-xG
-Wr
-pd
-xG
-KA
-QJ
-xG
+QR
+fx
+kj
 XM
-Bp
-eI
-Bp
 XM
+XM
+jS
+pj
+EY
+KN
+KN
+nu
+nu
+nu
+nu
+rL
+nu
+Om
+nu
+nu
+nu
 xG
-Rl
-Rl
-Rl
-Rl
+oj
+Eo
+oj
+oj
+oj
+xG
+XY
+XY
+XY
+XY
 "}
 (17,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-tQ
-tQ
-tQ
-tQ
-Eg
-Rl
-Rl
-Rl
-xG
-OV
-cf
-HO
-xG
-xG
-xG
+XY
+XY
+XY
 xG
 XM
 XM
-qJ
-XM
-LS
-eI
+kj
+Eu
+Cy
+yr
+jS
+jy
+mx
+ZP
+nu
+Om
+nu
+nu
+nu
+Ky
+ZP
+Om
+Om
+nu
+nu
+xG
+xG
 Zx
-Bw
+Zx
+Zx
 xG
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+XY
+XY
 "}
 (18,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-qJ
-qJ
-Eg
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
 xG
+XM
+yr
+XM
+qM
+Zu
+XM
+jS
+ts
+ZP
+IH
+DY
+nu
 SI
-BA
-XM
-XM
-XM
+tm
+nu
+ZP
+jn
 Gg
+nu
+ln
+nu
 xG
-XM
-pL
-xG
-XM
-TQ
+oj
+oj
 wN
-yf
-XM
+oj
+rM
+YR
+rC
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (19,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
+XY
+XY
+XY
+xG
+kj
+kj
+XM
+qM
 UX
 XM
-Eg
-Rl
-Rl
-Rl
-Rl
-xG
-iO
-XM
-lS
+jS
+nu
+ZP
+ZP
+VE
+nu
+nu
+nu
+nu
 Dx
-nV
-RD
-xG
+nu
+nu
+ZP
 fe
-QJ
-xG
+nu
+XR
 gv
-lS
-Zc
-XM
-dE
+YR
+Su
+lc
+go
+SE
+Uw
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (20,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-XM
-XM
-Eg
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
 xG
-Gn
+kj
+kj
 XM
+qM
+of
 XM
-ES
-XM
-XM
-xG
+jS
+Om
+DY
+DY
+nu
+nu
+nu
+ZP
+nu
+nu
+nu
+nu
+ZP
 TZ
-XM
-xG
+nu
+XR
+oj
+oj
+oj
+go
 gH
-Eb
-VZ
-Eb
-gH
+sl
+GX
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (21,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-PH
-PH
-Eg
+XY
+XY
+XY
 xG
-xG
-xG
-xG
-xG
-Zp
-qJ
-Zp
-xG
-xG
-qJ
-xG
+tz
+kj
 XM
-QJ
+sg
+Ab
+XM
+jS
+nu
+rB
+DY
+KN
+nh
+nu
+qJ
+nu
+qh
+nu
+nu
+nu
+UG
+nu
 xG
+AI
+wP
+Uw
+oj
+CA
+oj
+rM
 xG
-xG
-xG
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (22,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
+XY
+XY
+XY
+xG
+ua
+xf
 XM
-UX
-Eg
-xG
-EP
-TZ
-EP
-xG
-QC
 XM
-nK
-xG
-Dx
+XM
+XM
+jS
+nu
+nu
+nu
+nu
+ts
+nu
+nu
+nu
+Om
+Om
 BA
-XM
-XM
-Bw
+Ky
+rL
+Ky
+ic
+oj
+hy
+oj
+oj
+rm
+oj
+oj
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (23,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-nD
+XY
+XY
+XY
+xG
+Aq
+yr
 XM
-Eg
-xG
-xG
-VJ
-xG
-xG
+kj
+kj
+XM
+jS
+nu
+Dx
+nu
+nu
+nu
 IZ
-BA
-LC
+nu
+nu
+Om
+nu
+nu
+WH
+Ky
+nu
+XR
+go
+oj
+rJ
+Zf
+bE
+oj
+fT
 xG
-gv
-XM
-XM
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (24,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-gv
-XM
-Eg
+XY
+XY
+XY
 xG
-Yv
-wJ
-aQ
-xG
-Ae
-Oz
+Zh
 XM
-xG
 XM
-SB
 XM
+XM
+XM
+jS
+QO
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+LW
+nu
+nu
+nu
+nu
+nu
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+oj
+go
+jc
+go
+Fe
+oj
+rM
+xG
+XY
+XY
 "}
 (25,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Eg
-XM
-XM
-Eg
+XY
+XY
+XY
 xG
 xG
-ef
 xG
+FC
+FC
+FC
+FC
+xG
+bD
 xG
 xG
 xG
 xG
 xG
-XM
+nX
+nX
+nX
+nX
+nX
+nX
+nX
+fd
 xG
+fN
+Qe
+go
+zR
+iq
+lc
+oj
 xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (26,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
 xG
-xG
-xG
-qJ
-qJ
-xG
-xG
-ne
-lS
-Dz
-xG
-Dx
+IR
+yS
+XN
+kj
 XM
 XM
-qJ
 XM
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+xG
+Sl
+XM
+ns
+XM
+XM
+XM
+PH
+yr
+kj
+BR
+oj
+go
+Ng
+go
+go
+oj
+oj
+xG
+XY
+XY
 "}
 (27,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
 xG
-qA
-qN
+Ra
+xJ
+KI
+OK
+kj
 XM
-QJ
-Oh
-xG
 BZ
-XM
-Gm
 xG
-eg
+xG
+xG
+kj
 TU
 XM
+XM
+nm
+XM
+XM
+XM
+zX
 xG
+Ba
+oj
+oj
+oj
+rM
+wP
+rM
 xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 "}
 (28,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
 xG
 Zg
-DZ
-QJ
+xJ
+XN
+dD
+Ra
+kj
 XM
-Jv
-xG
-xG
 Bq
-xG
-xG
+kj
+rY
+yS
+xf
+xf
+kj
+kj
+MU
+Lt
 XM
-sy
-XM
+kj
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+XY
+XY
 "}
 (29,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+xG
+xG
+xG
+xG
+xG
 xG
 XM
-QJ
-FR
-lS
-wU
-xG
-op
-lS
-pz
-xG
-FR
+Ra
+cd
+kj
+Bq
+Ra
+rY
 XM
-dE
+ia
+kj
+Bk
+kj
+CB
+ij
+XM
+kj
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (30,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
 xG
-uS
-ES
+HC
+RB
+oj
+RB
+xG
 XM
 Bw
-XM
-qJ
-pz
-XM
-Bw
-qJ
-XM
-pz
-XM
+kj
+Ra
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+XM
+XM
+XM
+XM
+yS
+XM
+XM
+XM
+JX
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (31,1,1) = {"
-Rl
-Rl
+XY
+XY
+XY
 xG
+Mf
+VN
+oj
+oj
+Pp
+yr
+fj
+xf
+Ra
 xG
+XY
 xG
-xG
-xG
-xG
-qJ
-xG
-xG
-xG
+gq
+MQ
+Wb
 XM
-He
+we
 XM
+yb
+ma
+ma
 xG
-Bw
-XM
-XM
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (32,1,1) = {"
-Rl
-Rl
+XY
+XY
+XY
 xG
-bC
-Bw
-xG
-lw
+oj
+oj
+DM
+oj
+Pp
 XM
+kj
+dD
 XM
-op
-XM
+xG
+XY
 xG
 xG
-qJ
 xG
 xG
-XM
-XM
-aW
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (33,1,1) = {"
-Rl
-Rl
+XY
+XY
+XY
 xG
-rr
-XM
-xG
-gv
-QJ
-sy
-Wj
+oj
+go
+go
+oj
+Pp
+kj
 qN
-Zp
-op
-XM
-pq
-XM
-XM
-fH
-Bw
+Ra
+yr
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (34,1,1) = {"
-Rl
-Rl
+XY
+XY
+XY
 xG
-oP
-XM
-qJ
-XM
-QJ
-XM
-XM
-DA
-uu
-sy
-Bw
-pz
-XM
-XM
-XM
+KO
+go
+go
+DM
+xG
+OR
+cQ
+Ra
 XM
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (35,1,1) = {"
-Rl
-Rl
 xG
-ef
-QJ
+xG
+xG
+xG
 xG
 XL
-XM
-Gg
-Bw
-XM
-xG
-xG
-qJ
+XL
 xG
 xG
 xG
-qJ
+Iz
+QU
+QU
+xG
+xG
+xG
+xG
+xG
 xG
 Pl
 Pl
@@ -2943,37 +3656,37 @@ Pl
 Pl
 Pl
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (36,1,1) = {"
-Rl
-Rl
 xG
+Qb
 zJ
-XM
-xG
-XM
-bW
+zJ
+MN
+MN
+Tz
+az
 UE
-ES
-Dx
-xG
+Ra
+Uf
+kj
 Mj
 Ra
-wO
+fj
+Ra
 XM
-op
 XM
-op
+XM
 BS
 PW
 PW
@@ -2981,112 +3694,112 @@ PW
 PW
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (37,1,1) = {"
-Rl
-Rl
 xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-Ra
+Zn
+vH
+qp
+bB
+BN
+Sa
+FS
+fW
+fj
 XM
+XN
+XN
 XM
-XM
-pz
-XM
-XM
-Od
+xf
+KK
+yr
+Vf
+fj
+dw
 qj
 dv
 dv
 dv
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (38,1,1) = {"
-Rl
-Rl
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Zn
+Fs
+tZ
+bH
+vF
+TV
+FS
 xG
+xG
+xG
+xG
+xG
+xG
+fd
+fd
+Ra
 XM
-XM
-pz
-XM
-XM
-XM
-sy
-Od
+Ra
+dw
 Gc
 dv
 dv
 dv
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (39,1,1) = {"
-Rl
-Rl
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Zn
+RK
+BN
+bv
+BN
+mj
+FS
 xG
-gv
+hS
+xG
+AE
+Bw
 XM
-sy
+XM
+FC
+cQ
 Ra
-XM
-XM
 XM
 Od
 Gc
@@ -3095,37 +3808,37 @@ dv
 dv
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (40,1,1) = {"
-Rl
-Rl
 xG
+Zn
+bS
+Ln
+Pd
+LL
+Or
+wH
 xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-xG
-jQ
-xG
-xG
+go
+qW
 XM
-Bw
-XM
+yr
+Ra
+Ra
+FC
+Ra
+Uf
+cK
 Od
 qj
 dv
@@ -3133,37 +3846,37 @@ dv
 dv
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (41,1,1) = {"
-Rl
-Rl
-Rl
-Rl
+xG
+Zn
+AS
+BN
 Jq
-HB
+Rk
 vp
-oh
-Pw
-gA
-oh
+Cp
 xG
-Vu
-oh
-pQ
+sl
+Pp
+XM
+jX
+JN
+Fp
 xG
-XM
-XM
-pz
+xG
+xG
+xG
 Od
 PW
 PW
@@ -3171,1306 +3884,1306 @@ PW
 PW
 PW
 Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (42,1,1) = {"
-Rl
-Rl
-Rl
-un
-Fr
 xG
-oh
+nr
+mX
+mX
+mX
+mX
+mX
 Ny
-pS
-gA
-gA
 xG
+DM
 xG
-jf
-xG
+jQ
+XN
+XN
+XM
 xG
 XM
-pz
 XM
+XM
+zq
 Pl
 Pl
 Pl
 Pl
 Pl
 Pl
-Pl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (43,1,1) = {"
-Rl
-Rl
-Rl
-zu
-By
-gA
-Ja
-gl
-Vh
-yp
-mi
-pS
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+XN
 IT
-oh
-gA
+YU
+jX
+gS
+XN
+XN
+kj
+si
 xG
+Lo
 XM
+Bw
 XM
-dE
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+Wa
+gd
+XM
+iP
+sr
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (44,1,1) = {"
-Rl
-Rl
-Rl
+XY
+XY
+xG
 qy
-lU
-xG
-gA
-lH
-lU
+kj
+XM
+HO
+XM
+Yx
 By
-oh
-oh
-gA
-EG
-oh
 xG
-UX
+MC
 XM
 Ra
+Ra
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+bW
+is
+xf
+ux
+xG
+xy
+Ra
+tp
+XM
+Cd
+kj
+kj
+XM
+xG
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (45,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Xc
+XY
+XY
 xG
-gA
+AB
+fq
+DG
+cZ
 eN
-oh
+yS
 Pw
-rG
 xG
 xG
-jf
+Rd
+oq
 xG
 xG
-XM
-XM
-Bw
+wU
+Bu
+xf
+Qd
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-"}
-(46,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-xG
-xG
-HB
-xG
-gA
-xG
-HB
-xG
-aM
-dj
-Fr
-xG
+Ou
 Ra
 XM
-UX
+AE
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+tD
+XM
+eD
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+"}
+(46,1,1) = {"
+XY
+XY
+xG
+cl
+XM
+kj
+xf
+xf
+kj
+kj
+ZO
+XM
+XM
+kj
+Fr
+xG
+xG
+xG
+xG
+xG
+fd
+kj
+Ra
+xJ
+yS
+xG
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (47,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 xG
-WD
-oh
-oh
-lU
-oh
-tM
-gA
-JF
-ud
+XM
+yr
+XM
+kj
+tn
+YO
+kj
+ZO
+XM
+Ra
+cK
+XM
 jf
-qu
+Ra
 jX
-Dx
+XM
+KI
+xf
+Co
+Az
+xJ
+cQ
+xf
+kj
+xJ
+Ra
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (48,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+yr
+Zc
+cz
 wQ
 OG
-Re
-Bo
-gA
+kj
+kj
 xG
-QA
-gA
-gA
-xG
+Fp
+Ra
+eq
+XM
+XM
 EG
+Fp
+QE
+kj
+yS
+Bw
+AF
+XM
+Ra
+LG
+OD
+wl
+Ra
 xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (49,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-gA
-oh
+XY
+XY
+xG
 Cm
-Re
+Cm
+Cm
+Cm
+Cm
+Cm
+Cm
 xG
-xG
+XM
+mc
 jQ
 xG
+jS
+jS
+jS
+jS
+jS
+jS
+jS
+jS
+jS
+jS
+jS
 xG
-gA
-gA
-dj
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (50,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+dA
 WD
-Fr
-ud
-xG
-gA
-Bo
+WD
+uO
+WD
+WD
+YT
+jS
+XM
+MJ
+kj
 ti
+fy
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+Is
+nu
 xG
-ZV
-gA
-tJ
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (51,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-gA
-gA
+XY
+XY
 xG
-HB
-gA
-dZ
-Vy
+ZP
+Hu
+nY
+Rq
+ts
+ZP
+QF
+Lk
+kj
+VB
+jQ
+ti
+RH
+LI
+nu
+dj
+nu
+Vx
+nu
+nu
+nu
+nu
+nu
 xG
-By
-ju
-Fr
-dV
-gA
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (52,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 xG
+ZP
+lx
+pR
+ts
+Du
+ZP
+QF
+Lk
+xJ
 Xc
-yp
-gA
-pP
+XM
+ti
+nu
+LU
+Om
+nu
+nu
+nu
+Om
+uI
+Om
+nu
+wE
 xG
-xG
-pP
-pP
-gA
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (53,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-no
-gA
+XY
+XY
 xG
-xL
+ZP
+ey
+ZP
+FK
+ZP
+ZP
+QF
+Lk
+cd
+XN
 XM
-uC
+ti
+Om
+Om
+Om
+KY
+nu
+fy
+nu
+Om
+nu
+nu
+Aj
 xG
-gA
-oh
-TL
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (54,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-gh
-eK
-XM
-Bw
-pB
+XY
+XY
 xG
-bG
-lI
-wh
+ZP
+ZP
+ZP
+ZP
+eu
+eu
+JP
+Lk
+XN
+LP
+cQ
+ti
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+LI
+nu
+nu
 xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (55,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 xG
-po
+ZP
+wb
+ZP
+pR
+ZP
+ts
+QF
+Lk
+jX
+Ra
+Ra
+ti
+nu
+fy
 QJ
 Ed
-pP
-YG
-ud
-gA
-gA
+nu
+nu
 dj
+nu
+nu
+dj
+nu
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (56,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-pP
-pP
-qJ
-pP
+XY
+XY
 xG
-Rl
-Rl
-xG
-gA
+ZP
+ts
+ts
+ts
+nY
+qw
+Qi
+Lk
+yu
+XM
+Ra
+ti
+dj
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+nu
 dV
+KY
 xG
-xG
-xG
-xG
-xG
-xG
-xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (57,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-pP
+XY
+XY
+xG
+fB
+ZP
+ZP
+ZP
+eu
+ZP
+cq
+Lk
+XM
+cd
+we
+ti
+Ed
 lk
-GI
-oh
-Rl
-xG
-Rl
-pP
-oh
+nu
+nu
+Aj
+nu
+nu
+Om
+ny
 gA
+nu
 xG
-pS
-Bo
-oh
-Bo
-vt
-xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (58,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 xG
-lU
-ed
-Rl
-Rl
 xG
-Rl
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+Ra
+Ra
+XM
+xG
+xG
+xG
+xG
+xG
+xG
+xG
+ht
 HB
-zm
-Pw
-HB
-oh
-wh
-aJ
-lU
-zm
 xG
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (59,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
-yT
-Rl
-Rl
+xJ
+XN
+we
 xG
-Rl
+XY
+XY
+XY
+XY
+XY
 xG
+oj
 pP
-oh
-oh
 xG
-dj
-tx
-Xv
-oh
-un
-xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (60,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-pP
-pP
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
+ly
+kj
+cQ
 xG
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
 xG
-DS
-dj
-Ff
-WD
-Fr
-Pw
-Bx
-Rl
+ND
+EW
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (61,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-ZV
-gA
-HB
-wh
-lU
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
-gl
-dV
-oh
-Rl
-Rl
+oj
+XN
+Ve
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+xG
+xG
+xG
+xG
+xG
+Qa
+Qa
+xG
+xG
+xG
+xG
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (62,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-gA
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
-gA
-LF
+XM
+oj
+Ra
 xG
+XY
+xG
+gk
+YR
+oj
+SD
+oj
+Ub
+oj
+sl
+Qe
 lU
-zm
-Rl
-Rl
-Rl
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (63,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-By
-jQ
-gA
-gA
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 xG
-SV
-Rl
-Rl
-Rl
-Rl
+hj
+NO
+XM
 xG
-Rl
-Rl
-Rl
-Rl
+XY
+xG
+Ub
+jF
+oj
+go
+oj
+oj
+oj
+Qe
+vg
+YR
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (64,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-xG
-xG
-Ff
+XY
+XY
 xG
 xG
 xG
 xG
-Rl
-Rl
 xG
-Rl
-Rl
-Rl
-Rl
+xG
+xG
+xG
+xG
+Ym
+Ym
+Ym
+xG
+XY
+xG
+oj
+go
+Qe
+Tm
+go
+Px
+go
+go
+TH
+oj
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (65,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-oh
-oh
-oh
-WC
+XY
+XY
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+RB
+FV
+go
+oj
+oj
+KH
+qb
+BV
+qb
+qb
+gB
+XY
+XY
+xG
+oj
+oj
+Ub
+go
+gR
+oj
+XY
+oj
+YR
+oh
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (66,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+PF
+oj
+hI
+go
+RB
+oj
+YR
+gu
+oj
+RB
+oj
+XY
+XY
+xG
+oj
+TH
+oj
+go
 oh
-kv
-kv
-nS
-HB
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+oh
+Ub
+oh
+oh
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (67,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-oh
-oh
-oh
-na
+XY
+XY
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+oj
+RB
+bP
+go
+iJ
+go
+jA
+oj
+oj
+Vi
+oj
+XY
+XY
+xG
+YR
+oj
+oh
+oh
+XY
+XY
+oh
+oh
+oh
+oh
+xG
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (68,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
 xG
+YR
+oj
+Yi
+kU
+uA
+go
+oj
+go
+yV
+oj
+AG
+XY
+XY
+XY
+XY
+oh
+oh
+oh
+XY
+oK
+oh
+oh
+XY
+oh
 xG
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (69,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+pO
+oj
+CM
+oh
+oh
+oj
+Ee
+oj
+go
+go
+uA
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (70,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+oh
+oh
+oj
+oh
+oh
+RB
+oh
+oh
+RB
+oh
+oh
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (71,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+xG
+XY
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+oh
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (72,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (73,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (74,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}
 (75,1,1) = {"
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
-Rl
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
+XY
 "}

@@ -45,7 +45,7 @@
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier/full = 2,
-					/obj/item/gun/syringe/dart = 2,
+					///obj/item/gun/syringe/dart = 2,
 					/obj/item/storage/briefcase/medical = 2,
 					/obj/item/plunger/reinforced = 2)
 
