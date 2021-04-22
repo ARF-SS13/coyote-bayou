@@ -1297,7 +1297,7 @@
 				/obj/item/storage/fancy/ammobox,
 				/obj/item/storage/fancy/ammobox/beanbag,
 				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/magazine/m10mm_adv,
+				/obj/item/ammo_box/magazine/m10mm_adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
 
@@ -1309,7 +1309,7 @@
 				/obj/item/ammo_box/magazine/m45,
 				/obj/item/ammo_box/a762,
 				/obj/item/ammo_box/a308,
-				/obj/item/ammo_box/magazine/m10mm_adv,
+				/obj/item/ammo_box/magazine/m10mm_adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m9mm,
@@ -1330,7 +1330,7 @@
 	loot = list(
 				/obj/item/storage/fancy/ammobox/lethalshot,
 				/obj/item/ammo_box/magazine/uzim9mm,
-				/obj/item/ammo_box/magazine/m10mm_adv,
+				/obj/item/ammo_box/magazine/m10mm_adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,
 				/obj/item/ammo_box/needle,
 				/obj/item/ammo_box/magazine/tommygunm45,

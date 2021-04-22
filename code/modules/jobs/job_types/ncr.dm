@@ -778,7 +778,7 @@ Veteran Ranger
 	belt =	/obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv = 3,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/clothing/accessory/armband/med/ncr = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,

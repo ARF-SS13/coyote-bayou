@@ -199,6 +199,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "eD" = (
@@ -416,7 +417,6 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -509,6 +509,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"kq" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "ky" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -539,11 +543,6 @@
 	dir = 4;
 	icon_state = "tracks"
 	},
-/turf/open/floor/grass,
-/area/f13/bunker)
-"lx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "ly" = (
@@ -590,6 +589,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
+/area/f13/bunker)
+"mC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "mD" = (
 /obj/machinery/light/small{
@@ -681,7 +685,6 @@
 "of" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -864,10 +867,6 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
-/area/f13/bunker)
-"tm" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
-/turf/open/floor/grass,
 /area/f13/bunker)
 "tn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1084,7 +1083,7 @@
 /area/f13/bunker)
 "xS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "yb" = (
@@ -1816,8 +1815,8 @@
 /area/f13/bunker)
 "MQ" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2296,10 +2295,6 @@
 "VE" = (
 /obj/effect/decal/cleanable/blood/gibs/human/body,
 /turf/open/floor/grass,
-/area/f13/bunker)
-"VN" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "VU" = (
 /mob/living/simple_animal/hostile/poison/giant_spider,
@@ -3158,7 +3153,7 @@ IH
 DY
 nu
 SI
-tm
+nu
 nu
 ZP
 jn
@@ -3640,8 +3635,8 @@ Rl
 Rl
 xG
 Mf
-VN
 oj
+kq
 oj
 Pp
 yr
@@ -4437,7 +4432,7 @@ Rl
 Rl
 xG
 ZP
-lx
+ZP
 pR
 ts
 Du
@@ -4910,7 +4905,7 @@ oj
 go
 Qe
 Tm
-go
+mC
 Px
 go
 go
