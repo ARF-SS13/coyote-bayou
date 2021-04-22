@@ -1,7 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"az" = (
-/turf/open/floor/plasteel/dark/corner{
-	dir = 4
+"ap" = (
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/stickyweb,
+/obj/machinery/light,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "bv" = (
@@ -10,7 +14,10 @@
 /obj/machinery/button/door{
 	id = 732
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "bB" = (
 /obj/structure/table,
@@ -19,7 +26,10 @@
 /obj/machinery/button/door{
 	id = 180
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "bD" = (
 /obj/effect/decal/cleanable/blood,
@@ -34,7 +44,10 @@
 /obj/machinery/button/door{
 	id = 806
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "bN" = (
 /obj/effect/decal/cleanable/blood/gibs/ipc/limb,
@@ -49,7 +62,10 @@
 /obj/machinery/button/door{
 	id = 455
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "bW" = (
 /obj/structure/table,
@@ -79,6 +95,16 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/grass,
+/area/f13/bunker)
+"cv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "cz" = (
 /obj/structure/rack,
@@ -188,7 +214,9 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "eN" = (
-/mob/living/simple_animal/hostile/handy,
+/mob/living/simple_animal/hostile/handy{
+	faction = list("ant")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -254,7 +282,9 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "fW" = (
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = 160
+	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -314,7 +344,6 @@
 /area/f13/bunker)
 "gR" = (
 /obj/item/blueprint/research,
-/obj/item/blueprint/research,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "gS" = (
@@ -351,9 +380,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ia" = (
-/mob/living/simple_animal/hostile/handy,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/bubblegum,
+/mob/living/simple_animal/hostile/handy{
+	faction = list("hostile","goodboy")
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -385,7 +416,7 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -402,6 +433,15 @@
 	},
 /obj/structure/decoration/vent/rusty,
 /obj/structure/curtain,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"iU" = (
+/obj/machinery/light/small/broken{
+	dir = 8
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -469,6 +509,17 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"ky" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "kU" = (
 /obj/item/circuitboard/machine/chem_heater,
 /obj/effect/decal/cleanable/dirt,
@@ -529,7 +580,10 @@
 /obj/machinery/button/door{
 	id = 160
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "mx" = (
 /obj/structure/flora/stump,
@@ -537,9 +591,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"mD" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "mX" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
+/obj/machinery/light/fo13colored/Red{
+	dir = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "mZ" = (
@@ -557,7 +624,9 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "nm" = (
-/mob/living/simple_animal/hostile/handy,
+/mob/living/simple_animal/hostile/handy{
+	faction = list("hostile","goodboy")
+	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -566,8 +635,9 @@
 /area/f13/bunker)
 "nr" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/plasteel/dark/corner{
-	dir = 8
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "ns" = (
@@ -627,13 +697,6 @@
 /obj/item/pizzabox/vegetable,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"oq" = (
-/obj/machinery/door/poddoor,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "oK" = (
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/plating/tunnel,
@@ -653,6 +716,17 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
+/area/f13/bunker)
+"pI" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken{
+	dir = 4
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "pO" = (
 /obj/item/circuitboard/machine/chem_dispenser,
@@ -678,17 +752,6 @@
 /area/f13/bunker)
 "qj" = (
 /turf/closed/indestructible/fakeglass,
-/area/f13/bunker)
-"qp" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/snowdin,
-/area/f13/bunker)
-"qw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/turf/open/floor/grass,
 /area/f13/bunker)
 "qy" = (
 /obj/structure/anvil/obtainable/sandstone,
@@ -826,6 +889,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"tx" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "tz" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/decal/cleanable/dirt,
@@ -853,10 +925,6 @@
 /obj/effect/decal/cleanable/blood/gibs/slime,
 /obj/effect/decal/cleanable/blood/gibs/slime/torso,
 /turf/open/floor/plasteel/showroomfloor,
-/area/f13/bunker)
-"tZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
 /area/f13/bunker)
 "ua" = (
 /obj/structure/table,
@@ -903,11 +971,10 @@
 /obj/machinery/button/door{
 	id = 320
 	},
-/turf/open/floor/plasteel,
-/area/f13/bunker)
-"vF" = (
-/obj/structure/fluff/broken_flooring,
-/turf/open/floor/plating/tunnel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "vH" = (
 /obj/structure/table,
@@ -916,7 +983,10 @@
 /obj/machinery/button/door{
 	id = 89
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "wb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -950,12 +1020,6 @@
 /obj/item/seeds/starthistle/corpse_flower,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"wH" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
-	},
-/area/f13/bunker)
 "wN" = (
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plating/tunnel,
@@ -977,6 +1041,13 @@
 /obj/structure/chair{
 	dir = 8
 	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"wW" = (
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1013,11 +1084,13 @@
 /area/f13/bunker)
 "xS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "yb" = (
-/mob/living/simple_animal/hostile/handy/robobrain,
+/mob/living/simple_animal/hostile/handy/robobrain{
+	faction = list("hostile","goodboy")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1065,8 +1138,12 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "zJ" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
+/obj/machinery/light/fo13colored/Red{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "zR" = (
@@ -1075,7 +1152,9 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "zX" = (
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/handy/securitron{
+	faction = list("hostile","goodboy")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1097,7 +1176,6 @@
 "Aq" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/donut/jelly/caramel,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1147,15 +1225,26 @@
 /obj/machinery/button/door{
 	id = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Ba" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"Be" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/grass,
+/area/f13/bunker)
 "Bk" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy{
+	faction = list("hostile","goodboy")
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1191,13 +1280,6 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
-/area/f13/bunker)
-"BA" = (
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
-/turf/open/floor/grass,
-/area/f13/bunker)
-"BN" = (
-/turf/open/floor/plasteel/dark/snowdin,
 /area/f13/bunker)
 "BR" = (
 /obj/machinery/door/poddoor{
@@ -1260,8 +1342,9 @@
 "Cp" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/radscorpion,
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Cy" = (
@@ -1288,6 +1371,15 @@
 /obj/structure/debris/v3,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"Dk" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "Du" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1305,7 +1397,9 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "DG" = (
-/mob/living/simple_animal/hostile/handy/protectron,
+/mob/living/simple_animal/hostile/handy/protectron{
+	faction = list("ant")
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1338,6 +1432,10 @@
 "Eo" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"Et" = (
+/obj/structure/decoration/warning,
+/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "Eu" = (
 /obj/structure/chair/right,
@@ -1390,7 +1488,10 @@
 /obj/machinery/button/door{
 	id = 71
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "FC" = (
 /obj/machinery/door/poddoor{
@@ -1408,8 +1509,10 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "FS" = (
-/turf/open/floor/plasteel/dark/side{
-	dir = 1
+/obj/machinery/light/fo13colored/Red,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "FV" = (
@@ -1424,8 +1527,10 @@
 	},
 /area/f13/bunker)
 "Gg" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
 /obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/venus_human_trap{
+	faction = list("hostile","goodboy")
+	},
 /turf/open/floor/grass,
 /area/f13/bunker)
 "GX" = (
@@ -1475,12 +1580,6 @@
 /mob/living/simple_animal/hostile/cazador,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"Iz" = (
-/obj/machinery/door/poddoor{
-	id = 33
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
 "IG" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
@@ -1511,8 +1610,16 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"IY" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "IZ" = (
-/mob/living/simple_animal/hostile/venus_human_trap,
+/mob/living/simple_animal/hostile/venus_human_trap{
+	faction = list("hostile","goodboy")
+	},
 /turf/open/floor/grass,
 /area/f13/bunker)
 "Jq" = (
@@ -1520,7 +1627,10 @@
 /obj/machinery/button/door{
 	id = 90
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "JN" = (
 /obj/structure/table/rolling,
@@ -1607,11 +1717,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Ln" = (
-/obj/structure/fluff/broken_flooring,
-/mob/living/simple_animal/hostile/radscorpion/black,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "Lo" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
@@ -1651,7 +1756,10 @@
 "LL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "LP" = (
 /obj/structure/spider/stickyweb,
@@ -1669,7 +1777,6 @@
 "LV" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "LW" = (
@@ -1707,17 +1814,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"MN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
-	},
-/area/f13/bunker)
 "MQ" = (
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1735,10 +1835,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/glass,
 /area/f13/bunker)
-"Ny" = (
-/turf/open/floor/plasteel/dark/corner{
-	dir = 1
+"NC" = (
+/obj/machinery/light/small{
+	dir = 4
 	},
+/turf/open/floor/grass,
 /area/f13/bunker)
 "ND" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -1777,7 +1878,10 @@
 /obj/machinery/button/door{
 	id = 84
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Ou" = (
 /obj/structure/spider/stickyweb,
@@ -1798,7 +1902,9 @@
 	},
 /area/f13/bunker)
 "OG" = (
-/mob/living/simple_animal/hostile/handy/sentrybot/playable,
+/mob/living/simple_animal/hostile/handy/sentrybot/playable{
+	faction = list("ant")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1828,7 +1934,10 @@
 /obj/machinery/button/door{
 	id = 17
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Pl" = (
 /obj/structure/timeddoor,
@@ -1873,7 +1982,19 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "PH" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
+/mob/living/simple_animal/hostile/handy/gutsy{
+	faction = list("hostile","goodboy")
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"PO" = (
+/obj/item/storage/trash_stack,
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1891,7 +2012,10 @@
 "Qb" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
 /obj/effect/decal/cleanable/cobweb,
-/turf/open/floor/plasteel/dark/corner,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Qd" = (
 /obj/structure/filingcabinet,
@@ -1969,10 +2093,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Rk" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/snowdin,
-/area/f13/bunker)
 "Rl" = (
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
@@ -1996,14 +2116,20 @@
 /obj/machinery/button/door{
 	id = 444
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Sa" = (
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = 33
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Sl" = (
 /obj/structure/sink{
@@ -2035,15 +2161,19 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"SP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/broken{
+	dir = 1
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "Tm" = (
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"Tz" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
-	},
 /area/f13/bunker)
 "TH" = (
 /obj/structure/nest/molerat,
@@ -2062,7 +2192,10 @@
 /obj/machinery/button/door{
 	id = 233
 	},
-/turf/open/floor/plasteel/dark/snowdin,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "TZ" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2096,7 +2229,9 @@
 /turf/open/transparent/glass,
 /area/f13/bunker)
 "UE" = (
-/obj/machinery/door/poddoor/preopen,
+/obj/machinery/door/poddoor/preopen{
+	id = 160
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2163,8 +2298,18 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "VN" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"VU" = (
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/obj/machinery/light/small/broken{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Wa" = (
 /obj/structure/mirror,
@@ -2173,7 +2318,6 @@
 "Wb" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2218,6 +2362,9 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"XO" = (
+/turf/closed/mineral/random/low_chance,
+/area/f13/underground/cave)
 "XR" = (
 /obj/machinery/door/poddoor{
 	id = 806
@@ -2250,7 +2397,9 @@
 	},
 /area/f13/bunker)
 "YO" = (
-/mob/living/simple_animal/hostile/handy/protectron,
+/mob/living/simple_animal/hostile/handy/protectron{
+	faction = list("ant")
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -2277,7 +2426,9 @@
 	},
 /area/f13/bunker)
 "Zc" = (
-/mob/living/simple_animal/hostile/handy,
+/mob/living/simple_animal/hostile/handy{
+	faction = list("ant")
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2307,7 +2458,13 @@
 	},
 /area/f13/bunker)
 "Zn" = (
-/turf/open/floor/plasteel/dark/side,
+/obj/machinery/light/fo13colored/Red{
+	dir = 1
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "Zu" = (
 /obj/structure/table,
@@ -2339,296 +2496,296 @@
 
 (1,1,1) = {"
 Rl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (2,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (3,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (4,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (5,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (6,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (7,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (8,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 xG
 xG
@@ -2636,37 +2793,37 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (9,1,1) = {"
-XY
+Rl
 xG
 xG
 xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 Qe
 go
@@ -2674,37 +2831,37 @@ xS
 nf
 oj
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (10,1,1) = {"
-XY
+Rl
 xG
 oS
 nu
 tK
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 oj
 oP
@@ -2712,37 +2869,37 @@ oj
 go
 Uw
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (11,1,1) = {"
-XY
+Rl
 xG
 Vw
 nu
 nu
 nu
 xG
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 xG
 xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 XZ
 Dv
@@ -2750,37 +2907,37 @@ YR
 go
 Eo
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (12,1,1) = {"
-XY
+Rl
 xG
-nu
+Be
 Vw
 Lx
 nu
 xG
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 bN
 Hf
 Eg
 tQ
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 zw
 oj
@@ -2788,37 +2945,37 @@ oj
 fI
 oj
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (13,1,1) = {"
-XY
+Rl
 xG
 on
 nW
 nu
 nu
 xG
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 qV
 Ui
 wD
 mZ
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 IG
 go
@@ -2826,37 +2983,37 @@ oj
 LV
 oj
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (14,1,1) = {"
-XY
+Rl
 xG
 nu
 nu
 nu
 nu
 xG
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 eG
 sJ
 qV
 Eg
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 oj
 SE
@@ -2864,13 +3021,13 @@ Qe
 oj
 oP
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (15,1,1) = {"
-XY
+Rl
 xG
 xG
 xG
@@ -2902,21 +3059,21 @@ go
 oj
 dE
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (16,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 QR
 fx
 kj
 XM
-XM
+iU
 XM
 jS
 pj
@@ -2940,15 +3097,15 @@ oj
 oj
 oj
 xG
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
 "}
 (17,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 XM
 XM
@@ -2980,13 +3137,13 @@ xG
 xG
 xG
 xG
-XY
-XY
+Rl
+Rl
 "}
 (18,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 XM
 yr
@@ -3018,13 +3175,13 @@ rM
 YR
 rC
 xG
-XY
-XY
+Rl
+Rl
 "}
 (19,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 kj
 kj
@@ -3056,15 +3213,15 @@ go
 SE
 Uw
 xG
-XY
-XY
+Rl
+Rl
 "}
 (20,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
-kj
+cv
 kj
 XM
 qM
@@ -3094,13 +3251,13 @@ gH
 sl
 GX
 xG
-XY
-XY
+Rl
+Rl
 "}
 (21,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 tz
 kj
@@ -3132,13 +3289,13 @@ CA
 oj
 rM
 xG
-XY
-XY
+Rl
+Rl
 "}
 (22,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 ua
 xf
@@ -3157,7 +3314,7 @@ nu
 nu
 Om
 Om
-BA
+nu
 Ky
 rL
 Ky
@@ -3170,13 +3327,13 @@ rm
 oj
 oj
 xG
-XY
-XY
+Rl
+Rl
 "}
 (23,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 Aq
 yr
@@ -3208,13 +3365,13 @@ bE
 oj
 fT
 xG
-XY
-XY
+Rl
+Rl
 "}
 (24,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 Zh
 XM
@@ -3246,13 +3403,13 @@ Fe
 oj
 rM
 xG
-XY
-XY
+Rl
+Rl
 "}
 (25,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 xG
 xG
@@ -3284,15 +3441,15 @@ iq
 lc
 oj
 xG
-XY
-XY
+Rl
+Rl
 "}
 (26,1,1) = {"
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 IR
 yS
@@ -3322,15 +3479,15 @@ go
 oj
 oj
 xG
-XY
-XY
+Rl
+Rl
 "}
 (27,1,1) = {"
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 Ra
 xJ
@@ -3342,7 +3499,7 @@ BZ
 xG
 xG
 xG
-kj
+SP
 TU
 XM
 XM
@@ -3360,15 +3517,15 @@ rM
 wP
 rM
 xG
-XY
-XY
+Rl
+Rl
 "}
 (28,1,1) = {"
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 Zg
 xJ
@@ -3398,13 +3555,13 @@ xG
 xG
 xG
 xG
-XY
-XY
+Rl
+Rl
 "}
 (29,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 xG
 xG
@@ -3428,21 +3585,21 @@ ij
 XM
 kj
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (30,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 HC
 RB
@@ -3466,21 +3623,21 @@ XM
 XM
 JX
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (31,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 Mf
 VN
@@ -3492,35 +3649,35 @@ fj
 xf
 Ra
 xG
-XY
+Rl
 xG
 gq
 MQ
 Wb
 XM
 we
-XM
+mD
 yb
 ma
 ma
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (32,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
-oj
+IY
 oj
 DM
 oj
@@ -3530,7 +3687,7 @@ kj
 dD
 XM
 xG
-XY
+Rl
 xG
 xG
 xG
@@ -3542,21 +3699,21 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (33,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 oj
 go
@@ -3568,33 +3725,33 @@ qN
 Ra
 yr
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (34,1,1) = {"
-XY
-XY
-XY
+Rl
+Rl
+Rl
 xG
 KO
 go
@@ -3606,43 +3763,43 @@ cQ
 Ra
 XM
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (35,1,1) = {"
 xG
 xG
 xG
 xG
-xG
+Et
 XL
 XL
+Et
 xG
 xG
-xG
-Iz
 QU
 QU
+QU
 xG
 xG
 xG
@@ -3656,26 +3813,26 @@ Pl
 Pl
 Pl
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (36,1,1) = {"
 xG
 Qb
+XM
 zJ
-zJ
-MN
-MN
-Tz
-az
+xf
+xf
+kj
+XM
 UE
 Ra
 Uf
@@ -3684,7 +3841,7 @@ Mj
 Ra
 fj
 Ra
-XM
+iU
 XM
 XM
 BS
@@ -3694,31 +3851,31 @@ PW
 PW
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (37,1,1) = {"
 xG
-Zn
+XM
 vH
-qp
+dD
 bB
-BN
+XM
 Sa
-FS
+XM
 fW
 fj
 XM
 XN
-XN
+pI
 XM
 xf
 KK
@@ -3732,24 +3889,24 @@ dv
 dv
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (38,1,1) = {"
 xG
-Zn
+XM
 Fs
-tZ
+kj
 bH
-vF
+XM
 TV
 FS
 xG
@@ -3770,26 +3927,26 @@ dv
 dv
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (39,1,1) = {"
 xG
-Zn
+XM
 RK
-BN
+XM
 bv
-BN
+XM
 mj
-FS
+XM
 xG
 hS
 xG
@@ -3808,26 +3965,26 @@ dv
 dv
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (40,1,1) = {"
 xG
-Zn
+XM
 bS
-Ln
+fj
 Pd
 LL
 Or
-wH
+kj
 xG
 go
 qW
@@ -3846,24 +4003,24 @@ dv
 dv
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (41,1,1) = {"
 xG
 Zn
 AS
-BN
+XM
 Jq
-Rk
+kj
 vp
 Cp
 xG
@@ -3884,26 +4041,26 @@ PW
 PW
 PW
 Pl
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (42,1,1) = {"
 xG
 nr
+XM
+XM
+XM
+XM
 mX
-mX
-mX
-mX
-mX
-Ny
+XM
 xG
 DM
 xG
@@ -3926,12 +4083,12 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (43,1,1) = {"
 xG
@@ -3964,22 +4121,22 @@ gd
 XM
 iP
 sr
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (44,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 qy
 kj
 XM
 HO
-XM
+Dk
 Yx
 By
 xG
@@ -4000,18 +4157,18 @@ XM
 Cd
 kj
 kj
-XM
+wW
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (45,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 AB
 fq
@@ -4023,12 +4180,12 @@ Pw
 xG
 xG
 Rd
-oq
+Rd
 xG
 xG
 wU
 Bu
-xf
+ky
 Qd
 xG
 Ou
@@ -4040,16 +4197,16 @@ tD
 XM
 eD
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (46,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 cl
 XM
@@ -4078,16 +4235,16 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (47,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 XM
 yr
@@ -4103,7 +4260,7 @@ cK
 XM
 jf
 Ra
-jX
+VU
 XM
 KI
 xf
@@ -4116,18 +4273,18 @@ kj
 xJ
 Ra
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (48,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
-yr
+PO
 Zc
 cz
 wQ
@@ -4154,16 +4311,16 @@ OD
 wl
 Ra
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (49,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 Cm
 Cm
@@ -4173,7 +4330,7 @@ Cm
 Cm
 Cm
 xG
-XM
+tx
 mc
 jQ
 xG
@@ -4192,16 +4349,16 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (50,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 dA
 WD
@@ -4227,19 +4384,19 @@ nu
 Is
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (51,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 Hu
@@ -4265,19 +4422,19 @@ nu
 nu
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (52,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 lx
@@ -4303,19 +4460,19 @@ Om
 nu
 wE
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (53,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 ey
@@ -4341,19 +4498,19 @@ nu
 nu
 Aj
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (54,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 ZP
@@ -4379,19 +4536,19 @@ LI
 nu
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (55,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 wb
@@ -4417,26 +4574,26 @@ nu
 dj
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (56,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 ZP
 ts
 ts
 ts
 nY
-qw
+ts
 Qi
 Lk
 yu
@@ -4455,19 +4612,19 @@ nu
 dV
 KY
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (57,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 fB
 ZP
@@ -4484,7 +4641,7 @@ ti
 Ed
 lk
 nu
-nu
+NC
 Aj
 nu
 nu
@@ -4493,19 +4650,19 @@ ny
 gA
 nu
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (58,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 xG
 xG
@@ -4531,109 +4688,109 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (59,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 xJ
 XN
 we
 xG
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 oj
 pP
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (60,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 ly
 kj
-cQ
+ap
 xG
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 ND
 EW
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (61,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 oj
 XN
 Ve
 xG
-XY
+Rl
 xG
 xG
 xG
@@ -4646,32 +4803,32 @@ xG
 xG
 xG
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (62,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 XM
 oj
 Ra
 xG
-XY
+Rl
 xG
 gk
 YR
@@ -4684,32 +4841,32 @@ sl
 Qe
 lU
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (63,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 xG
 hj
 NO
 XM
 xG
-XY
+Rl
 xG
 Ub
 jF
@@ -4722,18 +4879,18 @@ Qe
 vg
 YR
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (64,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 xG
 xG
@@ -4747,7 +4904,7 @@ Ym
 Ym
 Ym
 xG
-XY
+Rl
 xG
 oj
 go
@@ -4760,18 +4917,18 @@ go
 TH
 oj
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (65,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 RB
 FV
@@ -4784,8 +4941,8 @@ BV
 qb
 qb
 gB
-XY
-XY
+Rl
+Rl
 xG
 oj
 oj
@@ -4793,23 +4950,23 @@ Ub
 go
 gR
 oj
-XY
+Rl
 oj
 YR
 oh
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (66,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 PF
 oj
@@ -4822,32 +4979,32 @@ gu
 oj
 RB
 oj
-XY
-XY
+Rl
+Rl
 xG
 oj
 TH
 oj
 go
 oh
-XY
-oh
+Rl
+XO
 Ub
-oh
+XO
 oh
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (67,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 oj
 RB
@@ -4860,32 +5017,32 @@ oj
 oj
 Vi
 oj
-XY
-XY
+Rl
+Rl
 xG
 YR
 oj
 oh
-oh
-XY
-XY
-oh
-oh
-oh
+XO
+Rl
+Rl
+XO
+XO
+XO
 oh
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (68,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 YR
 oj
@@ -4898,32 +5055,32 @@ go
 yV
 oj
 AG
-XY
-XY
-XY
-XY
-oh
-oh
-oh
-XY
+Rl
+Rl
+Rl
+Rl
+XO
+XO
+XO
+Rl
 oK
-oh
-oh
-XY
-oh
+XO
+XO
+Rl
+XO
 xG
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (69,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 pO
 oj
@@ -4936,254 +5093,254 @@ oj
 go
 go
 uA
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (70,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
 oh
 oh
 oj
-oh
-oh
+XO
+XO
 RB
 oh
 oh
 RB
 oh
-oh
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+XO
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (71,1,1) = {"
-XY
-XY
+Rl
+Rl
 xG
-XY
+Rl
 oh
+XO
+XO
+XO
 oh
+XO
+XO
 oh
-oh
-oh
-oh
-oh
-oh
-oh
-oh
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+XO
+XO
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (72,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (73,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (74,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}
 (75,1,1) = {"
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
-XY
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
+Rl
 "}

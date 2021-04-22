@@ -81,13 +81,18 @@
 ---Fallout 13---
 */
 
-/obj/item/ammo_box/magazine/m10mm_adv/simple
+/obj/item/ammo_box/magazine/m10mm_adv
 	name = "10mm pistol magazine (10mm)"
 	icon_state = "10mmadv"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 12
 	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m10mm_adv/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m10mm_adv/simple
 
 /obj/item/ammo_box/magazine/m10mm_adv/simple/empty
 	start_empty = 1
