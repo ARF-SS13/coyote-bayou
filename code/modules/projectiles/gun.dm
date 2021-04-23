@@ -83,7 +83,7 @@
 	var/can_automatic = FALSE
 
 	var/mutable_appearance/suppressor_overlay
-	var/suppressor_state = "suppressor"
+	var/suppressor_state = null
 	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/can_unsuppress = TRUE
@@ -114,7 +114,7 @@
 
 	var/dualwield_spread_mult = 1		//dualwield spread multiplier
 
-	var/tinkered = 0
+	//var/tinkered = 0
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 //	var/projectile_damage_multiplier = 1
 

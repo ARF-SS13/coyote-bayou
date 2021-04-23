@@ -555,7 +555,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
 		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
-		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv,								60),
+		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv/simple,								60),
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
 		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												70),
 		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												70),

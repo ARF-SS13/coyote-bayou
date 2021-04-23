@@ -35,6 +35,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 8
+	multiple_sprites = 1
 
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = 1
@@ -89,6 +90,11 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_adv/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/m10mm_adv/simple
+
+/obj/item/ammo_box/magazine/m10mm_adv/simple/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m10mm_adv/ext

@@ -273,7 +273,7 @@ Raider
 		/obj/item/twohanded/fireaxe=1,
 		/obj/item/gun/ballistic/revolver/colt6520=1,
 		/obj/item/grenade/iedcasing=2,
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 /datum/outfit/loadout/raider_sadist
 	name = "Sadist"
@@ -366,7 +366,7 @@ Raider
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
@@ -437,7 +437,7 @@ Raider
 	gloves = /obj/item/clothing/gloves/fingerless
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 
 /datum/outfit/loadout/petro

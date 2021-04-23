@@ -187,6 +187,12 @@
 	. = ..()
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
+/obj/item/clothing/suit/armor/f13/combat/mk2/raider
+	name = "raider combat armor"
+	desc = "(VI) An old set of reinforced combat armor with some parts supplanted with painspike armor."
+	icon_state = "combat_armor_raider"
+	item_state = "combat_armor_raider"
+
 //Power armors, including salvaged and faction
 
 /obj/item/clothing/suit/armor/f13/power_armor

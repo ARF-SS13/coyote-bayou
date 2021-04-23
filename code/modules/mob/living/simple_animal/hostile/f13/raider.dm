@@ -63,13 +63,13 @@
 /mob/living/simple_animal/hostile/raider/ranged
 	icon_state = "raiderranged"
 	icon_living = "raiderranged"
-	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/gun/ballistic/automatic/pistol/ninemil)
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/effect/spawner/lootdrop/f13/npc_raider)
 	ranged = 1
 	maxHealth = 115
 	health = 115
 	retreat_distance = 4
 	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/c9mm
+	projectiletype = /obj/item/projectile/bullet/c9mm/op
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 
 /mob/living/simple_animal/hostile/raider/legendary
@@ -98,13 +98,13 @@
 	extra_projectiles = 1
 
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
-	icon_state = "ranged_sulphitemob"
-	icon_living = "ranged_sulphitemob"
-	loot = list(/obj/effect/mob_spawn/human/corpse/raiderrangedsulphite, /obj/item/gun/ballistic/automatic/pistol/m1911 )
+	icon_state = "metal_raider"
+	icon_living = "metal_raider"
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderrangedsulphite, /obj/item/gun/ballistic/automatic/pistol/m1911/custom)
 	ranged = 1
 	maxHealth = 180
 	health = 180
-	projectiletype = /obj/item/projectile/bullet/c45
+	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 
 /mob/living/simple_animal/hostile/raider/ranged/boss
@@ -113,7 +113,8 @@
 	icon_living = "raiderboss"
 	maxHealth = 170
 	health = 170
-	extra_projectiles = 2
+	extra_projectiles = 3
+	projectiletype = /obj/item/projectile/bullet/c45/op
 	loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/greasegun)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()

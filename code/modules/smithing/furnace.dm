@@ -11,13 +11,13 @@
 
 
 /obj/structure/furnace/Initialize()
-	..()
+	. = ..()
 	create_reagents(250, TRANSPARENT)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/furnace/Destroy()
-	..()
 	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/structure/furnace/process()
 	if(debug)
@@ -40,7 +40,7 @@
 		else
 			to_chat(user, "The furnace isn't working!.")
 	else
-		..()
+		. = ..()
 
 /obj/structure/furnace/wrench_act(mob/living/user, obj/item/I)
 	..()

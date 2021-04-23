@@ -369,6 +369,87 @@
 	obj_flags = UNIQUE_RENAME
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
+/obj/item/clothing/head/f13/ncr/steelpot_goggles
+	name = "NCR storm steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet, issued with an additional pair of storm goggles for weather resistance."
+	icon_state = "steelpot_goggles"
+	item_state = "steelpot_goggles"
+	alt_toggle_message = "You push the goggles down "
+	can_toggle = 1
+	flags_inv = HIDEEARS
+	actions_types = list(/datum/action/item_action/toggle)
+	toggle_cooldown = 0
+	flags_cover = HEADCOVERSEYES
+	visor_flags_cover = HEADCOVERSEYES
+	dog_fashion = null
+
+/obj/item/clothing/head/f13/ncr/steelpot_goggles/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		if(world.time > cooldown + toggle_cooldown)
+			cooldown = world.time
+			up = !up
+			flags_1 ^= visor_flags
+			flags_inv ^= visor_flags_inv
+			flags_cover ^= visor_flags_cover
+			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
+
+			user.update_inv_head()
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				C.head_update(src, forced = 1)
+
+			if(active_sound)
+				while(up)
+					playsound(src.loc, "[active_sound]", 100, 0, 4)
+					sleep(15)
+
+/obj/item/clothing/head/f13/ncr/steelpot_med
+	name = "NCR medic steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet with the addition of decalling signifying a medic."
+	icon_state = "steelpot_med"
+	item_state = "steelpot_med"
+
+/obj/item/clothing/head/f13/ncr/steelpot_mp
+	name = "NCR military police steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet emblazoned with the initials of the military police."
+	icon_state = "steelpot_mp"
+	item_state = "steelpot_mp"
+
+/obj/item/clothing/head/f13/ncr/steelpot_gambler
+	name = "NCR gambler steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet. Stashed in the strap are decks of cards, dominoes and cigarettes for personal use."
+	icon_state = "steelpot_gambler"
+	item_state = "steelpot_gambler"
+
+/obj/item/clothing/head/f13/ncr/steelpot_bandolier
+	name = "NCR bandolier steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet. This one has clearly seen heavy use, as well as having additional bullets tucked into the strap."
+	icon_state = "steelpot_bandolier"
+	item_state = "steelpot_bandolier"
+
+/obj/item/clothing/head/f13/ncr/steelpot_patriot
+	name = "NCR patriot steelpot helmet"
+	desc = "(V) A standard issue NCR steel helmet. This one has been patriotically customised to feature the NCR's flag prominently across its front."
+	icon_state = "steelpot_patriot"
+	item_state = "steelpot_patriot"
+
+/obj/item/clothing/head/f13/ncr_flapcap
+	name = "NCR field cap"
+	desc = "(V) A special issue canvas NCR field cap with cotton neckflap, for sun protection in arid climates."
+	icon_state = "ncr_flapcap"
+	item_state = "ncr_flapcap"
+	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	icon_state = "ncr_flapcap"
+	item_state = "ncr_flapcap"
+
+/obj/item/clothing/head/f13/ncr_slouch
+	name = "NCR slouch hat"
+	desc = "(V) An irregular issue NCR sun hat, the left side of the brim is pinned to the crown for ease with shouldering rifles."
+	icon_state = "ncr_slouch"
+	item_state = "ncr_slouch"
+	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"
 	desc = "(VI) A green beret, standard issue for all commissioned NCR Officers."
@@ -424,8 +505,6 @@
 	icon_state = "ncr_cap"
 	item_state = "ncr_cap"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13/ncr_campaign
 	name = "NCR campaign hat"

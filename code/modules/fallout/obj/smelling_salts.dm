@@ -6,7 +6,7 @@
 	icon = 'icons/obj/fallout/smelling_salts.dmi'
 	icon_state = "smelling_salts_legion"
 	var/time_limit = DEFIB_TIME_LIMIT * 5 // half compared to an actual defib
-	var/charges = 8 // a bit lower than a normal defib's 10
+	var/charges = 50 // a bit lower than a normal defib's 10
 	var/in_use = FALSE
 	var/time_to_use = 10 SECONDS // a defib is 5 seconds
 
