@@ -30,10 +30,6 @@
 			if(oldC)
 				qdel(oldC)
 			new /obj/effect/temp_visual/detector_overlay(M)
-			//C.icon_state = "scan"
-	//	for(var/turf/open/indestructible/ground/outside/desert/M in salvage)
-			//M.icon = 
-			//M.icon_state = "scan"
 
 /obj/effect/temp_visual/detector_overlay
 	plane = FULLSCREEN_PLANE
@@ -1077,7 +1073,7 @@
 			prefix = "Legendary "
 	
 	B.extra_damage += (dmgmod)
-	B.extra_penetration += (penmod/30)
+	B.extra_penetration += (penmod/60)
 	B.fire_delay += (spdmod/5)
 	B.name = prefix + B.name
 	B.tinkered += 1
@@ -1125,7 +1121,7 @@
 			prefix = "Legendary "
 	
 	E.extra_damage += (dmgmod)
-	E.extra_penetration += (penmod/30)
+	E.extra_penetration += (penmod/60)
 	E.fire_delay += (spdmod/5)
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
@@ -1169,10 +1165,10 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	A.armor.linemelee += tiermod*2.5
-	A.armor.linebullet += tiermod*2.5
-	A.armor.linelaser += tiermod*2.5
-	A.slowdown += (spdmod/50)
+	A.armor.linemelee += tiermod*3
+	A.armor.linebullet += tiermod*3
+	A.armor.linelaser += tiermod*3
+	A.slowdown += (spdmod/75)
 	A.name = prefix + A.name
 	A.tinkered += 1
 	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
@@ -1214,10 +1210,10 @@
 		if(20 to 100)
 			prefix = "Legendary "
 
-	H.armor.linemelee += tiermod*2.5
-	H.armor.linebullet += tiermod*2.5
-	H.armor.linelaser += tiermod*2.5
-	H.slowdown += (spdmod/50)
+	H.armor.linemelee += tiermod*3
+	H.armor.linebullet += tiermod*3
+	H.armor.linelaser += tiermod*3
+	H.slowdown += (spdmod/75)
 	H.name = prefix + H.name
 	H.tinkered += 1
 	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"

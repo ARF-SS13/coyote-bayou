@@ -1544,6 +1544,7 @@
 	fan_out_items = TRUE
 
 	loot = list(
+				/obj/item/storage/crayons,
 				/obj/item/crafting/abraxo,
 				/obj/item/stack/crafting/metalparts/three,
 				/obj/item/stack/crafting/metalparts/five,
