@@ -619,6 +619,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_delay = 3
+	burst_shot_delay = 2
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	can_bayonet = FALSE
 	force = 15

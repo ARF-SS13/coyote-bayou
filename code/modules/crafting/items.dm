@@ -26,9 +26,24 @@
 			salvage += M
 	if(LAZYLEN(salvage))
 		for(var/turf/open/indestructible/ground/outside/desert/M in salvage)
-			M.icon = 'icons/effects/landmarks_static.dmi'
-			M.icon_state = "scan"
+			var/obj/effect/temp_visual/detector_overlay/oldC = locate(/obj/effect/temp_visual/detector_overlay) in M
+			if(oldC)
+				qdel(oldC)
+			new /obj/effect/temp_visual/detector_overlay(M)
+			//C.icon_state = "scan"
+	//	for(var/turf/open/indestructible/ground/outside/desert/M in salvage)
+			//M.icon = 
+			//M.icon_state = "scan"
 
+/obj/effect/temp_visual/detector_overlay
+	plane = FULLSCREEN_PLANE
+	layer = FLASH_LAYER
+	icon = 'icons/effects/ore_visuals.dmi'
+	icon_state = "scan"
+	appearance_flags = 0 //to avoid having TILE_BOUND in the flags, so that the 480x480 icon states let you see it no matter where you are
+	duration = 35
+	pixel_x = -224
+	pixel_y = -224
 
 /obj/item/components
 	name = "crafting items"
@@ -1215,11 +1230,11 @@
 	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
 	if(prob(20))
 		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
-			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
 		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))//ups hotrod to salvaged
-			new /obj/item/clothing/suit/armor/f13/power_armor/t45b(user.loc)
+			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
 		if(istype(A, /obj/item/clothing/suit/armor/f13/power_armor/t45b))
@@ -1238,11 +1253,11 @@
 	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
 	if(prob(20))
 		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
-			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return
 		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
-			new /obj/item/clothing/head/helmet/f13/power_armor/t45b(user.loc)
+			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return
 		if(istype(H, /obj/item/clothing/head/helmet/f13/power_armor/t45b))
