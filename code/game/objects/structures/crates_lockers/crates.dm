@@ -110,6 +110,16 @@
 			. += {"<span class='cult'>This is a coffin which your master can use to shield himself from the unforgiving sun.\n
 			You yourself are still human and dont need it. Yet.</span>"} */
 
+/obj/structure/closet/crate/footlocker
+	desc = "Low metal locker for personal effects."
+	name = "footlocker"
+	icon_state = "footlocker"
+
+/obj/structure/closet/crate/footchest
+	desc = "A wooden chest with iron bands."
+	name = "personal chest"
+	icon_state = "footchest"
+
 /obj/structure/closet/crate/internals
 	desc = "An internals crate."
 	name = "internals crate"

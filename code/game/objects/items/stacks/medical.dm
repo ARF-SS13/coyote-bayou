@@ -73,6 +73,10 @@
 /obj/item/stack/medical/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
 
+///Override this proc for special post heal effects.
+/obj/item/stack/medical/proc/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
+	return
+
 /obj/item/stack/medical/bruise_pack
 	name = "bruise pack"
 	singular_name = "bruise pack"
@@ -242,22 +246,29 @@
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
-/obj/item/stack/medical/suture/emergency
-	name = "improvised suture"
-	desc = "A set of improvised sutures, not very good at repairing damage, but still decent at stopping bleeding."
-	heal_brute = 5
-	amount = 5
-	max_amount = 5
-	merge_type = /obj/item/stack/medical/suture/emergency
-
-/obj/item/stack/medical/suture/emergency/five
-	amount = 5
-
 /obj/item/stack/medical/suture/one
 	amount = 1
 
 /obj/item/stack/medical/suture/five
 	amount = 5
+
+/obj/item/stack/medical/suture/emergency
+	name = "improvised suture"
+	icon_state = "suture_imp"
+	desc = "A set of improvised sutures consisting of clothing thread and a sewing needle, not very good at repairing damage, but still decent at stopping bleeding."
+	heal_brute = 5
+	amount = 5
+	max_amount = 15
+	merge_type = /obj/item/stack/medical/suture/emergency
+
+/obj/item/stack/medical/suture/emergency/five
+	amount = 5
+
+/obj/item/stack/medical/suture/emergency/ten
+	amount = 10
+
+/obj/item/stack/medical/suture/emergency/fifteen
+	amount = 15
 
 /obj/item/stack/medical/suture/medicated
 	name = "medicated suture"
@@ -266,9 +277,6 @@
 	heal_brute = 15
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated
-
-/obj/item/stack/medical/suture/one
-	amount = 1
 
 /obj/item/stack/medical/suture/heal(mob/living/M, mob/user)
 	. = ..()
@@ -496,3 +504,29 @@
 		return TRUE
 
 	to_chat(user, "<span class='warning'>You can't heal [M] with the \the [src]!</span>")
+
+/obj/item/stack/medical/poultice
+	name = "mourning poultices"
+	singular_name = "mourning poultice"
+	desc = "A type of primitive herbal poultice.\nWhile traditionally used to prepare corpses for the mourning feast, it can also treat scrapes and burns on the living, however, it is liable to cause shortness of breath when employed in this manner.\nIt is imbued with ancient wisdom."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bandid_mourningpoultice"
+	amount = 15
+	max_amount = 15
+	heal_brute = 10
+	heal_burn = 10
+	self_delay = 40
+	other_delay = 10
+	repeating = TRUE
+	merge_type = /obj/item/stack/medical/poultice
+	novariants = TRUE
+
+/obj/item/stack/medical/poultice/heal(mob/living/M, mob/user)
+	if(iscarbon(M))
+		return heal_carbon(M, user, heal_brute, heal_burn)
+	return ..()
+
+/obj/item/stack/medical/poultice/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
+	. = ..()
+	healed_mob.adjustOxyLoss(amount_healed)
+
