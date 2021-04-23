@@ -424,26 +424,6 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
-	
-/datum/crafting_recipe/backsheath
-	name = "back sheath"
-	result = /obj/item/storage/backpack/backsheath
-	reqs = list(/obj/item/stack/sheet/leather = 4,
-				/obj/item/stack/sheet/cloth = 3)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_BELTS
-
-/datum/crafting_recipe/waistsheath
-	name = "waist sheath"
-	result = /obj/item/storage/belt/waistsheath
-	reqs = list(/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/cloth = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_BELTS
 
 /datum/crafting_recipe/settler
 	name = "settler outfit"

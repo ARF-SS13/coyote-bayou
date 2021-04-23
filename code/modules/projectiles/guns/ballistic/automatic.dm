@@ -619,6 +619,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_delay = 3
+	burst_shot_delay = 2
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	can_bayonet = FALSE
 	force = 15
@@ -1037,47 +1038,6 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead
-	name = "neostead 2000"
-	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
-	icon_state = "neostead"
-	fire_delay = 4
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	var/toggled = FALSE
-	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>Alt-click to switch tubes.</span>"
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead/Initialize()
-	. = ..()
-	if (!alternate_magazine)
-		alternate_magazine = new mag_type(src)
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead/attack_self(mob/living/user)
-	. = ..()
-	if(!magazine.contents.len)
-		toggle_tube(user)
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead/proc/toggle_tube(mob/living/user)
-	var/current_mag = magazine
-	var/alt_mag = alternate_magazine
-	magazine = alt_mag
-	alternate_magazine = current_mag
-	toggled = !toggled
-	if(toggled)
-		to_chat(user, "You switch to tube B.")
-	else
-		to_chat(user, "You switch to tube A.")
-
-/obj/item/gun/ballistic/automatic/shotgun/neostead/AltClick(mob/living/user)
-	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	toggle_tube(user)
 
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "breacher shotgun" //name changed to distinguish from /obj/item/gun/ballistic/shotgun/riot
