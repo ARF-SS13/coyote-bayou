@@ -15,7 +15,6 @@
 	backpack = /obj/item/storage/backpack/trekker
 	satchel = /obj/item/storage/backpack/satchel/trekker
 	ears = /obj/item/radio/headset/headset_ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 
 /datum/outfit/job/ncr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -58,6 +57,7 @@ Colonel
 	jobtype 	= /datum/job/ncr/f13colonel
 	id 			= /obj/item/card/id/dogtag/ncrcolonel
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	accessory 	= /obj/item/clothing/accessory/ncr
 	head 		= /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
 	belt        = /obj/item/storage/belt/military/assault/ncr
@@ -110,6 +110,7 @@ Captain
 	jobtype 	= /datum/job/ncr/f13captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
@@ -175,6 +176,7 @@ Lieutenant
 	jobtype	= /datum/job/ncr/f13lieutenant
 	id			= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	accessory 	= /obj/item/clothing/accessory/ncr/LT1
 	head 		= /obj/item/clothing/head/beret/ncr
 	neck 		= /obj/item/storage/belt/holster
@@ -223,6 +225,7 @@ Medical Officer
 	jobtype		= /datum/job/ncr/f13medicalofficer
 	id			= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes 		= /obj/item/clothing/shoes/f13/military/ncr
 	accessory 	= /obj/item/clothing/accessory/ncr/LT2
 	head 		= /obj/item/clothing/head/beret/ncr
 	neck 		= /obj/item/storage/belt/holster
@@ -271,6 +274,7 @@ Sergeant First Class
 	jobtype = /datum/job/ncr/f13firstsergeant
 	id 				= /obj/item/card/id/dogtag/ncrsergeant
 	uniform		 	= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	accessory 		= /obj/item/clothing/accessory/ncr/FSGT
 	glasses 		= /obj/item/clothing/glasses/sunglasses/big
 	neck 			= /obj/item/storage/belt/holster
@@ -309,6 +313,7 @@ Sergeant
 	jobtype = /datum/job/ncr/f13sergeant
 	id 				= /obj/item/card/id/dogtag/ncrsergeant
 	uniform 		= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	accessory		= /obj/item/clothing/accessory/ncr/SGT
 	head 			= /obj/item/clothing/head/f13/ncr
 	glasses			= /obj/item/clothing/glasses/sunglasses/big
@@ -343,6 +348,7 @@ Corporal
 	name = "NCR Corporal"
 	jobtype 		= /datum/job/ncr/f13corporal
 	uniform 		= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	id 				= /obj/item/card/id/dogtag/ncrtrooper
 	neck 			= /obj/item/storage/belt/holster
 	accessory 		= /obj/item/clothing/accessory/ncr/CPL
@@ -378,6 +384,7 @@ Combat Engineer
 	name = "NCR Combat Medic"
 	jobtype 		= /datum/job/ncr/f13combatmedic
 	uniform 		= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	id 				= /obj/item/card/id/dogtag/ncrtrooper
 	neck 			= /obj/item/storage/belt/holster
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
@@ -423,6 +430,7 @@ Combat Engineer
 	name = "NCR Combat Engineer"
 	jobtype 		= /datum/job/ncr/f13combatengineer
 	uniform 		= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	id 				= /obj/item/card/id/dogtag/ncrtrooper
 	neck 			= /obj/item/storage/belt/holster
 	head			= /obj/item/clothing/head/f13/ncr
@@ -476,6 +484,7 @@ Trooper
 	jobtype = /datum/job/ncr/f13trooper
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	head = 			/obj/item/clothing/head/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -517,6 +526,7 @@ Rear Echelon
 	jobtype = /datum/job/ncr/f13rearechelon
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	head = 			/obj/item/clothing/head/f13/ncr_cap
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -560,7 +570,7 @@ Rear Echelon
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m1carbine=1, \
-		/obj/item/ammo_box/magazine/m10mm_adv=3)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=3)
 
 /*
 Trooper
@@ -584,6 +594,7 @@ Trooper
 	jobtype = /datum/job/ncr/f13ncroffduty
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	shoes =			/obj/item/clothing/shoes/f13/military/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
@@ -767,7 +778,7 @@ Veteran Ranger
 	belt =	/obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv = 3,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/clothing/accessory/armband/med/ncr = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,

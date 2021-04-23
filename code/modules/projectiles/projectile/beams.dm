@@ -277,12 +277,12 @@
 /obj/item/projectile/beam/laser/lasgun //AER9
 	name = "laser beam"
 	damage = 33
-	armour_penetration = 0.42
+	armour_penetration = 0.44
 
 /obj/item/projectile/beam/laser/pistol //AEP7
 	name = "laser beam"
-	damage = 28
-	armour_penetration = 0.35
+	damage = 35
+	armour_penetration = 0.25
 
 /obj/item/projectile/beam/laser/ultra_pistol
 	name = "laser beam"
@@ -302,12 +302,12 @@
 	armour_penetration = 0.7
 
 /obj/item/projectile/beam/laser/pistol/wattz //Wattz pistol
-	damage = 24
+	damage = 31
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto //upgraded Wattz
 	name = "penetrating laser beam"
-	damage = 25
-	armour_penetration = 0.35
+	damage = 33
+	armour_penetration = 0.20
 
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
@@ -355,7 +355,7 @@
 	armour_penetration = 0.35
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
-	damage = 40
+	damage = 45
 	armour_penetration = 0.5
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you

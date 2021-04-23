@@ -92,6 +92,11 @@
 /obj/item/ammo_box/magazine/m10mm_adv/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m10mm_adv/simple
+
+/obj/item/ammo_box/magazine/m10mm_adv/simple/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m10mm_adv/ext
 	name = "10mm pistol extended magazine (10mm)"
 	icon_state = "smg10mm"

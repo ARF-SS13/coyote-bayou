@@ -720,6 +720,7 @@
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	extra_penetration = 0.25
+	extra_damage = 6.5
 
 /obj/item/gun/ballistic/revolver/zhurong
 	name = "Zhu-Rong v417"
