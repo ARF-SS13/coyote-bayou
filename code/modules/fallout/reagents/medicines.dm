@@ -128,21 +128,21 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
 	var/heal_factor_perk = -3 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	var/is_technophobe = FALSE
-	var/heal_rate = heal_factor * (is_technophobe ? heal_factor_perk : 1) * REAGENTS_EFFECT_MULTIPLIER
 	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
 		is_technophobe = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat|
+		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
+	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_technophobe ? 5 : 0)
+	M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
 	. = TRUE
 	..()
 
@@ -164,7 +164,6 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	name = "healing poultice"
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
-	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 	heal_factor = -2
 	heal_factor_perk = -4
