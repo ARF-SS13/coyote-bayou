@@ -135,7 +135,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	var/is_technophobe = FALSE
-	var/heal_rate = (is_technophobe ? heal_factor : heal_factor_perk) * REAGENTS_EFFECT_MULTIPLIER
+	var/heal_rate = heal_factor * (is_technophobe ? heal_factor_perk : 1) * REAGENTS_EFFECT_MULTIPLIER
 	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
 		is_technophobe = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
