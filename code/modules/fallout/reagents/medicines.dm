@@ -2,10 +2,11 @@
 	name = "Stimpak Fluid"
 	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#eb0000"
 	taste_description = "grossness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
+	overdose_threshold = 35
+	addiction_threshold = 25
 	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -17,6 +18,21 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
+	if(M.health < 0)					//Functions as epinephrine.
+		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath -= 2
+	if(M.losebreath < 0)
+		M.losebreath = 0
+	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	. = 1
+	if(prob(20))
+		M.AdjustAllImmobility(-20, 0)
+		M.AdjustUnconscious(-20, 0)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
@@ -32,6 +48,8 @@
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
 	M.adjustOxyLoss(8*REAGENTS_EFFECT_MULTIPLIER)
+	M.drowsyness += 2*REAGENTS_EFFECT_MULTIPLIER
+	M.jitteriness += 3
 	..()
 	. = TRUE
 
@@ -43,14 +61,29 @@
 	color = "#e50d0d"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
+	addiction_threshold = 16
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	if(M.health < 0)					//Functions as epinephrine.
+		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath -= 2
+	if(M.losebreath < 0)
+		M.losebreath = 0
+	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	. = 1
+	if(prob(20))
+		M.AdjustAllImmobility(-20, 0)
+		M.AdjustUnconscious(-20, 0)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0 && M.getOxyLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-6*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-6*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustOxyLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustBruteLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
 		M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -66,7 +99,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 
 /datum/reagent/medicine/bitter_drink
 	name = "bitter drink"
-
 	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
 	reagent_state = LIQUID
 	color ="#A9FBFB"
@@ -91,21 +123,26 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	. = TRUE
 
 /datum/reagent/medicine/healing_powder
-	name = "Healing Powder"
-
+	name = "healing powder"
 	description = "A healing powder derived from a mix of ground broc flowers and xander roots. Consumed orally, and produces a euphoric high."
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
+	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -3 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
+	var/is_technophobe = FALSE
+	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
+		is_technophobe = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-	M.hallucination = max(M.hallucination, 5)
+	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	M.adjustFireLoss(heal_rate)
+	M.adjustBruteLoss(heal_rate)
+	M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
 	. = TRUE
 	..()
 
@@ -123,32 +160,13 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
-/datum/reagent/medicine/healing_poultice
+/datum/reagent/medicine/healing_powder/poultice
 	name = "healing poultice"
-
 	description = "Restores limb condition and heals rapidly."
-	reagent_state = LIQUID
 	color = "#C8A5DC"
-	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-
-/datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getOxyLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustOxyLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-		M.hallucination = max(M.hallucination, 5)
-	..()
-
-/datum/reagent/medicine/healing_poultice/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
-		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjustToxLoss(4.5*reac_volume*REAGENTS_EFFECT_MULTIPLIER) //changed from 0.5*reac_volume, reduced from 6
-			if(show_message)
-				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-	..()
+	heal_factor = -2
+	heal_factor_perk = -4
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
