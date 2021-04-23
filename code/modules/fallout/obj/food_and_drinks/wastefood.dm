@@ -166,7 +166,7 @@
 	icon_grow = "xander-grow"
 	icon_harvest = "xander-harvest"
 	icon_dead = "xander-dead"
-	reagents_add = list(/datum/reagent/medicine/antitoxin = 0.2, /datum/reagent/medicine/salglu_solution = 0.05)
+	reagents_add = list(/datum/reagent/medicine/antitoxin = 0.2, /datum/reagent/medicine/salglu_solution = 0.05, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/xander
 	seed = /obj/item/seeds/xander
@@ -341,7 +341,7 @@
 	icon_grow = "datura-grow"
 	icon_dead = "datura-dead"
 	icon_harvest = "datura-harvest"
-	reagents_add = list(/datum/reagent/medicine/morphine = 0.35, /datum/reagent/drug/mushroomhallucinogen = 0.12, /datum/reagent/toxin = 0.1,  /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(/datum/reagent/medicine/morphine = 0.2, /datum/reagent/drug/mushroomhallucinogen = 0.1, /datum/reagent/toxin = 0.1,  /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/datura
 	seed = /obj/item/seeds/datura
