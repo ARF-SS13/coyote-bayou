@@ -108,6 +108,8 @@
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
 
+//New standard wood floor for most areas, oak for Legion and pure log cabins only, maple for NCR and mayor only, maybe a diner.
+
 /turf/open/floor/wood/f13
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "housewood1"
@@ -115,7 +117,13 @@
 	New()
 		..()
 		if(icon_state == "housewood1")
-			icon_state = "housewood[rand(1,3)]"
+			icon_state = "housewood[rand(1,4)]"
+
+/turf/open/floor/wood/f13/oak
+	icon_state = "oakfloor1"
+
+/turf/open/floor/wood/f13/maple
+	icon_state = "maplefloor1"
 
 /turf/open/floor/wood/f13/carpet
 	icon_state = "carpet"
@@ -200,6 +208,18 @@
 	icon_state = "housewood_stage_right"
 /turf/open/floor/wood/f13/stage_br
 	icon_state = "housewood_stage_bottom_right"
+
+/turf/open/floor/plating/f13/inside/gravel
+	name = "gravel"
+	desc = "Small pebbles, lots of them."
+	icon = 'icons/fallout/turfs/ground.dmi'
+	icon_state = "gravel"
+
+/turf/open/floor/plating/f13/inside/gravel/edge
+	icon_state = "graveledge"
+
+/turf/open/floor/plating/f13/inside/gravel/corner
+	icon_state = "gravelcorner"	
 
 #define SHROOM_SPAWN	1
 

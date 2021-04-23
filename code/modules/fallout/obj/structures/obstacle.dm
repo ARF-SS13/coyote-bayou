@@ -6,6 +6,102 @@
 #define WOOD 2
 #define SAND 3
 
+//Junk and Rubbish
+//Objects to fill ruins with so it looks decayed on the inside too.
+//Junk = Blocks movement, bullets, small resource when destroyed.
+//small junk = Slows movement, worthless for cover, cleaned with soap etc. Having difficulty making the slowdown work =(
+
+/obj/structure/junk
+	icon = 'icons/obj/stationobjs.dmi'
+	obj_integrity = 100
+	max_integrity = 100
+	anchored = 1
+	density = 1
+	var/buildstacktype = /obj/item/stack/rods
+	var/buildstackamount = 1
+
+/obj/structure/junk/deconstruct()
+	// If we have materials, and don't have the NOCONSTRUCT flag
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+		else
+			for(var/i in custom_materials)
+				var/datum/material/M = i
+				new M.sheet_type(loc, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
+	..()
+
+/obj/structure/junk/machinery
+	name = "rusting machine"
+	desc = "Some sort of machine rusted solid."
+	icon_state = "junk_machine"
+	obj_integrity = 200
+	max_integrity = 200
+	buildstacktype = /obj/item/stack/crafting/metalparts
+	buildstackamount = 2
+
+/obj/structure/junk/locker
+	name = "decayed locker"
+	desc = "Broken, rusted junk."
+	icon_state = "junk_locker"
+
+/obj/structure/junk/cabinet
+	name = "old rotting furniture"
+	desc = "Time and the elements has degraded this furniture beyond repair."
+	icon_state = "junk_cabinet"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 1
+
+/obj/structure/junk/drawer
+	name = "ruined old furniture"
+	desc = "Time and the elements has degraded this furniture beyond repair."
+	icon_state = "junk_dresser"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 1
+
+/obj/structure/junk/micro
+	name = "rusting kitchenmachine"
+	desc = "Rusted solid, useless."
+	icon_state = "junk_micro"
+	buildstacktype = /obj/item/stack/crafting/electronicparts
+	buildstackamount = 1
+
+/obj/structure/junk/small
+	density = 0
+	var/slowdown = 4
+
+/obj/structure/junk/small/table
+	name = "ruined old furniture"
+	desc = "Time and the elements has degraded this furniture beyond repair."
+	icon_state = "junk_table"
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 1
+
+/obj/structure/junk/small/tv
+	name = "pre-war electronic junk"
+	desc = "Broken, a useless relic of the past."
+	icon_state = "junk_tv"
+	buildstacktype = /obj/item/stack/crafting/electronicparts
+	buildstackamount = 1
+
+/obj/structure/junk/small/bed
+	name = "rotting bed"
+	desc = "Rusted and rotting, useless."
+	icon_state = "junk_bed1"
+	buildstackamount = 2
+
+/obj/structure/junk/small/bed2
+	name = "rusty bedframe"
+	desc = "Rusted and rotting, useless."
+	icon_state = "junk_bed2"
+	buildstackamount = 2
+
+/obj/structure/junk/small/bench
+	name = "rotting planks"
+	desc = "Remains of small furniture"
+	icon_state = "rubbish_bench"
+	slowdown = 6
+
 //Barricades/cover
 
 /obj/structure/barricade
@@ -130,7 +226,7 @@
 	icon_state = "bars"
 	obj_integrity = 400
 	max_integrity = 400
-	proj_pass_rate = 80 //Fairly good for executions.
+	proj_pass_rate = 90
 	pass_flags = LETPASSTHROW //Feed the prisoners, or not.
 
 /obj/structure/barricade/sandbags
@@ -146,80 +242,6 @@
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
-/*
-/obj/structure/barricade/security
-	name = "police barrier"
-	desc = "A deployable barrier. Provides good cover in fire fights."
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "barrier0"
-	density = 0
-	anchored = 0
-	obj_integrity = 180
-	max_integrity = 180
-	proj_pass_rate = 20
-	armor = list(melee = 10, bullet = 50, laser = 50, energy = 50, bomb = 10, bio = 100, rad = 100, fire = 10, acid = 0)
-
-
-/obj/structure/barricade/security/New()
-	..()
-	addtimer(CALLBACK(src, .proc/deploy), 40)
-
-/obj/structure/barricade/security/proc/deploy()
-	icon_state = "barrier1"
-	density = 1
-	anchored = 1
-	visible_message("<span class='warning'>[src] deploys!</span>")
-
-
-/obj/item/weapon/grenade/barrier
-	name = "barrier grenade"
-	desc = "Instant cover.<br><i>Alt+click to toggle modes.</i>"
-	icon = 'icons/obj/grenade.dmi'
-	icon_state = "flashbang"
-	item_state = "flashbang"
-	actions_types = list(/datum/action/item_action/toggle_barrier_spread)
-	var/mode = SINGLE
-
-/obj/item/weapon/grenade/barrier/AltClick(mob/living/user)
-	if(!istype(user) || user.incapacitated())
-		return
-	toggle_mode(user)
-
-/obj/item/weapon/grenade/barrier/proc/toggle_mode(mob/user)
-	switch(mode)
-		if(SINGLE)
-			mode = VERTICAL
-		if(VERTICAL)
-			mode = HORIZONTAL
-		if(HORIZONTAL)
-			mode = SINGLE
-
-	to_chat(user, "[src] is now in [mode] mode.")
-
-/obj/item/weapon/grenade/barrier/prime()
-	new /obj/structure/barricade/security(get_turf(src.loc))
-	switch(mode)
-		if(VERTICAL)
-			var/target_turf = get_step(src, NORTH)
-			if(!(is_blocked_turf(target_turf)))
-				new /obj/structure/barricade/security(target_turf)
-
-			var/target_turf2 = get_step(src, SOUTH)
-			if(!(is_blocked_turf(target_turf2)))
-				new /obj/structure/barricade/security(target_turf2)
-		if(HORIZONTAL)
-			var/target_turf = get_step(src, EAST)
-			if(!(is_blocked_turf(target_turf)))
-				new /obj/structure/barricade/security(target_turf)
-
-			var/target_turf2 = get_step(src, WEST)
-			if(!(is_blocked_turf(target_turf2)))
-				new /obj/structure/barricade/security(target_turf2)
-	qdel(src)
-
-/obj/item/weapon/grenade/barrier/ui_action_click(mob/user)
-	toggle_mode(user)
-*/
 
 #undef SINGLE
 #undef VERTICAL
