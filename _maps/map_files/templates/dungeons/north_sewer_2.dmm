@@ -99,6 +99,7 @@
 "bE" = (
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "bG" = (
@@ -439,6 +440,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "ik" = (
@@ -648,6 +650,10 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"mi" = (
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mn" = (
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/bunker)
@@ -786,6 +792,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/corpse,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pe" = (
@@ -884,6 +891,7 @@
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qH" = (
@@ -1206,6 +1214,7 @@
 /obj/effect/decal/fakelattice,
 /obj/structure/wreck/trash/engine,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -1225,6 +1234,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /obj/item/gun/ballistic/revolver/m29/alt,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "vv" = (
@@ -1979,7 +1989,7 @@
 /area/f13/bunker)
 "Jj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/twohanded/chainsaw,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "Jq" = (
@@ -2371,6 +2381,7 @@
 	},
 /obj/item/defibrillator/compact/combat/loaded,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -2397,6 +2408,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/effect/spawner/lootdrop/f13/armor/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "QU" = (
@@ -3772,7 +3784,7 @@ BH
 oo
 oo
 Xo
-wI
+kE
 uL
 Cr
 KO
@@ -4573,7 +4585,7 @@ BH
 wI
 wI
 zi
-kE
+mi
 Tq
 cW
 Gp
