@@ -675,6 +675,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
+/obj/item/lighter/fusion
+	name = "fusion zippo"
+	desc = "A specialty zippo made from a microfusion cell and dedication. Has a much hotter flame than normal."
+	icon_state = "slighter"
+	heat = 3500
+	light_color = LIGHT_COLOR_CYAN
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
 
 ///////////
 //ROLLING//
