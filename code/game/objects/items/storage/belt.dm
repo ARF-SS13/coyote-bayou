@@ -781,6 +781,12 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 
+/obj/item/storage/belt/holster/ranger4570/bayonet/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/sequoia/bayonet(src)
+	new /obj/item/ammo_box/c4570(src)
+	new /obj/item/ammo_box/c4570(src)
+	new /obj/item/ammo_box/c4570(src)
+
 /obj/item/storage/belt/holster/ranger10mm/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt6520(src)
 	new /obj/item/ammo_box/l10mm(src)
