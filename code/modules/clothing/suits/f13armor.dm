@@ -594,7 +594,7 @@
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
 	desc = "(V) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
-	icon_state = "marhsal_commandcoat"
+	icon_state = "marshal_commandcoat"
 	item_state = "marshal_commandcoat"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
