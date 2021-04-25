@@ -162,7 +162,7 @@ Tribal Head Hunter
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	//ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src) //Disabled until Big Leagues can be changed to armour penetration instead of bonus damage, as having +5 damage per attack on a role that gets a melee weapon with a superfast attack speed is kind of broken.
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hunter"
@@ -348,7 +348,7 @@ Hunter
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1)
-	
+
 /datum/outfit/loadout/ranged
 	name = "Ranged"
 	backpack_contents = list(
