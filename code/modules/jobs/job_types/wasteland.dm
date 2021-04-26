@@ -437,7 +437,7 @@ Raider
 	head = /obj/item/clothing/head/welding
 	r_hand = /obj/item/weldingtool/hugetank
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
-	
+
 /datum/outfit/loadout/scavenger
 	name = "Scavenger"
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -456,14 +456,18 @@ Raider
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/color/latex
-	l_hand = /obj/item/storage/backpack/duffelbag/med/surgery
+	neck = /obj/item/bedsheet/medical
 	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh=2,
-							/obj/item/reagent_containers/medspray/silver_sulf=1,
-							/obj/item/reagent_containers/medspray/styptic=1,
+							/obj/item/stack/medical/suture/emergency/fifteen=1,
+							/obj/item/stack/medical/ointment/twelve=1,
 							/obj/item/smelling_salts/crafted=1,
 							/obj/item/healthanalyzer=1,
 							/obj/item/stack/sheet/mineral/silver=1,
-							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1
+							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
+							/obj/item/lighter=1,
+							/obj/item/screwdriver=1,
+							/obj/item/wirecutters=1,
+							/obj/item/hatchet=1
 		)
 
 /datum/outfit/loadout/merchant
