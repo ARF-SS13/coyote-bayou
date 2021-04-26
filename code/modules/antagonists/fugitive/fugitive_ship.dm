@@ -35,7 +35,7 @@
 /obj/machinery/computer/shuttle/hunter
 	name = "shuttle console"
 	shuttleId = "huntership"
-	possible_destinations = "huntership_home;huntership_custom;whiteship_home;syndicate_nw"
+	possible_destinations = "huntership_home;syndicate_nw"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/hunter
 	name = "shuttle navigation computer"
@@ -44,7 +44,7 @@
 	lock_override = CAMERA_LOCK_STATION
 	shuttlePortId = "huntership_custom"
 	see_hidden = FALSE
-	jumpto_ports = list("huntership_home" = 1, "whiteship_home" = 1, "syndicate_nw" = 1)
+	jumpto_ports = list("huntership_home" = 1, "syndicate_nw" = 1)
 	view_range = 4.5
 
 /obj/structure/closet/crate/eva

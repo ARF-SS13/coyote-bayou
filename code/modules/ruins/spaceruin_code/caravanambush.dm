@@ -51,7 +51,7 @@
 	desc = "Used to control the Small Freighter."
 	circuit = /obj/item/circuitboard/computer/caravan/trade1
 	shuttleId = "caravantrade1"
-	possible_destinations = "whiteship_away;whiteship_home;whiteship_z4;whiteship_lavaland;caravantrade1_custom;caravantrade1_ambush"
+	possible_destinations = "caravantrade1_custom;caravantrade1_ambush"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/caravan/Initialize()
 	. = ..()
@@ -67,7 +67,7 @@
 	shuttleId = "caravantrade1"
 	lock_override = NONE
 	shuttlePortId = "caravantrade1_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1, "whiteship_z4" = 1, "caravantrade1_ambush" = 1)
+	jumpto_ports = list("caravantrade1_ambush" = 1)
 	view_range = 14
 	x_offset = -5
 	y_offset = -5
