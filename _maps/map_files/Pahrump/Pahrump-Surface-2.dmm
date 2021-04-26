@@ -13244,6 +13244,20 @@
 /obj/item/seeds/agave,
 /obj/item/seeds/grass,
 /obj/item/seeds/grass,
+/obj/item/seeds/cannabis,
+/obj/item/seeds/coconut,
+/obj/item/seeds/chanterelle,
+/obj/item/seeds/cotton,
+/obj/item/seeds/orange,
+/obj/item/seeds/peach,
+/obj/item/seeds/peanutseed,
+/obj/item/seeds/peas,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/wheat/rice,
+/obj/item/seeds/soya,
+/obj/item/seeds/soya,
+/obj/item/seeds/strawberry,
+/obj/item/seeds/tobacco,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 4;
 	icon_state = "dirt"
@@ -15965,6 +15979,10 @@
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"kJu" = (
+/obj/structure/anvil/obtainable/basic,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "kJB" = (
 /obj/structure/table/wood/settler,
 /obj/item/clothing/gloves/color/yellow,
@@ -17388,6 +17406,8 @@
 /obj/item/lighter,
 /obj/item/screwdriver/nuke,
 /obj/item/crowbar/crude,
+/obj/item/hemostat/tribal,
+/obj/item/retractor/tribal,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "lDS" = (
@@ -46782,7 +46802,7 @@ vPY
 vPY
 vPY
 vPY
-vPY
+cWy
 vPY
 eST
 qFk
@@ -47041,7 +47061,7 @@ vPY
 vPY
 vPY
 vPY
-cWy
+kJu
 qFk
 gcK
 gcK
