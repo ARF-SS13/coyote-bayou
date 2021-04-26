@@ -133,6 +133,13 @@
 						"topbirb")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
+/datum/gear/donator/ranger4570
+	name = "45-70 Gov't Service Revolver"
+	slot = SLOT_NECK
+	path = /obj/item/storage/belt/holster/ranger4570/bayonet
+	ckeywhitelist = list("asterixcodix")
+	restricted_roles = list("NCR Veteran Ranger", "NCR Off-Duty")
+
 /datum/gear/donator/ranger44
 	name = ".44 Magnum Service Revolver"
 	slot = SLOT_NECK
@@ -172,7 +179,8 @@
 	slot = SLOT_NECK
 	path = /obj/item/storage/belt/holster/ranger357
 	ckeywhitelist = list("shoi87",
-						"someonewithapen")
+						"someonewithapen",
+						"asterixcodix")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/ranger10mm
@@ -200,7 +208,8 @@
 						"svenja",
 						"panzer1944",
 						"purplepineapple",
-						"topbirb")
+						"topbirb",
+						"asterixcodix")
 	restricted_roles = list("NCR Ranger", "NCR Veteran Ranger", "NCR Off-Duty")
 
 /datum/gear/donator/rangersergeantpins
