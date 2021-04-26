@@ -181,6 +181,11 @@
 /obj/item/seeds/ambrosia/gaia,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"ee" = (
+/mob/living/simple_animal/hostile/alien,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "eq" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /obj/structure/spider/stickyweb,
@@ -266,6 +271,12 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/fireant,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/turf/open/floor/grass,
+/area/f13/bunker)
+"fC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "fI" = (
@@ -417,6 +428,7 @@
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -658,6 +670,12 @@
 /obj/item/seeds/sunflower/novaflower,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"nU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "nW" = (
 /mob/living/simple_animal/opossum{
 	name = "Fudge"
@@ -685,6 +703,7 @@
 "of" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -737,6 +756,10 @@
 /area/f13/bunker)
 "pP" = (
 /obj/structure/barricade/wooden/strong,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"pQ" = (
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "pR" = (
@@ -907,8 +930,8 @@
 /area/f13/bunker)
 "tD" = (
 /obj/structure/toilet/secret/high_loot,
-/obj/item/grenade,
 /obj/item/grenade/flashbang,
+/obj/item/grenade/frag,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1119,7 +1142,8 @@
 	},
 /area/f13/bunker)
 "yV" = (
-/obj/item/storage/box/hug,
+/obj/item/storage/box/hug/medical,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "zq" = (
@@ -1501,6 +1525,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"FD" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "FK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1541,6 +1572,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
+"Hi" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "Hm" = (
 /obj/machinery/door/poddoor{
 	id = 806
@@ -1552,6 +1587,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/giantant,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "HB" = (
@@ -1700,6 +1736,10 @@
 /mob/living/simple_animal/hostile/alien,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"KR" = (
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "KY" = (
 /obj/item/reagent_containers/food/snacks/grown/pungafruit,
@@ -1901,10 +1941,10 @@
 	},
 /area/f13/bunker)
 "OG" = (
-/mob/living/simple_animal/hostile/handy/sentrybot/playable{
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/sentrybot{
 	faction = list("ant")
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2365,6 +2405,10 @@
 	id = 806
 	},
 /turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"XS" = (
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "XY" = (
 /turf/closed/indestructible/rock,
@@ -2997,7 +3041,7 @@ Rl
 xG
 eG
 sJ
-qV
+XS
 Eg
 xG
 Rl
@@ -3227,7 +3271,7 @@ Om
 DY
 DY
 nu
-nu
+KR
 nu
 ZP
 nu
@@ -3434,7 +3478,7 @@ go
 zR
 iq
 lc
-oj
+Hi
 xG
 Rl
 Rl
@@ -3611,7 +3655,7 @@ xG
 XM
 XM
 XM
-XM
+FD
 yS
 XM
 XM
@@ -3673,7 +3717,7 @@ Rl
 Rl
 xG
 IY
-oj
+pQ
 DM
 oj
 Pp
@@ -4019,7 +4063,7 @@ kj
 vp
 Cp
 xG
-sl
+nU
 Pp
 XM
 jX
@@ -4029,7 +4073,7 @@ xG
 xG
 xG
 xG
-Od
+Pl
 PW
 PW
 PW
@@ -4052,7 +4096,7 @@ xG
 nr
 XM
 XM
-XM
+FD
 XM
 mX
 XM
@@ -4411,7 +4455,7 @@ nu
 dj
 nu
 Vx
-nu
+KR
 nu
 nu
 nu
@@ -4550,7 +4594,7 @@ wb
 ZP
 pR
 ZP
-ts
+fC
 QF
 Lk
 jX
@@ -4967,7 +5011,7 @@ PF
 oj
 hI
 go
-RB
+ee
 oj
 YR
 gu

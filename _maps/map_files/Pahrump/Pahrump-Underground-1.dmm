@@ -1262,6 +1262,10 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
+"bnM" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "bnW" = (
 /obj/structure/simple_door/bunker,
 /turf/open/indestructible/ground/inside/subway,
@@ -1324,10 +1328,10 @@
 /area/f13/brotherhood/rnd)
 "bqs" = (
 /obj/structure/guncase,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bqO" = (
@@ -3802,13 +3806,13 @@
 /area/f13/clinic)
 "dJx" = (
 /obj/structure/guncase,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/machinery/light/small{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "dJD" = (
@@ -3992,7 +3996,7 @@
 /area/f13/brotherhood/leisure)
 "dML" = (
 /obj/structure/table/booth,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dMQ" = (
@@ -8286,8 +8290,7 @@
 /area/f13/tunnel)
 "hKm" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/fancy/ammobox/slugshot,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
 	},
@@ -8498,6 +8501,10 @@
 /area/f13/caves)
 "hQG" = (
 /mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
+"hQR" = (
+/mob/living/simple_animal/hostile/giantantqueen,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hRy" = (
@@ -10334,6 +10341,10 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"jwA" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "jxG" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -11124,7 +11135,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "kfV" = (
@@ -13087,7 +13098,7 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/item/storage/fancy/candle_box,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "miy" = (
@@ -14608,7 +14619,7 @@
 /area/f13/tunnel)
 "nBL" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nCi" = (
@@ -14680,6 +14691,13 @@
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
+/area/f13/tunnel)
+"nFJ" = (
+/obj/effect/decal/remains{
+	icon_state = "remains"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "nGN" = (
 /obj/machinery/light/small{
@@ -14942,13 +14960,13 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/stack/f13Cash/random/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/machinery/light/fo13colored/Aqua{
 	bulb_colour = "#800080";
 	dir = 4;
 	light_color = "#800080";
 	name = "light fixture"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "nTN" = (
@@ -15215,11 +15233,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "ohv" = (
-/obj/item/gun/ballistic/automatic/marksman/sniper/gold,
 /obj/structure/rack,
 /obj/item/ammo_box/a308,
 /obj/item/ammo_box/a308,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/automatic/marksman/sniper,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "ohO" = (
@@ -19714,6 +19732,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"sek" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "seJ" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -24035,6 +24057,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"vCe" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "vCi" = (
 /obj/effect/spawner/lootdrop/f13/cash_ncr_med,
 /turf/open/indestructible/ground/inside/mountain,
@@ -25855,6 +25881,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"xop" = (
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "xoU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/fo13colored/Aqua{
@@ -26475,7 +26506,7 @@
 	dir = 8
 	},
 /obj/item/stack/f13Cash/random/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "xYS" = (
@@ -32505,7 +32536,7 @@ lnr
 rKx
 lnr
 uoO
-uoO
+hQf
 uoO
 uoO
 uoO
@@ -32762,7 +32793,7 @@ lnr
 bAD
 uoO
 uoO
-uoO
+hQf
 uoO
 uoO
 uoO
@@ -54582,7 +54613,7 @@ mDq
 rkH
 mDq
 mDq
-jbA
+xop
 hkn
 oHE
 mDq
@@ -66260,7 +66291,7 @@ lnr
 lnr
 lnr
 lnr
-lnr
+hQR
 lnr
 lnr
 lnr
@@ -66775,7 +66806,7 @@ aBb
 aBb
 aBb
 wMr
-pNK
+jwA
 aBb
 aBb
 aBb
@@ -67028,7 +67059,7 @@ lnr
 lnr
 aBb
 aBb
-uzO
+bnM
 aBb
 aBb
 aBb
@@ -68844,8 +68875,8 @@ lnr
 aBb
 pXa
 lnr
+vCe
 lnr
-uzO
 aBb
 aBb
 uoO
@@ -71153,7 +71184,7 @@ aBb
 vZR
 lnr
 lnr
-onY
+nFJ
 aBb
 aBb
 aBb
@@ -72163,7 +72194,7 @@ lnr
 lnr
 lnr
 lnr
-uzO
+sek
 aBb
 lnr
 aBb

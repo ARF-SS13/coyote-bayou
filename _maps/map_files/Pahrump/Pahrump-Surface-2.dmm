@@ -417,6 +417,10 @@
 	icon_state = "horizontaloutermain2"
 	},
 /area/f13/wasteland)
+"anA" = (
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "anC" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -1809,6 +1813,7 @@
 "bmu" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/random/ncr/high,
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "bmx" = (
@@ -2229,7 +2234,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/village)
 "bzr" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/carpet/black,
 /area/f13/city)
 "bzB" = (
@@ -2448,8 +2453,8 @@
 "bFV" = (
 /obj/structure/rack,
 /obj/item/bikehorn,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3516,7 +3521,7 @@
 	},
 /area/f13/wasteland)
 "cAM" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "cAW" = (
@@ -6035,6 +6040,9 @@
 /area/f13/brotherhood)
 "esE" = (
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "esP" = (
@@ -7210,6 +7218,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"ffy" = (
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/floor/f13/wood,
+/area/f13/clinic)
 "ffI" = (
 /obj/structure/chair/stool/retro,
 /obj/machinery/light/small{
@@ -7731,6 +7743,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
+"fwu" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/turf/open/water,
+/area/f13/caves)
 "fwG" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood{
@@ -7801,6 +7817,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"fzl" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
+/turf/open/water,
+/area/f13/caves)
 "fzo" = (
 /obj/structure/barricade/wooden/strong{
 	obj_integrity = 500
@@ -10416,6 +10436,15 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/legion)
+"hjw" = (
+/obj/structure/chair/stool{
+	icon_state = "bench"
+	},
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "hjA" = (
 /obj/structure/table/snooker{
 	dir = 10
@@ -15199,8 +15228,9 @@
 /area/f13/ncr)
 "kiP" = (
 /obj/structure/rack,
-/obj/item/stack/f13Cash/random/ncr/high,
-/obj/item/stack/f13Cash/random/ncr/high,
+/obj/effect/spawner/lootdrop/f13/cash_legion_high,
+/obj/effect/spawner/lootdrop/f13/cash_legion_high,
+/obj/item/stack/f13Cash/random/aureus/low,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "kiW" = (
@@ -15436,7 +15466,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "kqk" = (
@@ -23158,6 +23188,16 @@
 /obj/machinery/trading_machine/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"pHx" = (
+/obj/structure/chair/stool{
+	dir = 1;
+	icon_state = "bench"
+	},
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "pHy" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13/wood{
@@ -28512,7 +28552,7 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "tnu" = (
@@ -31372,6 +31412,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/brotherhood)
+"uZp" = (
+/obj/effect/spawner/lootdrop/f13/cash_ncr_high,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "uZy" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood,
@@ -35669,6 +35713,10 @@
 /area/f13/wasteland)
 "xQo" = (
 /obj/structure/simple_door/metal/barred,
+/turf/open/floor/f13/wood,
+/area/f13/building)
+"xQu" = (
+/obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xQz" = (
@@ -65815,7 +65863,7 @@ koD
 bFJ
 ijg
 uRJ
-uRJ
+anA
 uRJ
 fbo
 gjP
@@ -69513,7 +69561,7 @@ fyf
 gts
 kqc
 dtq
-gsu
+pHx
 vYv
 vYv
 gts
@@ -70283,7 +70331,7 @@ fyf
 fyf
 gts
 vYv
-dtq
+hjw
 gsu
 vYv
 vYv
@@ -71164,7 +71212,7 @@ pcG
 uRJ
 uRJ
 cnX
-uRJ
+anA
 uRJ
 pcG
 bAT
@@ -76941,7 +76989,7 @@ ccF
 rpu
 rkZ
 uCO
-rpu
+xQu
 rpu
 cuv
 fyf
@@ -77469,7 +77517,7 @@ qij
 qij
 qij
 qij
-qij
+ffy
 qij
 bIh
 yhv
@@ -78737,7 +78785,7 @@ gcK
 gcK
 eXw
 eXw
-rpu
+xQu
 xVZ
 uCO
 rpu
@@ -83169,7 +83217,7 @@ gcK
 mTd
 csk
 csk
-csk
+fwu
 ggK
 gcK
 gcK
@@ -89863,7 +89911,7 @@ ufP
 csk
 csk
 csk
-csk
+fzl
 csk
 csk
 csk
@@ -91394,7 +91442,7 @@ sjX
 csk
 csk
 ggK
-ggK
+uZp
 gcK
 gcK
 gcK
