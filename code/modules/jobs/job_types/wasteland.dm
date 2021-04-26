@@ -383,12 +383,12 @@ Raider
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
 	loadout_options = list(
-	/datum/outfit/loadout/vault_refugee,
-	/datum/outfit/loadout/petro,
-	//datum/outfit/loadout/follower,
-	/datum/outfit/loadout/merchant,
-	/datum/outfit/loadout/gambler,
-	/datum/outfit/loadout/citizen,
+	/datum/outfit/loadout/vault_refugee, 
+	/datum/outfit/loadout/salvager, 
+	/datum/outfit/loadout/medic, 
+	/datum/outfit/loadout/merchant, 
+	/datum/outfit/loadout/scavenger, 
+	/datum/outfit/loadout/citizen, 
 	/datum/outfit/loadout/slave)
 
 /datum/outfit/job/wasteland/f13wastelander
@@ -429,37 +429,42 @@ Raider
 	/obj/item/gun/ballistic/revolver/zipgun, \
 	/obj/item/gun/ballistic/revolver/pipe_rifle)
 
-/datum/outfit/loadout/vault_refugee
-	name = "Vaultie"
-	uniform = /obj/item/clothing/under/f13/vault
-	gloves = /obj/item/pda
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/fingerless
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+/datum/outfit/loadout/salvager
+	name = "Salvager"
+	suit = /obj/item/clothing/suit/apron
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	gloves = /obj/item/clothing/gloves/f13/blacksmith
+	head = /obj/item/clothing/head/welding
+	r_hand = /obj/item/weldingtool/hugetank
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
+	
+/datum/outfit/loadout/scavenger
+	name = "Scavenger"
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	r_hand = /obj/item/storage/backpack/duffelbag/scavengers
+	l_hand = /obj/item/pickaxe/drill
+	belt = /obj/item/storage/belt/utility
+	backpack_contents = list(/obj/item/mining_scanner=1,
+							/obj/item/metaldetector=1,
+							/obj/item/shovel=1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
 
 
-/datum/outfit/loadout/petro
-	name = "Petro"
-	suit = /obj/item/clothing/suit/armor/f13/vaquero
-	head = /obj/item/clothing/head/helmet/f13/vaquerohat
-	uniform = /obj/item/clothing/under/f13/petrochico
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	gloves = /obj/item/clothing/gloves/rifleman
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/colt357=2,
-		/obj/item/ammo_box/a357=2)
-
-/datum/outfit/loadout/follower
-	name = "Follower"
+/datum/outfit/loadout/medic
+	name = "Wasteland Doctor"
 	uniform = /obj/item/clothing/under/f13/follower
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/color/latex
-	l_hand = /obj/item/storage/firstaid/ancient
-	backpack_contents =  list(
-		/obj/item/gun/ballistic/automatic/pistol/m1911=1)
+	l_hand = /obj/item/storage/backpack/duffelbag/med/surgery
+	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh=2,
+							/obj/item/reagent_containers/medspray/silver_sulf=1,
+							/obj/item/reagent_containers/medspray/styptic=1,
+							/obj/item/smelling_salts/crafted=1,
+							/obj/item/healthanalyzer=1,
+							/obj/item/stack/sheet/mineral/silver=1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1
+		)
 
 /datum/outfit/loadout/merchant
 	name = "Roving Trader"
@@ -470,23 +475,21 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/brown
 	glasses = /obj/item/clothing/glasses/f13/biker
 	l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
-	backpack_contents =  list(
-		/obj/item/storage/fancy/ammobox/lethalshot=1)
+	backpack_contents =  list(/obj/item/storage/box/vendingmachine=1,
+							/obj/item/stack/f13Cash/threefivezero=1,
+							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
 
+//end new
 
-
-/datum/outfit/loadout/gambler
-	name = "Gambler"
-	uniform = list(/obj/item/clothing/under/f13/cowboyg,
-	/obj/item/clothing/under/f13/bennys,
-	/obj/item/clothing/under/f13/formal)
-	suit = /obj/item/clothing/suit/f13/cowboygvest
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	head = list(/obj/item/clothing/head/fedora,
-	/obj/item/clothing/head/f13/gambler)
-	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
-	backpack_contents =  list(
-		/obj/item/ammo_box/magazine/m9mm=2)
+/datum/outfit/loadout/vault_refugee
+	name = "Vaultie"
+	uniform = /obj/item/clothing/under/f13/vault
+	gloves = /obj/item/pda
+	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/fingerless
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/n99=1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
 
 /datum/outfit/loadout/citizen
@@ -499,9 +502,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/welding
 	l_hand = /obj/item/shield/legion/buckler
 	backpack_contents = list(
-		/obj/item/claymore/machete/reinforced=1)
-
-
+		/obj/item/claymore/machete/spatha=1)
 
 /datum/outfit/loadout/slave
 	name = "NCR Citizen"
@@ -512,5 +513,5 @@ Raider
 	glasses = /obj/item/clothing/glasses/orange
 	l_hand = /obj/item/gun/ballistic/automatic/varmint
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/small=2)
+		/obj/item/ammo_box/magazine/m556/rifle=2)
 

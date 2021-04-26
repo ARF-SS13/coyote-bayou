@@ -1429,3 +1429,26 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/citizenship_permits/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/card/id/dogtag/town(src)
+
+/obj/item/storage/box/vendingmachine
+	name = "Vending Machine Kit"
+	desc = "A box containing all the necessary items to construct a vending machine."
+/*
+list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stack/crafting/goodparts = 10,
+				/obj/item/stack/cable_coil = 10)
+*/
+
+/obj/item/storage/box/vendingmachine/PopulateContents()
+	. = ..()
+	new /obj/item/stack/sheet/metal/twenty(src)
+	new /obj/item/stack/crafting/metalparts/five(src)
+	new /obj/item/stack/crafting/metalparts/five(src)
+	new /obj/item/stack/crafting/electronicparts/five(src)
+	new /obj/item/stack/crafting/goodparts/five(src)
+	new /obj/item/stack/crafting/goodparts/five(src)
+	new /obj/item/stack/cable_coil/ten(src)
+	new /obj/item/screwdriver(src)
+	new /obj/item/weldingtool(src)

@@ -70,6 +70,10 @@
 	amount = 500
 	merge_type = /obj/item/stack/f13Cash
 
+/obj/item/stack/f13Cash/threefivezero
+	amount = 350
+	merge_type = /obj/item/stack/f13Cash
+
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
 	update_desc()
