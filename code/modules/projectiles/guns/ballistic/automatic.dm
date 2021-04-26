@@ -1244,7 +1244,8 @@
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 	suppressed = 1
-	can_attachments = FALSE
+	can_attachments = TRUE
+	can_automatic = TRUE
 	burst_size = 1
 	automatic_burst_overlay = FALSE
 	//automatic = 0
