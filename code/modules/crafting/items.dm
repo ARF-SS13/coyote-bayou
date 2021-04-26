@@ -1310,4 +1310,4 @@
 		item = pick(vhigh)
 		new item(user.loc)
 
-	to_chat(usr, "You tinker and manage to create [item.name].")
+	//to_chat(usr, "You tinker and manage to create [item.name].") wat
