@@ -89,10 +89,10 @@
 		return
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force = force + 5
+		force = force*1.15 + 5
 	
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force = force + 15
+		force = force*1.25 + 15
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
