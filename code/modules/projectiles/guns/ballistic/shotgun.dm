@@ -337,6 +337,7 @@
 	icon_state = "caravan_shotgun"
 	item_state = "dshotgun1"
 	force = 20
+	extra_damage = 3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	sawn_desc = "Omar's coming!"
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -481,7 +482,8 @@
 	item_state = "trenchgun"
 	can_bayonet = TRUE
 	bayonet_state = "rifles"
-	extra_damage = 3
+	extra_damage = 6
+	bayonet_state = "trenchgun"
 	knife_x_offset = 23
 	knife_y_offset = 14
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
