@@ -514,6 +514,9 @@ By design, d1 is the smallest direction and d2 is the highest
 	usesound = 'sound/items/deconstruct.ogg'
 	used_skills = list(/datum/skill/level/job/wiring)
 
+/obj/item/stack/cable_coil/ten
+	amount = 10
+
 /obj/item/stack/cable_coil/cyborg
 	is_cyborg = 1
 	custom_materials = null

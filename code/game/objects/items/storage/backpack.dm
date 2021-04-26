@@ -387,6 +387,16 @@
 	item_state = "duffel"
 	slowdown = 1
 
+/obj/item/storage/backpack/duffelbag/scavengers
+	name = "scavenger's duffel bag"
+	desc = "An extra large duffel bag for holding extra things."
+	slowdown = 1.2
+
+/obj/item/storage/backpack/duffelbag/scavengers/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 40
+
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

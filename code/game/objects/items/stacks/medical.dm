@@ -320,6 +320,9 @@
 /obj/item/stack/medical/ointment/five
 	amount = 5
 
+/obj/item/stack/medical/ointment/twelve
+	amount = 12
+
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
 		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
