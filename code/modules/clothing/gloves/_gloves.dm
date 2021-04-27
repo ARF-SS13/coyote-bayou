@@ -43,3 +43,9 @@
 // Called just before an attack_hand(), in mob/UnarmedAttack()
 /obj/item/clothing/gloves/proc/Touch(atom/A, proximity)
 	return FALSE // return TRUE to cancel attack_hand()
+
+/obj/item/melee/unarmed/proc/Touch(atom/A, proximity)
+	return FALSE
+
+/obj/item/pda/proc/Touch(atom/A, proximity)
+	return FALSE

@@ -343,6 +343,7 @@
 	desc = "An upgraded welder based of the industrial welder."
 	icon_state = "upindwelder"
 	item_state = "upindwelder"
+	toolspeed = 0.6
 	max_fuel = 80
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
 

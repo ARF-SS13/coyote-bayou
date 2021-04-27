@@ -46,7 +46,7 @@
 				/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/stack/crafting/goodparts = 10,
 				/obj/item/stack/cable_coil = 10)
-	tools = list(TOOL_WELDER, TOOL_WORKBENCH, TOOL_SCREWDRIVER)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 80
 	category = CAT_MISC
 	subcategory = CAT_TOOL

@@ -705,14 +705,14 @@
 	name = "single single-shot single shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/storage/fancy/ammobox/beanbag
+				/obj/item/ammo_box/shotgun/bean
 				)
 
 /obj/effect/spawner/bundle/f13/caravan_shotgun
 	name = "caravan shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/storage/fancy/ammobox/beanbag
+				/obj/item/ammo_box/shotgun/bean
 				)
 
 /obj/effect/spawner/bundle/f13/mosin
@@ -761,7 +761,7 @@
 	name = "varmint rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/varmint,
-				/obj/item/ammo_box/magazine/m556/rifle/small
+				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
 /obj/effect/spawner/bundle/f13/pistol22
@@ -807,7 +807,7 @@
 	name = "hunting shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/hunting,
-				/obj/item/storage/fancy/ammobox/lethalshot
+				/obj/item/ammo_box/shotgun/buck
 				)
 
 /obj/effect/spawner/bundle/f13/revolverm29
@@ -919,7 +919,7 @@
 	name = "trench shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/trench,
-				/obj/item/storage/fancy/ammobox/lethalshot,
+				/obj/item/ammo_box/shotgun/buck,
 				)
 
 /obj/effect/spawner/bundle/f13/wattz
@@ -968,16 +968,16 @@
 	name = "Neostead 2000 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
-				/obj/item/storage/fancy/ammobox/lethalshot,
-				/obj/item/storage/fancy/ammobox/slugshot
+				/obj/item/ammo_box/shotgun/slug,
+				/obj/item/ammo_box/shotgun/buck
 	)
 
 /obj/effect/spawner/bundle/f13/auto5
 	name = "Auto 5 shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
-				/obj/item/storage/fancy/ammobox/lethalshot,
-				/obj/item/storage/fancy/ammobox/slugshot
+				/obj/item/ammo_box/shotgun/buck,
+				/obj/item/ammo_box/shotgun/slug
 	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 //TIER 4 GUN
@@ -1156,7 +1156,7 @@
 	name = "citykiller and ammo spawner"
 	items = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
-		/obj/item/storage/fancy/ammobox/lethalshot
+		/obj/item/ammo_box/shotgun/buck
 	)
 /obj/effect/spawner/bundle/f13/thatgun
 	name = "556 pistol spawner"
@@ -1256,12 +1256,12 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 10,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 10,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 5,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 5,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 20,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 20,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4 = 25,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 30,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 9,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 14,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 1
 			)
 
@@ -1270,9 +1270,9 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 30,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 15,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 25,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 20,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 35,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8 = 15,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9 = 6,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10 = 3,
@@ -1294,9 +1294,8 @@
 
 	loot = list(
 				/obj/item/ammo_box/magazine/m9mm,
-				/obj/item/storage/fancy/ammobox/lethalshot,
-				/obj/item/storage/fancy/ammobox,
-				/obj/item/storage/fancy/ammobox/beanbag,
+				/obj/item/ammo_box/shotgun/buck,
+				/obj/item/ammo_box/shotgun/slug,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m10mm_adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle/small
@@ -1329,7 +1328,7 @@
 	lootdoubles = TRUE
 
 	loot = list(
-				/obj/item/storage/fancy/ammobox/lethalshot,
+				/obj/item/ammo_box/shotgun/buck,
 				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/m10mm_adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,

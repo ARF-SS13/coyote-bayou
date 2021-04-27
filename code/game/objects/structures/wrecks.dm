@@ -344,7 +344,7 @@
 
 /obj/structure/wreck/trash/machinepile/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/weldingtool))
-		var/obj/item/weldingtool/tool
+		var/obj/item/weldingtool/W = I
 		if(inuse) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
 			return
 		inuse = TRUE //one at a time boys, this isn't some kind of weird party
@@ -356,7 +356,7 @@
 			inuse = FALSE
 			return //you can't use the tool, so stop
 		for(var/i1 in 1 to 2) //so, I hate waiting 30 seconds straight... what if we wait 10 seconds 3 times? (yes, its the same, but it'll feel more!)
-			if(!do_after(user, 10 SECONDS*tool.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+			if(!do_after(user, 10 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
 				user.visible_message("[user] stops disassembling [src].")
 				inuse = FALSE
 				return //you did something, like moving, so stop
