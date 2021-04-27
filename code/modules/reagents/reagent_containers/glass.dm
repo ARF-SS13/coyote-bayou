@@ -419,7 +419,7 @@
 
 /obj/item/reagent_containers/glass/mortar
 	name = "bone mortar"
-	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
+	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject any item put inside. Alt click while empty to change between grind/juice mode."
 	icon_state = "bone_mortar"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
@@ -427,14 +427,17 @@
 	reagent_flags = OPENCONTAINER
 	spillable = TRUE
 	var/obj/item/grinded
+	var/mortar_mode = MORTAR_JUICE
 
 /obj/item/reagent_containers/glass/mortar/AltClick(mob/user)
-	. = ..()
 	if(grinded)
 		grinded.forceMove(drop_location())
 		grinded = null
 		to_chat(user, "<span class='notice'>You eject the item inside.</span>")
 		return TRUE
+	else
+		mortar_mode = !mortar_mode
+		to_chat(user, "<span class='notice'>You decide to hold [src] differently to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"].</span>")
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	..()
@@ -444,9 +447,9 @@
 				to_chat(user, "<span class='warning'>You are too tired to work!</span>")
 				return
 			to_chat(user, "<span class='notice'>You start grinding...</span>")
-			if((do_after(user, 25, target = src)) && grinded)
+			if((do_after(user, 25, target = src)))
 				user.adjustStaminaLoss(20)
-				if(grinded.juice_results) //prioritize juicing
+				if(grinded.juice_results && (mortar_mode== MORTAR_JUICE)) // will prioritize juicing IF the Mortar's toggled to juice.
 					grinded.on_juice()
 					reagents.add_reagent_list(grinded.juice_results)
 					to_chat(user, "<span class='notice'>You juice [grinded] into a fine liquid.</span>")
@@ -454,9 +457,9 @@
 					return
 				grinded.on_grind()
 				reagents.add_reagent_list(grinded.grind_results)
-				if(grinded.reagents) //food and pills
+				if(grinded.reagents && (mortar_mode== MORTAR_GRIND)) //food and pills
 					grinded.reagents.trans_to(src, grinded.reagents.total_volume)
-				to_chat(user, "<span class='notice'>You break [grinded] into powder.</span>")
+				to_chat(user, "<span class='notice'>You grind [grinded] into a fine powder.</span>")
 				QDEL_NULL(grinded)
 				return
 			return

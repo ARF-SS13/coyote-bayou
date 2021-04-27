@@ -122,9 +122,6 @@
 	port_id = "ferry"
 	name = "Base Shuttle Template (Ferry)"
 
-/datum/map_template/shuttle/whiteship
-	port_id = "whiteship"
-
 /datum/map_template/shuttle/labour
 	port_id = "labour"
 	can_be_bought = FALSE
@@ -468,34 +465,6 @@
 	suffix = "kilo"
 	name = "kilo transport ferry"
 	description = "Standard issue CentCom Ferry for Kilo pattern stations. Includes additional equipment and rechargers."
-
-/datum/map_template/shuttle/whiteship/box
-	suffix = "box"
-	name = "Hospital Ship"
-
-/datum/map_template/shuttle/whiteship/meta
-	suffix = "meta"
-	name = "Salvage Ship"
-
-/datum/map_template/shuttle/whiteship/pubby
-	suffix = "pubby"
-	name = "NT White UFO"
-
-/datum/map_template/shuttle/whiteship/cere
-	suffix = "cere"
-	name = "NT Construction Vessel"
-
-/datum/map_template/shuttle/whiteship/delta
-	suffix = "delta"
-	name = "NT Frigate"
-
-/datum/map_template/shuttle/whiteship/pod
-	suffix = "whiteship_pod"
-	name = "Salvage Pod"
-
-/datum/map_template/shuttle/whiteship/cog
-	suffix = "cog"
-	name = "NT Prisoner Transport"
 
 /datum/map_template/shuttle/cargo/box
 	suffix = "box"

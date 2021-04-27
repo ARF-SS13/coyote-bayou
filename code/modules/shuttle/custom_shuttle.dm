@@ -11,7 +11,6 @@
 	light_color = LIGHT_COLOR_CYAN
 	req_access = list( )
 	var/shuttleId
-	var/possible_destinations = "whiteship_home"
 	var/admin_controlled
 	var/no_destination_swap = 0
 	var/calculated_mass = 0
@@ -36,7 +35,6 @@
 	. += distance_multiplier < 1 ? "Bluespace shortcut module installed. Route is [distance_multiplier]x the original length." : ""
 
 /obj/machinery/computer/custom_shuttle/ui_interact(mob/user)
-	var/list/options = params2list(possible_destinations)
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	var/dat = "[M ? "Current Location : [M.getStatusText()]" : "Shuttle link required."]<br><br>"
 	if(M)
@@ -51,8 +49,6 @@
 		dat += "Engine Cooldown: [calculated_cooldown]s<hr>"
 		var/destination_found
 		for(var/obj/docking_port/stationary/S in SSshuttle.stationary)
-			if(!options.Find(S.id))
-				continue
 			if(!M.check_dock(S, silent=TRUE))
 				continue
 			if(calculated_speed == 0)
@@ -88,14 +84,6 @@
 		return
 	if(M.launch_status == ENDGAME_LAUNCHED)
 		return
-	if(href_list["setloc"])
-		SetTargetLocation(href_list["setloc"])
-		ui_interact(usr)
-		return
-	else if(href_list["fly"])
-		Fly()
-		ui_interact(usr)
-		return
 
 /obj/machinery/computer/custom_shuttle/proc/calculateDistance(obj/docking_port/stationary/port)
 	var/deltaX = port.x - x
@@ -103,9 +91,6 @@
 	var/deltaZ = (port.z - z) * Z_DIST
 	return sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) * distance_multiplier
 
-/obj/machinery/computer/custom_shuttle/proc/linkShuttle(new_id)
-	shuttleId = new_id
-	possible_destinations = "whiteship_home;shuttle[new_id]_custom"
 
 /obj/machinery/computer/custom_shuttle/proc/calculateStats(useFuel = FALSE, dist = 0, ignore_cooldown = FALSE)
 	if(!ignore_cooldown && stat_calc_cooldown >= world.time)
@@ -166,15 +151,6 @@
 			resolvedHeater?.consumeFuel(dist * shuttle_machine.fuel_use)
 		shuttle_machine.fireEngine()
 
-/obj/machinery/computer/custom_shuttle/proc/SetTargetLocation(newTarget)
-	if(!(newTarget in params2list(possible_destinations)))
-		log_admin("[usr] attempted to href dock exploit on [src] with target location \"[newTarget]\"")
-		message_admins("[usr] just attempted to href dock exploit on [src] with target location \"[newTarget]\"")
-		return
-	targetLocation = newTarget
-	say("Shuttle route calculated.")
-	return
-
 /obj/machinery/computer/custom_shuttle/proc/Fly()
 	if(!targetLocation)
 		return
@@ -205,23 +181,6 @@
 	linkedShuttle.hyperspace_sound(HYPERSPACE_WARMUP)
 	var/throwForce = clamp((calculated_speed / 2) - 5, 0, 10)
 	linkedShuttle.movement_force = list("KNOCKDOWN" = calculated_speed > 5 ? 3 : 0, "THROW" = throwForce)
-	if(!(targetLocation in params2list(possible_destinations)))
-		log_admin("[usr] attempted to launch a shuttle that has been affected by href dock exploit on [src] with target location \"[targetLocation]\"")
-		message_admins("[usr] attempted to launch a shuttle that has been affected by href dock exploit on [src] with target location \"[targetLocation]\"")
-		return
-	switch(SSshuttle.moveShuttle(shuttleId, targetLocation, 1))
-		if(0)
-			consumeFuel(dist)
-			say("Shuttle departing. Please stand away from the doors.")
-		if(1)
-			to_chat(usr, "<span class='warning'>Invalid shuttle requested.</span>")
-		else
-			to_chat(usr, "<span class='notice'>Unable to comply.</span>")
-	return
-
-/obj/machinery/computer/custom_shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(port && (shuttleId == initial(shuttleId) || override))
-		linkShuttle(port.id)
 
 //Custom shuttle docker locations
 /obj/machinery/computer/camera_advanced/shuttle_docker/custom
@@ -234,7 +193,6 @@
 		/turf/open/floor/plating/ashplanet,
 		/turf/open/floor/plating/asteroid,
 		/turf/open/floor/plating/lavaland_baseturf)
-	jumpto_ports = list("whiteship_home" = 1)
 	view_range = 12
 	designate_time = 100
 	circuit = /obj/item/circuitboard/computer/shuttle/docker
