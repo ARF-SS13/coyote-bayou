@@ -19,8 +19,6 @@
 	. += "<span class='notice'>It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]</span>"
 
 /obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
-	if(fruit.reagents)
-		fruit.reagents.trans_to(src, fruit.reagents.total_volume)
 	var/amount = fruit.seed.potency / 4
 	if(fruit.distill_reagent)
 		reagents.add_reagent(fruit.distill_reagent, amount)
