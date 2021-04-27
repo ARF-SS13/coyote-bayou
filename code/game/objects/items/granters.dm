@@ -816,6 +816,15 @@
 	traitname = "The Machine Spirits"
 	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honor and love those blessed by the machine spirits.")
 
+/obj/item/book/granter/trait/mars_teachings
+	name = "Teachings of Mars"
+	desc = "A book all about Mars and the teachings he gives to the wise."
+	icon_state = "mars_teachings"
+	oneuse = TRUE
+	granted_trait = TRAIT_MARS_TEACH
+	traitname = "Mar's Teachings"
+	remarks = list("Remember the aeternit imperi of the Caesar's Legion...", "Do not abuse the knowledge of Mars to break his will, or be broken...", "Remember: In hoc signo taurus vinces.")
+
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
 	desc = "A book on how to use advanced tools and production machinery. It's pretty complicated."

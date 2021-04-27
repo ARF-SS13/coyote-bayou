@@ -825,6 +825,7 @@ Auxilia
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
 /datum/outfit/loadout/auxengi
 	name = "Opifex (Blacksmith)"
@@ -935,7 +936,8 @@ Camp Follower
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
 		/obj/item/smelling_salts/crafted=1,
-		/obj/item/clothing/under/f13/campfollowerfemale
+		/obj/item/clothing/under/f13/campfollowerfemale,
+		/obj/item/book/granter/trait/mars_teachings=1
 	)
 
 /datum/outfit/loadout/campfolloweroffduty
