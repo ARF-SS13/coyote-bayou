@@ -263,6 +263,7 @@ Priestess of Mars
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
 /* Decanus
 /datum/job/CaesarsLegion/Legionnaire/f13decan

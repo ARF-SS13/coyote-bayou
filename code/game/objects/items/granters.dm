@@ -822,7 +822,7 @@
 	icon_state = "mars_teachings"
 	oneuse = TRUE
 	granted_trait = TRAIT_MARS_TEACH
-	traitname = "Mar's Teachings"
+	traitname = "Mars' Teachings"
 	remarks = list("Remember the aeternit imperi of the Caesar's Legion...", "Do not abuse the knowledge of Mars to break his will, or be broken...", "Remember: In hoc signo taurus vinces.")
 
 /obj/item/book/granter/trait/techno
