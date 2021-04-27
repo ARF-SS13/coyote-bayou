@@ -106,7 +106,7 @@
 	growthstages = 2
 	production = 5
 	maturation = 5
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/calomel = 0.05, /datum/reagent/radium = 0.05)
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/calomel = 0.1,)
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus
@@ -136,7 +136,7 @@
 	icon_grow = "broc-grow"
 	icon_dead = "broc-dead"
 	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
-	reagents_add = list(/datum/reagent/medicine/dexalin = 0.2, /datum/reagent/medicine/salglu_solution = 0.05, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(/datum/reagent/medicine/dexalin = 0.2, /datum/reagent/medicine/salglu_solution = 0.05, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/bicaridine = 0.1,)
 
 /obj/item/reagent_containers/food/snacks/grown/broc
 	seed = /obj/item/seeds/poppy/broc
@@ -581,6 +581,7 @@
 	potency = 20
 	growthstages = 2
 	reagents_add = list(/datum/reagent/medicine/charcoal = 0.05, /datum/reagent/medicine/mutadone = 0.05)
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism)
 
 /obj/item/reagent_containers/food/snacks/grown/fungus
 	seed = /obj/item/seeds/fungus

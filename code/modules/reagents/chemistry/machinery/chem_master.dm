@@ -543,7 +543,7 @@
 			ui = new(user, src, "ChemMaster", name)
 			ui.open()
 	else
-		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !istype(src, /obj/machinery/chem_master/condimaster))
+		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !HAS_TRAIT(user, TRAIT_MARS_TEACH) && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
 			return
 		if(!ui)
