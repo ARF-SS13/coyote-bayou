@@ -88,11 +88,14 @@
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
+	var/bigleagues = force*1.15+5
+	var/buffout = force*1.15+5
+
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force = force*1.15 + 5
+		force += bigleagues
 	
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force = force*1.25 + 15
+		force += buffout
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
@@ -109,10 +112,10 @@
 	add_fingerprint(user)
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
-		force = force - 5
+		force -= bigleagues
 	
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
-		force = force - 15
+		force -= buffout
 
 	var/weight = getweight(user, STAM_COST_ATTACK_MOB_MULT) //CIT CHANGE - makes attacking things cause stamina loss
 	if(weight)
