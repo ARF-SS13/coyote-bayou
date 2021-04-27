@@ -437,7 +437,7 @@
 		return TRUE
 	else
 		mortar_mode = !mortar_mode
-		to_chat(user, "<span class='notice'>You decide to hold the [src] differently to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"].</span>")
+		to_chat(user, "<span class='notice'>You decide to hold [src] differently to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"].</span>")
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	..()
