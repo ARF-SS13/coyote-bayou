@@ -449,7 +449,7 @@
 			to_chat(user, "<span class='notice'>You start grinding...</span>")
 			if((do_after(user, 25, target = src)))
 				user.adjustStaminaLoss(20)
-				if(grinded.juice_results && (mortar_mode== MORTAR_JUICE)) //prioritize juicing
+				if(grinded.juice_results && (mortar_mode== MORTAR_JUICE)) // will prioritize juicing IF the Mortar's toggled to juice.
 					grinded.on_juice()
 					reagents.add_reagent_list(grinded.juice_results)
 					to_chat(user, "<span class='notice'>You juice [grinded] into a fine liquid.</span>")
