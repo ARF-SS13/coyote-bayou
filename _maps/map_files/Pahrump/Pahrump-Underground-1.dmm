@@ -439,19 +439,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/tunnel)
-"aCS" = (
-/obj/effect/turf_decal/trimline/blue/line{
-	pixel_y = -6
-	},
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 8;
-	pixel_x = -6
-	},
-/turf/open/indestructible/ground/outside/water{
-	desc = "Deep, filtered pool water.";
-	name = "pool water"
-	},
-/area/f13/brotherhood/leisure)
 "aGv" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -815,7 +802,10 @@
 	id_tag = "bosdorm6";
 	req_access_txt = "120"
 	},
-/turf/open/floor/carpet/black,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/brotherhood/leisure)
 "bbq" = (
 /obj/structure/cable{
@@ -948,7 +938,10 @@
 	req_access_txt = "120"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/black,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/brotherhood/leisure)
 "bdP" = (
 /obj/effect/landmark/start/f13/seniorpaladin,
@@ -986,7 +979,10 @@
 	id_tag = "bosdorm8";
 	req_access_txt = "120"
 	},
-/turf/open/floor/carpet/black,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/brotherhood/leisure)
 "bgg" = (
 /obj/structure/table/wood/settler,
@@ -1091,7 +1087,10 @@
 	id_tag = "bosdorm9";
 	req_access_txt = "120"
 	},
-/turf/open/floor/carpet/black,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
+	},
 /area/f13/brotherhood/leisure)
 "blH" = (
 /obj/structure/table,
@@ -1811,8 +1810,10 @@
 	},
 /area/f13/brotherhood/operations)
 "bOf" = (
-/turf/closed/wall/r_wall,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/initiate,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood/operations)
 "bPh" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/decoration/rag{
@@ -4486,7 +4487,9 @@
 	},
 /area/f13/tunnel)
 "eub" = (
-/turf/open/floor/plating,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/brotherhood/reactor)
 "eug" = (
 /obj/structure/ladder/unbreakable{
@@ -5583,9 +5586,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "fuQ" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/turf/open/water,
-/area/f13/caves)
+/turf/open/floor/plating,
+/area/f13/brotherhood/reactor)
 "fvp" = (
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
@@ -8598,7 +8600,7 @@
 	},
 /area/f13/tunnel)
 "iAm" = (
-/turf/open/floor/mineral/plastitanium/airless,
+/turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood/rnd)
 "iAs" = (
 /obj/structure/table{
@@ -10550,7 +10552,6 @@
 	},
 /area/f13/followers)
 "kCz" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
 /obj/structure/mirelurkegg{
 	anchored = 1
 	},
@@ -12077,7 +12078,7 @@
 /area/f13/tunnel)
 "muD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bookcase/random,
+/obj/structure/bookcase/manuals/medical,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -13166,14 +13167,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nCi" = (
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 4;
-	pixel_x = 6
-	},
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 1;
-	pixel_y = 6
-	},
 /turf/open/indestructible/ground/outside/water{
 	desc = "Deep, filtered pool water.";
 	name = "pool water"
@@ -14889,14 +14882,6 @@
 	},
 /area/f13/bunker)
 "pkW" = (
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 8;
-	pixel_x = -6
-	},
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 1;
-	pixel_y = 6
-	},
 /obj/machinery/light/small{
 	dir = 1;
 	pixel_x = 16
@@ -15713,7 +15698,7 @@
 /area/f13/tunnel)
 "qfu" = (
 /obj/item/candle,
-/turf/open/floor/mineral/plastitanium/airless,
+/turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood/rnd)
 "qfB" = (
 /obj/machinery/rnd/production/protolathe,
@@ -16804,7 +16789,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium/airless,
+/turf/open/floor/mineral/plastitanium,
 /area/f13/brotherhood/rnd)
 "rfD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17856,9 +17841,8 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "seP" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
-/turf/open/water,
-/area/f13/caves)
+/turf/open/floor/mineral/plastitanium/red,
+/area/f13/brotherhood/rnd)
 "sfi" = (
 /obj/effect/landmark/start/f13/scribe,
 /obj/effect/decal/cleanable/dirt,
@@ -18081,7 +18065,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "snP" = (
-/obj/structure/bookcase/random,
+/obj/structure/bookcase/manuals/research_and_development,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -20695,13 +20679,6 @@
 /area/f13/brotherhood/medical)
 "vMx" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/trimline/blue/line{
-	dir = 4;
-	pixel_x = 6
-	},
-/obj/effect/turf_decal/trimline/blue/line{
-	pixel_y = -6
-	},
 /turf/open/indestructible/ground/outside/water{
 	desc = "Deep, filtered pool water.";
 	name = "pool water"
@@ -75284,8 +75261,8 @@ uoO
 uoO
 uoO
 uoO
-aoj
-aoj
+uoO
+uoO
 uoO
 uoO
 uoO
@@ -75537,14 +75514,14 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-aoj
-aoj
-aoj
-aoj
+yhT
+yhT
+yhT
+yhT
+yhT
+yhT
+yhT
+yhT
 uoO
 uoO
 aoj
@@ -75794,14 +75771,14 @@ uoO
 uoO
 uoO
 uoO
-uoO
 yhT
+xmk
+xmk
+xmk
+xmk
+xmk
+xmk
 yhT
-yhT
-yhT
-yhT
-yhT
-uoO
 uoO
 uoO
 uoO
@@ -76053,10 +76030,10 @@ uoO
 uoO
 yhT
 xmk
-xmk
-xmk
-xmk
-xmk
+hYS
+fuQ
+fuQ
+fuQ
 xmk
 yhT
 uoO
@@ -76269,7 +76246,7 @@ jZH
 jZH
 jZH
 jZH
-bOf
+jZH
 yhT
 yhT
 yhT
@@ -76310,10 +76287,10 @@ uoO
 uoO
 yhT
 xmk
-hYS
 eub
-eub
-eub
+ogl
+ogl
+ogl
 xmk
 yhT
 uoO
@@ -76522,9 +76499,9 @@ eLE
 yhT
 jZH
 pkW
-aCS
+nCi
 ajc
-aHH
+saw
 vkb
 jZH
 jZH
@@ -76567,7 +76544,7 @@ yhT
 yhT
 yhT
 xmk
-hYS
+eub
 ogl
 ogl
 ogl
@@ -80401,8 +80378,8 @@ xSi
 yhd
 xSi
 rrh
-uMD
-uMD
+bOf
+bOf
 kxR
 xSi
 isj
@@ -80658,8 +80635,8 @@ wOp
 haB
 xSi
 rrh
-uMD
-uMD
+bOf
+bOf
 kxR
 xSi
 vKm
@@ -84545,8 +84522,8 @@ xjE
 xjE
 xjE
 dxx
-tCe
-tCe
+seP
+seP
 qfu
 qfu
 xhA
@@ -84803,7 +84780,7 @@ xjE
 xjE
 xhA
 iAm
-tCe
+seP
 qfu
 rIS
 xhA
@@ -85060,7 +85037,7 @@ qci
 qci
 xhA
 rfs
-tCe
+seP
 tCe
 rJv
 xhA
@@ -85317,7 +85294,7 @@ hGF
 hVy
 gul
 iAm
-tCe
+seP
 qfu
 rKE
 xhA
@@ -85327,7 +85304,7 @@ uoO
 uoO
 uoO
 vOo
-fuQ
+cSY
 cSY
 cSY
 pNT
@@ -85573,8 +85550,8 @@ xmQ
 fYf
 vVg
 rJn
-tCe
-tCe
+seP
+seP
 qfu
 qfu
 xhA
@@ -85841,7 +85818,7 @@ uoO
 uoO
 uoO
 pNT
-seP
+cSY
 kCz
 xoU
 uoO
