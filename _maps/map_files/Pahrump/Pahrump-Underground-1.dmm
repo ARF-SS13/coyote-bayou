@@ -4078,10 +4078,7 @@
 /area/f13/brotherhood/operations)
 "dZW" = (
 /obj/structure/toilet{
-	dir = 4;
-	icon_state = "toilet00";
-	pixel_x = 0;
-	pixel_y = 0
+	pixel_y = 13
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -4094,7 +4091,12 @@
 	},
 /area/f13/tunnel)
 "eaR" = (
-/obj/structure/weightmachine/weightlifter,
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/obj/structure/sink{
+	pixel_y = 19
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -4352,19 +4354,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
-"enl" = (
-/obj/structure/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12
-	},
-/obj/structure/mirror{
-	pixel_x = -32
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/brotherhood/operations)
 "eom" = (
 /obj/structure/wreck/trash/three_barrels,
 /obj/effect/decal/cleanable/dirt,
@@ -86790,7 +86779,7 @@ gEZ
 gEZ
 gEZ
 dZW
-enl
+jrn
 abY
 gEZ
 fdN
