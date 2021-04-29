@@ -396,9 +396,10 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -50)
 	if (!eyes)
 		return
+	if(M.getOrganLoss(ORGAN_SLOT_BRAIN) == 0)
+		M.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 /*	if(HAS_TRAIT(M, TRAIT_BLIND, TRAIT_GENERIC))
 		if(prob(20))
 			to_chat(M, "<span class='warning'>Your vision slowly returns...</span>")
@@ -479,7 +480,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = TRUE
-	
+
 /datum/reagent/medicine/gaia
 	name = "Gaia Extract"
 

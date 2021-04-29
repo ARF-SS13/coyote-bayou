@@ -247,6 +247,7 @@
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
 #define TRAIT_HARD_YARDS        "hard_yards"
 #define	TRAIT_LIFEGIVER			"lifegiver"
+#define TRAIT_MARS_TEACH		"mars_teachings" //for legion unique functions
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"
