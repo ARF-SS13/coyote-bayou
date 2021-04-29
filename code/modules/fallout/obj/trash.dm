@@ -113,3 +113,23 @@
 	name = "giant tin can"
 	desc = "A giant, rusty, rotten, empty tin can with no label.<br>Oh my... It's so big!<br>Did they sell canned whales before the Great War or something?"
 	icon_state = "tin"
+
+/obj/item/trash/f13/c_ration_1
+	name = "empty c-ration can"
+	icon_state = "c_ration_1"
+	desc = "An empty tin from a combat ration."
+
+/obj/item/trash/f13/c_ration_2
+	name = "empty c-ration can"
+	icon_state = "c_ration_2"
+	desc = "An empty tin from a combat ration."
+
+/obj/item/trash/f13/c_ration_3
+	name = "empty c-ration can"
+	icon_state = "c_ration_3"
+	desc = "An empty tin from a combat ration."
+
+/obj/item/trash/f13/k_ration
+	name = "empty k-ration"
+	icon_state = "k_ration"
+	desc = "An empty tin from a combat ration."
