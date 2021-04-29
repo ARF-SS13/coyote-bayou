@@ -1759,7 +1759,6 @@
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/attachments/scope,
-		/obj/item/attachments/bullet_speed,
 		/obj/item/attachments/burst_improvement,
 		/obj/item/attachments/recoil_decrease,
 		/obj/item/attachments/auto_sear
@@ -1834,7 +1833,6 @@
 	lootdoubles = FALSE
 	loot = list(
 		/obj/item/attachments/scope,
-		/obj/item/attachments/bullet_speed,
 		/obj/item/attachments/burst_improvement,
 		/obj/item/attachments/recoil_decrease,
 		/obj/item/attachments/auto_sear

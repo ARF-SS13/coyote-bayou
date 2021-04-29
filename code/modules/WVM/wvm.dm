@@ -178,7 +178,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/trading_machine/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
+	var/obj/item/stack/f13Cash/caps/C = new /obj/item/stack/f13Cash/caps
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)
@@ -702,13 +702,11 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Weapon Optics",				/obj/item/attachments/scope,									150),
 		new /datum/data/wasteland_equipment("Recoil Compensator",			/obj/item/attachments/recoil_decrease,							100),
-		new /datum/data/wasteland_equipment("Improved Barrel",				/obj/item/attachments/bullet_speed,								100),
 		new /datum/data/wasteland_equipment("Burst Cam",					/obj/item/attachments/burst_improvement,						200)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Weapon Optics",				/obj/item/attachments/scope,									150),
 		new /datum/data/wasteland_equipment("Recoil Compensator",			/obj/item/attachments/recoil_decrease,							100),
-		new /datum/data/wasteland_equipment("Improved Barrel",				/obj/item/attachments/bullet_speed,								100),
 		new /datum/data/wasteland_equipment("Burst Cam",					/obj/item/attachments/burst_improvement,						200)
 		)
 

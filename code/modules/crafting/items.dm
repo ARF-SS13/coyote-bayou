@@ -911,11 +911,6 @@
 	desc = "Improves stability and recoil, attach to a compatible weapon. Cannot be removed."
 	icon_state = "recoilcomp"
 
-/obj/item/attachments/bullet_speed
-	name = "improved barrel"
-	desc = "Improves bullet speed, attach to a compatible weapon. Cannot be removed."
-	icon_state = "barrel"
-
 /obj/item/attachments/burst_improvement
 	name = "burst cam"
 	desc = "Increases burst size, attach to a compatible weapon. Cannot be removed."

@@ -101,9 +101,9 @@
 		update_icon()
 
 	else if(self_sustaining)
-		adjustWater(rand(1,2))
-		adjustWeeds(-1)
-		adjustPests(-1)
+		adjustWater(5)
+		adjustWeeds(-5)
+		adjustPests(-5)
 
 	if(world.time > (lastcycle + cycledelay))
 		lastcycle = world.time
@@ -120,7 +120,7 @@
 			// Nutrients deplete at a constant rate, since new nutrients can boost stats far easier.
 			apply_chemicals(lastuser)
 			if(self_sustaining)
-				reagents.remove_any(min(0.3, nutridrain))
+				//reagents.remove_any(min(0.3, nutridrain))
 			else
 				reagents.remove_any(nutridrain)
 
@@ -807,6 +807,11 @@
 	use_power = NO_POWER_USE
 	flags_1 = NODECONSTRUCT_1
 	unwrenchable = FALSE
+
+/obj/machinery/hydroponics/soil/pot //Not actually hydroponics at all! Honk!
+	name = "Growing pot"
+	desc = "A growing pot. <b>Alt-Click</b> to empty the pot's nutrients."
+	icon_state = "plantpot"
 
 /obj/machinery/hydroponics/soil/update_icon_lights()
 	return // Has no lights

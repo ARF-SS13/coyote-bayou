@@ -9,7 +9,7 @@
 							  /obj/item/stack/sheet/animalhide,
 							  /obj/item/stack/crafting,
 							  /obj/item/stack/prefabs,
-							  /obj/item/stack/f13Cash/fivezerozero,
+							  /obj/item/stack/f13Cash/caps/fivezerozero,
 							  /obj/item/stack/f13Cash/random/low,
 							  /obj/item/stack/f13Cash/random/med,
 							  /obj/item/stack/f13Cash/random/high,

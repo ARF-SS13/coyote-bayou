@@ -55,7 +55,6 @@
 	var/obj/item/attachments/scope
 	var/obj/item/attachments/recoil_decrease
 	var/obj/item/attachments/burst_improvement
-	var/obj/item/attachments/bullet_speed
 	var/obj/item/attachments/auto_sear
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
@@ -493,17 +492,7 @@
 			else
 				src.spread = 0
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
-/*
-	else if(istype(I, /obj/item/attachments/bullet_speed))
-		var/obj/item/attachments/bullet_speed/B = I
-		if(!bullet_speed && can_attachments)
-			if(!user.transferItemToLoc(I, src))
-				return
-			bullet_speed = B
-			src.desc += " It has an improved barrel installed."
-			src.projectile_speed -= 0.15
-			to_chat(user, "<span class='notice'>You attach \the [B] to \the [src].</span>")
-*/
+
 	else if(istype(I, /obj/item/attachments/burst_improvement))
 		var/obj/item/attachments/burst_improvement/T = I
 		if(!burst_improvement && burst_size > 1 && can_attachments)

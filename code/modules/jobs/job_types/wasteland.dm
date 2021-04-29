@@ -435,7 +435,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	head = /obj/item/clothing/head/welding
-	r_hand = /obj/item/weldingtool/hugetank
+	r_hand = /obj/item/weldingtool/largetank
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
 
 /datum/outfit/loadout/scavenger
@@ -448,7 +448,6 @@ Raider
 							/obj/item/metaldetector=1,
 							/obj/item/shovel=1,
 							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
-
 
 /datum/outfit/loadout/medic
 	name = "Wasteland Doctor"
@@ -480,7 +479,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/f13/biker
 	l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents =  list(/obj/item/storage/box/vendingmachine=1,
-							/obj/item/stack/f13Cash/threefivezero=1,
+							/obj/item/stack/f13Cash/caps/threefivezero=1,
 							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
 
 //end new
@@ -494,7 +493,6 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
-
 
 /datum/outfit/loadout/citizen
 	name = "Legion Citizen"
