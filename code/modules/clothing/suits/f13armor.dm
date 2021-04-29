@@ -332,8 +332,8 @@
 /obj/item/clothing/suit/armor/f13/power_armor/vaulttecta
 	name = "Vault-Tec technical armour"
 	desc = "(VIII)  A primative  suit of power armour, the first kind built by the residents of Vault-115 in order to fight off immediate threats."
-	icon_state = "vaultta"
-	item_state = "vaultta"
+	icon_state = "vaulttecta"
+	item_state = "vaulttecta"
 	armor = list("tier" = 8, "energy" = 30, "bomb" = 38, "bio" = 40, "rad" = 20, "fire" = 100, "acid" = 0)
 	slowdown = 0.4
 
@@ -593,10 +593,10 @@
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
-	desc = "(V) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	desc = "(VII) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
 	icon_state = "marshal_commandcoat"
 	item_state = "marshal_commandcoat"
-	armor = list("tier" = 5, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/armoured
 	name = "armoured vault battlecoat"

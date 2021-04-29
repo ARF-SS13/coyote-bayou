@@ -606,9 +606,12 @@
 
 //Vault
 
-
-
-
+/obj/item/clothing/suit/armor/f13/riot/vault
+	name = "VTCC riot armour"
+	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
+	icon_state = "vtcc_riot_gear"
+	item_state = "vtcc_riot_gear"
+	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 
 //THE GRAVEYARD
