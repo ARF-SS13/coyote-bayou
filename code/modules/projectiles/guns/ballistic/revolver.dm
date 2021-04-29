@@ -716,7 +716,7 @@
 
 /obj/item/gun/ballistic/revolver/police
 	name = "police pistol"
-	desc = "An old pre-war double action police revolver. Uses .357 and .38 special rounds."
+	desc = "An old pre-war double action police revolver. Uses .357 rounds."
 	icon_state = "police"
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
