@@ -781,7 +781,7 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 
-/obj/item/storage/belt/holster/ranger4570/bayonet/PopulateContents()
+/obj/item/storage/belt/holster/ranger4570bayonet/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/sequoia/bayonet(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
