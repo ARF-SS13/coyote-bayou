@@ -838,7 +838,7 @@
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
-/obj/effect/spawner/bundle/f13/miniuzi
+/obj/effect/spawner/bundle/f13/police_pistol
 	name = "police revolver and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/police,
@@ -1089,7 +1089,8 @@
 				/obj/effect/spawner/bundle/f13/varmint,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/colt357,
-				/obj/effect/spawner/bundle/f13/wattz
+				/obj/effect/spawner/bundle/f13/wattz,
+				/obj/effect/spawner/bundle/f13/police_pistol
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 
