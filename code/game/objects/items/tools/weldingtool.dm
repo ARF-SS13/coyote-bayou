@@ -298,6 +298,7 @@
 	name = "industrial welding tool"
 	desc = "A slightly larger welder with a larger tank."
 	icon_state = "indwelder"
+	toolspeed = 0.7
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 

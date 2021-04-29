@@ -155,14 +155,12 @@
 	JC.mounted_damage_boost_per_tile = 20
 	JC.mounted_knockdown_chance_per_tile = 20
 
-
-
 /obj/item/claymore/machete/pipe/tireiron
 	name = "tire iron"
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon_state = "tire"
 	item_state = "tire"
-
+	force = 35
 
 /obj/item/claymore/machete/golf
 	name = "9 iron"

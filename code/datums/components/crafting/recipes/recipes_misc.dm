@@ -1,6 +1,14 @@
 /////////////////
 //Large Objects//
 /////////////////
+/datum/crafting_recipe/plant
+	name = "Potted plant"
+	result = /obj/item/kirbyplants/random
+	reqs = list(/obj/item/stack/sheet/mineral/sandstone=5,
+				/obj/item/seeds=1)
+	time = 20
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"

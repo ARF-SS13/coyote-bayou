@@ -907,7 +907,6 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 
 GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/attachments/scope,
-	/obj/item/attachments/bullet_speed,
 	/obj/item/attachments/burst_improvement,
 	/obj/item/attachments/recoil_decrease,
 	/obj/item/attachments/auto_sear
