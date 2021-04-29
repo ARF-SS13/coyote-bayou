@@ -342,6 +342,19 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/datum/crafting_recipe/entrenching_tool
+	name = "Pattern 2281 Entrenching Tool"
+	result = /obj/item/shovel/trench
+	time = 300
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cloth = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_availible = FALSE
+
+
 //fists
 
 /datum/crafting_recipe/knucklespike

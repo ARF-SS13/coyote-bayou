@@ -668,9 +668,9 @@
 		/obj/item/reagent_containers/food/drinks/bottle/instatea = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/instacocoa = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/cream = 3,
-		/obj/item/reagent_containers/food/snacks/f13/porknbeans = 3,
-		/obj/item/reagent_containers/food/snacks/f13/borscht = 1,
-		/obj/item/reagent_containers/food/snacks/f13/dog = 3,
+		/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans = 3,
+		/obj/item/reagent_containers/food/snacks/f13/canned/borscht = 1,
+		/obj/item/reagent_containers/food/snacks/f13/canned/dog = 3,
 		/obj/item/reagent_containers/food/snacks/beans = 3,)
 
 ///booze
