@@ -2773,6 +2773,7 @@
 /area/f13/wasteland)
 "bTf" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "bTh" = (
@@ -4194,6 +4195,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
+"dbG" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "dbH" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5009,6 +5015,7 @@
 /area/f13/wasteland)
 "dBM" = (
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -5307,6 +5314,7 @@
 	dir = 1;
 	pixel_y = 6
 	},
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "dNW" = (
@@ -8791,6 +8799,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -11919,6 +11928,22 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "idS" = (
@@ -13317,6 +13342,13 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/city)
+"iTf" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/ncr)
 "iTk" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -18020,6 +18052,14 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
+"mbo" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
+/turf/open/floor/carpet,
+/area/f13/ncr)
 "mbz" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/pill/patch/jet,
@@ -21897,6 +21937,7 @@
 /area/f13/village)
 "oQM" = (
 /obj/structure/table/booth,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "oRq" = (
@@ -29090,6 +29131,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -33534,6 +33576,11 @@
 /obj/item/restraints/handcuffs,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"wBh" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "wBo" = (
 /obj/machinery/light/broken,
 /turf/open/floor/f13/wood,
@@ -37236,7 +37283,7 @@ svP
 rUp
 rrE
 sUP
-sZT
+mbo
 rrE
 sUP
 sZT
@@ -38767,7 +38814,7 @@ pOM
 pOM
 pOM
 xnt
-pOM
+iTf
 nss
 pQx
 tUj
@@ -43652,7 +43699,7 @@ sGG
 cpK
 uok
 atX
-atX
+wBh
 uok
 cpK
 cpK
@@ -43908,7 +43955,7 @@ lvS
 eJe
 cpK
 uok
-atX
+dbG
 atX
 uok
 cpK
@@ -44423,7 +44470,7 @@ eJe
 cpK
 uok
 atX
-atX
+dbG
 uok
 cpK
 cpK
