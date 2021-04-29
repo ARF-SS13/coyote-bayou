@@ -3,9 +3,8 @@
 	id = "gen2synth"
 	say_mod = "states"
 	limbs_id = "gen2synth"
-	default_color = "F5F5DC"
+	default_color = "FFFFFF"
 	blacklisted = 0
-	sexes = 1
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_NO_PROCESS_FOOD,TRAIT_VIRUSIMMUNE,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	species_traits = list(NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
 	hair_alpha = 0
@@ -29,3 +28,12 @@
 	exotic_bloodtype = "HF"
 	exotic_blood_color = BLOOD_COLOR_OIL
 	species_type = "robotic"
+
+/datum/species/smutant/qualifies_for_rank(rank, list/features)
+	if(rank in GLOB.legion_positions) //Not sure on this one, are the Legion a fan of sentient robots?
+		return 0
+	if(rank in GLOB.brotherhood_positions) //Kill it with fire.
+		return 0
+	if(rank in GLOB.vault_positions) //How did they even get in??.
+		return 0
+	return ..()

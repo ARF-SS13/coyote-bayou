@@ -394,7 +394,7 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
-	
+
 /obj/item/twohanded/thermic_lance/update_icon_state()
 	icon_state = "thermiclance_[on ? "on" : "off"]"
 
