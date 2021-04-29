@@ -116,7 +116,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/lastHolder = null
 	var/smoketime = 300
 	var/chem_volume = 30
-	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
+	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 30)
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
@@ -270,14 +270,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/uplift
 	desc = "An Uplift Smooth brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 7.5, /datum/reagent/consumable/menthol = 7.5)
+	list_reagents = list(/datum/reagent/drug/nicotine = 12.5, /datum/reagent/consumable/menthol = 7.5)
 
 /obj/item/clothing/mask/cigarette/robust
 	desc = "A Robust brand cigarette."
 
 /obj/item/clothing/mask/cigarette/robustgold
 	desc = "A Robust Gold brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/gold = 1)
+	list_reagents = list(/datum/reagent/drug/nicotine = 29, /datum/reagent/gold = 1)
 
 /obj/item/clothing/mask/cigarette/carp
 	desc = "A Carp Classic brand cigarette."
@@ -698,6 +698,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
+/obj/item/lighter/fusion
+	name = "fusion zippo"
+	desc = "A specialty zippo made from a microfusion cell and dedication. Has a much hotter flame than normal."
+	icon_state = "slighter"
+	heat = 3500
+	light_color = LIGHT_COLOR_CYAN
+	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
 
 ///////////
 //ROLLING//

@@ -95,14 +95,14 @@
 	name = "beanbag shotgun box"
 	id = "beanbag"
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
-	build_path = /obj/item/storage/fancy/ammobox/beanbag
+	build_path = /obj/item/ammo_box/shotgun/bean
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/rubbershot
 	name = "rubbershot shotgun box"
 	id = "rubbershot"
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
-	build_path = /obj/item/storage/fancy/ammobox
+	build_path = /obj/item/ammo_box/shotgun/rubber
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/c10mm
@@ -116,7 +116,7 @@
 	name = "buckshot shotgun box"
 	id = "lethalshot"
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1000)
-	build_path = /obj/item/storage/fancy/ammobox/lethalshot
+	build_path = /obj/item/ammo_box/shotgun/buck
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/a308
@@ -273,14 +273,14 @@
 	name = "magnum buckshot shotgun box"
 	id = "magnumshot"
 	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/storage/fancy/ammobox/magnumshot
+	build_path = /obj/item/ammo_box/shotgun/magnum
 	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/slugshot
 	name = "slug shotgun box"
 	id = "slugshot"
 	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/storage/fancy/ammobox/slugshot
+	build_path = /obj/item/ammo_box/shotgun/slug
 	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a556ap

@@ -594,7 +594,7 @@
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
 	desc = "(V) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
-	icon_state = "marhsal_commandcoat"
+	icon_state = "marshal_commandcoat"
 	item_state = "marshal_commandcoat"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
@@ -742,6 +742,12 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A suit of special military grade riot control gear and a duster, worn by 11th Armored Calvary Regiment members in The Divide before the war. Yellow markings are painted on the shoulderpads and forearm guards."
 	icon_state = "rigscustom_suit"
 	item_state = "rigscustom_suit"
+
+/obj/item/clothing/suit/armor/f13/rangercombat/pricecustom
+	name = "spider riot gear"
+	desc = "A customised and faded suit of riot gear, reminiscient of that found near Hopeville in the Divide, with a pair of wrist mounted ammo pouches for easy access to spare munitions with a pair of stripes down the back made from a fire-proof material."
+	icon_state = "price_ranger"
+	item_state = "price_ranger"
 
 /obj/item/clothing/suit/toggle/armor/f13/cloakranger //Reskinned trail ranger gear
 	name = "ranger poncho"

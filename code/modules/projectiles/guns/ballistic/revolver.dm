@@ -669,6 +669,15 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	fire_delay = 4
 
+/obj/item/gun/ballistic/revolver/sequoia/bayonet
+	name = "bayoneted ranger sequoia"
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' This one has a bayonet on it."
+	icon_state = "sequoia_b"
+	item_state = "sequoia"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	fire_delay = 4
+
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."

@@ -304,6 +304,8 @@
 			vol_each_max = min(20, vol_each_max)
 		else if (item_type == "bottle_primitive")
 			vol_each_max = min(60, vol_each_max)
+		else if (item_type == "bag")
+			vol_each_max = min (40, vol_each_max)
 		else
 			return FALSE
 		if(vol_each_text == "auto")
@@ -430,7 +432,7 @@
 			var/obj/item/reagent_containers/pill/patch/P
 			for(var/i = 0; i < amount; i++)
 				P = new/obj/item/reagent_containers/pill/patch/healingpowder/custom(drop_location())
-				P.name = trim("[name] patch")
+				P.name = trim("[name] powder")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
 			return TRUE
@@ -534,9 +536,6 @@
 	else
 		icon_state = "alchemy_table"
 
-/obj/machinery/chem_master/primitive/attackby(obj/item/I, mob/user, params)
-		return
-
 /obj/machinery/chem_master/primitive/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(istype(user, /mob/dead/observer))
@@ -544,7 +543,7 @@
 			ui = new(user, src, "ChemMaster", name)
 			ui.open()
 	else
-		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !istype(src, /obj/machinery/chem_master/condimaster))
+		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !HAS_TRAIT(user, TRAIT_MARS_TEACH) && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
 			return
 		if(!ui)

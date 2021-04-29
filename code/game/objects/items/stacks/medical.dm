@@ -320,6 +320,9 @@
 /obj/item/stack/medical/ointment/five
 	amount = 5
 
+/obj/item/stack/medical/ointment/twelve
+	amount = 12
+
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(M.stat == DEAD)
 		to_chat(user, "<span class='warning'>[M] is dead! You can not help [M.p_them()].</span>")
@@ -510,7 +513,7 @@
 	singular_name = "mourning poultice"
 	desc = "A type of primitive herbal poultice.\nWhile traditionally used to prepare corpses for the mourning feast, it can also treat scrapes and burns on the living, however, it is liable to cause shortness of breath when employed in this manner.\nIt is imbued with ancient wisdom."
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "bandid_mourningpoultice"
+	icon_state = "bandaid_mourningpoultice"
 	amount = 15
 	max_amount = 15
 	heal_brute = 10
@@ -521,6 +524,12 @@
 	merge_type = /obj/item/stack/medical/poultice
 	novariants = TRUE
 
+/obj/item/stack/medical/poultice/one
+	amount = 1
+
+/obj/item/stack/medical/poultice/five
+	amount = 5
+
 /obj/item/stack/medical/poultice/heal(mob/living/M, mob/user)
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal_brute, heal_burn)
@@ -530,3 +539,13 @@
 	. = ..()
 	healed_mob.adjustOxyLoss(amount_healed)
 
+/datum/chemical_reaction/mourningpoultice
+	name = "mourning poultice"
+	id = "mournpoultice"
+	required_reagents = list(/datum/reagent/consumable/tea/coyotetea = 10, /datum/reagent/cellulose = 20, /datum/reagent/consumable/tea/feratea = 10)
+	mob_react = FALSE
+
+/datum/chemical_reaction/mourningpoultice/on_reaction(datum/reagents/holder, multiplier)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= multiplier, i++)
+		new /obj/item/stack/medical/poultice/one(location)

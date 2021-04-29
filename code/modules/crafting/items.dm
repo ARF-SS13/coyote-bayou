@@ -945,7 +945,9 @@
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
-				/obj/item/scrap/research
+				/obj/item/scrap/research,
+				/obj/item/stock_parts/cell/ammo/ec,
+				/obj/item/stack/crafting/goodparts
 				)
 
 /obj/item/salvage/crafting
@@ -979,15 +981,13 @@
 	name = "Advanced pre-war salvage"
 	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "goodsalvage"
-	Loot = list(/obj/item/stack/crafting/goodparts/five,
-				/obj/item/blueprint/research,
+	Loot = list(/obj/item/blueprint/research,
 				/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,
 				/obj/item/advanced_crafting_components/alloys,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/weldingtool/advanced,
 				/obj/item/stock_parts/cell/ammo/mfc,
-				/obj/item/stock_parts/cell/ammo/ec,
 				/obj/item/stock_parts/cell/ammo/ecp,
 				/obj/item/megaphone)
 
@@ -1310,4 +1310,4 @@
 		item = pick(vhigh)
 		new item(user.loc)
 
-	to_chat(usr, "You tinker and manage to create [item.name].")
+	//to_chat(usr, "You tinker and manage to create [item.name].") wat

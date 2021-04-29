@@ -250,20 +250,6 @@
 	name = "Ordinary Space Tile"
 	description = "Absolutely nothing strange going on here please move along, plenty more space to see right this way!"
 
-/datum/map_template/ruin/space/whiteshipruin_box
-	id = "whiteshipruin_box"
-	suffix = "whiteshipruin_box.dmm"
-	name = "NT Medical Ship"
-	description = "An ancient ship, said to be among the first discovered derelicts near Space Station 13 that was still in working order. \
-	Aged and deprecated by time, this relic of a vessel is now broken beyond repair."
-
-/datum/map_template/ruin/space/whiteshipdock
-	id = "whiteshipdock"
-	suffix = "whiteshipdock.dmm"
-	name = "Whiteship Dock"
-	description = "An abandoned but functional vessel parked in deep space, ripe for the taking."
-	always_place = TRUE
-
 /datum/map_template/ruin/space/cat_experiments
 	id = "meow"
 	suffix = "mrow_thats_right.dmm"

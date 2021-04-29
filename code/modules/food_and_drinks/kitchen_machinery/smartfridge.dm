@@ -621,10 +621,23 @@
 	name = "seed bin"
 	desc = "Organised dumping ground for the starters of life."
 	icon_state = "seedbin"
-	max_n_of_items = 150
+	max_n_of_items = 400
 
 /obj/machinery/smartfridge/bottlerack/seedbin/accept_check(obj/item/O)
 	if(istype(O, /obj/item/seeds))
+		return TRUE
+	return FALSE
+//-------------------------
+// Foodbin
+//-------------------------
+/obj/machinery/smartfridge/bottlerack/grownbin
+	name = "grownbin"
+	desc = "A large box, to contain the harvest that the Earth has blessed upon you."
+	icon_state = "seedbin"
+	max_n_of_items = 1000
+
+/obj/machinery/smartfridge/bottlerack/grownbin/accept_check(obj/item/O)
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
 		return TRUE
 	return FALSE
 
