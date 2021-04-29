@@ -14,7 +14,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/f13/instamash = 1,
 		/obj/item/reagent_containers/food/snacks/f13/cram = 1,
-		/obj/item/reagent_containers/food/snacks/f13/porknbeans = 1,
+		/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans = 1,
 		/obj/item/crafting/lunchbox = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/caravanlunch

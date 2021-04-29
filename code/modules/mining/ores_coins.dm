@@ -111,6 +111,7 @@
 	points = 1
 	merge_type = /obj/item/stack/ore/blackpowder
 	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/blackpowder = 50)
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stack/ore/blackpowder/fifty

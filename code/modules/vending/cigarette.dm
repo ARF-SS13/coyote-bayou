@@ -4,17 +4,13 @@
 	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
 	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."
 	icon_state = "cigs"
-	products = list(/obj/item/storage/fancy/cigarettes = 5,
-					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 3,
-					/obj/item/storage/fancy/cigarettes/cigpack_robust = 3,
-					/obj/item/storage/fancy/cigarettes/cigpack_carp = 3,
-					/obj/item/storage/fancy/cigarettes/cigpack_midori = 3,
+	products = list(/obj/item/storage/fancy/cigarettes/cigpack_bigboss = 5,
+					/obj/item/storage/fancy/cigarettes/cigpack_pyramid = 5,
+					/obj/item/storage/fancy/cigarettes/cigpack_greytort = 5,
 					/obj/item/storage/box/matches = 10,
 					/obj/item/lighter/greyscale = 4,
 					/obj/item/storage/fancy/rollingpapers = 5)
-	contraband = list(/obj/item/lighter = 3,
-					/obj/item/clothing/mask/vape = 5,
-					/obj/item/storage/fancy/cigarettes/cigpack_shadyjims = 1)
+	contraband = list(/obj/item/lighter = 3)
 	premium = list(/obj/item/storage/fancy/cigarettes/cigpack_robustgold = 3,
 					/obj/item/storage/fancy/cigarettes/cigars = 1,
 					/obj/item/storage/fancy/cigarettes/cigars/havana = 1,

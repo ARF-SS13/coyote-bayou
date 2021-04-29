@@ -151,9 +151,9 @@ GLOBAL_LIST_INIT(trash_food, list(
 	/obj/item/reagent_containers/food/snacks/f13/blamco/large = 3,
 	/obj/item/reagent_containers/food/snacks/f13/mechanic = 3,
 	/obj/item/reagent_containers/food/snacks/f13/instamash = 3,
-	/obj/item/reagent_containers/food/snacks/f13/porknbeans = 3,
-	/obj/item/reagent_containers/food/snacks/f13/borscht = 3,
-	/obj/item/reagent_containers/food/snacks/f13/dog = 3
+	/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans = 3,
+	/obj/item/reagent_containers/food/snacks/f13/canned/borscht = 3,
+	/obj/item/reagent_containers/food/snacks/f13/canned/dog = 3
 ))
 
 GLOBAL_LIST_INIT(trash_part, list(
@@ -790,7 +790,7 @@ GLOBAL_LIST_INIT(loot_food, list(
 	/obj/item/reagent_containers/food/snacks/f13/dandyapples,
 	/obj/item/reagent_containers/food/snacks/f13/blamco,
 	/obj/item/reagent_containers/food/snacks/f13/instamash ,
-	/obj/item/reagent_containers/food/snacks/f13/porknbeans,
+	/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans,
 	/obj/item/storage/box/ingredients/carnivore,
 	/obj/item/storage/box/ingredients/delights,
 	/obj/item/storage/box/ingredients/exotic,
@@ -907,7 +907,6 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 
 GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/attachments/scope,
-	/obj/item/attachments/bullet_speed,
 	/obj/item/attachments/burst_improvement,
 	/obj/item/attachments/recoil_decrease,
 	/obj/item/attachments/auto_sear

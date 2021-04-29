@@ -188,3 +188,242 @@
 		user.visible_message("<span class='notice'>[user] scoops up the casings beneath [user.p_them()].</span>", \
 			"<span class='notice'>You scoop up the casings beneath you with your [name].</span>")
 	spam_protection = FALSE
+
+/*
+ * Ration boxes
+ */
+
+/obj/item/storage/box/ration
+	name = "c-ration box"
+	desc = "A box containing canned rations, issued to New California Republic Army personnel."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "c-ration"
+	illustration = null
+
+/obj/item/storage/box/ration/update_icon_state()
+	. = ..()
+	if(!contents.len)
+		icon_state = "[icon_state]_open"
+	else
+		icon_state = initial(icon_state)
+
+/obj/item/storage/box/ration/menu_one
+	name = "c-ration box - 'Menu 1'"
+
+/obj/item/storage/box/ration/menu_one/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_chili(src)
+	new /obj/item/reagent_containers/food/snacks/lollipop(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/sunset(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_greytort(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_two
+	name = "c-ration box - 'Menu 2'"
+
+/obj/item/storage/box/ration/menu_two/PopulateContents()
+	name = "c-ration box - 'Menu 2'"
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/f13nukacola(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_pyramid(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_three
+	name = "c-ration box - 'Menu 3'"
+
+/obj/item/storage/box/ration/menu_three/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/igauna_bits(src)
+	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/bawls(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_bigboss(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_four
+	name = "c-ration box - 'Menu 4'"
+
+/obj/item/storage/box/ration/menu_four/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/grilled_radstag(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/sunset(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_greytort(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_five
+	name = "c-ration box - 'Menu 5'"
+
+/obj/item/storage/box/ration/menu_five/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/molerat_stew(src)
+	new /obj/item/reagent_containers/food/snacks/lollipop(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/f13nukacola(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_pyramid(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_six
+	name = "c-ration box - 'Menu 6'"
+
+/obj/item/storage/box/ration/menu_six/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/ham_and_eggs(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/f13nukacola(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_pyramid(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_seven
+	name = "c-ration box - 'Menu 7'"
+
+/obj/item/storage/box/ration/menu_seven/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_burger(src)
+	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/bawls(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_bigboss(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_eight
+	name = "c-ration box - 'Menu 8'"
+
+/obj/item/storage/box/ration/menu_eight/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/vegetable_soup(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/sunset(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_greytort(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_nine
+	name = "c-ration box - 'Menu 9'"
+
+/obj/item/storage/box/ration/menu_nine/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets
+	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/bawls(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_bigboss(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_ten
+	name = "c-ration box - 'Menu 10'"
+/obj/item/storage/box/ration/menu_ten/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/yaoguai_meatballs(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/f13nukacola(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_pyramid(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/menu_eleven
+	name = "c-ration box - 'Menu 11'"
+
+/obj/item/storage/box/ration/menu_eleven/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_dogs(src)
+	new /obj/item/reagent_containers/food/snacks/lollipop(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
+	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
+	new /obj/item/reagent_containers/food/drinks/bottle/f13nukacola(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_pyramid(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/reagent_containers/food/condiment/pack/hotsauce(src)
+	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
+
+/obj/item/storage/box/ration/ranger_breakfast
+	name = "k-ration breakfast"
+	icon_state = "k-ration"
+
+/obj/item/storage/box/ration/ranger_breakfast/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/condiment/pack/soup(src)
+	new /obj/item/reagent_containers/food/condiment/pack/coffee(src)
+	new /obj/item/reagent_containers/food/condiment/pack/soup(src)
+	new /obj/item/reagent_containers/food/condiment/pack/coffee(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/clothing/mask/cigarette/cigar/ncr(src)
+
+/obj/item/storage/box/ration/ranger_lunch
+	name = "k-ration lunch"
+	icon_state = "k-ration"
+
+/obj/item/storage/box/ration/ranger_lunch/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
+	new /obj/item/reagent_containers/food/condiment/pack/soup(src)
+	new /obj/item/reagent_containers/food/condiment/pack/soup(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/clothing/mask/cigarette/cigar/ncr(src)
+
+/obj/item/storage/box/ration/ranger_dinner
+	name = "k-ration dinner"
+	icon_state = "k-ration"
+
+/obj/item/storage/box/ration/ranger_dinner/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/dinner(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler(src)
+	new /obj/item/storage/box/matches(src)
+	new /obj/item/clothing/mask/cigarette/cigar/ncr(src)
+	
+	
+
+	
+	
+	
