@@ -116,7 +116,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/lastHolder = null
 	var/smoketime = 300
 	var/chem_volume = 30
-	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
+	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 30)
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
@@ -270,14 +270,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/uplift
 	desc = "An Uplift Smooth brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 7.5, /datum/reagent/consumable/menthol = 7.5)
+	list_reagents = list(/datum/reagent/drug/nicotine = 12.5, /datum/reagent/consumable/menthol = 7.5)
 
 /obj/item/clothing/mask/cigarette/robust
 	desc = "A Robust brand cigarette."
 
 /obj/item/clothing/mask/cigarette/robustgold
 	desc = "A Robust Gold brand cigarette."
-	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/gold = 1)
+	list_reagents = list(/datum/reagent/drug/nicotine = 29, /datum/reagent/gold = 1)
 
 /obj/item/clothing/mask/cigarette/carp
 	desc = "A Carp Classic brand cigarette."
@@ -293,6 +293,21 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/xeno
 	desc = "A Xeno Filtered brand cigarette."
 	list_reagents = list (/datum/reagent/drug/nicotine = 20, /datum/reagent/medicine/regen_jelly = 15, /datum/reagent/drug/krokodil = 4)
+
+/obj/item/clothing/mask/cigarette/bigboss
+	name = "Big Boss Cigarette"
+	desc = "A Big Boss brand cigarette."
+	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/medicine/synaptizine = 5)
+
+/obj/item/clothing/mask/cigarette/pyramid
+	name = "Pyramid Smokes Cigarette"
+	desc = "A Pyramid brand cigarette."
+	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/gold = 3)
+
+/obj/item/clothing/mask/cigarette/greytort
+	name = "Grey Tortoise Cigarette"
+	desc = "A Grey Tortoise brand cigarette."
+	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/medicine/omnizine = 5)
 
 // Rollies.
 
@@ -362,7 +377,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	smoketime = 2000
 	chem_volume = 80
 
-
 /obj/item/clothing/mask/cigarette/cigar/havana
 	name = "premium Havanian cigar"
 	desc = "A cigar fit for only the best of the best."
@@ -371,6 +385,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigar2off"
 	smoketime = 7200
 	chem_volume = 50
+
+/obj/item/clothing/mask/cigarette/cigar/ncr
+	name = "California Slim cigar"
+	desc = "A hand rolled cigar made from sun-kissed California tobacco."
+	icon_state = "cigar3off"
+	icon_on = "cigar3on"
+	icon_off = "cigar3off"
+	smoketime = 4500
+	chem_volume = 75
 
 /obj/item/cigbutt
 	name = "cigarette butt"

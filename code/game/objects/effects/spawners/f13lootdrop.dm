@@ -838,7 +838,7 @@
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
-/obj/effect/spawner/bundle/f13/miniuzi
+/obj/effect/spawner/bundle/f13/police_pistol
 	name = "police revolver and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/police,
@@ -1089,7 +1089,8 @@
 				/obj/effect/spawner/bundle/f13/varmint,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/colt357,
-				/obj/effect/spawner/bundle/f13/wattz
+				/obj/effect/spawner/bundle/f13/wattz,
+				/obj/effect/spawner/bundle/f13/police_pistol
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 
@@ -1505,7 +1506,7 @@
 				/obj/item/reagent_containers/food/snacks/f13/dandyapples,
 				/obj/item/reagent_containers/food/snacks/f13/blamco,
 				/obj/item/reagent_containers/food/snacks/f13/instamash ,
-				/obj/item/reagent_containers/food/snacks/f13/porknbeans,
+				/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans,
 				/obj/item/storage/box/ingredients/carnivore,
 				/obj/item/storage/box/ingredients/delights,
 				/obj/item/storage/box/ingredients/exotic,
@@ -1758,7 +1759,6 @@
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/attachments/scope,
-		/obj/item/attachments/bullet_speed,
 		/obj/item/attachments/burst_improvement,
 		/obj/item/attachments/recoil_decrease,
 		/obj/item/attachments/auto_sear
@@ -1833,7 +1833,6 @@
 	lootdoubles = FALSE
 	loot = list(
 		/obj/item/attachments/scope,
-		/obj/item/attachments/bullet_speed,
 		/obj/item/attachments/burst_improvement,
 		/obj/item/attachments/recoil_decrease,
 		/obj/item/attachments/auto_sear
@@ -1848,3 +1847,33 @@
 		/obj/effect/spawner/bundle/f13/beretta,
 		/obj/effect/spawner/bundle/f13/ninemil
 	)
+
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration
+	name = "c-ration spawner"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "c-ration"
+	lootcount = 1
+	loot = list(
+			/obj/item/storage/box/ration/menu_one,
+			/obj/item/storage/box/ration/menu_two,
+			/obj/item/storage/box/ration/menu_three,
+			/obj/item/storage/box/ration/menu_four,
+			/obj/item/storage/box/ration/menu_five,
+			/obj/item/storage/box/ration/menu_six,
+			/obj/item/storage/box/ration/menu_seven,
+			/obj/item/storage/box/ration/menu_eight,
+			/obj/item/storage/box/ration/menu_nine,
+			/obj/item/storage/box/ration/menu_ten,
+			/obj/item/storage/box/ration/menu_eleven,
+			)
+
+/obj/effect/spawner/lootdrop/f13/ncr_k_ration
+	name = "c-ration spawner"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "k-ration"
+	lootcount = 1
+	loot = list(
+			/obj/item/storage/box/ration/ranger_breakfast,
+			/obj/item/storage/box/ration/ranger_lunch,
+			/obj/item/storage/box/ration/ranger_dinner,
+			)

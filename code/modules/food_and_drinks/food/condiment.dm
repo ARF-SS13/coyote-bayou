@@ -333,3 +333,11 @@
 	desc = "A can of yeast extract used, in the of cooking various dishes."
 	icon_state = "yeast"
 	list_reagents = list(/datum/reagent/consumable/enzyme = 50)
+
+/obj/item/reagent_containers/food/condiment/pack/coffee
+	name = "instant coffee pack"
+	list_reagents = list(/datum/reagent/toxin/coffeepowder = 10)
+
+/obj/item/reagent_containers/food/condiment/pack/soup
+	name = "soup bouillon pack"
+	list_reagents = list(/datum/reagent/consumable/dry_ramen = 10)

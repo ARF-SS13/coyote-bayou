@@ -165,7 +165,7 @@ datum/gear/head/steelpot_patriot
 							"NCR Trooper",
 						)
 
-/datum/gear/head/ncr_flapcap
+/datum/gear/head/ncr_slouch
 	name = "NCR slouch hat"
 	path = /obj/item/clothing/head/f13/ncr_slouch
 	restricted_desc = "NCR"

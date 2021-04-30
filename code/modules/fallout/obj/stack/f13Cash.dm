@@ -66,13 +66,13 @@
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
 
-/obj/item/stack/f13Cash/fivezerozero
+/obj/item/stack/f13Cash/caps/fivezerozero
 	amount = 500
-	merge_type = /obj/item/stack/f13Cash
+	merge_type = /obj/item/stack/f13Cash/caps
 
-/obj/item/stack/f13Cash/threefivezero
+/obj/item/stack/f13Cash/caps/threefivezero
 	amount = 350
-	merge_type = /obj/item/stack/f13Cash
+	merge_type = /obj/item/stack/f13Cash/caps
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()

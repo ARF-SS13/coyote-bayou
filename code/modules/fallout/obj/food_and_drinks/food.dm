@@ -237,33 +237,6 @@
 	filling_color = "#B22222"
 	trash = /obj/item/trash/f13/instamash
 
-/obj/item/reagent_containers/food/snacks/f13/porknbeans
-	name = "Pork n' Beans"
-	desc = "Pork n' Beans come in a small brown and orange tin, with a label that reads \"Greasy Prospector Improved Pork And Beans\".<br>Toward the bottom of the label is printed that the beans come \"With Hickory Smoked Pig Fat Chunks\"."
-	icon_state = "porknbeans"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
-	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/porknbeans
-
-/obj/item/reagent_containers/food/snacks/f13/borscht
-	name = "canned borscht"
-	desc = "A faded label says something in Cyrillic, but you can't understand a thing.<br>\"KOHCEPBA BKYCHOTA TOMAT CMETAHA MOCKBA\"<br>\"cynep cyn!\"<br>An image of a plate with some red soup explains a lot."
-	icon_state = "borscht"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
-	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/borscht
-
-/obj/item/reagent_containers/food/snacks/f13/dog //Max Rockatansky favorite
-	name = "dog food"
-	desc = "A can of greasy meat with a faded cartoon dog on the label.<br>Smells bad, tastes worse, but filling.<br>Not good enough to get bitten over, though." //Mad Max: Road Warrior 1981 dog food scene reference
-	icon_state = "dog"
-	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
-	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/dog
-
 /obj/item/reagent_containers/food/snacks/f13/mre
 	name = "MRE"
 	desc = "The Meal, Ready-to-Eat : commonly known as the MRE - is a self-contained, individual field ration in lightweight packaging.<br>It's commonly used by military groups for service members to use in combat or other field conditions where organized food facilities are not available."
@@ -467,3 +440,192 @@
 	icon_state = "agave"
 	icon = 'icons/fallout/objects/food&drinks/grown.dmi'
 */
+
+// Canned Items
+
+/obj/item/reagent_containers/food/snacks/f13/canned
+	name = "canned food item"
+	desc = "If you see this, call an admin."
+	var/is_open = FALSE
+
+/obj/item/reagent_containers/food/snacks/f13/canned/update_icon_state()
+	if(!is_open)
+		icon_state = "[icon_state]"
+	else
+		icon_state = "[icon_state]-op"
+
+/obj/item/reagent_containers/food/snacks/f13/canned/attack_self(mob/user)
+	if(!is_open)
+		is_open = TRUE
+		to_chat(user, "<span class='notice'>You open the lid of the can.</span>")
+		update_icon()
+		return
+	. = ..()
+
+/obj/item/reagent_containers/food/snacks/f13/canned/attack(mob/living/M, mob/living/user)
+	if(!is_open)
+		to_chat(user, "<span class='warning'>You need to open [src] first.</span>")
+		return
+	. = ..()
+
+/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans
+	name = "can of pork n' beans"
+	desc = "Pork n' Beans come in a small brown and orange tin, with a label that reads \"Greasy Prospector Improved Pork And Beans\".<br>Toward the bottom of the label is printed that the beans come \"With Hickory Smoked Pig Fat Chunks\"."
+	icon_state = "porknbeans"
+	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
+	filling_color = "#B22222"
+	tastes = list("doughy beans" = 5, "pork flavoring" = 1)
+	trash = /obj/item/trash/f13/porknbeans
+
+/obj/item/reagent_containers/food/snacks/f13/canned/borscht
+	name = "canned borscht"
+	desc = "A faded label says something in Cyrillic, but you can't understand a thing.<br>\"KOHCEPBA BKYCHOTA TOMAT CMETAHA MOCKBA\"<br>\"cynep cyn!\"<br>An image of a plate with some red soup explains a lot."
+	icon_state = "borscht"
+	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
+	filling_color = "#B22222"
+	tastes = list("old beets" = 4, "vegetables" = 2, "meat broth" = 2)
+	trash = /obj/item/trash/f13/borscht
+
+/obj/item/reagent_containers/food/snacks/f13/canned/dog //Max Rockatansky favorite
+	name = "dog food"
+	desc = "A can of greasy meat with a faded cartoon dog on the label.<br>Smells bad, tastes worse, but filling.<br>Not good enough to get bitten over, though." //Mad Max: Road Warrior 1981 dog food scene reference
+	icon_state = "dog"
+	bonus_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
+	filling_color = "#B22222"
+	tastes = list("mushy kibble" = 4, "musty meat" = 2)
+	trash = /obj/item/trash/f13/dog
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr
+	name = "canned military ration"
+	desc = "If you see this, call an admin."
+	filling_color = "#B22222"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 35, /datum/reagent/consumable/nutriment/vitamin = 3)
+	icon_state = "c_ration_1"
+	trash = /obj/item/trash/f13/c_ration_1
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_chili
+	name = "c-ration entree - 'Brahmin Meatchunks in Fava Bean Chili'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("brahmin" = 4, "beans" = 2, "spicy chili" = 2)
+	foodtype = MEAT | VEGETABLES
+	filling_color = "#38170d"
+	
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage
+	name = "c-ration entree - 'Bighorner Franks in Tato Sauce'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("bighorner sausage" = 4, "tato sauce" = 2)
+	foodtype = MEAT | VEGETABLES
+	filling_color = "#38170d"
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/igauna_bits
+	name = "c-ration entree - 'Iguana Bite Tacos'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("crispy iguana" = 4, "corn tortilla" = 2)
+	foodtype = MEAT | VEGETABLES
+	filling_color = "#38230d"
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/grilled_radstag
+	name = "c-ration entree - 'Grilled Radstag with Potato Puree and Gravy'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("grilled radstag" = 4, "potatoes and gravy" = 2)
+	foodtype = MEAT | VEGETABLES
+	filling_color = "#38230d"
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/molerat_stew
+	name = "c-ration entree - 'Molerat Stew'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("molerat" = 4, "stewed vegetables" = 2)
+	foodtype = MEAT | VEGETABLES
+	filling_color = "#38230d"
+	cooked_type = /obj/item/reagent_containers/food/snacks/f13/moleratstew
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/ham_and_eggs
+	name = "c-ration entree - 'Brahmin Ham and Mirelurk Eggs'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("ham" = 4, "EXTREMELY fishy eggs" = 4)
+	foodtype = MEAT | VEGETABLES | GROSS
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_burger
+	name = "c-ration entree - 'Brahmin Burger'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("a pretty damn good burger" = 4)
+	foodtype = MEAT | GRAIN
+	cooked_type = /obj/item/reagent_containers/food/snacks/burger/bigbite
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/vegetable_soup
+	name = "c-ration entree - 'Vegetable Soup'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("crunchy vegetables" = 4, "stewed vegetables" = 2)
+	foodtype = VEGETABLES
+	cooked_type = /obj/item/reagent_containers/food/snacks/soup/vegetable
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets
+	name = "c-ration entree - 'Smoked Mirelurk Filets'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("smoked fish" = 3)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/yaoguai_meatballs
+	name = "c-ration entree - 'Yao Guai Meatballs in Tato Sauce'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("gamey meat" = 3, "tato sauce" = 3)
+	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_dogs
+	name = "c-ration entree - 'Brahmin Dogs'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	tastes = list("a pretty damn good hotdog" = 4)
+	foodtype = MEAT | VEGETABLES
+	cooked_type = /obj/item/reagent_containers/food/snacks/hotdog
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers
+	name = "c-ration crackers"
+	desc = "A canned food product containing crackers as part of a military combat ration. Use a knife to get the crackers out."
+	tastes = list("cracker" = 4)
+	foodtype = GRAIN
+	slice_path = /obj/item/reagent_containers/food/snacks/cracker/c_ration
+	trash = /obj/item/trash/f13/c_ration_2
+	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit
+	name = "c-ration dessert - 'Candied Mutfruit'"
+	desc = "A canned food product containing the dessert portion of a military combat ration."
+	icon_state = "c_ration_3"
+	tastes = list("mutfruit" = 3, "sugar" = 3)
+	trash = /obj/item/trash/f13/c_ration_3
+	foodtype = SUGAR | FRUIT
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler
+	name = "c-ration dessert - 'Cranberry Cobbler'"
+	desc = "A canned food product containing the dessert portion of a military combat ration."
+	icon_state = "c_ration_3"
+	tastes = list("perfectly replicated GMO cranberries" = 3, "buttery flakey crust" = 2)
+	trash = /obj/item/trash/f13/c_ration_3
+	foodtype = SUGAR | FRUIT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast
+	name = "k-ration entree - 'Brahmin Chorizo Con Huevos'"
+	desc = "A canned food product containing the entree portion of a military combat ration."
+	icon_state = "k_ration_can"
+	tastes = list("rich beef" = 3, "peppers" = 3, "eggs" = 2)
+	trash = /obj/item/trash/f13/k_ration
+	foodtype = MEAT | VEGETABLES | BREAKFAST
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/lunch
+	name = "k-ration entree - 'Baja Enchiladas'"
+	desc = "A canned food product containing the entree portion of a military combat ration, a star with the initials 'A.F' is stamped on the can."
+	icon_state = "k_ration_can"
+	tastes = list("corn tortilla" = 2, "stewed brahmin" = 3, "picante salsa" = 3)
+	trash = /obj/item/trash/f13/k_ration
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/canned/ncr/dinner
+	name = "k-ration entree - 'Spiced Dinner Luncheon'"
+	desc = "A canned food product containing the entree portion of a military combat ration. Better than Cram."
+	icon_state = "k_ration_can"
+	tastes = list("beef luncheon loaf" = 3, "jalapeno peppers and spices" = 2)
+	trash = /obj/item/trash/f13/k_ration
+	foodtype = MEAT

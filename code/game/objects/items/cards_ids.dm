@@ -192,7 +192,7 @@
 	var/registered_name = null // The name registered_name on the card
 	var/assignment = null
 	var/access_txt // mapping aid
-	var/bank_support = ID_FREE_BANK_ACCOUNT
+	var/bank_support = ID_NO_BANK_ACCOUNT
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
 	var/uses_overlays = TRUE
