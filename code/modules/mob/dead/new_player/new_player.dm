@@ -135,6 +135,7 @@
 	return age_gate_result
 
 /mob/dead/new_player/proc/age_verify()
+	/*
 	if(CONFIG_GET(flag/age_verification) && !check_rights_for(client, R_ADMIN) && !(client.ckey in GLOB.bunker_passthrough)) //make sure they are verified
 		if(!client.set_db_player_flags())
 			message_admins("Blocked [src] from new player panel because age gate could not access player database flags.")
@@ -155,7 +156,7 @@
 					client.update_flag_db(DB_FLAG_AGE_CONFIRMATION_INCOMPLETE, FALSE)
 					//log this
 					message_admins("[ckey] has joined through the automated age gate process.")
-					return TRUE
+					return TRUE*/
 	return TRUE
 
 /mob/dead/new_player/Topic(href, href_list[])
