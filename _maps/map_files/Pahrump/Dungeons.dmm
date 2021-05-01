@@ -532,8 +532,8 @@
 	},
 /area/f13/bunker)
 "aUd" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "aUn" = (
@@ -632,7 +632,7 @@
 /area/f13/vault)
 "bcE" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy,
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "bdj" = (
@@ -1008,18 +1008,10 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "bCR" = (
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	color = "#75FFE2";
-	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick, oddly blue armor plating, the name Lil' Chew-Chew scratched onto it's front armour.";
-	extra_projectiles = 6;
-	health = 700;
-	name = "Lil' Chew-Chew";
-	obj_damage = 300;
-	unique_name = 1
-	},
 /obj/machinery/light/fo13colored/Red{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/handy/sentrybot/chew,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1501,10 +1493,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "cyH" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -2706,11 +2695,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2729,9 +2714,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "esf" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2778,9 +2761,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "exz" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
 	},
@@ -3233,7 +3214,7 @@
 "fku" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/porta_turret/syndicate{
-	faction = list("wastebot")
+	faction = list("raider")
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/bar,
@@ -3774,11 +3755,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "giL" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -3804,11 +3781,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "glo" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "glR" = (
@@ -3961,10 +3934,7 @@
 	},
 /area/f13/bunker)
 "gwy" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
-/turf/open/floor/plating/tunnel,
+/turf/closed/wall/rust,
 /area/f13/bunker)
 "gxS" = (
 /obj/structure/table/wood,
@@ -3983,10 +3953,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "gzu" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -4135,12 +4102,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
-"gKr" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubbleslab"
-	},
-/area/f13/bunker)
 "gKO" = (
 /obj/structure/toilet{
 	dir = 8
@@ -5468,10 +5429,10 @@
 /area/f13/vault)
 "iJV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/porta_turret/syndicate{
-	faction = list("wastebot")
-	},
 /obj/machinery/light/floor,
+/obj/machinery/porta_turret/syndicate{
+	faction = list("raider")
+	},
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "iJW" = (
@@ -5536,11 +5497,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "iOW" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
 	},
@@ -6164,9 +6121,7 @@
 /area/f13/bunker)
 "jUJ" = (
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -6607,9 +6562,7 @@
 /area/f13/vault)
 "kFL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/legendary{
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -6867,6 +6820,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/attachments,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -6959,11 +6913,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
-"lgD" = (
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubblepillar"
-	},
-/area/f13/tunnel)
 "lgX" = (
 /obj/structure/rack,
 /obj/item/storage/belt/security,
@@ -7187,10 +7136,7 @@
 	},
 /area/f13/bunker)
 "lAt" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -9069,10 +9015,7 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "oxi" = (
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -9715,10 +9658,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "pyt" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "pzq" = (
@@ -10046,7 +9986,7 @@
 "qhp" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "qhq" = (
@@ -10387,9 +10327,7 @@
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/underground/cave)
 "qLo" = (
-/mob/living/simple_animal/hostile/raider/legendary{
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/legendary,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qLP" = (
@@ -10700,10 +10638,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "rhx" = (
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rik" = (
@@ -11543,16 +11478,11 @@
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sFw" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -12008,10 +11938,7 @@
 	},
 /area/f13/bunker)
 "tyb" = (
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -12348,9 +12275,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old"
 	},
-/mob/living/simple_animal/hostile/raider/legendary{
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/legendary,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "ukL" = (
@@ -12944,7 +12869,7 @@
 	dir = 1
 	},
 /obj/effect/decal/waste,
-/mob/living/simple_animal/hostile/handy/robobrain,
+/mob/living/simple_animal/hostile/handy/robobrain/nsb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "viF" = (
@@ -13760,7 +13685,7 @@
 /area/f13/bunker)
 "wvj" = (
 /obj/structure/sign/warning/radiation,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/rust,
 /area/f13/bunker)
 "wvo" = (
 /obj/structure/chair/stool/retro/tan,
@@ -13992,8 +13917,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "wFW" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -14144,7 +14069,7 @@
 /area/f13/vault)
 "wRB" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/robobrain,
+/mob/living/simple_animal/hostile/handy/robobrain/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -14475,7 +14400,7 @@
 /area/f13/bunker)
 "xsA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy,
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "xsH" = (
@@ -14594,10 +14519,8 @@
 	},
 /area/f13/bunker)
 "xzS" = (
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	obj_damage = 300
-	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -14654,11 +14577,7 @@
 /turf/open/floor/plasteel/darkpurple/side,
 /area/f13/vault)
 "xGl" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -14951,11 +14870,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"yec" = (
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubbleslab"
-	},
-/area/f13/tunnel)
 "yeA" = (
 /mob/living/simple_animal/hostile/raider/thief,
 /turf/open/floor/f13/wood,
@@ -44965,14 +44879,14 @@ cIT
 cIT
 koh
 koh
-azq
 cIT
 cIT
-azq
-vPZ
+cIT
+cIT
+cIT
 aUx
-azq
-vPZ
+cIT
+cIT
 koh
 heT
 heT
@@ -45216,20 +45130,20 @@ bsh
 bsh
 eRb
 xph
-aUx
+gwy
 fku
 qsb
 diW
 tal
 gEI
-vPZ
 cIT
 cIT
-azq
+cIT
+cIT
 pbd
-aUx
+gwy
 yfz
-vPZ
+cIT
 koh
 heT
 heT
@@ -45473,18 +45387,18 @@ bsh
 bsh
 bsh
 mmk
-aUx
+gwy
 qsb
 qsb
 xsA
-aUx
+gwy
 iOE
 fRE
 cIT
-aUx
-aUx
+gwy
+gwy
 yku
-aUx
+gwy
 qhp
 dQq
 koh
@@ -45738,12 +45652,12 @@ mYL
 bjT
 xzS
 cIT
-aUx
+gwy
 bjT
 lDQ
-aUx
+gwy
 ccI
-koh
+kRy
 aUx
 heT
 heT
@@ -45987,7 +45901,7 @@ jkZ
 pdR
 bsh
 qYk
-aUx
+gwy
 iJV
 nBV
 iCR
@@ -45995,10 +45909,10 @@ mYL
 uXT
 uau
 kOH
-aUx
+gwy
 uau
 wFW
-aUx
+gwy
 vhM
 iOE
 aUx
@@ -46244,7 +46158,7 @@ byG
 bsh
 bsh
 qYk
-aUx
+gwy
 uGH
 diW
 diW
@@ -46255,7 +46169,7 @@ nmg
 tal
 kOH
 uXT
-aUx
+gwy
 vTt
 wRB
 aUx
@@ -46499,21 +46413,21 @@ pba
 jZk
 bsh
 bsh
-eRb
+bsh
 qYk
-aUx
+gwy
 bfl
 diW
 diW
-aUx
+gwy
 xYP
 ggC
 cIT
-aUx
+gwy
 tCc
-vPZ
-aUx
-aUx
+ulM
+gwy
+gwy
 szh
 aUx
 heT
@@ -46754,25 +46668,25 @@ hbR
 bsh
 fud
 vlG
-lgD
+bsh
 bsh
 bsh
 qYk
-aUx
-aUx
+gwy
+gwy
 jru
-aUx
-aUx
-aUx
-aUx
-aUx
-aUx
+gwy
+gwy
+gwy
+gwy
+gwy
+gwy
 gQm
-azq
+ulM
 iOE
 xPY
 obv
-vPZ
+cIT
 heT
 heT
 heT
@@ -47011,7 +46925,7 @@ hbR
 bsh
 bsh
 bsh
-yec
+bsh
 rog
 bsh
 xph
@@ -47019,17 +46933,17 @@ wvj
 vwf
 vId
 bcE
-cIT
-rwc
+gwy
+nVS
 oRq
 xhC
-aUx
+gwy
 fRE
 ulM
 gEI
 aUd
 ulM
-vPZ
+cIT
 heT
 heT
 heT
@@ -47268,7 +47182,7 @@ hbR
 hbR
 bsh
 bsh
-lgD
+bsh
 fud
 dbo
 mas
@@ -47276,15 +47190,15 @@ xeO
 ryR
 rKG
 vNb
+gwy
 cIT
-koh
 bcE
 rKG
 szh
 gEI
 aBh
-aUx
-aUx
+gwy
+gwy
 tal
 aUx
 heT
@@ -47533,14 +47447,14 @@ xeO
 lPR
 nSi
 uNn
-gKr
 rwc
+nVS
 cIT
 rag
-aUx
+gwy
 aUd
 fRE
-aUx
+gwy
 bCR
 wey
 aUx
@@ -47790,14 +47704,14 @@ mYL
 qPJ
 hnU
 jUG
-azq
-cIT
 koh
+cIT
+cIT
 bQs
-aUx
+gwy
 ibz
 vPZ
-aUx
+gwy
 laJ
 koh
 aUx
@@ -67907,7 +67821,7 @@ kRy
 uXT
 bjT
 uXT
-gwy
+kRy
 fFV
 kRy
 lAt
@@ -70480,7 +70394,7 @@ jNs
 jNs
 pes
 aUx
-jNs
+esf
 dMu
 oHS
 aUx
