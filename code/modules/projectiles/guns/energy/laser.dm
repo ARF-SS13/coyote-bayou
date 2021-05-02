@@ -575,6 +575,22 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/energy/laser/aer12
+	name = "\improper AER14 laser rifle"
+	desc = "The AER12, a successor to the AER9, is a cutting-edge state of the art laser rifle employed pre-war in specialty units, featuring green-beams and associated green-trim"
+	icon_state = "aer12"
+	item_state = "laser-rifle9"
+	can_scope = TRUE
+	scope_state = "AEP7_scope"
+	scope_x_offset = 12
+	scope_y_offset = 20
+	fire_delay = 3.5
+	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
 	desc = "A very crude weapon overall and appears to have been built from scavenged junk found throughout the wasteland."
