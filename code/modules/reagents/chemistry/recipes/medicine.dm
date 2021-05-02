@@ -381,5 +381,5 @@
 	name = "mentats"
 	id = /datum/reagent/medicine/mentat
 	results = list(/datum/reagent/medicine/mentat = 3)
-	required_reagents = list(/datum/reagent/medicine/mannitol = 1, /datum/reagent/acetone = 1, /datum/reagent/oxygen = 1, /datum/reagent/cellulose = 1)
+	required_reagents = list(/datum/reagent/medicine/neurine = 1, /datum/reagent/cellulose = 1)
 	required_temp = 451
