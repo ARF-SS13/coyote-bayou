@@ -23,7 +23,7 @@
 
 /obj/item/ammo_casing/caseless/arrow/burning
 	name = "burn arrow"
-	desc = "A sumple arrow slathered in a paste that burns skin on contact."
+	desc = "A simple arrow slathered in a paste that burns skin on contact."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/burning
 	icon_state = "arrow_burning"
 
