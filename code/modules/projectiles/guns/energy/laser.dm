@@ -586,7 +586,7 @@
 	scope_y_offset = 20
 	fire_delay = 3.5
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
