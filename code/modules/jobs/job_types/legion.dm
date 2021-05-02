@@ -741,7 +741,9 @@ Venator
 		/obj/item/ammo_box/magazine/w308=3,
 		/obj/item/claymore/machete/gladius=1,
 		/obj/item/storage/bag/money/small/legion=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=1)
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/gun/ballistic/revolver/revolver45=1,
+		/obj/item/ammo_box/c45rev=3)
 
 /*
 Explorer
