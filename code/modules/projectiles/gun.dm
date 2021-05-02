@@ -713,7 +713,8 @@
 	else
 		zoomed = !zoomed
 
-	if(zoomed)
+	if(zoomed)//if we need to be zoomed in
+		user.add_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
 		var/_x = 0
 		var/_y = 0
 		switch(user.dir)
@@ -733,6 +734,7 @@
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 		user.visible_message("<span class='notice'>[user] looks down the scope of [src].</span>", "<span class='notice'>You look down the scope of [src].</span>")
 	else
+		user.remove_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
@@ -741,7 +743,7 @@
 		user.visible_message("<span class='notice'>[user] looks up from the scope of [src].</span>", "<span class='notice'>You look up from the scope of [src].</span>")
 
 /obj/item/gun/proc/on_walk(mob/living/L)
-	zoom(L, FALSE)
+	//zoom(L, FALSE)
 
 /obj/item/gun/proc/rotate(mob/living/user, old_dir, direction = FALSE)
 	var/_x = 0
