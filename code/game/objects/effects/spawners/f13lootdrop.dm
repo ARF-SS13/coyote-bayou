@@ -1093,7 +1093,7 @@
 				/obj/effect/spawner/bundle/f13/police_pistol
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6
 	name = "tier 6 gun"
 	loot = list(/obj/effect/spawner/bundle/f13/beretta/select,
 				/obj/effect/spawner/bundle/f13/m1911,
@@ -1107,7 +1107,7 @@
 				/obj/effect/spawner/bundle/f13/smg10mm
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7
 	name = "tier 7 gun"
 	loot = list(/obj/effect/spawner/bundle/f13/service,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
@@ -1119,7 +1119,7 @@
 				/obj/effect/spawner/bundle/f13/mk23
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8
 	name = "tier 8 gun"
 	loot = list(/obj/effect/spawner/bundle/f13/r82,
 				/obj/effect/spawner/bundle/f13/r84,
@@ -1165,14 +1165,15 @@
 				/obj/item/gun/ballistic/revolver/thatgun
 	)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9
 	name = "tier 9 gun"
 	loot = list(/obj/effect/spawner/bundle/f13/infiltrator,
 				/obj/effect/spawner/bundle/f13/rangemaster,
 				/obj/effect/spawner/bundle/f13/wattz2k,
 				/obj/effect/spawner/bundle/f13/rcw,
 				/obj/effect/spawner/bundle/f13/breacher,
-				/obj/effect/spawner/bundle/f13/beam
+				/obj/effect/spawner/bundle/f13/beam,
+				/obj/effect/spawner/bundle/f13/aer12
 				)
 
 /obj/effect/spawner/bundle/f13/beam
@@ -1186,6 +1187,13 @@
 	items = list(
 				/obj/item/gun/ballistic/automatic/shotgun/riot,
 				/obj/item/ammo_box/magazine/d12g
+	)
+
+/obj/effect/spawner/bundle/f13/aer12
+	name = "breacher and ammo spawner"
+	items = list(
+				/obj/item/gun/energy/laser/aer12,
+				/obj/item/stock_parts/cell/ammo/mfc
 	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier10

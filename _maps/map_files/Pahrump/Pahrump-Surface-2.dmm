@@ -4941,6 +4941,8 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/smelling_salts/wayfarer,
 /obj/item/smelling_salts/wayfarer,
+/obj/item/stack/medical/poultice,
+/obj/item/stack/medical/poultice,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "dAg" = (
@@ -21220,6 +21222,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/stack/medical/poultice,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "opW" = (
@@ -21605,6 +21608,7 @@
 /obj/machinery/iv_drip,
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/stack/medical/poultice,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "oFJ" = (
@@ -33474,6 +33478,18 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"wyi" = (
+/obj/structure/closet/bus,
+/obj/structure/ladder/unbreakable{
+	desc = "A short drive to the north from Miller for supplies. It's a shame the bus can't go further, maybe if it wasn't a rusty hunk of scrap you could reach Vegas!";
+	height = 2;
+	id = "ncrmini";
+	name = "drive north"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland)
 "wyI" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -36220,6 +36236,17 @@
 	icon_state = "dirt"
 	},
 /area/f13/farm)
+"ydY" = (
+/obj/structure/ladder/unbreakable{
+	desc = "A long march up-river. Prepare yourself!";
+	height = 2;
+	id = "legionmini";
+	name = "march up-river"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/legion)
 "yel" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
@@ -38289,7 +38316,7 @@ ymi
 hXW
 iHk
 unI
-hbW
+wyi
 sgz
 hOl
 koD
@@ -100162,7 +100189,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+wPS
 wPS
 syr
 syr
@@ -100418,8 +100445,8 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
+wPS
+wPS
 wPS
 syr
 syr
@@ -100674,9 +100701,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
+wPS
+wPS
+wPS
 wPS
 wPS
 syr
@@ -100930,9 +100957,9 @@ gcK
 gcK
 gbL
 gcK
-gcK
-gcK
-gcK
+wPS
+wPS
+wPS
 ktB
 ggK
 ggK
@@ -101186,10 +101213,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-ktB
+hom
+hom
+bbV
+hom
 ktB
 ggK
 sVl
@@ -101443,10 +101470,10 @@ gcK
 gcK
 gcK
 gbL
-gcK
-gcK
-gcK
-gcK
+kRD
+ydY
+fqL
+mCf
 ktB
 ggK
 sVl
@@ -101700,10 +101727,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
+hom
+hom
+hom
+hom
 ktB
 oYb
 sVl
@@ -101970,7 +101997,7 @@ ktB
 ktB
 ktB
 ktB
-gbL
+ktB
 ktB
 ktB
 ktB

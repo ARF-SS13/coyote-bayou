@@ -80,6 +80,8 @@
 	maxHealth = 450
 	health = 450
 	speed = 1.2
+	obj_damage = 300
+	aggro_vision_range = 15
 
 /mob/living/simple_animal/hostile/raider/ranged/legendary
 	name = "Legendary Raider"
@@ -96,6 +98,8 @@
 	projectiletype = /obj/item/projectile/bullet/m44
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
+	aggro_vision_range = 15
+	obj_damage = 300
 
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
 	icon_state = "metal_raider"

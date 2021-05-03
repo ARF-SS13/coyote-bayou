@@ -407,12 +407,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"aBQ" = (
-/mob/living/simple_animal/hostile/deathclaw{
-	name = "Rock Claw"
-	},
-/turf/closed/mineral/random/high_chance,
-/area/f13/caves)
 "aCf" = (
 /turf/closed/wall/f13/supermart,
 /area/f13/caves)
@@ -8557,11 +8551,6 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
-"ixT" = (
-/obj/structure/rack,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
-/turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
 "ixX" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /obj/effect/decal/cleanable/dirt,
@@ -12860,7 +12849,7 @@
 "noe" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "noI" = (
@@ -56731,7 +56720,7 @@ uoO
 eoy
 vxm
 ygg
-ixT
+iCS
 tQD
 eoy
 uoO
@@ -64876,7 +64865,7 @@ eLE
 uoO
 uoO
 aoj
-aBQ
+aoj
 aoj
 uoO
 uoO
@@ -68505,7 +68494,7 @@ uoO
 uoO
 aoj
 aoj
-aBQ
+aoj
 aoj
 aoj
 uoO
@@ -79394,7 +79383,7 @@ uoO
 uoO
 uoO
 aoj
-aBQ
+aoj
 uoO
 uoO
 uoO
