@@ -96,6 +96,11 @@
 	new /obj/item/clothing/glasses/welding(src)
 	new /obj/item/clothing/gloves/combat(src)
 
+//Alice Price - asterixcodix
+/obj/item/storage/box/large/custom_kit/aliceprice/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/rangercombat/pricecustom
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/pricecustom
+
 //Tycho Siricus - seabass390
 /obj/item/storage/box/large/custom_kit/tychosiricus/PopulateContents()
 	new /obj/item/clothing/glasses/sunglasses(src)

@@ -101,6 +101,11 @@
 	path = /obj/item/modkit/patrolduster
 	ckeywhitelist = list("afroterk")
 
+/datum/gear/donator/kits/aliceprice
+	name = "Alice Price's belongings"
+	path = /obj/item/storage/box/large/custom_kit/aliceprice
+	ckeywhitelist = list("asterixcodix")
+
 /datum/gear/donator/kits/tychosiricus
 	name = "Tycho Siricus belongings"
 	path = /obj/item/storage/box/large/custom_kit/tychosiricus
