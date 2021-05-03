@@ -396,7 +396,7 @@
 	name = "laser beam"
 	damage = 34
 	armour_penetration = 0.55
-	icon_state = "u_laser"
+	icon_state = "xray"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
