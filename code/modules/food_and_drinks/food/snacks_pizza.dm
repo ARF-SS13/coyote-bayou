@@ -10,6 +10,7 @@
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
 	foodtype = GRAIN | DAIRY | VEGETABLES
 
+/* Death to pizza furniture
 /obj/item/reagent_containers/food/snacks/pizzaslice/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(!isturf(loc))
@@ -20,6 +21,7 @@
 		qdel(src)
 		return
 	return ..()
+*/
 
 /obj/item/reagent_containers/food/snacks/pizzaslice
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
