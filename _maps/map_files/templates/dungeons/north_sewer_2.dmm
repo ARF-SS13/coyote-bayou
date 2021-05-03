@@ -23,10 +23,7 @@
 /area/f13/bunker)
 "aI" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "aJ" = (
@@ -53,9 +50,7 @@
 	},
 /area/f13/bunker)
 "aU" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "aX" = (
@@ -219,9 +214,7 @@
 	},
 /area/f13/radiation)
 "dx" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "dL" = (
@@ -267,6 +260,7 @@
 /obj/machinery/light/broken{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "ew" = (
@@ -324,11 +318,7 @@
 	},
 /area/f13/bunker)
 "fu" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -377,14 +367,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "gI" = (
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	desc = "A notorious cannibal raider, with a strong revolver. Oh no.";
-	name = "Bob";
-	obj_damage = 300;
-	retreat_distance = 0;
-	speed = 1.5
-	},
-/turf/open/floor/plasteel/freezer,
+/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "gM" = (
 /obj/machinery/light/broken,
@@ -426,11 +410,7 @@
 /area/f13/tunnel)
 "hy" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -463,11 +443,7 @@
 /area/f13/bunker)
 "iK" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -734,10 +710,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "nC" = (
@@ -796,9 +769,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pe" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "po" = (
@@ -841,24 +812,14 @@
 "pJ" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/securitron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/securitron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
 /area/f13/bunker)
 "qb" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	aggro_vision_range = 15;
-	desc = "A pre-war military robot armed with a modified breacher shotgun and covered in thick armor plating.";
-	faction = list("raider");
-	name = "riot control sentry";
-	projectilesound = 'sound/f13weapons/riot_shotgun.ogg';
-	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag;
-	retreat_distance = 0
-	},
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb/riot,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qt" = (
@@ -910,9 +871,7 @@
 /area/f13/bunker)
 "qL" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/legendary{
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/robobrain/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qN" = (
@@ -938,10 +897,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rg" = (
@@ -974,11 +930,7 @@
 /area/f13/radiation)
 "rE" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rM" = (
@@ -1006,9 +958,7 @@
 /area/f13/bunker)
 "sF" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sH" = (
@@ -1020,10 +970,7 @@
 /area/f13/bunker)
 "sK" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sR" = (
@@ -1112,16 +1059,6 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
-"uG" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	retreat_distance = 0;
-	vision_range = 15
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/bunker)
 "uJ" = (
 /mob/living/simple_animal/hostile/deathclaw/legendary{
 	speed = -1.5
@@ -1165,9 +1102,7 @@
 /area/f13/bunker)
 "ve" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/securitron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/securitron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -1309,12 +1244,6 @@
 /area/f13/bunker)
 "wC" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/robobrain{
-	desc = "A next-gen cybor developed by General Atomic International. This one seems particularly fond of Paper and Paper related products";
-	faction = list("raider");
-	health = 300;
-	name = "Fishbrain"
-	},
 /obj/item/paper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -1346,15 +1275,9 @@
 	},
 /area/f13/bunker)
 "xv" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/legendary{
-	desc = "A notorious cannibal raider, with a BIG knife. Oh no.";
-	health = 600;
-	name = "Jim";
-	obj_damage = 300;
-	speed = 1.5
-	},
-/turf/open/floor/plasteel/freezer,
+/obj/effect/decal/cleanable/blood/tracks,
+/mob/living/simple_animal/hostile/raider/legendary,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "xw" = (
 /obj/item/storage/trash_stack,
@@ -1368,13 +1291,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plasteel/freezer,
-/area/f13/bunker)
-"yg" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	faction = list("raider")
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "yh" = (
 /turf/open/floor/plasteel/f13{
@@ -1430,10 +1346,7 @@
 "yL" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1459,20 +1372,12 @@
 /area/f13/radiation)
 "yW" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "yY" = (
 /obj/item/storage/trash_stack,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1582,21 +1487,16 @@
 "BI" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/gibs/body,
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "BL" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "BM" = (
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/mob/living/simple_animal/hostile/raider/legendary,
+/turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "BW" = (
 /mob/living/simple_animal/hostile/raider/thief,
@@ -1608,15 +1508,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ce" = (
-/mob/living/simple_animal/hostile/handy/securitron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/securitron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ch" = (
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "Cp" = (
@@ -1740,10 +1636,7 @@
 /area/f13/bunker)
 "Ee" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "Em" = (
@@ -1879,10 +1772,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "He" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Hr" = (
@@ -1937,13 +1827,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"IG" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron{
-	faction = list("raider")
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
 "IL" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/abomhorror/nsb,
@@ -1982,9 +1865,7 @@
 /area/f13/tunnel)
 "Jf" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/securitron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "Jj" = (
@@ -2053,12 +1934,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "KA" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
-/obj/effect/decal/cleanable/oil/slippery,
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "KD" = (
@@ -2126,10 +2002,7 @@
 /area/f13/bunker)
 "KW" = (
 /obj/effect/decal/fakelattice,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -2237,10 +2110,7 @@
 /area/f13/bunker)
 "Nf" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/gutsy/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ni" = (
@@ -2254,9 +2124,7 @@
 /area/f13/tunnel)
 "Nu" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Nz" = (
@@ -2300,11 +2168,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "Pr" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ps" = (
@@ -2439,10 +2303,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "RF" = (
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "RH" = (
@@ -2621,9 +2482,7 @@
 /turf/open/water,
 /area/f13/tunnel)
 "Vp" = (
-/mob/living/simple_animal/hostile/handy/playable{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/nsb,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -2658,10 +2517,7 @@
 /area/f13/bunker)
 "VN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/raider/ranged/legendary{
-	aggro_vision_range = 15;
-	obj_damage = 300
-	},
+/mob/living/simple_animal/hostile/raider/ranged/legendary,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -2837,9 +2693,7 @@
 /area/f13/bunker)
 "YU" = (
 /obj/item/cultivator,
-/mob/living/simple_animal/hostile/handy/protectron{
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/protectron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Za" = (
@@ -2860,10 +2714,7 @@
 /area/f13/caves)
 "ZB" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot{
-	aggro_vision_range = 15;
-	faction = list("raider")
-	},
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "ZF" = (
@@ -2897,12 +2748,9 @@
 	},
 /area/f13/radiation)
 "ZZ" = (
-/mob/living/simple_animal/hostile/handy/assaultron{
-	aggro_vision_range = 15;
-	faction = list("raider");
-	obj_damage = 300
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
+/mob/living/simple_animal/hostile/handy/assaultron/nsb,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 
@@ -3410,7 +3258,7 @@ vv
 pC
 ER
 YG
-yg
+Nf
 Yn
 OT
 JI
@@ -3676,7 +3524,7 @@ Qk
 mn
 Rx
 Fo
-pC
+qL
 Yn
 Xy
 aJ
@@ -4230,7 +4078,7 @@ Yn
 pe
 LB
 qt
-IG
+Pr
 Yn
 QU
 BH
@@ -4296,8 +4144,8 @@ gM
 Yn
 wD
 yd
-sH
-xv
+BM
+ki
 Jj
 eU
 Jt
@@ -4330,12 +4178,12 @@ Gs
 PI
 pC
 kj
-kj
+xv
 tN
 Jq
 AC
 BI
-gI
+sH
 TZ
 Yg
 Yn
@@ -4368,7 +4216,7 @@ Yn
 Qj
 yu
 pC
-qL
+pC
 Yn
 sH
 ki
@@ -4436,7 +4284,7 @@ Sx
 Tt
 KK
 sK
-RF
+PI
 zz
 dT
 zH
@@ -4601,8 +4449,8 @@ ck
 dc
 Pr
 PI
+RF
 PI
-BM
 PI
 KA
 EO
@@ -4701,7 +4549,7 @@ Qh
 jE
 HX
 eu
-dx
+SD
 BH
 BH
 BH
@@ -4709,7 +4557,7 @@ BH
 WG
 Ed
 ck
-uG
+Jf
 yW
 WG
 ck
@@ -4737,7 +4585,7 @@ Vw
 Jf
 vw
 dx
-Jf
+gI
 vw
 vw
 BH
