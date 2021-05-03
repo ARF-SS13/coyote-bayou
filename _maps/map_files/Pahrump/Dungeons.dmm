@@ -265,6 +265,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/cell_charger,
 /obj/structure/table/wood,
+/obj/item/gun/ballistic/automatic/greasegun,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "ayt" = (
@@ -3047,9 +3048,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "eDm" = (
-/mob/living/simple_animal/hostile/ghoul/glowing,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "eDn" = (
@@ -9258,11 +9259,11 @@
 	},
 /area/f13/bunker)
 "nFn" = (
-/mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /obj/item/trash/waffles,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "nFP" = (
@@ -10350,6 +10351,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
 "piW" = (
@@ -14233,11 +14235,9 @@
 /area/f13/vault)
 "vkU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/ghoul/scorched/ranged{
-	faction = list("hostile")
-	},
 /obj/item/storage/trash_stack,
 /obj/effect/decal/waste,
+/mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "vlg" = (
@@ -16228,13 +16228,6 @@
 "xXn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
-"xXB" = (
-/mob/living/simple_animal/hostile/ghoul/scorched/ranged{
-	faction = list("hostile")
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/f13/wood,
 /area/f13/bunker)
 "xXG" = (
 /obj/structure/table/wood,
@@ -63431,7 +63424,7 @@ gKr
 woQ
 cKh
 cfZ
-xXB
+euI
 vuq
 abc
 mqp
