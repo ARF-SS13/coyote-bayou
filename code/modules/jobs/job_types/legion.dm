@@ -914,8 +914,8 @@ Camp Follower
 
 /datum/outfit/loadout/campfollowermatron
 	name = "Mater (Matron)"
+	head = /obj/item/clothing/head/f13/legion/servant
 	suit = /obj/item/clothing/suit/apron/chef
-	mask = /obj/item/clothing/mask/bandana/auxilia
 	backpack_contents = list(
 		/obj/item/kitchen/knife/butcher=1,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus=1,
@@ -931,8 +931,8 @@ Camp Follower
 
 /datum/outfit/loadout/campfollowerhealer
 	name = "Medicus (Healer)"
+	head = /obj/item/clothing/head/f13/legion/servant
 	suit = /obj/item/clothing/suit/armor/f13/medicus
-	mask = /obj/item/clothing/mask/bandana/auxilia
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
@@ -944,7 +944,6 @@ Camp Follower
 /datum/outfit/loadout/campfolloweroffduty
 	name = "Off-Duty Legionary"
 	uniform = /obj/item/clothing/under/f13/legskirt
-	shoes = /obj/item/clothing/shoes/f13/military/plated
 	mask = /obj/item/clothing/mask/bandana/oldredbandana
 	backpack_contents = list(
 		/obj/item/claymore/machete=1,
@@ -985,7 +984,6 @@ Slave
 
 /datum/outfit/loadout/slcook
 	name = "Servant"
-	head = /obj/item/clothing/head/f13/legion/servant
 	belt = /obj/item/kitchen/knife
 	backpack_contents = list(
 		/obj/item/radio=1,
