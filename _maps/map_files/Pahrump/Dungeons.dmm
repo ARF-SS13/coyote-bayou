@@ -8848,7 +8848,9 @@
 	desc = "A short drive back south to Miller in this rusty bucket of bolts, hopefully with gained supplies in tow";
 	height = 1;
 	id = "ncrmini";
-	name = "drive south"
+	layer = 5;
+	name = "drive south";
+	pixel_y = -20
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain1"
