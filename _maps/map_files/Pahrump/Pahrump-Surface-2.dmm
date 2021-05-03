@@ -33484,7 +33484,9 @@
 	desc = "A short drive to the north from Miller for supplies. It's a shame the bus can't go further, maybe if it wasn't a rusty hunk of scrap you could reach Vegas!";
 	height = 2;
 	id = "ncrmini";
-	name = "drive north"
+	layer = 4;
+	name = "drive north";
+	pixel_y = -20
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
