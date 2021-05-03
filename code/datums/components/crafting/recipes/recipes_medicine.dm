@@ -77,7 +77,8 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 50
 	category = CAT_MEDICAL
-	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super)
+	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/custom)
 
 /datum/crafting_recipe/salvage_stimpak
 	name = "Salvage injector"
