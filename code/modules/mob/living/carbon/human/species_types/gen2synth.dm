@@ -50,9 +50,9 @@
 	px_y = 0
 
 /obj/item/bodypart/head/synth
-    name = "synth head"
-    desc = "Ooo, flashy."
-    icon_state = "gen2synth_head"
-    max_damage = 50
-    body_zone = BODY_ZONE_HEAD
-    body_part = HEAD
+	name = "synth head"
+	desc = "Ooo, flashy."
+	icon_state = "gen2synth_head"
+	max_damage = 50
+	body_zone = BODY_ZONE_HEAD
+	body_part = HEAD
