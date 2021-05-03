@@ -842,3 +842,26 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "recon_armor"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	icon = 'icons/fallout/clothing/suits.dmi'
+
+//Mutants
+
+/obj/item/clothing/suit/armor/f13/mutant/poncho
+	name = "mutant poncho"
+	desc = "(IV) An oversized poncho, made to fit the frame of a super mutant. Maybe he's the big ranger with an iron on his hip?"
+	icon_state = "mutie_poncho"
+	item_state = "mutie_poncho"
+	armor = list("tier" = 4, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
+/obj/item/clothing/suit/armor/f13/mutant/metal
+	name = "mutant armour"
+	desc = "(V) An oversized set of metal armour, made to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
+	icon_state = "mutie_metal_armour"
+	item_state = "mutie_metal_armour"
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
+/obj/item/clothing/suit/armor/f13/mutant/metal/reinforced
+	name = "mutant armour"
+	desc = "(6) An oversized boiler plate, hammered to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
+	icon_state = "mutie_metal_armour_mk2"
+	item_state = "mutie_metal_armour_mk2"
+	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 40, "fire" = 30, "acid" = 20)

@@ -47,11 +47,6 @@
 	random_sensor = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/vaultmutie
-	name = "torn vault 113 jumpsuit"
-	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
-	icon_state = "mutie_vault_jumspuit"
-	item_state = "mutie_vault_jumspuit"
 
 //NCR
 
@@ -1347,3 +1342,15 @@
 	desc = "A fairly damaged red and white shirt with matching shorts, large enough to fit a super mutant."
 	icon_state = "mutie_santa"
 	item_state = "mutie_santa"
+
+/obj/item/clothing/under/f13/vaultmutie
+	name = "torn vault 113 jumpsuit"
+	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
+	icon_state = "mutie_vault_jumspuit"
+	item_state = "mutie_vault_jumspuit"
+
+/obj/item/clothing/under/f13/mutieranger
+	name = "mutant Ranger armour"
+	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
+	icon_state = "mutie_ranger_armour"
+	item_state = "mutie_ranger_armour"

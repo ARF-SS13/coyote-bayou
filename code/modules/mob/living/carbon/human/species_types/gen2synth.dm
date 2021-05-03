@@ -9,6 +9,7 @@
 	species_traits = list(NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
 	hair_alpha = 0
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
+	mutant_bodyparts = list("synth chest", "synth head")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 
@@ -37,3 +38,21 @@
 	if(rank in GLOB.vault_positions) //How did they even get in??.
 		return 0
 	return ..()
+
+/obj/item/bodypart/chest/synth
+	name = "synth chest"
+	desc = "It's impolite to stare at a person's chest."
+	icon_state = "gen2synth_chest"
+	max_damage = 150
+	body_zone = BODY_ZONE_CHEST
+	body_part = CHEST
+	px_x = 0
+	px_y = 0
+
+/obj/item/bodypart/head/synth
+    name = "synth head"
+    desc = "Ooo, flashy."
+    icon_state = "gen2synth_head"
+    max_damage = 50
+    body_zone = BODY_ZONE_HEAD
+    body_part = HEAD
