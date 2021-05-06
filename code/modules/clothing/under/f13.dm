@@ -1201,6 +1201,56 @@
 	resistance_flags = UNACIDABLE
 	body_parts_covered = LEGS
 
+/obj/item/clothing/under/f13/bos/fatigues
+	name = "Brotherhood fatigues"
+	desc = "A dry cleaned set of grey fatigues with a brown belt, commonly worn by the off-duty members of the Brotherhood of Steel."
+	icon_state = "bos_fatigues"
+	item_state = "bos_fatigues"
+
+/obj/item/clothing/under/f13/bos/bodysuit
+	name = "Brotherhood Knight fatigues"
+	desc = "A bodysuit worn by members of the Brotherhood of steel."
+	icon_state = "bos_bodysuit"
+	item_state = "bos_bodysuit"
+
+/obj/item/clothing/under/f13/bos/bodysuit/f
+	name = "Brotherhood bodysuit"
+	icon_state = "bos_bodysuit_f"
+	item_state = "bos_bodysuit_f"
+
+/obj/item/clothing/under/f13/bos/bodysuit/knight
+	name = "Brotherhood Knight bodysuit"
+	desc = "A bodysuit worn by the Knights of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_navy"
+	item_state = "bos_bodysuit_navy"
+
+/obj/item/clothing/under/f13/bos/bodysuit/knight/f
+	name = "Brotherhood Knight bodysuit"
+	icon_state = "bos_bodysuit_navy_f"
+	item_state = "bos_bodysuit_navy_f"
+
+/obj/item/clothing/under/f13/bos/bodysuit/scribe
+	name = "Brotherhood Scribe bodysuit"
+	desc = "A bodysuit worn by the Scribes of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_red"
+	item_state = "bos_bodysuit_red"
+
+/obj/item/clothing/under/f13/bos/bodysuit/scribe/f
+	name = "Brotherhood Scribe bodysuit"
+	icon_state = "bos_bodysuit_red_f"
+	item_state = "bos_bodysuit_red_f"
+
+/obj/item/clothing/under/f13/bos/bodysuit/paladin
+	name = "Brotherhood Paladin bodysuit"
+	desc = "A bodysuit worn by the Paladins of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_grey"
+	item_state = "bos_bodysuit_grey"
+
+/obj/item/clothing/under/f13/bos/bodysuit/paladin/f
+	name = "Brotherhood Scribe bodysuit"
+	icon_state = "bos_bodysuit_grey_f"
+	item_state = "bos_bodysuit_grey_f"
+
 /obj/item/clothing/under/f13/bosform_f
 	name = "female initiate service uniform"
 	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one has no markings, and looks to be for a feminine person."
