@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 48
+#define SAVEFILE_VERSION_MAX	51
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -127,6 +127,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			if(S["species"] == "skeleton")
 				left_eye_color = "#BAB99E"
 				right_eye_color = "#BAB99E"
+
+	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep
+		if(S["species"] == SPECIES_HUMAN)
+			features["legs"] = "Plantigrade"
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
