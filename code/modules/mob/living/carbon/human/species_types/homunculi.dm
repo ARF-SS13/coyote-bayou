@@ -1,5 +1,5 @@
 /datum/species/homunculi
-	name = "homunculi"
+	name = "homunculi synth"
 	id = "homunculi"
 	say_mod = "states"
 	limbs_id = "homunculi"
@@ -40,7 +40,7 @@
 	return ..()
 
 /obj/item/bodypart/chest/synth
-	name = "synth chest"
+	name = "synthetic chest"
 	desc = "It's impolite to stare at a person's chest."
 	icon_state = "gen2synth_chest"
 	max_damage = 150
@@ -50,7 +50,7 @@
 	px_y = 0
 
 /obj/item/bodypart/head/synth
-	name = "synth head"
+	name = "synthetic head"
 	desc = "Ooo, flashy."
 	icon_state = "gen2synth_head"
 	max_damage = 50
