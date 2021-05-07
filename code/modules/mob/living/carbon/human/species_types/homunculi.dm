@@ -1,8 +1,8 @@
-/datum/species/gen2synth
-	name = "second generation synth"
-	id = "gen2synth"
+/datum/species/homunculi
+	name = "homunculi"
+	id = "homunculi"
 	say_mod = "states"
-	limbs_id = "gen2synth"
+	limbs_id = "homunculi"
 	default_color = "FFFFFF"
 	blacklisted = 0
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_NO_PROCESS_FOOD,TRAIT_VIRUSIMMUNE,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
