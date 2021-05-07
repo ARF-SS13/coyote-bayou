@@ -1116,7 +1116,10 @@
 				/obj/effect/spawner/bundle/f13/plasmapistol,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/commando,
-				/obj/effect/spawner/bundle/f13/mk23
+				/obj/effect/spawner/bundle/f13/mk23,
+				/obj/effect/spawner/bundle/f13/revolverm29,
+				/obj/effect/spawner/bundle/f13/needler,
+				/obj/effect/spawner/bundle/f13/neostead
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier8
@@ -1125,15 +1128,12 @@
 				/obj/effect/spawner/bundle/f13/r84,
 				/obj/effect/spawner/bundle/f13/assault_rifle,
 				/obj/effect/spawner/bundle/f13/marksman,
-				/obj/effect/spawner/bundle/f13/revolverm29,
-				/obj/effect/spawner/bundle/f13/neostead,
 				/obj/effect/spawner/bundle/f13/aer9,
 				/obj/effect/spawner/bundle/f13/ionrifle,
 				/obj/effect/spawner/bundle/f13/mp5,
 				/obj/effect/spawner/bundle/f13/citykiller,
-				/obj/effect/spawner/bundle/f13/needler,
 				/obj/effect/spawner/bundle/f13/brushgun,
-				/obj/effect/spawner/bundle/f13/thatgun
+				/obj/effect/spawner/bundle/f13/infiltrator
 				)
 
 /obj/effect/spawner/bundle/f13/r82
@@ -1159,27 +1159,29 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
 		/obj/item/ammo_box/shotgun/buck
 	)
-/obj/effect/spawner/bundle/f13/thatgun
-	name = "556 pistol spawner"
-	items = list(
-				/obj/item/gun/ballistic/revolver/thatgun
-	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier9
 	name = "tier 9 gun"
-	loot = list(/obj/effect/spawner/bundle/f13/infiltrator,
-				/obj/effect/spawner/bundle/f13/rangemaster,
+	loot = list(/obj/effect/spawner/bundle/f13/rangemaster,
 				/obj/effect/spawner/bundle/f13/wattz2k,
 				/obj/effect/spawner/bundle/f13/rcw,
 				/obj/effect/spawner/bundle/f13/breacher,
 				/obj/effect/spawner/bundle/f13/beam,
-				/obj/effect/spawner/bundle/f13/aer12
+				/obj/effect/spawner/bundle/f13/aer12,
+				/obj/effect/spawner/bundle/f13/hunting
 				)
 
 /obj/effect/spawner/bundle/f13/beam
 	name = "medbeam spawner"
 	items = list(
 				/obj/item/gun/medbeam
+	)
+
+/obj/effect/spawner/bundle/f13/hunting
+	name = "hunting revolver spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/hunting,
+				/obj/item/ammo_box/tube/c4570
 	)
 
 /obj/effect/spawner/bundle/f13/breacher
@@ -1190,7 +1192,7 @@
 	)
 
 /obj/effect/spawner/bundle/f13/aer12
-	name = "breacher and ammo spawner"
+	name = "aer12 and ammo spawner"
 	items = list(
 				/obj/item/gun/energy/laser/aer12,
 				/obj/item/stock_parts/cell/ammo/mfc

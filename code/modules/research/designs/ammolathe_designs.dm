@@ -22,7 +22,7 @@
 	build_path = /obj/item/stack/ore/blackpowder
 	category = list("initial", "Materials")
 	maxstack = 50
-	
+
 /datum/design/ammolathe/titanium
 	name = "Titanium"
 	id = "titanium"
@@ -469,12 +469,12 @@
 	build_path = /obj/item/ammo_box/a762box/ap
 	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/a45op
+/*/datum/design/ammolathe/a45op
 	name = ".45 ACP +P ammo box"
 	id = "a45op"
 	materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/c45/op
-	category = list("initial", "Intermediate Ammo")
+	category = list("initial", "Intermediate Ammo")*/
 
 /* --Tier 4 Ammo and Magazines-- */
 //Tier 4 Magazines
@@ -536,25 +536,18 @@
 	build_path = /obj/item/ammo_box/magazine/m2mm
 	category = list("initial", "Advanced Ammo")
 
-/datum/design/ammolathe/a9mmop
+/*/datum/design/ammolathe/a9mmop
 	name = "9mm +P ammo box"
 	id = "a9mmop"
 	materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 3500)
 	build_path = /obj/item/ammo_box/c9mm/op
-	category = list("initial", "Advanced Ammo")
+	category = list("initial", "Advanced Ammo")*/
 
 /datum/design/ammolathe/a4570swc
 	name = ".45-70 SWC ammo box"
 	id = "a4570swc"
 	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 3500)
 	build_path = /obj/item/ammo_box/c4570box/swc
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a762jsp
-	name = "7.62mm JSP ammo box"
-	id = "a762jsp"
-	materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 3500)
-	build_path = /obj/item/ammo_box/a762box/jsp
 	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/a762match
