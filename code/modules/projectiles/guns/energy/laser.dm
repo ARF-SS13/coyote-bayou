@@ -576,7 +576,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/aer12
-	name = "\improper AER14 laser rifle"
+	name = "\improper AER12 laser rifle"
 	desc = "The AER12, a successor to the AER9, is a cutting-edge state of the art laser rifle employed pre-war in specialty units, featuring green-beams and associated green-trim"
 	icon_state = "aer12"
 	item_state = "laser-rifle9"

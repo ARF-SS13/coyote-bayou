@@ -3253,11 +3253,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
-"eRb" = (
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubblepillar"
-	},
-/area/f13/caves)
 "eRf" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -7447,7 +7442,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/attachments,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -8080,9 +8075,7 @@
 "mas" = (
 /obj/structure/timeddoor,
 /obj/machinery/light/fo13colored/Red,
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubblepillar"
-	},
+/turf/closed/mineral/random/low_chance,
 /area/f13/bunker)
 "mav" = (
 /obj/structure/table/wood,
@@ -8273,12 +8266,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
-"mmk" = (
-/obj/structure/timeddoor,
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubblepillar"
-	},
-/area/f13/bunker)
 "mmy" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -15772,12 +15759,6 @@
 	},
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
-"xph" = (
-/obj/structure/timeddoor,
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubbleslab"
-	},
 /area/f13/bunker)
 "xpD" = (
 /turf/closed/wall/f13/tunnel,
@@ -46336,7 +46317,7 @@ bsh
 bsh
 bsh
 bsh
-mmk
+qYk
 aUx
 cIT
 cIT
@@ -46592,8 +46573,8 @@ bsh
 bsh
 bsh
 bsh
-eRb
-xph
+bsh
+qYk
 gwy
 fku
 qsb
@@ -46850,7 +46831,7 @@ byG
 bsh
 bsh
 bsh
-mmk
+qYk
 gwy
 qsb
 qsb
@@ -48392,7 +48373,7 @@ bsh
 bsh
 rog
 bsh
-xph
+qYk
 wvj
 vwf
 vId
@@ -49174,7 +49155,7 @@ cIT
 bQs
 gwy
 ibz
-vPZ
+uXT
 gwy
 laJ
 koh
