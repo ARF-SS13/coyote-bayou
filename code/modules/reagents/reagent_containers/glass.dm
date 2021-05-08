@@ -419,7 +419,7 @@
 
 /obj/item/reagent_containers/glass/mortar
 	name = "bone mortar"
-	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject any item put inside. Alt click while empty to change between grind/juice mode."
+	desc = "A specially formed bowl of ancient design. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting."
 	icon_state = "bone_mortar"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
@@ -428,6 +428,11 @@
 	spillable = TRUE
 	var/obj/item/grinded
 	var/mortar_mode = MORTAR_JUICE
+
+/obj/item/reagent_containers/glass/mortar/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to eject any item put inside.</span>"
+	. += "<span class='notice'>Alt-click while the mortar is empty to change between grind/juice mode.</span>"
 
 /obj/item/reagent_containers/glass/mortar/AltClick(mob/user)
 	if(grinded)
@@ -448,7 +453,7 @@
 				return
 			to_chat(user, "<span class='notice'>You start grinding...</span>")
 			if((do_after(user, 25, target = src)))
-				user.adjustStaminaLoss(20)
+				user.adjustStaminaLoss(15)
 				if(grinded.juice_results && (mortar_mode== MORTAR_JUICE)) // will prioritize juicing IF the Mortar's toggled to juice.
 					grinded.on_juice()
 					reagents.add_reagent_list(grinded.juice_results)
