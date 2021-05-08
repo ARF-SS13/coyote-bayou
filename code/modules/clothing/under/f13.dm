@@ -1384,6 +1384,33 @@
 	item_state = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
+/obj/item/clothing/under/f13/marlowduds
+	name = "Marlow gang attire"
+	desc = "A washed out crimson overshirt with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "marlowduds"
+	item_state = "marlowduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/ikeduds
+	name = "gunfighter's gang attire"
+	desc = "A washed out crimson overshirt with blue neckerchief and raw buckskin trousers. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "ikeduds"
+	item_state = "ikeduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/helenduds
+	name = "gambler's gang attire"
+	desc = "A worn black dress shirt under a deep crimson vest with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "helenduds"
+	item_state = "helenduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/masonduds
+	name = "vagabond's gang attire"
+	desc = "A pair of worn buckskin trousers held up by a heavy pistol belt. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "masonduds"
+	item_state = "masonduds"
+
 //Super Mutants
 
 /obj/item/clothing/under/f13/mutieshorts
