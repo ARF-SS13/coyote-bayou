@@ -209,16 +209,16 @@
 	config_entry_value = ""
 
 /datum/config_entry/string/discordurl
-	config_entry_value = "https://discord.gg/VgSPXtR2"
+	config_entry_value = "https://discord.gg/a5Nb6vgVcG"
 
 /datum/config_entry/string/wikiurltg
 	config_entry_value = ""
 
 /datum/config_entry/string/forumurl
-	config_entry_value = "https://discord.gg/VgSPXtR2"
+	config_entry_value = "https://discord.gg/a5Nb6vgVcG"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "https://discord.gg/VgSPXtR2"
+	config_entry_value = "https://discord.gg/a5Nb6vgVcG"
 
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://github.com/nokele/desertrose"

@@ -307,7 +307,7 @@ GLOBAL_LIST(topic_status_cache)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/w3NWQX6n\">" //Change this to wherever you want the hub to link to. CIT CHANGE - links to cit's website on the hub
+	s += "<a href=\"https://discord.gg/a5Nb6vgVcG\">" //Change this to wherever you want the hub to link to. CIT CHANGE - links to cit's website on the hub
 	s += "WIP Fallout"  //Replace this with something else. Or ever better, delete it and uncomment the game version. CIT CHANGE - modifies the hub entry link
 	s += "</a>"
 	s += ")\]" //CIT CHANGE - encloses the server title in brackets to make the hub entry fancier
