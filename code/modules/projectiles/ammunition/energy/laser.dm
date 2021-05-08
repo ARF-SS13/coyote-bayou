@@ -102,6 +102,11 @@
 	e_cost = 80 //20 shots
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 
+/obj/item/ammo_casing/energy/laser/lucky37
+	projectile_type = /obj/item/projectile/beam/laser/pistol
+	e_cost = 180 //11 shots
+	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+
 /obj/item/ammo_casing/energy/laser/ultra_pistol
 	projectile_type = /obj/item/projectile/beam/laser/ultra_pistol
 	e_cost = 80 //20 shots
