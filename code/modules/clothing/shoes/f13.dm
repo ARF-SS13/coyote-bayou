@@ -174,9 +174,10 @@
 
 /obj/item/clothing/shoes/f13/mutie/boots
 	name = "super mutant boots"
+	desc = "(III) A pair of oversized boots."
 	icon_state = "mutie_boots"
 	icon_state = "mutie_boots"
-	armor = list("tier" = 1)
+	armor = list("tier" = 3, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 40, "fire" = 30, "acid" = 20)
 	cold_protection = FEET
 
 /obj/item/clothing/shoes/f13/mutie/boots/dark
@@ -186,4 +187,7 @@
 /obj/item/clothing/shoes/f13/mutie/boots/ncr
 	icon_state = "mutie_boots_ncr"
 	icon_state = "mutie_boots_ncr"
-	armor = list("tier" = 2)
+
+/obj/item/clothing/shoes/f13/mutie/boots/ncr/ranger
+	icon_state = "mutie_boots_ranger"
+	icon_state = "mutie_boots_ranger"

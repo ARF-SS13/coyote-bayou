@@ -524,8 +524,8 @@
 	merge_type = /obj/item/stack/medical/poultice
 	novariants = TRUE
 
-/obj/item/stack/medical/poultice/one
-	amount = 1
+/obj/item/stack/medical/poultice/ten
+	amount = 10
 
 /obj/item/stack/medical/poultice/five
 	amount = 5
@@ -548,4 +548,4 @@
 /datum/chemical_reaction/mourningpoultice/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= multiplier, i++)
-		new /obj/item/stack/medical/poultice/one(location)
+		new /obj/item/stack/medical/poultice/five(location)
