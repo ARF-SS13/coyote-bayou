@@ -827,3 +827,15 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/helmet/f13/marlowhat
+	name = "boss of the plains hat"
+	desc = "(IV) A thick undyed felt cowboy hat, bleached from excessive sun exposure and creased from heavy usage."
+	icon_state = "marlowhat"
+	item_state = "marlowhat"
+	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/helmet/f13/marlowhat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)

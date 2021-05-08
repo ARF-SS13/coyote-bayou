@@ -411,6 +411,12 @@
 	item_state = "ncr_codressjack"
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
+	name = "NCR officer vest"
+	desc = "(VII) A special issue NCR officer's armour with an added thick overcoat for protection from the elements."
+	icon_state = "ncr_officer_coat"
+	item_state = "ncr_officer_coat"
+
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
 	name = "ranger recon duster"
