@@ -106,13 +106,14 @@
 //the nests themselves
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5, 
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3, 
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
 
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
-	max_mobs = 2
+	max_mobs = 1
 	spawn_time = 50 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 19, 
 					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
@@ -120,32 +121,36 @@
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
 	spawn_time = 40 SECONDS
-	max_mobs = 4
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/radscorpion = 1,
 					/mob/living/simple_animal/hostile/radscorpion/black = 1)
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant
 	name = "fireant nest"
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 1,
 					/mob/living/simple_animal/hostile/giantant = 1)
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
 	spawn_time = 40 SECONDS
-	max_mobs = 4
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/alien = 1)
 
 /obj/structure/nest/molerat
 	name = "molerat nest"
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 1)
 	spawn_time = 20 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/mirelurk = 2,
 					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 					/mob/living/simple_animal/hostile/mirelurk/baby = 5)

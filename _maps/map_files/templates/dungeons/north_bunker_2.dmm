@@ -181,11 +181,6 @@
 /obj/item/seeds/ambrosia/gaia,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"ee" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "eq" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /obj/structure/spider/stickyweb,
@@ -384,11 +379,6 @@
 /area/f13/bunker)
 "hI" = (
 /obj/structure/table_frame,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"hS" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ia" = (
@@ -742,6 +732,10 @@
 "pt" = (
 /obj/item/stack/medical/mesh,
 /turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"pA" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/grass,
 /area/f13/bunker)
 "pI" = (
 /obj/structure/spider/stickyweb,
@@ -3049,7 +3043,7 @@ xG
 eG
 sJ
 XS
-Eg
+qV
 xG
 Rl
 Rl
@@ -3725,7 +3719,7 @@ Rl
 xG
 IY
 pQ
-DM
+go
 oj
 Pp
 XM
@@ -3994,7 +3988,7 @@ XM
 mj
 XM
 xG
-hS
+gk
 xG
 AE
 Bw
@@ -4537,7 +4531,7 @@ Om
 Om
 KY
 nu
-fy
+nu
 nu
 Om
 nu
@@ -4614,7 +4608,7 @@ QJ
 Ed
 nu
 nu
-dj
+pA
 nu
 nu
 dj
@@ -5018,7 +5012,7 @@ PF
 oj
 hI
 go
-ee
+Hi
 oj
 YR
 gu
