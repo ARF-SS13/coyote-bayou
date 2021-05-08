@@ -24,12 +24,12 @@
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "hits"
-	maxHealth = 550
-	health = 550
+	maxHealth = 750
+	health = 750
 	obj_damage = 200
 	armour_penetration = 0.7
-	melee_damage_lower = 60
-	melee_damage_upper = 65
+	melee_damage_lower = 80
+	melee_damage_upper = 85
 	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("deathclaw")
@@ -59,8 +59,8 @@
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
 	gender = FEMALE
-	maxHealth = 750
-	health = 750
+	maxHealth = 1000
+	health = 1000
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 76
 	melee_damage_upper = 78

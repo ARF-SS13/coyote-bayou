@@ -193,12 +193,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"kt" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/neutral/side{
-	dir = 8
-	},
-/area/f13/tunnel)
 "kz" = (
 /obj/machinery/light/small,
 /obj/machinery/conveyor/auto{
@@ -347,7 +341,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "pi" = (
-/mob/living/simple_animal/hostile/supermutant,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/neutral/side,
 /area/f13/tunnel)
@@ -549,7 +542,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/neutral/side{
 	dir = 8
 	},
@@ -716,11 +708,6 @@
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"Hu" = (
-/mob/living/simple_animal/hostile/supermutant,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/neutral,
-/area/f13/tunnel)
 "HI" = (
 /obj/structure/nest/deathclaw,
 /turf/open/water,
@@ -747,17 +734,6 @@
 	dir = 8
 	},
 /area/f13/tunnel)
-"IO" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/supermutant,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/neutral/side{
-	dir = 4
-	},
-/area/f13/tunnel)
 "IW" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8"
@@ -766,8 +742,8 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "IZ" = (
-/mob/living/simple_animal/hostile/supermutant,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/legendary,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Jh" = (
@@ -856,7 +832,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "No" = (
-/mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/neutral/side{
 	dir = 10
 	},
@@ -878,15 +853,16 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"Oe" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plating/tunnel,
-/area/f13/tunnel)
 "Of" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"Or" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/plasteel/neutral,
 /area/f13/tunnel)
 "OI" = (
 /obj/structure/simple_door/bunker,
@@ -1096,13 +1072,6 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
-/area/f13/tunnel)
-"Yj" = (
-/mob/living/simple_animal/hostile/supermutant,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/neutral/side{
-	dir = 4
-	},
 /area/f13/tunnel)
 "Yr" = (
 /obj/structure/simple_door/bunker,
@@ -2075,9 +2044,9 @@ AV
 AV
 pG
 TP
-Yj
 AV
-IO
+AV
+vD
 us
 kE
 mZ
@@ -2109,14 +2078,14 @@ pi
 sw
 sw
 gM
+Or
 sw
-Hu
 sw
 gM
 FL
+Or
 sw
 sw
-Hu
 EW
 iV
 NS
@@ -2151,7 +2120,7 @@ lm
 lm
 QF
 wj
-kt
+In
 In
 wO
 za
@@ -2298,7 +2267,7 @@ iY
 Kr
 mT
 iY
-Oe
+Qs
 Rj
 Qs
 iY
@@ -2414,7 +2383,7 @@ Kr
 iY
 Rj
 Jh
-Oe
+Qs
 iY
 hL
 Rj
@@ -2490,7 +2459,7 @@ Kr
 iY
 jZ
 Jh
-Oe
+Qs
 iY
 iu
 qv

@@ -1622,12 +1622,6 @@
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"bgo" = (
-/obj/structure/table/wood/settler,
-/obj/item/reagent_containers/food/snacks/f13/canned/porknbeans,
-/obj/effect/spawner/lootdrop/clothing_low,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "bgz" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -2773,7 +2767,6 @@
 /area/f13/wasteland)
 "bTf" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "bTh" = (
@@ -3302,13 +3295,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
-"csz" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "csO" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
@@ -4195,11 +4181,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
-"dbG" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "dbH" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -4259,11 +4240,6 @@
 /area/f13/village)
 "ddd" = (
 /obj/item/trash/f13/dog,
-/turf/open/floor/f13/wood,
-/area/f13/building)
-"ddG" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ddR" = (
@@ -4941,8 +4917,6 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/smelling_salts/wayfarer,
 /obj/item/smelling_salts/wayfarer,
-/obj/item/stack/medical/poultice,
-/obj/item/stack/medical/poultice,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "dAg" = (
@@ -5017,7 +4991,6 @@
 /area/f13/wasteland)
 "dBM" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -5151,13 +5124,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"dHY" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/road{
-	dir = 8;
-	icon_state = "horizontalinnermain2left"
-	},
-/area/f13/wasteland)
 "dIN" = (
 /obj/structure/ore_box,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5316,7 +5282,6 @@
 	dir = 1;
 	pixel_y = 6
 	},
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "dNW" = (
@@ -8801,7 +8766,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -11930,22 +11894,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "idS" = (
@@ -12180,12 +12128,6 @@
 	},
 /turf/open/water,
 /area/f13/radiation)
-"ilT" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "ime" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13344,13 +13286,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/city)
-"iTf" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/ncr)
 "iTk" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -13664,8 +13599,6 @@
 /area/f13/city)
 "jfu" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
-/obj/item/reagent_containers/food/snacks/f13/canned/dog,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1
@@ -16470,10 +16403,6 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood)
-"lcx" = (
-/obj/machinery/chem_master/primitive,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/village)
 "lda" = (
 /obj/structure/decoration/clock{
 	pixel_y = 30
@@ -18054,14 +17983,6 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
-"mbo" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
-/turf/open/floor/carpet,
-/area/f13/ncr)
 "mbz" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/pill/patch/jet,
@@ -21154,10 +21075,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"onR" = (
-/obj/machinery/chem_master/primitive,
-/turf/open/floor/f13/wood,
-/area/f13/legion)
 "onU" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood{
@@ -21222,7 +21139,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/stack/medical/poultice,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "opW" = (
@@ -21608,7 +21524,6 @@
 /obj/machinery/iv_drip,
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/stack/medical/poultice,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "oFJ" = (
@@ -21941,7 +21856,6 @@
 /area/f13/village)
 "oQM" = (
 /obj/structure/table/booth,
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "oRq" = (
@@ -29135,7 +29049,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -33594,11 +33507,6 @@
 /obj/item/restraints/handcuffs,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"wBh" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/ncr_k_ration,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "wBo" = (
 /obj/machinery/light/broken,
 /turf/open/floor/f13/wood,
@@ -34901,10 +34809,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
-"xnY" = (
-/obj/machinery/chem_master/primitive,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "xnZ" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/oil{
@@ -37312,7 +37216,7 @@ svP
 rUp
 rrE
 sUP
-mbo
+sZT
 rrE
 sUP
 sZT
@@ -38843,7 +38747,7 @@ pOM
 pOM
 pOM
 xnt
-iTf
+pOM
 nss
 pQx
 tUj
@@ -43728,7 +43632,7 @@ sGG
 cpK
 uok
 atX
-wBh
+atX
 uok
 cpK
 cpK
@@ -43984,7 +43888,7 @@ lvS
 eJe
 cpK
 uok
-dbG
+atX
 atX
 uok
 cpK
@@ -44499,7 +44403,7 @@ eJe
 cpK
 uok
 atX
-dbG
+atX
 uok
 cpK
 cpK
@@ -45342,7 +45246,7 @@ gke
 qFk
 otr
 otr
-lcx
+otr
 qFk
 gcK
 gcK
@@ -51004,7 +50908,7 @@ vsm
 uRJ
 wsq
 uRJ
-xnY
+uRJ
 iWc
 tBN
 mvv
@@ -64638,7 +64542,7 @@ koD
 bFJ
 gjP
 jTq
-bgo
+vFz
 lly
 uRJ
 cbk
@@ -68941,7 +68845,7 @@ xKx
 gts
 kIl
 iPf
-jYn
+vYv
 vYv
 vYv
 gts
@@ -73825,7 +73729,7 @@ gts
 vYv
 vYv
 vYv
-jYn
+vYv
 vYv
 vYv
 vYv
@@ -74348,7 +74252,7 @@ kGc
 ofX
 hbW
 erY
-dHY
+ubg
 koD
 pcG
 pcG
@@ -92062,7 +91966,7 @@ fyf
 fyf
 fyf
 tKZ
-csz
+guh
 cAM
 cqA
 nqG
@@ -92578,7 +92482,7 @@ jVC
 sYX
 nrw
 cSE
-ddG
+cSH
 cSH
 rpu
 aug
@@ -92586,7 +92490,7 @@ sKH
 rpu
 rpu
 rpu
-ilT
+cSH
 tKZ
 fyf
 fyf
@@ -93100,7 +93004,7 @@ rpu
 rpu
 iwR
 sKH
-ddG
+cSH
 tKZ
 fyf
 fyf
@@ -98390,7 +98294,7 @@ tZW
 tZW
 lez
 vHR
-onR
+xNm
 udT
 fBx
 wPS
