@@ -1,6 +1,42 @@
 /datum/job/wasteland
 	department_flag = WASTELAND
 
+/datum/job/wasteland/enclavespy
+	title = "Undercover Enclave"
+	flag = F13USPRIVATE
+	faction = "Enclave"
+	total_positions = 3
+	spawn_positions = 3
+	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless absolutely necessary."
+	forbids = ""
+	enforces = ""
+	supervisors = "The United States Government."
+	selection_color = "#95a5a6"
+
+	outfit = /datum/outfit/job/wasteland/enclavespy
+
+/datum/outfit/job/wasteland/enclavespy
+	name = "Enclave Operative"
+	jobtype = /datum/job/wasteland/covenwitch
+	backpack = /obj/item/storage/backpack/satchel/leather
+	head = 			/obj/item/clothing/head/helmet/f13/combat
+	ears = 			/obj/item/radio/headset/headset_enclave
+	glasses = 		/obj/item/clothing/glasses/night
+	uniform =		/obj/item/clothing/under/f13/settler
+	suit = 			/obj/item/clothing/suit/armor/f13/combat
+	belt = 			/obj/item/storage/belt/military/army
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	id = 			/obj/item/card/id/syndicate/anyone
+	suit_store =  	/obj/item/gun/energy/laser/plasma/pistol
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/grenade/flashbang=1,
+		/obj/item/pda=1,
+		/obj/item/stock_parts/cell/ammo/ec=3,
+		/obj/item/storage/bag/money/small/wastelander
+		)
+
 /*
 Coven Stuff
 */
@@ -48,7 +84,7 @@ Great Khan
 
 /datum/job/wasteland/f13pusher
 	title = "Great Khan"
-	flag = F13PUSHER
+	flag = F13USPRIVATE
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Wastelander"

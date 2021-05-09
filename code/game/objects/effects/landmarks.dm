@@ -803,6 +803,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Detective"
 
 // Enclave
+/obj/effect/landmark/start/f13/usspy
+	name = "Undercover Enclave"
 
 /obj/effect/landmark/start/f13/uscommander
 	name = "US Commander"

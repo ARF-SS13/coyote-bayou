@@ -283,7 +283,8 @@ GLOBAL_LIST_INIT(vault_positions, list(
 GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
-	"Wastelander"
+	"Wastelander",
+	"Undercover Enclave"
 ))
 GLOBAL_LIST_INIT(security_positions, list(
 	"Vault-tec Security",
