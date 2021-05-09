@@ -27,13 +27,6 @@
 	wound_bonus = 10
 	bare_wound_bonus = -10
 
-/obj/item/projectile/bullet/a762/jsp
-	name = "7.62 JSP bullet"
-	damage = 55 //48
-	armour_penetration = 0.1 //0.5
-	wound_bonus = 20
-	bare_wound_bonus = 20
-
 /obj/item/projectile/bullet/a762/match
 	name = "7.62 match bullet"
 	damage = 47 //50

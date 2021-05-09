@@ -54,6 +54,25 @@
 
 	usr.emote("me",1,message,TRUE)
 
+/**
+ * Ensure that the first word of a sentence gets transformed into lower case
+ * e.g. `Nods her head and stares at McMullen` becomes
+ * `nods her head and stares at McMullen`.
+ */
+/proc/lowertext_first_word(sentence)
+	var/list/words_in_sentence = splittext(sentence, regex(@"[ ]+"))
+	var/treated_sentence = ""
+	var/sentence_len = length(words_in_sentence)
+	if(sentence_len == 0)
+		return sentence
+	var/i = 0
+	for(var/word_in_sentence in words_in_sentence)
+		treated_sentence += i == 0 ? lowertext(word_in_sentence) : word_in_sentence
+		if (i != sentence_len - 1)
+			treated_sentence += " "
+		i += 1
+	return treated_sentence
+
 /mob/say_mod(input, message_mode)
 	if(message_mode == MODE_WHISPER_CRIT)
 		return ..()
@@ -63,7 +82,7 @@
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
 		message_mode = MODE_CUSTOM_SAY
-		return lowertext(copytext_char(input, 1, customsayverb))
+		return lowertext_first_word(copytext_char(input, 1, customsayverb))
 	return ..()
 
 /proc/uncostumize_say(input, message_mode)

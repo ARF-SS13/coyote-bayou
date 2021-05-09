@@ -19,15 +19,11 @@
 	name = "7.62 JHP bullet casing"
 	projectile_type = /obj/item/projectile/bullet/a762/jhp
 
-/obj/item/ammo_casing/a762/jsp
-	name = "7.62 JSP bullet casing"
-	projectile_type = /obj/item/projectile/bullet/a762/jsp
-
 /obj/item/ammo_casing/a762/match
 	name = "7.62 match bullet casing"
 	projectile_type = /obj/item/projectile/bullet/a762/match
 
-// 5.56mm 
+// 5.56mm
 /obj/item/ammo_casing/a556
 	name = "5.56mm FMJ bullet casing"
 	desc = "A 5.56mm bullet casing."

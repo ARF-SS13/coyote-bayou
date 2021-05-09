@@ -661,6 +661,12 @@
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 	strip_delay = 20
 
+/obj/item/clothing/head/f13/boscap/beret
+	name = "brotherhood beret"
+	desc = "(I) A beret typically worn with the standard fatigues of the local Brotherhood of Steel Chapter."
+	icon_state = "bos_beret"
+	item_state = "bos_beret"
+
 //Oasis/Town
 
 /obj/item/clothing/head/f13/town

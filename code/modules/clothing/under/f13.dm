@@ -47,11 +47,6 @@
 	random_sensor = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
-/obj/item/clothing/under/f13/vaultmutie
-	name = "torn vault 113 jumpsuit"
-	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
-	icon_state = "mutie_vault_jumspuit"
-	item_state = "mutie_vault_jumspuit"
 
 //NCR
 
@@ -1206,6 +1201,61 @@
 	resistance_flags = UNACIDABLE
 	body_parts_covered = LEGS
 
+/obj/item/clothing/under/f13/bos/fatigues
+	name = "Brotherhood fatigues"
+	desc = "A dry cleaned set of grey fatigues with a brown belt, commonly worn by the off-duty members of the Brotherhood of Steel."
+	icon_state = "bos_fatigues"
+	item_state = "bos_fatigues"
+
+/obj/item/clothing/under/f13/bos/bodysuit
+	name = "Brotherhood Knight fatigues"
+	desc = "A bodysuit worn by members of the Brotherhood of steel."
+	icon_state = "bos_bodysuit"
+	item_state = "bos_bodysuit"
+
+/obj/item/clothing/under/f13/bos/f/bodysuit
+	name = "Brotherhood bodysuit"
+	desc = "A bodysuit worn by members of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_f"
+	item_state = "bos_bodysuit_f"
+	body_parts_covered = CHEST
+
+/obj/item/clothing/under/f13/bos/bodysuit/knight
+	name = "Brotherhood Knight bodysuit"
+	desc = "A bodysuit worn by the Knights of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_navy"
+	item_state = "bos_bodysuit_navy"
+
+/obj/item/clothing/under/f13/bos/f/bodysuit/knight
+	name = "Brotherhood Knight bodysuit"
+	desc = "A bodysuit worn by the Knights of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_navy_f"
+	item_state = "bos_bodysuit_navy_f"
+
+/obj/item/clothing/under/f13/bos/bodysuit/scribe
+	name = "Brotherhood Scribe bodysuit"
+	desc = "A bodysuit worn by the Scribes of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_red"
+	item_state = "bos_bodysuit_red"
+
+/obj/item/clothing/under/f13/bos/f/bodysuit/scribe
+	name = "Brotherhood Scribe bodysuit"
+	desc = "A bodysuit worn by the Scribes of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_red_f"
+	item_state = "bos_bodysuit_red_f"
+
+/obj/item/clothing/under/f13/bos/bodysuit/paladin
+	name = "Brotherhood Paladin bodysuit"
+	desc = "A bodysuit worn by the Paladins of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_grey"
+	item_state = "bos_bodysuit_grey"
+
+/obj/item/clothing/under/f13/bos/f/bodysuit/paladin
+	name = "Brotherhood Scribe bodysuit"
+	desc = "A bodysuit worn by the Paladins of the Brotherhood of steel."
+	icon_state = "bos_bodysuit_grey_f"
+	item_state = "bos_bodysuit_grey_f"
+
 /obj/item/clothing/under/f13/bosform_f
 	name = "female initiate service uniform"
 	desc = "A dry-cleaned and fitted formal uniform of the Brotherhood of Steel, for special occasions. This one has no markings, and looks to be for a feminine person."
@@ -1334,6 +1384,33 @@
 	item_state = "GunnerPlates"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
+/obj/item/clothing/under/f13/marlowduds
+	name = "Marlow gang attire"
+	desc = "A washed out crimson overshirt with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "marlowduds"
+	item_state = "marlowduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/ikeduds
+	name = "gunfighter's gang attire"
+	desc = "A washed out crimson overshirt with blue neckerchief and raw buckskin trousers. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "ikeduds"
+	item_state = "ikeduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/helenduds
+	name = "gambler's gang attire"
+	desc = "A worn black dress shirt under a deep crimson vest with blue neckerchief and suspended black slacks. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "helenduds"
+	item_state = "helenduds"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/masonduds
+	name = "vagabond's gang attire"
+	desc = "A pair of worn buckskin trousers held up by a heavy pistol belt. The attire is synonymous with the colors of the criminal Marlow gang."
+	icon_state = "masonduds"
+	item_state = "masonduds"
+
 //Super Mutants
 
 /obj/item/clothing/under/f13/mutieshorts
@@ -1347,3 +1424,15 @@
 	desc = "A fairly damaged red and white shirt with matching shorts, large enough to fit a super mutant."
 	icon_state = "mutie_santa"
 	item_state = "mutie_santa"
+
+/obj/item/clothing/under/f13/vaultmutie
+	name = "torn vault 113 jumpsuit"
+	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
+	icon_state = "mutie_vault_jumspuit"
+	item_state = "mutie_vault_jumspuit"
+
+/obj/item/clothing/under/f13/mutieranger
+	name = "mutant Ranger armour"
+	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
+	icon_state = "mutie_ranger_armour"
+	item_state = "mutie_ranger_armour"

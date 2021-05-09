@@ -320,11 +320,6 @@
 	ammo_type = /obj/item/ammo_casing/a762/ap
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/titanium = 5000, /datum/material/blackpowder = 2000)
 
-/obj/item/ammo_box/a762box/jsp
-	name = "ammo box (7.62x51 JSP)"
-	ammo_type = /obj/item/ammo_casing/a762/jsp
-	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 3500)
-
 /obj/item/ammo_box/a762box/match
 	name = "ammo box (7.62x51 Match)"
 	ammo_type = /obj/item/ammo_casing/a762/match

@@ -313,7 +313,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	name = "bottle of lizard wine"
-	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
+	desc = "An alcoholic beverage originally made in China by infusing lizard tails in ethanol, now? Much the same, but with geckos. Inexplicably popular among most higher ups."
 	icon_state = "lizardwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
@@ -397,7 +397,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/trappist
 	name = "Mont de Requin Trappistes Bleu"
-	desc = "Brewed in space-Belgium. Fancy!"
+	desc = "Brewed in Belgium. Fancy!"
 	custom_premium_price = PRICE_ABOVE_NORMAL
 	icon_state = "trappistbottle"
 	volume = 50

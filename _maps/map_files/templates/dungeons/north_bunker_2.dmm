@@ -181,11 +181,6 @@
 /obj/item/seeds/ambrosia/gaia,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"ee" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "eq" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /obj/structure/spider/stickyweb,
@@ -384,11 +379,6 @@
 /area/f13/bunker)
 "hI" = (
 /obj/structure/table_frame,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"hS" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ia" = (
@@ -739,6 +729,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"pt" = (
+/obj/item/stack/medical/mesh,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"pA" = (
+/mob/living/simple_animal/hostile/supermutant/legendary,
+/turf/open/floor/grass,
+/area/f13/bunker)
 "pI" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
@@ -828,8 +826,7 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "rC" = (
-/obj/machinery/porta_turret/syndicate,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/medical/suture,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "rJ" = (
@@ -841,7 +838,7 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "rM" = (
-/obj/machinery/porta_turret/syndicate,
+/obj/machinery/porta_turret/syndicate/vehicle_turret,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "rY" = (
@@ -936,6 +933,10 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"tF" = (
+/obj/item/pickaxe,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "tK" = (
 /obj/item/pizzabox/mushroom,
@@ -3042,7 +3043,7 @@ xG
 eG
 sJ
 XS
-Eg
+qV
 xG
 Rl
 Rl
@@ -3212,7 +3213,7 @@ wN
 oj
 rM
 YR
-rC
+go
 xG
 Rl
 Rl
@@ -3554,7 +3555,7 @@ oj
 oj
 rM
 wP
-rM
+oj
 xG
 Rl
 Rl
@@ -3718,7 +3719,7 @@ Rl
 xG
 IY
 pQ
-DM
+go
 oj
 Pp
 XM
@@ -3987,7 +3988,7 @@ XM
 mj
 XM
 xG
-hS
+gk
 xG
 AE
 Bw
@@ -4530,7 +4531,7 @@ Om
 Om
 KY
 nu
-fy
+nu
 nu
 Om
 nu
@@ -4607,7 +4608,7 @@ QJ
 Ed
 nu
 nu
-dj
+pA
 nu
 nu
 dj
@@ -4972,7 +4973,7 @@ xG
 RB
 FV
 go
-oj
+rC
 oj
 KH
 qb
@@ -4983,7 +4984,7 @@ gB
 Rl
 Rl
 xG
-oj
+tF
 oj
 Ub
 go
@@ -5011,7 +5012,7 @@ PF
 oj
 hI
 go
-ee
+Hi
 oj
 YR
 gu
@@ -5126,7 +5127,7 @@ oj
 CM
 oh
 oh
-oj
+pt
 Ee
 oj
 go

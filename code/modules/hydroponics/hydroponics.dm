@@ -319,7 +319,7 @@
 	. += "<span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
 	"<span class='info'>Nutrient: [reagents.total_volume]/[maxnutri].</span>"
 	if(self_sustaining)
-		. += "<span class='info'>The tray's autogrow is active, halving active reagent drain, and actively maintaning the plant.</span>"
+		. += "<span class='info'>The tray's autogrow is active, halting reagent drain, and actively maintaning the plant.</span>"
 
 	if(weedlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
@@ -381,7 +381,7 @@
 				to_chat(user, "<span class='notice'>The plant's lifepsan is counted in weeks.</span>")
 			if(90 to 100)
 				to_chat(user, "<span class='nicegreen'>The plant's lifespan is forevermore. Treat it well, and it will not abandon you.</span>")
-		switch(src.myseed.instability)
+		switch(src.myseed.instability)		// Checks Instability
 			if(0 to 20)
 				to_chat(user, "<span class='nicegreen'>The plant's stability is solid, the foundation secure.</span>")
 			if(21 to 40)
@@ -392,7 +392,7 @@
 				to_chat(user, "<span class='notice'>The plant's unstable, it actively morphs and tries to push itself to something greater.</span>")
 			if(81 to 100)
 				to_chat(user, "<span class='warning'>The plant's unstable, the earth beneath moans and croaks, roots bend and insidious liquids seep from the skin.</span>")
-		switch(src.myseed.weed_rate)
+		switch(src.myseed.weed_rate)		//Checks Weed Growth Rate
 			if(0 to 2)
 				to_chat(user, "<span class='nicegreen'>The weed growth around the plant appear to be of a miniscule amount...</span>")
 			if(3 to 5)
@@ -401,7 +401,7 @@
 				to_chat(user, "<span class='notice'>The weed growth would in but a few moments overwhelm the plant...</span>")
 			if(8 to 10)
 				to_chat(user, "<span class='warning'>The weed growth could instantly put down the plant..!</span>")
-		switch(src.myseed.weed_chance)
+		switch(src.myseed.weed_chance)		//Checks weed growth chance
 			if(0 to 20)
 				to_chat(user, "<span class='nicegreen'>... and the chance of the weeds to grow are highly unlikely.</span>")
 			if(21 to 40)
@@ -759,7 +759,7 @@
 		name = initial(name)
 		desc = initial(desc)
 		TRAY_NAME_UPDATE
-		if(self_sustaining) //No reason to pay for an empty tray.
+		if(self_sustaining && !/obj/machinery/hydroponics/soil) //No reason to pay for an empty tray. But also alot of reasons to keep paying if it's a soil.
 			idle_power_usage = 0
 			self_sustaining = FALSE
 	update_icon()
