@@ -6713,6 +6713,12 @@
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
+"gCV" = (
+/obj/structure/falsewall/rust,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "gED" = (
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/f13/supermart,
@@ -18330,6 +18336,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/ncr)
+"svI" = (
+/obj/machinery/door/airlock/abandoned{
+	req_one_access_txt = "134"
+	},
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "swY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -54117,7 +54131,7 @@ tur
 tur
 tur
 tur
-eZN
+gCV
 tur
 tur
 tur
@@ -54631,7 +54645,7 @@ bfy
 bfy
 iKI
 bfy
-vbu
+svI
 bfy
 bfy
 bfy

@@ -96,6 +96,7 @@
 #define ACCESS_TRIBE		131	//general tribe access
 #define ACCESS_NCROFFDUTY	132 //general NCR access
 #define ACCESS_CLINIC		133 //Oasis clinic access
+#define ACCESS_ENCLAVE 		134 //enclave minibunker
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.
 #define ACCESS_SYNDICATE_LEADER 151//Nuke Op Leader Access

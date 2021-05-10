@@ -7,17 +7,20 @@
 	faction = "Enclave"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless absolutely necessary."
+	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless over action is absolutely necessary."
 	forbids = ""
 	enforces = ""
-	supervisors = "The United States Government."
-	selection_color = "#95a5a6"
+	supervisors = "the United States Government."
+	selection_color = "#162b2c"
+
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
 
 	outfit = /datum/outfit/job/wasteland/enclavespy
 
 /datum/outfit/job/wasteland/enclavespy
 	name = "Enclave Operative"
-	jobtype = /datum/job/wasteland/covenwitch
+	jobtype = /datum/job/wasteland/enclavespy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	head = 			/obj/item/clothing/head/helmet/f13/combat
 	ears = 			/obj/item/radio/headset/headset_enclave
@@ -26,7 +29,7 @@
 	suit = 			/obj/item/clothing/suit/armor/f13/combat
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
-	id = 			/obj/item/card/id/syndicate/anyone
+	id = 			/obj/item/card/id/dogtag/enclave
 	suit_store =  	/obj/item/gun/energy/laser/plasma/pistol
 
 	backpack_contents = list(

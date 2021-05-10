@@ -846,6 +846,9 @@
 	assignment = "ID tags"
 	uses_overlays = FALSE
 
+/obj/item/card/id/dogtag/enclave
+	desc = "An advanced holographic dogtag, that shows the duty of a BoS member. This one seems a bit off somewhow..."
+
 /obj/item/card/id/selfassign/attack_self(mob/user)
 	if(isliving(user))
 		var/mob/living/living_user = user

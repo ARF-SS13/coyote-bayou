@@ -293,6 +293,13 @@
 	walltype = /turf/closed/wall/mineral/iron
 	canSmoothWith = list(/obj/structure/falsewall/iron, /turf/closed/wall/mineral/iron)
 
+/obj/structure/falsewall/rust
+	name = "rusted wall"
+	desc = "A rusted metal wall."
+	icon = 'icons/turf/walls/rusty_wall.dmi'
+	icon_state = "wall"
+	walltype = /turf/closed/wall/rust
+
 /obj/structure/falsewall/abductor
 	name = "alien wall"
 	desc = "A wall with alien alloy plating."
