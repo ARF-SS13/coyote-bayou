@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/saved = list()
 	var/list/generated_actions = list()
 	var/next_pop = 0
-	var/min_restart_time = 180 MINUTES
+	var/min_restart_time = 120 MINUTES
 
 	var/display_votes = SHOW_RESULTS|SHOW_VOTES|SHOW_WINNER|SHOW_ABSTENTION //CIT CHANGE - adds obfuscated/admin-only votes
 
