@@ -733,7 +733,7 @@
 	name = "10mm pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/n99,
-				/obj/item/ammo_box/magazine/m10mm_adv
+				/obj/item/ammo_box/magazine/m10mm_adv/simple
 				)
 
 /obj/effect/spawner/bundle/f13/m1911
