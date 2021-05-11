@@ -7,7 +7,7 @@
 	faction = "Enclave"
 	total_positions = 3
 	spawn_positions = 3
-	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless over action is absolutely necessary."
+	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."

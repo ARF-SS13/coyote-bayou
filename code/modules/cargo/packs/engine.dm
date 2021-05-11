@@ -9,7 +9,7 @@
 /datum/supply_pack/engine
 	group = "Engine Construction"
 	crate_type = /obj/structure/closet/crate/engineering
-
+/*
 /datum/supply_pack/engine/am_jar
 	name = "Antimatter Containment Jar Crate"
 	desc = "Two Antimatter containment jars stuffed into a single crate."
@@ -17,14 +17,14 @@
 	contains = list(/obj/item/am_containment,
 					/obj/item/am_containment)
 	crate_name = "antimatter jar crate"
-
-/datum/supply_pack/engine/am_core
+*/
+/*/datum/supply_pack/engine/am_core
 	name = "Antimatter Control Crate"
 	desc = "The brains of the Antimatter engine, this device is sure to teach the station's powergrid the true meaning of real power."
 	cost = 5200
 	contains = list(/obj/machinery/power/am_control_unit)
 	crate_name = "antimatter control crate"
-
+*//*
 /datum/supply_pack/engine/am_shielding
 	name = "Antimatter Shielding Crate"
 	desc = "Contains nine Antimatter shields, somehow crammed into a crate."
@@ -38,8 +38,8 @@
 					/obj/item/am_shielding_container,
 					/obj/item/am_shielding_container,
 					/obj/item/am_shielding_container) //9 shields: 3x3 containment and a core
-	crate_name = "antimatter shielding crate"
-
+	crate_name = "antimatter shielding crate"*/
+/*
 /datum/supply_pack/engine/emitter
 	name = "Emitter Crate"
 	desc = "Useful for powering forcefield generators while destroying locked crates and intruders alike. Contains two high-powered energy emitters. Requires CE access to open."
@@ -50,7 +50,7 @@
 	crate_name = "emitter crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
-
+*/
 /datum/supply_pack/engine/field_gen
 	name = "Field Generator Crate"
 	desc = "Typically the only thing standing between the station and a messy death. Powered by emitters. Contains two field generators."
@@ -149,6 +149,7 @@
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
 */
+/*
 /datum/supply_pack/engine/tesla_coils
 	name = "Tesla Coil Crate"
 	desc = "Whether it's high-voltage executions, creating research points, or just plain old power generation: This pack of four Tesla coils can do it all!"
@@ -159,6 +160,7 @@
 					/obj/machinery/power/tesla_coil)
 	crate_name = "tesla coil crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
+*/	
 /*
 /datum/supply_pack/engine/tesla_gen
 	name = "Tesla Generator Crate"
