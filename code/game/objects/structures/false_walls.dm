@@ -199,6 +199,15 @@
  * Other misc falsewall types
  */
 
+/obj/structure/falsewall/brick
+	name = "brick wall"
+	desc = "Sturdy wall made of bricks and mortar"
+	icon = 'icons/turf/walls/brick_wall.dmi'
+	icon_state = "brickwall"
+	mineral = /obj/item/stack/rods
+	walltype = /turf/closed/wall/mineral/brick
+	canSmoothWith = list(/obj/structure/falsewall/brick, /turf/closed/wall/mineral/brick)
+
 /obj/structure/falsewall/gold
 	name = "gold wall"
 	desc = "A wall with gold plating. Swag!"
