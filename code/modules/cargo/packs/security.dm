@@ -23,7 +23,7 @@
 					/obj/item/storage/fancy/ammobox/lethalshot,
 					/obj/item/storage/fancy/ammobox,
 					/obj/item/storage/fancy/ammobox,
-					/obj/item/storage/fancy/ammobox,
+					/obj/item/storage/fancy/ammobox)
 	crate_name = "ammo crate"
 
 /datum/supply_pack/security/armor
