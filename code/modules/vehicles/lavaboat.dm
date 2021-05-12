@@ -27,6 +27,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
+/*
 /datum/crafting_recipe/oar
 	name = "Goliath Bone Oar"
 	result = /obj/item/oar
@@ -40,6 +41,7 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/goliath_hide = 3)
 	time = 50
 	category = CAT_PRIMAL
+*/
 
 //Dragon Boat
 

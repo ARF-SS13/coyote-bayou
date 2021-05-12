@@ -156,7 +156,7 @@
 		return ..()
 
 
-// Look up recipes.dm OR pneumaticCannon.dm
+/*/ Look up recipes.dm OR pneumaticCannon.dm
 /datum/crafting_recipe/silver_stake
 	name = "Silver Stake"
 	result = /obj/item/stake/hardened/silver
@@ -168,3 +168,4 @@
 	time = 80
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+*/

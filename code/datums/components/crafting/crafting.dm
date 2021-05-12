@@ -20,33 +20,29 @@
 					CAT_AMMO,
 					CAT_MISCWEP
 				),
-				CAT_ROBOT = CAT_NONE,
-				CAT_MISC = list(
-					CAT_MISCELLANEOUS,
+				CAT_CRAFTING = list(
+					CAT_SCAVENGING,
+					CAT_FORGING,
 					CAT_TOOL,
+					CAT_ROBOT,
+				),
+				CAT_MISC = list(
+					CAT_FARMING,
+					CAT_MISCELLANEOUS,
 					CAT_FURNITURE,
+					CAT_BOTTLE,
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
+					CAT_WASTEFOOD,
 					CAT_BREAD,
 					CAT_BURGER,
-					CAT_CAKE,
-					CAT_DONUT,
-					CAT_EGG,
-					CAT_ICE,
 					CAT_MEAT,
-					CAT_MEXICAN,
 					CAT_MISCFOOD,
 					CAT_PASTRY,
 					CAT_PIE,
-					CAT_PIZZA,
-					CAT_SEAFOOD,
-					CAT_SALAD,
-					CAT_SANDWICH,
 					CAT_SOUP,
-					CAT_SPAGHETTI,
 				),
-				CAT_DRINK = CAT_NONE,
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
 					CAT_SHOES,
@@ -56,7 +52,7 @@
 					CAT_BELTS
 				),
 				CAT_MEDICAL = CAT_NONE,
-				CAT_BOTTLE = CAT_NONE,
+				CAT_DRINK = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE

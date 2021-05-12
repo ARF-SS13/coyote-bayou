@@ -1,18 +1,4 @@
-/datum/crafting_recipe/pin_removal
-	name = "Pin Removal"
-	result = /obj/item/gun
-	reqs = list(/obj/item/gun = 1)
-	parts = list(/obj/item/gun = 1)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 50
-	category = CAT_WEAPONRY
-	subcategory = CAT_MISCWEP
 
-/datum/crafting_recipe/pin_removal/check_requirements(mob/user, list/collected_requirements)
-	var/obj/item/gun/G = collected_requirements[/obj/item/gun][1]
-	if (G.no_pin_required || !G.pin)
-		return FALSE
-	return TRUE
 
 /*
 /datum/crafting_recipe/strobeshield
@@ -39,6 +25,16 @@
 				/obj/item/stack/sheet/leather = 3)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/buckler
+	name = "Wooden Buckler"
+	result = /obj/item/shield/riot/buckler
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 15,
+				/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_SCREWDRIVER)
+	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
@@ -84,7 +80,7 @@
 	time = 20//15 faster than crafting them by hand!
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
+/*
 /datum/crafting_recipe/tailclub
 	name = "Tail Club"
 	result = /obj/item/tailclub
@@ -111,6 +107,7 @@
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+*/
 
 /datum/crafting_recipe/chainsaw
 	name = "Chainsaw"
@@ -127,6 +124,14 @@
 ///BOMB CRAFTING//
 //////////////////
 
+/datum/crafting_recipe/compressedpowder
+	name = "Compressed Blackpowder"
+	result = /obj/item/stack/ore/blackpowder
+	time = 5
+	reqs = list(/datum/reagent/blackpowder = 50)
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/chemical_payload
 	name = "Chemical Payload (C4)"
 	result = /obj/item/bombcore/chemical
@@ -138,35 +143,20 @@
 	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
 	time = 30
 	category = CAT_WEAPONRY
-	subcategory = CAT_MISCWEP
-
-/*
-/datum/crafting_recipe/chemical_payload2
-	name = "Chemical Payload (Gibtonite)"
-	result = /obj/item/bombcore/chemical
-	reqs = list(
-		/obj/item/stock_parts/matter_bin = 1,
-		/obj/item/gibtonite = 1,
-		/obj/item/grenade/chem_grenade = 2
-	)
-	parts = list(/obj/item/stock_parts/matter_bin = 1, /obj/item/grenade/chem_grenade = 2)
-	time = 50
-	category = CAT_WEAPONRY
-	subcategory = CAT_MISCWEP
-*/
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/molotov
-	name = "Molotov"
+	name = "Molotov Cocktail"
 	result = /obj/item/reagent_containers/food/drinks/bottle/molotov
 	reqs = list(/obj/item/reagent_containers/rag = 1,
 				/obj/item/reagent_containers/food/drinks/bottle = 1)
 	parts = list(/obj/item/reagent_containers/food/drinks/bottle = 1)
 	time = 40
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/IED
-	name = "IED"
+	name = "Improvised Grenade (IED)"
 	result = /obj/item/grenade/iedcasing
 	reqs = list(/datum/reagent/fuel = 50,
 				/obj/item/stack/cable_coil = 1,
@@ -175,7 +165,7 @@
 	parts = list(/obj/item/reagent_containers/food/drinks/bottle = 1)
 	time = 15
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/lance
 	name = "Explosive Lance (Grenade)"
@@ -186,7 +176,42 @@
 				/obj/item/grenade = 1)
 	time = 15
 	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
+	subcategory = CAT_AMMO
+
+/////////////////////////
+///POWER CELL RECYCLING//
+/////////////////////////
+
+/datum/crafting_recipe/ecrecharge
+	name = "Small Energy Cell (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/ec
+	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/mfcrecharge
+	name = "Microfusion Cell (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/mfc
+	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/ecprecharge
+	name = "Electron Charge Pack (recycle)"
+	result = /obj/item/stock_parts/cell/ammo/ecp
+	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+
+
+
 
 //////////////////
 ///GUNS CRAFTING//
@@ -194,7 +219,7 @@
 
 //zipgun
 /datum/crafting_recipe/zipgun
-	name = "zip gun"
+	name = "Zip Gun"
 	result = /obj/item/gun/ballistic/revolver/zipgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 	/datum/reagent/blackpowder = 1,
@@ -206,7 +231,7 @@
 
 //pipe rifle
 /datum/crafting_recipe/piperifle
-	name = "pipe rifle"
+	name = "Pipe Rifle"
 	result = /obj/item/gun/ballistic/revolver/pipe_rifle
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 	/datum/reagent/blackpowder = 1,
@@ -261,7 +286,7 @@
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/autopiperifle
-	name = "auto pipe rifle"
+	name = "Auto Pipe Rifle"
 	result = /obj/item/gun/ballistic/automatic/autopipe
 	reqs = list(/datum/reagent/blackpowder = 30,
 	/obj/item/stack/sheet/metal = 5,
@@ -273,7 +298,7 @@
 
 //browning hi-power
 /datum/crafting_recipe/ninemil
-	name = "9mm pistol"
+	name = "9mm Pistol"
 	result = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 1,
@@ -286,7 +311,7 @@
 
 //colt 6520
 /datum/crafting_recipe/colt6520
-	name = "colt 6520"
+	name = "Colt 6520 Revolver"
 	result = /obj/item/gun/ballistic/revolver/colt6520
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 5,
@@ -313,7 +338,7 @@
 
 //n99
 /datum/crafting_recipe/n99
-	name = "10mm pistol"
+	name = "10mm Pistol"
 	result = /obj/item/gun/ballistic/automatic/pistol/n99
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -326,7 +351,7 @@
 
 //hunting rifle
 /datum/crafting_recipe/huntingrifle
-	name = "hunting rifle"
+	name = "Hunting Rifle"
 	result = /obj/item/gun/ballistic/shotgun/remington
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
@@ -356,7 +381,7 @@
 
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
-	name = "varmint rifle"
+	name = "Varmint Rifle"
 	result = /obj/item/gun/ballistic/automatic/varmint
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
@@ -369,7 +394,7 @@
 
 //rangemaster
 /datum/crafting_recipe/rangemaster
-	name = "colt rangemaster"
+	name = "Colt Rangemaster"
 	result = /obj/item/gun/ballistic/automatic/rangemaster
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
@@ -386,7 +411,7 @@
 
 //r91
 /datum/crafting_recipe/r91
-	name = "r91 assault rifle"
+	name = "R91 Assault Rifle"
 	result = /obj/item/gun/ballistic/automatic/assault_rifle
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 1,
@@ -403,7 +428,7 @@
 
 //infiltrator
 /datum/crafting_recipe/infiltrator
-	name = "infiltrator"
+	name = "Infiltrator Carbine"
 	result = /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	reqs = list(/obj/item/gun/ballistic/automatic/assault_rifle = 1,
 				/obj/item/stack/sheet/glass = 2,
@@ -419,7 +444,7 @@
 
 //fn fal
 /datum/crafting_recipe/fnfal
-	name = "fn fal"
+	name = "FN-FAL"
 	result = /obj/item/gun/ballistic/automatic/fnfal
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 2,
@@ -434,7 +459,7 @@
 
 //widowmaker
 /datum/crafting_recipe/widowmaker
-	name = "winchester widowmaker double barrel"
+	name = "Winchester Widowmaker double barrel"
 	result = /obj/item/gun/ballistic/revolver/widowmaker
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 5,
@@ -447,7 +472,7 @@
 
 //hunting shotgun
 /datum/crafting_recipe/huntingshotgun
-	name = "hunting shotgun"
+	name = "Hunting Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/hunting
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -476,7 +501,7 @@
 
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
-	name = "r82 heavy service rifle"
+	name = "R82 heavy service rifle"
 	result = /obj/item/gun/ballistic/automatic/service/r82
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -492,7 +517,7 @@
 
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
-	name = "marksman carbine"
+	name = "Marksman Carbine"
 	result = /obj/item/gun/ballistic/automatic/marksman
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -506,7 +531,7 @@
 
 //r84 lmg
 /datum/crafting_recipe/lmg
-	name = "r84 LMG"
+	name = "R84 LMG"
 	result = /obj/item/gun/ballistic/automatic/r84
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -521,7 +546,7 @@
 
 //service rifle
 /datum/crafting_recipe/servicerifle
-	name = "service rifle"
+	name = "Service Rifle 5.56mm"
 	result = /obj/item/gun/ballistic/automatic/service
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/metalparts = 10,
@@ -536,7 +561,7 @@
 
 //scout carbine
 /datum/crafting_recipe/scoutcarbine
-	name = "scout carbine"
+	name = "Scout Carbine"
 	result = /obj/item/gun/ballistic/automatic/service/carbine
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/metalparts = 10,
@@ -551,7 +576,7 @@
 
 //aep7
 /datum/crafting_recipe/AEP7
-	name = "aep7"
+	name = "AEP-7"
 	result = /obj/item/gun/energy/laser/pistol
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/lenses = 1,
@@ -566,7 +591,7 @@
 
 //lever action
 /datum/crafting_recipe/lever_action
-	name = "lever action shotgun"
+	name = "Lever Action Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/trench
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -580,7 +605,7 @@
 
 //trail carbine
 /datum/crafting_recipe/trail_carbine
-	name = "trail carbine"
+	name = "Trail Carbine"
 	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -594,7 +619,7 @@
 
 //.223 pistol
 /datum/crafting_recipe/thatgun
-	name = ".223 pistol"
+	name = ".223 Pistol"
 	result = /obj/item/gun/ballistic/revolver/thatgun
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/datum/reagent/blackpowder = 15,
@@ -607,7 +632,7 @@
 
 //pps
 /datum/crafting_recipe/pps
-	name = "ppsh41"
+	name = "Ppsh-41"
 	result = /obj/item/gun/ballistic/automatic/pps
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -636,7 +661,7 @@
 */
 //plasma pistol
 /datum/crafting_recipe/plasmapistol
-	name = "plasma pistol"
+	name = "Plasma Pistol"
 	result = /obj/item/gun/energy/laser/plasma/pistol
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/flux = 1,
@@ -651,7 +676,7 @@
 
 //uzi
 /datum/crafting_recipe/uzi
-	name = "mini uzi"
+	name = "Uzi SMG"
 	result = /obj/item/gun/ballistic/automatic/mini_uzi
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1
@@ -677,7 +702,7 @@
 
 //grease gun
 /datum/crafting_recipe/grease_gun
-	name = "Grease gun"
+	name = "Grease Gun"
 	result = /obj/item/gun/ballistic/automatic/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -690,7 +715,7 @@
 
 //brush gun
 /datum/crafting_recipe/brush
-	name = "Brush gun"
+	name = "Brush Gun"
 	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -705,7 +730,7 @@
 
 //r91
 /datum/crafting_recipe/r91
-	name = "R91 assault rifle"
+	name = "R91 Assault Rifle"
 	result = /obj/item/gun/ballistic/automatic/assault_rifle
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -721,7 +746,7 @@
 
 //breacher
 /datum/crafting_recipe/breacher
-	name = "Breacher shotgun"
+	name = "Breacher Shotgun"
 	result = /obj/item/gun/ballistic/automatic/shotgun/riot
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/alloys = 1,
@@ -737,7 +762,7 @@
 
 //sniper
 /datum/crafting_recipe/sniper
-	name = "Sniper rifle"
+	name = "Sniper Rifle"
 	result = /obj/item/gun/ballistic/automatic/marksman/sniper
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -769,7 +794,7 @@
 
 //aer9
 /datum/crafting_recipe/AER9
-	name = "AER9"
+	name = "AER-9"
 	result = /obj/item/gun/energy/laser/aer9
 	reqs = list(/obj/item/stack/sheet/metal = 15,
 				/obj/item/advanced_crafting_components/lenses = 1,
@@ -819,7 +844,7 @@
 
 //AM rifle
 /datum/crafting_recipe/am_rifle
-	name = "AM Rifle"
+	name = "Anti-Materiel Rifle"
 	result = /obj/item/gun/ballistic/shotgun/antimateriel
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -836,7 +861,7 @@
 
 //city killer
 /datum/crafting_recipe/city_killer
-	name = "City-Killer shotgun"
+	name = "City-Killer Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
@@ -886,7 +911,7 @@
 
 //magneto
 /datum/crafting_recipe/magnetowattz
-	name = "wattz 1000 magneto-laser pistol"
+	name = "Wattz 1000 Magneto-laser Pistol"
 	result = /obj/item/gun/energy/laser/wattz/magneto
 	reqs = list(/obj/item/gun/energy/laser/wattz = 1,
 				/obj/item/stack/crafting/electronicparts = 2)
@@ -897,7 +922,7 @@
 
 //extendo GLOCK
 /datum/crafting_recipe/glock86a
-	name = "glock 86a"
+	name = "Glock 86A Plasma Pistol"
 	result = /obj/item/gun/energy/laser/plasma/glock/extended
 	reqs = list(/obj/item/gun/energy/laser/plasma/glock = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -927,7 +952,7 @@
 	always_availible = FALSE
 
 /datum/crafting_recipe/suppressor
-	name = "suppressor"
+	name = "Suppressor"
 	result = /obj/item/suppressor
 	reqs = list(
 				/obj/item/stack/sheet/metal = 3,
@@ -983,32 +1008,6 @@
 	subcategory = CAT_PARTS
 	always_availible = FALSE
 
-/datum/crafting_recipe/ecrecharge
-	name = "Small Energy Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ec
-	reqs = list(/obj/item/stock_parts/cell/ammo/ec=2)
-	tools = list(TOOL_WORKBENCH)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/mfcrecharge
-	name = "Microfusion Cell (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/mfc
-	reqs = list(/obj/item/stock_parts/cell/ammo/mfc=2)
-	tools = list(TOOL_WORKBENCH)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/ecprecharge
-	name = "Electron Charge Pack (recycle)"
-	result = /obj/item/stock_parts/cell/ammo/ecp
-	reqs = list(/obj/item/stock_parts/cell/ammo/ecp=2)
-	tools = list(TOOL_WORKBENCH)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /*
 /datum/crafting_recipe/flux
