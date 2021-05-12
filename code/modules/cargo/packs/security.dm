@@ -23,10 +23,7 @@
 					/obj/item/storage/fancy/ammobox/lethalshot,
 					/obj/item/storage/fancy/ammobox,
 					/obj/item/storage/fancy/ammobox,
-					/obj/item/storage/fancy/ammobox,
-					/obj/item/ammo_box/c38/trac,
-					/obj/item/ammo_box/c38/hotshot,
-					/obj/item/ammo_box/c38/iceblox)
+					/obj/item/storage/fancy/ammobox)
 	crate_name = "ammo crate"
 
 /datum/supply_pack/security/armor
@@ -210,24 +207,6 @@
 	access = ACCESS_ARMORY
 	crate_name = "sporting crate"
 	crate_type = /obj/structure/closet/crate/secure // Would have liked a wooden crate but access >:(
-
-/datum/supply_pack/security/dumdum
-	name = ".38 DumDum Speedloader"
-	desc = "Contains one speedloader of .38 DumDum ammunition, good for embedding in soft targets. Requires Security or Forensics access to open."
-	cost = 1200
-	access = FALSE
-	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
-	contains = list(/obj/item/ammo_box/c38/dumdum)
-	crate_name = ".38 match crate"
-
-/datum/supply_pack/security/match
-	name = ".38 Match Grade Speedloader"
-	desc = "Contains one speedloader of match grade .38 ammunition, perfect for showing off trickshots. Requires Security or Forensics access to open."
-	cost = 1200
-	access = FALSE
-	access_any = list(ACCESS_SECURITY, ACCESS_FORENSICS_LOCKERS)
-	contains = list(/obj/item/ammo_box/c38/match)
-	crate_name = ".38 match crate"
 
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"

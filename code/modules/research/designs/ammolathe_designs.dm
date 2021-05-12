@@ -55,6 +55,13 @@
 	build_path = /obj/item/ammo_box/magazine/m9mm/empty
 	category = list("initial", "Simple Magazines")
 
+/datum/design/ammolathe/speedloader38
+	name = "empty speed loader (.38)"
+	id = "speedloader38"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/c38/empty
+	category = list("initial", "Simple Magazines")
+
 /datum/design/ammolathe/speedloader44
 	name = "empty speed loader (.44)"
 	id = "speedloader44"
@@ -124,6 +131,13 @@
 	id = "a308"
 	materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/a308box
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/c38
+	name = ".38 ammo box"
+	id = "c38"
+	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
+	build_path = /obj/item/ammo_box/c38box
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/a22plink

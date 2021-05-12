@@ -7,6 +7,14 @@
 	canSmoothWith = null
 	smooth = SMOOTH_TRUE
 
+/turf/closed/wall/mineral/brick
+	name = "brick wall"
+	desc = "Sturdy wall made of bricks and mortar"
+	icon = 'icons/turf/walls/brick_wall.dmi'
+	icon_state = "brickwall"
+	sheet_type = /obj/item/stack/rods
+	canSmoothWith = list(/turf/closed/wall/mineral/brick, /obj/structure/falsewall/brick)
+
 /turf/closed/wall/mineral/gold
 	name = "gold wall"
 	desc = "A wall with gold plating. Swag!"
