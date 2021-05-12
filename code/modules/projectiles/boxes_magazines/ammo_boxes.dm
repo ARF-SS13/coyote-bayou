@@ -19,7 +19,7 @@
 	desc = "Designed to quickly reload revolvers. Usage of these rounds will constitute a war crime in your area."
 
 /obj/item/ammo_box/c38
-	name = "speed loader (.38 rubber)"
+	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
 	caliber = "38"
@@ -28,28 +28,16 @@
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 20000)
 
-/obj/item/ammo_box/c38/lethal
-	name = "speed loader (.38)"
+/obj/item/ammo_box/c38/empty
+	start_empty = 1
 
-/obj/item/ammo_box/c38/trac
-	name = "speed loader (.38 TRAC)"
-	desc = "Designed to quickly reload revolvers. TRAC bullets embed a tracking implant within the target's body."
-
-/obj/item/ammo_box/c38/hotshot
-	name = "speed loader (.38 Hot Shot)"
-	desc = "Designed to quickly reload revolvers. Hot Shot bullets contain an incendiary payload."
-
-/obj/item/ammo_box/c38/iceblox
-	name = "speed loader (.38 Iceblox)"
-	desc = "Designed to quickly reload revolvers. Iceblox bullets contain a cryogenic payload."
-
-/obj/item/ammo_box/c38/dumdum
-	name = "speed loader (.38 DumDum)"
-	desc = "Designed to quickly reload revolvers. These rounds expand on impact, allowing them to shred the target and cause massive bleeding. Very weak against armor and distant targets."
-
-/obj/item/ammo_box/c38/match
-	name = "speed loader (.38 Match)"
-	desc = "Designed to quickly reload revolvers. These rounds are manufactured within extremely tight tolerances, making them easy to show off trickshots with."
+/obj/item/ammo_box/c38box
+	name = "ammo box (.38)"
+	icon_state = "38box"
+	caliber = "38"
+	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 30
+	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
