@@ -64,6 +64,32 @@
 #define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
 
+/turf/open/indestructible/ground/outside/savannah
+	name = "savannah"
+	icon_state = "savannahcenter"
+	slowdown = 1
+	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+
+/turf/open/indestructible/ground/outside/savannah/bottomright
+	icon_state = "savannah1"
+/turf/open/indestructible/ground/outside/savannah/bottomcenter
+	icon_state = "savannah2"
+/turf/open/indestructible/ground/outside/savannah/bottomleft
+	icon_state = "savannah3"
+/turf/open/indestructible/ground/outside/savannah/leftcenter
+	icon_state = "savannah4"
+/turf/open/indestructible/ground/outside/savannah/topleft
+	icon_state = "savannah5"
+/turf/open/indestructible/ground/outside/savannah/topcenter
+	icon_state = "savannah6"
+/turf/open/indestructible/ground/outside/savannah/topright
+	icon_state = "savannah7"
+/turf/open/indestructible/ground/outside/savannah/rightcenter
+	icon_state = "savannah8"
+
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"
 	icon_state = "wasteland"
