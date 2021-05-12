@@ -89,6 +89,15 @@
 	icon_state = "savannah7"
 /turf/open/indestructible/ground/outside/savannah/rightcenter
 	icon_state = "savannah8"
+/turf/open/indestructible/ground/outside/savannah/bottomleftcorner
+	icon_state = "savannah9"
+/turf/open/indestructible/ground/outside/savannah/bottomrightcorner
+	icon_state = "savannah10"
+/turf/open/indestructible/ground/outside/savannah/topleftcorner
+	icon_state = "savannah11"
+/turf/open/indestructible/ground/outside/savannah/toprightcorner
+	icon_state = "savannah12"
+
 
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"
