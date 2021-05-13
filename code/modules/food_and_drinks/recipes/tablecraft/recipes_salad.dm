@@ -3,16 +3,6 @@
 
 ////////////////////////////////////////////////SALADS////////////////////////////////////////////////
 
-/datum/crafting_recipe/food/aesirsalad
-	name = "Aesir salad"
-	reqs = list(
-		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 3,
-		/obj/item/reagent_containers/food/snacks/grown/apple/gold = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/salad/aesirsalad
-	subcategory = CAT_SALAD
-
 /datum/crafting_recipe/food/citrusdelight
 	name = "Citrus delight"
 	reqs = list(
@@ -20,10 +10,9 @@
 		/obj/item/reagent_containers/food/snacks/grown/citrus/lime = 1,
 		/obj/item/reagent_containers/food/snacks/grown/citrus/lemon = 1,
 		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1
-
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/citrusdelight
-	subcategory = CAT_SALAD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fruitsalad
 	name = "Fruit salad"
@@ -36,7 +25,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fruit
-	subcategory = CAT_SALAD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/herbsalad
 	name = "Herb salad"
@@ -46,7 +35,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/apple = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/herbsalad
-	subcategory = CAT_SALAD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/junglesalad
 	name = "Jungle salad"
@@ -59,7 +48,40 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/jungle
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/caesarsalad
+	name = "Caesar salad"
+	reqs = list(
+		/obj/item/kitchen/knife = 1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/caesar
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/edensalad
+	name = "Salad of Eden"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl =1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
+		/obj/item/reagent_containers/food/snacks/grown/peace = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
+	subcategory = CAT_MISCFOOD
+/*
+/datum/crafting_recipe/food/aesirsalad
+	name = "Aesir salad"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 3,
+		/obj/item/reagent_containers/food/snacks/grown/apple/gold = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/aesirsalad
 	subcategory = CAT_SALAD
+
 
 /datum/crafting_recipe/food/monkeysdelight
 	name = "Monkeys delight"
@@ -84,26 +106,4 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/validsalad
 	subcategory = CAT_SALAD
-
-/datum/crafting_recipe/food/caesarsalad
-	name = "Caesar salad"
-	reqs = list(
-		/obj/item/kitchen/knife = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
-		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/salad/caesar
-	subcategory = CAT_SALAD
-
-
-/datum/crafting_recipe/food/edensalad
-	name = "Salad of Eden"
-	reqs = list(
-		/obj/item/reagent_containers/glass/bowl =1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/vulgaris = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus = 1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
-		/obj/item/reagent_containers/food/snacks/grown/peace = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
-	subcategory = CAT_SALAD
+*/

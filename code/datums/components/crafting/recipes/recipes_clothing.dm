@@ -1,3 +1,231 @@
+/////////
+//BELTS//
+/////////
+
+/datum/crafting_recipe/bandolier
+	name = "Bandolier"
+	result = /obj/item/storage/belt/bandolier
+	reqs = list(/obj/item/stack/sheet/hay = 3,
+				/obj/item/stack/sheet/leather = 4)
+	tools = list(TOOL_WORKBENCH)
+	time = 40
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/belt
+	name = "Belt"
+	result = /obj/item/storage/belt
+	reqs = list(/obj/item/stack/sheet/hay = 3,
+				/obj/item/stack/sheet/leather = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/chestrig
+	name = "Chest Rig"
+	result = /obj/item/storage/belt/military
+	tools = list(TOOL_AWORKBENCH)
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/sheet/leather = 3)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/webbing
+	name = "Webbing"
+	result = /obj/item/storage/belt/military/alt
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/shoulderholster
+	name = "Shoulder Holster"
+	result = /obj/item/storage/belt/holster
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/hay = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/medolier
+	name = "Medolier"
+	result =  /obj/item/storage/belt/medolier
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+	/obj/item/stack/sheet/cloth = 3,
+	/obj/item/stack/sheet/plastic = 4)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/durathread_toolbelt
+	name = "Durathread Toolbelt"
+	result = /obj/item/storage/belt/durathread
+	reqs = list(/obj/item/stack/sheet/durathread = 5,
+				/obj/item/stack/sheet/leather = 2)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/durathread_bandolier
+	name = "Durathread Bandolier"
+	result = /obj/item/storage/belt/bandolier/durathread
+	reqs = list(/obj/item/stack/sheet/durathread = 6,
+				/obj/item/stack/sheet/leather = 2)
+	time = 50
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+	always_availible = FALSE
+
+/datum/crafting_recipe/durathread_wintercoat
+	name = "Durathread Winter Coat"
+	result = /obj/item/clothing/suit/hooded/wintercoat/durathread
+	reqs = list(/obj/item/stack/sheet/durathread = 12,
+				/obj/item/stack/sheet/leather = 10)
+	time = 70
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+	always_availible = FALSE
+
+/datum/crafting_recipe/wintercoat_cosmic
+	name = "Cosmic Winter Coat"
+	result = /obj/item/clothing/suit/hooded/wintercoat/cosmic
+	reqs = list(/obj/item/clothing/suit/hooded/wintercoat = 1,
+				/obj/item/bedsheet/cosmos = 1)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+	always_availible = FALSE
+
+/////////
+//SHOES//
+/////////
+
+/datum/crafting_recipe/laceup
+	name = "Laceup shoes"
+	result = /obj/item/clothing/shoes/laceup
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/sneakers
+	name = "Sneakers"
+	result = /obj/item/clothing/shoes/sneakers/black
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/footcloths
+	name = "Footcloths"
+	result = /obj/item/clothing/shoes/f13/rag
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 5
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/cowboy
+	name = "Cowboy boots"
+	result = /obj/item/clothing/shoes/f13/cowboy
+	reqs = list(/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/explorer
+	name = "Work boots"
+	result = /obj/item/clothing/shoes/f13/explorer
+	reqs = list(/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/fancy
+	name = "Leather shoes, black"
+	result = /obj/item/clothing/shoes/f13/fancy
+	reqs = list(/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/brownie
+	name = "Leather shoes, brown"
+	result = /obj/item/clothing/shoes/f13/brownie
+	reqs = list(/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/datum/crafting_recipe/tan
+	name = "Leather shoes, tan"
+	result = /obj/item/clothing/shoes/f13/tan
+	reqs = list(/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_SHOES
+
+/*
+/datum/crafting_recipe/armwraps
+	name = "Armwraps"
+	result = /obj/item/clothing/gloves/fingerless/pugilist
+	time = 60
+	tools = list(TOOL_WIRECUTTER)
+	reqs = list(/obj/item/stack/sheet/cloth = 4,
+				/obj/item/stack/sticky_tape = 2,
+				/obj/item/stack/sheet/leather = 2)
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/briefcase
+	name = "Hand made Briefcase"
+	result = /obj/item/storage/briefcase/crafted
+	time = 35
+	tools = list(TOOL_WIRECUTTER)
+	reqs = list(/obj/item/stack/sheet/cardboard = 1,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/leather = 5)
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/gripperoffbrand
+	name = "Improvised Gripper Gloves"
+	reqs = list(
+			/obj/item/clothing/gloves/fingerless = 1,
+//		    /obj/item/stack/sticky_tape = 1
+			/obj/item/stack/cable_coil = 5,
+			/obj/item/stack/sheet/cloth = 2,
+	)
+	result = /obj/item/clothing/gloves/tackler/offbrand
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+	tools = list(TOOL_WIRECUTTER)
+	time = 20
+	always_availible = FALSE
+
+/datum/crafting_recipe/twinsheath
+	name = "Twin Sword Sheath"
+	result = /obj/item/storage/belt/sabre/twin
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
+				/obj/item/stack/sheet/leather = 8)
+	tools = list(TOOL_WIRECUTTER)
+	time = 70
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
 /datum/crafting_recipe/mummy
 	name = "Mummification Bandages (Mask)"
 	result = /obj/item/clothing/mask/mummy
@@ -39,56 +267,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
-
-/datum/crafting_recipe/papermask
-	name = "Paper Mask"
-	result = /obj/item/clothing/mask/paper
-	time = 10
-	reqs = list(/obj/item/paper = 20)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/balaclavabreath
-	name = "Breathaclava"
-	result = /obj/item/clothing/mask/balaclava/breath
-	time = 10
-	reqs = list(/obj/item/clothing/mask/balaclava = 1,
-				/obj/item/clothing/mask/breath = 1)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-
-
-/datum/crafting_recipe/armwraps
-	name = "Armwraps"
-	result = /obj/item/clothing/gloves/fingerless/pugilist
-	time = 60
-	tools = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/stack/sheet/cloth = 4,
-				/obj/item/stack/sticky_tape = 2,
-				/obj/item/stack/sheet/leather = 2)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/armwrapsplusone
-	name = "Armwraps of Mighty Fists"
-	result = /obj/item/clothing/gloves/fingerless/pugilist/magic
-	time = 300
-	tools = list(TOOL_WIRECUTTER, /obj/item/book/codex_gigas, /obj/item/clothing/head/wizard, /obj/item/clothing/suit/wizrobe)
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/durathread = 2,
-				/datum/reagent/consumable/ethanol/sake = 100,
-				/datum/reagent/consumable/ethanol/wizz_fizz = 100,
-				/obj/item/stack/sheet/sinew = 1,
-				/obj/item/stack/sheet/mineral/gold = 50)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-////////
-//Huds//
-////////
 
 /datum/crafting_recipe/hudsunsec
 	name = "Security HUDsunglasses"
@@ -184,20 +362,14 @@
 	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
-/* //Kevinz doesn't want it as a recipe for now, leaving it in if anything ever changes to let it in
-/datum/crafting_recipe/stunglasses
-	name = "Stunglasses"
-	result = /obj/item/clothing/glasses/sunglasses/stunglasses
-	time = 60
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/assembly/flash = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
+/datum/crafting_recipe/ghostsheet
+	name = "Ghost Sheet"
+	result = /obj/item/clothing/suit/ghost_sheet
+	time = 5
+	tools = list(TOOL_WIRECUTTER)
+	reqs = list(/obj/item/bedsheet = 1)
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
-*/
-
-// Eyepatch Glasses
 
 /datum/crafting_recipe/secpatch
 	name = "Security Eyepatch HUD"
@@ -291,128 +463,7 @@
 	subcategory = CAT_GENCLOTHES
 	always_availible = FALSE
 
-/datum/crafting_recipe/ghostsheet
-	name = "Ghost Sheet"
-	result = /obj/item/clothing/suit/ghost_sheet
-	time = 5
-	tools = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/bedsheet = 1)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/briefcase
-	name = "Hand made Briefcase"
-	result = /obj/item/storage/briefcase/crafted
-	time = 35
-	tools = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/stack/sheet/cardboard = 1,
-				/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/leather = 5)
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/medolier
-	name = "Medolier"
-	result =  /obj/item/storage/belt/medolier
-	reqs = list(/obj/item/stack/sheet/metal = 2,
-	/obj/item/stack/sheet/cloth = 3,
-	/obj/item/stack/sheet/plastic = 4)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/twinsheath
-	name = "Twin Sword Sheath"
-	result = /obj/item/storage/belt/sabre/twin
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
-				/obj/item/stack/sheet/leather = 8)
-	tools = list(TOOL_WIRECUTTER)
-	time = 70
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-
-/datum/crafting_recipe/durathread_reinforcement_kit
-	name = "Durathread Reinforcement Kit"
-	result = /obj/item/armorkit
-	reqs = list(/obj/item/stack/sheet/durathread = 4)
-	tools = list(/obj/item/stack/sheet/mineral/titanium, TOOL_WIRECUTTER) // tough needle for a tough fabric
-	time = 40
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/durathread_duffelbag
-	name = "Durathread Dufflebag"
-	result = /obj/item/storage/backpack/duffelbag/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 7,
-				/obj/item/stack/sheet/leather = 3)
-	time = 70
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/durathread_toolbelt
-	name = "Durathread Toolbelt"
-	result = /obj/item/storage/belt/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 5,
-				/obj/item/stack/sheet/leather = 2)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/durathread_bandolier
-	name = "Durathread Bandolier"
-	result = /obj/item/storage/belt/bandolier/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 6,
-				/obj/item/stack/sheet/leather = 2)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/durathread_helmet
-	name = "Makeshift Durathread Helmet"
-	result = /obj/item/clothing/head/helmet/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 4,
-				/obj/item/stack/sheet/leather = 2)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/durathread_vest
-	name = "Makeshift Durathread Armour"
-	result = /obj/item/clothing/suit/armor/vest/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 6,
-				/obj/item/stack/sheet/leather = 3)
-	time = 50
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/durathread_wintercoat
-	name = "Durathread Winter Coat"
-	result = /obj/item/clothing/suit/hooded/wintercoat/durathread
-	reqs = list(/obj/item/stack/sheet/durathread = 12,
-				/obj/item/stack/sheet/leather = 10)
-	time = 70
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-/datum/crafting_recipe/wintercoat_cosmic
-	name = "Cosmic Winter Coat"
-	result = /obj/item/clothing/suit/hooded/wintercoat/cosmic
-	reqs = list(/obj/item/clothing/suit/hooded/wintercoat = 1,
-				/obj/item/bedsheet/cosmos = 1)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	always_availible = FALSE
-
-
-/datum/crafting_recipe/garlic_necklace
+	/datum/crafting_recipe/garlic_necklace
 	name = "Garlic Necklace"
 	result = /obj/item/clothing/neck/garlic_necklace
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/garlic = 15,
@@ -420,18 +471,4 @@
 	time = 100 //Takes awhile to put all the garlics on the coil and knot it.
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
-
-/datum/crafting_recipe/gripperoffbrand
-	name = "Improvised Gripper Gloves"
-	reqs = list(
-			/obj/item/clothing/gloves/fingerless = 1,
-//		    /obj/item/stack/sticky_tape = 1
-			/obj/item/stack/cable_coil = 5,
-			/obj/item/stack/sheet/cloth = 2,
-	)
-	result = /obj/item/clothing/gloves/tackler/offbrand
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
-	tools = list(TOOL_WIRECUTTER)
-	time = 20
-	always_availible = FALSE
+	*/
