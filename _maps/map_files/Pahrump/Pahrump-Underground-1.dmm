@@ -345,6 +345,17 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
+"avg" = (
+/obj/structure/table/greyscale,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/obj/item/reagent_containers/medspray/synthflesh,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "avG" = (
 /obj/structure/simple_door/room,
 /obj/structure/barricade/wooden,
@@ -354,12 +365,6 @@
 /obj/structure/bed/mattress,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"axT" = (
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "ayH" = (
 /obj/machinery/airalarm{
 	dir = 1;
@@ -654,12 +659,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/operations)
-"aYa" = (
-/obj/structure/table/optable,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "aYI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
@@ -1480,10 +1479,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"bzO" = (
-/obj/structure/simple_door/bunker,
-/turf/closed/wall/rust,
-/area/f13/enclave)
 "bAl" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -2377,6 +2372,12 @@
 /obj/structure/decoration/vent,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood/leisure)
+"cuT" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "cvb" = (
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
@@ -4778,12 +4779,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/operations)
-"eDp" = (
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "eDs" = (
 /obj/structure/table{
 	layer = 2.9
@@ -5011,6 +5006,14 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/leisure)
+"eMX" = (
+/obj/structure/table/greyscale,
+/obj/item/defibrillator/loaded,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "eNt" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -6094,6 +6097,12 @@
 /obj/machinery/telecomms/processor/preset_one,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"fPQ" = (
+/obj/structure/table/optable,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "fPT" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood{
@@ -8783,6 +8792,11 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"iBp" = (
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/enclave)
 "iCS" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
@@ -12352,6 +12366,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"myX" = (
+/obj/structure/simple_door/bunker,
+/turf/closed/wall/rust,
+/area/f13/enclave)
 "mzn" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
@@ -14316,6 +14334,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
+"owF" = (
+/obj/machinery/vending/hydronutrients,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "owX" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
@@ -15209,14 +15233,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
-"prx" = (
-/obj/structure/table/greyscale,
-/obj/item/defibrillator/loaded,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "psA" = (
 /obj/structure/lattice{
 	layer = 3
@@ -17606,6 +17622,13 @@
 /obj/machinery/newscaster,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/reactor)
+"rIL" = (
+/obj/structure/table/greyscale,
+/obj/item/book/granter/trait/lowsurgery,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "rIS" = (
 /obj/item/candle{
 	pixel_x = 7;
@@ -18977,12 +19000,6 @@
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"tmX" = (
-/obj/structure/table/greyscale,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "tnh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -19091,17 +19108,6 @@
 "tur" = (
 /turf/closed/wall/rust,
 /area/f13/tunnel)
-"tuv" = (
-/obj/structure/table/greyscale,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/medspray/synthflesh,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "tuO" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -20734,11 +20740,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"vwf" = (
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/enclave)
 "vwh" = (
 /obj/machinery/light_switch{
 	pixel_x = 27
@@ -21017,6 +21018,12 @@
 /obj/structure/flora/junglebush/b,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"vPn" = (
+/obj/structure/table/greyscale,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "vPw" = (
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -22465,13 +22472,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
-"xUL" = (
-/obj/structure/table/greyscale,
-/obj/item/book/granter/trait/lowsurgery,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
-	},
-/area/f13/enclave)
 "xVt" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
@@ -58341,9 +58341,9 @@ eZN
 vbu
 vbu
 vbu
-bzO
-vwf
-vwf
+myX
+iBp
+iBp
 uoO
 uoO
 uoO
@@ -58591,16 +58591,16 @@ uoO
 uoO
 uoO
 bfy
-axT
+owF
 vbu
 vbu
 bfy
-tmX
+vPn
 vbu
 vbu
 bfy
-vwf
-vwf
+iBp
+iBp
 uoO
 uoO
 uoO
@@ -58848,11 +58848,11 @@ aoj
 aoj
 uoO
 bfy
-eDp
+cuT
 vbu
-eDp
+cuT
 bfy
-tmX
+vPn
 vbu
 vbu
 bfy
@@ -59105,11 +59105,11 @@ aoj
 aoj
 uoO
 bfy
-eDp
+cuT
 vbu
-eDp
+cuT
 bfy
-tuv
+avg
 vbu
 vbu
 bfy
@@ -59362,11 +59362,11 @@ aoj
 aoj
 uoO
 bfy
-eDp
+cuT
 vbu
-eDp
+cuT
 bfy
-xUL
+rIL
 vbu
 vbu
 bfy
@@ -59619,11 +59619,11 @@ uoO
 uoO
 uoO
 bfy
-eDp
+cuT
 vbu
-eDp
+cuT
 bfy
-aYa
+fPQ
 vbu
 vbu
 bfy
@@ -59880,7 +59880,7 @@ vbu
 vbu
 vbu
 bfy
-prx
+eMX
 vbu
 vbu
 bfy
