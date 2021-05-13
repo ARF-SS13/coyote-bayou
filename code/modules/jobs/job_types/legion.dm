@@ -478,8 +478,8 @@ Vexillarius
 	title = "Legion Vexillarius"
 	flag = F13VEXILLARIUS
 	faction = "Legion"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You answer directly to the Decani and the Centurion, acting as a standard bearer for your squad. You raise troop morale, relay orders from the Decanii and the Centurion, and rally men when ordered, however, you hold no actual authority over the troops and should instead only relay orders from your superiors."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_VEXILLARIUS
