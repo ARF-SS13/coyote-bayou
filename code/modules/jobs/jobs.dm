@@ -284,7 +284,9 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Wastelander",
-	"Undercover Enclave"
+	"Enclave Private",
+	"Enclave Sergant",
+	"Enclave Lieutenant"
 ))
 GLOBAL_LIST_INIT(security_positions, list(
 	"Vault-tec Security",

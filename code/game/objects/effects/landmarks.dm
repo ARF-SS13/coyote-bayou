@@ -804,7 +804,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 // Enclave
 /obj/effect/landmark/start/f13/usspy
-	name = "Undercover Enclave"
+	name = "Enclave Private"
+
+/obj/effect/landmark/start/f13/uslt
+	name = "Enclave Lieutenant"
+
+/obj/effect/landmark/start/f13/ussgt
+	name = "Enclave Sergant"
 
 /obj/effect/landmark/start/f13/uscommander
 	name = "US Commander"

@@ -2,7 +2,7 @@
 	department_flag = WASTELAND
 
 /datum/job/wasteland/enclavespy
-	title = "Undercover Enclave"
+	title = "Enclave Private"
 	flag = F13USPRIVATE
 	faction = "Enclave"
 	total_positions = 3
@@ -19,7 +19,7 @@
 	outfit = /datum/outfit/job/wasteland/enclavespy
 
 /datum/outfit/job/wasteland/enclavespy
-	name = "Enclave Operative"
+	name = "Enclave Private"
 	jobtype = /datum/job/wasteland/enclavespy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	head = 			/obj/item/clothing/head/helmet/f13/combat
@@ -39,6 +39,91 @@
 		/obj/item/stock_parts/cell/ammo/ec=3,
 		/obj/item/storage/bag/money/small/wastelander
 		)
+
+/datum/job/wasteland/enclavesgt
+	title = "Enclave Sergant"
+	flag = F13USSGT
+	faction = "Enclave"
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are in charge of the undercover operatives for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	forbids = ""
+	enforces = ""
+	supervisors = "the United States Government."
+	selection_color = "#162b2c"
+
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
+
+	outfit = /datum/outfit/job/wasteland/enclavesgt
+
+/datum/outfit/job/wasteland/enclavesgt
+	name = "Enclave Sergant"
+	jobtype = /datum/job/wasteland/enclavesgt
+	backpack = /obj/item/storage/backpack/satchel/leather
+	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
+	ears = 			/obj/item/radio/headset/headset_enclave
+	glasses = 		/obj/item/clothing/glasses/night
+	uniform =		/obj/item/clothing/under/f13/enclave_officer
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/enclave
+	belt = 			/obj/item/storage/belt/military/army
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	id = 			/obj/item/card/id/dogtag/enclave
+	suit_store =  	/obj/item/gun/energy/laser/plasma
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/grenade/flashbang=1,
+		/obj/item/pda=1,
+		/obj/item/stock_parts/cell/ammo/mfc=3,
+		/obj/item/storage/bag/money/small/wastelander
+		)
+
+/datum/job/wasteland/enclavelt
+	title = "Enclave Lieutenant"
+	flag = F13USLT
+	faction = "Enclave"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the Lieutenant in charge of commanding the remnants of the Enclave forces in the area. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	forbids = ""
+	enforces = ""
+	supervisors = "the United States Government."
+	selection_color = "#162b2c"
+
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
+
+	outfit = /datum/outfit/job/wasteland/enclavelt
+
+/datum/outfit/job/wasteland/enclavelt
+	name = "Enclave Lieutenant"
+	jobtype = /datum/job/wasteland/enclavelt
+	backpack = /obj/item/storage/backpack/satchel/leather
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
+	ears = 			/obj/item/radio/headset/headset_enclave
+	glasses = 		/obj/item/clothing/glasses/night
+	uniform =		/obj/item/clothing/under/f13/enclave_officer
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	belt = 			/obj/item/storage/belt/military/army
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	id = 			/obj/item/card/id/dogtag/enclave
+	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=2,
+		/obj/item/grenade/flashbang=1,
+		/obj/item/pda=1,
+		/obj/item/stock_parts/cell/ammo/mfc=3,
+		/obj/item/storage/bag/money/small/wastelander
+		)
+
+/datum/outfit/job/wasteland/enclavelt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+
 
 /*
 Coven Stuff

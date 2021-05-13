@@ -142,6 +142,8 @@
 #define F13USSCIENTIST	(1<<3)
 #define F13USENGINEER	(1<<4)
 #define F13USCOLONIST	(1<<5)
+#define F13USLT			(1<<6)
+#define F13USSGT		(1<<7)
 
 #define TRIBAL			(1<<10)
 
