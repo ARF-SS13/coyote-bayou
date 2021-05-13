@@ -34,21 +34,6 @@
 	result = /obj/item/reagent_containers/food/snacks/burger/bigbite
 	subcategory = CAT_BURGER
 
-/datum/crafting_recipe/food/superbiteburger
-	name = "Super bite burger"
-	reqs = list(
-		/datum/reagent/consumable/sodiumchloride = 5,
-		/datum/reagent/consumable/blackpepper = 5,
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 5,
-		/obj/item/reagent_containers/food/snacks/grown/tomato = 4,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 3,
-		/obj/item/reagent_containers/food/snacks/boiledegg = 1,
-		/obj/item/reagent_containers/food/snacks/meat/bacon = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/superbite
-	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/cheeseburger
 	name = "Cheese Burger"
@@ -58,28 +43,6 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/cheese
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/corgiburger
-	name = "Corgi burger"
-	reqs = list(
-			/obj/item/reagent_containers/food/snacks/meat/slab/corgi = 1,
-			/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-
-	result = /obj/item/reagent_containers/food/snacks/burger/corgi
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/humanburger
-	name = "Human burger"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/bun = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
-	)
-	parts = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/human
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/ribburger
@@ -112,6 +75,120 @@
 	subcategory = CAT_BURGER
 
 ///////////////EXOTIC//////////////////
+
+/datum/crafting_recipe/food/fishburger
+	name = "Fish burger"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/fish
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/pineapplepizza
+	name = "Hawaiian pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
+		/obj/item/reagent_containers/food/snacks/pineappleslice = 3,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/pineapple
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/margheritapizza
+	name = "Cheese pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 4,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/margherita
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/meatpizza
+	name = "Meat pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 4,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/meat
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/mushroompizza
+	name = "Mushroom pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/mushroom
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/sassysagepizza
+	name = "Meatball pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/meatball = 3,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/sassysage
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/vegetablepizza
+	name = "Vegetable pizza"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pizzabread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/vegetable
+	subcategory = CAT_BURGER
+
+/*
+/datum/crafting_recipe/food/superbiteburger
+	name = "Super bite burger"
+	reqs = list(
+		/datum/reagent/consumable/sodiumchloride = 5,
+		/datum/reagent/consumable/blackpepper = 5,
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain = 5,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 4,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 3,
+		/obj/item/reagent_containers/food/snacks/boiledegg = 1,
+		/obj/item/reagent_containers/food/snacks/meat/bacon = 1,
+		/obj/item/reagent_containers/food/snacks/bun = 1
+
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/superbite
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/corgiburger
+	name = "Corgi burger"
+	reqs = list(
+			/obj/item/reagent_containers/food/snacks/meat/slab/corgi = 1,
+			/obj/item/reagent_containers/food/snacks/bun = 1
+	)
+
+	result = /obj/item/reagent_containers/food/snacks/burger/corgi
+	subcategory = CAT_BURGER
+
+/datum/crafting_recipe/food/humanburger
+	name = "Human burger"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/bun = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
+	)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/burger/human
+	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/appendixburger
 	name = "Appendix burger"
@@ -149,7 +226,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/chicken
 	subcategory = CAT_BURGER
-
 /datum/crafting_recipe/food/crabburger
 	name = "Crab Burger"
 	reqs = list(
@@ -166,16 +242,6 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/empoweredburger
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/fishburger
-	name = "Fish burger"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1,
-		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/fish
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/fivealarmburger
@@ -213,25 +279,6 @@
 			/obj/item/reagent_containers/food/snacks/bun = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/baseball
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/ratburger
-	name = "Rat burger"
-	reqs = list(
-			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
-			/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/rat
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/soylentburger
-	name = "Soylent Burger"
-	reqs = list(
-			/obj/item/reagent_containers/food/snacks/soylentgreen = 1, //two full meats worth.
-			/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
-			/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/soylent
 	subcategory = CAT_BURGER
 
 /datum/crafting_recipe/food/xenoburger
@@ -371,3 +418,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/white
 	subcategory = CAT_BURGER
+
+
+*/
