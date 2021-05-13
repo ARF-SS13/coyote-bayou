@@ -9773,7 +9773,6 @@
 	},
 /area/f13/village)
 "gGZ" = (
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -14600,7 +14599,6 @@
 	},
 /area/f13/building)
 "jDk" = (
-/obj/effect/mob_spawn/human/skeleton/alive,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/caves)
@@ -30925,10 +30923,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"urK" = (
-/obj/effect/mob_spawn/human/skeleton/alive,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "urL" = (
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
@@ -84985,7 +84979,7 @@ gcK
 oRE
 aav
 ggK
-urK
+ggK
 ggK
 ggK
 ggK
