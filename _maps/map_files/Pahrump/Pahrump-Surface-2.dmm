@@ -30623,6 +30623,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"uhO" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/floor/plating/dirt/dark,
+/area/f13/caves)
 "uhW" = (
 /obj/structure/table/wood,
 /obj/item/pickaxe,
@@ -30923,6 +30927,11 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"urK" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "urL" = (
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
@@ -88554,7 +88563,7 @@ ktB
 hBr
 oRE
 xdu
-xdu
+uhO
 gSx
 dfo
 qNa
@@ -88822,7 +88831,7 @@ csk
 irI
 aeg
 ggK
-asI
+urK
 gcK
 gcK
 hBr
