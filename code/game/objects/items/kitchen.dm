@@ -66,7 +66,6 @@
 
 /obj/item/kitchen/knife
 	name = "kitchen knife"
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "knife_kitchen"
 	desc = "A general purpose Chef's Knife made by VaultCook Incorporated. Guaranteed to stay sharp for years to come."
 	flags_1 = CONDUCT_1
@@ -101,8 +100,16 @@
 						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
+/obj/item/kitchen/knife/ritual
+	name = "ritual knife"
+	desc = "The unearthly energies that once powered this blade are now dormant."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "render"
+	item_state = "knife"
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
 
-/*
 /obj/item/kitchen/knife/bloodletter
 	name = "bloodletter"
 	desc = "An occult looking dagger that is cold to the touch. Somehow, the flawless orb on the pommel is made entirely of liquid blood."
@@ -124,14 +131,14 @@
 		M.apply_status_effect(/datum/status_effect/stacking/saw_bleed/bloodletting, bleed_stacks_per_hit)
 	else
 		B.add_stacks(bleed_stacks_per_hit)
-*/
+
 /obj/item/kitchen/knife/butcher
 	name = "butcher's cleaver"
 	icon_state = "knife_cleaver"
 	desc = "Heavy bladed tool for chopping meat."
 	flags_1 = CONDUCT_1
 	force = 25
-	throwforce = 15
+	throwforce = 20
 	custom_materials = list(/datum/material/iron=18000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
@@ -141,7 +148,7 @@
 	name = "hunting knife"
 	icon_state = "knife_hunting"
 	item_state = "knife"
-	desc = "Dependable hunting knife."
+	desc = "A dependable hunting knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 30
 	throwforce = 25
@@ -152,7 +159,7 @@
 	name = "survival knife"
 	icon_state = "knife_survival"
 	item_state = "knife"
-	desc = "Multi-purpose knife with blackened steel."
+	desc = "A multi-purpose knife with blackened steel."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 25
 	throwforce = 25
@@ -163,7 +170,6 @@
 	icon_state = "knife_bayonet"
 	item_state = "knife"
 	desc = "This weapon is made for stabbing, not much use for other things."
-	force = 25
 	throwforce = 15
 	armour_penetration = 0.1
 
@@ -181,7 +187,7 @@
 	icon_state = "knife_trench"
 	item_state = "knife"
 	desc = "This blade is designed for brutal close quarters combat."
-	force = 35
+	force = 37
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -197,20 +203,31 @@
 	throwforce = 20
 	custom_materials = null
 
-/obj/item/kitchen/knife/ritualdagger
-	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
-	icon_state = "ritualdagger"
-	item_state = "crysknife"
-	force = 25
-	throwforce = 20
-	armour_penetration = 0.2
+/obj/item/kitchen/knife/combat/bone/plastic
+	name = "plastic knife"
+	desc = "A plastic knife. Rather harmless to anything."
+	force = 1
+	throwforce = 1
+	bayonet = FALSE
 
 /obj/item/kitchen/knife/combat/cyborg
 	name = "cyborg knife"
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "knife"
 	desc = "A cyborg-mounted plasteel knife. Extremely sharp and durable."
+
+/obj/item/kitchen/knife/carrotshiv
+	name = "carrot shiv"
+	icon_state = "carrotshiv"
+	item_state = "carrotshiv"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
+	force = 8
+	throwforce = 12//fuck git
+	custom_materials = null
+	attack_verb = list("shanked", "shivved")
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/kitchen/rollingpin
 	name = "rolling pin"
@@ -228,52 +245,7 @@
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
-
-
-/obj/item/kitchen/knife/cosmicdirty
-	name = "dirty cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy."
-	icon_state = "knife_cosmic_dirty"
-	item_state = "knife"
-	force = 15
-	throwforce = 10
-	armour_penetration = 0.2
-
-/obj/item/kitchen/knife/cosmic
-	name = "cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
-	icon_state = "knife_cosmic"
-	item_state = "knife"
-	force = 25
-	throwforce = 15
-	armour_penetration = 0.2
-
-/obj/item/kitchen/knife/cosmicheated
-	name = "superheated cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
-	icon_state = "knife_cosmic_heated"
-	item_state = "knife"
-	damtype = BURN
-	force = 35
-	throwforce = 20
-	armour_penetration = 0.4
-/*
-/obj/item/kitchen/knife/combat/bone/plastic
-	name = "plastic knife"
-	desc = "A plastic knife. Rather harmless to anything."
-	force = 1
-	throwforce = 1
-	bayonet = FALSE
-
-/obj/item/kitchen/knife/ritual
-	name = "ritual knife"
-	desc = "Used for blood sacrifices."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	item_state = "knife"
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+/* Trays  moved to /obj/item/storage/bag */
 
 /obj/item/kitchen/knife/scimitar
 	name = "Scimitar knife"
@@ -283,4 +255,40 @@
 /obj/item/kitchen/knife/scimiar/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 90 - force, 100, force - 60) //bonus chance increases depending on force
-*/
+
+/obj/item/kitchen/knife/cosmicdirty
+	name = "dirty cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy."
+	icon_state = "cosmic_knife_dirty"
+	item_state = "knife"
+	force = 15
+	throwforce = 10
+	armour_penetration = 0.2
+
+/obj/item/kitchen/knife/cosmic
+	name = "cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
+	icon_state = "cosmic_knife"
+	item_state = "knife"
+	force = 25
+	throwforce = 15
+	armour_penetration = 0.2
+
+/obj/item/kitchen/knife/cosmicheated
+	name = "superheated cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
+	icon_state = "cosmic_knife_heated"
+	item_state = "knife"
+	damtype = BURN
+	force = 35
+	throwforce = 20
+	armour_penetration = 0.4
+
+/obj/item/kitchen/knife/ritualdagger
+	name = "ritual dagger"
+	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
+	icon_state = "ritualdagger"
+	item_state = "crysknife"
+	force = 25
+	throwforce = 20
+	armour_penetration = 0.2

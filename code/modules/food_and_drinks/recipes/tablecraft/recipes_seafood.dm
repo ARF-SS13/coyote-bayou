@@ -1,6 +1,5 @@
 // see code/module/crafting/table.dm
 
-/*
 ///////////////////////Sushi Components///////////////////////////
 
 /datum/crafting_recipe/food/sushi_rice
@@ -151,7 +150,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi
 	subcategory = CAT_SEAFOOD
-*/
 
 //////////////////////////////////////////////FISH///////////////////////////////////////////
 
@@ -163,7 +161,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/tuna
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/crab_rangoon
 	name = "Crab Rangoon"
@@ -174,7 +172,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/crab = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/crab_rangoon
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/cubancarp
 	name = "Cuban carp"
@@ -184,7 +182,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/cubancarp
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/fishfingers
 	name = "Fish fingers"
@@ -194,7 +192,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishfingers
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/fishandchips
 	name = "Fish and chips"
@@ -203,7 +201,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishandchips
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/fishfry
 	name = "Fish fry"
@@ -213,7 +211,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishfry
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/lobsterroll
 	name = "Lobster Roll"
@@ -222,7 +220,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/lobster = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing/lobster_roll
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD
 
 /datum/crafting_recipe/food/lobsterdeluxe
 	name = "Fish fry"
@@ -232,4 +230,4 @@
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing/lobster_deluxe
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SEAFOOD

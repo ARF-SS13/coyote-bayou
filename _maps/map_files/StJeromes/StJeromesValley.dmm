@@ -32906,7 +32906,9 @@
 /area/f13/sewer)
 "bSV" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/butcher
+/obj/item/kitchen/knife/butcher{
+	icon_state = "butchblood"
+	},
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
@@ -33941,7 +33943,9 @@
 "bWw" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lantern,
-/obj/item/kitchen/knife/butcher
+/obj/item/kitchen/knife/butcher{
+	icon_state = "butchblood"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/shack)
 "bWx" = (

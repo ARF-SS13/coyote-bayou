@@ -1,24 +1,9 @@
-/datum/crafting_recipe/workbench
-	name = "Workbench"
-	result = /obj/machinery/workbench
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
-				/obj/item/lighter = 1,
-				/obj/item/reagent_containers/glass/beaker = 1,
-				/obj/item/screwdriver = 1,
-				/obj/item/crowbar = 1,
-				/obj/item/wrench = 1,
-				/obj/item/wirecutters = 1,
-				/obj/item/stack/crafting/metalparts = 5)
-	time = 80
-	category = CAT_CRAFTING
-	subcategory = CAT_TOOL
-
 /datum/crafting_recipe/crudewire
 	name = "Crude Cutters"
 	result = /obj/item/wirecutters/crude
 	time = 80
 	reqs = list(/obj/item/stack/rods = 2)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/crudeweld
@@ -27,7 +12,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/rods = 2)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/crudewrench
@@ -35,7 +20,7 @@
 	result = /obj/item/wrench/crude
 	time = 80
 	reqs = list(/obj/item/stack/rods = 2)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/crudebar
@@ -44,7 +29,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/metal = 1)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/crudescrew
@@ -52,7 +37,7 @@
 	result = /obj/item/screwdriver/crude
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 2)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /*
@@ -73,7 +58,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/basicweld
@@ -82,7 +67,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/basicwrench
@@ -91,7 +76,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/basicbar
@@ -100,7 +85,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 1)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/basicscrew
@@ -109,7 +94,17 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
+	subcategory = CAT_TOOL
+
+/datum/crafting_recipe/fishingrod
+	name = "Basic Fishingrod"
+	result = /obj/item/fishingrod
+	time = 80
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/lockpick_basic
@@ -118,7 +113,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/lockpick_advanced
@@ -127,7 +122,7 @@
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL
 
 /datum/crafting_recipe/lockpick_master
@@ -137,5 +132,5 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/diamond = 5)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
+	category = CAT_MISC
 	subcategory = CAT_TOOL

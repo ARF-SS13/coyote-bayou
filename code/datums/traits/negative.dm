@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		if("Mime")
 			heirloom_type = pick(/obj/item/paint/anycolor, /obj/item/toy/dummy)
 		if("Cook")
-			heirloom_type = /obj/item/kitchen/knife/butcher
+			heirloom_type = /obj/item/kitchen/knife/scimitar
 		if("Botanist")
 			heirloom_type = pick(/obj/item/cultivator, /obj/item/reagent_containers/glass/bucket, /obj/item/storage/bag/plants, /obj/item/toy/plush/beeplushie)
 		if("Medical Doctor")

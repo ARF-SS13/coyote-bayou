@@ -9,7 +9,7 @@
 	icon_state = "riflestock"
 
 /obj/item/weaponcrafting/string
-	name = "string"
+	name = "wound thread"
 	desc = "A long piece of thread with some resemblance to cable coil."
 	icon_state = "durastring"
 

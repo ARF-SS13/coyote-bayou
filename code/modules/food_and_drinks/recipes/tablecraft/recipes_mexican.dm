@@ -9,7 +9,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/soybeans = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/burrito
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/cheesyburrito
 	name ="Cheesy burrito"
@@ -19,7 +19,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/cheesyburrito
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/enchiladas
 	name = "Enchiladas"
@@ -29,7 +29,7 @@
 		/obj/item/reagent_containers/food/snacks/tortilla = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/enchiladas
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/carneburrito
 	name ="Carne de asada burrito"
@@ -39,7 +39,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/carneburrito
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/fuegoburrito
 	name ="Fuego plasma burrito"
@@ -49,7 +49,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fuegoburrito
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/taco
 	name ="Classic Taco"
@@ -60,7 +60,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/taco
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/tacoplain
 	name ="Plain Taco"
@@ -70,7 +70,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/taco/plain
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/nachos
 	name ="Nachos"
@@ -79,7 +79,7 @@
 		/obj/item/reagent_containers/food/snacks/tortilla = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/nachos
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/cheesynachos
 	name ="Cheesy nachos"
@@ -89,7 +89,7 @@
 		/obj/item/reagent_containers/food/snacks/tortilla = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/cheesynachos
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN
 
 /datum/crafting_recipe/food/cubannachos
 	name ="Cuban nachos"
@@ -99,4 +99,4 @@
 		/obj/item/reagent_containers/food/snacks/tortilla = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/cubannachos
-	subcategory = CAT_MEAT
+	subcategory = CAT_MEXICAN

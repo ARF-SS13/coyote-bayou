@@ -2,6 +2,14 @@
 
 ////////////////////////////////////////////////KEBABS////////////////////////////////////////////////
 
+/datum/crafting_recipe/food/humankebab
+	name = "Human kebab"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak/plain/human = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/kebab/human
+	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/kebab
 	name = "Kebab"
@@ -21,6 +29,15 @@
 	result = /obj/item/reagent_containers/food/snacks/kebab/tofu
 	subcategory = CAT_MEAT
 
+/datum/crafting_recipe/food/tailkebab
+	name = "Lizard tail kebab"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/organ/tail/lizard = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/kebab/tail
+	subcategory = CAT_MEAT
+
 /datum/crafting_recipe/food/fiestaskewer
 	name = "Fiesta Skewer"
 	reqs = list(
@@ -33,6 +50,19 @@
 	result = /obj/item/reagent_containers/food/snacks/kebab/fiesta
 	subcategory = CAT_MEAT
 
+// see code/module/crafting/table.dm
+
+////////////////////////////////////////////////MR SPIDER////////////////////////////////////////////////
+
+/datum/crafting_recipe/food/spidereggsham
+	name = "Spider eggs ham"
+	reqs = list(
+		/datum/reagent/consumable/sodiumchloride = 1,
+		/obj/item/reagent_containers/food/snacks/spidereggs = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet/spider = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/spidereggsham
+	subcategory = CAT_MEAT
 
 ////////////////////////////////////////////////MISC RECIPE's////////////////////////////////////////////////
 
@@ -96,6 +126,15 @@
 	result = /obj/item/reagent_containers/food/snacks/cornedbeef
 	subcategory = CAT_MEAT
 
+/datum/crafting_recipe/food/bearsteak
+	name = "Filet migrawr"
+	reqs = list(
+		/datum/reagent/consumable/ethanol/manly_dorf = 5,
+		/obj/item/reagent_containers/food/snacks/meat/steak/bear = 1,
+	)
+	tools = list(/obj/item/lighter)
+	result = /obj/item/reagent_containers/food/snacks/bearsteak
+	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/stewedsoymeat
 	name = "Stewed soymeat"
@@ -134,6 +173,24 @@
 		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pigblanket
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/ratkebab
+	name = "Rat Kebab"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/reagent_containers/food/snacks/deadmouse = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/kebab/rat
+	subcategory = CAT_MEAT
+
+/datum/crafting_recipe/food/doubleratkebab
+	name = "Double Rat Kebab"
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/reagent_containers/food/snacks/deadmouse = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/ricepork

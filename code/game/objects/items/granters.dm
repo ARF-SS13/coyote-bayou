@@ -545,8 +545,8 @@
 
 /obj/item/book/granter/crafting_recipe/cooking_sweets_101 //We start at 101 for 103 and 105
 	name = "Cooking Desserts 101"
-	desc = "A cook book that teaches you about desserts."
-	crafting_recipe_types = list(/datum/crafting_recipe/smg10mm)
+	desc = "A cook book that teaches you some more of the newest desserts. AI approved, and a best seller on Honkplanet."
+	crafting_recipe_types = list(/datum/crafting_recipe/food/mimetart, /datum/crafting_recipe/food/berrytart, /datum/crafting_recipe/food/cocolavatart, /datum/crafting_recipe/food/clowncake, /datum/crafting_recipe/food/vanillacake)
 	icon_state = "cooking_learing_sweets"
 	oneuse = FALSE
 	remarks = list("So that is how icing is made!", "Placing fruit on top? How simple...", "Huh layering cake seems harder then this...", "This book smells like candy", "A clown must have made this page, or they forgot to spell check it before printing...", "Wait, a way to cook slime to be safe?")
@@ -554,7 +554,7 @@
 /obj/item/book/granter/crafting_recipe/coldcooking //Icecream
 	name = "Cooking with Ice"
 	desc = "A cook book that teaches you many old icecream treats."
-	crafting_recipe_types = list(/datum/crafting_recipe/smg10mm)
+	crafting_recipe_types = list(/datum/crafting_recipe/food/banana_split, /datum/crafting_recipe/food/root_float, /datum/crafting_recipe/food/bluecharrie_float, /datum/crafting_recipe/food/charrie_float)
 	icon_state = "cooking_learing_ice"
 	oneuse = FALSE
 	remarks = list("Looks like these would sell much better in a plasma fire...", "Using glass bowls rather then cones?", "Mixing soda and ice-cream?", "Tall glasses with of liquids and solids...", "Just add a bit of icecream and cherry on top?")

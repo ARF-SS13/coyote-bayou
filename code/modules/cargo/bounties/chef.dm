@@ -73,7 +73,6 @@
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/kebab)
 
-/*
 /datum/bounty/item/chef/soylentgreen
 	name = "Soylent Green"
 	description = "CentCom has heard wonderful things about the product 'Soylent Green', and would love to try some. If you endulge them, expect a pleasant bonus."
@@ -86,14 +85,6 @@
 	reward = 4000
 	required_count = 13
 	wanted_types = list(/datum/crafting_recipe/food/pancakes)
-
-/datum/bounty/item/chef/braincake
-	name = "Brain Cake"
-	description = "The science division requires a brain cake for testing purposes. Don't ask."
-	reward = 1200
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/store/cake/brain)
-
-*/
 
 /datum/bounty/item/chef/nuggies
 	name = "Chicken Nuggets"
@@ -121,6 +112,12 @@
 	description = "Command requires a high-calory breakfast item. Ship it right away."
 	reward = 1750
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/benedict)
+
+/datum/bounty/item/chef/braincake
+	name = "Brain Cake"
+	description = "The science division requires a brain cake for testing purposes. Don't ask."
+	reward = 1200
+	wanted_types = list(/obj/item/reagent_containers/food/snacks/store/cake/brain)
 
 /datum/bounty/item/chef/waffles
 	name = "Waffles"

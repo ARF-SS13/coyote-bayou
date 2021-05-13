@@ -96,7 +96,9 @@
 /area/shuttle/escape)
 "o" = (
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife/butcher
+/obj/item/kitchen/knife/butcher{
+	icon_state = "butchblood"
+	},
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"

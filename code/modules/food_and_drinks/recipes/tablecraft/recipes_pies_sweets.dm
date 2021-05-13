@@ -2,7 +2,7 @@
 // see code/module/crafting/table.dm
 
 //////////////////////////////////FRUITS/////////////////////////////////////////
-/*
+
 /datum/crafting_recipe/food/applepie
 	name = "Apple pie"
 	reqs = list(
@@ -11,8 +11,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/applepie
 	subcategory = CAT_PIE
-
-
 
 /datum/crafting_recipe/food/bananacreampie
 	name = "Banana cream pie"
@@ -82,7 +80,24 @@
 
 //////////OTHER PIES/////////
 
+/datum/crafting_recipe/food/amanitapie
+	name = "Amanita pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/amanita_pie
+	subcategory = CAT_PIE
 
+/datum/crafting_recipe/food/bearypie
+	name = "Beary Pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/berries = 1,
+		/obj/item/reagent_containers/food/snacks/meat/steak/bear = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/bearypie
+	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/baklava
 	name = "Baklava pie"
@@ -115,6 +130,17 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/dulcedebatata
 	subcategory = CAT_PIE
 
+/datum/crafting_recipe/food/burek
+	name = "Burek"
+	reqs = list(
+		/datum/reagent/consumable/blackpepper = 3,
+		/datum/reagent/consumable/sodiumchloride = 3,
+		/obj/item/reagent_containers/food/snacks/pizzabread = 2,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet/plain = 6,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/burek
+	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/meatpie
 	name = "Meat pie"
@@ -136,7 +162,16 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/plump_pie
 	subcategory = CAT_PIE
 
-
+/datum/crafting_recipe/food/pumpkinpie
+	name = "Pumpkin pie"
+	reqs = list(
+		/datum/reagent/consumable/milk = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/pumpkin = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/pumpkinpie
+	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/tofupie
 	name = "Tofu pie"
@@ -158,10 +193,28 @@
 
 //////////////TARTS//////////////
 
+/datum/crafting_recipe/food/goldenappletart
+	name = "Golden apple tart"
+	reqs = list(
+		/datum/reagent/consumable/milk = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple/gold = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/appletart
+	subcategory = CAT_PIE
 
-
-
-
+/datum/crafting_recipe/food/mimetart
+	name = "Mime tart"
+	always_availible = FALSE
+	reqs = list(
+			/datum/reagent/consumable/milk = 5,
+			/datum/reagent/consumable/sugar = 5,
+			/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+			/datum/reagent/consumable/nothing = 5
+			)
+	result = /obj/item/reagent_containers/food/snacks/pie/mimetart
+	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/berrytart
 	name = "Berry tart"
@@ -188,13 +241,15 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/cocolavatart
 	subcategory = CAT_PIE
 
-/datum/crafting_recipe/food/chocolatebunny
-	name = "Chocolate bunny"
-	reqs = list(
-		/datum/reagent/consumable/sugar = 2,
-		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+////////////////////////////////////////////SWEETS////////////////////////////////////////////
+
+/datum/crafting_recipe/food/candiedapple
+	name = "Candied apple"
+	reqs = list(/datum/reagent/water = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/chocolatebunny
+	result = /obj/item/reagent_containers/food/snacks/candiedapple
 	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/chococoin
@@ -205,6 +260,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/chococoin
 	subcategory = CAT_PIE
+
 /datum/crafting_recipe/food/chocoorange
 	name = "Choco orange"
 	reqs = list(
@@ -212,6 +268,24 @@
 		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/chocoorange
+	subcategory = CAT_PIE
+
+/datum/crafting_recipe/food/chocolatebunny
+	name = "Chocolate bunny"
+	reqs = list(
+		/datum/reagent/consumable/sugar = 2,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/chocolatebunny
+	subcategory = CAT_PIE
+
+/datum/crafting_recipe/food/chocolatestrawberry
+	name = "Chocolate Strawberry"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/grown/strawberry  = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/chocolatestrawberry
 	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/fudgedice
@@ -223,27 +297,13 @@
 	result = /obj/item/reagent_containers/food/snacks/fudgedice
 	subcategory = CAT_PIE
 
-/datum/crafting_recipe/food/goldenappletart
-	name = "Golden apple tart"
+/datum/crafting_recipe/food/honeybar
+	name = "Honey nut bar"
 	reqs = list(
-		/datum/reagent/consumable/milk = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-		/obj/item/reagent_containers/food/snacks/grown/apple/gold = 1
+		/obj/item/reagent_containers/food/snacks/grown/oat = 1,
+		/datum/reagent/consumable/honey = 5
 	)
-	result = /obj/item/reagent_containers/food/snacks/pie/appletart
-	subcategory = CAT_PIE
-
-/datum/crafting_recipe/food/mimetart
-	name = "Mime tart"
-	always_availible = FALSE
-	reqs = list(
-			/datum/reagent/consumable/milk = 5,
-			/datum/reagent/consumable/sugar = 5,
-			/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-			/datum/reagent/consumable/nothing = 5
-			)
-	result = /obj/item/reagent_containers/food/snacks/pie/mimetart
+	result = /obj/item/reagent_containers/food/snacks/honeybar
 	subcategory = CAT_PIE
 
 /datum/crafting_recipe/food/spiderlollipop
@@ -255,23 +315,3 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/spiderlollipop
 	subcategory = CAT_PIE
-
-/datum/crafting_recipe/food/amanitapie
-	name = "Amanita pie"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom/amanita = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pie/amanita_pie
-	subcategory = CAT_PIE
-
-/datum/crafting_recipe/food/bearypie
-	name = "Beary Pie"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
-		/obj/item/reagent_containers/food/snacks/grown/berries = 1,
-		/obj/item/reagent_containers/food/snacks/meat/steak/bear = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/pie/bearypie
-	subcategory = CAT_PIE
-	*/
