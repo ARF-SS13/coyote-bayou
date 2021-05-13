@@ -37,7 +37,8 @@
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/ec=3,
-		/obj/item/storage/bag/money/small/wastelander
+		/obj/item/storage/bag/money/small/wastelander,
+		/obj/item/kitchen/knife/combat
 		)
 
 /datum/job/wasteland/enclavesgt
@@ -76,7 +77,8 @@
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/storage/bag/money/small/wastelander
+		/obj/item/storage/bag/money/small/wastelander,
+		/obj/item/kitchen/knife/combat
 		)
 
 /datum/job/wasteland/enclavelt
@@ -115,7 +117,8 @@
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/storage/bag/money/small/wastelander
+		/obj/item/storage/bag/money/small/wastelander,
+		/obj/item/kitchen/knife/combat
 		)
 
 /datum/outfit/job/wasteland/enclavelt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
