@@ -3,7 +3,7 @@
 
 /obj/effect/landmark/map_load_mark/dungeons/northsewer
 	name = "North Sewer"
-	templates = list("north_sewer_1","north_sewer_2")
+	templates = list("north_sewer_1")
 
 /datum/map_template/fallout/dungeons/northsewer1
 	name = "North Sewer 1"
