@@ -275,19 +275,11 @@
 	desc = "Supply the station's entertainers with the equipment of their trade with these Nanotrasen-approved costumes! Contains a full clown and mime outfit, along with a bike horn and a bottle of nothing."
 	cost = 1300
 	access = ACCESS_THEATRE
-	contains = list(/obj/item/storage/backpack/clown,
-					/obj/item/clothing/shoes/clown_shoes,
-					/obj/item/clothing/mask/gas/clown_hat,
-					/obj/item/clothing/under/rank/civilian/clown,
-					/obj/item/bikehorn,
-					/obj/item/clothing/under/rank/civilian/mime,
-					/obj/item/clothing/shoes/sneakers/black,
+	contains = list(/obj/item/clothing/shoes/sneakers/black,
 					/obj/item/clothing/gloves/color/white,
 					/obj/item/clothing/mask/gas/mime,
 					/obj/item/clothing/head/beret,
-					/obj/item/clothing/suit/suspenders,
-					/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
-					/obj/item/storage/backpack/mime)
+					/obj/item/clothing/suit/suspenders)
 	crate_name = "standard costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 

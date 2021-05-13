@@ -280,7 +280,7 @@
 /datum/export/gear/magicboots //Magic as in Antag - Wiz/Cults
 	cost = 450
 	unit_name = "magic shoes"
-	export_types = list(/obj/item/clothing/shoes/sandal/marisa, /obj/item/clothing/shoes/sandal/magic, /obj/item/clothing/shoes/cult, /obj/item/clothing/shoes/clockwork, /obj/item/clothing/shoes/clown_shoes/taeclowndo)
+	export_types = list(/obj/item/clothing/shoes/sandal/marisa, /obj/item/clothing/shoes/sandal/magic, /obj/item/clothing/shoes/cult, /obj/item/clothing/shoes/clockwork)
 	include_subtypes = TRUE
 
 //Headsets/Ears

@@ -684,21 +684,6 @@
 	new /obj/item/reagent_containers/syringe/stimulants(src)
 	new /obj/item/grenade/syndieminibomb(src)
 
-// For ClownOps.
-/obj/item/storage/backpack/duffelbag/clown/syndie/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	slowdown = 0
-	STR.silent = TRUE
-
-/obj/item/storage/backpack/duffelbag/clown/syndie/PopulateContents()
-	new /obj/item/pda/clown(src)
-	new /obj/item/clothing/under/rank/civilian/clown(src)
-	new /obj/item/clothing/shoes/clown_shoes(src)
-	new /obj/item/clothing/mask/gas/clown_hat(src)
-	new /obj/item/bikehorn(src)
-	new /obj/item/implanter/sad_trombone(src)
-
 obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A large duffel bag containing two CX Shredders, some magazines, an elite hardsuit, and a chest rig."
 
@@ -712,11 +697,6 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
 
-/obj/item/storage/backpack/snail
-	name = "snail shell"
-	desc = "Worn by snails as armor and storage compartment."
-	icon_state = "snailshell"
-	item_state = "snailshell"
 ///FO13 Edit
 /obj/item/storage/backpack/trekker
 	name = "trekkers pack"

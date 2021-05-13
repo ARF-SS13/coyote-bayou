@@ -37,13 +37,7 @@
 	var/weaponscheck = TRUE
 	var/bikehorn = /obj/item/bikehorn
 
-/mob/living/simple_animal/bot/honkbot/Initialize()
-	. = ..()
-	update_icon()
-	auto_patrol = TRUE
-	var/datum/job/clown/J = new/datum/job/clown
-	access_card.access += J.get_access()
-	prev_access = access_card.access
+
 
 /mob/living/simple_animal/bot/honkbot/proc/spam_flag_false() //used for addtimer
 	spam_flag = FALSE

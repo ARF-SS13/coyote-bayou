@@ -87,13 +87,6 @@
 		carried_item.add_mob_blood(H)//Oh yes, there will be blood...
 	H.regenerate_icons()
 
-/datum/outfit/mafia/clown
-	name = "Mafia Clown"
-
-	uniform = /obj/item/clothing/under/rank/civilian/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
-	mask = /obj/item/clothing/mask/gas/clown_hat
-
 /datum/outfit/mafia/traitor
 	name = "Mafia Traitor"
 

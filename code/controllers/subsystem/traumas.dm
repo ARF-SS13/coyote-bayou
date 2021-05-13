@@ -12,16 +12,15 @@ SUBSYSTEM_DEF(traumas)
 
 /datum/controller/subsystem/traumas/Initialize()
 	//phobia types is to pull from randomly for brain traumas, e.g. conspiracies is for special assignment only
-	phobia_types = list("spiders", "space", "security", "clowns", "greytide", "lizards",
+	phobia_types = list("spiders", "space", "security", "greytide", "lizards",
 						"skeletons", "snakes", "robots", "doctors", "authority", "the supernatural",
-						"aliens", "strangers", "birds", "falling", "anime", "mimes", "cats", "syndicate",
+						"aliens", "strangers", "birds", "falling", "anime", "cats", "syndicate",
 						"eye"
 						)
 
 	phobia_words = list("spiders"   = strings(PHOBIA_FILE, "spiders"),
 						"space"     = strings(PHOBIA_FILE, "space"),
 						"security"  = strings(PHOBIA_FILE, "security"),
-						"clowns"    = strings(PHOBIA_FILE, "clowns"),
 						"greytide"  = strings(PHOBIA_FILE, "greytide"),
 						"lizards"   = strings(PHOBIA_FILE, "lizards"),
 						"skeletons" = strings(PHOBIA_FILE, "skeletons"),
@@ -36,7 +35,6 @@ SUBSYSTEM_DEF(traumas)
 						"birds" = strings(PHOBIA_FILE, "birds"),
 						"falling" = strings(PHOBIA_FILE, "falling"),
 						"anime" = strings(PHOBIA_FILE, "anime"),
-						"mimes" = strings(PHOBIA_FILE, "mimes"),
 						"cats" = strings(PHOBIA_FILE, "cats"),
 						"syndicate"= strings(PHOBIA_FILE, "syndicate"),
 						"eye" = strings(PHOBIA_FILE, "eye")
@@ -73,10 +71,6 @@ SUBSYSTEM_DEF(traumas)
 						/obj/item/clothing/under/rank/security/head_of_security, /obj/item/clothing/under/rank/security/detective,
 						/obj/item/melee/baton, /obj/item/gun/energy/taser, /obj/item/restraints/handcuffs,
 						/obj/machinery/door/airlock/security, /obj/effect/hallucination/simple/securitron)),
-
-					"clowns" = typecacheof(list(/obj/item/clothing/under/rank/civilian/clown, /obj/item/clothing/shoes/clown_shoes,
-						/obj/item/clothing/mask/gas/clown_hat, /obj/item/instrument/bikehorn,
-						/obj/item/pda/clown, /obj/item/grown/bananapeel)),
 
 					"greytide"  = typecacheof(list(/obj/item/clothing/under/color/grey, /obj/item/melee/baton/cattleprod,
 						/obj/item/twohanded/spear, /obj/item/clothing/mask/gas)),
@@ -153,13 +147,6 @@ SUBSYSTEM_DEF(traumas)
 						/obj/item/reagent_containers/food/drinks/bottle/sake, /obj/item/throwing_star, /obj/item/clothing/head/kitty/genuine, /obj/item/clothing/suit/space/space_ninja,
 						/obj/item/clothing/mask/gas/space_ninja, /obj/item/clothing/shoes/space_ninja, /obj/item/clothing/gloves/space_ninja, /obj/item/vibro_weapon,
 						/obj/item/nullrod/scythe/vibro, /obj/item/energy_katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana, /obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe)),
-
-					"mimes" = typecacheof(list(/obj/item/pda/mime, /obj/item/clothing/under/rank/civilian/mime, /obj/item/clothing/mask/gas/mime,
-						/obj/item/clothing/head/frenchberet, /obj/item/clothing/suit/suspenders, /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
-						/obj/item/storage/backpack/mime, /obj/item/reagent_containers/food/snacks/grown/banana/mime,
-						/obj/item/grown/bananapeel/mimanapeel, /obj/item/cartridge/virus/mime, /obj/item/clothing/shoes/sneakers/mime,
-						/obj/item/bedsheet/mime, /obj/item/reagent_containers/food/snacks/burger/mime, /obj/item/clothing/head/beret, /obj/item/clothing/mask/gas/sexymime,
-						/obj/item/clothing/under/rank/civilian/mime/sexy, /obj/item/toy/figure/mime, /obj/item/toy/crayon/mime, /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/silenced, /obj/mecha/combat/reticence)),
 
 					"cats" = typecacheof(list(/obj/item/organ/ears/cat, /obj/item/organ/tail/cat, /obj/item/laser_pointer, /obj/item/toy/cattoy, /obj/item/clothing/head/kitty,
 						/obj/item/clothing/head/collectable/kitty, /obj/item/melee/chainofcommand/tailwhip/kitty, /obj/item/stack/sheet/animalhide/cat)),
