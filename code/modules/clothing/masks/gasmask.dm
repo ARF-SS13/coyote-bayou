@@ -103,69 +103,12 @@
 		to_chat(user, "<span class='notice'>Your Clown Mask has now morphed into [choice], all praise the Honkmother!</span>")
 		return TRUE
 
-/obj/item/clothing/mask/gas/sexyclown
-	name = "sexy-clown wig and mask"
-	desc = "A feminine clown mask for the dabbling crossdressers or female entertainers."
-	clothing_flags = ALLOWINTERNALS
-	icon_state = "sexyclown"
-	item_state = "sexyclown"
-	flags_cover = MASKCOVERSEYES
-	resistance_flags = FLAMMABLE
-
-/obj/item/clothing/mask/gas/mime
-	name = "mime mask"
-	desc = "The traditional mime's mask. It has an eerie facial posture."
-	clothing_flags = ALLOWINTERNALS
-	icon_state = "mime"
-	item_state = "mime"
-	flags_cover = MASKCOVERSEYES
-	resistance_flags = FLAMMABLE
-	actions_types = list(/datum/action/item_action/adjust)
-	var/list/mimemask_designs = list()
-
-
-/obj/item/clothing/mask/gas/mime/Initialize(mapload)
-	.=..()
-	mimemask_designs = list(
-		"Blanc" = image(icon = src.icon, icon_state = "mime"),
-		"Excité" = image(icon = src.icon, icon_state = "sexymime"),
-		"Triste" = image(icon = src.icon, icon_state = "sadmime"),
-		"Effrayé" = image(icon = src.icon, icon_state = "scaredmime")
-		)
-
-
-/obj/item/clothing/mask/gas/mime/ui_action_click(mob/user)
-	if(!istype(user) || user.incapacitated())
-		return
-
-	var/static/list/options = list("Blanc" = "mime", "Triste" = "sadmime", "Effrayé" = "scaredmime", "Excité" ="sexymime")
-
-	var/choice = show_radial_menu(user,src, mimemask_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
-
-	if(src && choice && !user.incapacitated() && in_range(user,src))
-		icon_state = options[choice]
-		user.update_inv_wear_mask()
-		for(var/X in actions)
-			var/datum/action/A = X
-			A.UpdateButtonIcon()
-		to_chat(user, "<span class='notice'>Your Mime Mask has now morphed into [choice]!</span>")
-		return TRUE
-
 /obj/item/clothing/mask/gas/monkeymask
 	name = "monkey mask"
 	desc = "A mask used when acting as a monkey."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "monkeymask"
 	item_state = "monkeymask"
-	flags_cover = MASKCOVERSEYES
-	resistance_flags = FLAMMABLE
-
-/obj/item/clothing/mask/gas/sexymime
-	name = "sexy mime mask"
-	desc = "A traditional female mime's mask."
-	clothing_flags = ALLOWINTERNALS
-	icon_state = "sexymime"
-	item_state = "sexymime"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 

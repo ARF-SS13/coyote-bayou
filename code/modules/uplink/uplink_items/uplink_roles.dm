@@ -119,22 +119,6 @@
 	cost = 4 // Has syndie tools + gloves + a robust weapon
 	restricted_roles = list("Assistant", "Curator") //Curator due to this being made of gold - It fits the theme
 
-/datum/uplink_item/role_restricted/mimery
-	name = "Guide to Advanced Mimery Series"
-	desc = "The classical two part series on how to further hone your mime skills. Upon studying the series, the user should be able to make 3x1 invisible walls, and shoot bullets out of their fingers. \
-			Obviously only works for Mimes."
-	cost = 12
-	item = /obj/item/storage/box/syndie_kit/mimery
-	restricted_roles = list("Mime")
-
-/datum/uplink_item/role_restricted/ultrahonkpins
-	name = "Hilarious firing pin"
-	desc = "A single firing pin made for Clown agents, this firing pin makes any gun honk when fired if not a true clown! \
-	This firing pin also helps you fire the gun correctly. May the HonkMother HONK you agent."
-	item = /obj/item/firing_pin/clown/ultra
-	cost = 2
-	restricted_roles = list("Clown")
-
 /datum/uplink_item/role_restricted/pressure_mod
 	name = "Kinetic Accelerator Pressure Mod"
 	desc = "A modification kit which allows Kinetic Accelerators to do greatly increased damage while indoors. \

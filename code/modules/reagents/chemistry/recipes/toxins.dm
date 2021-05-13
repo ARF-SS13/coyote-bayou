@@ -121,12 +121,6 @@
 	results = list(/datum/reagent/toxin/anacea = 3)
 	required_reagents = list(/datum/reagent/medicine/haloperidol = 1, /datum/reagent/impedrezene = 1, /datum/reagent/radium = 1)
 
-/datum/chemical_reaction/mimesbane
-	name = "Mime's Bane"
-	id = /datum/reagent/toxin/mimesbane
-	results = list(/datum/reagent/toxin/mimesbane = 3)
-	required_reagents = list(/datum/reagent/radium = 1, /datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/nothing = 1)
-
 /datum/chemical_reaction/bonehurtingjuice
 	name = "Bone Hurting Juice"
 	id = /datum/reagent/toxin/bonehurtingjuice

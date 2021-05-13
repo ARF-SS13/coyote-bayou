@@ -384,13 +384,6 @@
 /obj/item/book/granter/spell/random
 	icon_state = "random_book"
 
-/obj/item/book/granter/spell/random/Initialize()
-	. = ..()
-	var/static/banned_spells = list(/obj/item/book/granter/spell/mimery_blockade, /obj/item/book/granter/spell/mimery_guns)
-	var/real_type = pick(subtypesof(/obj/item/book/granter/spell) - banned_spells)
-	new real_type(loc)
-	return INITIALIZE_HINT_QDEL
-
 ///MARTIAL ARTS///
 
 /obj/item/book/granter/martial

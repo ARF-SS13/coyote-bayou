@@ -194,45 +194,6 @@
 	bomb.preprime(user, 0, FALSE)
 	return (BRUTELOSS)
 
-//TEARSTACHE GRENADE
-
-/obj/item/grenade/chem_grenade/teargas/moustache
-	name = "tear-stache grenade"
-	desc = "A handsomely-attired teargas grenade."
-	icon_state = "moustacheg"
-	clumsy_check = GRENADE_NONCLUMSY_FUMBLE
-
-/obj/item/grenade/chem_grenade/teargas/moustache/prime(mob/living/lanced_by)
-	var/list/check_later = list()
-	for(var/mob/living/carbon/C in get_turf(src))
-		check_later += C
-	. = ..()
-	if(!.) //grenade did not properly prime.
-		return
-	for(var/M in check_later)
-		var/mob/living/carbon/C = M
-		if(!istype(C.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(C.wear_mask, /obj/item/clothing/mask/gas/mime))
-			if(!C.wear_mask || C.dropItemToGround(C.wear_mask))
-				var/obj/item/clothing/mask/fakemoustache/sticky/the_stash = new /obj/item/clothing/mask/fakemoustache/sticky()
-				C.equip_to_slot_or_del(the_stash, SLOT_WEAR_MASK, TRUE, TRUE, TRUE, TRUE)
-
-/obj/item/clothing/mask/fakemoustache/sticky
-	var/unstick_time = 2 MINUTES
-
-/obj/item/clothing/mask/fakemoustache/sticky/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-	addtimer(TRAIT_CALLBACK_REMOVE(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT), unstick_time)
-
-/obj/item/clothing/mask/fakemoustache/sticky/equipped(mob/user, slot)
-	. = ..()
-	if(slot == SLOT_WEAR_MASK)
-		ADD_TRAIT(user, TRAIT_NO_INTERNALS, STICKY_MOUSTACHE_TRAIT)
-
-/obj/item/clothing/mask/fakemoustache/sticky/dropped(mob/user)
-	. = ..()
-	REMOVE_TRAIT(user, TRAIT_NO_INTERNALS, STICKY_MOUSTACHE_TRAIT)
-
 //DARK H.O.N.K. AND CLOWN MECH WEAPONS
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/banana_mortar/bombanana

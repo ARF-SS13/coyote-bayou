@@ -203,7 +203,6 @@ Practitioner
 /datum/outfit/loadout/pharmacist
 	name = "Pharmacist"
 	suit = 		/obj/item/clothing/suit/toggle/labcoat/chemist
-	head = 		/obj/item/clothing/head/soft/mime
 	gloves = 	/obj/item/clothing/gloves/color/latex
 	glasses = 	/obj/item/clothing/glasses/science
 	backpack_contents = list(

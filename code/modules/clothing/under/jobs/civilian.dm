@@ -156,13 +156,6 @@
 	item_state = "curator"
 	item_color = "curator"
 
-/obj/item/clothing/under/rank/mime
-	name = "mime's outfit"
-	desc = "It's not very colourful."
-	icon_state = "mime"
-	item_state = "mime"
-	item_color = "mime"
-
 /obj/item/clothing/under/rank/miner
 	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
 	name = "shaft miner's jumpsuit"

@@ -277,7 +277,6 @@
 	access = ACCESS_THEATRE
 	contains = list(/obj/item/clothing/shoes/sneakers/black,
 					/obj/item/clothing/gloves/color/white,
-					/obj/item/clothing/mask/gas/mime,
 					/obj/item/clothing/head/beret,
 					/obj/item/clothing/suit/suspenders)
 	crate_name = "standard costume crate"

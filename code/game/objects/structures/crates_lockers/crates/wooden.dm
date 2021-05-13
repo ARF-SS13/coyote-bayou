@@ -7,7 +7,7 @@
 
 /obj/structure/closet/crate/wooden/toy
 	name = "toy box"
-	desc = "It has the words \"Clown + Mime\" written underneath of it with marker."
+	desc = "Its a toybox."
 
 /obj/structure/closet/crate/wooden/toy/PopulateContents()
 	. = ..()
