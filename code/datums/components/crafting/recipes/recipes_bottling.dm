@@ -8,41 +8,46 @@
 	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 80
 	category = CAT_MISC
-	subcategory = CAT_TOOL
+	subcategory = CAT_BOTTLE
 
 /datum/crafting_recipe/bottle
-	name = "brown bottle"
-	result = /obj/item/reagent_containers/food/drinks/bottle/brown
 	reqs = list(/obj/item/stack/sheet/glass = 3,
 				/obj/item/stack/f13Cash = 1)
 	tools = list(TOOL_BOTTLER)
 	time = 10
-	category = CAT_BOTTLE
+	category = CAT_MISC
+	subcategory = CAT_BOTTLE
 
 /datum/crafting_recipe/bottle/darkbrown
-	name = "dark brown bottle"
+	name = "Rounded brown bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/darkbrown
 
 /datum/crafting_recipe/bottle/lightbrown
-	name = "light brown bottle"
+	name = "Square brown bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/lightbrown
 
 /datum/crafting_recipe/bottle/white
-	name = "white bottle"
+	name = "White bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/white
 
 /datum/crafting_recipe/bottle/green
-	name = "green bottle"
+	name = "Green bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/green
 
 /datum/crafting_recipe/bottle/wine
-	name = "wine bottle"
+	name = "Wine bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/wine
 
 /datum/crafting_recipe/bottle/greenwine
-	name = "green wine bottle"
+	name = "Green wine bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/greenwine
 
 /datum/crafting_recipe/bottle/beerbottle
-	name = "beer bottle"
+	name = "Beer bottle"
 	result = /obj/item/reagent_containers/food/drinks/bottle/brown/beer
+
+/datum/crafting_recipe/bottle/metalflask
+	name = "Metal flask"
+	result = /obj/item/reagent_containers/food/drinks/flask
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1)

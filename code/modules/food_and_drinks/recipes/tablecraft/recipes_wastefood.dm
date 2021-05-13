@@ -6,7 +6,6 @@
 	)
 	tools = list(TOOL_LUNCHBOX)
 	result = /obj/item/reagent_containers/food/snacks/f13/molejerky
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/caravanlunch
@@ -18,7 +17,6 @@
 		/obj/item/crafting/lunchbox = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/caravanlunch
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/wastelandwellington
@@ -29,7 +27,6 @@
 		/obj/item/reagent_containers/food/snacks/meat/steak = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/wastelandwellington
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/deathclawomelette
@@ -41,7 +38,6 @@
 		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/moleratstew
@@ -54,7 +50,6 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/moleratstew
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/crispysquirrel
@@ -64,61 +59,35 @@
 		/obj/item/stack/rods = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/crispysquirrel
-	category = CAT_FOOD
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/squirrelstick
-	name = "Squirrel on a Stick"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 2,
-		/obj/item/stack/rods = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/f13/squirrelstick
-	category = CAT_FOOD
-	subcategory = CAT_WASTEFOOD
-
-/datum/crafting_recipe/food/squirrelstew
-	name = "Squirrel Stew"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 1,
-		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
-		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
-		/obj/item/reagent_containers/glass/bowl = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/f13/squirrelstew
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/pemmican
-	name = "pemmican"
+	name = "Pemmican"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
 		/obj/item/reagent_containers/food/snacks/sosjerky/healthy = 2,
 		/obj/item/reagent_containers/food/snacks/tallow = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pemmican
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/crunchymutfruit
-	name = "crunchy mutfruit"
+	name = "Crunchy Mutfruit"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
 		/datum/reagent/consumable/sugar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/tatofries
-	name = "tato fries"
+	name = "Tato fries"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/tato = 2,
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/tatofries
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/mirelurkstew
@@ -131,7 +100,6 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/mirelurkstew
-	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/mirelurkcake
@@ -143,5 +111,34 @@
 		/datum/reagent/consumable/sodiumchloride = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/f13/mirelurkcake
-	category = CAT_FOOD
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/gourdsoup
+	name = "Buffalo Gourd Soup"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/grown/buffalogourd = 1,
+		/obj/item/reagent/consumable/milk = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/buffalogourd
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/squirrelstick
+	name = "Squirrel on a Stick"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 2,
+		/obj/item/stack/rods = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/squirrelstick
+	subcategory = CAT_WASTEFOOD
+
+/datum/crafting_recipe/food/squirrelstew
+	name = "Squirrel Stew"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/steak/squirrel = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/f13/squirrelstew
 	subcategory = CAT_WASTEFOOD

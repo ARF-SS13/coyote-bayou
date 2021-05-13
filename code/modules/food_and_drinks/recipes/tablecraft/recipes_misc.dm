@@ -145,6 +145,18 @@
 	result = /obj/item/reagent_containers/food/snacks/melonfruitbowl
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/ricepudding
+	name = "Rice pudding"
+	reqs = list(
+		/datum/reagent/consumable/milk = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
+	subcategory = CAT_MISCFOOD
+
+
+/*
 /datum/crafting_recipe/food/melonkeg
 	name ="Melon keg"
 	reqs = list(
@@ -191,17 +203,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/powercrepe
 	subcategory = CAT_MISCFOOD
-
-/datum/crafting_recipe/food/ricepudding
-	name = "Rice pudding"
-	reqs = list(
-		/datum/reagent/consumable/milk = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
-	subcategory = CAT_MISCFOOD
-
 /datum/crafting_recipe/food/butterbear //ITS ALIVEEEEEE!
 	name = "Living bear/butter hybrid"
 	reqs = list(
@@ -225,3 +226,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/royalcheese
 	subcategory = CAT_MISCFOOD
+*/
+
+
