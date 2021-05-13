@@ -201,7 +201,7 @@
 	name = "ritual dagger"
 	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
 	icon_state = "ritualdagger"
-	item_state = "crysknife"
+	item_state = "ritualdagger"
 	force = 25
 	throwforce = 20
 	armour_penetration = 0.2
