@@ -416,8 +416,6 @@
 	contraband = TRUE
 	contains = list(/obj/item/dildo/custom,
 					/obj/item/dildo/custom,
-					/obj/item/vending_refill/kink,
-					/obj/item/vending_refill/kink,
 					/obj/item/clothing/under/costume/maid,
 					/obj/item/clothing/under/costume/maid,
 					/obj/item/electropack/shockcollar,

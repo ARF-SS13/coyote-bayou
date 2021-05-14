@@ -32,8 +32,6 @@
 	contraband = list(
 				/obj/item/clothing/neck/petcollar/locked = 2,
 				/obj/item/key/collar = 2,
-				/obj/item/clothing/head/simplekitty = 3,
-				/obj/item/clothing/head/rabbitears = 3,
 				/obj/item/clothing/under/misc/keyholesweater = 2,
 				/obj/item/clothing/under/misc/stripper/mankini = 2,
 				/obj/item/clothing/under/costume/jabroni = 2,
@@ -48,7 +46,3 @@
 	default_price = PRICE_CHEAP
 	extra_price = PRICE_BELOW_NORMAL
 	payment_department = NO_FREEBIES
-
-/obj/item/vending_refill/kink
-	machine_name 	= "KinkMate"
-	icon_state 		= "refill_kink"
