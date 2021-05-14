@@ -143,24 +143,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | DAIRY
 
-/obj/item/reagent_containers/food/snacks/store/bread/mimana
-	name = "mimana bread"
-	desc = "Best eaten in silence."
-	icon_state = "mimanabread"
-	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/mimana
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/toxin/mutetoxin = 5, /datum/reagent/consumable/nothing = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
-	tastes = list("bread" = 10, "silence" = 10)
-	foodtype = GRAIN | FRUIT
-
-/obj/item/reagent_containers/food/snacks/breadslice/mimana
-	name = "mimana bread slice"
-	desc = "A slice of silence!"
-	icon_state = "mimanabreadslice"
-	filling_color = "#C0C0C0"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
-	foodtype = GRAIN | FRUIT
-
 /obj/item/reagent_containers/food/snacks/breadslice/custom
 	name = "bread slice"
 	icon_state = "tofubreadslice"

@@ -104,7 +104,7 @@
 	/// The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
 	var/datum/weakref/LAssailant
 
-	var/list/mob_spell_list = list() //construct spells and mime spells. Spells that do not transfer from one mob to another and can not be lost in mindswap.
+	var/list/mob_spell_list = list() //construct spells. Spells that do not transfer from one mob to another and can not be lost in mindswap.
 
 
 	var/status_flags = CANSTUN|CANKNOCKDOWN|CANUNCONSCIOUS|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canknockdown, canstun, etc)

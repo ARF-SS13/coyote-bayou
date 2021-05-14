@@ -21,8 +21,6 @@
 		return
 	possible_appearances = sortList(list(
 		"Assistant" = image(icon = src.icon, icon_state = "cutout_greytide"),
-		"Clown" = image(icon = src.icon, icon_state = "cutout_clown"),
-		"Mime" = image(icon = src.icon, icon_state = "cutout_mime"),
 		"Traitor" = image(icon = src.icon, icon_state = "cutout_traitor"),
 		"Nuke Op" = image(icon = src.icon, icon_state = "cutout_fluke"),
 		"Cultist" = image(icon = src.icon, icon_state = "cutout_cultist"),

@@ -1,43 +1,3 @@
-//Clown PDA is slippery.
-/obj/item/pda/clown
-	name = "clown PDA"
-	default_cartridge = /obj/item/cartridge/virus/clown
-	inserted_item = /obj/item/toy/crayon/rainbow
-	icon_state = "pda-clown"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. The surface is coated with polytetrafluoroethylene and banana drippings."
-	ttone = "honk"
-	var/slipvictims = list() //CIT CHANGE - makes clown PDAs track unique people slipped
-
-/obj/item/pda/clown/Initialize()
-	. = ..()
-	AddComponent(/datum/component/slippery, 120, NO_SLIP_WHEN_WALKING|SLIP_WHEN_JOGGING, CALLBACK(src, .proc/AfterSlip))
-
-/obj/item/pda/clown/proc/AfterSlip(mob/living/carbon/human/M)
-	if (istype(M) && (M.real_name != owner))
-		slipvictims |= M //CIT CHANGE - makes clown PDAs track unique people slipped
-		var/obj/item/cartridge/virus/clown/cart = cartridge
-		if(istype(cart) && cart.charges < 5)
-			cart.charges++
-
-//Mime PDA sends "silent" messages.
-/obj/item/pda/mime
-	name = "mime PDA"
-	default_cartridge = /obj/item/cartridge/virus/mime
-	icon_state = "pda-mime"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. The hardware has been modified for compliance with the vows of silence."
-	silent = TRUE
-	ttone = "silence"
-
-/obj/item/pda/mime/msg_input(mob/living/U = usr)
-	if(emped || toff)
-		return
-	var/emojis = emoji_sanitize(stripped_input(U, "Please enter emojis", name))
-	if(!emojis)
-		return
-	if(!U.canUseTopic(src, BE_CLOSE))
-		return
-	return emojis
-
 // Special AI/pAI PDAs that cannot explode.
 /obj/item/pda/ai
 	icon = null
@@ -45,16 +5,8 @@
 	fon = FALSE
 	detonatable = FALSE
 
-/obj/item/pda/ai/attack_self(mob/user)
-	if ((honkamt > 0) && (prob(60)))//For clown virus.
-		honkamt--
-		playsound(loc, 'sound/items/bikehorn.ogg', 30, 1)
-	return
-
 /obj/item/pda/ai/pai
 	ttone = "assist"
-
-
 
 /obj/item/pda/medical
 	name = "medical PDA"

@@ -201,20 +201,6 @@
 	tastes = list("ice" = 1, "water" = 1, "pineapples" = 5)
 	foodtype = PINEAPPLE //Pineapple to allow all that like pineapple to enjoy
 
-/obj/item/reagent_containers/food/snacks/snowcones/mime
-	name = "mime snowcone"
-	desc = "..."
-	icon_state = "mime_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nothing = 5)
-	tastes = list("ice" = 1, "water" = 1, "nothing" = 5)
-
-/obj/item/reagent_containers/food/snacks/snowcones/clown
-	name = "clown snowcone"
-	desc = "Laughter drizzled over a snowball in a paper cup."
-	icon_state = "clown_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/laughter = 5)
-	tastes = list("ice" = 1, "water" = 1, "jokes" = 5, "brainfreeze" = 5, "joy" = 5)
-
 /obj/item/reagent_containers/food/snacks/snowcones/soda
 	name = "space cola snowcone"
 	desc = "Space Cola drizzled over a snowball in a paper cup."

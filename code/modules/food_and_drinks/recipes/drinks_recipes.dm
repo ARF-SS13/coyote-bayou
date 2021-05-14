@@ -466,12 +466,6 @@
 	results = list(/datum/reagent/consumable/ethanol/hippies_delight = 2)
 	required_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 1, /datum/reagent/consumable/ethanol/gargle_blaster = 1)
 
-/datum/chemical_reaction/driestmartini
-	name = "Driest Martini"
-	id = /datum/reagent/consumable/ethanol/driestmartini
-	results = list(/datum/reagent/consumable/ethanol/driestmartini = 2)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/ethanol/gin = 1)
-
 /datum/chemical_reaction/thirteenloko
 	name = "Thirteen Loko"
 	id = /datum/reagent/consumable/ethanol/thirteenloko

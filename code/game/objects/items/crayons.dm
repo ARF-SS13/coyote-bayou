@@ -533,9 +533,6 @@
 	if(istype(W, /obj/item/toy/crayon))
 		var/obj/item/toy/crayon/C = W
 		switch(C.crayon_color)
-			if("mime")
-				to_chat(usr, "This crayon is too sad to be contained in this box.")
-				return
 			if("rainbow")
 				to_chat(usr, "This crayon is too powerful to be contained in this box.")
 				return
@@ -741,26 +738,6 @@
 
 /obj/item/toy/crayon/spraycan/lubecan/isValidSurface(surface)
 	return istype(surface, /turf/open/floor)
-
-/obj/item/toy/crayon/spraycan/mimecan
-	name = "silent spraycan"
-	desc = "Art is best seen, not heard."
-	icon_state = "mimecan_cap"
-	icon_capped = "mimecan_cap"
-	icon_uncapped = "mimecan"
-	use_overlays = FALSE
-
-	can_change_colour = FALSE
-	paint_color = "#FFFFFF" //RGB
-
-	pre_noise = FALSE
-	post_noise = FALSE
-	reagent_contents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/toxin/mutetoxin = 1)
-
-/obj/item/toy/crayon/spraycan/infinite
-	name = "infinite spraycan"
-	charges = -1
-	desc = "Now with 30% more bluespace technology."
 
 #undef RANDOM_GRAFFITI
 #undef RANDOM_LETTER

@@ -5121,13 +5121,6 @@
 /area/awaymission/cabin/caves)
 "nb" = (
 /obj/effect/turf_decal/weather/snow,
-/obj/item/pda/syndicate{
-	background_color = "#0039A6";
-	default_cartridge = /obj/item/cartridge/virus/clown;
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. Seems like it may have useful information on it.";
-	name = "soviet PDA";
-	note = "<b>TRANSLATED TO GALACTIC COMMON:</b><br>DO NOT GO SOUTH."
-	},
 /obj/effect/decal/remains/human{
 	color = "#72e4fa"
 	},
