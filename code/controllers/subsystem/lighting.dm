@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(lighting_update_objects) // List of lighting objects queued fo
 
 SUBSYSTEM_DEF(lighting)
 	name = "Lighting"
-	wait = 5
+	wait = 6
 	init_order = INIT_ORDER_LIGHTING
 
 /datum/controller/subsystem/lighting/stat_entry(msg)

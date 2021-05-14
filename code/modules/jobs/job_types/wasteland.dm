@@ -37,8 +37,8 @@
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/ec=3,
-		/obj/item/storage/bag/money/small/wastelander,
-		/obj/item/kitchen/knife/combat
+		/obj/item/storage/bag/money/small/wastelander=1,
+		/obj/item/kitchen/knife/combat=1
 		)
 
 /datum/job/wasteland/enclavesgt
@@ -70,16 +70,22 @@
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma
+	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/storage/bag/money/small/wastelander,
-		/obj/item/kitchen/knife/combat
+		/obj/item/storage/bag/money/small/wastelander=1,
+		/obj/item/kitchen/knife/combat=1
 		)
+
+/datum/outfit/job/wasteland/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"
@@ -110,15 +116,15 @@
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
+	suit_store =  	/obj/item/gun/energy/laser/plasma/glock/extended
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=2,
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
-		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/storage/bag/money/small/wastelander,
-		/obj/item/kitchen/knife/combat
+		/obj/item/stock_parts/cell/ammo/ec=3,
+		/obj/item/storage/bag/money/small/wastelander=1,
+		/obj/item/kitchen/knife/combat=1
 		)
 
 /datum/outfit/job/wasteland/enclavelt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
