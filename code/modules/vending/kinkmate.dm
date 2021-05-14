@@ -42,7 +42,6 @@
 				/obj/item/clothing/accessory/skullcodpiece/fake = 3,
 				/obj/item/clothing/under/pants/chaps = 5
 				)
-	refill_canister = /obj/item/vending_refill/kink
 	default_price = PRICE_CHEAP
 	extra_price = PRICE_BELOW_NORMAL
 	payment_department = NO_FREEBIES
