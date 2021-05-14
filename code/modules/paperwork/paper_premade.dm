@@ -192,10 +192,6 @@
 	name = "Re: Scientists?!"
 	info = "Scientists <I>should</I> have access to the chemistry lab. This is intentional as opposed to some sort of oversight - after all, they need to reach the medsci router somehow. <BR>\n<BR>\nIf anything you should see this as a blessing, as you won't need to sideline whatever it is you're doing to get them what they need. Your focus should remain on predominantly medical goods, just like other stations in this sector. <BR>\n<BR>\n- Dr. Halley"
 
-/obj/item/paper/fluff/cogstation/mime
-	name = "Au futur Mime"
-	info = "Toutes mes excuses pour toute mauvaise grammaire, je ne suis pas un haut-parleur naturel Fran�ais et a d� utiliser NanoTranslate. Bien que vous puissiez �tre m�content de l�emplacement de votre bureau, s�il vous pla�t comprendre que c��tait le seul endroit o� nous pourrions le mettre sans probl�mes de s�curit� et/ou CentClown se plaindre � ce sujet. Nous nous excusons �galement pour l�absence d�une zone de performance d�di�e, mais nous esp�rons que vous accorder un acc�s � l�entretien compensera. <BR>\n<BR>\n<I>-C. Donnelly<I> <BR>\n<BR>\nAnalyste Architectural"
-
 /obj/item/paper/fluff/cogstation/bsrb
 	name = "Message from the NTBSRB"
 	info = "Congratulations, (sector name here)! You've been chosen as a candidate to receive a Nanotrasen icon via bluespace translocation! 'CogStation' as it's commonly known has a rich history and a unique layout. Our hope is that you'll be able to retrofit this station to serve your needs, ideally as one of your primary research hubs.<br><br>We look forward to seeing what you can accomplish here!<BR>\n<BR>\n<I>-The Nanotrasen Bluespace Research Board</I>"
