@@ -60,30 +60,3 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95, "wound" = 15)
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
-
-/obj/item/clothing/under/plasmaman/mime
-	name = "mime envirosuit"
-	desc = "It's not very colourful."
-	icon_state = "mime_envirosuit"
-	item_state = "mime_envirosuit"
-
-/obj/item/clothing/under/plasmaman/clown
-	name = "clown envirosuit"
-	desc = "<i>'HONK!'</i>"
-	icon_state = "clown_envirosuit"
-	item_state = "clown_envirosuit"
-
-/obj/item/clothing/under/plasmaman/clown/Extinguish(mob/living/carbon/human/H)
-	if(!istype(H))
-		return
-
-	if(H.on_fire)
-		if(extinguishes_left)
-			if(next_extinguish > world.time)
-				return
-			next_extinguish = world.time + extinguish_cooldown
-			extinguishes_left--
-			H.visible_message("<span class='warning'>[H]'s suit spews out a tonne of space lube!</span>","<span class='warning'>Your suit spews out a tonne of space lube!</span>")
-			H.ExtinguishMob()
-			new /obj/effect/particle_effect/foam(loc) //Truely terrifying.
-	return FALSE

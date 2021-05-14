@@ -222,11 +222,6 @@
 	export_types = list(/obj/item/clothing/shoes)
 	include_subtypes = TRUE
 
-/datum/export/gear/clown_shoesmk
-	cost = 600
-	unit_name = "mk-honk prototype shoes"
-	export_types = list(/obj/item/clothing/shoes/clown_shoes/banana_shoes)
-
 /datum/export/gear/magboots
 	cost = 50
 	unit_name = "magboots"

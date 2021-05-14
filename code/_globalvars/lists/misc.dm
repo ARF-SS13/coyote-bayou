@@ -6,7 +6,6 @@ GLOBAL_LIST_INIT(flirts, list("Roses are red / Violets are good / One day while 
 		"We go together like the clown and the external airlock.",
 		"Roses are red / Liches are wizards / I love you more than a whole squad of lizards.",
 		"Be my valentine. Law 2.",
-		"You must be a mime, because you leave me speechless.",
 		"I love you like Ian loves the HoP.",
 		"You're hotter than a plasma fire in toxins.",
 		"Are you a rogue atmos tech? Because you're taking my breath away.",

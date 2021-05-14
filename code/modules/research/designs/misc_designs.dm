@@ -245,16 +245,6 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
-/datum/design/air_horn
-	name = "Air Horn"
-	desc = "Damn son, where'd you find this?"
-	id = "air_horn"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/bananium = 1000)
-	build_path = /obj/item/bikehorn/airhorn
-	category = list("Equipment")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL	//HONK!
-
 /datum/design/magboots
 	name = "Magnetic Boots"
 	desc = "Magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle."

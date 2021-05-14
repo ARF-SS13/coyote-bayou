@@ -128,57 +128,8 @@
 	playsound(src, pickweight(honksounds), 50, 1)
 	return (BRUTELOSS)
 
-//air horn
-/obj/item/bikehorn/airhorn
-	name = "air horn"
-	desc = "Damn son, where'd you find this?"
-	icon_state = "air_horn"
-	honksounds = list('sound/items/airhorn2.ogg' = 1)
-
-//golden bikehorn
-/obj/item/bikehorn/golden
-	name = "golden bike horn"
-	desc = "Golden? Clearly, it's made with bananium! Honk!"
-	icon_state = "gold_horn"
-	item_state = "gold_horn"
-	var/flip_cooldown = 0
-
-/obj/item/bikehorn/golden/attack()
-	if(flip_cooldown < world.time)
-		flip_mobs()
-	return ..()
-
-/obj/item/bikehorn/golden/attack_self(mob/user)
-	if(flip_cooldown < world.time)
-		flip_mobs()
-	..()
-
-/obj/item/bikehorn/golden/proc/flip_mobs(mob/living/carbon/M, mob/user)
-	var/turf/T = get_turf(src)
-	for(M in ohearers(7, T))
-		if(ishuman(M) && M.can_hear())
-			var/mob/living/carbon/human/H = M
-			if(istype(H.ears, /obj/item/clothing/ears/earmuffs))
-				continue
-		M.emote("flip")
-	flip_cooldown = world.time + 7
-
 /obj/item/bikehorn/silver
 	name = "silver bike horn"
 	desc = "A shiny bike horn handcrafted in the artisan workshops of Mars, with superior kevlar-reinforced rubber bulb attached to a polished plasteel reed horn."
 	attack_verb = list("elegantly HONKED")
 	icon_state = "silverhorn"
-
-/obj/item/bikehorn/bluespacehonker
-	name = "bluespace bike horn"
-	desc = "A normal bike horn colored blue and has bluespace dust held in to reed horn allowing for silly honks through space and time, into your in childhood."
-	attack_verb = list("HONKED in bluespace", "HONKED", "quantumly HONKED")
-	icon_state = "bluespacehonker"
-	moodlet = "bshonk"
-
-//canned laughter
-/obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter
-	name = "Canned Laughter"
-	desc = "Just looking at this makes you want to giggle."
-	icon_state = "laughter"
-	list_reagents = list(/datum/reagent/consumable/laughter = 50)

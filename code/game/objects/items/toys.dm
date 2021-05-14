@@ -632,13 +632,6 @@
 	desc = "Mini-Mecha action figure! Collect them all! 11/12."
 	icon_state = "phazonprize"
 
-/obj/item/toy/prize/reticence
-	name = "toy Reticence"
-	desc = "Mini-Mecha action figure! Collect them all! 12/12."
-	icon_state = "reticenceprize"
-	quiet = 1
-
-
 /obj/item/toy/talking
 	name = "talking action figure"
 	desc = "A generic action figure modeled after nothing in particular."
@@ -1451,12 +1444,6 @@
 	name = "Medical Doctor action figure"
 	icon_state = "md"
 	toysay = "The patient is already dead!"
-
-/obj/item/toy/figure/mime
-	name = "Mime action figure"
-	icon_state = "mime"
-	toysay = "..."
-	toysound = null
 
 /obj/item/toy/figure/miner
 	name = "Shaft Miner action figure"

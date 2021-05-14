@@ -466,18 +466,6 @@
 	results = list(/datum/reagent/consumable/ethanol/hippies_delight = 2)
 	required_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 1, /datum/reagent/consumable/ethanol/gargle_blaster = 1)
 
-/datum/chemical_reaction/bananahonk
-	name = "Banana Honk"
-	id = /datum/reagent/consumable/ethanol/bananahonk
-	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
-	required_reagents = list(/datum/reagent/consumable/laughter = 1, /datum/reagent/consumable/cream = 1)
-
-/datum/chemical_reaction/silencer
-	name = "Silencer"
-	id = /datum/reagent/consumable/ethanol/silencer
-	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/sugar = 1)
-
 /datum/chemical_reaction/driestmartini
 	name = "Driest Martini"
 	id = /datum/reagent/consumable/ethanol/driestmartini
@@ -742,12 +730,6 @@
 	id = /datum/reagent/consumable/pinkmilk
 	results = list(/datum/reagent/consumable/pinkmilk = 2)
 	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1)
-
-/datum/chemical_reaction/blank_paper
-	name = "Blank Paper"
-	id = /datum/reagent/consumable/ethanol/blank_paper
-	results = list(/datum/reagent/consumable/ethanol/blank_paper = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nuka_cola = 1)
 
 /datum/chemical_reaction/wizz_fizz
 	name = "Wizz Fizz"

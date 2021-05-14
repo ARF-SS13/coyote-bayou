@@ -48,16 +48,6 @@
 	custom_materials = list(/datum/material/diamond=500)
 	merge_type = /obj/item/stack/tile/mineral/diamond
 
-/obj/item/stack/tile/mineral/bananium
-	name = "bananium tile"
-	singular_name = "bananium floor tile"
-	desc = "A tile made out of bananium, HOOOOOOOOONK!"
-	icon_state = "tile_bananium"
-	turf_type = /turf/open/floor/mineral/bananium
-	mineralType = "bananium"
-	custom_materials = list(/datum/material/bananium=500)
-	merge_type = /obj/item/stack/tile/mineral/bananium
-
 /obj/item/stack/tile/mineral/abductor
 	name = "alien floor tile"
 	singular_name = "alien floor tile"

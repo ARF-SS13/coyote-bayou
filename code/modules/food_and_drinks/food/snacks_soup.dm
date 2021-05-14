@@ -240,7 +240,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/onion
 	name = "french onion soup"
-	desc = "Good enough to make a grown mime cry."
+	desc = "Good enough to make a grown man cry."
 	icon_state = "onionsoup"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("caramelized onions" = 1)

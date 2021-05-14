@@ -45,10 +45,6 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/heirloom_type
 	switch(quirk_holder.mind.assigned_role)
-		if("Clown")
-			heirloom_type = pick(/obj/item/paint/anycolor, /obj/item/bikehorn/golden)
-		if("Mime")
-			heirloom_type = pick(/obj/item/paint/anycolor, /obj/item/toy/dummy)
 		if("Cook")
 			heirloom_type = /obj/item/kitchen/knife/butcher
 		if("Botanist")

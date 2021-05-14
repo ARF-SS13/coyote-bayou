@@ -378,15 +378,6 @@
 	icon_state = "shark_cloth"
 	mutantrace_variation = NONE
 
-/obj/item/clothing/under/custom/mimeoveralls
-	name = "Mime's Overalls"
-	icon = 'icons/obj/custom.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	desc = "A less-than-traditional mime's attire, completed by a set of dorky-looking overalls."
-	item_state = "moveralls"
-	icon_state = "moveralls"
-	mutantrace_variation = NONE
-
 /obj/item/clothing/suit/hooded/cloak/zuliecloak
 	name = "Project: Zul-E"
 	desc = "A standard version of a prototype cloak given out by Nanotrasen higher ups. It's surprisingly thick and heavy for a cloak despite having most of its tech stripped. It also comes with a bluespace trinket which calls its accompanying hat onto the user. A worn inscription on the inside of the cloak reads 'Fleuret' ...the rest is faded away."

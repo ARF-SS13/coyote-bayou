@@ -27,11 +27,6 @@
 
 // Materials. Selling raw can lead to a big payout but takes a lot of work for miners to get a lot. Best to craft art/rnd gear
 
-/datum/export/material/bananium
-	cost = 500
-	material_id = /datum/material/bananium
-	message = "cm3 of bananium"
-
 /datum/export/material/diamond
 	cost = 250
 	material_id = /datum/material/diamond

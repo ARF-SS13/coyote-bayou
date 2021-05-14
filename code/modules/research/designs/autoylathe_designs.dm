@@ -146,13 +146,6 @@
 	materials = list(/datum/material/plastic = 250)
 	build_path = /obj/item/toy/prize/phazon
 
-/datum/design/autoylathe/mech/contraband/model12
-	name = "Toy Reticence"
-	id = "toymech12"
-	materials = list(/datum/material/plastic = 250)
-	build_path = /obj/item/toy/prize/reticence
-	category = list("hacked", "Figurines")
-
 /datum/design/autoylathe/talking/AI
 	name = "Toy AI"
 	id = "ToyAICore"
@@ -372,12 +365,6 @@
 	id = "medfigure"
 	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
 	build_path = /obj/item/toy/figure/md
-
-/datum/design/autoylathe/figure/mime
-	name = "Mime"
-	id = "mimfigure"
-	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
-	build_path = /obj/item/toy/figure/mime
 
 /datum/design/autoylathe/figure/miner
 	name = "Miner"
