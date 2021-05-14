@@ -423,7 +423,7 @@
 					/obj/item/electropack/shockcollar,
 					/obj/item/electropack/shockcollar,
 					/obj/item/restraints/handcuffs/fake/kinky,
-					/obj/item/restraints/handcuffs/fake/kinky,
+					/obj/item/restraints/handcuffs/fake/kinky)
 	crate_name = "lewd kit"
 	crate_type = /obj/structure/closet/crate
 
