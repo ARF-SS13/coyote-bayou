@@ -248,7 +248,6 @@
 					/obj/item/clothing/shoes/wraps/red,
 					/obj/item/clothing/shoes/wraps/blue,
 					/obj/item/clothing/shoes/wraps/blue,
-					/obj/item/clothing/shoes/clown_shoes,
 					/obj/item/clothing/shoes/kindleKicks)
 	crate_name = "footie crate"
 

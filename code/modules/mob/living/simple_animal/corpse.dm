@@ -65,14 +65,6 @@
 	back = /obj/item/tank/jetpack/oxygen/harness
 	id = /obj/item/card/id/syndicate
 
-
-/obj/effect/mob_spawn/human/clown/corpse
-	roundstart = FALSE
-	instant = TRUE
-	skin_tone = "caucasian1"
-	hair_style = "Bald"
-	facial_hair_style = "Shaved"
-
 /obj/effect/mob_spawn/human/corpse/pirate
 	name = "Pirate"
 	skin_tone = "caucasian1" //all pirates are white because it's easier that way

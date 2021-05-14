@@ -19,19 +19,6 @@
 	required_count = 5
 	wanted_types = list(/obj/item/toy/figure)
 
-/datum/bounty/item/silly/clown_box
-	name = "Clown Box"
-	description = "The universe needs laughter. Stamp cardboard with a clown stamp and ship it out."
-	reward = 1000
-	wanted_types = list(/obj/item/storage/box/clown)
-
-/datum/bounty/item/silly/peels
-	name = "Banana Peels"
-	description = "Centcom is running an experiment to see if a slip-n-slide can be made entirely out of banana peels, but noone wants to eat that many bananas. Ship us some fresh peels."
-	reward = 950
-	required_count = 12
-	wanted_types = list(/obj/item/grown/bananapeel)
-
 /datum/bounty/item/silly/shoes
 	name = "Shoes"
 	description = "An assistant stole a clown's shoes, the clown incinerated every pair we had. Send us some new footwear please."

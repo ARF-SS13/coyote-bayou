@@ -602,11 +602,6 @@
 	desc = "Mini-Mecha action figure! Collect them all! 5/12."
 	icon_state = "durandprize"
 
-/obj/item/toy/prize/honk
-	name = "toy H.O.N.K."
-	desc = "Mini-Mecha action figure! Collect them all! 6/12."
-	icon_state = "honkprize"
-
 /obj/item/toy/prize/marauder
 	name = "toy Marauder"
 	desc = "Mini-Mecha action figure! Collect them all! 7/12."
@@ -1378,12 +1373,6 @@
 	name = "Chemist action figure"
 	icon_state = "chemist"
 	toysay = "Get your pills!"
-
-/obj/item/toy/figure/clown
-	name = "Clown action figure"
-	icon_state = "clown"
-	toysay = "Honk!"
-	toysound = 'sound/items/bikehorn.ogg'
 
 /obj/item/toy/figure/ian
 	name = "Ian action figure"

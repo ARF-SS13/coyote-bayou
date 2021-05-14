@@ -155,7 +155,6 @@
 		/obj/item/radio,
 		/obj/item/clothing/gloves/,
 		/obj/item/lazarus_injector,
-		/obj/item/bikehorn/rubberducky,
 		/obj/item/clothing/mask/surgical,
 		/obj/item/clothing/mask/breath,
 		/obj/item/clothing/mask/breath/medical,

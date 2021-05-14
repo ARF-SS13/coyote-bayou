@@ -66,15 +66,6 @@
 	tastes = list("soy" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/clownstears
-	name = "clown's tears"
-	desc = "Not very funny."
-	icon_state = "clownstears"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/banana = 5, /datum/reagent/water = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	tastes = list("a bad joke" = 1)
-	foodtype = FRUIT | SUGAR
-
 /obj/item/reagent_containers/food/snacks/soup/vegetable
 	name = "vegetable soup"
 	desc = "A true vegan meal."

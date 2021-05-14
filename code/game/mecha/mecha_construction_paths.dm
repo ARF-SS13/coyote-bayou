@@ -29,12 +29,6 @@
 				examine_list += "<span class='notice'>The mech could use some <b>sheets of metal</b>.</span>"
 			if(/obj/item/stack/sheet/plasteel)
 				examine_list += "<span class='notice'>The mech could use some <b>sheets of strong steel</b>.</span>"
-			if(/obj/item/bikehorn)
-				examine_list += "<span class='notice'>HONK IT!.</span>"
-			if(/obj/item/clothing/mask/gas/clown_hat)
-				examine_list += "<span class='notice'>GIVE IT CLOWN MAKEUP HONK!.</span>"
-			if(/obj/item/clothing/shoes/clown_shoes)
-				examine_list += "<span class='notice'>GIVE IT GOOFY SHOES HONK HONK!.</span>"
 			if(/obj/item/mecha_parts/part)
 				examine_list += "<span class='notice'>The mech could use a mech <b>part</b>.</span>"
 			if(/obj/item/stack/ore/bluespace_crystal)

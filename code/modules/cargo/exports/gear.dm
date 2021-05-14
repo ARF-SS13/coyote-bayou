@@ -252,11 +252,6 @@
 	unit_name = "galoshes"
 	export_types = list(/obj/item/clothing/shoes/galoshes, /obj/item/clothing/shoes/galoshes/dry)
 
-/datum/export/gear/clown
-	cost = 10
-	unit_name = "clown shoes"
-	export_types = list(/obj/item/clothing/shoes/clown_shoes, /obj/item/clothing/shoes/clown_shoes/jester)
-
 /datum/export/gear/dressshoes
 	cost = 10
 	unit_name = "dress shoes"

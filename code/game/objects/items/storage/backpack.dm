@@ -479,16 +479,6 @@
 	new /obj/item/multitool(src)
 	new /obj/item/pipe_dispenser(src)
 
-/obj/item/storage/backpack/duffelbag/clown
-	name = "clown's duffel bag"
-	desc = "A large duffel bag for holding lots of funny gags!"
-	icon_state = "duffel-clown"
-	item_state = "duffel-clown"
-
-/obj/item/storage/backpack/duffelbag/clown/cream_pie/PopulateContents()
-	for(var/i in 1 to 10)
-		new /obj/item/reagent_containers/food/snacks/pie/cream(src)
-
 /obj/item/storage/backpack/duffelbag/syndie
 	name = "suspicious looking duffel bag"
 	desc = "A large duffel bag for holding extra tactical supplies."

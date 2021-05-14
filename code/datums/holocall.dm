@@ -324,7 +324,7 @@
 /obj/item/disk/holodisk/example
 	preset_image_type = /datum/preset_holoimage/nanotrasenprivatesecurity
 	preset_record_text = {"
-	NAME Clown
+	NAME Shrimp
 	DELAY 10
 	SAY Why did the chaplain cross the maint ?
 	DELAY 20

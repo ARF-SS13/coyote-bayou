@@ -584,7 +584,6 @@
 	upgrade_reagents3 = null
 	emagged_reagents = list(
 		/datum/reagent/consumable/ethanol/alexander,
-		/datum/reagent/consumable/clownstears,
 		/datum/reagent/toxin/minttoxin,
 		/datum/reagent/consumable/ethanol/atomicbomb,
 		/datum/reagent/consumable/ethanol/thirteenloko,

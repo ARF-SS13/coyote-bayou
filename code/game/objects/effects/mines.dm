@@ -95,19 +95,14 @@
 	name = "\improper N2O mine"
 	gas_type = "n2o"
 
-
-/obj/effect/mine/sound
-	name = "honkblaster 1000"
-	var/sound = 'sound/items/bikehorn.ogg'
-
+/* Some error
 /obj/effect/mine/sound/mineEffect(mob/victim)
 	playsound(loc, sound, 100, 1)
-
 
 /obj/effect/mine/sound/bwoink
 	name = "bwoink mine"
 	sound = 'sound/effects/adminhelp.ogg'
-
+*/
 /obj/effect/mine/pickup
 	name = "pickup"
 	desc = "pick me up"

@@ -57,15 +57,6 @@
 	item_color = "chef"
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/rank/clown
-	name = "clown suit"
-	desc = "<i>'HONK!'</i>"
-	icon_state = "clown"
-	item_state = "clown"
-	item_color = "clown"
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
 /obj/item/clothing/under/rank/head_of_personnel
 	desc = "It's a jumpsuit worn by someone who works in the position of \"Head of Personnel\"."
 	name = "head of personnel's jumpsuit"

@@ -110,12 +110,6 @@
 	materials = list(/datum/material/plastic = 250)
 	build_path = /obj/item/toy/prize/durand
 
-/datum/design/autoylathe/mech/contraband/model6
-	name = "Toy H.O.N.K."
-	id = "toymech6"
-	materials = list(/datum/material/plastic = 250)
-	build_path = /obj/item/toy/prize/honk
-
 /datum/design/autoylathe/mech/contraband/model7
 	name = "Toy Marauder"
 	id = "toymech7"
@@ -293,12 +287,6 @@
 	id = "chmfigure"
 	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
 	build_path = /obj/item/toy/figure/chemist
-
-/datum/design/autoylathe/figure/clown
-	name = "Clown"
-	id = "clnfigure"
-	materials = list(/datum/material/plastic = 500, /datum/material/iron = 50)
-	build_path = /obj/item/toy/figure/clown
 
 /datum/design/autoylathe/figure/cmo
 	name = "Chief Medical Officer"
