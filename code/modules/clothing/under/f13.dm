@@ -1432,7 +1432,7 @@
 	item_state = "mutie_vault_jumspuit"
 
 /obj/item/clothing/under/f13/mutieranger
-	name = "mutant Ranger armour"
-	desc = "Once, it was a blue jumpsuit with a yellow vault pattern and the number 11 printed on it, now torn and ripped."
-	icon_state = "mutie_ranger_armour"
-	item_state = "mutie_ranger_armour"
+	name = "mutant ranger clothing"
+	desc = "Specially made for Super Mutants living in the NCR, this large piece of clothing is well pressed and suited for any NCR Super Mutant personnel"
+	icon_state = "mutie_ranger_under"
+	item_state = "mutie_ranger_under"
