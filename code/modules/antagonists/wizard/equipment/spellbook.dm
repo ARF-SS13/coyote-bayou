@@ -350,7 +350,6 @@
 /datum/spellbook_entry/item/soulstones
 	name = "Six Soul Stone Shards and the spell Artificer"
 	desc = "Soul Stone Shards are ancient tools capable of capturing and harnessing the spirits of the dead and dying. The spell Artificer allows you to create arcane machines for the captured souls to pilot."
-	item_path = /obj/item/storage/belt/soulstone/full
 	category = "Assistance"
 
 /datum/spellbook_entry/item/soulstones/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -368,7 +367,6 @@
 /datum/spellbook_entry/item/wands
 	name = "Wand Assortment"
 	desc = "A collection of wands that allow for a wide variety of utility. Wands have a limited number of charges, so be conservative in use. Comes in a handy belt."
-	item_path = /obj/item/storage/belt/wands/full
 	category = "Defensive"
 	dynamic_requirement = 200
 

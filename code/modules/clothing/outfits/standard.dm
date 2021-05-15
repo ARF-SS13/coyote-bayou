@@ -432,7 +432,6 @@
 	ears = /obj/item/radio/headset/headset_cent/commander
 	mask = /obj/item/clothing/mask/gas/welding/up
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/utility/chief/full
 	l_pocket = /obj/item/gun/magic/wand/resurrection/debug
 	r_pocket = /obj/item/gun/magic/wand/death/debug
 	shoes = /obj/item/clothing/shoes/magboots/advance/debug

@@ -306,7 +306,6 @@
 	id = /obj/item/card/id/ert/chaplain
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/cultpack
-	belt = /obj/item/storage/belt/soulstone
 	backpack_contents = list(/obj/item/storage/box/engineer=1,
 		/obj/item/nullrod=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
@@ -317,8 +316,6 @@
 	name = "Inquisition Chaplain"
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-
-	belt = /obj/item/storage/belt/soulstone/full/chappy
 	backpack_contents = list(/obj/item/storage/box/engineer=1,
 		/obj/item/grenade/chem_grenade/holy=1,
 		/obj/item/nullrod=1,

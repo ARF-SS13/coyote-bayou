@@ -347,7 +347,7 @@
 			if(prob(30))
 				glasses = pickweight(list(/obj/item/clothing/glasses/meson = 2, /obj/item/clothing/glasses/hud/health = 2, /obj/item/clothing/glasses/hud/diagnostic =2, /obj/item/clothing/glasses/science = 2, /obj/item/clothing/glasses/welding = 2, /obj/item/clothing/glasses/night = 1))
 			if(prob(10))
-				belt = pick(list(/obj/item/storage/belt/mining/vendor, /obj/item/storage/belt/utility/full))
+				belt = pick(list(/obj/item/storage/belt/utility/full))
 			if(prob(50))
 				neck = /obj/item/bedsheet/rd/royal_cape
 			if(prob(10))
@@ -424,7 +424,6 @@
 			shoes = /obj/item/clothing/shoes/sneakers/yellow
 			gloves = /obj/item/clothing/gloves/color/yellow
 			ears = /obj/item/radio/headset
-			belt = /obj/item/storage/belt/fannypack/yellow
 			id_job = "Assisant"
 			id = /obj/item/card/id
 			l_pocket = /obj/item/reagent_containers/food/drinks/soda_cans/buzz_fuzz
