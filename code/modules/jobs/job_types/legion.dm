@@ -115,6 +115,7 @@ Centurion
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CENTURION
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
+	exp_requirements = 1200
 
 	loadout_options = list(
 	/datum/outfit/loadout/centheavy, //10mm SMG and powerfist
@@ -189,12 +190,13 @@ Orator
 	title = "Legion Orator"
 	flag = F13ORATOR
 	faction = "Legion"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are the the resonator of Caesar's better wills; a Legionnaire who has, perhaps through injury or advanced age, proven himself unable to fight effectively any longer. Instead of facing \"retirement\" in the Legion, one of your superiors took note of your studies and way with words, and you have been made the face and voice of the Conturbernae."
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_ORATOR
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
+	exp_requirements = 1200
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	name = "Legion Orator"
@@ -352,6 +354,7 @@ Decanii
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECANVET
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
+	exp_requirements = 600
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -397,6 +400,7 @@ Decanii
 	supervisors = "the Veteran Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
+	exp_requirements = 600
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -440,6 +444,7 @@ Decanii
 	supervisors = "the Prime Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECANREC
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec
+	exp_requirements = 600
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -488,6 +493,7 @@ Vexillarius
 		/datum/outfit/loadout/vexassault, //ripper, m29scoped
 		/datum/outfit/loadout/vexsupport //trail carbine, smoke bombs
 		)
+	exp_requirements = 600
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

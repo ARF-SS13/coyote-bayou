@@ -172,6 +172,7 @@ Lieutenant
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
 	outfit = /datum/outfit/job/ncr/f13lieutenant
+	exp_requirements = 1200
 
 /datum/outfit/job/ncr/f13lieutenant
 	name = "NCR Lieutenant"
@@ -270,6 +271,7 @@ Sergeant First Class
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_FIRSTSERGEANT
 	outfit = /datum/outfit/job/ncr/f13firstsergeant
+	exp_requirements = 600
 
 /datum/outfit/job/ncr/f13firstsergeant
 	name = "NCR Sergeant First Class"
@@ -309,6 +311,7 @@ Sergeant
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
+	exp_requirements = 600
 
 /datum/outfit/job/ncr/f13sergeant
 	name = "NCR Sergeant"
@@ -617,6 +620,7 @@ Veteran Ranger
 	selection_color = "#ffeeaa"
 	display_order = JOB_DISPLAY_ORDER_VETRANGE
 	outfit = /datum/outfit/job/ncr/f13vetranger
+	exp_requirements = 1200
 
 	loadout_options = list(
 	/datum/outfit/loadout/vrclassic, //AMR and Sequoia,
@@ -685,6 +689,7 @@ Veteran Ranger
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_RANGER
 	outfit = /datum/outfit/job/ncr/f13ranger
+	exp_requirements = 600
 
 	loadout_options = list(
 	/datum/outfit/loadout/rangerrecon,

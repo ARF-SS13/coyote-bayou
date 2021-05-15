@@ -50,7 +50,7 @@
 
 	var/exp_requirements = 0
 
-	var/exp_type = ""
+	var/exp_type = EXP_TYPE_LIVING
 	var/exp_type_department = ""
 
 	//faction objective for the round
