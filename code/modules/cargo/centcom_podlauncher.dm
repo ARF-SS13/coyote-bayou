@@ -453,9 +453,6 @@
 		if("styleBox")
 			temp_pod.setStyle(STYLE_BOX)
 			. = TRUE
-		if("styleHONK")
-			temp_pod.setStyle(STYLE_HONK)
-			. = TRUE
 		if("styleFruit")
 			temp_pod.setStyle(STYLE_FRUIT)
 			. = TRUE

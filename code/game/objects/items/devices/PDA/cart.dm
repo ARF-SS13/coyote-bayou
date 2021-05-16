@@ -3,8 +3,6 @@
 #define CART_ATMOS				(1<<2)
 #define CART_MEDICAL			(1<<3)
 #define CART_MANIFEST			(1<<4)
-#define CART_CLOWN				(1<<5)
-#define CART_MIME				(1<<6)
 #define CART_JANITOR			(1<<7)
 #define CART_REAGENT_SCANNER	(1<<8)
 #define CART_NEWSCASTER			(1<<9)
@@ -184,9 +182,9 @@
 
 /obj/item/cartridge/captain
 	name = "\improper Value-PAK cartridge"
-	desc = "Now with 350% more value!" //Give the Captain...EVERYTHING! (Except Mime, Clown, and Syndie)
+	desc = "Now with 350% more value!" //Give the Captain...EVERYTHING! (Syndie)
 	icon_state = "cart-c"
-	access = ~(CART_CLOWN | CART_MIME | CART_REMOTE_DOOR)
+	access = ~(CART_REMOTE_DOOR)
 	bot_access_flags = SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
 	spam_enabled = 1
 

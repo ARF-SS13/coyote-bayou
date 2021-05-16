@@ -105,9 +105,6 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 				return FALSE
 	return TRUE
 
-/obj/item/nuclear_challenge/clownops
-	uplink_type = /obj/item/uplink/clownop
-
 #undef CHALLENGE_TELECRYSTALS
 #undef CHALLENGE_TIME_LIMIT
 #undef CHALLENGE_PLAYERS_TARGET

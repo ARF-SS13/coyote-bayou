@@ -39,7 +39,7 @@
 	item = /obj/item/storage/box/syndie_kit/contract_kit
 	cost = 20
 	player_minimum = 30
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear)
 	restricted = TRUE
 
 /datum/uplink_item/bundles_TC/northstar_bundle
@@ -50,7 +50,7 @@
 			Combines with all martial arts, but the user will be unable to bring themselves to use guns, nor remove the armbands."
 	item = /obj/item/storage/box/syndie_kit/northstar
 	cost = 20
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/traitor/internal_affairs)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/traitor/internal_affairs)
 
 /datum/uplink_item/suits/infiltrator_bundle
 	name = "Insidious Infiltration Gear Case"
@@ -60,7 +60,7 @@
 	item = /obj/item/storage/toolbox/infiltrator
 	cost = 5
 	limited_stock = 1 //you only get one so you don't end up with too many gun cases
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
+	exclude_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/bundles_TC/cybernetics_bundle
 	name = "Cybernetic Implants Bundle"
@@ -127,7 +127,7 @@
 	item = /obj/structure/closet/crate
 	cost = 20
 	player_minimum = 25
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops, /datum/game_mode/traitor/internal_affairs)
+	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/traitor/internal_affairs)
 	cant_discount = TRUE
 	var/starting_crate_value = 50
 

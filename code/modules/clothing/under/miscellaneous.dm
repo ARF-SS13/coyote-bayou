@@ -118,16 +118,6 @@
 	alternate_worn_layer = ABOVE_SHOES_LAYER
 	can_adjust = FALSE
 
-/obj/item/clothing/under/rank/clown/sexy
-	name = "sexy-clown suit"
-	desc = "It makes you look HONKable!"
-	icon_state = "sexyclown"
-	item_state = "sexyclown"
-	item_color = "sexyclown"
-	body_parts_covered = CHEST|GROIN|LEGS
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
 /obj/item/clothing/under/assistantformal
 	name = "assistant's formal uniform"
 	desc = "An assistant's formal-wear. Why an assistant needs formal-wear is still unknown."

@@ -3,7 +3,6 @@
  * Plasma floor
  * Gold floor
  * Silver floor
- * Bananium floor
  * Diamond floor
  * Uranium floor
  * Shuttle floor (Titanium)
@@ -134,49 +133,6 @@
 
 /turf/open/floor/mineral/plastitanium/red/brig
 	name = "brig floor"
-
-//BANANIUM
-
-/turf/open/floor/mineral/bananium
-	name = "bananium floor"
-	icon_state = "bananium"
-	floor_tile = /obj/item/stack/tile/mineral/bananium
-	icons = list("bananium","bananium_dam")
-	var/spam_flag = 0
-
-/turf/open/floor/mineral/bananium/Entered(mob/living/L)
-	.=..()
-	if(!.)
-		if(istype(L))
-			squeak()
-
-/turf/open/floor/mineral/bananium/attackby(obj/item/W, mob/user, params)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/attack_paw(mob/user)
-	.=..()
-	if(!.)
-		honk()
-
-/turf/open/floor/mineral/bananium/proc/honk()
-	if(spam_flag < world.time)
-		playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
-		spam_flag = world.time + 20
-
-/turf/open/floor/mineral/bananium/proc/squeak()
-	if(spam_flag < world.time)
-		playsound(src, "clownstep", 50, 1)
-		spam_flag = world.time + 10
-
-/turf/open/floor/mineral/bananium/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 //DIAMOND
 

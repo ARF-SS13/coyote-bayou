@@ -17,40 +17,6 @@
 	var/obj/item/pda/P = locate(params["target"])//Leaving it alone in case it may do something useful, I guess.
 	send_virus(P,user)
 
-/obj/item/cartridge/virus/clown
-	name = "\improper Honkworks 5.0 cartridge"
-	icon_state = "cart-clown"
-	desc = "A data cartridge for portable microcomputers. It smells vaguely of bananas."
-	access = CART_CLOWN
-
-/obj/item/cartridge/virus/clown/send_virus(obj/item/pda/target, mob/living/U)
-	if(charges <= 0)
-		to_chat(U, "<span class='notice'>Out of charges.</span>")
-		return
-	if(!isnull(target) && !target.toff)
-		charges--
-		to_chat(U, "<span class='notice'>Virus Sent!</span>")
-		target.honkamt = (rand(15,20))
-	else
-		to_chat(U, "PDA not found.")
-
-/obj/item/cartridge/virus/mime
-	name = "\improper Gestur-O 1000 cartridge"
-	icon_state = "cart-mi"
-	access = CART_MIME
-
-/obj/item/cartridge/virus/mime/send_virus(obj/item/pda/target, mob/living/U)
-	if(charges <= 0)
-		to_chat(U, "<span class='notice'>Out of charges.</span>")
-		return
-	if(!isnull(target) && !target.toff)
-		charges--
-		to_chat(U, "<span class='notice'>Virus Sent!</span>")
-		target.silent = TRUE
-		target.ttone = "silence"
-	else
-		to_chat(U, "PDA not found.")
-
 /obj/item/cartridge/virus/syndicate
 	name = "\improper Detomatix cartridge"
 	access = CART_REMOTE_DOOR
@@ -65,7 +31,7 @@
 		charges--
 		var/difficulty = 0
 		if(target.cartridge)
-			difficulty += BitCount(target.cartridge.access&(CART_MEDICAL | CART_SECURITY | CART_ENGINE | CART_CLOWN | CART_JANITOR | CART_MANIFEST))
+			difficulty += BitCount(target.cartridge.access&(CART_MEDICAL | CART_SECURITY | CART_ENGINE | CART_JANITOR | CART_MANIFEST))
 			if(target.cartridge.access & CART_MANIFEST)
 				difficulty++ //if cartridge has manifest access it has extra snowflake difficulty
 			else

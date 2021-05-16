@@ -258,11 +258,6 @@
 	unit_name = "AI statue"
 	export_types = list(/obj/structure/statue/diamond/ai1, /obj/structure/statue/diamond/ai2)
 
-/datum/export/large/clownstatue
-	cost = 2750
-	unit_name = "Clown statue"
-	export_types = list(/obj/structure/statue/bananium/clown)
-
 /datum/export/large/sandstatue
 	cost = 90 //Big cash
 	unit_name = "sandstone statue"
@@ -324,16 +319,6 @@
 	cost = 6250 //old mech - Scrap metal ! 50% "normal" boundy price.
 	unit_name = "working miner ripley"
 	export_types = list(/obj/mecha/working/ripley/mining)
-
-/datum/export/large/mech/honk
-	cost = 16000 //Still a "Combat class" mech - Comats bordem honk!
-	unit_name = "working honker"
-	export_types = list(/obj/mecha/combat/honker)
-
-/datum/export/large/mech/reticence
-	cost = 16000 //Still a "Combat class" mech - Has cloking and lethal weaponds.
-	unit_name = "working reticence"
-	export_types = list(/obj/mecha/combat/reticence)
 
 /datum/export/large/mech/seraph
 	cost = 25500 //Still a Combat class mech - CC tech as well! 150% "normal" boundy price.

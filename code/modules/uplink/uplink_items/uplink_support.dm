@@ -7,14 +7,6 @@
 
 //Support and Mechs
 
-/datum/uplink_item/support/clown_reinforcement
-	name = "Clown Reinforcements"
-	desc = "Call in an additional clown to share the fun, equipped with full starting gear, but no telecrystals."
-	item = /obj/item/antag_spawner/nuke_ops/clown
-	cost = 20
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
-	restricted = TRUE
-
 /datum/uplink_item/support/reinforcement
 	name = "Reinforcements"
 	desc = "Call in an additional team member. They won't come with any gear, so you'll have to save some telecrystals \
@@ -60,13 +52,6 @@
 			for hit-and-run style attacks. Features an incendiary carbine, flash bang launcher, teleporter, ion thrusters and a Tesla energy array."
 	item = /obj/mecha/combat/gygax/dark/loaded
 	cost = 80
-
-/datum/uplink_item/support/honker
-	name = "Dark H.O.N.K."
-	desc = "A clown combat mech equipped with bombanana peel and tearstache grenade launchers, as well as the ubiquitous HoNkER BlAsT 5000."
-	item = /obj/mecha/combat/honker/dark/loaded
-	cost = 80
-	include_modes = list(/datum/game_mode/nuclear/clown_ops)
 
 /datum/uplink_item/support/mauler
 	name = "Mauler Exosuit"

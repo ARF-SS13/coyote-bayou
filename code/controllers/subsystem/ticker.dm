@@ -117,7 +117,7 @@ SUBSYSTEM_DEF(ticker)
 	for(var/S in music)
 		var/list/L = splittext(S,".")
 		if(L.len >= 2)
-			var/ext = lowertext(L[L.len]) //pick the real extension, no 'honk.ogg.exe' nonsense here
+			var/ext = lowertext(L[L.len]) //pick the real extension, no nonsense here
 			if(byond_sound_formats[ext])
 				continue
 		music -= S

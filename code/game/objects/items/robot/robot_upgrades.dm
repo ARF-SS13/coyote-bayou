@@ -664,12 +664,6 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	if(.)
 		R.module.transform_to(new_module)
 
-/obj/item/borg/upgrade/transform/clown
-	name = "borg module picker (Clown)"
-	desc = "Allows you to to turn a cyborg into a clown, honk."
-	icon_state = "cyborg_upgrade3"
-	new_module = /obj/item/robot_module/clown
-
 // Citadel's Vtech Controller
 /obj/effect/proc_holder/silicon/cyborg/vtecControl
 	name = "vTec Control"

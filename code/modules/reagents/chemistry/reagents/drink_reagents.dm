@@ -144,21 +144,6 @@
 	glass_name = "glass of strawberry juice"
 	glass_desc = "Refreshing seasonal summer drink."
 
-/datum/reagent/consumable/nothing
-	name = "Nothing"
-	description = "Absolutely nothing."
-	taste_description = "nothing"
-	glass_icon_state = "nothing"
-	glass_name = "nothing"
-	glass_desc = "Absolutely nothing."
-	shot_glass_icon_state = "shotglass"
-
-/datum/reagent/consumable/nothing/on_mob_life(mob/living/carbon/M)
-	if(ishuman(M) && M.job == "Mime")
-		M.heal_bodypart_damage(1,1, 0)
-		. = 1
-	..()
-
 /datum/reagent/consumable/laughter
 	name = "Laughter"
 	description = "Some say that this is the best medicine, but recent studies have proven that to be untrue."

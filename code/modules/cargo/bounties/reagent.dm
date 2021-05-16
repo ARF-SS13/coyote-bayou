@@ -42,7 +42,6 @@ datum/bounty/reagent/simple_drink/New()
 		/datum/reagent/consumable/ethanol/andalusia,\
 		/datum/reagent/consumable/tea/arnold_palmer,\
 		/datum/reagent/consumable/ethanol/b52,\
-		/datum/reagent/consumable/ethanol/bananahonk,\
 		/datum/reagent/consumable/ethanol/beepsky_smash,\
 		/datum/reagent/consumable/ethanol/between_the_sheets,\
 		/datum/reagent/consumable/ethanol/bilk,\
@@ -110,8 +109,7 @@ datum/bounty/reagent/complex_drink/New()
 		/datum/reagent/consumable/ethanol/patron,\
 		/datum/reagent/consumable/ethanol/quadruple_sec,\
 		/datum/reagent/consumable/ethanol/quintuple_sec,\
-		/datum/reagent/consumable/doctor_delight,\
-		/datum/reagent/consumable/ethanol/silencer)
+		/datum/reagent/consumable/doctor_delight)
 
 	var/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
@@ -161,7 +159,6 @@ datum/bounty/reagent/chemical/New()
 		/datum/reagent/toxin/heparin,\
 		/datum/reagent/toxin/skewium,\
 		/datum/reagent/toxin/anacea,\
-		/datum/reagent/toxin/mimesbane,\
 		/datum/reagent/pax)
 
 	var/reagent_type = pick(possible_reagents)

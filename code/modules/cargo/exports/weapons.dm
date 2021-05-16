@@ -247,11 +247,6 @@
 	unit_name = "anti-tank pistol"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/antitank/syndicate)
 
-/datum/export/weapon/clownstuff
-	cost = 500
-	unit_name = "clown combat equipment"
-	export_types = list(/obj/item/pneumatic_cannon/pie/selfcharge, /obj/item/shield/energy/bananium, /obj/item/melee/transforming/energy/sword/bananium)
-
 /datum/export/weapon/bulldog
 	cost = 400
 	unit_name = "drum-fed compact combat shotgun"

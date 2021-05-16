@@ -34,8 +34,7 @@
 #define SPOOKY_SKELETON 1
 #define ANGRY_FAITHLESS 2
 #define SCARY_BATS 		3
-#define INSANE_CLOWN	4
-#define HOWLING_GHOST	5
+#define HOWLING_GHOST	4
 
 //Spookoween variables
 /obj/structure/closet
@@ -105,12 +104,6 @@
 		trapped = 0
 		QDEL_IN(F, 120)
 
-	else if(trapped == INSANE_CLOWN)
-		visible_message("<span class='userdanger'><font size='5'>...</font></span>")
-		playsound(loc, 'sound/spookoween/scary_clown_appear.ogg', 300, 1)
-		spawn_atom_to_turf(/mob/living/simple_animal/hostile/retaliate/clown/insane, loc, 1, FALSE)
-		trapped = 0
-
 //don't spawn in crates
 /obj/structure/closet/crate/trigger_spooky_trap()
 	return
@@ -177,76 +170,6 @@
 
 /mob/living/simple_animal/shade/howling_ghost/CanPass(atom/movable/mover, turf/target)
 	return 1
-
-///////////////////////////
-//Spookoween Insane Clown//
-///////////////////////////
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane
-	name = "insane clown"
-	desc = "Some clowns do not manage to be accepted, and go insane. This is one of them."
-	icon_state = "scary_clown"
-	icon_living = "scary_clown"
-	icon_dead = "scary_clown"
-	icon_gib = "scary_clown"
-	speak = list("...", ". . .")
-	maxHealth = 120
-	health = 120
-	emote_see = list("silently stares")
-	unsuitable_atmos_damage = 0
-	var/timer
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/Initialize()
-	. = ..()
-	timer = rand(5,15)
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/Retaliate()
-	return
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/ex_act()
-	return
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/Life()
-	timer--
-	if(target)
-		stalk()
-	return
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/proc/stalk()
-	var/mob/living/M = target
-	if(M.stat == DEAD)
-		playsound(M.loc, 'sound/spookoween/insane_low_laugh.ogg', 300, 1)
-		qdel(src)
-	if(timer == 0)
-		timer = rand(5,15)
-		playsound(M.loc, pick('sound/spookoween/scary_horn.ogg','sound/spookoween/scary_horn2.ogg', 'sound/spookoween/scary_horn3.ogg'), 300, 1)
-		spawn(12)
-			forceMove(M.loc)
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/MoveToTarget()
-	stalk(target)
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/AttackingTarget()
-	return
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/adjustHealth()
-	. = ..() 
-	if(prob(5))
-		playsound(loc, 'sound/spookoween/insane_low_laugh.ogg', 300, 1)
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/attackby(obj/item/O, mob/user)
-	if(istype(O, /obj/item/nullrod))
-		if(prob(5))
-			visible_message("[src] finally found the peace it deserves. <i>You hear honks echoing off into the distance.</i>")
-			playsound(loc, 'sound/spookoween/insane_low_laugh.ogg', 300, 1)
-			qdel(src)
-		else
-			visible_message("<span class='danger'>[src] seems to be resisting the effect!</span>")
-	else
-		..()
-
-/mob/living/simple_animal/hostile/retaliate/clown/insane/handle_temperature_damage()
-	return
 
 /////////////////////////
 // Spooky Uplink Items //

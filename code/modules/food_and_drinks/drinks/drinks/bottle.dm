@@ -134,16 +134,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/tequila/empty
 	list_reagents = null
 
-/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
-	name = "bottle of nothing"
-	desc = "A bottle filled with nothing."
-	icon_state = "bottleofnothing"
-	list_reagents = list(/datum/reagent/consumable/nothing = 100)
-	foodtype = NONE
-
-/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing/empty
-	list_reagents = null
-
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola
 	name = "Nuka-Cola"
 	desc = "The most popular flavored soft drink in the United States before the Great War."

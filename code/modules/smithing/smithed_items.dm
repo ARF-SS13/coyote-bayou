@@ -64,9 +64,6 @@
 /obj/item/ingot/silver
 	custom_materials = list(/datum/material/silver=12000)
 
-/obj/item/ingot/bananium
-	custom_materials = list(/datum/material/bananium=12000)
-
 /obj/item/ingot/titanium
 	custom_materials = list(/datum/material/titanium=12000)
 

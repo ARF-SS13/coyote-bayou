@@ -457,7 +457,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 /datum/asset/spritesheet/simple/paper
 	name = "paper"
 	assets = list(
-		"stamp-clown" = 'icons/stamp_icons/large_stamp-clown.png',
 		"stamp-deny" = 'icons/stamp_icons/large_stamp-deny.png',
 		"stamp-ok" = 'icons/stamp_icons/large_stamp-ok.png',
 		"stamp-hop" = 'icons/stamp_icons/large_stamp-hop.png',

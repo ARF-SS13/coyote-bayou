@@ -92,10 +92,6 @@
 	name = "Shirt, Bowling - Pink"
 	icon_state = "bowlingp"
 
-/datum/sprite_accessory/underwear/top/clownshirt
-	name = "Shirt - Clown"
-	icon_state = "shirt_clown"
-
 /datum/sprite_accessory/underwear/top/commie
 	name = "Shirt - Commie"
 	icon_state = "shirt_commie"

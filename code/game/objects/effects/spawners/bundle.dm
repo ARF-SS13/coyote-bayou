@@ -157,18 +157,6 @@
 		/obj/item/clothing/head/wizard/fake,
 		/obj/item/staff)
 
-/obj/effect/spawner/bundle/costume/sexyclown
-	name = "sexy clown costume spawner"
-	items = list(
-		/obj/item/clothing/mask/gas/sexyclown,
-		/obj/item/clothing/under/rank/civilian/clown/sexy)
-
-/obj/effect/spawner/bundle/costume/sexymime
-	name = "sexy mime costume spawner"
-	items = list(
-		/obj/item/clothing/mask/gas/sexymime,
-		/obj/item/clothing/under/rank/civilian/mime/sexy)
-
 /obj/effect/spawner/bundle/crate/Initialize(mapload)
 	SHOULD_CALL_PARENT(FALSE)
 	if(flags_1 & INITIALIZED_1)

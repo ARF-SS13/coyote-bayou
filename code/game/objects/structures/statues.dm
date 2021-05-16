@@ -219,42 +219,6 @@
 	name = "statue of the AI core."
 	icon_state = "ai2"
 
-////////////////////////bananium///////////////////////////////////////
-
-/obj/structure/statue/bananium
-	max_integrity = 300
-	material_drop_type = /obj/item/stack/sheet/mineral/bananium
-	desc = "A bananium statue with a small engraving:'HOOOOOOONK'."
-	var/spam_flag = 0
-	impressiveness = 65
-
-/obj/structure/statue/bananium/clown
-	name = "statue of a clown"
-	icon_state = "clown"
-
-/obj/structure/statue/bananium/Bumped(atom/movable/AM)
-	honk()
-	..()
-
-/obj/structure/statue/bananium/attackby(obj/item/W, mob/user, params)
-	honk()
-	return ..()
-
-/obj/structure/statue/bananium/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	honk()
-	. = ..()
-
-/obj/structure/statue/bananium/attack_paw(mob/user)
-	honk()
-	..()
-
-/obj/structure/statue/bananium/proc/honk()
-	if(!spam_flag)
-		spam_flag = 1
-		playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 1)
-		spawn(20)
-			spam_flag = 0
-
 /////////////////////sandstone/////////////////////////////////////////
 
 /obj/structure/statue/sandstone

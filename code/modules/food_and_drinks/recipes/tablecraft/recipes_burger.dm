@@ -292,24 +292,6 @@
 
 ////////////MYSTICAL////////////////
 
-/datum/crafting_recipe/food/clownburger
-	name = "Clown burger"
-	reqs = list(
-		/obj/item/clothing/mask/gas/clown_hat = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/clown
-	subcategory = CAT_BURGER
-
-/datum/crafting_recipe/food/mimeburger
-	name = "Mime burger"
-	reqs = list(
-		/obj/item/clothing/mask/gas/mime = 1,
-		/obj/item/reagent_containers/food/snacks/bun = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/burger/mime
-	subcategory = CAT_BURGER
-
 /datum/crafting_recipe/food/ghostburger
 	name = "Ghost burger"
 	reqs = list(

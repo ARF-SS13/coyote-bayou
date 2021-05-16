@@ -100,15 +100,6 @@
 					/obj/item/ammo_box/magazine/toy/pistol)
 	crate_name = "foam force crate"
 
-/datum/supply_pack/costumes_toys/clownpin
-	name = "Hilarious Firing Pin Crate"
-	desc = "I uh... I'm not really sure what this does. Wanna buy it?"
-	cost = 5000
-	contraband = TRUE
-	contains = list(/obj/item/firing_pin/clown)
-	crate_name = "toy crate" // It's /technically/ a toy. For the clown, at least.
-	crate_type = /obj/structure/closet/crate/wooden
-
 /datum/supply_pack/costumes_toys/lasertag
 	name = "Laser Tag Crate"
 	desc = "Foam Force is for boys. Laser Tag is for men. Contains three sets of red suits, blue suits, matching helmets, and matching laser tag guns."
@@ -161,13 +152,11 @@
 					/obj/item/toy/prize/deathripley,
 					/obj/item/toy/prize/gygax,
 					/obj/item/toy/prize/durand,
-					/obj/item/toy/prize/honk,
 					/obj/item/toy/prize/marauder,
 					/obj/item/toy/prize/seraph,
 					/obj/item/toy/prize/mauler,
 					/obj/item/toy/prize/odysseus,
 					/obj/item/toy/prize/phazon,
-					/obj/item/toy/prize/reticence,
 					/obj/item/toy/cards/deck,
 					/obj/item/toy/nuke,
 					/obj/item/toy/minimeteor,
@@ -272,22 +261,13 @@
 
 /datum/supply_pack/costumes_toys/costume
 	name = "Standard Costume Crate"
-	desc = "Supply the station's entertainers with the equipment of their trade with these Nanotrasen-approved costumes! Contains a full clown and mime outfit, along with a bike horn and a bottle of nothing."
+	desc = "Supply the station's entertainers with the equipment of their trade with these Nanotrasen-approved costumes!"
 	cost = 1300
 	access = ACCESS_THEATRE
-	contains = list(/obj/item/storage/backpack/clown,
-					/obj/item/clothing/shoes/clown_shoes,
-					/obj/item/clothing/mask/gas/clown_hat,
-					/obj/item/clothing/under/rank/civilian/clown,
-					/obj/item/bikehorn,
-					/obj/item/clothing/under/rank/civilian/mime,
-					/obj/item/clothing/shoes/sneakers/black,
+	contains = list(/obj/item/clothing/shoes/sneakers/black,
 					/obj/item/clothing/gloves/color/white,
-					/obj/item/clothing/mask/gas/mime,
 					/obj/item/clothing/head/beret,
-					/obj/item/clothing/suit/suspenders,
-					/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing,
-					/obj/item/storage/backpack/mime)
+					/obj/item/clothing/suit/suspenders)
 	crate_name = "standard costume crate"
 	crate_type = /obj/structure/closet/crate/wooden
 

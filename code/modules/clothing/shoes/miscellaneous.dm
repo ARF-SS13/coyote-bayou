@@ -96,33 +96,6 @@
 	var/turf/open/t_loc = get_turf(src)
 	SEND_SIGNAL(t_loc, COMSIG_TURF_MAKE_DRY, TURF_WET_WATER, TRUE, INFINITY)
 
-/obj/item/clothing/shoes/clown_shoes
-	desc = "The prankster's standard-issue clowning shoes. Damn, they're huge!"
-	name = "clown shoes"
-	icon_state = "clown_shoes"
-	slowdown = SHOES_SLOWDOWN+1
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes/clown
-	lace_time = 20 SECONDS // how the hell do these laces even work??
-
-/obj/item/clothing/shoes/clown_shoes/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/effects/clownstep1.ogg'=1,'sound/effects/clownstep2.ogg'=1), 50)
-
-/obj/item/clothing/shoes/clown_shoes/equipped(mob/user, slot)
-	. = ..()
-	if(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY))
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "noshoes")
-
-/obj/item/clothing/shoes/clown_shoes/dropped(mob/user)
-	. = ..()
-	if(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY))
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "noshoes", /datum/mood_event/noshoes)
-
-/obj/item/clothing/shoes/clown_shoes/jester
-	name = "jester shoes"
-	desc = "A court jester's shoes, updated with modern squeaking technology."
-	icon_state = "jester_shoes"
-
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
 	desc = "A pair of Vault-tec Security combat boots for combat scenarios or combat situations. All combat, all the time."

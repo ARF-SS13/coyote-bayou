@@ -80,14 +80,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Bartender"
 	icon_state = "Bartender"
 
-/obj/effect/landmark/start/clown
-	name = "Clown"
-	icon_state = "Clown"
-
-/obj/effect/landmark/start/mime
-	name = "Mime"
-	icon_state = "Mime"
-
 /obj/effect/landmark/start/quartermaster
 	name = "Quartermaster"
 	icon_state = "Quartermaster"
@@ -279,26 +271,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/start/nuclear_equipment
-	name = "bomb or clown beacon spawner"
+	name = "bomb beacon spawner"
 	var/nukie_path = /obj/item/sbeacondrop/bomb
-	var/clown_path = /obj/item/sbeacondrop/clownbomb
 	job_spawnpoint = FALSE
 
-/obj/effect/landmark/start/nuclear_equipment/after_round_start()
-	var/npath = nukie_path
-	if(istype(SSticker.mode, /datum/game_mode/nuclear/clown_ops))
-		npath = clown_path
-	else if(istype(SSticker.mode, /datum/game_mode/dynamic))
-		var/datum/game_mode/dynamic/D = SSticker.mode
-		if(locate(/datum/dynamic_ruleset/roundstart/nuclear/clown_ops) in D.current_rules)
-			npath = clown_path
-	new npath(loc)
-	return ..()
-
 /obj/effect/landmark/start/nuclear_equipment/minibomb
-	name = "minibomb or bombanana spawner"
+	name = "minibomb spawner"
 	nukie_path = /obj/item/storage/box/minibombs
-	clown_path = /obj/item/storage/box/bombananas
 
 /obj/effect/landmark/latejoin
 	name = "JoinLate"

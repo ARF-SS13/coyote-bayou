@@ -590,16 +590,6 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/implant_sadtrombone
-	name = "Sad Trombone Implant Case"
-	desc = "Makes death amusing."
-	id = "implant_trombone"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 500, /datum/material/bananium = 500)
-	build_path = /obj/item/implantcase/sad_trombone
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL		//if you get bananium you get the sad trombones.
-
 /datum/design/implant_chem
 	name = "Chemical Implant Case"
 	desc = "A glass case containing an implant."

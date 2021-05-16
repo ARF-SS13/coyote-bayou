@@ -160,7 +160,6 @@
 	key = "giggle"
 	key_third_person = "giggles"
 	message = "giggles."
-	message_mime = "giggles silently!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/glare
@@ -179,7 +178,6 @@
 	key = "groan"
 	key_third_person = "groans"
 	message = "groans!"
-	message_mime = "appears to groan!"
 
 /datum/emote/living/grimace
 	key = "grimace"
@@ -212,7 +210,6 @@
 	key = "laugh"
 	key_third_person = "laughs"
 	message = "laughs."
-	message_mime = "laughs silently!"
 
 /datum/emote/living/audio_emote/laugh/run_emote(mob/user, params)
 	. = ..()
@@ -252,7 +249,6 @@
 	key = "chitter"
 	key_third_person = "chitters"
 	message = "chitters."
-	message_mime = "chitters silently!"
 
 /datum/emote/living/audio_emote/chitter/run_emote(mob/user, params)
 	. = ..()
@@ -303,7 +299,6 @@
 	key = "scream"
 	key_third_person = "screams"
 	message = "screams."
-	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/scowl
@@ -366,7 +361,6 @@
 	key = "snore"
 	key_third_person = "snores"
 	message = "snores."
-	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
@@ -426,7 +420,6 @@
 	key = "whimper"
 	key_third_person = "whimpers"
 	message = "whimpers."
-	message_mime = "appears hurt."
 
 /datum/emote/living/wsmile
 	key = "wsmile"

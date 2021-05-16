@@ -41,14 +41,6 @@
 /turf/closed/wall/mineral/diamond/thermitemelt(mob/user)
 	return
 
-/turf/closed/wall/mineral/clown
-	name = "bananium wall"
-	desc = "A wall with bananium plating. Honk!"
-	icon = 'icons/turf/walls/bananium_wall.dmi'
-	icon_state = "bananium"
-	sheet_type = /obj/item/stack/sheet/mineral/bananium
-	canSmoothWith = list(/turf/closed/wall/mineral/clown, /obj/structure/falsewall/clown)
-
 /turf/closed/wall/mineral/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."

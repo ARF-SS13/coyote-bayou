@@ -57,15 +57,6 @@
 	item_color = "chef"
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/rank/clown
-	name = "clown suit"
-	desc = "<i>'HONK!'</i>"
-	icon_state = "clown"
-	item_state = "clown"
-	item_color = "clown"
-	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
-
 /obj/item/clothing/under/rank/head_of_personnel
 	desc = "It's a jumpsuit worn by someone who works in the position of \"Head of Personnel\"."
 	name = "head of personnel's jumpsuit"
@@ -155,13 +146,6 @@
 	icon_state = "curator"
 	item_state = "curator"
 	item_color = "curator"
-
-/obj/item/clothing/under/rank/mime
-	name = "mime's outfit"
-	desc = "It's not very colourful."
-	icon_state = "mime"
-	item_state = "mime"
-	item_color = "mime"
 
 /obj/item/clothing/under/rank/miner
 	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
