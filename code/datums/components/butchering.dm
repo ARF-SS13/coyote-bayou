@@ -91,7 +91,11 @@
 					to_chat(butcher, "<span class='info'>You harvest some extra [initial(bones.name)] from [meat]!</span>")
 				for(var/i in 1 to 2)
 					butchered_items += new bones (T)
-
+			else if(HAS_TRAIT(butcher, TRAIT_TRAPPER))
+				if(butcher)
+					to_chat(butcher, "<span class='info'>Your advanced trapping knowledge allows you to harvest extra [initial(bones.name)] from [meat]!</span>")
+				for(var/i in 1 to 2)
+					butchered_items += new bones (T)
 			else
 				butchered_items += new bones (T)
 		meat.butcher_results.Remove(bones) //in case you want to, say, have it drop its results on gib
