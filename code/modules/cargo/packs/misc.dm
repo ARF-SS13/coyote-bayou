@@ -416,17 +416,12 @@
 	contraband = TRUE
 	contains = list(/obj/item/dildo/custom,
 					/obj/item/dildo/custom,
-					/obj/item/vending_refill/kink,
-					/obj/item/vending_refill/kink,
 					/obj/item/clothing/under/costume/maid,
 					/obj/item/clothing/under/costume/maid,
 					/obj/item/electropack/shockcollar,
 					/obj/item/electropack/shockcollar,
 					/obj/item/restraints/handcuffs/fake/kinky,
-					/obj/item/restraints/handcuffs/fake/kinky,
-					/obj/item/clothing/head/simplekitty, // Why its illegal
-					/obj/item/clothing/head/simplekitty,
-					/obj/item/storage/pill_bottle/penis_enlargement)
+					/obj/item/restraints/handcuffs/fake/kinky)
 	crate_name = "lewd kit"
 	crate_type = /obj/structure/closet/crate
 
