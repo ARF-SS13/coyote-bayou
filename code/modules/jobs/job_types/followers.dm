@@ -149,8 +149,7 @@ Practitioner
 	forbids = "Causing harm to others except in times of self-defense."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 1080
-	exp_type = EXP_TYPE_FOLLOWERS
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/followers/f13practitioner
 
