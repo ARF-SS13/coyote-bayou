@@ -37,6 +37,7 @@
 		var/obj/item/gun/G = fired_from
 		BB.damage += G.extra_damage
 		BB.armour_penetration += G.extra_penetration
+		BB.pixels_per_second += G.extra_speed
 		if(HAS_TRAIT(user, TRAIT_INSANE_AIM))
 			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!
 			BB.ricochet_chance = max(BB.ricochet_chance, 100) //it wont decay so we can leave it at 100 for always bouncing

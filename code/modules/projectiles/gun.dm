@@ -51,6 +51,7 @@
 	var/burst_spread = 0				//Spread induced by the gun itself during burst fire per iteration. Only checked if spread is 0.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 	var/inaccuracy_modifier = 1
+	var/extra_speed = 0
 
 	var/obj/item/attachments/scope
 	var/obj/item/attachments/recoil_decrease
