@@ -538,7 +538,6 @@ Mayor
 
 /datum/outfit/loadout/diner
 	name = "Diner"
-	head = /obj/item/clothing/head/soft/mime
 	glasses = /obj/item/clothing/glasses/orange
 	uniform = /obj/item/clothing/under/f13/brahminf
 	suit = /obj/item/clothing/suit/apron/chef

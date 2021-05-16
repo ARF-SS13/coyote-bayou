@@ -156,12 +156,6 @@
 	name = "\improper Seraph wreckage"
 	icon_state = "seraph-broken"
 
-/obj/structure/mecha_wreckage/reticence
-	name = "\improper Reticence wreckage"
-	icon_state = "reticence-broken"
-	color = "#87878715"
-	desc = "..."
-
 /obj/structure/mecha_wreckage/ripley
 	name = "\improper Ripley wreckage"
 	icon_state = "ripley-broken"
@@ -202,29 +196,6 @@
 /obj/structure/mecha_wreckage/ripley/deathripley
 	name = "\improper Death-Ripley wreckage"
 	icon_state = "deathripley-broken"
-
-
-/obj/structure/mecha_wreckage/honker
-	name = "\improper H.O.N.K wreckage"
-	icon_state = "honker-broken"
-	desc = "All is right in the universe."
-
-/obj/structure/mecha_wreckage/honker/Initialize()
-	. = ..()
-	var/list/parts = list(
-							/obj/item/mecha_parts/chassis/honker,
-							/obj/item/mecha_parts/part/honker_torso,
-							/obj/item/mecha_parts/part/honker_head,
-							/obj/item/mecha_parts/part/honker_left_arm,
-							/obj/item/mecha_parts/part/honker_right_arm,
-							/obj/item/mecha_parts/part/honker_left_leg,
-							/obj/item/mecha_parts/part/honker_right_leg)
-	for(var/i = 0; i < 2; i++)
-		if(parts.len && prob(40))
-			var/part = pick(parts)
-			welder_salvage += part
-			parts -= part
-
 
 /obj/structure/mecha_wreckage/durand
 	name = "\improper Durand wreckage"

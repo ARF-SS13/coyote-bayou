@@ -188,13 +188,6 @@
 	This lonely half built teleporter is a sign of a proposed structure that for one reason or another just never got built."
 	always_place = TRUE
 
-/datum/map_template/ruin/space/crashedclownship
-	id = "crashedclownship"
-	suffix = "crashedclownship.dmm"
-	name = "Crashed Clown Ship"
-	description = "For centuries the promise of a new clown homeworld has been the siren call for countless clown vessels. \
-	Alas the clown's lust for shinanagans means that successful voyages are almost unheard of, with most vessels falling to hilarious consequences almost immediately."
-
 /datum/map_template/ruin/space/crashedship
 	id = "crashedship"
 	suffix = "crashedship.dmm"

@@ -466,24 +466,6 @@
 	results = list(/datum/reagent/consumable/ethanol/hippies_delight = 2)
 	required_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 1, /datum/reagent/consumable/ethanol/gargle_blaster = 1)
 
-/datum/chemical_reaction/bananahonk
-	name = "Banana Honk"
-	id = /datum/reagent/consumable/ethanol/bananahonk
-	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
-	required_reagents = list(/datum/reagent/consumable/laughter = 1, /datum/reagent/consumable/cream = 1)
-
-/datum/chemical_reaction/silencer
-	name = "Silencer"
-	id = /datum/reagent/consumable/ethanol/silencer
-	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/sugar = 1)
-
-/datum/chemical_reaction/driestmartini
-	name = "Driest Martini"
-	id = /datum/reagent/consumable/ethanol/driestmartini
-	results = list(/datum/reagent/consumable/ethanol/driestmartini = 2)
-	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/ethanol/gin = 1)
-
 /datum/chemical_reaction/thirteenloko
 	name = "Thirteen Loko"
 	id = /datum/reagent/consumable/ethanol/thirteenloko
@@ -625,14 +607,6 @@
 	results = list(/datum/reagent/consumable/ethanol/stinger = 15)
 	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
 
-/datum/chemical_reaction/quintuplesec
-	name = "Quintuple Sec"
-	id = /datum/reagent/consumable/ethanol/quintuple_sec
-	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
-	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/clownstears = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
-	mix_message = "Judgement is upon you."
-	mix_sound = 'sound/items/airhorn2.ogg'
-
 /datum/chemical_reaction/bastion_bourbon
 	name = "Bastion Bourbon"
 	id = /datum/reagent/consumable/ethanol/bastion_bourbon
@@ -742,12 +716,6 @@
 	id = /datum/reagent/consumable/pinkmilk
 	results = list(/datum/reagent/consumable/pinkmilk = 2)
 	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1)
-
-/datum/chemical_reaction/blank_paper
-	name = "Blank Paper"
-	id = /datum/reagent/consumable/ethanol/blank_paper
-	results = list(/datum/reagent/consumable/ethanol/blank_paper = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nuka_cola = 1)
 
 /datum/chemical_reaction/wizz_fizz
 	name = "Wizz Fizz"

@@ -36,6 +36,15 @@
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/honkdae
+/datum/crafting_recipe/food/icecreamsandwich
+	name = "Icecream sandwich"
+	reqs = list(
+		/datum/reagent/consumable/cream = 5,
+		/datum/reagent/consumable/ice = 5,
+		/obj/item/reagent_containers/food/snacks/icecream = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/icecreamsandwich
+
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/spacefreezy
@@ -224,27 +233,5 @@
 		/datum/reagent/consumable/spacemountainwind = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/spacemountainwind
-	subcategory = CAT_ICE
-
-/////I don't like seperating the clown and mime.///
-
-/datum/crafting_recipe/food/mime_sc
-	name = "Mime snowcone"
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/sillycup = 1,
-		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/nothing = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/mime
-	subcategory = CAT_ICE
-
-/datum/crafting_recipe/food/clown_sc
-	name = "Clown snowcone"
-	reqs = list(
-		/obj/item/reagent_containers/food/drinks/sillycup = 1,
-		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/laughter = 5
-	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/clown
 	subcategory = CAT_ICE
 */

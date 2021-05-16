@@ -677,29 +677,3 @@
 		reveal_role(game, FALSE)
 	else
 		to_chat(body, "<span class='userdanger'>You have failed your objective to lynch [obsession.body]!</span>")
-
-/datum/mafia_role/clown
-	name = "Clown"
-	desc = "If you are lynched you take down one of your voters (guilty or abstain) with you and win. HONK!"
-	win_condition = "get themselves lynched!"
-	revealed_outfit = /datum/outfit/mafia/clown
-	solo_counts_as_town = TRUE
-	team = MAFIA_TEAM_SOLO
-	role_type = NEUTRAL_DISRUPT
-	special_theme = "neutral"
-	hud_icon = "hudclown"
-	revealed_icon = "clown"
-	// winner_award = /datum/award/achievement/mafia/clown
-
-/datum/mafia_role/clown/New(datum/mafia_controller/game)
-	. = ..()
-	RegisterSignal(src,COMSIG_MAFIA_ON_KILL,.proc/prank)
-
-/datum/mafia_role/clown/proc/prank(datum/source,datum/mafia_controller/game,lynch)
-	if(lynch)
-		var/datum/mafia_role/victim = pick(game.judgement_guilty_votes + game.judgement_abstain_votes)
-		game.send_message("<span class='big clown'>[body.real_name] WAS A CLOWN! HONK! They take down [victim.body.real_name] with their last prank.</span>")
-		game.send_message("<span class='big clown'>!! CLOWN VICTORY !!</span>")
-		// var/client/winner_client = GLOB.directory[player_key]
-		// winner_client?.give_award(winner_award, body)
-		victim.kill(game,FALSE)

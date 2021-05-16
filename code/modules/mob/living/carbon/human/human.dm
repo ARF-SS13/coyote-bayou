@@ -1159,9 +1159,6 @@
 /mob/living/carbon/human/species/golem/bluespace
 	race = /datum/species/golem/bluespace
 
-/mob/living/carbon/human/species/golem/bananium
-	race = /datum/species/golem/bananium
-
 /mob/living/carbon/human/species/golem/blood_cult
 	race = /datum/species/golem/runic
 

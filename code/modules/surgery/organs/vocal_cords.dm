@@ -164,9 +164,6 @@
 		//Command staff has authority
 		if(user.mind.assigned_role in GLOB.command_positions)
 			power_multiplier *= 1.4
-		//Why are you speaking
-		if(user.mind.assigned_role == "Mime")
-			power_multiplier *= 0.5
 
 	//Cultists are closer to their gods and are more powerful, but they'll give themselves away
 	if(iscultist(user))
@@ -284,7 +281,7 @@
 	else if((findtext(message, silence_words)))
 		cooldown = COOLDOWN_STUN
 		for(var/mob/living/carbon/C in listeners)
-			if(user.mind && (user.mind.assigned_role == "Curator" || user.mind.assigned_role == "Mime"))
+			if(user.mind && (user.mind.assigned_role == "Curator"))
 				power_multiplier *= 3
 			C.silent += (10 * power_multiplier)
 
@@ -644,9 +641,7 @@
 		//Command staff has authority
 		if(user.mind.assigned_role in GLOB.command_positions)
 			power_multiplier *= 1.1
-		//Why are you speaking
-		if(user.mind.assigned_role == "Mime")
-			power_multiplier *= 0.5
+
 
 	//Cultists are closer to their gods and are better at indoctrinating
 	if(iscultist(user))

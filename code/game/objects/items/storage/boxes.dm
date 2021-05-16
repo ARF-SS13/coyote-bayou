@@ -341,16 +341,6 @@ obj/item/storage/box/stingbangs
 	new /obj/item/grenade/syndieminibomb(src)
 	new /obj/item/grenade/syndieminibomb(src)
 
-/obj/item/storage/box/bombananas
-	name = "box of bombananas"
-	desc = "A box containing 2 highly explosive bombananas. Discard peel at enemy after consumption."
-	icon_state = "syndiebox"
-	illustration = "frag"
-
-/obj/item/storage/box/bombananas/PopulateContents()
-	new /obj/item/reagent_containers/food/snacks/grown/banana/bombanana(src)
-	new /obj/item/reagent_containers/food/snacks/grown/banana/bombanana(src)
-
 /obj/item/storage/box/trackimp
 	name = "boxed tracking implant kit"
 	desc = "Box full of scum-bag tracking utensils."
@@ -740,26 +730,6 @@ obj/item/storage/box/stingbangs
 	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"hugbox", /datum/mood_event/hugbox)
 
-/////clown box & honkbot assembly
-/obj/item/storage/box/clown
-	name = "clown box"
-	desc = "A colorful cardboard box for the clown"
-	illustration = "clown"
-
-/obj/item/storage/box/clown/attackby(obj/item/I, mob/user, params)
-	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
-		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, "<span class='warning'>You need to empty [src] out first!</span>")
-			return
-		if(!user.temporarilyRemoveItemFromInventory(I))
-			return
-		qdel(I)
-		to_chat(user, "<span class='notice'>You add some wheels to the [src]! You've got an honkbot assembly now! Honk!</span>")
-		var/obj/item/bot_assembly/honkbot/A = new
-		qdel(src)
-		user.put_in_hands(A)
-	else
-		return ..()
 
 //////
 /obj/item/storage/box/hug/medical/PopulateContents()
@@ -1354,8 +1324,6 @@ obj/item/storage/box/stingbangs
 		/obj/item/stack/sheet/mineral/plasma=50,\
 		/obj/item/stack/sheet/mineral/uranium=50,\
 		/obj/item/stack/sheet/mineral/diamond=50,\
-		/obj/item/stack/sheet/bluespace_crystal=50,\
-		/obj/item/stack/sheet/mineral/bananium=50,\
 		/obj/item/stack/sheet/mineral/wood=50,\
 		/obj/item/stack/sheet/plastic/fifty=1,\
 		/obj/item/stack/sheet/runed_metal/fifty=1

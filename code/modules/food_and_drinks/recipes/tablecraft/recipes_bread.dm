@@ -34,17 +34,6 @@
 	result = /obj/item/reagent_containers/food/snacks/store/bread/banana
 	subcategory = CAT_BREAD
 
-/datum/crafting_recipe/food/mimanabread
-	name = "Mimana bread"
-	reqs = list(
-		/datum/reagent/consumable/soymilk = 5,
-		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1,
-		/obj/item/reagent_containers/food/snacks/tofu = 3,
-		/obj/item/reagent_containers/food/snacks/grown/banana/mime = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/store/bread/mimana
-	subcategory = CAT_WASTEFOOD
-
 /datum/crafting_recipe/food/spidermeatbread
 	name = "Spidermeat bread"
 	reqs = list(

@@ -3,15 +3,15 @@
 /datum/gear/donator
 	name = "IF YOU SEE THIS, PING A CODER RIGHT NOW!"
 	slot = SLOT_IN_BACKPACK
-	path = /obj/item/bikehorn/golden
+	path = /obj/item/storage/belt/holster/ranger45
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
 	cost = 0
 
 /datum/gear/donator/donortestingbikehorn
-	name = "Donor item testing bikehorn"
+	name = "Donor item testing"
 	slot = SLOT_IN_BACKPACK
-	path = /obj/item/bikehorn
+	path = /obj/item/storage/belt/holster/ranger45
 	geargroupID = list("DONORTEST") //This is a list mainly for the sake of testing, but geargroupID works just fine with ordinary strings
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.

@@ -479,7 +479,6 @@ GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a blues
 										))
 GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put a webserver that's automatically turned on with default admin passwords into every PDA?",
 											"So like, you know how we separate our codebase from the master copy that runs on our consumer boxes? What if we merged the two and undid the separation between codebase and server?",
-											"Dude, radical idea: H.O.N.K mechs but with no bananium required.",
 											"Best idea ever: Disposal pipes instead of hallways.",
 											"What if we use a language that was written on a napkin and created over 1 weekend for all of our servers?",
 											"What if we took a locker, some random trash, and made an exosuit out of it? Wouldn't that be like, super cool and stuff?",

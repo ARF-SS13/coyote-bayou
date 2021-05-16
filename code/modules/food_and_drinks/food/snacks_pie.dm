@@ -243,15 +243,6 @@
 	tastes = list("pie" = 1, "grape" = 1)
 	foodtype = GRAIN | FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/pie/mimetart
-	name = "mime tart"
-	desc = "..."
-	icon_state = "mimetart"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4, /datum/reagent/consumable/nothing = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
-	tastes = list("pie" = 1, "nothing" = 1)
-	foodtype = GRAIN
-
 /obj/item/reagent_containers/food/snacks/pie/berrytart
 	name = "berry tart"
 	desc = "A tasty dessert of many different small barries on a thin pie crust."

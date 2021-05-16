@@ -12,7 +12,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_dead = "banana-dead"
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/banana/mime, /obj/item/seeds/banana/bluespace, /obj/item/seeds/banana/exotic_banana)
+	mutatelist =   (/obj/item/seeds/banana/exotic_banana)
 	reagents_add = list(/datum/reagent/consumable/banana = 0.1, /datum/reagent/potassium = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/banana
@@ -26,7 +26,6 @@
 	bitesize = 5
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/banana = 0)
-	distill_reagent = /datum/reagent/consumable/ethanol/bananahonk
 
 /obj/item/reagent_containers/food/snacks/grown/banana/generate_trash(atom/location)
 	. = ..()
@@ -65,36 +64,6 @@
 	user.visible_message("<span class='suicide'>[user] is deliberately slipping on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -1)
 	return (BRUTELOSS)
-
-
-// Mimana - invisible sprites are totally a feature!
-/obj/item/seeds/banana/mime
-	name = "pack of mimana seeds"
-	desc = "They're seeds that grow into mimana trees. When grown, keep away from mime."
-	icon_state = "seed-mimana"
-	species = "mimana"
-	plantname = "Mimana Tree"
-	product = /obj/item/reagent_containers/food/snacks/grown/banana/mime
-	growthstages = 4
-	mutatelist = list()
-	reagents_add = list(/datum/reagent/consumable/nothing = 0.1, /datum/reagent/toxin/mutetoxin = 0.1, /datum/reagent/consumable/nutriment = 0.02)
-	rarity = 15
-
-/obj/item/reagent_containers/food/snacks/grown/banana/mime
-	seed = /obj/item/seeds/banana/mime
-	name = "mimana"
-	desc = "It's an excellent prop for a mime."
-	icon_state = "mimana"
-	trash = /obj/item/grown/bananapeel/mimanapeel
-	filling_color = "#FFFFEE"
-	distill_reagent = /datum/reagent/consumable/ethanol/silencer
-
-/obj/item/grown/bananapeel/mimanapeel
-	seed = /obj/item/seeds/banana/mime
-	name = "mimana peel"
-	desc = "A mimana peel."
-	icon_state = "mimana_peel"
-	item_state = "mimana_peel"
 
 // Bluespace Banana
 /obj/item/seeds/banana/bluespace
@@ -162,12 +131,3 @@
 			S.speed += round(10 / max(seed.potency, 1), 1)
 			S.visible_message("<span class='notice'>The banana spider chitters as it stretches its legs.</span>")
 			qdel(src)
-
-// Other
-/obj/item/grown/bananapeel/specialpeel     //used by /obj/item/clothing/shoes/clown_shoes/banana_shoes
-	name = "synthesized banana peel"
-	desc = "A synthetic banana peel."
-
-/obj/item/grown/bananapeel/specialpeel/Initialize(AM)
-	. = ..()
-	AddComponent(/datum/component/slippery, 40)

@@ -39,13 +39,6 @@
 	wanted_types = list(/obj/item/organ/eyes)
 	exclude_types = list(/obj/item/organ/eyes/robotic)
 
-/datum/bounty/item/medical/tongue
-	name = "Tongues"
-	description = "A recent attack by Mime extremists has left staff at Station 23 speechless. Ship some spare tongues."
-	reward = 4500
-	required_count = 3
-	wanted_types = list(/obj/item/organ/tongue)
-
 /datum/bounty/item/medical/lizard_tail
 	name = "Lizard Tail"
 	description = "The Wizard Federation has made off with Nanotrasen's supply of lizard tails. While CentCom is dealing with the wizards, can the station spare a tail of their own?"

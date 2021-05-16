@@ -219,11 +219,6 @@
 	desc = "See the galaxy! Shatter corrupt megacorporations! Join today!"
 	icon_state = "poster5"
 
-/obj/structure/sign/poster/contraband/clown
-	name = "Clown"
-	desc = "Honk."
-	icon_state = "poster6"
-
 /obj/structure/sign/poster/contraband/smoke
 	name = "Smoke"
 	desc = "A poster advertising a rival corporate brand of cigarettes."

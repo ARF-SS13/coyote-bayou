@@ -120,43 +120,6 @@
 	icon_state = "firing_pin_pindi"
 	req_implant = /obj/item/implant/weapons_auth
 
-
-
-// Honk pin, clown's joke item.
-// Can replace other pins. Replace a pin in cap's laser for extra fun!
-/obj/item/firing_pin/clown
-	name = "hilarious firing pin"
-	desc = "Advanced clowntech that can convert any firearm into a far more useful object."
-	color = "#FFFF00"
-	fail_message = "<span class='warning'>HONK!</span>"
-	force_replace = TRUE
-
-/obj/item/firing_pin/clown/pin_auth(mob/living/user)
-	playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
-	return FALSE
-
-// Ultra-honk pin, clown's deadly joke item.
-// A gun with ultra-honk pin is useful for clown and useless for everyone else.
-/obj/item/firing_pin/clown/ultra/pin_auth(mob/living/user)
-	playsound(src.loc, 'sound/items/bikehorn.ogg', 50, 1)
-	if(user && (!(HAS_TRAIT(user, TRAIT_CLUMSY)) && !(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY))))
-		return FALSE
-	return TRUE
-
-/obj/item/firing_pin/clown/ultra/gun_insert(mob/living/user, obj/item/gun/G)
-	..()
-	G.clumsy_check = FALSE
-
-/obj/item/firing_pin/clown/ultra/gun_remove(mob/living/user)
-	gun.clumsy_check = initial(gun.clumsy_check)
-	..()
-
-// Now two times deadlier!
-/obj/item/firing_pin/clown/ultra/selfdestruct
-	desc = "Advanced clowntech that can convert any firearm into a far more useful object. It has a small nitrobananium charge on it."
-	selfdestruct = TRUE
-
-
 // DNA-keyed pin.
 // When you want to keep your toys for yourself.
 /obj/item/firing_pin/dna

@@ -696,7 +696,6 @@ GLOBAL_LIST_INIT(loot_garbage, list(
 	/obj/item/trash/popcorn,
 	/obj/item/valentine,
 	/obj/item/taperecorder,
-	/obj/item/bikehorn/airhorn,
 	/obj/item/tape/random,
 	/obj/item/stack/medical/gauze,
 	/obj/item/trash/plate,

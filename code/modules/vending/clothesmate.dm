@@ -111,8 +111,6 @@
 					/obj/item/clothing/glasses/orange = 5,
 					/obj/item/clothing/glasses/red = 5,
 					/obj/item/storage/belt/fannypack = 3,
-					/obj/item/storage/belt/fannypack/blue = 3,
-					/obj/item/storage/belt/fannypack/red = 3,
 					/obj/item/clothing/suit/jacket/letterman = 5,
 					/obj/item/clothing/head/beanie = 3,
 					/obj/item/clothing/head/beanie/black = 3,
@@ -159,8 +157,7 @@
 					/obj/item/clothing/under/costume/qipao/red = 3,
 					/obj/item/clothing/under/costume/cheongsam = 3,
 					/obj/item/clothing/under/costume/cheongsam/white = 3,
-					/obj/item/clothing/under/costume/cheongsam/red = 3,
-					/obj/item/storage/backpack/snail = 3)
+					/obj/item/clothing/under/costume/cheongsam/red = 3)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool = 3,
 					/obj/item/clothing/under/syndicate/tacticool/skirt = 3,
 					/obj/item/clothing/mask/balaclava = 3,

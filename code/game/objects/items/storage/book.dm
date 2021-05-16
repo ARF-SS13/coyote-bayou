@@ -69,11 +69,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	icon_state = GLOB.biblestates[bible_index]
 	item_state = GLOB.bibleitemstates[bible_index]
 
-	if(icon_state == "honk1" || icon_state == "honk2")
-		var/mob/living/carbon/human/H = usr
-		H.dna.add_mutation(CLOWNMUT)
-		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas/clown_hat(H), SLOT_WEAR_MASK)
-
 	GLOB.bible_icon_state = icon_state
 	GLOB.bibleitemstates = item_state
 	SSblackbox.record_feedback("text", "religion_book", 1, "[choice]")

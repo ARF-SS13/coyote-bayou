@@ -4,7 +4,6 @@ GLOBAL_LIST_INIT(ore_probability, list(/obj/item/stack/ore/uranium = 50,
 									   /obj/item/stack/ore/silver = 50,
 									   /obj/item/stack/ore/gold = 50,
 									   /obj/item/stack/ore/diamond = 25,
-									   /obj/item/stack/ore/bananium = 5,
 									   /obj/item/stack/ore/titanium = 75,
 									   /obj/item/stack/ore/lead = 80))
 
@@ -169,8 +168,6 @@ GLOBAL_LIST_INIT(ore_probability, list(/obj/item/stack/ore/uranium = 50,
 			new /obj/item/weldingtool/abductor(loc)
 		if(24)
 			new /obj/structure/elite_tumor(loc)
-		if(25)
-			new /mob/living/simple_animal/hostile/retaliate/clown/clownhulk(loc)
 		if(26)
 			new /obj/item/clothing/shoes/winterboots/ice_boots(loc)
 		if(27)

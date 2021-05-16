@@ -222,11 +222,6 @@
 	export_types = list(/obj/item/clothing/shoes)
 	include_subtypes = TRUE
 
-/datum/export/gear/clown_shoesmk
-	cost = 600
-	unit_name = "mk-honk prototype shoes"
-	export_types = list(/obj/item/clothing/shoes/clown_shoes/banana_shoes)
-
 /datum/export/gear/magboots
 	cost = 50
 	unit_name = "magboots"
@@ -257,11 +252,6 @@
 	unit_name = "galoshes"
 	export_types = list(/obj/item/clothing/shoes/galoshes, /obj/item/clothing/shoes/galoshes/dry)
 
-/datum/export/gear/clown
-	cost = 10
-	unit_name = "clown shoes"
-	export_types = list(/obj/item/clothing/shoes/clown_shoes, /obj/item/clothing/shoes/clown_shoes/jester)
-
 /datum/export/gear/dressshoes
 	cost = 10
 	unit_name = "dress shoes"
@@ -280,7 +270,7 @@
 /datum/export/gear/magicboots //Magic as in Antag - Wiz/Cults
 	cost = 450
 	unit_name = "magic shoes"
-	export_types = list(/obj/item/clothing/shoes/sandal/marisa, /obj/item/clothing/shoes/sandal/magic, /obj/item/clothing/shoes/cult, /obj/item/clothing/shoes/clockwork, /obj/item/clothing/shoes/clown_shoes/taeclowndo)
+	export_types = list(/obj/item/clothing/shoes/sandal/marisa, /obj/item/clothing/shoes/sandal/magic, /obj/item/clothing/shoes/cult, /obj/item/clothing/shoes/clockwork)
 	include_subtypes = TRUE
 
 //Headsets/Ears

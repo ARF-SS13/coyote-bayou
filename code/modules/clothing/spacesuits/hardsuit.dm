@@ -576,32 +576,6 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
-	//Clown
-/obj/item/clothing/head/helmet/space/hardsuit/clown
-	name = "cosmohonk hardsuit helmet"
-	desc = "A special helmet designed for work in a hazardous, low-humor environment. Has radiation shielding."
-	icon_state = "hardsuit0-clown"
-	item_state = "hardsuit0-clown"
-	armor = list("tier" = 3, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30, "wound" = 10)
-	hardsuit_type = "clown"
-
-/obj/item/clothing/suit/space/hardsuit/clown
-	name = "cosmohonk hardsuit"
-	desc = "A special suit that protects against hazardous, low humor environments. Has radiation shielding. Only a true clown can wear it."
-	icon_state = "hardsuit-clown"
-	item_state = "clown_hardsuit"
-	armor = list("tier" = 3, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 30, "wound" = 10)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clown
-	mutantrace_variation = STYLE_DIGITIGRADE
-
-/obj/item/clothing/suit/space/hardsuit/clown/mob_can_equip(mob/M, slot)
-	if(!..() || !ishuman(M))
-		return FALSE
-	if(M.mind && HAS_TRAIT(M.mind, TRAIT_CLOWN_MENTALITY))
-		return TRUE
-	else
-		return FALSE
-
 	//Old Prototype
 /obj/item/clothing/head/helmet/space/hardsuit/ancient
 	name = "prototype RIG hardsuit helmet"

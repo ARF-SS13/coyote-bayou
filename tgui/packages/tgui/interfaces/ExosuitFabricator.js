@@ -14,7 +14,6 @@ const MATERIAL_KEYS = {
   "diamond": "sheet-diamond",
   "plasma": "sheet-plasma_3",
   "uranium": "sheet-uranium",
-  "bananium": "sheet-bananium",
   "titanium": "sheet-titanium_3",
   "bluespace crystal": "polycrystal",
   "plastic": "sheet-plastic_3",

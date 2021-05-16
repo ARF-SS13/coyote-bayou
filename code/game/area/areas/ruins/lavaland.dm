@@ -3,9 +3,6 @@
 /area/ruin/powered/beach
 	icon_state = "dk_yellow"
 
-/area/ruin/powered/clownplanet
-	icon_state = "dk_yellow"
-
 /area/ruin/powered/animal_hospital
 	icon_state = "dk_yellow"
 

@@ -111,7 +111,7 @@
 
 /obj/item/reagent_containers/food/snacks/egg/loaded/Initialize()
 	. = ..()
-	var/eggcolor = pick("blue","green","mime","orange","purple","rainbow","red","yellow")
+	var/eggcolor = pick("blue","green","orange","purple","rainbow","red","yellow")
 	icon_state = "egg-[eggcolor]"
 /obj/item/reagent_containers/food/snacks/egg/proc/dispensePrize(turf/where)
 	var/won = pick(/obj/item/clothing/head/bunnyhead,
@@ -123,10 +123,8 @@
 	/obj/item/toy/sword,
 	/obj/item/toy/foamblade,
 	/obj/item/toy/prize/ripley,
-	/obj/item/toy/prize/honk,
 	/obj/item/toy/plush/carpplushie,
-	/obj/item/toy/redbutton,
-	/obj/item/clothing/head/collectable/rabbitears)
+	/obj/item/toy/redbutton)
 	new won(where)
 	new/obj/item/reagent_containers/food/snacks/chocolateegg(where)
 

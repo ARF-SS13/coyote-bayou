@@ -602,11 +602,6 @@
 	desc = "Mini-Mecha action figure! Collect them all! 5/12."
 	icon_state = "durandprize"
 
-/obj/item/toy/prize/honk
-	name = "toy H.O.N.K."
-	desc = "Mini-Mecha action figure! Collect them all! 6/12."
-	icon_state = "honkprize"
-
 /obj/item/toy/prize/marauder
 	name = "toy Marauder"
 	desc = "Mini-Mecha action figure! Collect them all! 7/12."
@@ -631,13 +626,6 @@
 	name = "toy Phazon"
 	desc = "Mini-Mecha action figure! Collect them all! 11/12."
 	icon_state = "phazonprize"
-
-/obj/item/toy/prize/reticence
-	name = "toy Reticence"
-	desc = "Mini-Mecha action figure! Collect them all! 12/12."
-	icon_state = "reticenceprize"
-	quiet = 1
-
 
 /obj/item/toy/talking
 	name = "talking action figure"
@@ -1386,12 +1374,6 @@
 	icon_state = "chemist"
 	toysay = "Get your pills!"
 
-/obj/item/toy/figure/clown
-	name = "Clown action figure"
-	icon_state = "clown"
-	toysay = "Honk!"
-	toysound = 'sound/items/bikehorn.ogg'
-
 /obj/item/toy/figure/ian
 	name = "Ian action figure"
 	icon_state = "ian"
@@ -1451,12 +1433,6 @@
 	name = "Medical Doctor action figure"
 	icon_state = "md"
 	toysay = "The patient is already dead!"
-
-/obj/item/toy/figure/mime
-	name = "Mime action figure"
-	icon_state = "mime"
-	toysay = "..."
-	toysound = null
 
 /obj/item/toy/figure/miner
 	name = "Shaft Miner action figure"

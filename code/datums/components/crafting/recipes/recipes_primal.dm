@@ -16,6 +16,13 @@
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 30)
+	result = /obj/structure/bonfire
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/bonfirecaps
+	name = "Bonfire"
+	time = 60
 	reqs = list(/obj/item/grown/log = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL

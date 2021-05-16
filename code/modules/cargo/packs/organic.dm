@@ -174,16 +174,6 @@
 					/obj/item/reagent_containers/food/snacks/grown/strawberry)
 	crate_name = "fruit crate"
 
-/datum/supply_pack/organic/cream_piee
-	name = "High-yield Clown-grade Cream Pie Crate"
-	desc = "Designed by Aussec's Advanced Warfare Research Division, these high-yield, Clown-grade cream pies are powered by a synergy of performance and efficiency. Guaranteed to provide maximum results."
-	cost = 6000
-	contains = list(/obj/item/storage/backpack/duffelbag/clown/cream_pie)
-	crate_name = "party equipment crate"
-	contraband = TRUE
-	access = ACCESS_THEATRE
-	crate_type = /obj/structure/closet/crate/secure
-
 /datum/supply_pack/organic/randomized
 	name = "Meat Crate (Exotic)"
 	desc = "The best cuts in the whole galaxy. Contains 15 assorted exotic meats."

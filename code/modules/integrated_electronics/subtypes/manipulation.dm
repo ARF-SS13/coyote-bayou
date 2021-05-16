@@ -371,7 +371,6 @@
 		"Uranium"				= IC_PINTYPE_NUMBER,
 		"Solid Plasma"			= IC_PINTYPE_NUMBER,
 		"Bluespace Mesh"		= IC_PINTYPE_NUMBER,
-		"Bananium"				= IC_PINTYPE_NUMBER,
 		"Titanium"				= IC_PINTYPE_NUMBER,
 		"Plastic"				= IC_PINTYPE_NUMBER
 		)
@@ -386,7 +385,6 @@
 		"Uranium"				= IC_PINTYPE_NUMBER,
 		"Solid Plasma"			= IC_PINTYPE_NUMBER,
 		"Bluespace Mesh"		= IC_PINTYPE_NUMBER,
-		"Bananium"				= IC_PINTYPE_NUMBER,
 		"Titanium"				= IC_PINTYPE_NUMBER,
 		"Plastic"				= IC_PINTYPE_NUMBER
 		)
@@ -411,7 +409,6 @@
 		/datum/material/uranium,
 		/datum/material/plasma,
 		/datum/material/bluespace,
-		/datum/material/bananium,
 		/datum/material/titanium,
 		/datum/material/plastic
 		)

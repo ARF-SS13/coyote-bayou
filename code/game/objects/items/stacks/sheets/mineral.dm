@@ -265,33 +265,6 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	. += GLOB.silver_recipes
 
 /*
- * Clown
- */
-/obj/item/stack/sheet/mineral/bananium
-	name = "bananium"
-	icon_state = "sheet-bananium"
-	item_state = "sheet-bananium"
-	singular_name = "bananium sheet"
-	sheettype = "bananium"
-	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
-	grind_results = list(/datum/reagent/consumable/banana = 20)
-	point_value = 50
-	merge_type = /obj/item/stack/sheet/mineral/bananium
-	material_type = /datum/material/bananium
-	walltype = /turf/closed/wall/mineral/bananium
-
-GLOBAL_LIST_INIT(bananium_recipes, list ( \
-	new/datum/stack_recipe("bananium tile", /obj/item/stack/tile/mineral/bananium, 1, 4, 20), \
-	new/datum/stack_recipe("Clown Statue", /obj/structure/statue/bananium/clown, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("hilarious ingot", /obj/item/ingot/bananium, 6, time = 100), \
-	))
-
-/obj/item/stack/sheet/mineral/bananium/get_main_recipes()
-	. = ..()
-	. += GLOB.bananium_recipes
-
-/*
  * Titanium
  */
 /obj/item/stack/sheet/mineral/titanium

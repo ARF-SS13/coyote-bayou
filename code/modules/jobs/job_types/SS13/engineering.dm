@@ -34,7 +34,6 @@ Chief Engineer
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/utility/chief/full
 	l_pocket = /obj/item/pda/heads/ce
 	ears = /obj/item/radio/headset/heads/ce
 //	uniform = /obj/item/clothing/under/rank/chief_engineer
@@ -143,8 +142,6 @@ Atmospheric Technician
 /datum/outfit/job/atmos
 	name = "Atmospheric Technician"
 	jobtype = /datum/job/atmos
-
-	belt = /obj/item/storage/belt/utility/atmostech
 	l_pocket = /obj/item/pda/atmos
 	ears = /obj/item/radio/headset/headset_eng
 //	uniform = /obj/item/clothing/under/rank/atmospheric_technician
