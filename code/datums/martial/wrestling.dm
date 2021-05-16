@@ -496,7 +496,7 @@
 	var/mob/living/carbon/human/H = user
 	if(H.get_item_by_slot(SLOT_BELT) == src)
 		style.remove(H)
-
+/*
 //Subtype of wrestling, reserved for the wrestling belts found in the holodeck
 /datum/martial_art/wrestling/holodeck
 	name = "Holodeck Wrestling"
@@ -511,4 +511,4 @@
 		return FALSE
 	else
 		return ..()
-
+*/

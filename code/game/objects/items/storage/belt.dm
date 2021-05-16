@@ -76,7 +76,7 @@
 	icon_state = "utilitybelt_ce"
 	item_state = "utility_ce"
 
-/obj/item/storage/belt/utility/chief/full/PopulateContents()
+/obj/item/storage/belt/utility/full/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
 	new /obj/item/weldingtool/experimental(src)//This can be changed if this is too much
@@ -94,25 +94,6 @@
 	new /obj/item/wirecutters(src)
 	new /obj/item/multitool(src)
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
-
-/obj/item/storage/belt/utility/full/engi/PopulateContents()
-	new /obj/item/screwdriver(src)
-	new /obj/item/wrench(src)
-	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
-	new /obj/item/multitool(src)
-	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
-
-
-/obj/item/storage/belt/utility/atmostech/PopulateContents()
-	new /obj/item/screwdriver(src)
-	new /obj/item/wrench(src)
-	new /obj/item/weldingtool(src)
-	new /obj/item/crowbar(src)
-	new /obj/item/wirecutters(src)
-	new /obj/item/t_scanner(src)
-	new /obj/item/extinguisher/mini(src)
 
 /obj/item/storage/belt/utility/servant/PopulateContents()
 	new /obj/item/screwdriver/brass(src)
@@ -176,7 +157,6 @@
 		/obj/item/storage/bag/bio,
 		/obj/item/reagent_containers/blood,
 		/obj/item/tank/internals/emergency_oxygen,
-		/obj/item/gun/syringe/syndicate,
 		/obj/item/implantcase,
 		/obj/item/implant,
 		/obj/item/implanter,
@@ -189,19 +169,12 @@
 	name = "surgical supply belt"
 	desc = "A specialized belt designed for holding surgical equipment. It seems to have specific pockets for each and every surgical tool you can think of."
 	content_overlays = FALSE
-	var/advanced_drapes = FALSE
 
 /obj/item/storage/belt/medical/surgery_belt_adv/PopulateContents()
 	new /obj/item/scalpel/advanced(src)
 	new /obj/item/retractor/advanced(src)
 	new /obj/item/surgicaldrill/advanced(src)
-	if(advanced_drapes)
-		new /obj/item/surgical_drapes/advanced(src)
-	else
-		new /obj/item/surgical_drapes(src)
-
-/obj/item/storage/belt/medical/surgery_belt_adv/cmo
-	advanced_drapes = TRUE
+	new /obj/item/surgical_drapes/advanced(src)
 
 /obj/item/storage/belt/security
 	name = "security belt"
@@ -327,28 +300,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
-
-/obj/item/storage/belt/soulstone
-	name = "soul stone belt"
-	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
-
-/obj/item/storage/belt/soulstone/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.can_hold = typecacheof(list(
-		/obj/item/soulstone
-		))
-
-/obj/item/storage/belt/soulstone/full/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/soulstone(src)
-
-/obj/item/storage/belt/soulstone/full/chappy/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/soulstone/anybody/chaplain(src)
 
 /obj/item/storage/belt/champion
 	name = "championship belt"
@@ -562,33 +513,6 @@
 	new /obj/item/screwdriver(src)
 	new /obj/item/multitool(src)
 
-/obj/item/storage/belt/wands
-	name = "wand belt"
-	desc = "A belt designed to hold various rods of power. A veritable fanny pack of exotic magic."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/belt/wands/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.can_hold = typecacheof(list(
-		/obj/item/gun/magic/wand
-		))
-
-/obj/item/storage/belt/wands/full/PopulateContents()
-	new /obj/item/gun/magic/wand/death(src)
-	new /obj/item/gun/magic/wand/resurrection(src)
-	new /obj/item/gun/magic/wand/polymorph(src)
-	new /obj/item/gun/magic/wand/teleport(src)
-	new /obj/item/gun/magic/wand/door(src)
-	new /obj/item/gun/magic/wand/fireball(src)
-
-	for(var/obj/item/gun/magic/wand/W in contents) //All wands in this pack come in the best possible condition
-		W.max_charges = initial(W.max_charges)
-		W.charges = W.max_charges
-
 /obj/item/storage/belt/janitor
 	name = "janibelt"
 	desc = "A belt used to hold most janitorial supplies."
@@ -793,6 +717,11 @@
 	new /obj/item/ammo_box/l10mm(src)
 	new /obj/item/ammo_box/l10mm(src)
 
+/obj/item/storage/belt/holster/legholster
+	name = "leg holster"
+	desc = "A holster to carry a handgun and ammo worn on the leg."
+	icon_state = "holsterleg"
+	item_state = "holsterleg"
 
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
@@ -813,50 +742,15 @@
 	icon_state = "fannypack_black"
 	item_state = "fannypack_black"
 
-/obj/item/storage/belt/fannypack/red
-	name = "red fannypack"
-	icon_state = "fannypack_red"
-	item_state = "fannypack_red"
-
-/obj/item/storage/belt/fannypack/purple
-	name = "purple fannypack"
-	icon_state = "fannypack_purple"
-	item_state = "fannypack_purple"
-
-/obj/item/storage/belt/fannypack/blue
-	name = "blue fannypack"
-	icon_state = "fannypack_blue"
-	item_state = "fannypack_blue"
-
 /obj/item/storage/belt/fannypack/orange
 	name = "orange fannypack"
 	icon_state = "fannypack_orange"
 	item_state = "fannypack_orange"
 
-/obj/item/storage/belt/fannypack/white
-	name = "white fannypack"
-	icon_state = "fannypack_white"
-	item_state = "fannypack_white"
-
-/obj/item/storage/belt/fannypack/green
-	name = "green fannypack"
-	icon_state = "fannypack_green"
-	item_state = "fannypack_green"
-
 /obj/item/storage/belt/fannypack/pink
 	name = "pink fannypack"
 	icon_state = "fannypack_pink"
 	item_state = "fannypack_pink"
-
-/obj/item/storage/belt/fannypack/cyan
-	name = "cyan fannypack"
-	icon_state = "fannypack_cyan"
-	item_state = "fannypack_cyan"
-
-/obj/item/storage/belt/fannypack/yellow
-	name = "yellow fannypack"
-	icon_state = "fannypack_yellow"
-	item_state = "fannypack_yellow"
 
 /obj/item/storage/belt/sabre
 	name = "sabre sheath"
@@ -922,6 +816,12 @@
 	desc = "A belt capable of holding the necessities of a legionnaire."
 	icon_state = "legion_belt"
 	item_state = "legion_belt"
+
+/obj/item/storage/belt/military/assault/enclave
+	name = "old style army belt"
+	desc = "Prewar army utility belt design."
+	icon_state = "enclave_belt"
+	item_state = "enclave_belt"
 
 /obj/item/storage/belt/military/assault/ncr
 	name = "NCR patrol belt"

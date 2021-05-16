@@ -68,14 +68,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		DYE_CMO = /obj/item/clothing/shoes/sneakers/brown
 	),
 	DYE_REGISTRY_FANNYPACK = list(
-		DYE_RED = /obj/item/storage/belt/fannypack/red,
 		DYE_ORANGE = /obj/item/storage/belt/fannypack/orange,
-		DYE_YELLOW = /obj/item/storage/belt/fannypack/yellow,
-		DYE_GREEN = /obj/item/storage/belt/fannypack/green,
-		DYE_BLUE = /obj/item/storage/belt/fannypack/blue,
-		DYE_PURPLE = /obj/item/storage/belt/fannypack/purple,
 		DYE_BLACK = /obj/item/storage/belt/fannypack/black,
-		DYE_WHITE = /obj/item/storage/belt/fannypack/white
 	),
 	DYE_REGISTRY_BEDSHEET = list(
 		DYE_RED = /obj/item/bedsheet/red,
