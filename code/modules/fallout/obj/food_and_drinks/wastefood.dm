@@ -8,27 +8,6 @@
 	tastes = list("Monkey" = 1)
 	foodtype = MEAT | VEGETABLES
 
-
-/obj/item/reagent_containers/food/snacks/soup/moleratstew
-	name = "molerat stew"
-	desc = "A nice and warm stew. Healthy and strong."
-	icon_state = "stew"
-	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/tomatojuice = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
-	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/tomatojuice = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
-	bitesize = 7
-	volume = 100
-	tastes = list("gamey meat" = 1, "herbal notes" = 1, "filling stew" = 1)
-	foodtype = VEGETABLES | MEAT
-
-/obj/item/reagent_containers/food/snacks/soup/buffalogourd
-	name = "Buffalo gourd soup"
-	desc = "A tasty soup made with roasted gourd"
-	icon_state = "Buffalo Soup"
-	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 4,  /datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("buttery flesh" = 1, "creamy soup" = 1)
-	foodtype = VEGETABLES
-
-
 /////PLANTS Fallout 13///////
 
 /obj/item/seeds/buffalogourd
