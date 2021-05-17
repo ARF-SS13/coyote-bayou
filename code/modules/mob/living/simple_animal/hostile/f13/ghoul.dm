@@ -25,7 +25,7 @@
 	faction = list("ghoul")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
 
