@@ -8,7 +8,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 3)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -73,8 +75,9 @@
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1, /obj/item/stack/sheet/sinew = 1)
-
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1, /obj/item/stack/sheet/sinew = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
+	butcher_difficulty = 1.5
 /mob/living/simple_animal/hostile/cazador/young/playable
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -118,7 +121,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
+	guaranteed_butcher_results  = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -177,7 +182,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/gecko = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/gecko = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_difficulty = 1
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -226,7 +233,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2, /obj/item/stack/sheet/sinew = 1)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -261,7 +270,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -303,7 +314,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -351,7 +364,10 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3)
+	butcher_difficulty = 1.5
+	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -427,7 +443,7 @@
 	name = "nightstalker pelt"
 	desc = "A hat made from nightstalker pelt which makes the wearer feel both comfortable and elegant."
 	icon_state = "stalkerpelt"
-	item_state = "fedora"
+	item_state = "stalkerpelt"
 
 /obj/structure/stalkeregg
 	name = "nightstalker egg"
@@ -456,7 +472,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
@@ -517,7 +533,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/clothing/head/f13/stalkerpelt = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
+	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
+	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "bites"
@@ -573,7 +591,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bloatfly_meat = 2, /obj/item/stack/sheet/sinew = 1)
+	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "bites"
@@ -615,7 +635,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2, /obj/item/stack/sheet/sinew = 1,/obj/item/stack/sheet/animalhide/molerat = 1, /obj/item/stack/sheet/bone = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_difficulty = 1.5
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple = "hits"
@@ -664,7 +686,7 @@
 	icon_dead = "mirelurk_d"
 	speed = 1
 	icon_gib = "gib"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
 	maxHealth = 150
 	health = 150
 	melee_damage_lower = 10
@@ -687,7 +709,7 @@
 	speed = 1
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
 	maxHealth = 250
 	health = 250
 	melee_damage_lower = 30
@@ -708,7 +730,7 @@
 	icon_living = "mirelurkbaby"
 	icon_dead = "mirelurkbaby_d"
 	icon_gib = "gib"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
 	speed = 1
 	maxHealth = 50
 	health = 50
