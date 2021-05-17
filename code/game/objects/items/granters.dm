@@ -39,7 +39,7 @@
 
 
 /obj/item/book/granter/attack_self(mob/user)
-	if(user.special_i<5)
+	if(user.special_i<5&&!istype(src,/obj/item/book/granter/trait/selection))//SPECIAL Integration
 		to_chat(user, "<span class='warning'>You feel like you are too stupid to understand this.</span>")
 		return
 	if(reading)
