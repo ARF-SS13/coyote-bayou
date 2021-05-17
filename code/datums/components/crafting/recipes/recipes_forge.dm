@@ -354,7 +354,7 @@
 	time = 1000
 	reqs = list(/obj/item/stack/sheet/metal = 25,
 				/obj/item/stack/sheet/mineral/wood = 5)
-	tools = list(TOOL_FORGE)
+	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
