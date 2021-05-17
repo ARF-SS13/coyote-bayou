@@ -60,7 +60,7 @@
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
-/mob/living/proc/update_special_speed(var/speed)//SPECIAL Integration
+/mob/living/proc/update_special_speed(speed)//SPECIAL Integration
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/special_speed, multiplicative_slowdown = speed)
 
 /mob/living/proc/update_pull_movespeed()
