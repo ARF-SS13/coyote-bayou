@@ -371,6 +371,15 @@
 	tastes = list("Monkey" = 1)
 	foodtype = MEAT | VEGETABLES
 
+/obj/item/reagent_containers/food/snacks/tallow
+	name = "tallow"
+	desc = "A block of pale waxy fat."
+	icon_state = "butter"
+	list_reagents = list("cooking_oil" = 20)
+	filling_color = "#FFD700"
+	tastes = list("sickly fat" = 1)
+	foodtype = MEAT | JUNKFOOD | GROSS
+
 /obj/item/reagent_containers/food/snacks/crunchymutfruit
 	name = "crunchy mutfruit"
 	desc = "A juicy mutfruit with a crispy exterior layer."
