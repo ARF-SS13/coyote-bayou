@@ -2975,9 +2975,9 @@
 		if(!query_add_mentor.warn_execute())
 			return
 		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime`, `round_id` ,`adminckey` ,`adminip` ,`log`, `target`)
-			VALUES (NULL , NOW( ), :round_id, :adminckey, :addr, CONCAT('Added new mentor ', :mentorkey));"},
-			list("adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
+			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+			VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
+			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
 		)
 		if(!query_add_admin_log.warn_execute())
 			qdel(query_add_admin_log)
@@ -3010,7 +3010,11 @@
 		)
 		if(!query_remove_mentor.warn_execute())
 			return
-		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery("INSERT INTO `[format_table_name("admin_log")]` (`id` ,`datetime` ,`adminckey` ,`adminip` ,`log` ) VALUES (NULL , NOW( ) , '[usr.ckey]', '[usr.client.address]', 'Removed mentor [ckey]');")
+
+		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery({"
+			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+			VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
+			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
 		if(!query_add_admin_log.warn_execute())
 			return
 	else
