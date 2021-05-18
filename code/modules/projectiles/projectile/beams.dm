@@ -335,10 +335,11 @@
 	icon_state = "plasma_clot"
 	damage_type = BURN
 	damage = 45
-	armour_penetration = 0.35
+	armour_penetration = 0.55
 	flag = "laser" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = TRUE
+	pixels_per_second = TILES_TO_PIXELS(27)
 
 /obj/item/projectile/f13plasma/repeater //Plasma repeater
 	name = "plasma stream"
