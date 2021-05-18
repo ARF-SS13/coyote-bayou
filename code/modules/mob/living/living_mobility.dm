@@ -22,7 +22,7 @@
 
 //Force mob to rest, does NOT do stamina damage.
 //It's really not recommended to use this proc to give feedback, hence why silent is defaulting to true.
-/mob/living/proc/KnockToFloor(disarm_items = FALSE, silent = TRUE, updating = TRUE)
+/mob/living/proc/KnockToFloor(disarm_items = TRUE, silent = TRUE, updating = TRUE)
 	if(!silent && !resting)
 		to_chat(src, "<span class='warning'>You are knocked to the floor!</span>")
 	set_resting(TRUE, TRUE, updating)
@@ -36,7 +36,14 @@
 		TOGGLE_BITFIELD(combat_flags, COMBAT_FLAG_INTENTIONALLY_RESTING)
 		to_chat(src, "<span class='notice'>You are now attempting to [(combat_flags & COMBAT_FLAG_INTENTIONALLY_RESTING) ? "[!resting ? "lay down and ": ""]stay down" : "[resting ? "get up and ": ""]stay up"].</span>")
 		if((combat_flags & COMBAT_FLAG_INTENTIONALLY_RESTING) && !resting)
-			set_resting(TRUE, FALSE)
+			var/list/items = src.get_equipped_items()
+			var/PA = items.Find(/obj/item/clothing/suit/armor/f13/power_armor)
+			if(PA!=null)
+				to_chat(src, "<span class='notice'>You cannot lie down in that heavy armor!</span>")
+				return
+			if(do_after(src,30))
+				set_resting(TRUE, FALSE)
+				drop_all_held_items()
 		else
 			resist_a_rest()
 	else
