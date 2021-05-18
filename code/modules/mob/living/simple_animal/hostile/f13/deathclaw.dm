@@ -18,7 +18,7 @@
 	taunt_chance = 25
 	speed = -1
 	see_in_dark = 8
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
 							/obj/item/stack/sheet/bone = 4)
 	response_help_simple  = "pets"
@@ -66,7 +66,7 @@
 	melee_damage_upper = 78
 	armour_penetration = 0.75
 	color = rgb(95,104,94)
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
 /mob/living/simple_animal/hostile/deathclaw/legendary

@@ -26,7 +26,7 @@
 	stat_attack = UNCONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("trog")
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
 
@@ -45,7 +45,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 0
 	faction = list("plants")
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
 
 /mob/living/simple_animal/hostile/trog/tunneler
 	name = "tunneler"
@@ -62,7 +62,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 5
 	faction = list("tunneler")
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	butcher_results = list(/obj/item/stack/sheet/bone = 1)
 
 /mob/living/simple_animal/hostile/trog/tunneler/AttackingTarget()
 	. = ..()
