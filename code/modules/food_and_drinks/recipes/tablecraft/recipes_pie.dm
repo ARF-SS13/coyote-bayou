@@ -28,7 +28,6 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/burek
 	subcategory = CAT_PIE
 
-/* requires code
 /datum/crafting_recipe/food/brahminpotpie
 	name = "Brahmin potpie"
 	reqs = list(
@@ -39,7 +38,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/brahminpotpie
 	subcategory = CAT_PIE
-*/
 
 ////////////////////////////////////////////SWEETS////////////////////////////////////////////
 
