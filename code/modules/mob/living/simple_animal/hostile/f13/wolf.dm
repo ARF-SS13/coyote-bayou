@@ -26,8 +26,7 @@
 //	aggro_sound = list('sound/f13npc/dog_alert1.ogg','sound/f13npc/dog_alert2.ogg','sound/f13npc/dog_alert3.ogg')
 
 	environment_smash = 0
-	butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 1, \
-	/obj/item/reagent_containers/food/snacks/meat/slab/wolf = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 1, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 1,/obj/item/stack/sheet/bone = 1)
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	aggro_vision_range = 15
@@ -62,6 +61,7 @@
 	icon_living = "wolf_angry"
 	icon_dead = "wolf_dead"
 	icon_gib = "gib"
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 100
 	health = 100
 	melee_damage_lower = 25
@@ -87,12 +87,13 @@
 	icon_living = "cold_wolf"
 	icon_dead = "cold_wolf_dead"
 	icon_gib = "gib"
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 100
 	health = 100
 	melee_damage_lower = 25
 	melee_damage_upper = 35
 
-//Unique Dogs - Guerilla for Khans is a Rottweiler, Brutus and Lupa german shepherds, Sniffs-the-Earth a sheepdog. 
+//Unique Dogs - Guerilla for Khans is a Rottweiler, Brutus and Lupa german shepherds, Sniffs-the-Earth a sheepdog.
 //Feel free to move or add code for different behaviours like sleep, some unused sprites prepped for that sort of thing.
 
 /mob/living/simple_animal/hostile/wolf/playable/rottweiler

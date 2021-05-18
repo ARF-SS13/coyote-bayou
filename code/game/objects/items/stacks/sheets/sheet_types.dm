@@ -203,7 +203,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 
 
 // Plasteel
- 
+
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50), \
 	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
@@ -258,7 +258,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	amount = 5
 
 //  Wood
- 
+
 GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 10), \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
@@ -387,7 +387,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 
 
 // Cloth
- 
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
@@ -410,6 +410,8 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
 	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	new/datum/stack_recipe("durable thread", /obj/item/stack/sheet/durathread/three, 3), \
+	null, \
 	))
 
 /obj/item/stack/sheet/cloth
@@ -462,6 +464,11 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	. = ..()
 	. += GLOB.durathread_recipes
 
+/obj/item/stack/sheet/durathread/three
+	amount = 3
+
+/obj/item/stack/sheet/durathread/ten
+	amount = 10
 /*
  * Cardboard
  */
@@ -727,7 +734,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/greatergem
 
 // Bones
- 
+
 GLOBAL_LIST_INIT(bone_recipes, list(
 	new /datum/stack_recipe("Tribal Satchel", /obj/item/storage/backpack/satchel/bone, 4, time = 40),
 ))

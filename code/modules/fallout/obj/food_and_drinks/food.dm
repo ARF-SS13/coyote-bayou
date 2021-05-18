@@ -288,6 +288,145 @@
 	filling_color = "#465945"
 	foodtype = MEAT | GROSS
 
+/* Meat Cuts & Offal */
+
+/obj/item/reagent_containers/food/snacks/rawbrahmintongue
+	name = "raw brahmin tongue"
+	desc = "The raw tongue of a brahmin, a wastelander favorite once cooked dozens of different ways"
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "brahmintongue"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	cooked_type = /obj/item/reagent_containers/food/snacks/cookedbrahmintongue
+	tastes = list("beef" = 4, "tender meat" = 1)
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/cookedbrahmintongue
+	name = "brahmin tongue"
+	desc = "A brahmin tongue slow roasted over an open fire and topped with a large amount of thick brown gravy"
+	icon_state = "stewedsoymeat"
+	bitesize = 3
+	filling_color = "#CD853F"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	cooked_type = /obj/item/reagent_containers/food/snacks/cookedbrahmintongue
+	tastes = list("top quality beef" = 4, "tender meat" = 1, "tasty gravy" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/rawbrahminliver
+	name = "raw brahmin liver"
+	desc = "The moist fatty liver of a well grazed brahmin."
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "brahmin_liver"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	cooked_type = /obj/item/reagent_containers/food/snacks/cookedbrahminliver
+	tastes = list("beef" = 4, "tender meat" = 1)
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/cookedbrahminliver
+	name = "charred brahmin liver"
+	desc = "A fatty brahmin liver roasted in a cast iron pan over mesquite wood."
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "charred_brahmin_liver"
+	bitesize = 3
+	filling_color = "#CD853F"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	tastes = list("slow cooked liver" = 4, "delicious crunch" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/rawantbrain
+	name = "raw ant brain"
+	desc = "Goopy reddish-grey flesh dug out of the brain case of a giant ant."
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "antbrain"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	cooked_type = /obj/item/reagent_containers/food/snacks/cookedbrahminliver
+	tastes = list("fat" = 4, "bitter meat" = 1)
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/bakedantbrain
+	name = "baked ant brain"
+	desc = "A steaming pile of giant ant brains seasoned with a dash of salt to trail off excess brain fluid moisture."
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "antbrain_baked"
+	bitesize = 3
+	filling_color = "#CD853F"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("savory dry meat" = 4, "fat" = 2, "hivemind chittering" = 1)
+	foodtype = MEAT
+
+/* Other Foods & Snacks*/
+
+/obj/item/reagent_containers/food/snacks/soup/macaco
+	name = "macaco soup"
+	desc = "To think, the monkey would've beat you to death and steal your gun."
+	icon_state = "macaco"
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/medicine/omnizine = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("Monkey" = 1)
+	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/tallow
+	name = "tallow"
+	desc = "A block of pale waxy fat."
+	icon_state = "butter"
+	list_reagents = list(/datum/reagent/consumable/cooking_oil = 20)
+	filling_color = "#FFD700"
+	tastes = list("sickly fat" = 1)
+	foodtype = MEAT | JUNKFOOD | GROSS
+
+/obj/item/reagent_containers/food/snacks/crunchymutfruit
+	name = "crunchy mutfruit"
+	desc = "A juicy mutfruit with a crispy exterior layer."
+	icon_state = "scotchegg"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	filling_color = "#FFD700"
+	tastes = list("crunchy sweetness" = 1, "warm butter"=1)
+	foodtype = FRUIT
+
+/obj/item/reagent_containers/food/snacks/friedbrahminskin
+	name = "brahmin cracklings"
+	desc = "Cracklings are the solid material which remains after rendering animal fat and skin to produce lard, tallow, or schmaltz. It is often eaten as a snack food or made into animal feed. It is also used in cooking."
+	icon_state = "Fried Brahmin Skin"
+	filling_color = "#CD5C5C"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("crispy skin" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/pemmican
+	name = "pemmican"
+	desc = "A well-known food in survivalist circles, pemmican is a mixture of fat and protein from the meat of an animal."
+	icon_state = "phelmbiscuit"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("dried meat" = 8, "Sawdust" = 4, "Corn" = 1)
+	foodtype = MEAT
+
+/* Salads */
+
+/obj/item/reagent_containers/food/snacks/salad/tatosalad
+	name = "tato salad"
+	desc = "Strips of fried brahmin meat and fried tato slices on a bed of razorgrain grits. It has grated xander root sprinkled on top."
+	icon_state = "Tato Salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("leaves" = 1, "old ketchup" = 1, "fatty meat" = 1, "salty Turnip" = 1)
+	foodtype = VEGETABLES | MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/salad/desertsalad
+	name = "desert salad"
+	desc = "A tasty cactus salad topped with brahamin bits and roasted nuts."
+	icon_state = "Desert Salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("tender meat" = 1, "acidic cactus" = 3, "crunchy nuts" = 1)
+	foodtype = VEGETABLES | FRUIT | MEAT
+
 //WASTELAND JUNK FOOD
 
 /obj/item/reagent_containers/food/snacks/f13
@@ -468,9 +607,20 @@
 /obj/item/reagent_containers/food/snacks/f13/deathclawegg
 	name = "deathclaw egg"
 	desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
+	icon = 'icons/fallout/objects/food&drinks/egg_omelette.dmi'
 	icon_state = "deathclawegg"
 	bonus_reagents = list(/datum/reagent/toxin = 30)
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 40)
+	filling_color = "#F0E68C"
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/giantantegg
+	name = "giant ant egg"
+	desc = "A giant ant egg.<br>You'd thought it be bigger but its white and squishy to the touch."
+	icon = 'icons/fallout/objects/food&drinks/egg_omelette.dmi'
+	icon_state = "antegg"
+	bonus_reagents = list(/datum/reagent/toxin = 10)
+	list_reagents = list(/datum/reagent/consumable/eggyolk = 15)
 	filling_color = "#F0E68C"
 	foodtype = MEAT
 
@@ -541,11 +691,22 @@
 	filling_color = "B#22222"
 	foodtype = MEAT | GRAIN
 
+/obj/item/reagent_containers/food/snacks/f13/anteggomlette
+	name = "ant egg omlette"
+	desc = "A omlette comprised of soft giant ant eggs served traditionally with a cheese topping & onions."
+	icon = 'icons/fallout/objects/food&drinks/egg_omelette.dmi'
+	icon_state = "antegg_omlette"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bitesize = 2
+	tastes = list("fluffy egg" = 1, "cheese" = 1, "onions" = 1)
+	foodtype = MEAT | BREAKFAST
+
 /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
 	name = "deathclaw omelette"
 	desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
-	icon = 'icons/fallout/objects/food&drinks/food.dmi'
-	icon_state = "deathclawomlette"
+	icon = 'icons/fallout/objects/food&drinks/egg_omelette.dmi'
+	icon_state = "deathclawegg_omelette"
 	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/medicine/omnizine = 40, /datum/reagent/medicine/dexalin = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 60)
 	filling_color = "B#22222"
@@ -573,11 +734,23 @@
 	name = "mirelurk cake"
 	desc = "A savory cake made from the meat of a Mirelurk.  A popular dish from the coastlines."
 	bitesize = 5
+	icon = 'icons/fallout/objects/food&drinks/pie_cake.dmi'
 	icon_state = "mirelurk_cake"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/nutriment/vitamin = 9)
 	tastes = list("cake" = 1, "crab" = 5)
 	filling_color = "#406618"
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/pie/brahminpotpie
+	name = "brahmin potpie"
+	desc = "A pot pie is a type of pie with a top pie crust, sometimes a bottom pie crust, consisting of flaky pastry. This is filled with stewed brahmin tongue."
+	icon = 'icons/fallout/objects/food&drinks/pie_cake.dmi'
+	icon_state = "brahmin_potpie"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("pie" = 1, "meat" = 1, "gravy" = 1)
+	filling_color = "B#22222"
+	bitesize = 4
+	foodtype = GRAIN | MEAT
 
 //WASTELAND SOUPS
 
@@ -587,7 +760,7 @@
 	icon = 'icons/fallout/objects/food&drinks/soupsalad.dmi'
 	icon_state = "molerat_stew"
 	volume = 35
-	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list( /datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
 	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("gamey meat" = 1, "filling stew" = 1)
 	foodtype = VEGETABLES | MEAT
