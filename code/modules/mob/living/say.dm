@@ -268,9 +268,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	return message
 
 /mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode)
-	var/stutter_chance = max(0, 40-special_c*10)//SPECIAL Integration
-	if(prob(stutter_chance))
-		stuttering += 5
+	//var/stutter_chance = max(0, 40-special_c*10)//SPECIAL Integration
+	//if(prob(stutter_chance))
+	//	stuttering += 5
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
 	var/eavesdrop_range = 0
 	if(eavesdropping_modes[message_mode])

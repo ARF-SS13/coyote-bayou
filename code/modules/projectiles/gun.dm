@@ -779,7 +779,7 @@
 /obj/item/gun/proc/getinaccuracy(mob/living/user, bonus_spread, stamloss)
 	if(inaccuracy_modifier == 0)
 		return bonus_spread
-	var/base_inaccuracy = weapon_weight * 25 * inaccuracy_modifier + 10 + (-user.special_p)//SPECIAL Integration
+	var/base_inaccuracy = weapon_weight * 25 * inaccuracy_modifier //+ 50 + (-user.special_p*5)//SPECIAL Integration
 	var/aiming_delay = 0 //Otherwise aiming would be meaningless for slower guns such as sniper rifles and launchers.
 	if(fire_delay)
 		var/penalty = (last_fire + GUN_AIMING_TIME + fire_delay) - world.time

@@ -399,8 +399,8 @@
 	desc = ""
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	burst_size = 3
-	burst_shot_delay = 1
+	burst_size = 2
+	burst_shot_delay = 1.5
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	w_class = WEIGHT_CLASS_BULKY
