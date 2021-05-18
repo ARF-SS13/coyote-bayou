@@ -375,7 +375,7 @@
 	name = "tallow"
 	desc = "A block of pale waxy fat."
 	icon_state = "butter"
-	list_reagents = list("cooking_oil" = 20)
+	list_reagents = list(/datum/reagent/consumable/cooking_oil = 20)
 	filling_color = "#FFD700"
 	tastes = list("sickly fat" = 1)
 	foodtype = MEAT | JUNKFOOD | GROSS
@@ -384,7 +384,7 @@
 	name = "crunchy mutfruit"
 	desc = "A juicy mutfruit with a crispy exterior layer."
 	icon_state = "scotchegg"
-	list_reagents = list("nutriment" = 4, "vitamin" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FFD700"
 	tastes = list("crunchy sweetness" = 1, "warm butter"=1)
 	foodtype = FRUIT
@@ -394,8 +394,8 @@
 	desc = "Cracklings are the solid material which remains after rendering animal fat and skin to produce lard, tallow, or schmaltz. It is often eaten as a snack food or made into animal feed. It is also used in cooking."
 	icon_state = "Fried Brahmin Skin"
 	filling_color = "#CD5C5C"
-	bonus_reagents = list("nutriment" = 1, "vitamin" = 1)
-	list_reagents = list("nutriment" = 6, "vitamin" = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("crispy skin" = 1)
 	foodtype = MEAT
 
@@ -403,7 +403,7 @@
 	name = "pemmican"
 	desc = "A well-known food in survivalist circles, pemmican is a mixture of fat and protein from the meat of an animal."
 	icon_state = "phelmbiscuit"
-	list_reagents = list("nutriment" = 2, "vitamin" = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("dried meat" = 8, "Sawdust" = 4, "Corn" = 1)
 	foodtype = MEAT
 
@@ -413,8 +413,8 @@
 	name = "tato salad"
 	desc = "Strips of fried brahmin meat and fried tato slices on a bed of razorgrain grits. It has grated xander root sprinkled on top."
 	icon_state = "Tato Salad"
-	bonus_reagents = list("vitamin" = 4, "vitamin" = 4)
-	list_reagents = list("nutriment" = 8, "vitamin" = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 3)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("leaves" = 1, "old ketchup" = 1, "fatty meat" = 1, "salty Turnip" = 1)
 	foodtype = VEGETABLES | MEAT | GRAIN
 
@@ -422,8 +422,8 @@
 	name = "desert salad"
 	desc = "A tasty cactus salad topped with brahamin bits and roasted nuts."
 	icon_state = "Desert Salad"
-	bonus_reagents = list("vitamin" = 4)
-	list_reagents = list("nutriment" = 8, "vitamin" = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("tender meat" = 1, "acidic cactus" = 3, "crunchy nuts" = 1)
 	foodtype = VEGETABLES | FRUIT | MEAT
 
@@ -746,7 +746,7 @@
 	desc = "A pot pie is a type of pie with a top pie crust, sometimes a bottom pie crust, consisting of flaky pastry. This is filled with stewed brahmin tongue."
 	icon = 'icons/fallout/objects/food&drinks/pie_cake.dmi'
 	icon_state = "brahmin_potpie"
-	bonus_reagents = list("nutriment" = 1, "vitamin" = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("pie" = 1, "meat" = 1, "gravy" = 1)
 	filling_color = "B#22222"
 	bitesize = 4
@@ -760,7 +760,7 @@
 	icon = 'icons/fallout/objects/food&drinks/soupsalad.dmi'
 	icon_state = "molerat_stew"
 	volume = 35
-	list_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
+	list_reagents = list( /datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/oculine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
 	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("gamey meat" = 1, "filling stew" = 1)
 	foodtype = VEGETABLES | MEAT
