@@ -26,7 +26,6 @@
 	icon_state = "grassclump"
 	filling_color = "#32CD32"
 	dried_type = /obj/item/stack/sheet/hay //grass seeds got dusted in the nukes, not backward compatible.
-	cooked_type = /obj/item/stack/sheet/hay
 	bitesize_mod = 2
 	var/stacktype = /obj/item/stack/tile/grass
 	var/tile_coefficient = 0.02 // 1/50

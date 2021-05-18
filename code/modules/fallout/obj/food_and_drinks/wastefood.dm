@@ -1,4 +1,13 @@
 //FOOD FALLOUT 13///////
+
+/obj/item/reagent_containers/food/snacks/soup/macaco
+	name = "Macaco soup"
+	desc = "To think, the monkey would've beat you to death and steal your gun."
+	icon_state = "macaco"
+	bonus_reagents = list( /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/medicine/omnizine = 5,  /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("Monkey" = 1)
+	foodtype = MEAT | VEGETABLES
+
 /////PLANTS Fallout 13///////
 
 /obj/item/seeds/buffalogourd

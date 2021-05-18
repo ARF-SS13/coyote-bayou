@@ -116,7 +116,7 @@
 /datum/crafting_recipe/rip
 	category = CAT_MISC
 	subcategory = CAT_FURNITURE
-
+	
 /datum/crafting_recipe/rip/gravemarker
 	name = "Gravemarker"
 	result = /obj/structure/statue/wood/headstonewood
@@ -200,37 +200,6 @@
 	category = CAT_MISC
 	always_availible = FALSE	// Disabled until learned
 */
-
-//////////
-//Tallow//
-//////////
-
-/datum/crafting_recipe/tallow
-	name = "Render Fat From Scraps"
-	result = /obj/item/reagent_containers/food/snacks/tallow
-	time = 30
-	reqs = list(/obj/item/reagent_containers/food/snacks/meat/cutlet = 3)
-	category = CAT_MISC
-
-/datum/crafting_recipe/tallowccandle
-	name = "Mold Tallow Candle"
-	result = /obj/item/candle
-	time = 30
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/tallow = 1,
-		/obj/item/stack/sheet/durathread = 3
-	)
-	category = CAT_MISC
-
-/datum/crafting_recipe/salvagecandle
-	name = "Salvage Wax"
-	result = /obj/item/candle
-	time = 80
-	reqs = list(
-		/obj/item/trash/candle = 5,
-		/obj/item/stack/sheet/durathread = 3
-	)
-	category = CAT_MISC
 
 ///////////////////
 //Various Things//

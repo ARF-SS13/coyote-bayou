@@ -617,14 +617,8 @@
 	emote_hear = list("brays.")
 	var/obj/item/inventory_back
 	speak_chance = 0.4
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-										/obj/item/reagent_containers/food/snacks/rawbrahminliver = 1,
-										/obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2,
-										/obj/item/stack/sheet/animalhide/brahmin = 3,
-										/obj/item/stack/sheet/bone = 2,
-										/obj/item/reagent_containers/food/snacks/tallow = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
-	butcher_difficulty = 1
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3)
+
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
@@ -780,14 +774,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 5
 	see_in_dark = 6
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-										/obj/item/stack/sheet/sinew = 2,
-										/obj/item/stack/sheet/animalhide/radstag = 2,
-										/obj/item/stack/sheet/bone = 2,
-										/obj/item/reagent_containers/food/snacks/tallow = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
-	butcher_difficulty = 1
-
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/radstag = 2)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
@@ -814,12 +801,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4,
-										/obj/item/stack/sheet/sinew = 2,
-										/obj/item/stack/sheet/bone = 3,
-										/obj/item/reagent_containers/food/snacks/tallow = 1)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
-	butcher_difficulty = 1
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 8, /obj/item/stack/sheet/sinew = 3, /obj/item/stack/sheet/bone = 4)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
