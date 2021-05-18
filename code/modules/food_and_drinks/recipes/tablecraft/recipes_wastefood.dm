@@ -92,8 +92,6 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/buffalogourd
 	subcategory = CAT_WASTEFOOD
 
-/* awaiting assets + code for completion
-
 /datum/crafting_recipe/food/pemmican
 	name = "Pemmican"
 	reqs = list(
@@ -102,7 +100,7 @@
 		/obj/item/reagent_containers/food/snacks/tallow = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pemmican
-	subcategory = CAT_WASTEFOOD
+	subcategory = CAT_MEAT
 
 /datum/crafting_recipe/food/crunchymutfruit
 	name = "Crunchy Mutfruit"
@@ -114,6 +112,16 @@
 	result = /obj/item/reagent_containers/food/snacks/crunchymutfruit
 	subcategory = CAT_WASTEFOOD
 
+/datum/crafting_recipe/food/friedbrahminskin
+	name = "Fried brahmin skin."
+	reqs = list(
+		/obj/item/stack/sheet/animalhide/brahmin = 2,
+		/obj/item/reagent_containers/food/snacks/tallow = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/friedbrahminskin
+	subcategory = CAT_MEAT
+
+/*
 /datum/crafting_recipe/food/tatofries
 	name = "Tato fries"
 	reqs = list(
