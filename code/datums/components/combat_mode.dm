@@ -87,7 +87,7 @@
 		else
 			to_chat(source, self_message)
 		if(playsound)
-			source.playsound_local(source, 'sound/misc/ui_toggle.ogg', 50, FALSE, pressure_affected = FALSE) //Sound from interbay!
+			source.playsound_local(source, 'sound/misc/ui_toggle_vats.ogg', 50, FALSE, pressure_affected = FALSE) //Sound from interbay!
 	RegisterSignal(source, COMSIG_MOB_CLIENT_MOUSEMOVE, .proc/onMouseMove)
 	RegisterSignal(source, COMSIG_MOVABLE_MOVED, .proc/on_move)
 	RegisterSignal(source, COMSIG_MOB_CLIENT_MOVE, .proc/on_client_move)
