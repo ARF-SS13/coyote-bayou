@@ -90,7 +90,7 @@
 
 	var/bigleagues = force*1.15+5
 	var/buffout = force*1.15+5
-	var/regular = force*(1+(user.special_s/100))//SPECIAL integration
+	//var/regular = force*(1+(user.special_s/100))//SPECIAL integration
 
 	//force += regular//SPECIAL integration
 	
