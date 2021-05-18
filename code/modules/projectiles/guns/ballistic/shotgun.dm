@@ -418,6 +418,20 @@
 		return
 	toggle_tube(user)
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/neostead/peacemaker
+	name = "Peacemaker Shotgun"
+	desc = "Enclave heavy shotgun made for their combat robots. Two large ammobins to select ammo type and keep the robot in the fight longer."
+	icon_state = "neostead"
+	mag_type = /obj/item/ammo_box/shotgun/
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/streetsweeper
+	name = "Streetsweeper Shotgun"
+	desc = "A semi automatic shotgun with with bullpup magazine."
+	icon_state = "pancor"
+	item_state = "cshotgun1"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "city-killer combat shotgun"
@@ -429,7 +443,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
-	name = "browning auto-5"
+	name = "Browning auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
 	icon_state = "auto5"
 	item_state = "huntingshotgun"
