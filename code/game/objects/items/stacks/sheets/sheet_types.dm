@@ -464,6 +464,11 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	. = ..()
 	. += GLOB.durathread_recipes
 
+/obj/item/stack/sheet/durathread/three
+	amount = 3
+
+/obj/item/stack/sheet/durathread/ten
+	amount = 10
 /*
  * Cardboard
  */
