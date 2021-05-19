@@ -500,6 +500,32 @@
 	can_suppress = FALSE
 	//automatic = 0
 
+/obj/item/gun/ballistic/automatic/sks
+	name = "SKS "
+	desc = "Refurbished old rifle. .308, semi-auto only, internal magazine."
+	icon_state = "sks"
+	item_state = "sks"
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	mag_type = /obj/item/ammo_casing/a762/sport
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	burst_size = 1
+	fire_delay = 5
+	extra_damage = -1
+	can_attachments = TRUE
+	can_scope = TRUE
+	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
+	knife_x_offset = 24
+	knife_y_offset = 21
+	burst_size = 1
+	automatic_burst_overlay = FALSE
+	semi_auto = TRUE
+	scope_state = "rifle_scope"
+	scope_x_offset = 4
+	scope_y_offset = 11
+	can_suppress = FALSE
+
 /obj/item/gun/ballistic/automatic/type93
 	name = "Type 93 assault rifle"
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
