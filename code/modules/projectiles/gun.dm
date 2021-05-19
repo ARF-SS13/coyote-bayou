@@ -690,7 +690,7 @@
 
 /datum/action/item_action/toggle_scope_zoom/Trigger()
 	var/obj/item/gun/gun = target
-	if(do_after(owner,10))
+	if(do_after(owner,3))
 		gun.zoom(owner)
 
 /datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
