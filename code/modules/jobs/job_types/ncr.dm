@@ -2,6 +2,7 @@
 	department_flag = NCR
 	selection_color = "#ffeeaa"
 	faction = "NCR"
+	exp_type = EXP_TYPE_NCR
 
 	access = list(ACCESS_NCR)
 	minimal_access = list(ACCESS_NCR)
@@ -172,7 +173,7 @@ Lieutenant
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
 	outfit = /datum/outfit/job/ncr/f13lieutenant
-	exp_requirements = 1200
+	exp_requirements = 1500
 
 /datum/outfit/job/ncr/f13lieutenant
 	name = "NCR Lieutenant"
@@ -222,6 +223,7 @@ Medical Officer
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
 	outfit = /datum/outfit/job/ncr/f13medicalofficer
+	exp_requirements = 1500
 
 /datum/outfit/job/ncr/f13medicalofficer
 	name = "NCR Medical Officer"
@@ -620,7 +622,7 @@ Veteran Ranger
 	selection_color = "#ffeeaa"
 	display_order = JOB_DISPLAY_ORDER_VETRANGE
 	outfit = /datum/outfit/job/ncr/f13vetranger
-	exp_requirements = 1200
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/vrclassic, //AMR and Sequoia,

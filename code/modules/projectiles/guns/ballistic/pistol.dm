@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic/pistol
+	slowdown = 0.1
 	name = "stechkin pistol"
 	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
 	icon_state = "pistol"

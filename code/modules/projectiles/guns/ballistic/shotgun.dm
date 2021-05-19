@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/shotgun
+	slowdown = 0.3
 	name = "shotgun"
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "shotgun"

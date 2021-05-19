@@ -8,6 +8,8 @@
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator."
 	objectivesList = list("Leadership recommends the following goal for this week: Establish an outpost at the radio tower","Leadership recommends the following goal for this week: Establish patrols and fortifications around the main road", "Leadership recommends the following goal for this week: Acquire and train slaves")
 
+	exp_type = EXP_TYPE_LEGION
+
 /datum/outfit/job/CaesarsLegion
 	id = null
 	ears = null
@@ -115,7 +117,7 @@ Centurion
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CENTURION
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
-	exp_requirements = 1200
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/centheavy, //10mm SMG and powerfist
@@ -196,7 +198,7 @@ Orator
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_ORATOR
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
-	exp_requirements = 1200
+	exp_requirements = 1500
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	name = "Legion Orator"
@@ -595,6 +597,7 @@ Veteran Legionary
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_VETLEGIONARY
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegionary
+	exp_requirements = 600
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -721,6 +724,7 @@ Venator
 	selection_color = "#ffdddd"
 	display_order = JOB_DISPLAY_ORDER_VENATOR
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
+	exp_requirements = 1500
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -808,6 +812,7 @@ Auxilia
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_AUXILIA
 	outfit = /datum/outfit/job/CaesarsLegion/f13auxilia
+	exp_requirements = 600
 
 	loadout_options = list(
 	/datum/outfit/loadout/auxengi,

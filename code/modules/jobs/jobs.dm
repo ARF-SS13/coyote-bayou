@@ -282,10 +282,14 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Wastelander",
+))
+
+GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Private",
 	"Enclave Sergant",
 	"Enclave Lieutenant"
 ))
+
 GLOBAL_LIST_INIT(security_positions, list(
 	"Vault-tec Security",
 	"Deputy"
@@ -334,6 +338,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_WASTELAND     = list("titles" = wasteland_positions),
 	EXP_TYPE_TRIBAL        = list("titles" = tribal_positions),
 	EXP_TYPE_FOLLOWERS     = list("titles" = followers_positions),
+	EXP_TYPE_ENCLAVE       = list("titles" = enclave_positions),
 	EXP_TYPE_RANGER        = list("titles" = list("NCR Veteran Ranger","NCR Ranger")),
 	EXP_TYPE_SCRIBE        = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS       = list("titles" = list("Legion Decanus")),

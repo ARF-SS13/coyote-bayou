@@ -10,6 +10,7 @@ Main doors: ACCESS_CAPTAIN 20
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
 	outfit = /datum/outfit/job/bos/
+	exp_type = EXP_TYPE_BROTHERHOOD
 
 	objectivesList = list("Leadership recommends the following goal for this week: Establish an outpost at the radio tower","Leadership recommends the following goal for this week: Acquire blueprints for research and preservation", "Leadership recommends the following goal for this week: Acquire or confiscate dangerous tech by any means necessary.")
 
@@ -97,7 +98,8 @@ Head Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
-	exp_requirements = 1200
+
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/sentstand, //Tribeam laser and 10mm pistol
@@ -181,6 +183,8 @@ Head Scribe
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
+	exp_requirements = 1500
+
 	loadout_options = list(
 	/datum/outfit/loadout/hsstand, //Pulse pistol, and medbeam
 	/datum/outfit/loadout/hspract //Needler and hypospray
@@ -250,6 +254,8 @@ Head Knight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Sentinel"
 	selection_color = "#7f8c8d"
+
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //AER9 and 10mm pistol
@@ -324,14 +330,16 @@ Star Paladin
 	title = "Star Paladin"
 	flag = F13SENIORPALADIN
 	faction = "BOS"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	description = "As the Chapter's senior offensive warrior, you have proven your service and dedication to the Brotherhood over your time as a Paladin. As your skills gained, however, you were deigned to be more useful as a commander and trainer. Now you have your trusty powerfist, and were recently given a suit of T-51b power armor. Your job is to coordinate the Paladins and ensure they work as a team, instilling discipline as you go."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
-	exp_requirements = 1200
+	
+	exp_requirements = 600
+	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
 		/datum/outfit/loadout/spaladina, //M72 Gauss rifle and Glock
@@ -365,6 +373,7 @@ Star Paladin
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	belt = 			/obj/item/storage/belt/military/assault
 	neck = /obj/item/clothing/neck/cloak/bos/paladin
+
 	backpack_contents = list(
 		/obj/item/melee/powerfist=1, \
 		)
@@ -395,14 +404,13 @@ Paladin
 	title = "Paladin"
 	flag = F13PALADIN
 	faction = "BOS"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	description = "You answer directly to the Star Paladin. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Star Paladin, or Head Paladin"
 	selection_color = "#95a5a6"
-	exp_requirements = 600
 
 	loadout_options = list(
 	/datum/outfit/loadout/paladina, //Carbine and aep7
@@ -496,6 +504,8 @@ Proctor
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Scribe"
 	selection_color = "#95a5a6"
+
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/bos/f13seniorscribe
 
@@ -610,7 +620,7 @@ datum/job/bos/f13seniorknight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Knight"
 	selection_color = "#95a5a6"
-	exp_requirements = 1200
+	exp_requirements = 600
 
 	loadout_options = list(
 	/datum/outfit/loadout/sknighta, //AER9

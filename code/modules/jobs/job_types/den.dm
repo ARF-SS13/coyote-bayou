@@ -15,6 +15,9 @@ here's a tip, go search DEFINES/access.dm
 Mayor
 */
 
+/datum/job/den
+	exp_type = EXP_TYPE_DEN
+
 /datum/job/den/f13mayor
 	title = "Mayor"
 	flag = F13MAYOR
@@ -25,6 +28,8 @@ Mayor
 	supervisors = "the people of the town"
 	description = "You are the head honcho of Oasis and the people look to you for leadership. Pass laws to protect your Citizens, distribute the Town's funds and make deals with the powers present within the Region to better the people - or exploit them for your own personal gain."
 	selection_color = "#d7b088"
+
+	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/den/f13mayor
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -71,6 +76,7 @@ Mayor
 	supervisors = "the mayor"
 	description = "As the chief law enforcer of the Town, your job is to keep the peace, settle local disputes, and keep your townsfolk safe and alive. Unfortunately, with the NCR and Legion closing in on the region, the Town is caught between a rock and a hard place, as with the war brings with it unsavory elements like the Khans and Outlaws. Sometimes the people you handle inside the town will be alive in cuffs, or dead on the street. Other times, they'll escape the limits of the town, to which you can put a bounty on their head for their capture, or have your deputies capture them. However, you must remember these three critical things: never leave the town undefended, keep the townsfolk alive and safe, and most importantly - keep your hand on your gun and don't you trust anyone."
 	selection_color = "#d7b088"
+	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/den/f13sheriff
 
@@ -127,6 +133,7 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_DEN
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -765,6 +772,7 @@ Mayor
 	supervisors = "law and order"
 	description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
 	selection_color = "#dcba97"
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)

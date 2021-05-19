@@ -47,8 +47,7 @@ Administrator
 	forbids = "Causing harm to others except in times of self-defense."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FF95FF"
-	exp_requirements = 1080
-	exp_type = EXP_TYPE_FOLLOWERS
+	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
 
@@ -149,7 +148,7 @@ Practitioner
 	forbids = "Causing harm to others except in times of self-defense."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_requirements = 300
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/followers/f13practitioner
 
@@ -251,7 +250,6 @@ Follower Volunteer
 	forbids = "Causing harm to others except in times of self-defense."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them. Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
-	exp_type = EXP_TYPE_FOLLOWERS
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
 	/datum/outfit/loadout/volunteer_emt,
@@ -327,7 +325,6 @@ Follower Guard
 	description = "You are a Follower Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. "
 	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."
 	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them. Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
-	exp_type = EXP_TYPE_FOLLOWERS
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard

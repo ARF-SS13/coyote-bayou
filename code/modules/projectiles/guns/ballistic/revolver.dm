@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/revolver
+	slowdown = 0.1
 	name = "\improper .357 revolver"
 	desc = "A suspicious revolver. Uses .357 ammo." //usually used by syndicates
 	icon_state = "revolver"

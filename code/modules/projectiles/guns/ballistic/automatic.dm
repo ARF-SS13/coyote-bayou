@@ -1,4 +1,5 @@
 /obj/item/gun/ballistic/automatic
+	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = 0
 	var/alarmed = 0
@@ -514,6 +515,7 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
+	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/smg10mm
 	name = "10mm submachine gun"
@@ -536,6 +538,7 @@
 	suppressor_state = "10mm_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
+	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/pps
 	name = "ppsh-41"
@@ -556,6 +559,7 @@
 	scope_x_offset = 9
 	scope_y_offset = 21
 	spread = 20
+	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/mini_uzi
 	name = "uzi"
@@ -578,6 +582,7 @@
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
+	slowdown = 0.2
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "r91 assault rifle"
@@ -911,11 +916,11 @@
 	burst_size = 1
 	fire_delay = 3
 	burst_shot_delay = 3
-	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 25
+	spread = 10
 	randomspread = 1
+	slowdown = 2
 
 /obj/item/gun/ballistic/automatic/r84/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -923,17 +928,17 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 35
+			spread = 10
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size = 3
-			spread = 45
+			spread = 10
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select = 0
 			burst_size = 1
-			spread = 25
+			spread = 10
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()

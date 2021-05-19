@@ -328,6 +328,7 @@
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light."
+	slowdown = 0.2
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
@@ -344,6 +345,7 @@
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
 	desc = "An ultracite enhanced energy-based laser gun that fires concentrated beams of light."
+	slowdown = 0.2
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
@@ -357,6 +359,7 @@
 
 /obj/item/gun/energy/laser/solar
 	name = "\improper Solar Scorcher"
+	slowdown = 0.2
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
@@ -453,6 +456,7 @@
 
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
+	slowdown = 0.2
 	item_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires heavy low penetration plasma clots."
@@ -466,6 +470,7 @@
 
 /obj/item/gun/energy/laser/plasma/glock
 	name = "glock 86"
+	slowdown = 0.2
 	item_state = "plasma-pistol"
 	icon_state = "glock86"
 	desc = "Glock 86 Plasma Pistol. Designed by the Gaston Glock artificial intelligence. Shoots a small bolt of superheated plasma. Powered by a small energy cell."
@@ -491,6 +496,7 @@
 /obj/item/gun/energy/laser/wattz
 	name = "Wattz 1000 laser pistol"
 	desc = "A Wattz 1000 Laser Pistol. Civilian model, so the wattage is lower than military or police versions. Uses small energy cells."
+	slowdown = 0.2
 	icon_state = "wattz1000"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz)
@@ -513,6 +519,7 @@
 
 /obj/item/gun/energy/laser/plasma/alien
 	name = "alien blaster"
+	slowdown = 0.2
 	item_state = "alienblaster"
 	icon_state = "alienblaster"
 	desc = "This weapon is unlike any other you've ever seen before, and appears to be made out of metals not usually found on Earth. It certainly packs a punch, though."
