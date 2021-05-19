@@ -657,9 +657,9 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/kitchen/knife/bowie=1, \
 		/obj/item/storage/survivalkit_aid_adv=1, \
-		/obj/item/storage/bag/money/small/ncr)
-		/obj/item/gun/ballistic/revolver/sequoia=1
-		/obj/item/ammo_box/c4570=3
+		/obj/item/storage/bag/money/small/ncr=1,
+		/obj/item/gun/ballistic/revolver/sequoia=1,
+		/obj/item/ammo_box/c4570=3)
 
 /datum/outfit/loadout/vrclassic
 	name = "Classic Veteran Ranger"
@@ -677,7 +677,8 @@ Veteran Ranger
 	name = "Brush Veteran Ranger"
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/c4570=3)
+		/obj/item/ammo_box/tube/c4570=3,
+		/obj/item/attachments/scope = 1)
 
 
 //NCR Ranger
@@ -738,8 +739,8 @@ Veteran Ranger
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 3,
-		/obj/item/storage/survivalkit_aid=1
-		/obj/item/gun/ballistic/revolver/revolver45=1
+		/obj/item/storage/survivalkit_aid=1,
+		/obj/item/gun/ballistic/revolver/revolver45=1,
 		/obj/item/ammo_box/c45rev=3
 
 	)
@@ -752,9 +753,9 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/storage/survivalkit_aid=1
-		/obj/item/attachments/scope=1
-		/obj/item/gun/ballistic/revolver/colt357=1
+		/obj/item/storage/survivalkit_aid=1,
+		/obj/item/attachments/scope=1,
+		/obj/item/gun/ballistic/revolver/colt357=1,
 		/obj/item/ammo_box/a357=3
 	)
 
@@ -768,9 +769,9 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 3,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid = 1
-		/obj/item/attachments/scope = 1
-		/obj/item/gun/ballistic/revolver/revolver44 = 1
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44=3
 	)
 
@@ -785,8 +786,8 @@ Veteran Ranger
 		/obj/item/storage/fancy/ammobox/lethalshot = 1,
 		/obj/item/storage/fancy/ammobox/slugshot = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid = 1
-		/obj/item/gun/ballistic/revolver/m29/snub=1
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub=1,
 		/obj/item/ammo_box/a357=3
 	)
 
@@ -803,7 +804,7 @@ Veteran Ranger
 		/obj/item/clothing/accessory/armband/med/ncr = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
-		/obj/item/book/granter/trait/chemistry = 1
-		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
 		/obj/item/ammo_box/magazine/m45=3
 	)
