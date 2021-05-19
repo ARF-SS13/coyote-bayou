@@ -312,7 +312,7 @@
 	slowdown = 0.4
 	requires_training = FALSE
 	armor_block_chance = 20
-	deflection_chance = 5 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 
 /obj/item/clothing/suit/armor/f13/power_armor/hotrod
 	name = "hotrod T-45b power armor"
@@ -323,7 +323,7 @@
 	slowdown = 0.4
 	requires_training = FALSE
 	armor_block_chance = 20
-	deflection_chance = 5 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 
 /obj/item/clothing/suit/armor/f13/power_armor/vaulttec
 	name = "Vault-Tec power armour"
@@ -392,8 +392,8 @@
 	item_state = "midwestgrey_pa"
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
 
-	armor_block_chance = 80
-	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+	armor_block_chance = 60
+	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -402,7 +402,7 @@
 	item_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor_block_chance = 70
-	deflection_chance = 25 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 	armor_block_threshhold = 0.35
 

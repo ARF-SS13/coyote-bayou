@@ -332,8 +332,8 @@
 /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
 	name = "restored T-45b helmet"
 	desc = "(VIII) It's a restored T-45b power armor helmet."
-	armor_block_chance = 80
-	deflection_chance = 20 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+	armor_block_chance = 60
+	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 	requires_training = TRUE
 
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
@@ -344,7 +344,7 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 	armor_block_chance = 20
-	deflection_chance = 5
+	deflection_chance = 10
 
 /obj/item/clothing/head/helmet/f13/power_armor/hotrod
 	name = "hotrod T-45b power helmet"
@@ -354,7 +354,7 @@
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 	armor_block_chance = 20
-	deflection_chance = 5 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttec
 	name = "Vault-Tec power helmet"
@@ -420,7 +420,7 @@
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_block_chance = 70
-	deflection_chance = 25 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
 	armor_block_threshhold = 0.35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
