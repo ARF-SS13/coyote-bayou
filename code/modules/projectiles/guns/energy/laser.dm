@@ -440,7 +440,7 @@
 
 
 /obj/item/gun/energy/laser/plasma/scatter
-	name = "multiplas Rifle"
+	name = "multiplas rifle"
 	item_state = "multiplas"
 	icon_state = "multiplas"
 	fire_delay = 3
