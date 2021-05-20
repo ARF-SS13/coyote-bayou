@@ -25,14 +25,19 @@
 */
 
 /obj/item/ammo_box/magazine/autopipe
-	name = "autopipe magazine (.357)"
+	name = "pipe rifle ammo belt (.357)"
 	icon_state = "autopipe_mag"
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 24
+	max_ammo = 30
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/autopipe/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/autopipe/update_icon()
+	..()
+	icon_state = "autopipe_mag-[round(ammo_count(),15)]"
 
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"
@@ -83,6 +88,23 @@
 		icon_state = "enbloc-[ammo_count()]"
 
 /obj/item/ammo_box/magazine/garand308/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/sks
+	name = "7.62mm clip (SKS)"
+	icon_state = "enbloc-10"
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = "a762"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/sks/update_icon()
+	..()
+	if (ammo_count() >= 10)
+		icon_state = "enbloc-10"
+	else
+		icon_state = "enbloc-[ammo_count()]"
+
+/obj/item/ammo_box/magazine/sks/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m762

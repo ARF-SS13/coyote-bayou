@@ -356,28 +356,6 @@
 		if(W.active)
 			sawoff(user)
 
-/obj/item/gun/ballistic/revolver/single_shotgun
-	name = "single shotgun"
-	desc = "A dirt cheap single shot shotgun."
-	icon_state = "single_shotgun"
-	item_state = "singleshot"
-	force = 20
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
-	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
-	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-//	distro = 1
-
-/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
-		sawoff(user)
-	if(istype(A, /obj/item/melee/transforming/energy))
-		var/obj/item/melee/transforming/energy/W = A
-		if(W.active)
-			sawoff(user)
-
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
 	name = "neostead 2000"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
@@ -419,9 +397,23 @@
 		return
 	toggle_tube(user)
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/neostead/peacemaker
+	name = "Peacemaker Shotgun"
+	desc = "Enclave heavy shotgun made for their combat robots. Two large ammobins to select ammo type and keep the robot in the fight longer."
+	icon_state = "neostead"
+	mag_type = /obj/item/ammo_box/shotgun/
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/streetsweeper
+	name = "Streetsweeper Shotgun"
+	desc = "A semi automatic shotgun with with bullpup magazine."
+	icon_state = "pancor"
+	item_state = "cshotgun1"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
-	name = "city-killer combat shotgun"
+	name = "City-killer combat shotgun"
 	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses an internal feeding tube instead of a magazine."
 	icon_state = "citykiller"
 	item_state = "cshotgun1"
@@ -430,7 +422,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
-	name = "browning auto-5"
+	name = "Browning auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
 	icon_state = "auto5"
 	item_state = "huntingshotgun"
@@ -440,7 +432,7 @@
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 /obj/item/gun/ballistic/shotgun/hunting
-	name = "hunting shotgun"
+	name = "Hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "hunting"
 	item_state = "huntingshotgun"
@@ -669,12 +661,13 @@
 	suppressor_x_offset = 25
 	suppressor_y_offset = 30
 
+//Hobo guns
+
 /obj/item/gun/ballistic/shotgun/lasmusket
 	name = "Laser Musket"
 	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. Made from metal scraps, electronic parts. an old rifle stock and a Nuka Cola bottle full of dreams, the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
 	icon_state = "las_musket"
 	item_state = "las_musket"
-	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket
 	//nocase = TRUE
 	var/bolt_open = FALSE
@@ -696,10 +689,9 @@
 
 /obj/item/gun/ballistic/shotgun/plasmacaster
 	name = "Plasma Musket"
-	desc = "An experimental weapon..."
-	icon_state = "las_musket"
-	item_state = "las_musket"
-	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
+	desc = "The cooling looks dubious and is that a empty can of beans used as a safty valve? Pray the plasma goes towards the enemy and not your face when you pull the trigger."
+	icon_state = "plasmamusket"
+	item_state = "plasmamusket"
 	mag_type = /obj/item/ammo_box/magazine/internal/plasmacaster
 	var/bolt_open = FALSE
 	can_bayonet = TRUE
@@ -717,3 +709,24 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+/obj/item/gun/ballistic/revolver/single_shotgun
+	name = "Slamfire Shotgun"
+	desc = "A pipe, some wood and a screwdriver is all you need to fire a shotgun shell apparantly."
+	icon_state = "ishotgun"
+	item_state = "improvgun"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
