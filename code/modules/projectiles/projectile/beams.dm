@@ -261,7 +261,8 @@
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser beam"
 	damage = 40
-	armour_penetration = 0.5
+	armour_penetration = 0.6
+	pixels_per_second = TILES_TO_PIXELS(50)
 
 //plasma caster
 /obj/item/projectile/f13plasma/plasmacaster
@@ -273,6 +274,7 @@
 	flag = "laser"
 	eyeblur = 0
 	is_reflectable = TRUE
+	pixels_per_second = TILES_TO_PIXELS(50)
 
 /obj/item/projectile/beam/laser/lasgun //AER9
 	name = "laser beam"

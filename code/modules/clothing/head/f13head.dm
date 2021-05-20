@@ -242,7 +242,8 @@
 	var/armor_block_chance = 0
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
 	var/deflection_chance = 0
-	var/armor_block_threshhold = 0.3 //projectiles below this will deflect
+	var/armor_block_threshold = 0.3 //projectiles below this will deflect
+	var/melee_block_threshold = 30
 
 /obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
 	. = ..()
@@ -300,7 +301,7 @@
 				emped = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(check_armor_penetration(object) <= src.armor_block_threshhold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))
 			var/ratio = rand(0,100)
 			if(ratio <= deflection_chance)
@@ -310,10 +311,9 @@
 				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	//if(check_armor_penetration(object) <= src.armor_block_threshhold && (attack_type == ATTACK_TYPE_MELEE) && (def_zone in protected_zones))
+	//if((armour_penetration <= src.armor_block_threshold && damage <= src.melee_block_threshold) && (attack_type == ATTACK_TYPE_MELEE) && (def_zone in protected_zones))
 	//	if(prob(armor_block_chance))
-	//		if(ismob(loc))
-	//			to_chat(loc, "<span class='warning'>Your power armor absorbs the melee impact!</span>")
+	//		to_chat(loc, "<span class='warning'>Your power armor absorbs the melee impact!</span>")
 	//		block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 	//		return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -421,7 +421,8 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_block_chance = 70
 	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
-	armor_block_threshhold = 0.35
+	armor_block_threshold = 0.35
+	melee_block_threshold = 35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
 	icon_state = "t51bhelmet[on]"
@@ -458,7 +459,8 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_block_chance = 80
 	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
-	armor_block_threshhold = 0.4
+	melee_block_threshold = 40
+	armor_block_threshold = 0.4
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
 	icon_state = "t60helmet[on]"
@@ -479,7 +481,8 @@
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("tier" = 12, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
-	armor_block_threshhold = 0.45
+	armor_block_threshold = 0.45
+	melee_block_threshold = 45
 	armor_block_chance = 80 //Enclave. 'nuff said
 	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
@@ -488,7 +491,8 @@
 	desc = "(XIII) It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
-	armor_block_threshhold = 0.5
+	melee_block_threshold = 50
+	armor_block_threshold = 0.5
 	armor_block_chance = 90
 	deflection_chance = 30
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)

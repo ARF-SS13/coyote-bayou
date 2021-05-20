@@ -665,7 +665,7 @@
 
 /obj/item/gun/ballistic/shotgun/lasmusket
 	name = "Laser Musket"
-	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. Made from metal scraps, electronic parts. an old rifle stock and a Nuka Cola bottle full of dreams, the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
+	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. Made from metal scraps, electronic parts. an old rifle stock and a bottle full of dreams, the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
 	icon_state = "las_musket"
 	item_state = "las_musket"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket

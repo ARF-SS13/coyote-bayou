@@ -217,7 +217,8 @@
 	var/armor_block_chance = 0 //Chance for the power armor to block a low penetration projectile
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
-	var/armor_block_threshhold = 0.3 //projectiles below this will deflect
+	var/armor_block_threshold = 0.3 //projectiles below this will deflect
+	var/melee_block_threshold = 30
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -255,7 +256,7 @@
 				emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(check_armor_penetration(object) <= src.armor_block_threshhold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))
 			var/ratio = rand(0,100)
 			if(ratio <= deflection_chance)
@@ -265,10 +266,9 @@
 				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	//if(check_armor_penetration(object) <= src.armor_block_threshhold && (attack_type == ATTACK_TYPE_MELEE) && (def_zone in protected_zones))
+	//if((armour_penetration <= src.armor_block_threshold && damage <= src.melee_block_threshold) && (attack_type == ATTACK_TYPE_MELEE) && (def_zone in protected_zones))
 	//	if(prob(armor_block_chance))
-	//		if(ismob(loc))
-	//			to_chat(loc, "<span class='warning'>Your power armor absorbs the melee impact!</span>")
+	//		to_chat(loc, "<span class='warning'>Your power armor absorbs the melee impact!</span>")
 	//		block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 	//		return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
@@ -404,7 +404,8 @@
 	armor_block_chance = 70
 	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
-	armor_block_threshhold = 0.35
+	armor_block_threshold = 0.35
+	melee_block_threshold = 35
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/tesla
 	name = "T-51b tesla armor"
@@ -441,7 +442,8 @@
 	slowdown = 0.16
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 
-	armor_block_threshhold = 0.4
+	melee_block_threshold = 40
+	armor_block_threshold = 0.4
 	armor_block_chance = 80
 	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
 
@@ -468,7 +470,8 @@
 	item_state = "advpowerarmor1"
 	armor = list("tier" = 12, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
 
-	armor_block_threshhold = 0.45
+	melee_block_threshold = 45
+	armor_block_threshold = 0.45
 	armor_block_chance = 80 //Enclave. 'nuff said
 	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
@@ -477,7 +480,8 @@
 	desc = "(XIII) It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor2"
 	item_state = "advpowerarmor2"
-	armor_block_threshhold = 0.5
+	melee_block_threshold = 50
+	armor_block_threshold = 0.5
 	armor_block_chance = 90
 	deflection_chance = 30
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
