@@ -44,7 +44,7 @@
 		)
 
 /datum/job/wasteland/enclavesgt
-	title = "Enclave Sergant"
+	title = "Enclave Sergeant"
 	flag = F13USSGT
 	faction = "Enclave"
 	total_positions = 2
@@ -62,7 +62,7 @@
 	outfit = /datum/outfit/job/wasteland/enclavesgt
 
 /datum/outfit/job/wasteland/enclavesgt
-	name = "Enclave Sergant"
+	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
 	backpack = /obj/item/storage/backpack/satchel/leather
 	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
