@@ -1,4 +1,3 @@
-// Sorted in East Coast, General and West Coast stuff. To differentiate. Try to keep east & west from same map.
 /obj/item/gun/ballistic/automatic
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
@@ -477,10 +476,36 @@
 
 // Fallout 13 //
 
-//Was intended for Legion replacement to Uzis/10mm SMGs. No current implementation.
+//East Coast stuff.
+/obj/item/gun/ballistic/automatic/slr
+	name = "Enfield SLR"
+	desc = "A self-loading rifle in 7.62mm NATO. Semi-auto only."
+	icon_state = "slr"
+	item_state = "slr"
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	mag_type = /obj/item/ammo_box/magazine/m762
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	burst_size = 1
+	fire_delay = 4.5
+	can_attachments = TRUE
+	can_scope = TRUE
+	can_bayonet = TRUE
+	bayonet_state = "lasmusket"
+	knife_x_offset = 24
+	knife_y_offset = 21
+	burst_size = 1
+	automatic_burst_overlay = FALSE
+	semi_auto = TRUE
+	scope_state = "rifle_scope"
+	scope_x_offset = 4
+	scope_y_offset = 11
+	can_suppress = FALSE
+	//automatic = 0
+
 /obj/item/gun/ballistic/automatic/cg45
 	name = "carl gustaf 10mm"
-	desc = "Post-war submachine gun made in Flagstaff workshops based on a simple old design. Chambered in 10mm."
+	desc = "Post-war submachine gun made in workshops based on a simple old design. Chambered in 10mm."
 	icon_state = "cg45"
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
@@ -491,10 +516,10 @@
 	burst_size = 2
 	fire_delay = 4
 	burst_shot_delay = 2.5
-	spread = 6
+	spread = 9
 	can_suppress = FALSE
 	can_attachments = TRUE
-	spread = 9
+	spread = 6
 
 /obj/item/gun/ballistic/automatic/greasegun
 	name = "m3a1 grease gun"
@@ -584,47 +609,6 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	slowdown = 0.2
-
-/obj/item/gun/ballistic/automatic/sten
-	name = "the Rockwell gun"
-	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. Basically a toploaded sten gun, allowing makeshift magazines without a spring."
-	icon_state = "sten"
-	item_state = "smg9mm"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
-	burst_shot_delay = 3
-	fire_delay = 6
-	spread = 14
-	extra_damage = -2
-	extra_penetration = -0.1
-	can_attachments = TRUE
-	can_suppress = TRUE
-
-/obj/item/gun/ballistic/automatic/smg22
-	name = "american 180"
-	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle."
-	icon_state = "smg22"
-	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/m22smg
-	fire_sound = 'sound/f13weapons/american180.ogg'
-	can_suppress = FALSE
-	can_unsuppress = FALSE
-	burst_size = 2
-	burst_shot_delay = 1
-	suppressed = 1
-	spread = 6
-
-/obj/item/gun/ballistic/automatic/slr
-	name = "Enfield SLR"
-	desc = "A self-loading rifle in 7.62mm NATO. Semi-auto only."
-	icon_state = "slr"
-	item_state = "slr"
-	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	mag_type = /obj/item/ammo_box/magazine/m762
-	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "r91 assault rifle"
@@ -879,7 +863,7 @@
 	suppressor_y_offset = 27
 
 /obj/item/gun/ballistic/automatic/m1garand
-	name = "M1 Garand"
+	name = "battle rifle"
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
@@ -1303,6 +1287,37 @@
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
+	spread = 6
+
+/obj/item/gun/ballistic/automatic/sten
+	name = "the Rockwell gun"
+	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. Basically a toploaded sten gun, allowing makeshift magazines without a spring."
+	icon_state = "sten"
+	item_state = "smg9mm"
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	burst_size = 2
+	burst_shot_delay = 1
+	fire_delay = 1
+	spread = 14
+	extra_damage = -2
+	can_attachments = TRUE
+	can_suppress = FALSE
+
+/obj/item/gun/ballistic/automatic/smg22
+	name = "american 180"
+	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle."
+	icon_state = "smg22"
+	item_state = "shotgun"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/m22smg
+	fire_sound = 'sound/f13weapons/american180.ogg'
+	can_suppress = FALSE
+	can_unsuppress = FALSE
+	burst_size = 2
+	burst_shot_delay = 1
+	suppressed = 1
 
 /obj/item/gun/ballistic/automatic/xl70e3
 	name = "xl70e3"
