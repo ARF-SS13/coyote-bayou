@@ -18,7 +18,6 @@
 	select_name = "plasma burst"
 	icon_state = "neurotoxin"
 	fire_sound = 'sound/f13weapons/plasma_rifle.ogg'
-	delay = 3
 	e_cost = 160//12
 
 /obj/item/ammo_casing/energy/plasma/scatter

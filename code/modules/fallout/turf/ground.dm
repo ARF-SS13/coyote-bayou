@@ -64,9 +64,24 @@
 #define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
 
+/turf/open/indestructible/ground/outside/dirthole
+	name = "Dirt hole"
+	icon_state = "dirthole"
+	desc = "A dirt hole."
+	slowdown = 3
+	flags_1 = ADJACENCIES_OVERLAY
+
+/turf/open/indestructible/ground/outside/river
+	name = "river"
+	icon_state = "riverwateruhh"
+	desc = "A river."
+	slowdown = 3
+	flags_1 = ADJACENCIES_OVERLAY
+
 /turf/open/indestructible/ground/outside/savannah
 	name = "savannah"
 	icon_state = "savannahcenter"
+	desc = "Some savannah."
 	slowdown = 1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
 	footstep = FOOTSTEP_SAND
@@ -97,8 +112,10 @@
 	icon_state = "savannah11"
 /turf/open/indestructible/ground/outside/savannah/toprightcorner
 	icon_state = "savannah12"
-
-
+/turf/open/indestructible/ground/outside/savannah/cornersnew
+	icon_state = "savannah13"
+/turf/open/indestructible/ground/outside/savannah/edgesnew
+	icon_state = "savannah14"
 
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"

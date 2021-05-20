@@ -247,13 +247,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/hide_ckey = FALSE //pref for hiding if your ckey shows round-end or not
 
-	var/special_s = 3
-	var/special_p = 3
-	var/special_e = 3
-	var/special_c = 3
-	var/special_i = 3
-	var/special_a = 3
-	var/special_l = 3
+	var/special_s = 5
+	var/special_p = 5
+	var/special_e = 5
+	var/special_c = 5
+	var/special_i = 5
+	var/special_a = 5
+	var/special_l = 5
 
 /datum/preferences/New(client/C)
 	parent = C

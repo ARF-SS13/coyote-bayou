@@ -114,6 +114,12 @@
 	playsound(src, 'sound/items/carhorn.ogg', 50, 1)
 	. = ..()
 
+/obj/structure/fluff/railsnew
+	name = "rails"
+	desc = "Rails, for a pre-war train. Don't stand on these."
+	icon = 'icons/obj/rails.dmi'
+	icon_state = "railsnew"
+
 /obj/structure/fluff/rails
 	name = "rails"
 	desc = "Rails, for a pre-war train. Don't stand on these."

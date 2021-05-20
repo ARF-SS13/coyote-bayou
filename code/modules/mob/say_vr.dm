@@ -3,13 +3,13 @@
 //////////////////////////////////////////////////////
 /mob
 	var/flavor_text = "" //tired of fucking double checking this
-	var/special_s = 5
-	var/special_p = 5
-	var/special_e = 5
-	var/special_c = 5
-	var/special_i = 5
-	var/special_a = 5
-	var/special_l = 5
+	var/special_s = 5//done 1+(s/100) more dmg with melee weapons
+	var/special_p = 5//done 10-p less accuracy with guns
+	var/special_e = 5//done e*3 more max hp
+	var/special_c = 5//done, RP and potential to stutter at less than 4
+	var/special_i = 5//done, can't learn new skills at less than 5
+	var/special_a = 5//done, (5-a)/20 multiplicative speed (9 = -0.2, 1 = 0.2)
+	var/special_l = 5//done 10+3.5*l chance to get bonus items from trash piles
 
 /mob/proc/get_top_level_mob()
 	if(istype(src.loc,/mob)&&src.loc!=src)
