@@ -51,7 +51,7 @@
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
 
 /obj/item/projectile/beam/weak
-	damage = 25
+	damage = 23
 
 /obj/item/projectile/beam/weak/penetrator
 	armour_penetration = 0.65
