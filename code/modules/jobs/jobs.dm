@@ -47,6 +47,8 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Head Paladin",
 	"Head Knight",
 
+	"Enclave Lieutenant",
+
 	"Legion Centurion",
 	"Legion Venator",
 
@@ -220,7 +222,8 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Explorer",
 	"Auxilia",
 	"Camp Follower",
-	"Legion Slave"
+	"Legion Slave",
+	"Legion Vexillarius"
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(

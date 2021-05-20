@@ -93,7 +93,8 @@
 
 /datum/datacore/proc/get_manifest_dr(monochrome, OOC)
 	var/list/command = list()
-	var/list/bos = list()
+	var/list/bos = list()	
+	var/list/enclave = list()
 	var/list/den = list()
 	var/list/leg = list()
 	var/list/ncr = list()
@@ -129,6 +130,9 @@
 			department = 1
 		if(rank in GLOB.brotherhood_positions)
 			bos[name] = rank
+			department = 1		
+		if(rank in GLOB.enclave_positions)
+			enclave[name] = rank
 			department = 1
 		if(rank in GLOB.den_positions)
 			den[name] = rank
@@ -165,6 +169,11 @@
 		dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
 		for(var/name in bos)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
+			even = !even
+	if(length(enclave))
+		dat += "<tr><th colspan=3>Enclave</th></tr>"
+		for(var/name in enclave)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 			even = !even
 	if(length(den))
 		dat += "<tr><th colspan=3>Oasis</th></tr>"

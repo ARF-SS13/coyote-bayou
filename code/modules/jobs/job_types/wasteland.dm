@@ -121,13 +121,13 @@
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma/scatter
+	suit_store =  	/obj/item/gun/energy/laser/plasma/glock/extended
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=2,
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
-		/obj/item/stock_parts/cell/ammo/mfc=3,
+		/obj/item/stock_parts/cell/ammo/ec=3,
 		/obj/item/storage/bag/money/small/wastelander=1,
 		/obj/item/kitchen/knife/combat=1
 		)

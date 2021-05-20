@@ -192,8 +192,8 @@ Orator
 	title = "Legion Orator"
 	flag = F13ORATOR
 	faction = "Legion"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the the resonator of Caesar's better wills; a Legionnaire who has, perhaps through injury or advanced age, proven himself unable to fight effectively any longer. Instead of facing \"retirement\" in the Legion, one of your superiors took note of your studies and way with words, and you have been made the face and voice of the Conturbernae."
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_ORATOR
