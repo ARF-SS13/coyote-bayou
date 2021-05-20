@@ -103,7 +103,7 @@ Head Paladin
 
 	loadout_options = list(
 	/datum/outfit/loadout/sentstand, //Tribeam laser and 10mm pistol
-	/datum/outfit/loadout/sentvet, //Pulse rifle and AEP7
+	///datum/outfit/loadout/sentvet, //Pulse rifle and AEP7
 	/datum/outfit/loadout/sentheavy //Gatling laser
 	)
 
@@ -298,7 +298,7 @@ Head Knight
 /datum/outfit/loadout/capstand
 	name = "Standard"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14=1,
+		/obj/item/gun/energy/laser/aer12=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
@@ -390,7 +390,7 @@ Star Paladin
 /datum/outfit/loadout/spaladinc
 	name = "Mainline Star Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14=1,
+		/obj/item/gun/energy/laser/aer12=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2

@@ -18,5 +18,5 @@
 
 /obj/item/ammo_casing/caseless/laser/gatling
 	projectile_type = /obj/item/projectile/beam/weak/penetrator
-	variance = 0.8
+	variance = 0.5
 	click_cooldown_override = 1

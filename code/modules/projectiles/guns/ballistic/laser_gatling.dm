@@ -103,7 +103,8 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
-	burst_size = 3
+	burst_size = 5
+	burst_shot_delay = 1
 	//automatic = 0
 	fire_delay = 1
 	weapon_weight = WEAPON_HEAVY
