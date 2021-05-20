@@ -474,6 +474,16 @@
 	filling_color = "#F0E68C"
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/f13/giantantegg
+	name = "giant ant egg"
+	desc = "A giant ant egg.<br>You'd thought it be bigger but its white and squishy to the touch."
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "antegg"
+	bonus_reagents = list(/datum/reagent/toxin = 10)
+	list_reagents = list(/datum/reagent/consumable/eggyolk = 15)
+	filling_color = "#F0E68C"
+	foodtype = MEAT
+
 //WASTELAND PREPARED MEALS
 
 /obj/item/reagent_containers/food/snacks/meatsalted
