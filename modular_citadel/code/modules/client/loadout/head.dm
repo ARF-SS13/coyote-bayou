@@ -149,6 +149,18 @@ datum/gear/head/steelpot_bandolier
 							"NCR Trooper",
 						)
 
+
+
+datum/gear/head/steelpot_mp
+	name = "NCR MP helmet"
+	path = /obj/item/clothing/head/f13/ncr/steelpot_mp
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR Sergeant",
+							"NCR Corporal"
+						)
+
 datum/gear/head/steelpot_patriot
 	name = "NCR patriot helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_patriot
