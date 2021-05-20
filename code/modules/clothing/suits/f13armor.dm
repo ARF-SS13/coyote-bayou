@@ -469,8 +469,8 @@
 	armor = list("tier" = 12, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
 
 	armor_block_threshhold = 0.45
-	armor_block_chance = 90 //Enclave. 'nuff said
-	deflection_chance = 30 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
+	armor_block_chance = 80 //Enclave. 'nuff said
+	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
 	name = "advanced power armor MK2"
