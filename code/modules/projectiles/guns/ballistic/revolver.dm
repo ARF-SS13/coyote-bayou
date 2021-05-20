@@ -574,7 +574,7 @@
 	icon_state = "m29_snub"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
-	extra_damage = -5 //Smaller barrel, smaller bullet velocity
+	extra_damage = -2 //Smaller barrel, smaller bullet velocity
 	extra_penetration = -0.1 //See above
 	spread = 10
 
@@ -585,7 +585,7 @@
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_delay = 4
-	extra_damage = 3
+	extra_damage = 2
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
 /obj/item/gun/ballistic/revolver/revolver45
@@ -637,7 +637,7 @@
 	spread = 40
 
 /obj/item/gun/ballistic/revolver/needler
-	name = "needler pistol"
+	name = "Needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
@@ -653,8 +653,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/gun/ballistic/revolver/colt6520
-	name = "colt 6520"
-	desc = "The Colt 6520 10mm autoloading pistol is a highly durable and efficient weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
+	name = "Colt 6520"
+	desc = "The Colt 6520 10mm double action revolver is a highly durable weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
 	icon_state = "colt6520"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
@@ -689,8 +689,40 @@
 	scope_x_offset = 9
 	scope_y_offset = 20
 
+/obj/item/gun/ballistic/revolver/police
+	name = ".38 police revolver"
+	desc = "Pre-war double action police revolver in .38 calibre."
+	icon_state = "police"
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+	extra_damage = 1
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gun/ballistic/revolver/thatgun
+	name = ".223 pistol"
+	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
+	icon_state = "thatgun"
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	extra_penetration = -0.25
+	extra_damage = -2
+	spread = 5
+
+/obj/item/gun/ballistic/revolver/zhurong
+	name = "chinese Type 10"
+	desc = "Chinese pistol, long barreled and chambered in 10mm."
+	icon_state = "zhurong"
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/zhurong
+	fire_delay = 1
+	extra_damage = 2
+	extra_penetration = 0.1
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+//Hobo guns
+
 /obj/item/gun/ballistic/revolver/zipgun
-	name = "zipgun"
+	name = "zipgun (9mm)"
 	desc = "A crudely-made 9mm pistol. You're not sure this thing is reliable."
 	icon_state = "zipgun"
 	item_state = "gun"
@@ -699,11 +731,12 @@
 	spread = 20
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
-	name = "pipe rifle"
-	desc = "A crudely-made 10mm rifle. It's not very accurate."
-	icon_state = "pipe_rifle"
-	item_state = "improvshotgun"
+	name = "pepperbox gun (10mm)"
+	desc = "Take six pipes. Tie them together. Add planks, 10mm ammo and prayers."
+	icon_state = "pepperbox"
+	item_state = "improvgun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
+	extra_damage = 1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -713,31 +746,3 @@
 	..()
 	if(A.tool_behaviour == TOOL_SAW || istype(A, /obj/item/gun/energy/plasmacutter))
 		sawoff(user)
-
-/obj/item/gun/ballistic/revolver/police
-	name = "police pistol"
-	desc = "An old pre-war double action police revolver in .38 calibre."
-	icon_state = "police"
-	fire_sound = 'sound/f13weapons/policepistol.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/gun/ballistic/revolver/thatgun
-	name = ".223 pistol"
-	desc = "A 556 rifle modified and cut down to a pistol."
-	icon_state = "thatgun"
-	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	extra_penetration = 0.25
-	extra_damage = 6.5
-
-/obj/item/gun/ballistic/revolver/zhurong
-	name = "Zhu-Rong v417"
-	desc = "The earlier model of the Chinese pistol found in the East Coast, which was known to be the model before all the simplifications of the design, making it smoother, packing a harderer punch. Chambered in 10mm."
-	icon_state = "zhurong"
-	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/zhurong
-	fire_delay = 0
-	extra_damage = 20
-	extra_penetration = 0.1
-	fire_sound = 'sound/f13weapons/ninemil.ogg'
