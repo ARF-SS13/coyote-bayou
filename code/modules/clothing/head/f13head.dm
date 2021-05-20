@@ -489,6 +489,8 @@
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	armor_block_threshhold = 0.5
+	armor_block_chance = 90
+	deflection_chance = 30
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2/wbos
