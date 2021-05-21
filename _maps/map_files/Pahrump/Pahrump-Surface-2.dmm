@@ -18713,9 +18713,7 @@
 	},
 /area/f13/ncr)
 "mqy" = (
-/obj/machinery/mineral/wasteland_trader/general{
-	icon_state = "trade_idle"
-	},
+/obj/machinery/mineral/wasteland_vendor/bank,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "mqF" = (
@@ -30858,8 +30856,6 @@
 	},
 /area/f13/wasteland)
 "uyP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/mint,
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
