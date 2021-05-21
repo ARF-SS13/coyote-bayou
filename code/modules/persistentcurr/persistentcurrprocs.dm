@@ -31,4 +31,5 @@
 			var/currentMoney = query_get_money.item[0]
 			qdel(query_get_money)
 			return currentMoney
+		qdel(query_get_money)
 
