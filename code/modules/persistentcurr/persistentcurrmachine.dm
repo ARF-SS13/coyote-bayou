@@ -44,5 +44,5 @@
 /obj/machinery/mineral/wasteland_vendor/bank/proc/redeem_caps()
 	adjustMoney(ckey, banked_caps)
 	to_chat(usr, "You have added [stored_caps] to your account! Total: [banked_caps]")	
-	banked_caps = 0
+	stored_caps = 0
 	src.ui_interact(usr)
