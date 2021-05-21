@@ -28,7 +28,6 @@
 		qdel(query_get_money)
 		return 0
 	if(query_get_money.NextRow())
-		message_admins("[query_get_money]")
 		var/currentMoney = query_get_money.item[1]
 		qdel(query_get_money)
 		return currentMoney
