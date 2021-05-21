@@ -83,7 +83,7 @@
 	var/target = input(src,"Choose account","MetaMoney",null) as null|anything in sortList(targets)
 	var/amount = input(src, "Choose amount", "Amount",null) as message|null
 	amount = sanitize_integer(amount, -100000, 100000, initial(amount))
-	message_admins("targets[target], [amount]")
+	message_admins("MetaMoney(tm) adjusted for targets[target] by [amount]")
 	adjustMoney(targets[target], text2num(amount))
 
 /client/proc/adjustMoney(ckey, amount)
