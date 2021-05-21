@@ -537,6 +537,11 @@
 	dir = 8
 	},
 /area/f13/tunnel)
+"xT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/fusion_fuel,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "yY" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/grimy,
@@ -736,6 +741,10 @@
 "Jh" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
+"JA" = (
+/obj/item/fusion_fuel,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "JC" = (
@@ -1764,7 +1773,7 @@ Rj
 Jh
 Rj
 iY
-Qs
+JA
 Qs
 CJ
 YU
@@ -2260,7 +2269,7 @@ Qs
 iY
 dY
 Rj
-Rj
+xT
 Rj
 CJ
 iY

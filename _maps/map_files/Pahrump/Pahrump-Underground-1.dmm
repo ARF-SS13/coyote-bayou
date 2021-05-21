@@ -183,6 +183,8 @@
 "ajl" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -15731,6 +15733,10 @@
 /obj/item/stack/sheet/metal/fifty{
 	pixel_x = -4
 	},
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -16539,6 +16545,13 @@
 	icon_state = "neutralrusty"
 	},
 /area/f13/tunnel)
+"qIe" = (
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "qIB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fence/handrail{
@@ -21569,6 +21582,8 @@
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/gun/energy/ionrifle,
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wAq" = (
@@ -29483,7 +29498,7 @@ eUk
 bcN
 rQA
 bcN
-bcN
+qIe
 dZF
 eLE
 uoO

@@ -214,11 +214,87 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/emped = 0
 	var/requires_training = TRUE
+	var/powered = TRUE
 	var/armor_block_chance = 0 //Chance for the power armor to block a low penetration projectile
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
+	var/powerLevel = 15000
+	var/powerMode = 1
+
+/obj/item/fusion_fuel	
+	name = "fusion fuel cell"
+	desc = "Some fusion fuel used to recharge the fusion cores of Power Armor."
+	icon = 'icons/obj/power.dmi'
+	icon_state = "cell"
+	item_state = "cell"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'	
+	var/fuel = 25000
+
+/obj/item/clothing/suit/armor/f13/power_armor/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I,/obj/item/fusion_fuel)&& powered)
+		var/obj/item/fusion_fuel/fuel = I
+		if(src.powerLevel>=50000)
+			to_chat(user, "The fusion core is full.")
+			return
+		if(fuel.fuel >= 5000)
+			src.powerLevel += 5000
+			fuel.fuel -= 5000
+			to_chat(user, "You charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/2500 left in the fuel cell.")
+			return
+		to_chat(user, "The fuel cell is empty.")
+
+
+/obj/item/clothing/suit/armor/f13/power_armor/Initialize()
+	. = ..()
+	if(powered)
+		for(var/i=0, i<=3, ++i)
+			processPower()
+
+/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
+	. = ..()
+	if(slot!=SLOT_WEAR_SUIT)
+		return
+	if(powered)
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/processPower)
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/processPower()
+	if(powerLevel>0)//drain charge
+		powerLevel -= 1
+	if(powerLevel > 35000)//switch to 3 power mode
+		if(powerMode <= 2)
+			powerUp()
+		return
+	if(powerLevel > 20000)//switch to 2 power
+		if(powerMode <= 1)
+			powerUp()
+		if(powerMode > 2)
+			powerDown()
+		return
+	if(powerLevel > 7500)//switch to 1 power
+		if(powerMode <= 0)
+			powerUp()
+		if(powerMode > 1)
+			powerDown()
+		return
+	if(powerLevel >= 0)//switch to 0 power
+		if(powerMode >= 0)
+			powerDown()
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/powerUp()
+	message_admins("powering up")
+	powerMode += 1
+	slowdown -= 0.15
+	armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/powerDown()
+	message_admins("powering down")
+	powerMode -= 1
+	slowdown += 0.15
+	armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -234,7 +310,8 @@
 	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
-//	var/mob/living/carbon/human/H = user
+	if(powered)
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	REMOVE_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
 	REMOVE_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
 	return ..()
@@ -282,6 +359,7 @@
 	requires_training = FALSE
 	slowdown = 1.40
 	armor_block_chance = 25
+	powered = FALSE
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored
@@ -293,6 +371,7 @@
 	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/suit/armor/f13/power_armor/ncr
+	powered = FALSE
 	name = "salvaged NCR power armor"
 	desc = "(VIII) It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
 	icon_state = "ncrpowerarmor"
@@ -304,6 +383,7 @@
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
+	powered = FALSE
 	name = "raider T-45b power armor"
 	desc = "(VIII) It's a set of T-45b power armor with some of its plating heavily reconditioned. This set has seen better days, metal scrap has been spot welded to the chassis "
 	icon_state = "raiderpa"
@@ -315,6 +395,7 @@
 	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 
 /obj/item/clothing/suit/armor/f13/power_armor/hotrod
+	powered = FALSE
 	name = "hotrod T-45b power armor"
 	desc = "(VIII) It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"

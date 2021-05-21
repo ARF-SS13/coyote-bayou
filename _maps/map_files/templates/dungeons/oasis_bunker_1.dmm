@@ -104,6 +104,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"du" = (
+/obj/item/fusion_fuel,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "dx" = (
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1444,6 +1448,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
+"TW" = (
+/obj/item/fusion_fuel,
+/turf/open/floor/plating/tunnel,
+/area/f13/radiation)
 "Uq" = (
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -1861,7 +1869,7 @@ pf
 (8,1,1) = {"
 wR
 Xj
-OZ
+TW
 jc
 iK
 kl
@@ -1966,7 +1974,7 @@ OL
 wQ
 NJ
 NJ
-NJ
+du
 NJ
 KA
 BS

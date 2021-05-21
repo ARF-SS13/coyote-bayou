@@ -425,21 +425,23 @@
 	name = "tier 5 armor"
 	loot = list(
 				/obj/effect/spawner/bundle/f13/armor/t45d,
-				/obj/effect/spawner/bundle/f13/armor/t51b
+				/obj/effect/spawner/bundle/f13/armor/t51b				
 				)
 
 /obj/effect/spawner/bundle/f13/armor/t45d
 	name = "t45d power armor spawner"
 	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-				/obj/item/clothing/head/helmet/f13/power_armor/t45d
+				/obj/item/clothing/head/helmet/f13/power_armor/t45d,
+				/obj/item/fusion_fuel
 				)
 
 /obj/effect/spawner/bundle/f13/armor/t51b
 	name = "t51b power armor spawner"
 	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
-				/obj/item/clothing/head/helmet/f13/power_armor/t51b
+				/obj/item/clothing/head/helmet/f13/power_armor/t51b,
+				/obj/item/fusion_fuel
 				)
 
 

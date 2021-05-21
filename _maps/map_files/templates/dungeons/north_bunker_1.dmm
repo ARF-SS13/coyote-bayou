@@ -433,6 +433,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"oH" = (
+/obj/item/fusion_fuel,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/bunker)
 "oP" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random_high,
@@ -2017,7 +2021,7 @@ tQ
 tQ
 tQ
 tQ
-tQ
+oH
 BH
 Eg
 Rl
@@ -2048,7 +2052,7 @@ Eg
 tQ
 tQ
 tQ
-tQ
+oH
 tQ
 tQ
 tQ
