@@ -289,7 +289,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 
 GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Private",
-	"Enclave Sergant",
+	"Enclave Sergeant",
 	"Enclave Lieutenant"
 ))
 

@@ -789,7 +789,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Enclave Lieutenant"
 
 /obj/effect/landmark/start/f13/ussgt
-	name = "Enclave Sergant"
+	name = "Enclave Sergeant"
 
 /obj/effect/landmark/start/f13/uscommander
 	name = "US Commander"
