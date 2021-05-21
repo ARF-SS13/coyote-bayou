@@ -313,10 +313,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"go" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "gq" = (
 /obj/item/cultivator,
 /obj/item/shovel/spade,
@@ -1108,6 +1104,7 @@
 "xS" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "yb" = (
@@ -2865,7 +2862,7 @@ Rl
 Rl
 xG
 Qe
-go
+Zf
 xS
 nf
 oj
@@ -2905,7 +2902,7 @@ xG
 oj
 oP
 oj
-go
+Zf
 Uw
 xG
 Rl
@@ -2943,7 +2940,7 @@ xG
 XZ
 Dv
 YR
-go
+Zf
 Eo
 xG
 Rl
@@ -3017,7 +3014,7 @@ Rl
 Rl
 xG
 IG
-go
+Zf
 oj
 LV
 oj
@@ -3093,8 +3090,8 @@ xG
 xG
 xG
 oj
-go
-go
+Zf
+Zf
 oj
 dE
 xG
@@ -3212,7 +3209,7 @@ wN
 oj
 rM
 YR
-go
+Zf
 xG
 Rl
 Rl
@@ -3248,7 +3245,7 @@ gv
 YR
 Su
 lc
-go
+Zf
 SE
 Uw
 xG
@@ -3285,7 +3282,7 @@ XR
 oj
 oj
 oj
-go
+Zf
 gH
 sl
 GX
@@ -3396,7 +3393,7 @@ WH
 Ky
 nu
 XR
-go
+Zf
 oj
 rJ
 Zf
@@ -3435,9 +3432,9 @@ nu
 nu
 xG
 oj
-go
+Zf
 jc
-go
+Zf
 Fe
 oj
 rM
@@ -3474,7 +3471,7 @@ fd
 xG
 fN
 Qe
-go
+Zf
 zR
 iq
 lc
@@ -3511,10 +3508,10 @@ yr
 kj
 BR
 oj
-go
+Zf
 Ng
-go
-go
+Zf
+Zf
 oj
 oj
 xG
@@ -3718,7 +3715,7 @@ Rl
 xG
 IY
 pQ
-go
+Zf
 oj
 Pp
 XM
@@ -3755,8 +3752,8 @@ Rl
 Rl
 xG
 oj
-go
-go
+Zf
+Zf
 oj
 Pp
 kj
@@ -3793,8 +3790,8 @@ Rl
 Rl
 xG
 KO
-go
-go
+Zf
+Zf
 DM
 xG
 OR
@@ -4025,7 +4022,7 @@ LL
 Or
 kj
 xG
-go
+Zf
 qW
 XM
 yr
@@ -4910,7 +4907,7 @@ xG
 Ub
 jF
 oj
-go
+Zf
 oj
 oj
 oj
@@ -4946,13 +4943,13 @@ xG
 Rl
 xG
 oj
-go
+Zf
 Qe
 Tm
 mC
 Px
-go
-go
+Zf
+Zf
 TH
 oj
 xG
@@ -4971,7 +4968,7 @@ Rl
 xG
 RB
 FV
-go
+Zf
 rC
 oj
 KH
@@ -4986,7 +4983,7 @@ xG
 tF
 oj
 Ub
-go
+Zf
 gR
 oj
 Rl
@@ -5010,7 +5007,7 @@ xG
 PF
 oj
 hI
-go
+Zf
 Hi
 oj
 YR
@@ -5024,7 +5021,7 @@ xG
 oj
 TH
 oj
-go
+Zf
 oh
 Rl
 XO
@@ -5048,9 +5045,9 @@ xG
 oj
 RB
 bP
-go
+Zf
 iJ
-go
+Zf
 jA
 oj
 oj
@@ -5088,9 +5085,9 @@ oj
 Yi
 kU
 uA
-go
+Zf
 oj
-go
+Zf
 yV
 oj
 AG
@@ -5129,8 +5126,8 @@ oh
 pt
 Ee
 oj
-go
-go
+Zf
+Zf
 uA
 Rl
 Rl
