@@ -62,8 +62,6 @@
 	var/target = input(src,"Choose account","MetaMoney",null) as null|anything in sortList(targets)
 	var/amount = getMoney(targets[target].ckey)
 	to_chat(src, "[targets[target]] has [amount] MetaMoneys(tm)")
-	message_admins("targets[target], [amount]")
-	adjustMoney(targets[target], amount)
 
 /client/proc/adminChangeMoney()
 	set category = "Admin"
