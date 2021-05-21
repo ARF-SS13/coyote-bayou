@@ -71,6 +71,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
 	/client/proc/cmd_admin_pm_context,	/*right-click adminPM interface*/
 	/client/proc/cmd_admin_pm_panel,		/*admin-pm list*/
+	/obj/machinery/mineral/wasteland_vendor/bank/proc/adminChangeMoney,
 	/client/proc/panicbunker,
 	/client/proc/addbunkerbypass,
 	/client/proc/revokebunkerbypass,

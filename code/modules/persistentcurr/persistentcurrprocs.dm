@@ -1,3 +1,30 @@
+/obj/machinery/mineral/wasteland_vendor/bank/proc/adminChangeMoney()
+	set category = "Admin"
+	set name = "Add/Remove MetaMoney(tm)"
+	if(!GLOB.admin_datums[src.ckey])
+		to_chat(src, "<span class='danger'>Only administrators may use this command.</span>", confidential = TRUE)
+		return
+	var/list/client/targets[0]
+	for(var/client/T)
+		if(T.mob)
+			if(isnewplayer(T.mob))
+				targets["(New Player) - [T]"] = T
+			else if(isobserver(T.mob))
+				targets["[T.mob.name](Ghost) - [T]"] = T
+			else
+				targets["[T.mob.real_name](as [T.mob.name]) - [T]"] = T
+		else
+			targets["(No Mob) - [T]"] = T
+	var/target = input(src,"Choose account","MetaMoney",null) as null|anything in sortList(targets)
+	var/amount = input(src, "Choose amount", "Amount",null) as message|null
+	var/currentMoney = getMoney(targets[target].ckey)
+	amount = sanitize_integer(amount, -100000, 100000, initial(amount))
+	if(-amount>currentMoney)
+		to_chat(src, "Not enough MetaMoney in the account.")
+		return
+	message_admins("targets[target].ckey, [amount]")
+	adjustMoney(targets[target].ckey, amount)
+
 /obj/machinery/mineral/wasteland_vendor/bank/proc/adjustMoney(ckey, amount)
 	if(!usr.client)
 		return
