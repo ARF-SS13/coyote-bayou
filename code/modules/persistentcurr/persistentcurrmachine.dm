@@ -1,6 +1,6 @@
 /obj/machinery/mineral/wasteland_vendor/bank
-	var/ckey
-	var/banked_caps
+	var/ckey = null
+	var/banked_caps = 0
 
 /obj/machinery/mineral/wasteland_vendor/bank/ui_interact(mob/user)
 	. = ..()
