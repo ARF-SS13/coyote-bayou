@@ -1,4 +1,6 @@
 /obj/machinery/mineral/wasteland_vendor/bank
+	name = "Banking Machine"
+	desc = "A machine that allows you to deposit caps into your account!"
 	var/ckey = null
 	var/banked_caps = 0
 
@@ -43,6 +45,6 @@
 
 /obj/machinery/mineral/wasteland_vendor/bank/proc/redeem_caps()
 	adjustMoney(ckey, stored_caps)
-	to_chat(usr, "You have added [stored_caps] to your account! Total: [banked_caps]")	
+	to_chat(usr, "You have added [stored_caps] caps to your account! Total: [banked_caps] caps!")	
 	stored_caps = 0
 	src.ui_interact(usr)

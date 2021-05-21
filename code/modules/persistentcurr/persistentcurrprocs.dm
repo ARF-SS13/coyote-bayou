@@ -31,4 +31,13 @@
 		var/currentMoney = query_get_money.item[1]
 		qdel(query_get_money)
 		return currentMoney
+	qdel(query_get_money)
+	var/datum/DBQuery/query_add_new_account = SSdbcore.NewQuery(
+	"INSERT INTO [format_table_name("money")] VALUES (:ckey, '0')",
+	list("ckey" = ckey)
+	)
+	if(!query_add_new_account.warn_execute())
+		qdel(query_add_new_account)
+		return 0
+	qdel(query_add_new_account)
 	return 0
