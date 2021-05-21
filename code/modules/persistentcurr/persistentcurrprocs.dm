@@ -20,13 +20,13 @@
 		return 0
 	if(!ckey)
 		return 0
-		var/datum/DBQuery/query_get_money = SSdbcore.NewQuery(
-		"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
-		list("ckey" = ckey)
-		)
-		if(!query_get_money.warn_execute())
-			qdel(query_get_money)
-			return
-		var/currentMoney = query_get_money.item[0]
+	var/datum/DBQuery/query_get_money = SSdbcore.NewQuery(
+	"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
+	list("ckey" = ckey)
+	)
+	if(!query_get_money.warn_execute())
 		qdel(query_get_money)
-		return currentMoney
+		return
+	var/currentMoney = query_get_money.item[0]
+	qdel(query_get_money)
+	return currentMoney
