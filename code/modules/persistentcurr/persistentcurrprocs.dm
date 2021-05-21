@@ -86,7 +86,7 @@
 	var/amount = input(src, "Choose amount", "Amount",null) as message|null
 	amount = sanitize_integer(amount, -100000, 100000, initial(amount))
 	message_admins("targets[target], [amount]")
-	adjustMoney(targets[target], amount)
+	adjustMoney(targets[target], amount.text2num)
 
 /client/proc/adjustMoney(ckey, amount)
 	if(!usr.client)
