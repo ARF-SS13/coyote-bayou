@@ -27,9 +27,6 @@
 		if(!query_get_money.warn_execute())
 			qdel(query_get_money)
 			return
-		if(query_get_money.NextRow())
-			var/currentMoney = query_get_money.item[0]
-			qdel(query_get_money)
-			return currentMoney
+		var/currentMoney = query_get_money.item[0]
 		qdel(query_get_money)
-
+		return currentMoney
