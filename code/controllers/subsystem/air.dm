@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(air)
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "AT:[round(cost_turfs,1)]|"
-		msg += "TH:[round(turf_process_time(),1)],[thread_wait_ticks]|"
+	msg += "TH:[round(turf_process_time(),1)],[thread_wait_ticks]|"
 	msg += "EG:[round(cost_groups,1)]|"
 	msg += "EQ:[round(cost_equalize,1)]|"
 	msg += "PO:[round(cost_post_process,1)]|"
