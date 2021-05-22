@@ -285,13 +285,11 @@
 			powerDown()
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerUp()
-	message_admins("powering up")
 	powerMode += 1
 	slowdown -= 0.15
 	armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerDown()
-	message_admins("powering down")
 	powerMode -= 1
 	slowdown += 0.15
 	armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
