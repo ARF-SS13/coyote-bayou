@@ -60,7 +60,8 @@
 		else
 			targets["(No Mob) - [T]"] = T
 	var/target = input(src,"Choose account","MetaMoney",null) as null|anything in sortList(targets)
-	var/amount = getMoney(targets[target].ckey)
+	var/client/notlist = targets[target]
+	var/amount = getMoney(notlist.ckey)
 	to_chat(src, "[targets[target]] has [amount] MetaMoneys(tm)")
 
 /client/proc/adminChangeMoney()

@@ -220,8 +220,12 @@
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
-	var/powerLevel = 15000
+	var/powerLevel = 7000
 	var/powerMode = 1
+
+/obj/item/clothing/suit/armor/f13/power_armor/examine(mob/user)	
+	. = ..()
+	to_chat(user, "The charge meter reads [powerLevel] and the armor is operating in power mode [powerMode].")
 
 /obj/item/fusion_fuel	
 	name = "fusion fuel cell"
@@ -231,7 +235,11 @@
 	item_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'	
-	var/fuel = 25000
+	var/fuel = 20000
+
+/obj/item/fusion_fuel/examine(mob/user)
+	. = ..()
+	to_chat(user, "The charge meter reads [fuel].")
 
 /obj/item/clothing/suit/armor/f13/power_armor/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -243,7 +251,7 @@
 		if(fuel.fuel >= 5000)
 			src.powerLevel += 5000
 			fuel.fuel -= 5000
-			to_chat(user, "You charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/2500 left in the fuel cell.")
+			to_chat(user, "You charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/20000 left in the fuel cell.")
 			return
 		to_chat(user, "The fuel cell is empty.")
 
@@ -264,24 +272,24 @@
 /obj/item/clothing/suit/armor/f13/power_armor/proc/processPower()
 	if(powerLevel>0)//drain charge
 		powerLevel -= 1
-	if(powerLevel > 35000)//switch to 3 power mode
+	if(powerLevel > 20000)//switch to 3 power mode
 		if(powerMode <= 2)
 			powerUp()
 		return
-	if(powerLevel > 20000)//switch to 2 power
+	if(powerLevel > 10000)//switch to 2 power
 		if(powerMode <= 1)
 			powerUp()
 		if(powerMode > 2)
 			powerDown()
 		return
-	if(powerLevel > 7500)//switch to 1 power
+	if(powerLevel > 5000)//switch to 1 power
 		if(powerMode <= 0)
 			powerUp()
 		if(powerMode > 1)
 			powerDown()
 		return
 	if(powerLevel >= 0)//switch to 0 power
-		if(powerMode >= 0)
+		if(powerMode >= 1)
 			powerDown()
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerUp()
@@ -364,6 +372,7 @@
 	name = "restored T-45b power armor"
 	desc = "(VIII) It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
 	requires_training = TRUE
+	powered = TRUE
 	slowdown = 0.24
 	armor_block_chance = 60
 	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
