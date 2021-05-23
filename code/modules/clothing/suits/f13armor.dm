@@ -297,14 +297,16 @@
 	powerMode += 1
 	slowdown -= 0.2
 	var/mob/living/L = loc
-	L.update_equipment_speed_mods()
+	if(istype(L))
+		L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerDown(mob/user)
 	powerMode -= 1
 	slowdown += 0.2
 	var/mob/living/L = loc
-	L.update_equipment_speed_mods()
+	if(istype(L))
+		L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
