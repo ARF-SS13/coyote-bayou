@@ -109,16 +109,16 @@
 	subcategory = CAT_MELEE
 */
 
-/datum/crafting_recipe/chainsaw
-	name = "Chainsaw"
-	result = /obj/item/twohanded/chainsaw
-	reqs = list(/obj/item/circular_saw = 1,
-				/obj/item/stack/cable_coil = 3,
-				/obj/item/stack/sheet/plasteel = 5)
-	tools = list(TOOL_WELDER)
-	time = 50
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
+///datum/crafting_recipe/chainsaw
+//	name = "Chainsaw"
+//	result = /obj/item/twohanded/chainsaw
+//	reqs = list(/obj/item/circular_saw = 1,
+//				/obj/item/stack/cable_coil = 3,
+//				/obj/item/stack/sheet/plasteel = 5)
+//	tools = list(TOOL_WELDER)
+//	time = 50
+//	category = CAT_WEAPONRY
+//	subcategory = CAT_MELEE
 
 //////////////////
 ///BOMB CRAFTING//

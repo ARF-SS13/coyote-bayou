@@ -220,6 +220,7 @@
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
+	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
 	var/powerMode = 3
 
@@ -294,14 +295,14 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerUp(mob/user)
 	powerMode += 1
-	slowdown -= 0.15
+	slowdown -= 0.2
 	var/mob/living/L = loc
 	L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/powerDown(mob/user)
 	powerMode -= 1
-	slowdown += 0.15
+	slowdown += 0.2
 	var/mob/living/L = loc
 	L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
@@ -343,6 +344,8 @@
 				emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
+		return ..()//doesnt block
 	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))
 			var/ratio = rand(0,100)
@@ -353,11 +356,6 @@
 				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	//if((armour_penetration <= src.armor_block_threshold && damage <= src.melee_block_threshold) && (attack_type == ATTACK_TYPE_MELEE) && (def_zone in protected_zones))
-	//	if(prob(armor_block_chance))
-	//		to_chat(loc, "<span class='warning'>Your power armor absorbs the melee impact!</span>")
-	//		block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
-	//		return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
