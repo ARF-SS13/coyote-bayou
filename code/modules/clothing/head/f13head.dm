@@ -245,7 +245,7 @@
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
 	var/powerLevel = 7000
-	var/powerMode = 1
+	var/powerMode = 3
 	var/powered = TRUE
 
 /obj/item/clothing/head/helmet/f13/power_armor/examine(mob/user)	
@@ -306,11 +306,15 @@
 /obj/item/clothing/head/helmet/f13/power_armor/proc/powerUp()
 	powerMode += 1
 	slowdown -= 0.15
+	var/mob/living/L = loc
+	L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = 75, linebullet = 75, linelaser = 75)
 
 /obj/item/clothing/head/helmet/f13/power_armor/proc/powerDown()
 	powerMode -= 1
 	slowdown += 0.15
+	var/mob/living/L = loc
+	L.update_equipment_speed_mods()
 	armor = armor.modifyRating(linemelee = -75, linebullet = -75, linelaser = -75)
 
 /obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
