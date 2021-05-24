@@ -12,6 +12,13 @@
 	resistance_flags = NONE
 	mutantrace_variation = STYLE_MUZZLE
 
+/obj/item/clothing/mask/gas/enclave
+	name = "gas mask mk 2"
+	desc = "Gas mask with efficient cleanable filters and flash protected lenses"
+	icon_state = "gasmask_enclave"
+	item_state = "gasmask_enclave"
+	flash_protect = 2
+
 /obj/item/clothing/mask/gas/glass
 	name = "glass gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however." //More accurate
@@ -106,7 +113,6 @@
 	actions_types = list(/datum/action/item_action/adjust)
 	dog_fashion = null
 	var/list/tikimask_designs = list()
-
 
 /obj/item/clothing/mask/gas/tiki_mask/Initialize(mapload)
 	.=..()

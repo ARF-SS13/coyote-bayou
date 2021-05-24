@@ -6,6 +6,12 @@
 /obj/item/clothing/shoes/f13
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
+/obj/item/clothing/shoes/f13/enclave/serviceboots
+	name = "enclave service boots"
+	desc = "(III)Tall shiny boots with kevlar layers."
+	icon_state = "boots_enclave"
+	item_state = "boots_enclave"
+
 /obj/item/clothing/shoes/f13/rag
 	name = "footcloths"
 	desc = "Ripped cloth used as improvised foot strips, instead of shoes. Crude and gets dirty fast."

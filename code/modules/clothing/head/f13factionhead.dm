@@ -165,6 +165,45 @@
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
+
+//Enclave
+
+/obj/item/clothing/head/helmet/f13/helmet/enclave/science
+	name = "science beret"
+	desc = "(I) Blue beret signifying the wearer is a Science Officer of the Enclave."
+	icon_state = "hat_enclave_science"
+	item_state = "hat_enclave_science"
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
+	armor = list("tier" = 1)
+
+/obj/item/clothing/head/helmet/f13/helmet/enclave/intel
+	name = "intel beret"
+	desc = "(III) Dark beret issued to Intelligence Officers of the Enclave."
+	icon_state = "hat_enclave_intel"
+	item_state = "hat_enclave_intel"
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
+	armor = list("tier" = 3)
+
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
+	name = "peacekeeper cap"
+	desc = "(IV) Reinforced field cap issued to the soldiers of the Enclave."
+	icon_state = "hat_enclave_peacekeeper"
+	item_state = "hat_enclave_peacekeeper"
+	flags_inv = HIDEEARS|HIDEHAIR
+	strip_delay = 50
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	armor = list("tier" = 4)
+
+/obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+	name = "officer hat"
+	desc = "(V) Wheeled hat with kevlar cap under."
+	icon_state = "hat_enclave_officer"
+	item_state = "hat_enclave_officer"
+	armor = list("tier" = 5)
+
 //Legion
 /obj/item/clothing/head/f13/legion/servant
 	name = "servant headwear"

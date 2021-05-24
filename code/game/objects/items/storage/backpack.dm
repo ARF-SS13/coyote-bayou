@@ -216,6 +216,8 @@
 	icon_state = "viropack"
 	item_state = "viropack"
 
+
+
 /*
  * Satchel Types
  */
@@ -687,3 +689,15 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "A light and durable satchel often seen in use by those prone to wandering the wastes, often alone."
 	icon_state = "satchel-trekker"
 	item_state = "satchel-trekker"
+
+/obj/item/storage/backpack/enclave
+	name = "service backpack"
+	desc = "Backpack copying an old US Army pattern."
+	icon_state = "backpack_enclave"
+	item_state = "backpack_enclave"
+
+/obj/item/storage/backpack/satchel/enclave
+	name = "service satchel"
+	desc = "Satchel modeled after old US Army pattern."
+	icon_state = "satchel_enclave"
+	item_state = "satchel_enclave"
