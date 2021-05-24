@@ -126,7 +126,7 @@
 //Sulphite Helm
 
 /obj/item/clothing/head/helmet/f13/sulphitehelm
-	name = "Sulphite Helmet"
+	name = "sulphite helmet"
 	desc = "(VI) A sulphite raider helmet, affixed with thick anti-ballistic glass over the eyes."
 	icon_state = "sulphite_helm"
 	item_state = "sulphite_helm"
@@ -249,7 +249,7 @@
 	var/powerMode = 3
 	var/powered = TRUE
 
-/obj/item/clothing/head/helmet/f13/power_armor/examine(mob/user)	
+/obj/item/clothing/head/helmet/f13/power_armor/examine(mob/user)
 	. = ..()
 	to_chat(user, "The charge meter reads [powerLevel] and the helmet is operating in power mode [powerMode].")
 

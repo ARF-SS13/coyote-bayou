@@ -68,7 +68,7 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/arclight
-	name = "raider arclight helmet"
+	name = "arclight raider helmet"
 	desc = "(IV) An intimidating visor, however its eye protection qualities are compromised."
 	icon_state = "arclight"
 	item_state = "arclight"
@@ -79,7 +79,7 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/raider/blastmaster
-	name = "raider blastmaster helmet"
+	name = "blastmaster raider helmet"
 	desc = "(IV) A sturdy helmet to protect against both the elements and from harm, if only it was not looking in such poor condition."
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
@@ -146,7 +146,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/raidermetal
-	name = "raider metal helmet"
+	name = "metal raider helmet"
 	desc = "(V) A metal helmet, rusty and awful."
 	icon_state = "raidermetal"
 	item_state = "raidermetal"
@@ -158,7 +158,7 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 
 /obj/item/clothing/head/helmet/f13/raidercombathelmet
-	name = "raider combat helmet"
+	name = "combat raider helmet"
 	desc = "(V) A combat helmet modified with metal plating"
 	icon_state = "raider_combat_helmet"
 	item_state = "raider_combat_helmet"
