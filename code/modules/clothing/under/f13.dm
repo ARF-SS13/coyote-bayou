@@ -90,9 +90,9 @@
 	item_state = "ncr_shorts"
 	item_color = "ncr_shorts"
 
-/obj/item/clothing/under/f13/caravaneer
-	name = "caravaneer outfit"
-	desc = "A soft outfit used by NCR caravaneers."
+/obj/item/clothing/under/f13/ncrcaravan
+	name = "NCR caravaneer outfit"
+	desc = "A soft outfit commonly worn by NCR caravaneers."
 	icon_state = "caravaneer"
 	item_state = "caravaneer"
 	item_color = "caravaneer"

@@ -521,13 +521,13 @@ Raider
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
 	loadout_options = list(
-	/datum/outfit/loadout/vault_refugee, 
-	/datum/outfit/loadout/salvager, 
-	/datum/outfit/loadout/medic, 
-	/datum/outfit/loadout/merchant, 
-	/datum/outfit/loadout/scavenger, 
-	/datum/outfit/loadout/citizen, 
-	/datum/outfit/loadout/slave)
+	/datum/outfit/loadout/vault_refugee,
+	/datum/outfit/loadout/salvager,
+	/datum/outfit/loadout/medic,
+	/datum/outfit/loadout/merchant,
+	/datum/outfit/loadout/scavenger,
+	/datum/outfit/loadout/citizen,
+	/datum/outfit/loadout/ncrcitizen)
 
 /datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
@@ -644,13 +644,12 @@ Raider
 	backpack_contents = list(
 		/obj/item/claymore/machete/spatha=1)
 
-/datum/outfit/loadout/slave
+/datum/outfit/loadout/ncrcitizen
 	name = "NCR Citizen"
-	uniform = /obj/item/clothing/under/f13/caravaneer
+	uniform = /obj/item/clothing/under/f13/ncrcaravan
 	shoes = /obj/item/clothing/shoes/f13/tan
 	head = /obj/item/clothing/head/f13/cowboy
 	gloves = /obj/item/clothing/gloves/color/brown
-	glasses = /obj/item/clothing/glasses/orange
 	l_hand = /obj/item/gun/ballistic/automatic/varmint
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2)
