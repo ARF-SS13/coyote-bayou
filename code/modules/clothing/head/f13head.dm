@@ -595,6 +595,19 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+//Part of the peacekeeper enclave stuff, adjust values as needed.
+/obj/item/clothing/head/helmet/f13/power_armor/enclave/x02helmet
+	name = "X-02 helmet"
+	desc = "(X) The X-02 Enclave power armor helmet."
+	icon_state = "PA_helmet_x02"
+	item_state = "PA_helmet_x02"
+	slowdown = 0.1
+	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor_block_chance = 85
+	deflection_chance = 35
+
+
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 
 /obj/item/clothing/head/helmet/f13/tribal

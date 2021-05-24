@@ -339,3 +339,11 @@ obj/item/clothing/neck/neckerchief
 	item_color = "eldritch_tie"
 	item_state = "eldritch_tie"
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/neck/cloak/enclavecaptain
+	name = "captains cloak"
+	desc = "A fine cloak marking the wearer as a Captain of the Enclave."
+	icon_state = "cloak_enclave"
+	item_state = "cloak_enclave"
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS

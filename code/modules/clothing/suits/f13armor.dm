@@ -599,6 +599,31 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+//Peacekeeper armor adjust as needed
+obj/item/clothing/suit/armor/f13/power_armor/x02
+	name = "X-02 power armor"
+	desc = "(X) Upgraded pre-war power armor design used by the Enclave."
+	icon_state = "PA_x02"
+	item_state = "PA_x02"
+	slowdown = 0.15 //+0.1 from helmet = total 0.25
+	armor_block_chance = 85
+	deflection_chance = 35 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+
+/obj/item/clothing/suit/armor/f13/enclave/armorvest
+	name = "armored vest"
+	desc = "(VI) Efficient prewar design issued to Enclave personell."
+	icon_state = "armor_enclave_peacekeeper"
+	item_state = "armor_enclave_peacekeeper"
+	armor = list("tier" = 6)
+
+/obj/item/clothing/suit/armor/f13/enclave/officercoat
+	name = "armored coat"
+	desc = "(VII) Premium prewar armor fitted into a coat for Enclave officers."
+	icon_state = "armor_enclave_officer"
+	item_state = "armor_enclave_officer"
+	armor = list("tier" = 7)
+
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 /obj/item/clothing/suit/armor/f13/tribal
 	name = "tribal armor"

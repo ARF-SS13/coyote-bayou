@@ -1160,3 +1160,29 @@
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	uses_overlays = FALSE
+
+//ENCLAVE ID
+
+/obj/item/card/id/dogtag/enclave/officer
+	name = "US officer dogtags"
+	desc = "Worn by Enclave officers."
+	icon_state = "enclaveofficer"
+	item_state = "card-id_leg"
+	assignment = "US dogtags"
+	access = list(ACCESS_ENCLAVE)
+
+/obj/item/card/id/dogtag/enclave/trooper
+	name = "US dogtags"
+	desc = "Worn by Enclave officers."
+	icon_state = "enclavetrooper"
+	item_state = "card-id_leg"
+	assignment = "US dogtags"
+	access = list(ACCESS_ENCLAVE)
+
+/obj/item/card/id/dogtag/enclave/noncombatant
+	name = "US identity card"
+	desc = "Issued to Enclave citizens with photo and fingerprint."
+	icon_state = "enclavenoncombat"
+	item_state = "card-id_leg"
+	assignment = "US dogtags"
+	access = list(ACCESS_ENCLAVE)
