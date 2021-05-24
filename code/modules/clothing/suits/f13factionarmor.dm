@@ -136,14 +136,14 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/raider/raidercombat
-	name = "raider combat armor"
+	name = "combat raider armor"
 	desc = "(V) An old military-grade pre-war combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
 	armor = list("tier" = 5, "energy" = 30, "bomb" = 50, "bio" = 50, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/armor/f13/raider/raidermetal
-	name = "raider metal armor"
+	name = "metal raider armor"
 	desc = "(V) A suit of welded, fused metal plates. Looks bulky, with great protection."
 	icon_state = "raider_metal"
 	item_state = "raider_metal"

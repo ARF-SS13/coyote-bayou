@@ -70,7 +70,7 @@
 
 
 /obj/item/lighter/gold
-	name = "\improper Engraved Zippo"
+	name = "engraved zippo"
 	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "gold_zippo"
@@ -558,4 +558,4 @@
 	icon = 'icons/mob/clothing/custom_w.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	dynamic_hair_suffix = ""
-	
+

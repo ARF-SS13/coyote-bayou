@@ -776,7 +776,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
-	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
+	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
 /obj/item/book/granter/trait/lowsurgery
@@ -785,7 +785,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_LOW
 	traitname = "minor surgery"
-	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+	remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
 
 /obj/item/book/granter/trait/midsurgery
 	name = "Surgery for Experts"
@@ -793,7 +793,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_MID
 	traitname = "intermediate surgery"
-	remarks = list("Don't forget your instruments inside patients...", "Be careful when cutting...", "Don't operate with dirty hands...")
+	remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
 
 /obj/item/book/granter/trait/tinkering
 	name = "Tinkering for Wastelander"
@@ -801,7 +801,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MASTER_GUNSMITH
 	traitname = "tinkering"
-	remarks = list("Experiment!", "You can always try 3 times...", "Be careful with loaded guns...")
+	remarks = list("Adapt weaponry and armor to your uses...", "Experiment freely...", "You can always try three times...", "Be careful with loaded guns...")
 
 /obj/item/book/granter/trait/spirit_teachings
 	name = "Teachings of the Machine Spirits"
@@ -810,7 +810,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MACHINE_SPIRITS
 	traitname = "The Machine Spirits"
-	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits", "Never use them for selfish reasons", "Honor and love those blessed by the machine spirits.")
+	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits...", "Never use them for selfish reasons...", "Honor and love those blessed by the machine spirits...")
 
 /obj/item/book/granter/trait/mars_teachings
 	name = "Teachings of Mars"
@@ -819,7 +819,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_MARS_TEACH
 	traitname = "Mars' Teachings"
-	remarks = list("Remember the aeternit imperi of the Caesar's Legion...", "Do not abuse the knowledge of Mars to break his will, or be broken...", "Remember: In hoc signo taurus vinces.")
+	remarks = list("Remember the aeternit imperi of the Caesar's Legion...", "Do not abuse the knowledge of Mars to break his will, or be broken...", "Remember: In hoc signo taurus vinces...")
 
 /obj/item/book/granter/trait/techno
 	name = "Craftsmanship Monthly"
@@ -827,7 +827,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
-	remarks = list("Try turning it off and on again...", "Always craft in good form.", "Don't forget PPE.", "Keep your mechanisms OILED.", "Stay organized.")
+	remarks = list("Try turning it off and on again...", "Always craft in good form...", "Don't forget PPE...", "Keep your mechanisms OILED...", "Stay organized...")
 
 /obj/item/book/granter/trait/pa_wear
 	name = "Advanced Armor and You"
@@ -835,7 +835,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
-	remarks = list("Don't forget to do daily maintenance...","Keep your armor well guarded..","Slow and steady wins the race...","Positioning is important while moving slow...","Tired? Take a nap in your suit...","Saftey comes first when wearing your gear...")
+	remarks = list("Don't forget to do daily maintenance...", "Keep your armor well guarded..", "Slow and steady wins the race...", "Positioning is important while moving slow...", "Tired? Take a nap in your suit...", "Safety comes first when wearing your gear...")
 
 /obj/item/book/granter/trait/trekking
 	name = "Ranger's Guide to the Wasteland"
@@ -861,37 +861,45 @@
 	granted_trait = null
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
-	var/list/choices = list("Hard Yards","Minor Surgery","Power Armor","Chemistry","Salvager","Melee Expert", "Tinkerer")
-	if(granted_trait == null)	
+	var/list/choices = list("Chemistry","Craftsmanship","Melee Expert","Minor Surgery","Power Armor","Tinkerer","Trekking")
+	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
 			if(null)
 				return 0
-			if("Hard Yards")
+			if("Trekking")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"
+				remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 			if("Minor Surgery")
 				granted_trait = TRAIT_SURGERY_LOW
-				traitname = "intermediate surgery"
+				traitname = "minor surgery"
+				remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
 			if("Chemistry")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
 				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
-			if("Salvager")
+				remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
+			if("Craftsmanship")
 				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "salvaging"
+				traitname = "craftsmanship"
+				remarks = list("Try turning it off and on again...", "Always craft in good form...", "Don't forget PPE...", "Keep your mechanisms OILED...", "Stay organized...")
 			if("Melee Expert")
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "hitting things"
+				remarks = list("Utilise your momentum...", "Put weight behind your blows...", "Moves should transition and flow together...", "Stagger your opponent...")
 			if("Power Armor")
 				granted_trait = TRAIT_PA_WEAR
-				traitname = "advanced armor"
+				traitname = "Power Armor"
+				remarks = list("Don't forget to do daily maintenance...","Keep your armor well guarded..", "Slow and steady wins the race...", "Positioning is important while moving slow...","Tired? Take a nap in your suit...", "Safety comes first when wearing your gear...")
 			if("Tinkerer")
 				granted_trait = TRAIT_MASTER_GUNSMITH
 				traitname = "tinkering"
-	else 
+				remarks = list("Adapt weaponry and armor to your uses...", "Experiment freely...", "You can always try three times...", "Be careful with loaded guns...")
+
+	else
 		. = ..()
-		
+
 /obj/item/book/granter/trait/selection/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)

@@ -511,7 +511,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //ZIPPO//
 /////////
 /obj/item/lighter
-	name = "\improper Zippo lighter"
+	name = "zippo lighter"
 	desc = "The zippo."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "zippo"

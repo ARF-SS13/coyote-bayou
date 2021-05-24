@@ -300,12 +300,12 @@ Raider
 	/datum/outfit/loadout/raider_sadist,
 	/datum/outfit/loadout/raider_painspike,
 	/datum/outfit/loadout/raider_badlands,
+	/datum/outfit/loadout/raider_sheriff,
+	/datum/outfit/loadout/raider_mafia,
+	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/raider_ncr,
-	/datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_sheriff,
-	/datum/outfit/loadout/raider_vault,
-	/datum/outfit/loadout/raider_mafia)
+	/datum/outfit/loadout/raider_legion)
 
 /datum/outfit/job/wasteland/f13raider
 	name = "Outlaw"
@@ -384,7 +384,7 @@ Raider
 /datum/outfit/loadout/raider_supafly
 	name = "Supa-fly"
 	suit = /obj/item/clothing/suit/armor/f13/raider/supafly
-	head = /obj/item/clothing/head/helmet/f13/raider
+	head = /obj/item/clothing/head/helmet/f13/raider/supafly
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/mini_uzi=1,
 		/obj/item/ammo_box/magazine/uzim9mm=3,
