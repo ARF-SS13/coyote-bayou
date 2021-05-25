@@ -18,7 +18,7 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
-	requires_trait = 3
+	requires_trait = 1
 
 /datum/surgery_step/reconstruct
 	name = "repair body"
