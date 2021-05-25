@@ -349,5 +349,4 @@ GLOBAL_LIST(topic_status_cache)
 	SSidlenpcpool.MaxZChanged()
 	world.refresh_atmos_grid()
 
-/// Auxtools atmos
 /world/proc/refresh_atmos_grid()
