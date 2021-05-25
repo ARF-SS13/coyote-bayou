@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/energy/plasma
-	projectile_type = /obj/item/projectile/f13plasma
+	projectile_type = /obj/item/projectile/plasma
 	select_name = "plasma burst"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	e_cost = 100

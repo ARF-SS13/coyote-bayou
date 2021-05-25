@@ -21,14 +21,6 @@
 	dat += "<b>Redeem caps:</b> <A href='?src=[REF(src)];choice=redeem'>Redeem caps</A><br>"
 	dat += "</div>"
 	dat += "<br>"
-	dat +="<div class='statusDisplay'>"
-	dat += "<b>Currency conversion rates:</b><br>"
-	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle caps value <br>"
-	dat += "1 NCR dollar = [CASH_NCR_VENDOR] bottle caps value <br>"
-	dat += "1 Denarius = [CASH_DEN_VENDOR] bottle caps value <br>"
-	dat += "1 Aureus = [CASH_AUR_VENDOR] bottle caps value <br>"
-	dat += "</div>"
-	dat += "<br>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Bank Machine", 400, 500)
 	popup.set_content(dat)
