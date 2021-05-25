@@ -8,7 +8,7 @@
 		/datum/surgery_step/lower_surgery,
 		/datum/surgery_step/close
 		)
-	requires_trait = 3
+	requires_trait = 2
 /datum/surgery_step/lower_surgery
 	name = "lower surgery"
 	implements = list(/obj/item/scalpel = 100, /obj/item/hatchet = 50, /obj/item/wirecutters = 35)
