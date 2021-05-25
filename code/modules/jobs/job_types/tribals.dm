@@ -129,7 +129,7 @@ Tribal Shaman
 /datum/outfit/loadout/invoker
 	name = "Invoker"
 	backpack_contents = list(
-		/obj/item/clothing/head/helmetf13/wayfarer/shamanred=1,
+		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
 		/obj/item/clothing/under/f13/wayfarer/shamanred=1
 	)
 

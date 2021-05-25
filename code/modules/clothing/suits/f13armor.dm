@@ -216,19 +216,20 @@
 	var/requires_training = TRUE
 	var/powered = TRUE
 	var/armor_block_chance = 0 //Chance for the power armor to block a low penetration projectile
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
 	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
 	var/powerMode = 3
+	repair_kit = /obj/item/repair_kit/pa
 
-/obj/item/clothing/suit/armor/f13/power_armor/examine(mob/user)	
+/obj/item/clothing/suit/armor/f13/power_armor/examine(mob/user)
 	. = ..()
 	to_chat(user, "The charge meter reads [powerLevel] and the armor is operating in power mode [powerMode].")
 
-/obj/item/fusion_fuel	
+/obj/item/fusion_fuel
 	name = "fusion fuel cell"
 	desc = "Some fusion fuel used to recharge the fusion cores of Power Armor."
 	icon = 'icons/obj/power.dmi'
@@ -347,6 +348,8 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
+		return ..()//doesnt block
+	if(src.armor_durability<60)
 		return ..()//doesnt block
 	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))
@@ -655,7 +658,7 @@ obj/item/clothing/suit/armor/f13/power_armor/x02
 	armor = list("tier" = 5, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	var/hit_reflect_chance = 20
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/suit/armor/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))

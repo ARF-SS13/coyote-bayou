@@ -9,7 +9,44 @@
 	max_integrity = 250
 	resistance_flags = NONE
 	armor = list("tier" = 4, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
+/obj/item/clothing/suit/armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(def_zone in protected_zones)
+		damage_armor()
+	. = ..()
+
+/obj/item/clothing/suit/armor/examine(mob/user)
+	. = ..()
+	to_chat(user, "The armor is at [armor_durability] durability and is providing [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance.")
+
+/obj/item/clothing/suit/armor/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, src.repair_kit))
+		use_kit(I,user)
+
+/obj/item/clothing/suit/armor/proc/use_kit(obj/item/I, mob/user)
+	var/obj/item/repair_kit/kit = I
+	while(armor_durability<100)
+		if(do_after(user, 10))
+			to_chat(user,"You fix some of the damage on the armor, it is now at [armor_durability+1] durability.")
+			if(kit.uses_left>1)
+				kit.uses_left -= 1
+				fix_armor()
+			else
+				fix_armor()
+				qdel(kit)
+				break
+
+/obj/item/clothing/suit/armor/proc/damage_armor()
+	if(armor.linebullet>0&&armor.linelaser>0&&armor.linemelee>0&&armor_durability>0)		
+		armor_durability -= 1
+		armor = armor.modifyRating(linemelee = -2, linebullet = -2, linelaser = -2)
+
+/obj/item/clothing/suit/armor/proc/fix_armor()
+	if(armor_durability<100)
+		armor = armor.modifyRating(linemelee = 2, linebullet = 2, linelaser = 2)
+		armor_durability += 1
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
@@ -171,7 +208,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	var/hit_reflect_chance = 40
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
+	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
 
 /obj/item/clothing/suit/armor/laserproof/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(def_zone in protected_zones)

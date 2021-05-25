@@ -793,7 +793,7 @@
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/helmetf13/wayfarer/shamanred
+/obj/item/clothing/head/helmet/f13/wayfarer/shamanred
 	name = "crimson mask"
 	desc = "(IV) An uncanny helm passed down through generations, originating from a tribal culture once situated at the top of a Sonoran mesa."
 	icon_state = "shamanred"

@@ -312,16 +312,6 @@
 //HELMETS//
 ///////////
 
-/datum/crafting_recipe/salvagePA
-	name = "Salvaged PA Helmet"
-	result = /obj/item/clothing/head/helmet/f13/tribal
-	time = 600
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/sheet/cloth = 3)
-	tools = list(TOOL_FORGE)
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
 /datum/crafting_recipe/bighorn
 	name = "Bighorner Helmet"
 	result = /obj/item/clothing/head/helmet/f13/fiend_reinforced

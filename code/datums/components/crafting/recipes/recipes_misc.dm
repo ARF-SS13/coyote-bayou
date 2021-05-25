@@ -51,17 +51,22 @@
 ///////////////////////////
 //Scavenging and Tinkering//
 ///////////////////////////
-/datum/crafting_recipe/scavengerod
-	name = "Scavenge For Rods"
-	result = /obj/item/stack/rods
-	time = 600
+
+/datum/crafting_recipe/repair_kit
+	name = "Armor repair kit"
+	result = /obj/item/repair_kit
+	time = 30
+	reqs = list(/obj/item/crafting = 3, /obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 
-/datum/crafting_recipe/scavengemetal
-	name = "Scavenge For Plating"
-	result = /obj/item/stack/sheet/metal
-	time = 600
+/datum/crafting_recipe/repair_kit_pa
+	name = "Power armor repair kit"
+	result = /obj/item/repair_kit/pa
+	time = 30
+	reqs = list(/obj/item/crafting = 7, /obj/item/stack/crafting/goodparts = 3)
+	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 

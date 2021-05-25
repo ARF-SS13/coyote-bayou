@@ -15,7 +15,7 @@
 
 //The following items are in "crafting" type just to keep code clean.
 /obj/item/crafting
-	name = "crafting item"
+	name = "crafting component"
 	desc = "This should not be visible. Tell someone about it."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	item_state = "null"

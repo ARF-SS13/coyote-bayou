@@ -199,7 +199,7 @@
 	strip_delay = 10
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	var/hit_reflect_chance = 20
-	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/head/helmet/f13/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
@@ -240,7 +240,7 @@
 	var/emped = 0
 	var/requires_training = TRUE
 	var/armor_block_chance = 0
-	var/list/protected_zones = list(BODY_ZONE_HEAD)
+	protected_zones = list(BODY_ZONE_HEAD)
 	var/deflection_chance = 0
 	var/armor_block_threshold = 0.3 //projectiles below this will deflect
 	var/melee_block_threshold = 30
@@ -248,6 +248,7 @@
 	var/powerLevel = 7000
 	var/powerMode = 3
 	var/powered = TRUE
+	repair_kit = /obj/item/repair_kit/pa
 
 /obj/item/clothing/head/helmet/f13/power_armor/examine(mob/user)
 	. = ..()
@@ -377,6 +378,8 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
+		return ..()//doesnt block
+	if(src.armor_durability<60)
 		return ..()//doesnt block
 	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))

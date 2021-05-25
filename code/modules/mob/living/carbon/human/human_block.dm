@@ -1,5 +1,8 @@
 /mob/living/carbon/human/get_blocking_items()
 	. = ..()
+	if(head)
+		if(!.[head])
+			.[head] = head.block_priority
 	if(wear_suit)
 		if(!.[wear_suit])
 			.[wear_suit] = wear_suit.block_priority

@@ -13,8 +13,46 @@
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR
+	var/list/protected_zones = list(BODY_ZONE_HEAD)
 
 	dog_fashion = /datum/dog_fashion/head/helmet
+
+/obj/item/clothing/head/helmet/examine(mob/user)
+	. = ..()
+	to_chat(user, "The helmet is at [armor_durability] durability and is providing [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance.")
+
+/obj/item/clothing/head/helmet/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(def_zone in protected_zones)
+		damage_armor()
+	. = ..()
+
+/obj/item/clothing/head/helmet/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, src.repair_kit))
+		use_kit(I,user)
+
+/obj/item/clothing/head/helmet/proc/use_kit(obj/item/I, mob/user)
+	var/obj/item/repair_kit/kit = I
+	while(armor_durability<100)
+		if(do_after(user, 10))
+			to_chat(user,"You fix some of the damage on the armor, it is now at [armor_durability+1] durability.")
+			if(kit.uses_left>1)
+				kit.uses_left -= 1
+				fix_armor()
+			else
+				fix_armor()
+				qdel(kit)
+				break
+
+/obj/item/clothing/head/helmet/proc/damage_armor()
+	if(armor.linebullet>0&&armor.linelaser>0&&armor.linemelee>0&&armor_durability>0)
+		armor_durability -= 1
+		armor = armor.modifyRating(linemelee = -2, linebullet = -2, linelaser = -2)
+
+/obj/item/clothing/head/helmet/proc/fix_armor()
+	if(armor_durability<100)
+		armor = armor.modifyRating(linemelee = 2, linebullet = 2, linelaser = 2)
+		armor_durability += 1
 
 /obj/item/clothing/head/helmet/ComponentInitialize()
 	. = ..()
