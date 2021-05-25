@@ -26,7 +26,7 @@
 	name = "high quality metal parts"
 	icon_state = "sheet-goodparts"
 	singular_name = "high quality metal part"
-	custom_materials = list(/datum/material/iron = 20000)
+	custom_materials = list(/datum/material/titanium = 5000)
 	flags_1 = CONDUCT_1
 	merge_type = /obj/item/stack/crafting/goodparts
 
