@@ -481,8 +481,6 @@ Trooper
 	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by the Lieutenant."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 12
-	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13trooper
 
@@ -590,8 +588,6 @@ Trooper
 	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
 	supervisors = "All NCOs and COs"
 	selection_color = "#fff5cc"
-	exp_requirements = 12
-	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_NCR_OFF_DUTY
 	outfit = /datum/outfit/job/ncr/f13ncroffduty
 

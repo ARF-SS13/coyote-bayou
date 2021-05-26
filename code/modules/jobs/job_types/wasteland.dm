@@ -12,7 +12,7 @@
 	enforces = ""
 	supervisors = "the United States Government."
 	selection_color = "#162b2c"
-	exp_type = EXP_TYPE_LIVING
+	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 600
 
 	access = list(ACCESS_ENCLAVE)

@@ -761,8 +761,6 @@ Initiate
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the scribes, knights, or Paladins"
 	selection_color = "#95a5a6"
-	exp_requirements = 12
-	exp_type = EXP_TYPE_CREW
 
 	loadout_options = list(
 	/datum/outfit/loadout/initiatek, //AEP7 and Engibelt with combat armor, no helmet

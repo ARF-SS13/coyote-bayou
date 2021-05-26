@@ -352,8 +352,6 @@ Vault Engineer
 	selection_color = "#ddffdd"
 	access = list()			//See /datum/job/vault/assistant/get_access()
 	minimal_access = list()	//See /datum/job/vault/assistant/get_access()
-	exp_requirements = 12
-	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/vault/f13vaultDweller
 

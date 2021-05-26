@@ -89,7 +89,7 @@ Cyborg
 	selection_color = "#ddffdd"
 	minimal_player_age = 21
 	exp_requirements = 600
-	exp_type = EXP_TYPE_LIVING
+	exp_type = EXP_TYPE_FALLOUT
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
 	return H.Robotize(FALSE, latejoin)
