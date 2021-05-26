@@ -15,7 +15,7 @@
 	description = "A slightly Frankensteinian device that allows human brains to interface natively with software APIs."
 	design_ids = list("mmi")
 
-
+/*
 /datum/techweb_node/cyborg
 	id = "cyborg"
 	starting_node = TRUE
@@ -23,6 +23,7 @@
 	description = "Sapient robots with preloaded tool modules and programmable laws."
 	design_ids = list("robocontrol", "sflash", "borg_suit", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
 	"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
+*/
 
 /datum/techweb_node/adv_robotics
 	id = "adv_robotics"
