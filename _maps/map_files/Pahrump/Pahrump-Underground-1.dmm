@@ -4044,8 +4044,31 @@
 /area/f13/brotherhood/medical)
 "dVt" = (
 /obj/structure/rack,
-/obj/item/clothing/glasses/thermal/f13/enclave,
 /obj/machinery/light,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminf,
+/obj/item/clothing/under/f13/brahminm,
+/obj/item/clothing/under/f13/brahminm,
+/obj/item/clothing/under/f13/brahminm,
+/obj/item/clothing/under/f13/brahminm,
+/obj/item/clothing/under/f13/brahminm,
+/obj/item/clothing/under/f13/brahminm,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "dVB" = (
@@ -8639,6 +8662,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/operations)
+"itz" = (
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "itI" = (
 /obj/structure/table{
 	layer = 2.9
@@ -10513,13 +10543,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
-"ksz" = (
-/obj/item/fusion_fuel,
-/obj/item/fusion_fuel,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/clinic)
 "ksU" = (
 /obj/structure/table{
 	layer = 2.9
@@ -15625,10 +15648,6 @@
 /area/f13/ncr)
 "pMg" = (
 /obj/structure/table/glass,
-/obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/glasses/hud/health{
-	pixel_y = 10
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "pMM" = (
@@ -20137,8 +20156,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/dropper,
 /obj/item/reagent_containers/glass/beaker/plastic,
-/obj/item/reagent_containers/glass/beaker/synthflesh,
-/obj/item/reagent_containers/glass/beaker/synthflesh,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "uHT" = (
@@ -29500,7 +29517,7 @@ eUk
 bcN
 rQA
 bcN
-ksz
+itz
 dZF
 eLE
 uoO
