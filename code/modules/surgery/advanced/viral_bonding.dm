@@ -10,7 +10,7 @@
 
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
-	requires_trait = 3
+	requires_trait = "UNETHICAL_PRACTITIONER"
 /datum/surgery/advanced/viral_bonding/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())
 		return FALSE

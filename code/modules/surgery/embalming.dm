@@ -8,6 +8,7 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
+	requires_trait= 0
 
 /datum/surgery_step/embalming
 	name = "embalming body"

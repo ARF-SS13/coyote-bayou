@@ -14,7 +14,8 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
-	requires_trait = 3
+	requires_trait = 2
+	requires_trait = "PRACTITIONER_1"
 /datum/surgery_step/toxichealing
 	name = "rejuvenate body"
 	implements = list(TOOL_HEMOSTAT  = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)

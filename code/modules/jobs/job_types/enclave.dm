@@ -182,6 +182,9 @@ PEACEKEEPERS
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) //enclave scientists can do pretty much everything.
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)          //ditto
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)    //ditto
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
