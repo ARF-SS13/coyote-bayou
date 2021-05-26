@@ -12,6 +12,8 @@
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/suit/armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(damage == 0)
+		return ..()
 	if(def_zone in protected_zones)
 		damage_armor()
 	. = ..()
@@ -39,7 +41,7 @@
 				break
 
 /obj/item/clothing/suit/armor/proc/damage_armor()
-	if(armor.linebullet>0&&armor.linelaser>0&&armor.linemelee>0&&armor_durability>0)		
+	if(armor.linebullet>0&&armor.linelaser>0&&armor.linemelee>0&&armor_durability>0)
 		armor_durability -= 1
 		armor = armor.modifyRating(linemelee = -2, linebullet = -2, linelaser = -2)
 

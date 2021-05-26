@@ -10513,6 +10513,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/followers)
+"ksz" = (
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "ksU" = (
 /obj/structure/table{
 	layer = 2.9
@@ -16545,13 +16552,6 @@
 	icon_state = "neutralrusty"
 	},
 /area/f13/tunnel)
-"qIe" = (
-/obj/item/fusion_fuel,
-/obj/item/fusion_fuel,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/clinic)
 "qIB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fence/handrail{
@@ -21578,12 +21578,8 @@
 "wAg" = (
 /obj/structure/rack,
 /obj/item/radio/headset/headset_enclave,
-/obj/item/gun/energy/laser/plasma,
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/gun/energy/ionrifle,
-/obj/item/fusion_fuel,
-/obj/item/fusion_fuel,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wAq" = (
@@ -29498,7 +29494,7 @@ eUk
 bcN
 rQA
 bcN
-qIe
+ksz
 dZF
 eLE
 uoO

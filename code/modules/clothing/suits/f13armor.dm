@@ -225,10 +225,6 @@
 	var/powerMode = 3
 	repair_kit = /obj/item/repair_kit/pa
 
-/obj/item/clothing/suit/armor/f13/power_armor/examine(mob/user)
-	. = ..()
-	to_chat(user, "The charge meter reads [powerLevel] and the armor is operating in power mode [powerMode].")
-
 /obj/item/fusion_fuel
 	name = "fusion fuel cell"
 	desc = "Some fusion fuel used to recharge the fusion cores of Power Armor."
@@ -256,20 +252,6 @@
 			to_chat(user, "You charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/20000 left in the fuel cell.")
 			return
 		to_chat(user, "The fuel cell is empty.")
-
-
-/obj/item/clothing/suit/armor/f13/power_armor/Initialize()
-	. = ..()
-	if(powered)
-		for(var/i=0, i<=3, ++i)
-			processPower()
-
-/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
-	. = ..()
-	if(slot!=SLOT_WEAR_SUIT)
-		return
-	if(powered)
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/processPower)
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/processPower()
 	if(powerLevel>0)//drain charge
@@ -324,8 +306,6 @@
 	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
-	if(powered)
-		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	REMOVE_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
 	REMOVE_TRAIT(user, TRAIT_PUSHIMMUNE,	"push_immunity")
 	return ..()
@@ -347,10 +327,11 @@
 				emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	. = ..()
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
-		return ..()//doesnt block
+		return
 	if(src.armor_durability<60)
-		return ..()//doesnt block
+		return
 	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))
 			var/ratio = rand(0,100)
@@ -361,7 +342,7 @@
 				to_chat(loc, "<span class='warning'>Your power armor absorbs the projectile's impact!</span>")
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	return ..()
+	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"

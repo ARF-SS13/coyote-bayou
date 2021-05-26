@@ -22,6 +22,8 @@
 	to_chat(user, "The helmet is at [armor_durability] durability and is providing [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance.")
 
 /obj/item/clothing/head/helmet/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(damage == 0)
+		return ..()
 	if(def_zone in protected_zones)
 		damage_armor()
 	. = ..()

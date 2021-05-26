@@ -5,7 +5,7 @@
 	display_name = "Basic Robotics Research"
 	description = "Programmable machines that make our lives lazier."
 	prereq_ids = list("base")
-	design_ids = list("paicard")
+	design_ids = list("paicard", "drone_shell")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 
 /datum/techweb_node/mmi
@@ -23,6 +23,7 @@
 	description = "Sapient robots with preloaded tool modules and programmable laws."
 	design_ids = list("robocontrol", "sflash", "borg_suit", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
 	"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
+*/
 
 /datum/techweb_node/adv_robotics
 	id = "adv_robotics"
@@ -31,7 +32,7 @@
 	prereq_ids = list("robotics")
 	design_ids = list("borg_upgrade_diamonddrill", "borg_upgrade_advancedmop", "borg_upgrade_advcutter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
-*/
+
 
 /datum/techweb_node/neural_programming
 	id = "neural_programming"
@@ -48,7 +49,6 @@
 	design_ids = list("mmi_posi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
-/*
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
 	display_name = "Cyborg Upgrades: Utility"
@@ -73,6 +73,7 @@
 	design_ids = list("borg_upgrade_vtec", "borg_upgrade_disablercooler")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 
+/*
 /datum/techweb_node/ai
 	id = "ai"
 	display_name = "Artificial Intelligence"
