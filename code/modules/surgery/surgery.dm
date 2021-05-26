@@ -20,7 +20,13 @@
 	var/replaced_by
 	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
 	var/datum/wound/targetable_wound							//The wound type this surgery targets
-	var/requires_trait = 1						//0 = low, 1 = mid, 2 = high, 3 = extraterrestrial/futurisitic
+	var/requires_trait = 1
+	//	0 = low, 1 = mid, 2 = high
+	//	(CMO biological/prewar knoweldge expert) MEDICALEXPERT
+	//	(Follower) Practitioner (Follower Admin) Practitioner_expert
+	//	(Senior BOS scribe) cyberneticist,(BOS Head Scribe) cyberneticist_expert
+	//	(Enclave Scientist) unethical practitioner
+	//	(Zetans?) abductor= "ABDUCTOR"
 
 /datum/surgery/New(surgery_target, surgery_location, surgery_bodypart)
 	..()
@@ -51,8 +57,48 @@
 		return FALSE
 		//
 
-	if(requires_trait>3)
+/* Advanced biological and robotic surgeries */
+
+	if(requires_trait== "ABDUCTOR") //Actual alien abductions
 		if(HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "UNETHICAL_PRACTITIONER") //brainwashing, romerol revivication, viral bonding, combat implants
+		if(HAS_TRAIT(user,TRAIT_UNETHICAL_PRACTITIONER)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation,
+		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "CYBERNETICIST_1") //follower
+		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "PRACTITIONER_2") //robotic brain surgery, implants
+		if(HAS_TRAIT(user,TRAIT_PRACTITIONER_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "PRACTITIONER_1") //robotic repairs
+		if(HAS_TRAIT(user,TRAIT_PRACTITIONER)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+/* Biological anatomy patient surgeries*/
+
+	if(requires_trait== "MEDICALEXPERT")
+		if(HAS_TRAIT(user,TRAIT_MEDICALEXPERT)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
