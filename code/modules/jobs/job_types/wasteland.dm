@@ -697,10 +697,10 @@ Raider
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 
 /datum/outfit/loadout/desert_ranger
-	name = "Desert Ranger"
+	name = "Desert Ranger"	
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	gloves = /obj/item/clothing/gloves/f13/military
-	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	backpack_contents = list(
 							/obj/item/ammo_box/m44box/swc=2
