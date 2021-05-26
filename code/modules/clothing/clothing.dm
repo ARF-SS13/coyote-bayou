@@ -306,8 +306,8 @@
 	if(armor.acid)
 		durability_list += list("ACID" = armor.acid)
 
-	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
-		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+	//if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
+	//	. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()

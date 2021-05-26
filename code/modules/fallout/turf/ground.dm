@@ -133,17 +133,24 @@
 	var/storedindex = 0			//amount of stored items
 	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
-	var/obj/item/salvage/salvage //or salvage
+	var/obj/salvage //or salvage
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
+	var/list/loots = list(
+						/obj/item/stack/crafting/metalparts/five = 50,
+						/obj/item/stack/crafting/goodparts/five = 50,
+						/obj/item/stack/ore/blackpowder/twenty = 10,
+						/obj/effect/spawner/lootdrop/f13/armor/random_high = 3,
+						/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high = 3
+						)
+
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
 	if(prob(1))
-		salvage = new /obj/item/salvage/low()
-		if(prob(15))
-			salvage = new /obj/item/salvage/high()
+		var/obj/derp = pickweight(loots)
+		salvage = new derp()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 	if(icon_state != "wasteland")

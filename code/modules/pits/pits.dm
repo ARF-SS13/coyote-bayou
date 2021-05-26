@@ -233,6 +233,8 @@ obj/dugpit/New(lnk)
 		if (user!=null)
 			to_chat(user, "<span class='notice'>You have uncovered some salvage.</span>")
 		salvage.loc = mypit.loc
+		if(istype(salvage,/obj/effect/spawner/lootdrop))
+			salvage.Initialize()
 	gravebody = null
 	gravecoffin = null
 	salvage = null

@@ -1219,12 +1219,16 @@
 /obj/item/experimental/proc/parmor(obj/item/W, mob/user)
 	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
 	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
+	if(A.powered)
+		to_chat(user,"You cannot improve this any further.")
+		return
 	if(prob(20))
-		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))//ups raider to salvaged
+		to_chat(user,"You manage to restore the Power Armor!")
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/raiderpa))
 			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
-		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))//ups hotrod to salvaged
+		if(istype(A,/obj/item/clothing/suit/armor/f13/power_armor/hotrod))
 			new /obj/item/clothing/suit/armor/f13/power_armor/t45b/restored(user.loc)
 			qdel(A)
 			return
@@ -1242,12 +1246,16 @@
 
 /obj/item/experimental/proc/pahat(obj/item/W, mob/user)
 	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
+	if(A.powered)
+		to_chat(user,"You cannot improve this any further.")
+		return
 	if(prob(20))
-		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))//ups raider to salvaged
+		to_chat(user,"You manage to restore the Power Armor helmet!")
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm))
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return
-		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))//ups hotrod to salvaged
+		if(istype(H,/obj/item/clothing/head/helmet/f13/power_armor/hotrod))
 			new /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored(user.loc)
 			qdel(H)
 			return

@@ -433,7 +433,6 @@
 	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45d,
-				/obj/item/fusion_fuel
 				)
 
 /obj/effect/spawner/bundle/f13/armor/t51b
@@ -441,7 +440,6 @@
 	items = list(
 				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
 				/obj/item/clothing/head/helmet/f13/power_armor/t51b,
-				/obj/item/fusion_fuel
 				)
 
 
