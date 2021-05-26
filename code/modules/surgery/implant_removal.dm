@@ -1,9 +1,11 @@
 /datum/surgery/implant_removal
-	name = "implant removal"
+	name = "Implant removal"
 	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/extract_implant, /datum/surgery_step/close)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
+	//Its easier to pull stuff out than it is to put it back in.
 	requires_trait = 2
+
 //extract implant
 /datum/surgery_step/extract_implant
 	name = "extract implant"
@@ -59,3 +61,6 @@
 		/datum/surgery_step/extract_implant,
 		/datum/surgery_step/mechanic_wrench,
 		/datum/surgery_step/mechanic_close)
+	requires_trait = "PRACTITIONER_2" //Most skilled amongst followers at a senior scribe level.
+	requires_trait = "CYBERNETICIST_2" //high skill head scribes EI:Reginald Rothchild.
+	requires_trait = "CYBERNETICIST_1" //Intermediary surgically & mechanically skilled scribes.

@@ -16,6 +16,9 @@
 	ignore_clothes = TRUE
 	var/antispam = FALSE
 	var/healing_step_type = /datum/surgery_step/robot_heal/basic
+	requires_trait = "PRACTITIONER_2" //Most skilled amongst followers at a senior scribe level.
+	requires_trait = "CYBERNETICIST_2" //high skill head scribes EI:Reginald Rothchild.
+	requires_trait = "CYBERNETICIST_1" //Intermediary surgically & mechanically skilled scribes..
 
 /datum/surgery/robot_healing/New(surgery_target, surgery_location, surgery_bodypart)
 	..()

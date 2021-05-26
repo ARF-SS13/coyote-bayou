@@ -219,7 +219,7 @@ Scientist
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src) //they need this for dissections
 
 /*
 Security Officer

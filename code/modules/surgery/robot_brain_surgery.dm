@@ -12,6 +12,7 @@
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ROBOTIC
 	desc = "A surgical procedure that restores the default behavior logic and personality matrix of an IPC posibrain."
+	requires_trait = "CYBERNETICIST_2" //high skill head scribes EI:Reginald Rothchild
 
 /datum/surgery_step/fix_robot_brain
 	name = "fix posibrain (multitool)"
