@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(brotherhood_command_positions, list(
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Paladin",
 	"Head Knight",
-	"Head Scribe"
+	"Head Scribe",
 	"Star Paladin",
 	"Paladin",
 	"Star Knight",
