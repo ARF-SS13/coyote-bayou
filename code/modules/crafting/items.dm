@@ -1246,7 +1246,7 @@
 
 /obj/item/experimental/proc/pahat(obj/item/W, mob/user)
 	var/obj/item/clothing/head/helmet/f13/power_armor/H = W
-	if(A.powered)
+	if(H.powered)
 		to_chat(user,"You cannot improve this any further.")
 		return
 	if(prob(20))

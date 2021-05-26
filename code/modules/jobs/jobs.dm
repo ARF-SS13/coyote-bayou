@@ -285,6 +285,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Wastelander",
+	"Vigilante"
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(

@@ -705,7 +705,6 @@ Veteran Ranger
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)

@@ -615,7 +615,9 @@
 	var/healtoxinlover = FALSE
 
 /datum/reagent/medicine/pen_acid/on_mob_life(mob/living/carbon/M)
-	M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
+	//M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
+	if(M.radiation > 0)
+		M.radiation -= min(M.radiation, 8)
 	M.adjustToxLoss(-2*REM, 0, healtoxinlover)
 	for(var/A in M.reagents.reagent_list)
 		var/datum/reagent/R = A

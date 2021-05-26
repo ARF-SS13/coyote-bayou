@@ -654,3 +654,55 @@ Raider
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 
+//vigilante
+
+/datum/job/wasteland/f13vigilante
+	title = "Vigilante"
+	flag = F13VIGILANTE
+	faction = "Wastelander"
+	total_positions = 4
+	spawn_positions = 4
+	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent."
+	supervisors = "your fellow vigilantes"
+	selection_color = "#76885f"
+	exp_requirements = 600
+	exp_type = EXP_TYPE_WASTELAND
+
+	outfit = /datum/outfit/job/wasteland/f13vigilante
+
+	loadout_options = list(
+							/datum/outfit/loadout/desert_ranger)
+
+/datum/outfit/job/wasteland/f13vigilante
+	name = "Vigilante"
+	jobtype = /datum/job/wasteland/f13vigilante
+
+	id = /obj/item/card/id/dogtag/vigilante
+	belt = /obj/item/storage/belt/military
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	l_pocket = /obj/item/kitchen/knife/combat
+	r_pocket = /obj/item/flashlight/seclite
+	uniform = /obj/item/clothing/under/f13/merca
+	backpack = /obj/item/storage/backpack/satchel/trekker
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=4, \
+		/obj/item/reagent_containers/pill/radx=1, \
+		/obj/item/storage/bag/money/small/wastelander)
+
+/datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
+
+/datum/outfit/loadout/desert_ranger
+	name = "Desert Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat/desert
+	gloves = /obj/item/clothing/gloves/f13/military
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
+	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
+	backpack_contents = list(
+							/obj/item/ammo_box/m44box/swc=2
+							)
+

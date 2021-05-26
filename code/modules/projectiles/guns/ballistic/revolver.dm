@@ -589,6 +589,11 @@
 	extra_damage = 2
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
+/obj/item/gun/ballistic/revolver/revolver44/desert_ranger
+	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
+	fire_delay = 3
+	extra_damage = 5
+
 /obj/item/gun/ballistic/revolver/revolver45
 	name = "\improper .45 colt revolver"
 	desc = "A Colt Single Action Army retooled to accept .45 ACP catridges. A classic piece of Americana."
