@@ -5,7 +5,7 @@
 	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
 	requires_bodypart = FALSE //need a missing limb
 	requires_bodypart_type = 0
-	requires_trait = 1
+	requires_trait = 1 //ask a priestess or ideally a friend to attach deadly weapons, not followers.
 /datum/surgery/prosthetic_replacement/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!iscarbon(target))
 		return 0
