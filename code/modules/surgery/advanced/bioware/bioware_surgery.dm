@@ -1,7 +1,7 @@
 /datum/surgery/advanced/bioware
 	name = "enhancement surgery"
 	var/bioware_target = BIOWARE_GENERIC
-	requires_trait = 3
+	requires_trait = "ABDUCTOR"
 
 /datum/surgery/advanced/bioware/can_start(mob/user, mob/living/carbon/human/target, obj/item/tool)
 	if(!..())
