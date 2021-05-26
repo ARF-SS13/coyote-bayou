@@ -105,13 +105,13 @@
 	value_multiplier = 5
 	replaced_by = /datum/surgery/advanced/experimental_dissection/alien
 	requires_tech = TRUE
-	requires_trait = 3
+	requires_trait = "UNETHICAL_PRACTITIONER"
 
 /datum/surgery/advanced/experimental_dissection/alien
 	name = "Extraterrestrial Dissection"
 	value_multiplier = 10
 	requires_tech = TRUE
 	replaced_by = null
-	requires_trait = 3
+	requires_trait = "ABDUCTOR"
 
 #undef BASE_HUMAN_REWARD
