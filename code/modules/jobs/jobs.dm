@@ -180,6 +180,9 @@ GLOBAL_LIST_INIT(brotherhood_command_positions, list(
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
+	"Head Paladin",
+	"Head Knight",
+	"Head Scribe"
 	"Star Paladin",
 	"Paladin",
 	"Star Knight",
@@ -223,7 +226,9 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Auxilia",
 	"Camp Follower",
 	"Legion Slave",
-	"Legion Vexillarius"
+	"Legion Vexillarius",
+	"Legion Centurion",
+	"Legion Venator"
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
@@ -319,7 +324,8 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Doctor",
 	"Followers Guard",
 	"Followers Volunteer",
-	"Followers Scientist"
+	"Followers Scientist",
+	"Followers Administrator"
 ))
 
 
