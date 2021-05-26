@@ -591,7 +591,7 @@
 
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
-	fire_delay = 3
+	fire_delay = 2.5
 	extra_damage = 6
 	extra_penetration = 0.1
 
