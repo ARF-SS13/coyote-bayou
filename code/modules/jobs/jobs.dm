@@ -334,7 +334,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 
-	EXP_TYPE_FALLOUT       = list("titles" = brotherhood_positions | den_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions)
+	EXP_TYPE_FALLOUT       = list("titles" = brotherhood_positions | den_positions | legion_positions | ncr_positions | vault_positions | wasteland_positions | tribal_positions | followers_positions | enclave_positions),
 
 	EXP_TYPE_BROTHERHOOD   = list("titles" = brotherhood_positions),
 	EXP_TYPE_DEN           = list("titles" = den_positions ),
