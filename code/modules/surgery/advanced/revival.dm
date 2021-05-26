@@ -1,5 +1,5 @@
 /datum/surgery/advanced/revival
-	name = "Revival"
+	name = "Cerebral Stimulation Revival"
 	desc = "An experimental surgical procedure which involves reconstruction and reactivation of the patient's brain even long after death. The body must still be able to sustain life."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,
@@ -12,7 +12,7 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_HEAD)
 	requires_bodypart_type = 0
-	requires_trait = 3
+	requires_trait = "MEDICALEXPERT"
 
 /datum/surgery/advanced/revival/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	return FALSE
