@@ -75,8 +75,8 @@
 	name = "armor repair kit"
 	desc = "A repair kit used to repair armor."
 
-	icon = 'icons/obj/power.dmi'
-	icon_state = "cell"
+	icon = 'icons/fallout/objects/tools.dmi'
+	icon_state = "repairkitarmor"
 	item_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'	
@@ -85,6 +85,7 @@
 /obj/item/repair_kit/pa
 	name = "power armor repair kit"
 	desc = "A specialized repair kit used to repair power armor."
+	icon_state = "repairkitPA"
 
 /obj/item/clothing/Initialize()
 	. = ..()
