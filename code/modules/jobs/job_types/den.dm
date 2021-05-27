@@ -288,6 +288,7 @@ Mayor
 	jobtype = /datum/job/den/f13dendoc
 	chemwhiz = TRUE
 	uniform = /obj/item/clothing/under/f13/medic
+	eyes = /obj/item/clothing/glasses/hud/health
 	ears = /obj/item/radio/headset/headset_den
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
