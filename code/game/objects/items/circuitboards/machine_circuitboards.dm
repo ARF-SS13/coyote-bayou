@@ -460,7 +460,6 @@
 		/obj/machinery/smartfridge/extract = "slimes",
 		/obj/machinery/smartfridge/organ = "organs",
 		/obj/machinery/smartfridge/chemistry = "chems",
-		/obj/machinery/smartfridge/chemistry/virology = "viruses",
 		/obj/machinery/smartfridge/disks = "disks")
 	needs_anchored = FALSE
 
