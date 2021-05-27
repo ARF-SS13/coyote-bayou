@@ -170,55 +170,6 @@
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////// Virology ////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-
-/datum/supply_pack/medical/virus
-	name = "Virus Crate"
-	desc = "Contains twelve different bottles, containing several viral samples for virology research. Also includes seven beakers and syringes. Balled-up jeans not included. Requires CMO access to open."
-	cost = 2500
-	access = ACCESS_CMO
-	contains = list(/obj/item/reagent_containers/glass/bottle/flu_virion,
-					/obj/item/reagent_containers/glass/bottle/cold,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/random_virus,
-					/obj/item/reagent_containers/glass/bottle/fake_gbs,
-					/obj/item/reagent_containers/glass/bottle/magnitis,
-					/obj/item/reagent_containers/glass/bottle/pierrot_throat,
-					/obj/item/reagent_containers/glass/bottle/brainrot,
-					/obj/item/reagent_containers/glass/bottle/anxiety,
-					/obj/item/reagent_containers/glass/bottle/beesease,
-					/obj/item/storage/box/syringes,
-					/obj/item/storage/box/beakers,
-					/obj/item/reagent_containers/glass/bottle/mutagen)
-	crate_name = "virus crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-	dangerous = TRUE
-	can_private_buy = FALSE
-
-/datum/supply_pack/medical/anitvirus
-	name = "Virus Containment Crate"
-	desc = "Viro let out a death plague Mk II again? Someone didn't wash their hands? Old plagues born anew? Well, this crate is for you! Hope you cure it before it breaks out of the station... This crate needs medical access to open and has two bio suits, a box of needles and beakers, five spaceacillin needles, and a medibot."
-	cost = 3000
-	access = ACCESS_MEDICAL
-	contains = list(/mob/living/simple_animal/bot/medbot,
-					/obj/item/clothing/head/bio_hood,
-					/obj/item/clothing/head/bio_hood,
-					/obj/item/clothing/suit/bio_suit,
-					/obj/item/clothing/suit/bio_suit,
-					/obj/item/reagent_containers/syringe/antiviral,
-					/obj/item/reagent_containers/syringe/antiviral,
-					/obj/item/reagent_containers/syringe/antiviral,
-					/obj/item/reagent_containers/syringe/antiviral,
-					/obj/item/reagent_containers/syringe/antiviral,
-					/obj/item/storage/box/syringes,
-					/obj/item/storage/box/beakers)
-	crate_name = "virus containment unit crate"
-	crate_type = /obj/structure/closet/crate/secure/plasma
-
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
 	desc = "Contains eight different medipens in three different varieties, to assist in quickly treating seriously injured patients."
