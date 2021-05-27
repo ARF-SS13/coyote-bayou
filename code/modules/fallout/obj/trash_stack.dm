@@ -59,7 +59,7 @@
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "safe"
 	anchored = TRUE
-	density = FALSE
+	density = TRUE
 	var/list/paid_players = list()
 	var/list/pay = list(/obj/item/stack/f13Cash/random/med)
 
