@@ -97,7 +97,6 @@
 	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
 	extra_projectiles = 1;
 	faction = list("wastebot");
-	health = 250;
 	loot = null;
 	name = "mutated enclave soldier";
 	speak = list("AUUGHGHHH!");
@@ -136,10 +135,6 @@
 "db" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -174,14 +169,14 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "ee" = (
-/obj/machinery/door/poddoor{
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70);
-	id = eairlock
+/mob/living/simple_animal/hostile/handy/gutsy{
+	desc = "A pre-war Mr. Gutsy model combat robot, given Enclave insignias and a massive, specially mounted CZ57 Avenger minigun. Uh oh.";
+	extra_projectiles = 15;
+	name = "Mr. General";
+	projectiletype = /obj/item/projectile/bullet/a127mm
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	dir = 4;
-	icon_state = "bluemark"
+	icon_state = "redrustyfull"
 	},
 /area/f13/tunnel)
 "en" = (
@@ -227,10 +222,6 @@
 "eM" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/east,
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -530,11 +521,11 @@
 	},
 /area/f13/tunnel)
 "oy" = (
-/obj/machinery/button{
-	id = 198;
-	pixel_x = -25
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/assaultron,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
 	},
-/turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "oL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -550,12 +541,17 @@
 /area/f13/tunnel)
 "pf" = (
 /mob/living/simple_animal/hostile/enclave/soldier{
+	aggro_vision_range = 15;
+	armour_penetration = 1;
 	desc = "What visibly appears to be a proud Enclave soldier clad in armor is in actuality a grotesque, FEV-exposed mutant grafted to the interior of his suit, never able to leave. You've gotten a lot farther than you should have...";
-	extra_projectiles = 2;
+	extra_projectiles = 20;
 	faction = list("wastebot");
-	health = 1500;
+	health = 3000;
 	loot = list(/obj/item/keycard/library);
-	melee_damage_upper = 60;
+	maxHealth = 3000;
+	melee_damage_lower = 100;
+	melee_damage_upper = 100;
+	melee_queue_distance = 10;
 	name = "Captain Arlem";
 	speak = list("Die... mutie!","AAAAUHGHHHH!","DIE!","Perish!","FOR THE ENCLAVE!");
 	speak_chance = 10;
@@ -579,12 +575,13 @@
 /mob/living/simple_animal/hostile/ghoul/wyomingghost{
 	desc = "A happily proud Enclave commander, mutated and boiled alive by the forced evolutionary virus. His armor looks to be sunken into his flesh.";
 	faction = list("wastebot");
-	health = 1000;
+	health = 1500;
+	maxHealth = 1500;
 	name = "Commander Dirsk";
 	speak = list("For the Enclave!","Long live America!","Die, mutie!","AAAAAGGH!!","AUGUHGHHH!"));
 	speak_chance = 10;
-	speed = -0.5;
-	unarmed_attack_speed = 4
+	speed = -1;
+	unarmed_attack_speed = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -592,9 +589,11 @@
 	},
 /area/f13/tunnel)
 "px" = (
-/obj/structure/reagent_dispensers/barrel/four,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/mob/living/simple_animal/hostile/handy/assaultron,
+/turf/open/floor/f13{
+	icon_state = "redrustyfull"
+	},
+/area/f13/tunnel)
 "pK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice,
@@ -643,7 +642,6 @@
 	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
 	extra_projectiles = 1;
 	faction = list("wastebot");
-	health = 250;
 	loot = null;
 	name = "mutated enclave soldier";
 	speak = list("AUUGHGHHH!");
@@ -682,15 +680,11 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "ta" = (
+/obj/machinery/door/keycard{
+	puzzle_id = "library"
+	},
 /obj/structure/simple_door/metal/ventilation,
-/obj/machinery/door/poddoor{
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70);
-	id = 198;
-	name = "quarantine door"
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "tw" = (
 /obj/structure/reagent_dispensers/barrel/three,
@@ -760,14 +754,9 @@
 	},
 /area/f13/tunnel)
 "vn" = (
-/obj/machinery/door/poddoor{
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70);
-	id = eairlock
-	},
-/turf/open/floor/f13{
-	dir = 10;
-	icon_state = "bluemark"
-	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/assaultron,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vo" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -1154,13 +1143,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "Hd" = (
-/obj/machinery/button{
-	id = eairlock;
-	pixel_y = 25
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/assaultron{
+	aggro_vision_range = 30;
+	desc = "A prototype assaultron with (visibly) upgraded leg motors and hydraulics. It's painted in Enclave markings.";
+	dir = 4;
+	health = 1500;
+	maxHealth = 1500;
+	name = "PCU-11";
+	speed = -0.5
 	},
-/turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "Hl" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
@@ -1365,13 +1358,6 @@
 	icon_state = "redmark"
 	},
 /area/f13/tunnel)
-"Oz" = (
-/obj/machinery/button{
-	id = eairlock;
-	pixel_x = -25
-	},
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/tunnel)
 "OI" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/bottle/mutagen,
@@ -1435,10 +1421,6 @@
 "RO" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -1651,6 +1633,7 @@
 /area/f13/tunnel)
 "XP" = (
 /obj/effect/decal/cleanable/glass,
+/mob/living/simple_animal/hostile/handy/assaultron,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -1737,10 +1720,6 @@
 "Zk" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
-/obj/machinery/power/tesla_coil/research{
-	desc = "A modified military-grade tesla coil constantly exchanging energy throughout. It looks to be recently used.";
-	name = "tesla charge inducer"
-	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -2271,7 +2250,7 @@ QU
 Zh
 Wq
 Wq
-TD
+qB
 Zh
 QU
 QU
@@ -2463,8 +2442,8 @@ Wq
 Wq
 Vv
 wM
-Vv
-Vv
+hL
+hL
 If
 Pr
 Zh
@@ -2493,8 +2472,8 @@ QU
 QU
 Zh
 lW
-TD
-TD
+zs
+hL
 LK
 Zh
 de
@@ -2502,7 +2481,7 @@ Wq
 qb
 Zh
 wC
-Vv
+hL
 ZL
 fL
 Zh
@@ -2693,7 +2672,7 @@ NS
 If
 Zh
 us
-Vv
+hL
 mZ
 NS
 RZ
@@ -2718,7 +2697,7 @@ SR
 "}
 (26,1,1) = {"
 Zh
-Vv
+ee
 pi
 Vv
 TP
@@ -2726,14 +2705,14 @@ TD
 Or
 TD
 Wq
-Vv
+px
 TD
 DG
 Fm
 Vv
 Wq
-Vv
-Vv
+hL
+de
 yX
 kE
 kE
@@ -2917,7 +2896,7 @@ Nb
 Zh
 Qq
 dY
-Vv
+hL
 Zh
 gr
 iA
@@ -2950,7 +2929,7 @@ QU
 Zh
 uU
 Ca
-If
+oy
 Vv
 Zh
 kE
@@ -2958,7 +2937,7 @@ Kp
 kJ
 Zh
 bA
-Vv
+hL
 Au
 VT
 Zh
@@ -3025,7 +3004,7 @@ BH
 QU
 Zh
 Vv
-If
+oy
 If
 Jh
 Zh
@@ -3150,7 +3129,7 @@ Zh
 QU
 PI
 Wv
-oy
+sZ
 QU
 QU
 QU
@@ -3182,7 +3161,7 @@ QU
 QU
 Zh
 Vv
-Vv
+hL
 Wq
 Zh
 QU
@@ -3236,7 +3215,7 @@ ez
 aQ
 aS
 jl
-ZL
+Hd
 kM
 wb
 lM
@@ -3258,7 +3237,7 @@ QU
 Zh
 Zh
 aS
-Wq
+qB
 Ro
 Zh
 Zh
@@ -3463,11 +3442,11 @@ QU
 QU
 QU
 Zh
-Zh
+pg
 pg
 es
 es
-Zh
+pg
 Zh
 QU
 QU
@@ -3501,7 +3480,7 @@ QU
 QU
 QU
 Zh
-Hd
+LO
 jl
 mX
 iC
@@ -3539,11 +3518,11 @@ QU
 QU
 QU
 Zh
-Zh
-vn
-ee
-ee
-Zh
+pg
+pg
+es
+es
+pg
 Zh
 QU
 BH
@@ -3577,11 +3556,11 @@ QU
 QU
 sZ
 Wv
-Oz
+sZ
 kE
 ba
 sZ
-QU
+qz
 QU
 QU
 BH
@@ -3617,8 +3596,8 @@ Wv
 KL
 xa
 qz
-px
-QU
+Yr
+kE
 QU
 QU
 BH
@@ -3646,7 +3625,7 @@ QU
 MC
 UF
 Wv
-Wv
+vn
 mk
 kE
 Wv
@@ -3686,7 +3665,7 @@ QU
 Hl
 tw
 qz
-mC
+mk
 kE
 kU
 tN
