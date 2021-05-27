@@ -292,16 +292,6 @@
 	text += " vine."
 	. += text
 
-/obj/structure/spacevine/Destroy()
-	for(var/datum/spacevine_mutation/SM in mutations)
-		SM.on_death(src)
-	if(master)
-		master.VineDestroyed(src)
-	mutations = list()
-	set_opacity(0)
-	if(has_buckled_mobs())
-		unbuckle_all_mobs(force=1)
-	return ..()
 
 /obj/structure/spacevine/proc/on_chem_effect(datum/reagent/R)
 	var/override = 0
