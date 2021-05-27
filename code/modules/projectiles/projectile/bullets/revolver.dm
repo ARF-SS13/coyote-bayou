@@ -84,3 +84,10 @@
 	armour_penetration = 0.18 //0.22
 	wound_bonus = 48
 	bare_wound_bonus = 48
+
+/obj/item/projectile/bullet/c4570/explosive
+	name = ".45-70 explosive bullet"
+
+/obj/item/projectile/bullet/c4570/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 0, 1, 1, flame_range = 1)

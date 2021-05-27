@@ -86,6 +86,13 @@
 	wound_bonus = 20
 	bare_wound_bonus = -20
 
+/obj/item/projectile/bullet/a473/explosive
+	name = "4.73 explosive bullet"
+
+/obj/item/projectile/bullet/a473/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 0, 1, 0, adminlog = FALSE, flame_range = 1)
+
 //2mm Electromagnetic
 /obj/item/projectile/bullet/c2mm
 	damage = 55

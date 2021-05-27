@@ -582,6 +582,14 @@
 /obj/item/ammo_box/c4570/empty
 	start_empty = 1
 
+/obj/item/ammo_box/c4570/explosive
+	name = "speed loader (.45-70 explosive)"
+	icon_state = "4570"
+	caliber = "4570"
+	ammo_type = /obj/item/ammo_casing/c4570/explosive
+	max_ammo = 6
+	multiple_sprites = 1
+
 /obj/item/ammo_box/tube/c4570
 	name = "speed loader tube (.45-70)"
 	desc = "Designed to quickly reload repeaters."

@@ -592,8 +592,8 @@
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
 	fire_delay = 2.5
-	extra_damage = 6
-	extra_penetration = 0.1
+	extra_damage = 15
+	extra_penetration = 0.25
 
 /obj/item/gun/ballistic/revolver/revolver45
 	name = "\improper .45 colt revolver"
@@ -684,6 +684,11 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	fire_delay = 4
+
+/obj/item/gun/ballistic/revolver/sequoia/death
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	fire_delay = 0
 
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"

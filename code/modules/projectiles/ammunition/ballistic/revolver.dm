@@ -53,3 +53,8 @@
 	name = ".45-70 SWC bullet casing"
 	desc = "A .45-70 semi-wadcutter bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c4570/swc
+
+/obj/item/ammo_casing/c4570/explosive
+	name = ".45-70 explosive bullet casing"
+	desc = "A .45-70 explosive bullet casing."
+	projectile_type = /obj/item/projectile/bullet/c4570/explosive

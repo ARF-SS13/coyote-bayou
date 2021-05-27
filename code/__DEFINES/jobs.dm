@@ -132,6 +132,7 @@
 #define F13DETECTIVE	(1<<5)
 #define EVENTCOVEN		(1<<6)
 #define F13VIGILANTE	(1<<7)
+#define F13ADMINBOOS	(1<<8)
 
 #define ENCLAVE			(1<<9)
 
