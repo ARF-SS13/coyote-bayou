@@ -660,10 +660,10 @@ Raider
 	title = "Vigilante"
 	flag = F13VIGILANTE
 	faction = "Wastelander"
-	total_positions = 4
-	spawn_positions = 4
-	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent."
-	supervisors = "your fellow vigilantes"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the factions, that is not your fight."
+	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 600
 	exp_type = EXP_TYPE_WASTELAND
@@ -671,7 +671,8 @@ Raider
 	outfit = /datum/outfit/job/wasteland/f13vigilante
 
 	loadout_options = list(
-							/datum/outfit/loadout/desert_ranger)
+							/datum/outfit/loadout/desert_ranger,
+							/datum/outfit/loadout/bounty_hunter)
 
 /datum/outfit/job/wasteland/f13vigilante
 	name = "Vigilante"
@@ -687,6 +688,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=4, \
 		/obj/item/reagent_containers/pill/radx=1, \
+		/obj/item/restraints/handcuffs=2, \
 		/obj/item/storage/bag/money/small/wastelander)
 
 /datum/outfit/job/wasteland/f13vigilante/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -706,3 +708,14 @@ Raider
 							/obj/item/ammo_box/m44box/swc=2
 							)
 
+/datum/outfit/loadout/bounty_hunter
+	name = "Bounty Hunter"
+	head = /obj/item/clothing/suit/armor/f13/combat/mk2/dark
+	suit = /obj/item/clothing/head/helmet/f13/combat/mk2/dark
+	gloves = /obj/item/clothing/gloves/f13/military
+	r_hand = /obj/item/gun/ballistic/automatic/mp5
+	backpack_contents = list(
+							/obj/item/ammo_box/magazine/uzim9mm=3,
+							/obj/item/ammo_box/magazine/uzim9mm/empty=1,
+							/obj/item/ammo_box/c9mm/ap=1
+							)

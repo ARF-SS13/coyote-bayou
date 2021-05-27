@@ -728,6 +728,10 @@
 /obj/item/clothing/gloves/boxing,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/brotherhood)
+"ayE" = (
+/obj/item/storage/money_stack,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood)
 "ayJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/two_tire,
@@ -19714,6 +19718,15 @@
 	icon_state = "outerpavementcorner"
 	},
 /area/f13/wasteland)
+"ncX" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/item/storage/money_stack/ncr,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/ncr)
 "nda" = (
 /obj/machinery/workbench,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -20337,6 +20350,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"nAR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/money_stack/legion,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "nBn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/yellow/line{
@@ -46096,7 +46114,7 @@ xdt
 raV
 xdt
 xdt
-rPR
+ncX
 ezX
 cpK
 cpK
@@ -72810,7 +72828,7 @@ iFI
 jix
 qPL
 qPL
-qPL
+ayE
 iFI
 gcK
 gcK
@@ -98968,7 +98986,7 @@ hom
 mgg
 oMY
 oMY
-oMY
+nAR
 uNK
 dpK
 seY

@@ -50,3 +50,44 @@
 		loot_players += user
 	else
 		return ..()
+
+
+
+/obj/item/storage/money_stack
+	name = "payroll safe"
+	desc = "a payroll safe. Use it every hour to recieve your pay."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "safe"
+	anchored = TRUE
+	density = FALSE
+	var/list/paid_players = list()
+	var/list/pay = list(/obj/item/stack/f13Cash/random/med)
+
+/obj/item/storage/money_stack/ncr
+	pay = list(/obj/item/stack/f13Cash/random/ncr/med)
+
+/obj/item/storage/money_stack/legion
+	pay = list(/obj/item/stack/f13Cash/random/denarius/med)
+
+/obj/item/storage/money_stack/Initialize()
+	. = ..()
+	GLOB.money_piles += src
+
+/obj/item/storage/money_stack/Destroy()
+	GLOB.money_piles -= src
+	. = ..()
+
+/obj/item/storage/money_stack/attack_hand(mob/user)
+	var/turf/ST = get_turf(src)
+	if(user?.a_intent != INTENT_HARM)
+		if(user in paid_players)
+			to_chat(user, "<span class='notice'>You have already taken your pay from the [src].</span>")
+			return
+		for(var/i=0, i<rand(1,2), i++)
+			var/itemtype = pick(pay)
+			if(itemtype)
+				to_chat(user, "<span class='notice'>You get your pay from the [src].</span>")
+				new itemtype(ST)
+		paid_players += user
+	else
+		return ..()

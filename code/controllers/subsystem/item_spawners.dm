@@ -6,7 +6,6 @@ SUBSYSTEM_DEF(itemspawners)
 	log_game("Item Spawners Subsystem Firing")
 	message_admins("Item Spawners Subsystem Firing.")
 
-//	cleanup_trash()
 	restock_trash_piles()
 
 /obj/item
@@ -18,4 +17,5 @@ SUBSYSTEM_DEF(itemspawners)
 		for(var/obj/item/A in TS.loc.contents)
 			if(A.from_trash)
 				qdel(A)
-
+	for(var/obj/item/storage/money_stack/MS in GLOB.money_piles)
+		TS.paid_players.Cut()
