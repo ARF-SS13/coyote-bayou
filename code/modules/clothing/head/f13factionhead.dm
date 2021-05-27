@@ -67,6 +67,17 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/head/helmet/f13/raider/wastehound
+	name = "wastehound raider helmet"
+	desc = "(IV) A sack hood made out of a suspicious leather with tufts of hair sticking out. This mask would make Leatherface proud."
+	icon_state = "wastehound_hood_icon"
+	item_state = "raider_wastehound_hood"
+	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+
+/obj/item/clothing/head/helmet/f13/raider/wastehound/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/helmet/f13/raider/arclight
 	name = "arclight raider helmet"
 	desc = "(IV) An intimidating visor, however its eye protection qualities are compromised."
