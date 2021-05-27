@@ -86,6 +86,9 @@
 	bare_wound_bonus = 48
 
 /obj/item/projectile/bullet/c4570/explosive
+	damage = 10
+	armour_penetration = 1
+	pixels_per_second = TILES_TO_PIXELS(500)
 	name = ".45-70 explosive bullet"
 
 /obj/item/projectile/bullet/c4570/explosive/on_hit(atom/target, blocked = FALSE)
