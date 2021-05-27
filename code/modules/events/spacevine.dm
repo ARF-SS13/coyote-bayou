@@ -292,16 +292,6 @@
 	text += " vine."
 	. += text
 
-/obj/structure/spacevine/Destroy()
-	for(var/datum/spacevine_mutation/SM in mutations)
-		SM.on_death(src)
-	if(master)
-		master.VineDestroyed(src)
-	mutations = list()
-	set_opacity(0)
-	if(has_buckled_mobs())
-		unbuckle_all_mobs(force=1)
-	return ..()
 
 /obj/structure/spacevine/proc/on_chem_effect(datum/reagent/R)
 	var/override = 0
@@ -420,17 +410,6 @@
 		SM.on_birth(SV)
 	location.Entered(SV)
 	return SV
-
-/datum/spacevine_controller/proc/VineDestroyed(obj/structure/spacevine/S)
-	S.master = null
-	vines -= S
-	growth_queue -= S
-	if(!vines.len)
-		var/obj/item/seeds/kudzu/KZ = new(S.loc)
-		KZ.mutations |= S.mutations
-		KZ.set_potency(mutativeness * 10)
-		KZ.set_production((spread_cap / initial(spread_cap)) * 5)
-		qdel(src)
 
 /datum/spacevine_controller/process()
 	if(!LAZYLEN(vines))

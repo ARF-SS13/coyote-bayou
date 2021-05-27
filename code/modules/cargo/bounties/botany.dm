@@ -171,12 +171,6 @@
 
 //Harder Stuff (3600-7200)
 
-// /datum/bounty/item/botany/kudzu
-// 	name = "Kudzu Pods"
-// 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/kudzupod)
-// 	bonus_desc = "Store in a dry, dark place."
-// 	multiplier = 4
-
 /datum/bounty/item/botany/bungopit
 	name = "Bungo Pits"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/bungopit)

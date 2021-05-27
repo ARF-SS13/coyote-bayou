@@ -1,13 +1,3 @@
-/**
- * Kudzu Flower Bud
- *
- * A flower created by flowering kudzu which spawns a venus human trap after a certain amount of time has passed.
- *
- * A flower created by kudzu with the flowering mutation.  Spawns a venus human trap after 2 minutes under normal circumstances.
- * Also spawns 4 vines going out in diagonal directions from the bud.  Any living creature not aligned with plants is damaged by these vines.
- * Once it grows a venus human trap, the bud itself will destroy itself.
- *
- */
 /obj/structure/alien/resin/flower_bud_enemy //inheriting basic attack/damage stuff from alien structures
 	name = "flower bud"
 	desc = "A large pulsating plant..."

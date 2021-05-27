@@ -19,6 +19,16 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/raider/rebel
+	name = "rebel raider armor"
+	desc = "(IV) Rebel, rebel. Your face is a mess."
+	icon_state = "raider_rebel_icon"
+	item_state = "raider_rebel_armor"
+
+/obj/item/clothing/suit/armor/f13/raider/rebel/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/f13/raider/sadist
 	name = "sadist raider armor"
 	desc = "(IV) A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."

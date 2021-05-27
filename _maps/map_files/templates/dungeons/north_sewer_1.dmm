@@ -168,17 +168,6 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"ee" = (
-/mob/living/simple_animal/hostile/handy/gutsy{
-	desc = "A pre-war Mr. Gutsy model combat robot, given Enclave insignias and a massive, specially mounted CZ57 Avenger minigun. Uh oh.";
-	extra_projectiles = 15;
-	name = "Mr. General";
-	projectiletype = /obj/item/projectile/bullet/a127mm
-	},
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/tunnel)
 "en" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /obj/effect/decal/cleanable/dirt,
@@ -544,7 +533,7 @@
 	aggro_vision_range = 15;
 	armour_penetration = 1;
 	desc = "What visibly appears to be a proud Enclave soldier clad in armor is in actuality a grotesque, FEV-exposed mutant grafted to the interior of his suit, never able to leave. You've gotten a lot farther than you should have...";
-	extra_projectiles = 20;
+	extra_projectiles = 10;
 	faction = list("wastebot");
 	health = 3000;
 	loot = list(/obj/item/keycard/library);
@@ -2697,7 +2686,7 @@ SR
 "}
 (26,1,1) = {"
 Zh
-ee
+Vv
 pi
 Vv
 TP
