@@ -421,16 +421,6 @@
 	location.Entered(SV)
 	return SV
 
-/datum/spacevine_controller/proc/VineDestroyed(obj/structure/spacevine/S)
-	S.master = null
-	vines -= S
-	growth_queue -= S
-	if(!vines.len)
-		KZ.mutations |= S.mutations
-		KZ.set_potency(mutativeness * 10)
-		KZ.set_production((spread_cap / initial(spread_cap)) * 5)
-		qdel(src)
-
 /datum/spacevine_controller/process()
 	if(!LAZYLEN(vines))
 		qdel(src) //space vines exterminated. Remove the controller

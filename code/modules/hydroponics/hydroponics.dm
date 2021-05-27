@@ -610,7 +610,7 @@
 
 	else if(istype(O, /obj/item/seeds) && !istype(O, /obj/item/seeds/sample))
 		if(!myseed)
-			if(istype(O, /obj/item/seeds/kudzu))
+			if(istype(O, /obj/item/seeds/liberty))
 				investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]","kudzu")
 			if(!user.transferItemToLoc(O, src))
 				return
