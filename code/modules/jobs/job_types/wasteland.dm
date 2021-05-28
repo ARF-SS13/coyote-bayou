@@ -300,7 +300,6 @@ Raider
 	/datum/outfit/loadout/raider_sheriff,
 	/datum/outfit/loadout/raider_mafia,
 	/datum/outfit/loadout/raider_vault,
-	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion)
 
