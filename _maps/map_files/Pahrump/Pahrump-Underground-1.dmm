@@ -12405,7 +12405,9 @@
 /area/f13/ncr)
 "myX" = (
 /obj/structure/simple_door/bunker,
-/turf/open/space/basic,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
 /area/f13/enclave)
 "mzn" = (
 /turf/open/floor/f13/wood{
