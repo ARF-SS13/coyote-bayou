@@ -12,6 +12,7 @@
 	maxHealth = 160
 	healable = 0
 	speed = 1
+	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 28 //halved this on req
 	melee_damage_upper = 28 //as above
 	robust_searching = 1
