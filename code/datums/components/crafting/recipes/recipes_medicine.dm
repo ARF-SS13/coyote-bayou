@@ -58,6 +58,16 @@
 	time = 45
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/smell_salts
+	name = "Smelling salts"
+	result = /obj/item/smelling_salts/crafted
+	reqs = list(/datum/reagent/ammonia = 10,                                 //Ammonia forces a intake of respiratory breath reflex, which is the foundation of all good smelling salts.
+				/obj/item/reagent_containers/food/snacks/onion_slice = 4,    //Sliced onions, 2 total split into 4 slices.
+				/obj/item/reagent_containers/food/snacks/grown/garlic = 2,   //Pungent garlic.
+				/obj/item/reagent_containers/food/snacks/grown/bee_balm = 2) //Beebalm was a smelling salt utilized in the victorian era for vaporous herbal remedies to things like sore throats.
+	time = 50
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak

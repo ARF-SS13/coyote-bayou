@@ -891,22 +891,6 @@
 		return
 	return TRUE
 
-/mob/living/carbon/proc/can_revive_smellingsalts()
-	var/tlimit = DEFIB_TIME_LIMIT * 10
-	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(src))
-		return
-	if((world.time - timeofdeath) > tlimit)
-		return
-	if((getBruteLoss() >= 160) || (getFireLoss() >= 160))
-		return
-	if(!heart || (heart.organ_flags & ORGAN_FAILING))
-		return
-	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
-	if(QDELETED(BR) || BR.brain_death || (BR.organ_flags & ORGAN_FAILING) || suiciding)
-		return
-	return TRUE
-
 /mob/living/carbon/fully_heal(admin_revive = FALSE)
 	if(reagents)
 		reagents.clear_reagents()
