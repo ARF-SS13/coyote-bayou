@@ -447,7 +447,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/exile
 	id = /obj/item/card/id/rusted
 	backpack_contents = list(
-		/obj/effect/spawner/bundle/f13/mosin=1,
+		/obj/item/gun/ballistic/shotgun/mosin=1,
 		/obj/item/ammo_box/a762=2)
 
 /datum/outfit/loadout/raider_legion
