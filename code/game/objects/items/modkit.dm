@@ -4,28 +4,29 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "modkit"
 	w_class = WEIGHT_CLASS_NORMAL
-	var/target_item = null
+	var/list/target_items = list()
 	var/result_item = null
 
-/obj/item/modkit/attackby(obj/item/I, mob/user, params)
-	if(istype(I, target_item))
-		var/obj/item/R = new result_item
-		remove_item_from_storage(user)
-		user.put_in_hands(R)
+/obj/item/modkit/pre_attack(obj/item/I, mob/user)
+	if(is_type_in_list(I, target_items))
+		var/obj/item/R = new result_item(get_turf(user))
 		to_chat(user, "<span class='notice'>You apply the [src] to [I], using the custom parts to turn it into [R].</span>")
-		qdel(src)
+		remove_item_from_storage(I)
 		qdel(I)
+		user.put_in_hands(R)
+		qdel(src)
+		return TRUE
 	else
 		return ..()
 
 /obj/item/modkit/riotgear
 	name = "desert ranger riot gear modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/rangercombat
+	target_items = list(/obj/item/clothing/suit/armor/f13/rangercombat)
 	result_item = /obj/item/clothing/suit/armor/f13/rangercombat/desert
 
 /obj/item/modkit/riotgear_helmet
 	name = "desert ranger riot helmet modkit"
-	target_item = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	target_items = list(/obj/item/clothing/head/helmet/f13/ncr/rangercombat)
 	result_item = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 
 /obj/item/modkit/riotgear/fox
@@ -46,60 +47,61 @@
 
 /obj/item/modkit/thax_patrol
 	name = "modified patrol armor modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	target_items = list(/obj/item/clothing/suit/armor/f13/combat/ncr_patrol)
 	result_item = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol/thax
 
 /obj/item/modkit/shank
 	name = "follower's duster modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/raider
+	target_items = list(/obj/item/clothing/suit/armor/f13/raider)
 	result_item = /obj/item/clothing/suit/armor/f13/shankduster
 
 /obj/item/modkit/custom_excess
-	name = "Champion of Kanab's Armor modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/legion/palacent
+	name = "champion of kanab's armor modkit"
+	target_items = list(/obj/item/clothing/suit/armor/f13/legion/palacent)
 	result_item = /obj/item/clothing/suit/armor/f13/legion/palacent/custom_excess
 
 /obj/item/modkit/custom_excess_helmet
-	name = "Champion of Kanab's Helm modkit"
-	target_item = /obj/item/clothing/head/helmet/f13/legion/palacent
+	name = "champion of kanab's helm modkit"
+	target_items = list(/obj/item/clothing/head/helmet/f13/legion/palacent)
 	result_item = /obj/item/clothing/head/helmet/f13/legion/palacent/custom_excess
 
 /obj/item/modkit/piper_hat
 	name = "gambler's hat modkit"
-	target_item = /obj/item/clothing/head/f13/trailranger
+	target_items = list(/obj/item/clothing/head/f13/trailranger)
 	result_item = /obj/item/clothing/head/f13/flatranger
 
 /obj/item/modkit/piper_vest
 	name = "armoured poncho modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/trailranger
+	target_items = list(/obj/item/clothing/suit/armor/f13/trailranger)
 	result_item = /obj/item/clothing/suit/toggle/armor/f13/cloakranger
 
 /obj/item/modkit/digger_helm
 	name = "salvaged riot armor modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/raider
+	target_items = list(/obj/item/clothing/suit/armor/f13/raider)
 	result_item = /obj/item/clothing/suit/armor/f13/herbertranger
 
 /obj/item/modkit/digger_vest
 	name = "salvaged riot helmet modkit"
-	target_item = /obj/item/clothing/head/helmet/f13/raider
+	target_items = list(/obj/item/clothing/head/helmet/f13/raider)
 	result_item = /obj/item/clothing/head/helmet/f13/herbertranger
 
 /obj/item/modkit/diohelmet
 	name = "galerum lacertarex"
-	target_item = /obj/item/clothing/head/helmet/f13/legion/venator
+	target_items = list(/obj/item/clothing/head/helmet/f13/legion/venator)
 	result_item = /obj/item/clothing/head/helmet/f13/legion/venator/diohelmet
 
 /obj/item/modkit/trenchcoatfollowers
 	name = "followers trenchcoat modkit"
-	target_item = /obj/item/clothing/suit/armor/vest
+	target_items = list(/obj/item/clothing/suit/armor/vest)
 	result_item = /obj/item/clothing/suit/armor/vest/trench
 
 /obj/item/modkit/patrolduster
-	name = "Patrol Duster modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/raider
+	name = "patrol duster modkit"
+	target_items = list(/obj/item/clothing/suit/armor/f13/raider)
 	result_item = /obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
 
 /obj/item/modkit/wolfvest
 	name = "subdued ranger vest modkit"
-	target_item = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	target_items = list(/obj/item/clothing/suit/armor/f13/combat/ncr_patrol)
 	result_item = /obj/item/clothing/suit/armor/f13/modif_r_vest
+
