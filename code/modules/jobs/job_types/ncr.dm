@@ -786,7 +786,7 @@ Veteran Ranger
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub=1,
-		/obj/item/ammo_box/m44=3
+		/obj/item/ammo_box/m44=3,
 		/obj/item/ammo_box/m44box=1
 	)
 
