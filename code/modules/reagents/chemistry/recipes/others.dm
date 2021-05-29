@@ -613,11 +613,11 @@
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
 
-/datum/chemical_reaction/life
-	name = "Life"
-	id = "life"
-	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
-	required_temp = 374
+// /datum/chemical_reaction/life
+//	name = "Life"
+//	id = "life"
+//	required_reagents = list(/datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
+//	required_temp = 374
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, multiplier)
 	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life") // Lol.
