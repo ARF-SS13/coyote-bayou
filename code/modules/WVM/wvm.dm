@@ -116,7 +116,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 	if(is_available_category(Itm) && is_acceptable_item_state(Itm))
 		var/price = input(usr, "Enter price for " + Itm.name + ".", "Setup Price", basic_price) as null|text
-		if(!price)
+		if(!price || price<0)
 			return
 
 		content[Itm] = price
