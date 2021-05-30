@@ -620,7 +620,7 @@
 	required_temp = 374
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, multiplier)
-	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life") // Lol.
+	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life (friendly)", FRIENDLY_SPAWN) // a certain person keep abusing this to spawn like 20 mobs infront of ncr base 
 
 //This is missing, I'm adding it back (see tgwiki). Not sure why we don't have it.
 /datum/chemical_reaction/life_friendly
