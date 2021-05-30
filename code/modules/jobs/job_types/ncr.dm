@@ -733,6 +733,7 @@ Veteran Ranger
 	belt =	/obj/item/storage/belt/military/reconbandolier
 	head = /obj/item/clothing/head/beret/ncr_recon_ranger
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	neck = /obj/item/clothing/neck/cloak/ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 3,
 		/obj/item/storage/survivalkit_aid=1,
@@ -746,6 +747,7 @@ Veteran Ranger
 	suit =	/obj/item/clothing/suit/armor/f13/trailranger
 	belt =	/obj/item/storage/belt/military/NCR_Bandolier
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	neck = /obj/item/clothing/neck/cloak/ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
@@ -784,7 +786,8 @@ Veteran Ranger
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub=1,
-		/obj/item/ammo_box/a357=3
+		/obj/item/ammo_box/m44=3,
+		/obj/item/ammo_box/m44box=1
 	)
 
 /datum/outfit/loadout/rangermedic
