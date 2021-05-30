@@ -19,12 +19,6 @@
 				/obj/item/stack/sheet/cloth = 5)
 	tools = list(TOOL_FORGE)
 
-/datum/crafting_recipe/tribalwar/bonearmor
-	name = "Bone Armor"
-	result = /obj/item/clothing/suit/armor/bone
-	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 6)
-
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
 	result = /obj/item/clothing/suit/armor/f13/chitinarmor
@@ -63,12 +57,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
 
-/datum/crafting_recipe/tribalwar/skullhelm
-	name = "Skull Helmet"
-	result = /obj/item/clothing/head/helmet/skull
-	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 4)
-
 /datum/crafting_recipe/tribalwar/tribe_armor
 	name = "Tribal Hide Armor"
 	result = /obj/item/clothing/suit/armor/f13/tribe_armor
@@ -77,12 +65,6 @@
 	tools = list(TOOL_WORKBENCH)
 
 //WEAPONS//
-
-/datum/crafting_recipe/tribalwar/bonedagger
-	name = "Bone Dagger"
-	result = /obj/item/kitchen/knife/combat/bone
-	time = 20
-	reqs = list(/obj/item/stack/sheet/bone = 2)
 
 /datum/crafting_recipe/tribalwar/bonespear
 	name = "Bone Spear"
@@ -187,24 +169,6 @@
 	result = /obj/item/clothing/mask/gas/tiki_mask
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
-
-/datum/crafting_recipe/tribal/bonepestle
-	name = "Bone Pestle"
-	result = /obj/item/pestle
-	time = 20
-	reqs = list(/obj/item/stack/sheet/bone = 1)
-
-/datum/crafting_recipe/tribal/bonemortar
-	name = "Bone Mortar"
-	result = /obj/item/reagent_containers/glass/mortar
-	time = 20
-	reqs = list(/obj/item/stack/sheet/bone = 3)
-
-/datum/crafting_recipe/tribal/primitive_chem_isolator
-	name = "Bone Chemical Isolator"
-	result = /obj/item/reagent_containers/glass/primitive_chem_isolator
-	time = 20
-	reqs = list(/obj/item/stack/sheet/bone = 3)
 
 /datum/crafting_recipe/tribal/bonetalisman
 	name = "Bone Talisman"
