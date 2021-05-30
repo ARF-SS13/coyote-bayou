@@ -115,11 +115,12 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		return
 
 	if(is_available_category(Itm) && is_acceptable_item_state(Itm))
-		var/price = input(usr, "Enter price for " + Itm.name + ".", "Setup Price", basic_price) as null|text
-		if(!price || price<0)
+		var/price = input(usr, "Enter price for " + Itm.name + ".", "Setup Price", basic_price) as null|num
+
+		if(!price)
 			return
 
-		content[Itm] = price
+		content[Itm] = max(round(price),0)
 
 		if(istype(Itm.loc, /mob))
 			var/mob/M = Itm.loc
@@ -194,7 +195,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/trading_machine/proc/vend(obj/item/Itm)
 	if(content.Find(Itm))
 		vending_item = Itm
-		expected_price = text2num(content[Itm])
+		expected_price = content[Itm]
 		set_state(STATE_VEND)
 		src.attack_hand(usr)
 
@@ -366,15 +367,17 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	if(machine_state != STATE_SERVICE)
 		return
 
-	var/new_price = input(user, "Enter price for " + Itm.name + ".", "Setup Price", content[Itm]) as null|text
+	var/new_price = input(user, "Enter price for " + Itm.name + ".", "Setup Price", content[Itm]) as null|num
 	if(new_price)
-		content[Itm] = new_price
+		content[Itm] = 	max(round(new_price),0)
+
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 60, 1)
 		src.ui_interact(user)
 
 /* Find item by name and price in content and return type */
 /obj/machinery/trading_machine/proc/find_item(item_name, item_price)
 	for(var/obj/item/Itm in content)
+		item_price = text2num(item_price)
 		if(content[Itm] == item_price && sanitize(Itm.name) == sanitize(item_name))
 			return Itm
 
