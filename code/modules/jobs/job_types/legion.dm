@@ -681,8 +681,6 @@ Recruit Legionary
 	spawn_positions = 3
 	description = "You have recently come of age or been inducted into Caesar's Legion. You have absolutely no training, and are expected to follow every whim of the Decanii and your Centurion."
 	supervisors = "the Decani and Centurion"
-	exp_requirements = 12
-	exp_type = EXP_TYPE_LEGION
 	display_order = JOB_DISPLAY_ORDER_RECRUITLEG
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13recleg
 
