@@ -299,7 +299,6 @@ Logistics Officer
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmanrifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
@@ -400,9 +399,9 @@ Heavy Trooper
 	outfit = /datum/outfit/job/ncr/f13heavytrooper
 	exp_requirements = 750
 
-/datum/outfit/job/ncr/f13sergeant
-	name = "NCR Sergeant"
-	jobtype = /datum/job/ncr/f13ht
+/datum/outfit/job/ncr/f13heavytrooper
+	name = "NCR Heavy Trooper"
+	jobtype = /datum/job/ncr/f13heavytrooper
 	id 				= /obj/item/card/id/dogtag/ncrsergeant
 	uniform 		= /obj/item/clothing/under/f13/ncr
 	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
