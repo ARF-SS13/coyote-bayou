@@ -24,7 +24,7 @@
 	//	0 = low, 1 = mid, 2 = high
 	//	(CMO biological/prewar knoweldge expert) MEDICALEXPERT
 	//	(Follower) Practitioner (Follower Admin) Practitioner_expert
-	//	(Senior BOS scribe) cyberneticist,(BOS Head Scribe) cyberneticist_expert
+	//	(Scribe) scribe trained (Senior BOS scribe) cyberneticist, scribe trained (BOS Head Scribe) cyberneticist_expert
 	//	(Enclave Scientist) unethical practitioner
 	//	(Zetans?) abductor= "ABDUCTOR"
 
@@ -71,25 +71,31 @@
 		else
 			return FALSE
 
-	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation,
+	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation, robotic repairs.
 		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
-	if(requires_trait== "CYBERNETICIST_1") //follower
+	if(requires_trait== "CYBERNETICIST_1") //allows robotic limb repairs.
 		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
-	if(requires_trait== "PRACTITIONER_2") //robotic brain surgery, implants
+	if(requires_trait== "PRACTITIONER_2") //robotic brain surgery.
 		if(HAS_TRAIT(user,TRAIT_PRACTITIONER_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
-	if(requires_trait== "PRACTITIONER_1") //robotic repairs
+	if(requires_trait== "SCRIBE_TRAINED") //same as practitioner with BoS flavor.
+		if(HAS_TRAIT(user,TRAIT_SCRIBE_TRAINED)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+			return TRUE
+		else
+			return FALSE
+
+	if(requires_trait== "PRACTITIONER_1") //doctoring trait for followers, allows high surgeries on medium skill level.
 		if(HAS_TRAIT(user,TRAIT_PRACTITIONER)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else

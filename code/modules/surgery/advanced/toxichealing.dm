@@ -1,5 +1,5 @@
 /datum/surgery/advanced/toxichealing
-	name = "Body Rejuvenation"
+	name = "Surgically assisted rejuvenation (oxygen deprivation & toxicity)"
 	desc = "A surgical procedure that helps deal with oxygen  deprivation, and treats parts damaged due to toxic compounds. Works on corpses and alive alike without chemicals."
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/incise,
@@ -16,6 +16,8 @@
 	requires_bodypart_type = 0
 	requires_trait = 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
+
 /datum/surgery_step/toxichealing
 	name = "rejuvenate body"
 	implements = list(TOOL_HEMOSTAT  = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)
