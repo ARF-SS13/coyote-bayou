@@ -135,7 +135,7 @@ Captain
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/m44=3)
+	/obj/item/ammo_box/magazine/m44=3)
 
 /datum/outfit/loadout/captco
 	name = "Commanding Officer"
@@ -411,7 +411,7 @@ Heavy Trooper
 	glasses			= /obj/item/clothing/glasses/sunglasses/big
 	neck 			= /obj/item/storage/belt/holster
 	suit 			= /obj/item/clothing/suit/armor/f13/power_armor/ncr
-	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
+	suit_store		= /obj/item/gun/ballistic/automatic/r84
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -419,7 +419,7 @@ Heavy Trooper
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
-		/obj/item/ammo_box/magazine/m556/rifle/assault=4, \
+		/obj/item/ammo_box/magazine/lmg=3, \
 		/obj/item/binoculars=1)
 
 /datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

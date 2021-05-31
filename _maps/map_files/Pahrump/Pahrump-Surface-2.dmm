@@ -3890,7 +3890,7 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/wasteland)
+/area/f13/ncr)
 "cNH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -5503,17 +5503,6 @@
 "dRs" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/legion)
-"dRH" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen/fountain,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/wasteland)
 "dRI" = (
 /obj/machinery/light{
 	dir = 8
@@ -6411,12 +6400,6 @@
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/village)
-"eBe" = (
-/obj/structure/chair/office/light,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/wasteland)
 "eBk" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small{
@@ -9875,15 +9858,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"gIk" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/terminal{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/wasteland)
 "gIA" = (
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -11884,12 +11858,6 @@
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
-"hUW" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/wasteland)
 "hVb" = (
 /mob/living/simple_animal/hostile/eyebot,
 /turf/open/indestructible/ground/outside/road{
@@ -14353,7 +14321,7 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/wasteland)
+/area/f13/ncr)
 "jvw" = (
 /obj/structure/chair/wood/worn{
 	dir = 1
@@ -20652,7 +20620,7 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/wasteland)
+/area/f13/ncr)
 "nMd" = (
 /obj/structure/reagent_dispensers/cooking_oil,
 /turf/open/indestructible/ground/outside/desert,
@@ -31302,11 +31270,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"uLv" = (
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/wasteland)
 "uLK" = (
 /obj/machinery/computer/operating,
 /turf/open/floor/f13{
@@ -34993,15 +34956,6 @@
 /obj/item/clothing/under/f13/pinkdress,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"xjs" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Armory";
-	req_access_txt = "121"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland)
 "xjA" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -43927,11 +43881,11 @@ tXe
 nPy
 nPZ
 sGG
-vUA
-vUA
-vUA
-vUA
-vUA
+rhr
+rhr
+rhr
+rhr
+rhr
 cpK
 cpK
 bTf
@@ -44184,11 +44138,11 @@ tNa
 cpK
 lvS
 eJe
-vUA
+rhr
 cNF
-dRH
-uLv
-vUA
+jiR
+wjR
+rhr
 cpK
 cpK
 elT
@@ -44441,11 +44395,11 @@ tXe
 cpK
 jSN
 eJe
-vUA
-eBe
-gIk
-uLv
-xjs
+rhr
+iuE
+szG
+wjR
+raV
 cpK
 cpK
 rRi
@@ -44698,11 +44652,11 @@ cpK
 cpK
 cpK
 eJe
-vUA
-uLv
+rhr
+wjR
 juV
-uLv
-vUA
+wjR
+rhr
 cpK
 cpK
 cpK
@@ -44955,11 +44909,11 @@ sCz
 sCz
 sCz
 qLO
-vUA
-uLv
+rhr
+wjR
 nLX
-hUW
-vUA
+uug
+rhr
 cpK
 cpK
 cpK
