@@ -246,6 +246,7 @@
 #define TRAIT_PRACTITIONER		"Practitioner" //Has access to FoA surguries
 #define TRAIT_PRACTITIONER_EXPERT	"Practitioner Expert" //Lead follower works on par of other factions
 #define TRAIT_UNETHICAL_PRACTITIONER	"Unethical Practitioner" //Can do harmful experimental surguries
+#define TRAIT_SCRIBE_TRAINED	"scribe_trained" //BOS practitioner
 #define TRAIT_CYBERNETICIST		"Cyberneticist" //Utilizes powerful cybernetics
 #define TRAIT_CYBERNETICIST_EXPERT	"Cyberneticist Expert" //Can augument people into robots directly
 #define TRAIT_MACHINE_SPIRITS	"machine_spirits" //for tribe unique functions.
