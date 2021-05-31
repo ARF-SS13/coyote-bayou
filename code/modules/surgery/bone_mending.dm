@@ -27,6 +27,7 @@
 	targetable_wound = /datum/wound/blunt/critical
 	requires_trait= 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
 
 /datum/surgery/repair_bone_compound/can_start(mob/living/user, mob/living/carbon/target)
 	if(..())

@@ -6,6 +6,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	requires_trait = 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "ventricular electrotherapy"

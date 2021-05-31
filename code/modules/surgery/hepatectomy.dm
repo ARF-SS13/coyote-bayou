@@ -13,6 +13,7 @@
 		)
 	requires_trait = 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
 
 /datum/surgery/hepatectomy/can_start(mob/user, mob/living/carbon/target)
 	var/obj/item/organ/liver/L = target.getorganslot(ORGAN_SLOT_LIVER)
