@@ -125,6 +125,7 @@ Captain
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
+		/obj/item/megaphone,	\
 		/obj/item/clothing/mask/ncr_facewrap)
 
 /datum/outfit/loadout/captao
@@ -139,14 +140,13 @@ Captain
 
 /datum/outfit/loadout/captco
 	name = "Commanding Officer"
-	gloves =	/obj/item/clothing/gloves/f13/leather
 	suit = 		/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
 	belt = 		/obj/item/storage/belt/military/assault/ncr
 	l_hand =	/obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 	/obj/item/gun/ballistic/revolver/hunting=1,
-	/obj/item/ammo_box/magazine/internal/cylinder/rev4570=3
+	/obj/item/ammo_box/c4570=3
 	)
 
 /*
