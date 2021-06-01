@@ -90,3 +90,11 @@
 	materials = list(/datum/material/iron = 2010, /datum/material/glass = 5)
 	build_path = /obj/item/electronics/electrochromatic_kit
 	category = list("initial", "Electronics")
+
+/datum/design/control
+	name = "Blast Door Controller"
+	id = "blast"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 50)
+	build_path = /obj/item/assembly/control
+	category = list("initial","Misc")
