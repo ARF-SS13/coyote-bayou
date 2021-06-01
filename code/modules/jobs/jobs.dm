@@ -240,12 +240,15 @@ GLOBAL_LIST_INIT(ncr_ranger_positions, list(
 ))
 
 GLOBAL_LIST_INIT(ncr_upper_command_positions, list(
+	"NCR Captain",
 	"NCR Lieutenant",
 	"NCR Sergeant First Class",
 ))
 
 GLOBAL_LIST_INIT(ncr_lower_command_positions, list(
 	"NCR Medical Officer",
+	"NCR Logistics Officer",
+	"NCR Heavy Trooper",
 	"NCR Sergeant",
 	"NCR Corporal",
 ))
@@ -258,9 +261,12 @@ GLOBAL_LIST_INIT(ncr_general_positions, list(
 ))
 
 GLOBAL_LIST_INIT(ncr_positions, list(
+	"NCR Captain",
 	"NCR Lieutenant",
 	"NCR Medical Officer",
+	"NCR Logistics Officer",
 	"NCR Sergeant First Class",
+	"NCR Heavy Trooper",
 	"NCR Sergeant",
 	"NCR Corporal",
 	"NCR Combat Medic",

@@ -388,6 +388,18 @@
 	requires_training = FALSE
 	powered = FALSE
 
+/obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
+	name = "ncr salvaged T-45b helmet"
+	desc = "(VIII) It's an NCR salvaged T-45b power armor helmet, better repaired than regular salvaged PA, and decorated with the NCR flag and other markings for an NCR Heavy Trooper."
+	icon_state = "t45bhelmet_ncr"
+	item_state = "t45bhelmet_ncr"
+	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+//	darkness_view = 0
+	armor_block_chance = 40
+	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+	requires_training = FALSE
+	powered = FALSE
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
 	name = "restored T-45b helmet"
 	desc = "(VIII) It's a restored T-45b power armor helmet."

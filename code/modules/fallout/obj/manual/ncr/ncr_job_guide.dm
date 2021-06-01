@@ -10,10 +10,10 @@
 </head>
 <body>
 	<h1>Lieutenant</h1>
-	<p>You’ve been placed in charge of the NCRA garrison at Camp Miller. It is your job to make sure that the men make it out the other side at the end of the week, and that the goals of the NCR are advanced.</p>
+	<p>You’ve been placed in 2nd in command of the NCRA garrison at Camp Miller. It is your job to make sure that the men make it out the other side at the end of the week, and that the goals of the NCR are advanced.</p>
 	<h2>Duties of the Lieutenant</h2>
 	<h3>Commanding Officer</h3>
-	<p>You’re the be all and end all for the Army at Camp Miller, everyone reports to you. This gives you a great deal of responsibility. Making you responsible for the strategic planning of the Army. It is up to you to decide what the plan is for that week, and execute it. In terms of the Army, you have the final say. You’re also responsible for dealing with people outside the NCR, mostly for negotiations, while you do not have the ability to create official truces or any binding treaties between any other powers, you can create mutual agreements with other powers that last a week maximum. Overall, your job is to focus on the big picture, and what that means for the NCRA located here.</p>
+	<p>If the Captain is not present, you’re the be all and end all for the Army at Camp Miller, everyone reports to you. This gives you a great deal of responsibility. Making you responsible for the strategic planning of the Army. It is up to you to decide what the plan is for that week, and execute it. In terms of the Army, you have the final say. You’re also responsible for dealing with people outside the NCR, mostly for negotiations, while you do not have the ability to create official truces or any binding treaties between any other powers, you can create mutual agreements with other powers that last a week maximum. Overall, your job is to focus on the big picture, and what that means for the NCRA located here.</p>
 	<h3>Administrative Duties</h3>
 	<p>You do have a few administrative duties to take care of as an officer. You’re allowed to promote the men under your command up to the rank of Corporal, as well as recommend High Command to promote people above the rank of Corporal. You can also recommend people for demotion by contacting High Command. You’re also clear to hold military tribunals to find someone guilty of a Major Offense(MO) as outlined in the COMJ. You’re also free to issue any Non-Judicial Punishments(NJPs) as you see fit.</p>
 	<h2>Responsibilities</h2>
