@@ -8,6 +8,20 @@
 	w_class = WEIGHT_CLASS_TINY
 	novariants = TRUE
 
+/obj/item/stack/crafting/armor_plate
+	name = "armor plate"
+	desc = "an armor plate used to upgrade some types of armor."
+	icon_state = "plate"
+
+/obj/item/stack/crafting/armor_plate/five
+	amount = 5
+
+/obj/item/stack/crafting/armor_plate/ten
+	amount = 10
+
+/obj/item/stack/crafting/armor_plate/fifty
+	amount = 50
+
 /obj/item/stack/crafting/metalparts
 	name = "metal parts"
 	icon_state = "sheet-metalparts"

@@ -275,7 +275,8 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Rear Echelon",
 	"NCR Off-Duty",
 	"NCR Veteran Ranger",
-	"NCR Ranger"
+	"NCR Ranger",
+	"NCR Military Police"
 ))
 
 GLOBAL_LIST_INIT(vault_command_positions, list(

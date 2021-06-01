@@ -6,12 +6,12 @@
 	name = "base raider armor"
 	desc = "for testing"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("tier" = 4, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("tier" = 2, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 40
 
 /obj/item/clothing/suit/armor/f13/raider/supafly
 	name = "supa-fly raider armor"
-	desc = "(IV) Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
+	desc = "(II) Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
 	item_state = "supafly"
 
@@ -21,7 +21,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/rebel
 	name = "rebel raider armor"
-	desc = "(IV) Rebel, rebel. Your face is a mess."
+	desc = "(II) Rebel, rebel. Your face is a mess."
 	icon_state = "raider_rebel_icon"
 	item_state = "raider_rebel_armor"
 
@@ -31,7 +31,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/sadist
 	name = "sadist raider armor"
-	desc = "(IV) A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
+	desc = "(II) A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
 	icon_state = "sadist"
 	item_state = "sadist"
 
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/blastmaster
 	name = "blastmaster raider armor"
-	desc = "(IV) A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
+	desc = "(II) A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -53,7 +53,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/yankee
 	name = "yankee raider armor"
-	desc = "(IV) A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
+	desc = "(II) A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
 	icon_state = "yankee"
 	item_state = "yankee"
 
@@ -63,7 +63,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/badlands
 	name = "badlands raider armor"
-	desc = "(IV) A leather top with a bandolier over it and a straps that cover the arms."
+	desc = "(II) A leather top with a bandolier over it and a straps that cover the arms."
 	icon_state = "badlands"
 	item_state = "badlands"
 
@@ -73,7 +73,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/painspike
 	name = "painspike raider armor"
-	desc = "(IV) A particularly unhuggable armor, even by raider standards. Extremely spiky."
+	desc = "(II) A particularly unhuggable armor, even by raider standards. Extremely spiky."
 	icon_state = "painspike"
 	item_state = "painspike"
 
@@ -83,7 +83,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/iconoclast
 	name = "iconoclast raider armor"
-	desc = "(IV) A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
+	desc = "(II) A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
 
@@ -93,13 +93,13 @@
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster
 	name = "combat duster"
-	desc = "(IV) An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "(II) An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
 	name = "Patrol Duster"
-	desc = "(IV) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
+	desc = "(II) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
 	icon_state = "patrolduster"
 	item_state = "patrolduster"
 
@@ -111,13 +111,13 @@
 	name = "base faction exile armor"
 	desc = "this is for testing."
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/exile/ncrexile
 	name = "modified NCR armor"
-	desc = "(IV) A modified detoriated armor kit consisting of NCR gear and scrap metal."
+	desc = "(II) A modified detoriated armor kit consisting of NCR gear and scrap metal."
 	icon_state = "ncrexile"
 	item_state = "ncrexile"
 
@@ -127,7 +127,7 @@
 
 /obj/item/clothing/suit/armor/f13/exile/legexile
 	name = "modified Legion armor"
-	desc = "(IV) A modified detoriated armor kit consisting of Legion gear and scrap metal."
+	desc = "(II) A modified detoriated armor kit consisting of Legion gear and scrap metal."
 	icon_state = "legexile"
 	item_state = "legexile"
 
@@ -137,7 +137,7 @@
 
 /obj/item/clothing/suit/armor/f13/exile/bosexile
 	name = "modified Brotherhood armor"
-	desc = "(IV) A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
+	desc = "(II) A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
 	icon_state = "brotherhoodexile"
 	item_state = "brotherhoodexile"
 
@@ -208,55 +208,59 @@
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
-	desc = "(III) Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
+	desc = "(II) Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
 	icon_state = "legrecruit"
 	slowdown = -0.15
 
 /obj/item/clothing/suit/armor/f13/legion/recruit/scout
 	name = "legion scout armor"
-	desc = "(III) A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight."
+	desc = "(II) A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight."
 	icon_state = "legscout"
 
 /obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
-	desc = "(IV) It's a legion prime armor, supplied to recruits who have survived several skirmishes, and are more worthy of sturdier equipment."
+	desc = "(III) It's a legion prime armor, supplied to recruits who have survived several skirmishes, and are more worthy of sturdier equipment."
 	icon_state = "legprime"
 	slowdown = -0.13
-	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	name = "slavemaster armor"
-	desc = "(IV) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
+	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
 	icon_state = "legslavemaster"
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
-	desc = "(V) Armor worn by veteran legionaries who have proven their combat prowess in many battles, its hardened leather is sturdier than that of previous ranks."
+	desc = "(IV) Armor worn by veteran legionaries who have proven their combat prowess in many battles, its hardened leather is sturdier than that of previous ranks."
 	icon_state = "legvet"
 	slowdown = -0.1
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/heavy
 	name = "legion veteran decan armor"
-	desc = "(VI) Heavy metal armor worn by the Veteran Decanii retinue of the region."
+	desc = "(V) Heavy metal armor worn by the Veteran Decanii retinue of the region."
 	icon_state = "legmetal"
 	item_state = "legmetal"
 	slowdown = -0.1
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	name = "legion explorer armor"
-	desc = "(V) A modified set of veteran armor with much of the metal replaced by layered strips of laminated linen and leather."
+	desc = "(IV) A modified set of veteran armor with much of the metal replaced by layered strips of laminated linen and leather."
 	icon_state = "legexplorer"
 
 /obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	name = "legion vexillarius armor"
 	slowdown = -0.12
-	desc = "(V) The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
+	desc = "(IV) The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
 	icon_state = "legvexil"
 
 /obj/item/clothing/suit/armor/f13/legion/venator
@@ -280,14 +284,14 @@
 
 /obj/item/clothing/suit/armor/f13/legion/palacent
 	name = "paladin-slayer centurion armor"
-	desc = "(VII) The armor of a Centurion who has bested one or more Brotherhood Paladins, adding pieces of his prizes to his own defense. The symbol of the Legion is crudely painted on this once-marvelous suit of armor."
+	desc = "(VI) The armor of a Centurion who has bested one or more Brotherhood Paladins, adding pieces of his prizes to his own defense. The symbol of the Legion is crudely painted on this once-marvelous suit of armor."
 	icon_state = "palacent"
 	slowdown = -0.13
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
-	desc = "(VII) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
+	desc = "(VI) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
 
@@ -321,39 +325,43 @@
 //NCR
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR patrol vest"
-	desc = "(IV) A standard issue NCR Infantry vest."
+	desc = "(II) A standard issue NCR Infantry vest."
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	name = "NCR mantle vest"
-	desc = "(V) A standard issue NCR Infantry vest with a mantle on the shoulder."
+	desc = "(III) A standard issue NCR Infantry vest with a mantle on the shoulder."
 	icon_state = "ncr_standard_mantle"
 	item_state = "ncr_standard_mantle"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
 	name = "NCR reinforced patrol vest"
-	desc = "(V) A standard issue NCR Infantry vest reinforced with a groinpad."
+	desc = "(III) A standard issue NCR Infantry vest reinforced with a groinpad."
 	icon_state = "ncr_reinforced_vest"
 	item_state = "ncr_reinforced_vest"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	name = "NCR reinforced mantle vest"
-	desc = "(VI) A standard issue NCR Infantry vest reinforced with a groinpad and a mantle."
+	desc = "(IV) A standard issue NCR Infantry vest reinforced with a groinpad and a mantle."
 	icon_state = "ncr_reinforced_mantle"
 	item_state = "ncr_reinforced_mantle"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
 	name = "NCR medical labcoat"
-	desc = "(V) An armored labcoat typically issued to NCR Medical Officers. It's a standard white labcoat with the Medical Officer's name stitched into the breast and a two headed bear sewn into the shoulder."
+	desc = "(III) An armored labcoat typically issued to NCR Medical Officers. It's a standard white labcoat with the Medical Officer's name stitched into the breast and a two headed bear sewn into the shoulder."
 	icon_state = "ncr_labcoat"
 	item_state = "ncr_labcoat"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	allowed = list(/obj/item/gun, /obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/captain
@@ -705,7 +713,7 @@
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"
-	desc = "(VII) This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
+	desc = "(VIII) This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 

@@ -5117,6 +5117,15 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"dAX" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/landmark/start/f13/ncrmp,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/ncr)
 "dBa" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -12891,6 +12900,12 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/legion)
+"iDX" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/crafting/armor_plate/ten,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "iEg" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -14742,6 +14757,17 @@
 /obj/structure/table,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"jNs" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/stripes/white/box,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/item/stack/crafting/armor_plate/ten,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/ncr)
 "jNt" = (
 /obj/machinery/shower{
 	dir = 4;
@@ -17826,6 +17852,15 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"lJx" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/landmark/start/f13/ncrmp,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/ncr)
 "lJL" = (
 /obj/structure/bonfire,
 /turf/open/floor/f13/wood,
@@ -38497,8 +38532,8 @@ kzs
 sNC
 kzs
 xGv
-kzs
-sed
+dAX
+lJx
 sHu
 xEc
 xEc
@@ -45418,7 +45453,7 @@ sgz
 sgz
 koD
 ezX
-qQf
+jNs
 mfN
 qQf
 qQf
@@ -99589,7 +99624,7 @@ ime
 bMP
 kAJ
 ezv
-seY
+iDX
 seY
 vfn
 iDk

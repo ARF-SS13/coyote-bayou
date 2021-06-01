@@ -587,12 +587,47 @@ Trooper
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	glasses = 		null
-	suit_store = 	/obj/item/gun/ballistic/automatic/service
+	suit_store = 	/obj/item/gun/ballistic/automatic/varmint
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/ammo_box/magazine/m556/rifle=3)
+
+
+//MP
+
+/datum/job/ncr/f13mp
+	title = "NCR Military Police"
+	flag = F13MP
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
+	supervisors = "the Captain"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_TROOPER
+	outfit = /datum/outfit/job/ncr/f13mp
+	exp_requirements = 300
+
+/datum/outfit/job/ncr/f13mp
+	name = "NCR Trooper"
+	jobtype = /datum/job/ncr/f13mp
+	id = 			/obj/item/card/id/dogtag/ncrsergeant
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
+	accessory =     /obj/item/clothing/accessory/armband/black
+	head = 			/obj/item/clothing/head/f13/ncr/mp
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
+	belt =          /obj/item/storage/belt/military/assault/ncr
+	glasses = 		null
+	r_pocket = 		/obj/item/binoculars
+
+	backpack_contents = list(
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/storage/survivalkit_aid=1, \
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/ammo_box/magazine/m9mm=3, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1)
 
 /*
 Rear Echelon

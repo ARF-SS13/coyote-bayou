@@ -61,6 +61,7 @@
 #define F13NCROFFDUTY    (1<<13)
 #define F13VETRANGER	 (1<<14)
 #define F13RANGER	 	 (1<<15)
+#define F13MP            (1<<16)
 
 #define LEGION			(1<<4)
 
