@@ -635,7 +635,6 @@
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
@@ -652,7 +651,6 @@
 "tG" = (
 /obj/structure/rack,
 /obj/item/grenade/syndieminibomb/concussion/frag,
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1444,10 +1442,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
-"TW" = (
-/obj/item/fusion_fuel,
-/turf/open/floor/plating/tunnel,
-/area/f13/radiation)
 "Uq" = (
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -1865,7 +1859,7 @@ pf
 (8,1,1) = {"
 wR
 Xj
-TW
+OZ
 jc
 iK
 kl
