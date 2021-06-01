@@ -183,8 +183,6 @@
 "ajl" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/item/fusion_fuel,
-/obj/item/fusion_fuel,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -8706,13 +8704,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/operations)
-"itz" = (
-/obj/item/fusion_fuel,
-/obj/item/fusion_fuel,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/clinic)
 "itI" = (
 /obj/structure/table{
 	layer = 2.9
@@ -18556,7 +18547,8 @@
 /area/f13/brotherhood/rnd)
 "sxA" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -22137,7 +22129,7 @@
 /area/f13/sewer)
 "xkk" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -29564,7 +29556,7 @@ eUk
 bcN
 rQA
 bcN
-itz
+bcN
 dZF
 eLE
 uoO

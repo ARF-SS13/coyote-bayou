@@ -448,8 +448,8 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/armor/tier1 = 80,
-			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 19,
+			/obj/effect/spawner/lootdrop/f13/armor/tier1 = 90,
+			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 9,
 			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
 			)
 
@@ -458,8 +458,8 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 59,
-			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 30,
+			/obj/effect/spawner/lootdrop/f13/armor/tier2 = 70,
+			/obj/effect/spawner/lootdrop/f13/armor/tier3 = 20,
 			/obj/effect/spawner/lootdrop/f13/armor/tier4 = 10
 			///obj/item/traumapack = 1 //one ring to rule them all
 			)
@@ -1281,9 +1281,9 @@
 	lootcount = 1
 
 	loot = list(
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 15,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 25,
-			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 35,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 = 25,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6 = 20,
+			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7 = 30,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8 = 15,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9 = 6,
 			/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10 = 3,

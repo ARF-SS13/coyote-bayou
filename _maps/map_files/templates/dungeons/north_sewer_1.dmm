@@ -56,11 +56,10 @@
 /area/f13/tunnel)
 "bv" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/armor/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -157,9 +156,9 @@
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -271,6 +270,7 @@
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -308,11 +308,11 @@
 /area/f13/tunnel)
 "iA" = (
 /obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -515,11 +515,6 @@
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
-/area/f13/tunnel)
-"oL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
-/turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "pa" = (
 /obj/structure/junk/small/bed2,
@@ -732,6 +727,7 @@
 /obj/structure/closet/crate/large,
 /obj/item/multitool,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -799,7 +795,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -812,15 +808,6 @@
 	},
 /area/f13/tunnel)
 "wT" = (
-/obj/item/clothing/suit/armor/f13/power_armor/tesla{
-	armor = list("tier" = 10, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80);
-	armor_block_chance = 75;
-	armor_block_threshold = 0.40;
-	deflection_chance = 60;
-	desc = "(X) A variant of the Enclave's advanced power armor Mk I, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks.<br>As it's made of complex composite materials designed to block most of energy damage - it's notably weaker against kinetic impacts.";
-	ispowerarmor = 1;
-	powerLevel = 15000
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 8;
@@ -839,7 +826,6 @@
 /area/f13/tunnel)
 "yt" = (
 /obj/structure/table,
-/obj/item/fusion_fuel,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluerustyfull"
@@ -1100,14 +1086,7 @@
 	},
 /area/f13/tunnel)
 "GG" = (
-/obj/item/clothing/head/helmet/f13/power_armor/tesla{
-	armor = list("tier" = 10, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80);
-	armor_block_chance = 75;
-	armor_block_threshold = 0.40;
-	deflection_chance = 60;
-	desc = "(X) A helmet typically used by Enclave special forces.<br>There are three orange energy capacitors on the side.";
-	powerLevel = 1500
-	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -1147,13 +1126,6 @@
 "Hl" = (
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
-"HJ" = (
-/obj/item/fusion_fuel,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
 /area/f13/tunnel)
 "HK" = (
 /obj/structure/closet/crate,
@@ -1277,7 +1249,7 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -1333,7 +1305,6 @@
 /area/f13/tunnel)
 "Of" = (
 /obj/structure/table,
-/obj/item/fusion_fuel,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice,
@@ -1454,8 +1425,8 @@
 "Su" = (
 /obj/structure/closet/crate/large,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -1522,7 +1493,7 @@
 /area/f13/tunnel)
 "Vl" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -1675,12 +1646,12 @@
 /area/f13/tunnel)
 "YQ" = (
 /obj/structure/closet/crate/large,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -2050,7 +2021,7 @@ YU
 eM
 TY
 db
-HJ
+TD
 Vv
 Zh
 Zh
@@ -2085,7 +2056,7 @@ QU
 Zh
 kE
 kE
-oL
+ZL
 Kp
 TD
 TD

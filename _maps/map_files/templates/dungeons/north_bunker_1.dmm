@@ -291,7 +291,8 @@
 	},
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -433,10 +434,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"oH" = (
-/obj/item/fusion_fuel,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
 "oP" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random_high,
@@ -519,8 +516,8 @@
 "qk" = (
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -922,7 +919,7 @@
 /area/f13/bunker)
 "Cm" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1119,8 +1116,8 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /obj/effect/spawner/lootdrop/f13/armor/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2021,7 +2018,7 @@ tQ
 tQ
 tQ
 tQ
-oH
+tQ
 BH
 Eg
 Rl
@@ -2052,7 +2049,7 @@ Eg
 tQ
 tQ
 tQ
-oH
+tQ
 tQ
 tQ
 tQ
