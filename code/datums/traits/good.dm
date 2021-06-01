@@ -228,6 +228,7 @@
 	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = "<span class='notice'>The shadows seem a little less dark.</span>"
 	lose_text = "<span class='danger'>Everything seems a little darker.</span>"
+	locked = TRUE
 
 /datum/quirk/night_vision/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -240,6 +241,7 @@
 	mob_trait = TRAIT_TRAPPER
 	gain_text = "<span class='notice'>You learn the secrets of butchering!</span>"
 	lose_text = "<span class='danger'>You forget how to slaughter animals.</span>"
+	locked = TRUE
 
 /datum/quirk/bigleagues
 	name = "Big Leagues"
@@ -293,6 +295,7 @@
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
 	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
+	locked = TRUE
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
