@@ -960,7 +960,7 @@
 	burst_shot_delay = 3
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 10
+	spread = 7
 	randomspread = 1
 	slowdown = 2
 
@@ -970,17 +970,14 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 10
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size = 3
-			spread = 10
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select = 0
 			burst_size = 1
-			spread = 10
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()

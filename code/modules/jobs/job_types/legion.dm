@@ -618,12 +618,12 @@ Veteran Legionary
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears	=		/obj/item/radio/headset/headset_legion
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/flashlight/lantern=1,
-		/obj/item/ammo_box/tube/c4570=3,
+		/obj/item/ammo_box/tube/m44=3,
 		/obj/item/claymore/machete/reinforced=1)
 
 /*
@@ -661,11 +661,11 @@ Prime Legionairy
 	ears			= /obj/item/radio/headset/headset_legion
 	r_pocket		= /obj/item/restraints/handcuffs
 	l_pocket		= /obj/item/restraints/handcuffs
-	suit_store		= /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store		= /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/flashlight/lantern=1,
-		/obj/item/ammo_box/tube/m44=3,
+		/obj/item/ammo_box/tube/a357=3,
 		/obj/item/claymore/machete/reinforced=1
 	)
 
@@ -677,8 +677,8 @@ Recruit Legionary
 	title = "Recruit Legionary"
 	flag = F13RECRUITLEG
 	faction = "Legion"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 6
+	spawn_positions = 6
 	description = "You have recently come of age or been inducted into Caesar's Legion. You have absolutely no training, and are expected to follow every whim of the Decanii and your Centurion."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_RECRUITLEG
@@ -701,10 +701,10 @@ Recruit Legionary
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	ears	=		/obj/item/radio/headset/headset_legion
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store =	/obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/claymore/machete=1,
-		/obj/item/ammo_box/tube/a357=2,
+		/obj/item/ammo_box/a357=3,
 		/obj/item/flashlight/lantern=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2)
 
