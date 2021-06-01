@@ -84,18 +84,18 @@ Captain
 	title = "NCR Captain"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN_NCR
 	outfit = /datum/outfit/job/ncr/f13captain
+	exp_requirements = 2000
 
 	loadout_options = list(
-	/datum/outfit/loadout/captline, //R82, M29
-	/datum/outfit/loadout/captscout, //Republic's Pride, M29
-	/datum/outfit/loadout/captpistol //Grease Gun, Deagle
+	/datum/outfit/loadout/captao, //Captain armor, m16a1, deagle
+	/datum/outfit/loadout/captco, //Officer coat, R91, hunting revolver
 	)
 
 /datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -113,9 +113,10 @@ Captain
 	jobtype 	= /datum/job/ncr/f13captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
 	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
+	head 		= /obj/item/clothing/head/beret/ncr
+	gloves =	/obj/item/clothing/gloves/f13/military
 	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	neck 		= /obj/item/storage/belt/holster
 	ears = 		/obj/item/radio/headset/headset_ncr_com
@@ -124,41 +125,30 @@ Captain
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
+		/obj/item/megaphone,	\
 		/obj/item/clothing/mask/ncr_facewrap)
 
-/datum/outfit/loadout/captline
-	name = "Line Officer"
-	head 		= /obj/item/clothing/head/beret/ncr
-	shoes 		= /obj/item/clothing/shoes/f13/military/leather
-	gloves 		= /obj/item/clothing/gloves/f13/leather
+/datum/outfit/loadout/captao
+	name = "Armored Officer"
+	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/service/r82
+	l_hand 		= /obj/item/gun/ballistic/automatic/service/automatic
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
-	/obj/item/gun/ballistic/revolver/m29=1,
-	/obj/item/ammo_box/m44=2)
-
-/datum/outfit/loadout/captscout
-	name = "Scout Officer"
-	head = 		/obj/item/clothing/head/beret/ncr_scout
-	belt = 		/obj/item/storage/belt/military/NCR_Bandolier
-	l_hand = 	/obj/item/gun/ballistic/automatic/m1garand/republicspride
-	backpack_contents = list(
-	/obj/item/ammo_box/magazine/garand308=3,
-	/obj/item/gun/ballistic/revolver/m29=1,
-	/obj/item/ammo_box/m44=2)
-
-/datum/outfit/loadout/captpistol
-	name = "Pistoleer Officer"
-	head =		/obj/item/clothing/head/f13/ncr_cap
-	gloves =	/obj/item/clothing/gloves/f13/leather
-	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand =	/obj/item/gun/ballistic/automatic/greasegun
-	backpack_contents = list(
-	/obj/item/ammo_box/magazine/greasegun=3,
 	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/magazine/m44=2
+	/obj/item/ammo_box/magazine/m44=3)
+
+/datum/outfit/loadout/captco
+	name = "Commanding Officer"
+	suit = 		/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
+	belt = 		/obj/item/storage/belt/military/assault/ncr
+	l_hand =	/obj/item/gun/ballistic/automatic/assault_rifle
+	backpack_contents = list(
+	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
+	/obj/item/gun/ballistic/revolver/hunting=1,
+	/obj/item/ammo_box/c4570=3
 	)
+
 /*
 Lieutenant
 */
@@ -168,7 +158,7 @@ Lieutenant
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the direct superior to the Sergeant First Class and Enlisted, and under special circumstances, Rangers. You are the CO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
+	description = "You are the direct superior to the Sergeant First Class and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
@@ -188,7 +178,7 @@ Lieutenant
 	gloves 		= /obj/item/clothing/gloves/f13/leather
 	ears 		= /obj/item/radio/headset/headset_ncr_com
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
-	suit_store	= /obj/item/gun/ballistic/automatic/service
+	suit_store	= /obj/item/gun/ballistic/automatic/service/r82
 	belt		= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -243,11 +233,11 @@ Medical Officer
 	mask 		= /obj/item/clothing/mask/surgical
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/storage/survivalkit_aid=2, \
 		/obj/item/storage/survivalkit_aid_adv=1, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
+		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/storage/firstaid/regular=1)
@@ -260,6 +250,62 @@ Medical Officer
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
 /*
+Logistics Officer
+*/
+/datum/job/ncr/f13logisticsofficer
+	title = "NCR Logistics Officer"
+	flag = F13LOGISTICSOFFICER
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority unless it is of engineering nature. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies."
+	supervisors = "Captain and above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
+	outfit = /datum/outfit/job/ncr/f13logisticsofficer
+	exp_requirements = 1500
+
+/datum/outfit/job/ncr/f13logisticsofficer
+	name = "NCR Logistics Officer"
+	jobtype			= /datum/job/ncr/f13logisticsofficer
+	id				= /obj/item/card/id/dogtag/ncrlieutenant
+	uniform			= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
+	accessory 		= /obj/item/clothing/accessory/ncr/LT2
+	head 			= /obj/item/clothing/head/beret/ncr_sapper
+	neck 			= /obj/item/storage/belt/holster
+	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	glasses			= /obj/item/clothing/glasses/welding
+	belt 			= /obj/item/storage/belt/utility/full/engi
+	gloves			= /obj/item/clothing/gloves/color/yellow
+	accessory		= /obj/item/clothing/accessory/ncr/SPC
+	suit_store		= /obj/item/gun/ballistic/automatic/service
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
+		/obj/item/ammo_box/magazine/m45=3, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/storage/survivalkit_aid=1, \
+		/obj/item/storage/bag/money/small/ncr, \
+		/obj/item/ammo_box/magazine/m556/rifle=3, \
+		/obj/item/grenade/plastic=2, \
+		/obj/item/stack/sheet/metal/fifty=2, \
+		/obj/item/stack/sheet/glass/fifty=2
+		)
+
+/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R82)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
+
+/*
 Sergeant First Class
 */
 
@@ -268,12 +314,12 @@ Sergeant First Class
 	flag = F13FIRSTSERGEANT
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the second in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
+	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the third in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
 	supervisors = "Lieutenant and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_FIRSTSERGEANT
 	outfit = /datum/outfit/job/ncr/f13firstsergeant
-	exp_requirements = 600
+	exp_requirements = 1000
 
 /datum/outfit/job/ncr/f13firstsergeant
 	name = "NCR Sergeant First Class"
@@ -336,6 +382,52 @@ Sergeant
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/ammo_box/magazine/m556/rifle/assault=3, \
 		/obj/item/binoculars=1)
+
+/*
+Heavy Trooper
+*/
+
+/datum/job/ncr/f13heavytrooper
+	title = "NCR Heavy Trooper"
+	flag = F13HEAVYTROOPER
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protects the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
+	supervisors = "Sergeant First Class and above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_HEAVYTROOPER
+	outfit = /datum/outfit/job/ncr/f13heavytrooper
+	exp_requirements = 750
+
+/datum/outfit/job/ncr/f13heavytrooper
+	name = "NCR Heavy Trooper"
+	jobtype = /datum/job/ncr/f13heavytrooper
+	id 				= /obj/item/card/id/dogtag/ncrsergeant
+	uniform 		= /obj/item/clothing/under/f13/ncr
+	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
+	accessory		= /obj/item/clothing/accessory/ncr/SGT
+	gloves			= /obj/item/clothing/gloves/f13/military
+	head 			= /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
+	glasses			= /obj/item/clothing/glasses/sunglasses/big
+	neck 			= /obj/item/storage/belt/holster
+	suit 			= /obj/item/clothing/suit/armor/f13/power_armor/ncr
+	suit_store		= /obj/item/gun/ballistic/automatic/r84
+	belt			= /obj/item/storage/belt/military/assault/ncr
+	backpack_contents = list(
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/storage/survivalkit_aid=1, \
+		/obj/item/ammo_box/magazine/m9mm=3, \
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/ammo_box/magazine/lmg=3, \
+		/obj/item/binoculars=1)
+
+/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
 /*
 Corporal

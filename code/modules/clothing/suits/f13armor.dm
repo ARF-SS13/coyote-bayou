@@ -232,7 +232,7 @@
 	icon_state = "cell"
 	item_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'	
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	var/fuel = 20000
 
 /obj/item/fusion_fuel/examine(mob/user)
@@ -373,8 +373,8 @@
 	item_state = "ncrpowerarmor"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
-	slowdown = 1.40
-	armor_block_chance = 25
+	slowdown = 0.4
+	armor_block_chance = 40
 	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor/raiderpa

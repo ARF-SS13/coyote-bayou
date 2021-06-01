@@ -17,6 +17,7 @@
 	)
 	requires_trait = 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
 
 //repair organs
 /datum/surgery_step/graft_synthtissue

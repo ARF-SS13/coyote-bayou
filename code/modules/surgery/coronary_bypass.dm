@@ -6,6 +6,7 @@
 	requires_bodypart_type = BODYPART_ORGANIC
 	requires_trait = 2
 	requires_trait = "PRACTITIONER_1"
+	requires_trait = "SCRIBE_TRAINED"
 
 /datum/surgery/coronary_bypass/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
