@@ -610,7 +610,7 @@ Trooper
 	exp_requirements = 300
 
 /datum/outfit/job/ncr/f13mp
-	name = "NCR Trooper"
+	name = "NCR Military Police"
 	jobtype = /datum/job/ncr/f13mp
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr

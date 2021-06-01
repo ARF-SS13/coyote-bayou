@@ -17,6 +17,34 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/ring_silver
+	name = "Silver Ring"
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/silver = 10)
+	result = /obj/item/clothing/gloves/ring/silver
+	tools = list(TOOL_FORGE)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/ring_gold
+	name = "Gold Ring"
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 10)
+	result = /obj/item/clothing/gloves/ring
+	tools = list(TOOL_FORGE)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/ring_diamond
+	name = "Diamond Ring"
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 20,
+				/obj/item/stack/sheet/mineral/diamond = 10)
+	result = /obj/item/clothing/gloves/ring/diamond
+	tools = list(TOOL_FORGE)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 /datum/crafting_recipe/stick
 	name = "Wooden Handle"
 	time = 30

@@ -1,5 +1,8 @@
 /mob/living/carbon/human/get_blocking_items()
 	. = ..()
+	if(gloves)
+		if(!.[gloves])
+			.[gloves] = gloves.block_priority
 	if(head)
 		if(!.[head])
 			.[head] = head.block_priority

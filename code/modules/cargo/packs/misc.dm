@@ -229,13 +229,6 @@
 					/obj/item/storage/box/matches)
 	crate_name = "candle crate"
 
-/datum/supply_pack/misc/diamondring
-	name = "Diamond Ring"
-	desc = "Show them your love is like a diamond: unbreakable and forever lasting. Shipped straight from child slave cartels in the space african mines."
-	cost = 10000
-	contains = list(/obj/item/storage/fancy/ringbox/diamond)
-	crate_name = "diamond ring crate"
-
 /datum/supply_pack/misc/exoticfootwear
 	name = "Exotic Footwear Crate"
 	desc = "Popularised by lizards and exotic dancers, the footwear included in this shipment is sure to give your feet the breathing room they deserve. Sweet Kicks Inc. is not responsible for any damage, distress, or @r0u$a1 caused by this shipment."
