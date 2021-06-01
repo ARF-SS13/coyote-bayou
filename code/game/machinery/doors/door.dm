@@ -38,6 +38,7 @@
 	var/red_alert_access = FALSE //if TRUE, this door will always open on red alert
 	var/poddoor = FALSE
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
+	var/proj_resist = 10
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
@@ -218,6 +219,11 @@
 
 /obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	if(damage_flag == "melee" && damage_amount < damage_deflection)
+		return 0
+	. = ..()
+
+/obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
+	if(damage_flag == "bullet" | damage_flag == "laser" && damage_amount < proj_resist)
 		return 0
 	. = ..()
 

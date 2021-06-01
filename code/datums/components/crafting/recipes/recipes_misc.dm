@@ -181,6 +181,31 @@
 				/obj/item/stack/cable_coil = 30)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 
+
+/datum/crafting_recipe/shutters
+	name = "Shutters"
+	reqs = list(/obj/item/stack/sheet/plasteel = 10, //5x as expensive as a reinforced wall, can be destroyed by mid-tier guns or high-tier melee. More useful to townies/comfy roles then for NCR/Legion.
+				/obj/item/stack/cable_coil = 10,
+				/obj/item/electronics/airlock = 1
+				)
+	result = /obj/machinery/door/poddoor/shutters/old/preopen
+	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
+	time = 15 SECONDS
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/blast_doors
+	name = "Blast Door"
+	reqs = list(/obj/item/stack/sheet/plasteel = 20, // 10x as expensive as a reinforced wall, but will block anything save for top-tier melee weapons or explosives
+				/obj/item/stack/cable_coil = 15,
+				/obj/item/electronics/airlock = 1
+				)
+	result = /obj/machinery/door/poddoor/preopen
+	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
+	time = 30 SECONDS
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /*
 /datum/crafting_recipe/bloodsucker/vassalrack
 	name = "Persuasion Rack"
