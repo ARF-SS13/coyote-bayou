@@ -3,6 +3,7 @@
 	desc = "A heavy duty gates that opens mechanically."
 	icon = 'icons/fallout/objects/structures/city_gate.dmi'
 	icon_state = "closed"
+	armor = list("melee" = 50, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
 	id = 333
 	bound_width = 96
 	var/list/opacity_objects = list() //FUCK BYOND
