@@ -573,7 +573,8 @@
 ////Support Roles ////
 //////////////////////
 
-// CAMP DUTY Forgemasters with recipes and crafting skills, or Slavemasters, temporary assignment for legionnaires, keeping an eye on the camp and the slaves. Both are soldier, and must defend the camp and kill intruders.
+// CAMP DUTY Forgemasters: legion weapon recipes, tinkering or Slavemasters, temporary posting for legionnaires, RP, keep eye on slaves.
+// For both : Defend camp, help out there, dont run off, Mars teachings to help make potions.
 
 datum/job/CaesarsLegion/Legionnaire/support
 	title = "Camp Duty"
@@ -639,10 +640,12 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/obj/item/stack/sheet/leather/twenty=1,
 		/obj/item/stack/sheet/cloth/thirty=1,
 		/obj/item/stack/sheet/prewar=1,
-		/obj/item/book/granter/trait/forgemaster=1)
+		/obj/item/book/granter/trait/forgemaster=1,
+		/obj/item/book/granter/trait/tinkering=1)
 
 
 // AUXILIA - Females with specialist training. Cause men dont do womens work in Legion and vice versa. Cant have it both ways. Healing is womens work, basta.
+// Medicus only one with MID surgery, Treasurer get tinkering, both get Mars & Low Surgery.
 
 /datum/job/CaesarsLegion/auxilia
 	title = "Auxilia"
@@ -692,7 +695,7 @@ datum/job/CaesarsLegion/Legionnaire/support
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
 /datum/outfit/loadout/auxassist
@@ -727,7 +730,8 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/obj/item/book/granter/trait/midsurgery=1)
 
 
-// LOYAL SLAVES - Servant cook, clean and assist with medical. Worker farm and mine.
+// LOYAL SLAVES - Servant cook, and assist with medical, low surgery. Worker farm and mine.
+// Both get Mars teachings to help out when normal work is done.
 
 /datum/job/CaesarsLegion/loyalslave
 	title = "Loyal Slave"
