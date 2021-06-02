@@ -323,7 +323,7 @@
 	if(reagents.total_volume == tank_volume)
 		to_chat(user,"<span class='warning'>The [src] is filled to capacity!</span>")
 		return
-	if(istype(W, /obj/item/seeds || /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(W, /obj/item/seeds) || istype(W, /obj/item/reagent_containers/food/snacks/grown))
 		if(user.transferItemToLoc(W, src))
 			to_chat(user, "<span class='notice'>You load the [W] into the [src].</span>")
 			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)

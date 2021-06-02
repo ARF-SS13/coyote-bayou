@@ -203,7 +203,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 
 
 // Plasteel
- 
+
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50), \
 	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
@@ -258,7 +258,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	amount = 5
 
 //  Wood
- 
+
 GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wood table frame", /obj/structure/table_frame/wood, 2, time = 10), \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
@@ -268,27 +268,42 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("tiled wooden floor tile", /obj/item/stack/tile/wood/wood_tiled, 1, 4, 20), \
 	new/datum/stack_recipe("diagonal wooden floor tile", /obj/item/stack/tile/wood/wood_diagonal, 1, 4, 20), \
 	null, \
-	new/datum/stack_recipe_list("pews", list(
+	new/datum/stack_recipe_list("pews", list( \
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("pew (left)", /obj/structure/chair/pew/left, 3, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("pew (right)", /obj/structure/chair/pew/right, 3, one_per_turf = TRUE, on_floor = TRUE),\
-		)),
+		)), \
 	null, \
 	new/datum/stack_recipe("wooden chair", /obj/structure/chair/wood/, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("winged wooden chair", /obj/structure/chair/wood/wings, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("plywood chair", /obj/structure/chair/comfy/plywood, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
+	new/datum/stack_recipe_list("primitive industry & agriculture", list( \
+		new /datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("compost bin", /obj/structure/reagent_dispensers/compostbin, 25, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+		null, \
+		new /datum/stack_recipe("harvest bin", /obj/machinery/smartfridge/bottlerack/grownbin, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("seed bin", /obj/machinery/smartfridge/bottlerack/seedbin, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+		null, \
+		new /datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
+		)), \
+	new/datum/stack_recipe_list("cooking", list( \
+		new /datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+		)), \
+	null, \
 	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/room, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("interior wooden door", /obj/structure/simple_door/interior, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden house door", /obj/structure/simple_door/house, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
-	new/datum/stack_recipe("wooden bucket", /obj/item/reagent_containers/glass/bucket/wood, 2, time = 30), \
+	new /datum/stack_recipe("wooden bucket", /obj/item/reagent_containers/glass/bucket/wood, 2, time = 30), \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	null, \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE)
+	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -387,7 +402,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 
 
 // Cloth
- 
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
@@ -727,9 +742,19 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/greatergem
 
 // Bones
- 
+
 GLOBAL_LIST_INIT(bone_recipes, list(
-	new /datum/stack_recipe("Tribal Satchel", /obj/item/storage/backpack/satchel/bone, 4, time = 40),
+	new /datum/stack_recipe("bone dagger", /obj/item/kitchen/knife/combat/bone, 2, time = 20),
+	null, \
+	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6, time = 30),
+	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4, time = 30),
+	null, \
+	new/datum/stack_recipe_list("medicine", list( \
+		new /datum/stack_recipe("bone pestle", /obj/item/pestle, 1, time = 20),\
+		new /datum/stack_recipe("bone mortar", /obj/item/reagent_containers/glass/mortar, 3, time = 20),\
+		new /datum/stack_recipe("bone chemical isolator", /obj/item/reagent_containers/glass/primitive_chem_isolator, 3, time = 20),\
+	)), \
+	null, \
 ))
 
 /obj/item/stack/sheet/bone
