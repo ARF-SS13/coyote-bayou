@@ -37,7 +37,7 @@
 	species = "lily"
 	plantname = "Lily Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
-	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/lily/trumpet)
+	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/geranium)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
 	seed = /obj/item/seeds/poppy/lily
@@ -46,6 +46,9 @@
 	icon_state = "lily"
 	tastes = list("pelts " = 1)
 	filling_color = "#FFA500"
+
+//A actual lily trumpet is the "Brugmansia" or angel-trumpet lily which is more closely related to Datura, but also very toxic if not as delirium inducing.
+//Source: Wikipedia
 
 /obj/item/seeds/poppy/lily/trumpet
 	name = "pack of spaceman's trumpet seeds"
@@ -136,7 +139,7 @@
 // Sunflower
 /obj/item/seeds/sunflower
 	name = "pack of sunflower seeds"
-	desc = "These seeds grow into sunflowers."
+	desc = "These seeds grow into sunflowers.<br><b>they appear to be edible once cooked!</b>"
 	icon_state = "seed-sunflower"
 	species = "sunflower"
 	plantname = "Sunflowers"
@@ -150,6 +153,21 @@
 	icon_dead = "sunflower-dead"
 	mutatelist = list(/obj/item/seeds/sunflower/moonflower, /obj/item/seeds/sunflower/novaflower)
 	reagents_add = list(/datum/reagent/consumable/cooking_oil = 0.08, /datum/reagent/consumable/nutriment = 0.04)
+
+/obj/item/seeds/sunflower/microwave_act(obj/machinery/microwave/MW) //The act allows it to be cooked over a bonfire grille too.
+	..()
+	new /obj/item/reagent_containers/food/snacks/roastseeds/sunflower(drop_location())
+	qdel(src)
+
+/obj/item/reagent_containers/food/snacks/roastseeds/sunflower //Inherits from pumpkin.dm's roast seeds, similarity commented out for clarity
+	name = "roasted sunflower seeds"
+	desc = "Nutty tasting black sunflower seeds, roasted to bring out the flavor."
+	icon_state = "roasted_sunflower_seeds"
+	list_reagents = list(/datum/reagent/consumable/cooking_oil = 2 , /datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1.5)
+	//bitesize = 2
+	//w_class = WEIGHT_CLASS_TINY
+	tastes = list("nutty" = 1)
+	//foodtype = GRAIN
 
 /obj/item/grown/sunflower // FLOWER POWER!
 	seed = /obj/item/seeds/sunflower

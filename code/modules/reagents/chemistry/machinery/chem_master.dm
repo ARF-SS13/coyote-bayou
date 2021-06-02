@@ -557,6 +557,7 @@
 	desc = "A high-tech device that uses nuclear-diffusion to seperate chemicals."
 	icon_state = "mixerad0"
 	advanced = TRUE
+	circuit = /obj/item/circuitboard/machine/chem_master/advanced
 
 /obj/machinery/chem_master/advanced/update_icon()
 	cut_overlays()
