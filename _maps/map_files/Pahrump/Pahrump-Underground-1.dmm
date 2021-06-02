@@ -238,6 +238,8 @@
 "ajl" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -329,10 +331,11 @@
 /area/f13/tunnel)
 "amM" = (
 /obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/armor/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -353,7 +356,7 @@
 	name = "M1 Garand"
 	},
 /obj/item/clothing/suit/armor/f13/battlecoat,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -2587,7 +2590,7 @@
 	},
 /area/f13/bunker)
 "cdY" = (
-/obj/item/clothing/head/helmet/f13/power_armor/t45b/restored,
+/obj/item/clothing/head/helmet/f13/power_armor/t45b,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -2726,7 +2729,7 @@
 /area/f13/tunnel)
 "clz" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -3356,26 +3359,8 @@
 "cIY" = (
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
 /obj/machinery/light,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "cJp" = (
@@ -5604,7 +5589,7 @@
 "exq" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -7115,12 +7100,12 @@
 /area/f13/clinic)
 "fEm" = (
 /obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -7392,11 +7377,6 @@
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
-/area/f13/enclave)
-"fPS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/autolathe/ammo/unlocked,
-/turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "fPT" = (
 /obj/structure/dresser,
@@ -7723,6 +7703,11 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/item/clothing/head/helmet/f13/power_armor/t45d{
+	color = "#C1C1C1";
+	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it. Nice.";
+	item_color = "#C1C1C1"
+	},
 /obj/item/defibrillator/compact/combat/loaded,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
@@ -11638,10 +11623,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
-"jiL" = (
-/obj/effect/landmark/map_load_mark/dungeons/northsewer,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "jiP" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
@@ -12470,6 +12451,13 @@
 /obj/machinery/chem_dispenser/drinks/beer,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"jSM" = (
+/obj/item/fusion_fuel,
+/obj/item/fusion_fuel,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "jSQ" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/spacevine{
@@ -13704,7 +13692,6 @@
 /obj/structure/closet/crate/large,
 /obj/item/multitool,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -14768,7 +14755,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -19272,6 +19259,7 @@
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /turf/open/floor/f13{
@@ -19412,7 +19400,7 @@
 /area/f13/caves)
 "pOB" = (
 /obj/structure/closet/crate/miningcar,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pPj" = (
@@ -19540,11 +19528,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood/rnd)
-"pVF" = (
-/obj/effect/decal/fakelattice,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "pWc" = (
 /obj/machinery/light/sign{
 	desc = "A deep hole, lit with unpowered coils, ready to receive power when activated. Just a nice glowy hole until then.";
@@ -21989,7 +21972,7 @@
 /area/f13/clinic)
 "rMs" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "rNi" = (
@@ -24215,7 +24198,6 @@
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -25092,7 +25074,7 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -25329,11 +25311,11 @@
 /area/f13/tunnel)
 "veE" = (
 /obj/structure/closet/crate/large,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -26336,6 +26318,7 @@
 /area/f13/brotherhood/offices1st)
 "waL" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "waU" = (
@@ -26599,16 +26582,7 @@
 /area/f13/bunker)
 "wrY" = (
 /obj/structure/rack,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/stock_parts/cell/ammo/ec,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wsm" = (
@@ -26747,18 +26721,8 @@
 "wAg" = (
 /obj/structure/rack,
 /obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wAq" = (
@@ -26930,7 +26894,6 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/emergency,
-/obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wOg" = (
@@ -27283,36 +27246,7 @@
 /area/f13/tunnel)
 "xjn" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/clothing/under/f13/enclave_officer,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "xjp" = (
@@ -27347,7 +27281,7 @@
 /area/f13/sewer)
 "xkk" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -35031,7 +34965,7 @@ eUk
 bcN
 rQA
 bcN
-bcN
+jSM
 dZF
 eLE
 uoO
@@ -40479,7 +40413,7 @@ nlH
 uJA
 pem
 vRM
-pVF
+ujY
 aOW
 aOW
 eLE
@@ -46014,7 +45948,7 @@ uoO
 uoO
 uoO
 uoO
-jiL
+uoO
 uoO
 uoO
 uoO
@@ -63153,7 +63087,7 @@ gXQ
 gXQ
 leT
 bfy
-fPS
+gXQ
 gXQ
 cIY
 bfy
