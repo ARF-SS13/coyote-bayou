@@ -1042,7 +1042,7 @@
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		dmgmod += 4
 		penmod += 4
-		spdmod += 4
+		spdmod -= 4
 		overall = dmgmod+penmod-spdmod
 
 	if(B.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
@@ -1090,7 +1090,7 @@
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		dmgmod += 4
 		penmod += 4
-		spdmod += 4
+		spdmod -= 4
 		overall = dmgmod+penmod-spdmod
 	
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
