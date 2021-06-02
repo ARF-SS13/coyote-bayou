@@ -918,14 +918,14 @@
 /turf/closed/wall/f13/wood,
 /area/f13/city)
 "aDw" = (
-/obj/structure/chair/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8;
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/booth{
+	icon_state = "booth_east_middle"
+	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "aDX" = (
@@ -1076,15 +1076,13 @@
 /turf/open/floor/wood/f13/stage_tl,
 /area/f13/legion)
 "aKD" = (
-/obj/structure/chair/left{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4;
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/west_middle,
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "aLg" = (
@@ -2254,9 +2252,6 @@
 	},
 /area/f13/caves)
 "bxG" = (
-/obj/structure/chair/left{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1;
 	pixel_y = 6
@@ -2267,6 +2262,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/booth{
+	icon_state = "booth_west_north"
+	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "byv" = (
@@ -7123,9 +7121,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "eWH" = (
-/obj/structure/chair/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	pixel_y = -6
 	},
@@ -7134,6 +7129,9 @@
 	pixel_x = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/booth{
+	icon_state = "booth_east_south"
+	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "eXa" = (
@@ -10383,9 +10381,6 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "hab" = (
-/obj/structure/chair/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8;
 	pixel_x = -6
@@ -10394,6 +10389,9 @@
 /obj/item/radio/intercom{
 	frequency = 1891;
 	pixel_x = -33
+	},
+/obj/structure/chair/booth{
+	icon_state = "booth_east_middle"
 	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
@@ -15644,9 +15642,6 @@
 	},
 /area/f13/wasteland)
 "koZ" = (
-/obj/structure/chair/left{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 1;
 	pixel_y = 6
@@ -15656,6 +15651,9 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/booth{
+	icon_state = "booth_west_north"
+	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "kpd" = (
@@ -17307,9 +17305,6 @@
 	},
 /area/f13/followers)
 "luc" = (
-/obj/structure/chair/left{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4;
 	pixel_x = 6
@@ -17319,6 +17314,7 @@
 	frequency = 1891;
 	pixel_x = 33
 	},
+/obj/structure/chair/west_middle,
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "lun" = (
@@ -19453,14 +19449,12 @@
 	},
 /area/f13/wasteland)
 "mTm" = (
-/obj/structure/chair/left{
-	dir = 8
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 4;
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/west_middle,
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "mTy" = (
@@ -24387,7 +24381,9 @@
 /turf/closed/wall/f13/wood,
 /area/f13/village)
 "qiU" = (
-/obj/structure/chair/stool/retro,
+/obj/structure/chair/stool/retro/backed{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "qiV" = (
@@ -28740,9 +28736,6 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "thO" = (
-/obj/structure/chair/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/trimline/yellow/line{
 	dir = 8;
 	pixel_x = -6
@@ -28751,6 +28744,9 @@
 	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/booth{
+	icon_state = "booth_east_south"
+	},
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
 "thW" = (
@@ -33213,8 +33209,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "wbi" = (
-/obj/structure/chair/stool/retro,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/retro/backed{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "wcu" = (
