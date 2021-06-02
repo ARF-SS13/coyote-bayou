@@ -12,7 +12,7 @@
 
 /obj/item/seeds/buffalogourd
 	name = "pack of buffalo gourd seeds"
-	desc = "These seeds grow into buffalo vines."
+	desc = "These seeds grow into buffalo vines.<br><b>they appear to be edible once cooked!</b>"
 	icon_state = "seed-gourd"
 	species = "buffalo gourd"
 	plantname = "Buffalo Vines"
@@ -21,7 +21,7 @@
 	icon_grow = "gourd-grow"
 	icon_dead = "gourd-dead"
 	icon_harvest = "gourd-harvest"
-	reagents_add = list(/datum/reagent/water = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
+	reagents_add = list(/datum/reagent/water = 0.2,  /datum/reagent/toxin = 0.1)
 	lifespan = 50
 	endurance = 40
 	maturation = 10
@@ -29,15 +29,31 @@
 	yield = 3
 	growthstages = 3
 
+/obj/item/seeds/buffalogourd/microwave_act(obj/machinery/microwave/MW) //The act allows it to be cooked over a bonfire grille too.
+	..()
+	new /obj/item/reagent_containers/food/snacks/roastseeds/buffalogourd(drop_location())
+	qdel(src)
+
+/obj/item/reagent_containers/food/snacks/roastseeds/buffalogourd //Inherits from pumpkin.dm's roast seeds, similarity commented out for clarity
+	name = "roasted gourd seeds"
+	desc = "Well prepared crispy buffalo gourd seeds, full of chewy protein."
+	//icon_state = "roasted_seeds"
+	list_reagents = list(/datum/reagent/consumable/cooking_oil = 1, /datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1.5)
+	//bitesize = 2
+	//w_class = WEIGHT_CLASS_TINY
+	//tastes = list("crunchy" = 1)
+	//foodtype = GRAIN
+
 /obj/item/reagent_containers/food/snacks/grown/buffalogourd
 	seed = /obj/item/seeds/buffalogourd
 	name = "buffalo gourd"
-	desc = "It's full of watery goodness."
-	icon_state = "Buffalo Gourd"
+	desc = "A bitter tasting vine plant, with a watery fleshy texture."
+	icon_state = "buffalo_gourd"
 	filling_color = "#008000"
 	bitesize_mod = 3
-	foodtype = FRUIT
-	distill_reagent = "buffalo"
+	foodtype = FRUIT | GROSS
+	juice_results = list(/datum/reagent/lye= 0.5) // The oil made from the gourd plant itself is used in Native American soap.
+	distill_reagent = list(/datum/chemical_reaction/pestkiller= 0.25) //Native Americans used the extract of gourd as small vermin pesticide.
 
 /obj/item/seeds/coyotetobacco
 	name = "pack of coyote tobacco seeds"
@@ -90,12 +106,12 @@
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus
 	name = "barrel cactus fruit"
-	desc = "Barrel cactus fruit are found on spherical barrel cacti and are both nutritious and highly toxic."
+	desc = "Carefully harvested spineless barrel-cactus fruit, it feels dry to the touch but appears more than edible."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"
+	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/tea/feratea = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/yellowpulque
-
 
 /obj/item/seeds/poppy/broc
 	name = "pack of broc seeds"
