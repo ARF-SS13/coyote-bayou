@@ -186,7 +186,7 @@ Head Scribe
 	exp_requirements = 1500
 
 	loadout_options = list(
-	/datum/outfit/loadout/hsstand, //Pulse pistol, and medbeam
+	///datum/outfit/loadout/hsstand, //Pulse pistol, and medbeam
 	/datum/outfit/loadout/hspract //Needler and hypospray
 	)
 
