@@ -770,6 +770,15 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/scoutcarbine)
 
+/obj/item/book/granter/trait/forgemaster
+	name = "The secrets of the Legion Forgemasters"
+	desc = "All you need to bend the steel right."
+	oneuse = TRUE
+	granted_trait = TRAIT_MASTER_GUNSMITH
+	traitname = "forge mastery"
+	remarks = list("Strike the steel while its hot...", "Don't take a rest..keep hammering...", "Don't forget to make a handle...", "Use gloves when touching red hot metal...", "Watch the sparks dance like fireflies..")
+	crafting_recipe_types = list(/datum/crafting_recipe/lance, /datum/crafting_recipe/spatha, /datum/crafting_recipe/gladius, /datum/crafting_recipe/trail_carbine, /datum/crafting_recipe/legionshield)
+
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
 	desc = "A useful book on chemistry."

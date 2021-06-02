@@ -16,31 +16,13 @@
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 
-//obj/item/melee/powerfist/goliath
-//	name = "\improper Goliath" //the Goliath
-//	desc = "A metal gauntlet with a piston-powered ram on top. This one has been painted in the colors of Caesar's Legion, and features a brutal metal spike to increase penetration and damage."
-//	icon_state = "goliath"
-//	force = 40 //you are Strongly Encouraged not to get hit by this.
-//	armour_penetration = 0.95 //what is armor?
-//	throwforce = 20
 
-/obj/item/melee/goliath //Workaround to the gas issue with the powerfist. No idea why it works.
+/obj/item/melee/powerfist/goliath //Placeholder for now, just straight powerfist copy with tiny AP increase. Maybe fine?
 	name = "Goliath"
 	desc = "Armored gauntlet with a piston-powered ram, this one is a experimental one captured and named by the Legion."
 	icon_state = "goliath"
 	item_state = "goliath"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	flags_1 = CONDUCT_1
-	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 40
-	armour_penetration = 0.95
-	throwforce = 20
-	throw_range = 7
-	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
-	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
+	armour_penetration = 0.85
 
 
 /obj/item/gun/ballistic/revolver/ballisticfist //it's a double-barrel shotgun disguised as a fist shhh

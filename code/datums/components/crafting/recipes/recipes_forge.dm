@@ -268,6 +268,8 @@
 	subcategory = CAT_FORGEWEAPON
 */
 
+// LEGION SPECIFIC
+
 /datum/crafting_recipe/spatha
 	name = "Spatha"
 	result = /obj/item/claymore/machete/spatha
@@ -279,6 +281,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	always_availible = FALSE
 
 /datum/crafting_recipe/gladuis
 	name = "Gladius"
@@ -289,26 +292,30 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	always_availible = FALSE
 
-/datum/crafting_recipe/reinforcemachete
-	name = "Machete"
-	result = /obj/item/claymore/machete/reinforced
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 600
+/datum/crafting_recipe/legionshield
+	name = "Legion Shield"
+	result = /obj/item/shield/riot/roman
+	reqs = list(/obj/item/stack/sheet/metal = 6,
+					/obj/item/stack/sheet/mineral/wood = 8,
+					/obj/item/stack/sheet/leather = 2)
+	time = 1000
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	always_availible = FALSE
 
-/datum/crafting_recipe/shortsword
-	name = "Shortsword"
-	result = /obj/item/claymore
-	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 600
+/datum/crafting_recipe/lance
+	name = "Lance"
+	result = /obj/item/twohanded/spear/lance
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/mineral/wood = 6)
+	time = 800
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	always_availible = FALSE
 
 //polearms
 
@@ -333,6 +340,26 @@
 	category = CAT_FORGE
 	subcategory = CAT_FORGEWEAPON
 */
+
+/datum/crafting_recipe/reinforcemachete
+	name = "Machete"
+	result = /obj/item/claymore/machete/reinforced
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 600
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/shortsword
+	name = "Shortsword"
+	result = /obj/item/claymore
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 600
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/forgethrowingspear
 	name = "Throwing Spear"
