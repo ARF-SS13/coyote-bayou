@@ -592,6 +592,13 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/datum/outfit/loadout/forgemaster //sledgehammer, crafting recipes spathas, gladius, lance, trail carbine
 		)
 
+/datum/outfit/job/CaesarsLegion/Legionnaire/support/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/support
 	name =			"Camp Duty"
 	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/support
@@ -687,10 +694,6 @@ datum/job/CaesarsLegion/Legionnaire/support
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
 
 /datum/outfit/loadout/auxassist
 	name =		"Treasurer"
@@ -702,7 +705,8 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/obj/item/paper/natural=2,
 		/obj/item/pen/fountain=1,
 		/obj/item/storage/bag/money/small/legofficers=2,
-		/obj/item/taperecorder=1)
+		/obj/item/taperecorder=1,
+		/obj/item/book/granter/trait/tinkering)
 
 /datum/outfit/loadout/auxmedicus
 	name =		"Medicus (Surgeon)"
@@ -719,11 +723,11 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/obj/item/surgical_drapes=1,
 		/obj/item/stack/sticky_tape/surgical=1,
 		/obj/item/stack/medical/bone_gel=1,
-		/obj/item/bonesetter=1
-	)
+		/obj/item/bonesetter=1,
+		/obj/item/book/granter/trait/midsurgery=1)
 
-// LOYAL SLAVES - Men and women who do the dirty work in camp.
 
+// LOYAL SLAVES - Servant cook, clean and assist with medical. Worker farm and mine.
 
 /datum/job/CaesarsLegion/loyalslave
 	title = "Loyal Slave"
@@ -731,16 +735,21 @@ datum/job/CaesarsLegion/Legionnaire/support
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	description = "Loyal slaves have a true Roman sounding name the brand of the Bull after surviving the slave camps. Be obedient, respectful, stay inside the camp. Work the farm, mine, make food, clean and help injured men. May NOT escape on your own, up to you how to handle it if forcibly freed by outside forces."
-	supervisors = "Slavemaster, Officers, all warriors except recruits."
+	description = "Loyal slaves have a Legion appropriate name (latin-tribal inspired), the brand of the Bull after surviving the slave camps. Be obedient, respectful, stay inside the camp. Work the farm, mine, make food, clean and help injured men. May NOT escape on your own, up to you how to handle it if forcibly freed by outside forces."
+	supervisors = "Officers and slavemaster first, then auxilia and warriors."
 	display_order = JOB_DISPLAY_ORDER_LEGIONSLAVE
 	exp_requirements = 100
 	outfit = /datum/outfit/job/CaesarsLegion/loyalslave
 
 	loadout_options = list(
 		/datum/outfit/loadout/slaveservant,
-		/datum/outfit/loadout/slavehealer,
 		/datum/outfit/loadout/slaveworker)
+
+/datum/outfit/job/CaesarsLegion/loyalslave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
 /datum/outfit/job/CaesarsLegion/loyalslave
 	name =		"Loyal Slave"
@@ -752,17 +761,19 @@ datum/job/CaesarsLegion/Legionnaire/support
 	l_pocket =	/obj/item/radio
 
 
-//Servants first jobs are food/kitchen and cleaning, keep an eye on the animals. Then help with other slave tasks.
+//Servants cook, clean, help with medical tasks.
 /datum/outfit/loadout/slaveservant
-	name =		"Female Servant"
+	name =		"Servant (Female)"
 	head =		/obj/item/clothing/head/f13/legion/servant
-	uniform =	/obj/item/clothing/under/f13/legslavef
-	suit =		/obj/item/clothing/suit/apron/chef
+	uniform	=	/obj/item/clothing/under/f13/campfollowermale
+	gloves =	/obj/item/clothing/gloves/f13/crudemedical
 	shoes =		/obj/item/clothing/shoes/roman
 	r_pocket =	/obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/claymore/machete/pipe/pan=1,
-		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/smelling_salts/crafted=1,
+		/obj/item/book/granter/trait/lowsurgery=1,
 		/obj/item/reagent_containers/food/condiment/flour=2,
 		/obj/item/storage/box/bowls=1,
 		/obj/item/reagent_containers/glass/beaker/large=1,
@@ -782,68 +793,26 @@ datum/job/CaesarsLegion/Legionnaire/support
 			L.registered_name = H.name
 			L.update_label()
 
-//Healers are low level medical workers supposed to support the Medicus.
-/datum/outfit/loadout/slavehealer
-	name =		"Female Healer"
-	head =		/obj/item/clothing/head/f13/legion/servant
-	uniform	=	/obj/item/clothing/under/f13/campfollowermale
-	gloves =	/obj/item/clothing/gloves/f13/crudemedical
-	shoes =		/obj/item/clothing/shoes/roman
-	r_pocket =	/obj/item/flashlight/lantern
-
-	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2,
-		/obj/item/smelling_salts/crafted=1,
-		/obj/item/book/granter/trait/lowsurgery=1)
-
-/datum/outfit/loadout/slavehealer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	if(H.gender == MALE)
-		H.gender = FEMALE
-		H.real_name = random_unique_name(FEMALE)
-		H.name = H.real_name
-		if(H.wear_id)
-			var/obj/item/card/id/dogtag/L = H.wear_id
-			L.registered_name = H.name
-			L.update_label()
-
 //Laborers farm and mine.
 /datum/outfit/loadout/slaveworker
-	name =		"Male Worker (Farm/Mine)"
+	name =		"Worker (Farm/Mine)"
 	suit =		/obj/item/clothing/suit/armor/f13/slavelabor
 	uniform =	/obj/item/clothing/under/f13/legslave
 	shoes =		/obj/item/clothing/shoes/f13/rag
 	r_hand =	/obj/item/flashlight/flare/torch
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
+		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus=1,
 		/obj/item/cultivator=1,
+		/obj/item/clothing/under/f13/legslavef=1,
 		/obj/item/shovel/spade=1)
-
-/datum/outfit/loadout/slaveworker/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	if(H.gender == FEMALE)
-		H.gender = MALE
-		H.real_name = random_unique_name(MALE)
-		H.name = H.real_name
-		if(H.wear_id)
-			var/obj/item/card/id/dogtag/L = H.wear_id
-			L.registered_name = H.name
-			L.update_label()
-
-
-
 
 /*
 Possible paths - refine Forgemaster role, more recipes etc.
 Make Auxilia to senior slaves. (little practical importance, able to delete the slave healer role if done.)
 Continue tweaking down power of loadouts in tandem with NCR.
 Slavemaster merged with Forgemaster in a support role has pros and cons, maybe split. Soldiers with reason to stay near camp is needed.
-Actually add recipes/traits to keep refining support roles. Maybe butchering for servant, some sort of farming thing for worker etc.
+Actually add recipes/traits to keep refining support roles. 
 
 Vexillarius moved to Veteran loadout to reduce bloat
 
