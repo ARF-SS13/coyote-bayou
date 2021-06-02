@@ -283,7 +283,7 @@
 	subcategory = CAT_MELEE
 	always_availible = FALSE
 
-/datum/crafting_recipe/gladuis
+/datum/crafting_recipe/gladius
 	name = "Gladius"
 	result = /obj/item/claymore/machete/gladius
 	reqs = list(/obj/item/stack/sheet/metal = 20,
