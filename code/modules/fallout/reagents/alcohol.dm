@@ -89,16 +89,6 @@
 		. = TRUE
 	..()
 
-/datum/reagent/consumable/ethanol/buffalo
-	name = "Buffalo"
-	description = "An insanely strong spirit that hits you like whatever the hell a buffalo was."
-	color = "#DFA866"
-	boozepwr = 150
-	taste_description = "a stampede"
-	glass_icon_state = "buffaloglass"
-	glass_name = "buffalo"
-	glass_desc = "An insanely strong spirit that hits you like whatever the hell a buffalo was."
-
 /datum/reagent/consumable/ethanol/deathroach
 	name = "Deathroach"
 	description = "Distilled tobacco, for that two-in-one cancer blast!"
@@ -903,7 +893,7 @@
 		if(26 to 40)
 			M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
 		if(41 to INFINITY)
-			M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)	
+			M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	ADD_TRAIT(M, TRAIT_IRONFIST, "[type]")
 	if(iscarbon(M))
