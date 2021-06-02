@@ -619,6 +619,7 @@ Trooper
 	head = 			/obj/item/clothing/head/f13/ncr/mp
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/assault/ncr
+	suit_store =    /obj/item/melee/classic_baton/telescopic
 	glasses = 		null
 	r_pocket = 		/obj/item/binoculars
 
