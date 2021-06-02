@@ -5,8 +5,8 @@
 	title = "Enclave Private"
 	flag = F13USPRIVATE
 	faction = "Enclave"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
 	forbids = ""
 	enforces = ""
@@ -49,13 +49,13 @@
 	faction = "Enclave"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are in charge of the undercover operatives for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	description = "You are in charge of the recruiting for the remnants of the Enclave. You are to recruit all those interested to your cause."
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."
 	selection_color = "#162b2c"
-	exp_requirements = 600
-	exp_type = EXP_TYPE_ENCLAVE
+	exp_requirements = 1200
+	exp_type = EXP_TYPE_FALLOUT
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
 
@@ -65,11 +65,11 @@
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
 	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/enclave
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
@@ -89,6 +89,7 @@
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"
@@ -96,7 +97,7 @@
 	faction = "Enclave"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the Lieutenant in charge of commanding the remnants of the Enclave forces in the area. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	description = "You are the Lieutenant in charge of commanding the remnants of the Enclave forces in the area. You are to recruit all those interested to your cause."
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."
@@ -136,6 +137,7 @@
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
 

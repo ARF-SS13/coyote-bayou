@@ -2709,9 +2709,37 @@
 /area/f13/brotherhood/offices2nd)
 "cIY" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
 /obj/machinery/light,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
+/obj/item/clothing/under/f13/navy,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "cJF" = (
@@ -6127,6 +6155,11 @@
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
+/area/f13/enclave)
+"fPS" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/autolathe/ammo/unlocked,
+/turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "fPT" = (
 /obj/structure/dresser,
@@ -21561,7 +21594,16 @@
 /area/f13/sewer)
 "wrY" = (
 /obj/structure/rack,
-/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wsK" = (
@@ -21634,8 +21676,19 @@
 "wAg" = (
 /obj/structure/rack,
 /obj/item/radio/headset/headset_enclave,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wAq" = (
@@ -21782,6 +21835,7 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/emergency,
+/obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "wOg" = (
@@ -22095,7 +22149,40 @@
 /area/f13/tunnel)
 "xjn" = (
 /obj/structure/rack,
-/obj/item/clothing/under/f13/enclave_officer,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
 /turf/open/floor/plasteel/dark,
 /area/f13/enclave)
 "xjp" = (
@@ -57671,7 +57758,7 @@ gXQ
 gXQ
 leT
 bfy
-gXQ
+fPS
 gXQ
 cIY
 bfy

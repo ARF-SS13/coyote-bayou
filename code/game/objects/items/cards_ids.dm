@@ -849,6 +849,20 @@
 /obj/item/card/id/dogtag/enclave
 	desc = "An advanced holographic dogtag, that shows the duty of a BoS member. This one seems a bit off somewhow..."
 
+/obj/item/card/id/dogtag/enclave/recruit
+	access = list(ACCESS_ENCLAVE)
+	
+/obj/item/card/id/dogtag/enclave/recruit/attack_self(mob/user)
+	if(isliving(user))
+		var/mob/living/living_user = user
+		if(alert(user, "Action", "Agent ID", "Show", "Forge") == "Forge")
+			registered_name = living_user.real_name
+			assignment = "Enclave Recruit"
+			update_label()
+			to_chat(user, "<span class='notice'>You successfully update your holotag.</span>")
+			return
+	..()
+
 /obj/item/card/id/selfassign/attack_self(mob/user)
 	if(isliving(user))
 		var/mob/living/living_user = user
