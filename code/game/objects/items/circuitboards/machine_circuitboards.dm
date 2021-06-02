@@ -794,6 +794,16 @@
 	name = "CondiMaster 3000 (Machine Board)"
 	build_path = /obj/machinery/chem_master/condimaster
 
+/obj/item/circuitboard/machine/chem_master/advanced
+	name = "Industrial-Grade ChemMaster (Machine Board)"
+	build_path = /obj/machinery/chem_master/advanced
+	desc = "Improves upon the ChemMaster 3000 build model with fission integration and cutting edge programming."
+
+/obj/item/circuitboard/machine/chem_master/advanced/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/screwdriver))
+		to_chat(user, "<span class='warning'>This advanced circuitry is too delicate to tinker with!</span>")
+		return
+
 /obj/item/circuitboard/machine/circuit_imprinter
 	name = "Circuit Imprinter (Machine Board)"
 	build_path = /obj/machinery/rnd/production/circuit_imprinter
