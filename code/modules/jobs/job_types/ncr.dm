@@ -587,7 +587,7 @@ Trooper
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	glasses = 		null
-	suit_store = 	/obj/item/gun/ballistic/automatic/varmint
+	suit_store = 	/obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \

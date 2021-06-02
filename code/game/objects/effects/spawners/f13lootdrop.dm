@@ -1090,7 +1090,8 @@
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/colt357,
 				/obj/effect/spawner/bundle/f13/wattz,
-				/obj/effect/spawner/bundle/f13/police_pistol
+				/obj/effect/spawner/bundle/f13/police_pistol,
+				/obj/effect/spawner/bundle/f13/service
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6
@@ -1109,8 +1110,7 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier7
 	name = "tier 7 gun"
-	loot = list(/obj/effect/spawner/bundle/f13/service,
-				/obj/effect/spawner/bundle/f13/trenchshotgun,
+	loot = list(/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/trail,
 				/obj/effect/spawner/bundle/f13/auto5,
 				/obj/effect/spawner/bundle/f13/plasmapistol,

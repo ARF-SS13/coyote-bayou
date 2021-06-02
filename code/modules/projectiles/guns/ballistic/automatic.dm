@@ -596,7 +596,7 @@
 	weapon_weight = WEAPON_MEDIUM
 	force = 15
 	burst_size = 2
-	fire_delay = 5
+	fire_delay = 4
 	burst_shot_delay = 2
 	can_suppress = TRUE
 	can_attachments = TRUE
@@ -660,7 +660,7 @@
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 4
+	fire_delay = 6
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	can_bayonet = TRUE
@@ -712,12 +712,9 @@
 	item_state = "R84"
 	//automatic = 1
 	spread = 3
-	burst_size = 2
-	fire_delay = 3
-	automatic_burst_overlay = TRUE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-	semi_auto = FALSE
-	burst_shot_delay = 2.2 //Was 2 before.
+	//burst_size = 2
+	fire_delay = 2
+	//burst_shot_delay = 2.2 //Was 2 before.
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
@@ -760,7 +757,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	extra_damage = 0
 	extra_penetration = 0
-	fire_delay = 6
+	fire_delay = 8.5
 	w_class = WEIGHT_CLASS_BULKY
 	can_bayonet = FALSE
 	can_suppress = TRUE
