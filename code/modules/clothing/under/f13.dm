@@ -426,6 +426,13 @@
 
 // Generic
 
+/obj/item/clothing/under/f13/chaplain
+	name = "Chaplain outfit"
+	desc = "Apparel of a religious priest, or minister of sorts."
+	icon_state = "chapblack"
+	item_state = "chapblack"
+	item_color = "chapblack"
+
 /obj/item/clothing/under/f13/machinist
 	name = "machinist bodysuit"
 	desc = "Apparel of an old-time machinist."

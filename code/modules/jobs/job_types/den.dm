@@ -445,11 +445,11 @@ Mayor
 /datum/outfit/job/den/f13preacher
 	name = "Preacher"
 	jobtype = /datum/job/den/f13preacher
-	ears = /obj/item/radio/headset/headset_den
-	belt = null
 
 	id = /obj/item/card/id/dogtag/town
-	uniform = /obj/item/clothing/under/rank/chaplain
+	ears = /obj/item/radio/headset/headset_den
+	belt = null
+	uniform = /obj/item/clothing/under/f13/chaplain
 	backpack_contents = list(/obj/item/camera/spooky = 1)
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
