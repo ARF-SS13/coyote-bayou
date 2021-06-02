@@ -251,10 +251,10 @@
 
 /obj/structure/anvil/obtainable/table
 	name = "table anvil"
-	desc = "A slightly reinforced table. Good luck."
+	desc = "A reinforced table. Usable as an anvil, but unequal weight distribution will impact the quality of your weapons."
 	icon_state = "tablevil"
-	anvilquality = -2
-	itemqualitymax = 0
+	anvilquality = 0
+	itemqualitymax = 4
 
 
 /obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
@@ -270,16 +270,16 @@
 	desc = "A big block of bronze. Useable as an anvil."
 	custom_materials = list(/datum/material/bronze=8000)
 	icon_state = "ratvaranvil"
-	anvilquality = -0.5
-	itemqualitymax = 2
+	anvilquality = 0
+	itemqualitymax = 4
 
 /obj/structure/anvil/obtainable/sandstone
 	name = "sandstone brick anvil"
 	desc = "A big block of sandstone. Useable as an anvil."
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
-	anvilquality = 1
-	itemqualitymax = 8
+	anvilquality = -0.5
+	itemqualitymax = 3
 
 /obj/structure/anvil/obtainable/basalt
 	name = "basalt brick anvil"
@@ -291,8 +291,8 @@
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
 	desc = "An anvil. It's got wheels bolted to the bottom."
-	anvilquality = 0
-	itemqualitymax = 6
+	anvilquality = 1
+	itemqualitymax = 8
 
 /obj/structure/anvil/obtainable/ratvar
 	name = "brass anvil"
