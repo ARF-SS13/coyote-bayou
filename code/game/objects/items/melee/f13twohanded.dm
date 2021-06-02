@@ -120,7 +120,6 @@
 //	force_unwielded = 25
 //	force_wielded = 40
 	throwforce = 25
-	reach = 2
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
 	armour_penetration = 0
@@ -141,7 +140,7 @@
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 //	AddComponent(/datum/component/jousting)
 	AddElement(/datum/element/sword_point)
-	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=18, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/rightclick_attack_self(mob/user)
 	if(explosive)
@@ -230,6 +229,12 @@
 	desc = "A long spear made in the Legions war foundries. Useful for fighting tribals and hunting when ammunition is scarce."
 	icon_prefix = "lance"
 
+/obj/item/twohanded/spear/lance/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
+	AddElement(/datum/element/sword_point)
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=40, icon_wielded="[icon_prefix]1")
+
 /*
  * Bone Spear
  */
@@ -242,9 +247,7 @@
 	force = 15
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	reach = 2
 	throwforce = 25
-	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	armour_penetration = 0.24				//Enhanced armor piercing
