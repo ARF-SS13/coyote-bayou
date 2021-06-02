@@ -729,9 +729,6 @@
 	item_chair = null
 	var/mutable_appearance/overlay
 
-/obj/structure/chair/left/proc/update_overlay()
-		add_overlay(overlay)
-
 /obj/structure/chair/left/Initialize()
 	overlay = GetOverlay()
 	overlay.layer = ABOVE_ALL_MOB_LAYER
@@ -740,9 +737,6 @@
 /obj/structure/chair/left/Destroy()
 	QDEL_NULL(overlay)
 	return ..()
-
-/obj/structure/chair/left/proc/GetOverlay()
-	return mutable_appearance('icons/obj/chairs.dmi', "booth_leftend_overlay")
 
 /obj/structure/chair/middle
 	name = "booth"
