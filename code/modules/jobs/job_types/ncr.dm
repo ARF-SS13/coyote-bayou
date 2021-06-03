@@ -277,7 +277,6 @@ Logistics Officer
 	glasses			= /obj/item/clothing/glasses/welding
 	belt 			= /obj/item/storage/belt/utility/full/engi
 	gloves			= /obj/item/clothing/gloves/color/yellow
-	accessory		= /obj/item/clothing/accessory/ncr/SPC
 	suit_store		= /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
