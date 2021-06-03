@@ -4,9 +4,9 @@
 	department_flag = LEGION
 	selection_color = "#ffeeee"
 
-	forbids = "The Legion forbids: Chems and drugs such as weed, stimpacks, alcohol. Friendly treatment of Ghouls. Women fighting or being trained to fight (self defense and suicide allowed). Using robots and advanced machines. Killing Legion members without a lawful reason, must be public."
-	enforces = "The Legion demands: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a NON-COMBAT infiltrator. Expect death as punishment for failure."
-	objectivesList = list("Impress the tribals: If they are weak, cower them and demand tribute, if they are strong, seek friendship and offer aid.","Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more slaves acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction gains dominance over Oasis, use whatever means to mark that the Legion will not tolerate others annexing the only town nearby.")
+	forbids = "The Legion forbids: Using drugs such as stimpacks and alcohol. Ghouls joining. Women fighting or being trained to fight (self defense and suicide allowed). Using robots and advanced machines. Killing Legion members in secret, only if according to law and in public is it acceptable."
+	enforces = "The Legion demands: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a NON-COMBAT infiltrator. Expect death as punishment for failing to obey."
+	objectivesList = list("Focus on the tribals, win them over or intimidate them.", "Focus on Oasis, display dominance.", "Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more worker: acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction gains dominance over Oasis, if they remain neutral it can be used to the Legions advantage.")
 
 	exp_type = EXP_TYPE_LEGION
 
@@ -194,6 +194,7 @@
 		return
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 	name = 			"Legion Veteran Decanus"
@@ -209,9 +210,9 @@
 	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/claymore/machete/spatha=1,
-		/obj/item/storage/fancy/ammobox/slugshot=2,
+		/obj/item/ammo_box/magazine/d12g=2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
-		/obj/item/ammo_box/magazine/m45=1,
+		/obj/item/ammo_box/magazine/m45/ap=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/storage/bag/money/small/legion=1)
@@ -229,7 +230,7 @@
 	supervisors = "the Veteran Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
-	exp_requirements = 600
+	exp_requirements = 720
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -255,6 +256,7 @@
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=1,
 		/obj/item/ammo_box/magazine/garand308=2,
+		/obj/item/ammo_box/magazine/garand308/ap=1,
 		/obj/item/gun/ballistic/revolver/revolver44=1,
 		/obj/item/ammo_box/m44=1)
 
@@ -298,7 +300,9 @@
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
-		/obj/item/restraints/handcuffs=1)
+		/obj/item/restraints/handcuffs=1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
+		/obj/item/ammo_box/magazine/m45/ap=1)
 
 /datum/outfit/loadout/recdecgun
 	name =		"Lead from rear"
@@ -315,6 +319,53 @@
 		/obj/item/gun/ballistic/shotgun/trench=1,
 		/obj/item/storage/fancy/ammobox/slugshot=2,
 		/obj/item/ammo_box/a357=1)
+
+
+////////////////////
+///Specialist///////
+////////////////////
+
+// VEXILLARIUS (9mm burst with 1 ap mag to fight PA, ripper.) Intended to have flexible loadout to help counter stuff Legion can't replicate.
+
+/datum/job/CaesarsLegion/Legionnaire/f13vexillarius
+	title = "Legion Vexillarius"
+	flag = F13VEXILLARIUS
+	faction = "Legion"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are a Veteran of proven bravery, selected to carry weapons to counter enemies with heavy armor. When not fighting, relay orders from the commander and act as a bodyguard."
+	supervisors = "the Veteran Decanus and Centurion"
+	display_order = JOB_DISPLAY_ORDER_VEXILLARIUS
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
+	exp_requirements = 720
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
+	name =			"Vexillarius"
+	jobtype =		/datum/job/CaesarsLegion/Legionnaire/f13vexillarius
+	id = 			/obj/item/card/id/dogtag/legveteran
+	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
+	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
+	mask =			/obj/item/clothing/mask/bandana/legvet
+	neck =			/obj/item/storage/belt/holster
+	glasses = 		/obj/item/clothing/glasses/sunglasses
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic	
+	r_pocket =		/obj/item/flashlight/lantern
+	l_pocket =		/obj/item/restraints/handcuffs
+	l_hand = 		/obj/item/nullrod/claymore/chainsaw_sword
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1,
+		/obj/item/ammo_box/magazine/m9mmds/ap=1,
+		/obj/item/ammo_box/magazine/m9mmds=2,
+		/obj/item/megaphone/cornu=1)
 
 
 ///////////////////
@@ -339,7 +390,6 @@
 		/datum/outfit/loadout/vetberserker, //browning shotgun, fireaxe, bola
 		/datum/outfit/loadout/vetshielder, //10mm smg, shield, gladius
 		/datum/outfit/loadout/vetrifle, //trail gun, .357 revolver, gladius.
-		/datum/outfit/loadout/vetvex //.45 revolver, spatha.
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/vetlegionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -388,15 +438,6 @@
 		/obj/item/ammo_box/a357=2,
 		/obj/item/gun/ballistic/revolver/colt357=1)
 
-/datum/outfit/loadout/vetvex
-	name = 			"Vexillarius"
-	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
-	suit_store = 	/obj/item/claymore/machete/spatha	
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/revolver45=1,
-		/obj/item/ammo_box/c4570=4,
-		/obj/item/megaphone/cornu=1)
 
 // PRIME
 
@@ -409,7 +450,7 @@
 	description = "A front line soldier who has shown ability to obey and fought in some battles. The Legions muscle, the young men who will build the future with their own blood and sacrifice, for Caesar."
 	supervisors = "the Decani and Centurion"
 	display_order = JOB_DISPLAY_ORDER_LEGIONARY
-	exp_requirements = 100
+	exp_requirements = 120
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 
 	loadout_options = list(
@@ -422,6 +463,7 @@
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
@@ -552,7 +594,7 @@
 		/obj/item/storage/bag/money/small/legion=1)
 
 /datum/outfit/loadout/expambusher
-	name =			"Cutthroat"
+	name =			"Ambusher"
 	suit_store =	/obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
 		/obj/item/storage/fancy/ammobox/slugshot=1,
@@ -576,7 +618,7 @@
 // CAMP DUTY Forgemasters: legion weapon recipes, tinkering or Slavemasters, temporary posting for legionnaires, RP, keep eye on slaves.
 // For both : Defend camp, help out there, dont run off, Mars teachings to help make potions.
 
-datum/job/CaesarsLegion/Legionnaire/support
+/datum/job/CaesarsLegion/Legionnaire/f13campfollower
 	title = "Camp Duty"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"
@@ -585,24 +627,24 @@ datum/job/CaesarsLegion/Legionnaire/support
 	description = " The Slavemaster is a legionnaire temporarily assigned to keeping slaves and prisoners in check, either to recuperate from wounds or by request. The Forgemaster makes weapons of all sorts and upgrades them, keeping order in the Forge. Both are warriors expected to kill intruders and fight in defense of the camp."
 	supervisors = "the Centurion."
 	display_order = JOB_DISPLAY_ORDER_CAMPFOLLOWER
-	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/support
-	exp_requirements = 600
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower
+	exp_requirements = 300
 
 	loadout_options = list(
 		/datum/outfit/loadout/slavemaster, //shotgun, whip, bolas
 		/datum/outfit/loadout/forgemaster //sledgehammer, crafting recipes spathas, gladius, lance, trail carbine
 		)
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/support/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/support
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower
 	name =			"Camp Duty"
-	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/support
+	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/f13campfollower
 	id =			/obj/item/card/id/dogtag/legslavemaster
 	mask = 			/obj/item/clothing/mask/bandana/auxilia
 	uniform = 		/obj/item/clothing/under/f13/legskirt
@@ -620,11 +662,11 @@ datum/job/CaesarsLegion/Legionnaire/support
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	suit_store = 	/obj/item/gun/ballistic/shotgun/hunting
 	backpack_contents = list(
+		/obj/item/claymore/machete/reinforced=1,
 		/obj/item/storage/fancy/ammobox/beanbag=1,
 		/obj/item/melee/curator_whip=1,
 		/obj/item/razor=1,
-		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/stack/medical/gauze/improvised=1)
+		/obj/item/restraints/legcuffs/bola=2)
 
 /datum/outfit/loadout/forgemaster
 	name =			"Forgemaster"
@@ -651,7 +693,6 @@ datum/job/CaesarsLegion/Legionnaire/support
 	title = "Auxilia"
 	flag = F13AUXILIA
 	faction = "Legion"
-	head_announce = list("Security")
 	total_positions = 2
 	spawn_positions = 2
 	description = "You are a free female noncombatant for the Legion, trained in medicine or responsible for logistics. Do surgery, collect money, organize the armory, run the camp. In camp matters, only the officers are above you, but do not think yourself above the lower warriors even if you dont have to obey every whim."
@@ -687,7 +728,7 @@ datum/job/CaesarsLegion/Legionnaire/support
 	ears	=		/obj/item/radio/headset/headset_legion
 	gloves =		null
 	belt =			null
-	r_pocket =      /obj/item/flashlight/flare/torch
+	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2)
 
@@ -702,7 +743,6 @@ datum/job/CaesarsLegion/Legionnaire/support
 	name =		"Treasurer"
 	head =		/obj/item/clothing/head/f13/legion/auxilia
 	neck =		/obj/item/clothing/neck/cloak/treasurer
-	r_pocket =	/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/folder/red=1,
 		/obj/item/paper/natural=2,
@@ -733,31 +773,31 @@ datum/job/CaesarsLegion/Legionnaire/support
 // LOYAL SLAVES - Servant cook, and assist with medical, low surgery. Worker farm and mine.
 // Both get Mars teachings to help out when normal work is done.
 
-/datum/job/CaesarsLegion/loyalslave
-	title = "Loyal Slave"
+/datum/job/CaesarsLegion/slave
+	title = "Legion Slave"
 	flag = F13LEGIONSLAVE
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
-	description = "Loyal slaves have a Legion appropriate name (latin-tribal inspired), the brand of the Bull after surviving the slave camps. Be obedient, respectful, stay inside the camp. Work the farm, mine, make food, clean and help injured men. May NOT escape on your own, up to you how to handle it if forcibly freed by outside forces."
+	total_positions = 4
+	spawn_positions = 4
+	description = "A slave that survives the breaking camps is given a Legion appropriate name (latin-tribal inspired) and bull tattoo. Be obedient, respectful, stay inside the camp. Work the farm, mine, make food, clean and help injured men. Do NOT escape on your own, up to you how to handle it if forcibly freed by outside forces."
 	supervisors = "Officers and slavemaster first, then auxilia and warriors."
 	display_order = JOB_DISPLAY_ORDER_LEGIONSLAVE
-	exp_requirements = 100
-	outfit = /datum/outfit/job/CaesarsLegion/loyalslave
+	exp_requirements = 120
+	outfit = /datum/outfit/job/CaesarsLegion/slave
 
 	loadout_options = list(
 		/datum/outfit/loadout/slaveservant,
 		/datum/outfit/loadout/slaveworker)
 
-/datum/outfit/job/CaesarsLegion/loyalslave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/CaesarsLegion/slave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
-/datum/outfit/job/CaesarsLegion/loyalslave
-	name =		"Loyal Slave"
-	jobtype =	/datum/outfit/job/CaesarsLegion/loyalslave
+/datum/outfit/job/CaesarsLegion/slave
+	name =		"Legion Slave"
+	jobtype =	/datum/outfit/job/CaesarsLegion/slave
 	id =		/obj/item/card/id/legionbrand
 	uniform =	/obj/item/clothing/under/f13/legslavef
 	neck =		/obj/item/electropack/shockcollar
@@ -808,21 +848,18 @@ datum/job/CaesarsLegion/Legionnaire/support
 		/obj/item/storage/bag/plants=1,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/deus=1,
 		/obj/item/cultivator=1,
-		/obj/item/clothing/under/f13/legslavef=1,
+		/obj/item/soap/homemade=1,
 		/obj/item/shovel/spade=1)
 
 /*
 Possible paths - refine Forgemaster role, more recipes etc.
-Make Auxilia to senior slaves. (little practical importance, able to delete the slave healer role if done.)
 Continue tweaking down power of loadouts in tandem with NCR.
-Slavemaster merged with Forgemaster in a support role has pros and cons, maybe split. Soldiers with reason to stay near camp is needed.
-Actually add recipes/traits to keep refining support roles. 
-
-Vexillarius moved to Veteran loadout to reduce bloat
+Slavemaster merged with Forgemaster in a support role has pros and cons, might need shuffle around at some later date.
+Add recipes/traits to keep refining support roles. 
 
 Priestess of Mars removed to reduce bloat, Legate is enough for admin intervention IC.
 
-Venator  - Removed to reduce role bloat and confused chain of command.
+Venator  - Removed to reduce role bloat and clarify chain of command.
 
 /datum/job/CaesarsLegion/Legionnaire/f13venator
 	title = "Legion Venator"
@@ -870,7 +907,7 @@ Orator removed to reduce role bloat
 
 	flag = F13ORATOR
 	display_order = JOB_DISPLAY_ORDER_ORATOR
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
+	/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	suit = 	     /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	id =         /obj/item/card/id/dogtag/legorator
 

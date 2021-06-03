@@ -256,6 +256,26 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/datum/crafting_recipe/reinforcemachete
+	name = "Machete"
+	result = /obj/item/claymore/machete/reinforced
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 600
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/shortsword
+	name = "Shortsword"
+	result = /obj/item/claymore
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 600
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
 /*
 /datum/crafting_recipe/katana
 	name = "Longsword"
@@ -329,34 +349,14 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_FORGE
 	subcategory = CAT_FORGEWEAPON
+*/
 
 /datum/crafting_recipe/forgeglaive
 	name = "Metal Glaive"
 	result = /obj/item/twohanded/spear
 	time = 600
-	reqs = list(/obj/item/stack/sheet/metal = 10,
+	reqs = list(/obj/item/stack/sheet/metal = 16,
 				/obj/item/stack/sheet/mineral/wood = 4)
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
-
-/datum/crafting_recipe/reinforcemachete
-	name = "Machete"
-	result = /obj/item/claymore/machete/reinforced
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 600
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/shortsword
-	name = "Shortsword"
-	result = /obj/item/claymore
-	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 600
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
