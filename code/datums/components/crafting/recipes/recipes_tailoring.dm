@@ -49,7 +49,7 @@
 /datum/crafting_recipe/armor_plate_plastit
 	name = "Armor Plate"
 	result = /obj/item/stack/crafting/armor_plate
-	reqs = list(/obj/item/stack/sheet/mineral/plastitanium = 10,
+	reqs = list(/obj/item/stack/sheet/plasteel = 2,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
