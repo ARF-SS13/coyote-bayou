@@ -723,6 +723,7 @@
 	name = 			"Household Slave"
 	jobtype = 		/datum/job/CaesarsLegion/auxilia
 	id =			/obj/item/card/id/legionbrand
+	head =			/obj/item/clothing/head/f13/legion/auxilia
 	uniform = 		/obj/item/clothing/under/f13/legauxiliaf
 	shoes = 		/obj/item/clothing/shoes/roman
 	ears	=		/obj/item/radio/headset/headset_legion
@@ -741,7 +742,6 @@
 
 /datum/outfit/loadout/auxassist
 	name =		"Treasurer"
-	head =		/obj/item/clothing/head/f13/legion/auxilia
 	neck =		/obj/item/clothing/neck/cloak/treasurer
 	backpack_contents = list(
 		/obj/item/folder/red=1,
@@ -753,7 +753,6 @@
 
 /datum/outfit/loadout/auxmedicus
 	name =		"Medicus (Surgeon)"
-	head =		/obj/item/clothing/head/f13/legion/auxilia
 	suit =		/obj/item/clothing/suit/armor/f13/medicus
 	gloves =	/obj/item/clothing/gloves/f13/crudemedical
 	backpack_contents = list(
