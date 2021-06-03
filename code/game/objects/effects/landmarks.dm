@@ -637,7 +637,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
-	name = "Auxilia"
+	name = "Household Slave"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/campfollower

@@ -690,20 +690,20 @@
 // Medicus only one with MID surgery, Treasurer get tinkering, both get Mars & Low Surgery.
 
 /datum/job/CaesarsLegion/auxilia
-	title = "Auxilia"
+	title = "Household Slave"
 	flag = F13AUXILIA
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are a free female noncombatant for the Legion, trained in medicine or responsible for logistics. Do surgery, collect money, organize the armory, run the camp. In camp matters, only the officers are above you, but do not think yourself above the lower warriors even if you dont have to obey every whim."
-	supervisors = "the Decanii and Centurion"
+	description = "You are a slave that has been recognized as being talented and trustworthy, given special medical training or entrusted with the camp funds and maintaining weapons. As part of the Centurions household you are expected to help the camp even if given no orders."
+	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_AUXILIA
 	outfit = /datum/outfit/job/CaesarsLegion/auxilia
 	exp_requirements = 600
 
 	loadout_options = list(
-	/datum/outfit/loadout/auxassist,
-	/datum/outfit/loadout/auxmedicus
+	/datum/outfit/loadout/auxassist, // Tinker and keep track of the money, handle trading beneath the warriors
+	/datum/outfit/loadout/auxmedicus // Do surgery, medical tasks.
 	)
 
 /datum/outfit/job/CaesarsLegion/auxilia/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -720,9 +720,9 @@
 			L.update_label()
 
 /datum/outfit/job/CaesarsLegion/auxilia
-	name = 			"Auxilia"
+	name = 			"Household Slave"
 	jobtype = 		/datum/job/CaesarsLegion/auxilia
-	id =			/obj/item/card/id/dogtag/legauxilia
+	id =			/obj/item/card/id/legionbrand
 	uniform = 		/obj/item/clothing/under/f13/legauxiliaf
 	shoes = 		/obj/item/clothing/shoes/roman
 	ears	=		/obj/item/radio/headset/headset_legion
