@@ -917,8 +917,7 @@ Veteran Ranger
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/survivalkit_aid=1,
 		/obj/item/attachments/scope=1,
-		/obj/item/gun/ballistic/revolver/colt357=1,
-		/obj/item/gun/ballistic/revolver/colt357=1,
+		/obj/item/gun/ballistic/revolver/colt357=2,
 		/obj/item/ammo_box/a357=6
 	)
 
