@@ -121,7 +121,7 @@
 /datum/crafting_recipe/rip
 	category = CAT_MISC
 	subcategory = CAT_FURNITURE
-	
+
 /datum/crafting_recipe/rip/gravemarker
 	name = "Gravemarker"
 	result = /obj/structure/statue/wood/headstonewood
@@ -182,7 +182,7 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 
 
-/datum/crafting_recipe/shutters
+/datum/crafting_recipe/shutters/old
 	name = "Shutters"
 	reqs = list(/obj/item/stack/sheet/plasteel = 10, //5x as expensive as a reinforced wall, can be destroyed by mid-tier guns or high-tier melee. More useful to townies/comfy roles then for NCR/Legion.
 				/obj/item/stack/cable_coil = 10,
@@ -203,6 +203,19 @@
 	result = /obj/machinery/door/poddoor/preopen
 	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
 	time = 30 SECONDS
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/shutters/window
+	name = "Windowed Shutters"
+	reqs = list(/obj/item/stack/sheet/plasteel = 5,
+				/obj/item/stack/sheet/rglass = 10,
+				/obj/item/stack/cable_coil = 10,
+				/obj/item/electronics/airlock = 1
+				)
+	result = /obj/machinery/door/poddoor/shutters/window/preopen
+	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WIRECUTTER, TOOL_WELDER)
+	time = 15 SECONDS
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
