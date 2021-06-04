@@ -99,6 +99,8 @@
 	desc = "A robust .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	force = 14
+	extra_damage = 7
+	extra_speed = 500
 	mag_type = /obj/item/ammo_box/magazine/m44
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
