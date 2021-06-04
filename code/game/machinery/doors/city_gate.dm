@@ -7,6 +7,7 @@
 	id = 333
 	bound_width = 96
 	var/list/opacity_objects = list() //FUCK BYOND
+	ertblast = TRUE
 
 /obj/machinery/door/poddoor/gate/preopen
 	icon_state = "open"
