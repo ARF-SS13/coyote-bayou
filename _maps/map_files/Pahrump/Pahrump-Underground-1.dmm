@@ -15199,7 +15199,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "myX" = (
-/obj/structure/simple_door/bunker,
+/obj/machinery/door/airlock/abandoned{
+	req_one_access_txt = "134"
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
