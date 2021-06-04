@@ -921,7 +921,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 10
 	burst_size = 1
-	extra_speed = 1000
+	extra_speed = 5000
 	can_bayonet = FALSE
 	semi_auto = TRUE
 	can_automatic = FALSE
