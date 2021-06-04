@@ -467,7 +467,7 @@
 	desc = "(IX) With most of the external plating stripped to allow for internal thermal and night vision scanners, as well as aided targeting assist via onboard systems, this helm provides much more utility then protection. To support these systems, secondary power cells were installed into the helm, and covered with a stylish hat."
 	icon_state = "t51bgs"
 	item_state = "t51bgs"
-	slowdown = 0
+	slowdown = -0.2
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
 	actions_types = list()
 
