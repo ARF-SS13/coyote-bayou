@@ -363,7 +363,7 @@
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
-		/obj/item/ammo_box/magazine/m9mmds/ap=1,
+		/obj/item/ammo_box/magazine/m9mmds/ap=2,
 		/obj/item/ammo_box/magazine/m9mmds=2,
 		/obj/item/megaphone/cornu=1)
 
