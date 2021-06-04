@@ -37,6 +37,14 @@
 	max_ammo = 8
 	multiple_sprites = 1
 
+/obj/item/ammo_box/magazine/m45/ap
+	name = "AP magazine (.45)"
+	icon_state = "45-8"
+	ammo_type = /obj/item/ammo_casing/c45/op
+	caliber = ".45"
+	max_ammo = 8
+	multiple_sprites = 1
+
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = 1
 
@@ -137,6 +145,11 @@
 	caliber = "9mm"
 	max_ammo = 15
 	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m9mmds/ap
+	name = "doublestack AP magazine (9mm)"
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/m9mmds/empty
 	start_empty = 1

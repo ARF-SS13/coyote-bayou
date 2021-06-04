@@ -1026,7 +1026,7 @@
 
 /obj/item/card/id/dogtag/legslavemaster
 	name = "slavemaster medallion"
-	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to the dreaded Slavemaster."
+	desc = "A marked silver disc stamped with the Legion's Bull insignia and a whip. Worn by legionnaires on camp duty."
 	icon_state = "legionmedallionprime"
 	item_state = "card-id_leg"
 	assignment = "slavemaster medallion"

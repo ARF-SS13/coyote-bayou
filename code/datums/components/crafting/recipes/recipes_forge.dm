@@ -256,40 +256,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/*
-/datum/crafting_recipe/katana
-	name = "Longsword"
-	result = /obj/item/katana/scrap
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 1000
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
-
-/datum/crafting_recipe/spatha
-	name = "Spatha"
-	result = /obj/item/claymore/machete/spatha
-	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/mineral/wood = 2,
-				/obj/item/stack/sheet/bone = 2)
-	time = 1000
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/gladuis
-	name = "Gladius"
-	result = /obj/item/claymore/machete/gladius
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 600
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
 /datum/crafting_recipe/reinforcemachete
 	name = "Machete"
 	result = /obj/item/claymore/machete/reinforced
@@ -310,6 +276,66 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/*
+/datum/crafting_recipe/katana
+	name = "Longsword"
+	result = /obj/item/katana/scrap
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 1000
+	tools = list(TOOL_FORGE)
+	category = CAT_FORGE
+	subcategory = CAT_FORGEWEAPON
+*/
+
+// LEGION SPECIFIC
+
+/datum/crafting_recipe/spatha
+	name = "Spatha"
+	result = /obj/item/claymore/machete/spatha
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/mineral/silver = 1,
+				/obj/item/stack/sheet/bone = 2)
+	time = 1000
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_availible = FALSE
+
+/datum/crafting_recipe/gladius
+	name = "Gladius"
+	result = /obj/item/claymore/machete/gladius
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/bone = 2)
+	time = 600
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_availible = FALSE
+
+/datum/crafting_recipe/legionshield
+	name = "Legion Shield"
+	result = /obj/item/shield/riot/roman
+	reqs = list(/obj/item/stack/sheet/metal = 8,
+				/obj/item/stack/sheet/mineral/wood = 8,
+				/obj/item/stack/sheet/leather = 2)
+	time = 1000
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_availible = FALSE
+
+/datum/crafting_recipe/lance
+	name = "Lance"
+	result = /obj/item/twohanded/spear/lance
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/mineral/wood = 6)
+	time = 800
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_availible = FALSE
+
 //polearms
 
 /*
@@ -322,17 +348,17 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_FORGE
 	subcategory = CAT_FORGEWEAPON
+*/
 
 /datum/crafting_recipe/forgeglaive
 	name = "Metal Glaive"
 	result = /obj/item/twohanded/spear
 	time = 600
-	reqs = list(/obj/item/stack/sheet/metal = 10,
+	reqs = list(/obj/item/stack/sheet/metal = 16,
 				/obj/item/stack/sheet/mineral/wood = 4)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/forgethrowingspear
 	name = "Throwing Spear"
