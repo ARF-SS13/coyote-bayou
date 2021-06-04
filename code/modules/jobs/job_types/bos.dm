@@ -414,6 +414,7 @@ Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Star Paladin, or Head Paladin"
 	selection_color = "#95a5a6"
+	exp_requirements = 300
 
 	loadout_options = list(
 	/datum/outfit/loadout/paladina, //Carbine and aep7

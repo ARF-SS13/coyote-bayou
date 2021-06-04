@@ -87,7 +87,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Centurion",
 "Legion Venator",
 "Legion Veteran Decanus",
-"Veteran Legionary",
+"Veteran Legionnaire",
 "Legion Prime Decanus",
 "Prime Legionary",
 "Legion Recruit Decanus",
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "BoS Off-Duty",
 
 "Legion Veteran Decanus",
-"Veteran Legionary",
+"Veteran Legionnaire",
 "Legion Prime Decanus",
 "Prime Legionary",
 "Legion Recruit Decanus",
@@ -217,11 +217,11 @@ GLOBAL_LIST_INIT(legion_command_positions, list(
 
 GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Veteran Decanus",
-	"Veteran Legionary",
+	"Veteran Legionnaire",
 	"Legion Prime Decanus",
 	"Prime Legionary",
 	"Legion Recruit Decanus",
-	"Recruit Legionary",
+	"Recruit Legionnaire",
 	"Legion Explorer",
 	"Auxilia",
 	"Camp Follower",

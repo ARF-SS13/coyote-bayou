@@ -901,11 +901,3 @@ Venator  - Removed to reduce role bloat and clarify chain of command.
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/gun/ballistic/revolver/revolver45=1,
 		/obj/item/ammo_box/c45rev=3)
-
-Orator removed to reduce role bloat
-
-	flag = F13ORATOR
-	display_order = JOB_DISPLAY_ORDER_ORATOR
-	/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
-	suit = 	     /obj/item/clothing/suit/armor/f13/legion/vet/orator
-	id =         /obj/item/card/id/dogtag/legorator
