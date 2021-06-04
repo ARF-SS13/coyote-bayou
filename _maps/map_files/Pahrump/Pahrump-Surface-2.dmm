@@ -1000,6 +1000,11 @@
 /obj/structure/tires,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"aIN" = (
+/obj/structure/closet/crate/bin,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "aIS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -1363,9 +1368,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/caves)
-"aTR" = (
-/turf/open/floor/wood/f13/housewoodbroken,
-/area/f13/wasteland)
 "aUl" = (
 /obj/structure/fence,
 /obj/structure/fence,
@@ -3635,6 +3637,7 @@
 "cvH" = (
 /obj/structure/table/wood/settler,
 /obj/item/pickaxe,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "cwV" = (
@@ -3722,10 +3725,6 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"cBe" = (
-/obj/effect/landmark/start/f13/dendoc,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "cBh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8346,6 +8345,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"fuK" = (
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/glass/bowl,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "fuS" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -8470,10 +8475,6 @@
 	icon_state = "skulls"
 	},
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
-"fzx" = (
-/obj/machinery/computer/slot_machine,
-/turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "fzB" = (
 /obj/structure/table/wood/poker,
@@ -10867,12 +10868,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"gYG" = (
-/obj/effect/landmark/start/f13/dendoc,
-/turf/open/floor/f13{
-	icon_state = "bluedirtychess2"
-	},
-/area/f13/building)
 "gZi" = (
 /obj/structure/mirelurkegg,
 /turf/open/water,
@@ -13059,6 +13054,12 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"inW" = (
+/obj/structure/flora/tree/joshua,
+/turf/open/indestructible/ground/outside/desert{
+	icon_state = "wasteland33"
+	},
+/area/f13/wasteland)
 "ioh" = (
 /obj/structure/chair/wood/modern,
 /turf/open/floor/f13/wood,
@@ -17167,6 +17168,7 @@
 /area/f13/wasteland)
 "kSd" = (
 /obj/structure/closet/crate,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/farm)
 "kSi" = (
@@ -19954,6 +19956,11 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/brotherhood)
+"mDy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "mEh" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal,
@@ -21035,7 +21042,6 @@
 /area/f13/building)
 "npx" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/indestructible/ground/outside/dirt{
@@ -27288,6 +27294,7 @@
 "rit" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/armor/f13/raider/sadist,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "riB" = (
@@ -33010,6 +33017,7 @@
 /area/f13/legion)
 "uNQ" = (
 /obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "uNR" = (
@@ -57771,7 +57779,7 @@ dkP
 sTa
 hkW
 sJw
-aTR
+ybI
 ybI
 ybI
 ybI
@@ -65655,7 +65663,7 @@ uRJ
 uRJ
 cbk
 cnX
-cpH
+aIN
 cbk
 aUV
 uRJ
@@ -67509,7 +67517,7 @@ dCV
 uCO
 fvF
 axU
-gGz
+mDy
 roX
 aRl
 axU
@@ -67767,8 +67775,8 @@ uCO
 qtL
 hqv
 aRl
-fzx
-fzx
+aRl
+aRl
 lqo
 hqv
 uqa
@@ -68358,7 +68366,7 @@ lRW
 uqa
 fyf
 fyf
-hAC
+inW
 fyf
 fyf
 fyf
@@ -68861,7 +68869,7 @@ uqa
 bMJ
 uqa
 rpu
-gvW
+fuK
 uqa
 cpK
 cpK
@@ -71161,7 +71169,7 @@ sqA
 fyf
 fyf
 fyf
-fyf
+bBK
 jxH
 jxH
 jxH
@@ -74972,7 +74980,7 @@ uJC
 dit
 cLl
 rRe
-gYG
+rRe
 hDK
 rTN
 vgw
@@ -76002,7 +76010,7 @@ duK
 vgw
 dit
 vgw
-cBe
+vgw
 bgQ
 huT
 dit
@@ -84020,7 +84028,7 @@ gcK
 tKZ
 rpu
 mdv
-gvW
+tWu
 gvW
 sYX
 gcK
