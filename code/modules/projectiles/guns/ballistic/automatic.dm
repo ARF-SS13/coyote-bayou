@@ -1288,7 +1288,7 @@
 	burst_size = 2
 	burst_shot_delay = 2
 	fire_delay = 1
-	spread = 14
+	spread = 11
 	extra_damage = -2
 	can_attachments = TRUE
 	can_suppress = FALSE

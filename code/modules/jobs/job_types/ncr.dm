@@ -601,7 +601,7 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/varmint //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
+	suit_store = /obj/item/gun/ballistic/automatic/service //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
 		/obj/item/ammo_box/magazine/m556/rifle=3)
@@ -612,7 +612,7 @@ Trooper
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
 		/obj/item/storage/box/ration/menu_eight=1, 
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=3)
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=3)
 
 /datum/outfit/loadout/trooperfiresupport
 	name = "Fire Support"
