@@ -114,7 +114,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "improvised metal glaive"
 	desc = "A improvised metal glaive that can be wielded."
-	force = 25
+	force = 15
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 //	force_unwielded = 25
@@ -140,7 +140,7 @@
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 //	AddComponent(/datum/component/jousting)
 	AddElement(/datum/element/sword_point)
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=18, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=30, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/rightclick_attack_self(mob/user)
 	if(explosive)

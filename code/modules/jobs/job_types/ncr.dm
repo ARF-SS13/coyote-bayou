@@ -277,8 +277,7 @@ Logistics Officer
 	glasses			= /obj/item/clothing/glasses/welding
 	belt 			= /obj/item/storage/belt/utility/full/engi
 	gloves			= /obj/item/clothing/gloves/color/yellow
-	accessory		= /obj/item/clothing/accessory/ncr/SPC
-	suit_store		= /obj/item/gun/ballistic/automatic/service
+	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
 		/obj/item/ammo_box/magazine/m45=3, \
@@ -333,7 +332,7 @@ Sergeant First Class
 	ears 			= /obj/item/radio/headset/headset_ncr_com
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	head 			= /obj/item/clothing/head/f13/ncr_campaign
-	suit_store		= /obj/item/gun/ballistic/automatic/service
+	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -560,6 +559,7 @@ Combat Engineer
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
 /*
 Trooper
@@ -955,3 +955,21 @@ Veteran Ranger
 		/obj/item/ammo_box/m44box=1
 	)
 
+/datum/outfit/loadout/rangermedic
+	name = "Medic Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	head = /obj/item/clothing/head/f13/ranger
+	uniform = /obj/item/clothing/under/f13/ranger/patrol
+	belt =	/obj/item/storage/belt/military/assault/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
+		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/clothing/accessory/armband/med/ncr = 1,
+		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
+		/obj/item/ammo_box/magazine/m45=3,
+		/obj/item/book/granter/trait/lowsurgery
+	)

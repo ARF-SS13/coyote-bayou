@@ -3696,10 +3696,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "cUh" = (
-/obj/machinery/door/poddoor/preopen{
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70);
-	id = eairlock
-	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 4;
@@ -16582,10 +16578,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "nDc" = (
-/obj/machinery/door/poddoor/preopen{
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70);
-	id = eairlock
-	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "bluemark"
@@ -17067,7 +17059,6 @@
 /area/f13/bunker)
 "nVK" = (
 /obj/structure/table,
-/obj/item/fusion_fuel,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice,
@@ -17889,7 +17880,6 @@
 /area/f13/tunnel)
 "oBt" = (
 /obj/structure/table,
-/obj/item/fusion_fuel,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "bluerustyfull"
@@ -23962,7 +23952,7 @@
 	health = 1500;
 	maxHealth = 1500;
 	name = "Commander Dirsk";
-	speak = list("For the Enclave!","Long live America!","Die, mutie!","AAAAAGGH!!","AUGUHGHHH!"));
+	speak = list("For the Enclave!","Long live America!","Die, mutie!","AAAAAGGH!!","AUGUHGHHH!");
 	speak_chance = 10;
 	speed = -1;
 	unarmed_attack_speed = 2
