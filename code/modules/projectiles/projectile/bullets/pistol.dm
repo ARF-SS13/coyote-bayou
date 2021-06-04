@@ -125,7 +125,7 @@
 */
 /obj/item/projectile/bullet/needle/ap
 	name = "armour piercing needle"
-	damage = 33
+	damage = 34
 	armour_penetration = 1
 	wound_bonus = 0
 	bare_wound_bonus = 0

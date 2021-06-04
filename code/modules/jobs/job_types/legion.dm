@@ -859,7 +859,7 @@ Add recipes/traits to keep refining support roles.
 Priestess of Mars removed to reduce bloat, Legate is enough for admin intervention IC.
 
 Venator  - Removed to reduce role bloat and clarify chain of command.
-
+*/
 /datum/job/CaesarsLegion/Legionnaire/f13venator
 	title = "Legion Venator"
 	flag = F13VENATOR
@@ -909,5 +909,3 @@ Orator removed to reduce role bloat
 	/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	suit = 	     /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	id =         /obj/item/card/id/dogtag/legorator
-
-*/

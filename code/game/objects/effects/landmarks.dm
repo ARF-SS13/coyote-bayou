@@ -633,7 +633,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/venator
-	name = "Legion Vexillarius"
+	name = "Legion Venator"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia

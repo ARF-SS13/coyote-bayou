@@ -32205,6 +32205,12 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/brotherhood)
+"uow" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/vexillarius,
+/turf/open/floor/wood/f13/oak,
+/area/f13/legion)
 "uoK" = (
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/road{
@@ -90702,7 +90708,7 @@ gts
 ktB
 hom
 afj
-fNB
+uow
 hom
 cjV
 cjV
