@@ -1052,11 +1052,11 @@
 	item_state = "huntingshotgun"
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	burst_size = 1
-	fire_delay = 5
+	fire_delay = 4
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	force = 25
+	force = 30
 	automatic_burst_overlay = FALSE
 	//automatic = 0
 	semi_auto = TRUE
