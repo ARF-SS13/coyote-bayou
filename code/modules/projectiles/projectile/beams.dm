@@ -51,10 +51,10 @@
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
 
 /obj/item/projectile/beam/weak
-	damage = 23
+	damage = 25
 
 /obj/item/projectile/beam/weak/penetrator
-	armour_penetration = 0.3
+	armour_penetration = 0.35
 
 /obj/item/projectile/beam/practice
 	name = "practice laser"

@@ -60,12 +60,15 @@
 		if(!do_after(user, 5 SECONDS, FALSE, src))
 			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
 			return
-		R.use(4)
+		R.use(4)		
+
+		if(!covered)
+			new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
+			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+
 		covered = TRUE
 		covertype = /obj/item/stack/rods
 
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
-		to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
 
 		var/image/rod_image = image(icon, icon_state = "rods")
 		add_overlay(rod_image)
@@ -85,14 +88,17 @@
 		if(!do_after(user, 5 SECONDS, FALSE, src))
 			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
 			return
-		W.use(4)
+		W.use(4)		
+
+		if(!covered)
+			new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
+			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+
 		covered = TRUE
 		covertype = /obj/item/stack/sheet/mineral/wood
 		var/image/plank_image = image(icon, icon_state = "planks")
 		add_overlay(plank_image)
 
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
-		to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
 		
 		return
 
