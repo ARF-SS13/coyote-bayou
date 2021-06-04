@@ -17,8 +17,8 @@
 	name = "10mm JHP bullet"
 	damage = 43 //45
 	armour_penetration = -0.7
-	wound_bonus = -36
-	wound_bonus = 36
+	wound_bonus = -32 //-36
+	bare_wound_bonus = 36
 
 // 9mm
 /obj/item/projectile/bullet/c9mm
