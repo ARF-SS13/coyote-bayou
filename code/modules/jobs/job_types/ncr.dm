@@ -559,6 +559,7 @@ Combat Engineer
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
 /*
 Trooper
