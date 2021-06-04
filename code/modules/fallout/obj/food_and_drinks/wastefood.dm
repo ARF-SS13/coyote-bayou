@@ -340,7 +340,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/datura
 	seed = /obj/item/seeds/datura
-	name = "datura-harvest"
+	name = "Datura"
 	desc = "The sacred datura root, useful as an anesthetic for surgery and in healing salves, as well as for rites of passage rituals and ceremonies"
 	icon_state = "Datura"
 	filling_color = "#FFA500"

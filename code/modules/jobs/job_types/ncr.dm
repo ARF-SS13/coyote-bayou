@@ -701,7 +701,7 @@ Rear Echelon
 /datum/outfit/loadout/rearlog
 	name = "Logistics"
 	backpack_contents = list(
-		/obj/item/book/granter/trait/tinkering, \
+		/obj/item/book/granter/trait/tinkering=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3)
 
