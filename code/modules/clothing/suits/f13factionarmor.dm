@@ -778,8 +778,8 @@
 /obj/item/clothing/suit/armor/f13/combat/enclave
 	name = "enclave combat armor"
 	desc = "(VI) An old set of pre-war combat armor, painted black."
-	icon_state = "enclave_armor"
-	item_state = "enclave_armor"
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
 	armor = list("tier" = 6, "energy" = 75, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
 /obj/item/clothing/suit/armor/f13/combat/remnant
