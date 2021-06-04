@@ -140,7 +140,7 @@
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 //	AddComponent(/datum/component/jousting)
 	AddElement(/datum/element/sword_point)
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=30, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=30, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/rightclick_attack_self(mob/user)
 	if(explosive)
