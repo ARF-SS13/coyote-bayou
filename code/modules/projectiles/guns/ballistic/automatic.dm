@@ -1286,7 +1286,7 @@
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
-	burst_shot_delay = 1
+	burst_shot_delay = 2
 	fire_delay = 1
 	spread = 14
 	extra_damage = -2
