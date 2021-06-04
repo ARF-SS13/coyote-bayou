@@ -293,9 +293,8 @@
 /datum/crafting_recipe/spatha
 	name = "Spatha"
 	result = /obj/item/claymore/machete/spatha
-	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/mineral/wood = 2,
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/sheet/mineral/silver = 1,
 				/obj/item/stack/sheet/bone = 2)
 	time = 1000
 	tools = list(TOOL_FORGE)
@@ -307,7 +306,7 @@
 	name = "Gladius"
 	result = /obj/item/claymore/machete/gladius
 	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/cloth = 2)
+				/obj/item/stack/sheet/bone = 2)
 	time = 600
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
@@ -317,9 +316,9 @@
 /datum/crafting_recipe/legionshield
 	name = "Legion Shield"
 	result = /obj/item/shield/riot/roman
-	reqs = list(/obj/item/stack/sheet/metal = 6,
-					/obj/item/stack/sheet/mineral/wood = 8,
-					/obj/item/stack/sheet/leather = 2)
+	reqs = list(/obj/item/stack/sheet/metal = 8,
+				/obj/item/stack/sheet/mineral/wood = 8,
+				/obj/item/stack/sheet/leather = 2)
 	time = 1000
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
