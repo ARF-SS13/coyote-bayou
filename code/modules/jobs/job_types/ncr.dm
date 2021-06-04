@@ -731,7 +731,7 @@ Rear Echelon
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/datum/design/metaldetector=1, \
-		/obj/item/shovel/trench=1, \
+		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/shotgun/hunting=1, \
 		/obj/item/storage/fancy/ammobox/lethalshot=2)
 		
