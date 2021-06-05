@@ -120,7 +120,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(!price)
 			return
 
-		content[Itm] = max(round(price),0)
+		content[Itm] = min(max(round(price),0),50000)
 
 		if(istype(Itm.loc, /mob))
 			var/mob/M = Itm.loc
