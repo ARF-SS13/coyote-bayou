@@ -248,7 +248,7 @@
 //swords
 /datum/crafting_recipe/bmprsword
 	name = "Bumper Sword"
-	result = /obj/item/twohanded/fireaxe/bmprsword 
+	result = /obj/item/twohanded/fireaxe/bmprsword
 	reqs = list(/obj/item/stack/sheet/metal = 25,
 				/obj/item/stack/sheet/cloth = 2)
 	time = 600
@@ -293,9 +293,11 @@
 /datum/crafting_recipe/spatha
 	name = "Spatha"
 	result = /obj/item/claymore/machete/spatha
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/mineral/silver = 1,
-				/obj/item/stack/sheet/bone = 2)
+	reqs = list(/obj/item/stack/sheet/metal = 18,
+			/obj/item/stack/sheet/plasteel = 2,
+				/obj/item/stack/sheet/leather = 2, //custom hilt -
+				/obj/item/stack/sheet/bronze = 4,  //made from scratch -
+				/obj/item/stack/sheet/bone = 4)    //see desc for more info.
 	time = 1000
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
@@ -305,8 +307,9 @@
 /datum/crafting_recipe/gladius
 	name = "Gladius"
 	result = /obj/item/claymore/machete/gladius
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/bone = 2)
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/swordhandle = 1) //objects of mass production don't require hilts more than 2 wood.
 	time = 600
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
@@ -390,7 +393,7 @@
 	subcategory = CAT_FORGEWEAPON
 */
 
-/datum/crafting_recipe/sythe //fucc english
+/datum/crafting_recipe/scythe
 	name = "Scythe"
 	result = /obj/item/scythe
 	time = 400
