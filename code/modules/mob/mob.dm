@@ -459,9 +459,6 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	var/is_admin = check_rights_for(src.client, R_ADMIN)
 	var/test = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost
 	/* check if the respawn cooldown has expired, and check for admin override if not */
-	message_admins("[world.time] world time")
-	message_admins("[src.timeofdeath] time of death")
-	message_admins("[test] test")
 	if(test < RESPAWN_TIMER)
 		to_chat(src, "You've been dead for [test / 10] seconds. You must be dead for at least [RESPAWN_TIMER / 600] minute\s to respawn.")
 		if(is_admin) /* if player is an admin, and cancels the override, return */
