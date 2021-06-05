@@ -93,14 +93,16 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /datum/gang/proc/add_leader(mob/living/carbon/new_leader)
 	leader = new_leader
-	new_leader.verbs -= /mob/living/proc/assumeleader
-	new_leader.verbs |= /mob/living/proc/invitegang
-	new_leader.verbs |= /mob/living/proc/removemember
-	new_leader.verbs |= /mob/living/proc/transferleader
-	new_leader.verbs |= /mob/living/proc/setwelcome
+
+	remove_verb(new_leader,/mob/living/proc/assumeleader)
+
+	add_verb(new_leader,/mob/living/proc/invitegang)
+	add_verb(new_leader,/mob/living/proc/removemember)
+	add_verb(new_leader,/mob/living/proc/transferleader)
+	add_verb(new_leader,/mob/living/proc/setwelcome)
 	if(!round_start)
-		new_leader.verbs |= /mob/living/proc/setcolor
-	new_leader.verbs |= /mob/living/proc/leavegang
+		add_verb(new_leader,/mob/living/proc/setcolor)
+	add_verb(new_leader,/mob/living/proc/leavegang)
 	to_chat(new_leader, "<span class='notice'>You have become a new leader of the [name]! You can now invite and remove members at will. You have also received a Gangtool device that allows you to buy a special gear for you and your gang.</span>")
 
 	var/obj/item/device/gangtool/gangtool = new(new_leader)
@@ -123,13 +125,13 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /datum/gang/proc/remove_leader(mob/living/carbon/old_leader)
 	leader = null
-	old_leader.verbs -= /mob/living/proc/invitegang
-	old_leader.verbs -= /mob/living/proc/removemember
-	old_leader.verbs -= /mob/living/proc/transferleader
-	old_leader.verbs -= /mob/living/proc/setwelcome
+	remove_verb(old_leader,/mob/living/proc/invitegang)
+	remove_verb(old_leader,/mob/living/proc/removemember)
+	remove_verb(old_leader,/mob/living/proc/transferleader)
+	remove_verb(old_leader,/mob/living/proc/setwelcome)
 	if(!round_start)
-		old_leader.verbs -= /mob/living/proc/setcolor
-	old_leader.verbs |= /mob/living/proc/assumeleader
+		remove_verb(old_leader,/mob/living/proc/setcolor)
+	add_verb(old_leader,/mob/living/proc/assumeleader)
 	to_chat(old_leader, "<span class='warning'>You are no longer the leader of the [name]!</span>")
 	if(assigned_tool)
 		assigned_tool.audible_message("<span class='warning'>With a change of the [name] leadership, [assigned_tool] ceases to function and self-destructs!</span>")
@@ -138,9 +140,11 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 /datum/gang/proc/add_member(mob/living/carbon/new_member)
 	members |= new_member
 	new_member.faction |= "[name]-gang"
-	new_member.verbs -= /mob/living/proc/creategang
-	new_member.verbs |= /mob/living/proc/leavegang
-	new_member.verbs |= /mob/living/proc/assumeleader
+	remove_verb(new_member,/mob/living/proc/creategang)
+
+	add_verb(new_member,/mob/living/proc/leavegang)
+
+	add_verb(new_member,/mob/living/proc/assumeleader)
 	to_chat(new_member, "<span class='notice'>You are now a member of the [name]! Everyone can recognize your gang membership now.</span>")
 	if(welcome_text)
 		to_chat(new_member, "<span class='notice'>Welcome text: </span><span class='purple'>[welcome_text]</span>")
@@ -149,9 +153,9 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	members -= member
 	member.gang = null
 	member.faction -= "[name]-gang"
-	member.verbs -= /mob/living/proc/leavegang
-	member.verbs -= /mob/living/proc/assumeleader
-	member.verbs |= /mob/living/proc/creategang
+	add_verb(member,/mob/living/proc/creategang)
+	remove_verb(member,/mob/living/proc/leavegang)
+	remove_verb(member,/mob/living/proc/assumeleader)
 	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
 	if(!members.len && !round_start)

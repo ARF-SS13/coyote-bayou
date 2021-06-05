@@ -376,7 +376,7 @@ Raider
 		return
 
 	H.social_faction = "Raiders"
-	H.verbs |= /mob/living/proc/creategang
+	add_verb(H, /mob/living/proc/creategang)
 
 /datum/outfit/loadout/raider_supafly
 	name = "Supa-fly"
