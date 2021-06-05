@@ -105,7 +105,7 @@
 
 /obj/item/claymore/machete/spatha
 	name = "spatha"
-	desc = "This long blade is favoured by Legion officers and leaders, a finely crafted weapon with good steel and hilt made from brass and bone."
+	desc = "This long blade is favoured by Legion officers and leaders, a finely crafted weapon with good steel and hilt made from bronze and bone."
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	icon_state = "spatha"
