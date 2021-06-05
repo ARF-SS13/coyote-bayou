@@ -730,7 +730,7 @@ Rear Echelon
 	head = /obj/item/clothing/head/f13/ncr
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
-		/datum/design/metaldetector=1, \
+		/obj/item/metaldetector=1, \
 		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/shotgun/hunting=1, \
 		/obj/item/storage/fancy/ammobox/lethalshot=2, \
