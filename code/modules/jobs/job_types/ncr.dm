@@ -644,7 +644,7 @@ Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	accessory =     /obj/item/clothing/accessory/armband/black
-	head = 			/obj/item/clothing/head/f13/ncr/mp
+	head = 			/obj/item/clothing/head/f13/ncr/steelpot_mp
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	suit_store =    /obj/item/melee/classic_baton/telescopic
