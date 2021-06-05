@@ -259,7 +259,7 @@
 
 /obj/item/twohanded/spear/bonespear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=30, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=40, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/bonespear/deathclaw
 	name = "deathclaw spear"
@@ -271,7 +271,7 @@
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 40)
+	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 50)
 
 //Ultracite
 /obj/item/twohanded/spear/ultra

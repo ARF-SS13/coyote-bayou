@@ -1056,7 +1056,7 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	force = 40
+	force = 25
 	automatic_burst_overlay = FALSE
 	//automatic = 0
 	semi_auto = TRUE
@@ -1288,7 +1288,7 @@
 	burst_size = 2
 	burst_shot_delay = 2
 	fire_delay = 1
-	spread = 14
+	spread = 11
 	extra_damage = -2
 	can_attachments = TRUE
 	can_suppress = FALSE

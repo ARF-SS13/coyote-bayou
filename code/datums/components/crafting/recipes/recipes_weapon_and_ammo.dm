@@ -580,9 +580,9 @@
 	name = "Service Rifle 5.56mm"
 	result = /obj/item/gun/ballistic/automatic/service
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/metalparts = 8,
 				/obj/item/stack/sheet/mineral/wood = 5,
-				/obj/item/stack/crafting/goodparts = 2
+				/obj/item/stack/crafting/goodparts = 4
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120

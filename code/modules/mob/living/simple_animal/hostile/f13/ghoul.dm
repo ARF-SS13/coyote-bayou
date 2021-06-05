@@ -101,7 +101,6 @@
 	melee_damage_lower = 30
 	melee_damage_upper = 35
 	mob_size = 5
-	faction = list("hostile")
 	wound_bonus = 0
 	bare_wound_bonus = 0
 

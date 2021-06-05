@@ -542,6 +542,8 @@
 	build_path = /obj/item/ammo_box/magazine/lmg/empty
 	category = list("initial", "Advanced Magazines")
 
+
+
 //Tier 4 Ammo
 /datum/design/ammolathe/m2mm
 	name = "2mm Electromagnetic Magazine"
@@ -576,4 +578,11 @@
 	id = "a556match"
 	materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 3500)
 	build_path = /obj/item/ammo_box/a556/match
+	category = list("initial", "Advanced Ammo")
+
+/datum/design/ammolathe/m473fmj
+	name = "4.73mm caseless ammo box"
+	id = "m473fmj"
+	materials = list(/datum/material/iron = 25000, /datum/material/blackpowder = 2000)
+	build_path = /obj/item/ammo_box/m473
 	category = list("initial", "Advanced Ammo")

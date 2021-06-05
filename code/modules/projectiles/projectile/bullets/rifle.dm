@@ -81,7 +81,7 @@
 
 /obj/item/projectile/bullet/a473
 	name = "4.73 FMJ bullet"
-	damage = 38
+	damage = 43
 	armour_penetration = 0.2
 	wound_bonus = 20
 	bare_wound_bonus = -20
