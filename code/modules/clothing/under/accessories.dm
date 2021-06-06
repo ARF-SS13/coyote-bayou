@@ -430,8 +430,8 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorscribe
-	name = "Proctor pins"
-	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of red cloth; worn by the high-ranking Proctor."
+	name = "Senior Scribe pins"
+	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of red cloth; worn by the high-ranking Senior Scribe."
 	icon_state = "seniorscribe"
 	item_color = "seniorscribe"
 	minimize_when_attached = TRUE
@@ -444,15 +444,15 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorpaladin
-	name = "Star Paladin pins"
-	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Star Paladin."
+	name = "Senior Paladin pins"
+	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Paladin."
 	icon_state = "seniorpaladin"
 	item_color = "seniorpaladin"
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/bos/seniorknight
-	name = "Star Knight pins"
-	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Star Knight."
+	name = "Senior Knight pins"
+	desc = "A silver pin with one device gilded in gold, little notches at the top end, and a golden sword in the center of purple cloth; worn by the high-ranking Senior Knight."
 	icon_state = "seniorknight"
 	item_color = "seniorknight"
 	minimize_when_attached = TRUE
