@@ -537,7 +537,6 @@
 	can_suppress = FALSE
 	can_attachments = TRUE
 	spread = 12
-	can_suppress = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
