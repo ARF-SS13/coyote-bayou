@@ -787,6 +787,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"azn" = (
+/obj/machinery/chem_master/primitive,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "azz" = (
 /obj/item/ammo_casing/a556,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -966,6 +970,14 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aGR" = (
+/obj/structure/table/wood,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "aHo" = (
 /obj/structure/table/wood,
 /obj/item/trash/sosjerky{
@@ -1298,6 +1310,16 @@
 "aRl" = (
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
+"aRm" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healpoultice,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "aRF" = (
 /obj/item/crafting/large_gear,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2352,6 +2374,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/f13/brotherhood)
+"bxI" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "byv" = (
 /obj/item/clothing/under/jabroni,
 /obj/structure/displaycase,
@@ -2686,6 +2714,13 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
+"bJU" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bKa" = (
 /obj/item/clothing/head/rice_hat,
 /obj/structure/displaycase,
@@ -3231,6 +3266,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"chQ" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "cia" = (
 /obj/structure/tires/half,
 /turf/open/indestructible/ground/outside/dirt{
@@ -3797,13 +3836,11 @@
 	},
 /area/f13/wasteland)
 "cFe" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
 	},
-/area/f13/wasteland)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "cGj" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -4612,7 +4649,11 @@
 /turf/closed/wall/rust,
 /area/f13/caves)
 "dfY" = (
-/obj/structure/simple_door/wood,
+/obj/machinery/door/unpowered/wooddoor{
+	max_integrity = 300;
+	obj_integrity = 300;
+	req_access_txt = "131"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "dgB" = (
@@ -7634,7 +7675,11 @@
 	},
 /area/f13/building)
 "eZI" = (
-/obj/structure/spirit_board,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/bed/mattress,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "eZW" = (
@@ -8423,6 +8468,13 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"fxJ" = (
+/obj/structure/table/wood/settler,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "fxK" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/under/f13/police,
@@ -8593,10 +8645,6 @@
 	},
 /area/f13/building)
 "fCM" = (
-/obj/structure/decoration/rag{
-	icon_state = "skulls"
-	},
-/obj/structure/decoration/rag,
 /obj/machinery/door/unpowered/wooddoor{
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -10091,6 +10139,16 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"gwU" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 6;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "gwW" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -10259,6 +10317,12 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/caves)
+"gCM" = (
+/obj/structure/kitchenspike,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/village)
 "gCU" = (
 /obj/structure/toilet{
 	dir = 8
@@ -11440,7 +11504,7 @@
 	},
 /area/f13/wasteland)
 "hqL" = (
-/obj/structure/bonfire,
+/obj/structure/spirit_board,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "hqP" = (
@@ -11584,6 +11648,12 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"hua" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "hul" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/helmet/gladiator,
@@ -14863,11 +14933,13 @@
 	},
 /area/f13/wasteland)
 "jnN" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/under/f13/tribal,
+/obj/item/clothing/under/f13/tribal,
+/obj/item/clothing/under/f13/female/tribal,
+/obj/item/clothing/under/f13/female/tribal,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "jnW" = (
 /obj/structure/rack,
 /obj/item/restraints/handcuffs,
@@ -14933,6 +15005,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"jrf" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "jrx" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -15443,6 +15521,12 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"jLF" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "jLK" = (
 /obj/structure/closet,
 /obj/item/clothing/gloves/combat,
@@ -15581,13 +15665,13 @@
 	},
 /area/f13/brotherhood)
 "jQz" = (
-/obj/structure/table/wood/settler,
-/obj/item/clothing/under/f13/tribe,
-/obj/item/clothing/under/f13/tribe,
-/obj/item/clothing/under/f13/tribe,
-/obj/item/clothing/under/f13/tribe,
-/obj/item/clothing/under/f13/tribe,
-/obj/item/clothing/under/f13/tribe,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/item/clothing/under/f13/wayfarer,
+/obj/structure/rack,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "jQC" = (
@@ -16727,6 +16811,14 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
+"kBy" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/village)
 "kBG" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticaldegraded"
@@ -18527,7 +18619,9 @@
 /area/f13/building)
 "lHU" = (
 /obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lIh" = (
@@ -18870,6 +18964,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"lTM" = (
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "lTT" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/outside/dirt{
@@ -19591,6 +19689,13 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/caves)
+"mpT" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/wasteland)
 "mqp" = (
 /turf/open/indestructible/ground/outside/dirt{
 	icon_state = "dirtcorner"
@@ -21679,6 +21784,10 @@
 	icon_state = "horizontaltopborderbottom2right"
 	},
 /area/f13/wasteland)
+"nOL" = (
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "nOO" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -22092,6 +22201,12 @@
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/holofloor/carpet,
 /area/f13/building)
+"ocT" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "ocV" = (
 /obj/structure/sink{
 	pixel_y = 25
@@ -22509,6 +22624,14 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
+"opM" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/obj/structure/kitchenspike,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "opW" = (
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -22588,11 +22711,11 @@
 	},
 /area/f13/wasteland)
 "osF" = (
-/obj/structure/table/wood/settler,
 /obj/item/clothing/head/helmet/f13/deathskull,
 /obj/item/clothing/head/helmet/f13/deathskull,
 /obj/item/clothing/head/helmet/f13/deathskull,
 /obj/item/clothing/head/helmet/f13/deathskull,
+/obj/structure/rack,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "osH" = (
@@ -24539,6 +24662,16 @@
 /obj/machinery/microwave,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"pCs" = (
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/item/clothing/shoes/sandal,
+/obj/structure/rack,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "pCy" = (
 /obj/structure/flora/grass/wasteland{
 	pixel_x = 9;
@@ -25004,10 +25137,8 @@
 /area/f13/wasteland)
 "pPF" = (
 /obj/structure/barricade/wooden/strong,
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
 /obj/structure/decoration/rag,
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pPG" = (
@@ -26282,6 +26413,12 @@
 "qFk" = (
 /turf/closed/wall/f13/wood,
 /area/f13/village)
+"qFt" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "qFF" = (
 /obj/structure/simple_door/bunker/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -27274,6 +27411,9 @@
 /area/f13/ncr)
 "rht" = (
 /obj/structure/dresser,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "rhK" = (
@@ -27326,6 +27466,9 @@
 /area/f13/bar)
 "riP" = (
 /obj/effect/landmark/start/f13/hunter,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "rja" = (
@@ -28000,6 +28143,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/floor/f13/wood,
+/area/f13/village)
+"rHq" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "rHO" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -29020,11 +29167,10 @@
 	},
 /area/f13/building)
 "spx" = (
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
-/obj/structure/decoration/rag,
-/turf/closed/wall/f13/wood,
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/under/f13/wayfarer/hunter,
+/obj/item/clothing/under/f13/wayfarer/hunter,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "spL" = (
 /obj/machinery/light/broken{
@@ -29183,6 +29329,10 @@
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/wood/f13/old,
 /area/f13/bar)
+"suU" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "svA" = (
 /obj/structure/table/wood,
 /obj/machinery/reagentgrinder,
@@ -29506,6 +29656,13 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"sGS" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "sHm" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -30028,6 +30185,12 @@
 "sWI" = (
 /turf/open/floor/wood/f13/carpet,
 /area/f13/building)
+"sWJ" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "sWR" = (
 /obj/structure/chair{
 	dir = 8
@@ -30063,6 +30226,10 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"sYm" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "sYF" = (
 /obj/machinery/light{
 	dir = 1
@@ -30806,8 +30973,13 @@
 	},
 /area/f13/wasteland)
 "ttU" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/f13/wood,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
 /area/f13/village)
 "ttW" = (
 /obj/structure/reagent_dispensers/compostbin,
@@ -32273,6 +32445,13 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/ncr)
+"uqv" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "uqE" = (
 /obj/effect/decal/remains/human,
 /obj/item/ammo_casing/caseless{
@@ -33947,6 +34126,12 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/brotherhood)
+"voR" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "voV" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -33956,12 +34141,9 @@
 	},
 /area/f13/farm)
 "vpx" = (
-/obj/structure/barricade/wooden/strong,
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
+/obj/machinery/chem_master/primitive,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/area/f13/village)
 "vpJ" = (
 /obj/structure/closet,
 /obj/item/door_key{
@@ -34306,7 +34488,9 @@
 /area/f13/brotherhood)
 "vBr" = (
 /obj/structure/bonfire/prelit,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
 /area/f13/village)
 "vBw" = (
 /obj/machinery/light/broken{
@@ -35255,6 +35439,14 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/wasteland)
+"whV" = (
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/village)
 "wim" = (
 /obj/structure/table/booth,
 /turf/open/floor/wood/wood_tiled,
@@ -35578,6 +35770,18 @@
 "wsq" = (
 /obj/effect/landmark/start/f13/villager,
 /turf/open/floor/f13/wood,
+/area/f13/village)
+"wsw" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "wsA" = (
 /obj/structure/lattice/catwalk,
@@ -36279,6 +36483,10 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "wOb" = (
@@ -36656,6 +36864,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"wXE" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "wXJ" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -37349,7 +37563,10 @@
 	},
 /area/f13/village)
 "xqy" = (
-/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "xqI" = (
@@ -37722,6 +37939,12 @@
 	icon_state = "dirt"
 	},
 /area/f13/brotherhood)
+"xDc" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "xDA" = (
 /mob/living/simple_animal/hostile/raider,
 /turf/open/floor/f13{
@@ -39477,6 +39700,8 @@ gcK
 gcK
 gcK
 gcK
+gbL
+gbL
 gcK
 gcK
 gcK
@@ -39484,15 +39709,13 @@ gcK
 gcK
 gcK
 gcK
+gbL
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -39728,28 +39951,28 @@ uXj
 uXj
 xZu
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 gcK
 gcK
 gbL
 gbL
 gbL
+gbL
 gcK
 gcK
+gbL
+gbL
+gbL
 gcK
+gbL
 gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -39985,21 +40208,15 @@ uXj
 uXj
 xZu
 gcK
-gcK
 gbL
 gbL
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
 gcK
 gcK
 gbL
 gbL
 gbL
-gcK
+gbL
 gcK
 gcK
 gbL
@@ -40007,6 +40224,12 @@ gbL
 gbL
 gcK
 gcK
+gcK
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -40247,10 +40470,10 @@ gbL
 gbL
 gbL
 gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 gbL
@@ -40262,8 +40485,8 @@ gcK
 gbL
 gbL
 gbL
-gcK
-gcK
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -40504,23 +40727,23 @@ gbL
 gbL
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gbL
-gbL
-gbL
-gbL
-gbL
 gbL
 gbL
 gbL
 gbL
 gcK
 gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -40756,15 +40979,15 @@ uXj
 uXj
 xZu
 gcK
+gbL
+gbL
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 gbL
@@ -41018,12 +41241,12 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gbL
 gbL
 gbL
@@ -41271,16 +41494,16 @@ uXj
 xZu
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gbL
 gbL
 gbL
@@ -41528,18 +41751,18 @@ uXj
 xZu
 gcK
 gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gbL
 gbL
@@ -41775,9 +41998,9 @@ fyf
 gcK
 ktB
 gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
 gcK
 xZu
 uXj
@@ -41785,20 +42008,20 @@ uXj
 xZu
 gcK
 gcK
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 gcK
@@ -42032,9 +42255,9 @@ fyf
 gcK
 ktB
 gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
 gcK
 xZu
 uXj
@@ -42052,17 +42275,17 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -42289,9 +42512,9 @@ fyf
 gcK
 ktB
 gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
 gcK
 xZu
 uXj
@@ -42309,17 +42532,17 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -42546,9 +42769,9 @@ gjP
 gcK
 ktB
 gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
 gcK
 xZu
 uXj
@@ -42564,19 +42787,19 @@ cos
 cos
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+ggK
+ggK
+ggK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -42822,18 +43045,18 @@ cos
 mvv
 rjE
 rjE
+ggK
+xKr
+ggK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -43079,18 +43302,18 @@ jIU
 mvv
 mvv
 mvv
-rjE
+mvv
+ggK
+lTM
+gbL
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -43337,17 +43560,17 @@ mvv
 mvv
 mvv
 rjE
+ggK
+ggK
+ggK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -43594,17 +43817,17 @@ rjE
 rjE
 mvv
 rjE
+ggK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -43832,36 +44055,36 @@ gcK
 ktB
 gcK
 qFk
-xqy
+sWJ
 otr
 vYp
 sLr
-lwj
+mpT
 lwj
 lwj
 mwO
+sGS
+rjE
+mvv
+mvv
+mvv
+rjE
+sGS
 rjE
 rjE
 mvv
-mvv
-mvv
-rjE
-rjE
-rjE
-rjE
-mvv
 rjE
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -44103,23 +44326,23 @@ rjE
 mvv
 mvv
 mvv
-aHH
+rjE
 rjE
 rjE
 mvv
 rjE
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 ktB
 gbL
@@ -44367,16 +44590,16 @@ mvv
 rjE
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 ktB
 gbL
@@ -44609,7 +44832,7 @@ qFk
 sLr
 xGH
 aBH
-cFe
+gaV
 uXj
 uXj
 uXj
@@ -44624,16 +44847,16 @@ uXj
 mvv
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 ktB
 gbL
@@ -44868,11 +45091,11 @@ tBN
 bpD
 ekW
 gaV
+voR
 uXj
 uXj
 uXj
-uXj
-uXj
+voR
 uXj
 uXj
 lwj
@@ -44881,16 +45104,16 @@ uXj
 uXj
 gcK
 gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -45138,16 +45361,16 @@ uXj
 uXj
 gcK
 gcK
+gbL
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -45374,11 +45597,11 @@ gcK
 qFk
 dEB
 otr
-xqy
+sWJ
 otr
 uKq
 sLr
-daU
+gwU
 bpD
 fyf
 qFk
@@ -45400,11 +45623,11 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -45642,10 +45865,10 @@ qFk
 eKM
 peu
 peu
-cny
+peu
 utT
 fyf
-jnN
+tBN
 lwj
 lwj
 uXj
@@ -45657,10 +45880,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -45896,7 +46119,7 @@ xGH
 bpD
 fyf
 qFk
-eKM
+fxJ
 peu
 peu
 rht
@@ -45914,10 +46137,10 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
+gbL
+gbL
+gbL
+gbL
 gcK
 gcK
 ktB
@@ -46159,8 +46382,8 @@ lHr
 qFk
 qFk
 qFk
-tBN
-lwj
+qFk
+mpT
 lwj
 uXj
 uXj
@@ -46405,7 +46628,7 @@ gcK
 gcK
 gcK
 gcK
-vAe
+ocT
 tBN
 bpD
 fyf
@@ -46415,7 +46638,7 @@ peu
 peu
 peu
 peu
-cny
+jrf
 sLr
 lwj
 lwj
@@ -46431,8 +46654,8 @@ uXj
 gcK
 gcK
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -46688,8 +46911,8 @@ kCH
 uXj
 gcK
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -46907,11 +47130,11 @@ fyf
 gcK
 gcK
 gcK
-gcK
 qFk
 qFk
 qFk
-gcK
+qFk
+qFk
 gcK
 gcK
 gcK
@@ -46924,7 +47147,7 @@ daU
 doX
 gTD
 qFk
-uSI
+whV
 peu
 mvh
 eKM
@@ -46945,8 +47168,8 @@ uXj
 uXj
 uXj
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -47172,7 +47395,7 @@ qFk
 qFk
 qFk
 qFk
-gcK
+qFk
 gcK
 gcK
 gcK
@@ -47202,8 +47425,8 @@ uXj
 uXj
 uXj
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -47443,7 +47666,7 @@ peu
 peu
 peu
 peu
-cny
+jLF
 sLr
 lwj
 lwj
@@ -47459,8 +47682,8 @@ uXj
 uXj
 uXj
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -47685,12 +47908,12 @@ gke
 qFk
 otr
 otr
-otr
+vpx
 qFk
 gcK
 gcK
 gcK
-rwv
+xDc
 ggK
 ggK
 ggK
@@ -47701,8 +47924,8 @@ qFk
 qFk
 qFk
 qFk
-vAe
-lwj
+qFk
+mpT
 lwj
 uXj
 uXj
@@ -47716,8 +47939,8 @@ uXj
 uXj
 uXj
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -47973,8 +48196,8 @@ uXj
 uXj
 uXj
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -48200,7 +48423,7 @@ qFk
 qFk
 iRT
 qFk
-gcK
+qFk
 gcK
 gcK
 gcK
@@ -48230,8 +48453,8 @@ uXj
 uXj
 gcK
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -48460,7 +48683,7 @@ qFk
 gcK
 gcK
 gcK
-gcK
+gTD
 gcK
 gcK
 gcK
@@ -48478,7 +48701,7 @@ bpD
 fyf
 wUL
 wUL
-fyf
+suU
 sLr
 bPf
 buD
@@ -48487,8 +48710,8 @@ qFk
 qFk
 qFk
 gcK
-gcK
-gcK
+gbL
+gbL
 gcK
 ktB
 gcK
@@ -48708,7 +48931,7 @@ gcK
 ktB
 qFk
 dEB
-xqy
+cFe
 vYp
 qFk
 otr
@@ -48717,11 +48940,11 @@ pJQ
 uRJ
 uRJ
 uRJ
+wXE
 uRJ
 uRJ
-uRJ
-uRJ
-ttU
+jxq
+chQ
 rss
 tBN
 bpD
@@ -48735,7 +48958,7 @@ bpD
 wUL
 fyf
 lHo
-vAe
+fyf
 mVv
 mWy
 riP
@@ -49248,12 +49471,12 @@ tBN
 mvv
 mvv
 wdT
+qFt
 vPY
 vPY
 vPY
 vPY
 vPY
-cWy
 vPY
 eST
 qFk
@@ -49488,7 +49711,7 @@ lZX
 uRJ
 jTq
 bMg
-uRJ
+jMN
 uRJ
 uRJ
 uKu
@@ -49735,7 +49958,7 @@ ktB
 gcK
 gcK
 qFk
-eZI
+eBu
 otr
 hqL
 otr
@@ -49750,7 +49973,7 @@ vBr
 bMg
 uRJ
 uRJ
-uRJ
+qMi
 mvv
 bpD
 vAe
@@ -49764,9 +49987,9 @@ fyf
 pFh
 vPY
 wNP
-wNP
-wNP
-wNP
+aRm
+aGR
+wsw
 vPY
 vPY
 tZT
@@ -50252,7 +50475,7 @@ qFk
 xqy
 otr
 otr
-otr
+cFe
 iAU
 iAU
 mkw
@@ -50264,7 +50487,7 @@ bMg
 bMg
 bMg
 uRJ
-nrV
+sLr
 tBN
 bpD
 fyf
@@ -50283,7 +50506,7 @@ vKC
 vKC
 vKC
 vPY
-vPY
+sYm
 qFk
 hna
 otr
@@ -50505,7 +50728,7 @@ gcK
 ktB
 gcK
 gcK
-gcK
+qFk
 qFk
 qFk
 qFk
@@ -50513,13 +50736,13 @@ qFk
 qFk
 qFk
 nwZ
+jxq
 uRJ
-uRJ
 mvJ
 mvJ
 mvJ
 mvJ
-mvJ
+kBy
 uRJ
 unW
 tBN
@@ -50765,19 +50988,19 @@ ktB
 ktB
 gcK
 qFk
-xqy
+eZI
 otr
 otr
-hna
+jnN
 sLr
-ttU
+uqv
 uRJ
 uRJ
+bxI
+qMi
 uRJ
 uRJ
-uRJ
-uRJ
-ttU
+chQ
 dLB
 tBN
 pBp
@@ -50799,8 +51022,8 @@ hLm
 vPY
 vPY
 qFk
-xqy
 otr
+cFe
 dlX
 fpv
 qFk
@@ -51025,7 +51248,7 @@ qFk
 otr
 otr
 otr
-hna
+spx
 qFk
 qiN
 gVt
@@ -51283,7 +51506,7 @@ iad
 iad
 otr
 otr
-otr
+pCs
 qFk
 otr
 otr
@@ -51291,7 +51514,7 @@ uuU
 vCF
 wbd
 uRJ
-ttU
+chQ
 unW
 tBN
 vVU
@@ -51315,9 +51538,9 @@ vPY
 dfY
 otr
 otr
-otr
-xqy
+sWJ
 qFk
+gcK
 gcK
 gcK
 gcK
@@ -51561,14 +51784,14 @@ mvv
 bpD
 vAe
 xlE
-vPY
+hua
 vPY
 vPY
 vPY
 fbs
 hLm
 vPY
-cWy
+hua
 qFk
 kHB
 egU
@@ -51797,14 +52020,14 @@ otr
 otr
 otr
 otr
-xqy
+rHq
 uuU
 otr
 otr
 qFk
 iWc
 uRJ
-uRJ
+jxq
 uRJ
 sLr
 tBN
@@ -52059,7 +52282,7 @@ iRv
 otr
 otr
 qFk
-iWc
+nOL
 uRJ
 cqr
 uRJ
@@ -52312,8 +52535,8 @@ qFk
 uuU
 iRv
 uuU
+qFk
 xqy
-otr
 otr
 gVt
 uRJ
@@ -52573,7 +52796,7 @@ krS
 krS
 krS
 iRv
-uRJ
+uqv
 uRJ
 uRJ
 uRJ
@@ -52583,8 +52806,8 @@ mvv
 mvv
 mEy
 mvv
+mvv
 ttW
-mEy
 mvv
 bpD
 fyf
@@ -52830,7 +53053,7 @@ pYj
 pYj
 pYj
 woL
-ttU
+uRJ
 wsq
 uRJ
 uRJ
@@ -53087,7 +53310,7 @@ pYj
 urW
 pYj
 woL
-uRJ
+jxq
 uRJ
 uRJ
 ntv
@@ -53347,7 +53570,7 @@ vsm
 uRJ
 wsq
 uRJ
-uRJ
+azn
 iWc
 tBN
 mvv
@@ -53604,8 +53827,8 @@ wOK
 uRJ
 uRJ
 uRJ
-ttU
-spx
+chQ
+sLr
 tBN
 mvv
 mvv
@@ -53873,7 +54096,7 @@ mvv
 fTx
 bpD
 fyf
-vpx
+akA
 lmk
 oNR
 cqG
@@ -54388,10 +54611,10 @@ fTx
 bpD
 fyf
 akA
-lHU
+bJU
 cos
 cos
-lHU
+bJU
 cos
 nlO
 mfD
@@ -54629,9 +54852,9 @@ krS
 krS
 krS
 qFk
-ttU
-uRJ
-jMN
+opM
+nQY
+gCM
 uRJ
 uRJ
 tBN
@@ -55147,7 +55370,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+ktB
 gcK
 gcK
 gcK
