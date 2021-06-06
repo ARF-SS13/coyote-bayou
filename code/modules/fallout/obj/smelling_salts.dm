@@ -5,7 +5,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	icon = 'icons/obj/fallout/smelling_salts.dmi'
 	icon_state = "smelling_salts_legion"
-	var/charges = 8 // a bit lower than a normal defib's 10
+	var/charges = 20
 	var/in_use = FALSE
 	var/time_to_use = 10 SECONDS // a defib is 5 seconds
 
@@ -23,7 +23,7 @@
 	w_class = WEIGHT_CLASS_SMALL // unsure about this balance-wise, given that defibs are bulky
 	desc = "A stoppered glass phial of pungent smelling salts, used to revive those who have fainted."
 	icon_state = "smelling_salts_crafted"
-	charges = 2 // quarter of the premade smelling salts
+	charges = 10
 
 /obj/item/smelling_salts/attack(mob/target, mob/user)
 	if(in_use)
