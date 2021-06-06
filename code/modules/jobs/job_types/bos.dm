@@ -409,7 +409,7 @@ Paladin
 	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You answer directly to the Star Paladin. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
+	description = "You answer directly to the Senior Paladin. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Senior Paladin and Head Paladin"
@@ -494,7 +494,7 @@ Paladin
 		)
 
 /*
-Proctor
+Senior Scribe
 */
 
 /datum/job/bos/f13seniorscribe
@@ -526,7 +526,7 @@ Proctor
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/bos/f13seniorscribe
-	name = "Proctor"
+	name = "Senior Scribe"
 	jobtype = /datum/job/bos/f13seniorscribe
 	chemwhiz = TRUE
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
@@ -553,7 +553,7 @@ Scribe
 	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You answer directly to the Proctor, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
+	description = "You answer directly to the Senior Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Senior Scribe and Head Scribe"
@@ -612,7 +612,7 @@ Scribe
 		)
 
 /*
-Star Knight
+Senior Knight
 */
 
 datum/job/bos/f13seniorknight
@@ -621,7 +621,7 @@ datum/job/bos/f13seniorknight
 	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You report directly to the Head Knight. You are the Brotherhood Star Knight. Having served the Knight Caste for some time now, you are versatile and experienced in both basic combat and repairs, and also a primary maintainer of the Bunker's facilities. As your seniormost Knight, you may be assigned initiates or Junior Knights to mentor."
+	description = "You report directly to the Head Knight. You are the Brotherhood Senior Knight. Having served the Knight Caste for some time now, you are versatile and experienced in both basic combat and repairs, and also a primary maintainer of the Bunker's facilities. As your seniormost Knight, you may be assigned initiates or Junior Knights to mentor."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Knight"

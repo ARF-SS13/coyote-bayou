@@ -527,7 +527,7 @@
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/seniorscribe
-	name = "Brotherhood Proctor's robe"
+	name = "Brotherhood Senior Scribe's robe"
 	desc = "(II) A red cloth robe with silver gildings worn by the Brotherhood of Steel Senior Scribes."
 	icon_state = "seniorscribe"
 	item_state = "seniorscribe"
@@ -551,8 +551,8 @@
 	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
-	name = "brotherhood star knight armor"
-	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Star Knights. It bears a silver stripe."
+	name = "brotherhood senior knight armor"
+	desc = "(VII) A superior combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knight. It bears a silver stripe."
 	icon_state = "brotherhood_armor_senior"
 	item_state = "brotherhood_armor_senior"
 
