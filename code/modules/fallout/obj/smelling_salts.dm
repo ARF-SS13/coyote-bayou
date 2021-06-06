@@ -26,6 +26,8 @@
 	charges = 2 // quarter of the premade smelling salts
 
 /obj/item/smelling_salts/attack(mob/target, mob/user)
+	if(in_use)
+		return
 	if(world.time < time_to_use)
 		to_chat(user, "<span class='warning'>They are not ready smell something so pungent yet, I should wait a moment.</span>")
 		return
@@ -71,7 +73,9 @@
 	return TRUE
 
 /obj/item/smelling_salts/proc/do_revive(mob/living/carbon/revived_mob, mob/living/user)
+	in_use = TRUE
 	if(!do_after(user, time_to_use, target = revived_mob))
+		in_use = FALSE
 		return
 	user.visible_message(SPAN_NOTICE("[user] starts waving [src] under [revived_mob]'s nose."), SPAN_WARNING("You wave [src] under [revived_mob]'s nose."))
 	var/time_since_death = world.time - revived_mob.timeofdeath
@@ -133,3 +137,4 @@
 		to_chat(revived_mob, policy)
 	revived_mob.log_message("revived using strange reagent, [time_since_death / 10] seconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
 	//add_logs(user, revived_mob, "revived (smelling salts)", src)
+	in_use = FALSE
