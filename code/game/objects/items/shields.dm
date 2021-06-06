@@ -269,6 +269,7 @@ obj/item/shield/riot/bullet_proof
 	item_state = "roman_shield"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	custom_materials = list(/datum/material/wood = 16000, /datum/material/iron= 16000) //as of writing, legion shield take 8 metal and 8 wood, one rod is 1k and one sheet splits 2 rods.
 	repair_material = /obj/item/stack/sheet/mineral/wood
 	shield_flags = SHIELD_FLAGS_DEFAULT
 	max_integrity = 250
