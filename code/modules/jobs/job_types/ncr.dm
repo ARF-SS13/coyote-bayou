@@ -132,7 +132,7 @@ Captain
 	name = "Armored Officer"
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/service/automatic
+	l_hand 		= /obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
