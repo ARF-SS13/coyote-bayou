@@ -8472,6 +8472,11 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/tunnel)
+"gSv" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/structure/closet/crate/miningcar,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "gSD" = (
 /obj/structure/bed,
 /obj/item/bedsheet{
@@ -9469,6 +9474,11 @@
 /obj/structure/chair/f13foldupchair,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
+"hHs" = (
+/obj/structure/closet/crate/miningcar,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "hHw" = (
 /obj/item/trash/f13/cram_large,
 /turf/open/indestructible/ground/inside/mountain,
@@ -9524,6 +9534,11 @@
 /obj/machinery/seed_extractor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"hIR" = (
+/obj/structure/closet/crate/miningcar,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "hJk" = (
 /obj/structure/lattice{
 	layer = 3
@@ -18401,6 +18416,10 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood/rnd)
+"pba" = (
+/obj/structure/closet/crate/miningcar,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "pbr" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt,
@@ -33028,7 +33047,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+pba
 uoO
 uoO
 uoO
@@ -38694,7 +38713,7 @@ uoO
 uoO
 uoO
 uoO
-xVz
+hIR
 xVz
 xVz
 xVz
@@ -39441,7 +39460,7 @@ xVz
 xVz
 xVz
 xVz
-eMl
+hIR
 xVz
 qDR
 uoO
@@ -42806,7 +42825,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+hIR
 uoO
 uoO
 uoO
@@ -43562,7 +43581,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+hHs
 xVz
 xVz
 xVz
@@ -43783,7 +43802,7 @@ uoO
 qCm
 myy
 xVz
-fpw
+xVz
 xVz
 uoO
 uoO
@@ -51234,7 +51253,7 @@ aoj
 uoO
 uoO
 xVz
-xVz
+mlz
 xVz
 xVz
 xVz
@@ -51505,7 +51524,7 @@ uoO
 xVz
 xVz
 xVz
-xVz
+gSv
 uoO
 uoO
 uoO
