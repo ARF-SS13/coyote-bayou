@@ -128,6 +128,10 @@
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = ""
 
+/obj/item/clothing/head/beret/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/beret/black
 	name = "black beret"
 	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
