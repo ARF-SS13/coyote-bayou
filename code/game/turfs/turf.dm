@@ -26,8 +26,10 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
-	var/turf_light_range = 0 // Used for the nightcycle subsystem
-	var/turf_light_power = 0 // Used for the nightcycle subsystem
+	/// Wether this turf is affected by sunlight, neighbor to turfs that are, or neither.
+	var/sunlight_state = NO_SUNLIGHT
+	/// If neighbor to affected turfs, which neighbors. Uses smoothing adjacencies values.
+	var/border_neighbors = null
 
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
@@ -69,6 +71,14 @@
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
+	else
+		switch(sunlight_state)
+			if(SUNLIGHT_SOURCE)
+				setup_sunlight_source()
+			if(SUNLIGHT_BORDER)
+				border_neighbors = null
+				smooth_sunlight_border()
+
 
 	if(requires_activation)
 		CALCULATE_ADJACENT_TURFS(src)

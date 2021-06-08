@@ -23,6 +23,16 @@
 	To see an example of a diagonal wall, see '/turf/closed/wall/mineral/titanium' and its subtypes.
 */
 
+//Modern /tg/ smoothing dirs (new icon smoothing not yet implemented on this codebase)
+#define NORTH_JUNCTION NORTH //(1<<0)
+#define SOUTH_JUNCTION SOUTH //(1<<1)
+#define EAST_JUNCTION EAST  //(1<<2)
+#define WEST_JUNCTION WEST  //(1<<3)
+#define NORTHEAST_JUNCTION (1<<4)
+#define SOUTHEAST_JUNCTION (1<<5)
+#define SOUTHWEST_JUNCTION (1<<6)
+#define NORTHWEST_JUNCTION (1<<7)
+
 //Redefinitions of the diagonal directions so they can be stored in one var without conflicts
 #define N_NORTH		(1<<1)
 #define N_SOUTH		(1<<2)
