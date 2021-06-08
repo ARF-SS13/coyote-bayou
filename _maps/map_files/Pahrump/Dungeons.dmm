@@ -513,7 +513,7 @@
 "aIQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button{
-	id = bonnie
+	id = "bonnie"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "reddirtyfull"
@@ -8088,7 +8088,7 @@
 "lum" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button{
-	id = bonnie
+	id = "bonnie"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red{
@@ -15530,7 +15530,7 @@
 /area/f13/vault)
 "vTX" = (
 /obj/machinery/door/poddoor/preopen{
-	id = bonnie
+	id = "bonnie"
 	},
 /obj/effect/turf_decal/loading_area/white{
 	dir = 4
