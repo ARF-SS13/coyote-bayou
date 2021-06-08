@@ -115,3 +115,7 @@ do { \
 		source.lum_b = 1; \
 	}; \
 } while (FALSE)
+
+#define NO_SUNLIGHT 0
+#define SUNLIGHT_SOURCE 1
+#define SUNLIGHT_BORDER 2
