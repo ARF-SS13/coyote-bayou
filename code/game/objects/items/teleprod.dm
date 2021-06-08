@@ -23,6 +23,7 @@
 	else
 		deductcharge(hitcost * 0.25)
 
+/*
 /obj/item/melee/baton/cattleprod/attackby(obj/item/I, mob/user, params)//handles sticking a crystal onto a stunprod to make a teleprod
 	if(istype(I, /obj/item/stack/ore/bluespace_crystal))
 		if(!cell)
@@ -37,3 +38,4 @@
 			user.visible_message("<span class='warning'>You can't put the crystal onto the stunprod while it has a power cell installed!</span>")
 	else
 		return ..()
+*/
