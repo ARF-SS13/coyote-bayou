@@ -221,7 +221,7 @@
 	config_entry_value = "https://discord.gg/a5Nb6vgVcG"
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/nokele/desertrose"
+	config_entry_value = "https://github.com/nokele/Fortune13"
 
 /datum/config_entry/string/roundstatsurl
 

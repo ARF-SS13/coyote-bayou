@@ -297,10 +297,11 @@ Works together with spawning an observer, noted above.
 				return
 			GLOB.client_ghost_timeouts[ghost.ckey] = max(GLOB.client_ghost_timeouts[ghost.ckey],penalty)
 	// needs to be done AFTER the ckey transfer, too
-	//I HATE IT I HATE IT I HATE IT
+	//I HATE IT I HATE IT I HATE IT		
 	ghost.timeofdeath = src.timeofdeath /* used for respawn */
-	if(src.timeofdeath == 0)
-		ghost.timeofdeath = world.time
+	if(penalize)
+		if(src.timeofdeath == 0)
+			ghost.timeofdeath = world.time
 	return ghost
 
 /*
