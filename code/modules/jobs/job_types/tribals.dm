@@ -26,6 +26,7 @@
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
+	H.grant_language(/datum/language/tribal)
 
 /*
 Tribal Chief
@@ -55,18 +56,19 @@ Tribal Chief
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13chief
 	name = "Chief"
 	jobtype = /datum/job/tribal/f13chief
 	head = 			/obj/item/clothing/head/helmet/f13/wayfarer/chief/green
-	uniform = 		/obj/item/clothing/under/f13/tribe_chief
+	uniform = 		/obj/item/clothing/under/f13/wayfarer
 	belt = 			/obj/item/storage/backpack/spearquiver
 	neck =			/obj/item/clothing/neck/cloak/chiefcloak
 	id = 			/obj/item/card/id/tribetattoo
-	suit =			/obj/item/clothing/suit/armor/f13/tribe_armor
-	suit_store =	/obj/item/twohanded/spear/bonespear/deathclaw
+	suit =			/obj/item/clothing/suit/hooded/cloak/hhunter
+	suit_store =	/obj/item/melee/transforming/cleaving_saw
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
@@ -336,6 +338,7 @@ Hunter
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
@@ -390,5 +393,5 @@ Spirit-Pledged
 /datum/outfit/job/tribal/f13spiritpledged
 	name = "Spirit-Pledged"
 	jobtype = /datum/job/tribal/f13spiritpledged
-	uniform =	/obj/item/clothing/under/f13/tribe
+	uniform =	/obj/item/clothing/under/f13/wayfarer
 	id = 		/obj/item/card/id/tribetattoo
