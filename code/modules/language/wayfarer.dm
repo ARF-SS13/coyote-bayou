@@ -1,7 +1,7 @@
-/datum/language/wayfarer
-	name = "Wayfarer"
-	desc = "The language spoken by members of the Wayfarer tribe, boasting a complex system of phonemes and alien grammar. An expert ear of a researcher may notice the vague resemblance to the Indo-European language family."
-	key = "w"
+/datum/language/tribal
+	name = "Tribal"
+	desc = "The language spoken by members of the local tribe, boasting a complex system of phonemes and mixed grammar."
+	key = "t"
 	syllables = list(
 	"pa", "pe", "pi","pa", "pe", "pi","pr", "bm",
 	"ta", "te", "ti", "ta", "te", "ti", "tr", "dm",
