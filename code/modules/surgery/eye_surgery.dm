@@ -5,8 +5,7 @@
 	possible_locs = list(BODY_ZONE_PRECISE_EYES)
 	requires_bodypart_type = BODYPART_ORGANIC
 	requires_trait = 2
-	requires_trait = "PRACTITIONER_1"
-	requires_trait = "SCRIBE_TRAINED"
+	requires_trait = "MEDICALGRADUATE"
 
 //fix eyes
 /datum/surgery_step/fix_eyes

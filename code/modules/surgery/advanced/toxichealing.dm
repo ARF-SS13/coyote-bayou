@@ -15,8 +15,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = 0
 	requires_trait = 2
-	requires_trait = "PRACTITIONER_1"
-	requires_trait = "SCRIBE_TRAINED"
+	requires_trait = "MEDICALGRADUATE"
 
 /datum/surgery_step/toxichealing
 	name = "rejuvenate body"
