@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/energy/ion
-	projectile_type = /obj/item/projectile/ion
+	projectile_type = /obj/item/projectile/ion/weak
 	select_name = "ion"
 	fire_sound = 'sound/weapons/ionrifle.ogg'
 
