@@ -230,8 +230,7 @@
 	name = "oasis surgery disk"
 	surgeries = list(	/datum/surgery/advanced/lobotomy,
 						/datum/surgery/advanced/pacify,
-						/datum/surgery/advanced/reconstruction,
-						/datum/surgery/advanced/brainwashing)
+						/datum/surgery/advanced/reconstruction)
 
 
 //INFO
