@@ -732,6 +732,7 @@
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
 		user.visible_message("<span class='notice'>[user] looks down the scope of [src].</span>", "<span class='notice'>You look down the scope of [src].</span>")
 	else
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
