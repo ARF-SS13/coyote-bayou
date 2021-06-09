@@ -65,15 +65,15 @@
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
 	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
+	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/enclave
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
+	suit_store =  	/obj/item/gun/energy/laser/aer14
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
@@ -114,11 +114,11 @@
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/wasteland/enclavelt
 	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
