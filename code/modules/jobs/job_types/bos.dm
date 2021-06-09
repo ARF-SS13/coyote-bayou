@@ -203,6 +203,7 @@ Head Scribe
 		return
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
@@ -597,7 +598,7 @@ Scribe
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
-	ADD_TRAIT(H, TRAIT_SCRIBE_TRAINED, src)
+	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"
