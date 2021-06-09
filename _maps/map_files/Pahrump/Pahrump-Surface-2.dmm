@@ -4097,7 +4097,7 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/caves)
+/area/f13/followers)
 "cMk" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -32854,10 +32854,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "umD" = (
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/caves)
+/turf/closed/wall/f13/store,
+/area/f13/followers)
 "umS" = (
 /obj/structure/table/wood/fancy/black,
 /obj/effect/turf_decal/trimline/yellow/line{
@@ -74605,8 +74603,8 @@ gts
 gts
 gts
 gts
-nGq
-nGq
+gts
+gts
 ivm
 kMm
 jIB
@@ -74859,8 +74857,8 @@ gcK
 gcK
 gcK
 gcK
-trF
 umD
+uVE
 tSu
 tSu
 uBJ
@@ -75116,7 +75114,7 @@ ktB
 ktB
 ktB
 gcK
-trF
+umD
 cMg
 qkO
 qkO
@@ -75373,8 +75371,8 @@ xAZ
 xAZ
 ktB
 gcK
-trF
 umD
+uVE
 uyp
 uyp
 uVE
@@ -75630,8 +75628,8 @@ nft
 xAZ
 ktB
 gcK
-trF
 umD
+uVE
 uVE
 uVE
 uVE
@@ -75887,8 +75885,8 @@ nqw
 xAZ
 ktB
 ktB
-trF
 umD
+uVE
 fDE
 uVE
 uBJ
