@@ -9,7 +9,7 @@
 /datum/outfit/job/tribal/
 	name = "TRIBALdatums"
 	jobtype = /datum/job/tribal/
-	shoes = 		/obj/item/clothing/shoes/f13/rag
+	shoes = 		/obj/item/clothing/shoes/sandal
 	gloves =        /obj/item/clothing/gloves/f13/handwraps
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
