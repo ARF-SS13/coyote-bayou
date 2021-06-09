@@ -5,6 +5,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	//Its easier to pull stuff out than it is to put it back in.
 	requires_trait = 2
+	requires_trait = "MEDICALGRADUATE"
 
 //extract implant
 /datum/surgery_step/extract_implant
@@ -51,6 +52,7 @@
 	else
 		to_chat(user, "<span class='warning'>You can't find anything in [target]'s [target_zone]!</span>")
 	return 1
+
 /datum/surgery/implant_removal/mechanic
 	name = "implant removal"
 	requires_bodypart_type = BODYPART_ROBOTIC
@@ -61,6 +63,4 @@
 		/datum/surgery_step/extract_implant,
 		/datum/surgery_step/mechanic_wrench,
 		/datum/surgery_step/mechanic_close)
-	requires_trait = "PRACTITIONER_2" //Most skilled amongst followers at a senior scribe level.
-	requires_trait = "CYBERNETICIST_2" //high skill head scribes EI:Reginald Rothchild.
 	requires_trait = "CYBERNETICIST_1" //Intermediary surgically & mechanically skilled scribes.
