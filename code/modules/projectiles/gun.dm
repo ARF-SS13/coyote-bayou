@@ -731,20 +731,23 @@
 		user.client.change_view(zoom_out_amt)
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk)
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
 		user.visible_message("<span class='notice'>[user] looks down the scope of [src].</span>", "<span class='notice'>You look down the scope of [src].</span>")
 	else
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
-		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		user.visible_message("<span class='notice'>[user] looks up from the scope of [src].</span>", "<span class='notice'>You look up from the scope of [src].</span>")
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
-/obj/item/gun/proc/on_walk(mob/living/L)
-	//zoom(L, FALSE)
+/obj/item/gun/proc/on_walk(mob/living/user)
+	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
+	user.client.change_view(CONFIG_GET(string/default_view))
+	user.client.pixel_x = 0
+	user.client.pixel_y = 0	
 
 /obj/item/gun/proc/rotate(mob/living/user, old_dir, direction = FALSE)
 	var/_x = 0
