@@ -56,7 +56,7 @@
 
 /obj/machinery/hydroponics/constructable/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use <b>Ctrl-Click</b> to activate autogrow. <b>Alt-Click</b> to empty the tray's nutrients.</span>"
+	. += "<span class='notice'>Use <b>Alt-Click</b> to empty the tray's nutrients.</span>"
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
 
@@ -93,12 +93,6 @@
 
 	if(myseed && (myseed.loc != src))
 		myseed.forceMove(src)
-
-	if(!powered() && self_sustaining)
-		visible_message("<span class='warning'>[name]'s auto-grow functionality shuts off!</span>")
-		idle_power_usage = 0
-		self_sustaining = FALSE
-		update_icon()
 
 	else if(self_sustaining)
 		adjustWater(5)
@@ -318,8 +312,6 @@
 
 	. += "<span class='info'>Water: [waterlevel]/[maxwater].</span>\n"+\
 	"<span class='info'>Nutrient: [reagents.total_volume]/[maxnutri].</span>"
-	if(self_sustaining)
-		. += "<span class='info'>The tray's autogrow is active, halting reagent drain, and actively maintaning the plant.</span>"
 
 	if(weedlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
@@ -718,7 +710,7 @@
 	else
 		if(user)
 			examine(user)
-
+/*
 /obj/machinery/hydroponics/CtrlClick(mob/user)
 	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -732,7 +724,7 @@
 	idle_power_usage = self_sustaining ? 2500 : 0
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_icon()
-
+*/
 /obj/machinery/hydroponics/AltClick(mob/user)
 	. = ..()
 	if(!anchored)
@@ -759,9 +751,6 @@
 		name = initial(name)
 		desc = initial(desc)
 		TRAY_NAME_UPDATE
-		if(self_sustaining && !/obj/machinery/hydroponics/soil) //No reason to pay for an empty tray. But also alot of reasons to keep paying if it's a soil.
-			idle_power_usage = 0
-			self_sustaining = FALSE
 	update_icon()
 
 /// Tray Setters - The following procs adjust the tray or plants variables, and make sure that the stat doesn't go out of bounds.///
