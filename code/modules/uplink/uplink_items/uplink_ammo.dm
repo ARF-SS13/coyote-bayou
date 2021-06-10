@@ -67,9 +67,9 @@
 	cost = 2
 
 /datum/uplink_item/ammo/pistolzzz/box
-	name = "Ammo Box - 10mm Soporific"
-	desc = "An additional box of 10mm Soporific ammo. The box has 20 cases inside, does not come with a magazine."
-	item = /obj/item/ammo_box/c10mm/soporific
+	name = "Ammo Box - 10mm Incendiary"
+	desc = "An additional box of 10mm Incendiary ammo. The box has 20 cases inside, does not come with a magazine."
+	item = /obj/item/ammo_box/magazine/m10mm/fire
 	illegal_tech = FALSE
 
 /datum/uplink_item/ammo/shotgun
