@@ -4,27 +4,27 @@
 	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
-	products = list(/obj/item/reagent_containers/food/snacks/candy = 5,
-					/obj/item/reagent_containers/food/snacks/chocolatebar = 5,
-					/obj/item/reagent_containers/food/drinks/dry_ramen = 5,
-					/obj/item/reagent_containers/food/snacks/chips = 5,
-					/obj/item/reagent_containers/food/snacks/sosjerky = 5,
-					/obj/item/reagent_containers/food/snacks/no_raisin = 5,
-					/obj/item/reagent_containers/food/snacks/spacetwinkie = 5,
-					/obj/item/reagent_containers/food/snacks/cheesiehonkers = 5,
-					/obj/item/reagent_containers/food/snacks/cornchips = 5,
-					/obj/item/reagent_containers/food/snacks/energybar = 6)
+	products = list(/obj/item/reagent_containers/food/snacks/candy = 1,
+					/obj/item/reagent_containers/food/snacks/chocolatebar = 0,
+					/obj/item/reagent_containers/food/drinks/dry_ramen = 0,
+					/obj/item/reagent_containers/food/snacks/chips = 0,
+					/obj/item/reagent_containers/food/snacks/sosjerky = 0,
+					/obj/item/reagent_containers/food/snacks/no_raisin = 0,
+					/obj/item/reagent_containers/food/snacks/spacetwinkie = 0,
+					/obj/item/reagent_containers/food/snacks/cheesiehonkers = 0,
+					/obj/item/reagent_containers/food/snacks/cornchips = 0,
+					/obj/item/reagent_containers/food/snacks/energybar = 0)
 	contraband = list(
-					/obj/item/reagent_containers/food/snacks/cracker = 10,
-					/obj/item/reagent_containers/food/snacks/honeybar = 5,
-					/obj/item/reagent_containers/food/snacks/syndicake = 5,
-					/obj/item/reagent_containers/food/snacks/beans = 2)
+					/obj/item/reagent_containers/food/snacks/cracker = 2,
+					/obj/item/reagent_containers/food/snacks/honeybar = 0,
+					/obj/item/reagent_containers/food/snacks/syndicake = 0,
+					/obj/item/reagent_containers/food/snacks/beans = 0)
 	premium = list(
-					/obj/item/reagent_containers/food/snacks/lollipop = 2,
-					/obj/item/reagent_containers/food/snacks/spiderlollipop = 2,
-					/obj/item/reagent_containers/food/snacks/chococoin = 1,
-					/obj/item/storage/box/marshmallow = 1,
-					/obj/item/storage/box/donkpockets = 2)
+					/obj/item/reagent_containers/food/snacks/lollipop = 0,
+					/obj/item/reagent_containers/food/snacks/spiderlollipop = 0,
+					/obj/item/reagent_containers/food/snacks/chococoin = 0,
+					/obj/item/storage/box/marshmallow = 0,
+					/obj/item/storage/box/donkpockets = 0)
 
 	refill_canister = /obj/item/vending_refill/snack
 	canload_access_list = list(ACCESS_KITCHEN)
