@@ -18,7 +18,7 @@
 
 /obj/item/clothing/mask/infiltrator
 	name = "insidious balaclava"
-	desc = "An incredibly suspicious balaclava made with Syndicate nanofibers to absorb impacts slightly while obfuscating the voice and face using a garbled vocoder."
+	desc = "An incredibly suspicious balaclava made by the Enclave, obfuscating the voice and face using a garbled vocoder."
 	icon_state = "syndicate_balaclava"
 	item_state = "syndicate_balaclava"
 	clothing_flags = ALLOWINTERNALS
@@ -26,7 +26,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 5,"energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_MUZZLE
 	var/voice_unknown = TRUE ///This makes it so that your name shows up as unknown when wearing the mask.
