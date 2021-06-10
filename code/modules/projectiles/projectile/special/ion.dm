@@ -16,4 +16,4 @@
 /obj/item/projectile/ion/weak
 	emp_radius = 1
 	damage = 25
-	armour_penetration = 0.2
+	armour_penetration = 0.5
