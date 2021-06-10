@@ -30,7 +30,7 @@
 	id = /datum/reagent/nitroglycerin
 	results = list(/datum/reagent/nitroglycerin = 2)
 	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/toxin/acid/fluacid = 1, /datum/reagent/toxin/acid = 1)
-	strengthdiv = 6
+	strengthdiv = 2
 
 /datum/chemical_reaction/reagent_explosion/nitroglycerin/on_reaction(datum/reagents/holder, multiplier)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -43,14 +43,14 @@
 	id = "nitroglycerin_explosion"
 	required_reagents = list(/datum/reagent/nitroglycerin = 1)
 	required_temp = 474
-	strengthdiv = 6
+	strengthdiv = 2
 
 
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	name = "Explosion"
 	id = "potassium_explosion"
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
-	strengthdiv = 12
+	strengthdiv = 10
 
 /datum/chemical_reaction/reagent_explosion/holyboom
 	name = "Holy Explosion"
@@ -95,7 +95,7 @@
 	id = "blackpowder_explosion"
 	required_reagents = list(/datum/reagent/blackpowder = 1)
 	required_temp = 474
-	strengthdiv = 10
+	strengthdiv = 6
 	modifier = 1
 	mix_message = "<span class='boldannounce'>Sparks start flying around the black powder!</span>"
 
@@ -167,7 +167,7 @@
 	id = "methboom1"
 	required_temp = 380 //slightly above the meth mix time.
 	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
-	strengthdiv = 10
+	strengthdiv = 6
 	modifier = 1
 	mob_react = FALSE
 
