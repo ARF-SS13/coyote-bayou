@@ -59,21 +59,33 @@
 	OPERATE(lc_topleft)
 #undef OPERATE
 
-// Used to get a scaled lumcount.
-/turf/proc/get_lumcount(minlum = 0, maxlum = 1)
-	if(!lighting_object)
-		return 1
 
-	var/totallums = (lc_topright? (lc_topright.lum_r + lc_topright.lum_g + lc_topright.lum_b) : 0) \
-	+ (lc_bottomright? (lc_bottomright.lum_r + lc_bottomright.lum_g + lc_bottomright.lum_b) : 0) \
-	+ (lc_bottomleft? (lc_bottomleft.lum_r + lc_bottomleft.lum_g + lc_bottomleft.lum_b) : 0) \
-	+ (lc_topleft? (lc_topleft.lum_r + lc_topleft.lum_g + lc_topleft.lum_b) : 0)
+/// Returns the luminosity scale of the turf, a float beween 0 and 1.
+/turf/proc/get_lumcount()
+	var/area/turf_loc = loc
+	if(!IS_DYNAMIC_LIGHTING(turf_loc))
+		return 1 // Non-dynamic lighting is always full bright.
 
-	totallums /= 12 // 4 corners, each with 3 channels, get the average.
+	. = 0
 
-	totallums = (totallums - minlum) / (maxlum - minlum)
+	switch(sunlight_state)
+		if (SUNLIGHT_SOURCE)
+			. += (SSnightcycle.current_sun_power / 255) // 255 is the maximum alpha value.
+		if (SUNLIGHT_BORDER)
+			. += ((SSnightcycle.current_sun_power * 0.5) / 255) // Half the intensity if not directly under the sun.
 
-	return CLAMP01(totallums)
+	if (lighting_object)
+		. += ( \
+			(lc_topright ? (lc_topright.lum_r + lc_topright.lum_g + lc_topright.lum_b) : 0) \
+			+ (lc_bottomright ? (lc_bottomright.lum_r + lc_bottomright.lum_g + lc_bottomright.lum_b) : 0) \
+			+ (lc_bottomleft ? (lc_bottomleft.lum_r + lc_bottomleft.lum_g + lc_bottomleft.lum_b) : 0) \
+			+ (lc_topleft ? (lc_topleft.lum_r + lc_topleft.lum_g + lc_topleft.lum_b) : 0) \
+			) / 12 // 4 corners, each with 3 channels, get the average.
+
+	. += dynamic_lumcount
+
+	return CLAMP01(.)
+
 
 // Returns a boolean whether the turf is on soft lighting.
 // Soft lighting being the threshold at which point the overlay considers
