@@ -970,5 +970,5 @@ Veteran Ranger
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
 		/obj/item/ammo_box/magazine/m45=3,
-		/obj/item/book/granter/trait/lowsurgery=1
+		/obj/item/book/granter/trait/midsurgery=1
 	)
