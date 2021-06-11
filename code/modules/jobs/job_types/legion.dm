@@ -683,7 +683,7 @@
 		/obj/item/stack/sheet/cloth/thirty=1,
 		/obj/item/stack/sheet/prewar=1,
 		/obj/item/book/granter/trait/forgemaster=1,
-		/obj/item/book/granter/trait/tinkering=1)
+		/obj/item/book/granter/trait/techno=1)
 
 
 // AUXILIA - Females with specialist training. Cause men dont do womens work in Legion and vice versa. Cant have it both ways. Healing is womens work, basta.
