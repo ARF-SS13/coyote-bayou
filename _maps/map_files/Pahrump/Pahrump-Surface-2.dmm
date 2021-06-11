@@ -974,6 +974,10 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"aFy" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/oakbroken2,
+/area/f13/building)
 "aFF" = (
 /obj/structure/weightlifter,
 /turf/open/indestructible/ground/outside/dirt,
@@ -3597,6 +3601,11 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/building)
+"csb" = (
+/obj/structure/table/wood/settler,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "csk" = (
 /turf/open/water,
@@ -12591,6 +12600,11 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"hRn" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "hRB" = (
 /obj/machinery/trading_machine/ammo,
 /turf/open/floor/f13/wood,
@@ -15571,6 +15585,7 @@
 /obj/structure/chair/comfy{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "jBH" = (
@@ -24544,24 +24559,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "pkL" = (
-/obj/machinery/hydroponics/constructable{
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
 /obj/machinery/button/door{
 	id = "botany";
 	name = "Botany button";
-	pixel_x = -26;
-	pixel_y = -25
+	pixel_x = -28;
+	pixel_y = 6
 	},
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/spawner,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "greendirtyfull"
 	},
 /area/f13/followers)
 "pkS" = (
@@ -35055,7 +35060,7 @@
 	dir = 4
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floordirty"
 	},
 /area/f13/followers)
 "vug" = (
@@ -65098,7 +65103,7 @@ wso
 svA
 dCV
 bRt
-aRl
+gGz
 aPF
 dCV
 gts
@@ -65355,8 +65360,8 @@ svA
 xbN
 dCV
 sHQ
-vIX
-aRl
+aFy
+gGz
 dCV
 gts
 okV
@@ -66383,9 +66388,9 @@ wJq
 rRt
 mLl
 aRl
-aRl
+gGz
 cbc
-tQo
+eEV
 dCV
 auc
 dCV
@@ -66640,7 +66645,7 @@ cpK
 cpK
 dCV
 rEe
-mDy
+csb
 mDy
 atV
 dCV
@@ -67153,9 +67158,9 @@ sxT
 roX
 dkg
 dCV
-uzO
+hRn
 aRl
-aRl
+gGz
 aRl
 dCV
 elJ
@@ -77589,7 +77594,7 @@ uCd
 xrd
 nkz
 ujC
-uVE
+ujC
 ujC
 nqZ
 nry
@@ -77846,7 +77851,7 @@ uCT
 xrd
 uVy
 ujC
-uVE
+ujC
 ujC
 luK
 wBC
@@ -78359,7 +78364,7 @@ rex
 uLk
 xrd
 uVy
-uVE
+ujC
 ckY
 viX
 uVE
@@ -78616,12 +78621,12 @@ xAZ
 uNC
 xAB
 frL
-uVE
+ujC
 ckY
 viX
 uVE
+jqX
 pkL
-iBu
 pKe
 xAZ
 kGc
@@ -78871,9 +78876,9 @@ eMU
 eMU
 eMU
 uTS
-uVE
-uVE
-uVE
+ujC
+ujC
+ujC
 ckY
 viX
 uVE
@@ -79128,9 +79133,9 @@ eMU
 eMU
 rAv
 rex
-uVE
-uVE
-nHl
+ujC
+ujC
+oCg
 ckY
 btR
 acT
@@ -79385,8 +79390,8 @@ keb
 oMb
 rDj
 rex
-uVE
-uVE
+ujC
+ujC
 vtS
 mhA
 iBu
@@ -80413,8 +80418,8 @@ gcK
 gcK
 ktB
 ktB
-gcK
-gcK
+ktB
+ktB
 ktB
 ktB
 ktB
