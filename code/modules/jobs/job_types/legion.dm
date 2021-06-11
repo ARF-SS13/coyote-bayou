@@ -356,7 +356,7 @@
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic	
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	r_pocket =		/obj/item/flashlight/lantern
 	l_pocket =		/obj/item/restraints/handcuffs
 	l_hand = 		/obj/item/nullrod/claymore/chainsaw_sword
@@ -415,7 +415,7 @@
 
 /datum/outfit/loadout/vetberserker
 	name =			"Berserker"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/combat/auto5	
+	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	backpack_contents = list(
 		/obj/item/storage/fancy/ammobox/slugshot=1,
 		/obj/item/twohanded/fireaxe=1,
@@ -550,7 +550,7 @@
 		/obj/item/ammo_box/magazine/autopipe=2)
 
 
-// EXPLORER 
+// EXPLORER
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	title = "Legion Explorer"
@@ -608,7 +608,7 @@
 	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44=4,
-		/obj/item/gun/ballistic/revolver/m29=1,		
+		/obj/item/gun/ballistic/revolver/m29=1,
 		/obj/item/ammo_box/a357=2)
 
 //////////////////////
@@ -749,7 +749,7 @@
 		/obj/item/pen/fountain=1,
 		/obj/item/storage/bag/money/small/legofficers=2,
 		/obj/item/taperecorder=1,
-		/obj/item/book/granter/trait/tinkering)
+		/obj/item/book/granter/trait/tinkering=1)
 
 /datum/outfit/loadout/auxmedicus
 	name =		"Medicus (Surgeon)"
@@ -854,7 +854,7 @@
 Possible paths - refine Forgemaster role, more recipes etc.
 Continue tweaking down power of loadouts in tandem with NCR.
 Slavemaster merged with Forgemaster in a support role has pros and cons, might need shuffle around at some later date.
-Add recipes/traits to keep refining support roles. 
+Add recipes/traits to keep refining support roles.
 
 Priestess of Mars removed to reduce bloat, Legate is enough for admin intervention IC.
 
