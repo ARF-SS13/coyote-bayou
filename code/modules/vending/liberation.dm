@@ -9,8 +9,6 @@
 					/obj/item/reagent_containers/food/snacks/burger/baseball = 3, //What so proudly we hailed at the twilight's last gleaming
 					/obj/item/reagent_containers/food/snacks/fries = 5, //Whose broad stripes and bright stars through the perilous fight
 					/obj/item/reagent_containers/food/drinks/beer/light = 10, //O'er the ramparts we watched, were so gallantly streaming?
-					/obj/item/gun/ballistic/automatic/pistol/deagle/gold = 2,
-					/obj/item/gun/ballistic/automatic/pistol/deagle/camo = 2,
 					/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
 					/obj/item/gun/ballistic/automatic/proto/unrestricted = 2,
 					/obj/item/gun/ballistic/shotgun/automatic/combat = 2,

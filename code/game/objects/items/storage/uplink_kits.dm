@@ -387,7 +387,6 @@
 	name = "Kitchen Gun (TM) package"
 
 /obj/item/storage/box/syndie_kit/kitchen_gun/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/kitchengun(src)
 	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
 	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
 
