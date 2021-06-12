@@ -40,6 +40,10 @@
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
 
+	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
+	var/dynamic_lumcount = 0 // Not yet added to this codebase.
+
+
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
 	if(var_name in banned_edits)
