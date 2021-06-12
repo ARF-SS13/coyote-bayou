@@ -4628,7 +4628,7 @@
 	desc = "After YEARS of research, prototyping, and testing, the brotherhood created the sequel to the table. Advanced flat surface technology at work!";
 	name = "advanced table"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/unique,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
 "gqm" = (
@@ -15692,6 +15692,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
+"vHa" = (
+/obj/structure/debris/v3,
+/obj/structure/debris/v3{
+	pixel_x = 23
+	},
+/turf/closed/wall/f13/ruins,
+/area/f13/underground/cave)
 "vHC" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
@@ -15971,9 +15978,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
 "wdW" = (
-/obj/effect/decal/remains/human,
-/obj/structure/debris/v3,
-/turf/open/floor/plating/tunnel,
+/obj/structure/wreck/trash/five_tires,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
 /area/f13/underground/cave)
 "wef" = (
 /obj/structure/barricade/wooden,
@@ -19083,7 +19091,7 @@ hIH
 tHP
 cYi
 ioe
-rDh
+wdW
 hIH
 heT
 heT
@@ -19342,7 +19350,7 @@ bdg
 cYi
 cYi
 hIH
-cIl
+vHa
 cIl
 hIH
 hIH
@@ -19599,7 +19607,7 @@ cIg
 rDh
 toC
 hIH
-nlV
+cYi
 bdg
 idi
 hIH
@@ -19858,7 +19866,7 @@ cYi
 hIH
 cYi
 ioe
-cwg
+cYi
 wha
 drH
 wPz
@@ -20115,7 +20123,7 @@ cYi
 vjG
 oJh
 cYi
-nlV
+cwg
 hIH
 bYA
 bYA
@@ -20370,8 +20378,8 @@ cYi
 xdk
 cYi
 hIH
-nlV
-wdW
+cYi
+cIg
 lOu
 hIH
 bYA
