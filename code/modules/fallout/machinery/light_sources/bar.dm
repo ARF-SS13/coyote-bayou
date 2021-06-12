@@ -5,6 +5,7 @@
 	icon_state = "blue"
 	base_state = "blue"
 	icon = 'icons/fallout/machines/64x32.dmi'
+	bound_width = 64
 	fitting = "bulb"
 	brightness = 4
 	active_power_usage = 0
@@ -17,7 +18,7 @@
 
 /obj/machinery/light/sign/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency)
+	AddComponent(/datum/component/largetransparency, x_size = 1)
 
 
 /obj/machinery/light/sign/update_icon()

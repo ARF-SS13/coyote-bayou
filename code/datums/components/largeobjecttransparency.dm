@@ -1,34 +1,39 @@
 ///Makes large icons partially see through if high priority atoms are behind them.
 /datum/component/largetransparency
 	//Can be positive or negative. Determines how far away from parent the first registered turf is.
-	var/x_offset
-	var/y_offset
+	var/x_offset = 0
+	var/y_offset = 1
 	//Has to be positive or 0.
-	var/x_size
-	var/y_size
+	var/x_size = 0
+	var/y_size = 0
 	//The alpha values this switches in between.
-	var/initial_alpha
-	var/target_alpha
+	var/initial_alpha = 255
+	var/target_alpha = 140
 	//if this is supposed to prevent clicks if it's transparent.
-	var/toggle_click
-	var/list/registered_turfs
+	var/toggle_click = TRUE
+	var/list/registered_turfs = list()
 	var/amounthidden = 0
 
-/datum/component/largetransparency/Initialize(_x_offset = 0, _y_offset = 1, _x_size = 0, _y_size = 1, _initial_alpha = null, _target_alpha = 140, _toggle_click = TRUE)
+/datum/component/largetransparency/Initialize(x_offset, y_offset, x_size, y_size, initial_alpha, target_alpha)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
-	x_offset = _x_offset
-	y_offset = _y_offset
-	x_size = _x_size
-	y_size = _y_size
-	if(isnull(_initial_alpha))
+	if(!isnull(x_offset))
+		src.x_offset = x_offset
+	if(!isnull(y_offset))
+		src.y_offset = y_offset
+	if(!isnull(x_size))
+		src.x_size = x_size
+	if(!isnull(y_size))
+		src.y_size = y_size
+	if(isnull(initial_alpha))
 		var/atom/at = parent
-		initial_alpha = at.alpha
+		src.initial_alpha = at.alpha
 	else
-		initial_alpha = _initial_alpha
-	target_alpha = _target_alpha
-	toggle_click = _toggle_click
-	registered_turfs = list()
+		src.initial_alpha = initial_alpha
+	if(!isnull(target_alpha))
+		src.target_alpha = target_alpha
+	if(!isnull(toggle_click))
+		src.toggle_click = toggle_click
 
 
 /datum/component/largetransparency/Destroy()
