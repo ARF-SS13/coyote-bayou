@@ -611,7 +611,7 @@ Trooper
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine //Generally worse weapon, though can be upgraded
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
-		/obj/item/storage/box/ration/menu_eight=1, 
+		/obj/item/storage/box/ration/menu_eight=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=1)
 
 /datum/outfit/loadout/trooperfiresupport
@@ -735,7 +735,7 @@ Rear Echelon
 		/obj/item/gun/ballistic/shotgun/hunting=1, \
 		/obj/item/storage/fancy/ammobox/lethalshot=2, \
 		/obj/item/weldingtool/largetank)
-		
+
 
 /*
 Trooper
@@ -970,5 +970,5 @@ Veteran Ranger
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
 		/obj/item/ammo_box/magazine/m45=3,
-		/obj/item/book/granter/trait/lowsurgery
+		/obj/item/book/granter/trait/midsurgery=1
 	)
