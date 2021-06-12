@@ -1,4 +1,5 @@
 /mob/living
+	flags_1 = HEAR_1 | CRITICAL_ATOM_1
 	see_invisible = SEE_INVISIBLE_LIVING
 	sight = 0
 	see_in_dark = 2

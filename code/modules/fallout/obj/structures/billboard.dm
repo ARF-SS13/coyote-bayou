@@ -9,6 +9,11 @@
 	layer = 5
 	icon = 'icons/obj/Ritas.dmi'
 	resistance_flags = INDESTRUCTIBLE
+
+/obj/structure/billboard/Initialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency)
+
 /*
 /obj/structure/billboard/New()
 	..()
