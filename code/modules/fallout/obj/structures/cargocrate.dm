@@ -7,7 +7,7 @@
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
-	bound_width = 62
+	bound_width = 64
 
 /obj/structure/cargocrate/Initialize()
 	. = ..()
