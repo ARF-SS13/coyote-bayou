@@ -86,6 +86,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/old_lc_bottomright = lc_bottomright
 	var/old_lc_bottomleft = lc_bottomleft
 
+	var/old_sunlight_state = sunlight_state
+
 	var/old_exl = explosion_level
 	var/old_exi = explosion_id
 	var/old_bp = blueprint_data
@@ -138,6 +140,10 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 		for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
 			S.update_starlight()
+
+	// Handle the sunlight state change properly, if any.
+	if(sunlight_state != old_sunlight_state)
+		handle_sunlight_state_change(old_sunlight_state)
 
 	return W
 

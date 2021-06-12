@@ -195,6 +195,51 @@ SUBSYSTEM_DEF(nightcycle)
 	var/atom/movable/sunlight/light_object = SSnightcycle.get_border_object(new_junction)
 	vis_contents += light_object
 
+
+#define RE_SMOOTH_BORDER_NEIGHBORS(source) \
+	do { \
+		for(var/dir in GLOB.alldirs) { \
+			var/turf/neighbor = get_step(source, dir); \
+			if(!neighbor || neighbor.sunlight_state != SUNLIGHT_BORDER) { \
+				continue; \
+			} \
+			if(neighbor.flags_1 & INITIALIZED_1) { \
+				neighbor.smooth_sunlight_border(); \
+			} \
+		} \
+	} while(FALSE)
+
+/// Handles the cases of sunlight_state changing during ChangeTurf()
+/turf/proc/handle_sunlight_state_change(old_sunlight_state)
+	if(sunlight_state == old_sunlight_state)
+		CRASH("handle_sunlight_state_change() called without an actual change.")
+	switch(old_sunlight_state)
+		if(NO_SUNLIGHT)
+			switch(sunlight_state)
+				if(SUNLIGHT_SOURCE)
+					// The no-sunlight neighbors were turned into border during Initialize() already.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+				if(SUNLIGHT_BORDER)
+					CRASH("Turf changed from no-sunlight to border on ChangeTurf(). No turf should be border by default.")
+		if(SUNLIGHT_SOURCE)
+			switch(sunlight_state)
+				if(NO_SUNLIGHT)
+					// Have them decide whether they're still border or not.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+				if(SUNLIGHT_BORDER)
+					CRASH("Turf changed from sunlight-source to border on ChangeTurf(). No turf should be border by default.")
+		if(SUNLIGHT_BORDER)
+			switch(sunlight_state)
+				if(NO_SUNLIGHT)
+					sunlight_state = SUNLIGHT_BORDER
+					border_neighbors = null // This is already null by default, but eh.
+					smooth_sunlight_border() // Are we still a border neighbor?
+				if(SUNLIGHT_SOURCE)
+					// Only the no-sunlight neighbors were were updated during Initialize(). Let's update the rest.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+
+
+#undef RE_SMOOTH_BORDER_NEIGHBORS
 #undef SUNLIGHT_ADJ_IN_DIR
 #undef CYCLE_SUNRISE
 #undef CYCLE_MORNING
