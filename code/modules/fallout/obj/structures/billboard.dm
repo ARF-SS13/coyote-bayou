@@ -8,11 +8,12 @@
 	anchored = 1
 	layer = 5
 	icon = 'icons/obj/Ritas.dmi'
+	bound_width = 64
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/billboard/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency)
+	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
 
 /*
 /obj/structure/billboard/New()

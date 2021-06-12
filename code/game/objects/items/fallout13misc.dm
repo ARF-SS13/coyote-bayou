@@ -159,7 +159,7 @@
 
 /obj/item/flag/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency)
+	AddComponent(/datum/component/largetransparency, y_size = 1)
 
 /obj/item/flag/ncr
 	name = "NCR flag"

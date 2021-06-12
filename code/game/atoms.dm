@@ -73,8 +73,6 @@
 	///Mobs that are currently do_after'ing this atom, to be cleared from on Destroy()
 	var/list/targeted_by
 
-	///Linked atom that will be attacked if this atom is attacked. Currently implemented for /structure/car
-	var/atom/linked_attack_parent
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
