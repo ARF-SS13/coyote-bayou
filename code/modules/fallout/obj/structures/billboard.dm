@@ -13,7 +13,7 @@
 
 /obj/structure/billboard/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency, x_size = 1)
+	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
 
 /*
 /obj/structure/billboard/New()

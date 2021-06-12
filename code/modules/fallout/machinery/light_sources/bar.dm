@@ -18,7 +18,7 @@
 
 /obj/machinery/light/sign/Initialize()
 	. = ..()
-	AddComponent(/datum/component/largetransparency, x_size = 1)
+	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
 
 
 /obj/machinery/light/sign/update_icon()
