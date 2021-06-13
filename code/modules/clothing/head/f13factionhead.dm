@@ -961,6 +961,19 @@
 	item_state = "remnant_helmet"
 	armor = list("tier" = 6, "energy" = 75, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
+/obj/item/clothing/head/helmet/f13/envirosuit
+	name = "enclave envirosuit hood"
+	icon_state = "envirohead"
+	item_state = "envirohead"
+	desc = "(II) A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
+	clothing_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	armor = list("tier" = 2,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 100)
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
 /obj/item/clothing/head/soft/f13/enclave
 	name = "officer hat"
 	desc = "(I) A standard-issue Enclave officer's cap."
