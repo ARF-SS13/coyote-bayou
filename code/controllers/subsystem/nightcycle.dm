@@ -91,7 +91,7 @@ SUBSYSTEM_DEF(nightcycle)
 			current_sun_power = morning_sun_power
 			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)
 				lamp.icon_state = "[initial(lamp.icon_state)]"
-				lamp.set_light(0)
+				lamp.set_light_on(FALSE)
 		if (DAYTIME)
 			current_sun_color = daytime_sun_color
 			current_sun_power = daytime_sun_power
@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(nightcycle)
 			current_sun_power = sunset_sun_power
 			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)
 				lamp.icon_state = "[initial(lamp.icon_state)]-on"
-				lamp.set_light(lamp.on_range, lamp.on_power, lamp.light_color)
+				lamp.set_light_on(TRUE)
 		if(NIGHTTIME)
 			current_sun_color = nighttime_sun_color
 			current_sun_power = nighttime_sun_power

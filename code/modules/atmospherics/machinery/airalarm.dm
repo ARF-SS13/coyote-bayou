@@ -671,13 +671,13 @@
 	switch(max(danger_level, A.atmosalm))
 		if(0)
 			overlay_state = AALARM_OVERLAY_GREEN
-			light_color = LIGHT_COLOR_GREEN
+			set_light_color(LIGHT_COLOR_GREEN)
 		if(1)
 			overlay_state = AALARM_OVERLAY_WARN
-			light_color = LIGHT_COLOR_LAVA
+			set_light_color(LIGHT_COLOR_LAVA)
 		if(2)
 			overlay_state = AALARM_OVERLAY_DANGER
-			light_color = LIGHT_COLOR_RED
+			set_light_color(LIGHT_COLOR_RED)
 
 	if(overlay_state != AALARM_OVERLAY_OFF)
 		. += overlay_state

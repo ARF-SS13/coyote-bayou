@@ -620,14 +620,11 @@
 	AddComponent(/datum/component/butchering, 20, 105)
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="mars_staff")
 
-
-var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
-var/list/possible_colors = list("red")
 /*
 /obj/item/sledgehammer/marsstaff/update_icon()
 	if(wielded)
 		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
-		light_color = LIGHT_COLOR_RED
+		set_light_color(LIGHT_COLOR_RED)
 		START_PROCESSING(SSobj, src)
 		set_light(brightness_on)
 		sharpness = SHARP_NONE

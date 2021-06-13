@@ -332,16 +332,16 @@
 	if(update_state & UPSTATE_ALLGOOD)
 		switch(charging)
 			if(APC_NOT_CHARGING)
-				light_color = LIGHT_COLOR_RED
+				set_light_color(LIGHT_COLOR_RED)
 			if(APC_CHARGING)
-				light_color = LIGHT_COLOR_BLUE
+				set_light_color(LIGHT_COLOR_BLUE)
 			if(APC_FULLY_CHARGED)
-				light_color = LIGHT_COLOR_GREEN
+				set_light_color(LIGHT_COLOR_GREEN)
 		if (hijackerreturn)
-			light_color = LIGHT_COLOR_YELLOW
+			set_light_color(LIGHT_COLOR_YELLOW)
 		set_light(lon_range)
 	else if(update_state & UPSTATE_BLUESCREEN)
-		light_color = LIGHT_COLOR_BLUE
+		set_light_color(LIGHT_COLOR_BLUE)
 		set_light(lon_range)
 	else
 		set_light(0)
@@ -1279,7 +1279,7 @@
 		force_update = 1
 		return
 
-	lastused_light = area.usage(STATIC_LIGHT)
+	lastused_light = area.usage(CHANNEL_STATIC_LIGHT)
 	lastused_light += area.usage(LIGHT)
 	lastused_equip = area.usage(EQUIP)
 	lastused_equip += area.usage(STATIC_EQUIP)

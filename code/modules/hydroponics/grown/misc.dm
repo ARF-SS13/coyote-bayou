@@ -333,7 +333,7 @@
 			icon_state = "coconut_grenade_active"
 			desc = "RUN!"
 			if(!seed.get_gene(/datum/plant_gene/trait/glow))
-				light_color = "#FFCC66" //for the fuse
+				set_light_color("#FFCC66" )//for the fuse
 				set_light(3, 0.8)
 			return
 

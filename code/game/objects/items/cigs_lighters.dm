@@ -519,6 +519,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.6
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 	var/lit = 0
 	var/fancy = TRUE
 	var/overlay_state
@@ -530,7 +535,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		)
 	heat = 1500
 	resistance_flags = FIRE_PROOF
-	light_color = LIGHT_COLOR_FIRE
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/oil = 5)
 	custom_price = PRICE_ALMOST_CHEAP
 
@@ -568,14 +572,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "fire"
 		hitsound = 'sound/items/welder.ogg'
 		attack_verb = list("burnt", "singed")
-		set_light(2, 0.6, LIGHT_COLOR_FIRE)
 		START_PROCESSING(SSobj, src)
 	else
 		hitsound = "swing_hit"
 		force = 0
 		attack_verb = null //human_defense.dm takes care of it
-		set_light(0)
 		STOP_PROCESSING(SSobj, src)
+	set_light_on(lit)
 	update_icon()
 
 /obj/item/lighter/attack_self(mob/living/user)
@@ -914,7 +917,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = null
 	item_state = null
 	w_class = WEIGHT_CLASS_NORMAL
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.6
 	light_color = "#FFCC66"
+	light_on = FALSE
 	var/icon_off = "bong"
 	var/icon_on = "bong_lit"
 	var/chem_volume = 100
@@ -1088,15 +1095,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		bongturnoff()
 
 
-
 /obj/item/bong/proc/bongturnon()
 	icon_state = icon_on
-	set_light(3, 0.8)
+	set_light_on(TRUE)
 
 /obj/item/bong/proc/bongturnoff()
 	icon_state = icon_off
-	set_light(0, 0.0)
-
+	set_light_on(FALSE)
 
 
 /obj/item/bong/coconut

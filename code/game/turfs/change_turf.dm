@@ -86,6 +86,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	var/old_lc_bottomright = lc_bottomright
 	var/old_lc_bottomleft = lc_bottomleft
 
+	var/old_directional_opacity = directional_opacity
+
 	var/old_sunlight_state = sunlight_state
 
 	var/old_exl = explosion_level
@@ -122,8 +124,11 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	W.blueprint_data = old_bp
 
 	if(SSlighting.initialized)
-		recalc_atom_opacity()
 		lighting_object = old_lighting_object
+
+		directional_opacity = old_directional_opacity
+		recalculate_directional_opacity()
+
 		affecting_lights = old_affecting_lights
 		lc_topright = old_lc_topright
 		lc_topleft = old_lc_topleft
