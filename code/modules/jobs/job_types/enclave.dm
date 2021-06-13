@@ -101,9 +101,9 @@ PEACEKEEPERS
 /datum/outfit/loadout/lieutenant
 	name = "Lieutenant"
 	uniform = 		/obj/item/clothing/under/f13/enclave_officer
-	suit_store =	/obj/item/gun/energy/laser/plasma/glock
 	backpack_contents = list(
 		/obj/item/grenade/chem_grenade/teargas=1,
+		/obj/item/gun/energy/laser/plasma/glock=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/stock_parts/cell/ammo/ec=2)
 
