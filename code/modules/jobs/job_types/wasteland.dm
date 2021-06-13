@@ -81,7 +81,7 @@
 		/obj/item/pda=1,
 		/obj/item/stock_parts/cell/ammo/mfc=3,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1
+		/obj/item/kitchen/knife/combat=1,
 		/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper=1
 		)
 
@@ -133,7 +133,7 @@
 		/obj/item/gun/energy/laser/ultra_pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1
+		/obj/item/kitchen/knife/combat=1,
 		/obj/item/clothing/head/helmet/f13/helmet/enclave/science=1
 		)
 
