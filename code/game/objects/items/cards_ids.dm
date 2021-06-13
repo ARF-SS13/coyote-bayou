@@ -887,6 +887,14 @@
 	icon_state = "deputy"
 	item_state = "badge-deputy"
 
+/obj/item/card/id/dogtag/gla
+	name = "rusted police badge"
+	desc = "An old police badge of the Yuma Highway Patrol defaced with the symbol of the Ghoul Liberation Army. Kept as a memnto of times long since past. "
+	assignment = "badge"
+	assignment = "GLA"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"
 	desc = "A silver badge which shows honour and dedication."
@@ -1117,6 +1125,20 @@
 	icon_state = "brokenholodog"
 	item_state = "brokenholodog"
 	uses_overlays = FALSE
+
+/obj/item/card/id/dentattoo
+	name = "Den Gang tattoo"
+	desc = "A tattoo identifying the bearer as a 'Made Man' of the Den Mob."
+	icon_state = "skin"
+	item_state = "skin"
+	assignment = "gang tattoo"
+	uses_overlays = FALSE
+
+	access = list(ACCESS_DEN)
+
+/obj/item/card/id/dentattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"

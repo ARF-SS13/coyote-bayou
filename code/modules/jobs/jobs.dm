@@ -164,6 +164,8 @@ GLOBAL_LIST_INIT(antagonist_whitelist_positions, list(
 	"Raider",
 	"Outlaw",
 	"Great Khan" //DA KHANZ, BAY BEEEEEEE
+	"Den Mob Enforcer"
+	"Den Mob Boss"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_paladin_positions, list(
