@@ -45,9 +45,6 @@
 	if (light_power && light_range)
 		update_light()
 
-	if (opacity)
-		directional_opacity = ALL_CARDINALS
-
 	ComponentInitialize()
 
 	return INITIALIZE_HINT_NORMAL

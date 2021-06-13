@@ -131,6 +131,7 @@ SUBSYSTEM_DEF(nightcycle)
 	icon_state = "light"
 	move_resist = INFINITY
 	plane = O_LIGHTING_VISUAL_PLANE
+	layer = SUNLIGHT_LAYER
 	appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING

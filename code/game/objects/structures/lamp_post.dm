@@ -8,8 +8,6 @@
 	light_range = 4
 	light_color = "#a8a582"
 	light_on = FALSE
-	light_power = 0
-	light_range = 0
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	layer = GASFIRE_LAYER
