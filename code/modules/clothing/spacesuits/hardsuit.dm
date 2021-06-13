@@ -929,7 +929,7 @@
 				H.update_icon()
 			update_icon()
 			user.update_inv_wear_suit()
-			light_color = energy_color
+			set_light_color(energy_color)
 			update_light()
 	return TRUE
 

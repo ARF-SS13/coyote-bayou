@@ -210,7 +210,7 @@
 
 //Power Armor
 
-/obj/item/clothing/head/helmet/f13/power_armor/
+/obj/item/clothing/head/helmet/f13/power_armor
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -232,11 +232,11 @@
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_range = 5
+	light_on = FALSE
 //	darkness_view = 128
 //	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
-	var/on = FALSE
-	var/brightness_on = 5
-	var/power_on = 1
 	var/emped = 0
 	var/requires_training = TRUE
 	var/armor_block_chance = 0
@@ -311,18 +311,8 @@
 	toggle_helmet_light(user)
 
 /obj/item/clothing/head/helmet/f13/power_armor/proc/toggle_helmet_light(mob/living/user)
-	on = !on
-	if(on)
-		turn_on(user)
-	else
-		turn_off(user)
+	set_light_on(!light_on)
 	update_icon()
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
-	set_light(brightness_on, power_on)
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
-	set_light(0)
 
 
 /obj/item/clothing/head/helmet/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
@@ -459,8 +449,8 @@
 	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
-	icon_state = "t45dhelmet[on]"
-	item_state = "t45dhelmet[on]"
+	icon_state = "t45dhelmet[light_on]"
+	item_state = "t45dhelmet[light_on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b Helm"
@@ -500,8 +490,8 @@
 	melee_block_threshold = 35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
-	icon_state = "t51bhelmet[on]"
-	item_state = "t51bhelmet[on]"
+	icon_state = "t51bhelmet[light_on]"
+	item_state = "t51bhelmet[light_on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/wbos
 	name = "Washington power helmet"
@@ -538,8 +528,8 @@
 	armor_block_threshold = 0.4
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
-	icon_state = "t60helmet[on]"
-	item_state = "t60helmet[on]"
+	icon_state = "t60helmet[light_on]"
+	item_state = "t60helmet[light_on]"
 
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
 	name = "excavator power helmet"

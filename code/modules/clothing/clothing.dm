@@ -22,8 +22,6 @@
 	var/toggle_cooldown = null
 	var/cooldown = 0
 	var/ispowerarmor
-	var/obj/item/flashlight/F = null
-	var/can_flashlight = 0
 	var/darkness_view = 0
 	var/lighting_alpha
 	var/glass_colour_type //colors your vision when worn

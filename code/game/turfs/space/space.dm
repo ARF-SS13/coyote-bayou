@@ -45,9 +45,6 @@
 	if (light_power && light_range)
 		update_light()
 
-	if (opacity)
-		has_opaque_atom = TRUE
-
 	ComponentInitialize()
 
 	return INITIALIZE_HINT_NORMAL

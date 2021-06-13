@@ -417,9 +417,9 @@
 /datum/clockwork_scripture/channeled/void_volt/scripture_effects()
 	invoker.visible_message("<span class='warning'>[invoker] glows in a brilliant golden light!</span>")
 	invoker.add_atom_colour("#FFD700", ADMIN_COLOUR_PRIORITY)
-	invoker.light_power = 2
-	invoker.light_range = 4
-	invoker.light_color = LIGHT_COLOR_FIRE
+	invoker.set_light_power(2)
+	invoker.set_light_range(4)
+	invoker.set_light_color(LIGHT_COLOR_FIRE)
 	invoker.update_light()
 	return ..()
 
@@ -455,7 +455,7 @@
 /datum/clockwork_scripture/channeled/void_volt/chant_end_effects()
 	invoker.visible_message("<span class='warning'>[invoker] stops glowing...</span>")
 	invoker.remove_atom_colour(ADMIN_COLOUR_PRIORITY)
-	invoker.light_power = 0
-	invoker.light_range = 0
+	invoker.set_light_power(0)
+	invoker.set_light_range(0)
 	invoker.update_light()
 	return ..()

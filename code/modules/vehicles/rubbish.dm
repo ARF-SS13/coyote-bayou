@@ -3,31 +3,16 @@
 	desc = "A big ranger statue."
 	icon = 'icons/fallout/objects/structures/statue.dmi'
 	icon_state = "statue1"
+	bound_width = 64
+	bound_height = 64
 	anchored = 1
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
 
-/obj/structure/statue_fal/New()
-	..()
-
-	var/atom/movable/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x+1,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
+/obj/structure/statue_fal/Initialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 2)
 
 //Fallout 13 rubish decoration
 
@@ -132,126 +117,54 @@
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
 
+
 /obj/structure/debris/v1
 	name = "pre-War building debris"
 	desc = "A pre-War building debris."
 	icon = 'icons/fallout/objects/structures/rubish.dmi'
 	icon_state = "debris1"
+	bound_width = 64
+	bound_height = 64
 	anchored = 1
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
 
-/obj/structure/debris/v1/New()
-	..()
-
-	var/atom/movable/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x+1,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
 
 /obj/structure/debris/v2
 	name = "pre-War building debris"
 	desc = "A pre-War building debris."
 	icon = 'icons/fallout/objects/structures/rubish.dmi'
 	icon_state = "debris2"
+	bound_width = 64
+	bound_height = 64
 	anchored = 1
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
 
-/obj/structure/debris/v2/New()
-	..()
-
-	var/atom/movable/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x+1,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
 
 /obj/structure/debris/v3
 	name = "pre-War building debris"
 	desc = "A pre-War building debris."
 	icon = 'icons/fallout/objects/structures/rubish.dmi'
 	icon_state = "debris3"
+	bound_width = 64
+	bound_height = 64
 	anchored = 1
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
 
-/obj/structure/debris/v3/New()
-	..()
-
-	var/atom/movable/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x+1,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
 
 /obj/structure/debris/v4
 	name = "pre-War building debris"
 	desc = "A pre-War building debris."
 	icon = 'icons/fallout/objects/structures/rubish.dmi'
 	icon_state = "debris4"
+	bound_width = 64
+	bound_height = 64
 	anchored = 1
 	density = 1
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE
-
-/obj/structure/debris/v4/New()
-	..()
-
-	var/atom/movable/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x+1,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-
-	S = new (locate(x,y+1,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
