@@ -167,7 +167,6 @@ again.
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic
 	name = "electrochromatic reinforced window spawner"
 	electrochromatic = ELECTROCHROMATIC_DIMMED
-	opacity = TRUE
 
 //shuttle window
 
