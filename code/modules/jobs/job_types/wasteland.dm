@@ -64,16 +64,16 @@
 /datum/outfit/job/wasteland/enclavesgt
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
-	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
+	backpack = /obj/item/storage/backpack/satchel/enclave
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
-	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	uniform =		/obj/item/clothing/under/f13/navy
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
+	suit_store =  	/obj/item/gun/energy/laser/plasma
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
@@ -113,14 +113,14 @@
 /datum/outfit/job/wasteland/enclavelt
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/wasteland/enclavelt
-	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
+	backpack = /obj/item/storage/backpack/satchel/enclave
+	head = 			/obj/item/clothing/head/donor/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
+	mask = 			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave
 	suit_store =  	/obj/item/gun/energy/laser/plasma/glock/extended
 
