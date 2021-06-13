@@ -123,10 +123,12 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	W.blueprint_data = old_bp
 
+	base_opacity = initial(opacity)
+	directional_opacity = old_directional_opacity
+
 	if(SSlighting.initialized)
 		lighting_object = old_lighting_object
 
-		directional_opacity = old_directional_opacity
 		recalculate_directional_opacity()
 
 		affecting_lights = old_affecting_lights
