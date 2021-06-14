@@ -790,10 +790,9 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Den Mob Enforcer"
 	icon_state = "Enforcer"
 
-/obj/effect/landmark/startf13/mobboss
+/obj/effect/landmark/start/f13/mobboss
 	name = "Den Mob Boss"
 	icon_state = "Boss"
-
 
 /obj/effect/landmark/start/f13/preacher
 	name = "Preacher"

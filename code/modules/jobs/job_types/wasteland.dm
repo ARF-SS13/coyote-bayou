@@ -707,7 +707,7 @@ Raider
 
 
 /datum/job/wasteland/f13enforcer
-	title = "Den Enforcer"
+	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
 	faction = "Wastelander"
 	social_faction = "Raiders"
@@ -742,10 +742,11 @@ Raider
 	l_pocket = /obj/item/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
-	backpack =	/obj/item/storage/backpack/satchel/explorer
-	satchel = 	/obj/item/storage/backpack/satchel/explorer
-	gloves = /obj/item/clothing/gloves/color/white
+	backpack =	/obj/item/storage/backpack/satchel
+	satchel =  /obj/item/storage/backpack/satchel
+	gloves =  /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/beret/durathread
+	mask =  /obj/item/clothing/mask/bandana/blue
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
@@ -802,8 +803,8 @@ Raider
 	flag = F13MOBBOSS
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 1
+	spawn_positions = 1
 	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
 	supervisors = "Whatever god you pray to. Sky's the limit!"
 	selection_color = "#ff4747"
@@ -825,11 +826,12 @@ Raider
 	l_pocket = /obj/item/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
-	suit = /obj/item/clothing/suit/armor/f13/raider/raidercombat
-	backpack =	/obj/item/storage/backpack/satchel/explorer
-	satchel = 	/obj/item/storage/backpack/satchel/explorer
+	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	backpack =	/obj/item/storage/backpack/satchel
+	satchel = 	/obj/item/storage/backpack/satchel
 	gloves = /obj/item/clothing/gloves/color/white
-	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
+	head = /obj/item/clothing/head/caphat/beret/white
+	mask = /obj/item/clothing/mask/bandana/blue
 	suit_store = /obj/item/gun/ballistic/automatic/tommygun //Keep the change, ya filthy animal
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \

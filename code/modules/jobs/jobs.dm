@@ -163,8 +163,8 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 GLOBAL_LIST_INIT(antagonist_whitelist_positions, list(
 	"Raider",
 	"Outlaw",
-	"Great Khan" //DA KHANZ, BAY BEEEEEEE
-	"Den Mob Enforcer"
+	"Great Khan", //DA KHANZ, BAY BEEEEEEE
+	"Den Mob Enforcer",
 	"Den Mob Boss"
 ))
 
@@ -299,7 +299,9 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Outlaw",
 	"Faithful",
 	"Wastelander",
-	"Vigilante"
+	"Vigilante",
+	"Den Mob Enforcer",
+	"Den Mob Boss"
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(

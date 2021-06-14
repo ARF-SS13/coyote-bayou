@@ -384,7 +384,7 @@
 	if(!silent && .)
 		visible_message("<span class='danger'>[src] crushes past [AM]!</span>", "<span class='danger'>You crush [AM]!</span>")
 
-/atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
+/atom/movable/proc/move_crushed(atom/movable/, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
 /atom/movable/CanPass(atom/movable/mover, turf/target)

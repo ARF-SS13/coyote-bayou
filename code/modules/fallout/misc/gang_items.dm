@@ -207,7 +207,7 @@
 /datum/gang_item/weapon/type93
 	name = "Type 93 Assault Rifle"
 	id = "type93"
-	cost = 300
+	cost = 400
 	item_path = /obj/item/gun/ballistic/automatic/type93
 
 
