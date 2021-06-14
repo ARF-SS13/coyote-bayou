@@ -6087,11 +6087,9 @@
 	},
 /area/f13/bunker)
 "eMh" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/closed/wall/r_wall/rust,
+/obj/machinery/door/airlock/abandoned,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/den)
 "eMl" = (
 /obj/structure/closet/crate/miningcar,
@@ -11219,9 +11217,10 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "iNB" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/turf/open/water,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/den)
 "iNP" = (
 /obj/item/storage/bag/ore,
@@ -13716,7 +13715,7 @@
 /area/f13/bunker)
 "kPW" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/femur_breaker,
+/obj/structure/table/optable,
 /turf/open/floor/plasteel/freezer,
 /area/f13/den)
 "kQy" = (
@@ -14962,8 +14961,9 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/tcoms)
 "lSo" = (
-/obj/structure/barricade/bars,
-/obj/structure/simple_door/metal/barred,
+/obj/structure/fluff/railing{
+	dir = 8
+	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/den)
 "lSQ" = (
@@ -16138,7 +16138,9 @@
 /area/f13/enclave)
 "mOF" = (
 /mob/living/simple_animal/mouse{
-	name = "Billy Bob Jr."
+	faction = list("Wastelander");
+	name = "Billy Bob Jr.";
+	social_faction = list("Raiders")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/den)
@@ -19862,8 +19864,10 @@
 	},
 /area/f13/brotherhood/mining)
 "pJf" = (
-/obj/structure/fluff/fokoff_sign,
-/turf/open/water,
+/obj/structure/fluff/railing{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/den)
 "pJO" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -24532,11 +24536,10 @@
 	},
 /area/f13/tunnel)
 "tAq" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress2";
-	pixel_y = 5
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/closed/mineral/random/high_chance,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
 "tBZ" = (
 /obj/structure/simple_door/metal/dirtystore,
@@ -24668,13 +24671,6 @@
 /area/f13/sewer)
 "tGW" = (
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/den)
-"tGY" = (
-/obj/structure/stairs/north,
-/obj/structure/fluff/railing{
-	dir = 4
-	},
-/turf/open/indestructible/ground/inside/subway,
 /area/f13/den)
 "tHb" = (
 /obj/structure/table/wood,
@@ -24943,9 +24939,6 @@
 /area/f13/radiation)
 "tWg" = (
 /obj/structure/stairs/north,
-/obj/structure/fluff/railing{
-	dir = 8
-	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/den)
 "tXh" = (
@@ -25632,9 +25625,10 @@
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "uEm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "uEu" = (
 /obj/effect/landmark/start/f13/enforcer,
@@ -29191,13 +29185,6 @@
 /obj/structure/bonfire,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"ykS" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag{
-	icon_state = "skulls"
-	},
-/turf/open/water,
-/area/f13/den)
 "yla" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
@@ -60165,7 +60152,7 @@ aty
 rHU
 rHU
 rHU
-lSo
+icl
 sbE
 tuD
 tuD
@@ -64302,7 +64289,7 @@ uoO
 tGW
 tGW
 tGW
-tGW
+uEm
 tGW
 tGW
 tGW
@@ -64529,7 +64516,7 @@ tfb
 tfb
 tfb
 tfb
-tGY
+tWg
 rHU
 rHU
 rHU
@@ -64786,7 +64773,7 @@ tfb
 rzI
 tTR
 imX
-rHU
+lSo
 bZn
 rHU
 bZn
@@ -65327,7 +65314,7 @@ uoO
 uoO
 uoO
 uoO
-tAq
+lsW
 tGW
 tGW
 tGW
@@ -65814,7 +65801,7 @@ tfb
 rzI
 tTR
 imX
-rHU
+pJf
 bZn
 rHU
 bZn
@@ -66573,7 +66560,7 @@ aUW
 nBk
 nBk
 dhN
-eMh
+kUN
 eWT
 iId
 rHU
@@ -70704,8 +70691,8 @@ bTH
 uFm
 wYo
 tII
-kUN
-kUN
+xPu
+xPu
 oif
 vAM
 xrJ
@@ -70717,7 +70704,7 @@ maE
 rWG
 xSQ
 vRc
-uEm
+vAM
 wMx
 kUN
 nBk
@@ -70961,8 +70948,8 @@ uCy
 liV
 ryA
 qPF
-ykS
-iNB
+xPu
+xPu
 sbE
 iwg
 vAM
@@ -70974,7 +70961,7 @@ vAM
 aCE
 eNY
 bME
-vff
+tAq
 wYB
 kUN
 nBk
@@ -71219,7 +71206,7 @@ xtf
 wYo
 tII
 xPu
-pJf
+xPu
 sbE
 kUN
 kUN
@@ -72490,9 +72477,9 @@ rHU
 iId
 rHU
 rHU
-okw
 rHU
 rHU
+iNB
 iId
 rHU
 rHU
@@ -72501,7 +72488,7 @@ iId
 rHU
 rHU
 rHU
-akK
+icl
 sbE
 xPu
 xPu
@@ -73004,7 +72991,7 @@ kUN
 kUN
 kUN
 wYo
-fNc
+eMh
 wYo
 kUN
 wYo
