@@ -368,7 +368,7 @@
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
 	armor = list("tier" = 7,"energy" = 15, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 40, "acid" = 75)
-	brightness_on = 0
+	light_range = 0
 	actions_types = list()
 
 

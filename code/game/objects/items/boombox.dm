@@ -47,6 +47,11 @@
 	icon_state = "raiqbawks_off"
 	baseiconstate = "raiqbawks"
 	availabletrackids = list("hotline.ogg","chiptune.ogg","genesis.ogg")
+	light_system = MOVABLE_LIGHT
+	light_range = 5
+	light_power = 0.95
+	light_color = "#d87aff"
+	light_on = FALSE
 
 /obj/item/boombox/raiq/Initialize()
 	. = ..()
@@ -55,9 +60,10 @@
 /obj/item/boombox/raiq/proc/start_party()
 	if(boomingandboxing)
 		START_PROCESSING(SSobj, src)
+		set_light_on(TRUE)
 	else
 		STOP_PROCESSING(SSobj, src)
-		set_light(0)
+		set_light_on(FALSE)
 
 /obj/item/boombox/raiq/process()
-	set_light(5,0.95,pick("#d87aff","#7a7aff","#89ecff","#b88eff","#ff59ad"))
+	set_light_color(pick("#d87aff","#7a7aff","#89ecff","#b88eff","#ff59ad"))

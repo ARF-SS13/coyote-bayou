@@ -745,12 +745,18 @@
 	taste_description = "tingling mushroom"
 	pH = 11.2
 	value = REAGENT_VALUE_RARE
+	var/obj/effect/dummy/lighting_obj/tinlux_light
+
+/datum/reagent/consumable/tinlux/Destroy()
+	if(tinlux_light)
+		QDEL_NULL(tinlux_light)
+	return ..()
 
 /datum/reagent/consumable/tinlux/reaction_mob(mob/living/M)
-	M.set_light(2)
+	tinlux_light = M.mob_light(2)
 
 /datum/reagent/consumable/tinlux/on_mob_end_metabolize(mob/living/M)
-	M.set_light(-2)
+	QDEL_NULL(tinlux_light)
 
 /datum/reagent/consumable/vitfro
 	name = "Vitrium Froth"
