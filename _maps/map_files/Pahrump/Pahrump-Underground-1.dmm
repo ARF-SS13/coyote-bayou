@@ -9847,7 +9847,9 @@
 "hLS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/sign{
-	icon_state = "thenest";
+	icon = 'icons/obj/barsigns.dmi';
+	icon_state = "littleredrock";
+	name = "Little Red Rock Bar";
 	pixel_y = -32
 	},
 /turf/open/floor/f13{
