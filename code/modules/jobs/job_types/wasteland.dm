@@ -746,7 +746,7 @@ Raider
 	satchel =  /obj/item/storage/backpack/satchel
 	gloves =  /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/beret/durathread
-	mask =  /obj/item/clothing/mask/bandana/blue
+	mask =  /obj/item/clothing/mask/bandana/durathread
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
@@ -831,7 +831,7 @@ Raider
 	satchel = 	/obj/item/storage/backpack/satchel
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/caphat/beret/white
-	mask = /obj/item/clothing/mask/bandana/blue
+	mask = /obj/item/clothing/mask/bandana/durathread
 	suit_store = /obj/item/gun/ballistic/automatic/tommygun //Keep the change, ya filthy animal
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
