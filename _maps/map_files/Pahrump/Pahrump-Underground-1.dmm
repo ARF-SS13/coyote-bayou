@@ -3612,6 +3612,10 @@
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"cQp" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "cQR" = (
 /obj/item/ammo_casing/spent{
 	pixel_x = -12;
@@ -27584,7 +27588,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xaY" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xcm" = (
@@ -67338,7 +67342,7 @@ nBk
 nBk
 tur
 tOn
-lnr
+cQp
 lnr
 tiR
 gpM
