@@ -21,7 +21,7 @@
 		return
 	..()
 
-/obj/structure/closet/proc/can_open(mob/living/user)
+/obj/structure/closet/bus/can_open(mob/living/user)
 	return FALSE
 
 /obj/structure/closet/bus/update_icon()
