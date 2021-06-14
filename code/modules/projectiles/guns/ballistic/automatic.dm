@@ -1215,7 +1215,7 @@
 	suppressor_y_offset = 27
 
 /obj/item/gun/ballistic/automatic/type93/worn
-	name = "Worn Type 56"
+	name = "\improper Worn Type 56"
 	desc = "The original Type 56 was a copy of the Soviet AKM, and this is a copy of that copy produced in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
