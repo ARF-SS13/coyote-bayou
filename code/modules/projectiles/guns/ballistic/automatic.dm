@@ -1218,8 +1218,6 @@
 	name = "\improper Worn Type 56"
 	desc = "The original Type 56 was a copy of the Soviet AKM, and this is a copy of that copy produced in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "chinese"
 	item_state = "handmade_rifle"
 	can_suppress = FALSE
