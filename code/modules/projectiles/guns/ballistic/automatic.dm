@@ -1510,6 +1510,12 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 
+/obj/item/gun/ballistic/automatic/p90/worn
+	name = "Worn FN P90c"
+	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
+	fire_delay = 2
+	burst_size = 2
+
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"
 	desc = "This gun revolutionized assault weapon design. The weapon fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The resultant weight and space savings allow this weapon to have a very high magazine capacity. Chambered in 4.73mm."

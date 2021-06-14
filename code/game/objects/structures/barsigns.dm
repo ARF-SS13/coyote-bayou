@@ -201,6 +201,11 @@
 	icon = "thenest"
 	desc = "A good place to retire for a drink after a long night of crime fighting."
 
+/datum/barsign/littleredrock
+	name = "Little Red Rock"
+	icon = "littleredrock"
+	desc = "In loving memory of those who died at Bitterpsrings. May we never forget."
+
 /datum/barsign/thecoderbus
 	name = "The Coderbus"
 	icon = "thecoderbus"
