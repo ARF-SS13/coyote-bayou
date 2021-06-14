@@ -48,7 +48,6 @@
 		Eigenstate.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 		Eigenstate.setAnchored(TRUE)//So space wind cannot drag it.
 		Eigenstate.name = "[M]'s' eigenstate"//If someone decides to right click.
-		Eigenstate.set_light(2)	//hologram lighting
 
 		location_return = get_turf(M)	//sets up return point
 		to_chat(M, "<span class='userdanger'>You feel your wavefunction split!</span>")
