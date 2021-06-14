@@ -30,7 +30,7 @@
 	id = /datum/reagent/nitroglycerin
 	results = list(/datum/reagent/nitroglycerin = 2)
 	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/toxin/acid/fluacid = 1, /datum/reagent/toxin/acid = 1)
-	strengthdiv = 6
+	strengthdiv = 16
 
 /datum/chemical_reaction/reagent_explosion/nitroglycerin/on_reaction(datum/reagents/holder, multiplier)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -50,7 +50,7 @@
 	name = "Explosion"
 	id = "potassium_explosion"
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
-	strengthdiv = 12
+	strengthdiv = 100 // Nerfed to unusability in grenades
 
 /datum/chemical_reaction/reagent_explosion/holyboom
 	name = "Holy Explosion"
@@ -59,7 +59,7 @@
 
 /datum/chemical_reaction/reagent_explosion/holyboom/on_reaction(datum/reagents/holder, created_volume)
 	if(created_volume >= 150)
-		strengthdiv = 8
+		strengthdiv = 100 // Holy water shouldnt be meta
 		///turf where to play sound
 		var/turf/T = get_turf(holder.my_atom)
 		///special size for anti cult effect
@@ -95,7 +95,7 @@
 	id = "blackpowder_explosion"
 	required_reagents = list(/datum/reagent/blackpowder = 1)
 	required_temp = 474
-	strengthdiv = 10
+	strengthdiv = 24
 	modifier = 1
 	mix_message = "<span class='boldannounce'>Sparks start flying around the black powder!</span>"
 
@@ -167,7 +167,7 @@
 	id = "methboom1"
 	required_temp = 380 //slightly above the meth mix time.
 	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
-	strengthdiv = 10
+	strengthdiv = 24
 	modifier = 1
 	mob_react = FALSE
 
@@ -287,7 +287,7 @@
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
 		return
 	holder.remove_reagent(/datum/reagent/smoke_powder, multiplier*3)
-	var/smoke_radius = round(sqrt(multiplier * 1.5), 1)
+	var/smoke_radius = round(sqrt(multiplier * 0.2), 1)
 	var/location = get_turf(holder.my_atom)
 	var/datum/effect_system/smoke_spread/chem/S = new
 	S.attach(location)
@@ -461,7 +461,7 @@
 	name = "N2O explosion"
 	id = "n2o_explosion"
 	required_reagents = list(/datum/reagent/nitrous_oxide = 1)
-	strengthdiv = 7
+	strengthdiv = 24
 	required_temp = 575
 	modifier = 1
 

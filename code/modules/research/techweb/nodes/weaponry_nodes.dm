@@ -42,6 +42,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 */
 
+/* To finish removing rpaid syringe guns this bit needs to be commented out too.
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
 	display_name = "Medical Weaponry"
@@ -49,6 +50,7 @@
 	prereq_ids = list("adv_biotech", "adv_weaponry")
 	design_ids = list("rapidsyringe", "shotgundartcryostatis")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+*/
 
 /datum/techweb_node/beam_weapons
 	id = "beam_weapons"
