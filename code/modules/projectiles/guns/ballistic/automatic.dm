@@ -1214,6 +1214,21 @@
 	suppressor_x_offset = 27
 	suppressor_y_offset = 27
 
+/obj/item/gun/ballistic/automatic/type93/worn
+	name "Worn Type 56"
+	desc = "The original Type 56 was a copy of the Soviet AKM, and this is a copy of that copy produced in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "chinese"
+	item_state = "handmade_rifle"
+	can_suppress = FALSE
+	burst_size = 2
+	fire_delay = 4
+	spread = 13
+	extra_damage = -3
+
+
 
 //CAR-15 rifle. Autofire 5.56
 /obj/item/gun/ballistic/automatic/assault_carbine
@@ -1515,6 +1530,8 @@
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
 	fire_delay = 2
 	burst_size = 2
+	extra_damage = 0
+
 
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"
