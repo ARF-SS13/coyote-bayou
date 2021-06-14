@@ -773,7 +773,8 @@ Raider
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
 							/obj/item/reagent_containers/glass/beaker/large=2, \
-							/obj/item/book/granter/trait/chemistry=1,
+							/obj/item/book/granter/trait/chemistry=1, \
+							/obj/item/book/granter/trait/lowsurgery=1, \
 							/obj/item/ammo_box/magazine/m10mm_adv/simple=2 \
 							)
 
@@ -788,7 +789,7 @@ Raider
 
 /datum/outfit/loadout/bodyguard
 	name = "Bodyguard"
-	r_hand = /obj/item/gun/ballistic/shotgun/trench
+	r_hand = /obj/item/gun/ballistic/shotgun/riot
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 						/obj/item/ammo_box/shotgun/buck=2, \
