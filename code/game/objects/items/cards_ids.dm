@@ -887,13 +887,6 @@
 	icon_state = "deputy"
 	item_state = "badge-deputy"
 
-/obj/item/card/id/dogtag/gla
-	name = "rusted police badge"
-	desc = "An old police badge of the Yuma Highway Patrol defaced with the symbol of the Ghoul Liberation Army. Kept as a memnto of times long since past. "
-	assignment = "badge"
-	assignment = "GLA"
-	icon_state = "deputy"
-	item_state = "badge-deputy"
 
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"

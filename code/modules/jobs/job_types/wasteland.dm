@@ -358,8 +358,8 @@ Raider
 	/datum/outfit/loadout/raider_mafia,
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
-	/datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_gla)
+	/datum/outfit/loadout/raider_legion
+	)
 
 /datum/outfit/job/wasteland/f13raider
 	name = "Outlaw"
@@ -546,16 +546,6 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/widowmaker=1)
 
-/datum/outfit/loadout/raider_gla
-	name = "Ghoul Liberation Army"  
-	uniform = /datum/gear/uniform/police  //ex-police theme, pre-war cops turned ghouls
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(
-		/obj/item/clothing/suit/f13/mfp/raider,
-		/obj/item/gun/ballistic/revolver/police=1,
-		/obj/item/ammo_box/c38=2,
-		/obj/item/card/id/dogtag/gla=1)
 
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
