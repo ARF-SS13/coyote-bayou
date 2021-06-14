@@ -1528,7 +1528,7 @@
 /obj/item/gun/ballistic/automatic/p90/worn
 	name = "Worn FN P90c"
 	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
-	fire_delay = 2
+	fire_delay = 3
 	burst_size = 2
 	extra_damage = 0
 
