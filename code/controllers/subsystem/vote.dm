@@ -25,7 +25,6 @@ SUBSYSTEM_DEF(vote)
 	var/list/saved = list()
 	var/list/generated_actions = list()
 	var/next_pop = 0
-	var/min_restart_time = 150 MINUTES
 
 	var/display_votes = SHOW_RESULTS|SHOW_VOTES|SHOW_WINNER|SHOW_ABSTENTION //CIT CHANGE - adds obfuscated/admin-only votes
 
@@ -83,15 +82,16 @@ SUBSYSTEM_DEF(vote)
 			if (!C || C.is_afk())
 				non_voters -= non_voter_ckey
 		if(non_voters.len > 0)
-			if(mode == "restart")
-				choices["Continue Playing"] += non_voters.len
-				if(choices["Continue Playing"] >= greatest_votes)
-					greatest_votes = choices["Continue Playing"]
-			else if(mode == "gamemode")
-				if(GLOB.master_mode in choices)
-					choices[GLOB.master_mode] += non_voters.len
-					if(choices[GLOB.master_mode] >= greatest_votes)
-						greatest_votes = choices[GLOB.master_mode]
+			switch(mode)
+				if("restart", "transfer")
+					choices["Continue Playing"] += non_voters.len
+					if(choices["Continue Playing"] >= greatest_votes)
+						greatest_votes = choices["Continue Playing"]
+				if("gamemode")
+					if(GLOB.master_mode in choices)
+						choices[GLOB.master_mode] += non_voters.len
+						if(choices[GLOB.master_mode] >= greatest_votes)
+							greatest_votes = choices[GLOB.master_mode]
 	//get all options with that many votes and return them in a list
 	. = list()
 	if(greatest_votes)
@@ -317,79 +317,82 @@ SUBSYSTEM_DEF(vote)
 
 /datum/controller/subsystem/vote/proc/result()
 	. = announce_result()
-	var/restart = 0
-	if(.)
-		switch(mode)
-			if("roundtype") //CIT CHANGE - adds the roundstart extended/secret vote
-				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
-					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-				GLOB.master_mode = .
+	if(!.)
+		return
+	var/end_round = FALSE
+	switch(mode)
+		if("roundtype") //CIT CHANGE - adds the roundstart extended/secret vote
+			if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
+				return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
+			GLOB.master_mode = .
+			SSticker.save_mode(.)
+			message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
+			log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
+			if(CONFIG_GET(flag/modetier_voting))
+				reset()
+				started_time = 0
+				initiate_vote("mode tiers","server", votesystem=SCORE_VOTING, forced=TRUE, vote_time = 30 MINUTES)
+				to_chat(world,"<b>The vote will end right as the round starts.</b>")
+				return .
+		if("restart")
+			if(. == "Restart Round")
+				end_round = TRUE
+		if("transfer")
+			if(. == "Call Train")
+				end_round = TRUE
+		if("gamemode")
+			if(GLOB.master_mode != .)
 				SSticker.save_mode(.)
-				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
-				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
-				if(CONFIG_GET(flag/modetier_voting))
-					reset()
-					started_time = 0
-					initiate_vote("mode tiers","server", votesystem=SCORE_VOTING, forced=TRUE, vote_time = 30 MINUTES)
-					to_chat(world,"<b>The vote will end right as the round starts.</b>")
-					return .
-			if("restart")
-				if(. == "Restart Round")
-					restart = 1
-			if("gamemode")
-				if(GLOB.master_mode != .)
-					SSticker.save_mode(.)
-					if(SSticker.HasRoundStarted())
-						restart = 1
-					else
-						GLOB.master_mode = .
-			if("mode tiers")
-				var/list/raw_score_numbers = list()
-				for(var/score_name in scores)
-					sorted_insert(raw_score_numbers,scores[score_name],/proc/cmp_numeric_asc)
-				stored_modetier_results = scores.Copy()
-				for(var/score_name in stored_modetier_results)
-					if(stored_modetier_results[score_name] <= raw_score_numbers[CONFIG_GET(number/dropped_modes)])
-						stored_modetier_results -= score_name
-				stored_modetier_results += "traitor"
-			if("dynamic")
-				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
-					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
-				var/list/runnable_storytellers = config.get_runnable_storytellers()
-				var/datum/dynamic_storyteller/picked
-				for(var/T in runnable_storytellers)
-					var/datum/dynamic_storyteller/S = T
-					if(stored_gamemode_votes[initial(S.name)] == 1 && CHECK_BITFIELD(initial(S.flags), FORCE_IF_WON))
-						picked = S
-					runnable_storytellers[S] *= round(stored_gamemode_votes[initial(S.name)]*100000,1)
-				if(!picked)
-					picked = pickweight(runnable_storytellers, 0)
-				GLOB.dynamic_storyteller_type = picked
-			if("map")
-				var/datum/map_config/VM = config.maplist[.]
-				message_admins("The map has been voted for and will change to: [VM.map_name]")
-				log_admin("The map has been voted for and will change to: [VM.map_name]")
-				if(SSmapping.changemap(config.maplist[.]))
-					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
-			if("transfer") // austation begin -- Crew autotransfer vote
-				if(. == "Initiate Crew Transfer")
-					SSshuttle.autoEnd()
-					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-					if(C)
-						C.post_status("shuttle") // austation end
-	if(restart)
+				if(SSticker.HasRoundStarted())
+					end_round = TRUE
+				else
+					GLOB.master_mode = .
+		if("mode tiers")
+			var/list/raw_score_numbers = list()
+			for(var/score_name in scores)
+				sorted_insert(raw_score_numbers,scores[score_name],/proc/cmp_numeric_asc)
+			stored_modetier_results = scores.Copy()
+			for(var/score_name in stored_modetier_results)
+				if(stored_modetier_results[score_name] <= raw_score_numbers[CONFIG_GET(number/dropped_modes)])
+					stored_modetier_results -= score_name
+			stored_modetier_results += "traitor"
+		if("dynamic")
+			if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
+				return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
+			var/list/runnable_storytellers = config.get_runnable_storytellers()
+			var/datum/dynamic_storyteller/picked
+			for(var/T in runnable_storytellers)
+				var/datum/dynamic_storyteller/S = T
+				if(stored_gamemode_votes[initial(S.name)] == 1 && CHECK_BITFIELD(initial(S.flags), FORCE_IF_WON))
+					picked = S
+				runnable_storytellers[S] *= round(stored_gamemode_votes[initial(S.name)]*100000,1)
+			if(!picked)
+				picked = pickweight(runnable_storytellers, 0)
+			GLOB.dynamic_storyteller_type = picked
+		if("map")
+			var/datum/map_config/VM = config.maplist[.]
+			message_admins("The map has been voted for and will change to: [VM.map_name]")
+			log_admin("The map has been voted for and will change to: [VM.map_name]")
+			if(SSmapping.changemap(config.maplist[.]))
+				to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
+	if(end_round)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
 			if(!C.is_afk() && check_rights_for(C, R_SERVER))
 				active_admins = 1
 				break
-		if(!active_admins)
-			SSticker.Reboot("Restart vote successful.", "restart vote")
-		else
-			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may restart the server.")
+		if(active_admins)
+			to_chat(world, "<span style='boldannounce'>Notice:Vote will not take effect automatically because there are active admins on.</span>")
+			message_admins("A [mode] vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may enforce it.")
+			return
+		switch(mode)
+			if("restart")
+				SSticker.Reboot("Restart vote successful.", "restart vote")
+			if("transfer")
+				SSshuttle.autoEnd()
+				var/obj/machinery/computer/communications/communications_console = locate() in GLOB.machines
+				communications_console?.post_status("shuttle")
 
-	return .
 
 /datum/controller/subsystem/vote/proc/submit_vote(vote, score = 0)
 	if(mode)
@@ -462,6 +465,8 @@ SUBSYSTEM_DEF(vote)
 		switch(vote_type)
 			if("restart")
 				choices.Add("Restart Round","Continue Playing")
+			if("transfer")
+				choices.Add("Call Train","Continue Playing")
 			if("gamemode")
 				choices.Add(config.votable_modes)
 			if("map")
@@ -478,8 +483,6 @@ SUBSYSTEM_DEF(vote)
 					if(targetmap.max_round_search_span && count_occurences_of_value(lastmaps, M, targetmap.max_round_search_span) >= targetmap.max_rounds_played)
 						continue
 					choices |= M
-			if("transfer") // austation begin -- Crew autotranfer vote
-				choices.Add("Initiate Crew Transfer","Continue Playing") // austation end
 			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
 				choices.Add("secret", "extended")
 			if("mode tiers")
@@ -647,6 +650,15 @@ SUBSYSTEM_DEF(vote)
 			. += "(<a href='?src=[REF(src)];vote=cancel'>Cancel Vote</a>) "
 	else
 		. += "<h2>Start a vote:</h2><hr><ul><li>"
+		//train
+		var/aveor = CONFIG_GET(flag/allow_vote_transfer)
+		if(trialmin || aveor)
+			. += "<a href='?src=[REF(src)];vote=transfer'>Call train</a>"
+		else
+			. += "<font color='grey'>Call train (Disallowed)</font>"
+		if(trialmin)
+			. += "\t(<a href='?src=[REF(src)];vote=toggle_allow_vote_transfer'>[aveor ? "Allowed" : "Disallowed"]</a>)"
+		. += "</li><li>"
 		//restart
 		var/avr = CONFIG_GET(flag/allow_vote_restart)
 		if(trialmin || avr)
@@ -688,15 +700,26 @@ SUBSYSTEM_DEF(vote)
 		if("toggle_restart")
 			if(usr.client.holder)
 				CONFIG_SET(flag/allow_vote_restart, !CONFIG_GET(flag/allow_vote_restart))
+		if("toggle_allow_vote_transfer")
+			if(usr.client.holder)
+				CONFIG_SET(flag/allow_vote_transfer, !CONFIG_GET(flag/allow_vote_transfer))
 		if("toggle_gamemode")
 			if(usr.client.holder)
 				CONFIG_SET(flag/allow_vote_mode, !CONFIG_GET(flag/allow_vote_mode))
 		if("restart")
+			var/min_restart_time = CONFIG_GET(number/min_end_vote_time)
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
 				if(min_restart_time < world.time)
 					initiate_vote("restart",usr.key)
 				else
 					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
+		if("transfer")
+			var/min_transfer_time = CONFIG_GET(number/min_end_vote_time)
+			if(CONFIG_GET(flag/allow_vote_transfer) || usr.client.holder)
+				if(min_transfer_time < world.time)
+					initiate_vote("transfer",usr.key)
+				else
+					to_chat(usr.client, "<span style='boldannounce'>Transfer can only initiate after [DisplayTimeText(min_transfer_time)].</span>")
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
 				initiate_vote("gamemode",usr.key)

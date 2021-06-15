@@ -28,6 +28,8 @@
 			/obj/item/melee/transforming/energy/sword/pirate)
 	del_on_death = 1
 	faction = list("pirate")
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 
 
 /mob/living/simple_animal/hostile/pirate/melee
@@ -62,10 +64,6 @@
 /mob/living/simple_animal/hostile/pirate/melee/Destroy()
 	QDEL_NULL(sord)
 	return ..()
-
-/mob/living/simple_animal/hostile/pirate/melee/Initialize()
-	. = ..()
-	set_light(2)
 
 /mob/living/simple_animal/hostile/pirate/ranged
 	name = "Pirate Gunner"

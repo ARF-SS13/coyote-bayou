@@ -151,10 +151,8 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgicaldrill_a"
 	hitsound = 'sound/items/welder.ogg'
-
-/obj/item/surgicaldrill/advanced/Initialize()
-	. = ..()
-	set_light(1)
+	light_system = MOVABLE_LIGHT
+	light_range = 1
 
 /obj/item/surgicaldrill/advanced/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/weapons/tap.ogg', 50, TRUE)
@@ -226,23 +224,21 @@
 	toolspeed = 0.7
 	light_color = LIGHT_COLOR_GREEN
 	sharpness = SHARP_POINTY
-
-/obj/item/scalpel/advanced/Initialize()
-	. = ..()
-	set_light(1)
+	light_system = MOVABLE_LIGHT
+	light_range = 1
 
 /obj/item/scalpel/advanced/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_SCALPEL)
 		tool_behaviour = TOOL_SAW
 		to_chat(user, "<span class='notice'>You increase the power of [src], now it can cut bones.</span>")
-		set_light(2)
+		set_light_range(2)
 		force += 1 //we don't want to ruin sharpened stuff
 		icon_state = "saw_a"
 	else
 		tool_behaviour = TOOL_SCALPEL
 		to_chat(user, "<span class='notice'>You lower the power of [src], it can no longer cut bones.</span>")
-		set_light(1)
+		set_light_range(1)
 		force -= 1
 		icon_state = "scalpel_a"
 

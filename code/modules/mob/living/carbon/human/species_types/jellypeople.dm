@@ -720,13 +720,13 @@
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
 		glow_intensity = intensity
-	glow.set_light(glow_intensity, glow_intensity, C.dna.features["mcolor"])
+	glow.set_light_range_power_color(glow_intensity, glow_intensity, C.dna.features["mcolor"])
 
 /obj/effect/dummy/luminescent_glow
 	name = "luminescent glow"
 	desc = "Tell a coder if you're seeing this."
 	icon_state = "nothing"
-	light_color = "#FFFFFF"
+	light_system = MOVABLE_LIGHT
 	light_range = LUMINESCENT_DEFAULT_GLOW
 
 /obj/effect/dummy/luminescent_glow/Initialize()

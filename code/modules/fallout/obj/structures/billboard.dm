@@ -72,8 +72,8 @@
 
 //Taken from removed F13billboards.dm
 /obj/structure/billboard/den
-	name = "Kebab sign"
-	desc =  "A sprayed metal sheet that says \"Kebab \"."
+	name = "\improper The Den sign"
+	desc =  "A sprayed metal sheet that says \"The Den \"."
 	icon_state = "den"
 
 /obj/structure/billboard/klamat

@@ -9,12 +9,15 @@
 	w_class = WEIGHT_CLASS_TINY
 	light_color = LIGHT_COLOR_FIRE
 	heat = 1000
+	light_system = MOVABLE_LIGHT
+	light_range = CANDLE_LUMINOSITY
+	light_on = FALSE
 	var/wax = 1000
 	var/lit = FALSE
 	var/infinite = FALSE
 	var/start_lit = FALSE
 	var/heats_space = TRUE
-	var/light_level = CANDLE_LUMINOSITY
+
 
 /obj/item/candle/Initialize()
 	. = ..()
@@ -44,7 +47,7 @@
 		lit = TRUE
 		if(show_message)
 			usr.visible_message(show_message)
-		set_light(light_level)
+		set_light_on(TRUE)
 		START_PROCESSING(SSobj, src)
 		update_icon()
 
@@ -53,7 +56,7 @@
 		return
 	lit = FALSE
 	update_icon()
-	set_light(0)
+	set_light_on(FALSE)
 	return TRUE
 
 /obj/item/candle/extinguish()
@@ -71,10 +74,6 @@
 	update_icon()
 	if(heats_space)
 		open_flame()
-
-/obj/item/candle/attack_self(mob/user)
-	if(put_out_candle())
-		user.visible_message("<span class='notice'>[user] snuffs [src].</span>")
 
 /obj/item/candle/infinite
 	infinite = TRUE
@@ -94,7 +93,7 @@
 	light_color = LIGHT_COLOR_FIRE
 	infinite = TRUE
 	heat = T0C + 400
-	light_level = 7
+	light_range = 7
 	var/flicker_chance = 1
 	var/flickering = FALSE
 
@@ -117,10 +116,10 @@
 /obj/item/candle/tribal_torch/proc/flicker(duration)
 	flickering = TRUE
 	addtimer(CALLBACK(src, .proc/unflicker, light_range), duration)
-	set_light(light_range - rand(1, 2))
+	set_light_range(light_range - rand(1, 2))
 
 /obj/item/candle/tribal_torch/proc/unflicker(new_range)
-	set_light(new_range)
+	set_light_range(new_range)
 	flickering = FALSE
 
 /obj/item/candle/attack_self(mob/user)
@@ -137,7 +136,7 @@
 			"<span class='notice'>[user] snuffs [src] out.</span>")
 		lit = FALSE
 		update_icon()
-		set_light(0)
+		set_light_on(FALSE)
 
 
 /obj/item/candle/tribal_torch/update_icon()
