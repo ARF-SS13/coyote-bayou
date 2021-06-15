@@ -779,7 +779,7 @@
 	granted_trait = TRAIT_MASTER_GUNSMITH
 	traitname = "forge mastery"
 	remarks = list("Strike the steel while its hot...", "Don't take a rest..keep hammering...", "Don't forget to make a handle...", "Use gloves when touching red hot metal...", "Watch the sparks dance like fireflies..")
-	crafting_recipe_types = list(/datum/crafting_recipe/lance, /datum/crafting_recipe/spatha, /datum/crafting_recipe/gladius, /datum/crafting_recipe/trail_carbine, /datum/crafting_recipe/legionshield)
+	crafting_recipe_types = list(/datum/crafting_recipe/lance, /datum/crafting_recipe/spatha, /datum/crafting_recipe/gladius, /datum/crafting_recipe/trail_carbine, /datum/crafting_recipe/legionshield, /datum/crafting_recipe/brush)
 
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
