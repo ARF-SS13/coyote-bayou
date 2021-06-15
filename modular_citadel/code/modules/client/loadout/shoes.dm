@@ -5,18 +5,17 @@
 /datum/gear/shoes/laceup
 	name = "laceup shoes"
 	path = /obj/item/clothing/shoes/laceup
+	cost = 2
 
 /datum/gear/shoes/workboots
 	name = "work boots"
 	path = /obj/item/clothing/shoes/workboots
 
+/*
 /datum/gear/shoes/jackboots
 	name = "jackboots"
 	path = /obj/item/clothing/shoes/jackboots
-
-/datum/gear/shoes/winterboots
-	name = "winter boots"
-	path = /obj/item/clothing/shoes/winterboots
+*/
 
 /datum/gear/shoes/sandals
 	name = "sandals"
@@ -58,18 +57,4 @@
 	name = "female diesel boots"
 	path = /obj/item/clothing/shoes/f13/diesel/alt
 
-//It would be a pain in the ass and people would complain if we locked these behind certain roles to get as a loadout, due to their non-slip nature we'll just increase their cost for now. -Superballs
-/datum/gear/shoes/military
-	name = "military boots"
-	path = /obj/item/clothing/shoes/f13/military
-	cost = 2
-
-/datum/gear/shoes/military_plated
-	name = "plated metal boots"
-	path = /obj/item/clothing/shoes/f13/military/plated
-	cost = 2
-
-/datum/gear/shoes/military_leather
-	name = "leather combat boots"
-	path = /obj/item/clothing/shoes/f13/military/leather
-	cost = 2
+//I removed the combat boots because they are a very common loot drop on the map and people just ignore them if its a loadout option - Dang
