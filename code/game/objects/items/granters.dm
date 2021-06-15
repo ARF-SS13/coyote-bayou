@@ -760,10 +760,12 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
 
+/*
 /obj/item/book/granter/crafting_recipe/blueprint/caws
 	name = "h&k caws blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/caws)
+*/
 
 /obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine
 	name = "scout carbine blueprint"
