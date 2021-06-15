@@ -1,3 +1,4 @@
+/*
 /datum/surgery/advanced/necrotic_revival
 	name = "Necrotic Revival"
 	desc = "An experimental surgical procedure that stimulates the growth of a Romerol tumor inside the patient's brain. Requires zombie powder or rezadone."
@@ -14,6 +15,7 @@
 	var/obj/item/organ/zombie_infection/ZI = target.getorganslot(ORGAN_SLOT_ZOMBIE)
 	if(ZI)
 		return FALSE
+*/
 
 /datum/surgery_step/bionecrosis
 	name = "start bionecrosis"

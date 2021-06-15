@@ -94,10 +94,10 @@
 	light_color = LIGHT_COLOR_GREEN
 	icon_state = "greenglow"
 	beauty = -300
-
-/obj/effect/decal/cleanable/greenglow/Initialize(mapload)
-	. = ..()
-	set_light(2, 0.8, "#22FFAA")
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.8
+	light_color = "#22FFAA"
 
 /obj/effect/decal/cleanable/greenglow/ex_act()
 	return

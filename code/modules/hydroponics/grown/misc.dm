@@ -268,6 +268,11 @@
 	hitsound = 'sound/weapons/klonk.ogg'
 	attack_verb = list("klonked", "donked", "bonked")
 	distill_reagent = /datum/reagent/consumable/ethanol/creme_de_coconut
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_power = 0.8
+	light_color = "#FFCC66"
+	light_on = FALSE
 	var/opened = FALSE
 	var/carved = FALSE
 	var/chopped = FALSE
@@ -317,7 +322,7 @@
 		fused = FALSE
 		fusedactive = FALSE
 		if(!seed.get_gene(/datum/plant_gene/trait/glow))
-			set_light(0, 0.0)
+			set_light_on(FALSE)
 		return
 	//IGNITING NADE LOGIC
 	if(!fusedactive && fused)
@@ -333,8 +338,7 @@
 			icon_state = "coconut_grenade_active"
 			desc = "RUN!"
 			if(!seed.get_gene(/datum/plant_gene/trait/glow))
-				set_light_color("#FFCC66" )//for the fuse
-				set_light(3, 0.8)
+				set_light_on(TRUE)
 			return
 
 	//ADDING A FUSE, NADE LOGIC

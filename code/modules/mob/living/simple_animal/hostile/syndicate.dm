@@ -61,10 +61,8 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
-
-/mob/living/simple_animal/hostile/syndicate/space/Initialize()
-	. = ..()
-	set_light(4)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/space/stormtrooper
 	icon_state = "syndicate_stormtrooper"
@@ -97,10 +95,8 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
-
-/mob/living/simple_animal/hostile/syndicate/melee/space/Initialize()
-	. = ..()
-	set_light(4)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_knife"
@@ -120,11 +116,9 @@
 	armour_penetration = 0.6
 	light_color = LIGHT_COLOR_RED
 	status_flags = 0
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 	var/obj/effect/light_emitter/red_energy_sword/sord
-
-/mob/living/simple_animal/hostile/syndicate/melee/sword/Initialize()
-	. = ..()
-	set_light(2)
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/Destroy()
 	QDEL_NULL(sord)
@@ -146,11 +140,12 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/Initialize()
 	. = ..()
 	sord = new(src)
-	set_light(4)
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/Destroy()
 	QDEL_NULL(sord)
@@ -191,10 +186,8 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
-
-/mob/living/simple_animal/hostile/syndicate/ranged/space/Initialize()
-	. = ..()
-	set_light(4)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_pistol"
@@ -224,10 +217,8 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
-
-/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/Initialize()
-	. = ..()
-	set_light(4)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_smg"
@@ -254,10 +245,8 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
-
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/Initialize()
-	. = ..()
-	set_light(4)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper
 	icon_state = "syndicate_stormtrooper_shotgun"

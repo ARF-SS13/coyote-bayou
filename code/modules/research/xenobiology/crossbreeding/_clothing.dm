@@ -50,12 +50,14 @@ Slimecrossing Armor
 	density = FALSE
 	anchored = TRUE
 	max_integrity = 10
+	light_system = MOVABLE_LIGHT
+	light_range = 5
 
 /obj/structure/light_prism/Initialize(mapload, newcolor)
 	. = ..()
-	color = newcolor
-	light_color = newcolor
-	set_light(5)
+	if(newcolor)
+		color = newcolor
+		set_light_color(newcolor)
 
 /obj/structure/light_prism/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	to_chat(user, "<span class='notice'>You dispel [src]</span>")

@@ -635,7 +635,7 @@
 	icon_grow = "agave-grow"
 	icon_dead = "agave-dead"
 	icon_harvest = "agave-harvest"
-	reagents_add = list(/datum/reagent/medicine/kelotane = 0.1, /datum/reagent/toxin/lipolicide = 0.1, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list(/datum/reagent/medicine/kelotane = 0.1, /datum/reagent/toxin/lipolicide = 0.1 )
 
 
 /obj/item/reagent_containers/food/snacks/grown/agave
