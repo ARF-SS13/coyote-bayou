@@ -317,6 +317,10 @@
 	var/seed_value = 4
 	var/produce_value = 10
 
+/obj/structure/reagent_dispensers/compostbin/Initialize()
+	. = ..()
+	reagents.clear_reagents() //start empty
+
 /obj/structure/reagent_dispensers/compostbin/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
 		return 0 //so we can refill them via their afterattack.
