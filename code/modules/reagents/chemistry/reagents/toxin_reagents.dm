@@ -36,8 +36,8 @@
 
 	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
 	color = "#00FF00"
-	toxpwr = 5
-	taste_description = "slime"
+	toxpwr = 0
+	taste_description = "horrific agony"
 	taste_mult = 0.9
 
 /datum/reagent/toxin/FEV_solution/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
@@ -52,8 +52,8 @@
 	..()
 
 /datum/reagent/toxin/FEV_solution/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(30,EFFECT_IRRADIATE,0)
-	C.adjustCloneLoss(30,0)
+	C.apply_effect(80,EFFECT_IRRADIATE,0)
+	C.adjustCloneLoss(3,0)
 	return ..()
 
 

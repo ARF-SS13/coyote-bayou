@@ -811,10 +811,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	desc = "A red pitchfork, it looks like the work of the devil."
 	force = 19
 	throwforce = 24
-
-/obj/item/pitchfork/demonic/Initialize()
-	. = ..()
-	set_light(3,6,LIGHT_COLOR_RED)
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_power = 6
+	light_color = LIGHT_COLOR_RED
 
 /obj/item/pitchfork/demonic/ComponentInitialize()
 	. = ..()

@@ -231,6 +231,7 @@
 	desc = "A small bottle of lab made Zeolite, which removes radiation from people quickly as well as contamination on items."
 	list_reagents = list(/datum/reagent/fermi/zeolites = 30)
 
+/*
 // Viro bottles
 
 /obj/item/reagent_containers/glass/bottle/romerol
@@ -314,6 +315,7 @@
 	name = "BVAK bottle"
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list(/datum/reagent/medicine/atropine = 5, /datum/reagent/medicine/epinephrine = 5, /datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/spaceacillin = 10)
+*/
 
 //Oldstation.dmm chemical storage bottles
 
