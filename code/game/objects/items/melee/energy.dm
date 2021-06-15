@@ -4,7 +4,9 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
-	var/brightness_on = 3
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_on = FALSE
 	var/sword_color
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
 
@@ -14,7 +16,7 @@
 	if(active)
 		if(sword_color)
 			icon_state = "sword[sword_color]"
-		set_light(brightness_on)
+		set_light_on(TRUE)
 		START_PROCESSING(SSobj, src)
 
 /obj/item/melee/transforming/energy/Destroy()
@@ -43,10 +45,10 @@
 			if(sword_color)
 				icon_state = "sword[sword_color]"
 			START_PROCESSING(SSobj, src)
-			set_light(brightness_on)
+			set_light_on(TRUE)
 		else
 			STOP_PROCESSING(SSobj, src)
-			set_light(0)
+			set_light_on(FALSE)
 
 /obj/item/melee/transforming/energy/get_temperature()
 	return active * heat
@@ -133,7 +135,7 @@
 
 /obj/item/melee/transforming/energy/sword/proc/set_sword_color()
 	if(LAZYLEN(possible_colors))
-		light_color = possible_colors[pick(possible_colors)]
+		set_light_color(possible_colors[pick(possible_colors)])
 
 /obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
@@ -195,14 +197,13 @@
 /obj/item/melee/transforming/energy/sword/saber/set_sword_color()
 	if(LAZYLEN(possible_colors))
 		sword_color = pick(possible_colors)
-		light_color = possible_colors[sword_color]
+		set_light_color(possible_colors[sword_color])
 
 /obj/item/melee/transforming/energy/sword/saber/process()
 	. = ..()
 	if(hacked)
 		var/set_color = pick(possible_colors)
-		light_color = possible_colors[set_color]
-		update_light()
+		set_light_color(possible_colors[set_color])
 
 /obj/item/melee/transforming/energy/sword/saber/red
 	possible_colors = list("red" = LIGHT_COLOR_RED)
@@ -345,9 +346,8 @@
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",light_color) as color|null
 		if(energy_color_input)
-			light_color = sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1)
+			set_light_color(sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1))
 		update_icon()
-		update_light()
 	return TRUE
 
 /obj/item/melee/transforming/energy/sword/cx/examine(mob/user)

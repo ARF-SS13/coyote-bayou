@@ -18,7 +18,10 @@
 	var/hitsound_on = 'sound/weapons/blade1.ogg'
 	armour_penetration = 0.65
 	var/saber_color = "green"
+	light_system = MOVABLE_LIGHT
+	light_range = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
 	light_color = "#00ff00"//green
+	light_on = FALSE
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
@@ -30,7 +33,6 @@
 	var/hacked = FALSE
 	/// Can this reflect all energy projectiles?
 	var/can_reflect = TRUE
-	var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
 	var/list/possible_colors = list("red", "blue", "green", "purple")
 	var/list/rainbow_colors = list(LIGHT_COLOR_RED, LIGHT_COLOR_GREEN, LIGHT_COLOR_LIGHT_CYAN, LIGHT_COLOR_LAVENDER)
 	var/spinnable = TRUE
@@ -102,13 +104,13 @@
 		saber_color = pick(possible_colors)
 		switch(saber_color)
 			if("red")
-				light_color = LIGHT_COLOR_RED
+				set_light_color(LIGHT_COLOR_RED)
 			if("green")
-				light_color = LIGHT_COLOR_GREEN
+				set_light_color(LIGHT_COLOR_GREEN)
 			if("blue")
-				light_color = LIGHT_COLOR_LIGHT_CYAN
+				set_light_color(LIGHT_COLOR_LIGHT_CYAN)
 			if("purple")
-				light_color = LIGHT_COLOR_LAVENDER
+				set_light_color(LIGHT_COLOR_LAVENDER)
 
 /// Triggered on wield of two handed item
 /// Specific hulk checks due to reflection chance for balance issues and switches hitsounds.
@@ -123,7 +125,7 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	slowdown += slowdown_wielded
 	START_PROCESSING(SSobj, src)
-	set_light(brightness_on)
+	set_light_on(TRUE)
 	AddElement(/datum/element/sword_point)
 	item_flags |= (ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 
@@ -137,7 +139,7 @@
 	hitsound = "swing_hit"
 	slowdown_wielded -= slowdown_wielded
 	STOP_PROCESSING(SSobj, src)
-	set_light(0)
+	set_light_on(FALSE)
 	RemoveElement(/datum/element/sword_point)
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 
@@ -324,9 +326,8 @@
 		var/energy_color_input = input(usr,"","Choose Energy Color",light_color) as color|null
 		if(!energy_color_input || !user.canUseTopic(src, BE_CLOSE, FALSE) || hacked)
 			return
-		light_color = sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1)
+		set_light_color(sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1))
 		update_icon()
-		update_light()
 	return TRUE
 
 /obj/item/dualsaber/hypereutactic/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
@@ -348,7 +349,6 @@
 /obj/item/dualsaber/hypereutactic/rainbow_process()
 	. = ..()
 	update_icon()
-	update_light()
 
 /obj/item/dualsaber/hypereutactic/chaplain
 	name = "divine lightblade"

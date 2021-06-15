@@ -9,40 +9,14 @@
 	anchored = 1
 	layer = ABOVE_MOB_LAYER
 	icon = 'icons/fallout/vehicles/bus.dmi'
+	bound_width = 224
+	bound_height = 96
 	density = 1
 	appearance_flags = 0
 	icon_door_override = TRUE
 	obj_integrity = 200
 	max_integrity = 200
 	integrity_failure = 50
-
-/obj/structure/closet/bus/New()
-	..()
-	var/atom/movable/S = new (locate(x-3,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-	S = new (locate(x-2,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-	S = new (locate(x-1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-	S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-	S = new (locate(x+2,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
 
 /obj/structure/closet/bus/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wrench))

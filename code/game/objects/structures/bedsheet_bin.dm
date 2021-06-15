@@ -239,7 +239,8 @@ LINEN BINS
 	icon_state = "sheetcosmos"
 	dream_messages = list("the infinite cosmos", "Hans Zimmer music", "a flight through space", "the galaxy", "being fabulous", "shooting stars")
 	light_power = 2
-	light_range = 1.4
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 
 /obj/item/bedsheet/random
 	icon_state = "random_bedsheet"
