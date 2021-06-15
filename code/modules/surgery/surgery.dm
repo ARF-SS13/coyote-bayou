@@ -65,7 +65,7 @@
 		else
 			return FALSE
 
-	if(requires_trait== "UNETHICAL_PRACTITIONER") //brainwashing, viral bonding, combat implants
+	if(requires_trait== "UNETHICAL_PRACTITIONER") //brainwashing, romerol revivication, viral bonding, combat implants
 		if(HAS_TRAIT(user,TRAIT_UNETHICAL_PRACTITIONER)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
