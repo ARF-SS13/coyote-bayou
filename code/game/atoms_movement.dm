@@ -61,6 +61,9 @@
 	if(!loc || !newloc)
 		return FALSE
 	var/atom/oldloc = loc
+	var/list/old_locs
+	if(bound_height > 32 || bound_width > 32)
+		old_locs = locs.Copy()
 	//Early override for some cases like diagonal movement
 	if(glide_size_override)
 		set_glide_size(glide_size_override)
@@ -143,7 +146,7 @@
 					pulling.moving_from_pull = src
 					pulling.Move(T, get_dir(pulling, T), glide_size) //the pullee tries to reach our previous position
 					pulling.moving_from_pull = null
-		Moved(oldloc, direct)
+		Moved(oldloc, direct, FALSE, old_locs)
 
 	//glide_size strangely enough can change mid movement animation and update correctly while the animation is playing
 	//This means that if you don't override it late like this, it will just be set back by the movement update that's called when you move turfs.
@@ -162,14 +165,15 @@
 	return TRUE
 
 //Called after a successful Move(). By this point, we've already moved
-/atom/movable/proc/Moved(atom/OldLoc, Dir, Forced = FALSE)
-	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced)
+/atom/movable/proc/Moved(atom/OldLoc, Dir, Forced = FALSE, list/old_locs)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
 	if (!inertia_moving)
 		inertia_next_move = world.time + inertia_move_delay
 		newtonian_move(Dir)
 	if (length(client_mobs_in_contents))
 		update_parallax_contents()
-
+	for (var/datum/light_source/light as anything in light_sources) // Cycle through the light sources on this atom and tell them to update.
+		light.source_atom.update_light()
 	return TRUE
 
 
@@ -233,6 +237,9 @@
 		if(pulledby)
 			pulledby.stop_pulling()
 		var/atom/oldloc = loc
+		var/list/old_locs
+		if(bound_height > 32 || bound_width > 32)
+			old_locs = locs.Copy()
 		var/same_loc = oldloc == destination
 		var/area/old_area = get_area(oldloc)
 		var/area/destarea = get_area(destination)
@@ -262,7 +269,7 @@
 					continue
 				AM.Crossed(src, oldloc)
 
-		Moved(oldloc, NONE, TRUE)
+		Moved(oldloc, NONE, TRUE, old_locs)
 		. = TRUE
 
 	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)

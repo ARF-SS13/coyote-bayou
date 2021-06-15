@@ -9,7 +9,7 @@
 	density = FALSE
 
 /obj/structure/destructible/clockwork/trap/steam_vent/activate()
-	opacity = !opacity
+	set_opacity(!opacity)
 	icon_state = "steam_vent_[opacity]"
 	if(opacity)
 		playsound(src, 'sound/machines/clockcult/steam_whoosh.ogg', 50, TRUE)

@@ -607,8 +607,8 @@
 "abA" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube,
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube,
+/obj/item/gun/ballistic/shotgun/lever,
+/obj/item/gun/ballistic/shotgun/lever,
 /turf/open/floor/plasteel/darkred,
 /area/f13/brotherhood)
 "abB" = (
@@ -7652,11 +7652,9 @@
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/lever,
+/obj/item/gun/ballistic/shotgun/lever,
+/obj/item/gun/ballistic/shotgun/lever,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/vault/security/checkpoint)
 "avy" = (
@@ -12832,7 +12830,6 @@
 /area/f13/wasteland)
 "aMk" = (
 /obj/structure/table/wood/poker,
-/obj/item/gun/ballistic/automatic/pistol/APS,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/mountain)
 "aMl" = (
@@ -28831,10 +28828,6 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "bHX" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot{
-	desc = "A heavily modified toy light machine gun, built for riot control in non-lethal situations.";
-	name = "Riot Router"
-	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},

@@ -23,7 +23,7 @@
 	can_flashlight = 0 // Can't attach or detach the flashlight, and override it's icon update
 
 /obj/item/gun/energy/e_gun/mini/Initialize()
-	gun_light = new /obj/item/flashlight/seclite(src)
+	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
 
 /obj/item/gun/energy/e_gun/stun

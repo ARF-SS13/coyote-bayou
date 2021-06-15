@@ -186,7 +186,8 @@
 	door_type = "fence"
 	open_sound = "sound/f13machines/doorchainlink_open.ogg"
 	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_hold_padlock = TRUE
 	icon = 'icons/obj/fence.dmi'
 
@@ -222,7 +223,8 @@
 	door_type = "fence_wooden"
 	open_sound = "sound/f13machines/doorchainlink_open.ogg"
 	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_hold_padlock = TRUE
 	icon = 'icons/obj/fence.dmi'
 

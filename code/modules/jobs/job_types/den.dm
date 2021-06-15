@@ -792,4 +792,3 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/automatic_sear)

@@ -7,8 +7,6 @@
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_MEDIUM_INSULATION
 
-/turf/closed/Initialize()
-	. = ..()
 
 /turf/closed/AfterChange()
 	. = ..()

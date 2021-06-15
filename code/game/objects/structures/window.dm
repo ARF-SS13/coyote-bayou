@@ -280,6 +280,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	if(color != current)
 		color = current
 		animate(src, color = newcolor, time = 2)
+	set_opacity(TRUE)
 
 /obj/structure/window/proc/electrochromatic_off()
 	if(electrochromatic_status == ELECTROCHROMATIC_OFF)
@@ -291,6 +292,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	if(color != current)
 		color = current
 		animate(src, color = newcolor, time = 2)
+	set_opacity(FALSE)
 
 /obj/structure/window/proc/remove_electrochromatic()
 	electrochromatic_off()
@@ -343,13 +345,6 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	electrochromatic_status = ELECTROCHROMATIC_OFF
 	LAZYINITLIST(GLOB.electrochromatic_window_lookup["[electrochromatic_id]"])
 	GLOB.electrochromatic_window_lookup[electrochromatic_id] |= src
-
-/obj/structure/window/update_atom_colour()
-	. = ..()
-	if(electrochromatic_status == ELECTROCHROMATIC_DIMMED || (color && (color_hex2num(color) < 255)))
-		set_opacity(TRUE)
-	else
-		set_opacity(FALSE)
 
 /obj/structure/window/proc/check_state(checked_state)
 	if(state == checked_state)

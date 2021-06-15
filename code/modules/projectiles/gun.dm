@@ -64,8 +64,9 @@
 	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 	var/no_pin_required = FALSE //whether the gun can be fired without a pin
 
-	var/obj/item/flashlight/gun_light
-	var/can_flashlight = FALSE
+	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
+	var/obj/item/flashlight/seclite/gun_light
+	var/datum/action/item_action/toggle_gunlight/alight
 	var/gunlight_state = "flight"
 
 	var/obj/item/kitchen/knife/bayonet
@@ -77,7 +78,6 @@
 	var/can_scope = FALSE
 	var/scope_state = "scope"
 
-	var/datum/action/item_action/toggle_gunlight/alight
 	var/mutable_appearance/flashlight_overlay
 	var/can_attachments = FALSE
 	var/can_automatic = FALSE
@@ -143,6 +143,13 @@
 		QDEL_NULL(chambered)
 	return ..()
 
+/obj/item/gun/handle_atom_del(atom/A)
+	if(A == chambered)
+		chambered = null
+		update_icon()
+	if(A == gun_light)
+		clear_gunlight()
+
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
 	var/obj/item/gun/G = locate(/obj/item/gun) in contents
@@ -154,12 +161,17 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(no_pin_required)
-		return
-	if(pin)
-		. += "It has \a [pin] installed."
-	else
-		. += "It doesn't have a firing pin installed, and won't fire."
+	if(!no_pin_required)
+		if(pin)
+			. += "It has \a [pin] installed."
+		else
+			. += "It doesn't have a firing pin installed, and won't fire."
+	if(gun_light)
+		. += "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it."
+		if(can_flashlight) //if it has a light and this is false, the light is permanent.
+			. += "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
+	else if(can_flashlight)
+		. += "It has a mounting point for a <b>seclite</b>."
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -441,22 +453,23 @@
 /obj/item/gun/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
-	else if(istype(I, /obj/item/flashlight/seclite))
+
+	if(istype(I, /obj/item/flashlight/seclite))
 		if(!can_flashlight)
 			return ..()
 		var/obj/item/flashlight/seclite/S = I
 		if(!gun_light)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You click \the [S] into place on \the [src].</span>")
-			if(S.on)
-				set_light(0)
-			gun_light = S
-			update_gunlight(user)
-			alight = new /datum/action/item_action/toggle_gunlight(src)
+			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
+			set_gun_light(S)
+			update_gunlight()
+			alight = new(src)
 			if(loc == user)
 				alight.Grant(user)
-	else if(istype(I, /obj/item/kitchen/knife))
+		return
+
+	if(istype(I, /obj/item/kitchen/knife))
 		var/obj/item/kitchen/knife/K = I
 		if(!can_bayonet || !K.bayonet || bayonet) //ensure the gun has an attachment point available, and that the knife is compatible with it.
 			return ..()
@@ -466,7 +479,9 @@
 		bayonet = K
 		update_icon()
 		update_overlays()
-	else if(istype(I, /obj/item/attachments/scope))
+		return
+
+	if(istype(I, /obj/item/attachments/scope))
 		if(!can_scope)
 			return ..()
 		var/obj/item/attachments/scope/C = I
@@ -481,7 +496,9 @@
 			src.build_zooming()
 			update_overlays()
 			update_icon()
-	else if(istype(I, /obj/item/attachments/recoil_decrease))
+		return
+
+	if(istype(I, /obj/item/attachments/recoil_decrease))
 		var/obj/item/attachments/recoil_decrease/R = I
 		if(!recoil_decrease && can_attachments)
 			if(!user.transferItemToLoc(I, src))
@@ -493,8 +510,9 @@
 			else
 				src.spread = 0
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
+			return
 
-	else if(istype(I, /obj/item/attachments/burst_improvement))
+	if(istype(I, /obj/item/attachments/burst_improvement))
 		var/obj/item/attachments/burst_improvement/T = I
 		if(!burst_improvement && burst_size > 1 && can_attachments)
 			if(!user.transferItemToLoc(I, src))
@@ -504,31 +522,87 @@
 			src.burst_size += 1
 			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
 			update_icon()
-	else if(istype(I, /obj/item/screwdriver))
-		if(gun_light)
-			var/obj/item/flashlight/seclite/S = gun_light
-			to_chat(user, "<span class='notice'>You unscrew the seclite from \the [src].</span>")
-			gun_light = null
-			S.forceMove(get_turf(user))
-			update_gunlight(user)
-			S.update_brightness(user)
-			QDEL_NULL(alight)
-		if(bayonet)
-			to_chat(user, "<span class='notice'>You unscrew the bayonet from \the [src].</span>")
-			var/obj/item/kitchen/knife/K = bayonet
-			K.forceMove(get_turf(user))
-			bayonet = null
-			update_icon()
-		if(scope)
-			to_chat(user, "<span class='notice'>You unscrew the scope from \the [src].</span>")
-			var/obj/item/attachments/scope/C = scope
-			C.forceMove(get_turf(user))
-			src.zoomable = FALSE
-			azoom.Remove(user)
-			scope = null
-			update_icon()
-	else
-		return ..()
+			return
+
+	return ..()
+
+
+/obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+	
+	if(can_flashlight && gun_light)
+		I.play_tool_sound(src)
+		var/obj/item/flashlight/seclite/S = gun_light
+		to_chat(user, "<span class='notice'>You unscrew the seclite from \the [src].</span>")
+		S.forceMove(get_turf(user))
+		clear_gunlight()
+		return TRUE
+
+	if(can_bayonet && bayonet)
+		I.play_tool_sound(src)
+		to_chat(user, "<span class='notice'>You unscrew the bayonet from \the [src].</span>")
+		var/obj/item/kitchen/knife/K = bayonet
+		K.forceMove(get_turf(user))
+		bayonet = null
+		update_icon()
+		return TRUE
+
+	if(scope)
+		I.play_tool_sound(src)
+		to_chat(user, "<span class='notice'>You unscrew the scope from \the [src].</span>")
+		var/obj/item/attachments/scope/C = scope
+		C.forceMove(get_turf(user))
+		src.zoomable = FALSE
+		azoom.Remove(user)
+		scope = null
+		update_icon()
+		return TRUE
+
+
+/obj/item/gun/proc/clear_gunlight()
+	if(!gun_light)
+		return
+	var/obj/item/flashlight/seclite/removed_light = gun_light
+	set_gun_light(null)
+	update_gunlight()
+	removed_light.update_brightness()
+	QDEL_NULL(alight)
+	return TRUE
+
+
+/**
+ * Swaps the gun's seclight, dropping the old seclight if it has not been qdel'd.
+ *
+ * Returns the former gun_light that has now been replaced by this proc.
+ * Arguments:
+ * * new_light - The new light to attach to the weapon. Can be null, which will mean the old light is removed with no replacement.
+ */
+/obj/item/gun/proc/set_gun_light(obj/item/flashlight/seclite/new_light)
+	// Doesn't look like this should ever happen? We're replacing our old light with our old light?
+	if(gun_light == new_light)
+		CRASH("Tried to set a new gun light when the old gun light was also the new gun light.")
+
+	. = gun_light
+
+	// If there's an old gun light that isn't being QDELETED, detatch and drop it to the floor.
+	if(!QDELETED(gun_light))
+		gun_light.set_light_flags(gun_light.light_flags & ~LIGHT_ATTACHED)
+		if(gun_light.loc == src)
+			gun_light.forceMove(get_turf(src))
+
+	// If there's a new gun light to be added, attach and move it to the gun.
+	if(new_light)
+		new_light.set_light_flags(new_light.light_flags | LIGHT_ATTACHED)
+		if(new_light.loc != src)
+			new_light.forceMove(src)
+
+	gun_light = new_light
+
 
 /obj/item/gun/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_scope_zoom))
@@ -542,20 +616,13 @@
 
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
+	gun_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_gunlight(user)
-	return
+	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	update_gunlight()
 
 /obj/item/gun/proc/update_gunlight(mob/user = null)
-	if(gun_light)
-		if(gun_light.on)
-			set_light(gun_light.brightness_on, gun_light.flashlight_power, gun_light.light_color)
-		else
-			set_light(0)
-	else
-		set_light(0)
 	update_icon()
 	for(var/X in actions)
 		var/datum/action/A = X
@@ -772,11 +839,6 @@
 
 	if(zoomable)
 		azoom = new(src)
-
-/obj/item/gun/handle_atom_del(atom/A)
-	if(A == chambered)
-		chambered = null
-		update_icon()
 
 /obj/item/gun/proc/getinaccuracy(mob/living/user, bonus_spread, stamloss)
 	if(inaccuracy_modifier == 0)

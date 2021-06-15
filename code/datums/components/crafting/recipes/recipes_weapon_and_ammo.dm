@@ -515,20 +515,6 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//h&k caws
-/datum/crafting_recipe/caws
-	name = "h&k caws"
-	result = /obj/item/gun/ballistic/automatic/shotgun/caws
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/sheet/mineral/titanium = 2,
-				/obj/item/stack/sheet/metal = 2,
-				/obj/item/stack/crafting/metalparts = 3,
-				/obj/item/stack/crafting/goodparts = 3)
-	tools = list(TOOL_AWORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_availible = FALSE
 
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
@@ -1127,4 +1113,18 @@
 	subcategory = CAT_PARTS
 	always_availible = FALSE
 
+Not implemented due to balance at the moment
+/datum/crafting_recipe/caws
+	name = "h&k caws"
+	result = /obj/item/gun/ballistic/automatic/shotgun/caws
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/mineral/titanium = 2,
+				/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 3)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
 */

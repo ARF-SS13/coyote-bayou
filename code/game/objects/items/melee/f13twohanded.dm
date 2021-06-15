@@ -543,22 +543,12 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	sharpness = SHARP_NONE
 	icon_prefix = "mars_staff"
 
-var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD
-var/list/possible_colors = list("red")
 
 /obj/item/twohanded/sledgehammer/marsstaff/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 5, force_wielded = 10, icon_wielded="[icon_prefix]1")
 
-/*
-/obj/item/twohanded/sledgehammer/marsstaff/update_icon()
-	if(wielded)
-		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
-		light_color = LIGHT_COLOR_RED
-		START_PROCESSING(SSobj, src)
-		set_light(brightness_on)
-		sharpness = SHARP_NONE
-	*/
+
 /obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
@@ -578,13 +568,8 @@ var/list/possible_colors = list("red")
 			user.dropItemToGround(src, TRUE)
 			user.Knockdown(50)
 		return
-/*
-/obj/item/twohanded/sledgehammer/marsstaff/unwield() //Specific unwield () to switch hitsounds.
-	sharpness = SHARP_NONE
-	..()
-	STOP_PROCESSING(SSobj, src)
-	set_light(0)
-*/
+
+
 //COMMENTED OUT STUFF
 
 /* Im not removing it, but commenting it out. Its a good example of stuff, but it isnt really good for the server, no?
