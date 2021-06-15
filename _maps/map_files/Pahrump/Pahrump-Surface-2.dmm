@@ -83,12 +83,9 @@
 	},
 /area/f13/wasteland)
 "adq" = (
-/turf/open/indestructible/ground/outside/water{
-	density = 1;
-	desc = "Deep lake water, filled with who knows what...";
-	name = "lake water"
-	},
-/area/f13/caves)
+/obj/structure/barricade/bars,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "adD" = (
 /obj/structure/chair/bench,
 /turf/open/indestructible/ground/outside/road{
@@ -665,6 +662,10 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "auU" = (
@@ -903,7 +904,7 @@
 	desc = "Deep lake water, filled with who knows what...";
 	name = "lake water"
 	},
-/area/f13/caves)
+/area/f13/wasteland)
 "aDk" = (
 /turf/open/floor/wood/f13/stage_tl,
 /area/f13/building)
@@ -1075,11 +1076,9 @@
 	},
 /area/f13/building)
 "aJh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/structure/table/wood,
+/obj/structure/fence,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/ncr)
 "aKs" = (
 /obj/item/clothing/shoes/sneakers/black,
@@ -9010,7 +9009,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2top"
 	},
-/area/f13/wasteland)
+/area/f13/ncr)
 "fTn" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/f13/wood{
@@ -20503,7 +20502,7 @@
 	name = "bounty board"
 	},
 /turf/closed/wall/r_wall,
-/area/f13/wasteland)
+/area/f13/ncr)
 "nfp" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/f13/wood,
@@ -21213,8 +21212,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "nHL" = (
+/obj/structure/rack,
+/obj/item/seeds/xander,
+/obj/item/seeds/xander,
+/obj/item/seeds/xander,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/poppy/broc,
+/obj/item/seeds/poppy/broc,
 /turf/open/indestructible/ground/outside/desert,
-/area/f13/tunnel)
+/area/f13/ncr)
 "nHP" = (
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 1;
@@ -22165,12 +22171,10 @@
 /area/f13/building)
 "ooq" = (
 /obj/structure/rack,
-/obj/item/seeds/xander,
-/obj/item/seeds/xander,
-/obj/item/seeds/xander,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/poppy/broc,
-/obj/item/seeds/poppy/broc,
+/obj/item/storage/bag/plants,
+/obj/item/shovel,
+/obj/item/cultivator,
+/obj/item/shovel/spade,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/ncr)
 "oou" = (
@@ -22421,8 +22425,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "owA" = (
-/obj/structure/stacklifter,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/ncr)
 "owF" = (
 /obj/structure/chair/stool/retro/black,
@@ -22472,12 +22480,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oyx" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/glass/bucket/wood,
-/obj/item/reagent_containers/glass/bucket/wood,
-/obj/item/reagent_containers/glass/bucket/wood,
-/obj/item/reagent_containers/glass/bucket/wood,
-/turf/open/indestructible/ground/outside/desert,
+/obj/structure/stacklifter,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/ncr)
 "oyE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23158,12 +23162,9 @@
 	},
 /area/f13/building)
 "oWv" = (
-/obj/structure/rack,
-/obj/item/storage/bag/plants,
-/obj/item/shovel,
-/obj/item/cultivator,
-/obj/item/shovel/spade,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain2"
+	},
 /area/f13/ncr)
 "oWC" = (
 /obj/structure/decoration/rag,
@@ -23746,9 +23747,8 @@
 	},
 /area/f13/ncr)
 "pqa" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirtcorner"
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft1"
 	},
 /area/f13/ncr)
 "pqr" = (
@@ -25865,6 +25865,7 @@
 /area/f13/wasteland)
 "qEU" = (
 /obj/structure/statue/sandstone/gravestone{
+	anchored = 1;
 	desc = "Here lay the body of Articulus Martialis. Proud centurion of the migthy Legion, he slayed hundreds of enemies in the name of Caesar and fell in battle figthing to the end. Some say his life would have been saved if the surviving legionare had stopped digging in the trash piles and actually bothered to provide aid. May he rest well in the hall of Mars."
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -26634,7 +26635,6 @@
 /area/f13/building)
 "rcW" = (
 /obj/structure/fence,
-/obj/structure/fence,
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/desert,
@@ -26672,9 +26672,6 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland)
-"rec" = (
-/turf/closed/indestructible/rock,
-/area/f13/wasteland)
 "reg" = (
 /obj/machinery/mineral/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
@@ -26696,7 +26693,6 @@
 	},
 /area/f13/followers)
 "reK" = (
-/obj/structure/fence,
 /obj/structure/fence,
 /obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/desert,
@@ -27864,6 +27860,7 @@
 /area/f13/building)
 "rXv" = (
 /obj/structure/statue/sandstone/gravestone{
+	anchored = 1;
 	desc = "Here lies Sydney Blackhawk. A hero to the republic, she sacrificed much in her life  and died for the republic, may her burial be a reminder of valor and heroism to those who love freedom."
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -29355,9 +29352,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/ncr)
-"sVl" = (
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "sVD" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13{
@@ -29592,6 +29586,7 @@
 /area/f13/wasteland)
 "tci" = (
 /obj/structure/statue/sandstone/gravestone{
+	anchored = 1;
 	desc = "Therein lay Lucy, born into a simple farming life and captured and forced to fight by raiders, she would battle her own struggles in life against her own mental problems and lose the fight as she commited suicide in her own home. May Lucy Fire-Fly rest well and find peace in death."
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -34128,9 +34123,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"vUA" = (
-/turf/closed/wall/r_wall,
-/area/f13/wasteland)
 "vUF" = (
 /obj/structure/chair/wood,
 /turf/open/floor/f13/wood,
@@ -36174,6 +36166,9 @@
 /obj/item/reagent_containers/food/snacks/bagel,
 /obj/item/reagent_containers/food/snacks/bagel,
 /obj/item/reagent_containers/food/snacks/bagel,
+/obj/item/storage/fancy/donut_box{
+	pixel_y = 13
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "xgB" = (
@@ -37980,65 +37975,65 @@ ktB
 ktB
 ktB
 ktB
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-ims
-ims
-ims
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-ims
-ims
-ims
-rec
-rec
-rec
-rec
-rec
-rec
-rec
-rec
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+oYb
+oYb
+oYb
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+oYb
+oYb
+oYb
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
+ktB
 ktB
 mGC
 emz
@@ -38236,9 +38231,9 @@ bgY
 bgY
 bgY
 ktB
-fyf
-fyf
-fyf
+gcK
+gcK
+gcK
 lPT
 lPT
 lPT
@@ -38292,7 +38287,7 @@ koD
 cpK
 dMW
 fyf
-pMI
+ezX
 fyf
 fyf
 fyf
@@ -38493,7 +38488,7 @@ jXj
 jXj
 bgY
 ktB
-fyf
+gcK
 fyf
 fyf
 tFR
@@ -38750,7 +38745,7 @@ tYQ
 jXj
 bgY
 ktB
-fyf
+gcK
 fyf
 fyf
 tFR
@@ -38818,7 +38813,7 @@ vDP
 pnz
 hoo
 mGC
-nHL
+fyf
 fyf
 fyf
 fyf
@@ -39007,7 +39002,7 @@ jXj
 jXj
 bgY
 ktB
-fyf
+gcK
 fyf
 fyf
 tFR
@@ -39264,7 +39259,7 @@ bgY
 bgY
 bgY
 ktB
-fyf
+gcK
 fyf
 fyf
 tFR
@@ -39521,7 +39516,7 @@ ktB
 ktB
 ktB
 ktB
-fyf
+gcK
 fyf
 pis
 tFR
@@ -39777,8 +39772,8 @@ gcK
 gcK
 gcK
 gcK
-fyf
-fyf
+gcK
+gcK
 fyf
 fyf
 tFR
@@ -42147,7 +42142,7 @@ koD
 cpK
 jkJ
 igz
-pMI
+ezX
 igz
 igz
 igz
@@ -44460,7 +44455,7 @@ tak
 xzM
 dmL
 hOl
-sgz
+oWv
 sgz
 sgz
 kjQ
@@ -44717,7 +44712,7 @@ wWA
 kaM
 btW
 kaM
-qoS
+pqa
 dmL
 fvz
 kaM
@@ -44974,7 +44969,7 @@ eXV
 ees
 gQv
 ees
-vUA
+rhr
 gQv
 gQv
 fsm
@@ -46773,7 +46768,7 @@ iYF
 cpK
 sUX
 ptf
-pMI
+ezX
 ptf
 ptf
 ptf
@@ -47741,7 +47736,7 @@ ktB
 ktB
 gcK
 gcK
-sVl
+uXj
 uXj
 lqV
 uXj
@@ -47998,8 +47993,8 @@ ktB
 ktB
 gcK
 gcK
-sVl
-adq
+uXj
+cuG
 uXj
 uXj
 uXj
@@ -48254,9 +48249,9 @@ ktB
 (41,1,1) = {"
 ktB
 gcK
-sVl
-sVl
-adq
+uXj
+uXj
+cuG
 cuG
 uXj
 uXj
@@ -48512,9 +48507,9 @@ ktB
 ktB
 gcK
 gcK
-sVl
-adq
-adq
+uXj
+cuG
+cuG
 uXj
 kCH
 rjE
@@ -48769,8 +48764,8 @@ ktB
 ktB
 gcK
 gcK
-sVl
-adq
+uXj
+cuG
 aDb
 cuG
 uXj
@@ -49026,10 +49021,10 @@ ktB
 ktB
 gcK
 gcK
-sVl
-sVl
-adq
-adq
+uXj
+uXj
+cuG
+cuG
 uXj
 erx
 bpD
@@ -49284,10 +49279,10 @@ ktB
 gcK
 gcK
 gcK
-sVl
-sVl
-sVl
-sVl
+uXj
+uXj
+uXj
+uXj
 rjE
 bpD
 fyf
@@ -49543,7 +49538,7 @@ gcK
 gcK
 gcK
 gcK
-sVl
+uXj
 gcK
 gcK
 hCg
@@ -50341,16 +50336,16 @@ ezX
 ezX
 ezX
 ezX
-gcK
-gcK
+aJh
+aJh
 rcW
 reK
 reK
 reK
 reK
 reK
-gcK
-gcK
+aJh
+ezX
 gcK
 fyf
 fyf
@@ -50598,16 +50593,16 @@ iJc
 lBD
 iJc
 ezX
-gcK
 epa
+ukl
 jzn
 qbX
 lde
 lde
 lde
 mzY
-gcK
-gcK
+ukl
+ezX
 ktB
 fyf
 fyf
@@ -50855,16 +50850,16 @@ fFC
 fFC
 fFC
 ezX
-gcK
-ooq
+nHL
+ukl
 vcF
-ezb
-ezb
+hvh
+hvh
 ezb
 avr
 pbX
 bRz
-gcK
+ezX
 ktB
 fyf
 qOV
@@ -51112,8 +51107,8 @@ fFC
 wVT
 wVT
 ezX
-gcK
-oWv
+ooq
+ukl
 dVp
 hvh
 hvh
@@ -51121,7 +51116,7 @@ ezb
 ezb
 ezb
 qvY
-gcK
+ezX
 gcK
 fyf
 tBN
@@ -51369,8 +51364,8 @@ ebv
 wBb
 iJc
 ezX
-gcK
-oyx
+owA
+ukl
 dVp
 hvh
 hvh
@@ -51378,7 +51373,7 @@ ezb
 ezb
 ezb
 qvY
-gcK
+ezX
 gcK
 fyf
 tBN
@@ -51635,7 +51630,7 @@ ezb
 kuI
 ezb
 qvY
-gcK
+ezX
 ktB
 fyf
 tBN
@@ -51892,7 +51887,7 @@ ezb
 ezb
 ezb
 qvY
-gcK
+ezX
 ktB
 fyf
 tBN
@@ -52137,8 +52132,8 @@ fFC
 fFC
 aIX
 ezX
-ezX
-ezX
+adq
+adq
 ezX
 oGt
 kiL
@@ -52149,7 +52144,7 @@ ezb
 ezb
 ezb
 qvY
-gcK
+ezX
 ktB
 fyf
 nlO
@@ -52387,8 +52382,8 @@ gcK
 gcK
 gcK
 ezX
-ezX
-ezX
+adq
+adq
 ezX
 oIR
 fFC
@@ -52397,16 +52392,16 @@ eXE
 fFC
 eUk
 ezX
-gcK
+ukl
 oCY
 dVp
-hvh
-hvh
+ezb
+ezb
 ezb
 ezb
 ezb
 qvY
-gcK
+ezX
 ktB
 fyf
 fyf
@@ -52654,16 +52649,16 @@ opW
 wVT
 eWA
 ezX
-gcK
+ukl
 vcm
 vcF
 ezb
-ezb
+oyx
 ezb
 nEn
 oZv
 oVl
-gcK
+ezX
 gcK
 fyf
 fyf
@@ -52908,19 +52903,19 @@ wVT
 fFC
 mOD
 ezX
+adq
+adq
 ezX
-ezX
-ezX
-gcK
+ukl
 ukl
 dVp
 ezb
-owA
+ezb
 ezb
 ezb
 qvY
-gcK
-gcK
+ukl
+ezX
 gcK
 fyf
 fyf
@@ -53158,8 +53153,8 @@ gcK
 gcK
 gcK
 ezX
-ezX
-ezX
+adq
+adq
 ezX
 rXb
 fFC
@@ -53168,16 +53163,16 @@ eXE
 wVT
 eUk
 ezX
-gcK
-gcK
+ukl
+ukl
 tCQ
 mqs
 hUO
 oZv
 kiL
 iIx
-gcK
-gcK
+ukl
+ezX
 gcK
 gcK
 gcK
@@ -53425,16 +53420,16 @@ mGM
 fFC
 eWA
 ezX
-gcK
-gcK
-gcK
-pqa
-kiL
-iIx
-gcK
-gcK
-gcK
-ktB
+ezX
+ezX
+ezX
+ezX
+ezX
+ezX
+ezX
+ezX
+ezX
+ezX
 gcK
 gcK
 gcK
@@ -53679,8 +53674,8 @@ wVT
 fFC
 sAH
 ezX
-ezX
-ezX
+adq
+adq
 ezX
 gcK
 gcK
@@ -53929,8 +53924,8 @@ gcK
 gcK
 gcK
 ezX
-ezX
-ezX
+adq
+adq
 ezX
 rXb
 wVT
@@ -54187,7 +54182,7 @@ gcK
 gcK
 ezX
 ajN
-aJh
+fFC
 aVY
 wVT
 wVT

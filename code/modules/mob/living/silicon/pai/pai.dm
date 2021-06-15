@@ -12,6 +12,9 @@
 	layer = BELOW_MOB_LAYER
 	var/obj/item/instrument/piano_synth/internal_instrument
 	silicon_privileges = PRIVILEDGES_PAI
+	light_system = MOVABLE_LIGHT
+	light_range = 5
+	light_on = FALSE
 
 	var/network = "ss13"
 	var/obj/machinery/camera/current = null
@@ -76,7 +79,6 @@
 
 	mobility_flags = NONE
 	var/silent = FALSE
-	var/brightness_power = 5
 
 	var/icon/custom_holoform_icon
 

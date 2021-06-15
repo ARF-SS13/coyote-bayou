@@ -171,7 +171,7 @@ Contains:
 	hardsuit_type = "ert_commander"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 80, "wound" = 30)
 	strip_delay = 130
-	brightness_on = 7
+	light_range = 7
 	resistance_flags = ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/Initialize()
@@ -238,7 +238,7 @@ Contains:
 	item_state = "hardsuit0-ert_commander-alert"
 	hardsuit_type = "ert_commander-alert"
 	armor = list("tier" = 9, "energy" = 50, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 50)
-	brightness_on = 8
+	light_range = 8
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert
@@ -357,7 +357,7 @@ Contains:
 	icon_state = "carp_helm"
 	item_state = "syndicate"
 	armor = list("linemelee" = -50, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 75, "fire" = 60, "acid" = 75, "wound" = 5)	//As whimpy as a space carp
-	brightness_on = 0 //luminosity when on
+	light_range = 0 //luminosity when on
 	actions_types = list()
 	mutantrace_variation = NONE
 

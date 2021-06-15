@@ -2154,6 +2154,7 @@
 
 //Misc reagents
 
+/*
 /datum/reagent/romerol
 	name = "Romerol"
 	// the REAL zombie powder
@@ -2175,6 +2176,7 @@
 		var/obj/item/organ/zombie_infection/nodamage/ZI = new()
 		ZI.Insert(H)
 	..()
+*/
 
 /datum/reagent/magillitis
 	name = "Magillitis"

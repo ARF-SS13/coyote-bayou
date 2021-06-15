@@ -42,7 +42,11 @@
 	strip_delay = 80
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 100, "acid" = 75, "wound" = 10)
 	resistance_flags = FIRE_PROOF
-	var/brightness_on = 4 //luminosity when the light is on
+	light_system = MOVABLE_LIGHT
+	light_range = 4
+	light_power = 0.8
+	light_color = "#FFCC66"
+	light_on = FALSE
 	var/on = FALSE
 	var/light_overlay = "envirohelm-light"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -58,10 +62,7 @@
 		add_overlay(light_overlay)
 	user.update_inv_head() //So the mob overlay updates
 
-	if(on)
-		set_light(brightness_on, 0.8, "#FFCC66")
-	else
-		set_light(0)
+	set_light_on(on)
 
 	for(var/X in actions)
 		var/datum/action/A=X
