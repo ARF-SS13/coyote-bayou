@@ -813,11 +813,10 @@
 		spear.throw_at(owner, 10, 2, owner)
 
 
-/obj/item/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage/blood
+/obj/item/gun/ballistic/revolver/single_shotgun/arcane_barrage/blood
 	name = "blood bolt barrage"
 	desc = "Blood for blood."
 	color = "#ff0000"
-	guns_left = 24
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage/blood
 	fire_sound = 'sound/magic/wand_teleport.ogg'
 	item_flags = NEEDS_PERMIT | NOBLUDGEON | DROPDEL
