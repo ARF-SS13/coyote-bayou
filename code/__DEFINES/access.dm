@@ -84,7 +84,11 @@
 
 #define ACCESS_BOS			120 //general BOS access
 #define ACCESS_NCR			121 //general NCR access
-#define ACCESS_DEN			122	//general den access
+
+#define ACCESS_DEN			87	
+/*general den access. This one has the same number as the line it's on, the rest should
+also be like that but I can't be arsed to go back and change them all*/
+
 #define ACCESS_LEGION		123	//general legion access
 #define ACCESS_FOLLOWER		124	//general followers access
 #define ACCESS_KHAN			125	//general khan access

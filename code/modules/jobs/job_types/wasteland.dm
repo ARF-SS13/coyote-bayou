@@ -360,7 +360,8 @@ Raider
 	/datum/outfit/loadout/raider_mafia,
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
-	/datum/outfit/loadout/raider_legion)
+	/datum/outfit/loadout/raider_legion
+	)
 
 /datum/outfit/job/wasteland/f13raider
 	name = "Outlaw"
@@ -547,6 +548,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/widowmaker=1)
 
+
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
@@ -695,7 +697,160 @@ Raider
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 
+
+/datum/job/wasteland/f13enforcer
+	title = "Den Mob Enforcer"
+	flag = F13ENFORCER
+	faction = "Wastelander"
+	social_faction = "Raiders"
+	total_positions = 6
+	spawn_positions = 6
+	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
+	supervisors = "The Boss."
+	selection_color = "#ff4747"
+	exp_requirements = 600
+	exp_type = EXP_TYPE_OUTLAW
+	
+	outfit = /datum/outfit/job/wasteland/f13enforcer
+
+	access = list(ACCESS_DEN)
+	minimal_access = list(ACCESS_DEN)
+
+	loadout_options = list(
+							/datum/outfit/loadout/mrwhite,
+							/datum/outfit/loadout/hitman,
+							/datum/outfit/loadout/bodyguard)
+
+					
+
+
+/datum/outfit/job/wasteland/f13enforcer
+	name = "Den Mob Enforcer"
+	jobtype = /datum/job/wasteland/f13enforcer
+
+	id = /obj/item/card/id/dentattoo
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/switchblade
+	r_pocket = /obj/item/flashlight/seclite
+	uniform = /obj/item/clothing/under/suit/white
+	backpack =	/obj/item/storage/backpack/satchel
+	satchel =  /obj/item/storage/backpack/satchel
+	gloves =  /obj/item/clothing/gloves/color/white
+	head = /obj/item/clothing/head/beret/durathread
+	mask =  /obj/item/clothing/mask/bandana/durathread
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/restraints/handcuffs=1, \
+		/obj/item/storage/bag/money/small/wastelander)
+
+/datum/outfit/job/wasteland/f13enforcer/pre_equip(mob/living/carbon/human/H)
+	..()
+	r_hand = /obj/item/book/granter/trait/selection
+
+/datum/outfit/job/wasteland/f13enforcer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	if(!H.gang)
+		var/datum/gang/denmob/DM = GLOB.denmob
+		GLOB.all_gangs |= DM
+		DM.add_member(H)
+		H.gang = DM
+
+/datum/outfit/loadout/mrwhite
+	name = "Chem Cook"
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
+	backpack_contents = list(
+							/obj/item/reagent_containers/glass/beaker/large=2, \
+							/obj/item/book/granter/trait/chemistry=1, \
+							/obj/item/book/granter/trait/lowsurgery=1, \
+							/obj/item/ammo_box/magazine/m10mm_adv/simple=2 \
+							)
+
+/datum/outfit/loadout/hitman
+	name = "Hitman"
+	r_hand = /obj/item/gun/ballistic/automatic/mini_uzi
+	suit = /obj/item/clothing/suit/armor/vest
+	backpack_contents = list(
+						/obj/item/ammo_box/magazine/uzim9mm=3, \
+						/obj/item/suppressor=1
+						)
+
+/datum/outfit/loadout/bodyguard
+	name = "Bodyguard"
+	r_hand = /obj/item/gun/ballistic/shotgun/riot
+	suit = /obj/item/clothing/suit/armor/vest
+	backpack_contents = list(
+						/obj/item/ammo_box/shotgun/buck=2, \
+						/obj/item/kitchen/knife/combat=1
+							)
+
+							
+
+
+/datum/job/wasteland/f13mobboss
+	title = "Den Mob Boss"
+	flag = F13MOBBOSS
+	faction = "Wastelander"
+	social_faction = "Raiders"
+	total_positions = 1
+	spawn_positions = 1
+	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
+	supervisors = "Whatever god you pray to. Sky's the limit!"
+	selection_color = "#ff4747"
+	exp_requirements = 1000
+	exp_type = EXP_TYPE_OUTLAW
+	
+	outfit = /datum/outfit/job/wasteland/f13mobboss
+
+	access = list(ACCESS_DEN)
+	minimal_access = list(ACCESS_DEN)
+
+/datum/outfit/job/wasteland/f13mobboss
+	name = "Den Mob Boss"
+	jobtype = /datum/job/wasteland/f13mobboss
+
+	id = /obj/item/card/id/dentattoo
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/switchblade
+	r_pocket = /obj/item/flashlight/seclite
+	uniform = /obj/item/clothing/under/suit/white
+	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	backpack =	/obj/item/storage/backpack/satchel
+	satchel = 	/obj/item/storage/backpack/satchel
+	gloves = /obj/item/clothing/gloves/color/white
+	head = /obj/item/clothing/head/caphat/beret/white
+	mask = /obj/item/clothing/mask/bandana/durathread
+	suit_store = /obj/item/gun/ballistic/automatic/p90/worn
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/restraints/handcuffs=1, \
+		/obj/item/ammo_box/magazine/m10mm_p90=2, \
+		/obj/item/storage/bag/money/small/raider/mobboss)	
+
+/datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H)
+	..()
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+
+/datum/outfit/job/wasteland/f13mobboss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	if(!H.gang)
+		var/datum/gang/denmob/DM = GLOB.denmob
+		GLOB.all_gangs |= DM
+		DM.add_member(H)
+		H.gang = DM
+	
 //vigilante
+
 
 /datum/job/wasteland/f13vigilante
 	title = "Vigilante"
@@ -715,6 +870,7 @@ Raider
 							/datum/outfit/loadout/desert_ranger,
 							/datum/outfit/loadout/bounty_hunter,
 							/datum/outfit/loadout/retired_ranger)
+		
 
 /datum/outfit/job/wasteland/f13vigilante
 	name = "Vigilante"

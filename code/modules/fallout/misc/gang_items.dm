@@ -87,6 +87,19 @@
 	cost = 100
 	item_path = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored
 
+/datum/gang_item/clothing/raiderpa
+	name = "Salvaged Raider Power Armor"
+	id = "raider_power_armor"
+	cost = 1600
+	item_path = /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
+
+/datum/gang_item/clothing/raiderpa_helmet
+	name = "Salvaged Raider Power Armor Helmet"
+	id = "raider_power_armor_helmet"
+	cost = 800
+	item_path = /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
+
+
 /datum/gang_item/clothing/prostitute_dress
 	name = "Prostitute dress"
 	id = "prostitute_dress"
@@ -184,6 +197,18 @@
 	id = "greasegun"
 	cost = 150
 	item_path = /obj/item/gun/ballistic/automatic/greasegun
+
+/datum/gang_item/weapon/type17
+	name = "Type 17 Pistol"
+	id = "type17"
+	cost = 50
+	item_path = /obj/item/gun/ballistic/automatic/pistol/type17
+
+/datum/gang_item/weapon/type93
+	name = "Worn Type 56"
+	id = "worntype93"
+	cost = 700
+	item_path = /obj/item/gun/ballistic/automatic/type93/worn
 
 
 ///////////////////
