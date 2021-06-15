@@ -186,11 +186,11 @@
 	if(..())
 		return
 	glowth = new(owner)
-	glowth.set_light(glow, glow, dna.features["mcolor"])
+	glowth.set_light_range_power_color(glow, glow, dna.features["mcolor"])
 
 /datum/mutation/human/glow/modify(mob/living/carbon/human/owner)
 	if(glowth)
-		glowth.set_light(glow + GET_MUTATION_POWER(src) , glow + GET_MUTATION_POWER(src), dna.features["mcolor"])
+		glowth.set_light_range_power_color(glow + GET_MUTATION_POWER(src) , glow + GET_MUTATION_POWER(src), dna.features["mcolor"])
 
 /datum/mutation/human/glow/on_losing(mob/living/carbon/human/owner)
 	if(..())

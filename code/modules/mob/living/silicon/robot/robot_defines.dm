@@ -71,9 +71,12 @@
 	var/tonermax = 40
 
 	var/lamp_max = 10 //Maximum brightness of a borg lamp. Set as a var for easy adjusting.
-	var/lamp_intensity = 0 //Luminosity of the headlamp. 0 is off. Higher settings than the minimum require power.
+	light_system = MOVABLE_LIGHT
+	light_range = 0 //Luminosity of the headlamp. 0 is off. Higher settings than the minimum require power.
 	light_color = "#FFCC66"
 	light_power = 0.8
+	light_on = FALSE
+	var/lamp_intensity = 0 //Luminosity of the headlamp. 0 is off. Higher settings than the minimum require power.
 	var/lamp_cooldown = 0 //Flag for if the lamp is on cooldown after being forcibly disabled.
 
 	var/sight_mode = 0
