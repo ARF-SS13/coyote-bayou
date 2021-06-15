@@ -64,16 +64,16 @@
 /datum/outfit/job/wasteland/enclavesgt
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
-	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
+	backpack = /obj/item/storage/backpack/satchel/enclave
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
-	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	uniform =		/obj/item/clothing/under/f13/navy
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave
-	suit_store =  	/obj/item/gun/energy/laser/plasma/carbine
+	suit_store =  	/obj/item/gun/energy/laser/plasma
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
@@ -90,6 +90,61 @@
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+
+/datum/job/wasteland/enclavesci
+	title = "Enclave Scientist"
+	flag = F13USSCIENTIST
+	faction = "Enclave"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
+	forbids = ""
+	enforces = ""
+	supervisors = "the United States Government."
+	selection_color = "#162b2c"
+	exp_requirements = 1400
+	exp_type = EXP_TYPE_FALLOUT
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
+
+	outfit = /datum/outfit/job/wasteland/enclavesci
+
+/datum/outfit/job/wasteland/enclavesci
+	name = "Enclave Scientist"
+	jobtype = /datum/job/wasteland/enclavesci
+	backpack = /obj/item/storage/backpack/satchel/leather
+	head = 			/obj/item/clothing/head/helmet/f13/envirosuit
+	ears = 			/obj/item/radio/headset/headset_enclave
+	glasses = 		/obj/item/clothing/glasses/night
+	mask =			/obj/item/clothing/mask/breath/medical
+	gloves = 		/obj/item/clothing/gloves/color/latex/nitrile
+	uniform =		/obj/item/clothing/under/f13/enclave/science
+	suit = 			/obj/item/clothing/suit/armor/f13/environmentalsuit
+	belt = 			/obj/item/storage/belt/medical
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	id = 			/obj/item/card/id/dogtag/enclave
+	suit_store =  	/obj/item/tank/internals/oxygen
+
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/grenade/chem_grenade/cleaner=1,
+		/obj/item/pda=1,
+		/obj/item/gun/energy/laser/ultra_pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/storage/bag/money/small/wastelander=1,
+		/obj/item/kitchen/knife/combat=1
+		)
+
+/datum/outfit/job/wasteland/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) //enclave scientists can do pretty much everything, they've got the knowhow preserved by the enclave. a valuable asset to be defended
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)          //ditto
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)    //ditto
+	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"
@@ -113,14 +168,14 @@
 /datum/outfit/job/wasteland/enclavelt
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/wasteland/enclavelt
-	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/power_armor/advanced
+	backpack = /obj/item/storage/backpack/satchel/enclave
+	head = 			/obj/item/clothing/head/donor/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
+	mask = 			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave_officer
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave
 	suit_store =  	/obj/item/gun/energy/laser/plasma/glock/extended
 

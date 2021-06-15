@@ -46,7 +46,8 @@
 	hitsound = 'sound/weapons/tap.ogg'
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("tier" = 1,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	brightness_on = 2 //luminosity when on
+	light_system = MOVABLE_LIGHT
+	light_range = 2 //luminosity when on
 	flags_cover = HEADCOVERSEYES
 	heat = 1000
 
@@ -63,7 +64,7 @@
 		location.hotspot_expose(700, 1)
 
 /obj/item/clothing/head/hardhat/cakehat/turn_on()
-	..()
+	. = ..()
 	force = 15
 	throwforce = 15
 	damtype = BURN
@@ -71,7 +72,7 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/hardhat/cakehat/turn_off()
-	..()
+	. = ..()
 	force = 0
 	throwforce = 0
 	damtype = BRUTE
@@ -79,7 +80,7 @@
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/clothing/head/hardhat/cakehat/get_temperature()
-	return on * heat
+	return light_on * heat
 /*
  * Ushanka
  */
@@ -120,7 +121,8 @@
 	hat_type = "pumpkin"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	armor = list("tier" = 1,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	brightness_on = 2 //luminosity when on
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 	flags_cover = HEADCOVERSEYES
 
 /*
@@ -158,7 +160,8 @@
 	hat_type = "reindeer"
 	flags_inv = 0
 	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	brightness_on = 1 //luminosity when on
+	light_system = MOVABLE_LIGHT
+	light_range = 1
 	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/reindeer

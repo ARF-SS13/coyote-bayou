@@ -218,7 +218,7 @@
 			var/obj/item/flashlight/seclite/light = weapon.gun_light
 			light.forceMove(get_turf(weapon))
 			light.burn()
-			weapon.gun_light = null
+			weapon.set_gun_light(null)
 			weapon.update_gunlight()
 			QDEL_NULL(weapon.alight)
 			visible_message("<span class='danger'>[light] on [O] flickers out and disintegrates!</span>")

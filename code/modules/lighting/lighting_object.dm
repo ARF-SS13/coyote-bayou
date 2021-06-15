@@ -8,8 +8,8 @@
 	color            = null //we manually set color in init instead
 	plane            = LIGHTING_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	layer            = LIGHTING_LAYER
 	invisibility     = INVISIBILITY_LIGHTING
+	vis_flags = VIS_HIDE
 
 	var/needs_update = FALSE
 	var/turf/myturf
@@ -25,7 +25,8 @@
 	if (myturf.lighting_object)
 		qdel(myturf.lighting_object, force = TRUE)
 	myturf.lighting_object = src
-	myturf.luminosity = 0
+	if (myturf.sunlight_state == NO_SUNLIGHT)
+		myturf.luminosity = 0
 
 	for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
 		S.update_starlight()

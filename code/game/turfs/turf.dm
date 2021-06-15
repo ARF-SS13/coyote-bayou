@@ -26,8 +26,10 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
-	var/turf_light_range = 0 // Used for the nightcycle subsystem
-	var/turf_light_power = 0 // Used for the nightcycle subsystem
+	/// Wether this turf is affected by sunlight, neighbor to turfs that are, or neither.
+	var/sunlight_state = NO_SUNLIGHT
+	/// If neighbor to affected turfs, which neighbors. Uses smoothing adjacencies values.
+	var/border_neighbors = null
 
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
@@ -38,11 +40,27 @@
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
 
-/turf/vv_edit_var(var_name, new_value)
+	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
+	var/dynamic_lumcount = 0 // Not yet added to this codebase.
+
+	///Which directions does this turf block the vision of, taking into account both the turf's opacity and the movable opacity_sources.
+	var/directional_opacity = NONE
+	///The turf's opacity were there no opacity sources.
+	var/base_opacity = FALSE
+	///Lazylist of movable atoms providing opacity sources.
+	var/list/atom/movable/opacity_sources
+
+
+/turf/vv_edit_var(var_name, var_value)
 	var/static/list/banned_edits = list("x", "y", "z")
 	if(var_name in banned_edits)
 		return FALSE
-	. = ..()
+	switch(var_name)
+		if(NAMEOF(src, base_opacity))
+			set_base_opacity(var_value)
+			return  TRUE
+	return ..()
+
 
 /turf/Initialize(mapload)
 	SHOULD_CALL_PARENT(FALSE)
@@ -63,12 +81,23 @@
 		queue_smooth(src)
 	visibilityChanged()
 
+	if(initial(opacity)) // Could be changed by the initialization of movable atoms in the turf.
+		base_opacity = initial(opacity)
+		directional_opacity = ALL_CARDINALS
+
 	for(var/atom/movable/AM in src)
 		Entered(AM)
 
 	var/area/A = loc
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
+	else
+		switch(sunlight_state)
+			if(SUNLIGHT_SOURCE)
+				setup_sunlight_source()
+			if(SUNLIGHT_BORDER)
+				border_neighbors = null
+				smooth_sunlight_border()
 
 	if(requires_activation)
 		CALCULATE_ADJACENT_TURFS(src)
@@ -84,9 +113,6 @@
 	if(T)
 		T.multiz_turf_new(src, UP)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, UP)
-
-	if (opacity)
-		has_opaque_atom = TRUE
 
 	// apply materials properly from the default custom_materials value
 	set_custom_materials(custom_materials)
@@ -280,10 +306,6 @@
 	if(explosion_level && AM.ex_check(explosion_id))
 		AM.ex_act(explosion_level)
 
-	// If an opaque movable atom moves around we need to potentially update visibility.
-	if (AM.opacity)
-		has_opaque_atom = TRUE // Make sure to do this before reconsider_lights(), incase we're on instant updates. Guaranteed to be on in this case.
-		reconsider_lights()
 
 /turf/open/Entered(atom/movable/AM)
 	..()

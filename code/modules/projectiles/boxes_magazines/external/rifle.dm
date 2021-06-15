@@ -26,7 +26,8 @@
 
 /obj/item/ammo_box/magazine/autopipe
 	name = "pipe rifle ammo belt (.357)"
-	icon_state = "autopipe_mag"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "autopipe_belt"
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 30
@@ -37,7 +38,7 @@
 
 /obj/item/ammo_box/magazine/autopipe/update_icon()
 	..()
-	icon_state = "autopipe_mag-[round(ammo_count(),15)]"
+	icon_state = "autopipe_belt-[round(ammo_count(),15)]"
 
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"

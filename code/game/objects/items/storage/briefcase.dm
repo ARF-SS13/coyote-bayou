@@ -98,7 +98,6 @@
 	new /obj/item/suppressor(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
 	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
-	new /obj/item/ammo_box/c10mm/soporific(src)
 	new /obj/item/clothing/under/suit/black(src)
 	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/suit/toggle/lawyer/black/syndie(src)

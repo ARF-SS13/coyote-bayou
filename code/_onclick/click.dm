@@ -173,7 +173,11 @@
 				continue
 
 			if(!(SEND_SIGNAL(target.loc, COMSIG_ATOM_CANREACH, next) & COMPONENT_BLOCK_REACH) && target.loc.canReachInto(src, ultimate_target, next, view_only, tool))
-				next += target.loc
+				if(isturf(target.loc))
+					var/atom/movable/movable_target = target
+					next += movable_target.locs
+				else
+					next += target.loc
 
 		checking = next
 	return FALSE

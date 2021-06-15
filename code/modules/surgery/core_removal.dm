@@ -5,7 +5,7 @@
 	possible_locs = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_R_LEG,BODY_ZONE_L_LEG,BODY_ZONE_CHEST,BODY_ZONE_HEAD)
 	lying_required = FALSE
 	ignore_clothes = TRUE
-	requires_trait = 2
+	requires_trait = 1
 
 /datum/surgery/core_removal/can_start(mob/user, mob/living/target, obj/item/tool)
 	if(target.stat == DEAD)

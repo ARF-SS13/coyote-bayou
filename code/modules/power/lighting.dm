@@ -374,9 +374,9 @@
 		on_gs = on
 		if(on)
 			static_power_used = brightness * 20 * (hijacked ? 2 : 1) //20W per unit luminosity
-			addStaticPower(static_power_used, STATIC_LIGHT)
+			addStaticPower(static_power_used, CHANNEL_STATIC_LIGHT)
 		else
-			removeStaticPower(static_power_used, STATIC_LIGHT)
+			removeStaticPower(static_power_used, CHANNEL_STATIC_LIGHT)
 
 /obj/machinery/light/update_atom_colour()
 	. = ..()

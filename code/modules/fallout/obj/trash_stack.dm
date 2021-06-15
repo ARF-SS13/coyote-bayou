@@ -11,7 +11,7 @@
 
 /obj/item/storage/trash_stack/proc/initialize_lootable_trash()
 	garbage_list = list(GLOB.trash_ammo, GLOB.trash_chem, GLOB.trash_clothing, GLOB.trash_craft,
-						GLOB.trash_food, GLOB.trash_gun, GLOB.trash_misc, GLOB.trash_money,
+						GLOB.trash_gun, GLOB.trash_misc, GLOB.trash_money,
 						GLOB.trash_part, GLOB.trash_tool)
 	lootable_trash = list() //we are setting them to an empty list so you can't double the amount of stuff
 	for(var/i in garbage_list)

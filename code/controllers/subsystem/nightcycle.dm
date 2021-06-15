@@ -11,113 +11,247 @@
 #define CYCLE_SUNSET 	783000
 #define CYCLE_NIGHTTIME 810000
 
-GLOBAL_LIST_INIT(nightcycle_turfs, typecacheof(list(
-	/turf/open/indestructible/ground/outside,
-	/turf/open/floor/plating/f13/outside)))
+#define SUNRISE 0
+#define MORNING 1
+#define DAYTIME 2
+#define AFTERNOON 3
+#define SUNSET 4
+#define NIGHTTIME 5
+#define DAY_END 6
 
 SUBSYSTEM_DEF(nightcycle)
 	name = "Day/Night Cycle"
-	wait = 5 //5 ticks in between checks, this thing doesn't need to fire so fast, as it's tied to gameclock not its own ticker
-	//This will also give the game time to light up the columns and not choke
-	//var/flags = 0			//see MC.dm in __DEFINES Most flags must be set on world start to take full effect. (You can also restart the mc to force them to process again
-	can_fire = TRUE
-	//var/list/timeBrackets = list("SUNRISE" = , "MORNING" = , "DAYTIME" = , "EVENING" = , "" = ,)
-	var/currentTime
-	var/sunColour
-	var/sunPower
-	var/sunRange
-	var/currentColumn
-	var/working = 0
-	var/doColumns //number of columns to do at a time
-	var/newTime
+	wait = 10 SECONDS
+	// Control vars
+	var/current_time = DAYTIME
+	var/current_sun_color = "#FFFFFF"
+	var/current_sun_power = 230
+
+	// Variables for badmining
+	var/sunrise_sun_color = "#ffd1b3"
+	var/sunrise_sun_power = 80
+	var/morning_sun_color = "#fff2e6"
+	var/morning_sun_power = 160
+	var/daytime_sun_color = "#FFFFFF"
+	var/daytime_sun_power = 230
+	var/afternoon_sun_color = "#fff2e6"
+	var/afternoon_sun_power = 160
+	var/sunset_sun_color = "#ffcccc"
+	var/sunset_sun_power = 80
+	var/nighttime_sun_color = "#00111a"
+	var/nighttime_sun_power = 10
+	/// How does it take to get darker or brighter each step.
+	var/cycle_transition_time = 30 SECONDS
+	/// If defined with any number besides null it will determine how long each cycle lasts.
+	var/custom_cycle_wait = null
+	var/last_custom_cycle = 0
+
+	// Light objects
+	var/atom/movable/sunlight/sunlight_source_object = new()
+	var/list/sunlight_border_objects = list()
+
+
+/datum/controller/subsystem/nightcycle/Initialize(start_timeofday)
+	. = ..()
+	sunlight_source_object.alpha = current_sun_power
+	sunlight_source_object.color = current_sun_color
+
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
-	if(nextBracket())
-		working = 1
-		currentColumn = 1
+	var/new_time
+	
+	if (!isnull(custom_cycle_wait))
+		if(last_custom_cycle + custom_cycle_wait >= world.time)
+			return
+		last_custom_cycle = world.time
+		new_time = (current_time + 1) % DAY_END
+	else
+		switch (station_time())
+			if (CYCLE_SUNRISE to CYCLE_MORNING)
+				new_time = SUNRISE
+			if (CYCLE_MORNING to CYCLE_DAYTIME)
+				new_time = MORNING
+			if (CYCLE_DAYTIME to CYCLE_AFTERNOON)
+				new_time = DAYTIME
+			if (CYCLE_AFTERNOON to CYCLE_SUNSET)
+				new_time = AFTERNOON
+			if (CYCLE_SUNSET to CYCLE_NIGHTTIME)
+				new_time = SUNSET
+			else
+				new_time = NIGHTTIME
+		if (new_time == current_time)
+			return
 
-	CHECK_TICK
-	if (working)
-		doWork()
-
-/datum/controller/subsystem/nightcycle/proc/nextBracket()
-	var/Time = station_time()
-
-	switch (Time)
-		if (CYCLE_SUNRISE 	to CYCLE_MORNING - 1)
-			newTime = "SUNRISE"
-		if (CYCLE_MORNING 	to CYCLE_DAYTIME 	- 1)
-			newTime = "MORNING"
-		if (CYCLE_DAYTIME 	to CYCLE_AFTERNOON	- 1)
-			newTime = "DAYTIME"
-		if (CYCLE_AFTERNOON to CYCLE_SUNSET 	- 1)
-			newTime = "AFTERNOON"
-		if (CYCLE_SUNSET 	to CYCLE_NIGHTTIME - 1)
-			newTime = "SUNSET"
+	switch (new_time)
+		if (SUNRISE)
+			current_sun_color = sunrise_sun_color
+			current_sun_power = sunrise_sun_power
+		if (MORNING)
+			current_sun_color = morning_sun_color
+			current_sun_power = morning_sun_power
+			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)
+				lamp.icon_state = "[initial(lamp.icon_state)]"
+				lamp.set_light_on(FALSE)
+		if (DAYTIME)
+			current_sun_color = daytime_sun_color
+			current_sun_power = daytime_sun_power
+		if (AFTERNOON)
+			current_sun_color = afternoon_sun_color
+			current_sun_power = afternoon_sun_power
+		if (SUNSET)
+			current_sun_color = sunset_sun_color
+			current_sun_power = sunset_sun_power
+			for(var/obj/structure/lamp_post/lamp as anything in GLOB.lamppost)
+				lamp.icon_state = "[initial(lamp.icon_state)]-on"
+				lamp.set_light_on(TRUE)
+		if(NIGHTTIME)
+			current_sun_color = nighttime_sun_color
+			current_sun_power = nighttime_sun_power
 		else
-			newTime = "NIGHTTIME"
+			CRASH("Invalid new_time returned from station_time()")
 
-	if (newTime != currentTime)
-		currentTime = newTime
-		updateLight(currentTime)
-		if(newTime == "MORNING") //Only change lamps when we need to
-			for(var/obj/structure/lamp_post/LP in GLOB.lamppost)
-				LP.icon_state = "[initial(LP.icon_state)]"
-				LP.set_light(0)
-		else if(newTime == "SUNSET")
-			for(var/obj/structure/lamp_post/LP in GLOB.lamppost)
-				LP.icon_state = "[initial(LP.icon_state)]-on"
-				LP.set_light(LP.on_range,LP.on_power,LP.light_color)
-		. = TRUE
+	current_time = new_time
 
-/datum/controller/subsystem/nightcycle/proc/doWork()
-	var/list/currentTurfs = list()
-	var/x = min(currentColumn + doColumns, world.maxx)
-//	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
-	//HACK. Z level 2 is always surface and nobody sets their fucking traits correctly.
-	//This should be done with a ztrait for surface/subsurface
-	var/z = 2
-	var/start_turf = locate(x,world.maxy,z)
-	var/end_turf = locate(x,1,z)
-
-//	currentTurfs = block(locate(currentColumn,1,z), locate(x,world.maxy,z)) //this is probably brutal on the overhead
-	currentTurfs = getline(start_turf,end_turf)
-	for (var/turf/T in currentTurfs)
-		if(T.turf_light_range && !QDELETED(T)) //Turfs are qdeleted on changeturf
-			T.set_light(T.turf_light_range, sunPower, sunColour)
-
-	currentColumn = x + 1
-	if (currentColumn > world.maxx)
-		currentColumn = 1
-		working = 0
-		return
-
-/datum/controller/subsystem/nightcycle/proc/updateLight(newTime)
-	switch (newTime)
-		if ("SUNRISE")
-			sunColour = "#ffd1b3"
-			sunPower = 0.3
-		if ("MORNING")
-			sunColour = "#fff2e6"
-			sunPower = 0.5
-		if ("DAYTIME")
-			sunColour = "#FFFFFF"
-			sunPower = 0.75
-		if ("AFTERNOON")
-			sunColour = "#fff2e6"
-			sunPower = 0.5
-		if ("SUNSET")
-			sunColour = "#ffcccc"
-			sunPower = 0.3
-		if("NIGHTTIME")
-			sunColour = "#00111a"
-			sunPower = 0.20
+	var/atom/movable/sunlight/light_object = sunlight_source_object
+	animate(light_object, alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
+	for(var/key in sunlight_border_objects)
+		animate(sunlight_border_objects[key], alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
 
 
+/datum/controller/subsystem/nightcycle/proc/get_border_object(object_key)
+	. = sunlight_border_objects["[object_key]"]
+	if(!.)
+		. = new /atom/movable/sunlight(null, current_sun_power, current_sun_color, object_key)
+		sunlight_border_objects["[object_key]"] = .
 
+
+/atom/movable/sunlight
+	name = ""
+	icon = 'icons/effects/light_overlays/sunlight_source.dmi'
+	icon_state = "light"
+	move_resist = INFINITY
+	plane = O_LIGHTING_VISUAL_PLANE
+	layer = SUNLIGHT_LAYER
+	appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	invisibility = INVISIBILITY_LIGHTING
+	alpha = 0
+	vis_flags = NONE
+
+
+/atom/movable/sunlight/Initialize(mapload, alpha = null, color = null, neighbors = null)
+	. = ..()
+	if(!isnull(neighbors))
+		icon = 'icons/effects/light_overlays/border_lights.dmi'
+		icon_state = "[neighbors]"
+	if(!isnull(alpha))
+		src.alpha = alpha
+	if(!isnull(color))
+		src.color = color
+
+
+///Proc to initialize sunlight source turfs and affect non-source neighbors.
+/turf/proc/setup_sunlight_source()
+	vis_contents += SSnightcycle.sunlight_source_object
+	luminosity = 1
+	for(var/dir in GLOB.alldirs)
+		var/turf/neighbor = get_step(src, dir)
+		if(!neighbor || neighbor.sunlight_state != NO_SUNLIGHT)
+			continue
+		neighbor.sunlight_state = SUNLIGHT_BORDER
+		if(neighbor.flags_1 & INITIALIZED_1)
+			neighbor.smooth_sunlight_border()
+
+
+#define SUNLIGHT_ADJ_IN_DIR(source, junction, direction, direction_flag) \
+	do { \
+		var/turf/neighbor = get_step(source, direction); \
+		if(!neighbor || neighbor.sunlight_state != SUNLIGHT_SOURCE) { \
+			continue; \
+		}; \
+		junction |= direction_flag; \
+	} while(FALSE)
+
+/// Scans neighbors for sunlight sources and sets up the proper object to handle it.
+/turf/proc/smooth_sunlight_border()
+	var/new_junction = NONE
+	for(var/direction in GLOB.cardinals) //Cardinal case first.
+		SUNLIGHT_ADJ_IN_DIR(src, new_junction, direction, direction)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHWEST, NORTHWEST_JUNCTION)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, NORTHEAST, NORTHEAST_JUNCTION)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
+	SUNLIGHT_ADJ_IN_DIR(src, new_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
+	if(new_junction == border_neighbors)
+		return // No change.
+	if(!isnull(border_neighbors)) // Different and non-null, there was a change.
+		vis_contents -= SSnightcycle.get_border_object(border_neighbors)
+	if(new_junction == NONE)
+		if(sunlight_state == SUNLIGHT_BORDER)
+			sunlight_state = NO_SUNLIGHT
+		if(lighting_object)
+			luminosity = 0 // Luminosity now depends on dynamic lighting.
+		return // No longer a sunlight border.
+	border_neighbors = new_junction
+	luminosity = 1
+	var/atom/movable/sunlight/light_object = SSnightcycle.get_border_object(new_junction)
+	vis_contents += light_object
+
+
+#define RE_SMOOTH_BORDER_NEIGHBORS(source) \
+	do { \
+		for(var/dir in GLOB.alldirs) { \
+			var/turf/neighbor = get_step(source, dir); \
+			if(!neighbor || neighbor.sunlight_state != SUNLIGHT_BORDER) { \
+				continue; \
+			} \
+			if(neighbor.flags_1 & INITIALIZED_1) { \
+				neighbor.smooth_sunlight_border(); \
+			} \
+		} \
+	} while(FALSE)
+
+/// Handles the cases of sunlight_state changing during ChangeTurf()
+/turf/proc/handle_sunlight_state_change(old_sunlight_state)
+	if(sunlight_state == old_sunlight_state)
+		CRASH("handle_sunlight_state_change() called without an actual change.")
+	switch(old_sunlight_state)
+		if(NO_SUNLIGHT)
+			switch(sunlight_state)
+				if(SUNLIGHT_SOURCE)
+					// The no-sunlight neighbors were turned into border during Initialize() already.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+				if(SUNLIGHT_BORDER)
+					CRASH("Turf changed from no-sunlight to border on ChangeTurf(). No turf should be border by default.")
+		if(SUNLIGHT_SOURCE)
+			switch(sunlight_state)
+				if(NO_SUNLIGHT)
+					// Have them decide whether they're still border or not.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+				if(SUNLIGHT_BORDER)
+					CRASH("Turf changed from sunlight-source to border on ChangeTurf(). No turf should be border by default.")
+		if(SUNLIGHT_BORDER)
+			switch(sunlight_state)
+				if(NO_SUNLIGHT)
+					sunlight_state = SUNLIGHT_BORDER
+					border_neighbors = null // This is already null by default, but eh.
+					smooth_sunlight_border() // Are we still a border neighbor?
+				if(SUNLIGHT_SOURCE)
+					// Only the no-sunlight neighbors were were updated during Initialize(). Let's update the rest.
+					RE_SMOOTH_BORDER_NEIGHBORS(src)
+
+
+#undef RE_SMOOTH_BORDER_NEIGHBORS
+#undef SUNLIGHT_ADJ_IN_DIR
 #undef CYCLE_SUNRISE
 #undef CYCLE_MORNING
 #undef CYCLE_DAYTIME
 #undef CYCLE_AFTERNOON
 #undef CYCLE_SUNSET
 #undef CYCLE_NIGHTTIME
+#undef SUNRISE
+#undef MORNING
+#undef DAYTIME
+#undef AFTERNOON
+#undef SUNSET
+#undef NIGHTTIME
+#undef DAY_END

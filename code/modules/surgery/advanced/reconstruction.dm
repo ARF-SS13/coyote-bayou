@@ -4,7 +4,7 @@
 	surgeries = list(/datum/surgery/advanced/reconstruction)
 
 /datum/surgery/advanced/reconstruction
-	name = "body reconstruction"
+	name = "Repair body tissue"
 	steps = list(/datum/surgery_step/incise,
 				/datum/surgery_step/incise,
 				/datum/surgery_step/retract_skin,

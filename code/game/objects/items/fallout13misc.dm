@@ -157,6 +157,10 @@
 	var/faction = null
 	var/removing
 
+/obj/item/flag/Initialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency, y_size = 1)
+
 /obj/item/flag/ncr
 	name = "NCR flag"
 	desc = "A flag with a two headed bear, the symbol of the New California Republic."

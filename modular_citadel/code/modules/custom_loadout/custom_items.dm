@@ -177,7 +177,7 @@
 	hat_type = "reindeer"
 	flags_inv = 0
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	brightness_on = 0 //luminosity when on
+	light_range = 0
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/santa/fluff

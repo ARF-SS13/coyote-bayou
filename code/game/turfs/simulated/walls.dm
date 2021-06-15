@@ -61,12 +61,14 @@
 	ScrapeAway()
 
 /turf/closed/wall/proc/break_wall()
-	new sheet_type(src, sheet_amount)
+	if(sheet_type)
+		new sheet_type(src, sheet_amount)
 	if(girder_type)
 		return new girder_type(src)
 
 /turf/closed/wall/proc/devastate_wall()
-	new sheet_type(src, sheet_amount)
+	if(sheet_type)
+		new sheet_type(src, sheet_amount)
 	if(girder_type)
 		new /obj/item/stack/sheet/metal(src)
 

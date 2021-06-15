@@ -760,10 +760,12 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
 
+/*
 /obj/item/book/granter/crafting_recipe/blueprint/caws
 	name = "h&k caws blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/caws)
+*/
 
 /obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine
 	name = "scout carbine blueprint"
@@ -868,6 +870,7 @@
 	name = "Private Diary"
 	desc = "Your private diary, reminding you of the knowledge you previously had."
 	granted_trait = null
+	pages_to_mastery = 0
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
 	var/list/choices = list("Chemistry","Craftsmanship","Melee Expert","Minor Surgery","Power Armor","Tinkerer","Trekking")

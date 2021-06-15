@@ -51,8 +51,7 @@
 //////////////////////////////////////////////////////////////////////
 
 /turf/open/indestructible/ground/outside
-	turf_light_range = 3
-	turf_light_power = 0.75
+	sunlight_state = SUNLIGHT_SOURCE
 	slowdown = 0.2
 
 /turf/open/indestructible/ground/outside/Initialize()

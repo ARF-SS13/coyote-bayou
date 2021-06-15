@@ -23,8 +23,8 @@
 	var/requires_trait = 1
 	//	0 = low, 1 = mid, 2 = high
 	//	(CMO biological/prewar knoweldge expert) MEDICALEXPERT
-	//	(Follower) Practitioner (Follower Admin) Practitioner_expert
-	//	(Scribe) scribe trained (Senior BOS scribe) cyberneticist, scribe trained (BOS Head Scribe) cyberneticist_expert
+	//	(Follower) Medical Graduate
+	//	(Senior BOS scribe) cyberneticist (BOS Head Scribe) cyberneticist & cyberneticist_expert
 	//	(Enclave Scientist) unethical practitioner
 	//	(Zetans?) abductor= "ABDUCTOR"
 
@@ -57,7 +57,7 @@
 		return FALSE
 		//
 
-/* Advanced biological and robotic surgeries */
+// Alien & Unethical surgeries
 
 	if(requires_trait== "ABDUCTOR") //Actual alien abductions
 		if(HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
@@ -71,6 +71,8 @@
 		else
 			return FALSE
 
+// Robotic surgeries
+
 	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation, robotic repairs.
 		if(HAS_TRAIT(user,TRAIT_CYBERNETICIST_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
@@ -83,31 +85,21 @@
 		else
 			return FALSE
 
-	if(requires_trait== "PRACTITIONER_2") //robotic brain surgery.
-		if(HAS_TRAIT(user,TRAIT_PRACTITIONER_EXPERT)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+// Medical Surgeries
+
+	if(requires_trait== "MEDICALEXPERT") // can do explicit cranial resuscitation.
+		if(HAS_TRAIT(user,TRAIT_MEDICALEXPERT)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
-	if(requires_trait== "SCRIBE_TRAINED") //same as practitioner with BoS flavor.
-		if(HAS_TRAIT(user,TRAIT_SCRIBE_TRAINED)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
-			return TRUE
-		else
-			return FALSE
-
-	if(requires_trait== "PRACTITIONER_1") //doctoring trait for followers, allows high surgeries on medium skill level.
-		if(HAS_TRAIT(user,TRAIT_PRACTITIONER)|| HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
+	if(requires_trait== "MEDICALGRADUATE") //doctoring trait for offmap tuition, bypasses at mid level knowledge.
+		if(HAS_TRAIT(user,TRAIT_MEDICALGRADUATE) || HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
 			return TRUE
 		else
 			return FALSE
 
 /* Biological anatomy patient surgeries*/
-
-	if(requires_trait== "MEDICALEXPERT")
-		if(HAS_TRAIT(user,TRAIT_MEDICALEXPERT)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
-			return TRUE
-		else
-			return FALSE
 
 	if(requires_trait>2)
 		if(HAS_TRAIT(user,TRAIT_SURGERY_HIGH)||HAS_TRAIT(user,TRAIT_ABDUCTOR_SCIENTIST_TRAINING))
@@ -238,8 +230,7 @@
 	name = "oasis surgery disk"
 	surgeries = list(	/datum/surgery/advanced/lobotomy,
 						/datum/surgery/advanced/pacify,
-						/datum/surgery/advanced/reconstruction,
-						/datum/surgery/advanced/brainwashing)
+						/datum/surgery/advanced/reconstruction)
 
 
 //INFO

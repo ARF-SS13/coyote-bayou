@@ -5,3 +5,4 @@
 	desc = "A structure used to provide a source of fresh water - nothing out of the ordinary."
 	icon_state = "wellwheel"
 	icon = 'icons/obj/Ritas.dmi'
+	bound_width = 64

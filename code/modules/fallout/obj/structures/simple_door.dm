@@ -11,15 +11,15 @@
 	desc = "It opens and closes - nothing out of the ordinary."
 	icon = 'icons/obj/doors/wastelanddoors.dmi'
 	icon_state = "house"
-	opacity = 1
-	density = 1
-	anchored = 1
+	opacity = TRUE
+	density = TRUE
+	anchored = TRUE
 	layer = CLOSED_DOOR_LAYER
 	explosion_block = 0.5
 	var/can_hold_padlock = FALSE
 	var/obj/item/lock_construct/padlock
 	var/door_type = "house"
-	var/opaque = 1
+	var/base_opacity = TRUE
 	var/manual_opened = 0
 	var/material_count = 10
 	var/hard_open = 1
@@ -31,11 +31,10 @@
 	var/opening_time = 2
 	var/closing_time = 4
 
-/obj/structure/simple_door/New(location)
-	..()
+/obj/structure/simple_door/Initialize()
+	. = ..()
 	icon_state = door_type
-	set_opacity(opaque)
-	return
+
 
 /obj/structure/simple_door/Destroy()
 	if(padlock)
@@ -93,7 +92,7 @@
 		flick("[door_type]closing", src)
 		sleep(closing_time)
 	icon_state = door_type
-	set_opacity(opaque)
+	set_opacity(base_opacity)
 	density = 1
 	moving = 0
 	layer = CLOSED_DOOR_LAYER
@@ -291,14 +290,16 @@
 	desc = "It still opens and closes."
 	icon_state = "brokenglass"
 	door_type = "brokenglass"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/glass
 	desc = "The glass is quite clean, someone took care of this door."
 	icon_state = "glass"
 	door_type = "glass"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/wood
@@ -324,7 +325,8 @@
 /obj/structure/simple_door/metal/store
 	icon_state = "store"
 	door_type = "store"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_disasemble = 1
 	can_hold_padlock = TRUE
 
@@ -346,7 +348,8 @@
 	door_type = "barred"
 	open_sound = "sound/f13machines/doorchainlink_open.ogg"
 	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/metal/ventilation
@@ -407,7 +410,8 @@
 	icon_state = "bunkerglass"
 	door_type = "bunkerglass"
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?
-	opaque = 0
+	opacity = FALSE
+	base_opacity = FALSE
 
 /obj/structure/simple_door/tent
 	name = "tent flap"

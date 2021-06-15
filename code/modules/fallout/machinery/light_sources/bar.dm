@@ -5,6 +5,7 @@
 	icon_state = "blue"
 	base_state = "blue"
 	icon = 'icons/fallout/machines/64x32.dmi'
+	bound_width = 64
 	fitting = "bulb"
 	brightness = 4
 	active_power_usage = 0
@@ -13,6 +14,12 @@
 	light_color = LIGHT_COLOR_BLUE
 	light_type = /obj/item/light/bulb
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF //Destroying these just causes issues. Let's fucking not
+
+
+/obj/machinery/light/sign/Initialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
+
 
 /obj/machinery/light/sign/update_icon()
 	return

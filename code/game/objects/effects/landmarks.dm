@@ -818,7 +818,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "US Private"
 
 /obj/effect/landmark/start/f13/usscientist
-	name = "US Scientist"
+	name = "Enclave Scientist"
 
 /obj/effect/landmark/start/f13/usengineer
 	name = "US Engineer"
