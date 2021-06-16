@@ -11,7 +11,7 @@
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."
-	selection_color = "#162b2c"
+	selection_color = "#323232"
 	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 600
 
@@ -53,7 +53,7 @@
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."
-	selection_color = "#162b2c"
+	selection_color = "#323232"
 	exp_requirements = 1200
 	exp_type = EXP_TYPE_FALLOUT
 	access = list(ACCESS_ENCLAVE)
@@ -102,7 +102,7 @@
 	forbids = "Leaving the base while still habitable"
 	enforces = ""
 	supervisors = "the United States Government."
-	selection_color = "#162b2c"
+	selection_color = "#323232"
 	exp_requirements = 1400
 	exp_type = EXP_TYPE_FALLOUT
 	access = list(ACCESS_ENCLAVE)
@@ -157,7 +157,7 @@
 	forbids = ""
 	enforces = ""
 	supervisors = "the United States Government."
-	selection_color = "#162b2c"
+	selection_color = "#323232"
 	exp_requirements = 1500
 	exp_type = EXP_TYPE_ENCLAVE
 
