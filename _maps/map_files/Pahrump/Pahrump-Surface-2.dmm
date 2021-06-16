@@ -135,6 +135,12 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/legion)
+"afs" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubbleplate"
+	},
+/area/f13/wasteland)
 "afL" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -3509,12 +3515,9 @@
 	},
 /area/f13/building)
 "ctT" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/indestructible/ground/outside/ruins{
-	dir = 10;
-	icon_state = "rubble"
-	},
-/area/f13/wasteland)
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "ctY" = (
 /obj/structure/fence{
 	dir = 4
@@ -3899,6 +3902,7 @@
 	icon_state = "toilet00"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -9761,6 +9765,12 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"gqy" = (
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubble"
+	},
+/area/f13/wasteland)
 "gqz" = (
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/road{
@@ -19091,6 +19101,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"miS" = (
+/mob/living/simple_animal/hostile/ghoul/soldier,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/wasteland)
 "miT" = (
 /obj/structure/decoration/hatch,
 /turf/open/indestructible/ground/outside/road{
@@ -21629,6 +21643,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/ncr)
+"oaV" = (
+/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/turf/open/indestructible/ground/outside/ruins{
+	dir = 6;
+	icon_state = "rubble"
+	},
+/area/f13/wasteland)
 "obd" = (
 /obj/item/ammo_casing/c10mm,
 /turf/open/indestructible/ground/outside/road{
@@ -21833,6 +21854,12 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/tunnel)
+"okg" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubblecorner"
+	},
+/area/f13/wasteland)
 "okj" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -29097,6 +29124,10 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"sRX" = (
+/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "sSr" = (
 /turf/open/floor/wood/f13/old/ruinedstraightnorth,
 /area/f13/wasteland)
@@ -31623,6 +31654,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
+"uwA" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/ruins{
+	dir = 8;
+	icon_state = "rubblecorner"
+	},
+/area/f13/wasteland)
 "uwQ" = (
 /obj/structure/chair{
 	dir = 4
@@ -33625,6 +33663,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/city)
+"vJL" = (
+/obj/structure/simple_door/metal/store{
+	icon_state = "brokenstore"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/wasteland)
 "vJP" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/indestructible/ground/outside/desert,
@@ -33669,6 +33714,13 @@
 /obj/effect/spawner/lootdrop/clothing_low,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vLy" = (
+/obj/structure/barricade/wooden,
+/turf/open/indestructible/ground/outside/ruins{
+	dir = 6;
+	icon_state = "rubble"
+	},
+/area/f13/wasteland)
 "vMc" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/wood/f13/oak,
@@ -34227,7 +34279,6 @@
 	},
 /area/f13/wasteland)
 "wkx" = (
-/mob/living/simple_animal/hostile/centaur,
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/ruins{
 	dir = 5;
@@ -34678,8 +34729,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "wyM" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/indestructible/ground/outside/ruins,
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/indestructible/ground/outside/ruins{
+	dir = 8;
+	icon_state = "rubblecorner"
+	},
 /area/f13/wasteland)
 "wzh" = (
 /obj/machinery/vending/coffee,
@@ -73878,14 +73932,14 @@ gcK
 giZ
 nuv
 acT
-ujC
-wyM
+ctT
+faW
 cub
 giZ
 hAC
 xrd
 cAs
-ctT
+hkv
 jYB
 mNi
 giZ
@@ -74138,7 +74192,7 @@ boz
 faW
 mji
 bph
-nZS
+okg
 rjD
 cdt
 fyf
@@ -74395,12 +74449,12 @@ faW
 mji
 bph
 fyf
-gPW
-faW
+vLy
+miS
 qZN
 cdt
 duK
-stG
+gqy
 faW
 dLY
 iHk
@@ -74652,7 +74706,7 @@ faW
 nHP
 clQ
 gPW
-faW
+vJL
 mji
 hkv
 aqD
@@ -74909,7 +74963,7 @@ xAZ
 nHP
 stG
 heK
-rtl
+afs
 wkx
 aAh
 dsh
@@ -75164,7 +75218,7 @@ giZ
 nIp
 mji
 bph
-cAs
+wyM
 hkv
 giZ
 giZ
@@ -75680,7 +75734,7 @@ fyf
 hAC
 xrd
 fyf
-cAs
+uwA
 wOw
 hkv
 nHP
@@ -75937,7 +75991,7 @@ rjD
 uLk
 nZS
 rjD
-ctN
+nft
 cdt
 cAs
 bph
@@ -76192,7 +76246,7 @@ giZ
 faW
 buZ
 aqD
-gPW
+oaV
 faW
 giZ
 aqD
@@ -76448,7 +76502,7 @@ gcK
 giZ
 ujC
 faW
-wyM
+faW
 faW
 heK
 giZ
@@ -76456,7 +76510,7 @@ ujC
 feR
 uVE
 faW
-ujC
+dRx
 pUP
 giZ
 kGc
@@ -76966,7 +77020,7 @@ nuv
 ujC
 cvE
 giZ
-ujC
+sRX
 iBu
 giZ
 pUP
