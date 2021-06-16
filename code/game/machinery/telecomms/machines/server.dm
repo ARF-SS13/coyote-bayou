@@ -122,10 +122,15 @@
 	freq_listening = list(FREQ_ENCLAVE)
 	autolinkers = list("enclave")
 
-/obj/machinery/telecomms/server/presets/den
+/obj/machinery/telecomms/server/presets/town
 	id = "Town Server"
-	freq_listening = list(FREQ_DEN)
+	freq_listening = list(FREQ_TOWN)
 	autolinkers = list("town")
+
+/obj/machinery/telecomms/server/presets/den
+	id = "Den Server"
+	freq_listening = list(FREQ_DEN)
+	autolinkers = list("den")
 
 /obj/machinery/telecomms/server/presets/legion
 	id = "Legion Server"

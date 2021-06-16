@@ -10660,7 +10660,9 @@
 /area/f13/enclave)
 "imX" = (
 /obj/structure/table/wood,
-/obj/structure/fluff/railing,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "inU" = (
@@ -11861,7 +11863,9 @@
 	},
 /area/f13/bunker)
 "jll" = (
-/obj/machinery/telecomms/hub/preset,
+/obj/machinery/telecomms/hub/preset{
+	autolinkers = list("hub","relay","s_relay","m_relay","r_relay","h_relay","science","medical","supply","service","vault","ncr","bos","enclave","town","den","legion","common","command","engineering","security","ranger","receiverA","receiverB","broadcasterA","broadcasterB")
+	},
 /turf/open/floor/plasteel/vault/telecomms/mainframe{
 	dir = 8
 	},
@@ -12113,15 +12117,15 @@
 /obj/item/key,
 /obj/item/key,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
 /obj/item/storage/box/citizenship_permits,
 /obj/item/assembly/signaler/advanced,
 /obj/item/assembly/signaler,
@@ -14961,11 +14965,9 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/tcoms)
 "lSo" = (
-/obj/structure/fluff/railing{
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/den)
+/obj/machinery/telecomms/server/presets/town,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "lSQ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cannabis,
@@ -16642,6 +16644,10 @@
 /area/f13/den)
 "nkJ" = (
 /obj/structure/rack,
+/obj/item/weaponcrafting/reciever,
+/obj/item/weaponcrafting/reciever,
+/obj/item/advanced_crafting_components/assembly,
+/obj/item/advanced_crafting_components/assembly,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "nld" = (
@@ -18120,7 +18126,7 @@
 /area/f13/tunnel)
 "ooO" = (
 /mob/living/simple_animal/hostile/ghoul/glowing{
-	desc = "Billy Bob was one of the first of the Den's residents - he doesn't really bother anyone, just lives in the back where he keeps his pet mouse. Nobody knows how he got here or why he cares so much about the mouse. He's the the senile old uncle of the Den."
+	desc = "Billy Bob was one of the first of the Den's residents - he doesn't really bother anyone, just lives in the back where he keeps his pet mouse. Nobody knows how he got here or why he cares so much about the mouse. He's the the senile old uncle of the Den.";
 	faction = list("Wastelander");
 	name = "Billy Bob";
 	social_faction = list("Raiders")
@@ -19863,12 +19869,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/mining)
-"pJf" = (
-/obj/structure/fluff/railing{
-	dir = 4
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/den)
 "pJO" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/storage/trash_stack,
@@ -21000,7 +21000,7 @@
 /area/f13/ncr)
 "qGp" = (
 /obj/structure/simple_door/brokenglass,
-/turf/closed/wall/rust,
+/turf/open/floor/plating/wooden,
 /area/f13/den)
 "qGr" = (
 /obj/structure/chair/wood{
@@ -21705,7 +21705,9 @@
 	},
 /area/f13/ncr)
 "rgJ" = (
-/obj/machinery/telecomms/bus/preset_three,
+/obj/machinery/telecomms/bus/preset_three{
+	autolinkers = list("processor3","security","command","vault","ncr","bos","enclave","town","den","legion","ranger")
+	},
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
 "rgX" = (
@@ -28639,6 +28641,7 @@
 /obj/item/stack/sheet/cardboard/fifty,
 /obj/item/stack/sheet/cardboard/fifty,
 /obj/item/stack/sheet/cardboard/fifty,
+/obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "xFN" = (
@@ -64772,8 +64775,8 @@ kUN
 tfb
 rzI
 tTR
-imX
-lSo
+tfb
+rHU
 bZn
 rHU
 bZn
@@ -65029,7 +65032,7 @@ kUN
 tfb
 tfb
 tfb
-imX
+tfb
 rHU
 bZn
 rHU
@@ -65283,10 +65286,10 @@ kPW
 mrv
 nbG
 kUN
-tfb
+imX
 rzI
 tfb
-imX
+tfb
 rHU
 bZn
 rHU
@@ -65543,7 +65546,7 @@ kUN
 tfb
 tfb
 tfb
-imX
+tfb
 rHU
 bZn
 rHU
@@ -65800,8 +65803,8 @@ kUN
 tfb
 rzI
 tTR
-imX
-pJf
+tfb
+rHU
 bZn
 rHU
 bZn
@@ -91370,7 +91373,7 @@ qzI
 cZA
 tNq
 pHv
-qLD
+lSo
 qLD
 eQC
 fZG

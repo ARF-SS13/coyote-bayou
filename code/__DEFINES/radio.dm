@@ -73,6 +73,10 @@
 #define RADIO_KEY_LEGION "l"
 #define RADIO_TOKEN_LEGION ":l"
 
+#define RADIO_CHANNEL_DEN "Den"
+#define RADIO_KEY_DEN "d"
+#define RADIO_TOKEN_DEN ":d"
+
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
 
@@ -94,9 +98,10 @@
 #define FREQ_NCR 1363 //NCR
 #define FREQ_BOS 1365 //BOS
 #define FREQ_ENCLAVE 1367 //ENCLAVE
-#define FREQ_DEN 1369 //TOWN
+#define FREQ_TOWN 1369 //TOWN
 #define FREQ_LEGION 1371 //LEGIO
 #define FREQ_RANGER 1373 //Ranger
+#define FREQ_DEN 1375 //Den
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435
