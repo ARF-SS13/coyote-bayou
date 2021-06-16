@@ -4002,7 +4002,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = NCRArmoryNorth
+	id = "NCRArmoryNorth"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -23223,12 +23223,12 @@
 	},
 /obj/structure/table,
 /obj/machinery/button{
-	id = NCRArmoryNorth;
+	id = "NCRArmoryNorth";
 	pixel_x = -27;
 	pixel_y = 7
 	},
 /obj/machinery/button{
-	id = NCRArmorySouth;
+	id = "NCRArmorySouth";
 	pixel_x = -27;
 	pixel_y = -7
 	},
@@ -27467,7 +27467,7 @@
 /obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
-	id = NCRArmorySouth
+	id = "NCRArmorySouth"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
