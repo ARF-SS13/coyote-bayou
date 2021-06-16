@@ -99,7 +99,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
-	forbids = "Leaving the base while still habitable"
+	forbids = "The Enclave forbids you from leaving the base while still habitable"
 	enforces = ""
 	supervisors = "the United States Government."
 	selection_color = "#323232"
