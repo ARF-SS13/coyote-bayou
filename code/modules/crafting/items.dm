@@ -1130,13 +1130,11 @@
 	var/obj/item/clothing/suit/armor/A = W
 
 	var/tiermod = rand(-10,10)
-	var/spdmod = rand(-10,10)
 	var/prefix
-	var/overall = tiermod - spdmod
+	var/overall = tiermod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		tiermod += 4
-		spdmod += -4
 
 	if(A.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1149,24 +1147,23 @@
 		return
 
 	switch(overall)
-		if(-20 to -10)
+		if(-10 to -5)
 			prefix = "Ruined "
-		if(-10 to 0)
+		if(-5 to 0)
 			prefix = "Inferior "
-		if(0 to 10)
+		if(0 to 5)
 			prefix = "Improved "
-		if(10 to 20)
+		if(5 to 10)
 			prefix = "Superior "
-		if(20 to 100)
+		if(10 to 100)
 			prefix = "Legendary "
 
-	A.armor.linemelee += tiermod*3
-	A.armor.linebullet += tiermod*3
-	A.armor.linelaser += tiermod*3
-	A.slowdown += (spdmod/75)
+	A.armor.linemelee += tiermod*2
+	A.armor.linebullet += tiermod*2
+	A.armor.linelaser += tiermod*2
 	A.name = prefix + A.name
 	A.tinkered += 1
-	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]; Speed: [A.slowdown]"
+	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1175,13 +1172,11 @@
 	var/obj/item/clothing/head/H = W
 
 	var/tiermod = rand(-10,10)
-	var/spdmod = rand(-10,10)
 	var/prefix
-	var/overall = tiermod - spdmod
+	var/overall = tiermod
 
 	if(HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		tiermod += 4
-		spdmod += -4
 
 	if(H.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
@@ -1194,24 +1189,23 @@
 		return
 
 	switch(overall)
-		if(-20 to -10)
+		if(-10 to -5)
 			prefix = "Ruined "
-		if(-10 to 0)
+		if(-5 to 0)
 			prefix = "Inferior "
-		if(0 to 10)
+		if(0 to 5)
 			prefix = "Improved "
-		if(10 to 20)
+		if(5 to 10)
 			prefix = "Superior "
-		if(20 to 100)
+		if(10 to 100)
 			prefix = "Legendary "
 
-	H.armor.linemelee += tiermod*3
-	H.armor.linebullet += tiermod*3
-	H.armor.linelaser += tiermod*3
-	H.slowdown += (spdmod/75)
+	H.armor.linemelee += tiermod*2
+	H.armor.linebullet += tiermod*2
+	H.armor.linelaser += tiermod*2
 	H.name = prefix + H.name
 	H.tinkered += 1
-	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]; Speed: [H.slowdown]"
+	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
