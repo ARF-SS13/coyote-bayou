@@ -141,8 +141,7 @@
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) //enclave scientists can do pretty much everything, they've got the knowhow preserved by the enclave. a valuable asset to be defended
-	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)          //ditto
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)          //enclave scientists can do pretty much everything, they've got the knowhow preserved by the enclave. a valuable asset to be defended
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)    //ditto
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
