@@ -11,13 +11,13 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	flags_1 =  CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
-	weapon_weight = WEAPON_HEAVY
 	spawnwithmagazine = TRUE
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
@@ -336,31 +336,32 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer.
+//Winchester City-Killer. 12 round internal, semiauto, low/mid spectrum RoF
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
-	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses an drum instead of a magazine, same capacity."
+	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
-	mag_type = /obj/item/ammo_box/magazine/d12g
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	fire_delay = 5
 	var/semi_auto = TRUE
-	force = 10
-	fire_delay = 4
 
-/*
-//New City-Killer since they breacher/killler are almost identical, and the fallout one never used since slightly worse. WIP
+
+//Breacher. 12 round drum, semiauto, lower end spectrum semi RoF
 /obj/item/gun/ballistic/automatic/shotgun/riot
-	name = "breacher shotgun" //name changed to distinguish from /obj/item/gun/ballistic/shotgun/riot
+	name = "breacher shotgun"
 	desc = "A compact riot shotgun designed to fight in close quarters."
 	icon_state = "riot_shotgun"
 	item_state = "shotguncity"
+	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	burst_size = 1
-	force = 25
+	fire_delay = 6
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-*/
+
+
 
 ///////////////////
 //REPEATER RIFLES//
@@ -436,8 +437,8 @@
 	icon_state = "mosin"
 	item_state = "308"
 	slot_flags = 0 //no ITEM_SLOT_BACK sprite, alas
-	inaccuracy_modifier = 0.5
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	extra_damage = 5
 	can_scope = TRUE
 	scope_state = "mosin_scope"
 	scope_x_offset = 3
@@ -446,14 +447,12 @@
 	bayonet_state = "lasmusket"
 	knife_x_offset = 22
 	knife_y_offset = 21
-	extra_damage = 5
-	pump_sound = 'sound/weapons/boltpump.ogg'
-	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	suppressor_state = "rifle_suppressor"
 	can_suppress = TRUE
 	suppressor_x_offset = 25
 	suppressor_y_offset = 30
-
+	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
 /obj/item/gun/ballistic/shotgun/kar98k
 	name = "\improper karabiner 98k"
@@ -461,17 +460,17 @@
 	icon_state = "kar98"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/kar98
-	fire_sound = 'sound/f13weapons/boltfire.ogg'
-	fire_delay = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	can_scope = TRUE
+	fire_delay = 5
 	extra_damage = 10
 	extra_penetration = 0.2
+	can_scope = TRUE
 	scope_state = "kar_scope"
 	scope_x_offset = 12
 	scope_y_offset = 23
 	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
 
 //Hunting Rifle .308
@@ -482,15 +481,15 @@
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
-	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+
 	fire_delay = 3
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+
 	can_scope = TRUE
 	scope_state = "rifle_scope"
 	scope_x_offset = 4
 	scope_y_offset = 12
 	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
 	..()
@@ -555,17 +554,16 @@
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "lasmusket"
 	item_state = "lasmusket"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket
-	//nocase = TRUE
+	fire_delay = 15
+	isenergy = TRUE
 	var/bolt_open = FALSE
 	can_bayonet = TRUE
-	fire_delay = 15
 	knife_x_offset = 23
 	knife_y_offset = 21
 	bayonet_state = "lasmusket"
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	isenergy = TRUE
 	can_scope = TRUE
 	scope_state = "lasmusket_scope"
 	scope_x_offset = 9
@@ -582,16 +580,16 @@
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "plasmamusket"
 	item_state = "plasmamusket"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/internal/plasmacaster
-	var/bolt_open = FALSE
-	can_bayonet = TRUE
 	fire_delay = 20
+	var/bolt_open = FALSE
+	isenergy = TRUE
+	can_bayonet = TRUE
 	bayonet_state = "lasmusket"
 	knife_x_offset = 23
 	knife_y_offset = 21
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	isenergy = TRUE
 	can_scope = TRUE
 	scope_state = "lasmusket_scope"
 	scope_x_offset = 9
@@ -607,12 +605,13 @@
 	desc = "A pipe, some wood and a screwdriver is all you need to fire a shotgun shell apparantly."
 	icon_state = "ishotgun"
 	item_state = "improvgun"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+
 
 /obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
