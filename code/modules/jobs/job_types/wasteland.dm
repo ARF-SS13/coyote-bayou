@@ -146,6 +146,8 @@
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src)
+	
 
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"

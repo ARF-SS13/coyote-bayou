@@ -98,6 +98,8 @@
 			var/obj/item/implant/hijack/H = user.getImplant(/obj/item/implant/hijack)
 			if (H && !H.stealthmode && H.toggled)
 				. += "<b><font color=orange>[t_His] eyes are flickering a bright yellow!</font></b>"
+		else if(is_brainwashed(src)) //FO13 Change
+			. += "<b><font color=red>[t_His] eyes have a far away and dazed look to them.</font></b>"
 
 	//ears
 	if(ears && !(SLOT_EARS in obscured))
