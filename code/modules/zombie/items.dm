@@ -82,7 +82,6 @@
 		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
 
-/*
 /obj/item/paper/guides/antag/romerol_instructions
 	info = "How to do necromancy with chemicals:<br>\
 	<ul>\
@@ -93,4 +92,3 @@
 	<li>???</li>\
 	<li>Complete assigned objectives amidst the chaos</li>\
 	</ul>"
-*/

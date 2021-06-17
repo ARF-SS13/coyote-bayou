@@ -17,6 +17,7 @@
 			new /obj/item/chameleon(src) // 7 tc
 
 		if("stealth") // 31 tc
+			new /obj/item/pen/sleepy(src)
 			new /obj/item/healthanalyzer/rad_laser(src)
 			new /obj/item/chameleon(src)
 			new /obj/item/soap/syndie(src)
@@ -33,6 +34,7 @@
 		if("screwed") // 29 tc
 			new /obj/item/sbeacondrop/bomb(src)
 			new /obj/item/grenade/syndieminibomb(src)
+			new /obj/item/sbeacondrop/powersink(src)
 			new /obj/item/clothing/suit/space/syndicate/black/red(src)
 			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/encryptionkey/syndicate(src)
@@ -48,17 +50,25 @@
 			new /obj/item/screwdriver/power(src) //2 tc item
 
 		if("murder") // 35 tc
+			new /obj/item/melee/transforming/energy/sword/saber(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/card/emag(src)
+			new /obj/item/clothing/shoes/chameleon/noslip(src)
+			new /obj/item/encryptionkey/syndicate(src)
+			new /obj/item/grenade/syndieminibomb(src)
 			new /obj/item/clothing/glasses/phantomthief/syndicate(src)
 			new /obj/item/reagent_containers/syringe/stimulants(src)
 
 		if("baseball") // 42~ tc
+			new /obj/item/melee/baseball_bat/ablative/syndi(src) //Lets say 12 tc, lesser sleeping carp
 			new /obj/item/clothing/glasses/sunglasses/garb(src) //Lets say 2 tc
 			new /obj/item/card/emag(src) //6 tc
 			new /obj/item/clothing/shoes/sneakers/noslip(src) //2tc
 			new /obj/item/encryptionkey/syndicate(src) //1tc
+			new /obj/item/autosurgeon/anti_drop(src) //Lets just say 7~
 			new /obj/item/clothing/under/syndicate/baseball(src) //3tc
+			new /obj/item/clothing/head/soft/baseball(src) //Lets say 4 tc
+			new /obj/item/reagent_containers/hypospray/medipen/stimulants/baseball(src) //lets say 5tc
 
 		if("implant") // 67+ tc holy shit what the fuck this is a lottery disguised as fun boxes isn't it?
 			new /obj/item/implanter/freedom(src)
@@ -80,6 +90,7 @@
 			new /obj/item/emagrecharge(src)
 
 		if("lordsingulo") // "36" tc aka 23 tc
+			new /obj/item/sbeacondrop(src) // 14 kinda useless
 			new /obj/item/clothing/suit/space/syndicate/black/red(src) //2
 			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src) //2
 			new /obj/item/card/emag(src) //6
@@ -240,6 +251,19 @@
 	STR.max_items = 14
 
 /obj/item/storage/box/syndie_kit/chemical/PopulateContents()
+	new /obj/item/reagent_containers/glass/bottle/polonium(src)
+	new /obj/item/reagent_containers/glass/bottle/venom(src)
+	new /obj/item/reagent_containers/glass/bottle/fentanyl(src)
+	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
+	new /obj/item/reagent_containers/glass/bottle/spewium(src)
+	new /obj/item/reagent_containers/glass/bottle/cyanide(src)
+	new /obj/item/reagent_containers/glass/bottle/histamine(src)
+	new /obj/item/reagent_containers/glass/bottle/initropidril(src)
+	new /obj/item/reagent_containers/glass/bottle/pancuronium(src)
+	new /obj/item/reagent_containers/glass/bottle/sodium_thiopental(src)
+	new /obj/item/reagent_containers/glass/bottle/coniine(src)
+	new /obj/item/reagent_containers/glass/bottle/curare(src)
+	new /obj/item/reagent_containers/glass/bottle/amanitin(src)
 	new /obj/item/reagent_containers/syringe(src)
 
 /obj/item/storage/box/syndie_kit/nuke
@@ -263,6 +287,11 @@
 	name = "boxed virus grenade kit"
 
 /obj/item/storage/box/syndie_kit/tuberculosisgrenade/PopulateContents()
+	new /obj/item/grenade/chem_grenade/tuberculosis(src)
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/hypospray/medipen/tuberculosiscure(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/reagent_containers/glass/bottle/tuberculosiscure(src)
 
 /obj/item/storage/box/syndie_kit/chameleon
 	name = "chameleon kit"
@@ -296,6 +325,12 @@
 	for(var/i in 1 to 3)
 		new/obj/item/cardboard_cutout/adaptive(src)
 	new/obj/item/toy/crayon/rainbow(src)
+
+/obj/item/storage/box/syndie_kit/romerol/PopulateContents()
+	new /obj/item/reagent_containers/glass/bottle/romerol(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/reagent_containers/dropper(src)
+	new /obj/item/paper/guides/antag/romerol_instructions(src)
 
 /obj/item/storage/box/syndie_kit/ez_clean/PopulateContents()
 	for(var/i in 1 to 3)
@@ -349,6 +384,8 @@
 	name = "Kitchen Gun (TM) package"
 
 /obj/item/storage/box/syndie_kit/kitchen_gun/PopulateContents()
+	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
+	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
 
 
 /obj/item/storage/box/strange_seeds_10pack
@@ -363,12 +400,14 @@
 /obj/item/storage/box/syndie_kit/revolver
 
 /obj/item/storage/box/syndie_kit/revolver/PopulateContents()
-
+	new /obj/item/gun/ballistic/revolver/syndicate(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/syndie_kit/pistol
 
 /obj/item/storage/box/syndie_kit/pistol/PopulateContents()
-
+	new /obj/item/gun/ballistic/automatic/pistol(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"
@@ -422,6 +461,12 @@
 	return ..()
 
 /obj/item/storage/box/syndicate/contractor_loadout/PopulateContents()
+	new /obj/item/clothing/head/helmet/space/syndicate/contract(src)
+	new /obj/item/clothing/suit/space/syndicate/contract(src)
+	new /obj/item/clothing/under/chameleon(src)
+	new /obj/item/clothing/mask/chameleon(src)
+	new /obj/item/card/id/syndicate(src)
+	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
 	new /obj/item/lighter(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
@@ -429,7 +474,24 @@
 	new /obj/item/storage/box/syndicate/contractor_loadout(src)
 	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
 	var/list/item_list = list(	// All 4 TC or less - some nukeops only items, but fit nicely to the theme.
-		/obj/item/storage/firstaid/tactical)
+		/obj/item/storage/backpack/duffelbag/syndie/x4,
+		/obj/item/storage/box/syndie_kit/throwing_weapons,
+		/obj/item/gun/syringe/syndicate,
+		/obj/item/pen/edagger,
+		/obj/item/pen/sleepy,
+		/obj/item/flashlight/emp,
+		/obj/item/reagent_containers/syringe/mulligan,
+		/obj/item/clothing/shoes/chameleon/noslip,
+		/obj/item/storage/firstaid/tactical,
+		/obj/item/storage/backpack/duffelbag/syndie/surgery,
+		/obj/item/encryptionkey/syndicate,
+		/obj/item/clothing/glasses/thermal/syndi,
+		/obj/item/storage/box/syndie_kit/imp_uplink,
+		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+		/obj/item/reagent_containers/syringe/stimulants,
+		/obj/item/storage/box/syndie_kit/imp_freedom,
+		/obj/item/storage/toolbox/infiltrator
+	)
 	var/obj/item1 = pick_n_take(item_list)
 	var/obj/item2 = pick_n_take(item_list)
 	var/obj/item3 = pick_n_take(item_list)
@@ -441,6 +503,7 @@
 /obj/item/storage/box/syndie_kit/northstar
 
 /obj/item/storage/box/syndie_kit/northstar/PopulateContents()
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
 	new /obj/item/clothing/accessory/padding(src)
 	new /obj/item/clothing/under/chameleon(src)
 	new /obj/item/storage/fancy/cigarettes/cigpack_syndicate(src)
