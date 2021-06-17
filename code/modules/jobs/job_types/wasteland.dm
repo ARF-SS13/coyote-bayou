@@ -731,6 +731,7 @@ Raider
 	id = /obj/item/card/id/dentattoo
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_den
 	l_pocket = /obj/item/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
@@ -815,6 +816,7 @@ Raider
 
 	id = /obj/item/card/id/dentattoo
 	belt = /obj/item/storage/belt/military/assault
+	ears = /obj/item/radio/headset/headset_den
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/switchblade
 	r_pocket = /obj/item/flashlight/seclite

@@ -17,6 +17,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
+	RADIO_CHANNEL_DEN = RADIO_TOKEN_DEN,
 	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION,
 	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER
 ))
@@ -353,9 +354,15 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
-/obj/item/radio/headset/headset_den
+/obj/item/radio/headset/headset_town
 	name = "town radio headset"
 	desc = "This is used by the town.\nTo access the town channel, use :f."
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_town
+
+/obj/item/radio/headset/headset_den
+	name = "den radio headset"
+	desc = "This is used by the den. \nTo access the den channel, use :d."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_den
 
