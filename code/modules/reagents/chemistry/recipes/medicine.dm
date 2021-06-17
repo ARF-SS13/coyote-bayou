@@ -383,3 +383,9 @@
 	results = list(/datum/reagent/medicine/mentat = 3)
 	required_reagents = list(/datum/reagent/medicine/neurine = 1, /datum/reagent/cellulose = 1)
 	required_temp = 451
+
+/datum/chemical_reaction/bitterdrink
+	name = "Bitter drink"
+	id = /datum/reagent/medicine/bitter_drink
+	results = list(/datum/reagent/medicine/bitter_drink = 30)
+	required_reagents = list(/datum/reagent/consumable/ethanol/salgam = 10 , /datum/reagent/consumable/ethanol/brocbrew = 10 , /datum/reagent/consumable/sunset = 10 , /datum/reagent/consumable/ethanol/yellowpulque = 10) 
