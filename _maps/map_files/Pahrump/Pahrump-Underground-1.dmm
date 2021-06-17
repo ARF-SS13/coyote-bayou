@@ -16135,6 +16135,13 @@
 	icon_state = "purplefull"
 	},
 /area/f13/enclave)
+"mOz" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "church"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "mOF" = (
 /mob/living/simple_animal/mouse{
 	faction = list("Wastelander");
@@ -16467,12 +16474,11 @@
 /turf/closed/wall/r_wall,
 /area/f13/tunnel)
 "ndk" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/ladder/unbreakable{
 	height = 1;
-	id = "church"
+	id = "S1"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ndn" = (
 /obj/effect/decal/cleanable/dirt{
@@ -68770,7 +68776,7 @@ mPC
 bFQ
 ckx
 ckx
-tjd
+mOz
 vuv
 doL
 hvw
@@ -69234,7 +69240,7 @@ imo
 esh
 bpa
 kUN
-nBk
+ndk
 nBk
 nBk
 nBk
@@ -70055,7 +70061,7 @@ ckx
 ckx
 bEw
 uvE
-ndk
+ckx
 mTq
 ckx
 oUQ

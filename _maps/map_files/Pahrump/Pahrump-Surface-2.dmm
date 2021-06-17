@@ -364,7 +364,7 @@
 	},
 /area/f13/wasteland)
 "all" = (
-/obj/structure/closet/crate/wicker,
+/obj/structure/fermenting_barrel,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
 	icon_state = "dirtcorner"
@@ -5378,6 +5378,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"dIj" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "dIR" = (
 /obj/structure/bus_door,
 /turf/open/indestructible/ground/outside/road{
@@ -7391,6 +7395,7 @@
 	},
 /area/f13/wasteland)
 "eVJ" = (
+/obj/machinery/light/floor,
 /obj/structure/table/wood/settler,
 /turf/open/floor/wood/f13/oak,
 /area/f13/wasteland)
@@ -20914,6 +20919,7 @@
 	},
 /area/f13/building)
 "nyZ" = (
+/obj/machinery/light/floor,
 /obj/structure/table/wood/settler,
 /obj/structure/gallow,
 /turf/open/floor/wood/f13/oak,
@@ -22048,7 +22054,13 @@
 /area/f13/brotherhood)
 "ooh" = (
 /obj/structure/table/wood,
-/obj/item/roller,
+/obj/item/paper/bitterdrink{
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/pill/patch/bitterdrink{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "oom" = (
@@ -32155,6 +32167,11 @@
 	icon_state = "outermaincornerouter"
 	},
 /area/f13/wasteland)
+"uMw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/roller,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/legion)
 "uMZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -53430,8 +53447,8 @@ qFk
 hsj
 nQY
 jnN
-uRJ
-uRJ
+dIj
+dIj
 tBN
 mvv
 mvv
@@ -99270,7 +99287,7 @@ fLB
 xXm
 ohf
 hom
-hbO
+uMw
 xfy
 hbO
 vHe
