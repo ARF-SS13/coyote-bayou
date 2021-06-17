@@ -158,7 +158,7 @@
 	name = "M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
-	icon_state = "pistolchrome"
+	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	extra_damage = 3
