@@ -16,7 +16,7 @@
 
 /obj/item/clothing/under/rank/security/officer
 	name = "security jumpsuit"
-	desc = "A tactical security jumpsuit for officers complete with Nanotrasen belt buckle."
+	desc = "A red security jumpsuit for those who couldn't hack it in the police force."
 	icon_state = "rsecurity"
 	item_state = "r_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
@@ -29,14 +29,14 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/security/officer/grey
-	name = "grey security jumpsuit"
-	desc = "A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
+	name = "grey security uniform"
+	desc = "A relic of a private security company, its name forgotten."
 	icon_state = "security"
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/security/officer/skirt
 	name = "security jumpskirt"
-	desc = "A \"tactical\" security jumpsuit with the legs replaced by a skirt."
+	desc = "A red private security suitskirt for office parties and nothing else. No real company would dress employees like this."
 	icon_state = "secskirt"
 	item_state = "r_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -93,20 +93,20 @@
 
 /obj/item/clothing/under/rank/security/warden
 	name = "security suit"
-	desc = "A formal security suit for officers complete with Nanotrasen belt buckle."
+	desc = "A formal red security uniform for those who are competent enough for private security to be in charge."
 	icon_state = "rwarden"
 	item_state = "r_suit"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 
 /obj/item/clothing/under/rank/security/warden/grey
 	name = "grey security suit"
-	desc = "A formal relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
+	desc = "A relic of a private security company, its name forgotten. This one seems carefully preserved."
 	icon_state = "warden"
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/security/warden/skirt
 	name = "warden's suitskirt"
-	desc = "A formal security suitskirt for officers complete with Nanotrasen belt buckle."
+	desc = "A red private security suitskirt for office parties and nothing else. No real company would dress employees like this."
 	icon_state = "rwarden_skirt"
 	item_state = "r_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
