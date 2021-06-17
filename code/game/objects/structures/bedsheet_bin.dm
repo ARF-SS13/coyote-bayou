@@ -108,8 +108,8 @@ LINEN BINS
 	dream_messages = list("yellow")
 
 /obj/item/bedsheet/captain
-	name = "captain's bedsheet"
-	desc = "It has a Nanotrasen symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains."
+	name = "hubris comics bedsheet"
+	desc = "It has a Hubris Comics logo on it, part of a line of superhero themed bedsheets. This one is in Captain Cosmos colors."
 	icon_state = "sheetcaptain"
 	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
 
@@ -176,8 +176,8 @@ LINEN BINS
 	dream_messages = list("a unique ID", "authority", "artillery", "an ending")
 
 /obj/item/bedsheet/syndie
-	name = "syndicate bedsheet"
-	desc = "It has a syndicate emblem and it has an aura of evil."
+	name = "shi bedsheet"
+	desc = "It has a Shi emblem and it has an imperial aura."
 	icon_state = "sheetsyndie"
 	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
 
@@ -194,8 +194,8 @@ LINEN BINS
 	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
 
 /obj/item/bedsheet/nanotrasen
-	name = "nanotrasen bedsheet"
-	desc = "It has the Nanotrasen logo on it and has an aura of duty."
+	name = "navitron bedsheet"
+	desc = "It has the Navitron logo on it and has an aura of duty."
 	icon_state = "sheetNT"
 	dream_messages = list("authority", "an ending")
 
