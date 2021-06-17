@@ -8,7 +8,8 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_SMALL 
+	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BELT
 	force = 12 //Pistol whip
 	mag_type = /obj/item/ammo_box/magazine/m10mm
