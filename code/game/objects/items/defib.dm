@@ -231,7 +231,7 @@
 //Made to replace smelling salts due to bugs temporarily, but it fits Legion and Wasteland docs well.
 /obj/item/defibrillator/primitive
 	name = "primitive defibrillator"
-	desc = "The Delco, the name of a box that can deliver shocks to the seriously wounded to revive them. Some say it was once used to help make cars move, how odd."
+	desc = "The Delco, the name of a box that can deliver shocks to the seriously wounded to revive them."
 	icon = 'icons/fallout/objects/medicine/primitivedefib.dmi'
 	icon_state = "defibprimitive"
 	lefthand_file = 'icons/fallout/onmob/tools/medical_lefthand.dmi'
@@ -239,11 +239,9 @@
 	item_state = "defibunit"
 	cell = /obj/item/stock_parts/cell/high
 
-/obj/item/defibrillator/primitive/Initialize() //starts without a cell for rnd
+/obj/item/defibrillator/primitive/Initialize() 
 	. = ..()
 	paddles = make_paddlesprim()
-	if(cell)
-		cell = new cell(src)
 	update_power()
 	return
 
