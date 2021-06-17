@@ -11746,6 +11746,15 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"hyU" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Armory";
+	req_access_txt = "122"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/ncr)
 "hyZ" = (
 /obj/machinery/light{
 	dir = 4
@@ -16679,6 +16688,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "kzB" = (
@@ -18817,6 +18827,15 @@
 /obj/structure/decoration/clock/old/active,
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"lUt" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/stripes/white/box,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "lUv" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/small{
@@ -23421,15 +23440,21 @@
 	color = "000000"
 	},
 /obj/structure/table,
-/obj/machinery/button{
-	id = "NCRArmoryNorth";
-	pixel_x = -27;
-	pixel_y = 7
-	},
-/obj/machinery/button{
+/obj/machinery/button/door{
 	id = "NCRArmorySouth";
-	pixel_x = -27;
-	pixel_y = -7
+	name = "Southern Requisition Shutters";
+	pixel_x = -26;
+	pixel_y = -7;
+	req_access = null;
+	req_access_txt = "122"
+	},
+/obj/machinery/button/door{
+	id = "NCRArmoryNorth";
+	name = "North Requisition Shutters";
+	pixel_x = -26;
+	pixel_y = 7;
+	req_access = null;
+	req_access_txt = "122"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -47094,7 +47119,7 @@ xdt
 xdt
 xdt
 xdt
-raV
+hyU
 cpK
 cpK
 ezX
@@ -47351,7 +47376,7 @@ xdt
 xdt
 xdt
 xdt
-raV
+hyU
 cpK
 cpK
 ezX
@@ -47607,7 +47632,7 @@ uVw
 xdt
 uVw
 xdt
-uVw
+lUt
 ezX
 cpK
 cpK
