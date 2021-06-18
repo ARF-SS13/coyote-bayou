@@ -24902,6 +24902,15 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"oqH" = (
+/obj/machinery/button/door{
+	id = "loading1";
+	name = "Loading Bay 1";
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "orm" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -91475,7 +91484,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+oqH
 gcK
 gcK
 gcK
