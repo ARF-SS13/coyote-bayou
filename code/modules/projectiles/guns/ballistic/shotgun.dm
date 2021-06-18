@@ -353,7 +353,7 @@
 	name = "breacher shotgun"
 	desc = "A compact riot shotgun designed to fight in close quarters."
 	icon_state = "riot_shotgun"
-	item_state = "shotguncity"
+	item_state = "huntingshotgun" 
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	burst_size = 1
