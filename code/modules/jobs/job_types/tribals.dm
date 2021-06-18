@@ -316,8 +316,8 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = "Village"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-War weapons."
