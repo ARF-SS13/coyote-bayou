@@ -34,7 +34,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	5.2 Additionally, this chem is a soft buff to changelings, which apparently need a buff!
 	5.3 Other similar things exist already though in the codebase; impostors, split personalites, abductors, ect.
 6. Giving this to someone without concent is against space law and gets you sent to gulag.
-*/
+ // Comment end removed here and placed at bottom to disable SDGF as a whole. ~FO13
 
 #define POLICYCONFIG_SDGF "SDGF"
 #define POLICYCONFIG_SDGF_GOOD "SDGF_ALIGNED"
