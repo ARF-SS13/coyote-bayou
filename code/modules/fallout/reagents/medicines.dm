@@ -115,11 +115,12 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	M.adjustFireLoss(heal_rate)
-	M.adjustBruteLoss(heal_rate)
-	M.adjustToxLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
-	. = TRUE
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(heal_rate)
+		M.adjustBruteLoss(heal_rate)
+		M.adjustToxLoss(heal_rate)
+		M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
+		. = TRUE
 	..()
 
 /datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
