@@ -23,7 +23,7 @@
 	var/rendered = begin_message + obj_message + end_message
 	deadchat_broadcast(rendered, follow_target = L, turf_target = get_turf(L), message_type=DEADCHAT_REGULAR)
 
-/proc/is_brainwashed(var/mob/living/L, var/datum/mind/M = L.mind)// FO13, better brainwashing detection, needed for examine.dm, fuck off its MY shitcode >:(
+/proc/is_brainwashed(mob/living/L, datum/mind/M = L.mind)// FO13, better brainwashing detection, needed for examine.dm, fuck off its MY shitcode >:(
 	if(L.mind && M.has_antag_datum(/datum/antagonist/brainwashed))
 		return istype(L)
 	else
