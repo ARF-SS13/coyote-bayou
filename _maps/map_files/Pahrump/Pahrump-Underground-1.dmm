@@ -569,13 +569,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/brotherhood/offices1st)
 "aBr" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 8
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/tunnel)
+/area/f13/followers)
 "aBI" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plating/tunnel,
@@ -3784,6 +3785,13 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/operations)
+"cVp" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/handrail/g_central{
+	pixel_y = -16
+	},
+/turf/open/water,
+/area/f13/tunnel)
 "cVB" = (
 /mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/indestructible/ground/inside/subway,
@@ -9395,11 +9403,8 @@
 	},
 /area/f13/tunnel)
 "hsR" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/handrail/g_central{
-	pixel_y = -16
-	},
-/turf/open/water,
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall/rust,
 /area/f13/tunnel)
 "htu" = (
 /mob/living/simple_animal/hostile/raider/thief,
@@ -10638,9 +10643,7 @@
 /area/f13/enclave)
 "imX" = (
 /obj/structure/table/wood,
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/structure/fluff/railing,
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "inU" = (
@@ -11857,9 +11860,7 @@
 	},
 /area/f13/bunker)
 "jll" = (
-/obj/machinery/telecomms/hub/preset{
-	autolinkers = list("hub","relay","s_relay","m_relay","r_relay","h_relay","science","medical","supply","service","vault","ncr","bos","enclave","town","den","legion","common","command","engineering","security","ranger","receiverA","receiverB","broadcasterA","broadcasterB")
-	},
+/obj/machinery/telecomms/hub/preset,
 /turf/open/floor/plasteel/vault/telecomms/mainframe{
 	dir = 8
 	},
@@ -12113,15 +12114,15 @@
 /obj/item/key,
 /obj/item/key,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
-/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_den,
 /obj/item/storage/box/citizenship_permits,
 /obj/item/assembly/signaler/advanced,
 /obj/item/assembly/signaler,
@@ -14963,9 +14964,11 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/tcoms)
 "lSo" = (
-/obj/machinery/telecomms/server/presets/town,
-/turf/open/floor/plasteel/dark/telecomms/mainframe,
-/area/f13/tcoms)
+/obj/structure/fluff/railing{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/den)
 "lSQ" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/seeds/cannabis,
@@ -16653,10 +16656,6 @@
 /area/f13/den)
 "nkJ" = (
 /obj/structure/rack,
-/obj/item/weaponcrafting/reciever,
-/obj/item/weaponcrafting/reciever,
-/obj/item/advanced_crafting_components/assembly,
-/obj/item/advanced_crafting_components/assembly,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "nld" = (
@@ -19842,6 +19841,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/mining)
+"pJf" = (
+/obj/structure/fluff/railing{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/den)
 "pJO" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/storage/trash_stack,
@@ -20926,7 +20931,7 @@
 /area/f13/ncr)
 "qGp" = (
 /obj/structure/simple_door/brokenglass,
-/turf/open/floor/plating/wooden,
+/turf/closed/wall/rust,
 /area/f13/den)
 "qGr" = (
 /obj/structure/chair/wood{
@@ -21609,9 +21614,7 @@
 	},
 /area/f13/ncr)
 "rgJ" = (
-/obj/machinery/telecomms/bus/preset_three{
-	autolinkers = list("processor3","security","command","vault","ncr","bos","enclave","town","den","legion","ranger")
-	},
+/obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
 "rgX" = (
@@ -24381,8 +24384,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "tzJ" = (
-/obj/structure/sign/warning/radiation,
-/turf/closed/wall/rust,
+/obj/structure/fence,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/tunnel)
 "tzZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26044,7 +26049,9 @@
 	},
 /area/f13/bunker)
 "veR" = (
-/obj/structure/fence,
+/obj/structure/simple_door/metal/fence{
+	dir = 8
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -28456,7 +28463,6 @@
 /obj/item/stack/sheet/cardboard/fifty,
 /obj/item/stack/sheet/cardboard/fifty,
 /obj/item/stack/sheet/cardboard/fifty,
-/obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "xFN" = (
@@ -28645,6 +28651,7 @@
 "xPN" = (
 /obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/barricade/wooden/planks,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "xRm" = (
@@ -64587,8 +64594,8 @@ kUN
 tfb
 rzI
 tTR
-tfb
-rHU
+imX
+lSo
 bZn
 rHU
 bZn
@@ -64844,7 +64851,7 @@ kUN
 tfb
 tfb
 tfb
-tfb
+imX
 rHU
 bZn
 rHU
@@ -65098,10 +65105,10 @@ kPW
 mrv
 nbG
 kUN
-imX
+tfb
 rzI
 tfb
-tfb
+imX
 rHU
 bZn
 rHU
@@ -65358,7 +65365,7 @@ kUN
 tfb
 tfb
 tfb
-tfb
+imX
 rHU
 bZn
 rHU
@@ -65615,8 +65622,8 @@ kUN
 tfb
 rzI
 tTR
-tfb
-rHU
+imX
+pJf
 bZn
 rHU
 bZn
@@ -76495,36 +76502,36 @@ weW
 weW
 weW
 weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+lYx
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
 kPb
 nuA
 nuA
-hsR
-weW
-weW
-weW
-weW
-weW
-weW
-lYx
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-lYx
-weW
-weW
-weW
+cVp
 weW
 weW
 weW
@@ -76752,37 +76759,37 @@ tur
 tur
 tur
 tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+hsR
 tzJ
 veR
-aBr
-veR
 tzJ
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
+hsR
 tur
 tur
 tur
@@ -79874,7 +79881,7 @@ jPC
 jPC
 jPC
 jPC
-myy
+uoO
 uoO
 uoO
 uoO
@@ -80070,8 +80077,8 @@ xVz
 xVz
 xVz
 qFS
+aBr
 qFS
-cUk
 qFS
 qFS
 eGX
@@ -80125,13 +80132,13 @@ myy
 myy
 myy
 myy
-myy
-myy
-myy
-myy
-myy
-myy
-myy
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 uoO
 uoO
 uoO
@@ -80327,8 +80334,8 @@ xVz
 xVz
 xVz
 bFC
+aBr
 qFS
-cUk
 qFS
 bFC
 eGX
@@ -80387,8 +80394,8 @@ jPC
 jPC
 jPC
 jPC
-myy
-myy
+uoO
+uoO
 uoO
 uoO
 uoO
@@ -89625,8 +89632,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -89882,8 +89889,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 aoj
@@ -90402,8 +90409,8 @@ uoO
 uoO
 aoj
 aoj
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -90659,8 +90666,8 @@ aoj
 uoO
 uoO
 aoj
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -90916,8 +90923,8 @@ aoj
 uoO
 uoO
 aoj
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -91173,8 +91180,8 @@ aoj
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -91185,7 +91192,7 @@ qzI
 cZA
 tNq
 pHv
-lSo
+qLD
 qLD
 eQC
 fZG
@@ -91678,8 +91685,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -91688,8 +91695,8 @@ aoj
 aoj
 aoj
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -91936,17 +91943,17 @@ uoO
 uoO
 aoj
 aoj
-uoO
-uoO
 aoj
 uoO
 aoj
+uoO
+aoj
 aoj
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -92193,7 +92200,7 @@ uoO
 uoO
 aoj
 aoj
-uoO
+aoj
 uoO
 aoj
 aoj
@@ -92202,8 +92209,8 @@ aoj
 uoO
 tKU
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -92449,6 +92456,8 @@ aoj
 uoO
 uoO
 uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -92457,10 +92466,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -92716,8 +92723,8 @@ tvw
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -92966,15 +92973,15 @@ uoO
 uoO
 aoj
 aoj
-uoO
+aoj
 uoO
 xVz
 xVz
 xVz
 tZq
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -93222,16 +93229,16 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 agL
 xVz
 xVz
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -93479,8 +93486,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 tzE
@@ -93488,7 +93495,7 @@ tCt
 uoO
 uoO
 aoj
-uoO
+aoj
 uoO
 uoO
 uoO
@@ -93737,15 +93744,15 @@ aoj
 aoj
 aoj
 aoj
+aoj
 uoO
 uoO
 uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -93993,11 +94000,11 @@ uoO
 aoj
 uoO
 uoO
+aoj
+aoj
 uoO
-uoO
-uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 uoO
@@ -94253,8 +94260,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+aoj
+aoj
 uoO
 uoO
 aoj
