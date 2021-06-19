@@ -926,7 +926,7 @@
 		M.losebreath++
 		. = 1
 	..()
-/* no. just no.
+/* no. just no. the revive timer is 30 minutes(hopefully lowered soon); that is plenty of time. we do not need this.
 /datum/reagent/medicine/strange_reagent
 	name = "Strange Reagent"
 	description = "A miracle drug capable of bringing the dead back to life. Only functions when applied by patch or spray, if the target has less than 100 brute and burn damage (independent of one another) and hasn't been husked. Causes slight damage to the living."
@@ -936,7 +936,7 @@
 	taste_description = "magnets"
 	pH = 0
 	value = REAGENT_VALUE_RARE
-*/
+
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
 		if(M.suiciding || M.hellbound) //they are never coming back
@@ -986,7 +986,7 @@
 	M.adjustFireLoss(0.5*REM, 0)
 	..()
 	. = 1
-
+*/
 /datum/reagent/medicine/mannitol
 	name = "Mannitol"
 	description = "Efficiently restores brain damage."

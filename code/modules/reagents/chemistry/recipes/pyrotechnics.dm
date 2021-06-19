@@ -118,7 +118,7 @@
 	var/location = get_turf(holder.my_atom)
 	empulse(location, multiplier)
 	holder.clear_reagents()
-
+/* strange reagent removed
 /datum/chemical_reaction/beesplosion
 	name = "Bee Explosion"
 	id = "beesplosion"
@@ -142,7 +142,7 @@
 			if(LAZYLEN(beeagents))
 				new_bee.assign_reagent(pick(beeagents))
 
-
+*/
 /datum/chemical_reaction/stabilizing_agent
 	name = "stabilizing_agent"
 	id = /datum/reagent/stabilizing_agent

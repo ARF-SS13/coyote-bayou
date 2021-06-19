@@ -135,7 +135,6 @@ datum/bounty/reagent/chemical/New()
 		/datum/reagent/medicine/ephedrine,\
 		/datum/reagent/medicine/diphenhydramine,\
 		/datum/reagent/medicine/atropine,\
-		/datum/reagent/medicine/strange_reagent,\
 		/datum/reagent/medicine/regen_jelly,\
 		/datum/reagent/drug/space_drugs,\
 		/datum/reagent/drug/crank,\
