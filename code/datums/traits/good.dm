@@ -36,7 +36,7 @@
 	name = "Former Tribal"
 	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
 	value = 2
-	mob_trait = TRAIT_TECHNOPHOBE
+	mob_trait = list(TRAIT_TECHNOPHOBE, TRAIT_MACHINE_SPIRITS)
 	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
 	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"
 	
