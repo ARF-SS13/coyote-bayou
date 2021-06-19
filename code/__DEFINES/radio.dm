@@ -74,8 +74,8 @@
 #define RADIO_TOKEN_LEGION ":l"
 
 #define RADIO_CHANNEL_DEN "Den"
-#define RADIO_KEY_DEN "d"
-#define RADIO_TOKEN_DEN ":d"
+#define RADIO_KEY_DEN "a"
+#define RADIO_TOKEN_DEN ":a"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
