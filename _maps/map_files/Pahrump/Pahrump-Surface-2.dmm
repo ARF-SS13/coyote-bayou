@@ -5192,7 +5192,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "dgB" = (
-/obj/machinery/smartfridge/bottlerack,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "dgK" = (
@@ -9150,8 +9150,10 @@
 /area/f13/legion)
 "fph" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/tribalbow,
-/obj/item/gun/ballistic/automatic/tribalbow,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "fpl" = (
@@ -12782,6 +12784,12 @@
 /obj/structure/noticeboard,
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
+"hou" = (
+/obj/structure/table/wood,
+/obj/item/paper/bitterdrink,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "hoy" = (
 /obj/item/flag/legion,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -19510,6 +19518,8 @@
 /obj/structure/rack,
 /obj/item/storage/belt/tribe_quiver,
 /obj/item/storage/belt/tribe_quiver,
+/obj/item/gun/ballistic/automatic/tribalbow,
+/obj/item/gun/ballistic/automatic/tribalbow,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "kZH" = (
@@ -33196,6 +33206,12 @@
 	icon_state = "innershade"
 	},
 /area/f13/wasteland)
+"tat" = (
+/obj/structure/table/wood,
+/obj/item/paper/bitterdrink,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "taF" = (
 /obj/structure/fence{
 	dir = 4
@@ -33744,6 +33760,12 @@
 /obj/item/reagent_containers/pill/patch/healpoultice,
 /obj/item/reagent_containers/pill/patch/healpoultice,
 /obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tpM" = (
@@ -33824,10 +33846,8 @@
 /area/f13/building)
 "tsv" = (
 /obj/structure/table/wood,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/warpaint_bowl,
+/obj/item/warpaint_bowl,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tsB" = (
@@ -34395,6 +34415,11 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"tKd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "tKk" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -39792,14 +39817,7 @@
 	},
 /area/f13/village)
 "wNP" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "wOb" = (
@@ -41745,6 +41763,10 @@
 /area/f13/building)
 "xNm" = (
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
+"xNB" = (
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "xNI" = (
@@ -56793,7 +56815,7 @@ jxq
 uRJ
 uRJ
 ntv
-iWc
+hou
 tBN
 mvv
 mvv
@@ -103665,7 +103687,7 @@ hbO
 ntJ
 qCO
 xXm
-jmv
+tat
 hom
 mEy
 mvv
@@ -103922,7 +103944,7 @@ hom
 hom
 vKl
 xNm
-jmv
+xNB
 kRD
 ggK
 ggK
@@ -105475,7 +105497,7 @@ gcK
 pdn
 xNm
 uGF
-bMP
+tKd
 kAJ
 ezv
 seY
