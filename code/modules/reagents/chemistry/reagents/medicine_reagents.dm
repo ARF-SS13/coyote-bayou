@@ -926,7 +926,7 @@
 		M.losebreath++
 		. = 1
 	..()
-
+/* no. just no.
 /datum/reagent/medicine/strange_reagent
 	name = "Strange Reagent"
 	description = "A miracle drug capable of bringing the dead back to life. Only functions when applied by patch or spray, if the target has less than 100 brute and burn damage (independent of one another) and hasn't been husked. Causes slight damage to the living."
@@ -936,7 +936,7 @@
 	taste_description = "magnets"
 	pH = 0
 	value = REAGENT_VALUE_RARE
-
+*/
 /datum/reagent/medicine/strange_reagent/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.stat == DEAD)
 		if(M.suiciding || M.hellbound) //they are never coming back
@@ -1325,7 +1325,7 @@
 	pH = 11
 	value = REAGENT_VALUE_COMMON //not any higher. Ambrosia is a milestone for hydroponics already.
 
-	
+
 //Earthsblood is still a wonderdrug. Just... don't expect to be able to mutate something that makes plants so healthy.
 /datum/reagent/medicine/earthsblood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1339,7 +1339,7 @@
 			myseed.adjust_yield(round(chems.get_reagent_amount(src.type) * 1))
 			myseed.adjust_endurance(round(chems.get_reagent_amount(src.type) * 0.5))
 			myseed.adjust_production(-round(chems.get_reagent_amount(src.type) * 0.5))
-	
+
 /datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-3 * REM, FALSE)
 	M.adjustFireLoss(-3 * REM, FALSE)
