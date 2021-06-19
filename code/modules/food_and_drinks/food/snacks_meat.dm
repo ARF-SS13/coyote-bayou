@@ -291,7 +291,7 @@
 	desc = "A human meat, on a stick."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | LONGPORK
 
 /obj/item/reagent_containers/food/snacks/kebab/monkey
 	name = "meat-kebab"
