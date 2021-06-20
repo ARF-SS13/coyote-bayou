@@ -67,13 +67,18 @@
 	QDEL_NULL(wires)
 	return ..()
 
-/obj/machinery/autolathe/ui_interact(mob/user)
-	. = ..()
-	if (complex == TRUE)
-		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
-			return
+/obj/machinery/autolathe/ui_interact(mob/user)	
+	if(isliving(user))
+		var/mob/living/L = user
+		if(complex == TRUE)
+			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE))
+				to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+				return FALSE
+			else
+				. = ..()
 		else
+			. = ..()
+	
 	if(!is_operational())
 		return
 

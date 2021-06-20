@@ -139,17 +139,17 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -8 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
-	var/is_technophobe = FALSE
-	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
-		is_technophobe = TRUE
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
 		M.adjustFireLoss(heal_rate)
 		M.adjustBruteLoss(heal_rate)
 		M.adjustToxLoss(heal_rate)
-		M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
+		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 		. = TRUE
 	..()
 
@@ -171,16 +171,16 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -3 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	var/is_technophobe = FALSE
-	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
-		is_technophobe = TRUE
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)
 	M.adjustToxLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
+	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 	. = TRUE
 	..()
 
