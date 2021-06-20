@@ -7,7 +7,7 @@
 	mutant_bodyparts = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF","mcolor3" = "FFFFFF","tail_human" = "None", "ears" = "None", "taur" = "None", "deco_wings" = "None")
 	use_skintones = USE_SKINTONES_GRAYSCALE_CUSTOM
 	skinned_type = /obj/item/stack/sheet/animalhide/human
-	disliked_food = GROSS | RAW | LONGPORK
+	disliked_food = GROSS | RAW
 	liked_food = JUNKFOOD | FRIED
 
 	tail_type = "tail_human"

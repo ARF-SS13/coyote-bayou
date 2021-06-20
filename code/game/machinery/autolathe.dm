@@ -22,7 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/complex = TRUE
+
 	var/busy = FALSE
 	var/prod_coeff = 1
 
@@ -69,11 +69,6 @@
 
 /obj/machinery/autolathe/ui_interact(mob/user)
 	. = ..()
-	if (complex == TRUE)
-		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
-			return
-		else
 	if(!is_operational())
 		return
 
@@ -580,7 +575,6 @@
 	var/basic = 0
 	var/intermediate = 0
 	var/advanced = 0
-	complex = FALSE
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()

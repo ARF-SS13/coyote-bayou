@@ -40,15 +40,6 @@
 	result = /obj/item/reagent_containers/food/snacks/f13/deathclawomelette
 	subcategory = CAT_WASTEFOOD
 
-/datum/crafting_recipe/food/longpork_stew
-	name = "Longpork Stew"
-	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/human= 1,
-				/obj/item/reagent_containers/glass/bowl = 1,
-				/datum/reagent/water = 10
-	)
-	result = /obj/item/reagent_containers/food/snacks/soup/longpork_stew
-	subcategory = CAT_WASTEFOOD
-
 /datum/crafting_recipe/food/moleratstew
 	name = "Molerat Stew"
 	reqs = list(
