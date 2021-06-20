@@ -26,6 +26,7 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/stack/medical/poultice/ten,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -2244,6 +2245,11 @@
 /obj/machinery/light/small,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
+"bog" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "bol" = (
 /obj/structure/toilet{
 	dir = 4;
@@ -4852,6 +4858,7 @@
 /obj/structure/closet/crate/freezer/blood{
 	pixel_y = -5
 	},
+/obj/item/defibrillator/primitive,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "cWy" = (
@@ -5880,10 +5887,7 @@
 /area/f13/wasteland)
 "dzE" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/smelling_salts/wayfarer,
-/obj/item/smelling_salts/wayfarer,
+/obj/item/defibrillator/primitive,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "dzK" = (
@@ -6890,6 +6894,7 @@
 /area/f13/building)
 "efO" = (
 /obj/machinery/chem_master/primitive,
+/obj/item/stack/medical/poultice/ten,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "egn" = (
@@ -32319,6 +32324,11 @@
 /obj/effect/spawner/lootdrop/crafts,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"szb" = (
+/obj/structure/table/wood,
+/obj/item/paper/bitterdrink,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "szi" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/curtain{
@@ -56847,7 +56857,7 @@ jxq
 uRJ
 uRJ
 ntv
-iWc
+szb
 tBN
 mvv
 mvv
@@ -57104,7 +57114,7 @@ uRJ
 wsq
 uRJ
 mqp
-iWc
+bog
 tBN
 mvv
 mvv
