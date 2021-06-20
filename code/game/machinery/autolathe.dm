@@ -22,7 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-
+	var/complex = TRUE
 	var/busy = FALSE
 	var/prod_coeff = 1
 
