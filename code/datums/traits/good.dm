@@ -36,10 +36,17 @@
 	name = "Former Tribal"
 	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
 	value = 2
-	mob_trait = TRAIT_TRIBAL
-	mob_extratrait = TRAIT_TECHNOPHOBE
 	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
 	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"
+
+/datum/quirk/tribal/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, TRAIT_TRIBAL)
+
+/datum/quirk/tribal/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, TRAIT_TRIBAL)
+
 	
 /datum/quirk/apathetic
 	name = "Apathetic"
