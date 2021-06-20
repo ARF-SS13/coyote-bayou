@@ -625,6 +625,20 @@
 	trash = /obj/item/reagent_containers/glass/bowl
 	foodtype = MEAT | VEGETABLES
 
+/obj/item/reagent_containers/food/snacks/soup/longpork_stew
+	name = "longpork stew"
+	desc = "A thick, oily stew that tastes and smells weird. Has small pieces of raw, chewy meat."
+	icon = 'icons/fallout/objects/food&drinks/soupsalad.dmi'
+	icon_state = "molerat_stew"
+	bitesize = 4
+	volume = 30
+	list_reagents = list(/datum/reagent/medicine/longpork_stew = 30)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/medicine/longpork_stew = 5)
+	filling_color = "#a7510b"
+	tastes = list("oily broth" = 5, "chewy meat" = 1)
+	trash = /obj/item/reagent_containers/glass/bowl
+	foodtype = MEAT | LONGPORK
+
 /obj/item/reagent_containers/food/snacks/soup/mirelurkstew
 	name = "mirelurk stew"
 	desc = "A hearty stew made from de-shelled mirelurk meat, onions, butter, and other such delights."
