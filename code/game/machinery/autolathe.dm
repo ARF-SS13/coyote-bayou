@@ -22,7 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/complex = TRUE
+
 	var/busy = FALSE
 	var/prod_coeff = 1
 
@@ -585,7 +585,6 @@
 	var/basic = 0
 	var/intermediate = 0
 	var/advanced = 0
-	complex = FALSE
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()

@@ -191,19 +191,6 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 	antag_removal_text = "Your antagonistic nature has caused you to renounce your pacifism."
 
-/datum/quirk/splitpersonality
-	name = "Split Personality"
-	desc = "Whether through trauma, a condition from birth, or some other unknown cause, you have a split personality."
-	value = -3
-	gain_text = null
-	lose_text = null
-	medical_record_text = "Patient has an untreatable case of Multiple Personality Disorder."
-
-/datum/quirk/splitpersonality/add()
-	var/datum/brain_trauma/severe/split_personality/T = new()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
-	
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
