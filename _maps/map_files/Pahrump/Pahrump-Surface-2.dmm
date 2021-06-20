@@ -4274,6 +4274,11 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"cES" = (
+/obj/structure/closet/cabinet/anchored,
+/obj/item/storage/fancy/candle_box,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "cEV" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -5198,7 +5203,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "dgB" = (
-/obj/machinery/smartfridge/bottlerack,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "dgK" = (
@@ -9142,8 +9147,10 @@
 /area/f13/legion)
 "fph" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/tribalbow,
-/obj/item/gun/ballistic/automatic/tribalbow,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/clothing/suit/armor/f13/tribe_armor,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "fpl" = (
@@ -19551,6 +19558,8 @@
 /obj/structure/rack,
 /obj/item/storage/belt/tribe_quiver,
 /obj/item/storage/belt/tribe_quiver,
+/obj/item/gun/ballistic/automatic/tribalbow,
+/obj/item/gun/ballistic/automatic/tribalbow,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "kZH" = (
@@ -23066,6 +23075,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
+/obj/item/warpaint_bowl,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "nhp" = (
@@ -32012,6 +32022,11 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/village)
+"sqx" = (
+/obj/structure/dresser,
+/obj/item/warpaint_bowl,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "sqy" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
@@ -33744,6 +33759,12 @@
 /obj/item/reagent_containers/pill/patch/healpoultice,
 /obj/item/reagent_containers/pill/patch/healpoultice,
 /obj/item/reagent_containers/pill/patch/healpoultice,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tpM" = (
@@ -33824,10 +33845,7 @@
 /area/f13/building)
 "tsv" = (
 /obj/structure/table/wood,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
-/obj/item/clothing/suit/armor/f13/tribe_armor,
+/obj/item/warpaint_bowl,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tsB" = (
@@ -35347,6 +35365,7 @@
 /area/f13/wasteland)
 "uke" = (
 /obj/structure/closet/cabinet/anchored,
+/obj/item/storage/fancy/candle_box,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "ukl" = (
@@ -35976,6 +35995,11 @@
 "uBJ" = (
 /turf/open/floor/wood/f13/stage_tl,
 /area/f13/wasteland)
+"uBU" = (
+/obj/structure/table/wood/settler,
+/obj/item/warpaint_bowl,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/village)
 "uCd" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -37286,6 +37310,10 @@
 "vjR" = (
 /turf/open/floor/wood/f13/old/ruinedstraightsouth,
 /area/f13/wasteland)
+"vjT" = (
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "vka" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -37894,6 +37922,11 @@
 /obj/item/chair/stool/retro,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vEN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "vFn" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood{
@@ -39829,14 +39862,7 @@
 	},
 /area/f13/village)
 "wNP" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/machinery/smartfridge/bottlerack/alchemy_rack,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "wOb" = (
@@ -51925,7 +51951,7 @@ gcK
 qFk
 dzE
 izB
-hna
+cES
 qFk
 qFk
 iRT
@@ -52439,7 +52465,7 @@ ktB
 qFk
 dEB
 cPZ
-vYp
+sqx
 qFk
 otr
 otr
@@ -54532,7 +54558,7 @@ qFk
 otr
 cPZ
 dlX
-fpv
+uBU
 qFk
 gcK
 gcK
@@ -103179,7 +103205,7 @@ hom
 pqs
 uFt
 awT
-xXm
+vjT
 rgS
 mvv
 mvv
@@ -105503,7 +105529,7 @@ gcK
 pdn
 xNm
 uGF
-bMP
+vEN
 kAJ
 ezv
 seY
