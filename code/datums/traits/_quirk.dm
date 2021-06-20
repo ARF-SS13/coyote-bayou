@@ -53,7 +53,7 @@
 		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
 		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
 	if(mob_extratrait)
-		REMOVE_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)
+		REMOVE_TRAIT(quirk_holder, mob_extratrait, ROUNDSTART_TRAIT)
 		ADD_TRAIT(to_mob, mob_extratrait, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
