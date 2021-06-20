@@ -12,7 +12,7 @@
 
 /datum/quirk/horrifying_tastes
 	name = "Horrifying Tastes"
-	desc = "You enjoy a fine sort of meal not often appreciated by your peers. To serve man, in all it's forms is your life's work. Put bluntly - you are a cannibal."
+	desc = "You enjoy a fine sort of meal not often appreciated by your peers. To serve man, in all it's forms is your life's work. Put bluntly - you are a cannibal. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you."
 	mob_trait = TRAIT_LONGPORKLOVER
 	value = 2
 	gain_text = "<span class='notice'>You have an insatiable hunger for the flesh of your fellow man.</span>"

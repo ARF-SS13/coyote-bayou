@@ -103,7 +103,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = LIQUID
 	color =  "#915818"
 	taste_description = "oily water, with bits of raw-tasting tender meat."
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	metabolization_rate = 0.15 * REAGENTS_METABOLISM //slow, weak heal that lasts a while. Metabolizies much faster if you are not hurt.
 	overdose_threshold = 50 //If you eat too much you get poisoned from all the human flesh you're eating
 	var/longpork_hurting = 0
 	var/longpork_lover_healing = -2
