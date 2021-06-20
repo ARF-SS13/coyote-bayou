@@ -97,6 +97,36 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+/datum/reagent/medicine/longpork_stew
+	name = "longpork stew"
+	description = "A dish sworn by some to have unusual healing properties. To most it just tastes disgusting. What even is longpork anyways?..."
+	reagent_state = LIQUID
+	color =  "#915818"
+	taste_description = "oily water, with bits of raw-tasting tender meat."
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	overdose_threshold = 50 //If you eat too much you get poisoned from all the human flesh you're eating
+	var/longpork_hurting = 0
+	var/longpork_lover_healing = -2
+
+/datum/reagent/medicine/longpork_stew/on_mob_life(mob/living/carbon/M)
+	var/is_longporklover = FALSE
+	if(HAS_TRAIT(M, TRAIT_LONGPORKLOVER))
+		is_longporklover = TRUE
+	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
+		metabolization_rate = 3 * REAGENTS_METABOLISM //metabolizes much quicker if not injured
+	var/longpork_heal_rate = (is_longporklover ? longpork_lover_healing : longpork_hurting) * REAGENTS_EFFECT_MULTIPLIER
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(longpork_heal_rate)
+		M.adjustBruteLoss(longpork_heal_rate)
+		M.adjustToxLoss(is_longporklover ? 0 : 3)
+		. = TRUE
+		..()
+
+/datum/reagent/medicine/longpork_stew/overdose_process(mob/living/M)
+	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+	..()
+	. = TRUE
+
 /datum/reagent/medicine/bitter_drink
 	name = "bitter drink"
 	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."

@@ -10,6 +10,37 @@
 	lose_text = "<span class='danger'>You don't feel as resistant to alcohol anymore. Somehow.</span>"
 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
 
+/datum/quirk/horrifying_tastes
+	name = "Horrifying Tastes"
+	desc = "You enjoy a fine sort of meal not often appreciated by your peers. To serve man, in all it's forms is your life's work. Put bluntly - you are a cannibal."
+	mob_trait = TRAIT_LONGPORKLOVER
+	value = 2
+	gain_text = "<span class='notice'>You have an insatiable hunger for the flesh of your fellow man.</span>"
+	lose_text = "<span class='notice'>The terrible hunger fades - you feel peace at last.</span>"
+	medical_record_text = "Patient refuses to comment on their dietary preferences."
+
+/datum/quirk/horrifying_tastes/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.liked_food |= LONGPORK
+	species.disliked_food &= ~LONGPORK
+
+/datum/quirk/horrifying_tastes/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+		species.liked_food &= ~LONGPORK
+		species.disliked_food |= LONGPORK
+
+/datum/quirk/tribal
+	name = "Former Tribal"
+	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
+	value = 2
+	mob_trait = list(TRAIT_TECHNOPHOBE, TRAIT_MACHINE_SPIRITS)
+	gain_text = "<span class='notice'>You remember the old ways of your tribe..</span>"
+	lose_text = "<span class='notice'>You've forgotten the ways of your ancestors..</span>"
+	
+
 /datum/quirk/apathetic
 	name = "Apathetic"
 	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."

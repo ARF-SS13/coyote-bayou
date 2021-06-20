@@ -79,6 +79,19 @@
 		species.liked_food = initial(species.liked_food)
 		species.disliked_food = initial(species.disliked_food)
 
+/datum/quirk/imaginaryfriend
+	name = "Imaginary Friend"
+	desc = "You have an imaginary friend! Most people grow out of them but not you - even if other people think you're weird for it. (NOTE: DO NOT TAKE THIS QUIRK ROUNDSTART. NO ONE WILL BE AVAILABLE TO BECOME YOUR IMAGINARY FRIEND)."
+	value = 0
+	gain_text = null
+	lose_text = null
+	medical_record_text = "Patient has an Imaginary Friend they insist is real.."
+
+/datum/quirk/imgainaryfriend/add()
+	var/datum/brain_trauma/special/imaginary_friend/T = new()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
+
 /datum/quirk/monochromatic
 	name = "Monochromacy"
 	desc = "You suffer from full colorblindness, and perceive nearly the entire world in blacks and whites."
