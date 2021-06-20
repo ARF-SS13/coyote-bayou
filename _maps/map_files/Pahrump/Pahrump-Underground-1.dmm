@@ -12188,15 +12188,15 @@
 /obj/item/key,
 /obj/item/key,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
-/obj/item/radio/headset/headset_den,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
+/obj/item/radio/headset/headset_town,
 /obj/item/storage/box/citizenship_permits,
 /obj/item/assembly/signaler/advanced,
 /obj/item/assembly/signaler,
@@ -21319,6 +21319,10 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
+"qOM" = (
+/obj/machinery/telecomms/server/presets/town,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "qPh" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/f13{
@@ -91460,7 +91464,7 @@ qzI
 cZA
 tNq
 pHv
-qLD
+qOM
 qLD
 eQC
 fZG
