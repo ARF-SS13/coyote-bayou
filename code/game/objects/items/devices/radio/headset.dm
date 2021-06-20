@@ -362,7 +362,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/headset_den
 	name = "den radio headset"
-	desc = "This is used by the den. \nTo access the den channel, use :a."
+	desc = "This is used by the den. \nTo access the den channel, use :g."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_den
 

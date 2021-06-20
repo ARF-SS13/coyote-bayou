@@ -185,7 +185,7 @@
 
 /obj/item/encryptionkey/headset_den
 	name = "Den radio encryption key"
-	desc = "An encryption key for a radio headset. To access the Den channel, use :a."
+	desc = "An encryption key for a radio headset. To access the Den channel, use :g."
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_DEN = 1)
 
