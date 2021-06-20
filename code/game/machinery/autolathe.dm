@@ -22,7 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/complex = TRUE
+	var/tooadvanced = TRUE //Prevents people with Technophobe from using the lathe unless set to false.
 	var/busy = FALSE
 	var/prod_coeff = 1
 
@@ -70,7 +70,7 @@
 /obj/machinery/autolathe/ui_interact(mob/user)	
 	if(isliving(user))
 		var/mob/living/L = user
-		if(complex == TRUE)
+		if(tooadvanced == TRUE)
 			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE))
 				to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
 				return FALSE
@@ -585,7 +585,7 @@
 	var/basic = 0
 	var/intermediate = 0
 	var/advanced = 0
-	complex = FALSE
+	tooadvanced = FALSE //technophobes will still need to be able to make ammo
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()
 	if(!simple && panel_open)
