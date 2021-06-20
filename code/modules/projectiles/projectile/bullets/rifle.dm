@@ -22,10 +22,10 @@
 
 /obj/item/projectile/bullet/a762/sport //.308 Winchester
 	name = ".308 bullet"
-	damage = 35
-	armour_penetration = 0.08
-	wound_bonus = 10
-	bare_wound_bonus = -10
+	damage = 45 //35
+	armour_penetration = 0.25 //0.08
+	wound_bonus = 20 //10
+	bare_wound_bonus = -20 //-10
 
 /obj/item/projectile/bullet/a762/match
 	name = "7.62 match bullet"
