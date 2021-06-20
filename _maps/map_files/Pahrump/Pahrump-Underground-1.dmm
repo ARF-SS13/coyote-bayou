@@ -7280,7 +7280,7 @@
 	extra_projectiles = 1;
 	faction = list("wastebot");
 	loot = null;
-	name = "mutated enclave soldier";
+	name = "Private Downs";
 	speak = list("AUUGHGHHH!");
 	speak_emote = list("shouts")
 	},
@@ -15830,16 +15830,24 @@
 /mob/living/simple_animal/hostile/enclave/soldier{
 	aggro_vision_range = 15;
 	armour_penetration = 1;
-	desc = "What visibly appears to be a proud Enclave soldier clad in armor is in actuality a grotesque, FEV-exposed mutant grafted to the interior of his suit, never able to leave. You've gotten a lot farther than you should have...";
+	desc = "A grotesque, Enclave-manufactured and Enclave-loyal prime super mutant given cybernetic augmentations, unique hardened power armor, and an arm-mounted plasma repeater, alongside drug cocktails administered by his suit. Your ride's over mutie, time to die.";
+	environment_smash = 2;
 	extra_projectiles = 10;
 	faction = list("wastebot");
 	health = 3000;
+	icon = 'icons/fallout/mobs/bigmob.dmi';
+	icon_dead = "arlem";
+	icon_gib = "arlem";
+	icon_living = "arlem";
+	icon_state = "arlem";
 	loot = list(/obj/item/keycard/library);
 	maxHealth = 3000;
 	melee_damage_lower = 100;
 	melee_damage_upper = 100;
 	melee_queue_distance = 10;
 	name = "Captain Arlem";
+	obj_damage = 300;
+	ranged_ignores_vision = 1;
 	speak = list("Die... mutie!","AAAAUHGHHHH!","DIE!","Perish!","FOR THE ENCLAVE!");
 	speak_chance = 10;
 	speak_emote = list("shouts");
@@ -16341,6 +16349,15 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/brotherhood/rnd)
+"mWE" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	faction = list("wastebot")
+	},
+/turf/open/floor/f13{
+	dir = 10;
+	icon_state = "redmark"
+	},
+/area/f13/bunker)
 "mWM" = (
 /obj/machinery/computer/med_data,
 /turf/open/floor/carpet/black,
@@ -17779,6 +17796,21 @@
 /obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"nYI" = (
+/mob/living/simple_animal/hostile/enclave/soldier{
+	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
+	extra_projectiles = 1;
+	faction = list("wastebot");
+	loot = null;
+	name = "Sergeant Armstrong";
+	speak = list("AUUGHGHHH!");
+	speak_emote = list("shouts")
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/bunker)
 "nYR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin,
@@ -19994,11 +20026,14 @@
 /area/f13/caves)
 "pRe" = (
 /mob/living/simple_animal/hostile/enclave/soldier{
-	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit.";
-	extra_projectiles = 1;
+	desc = "A former Enclave soldier, mutated by the forced evolutionary virus and grafted to the interior of his suit. This one's got a giant ass pulse sniper!";
+	extra_projectiles = 0;
 	faction = list("wastebot");
 	loot = null;
-	name = "mutated enclave soldier";
+	name = "Sergeant Mercer";
+	projectiletype = /obj/item/projectile/beam/pulse;
+	ranged_cooldown_time = 24;
+	ranged_message = "fires the pulse sniper";
 	speak = list("AUUGHGHHH!");
 	speak_emote = list("shouts")
 	},
@@ -21862,8 +21897,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger,
-/obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger,
+/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rpx" = (
@@ -24424,12 +24458,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"tCS" = (
-/obj/item/chair,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
-/area/f13/bunker)
 "tDc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/mineral/random/low_chance,
@@ -33300,7 +33328,7 @@ eLE
 aOW
 eBg
 eBg
-pRe
+nYI
 aOW
 eLE
 eLE
@@ -33812,7 +33840,7 @@ aOW
 aOW
 aOW
 aOW
-fSV
+cuc
 qju
 fSV
 aOW
@@ -34322,18 +34350,18 @@ eLE
 eLE
 aOW
 xlU
-fSV
+cuc
 mpF
 mir
 aOW
 eBg
-tCS
+dFI
 eBg
 aOW
 gPj
 mcF
 oFi
-oFi
+dFI
 aOW
 eLE
 eLE
@@ -35867,7 +35895,7 @@ jXz
 aOW
 aOW
 aOW
-wSf
+mWE
 mGm
 fSV
 qJg
@@ -36645,7 +36673,7 @@ eBg
 iDK
 aOW
 wle
-fSV
+cuc
 ycu
 fSV
 rhO
@@ -36899,7 +36927,7 @@ wSf
 xnV
 fSV
 xnV
-wSf
+mWE
 aOW
 aOW
 aOW
@@ -41538,9 +41566,9 @@ eLE
 eLE
 eLE
 aOW
-tyw
-rTP
-vKJ
+uTN
+uTN
+uTN
 eOF
 vmk
 aOW
