@@ -288,7 +288,7 @@ obj/item/shield/riot/bullet_proof
 //Legion shield
 /obj/item/shield/riot/legion
 	name = "legion shield"
-	desc = "Heavy shield with metal scrap bolted to a wood backing, with a painted plate with the Legion insignia in the centre."
+	desc = "Heavy shield with metal scrap bolted to a wood backing, with a painted yellow bull insignia in the centre."
 	icon = 'icons/fallout/objects/melee/shields.dmi'
 	icon_state = "shield_legion"
 	lefthand_file = 'icons/fallout/onmob/weapons/shields_lefthand.dmi'
@@ -306,7 +306,7 @@ obj/item/shield/riot/bullet_proof
 
 /obj/item/shield/riot/buckler
 	name = "wooden buckler"
-	desc = "A medieval wooden buckler."
+	desc = "A small wooden shield."
 	icon_state = "buckler"
 	item_state = "buckler"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -439,14 +439,8 @@ obj/item/shield/riot/bullet_proof
 	if(ismob(loc.loc))		//cyberimplant.user
 		to_chat(loc, "<span class='notice'>[src] has recharged its reinforcement matrix and is ready for use!</span>")
 
-/obj/item/shield/legion
-	name = "legion shield"
-	desc = "A well balanced hard wood shield, fashioned together with long iron bands. It has a legion emblem charred into the inside."
-	icon_state = "roman_shield"
-	item_state = "roman_shield"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 
+//Buckler duplicate going
 /obj/item/shield/legion/buckler
 	name = "legion buckler"
 	desc = "A lightweight well balanced shield made out of a hard oak and lashed together with solid iron bands. It has a legion emblem charred onto the inside."
@@ -465,17 +459,6 @@ obj/item/shield/riot/bullet_proof
 	block_chance = 25
 	armor = list("linemelee" = 80, "linebullet" = 80, "linelaser" = 80, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 70)
 	attack_verb = list("shoved", "bashed")
-	var/cooldown = 0 //shield bash cooldown. based on world.time
-
-/obj/item/shield/legion/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item))
-		if(cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
-			cooldown = world.time
-	else
-		return ..()
-
 
 /obj/item/shield/energy
 	name = "energy combat shield"

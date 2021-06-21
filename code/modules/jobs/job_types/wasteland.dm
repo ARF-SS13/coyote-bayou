@@ -683,7 +683,7 @@ Raider
 	head = /obj/item/clothing/head/scarecrow_hat
 	gloves = /obj/item/clothing/gloves/color/black
 	glasses = /obj/item/clothing/glasses/welding
-	l_hand = /obj/item/shield/legion/buckler
+	l_hand = /obj/item/shield/riot/buckler
 	backpack_contents = list(
 		/obj/item/claymore/machete/spatha=1)
 
