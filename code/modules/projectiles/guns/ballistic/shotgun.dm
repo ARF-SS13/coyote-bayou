@@ -463,7 +463,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 5
-	extra_damage = 5
+	extra_damage = 10
 	extra_penetration = 0.2
 	can_scope = TRUE
 	scope_state = "kar_scope"
@@ -507,7 +507,7 @@
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
 	fire_delay = 5
-	extra_damage = 15 //60 damage- hits as hard as an AMR!
+	extra_damage = 20 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
 
 /obj/item/gun/ballistic/shotgun/remington/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
