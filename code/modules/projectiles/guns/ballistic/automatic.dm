@@ -1086,7 +1086,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/m473
 	fire_delay = 2
-	burst_shot_delay = 2
+	burst_shot_delay = 1.0
 	can_attachments = TRUE
 	can_automatic = TRUE
 	semi_auto = TRUE
@@ -1100,7 +1100,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	name = "g11e"
 	icon_state = "g11e"
 	item_state = "g11e"
-	fire_delay = 1
+	fire_delay = 2.0
 	burst_shot_delay = 1
 	spread = 5
 
