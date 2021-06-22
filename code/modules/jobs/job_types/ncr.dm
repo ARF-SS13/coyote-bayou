@@ -132,8 +132,6 @@ Captain
 
 /datum/outfit/loadout/captao
 	name = "Jackie Chan Officer"
-	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
 	/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra=1,
 	/obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra=1,
