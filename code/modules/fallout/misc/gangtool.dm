@@ -91,15 +91,7 @@
 
 /* Converting currency to the gang influence */
 /obj/item/device/gangtool/proc/add_caps(obj/item/I)
-	if(istype(I, /obj/item/stack/f13Cash))
-		var/obj/item/stack/f13Cash/currency = I
-		var/inserted_value = currency.amount * CASH_CAP_GANG
-		gang.influence += inserted_value
-		I.use(currency.amount)
-		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You gain [inserted_value] gang influence by bribing underground suppliers.")
-		attack_self(usr)
-	else if(istype(I, /obj/item/stack/f13Cash/ncr))
+	if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
 		var/inserted_value = currency.amount * CASH_NCR_GANG
 		gang.influence += inserted_value
@@ -118,6 +110,14 @@
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
 		var/inserted_value = currency.amount * CASH_AUR_GANG
+		gang.influence += inserted_value
+		I.use(currency.amount)
+		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+		to_chat(usr, "You gain [inserted_value] gang influence by bribing underground suppliers.")
+		attack_self(usr)
+	else if(istype(I, /obj/item/stack/f13Cash))
+		var/obj/item/stack/f13Cash/currency = I
+		var/inserted_value = currency.amount * CASH_CAP_GANG
 		gang.influence += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)

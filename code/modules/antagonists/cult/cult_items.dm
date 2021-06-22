@@ -368,7 +368,7 @@
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
 	armor = list("tier" = 7,"energy" = 15, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 40, "acid" = 75)
-	brightness_on = 0
+	light_range = 0
 	actions_types = list()
 
 
@@ -813,11 +813,10 @@
 		spear.throw_at(owner, 10, 2, owner)
 
 
-/obj/item/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage/blood
+/obj/item/gun/ballistic/revolver/single_shotgun/arcane_barrage/blood
 	name = "blood bolt barrage"
 	desc = "Blood for blood."
 	color = "#ff0000"
-	guns_left = 24
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage/blood
 	fire_sound = 'sound/magic/wand_teleport.ogg'
 	item_flags = NEEDS_PERMIT | NOBLUDGEON | DROPDEL

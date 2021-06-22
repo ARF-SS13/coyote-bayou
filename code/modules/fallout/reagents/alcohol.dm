@@ -89,6 +89,38 @@
 		. = TRUE
 	..()
 
+/datum/reagent/consumable/ethanol/yellowpulque
+	name = "Yellow pulque"
+	description = "An awful smelling yellow, thick pulque."
+	color = "#fdff73"
+	boozepwr = 50
+	taste_description = "puke and dirt"
+	glass_icon_state = "cognacglass"
+	glass_name = "yellow pulque"
+	glass_desc = "An awful smelling yellow, thick pulque."
+	var/last_added = 0
+	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
+
+/datum/reagent/consumable/ethanol/yellowpulque/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+	. = TRUE
+
+/datum/reagent/consumable/ethanol/yellowpulque/on_mob_life(mob/living/carbon/M)
+	if(last_added)
+		M.blood_volume -= last_added
+		last_added = 0
+	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
+		var/amount_to_add = min(M.blood_volume, volume*5)
+		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
+		last_added = new_blood_level - M.blood_volume
+		M.blood_volume = new_blood_level
+	if(prob(33))
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		. = TRUE
+	..()
+
 /datum/reagent/consumable/ethanol/deathroach
 	name = "Deathroach"
 	description = "Distilled tobacco, for that two-in-one cancer blast!"

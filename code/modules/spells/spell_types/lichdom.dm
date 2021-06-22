@@ -78,7 +78,8 @@
 	icon_state = "bluespace"
 	color = "#003300"
 	light_color = "#003300"
-	var/lon_range = 3
+	light_system = MOVABLE_LIGHT
+	light_range = 3
 	var/resurrections = 0
 	var/datum/mind/mind
 	var/respawn_time = 1800
@@ -93,7 +94,6 @@
 	active_phylacteries++
 	GLOB.poi_list |= src
 	START_PROCESSING(SSobj, src)
-	set_light(lon_range)
 	if(initial(SSticker.mode.round_ends_with_antag_death))
 		SSticker.mode.round_ends_with_antag_death = FALSE
 

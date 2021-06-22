@@ -41,6 +41,9 @@
 	var/socks = "Nude" //Which socks the player wants
 	var/socks_color = "FFFFFF"
 
+	var/warpaint = null
+	var/warpaint_color = null
+	
 	//Equipment slots
 	var/obj/item/wear_suit = null
 	var/obj/item/w_uniform = null

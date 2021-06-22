@@ -132,6 +132,7 @@
 /datum/gear/uniform/combat
 	name = "combat uniform"
 	path = /obj/item/clothing/under/f13/combat_shirt
+	cost = 2
 
 /datum/gear/uniform/roving
 	name = "roving trader outfit"
@@ -140,10 +141,6 @@
 /datum/gear/uniform/police
 	name = "pre-War police uniform"
 	path = /obj/item/clothing/under/f13/police
-
-/datum/gear/uniform/batter
-	name = "worn baseball uniform"
-	path = /obj/item/clothing/under/f13/batter
 
 /datum/gear/uniform/relaxedwear
 	name = "pre-war male relaxedwear"
@@ -169,116 +166,87 @@
 	name = "Black suit"
 	path = /obj/item/clothing/under/suit/black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+	cost = 2
 
 /datum/gear/uniform/suit/green
 	name = "Green suit"
 	path = /obj/item/clothing/under/suit/green
+	cost = 2
 
 /datum/gear/uniform/suit/red
 	name = "Red suit"
 	path = /obj/item/clothing/under/suit/red
+	cost = 2
 
 /datum/gear/uniform/suit/charcoal
-	name = "Charcoal suit"
+	name = "Charcoal Suit"
 	path = /obj/item/clothing/under/suit/charcoal
+	cost = 2
+
+/datum/gear/uniform/suit/checkered_suit
+	name = "Checkered Suit"
+	path = /obj/item/clothing/under/suit/checkered
+	cost = 3
 
 /datum/gear/uniform/suit/navy
 	name = "Navy suit"
 	path = /obj/item/clothing/under/suit/navy
+	cost = 2
 
 /datum/gear/uniform/suit/burgundy
 	name = "Burgundy suit"
 	path = /obj/item/clothing/under/suit/burgundy
+	cost = 2
 
 /datum/gear/uniform/suit/tan
 	name = "Tan suit"
 	path = /obj/item/clothing/under/suit/tan
+	cost = 2
 
 /datum/gear/uniform/suit/white
 	name = "White suit"
 	path = /obj/item/clothing/under/suit/white
-
-/datum/gear/uniform/assistantformal
-	name = "Assistant's formal uniform"
-	path = /obj/item/clothing/under/misc/assistantformal
-
-/datum/gear/uniform/maidcostume
-	name = "Maid costume"
-	path = /obj/item/clothing/under/costume/maid
+	cost = 2
 
 /datum/gear/uniform/mailmanuniform
 	name = "Mailman's jumpsuit"
 	path = /obj/item/clothing/under/misc/mailman
 
-/datum/gear/uniform/skirt
-	name = "Black skirt"
-	path = /obj/item/clothing/under/dress/skirt
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
-
-/datum/gear/uniform/skirt/blue
-	name = "Blue skirt"
-	path = /obj/item/clothing/under/dress/skirt/blue
-
-/datum/gear/uniform/skirt/red
-	name = "Red skirt"
-	path = /obj/item/clothing/under/dress/skirt/red
-
-/datum/gear/uniform/skirt/purple
-	name = "Purple skirt"
-	path = /obj/item/clothing/under/dress/skirt/purple
-
-/datum/gear/uniform/skirt/plaid
-	name = "Plaid skirt"
-	path = /obj/item/clothing/under/dress/skirt/plaid
-
-/datum/gear/uniform/schoolgirlblue
-	name = "Blue Schoolgirl Uniform"
-	path = /obj/item/clothing/under/costume/schoolgirl
-
-/datum/gear/uniform/schoolgirlred
-	name = "Red Schoolgirl Uniform"
-	path = /obj/item/clothing/under/costume/schoolgirl/red
-
-/datum/gear/uniform/schoolgirlgreen
-	name = "Green Schoolgirl Uniform"
-	path = /obj/item/clothing/under/costume/schoolgirl/green
-
-/datum/gear/uniform/schoolgirlorange
-	name = "Orange Schoolgirl Uniform"
-	path = /obj/item/clothing/under/costume/schoolgirl/orange
-
 /datum/gear/uniform/dress
 	name = "Striped Dress"
 	path = /obj/item/clothing/under/dress/striped
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
+	cost = 2
 
 /datum/gear/uniform/dress/sun/white
 	name = "White Sundress"
 	path = /obj/item/clothing/under/dress/sundress/white
+	cost = 2
 
 /datum/gear/uniform/dress/sun
 	name = "Sundress"
 	path = /obj/item/clothing/under/dress/sundress
+	cost = 2
 
 /datum/gear/uniform/dress/green
 	name = "Green Dress"
 	path = /obj/item/clothing/under/dress/green
+	cost = 2
 
 /datum/gear/uniform/dress/pink
 	name = "Pink Dress"
 	path = /obj/item/clothing/under/dress/pink
+	cost = 2
 
 /datum/gear/uniform/dress/orange
 	name = "Flower Dress"
 	path = /obj/item/clothing/under/dress/flower
+	cost = 2
 
 /datum/gear/uniform/skirt/swept
 	name = "Swept skirt"
 	path = /obj/item/clothing/under/dress/skirt/swept
-
-/datum/gear/uniform/croptop
-	name = "Croptop"
-	path = /obj/item/clothing/under/croptop
+	cost = 3
 
 /datum/gear/uniform/pants
 	name = "Yoga Pants"
@@ -288,6 +256,7 @@
 /datum/gear/uniform/kilt
 	name = "Kilt"
 	path = /obj/item/clothing/under/costume/kilt
+	cost = 2
 
 /datum/gear/uniform/pants/camo
 	name = "Camo Pants"
@@ -334,51 +303,16 @@
 	name = "Jean Shorts"
 	path = /obj/item/clothing/under/pants/jeanshort
 
-/datum/gear/uniform/skirt/denim
-	name = "Denim Skirt"
-	path = /obj/item/clothing/under/pants/denimskirt
-
-/datum/gear/uniform/turtleneck
-	name = "Tactitool Turtleneck"
-	path = /obj/item/clothing/under/syndicate/cosmetic
-
-/datum/gear/uniform/sweater
-	name = "Cream Commando Sweater"
-	path = /obj/item/clothing/under/sweater
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SWEATERS
-
-/datum/gear/uniform/sweater/black
-	name = "Black Commando Sweater"
-	path = /obj/item/clothing/under/sweater/black
-
-/datum/gear/uniform/sweater/purple
-	name = "Purple Commando Sweater"
-	path = /obj/item/clothing/under/sweater/purple
-
-/datum/gear/uniform/sweater/green
-	name = "Green Commando Sweater"
-	path = /obj/item/clothing/under/sweater/green
-
-/datum/gear/uniform/sweater/red
-	name = "Red Commando Sweater"
-	path = /obj/item/clothing/under/sweater/red
-
-/datum/gear/uniform/sweater/blue
-	name =  "Navy Commando Sweater"
-	path = /obj/item/clothing/under/sweater/blue
-
-/datum/gear/uniform/sweater/keyhole
-	name =  "Keyhole Sweater"
-	path = /obj/item/clothing/under/misc/keyholesweater
-
 /datum/gear/uniform/tealturtle
 	name = "Teal Turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/teal
+	cost = 2
 
 /datum/gear/uniform/greyturtle
 	name = "Grey Turtleneck"
 	path = /obj/item/clothing/under/suit/turtle/grey
-
+	cost = 2
+/*
 /datum/gear/uniform/detbrown
 	name = "Brown Worn Suit"
 	path = /obj/item/clothing/under/rank/security/detective/brown
@@ -392,14 +326,9 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Detective"
 	restricted_roles = list("Detective")
-
+*/
 
 // Grey utility
-
-/datum/gear/uniform/grey
-	name = "Grey Uniform"
-	path = /obj/item/clothing/under/rank/civilian/util/greyshirt
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/grey/util
 	name = "Grey Utility Uniform"
@@ -422,20 +351,6 @@
 	restricted_roles = list("Scientist", "Roboticist", "Research Director", "Geneticist")
 */
 
-/datum/gear/uniform/grey/med
-	name = "Medical Utility Uniform"
-	path = /obj/item/clothing/under/rank/medical/doctor/util
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Medical"
-	restricted_roles = list("Medical Doctor", "Virologist", "Chemist", "Geneticist", "Paramedic")
-
-/datum/gear/uniform/grey/eng
-	name = "Engineering Utility Uniform"
-	path = /obj/item/clothing/under/rank/engineering/engineer/util
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Engineering"
-	restricted_roles = list("Station Engineer", "Atmospheric Technician", "Chief Engineer")
-
 /*
 /datum/gear/uniform/grey/supply
 	name = "Supply Utility Uniform"
@@ -452,20 +367,7 @@
 	restricted_roles = list("Quartermaster", "Research Director", "Chief Medical Officer", "Head Of Security", "Head Of Personnel", "Captain")
 */
 
-/datum/gear/uniform/grey/eng/mech
-	name = "Mechanic's Uniform"
-	path = /obj/item/clothing/under/rank/engineering/engineer/mechanic
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-
-/datum/gear/unifrom/grey/med/red
-	name = "Red Paramedic's Uniform"
-	path = /obj/item/clothing/under/rank/medical/paramedic/red
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-
 //Memes
-/datum/gear/uniform/gear_harnesses
-	name = "Gear Harness"
-	path = /obj/item/clothing/under/misc/gear_harness
 
 //Christmas
 /*Commenting out Until next Christmas or made automatic
@@ -499,8 +401,8 @@
 /datum/gear/uniform/greenstripper
 	name = "Green stripper outfit"
 	path = /obj/item/clothing/under/misc/stripper/green
-	cost = 3
-
+	cost = 5
+/*
 /datum/gear/uniform/qipao
 	name = "Qipao, Black"
 	path = /obj/item/clothing/under/costume/qipao
@@ -536,19 +438,17 @@
 	path = /obj/item/clothing/under/costume/cheongsam/red
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_DRESSES
 	cost = 3
+*/
 
 /datum/gear/uniform/dress/black
 	name = "Black dress"
 	path = /obj/item/clothing/under/misc/black_dress
-
-/datum/gear/uniform/skirt/pinktutu
-	name = "Pink tutu"
-	path = /obj/item/clothing/under/misc/pinktutu
+	cost = 2
 
 /datum/gear/uniform/bathrobe
 	name = "Bathrobe"
 	path = /obj/item/clothing/under/misc/bathrobe
-
+/*
 /datum/gear/uniform/kimono
 	name = "Kimono"
 	path = /obj/item/clothing/under/costume/kimono
@@ -568,9 +468,4 @@
 /datum/gear/uniform/kimono/sakura
 	name = "Sakura kimono"
 	path = /obj/item/clothing/under/costume/kimono/sakura
-
-/datum/gear/uniform/ctlong
-	name = "cargo tech's jumpsuit (long pants)"
-	path = /obj/item/clothing/under/rank/cargo/tech/long
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_roles = list("Cargo Technician")
+*/

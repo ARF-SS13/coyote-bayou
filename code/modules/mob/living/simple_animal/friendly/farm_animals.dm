@@ -734,7 +734,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
 	emote_hear = list("brays.")
 	desc = initial(desc)
-	set_light(0)
+
 /*
 	if(inventory_back && inventory_back.brahmin_fashion)
 		var/datum/brahmin_fashion/BF = new inventory_back.brahmin_fashion(src)

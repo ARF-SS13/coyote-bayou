@@ -116,3 +116,7 @@
 	// ~12 worth of caps
 	new /obj/item/stack/f13Cash/random/low(src)
 
+/obj/item/storage/bag/money/small/raider/mobboss/PopulateContents()
+	new /obj/item/stack/f13Cash/random/high(src)
+	//mob boss, reasonably wealthy
+
