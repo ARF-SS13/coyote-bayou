@@ -16,7 +16,7 @@
 	if(.)
 		return
 	if(!HAS_TRAIT(user, TRAIT_SWIMMING))
-		if(user.CanReach(src))
+		if(user.can_reach(src))
 			user.AddElement(/datum/element/swimming)
 			user.forceMove(get_step(src, dir))
 	else

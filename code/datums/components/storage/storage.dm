@@ -109,7 +109,6 @@
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST, .proc/show_to_ghost)
 	RegisterSignal(parent, COMSIG_ATOM_ENTERED, .proc/refresh_mob_views)
 	RegisterSignal(parent, COMSIG_ATOM_EXITED, .proc/_remove_and_refresh)
-	RegisterSignal(parent, COMSIG_ATOM_CANREACH, .proc/canreach_react)
 
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, .proc/preattack_intercept)
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/attack_self)
@@ -186,15 +185,6 @@
 					contents.Cut(1, length(contents) - limited_random_access_stack_position + 1)
 	return contents
 
-/datum/component/storage/proc/canreach_react(datum/source, list/next)
-	var/datum/component/storage/concrete/master = master()
-	if(!master)
-		return
-	. = COMPONENT_BLOCK_REACH
-	next += master.parent
-	for(var/i in master.slaves)
-		var/datum/component/storage/slave = i
-		next += slave.parent
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
 	if(check_locked(source, M, TRUE))
@@ -333,7 +323,7 @@
 
 /datum/component/storage/proc/check_views()
 	for(var/mob/M in can_see_contents())
-		if(!isobserver(M) && !M.CanReach(parent, view_only = TRUE))
+		if(!isobserver(M) && !M.can_reach(parent, STORAGE_VIEW_DEPTH))
 			close(M)
 
 /datum/component/storage/proc/emp_act(datum/source, severity)
@@ -469,7 +459,7 @@
 	if(!istype(M))
 		return FALSE
 	A.add_fingerprint(M)
-	if(!force && (check_locked(null, M) || !M.CanReach(parent, view_only = TRUE)))
+	if(!force && (check_locked(null, M) || !M.can_reach(parent, view_only = TRUE)))
 		return FALSE
 	ui_show(M, !ghost)
 
@@ -609,7 +599,7 @@
 /datum/component/storage/proc/signal_take_type(datum/source, type, atom/destination, amount = INFINITY, check_adjacent = FALSE, force = FALSE, mob/user, list/inserted)
 	if(!force)
 		if(check_adjacent)
-			if(!user || !user.CanReach(destination) || !user.CanReach(parent))
+			if(!user || !user.can_reach(destination) || !user.can_reach(parent))
 				return FALSE
 	var/list/taking = typecache_filter_list(contents(), typecacheof(type))
 	if(taking.len > amount)
@@ -679,7 +669,7 @@
 	return ui_hide(target)
 
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
-	if(!isliving(user) || !user.CanReach(parent))
+	if(!isliving(user) || !user.can_reach(parent))
 		return
 	if(check_locked(source, user, TRUE))
 		return TRUE

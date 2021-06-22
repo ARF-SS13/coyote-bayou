@@ -555,7 +555,7 @@
 /obj/structure/closet/CtrlShiftClick(mob/living/user)
 	if(!HAS_TRAIT(user, TRAIT_SKITTISH))
 		return ..()
-	if(!user.canUseTopic(src) || !isturf(user.loc) || !user.Adjacent(src) || !user.CanReach(src))
+	if(!user.canUseTopic(src) || !isturf(user.loc) || !user.Adjacent(src) || !user.can_reach(src))
 		return
 	dive_into(user)
 
@@ -635,8 +635,6 @@
 		togglelock(user)
 		T1.visible_message("<span class='warning'>[user] dives into [src]!</span>")
 
-/obj/structure/closet/canReachInto(atom/user, atom/target, list/next, view_only, obj/item/tool)
-	return ..() && opened
 
 /obj/structure/closet/anchored //For mappers to easily placed anchored closets
 	anchored = TRUE
