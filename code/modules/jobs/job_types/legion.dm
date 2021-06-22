@@ -150,19 +150,19 @@
 	name = 			"Paladin-Slayer Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/palacent
 	head = 			/obj/item/clothing/head/helmet/f13/legion/palacent
-	suit_store = 	/obj/item/melee/transforming/energy/axe
+	suit_store = 	/obj/item/twohanded/thermic_lance
 	backpack_contents = list(
-		/obj/item/gun/energy/ionrifle/carbine=1,
-		/obj/item/stock_parts/cell/ammo/mfc=2)
+		/obj/item/gun/energy/laser/plasma/glock=1,
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 /datum/outfit/loadout/rangerhunter
 	name = 			"Ranger-Hunter Centurion"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/rangercent
 	head = 			/obj/item/clothing/head/helmet/f13/legion/rangercent
-	suit_store =	/obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/mm762=2,
-		/obj/item/kitchen/knife/bowie=1)
+		/obj/item/ammo_box/c4570=4,
+		/obj/item/gun/ballistic/revolver/hunting=2,
+		/obj/item/claymore/machete/spatha=1)
 
 /datum/outfit/loadout/centurion
 	name = 			"Front Line Centurion"
@@ -170,7 +170,7 @@
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
-		/obj/item/claymore/machete/spatha=1,
+		/obj/item/melee/powerfist/goliath=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 
 
@@ -205,12 +205,12 @@
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
+	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/riot
 	r_pocket =      /obj/item/restraints/handcuffs
 	l_pocket = 		/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/claymore/machete/spatha=1,
-		/obj/item/storage/fancy/ammobox/magnumshot=2,
+		/obj/item/ammo_box/magazine/d12g=2,
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
 		/obj/item/ammo_box/magazine/m45/ap=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
@@ -248,17 +248,17 @@
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+	suit_store =	/obj/item/gun/ballistic/automatic/m1garand
 	r_pocket =		/obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/claymore/machete/gladius=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=1,
-		/obj/item/ammo_box/c4570box=2,
+		/obj/item/ammo_box/magazine/garand308=2,
+		/obj/item/ammo_box/magazine/garand308/ap=1,
 		/obj/item/gun/ballistic/revolver/revolver44=1,
-		/obj/item/ammo_box/m44=1,
-		/obj/item/attachments/scope=1)
+		/obj/item/ammo_box/m44=1)
 
 
 // RECRUIT DECANUS
@@ -305,18 +305,20 @@
 		/obj/item/ammo_box/magazine/m45/ap=1)
 
 /datum/outfit/loadout/recdecgun
-	name =		"Heavy Decanus"
-	suit_store = /obj/item/gun/ballistic/automatic/r84
+	name =		"Lead from rear"
+	suit_store = /obj/item/gun/ballistic/automatic/greasegun
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/lmg=2,
+		/obj/item/ammo_box/magazine/greasegun=1,
+		/obj/item/shield/riot=1,
 		/obj/item/melee/unarmed/punchdagger=1)
 
 /datum/outfit/loadout/recdecsword
-	name =		"Explorer-kin"
+	name =		"Lead from front"
 	suit_store = /obj/item/twohanded/fireaxe/bmprsword
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/lever=1,
-		/obj/item/storage/fancy/ammobox/magnumshot=2)
+		/obj/item/gun/ballistic/shotgun/trench=1,
+		/obj/item/storage/fancy/ammobox/slugshot=2,
+		/obj/item/ammo_box/a357=1)
 
 
 ////////////////////
@@ -357,7 +359,7 @@
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	r_pocket =		/obj/item/flashlight/lantern
 	l_pocket =		/obj/item/restraints/handcuffs
-	l_hand = 		/obj/item/twohanded/chainsaw/doomslayer
+	l_hand = 		/obj/item/nullrod/claymore/chainsaw_sword
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
