@@ -26,29 +26,17 @@
 /datum/gear/head/rice_hat
 	name = "Rice hat"
 	path = /obj/item/clothing/head/rice_hat
-
-/datum/gear/head/ushanka
-	path = /obj/item/clothing/head/ushanka
-
-/datum/gear/head/slime
-	name = "Slime hat"
-	path = /obj/item/clothing/head/collectable/slime
+	cost = 2
 
 /datum/gear/head/fedora
 	name = "Fedora"
 	path = /obj/item/clothing/head/fedora
+	cost = 2
 
 /datum/gear/head/that
 	name = "Top Hat"
 	path = /obj/item/clothing/head/that
-
-/datum/gear/head/maidband
-	name = "Maid headband"
-	path= /obj/item/clothing/head/maid
-
-/datum/gear/head/bunnyears
-	name = "Bunny Ears"
-	path = /obj/item/clothing/head/rabbitears
+	cost = 3
 
 /datum/gear/head/mailmanhat
 	name = "Mailman's Hat"
@@ -70,14 +58,17 @@
 /datum/gear/head/cowboy
 	name = "brahmin leather cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
+	cost = 3
 
 /datum/gear/head/cowboy_alt
 	name = "Rusted Cowboy Hat"
 	path = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
+	cost = 3
 
 /datum/gear/head/ncr_sapper
 	name = "NCR sapper beret"
 	path = /obj/item/clothing/head/beret/ncr_sapper
+	cost = 4
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Combat Engineer",
 							"NCR Off-Duty"
@@ -104,6 +95,7 @@
 /datum/gear/head/steelpot_goggles
 	name = "NCR storm helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_goggles
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -120,6 +112,7 @@
 /datum/gear/head/steelpot_gambler
 	name = "NCR gambler helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_gambler
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -136,6 +129,7 @@
 datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -154,6 +148,7 @@ datum/gear/head/steelpot_bandolier
 datum/gear/head/steelpot_mp
 	name = "NCR MP helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_mp
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -164,6 +159,7 @@ datum/gear/head/steelpot_mp
 datum/gear/head/steelpot_patriot
 	name = "NCR patriot helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_patriot
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -180,6 +176,7 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/ncr_slouch
 	name = "NCR slouch hat"
 	path = /obj/item/clothing/head/f13/ncr_slouch
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -198,6 +195,7 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/ncr_flapcap
 	name = "NCR field cap"
 	path = /obj/item/clothing/head/f13/ncr_flapcap
+	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -216,12 +214,14 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/ncr_recon
 	name = "NCR recon beret"
 	path = /obj/item/clothing/head/beret/ncr_recon
+	cost = 3
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Off-Duty")
 
 /datum/gear/head/ncr_scout
 	name = "NCR scout beret"
 	path = /obj/item/clothing/head/beret/ncr_scout
+	cost = 3
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Ranger",
 							"NCR Off-Duty")
@@ -229,15 +229,18 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/ncr_campaign
 	name = "NCR campaign hat"
 	path = /obj/item/clothing/head/f13/ncr_campaign
+	cost = 4
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Sergeant First Class",
 						"NCR Off-Duty")
 
+/*
 /datum/gear/head/ncr_stetson
 	name = "NCR air cavalry stetson"
 	path = /obj/item/clothing/head/f13/ncr_stetson
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Off-Duty")
+*/
 
 /datum/gear/head/wkepi
 	name = "white kepi"
@@ -250,3 +253,20 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/kabuto
 	name = "Kabuto helmet"
 	path = /obj/item/clothing/head/kabuto
+
+//Chinese hats
+
+/datum/gear/head/chinese_soldier
+	name = "chinese side cap"
+	path = /obj/item/clothing/head/f13/chinese_soldier
+	cost = 2
+
+/datum/gear/head/chinese_officer
+	name = "chinese officer cap"
+	path = /obj/item/clothing/head/f13/chinese_officer
+	cost = 2
+
+/datum/gear/head/chinese_commander
+	name = "chinese peaked cap"
+	path = /obj/item/clothing/head/f13/chinese_commander
+	cost = 3

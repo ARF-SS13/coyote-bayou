@@ -3,6 +3,11 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	slot = SLOT_NECK
 
+/datum/gear/neck/blacktie
+	name = "Black tie"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
+	path = /obj/item/clothing/neck/tie/black
+
 /datum/gear/neck/bluetie
 	name = "Blue tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
@@ -12,19 +17,6 @@
 	name = "Red tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/red
-
-/datum/gear/neck/blacktie
-	name = "Black tie"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
-	path = /obj/item/clothing/neck/tie/black
-
-/datum/gear/neck/collar
-	name = "Collar"
-	path = /obj/item/clothing/neck/petcollar
-
-/datum/gear/neck/leathercollar
-	name = "Leather collar"
-	path = /obj/item/clothing/neck/petcollar/leather
 
 /datum/gear/neck/choker
 	name = "Choker"
@@ -78,15 +70,3 @@
 /datum/gear/neck/scarf/stripedgreen
 	name = "Striped green scarf"
 	path = /obj/item/clothing/neck/stripedgreenscarf
-
-/datum/gear/neck/headphones
-	name = "Headphones"
-	path = /obj/item/clothing/ears/headphones
-
-/datum/gear/neck/polycloak
-	name = "Polychromatic Cloak"
-	path = /obj/item/clothing/neck/cloak/polychromic
-
-/datum/gear/neck/altpolycloak
-	name = "Alternate Cloak"
-	path = /obj/item/clothing/neck/cloak/alt/polychromic

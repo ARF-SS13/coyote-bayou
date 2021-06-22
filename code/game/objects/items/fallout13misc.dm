@@ -283,3 +283,52 @@
 	throw_range = 3
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("bashed")
+
+/obj/item/warpaint_bowl
+	name = "warpaint bowl"
+	desc = "A small ceramic bowl, used for the mixing of warpaints by a skilled shaman."
+	icon = 'icons/mob/tribe_warpaint.dmi'
+	icon_state = "wp_bowl"
+	/// List of choosable warpaint icon states.
+	var/static/list/choices = list(
+		"cazador", "claw", "facestripe",
+		"armwrap", "legwrap", "lizard",
+		"priestess", "stripe", "spider",
+		"prongs", "tears", "thorns",
+		"whitestripe")
+	/// Currently selected warpaint.
+	var/paint_type = null
+	/// Currently selected warpaint color.
+	var/paint_color = "FFFFFF"
+
+/obj/item/warpaint_bowl/attack_self(mob/user)
+	. = ..()
+	var/chosen_paint = input(user, "Pick a warpaint style.", "Tribal warpaint", paint_type) as null|anything in choices
+	if(!chosen_paint)
+		return
+	paint_type = chosen_paint
+
+	var/chosen_color = input(user, "Pick a warpaint color.", "Tribal warpaint", paint_color) as null|color
+	if(!chosen_color)
+		return
+	paint_color = chosen_color
+
+/obj/item/warpaint_bowl/attack(mob/living/M, mob/living/user, attackchain_flags, damage_multiplier)
+	if(!paint_type || !paint_color)
+		to_chat(user, SPAN_WARNING("You need to select a style first!"))
+		return
+	if(!user.Adjacent(M) || !ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	if((H.warpaint == paint_type) && (H.warpaint_color == paint_color))
+		to_chat(user, SPAN_WARNING("[H] is already painted with this style!"))
+		return
+
+	user.visible_message(SPAN_NOTICE("[user] starts painting [H] with [src]."), SPAN_NOTICE("You start painting [H] with [src]."))
+	if(!do_mob(user, H, 10 SECONDS))
+		return
+	user.visible_message(SPAN_NOTICE("[user] applies warpaint onto [H]."), SPAN_NOTICE("You apply warpaint onto [H]."))
+
+	H.warpaint = paint_type
+	H.warpaint_color = paint_color
+	H.update_body()

@@ -318,7 +318,7 @@
 
 /datum/crafting_recipe/legionshield
 	name = "Legion Shield"
-	result = /obj/item/shield/riot/roman
+	result = /obj/item/shield/riot/legion
 	reqs = list(/obj/item/stack/sheet/metal = 8,
 				/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/leather = 2)

@@ -621,7 +621,7 @@
 				/obj/item/claymore/machete/golf,
 				/obj/item/claymore/machete,
 				/obj/item/claymore/machete/reinforced,
-				/obj/item/shield/legion/buckler,
+				/obj/item/shield/riot/buckler,
 				/obj/item/melee/unarmed/tigerclaw,
 				/obj/item/melee/unarmed/bladed,
 				/obj/item/melee/unarmed/sappers

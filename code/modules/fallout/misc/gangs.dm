@@ -6,6 +6,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 "raiders", \
 "great khan", \
 "great khans", \
+"den mob", \
 "gang", \
 "gangs", \
 ))
@@ -20,6 +21,8 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 //Great Khans
 GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
+
+GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 
 /datum/gang
 	var/name = "gang"
@@ -75,6 +78,28 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 		/datum/gang_item/clothing/khan_uniform,
 		/datum/gang_item/clothing/khan_jacket_armored,
 		/datum/gang_item/clothing/glasses/sunglasses
+	)
+/datum/gang/denmob
+	name = "Den Mob"
+	color = "#fcfdaa"
+	round_start = TRUE
+	boss_items = list(
+		/datum/gang_item/equipment/spraycan,
+		/datum/gang_item/equipment/mentats,
+		/datum/gang_item/equipment/fixer,
+		/datum/gang_item/equipment/emp,
+		/datum/gang_item/equipment/necklace,
+		/datum/gang_item/equipment/c4,
+
+		/datum/gang_item/weapon/shuriken,
+		/datum/gang_item/weapon/switchblade,
+		/datum/gang_item/weapon/greasegun,
+		/datum/gang_item/clothing/glasses/sunglasses,
+		/datum/gang_item/weapon/type17,
+		/datum/gang_item/weapon/type93,
+
+		/datum/gang_item/clothing/raiderpa,
+		/datum/gang_item/clothing/raiderpa_helmet
 	)
 
 /datum/gang/New(starting_members, starting_leader)

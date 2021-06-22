@@ -6,8 +6,10 @@
 	item_state = "eng_helm"
 	max_integrity = 300
 	armor = list("tier" = 2, "energy" = 5, "bomb" = 10, "bio" = 100, "rad" = 75, "fire" = 50, "acid" = 75, "wound" = 10)
+	light_system = MOVABLE_LIGHT
+	light_range = 4
+	light_on = FALSE
 	var/basestate = "hardsuit"
-	var/brightness_on = 4 //luminosity when on
 	var/on = FALSE
 	var/obj/item/clothing/suit/space/hardsuit/suit
 	var/hardsuit_type = "engineering" //Determines used sprites: hardsuit[on]-[type]
@@ -32,9 +34,9 @@
 	on = !on
 	update_icon() //the mob overlay update is already done by the update_icon_updates_onmob element.
 	if(on)
-		set_light(brightness_on)
+		set_light_on(TRUE)
 	else
-		set_light(0)
+		set_light_on(FALSE)
 
 /obj/item/clothing/head/helmet/space/hardsuit/update_icon_state()
 	icon_state = "[basestate][on]-[hardsuit_type]"
@@ -230,7 +232,7 @@
 	resistance_flags = FIRE_PROOF
 	heat_protection = HEAD
 	armor = list("tier" = 2, "energy" = 5, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 75, "wound" = 15)
-	brightness_on = 7
+	light_range = 7
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/Initialize()
 	. = ..()
@@ -284,7 +286,7 @@
 		to_chat(user, "<span class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
 		name = initial(name)
 		desc = initial(desc)
-		set_light(brightness_on)
+		set_light_on(TRUE)
 		clothing_flags |= visor_flags
 		flags_cover |= HEADCOVERSEYES | HEADCOVERSMOUTH
 		flags_inv |= visor_flags_inv
@@ -293,7 +295,7 @@
 		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
 		name += " (combat)"
 		desc = alt_desc
-		set_light(0)
+		set_light_on(FALSE)
 		clothing_flags &= ~visor_flags
 		flags_cover &= ~(HEADCOVERSEYES | HEADCOVERSMOUTH)
 		flags_inv &= ~visor_flags_inv
@@ -618,7 +620,7 @@
 	item_state = "anc_helm"
 	armor = list("tier" = 2, "energy" = 45, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 10)
 	hardsuit_type = "ancient"
-	brightness_on = 16
+	light_range = 16
 	flash_protect = 5 //We will not be flash by bombs
 	tint = 1
 	var/obj/machinery/doppler_array/integrated/bomb_radar
@@ -844,7 +846,7 @@
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	heat_protection = HEAD
 	armor = list(melee = 50, bullet = 10, laser = 10, energy = 10, bomb = 50, bio = 100, rad = 50, fire = 100, acid = 100, "wound" = 30)
-	brightness_on = 7
+	light_range = 7
 	var/energy_color = "#35FFF0"
 	var/obj/item/clothing/suit/space/hardsuit/lavaknight/linkedsuit = null
 	mutantrace_variation = NONE
@@ -858,11 +860,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/lavaknight/attack_self(mob/user)
 	on = !on
-
-	if(on)
-		set_light(brightness_on)
-	else
-		set_light(0)
+	set_light_on(on)
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -889,12 +887,14 @@
 	armor = list(melee = 50, bullet = 10, laser = 10, energy = 10, bomb = 50, bio = 100, rad = 50, fire = 100, acid = 100, "wound" = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/lavaknight
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	light_range = 1
+	light_color = "#35FFF0"
+	light_on = TRUE
 	var/energy_color = "#35FFF0"
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight/Initialize()
-	..()
-	light_color = energy_color
-	set_light(1)
+	. = ..()
+	set_light_color(energy_color)
 	update_icon()
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight/update_overlays()

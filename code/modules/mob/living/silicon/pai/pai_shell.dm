@@ -40,7 +40,7 @@
 	if(client)
 		client.perspective = EYE_PERSPECTIVE
 		client.eye = src
-	set_light(0)
+	set_light_on(FALSE)
 	icon_state = "[chassis]"
 	visible_message("<span class='boldnotice'>[src] folds out its holochassis emitter and forms a holoshell around itself!</span>")
 	holoform = TRUE
@@ -64,7 +64,7 @@
 	card.forceMove(T)
 	forceMove(card)
 	density = FALSE
-	set_light(0)
+	set_light_on(FALSE)
 	holoform = FALSE
 	set_resting(FALSE, TRUE, FALSE)
 	update_mobility()
@@ -109,10 +109,10 @@
 
 /mob/living/silicon/pai/proc/toggle_integrated_light()
 	if(!light_range)
-		set_light(brightness_power)
+		set_light_on(TRUE)
 		to_chat(src, "<span class='notice'>You enable your integrated light.</span>")
 	else
-		set_light(0)
+		set_light_on(FALSE)
 		to_chat(src, "<span class='notice'>You disable your integrated light.</span>")
 
 /mob/living/silicon/pai/can_buckle_others(mob/living/target, atom/buckle_to)

@@ -398,18 +398,7 @@
 /area/f13/bunker/museum)
 "bv" = (
 /obj/effect/spawner/structure/window/hollow/end,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/gun/ballistic/automatic/wt550{
-	desc = "A very advanced SMG that can be suppressed, takes unique ammo and starts off with an advanced firing pin. It has the markings 'G M' on the underside of the barrel. If you look closely, the ammo has extreme penetration power, enough to bypass nearly any armor.";
-	extra_penetration = 0.6
-	},
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
-/obj/item/ammo_box/magazine/wt550m9/wtap,
+/obj/item/gun/ballistic/automatic/autopipe
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/bunker/museum)
 "bw" = (

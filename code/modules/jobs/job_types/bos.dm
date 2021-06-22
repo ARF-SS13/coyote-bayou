@@ -223,7 +223,6 @@ Head Scribe
 		/obj/item/shield/energy=1, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=2, \
-		/obj/item/reagent_containers/dropper/SR/NotVault = 1
 		)
 
 /datum/outfit/loadout/hsstand

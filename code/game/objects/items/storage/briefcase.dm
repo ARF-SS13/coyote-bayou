@@ -81,11 +81,8 @@
 	force = 10
 /obj/item/storage/briefcase/sniperbundle/PopulateContents()
 	..() // in case you need any paperwork done after your rampage
-	new /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate(src)
 	new /obj/item/clothing/neck/tie/red(src)
 	new /obj/item/clothing/under/syndicate/sniper(src)
-	new /obj/item/ammo_box/magazine/sniper_rounds/soporific(src)
-	new /obj/item/ammo_box/magazine/sniper_rounds/soporific(src)
 	new /obj/item/suppressor/specialoffer(src)
 
 
@@ -94,10 +91,7 @@
 	force = 10
 
 /obj/item/storage/briefcase/modularbundle/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/modular(src)
 	new /obj/item/suppressor(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm/soporific(src)
 	new /obj/item/clothing/under/suit/black(src)
 	new /obj/item/clothing/accessory/waistcoat(src)
 	new /obj/item/clothing/suit/toggle/lawyer/black/syndie(src)
