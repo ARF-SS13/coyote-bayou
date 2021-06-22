@@ -292,7 +292,7 @@ Head Knight
 	accessory = 	/obj/item/clothing/accessory/bos/knightcaptain
 	belt = 			/obj/item/storage/belt/security/full
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
-	head =			/obj/item/clothing/head/helmet/f13/power_armor/t45d/knightcaptain
+	head =			/obj/item/clothing/head/helmet/f13/power_armor/t45d
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
