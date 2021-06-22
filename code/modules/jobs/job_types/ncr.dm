@@ -565,8 +565,7 @@ Trooper
 
 	loadout_options = list(
 	/datum/outfit/loadout/trooperrifleman,
-	/datum/outfit/loadout/trooperpathfinder,
-	/datum/outfit/loadout/trooperfiresupport
+	/datum/outfit/loadout/trooperpathfinder
 	)
 
 /datum/outfit/job/ncr/f13trooper
