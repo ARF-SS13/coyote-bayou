@@ -124,7 +124,7 @@ Captain
 	name = "Jackie Chan"
 	backpack_contents = list(
 	/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra=1,
-	/obj/item/book/granter/trait/pa_wear=1
+	/obj/item/book/granter/trait/pa_wear=1,
 	/obj/item/clothing/gloves/krav_maga/combatglovesplus=1)
 
 /datum/outfit/loadout/captco
