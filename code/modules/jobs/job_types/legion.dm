@@ -255,7 +255,7 @@
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
 		/obj/item/restraints/handcuffs=1,
-		/obj/item/ammo_box/c4750box=2,
+		/obj/item/ammo_box/c4570box=2,
 		/obj/item/gun/ballistic/revolver/revolver44=1,
 		/obj/item/ammo_box/m44=1,
 		/obj/item/attachments/scope=1)
