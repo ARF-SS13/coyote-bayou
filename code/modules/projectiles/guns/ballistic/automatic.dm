@@ -499,7 +499,7 @@
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
-	burst_shot_delay = 2
+	burst_shot_delay = 0.5
 	fire_delay = 1
 	spread = 11
 	extra_damage = -2
@@ -524,7 +524,7 @@
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 	burst_size = 2
-	burst_shot_delay = 1
+	burst_shot_delay = 0.5
 	suppressed = 1
 
 
@@ -544,7 +544,7 @@
 	force = 15
 	burst_size = 2
 	fire_delay = 2.5
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	can_suppress = FALSE
 	can_attachments = TRUE
 	spread = 12
@@ -571,7 +571,7 @@
 	force = 15
 	burst_size = 2
 	fire_delay = 5
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1.5
 	can_suppress = FALSE //we dont have sprites therefore cease
 	can_attachments = TRUE
 	spread = 14
@@ -597,7 +597,7 @@
 	force = 15
 	burst_size = 2
 	fire_delay = 4
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_suppress = TRUE
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -627,7 +627,7 @@
 	force = 15
 	burst_size = 2
 	fire_delay = 4
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1
 	spread = 9
 	can_suppress = FALSE
 	can_attachments = TRUE
@@ -644,7 +644,7 @@
 	force = 15
 	burst_size = 3
 	fire_delay = 6
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_suppress = FALSE
 	can_attachments = TRUE
 	extra_damage = -4
@@ -1086,7 +1086,7 @@
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_delay = 3
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	can_bayonet = FALSE
 	force = 15
@@ -1160,7 +1160,7 @@
 	force = 25
 	burst_size = 2
 	fire_delay = 4
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	can_attachments = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "rifles"
@@ -1183,6 +1183,7 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 3
+	burst_shot_delay = 0.5
 	fire_delay = 3
 	//automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -1226,7 +1227,7 @@
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 3
-	burst_shot_delay = 2.0
+	burst_shot_delay = 1
 	spread = 16
 	//automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -1261,6 +1262,7 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	burst_size = 2
+	burst_shot_delay = 1
 	//automatic = 1
 	mag_type = /obj/item/ammo_box/magazine/m762
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
@@ -1289,7 +1291,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 3
-	burst_shot_delay = 3
+	burst_shot_delay = 0.75
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 7
@@ -1328,7 +1330,7 @@
 	force = 25
 	burst_size = 2
 	fire_delay = 5
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_suppress = FALSE
 	spawnwithmagazine = TRUE
 	can_bayonet = FALSE //SoonTM
@@ -1498,6 +1500,7 @@
 	item_state = "m90"
 	burst_size = 3
 	fire_delay = 1
+	burst_shot_delay = 0.5
 	//automatic = 1
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
