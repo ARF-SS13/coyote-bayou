@@ -1521,7 +1521,7 @@
 	force = 25
 	burst_size = 2
 	fire_delay = 2
-	burst_shot_delay = 1
+	burst_shot_delay = 1.0
 	can_suppress = FALSE
 	can_attachments = TRUE
 	//automatic = 1
@@ -1540,7 +1540,7 @@
 	icon_state = "g11e"
 	item_state = "g11e"
 	burst_size = 2
-	fire_delay = 2
+	fire_delay = 2.0
 	burst_shot_delay = 1
 	can_suppress = FALSE
 	spread = 5
