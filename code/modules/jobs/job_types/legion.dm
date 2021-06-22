@@ -425,7 +425,7 @@
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ = 3,
 		/obj/item/claymore/machete/gladius=1,
-		/obj/item/shield/riot/roman=1)
+		/obj/item/shield/riot/legion=1)
 
 /datum/outfit/loadout/vetrifle
 	name =			"Sharpshooter"
