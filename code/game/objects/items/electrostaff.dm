@@ -16,6 +16,11 @@
 	total_mass = 5		//yeah this is a heavy thing, beating people with it while it's off is not going to do you any favors. (to curb stun-kill rampaging without it being on)
 	block_parry_data = /datum/block_parry_data/electrostaff
 	attack_speed = CLICK_CD_MELEE
+	light_system = MOVABLE_LIGHT
+	light_range = 7
+	light_power = 1
+	light_color = LIGHT_COLOR_CYAN
+	light_on = FALSE
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
 	var/on = FALSE
 	var/can_block_projectiles = FALSE		//can't block guns
@@ -104,6 +109,7 @@
 		return
 	on = TRUE
 	START_PROCESSING(SSobj, src)
+	set_light_on(TRUE)
 	if(user)
 		to_chat(user, "<span class='warning'>You turn [src] on.</span>")
 
@@ -114,13 +120,13 @@
 		to_chat(user, "<span class='warning'>You turn [src] off.</span>")
 	on = FALSE
 	STOP_PROCESSING(SSobj, src)
+	set_light_on(FALSE)
 
 /obj/item/electrostaff/update_icon_state()
 	if(!wielded)
 		icon_state = item_state = "electrostaff"
 	else
 		icon_state = item_state = (on? "electrostaff_1" : "electrostaff_0")
-	set_light(7, on? 1 : 0, LIGHT_COLOR_CYAN)
 
 /obj/item/electrostaff/examine(mob/living/user)
 	. = ..()

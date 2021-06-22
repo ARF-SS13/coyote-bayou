@@ -107,6 +107,8 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	deathmessage = "collapses into a pile of bones, their suit dissolving among the plasma!"
 	loot = list(/obj/effect/decal/remains/plasma)
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 
 /mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer
 	desc = "A plasma-soaked miner, their exposed limbs turned into a grossly incandescent bone seemingly made of plasma. They seem to still have their mining tool in their hand, gripping tightly."
@@ -122,7 +124,3 @@
 	attack_verb_simple = "blast"
 	attack_sound = 'sound/weapons/sonic_jackhammer.ogg'
 	loot = list(/obj/effect/decal/remains/plasma, /obj/item/pickaxe/drill/jackhammer)
-
-/mob/living/simple_animal/hostile/skeleton/plasmaminer/Initialize()
-	. = ..()
-	set_light(2)

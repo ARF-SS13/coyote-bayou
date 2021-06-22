@@ -474,7 +474,7 @@
 	var/turf/location = get_turf(holder.my_atom)
 	location.visible_message("<span class='danger'>The solution spews out foam!</span>")
 	var/datum/effect_system/foam_spread/s = new()
-	s.set_up(multiplier*2, location, holder)
+	s.set_up(multiplier*0.2, location, holder)
 	s.start()
 	holder.clear_reagents()
 	return
@@ -490,7 +490,7 @@
 	var/turf/location = get_turf(holder.my_atom)
 	location.visible_message("<span class='danger'>The solution spews out a metallic foam!</span>")
 	var/datum/effect_system/foam_spread/metal/s = new()
-	s.set_up(multiplier*5, location, holder, 1)
+	s.set_up(multiplier*2, location, holder, 1)
 	s.start()
 	holder.clear_reagents()
 
@@ -612,7 +612,7 @@
 	id = /datum/reagent/colorful_reagent
 	results = list(/datum/reagent/colorful_reagent = 5)
 	required_reagents = list(/datum/reagent/stable_plasma = 1, /datum/reagent/radium = 1, /datum/reagent/drug/space_drugs = 1, /datum/reagent/medicine/cryoxadone = 1, /datum/reagent/consumable/triple_citrus = 1)
-
+/* strange reagent removed
 /datum/chemical_reaction/life
 	name = "Life"
 	id = "life"
@@ -620,7 +620,7 @@
 	required_temp = 374
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, multiplier)
-	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life (friendly)", FRIENDLY_SPAWN) // a certain person keep abusing this to spawn like 20 mobs infront of ncr base 
+	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life (friendly)", FRIENDLY_SPAWN) // a certain person keep abusing this to spawn like 20 mobs infront of ncr base
 
 //This is missing, I'm adding it back (see tgwiki). Not sure why we don't have it.
 /datum/chemical_reaction/life_friendly
@@ -643,7 +643,7 @@
 	for(var/i = rand(1, multiplier), i <= multiplier, i++) // More lulz.
 		new /mob/living/simple_animal/pet/dog/corgi(location)
 	..()
-
+*/
 /datum/chemical_reaction/hair_dye
 	name = "hair_dye"
 	id = /datum/reagent/hair_dye

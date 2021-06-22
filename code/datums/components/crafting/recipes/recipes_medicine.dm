@@ -47,6 +47,13 @@
 	time = 35
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/bitterdrink
+	name = "Bottle Bitterdrink"
+	result = /obj/item/reagent_containers/pill/patch/bitterdrink
+	reqs = list(/datum/reagent/medicine/bitter_drink = 30)
+	time = 20
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice

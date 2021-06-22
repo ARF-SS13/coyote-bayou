@@ -76,3 +76,10 @@
 	list_reagents = null
 	icon_state = "bandaid_healingpowder"
 	self_delay = 0
+
+/obj/item/reagent_containers/pill/patch/bitterdrink
+	name = "Bitter drink"
+	desc = "A strong herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
+	list_reagents = list(/datum/reagent/medicine/bitter_drink = 15) 
+	icon_state = "Voodoo"
+	self_delay = 0

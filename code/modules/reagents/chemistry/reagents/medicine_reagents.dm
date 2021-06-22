@@ -284,7 +284,7 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-		else if(M.getFireLoss() && method == PATCH)
+		else if(M.getFireLoss())
 			M.adjustFireLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
@@ -349,7 +349,7 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-		else if(M.getBruteLoss() && method == PATCH)
+		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
@@ -926,7 +926,7 @@
 		M.losebreath++
 		. = 1
 	..()
-
+/* no. just no. the revive timer is 30 minutes(hopefully lowered soon); that is plenty of time. we do not need this.
 /datum/reagent/medicine/strange_reagent
 	name = "Strange Reagent"
 	description = "A miracle drug capable of bringing the dead back to life. Only functions when applied by patch or spray, if the target has less than 100 brute and burn damage (independent of one another) and hasn't been husked. Causes slight damage to the living."
@@ -986,7 +986,7 @@
 	M.adjustFireLoss(0.5*REM, 0)
 	..()
 	. = 1
-
+*/
 /datum/reagent/medicine/mannitol
 	name = "Mannitol"
 	description = "Efficiently restores brain damage."
@@ -1325,7 +1325,7 @@
 	pH = 11
 	value = REAGENT_VALUE_COMMON //not any higher. Ambrosia is a milestone for hydroponics already.
 
-	
+
 //Earthsblood is still a wonderdrug. Just... don't expect to be able to mutate something that makes plants so healthy.
 /datum/reagent/medicine/earthsblood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1339,7 +1339,7 @@
 			myseed.adjust_yield(round(chems.get_reagent_amount(src.type) * 1))
 			myseed.adjust_endurance(round(chems.get_reagent_amount(src.type) * 0.5))
 			myseed.adjust_production(-round(chems.get_reagent_amount(src.type) * 0.5))
-	
+
 /datum/reagent/medicine/earthsblood/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-3 * REM, FALSE)
 	M.adjustFireLoss(-3 * REM, FALSE)

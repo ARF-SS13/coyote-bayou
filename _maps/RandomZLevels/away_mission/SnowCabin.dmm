@@ -187,7 +187,7 @@
 "aD" = (
 /obj/machinery/power/smes/magical{
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit. It seems to be powered just fine without our intervention.";
-	name = "nanotrasen power storage unit"
+	name = "robco power storage unit"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -3061,7 +3061,7 @@
 /area/awaymission/cabin/snowforest/sovietsurface)
 "ig" = (
 /obj/item/toy/figure/dsquad{
-	desc = "The muscle behind the exploration team. May or may not be a secret soldier depending on the mood of Nanotrasen following their own lore.";
+	desc = "The muscle behind the exploration team.";
 	name = "exploration squad Officer";
 	toysay = "We're top secret until we're not!"
 	},
@@ -4904,10 +4904,6 @@
 /area/awaymission/cabin/caves/sovietcave)
 "my" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/gun/ballistic/automatic/surplus{
-	desc = "Uses 10mm ammo and its bulky frame prevents one-hand firing. It has the word CHEKOV engraved on the stock.";
-	name = "chekov's rifle"
-	},
 /turf/open/floor/mineral/plastitanium/red{
 	name = "soviet floor"
 	},

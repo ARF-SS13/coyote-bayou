@@ -149,7 +149,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	name = "Nyctophobia"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
 	value = -1
-	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
+	medical_record_text = "Patient demonstrates a fear of the dark."
 
 /datum/quirk/nyctophobia/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -167,11 +167,11 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/lightless
 	name = "Light Sensitivity"
-	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition. If only Nanotrasen was more considerate of your needs..."
+	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
 	value = -1
-	gain_text = "<span class='danger'>The safty of light feels off...</span>"
+	gain_text = "<span class='danger'>The safety of light feels off...</span>"
 	lose_text = "<span class='notice'>Enlightening.</span>"
-	medical_record_text = "Despite my warnings, the patient refuses turn on the lights, only to end up rolling down a full flight of stairs and into the cellar."
+	medical_record_text = "Patient has acute phobia of light, and insists it is physically harmful."
 
 /datum/quirk/lightless/on_process()
 	var/turf/T = get_turf(quirk_holder)
@@ -193,7 +193,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/paraplegic
 	name = "Paraplegic"
-	desc = "Your legs do not function. Nothing will ever fix this. But hey, free wheelchair!"
+	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
 	value = -3
 	mob_trait = TRAIT_PARA
 	human_only = TRUE
@@ -241,7 +241,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
 	value = -1
 	mob_trait = TRAIT_PROSOPAGNOSIA
-	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
+	medical_record_text = "Patient suffers from prosopagnosia, and cannot recognize faces."
 
 /datum/quirk/insanity
 	name = "Reality Dissociation Syndrome"

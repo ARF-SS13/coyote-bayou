@@ -3,7 +3,7 @@
 	id = "syndicate_basic"
 	display_name = "Illegal Technology"
 	description = "Dangerous research used to create dangerous objects."
-	prereq_ids = list("adv_engi", "adv_weaponry", "explosive_weapons")
+	prereq_ids = list("adv_engi", "adv_weaponry")
 	design_ids = list("decloner", "borg_syndicate_module", "suppressor", "donksofttoyvendor", "donksoft_refill", "syndiesleeper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	hidden = TRUE
@@ -22,7 +22,7 @@
 	display_name = "Advanced Non-Standard Ballistics"
 	description = "Ballistic ammunition for non-standard firearms. Usually the ones you don't have nor want to be involved with."
 	design_ids = list("10mm","10mmap","10mminc","10mmhp","sl357","sl357ap","pistolm9mm","m45","bolt_clip")
-	prereq_ids = list("syndicate_basic","explosive_weapons")
+	prereq_ids = list("syndicate_basic")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 25000) //This gives sec lethal mags/clips for guns from traitors, space, or anything in between.
 
 //Helpers for debugging/balancing the techweb in its entirety!

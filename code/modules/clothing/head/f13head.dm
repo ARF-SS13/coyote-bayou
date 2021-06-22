@@ -333,19 +333,11 @@
 	if(emped == 0)
 		if(ismob(loc))
 			to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in helmet. Rerouting power to emergency systems.</span>")
-			tint += 2
-			if(istype(loc, /mob/living/carbon))
-				var/mob/living/carbon/M = loc
-				M.update_tint()
-			armor = armor.modifyRating(linemelee = -50, linebullet = -50, linelaser = -50)
+			armor = armor.modifyRating(linemelee = -100, linebullet = -100, linelaser = -100)
 			emped = 1
 			spawn(50) //5 seconds of being blind and weak
 				to_chat(loc, "<span class='warning'>Helmet power reroute successful. All systems operational.</span>")
-				tint -= 2
-				if(istype(loc, /mob/living/carbon))
-					var/mob/living/carbon/M = loc
-					M.update_tint()
-				armor = armor.modifyRating(linemelee = 50, linebullet = 50, linelaser = 50)
+				armor = armor.modifyRating(linemelee = 100, linebullet = 100, linelaser = 100)
 				emped = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)

@@ -1,7 +1,7 @@
 #define WELDER_FUEL_BURN_INTERVAL 13
 /obj/item/weldingtool
 	name = "welding tool"
-	desc = "A standard edition welder provided by Nanotrasen."
+	desc = "A standard edition welder provided by RobCo."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	item_state = "welder"
@@ -20,14 +20,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	resistance_flags = FIRE_PROOF
-
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=30)
 	var/welding = 0 	//Whether or not the welding tool is off(0), on(1) or currently welding(2)
 	var/status = TRUE 		//Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
 	var/max_fuel = 20 	//The max amount of fuel the welder can hold
 	var/change_icons = 1
 	var/can_off_process = 0
-	var/light_intensity = 2 //how powerful the emitted light is when used.
 	var/progress_flash_divisor = 10
 	var/burned_fuel_for = 0	//when fuel was last removed
 	heat = 3800
@@ -139,7 +142,7 @@
 		var/turf/location = get_turf(user)
 		location.hotspot_expose(550, 10, 1)
 		if(get_fuel() <= 0)
-			set_light(0)
+			set_light_on(FALSE)
 
 		if(isliving(O))
 			var/mob/living/L = O
@@ -154,7 +157,7 @@
 		explode()
 	switched_on(user)
 	if(welding)
-		set_light(light_intensity, 0.75, LIGHT_COLOR_FIRE)
+		set_light_on(TRUE)
 
 	update_icon()
 
@@ -213,7 +216,7 @@
 //Switches the welder off
 /obj/item/weldingtool/proc/switched_off(mob/user)
 	welding = 0
-	set_light(0)
+	set_light_on(FALSE)
 
 	force = 3
 	damtype = "brute"
@@ -236,14 +239,14 @@
 /obj/item/weldingtool/tool_start_check(mob/living/user, amount=0)
 	. = tool_use_check(user, amount)
 	if(. && user)
-		user.flash_act(light_intensity)
+		user.flash_act(light_range)
 
 // Flash the user during welding progress
 /obj/item/weldingtool/tool_check_callback(mob/living/user, amount, datum/callback/extra_checks)
 	. = ..()
 	if(. && user)
 		if (progress_flash_divisor == 0)
-			user.flash_act(min(light_intensity,1))
+			user.flash_act(min(light_range, 1))
 			progress_flash_divisor = initial(progress_flash_divisor)
 		else
 			progress_flash_divisor--
@@ -331,7 +334,7 @@
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "welder"
 	toolspeed = 0.1
-	light_intensity = 0
+	light_range = 0
 	change_icons = 0
 
 /obj/item/weldingtool/abductor/process()
@@ -358,7 +361,7 @@
 	var/last_gen = 0
 	change_icons = 0
 	can_off_process = 1
-	light_intensity = 1
+	light_range = 1
 	toolspeed = 0.5
 	var/nextrefueltick = 0
 
@@ -389,7 +392,7 @@
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "welder"
 	toolspeed = 0.2
-	light_intensity = 0
+	light_range = 0
 	change_icons = 0
 
 /obj/item/weldingtool/advanced/process()
@@ -420,7 +423,7 @@
 	desc = "A high-tech Quantum heated flamer tool, capable of infinitely replenishing itself using Quantum energy."
 	icon_state = "advancedweld"
 	item_state = "advancedweld"
-	light_intensity = 1
+	light_range = 1
 	toolspeed = 0.1
 	var/nextrefueltick = 0
 

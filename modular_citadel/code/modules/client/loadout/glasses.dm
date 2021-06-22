@@ -5,18 +5,11 @@
 /datum/gear/glasses/blindfold
 	name = "Blindfold"
 	path = /obj/item/clothing/glasses/sunglasses/blindfold
-
-/datum/gear/glasses/cold
-	name = "Cold goggles"
-	path = /obj/item/clothing/glasses/cold
+	cost = 2
 
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
-
-/datum/gear/glasses/heat
-	name = "Heat goggles"
-	path = /obj/item/clothing/glasses/heat
 
 /datum/gear/glasses/hipster
 	name = "Hipster glasses"
@@ -29,6 +22,7 @@
 /datum/gear/glasses/monocle
 	name = "Monocle"
 	path = /obj/item/clothing/glasses/monocle
+	cost = 2
 
 /datum/gear/glasses/orange
 	name = "Orange glasses"

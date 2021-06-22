@@ -236,3 +236,22 @@
 	name = "URGENT!"
 	info = "A hastily written note has been scribbled here... <br><br> Please use the ore redemption machine in the cargo office for smelting. PLEASE! <br><br>--The Research Staff"
 
+////// Fortune 13
+
+/obj/item/paper/bitterdrink
+	name = "Recipe for Bitterdrink"
+	info = {"Bitter drink is a useful healing drink primarily carried by legionaries and is regularly consumed by wounded soldiers on the Legion's long forced marches. It is a rather simple recipe for slaves.
+	<br>
+	<b>Step 1
+	<br>
+	Aquire Xander root,broc flowers,barrel cactii and bottles of Sarsaparilla.
+	<br>
+	Step 2
+	<br> 
+	Ferment Xander root,barrel cactii and broc flowers seperate. 
+	<br>
+	<b>Step 3
+	<br>
+	Mix the fermented results of Xander root, barrel cactii,broc flowers and Sarsaparilla together in a large glass beaker.</b>
+	<br>
+	Bitter drink should be the result which can then be bottled by crafting. It is a very potent drink, so more than two should not be consumed."}
