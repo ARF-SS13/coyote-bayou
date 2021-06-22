@@ -131,24 +131,22 @@ Captain
 		/obj/item/clothing/mask/ncr_facewrap)
 
 /datum/outfit/loadout/captao
-	name = "Armored Officer"
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
+	name = "Jackie Chan Officer"
 	belt 		= /obj/item/storage/belt/military/assault/ncr
 	l_hand 		= /obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/magazine/m44=3)
+	/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra=1,
+	/obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra=1,
+	/obj/item/book/granter/trait/pa_wear=1
+	/obj/item/clothing/gloves/krav_maga/combatglovesplus=1)
 
 /datum/outfit/loadout/captco
-	name = "Commanding Officer"
+	name = "Cowboy Officer"
 	suit = 		/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
 	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand =	/obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/revolver/hunting=1,
-	/obj/item/ammo_box/c4570=3
+	/obj/item/gun/ballistic/revolver/sequoia/bayonet=2,
+	/obj/item/ammo_box/c4570=6
 	)
 
 /*
@@ -281,14 +279,13 @@ Logistics Officer
 	glasses			= /obj/item/clothing/glasses/welding
 	belt 			= /obj/item/storage/belt/utility/full/engi
 	gloves			= /obj/item/clothing/gloves/color/yellow
-	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
+	suit_store		= /obj/item/gun/energy/laser/laer
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
-		/obj/item/ammo_box/magazine/m45=3, \
+		/obj/item/stock_parts/cell/ammo/mfc=3, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
 		/obj/item/grenade/plastic=2, \
 		/obj/item/stack/sheet/metal/fifty=2, \
 		/obj/item/stack/sheet/glass/fifty=2
