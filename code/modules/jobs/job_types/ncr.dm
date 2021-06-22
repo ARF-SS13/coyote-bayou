@@ -82,18 +82,17 @@ Colonel
 Captain
 */
 /datum/job/ncr/f13captain
-	title = "NCR Captain"
+	title = "Viet Cong Squad Leader"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN_NCR
 	outfit = /datum/outfit/job/ncr/f13captain
-	exp_requirements = 2000
 
 	loadout_options = list(
 	/datum/outfit/loadout/captao, //Captain armor, m16a1, deagle
@@ -111,44 +110,29 @@ Captain
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
 /datum/outfit/job/ncr/f13captain
-	name = "NCR Captain"
+	name = "Viet Cong Squad Leader"
 	jobtype 	= /datum/job/ncr/f13captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
-	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
-	head 		= /obj/item/clothing/head/beret/ncr
+	uniform		= /obj/item/clothing/under/color/black
+	head 		= /obj/item/clothing/head/rice_hat
 	gloves =	/obj/item/clothing/gloves/f13/military
 	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
-	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	neck 		= /obj/item/storage/belt/holster
 	ears = 		/obj/item/radio/headset/headset_ncr_com
-	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/binoculars=1, \
-		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/megaphone,	\
-		/obj/item/clothing/mask/ncr_facewrap)
 
 /datum/outfit/loadout/captao
-	name = "Armored Officer"
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
-	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/assault_rifle
+	name = "Jackie Chan"
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/magazine/m44=3)
+	/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra=1,
+	/obj/item/book/granter/trait/pa_wear=1,
+	/obj/item/clothing/gloves/krav_maga/combatglovesplus=1)
 
 /datum/outfit/loadout/captco
-	name = "Commanding Officer"
-	suit = 		/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
+	name = "That One Guy That Watches Too Many Western Movies"
 	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand =	/obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/revolver/hunting=1,
-	/obj/item/ammo_box/c4570=3
+	/obj/item/gun/ballistic/revolver/sequoia/bayonet=2,
+	/obj/item/ammo_box/c4570=6
 	)
 
 /*
@@ -156,10 +140,10 @@ Lieutenant
 */
 
 /datum/job/ncr/f13lieutenant
-	title = "NCR Lieutenant"
+	title = "Viet Cong Lieutenant"
 	flag = F13LIEUTENANT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the direct superior to the Sergeant First Class and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain and above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
@@ -209,8 +193,8 @@ Medical Officer
 /datum/job/ncr/f13medicalofficer
 	title = "NCR Medical Officer"
 	flag = F13MEDICALOFFICER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are lead medical professional in Camp Miller, you do not have any command authority unless it is of medical nature. Your duties are to ensure your troopers are in good health and that medical supplies are stocked for troopers."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
@@ -256,7 +240,7 @@ Medical Officer
 Logistics Officer
 */
 /datum/job/ncr/f13logisticsofficer
-	title = "NCR Logistics Officer"
+	title = "Viet Cong Logistics Officer"
 	flag = F13LOGISTICSOFFICER
 	total_positions = 1
 	spawn_positions = 1
@@ -269,26 +253,21 @@ Logistics Officer
 	exp_requirements = 1500
 
 /datum/outfit/job/ncr/f13logisticsofficer
-	name = "NCR Logistics Officer"
+	name = "Viet Cong Logistics Officer"
 	jobtype			= /datum/job/ncr/f13logisticsofficer
 	id				= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform			= /obj/item/clothing/under/f13/ncr/ncr_officer
+	uniform			= /obj/item/clothing/under/color/black
 	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
-	accessory 		= /obj/item/clothing/accessory/ncr/LT2
-	head 			= /obj/item/clothing/head/beret/ncr_sapper
+	head 			= /obj/item/clothing/head/rice_hat
 	neck 			= /obj/item/storage/belt/holster
-	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	glasses			= /obj/item/clothing/glasses/welding
-	belt 			= /obj/item/storage/belt/utility/full/engi
-	gloves			= /obj/item/clothing/gloves/color/yellow
-	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
+	suit 			= /obj/item/clothing/suit/vapeshirt
+	suit_store		= /obj/item/gun/energy/laser/laer
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
-		/obj/item/ammo_box/magazine/m45=3, \
+		/obj/item/stock_parts/cell/ammo/mfc=3, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
 		/obj/item/grenade/plastic=2, \
 		/obj/item/stack/sheet/metal/fifty=2, \
 		/obj/item/stack/sheet/glass/fifty=2
@@ -316,8 +295,8 @@ Sergeant First Class
 /datum/job/ncr/f13firstsergeant
 	title = "NCR Sergeant First Class"
 	flag = F13FIRSTSERGEANT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the third in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
 	supervisors = "Lieutenant and above"
 	selection_color = "#fff5cc"
@@ -356,8 +335,8 @@ Sergeant
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the enlisted follow them to the letter. Additionally, you are responsible for the wellbeing of the troops and their ongoing training with the NCR."
 	supervisors = "Sergeant First Class and above"
 	selection_color = "#fff5cc"
@@ -394,8 +373,8 @@ Heavy Trooper
 /datum/job/ncr/f13heavytrooper
 	title = "NCR Heavy Trooper"
 	flag = F13HEAVYTROOPER
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protects the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
 	supervisors = "Sergeant First Class and above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
@@ -440,8 +419,8 @@ Corporal
 /datum/job/ncr/f13corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are a junior NCO. You are tasked with organizing the enlisted ranks into fireteams and answer directly to a Sergeant and/or the Sergeant First Class."
 	supervisors = "Sergeant and above"
 	selection_color = "#fff5cc"
@@ -476,8 +455,8 @@ Combat Engineer
 /datum/job/ncr/f13combatmedic
 	title = "NCR Combat Medic"
 	flag = F13COMBATMEDIC
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are a veteran enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -522,8 +501,8 @@ Combat Engineer
 /datum/job/ncr/f13combatengineer
 	title = "NCR Combat Engineer"
 	flag = F13COMBATENGINEER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are a veteran enlisted with an engineering skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
 	supervisors = "Corporals and above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
@@ -574,61 +553,43 @@ Trooper
 */
 
 /datum/job/ncr/f13trooper
-	title = "NCR Trooper"
+	title = "Viet Cong Militiaman"
 	flag = F13TROOPER
-	total_positions = 8
-	spawn_positions = 8
-	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by the Lieutenant."
-	supervisors = "Corporals and above"
+	total_positions = 20
+	spawn_positions = 20
+	description = "You are considered the backbone and workforce strength of the Viet Cong. You answer to everyone above you in the chain of command."
+	supervisors = "Everyone else lmao"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13trooper
 
 	loadout_options = list(
 	/datum/outfit/loadout/trooperrifleman,
-	/datum/outfit/loadout/trooperpathfinder,
-	/datum/outfit/loadout/trooperfiresupport
+	/datum/outfit/loadout/trooperpathfinder
 	)
 
 /datum/outfit/job/ncr/f13trooper
-	name = "NCR Trooper"
+	name = "Viet Cong"
 	jobtype = /datum/job/ncr/f13trooper
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
-	uniform =  		/obj/item/clothing/under/f13/ncr
+	uniform =  		/obj/item/clothing/under/color/black
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/TPR
-	head = 			/obj/item/clothing/head/f13/ncr
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
-	belt =          /obj/item/storage/belt/military/assault/ncr
+	head = 			/obj/item/clothing/head/rice_hat
+	suit = 			/obj/item/clothing/suit/nerdshirt
 	glasses = 		null
-	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted)
-
 
 /datum/outfit/loadout/trooperrifleman
-	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
+	name = "Viet Cong Frontliner"
 	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_two=1,
-		/obj/item/ammo_box/magazine/m556/rifle=1)
+		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/gun/ballistic/automatic/type93=1)
 
 /datum/outfit/loadout/trooperpathfinder
-	name = "Pathfinder"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine //Generally worse weapon, though can be upgraded
+	name = "Viet Cong Gunmaster"
 	backpack_contents = list(
-		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
-		/obj/item/storage/box/ration/menu_eight=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=1)
-
-/datum/outfit/loadout/trooperfiresupport
-	name = "Fire Support"
-	suit_store = /obj/item/gun/ballistic/automatic/sten //Barely better then a pipe gun but you get a pretty rapid burst fire. Intended for suppression/CQC
-	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_one=1,
-		/obj/item/ammo_box/magazine/uzim9mm=1)
-
+		/obj/item/book/granter/trait/trekking=1,
+		/obj/item/gun/ballistic/automatic/pistol/type17=2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=4)
 
 
 //MP
@@ -636,8 +597,8 @@ Trooper
 /datum/job/ncr/f13mp
 	title = "NCR Military Police"
 	flag = F13MP
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
 	supervisors = "the Captain"
 	selection_color = "#fff5cc"
@@ -655,7 +616,7 @@ Trooper
 	head = 			/obj/item/clothing/head/f13/ncr/steelpot_mp
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/assault/ncr
-	suit_store =    /obj/item/melee/classic_baton/telescopic
+	suit_store =    /obj/item/melee/classic_baton/telescopic // AAAAAAAUHG.
 	glasses = 		null
 	r_pocket = 		/obj/item/binoculars
 
@@ -673,8 +634,8 @@ Rear Echelon
 /datum/job/ncr/f13rearechelon
 	title = "NCR Rear Echelon"
 	flag = F13REARECHELON
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or your specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -752,8 +713,8 @@ Trooper
 /datum/job/ncr/f13ncroffduty
 	title = "NCR Off-Duty"
 	flag = F13NCROFFDUTY
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
 	supervisors = "All NCOs and COs"
 	selection_color = "#fff5cc"
