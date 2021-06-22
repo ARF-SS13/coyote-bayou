@@ -582,7 +582,7 @@ Trooper
 /datum/outfit/loadout/trooperrifleman
 	name = "Viet Cong Frontliner"
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=2
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/ballistic/automatic/type93=1)
 
 /datum/outfit/loadout/trooperpathfinder
