@@ -838,7 +838,7 @@
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 5
+	fire_delay = 3
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	can_bayonet = TRUE
