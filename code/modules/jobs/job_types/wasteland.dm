@@ -176,7 +176,7 @@
 	glasses = 		/obj/item/clothing/glasses/night
 	mask = 			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave/officer
-	suit =			/obj/item/clothing/suit/armor/power_armor/advanced/mk2
+	suit =			/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave
