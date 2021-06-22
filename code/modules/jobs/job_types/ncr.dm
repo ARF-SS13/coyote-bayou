@@ -589,7 +589,7 @@ Trooper
 	name = "Viet Cong Gunmaster"
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1,
-		/obj/item/gun/ballistic/automatic/pistol/type17=2
+		/obj/item/gun/ballistic/automatic/pistol/type17=2,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=4)
 
 
