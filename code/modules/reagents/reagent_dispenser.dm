@@ -321,7 +321,8 @@
 
 /obj/structure/reagent_dispensers/compostbin/Initialize()
 	. = ..()
-	reagents.clear_reagents() //start empty
+	reagents.clear_reagents()
+	reagents.add_reagent(reagent_id, 100)
 
 /obj/structure/reagent_dispensers/compostbin/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
