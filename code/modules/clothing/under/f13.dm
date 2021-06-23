@@ -674,6 +674,15 @@
 	item_state = "vault_exile"
 	item_color = "vault_exile"
 
+/obj/item/clothing/under/f13/exile/tribal
+	name = "disheveled loincloth"
+	desc = "Fine handcrafted tribal clothing, now torn and faded. A simple lointcloth that comes with a piece of cloth to cover the chest with as well."
+	icon = 'icons/fallout/objects/clothing/uniforms.dmi'
+	icon_state = "clothing_tribalout"
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/uniform.dmi'
+	item_state = "clothing_tribalout"
+	can_adjust = TRUE
+
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
 	name = "NCR pre-war uniform"

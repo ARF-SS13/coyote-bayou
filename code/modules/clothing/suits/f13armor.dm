@@ -611,6 +611,29 @@
 	armor = list("tier" = 7)
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
+//Trying generic tribal armor stats for this one for now.
+/obj/item/clothing/suit/hooded/tribaloutcast
+	name = "patched heavy leather cloak"
+	desc = "(IV) A robust cloak made from layered gecko skin patched with various bits of leather from dogs and other animals, able to absorb more force than one would expect from leather."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	icon_state = "armor_tribaloutcast"
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	item_state = "armor_tribaloutcast"
+	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	strip_delay = 40
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/tribaloutcast
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+
+/obj/item/clothing/head/hooded/cloakhood/tribaloutcast
+	name = "patched leather hood"
+	desc = "(IV) Thick layered leather, patched together."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	icon_state = "hood_tribaloutcast"
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	item_state = "hood_tribaloutcast"
+	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
 /obj/item/clothing/suit/armor/f13/tribal
 	name = "tribal armor"
 	desc = "(IV) A set of armor made of gecko hides.<br>It's pretty good for makeshift armor."

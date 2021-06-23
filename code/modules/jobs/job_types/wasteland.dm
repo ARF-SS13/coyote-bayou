@@ -360,7 +360,8 @@ Raider
 	/datum/outfit/loadout/raider_mafia,
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
-	/datum/outfit/loadout/raider_legion
+	/datum/outfit/loadout/raider_legion,
+	/datum/outfit/loadout/raider_tribal
 	)
 
 /datum/outfit/job/wasteland/f13raider
@@ -541,12 +542,25 @@ Raider
 		/obj/item/toy/cards/deck=1)
 
 /datum/outfit/loadout/raider_vault
-	name = "Vault Outcast"
+	name = "Vault Renegade"
 	suit = /obj/item/clothing/suit/armor/f13/leatherarmor
 	uniform = /obj/item/clothing/under/f13/exile/vault
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/widowmaker=1)
+
+/datum/outfit/loadout/raider_tribal 
+	name = "Tribal Outcast"
+	suit = 		/obj/item/clothing/suit/hooded/tribaloutcast
+	uniform = 	/obj/item/clothing/under/f13/exile/tribal
+	shoes = 	/obj/item/clothing/shoes/sandal
+	belt = 		/obj/item/storage/backpack/spearquiver
+	suit_store = /obj/item/claymore/machete/warclub
+	box = 		/obj/item/storage/survivalkit_tribal
+	id = 		/obj/item/card/id/outcasttattoo
+	backpack_contents = list(
+		/obj/item/clothing/mask/cigarette/pipe=1,
+		/obj/item/kitchen/knife/combat/bone=1)
 
 
 /datum/job/wasteland/f13wastelander
