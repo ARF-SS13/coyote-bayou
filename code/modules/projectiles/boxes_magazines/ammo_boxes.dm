@@ -474,7 +474,14 @@
 /obj/item/ammo_box/c45rev/empty
 	start_empty = 1
 
-
+/obj/item/ammo_box/jerrycan
+	name = "jerry can"
+	desc = "A jerry can full of napalm and diesel fuel, meant for flamethrowers"
+	icon_state = "fuelcan"
+	caliber = "fuel"
+	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
+	max_ammo = 5
+	
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"
