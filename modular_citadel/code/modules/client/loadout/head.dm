@@ -254,8 +254,6 @@ datum/gear/head/steelpot_patriot
 	name = "Kabuto helmet"
 	path = /obj/item/clothing/head/kabuto
 
-//Chinese hats
-
 /datum/gear/head/chinese_soldier
 	name = "chinese side cap"
 	path = /obj/item/clothing/head/f13/chinese_soldier
@@ -264,9 +262,9 @@ datum/gear/head/steelpot_patriot
 /datum/gear/head/chinese_officer
 	name = "chinese officer cap"
 	path = /obj/item/clothing/head/f13/chinese_officer
-	cost = 2
+	cost = 3
 
 /datum/gear/head/chinese_commander
 	name = "chinese peaked cap"
 	path = /obj/item/clothing/head/f13/chinese_commander
-	cost = 3
+	cost = 4
