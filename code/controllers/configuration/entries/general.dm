@@ -74,7 +74,14 @@
 
 /datum/config_entry/flag/allow_vote_restart	// allow votes to restart
 
+/datum/config_entry/flag/allow_vote_transfer	// allow votes to end the round
+
 /datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
+
+/// Minimum time before a game-ending vote can be started by players.
+/datum/config_entry/number/min_end_vote_time
+	config_entry_value = 150 MINUTES
+	min_val = 0
 
 /datum/config_entry/number/vote_delay	// minimum time between voting sessions (deciseconds, 10 minute default)
 	config_entry_value = 6000

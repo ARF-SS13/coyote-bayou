@@ -95,16 +95,3 @@
 /obj/item/reagent_containers/dropper/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
 
-/obj/item/reagent_containers/dropper/SR/Vault
-	name = "Strange reagent dropper"
-	desc = "A dropper filled with a strange reagent,rumored to bring the dead back to life..."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "dropper0"
-	list_reagents = list(/datum/reagent/medicine/strange_reagent = 2)
-
-/obj/item/reagent_containers/dropper/SR/NotVault
-	name = "Strange reagent dropper"
-	desc = "A dropper filled with a strange reagent,rumored to bring the dead back to life..."
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "dropper0"
-	list_reagents = list(/datum/reagent/medicine/strange_reagent = 3)

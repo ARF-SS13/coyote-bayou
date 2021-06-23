@@ -45,6 +45,9 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	AIStatus = AI_OFF
 	hud_type = /datum/hud/guardian
 	dextrous_hud_type = /datum/hud/dextrous/guardian //if we're set to dextrous, account for it.
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_on = FALSE
 	var/mutable_appearance/cooloverlay
 	var/guardiancolor = "#ffffff"
 	var/recolorentiresprite
@@ -378,10 +381,10 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 /mob/living/simple_animal/hostile/guardian/proc/ToggleLight()
 	if(light_range<3)
 		to_chat(src, "<span class='notice'>You activate your light.</span>")
-		set_light(3)
+		set_light_on(TRUE)
 	else
 		to_chat(src, "<span class='notice'>You deactivate your light.</span>")
-		set_light(0)
+		set_light_on(FALSE)
 
 /mob/living/simple_animal/hostile/guardian/verb/ShowType()
 	set name = "Check Guardian Type"

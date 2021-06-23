@@ -235,10 +235,11 @@
 	light_range = 5
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
+	light_on = TRUE
+	on = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	custom_materials = null
-	on = TRUE
 
 // green-shaded desk lamp
 /obj/item/flashlight/lamp/green
@@ -496,6 +497,7 @@
 
 /obj/item/flashlight/glowstick/proc/turn_off()
 	on = FALSE
+	set_light_on(FALSE)
 	update_icon()
 
 /obj/item/flashlight/glowstick/update_icon_state()
@@ -504,7 +506,6 @@
 	if(!fuel)
 		icon_state = "glowstick-empty"
 		cut_overlays()
-		set_light(0)
 	else if(on)
 		var/mutable_appearance/glowstick_overlay = mutable_appearance(icon, "glowstick-glow")
 		glowstick_overlay.color = color
@@ -530,6 +531,7 @@
 /obj/item/flashlight/glowstick/proc/activate()
 	if(!on)
 		on = TRUE
+		set_light_on(TRUE)
 		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/glowstick/red
@@ -564,9 +566,10 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 	light_power = 10
+	light_on = TRUE
+	on = TRUE
 	alpha = 0
 	layer = 0
-	on = TRUE
 	anchored = TRUE
 	var/range = null
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF

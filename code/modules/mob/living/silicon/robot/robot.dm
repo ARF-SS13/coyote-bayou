@@ -619,14 +619,14 @@
 	update_headlamp()
 
 /mob/living/silicon/robot/proc/update_headlamp(turn_off = 0, cooldown = 100)
-	set_light(0)
-
 	if(lamp_intensity && (turn_off || stat || low_power_mode))
 		to_chat(src, "<span class='danger'>Your headlamp has been deactivated.</span>")
 		lamp_intensity = 0
 		lamp_cooldown = world.time + cooldown
+		set_light_on(FALSE)
 	else
-		set_light(lamp_intensity)
+		set_light_range(lamp_intensity)
+		set_light_on(TRUE)
 
 	if(lamp_button)
 		lamp_button.icon_state = "lamp[lamp_intensity]"

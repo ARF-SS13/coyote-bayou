@@ -130,6 +130,10 @@
 	hacked = TRUE
 	visualAppearence = CLOCKDRONE
 	can_be_held = FALSE
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.5
+
 
 /mob/living/simple_animal/drone/cogscarab/ratvar //a subtype for spawning when ratvar is alive, has a slab that it can use and a normal fabricator
 	default_storage = /obj/item/storage/toolbox/brass/prefilled/ratvar
@@ -139,7 +143,6 @@
 
 /mob/living/simple_animal/drone/cogscarab/Initialize()
 	. = ..()
-	set_light(2, 0.5)
 	qdel(access_card) //we don't have free access
 	access_card = null
 	remove_verb(src, /mob/living/simple_animal/drone/verb/check_laws)
