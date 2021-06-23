@@ -231,6 +231,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/flamerfuel
+	name = "Flamethrower Fuel"
+	result = /obj/item/ammo_box/jerrycan
+	reqs = list(/datum/reagent/napalm = 50,
+				/obj/item/reagent_containers/glass/beaker/large)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO	
+
 
 
 //////////////////
