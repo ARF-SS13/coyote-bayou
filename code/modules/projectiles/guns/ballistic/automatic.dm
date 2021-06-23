@@ -384,6 +384,13 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+/obj/item/gun/ballistic/automatic/m1carbine/m1n
+	name = "m1/n carbine"
+	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
+	can_automatic = FALSE
+	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
+	untinkerable = TRUE
+	
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "m1a1 carbine"
 	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."

@@ -314,10 +314,10 @@ Sergeant First Class
 */
 
 /datum/job/ncr/f13firstsergeant
-	title = "NCR Sergeant First Class"
+	title = "NCR Sergeant First Class" 
 	flag = F13FIRSTSERGEANT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0 //basically doesn't get used, remove the bloat roles. I wont delete this but it should be either reworked or commented out.
+	spawn_positions = 0
 	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the third in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
 	supervisors = "Lieutenant and above"
 	selection_color = "#fff5cc"
@@ -609,14 +609,14 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
+	suit_store = /obj/item/gun/ballistic/automatic/varmint //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
 		/obj/item/ammo_box/magazine/m556/rifle=1)
 
 /datum/outfit/loadout/trooperpathfinder
 	name = "Pathfinder"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine //Generally worse weapon, though can be upgraded
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n //Generally worse weapon, though can be upgraded
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
 		/obj/item/storage/box/ration/menu_eight=1,
@@ -686,7 +686,8 @@ Rear Echelon
 	/datum/outfit/loadout/rearlog,
 	/datum/outfit/loadout/reartech,
 	/datum/outfit/loadout/rearcorps,
-	/datum/outfit/loadout/rearscav
+	/datum/outfit/loadout/rearscav,
+	/datum/outfit/loadout/offduty
 	)
 
 /datum/outfit/job/ncr/f13rearechelon
@@ -744,6 +745,15 @@ Rear Echelon
 		/obj/item/storage/fancy/ammobox/lethalshot=2, \
 		/obj/item/weldingtool/largetank)
 
+/datum/outfit/loadout/offduty //Fuck having an entire role just for off duty, making it a rear-eche loadout
+	name = "Off-Duty"
+	belt = /obj/item/storage/belt/military/NCR_Bandolier
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/reagent_containers/food/snacks/cheesyburrito=2, \
+		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola=1, \
+		/obj/item/ammo_box/magazine/m9mm=3)
+
 
 /*
 Trooper
@@ -752,8 +762,8 @@ Trooper
 /datum/job/ncr/f13ncroffduty
 	title = "NCR Off-Duty"
 	flag = F13NCROFFDUTY
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0 //Again not commenting out, but it's been moved to a rear echelon loadout
+	spawn_positions = 0
 	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
 	supervisors = "All NCOs and COs"
 	selection_color = "#fff5cc"

@@ -480,7 +480,7 @@
 	icon_state = "fuelcan"
 	caliber = "fuel"
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
-	max_ammo = 5
+	max_ammo = 6 //2 will reload the flamethrower
 	
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
