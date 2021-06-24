@@ -417,9 +417,9 @@ Sergeant
 		/obj/item/storage/fancy/ammobox/lethalshot=2, \
 		/obj/item/clothing/mask/gas=1, \
 		/obj/item/tank/internals/emergency_oxygen/engi=1, \
-		/obj/item/grenade/smokebomb/=3, \
+		/obj/item/grenade/smokebomb=3, \
 		/obj/item/kitchen/knife/trench=1 \
-		)
+		)	//ahhhhhhhhhhh
 
 
 

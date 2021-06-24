@@ -75,7 +75,7 @@
 	if(armed)
 		icon_state = "m2_flamethrower_back"
 	else
-		icon_state = "m2_flamethrower_back_unholstered"
+		icon_state = "m2_flamethrower_back"
 
 /obj/item/m2flamethrowertank/proc/attach_gun(mob/user)
 	if(!gun)

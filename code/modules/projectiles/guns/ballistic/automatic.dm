@@ -389,7 +389,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
 	can_automatic = FALSE
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "NCR-M1Carbine"
+	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
 	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
 	untinkerable = TRUE
@@ -436,7 +436,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	extra_damage = 3
 	extra_penetration = 0.06
-	fire_delay = 4.5
+	fire_delay = 6
 	burst_size = 1
 	can_unsuppress = FALSE
 	suppressed = 1
@@ -458,9 +458,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 5
-	extra_penetration = 0.1 //can't use AP ammo so it has a little bit higher pen to make up for it
-	fire_delay = 4.5
+	extra_damage = 3
+	extra_penetration = 0.06 
+	fire_delay = 6
 	burst_size = 2
 	can_attachments = FALSE
 	can_automatic = FALSE
