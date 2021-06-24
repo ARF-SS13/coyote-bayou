@@ -96,6 +96,36 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustOxyLoss(12*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
+	
+/datum/reagent/medicine/longpork_stew
+	name = "longpork stew"
+	description = "A dish sworn by some to have unusual healing properties. To most it just tastes disgusting. What even is longpork anyways?..."
+	reagent_state = LIQUID
+	color =  "#915818"
+	taste_description = "oily water, with bits of raw-tasting tender meat."
+	metabolization_rate = 0.15 * REAGENTS_METABOLISM //slow, weak heal that lasts a while. Metabolizies much faster if you are not hurt.
+	overdose_threshold = 50 //If you eat too much you get poisoned from all the human flesh you're eating
+	var/longpork_hurting = 0
+	var/longpork_lover_healing = -2
+
+/datum/reagent/medicine/longpork_stew/on_mob_life(mob/living/carbon/M)
+	var/is_longporklover = FALSE
+	if(HAS_TRAIT(M, TRAIT_LONGPORKLOVER))
+		is_longporklover = TRUE
+	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
+		metabolization_rate = 3 * REAGENTS_METABOLISM //metabolizes much quicker if not injured
+	var/longpork_heal_rate = (is_longporklover ? longpork_lover_healing : longpork_hurting) * REAGENTS_EFFECT_MULTIPLIER
+	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+		M.adjustFireLoss(longpork_heal_rate)
+		M.adjustBruteLoss(longpork_heal_rate)
+		M.adjustToxLoss(is_longporklover ? 0 : 3)
+		. = TRUE
+		..()
+
+/datum/reagent/medicine/longpork_stew/overdose_process(mob/living/M)
+	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+	..()
+	. = TRUE
 
 /datum/reagent/medicine/bitter_drink
 	name = "bitter drink"
@@ -109,17 +139,17 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -8 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
-	var/is_technophobe = FALSE
-	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
-		is_technophobe = TRUE
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
 		M.adjustFireLoss(heal_rate)
 		M.adjustBruteLoss(heal_rate)
 		M.adjustToxLoss(heal_rate)
-		M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
+		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 		. = TRUE
 	..()
 
@@ -141,16 +171,16 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -3 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	var/is_technophobe = FALSE
-	if(HAS_TRAIT(M, TRAIT_TECHNOPHOBE))
-		is_technophobe = TRUE
+	var/is_tribal = FALSE
+	if(HAS_TRAIT(M, TRAIT_TRIBAL))
+		is_tribal = TRUE
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
-	var/heal_rate = (is_technophobe ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
+	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)
 	M.adjustToxLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_technophobe ? 0 : 5)
+	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
 	. = TRUE
 	..()
 

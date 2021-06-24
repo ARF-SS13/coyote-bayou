@@ -64,9 +64,9 @@
 		to_chat(user, "<span class='notice'>You [anchored ? "fasten the railing to":"unfasten the railing from"] the floor.</span>")
 	return TRUE
 
-/obj/structure/railing/CanPass(atom/movable/mover, turf/target)
+/obj/structure/railing/CanPass(atom/movable/mover, border_dir)
 	. = ..()
-	if(get_dir(loc, target) & dir)
+	if(border_dir & dir)
 		var/checking = FLYING | FLOATING
 		return . || mover.throwing || mover.movement_type & checking
 	return TRUE

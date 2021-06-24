@@ -17,7 +17,7 @@
 		return QDEL_HINT_LETMELIVE
 	return ..()
 
-/obj/effect/clockwork/servant_blocker/CanPass(atom/movable/M, turf/target)
+/obj/effect/clockwork/servant_blocker/CanPass(atom/movable/M, border_dir)
 	var/list/target_contents = M.GetAllContents() + M
 	for(var/mob/living/L in target_contents)
 		if(is_servant_of_ratvar(L) && get_dir(M, src) != dir && L.stat != DEAD) //Unless we're on the side the arrow is pointing directly away from, no-go

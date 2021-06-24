@@ -172,3 +172,6 @@
 	var/mutable_appearance/typing_indicator_current
 
 	var/timeofdeath = 0 /* moved here from mob/living for player respawn */
+
+	/// D&D-like reach: how far in tiles is considered adjacent to this mob. Euclidean distance.
+	var/reach = 1

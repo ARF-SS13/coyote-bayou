@@ -193,8 +193,14 @@
 	P.setAngle(new_angle_s)
 	return TRUE
 
-/atom/proc/CanPass(atom/movable/mover, turf/target)
+
+/**
+ * Whether mover can enter enter or leave the turf src is in (or is, if it's a turf).
+ * border_dir determines from which direction the attempted move is originating.
+ */
+/atom/proc/CanPass(atom/movable/mover, border_dir)
 	return !density
+
 
 /atom/proc/onCentCom()
 	var/turf/T = get_turf(src)

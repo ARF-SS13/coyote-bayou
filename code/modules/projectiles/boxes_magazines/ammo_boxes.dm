@@ -66,6 +66,17 @@
 	ammo_type = /obj/item/ammo_casing/a22/hp
 	custom_materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 2000)
 
+//qsp
+/obj/item/ammo_box/qspbox
+	name = "ammo box (10mm QSP)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	multiple_sprites = 3
+	max_ammo = 40
+	ammo_type = /obj/item/ammo_casing/qsp
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 2000)
+
 
 //9mm and .38
 /obj/item/ammo_box/c9mm
@@ -385,6 +396,20 @@
 	start_empty = 1
 
 
+//QSP
+/obj/item/ammo_box/qsp
+	name = "speed loader (10mm qsp)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "qsp10mm"
+	caliber = "qspbuckshot"
+	ammo_type = /obj/item/ammo_casing/qsp
+	max_ammo = 6
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 3000)
+
+/obj/item/ammo_box/qsp/empty
+	start_empty = 1
+
 //10mm
 /obj/item/ammo_box/l10mm
 	name = "speed loader (10mm)"
@@ -474,7 +499,16 @@
 /obj/item/ammo_box/c45rev/empty
 	start_empty = 1
 
-
+/obj/item/ammo_box/jerrycan
+	name = "jerry can"
+	desc = "A jerry can full of napalm and diesel fuel, meant for flamethrowers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "jerrycan"
+	caliber = "fuel"
+	unloadable = TRUE
+	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
+	max_ammo = 6 // 3 bursts, you need 2 cans
+	
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"

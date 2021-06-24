@@ -161,7 +161,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_shot_delay = 2
+	burst_shot_delay = 0.5
 	fire_delay = 1
 	spread = 11
 	extra_damage = -2
@@ -183,7 +183,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	fire_sound = 'sound/f13weapons/american180.ogg'
 	can_unsuppress = FALSE
-	burst_shot_delay = 1
+	burst_shot_delay = 0.5
 	suppressed = 1
 
 
@@ -203,7 +203,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	fire_delay = 2.5
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	can_attachments = TRUE
 	spread = 12
 	suppressor_state = "uzi_suppressor"
@@ -227,7 +227,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_delay = 5
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1.5
 	can_attachments = TRUE
 	spread = 14
 	suppressor_state = "10mm_suppressor" //activate if sprited 
@@ -250,7 +250,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	fire_delay = 4
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_suppress = TRUE
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -278,7 +278,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 12
 	fire_delay = 4
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1
 	spread = 9
 	can_attachments = TRUE
 
@@ -292,7 +292,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
 	burst_size = 3
 	fire_delay = 6
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_attachments = TRUE
 	extra_damage = -4
 	can_scope = TRUE
@@ -384,6 +384,16 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+/obj/item/gun/ballistic/automatic/m1carbine/m1n
+	name = "m1/n carbine"
+	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
+	can_automatic = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "ncr-m1carbine"
+	item_state = "rifle"
+	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
+	untinkerable = TRUE
+	
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "m1a1 carbine"
 	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."
@@ -426,7 +436,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	extra_damage = 3
 	extra_penetration = 0.06
-	fire_delay = 4.5
+	fire_delay = 6
 	burst_size = 1
 	can_unsuppress = FALSE
 	suppressed = 1
@@ -441,6 +451,26 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 
+/obj/item/gun/ballistic/automatic/commando/ranger
+	name = "destroyer carbine"
+	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "destroyer-carbine"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	extra_damage = 3
+	extra_penetration = 0.06 
+	fire_delay = 6
+	burst_size = 2
+	can_attachments = FALSE
+	can_automatic = FALSE
+	automatic_burst_overlay = TRUE
+	can_scope = TRUE
+	scope_state = "lasmusket_scope"
+	scope_x_offset = 6
+	scope_y_offset = 14
+	untinkerable = TRUE
+	semi_auto = FALSE
 
 //////////
 //RIFLES//
@@ -497,7 +527,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 5
+	fire_delay = 3
 	burst_size = 1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -757,7 +787,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	spread = 8
 	can_attachments = TRUE
 	can_bayonet = TRUE
@@ -779,6 +809,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 3
+	burst_shot_delay = 0.5
 	fire_delay = 3
 	can_attachments = TRUE
 	zoomable = TRUE
@@ -823,7 +854,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3
-	burst_shot_delay = 2.0
+	burst_shot_delay = 1
 	spread = 16
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -856,6 +887,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	force = 20
+	burst_shot_delay = 1
 	mag_type = /obj/item/ammo_box/magazine/m762
 	spread = 10
 	fire_delay = 3
@@ -878,7 +910,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
 	fire_delay = 3
-	burst_shot_delay = 3
+	burst_shot_delay = 0.75
 	spread = 7
 	randomspread = 1
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
@@ -912,7 +944,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 5
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	spread = 15
 	spawnwithmagazine = TRUE
 	zoomable = TRUE
@@ -1060,6 +1092,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "m90"
 	burst_size = 3
 	fire_delay = 1
+	burst_shot_delay = 0.5
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT

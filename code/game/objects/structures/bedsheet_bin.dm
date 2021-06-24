@@ -44,7 +44,7 @@ LINEN BINS
 		..()
 
 /obj/item/bedsheet/attack_self(mob/user)
-	if(!user.CanReach(src))		//No telekenetic grabbing.
+	if(!user.can_reach(src))		//No telekenetic grabbing.
 		return
 	if(!user.dropItemToGround(src))
 		return

@@ -48,7 +48,7 @@
 	active = !active
 	if(active)
 		force = force_on
-		reach = reach_on
+		max_reach = reach_on
 		total_mass = total_mass_on
 		throwforce = throwforce_on
 		hitsound = hitsound_on
@@ -61,7 +61,7 @@
 		w_class = w_class_on
 	else
 		force = initial(force)
-		reach = initial(reach)
+		max_reach = initial(max_reach)
 		throwforce = initial(throwforce)
 		hitsound = initial(hitsound)
 		throw_speed = initial(throw_speed)

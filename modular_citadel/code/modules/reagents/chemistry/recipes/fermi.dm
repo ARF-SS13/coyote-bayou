@@ -134,6 +134,7 @@
 
 
 //serum
+/* disable SDGF as a whole. ~FO13
 /datum/chemical_reaction/fermi/SDGF
 	name = "Synthetic-derived growth factor"
 	id = /datum/reagent/fermi/SDGF
@@ -172,7 +173,7 @@
 		S.color = "#810010"
 	my_atom.reagents.clear_reagents()
 	my_atom.visible_message("<span class='warning'>An horrifying tumoural mass forms in [my_atom]!</span>")
-
+*/
 /*
 /datum/chemical_reaction/fermi/astral
 	name = "Astrogen"
