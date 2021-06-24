@@ -27,7 +27,7 @@
  * Whether a click can go through unimpeded.
  * Works inside storages up to the delimited depth for adjacent locations.
  * Works for reach using euclidian distances (cardinal and diagonal moves are not the same)
- */ //STORAGE_VIEW_DEPTH
+ */
 /atom/movable/proc/can_reach(atom/ultimate_target, depth = INVENTORY_DEPTH, reach = 1)
 	if(!isturf(loc) || reach < 1)
 		return has_direct_access_to(ultimate_target, depth)
