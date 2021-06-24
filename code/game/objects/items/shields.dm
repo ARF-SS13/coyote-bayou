@@ -191,7 +191,7 @@
 //Basic riotshield, meant to protect from melee and thrown weapons.
 /obj/item/shield/riot
 	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
+	desc = "A shield for protecting the user from low impact force while giving good visibility."
 	icon_state = "shield_riot"
 	item_state = "shield_riot"
 	slot_flags = ITEM_SLOT_BACK
@@ -269,8 +269,6 @@ obj/item/shield/riot/bullet_proof
 	desc = "A small wooden shield."
 	icon_state = "shield_buckler"
 	item_state = "shield_buckler"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	block_chance = 30
 	max_integrity = 150
 	custom_materials = list(/datum/material/wood = 18000)
@@ -316,8 +314,8 @@ obj/item/shield/riot/bullet_proof
 
 //Energy shield. Placeholder for the experimental BoS shield concept that never got implemented I suppose.
 /obj/item/shield/energy
-	name = "energy combat shield"
-	desc = "A shield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."
+	name = "experimental energy shield"
+	desc = "A forcefield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("shoved", "bashed")
 	throw_range = 5
