@@ -864,6 +864,15 @@
 	traitname = "trekking"
 	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
+/obj/item/book/granter/trait/gunslinger
+	name = "Shalashaska: A gunslinger's memoirs"
+	desc = "The memoirs of an old gunslinger, has some useful advice."
+	oneuse = TRUE
+	granted_trait = TRAIT_NICE_SHOT
+	traitname = "gunslinging"
+	remarks = list("Engravings offer no tactical advantage whatsoever...", "I love to reload during battle...", "There's nothing like the feeling of slamming a long silver bullet into a well greased chamber...", "It doesn't feel right to shoot an unarmed man, but I'll get over it....", "You’re pretty good...", "The moment any truth is passed on, it starts turning into fiction. The problem is, fiction inspires people more than facts...")
+
+
 /*
 /obj/item/book/granter/trait/iron_fist
 	name = "Brawler's Guide to Fisticuffs"

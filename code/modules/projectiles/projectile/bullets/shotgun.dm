@@ -165,3 +165,21 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
+
+/obj/item/projectile/bullet/pellet/qsp
+	name = "qsp buckshot pellet"
+	pixels_per_second = 375
+	damage = 8
+	armour_penetration = 0.15
+	wound_bonus = 10
+	bare_wound_bonus = 10
+	ricochets_max = 3
+	ricochet_incidence_leeway = 130
+	ricochet_decay_damage = 1.3 //10.4 after once bounce, 13.52 after 2 bounces. Slightly below regular buck at first, if you hit the double bounce its more
+	ricochet_decay_chance = 1
+	ricochet_chance = 50
+	ricochet_auto_aim_angle = 30
+	ricochet_auto_aim_range = 4
+	wound_bonus = 5
+	bare_wound_bonus = 10
+	embedding = list("embed_chance" = 30, "fall_chance" = 2, "jostle_chance" = 2, "ignore_throwspeed_threshold" =TRUE, "pain_stam_pct" = 0.3, "pain_mult" = 3 , "jostle_pain_mult" = 3, "rip_time" = 3)
