@@ -826,7 +826,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 			var/obj/item/vended = new R.product_path(get_turf(src))
 			R.amount--
-			if(usr.CanReach(src) && usr.put_in_hands(vended))
+			if(usr.can_reach(src) && usr.put_in_hands(vended))
 				to_chat(usr, "<span class='notice'>You take [R.name] out of the slot.</span>")
 			else
 				to_chat(usr, "<span class='warning'>[capitalize(R.name)] falls onto the floor!</span>")

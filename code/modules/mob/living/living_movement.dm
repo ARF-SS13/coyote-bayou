@@ -17,7 +17,7 @@
 			pixel_x = get_standard_pixel_x_offset(lying)
 			pixel_y = get_standard_pixel_y_offset(lying)
 
-/mob/living/CanPass(atom/movable/mover, turf/target)
+/mob/living/CanPass(atom/movable/mover, border_dir)
 	if((mover.pass_flags & PASSMOB))
 		return TRUE
 	if(istype(mover, /obj/item/projectile))
@@ -101,7 +101,7 @@
 			var/mob/living/L = pulledby
 			L.set_pull_offsets(src, pulledby.grab_state)
 
-	if(active_storage && !(CanReach(active_storage.parent,view_only = TRUE)))
+	if(active_storage && !(can_reach(active_storage.parent, STORAGE_VIEW_DEPTH)))
 		active_storage.close(src)
 
 	if(lying && !buckled && prob(getBruteLoss()*200/maxHealth))

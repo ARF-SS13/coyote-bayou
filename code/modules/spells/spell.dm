@@ -446,7 +446,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	dummy.pass_flags |= PASSTABLE
 	for(var/turf/turf in getline(A,B))
 		for(var/atom/movable/AM in turf)
-			if(!AM.CanPass(dummy,turf,1))
+			if(!AM.CanPass(dummy, NONE, 1))
 				qdel(dummy)
 				return 0
 	qdel(dummy)

@@ -119,7 +119,7 @@
 /obj/structure/rust_heretic_act()
 	take_damage(500, BRUTE, "melee", 1)
 
-/obj/structure/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+/obj/structure/CanPass(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
 	if(istype(mover, /obj/item/projectile)) // Treats especifically projectiles
 		var/obj/item/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer))

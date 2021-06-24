@@ -33,7 +33,7 @@
 
 	//These are always reachable.
 	//User itself, current loc, and user inventory
-	if(A in DirectAccess())
+	if(has_direct_access_to(A, FAR_DEPTH))
 		if(W)
 			return W.rightclick_melee_attack_chain(src, A, params)
 		else
@@ -49,7 +49,7 @@
 		return
 
 	//Standard reach turf to turf or reaching inside storage
-	if(CanReach(A,W))
+	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
 			return W.rightclick_melee_attack_chain(src, A, params)
 		else

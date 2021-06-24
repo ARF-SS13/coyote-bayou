@@ -164,7 +164,7 @@
 	flags_inv = NONE
 
 /obj/item/reagent_containers/rag/towel/attack_self(mob/user)
-	if(!user.CanReach(src) || !user.dropItemToGround(src))
+	if(!user.can_reach(src) || !user.dropItemToGround(src))
 		return
 	to_chat(user, "<span class='notice'>You lay out \the [src] flat on the ground.</span>")
 	icon_state = flat_icon

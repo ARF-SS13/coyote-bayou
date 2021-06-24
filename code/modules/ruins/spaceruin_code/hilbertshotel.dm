@@ -48,7 +48,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
 /obj/item/hilbertshotel/proc/promptAndCheckIn(mob/user)
 	var/chosenRoomNumber = input(user, "What number room will you be checking into?", "Room Number") as null|num
-	if(!chosenRoomNumber || !user.CanReach(src))
+	if(!chosenRoomNumber || !user.can_reach(src))
 		return
 	if(chosenRoomNumber > SHORT_REAL_LIMIT)
 		to_chat(user, "<span class='warning'>You have to check out the first [SHORT_REAL_LIMIT] rooms before you can go to a higher numbered one!</span>")

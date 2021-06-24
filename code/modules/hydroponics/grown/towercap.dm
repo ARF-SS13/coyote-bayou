@@ -151,6 +151,8 @@
 	density = FALSE
 	anchored = TRUE
 	buckle_lying = 0
+	pass_flags = LETPASSTHROW
+	pass_flags_self = PASSTABLE
 	var/burning = 0
 	var/burn_icon = "bonfire_on_fire" //for a softer more burning embers icon, use "bonfire_warm"
 	var/grill = FALSE
@@ -163,8 +165,8 @@
 	. = ..()
 	StartBurning()
 
-/obj/structure/bonfire/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSTABLE))
+/obj/structure/bonfire/CanPass(atom/movable/mover, border_dir)
+	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return TRUE
 	if(mover.throwing)
 		return TRUE

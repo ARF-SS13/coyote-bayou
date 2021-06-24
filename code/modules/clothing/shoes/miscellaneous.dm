@@ -429,13 +429,13 @@
 			issolid = TRUE
 	if (!issolid)
 		for (var/atom/T in newloc) //stuff on the new turf
-			if (!T.CanPass(m,newloc) && T != m)
+			if (!T.CanPass(m, dir) && T != m)
 				issolid = TRUE
 				newlocobject = T
 				break
 		if (!issolid)
 			for (var/atom/T in oldloc) //directional shit on the old turf
-				if (!T.CanPass(m,newloc) && T != m && T != newlocobject)
+				if (!T.CanPass(m, dir) && T != m && T != newlocobject)
 					issolid = TRUE
 					break
 			newlocobject = null //stopping structures from using two charges because of how shitty the canpass code is

@@ -58,8 +58,8 @@
 /obj/structure/necropolis_gate/singularity_pull()
 	return 0
 
-/obj/structure/necropolis_gate/CanPass(atom/movable/mover, turf/target)
-	if(get_dir(loc, target) == dir)
+/obj/structure/necropolis_gate/CanPass(atom/movable/mover, border_dir)
+	if(border_dir == dir)
 		return !density
 	return 1
 

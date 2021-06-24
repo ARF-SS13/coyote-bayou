@@ -41,8 +41,8 @@
 
 	// Diagonal case
 	var/in_dir = get_dir(T0,src) // eg. northwest (1+8) = 9 (00001001)
-	var/d1 = in_dir&3		     // eg. north	  (1+8)&3 (0000 0011) = 1 (0000 0001)
-	var/d2 = in_dir&12			 // eg. west	  (1+8)&12 (0000 1100) = 8 (0000 1000)
+	var/d1 = in_dir & (NORTH|SOUTH)		     // eg. north	  (1+8)&3 (0000 0011) = 1 (0000 0001)
+	var/d2 = in_dir & (EAST|WEST)			 // eg. west	  (1+8)&12 (0000 1100) = 8 (0000 1000)
 
 	for(var/d in list(d1,d2))
 		if(!T0.ClickCross(d, border_only = 1, target_atom = target, mover = mover))
@@ -81,7 +81,9 @@
 		return 1
 	if(isitem(loc))
 		if(recurse > 0)
-			return loc.Adjacent(neighbor,recurse - 1)
+			for(var/obj/item/item_loc as anything in get_locs())
+				if(item_loc.Adjacent(neighbor, recurse - 1))
+					return TRUE
 		return 0
 	return ..()
 
@@ -92,7 +94,7 @@
 */
 /turf/proc/ClickCross(target_dir, border_only, target_atom = null, atom/movable/mover = null)
 	for(var/obj/O in src)
-		if((mover && O.CanPass(mover,get_step(src,target_dir))) || (!mover && !O.density))
+		if((mover && O.CanPass(mover, target_dir)) || (!mover && !O.density))
 			continue
 		if(O == target_atom || O == mover || (O.pass_flags & LETPASSTHROW)) //check if there's a dense object present on the turf
 			continue // LETPASSTHROW is used for anything you can click through (or the firedoor special case, see above)
@@ -103,3 +105,52 @@
 		else if( !border_only ) // dense, not on border, cannot pass over
 			return 0
 	return 1
+
+
+/**
+ * Checks whether this turf can be left from the given direction.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/move_uncross(border_dir)
+	for(var/obj/object in src)
+		if(!object.density || !(object.flags_1 & ON_BORDER_1))
+			continue
+		var/object_dir = object.dir
+		if(!ISDIAGONALDIR(object_dir) && !(object_dir & border_dir))
+			continue
+		return FALSE
+	return TRUE
+
+
+/**
+ * Checks whether this turf can be entered by the given mover.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/move_cross(atom/movable/mover, border_dir)
+	if(density)
+		return FALSE
+	for(var/atom/movable/movable as anything in src)
+		if(movable.CanPass(mover, border_dir))
+			continue
+		return FALSE
+	return TRUE
+
+
+/**
+ * Checks whether an attack from the given attacker can enter this turf.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/attack_cross(border_dir)
+	if(density)
+		return FALSE
+	for(var/atom/movable/movable as anything in src)
+		if(!movable.density)
+			continue
+		if(movable.pass_flags_self & PASSTABLE)
+			continue
+		if(movable.flags_1 & ON_BORDER_1)
+			var/movable_dir = movable.dir
+			if(!ISDIAGONALDIR(movable_dir) && !(movable_dir & border_dir))
+				continue
+		return FALSE
+	return TRUE

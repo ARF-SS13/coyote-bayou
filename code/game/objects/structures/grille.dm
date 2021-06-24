@@ -124,7 +124,7 @@
 	if(!shock(user, 70))
 		take_damage(20, BRUTE, "melee", 1)
 
-/obj/structure/grille/CanPass(atom/movable/mover, turf/target)
+/obj/structure/grille/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
 		return TRUE
 	else
