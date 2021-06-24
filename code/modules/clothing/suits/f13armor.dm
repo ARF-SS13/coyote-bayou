@@ -585,10 +585,10 @@
 
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/f13/power_armor/x02
-	name = "X-02 power armor"
+	name = "Enclave power armor"
 	desc = "(XI) Upgraded pre-war power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
-	icon_state = "PA_x02"
-	item_state = "PA_x02"
+	icon_state = "advanced"
+	item_state = "advanced"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor_block_threshold = 0.35
 	melee_block_threshold = 35
