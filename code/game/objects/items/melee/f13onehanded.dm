@@ -59,7 +59,72 @@
 	if(part)
 		part.drop_limb()
 
+
 //F13 Weapons
+
+
+//Ripper. Small weaponized chainsaw. Supposed to be run on a cell, functionality not yet implemented.
+/obj/item/melee/powered/ripper
+	name = "ripper"
+	desc = "The Ripper™ vibroblade is powered by a small energy cell wich allows it to easily cut through flesh and bone."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	icon_state = "ripper"
+	var/on_icon_state = "ripper_on"
+	var/off_icon_state = "ripper"
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	var/on_item_state = "ripper_on"
+	var/off_item_state = "ripper"
+	w_class = WEIGHT_CLASS_BULKY
+	var/weight_class_on = WEIGHT_CLASS_HUGE
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+	force = 10
+	var/force_on = 45
+	var/force_off = 10
+	wound_bonus = -10
+	block_chance = 15
+	throw_speed = 3
+	throw_range = 4
+	throwforce = 10
+	var/on = FALSE
+	tool_behaviour = TOOL_SAW
+	sharpness = SHARP_EDGED
+	toolspeed = 1.5 //slower than a real saw
+	resistance_flags = FIRE_PROOF
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+	var/on_sound = 'sound/weapons/chainsawhit.ogg'
+
+// Description for when turning the ripper on
+/obj/item/melee/powered/ripper/proc/get_on_description()
+	. = list()
+	.["local_on"] = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
+	.["local_off"] = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
+	return
+
+/obj/item/melee/powered/ripper/attack_self(mob/user)
+	on = !on
+	var/list/desc = get_on_description()
+	if(on)
+		to_chat(user, desc["local_on"])
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		slot_flags = null
+		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	else
+		to_chat(user, desc["local_off"])
+		icon_state = off_icon_state
+		item_state = off_item_state
+		w_class = WEIGHT_CLASS_BULKY
+		force = force_off
+		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+		attack_verb = list("poked", "scraped")
+	playsound(src.loc, on_sound, 50, 1)
+	add_fingerprint(user)
+
+
 /obj/item/claymore/machete
 	name = "machete"
 	desc = "A makeshift machete made of a lawn mower blade."

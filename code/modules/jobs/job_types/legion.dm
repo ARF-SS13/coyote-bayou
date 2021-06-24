@@ -359,7 +359,7 @@
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	r_pocket =		/obj/item/flashlight/lantern
 	l_pocket =		/obj/item/restraints/handcuffs
-	l_hand = 		/obj/item/nullrod/claymore/chainsaw_sword
+	l_hand = 		/obj/item/melee/powered/ripper
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1,
