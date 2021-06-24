@@ -388,6 +388,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	name = "m1/n carbine"
 	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
 	can_automatic = FALSE
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "NCR-M1Carbine"
 	item_state = "rifle"
 	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
@@ -453,6 +454,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 /obj/item/gun/ballistic/automatic/commando/ranger
 	name = "destroyer carbine"
 	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
