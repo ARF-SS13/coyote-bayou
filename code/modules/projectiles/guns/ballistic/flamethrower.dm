@@ -109,6 +109,7 @@
 	fire_sound = 'sound/weapons/flamethrower.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/m2flamethrower
 	casing_ejector = FALSE
+	untinkerable = TRUE
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/m2flamethrowertank/ammo_pack
 

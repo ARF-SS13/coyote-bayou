@@ -760,6 +760,12 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
 
+
+/obj/item/book/granter/crafting_recipe/blueprint/trapper
+	name = "trapper's blueprints"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/punji_sticks, /datum/crafting_recipe/shrapnelmine)
+
 /*
 /obj/item/book/granter/crafting_recipe/blueprint/caws
 	name = "h&k caws blueprint"
@@ -790,6 +796,8 @@
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
+
+	
 /obj/item/book/granter/trait/lowsurgery
 	name = "Surgery for Wastelanders"
 	desc = "A useful book on surgery."

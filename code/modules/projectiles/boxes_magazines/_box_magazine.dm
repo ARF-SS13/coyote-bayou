@@ -19,6 +19,7 @@
 	var/multiple_sprites = 0
 	var/caliber
 	var/multiload = 1
+	var/unloadable = FALSE
 	var/start_empty = 0
 	var/list/bullet_cost
 	var/list/base_cost// override this one as well if you override bullet_cost

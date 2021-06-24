@@ -508,10 +508,28 @@
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/paciencia
 	fire_delay = 5
-	extra_damage = 20 //60 damage- hits as hard as an AMR!
+	extra_damage = 25 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
 
 /obj/item/gun/ballistic/shotgun/remington/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		return
+	else if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			return
+	else
+		..()
+
+/obj/item/gun/ballistic/shotgun/remington/ncr
+	name = "accurized hunting rifle"
+	desc = "A modified .308 hunting rifle. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
+	fire_delay = 7 //longer fire delay
+	extra_damage = 14 //49 damage, same as the mosin nagant. Slightly higher then the semi auto sniper rifle.
+	extra_penetration = 0.2 //slightly higher pen, 0.28 total vs 0.25. Stiill has worse wound bonus.
+	untinkerable = TRUE
+
+/obj/item/gun/ballistic/shotgun/remington/ncr/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		return
 	else if(istype(A, /obj/item/melee/transforming/energy))

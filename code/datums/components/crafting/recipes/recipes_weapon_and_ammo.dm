@@ -167,6 +167,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/shrapnelmine
+	name = "Shrapnel Mine (WARNING: MINE IS PLACED WHERE YOU CRAFT IT)"
+	result = /obj/effect/mine/shrapnel
+	reqs = list(/obj/item/grenade/iedcasing = 1,
+				/obj/item/stack/tile = 1,
+				/obj/item/ammo_casing/a22 = 5
+				)
+	time = 15
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/lance
 	name = "Explosive Lance (Grenade)"
 	result = /obj/item/twohanded/spear

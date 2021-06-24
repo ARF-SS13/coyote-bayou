@@ -1019,6 +1019,7 @@
 /obj/item
 	var/tinkered = 0
 	var/untinkerable = FALSE
+	
 /obj/item/experimental/proc/reroll(obj/item/W, mob/user)
 	var/obj/item/item = W.type
 	qdel(W)
@@ -1028,7 +1029,7 @@
 	to_chat(user,"You destroy the item in the process.")
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
-	if(W.untinkerable == TRUE))
+	if(W.untinkerable == TRUE)
 		to_chat(usr, "You can't improve [W.name]...")
 		return
 	var/obj/item/gun/ballistic/B = W 

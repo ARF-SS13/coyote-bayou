@@ -388,6 +388,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	name = "m1/n carbine"
 	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
 	can_automatic = FALSE
+	icon_state = "NCR-M1Carbine"
+	item_state = "rifle"
 	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
 	untinkerable = TRUE
 	
@@ -448,6 +450,25 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 
+/obj/item/gun/ballistic/automatic/commando/ranger
+	name = "destroyer carbine"
+	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
+	icon_state = "destroyer-carbine"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	extra_damage = 5
+	extra_penetration = 0.1 //can't use AP ammo so it has a little bit higher pen to make up for it
+	fire_delay = 4.5
+	burst_size = 2
+	can_attachments = FALSE
+	can_automatic = FALSE
+	automatic_burst_overlay = TRUE
+	can_scope = TRUE
+	scope_state = "lasmusket_scope"
+	scope_x_offset = 6
+	scope_y_offset = 14
+	untinkerable = TRUE
+	semi_auto = FALSE
 
 //////////
 //RIFLES//
