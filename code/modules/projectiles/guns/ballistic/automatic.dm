@@ -497,7 +497,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 5
+	fire_delay = 3
 	burst_size = 1
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
