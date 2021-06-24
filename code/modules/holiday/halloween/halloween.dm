@@ -168,7 +168,7 @@
 			step(I,direction)
 		return
 
-/mob/living/simple_animal/shade/howling_ghost/CanPass(atom/movable/mover, turf/target)
+/mob/living/simple_animal/shade/howling_ghost/CanPass(atom/movable/mover, border_dir)
 	return 1
 
 /////////////////////////

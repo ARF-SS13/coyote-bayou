@@ -20,7 +20,7 @@
 	var/static/superheated_walls = 0
 	var/lastWarning = 0
 
-/mob/camera/eminence/CanPass(atom/movable/mover, turf/target)
+/mob/camera/eminence/CanPass(atom/movable/mover, border_dir)
 	return TRUE
 
 /mob/camera/eminence/Move(NewLoc, direct)

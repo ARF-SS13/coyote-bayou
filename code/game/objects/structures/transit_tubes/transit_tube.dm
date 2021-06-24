@@ -14,7 +14,7 @@
 	var/enter_delay = 0
 	var/const/time_to_unwrench = 2 SECONDS
 
-/obj/structure/transit_tube/CanPass(atom/movable/mover, turf/target)
+/obj/structure/transit_tube/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	return !density

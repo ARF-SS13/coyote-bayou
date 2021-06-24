@@ -69,13 +69,15 @@
 	button_icon_state = "deftswitch"
 	movestreak = "deft"
 
-/datum/martial_art/the_rising_bass/proc/checkfordensity(turf/T,mob/M)
-	if (T.density)
+/datum/martial_art/the_rising_bass/proc/checkfordensity(turf/target, mob/mover)
+	if (target.density)
 		return FALSE
-	for(var/obj/O in T)
-		if(!O.CanPass(M,T))
+	var/border_dir = get_dir(target, mover)
+	for(var/obj/object in target)
+		if(!object.CanPass(mover, border_dir))
 			return FALSE
 	return TRUE
+
 
 /datum/martial_art/the_rising_bass/proc/sideKick(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	var/damage = (damage_roll(A,D)*0.5)

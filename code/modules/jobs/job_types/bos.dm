@@ -750,7 +750,7 @@ Knight
 		/obj/item/clothing/accessory/bos/knight=1,
 		/obj/item/gun/ballistic/shotgun/trench=1,
 		/obj/item/storage/fancy/ammobox/lethalshot=2,
-		/obj/item/shield/riot/tele=1
+		/obj/item/shield/riot=1
 		)
 /*
 Initiate

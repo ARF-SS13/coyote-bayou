@@ -72,7 +72,7 @@
 		return
 
 //if it's not our target, we ignore it
-/mob/living/simple_animal/hostile/asteroid/curseblob/CanPass(atom/movable/mover, turf/target)
+/mob/living/simple_animal/hostile/asteroid/curseblob/CanPass(atom/movable/mover, border_dir)
 	if(mover == set_target)
 		return FALSE
 	if(istype(mover, /obj/item/projectile))

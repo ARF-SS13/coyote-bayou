@@ -23,7 +23,10 @@
 	var/inertia_moving = 0
 	var/inertia_next_move = 0
 	var/inertia_move_delay = 5
-	var/pass_flags = 0
+	/// These flags mark the ability of this movable to pass through certain blockers.
+	var/pass_flags = NONE
+	/// These flags mark the ability of this movable to let other movables past them if they share the flag values on the `pass_flags` var.
+	var/pass_flags_self = NONE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
@@ -404,8 +407,12 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanPass(atom/movable/mover, turf/target)
+/atom/movable/CanPass(atom/movable/mover, border_dir)
 	if(mover in buckled_mobs)
+		return TRUE
+	if(flags_1 & ON_BORDER_1)
+		if(ISDIAGONALDIR(dir) || border_dir == dir)
+			return !density
 		return TRUE
 	return ..()
 
@@ -681,3 +688,18 @@
 		return
 	. = anchored
 	anchored = anchorvalue
+
+/**
+ * locs is a special list we can't manipulate, internally handled by the engine.
+ * Multi-tile objects may be in multiple turfs at the same tiles.
+ * Besides this, a feature was added for Paradox Bags, in which two containers may share the same contents.
+ * This means movable atoms may be in multiple non-turf locs.
+ * Yes, this violates the principle of locality and causality but it is what it is.
+ * The alternative to this is to keep a lazy list in every movable atom, copy of locs plus our own custom extra locations.
+ * This is a special case of a justified getter, if we want to support the feature.
+ */
+/atom/movable/proc/get_locs()
+	. = locs //locs is a special list, so this is the same as locs.Copy(), but internally cheaper
+	for(var/atom/place as anything in locs)
+		// We pass the list by reference, and if something has something to add they'll do so here.
+		SEND_SIGNAL(place, COMSIG_ATOM_GET_LOCS, .)

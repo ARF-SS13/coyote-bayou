@@ -98,7 +98,7 @@
 	return attack_hand(user)
 
 
-/obj/structure/alien/resin/CanPass(atom/movable/mover, turf/target)
+/obj/structure/alien/resin/CanPass(atom/movable/mover, border_dir)
 	return !density
 
 

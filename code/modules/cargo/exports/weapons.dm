@@ -3,12 +3,6 @@
 /datum/export/weapon
 	include_subtypes = FALSE
 
-
-/datum/export/weapon/riot_shield
-	cost = 50
-	unit_name = "riot shield"
-	export_types = list(/obj/item/shield/riot, /obj/item/shield/riot/tower)
-
 /datum/export/weapon/knife
 	cost = 100
 	unit_name = "combat knife"

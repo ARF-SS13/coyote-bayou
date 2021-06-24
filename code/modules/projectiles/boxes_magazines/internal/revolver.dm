@@ -73,6 +73,12 @@
 	caliber = "a556"
 	max_ammo = 5
 
+/obj/item/ammo_box/magazine/internal/cylinder/qsp
+	name = "10mm qsp revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/qsp
+	caliber = "qspbuckshot"
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	name = "44 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/m44
