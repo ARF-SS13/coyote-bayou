@@ -168,7 +168,7 @@
 
 /obj/item/projectile/bullet/pellet/qsp
 	name = "qsp buckshot pellet"
-	pixels_per_second = 375
+	pixels_per_second = 425
 	damage = 8
 	armour_penetration = 0.15
 	wound_bonus = 10
