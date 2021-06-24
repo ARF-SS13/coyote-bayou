@@ -23,6 +23,12 @@
 	var/rendered = begin_message + obj_message + end_message
 	deadchat_broadcast(rendered, follow_target = L, turf_target = get_turf(L), message_type=DEADCHAT_REGULAR)
 
+/proc/is_brainwashed(mob/living/L, datum/mind/M = L.mind)// FO13, better brainwashing detection, needed for examine.dm, fuck off its MY shitcode. >:(
+	if(L.mind && M.has_antag_datum(/datum/antagonist/brainwashed))
+		return istype(L)
+	else
+		return
+
 /datum/antagonist/brainwashed
 	name = "Brainwashed Victim"
 	job_rank = ROLE_BRAINWASHED
@@ -42,7 +48,7 @@
 
 /datum/antagonist/brainwashed/farewell()
 	to_chat(owner, "<span class='warning'>Your mind suddenly clears...</span>")
-	to_chat(owner, "<big><span class='warning'><b>You feel the weight of the Directives disappear! You no longer have to obey them.</b></span></big>")
+	to_chat(owner, "<big><span class='warning'><b>You feel the weight of the Directives disappear! You forget what you did while under their influence, and how they came to be.</b></span></big>")
 	owner.announce_objectives()
 
 /datum/antagonist/brainwashed/admin_add(datum/mind/new_owner,mob/admin)

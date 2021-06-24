@@ -34,7 +34,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	5.2 Additionally, this chem is a soft buff to changelings, which apparently need a buff!
 	5.3 Other similar things exist already though in the codebase; impostors, split personalites, abductors, ect.
 6. Giving this to someone without concent is against space law and gets you sent to gulag.
-*/
+ // Comment end removed here and placed at bottom to disable SDGF as a whole. ~FO13
 
 #define POLICYCONFIG_SDGF "SDGF"
 #define POLICYCONFIG_SDGF_GOOD "SDGF_ALIGNED"
@@ -56,7 +56,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	impure_chem 			= /datum/reagent/impure/SDGFtox
 	inverse_chem_val 		= 0.5
 	inverse_chem		= /datum/reagent/impure/SDZF
-	can_synth = TRUE
+	can_synth = FALSE // NO MORE FUCKING ZOMBIES! -FO13
 	value = REAGENT_VALUE_RARE
 
 
@@ -334,7 +334,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	color = "#a502e0" // rgb: 96, 0, 255
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	var/startHunger
-	can_synth = TRUE
+	can_synth = FALSE // NO MORE FUCKING ZOMBIES! -FO13
 	taste_description = "a weird chemical fleshy flavour"
 	chemical_flags = REAGENT_SNEAKYNAME
 	value = REAGENT_VALUE_RARE
@@ -396,3 +396,4 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 			M.adjustToxLoss(2, 0)
 			M.reagents.remove_reagent(type, 1)
 	..()
+*/
