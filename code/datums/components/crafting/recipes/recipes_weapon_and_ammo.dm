@@ -1,29 +1,22 @@
-
-
-/*
-/datum/crafting_recipe/strobeshield
-	name = "Strobe Shield"
-	result = /obj/item/assembly/flash/shield
-	reqs = list(/obj/item/wallframe/flasher = 1,
-				/obj/item/assembly/flash/handheld = 1,
-				/obj/item/shield/riot = 1)
+/datum/crafting_recipe/twohanded/spear
+	name = "Spear"
+	result = /obj/item/twohanded/spear
+	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
+				/obj/item/kitchen/knife/combat = 1,
+				/obj/item/stack/rods = 1,
+				/obj/item/stack/crafting/goodparts = 2)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/datum/crafting_recipe/strobeshield/New()
-	..()
-	blacklist |= subtypesof(/obj/item/shield/riot/)
-*/
-
-/datum/crafting_recipe/makeshiftshield
-	name = "Makeshift Metal Shield"
-	result = /obj/item/shield/makeshift
+/datum/crafting_recipe/scrapshield
+	name = "Scrap Shield"
+	result = /obj/item/shield/riot/scrapshield
 	reqs = list(/obj/item/stack/cable_coil = 30,
 				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/leather = 3)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+				/obj/item/crafting/wonderglue = 1)
+	tools = list(TOOL_WELDER)
 	time = 100
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -34,17 +27,6 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 15,
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_SCREWDRIVER)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/twohanded/spear
-	name = "Spear"
-	result = /obj/item/twohanded/spear
-	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/kitchen/knife/combat = 1,
-				/obj/item/stack/rods = 1,
-				/obj/item/stack/crafting/goodparts = 2)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
