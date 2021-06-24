@@ -161,7 +161,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_shot_delay = 2
+	burst_shot_delay = 0.5
 	fire_delay = 1
 	spread = 11
 	extra_damage = -2
@@ -183,7 +183,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	fire_sound = 'sound/f13weapons/american180.ogg'
 	can_unsuppress = FALSE
-	burst_shot_delay = 1
+	burst_shot_delay = 0.5
 	suppressed = 1
 
 
@@ -203,7 +203,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	fire_delay = 2.5
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	can_attachments = TRUE
 	spread = 12
 	suppressor_state = "uzi_suppressor"
@@ -227,7 +227,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_delay = 5
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1.5
 	can_attachments = TRUE
 	spread = 14
 	suppressor_state = "10mm_suppressor" //activate if sprited 
@@ -250,7 +250,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	fire_delay = 4
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_suppress = TRUE
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -278,7 +278,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 12
 	fire_delay = 4
-	burst_shot_delay = 2.5
+	burst_shot_delay = 1
 	spread = 9
 	can_attachments = TRUE
 
@@ -292,7 +292,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
 	burst_size = 3
 	fire_delay = 6
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	can_attachments = TRUE
 	extra_damage = -4
 	can_scope = TRUE
@@ -757,7 +757,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4
-	burst_shot_delay = 3
+	burst_shot_delay = 1
 	spread = 8
 	can_attachments = TRUE
 	can_bayonet = TRUE
@@ -779,6 +779,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 3
+	burst_shot_delay = 0.5
 	fire_delay = 3
 	can_attachments = TRUE
 	zoomable = TRUE
@@ -823,7 +824,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3
-	burst_shot_delay = 2.0
+	burst_shot_delay = 1
 	spread = 16
 	can_attachments = TRUE
 	can_scope = TRUE
@@ -856,6 +857,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	force = 20
+	burst_shot_delay = 1
 	mag_type = /obj/item/ammo_box/magazine/m762
 	spread = 10
 	fire_delay = 3
@@ -878,7 +880,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
 	fire_delay = 3
-	burst_shot_delay = 3
+	burst_shot_delay = 0.75
 	spread = 7
 	randomspread = 1
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
@@ -912,7 +914,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 5
-	burst_shot_delay = 2
+	burst_shot_delay = 1
 	spread = 15
 	spawnwithmagazine = TRUE
 	zoomable = TRUE
@@ -1060,6 +1062,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "m90"
 	burst_size = 3
 	fire_delay = 1
+	burst_shot_delay = 0.5
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
