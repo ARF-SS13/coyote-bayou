@@ -963,6 +963,15 @@
 /obj/machinery/telecomms/receiver/preset_right,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"aXt" = (
+/obj/effect/landmark/start/f13/usscientist,
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "bluedirtyfull"
+	},
+/area/f13/enclave)
 "aXE" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -65461,7 +65470,7 @@ vRs
 vSW
 vbu
 iBp
-vbu
+osO
 joH
 wpj
 mHA
@@ -66471,7 +66480,7 @@ uoO
 uoO
 joH
 gNg
-hMJ
+aXt
 mvO
 joH
 sPX
