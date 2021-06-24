@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"PASSCLOSEDTURF" = PASSCLOSEDTURF,
 		"LETPASSTHROW" = LETPASSTHROW
 		),
-	"let_through_flags" = list(
+	"pass_flags_self" = list(
 		"PASSTABLE" = PASSTABLE,
 		"PASSGLASS" = PASSGLASS,
 		"PASSGRILLE" = PASSGRILLE,

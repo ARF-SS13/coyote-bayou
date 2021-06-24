@@ -146,7 +146,7 @@
 	for(var/atom/movable/movable as anything in src)
 		if(!movable.density)
 			continue
-		if(movable.let_through_flags & PASSTABLE)
+		if(movable.pass_flags_self & PASSTABLE)
 			continue
 		if(movable.flags_1 & ON_BORDER_1)
 			var/movable_dir = movable.dir

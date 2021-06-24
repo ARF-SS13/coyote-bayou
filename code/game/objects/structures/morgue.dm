@@ -356,10 +356,10 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	name = "morgue tray"
 	desc = "Apply corpse before closing."
 	icon_state = "morguet"
-	let_through_flags = PASSTABLE
+	pass_flags_self = PASSTABLE
 
 /obj/structure/tray/m_tray/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & let_through_flags))
+	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return 1
 	if(locate(/obj/structure/table) in get_turf(mover))
 		return 1
@@ -370,4 +370,4 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	. = !density
 	if(ismovable(caller))
 		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & let_through_flags)
+		. = . || (mover.pass_flags & pass_flags_self)
