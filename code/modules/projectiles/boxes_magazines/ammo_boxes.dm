@@ -407,6 +407,9 @@
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 3000)
 
+/obj/item/ammo_box/qsp/empty
+	start_empty = 1
+
 //10mm
 /obj/item/ammo_box/l10mm
 	name = "speed loader (10mm)"

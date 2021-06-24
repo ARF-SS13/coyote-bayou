@@ -177,7 +177,7 @@
 	ricochet_incidence_leeway = 130
 	ricochet_decay_damage = 1.3 //10.4 after once bounce, 13.52 after 2 bounces. Slightly below regular buck at first, if you hit the double bounce its more
 	ricochet_decay_chance = 1
-	ricochet_chance = 50
+	ricochet_chance = 70 //100% if you have the vet's trait
 	ricochet_auto_aim_angle = 30
 	ricochet_auto_aim_range = 4
 	wound_bonus = 5
