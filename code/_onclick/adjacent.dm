@@ -127,8 +127,30 @@
  * This expects a cardinal direction, and makes no check for it.
  */
 /turf/proc/move_cross(atom/movable/mover, border_dir)
+	if(density)
+		return FALSE
 	for(var/atom/movable/movable as anything in src)
 		if(movable.CanPass(mover, border_dir))
 			continue
+		return FALSE
+	return TRUE
+
+
+/**
+ * Checks whether an attack from the given attacker can enter this turf.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/attack_cross(border_dir)
+	if(density)
+		return FALSE
+	for(var/atom/movable/movable as anything in src)
+		if(!movable.density)
+			continue
+		if(movable.let_through_flags & PASSTABLE)
+			continue
+		if(movable.flags_1 & ON_BORDER_1)
+			var/movable_dir = movable.dir
+			if(!ISDIAGONALDIR(movable_dir) && !(movable_dir & border_dir))
+				continue
 		return FALSE
 	return TRUE

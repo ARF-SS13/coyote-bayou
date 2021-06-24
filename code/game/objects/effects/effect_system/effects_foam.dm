@@ -306,6 +306,7 @@
 	icon_state = "atmos_resin"
 	alpha = 120
 	max_integrity = 10
+	let_through_flags = PASSGLASS
 
 /obj/structure/foamedmetal/resin/Initialize()
 	. = ..()
@@ -333,7 +334,7 @@
 			Item.extinguish()
 
 /obj/structure/foamedmetal/resin/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return TRUE
 	. = ..()
 

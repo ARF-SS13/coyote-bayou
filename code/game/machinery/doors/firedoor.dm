@@ -286,6 +286,7 @@
 	icon = 'icons/obj/doors/edge_Doorfire.dmi'
 	flags_1 = ON_BORDER_1|DEFAULT_RICOCHET_1
 	CanAtmosPass = ATMOS_PASS_PROC
+	let_through_flags = PASSGLASS
 
 /obj/machinery/door/firedoor/border_only/closed
 	icon_state = "door_closed"
@@ -346,7 +347,7 @@
 	return start_point.air.return_pressure() < 20 ? -1 : 1
 
 /obj/machinery/door/firedoor/border_only/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return TRUE
 	if(border_dir == dir) //Make sure looking at appropriate border
 		return !density
@@ -354,7 +355,7 @@
 		return TRUE
 
 /obj/machinery/door/firedoor/border_only/CheckExit(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return TRUE
 	if(border_dir == dir)
 		return !density

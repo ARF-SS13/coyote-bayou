@@ -6,6 +6,7 @@
 	layer = ABOVE_WINDOW_LAYER
 	closingLayer = ABOVE_WINDOW_LAYER
 	resistance_flags = ACID_PROOF
+	let_through_flags = PASSGLASS
 	var/base_state = "left"
 	max_integrity = 150 //If you change this, consider changing ../door/window/brigdoor/ max_integrity at the bottom of this .dm file
 	integrity_failure = 0
@@ -103,7 +104,7 @@
 	return
 
 /obj/machinery/door/window/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return 1
 	if(border_dir == dir) //Make sure looking at appropriate border
 		return !density
@@ -131,7 +132,7 @@
 	return !density || (dir != to_dir) || (check_access(ID) && hasPower())
 
 /obj/machinery/door/window/CheckExit(atom/movable/mover as mob|obj, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return 1
 	if(get_dir(loc, target) == dir)
 		return !density

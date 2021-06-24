@@ -23,6 +23,7 @@
 	climbable = TRUE
 	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
 	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.")
+	let_through_flags = PASSTABLE
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 	var/frame = /obj/structure/table_frame
@@ -85,7 +86,7 @@
 				else
 					return
 			user.stop_pulling()
-		else if(user.pulling.pass_flags & PASSTABLE)
+		else if(user.pulling.pass_flags & let_through_flags)
 			user.Move_Pulled(src)
 			if (user.pulling.loc == loc)
 				user.visible_message("<span class='notice'>[user] places [user.pulling] onto [src].</span>",
@@ -97,7 +98,7 @@
 	return FALSE
 
 /obj/structure/table/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSTABLE))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return 1
 	if(mover.throwing)
 		return 1
@@ -110,7 +111,7 @@
 	. = !density
 	if(ismovable(caller))
 		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & PASSTABLE)
+		. = . || (mover.pass_flags & let_through_flags)
 
 /obj/structure/table/proc/tableplace(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(src.loc)
@@ -655,6 +656,7 @@
 	density = TRUE
 	anchored = TRUE
 	pass_flags = LETPASSTHROW //You can throw objects over this, despite it's density.
+	let_through_flags = PASSTABLE
 	max_integrity = 20
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
@@ -666,7 +668,7 @@
 /obj/structure/rack/CanPass(atom/movable/mover, border_dir)
 	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
 		return 1
-	if(istype(mover) && (mover.pass_flags & PASSTABLE))
+	if(istype(mover) && (mover.pass_flags & let_through_flags))
 		return 1
 	else
 		return 0
@@ -675,7 +677,7 @@
 	. = !density
 	if(ismovable(caller))
 		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & PASSTABLE)
+		. = . || (mover.pass_flags & let_through_flags)
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()

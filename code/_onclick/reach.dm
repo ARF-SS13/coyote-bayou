@@ -122,9 +122,10 @@
 
 
 #define CAN_CLICK_FROM(turf_source, target_dir) (turf_source.ClickCross(target_dir, TRUE))
-#define CAN_CLICK_INTO(turf_target, source_dir) (turf_target.ClickCross(source_dir, TRUE))
+#define CAN_CLICK_INTO(turf_target, source_dir, border_only) (turf_target.ClickCross(source_dir, border_only))
 #define CAN_MOVE_FROM(turf_source, target_dir) (turf_source.move_uncross(target_dir))
 #define CAN_MOVE_INTO(turf_target, mover, source_dir) (turf_target.move_cross(mover, source_dir))
+#define CAN_ATTACK_INTO(turf_target, source_dir) (turf_target.attack_cross(source_dir))
 /**
  * This has grown increasinly complicated, but it boils down to there having two kinds of checks.
  * REACH_CLICK will just heck for the ability to click through every step of the way.
@@ -135,33 +136,25 @@
 	do {\
 		switch(reach_type) {\
 			if (REACH_CLICK) {\
-				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+				if(ultimate_target_turf == turf_target) {\
+					return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir, TRUE));\
+				} else {\
+					return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir, FALSE));\
+				};\
 			}\
 			if (REACH_MOVE) {\
-				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+				return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_MOVE_INTO(turf_target, mover, source_dir));\
 			}\
 			if (REACH_ATTACK) {\
 				if(ultimate_target_turf == turf_target) {\
-					return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+					return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir, TRUE));\
 				} else {\
-					return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_MOVE_INTO(turf_target, mover, source_dir));\
+					return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_ATTACK_INTO(turf_target, source_dir));\
 				};\
 			}\
 		};\
 	} while(FALSE)
 
-/*
-		if (reach_type == REACH_CLICK) {\
-			return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
-		} else if (reach_type == REACH_MOVE) {\
-			return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
-		} else if (reach_type == REACH_ATTACK) {\
-			if(ultimate_target_turf == turf_target) {\
-				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
-			} else {\
-				return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_MOVE_INTO(turf_target, mover, source_dir));\
-			};\
-*/
 
 /// Avoid calling this directly unless you also guarantee the safety checks euclidian_reach() does.
 /atom/proc/do_cardinal_reach(atom/target, movement_dir, reach, reach_type)

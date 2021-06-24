@@ -23,7 +23,10 @@
 	var/inertia_moving = 0
 	var/inertia_next_move = 0
 	var/inertia_move_delay = 5
-	var/pass_flags = 0
+	/// These flags mark the ability of this movable to pass through certain blockers.
+	var/pass_flags = NONE
+	/// These flags mark the ability of this movable to let other movables past them if they share the flag values on the `pass_flags` var.
+	var/let_through_flags = NONE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
