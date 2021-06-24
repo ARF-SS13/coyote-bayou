@@ -963,9 +963,9 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/greasegun=3, \
 		/obj/item/book/granter/trait/gunslinger=1, \
-		/obj/item/gun/ballistic/revolver/qsp=1, \ //on direct hit, about 6x8=48 damage minus armor and has less pen, making it worse to sequoia. If you bounce it though, it does 10 then 13 damage, making it better if you're skilled and can bounce your shots. High skill high reward weapon
+		/obj/item/gun/ballistic/revolver/qsp=1, \
 		/obj/item/ammo_box/qsp=3)
-
+//COMPILE ERRORRRRRRRRRRRRRRRRS!!
 
 //NCR Ranger
 /datum/job/ncr/f13ranger
