@@ -23,9 +23,9 @@
 	name = "energy field"
 	desc = "Get off my turf!"
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/CanPass(atom/movable/AM, turf/target)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/CanPass(atom/movable/AM, border_dir)
 	if(parent)
-		return parent.field_turf_canpass(AM, src, target)
+		return parent.field_turf_canpass(AM, src, border_dir)
 	return TRUE
 
 /obj/effect/abstract/proximity_checker/advanced/field_turf/Crossed(atom/movable/AM)
@@ -47,9 +47,9 @@
 	name = "energy field edge"
 	desc = "Edgy description here."
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/CanPass(atom/movable/AM, turf/target)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/CanPass(atom/movable/AM, border_dir)
 	if(parent)
-		return parent.field_edge_canpass(AM, src, target)
+		return parent.field_edge_canpass(AM, src, border_dir)
 	return TRUE
 
 /obj/effect/abstract/proximity_checker/advanced/field_edge/Crossed(atom/movable/AM)

@@ -21,7 +21,7 @@
 	throwforce = 10
 	wound_bonus = 15
 	bare_wound_bonus = 10
-	reach = 2
+	max_reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
 	hitsound = 'sound/weapons/chainhit.ogg'

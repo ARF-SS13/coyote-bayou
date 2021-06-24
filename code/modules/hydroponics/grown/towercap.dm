@@ -163,7 +163,7 @@
 	. = ..()
 	StartBurning()
 
-/obj/structure/bonfire/CanPass(atom/movable/mover, turf/target)
+/obj/structure/bonfire/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
 		return TRUE
 	if(mover.throwing)

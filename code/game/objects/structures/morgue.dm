@@ -357,7 +357,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	desc = "Apply corpse before closing."
 	icon_state = "morguet"
 
-/obj/structure/tray/m_tray/CanPass(atom/movable/mover, turf/target)
+/obj/structure/tray/m_tray/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
 		return 1
 	if(locate(/obj/structure/table) in get_turf(mover))

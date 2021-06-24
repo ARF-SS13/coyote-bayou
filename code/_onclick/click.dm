@@ -117,7 +117,7 @@
 		return
 
 	//Standard reach turf to turf or reaching inside storage
-	if(can_reach(A, INVENTORY_DEPTH, W?.reach))
+	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
 			return W.melee_attack_chain(src, A, params)
 		else
@@ -126,6 +126,8 @@
 				DelayNextAction(CLICK_CD_MELEE)
 			return
 	else
+		if(!isturf(A) && !isturf(A.loc))
+			return
 		if(W)
 			return W.ranged_attack_chain(src, A, params)
 		else

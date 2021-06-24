@@ -96,7 +96,7 @@
 /obj/structure/table/attack_tk()
 	return FALSE
 
-/obj/structure/table/CanPass(atom/movable/mover, turf/target)
+/obj/structure/table/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
 		return 1
 	if(mover.throwing)
@@ -663,7 +663,7 @@
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 
-/obj/structure/rack/CanPass(atom/movable/mover, turf/target)
+/obj/structure/rack/CanPass(atom/movable/mover, border_dir)
 	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
 		return 1
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))

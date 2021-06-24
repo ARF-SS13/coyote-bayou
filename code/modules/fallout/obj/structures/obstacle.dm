@@ -111,46 +111,6 @@
 	density = 1
 	obj_integrity = 100
 	max_integrity = 100
-//	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
-//	var/material = METAL
-/*
-/obj/structure/barricade/deconstruct(disassembled = TRUE)
-	if(!(flags & NODECONSTRUCT))
-		make_debris()
-	qdel(src)
-
-/obj/structure/barricade/proc/make_debris()
-	return
-
-/obj/structure/barricade/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/weldingtool) && user.a_intent != INTENT_HARM && material == METAL)
-		var/obj/item/weapon/weldingtool/WT = I
-		if(obj_integrity < max_integrity)
-			if(WT.remove_fuel(0,user))
-				to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
-				playsound(loc, WT.usesound, 40, 1)
-				if(do_after(user, 40*I.toolspeed, target = src))
-					obj_integrity = Clamp(obj_integrity + 20, 0, max_integrity)
-	else
-		return ..()
-
-/obj/structure/barricade/CanPass(go/mover, turf/target, height=0)//So bullets will fly over and stuff.
-	if(height==0)
-		return 1
-	if(locate(/obj/structure/barricade) in get_turf(mover))
-		return 1
-	else if(istype(mover, /obj/item/projectile))
-		if(!anchored)
-			return 1
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
-		if(prob(proj_pass_rate))
-			return 1
-		return 0
-	else
-		return !density
-*/
 
 
 /////BARRICADE TYPES///////

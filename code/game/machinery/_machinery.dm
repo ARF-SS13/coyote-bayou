@@ -292,7 +292,7 @@ Class Procs:
 /obj/machinery/proc/nap_violation(mob/violator)
 	return
 
-/obj/machinery/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+/obj/machinery/CanPass(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
 	if(barricade == FALSE)
 		return !density
 	else if(density == FALSE)

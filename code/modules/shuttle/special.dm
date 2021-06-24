@@ -212,7 +212,7 @@
 	var/static/list/check_times = list()
 
 
-/obj/effect/forcefield/luxury_shuttle/CanPass(atom/movable/mover, turf/target)
+/obj/effect/forcefield/luxury_shuttle/CanPass(atom/movable/mover, border_dir)
 	if(mover in approved_passengers)
 		return TRUE
 

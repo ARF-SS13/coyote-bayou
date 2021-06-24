@@ -94,7 +94,7 @@
 */
 /turf/proc/ClickCross(target_dir, border_only, target_atom = null, atom/movable/mover = null)
 	for(var/obj/O in src)
-		if((mover && O.CanPass(mover,get_step(src,target_dir))) || (!mover && !O.density))
+		if((mover && O.CanPass(mover, target_dir)) || (!mover && !O.density))
 			continue
 		if(O == target_atom || O == mover || (O.pass_flags & LETPASSTHROW)) //check if there's a dense object present on the turf
 			continue // LETPASSTHROW is used for anything you can click through (or the firedoor special case, see above)
@@ -105,3 +105,30 @@
 		else if( !border_only ) // dense, not on border, cannot pass over
 			return 0
 	return 1
+
+
+/**
+ * Checks whether this turf can be left from the given direction.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/move_uncross(border_dir)
+	for(var/obj/object in src)
+		if(!object.density || !(object.flags_1 & ON_BORDER_1))
+			continue
+		var/object_dir = object.dir
+		if(!ISDIAGONALDIR(object_dir) && !(object_dir & border_dir))
+			continue
+		return FALSE
+	return TRUE
+
+
+/**
+ * Checks whether this turf can be entered by the given mover.
+ * This expects a cardinal direction, and makes no check for it.
+ */
+/turf/proc/move_cross(atom/movable/mover, border_dir)
+	for(var/atom/movable/movable as anything in src)
+		if(movable.CanPass(mover, border_dir))
+			continue
+		return FALSE
+	return TRUE

@@ -46,7 +46,7 @@
 	else
 		adjustFireLoss(5)
 
-/mob/living/simple_animal/hostile/blob/CanPass(atom/movable/mover, turf/target)
+/mob/living/simple_animal/hostile/blob/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover, /obj/structure/blob))
 		return 1
 	return ..()

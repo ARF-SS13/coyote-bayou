@@ -59,60 +59,132 @@
 			return FALSE
 		return ultimate_target.Adjacent(src)
 
-	if(round(GET_DIST_EUCLIDEAN(src, ultimate_target)) > reach)
+	var/turf/target_turf
+	var/target_distance
+	if(isturf(ultimate_target))
+		if(ultimate_target.z != z)
+			return FALSE
+		target_turf = ultimate_target
+		target_distance = round(GET_DIST_EUCLIDEAN(src, target_turf))
+	else // Prior checks guarantee the target's loc is a turf.
+		var/atom/movable/movable_target = ultimate_target
+		target_turf = movable_target.loc
+		for(var/turf/turf_loc as anything in movable_target.locs)
+			if(turf_loc.z != z)
+				continue
+			var/checking_distance = round(GET_DIST_EUCLIDEAN(src, turf_loc))
+			if(target_turf && checking_distance >= target_distance)
+				continue
+			target_turf = turf_loc
+			target_distance = checking_distance
+
+	if(!target_turf || target_distance > reach)
 		return FALSE // Too far away, no need to waste time calculating the path.
 
-	var/turf/source_turf = get_turf(src)
-	var/turf/target_turf = get_turf(ultimate_target)
-	return source_turf.euclidian_reach(target_turf, reach) == target_turf
+	return euclidian_reach(target_turf, reach, REACH_CLICK) == target_turf
 
 
 /**
  * The ranged version of Adjacent().
  * Uses euclidian distances for diagonal movements.
  * Can be repurposed for usage of other euclidian ranges.
+ * Returns the last reachable turf encountered.
  */
-/turf/proc/euclidian_reach(turf/target, reach = 2)
+/atom/proc/euclidian_reach(atom/target, reach = 2, reach_type = REACH_CLICK)
 	if(reach < 2)
 		CRASH("Use Adjacent() instead of this proc for ranges such as [reach]")
-	if(target.z != z) // Multi-z support could be added, but it's not here yet.
-		return src // Maybe return an error code instead?
-	if(get_dist(src, target) < 2) // Let's not waste time if the distance is so small.
-		return Adjacent(target) ? target : src
+	var/turf/source_turf = get_turf(src)
+	var/turf/target_turf = get_turf(target)
+	if(source_turf.z != target_turf.z) // Multi-z support could be added, but it's not here yet.
+		return get_turf(src) // Maybe return an error code instead?
+	if(get_dist(source_turf, target_turf) < 2) // Let's not waste time if the distance is so small.
+		return Adjacent(target_turf) ? target_turf : source_turf
 
-	var/movement_dir = get_dir(src, target)
+	var/movement_dir = get_dir(source_turf, target_turf)
 
 	if(!ISDIAGONALDIR(movement_dir)) // Simple case, let's not bother with complex checks.
-		return do_cardinal_reach(target, movement_dir, reach)
+		return do_cardinal_reach(target, movement_dir, reach, reach_type)
 
-	var/dir_angle = round(Get_Angle(src, target), 1)
+	var/dir_angle = round(Get_Angle(source_turf, target_turf), 1)
 
 	if(dir_angle % 45 == 0) // Perfectly diagonal. We don't have to check for zero because cardinals were already checked.
-		return do_ordinal_reach(target, movement_dir, reach)
+		return do_ordinal_reach(target, movement_dir, reach, reach_type)
 	
-	return do_sloping_reach(target, movement_dir, reach, dir_angle)
+	return do_sloping_reach(target, movement_dir, reach, reach_type, dir_angle)
+
+/area/euclidian_reach(atom/target, reach = 2, reach_type = REACH_CLICK)
+	CRASH("Areas can't reach. euclidian_reach() called with area as source")
+
+/turf/euclidian_reach(atom/target, reach = 2, reach_type = REACH_CLICK)
+	if(reach_type == REACH_ATTACK)
+		CRASH("Turfs can't move. euclidian_reach() called with reach_type value as REACH_ATTACK")
+	return ..()
 
 
-#define CAN_CLICK_THROUGH(source, goal) (source.ClickCross(get_dir(source, goal), TRUE) && goal.ClickCross(get_dir(goal, source), TRUE))
+#define CAN_CLICK_FROM(turf_source, target_dir) (turf_source.ClickCross(target_dir, TRUE))
+#define CAN_CLICK_INTO(turf_target, source_dir) (turf_target.ClickCross(source_dir, TRUE))
+#define CAN_MOVE_FROM(turf_source, target_dir) (turf_source.move_uncross(target_dir))
+#define CAN_MOVE_INTO(turf_target, mover, source_dir) (turf_target.move_cross(mover, source_dir))
+/**
+ * This has grown increasinly complicated, but it boils down to there having two kinds of checks.
+ * REACH_CLICK will just heck for the ability to click through every step of the way.
+ * REACH_MOVE will check for the ability to move.
+ * REACH_ATTACK will check for the ability to move each step of the way until the last step, where it will check for the ability to click.
+ */
+#define REACH_CHECK(return_var, reach_type, turf_source, turf_target, source_dir, target_dir, mover, ultimate_target_turf)\
+	do {\
+		switch(reach_type) {\
+			if (REACH_CLICK) {\
+				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+			}\
+			if (REACH_MOVE) {\
+				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+			}\
+			if (REACH_ATTACK) {\
+				if(ultimate_target_turf == turf_target) {\
+					return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+				} else {\
+					return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_MOVE_INTO(turf_target, mover, source_dir));\
+				};\
+			}\
+		};\
+	} while(FALSE)
 
+/*
+		if (reach_type == REACH_CLICK) {\
+			return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+		} else if (reach_type == REACH_MOVE) {\
+			return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+		} else if (reach_type == REACH_ATTACK) {\
+			if(ultimate_target_turf == turf_target) {\
+				return_var = (CAN_CLICK_FROM(turf_source, target_dir) && CAN_CLICK_INTO(turf_target, source_dir));\
+			} else {\
+				return_var = (CAN_MOVE_FROM(turf_source, target_dir) && CAN_MOVE_INTO(turf_target, mover, source_dir));\
+			};\
+*/
 
 /// Avoid calling this directly unless you also guarantee the safety checks euclidian_reach() does.
-/turf/proc/do_cardinal_reach(turf/target, movement_dir, reach)
-	var/turf/last_processed_turf = src
+/atom/proc/do_cardinal_reach(atom/target, movement_dir, reach, reach_type)
+	var/turf/last_processed_turf = get_turf(src)
+	var/turf/target_turf = get_turf(target)
 	for(var/i in 1 to reach)
 		var/turf/next_turf = get_step(last_processed_turf, movement_dir)
-		if(!CAN_CLICK_THROUGH(last_processed_turf, next_turf))
-			return last_processed_turf
+		REACH_CHECK(., reach_type, last_processed_turf, next_turf, movement_dir, REVERSE_DIR(movement_dir), src, target_turf)
+		if(!.)
+			return last_processed_turf // Blocked!
+		if(next_turf == target_turf)
+			return next_turf // Hit!
 		last_processed_turf = next_turf
-	return last_processed_turf
+	return last_processed_turf // Ran out of breath in the process!
 
 
 // (sin(45) * 32), rounded.
 #define ORDINAL_PIXELS_MOVE 27
 
 /// Avoid calling this directly unless you also guarantee the safety checks euclidian_reach() does.
-/turf/proc/do_ordinal_reach(turf/target, movement_dir, reach)
-	var/turf/last_processed_turf = src
+/atom/proc/do_ordinal_reach(atom/target, movement_dir, reach, reach_type)
+	var/turf/last_processed_turf = get_turf(src)
+	var/turf/target_turf = get_turf(target)
 
 	var/horizontal_dir = movement_dir & (EAST|WEST)
 	var/vertical_dir = movement_dir & (NORTH|SOUTH)
@@ -130,19 +202,29 @@
 		var/valid_routes = 0
 		if(!(cardinal_blocked & horizontal_dir))
 			var/turf/horizontal_step = get_step(last_processed_turf, horizontal_dir)
-			if(CAN_CLICK_THROUGH(last_processed_turf, horizontal_step) && CAN_CLICK_THROUGH(horizontal_step, next_turf))
-				valid_routes++
+			REACH_CHECK(., reach_type, last_processed_turf, horizontal_step, horizontal_dir, REVERSE_DIR(horizontal_dir), src, target_turf)
+			if(.)
+				REACH_CHECK(., reach_type, horizontal_step, next_turf, vertical_dir, REVERSE_DIR(vertical_dir), src, target_turf)
+				if(.)
+					valid_routes++
+				else
+					cardinal_blocked |= horizontal_dir
 			else
 				cardinal_blocked |= horizontal_dir
 		if(!(cardinal_blocked & vertical_dir))
 			var/turf/vertical_step = get_step(last_processed_turf, vertical_dir)
-			if(CAN_CLICK_THROUGH(last_processed_turf, vertical_step) && CAN_CLICK_THROUGH(vertical_step, next_turf))
-				valid_routes++
+			REACH_CHECK(., reach_type, last_processed_turf, vertical_step, vertical_dir, REVERSE_DIR(vertical_dir), src, target_turf)
+			if(.)
+				REACH_CHECK(., reach_type, vertical_step, next_turf, horizontal_dir, REVERSE_DIR(horizontal_dir), src, target_turf)
+				if(.)
+					valid_routes++
+				else
+					cardinal_blocked |= vertical_dir
 			else
 				cardinal_blocked |= vertical_dir
 		if(valid_routes == 0)
 			return last_processed_turf // Blocked!
-		if(next_turf == target)
+		if(next_turf == target_turf)
 			return next_turf // Hit!
 		last_processed_turf = next_turf
 		pixels_travelled %= 32
@@ -152,7 +234,7 @@
 
 
 /// Avoid calling this directly unless you also guarantee the safety checks euclidian_reach() does.
-/turf/proc/do_sloping_reach(turf/target, movement_dir, reach, dir_angle)
+/atom/proc/do_sloping_reach(atom/target, movement_dir, reach, reach_type, dir_angle)
 	// We'll simulate movement as if it was to the NE, with increasing x and y values, for simplicity.
 	// For this we'll need to perform some conversions.
 	var/left_dir
@@ -200,7 +282,8 @@
 	var/y_pixels_travelled = 17 + min(round(y_offset * 15 / SIN_COS_45, 1), 15)
 	#undef SIN_COS_45
 
-	var/turf/last_processed_turf = src
+	var/turf/last_processed_turf = get_turf(src)
+	var/turf/target_turf = get_turf(target)
 
 	for(var/i in 1 to reach)
 		x_pixels_travelled += x_pixel_step
@@ -220,20 +303,24 @@
 			first_dir = right_dir
 			second_dir = left_dir
 		var/turf/crossing = get_step(last_processed_turf, first_dir)
-		if(!CAN_CLICK_THROUGH(last_processed_turf, crossing))
+		REACH_CHECK(., reach_type, last_processed_turf, crossing, first_dir, REVERSE_DIR(first_dir), src, target_turf)
+		if(!.)
 			return last_processed_turf // Blocked!
-		if(crossing == target)
+		if(crossing == target_turf)
 			return crossing // Hit!
 		last_processed_turf = crossing
 		if(second_dir)
 			crossing = get_step(last_processed_turf, second_dir)
-			if(!CAN_CLICK_THROUGH(last_processed_turf, crossing))
+			REACH_CHECK(., reach_type, last_processed_turf, crossing, second_dir, REVERSE_DIR(second_dir), src, target_turf)
+			if(!.)
 				return last_processed_turf // Blocked!
-			if(crossing == target)
+			if(crossing == target_turf)
 				return crossing // Hit!
 			last_processed_turf = crossing
 	
 	return last_processed_turf // Ran out of breath in the process!
 
 
-#undef CAN_CLICK_THROUGH
+#undef REACH_CHECK
+//#undef CAN_MOVE_THROUGH
+//#undef CAN_CLICK_THROUGH

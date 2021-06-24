@@ -49,7 +49,7 @@
 		return
 
 	//Standard reach turf to turf or reaching inside storage
-	if(can_reach(A, INVENTORY_DEPTH, W?.reach))
+	if(can_reach(A, INVENTORY_DEPTH, reach))
 		if(W)
 			return W.rightclick_melee_attack_chain(src, A, params)
 		else

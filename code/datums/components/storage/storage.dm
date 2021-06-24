@@ -459,7 +459,7 @@
 	if(!istype(M))
 		return FALSE
 	A.add_fingerprint(M)
-	if(!force && (check_locked(null, M) || !M.can_reach(parent, view_only = TRUE)))
+	if(!force && (check_locked(null, M) || !M.can_reach(parent, STORAGE_VIEW_DEPTH)))
 		return FALSE
 	ui_show(M, !ghost)
 

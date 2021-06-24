@@ -115,7 +115,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/tool_behaviour = NONE
 	var/toolspeed = 1
 
-	var/reach = 1 //In tiles, how far this weapon can reach; 1 for adjacent, which is default
+	/// In tiles, how far this weapon can reach.
+	var/max_reach = 1
+	/// Minimum distance needed in tiles for the target be reachable by this weapon.
+	var/min_reach = 0
 
 	//The list of slots by priority. equip_to_appropriate_slot() uses this list. Doesn't matter if a mob type doesn't have a slot.
 	var/list/slot_equipment_priority = null // for default list, see /mob/proc/equip_to_appropriate_slot()

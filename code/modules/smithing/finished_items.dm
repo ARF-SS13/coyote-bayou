@@ -115,7 +115,7 @@
 	icon_state = "halberd"
 	w_class = WEIGHT_CLASS_HUGE
 	overlay_state = "spearhandle"
-	reach = 2 
+	max_reach = 2 
 	slot_flags = ITEM_SLOT_BACK
 	wielded_mult = 1.8
 
@@ -141,7 +141,7 @@
 	name = "glaive"
 	icon_state = "glaive"
 	overlay_state = "longhandle"
-	reach = 2 
+	max_reach = 2 
 	slot_flags = ITEM_SLOT_BACK
 	wielded_mult = 1.5
 
@@ -154,7 +154,7 @@
 	name = "pike"
 	icon_state = "pike"
 	overlay_state = "longhandle"
-	reach = 2 //yeah ok
+	max_reach = 2 //yeah ok
 	wielded_mult = 1.3
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = SHARP_POINTY

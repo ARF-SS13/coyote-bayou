@@ -611,7 +611,7 @@
 			if(nextsmash < world.time)
 				obstacle.mech_melee_attack(src)
 				nextsmash = world.time + smashcooldown
-				if(!obstacle || obstacle.CanPass(src,get_step(src,dir)))
+				if(!obstacle || obstacle.CanPass(src, dir))
 					step(src,dir)
 		if(isobj(obstacle))
 			var/obj/O = obstacle

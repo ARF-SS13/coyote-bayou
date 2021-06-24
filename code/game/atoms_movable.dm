@@ -404,8 +404,12 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanPass(atom/movable/mover, turf/target)
+/atom/movable/CanPass(atom/movable/mover, border_dir)
 	if(mover in buckled_mobs)
+		return TRUE
+	if(flags_1 & ON_BORDER_1)
+		if(ISDIAGONALDIR(dir) || border_dir == dir)
+			return !density
 		return TRUE
 	return ..()
 
