@@ -514,7 +514,7 @@ Corporal
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/attachments/scope=1,
-		/obj/item/ammo_box/a308=4, \
+		/obj/item/ammo_box/a762=4, \
 		/obj/item/storage/box/ration/menu_two=1,
 		)
 
