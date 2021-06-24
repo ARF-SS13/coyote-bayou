@@ -120,7 +120,7 @@
 /area/f13/wasteland)
 "aeg" = (
 /obj/structure/flora/grass/jungle/b,
-/mob/living/simple_animal/hostile/mirelurk,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/water,
 /area/f13/caves)
 "aeJ" = (
@@ -453,7 +453,7 @@
 "anb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/mirelurk/hunter,
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -765,7 +765,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "auw" = (
-/mob/living/simple_animal/hostile/mirelurk,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/water,
 /area/f13/caves)
 "aux" = (
@@ -877,7 +877,7 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "axX" = (
-/mob/living/simple_animal/hostile/mirelurk/hunter,
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aya" = (
@@ -2103,7 +2103,7 @@
 "bkr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/mirelurk,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -3280,7 +3280,6 @@
 "bSR" = (
 /obj/structure/bed/mattress/pregame,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bST" = (
@@ -3556,7 +3555,7 @@
 /area/f13/caves)
 "ceT" = (
 /obj/structure/lattice/catwalk,
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/water,
 /area/f13/caves)
 "cfn" = (
@@ -4085,7 +4084,7 @@
 /area/f13/building)
 "cuW" = (
 /obj/structure/flora/grass/jungle/b,
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/water,
 /area/f13/caves)
 "cvp" = (
@@ -8640,7 +8639,6 @@
 /obj/item/clothing/under/shorts/black,
 /obj/item/clothing/under/shorts/red,
 /obj/item/clothing/under/shorts/blue,
-/obj/item/clothing/mask/fakemoustache/italian,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -10636,7 +10634,7 @@
 "ghD" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/light/small/broken,
-/mob/living/simple_animal/hostile/mirelurk,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/water,
 /area/f13/caves)
 "gin" = (
@@ -11189,7 +11187,8 @@
 	},
 /area/f13/building)
 "gtn" = (
-/obj/structure/mirelurkegg,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gts" = (
@@ -12233,8 +12232,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gZi" = (
-/obj/structure/mirelurkegg,
-/turf/open/water,
+/mob/living/simple_animal/hostile/poison/giant_spider,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gZD" = (
 /obj/structure/window/fulltile/house,
@@ -14750,7 +14749,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/radiation)
 "irF" = (
-/mob/living/simple_animal/hostile/mirelurk/hunter,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
 /turf/open/water,
 /area/f13/caves)
 "irI" = (
@@ -16086,7 +16085,6 @@
 /area/f13/building)
 "iZJ" = (
 /obj/structure/rack,
-/obj/item/clothing/mask/joy,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -16200,7 +16198,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "jci" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jcl" = (
@@ -20629,7 +20627,7 @@
 /area/f13/brotherhood)
 "lFM" = (
 /obj/structure/flora/grass/jungle,
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/water,
 /area/f13/caves)
 "lFX" = (
@@ -21972,12 +21970,9 @@
 	},
 /area/f13/wasteland)
 "mwc" = (
-/obj/machinery/vending/snack,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/water,
+/area/f13/caves)
 "mwp" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -22425,7 +22420,6 @@
 /area/f13/building)
 "mNB" = (
 /obj/structure/closet/cabinet,
-/obj/item/dildo,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mNS" = (
@@ -23112,7 +23106,7 @@
 /obj/structure/disposalpipe/broken{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/mirelurk/hunter,
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/water,
 /area/f13/caves)
 "niD" = (
@@ -23798,11 +23792,9 @@
 /turf/closed/wall/f13/store,
 /area/f13/wasteland)
 "nHi" = (
-/obj/machinery/vending/snack,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
-	},
-/area/f13/wasteland)
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "nHl" = (
 /obj/item/flag/followers,
 /obj/machinery/light/small{
@@ -24532,7 +24524,8 @@
 /turf/open/floor/wood,
 /area/f13/building)
 "oen" = (
-/obj/structure/mirelurkegg,
+/obj/structure/spider/stickyweb,
+/obj/structure/spider/cocoon,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/caves)
 "oeL" = (
@@ -25270,7 +25263,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/structure/closet,
 /obj/item/clothing/head/beret,
-/obj/item/restraints/handcuffs/fake/kinky,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -25791,7 +25783,7 @@
 /area/f13/building)
 "oRE" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "oRM" = (
@@ -26535,7 +26527,6 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/vending/snack,
 /turf/open/floor/carpet,
 /area/f13/building)
 "pne" = (
@@ -28818,7 +28809,7 @@
 	},
 /area/f13/building)
 "qyJ" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/water,
 /area/f13/caves)
 "qyR" = (
@@ -29395,8 +29386,8 @@
 	},
 /area/f13/building)
 "qOp" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "qOw" = (
@@ -30929,14 +30920,11 @@
 	},
 /area/f13/clinic)
 "rJU" = (
-/obj/structure/table/wood/settler,
-/obj/item/dildo{
-	icon_state = "dildo";
-	layer = 1.1
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "floorrustysolid"
 	},
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/caves)
 "rKB" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/trash,
@@ -31102,9 +31090,9 @@
 /turf/open/floor/wood/f13/carpet,
 /area/f13/building)
 "rQx" = (
-/obj/machinery/vending/snack,
-/turf/open/floor/wood/f13/carpet,
-/area/f13/bar)
+/obj/effect/landmark/start/f13/vexillarius,
+/turf/open/floor/carpet/red,
+/area/f13/legion)
 "rQB" = (
 /turf/open/floor/wood/f13/housewoodbroken,
 /area/f13/building)
@@ -38811,10 +38799,7 @@
 /area/f13/building)
 "wjd" = (
 /obj/structure/rack,
-/obj/item/clothing/under/f13/Retro_Biker_Vest,
-/obj/item/clothing/gloves/Biker,
-/obj/item/clothing/head/fluff/Bikerhelmet,
-/obj/item/clothing/mask/frog,
+/obj/item/clothing/mask/fakemoustache/italian,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -40413,7 +40398,7 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
 "xay" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
+/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -40536,7 +40521,7 @@
 	},
 /area/f13/ncr)
 "xdu" = (
-/mob/living/simple_animal/hostile/mirelurk,
+/mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xdA" = (
@@ -50984,7 +50969,7 @@ mZD
 mZD
 oIm
 rXj
-mwc
+mZD
 gts
 mHS
 mZD
@@ -59978,7 +59963,7 @@ jvw
 qDt
 rBN
 kBU
-rQx
+lnc
 lnc
 lnc
 lnc
@@ -65431,7 +65416,7 @@ rpu
 rpu
 dDF
 uCO
-rJU
+tWu
 jhl
 iAz
 sYX
@@ -88256,7 +88241,7 @@ kEI
 kEI
 kEI
 kEI
-nHi
+bFJ
 nPX
 fyf
 fyf
@@ -88360,7 +88345,7 @@ gcK
 gcK
 gcK
 csk
-qyJ
+mwc
 asI
 gtn
 ktB
@@ -90428,7 +90413,7 @@ ggK
 asI
 asI
 fwu
-gZi
+csk
 fwu
 hBr
 gcK
@@ -90683,7 +90668,7 @@ gcK
 gcK
 ggK
 ggK
-xdu
+nHi
 fzl
 csk
 rxE
@@ -91464,7 +91449,7 @@ gcK
 gcK
 gcK
 mTd
-jci
+gZi
 ggK
 mTd
 gcK
@@ -93262,7 +93247,7 @@ gcK
 dfR
 suo
 csk
-auw
+qyJ
 gsa
 irI
 csk
@@ -94277,7 +94262,7 @@ csk
 csk
 irI
 ggK
-xdu
+gZi
 fzN
 gcK
 gcK
@@ -94545,7 +94530,7 @@ fzl
 hBr
 dfR
 dfR
-qyJ
+mwc
 csk
 fwu
 dfR
@@ -95068,7 +95053,7 @@ tDH
 eBM
 wIm
 tLJ
-xay
+rJU
 eBM
 kDQ
 ggK
@@ -95820,7 +95805,7 @@ gcK
 cRM
 wne
 gsa
-qyJ
+mwc
 irI
 csk
 csk
@@ -96345,7 +96330,7 @@ hBr
 hBr
 hBr
 asI
-xdu
+gZi
 asI
 hBr
 ktB
@@ -97866,7 +97851,7 @@ gcK
 gcK
 ggK
 ggK
-jci
+gZi
 csk
 asI
 hBr
@@ -98076,7 +98061,7 @@ mvv
 bpD
 hom
 fpg
-jIn
+rQx
 jIn
 jIn
 jIn
