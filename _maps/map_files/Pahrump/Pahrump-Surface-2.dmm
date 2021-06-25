@@ -1517,10 +1517,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
-"aSK" = (
-/obj/structure/rack,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "aSL" = (
 /obj/structure/displaycase,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
@@ -9638,7 +9634,6 @@
 /area/f13/building)
 "fCM" = (
 /obj/machinery/door/unpowered/wooddoor{
-	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
 	req_access_txt = "131"
@@ -58656,8 +58651,8 @@ mfD
 mfD
 mfD
 hCg
-fyf
-cos
+gcK
+gcK
 gcK
 ktB
 gcK
@@ -58910,11 +58905,11 @@ gcK
 gcK
 gcK
 gcK
-cos
-cos
-cos
-fCM
-cos
+gcK
+gcK
+gcK
+gcK
+gcK
 gcK
 ktB
 gcK
@@ -59167,11 +59162,11 @@ gcK
 gcK
 gcK
 gcK
-cos
-aSK
-ggK
-ggK
-cos
+gcK
+gcK
+gcK
+gcK
+gcK
 ktB
 gcK
 gcK
@@ -59424,11 +59419,11 @@ ktB
 ktB
 ktB
 ktB
-cos
-aSK
-rwv
-aSK
-cos
+gcK
+ktB
+ktB
+gcK
+ktB
 gcK
 gcK
 gcK
@@ -59681,11 +59676,11 @@ gcK
 gcK
 gcK
 gcK
-cos
-cos
-cos
-cos
-cos
+ktB
+gcK
+gcK
+ktB
+gcK
 gcK
 gcK
 fyf
