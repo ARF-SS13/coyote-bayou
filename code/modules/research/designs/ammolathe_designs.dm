@@ -140,21 +140,6 @@
 	build_path = /obj/item/ammo_box/c38box
 	category = list("initial", "Simple Ammo")
 
-/datum/design/ammolathe/qsp
-	name = "ammo box (10mm QSP)"
-	id = "qspammobox"
-	materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/qspbox
-	category = list("initial", "Advanced Ammo")	
-
-/datum/design/ammolathe/speedloaderqsp
-	name = "empty speed loader (10mm QSP)"
-	id = "qsp"
-	materials = list(/datum/material/iron = 3000)
-	build_path = /obj/item/ammo_box/qsp/empty
-	category = list("initial", "Advanced Magazines")	
-
-/datum/design
 /datum/design/ammolathe/a22plink
 	name = ".22lr plinking ammo box"
 	id = "a22plink"

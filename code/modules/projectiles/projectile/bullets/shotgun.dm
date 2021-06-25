@@ -32,23 +32,6 @@
 	name = "dragonsbreath pellet"
 	damage = 5
 
-/obj/item/projectile/incendiary/flamethrower
-	name = "FIREEEEEEEEEE!!!!!"
-	icon = 'icons/effects/fire.dmi'
-	icon_state = "3"
-	light_range = LIGHT_RANGE_FIRE
-	light_color = LIGHT_COLOR_FIRE
-	damage_type = BURN
-	damage = 5 //slight damage on impact
-	range = 10
-
-/obj/item/projectile/incendiary/flamethrower/on_hit(atom/target)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(4) //slightly stronger then a molotov, if you stand infront of this for a really long time they will eventually just cook you
-		M.IgniteMob()
-
 /obj/item/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
 	damage = 5
@@ -165,21 +148,3 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
-
-/obj/item/projectile/bullet/pellet/qsp
-	name = "qsp buckshot pellet"
-	pixels_per_second = 425
-	damage = 8
-	armour_penetration = 0.15
-	wound_bonus = 10
-	bare_wound_bonus = 10
-	ricochets_max = 2
-	ricochet_incidence_leeway = 130
-	ricochet_decay_damage = 1.7 //gets much stronger each bounce, but is somewhat hard to land. 
-	ricochet_decay_chance = 1
-	ricochet_chance = 80 //100% if you have the vet's trait
-	ricochet_auto_aim_angle = 30
-	ricochet_auto_aim_range = 4
-	wound_bonus = 10
-	bare_wound_bonus = 10
-	embedding = list("embed_chance" = 30, "fall_chance" = 2, "jostle_chance" = 2, "ignore_throwspeed_threshold" =TRUE, "pain_stam_pct" = 0.3, "pain_mult" = 3 , "jostle_pain_mult" = 3, "rip_time" = 3)
