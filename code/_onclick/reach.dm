@@ -46,7 +46,7 @@
 							return TRUE // Same turf or inside source.
 						checked_direct_access = TRUE
 				if(1)
-					if(target_loc.Adjacent(src, depth - 1))
+					if(target_loc.Adjacent(src, ultimate_target, src, depth - 1))
 						return TRUE // One turf away.
 		return FALSE
 
@@ -54,7 +54,7 @@
 		if(ismovable(ultimate_target))
 			var/atom/movable/movable_target = ultimate_target
 			for(var/atom/movable/target_loc as anything in movable_target.get_locs())
-				if(target_loc.Adjacent(src))
+				if(target_loc.Adjacent(src, ultimate_target, src))
 					return TRUE
 			return FALSE
 		return ultimate_target.Adjacent(src)
