@@ -160,20 +160,34 @@
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 50, "bio" = 50, "rad" = 10, "fire" = 60, "acid" = 10)
 	resistance_flags = FIRE_PROOF
 
-//Legion
 
-/obj/item/clothing/suit/armor/f13/medicus
-	name = "medicus apron"
-	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia."
-	icon_state = "legmedicus"
-	armor = list("energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
-	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
+//////////
+//LEGION//
+//////////
 
-/obj/item/clothing/suit/armor/f13/opifex
-	name = "opifex apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as an Opifex."
-	icon_state = "opifex_apron"
-	item_state = "opifex_apron"
+/obj/item/clothing/suit/armor/f13/legion
+	name = "legion armor template"
+	desc = "should not exist. Bugreport."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legrecruit"
+	item_state = "legarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded, /obj/item/melee/powered, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+
+/obj/item/clothing/suit/armor/f13/legion/forgemaster
+	name = "forgemaster apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as a Forgemaster."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legion-opifex"
+	item_state = "legion-opifex"
 	blood_overlay_type = "armor"
 	armor = list("melee" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 5)
 	allowed = list(/obj/item/crowbar,
@@ -182,13 +196,130 @@
 		/obj/item/wirecutters,
 		/obj/item/wrench,
 		/obj/item/stack/cable_coil,
-		/obj/item/clothing/gloves)
+		/obj/item/twohanded/sledgehammer)
+
+/obj/item/clothing/suit/armor/f13/legion/recruit
+	name = "legion recruit armor"
+	desc = "(II) Legion Recruits carry very basic protection, repurposed old sports gear with bits of leather and other tribal style armor that the wearer has managed to scrounge up."
+	icon_state = "legion-recruit"
+	item_state = "legion-recruit"
+	slowdown = -0.15
+
+/obj/item/clothing/suit/armor/f13/legion/prime
+	name = "legion prime armor"
+	desc = "(III) Legion Primes have survived some skirmishes, and when promoted often recieve a set of armor, padded leather modeled on ancient baseball catcher uniforms and various plates of metal or boiled leather."
+	icon_state = "legion-prime"
+	item_state = "legion-prime"
+	slowdown = -0.13
+	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
+	name = "slavemaster armor"
+	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
+	icon_state = "legion-slavemaster"
+	item_state = "legion-slavemaster"
+
+/obj/item/clothing/suit/armor/f13/legion/vet
+	name = "legion veteran armor"
+	desc = "(IV) Armor worn by veterans, salvaged bits of enemy armor and scrap metal often reinforcing the armor."
+	icon_state = "legion-veteran"
+	item_state = "legion-veteran"
+	slowdown = -0.1
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/heavy
+	name = "legion veteran decan armor"
+	desc = "(V) A Legion veterans armor reinforced with a patched bulletproof vest, the wearer has the markings of a Decanus."
+	icon_state = "legion-decvet"
+	item_state = "legion-decvet"
+	slowdown = -0.1
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/vet/explorer
+	name = "legion explorer armor"
+	desc = "(IV) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
+	icon_state = "legion-explorer"
+	item_state = "legion-explorer"
+
+/obj/item/clothing/suit/armor/f13/legion/vet/vexil
+	name = "legion vexillarius armor"
+	slowdown = -0.12
+	desc = "(IV) Worn by Vexillarius, this armor has been reinforced with circular metal plates on the chest and a back mounted pole for the flag of the Bull, making the wearer easy to see at a distance."
+	icon_state = "legion-vex"
+	item_state = "legion-vex"
+
+/obj/item/clothing/suit/armor/f13/legion/venator
+	name = "legion venator armor"
+	desc = "(VI) Explorer armor reinforced with metal plates and chainmail."
+	icon_state = "legion-venator"
+	item_state = "legion-venator"
+	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/centurion
+	name = "legion centurion armor"
+	desc = "(VI) Every Centurion is issued some of the best armor available in the Legion, and adds better pieces from slain opponents over time."
+	icon_state = "legion-centurion"
+	item_state = "legion-centurion"
+	slowdown = -0.13
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/palacent
+	name = "paladin-slayer centurion armor"
+	desc = "(VI) A Centurion able to defeat a Brotherhood Paladin gets the honorific title 'Paladin-Slayer', and adds bits of the looted armor to his own."
+	icon_state = "legion-palacent"
+	item_state = "legion-palacent"
+	slowdown = -0.13
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/rangercent
+	name = "ranger-hunter centurion armor"
+	desc = "(V) Centurions who have led many patrols and ambushes against NCR Rangers have a distinct look from the many looted pieces of Ranger armor, and are often experienced in skirmishing."
+	icon_state = "legion-rangercent"
+	item_state = "legion-rangercent"
+	slowdown = -0.2
+	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/legate
+	name = "legion legate armor"
+	desc = "(VIII) Made by the most skilled blacksmiths in Arizona, the bronzed steel of this rare armor offers good protection, and the scars on its metal proves it has seen use on the field."
+	icon_state = "legion-legate"
+	item_state = "legion-legate"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/combat/legion
+	name = "Legion combat armor"
+	desc = "(V) Pre-war military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Caesar's Legion."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legion-combat"
+	item_state = "legion-combat"
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/legion
+	name = "reinforced Legion combat armor"
+	desc = "(VI) Pre-war military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Caesar's Legion."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legion-combat2"
+	item_state = "legion-combat2"
+
+/obj/item/clothing/suit/armor/f13/medicus
+	name = "medicus apron"
+	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legion-medicus"
+	item_state = "legion-medicus"
+	armor = list("energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
 
 /obj/item/clothing/suit/armor/f13/slavelabor
 	name = "old leather strips"
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
-	icon_state = "legslaveleather"
-	item_state = "legslaveleather"
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "legion-slaveleather"
+	item_state = "legion-slaveleather"
 
 /obj/item/clothing/neck/cloak/treasurer
 	name = "treasurers cloak"
@@ -199,75 +330,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
-/obj/item/clothing/suit/armor/f13/legion
-	name = "legion armor"
-	desc = "Unadorned Legion armor."
-	icon_state = "legrecruit"
-	item_state = "legarmor"
-	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded, /obj/item/melee/powered, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
-/obj/item/clothing/suit/armor/f13/legion/recruit
-	name = "legion recruit armor"
-	desc = "(II) Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
-	icon_state = "legrecruit"
-	slowdown = -0.15
-
+/*
 /obj/item/clothing/suit/armor/f13/legion/recruit/scout
 	name = "legion scout armor"
 	desc = "(II) A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight."
 	icon_state = "legscout"
-
-/obj/item/clothing/suit/armor/f13/legion/prime
-	name = "legion prime armor"
-	desc = "(III) It's a legion prime armor, supplied to recruits who have survived several skirmishes, and are more worthy of sturdier equipment."
-	icon_state = "legprime"
-	slowdown = -0.13
-	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
-	name = "slavemaster armor"
-	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
-	icon_state = "legslavemaster"
-
-/obj/item/clothing/suit/armor/f13/legion/vet
-	name = "legion veteran armor"
-	desc = "(IV) Armor worn by veteran legionaries who have proven their combat prowess in many battles, its hardened leather is sturdier than that of previous ranks."
-	icon_state = "legvet"
-	slowdown = -0.1
-	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/heavy
-	name = "legion veteran decan armor"
-	desc = "(V) Heavy metal armor worn by the Veteran Decanii retinue of the region."
-	icon_state = "legmetal"
-	item_state = "legmetal"
-	slowdown = -0.1
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/vet/explorer
-	name = "legion explorer armor"
-	desc = "(IV) A modified set of veteran armor with much of the metal replaced by layered strips of laminated linen and leather."
-	icon_state = "legexplorer"
-
-/obj/item/clothing/suit/armor/f13/legion/vet/vexil
-	name = "legion vexillarius armor"
-	slowdown = -0.12
-	desc = "(IV) The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
-	icon_state = "legvexil"
-
-/obj/item/clothing/suit/armor/f13/legion/venator
-	name = "legion venator armor"
-	desc = "(VI) The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers and a chainmail skirt."
-	icon_state = "legvenator"
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	name = "legion orator armor"
@@ -275,52 +342,12 @@
 	icon_state = "legheavy"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion/centurion
-	name = "legion centurion armor"
-	desc = "(VI) The Legion centurion armor is by far the strongest suit of armor available to Caesar's Legion. The armor is composed from other pieces of armor taken from that of the wearer's defeated opponents in combat."
-	icon_state = "legcenturion"
-	slowdown = -0.13
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/palacent
-	name = "paladin-slayer centurion armor"
-	desc = "(VI) The armor of a Centurion who has bested one or more Brotherhood Paladins, adding pieces of his prizes to his own defense. The symbol of the Legion is crudely painted on this once-marvelous suit of armor."
-	icon_state = "palacent"
-	slowdown = -0.13
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-
 /obj/item/clothing/suit/armor/f13/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
 	desc = "(VI) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
-
-/obj/item/clothing/suit/armor/f13/legion/rangercent
-	name = "ranger-hunter centurion armor"
-	desc = "(V) A suit of armor collected over the years by the deaths of countless NCR rangers. It forfeits protection for added speed."
-	icon_state = "rangercent"
-	item_state = "rangercent"
-	slowdown = -0.2
-	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/legion/legate
-	name = "legion legate armor"
-	desc = "(VIII) The armor appears to be a full suit of heavy gauge steel and offers full body protection. It also has a cloak in excellent condition, but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
-	icon_state = "leglegat"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/combat/legion
-	name = "Legion combat armor"
-	desc = "(V) An old military grade pre war combat armor and, repainted to the colour scheme of Caesar's Legion."
-	icon_state = "legion_armor"
-	item_state = "legion_armor"
-
-/obj/item/clothing/suit/armor/f13/combat/mk2/legion
-	name = "reinforced Legion combat armor"
-	desc = "(VI) A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of Caesar's Legion."
-	icon_state = "legion_armor_mk2"
-	item_state = "legion_armor_mk2"
+*/
 
 //NCR
 /obj/item/clothing/suit/armor/f13/ncrarmor
@@ -618,6 +645,25 @@
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //Wayfarer
+/obj/item/clothing/suit/armor/f13/lightcloak
+	name = "light tribal cloak"
+	desc = "(IV) Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
+	icon_state = "lightcloak"
+	item_state = "lightcloak"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 15, "bio" = 50, "rad" = 35, "fire" = 50, "acid" = 100)
+	slowdown = -0.14
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+
+/obj/item/clothing/suit/armor/f13/tribal_combat_armor
+	name = "tribal combat armor"
+	desc = "(V) An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	icon_state = "tribecombatarmor"
+	item_state = "tribecombatarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+
 /obj/item/clothing/suit/armor/f13/tribe_armor
 	name = "light tribal armor"
 	desc = "(IV) Light armor made of leather stips and a large, flat piece of turquoise.Armor commonplace among the Wayfinders."
@@ -625,8 +671,7 @@
 	item_state = "tribal_armor"
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
-)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
 
 /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
 	name = "heavy tribal armor"

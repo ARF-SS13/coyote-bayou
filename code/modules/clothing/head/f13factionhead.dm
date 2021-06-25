@@ -215,28 +215,17 @@
 	item_state = "hat_enclave_officer"
 	armor = list("tier" = 5)
 
-//Legion
-/obj/item/clothing/head/f13/legion/servant
-	name = "servant headwear"
-	desc = "A simple uncoloured linen cloth wrapped around the head, the mark of a servant slave trained in household work."
-	icon_state = "legslaveservant"
-	item_state = "legslaveservant"
-	flags_inv = HIDEEARS|HIDEFACE
-	flags_cover = null
 
-/obj/item/clothing/head/f13/legion/auxilia
-	name = "auxilia headwear"
-	desc = "A soft red cap with a black band, used by female Auxilia outside camp."
-	icon_state = "legaux"
-	item_state = "legaux"
-	flags_inv = HIDEEARS|HIDEFACE
-	flags_cover = null
+//////////
+//LEGION//
+//////////
+
 
 /obj/item/clothing/head/helmet/f13/legion
-	name = "legion helmet"
-	desc = "Unadorned legion helmet"
-	icon_state = "legrecruit"
-	item_state = "legrecruit"
+	name = "legion helmet template"
+	desc = "should not exist."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
 	lefthand_file = ""
 	righthand_file = ""
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
@@ -245,30 +234,31 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/legion/marsheaddress
+	name = "priestess' headdress"
+	desc = "(III) A headdress made of feathers and decorated with two golden tassles."
+	icon_state = "legion-priestess"
+	item_state = "legion-priestess"
+	dynamic_hair_suffix = "+generic"
+
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
 	desc = "(III) It's a leather skullcap issued to recruits."
-	icon_state = "legrecruit"
-	item_state = "legrecruit"
-
-/obj/item/clothing/head/helmet/f13/legion/recruit/scout
-	name = "legion scout hood"
-	desc = "(III) It's a leather hood worn by legion scouts."
-	icon_state = "legscout"
-	item_state = "legscout"
+	icon_state = "legion-recruit"
+	item_state = "legion-recruit"
 
 /obj/item/clothing/head/helmet/f13/legion/prime
 	name = "legion prime helmet"
 	desc = "(IV) A helmet from reinforced leather witha red peak."
-	item_state = "legprime"
-	icon_state = "legprime"
+	item_state = "legion-prime"
+	icon_state = "legion-prime"
 	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
 	name = "slave master helmet"
 	desc = "(IV) The unique helmet used by the disciplinary corps of the Legion."
-	icon_state = "legslavemaster"
-	item_state = "legslavemaster"
+	icon_state = "legion-slavemaster"
+	item_state = "legion-slavemaster"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
 	dog_fashion = null
@@ -276,48 +266,147 @@
 /obj/item/clothing/head/helmet/f13/legion/vet
 	name = "legion veteran helmet"
 	desc = "(V) It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
-	icon_state = "legvet"
-	item_state = "legvet"
+	icon_state = "legion-veteran"
+	item_state = "legion-veteran"
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/vet/explorer
+	name = "legion explorer hood"
+	desc = "(V) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
+	icon_state = "legion-explorer"
+	item_state = "legion-explorer"
+
+/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
+	name = "legion bear vexillarius helmet"
+	desc = "(V) This helmet is decorated with the pelt of a ashland bear."
+	icon_state = "legion-vex"
+	item_state = "legion-vex"
+
+/obj/item/clothing/head/helmet/f13/legion/vet/vexil
+	name = "legion fox vexillarius helmet"
+	desc = "(V) This helmet is decorated with the pelt of a desert fox."
+	icon_state = "legion-vex-alt"
+	item_state = "legion-vex-alt"
+
+/obj/item/clothing/head/helmet/f13/legion/venator
+	name = "legion venator hood"
+	desc = "(VI) A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
+	icon_state = "legion-venator"
+	item_state = "legion-venator"
+	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/recruit/decan
+	name = "legion recruit decanus helmet"
+	desc = "(VI) This reinforced leather helmet has a plume of black and dark red feathers."
+	icon_state = "legion-decrec"
+	item_state = "legion-decrec"
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/prime/decan
+	name = "legion prime decanus helmet"
+	desc = "(VI) This reinforced leather helmet with a red peak has a plume of black feathers."
+	item_state = "legion-decprime"
+	icon_state = "legion-decprime"
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/heavy
-	name = "legion veteran decan helmet"
+	name = "reinforced legion veteran decanus helmet"
 	desc = "(VI) A metal helmet with ballistic visor and a plume, denoting veteran Decanus status."
-	icon_state = "legheavy"
-	item_state = "legheavy"
+	icon_state = "legion-decvet"
+	item_state = "legion-decvet"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 60, "rad" = 20, "fire" = 75, "acid" = 10)
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/head/helmet/f13/legion/heavy/attack_self(mob/user)
 	weldingvisortoggle(user)
-	icon_state = "legheavyup"
-	item_state = "legheavyup"
+	icon_state = "legion-decvetup"
+	item_state = "legion-decvetup"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion explorer hood"
-	desc = "(V) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
-	icon_state = "legexplorer"
-	item_state = "legexplorer"
-
-/obj/item/clothing/head/helmet/f13/legion/vet/vexil
-	name = "legion fox vexillarius helmet"
-	desc = "(V) This helmet is decorated with the pelt of a desert fox."
-	icon_state = "legvexil"
-	item_state = "legvexil"
-
-/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
-	name = "legion bear vexillarius helmet"
-	desc = "(V) This helmet is decorated with the pelt of a ashland bear."
-	icon_state = "legvexil_alt"
-	item_state = "legvexil_alt"
-
-/obj/item/clothing/head/helmet/f13/legion/venator
-	name = "legion venator hood"
-	desc = "(VI) A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
-	icon_state = "legvenator"
-	item_state = "legvenator"
+/obj/item/clothing/head/helmet/f13/legion/vet/decan
+	name = "legion veteran decanus helmet"
+	desc = "(VI) It's a metal helmet with an array of red, white and black feathers, unmistakably a Veteran Decanus."
+	icon_state = "legion-decvet-alt"
+	item_state = "legion-decvet-alt"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/centurion
+	name = "legion centurion helmet"
+	desc = "(VI) A sturdy helmet from steel and brass with a red horizontal plume."
+	icon_state = "legion-centurion"
+	item_state = "legion-centurion"
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/rangercent
+	name = "ranger-hunter centurion helmet"
+	desc = "(V) The helmet of an NCR ranger, refit to serve as a Centurions helmet."
+	icon_state = "legion-rangercent"
+	item_state = "legion-rangercent"
+	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/palacent
+	name = "paladin-slayer centurion helmet"
+	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
+	icon_state = "legion-palacent"
+	item_state = "legion-palacent"
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/legate
+	name = "legion legate helmet"
+	desc = "(VIII) A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
+	icon_state = "legion-legate"
+	item_state = "legion-legate"
+	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+
+/obj/item/clothing/head/f13/legion/servant
+	name = "servant headwear"
+	desc = "A simple uncoloured linen cloth wrapped around the head, the mark of a servant slave trained in household work."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon_state = "legion-servant"
+	item_state = "legion-servant"
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
+
+/obj/item/clothing/head/f13/legion/auxilia
+	name = "auxilia headwear"
+	desc = "A soft red cap with a black band, used by female Auxilia outside camp."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon_state = "legion-aux"
+	item_state = "legion-aux"
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
+
+/obj/item/clothing/head/helmet/f13/combat/legion
+	name = "Legion combat helmet"
+	desc = "(V) An old military grade pre-war helmet, repainted to the colour scheme of Caesar's Legion."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon_state = "legion-combat"
+	item_state = "legion-combat"
+
+/obj/item/clothing/head/helmet/f13/combat/mk2/legion
+	name = "reinforced Legion combat helmet"
+	desc = "(VI) A pre-war helmet in good condition, made from advanced materialas and paintend in the colors of Caesar's Legion."
+	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon_state = "legion-combat2"
+	item_state = "legion-combat2"
+
+/*
+/obj/item/clothing/head/helmet/f13/legion/recruit/scout
+	name = "legion scout hood"
+	desc = "(III) It's a leather hood worn by legion scouts."
+	icon_state = "legscout"
+	item_state = "legscout"
 
 /obj/item/clothing/head/helmet/f13/legion/libritor
 	name = "legion libritor helmet"
@@ -326,86 +415,13 @@
 	item_state = "legheavy"
 	armor = list("tier" = 7, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/recruit/decan
-	name = "legion recruit decanus helmet"
-	desc = "(VI) This reinforced leather helmet has a plume of black and dark red feathers."
-	icon_state = "legdecan"
-	item_state = "legdecan"
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/legion/prime/decan
-	name = "legion prime decanus helmet"
-	desc = "(VI) This reinforced leather helmet with a red peak has a plume of black feathers."
-	item_state = "legdecanprim"
-	icon_state = "legdecanprim"
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/legion/vet/decan
-	name = "legion veteran decanus helmet"
-	desc = "(VI) It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has several large white and black feathers sewn along side the rest of the feathers aswell."
-	icon_state = "legdecanvet"
-	item_state = "legdecanvet"
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-
-/obj/item/clothing/head/helmet/f13/legion/centurion
-	name = "legion centurion helmet"
-	desc = "(VI) A sturdy helmet from steel and brass with a red horizontal plume."
-	icon_state = "legcenturion"
-	item_state = "legcenturion"
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
-/obj/item/clothing/head/helmet/f13/legion/rangercent
-	name = "ranger-hunter centurion helmet"
-	desc = "(V) The helmet of an NCR ranger, refit to serve as a Centurions helmet."
-	icon_state = "rangercent"
-	item_state = "rangercent"
-	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
-/obj/item/clothing/head/helmet/f13/legion/palacent
-	name = "paladin-slayer centurion helmet"
-	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
-	icon_state = "palacent"
-	item_state = "palacent"
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
 /obj/item/clothing/head/helmet/f13/legion/palacent/custom_excess
 	name = "Champion of Kanab's Helm"
 	desc = "(VII) A custom forged steel full helmet made for the Conqueror and Champion of Kanab. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
+*/
 
-/obj/item/clothing/head/helmet/f13/legion/legate
-	name = "legion legate helmet"
-	desc = "(VIII) A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
-	icon_state = "leglegate"
-	item_state = "leglegate"
-	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
-/obj/item/clothing/head/helmet/f13/legion/marsheaddress
-	name = "priestess' headdress"
-	desc = "(III) A headdress made of feathers and decorated with two golden tassles."
-	icon_state = "mars_headdress"
-	item_state = "mars_headdress"
-	dynamic_hair_suffix = "+generic"
-
-/obj/item/clothing/head/helmet/f13/combat/legion
-	name = "Legion combat helmet"
-	desc = "(V) An old military grade pre-war combat helmet, repainted to the colour scheme of Caesar's Legion."
-	icon_state = "legion_helmet"
-	item_state = "legion_helmet"
-
-/obj/item/clothing/head/helmet/f13/combat/mk2/legion
-	name = "reinforced Legion combat helmet"
-	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of Caesar's Legion."
-	icon_state = "legion_helmet"
-	item_state = "legion_helmet"
 
 //NCR
 
@@ -815,6 +831,13 @@
 	item_state = "shamanred"
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/tribe_helmet
+	name = "tribalized helmet"
+	desc = "(V) An old military grade pre-war combat helmet, repainted and re purposed with bones and sinew to worship some tribal diety."
+	icon_state = "tribe_helmet"
+	item_state = "tribe_helmet"
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief
 	name = "helm of the steady walk"
