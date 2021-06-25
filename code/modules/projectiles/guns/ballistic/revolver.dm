@@ -608,8 +608,8 @@
 /obj/item/gun/ballistic/revolver/revolver45/gunslinger
 	name = "\improper Colt Single Action Army"
 	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
-	item_state = "45revolver"
-	icon_state = "45revolver"
+	item_state = "coltwalker"
+	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	fire_delay = 5
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
