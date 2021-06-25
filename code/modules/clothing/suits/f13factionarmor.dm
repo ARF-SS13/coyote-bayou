@@ -638,6 +638,27 @@
 	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
 )
 
+/obj/item/clothing/suit/armor/f13/lightcloak
+	name = "light tribal cloak"
+	desc = "(IV) Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
+	icon_state = "lightcloak"
+	item_state = "lightcloak"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 15, "bio" = 50, "rad" = 35, "fire" = 50, "acid" = 100)
+	slowdown = -0.14
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
+)
+
+/obj/item/clothing/suit/armor/f13/tribal_combat_armor
+	name = "tribal combat armor"
+	desc = "(V) An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	icon_state = "tribecombatarmor"
+	item_state = "tribecombatarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
+)
+
 //Followers
 
 //Vault
