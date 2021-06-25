@@ -604,6 +604,17 @@
 	fire_delay = 4
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
+
+/obj/item/gun/ballistic/revolver/revolver45/gunslinger
+	name = "\improper Colt Single Action Army"
+	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
+	item_state = "45revolver"
+	icon_state = "45revolver"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
+	fire_delay = 5
+	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	spread = 0 //slow firing bouncing bullets
+
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
 	desc = "A relatively primitive .357 magnum revolver."

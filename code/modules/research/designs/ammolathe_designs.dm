@@ -364,6 +364,13 @@
 	build_path = /obj/item/ammo_box/tube/c4570/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/speedloader45lc
+	name = "empty speed loader (.45 LC)"
+	id = "speedloader45lc"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/a45lcrev/empty
+	category = list("initial", "Intermediate Magazines")
+
 /datum/design/ammolathe/pps_mag
 	name = "empty ppsh magazine (9mm)"
 	id = "pps_mag"
@@ -433,6 +440,13 @@
 	id = "c4570jhp"
 	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/c4570box/jhp
+	category = list("initial", "Intermediate Ammo")
+
+/datum/design/ammolathe/c4570
+	name = ".45 LC ammo box"
+	id = "c45lc"
+	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
+	build_path = /obj/item/ammo_box/a45lcbox
 	category = list("initial", "Intermediate Ammo")
 
 /datum/design/ammolathe/a50mg

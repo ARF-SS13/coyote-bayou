@@ -176,6 +176,15 @@
 	ammo_type = /obj/item/ammo_casing/m44/swc
 	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2000)
 
+/obj/item/ammo_box/a45lcbox
+	name = "ammo box (.44 Magnum FMJ)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	caliber = "a45LC"
+	ammo_type = /obj/item/ammo_casing/a45LC
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 
 //.45 ACP
 /obj/item/ammo_box/c45
@@ -472,6 +481,19 @@
 	custom_materials = list(/datum/material/iron = 3000)
 
 /obj/item/ammo_box/c45rev/empty
+	start_empty = 1
+
+/obj/item/ammo_box/a45lcrev
+	name = "speed loader (.45 LC)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	caliber = "a45LC"
+	ammo_type = /obj/item/ammo_casing/a45LC
+	max_ammo = 6
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 3000)
+
+/obj/item/ammo_box/a45lcrev/empty
 	start_empty = 1
 
 /obj/item/ammo_box/jerrycan

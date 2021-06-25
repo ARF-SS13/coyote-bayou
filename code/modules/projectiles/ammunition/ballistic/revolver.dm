@@ -37,6 +37,12 @@
 	desc = "A .44 magnum semi-wadcutter bullet casing."
 	projectile_type = /obj/item/projectile/bullet/m44/swc
 
+
+/obj/item/ammo_casing/a45LC
+	name = ".45 Long Colt bullet casing"
+	desc = "An arcaich .45 long colt bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a45LC
+
 // .45-70 Gov't
 /obj/item/ammo_casing/c4570
 	name = ".45-70 FMJ bullet casing"

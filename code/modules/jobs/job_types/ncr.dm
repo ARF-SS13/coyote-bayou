@@ -958,13 +958,16 @@ Veteran Ranger
 
 
 /datum/outfit/loadout/vrcqc
-	name = "Tunnel Rat"
+	name = "Gunslinger"
 	suit_store = /obj/item/gun/ballistic/automatic/commando/ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/greasegun=3, \
 		/obj/item/book/granter/trait/gunslinger=1, \
-		/obj/item/gun/ballistic/revolver/revolver45/gunslinger=1)
-//COMPILE ERRORRRRRRRRRRRRRRRRS!!
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger=1, \
+		/obj/item/ammo_box/a45lcrev=3
+		)
+
+
 
 //NCR Ranger
 /datum/job/ncr/f13ranger
