@@ -180,8 +180,8 @@
 	name = "ammo box (.44 Magnum FMJ)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
-	caliber = "a45LC"
-	ammo_type = /obj/item/ammo_casing/a45LC
+	caliber = "a45lc"
+	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
@@ -487,8 +487,8 @@
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
-	caliber = "a45LC"
-	ammo_type = /obj/item/ammo_casing/a45LC
+	caliber = "a45lc"
+	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 6
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 3000)

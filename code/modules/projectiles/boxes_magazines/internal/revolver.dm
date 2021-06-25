@@ -100,6 +100,6 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	name = ".45 LC revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/a45LC
-	caliber = "a45LC"
+	ammo_type = /obj/item/ammo_casing/a45lc
+	caliber = "a45lc"
 	max_ammo = 6

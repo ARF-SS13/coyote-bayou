@@ -38,10 +38,11 @@
 	projectile_type = /obj/item/projectile/bullet/m44/swc
 
 
-/obj/item/ammo_casing/a45LC
+/obj/item/ammo_casing/a45lc
 	name = ".45 Long Colt bullet casing"
 	desc = "An arcaich .45 long colt bullet casing."
-	projectile_type = /obj/item/projectile/bullet/a45LC
+	caliber = "a45lc"
+	projectile_type = /obj/item/projectile/bullet/a45lc
 
 // .45-70 Gov't
 /obj/item/ammo_casing/c4570
