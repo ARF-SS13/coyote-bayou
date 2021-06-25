@@ -518,13 +518,6 @@
 	item_state = "ncr_recon_beret"
 	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/head/beret/ncr_recon/worn
-	name = "Worn NCR First Recon beret"
-	desc = "(IV) A red beret, issued to members of NCR First Recon. This one is worn, having been kept when a soldier was transfered from the unit."
-	icon_state = "ncr_recon_beret"
-	item_state = "ncr_recon_beret"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-
 /obj/item/clothing/head/beret/ncr_scout
 	name = "NCR Third Scout beret"
 	desc = "(VI) A brown beret, issued to members of the NCR Third Scout Battallion."

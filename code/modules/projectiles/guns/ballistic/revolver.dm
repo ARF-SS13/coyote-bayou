@@ -716,18 +716,9 @@
 	icon_state = "thatgun"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	extra_penetration = -0.25
 	extra_damage = -2
 	spread = 5
-
-//on direct hit, about 6x8=48 damage minus armor and has less pen, making it worse to sequoia. If you bounce it though, it does 10 then 13 damage, making it better if you're skilled and can bounce your shots. High skill high reward weapon
-/obj/item/gun/ballistic/revolver/qsp
-	name = "quiet special purpose revolver"
-	desc = "A strange pistol revolver, firing one of a kind ammunition. It fires a special, quiet cartridge the propels tungsten buckshot out of the chamber."
-	icon_state = "qsprevolver"
-	fire_sound = 'sound/f13weapons/qsp.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/qsp
-	spread = 3
-	fire_delay = 5
 
 /obj/item/gun/ballistic/revolver/zhurong
 	name = "chinese Type 10"
