@@ -68,13 +68,13 @@
 //45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
 /obj/item/projectile/bullet/a45LC
 	name = ".45 LC bullet"
-	damage = 42 //tiny bit less then base 44 magnum
+	damage = 43 //44 mag damage
 	armour_penetration = 0.3
 	wound_bonus = 15
 	bare_wound_bonus = -15
 	ricochets_max = 3
 	ricochet_incidence_leeway = 130
-	ricochet_decay_damage = 1.2 //gets much stronger each bounce, but is somewhat hard to land. First bounce gets you 50 damage or Sequoia level, second is 60, third is 72. Hard to land but rewards very good aim.
+	ricochet_decay_damage = 1.3 
 	ricochet_decay_chance = 1
 	ricochet_chance = 80 //100% if you have the vet's trait
 	ricochet_auto_aim_angle = 30
