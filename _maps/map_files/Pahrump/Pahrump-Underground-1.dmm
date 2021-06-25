@@ -581,13 +581,12 @@
 	},
 /area/f13/bunker)
 "aBr" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 8
-	},
+/obj/structure/table,
+/obj/item/book/granter/trait/midsurgery,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "purplefull"
 	},
-/area/f13/tunnel)
+/area/f13/enclave)
 "aCo" = (
 /obj/structure/foamedmetal,
 /turf/open/floor/f13{
@@ -2157,7 +2156,9 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibmid1"
 	},
-/mob/living/simple_animal/hostile/ghoul/legendary,
+/mob/living/simple_animal/hostile/ghoul/legendary{
+	faction = list("hostile")
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -3319,6 +3320,12 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/operations)
+"dde" = (
+/mob/living/simple_animal/hostile/ghoul{
+	faction = list("hostile")
+	},
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "ddv" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -8544,12 +8551,16 @@
 	},
 /area/f13/tunnel)
 "hsR" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/handrail/g_central{
-	pixel_y = -16
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/open/water,
-/area/f13/tunnel)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table,
+/obj/item/book/granter/trait/chemistry,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/enclave)
 "htu" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/security/bos{
@@ -9896,6 +9907,14 @@
 /obj/item/reagent_containers/pill/patch/jet,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
+"iwk" = (
+/obj/structure/simple_door/metal/fence{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/tunnel)
 "ixN" = (
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
@@ -10588,6 +10607,13 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"iZz" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/handrail/g_central{
+	pixel_y = -16
+	},
+/turf/open/water,
+/area/f13/tunnel)
 "iZB" = (
 /obj/machinery/light/small,
 /obj/structure/table/wood/settler,
@@ -25150,7 +25176,9 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "upC" = (
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/ghoul{
+	faction = list("hostile")
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -27836,6 +27864,9 @@
 /area/f13/caves)
 "wHB" = (
 /obj/effect/decal/cleanable/blood/tracks,
+/mob/living/simple_animal/hostile/ghoul/glowing{
+	faction = list("hostile")
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -29254,8 +29285,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
 "xVt" = (
-/obj/structure/closet/cabinet,
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert,
+/obj/structure/barricade/wooden,
+/obj/structure/closet/cabinet/anchored,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -64260,8 +64292,8 @@ aoj
 uoO
 uoO
 joH
-vbu
-iBp
+aBr
+hsR
 vbu
 wTH
 vbu
@@ -77091,36 +77123,36 @@ weW
 weW
 weW
 weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+lYx
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
+weW
 kPb
 nuA
 nuA
-hsR
-weW
-weW
-weW
-weW
-weW
-weW
-lYx
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-weW
-lYx
-weW
-weW
-weW
+iZz
 weW
 weW
 weW
@@ -77348,37 +77380,37 @@ tur
 tur
 tur
 tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
+tur
 tzJ
 veR
-aBr
+iwk
 veR
 tzJ
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
-tur
 tur
 tur
 tur
@@ -81493,7 +81525,7 @@ rQP
 rjz
 ujx
 pzu
-rvI
+dde
 rjz
 uPu
 jPC
