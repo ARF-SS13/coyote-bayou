@@ -114,7 +114,7 @@
 	. = ..()
 	if(!istype(user))
 		return FALSE
-	if(!user.Adjacent(src) || !user.CanReach(src) || !CHECK_MOBILITY(user, MOBILITY_USE))
+	if(!user.Adjacent(src) || !user.can_reach(src) || !CHECK_MOBILITY(user, MOBILITY_USE))
 		return FALSE
 	visible_message("<span class='boldwarning'>[user] starts to drain [src]!</span>")
 	draining = TRUE

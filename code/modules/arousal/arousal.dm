@@ -161,12 +161,12 @@
 		if(C.is_open_container() || istype(C, /obj/item/reagent_containers/food/snacks))
 			containers_list += C
 	for(var/obj/item/reagent_containers/C in range(1, src))
-		if((C.is_open_container() || istype(C, /obj/item/reagent_containers/food/snacks)) && CanReach(C))
+		if((C.is_open_container() || istype(C, /obj/item/reagent_containers/food/snacks)) && can_reach(C))
 			containers_list += C
 
 	if(containers_list.len)
 		var/obj/item/reagent_containers/SC = input(src, "Into or onto what?(Cancel for nowhere)", null)  as null|obj in containers_list
-		if(SC && CanReach(SC))
+		if(SC && can_reach(SC))
 			return SC
 	else if(!silent)
 		to_chat(src, "<span class='warning'>You cannot do this without an appropriate container.</span>")

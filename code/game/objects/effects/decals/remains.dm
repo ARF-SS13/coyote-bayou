@@ -69,3 +69,8 @@
 /obj/effect/decal/cleanable/robot_debris/old
 	name = "dusty robot debris"
 	desc = "Looks like nobody has touched this in a while."
+
+/obj/effect/decal/remains/deadeyebot
+	desc = "A destroyed or deactivated eyebot. Best not stick around to see if it's still functioning."
+	icon = 	'icons/fallout/mobs/animal.dmi'
+	icon_state = "eyebot_d"

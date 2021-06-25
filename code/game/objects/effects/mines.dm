@@ -63,6 +63,7 @@
 
 /obj/effect/mine/shrapnel/mineEffect(mob/victim)
 	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+	explosion(loc, 0, 0, 2, 2)
 
 /obj/effect/mine/shrapnel/sting
 	name = "stinger mine"

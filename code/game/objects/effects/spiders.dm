@@ -36,7 +36,7 @@
 		icon_state = "stickyweb2"
 	. = ..()
 
-/obj/structure/spider/stickyweb/CanPass(atom/movable/mover, turf/target)
+/obj/structure/spider/stickyweb/CanPass(atom/movable/mover, border_dir)
 	if (genetic)
 		return
 	if(istype(mover, /mob/living/simple_animal/hostile/poison/giant_spider))
@@ -59,7 +59,7 @@
 	allowed_mob = allowedmob
 	. = ..()
 
-/obj/structure/spider/stickyweb/genetic/CanPass(atom/movable/mover, turf/target)
+/obj/structure/spider/stickyweb/genetic/CanPass(atom/movable/mover, border_dir)
 	. = ..() //this is the normal spider web return aka a spider would make this TRUE
 	if(mover == allowed_mob)
 		return TRUE

@@ -314,8 +314,15 @@
 	icon_state = "compostbin"
 	anchored = TRUE
 	reagent_id = /datum/reagent/compost
-	var/seed_value = 4
-	var/produce_value = 10
+	var/seed_default_value = 4
+	var/seed_to_compost_scale = 0.08 // Meaning average (50 potency) foods will give 4 compost
+	var/produce_default_value = 10
+	var/food_to_compost_scale = 0.2 // Meaning average (50 potency) foods will give 10 compost
+
+/obj/structure/reagent_dispensers/compostbin/Initialize()
+	. = ..()
+	reagents.clear_reagents()
+	reagents.add_reagent(reagent_id, 100)
 
 /obj/structure/reagent_dispensers/compostbin/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
@@ -329,7 +336,7 @@
 			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 			process_compost()
 		else
-			to_chat(user, "<span class='warning'>That's not compostable! Try seeds or flowers instead.</span>")
+			to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
 	else if(istype(W, /obj/item/storage/bag/plants))
 		var/obj/item/storage/bag/plants/PB = W
 		for(var/obj/item/G in PB.contents)// This check can be less than thorough because the bag has already authenticated the contents, hopefully
@@ -337,14 +344,32 @@
 				to_chat(user, "<span class='info'>You empty the [PB] into the [src].</span>")
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
+	else if(istype(W, /obj/item/reagent_containers/food))
+		var/obj/item/reagent_containers/food/F = W
+		// Check if the food is good for compost
+		if(CHECK_BITFIELD(F.foodtype, (GRAIN | FRUIT | VEGETABLES | PINEAPPLE)) && !CHECK_BITFIELD(F.foodtype, (MEAT | DAIRY | TOXIC)))
+			if(user.transferItemToLoc(W, src))
+				to_chat(user, "<span class='notice'>You load the [W] into the [src].</span>")
+				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
+				process_compost()
+			else
+				to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
+		else
+			to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
 
 /obj/structure/reagent_dispensers/compostbin/proc/process_compost()
 	for(var/obj/item/C in contents)
 		if(istype(C, /obj/item/seeds))
-			reagents.add_reagent(/datum/reagent/compost, seed_value)
-			qdel(C)
+			var/obj/item/seeds/S = C
+			reagents.add_reagent(/datum/reagent/compost, S.potency ? S.potency * seed_to_compost_scale : seed_default_value)
 		else if(istype(C, /obj/item/reagent_containers/food/snacks/grown))
-			reagents.add_reagent(/datum/reagent/compost, produce_value)
-			qdel(C)
-		else //Not sure how we got here, but there's only one reasonable thing to do.
-			qdel(C)
+			var/obj/item/reagent_containers/food/snacks/grown/G = C
+			reagents.add_reagent(/datum/reagent/compost, G.seed ? G.seed.potency * food_to_compost_scale : produce_default_value)
+		else if(istype(C, /obj/item/reagent_containers/food))
+			if(istype(C, /obj/item/reagent_containers/food/snacks))
+				var/obj/item/reagent_containers/food/snacks/S = C
+				if(S.trash)
+					S.generate_trash(loc)
+			var/obj/item/reagent_containers/food/F = C
+			reagents.add_reagent(/datum/reagent/compost, F.food_quality * food_to_compost_scale)
+		qdel(C)

@@ -13,6 +13,8 @@
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
 			to_chat(L, "<span class='warning'>You are unable to swing [src] right now!</span>")
 			return
+		if(min_reach && GET_DIST_EUCLIDEAN(user, target) < min_reach)
+			return
 	. = attackchain_flags
 	if(tool_behaviour && ((. = target.tool_act(user, src, tool_behaviour)) & STOP_ATTACK_PROC_CHAIN))
 		return
@@ -31,6 +33,8 @@
 		if(!CHECK_MOBILITY(L, MOBILITY_USE))
 			to_chat(L, "<span class='warning'>You are unable to raise [src] right now!</span>")
 			return
+		if(max_reach >= 2 && has_range_for_melee_attack(target, user))
+			return ranged_melee_attack(target, user, params)
 	return afterattack(target, user, FALSE, params)
 
 // Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
@@ -249,6 +253,20 @@
 /obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
+
+
+/obj/item/proc/has_range_for_melee_attack(atom/target, mob/living/user)
+	if(user.z != target.z)
+		return FALSE
+	var/euclidean_distance = GET_DIST_EUCLIDEAN(user, target)
+	if(euclidean_distance < max(min_reach, 2) || round(euclidean_distance) > max_reach)
+		return FALSE // No need to waste time calculating the path.
+	return user.euclidian_reach(target, max_reach, REACH_ATTACK) == get_turf(target)
+
+
+/obj/item/proc/ranged_melee_attack(atom/target, mob/living/user, params)
+	melee_attack_chain(user, target, params)
+
 
 /obj/item/proc/get_clamped_volume()
 	if(w_class)

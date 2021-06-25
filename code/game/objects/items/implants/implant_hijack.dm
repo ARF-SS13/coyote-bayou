@@ -60,10 +60,10 @@
 /obj/item/implant/hijack/proc/InterceptClickOn(mob/living/user,params,atom/object)
 	if (isitem(object) || !toggled || user.incapacitated())
 		return
-	if (stealthmode == FALSE && istype(object,/obj/machinery/power/apc) && !user.CanReach(object))
+	if (stealthmode == FALSE && istype(object,/obj/machinery/power/apc) && !user.can_reach(object))
 		if (hijack_remotely(object))
 			return
-	if (stealthmode && !user.CanReach(object))
+	if (stealthmode && !user.can_reach(object))
 		return
 	if (!object.hasSiliconAccessInArea(imp_in))
 		return
@@ -83,7 +83,7 @@
 		return TRUE
 	if (user.get_active_held_item())
 		return
-	if (user.CanReach(object))
+	if (user.can_reach(object))
 		object.attack_robot(imp_in)
 	else
 		object.attack_ai(imp_in)

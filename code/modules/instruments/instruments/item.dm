@@ -23,7 +23,7 @@
 	return ..()
 
 /obj/item/instrument/proc/should_stop_playing(mob/user)
-	return !user.CanReach(src) || !user.canUseTopic(src, FALSE, TRUE, FALSE, FALSE)
+	return !user.can_reach(src) || !user.canUseTopic(src, FALSE, TRUE, FALSE, FALSE)
 
 /obj/item/instrument/process(wait)
 	if(is_tuned())

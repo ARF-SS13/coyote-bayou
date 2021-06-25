@@ -764,7 +764,7 @@
 	force_on = 60 //force when active
 	throwforce = 20
 	throwforce_on = 20
-	reach = 1
+	max_reach = 1
 	reach_on = 2
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'

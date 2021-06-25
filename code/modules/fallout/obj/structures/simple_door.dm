@@ -217,7 +217,7 @@
 //	user.changeNext_move(CLICK_CD_MELEE)
 	..()
 
-/obj/structure/simple_door/CanPass(atom/movable/mover, turf/target, height=0)
+/obj/structure/simple_door/CanPass(atom/movable/mover, border_dir, height=0)
 	if(mover.loc == loc)
 		return 1
 	return !density

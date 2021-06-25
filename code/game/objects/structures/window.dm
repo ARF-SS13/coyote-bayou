@@ -132,12 +132,12 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	else
 		..(FULLTILE_WINDOW_DIR)
 
-/obj/structure/window/CanPass(atom/movable/mover, turf/target)
+/obj/structure/window/CanPass(atom/movable/mover, border_dir)
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	if(dir == FULLTILE_WINDOW_DIR)
 		return 0	//full tile window, you can't move into it!
-	if(get_dir(loc, target) == dir)
+	if(border_dir == dir)
 		return !density
 	if(istype(mover, /obj/structure/window))
 		var/obj/structure/window/W = mover
@@ -362,13 +362,18 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		return
 	..()
 
+
 /obj/structure/window/proc/can_be_reached(mob/user)
-	if(!fulltile)
-		if(get_dir(user,src) & dir)
-			for(var/obj/O in loc)
-				if(!O.CanPass(user, user.loc, 1))
-					return 0
-	return 1
+	if(fulltile)
+		return TRUE
+	var/incoming_dir = get_dir(user, src)
+	if(!(incoming_dir & dir))
+		return TRUE
+	for(var/obj/object in loc)
+		if(!object.CanPass(user, incoming_dir, 1))
+			return FALSE
+	return TRUE
+
 
 /obj/structure/window/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()

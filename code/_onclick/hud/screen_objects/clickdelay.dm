@@ -35,7 +35,7 @@
 	var/estimated = L.EstimatedNextActionTime()
 	var/diff = estimated - L.last_action
 	var/left = estimated - world.time
-	if(left < 0 || diff < 0)
+	if(left < 0 || diff <= 0)
 		icon_state = "prog_bar_100"
 		return FALSE
 	icon_state = "prog_bar_[round(clamp(((diff - left)/diff) * 100, 0, 100), 5)]"

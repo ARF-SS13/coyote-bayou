@@ -134,7 +134,7 @@
 		if(!istype(antag_datum))
 			continue
 		var/their_loc = get_turf(M.current)
-		var/distance = get_dist_euclidian(my_loc, their_loc)
+		var/distance = GET_DIST_EUCLIDEAN(my_loc, their_loc)
 		if (distance < HUNTER_SCAN_MAX_DISTANCE)
 			vamps[M.current] = (HUNTER_SCAN_MAX_DISTANCE ** 2) - (distance ** 2)
 	// Found one!
@@ -216,8 +216,8 @@
 			var/datum/antagonist/antag_datum = a // var/datum/antagonist/antag_datum = M.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 			if(!istype(antag_datum) || antag_datum.AmFinalDeath())
 				continue
-			var/their_loc = get_turf(M.current)
-			var/distance = get_dist_euclidian(my_loc, their_loc)
+			var/turf/their_loc = get_turf(M.current)
+			var/distance = GET_DIST_EUCLIDEAN(my_loc, their_loc)
 			// Found One: Closer than previous/max distance
 			if (distance < best_dist && distance <= HUNTER_SCAN_MAX_DISTANCE)
 				best_dist = distance

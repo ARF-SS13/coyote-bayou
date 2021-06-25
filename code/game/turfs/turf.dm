@@ -247,10 +247,7 @@
 
 	return FALSE
 
-/turf/CanPass(atom/movable/mover, turf/target)
-	if(!target)
-		return FALSE
-
+/turf/CanPass(atom/movable/mover)
 	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
 		return !density
 
@@ -263,7 +260,7 @@
 	// By default byond will call Bump() on the first dense object in contents
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
-	if(!CanPass(mover, src))
+	if(!CanPass(mover))
 		firstbump = src
 	else
 		for(var/i in contents)
@@ -510,7 +507,7 @@
 	for(var/obj/O in contents)
 		if(CHECK_BITFIELD(O.obj_flags, SHOVABLE_ONTO))
 			LAZYADD(possibilities, O)
-		else if(!O.CanPass(target, src))
+		else if(!O.CanPass(target))
 			return FALSE
 	if(possibilities)
 		var/obj/O = pick(possibilities)

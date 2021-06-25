@@ -451,23 +451,25 @@
 //Shields//
 ///////////
 
+//Removed
 /datum/design/tele_shield
 	name = "Telescopic Riot Shield"
 	desc = "An advanced riot shield made of lightweight materials that collapses for easy storage."
 	id = "tele_shield"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 4000, /datum/material/silver = 300, /datum/material/titanium = 200)
-	build_path = /obj/item/shield/riot/tele
+	build_path = /obj/item/shield/riot
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+//Removed
 /datum/design/laser_shield
 	name = "Laser Resistant Riot Shield"
 	desc = "An advanced riot shield made of darker glasses to prevent laser fire from passing through."
 	id = "laser_shield"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1000, /datum/material/plastic = 4000, /datum/material/silver = 800, /datum/material/titanium = 600, /datum/material/plasma = 5000)
-	build_path = /obj/item/shield/riot/laser_proof
+	build_path = /obj/item/shield/riot
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
