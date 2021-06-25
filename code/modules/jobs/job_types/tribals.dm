@@ -349,7 +349,7 @@ Hunter
 	head = 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/f13/rag
+	shoes = 	/obj/item/clothing/shoes/f13/tribal_sandals
 	suit = 		/obj/item/clothing/suit/armor/f13/tribe_armor
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
@@ -361,8 +361,11 @@ Hunter
 	name = "Ranged"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/tribalbow=1,
+		/obj/item/clothing/suit/armor/f13/lightcloak=1,
 		/obj/item/storage/belt/tribe_quiver=1,
 		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/restraints/legcuffs/bola/tactical=2,
+		/obj/item/binoculars=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
 	)
 
@@ -371,6 +374,7 @@ Hunter
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear/deathclaw=1,
 		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/binoculars=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
 	)
 
