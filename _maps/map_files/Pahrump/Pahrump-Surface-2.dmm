@@ -9634,6 +9634,7 @@
 /area/f13/building)
 "fCM" = (
 /obj/machinery/door/unpowered/wooddoor{
+	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
 	req_access_txt = "131"
@@ -27374,11 +27375,8 @@
 	},
 /area/f13/building)
 "pKq" = (
-/obj/structure/necropolis_gate{
-	desc = "A massive stone gateway with a very heavy stone door.";
-	name = "village gate"
-	},
 /obj/structure/stone_tile/slab/burnt,
+/obj/structure/necropolis_gate,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pKK" = (
@@ -36569,6 +36567,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
+"uQP" = (
+/obj/structure/rack,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "uQY" = (
 /obj/structure/chair/stool,
 /obj/effect/decal/cleanable/dirt,
@@ -58651,8 +58653,8 @@ mfD
 mfD
 mfD
 hCg
-gcK
-gcK
+fyf
+cos
 gcK
 ktB
 gcK
@@ -58905,11 +58907,11 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+cos
+cos
+cos
+fCM
+cos
 gcK
 ktB
 gcK
@@ -59162,11 +59164,11 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+cos
+uQP
+ggK
+ggK
+cos
 ktB
 gcK
 gcK
@@ -59419,11 +59421,11 @@ ktB
 ktB
 ktB
 ktB
-gcK
-ktB
-ktB
-gcK
-ktB
+cos
+uQP
+rwv
+uQP
+cos
 gcK
 gcK
 gcK
@@ -59676,11 +59678,11 @@ gcK
 gcK
 gcK
 gcK
-ktB
-gcK
-gcK
-ktB
-gcK
+cos
+cos
+cos
+cos
+cos
 gcK
 gcK
 fyf
