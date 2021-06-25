@@ -760,12 +760,6 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/fnfal)
 
-
-/obj/item/book/granter/crafting_recipe/blueprint/trapper
-	name = "trapper's blueprints"
-	icon_state = "blueprint2"
-	crafting_recipe_types = list(/datum/crafting_recipe/punji_sticks, /datum/crafting_recipe/shrapnelmine)
-
 /*
 /obj/item/book/granter/crafting_recipe/blueprint/caws
 	name = "h&k caws blueprint"
@@ -796,8 +790,6 @@
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
-
-	
 /obj/item/book/granter/trait/lowsurgery
 	name = "Surgery for Wastelanders"
 	desc = "A useful book on surgery."
@@ -863,15 +855,6 @@
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
 	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
-
-/obj/item/book/granter/trait/gunslinger
-	name = "Shalashaska: A gunslinger's memoirs"
-	desc = "The memoirs of an old gunslinger, has some useful advice."
-	oneuse = TRUE
-	granted_trait = TRAIT_NICE_SHOT
-	traitname = "gunslinging"
-	remarks = list("Engravings offer no tactical advantage whatsoever...", "I love to reload during battle...", "There's nothing like the feeling of slamming a long silver bullet into a well greased chamber...", "It doesn't feel right to shoot an unarmed man, but I'll get over it....", "You’re pretty good...", "The moment any truth is passed on, it starts turning into fiction. The problem is, fiction inspires people more than facts...")
-
 
 /*
 /obj/item/book/granter/trait/iron_fist
