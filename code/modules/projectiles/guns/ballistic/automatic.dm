@@ -459,13 +459,13 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	extra_damage = 3
-	extra_penetration = 0.06 
+	extra_penetration = 0.1
 	fire_delay = 6
 	burst_size = 2
 	can_attachments = FALSE
 	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
-	can_scope = TRUE
+	can_scope = FALSE
 	scope_state = "lasmusket_scope"
 	scope_x_offset = 6
 	scope_y_offset = 14

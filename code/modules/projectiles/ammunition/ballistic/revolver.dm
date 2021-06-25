@@ -20,14 +20,6 @@
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38
 	
-/obj/item/ammo_casing/qsp
-	name = "10mm QSP casing"
-	desc = "A 10mm revolver cartridge, of an extremely strange design. It only has a primer, and 15 small tungsten balls which it fires like miniature buckshot."
-	caliber = "qspbuckshot"
-	projectile_type = /obj/item/projectile/bullet/pellet/qsp
-	pellets = 6
-	variance = 5
-
 // .44 magnum
 /obj/item/ammo_casing/m44
 	name = ".44 magnum FMJ bullet casing"

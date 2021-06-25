@@ -963,8 +963,7 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/greasegun=3, \
 		/obj/item/book/granter/trait/gunslinger=1, \
-		/obj/item/gun/ballistic/revolver/qsp=1, \
-		/obj/item/ammo_box/qsp=3)
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger=1)
 //COMPILE ERRORRRRRRRRRRRRRRRRS!!
 
 //NCR Ranger
