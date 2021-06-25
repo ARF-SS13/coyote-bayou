@@ -244,6 +244,7 @@
 	//stop collecting feedback during grifftime
 	SSblackbox.Seal()
 
+	end_of_round_deathmatch()
 	sleep(50)
 	ready_for_reboot = TRUE
 	standard_reboot()

@@ -522,6 +522,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		modified_limbs = list()
 	S["chosen_limb_id"]					>> chosen_limb_id
 	S["hide_ckey"]						>> hide_ckey //saved per-character
+	S["end_of_round_deathmatch"]		>> end_of_round_deathmatch
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -882,6 +883,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Write prefs
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
+	WRITE_FILE(S["end_of_round_deathmatch"], end_of_round_deathmatch)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

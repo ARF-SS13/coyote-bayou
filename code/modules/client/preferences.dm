@@ -246,6 +246,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/scars_index = 1
 
 	var/hide_ckey = FALSE //pref for hiding if your ckey shows round-end or not
+	var/end_of_round_deathmatch = FALSE
 
 	var/special_s = 5
 	var/special_p = 5
@@ -254,6 +255,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/special_i = 5
 	var/special_a = 5
 	var/special_l = 5
+
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -345,7 +347,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
 			dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
 
-			dat += "<b>[nameless ? "Default designation" : "Name"]:</b>"
+			dat += "<b>[nameless ? "Default designation" : "Name"]:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
 			//dat += "<a href='?_src_=prefs;preference=nameless'>Be nameless: [nameless ? "Yes" : "No"]</a><BR>"
 			nameless = FALSE
@@ -387,7 +389,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[medical_records]"
 			else
 				dat += "[TextPreview(medical_records)]...<BR>"
-			dat += "<br><a href='?_src_=prefs;preference=hide_ckey;task=input'><b>Hide ckey: [hide_ckey ? "Enabled" : "Disabled"]</b></a><br>"
+			dat += "<br><b>Hide ckey: <a href='?_src_=prefs;preference=hide_ckey;task=input'>[hide_ckey ? "Enabled" : "Disabled"]</b></a><br>"
+			dat += "<br><b>Participate in the end of round deathmatch: <a href='?_src_=prefs;preference=end_of_round_deathmatch;task=input'>[end_of_round_deathmatch ? "Enabled" : "Disabled"]</b></a><br>"
 			dat += "</tr></table>"
 */
 
