@@ -197,3 +197,7 @@
 /obj/item/clothing/shoes/f13/mutie/boots/ncr/ranger
 	icon_state = "mutie_boots_ranger"
 	icon_state = "mutie_boots_ranger"
+
+/obj/item/clothing/shoes/f13/tribal_sandals
+	icon_state = "tribaltreads"
+	icon_state = "tribaltreads"
