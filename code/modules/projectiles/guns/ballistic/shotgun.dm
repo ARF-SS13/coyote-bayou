@@ -186,9 +186,9 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Riot Shotgun. 6 round pump action, folding stock
-/obj/item/gun/ballistic/shotgun/riot
-	name = "riot shotgun"
+//Police Shotgun. 6 round pump action, folding stock
+/obj/item/gun/ballistic/shotgun/police
+	name = "police shotgun"
 	desc = "A old-world shotgun with large magazine and folding stock, made from steel and polymers."
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot"
@@ -199,18 +199,18 @@
 	recoil = 2
 	spread = 2
 
-/obj/item/gun/ballistic/shotgun/riot/AltClick(mob/living/user)
+/obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	toggle_stock(user)
 	return TRUE
 
-/obj/item/gun/ballistic/shotgun/riot/examine(mob/user)
+/obj/item/gun/ballistic/shotgun/police/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to toggle the stock.</span>"
 
-/obj/item/gun/ballistic/shotgun/riot/proc/toggle_stock(mob/living/user)
+/obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
@@ -224,7 +224,7 @@
 		spread = 3
 	update_icon()
 
-/obj/item/gun/ballistic/shotgun/riot/update_icon_state()
+/obj/item/gun/ballistic/shotgun/police/update_icon_state()
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunriot"][stock ? "" : "fold"]"
 
 
@@ -334,10 +334,10 @@
 	var/semi_auto = TRUE
 
 
-//Breacher. 12 round drum, semiauto, pistol grip
+//Riot shotgun. 12 round drum, semiauto, pistol grip
 /obj/item/gun/ballistic/automatic/shotgun/riot
-	name = "Breacher shotgun"
-	desc = "A compact riot shotgun designed to fight in close quarters."
+	name = "Riot shotgun"
+	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -346,8 +346,8 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_delay = 7
 	burst_size = 1
-	recoil = 1 //Standard malus for sawn off stock
-	spread = 2 //Standard malus for sawn off stock
+	recoil = 1 //Standard malus for pistol grip
+	spread = 2 //Standard malus for pistol grip
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
@@ -413,8 +413,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	extra_damage = 0 //Normal barrel length for ammo
-	recoil = 1 //Standard malus for sawn off stock
-	spread = 2 //Standard malus for sawn off stock
+	recoil = 1 //Standard malus for pistol grip
+	spread = 2 //Standard malus for pistol grip
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
@@ -544,7 +544,7 @@
 //Plasma musket.
 /obj/item/gun/ballistic/shotgun/plasmacaster
 	name = "Plasma Musket"
-	desc = "The cooling looks dubious and is that a empty can of beans used as a safty valve? Pray the plasma goes towards the enemy and not your face when you pull the trigger."
+	desc = "The cooling looks dubious and is that a empty can of beans used as a safety valve? Pray the plasma goes towards the enemy and not your face when you pull the trigger."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "plasmamusket"
 	item_state = "plasmamusket"
@@ -552,10 +552,6 @@
 	fire_delay = 20
 	var/bolt_open = FALSE
 	isenergy = TRUE
-	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
-	knife_x_offset = 23
-	knife_y_offset = 21
 	can_scope = TRUE
 	scope_state = "lasmusket_scope"
 	scope_x_offset = 9

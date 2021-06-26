@@ -702,10 +702,10 @@
 				)
 
 /obj/effect/spawner/bundle/f13/single_shotgun
-	name = "single single-shot single shotgun and ammo spawner"
+	name = "single slam-fire shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/ammo_box/shotgun/bean
+				/obj/item/ammo_box/shotgun/buck
 				)
 
 /obj/effect/spawner/bundle/f13/caravan_shotgun
