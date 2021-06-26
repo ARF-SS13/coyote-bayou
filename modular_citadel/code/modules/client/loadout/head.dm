@@ -266,5 +266,5 @@ datum/gear/head/steelpot_patriot
 
 /datum/gear/head/chinese_commander
 	name = "chinese peaked cap"
-	path = /obj/item/clothing/head/f13/chinese_commander
+	path = /obj/item/clothing/head/f13/chinese_general
 	cost = 4

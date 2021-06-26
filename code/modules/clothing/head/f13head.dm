@@ -645,22 +645,23 @@
 	icon_state = "trilby"
 	item_state = "fedora"
 
+//chinesearmy
 /obj/item/clothing/head/f13/chinese_soldier
 	name = "chinese side cap"
-	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by regular troops."
-	icon_state = "chinese_s"
+	desc = "(I) An pre-war People's Liberation Army side cap, worn enlisted and NCOs"
+	icon_state = "chinese_solder"
 	item_state = "secsoft"
 
 /obj/item/clothing/head/f13/chinese_officer
 	name = "chinese officer cap"
-	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by low rank officers."
-	icon_state = "chinese_o"
+	desc = "(I) An pre-war People's Liberation Army cap, worn by low rankedi officers."
+	icon_state = "chinese_officer"
 	item_state = "secsoft"
 
-/obj/item/clothing/head/f13/chinese_commander
+/obj/item/clothing/head/f13/chinese_general
 	name = "chinese peaked cap"
-	desc = "(I) A peaked cap of dark green in color with a red star on the frontside.<br>It obviously belonged to a high rank officer of People's Liberation Army."
-	icon_state = "chinese_c"
+	desc = "(I) An pre-war People's Liberation Army peaked cap, worn by high ranked officers and generals."
+	icon_state = "chinese_general"
 	item_state = "fedora"
 
 /obj/item/clothing/head/f13/stormchaser
