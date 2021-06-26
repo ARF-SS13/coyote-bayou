@@ -38,7 +38,7 @@
 	name = "Ashton Fox's belongings"
 	path = /obj/item/storage/box/large/custom_kit/ashtonfox
 	ckeywhitelist = list("superballs")
-
+/*
 /datum/gear/donator/kits/averyamadeus
 	name = "Avery Amadeus' belongings"
 	path = /obj/item/storage/box/large/custom_kit/averyamadeus
@@ -53,7 +53,7 @@
 	name = "Sangarinus of Kanab's belongings"
 	path = /obj/item/storage/box/large/custom_kit/sangarinusofkanab
 	ckeywhitelist = list("topbirb")
-
+*/
 /datum/gear/donator/kits/johnthaxton
 	name = "John Thaxton's belongings"
 	path = /obj/item/storage/box/large/custom_kit/johnthaxton

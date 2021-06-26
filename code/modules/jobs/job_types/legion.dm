@@ -54,6 +54,20 @@
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 
+/obj/item/storage/box/legate
+	name = "legate belongings"
+	icon_state = "secbox"
+	illustration = "flashbang"
+
+/obj/item/storage/box/legate/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/pill/patch/healpoultice(src)
+	new /obj/item/reagent_containers/pill/patch/healpoultice(src)
+	new /obj/item/ammo_box/magazine/m44(src)
+	new /obj/item/ammo_box/magazine/m44(src)
+	new /obj/item/ammo_box/magazine/m44(src)
+
+
 ////////////////////
 ///Legate - Admin///
 ////////////////////
@@ -86,15 +100,17 @@
 	shoes = 		/obj/item/clothing/shoes/f13/military/legate
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/legate
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legate
+	gloves =		/obj/item/clothing/gloves/legion/legate
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/energy/laser/plasma/glock
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/automag
+	r_pocket =      /obj/item/storage/bag/money/small/legion
 	l_pocket = 		/obj/item/flashlight/lantern
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/ballisticfist=1,
-		/obj/item/stock_parts/cell/ammo/ec=3,
-		/obj/item/storage/fancy/ammobox/slugshot=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2,
-		/obj/item/storage/bag/money/small/legion=1)
+	r_hand = 		/obj/item/gun/ballistic/revolver/ballisticfist
+	l_hand = 		/obj/item/storage/fancy/ammobox/slugshot
+	backpack = 		null
+	satchel = 		null
+	box = 			/obj/item/storage/box/legate
+
 
 ///////////////
 ////Officers///
@@ -136,8 +152,9 @@
 	name = "Legion Centurion"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	id =			/obj/item/card/id/dogtag/legcenturion
-	mask =			/obj/item/clothing/mask/bandana/legcenturion
+	mask =			/obj/item/clothing/mask/bandana/legion/legcenturion
 	neck =			/obj/item/storage/belt/holster
+	gloves =		/obj/item/clothing/gloves/legion/plated
 	glasses = 		/obj/item/clothing/glasses/legionpolarizing
 	r_pocket =      /obj/item/restraints/handcuffs
 	l_pocket = 		/obj/item/flashlight/lantern
@@ -202,8 +219,9 @@
 	id = 			/obj/item/card/id/dogtag/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/heavy
 	head = 			/obj/item/clothing/head/helmet/f13/legion/heavy
-	mask =			/obj/item/clothing/mask/bandana/legdecan
+	mask =			/obj/item/clothing/mask/bandana/legion/legdecan
 	neck =			/obj/item/storage/belt/holster
+	gloves =		/obj/item/clothing/gloves/legion/plated
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/riot
 	r_pocket =      /obj/item/restraints/handcuffs
@@ -245,7 +263,7 @@
 	id = 			/obj/item/card/id/dogtag/legveteran
 	suit =			/obj/item/clothing/suit/armor/f13/legion/vet
 	head =			/obj/item/clothing/head/helmet/f13/legion/prime/decan
-	mask =			/obj/item/clothing/mask/bandana/legdecan
+	mask =			/obj/item/clothing/mask/bandana/legion/legdecan
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store =	/obj/item/gun/ballistic/automatic/m1garand
@@ -293,7 +311,7 @@
 	id = 			/obj/item/card/id/dogtag/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/recruit/decan
-	mask =			/obj/item/clothing/mask/bandana/legdecan
+	mask =			/obj/item/clothing/mask/bandana/legion/legdecan
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	r_pocket =		/obj/item/flashlight/lantern
@@ -309,7 +327,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/greasegun
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/greasegun=1,
-		/obj/item/shield/riot=1,
+		/obj/item/shield/riot/legion=1,
 		/obj/item/melee/unarmed/punchdagger=1)
 
 /datum/outfit/loadout/recdecsword
@@ -353,9 +371,10 @@
 	id = 			/obj/item/card/id/dogtag/legveteran
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
-	mask =			/obj/item/clothing/mask/bandana/legvet
+	mask =			/obj/item/clothing/mask/bandana/legion/legvet
 	neck =			/obj/item/storage/belt/holster
 	glasses = 		/obj/item/clothing/glasses/sunglasses
+	gloves =		/obj/item/clothing/gloves/legion/plated
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	r_pocket =		/obj/item/flashlight/lantern
 	l_pocket =		/obj/item/restraints/handcuffs
@@ -403,7 +422,7 @@
 	name =			"Veteran Legionnaire"
 	jobtype =		/datum/job/CaesarsLegion/Legionnaire/vetlegionnaire
 	id = 			/obj/item/card/id/dogtag/legveteran
-	mask =			/obj/item/clothing/mask/bandana/legvet
+	mask =			/obj/item/clothing/mask/bandana/legion/legvet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
 	neck = 			/obj/item/storage/belt/holster
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
@@ -470,7 +489,7 @@
 	name =			"Prime Legionnaire"
 	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/f13legionary
 	id				= /obj/item/card/id/dogtag/legprime
-	mask			= /obj/item/clothing/mask/bandana/legprime
+	mask			= /obj/item/clothing/mask/bandana/legion/legprime
 	head			= /obj/item/clothing/head/helmet/f13/legion/prime
 	neck			= /obj/item/storage/belt/holster
 	suit			= /obj/item/clothing/suit/armor/f13/legion/prime
@@ -529,7 +548,7 @@
 	shoes = 		/obj/item/clothing/shoes/f13/military/leather
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/recruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/recruit
-	mask =			/obj/item/clothing/mask/bandana/legrecruit
+	mask =			/obj/item/clothing/mask/bandana/legion/legrecruit
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	backpack_contents = list(
 		/obj/item/flashlight/lantern=1,
@@ -646,7 +665,7 @@
 	name =			"Camp Duty"
 	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/f13campfollower
 	id =			/obj/item/card/id/dogtag/legslavemaster
-	mask = 			/obj/item/clothing/mask/bandana/auxilia
+	mask = 			/obj/item/clothing/mask/bandana/legion/camp
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	shoes = 		/obj/item/clothing/shoes/roman
@@ -672,8 +691,8 @@
 	name =			"Forgemaster"
 	glasses =		/obj/item/clothing/glasses/welding
 	belt =			/obj/item/storage/belt/utility/full/engi
-	suit =			/obj/item/clothing/suit/armor/f13/opifex
-	gloves =		/obj/item/clothing/gloves/f13/blacksmith
+	suit =			/obj/item/clothing/suit/armor/f13/legion/forgemaster
+	gloves =		/obj/item/clothing/gloves/legion/forgemaster
 	shoes = 		/obj/item/clothing/shoes/f13/military/plated
 	suit_store =	/obj/item/twohanded/sledgehammer
 	backpack_contents = list(
@@ -888,7 +907,7 @@ Venator  - Removed to reduce role bloat and clarify chain of command.
 	id 			= 	/obj/item/card/id/dogtag/legvenator
 	suit 		= 	/obj/item/clothing/suit/armor/f13/legion/venator
 	head 		= 	/obj/item/clothing/head/helmet/f13/legion/venator
-	mask 		=	/obj/item/clothing/mask/bandana/legdecan
+	mask 		=	/obj/item/clothing/mask/bandana/legion/legdecan
 	neck 		=	/obj/item/storage/belt/holster
 	glasses 	= 	/obj/item/clothing/glasses/night
 	ears		=	/obj/item/radio/headset/headset_legion
