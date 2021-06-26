@@ -797,7 +797,7 @@ Raider
 
 /datum/outfit/loadout/bodyguard
 	name = "Bodyguard"
-	r_hand = /obj/item/gun/ballistic/shotgun/police,
+	r_hand = /obj/item/gun/ballistic/shotgun/police
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 						/obj/item/ammo_box/shotgun/buck=2, \
