@@ -923,7 +923,7 @@ GLOBAL_LIST_INIT(loot_t1_blueprint, list(
 GLOBAL_LIST_INIT(loot_t2_blueprint, list(
 	/obj/item/book/granter/crafting_recipe/blueprint/r91,
 	/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	/obj/item/book/granter/crafting_recipe/blueprint/breacher,
+	/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
 	/obj/item/book/granter/crafting_recipe/blueprint/r84,
 	/obj/item/book/granter/crafting_recipe/blueprint/r82,
 	/obj/item/book/granter/crafting_recipe/blueprint/deagle
