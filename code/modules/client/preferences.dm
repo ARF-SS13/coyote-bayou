@@ -235,6 +235,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/damagescreenshake = 2
 	var/arousable = TRUE
 	var/widescreenpref = TRUE
+	var/end_of_round_deathmatch = FALSE
 	var/autostand = TRUE
 	var/auto_ooc = FALSE
 
@@ -246,7 +247,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/scars_index = 1
 
 	var/hide_ckey = FALSE //pref for hiding if your ckey shows round-end or not
-	var/end_of_round_deathmatch = FALSE
 
 	var/special_s = 5
 	var/special_p = 5
@@ -390,7 +390,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(medical_records)]...<BR>"
 			dat += "<br><b>Hide ckey: <a href='?_src_=prefs;preference=hide_ckey;task=input'>[hide_ckey ? "Enabled" : "Disabled"]</b></a><br>"
-			dat += "<br><b>Participate in the end of round deathmatch: <a href='?_src_=prefs;preference=end_of_round_deathmatch;task=input'>[end_of_round_deathmatch ? "Enabled" : "Disabled"]</b></a><br>"
 			dat += "</tr></table>"
 */
 
@@ -688,6 +687,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat +="<td width='300px' height='300px' valign='top'>"
 			dat += "<h2>Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
+			dat += "<b>End of round deathmatch:</b> <a href='?_src_=prefs;preference=end_of_round_deathmatch'>[end_of_round_deathmatch ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 //			dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
@@ -2317,6 +2317,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
+				if("end_of_round_deathmatch")
+					end_of_round_deathmatch = !end_of_round_deathmatch
 				if("autostand")
 					autostand = !autostand
 				if("auto_ooc")

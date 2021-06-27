@@ -13,36 +13,46 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 
 /datum/controller/subsystem/ticker/proc/grant_eord_respawn(datum/dcs, mob/source)
 	SIGNAL_HANDLER
-	source.verbs += /mob/proc/eord_respawn
+	if(!source.client)
+		return
+	add_verb(source.client, /client/proc/eord_respawn)
 
 
 /mob/proc/spawn_at_eord(turf/spawn_location)
-	var/mob/living/carbon/human/spawned_mob = new (spawn_location)
 
-	var/datum/job/role = SSjob.GetJob(usr.mind?.assigned_role)
+	var/datum/job/role = SSjob.GetJob(mind.assigned_role)
 	if(!role)
 		role = SSjob.GetJob(SSjob.overflow_role)
 		if(!role)
 			CRASH("Failed to get overflow job.")
-	spawned_mob.apply_assigned_role_to_spawn(role, usr.client)
+	var/client/our_client = client
+	var/mob/living/carbon/human/spawned_mob = new (spawn_location)
+	mind.transfer_to(spawned_mob, TRUE)
+	spawned_mob.apply_assigned_role_to_spawn(role, our_client)
 
-	if(get_active_held_item()) // Hands free, let's give them a weapon.
+	if(!get_active_held_item() || !get_inactive_held_item()) // At least one hand free, let's give them a weapon.
 		var/obj/item/eord_weapon = pick(GLOB.eord_arsenal) // Get the type.
 		eord_weapon = new eord_weapon(spawn_location) // Instantiate it.
 		spawned_mob.put_in_hands(eord_weapon) // Equip it.
 
-	src.mind.transfer_to(spawned_mob, TRUE)
+	var/was_dead = ""
+	if(isliving(src) && is_centcom_level(z))
+		was_dead = " (again), try not to die this time"
 
-	to_chat(spawned_mob, "<br><br><h1><span class='danger'>Fight for your life[isliving(src) ? " (again), try not to die this time" : ""]!</span></h1><br><br>")
+	to_chat(spawned_mob, "<br><br><h1><span class='danger'>Fight for your life[was_dead]!</span></h1><br><br>")
 
 
 /// This is only available to mobs once they join EORD.
-/mob/proc/eord_respawn()
+/client/proc/eord_respawn()
 	set name = "EORD Respawn"
 	set category = "OOC"
 
-	if(isliving(usr))
-		var/mob/living/liver = usr
+	if(isnewplayer(mob))
+		to_chat(src, "Try observing before using this.")
+		return
+
+	if(isliving(mob))
+		var/mob/living/liver = mob
 		if(liver.stat == CONSCIOUS)
 			to_chat(src, "You can only use this when you're dead or unsconscious.")
 			return
@@ -52,7 +62,7 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 		to_chat(src, "Failed to find a valid deathmatch location to spawn into.")
 		return
 
-	usr.spawn_at_eord(spawn_location)
+	mob.spawn_at_eord(spawn_location)
 
 
 /datum/controller/subsystem/ticker/proc/end_of_round_deathmatch()
@@ -68,7 +78,10 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 			continue // This loop sleeps.
 		if(isnewplayer(player_mob))
 			continue
-		if(!player_mob.client?.prefs?.end_of_round_deathmatch)
+		if(!player_mob.client)
+			continue
+		add_verb(player_mob.client, /client/proc/eord_respawn)
+		if(!player_mob.client.prefs?.end_of_round_deathmatch)
 			continue
 		if(isliving(player_mob) && is_centcom_level(player_mob.z))
 			continue // Already at CentComm, lets not force them out of their bodies.

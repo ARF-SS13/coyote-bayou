@@ -246,7 +246,7 @@
 
 	end_of_round_deathmatch()
 	var/time_to_end = CONFIG_GET(number/eorg_period)
-	to_chat(world, "<span class='info'>World will reboot in [time_to_end * 0.1] seconds!</a></span>")
+	to_chat(world, "<span class='info'>EORD in progress, game end delayed by [time_to_end * 0.1] seconds!</a></span>")
 	addtimer(CALLBACK(src, .proc/standard_reboot), time_to_end)
 
 
