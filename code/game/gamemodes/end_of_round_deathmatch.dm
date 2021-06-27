@@ -1,5 +1,9 @@
 GLOBAL_LIST_EMPTY(deathmatch_spawn_points)
-
+GLOBAL_LIST_INIT(eord_arsenal, list(
+	/obj/item/twohanded/spear,
+	/obj/item/claymore/machete,
+	/obj/item/claymore/machete/warclub,
+))
 
 /obj/effect/landmark/deathmatch/Initialize()
 	. = ..()
@@ -7,9 +11,29 @@ GLOBAL_LIST_EMPTY(deathmatch_spawn_points)
 	return INITIALIZE_HINT_QDEL
 
 
-/datum/game_mode/proc/grant_eord_respawn(datum/dcs, mob/source)
+/datum/controller/subsystem/ticker/proc/grant_eord_respawn(datum/dcs, mob/source)
 	SIGNAL_HANDLER
 	source.verbs += /mob/proc/eord_respawn
+
+
+/mob/proc/spawn_at_eord(turf/spawn_location)
+	var/mob/living/carbon/human/spawned_mob = new (spawn_location)
+
+	var/datum/job/role = SSjob.GetJob(usr.mind?.assigned_role)
+	if(!role)
+		role = SSjob.GetJob(SSjob.overflow_role)
+		if(!role)
+			CRASH("Failed to get overflow job.")
+	spawned_mob.apply_assigned_role_to_spawn(role, usr.client)
+
+	if(get_active_held_item()) // Hands free, let's give them a weapon.
+		var/obj/item/eord_weapon = pick(GLOB.eord_arsenal) // Get the type.
+		eord_weapon = new eord_weapon(spawn_location) // Instantiate it.
+		spawned_mob.put_in_hands(eord_weapon) // Equip it.
+
+	src.mind.transfer_to(spawned_mob, TRUE)
+
+	to_chat(spawned_mob, "<br><br><h1><span class='danger'>Fight for your life[isliving(src) ? " (again), try not to die this time" : ""]!</span></h1><br><br>")
 
 
 /// This is only available to mobs once they join EORD.
@@ -28,21 +52,10 @@ GLOBAL_LIST_EMPTY(deathmatch_spawn_points)
 		to_chat(src, "Failed to find a valid deathmatch location to spawn into.")
 		return
 
-	var/mob/living/carbon/human/spawned_mob = new (picked)
-
-	var/datum/job/role = SSjob.GetJob(usr.assigned_role)
-	if(!role)
-		role = SSjob.GetJob(SSjob.overflow_role)
-		if(!role)
-			CRASH("Failed to get overflow job.")
-	spawned_mob.apply_assigned_role_to_spawn(role, usr.client)
-
-	usr.mind.transfer_to(spawned_mob, TRUE)
-
-	to_chat(spawned_mob, "<br><br><h1><span class='danger'>Fight for your life[isliving(src) ? " (again), try not to die this time" : ""]!</span></h1><br><br>")
+	usr.spawn_at_eord(spawn_location)
 
 
-/datum/game_mode/proc/end_of_round_deathmatch()
+/datum/controller/subsystem/ticker/proc/end_of_round_deathmatch()
 	RegisterSignal(SSdcs, COMSIG_GLOB_MOB_LOGIN, .proc/grant_eord_respawn) // New mobs can now respawn into EORD
 	var/list/spawns = GLOB.deathmatch_spawn_points.Copy()
 
@@ -63,33 +76,23 @@ GLOBAL_LIST_EMPTY(deathmatch_spawn_points)
 			to_chat(player_mob, "<br><br><h1><span class='danger'>You don't have a mind, if you believe this is not intended, please report it.</span></h1><br><br>")
 			continue
 
-		var/turf/picked
+		var/turf/spawn_location
 		if(length(spawns))
-			picked = pick(spawns)
-			spawns -= picked
+			spawn_location = pick(spawns)
+			spawns -= spawn_location
 		else
 			spawns = GLOB.deathmatch_spawn_points.Copy()
 			if(!length(spawns))
 				to_chat(world, "<br><br><h1><span class='danger'>End of Round Deathmatch initialization failed, please do not grief.</span></h1><br><br>")
 				return
-			picked = pick(spawns)
-			spawns -= picked
+			spawn_location = pick(spawns)
+			spawns -= spawn_location
 
-		if(!picked)
+		if(!spawn_location)
 			to_chat(player_mob, "<br><br><h1><span class='danger'>Failed to find a valid location for End of Round Deathmatch. Please do not grief.</span></h1><br><br>")
 			continue
 
-		var/mob/living/carbon/human/spawned_mob = new (picked)
-
-		var/datum/job/role = SSjob.GetJob(player_mob.assigned_role)
-		if(!role)
-			role = SSjob.GetJob(SSjob.overflow_role)
-			if(!role)
-				CRASH("Failed to get overflow job.")
-		spawned_mob.apply_assigned_role_to_spawn(role, player_mob.client)
-
-		player_mob.mind.transfer_to(spawned_mob, TRUE)
-		to_chat(spawned_mob, "<br><br><h1><span class='danger'>Fight for your life!</span></h1><br><br>")
+		player_mob.spawn_at_eord(spawn_location)
 		CHECK_TICK
 
 

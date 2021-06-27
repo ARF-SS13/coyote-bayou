@@ -245,11 +245,13 @@
 	SSblackbox.Seal()
 
 	end_of_round_deathmatch()
-	sleep(50)
-	ready_for_reboot = TRUE
-	standard_reboot()
+	var/time_to_end = CONFIG_GET(number/eorg_period)
+	to_chat(world, "<span class='info'>World will reboot in [time_to_end * 0.1] seconds!</a></span>")
+	addtimer(CALLBACK(src, .proc/standard_reboot), time_to_end)
+
 
 /datum/controller/subsystem/ticker/proc/standard_reboot()
+	ready_for_reboot = TRUE
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
 			Reboot("Station destroyed by Nuclear Device.", "nuke")

@@ -5417,10 +5417,8 @@
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "pg" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/effect/landmark/deathmatch,
+/turf/open/floor/plasteel/blue/side,
 /area/centcom/evac)
 "ph" = (
 /obj/structure/chair/office/dark{
@@ -6684,6 +6682,7 @@
 /area/centcom/evac)
 "sO" = (
 /obj/structure/chair,
+/obj/effect/landmark/deathmatch,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "sP" = (
@@ -6691,6 +6690,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/landmark/deathmatch,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "sQ" = (
@@ -9715,8 +9715,8 @@
 /turf/open/floor/grass,
 /area/wizard_station)
 "Bj" = (
-//obj/vehicle/ridden/scooter/skateboard,
-/turf/open/floor/plasteel/darkred/side,
+/obj/effect/landmark/deathmatch,
+/turf/open/floor/plasteel,
 /area/centcom/evac)
 "Bk" = (
 /obj/vehicle/ridden/space/speedbike,
@@ -10629,9 +10629,6 @@
 /turf/open/floor/plasteel,
 /area/wizard_station)
 "Ej" = (
-//obj/vehicle/ridden/scooter/skateboard{
-//	dir = 4
-//	},
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/light/small,
 /turf/open/floor/plasteel,
@@ -10781,9 +10778,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/underground/mountain)
 "EW" = (
-/obj/structure/table/wood,
-/turf/open/floor/engine/cult,
-/area/wizard_station)
+/obj/effect/landmark/deathmatch,
+/turf/open/floor/plasteel/blue/side{
+	dir = 1
+	},
+/area/centcom/evac)
 "EX" = (
 /obj/structure/table/wood,
 /obj/item/gun/magic/wand{
@@ -10865,6 +10864,10 @@
 /obj/effect/spawner/lootdrop/food,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/underground/mountain)
+"Fv" = (
+/obj/effect/landmark/deathmatch,
+/turf/open/floor/plasteel/neutral,
+/area/centcom/evac)
 "FT" = (
 /obj/structure/destructible/cult/forge{
 	desc = "An engine used in powering the wizard's ship";
@@ -11000,6 +11003,10 @@
 	},
 /turf/open/floor/grass,
 /area/centcom/holding)
+"Hq" = (
+/obj/effect/landmark/deathmatch,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/mountain)
 "Hy" = (
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = -32
@@ -11214,6 +11221,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/arena)
+"Jd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/deathmatch,
+/turf/open/floor/plasteel/neutral,
+/area/centcom/evac)
 "Jg" = (
 /obj/machinery/camera{
 	c_tag = "Red Team";
@@ -27105,7 +27117,7 @@ km
 jU
 jU
 DA
-pg
+ph
 pz
 Dh
 jU
@@ -30602,7 +30614,7 @@ DO
 Eb
 Ek
 qE
-EW
+EY
 qZ
 qZ
 Gr
@@ -31116,7 +31128,7 @@ DP
 Ed
 El
 qE
-EW
+EY
 qZ
 qZ
 Gr
@@ -32778,7 +32790,7 @@ zY
 wa
 qC
 AM
-Bj
+AN
 jU
 qo
 aa
@@ -33835,7 +33847,7 @@ rY
 rY
 rY
 rY
-rY
+Hq
 rY
 rY
 rY
@@ -34089,7 +34101,7 @@ wS
 wS
 rc
 rY
-rY
+Hq
 Yw
 rY
 rY
@@ -34598,7 +34610,7 @@ rb
 rb
 jU
 uB
-uB
+Fv
 uB
 uB
 Yk
@@ -35136,7 +35148,7 @@ rY
 rY
 rY
 rY
-rY
+Hq
 rY
 rY
 rY
@@ -36642,7 +36654,7 @@ wv
 jU
 jU
 MX
-vf
+pg
 Cy
 Cy
 Cy
@@ -36650,10 +36662,10 @@ Cy
 MX
 MX
 MX
-zl
+EW
 oS
 jU
-uB
+Fv
 uB
 uB
 uB
@@ -40792,7 +40804,7 @@ rY
 rY
 Yy
 rY
-rY
+Hq
 rY
 rc
 rb
@@ -41023,7 +41035,7 @@ zl
 xm
 jU
 uB
-Dk
+Jd
 uB
 uB
 xW
@@ -41268,7 +41280,7 @@ wv
 Cj
 jU
 MX
-MX
+Bj
 MX
 MX
 Cy
@@ -41276,7 +41288,7 @@ MX
 MX
 MX
 MX
-zl
+EW
 oS
 jU
 uB
@@ -42565,7 +42577,7 @@ xk
 CU
 jU
 Dc
-uB
+Fv
 Dc
 uB
 rY
@@ -43854,7 +43866,7 @@ Dn
 Dr
 Dc
 rY
-rY
+Hq
 rY
 Yx
 Yx

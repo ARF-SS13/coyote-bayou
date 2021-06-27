@@ -547,3 +547,8 @@
 	config_entry_value = 0.333
 	min_val = 0
 	integer = FALSE
+
+//adds a set amount to any injury rolls on a limb using get_damage() multiplied by this number
+/datum/config_entry/number/eorg_period
+	config_entry_value = 30 SECONDS
+	min_val = 1
