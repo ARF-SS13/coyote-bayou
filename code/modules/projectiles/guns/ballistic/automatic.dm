@@ -22,6 +22,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	var/auto_eject_sound = null
 	var/alarmed = 0
 	var/select = 1
+	var/worn_out = FALSE
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
@@ -45,6 +46,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
+	if(worn_out)
+		. += ("[initial(icon_state)]_worn")
 	if(automatic_burst_overlay)
 		if(!select)
 			. += ("[initial(icon_state)]semi")
@@ -148,7 +151,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 ///////////////////
 
 
-//Rockwell gun. 9mm
+//Rockwell gun. 9mm, real shoddy quality.
 /obj/item/gun/ballistic/automatic/sten
 	name = "the Rockwell gun"
 	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. Basically a toploaded sten gun with a pistol grip, allowing makeshift magazines without a spring."
@@ -214,7 +217,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 //10mm SMG
 /obj/item/gun/ballistic/automatic/smg10mm
 	name = "10mm submachine gun"
-	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
+	desc = "Mass-produced weapon from the Great War, this open-bolt 10mm submachine gun is sturdy and reliable."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -222,7 +225,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "smg10mm"
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM //You should be able to dual-wield these.
+	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
@@ -234,6 +237,15 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+
+/obj/item/gun/ballistic/automatic/smg10mm/worn
+	name = "worn-out 10mm submachine gun"
+	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
+	spread = 16
+	burst_shot_delay = 2
+	worn_out = TRUE
+
 
 //UZI. 9mm
 /obj/item/gun/ballistic/automatic/mini_uzi
@@ -253,10 +265,6 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	burst_shot_delay = 1
 	can_suppress = TRUE
 	can_attachments = TRUE
-	can_scope = TRUE
-	scope_state = "AEP7_scope"
-	scope_x_offset = 9
-	scope_y_offset = 21
 	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
@@ -320,8 +328,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 
 //Tommygun. .45
 /obj/item/gun/ballistic/automatic/tommygun
-	name = "Thompson SMG"
-	desc = "Based on the classic 'Chicago Typewriter'."
+	name = "ancient Thompson SMG"
+	desc = "Rusty, dinged up, but somehow still functional."
 	icon_state = "tommygun"
 	item_state = "shotgun"
 	slot_flags = 0
