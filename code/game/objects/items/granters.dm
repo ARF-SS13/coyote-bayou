@@ -9,6 +9,7 @@
 	var/oneuse = TRUE //default this is true, but admins can var this to 0 if we wanna all have a pass around of the rod form book
 	var/used = FALSE //only really matters if oneuse but it might be nice to know if someone's used it for admin investigations perhaps
 	var/select = FALSE
+	var/time_per_page = 5 SECONDS
 
 /obj/item/book/granter/proc/turn_page(mob/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
@@ -52,12 +53,12 @@
 	else
 		on_reading_start(user)
 		reading = TRUE
-		for(var/i=1, i<=pages_to_mastery, i++)
+		for(var/i in 1 to pages_to_mastery)
 			if(!turn_page(user))
 				on_reading_stopped()
 				reading = FALSE
 				return
-		if(do_after(user,50, TRUE, user))
+		if(do_after(user, time_per_page, TRUE, user))
 			on_reading_finished(user)
 		reading = FALSE
 	return TRUE
@@ -871,6 +872,7 @@
 	desc = "Your private diary, reminding you of the knowledge you previously had."
 	granted_trait = null
 	pages_to_mastery = 0
+	time_per_page = 0
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
 	var/list/choices = list("Chemistry","Craftsmanship","Melee Expert","Minor Surgery","Power Armor","Tinkerer","Trekking")
@@ -908,9 +910,8 @@
 				granted_trait = TRAIT_MASTER_GUNSMITH
 				traitname = "tinkering"
 				remarks = list("Adapt weaponry and armor to your uses...", "Experiment freely...", "You can always try three times...", "Be careful with loaded guns...")
+	return ..()
 
-	else
-		. = ..()
 
 /obj/item/book/granter/trait/selection/Initialize()
 	. = ..()
