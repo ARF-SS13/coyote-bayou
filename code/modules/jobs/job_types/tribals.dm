@@ -185,6 +185,7 @@ Tribal Head Hunter
 		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
+		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1)
 
 /*
@@ -239,10 +240,10 @@ Villager
 	flag = F13VILLAGER
 	department_flag = TRIBAL
 	faction = "Village"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "Tribal Chief, Shaman and Headhunter"
-	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe."
+	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not thread far or without informing your kin."
 	selection_color = "#006666"
 	exp_requirements = 300
 
@@ -364,7 +365,7 @@ Hunter
 		/obj/item/clothing/suit/armor/f13/lightcloak=1,
 		/obj/item/storage/belt/tribe_quiver=1,
 		/obj/item/kitchen/knife/combat/bone=1,
-		/obj/item/restraints/legcuffs/bola/tactical=2,
+		/obj/item/restraints/legcuffs/bola=2,
 		/obj/item/binoculars=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
 	)
@@ -375,6 +376,7 @@ Hunter
 		/obj/item/twohanded/spear/bonespear/deathclaw=1,
 		/obj/item/kitchen/knife/combat/bone=1,
 		/obj/item/binoculars=1,
+		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
 	)
 
@@ -386,10 +388,10 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = "Village"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "All other tribals."
-	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle."
+	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
 
 	outfit = /datum/outfit/job/tribal/f13spiritpledged
