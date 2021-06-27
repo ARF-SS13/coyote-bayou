@@ -21,14 +21,6 @@
 	name = "Afro"
 	icon_state = "hair_afro"
 
-/datum/sprite_accessory/hair/afro2
-	name = "Afro 2"
-	icon_state = "hair_afro2"
-
-/datum/sprite_accessory/hair/afro_large
-	name = "Afro (Large)"
-	icon_state = "hair_bigafro"
-
 /datum/sprite_accessory/hair/amazon
 	name = "Amazon"
 	icon_state = "amazon"
@@ -56,10 +48,6 @@
 /datum/sprite_accessory/hair/bedhead_long
 	name = "Bedhead (Long)"
 	icon_state = "hair_long_bedhead"
-
-/datum/sprite_accessory/hair/bedhead_longer
-	name = "Bedhead (Longer)"
-	icon_state = "long_bedhead_s"
 
 /datum/sprite_accessory/hair/bedhead2
 	name = "Bedhead 2"
@@ -308,6 +296,10 @@
 /datum/sprite_accessory/hair/longsideemo
 	name = "Emo (Long Side Emo)"
 	icon_state = "hair_longsideemo"
+
+/datum/sprite_accessory/hair/european
+	name = "European cut"
+	icon_state = "hair_european"
 
 /datum/sprite_accessory/hair/lowfade
 	name = "Fade (Low)"
@@ -585,10 +577,6 @@
 	name = "Pompadour"
 	icon_state = "hair_pompadour"
 
-/datum/sprite_accessory/hair/bigpompadour
-	name = "Pompadour (Big)"
-	icon_state = "hair_bigpompadour"
-
 /datum/sprite_accessory/hair/ponytail1
 	name = "Ponytail"
 	icon_state = "hair_ponytail"
@@ -831,10 +819,6 @@
 /datum/sprite_accessory/hair/twintails
 	name = "Twintails"
 	icon_state = "hair_twintail"
-
-/datum/sprite_accessory/hair/longtwintails
-	name = "Twintails (Long)"
-	icon_state = "hair_longstraighttwintails"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"
