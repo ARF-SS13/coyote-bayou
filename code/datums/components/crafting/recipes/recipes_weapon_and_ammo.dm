@@ -591,7 +591,7 @@
 //lever action
 /datum/crafting_recipe/lever_action
 	name = "Lever Action Shotgun"
-	result = /obj/item/gun/ballistic/shotgun/trench
+	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -746,7 +746,7 @@
 
 //breacher
 /datum/crafting_recipe/breacher
-	name = "Breacher Shotgun"
+	name = "Riot Shotgun"
 	result = /obj/item/gun/ballistic/automatic/shotgun/riot
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/alloys = 1,
