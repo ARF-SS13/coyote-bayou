@@ -35,9 +35,6 @@
 /obj/item/gun/ballistic/revolver
 	recoil = 0.5
 
-/obj/item/gun/ballistic/revolver/doublebarrel
-	recoil = 1
-
 /obj/item/gun/syringe
 	recoil = 0.1
 

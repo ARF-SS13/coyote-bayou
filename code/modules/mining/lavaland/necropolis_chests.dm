@@ -1105,7 +1105,7 @@
 		if(1)
 			new /obj/item/mayhem(src)
 		if(2)
-			new /obj/item/gun/ballistic/revolver/doublebarrel/super(src)
+			new /obj/item/guardiancreator(src)
 		if(3)
 			new /obj/item/guardiancreator(src)
 
@@ -1175,17 +1175,6 @@
 
 	log_combat(user, L, "took out a blood contract on", src)
 	qdel(src)
-
-/obj/item/gun/ballistic/revolver/doublebarrel/super
-	name = "super combat shotgun"
-	desc = "From the belly of the beast - or rather, demon. Twice as lethal as a less-than-super shotgun, but a tad bulkier."
-	icon_state = "heckgun"
-	slot_flags = null
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/heck
-	burst_size = 2
-	burst_shot_delay = 0
-	unique_reskin = null
-	sawn_off = TRUE
 
 //Colossus
 /obj/structure/closet/crate/necropolis/colossus
