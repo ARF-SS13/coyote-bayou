@@ -54,7 +54,7 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 	if(isliving(mob))
 		var/mob/living/liver = mob
 		if(liver.stat == CONSCIOUS)
-			to_chat(src, "You can only use this when you're dead or unsconscious.")
+			to_chat(src, "Ghost-up in order to use this verb.")
 			return
 
 	var/spawn_location = pick(GLOB.deathmatch_spawn_points)
