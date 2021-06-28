@@ -228,6 +228,7 @@ Druid
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
+		/obj/item/kitchen/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
@@ -350,7 +351,7 @@ Hunter
 	head = 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/f13/tribal_sandals
+	shoes = 	/obj/item/clothing/shoes/sandal
 	suit = 		/obj/item/clothing/suit/armor/f13/tribe_armor
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
