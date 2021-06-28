@@ -676,7 +676,7 @@
 //uzi
 /datum/crafting_recipe/uzi
 	name = "Uzi SMG"
-	result = /obj/item/gun/ballistic/automatic/mini_uzi
+	result = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1
 				)

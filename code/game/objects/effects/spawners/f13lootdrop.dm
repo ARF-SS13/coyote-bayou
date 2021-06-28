@@ -897,7 +897,7 @@
 /obj/effect/spawner/bundle/f13/miniuzi
 	name = "mini uzi and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/mini_uzi,
+				/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 				/obj/item/ammo_box/magazine/uzim9mm,
 				)
 
@@ -991,7 +991,7 @@
 /obj/effect/spawner/bundle/f13/smg22
 	name = "american 180 spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/smg22
+				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
 /obj/effect/spawner/bundle/f13/assault_rifle
@@ -1150,7 +1150,7 @@
 /obj/effect/spawner/bundle/f13/mp5
 	name = "mp5 and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/mp5,
+				/obj/item/gun/ballistic/automatic/smg/mp5,
 				/obj/item/ammo_box/magazine/uzim9mm
 	)
 /obj/effect/spawner/bundle/f13/citykiller
@@ -1226,7 +1226,7 @@
 /obj/effect/spawner/bundle/f13/tommygun
 	name = "tommygun and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/tommygun,
+				/obj/item/gun/ballistic/automatic/smg/tommygun,
 				/obj/item/ammo_box/magazine/tommygunm45
 	)
 

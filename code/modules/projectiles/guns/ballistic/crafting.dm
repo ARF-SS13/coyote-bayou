@@ -310,7 +310,7 @@
 	update_icon()
 	return
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -333,21 +333,21 @@
 	. = ..()
 */
 // UZI //
-/obj/item/gun/ballistic/automatic/mini_uzi/mid
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid
 	name = "enhanced uzi"
 	fire_delay = 4
 	extra_penetration = 0
 	extra_damage = 0
 
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/enable_burst()
 	. = ..()
 	spread = 7.5
 
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -369,21 +369,21 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/mini_uzi/high
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 	name = "advanced uzi"
 	fire_delay = 3
 	extra_damage = 5
 	extra_penetration = 0.1
 
-/obj/item/gun/ballistic/automatic/mini_uzi/high/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/enable_burst()
 	. = ..()
 	spread = 5
 
-/obj/item/gun/ballistic/automatic/mini_uzi/high/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/high/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -405,7 +405,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/mini_uzi/burst_select()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)

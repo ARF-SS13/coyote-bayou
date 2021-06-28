@@ -624,7 +624,7 @@ Trooper
 
 /datum/outfit/loadout/trooperfiresupport
 	name = "Fire Support"
-	suit_store = /obj/item/gun/ballistic/automatic/sten //Barely better then a pipe gun but you get a pretty rapid burst fire. Intended for suppression/CQC
+	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell //Barely better then a pipe gun but you get a pretty rapid burst fire. Intended for suppression/CQC
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_one=1,
 		/obj/item/ammo_box/magazine/uzim9mm=1)

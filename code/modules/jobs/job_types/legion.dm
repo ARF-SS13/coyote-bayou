@@ -241,7 +241,7 @@
 	head = 			/obj/item/clothing/head/helmet/f13/legion/heavy
 	suit_store =	/obj/item/twohanded/fireaxe
 	backpack_contents = list(
-					/obj/item/gun/ballistic/automatic/cg45=1,
+					/obj/item/gun/ballistic/automatic/smg/cg45=1,
 					/obj/item/ammo_box/magazine/cg45=2)
 
 /datum/outfit/loadout/decvetrear
