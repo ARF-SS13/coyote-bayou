@@ -557,7 +557,7 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
-	/obj/item/gun/ballistic/automatic/mini_uzi,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/gun/ballistic/automatic/smg10mm,
 	/obj/item/ammo_box/magazine/m10mm_adv/ext,
@@ -609,7 +609,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
 	/obj/item/gun/energy/laser/plasma,
-	/obj/item/gun/ballistic/automatic/tommygun,
+	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,

@@ -17,6 +17,8 @@ MECHANISMS
 	
 	AUTOMATIC
 	fire_delay = 3-7
+	burst_shot_delay = 3
+	spread = 7-14
 
 	REPEATER	
 	fire_delay = 8
@@ -40,8 +42,8 @@ BULK
 
 	MEDIUM GUNS
 	slowdown = 0.3-0.4
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY	
+	w_class = WEIGHT_CLASS_MEDUM - BULKY
+	weapon_weight = WEAPON_NORMAL - HEAVY	
 
 	RIFLES 
 	slowdown = 0.5
@@ -50,9 +52,9 @@ BULK
 
 GENERAL ACCURACY
 
-	PISTOLS Base spread = 2
-	RIFLES Base spread = 1
-	BURST FIRE Base spread = 10
+	PISTOLS Base spread = 3
+	RIFLES Base spread = 2
+	BURST FIRE Base spread = 7-14
 	(accurate guns lower, crap guns higher)
 
 
@@ -83,6 +85,12 @@ PARTS
 	AMMO RECOIL BASE VALUES
 	.50/12.7mm  recoil = 2
 	.45/70  recoil = 1
+
+FORCE 	Delicate, clumsy or small gun force 10
+		Pistol whip force 12
+		Rifle type force 15
+		Unusually sturdy clublike 20
+
 */
 
 
