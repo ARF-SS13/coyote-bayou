@@ -190,6 +190,19 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 
+//45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
+/obj/item/projectile/bullet/a45lc
+	name = ".45 LC bullet"
+	damage = 40 //44 magnum damage
+	armour_penetration = 0.15 //Less pen since you'll be bouncing it.
+	wound_bonus = 20
+	bare_wound_bonus = -20
+	ricochets_max = 3
+	ricochet_incidence_leeway = 130
+	ricochet_decay_damage = 1.3
+	ricochet_decay_chance = 1
+	ricochet_chance = 80 //100% if you have the vet's trait
+	ricochet_auto_aim_range = 4
 
 ////////////
 // .45-70 //
