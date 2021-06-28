@@ -503,7 +503,6 @@
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
 	r_pocket = /obj/item/melee/classic_baton/telescopic
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/leather
 	head = /obj/item/clothing/head/HoS/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana

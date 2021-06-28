@@ -17,7 +17,6 @@
 	else
 		new /obj/item/ammo_box/a357(src)
 		new /obj/item/ammo_box/a357(src)
-		new /obj/item/gun/ballistic/revolver/mateba(src)
 
 /obj/structure/closet/secure_closet/ertSec
 	name = "security closet"

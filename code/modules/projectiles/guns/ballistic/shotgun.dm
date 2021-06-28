@@ -1,5 +1,90 @@
 //In this document. Double barrel shotguns, Pump-action shotguns, Semi-auto shotgun, Bolt action rifles
 
+//////////////////////////////////////////
+//UNIVERSAL GUN CATEGORIES AND MODIFIERS//
+//////////////////////////////////////////
+/*
+MECHANISMS
+
+	SINGLE ACTION REVOLVER
+	fire_delay = 8
+
+	DOUBLE ACTION REVOLVER
+	fire_delay = 6-7	
+	
+	SEMI-AUTOMATIC
+	fire_delay = 3-7	
+	
+	AUTOMATIC
+	fire_delay = 3-7
+
+	REPEATER	
+	fire_delay = 8
+	
+	DOUBLE BARREL
+	fire_delay = 1
+
+	PUMP-ACTION
+	fire_delay = 7
+	(requires manual action to cycle)
+
+	BOLT-ACTION
+	fire_delay = 10-15
+	(requires manual action to cycle)
+
+BULK
+	SMALL GUNS
+	slowdown = 0.1-0.2
+	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT - NORMAL		
+
+	MEDIUM GUNS
+	slowdown = 0.3-0.4
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY	
+
+	RIFLES 
+	slowdown = 0.5
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+GENERAL ACCURACY
+
+	PISTOLS Base spread = 2
+	RIFLES Base spread = 1
+	BURST FIRE Base spread = 10
+	(accurate guns lower, crap guns higher)
+
+
+PARTS
+
+	PISTOL GRIP
+	Pistol grip modifiers for rifles sized ammo (12 gauge, 223. and above)
+	recoil = +1 //Standard malus for pistol grip
+	spread = 2 //Standard malus for pistol grip
+
+	SAWN OFF
+	recoil = 1
+	spread = 10
+	weapon_weight = WEAPON_LIGHT
+
+	LONG BARREL
+	extra_damage = +2
+	spread = -1
+
+	SHORT BARREL
+	extra_damage = -2
+	spread = +4
+
+	VERY SHORT BARREL
+	extra_damage = -3
+	spead = +8
+
+	AMMO RECOIL BASE VALUES
+	.50/12.7mm  recoil = 2
+	.45/70  recoil = 1
+*/
+
 
 /obj/item/gun/ballistic/shotgun
 	slowdown = 0.4 //Bulky gun slowdown with rebate since generally smaller than assault rifles
@@ -14,6 +99,7 @@
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
 	fire_delay = 7 //Typical pump action, pretty fast.
+	spread = 1
 	force = 15 //Decent clubs generally speaking
 	flags_1 =  CONDUCT_1
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
@@ -192,12 +278,12 @@
 	desc = "A old-world shotgun with large magazine and folding stock, made from steel and polymers."
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
 	var/stock = FALSE
-	recoil = 2
-	spread = 2
+	recoil = 1
+	spread = 3
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -215,12 +301,12 @@
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil = 1
-		spread = 0
+		recoil = 0
+		spread = 1
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil = 2
+		recoil = 1
 		spread = 3
 	update_icon()
 
@@ -253,7 +339,6 @@
 ///////////////////////////
 //SEMI-AUTOMATIC SHOTGUNS//
 ///////////////////////////
-//Moderate RoF
 
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
@@ -346,8 +431,8 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_delay = 7
 	burst_size = 1
-	recoil = 1 //Standard malus for pistol grip
-	spread = 2 //Standard malus for pistol grip
+	recoil = 1
+	spread = 2
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
@@ -413,8 +498,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	extra_damage = 0 //Normal barrel length for ammo
-	recoil = 1 //Standard malus for pistol grip
-	spread = 2 //Standard malus for pistol grip
+	recoil = 1
+	spread = 2
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
@@ -436,6 +521,7 @@
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_delay = 10
 	extra_damage = 2
+	spread = 0
 	can_scope = TRUE
 	scope_state = "rifle_scope"
 	scope_x_offset = 4
@@ -481,7 +567,7 @@
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	extra_damage = 1
-	fire_delay = 11
+	fire_delay = 12
 	can_scope = TRUE
 	scope_state = "mosin_scope"
 	scope_x_offset = 3
@@ -503,6 +589,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_delay = 11 //Heavy round, tiny bit slower
 	recoil = 2 //.50 recoil
+	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
 	zoomable = TRUE
 	zoom_amt = 10

@@ -337,7 +337,7 @@
 		new/obj/item/grenade/chem_grenade/ez_clean(src)
 
 /obj/item/storage/box/hug/reverse_revolver/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/reverse(src)
+	new /obj/item/clipboard(src)
 
 /obj/item/storage/box/syndie_kit/imp_radio/PopulateContents()
 	new /obj/item/implanter/radio/syndicate(src)
@@ -400,7 +400,6 @@
 /obj/item/storage/box/syndie_kit/revolver
 
 /obj/item/storage/box/syndie_kit/revolver/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/syndicate(src)
 	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/box/syndie_kit/pistol
