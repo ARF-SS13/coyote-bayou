@@ -795,10 +795,10 @@
 //Wayfarer
 /obj/item/clothing/head/helmet/f13/deathskull
 	name = "eerie helm"
-	desc = "(II) A helmet fastened from the skull of a deer. Something about it doesn't look right."
+	desc = "(IV) A helmet fastened from the skull of a deer. Something about it doesn't look right."
 	icon_state = "shamskull"
 	item_state = "shamskull"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 30, "bio" = 20, "rad" = 10, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/helmet/wayfarer
 

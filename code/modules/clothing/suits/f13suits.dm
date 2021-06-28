@@ -317,7 +317,7 @@
 	name = "deathclaw cloak"
 	icon_state = "clawsuitcloak"
 	desc = "(V) A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("tier" = 5, "energy" = 30, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
