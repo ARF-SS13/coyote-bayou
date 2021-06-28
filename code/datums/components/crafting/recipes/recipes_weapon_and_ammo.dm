@@ -744,8 +744,8 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//breacher
-/datum/crafting_recipe/breacher
+//Riot shotgun
+/datum/crafting_recipe/riotshotgun
 	name = "Riot Shotgun"
 	result = /obj/item/gun/ballistic/automatic/shotgun/riot
 	reqs = list(/obj/item/stack/sheet/metal = 5,

@@ -1794,7 +1794,7 @@
 	loot = list(
 		/obj/item/book/granter/crafting_recipe/blueprint/r91,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-		/obj/item/book/granter/crafting_recipe/blueprint/breacher,
+		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
 		/obj/item/book/granter/crafting_recipe/blueprint/r84,
 		/obj/item/book/granter/crafting_recipe/blueprint/r82,
 		/obj/item/book/granter/crafting_recipe/blueprint/deagle

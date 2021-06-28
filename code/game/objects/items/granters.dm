@@ -696,10 +696,10 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/r91)
 
-/obj/item/book/granter/crafting_recipe/blueprint/breacher
-	name = "breacher shotgun blueprint"
+/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun
+	name = "riot shotgun blueprint"
 	icon_state = "blueprint2"
-	crafting_recipe_types = list(/datum/crafting_recipe/breacher)
+	crafting_recipe_types = list(/datum/crafting_recipe/riotshotgun)
 
 /obj/item/book/granter/crafting_recipe/blueprint/sniper
 	name = "sniper rifle blueprint"
