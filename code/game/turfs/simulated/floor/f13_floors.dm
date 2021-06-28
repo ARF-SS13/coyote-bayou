@@ -107,6 +107,35 @@
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
 
+//GRAVEL INDOORS
+/turf/open/floor/plating/f13/inside/gravel
+	name = "gravel"
+	desc = "Small pebbles, lots of them."
+	icon = 'icons/fallout/turfs/ground.dmi'
+	icon_state = "gravel"
+
+/turf/open/floor/plating/f13/inside/gravel/edge
+	icon_state = "graveledge"
+
+/turf/open/floor/plating/f13/inside/gravel/corner
+	icon_state = "gravelcorner"
+
+
+//GRAVEL OUTDOORS
+/turf/open/floor/plating/f13/inside/gravel
+	name = "gravel"
+	desc = "Small pebbles, lots of them."
+	icon = 'icons/fallout/turfs/ground.dmi'
+	icon_state = "gravel"
+	sunlight_state = SUNLIGHT_SOURCE
+
+/turf/open/floor/plating/f13/inside/gravel/edge
+	icon_state = "graveledge"
+
+/turf/open/floor/plating/f13/inside/gravel/corner
+	icon_state = "gravelcorner"
+
+
 //New standard wood floor for most areas, oak for Legion and pure log cabins only, maple for NCR and mayor only, maybe a diner.
 
 /turf/open/floor/wood/f13
@@ -238,17 +267,9 @@
 /turf/open/floor/wood/f13/stage_br
 	icon_state = "housewood_stage_bottom_right"
 
-/turf/open/floor/plating/f13/inside/gravel
-	name = "gravel"
-	desc = "Small pebbles, lots of them."
-	icon = 'icons/fallout/turfs/ground.dmi'
-	icon_state = "gravel"
-
-/turf/open/floor/plating/f13/inside/gravel/edge
-	icon_state = "graveledge"
-
-/turf/open/floor/plating/f13/inside/gravel/corner
-	icon_state = "gravelcorner"
+//WOOD FLOOR FOR BRIDGES ETC, OUTDOORS
+/turf/open/floor/wood/f13/stage_b/outdoors
+	sunlight_state = SUNLIGHT_SOURCE
 
 #define SHROOM_SPAWN	1
 

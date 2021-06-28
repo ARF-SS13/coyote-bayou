@@ -1067,9 +1067,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	B.extra_damage += (dmgmod)
-	B.extra_penetration += (penmod/60)
-	B.fire_delay += (spdmod/5)
+	B.extra_damage += (dmgmod/2) //edited from /1 
+	B.extra_penetration += (penmod/120) //edited from /60
+	B.fire_delay += (spdmod/10) //edited from/5
 	B.name = prefix + B.name
 	B.tinkered += 1
 	B.desc += " Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
@@ -1115,9 +1115,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	E.extra_damage += (dmgmod/4)
-	E.extra_penetration += (penmod/240)
-	E.fire_delay += (spdmod/20)
+	E.extra_damage += (dmgmod/2)
+	E.extra_penetration += (penmod/120)
+	E.fire_delay += (spdmod/10)
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
