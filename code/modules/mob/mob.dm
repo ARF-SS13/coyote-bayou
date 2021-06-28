@@ -488,10 +488,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		qdel(M)
 		return
 
-	if(mind)
-		mind.transfer_to(M, TRUE)
-	else
-		M.key = key
+	M.key = key
 
 
 /mob/proc/transfer_ckey(mob/new_mob, send_signal = TRUE)
