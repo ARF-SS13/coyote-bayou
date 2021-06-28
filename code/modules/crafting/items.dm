@@ -1115,9 +1115,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	E.extra_damage += (dmgmod/2)
-	E.extra_penetration += (penmod/120)
-	E.fire_delay += (spdmod/10)
+	E.extra_damage += (dmgmod/4)
+	E.extra_penetration += (penmod/240)
+	E.fire_delay += (spdmod/20)
 	//E.ammo_type[1].delay += spdmod
 	E.name = prefix + E.name
 	E.tinkered += 1
