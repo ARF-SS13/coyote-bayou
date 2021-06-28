@@ -128,10 +128,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m127mm
-	name = "handgun magazine (12.7)"
+	name = "handgun magazine (14mm)"
 	icon_state = "magnum"
 	ammo_type = /obj/item/ammo_casing/a127mm
-	caliber = "12.7"
+	caliber = "14"
 	max_ammo = 7
 	multiple_sprites = 2
 
