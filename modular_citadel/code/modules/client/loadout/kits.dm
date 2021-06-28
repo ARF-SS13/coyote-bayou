@@ -27,22 +27,12 @@
 	new /obj/item/modkit/riotgear/fox(src)
 	new /obj/item/modkit/riotgear_helmet/fox(src)
 	new /obj/item/clothing/under/f13/ranger/vet/foxflannel(src)
-
+/*
 //Rigs - topbirb
 /obj/item/storage/box/large/custom_kit/rigs/PopulateContents()
 	new /obj/item/modkit/riotgear/rigs(src)
 	new /obj/item/modkit/riotgear_helmet/rigs(src)
-
-//Avery Amadeus - topbirb
-/obj/item/storage/box/large/custom_kit/averyamadeus/PopulateContents()
-	new /obj/item/modkit/riotgear(src)
-	new /obj/item/modkit/riotgear_helmet(src)
-
-//Sangarinus Of Kanab - topbirb
-/obj/item/storage/box/large/custom_kit/sangarinusofkanab/PopulateContents()
-	new /obj/item/modkit/custom_excess(src)
-	new /obj/item/modkit/custom_excess_helmet(src)
-
+*/
 //John Thaxton - svenja
 /obj/item/storage/box/large/custom_kit/johnthaxton/PopulateContents()
 	new /obj/item/modkit/thax_patrol(src)

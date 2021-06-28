@@ -319,7 +319,7 @@ Head Knight
 /datum/outfit/loadout/capalt
 	name = "Warden-Defender"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/riot=1,
+		/obj/item/gun/ballistic/shotgun/police=1,
 		/obj/item/storage/fancy/ammobox/lethalshot=2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/gun/energy/laser/pistol=1
@@ -669,7 +669,7 @@ datum/job/bos/f13seniorknight
 /datum/outfit/loadout/sknightb
 	name = "Knight-Defender"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/riot=1,
+		/obj/item/gun/ballistic/shotgun/police=1,
 		/obj/item/storage/fancy/ammobox/lethalshot=2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/gun/energy/laser/pistol=1

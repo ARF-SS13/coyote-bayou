@@ -55,6 +55,7 @@
 	target_items = list(/obj/item/clothing/suit/armor/f13/raider)
 	result_item = /obj/item/clothing/suit/armor/f13/shankduster
 
+/*
 /obj/item/modkit/custom_excess
 	name = "champion of kanab's armor modkit"
 	target_items = list(/obj/item/clothing/suit/armor/f13/legion/centurion,
@@ -68,6 +69,7 @@
 						/obj/item/clothing/head/helmet/f13/legion/rangercent,
 						/obj/item/clothing/head/helmet/f13/legion/palacent)
 	result_item = /obj/item/clothing/head/helmet/f13/legion/palacent/custom_excess
+*/
 
 /obj/item/modkit/piper_hat
 	name = "gambler's hat modkit"

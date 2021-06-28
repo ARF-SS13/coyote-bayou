@@ -316,11 +316,11 @@
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
 
 /obj/item/ammo_box/m127mm
-	name = "ammo box (12.7mm)"
+	name = "ammo box (14mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50aebox"
 	multiple_sprites = 2
-	caliber = "12.7"
+	caliber = "14"
 	ammo_type = /obj/item/ammo_casing/a127mm
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL

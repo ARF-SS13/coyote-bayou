@@ -505,17 +505,17 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockplastic&&receiver)//uzi
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
@@ -1068,9 +1068,9 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	B.extra_damage += (dmgmod)
-	B.extra_penetration += (penmod/60)
-	B.fire_delay += (spdmod/5)
+	B.extra_damage += (dmgmod/2) //edited from /1 
+	B.extra_penetration += (penmod/120) //edited from /60
+	B.fire_delay += (spdmod/10) //edited from/5
 	B.name = prefix + B.name
 	B.tinkered += 1
 	B.desc += " Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"

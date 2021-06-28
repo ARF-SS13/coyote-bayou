@@ -24,6 +24,16 @@
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/flashlight/flare/torch(src)
 
+/obj/item/storage/survivalkit_tribal/chief
+
+/obj/item/storage/survivalkit_tribal/chief/PopulateContents()
+	. = ..()
+	new /obj/item/reagent_containers/pill/patch/healingpowder(src)
+	new /obj/item/reagent_containers/pill/patch/healingpowder(src)
+	new /obj/item/reagent_containers/pill/patch/healpoultice(src)
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/flashlight/flare/torch(src)
+
 /obj/item/storage/survivalkit_adv
 	name = "survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."

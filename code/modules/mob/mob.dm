@@ -489,7 +489,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		return
 
 	M.key = key
-	return
+
 
 /mob/proc/transfer_ckey(mob/new_mob, send_signal = TRUE)
 	if(!new_mob || (!ckey && new_mob.ckey))

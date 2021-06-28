@@ -79,9 +79,22 @@
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 	strip_delay = 40
 	resistance_flags = NONE
+	can_be_tied = FALSE
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/f13/military/leather
+	name = "leather combat boots"
+	desc = "A pair of laced, heavy-duty leather boots designed for hard combat."
+	icon_state = "laced"
+	item_state = "laced"
+
+/obj/item/clothing/shoes/f13/military/desert
+	name = "desert combat boots"
+	desc = "An old pair of desert combat boots. This one seems to have a tighter fit, and a padded interior."
+	icon_state = "erin_boot"
+	item_state = "erin_boot"
 
 /obj/item/clothing/shoes/f13/military/ncr
 	name = "patrol boots"
@@ -95,31 +108,49 @@
 	icon_state = "ncr_officer_boots"
 	item_state = "ncr_officer_boots"
 
+
+/obj/item/clothing/shoes/roman
+	name = "roman sandals"
+	desc = "Sandals with buckled leather straps on it."
+	icon = 'icons/fallout/objects/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/feet.dmi'
+	icon_state = "legion-sandals"
+	item_state = "legion-sandals"
+	strip_delay = 100
+	equip_delay_other = 100
+	permeability_coefficient = 0.9
+	can_be_tied = FALSE
+
+/obj/item/clothing/shoes/f13/peltboots
+	name = "pelt boots"
+	desc = "These boots are made from tanned hide and lined with soft long horner wool. A fashion from wealthy tribes that has spread. "
+	icon = 'icons/fallout/objects/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/feet.dmi'
+	icon_state = "legion-pelt"
+	item_state = "legion-pelt"
+	cold_protection = FEET
+	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
+	clothing_flags = NOSLIP
+
 /obj/item/clothing/shoes/f13/military/plated
-	name = "plated metal boots"
-	desc = "A pair of leather boots reinforced with metal toe caps and shin guards."
-	icon_state = "legionmetal"
-	item_state = "legionmetal"
+	name = "plated war boots"
+	desc = "A pair of leather boots reinforced with hardened toe caps and shin guards, usually recycled old workboot steel caps taken from rotted old boots and glued to new ones."
+	icon = 'icons/fallout/objects/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/feet.dmi'
+	icon_state = "legion-war"
+	item_state = "legion-war"
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
-	desc = "A pair of heavy leather boots with overlapping steel plates affixed to the front, sides, and back of them, in size 14. These belong to a Legatus of Caesar's Legion."
-	icon_state = "legionlegate"
-	item_state = "legionlegate"
+	desc = "A pair of heavy leather boots with bronzed metal leg guards added. These belong to a Legate of Caesar's Legion."
+	icon = 'icons/fallout/objects/clothing/shoes.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/feet.dmi'
+	icon_state = "legion-legate"
+	item_state = "legion-legate"
 	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 10, fire = 30, acid = 10)
 
-/obj/item/clothing/shoes/f13/military/leather
-	name = "leather combat boots"
-	desc = "A pair of laced, heavy-duty leather boots designed for hard combat."
-	icon_state = "laced"
-	item_state = "laced"
 
-/obj/item/clothing/shoes/f13/military/desert
-	name = "desert combat boots"
-	desc = "An old pair of desert combat boots. This one seems to have a tighter fit, and a padded interior."
-	icon_state = "erin_boot"
-	item_state = "erin_boot"
 
 //Fluff
 
@@ -197,3 +228,7 @@
 /obj/item/clothing/shoes/f13/mutie/boots/ncr/ranger
 	icon_state = "mutie_boots_ranger"
 	icon_state = "mutie_boots_ranger"
+
+/obj/item/clothing/shoes/f13/tribal_sandals
+	icon_state = "tribaltreads"
+	icon_state = "tribaltreads"

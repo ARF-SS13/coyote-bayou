@@ -109,7 +109,6 @@
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/gloves/krav_maga/sec(src)
 	new /obj/item/door_remote/head_of_security(src)
-	new /obj/item/gun/ballistic/shotgun/riot(src)
 	new /obj/item/clothing/head/beret/sec/corporatewarden(src)
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
@@ -234,8 +233,6 @@
 	new /obj/item/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/fancy/ammobox(src)
-	for(var/i in 1 to 3)
-		new /obj/item/gun/ballistic/shotgun/riot(src)
 /obj/structure/closet/secure_closet/armory3
 	name = "armory energy gun locker"
 	req_access = list(ACCESS_ARMORY)

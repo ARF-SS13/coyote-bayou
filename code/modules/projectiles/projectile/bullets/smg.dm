@@ -1,4 +1,4 @@
-//.45 ACP
+/*/.45 ACP
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
 	damage = 32 //35
@@ -24,3 +24,4 @@
 /obj/item/projectile/bullet/c5mm
 	damage = 19 //30
 	armour_penetration = 0.5
+*/

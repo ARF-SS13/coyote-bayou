@@ -152,7 +152,7 @@
 	desc = "A storage case for a multi-purpose handgun. Variety hour!"
 
 /obj/item/storage/secure/briefcase/mws_pack/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/mws(src)
+	new /obj/item/gun/ballistic/revolver(src)
 	new /obj/item/ammo_box/magazine/mws_mag(src)
 	for(var/path in subtypesof(/obj/item/ammo_casing/mws_batt))
 		new path(src)
@@ -162,8 +162,8 @@
 	desc = "A storage case for a multi-purpose handgun. Variety hour!"
 
 /obj/item/storage/secure/briefcase/hos/mws_pack_hos/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/mws(src)
-	new /obj/item/ammo_box/magazine/mws_mag(src)
+	new /obj/item/gun/ballistic/revolver(src)
+	new /obj/item/gun/ballistic/revolver(src)
 	new /obj/item/ammo_casing/mws_batt/lethal(src)
 	new /obj/item/ammo_casing/mws_batt/lethal(src)
 	new /obj/item/ammo_casing/mws_batt/stun(src)

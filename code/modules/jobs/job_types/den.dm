@@ -729,7 +729,7 @@ Mayor
 	backpack_contents = list(
 	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 	/obj/item/storage/box/matches=1,
-	/obj/item/gun/ballistic/automatic/mini_uzi=1
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi=1
 	)
 
 /datum/outfit/loadout/investor

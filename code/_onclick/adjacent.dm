@@ -25,7 +25,7 @@
 	* If you are diagonally adjacent, ensure you can pass through at least one of the mutually adjacent square.
 		* Passing through in this case ignores anything with the LETPASSTHROW pass flag, such as tables, racks, and morgue trays.
 */
-/turf/Adjacent(atom/neighbor, atom/target = null, atom/movable/mover = null)
+/turf/Adjacent(atom/neighbor, atom/target, atom/movable/mover)
 	var/turf/T0 = get_turf(neighbor)
 
 	if(T0 == src) //same turf
@@ -37,7 +37,7 @@
 	// Non diagonal case
 	if(T0.x == x || T0.y == y)
 		// Check for border blockages
-		return T0.ClickCross(get_dir(T0,src), border_only = 1, target_atom = target, mover = mover) && src.ClickCross(get_dir(src,T0), border_only = 1, target_atom = target, mover = mover)
+		return T0.ClickCross(get_dir(T0, src), TRUE, target, mover) && src.ClickCross(get_dir(src, T0), TRUE, target, mover)
 
 	// Diagonal case
 	var/in_dir = get_dir(T0,src) // eg. northwest (1+8) = 9 (00001001)
@@ -45,16 +45,16 @@
 	var/d2 = in_dir & (EAST|WEST)			 // eg. west	  (1+8)&12 (0000 1100) = 8 (0000 1000)
 
 	for(var/d in list(d1,d2))
-		if(!T0.ClickCross(d, border_only = 1, target_atom = target, mover = mover))
+		if(!T0.ClickCross(d, TRUE, target, mover))
 			continue // could not leave T0 in that direction
 
 		var/turf/T1 = get_step(T0,d)
 		if(!T1 || T1.density)
 			continue
-		if(!T1.ClickCross(get_dir(T1,src), border_only = 0, target_atom = target, mover = mover) || !T1.ClickCross(get_dir(T1,T0), border_only = 0, target_atom = target, mover = mover))
+		if(!T1.ClickCross(get_dir(T1, src), FALSE, target, mover) || !T1.ClickCross(get_dir(T1, T0), FALSE, target, mover))
 			continue // couldn't enter or couldn't leave T1
 
-		if(!src.ClickCross(get_dir(src,T1), border_only = 1, target_atom = target, mover = mover))
+		if(!src.ClickCross(get_dir(src, T1), TRUE, target, mover))
 			continue // could not enter src
 
 		return 1 // we don't care about our own density
@@ -65,7 +65,7 @@
 	Adjacency (to anything else):
 	* Must be on a turf
 */
-/atom/movable/Adjacent(atom/neighbor)
+/atom/movable/Adjacent(atom/neighbor, atom/target, atom/movable/mover)
 	if(neighbor == loc)
 		return TRUE
 	var/turf/T = loc
@@ -76,13 +76,13 @@
 	return FALSE
 
 // This is necessary for storage items not on your person.
-/obj/item/Adjacent(atom/neighbor, recurse = 1)
+/obj/item/Adjacent(atom/neighbor, atom/target, atom/movable/mover, recurse = 1)
 	if(neighbor == loc)
 		return 1
 	if(isitem(loc))
 		if(recurse > 0)
 			for(var/obj/item/item_loc as anything in get_locs())
-				if(item_loc.Adjacent(neighbor, recurse - 1))
+				if(item_loc.Adjacent(neighbor, target, mover, recurse - 1))
 					return TRUE
 		return 0
 	return ..()
@@ -92,11 +92,11 @@
 	This is defined as any dense ON_BORDER_1 object, or any dense object without LETPASSTHROW.
 	The border_only flag allows you to not objects (for source and destination squares)
 */
-/turf/proc/ClickCross(target_dir, border_only, target_atom = null, atom/movable/mover = null)
+/turf/proc/ClickCross(target_dir, border_only, atom/target, atom/movable/mover)
 	for(var/obj/O in src)
 		if((mover && O.CanPass(mover, target_dir)) || (!mover && !O.density))
 			continue
-		if(O == target_atom || O == mover || (O.pass_flags & LETPASSTHROW)) //check if there's a dense object present on the turf
+		if(O == target || O == mover || (O.pass_flags & LETPASSTHROW)) //check if there's a dense object present on the turf
 			continue // LETPASSTHROW is used for anything you can click through (or the firedoor special case, see above)
 
 		if( O.flags_1&ON_BORDER_1) // windows are on border, check them first

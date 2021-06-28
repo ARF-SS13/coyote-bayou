@@ -788,7 +788,7 @@ Raider
 
 /datum/outfit/loadout/hitman
 	name = "Hitman"
-	r_hand = /obj/item/gun/ballistic/automatic/mini_uzi
+	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 						/obj/item/ammo_box/magazine/uzim9mm=3, \
@@ -797,7 +797,7 @@ Raider
 
 /datum/outfit/loadout/bodyguard
 	name = "Bodyguard"
-	r_hand = /obj/item/gun/ballistic/shotgun/riot
+	r_hand = /obj/item/gun/ballistic/shotgun/police
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 						/obj/item/ammo_box/shotgun/buck=2, \

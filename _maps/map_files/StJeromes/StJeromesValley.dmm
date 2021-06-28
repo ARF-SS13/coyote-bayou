@@ -607,8 +607,7 @@
 "abA" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/lever,
-/obj/item/gun/ballistic/shotgun/lever,
+/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever,
 /turf/open/floor/plasteel/darkred,
 /area/f13/brotherhood)
 "abB" = (
@@ -7652,9 +7651,7 @@
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light,
-/obj/item/gun/ballistic/shotgun/lever,
-/obj/item/gun/ballistic/shotgun/lever,
-/obj/item/gun/ballistic/shotgun/lever,
+/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/vault/security/checkpoint)
 "avy" = (
@@ -22184,7 +22181,6 @@
 /area/f13/legion)
 "bpD" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/mask/bandana/legdecan,
 /obj/item/claymore/machete/gladius,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/mountain)
@@ -24901,7 +24897,7 @@
 /area/f13/legion)
 "bxD" = (
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/automatic/mini_uzi,
+/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
 "bxE" = (
@@ -28821,7 +28817,7 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "bHY" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
 /obj/item/storage/box/teargas,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"

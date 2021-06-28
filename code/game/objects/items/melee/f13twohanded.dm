@@ -266,6 +266,7 @@
 	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	force = 20
 	armour_penetration = 0.3
+	max_reach = 2
 	icon_state = "clawspear0"
 	icon_prefix = "clawspear"
 
@@ -362,7 +363,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	force = 5
 	var/force_on = 60
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	throwforce = 20
 	throw_speed = 2
 	throw_range = 4

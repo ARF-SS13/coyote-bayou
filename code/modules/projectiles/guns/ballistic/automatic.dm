@@ -1,9 +1,10 @@
 //In this document: SMGs, Carbines, Rifles, Assault rifles, Machineguns and Misc.
-/*Current templates
-Force 12 for stuff without a stock or thats clumsy, 15 for most, 20 for those with a nice stock to bash with and that arent super heavy.
-Slowdown 0.2 for smg, 0.5 for most, 2 for machineguns
-Burst 2 as base, only special guns get more and has to be rare or balance other ways with current system.
-*/
+
+
+////////////////////////////////////
+//AUTOMATIC TEMPLATE AND FUNCTIONS//
+////////////////////////////////////
+
 
 /obj/item/gun/ballistic/automatic
 	name = "automatic gun template"
@@ -14,7 +15,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = 0
 	force = 15
 	burst_size = 2
-	burst_shot_delay = 2
+	burst_shot_delay = 3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	var/automatic_burst_overlay = TRUE
 	var/semi_auto = FALSE
@@ -22,6 +23,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	var/auto_eject_sound = null
 	var/alarmed = 0
 	var/select = 1
+	var/worn_out = FALSE
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
@@ -45,6 +47,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
+	if(worn_out)
+		. += ("[initial(icon_state)]_worn")
 	if(automatic_burst_overlay)
 		if(!select)
 			. += ("[initial(icon_state)]semi")
@@ -148,44 +152,48 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 ///////////////////
 
 
-//Rockwell gun. 9mm
-/obj/item/gun/ballistic/automatic/sten
-	name = "the Rockwell gun"
-	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. Basically a toploaded sten gun with a pistol grip, allowing makeshift magazines without a spring."
+//SMG TEMPLATE
+/obj/item/gun/ballistic/automatic/smg/
+	name = "SMG TEMPLATE"
+	desc = "should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_HEAVY //Automatic fire and onehanded use mix poorly.
+	slowdown = 0.2
+	fire_delay = 4 //most SMGs are pretty rapid fire
+	spread = 10
+	force = 12 //Less good for bashing since smaller than rifles
+
+
+//Rockwell gun. 9mm poor quality.
+/obj/item/gun/ballistic/automatic/smg/rockwell
+	name = "the Rockwell gun"
+	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. Basically a toploaded sten gun with a pistol grip, allowing makeshift magazines without a spring."
 	icon_state = "rockwell"
 	item_state = "rockwell"
-	slowdown = 0.2
-	w_class = WEIGHT_CLASS_NORMAL
-	force = 10
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_shot_delay = 0.5
-	fire_delay = 1
-	spread = 11
+	force = 12 //lacking stock and awful as a club
+	burst_shot_delay = 2.5
+	spread = 13
 	extra_damage = -2
 	can_attachments = TRUE
 
 
 //American 180. .22 LR
-/obj/item/gun/ballistic/automatic/smg22
+/obj/item/gun/ballistic/automatic/smg/american180
 	name = "American 180"
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle. Top loaded drum magazine."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "smg22"
 	item_state = "shotgun"
 	slowdown = 0.3
-	slot_flags = 0
-	force = 10
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22smg
-	fire_sound = 'sound/f13weapons/american180.ogg'
 	can_unsuppress = FALSE
-	burst_shot_delay = 0.5
+	burst_shot_delay = 1 //rapid fire
 	suppressed = 1
-
+	fire_sound = 'sound/f13weapons/american180.ogg'
 
 //Greasegun. .45 ACP
 /obj/item/gun/ballistic/automatic/greasegun
@@ -202,10 +210,10 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 	force = 12
-	fire_delay = 2.5
-	burst_shot_delay = 1
+	fire_delay = 5
+	burst_shot_delay = 5 //Slow rate of fire
 	can_attachments = TRUE
-	spread = 12
+	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
@@ -222,65 +230,60 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "smg10mm"
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM //You should be able to dual-wield these.
+	weapon_weight = WEAPON_MEDIUM
 	force = 12
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
-	fire_delay = 5
-	burst_shot_delay = 1.5
+	fire_delay = 4
 	can_attachments = TRUE
-	spread = 14
 	suppressor_state = "10mm_suppressor" //activate if sprited 
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
+/obj/item/gun/ballistic/automatic/smg10mm/worn
+	name = "worn-out 10mm submachine gun"
+	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
+	spread = 12
+	fire_delay = 5
+	burst_shot_delay = 2.5
+	worn_out = TRUE
+
+
 //UZI. 9mm
-/obj/item/gun/ballistic/automatic/mini_uzi
+/obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "uzi"
 	item_state = "uzi"
 	slowdown = 0.2
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
-	force = 12
-	fire_delay = 4
-	burst_shot_delay = 1
+	fire_delay = 3
+	burst_shot_delay = 2.5
 	can_suppress = TRUE
 	can_attachments = TRUE
-	can_scope = TRUE
-	scope_state = "AEP7_scope"
-	scope_x_offset = 9
-	scope_y_offset = 21
-	spread = 10
+	spread = 11
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 
 
 //Carl Gustaf. 10mm. Two handed firing, so should be a level above the 1h SMGs.
-/obj/item/gun/ballistic/automatic/cg45
+/obj/item/gun/ballistic/automatic/smg/cg45
 	name = "Carl Gustaf 10mm"
-	desc = "Post-war submachine gun made in workshops based on a simple old design. Chambered in 10mm."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
 	slowdown = 0.2
 	mag_type = /obj/item/ammo_box/magazine/cg45
-	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 12
-	fire_delay = 4
-	burst_shot_delay = 1
+	fire_delay = 3
 	spread = 9
 	can_attachments = TRUE
+	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 
 //Ppsh-41. 9mm. Seems weird this is so common, ww2 soviet stuff should be a rare drop if anything. Two handed firing, should be better than 1h SMGs.
@@ -289,10 +292,11 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	desc = "An extremely fast firing, inaccurate submachine gun from World War 2. Low muzzle velocity. Uses 9mm rounds."
 	icon_state = "pps"
 	slowdown = 0.3
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
 	burst_size = 3
 	fire_delay = 6
-	burst_shot_delay = 1
+	burst_shot_delay = 1.5
 	can_attachments = TRUE
 	extra_damage = -4
 	can_scope = TRUE
@@ -303,14 +307,15 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 
 
 //MP-5. Silenced 9mm. Kinda boring.
-/obj/item/gun/ballistic/automatic/mp5
+/obj/item/gun/ballistic/automatic/smg/mp5
 	name = "MP-5 SD"
 	desc = "An integrally suppressed sub machine chambered in 9mm."
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	spread = 6
-	burst_shot_delay = 1
+	spread = 8
+	fire_delay = 4
+	burst_shot_delay = 2
 	suppressed = 1
 	can_attachments = TRUE
 	can_suppress = FALSE
@@ -319,17 +324,18 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 
 
 //Tommygun. .45
-/obj/item/gun/ballistic/automatic/tommygun
-	name = "Thompson SMG"
-	desc = "Based on the classic 'Chicago Typewriter'."
+/obj/item/gun/ballistic/automatic/smg/tommygun
+	name = "ancient Thompson SMG"
+	desc = "Rusty, dinged up, but somehow still functional."
 	icon_state = "tommygun"
 	item_state = "shotgun"
-	slot_flags = 0
+	slowdown = 0.3
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	burst_size = 3
-	burst_shot_delay = 3
-	fire_delay = 5
+	burst_shot_delay = 4
+	fire_delay = 6
 
 
 
@@ -355,17 +361,17 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
-//M1 Carbine - 10mm
+//M1 Carbine - 10mm long barrel. Low end carbine option for NCR.
 /obj/item/gun/ballistic/automatic/m1carbine
 	name = "m1 carbine"
-	desc = "The M1 Carbine is a renowned carbine that has been in service since WW2. Recently retired, these guns were transferred to National Guard Armouries and rechambered to 10mm."
+	desc = "The M1 Carbine was mass produced in the 40´s, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
 	icon_state = "m1carbine"
 	item_state = "rifle"
 	burst_size = 1
-	fire_delay = 2
+	fire_delay = 5
+	spread = 2
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
-	extra_damage = 4
-	extra_penetration = 0.08
+	extra_damage = 2
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
 	bayonet_state = "lasmusket"
@@ -376,7 +382,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	scope_x_offset = 5
 	scope_y_offset = 14
 	can_attachments = TRUE
-	can_automatic = TRUE
+	can_automatic = FALSE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
@@ -434,10 +440,10 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "delisle"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 3
-	extra_penetration = 0.06
-	fire_delay = 6
+	extra_damage = 2
+	fire_delay = 4.5
 	burst_size = 1
+	spread = 2
 	can_unsuppress = FALSE
 	suppressed = 1
 	can_attachments = TRUE
@@ -458,9 +464,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 3
+	extra_damage = 2
 	extra_penetration = 0.1
-	fire_delay = 6
+	fire_delay = 5
 	burst_size = 2
 	can_attachments = FALSE
 	can_automatic = FALSE
@@ -485,8 +491,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "varmintrifle"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 8.5
+	fire_delay = 7
 	burst_size = 1
+	spread = 1
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_attachments = TRUE
@@ -527,8 +534,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 3
+	fire_delay = 5
 	burst_size = 1
+	spread = 3
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -549,8 +557,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	icon_state = "R82"
 	item_state = "R84"
-	spread = 3
-	fire_delay = 2
+	spread = 2
+	fire_delay = 4
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
 	suppressor_y_offset = 28
@@ -561,8 +569,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	name = "scout carbine"
 	desc = "A cut down version of the standard-issue service rifle tapped with mounting holes for a scope. Shorter barrel, lower muzzle velocity."
 	icon_state = "scout_carbine"
-	extra_damage = -4
+	extra_damage = -2
 	fire_delay = 4
+	spread = 3
 	can_scope = TRUE
 	scope_state = "smallrifle_scope"
 	scope_x_offset = 4
@@ -580,7 +589,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4
 	burst_size = 1
-	extra_damage = 2
+	extra_damage = 1
+	spread = 3
 	can_attachments = TRUE
 	can_automatic = TRUE
 	semi_auto = TRUE
@@ -608,7 +618,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
 	burst_size = 1
-	fire_delay = 4.5
+	fire_delay = 5
+	spread = 2
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_attachments = TRUE
@@ -639,7 +650,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
 	burst_size = 1
-	fire_delay = 4.5
+	fire_delay = 5
+	spread = 2
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_attachments = TRUE
@@ -662,11 +674,11 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	item_state = "rifle"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/garand308
-	fire_delay = 4
+	fire_delay = 5
 	burst_size = 1
+	spread = 1
 	en_bloc = 1
 	auto_eject = 1
-	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	semi_auto = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "lasmusket"
@@ -676,6 +688,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	scope_state = "rifle_scope"
 	scope_x_offset = 5
 	scope_y_offset = 14
+	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 /obj/item/gun/ballistic/automatic/m1garand/update_icon()
@@ -718,6 +731,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "sks"
 	item_state = "sks"
 	force = 20
+	spread = 1
 	mag_type = /obj/item/ammo_box/magazine/sks
 	fire_delay = 6
 	extra_penetration = 0.1
@@ -730,7 +744,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle. .30
+//DKS 501 sniper rifle. .308, extra projectile speed.
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
@@ -760,8 +774,8 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	spread = 1
-	fire_delay = 3
+	spread = 5
+	fire_delay = 4
 	burst_shot_delay = 2
 	can_suppress = FALSE
 	can_unsuppress = FALSE
@@ -788,7 +802,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4
 	burst_shot_delay = 1
-	spread = 8
+	spread = 7
 	can_attachments = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "rifles"
@@ -809,8 +823,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 3
-	burst_shot_delay = 0.5
+	burst_shot_delay = 1
 	fire_delay = 3
+	spread = 5
 	can_attachments = TRUE
 	zoomable = TRUE
 	zoom_amt = 10
@@ -825,9 +840,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "type93"
 	item_state = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 3
+	fire_delay = 4
 	spread = 10
-	extra_damage = 2
+	extra_damage = 1
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
@@ -840,7 +855,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "chinese"
 	item_state = "handmade_rifle"
-	fire_delay = 4
+	fire_delay = 5
 	spread = 13
 	extra_damage = -3
 	can_suppress = FALSE
@@ -855,7 +870,7 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3
 	burst_shot_delay = 1
-	spread = 16
+	spread = 10
 	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "smallrifle_scope"
@@ -873,8 +888,9 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	name = "m16a1"
 	desc = "The pre-war predecessor of the NCR service rifle. Select fire with three round burst. Chambered in 5.56."
 	icon_state = "m16a1"
-	fire_delay = 1
+	fire_delay = 4
 	burst_size = 3
+	spread = 9
 	automatic_burst_overlay = TRUE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = FALSE
@@ -887,10 +903,11 @@ Burst 2 as base, only special guns get more and has to be rare or balance other 
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	force = 20
-	burst_shot_delay = 1
+	fire_delay = 3
+	burst_shot_delay = 2
 	mag_type = /obj/item/ammo_box/magazine/m762
 	spread = 10
-	fire_delay = 3
+	fire_delay = 4
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 
