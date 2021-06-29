@@ -547,6 +547,7 @@
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	untinkerable = TRUE
 	fire_delay = 5
 	burst_size = 1
 	spread = 3
@@ -939,11 +940,12 @@
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = -1
-	burst_shot_delay = 1.5
+	burst_shot_delay = 2
 	spread = 6
 	randomspread = 1
+	untinkerable = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/r84/burst_select()
