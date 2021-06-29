@@ -653,7 +653,7 @@
 //pps
 /datum/crafting_recipe/pps
 	name = "Ppsh-41"
-	result = /obj/item/gun/ballistic/automatic/pps
+	result = /obj/item/gun/ballistic/automatic/smg/ppsh
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 2
@@ -710,7 +710,7 @@
 //10mm smg
 /datum/crafting_recipe/smg10mm
 	name = "10mm SMG"
-	result = /obj/item/gun/ballistic/automatic/smg10mm
+	result = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1
 				)
@@ -723,7 +723,7 @@
 //grease gun
 /datum/crafting_recipe/grease_gun
 	name = "Grease Gun"
-	result = /obj/item/gun/ballistic/automatic/greasegun
+	result = /obj/item/gun/ballistic/automatic/smg/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				)

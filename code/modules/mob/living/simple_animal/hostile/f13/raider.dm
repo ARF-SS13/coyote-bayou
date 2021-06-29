@@ -119,7 +119,7 @@
 	health = 170
 	extra_projectiles = 3
 	projectiletype = /obj/item/projectile/bullet/c45/op
-	loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/greasegun)
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/smg/greasegun)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
 	..()

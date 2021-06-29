@@ -573,7 +573,7 @@
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/smg/PopulateContents()
 	for(var/i in 1 to 9)
-		new /obj/item/ammo_box/magazine/smgm45(src)
+		new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/dark_gygax
 	desc = "A large duffel bag, packed to the brim with various exosuit ammo."
@@ -604,16 +604,14 @@
 	desc = "A large duffel bag containing a C-20r, some magazines, and a cheap looking suppressor."
 
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
-	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/ammo_box/magazine/smgm45(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
 	new /obj/item/suppressor/specialoffer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	desc = "A large duffel bag containing a Bulldog, some drums, and a pair of thermal imaging glasses."
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle/PopulateContents()
-	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/ammo_box/magazine/smgm45(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
 	new /obj/item/suppressor/specialoffer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle

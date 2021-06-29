@@ -842,7 +842,7 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/caphat/beret/white
 	mask = /obj/item/clothing/mask/bandana/durathread
-	suit_store = /obj/item/gun/ballistic/automatic/p90/worn
+	suit_store = /obj/item/gun/ballistic/automatic/smg/p90/worn
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
