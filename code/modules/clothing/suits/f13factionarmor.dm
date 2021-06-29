@@ -220,9 +220,11 @@
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
-	desc = "(V) Armor worn by veterans, salvaged bits of enemy armor and scrap metal often reinforcing the armor."
+	desc = "(V) Armor worn by veterans, salvaged bits of enemy armor and scrap metal often reinforcing the armor. Very heavy, slows you down a bit."
+	slowdown = 0.2
 	icon_state = "legion-veteran"
 	item_state = "legion-veteran"
+
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/heavy
