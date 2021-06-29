@@ -939,7 +939,6 @@
 /area/f13/bunker)
 "bgX" = (
 /obj/structure/chair/comfy/brown,
-/obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "bgY" = (
@@ -2444,10 +2443,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
-"dhl" = (
-/obj/effect/spawner/lootdrop/costume,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/vault)
 "dhm" = (
 /obj/structure/chair/comfy/black,
 /obj/item/radio/intercom{
@@ -5642,10 +5637,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
-"gWY" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "gXl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6556,10 +6547,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"ifo" = (
-/mob/living/simple_animal/hostile/mirelurk/hunter,
-/turf/open/water,
-/area/f13/underground/cave)
 "ifN" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/security,
@@ -7403,11 +7390,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"jqN" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/obj/structure/flora/grass/jungle,
-/turf/open/water,
-/area/f13/underground/cave)
 "jru" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -8929,10 +8911,6 @@
 /obj/structure/sign/departments/botany,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker)
-"liC" = (
-/obj/structure/mirelurkegg,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "liK" = (
 /obj/structure/simple_door/bunker,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -9311,10 +9289,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
-"lRI" = (
-/obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "lSd" = (
@@ -10405,7 +10379,6 @@
 /area/f13/wasteland)
 "nej" = (
 /obj/structure/flora/junglebush,
-/mob/living/simple_animal/hostile/mirelurk/baby,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "neB" = (
@@ -11047,11 +11020,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"nSM" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/clothing_high,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "nSW" = (
 /obj/structure/table/abductor{
 	desc = "After YEARS of research, prototyping, and testing, the brotherhood created the sequel to the table. Advanced flat surface technology at work!";
@@ -11485,10 +11453,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/bunker)
-"osJ" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/turf/open/water,
-/area/f13/underground/cave)
 "osK" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
@@ -11969,10 +11933,6 @@
 /area/f13/underground/cave)
 "oYr" = (
 /turf/open/floor/plasteel/neutral,
-/area/f13/vault)
-"oYC" = (
-/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "oYY" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
@@ -14555,10 +14515,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
-"shP" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/turf/open/water,
-/area/f13/underground/cave)
 "shT" = (
 /obj/machinery/light{
 	dir = 8
@@ -18696,10 +18652,6 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/bunker)
-"xub" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "xuH" = (
 /obj/structure/chair/bench,
 /obj/item/clothing/under/f13/vault{
@@ -23192,7 +23144,7 @@ heT
 bYA
 bYA
 bYA
-liC
+wPz
 aCs
 wPz
 wpy
@@ -23451,7 +23403,7 @@ bYA
 wpy
 wPz
 sZI
-liC
+wPz
 wPz
 aCs
 wPz
@@ -23710,7 +23662,7 @@ wpy
 pny
 bFu
 bFu
-osJ
+bFu
 wPz
 wPz
 wPz
@@ -23955,7 +23907,7 @@ wPz
 bFu
 pny
 bFu
-gWY
+wPz
 wpy
 bYA
 bYA
@@ -24132,7 +24084,7 @@ rMW
 jQh
 mAN
 mAN
-dhl
+bZy
 bZy
 bZy
 bZy
@@ -24217,13 +24169,13 @@ wPz
 odX
 fMc
 las
-liC
+wPz
 wPz
 wpy
 pny
 tjZ
 bFu
-shP
+bFu
 pny
 tjZ
 gYw
@@ -24391,7 +24343,7 @@ mAN
 wnY
 bZy
 bZy
-oYC
+bZy
 bZy
 dqe
 mAN
@@ -24475,7 +24427,7 @@ bFu
 dMZ
 dMZ
 wPz
-gWY
+wPz
 wPz
 bFu
 bFu
@@ -24650,7 +24602,7 @@ ult
 bZy
 bZy
 bZy
-oYC
+bZy
 mAN
 mAN
 mAN
@@ -24723,7 +24675,7 @@ heT
 heT
 bYA
 bYA
-gWY
+wPz
 pny
 gYw
 bFu
@@ -24741,7 +24693,7 @@ bFu
 pny
 tjZ
 gYw
-liC
+wPz
 bYA
 heT
 heT
@@ -24993,7 +24945,7 @@ qWw
 bFu
 bFu
 bFu
-ifo
+bFu
 bFu
 bFu
 gYw
@@ -25240,7 +25192,7 @@ bYA
 wpy
 wpy
 wpy
-liC
+wPz
 nej
 wPz
 wPz
@@ -25760,10 +25712,10 @@ bYA
 bYA
 bYA
 bYA
-liC
+wPz
 wPz
 bFu
-ifo
+bFu
 bFu
 bFu
 bFu
@@ -26276,7 +26228,7 @@ heT
 bYA
 wpy
 nZw
-jqN
+pny
 bFu
 tjZ
 pny
@@ -26792,8 +26744,8 @@ bYA
 nZw
 tXk
 wPz
-xub
-nSM
+wPz
+sZI
 tXk
 nZw
 tXk
@@ -27048,7 +27000,7 @@ heT
 bYA
 bYA
 bYA
-liC
+wPz
 wpy
 tMv
 nZw
@@ -33902,7 +33854,7 @@ kcN
 kcN
 kcN
 hKr
-lRI
+mGB
 mAN
 myJ
 bZy
