@@ -127,6 +127,73 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+
+/datum/reagent/medicine/berserker_powder
+	name = "berserker powder"
+	description = "a combination of psychadelic mushrooms and tribal drugs used by legion berserkers. Induces a trancelike state, allowing them much greater pain resistance. Extremely dangerous, even for those who are trained to use it. It's a really bad idea to use this if you're not a berserker. Even if you are, taking it for too long causes extreme symptoms when the trance ends."
+	reagent_state = SOLID
+	color =  "#7f7add"
+	taste_description = "heaven."
+	metabolization_rate = 0.70 * REAGENTS_METABOLISM 
+	overdose_threshold = 20 
+
+/datum/reagent/medicine/berserker_powder/on_mob_life(mob/living/carbon/M)
+	if(HAS_TRAIT(M, TRAIT_BERSERKER))
+		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.AdjustUnconscious(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	else
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
+		M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustOxyLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+	..()
+	. = TRUE
+/datum/reagent/medicine/berserker_powder/on_mob_add(mob/living/carbon/human/M)
+	..()
+	if(isliving(M))
+		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
+		M.maxHealth += 40
+		M.health += 40
+		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+
+/datum/reagent/medicine/berserker_powder/on_mob_delete(mob/living/carbon/human/M)
+	if(isliving(M))
+		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
+		M.maxHealth -= 40
+		M.health -= 40
+		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+
+	switch(current_cycle)
+		if(1 to 25)
+			M.confused += 10
+			M.blur_eyes(20)
+			to_chat(M, "<span class='notice'>Your head is pounding. You feel like screaming. The visions beckon you to go further, to split the veil forever and cross over. You know you shouldn't. </span>")
+		if(26 to 50)
+			M.confused +=20
+			M.blur_eyes(30)
+			M.losebreath += 8
+			M.set_disgust(12)
+			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
+			to_chat(M, "<span class='danger'>Your stomach churns, you vomit, and the blurring of your vision doesn't go away. The visions beckon you further, you're so close.... </span>")
+		if(51 to INFINITY)
+			M.confused +=40
+			M.blur_eyes(30)
+			M.losebreath += 10
+			M.set_disgust(25)
+			M.adjustStaminaLoss(40*REAGENTS_EFFECT_MULTIPLIER)
+			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
+			M.Jitter(1000)
+			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
+			M.set_heartattack(TRUE)
+			M.visible_message("<span class='userdanger'>[M] grabs at their throat and vomits violently onto the ground, screaming as they have a seizure! They need medical attention immediately!</span>")
+			to_chat(M, "<span class='userdanger'>The sky splits in half, rays of golden light piercing down towards you. Mars reaches out of the sky above, the holy aura causing you to fall to your knees. He beckoning you to heaven, and you take his hand. Your whole body begins to seize up as you go in a glorious rapture. </span>")
+
+/datum/reagent/medicine/berserker/overdose_process(mob/living/M)
+	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+	..()
+	. = TRUE
+
 /datum/reagent/medicine/bitter_drink
 	name = "bitter drink"
 	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."

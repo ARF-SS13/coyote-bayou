@@ -228,7 +228,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
 	lefthand_file = ""
 	righthand_file = ""
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	dynamic_hair_suffix = ""
@@ -243,16 +243,16 @@
 
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
-	desc = "(II) It's a leather skullcap issued to recruits."
+	desc = "(III) It's a leather skullcap issued to recruits."
 	icon_state = "legion-recruit"
 	item_state = "legion-recruit"
 
 /obj/item/clothing/head/helmet/f13/legion/prime
 	name = "legion prime helmet"
-	desc = "(III) A helmet from reinforced leather witha red peak."
+	desc = "(IV) A helmet from reinforced leather witha red peak."
 	item_state = "legion-prime"
 	icon_state = "legion-prime"
-	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
 	name = "slave master helmet"
@@ -265,26 +265,27 @@
 
 /obj/item/clothing/head/helmet/f13/legion/vet
 	name = "legion veteran helmet"
-	desc = "(IV) It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
+	desc = "(V) It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
 	icon_state = "legion-veteran"
 	item_state = "legion-veteran"
-	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	name = "legion explorer hood"
 	desc = "(IV) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	name = "legion bear vexillarius helmet"
-	desc = "(IV) This helmet is decorated with the pelt of a ashland bear."
+	desc = "(V) This helmet is decorated with the pelt of a ashland bear."
 	icon_state = "legion-vex"
 	item_state = "legion-vex"
 
 /obj/item/clothing/head/helmet/f13/legion/vet/vexil
 	name = "legion fox vexillarius helmet"
-	desc = "(IV) This helmet is decorated with the pelt of a desert fox."
+	desc = "(V) This helmet is decorated with the pelt of a desert fox."
 	icon_state = "legion-vex-alt"
 	item_state = "legion-vex-alt"
 
@@ -297,10 +298,10 @@
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/decan
 	name = "legion recruit decanus helmet"
-	desc = "(V) This reinforced leather helmet has a plume of black and dark red feathers."
+	desc = "(IV) This reinforced leather helmet has a plume of black and dark red feathers."
 	icon_state = "legion-decrec"
 	item_state = "legion-decrec"
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
@@ -337,6 +338,19 @@
 	item_state = "legion-centurion"
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/centurion/berserker
+	name = "berserker centurion helmet"
+	desc = "(IV) A custom forged steel full helmet made for a Centurion who has proven themselves in melee combat. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
+	icon_state = "palacent_excess"
+	item_state = "palacent_excess"
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/item/clothing/head/helmet/f13/legion/centurion/berserker/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
+
 
 /obj/item/clothing/head/helmet/f13/legion/rangercent
 	name = "ranger-hunter centurion helmet"
@@ -400,6 +414,27 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
 	icon_state = "legion-combat2"
 	item_state = "legion-combat2"
+
+
+/obj/item/clothing/head/helmet/f13/legion/vet/heavy
+	name = "legion shieldbearer helmet"
+	desc = "(VI) A metal legion veteran helmet with an inverted color scheme for shieldbearers"
+	icon_state = "legheavy"
+	item_state = "legheavy"
+	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/recruit/berserker
+	name = "legion berserker's hood"
+	desc = "(II) It's a leather hood worn by legion berserkers."
+	icon_state = "legscout"
+	item_state = "legscout"
+	armor = list("tier" = 2, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	
+
+/obj/item/clothing/head/helmet/f13/legion/recruit/berserker/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
 
 /*
 /obj/item/clothing/head/helmet/f13/legion/recruit/scout
@@ -522,17 +557,17 @@
 
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"
-	desc = "(VI) A green beret, standard issue for all commissioned NCR Officers."
+	desc = "(V) A green beret, standard issue for all commissioned NCR Officers."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon
 	name = "NCR First Recon beret"
-	desc = "(VI) A red beret, issued to members of NCR First Recon."
+	desc = "(V) A red beret, issued to members of NCR First Recon."
 	icon_state = "ncr_recon_beret"
 	item_state = "ncr_recon_beret"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon/worn
 	name = "Worn NCR First Recon beret"
@@ -543,38 +578,38 @@
 
 /obj/item/clothing/head/beret/ncr_scout
 	name = "NCR Third Scout beret"
-	desc = "(VI) A brown beret, issued to members of the NCR Third Scout Battallion."
+	desc = "(IV) A brown beret, issued to members of the NCR Third Scout Battallion."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_scout_lt
 	name = "NCR Third Scout officer beret"
-	desc = "(VI) A brown beret, issued to officers of the NCR Third Scout Battallion."
+	desc = "(IV) A brown beret, issued to officers of the NCR Third Scout Battallion."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_sapper
 	name = "NCR Sapper beret"
-	desc = "(VII) A grey beret, issued to troopers that have passed Sapper School."
+	desc = "(VI) A grey beret, issued to troopers that have passed Sapper School."
 	icon_state = "ncr_sapper_beret"
 	item_state = "ncr_sapper_beret"
-	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_sof
 	name = "NCR SOF beret"
-	desc = "(VII) A tan beret, issued members of the New California Republic Special Operations Command."
+	desc = "(IV) A tan beret, issued members of the New California Republic Special Operations Command."
 	icon_state = "ncr_sof_beret"
 	item_state = "ncr_sof_beret"
-	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ncr_stetson
 	name = "NCR air cavalry stetson"
-	desc = "(VII) A black brahmin leather stetson, authorized for usage amongst all troopers assigned to Air Cavalry units."
+	desc = "(IV) A black brahmin leather stetson, authorized for usage amongst all troopers assigned to Air Cavalry units."
 	icon_state = "ncr_stetson"
 	item_state = "ncr_stetson"
-	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ncr_cap
 	name = "NCR garrison cap"
@@ -585,10 +620,10 @@
 
 /obj/item/clothing/head/f13/ncr_campaign
 	name = "NCR campaign hat"
-	desc = "(VII) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
+	desc = "(IV) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
 	icon_state = "ncr_campaign"
 	item_state = "ncr_campaign"
-	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_dresscap
 	name = "NCR peaked cap"

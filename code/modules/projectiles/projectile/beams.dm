@@ -269,7 +269,7 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 70
+	damage = 49
 	armour_penetration = 0.6
 	flag = "laser"
 	eyeblur = 0
