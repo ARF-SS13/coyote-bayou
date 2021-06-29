@@ -228,8 +228,11 @@
 /obj/item/clothing/suit/armor/f13/legion/vet/heavy
 	name = "legion shieldbearer armor"
 	desc = "(VI) The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/objects/clothing/suits.dmi'
 	icon_state = "legheavy"
-	slowdown = 0.5
+	item_state = "legheavy"
+	slowdown = 0.8
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/heavy

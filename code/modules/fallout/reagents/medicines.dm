@@ -153,30 +153,30 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>The veil breaks, and the heavens spill out! The spirits of Mars float down from the heavens, and the deafining beat of the holy legion's wardrums fills your ears. Their ethereal forms are guiding you in battle!</span>")
-		M.maxHealth += 40
-		M.health += 40
+		M.maxHealth += 20
+		M.health += 20
 		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/medicine/berserker_powder/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>The veil comes back, blocking out the heavenly visions. You breathe a sigh of relief...</span>")
-		M.maxHealth -= 40
-		M.health -= 40
+		M.maxHealth -= 20
+		M.health -= 20
 		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 	switch(current_cycle)
-		if(1 to 35)
+		if(1 to 30)
 			M.confused += 10
 			M.blur_eyes(20)
 			to_chat(M, "<span class='notice'>Your head is pounding. You feel like screaming. The visions beckon you to go further, to split the veil forever and cross over. You know you shouldn't. </span>")
-		if(35 to 65)
+		if(30 to 55)
 			M.confused +=20
 			M.blur_eyes(30)
 			M.losebreath += 8
 			M.set_disgust(12)
 			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
 			to_chat(M, "<span class='danger'>Your stomach churns, you vomit, and the blurring of your vision doesn't go away. The visions beckon you further, you're so close.... </span>")
-		if(65 to INFINITY)
+		if(55 to INFINITY)
 			M.confused +=40
 			M.blur_eyes(30)
 			M.losebreath += 10

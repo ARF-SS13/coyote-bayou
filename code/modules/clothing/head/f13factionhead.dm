@@ -407,6 +407,7 @@
 	name = "legion shieldbearer helmet"
 	desc = "(VI) A metal legion veteran helmet with an inverted color scheme for shieldbearers"
 	icon = 'icons/mob/clothing/head.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
 	icon_state = "legvetheavy"
 	item_state = "legvetheavy"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
