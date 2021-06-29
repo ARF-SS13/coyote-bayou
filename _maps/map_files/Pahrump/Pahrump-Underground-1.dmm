@@ -289,10 +289,10 @@
 	},
 /area/f13/bunker)
 "aky" = (
-/obj/structure/bed,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -556,9 +556,9 @@
 /area/f13/caves)
 "aAL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usprivate,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -1277,11 +1277,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "bns" = (
-/obj/structure/bed,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -1299,8 +1299,8 @@
 	},
 /area/f13/followers)
 "bof" = (
-/obj/structure/bed,
 /obj/item/bedsheet,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2912,9 +2912,9 @@
 	},
 /area/f13/den)
 "cOS" = (
-/obj/structure/bed/pod,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/leisure)
 "cPA" = (
@@ -3863,7 +3863,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "dEG" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -3877,8 +3877,8 @@
 /area/f13/caves)
 "dFh" = (
 /obj/item/bedsheet/red,
-/obj/structure/bed/pod,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "dFz" = (
@@ -3931,12 +3931,12 @@
 /area/f13/bunker)
 "dHz" = (
 /obj/item/bedsheet/red,
-/obj/structure/bed/pod,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1;
 	pixel_x = 16
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "dHQ" = (
@@ -4331,9 +4331,9 @@
 	},
 /area/f13/tunnel)
 "dYM" = (
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usspy,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -4414,8 +4414,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "edB" = (
-/obj/structure/bed,
 /obj/item/bedsheet,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "edM" = (
@@ -4716,11 +4716,11 @@
 	},
 /area/f13/brotherhood/operations)
 "eqz" = (
-/obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetblue"
 	},
 /obj/effect/landmark/start/f13/followersdoctor,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -5545,10 +5545,10 @@
 	},
 /area/f13/bunker)
 "fbD" = (
-/obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "fcy" = (
@@ -5609,11 +5609,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "ffJ" = (
-/obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetblue"
 	},
 /obj/effect/landmark/start/f13/followersvolunteer,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -5709,9 +5709,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood/leisure)
 "fji" = (
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usprivate,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -6674,7 +6674,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/item/gun/ballistic/automatic/pistol/pistol127/compact,
+/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "gbG" = (
@@ -6727,9 +6727,9 @@
 /area/f13/followers)
 "gcD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/pod,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -7232,8 +7232,8 @@
 	},
 /area/f13/bunker)
 "guo" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
+/obj/structure/bed/old,
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "guw" = (
@@ -7734,10 +7734,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gSD" = (
-/obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetUSA"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -8077,8 +8077,8 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "hfb" = (
-/obj/structure/bed,
 /obj/item/bedsheet/random,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "hfr" = (
@@ -8222,7 +8222,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hmM" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -8556,7 +8556,7 @@
 /area/f13/den)
 "huw" = (
 /obj/structure/light_construct,
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13{
 	icon_state = "bluefull"
 	},
@@ -10360,11 +10360,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "iSf" = (
-/obj/structure/bed,
 /obj/item/reagent_containers/pill/patch/jet,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor6-old"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -10636,10 +10636,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "jcn" = (
-/obj/structure/bed,
 /obj/machinery/camera/autoname{
 	dir = 9
 	},
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13{
 	icon_state = "bluefull"
 	},
@@ -11176,8 +11176,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "jwN" = (
-/obj/structure/bed,
 /obj/item/bedsheet/medical,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluedirtyfull"
 	},
@@ -11896,7 +11896,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "jYL" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -11992,13 +11992,13 @@
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
 "kbH" = (
-/obj/structure/bed,
 /obj/item/bedsheet/hos,
 /obj/item/toy/figure/warden{
 	desc = "A refurbished military action figure made to look like a member of the Brotherhood of Steel.";
 	name = "Head Knight Action Figure";
 	toysay = "Victory is our tradition!"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "kcD" = (
@@ -12586,9 +12586,9 @@
 /area/f13/tunnel)
 "kBs" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usspy,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -13295,8 +13295,8 @@
 /area/f13/brotherhood/operations)
 "leT" = (
 /obj/machinery/light,
-/obj/structure/bed,
 /obj/item/bedsheet/medical,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "bluerustyfull"
 	},
@@ -13513,8 +13513,8 @@
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "lnO" = (
-/obj/structure/bed,
 /obj/item/bedsheet/cult,
+/obj/structure/bed/old,
 /turf/open/floor/carpet,
 /area/f13/den)
 "lof" = (
@@ -14154,9 +14154,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "lTX" = (
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/ussgt,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -14216,11 +14216,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "lXy" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "lXF" = (
@@ -14231,12 +14231,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "lXT" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/landmark/start/f13/ncrranger,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "lXZ" = (
@@ -14311,10 +14311,10 @@
 	},
 /area/f13/den)
 "maF" = (
-/obj/structure/bed,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "mbT" = (
@@ -14527,11 +14527,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "mkY" = (
-/obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/structure/sign/poster/contraband/pinup_bed{
 	pixel_x = 32
 	},
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "mln" = (
@@ -14790,9 +14790,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/den)
 "muD" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/landmark/start/f13/ncrranger,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "mvA" = (
@@ -15606,7 +15606,6 @@
 	},
 /area/f13/brotherhood/operations)
 "ncA" = (
-/obj/structure/bed/pod,
 /obj/machinery/button/door{
 	id = "sentdorm";
 	normaldoorcontrol = 1;
@@ -15614,6 +15613,7 @@
 	specialfunctions = 4
 	},
 /obj/item/bedsheet/hos,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "ncX" = (
@@ -15621,8 +15621,8 @@
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "ncY" = (
-/obj/structure/bed/pod,
 /obj/item/bedsheet/rd,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "ndi" = (
@@ -17721,7 +17721,7 @@
 	},
 /area/f13/bunker)
 "oKN" = (
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13{
 	icon_state = "bluefull"
 	},
@@ -18817,9 +18817,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pCg" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
 /obj/structure/closet,
-/mob/living/simple_animal/hostile/alien,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pCh" = (
@@ -18846,6 +18845,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"pCJ" = (
+/obj/machinery/door/airlock/medical/glass{
+	name = "Clinic";
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/followers)
 "pDx" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -19156,11 +19164,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "pQx" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pQF" = (
@@ -19694,10 +19702,10 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed,
 /obj/item/bedsheet{
 	icon_state = "sheetcmo"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -20921,11 +20929,11 @@
 	},
 /area/f13/den)
 "rdF" = (
-/obj/structure/bed/pod,
 /obj/item/bedsheet/blue,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "rex" = (
@@ -21060,9 +21068,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rjQ" = (
-/obj/structure/bed/pod,
 /obj/item/bedsheet/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "rjY" = (
@@ -21186,9 +21194,9 @@
 /area/f13/tunnel)
 "rnw" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/ussgt,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -23683,9 +23691,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/effect/landmark/start/f13/uslt,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
 "tqH" = (
@@ -24857,8 +24865,8 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "urc" = (
-/obj/structure/bed/pod,
 /obj/item/bedsheet/hos,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "urg" = (
@@ -27799,11 +27807,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "wXr" = (
-/obj/structure/bed,
 /obj/item/bedsheet/rd,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "wXG" = (
@@ -80838,7 +80846,7 @@ ahe
 bis
 wwU
 wwU
-dOF
+pCJ
 coX
 wwU
 wwU
@@ -82383,7 +82391,7 @@ gED
 bEp
 gED
 gED
-dOF
+pCJ
 qFS
 gjr
 aaI

@@ -114,6 +114,7 @@
 
 	var/dualwield_spread_mult = 1		//dualwield spread multiplier
 
+	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
 	//var/tinkered = 0
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 //	var/projectile_damage_multiplier = 1
@@ -176,6 +177,8 @@
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
 	return FALSE
+
+
 
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
@@ -505,10 +508,10 @@
 				return
 			recoil_decrease = R
 			src.desc += " It has a recoil compensator installed."
-			if (src.spread > 8)
-				src.spread -= 8
+			if (src.spread > 10)
+				src.spread -= 4
 			else
-				src.spread = 0
+				src.spread -= 2
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
 
@@ -520,10 +523,11 @@
 			burst_improvement = T
 			src.desc += " It has a modified burst cam installed."
 			src.burst_size += 1
+			src.spread += 5
+			src.burst_shot_delay += 0.5
 			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
 			update_icon()
 			return
-
 	return ..()
 
 
@@ -694,6 +698,13 @@
 		. += suppressor_overlay
 	else
 		suppressor_overlay = null
+
+	if(worn_out)
+		. += ("[initial(icon_state)]_worn")
+		src.fire_delay += 0.1
+		src.spread -= 2
+		src.extra_damage -= 1
+
 
 /obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)

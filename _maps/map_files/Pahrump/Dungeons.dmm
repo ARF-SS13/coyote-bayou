@@ -341,7 +341,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/cell_charger,
 /obj/structure/table/wood,
-/obj/item/gun/ballistic/automatic/greasegun,
+/obj/item/gun/ballistic/automatic/smg/greasegun,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "ayt" = (
@@ -939,7 +939,6 @@
 /area/f13/bunker)
 "bgX" = (
 /obj/structure/chair/comfy/brown,
-/obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "bgY" = (
@@ -1211,8 +1210,8 @@
 /turf/open/floor/plasteel/yellow/side,
 /area/f13/vault)
 "bzb" = (
-/obj/structure/bed,
 /obj/item/bedsheet/captain,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "bzd" = (
@@ -1285,8 +1284,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
 "bCd" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -1735,8 +1734,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "chr" = (
-/obj/structure/bed,
 /obj/item/bedsheet/orange,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -1835,8 +1834,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cmM" = (
-/obj/structure/bed,
 /obj/item/bedsheet/orange,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -1862,8 +1861,8 @@
 	},
 /area/f13/vault)
 "cnL" = (
-/obj/structure/bed,
 /obj/item/bedsheet/yellow,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -2444,10 +2443,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
-"dhl" = (
-/obj/effect/spawner/lootdrop/costume,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/vault)
 "dhm" = (
 /obj/structure/chair/comfy/black,
 /obj/item/radio/intercom{
@@ -2773,8 +2768,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
 "dDB" = (
-/obj/structure/bed,
 /obj/item/bedsheet/red,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3201,13 +3196,13 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "dZI" = (
-/obj/structure/bed,
 /obj/item/bedsheet/hop{
 	name = "overseer's bedsheet"
 	},
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -4738,9 +4733,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fZB" = (
-/obj/structure/bed,
 /obj/item/trash/f13/bubblegum,
 /obj/machinery/light/broken,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/bunker)
 "fZC" = (
@@ -5642,10 +5637,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
-"gWY" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "gXl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6269,8 +6260,8 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hJD" = (
-/obj/structure/bed,
 /obj/item/bedsheet/hos,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "hJW" = (
@@ -6556,10 +6547,6 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"ifo" = (
-/mob/living/simple_animal/hostile/mirelurk/hunter,
-/turf/open/water,
-/area/f13/underground/cave)
 "ifN" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/security,
@@ -6714,9 +6701,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "itA" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/effect/landmark/start/f13/vaultsecurityofficer,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "itU" = (
@@ -7403,11 +7390,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"jqN" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/obj/structure/flora/grass/jungle,
-/turf/open/water,
-/area/f13/underground/cave)
 "jru" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
@@ -8621,8 +8603,8 @@
 /turf/open/floor/carpet/black,
 /area/f13/bunker)
 "kPN" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "kQV" = (
@@ -8897,11 +8879,9 @@
 /area/f13/bunker)
 "lhh" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_adv,
+/obj/item/ammo_box/magazine/m10mm_adv,
+/obj/item/ammo_box/magazine/m10mm_adv,
 /obj/item/ammo_box/c10mm,
 /obj/item/ammo_box/c10mm,
 /obj/item/ammo_box/c10mm,
@@ -8929,10 +8909,6 @@
 /obj/structure/sign/departments/botany,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker)
-"liC" = (
-/obj/structure/mirelurkegg,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "liK" = (
 /obj/structure/simple_door/bunker,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -9313,10 +9289,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"lRI" = (
-/obj/machinery/vending/cola/random,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/vault)
 "lSd" = (
 /mob/living/simple_animal/hostile/cazador/young,
 /obj/effect/decal/cleanable/dirt{
@@ -9429,7 +9401,7 @@
 /area/f13/bunker)
 "maf" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever{
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever{
 	desc = "A cut-down lever action hunting shotgun made with mobility in mind.";
 	name = "mare's leg";
 	slowdown = 0
@@ -10405,7 +10377,6 @@
 /area/f13/wasteland)
 "nej" = (
 /obj/structure/flora/junglebush,
-/mob/living/simple_animal/hostile/mirelurk/baby,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "neB" = (
@@ -11047,11 +11018,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"nSM" = (
-/obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/clothing_high,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "nSW" = (
 /obj/structure/table/abductor{
 	desc = "After YEARS of research, prototyping, and testing, the brotherhood created the sequel to the table. Advanced flat surface technology at work!";
@@ -11485,10 +11451,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/bunker)
-"osJ" = (
-/mob/living/simple_animal/hostile/mirelurk,
-/turf/open/water,
-/area/f13/underground/cave)
 "osK" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/tunnel)
@@ -11970,10 +11932,6 @@
 "oYr" = (
 /turf/open/floor/plasteel/neutral,
 /area/f13/vault)
-"oYC" = (
-/obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/vault)
 "oYY" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
@@ -12197,17 +12155,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "plk" = (
-/obj/structure/bed,
 /obj/item/bedsheet/blue,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/bunker)
 "plr" = (
 /obj/structure/table/wood,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
+/obj/item/ammo_box/magazine/m10mm_adv,
+/obj/item/ammo_box/magazine/m10mm_adv,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -12379,9 +12336,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "pvN" = (
-/obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/effect/landmark/start/f13/vaultdweller,
+/obj/structure/bed/old,
 /turf/open/floor/wood,
 /area/f13/vault)
 "pvR" = (
@@ -12489,7 +12446,7 @@
 /area/f13/bunker)
 "pBf" = (
 /obj/item/bedsheet/qm,
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 9
 	},
@@ -12710,10 +12667,10 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/underground/cave)
 "pVH" = (
-/obj/structure/bed,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "pVK" = (
@@ -14015,7 +13972,7 @@
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
 "ruW" = (
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
 "rvm" = (
@@ -14555,10 +14512,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
-"shP" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/turf/open/water,
-/area/f13/underground/cave)
 "shT" = (
 /obj/machinery/light{
 	dir = 8
@@ -18696,10 +18649,6 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/bunker)
-"xub" = (
-/mob/living/simple_animal/hostile/mirelurk/baby,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/underground/cave)
 "xuH" = (
 /obj/structure/chair/bench,
 /obj/item/clothing/under/f13/vault{
@@ -23192,7 +23141,7 @@ heT
 bYA
 bYA
 bYA
-liC
+wPz
 aCs
 wPz
 wpy
@@ -23451,7 +23400,7 @@ bYA
 wpy
 wPz
 sZI
-liC
+wPz
 wPz
 aCs
 wPz
@@ -23710,7 +23659,7 @@ wpy
 pny
 bFu
 bFu
-osJ
+bFu
 wPz
 wPz
 wPz
@@ -23955,7 +23904,7 @@ wPz
 bFu
 pny
 bFu
-gWY
+wPz
 wpy
 bYA
 bYA
@@ -24132,7 +24081,7 @@ rMW
 jQh
 mAN
 mAN
-dhl
+bZy
 bZy
 bZy
 bZy
@@ -24217,13 +24166,13 @@ wPz
 odX
 fMc
 las
-liC
+wPz
 wPz
 wpy
 pny
 tjZ
 bFu
-shP
+bFu
 pny
 tjZ
 gYw
@@ -24391,7 +24340,7 @@ mAN
 wnY
 bZy
 bZy
-oYC
+bZy
 bZy
 dqe
 mAN
@@ -24475,7 +24424,7 @@ bFu
 dMZ
 dMZ
 wPz
-gWY
+wPz
 wPz
 bFu
 bFu
@@ -24650,7 +24599,7 @@ ult
 bZy
 bZy
 bZy
-oYC
+bZy
 mAN
 mAN
 mAN
@@ -24723,7 +24672,7 @@ heT
 heT
 bYA
 bYA
-gWY
+wPz
 pny
 gYw
 bFu
@@ -24741,7 +24690,7 @@ bFu
 pny
 tjZ
 gYw
-liC
+wPz
 bYA
 heT
 heT
@@ -24993,7 +24942,7 @@ qWw
 bFu
 bFu
 bFu
-ifo
+bFu
 bFu
 bFu
 gYw
@@ -25240,7 +25189,7 @@ bYA
 wpy
 wpy
 wpy
-liC
+wPz
 nej
 wPz
 wPz
@@ -25760,10 +25709,10 @@ bYA
 bYA
 bYA
 bYA
-liC
+wPz
 wPz
 bFu
-ifo
+bFu
 bFu
 bFu
 bFu
@@ -26276,7 +26225,7 @@ heT
 bYA
 wpy
 nZw
-jqN
+pny
 bFu
 tjZ
 pny
@@ -26792,8 +26741,8 @@ bYA
 nZw
 tXk
 wPz
-xub
-nSM
+wPz
+sZI
 tXk
 nZw
 tXk
@@ -27048,7 +26997,7 @@ heT
 bYA
 bYA
 bYA
-liC
+wPz
 wpy
 tMv
 nZw
@@ -33902,7 +33851,7 @@ kcN
 kcN
 kcN
 hKr
-lRI
+mGB
 mAN
 myJ
 bZy

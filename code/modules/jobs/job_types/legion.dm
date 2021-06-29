@@ -169,7 +169,7 @@
 	head = 			/obj/item/clothing/head/helmet/f13/legion/palacent
 	suit_store = 	/obj/item/twohanded/thermic_lance
 	backpack_contents = list(
-					/obj/item/gun/ballistic/automatic/smg10mm=1,
+					/obj/item/gun/ballistic/automatic/smg/smg10mm=1,
 					/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
 /datum/outfit/loadout/rangerhunter
@@ -297,7 +297,7 @@
 
 /datum/outfit/loadout/decprimfront
 	name =			"Lead from the front"
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm/worn
+	suit_store =	/obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	backpack_contents = list(
 					/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 					/obj/item/shield/riot/legion=1,
@@ -305,7 +305,7 @@
 
 /datum/outfit/loadout/decprimrear
 	name =			"Lead from the rear"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/ammo_box/tube/m44=2,
 					/obj/item/claymore/machete/gladius=1)					
@@ -354,7 +354,7 @@
 
 /datum/outfit/loadout/recdeclegion
 	name =			"Born in the Legion"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/shotgunlever
 	belt = 			/obj/item/storage/belt/military/assault/legion
 	backpack_contents = list(
 					/obj/item/ammo_box/shotgun/buck=2,
@@ -482,7 +482,7 @@
 
 /datum/outfit/loadout/vetshielder
 	name =			"Breacher"
-	suit_store =	/obj/item/gun/ballistic/automatic/greasegun
+	suit_store =	/obj/item/gun/ballistic/automatic/smg/greasegun
 	backpack_contents = list(
 					/obj/item/ammo_box/magazine/greasegun=2,
 					/obj/item/claymore/machete/gladius=1,
@@ -490,7 +490,7 @@
 
 /datum/outfit/loadout/vetrifle
 	name =			"Sharpshooter"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/ammo_box/tube/m44=2,
 					/obj/item/claymore/machete/gladius=1,
@@ -499,7 +499,7 @@
 
 /datum/outfit/loadout/vetberserker
 	name =			"Berserker"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/shotgunlever
 	backpack_contents = list(
 					/obj/item/ammo_box/shotgun/slug=1,
 					/obj/item/twohanded/fireaxe=1,
@@ -559,7 +559,7 @@
 /datum/outfit/loadout/primerifle
 	name =			"Gunner"
 	belt = 			/obj/item/storage/belt/military/assault/legion
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
 					/obj/item/ammo_box/a357=3,
 					/obj/item/claymore/machete/reinforced=1)
@@ -674,7 +674,7 @@
 /datum/outfit/loadout/expsniper
 	name =			"Sniper"
 	l_pocket =		/obj/item/attachments/scope
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/claymore/machete/reinforced=1,
 					/obj/item/ammo_box/tube/m44=3,

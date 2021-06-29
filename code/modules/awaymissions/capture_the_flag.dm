@@ -382,14 +382,11 @@
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf
 	desc = "This looks like it could really hurt in melee."
 	force = 75
-	mag_type = /obj/item/ammo_box/magazine/m50/ctf
+	mag_type = /obj/item/ammo_box/magazine/m44
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped(mob/user)
 	. = ..()
 	addtimer(CALLBACK(GLOBAL_PROC, /proc/ctf_floor_vanish, src), 1)
-
-/obj/item/ammo_box/magazine/m50/ctf
-	ammo_type = /obj/item/ammo_casing/a50/ctf
 
 /obj/item/ammo_casing/a50/ctf
 	projectile_type = /obj/item/projectile/bullet/ctf

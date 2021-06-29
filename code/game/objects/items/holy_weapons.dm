@@ -460,11 +460,6 @@
 	item_state = "swordred"
 	desc = "Woefully ineffective when used on steep terrain."
 
-/obj/item/nullrod/claymore/saber/pirate
-	name = "nautical energy sword"
-	icon_state = "cutlass1"
-	item_state = "cutlass1"
-	desc = "Convincing HR that your religion involved piracy was no mean feat."
 
 /obj/item/nullrod/sord
 	name = "\improper UNREAL SORD"
@@ -504,17 +499,6 @@
 	name = "high frequency blade"
 	desc = "Bad references are the DNA of the soul."
 	attack_verb = list("chopped", "sliced", "cut", "zandatsu'd")
-	hitsound = 'sound/weapons/rapierhit.ogg'
-
-
-/obj/item/nullrod/scythe/spellblade
-	icon_state = "spellblade"
-	item_state = "spellblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon = 'icons/obj/guns/magic.dmi'
-	name = "dormant spellblade"
-	desc = "The blade grants the wielder nearly limitless power...if they can figure out how to turn it on, that is."
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/nullrod/scythe/talking
@@ -623,58 +607,6 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
 	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
-
-
-/obj/item/nullrod/pride_hammer
-	icon_state = "pride"
-	item_state = "pride"
-	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
-	name = "Pride-struck Hammer"
-	desc = "It resonates an aura of Pride."
-	force = 16
-	throwforce = 15
-	w_class = 4
-	slot_flags = ITEM_SLOT_BACK
-	attack_verb = list("attacked", "smashed", "crushed", "splattered", "cracked")
-	hitsound = 'sound/weapons/resonator_blast.ogg'
-
-/obj/item/nullrod/pride_hammer/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(prob(30) && ishuman(A))
-		var/mob/living/carbon/human/H = A
-		user.reagents.trans_to(H, user.reagents.total_volume, 1, 1, 0)
-		to_chat(user, "<span class='notice'>Your pride reflects on [H].</span>")
-		to_chat(H, "<span class='userdanger'>You feel insecure, taking on [user]'s burden.</span>")
-
-/obj/item/nullrod/whip
-	name = "holy whip"
-	desc = "What a terrible night to be on Space Station 13."
-	icon_state = "chain"
-	item_state = "chain"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
-	force = 12
-	max_reach = 2
-	attack_verb = list("whipped", "lashed")
-	hitsound = 'sound/weapons/chainhit.ogg'
-
-/obj/item/nullrod/fedora
-	name = "atheist's fedora"
-	desc = "The brim of the hat is as sharp as your wit. The edge would hurt almost as much as disproving the existence of God."
-	icon_state = "fedora"
-	item_state = "fedora"
-	slot_flags = ITEM_SLOT_HEAD
-	icon = 'icons/obj/clothing/hats.dmi'
-	force = 0
-	throw_speed = 4
-	throw_range = 7
-	throwforce = 30
-	sharpness = SHARP_EDGED
-	attack_verb = list("enlightened", "redpilled")
 
 /obj/item/nullrod/armblade
 	name = "dark blessing"
@@ -800,17 +732,6 @@
 /obj/item/nullrod/tribal_knife/process()
 	slowdown = rand(-2, 2)
 
-
-/obj/item/nullrod/pitchfork
-	icon_state = "pitchfork0"
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	name = "unholy pitchfork"
-	w_class = WEIGHT_CLASS_NORMAL
-	desc = "Holding this makes you look absolutely devilish."
-	attack_verb = list("poked", "impaled", "pierced", "jabbed")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_EDGED
 
 /obj/item/nullrod/egyptian
 	name = "egyptian staff"

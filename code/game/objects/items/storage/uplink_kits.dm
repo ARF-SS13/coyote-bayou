@@ -24,8 +24,6 @@
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 
 		if("bond") // 29 tc
-			new /obj/item/ammo_box/magazine/m10mm(src)
-			new /obj/item/ammo_box/magazine/m10mm(src)
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/card/id/syndicate(src)
 			new /obj/item/reagent_containers/syringe/stimulants(src)
@@ -122,7 +120,7 @@
 			new /obj/item/book/granter/spell/summonitem(src)
 
 		if("sniper") //This shit is unique so can't really balance it around tc, also no silencer because getting killed without ANY indicator on what killed you sucks
-			new /obj/item/gun/ballistic/shotgun/mosin(src) // 12 tc
+			new /obj/item/gun/ballistic/rifle/mosin(src) // 12 tc
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
 			new /obj/item/clothing/under/suit/black_really(src)
@@ -384,8 +382,7 @@
 	name = "Kitchen Gun (TM) package"
 
 /obj/item/storage/box/syndie_kit/kitchen_gun/PopulateContents()
-	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
-	new /obj/item/ammo_box/magazine/m45/kitchengun(src)
+	new /obj/item/gun/ballistic/automatic/pistol(src)
 
 
 /obj/item/storage/box/strange_seeds_10pack
@@ -406,7 +403,6 @@
 
 /obj/item/storage/box/syndie_kit/pistol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"

@@ -5,9 +5,9 @@
 //////////////////////
 /*
 FMJ (full metal jacket)		=	Baseline
-AP (armor piercing)			=	-10% damage. AP increased by 0.3. Wound bonus -50%
-JHP (jacketed hollow point)	=	+10% damage. AP reduced by 0.5. Wound bonus + 50%
-SWC (semi wadcutter)		=	AP reduced by 0.2. Wound bonus +50%
+AP (armor piercing)			=	-10% damage. AP increased by 0.2. Wound bonus -50%
+JHP (jacketed hollow point)	=	+10% damage. AP reduced by 0.2. Wound bonus + 50%
+SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
 P+ (overpressure)			=	extra speed 500. AP + 01. Wound bonus -25%
 Match						=	extra speed 200. AP +0.05. Wound bonus -10%
 Civilian round				=	-10% damage. AP reduced by 50% 
@@ -28,14 +28,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/a556/ap
 	name = "5.56 AP bullet"
 	damage = 31
-	armour_penetration = 0.55
+	armour_penetration = 0.45
 	wound_bonus = 9
 	bare_wound_bonus = -9
 
 /obj/item/projectile/bullet/a556/jhp
 	name = "5.56 JHP bullet"
 	damage = 39
-	armour_penetration = -0.35
+	armour_penetration = 0.05
 	wound_bonus = -25
 	bare_wound_bonus = 25
 
@@ -75,14 +75,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/a762/ap
 	name = "7.62 AP bullet"
 	damage = 38
-	armour_penetration = 0.6
+	armour_penetration = 0.5
 	wound_bonus = 10
 	bare_wound_bonus = -10
 
 /obj/item/projectile/bullet/a762/jhp
 	name = "7.62 JHP bullet"
 	damage = 47
-	armour_penetration = -0.2
+	armour_penetration = 0.1
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
