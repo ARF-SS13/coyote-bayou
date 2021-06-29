@@ -93,7 +93,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 */
 
-
+//Shotgun template
 /obj/item/gun/ballistic/shotgun
 	slowdown = 0.4 //Bulky gun slowdown with rebate since generally smaller than assault rifles
 	name = "shotgun template"
@@ -446,12 +446,95 @@ FORCE 	Delicate, clumsy or small gun force 10
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
+
+////////////
+// RIFLES //
+////////////
+
+// Rifle template
+/obj/item/gun/ballistic/rifle
+	slowdown = 0.5 
+	name = "rifle template"
+	desc = "Should not exist"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "shotgun"
+	item_state = "shotgun"
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	slot_flags = ITEM_SLOT_BACK
+	can_automatic = FALSE
+	fire_delay = 8
+	spread = 2
+	force = 15 //Decent clubs generally speaking
+	flags_1 =  CONDUCT_1
+	casing_ejector = FALSE
+	var/recentpump = 0 // to prevent spammage
+	spawnwithmagazine = TRUE
+	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+
+/obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
+	return ..() //changed argument value
+
+/obj/item/gun/ballistic/rifle/can_shoot()
+	return !!chambered?.BB
+
+/obj/item/gun/ballistic/rifle/attack_self(mob/living/user)
+	if(recentpump > world.time)
+		return
+	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
+		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		return//CIT CHANGE - ditto
+	pump(user, TRUE)
+	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
+		recentpump = world.time + 2
+	else
+		recentpump = world.time + 10
+		if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
+			user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
+	return
+
+/obj/item/gun/ballistic/rifle/blow_up(mob/user)
+	. = 0
+	if(chambered && chambered.BB)
+		process_fire(user, user, FALSE)
+		. = 1
+
+/obj/item/gun/ballistic/rifle/proc/pump(mob/M, visible = TRUE)
+	if(visible)
+		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
+	playsound(M, pump_sound, 60, 1)
+	pump_unload(M)
+	pump_reload(M)
+	update_icon()	//I.E. fix the desc
+	return 1
+
+/obj/item/gun/ballistic/rifle/proc/pump_unload(mob/M)
+	if(chambered)//We have a shell in the chamber
+		chambered.forceMove(drop_location())//Eject casing
+		chambered.bounce_away()
+		chambered = null
+
+/obj/item/gun/ballistic/rifle/proc/pump_reload(mob/M)
+	if(!magazine.ammo_count())
+		return 0
+	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
+	chambered = AC
+
+/obj/item/gun/ballistic/rifle/examine(mob/user)
+	. = ..()
+	if (chambered)
+		. += "A [chambered.BB ? "live" : "spent"] one is in the chamber."
+
+
 ///////////////////
 //REPEATER RIFLES//
 ///////////////////
 //Work like semiauto guns but slower RoF and smaller internal magazine. Slight damage bonus due to longer barrel than normal for the ammunition.
 
-/obj/item/gun/ballistic/shotgun/automatic/hunting
+/obj/item/gun/ballistic/rifle/repeater
 	name = "repeater template"
 	desc = "should not exist"
 	w_class = WEIGHT_CLASS_BULKY
@@ -464,9 +547,13 @@ FORCE 	Delicate, clumsy or small gun force 10
 	scope_y_offset = 13
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 
+/obj/item/gun/ballistic/rifle/repeater/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	src.pump(user)
+
 
 //Cowboy Repeater. .357
-/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+/obj/item/gun/ballistic/rifle/repeater/cowboy
 	name = "cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
@@ -476,7 +563,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Trail carbine. .44
-/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+/obj/item/gun/ballistic/rifle/repeater/trail
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
@@ -486,7 +573,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Brush gun. .45-70
-/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+/obj/item/gun/ballistic/rifle/repeater/brush
 	name = "brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "brushgun"
@@ -497,7 +584,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Lever action shotgun. Short stock makes it easy to store but less accurate.
-/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever
 	name = "lever action shotgun"
 	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
@@ -520,7 +607,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Hunting Rifle .308
-/obj/item/gun/ballistic/shotgun/remington
+/obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
 	desc = "A sturdy hunting rifle, chambered in .308. and in use before the war."
 	icon_state = "308"
@@ -537,7 +624,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
-/obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
+/obj/item/gun/ballistic/rifle/hunting/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		sawoff(user)
@@ -546,7 +633,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 		if(W.active)
 			sawoff(user)
 
-/obj/item/gun/ballistic/shotgun/remington/paciencia
+/obj/item/gun/ballistic/rifle/hunting/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
 	icon_state = "paciencia"
@@ -556,7 +643,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	extra_damage = 20 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
 
-/obj/item/gun/ballistic/shotgun/remington/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
+/obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		return
 	else if(istype(A, /obj/item/melee/transforming/energy))
@@ -568,7 +655,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Mosin Nagant. 7.62
-/obj/item/gun/ballistic/shotgun/mosin
+/obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin Nagant m38"
 	desc = "A classic Russian bolt action chambered in 7.62. Now all you need is some vodka."
 	icon_state = "mosin"
@@ -589,7 +676,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Anti-Material Rifle. .50
-/obj/item/gun/ballistic/shotgun/antimateriel
+/obj/item/gun/ballistic/rifle/antimateriel
 	name = "anti-materiel rifle"
 	desc = "A heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition."
 	icon_state = "amr"
@@ -613,7 +700,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Laser musket
-/obj/item/gun/ballistic/shotgun/lasmusket
+/obj/item/gun/ballistic/rifle/lasmusket
 	name = "Laser Musket"
 	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. Made from metal scraps, electronic parts. an old rifle stock and a bottle full of dreams, the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
@@ -637,7 +724,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 
 //Plasma musket.
-/obj/item/gun/ballistic/shotgun/plasmacaster
+/obj/item/gun/ballistic/rifle/plasmacaster
 	name = "Plasma Musket"
 	desc = "The cooling looks dubious and is that a empty can of beans used as a safety valve? Pray the plasma goes towards the enemy and not your face when you pull the trigger."
 	icon = 'icons/fallout/objects/guns/energy.dmi'

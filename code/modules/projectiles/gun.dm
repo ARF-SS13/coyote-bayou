@@ -505,10 +505,10 @@
 				return
 			recoil_decrease = R
 			src.desc += " It has a recoil compensator installed."
-			if (src.spread > 8)
-				src.spread -= 8
+			if (src.spread > 10)
+				src.spread -= 4
 			else
-				src.spread = 0
+				src.spread -= 2
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
 
@@ -520,10 +520,11 @@
 			burst_improvement = T
 			src.desc += " It has a modified burst cam installed."
 			src.burst_size += 1
+			src.spread += 5
+			src.burst_shot_delay += 0.5
 			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
 			update_icon()
 			return
-
 	return ..()
 
 

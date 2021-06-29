@@ -4,7 +4,7 @@
 #define SPECIALIST_MAGIC_PROB 2
 
 GLOBAL_LIST_INIT(summoned_guns, list(
-	/obj/item/gun/ballistic/shotgun/mosin))
+	/obj/item/gun/ballistic/rifle/mosin))
 
 GLOBAL_LIST_INIT(summoned_magic, list(
 	/obj/item/book/granter/spell/fireball,

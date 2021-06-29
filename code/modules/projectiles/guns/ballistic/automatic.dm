@@ -38,6 +38,7 @@
 			auto_sear = A
 			src.desc += " It has an automatic sear installed."
 			src.burst_size += 1
+			src.spread += 6
 			src.automatic_burst_overlay = TRUE
 			src.semi_auto = FALSE
 			to_chat(user, "<span class='notice'>You attach \the [A] to \the [src].</span>")
@@ -174,10 +175,9 @@
 	icon_state = "rockwell"
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	force = 12 //lacking stock and awful as a club
 	burst_shot_delay = 2.5
 	spread = 13
-	extra_damage = -2
+	extra_damage = -1
 	can_attachments = TRUE
 
 
@@ -336,6 +336,7 @@
 	burst_size = 3
 	burst_shot_delay = 4
 	fire_delay = 6
+	extra_damage = -1
 
 
 
@@ -355,8 +356,8 @@
 	item_state = "autopipe"
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	burst_size = 4
-	fire_delay = 30
-	burst_shot_delay = 3
+	fire_delay = 26
+	burst_shot_delay = 5
 	spread = 24
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -396,7 +397,7 @@
 	icon_state = "m1a1carbine"
 	var/stock = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
-	spread = 5
+	spread = 4
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -412,11 +413,11 @@
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		spread = 5
+		spread = 4
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		spread = 20
+		spread = 14
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()

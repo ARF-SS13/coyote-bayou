@@ -122,7 +122,7 @@
 			new /obj/item/book/granter/spell/summonitem(src)
 
 		if("sniper") //This shit is unique so can't really balance it around tc, also no silencer because getting killed without ANY indicator on what killed you sucks
-			new /obj/item/gun/ballistic/shotgun/mosin(src) // 12 tc
+			new /obj/item/gun/ballistic/rifle/mosin(src) // 12 tc
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
 			new /obj/item/clothing/under/suit/black_really(src)

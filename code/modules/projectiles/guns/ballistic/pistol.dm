@@ -159,7 +159,7 @@
 	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
-	extra_damage = 3
+	extra_damage = 2
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -192,7 +192,7 @@
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
 	fire_delay = 1
-	extra_damage = 4
+	extra_damage = 3
 	extra_penetration = 0.05
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 28
@@ -208,7 +208,7 @@
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m44
 	force = 15
-	extra_damage = 5
+	extra_damage = 4
 	extra_speed = 400
 	fire_delay = 3
 	can_suppress = FALSE
@@ -231,10 +231,10 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
-//12.7mm Pistol. 
+//14mm Pistol. 
 /obj/item/gun/ballistic/automatic/pistol/pistol127
-	name = "12.7mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, powerful but a little inaccurate"
+	name = "14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol127"
 	mag_type = /obj/item/ammo_box/magazine/m127mm
 	force = 15
@@ -244,8 +244,8 @@
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/pistol127/compact
-	name = "compact 12.7mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, this one is a compact model for concealed carry."
+	name = "compact 14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol127_compact"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = -2 //Smaller barrel, smaller bullet velocity
@@ -253,8 +253,8 @@
 	spread = 3
 
 /obj/item/gun/ballistic/automatic/pistol/pistol127/lildevil
-	name= "Little Devil 12.7mm pistol"
-	desc = "A Swiss SIG-Sauer 14mm handgun rechambered for 12.7mm ammunition, this one is a finely tuned custom firearm from the Gunrunners."
+	name= "Little Devil 14mm pistol"
+	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = 3

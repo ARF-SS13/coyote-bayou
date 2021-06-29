@@ -271,8 +271,8 @@
 
 /datum/crafting_recipe/plasmamusket //lasmusket ammo
 	name = "Plasma Musket"
-	result = /obj/item/gun/ballistic/shotgun/plasmacaster
-	reqs = list(/obj/item/gun/ballistic/shotgun/lasmusket = 1,
+	result = /obj/item/gun/ballistic/rifle/plasmacaster
+	reqs = list(/obj/item/gun/ballistic/rifle/lasmusket = 1,
 				/obj/item/advanced_crafting_components/conductors = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
 	time = 20
@@ -281,7 +281,7 @@
 
 /datum/crafting_recipe/lasmusket
 	name = "Laser Musket"
-	result = /obj/item/gun/ballistic/shotgun/lasmusket
+	result = /obj/item/gun/ballistic/rifle/lasmusket
 	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
 	/obj/item/gun/ballistic/revolver/pipe_rifle = 1,
 	/obj/item/reagent_containers/food/drinks/bottle = 1,
@@ -348,7 +348,7 @@
 //hunting rifle
 /datum/crafting_recipe/huntingrifle
 	name = "Hunting Rifle"
-	result = /obj/item/gun/ballistic/shotgun/remington
+	result = /obj/item/gun/ballistic/rifle/hunting
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
 				/datum/reagent/blackpowder = 20,
@@ -591,7 +591,7 @@
 //lever action
 /datum/crafting_recipe/lever_action
 	name = "Lever Action Shotgun"
-	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
+	result = /obj/item/gun/ballistic/rifle/repeater/shotgunlever
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -605,7 +605,7 @@
 //trail carbine
 /datum/crafting_recipe/trail_carbine
 	name = "Trail Carbine"
-	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	result = /obj/item/gun/ballistic/rifle/repeater/trail
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -715,7 +715,7 @@
 //brush gun
 /datum/crafting_recipe/brush
 	name = "Brush Gun"
-	result = /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+	result = /obj/item/gun/ballistic/rifle/repeater/brush
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -845,7 +845,7 @@
 //AM rifle
 /datum/crafting_recipe/am_rifle
 	name = "Anti-Materiel Rifle"
-	result = /obj/item/gun/ballistic/shotgun/antimateriel
+	result = /obj/item/gun/ballistic/rifle/antimateriel
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
