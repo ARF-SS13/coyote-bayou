@@ -942,7 +942,7 @@ Veteran Ranger
 
 /datum/outfit/loadout/vrclassic
 	name = "Classic Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/shotgun/antimateriel
+	suit_store = /obj/item/gun/ballistic/rifle/antimateriel
 	backpack_contents = list(
 		/obj/item/ammo_box/a50MG=2,
 		/obj/item/gun/ballistic/revolver/sequoia=1,
@@ -1034,7 +1034,7 @@ Veteran Ranger
 	name = "Trail Ranger"
 	suit =	/obj/item/clothing/suit/armor/f13/trailranger
 	belt =	/obj/item/storage/belt/military/NCR_Bandolier
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	neck = /obj/item/clothing/neck/cloak/ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 3,
