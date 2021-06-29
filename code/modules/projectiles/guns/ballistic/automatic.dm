@@ -173,6 +173,7 @@
 	icon_state = "rockwell"
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
 	burst_shot_delay = 2.5
 	spread = 13
 	extra_damage = -1

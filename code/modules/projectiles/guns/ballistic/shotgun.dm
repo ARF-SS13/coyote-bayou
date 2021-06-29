@@ -654,7 +654,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	else
 		..()
 
-/obj/item/gun/ballistic/shotgun/remington/ncr
+/obj/item/gun/ballistic/rifle/hunting/ncr
 	name = "accurized hunting rifle"
 	desc = "A modified  hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/ncr
@@ -663,7 +663,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	extra_penetration = 0.05 //slightly higher pen, 0.30 total vs 0.25. 
 	untinkerable = TRUE
 
-/obj/item/gun/ballistic/shotgun/remington/ncr/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
+/obj/item/gun/ballistic/rifle/hunting/ncr/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		return
 	else if(istype(A, /obj/item/melee/transforming/energy))

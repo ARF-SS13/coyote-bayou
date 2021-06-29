@@ -303,7 +303,7 @@
 	custom_materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 3500)
 
 
-//.50 MG and .50 AE
+//.50 MG and 14mm
 /obj/item/ammo_box/a50MGbox
 	name = "ammo box (.50 MG)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -318,7 +318,7 @@
 /obj/item/ammo_box/m127mm
 	name = "ammo box (14mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "50aebox"
+	icon_state = "14mmbox"
 	multiple_sprites = 2
 	caliber = "14"
 	ammo_type = /obj/item/ammo_casing/a127mm
@@ -327,7 +327,7 @@
 	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/m127mm/jhp
-	name = "ammo box (12.7mm JHP)"
+	name = "ammo box (14mm JHP)"
 	ammo_type = /obj/item/ammo_casing/a127mm/jhp
 	custom_materials = list(/datum/material/iron = 11000)
 

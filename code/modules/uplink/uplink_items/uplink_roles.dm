@@ -124,7 +124,6 @@
 	desc = "An extra eight bullets for an extra eight uses of Kitchen Gun (TM)!"
 	cost = 1
 	restricted_roles = list("Cook", "Janitor")
-	item = /obj/item/ammo_box/magazine/m45/kitchengun
 
 /datum/uplink_item/role_restricted/magillitis_serum
 	name = "Magillitis Serum Autoinjector"

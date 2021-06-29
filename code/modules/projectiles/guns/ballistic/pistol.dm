@@ -12,7 +12,7 @@
 	weapon_weight = WEAPON_LIGHT //Nakes dual weild possible
 	slot_flags = ITEM_SLOT_BELT
 	force = 12 //Pistol whip
-	mag_type = /obj/item/ammo_box/magazine/m10mm
+	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	burst_size = 1
 	fire_delay = 2
 	automatic_burst_overlay = FALSE
@@ -232,18 +232,18 @@
 
 
 //14mm Pistol. 
-/obj/item/gun/ballistic/automatic/pistol/pistol127
+/obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol127"
-	mag_type = /obj/item/ammo_box/magazine/m127mm
+	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
 	fire_delay = 4
 	spread = 2
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-/obj/item/gun/ballistic/automatic/pistol/pistol127/compact
+/obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol127_compact"
@@ -252,7 +252,7 @@
 	extra_penetration = -0.05 //See above
 	spread = 3
 
-/obj/item/gun/ballistic/automatic/pistol/pistol127/lildevil
+/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"

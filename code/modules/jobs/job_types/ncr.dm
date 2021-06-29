@@ -510,7 +510,7 @@ Corporal
 
 /datum/outfit/loadout/corporaldesignatedmarksman
 	name = "Designated marksman"
-	suit_store = /obj/item/gun/ballistic/shotgun/remington/ncr
+	suit_store = /obj/item/gun/ballistic/rifle/hunting/ncr
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/attachments/scope=1,
