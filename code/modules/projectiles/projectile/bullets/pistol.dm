@@ -190,6 +190,19 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 
+//45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
+/obj/item/projectile/bullet/a45lc
+	name = ".45 LC bullet"
+	damage = 44 //Right inbetween 44 and 45-70. Gun this is used in has a fire delay of 8, doing the math I'm pretty sure a regular M29 has a higher DPS then dual wielding these unless you bounce shots
+	armour_penetration = 0.25 //Again, right inbetween 44 and 45-70.
+	wound_bonus = 20
+	bare_wound_bonus = -20
+	ricochets_max = 3
+	ricochet_incidence_leeway = 130
+	ricochet_decay_damage = 1.1 //48 damage on first bounce, 53 on second, 58 on third. Unless you bounce, the DPS dual wielding is lower then a single M29
+	ricochet_decay_chance = 1
+	ricochet_chance = 80 //100% if you have the vet's trait
+	ricochet_auto_aim_range = 4
 
 ////////////
 // .45-70 //

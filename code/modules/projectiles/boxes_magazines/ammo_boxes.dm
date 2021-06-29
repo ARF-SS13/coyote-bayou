@@ -176,6 +176,15 @@
 	ammo_type = /obj/item/ammo_casing/m44/swc
 	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2000)
 
+/obj/item/ammo_box/a45lcbox
+	name = "ammo box (.45 Long Colt)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "ammobox"
+	caliber = "a45lc"
+	ammo_type = /obj/item/ammo_casing/a45lc
+	max_ammo = 30
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 
 //.45 ACP
 /obj/item/ammo_box/c45
@@ -474,7 +483,29 @@
 /obj/item/ammo_box/c45rev/empty
 	start_empty = 1
 
+/obj/item/ammo_box/a45lcrev
+	name = "speed loader (.45 LC)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "38"
+	caliber = "a45lc"
+	ammo_type = /obj/item/ammo_casing/a45lc
+	max_ammo = 6
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 3000)
 
+/obj/item/ammo_box/a45lcrev/empty
+	start_empty = 1
+
+/obj/item/ammo_box/jerrycan
+	name = "jerry can"
+	desc = "A jerry can full of napalm and diesel fuel, meant for flamethrowers"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "jerrycan"
+	caliber = "fuel"
+	unloadable = TRUE
+	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
+	max_ammo = 6 // 3 bursts, you need 2 cans
+	
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"
