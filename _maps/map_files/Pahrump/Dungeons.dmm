@@ -1210,8 +1210,8 @@
 /turf/open/floor/plasteel/yellow/side,
 /area/f13/vault)
 "bzb" = (
-/obj/structure/bed,
 /obj/item/bedsheet/captain,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "bzd" = (
@@ -1284,8 +1284,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
 "bCd" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -1734,8 +1734,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "chr" = (
-/obj/structure/bed,
 /obj/item/bedsheet/orange,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -1834,8 +1834,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cmM" = (
-/obj/structure/bed,
 /obj/item/bedsheet/orange,
+/obj/structure/bed/old,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -1861,8 +1861,8 @@
 	},
 /area/f13/vault)
 "cnL" = (
-/obj/structure/bed,
 /obj/item/bedsheet/yellow,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -2768,8 +2768,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
 "dDB" = (
-/obj/structure/bed,
 /obj/item/bedsheet/red,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3196,13 +3196,13 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "dZI" = (
-/obj/structure/bed,
 /obj/item/bedsheet/hop{
 	name = "overseer's bedsheet"
 	},
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -4733,9 +4733,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fZB" = (
-/obj/structure/bed,
 /obj/item/trash/f13/bubblegum,
 /obj/machinery/light/broken,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/bunker)
 "fZC" = (
@@ -6260,8 +6260,8 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hJD" = (
-/obj/structure/bed,
 /obj/item/bedsheet/hos,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "hJW" = (
@@ -6701,9 +6701,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "itA" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
 /obj/effect/landmark/start/f13/vaultsecurityofficer,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "itU" = (
@@ -8603,8 +8603,8 @@
 /turf/open/floor/carpet/black,
 /area/f13/bunker)
 "kPN" = (
-/obj/structure/bed,
 /obj/item/bedsheet/black,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "kQV" = (
@@ -12157,8 +12157,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "plk" = (
-/obj/structure/bed,
 /obj/item/bedsheet/blue,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -12339,9 +12339,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "pvN" = (
-/obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/effect/landmark/start/f13/vaultdweller,
+/obj/structure/bed/old,
 /turf/open/floor/wood,
 /area/f13/vault)
 "pvR" = (
@@ -12449,7 +12449,7 @@
 /area/f13/bunker)
 "pBf" = (
 /obj/item/bedsheet/qm,
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 9
 	},
@@ -12670,10 +12670,10 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/underground/cave)
 "pVH" = (
-/obj/structure/bed,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "pVK" = (
@@ -13975,7 +13975,7 @@
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
 "ruW" = (
-/obj/structure/bed,
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
 "rvm" = (
