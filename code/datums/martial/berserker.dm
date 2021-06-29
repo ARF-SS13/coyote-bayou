@@ -1,6 +1,6 @@
 #define HARD_PUNCH_COMBO "HH"
 #define SHOULDERCHECK_COMBO "HD"
-#define CHOKE_SLAM_COMBO "HHG"
+#define CHOKE_SLAM_COMBO "HGH"
 
 /datum/martial_art/berserker
 	name = "Berserker Rites"
