@@ -65,6 +65,7 @@
 //10mm small
 /obj/item/ammo_box/magazine/m10mm_adv
 	name = "10mm pistol magazine (10mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "m10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 12
