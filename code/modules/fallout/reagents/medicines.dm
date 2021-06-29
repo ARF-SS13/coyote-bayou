@@ -134,8 +134,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	color =  "#7f7add"
 	taste_description = "heaven."
-	metabolization_rate = 0.70 * REAGENTS_METABOLISM 
-	overdose_threshold = 20 
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM 
+	overdose_threshold = 30 //hard to OD on, besides if you use too much it kills you when it wears off
 
 /datum/reagent/medicine/berserker_powder/on_mob_life(mob/living/carbon/M)
 	if(HAS_TRAIT(M, TRAIT_BERSERKER))
@@ -152,31 +152,31 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/berserker_powder/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
+		to_chat(M, "<span class='notice'>The veil breaks, and the heavens spill out! The spirits of Mars float down from the heavens, and the deafining beat of the holy legion's wardrums fills your ears. Their ethereal forms are guiding you in battle!</span>")
 		M.maxHealth += 40
 		M.health += 40
 		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/medicine/berserker_powder/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
+		to_chat(M, "<span class='notice'>The veil comes back, blocking out the heavenly visions. You breathe a sigh of relief...</span>")
 		M.maxHealth -= 40
 		M.health -= 40
 		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 	switch(current_cycle)
-		if(1 to 25)
+		if(1 to 35)
 			M.confused += 10
 			M.blur_eyes(20)
 			to_chat(M, "<span class='notice'>Your head is pounding. You feel like screaming. The visions beckon you to go further, to split the veil forever and cross over. You know you shouldn't. </span>")
-		if(26 to 50)
+		if(35 to 65)
 			M.confused +=20
 			M.blur_eyes(30)
 			M.losebreath += 8
 			M.set_disgust(12)
 			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
 			to_chat(M, "<span class='danger'>Your stomach churns, you vomit, and the blurring of your vision doesn't go away. The visions beckon you further, you're so close.... </span>")
-		if(51 to INFINITY)
+		if(65 to INFINITY)
 			M.confused +=40
 			M.blur_eyes(30)
 			M.losebreath += 10

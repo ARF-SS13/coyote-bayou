@@ -204,19 +204,6 @@
 	icon_state = "legion-recruit"
 	item_state = "legion-recruit"
 
-/obj/item/clothing/suit/armor/f13/legion/recruit/berserker
-	name = "legion berserker armor"
-	desc = "(II) A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight. Used by berserkers."
-	icon_state = "legscout"
-	slowdown = -0.2
-	armor = list("tier" = 2, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-/obj/item/clothing/suit/armor/f13/legion/recruit/berserker/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
-//irremovable so you don't get people with berserker martial art running around in tier 6 armor tenderizing people effortlessly
-
-
 
 /obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
@@ -284,17 +271,6 @@
 	slowdown = 0
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion/centurion/berserker
-	name = "berserker centurion armor"
-	desc = "(IV) The armor of a centurion who has proved themselves in melee combat.. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Phoenix is carefully engraved and painted upon the chest piece."
-	icon_state = "palacent_excess"
-	item_state = "palacent_excess"
-	slowdown = -1.5
-	armor = list("tier" = 4, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 70, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-/obj/item/clothing/suit/armor/f13/legion/centurion/berserker/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
 
 /obj/item/clothing/suit/armor/f13/legion/palacent
 	name = "paladin-slayer centurion armor"

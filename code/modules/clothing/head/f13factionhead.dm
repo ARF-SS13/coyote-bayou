@@ -339,19 +339,6 @@
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
-/obj/item/clothing/head/helmet/f13/legion/centurion/berserker
-	name = "berserker centurion helmet"
-	desc = "(IV) A custom forged steel full helmet made for a Centurion who has proven themselves in melee combat. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
-	icon_state = "palacent_excess"
-	item_state = "palacent_excess"
-	armor = list("tier" = 4, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-
-/obj/item/clothing/head/helmet/f13/legion/centurion/berserker/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
-
-
 /obj/item/clothing/head/helmet/f13/legion/rangercent
 	name = "ranger-hunter centurion helmet"
 	desc = "(V) The helmet of an NCR ranger, refit to serve as a Centurions helmet."
@@ -419,22 +406,10 @@
 /obj/item/clothing/head/helmet/f13/legion/vet/heavy
 	name = "legion shieldbearer helmet"
 	desc = "(VI) A metal legion veteran helmet with an inverted color scheme for shieldbearers"
-	icon_state = "legheavy"
-	item_state = "legheavy"
+	icon = 'icons/mob/clothing/head.dmi'
+	icon_state = "legvetheavy"
+	item_state = "legvetheavy"
 	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/legion/recruit/berserker
-	name = "legion berserker's hood"
-	desc = "(II) It's a leather hood worn by legion berserkers."
-	icon_state = "legscout"
-	item_state = "legscout"
-	armor = list("tier" = 2, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 0)
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	
-
-/obj/item/clothing/head/helmet/f13/legion/recruit/berserker/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_MASK_TRAIT)
 
 /*
 /obj/item/clothing/head/helmet/f13/legion/recruit/scout

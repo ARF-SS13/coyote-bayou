@@ -57,6 +57,7 @@
 	var/atom/throw_target = get_edge_target_turf(D, A.dir)
 	D.throw_at(throw_target, 7, 14, A)
 	D.apply_damage(damage, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND, wound_bonus = CANT_WOUND)
+	to_chat(A, "<span class='danger'>You shouldercheck [D]!</span>")
 	log_combat(A, D, "shoulderchecked (Berserker)")
 	return TRUE
 
@@ -71,12 +72,14 @@
 		D.apply_damage(damage + 25, STAMINA, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
 		D.visible_message("<span class='warning'>[A] grabs [D] by the throat, slamming them face first into the ground!</span>", \
 					"<span class='userdanger'>[A] grabs you by the throat, slammed your head into the ground!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, "<span class='danger'>You chokeslam [D]!</span>")
 	else
 		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
 		D.apply_damage(damage + 25, STAMINA, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
 		D.drop_all_held_items()
 		D.visible_message("<span class='warning'>[A] pummels [D]!</span>", \
 					"<span class='userdanger'>You are kicked in the head by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, "<span class='danger'>You pummel [D]!</span>")
 	log_combat(A, D, "chokeslamed (Berserker")
 	return TRUE
 
@@ -89,8 +92,7 @@
 
 /datum/martial_art/berserker/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	add_to_streak("H",D)
-	var/damage = (damage_roll(A,D) + 5)
-	var/stunthreshold = A.dna.species.punchstunthreshold
+	var/damage = (damage_roll(A,D) + 10)
 	if(check_streak(A,D))
 		return TRUE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
@@ -101,11 +103,8 @@
 	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
 	D.apply_damage(damage, BRUTE, affecting, wound_bonus = CANT_WOUND)
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
-	if(CHECK_MOBILITY(D, MOBILITY_STAND) && damage >= stunthreshold)
-		to_chat(D, "<span class='danger'>You stumble and fall!</span>")
-		D.DefaultCombatKnockdown(10, override_hardstun = 0.01, override_stamdmg = damage)
 	log_combat(A, D, "punched (Berserker)")
-	return TRUE
+	return NO_AUTO_CLICKDELAY_HANDLING | ATTACK_IGNORE_ACTION
 
 
 /datum/martial_art/berserker/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)

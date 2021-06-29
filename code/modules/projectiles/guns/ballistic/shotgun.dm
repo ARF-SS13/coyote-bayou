@@ -323,7 +323,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunriot"][stock ? "" : "fold"]"
 
 
-//Trench shotgun. 5 round Pump action, extra damage.
+//Trench shotgun. 5 round Pump action, extra damage. Can slamfire for higher ROF, or slower ROF but less spread
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -332,11 +332,37 @@ FORCE 	Delicate, clumsy or small gun force 10
 	can_bayonet = TRUE
 	bayonet_state = "rifles"
 	extra_damage = 3
+	spread = 0
+	fire_delay = 8
 	bayonet_state = "lasmusket"
 	knife_x_offset = 23
 	knife_y_offset = 21
+	var/select = 0
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 
+/obj/item/gun/ballistic/shotgun/trench/ui_action_click()
+	burst_select()
+
+//has a mode to let it pump much faster, at the cost of terrible accuracy and less damage
+/obj/item/gun/ballistic/shotgun/trench/proc/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			spread = 12
+			burst_size = 1
+			fire_delay = 4
+			burst_shot_delay = 4
+			to_chat(user, "<span class='notice'>You prepare to slamfire the shotgun for a rapid burst of shots.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 0
+			extra_damage = 5
+			to_chat(user, "<span class='notice'>You go back to firing the shotgun one round at a time.</span>")
+
+	
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
 		icon_state = "[initial(icon_state)]-e"
