@@ -14231,12 +14231,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "lXT" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/landmark/start/f13/ncrranger,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "lXZ" = (
@@ -14311,10 +14311,10 @@
 	},
 /area/f13/den)
 "maF" = (
-/obj/structure/bed,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "mbT" = (
@@ -14790,9 +14790,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/den)
 "muD" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/landmark/start/f13/ncrranger,
+/obj/structure/bed/old,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "mvA" = (
@@ -18817,9 +18817,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pCg" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
 /obj/structure/closet,
-/mob/living/simple_animal/hostile/alien,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pCh" = (
@@ -19156,11 +19155,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "pQx" = (
-/obj/structure/bed,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pQF" = (
