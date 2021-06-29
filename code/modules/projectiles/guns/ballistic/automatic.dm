@@ -23,7 +23,7 @@
 	var/auto_eject_sound = null
 	var/alarmed = 0
 	var/select = 1
-	var/worn_out = FALSE
+
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 
@@ -48,8 +48,6 @@
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
-	if(worn_out)
-		. += ("[initial(icon_state)]_worn")
 	if(automatic_burst_overlay)
 		if(!select)
 			. += ("[initial(icon_state)]semi")
@@ -195,43 +193,31 @@
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/american180.ogg'
 
+
 //Greasegun. .45 ACP
-/obj/item/gun/ballistic/automatic/greasegun
+/obj/item/gun/ballistic/automatic/smg/greasegun
 	name = "M3A1 Grease Gun"
 	desc = "An inexpensive submachine gun chambered in .45 ACP. Slow fire rate allows the operator to conserve ammunition in controllable bursts."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
-	slowdown = 0.2
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	fire_sound = 'sound/f13weapons/greasegun.ogg'
-	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
-	force = 12
 	fire_delay = 5
 	burst_shot_delay = 5 //Slow rate of fire
 	can_attachments = TRUE
-	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
+	fire_sound = 'sound/f13weapons/greasegun.ogg'
 
 
 //10mm SMG
-/obj/item/gun/ballistic/automatic/smg10mm
+/obj/item/gun/ballistic/automatic/smg/smg10mm
 	name = "10mm submachine gun"
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
-	slowdown = 0.2
-	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
-	force = 12
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_delay = 4
@@ -241,7 +227,7 @@
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
-/obj/item/gun/ballistic/automatic/smg10mm/worn
+/obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	name = "worn-out 10mm submachine gun"
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
@@ -257,9 +243,7 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
-	slowdown = 0.2
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 	fire_delay = 3
 	burst_shot_delay = 2.5
@@ -271,13 +255,12 @@
 	suppressor_y_offset = 16
 
 
-//Carl Gustaf. 10mm. Two handed firing, so should be a level above the 1h SMGs.
+//Carl Gustaf. 10mm
 /obj/item/gun/ballistic/automatic/smg/cg45
 	name = "Carl Gustaf 10mm"
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
-	slowdown = 0.2
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 3
@@ -286,8 +269,8 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 
-//Ppsh-41. 9mm. Seems weird this is so common, ww2 soviet stuff should be a rare drop if anything. Two handed firing, should be better than 1h SMGs.
-/obj/item/gun/ballistic/automatic/pps
+//Ppsh-41. 9mm
+/obj/item/gun/ballistic/automatic/smg/ppsh
 	name = "Ppsh-41"
 	desc = "An extremely fast firing, inaccurate submachine gun from World War 2. Low muzzle velocity. Uses 9mm rounds."
 	icon_state = "pps"
@@ -306,7 +289,7 @@
 	spread = 20
 
 
-//MP-5. Silenced 9mm. Kinda boring.
+//MP-5. Silenced 9mm
 /obj/item/gun/ballistic/automatic/smg/mp5
 	name = "MP-5 SD"
 	desc = "An integrally suppressed sub machine chambered in 9mm."
@@ -323,7 +306,7 @@
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 
 
-//Tommygun. .45
+//Tommygun .45
 /obj/item/gun/ballistic/automatic/smg/tommygun
 	name = "ancient Thompson SMG"
 	desc = "Rusty, dinged up, but somehow still functional."
@@ -338,6 +321,34 @@
 	fire_delay = 6
 	extra_damage = -1
 
+
+//P90 9mm. Top SMG, rare.
+/obj/item/gun/ballistic/automatic/smg/p90
+	name = "FN P90c"
+	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
+	icon_state = "p90"
+	item_state = "m90"
+	burst_size = 3
+	fire_delay = 3
+	spread = 7
+	burst_shot_delay = 0.5
+	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
+	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_LIGHT
+	extra_damage = 2
+	extra_penetration = 0.1
+	can_suppress = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 29
+	suppressor_y_offset = 16
+	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+
+/obj/item/gun/ballistic/automatic/smg/p90/worn
+	name = "Worn FN P90c"
+	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
+	fire_delay = 4
+	burst_size = 2
+	extra_damage = 0
 
 
 ////////////
@@ -669,7 +680,7 @@
 
 //M1 Garand. .308.
 /obj/item/gun/ballistic/automatic/m1garand
-	name = "battle rifle"
+	name = "M1 Garand"
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
@@ -826,7 +837,7 @@
 	burst_size = 3
 	burst_shot_delay = 1
 	fire_delay = 3
-	spread = 5
+	spread = 4
 	can_attachments = TRUE
 	zoomable = TRUE
 	zoom_amt = 10
@@ -928,8 +939,9 @@
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
 	fire_delay = 3
-	burst_shot_delay = 0.75
-	spread = 7
+	extra_damage = -1
+	burst_shot_delay = 1.5
+	spread = 6
 	randomspread = 1
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
@@ -939,14 +951,16 @@
 		if(0)
 			select += 1
 			burst_size = 2
+			spread = 10
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size = 3
+			spread = 12
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select = 0
-			burst_size = 1
+			burst_size = 6
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -961,9 +975,9 @@
 	item_state = "lsw"
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 5
+	fire_delay = 4
 	burst_shot_delay = 1
-	spread = 15
+	spread = 12
 	spawnwithmagazine = TRUE
 	zoomable = TRUE
 	zoom_amt = 10
@@ -984,8 +998,10 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	can_suppress = FALSE
 	burst_size = 1
+	burst_shot_delay = 1.5
 	fire_delay = 3
-	spread = 20
+	extra_damage = -1
+	spread = 8
 	var/cover_open = FALSE
 
 /obj/item/gun/ballistic/automatic/m1919/update_icon()
@@ -1041,22 +1057,22 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 30
+			spread = 12
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size = 3
-			spread = 40
+			spread = 16
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size = 4
-			spread = 50
+			spread = 20
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
 			burst_size = 1
-			spread = 20
+			spread = 8
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -1102,33 +1118,6 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
-
-/obj/item/gun/ballistic/automatic/p90
-	name = "FN P90c"
-	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
-	icon_state = "p90"
-	item_state = "m90"
-	burst_size = 3
-	fire_delay = 1
-	burst_shot_delay = 0.5
-	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
-	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_LIGHT
-	extra_damage = 5
-	extra_penetration = 0.1
-	can_suppress = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 29
-	suppressor_y_offset = 16
-	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
-
-/obj/item/gun/ballistic/automatic/p90/worn
-	name = "Worn FN P90c"
-	desc = "A FN P90 manufactured by Fabrique Nationale. This one is beat to hell but still works."
-	fire_delay = 4
-	burst_size = 2
-	extra_damage = 0
-
 
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"

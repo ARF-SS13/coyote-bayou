@@ -649,7 +649,7 @@
 				/obj/item/twohanded/thermic_lance,
 				/obj/item/twohanded/chainsaw,
 				/obj/item/kinetic_crusher,
-				/obj/item/nullrod/claymore/chainsaw_sword,
+				/obj/item/melee/powered/ripper,
 				/obj/item/melee/powerfist,
 				/obj/item/melee/transforming/energy/axe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
@@ -904,14 +904,14 @@
 /obj/effect/spawner/bundle/f13/smg10mm
 	name = "10mm SMG and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/smg10mm,
+				/obj/item/gun/ballistic/automatic/smg/smg10mm,
 				/obj/item/ammo_box/magazine/m10mm_adv/ext
 				)
 
 /obj/effect/spawner/bundle/f13/greasegun
 	name = "m3a1 grease gun and ammo spawner"
 	items = list(
-				/obj/item/gun/ballistic/automatic/greasegun,
+				/obj/item/gun/ballistic/automatic/smg/greasegun,
 				/obj/item/ammo_box/magazine/greasegun
 				)
 

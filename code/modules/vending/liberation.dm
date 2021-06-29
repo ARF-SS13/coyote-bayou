@@ -10,8 +10,7 @@
 					/obj/item/reagent_containers/food/snacks/fries = 5, //Whose broad stripes and bright stars through the perilous fight
 					/obj/item/reagent_containers/food/drinks/beer/light = 10 //O'er the ramparts we watched, were so gallantly streaming?
 )
-	premium = list(/obj/item/ammo_box/magazine/smgm9mm = 2,
-					/obj/item/reagent_containers/food/snacks/cheesyfries = 5,
+	premium = list(	/obj/item/reagent_containers/food/snacks/cheesyfries = 5,
 					/obj/item/reagent_containers/food/snacks/burger/baconburger = 5) //Premium burgers for the premium section
 	contraband = list(/obj/item/clothing/under/misc/patriotsuit = 3,
 					/obj/item/bedsheet/patriot = 5,

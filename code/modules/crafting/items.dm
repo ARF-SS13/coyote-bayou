@@ -489,17 +489,17 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockwood&&receiver)//pps
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
@@ -521,33 +521,33 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm10barrel&&stockplastic&&receiver)//10mmsmg
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&m45barrel&&stockplastic&&receiver)//grease gun
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
@@ -1281,7 +1281,7 @@
 
 	var/obj/item/item
 
-	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/nullrod/claymore/chainsaw_sword)
+	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/melee/powered/ripper)
 
 	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
 	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/item/circuitboard/machine/chem_master, 
