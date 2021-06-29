@@ -1,6 +1,6 @@
 #define HARD_PUNCH_COMBO "HH"
 #define SHOULDERCHECK_COMBO "HD"
-#define CHOKE_SLAM_COMBO "HGH"
+#define CHOKE_SLAM_COMBO "HG"
 
 /datum/martial_art/berserker
 	name = "Berserker Rites"
@@ -67,8 +67,8 @@
 	A.do_attack_animation(D, ATTACK_EFFECT_KICK)
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
 	if((D.mobility_flags & MOBILITY_STAND))
-		D.apply_damage(damage, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
-		D.DefaultCombatKnockdown(30, override_hardstun = 0.01, override_stamdmg = 0)
+		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
+		D.DefaultCombatKnockdown(10, override_hardstun = 0.01, override_stamdmg = 0)
 		D.apply_damage(damage + 25, STAMINA, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
 		D.visible_message("<span class='warning'>[A] grabs [D] by the throat, slamming them face first into the ground!</span>", \
 					"<span class='userdanger'>[A] grabs you by the throat, slammed your head into the ground!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
@@ -92,7 +92,7 @@
 
 /datum/martial_art/berserker/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	add_to_streak("H",D)
-	var/damage = (damage_roll(A,D) + 10)
+	var/damage = (damage_roll(A,D) + 3)
 	if(check_streak(A,D))
 		return TRUE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
@@ -143,7 +143,7 @@
 	to_chat(usr, "<b><i>You retreat inward and recall the rites of the berserker..</i></b>")
 
 	to_chat(usr, "<span class='notice'>Gutpunch</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
-	to_chat(usr, "<span class='notice'>Shoulder Check</span>: Harm Harm Disarm. Launch people brutally across rooms, and away from you.")
-	to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm Harm Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")
+	to_chat(usr, "<span class='notice'>Shoulder Check</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
+	to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm  Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")
 	to_chat(usr, "<span class='notice'>In addition, your body is better conditioned, giving you further stamina and increased stun resistance.</span>")
 

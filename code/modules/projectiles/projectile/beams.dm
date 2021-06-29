@@ -261,7 +261,7 @@
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser beam"
 	damage = 40
-	armour_penetration = 0.6
+	armour_penetration = 0.5
 	pixels_per_second = TILES_TO_PIXELS(50)
 
 //plasma caster
