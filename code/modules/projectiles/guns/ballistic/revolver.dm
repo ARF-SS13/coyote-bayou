@@ -611,9 +611,9 @@
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
-	fire_delay = 5
+	fire_delay = 8 //This fires MUCH slower then the Sequoia or 357. You're rewarded with bouncing bullets
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-	spread = 0 //slow firing bouncing bullets
+	spread = 0 //Your reward for the slower fire rate is less spread anddd
 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"

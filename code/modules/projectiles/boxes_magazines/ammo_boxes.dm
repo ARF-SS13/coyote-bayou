@@ -177,7 +177,7 @@
 	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2000)
 
 /obj/item/ammo_box/a45lcbox
-	name = "ammo box (.44 Magnum FMJ)"
+	name = "ammo box (.45 Long Colt)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ammobox"
 	caliber = "a45lc"
