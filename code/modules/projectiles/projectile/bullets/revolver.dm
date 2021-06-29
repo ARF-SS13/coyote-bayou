@@ -134,6 +134,7 @@
 	wound_bonus = 30
 	bare_wound_bonus = 30
 
+
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 

@@ -314,10 +314,10 @@ Sergeant First Class
 */
 
 /datum/job/ncr/f13firstsergeant
-	title = "NCR Sergeant First Class"
+	title = "NCR Sergeant First Class" 
 	flag = F13FIRSTSERGEANT
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0 //basically doesn't get used, remove the bloat roles. I wont delete this but it should be either reworked or commented out.
+	spawn_positions = 0
 	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the third in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
 	supervisors = "Lieutenant and above"
 	selection_color = "#fff5cc"
@@ -364,6 +364,13 @@ Sergeant
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
 	exp_requirements = 600
+	
+	loadout_options = list(
+	/datum/outfit/loadout/sergeantrifleman,
+	/datum/outfit/loadout/sergeantrecon,
+	/datum/outfit/loadout/sergeantcqc
+	)
+
 
 /datum/outfit/job/ncr/f13sergeant
 	name = "NCR Sergeant"
@@ -372,11 +379,9 @@ Sergeant
 	uniform 		= /obj/item/clothing/under/f13/ncr
 	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
 	accessory		= /obj/item/clothing/accessory/ncr/SGT
-	head 			= /obj/item/clothing/head/f13/ncr
 	glasses			= /obj/item/clothing/glasses/sunglasses/big
 	neck 			= /obj/item/storage/belt/holster
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
-	suit_store		= /obj/item/gun/ballistic/automatic/service
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1, \
@@ -384,8 +389,39 @@ Sergeant
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1, \
 		/obj/item/binoculars=1)
+
+/datum/outfit/loadout/sergeantrifleman
+	name = "Rifleman"
+	suit_store = /obj/item/gun/ballistic/automatic/service 
+	head = /obj/item/clothing/head/f13/ncr
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
+		/obj/item/storage/box/ration/menu_two=1)
+
+/datum/outfit/loadout/sergeantrecon
+	name = "Pathfinder Squad Leader"
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact //behold, the only autosearable M1
+	head 			= /obj/item/clothing/head/f13/ncr
+	backpack_contents = list(
+		/obj/item/book/granter/trait/trekking=1,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2, \
+		/obj/item/storage/box/ration/menu_eight=1,
+		)
+
+/datum/outfit/loadout/sergeantcqc
+	name = "Trench Raider"
+	suit_store = /obj/item/gun/ballistic/shotgun/trench //Over thereee over thereeeee spread the spread the word over thereeee
+	head = /obj/item/clothing/head/f13/ncr/goggles
+	backpack_contents = list(
+		/obj/item/storage/fancy/ammobox/lethalshot=2, \
+		/obj/item/clothing/mask/gas=1, \
+		/obj/item/tank/internals/emergency_oxygen/engi=1, \
+		/obj/item/grenade/smokebomb=3, \
+		/obj/item/kitchen/knife/trench=1 \
+		)	//ahhhhhhhhhhh
+
+
 
 /*
 Heavy Trooper
@@ -440,13 +476,19 @@ Corporal
 /datum/job/ncr/f13corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "You are a junior NCO. You are tasked with organizing the enlisted ranks into fireteams and answer directly to a Sergeant and/or the Sergeant First Class."
 	supervisors = "Sergeant and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_CORPORAL
 	outfit = /datum/outfit/job/ncr/f13corporal
+
+	loadout_options = list(
+	/datum/outfit/loadout/corporaldesignatedmarksman,
+	/datum/outfit/loadout/corporalspotter,
+	/datum/outfit/loadout/corporalrifleman
+	)
 
 /datum/outfit/job/ncr/f13corporal
 	name = "NCR Corporal"
@@ -456,22 +498,43 @@ Corporal
 	id 				= /obj/item/card/id/dogtag/ncrtrooper
 	neck 			= /obj/item/storage/belt/holster
 	accessory 		= /obj/item/clothing/accessory/ncr/CPL
-	head 			= /obj/item/clothing/head/f13/ncr
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	belt 			= /obj/item/storage/belt/military/assault/ncr
-	suit_store		= /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted=1, \
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1
+		/obj/item/storage/bag/money/small/ncrenlisted=1 \
 		)
 
-/*
-Combat Engineer
-*/
+/datum/outfit/loadout/corporaldesignatedmarksman
+	name = "Designated marksman"
+	suit_store = /obj/item/gun/ballistic/shotgun/remington/ncr
+	head = /obj/item/clothing/head/beret/ncr_recon/worn
+	backpack_contents = list(
+		/obj/item/attachments/scope=1,
+		/obj/item/ammo_box/a762=4, \
+		/obj/item/storage/box/ration/menu_two=1,
+		)
+
+/datum/outfit/loadout/corporalspotter
+	name = "Spotter"
+	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
+	head = /obj/item/clothing/head/beret/ncr_recon/worn
+	backpack_contents = list(
+		/obj/item/storage/box/ration/menu_eight=1, 
+		/obj/item/binoculars=1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=1)
+
+/datum/outfit/loadout/corporalrifleman
+	name = "Assistant Squad Leader"
+	head = /obj/item/clothing/head/f13/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/service
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
+		/obj/item/storage/box/ration/menu_one=1)
+
 
 /datum/job/ncr/f13combatmedic
 	title = "NCR Combat Medic"
@@ -522,14 +585,25 @@ Combat Engineer
 /datum/job/ncr/f13combatengineer
 	title = "NCR Combat Engineer"
 	flag = F13COMBATENGINEER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 	description = "You are a veteran enlisted with an engineering skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
 	supervisors = "Corporals and above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
 	outfit = /datum/outfit/job/ncr/f13combatengineer
+
+	loadout_options = list(
+		/datum/outfit/loadout/combatengineerbuilder,
+		/datum/outfit/loadout/combatengineertrapper,
+		/datum/outfit/loadout/combatengineerflamethrower
+		)
+
+	/*	/obj/item/ammo_box/magazine/m556/rifle=1, \
+		/obj/item/grenade/plastic=1, \
+		/obj/item/stack/sheet/metal/fifty=1, \
+		/obj/item/stack/sheet/glass/fifty=1*/
 
 /datum/outfit/job/ncr/f13combatengineer
 	name = "NCR Combat Engineer"
@@ -540,22 +614,52 @@ Combat Engineer
 	neck 			= /obj/item/storage/belt/holster
 	head			= /obj/item/clothing/head/f13/ncr
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	glasses			= /obj/item/clothing/glasses/welding
-	belt 			= /obj/item/storage/belt/military/assault/ncr/engineer
 	gloves			= /obj/item/clothing/gloves/color/yellow
 	accessory		= /obj/item/clothing/accessory/ncr/SPC
-	suit_store		= /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted=1, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted=1 \
+		)
+
+/datum/outfit/loadout/combatengineerbuilder	
+	name = "Construction Specialist"
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	head = /obj/item/clothing/head/f13/ncr/goggles
+	belt = /obj/item/storage/belt/military/assault/ncr/engineer
+	glasses	= /obj/item/clothing/glasses/welding
+	backpack_contents = list(
 		/obj/item/grenade/plastic=1, \
 		/obj/item/stack/sheet/metal/fifty=1, \
-		/obj/item/stack/sheet/glass/fifty=1
+		/obj/item/stack/sheet/glass/fifty=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2  \
 		)
+
+/datum/outfit/loadout/combatengineertrapper
+	name = "Trapper"
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
+	head = /obj/item/clothing/head/f13/ncr
+	belt = /obj/item/storage/belt/military/assault/ncr/engineer
+	glasses	= /obj/item/clothing/glasses/sunglasses
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_adv=2, \
+		/obj/item/book/granter/crafting_recipe/blueprint/trapper=1, \
+		/obj/item/stack/sheet/metal/twenty=1 \
+		)
+
+/datum/outfit/loadout/combatengineerflamethrower
+	name = "Combat Sapper"
+	suit_store = /obj/item/gun/ballistic/automatic/greasegun
+	head = /obj/item/clothing/head/f13/ncr/goggles
+	belt = /obj/item/storage/belt/military/assault/ncr
+	glasses	= /obj/item/clothing/glasses/sunglasses
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/greasegun=2, \
+		/obj/item/m2flamethrowertank=1
+		)
+
 
 /datum/outfit/job/ncr/f13combatengineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -609,14 +713,14 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
+	suit_store = /obj/item/gun/ballistic/automatic/varmint //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
 		/obj/item/ammo_box/magazine/m556/rifle=1)
 
 /datum/outfit/loadout/trooperpathfinder
 	name = "Pathfinder"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine //Generally worse weapon, though can be upgraded
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n //Generally worse weapon, though can be upgraded
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
 		/obj/item/storage/box/ration/menu_eight=1,
@@ -686,7 +790,8 @@ Rear Echelon
 	/datum/outfit/loadout/rearlog,
 	/datum/outfit/loadout/reartech,
 	/datum/outfit/loadout/rearcorps,
-	/datum/outfit/loadout/rearscav
+	/datum/outfit/loadout/rearscav,
+	/datum/outfit/loadout/offduty
 	)
 
 /datum/outfit/job/ncr/f13rearechelon
@@ -744,6 +849,15 @@ Rear Echelon
 		/obj/item/storage/fancy/ammobox/lethalshot=2, \
 		/obj/item/weldingtool/largetank)
 
+/datum/outfit/loadout/offduty //Fuck having an entire role just for off duty, making it a rear-eche loadout
+	name = "Off-Duty"
+	belt = /obj/item/storage/belt/military/NCR_Bandolier
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/reagent_containers/food/snacks/cheesyburrito=2, \
+		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola=1, \
+		/obj/item/ammo_box/magazine/m9mm=3)
+
 
 /*
 Trooper
@@ -752,8 +866,8 @@ Trooper
 /datum/job/ncr/f13ncroffduty
 	title = "NCR Off-Duty"
 	flag = F13NCROFFDUTY
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0 //Again not commenting out, but it's been moved to a rear echelon loadout
+	spawn_positions = 0
 	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
 	supervisors = "All NCOs and COs"
 	selection_color = "#fff5cc"
@@ -844,12 +958,13 @@ Veteran Ranger
 
 
 /datum/outfit/loadout/vrcqc
-	name = "Close Quarters Combat Ranger"
-	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle
+	name = "Gunslinger"
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
-		/obj/item/ammo_box/magazine/m45exp=2)
+		/obj/item/book/granter/trait/gunslinger=1, \
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger=2, \
+		/obj/item/ammo_box/a45lcbox=1
+		)
+
 
 
 //NCR Ranger

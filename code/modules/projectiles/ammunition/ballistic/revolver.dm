@@ -19,7 +19,7 @@
 	desc = "A .38 special bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38
-
+	
 // .44 magnum
 /obj/item/ammo_casing/m44
 	name = ".44 magnum FMJ bullet casing"
@@ -36,6 +36,13 @@
 	name = ".44 magnum SWC bullet casing"
 	desc = "A .44 magnum semi-wadcutter bullet casing."
 	projectile_type = /obj/item/projectile/bullet/m44/swc
+
+
+/obj/item/ammo_casing/a45lc
+	name = ".45 Long Colt bullet casing"
+	desc = "An arcaich .45 long colt bullet casing."
+	caliber = "a45lc"
+	projectile_type = /obj/item/projectile/bullet/a45lc
 
 // .45-70 Gov't
 /obj/item/ammo_casing/c4570

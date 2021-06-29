@@ -32,6 +32,23 @@
 	name = "dragonsbreath pellet"
 	damage = 5
 
+/obj/item/projectile/incendiary/flamethrower
+	name = "FIREEEEEEEEEE!!!!!"
+	icon = 'icons/effects/fire.dmi'
+	icon_state = "3"
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage_type = BURN
+	damage = 5 //slight damage on impact
+	range = 10
+
+/obj/item/projectile/incendiary/flamethrower/on_hit(atom/target)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(4) //slightly stronger then a molotov, if you stand infront of this for a really long time they will eventually just cook you
+		M.IgniteMob()
+
 /obj/item/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
 	damage = 5
@@ -148,3 +165,4 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
+
