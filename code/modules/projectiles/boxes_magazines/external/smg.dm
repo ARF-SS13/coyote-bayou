@@ -2,6 +2,7 @@
 // SMG MAGAZINES //
 ///////////////////
 
+
 /obj/item/ammo_box/magazine/cg45
 	name = "Carl Gustaf magazine (10mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'	
@@ -12,7 +13,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "45 submachine gun magazine (.45)"
+	name = "Grease gun magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c45
@@ -24,17 +25,16 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	name = "rockwell magazine (9mm)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "rock-20"
+	name = "Rockwell magazine (9mm)"
+	icon_state = "rock"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 20
 
 /obj/item/ammo_box/magazine/uzim9mm
-	name = "uzi magazine (9mm)"
+	name = "Uzi magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "uzi9mm-32"
+	icon_state = "uzi9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 32
@@ -47,7 +47,7 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/pps9mm
-	name = "ppsh magazine (9mm)"
+	name = "Ppsh magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "ppshDrum"
 	ammo_type = /obj/item/ammo_casing/c9mm

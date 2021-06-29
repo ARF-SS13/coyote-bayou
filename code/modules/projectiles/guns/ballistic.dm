@@ -4,7 +4,7 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/spawnwithmagazine = TRUE
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm_adv //Removes the need for max_ammo and caliber info
 	var/init_mag_type = null
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
