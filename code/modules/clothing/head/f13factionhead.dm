@@ -529,17 +529,17 @@
 
 /obj/item/clothing/head/beret/ncr
 	name = "NCR officer beret"
-	desc = "(V) A green beret, standard issue for all commissioned NCR Officers."
+	desc = "(VI) A green beret, standard issue for all commissioned NCR Officers."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon
 	name = "NCR First Recon beret"
-	desc = "(V) A red beret, issued to members of NCR First Recon."
+	desc = "(VI) A red beret, issued to members of NCR First Recon."
 	icon_state = "ncr_recon_beret"
 	item_state = "ncr_recon_beret"
-	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon/worn
 	name = "Worn NCR First Recon beret"
@@ -550,38 +550,38 @@
 
 /obj/item/clothing/head/beret/ncr_scout
 	name = "NCR Third Scout beret"
-	desc = "(IV) A brown beret, issued to members of the NCR Third Scout Battallion."
+	desc = "(VI) A brown beret, issued to members of the NCR Third Scout Battallion."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_scout_lt
 	name = "NCR Third Scout officer beret"
-	desc = "(IV) A brown beret, issued to officers of the NCR Third Scout Battallion."
+	desc = "(VI) A brown beret, issued to officers of the NCR Third Scout Battallion."
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_sapper
 	name = "NCR Sapper beret"
-	desc = "(VI) A grey beret, issued to troopers that have passed Sapper School."
+	desc = "(VII) A grey beret, issued to troopers that have passed Sapper School."
 	icon_state = "ncr_sapper_beret"
 	item_state = "ncr_sapper_beret"
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_sof
 	name = "NCR SOF beret"
-	desc = "(IV) A tan beret, issued members of the New California Republic Special Operations Command."
+	desc = "(VII) A tan beret, issued members of the New California Republic Special Operations Command."
 	icon_state = "ncr_sof_beret"
 	item_state = "ncr_sof_beret"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ncr_stetson
 	name = "NCR air cavalry stetson"
-	desc = "(IV) A black brahmin leather stetson, authorized for usage amongst all troopers assigned to Air Cavalry units."
+	desc = "(VII) A black brahmin leather stetson, authorized for usage amongst all troopers assigned to Air Cavalry units."
 	icon_state = "ncr_stetson"
 	item_state = "ncr_stetson"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ncr_cap
 	name = "NCR garrison cap"
@@ -592,10 +592,10 @@
 
 /obj/item/clothing/head/f13/ncr_campaign
 	name = "NCR campaign hat"
-	desc = "(IV) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
+	desc = "(VII) A khaki campaign hat, popularly used by senior NCOs in the NCRA."
 	icon_state = "ncr_campaign"
 	item_state = "ncr_campaign"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_dresscap
 	name = "NCR peaked cap"

@@ -257,7 +257,7 @@
 /datum/outfit/loadout/decvetrear
 	name =			"Lead from the rear"
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/decan
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store = 	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/claymore/machete/spatha=1,
 					/obj/item/ammo_box/tube/m44=3)
@@ -315,7 +315,7 @@
 
 /datum/outfit/loadout/decprimrear
 	name =			"Lead from the rear"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
 					/obj/item/ammo_box/tube/a357=2,
 					/obj/item/claymore/machete/gladius=1)					
@@ -503,7 +503,7 @@
 	name =			"Gunman"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/ammo_box/tube/m44=2,
 					/obj/item/claymore/machete/gladius=1,
@@ -574,7 +574,7 @@
 /datum/outfit/loadout/primerifle
 	name =			"Rifleman"
 	belt = 			/obj/item/storage/belt/military/assault/legion
-	suit_store =	/obj/item/gun/ballistic/shotgun/lasmusket
+	suit_store =	/obj/item/gun/ballistic/rifle/lasmusket
 	backpack_contents = list(
 					/obj/item/ammo_box/lasmusket=3,
 					/obj/item/claymore/machete/reinforced=1)
@@ -701,7 +701,7 @@
 /datum/outfit/loadout/expsniper
 	name =			"Sniper"
 	l_pocket =		/obj/item/attachments/scope
-	suit_store =	/obj/item/gun/ballistic/shotgun/lasmusket
+	suit_store =	/obj/item/gun/ballistic/rifle/lasmusket
 	backpack_contents = list(
 					/obj/item/claymore/machete/reinforced=1,
 					/obj/item/ammo_box/lasmusket=3,
