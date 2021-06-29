@@ -839,13 +839,6 @@
 	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 70, "rad" = 10, "fire" = 20, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/tribe_helmet
-	name = "tribalized helmet"
-	desc = "(V) An old military grade pre-war combat helmet, repainted and re purposed with bones and sinew to worship some tribal diety."
-	icon_state = "tribe_helmet"
-	item_state = "tribe_helmet"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
-
 /obj/item/clothing/head/helmet/f13/wayfarer/chief
 	name = "helm of the steady walk"
 	desc = "(VII) A chief who chooses this protectron mantle embodies the defensive, a stalwart heart that protects their village above all other goals, even if it means hampering the growth of the village to do it."
@@ -856,12 +849,20 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/tribe_helmet
+/obj/item/clothing/head/helmet/f13/combat/wayfarer/tribe_helmet
 	name = "tribalized helmet"
 	desc = "(V) An old military grade pre-war combat helmet, repainted and re purposed with bones and sinew to worship some tribal diety."
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
 	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
+/obj/item/clothing/head/helmet/f13/wayfarer/pa_helmet
+	name = "tribal full plate headdress"
+	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed and painted with markings of a tribe to signify its holyness to Kwer. It has dye'd feathers addoring it to make it look fierce in battle."
+	icon_state = "tribal_PA_helmet"
+	item_state = "tribal_PA_helmet"
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 40, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
