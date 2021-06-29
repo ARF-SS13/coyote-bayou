@@ -607,7 +607,7 @@
 "abA" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever,
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
 /turf/open/floor/plasteel/darkred,
 /area/f13/brotherhood)
 "abB" = (
@@ -7651,7 +7651,7 @@
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light,
-/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever,
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/vault/security/checkpoint)
 "avy" = (
@@ -12861,7 +12861,7 @@
 /area/f13/clinic)
 "aMo" = (
 /obj/structure/table/wood/settler,
-/obj/item/gun/ballistic/automatic/pps,
+/obj/item/gun/ballistic/automatic/smg/ppsh,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/mountain)
 "aMp" = (
@@ -31249,7 +31249,7 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "bOe" = (
 /obj/structure/table/reinforced,
-/obj/item/nullrod/claymore/chainsaw_sword,
+/obj/item/melee/powered/ripper,
 /turf/open/floor/f13{
 	icon_state = "grass2"
 	},

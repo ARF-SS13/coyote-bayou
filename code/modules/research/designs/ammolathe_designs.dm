@@ -396,7 +396,7 @@
 	name = "empty handgun magazine (12.7)"
 	id = "m127mm"
 	materials = list(/datum/material/iron = 6000)
-	build_path = /obj/item/ammo_box/magazine/m127mm/empty
+	build_path = /obj/item/ammo_box/magazine/m14mm/empty
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/m22smg

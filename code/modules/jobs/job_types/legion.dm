@@ -170,7 +170,7 @@
 	head = 			/obj/item/clothing/head/helmet/f13/legion/palacent
 	suit_store = 	/obj/item/twohanded/thermic_lance
 	backpack_contents = list(
-					/obj/item/gun/ballistic/automatic/smg10mm=1,
+					/obj/item/gun/ballistic/automatic/smg/smg10mm=1,
 					/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
 /datum/outfit/loadout/rangerhunter
@@ -307,7 +307,7 @@
 
 /datum/outfit/loadout/decprimfront
 	name =			"Lead from the front"
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm/worn
+	suit_store =	/obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	backpack_contents = list(
 					/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 					/obj/item/shield/riot/legion=1,
@@ -364,7 +364,7 @@
 
 /datum/outfit/loadout/recdeclegion
 	name =			"Born in the Legion"
-	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/hunting/shotgunlever
+	suit_store =	/obj/item/gun/ballistic/rifle/repeater/shotgunlever
 	belt = 			/obj/item/storage/belt/military/assault/legion
 	backpack_contents = list(
 					/obj/item/ammo_box/shotgun/buck=2,

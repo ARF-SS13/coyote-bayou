@@ -196,7 +196,7 @@
 	name = "Grease Gun"
 	id = "greasegun"
 	cost = 150
-	item_path = /obj/item/gun/ballistic/automatic/greasegun
+	item_path = /obj/item/gun/ballistic/automatic/smg/greasegun
 
 /datum/gang_item/weapon/type17
 	name = "Type 17 Pistol"

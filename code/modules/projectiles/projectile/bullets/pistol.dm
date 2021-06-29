@@ -5,9 +5,9 @@
 //////////////////////
 /*
 FMJ (full metal jacket)		=	Baseline
-AP (armor piercing)			=	-10% damage. AP increased by 0.3. Wound bonus -50%
-JHP (jacketed hollow point)	=	+10% damage. AP reduced by 0.5. Wound bonus + 50%
-SWC (semi wadcutter)		=	AP reduced by 0.2. Wound bonus +50%
+AP (armor piercing)			=	-10% damage. AP increased by 0.2. Wound bonus -50%
+JHP (jacketed hollow point)	=	+10% damage. AP reduced by 0.2. Wound bonus + 50%
+SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
 P+ (overpressure)			=	extra speed 500. AP + 01. Wound bonus -25%
 Match						=	extra speed 200. AP +0.05. Wound bonus -10%
 Civilian round				=	-10% damage. AP reduced by 50% 
@@ -27,7 +27,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c22/hp
 	name = ".22lr hollow point bullet"
 	damage = 22
-	armour_penetration = -0.44
+	armour_penetration = -0.14
 	wound_bonus = -9
 	bare_wound_bonus = 9
 
@@ -62,14 +62,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c9mm/ap
 	name = "9mm AP bullet"
 	damage = 25
-	armour_penetration = 0.35
+	armour_penetration = 0.25
 	wound_bonus = 8
 	bare_wound_bonus = -8
 
 /obj/item/projectile/bullet/c9mm/jhp
 	name = "9mm JHP bullet"
 	damage = 31
-	armour_penetration = -0.45
+	armour_penetration = -0.15
 	wound_bonus = -23
 	bare_wound_bonus = 23
 
@@ -98,14 +98,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c10mm/ap
 	name = "10mm AP bullet"
 	damage = 27
-	armour_penetration = 0.42
+	armour_penetration = 0.32
 	wound_bonus = 9
 	bare_wound_bonus = -9
 
 /obj/item/projectile/bullet/c10mm/hp
 	name = "10mm JHP bullet"
 	damage = 33
-	armour_penetration = -0.38
+	armour_penetration = -0.08
 	wound_bonus = -27
 	bare_wound_bonus = 27
 
@@ -123,7 +123,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c45/jhp
 	name = ".45 JHP bullet"
 	damage = 36
-	armour_penetration = -0.4
+	armour_penetration = -0.1
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
@@ -150,14 +150,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/a357/jhp
 	name = ".357 JHP bullet"
 	damage = 41
-	armour_penetration = -0.35
+	armour_penetration = -0.05
 	wound_bonus = -21
 	bare_wound_bonus = 21
 
 /obj/item/projectile/bullet/a357/jfp
 	name = ".357 JFP bullet"
 	damage = 39
-	armour_penetration = 0.05
+	armour_penetration = 0.1
 	wound_bonus = 18
 	bare_wound_bonus = 18
 
@@ -176,14 +176,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/m44/jhp
 	name = ".44 JHP bullet"
 	damage = 44
-	armour_penetration = -0.3
+	armour_penetration = 0
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/m44/swc
 	name = ".44 SWC bullet"
 	damage = 40
-	armour_penetration = 0
+	armour_penetration = 0.1
 	wound_bonus = 30
 	bare_wound_bonus = 30
 
@@ -218,14 +218,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c4570/jhp
 	name = ".45-70 JHP bullet"
 	damage = 53
-	armour_penetration = -0.2
+	armour_penetration = 0.1
 	wound_bonus = -36
 	bare_wound_bonus = 36
 
 /obj/item/projectile/bullet/c4570/swc
 	name = ".45-70 SWC bullet"
 	damage = 48
-	armour_penetration = 0.1
+	armour_penetration = 0.2
 	wound_bonus = 36
 	bare_wound_bonus = 36
 
@@ -254,7 +254,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/a127mm/jhp
 	name = "14mm JHP bullet"
 	damage = 62
-	armour_penetration = -0.25
+	armour_penetration = 0.05
 	wound_bonus = -42
 	bare_wound_bonus = 42
 
@@ -273,7 +273,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/needle/ap
 	name = "armour piercing needle"
 	damage = 32
-	armour_penetration = 0.9
+	armour_penetration = 0.8
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	piercing = TRUE
@@ -291,6 +291,53 @@ Civilian round				=	-10% damage. AP reduced by 50%
 ////////////////
 
 /*
+SYNDIE AMMO
+/obj/item/projectile/bullet/p50
+	name =".50 bullet"
+	pixels_per_second = TILES_TO_PIXELS(25)
+	damage = 70
+	knockdown = 100
+	dismemberment = 50
+	armour_penetration = 0.85
+	zone_accuracy_factor = 100		//guarunteed 100%
+	var/breakthings = TRUE
+
+/obj/item/projectile/bullet/p50/on_hit(atom/target, blocked = 0)
+	if(isobj(target) && (blocked != 100) && breakthings)
+		var/obj/O = target
+		O.take_damage(80, BRUTE, "bullet", FALSE)
+	return ..()
+
+/obj/item/projectile/bullet/p50/soporific
+	name =".50 soporific bullet"
+	armour_penetration = 0
+	damage = 0
+	dismemberment = 0
+	knockdown = 0
+	breakthings = FALSE
+
+/obj/item/projectile/bullet/p50/soporific/on_hit(atom/target, blocked = FALSE)
+	if((blocked != 100) && isliving(target))
+		var/mob/living/L = target
+		L.Sleeping(400)
+	return ..()
+
+/obj/item/projectile/bullet/p50/penetrator
+	name =".50 penetrator bullet"
+	icon_state = "gauss"
+	name = "penetrator round"
+	damage = 60
+	movement_type = FLYING | UNSTOPPABLE
+	dismemberment = 0 //It goes through you cleanly.
+	knockdown = 0
+	breakthings = FALSE
+
+/obj/item/projectile/bullet/p50/penetrator/shuttle //Nukeop Shuttle Variety
+	icon_state = "gaussstrong"
+	damage = 25
+	pixels_per_second = TILES_TO_PIXELS(33.33)
+	range = 16
+
 NEEDLE INJECTION CODE
 /obj/item/projectile/bullet/needle/Initialize()
 	. = ..()
