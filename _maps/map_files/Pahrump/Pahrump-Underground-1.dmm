@@ -3863,7 +3863,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "dEG" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -8222,7 +8222,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hmM" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -11896,7 +11896,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "jYL" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Clinic";
 	req_one_access_txt = "124"
 	},
@@ -18845,6 +18845,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"pCJ" = (
+/obj/machinery/door/airlock/medical/glass{
+	name = "Clinic";
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/followers)
 "pDx" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -80837,7 +80846,7 @@ ahe
 bis
 wwU
 wwU
-dOF
+pCJ
 coX
 wwU
 wwU
@@ -82382,7 +82391,7 @@ gED
 bEp
 gED
 gED
-dOF
+pCJ
 qFS
 gjr
 aaI

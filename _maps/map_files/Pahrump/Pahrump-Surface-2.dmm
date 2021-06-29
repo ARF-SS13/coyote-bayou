@@ -13532,15 +13532,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"hDK" = (
-/obj/structure/frame/machine,
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "hDQ" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
@@ -14351,11 +14342,12 @@
 	},
 /area/f13/ncr)
 "iax" = (
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -11
+/obj/structure/sink/kitchen{
+	pixel_y = 25
 	},
+/obj/structure/decoration/vent,
 /turf/open/floor/f13{
-	icon_state = "greendirtyfull"
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "iaB" = (
@@ -15006,20 +14998,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"ivm" = (
-/obj/machinery/hydroponics/constructable{
-	pixel_x = -2;
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 4;
-	pixel_x = 6;
-	pixel_y = -1
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "ivJ" = (
 /obj/structure/table/glass,
 /turf/open/floor/f13,
@@ -15080,20 +15058,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/brotherhood)
-"ixQ" = (
-/obj/machinery/hydroponics/constructable{
-	pixel_x = 2;
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 8;
-	pixel_x = -6;
-	pixel_y = -1
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "iyg" = (
 /mob/living/simple_animal/hostile/wolf/alpha,
 /turf/open/indestructible/ground/outside/desert,
@@ -15550,6 +15514,16 @@
 	icon_state = "dirt"
 	},
 /area/f13/caves)
+"iKK" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/machinery/light/lampost{
+	dir = 1;
+	pixel_x = -32
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright2bottom"
+	},
+/area/f13/wasteland)
 "iKO" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -16166,10 +16140,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 4;
-	pixel_x = 6
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16288,16 +16258,8 @@
 	},
 /area/f13/ncr)
 "jaT" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 8;
-	pixel_x = -6
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/machinery/microwave/stove,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
 "jaU" = (
 /obj/structure/table/wood,
@@ -16823,13 +16785,6 @@
 /area/f13/building)
 "jow" = (
 /obj/structure/frame/machine,
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 4;
-	pixel_x = 6
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -17537,6 +17492,7 @@
 /area/f13/village)
 "jMP" = (
 /obj/structure/barricade/sandbags,
+/obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner"
 	},
@@ -17895,7 +17851,10 @@
 	},
 /area/f13/building)
 "jVE" = (
-/obj/structure/lamp_post/quadra,
+/obj/machinery/light/lampost{
+	dir = 1;
+	pixel_x = -32
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerbordercorner"
@@ -18251,13 +18210,6 @@
 	},
 /area/f13/wasteland)
 "keb" = (
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 4;
-	pixel_x = 6
-	},
 /obj/machinery/hydroponics/constructable{
 	pixel_x = -2;
 	pixel_y = 6
@@ -18351,13 +18303,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood)
 "kfY" = (
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 8;
-	pixel_x = -6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
 /obj/machinery/hydroponics/constructable{
 	pixel_x = 2;
 	pixel_y = 6
@@ -19925,7 +19870,7 @@
 	},
 /area/f13/building)
 "lgg" = (
-/obj/machinery/smartfridge/bottlerack/grownbin,
+/obj/structure/rack,
 /obj/item/storage/box/disks_plantgene,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
@@ -20481,7 +20426,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/microwave/stove,
+/obj/machinery/smartfridge/bottlerack/grownbin,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
 "lwu" = (
@@ -25670,7 +25615,9 @@
 	},
 /area/f13/caves)
 "oJu" = (
-/obj/item/storage/trash_stack,
+/obj/machinery/mineral/wasteland_vendor/attachments{
+	icon_state = "weapon_idle"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outermaincornerouter"
@@ -25903,13 +25850,6 @@
 /obj/machinery/plantgenes{
 	pixel_y = 5
 	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	pixel_y = -6
-	},
-/obj/effect/turf_decal/trimline/yellow/line{
-	dir = 8;
-	pixel_x = -6
-	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -25958,13 +25898,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "oTT" = (
-/obj/structure/flora/tree/wasteland,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4";
-	layer = 6
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/structure/table,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/building)
 "oTY" = (
 /obj/item/mop,
 /obj/structure/mopbucket,
@@ -25982,6 +25920,7 @@
 "oUy" = (
 /obj/structure/rack,
 /obj/structure/lattice/catwalk,
+/obj/item/pickaxe/drill,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
 "oUI" = (
@@ -26126,10 +26065,8 @@
 	},
 /area/f13/ncr)
 "oZK" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
 /obj/structure/lattice/catwalk,
+/obj/machinery/vending/tool,
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
 "oZX" = (
@@ -37339,9 +37276,11 @@
 /turf/open/floor/wood/f13/carpet,
 /area/f13/building)
 "vmi" = (
-/obj/structure/lamp_post/quadra,
+/obj/machinery/mineral/wasteland_vendor/crafting{
+	icon_state = "parts_idle"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
+	icon_state = "outermaincornerinner"
 	},
 /area/f13/wasteland)
 "vmX" = (
@@ -72014,7 +71953,7 @@ pKe
 psO
 ybI
 ybI
-vmi
+oqe
 ybI
 dCV
 dCV
@@ -75351,7 +75290,7 @@ ars
 ees
 ees
 gQv
-gMq
+iKK
 qIA
 uqa
 pdL
@@ -77653,13 +77592,13 @@ gIE
 pPe
 pPe
 pPe
-iVW
+pPe
 kbU
 iVW
 pPe
 vUG
 nvT
-qGZ
+vmi
 mKu
 trd
 pVI
@@ -77917,7 +77856,7 @@ kVm
 kVm
 dit
 oJu
-oTT
+xaE
 ilu
 uaf
 qkO
@@ -78165,13 +78104,13 @@ iTE
 geO
 dit
 oSi
-iax
-ivm
+mlD
+keb
 iXj
 keb
 kXy
 iOg
-jnb
+jaT
 dit
 bbG
 giZ
@@ -78421,14 +78360,14 @@ iTE
 kHg
 piu
 dit
-hDK
+jow
 mlD
 mlD
 mlD
 mlD
 iOg
 lwg
-jnb
+oTT
 dit
 giZ
 oUy
@@ -78935,10 +78874,10 @@ ftu
 fJa
 dit
 dit
-mlD
 iax
-ixQ
-jaT
+mlD
+kfY
+mgO
 kfY
 lgg
 lws
