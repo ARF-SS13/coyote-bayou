@@ -86,7 +86,7 @@
 	var/slot_id	// The indentifier for the slot. It has nothing to do with ID cards.
 	var/icon_empty // Icon when empty. For now used only by humans.
 	var/icon_full  // Icon when contains an item. For now used only by humans.
-	var/image/object_overlay
+	var/list/object_overlay = list()
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
@@ -104,15 +104,6 @@
 		usr.update_inv_hands()
 	return TRUE
 
-/obj/screen/inventory/MouseEntered()
-	..()
-	add_overlays()
-
-/obj/screen/inventory/MouseExited()
-	..()
-	cut_overlay(object_overlay)
-	QDEL_NULL(object_overlay)
-
 /obj/screen/inventory/update_icon_state()
 	if(!icon_empty)
 		icon_empty = icon_state
@@ -122,6 +113,15 @@
 			icon_state = icon_full
 		else
 			icon_state = icon_empty
+
+/obj/screen/inventory/MouseEntered()
+	..()
+	add_overlay()
+
+/obj/screen/inventory/MouseExited()
+	..()
+	cut_overlay(object_overlay)
+	object_overlay.Cut()
 
 /obj/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
@@ -142,8 +142,7 @@
 	else
 		item_overlay.color = "#00ff00"
 
-	cut_overlay(object_overlay)
-	object_overlay = item_overlay
+	object_overlay += item_overlay
 	add_overlay(object_overlay)
 
 /obj/screen/inventory/hand
