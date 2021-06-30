@@ -551,18 +551,18 @@
 	armor_block_chance = 80 //Enclave. 'nuff said
 	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
-/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
-	name = "advanced power armor MK2"
-	desc = "(XIII) It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
-	icon_state = "advpowerarmor2"
-	item_state = "advpowerarmor2"
-	melee_block_threshold = 50
-	armor_block_threshold = 0.5
-	armor_block_chance = 90
-	deflection_chance = 30
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/hellfire
+	name = "hellfire power armor"
+	desc = "(XIII) A deep black suit of Enclave-manufactured heavy power armor, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."
+	icon_state = "hellfire"
+	item_state = "hellfire"
+	melee_block_threshold = 70
+	armor_block_threshold = 0.8
+	armor_block_chance = 99
+	deflection_chance = 70
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
-/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2/wbos
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/hellfire/wbos
 	name = "advanced Washington power armor"
 	desc = "It's an improved model of the power armor used exclusively by the Washington Brotherhood."
 	icon_state = "apawbos"
