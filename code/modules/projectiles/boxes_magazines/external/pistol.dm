@@ -70,6 +70,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 12
 	multiple_sprites = 2
+	caliber = "10mm"
 
 /obj/item/ammo_box/magazine/m10mm_adv/empty
 	start_empty = 1

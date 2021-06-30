@@ -669,7 +669,7 @@ ATTACHMENTS
 
 //Sharpshooter Rifle 7.62mm, essentially better mosin-nagant.
 /obj/item/gun/ballistic/rifle/hunting/ncr
-	name = "sharpshooter rifle"
+	name = "Remington rifle"
 	desc = "A modified  hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/ncr
 	fire_delay = 12
