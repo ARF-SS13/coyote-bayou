@@ -261,7 +261,7 @@
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser beam"
 	damage = 40
-	armour_penetration = 0.6
+	armour_penetration = 0.5
 	pixels_per_second = TILES_TO_PIXELS(50)
 
 //plasma caster
@@ -269,7 +269,7 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 70
+	damage = 49
 	armour_penetration = 0.6
 	flag = "laser"
 	eyeblur = 0
