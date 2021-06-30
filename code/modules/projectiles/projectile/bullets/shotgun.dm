@@ -46,7 +46,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(4) 
+		M.adjust_fire_stacks(3) 
 		M.IgniteMob()
 
 /obj/item/projectile/bullet/shotgun_stunslug
