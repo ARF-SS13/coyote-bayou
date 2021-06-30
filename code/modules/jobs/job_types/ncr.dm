@@ -281,7 +281,7 @@ Logistics Officer
 	glasses			= /obj/item/clothing/glasses/welding
 	belt 			= /obj/item/storage/belt/utility/full/engi
 	gloves			= /obj/item/clothing/gloves/color/yellow
-	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
+	suit_store		= /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
 		/obj/item/ammo_box/magazine/m45=3, \
@@ -401,7 +401,7 @@ Sergeant
 
 /datum/outfit/loadout/sergeantrecon
 	name = "Pathfinder Squad Leader"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact //behold, the only autosearable M1
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
 	head 			= /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1,
@@ -520,12 +520,12 @@ Corporal
 
 /datum/outfit/loadout/corporalspotter
 	name = "Spotter"
-	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_eight=1, 
 		/obj/item/binoculars=1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1)
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
 /datum/outfit/loadout/corporalrifleman
 	name = "Assistant Squad Leader"
@@ -559,7 +559,7 @@ Corporal
 	head			= /obj/item/clothing/head/f13/ncr/steelpot_med
 	gloves			= /obj/item/clothing/gloves/color/latex/nitrile
 	accessory		= /obj/item/clothing/accessory/armband/med/ncr
-	suit_store		= /obj/item/gun/ballistic/automatic/service
+	suit_store		= /obj/item/gun/ballistic/automatic/m1carbine/m1n 
 	mask 			= /obj/item/clothing/mask/surgical
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -567,7 +567,7 @@ Corporal
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/storage/survivalkit_aid_adv=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted=1, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2, \
 		/obj/item/storage/firstaid/regular=1
 		)
 
