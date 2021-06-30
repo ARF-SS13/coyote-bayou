@@ -410,7 +410,6 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
-	extra_damage = 6 //slightly higher damage per shot to make up for not being able to autosear it. Base extra_damage is 4.
 	untinkerable = TRUE
 	
 /obj/item/gun/ballistic/automatic/m1carbine/compact
@@ -547,6 +546,7 @@
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	untinkerable = TRUE
 	fire_delay = 5
 	burst_size = 1
 	spread = 3
@@ -939,11 +939,12 @@
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = -1
-	burst_shot_delay = 1.5
+	burst_shot_delay = 2
 	spread = 6
 	randomspread = 1
+	untinkerable = TRUE
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/r84/burst_select()
