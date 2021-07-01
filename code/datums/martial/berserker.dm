@@ -49,7 +49,7 @@
 
 ///Shouldercheck: Harm Harm Harm combo, throws people seven tiles backwards
 /datum/martial_art/berserker/proc/shoulderCheck(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	var/damage = (damage_roll(A,D) + 10)
+	var/damage = (damage_roll(A,D) + 3)
 	A.do_attack_animation(D, ATTACK_EFFECT_KICK)
 	D.visible_message("<span class='warning'>[A] shoulder checks [D] square in the chest, sending them flying!</span>", \
 					"<span class='userdanger'>You are shoulderchecked in the chest by [A], sending you flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
@@ -68,7 +68,7 @@
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
 	if((D.mobility_flags & MOBILITY_STAND))
 		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
-		D.DefaultCombatKnockdown(5, override_hardstun = 0.01, override_stamdmg = 0)
+		D.DefaultCombatKnockdown(10, override_hardstun = 0.01, override_stamdmg = 0)
 		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
 		D.visible_message("<span class='warning'>[A] grabs [D] by the throat, slamming them face first into the ground!</span>", \
 					"<span class='userdanger'>[A] grabs you by the throat, slammed your head into the ground!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
