@@ -142,7 +142,7 @@
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
-/obj/item/ammo_box/magazine/m44
+/obj/item/ammo_box/magazine/automag
 	name = "automag magazine (.44 magnum)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "magnum"
