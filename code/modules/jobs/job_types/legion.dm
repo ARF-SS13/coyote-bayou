@@ -136,9 +136,10 @@
 	loadout_options = list(
 	/datum/outfit/loadout/palacent, //10mm SMG, large magazines and thermic lance
 	/datum/outfit/loadout/rangerhunter, //hunting revolver and ripper
-	/datum/outfit/loadout/centurion, //marksman and powerfist
-	/datum/outfit/loadout/berserkercenturion //RIP. AND. TEAR.
+	/datum/outfit/loadout/centurion //marksman and powerfist
 	)
+/*	/datum/outfit/loadout/berserkercenturion 
+kept here incase it gets reworked later*/
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -191,7 +192,7 @@
 					/obj/item/melee/powerfist/goliath=1,
 					/obj/item/ammo_box/magazine/m556/rifle=2)
 
-/datum/outfit/loadout/berserkercenturion
+/* /datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
@@ -199,6 +200,9 @@
 					/obj/item/melee/unarmed/sappers=1,
 					/obj/item/book/granter/martial/berserker=1,
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2)
+					
+					
+commented out pending rework*/
 
 
 // VETERAN DECANUS (Riot Shotgun, Spatha M1911)
@@ -467,10 +471,11 @@
 
 	loadout_options = list(
 		/datum/outfit/loadout/vetshielder, //10mm pistol, shield, heavy armor, throwing spears
-		/datum/outfit/loadout/vetrifle, //trail gun, .357 revolver, gladius
-		/datum/outfit/loadout/vetberserker, //brass knuckles, martial art, berserker powder. Rip and tear my friend.
+		/datum/outfit/loadout/vetrifle //trail gun, .357 revolver, gladius
 		)
-
+		
+/*/datum/outfit/loadout/vetberserker, //brass knuckles, martial art, berserker powder. Rip and tear my friend.
+kept here incase it gets reworked later.*/
 /datum/outfit/job/CaesarsLegion/Legionnaire/vetlegionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -511,6 +516,8 @@
 					/obj/item/ammo_box/a357=1,
 					/obj/item/gun/ballistic/revolver/colt357=1)
 
+
+/* 
 /datum/outfit/loadout/vetberserker
 	name =			"Praetorian Aspirant"
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
@@ -521,6 +528,7 @@
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2,
 					/obj/item/restraints/legcuffs/bola=1)
 
+commented out pending rework*/
 // PRIME
 
 /datum/job/CaesarsLegion/Legionnaire/f13legionary

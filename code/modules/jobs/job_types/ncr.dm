@@ -918,8 +918,12 @@ Veteran Ranger
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	
+	/*
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)
+	commented out for now, readd it if it gets reworked later.
+	*/
 
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
@@ -994,8 +998,11 @@ Veteran Ranger
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	/*
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)
+	commented out for now, readd it if it gets reworked later.
+	*/
 
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
