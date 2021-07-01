@@ -61,7 +61,7 @@
 		/obj/item/grenade/chem_grenade/glitter/blue = ARCADE_WEIGHT_TRICK,
 		/obj/item/grenade/chem_grenade/glitter/white = ARCADE_WEIGHT_TRICK,
 
-		/obj/item/extendohand/acme = ARCADE_WEIGHT_TRICK,
+		
 		/obj/item/card/emagfake	= ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/shoes/wheelys = ARCADE_WEIGHT_RARE,
 		/obj/item/clothing/shoes/kindleKicks = ARCADE_WEIGHT_RARE,

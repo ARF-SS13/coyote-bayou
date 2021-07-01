@@ -358,6 +358,7 @@
 	belt = 			null
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	r_pocket =		/obj/item/flashlight/lantern
+	l_pocket = 		/obj/item/storage/survivalkit_tribal
 	backpack_contents = list(
 					/obj/item/reagent_containers/pill/patch/healingpowder=1,
 					/obj/item/restraints/handcuffs=1)
