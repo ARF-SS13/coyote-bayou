@@ -477,7 +477,7 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockwood)//varmint
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/varmint
+				var/obj/item/B = new /obj/item/gun/ballistic/rifle/mag/varmint
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)

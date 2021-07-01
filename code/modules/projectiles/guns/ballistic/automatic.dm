@@ -379,15 +379,15 @@
 	extra_damage = 2
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonet"
 	knife_x_offset = 22
 	knife_y_offset = 21
 	can_scope = TRUE
-	scope_state = "lasmusket_scope"
+	scope_state = "scope_medium"
 	scope_x_offset = 5
 	scope_y_offset = 14
 	can_attachments = TRUE
-	can_automatic = FALSE
+	can_automatic = TRUE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
@@ -440,7 +440,7 @@
 
 
 //Destroyer carbine			Keywords: .45 ACP, Automatic, 30 rounds, Long barrel, Suppressor
-/obj/item/gun/ballistic/automatic/commando/ranger
+/obj/item/gun/ballistic/automatic/destroyer
 	name = "destroyer carbine"
 	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -454,7 +454,7 @@
 	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
 	can_scope = FALSE
-	scope_state = "lasmusket_scope"
+	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
 	untinkerable = TRUE
@@ -480,7 +480,7 @@
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonet"
 	can_attachments = TRUE
 	knife_x_offset = 22
 	knife_y_offset = 21
@@ -513,7 +513,7 @@
 	fire_delay = 3.5
 	spread = 3
 	can_scope = TRUE
-	scope_state = "smallrifle_scope"
+	scope_state = "scope_short"
 	scope_x_offset = 4
 	scope_y_offset = 15
 	suppressor_x_offset = 26
@@ -565,10 +565,10 @@
 	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 21
-	scope_state = "rifle_scope"
+	scope_state = "scope_long"
 	scope_x_offset = 4
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
@@ -593,10 +593,10 @@
 	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 21
-	scope_state = "rifle_scope"
+	scope_state = "scope_long"
 	scope_x_offset = 4
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
@@ -617,11 +617,11 @@
 	auto_eject = 1
 	semi_auto = TRUE
 	can_bayonet = TRUE
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonet"
 	knife_x_offset = 22
 	knife_y_offset = 21
 	can_scope = TRUE
-	scope_state = "rifle_scope"
+	scope_state = "scope_long"
 	scope_x_offset = 5
 	scope_y_offset = 14
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
@@ -669,11 +669,11 @@
 	mag_type = /obj/item/ammo_box/magazine/sks
 	fire_delay = 6
 	extra_penetration = 0.1
-	bayonet_state = "bayonetangle"
-	knife_x_offset = 23
-	knife_y_offset = 22
+	bayonet_state = "bayonet"
+	knife_x_offset = 24
+	knife_y_offset = 23
 	scope_state = "scope_mosin"
-	scope_x_offset = 5
+	scope_x_offset = 4
 	scope_y_offset = 12
 	auto_eject_sound = 'sound/weapons/magout.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
@@ -813,7 +813,7 @@
 	spread = 10
 	can_attachments = TRUE
 	can_scope = TRUE
-	scope_state = "smallrifle_scope"
+	scope_state = "scope_short"
 	scope_x_offset = 4
 	scope_y_offset = 15
 	can_suppress = TRUE

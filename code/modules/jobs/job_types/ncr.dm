@@ -414,13 +414,12 @@ Sergeant
 	suit_store = /obj/item/gun/ballistic/shotgun/trench //Over thereee over thereeeee spread the spread the word over thereeee
 	head = /obj/item/clothing/head/f13/ncr/goggles
 	backpack_contents = list(
-		/obj/item/storage/fancy/ammobox/lethalshot=2, \
+		/obj/item/ammo_box/shotgun/buck=2, \
 		/obj/item/clothing/mask/gas=1, \
 		/obj/item/tank/internals/emergency_oxygen/engi=1, \
 		/obj/item/grenade/smokebomb=3, \
 		/obj/item/kitchen/knife/trench=1 \
 		)	//ahhhhhhhhhhh
-
 
 
 /*
@@ -510,7 +509,7 @@ Corporal
 
 /datum/outfit/loadout/corporaldesignatedmarksman
 	name = "Designated marksman"
-	suit_store = /obj/item/gun/ballistic/rifle/hunting/ncr
+	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/attachments/scope=1,
@@ -713,25 +712,26 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/varmint //Service rifle is dead, long live the varmint rifle! Higher tier roles still get the Service Rifle.
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
-		/obj/item/ammo_box/magazine/m556/rifle=1)
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
 /datum/outfit/loadout/trooperpathfinder
 	name = "Pathfinder"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n //Generally worse weapon, though can be upgraded
+	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
 		/obj/item/storage/box/ration/menu_eight=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=1)
+		/obj/item/ammo_box/magazine/uzim9mm/rockwell=1)
 
 /datum/outfit/loadout/trooperfiresupport
-	name = "Fire Support"
-	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell //Barely better then a pipe gun but you get a pretty rapid burst fire. Intended for suppression/CQC
+	name = "Pointman"
+	suit_store = /obj/item/gun/ballistic/shotgun/police
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_one=1,
-		/obj/item/ammo_box/magazine/uzim9mm=1)
+		/obj/item/flashlight/seclite=1, //for putting on your shotgun. You're a pointman, you lead the way in attacks.
+		/obj/item/ammo_box/shotgun/buck=2)
 
 
 
@@ -946,9 +946,9 @@ Veteran Ranger
 
 /datum/outfit/loadout/vrclassic
 	name = "Classic Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/rifle/antimateriel
+	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
 	backpack_contents = list(
-		/obj/item/ammo_box/a50MG=2,
+		/obj/item/ammo_box/magazine/amr=2,
 		/obj/item/gun/ballistic/revolver/sequoia=1,
 		/obj/item/ammo_box/c4570=1)
 

@@ -369,7 +369,7 @@ commented out pending rework*/
 
 /datum/outfit/loadout/recdeclegion
 	name =			"Born in the Legion"
-	suit_store =	/obj/item/gun/ballistic/rifle/repeater/shotgunlever
+	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	belt = 			/obj/item/storage/belt/military/assault/legion
 	backpack_contents = list(
 					/obj/item/ammo_box/shotgun/buck=2,
