@@ -5,6 +5,7 @@
 	armour_penetration = 0.33
 	wound_bonus = 26
 	bare_wound_bonus = -26
+	spread = 2
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
