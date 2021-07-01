@@ -37,14 +37,14 @@
 					"<span class='userdanger'>[A] [atk_verb]s you!</span>", null, null, A)
 	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
 	if(prob(10))
-		crit_damage += (damage + 3)
+		crit_damage += (damage + 5)
 		playsound(get_turf(D), 'sound/weapons/bite.ogg', 50, TRUE, -1)
 		D.visible_message("<span class='warning'>[D] staggers as they're slammed in the stomach</span>", "<span class='userdanger'>You are struck with incredible precision by [A]!</span>")
 		log_combat(A, D, "critcal hard punched (Berserker)")//log it here because a critical can swing for 40 force and it's important for the sake of how hard they hit
 	else
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 		log_combat(A, D, "hard punched punched (Berserker)")//so as to not double up on logging
-	D.apply_damage((damage + 1) + crit_damage, BRUTE, affecting, wound_bonus = CANT_WOUND)
+	D.apply_damage((damage + 3) + crit_damage, BRUTE, affecting, wound_bonus = CANT_WOUND)
 	return TRUE
 
 ///Shouldercheck: Harm Harm Harm combo, throws people seven tiles backwards
@@ -55,7 +55,7 @@
 					"<span class='userdanger'>You are shoulderchecked in the chest by [A], sending you flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
 	var/atom/throw_target = get_edge_target_turf(D, A.dir)
-	D.throw_at(throw_target, 7, 14, A)
+	D.throw_at(throw_target, 3, 5, A, TRUE)
 	D.apply_damage(damage, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND, wound_bonus = CANT_WOUND)
 	to_chat(A, "<span class='danger'>You shouldercheck [D]!</span>")
 	log_combat(A, D, "shoulderchecked (Berserker)")
@@ -68,7 +68,7 @@
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
 	if((D.mobility_flags & MOBILITY_STAND))
 		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND)
-		D.DefaultCombatKnockdown(10, override_hardstun = 0.01, override_stamdmg = 0)
+		D.DefaultCombatKnockdown(10, null, TRUE)
 		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
 		D.visible_message("<span class='warning'>[A] grabs [D] by the throat, slamming them face first into the ground!</span>", \
 					"<span class='userdanger'>[A] grabs you by the throat, slammed your head into the ground!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
@@ -92,7 +92,7 @@
 
 /datum/martial_art/berserker/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	add_to_streak("H",D)
-	var/damage = (damage_roll(A,D) + 1)
+	var/damage = (damage_roll(A,D) + 3)
 	if(check_streak(A,D))
 		return TRUE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
