@@ -638,8 +638,8 @@
 	icon_state = "throw_spear"
 	item_state = "tribalspear"
 	force = 20
-	throwforce = 38
-	armour_penetration = 0.2
+	throwforce = 35
+	armour_penetration = 0.10
 	max_reach = 2
 	item_flags = SLOWS_WHILE_IN_HAND
 	slowdown = 0.3

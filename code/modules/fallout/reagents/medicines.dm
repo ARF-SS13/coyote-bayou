@@ -130,7 +130,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 
 /datum/reagent/medicine/berserker_powder
 	name = "berserker powder"
-	description = "a combination of psychadelic mushrooms and tribal drugs used by legion berserkers. Induces a trancelike state, allowing them much greater pain resistance. Extremely dangerous, even for those who are trained to use it. It's a really bad idea to use this if you're not a berserker. Even if you are, taking it for too long causes extreme symptoms when the trance ends."
+	description = "a combination of psychadelic mushrooms and tribal drugs used by the legion. Induces a trancelike state, allowing them much greater pain resistance. Extremely dangerous, even for those who are trained to use it. It's a really bad idea to use this if you're not initiated in the rites of the berserker. Even if you are, taking it for too long causes extreme symptoms when the trance ends."
 	reagent_state = SOLID
 	color =  "#7f7add"
 	taste_description = "heaven."
