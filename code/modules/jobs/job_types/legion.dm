@@ -192,7 +192,7 @@
 					/obj/item/ammo_box/magazine/m556/rifle=2)
 
 /datum/outfit/loadout/berserkercenturion
-	name = 			"Berserker Centurion"
+	name = 			"Praetorian Candidate"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	backpack_contents = list(
@@ -358,6 +358,7 @@
 	belt = 			null
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	r_pocket =		/obj/item/flashlight/lantern
+	l_pocket = 		/obj/item/storage/survivalkit_tribal
 	backpack_contents = list(
 					/obj/item/reagent_containers/pill/patch/healingpowder=1,
 					/obj/item/restraints/handcuffs=1)
@@ -511,7 +512,7 @@
 					/obj/item/gun/ballistic/revolver/colt357=1)
 
 /datum/outfit/loadout/vetberserker
-	name =			"Berserker"
+	name =			"Praetorian Aspirant"
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	backpack_contents = list(
