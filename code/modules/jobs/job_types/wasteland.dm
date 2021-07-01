@@ -27,11 +27,13 @@
 	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
+	mask =          /obj/item/clothing/mask/infiltrator
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/enclave
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves =        /obj/item/clothing/gloves/combat
 	id = 			/obj/item/card/id/dogtag/enclave
 	suit_store =  	/obj/item/gun/ballistic/automatic/assault_carbine
 
@@ -71,11 +73,13 @@
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
+	mask = 			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves =        /obj/item/clothing/gloves/combat
 	id = 			/obj/item/card/id/dogtag/enclave
 
 	backpack_contents = list(
@@ -118,7 +122,7 @@
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	forbids = "The Enclave forbids you from leaving the base while still habitable"
 	enforces = ""
-	supervisors = "the Lieutenant."
+	supervisors = "the Lieutenant, the Sergeants."
 	selection_color = "#323232"
 	exp_requirements = 1400
 	exp_type = EXP_TYPE_FALLOUT
