@@ -472,6 +472,23 @@
 		name = "empty scroll"
 		icon_state = "blankscroll"
 
+/obj/item/book/granter/martial/berserker
+	martial = /datum/martial_art/berserker
+	name = "berserker's rites"
+	martialname = "berserkers rites"
+	desc = "A paper scroll detailing the sacred rites of the berserker. It is against the law of the Legion for any not walking the path of the berserker to read this."
+	greet = "<span class='sciradio'>You have mastered the rites of the berserker. Use the help verb to see your combos.</span>"
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "scroll2"
+	remarks = list("Rip and tear...", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "You are huge, that means you have huge guts...")
+
+/obj/item/book/granter/martial/berserker/onlearned(mob/living/carbon/user)
+	..()
+	if(oneuse == TRUE)
+		desc = "It's completely blank."
+		name = "empty scroll"
+		icon_state = "blankscroll"
+
 /obj/item/book/granter/martial/plasma_fist
 	martial = /datum/martial_art/plasma_fist
 	name = "frayed scroll"
@@ -864,6 +881,16 @@
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
 	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
+
+
+/obj/item/book/granter/trait/trekking/legion
+	name = "Speculatores Codice"
+	desc = "An extensive guide about scouting, ambushing, and moving through harsh terrain. Originally written as a manual for the infamous Speculatores of the Legion."
+	oneuse = TRUE
+	granted_trait = TRAIT_HARD_YARDS
+	traitname = "trekking"
+	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
+
 
 /obj/item/book/granter/trait/gunslinger
 	name = "Shalashaska: A gunslinger's memoirs"

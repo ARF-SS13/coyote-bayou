@@ -242,6 +242,7 @@
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal"
 #define TRAIT_TRIBAL			"Tribalistic Person"
+#define TRAIT_BERSERKER			"berserker"
 #define TRAIT_TECHNOPHREAK		"technophreak"	//needed to use the autolathe, renamed and sprited 30/06/2020
 #define TRAIT_PA_WEAR           "pa_wear"
 #define TRAIT_MEDICALEXPERT		"Medicinal Expert" //Can do revival surgery
@@ -337,6 +338,7 @@
 #define NINJA_SUIT_TRAIT "ninja-suit"
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
 #define MARTIAL_ARTIST_TRAIT "martial_artist"
+#define BERSERKER_TRAIT "berserker"
 #define SLEEPING_CARP_TRAIT "sleeping_carp"
 #define RISING_BASS_TRAIT "rising_bass"
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"

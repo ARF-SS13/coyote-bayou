@@ -52,7 +52,6 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/stack/ore/blackpowder/fifty,
-/obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "abm" = (
@@ -710,19 +709,6 @@
 "aGv" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
@@ -1389,9 +1375,9 @@
 "bqs" = (
 /obj/structure/guncase,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bqO" = (
@@ -3024,14 +3010,14 @@
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "cNW" = (
@@ -6533,6 +6519,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/machinery/light,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/den)
 "fOs" = (
@@ -7545,8 +7533,8 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d/gunslinger,
-/obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger,
+/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+/obj/item/clothing/head/helmet/f13/power_armor/t45d,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gFk" = (
@@ -7622,6 +7610,8 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "gKJ" = (
@@ -9988,7 +9978,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "iyJ" = (
@@ -13907,6 +13897,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
 /obj/item/paper_bin,
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/carpet,
 /area/f13/den)
 "lCK" = (
@@ -15882,6 +15873,8 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/den)
 "ngP" = (
@@ -15977,6 +15970,9 @@
 /area/f13/den)
 "nkJ" = (
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "nld" = (
@@ -18326,6 +18322,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "oWh" = (
@@ -19928,6 +19925,7 @@
 /obj/machinery/autolathe/ammo,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/item/book/granter/crafting_recipe/gunsmith_two,
+/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "qgo" = (
@@ -25831,6 +25829,8 @@
 /obj/item/stack/sheet/hay/fifty,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/den)
 "uMQ" = (

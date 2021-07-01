@@ -145,6 +145,7 @@
 	cut_overlay(object_overlay)
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
+	update_icon(object_overlay)
 
 /obj/screen/inventory/hand
 	var/mutable_appearance/handcuff_overlay
