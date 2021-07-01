@@ -4,66 +4,75 @@
 //UNIVERSAL GUN CATEGORIES AND MODIFIERS//
 //////////////////////////////////////////
 /*
+GENERAL
+
+	Bonuses should not go far from this framework, for non-unique stuff plus minus one or two is enough to give a good spread, considering its compounded by tinkering and attachments and ammo.
+	A reduction of 1 in burst shot delay gives a lot more effect than adding 1 damage.
+
 MECHANISMS
 
 	SINGLE ACTION REVOLVER
-	fire_delay = 8
+	fire_delay = 7
+	spread = 1
 
 	DOUBLE ACTION REVOLVER
-	fire_delay = 6-7	
-	
-	SEMI-AUTOMATIC
-	fire_delay = 3-7	
-	
+	fire_delay = 6	
+	spread = 2
+
+	SEMI-AUTOMATIC PISTOL
+	fire_delay = 3-5	
+	spread = 3
+
+	SEMI-AUTOMATIC RIFLE
+	fire_delay = 3-6
+	spread = 1-2
+
 	AUTOMATIC
 	fire_delay = 3-7
-	burst_shot_delay = 3
+	burst_shot_delay = 2.5
 	spread = 7-14
 
 	REPEATER	
 	fire_delay = 8
-	
+	spread = 1	
+
 	DOUBLE BARREL
 	fire_delay = 1
 
 	PUMP-ACTION
 	fire_delay = 7
+	extra damage = 1
+	spread = 0 (shotguns need 0 spread unless sawn off since it scatters the individual pellets. Slugs have gotten a 2 spread increase instead, so all good.)
 	(requires manual action to cycle)
 
 	BOLT-ACTION
 	fire_delay = 10-15
+	extra damage = 5
+	extra_speed = 500
 	(requires manual action to cycle)
 
 BULK
 	SMALL GUNS
 	slowdown = 0.1-0.2
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT - NORMAL		
+	weapon_weight = WEAPON_LIGHT - MEDIUM		
 
 	MEDIUM GUNS
 	slowdown = 0.3-0.4
-	w_class = WEIGHT_CLASS_MEDUM - BULKY
-	weapon_weight = WEAPON_NORMAL - HEAVY	
+	w_class = WEIGHT_CLASS_NORMAL - BULKY
+	weapon_weight = WEAPON_MEDIUM - HEAVY	
 
 	RIFLES 
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-GENERAL ACCURACY
-
-	PISTOLS Base spread = 3
-	RIFLES Base spread = 2
-	BURST FIRE Base spread = 7-14
-	(accurate guns lower, crap guns higher)
-
-
 PARTS
 
-	PISTOL GRIP
-	Pistol grip modifiers for rifles sized ammo (12 gauge, 223. and above)
-	recoil = +1 //Standard malus for pistol grip
-	spread = 2 //Standard malus for pistol grip
+	PISTOL GRIP/FOLDED STOCK MALUS
+	For rifles, not pistols obviously
+	recoil = +0.5 //Standard malus for pistol grip
+	spread = +2 //Standard malus for pistol grip
 
 	SAWN OFF
 	recoil = 1
@@ -76,21 +85,37 @@ PARTS
 
 	SHORT BARREL
 	extra_damage = -2
-	spread = +4
+	spread = +3
 
-	VERY SHORT BARREL
-	extra_damage = -3
-	spead = +8
+	HEAVY
+	recoil = 0.1
+	No dual wield
 
 	AMMO RECOIL BASE VALUES
-	.50/12.7mm  recoil = 2
-	.45/70  recoil = 1
+	.50  recoil = 1
+	.45/70  recoil = 0.25
+
 
 FORCE 	Delicate, clumsy or small gun force 10
 		Pistol whip force 12
 		Rifle type force 15
 		Unusually sturdy clublike 20
 
+ATTACHMENTS
+
+	BURST CAM
+	burst_size + 1
+	spread + 5 (recoil)
+	burst_shot_delay + 0.5 (recoil managment)
+
+	RECOIL COMPENSATOR
+	spread above 10 = -4 spread
+	spread under 10 = -2 spread
+
+	AUTO SEAR
+	Enables fire select automatic
+	burst_size + 1
+	spread + 6 (to bring it into the automatic template range)
 */
 
 //Shotgun template
@@ -106,9 +131,10 @@ FORCE 	Delicate, clumsy or small gun force 10
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
-	fire_delay = 7 //Typical pump action, pretty fast.
-	spread = 1
 	force = 15 //Decent clubs generally speaking
+	fire_delay = 7 //Typical pump action, pretty fast.
+	spread = 0
+	recoil = 0.1
 	flags_1 =  CONDUCT_1
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
@@ -194,7 +220,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 1
-	extra_damage = 3
+	extra_damage = 2
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
@@ -230,7 +256,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 1
+	fire_delay = 0
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
@@ -260,6 +286,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	icon_state = "pump"
 	item_state = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	extra_damage = 1
 	fire_delay = 8 //slightly slower than police/military versions.
 	sawn_desc = "A concealed hand blaster, for any situation."
 
@@ -290,9 +317,14 @@ FORCE 	Delicate, clumsy or small gun force 10
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
+	extra_damage = 1
+	recoil = 0.5
 	var/stock = FALSE
-	recoil = 1
-	spread = 3
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 23
+	flight_y_offset = 21
+
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -310,20 +342,19 @@ FORCE 	Delicate, clumsy or small gun force 10
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil = 0
-		spread = 1
+		recoil = 0.1
+		spread = 0
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil = 1
-		spread = 3
+		recoil = 0.5
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunriot"][stock ? "" : "fold"]"
 
 
-//Trench shotgun. 5 round Pump action, extra damage. Can slamfire for higher ROF, or slower ROF but less spread
+//Trench shotgun. 5 round Pump action, extra damage.
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -332,37 +363,11 @@ FORCE 	Delicate, clumsy or small gun force 10
 	can_bayonet = TRUE
 	bayonet_state = "rifles"
 	extra_damage = 3
-	spread = 0
-	fire_delay = 8
-	bayonet_state = "lasmusket"
+	bayonet_state = "bayonetangle"
 	knife_x_offset = 23
 	knife_y_offset = 21
-	var/select = 0
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 
-/obj/item/gun/ballistic/shotgun/trench/ui_action_click()
-	burst_select()
-
-//has a mode to let it pump much faster, at the cost of terrible accuracy and less damage
-/obj/item/gun/ballistic/shotgun/trench/proc/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			spread = 12
-			burst_size = 1
-			fire_delay = 4
-			burst_shot_delay = 4
-			to_chat(user, "<span class='notice'>You prepare to slamfire the shotgun for a rapid burst of shots.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 0
-			extra_damage = 5
-			to_chat(user, "<span class='notice'>You go back to firing the shotgun one round at a time.</span>")
-
-	
 /obj/item/gun/ballistic/shotgun/trench/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
 		icon_state = "[initial(icon_state)]-e"
@@ -378,7 +383,9 @@ FORCE 	Delicate, clumsy or small gun force 10
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "combat shotgun template"
-	fire_delay = 6 // Semi RoF range from 3-7, shotguns at the slower end
+	fire_delay = 6
+	recoil = 0.1
+	spread = 0
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
@@ -407,8 +414,8 @@ FORCE 	Delicate, clumsy or small gun force 10
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "neostead"
 	item_state = "shotguncity"
-	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
+	force = 10
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
@@ -449,9 +456,9 @@ FORCE 	Delicate, clumsy or small gun force 10
 	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
-	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
 	var/semi_auto = TRUE
+	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
 //Riot shotgun. 12 round drum, semiauto, pistol grip
@@ -464,10 +471,10 @@ FORCE 	Delicate, clumsy or small gun force 10
 	icon_state = "breacher"
 	item_state = "shotgunbreacher" 
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 7
+	fire_delay = 6
 	burst_size = 1
-	recoil = 1
-	spread = 2
+	recoil = 0.5
+	spread = 0
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
@@ -493,7 +500,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	slot_flags = ITEM_SLOT_BACK
 	can_automatic = FALSE
 	fire_delay = 8
-	spread = 2
+	spread = 1
 	force = 15 //Decent clubs generally speaking
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
@@ -568,6 +575,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 8 //Standard repeater mechanism delay 
 	extra_damage = 2 //Long barrel for the ammo type
+	can_automatic = FALSE
 	can_scope = TRUE
 	scope_state = "rifle_scope"
 	scope_x_offset = 5
@@ -606,7 +614,6 @@ FORCE 	Delicate, clumsy or small gun force 10
 	icon_state = "brushgun"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-	recoil = 1 //big round
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
 
@@ -620,17 +627,16 @@ FORCE 	Delicate, clumsy or small gun force 10
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	extra_damage = 0 //Normal barrel length for ammo
-	recoil = 1
+	recoil = 0.5
 	spread = 2
 	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
 
 
-///////////////////////
-// BOLT ACTION RIFLE //
-///////////////////////
-//Fire delay at least 10, slow rate of fire not ignored by macros. A little extra damage to give them something nice.
+////////////////////////
+// BOLT ACTION RIFLES //
+////////////////////////
 
 
 //Hunting Rifle .308
@@ -642,7 +648,8 @@ FORCE 	Delicate, clumsy or small gun force 10
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_delay = 10
-	extra_damage = 2
+	extra_damage = 5
+	extra_speed = 500
 	spread = 0
 	can_scope = TRUE
 	scope_state = "rifle_scope"
@@ -660,6 +667,29 @@ FORCE 	Delicate, clumsy or small gun force 10
 		if(W.active)
 			sawoff(user)
 
+//Sharpshooter Rifle 7.62mm, essentially better mosin-nagant.
+/obj/item/gun/ballistic/rifle/hunting/ncr
+	name = "Remington rifle"
+	desc = "A modified  hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/ncr
+	fire_delay = 12
+	extra_damage = 6
+	extra_penetration = 0.05
+	extra_speed = 500 
+	untinkerable = TRUE
+
+/obj/item/gun/ballistic/rifle/hunting/ncr/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		return
+	else if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			return
+	else
+		..()
+
+
+//Unique hunting rifle
 /obj/item/gun/ballistic/rifle/hunting/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
@@ -680,24 +710,6 @@ FORCE 	Delicate, clumsy or small gun force 10
 	else
 		..()
 
-/obj/item/gun/ballistic/rifle/hunting/ncr
-	name = "accurized hunting rifle"
-	desc = "A modified  hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington/ncr
-	extra_damage = 2 //49 damage when loaded with 7.62. Slightly higher then the semi auto sniper rifle.
-	extra_penetration = 0.05 //slightly higher pen, 0.30 total vs 0.25. 
-	untinkerable = TRUE
-
-/obj/item/gun/ballistic/rifle/hunting/ncr/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
-	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
-		return
-	else if(istype(A, /obj/item/melee/transforming/energy))
-		var/obj/item/melee/transforming/energy/W = A
-		if(W.active)
-			return
-	else
-		..()
-
 
 //Mosin Nagant. 7.62
 /obj/item/gun/ballistic/rifle/mosin
@@ -706,10 +718,11 @@ FORCE 	Delicate, clumsy or small gun force 10
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 1
+	extra_damage = 4
+	extra_speed = 400
 	fire_delay = 12
 	can_scope = TRUE
-	scope_state = "mosin_scope"
+	scope_state = "scope_mosin"
 	scope_x_offset = 3
 	scope_y_offset = 13
 	can_bayonet = TRUE
@@ -719,8 +732,56 @@ FORCE 	Delicate, clumsy or small gun force 10
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
+//Varmint rifle. 5.56.
+/obj/item/gun/ballistic/automatic/varmint
+	name = "varmint rifle"
+	desc = "A low powered 5.56, easy to use rifle."
+	icon_state = "varmint_rifle"
+	item_state = "varmintrifle"
+	force = 20
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	fire_delay = 7
+	burst_size = 1
+	spread = 1
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+	can_attachments = TRUE
+	can_bayonet = FALSE
+	can_scope = TRUE
+	scope_state = "rifle_scope"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
-//Anti-Material Rifle. .50
+//Commando carbine, .45 ACP
+/obj/item/gun/ballistic/automatic/commando
+	name = "commando carbine"
+	desc = "An integrally suppressed bolt action carbine, perfect for quiet varmint hunting. Uses .45 pistol magazines."
+	icon_state = "delisle"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	extra_damage = 2
+	fire_delay = 8
+	burst_size = 1
+	spread = 1
+	can_unsuppress = FALSE
+	suppressed = 1
+	can_attachments = TRUE
+	can_automatic = TRUE
+	automatic_burst_overlay = FALSE
+	can_scope = TRUE
+	scope_state = "lasmusket_scope"
+	scope_x_offset = 6
+	scope_y_offset = 14
+	semi_auto = TRUE
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+
+//Anti-Material Rifle. .50 currently not the standard bolt action bonuses since its in the round.
 /obj/item/gun/ballistic/rifle/antimateriel
 	name = "anti-materiel rifle"
 	desc = "A heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition."
@@ -728,7 +789,7 @@ FORCE 	Delicate, clumsy or small gun force 10
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_delay = 11 //Heavy round, tiny bit slower
-	recoil = 2 //.50 recoil
+	recoil = 1
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
 	zoomable = TRUE
@@ -737,7 +798,22 @@ FORCE 	Delicate, clumsy or small gun force 10
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
 
-
+//Ratslayer. Varmint rifle with more crap on it.
+/obj/item/gun/ballistic/automatic/varmint/ratslayer
+	name = "Ratslayer"
+	desc = "A modified varmint rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
+	icon_state = "rat_slayer"
+	item_state = "ratslayer"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	suppressed = 1
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+	suppressed = 1
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /////////////
 //HOBO GUNS//
