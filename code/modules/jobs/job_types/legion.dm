@@ -192,20 +192,17 @@ kept here incase it gets reworked later*/
 					/obj/item/melee/powerfist/goliath=1,
 					/obj/item/ammo_box/magazine/m556/rifle=2)
 
-<<<<<<< Updated upstream
-/datum/outfit/loadout/berserkercenturion
-	name = 			"Berserker Centurion"
-=======
 /* /datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
->>>>>>> Stashed changes
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	backpack_contents = list(
 					/obj/item/melee/unarmed/sappers=1,
 					/obj/item/book/granter/martial/berserker=1,
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2)
-					*/
+					
+					
+commented out pending rework*/
 
 
 // VETERAN DECANUS (Riot Shotgun, Spatha M1911)
@@ -518,13 +515,10 @@ kept here incase it gets reworked later.*/
 					/obj/item/ammo_box/a357=1,
 					/obj/item/gun/ballistic/revolver/colt357=1)
 
-<<<<<<< Updated upstream
+
+/* 
 /datum/outfit/loadout/vetberserker
-	name =			"Berserker"
-=======
-/* /datum/outfit/loadout/vetberserker
 	name =			"Praetorian Aspirant"
->>>>>>> Stashed changes
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
 	backpack_contents = list(
@@ -532,7 +526,8 @@ kept here incase it gets reworked later.*/
 					/obj/item/book/granter/martial/berserker=1,
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2,
 					/obj/item/restraints/legcuffs/bola=1)
-*/
+
+commented out pending rework*/
 // PRIME
 
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
