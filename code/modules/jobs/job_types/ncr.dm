@@ -524,6 +524,7 @@ Corporal
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_eight=1, 
+		/obj/item/book/granter/trait/trekking=1,
 		/obj/item/binoculars=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
@@ -713,10 +714,10 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
-		/obj/item/ammo_box/magazine/m556/rifle=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
 /datum/outfit/loadout/trooperpathfinder
 	name = "Pathfinder"
