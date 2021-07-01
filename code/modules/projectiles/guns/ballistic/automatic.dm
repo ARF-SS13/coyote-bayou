@@ -387,7 +387,7 @@
 	scope_x_offset = 5
 	scope_y_offset = 14
 	can_attachments = TRUE
-	can_automatic = FALSE
+	can_automatic = TRUE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
