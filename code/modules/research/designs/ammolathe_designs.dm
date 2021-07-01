@@ -436,7 +436,7 @@
 	build_path = /obj/item/ammo_box/c4570box/jhp
 	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/c4570
+/datum/design/ammolathe/lc45
 	name = ".45 LC ammo box"
 	id = "c45lc"
 	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
