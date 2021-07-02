@@ -9038,6 +9038,8 @@
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/fridge/standard,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -9954,6 +9956,16 @@
 /obj/item/clothing/gloves/f13/military,
 /obj/item/clothing/gloves/f13/military,
 /obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -19084,6 +19096,7 @@
 "prL" = (
 /obj/machinery/light,
 /obj/structure/table,
+/obj/item/hand_labeler,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -23689,6 +23702,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/den)
+"sKR" = (
+/obj/structure/simple_door/metal/dirtystore,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "sLx" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -25373,6 +25392,8 @@
 /obj/item/clothing/under/f13/lumberjack,
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/under/f13/raider_leather,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -25927,6 +25948,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/brotherhood/reactor)
+"uEj" = (
+/obj/machinery/processor,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/enclave)
 "uEm" = (
 /obj/effect/landmark/start/f13/enforcer,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -26624,6 +26651,18 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"vfo" = (
+/obj/structure/rack,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/turf/open/floor/f13{
+	icon_state = "redmark"
+	},
+/area/f13/enclave)
 "vfx" = (
 /obj/structure/fence/handrail{
 	density = 0;
@@ -28162,10 +28201,8 @@
 	name = "MRE Crate"
 	},
 /obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
 /obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/trash/f13/mre,
-/obj/item/trash/f13/mre,
-/obj/item/trash/f13/mre,
 /obj/item/trash/f13/mre,
 /obj/item/trash/f13/mre,
 /obj/item/trash/f13/mre,
@@ -28415,6 +28452,9 @@
 /area/f13/tunnel)
 "wJo" = (
 /obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
+/obj/item/reagent_containers/food/snacks/meat/slab/gecko,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -30065,6 +30105,18 @@
 /area/f13/bunker)
 "ydf" = (
 /obj/structure/rack,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -61024,9 +61076,9 @@ weW
 weW
 weW
 weW
-weW
-weW
-weW
+wWF
+tur
+wWF
 weW
 weW
 weW
@@ -61281,9 +61333,9 @@ weW
 weW
 weW
 weW
-weW
-weW
-weW
+wWF
+tur
+wWF
 weW
 weW
 weW
@@ -61539,11 +61591,11 @@ miI
 wWF
 wWF
 wWF
+sKR
+miI
+wWF
 bcM
 bcM
-pBk
-miI
-miI
 wWF
 miI
 bcM
@@ -63611,7 +63663,7 @@ joH
 wXe
 mOw
 mOw
-ydf
+vfo
 joH
 niW
 wpj
@@ -66967,7 +67019,7 @@ hvr
 joH
 niW
 ekj
-pon
+uEj
 joH
 uoO
 uoO
