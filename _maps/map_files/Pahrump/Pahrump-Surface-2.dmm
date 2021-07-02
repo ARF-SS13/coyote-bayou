@@ -61,6 +61,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"ace" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
+/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "acg" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/dirt{
@@ -2791,7 +2798,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "bAo" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/reagent_dispensers/peppertank{
+	pixel_y = 19
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "bAq" = (
@@ -3277,11 +3286,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"bPj" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/terminal,
-/turf/open/floor/carpet/black,
-/area/f13/ncr)
 "bPU" = (
 /obj/structure/chair/wood/worn{
 	dir = 8
@@ -3300,7 +3304,14 @@
 	},
 /area/f13/wasteland)
 "bQm" = (
-/turf/open/floor/carpet/black,
+/obj/structure/table/reinforced,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "bQr" = (
 /obj/structure/chair/stool/f13stool,
@@ -3748,11 +3759,6 @@
 /obj/structure/closet,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"chA" = (
-/obj/item/bedsheet/brown,
-/obj/structure/bed/old,
-/turf/open/floor/carpet/black,
-/area/f13/ncr)
 "chM" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -4439,10 +4445,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "cEV" = (
-/obj/structure/chair/office/dark{
-	dir = 1
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "cFe" = (
 /obj/structure/billboard/cola,
@@ -4597,10 +4604,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
-"cIL" = (
-/obj/machinery/light,
-/turf/open/floor/carpet/black,
-/area/f13/ncr)
 "cJs" = (
 /obj/item/trash/pistachios,
 /turf/open/indestructible/ground/outside/dirt,
@@ -4664,8 +4667,11 @@
 	},
 /area/f13/building)
 "cLP" = (
-/obj/structure/closet/secure_closet/personal/cabinet,
-/turf/open/floor/carpet/black,
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "cLW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9743,6 +9749,10 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"fxz" = (
+/obj/structure/closet/cabinet,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "fxD" = (
 /obj/structure/chalkboard,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14259,6 +14269,14 @@
 	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
+"hQD" = (
+/obj/structure/table/reinforced,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "hQE" = (
 /obj/structure/chair/stool{
 	dir = 4;
@@ -22896,6 +22914,13 @@
 	icon_state = "verticaloutermainbottom"
 	},
 /area/f13/wasteland)
+"mJH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/storage/fancy/ammobox/beanbag,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "mKe" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -28982,6 +29007,14 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
+"qiw" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/spray/pepper/empty,
+/obj/item/reagent_containers/spray/pepper/empty,
+/obj/item/reagent_containers/spray/pepper/empty,
+/obj/item/reagent_containers/spray/pepper/empty,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "qiN" = (
 /obj/structure/barricade/wooden/strong,
 /turf/closed/wall/f13/wood,
@@ -36341,6 +36374,17 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"urK" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/shotgun/rubber,
+/obj/item/ammo_box/shotgun/rubber,
+/obj/item/ammo_box/shotgun/rubber,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "urN" = (
 /obj/structure/closet,
 /obj/effect/decal/cleanable/dirt,
@@ -40465,6 +40509,21 @@
 	icon_state = "innermaincornerinner"
 	},
 /area/f13/wasteland)
+"wKK" = (
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/box/zipties,
+/obj/item/storage/box/zipties,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/box/handcuffs,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "wKU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -40474,20 +40533,12 @@
 /area/f13/ncr)
 "wLb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/personal{
-	anchored = 1;
-	name = "Equipment Closet";
-	req_access_txt = "121"
-	},
 /obj/effect/turf_decal/stripes/white/box,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/gun/ballistic/shotgun/hunting,
-/obj/item/gun/ballistic/shotgun/hunting,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs,
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	termtag = "Private"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "wLi" = (
@@ -59960,10 +60011,10 @@ ezX
 ezX
 ezX
 ezX
-gcK
-gcK
-gcK
-gcK
+ezX
+ezX
+ezX
+ezX
 gcK
 gcK
 gcK
@@ -60214,14 +60265,14 @@ blZ
 bnn
 bnn
 ezX
-bPj
+bQm
 cEV
+ace
+mJH
+urK
+fxz
 ezX
-gcK
 ktB
-gcK
-gcK
-gcK
 gcK
 gcK
 gcK
@@ -60470,14 +60521,14 @@ fFC
 wVT
 fFC
 fFC
-bAo
-bQm
-cIL
+aVY
+wVT
+wVT
+wVT
+wVT
+wVT
+wVT
 ezX
-gcK
-ktB
-gcK
-gcK
 gcK
 gcK
 gcK
@@ -60728,14 +60779,14 @@ wLb
 brE
 btj
 ezX
-chA
+bAo
 cLP
+hQD
+qiw
+wKK
+fxz
 ezX
 gcK
-gcK
-gcK
-gcK
-ktB
 ktB
 ktB
 gcK
@@ -60988,10 +61039,10 @@ ezX
 uSj
 ezX
 ezX
-gcK
-gcK
-gcK
-ktB
+ezX
+ezX
+ezX
+ezX
 ktB
 gcK
 gcK
