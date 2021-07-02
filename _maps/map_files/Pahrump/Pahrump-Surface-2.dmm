@@ -63,9 +63,17 @@
 /area/f13/building)
 "ace" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
-/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
-/obj/item/gun/ballistic/rifle/repeater/shotgunlever,
+/obj/item/camera/detective,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "acg" = (
@@ -3303,16 +3311,6 @@
 	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland)
-"bQm" = (
-/obj/structure/table/reinforced,
-/obj/item/clothing/glasses/sunglasses/blindfold,
-/obj/item/clothing/glasses/sunglasses/blindfold,
-/obj/item/clothing/glasses/sunglasses/blindfold,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/obj/item/clothing/mask/muzzle,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/ncr)
 "bQr" = (
 /obj/structure/chair/stool/f13stool,
 /turf/open/floor/f13/wood{
@@ -4445,10 +4443,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "cEV" = (
-/obj/machinery/light{
-	dir = 8;
-	pixel_y = -16
-	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/mask/muzzle,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "cFe" = (
@@ -4667,10 +4668,10 @@
 	},
 /area/f13/building)
 "cLP" = (
-/obj/machinery/light{
-	dir = 4;
-	pixel_y = -16
-	},
+/obj/structure/table/reinforced,
+/obj/item/shield/riot/bullet_proof,
+/obj/item/shield/riot/bullet_proof,
+/obj/item/shield/riot/bullet_proof,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "cLW" = (
@@ -9750,7 +9751,10 @@
 	},
 /area/f13/wasteland)
 "fxz" = (
-/obj/structure/closet/cabinet,
+/obj/structure/guncase/shotgun,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "fxD" = (
@@ -60281,7 +60285,7 @@ blZ
 bnn
 bnn
 ezX
-bQm
+wVT
 cEV
 ace
 mJH
