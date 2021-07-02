@@ -905,3 +905,49 @@
 	else
 		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
 	return TRUE
+
+/obj/item/storage/belt/tribe_quiver/bone
+	name = "hunters quiver"
+	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
+	icon_state = "tribal_quiver"
+	item_state = "tribal_quiver"
+
+/obj/item/storage/belt/tribe_quiver/bone/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	STR.max_w_class = 3
+	STR.max_combined_w_class = 24
+
+/obj/item/storage/belt/tribe_quiver/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+/obj/item/storage/belt/tribe_quiver/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		return
+	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, "<span class='notice'>You take \a [L] out of the quiver.</span>")
+		return TRUE
+	var/obj/item/ammo_casing/caseless/W = locate() in contents
+	if(W && contents.len > 0)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		user.put_in_hands(W)
+		to_chat(user, "<span class='notice'>You take \a [W] out of the quiver.</span>")
+	else
+		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+	return TRUE

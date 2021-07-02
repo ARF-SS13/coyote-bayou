@@ -204,7 +204,7 @@ Druid
 	forbids = "Abusing technology and using Pre-War weapons."
 	description = "You are a Druid in the tribe; you perform rituals, and bless pre-war relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/tribal/f13druid
 	access = list(ACCESS_TRIBE)
@@ -360,11 +360,11 @@ Hunter
 		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/ranged
-	name = "Ranged"
+	name = "Marksman"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/tribalbow=1,
 		/obj/item/clothing/suit/armor/f13/lightcloak=1,
-		/obj/item/storage/belt/tribe_quiver=1,
+		/obj/item/storage/belt/tribe_quiver/bone=1,
 		/obj/item/kitchen/knife/combat/bone=1,
 		/obj/item/restraints/legcuffs/bola=2,
 		/obj/item/binoculars=1,
@@ -372,7 +372,7 @@ Hunter
 	)
 
 /datum/outfit/loadout/melee
-	name = "Melee"
+	name = "Frontline"
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear/deathclaw=1,
 		/obj/item/kitchen/knife/combat/bone=1,
@@ -418,8 +418,9 @@ Guardian
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "All leadership, but the Chief is priority"
-	description = "A hand choosen Hunter with much promise, you are one of the village Guardian's. An elite Hunter given the duty to protect the leaders of the tribe, and the village. Your duty is to ensure your kin are safe at all cost, as well as follow any orders from your superiors and enforce the law of the tribe."
+	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the leaders of the tribe, and the village. Your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe."
 	selection_color = "#006666"
+	exp_requirements = 900
 
 	outfit = /datum/outfit/job/tribal/f13guardian
 
