@@ -604,10 +604,6 @@
 	name = "Ponytail (High)"
 	icon_state = "hair_highponytail"
 
-/datum/sprite_accessory/hair/longponytail
-	name = "Ponytail (Long)"
-	icon_state = "hair_longstraightponytail"
-
 /datum/sprite_accessory/hair/sidetail
 	name = "Ponytail (Side)"
 	icon_state = "hair_sidetail"
@@ -730,7 +726,7 @@
 
 /datum/sprite_accessory/hair/spiky2
 	name = "Spiky 2"
-	icon_state = "hair_spiky"
+	icon_state = "hair_toriyama"
 
 /datum/sprite_accessory/hair/spiky3
 	name = "Spiky 3"
@@ -759,10 +755,6 @@
 /datum/sprite_accessory/hair/topknot
 	name = "Topknot"
 	icon_state = "hair_topknot"
-
-/datum/sprite_accessory/hair/toriyama
-	name = "Toriyama"
-	icon_state = "hair_toriyama"
 
 /datum/sprite_accessory/hair/toriyama2
 	name = "Toriyama 2"

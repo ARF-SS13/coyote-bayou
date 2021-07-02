@@ -6,19 +6,19 @@
 	else
 		gender = MALE
 	underwear = "Boxers"
-	undie_color = "#333333"
+	undie_color = random_clothing_dye()
 	undershirt = "Shirt - Short Sleeved"
-	shirt_color = pick("#8D8B8B", "#997C4F")
+	shirt_color = random_clothing_dye()
 	socks = "Short"
-	socks_color = "#333333"
+	socks_color = random_clothing_dye()
 	use_custom_skin_tone = FALSE
 	skin_tone = pick("latino", "mediterranean")
 	hair_style = pick("Trimmed", "Fade (Low)")
 	facial_hair_style = pick("Beard (5 o\'Clock)", "Beard (3 o\'Clock)")
-	hair_color = pick("#333333", "#44302B")
-	facial_hair_color = "#333333"
-	left_eye_color = "#333333"
-	right_eye_color = "#333333"
+	hair_color = random_hair_shade()
+	facial_hair_color = random_hair_shade()
+	left_eye_color = random_dark_shade()
+	right_eye_color = random_dark_shade()
 	age = (rand(20, 25))
  
 
