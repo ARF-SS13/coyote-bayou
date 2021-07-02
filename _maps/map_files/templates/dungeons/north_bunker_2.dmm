@@ -210,10 +210,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"eG" = (
-/obj/item/reagent_containers/food/snacks/banana_split,
-/turf/open/floor/plasteel/showroomfloor,
-/area/f13/bunker)
 "eN" = (
 /mob/living/simple_animal/hostile/handy{
 	faction = list("ant")
@@ -507,10 +503,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"kq" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "ky" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -656,12 +648,6 @@
 /obj/item/seeds/sunflower/novaflower,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"nU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "nW" = (
 /mob/living/simple_animal/opossum{
 	name = "Fudge"
@@ -750,10 +736,6 @@
 /area/f13/bunker)
 "pP" = (
 /obj/structure/barricade/wooden/strong,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"pQ" = (
-/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "pR" = (
@@ -1426,11 +1408,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"DM" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "DY" = (
 /obj/structure/barricade/wooden/strong,
 /obj/effect/decal/cleanable/dirt,
@@ -1443,12 +1420,6 @@
 "Ee" = (
 /obj/item/circuitboard/machine/chem_master,
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"Eg" = (
-/mob/living/simple_animal/hostile/alien{
-	faction = list("hostile","goodboy")
-	},
-/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "Eo" = (
 /mob/living/simple_animal/hostile/deathclaw,
@@ -1594,11 +1565,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"HC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/tier3,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "HO" = (
 /obj/machinery/workbench/advanced,
 /turf/open/floor/plasteel/barber{
@@ -1729,11 +1695,6 @@
 "KN" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/grass,
-/area/f13/bunker)
-"KO" = (
-/mob/living/simple_animal/hostile/alien,
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
-/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "KR" = (
 /obj/item/reagent_containers/pill/patch/healingpowder,
@@ -2139,10 +2100,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/grass,
 /area/f13/bunker)
-"RB" = (
-/mob/living/simple_animal/hostile/alien,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "RH" = (
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange,
 /turf/open/floor/grass,
@@ -2255,9 +2212,6 @@
 	},
 /area/f13/bunker)
 "Ui" = (
-/mob/living/simple_animal/hostile/alien{
-	faction = list("hostile","goodboy")
-	},
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor,
@@ -2403,10 +2357,6 @@
 	id = 806
 	},
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"XS" = (
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "XX" = (
 /obj/item/fusion_fuel,
@@ -2967,7 +2917,7 @@ Rl
 xG
 bN
 Hf
-Eg
+qV
 tQ
 xG
 Rl
@@ -3041,9 +2991,9 @@ Rl
 Rl
 Rl
 xG
-eG
+qV
 sJ
-XS
+qV
 qV
 xG
 Rl
@@ -3642,10 +3592,10 @@ Rl
 Rl
 Rl
 xG
-HC
-RB
+Zf
 oj
-RB
+oj
+oj
 xG
 XM
 Bw
@@ -3682,7 +3632,7 @@ Rl
 xG
 Mf
 oj
-kq
+oj
 oj
 Pp
 yr
@@ -3719,7 +3669,7 @@ Rl
 Rl
 xG
 IY
-pQ
+oj
 Zf
 oj
 Pp
@@ -3794,10 +3744,10 @@ Rl
 Rl
 Rl
 xG
-KO
+oj
 Zf
 Zf
-DM
+Zf
 xG
 OR
 cQ
@@ -3989,7 +3939,7 @@ XM
 mj
 XM
 xG
-gk
+oj
 xG
 AE
 Bw
@@ -4065,7 +4015,7 @@ kj
 vp
 Cp
 xG
-nU
+sl
 Pp
 XM
 jX
@@ -4103,7 +4053,7 @@ XM
 mX
 XM
 xG
-DM
+Zf
 xG
 jQ
 XN
@@ -4971,7 +4921,7 @@ Rl
 Rl
 Rl
 xG
-RB
+oj
 FV
 Zf
 rC
@@ -5018,7 +4968,7 @@ oj
 YR
 gu
 oj
-RB
+oj
 oj
 Rl
 Rl
@@ -5048,7 +4998,7 @@ Rl
 Rl
 xG
 oj
-RB
+oj
 bP
 Zf
 iJ
@@ -5166,10 +5116,10 @@ oh
 oj
 XO
 XO
-RB
+oj
 oh
 oh
-RB
+oj
 oh
 XO
 Rl

@@ -16999,7 +16999,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jlD" = (
-/obj/machinery/light/small{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -27003,12 +27003,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/ncr)
-"pfB" = (
-/obj/machinery/vending/autodrobe,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "pfK" = (
 /obj/structure/simple_door/metal/store{
 	icon_state = "brokenstore"
@@ -36820,12 +36814,6 @@
 	icon_state = "wooden_chair_settler"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"uDX" = (
-/obj/machinery/vending/clothing,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
 /area/f13/building)
 "uEc" = (
 /obj/structure/window{
@@ -85502,7 +85490,7 @@ gcK
 gcK
 gts
 uvk
-pfB
+vYv
 aUu
 vYv
 ufN
@@ -85761,7 +85749,7 @@ gts
 gts
 gts
 gts
-uDX
+vYv
 dMc
 xFS
 vYv
@@ -86017,7 +86005,7 @@ gcK
 gcK
 gcK
 gcK
-gcK
+gts
 gts
 gts
 gts
