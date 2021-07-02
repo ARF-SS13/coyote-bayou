@@ -1960,7 +1960,6 @@
 	name = "den gate"
 	},
 /obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
 /turf/open/water,
 /area/f13/den)
 "bTG" = (
@@ -4824,12 +4823,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/operations)
-"eqp" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
-/turf/open/water,
-/area/f13/den)
 "eqz" = (
 /obj/item/bedsheet{
 	icon_state = "sheetblue"
@@ -14183,7 +14176,7 @@
 	name = "Den Mob Cells";
 	req_one_access_txt = "87"
 	},
-/turf/open/space/basic,
+/turf/open/floor/carpet,
 /area/f13/den)
 "lBK" = (
 /obj/effect/landmark/start/f13/enforcer,
@@ -60938,7 +60931,7 @@ xPu
 xPu
 xPu
 tuD
-eqp
+tuD
 tuD
 xPu
 xPu
@@ -61195,7 +61188,7 @@ xPu
 xPu
 tuD
 tuD
-eZU
+tuD
 tuD
 xPu
 xPu
