@@ -28,12 +28,18 @@
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 	H.grant_language(/datum/language/tribal)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/punji_sticks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor_helmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa_helmet)
 
 /*
 Tribal Chief
 */
 /datum/job/tribal
 	exp_type = EXP_TYPE_TRIBAL
+
+	mind_traits = list(TRAIT_TRIBAL)
 
 /datum/job/tribal/f13chief
 	title = "Chief"

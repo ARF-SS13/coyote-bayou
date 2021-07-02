@@ -111,3 +111,69 @@
 	result = /obj/structure/punji_sticks
 	category = CAT_PRIMAL
 	always_availible = FALSE
+
+/datum/crafting_recipe/tribal_pa
+	name = "Tribal Salvaged Power Armor"
+	time = 120
+	reqs = list(
+			/obj/item/clothing/suit/armor/f13/power_armor/t45b = 1,
+			/obj/item/stack/sheet/cloth = 15,
+			/obj/item/stack/sheet/metal = 35,
+			/obj/item/stack/sheet/leather = 10,
+			/obj/item/stack/sheet/mineral/diamond = 5,
+			/obj/item/stack/sheet/bone = 20
+			)
+	result = /obj/item/clothing/suit/armor/f13/wayfarer/tribal_pa
+	category = CAT_PRIMAL
+	always_availible = FALSE
+	
+/datum/crafting_recipe/tribal_pa_helmet
+	name = "Tribal Salvaged Power Armor Helmet"
+	time = 120
+	reqs = list(
+			/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+			/obj/item/stack/sheet/cloth = 10,
+			/obj/item/stack/sheet/metal = 15,
+			/obj/item/stack/sheet/leather = 20,
+			/obj/item/stack/sheet/mineral/diamond = 10,
+			/obj/item/stack/sheet/bone = 10
+			)
+	result = /obj/item/clothing/head/helmet/f13/wayfarer/pa_helmet
+	category = CAT_PRIMAL
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribal_combat_armor
+	name = "Tribal Combat Armor"
+	time = 40
+	reqs = list(
+			/obj/item/clothing/suit/armor/f13/combat = 1,
+			/obj/item/stack/sheet/cloth = 15,
+			/obj/item/stack/sheet/sinew = 10,
+			/obj/item/stack/sheet/animalhide/deathclaw= 2,
+			/obj/item/stack/sheet/bone = 20
+			)
+	result = /obj/item/clothing/suit/armor/f13/tribal_combat_armor
+	category = CAT_PRIMAL
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribal_combat_armor_helmet
+	name = "Tribal Combat Helmet"
+	time = 40
+	reqs = list(
+			/obj/item/clothing/head/helmet/f13/combat = 1,
+			/obj/item/stack/sheet/cloth = 5,
+			/obj/item/stack/sheet/sinew = 5,
+			/obj/item/stack/sheet/animalhide/deathclaw= 1,
+			/obj/item/stack/sheet/bone = 10
+			)
+	result = /obj/item/clothing/head/helmet/f13/combat/wayfarer/tribe_helmet
+	category = CAT_PRIMAL
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribalwar/arrowap
+	name = "Bone Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/bone
+	time = 30
+	reqs = list(/obj/item/stack/sheet/bone = 4,
+				/obj/item/stack/sheet/sinew = 1)
+	tools = list(TOOL_WORKBENCH)
