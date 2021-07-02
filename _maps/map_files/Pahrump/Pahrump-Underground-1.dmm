@@ -569,7 +569,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usprivate,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -3024,7 +3024,7 @@
 "cOS" = (
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/leisure)
 "cPA" = (
@@ -4015,7 +4015,7 @@
 "dFh" = (
 /obj/item/bedsheet/red,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "dFz" = (
@@ -4073,7 +4073,7 @@
 	dir = 1;
 	pixel_x = 16
 	},
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "dHQ" = (
@@ -4217,7 +4217,7 @@
 /area/f13/brotherhood/operations)
 "dML" = (
 /obj/structure/table/booth,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dMQ" = (
@@ -4418,11 +4418,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
 "dVJ" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/f13/caves)
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "dVL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/vent{
@@ -4480,7 +4479,7 @@
 "dYM" = (
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usspy,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -5890,7 +5889,7 @@
 "fji" = (
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usprivate,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -6983,7 +6982,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bedsheet/brown,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -10080,11 +10079,9 @@
 	},
 /area/f13/bunker)
 "isr" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/item/trash/f13/dog,
-/turf/open/indestructible/ground/inside/subway,
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "isG" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -10959,7 +10956,7 @@
 "jak" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "jaY" = (
@@ -11546,7 +11543,7 @@
 /area/f13/tunnel)
 "jwN" = (
 /obj/item/bedsheet/medical,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "bluedirtyfull"
 	},
@@ -12375,7 +12372,7 @@
 	name = "Head Knight Action Figure";
 	toysay = "Victory is our tradition!"
 	},
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "kcD" = (
@@ -12487,12 +12484,14 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "kfQ" = (
-/obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
-/turf/open/floor/f13/wood,
-/area/f13/tunnel)
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "mine"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustyfull"
+	},
+/area/f13/caves)
 "kfV" = (
 /obj/structure/simple_door/room,
 /turf/open/indestructible/ground/inside/mountain,
@@ -12975,7 +12974,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/usspy,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -13483,9 +13482,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "kYT" = (
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/structure/simple_door/bunker,
+/turf/open/floor/f13{
+	icon_state = "bluerustyfull"
+	},
+/area/f13/caves)
 "kZs" = (
 /obj/structure/toilet{
 	pixel_y = 10
@@ -13701,7 +13702,7 @@
 "leT" = (
 /obj/machinery/light,
 /obj/item/bedsheet/medical,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "bluerustyfull"
 	},
@@ -13764,7 +13765,6 @@
 	light_color = "#800080";
 	name = "light fixture"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "liq" = (
@@ -14614,7 +14614,7 @@
 "lTX" = (
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/ussgt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -14912,7 +14912,7 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/item/storage/fancy/candle_box,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "miy" = (
@@ -16128,7 +16128,7 @@
 	specialfunctions = 4
 	},
 /obj/item/bedsheet/hos,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "ncX" = (
@@ -16137,7 +16137,7 @@
 /area/f13/den)
 "ncY" = (
 /obj/item/bedsheet/rd,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "ndi" = (
@@ -21605,7 +21605,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "rex" = (
@@ -21757,7 +21757,7 @@
 "rjQ" = (
 /obj/item/bedsheet/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
 "rjY" = (
@@ -21828,7 +21828,7 @@
 	name = "NCR banner";
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant,
+/mob/living/simple_animal/hostile/supermutant/nightkin,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "rlz" = (
@@ -21887,7 +21887,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/bedsheet,
 /obj/effect/landmark/start/f13/ussgt,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/f13{
 	icon_state = "purplefull"
 	},
@@ -22045,7 +22045,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "rsg" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/decal/remains/human,
+/obj/item/clothing/head/hardhat,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rsj" = (
@@ -25377,15 +25378,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
-"uaf" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "mine"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustyfull"
-	},
-/area/f13/caves)
 "uas" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/glasses/sunglasses{
@@ -25718,7 +25710,7 @@
 /area/f13/brotherhood/offices1st)
 "urc" = (
 /obj/item/bedsheet/hos,
-/obj/structure/bed/old,
+/obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
 "urg" = (
@@ -27005,11 +26997,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
-"vsw" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/centaur,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "vsC" = (
 /obj/structure/window/fulltile/store,
 /obj/structure/barricade/wooden/planks,
@@ -28643,6 +28630,9 @@
 /obj/structure/table/wood/settler,
 /obj/item/hatchet,
 /obj/item/twohanded/sledgehammer,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "wRA" = (
@@ -29819,10 +29809,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/closed/wall/f13/wood,
 /area/f13/tunnel)
-"xPN" = (
-/mob/living/simple_animal/hostile/supermutant/nightkin,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "xRm" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
@@ -30013,7 +29999,7 @@
 	dir = 8
 	},
 /obj/item/stack/f13Cash/random/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "xYV" = (
@@ -31469,7 +31455,7 @@ uoO
 uoO
 uoO
 uoO
-uoO
+hQE
 uoO
 uoO
 uoO
@@ -31724,11 +31710,11 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+rRo
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -31980,13 +31966,13 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -32236,15 +32222,15 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-aoj
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -32493,15 +32479,15 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-aoj
-aoj
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+hQE
+hQE
+hQE
+xVz
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -32749,17 +32735,17 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+hQE
+dYY
+xVz
+xVz
+hQE
+kfQ
+kYT
+xVz
+xVz
+wcF
+hQE
 uoO
 uoO
 uoO
@@ -33007,15 +32993,15 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+hQE
+hQE
+hQE
+xVz
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -33264,15 +33250,15 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -33522,13 +33508,13 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-aoj
-aoj
-uoO
-uoO
-uoO
+xVz
+xVz
+xVz
+xVz
+rsg
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -33780,11 +33766,11 @@ uoO
 uoO
 uoO
 uoO
-uoO
-aoj
-aoj
-uoO
-uoO
+xVz
+xVz
+bjI
+xVz
+xVz
 uoO
 uoO
 uoO
@@ -34039,9 +34025,9 @@ uoO
 uoO
 uoO
 aoj
+hQE
 uoO
-uoO
-uoO
+xVz
 uoO
 uoO
 uoO
@@ -34298,7 +34284,7 @@ uoO
 aoj
 uoO
 uoO
-uoO
+xVz
 uoO
 uoO
 uoO
@@ -34555,8 +34541,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+xVz
+xVz
 uoO
 uoO
 xVz
@@ -34813,7 +34799,7 @@ uoO
 uoO
 uoO
 uoO
-uoO
+xVz
 aoj
 aoj
 xVz
@@ -35070,7 +35056,7 @@ uoO
 aoj
 aoj
 uoO
-uoO
+xVz
 uoO
 xVz
 xVz
@@ -35327,7 +35313,7 @@ uoO
 aoj
 aoj
 uoO
-uoO
+xVz
 uoO
 xVz
 xVz
@@ -35584,7 +35570,7 @@ uoO
 aoj
 aoj
 uoO
-uoO
+xVz
 uoO
 xVz
 xVz
@@ -50455,7 +50441,7 @@ uoO
 uoO
 uoO
 xVz
-wyu
+xVz
 xVz
 xVz
 xVz
@@ -50712,7 +50698,7 @@ uoO
 uoO
 xVz
 xVz
-jiP
+xVz
 xVz
 xVz
 xVz
@@ -50970,9 +50956,9 @@ uoO
 xVz
 xVz
 xVz
-hQE
-hQE
-hQE
+xVz
+xVz
+xVz
 xVz
 xVz
 uoO
@@ -51227,9 +51213,9 @@ uoO
 xVz
 xVz
 xVz
-hQE
-uaf
-dVJ
+xVz
+xVz
+xVz
 xVz
 wcF
 hQE
@@ -51484,9 +51470,9 @@ uoO
 xVz
 xVz
 xVz
-hQE
-hQE
-hQE
+xVz
+xVz
+xVz
 xVz
 xVz
 uoO
@@ -62300,7 +62286,7 @@ vYC
 qhk
 xVz
 uoO
-rsg
+tiS
 tur
 bEw
 hME
@@ -72580,7 +72566,7 @@ tur
 vuv
 vuj
 lhQ
-qVG
+isr
 mkY
 vuv
 vuv
@@ -74117,7 +74103,7 @@ tjd
 tjd
 tjd
 dMQ
-tjA
+dVJ
 tur
 vuv
 lnr
@@ -76180,7 +76166,7 @@ iNY
 gni
 vuv
 hfb
-kfQ
+ydV
 vuv
 hkD
 hkD
@@ -79281,7 +79267,7 @@ uoO
 uoO
 uoO
 eLE
-uoO
+hQE
 qhB
 nBk
 nBk
@@ -79816,7 +79802,7 @@ nBk
 nBk
 mPr
 pYA
-kYT
+hkn
 ckc
 hkn
 rNO
@@ -80589,7 +80575,7 @@ mPr
 rsB
 dEg
 qpM
-kYT
+hkn
 wWd
 xyk
 uoO
@@ -81345,7 +81331,7 @@ toA
 lnr
 rQP
 uoO
-uoO
+hQE
 bqO
 nBk
 uoO
@@ -81357,7 +81343,7 @@ nBk
 nBk
 nBk
 uhE
-vsw
+wHf
 tkt
 rNO
 eRu
@@ -82890,7 +82876,7 @@ uoO
 uoO
 nBk
 dJm
-uoO
+hQE
 uoO
 uoO
 uoO
@@ -83153,8 +83139,8 @@ uoO
 uoO
 uoO
 uoO
-xPN
-uoO
+myb
+hQE
 bqO
 nBk
 uoO
@@ -83422,7 +83408,7 @@ nBk
 wHB
 nBk
 dJm
-uoO
+hQE
 eLE
 uoO
 uoO
@@ -83656,7 +83642,7 @@ oPR
 oPR
 dbx
 dcf
-uoO
+hQE
 bqO
 nBk
 uoO
@@ -83666,7 +83652,7 @@ wHB
 sHo
 lsP
 gGG
-uoO
+hQE
 nBk
 nBk
 uoO
@@ -83674,7 +83660,7 @@ uoO
 uoO
 uoO
 uoO
-isr
+fMj
 nBk
 xSW
 piI
@@ -83917,7 +83903,7 @@ nBk
 nBk
 uoO
 uoO
-uoO
+hQE
 nBk
 uoO
 lnr
@@ -84186,7 +84172,7 @@ nBk
 nAf
 uoO
 uoO
-uoO
+hQE
 wRf
 nBk
 nBk
@@ -84450,7 +84436,7 @@ nBk
 wHB
 nBk
 dJm
-uoO
+hQE
 eLE
 uoO
 uoO
@@ -85213,7 +85199,7 @@ nBk
 nBk
 wHi
 hXd
-uoO
+hQE
 uoO
 uoO
 uoO
@@ -85460,7 +85446,7 @@ uoO
 nBk
 uoO
 uoO
-uoO
+hQE
 rxw
 nBk
 nBk
@@ -86750,7 +86736,7 @@ uoO
 uoO
 uoO
 uoO
-uoO
+hQE
 nBk
 uoO
 aoj
@@ -87000,7 +86986,7 @@ xyk
 xyk
 uoO
 uoO
-xPN
+myb
 uoO
 noQ
 nBk
@@ -88290,7 +88276,7 @@ wHi
 nBk
 nBk
 nBk
-aoj
+hQE
 bqO
 nBk
 uoO
