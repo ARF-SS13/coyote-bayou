@@ -862,6 +862,9 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/spiritpledged
 	name = "Spirit-Pledged"
 
+/obj/effect/landmark/start/f13/guardian
+	name = "Guardian"
+
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator
 	name = "Followers Administrator"

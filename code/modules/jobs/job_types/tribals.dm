@@ -178,7 +178,7 @@ Tribal Head Hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
-	suit = 		/obj/item/clothing/suit/hooded/cloak/hhunter
+	suit = 		/obj/item/clothing/suit/hooded/cloak/shunter
 	belt = 		/obj/item/melee/transforming/cleaving_saw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
@@ -334,7 +334,7 @@ Hunter
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/ranged, //Bow and quiver, Bone knife, Healing powder
+		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
 		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
 	)
 
@@ -389,8 +389,8 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = "Village"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
@@ -405,3 +405,38 @@ Spirit-Pledged
 	jobtype = /datum/job/tribal/f13spiritpledged
 	uniform =	/obj/item/clothing/under/f13/wayfarer
 	id = 		/obj/item/card/id/tribetattoo
+
+/*
+Guardian
+*/
+
+/datum/job/tribal/f13guardian
+	title = "Guardian"
+	flag = F13GUARDIAN
+	department_flag = TRIBAL
+	faction = "Village"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "All leadership, but the Chief is priority"
+	description = "A hand choosen Hunter with much promise, you are one of the village Guardian's. An elite Hunter given the duty to protect the leaders of the tribe, and the village. Your duty is to ensure your kin are safe at all cost, as well as follow any orders from your superiors and enforce the law of the tribe."
+	selection_color = "#006666"
+
+	outfit = /datum/outfit/job/tribal/f13guardian
+
+	access = list(ACCESS_TRIBE)
+	minimal_access = list(ACCESS_TRIBE)
+
+/datum/outfit/job/tribal/f13guardian
+	name = "Guardian"
+	jobtype = /datum/job/tribal/f13guardian
+	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	suit = 		/obj/item/clothing/suit/hooded/cloak/hhunter
+	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	id = 		/obj/item/card/id/tribetattoo
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/stack/medical/gauze=1,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/restraints/legcuffs/bola/tactical=2)
