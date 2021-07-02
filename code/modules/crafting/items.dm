@@ -1023,7 +1023,7 @@
 /obj/item/experimental/proc/reroll(obj/item/W, mob/user)
 	var/obj/item/item = W.type
 	qdel(W)
-	if(prob(70))
+	if(prob(60))
 		new item(user.loc)
 		return
 	to_chat(user,"You destroy the item in the process.")
@@ -1068,7 +1068,7 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	B.extra_damage += (dmgmod/2) //edited from /1 
+	B.extra_damage += (dmgmod) //edited from /1 
 	B.extra_penetration += (penmod/120) //edited from /60
 	B.fire_delay += (spdmod/10) //edited from/5
 	B.name = prefix + B.name
@@ -1116,7 +1116,7 @@
 		if(30 to 100)
 			prefix = "Legendary "
 	
-	E.extra_damage += (dmgmod/2)
+	E.extra_damage += (dmgmod)
 	E.extra_penetration += (penmod/120)
 	E.fire_delay += (spdmod/10)
 	//E.ammo_type[1].delay += spdmod
