@@ -17,16 +17,10 @@
 	facial_hair_style = pick("Beard (5 o\'Clock)", "Beard (3 o\'Clock)")
 	hair_color = pick("#333333", "#44302B")
 	facial_hair_color = "#333333"
-//	var/random_eye_color = random_eye_color()
 	left_eye_color = "#333333"
 	right_eye_color = "#333333"
 	age = (rand(20, 25))
-//	if(!pref_species)
-//		var/rando_race = pick(GLOB.roundstart_races)
-//		pref_species = new rando_race()
-//	features = random_features(pref_species?.id, gender)
-
-
+ 
 
 /datum/preferences/proc/update_preview_icon(equip_job = TRUE)
 	// Determine what job is marked as 'High' priority, and dress them up as such.
