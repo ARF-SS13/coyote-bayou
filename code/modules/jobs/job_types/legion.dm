@@ -515,7 +515,7 @@ commented out pending rework*/
 
 /datum/outfit/loadout/vetberserker
 	name =			"Berserker"
-	suit_store =	/obj/item/gun/ballistic/rifle/repeater/shotgunlever
+	suit_store =	/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	backpack_contents = list(
 					/obj/item/ammo_box/shotgun/slug=1,
 					/obj/item/twohanded/fireaxe=1,

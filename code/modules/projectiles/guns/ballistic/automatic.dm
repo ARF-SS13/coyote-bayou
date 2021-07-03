@@ -202,12 +202,31 @@
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	fire_delay = 5
-	burst_shot_delay = 3.5 //Slow rate of fire
+	burst_shot_delay = 3.25 //Slow rate of fire
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
+
+/obj/item/gun/ballistic/automatic/smg/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 10
+			fire_delay = 5
+			weapon_weight = WEAPON_HEAVY
+			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			fire_delay = 4.5
+			spread = 3
+			weapon_weight = WEAPON_MEDIUM
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 
 
 //10mm SMG				Keywords: 10mm, Automatic, 12/24 rounds
@@ -271,16 +290,16 @@
 	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
+	spread = 20
 	burst_size = 3
 	fire_delay = 6
 	burst_shot_delay = 1.5
-	can_attachments = TRUE
 	extra_damage = -4
+	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
-	spread = 20
 
 
 //MP-5 SD				Keywords: 9mm, Automatic, 32 rounds, Suppressed
@@ -855,9 +874,10 @@
 	slowdown = 1
 	mag_type = /obj/item/ammo_box/magazine/lmg
 	burst_size = 1
-	fire_delay = 5
+	fire_delay = 6
 	burst_shot_delay = 2.5
 	can_attachments = FALSE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/r84/burst_select()
@@ -865,7 +885,7 @@
 	switch(select)
 		if(0)
 			select += 1
-			burst_size = 3
+			burst_size = 2
 			spread = 12
 			extra_damage = -3
 			recoil = 0.5
@@ -874,7 +894,7 @@
 			select = 0
 			burst_size = 5
 			spread = 16
-			extra_damage = -5
+			extra_damage = -6
 			recoil = 1
 			to_chat(user, "<span class='notice'>You switch to full auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -901,6 +921,7 @@
 	can_scope = FALSE
 
 
+
 //M1919 Machinegun. 7.62.
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
@@ -918,6 +939,7 @@
 	spread = 8
 	can_attachments = FALSE
 	var/cover_open = FALSE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/m1919/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/20, 1)*20 : "-empty"]"
