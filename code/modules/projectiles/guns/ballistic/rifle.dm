@@ -428,10 +428,10 @@ ATTACHMENTS
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-//Commando carbine							Keywords: .45 ACP, Bolt-action, 12 round magazine, Long barrel, Suppressed
+//Commando carbine							Keywords: BOS, .45 ACP, Bolt-action, 12 round magazine, Long barrel, Suppressed
 /obj/item/gun/ballistic/rifle/mag/commando
 	name = "commando carbine"
-	desc = "An integrally suppressed bolt action carbine, perfect for quiet varmint hunting. Uses .45 socom magazines."
+	desc = "An integrally suppressed bolt action carbine, the few existing examples of this rare gun are mostly in Brotherhood hands. Uses .45 socom magazines."
 	icon_state = "commando"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
