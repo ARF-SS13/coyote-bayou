@@ -67,19 +67,20 @@ BULK
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-PARTS
+TRAITS
 
 	PISTOL GRIP/FOLDED STOCK MALUS
 	For rifles, not pistols obviously
-	recoil = +0.5 //Standard malus for pistol grip
-	spread = +2 //Standard malus for pistol grip
+	recoil = 0.5
+	spread = +2 (not for shotguns)
+	w_class = WEIGHT_CLASS_NORMAL
 
 	SAWN OFF
 	recoil = 1
 	spread = 10
 	weapon_weight = WEAPON_LIGHT
 
-	LONG BARREL
+	LONG BARREL/LASERSIGHT
 	extra_damage = +2
 	spread = -1
 
@@ -94,6 +95,12 @@ PARTS
 	AMMO RECOIL BASE VALUES
 	.50  recoil = 1
 	.45/70  recoil = 0.25
+
+	2-ROUND BURTS
+	recoil = 0.1
+
+	3-ROUND BURST
+	recoil = 0.25
 
 
 FORCE 	Delicate, clumsy or small gun force 10
@@ -115,6 +122,7 @@ ATTACHMENTS
 	AUTO SEAR
 	Enables fire select automatic
 	burst_size + 1
+	recoil = +´0.1
 	spread + 6 (to bring it into the automatic template range)
 */
 

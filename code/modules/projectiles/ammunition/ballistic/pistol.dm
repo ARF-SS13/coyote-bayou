@@ -42,12 +42,12 @@
 	name = "14mm FMJ bullet casing"
 	desc = "A 14mm FMJ bullet casing."
 	caliber = "14"
-	projectile_type = /obj/item/projectile/bullet/14mm
+	projectile_type = /obj/item/projectile/bullet/mm14
 
 /obj/item/ammo_casing/p14mm/jhp
 	name = "14mm JHP bullet casing"
 	desc = "A 14mm JHP bullet casing"
-	projectile_type = /obj/item/projectile/bullet/14mm/jhp
+	projectile_type = /obj/item/projectile/bullet/mm14/jhp
 
 // 22lr
 /obj/item/ammo_casing/a22

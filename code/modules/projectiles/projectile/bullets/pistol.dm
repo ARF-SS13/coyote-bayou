@@ -246,14 +246,14 @@ Civilian round				=	-10% damage. AP reduced by 50%
 // 14 MM //
 ///////////				-Huge pistol round, damage focus
 
-/obj/item/projectile/bullet/14mm
+/obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
 	damage = 50
 	armour_penetration = 0.25
 	wound_bonus = 28
 	bare_wound_bonus = -28
 
-/obj/item/projectile/bullet/14mm/jhp
+/obj/item/projectile/bullet/mm14/jhp
 	name = "14mm JHP bullet"
 	damage = 57
 	armour_penetration = 0.05

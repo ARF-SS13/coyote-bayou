@@ -106,7 +106,7 @@
 	r_pocket =      /obj/item/storage/bag/money/small/legion
 	l_pocket = 		/obj/item/flashlight/lantern
 	r_hand = 		/obj/item/gun/ballistic/revolver/ballisticfist
-	l_hand = 		/obj/item/ammo_casing/shotgun/slug
+	l_hand = 		/obj/item/ammo_box/shotgun/slug
 	backpack = 		null
 	satchel = 		null
 	box = 			/obj/item/storage/box/legate

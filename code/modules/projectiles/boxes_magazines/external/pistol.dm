@@ -147,8 +147,9 @@
 	name = "automag magazine (.44 magnum)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "magnum"
+	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 7
-
+	multiple_sprites = 2
 
 //14mm
 /obj/item/ammo_box/magazine/m14mm
