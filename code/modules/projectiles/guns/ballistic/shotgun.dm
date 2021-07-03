@@ -431,7 +431,7 @@ ATTACHMENTS
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 
-//Neostead 2000						Keywords: Shotgun, Semi-auto, 12 rounds internal
+//Neostead 2000						Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
 	name = "Neostead 2000"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
@@ -503,10 +503,10 @@ ATTACHMENTS
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
-//Lever action shotgun					Keywords: Shotgun, Lever-action, 5 round magazine, Pistol grip
+//Lever action shotgun					Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
-	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
+	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber. Signature weapon of the Legion."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
