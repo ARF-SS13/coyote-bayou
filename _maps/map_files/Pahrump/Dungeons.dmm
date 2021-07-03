@@ -5863,6 +5863,10 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
+"hlU" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/turf/open/water,
+/area/f13/underground/cave)
 "hlY" = (
 /obj/structure/window/reinforced{
 	color = "#000000";
@@ -13327,6 +13331,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
+"qKz" = (
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/water,
+/area/f13/underground/cave)
 "qLc" = (
 /obj/structure/chair/bench,
 /obj/machinery/light{
@@ -13389,6 +13397,11 @@
 /obj/effect/decal/waste,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
+"qMQ" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "qNg" = (
 /obj/structure/table/wood,
 /obj/item/kitchen/knife,
@@ -22876,7 +22889,7 @@ nZw
 bFu
 bFu
 bFu
-aCs
+qMQ
 bYA
 bYA
 heT
@@ -24427,7 +24440,7 @@ wPz
 wPz
 wPz
 bFu
-bFu
+qKz
 qWw
 bFu
 pny
@@ -25192,8 +25205,8 @@ wpy
 wPz
 nej
 wPz
+pvG
 wPz
-wPz
 bFu
 bFu
 bFu
@@ -25201,7 +25214,7 @@ bFu
 bFu
 bFu
 bFu
-bFu
+hlU
 bFu
 bFu
 aCs
