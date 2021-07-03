@@ -28,12 +28,18 @@
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 	H.grant_language(/datum/language/tribal)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/punji_sticks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor_helmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa_helmet)
 
 /*
 Tribal Chief
 */
 /datum/job/tribal
 	exp_type = EXP_TYPE_TRIBAL
+
+	mind_traits = list(TRAIT_TRIBAL)
 
 /datum/job/tribal/f13chief
 	title = "Chief"
@@ -178,7 +184,7 @@ Tribal Head Hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
-	suit = 		/obj/item/clothing/suit/hooded/cloak/hhunter
+	suit = 		/obj/item/clothing/suit/hooded/cloak/shunter
 	belt = 		/obj/item/melee/transforming/cleaving_saw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
@@ -204,7 +210,7 @@ Druid
 	forbids = "Abusing technology and using Pre-War weapons."
 	description = "You are a Druid in the tribe; you perform rituals, and bless pre-war relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/tribal/f13druid
 	access = list(ACCESS_TRIBE)
@@ -334,7 +340,7 @@ Hunter
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-		/datum/outfit/loadout/ranged, //Bow and quiver, Bone knife, Healing powder
+		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
 		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
 	)
 
@@ -360,11 +366,11 @@ Hunter
 		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/ranged
-	name = "Ranged"
+	name = "Marksman"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/tribalbow=1,
 		/obj/item/clothing/suit/armor/f13/lightcloak=1,
-		/obj/item/storage/belt/tribe_quiver=1,
+		/obj/item/storage/belt/tribe_quiver/bone=1,
 		/obj/item/kitchen/knife/combat/bone=1,
 		/obj/item/restraints/legcuffs/bola=2,
 		/obj/item/binoculars=1,
@@ -372,7 +378,7 @@ Hunter
 	)
 
 /datum/outfit/loadout/melee
-	name = "Melee"
+	name = "Frontline"
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear/deathclaw=1,
 		/obj/item/kitchen/knife/combat/bone=1,
@@ -389,8 +395,8 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = "Village"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
@@ -405,3 +411,39 @@ Spirit-Pledged
 	jobtype = /datum/job/tribal/f13spiritpledged
 	uniform =	/obj/item/clothing/under/f13/wayfarer
 	id = 		/obj/item/card/id/tribetattoo
+
+/*
+Guardian
+*/
+
+/datum/job/tribal/f13guardian
+	title = "Guardian"
+	flag = F13GUARDIAN
+	department_flag = TRIBAL
+	faction = "Village"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "All leadership, but the Chief is priority"
+	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the leaders of the tribe, and the village. Your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe."
+	selection_color = "#006666"
+	exp_requirements = 900
+
+	outfit = /datum/outfit/job/tribal/f13guardian
+
+	access = list(ACCESS_TRIBE)
+	minimal_access = list(ACCESS_TRIBE)
+
+/datum/outfit/job/tribal/f13guardian
+	name = "Guardian"
+	jobtype = /datum/job/tribal/f13guardian
+	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	suit = 		/obj/item/clothing/suit/hooded/cloak/hhunter
+	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	id = 		/obj/item/card/id/tribetattoo
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/stack/medical/gauze=1,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/restraints/legcuffs/bola/tactical=2)

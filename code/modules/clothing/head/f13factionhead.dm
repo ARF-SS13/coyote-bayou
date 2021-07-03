@@ -236,7 +236,7 @@
 
 /obj/item/clothing/head/helmet/f13/legion/marsheaddress
 	name = "priestess' headdress"
-	desc = "(II) A headdress made of feathers and decorated with two golden tassles."
+	desc = "(III) A headdress made of feathers and decorated with two golden tassles."
 	icon_state = "legion-priestess"
 	item_state = "legion-priestess"
 	dynamic_hair_suffix = "+generic"
@@ -272,10 +272,9 @@
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	name = "legion explorer hood"
-	desc = "(IV) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
+	desc = "(V) It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
-	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	name = "legion bear vexillarius helmet"
@@ -291,21 +290,21 @@
 
 /obj/item/clothing/head/helmet/f13/legion/venator
 	name = "legion venator hood"
-	desc = "(V) A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
+	desc = "(VI) A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
 	icon_state = "legion-venator"
 	item_state = "legion-venator"
-	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/decan
 	name = "legion recruit decanus helmet"
-	desc = "(IV) This reinforced leather helmet has a plume of black and dark red feathers."
+	desc = "(VI) This reinforced leather helmet has a plume of black and dark red feathers."
 	icon_state = "legion-decrec"
 	item_state = "legion-decrec"
-	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
-	desc = "(V) This reinforced leather helmet with a red peak has a plume of black feathers."
+	desc = "(VI) This reinforced leather helmet with a red peak has a plume of black feathers."
 	item_state = "legion-decprime"
 	icon_state = "legion-decprime"
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
@@ -349,7 +348,7 @@
 
 /obj/item/clothing/head/helmet/f13/legion/palacent
 	name = "paladin-slayer centurion helmet"
-	desc = "(VI) The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
+	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
 	icon_state = "legion-palacent"
 	item_state = "legion-palacent"
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -401,12 +400,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
 	icon_state = "legion-combat2"
 	item_state = "legion-combat2"
-
-
-/obj/item/clothing/head/helmet/f13/legion/vet/heavy
-	name = "legion shieldbearer helmet"
-	desc = "(VI) A metal legion veteran helmet with an inverted color scheme for shieldbearers"
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /*
 /obj/item/clothing/head/helmet/f13/legion/recruit/scout
@@ -854,21 +847,21 @@
 	armor = list("tier" = 7, "energy" = 40, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	actions_types = list(/datum/action/item_action/toggle)
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/f13/combat/wayfarer/tribe_helmet
 	name = "tribalized helmet"
 	desc = "(V) An old military grade pre-war combat helmet, repainted and re purposed with bones and sinew to worship some tribal diety."
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 35, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/wayfarer/pa_helmet
 	name = "tribal full plate headdress"
 	desc = "(VII) The once-marvelous helmet of the T-45d power armor set, repurposed and painted with markings of a tribe to signify its holyness to Kwer. It has dye'd feathers addoring it to make it look fierce in battle."
 	icon_state = "tribal_PA_helmet"
 	item_state = "tribal_PA_helmet"
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 40, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	armor = list("tier" = 6, "energy" = 50, "bomb" = 40, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)

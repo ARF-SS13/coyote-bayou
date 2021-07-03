@@ -53,7 +53,6 @@
 /area/f13/radiation)
 "aS" = (
 /obj/structure/bed/mattress,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /obj/effect/decal/remains/human,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
@@ -279,12 +278,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"eB" = (
-/mob/living/simple_animal/hostile/alien{
-	faction = list("ghoul")
-	},
-/turf/open/floor/padded,
-/area/f13/bunker)
 "eN" = (
 /obj/item/lipstick/random,
 /obj/structure/table,
@@ -324,21 +317,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
-"fn" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"fy" = (
-/mob/living/simple_animal/hostile/ghoul/coldferal,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "fD" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -356,16 +334,6 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/bunker)
-"fQ" = (
-/obj/item/storage/trash_stack,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
 /area/f13/bunker)
 "fR" = (
 /obj/machinery/light/fo13colored/Aqua,
@@ -652,11 +620,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"lN" = (
-/obj/item/storage/trash_stack,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/bunker)
 "lS" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
@@ -708,10 +671,6 @@
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/engine,
 /area/f13/radiation)
-"mF" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/turf/open/floor/padded,
-/area/f13/bunker)
 "mQ" = (
 /obj/effect/decal/cleanable/blood,
 /obj/effect/mob_spawn/human/corpse/raidermelee,
@@ -919,10 +878,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"qG" = (
-/obj/structure/sign/poster/contraband/lusty_xenomorph,
-/turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
 "qZ" = (
 /mob/living/simple_animal/hostile/gecko,
 /obj/effect/decal/cleanable/dirt,
@@ -962,7 +917,6 @@
 	dir = 4;
 	pixel_x = 12
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splats,
 /turf/open/floor/mineral/plastitanium,
@@ -1119,11 +1073,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"ut" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
-/turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/bunker)
 "uH" = (
 /obj/effect/decal/cleanable/blood/splatter/xeno,
 /obj/effect/decal/cleanable/dirt,
@@ -1244,10 +1193,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"xs" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
 "xu" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
@@ -1623,11 +1568,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"Dc" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/bunker)
 "De" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/barber{
@@ -1687,7 +1627,7 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker)
 "DV" = (
-/mob/living/simple_animal/hostile/ghoul/soldier/armored,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1703,7 +1643,6 @@
 	dir = 4;
 	pixel_x = -3
 	},
-/obj/effect/spawner/lootdrop/high_loot_toilet,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -1781,7 +1720,6 @@
 "ET" = (
 /obj/structure/toilet,
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -2050,11 +1988,11 @@
 	},
 /area/f13/bunker)
 "KN" = (
-/mob/living/simple_animal/hostile/ghoul/frozenreaver,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2762,27 +2700,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"WA" = (
-/mob/living/simple_animal/hostile/alien{
-	faction = list("ghoul")
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "WB" = (
 /obj/structure/bed,
 /obj/effect/spawner/lootdrop/bedsheet,
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/bunker)
-"WI" = (
-/obj/effect/spawner/lootdrop/trash,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
 "WO" = (
 /obj/structure/sink{
@@ -2803,10 +2726,6 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/bunker)
-"WR" = (
-/obj/effect/spawner/lootdrop/f13/cash_random_med,
-/turf/open/floor/padded,
 /area/f13/bunker)
 "WS" = (
 /obj/structure/table/reinforced,
@@ -3090,9 +3009,9 @@ Zs
 rW
 fg
 fg
-Dc
+fg
 rW
-lN
+fg
 oF
 fg
 rW
@@ -3130,11 +3049,11 @@ Zs
 Zs
 Zs
 rW
-WI
+fg
 fg
 PN
 rW
-xs
+oF
 fg
 rJ
 rW
@@ -3259,7 +3178,7 @@ rW
 Zz
 Un
 uf
-ut
+uf
 tO
 uf
 uI
@@ -3459,7 +3378,7 @@ Zs
 Zs
 "}
 (12,1,1) = {"
-qG
+rW
 tY
 cw
 BJ
@@ -3932,7 +3851,7 @@ BD
 rW
 Cv
 BD
-WA
+lp
 rW
 Bb
 Ny
@@ -4058,7 +3977,7 @@ Ai
 rW
 XU
 tS
-fy
+DV
 BD
 BD
 DV
@@ -4066,7 +3985,7 @@ lp
 lp
 lp
 Qv
-fQ
+Vl
 rW
 Ua
 An
@@ -4268,10 +4187,10 @@ ec
 rW
 wc
 BA
-fn
+En
 pb
 vS
-eB
+vS
 vS
 rW
 fa
@@ -4313,8 +4232,8 @@ BA
 En
 pb
 vS
-mF
-WR
+vS
+vS
 rW
 ve
 az

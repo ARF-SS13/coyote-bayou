@@ -42,20 +42,16 @@
 	icon_state = "beachwave"
 
 /datum/sprite_accessory/hair/bedhead
-	name = "Bedhead"
+	name = "Bedhead wild"
 	icon_state = "hair_bedhead"
 
 /datum/sprite_accessory/hair/bedhead_long
 	name = "Bedhead (Long)"
 	icon_state = "hair_long_bedhead"
 
-/datum/sprite_accessory/hair/bedhead2
-	name = "Bedhead 2"
-	icon_state = "hair_bedheadv2"
-
 /datum/sprite_accessory/hair/bedhead3
-	name = "Bedhead 3"
-	icon_state = "hair_bedheadv3"
+	name = "Bedhead"
+	icon_state = "hair_bedhead2"
 
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
@@ -210,7 +206,7 @@
 	icon_state = "hair_cornrows"
 
 /datum/sprite_accessory/hair/cornrows2
-	name = "Cornrows 2"
+	name = "Cornrows Long"
 	icon_state = "hair_cornrows2"
 
 /datum/sprite_accessory/hair/cornrowbun
@@ -220,10 +216,6 @@
 /datum/sprite_accessory/hair/cornrowbraid
 	name = "Cornrow Braid"
 	icon_state = "hair_cornrowbraid"
-
-/datum/sprite_accessory/hair/cornrowdualtail
-	name = "Cornrow Tail"
-	icon_state = "hair_cornrowtail"
 
 /datum/sprite_accessory/hair/country
 	name = "Country"
@@ -405,10 +397,6 @@
 	name = "Hitop"
 	icon_state = "hair_hitop"
 
-/datum/sprite_accessory/hair/inkling
-	name = "Inkling"
-	icon_state = "hair_inkling"
-
 /datum/sprite_accessory/hair/jade
 	name = "Jade"
 	icon_state = "hair_jade"
@@ -436,6 +424,10 @@
 /datum/sprite_accessory/hair/kusangi
 	name = "Kusanagi"
 	icon_state = "hair_kusanagi"
+
+/datum/sprite_accessory/hair/legion
+	name = "Legion shave"
+	icon_state = "hair_legion"
 
 /datum/sprite_accessory/hair/long
 	name = "Long Hair 1"
@@ -612,10 +604,6 @@
 	name = "Ponytail (High)"
 	icon_state = "hair_highponytail"
 
-/datum/sprite_accessory/hair/longponytail
-	name = "Ponytail (Long)"
-	icon_state = "hair_longstraightponytail"
-
 /datum/sprite_accessory/hair/sidetail
 	name = "Ponytail (Side)"
 	icon_state = "hair_sidetail"
@@ -659,26 +647,6 @@
 /datum/sprite_accessory/hair/ronin
 	name = "Ronin"
 	icon_state = "hair_ronin"
-
-/datum/sprite_accessory/hair/row
-	name = "Rows"
-	icon_state = "hair_rows1"
-
-/datum/sprite_accessory/hair/row2
-	name = "Rows 2"
-	icon_state = "hair_rows2"
-
-/datum/sprite_accessory/hair/rowbun
-	name = "Rows (Bun)"
-	icon_state = "hair_rowbun"
-
-/datum/sprite_accessory/hair/rowdualtail
-	name = "Rows (Pigtails)"
-	icon_state = "hair_rowdualtail"
-
-/datum/sprite_accessory/hair/rowbraid
-	name = "Rows (Braid)"
-	icon_state = "hair_rowbraid"
 
 /datum/sprite_accessory/hair/sabitsuki
 	name = "Sabitsuki"
@@ -724,10 +692,6 @@
 	name = "Short Hair 80s"
 	icon_state = "hair_80s"
 
-/datum/sprite_accessory/hair/shorthairrosa
-	name = "Short Hair Rosa"
-	icon_state = "hair_rosa"
-
 /datum/sprite_accessory/hair/stail
 	name = "Short Tail"
 	icon_state = "hair_stail"
@@ -762,7 +726,7 @@
 
 /datum/sprite_accessory/hair/spiky2
 	name = "Spiky 2"
-	icon_state = "hair_spiky"
+	icon_state = "hair_toriyama"
 
 /datum/sprite_accessory/hair/spiky3
 	name = "Spiky 3"
@@ -791,10 +755,6 @@
 /datum/sprite_accessory/hair/topknot
 	name = "Topknot"
 	icon_state = "hair_topknot"
-
-/datum/sprite_accessory/hair/toriyama
-	name = "Toriyama"
-	icon_state = "hair_toriyama"
 
 /datum/sprite_accessory/hair/toriyama2
 	name = "Toriyama 2"
@@ -839,10 +799,6 @@
 /datum/sprite_accessory/hair/longest
 	name = "Very Long Hair 2"
 	icon_state = "hair_longest"
-
-/datum/sprite_accessory/hair/longest2
-	name = "Very Long Over Eye"
-	icon_state = "hair_longest2"
 
 /datum/sprite_accessory/hair/longestalt
 	name = "Very Long with Fringe"
