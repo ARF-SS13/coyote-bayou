@@ -155,7 +155,7 @@
 	name = "handgun magazine (14mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "50ae"
-	ammo_type = /obj/item/ammo_casing/a127mm
+	ammo_type = /obj/item/ammo_casing/p14mm
 	caliber = "14"
 	max_ammo = 7
 	multiple_sprites = 2

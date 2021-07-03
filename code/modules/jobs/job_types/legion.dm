@@ -106,7 +106,7 @@
 	r_pocket =      /obj/item/storage/bag/money/small/legion
 	l_pocket = 		/obj/item/flashlight/lantern
 	r_hand = 		/obj/item/gun/ballistic/revolver/ballisticfist
-	l_hand = 		/obj/item/storage/fancy/ammobox/slugshot
+	l_hand = 		/obj/item/ammo_casing/shotgun/slug
 	backpack = 		null
 	satchel = 		null
 	box = 			/obj/item/storage/box/legate
@@ -706,7 +706,7 @@ commented out pending rework*/
 // For both : Defend camp, help out there, dont run off, Mars teachings to help make potions.
 
 /datum/job/CaesarsLegion/Legionnaire/f13campfollower
-	title = "Camp Duty"
+	title = "Legion Camp Duty"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"
 	total_positions = 2

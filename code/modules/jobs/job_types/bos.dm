@@ -320,7 +320,7 @@ Head Knight
 	name = "Warden-Defender"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/shotgun/police=1,
-		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/ammo_casing/shotgun/buckshot=2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/gun/energy/laser/pistol=1
 		)
@@ -670,7 +670,7 @@ datum/job/bos/f13seniorknight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/shotgun/police=1,
-		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/ammo_casing/shotgun/buckshot=2,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/gun/energy/laser/pistol=1
 		)
@@ -733,7 +733,7 @@ Knight
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
 		/obj/item/gun/ballistic/shotgun/trench=1,
-		/obj/item/storage/fancy/ammobox/lethalshot=2
+		/obj/item/ammo_casing/shotgun/buckshot=2
 		)
 
 /datum/outfit/loadout/knightc
@@ -749,7 +749,7 @@ Knight
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
 		/obj/item/gun/ballistic/shotgun/trench=1,
-		/obj/item/storage/fancy/ammobox/lethalshot=2,
+		/obj/item/ammo_casing/shotgun/buckshot=2,
 		/obj/item/shield/riot=1
 		)
 /*

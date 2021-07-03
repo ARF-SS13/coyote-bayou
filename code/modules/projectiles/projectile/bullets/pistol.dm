@@ -5,14 +5,16 @@
 //////////////////////
 /*
 FMJ (full metal jacket)		=	Baseline
-AP (armor piercing)			=	-10% damage. AP increased by 0.2. Wound bonus -50%
-JHP (jacketed hollow point)	=	+10% damage. AP reduced by 0.2. Wound bonus + 50%
+AP (armor piercing)			=	-20% damage. AP increased by 0.2. Wound bonus -50%
+JHP (jacketed hollow point)	=	+15% damage. AP reduced by 0.2 (not below zero). Wound bonus + 50%
 SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
 P+ (overpressure)			=	extra speed 500. AP + 01. Wound bonus -25%
 Match						=	extra speed 200. AP +0.05. Wound bonus -10%
 Civilian round				=	-10% damage. AP reduced by 50% 
 */
 
+// Explanation: Two major ammo stats, AP and Damage. Bullets placed in classes. Light rounds for example balanced with each other, one more AP, one more Damage.
+// Balance between classes mostly done on the gun end, bigger rounds typically fire slower and have more recoil. They are not supposed to be totally equal either.
 
 ////////////////////
 // .22 LONG RIFLE //
@@ -26,8 +28,8 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c22/hp
 	name = ".22lr hollow point bullet"
-	damage = 22
-	armour_penetration = -0.14
+	damage = 23
+	armour_penetration = 0
 	wound_bonus = -9
 	bare_wound_bonus = 9
 
@@ -45,7 +47,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = 30
-	armour_penetration = 0.04
+	armour_penetration = 0
 	wound_bonus = 10
 
 
@@ -55,13 +57,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
-	damage = 28
+	damage = 27
 	armour_penetration = 0.05
 	wound_bonus = 15
 
 /obj/item/projectile/bullet/c9mm/ap
 	name = "9mm AP bullet"
-	damage = 25
+	damage = 22
 	armour_penetration = 0.25
 	wound_bonus = 8
 	bare_wound_bonus = -8
@@ -69,13 +71,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c9mm/jhp
 	name = "9mm JHP bullet"
 	damage = 31
-	armour_penetration = -0.15
+	armour_penetration = 0
 	wound_bonus = -23
 	bare_wound_bonus = 23
 
 /obj/item/projectile/bullet/c9mm/op
 	name = "9mm +P bullet"
-	damage = 28
+	damage = 27
 	armour_penetration = 0.15
 	wound_bonus = 11
 	bare_wound_bonus = -11
@@ -91,13 +93,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
-	damage = 30
+	damage = 29
 	armour_penetration = 0.12
 	wound_bonus = 18
 
 /obj/item/projectile/bullet/c10mm/ap
 	name = "10mm AP bullet"
-	damage = 27
+	damage = 23
 	armour_penetration = 0.32
 	wound_bonus = 9
 	bare_wound_bonus = -9
@@ -105,7 +107,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c10mm/hp
 	name = "10mm JHP bullet"
 	damage = 33
-	armour_penetration = -0.08
+	armour_penetration = 0
 	wound_bonus = -27
 	bare_wound_bonus = 27
 
@@ -116,20 +118,20 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
-	damage = 33
+	damage = 32
 	armour_penetration = 0.1
 	wound_bonus = 20
 
 /obj/item/projectile/bullet/c45/jhp
 	name = ".45 JHP bullet"
-	damage = 36
-	armour_penetration = -0.1
+	damage = 37
+	armour_penetration = 0
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/c45/op
 	name = ".45 +P bullet"
-	damage = 33
+	damage = 32
 	armour_penetration = 0.2
 	wound_bonus = 15
 	bare_wound_bonus = -15
@@ -142,21 +144,21 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = 37
+	damage = 36
 	armour_penetration = 0.15
 	wound_bonus = 14
 	bare_wound_bonus = -14
 
 /obj/item/projectile/bullet/a357/jhp
 	name = ".357 JHP bullet"
-	damage = 41
-	armour_penetration = -0.05
+	damage = 42
+	armour_penetration = 0
 	wound_bonus = -21
 	bare_wound_bonus = 21
 
 /obj/item/projectile/bullet/a357/jfp
 	name = ".357 JFP bullet"
-	damage = 39
+	damage = 38
 	armour_penetration = 0.1
 	wound_bonus = 18
 	bare_wound_bonus = 18
@@ -168,21 +170,21 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = 40
+	damage = 39
 	armour_penetration = 0.2
 	wound_bonus = 20
 	bare_wound_bonus = -20
 
 /obj/item/projectile/bullet/m44/jhp
 	name = ".44 JHP bullet"
-	damage = 44
+	damage = 45
 	armour_penetration = 0
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/m44/swc
 	name = ".44 SWC bullet"
-	damage = 40
+	damage = 39
 	armour_penetration = 0.1
 	wound_bonus = 30
 	bare_wound_bonus = 30
@@ -193,7 +195,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 //45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
 /obj/item/projectile/bullet/a45lc
 	name = ".45 LC bullet"
-	damage = 44 //Right inbetween 44 and 45-70. Gun this is used in has a fire delay of 8, doing the math I'm pretty sure a regular M29 has a higher DPS then dual wielding these unless you bounce shots
+	damage = 43 //Right inbetween 44 and 45-70. Gun this is used in has a fire delay of 8, doing the math I'm pretty sure a regular M29 has a higher DPS then dual wielding these unless you bounce shots
 	armour_penetration = 0.25 //Again, right inbetween 44 and 45-70.
 	wound_bonus = 20
 	bare_wound_bonus = -20
@@ -210,7 +212,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c4570
 	name = ".45-70 FMJ bullet"
-	damage = 48
+	damage = 46
 	armour_penetration = 0.3
 	wound_bonus = 24
 	bare_wound_bonus = -24
@@ -224,7 +226,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c4570/swc
 	name = ".45-70 SWC bullet"
-	damage = 48
+	damage = 49
 	armour_penetration = 0.2
 	wound_bonus = 36
 	bare_wound_bonus = 36
@@ -244,16 +246,16 @@ Civilian round				=	-10% damage. AP reduced by 50%
 // 14 MM //
 ///////////				-Huge pistol round, damage focus
 
-/obj/item/projectile/bullet/a127mm
+/obj/item/projectile/bullet/14mm
 	name = "14mm FMJ bullet"
-	damage = 56
+	damage = 50
 	armour_penetration = 0.25
 	wound_bonus = 28
 	bare_wound_bonus = -28
 
-/obj/item/projectile/bullet/a127mm/jhp
+/obj/item/projectile/bullet/14mm/jhp
 	name = "14mm JHP bullet"
-	damage = 62
+	damage = 57
 	armour_penetration = 0.05
 	wound_bonus = -42
 	bare_wound_bonus = 42
@@ -266,13 +268,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
-	damage = 35
+	damage = 34
 	armour_penetration = 0.6
 	var/piercing = FALSE
 
 /obj/item/projectile/bullet/needle/ap
 	name = "armour piercing needle"
-	damage = 32
+	damage = 31
 	armour_penetration = 0.8
 	wound_bonus = 0
 	bare_wound_bonus = 0
@@ -280,7 +282,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/needle/ultra
 	name = "ultracite needle"
-	damage = 39
+	damage = 38
 	armour_penetration = 0.4
 	piercing = TRUE
 

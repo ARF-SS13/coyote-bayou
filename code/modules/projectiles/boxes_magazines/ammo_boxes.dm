@@ -321,14 +321,14 @@
 	icon_state = "14mmbox"
 	multiple_sprites = 2
 	caliber = "14"
-	ammo_type = /obj/item/ammo_casing/a127mm
+	ammo_type = /obj/item/ammo_casing/p14mm
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/m127mm/jhp
 	name = "ammo box (14mm JHP)"
-	ammo_type = /obj/item/ammo_casing/a127mm/jhp
+	ammo_type = /obj/item/ammo_casing/p14mm/jhp
 	custom_materials = list(/datum/material/iron = 11000)
 
 

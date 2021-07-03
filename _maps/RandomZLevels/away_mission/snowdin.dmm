@@ -15550,12 +15550,8 @@
 /area/awaymission/snowdin/cave/cavern)
 "Nc" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox,
+/obj/item/ammo_box/shotgun/buck,
 /obj/machinery/light/small,
-/obj/item/storage/fancy/ammobox{
-	pixel_x = 2;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/post/secpost)
 "NB" = (
@@ -15645,7 +15641,7 @@
 	},
 /obj/item/restraints/handcuffs,
 /obj/item/assembly/flash,
-/obj/item/storage/fancy/ammobox,
+/obj/item/ammo_box/shotgun/buck,
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},
@@ -15670,11 +15666,7 @@
 /area/awaymission/snowdin/cave/cavern)
 "VV" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot{
-	pixel_x = 2;
-	pixel_y = 2
-	},
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/post/secpost)
 "VW" = (
