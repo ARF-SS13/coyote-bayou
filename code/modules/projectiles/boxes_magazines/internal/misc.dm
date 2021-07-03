@@ -16,6 +16,12 @@
 	caliber = "arrow"
 	max_ammo = 1
 
+/obj/item/ammo_box/magazine/internal/bonebow
+	name = "bow internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	caliber = "arrow"
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/m2flamethrower
 	name = "m2 flamethower fuel tank"
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower

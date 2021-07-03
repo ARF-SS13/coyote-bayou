@@ -194,3 +194,123 @@
 		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
 		update_icon()
 		chamber_round()
+
+/obj/item/gun/ballistic/automatic/bonebow
+	name = "deathclaw bow"
+	desc = "A simple wooden bow with small pieces of deathclaw."
+	icon_state = "ashenbow_unloaded"
+	item_state = "ashenbow_unloaded"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	burst_size = 1
+	fire_delay = 0
+	select = 0
+	actions_types = list()
+	casing_ejector = FALSE
+	isbow = TRUE
+
+/obj/item/gun/ballistic/automatic/bonebow/update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/bonebow/attack_self()
+	return
+
+/obj/item/gun/ballistic/automatic/bonebow/attackby(obj/item/A, mob/user, params)
+	var/num_loaded = magazine.attackby(A, user, params, 1)
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
+		update_icon()
+		chamber_round()
+
+/obj/item/gun/ballistic/automatic/sturdybow
+	name = "sturdy bow"
+	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra power."
+	icon_state = "bow_unloaded"
+	item_state = "bow_unloaded"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	burst_size = 1
+	fire_delay = 0
+	select = 0
+	actions_types = list()
+	casing_ejector = FALSE
+	isbow = TRUE
+
+/obj/item/gun/ballistic/automatic/sturdybow/update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/sturdybow/attack_self()
+	return
+
+/obj/item/gun/ballistic/automatic/sturdybow/attackby(obj/item/A, mob/user, params)
+	var/num_loaded = magazine.attackby(A, user, params, 1)
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
+		update_icon()
+		chamber_round()
+
+/obj/item/gun/ballistic/automatic/bow
+	name = "sturdy bow"
+	desc = "A firm sturdy silver bow with leather handles and sinew wrapping, for extra power."
+	icon_state = "pipebow_unloaded"
+	item_state = "pipebow_unloaded"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	burst_size = 1
+	fire_delay = 0
+	select = 0
+	actions_types = list()
+	casing_ejector = FALSE
+	isbow = TRUE
+
+/obj/item/gun/ballistic/automatic/silverbow/update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/silverbow/attack_self()
+	return
+
+/obj/item/gun/ballistic/automatic/silverbow/attackby(obj/item/A, mob/user, params)
+	var/num_loaded = magazine.attackby(A, user, params, 1)
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
+		update_icon()
+		chamber_round()
+
+/obj/item/gun/ballistic/automatic/crossbow
+	name = "crossbow"
+	desc = "A crossbow."
+	icon_state = "crossbow"
+	item_state = "crossbow"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	can_suppress = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
+	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	burst_size = 1
+	fire_delay = 0
+	select = 0
+	actions_types = list()
+	casing_ejector = FALSE
+	isbow = TRUE
+
+/obj/item/gun/ballistic/automatic/crossbow/update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/crossbow/attack_self()
+	return
+
+/obj/item/gun/ballistic/automatic/crossbow/attackby(obj/item/A, mob/user, params)
+	var/num_loaded = magazine.attackby(A, user, params, 1)
+	if(num_loaded)
+		to_chat(user, "<span class='notice'>You load [num_loaded] arrow\s into \the [src].</span>")
+		update_icon()
+		chamber_round()
