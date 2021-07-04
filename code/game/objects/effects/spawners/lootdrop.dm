@@ -557,9 +557,7 @@
 		/obj/item/storage/toolbox/emergency = 1,
 		/obj/item/storage/toolbox/emergency/old = 1,
 		/obj/item/storage/toolbox/electrical = 1,
-		/obj/item/storage/toolbox/syndicate = 1,
 		/obj/item/storage/toolbox/artistic = 1,
-		/obj/item/storage/toolbox/gold_fake = 1,
 		/obj/item/storage/toolbox/rubber = 1
 		)
 
