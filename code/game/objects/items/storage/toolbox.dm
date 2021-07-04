@@ -297,38 +297,6 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/clothing/mask/infiltrator(src)
 	new /obj/item/clothing/shoes/combat/sneakboots(src)
 
-/obj/item/storage/toolbox/plastitanium/gold_real
-	name = "golden toolbox"
-	desc = "A larger then normal toolbox made of gold plated plastitanium."
-	icon_state = "gold"
-	item_state = "toolbox_gold"
-	has_latches = FALSE
-
-/obj/item/storage/toolbox/gold_real/PopulateContents()
-	new /obj/item/screwdriver/nuke(src)
-	new /obj/item/wrench(src)
-	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/red(src)
-	new /obj/item/wirecutters(src, "red")
-	new /obj/item/multitool/ai_detect(src)
-	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
-
-/obj/item/storage/toolbox/gold_real/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 40
-	STR.max_items = 12
-
-/obj/item/storage/toolbox/gold_fake // used in crafting
-	name = "golden toolbox"
-	desc = "A gold plated toolbox, fancy and harmless due to the gold plating being on cardboard!"
-	icon_state = "gold"
-	item_state = "toolbox_gold"
-	has_latches = FALSE
-	force = 0
-	throwforce = 0
-	can_rubberify = FALSE
-
 /obj/item/storage/toolbox/proc/rubberify()
 	name = "rubber [name]"
 	desc = replacetext(desc, "Danger", "Bouncy")

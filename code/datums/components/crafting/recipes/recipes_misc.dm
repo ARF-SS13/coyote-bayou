@@ -358,15 +358,4 @@
 	subcategory = CAT_FURNITURE
 	category = CAT_MISC
 
-/datum/crafting_recipe/goldenbox
-	name = "Gold Plated Toolbox"
-	result = /obj/item/storage/toolbox/gold_fake
-	tools = list(/obj/item/stock_parts/cell/high)
-	reqs = list(/obj/item/stack/sheet/cardboard = 1, //so we dont null items in crafting
-				/obj/item/stack/cable_coil = 10,
-				/obj/item/stack/sheet/mineral/gold = 1,
-				/datum/reagent/water  = 15)
-	time = 40
-	subcategory = CAT_TOOL
-	category = CAT_MISC
 */
