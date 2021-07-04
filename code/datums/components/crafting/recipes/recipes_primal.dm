@@ -170,7 +170,7 @@
 	category = CAT_PRIMAL
 	always_availible = FALSE
 
-/datum/crafting_recipe/tribalwar/arrowap
+/datum/crafting_recipe/tribalwar/arrowbone
 	name = "Bone Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/bone
 	time = 30

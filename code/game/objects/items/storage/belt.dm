@@ -860,6 +860,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 7
 
+//Regular Quiver
 /obj/item/storage/belt/tribe_quiver
 	name = "tribal quiver"
 	desc = "A simple leather quiver designed for holding arrows."
@@ -906,6 +907,7 @@
 		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
 	return TRUE
 
+//Bone Arrow Quiver
 /obj/item/storage/belt/tribe_quiver/bone
 	name = "hunters quiver"
 	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
@@ -920,7 +922,7 @@
 	STR.max_w_class = 3
 	STR.max_combined_w_class = 24
 
-/obj/item/storage/belt/tribe_quiver/PopulateContents()
+/obj/item/storage/belt/tribe_quiver/bone/PopulateContents()
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
@@ -930,7 +932,7 @@
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 	new /obj/item/ammo_casing/caseless/arrow/bone(src)
 
-/obj/item/storage/belt/tribe_quiver/AltClick(mob/living/carbon/user)
+/obj/item/storage/belt/tribe_quiver/bone/AltClick(mob/living/carbon/user)
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
