@@ -492,10 +492,6 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 		new /datum/stack_recipe("egg box", /obj/item/storage/fancy/egg_box), 					\
 		new /datum/stack_recipe("nugget box", /obj/item/storage/fancy/nugget_box),				\
 		new /datum/stack_recipe("security-styled box", /obj/item/storage/box/seclooking), 		\
-		new /datum/stack_recipe("buckshot shell box", /obj/item/storage/fancy/ammobox/lethalshot),		\
-		new /datum/stack_recipe("rubber shot shell box", /obj/item/storage/fancy/ammobox),		\
-		new /datum/stack_recipe("beanbag shell box", /obj/item/storage/fancy/ammobox/beanbag),			\
-		new /datum/stack_recipe("slug shell box", /obj/item/storage/box/lethalslugs), 			\
 		new /datum/stack_recipe("mouse traps box", /obj/item/storage/box/mousetraps),
 		null,																					\
 		new /datum/stack_recipe("pill bottle box", /obj/item/storage/box/pillbottles),			\

@@ -846,7 +846,7 @@ Rear Echelon
 		/obj/item/metaldetector=1, \
 		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/shotgun/hunting=1, \
-		/obj/item/storage/fancy/ammobox/lethalshot=2, \
+		/obj/item/ammo_casing/shotgun/buckshot=2, \
 		/obj/item/weldingtool/largetank)
 
 /datum/outfit/loadout/offduty //Fuck having an entire role just for off duty, making it a rear-eche loadout
@@ -1076,8 +1076,8 @@ Veteran Ranger
 	belt =	/obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	backpack_contents = list(
-		/obj/item/storage/fancy/ammobox/lethalshot = 1,
-		/obj/item/storage/fancy/ammobox/slugshot = 1,
+		/obj/item/ammo_casing/shotgun/buckshot = 1,
+		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub=1,

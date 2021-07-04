@@ -15678,8 +15678,7 @@
 /area/awaymission/snowdin/cave/cavern)
 "WT" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot{
+/obj/item/ammo_box/shotgun/buck{
 	pixel_x = 2;
 	pixel_y = 2
 	},
@@ -15687,12 +15686,8 @@
 /area/awaymission/snowdin/post/secpost)
 "Xa" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox,
+/obj/item/ammo_box/shotgun/buck,
 /obj/machinery/light/small,
-/obj/item/storage/fancy/ammobox{
-	pixel_x = 2;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/snowdin/post/secpost)
 "XB" = (
@@ -15740,7 +15735,7 @@
 	},
 /obj/item/restraints/handcuffs,
 /obj/item/assembly/flash,
-/obj/item/storage/fancy/ammobox,
+/obj/item/ammo_box/shotgun/buck,
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
 	},

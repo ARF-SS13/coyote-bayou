@@ -319,7 +319,6 @@
 					/obj/item/clothing/head/soft/black = 4,
 					/obj/item/clothing/shoes/sneakers/black = 4,
 					/obj/item/reagent_containers/rag = 4,
-					/obj/item/storage/fancy/ammobox/beanbag = 1,
 					/obj/item/clothing/suit/armor/vest/alt = 1,
 					/obj/item/circuitboard/machine/dish_drive = 1,
 					/obj/item/clothing/glasses/sunglasses/reagent = 1,

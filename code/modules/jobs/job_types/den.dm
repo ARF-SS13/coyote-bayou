@@ -501,7 +501,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
-		/obj/item/storage/fancy/ammobox/beanbag = 2
+		/obj/item/ammo_box/shotgun/bean = 2
 		)
 
 /datum/outfit/loadout/rugged

@@ -47,8 +47,7 @@
 					/obj/item/storage/belt/bandolier,
 					/obj/item/storage/belt/bandolier,
 					/obj/item/storage/belt/bandolier,
-					/obj/item/storage/fancy/ammobox/lethalshot,
-					/obj/item/storage/box/lethalslugs)
+					/obj/item/ammo_box/shotgun/buck)
 	crate_name = "combat shotguns crate"
 
 /datum/supply_pack/security/armory/dragnetgun
