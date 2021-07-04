@@ -399,7 +399,7 @@
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
-	result = /obj/item/gun/ballistic/automatic/varmint
+	result = /obj/item/gun/ballistic/rifle/mag/varmint
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
 				/obj/item/stack/sheet/metal = 1)
@@ -612,7 +612,7 @@
 //lever action
 /datum/crafting_recipe/lever_action
 	name = "Lever Action Shotgun"
-	result = /obj/item/gun/ballistic/rifle/repeater/shotgunlever
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
@@ -866,7 +866,7 @@
 //AM rifle
 /datum/crafting_recipe/am_rifle
 	name = "Anti-Materiel Rifle"
-	result = /obj/item/gun/ballistic/rifle/antimateriel
+	result = /obj/item/gun/ballistic/rifle/mag/antimateriel
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,

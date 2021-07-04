@@ -712,7 +712,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/tan
 	head = /obj/item/clothing/head/f13/cowboy
 	gloves = /obj/item/clothing/gloves/color/brown
-	l_hand = /obj/item/gun/ballistic/automatic/varmint
+	l_hand = /obj/item/gun/ballistic/rifle/mag/varmint
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 

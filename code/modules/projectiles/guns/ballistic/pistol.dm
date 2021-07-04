@@ -249,7 +249,7 @@
 /obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
-	icon_state = "pistol127"
+	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
 	fire_delay = 5
@@ -261,7 +261,7 @@
 /obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
-	icon_state = "pistol127_compact"
+	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = -2
 	spread = 5

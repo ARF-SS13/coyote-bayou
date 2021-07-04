@@ -422,7 +422,6 @@ Sergeant
 		)	//ahhhhhhhhhhh
 
 
-
 /*
 Heavy Trooper
 */
@@ -510,7 +509,7 @@ Corporal
 
 /datum/outfit/loadout/corporaldesignatedmarksman
 	name = "Designated marksman"
-	suit_store = /obj/item/gun/ballistic/rifle/hunting/ncr
+	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/attachments/scope=1,
@@ -524,7 +523,6 @@ Corporal
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_eight=1, 
-		/obj/item/book/granter/trait/trekking=1,
 		/obj/item/binoculars=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
@@ -725,11 +723,11 @@ Trooper
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
 		/obj/item/storage/box/ration/menu_eight=1,
-		/obj/item/ammo_box/magazine/uzim9mm=2)
+		/obj/item/ammo_box/magazine/uzim9mm/rockwell=1)
 
 /datum/outfit/loadout/trooperfiresupport
 	name = "Pointman"
-	suit_store = /obj/item/gun/ballistic/shotgun/police 
+	suit_store = /obj/item/gun/ballistic/shotgun/police
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_one=1,
 		/obj/item/flashlight/seclite=1, //for putting on your shotgun. You're a pointman, you lead the way in attacks.
@@ -948,9 +946,9 @@ Veteran Ranger
 
 /datum/outfit/loadout/vrclassic
 	name = "Classic Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/rifle/antimateriel
+	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
 	backpack_contents = list(
-		/obj/item/ammo_box/a50MG=2,
+		/obj/item/ammo_box/magazine/amr=2,
 		/obj/item/gun/ballistic/revolver/sequoia=1,
 		/obj/item/ammo_box/c4570=1)
 
