@@ -69,9 +69,11 @@
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
+	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves = 		/obj/item/clothing/gloves/combat
 	id = 			/obj/item/card/id/dogtag/enclave
 	suit_store =  	/obj/item/gun/energy/laser/aer12
 
@@ -147,7 +149,7 @@
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
-	
+
 
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"
@@ -177,8 +179,10 @@
 	glasses = 		/obj/item/clothing/glasses/night
 	mask = 			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave/officer
+	accessory =		/obj/item/clothing/accessory/ncr/LT1
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves = 		/obj/item/clothing/gloves/combat
 	id = 			/obj/item/card/id/dogtag/enclave
 
 	backpack_contents = list(
@@ -550,7 +554,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/widowmaker=1)
 
-/datum/outfit/loadout/raider_tribal 
+/datum/outfit/loadout/raider_tribal
 	name = "Tribal Outcast"
 	suit = 		/obj/item/clothing/suit/hooded/tribaloutcast
 	uniform = 	/obj/item/clothing/under/f13/exile/tribal
@@ -725,7 +729,7 @@ Raider
 	selection_color = "#ff4747"
 	exp_requirements = 600
 	exp_type = EXP_TYPE_OUTLAW
-	
+
 	outfit = /datum/outfit/job/wasteland/f13enforcer
 
 	access = list(ACCESS_DEN)
@@ -736,7 +740,7 @@ Raider
 							/datum/outfit/loadout/hitman,
 							/datum/outfit/loadout/bodyguard)
 
-					
+
 
 
 /datum/outfit/job/wasteland/f13enforcer
@@ -804,7 +808,7 @@ Raider
 						/obj/item/kitchen/knife/combat=1
 							)
 
-							
+
 
 
 /datum/job/wasteland/f13mobboss
@@ -819,7 +823,7 @@ Raider
 	selection_color = "#ff4747"
 	exp_requirements = 1000
 	exp_type = EXP_TYPE_OUTLAW
-	
+
 	outfit = /datum/outfit/job/wasteland/f13mobboss
 
 	access = list(ACCESS_DEN)
@@ -847,7 +851,7 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/ammo_box/magazine/m10mm_p90=2, \
-		/obj/item/storage/bag/money/small/raider/mobboss)	
+		/obj/item/storage/bag/money/small/raider/mobboss)
 
 /datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -865,7 +869,7 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
-	
+
 //vigilante
 
 
@@ -887,7 +891,7 @@ Raider
 							/datum/outfit/loadout/desert_ranger,
 							/datum/outfit/loadout/bounty_hunter,
 							/datum/outfit/loadout/retired_ranger)
-		
+
 
 /datum/outfit/job/wasteland/f13vigilante
 	name = "Vigilante"
