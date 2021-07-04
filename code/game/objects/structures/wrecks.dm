@@ -373,7 +373,7 @@
 		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
 			if(prob(10))
 				new /obj/item/salvage/high(usr_turf)
-			if prob(10))
+			if(prob(10))
 				new /obj/item/salvage/tool(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		visible_message("[src] falls apart, the final components having been removed.")
@@ -419,7 +419,7 @@
 		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
 			if(prob(10))
 				new /obj/item/salvage/high(usr_turf)
-			if prob(10))
+			if(prob(10))
 				new /obj/item/salvage/tool(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		visible_message("[src] falls apart, the final components having been removed.")
