@@ -7,7 +7,7 @@
 
 // please make sure they're sorted alphabetically and categorized
 /datum/sprite_accessory/facial_hair/shaved //this is exempt from the alphabetical sort
-	name = "Shaved"
+	name = "Clean shave (Default)"
 	icon_state = null
 	gender = NEUTER
 
@@ -44,7 +44,7 @@
 	icon_state = "facial_chin"
 
 /datum/sprite_accessory/facial_hair/dwarf
-	name = "Beard (Dwarf)"
+	name = "Beard Full (Miner)"
 	icon_state = "facial_dwarf"
 
 /datum/sprite_accessory/facial_hair/fullbeard
@@ -52,19 +52,19 @@
 	icon_state = "facial_fullbeard"
 
 /datum/sprite_accessory/facial_hair/gt
-	name = "Beard (Goatee)"
+	name = "Short beard (Goatee)"
 	icon_state = "facial_gt"
 
 /datum/sprite_accessory/facial_hair/goatee
-	name = "Beard (Goatee 2)"
+	name = "Short beard (Goatee alt)"
 	icon_state = "facial_goatee"
 
 /datum/sprite_accessory/facial_hair/hip
-	name = "Beard (Hipster)"
+	name = "Short beard (Hipster)"
 	icon_state = "facial_hip"
 
 /datum/sprite_accessory/facial_hair/jensen
-	name = "Beard (Jensen)"
+	name = "Short beard (Jensen)"
 	icon_state = "facial_jensen"
 
 /datum/sprite_accessory/facial_hair/martialartist
@@ -84,19 +84,19 @@
 	icon_state = "facial_tribeard"
 
 /datum/sprite_accessory/facial_hair/vlongbeard
-	name = "Beard (Very Long)"
-	icon_state = "facial_wise"
+	name = "Very long beard"
+	icon_state = "facial_verylong"
 
 /datum/sprite_accessory/facial_hair/volaju
-	name = "Beard (Volaju)"
+	name = "Short beard (Volaju)"
 	icon_state = "facial_volaju"
 
 /datum/sprite_accessory/facial_hair/longbeard
-	name = "Beard (Long)"
+	name = "Beard (Pretty Long)"
 	icon_state = "facial_longbeard"
 
 /datum/sprite_accessory/facial_hair/moustache
-	name = "Moustache"
+	name = "Moustache (Absurdist)"
 	icon_state = "facial_moustache"
 
 /datum/sprite_accessory/facial_hair/fu
@@ -132,7 +132,7 @@
 	icon_state = "facial_watson"
 
 /datum/sprite_accessory/facial_hair/mutton
-	name = "Mutton Chops"
+	name = "Mutton Chopsp (Basic)"
 	icon_state = "facial_mutton"
 
 /datum/sprite_accessory/facial_hair/muttonmus
@@ -140,7 +140,7 @@
 	icon_state = "facial_muttonmus"
 
 /datum/sprite_accessory/facial_hair/sideburn
-	name = "Sideburns"
+	name = "Sideburns (Basic)"
 	icon_state = "facial_sideburns"
 
 /datum/sprite_accessory/facial_hair/elvis

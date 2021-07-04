@@ -29,10 +29,6 @@
 	name = "Anita"
 	icon_state = "hair_anita"
 
-/datum/sprite_accessory/hair/antenna
-	name = "Ahoge"
-	icon_state = "hair_antenna"
-
 /datum/sprite_accessory/hair/balding
 	name = "Balding Hair"
 	icon_state = "hair_e"
@@ -105,10 +101,6 @@
 	name = "Bowl 2"
 	icon_state = "hair_bowlcut2"
 
-/datum/sprite_accessory/hair/braid
-	name = "Braid (Floorlength)"
-	icon_state = "hair_braid"
-
 /datum/sprite_accessory/hair/braided
 	name = "Braided"
 	icon_state = "hair_braided"
@@ -121,17 +113,9 @@
 	name = "Braid (Grande)"
 	icon_state = "hair_grande"
 
-/datum/sprite_accessory/hair/not_floorlength_braid
-	name = "Braid (High)"
-	icon_state = "hair_braid2"
-
 /datum/sprite_accessory/hair/lowbraid
 	name = "Braid (Low)"
 	icon_state = "hair_hbraid"
-
-/datum/sprite_accessory/hair/shortbraid
-	name = "Braid (Short)"
-	icon_state = "hair_shortbraid"
 
 /datum/sprite_accessory/hair/braidtail
 	name = "Braided Tail"
@@ -154,19 +138,19 @@
 	icon_state = "hair_bunhead4"
 
 /datum/sprite_accessory/hair/doublebun
-	name = "Bun Head (Double)"
+	name = "Bun Double"
 	icon_state = "hair_doublebun"
 
 /datum/sprite_accessory/hair/largebun
-	name = "Bun Head (Large)"
+	name = "Bun Large"
 	icon_state = "hair_largebun"
 
 /datum/sprite_accessory/hair/lowbun
-	name = "Bun Head (Low)"
+	name = "Bun Low"
 	icon_state = "hair_bun_s"
 
 /datum/sprite_accessory/hair/tightbun
-	name = "Bun Head (Tight)"
+	name = "Bun Tight"
 	icon_state = "hair_tightbun"
 
 /datum/sprite_accessory/hair/business
@@ -238,12 +222,8 @@
 	icon_state = "hair_c"
 
 /datum/sprite_accessory/hair/leftsidecut
-	name = "Cut (Left Side)"
+	name = "Side Cut"
 	icon_state = "hair_leftside"
-
-/datum/sprite_accessory/hair/rightsidecut
-	name = "Cut (Right Side)"
-	icon_state = "hair_rightside"
 
 /datum/sprite_accessory/hair/dave
 	name = "Dave"
@@ -262,7 +242,7 @@
 	icon_state = "hair_drillhair"
 
 /datum/sprite_accessory/hair/drillhairextended
-	name = "Drill Hair (Extended)"
+	name = "Drill Hair Long"
 	icon_state = "hair_drillhairextended"
 
 /datum/sprite_accessory/hair/emo
@@ -274,19 +254,19 @@
 	icon_state = "hair_emo2"
 
 /datum/sprite_accessory/hair/halfshavedemo
-	name = "Emo (Half Shaved))"
+	name = "Emo Half Shave"
 	icon_state = "hair_halfshavedemo"
 
 /datum/sprite_accessory/hair/emo_fringe
-	name = "Emo (Fringe)"
+	name = "Emo Fringe"
 	icon_state = "hair_emofringe"
 
 /datum/sprite_accessory/hair/emo_long
-	name = "Emo (Long)"
+	name = "Emo Long"
 	icon_state = "hair_emolong"
 
 /datum/sprite_accessory/hair/longsideemo
-	name = "Emo (Long Side Emo)"
+	name = "Emo Long Side"
 	icon_state = "hair_longsideemo"
 
 /datum/sprite_accessory/hair/european
@@ -354,19 +334,19 @@
 	icon_state = "gentle21"
 
 /datum/sprite_accessory/hair/halfbang
-	name = "Half-banged Hair"
+	name = "Half-banged"
 	icon_state = "hair_halfbang"
 
 /datum/sprite_accessory/hair/halfbang2
-	name = "Half-banged Hair 2"
+	name = "Half-banged 2"
 	icon_state = "hair_halfbang2"
 
 /datum/sprite_accessory/hair/halfbangalt
-	name = "Half-banged Hair (Alt)"
+	name = "Half-banged 3"
 	icon_state = "hair_halfbang_alt"
 
 /datum/sprite_accessory/hair/halfshaved
-	name = "Half-shaved Hair"
+	name = "Half-shaved"
 	icon_state = "hair_halfshaved"
 
 /datum/sprite_accessory/hair/hedgehog
@@ -386,7 +366,7 @@
 	icon_state = "hair_himecut2"
 
 /datum/sprite_accessory/hair/shorthime
-	name = "Hime Cut (Short)"
+	name = "Hime Short"
 	icon_state = "hair_shorthime"
 
 /datum/sprite_accessory/hair/himeup
@@ -442,7 +422,7 @@
 	icon_state = "hair_long3"
 
 /datum/sprite_accessory/hair/longalt
-	name = "Long Hair (Alt)"
+	name = "Long Hair 4"
 	icon_state = "hair_longeralt"
 
 /datum/sprite_accessory/hair/long_over_eye
@@ -486,15 +466,15 @@
 	icon_state = "hair_d"
 
 /datum/sprite_accessory/hair/reversemohawk
-	name = "Mohawk (Reverse)"
+	name = "Mohawk Reverse"
 	icon_state = "hair_reversemohawk"
 
 /datum/sprite_accessory/hair/shavedmohawk
-	name = "Mohawk (Shaved)"
+	name = "Mohawk Shave"
 	icon_state = "hair_shavedmohawk"
 
 /datum/sprite_accessory/hair/mohawk_unshaven
-	name = "Mohawk (Unshaven)"
+	name = "Mohawk Tall"
 	icon_state = "hair_unshaven_mohawk"
 
 /datum/sprite_accessory/hair/mulder
@@ -593,9 +573,6 @@
 	name = "Ponytail 6"
 	icon_state = "hair_ponytail6"
 
-/datum/sprite_accessory/hair/ponytail7
-	icon_state = "hair_ponytail7"
-
 /datum/sprite_accessory/hair/ponytail8
 	name = "Ponytail 8"
 	icon_state = "hair_ponytail8"
@@ -605,23 +582,23 @@
 	icon_state = "hair_highponytail"
 
 /datum/sprite_accessory/hair/sidetail
-	name = "Ponytail (Side)"
+	name = "Ponytail Side"
 	icon_state = "hair_sidetail"
 
 /datum/sprite_accessory/hair/sidetail2
-	name = "Ponytail (Side) 2"
+	name = "Ponytail Side2"
 	icon_state = "hair_sidetail2"
 
 /datum/sprite_accessory/hair/sidetail3
-	name = "Ponytail (Side) 3"
+	name = "Ponytail Side3"
 	icon_state = "hair_sidetail3"
 
 /datum/sprite_accessory/hair/sidetail4
-	name = "Ponytail (Side) 4"
+	name = "Ponytail Side4"
 	icon_state = "hair_sidetail4"
 
 /datum/sprite_accessory/hair/ponytailf
-	name = "Ponytail (Side) 5"
+	name = "Ponytail Side5"
 	icon_state = "hair_ponytailf"
 
 /datum/sprite_accessory/hair/spikytail
@@ -697,7 +674,7 @@
 	icon_state = "hair_stail"
 
 /datum/sprite_accessory/hair/shoulderlength
-	name = "Shoulder-length Hair"
+	name = "Shoulder-length"
 	icon_state = "hair_b"
 
 /datum/sprite_accessory/hair/shy
@@ -717,7 +694,7 @@
 	icon_state = "hair_sleaze"
 
 /datum/sprite_accessory/hair/protagonist
-	name = "Slightly Long Hair"
+	name = "Slightly Hair"
 	icon_state = "hair_protagonist"
 
 /datum/sprite_accessory/hair/spiky
@@ -733,11 +710,11 @@
 	icon_state = "hair_spiky2"
 
 /datum/sprite_accessory/hair/swept
-	name = "Swept Back Hair"
+	name = "Swept Back "
 	icon_state = "hair_swept"
 
 /datum/sprite_accessory/hair/swept2
-	name = "Swept Back Hair 2"
+	name = "Swept Back 2"
 	icon_state = "hair_swept2"
 
 /datum/sprite_accessory/hair/thinning
@@ -763,6 +740,10 @@
 /datum/sprite_accessory/hair/tressshoulder
 	name = "Tress Shoulder"
 	icon_state = "hair_tressshoulder"
+
+/datum/sprite_accessory/hair/tribalbraid
+	name = "Tribal Braid"
+	icon_state = "hair_tribalbraid"
 
 /datum/sprite_accessory/hair/trimmed
 	name = "Trimmed"
@@ -797,19 +778,19 @@
 	icon_state = "hair_vlong"
 
 /datum/sprite_accessory/hair/longest
-	name = "Very Long Hair 2"
+	name = "Very Long 2"
 	icon_state = "hair_longest"
 
 /datum/sprite_accessory/hair/longestalt
-	name = "Very Long with Fringe"
+	name = "Long Fringe"
 	icon_state = "hair_vlongfringe"
 
 /datum/sprite_accessory/hair/short_oe
-	name = "Very Short Over Eye"
+	name = "Short Eye"
 	icon_state = "hair_veryshortovereye"
 
 /datum/sprite_accessory/hair/short_oe_alt
-	name = "Very Short Over Eye (Alt)"
+	name = "Short Eye 2"
 	icon_state = "hair_veryshortovereyealternate"
 
 /datum/sprite_accessory/hair/vivi
