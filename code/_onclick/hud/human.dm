@@ -1,5 +1,5 @@
 /obj/screen/human
-	icon = 'icons/mob/screen_midnight.dmi'
+	icon = 'icons/mob/screen_fallout2.dmi'
 
 /obj/screen/human/toggle
 	name = "toggle"
@@ -151,7 +151,7 @@
 	static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "i_clothing"
+	inv_box.name = "clothing"
 	inv_box.icon = ui_style
 	inv_box.slot_id = SLOT_W_UNIFORM
 	inv_box.icon_state = "uniform"
@@ -159,7 +159,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "o_clothing"
+	inv_box.name = "armor"
 	inv_box.icon = ui_style
 	inv_box.slot_id = SLOT_WEAR_SUIT
 	inv_box.icon_state = "suit"
@@ -183,7 +183,7 @@
 	static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "id"
+	inv_box.name = "ID"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "id"
 	inv_box.screen_loc = ui_id
@@ -199,7 +199,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "neck"
+	inv_box.name = "accessory"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "neck"
 	inv_box.screen_loc = ui_neck
@@ -215,7 +215,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage1"
+	inv_box.name = "right pocket"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage1
@@ -223,7 +223,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage2"
+	inv_box.name = "left pocket"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage2

@@ -1,9 +1,9 @@
 /obj/screen/mov_intent
-	icon = 'modular_citadel/icons/ui/screen_midnight.dmi'
+	icon = 'modular_citadel/icons/ui/screen_fallout2.dmi'
 
 /obj/screen/sprintbutton
 	name = "toggle sprint"
-	icon = 'modular_citadel/icons/ui/screen_midnight.dmi'
+	icon = 'modular_citadel/icons/ui/screen_fallout2.dmi'
 	icon_state = "act_sprint"
 	layer = HUD_LAYER - 0.1
 	var/mutable_appearance/flashy
