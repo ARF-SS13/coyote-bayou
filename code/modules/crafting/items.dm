@@ -975,15 +975,11 @@
 				/obj/item/crafting/sensor,
 				/obj/item/crafting/lunchbox)
 
-
-/obj/item/salvage/high
-	name = "Advanced pre-war salvage"
-	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
-	icon_state = "goodsalvage"
+/obj/item/salvage/tool
+	name = "Pre-war tool salvage"
+	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
+	icon_state = "toolsalvage"
 	Loot = list(/obj/item/blueprint/research,
-				/obj/item/advanced_crafting_components/receiver,
-				/obj/item/advanced_crafting_components/assembly,
-				/obj/item/advanced_crafting_components/alloys,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/reagent_containers/pill/patch/healingpowder,
 				/obj/item/weldingtool/advanced,
@@ -995,6 +991,14 @@
 				/obj/item/stock_parts/cell/ammo/ecp,
 				/obj/item/switchblade,
 				/obj/item/megaphone)
+
+/obj/item/salvage/high
+	name = "Advanced pre-war salvage"
+	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
+	icon_state = "goodsalvage"
+	Loot = list(/obj/item/advanced_crafting_components/receiver,
+				/obj/item/advanced_crafting_components/assembly,
+				/obj/item/advanced_crafting_components/alloys)
 
 /obj/item/experimental
 	name = "Experimental component"

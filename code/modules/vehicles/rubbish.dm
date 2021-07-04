@@ -60,6 +60,8 @@
 		if(prob(25))
 			if(prob(50))
 				new /obj/item/salvage/crafting(usr_turf)
+			else if(prob(20))
+				new /obj/item/salvage/tool(usr_turf)
 			else
 				new /obj/item/salvage/low(usr_turf)
 	for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
