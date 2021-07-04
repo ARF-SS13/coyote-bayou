@@ -41,7 +41,7 @@
 	name = "deathclaw meat"
 	desc = "A slab of hard but delicious deathclaw meat."
 	icon_state = "goliathmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 9, /datum/reagent/consumable/nutriment/vitamin = 9)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 9, /datum/reagent/consumable/nutriment/vitamin = 9, /datum/reagent/medicine/tricordrazine = 5)
 	bitesize = 6 //Big slabs of meat from a massive creature
 	filling_color = "#FA8072"
 	tastes = list("chewy meat" = 3, "scales" = 1)
@@ -129,7 +129,7 @@
 	name = "cazador meat"
 	desc = "Meat extracted from the lean hide of cazador wasp."
 	icon_state = "mothmeat"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3,  /datum/reagent/toxin  = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 3)
 	filling_color = "#e5b73b"
 	bitesize = 2
 	tastes = list("insect guts" = 3, "sweet tangy liquid" = 1) //google says toxin is sweet anyway.
@@ -247,7 +247,7 @@
 	name = "deathclaw steak"
 	desc = "A piece of hot spicy meat, eaten by only the most worthy hunters - or the most rich clients."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10) //It wouldn't make sense for it to be worse than the normal
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/tricordrazine = 8) 
 
 /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
 	name = "squirrel steak"
