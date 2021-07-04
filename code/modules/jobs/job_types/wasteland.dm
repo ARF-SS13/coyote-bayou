@@ -883,7 +883,7 @@ Raider
 	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 3000
-	exp_type = EXP_TYPE_OUTLAW
+	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante
 
