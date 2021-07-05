@@ -123,7 +123,7 @@
 /obj/item/storage/fancy/candle_box/attack_self(mob_user)
 	return
 
-//fonky shotgun bullet
+/*fonky shotgun bullet
 
 /obj/item/storage/fancy/ammobox
 	name = "box of rubber shots"
@@ -213,6 +213,7 @@
 	icon_state = "stunbox"
 	icon_type = "stun"
 	spawn_type = /obj/item/ammo_casing/shotgun/beanbag
+*/
 
 ////////////
 //CIG PACK//
