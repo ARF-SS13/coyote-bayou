@@ -284,12 +284,14 @@
 	reagent_id = /datum/reagent/consumable/ethanol/narsour
 	tank_volume = 250
 
+/*
 /obj/structure/reagent_dispensers/keg/red_queen
 	name = "keg of red queen"
 	desc = "A strange keg, filled with a kind of tea."
 	icon_state = "redkeg"
 	reagent_id = /datum/reagent/consumable/red_queen
 	tank_volume = 250
+*/
 
 /obj/structure/reagent_dispensers/keg/hearty_punch
 	name = "keg of hearty punch"
