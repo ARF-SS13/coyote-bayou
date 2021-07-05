@@ -2,7 +2,7 @@
 	name = "12g shotgun slug"
 	damage = 55
 	sharpness = SHARP_POINTY
-	armour_penetration = 0.25
+	armour_penetration = 0.3
 	wound_bonus = 26
 	bare_wound_bonus = -26
 	spread = 2
