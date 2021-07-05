@@ -2188,6 +2188,7 @@
 	if((ismonkey(M) || ishuman(M)) && current_cycle >= 10)
 		M.gorillize()
 
+/*
 /datum/reagent/growthserum
 	name = "Growth Serum"
 	description = "A commercial chemical designed to help older men in the bedroom."//not really it just makes you a giant
@@ -2220,6 +2221,7 @@
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
 	..()
+*/
 
 /datum/reagent/plastic_polymers
 	name = "plastic polymers"
