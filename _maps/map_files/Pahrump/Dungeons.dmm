@@ -216,12 +216,12 @@
 "anY" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},
@@ -11187,10 +11187,10 @@
 /area/f13/bunker)
 "obO" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -17501,8 +17501,8 @@
 /obj/structure/table,
 /obj/item/stamp/hos,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "wbe" = (
