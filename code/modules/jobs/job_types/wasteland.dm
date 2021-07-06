@@ -931,7 +931,7 @@ Raider
 	name = "Bounty Hunter"
 	head = /obj/item/clothing/suit/armor/f13/combat/mk2/dark
 	suit = /obj/item/clothing/head/helmet/f13/combat/mk2/dark
-	r_hand = /obj/item/gun/ballistic/automatic/g11/upgraded
+	r_hand = /obj/item/gun/ballistic/automatic/g11
 	backpack_contents = list(
 							/obj/item/ammo_box/magazine/m473=2
 							)
