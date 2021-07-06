@@ -49,8 +49,9 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Enclave Lieutenant",
 
+	"Legate",
 	"Legion Centurion",
-	"Legion Venator",
+	"Legion Veteran Decanus",
 
 	"Overseer",
 	"Chief of Security",
@@ -93,7 +94,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Recruit Decanus",
 "Legion Scout",
 "Legion Explorer",
-"Auxilia",
+"Legion Auxilia",
 "Legion Slave",
 
 "Mayor",
@@ -137,7 +138,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Legion Recruit Decanus",
 "Legion Scout",
 "Legion Explorer",
-"Auxilia",
+"Legion Auxilia",
 "Legion Slave",
 
 "Deputy",
@@ -213,7 +214,7 @@ GLOBAL_LIST_INIT(den_positions, list(
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
-	"Legate"
+	"Legate",
 	"Legion Centurion",
 	"Legion Veteran Decanus"
 ))
