@@ -213,24 +213,25 @@ GLOBAL_LIST_INIT(den_positions, list(
 ))
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
+	"Legate"
 	"Legion Centurion",
-	"Legion Venator"
+	"Legion Veteran Decanus"
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
-	"Legion Veteran Decanus",
-	"Veteran Legionnaire",
-	"Legion Prime Decanus",
-	"Prime Legionnaire",
-	"Legion Recruit Decanus",
-	"Recruit Legionnaire",
-	"Legion Explorer",
-	"Auxilia",
-	"Camp Follower",
-	"Legion Slave",
-	"Legion Vexillarius",
 	"Legion Centurion",
-	"Legion Venator"
+	"Legion Veteran Decanus",
+	"Legion Prime Decanus",
+	"Legion Recruit Decanus",
+	"Legion Vexillarius",
+	"Veteran Legionnaire",
+	"Prime Legionnaire",
+	"Recruit Legionnaire",
+	"Legion Venator",
+	"Legion Explorer",
+	"Legion Auxilia",
+	"Legion Camp Duty",
+	"Legion Slave"
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
