@@ -623,7 +623,7 @@ commented out pending rework*/
 
 /datum/outfit/loadout/recruittribal
 	name =			"Tribal Recruit"
-	suit_store = 	/obj/item/twohanded/baseball/spiked
+	suit_store = 	/obj/item/twohanded/spear/lance
 	backpack_contents = list(
 					/obj/item/ammo_box/a357=1,
 					/obj/item/gun/ballistic/revolver/colt357=1)
