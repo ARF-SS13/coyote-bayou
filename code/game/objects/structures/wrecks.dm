@@ -364,12 +364,17 @@
 			user.visible_message("[user] slices through a [fake_dismantle].")
 			I.play_tool_sound(src, 100)
 		var/turf/usr_turf = get_turf(user)
-		for(var/i2 in 1 to rand(3,5)) //also changing this a little. IDEA: perhaps a mechanic skill could affect the amount dropped instead
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
 			if(prob(25))
 				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to 5) //this is just less lines for the same thing
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
 			if(prob(10))
 				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		visible_message("[src] falls apart, the final components having been removed.")
 		qdel(src)
@@ -405,12 +410,17 @@
 			user.visible_message("[user] slices through a [fake_dismantle].")
 			I.play_tool_sound(src, 100)
 		var/turf/usr_turf = get_turf(user)
-		for(var/i2 in 1 to rand(3,5)) //also changing this a little. IDEA: perhaps a mechanic skill could affect the amount dropped instead
+		var/modifier = 0
+		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
+			modifier = rand(1, 3)
+		for(var/i2 in 1 to (3+modifier))
 			if(prob(25))
 				new /obj/item/salvage/low(usr_turf)
-		for(var/i3 in 1 to 5) //this is just less lines for the same thing
+		for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
 			if(prob(10))
 				new /obj/item/salvage/high(usr_turf)
+			if(prob(10))
+				new /obj/item/salvage/tool(usr_turf)
 		inuse = FALSE //putting this after the -- because the first check prevents cheesing
 		visible_message("[src] falls apart, the final components having been removed.")
 		qdel(src)

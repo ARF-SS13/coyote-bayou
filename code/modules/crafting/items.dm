@@ -936,8 +936,12 @@
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
 				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
+				/obj/item/stack/sheet/mineral/titanium,
+				/obj/item/stack/sheet/mineral/gold,
+				/obj/item/stack/sheet/mineral/silver,
 				/obj/item/stack/sheet/lead/five,
 				/obj/item/stack/sheet/metal/ten,
+				/obj/item/stack/sheet/glass/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/scrap/research,
@@ -971,20 +975,30 @@
 				/obj/item/crafting/sensor,
 				/obj/item/crafting/lunchbox)
 
+/obj/item/salvage/tool
+	name = "Pre-war tool salvage"
+	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
+	icon_state = "toolsalvage"
+	Loot = list(/obj/item/blueprint/research,
+				/obj/item/reagent_containers/hypospray/medipen/stimpak,
+				/obj/item/reagent_containers/pill/patch/healingpowder,
+				/obj/item/weldingtool/advanced,
+				/obj/item/crowbar/hightech,
+				/obj/item/screwdriver/hightech,
+				/obj/item/wrench/hightech,
+				/obj/item/wirecutters/hightech,
+				/obj/item/stock_parts/cell/ammo/mfc,
+				/obj/item/stock_parts/cell/ammo/ecp,
+				/obj/item/switchblade,
+				/obj/item/megaphone)
 
 /obj/item/salvage/high
 	name = "Advanced pre-war salvage"
 	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "goodsalvage"
-	Loot = list(/obj/item/blueprint/research,
-				/obj/item/advanced_crafting_components/receiver,
+	Loot = list(/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,
-				/obj/item/advanced_crafting_components/alloys,
-				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/weldingtool/advanced,
-				/obj/item/stock_parts/cell/ammo/mfc,
-				/obj/item/stock_parts/cell/ammo/ecp,
-				/obj/item/megaphone)
+				/obj/item/advanced_crafting_components/alloys)
 
 /obj/item/experimental
 	name = "Experimental component"
@@ -1015,11 +1029,11 @@
 	if(istype(W, /obj/item/clothing/head))
 		hat(W, user)
 		return
-	
+
 /obj/item
 	var/tinkered = 0
 	var/untinkerable = FALSE
-	
+
 /obj/item/experimental/proc/reroll(obj/item/W, mob/user)
 	var/obj/item/item = W.type
 	qdel(W)
@@ -1032,7 +1046,7 @@
 	if(W.untinkerable == TRUE)
 		to_chat(usr, "You can't improve [W.name]...")
 		return
-	var/obj/item/gun/ballistic/B = W 
+	var/obj/item/gun/ballistic/B = W
 
 	var/dmgmod = rand(-10,10)
 	var/penmod = rand(-10,10)
@@ -1067,8 +1081,8 @@
 			prefix = "Superior "
 		if(30 to 100)
 			prefix = "Legendary "
-	
-	B.extra_damage += (dmgmod) //edited from /1 
+
+	B.extra_damage += (dmgmod) //edited from /1
 	B.extra_penetration += (penmod/120) //edited from /60
 	B.fire_delay += (spdmod/10) //edited from/5
 	B.name = prefix + B.name
@@ -1093,7 +1107,7 @@
 		penmod += 4
 		spdmod -= 4
 		overall = dmgmod+penmod-spdmod
-	
+
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
@@ -1115,7 +1129,7 @@
 			prefix = "Superior "
 		if(30 to 100)
 			prefix = "Legendary "
-	
+
 	E.extra_damage += (dmgmod)
 	E.extra_penetration += (penmod/120)
 	E.fire_delay += (spdmod/10)
@@ -1210,7 +1224,7 @@
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
-			
+
 /obj/item/experimental/proc/parmor(obj/item/W, mob/user)
 	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
 	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
@@ -1284,7 +1298,7 @@
 	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/melee/powered/ripper)
 
 	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
-	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/item/circuitboard/machine/chem_master, 
+	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/item/circuitboard/machine/chem_master,
 	/obj/item/circuitboard/machine/cell_charger)
 
 	var/list/mid = list(/obj/item/twohanded/fireaxe/bmprsword, /obj/item/twohanded/sledgehammer, /obj/item/shield/riot/scrapshield,/obj/item/gun/ballistic/automatic/autopipe,
