@@ -310,7 +310,7 @@
 		/mob/living/simple_animal/hostile/ghoul = 6, \
 		/mob/living/simple_animal/hostile/ghoul/glowing = 4, \
 		/mob/living/carbon/human/species/ghoul = 1, \
-		/mob/living/simple_animal/hostile/supermutant/playable = 1) // Lucky bastard
+		/mob/living/carbon/human/species/smutant = 1) // Lucky bastard
 	new_form = pickweight(le_list)
 	. = ..()
 
