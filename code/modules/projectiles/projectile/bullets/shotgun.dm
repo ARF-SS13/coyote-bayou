@@ -1,6 +1,6 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 55
+	damage = 49
 	sharpness = SHARP_POINTY
 	armour_penetration = 0.3
 	wound_bonus = 26
@@ -19,8 +19,8 @@
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 10
-	stamina = 40
+	damage = 15
+	stamina = 60
 	wound_bonus = 20
 	sharpness = SHARP_NONE
 	embedding = null

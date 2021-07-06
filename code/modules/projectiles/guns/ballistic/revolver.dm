@@ -1,3 +1,7 @@
+// In this document: Revolvers, Needlers, Weird revolvers
+// See gun.dm for keywords and the system used for gun balance
+
+
 /obj/item/gun/ballistic/revolver
 	slowdown = 0.1
 	name = "revolver template"
@@ -423,35 +427,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 	w_class = WEIGHT_CLASS_SMALL
-
-
-//Hobo guns
-
-/obj/item/gun/ballistic/revolver/zipgun
-	name = "zipgun (9mm)"
-	desc = "A crudely-made 9mm pistol. You're not sure this thing is reliable."
-	icon_state = "zipgun"
-	item_state = "gun"
-	fire_sound = 'sound/weapons/Gunshot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm
-	spread = 20
-
-/obj/item/gun/ballistic/revolver/pipe_rifle
-	name = "pepperbox gun (10mm)"
-	desc = "Take six pipes. Tie them together. Add planks, 10mm ammo and prayers."
-	icon_state = "pepperbox"
-	item_state = "improvgun"
-	fire_sound = 'sound/weapons/Gunshot.ogg'
-	extra_damage = 1
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	spread = 15
-
-/obj/item/gun/ballistic/revolver/pipe_rifle/attackby(obj/item/A, mob/user, params)
-	..()
-	if(A.tool_behaviour == TOOL_SAW || istype(A, /obj/item/gun/energy/plasmacutter))
-		sawoff(user)
 
 
 // LEGACY STUFF

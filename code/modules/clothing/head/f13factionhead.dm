@@ -433,7 +433,7 @@
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
 	obj_flags = UNIQUE_RENAME
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny
 
 /obj/item/clothing/head/f13/ncr/Initialize()
 	. = ..()

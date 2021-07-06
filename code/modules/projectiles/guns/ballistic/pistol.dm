@@ -1,4 +1,12 @@
-// IN THIS DOCUMENT :  Semi-automatic pistols
+//IN THIS DOCUMENT: Pistol template, Light pistols, Heavy pistols
+// See gun.dm for keywords and the system used for gun balance
+
+
+
+///////////////////
+//PISTOL TEMPLATE//
+///////////////////
+
 
 /obj/item/gun/ballistic/automatic/pistol
 	slowdown = 0.1
@@ -36,9 +44,9 @@
 
 
 
-///////////
-//PISTOLS//
-///////////
+/////////////////
+//LIGHT PISTOLS//
+/////////////////
 
 
 //.22 Sport						Keywords: .22, Semi-auto, 16 round magazine, Suppressed
@@ -236,6 +244,12 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 
+
+/////////////////
+//HEAVY PISTOLS//
+/////////////////
+
+
 //Desert Eagle					Keywords: .44 Magnum, Semi-auto, Long barrel, 8 round magazine, Heavy. Special modifiers: bullet speed +300, damage +1
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "Desert Eagle"
@@ -300,58 +314,3 @@
 	extra_damage = 2
 	extra_penetration = 0.05
 	fire_delay = 4
-
-
-
-/////////////////
-//CODE SNIPPETS//
-/////////////////
-/*
-Code for weird stick gun pickup
-/obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
-	. = ..()
-	to_chat(user, "<span class='notice'>As you try to pick up [src], it slips out of your grip..</span>")
-	if(prob(50))
-		to_chat(user, "<span class='notice'>..and vanishes from your vision! Where the hell did it go?</span>")
-		qdel(src)
-		user.update_icons()
-	else
-		to_chat(user, "<span class='notice'>..and falls into view. Whew, that was a close one.</span>")
-		user.dropItemToGround(src)
-
-/obj/item/gun/ballistic/automatic/pistol/deagle/update_overlays()
-	. = ..()
-	if(magazine)
-		. += "deagle_magazine"
-
-Citadel modular pistol code
-/obj/item/gun/ballistic/automatic/pistol/modular
-	name = "modular pistol"
-	desc = "A small, easily concealable 10mm handgun. Has a threaded barrel for suppressors."
-	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
-	icon_state = "cde"
-	can_unsuppress = TRUE
-	automatic_burst_overlay = FALSE
-	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Default" = "cde",
-						"N-99" = "n99",
-						"Stealth" = "stealthpistol",
-						"HKVP-78" = "vp78",
-						"Luger" = "p08b",
-						"Mk.58" = "secguncomp",
-						"PX4 Storm" = "px4"
-						)
-
-/obj/item/gun/ballistic/automatic/pistol/modular/update_icon_state()
-	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
-	else
-		icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
-
-/obj/item/gun/ballistic/automatic/pistol/modular/update_overlays()
-	. = ..()
-	if(magazine && suppressed)
-		. += "[unique_reskin[current_skin]]-magazine-sup"	//Yes, this means the default iconstate can't have a magazine overlay
-	else if (magazine)
-		. += "[unique_reskin[current_skin]]-magazine"
-*/
