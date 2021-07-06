@@ -114,7 +114,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "improvised metal glaive"
 	desc = "A improvised metal glaive that can be wielded."
-	force = 15
+	force = 10
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 //	force_unwielded = 25
@@ -122,7 +122,8 @@
 	throwforce = 25
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
-	armour_penetration = 0
+	armour_penetration = 0.1
+	max_reach = 2
 //	custom_materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
@@ -140,7 +141,7 @@
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 //	AddComponent(/datum/component/jousting)
 	AddElement(/datum/element/sword_point)
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=30, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=25, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/rightclick_attack_self(mob/user)
 	if(explosive)
@@ -250,7 +251,7 @@
 	throwforce = 25
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 0.24				//Enhanced armor piercing
+	armour_penetration = 0.25				//Enhanced armor piercing
 	max_reach = 2
 	custom_materials = null
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -260,20 +261,20 @@
 
 /obj/item/twohanded/spear/bonespear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=40, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=30, icon_wielded="[icon_prefix]1")
 
 /obj/item/twohanded/spear/bonespear/deathclaw
 	name = "deathclaw spear"
 	desc = "A finely crafted spear with a shaft wrapped in deathclaw leather. It is tipped with a claw from a beast that must have been terrifying in size."
 	force = 20
-	armour_penetration = 0.4
+	armour_penetration = 0.30
 	max_reach = 2
 	icon_state = "clawspear0"
 	icon_prefix = "clawspear"
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 50)
+	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 45)
 
 //Ultracite
 /obj/item/twohanded/spear/ultra
