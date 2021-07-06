@@ -708,7 +708,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		var/choice = pick(1, 1, 1, 2, 3, 5)
+		var/choice = pick(1, 1, 1, 2, 3)
 		H.reagents.add_reagent(/datum/reagent/toxin/FEV_solution, choice)
 
 /mob/living/simple_animal/hostile/abomination/Initialize()
@@ -729,6 +729,13 @@
 	if(prob(10))
 		var/chosen_sound = pick(abom_sounds)
 		playsound(src, chosen_sound, 70, TRUE)
+
+/mob/living/simple_animal/hostile/abomination/weak // For FEV mutation.
+	maxHealth = 300
+	health = 300
+	harm_intent_damage = 8
+	melee_damage_lower = 35
+	melee_damage_upper = 35
 
 /mob/living/simple_animal/hostile/abomhorror
 	name = "failed experiment"
