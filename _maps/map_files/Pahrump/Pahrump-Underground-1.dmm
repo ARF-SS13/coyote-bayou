@@ -4269,7 +4269,7 @@
 "dNW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/cabinet,
-/obj/item/clothing/suit/armor/f13/battlecoat/tan,
+/obj/item/clothing/suit/armor/f13/battlecoat/tan/enclave,
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
 "dOf" = (
@@ -8844,8 +8844,8 @@
 	},
 /area/f13/followers)
 "hsN" = (
-/obj/machinery/light,
 /obj/structure/closet/anchored,
+/obj/machinery/light/small,
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
 	},
@@ -8945,6 +8945,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"hvF" = (
+/obj/machinery/suit_storage_unit/enclave,
+/turf/open/floor/f13{
+	icon_state = "redmark"
+	},
+/area/f13/enclave)
 "hvG" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -10066,38 +10072,23 @@
 	},
 /area/f13/bunker)
 "imP" = (
-/obj/machinery/light,
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/head/helmet/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/suit/armor/f13/combat/enclave,
-/obj/item/clothing/mask/infiltrator,
-/obj/item/clothing/mask/infiltrator,
-/obj/item/clothing/mask/infiltrator,
-/obj/item/clothing/mask/infiltrator,
-/obj/item/clothing/mask/infiltrator,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/shoes/f13/enclave/serviceboots,
-/obj/item/clothing/shoes/f13/enclave/serviceboots,
-/obj/item/clothing/shoes/f13/enclave/serviceboots,
-/obj/item/clothing/shoes/f13/enclave/serviceboots,
-/obj/item/clothing/shoes/f13/enclave/serviceboots,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/gun/ballistic/automatic/assault_carbine,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -12531,6 +12522,11 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/enclave)
+"kcY" = (
+/obj/structure/barricade/wooden/strong,
+/obj/machinery/door/airlock/abandoned,
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
+/area/f13/tunnel)
 "kdh" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -18639,6 +18635,15 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"oRK" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/suit_storage_unit/enclave,
+/turf/open/floor/f13{
+	icon_state = "redmark"
+	},
+/area/f13/enclave)
 "oRZ" = (
 /obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -21196,7 +21201,6 @@
 	},
 /area/f13/brotherhood/medical)
 "qML" = (
-/obj/machinery/light,
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -21970,21 +21974,18 @@
 /area/f13/brotherhood/operations)
 "rjY" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/gun/ballistic/automatic/assault_carbine,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
-/obj/item/ammo_box/magazine/m556/rifle/extended,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/storage/belt/military/assault/enclave,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -25543,7 +25544,7 @@
 /area/f13/bunker)
 "tYw" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "tYJ" = (
@@ -25658,6 +25659,7 @@
 /obj/item/clothing/under/f13/raider_leather,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/machinery/light,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -26471,28 +26473,36 @@
 /area/f13/den)
 "uMQ" = (
 /obj/structure/rack,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/card/id/dogtag/enclave/recruit,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
-/obj/item/radio/headset/headset_enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/head/helmet/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/suit/armor/f13/combat/enclave,
+/obj/item/clothing/mask/infiltrator,
+/obj/item/clothing/mask/infiltrator,
+/obj/item/clothing/mask/infiltrator,
+/obj/item/clothing/mask/infiltrator,
+/obj/item/clothing/mask/infiltrator,
+/obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/gloves/f13/military,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/shoes/f13/enclave/serviceboots,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
+/obj/item/clothing/under/f13/enclave/peacekeeper,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -26930,12 +26940,6 @@
 /area/f13/tunnel)
 "vfo" = (
 /obj/structure/rack,
-/obj/item/radio/headset,
-/obj/item/radio/headset,
-/obj/item/radio/headset,
-/obj/item/radio/headset,
-/obj/item/radio/headset,
-/obj/item/radio/headset,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -27343,6 +27347,34 @@
 	},
 /turf/open/floor/plasteel,
 /area/f13/tcoms)
+"vwj" = (
+/obj/structure/rack,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/card/id/dogtag/enclave/recruit,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/obj/item/radio/headset/headset_enclave,
+/turf/open/floor/f13{
+	icon_state = "redmark"
+	},
+/area/f13/enclave)
 "vws" = (
 /obj/machinery/conveyor/auto{
 	dir = 1
@@ -29395,10 +29427,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xjn" = (
+/obj/structure/closet/anchored,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/closet/anchored,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -29570,6 +29602,16 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/den)
+"xos" = (
+/obj/structure/closet/anchored,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
+/area/f13/enclave)
 "xoS" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/indestructible/ground/inside/mountain,
@@ -29698,9 +29740,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xuW" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/machinery/autolathe/ammo/unlocked,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/ore/blackpowder/fifty,
@@ -30408,18 +30447,14 @@
 /area/f13/bunker)
 "ydf" = (
 /obj/structure/rack,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/storage/belt/military/assault/enclave,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper,
+/obj/item/gun/energy/laser/aer12,
+/obj/item/gun/energy/laser/aer12,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/f13{
 	icon_state = "redmark"
 	},
@@ -62428,12 +62463,12 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-uoO
-uoO
-uoO
-uoO
+joH
+joH
+joH
+joH
+joH
+joH
 joH
 joH
 ybS
@@ -62686,10 +62721,10 @@ uoO
 uoO
 uoO
 joH
-joH
-joH
-joH
-joH
+wXe
+mOw
+mOw
+vwj
 joH
 joH
 uLX
@@ -62949,7 +62984,7 @@ mOw
 uMQ
 joH
 joH
-wrY
+xos
 iiK
 hsN
 joH
@@ -63200,7 +63235,7 @@ joH
 joH
 joH
 joH
-wXe
+xjn
 mOw
 mOw
 imP
@@ -63714,7 +63749,7 @@ niW
 gXQ
 prL
 joH
-xjn
+wXe
 mOw
 mOw
 ydf
@@ -63971,7 +64006,7 @@ gXQ
 gXQ
 pAY
 joH
-wXe
+hvF
 mOw
 mOw
 vfo
@@ -64228,7 +64263,7 @@ niW
 gXQ
 qRy
 joH
-wXe
+oRK
 mOw
 mOw
 uaR
@@ -66540,7 +66575,7 @@ gUF
 gUF
 laO
 joH
-sPX
+uHT
 sNC
 vXS
 joH
@@ -77595,7 +77630,7 @@ tur
 tur
 tur
 tur
-vtz
+kcY
 tur
 tur
 tur

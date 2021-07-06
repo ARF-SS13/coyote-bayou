@@ -753,6 +753,11 @@
 	icon_state = "battlecoat_tan"
 	item_state = "maxson_battlecoat"
 
+/obj/item/clothing/suit/armor/f13/battlecoat/tan/enclave
+	name = "lieutenant's battlecoat"
+	desc = "(VII) A battle coat usually worn by the high-ranking officers within the US Military. This one has been armored with light-weight alloys, providing maximum defense at almost no weight cost."
+	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+
 /obj/item/clothing/suit/armor/f13/brahmin_leather_duster
 	name = "brahmin leather duster"
 	desc = "(III) A duster fashioned with tanned brahmin hide. It appears to be more durable than a normal duster. The leather is laser resistant."
