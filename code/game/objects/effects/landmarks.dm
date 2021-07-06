@@ -637,11 +637,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
-	name = "Household Slave"
+	name = "Legion Auxilia"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/campfollower
-	name = "Camp Duty"
+	name = "Legion Camp Duty"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/slave
