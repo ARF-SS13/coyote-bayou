@@ -814,7 +814,13 @@
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
-
+/obj/item/book/granter/trait/bigleagues
+    name = "Little League Batting Guide"
+    desc = "An extensive guide about swinging bats."
+    oneuse = TRUE
+    granted_trait = TRAIT_BIG_LEAGUES
+    traitname = "big_leagues"
+    remarks = list("Swing it hard..", "Don't miss...", "Words may hurt you but a big stick hurts more...", "Adding spikes to bats is effective but the referee might complain...")
 	
 /obj/item/book/granter/trait/lowsurgery
 	name = "Surgery for Wastelanders"
