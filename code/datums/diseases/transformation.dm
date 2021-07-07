@@ -291,7 +291,7 @@
 	cure_text = "mutadone."
 	cures = list(/datum/reagent/medicine/mutadone)
 	cure_chance = 1 // Good luck
-	stage_prob = 20
+	stage_prob = 10
 	agent = "FEV-I toxin strain" // The unstable one.
 	desc = "A megavirus, with a protein sheath reinforced by ionized hydrogen. This virus is capable of mutating the affected into something horrifying..."
 	severity = DISEASE_SEVERITY_BIOHAZARD
@@ -305,13 +305,14 @@
 
 /datum/disease/transformation/mutant/do_disease_transformation(mob/living/affected_mob)
 	var/list/le_list = list(\
-		/mob/living/simple_animal/hostile/centaur = 8, \
+		/mob/living/simple_animal/hostile/centaur/strong = 8, \
 		/mob/living/simple_animal/hostile/abomination/weak = 7, \
-		/mob/living/simple_animal/hostile/ghoul = 6, \
 		/mob/living/simple_animal/hostile/ghoul/glowing = 4, \
-		/mob/living/carbon/human/species/ghoul = 1, \
-		/mob/living/simple_animal/hostile/supermutant/playable = 1) // Lucky bastard
+		/mob/living/simple_animal/hostile/supermutant/playable = 2, \
+		/mob/living/carbon/human/species/ghoul = 1)
 	new_form = pickweight(le_list)
+	if(!ispath(new_form, /mob/living/carbon)) // If you've become simple_mob - you can't go and be all friendly to those around you!
+		to_chat(affected_mob, "<big><span class='warning'><b>You've become something entirely different! You are being controlled only by your hunger and desire to kill!</b></span></big>")
 	. = ..()
 
 /datum/disease/transformation/mutant/stage_act()
@@ -319,23 +320,22 @@
 	if(!.)
 		return
 
-	affected_mob.adjustCloneLoss(-4, FALSE) // To prevent mob from dying before mutating.
 	switch(stage)
 		if(2)
-			if (prob(4))
+			if (prob(8))
 				to_chat(affected_mob, "<span class='danger'>You feel weird...</span>")
 		if(3)
-			if (prob(6))
+			if (prob(12))
 				to_chat(affected_mob, "<span class='danger'>Your skin twitches...</span>")
 				affected_mob.Jitter(3)
 		if(4)
-			if (prob(15))
+			if (prob(20))
 				to_chat(affected_mob, "<span class='danger'>The pain is unbearable!</span>")
 				affected_mob.emote("cry")
-			if (prob(10))
+			if (prob(15))
 				to_chat(affected_mob, "<span class='danger'>Your skin begins to shift, hurting like hell!</span>")
 				affected_mob.emote("scream")
 				affected_mob.Jitter(4)
-			if (prob(5))
+			if (prob(6))
 				to_chat(affected_mob, "<span class='danger'>Your body shuts down for a moment!</span>")
 				affected_mob.Unconscious(10)

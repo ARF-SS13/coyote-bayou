@@ -47,3 +47,9 @@
 	name = "spit"
 	damage = 30
 	icon_state = "toxin"
+
+/mob/living/simple_animal/hostile/centaur/strong // Mostly for FEV mutation
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	maxHealth = 200
+	health = 200
