@@ -212,4 +212,3 @@
 				C.add_fingerprint(usr)
 			wait = world.time + 15
 	return
-*/
