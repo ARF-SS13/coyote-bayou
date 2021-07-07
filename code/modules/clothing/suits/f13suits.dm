@@ -424,7 +424,7 @@
 	armor = list("tier" = 5, "energy" = 10, "bomb" = 30, "bio" = 20, "rad" = 20, "fire" = 30, "acid" = 0)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HAIR
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/hooded/cloakhood/shunter
