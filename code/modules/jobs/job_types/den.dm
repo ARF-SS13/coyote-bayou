@@ -174,8 +174,8 @@ Mayor
 	flag = F13FARMER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "law and order"
 	description = "As a Farmer, you believe that the frontier holds abundant opportunities for you to encroach and take advantage of. Enshrouded in safety by the walls of Oasis, you enact out your skills of cultivation and husbandry, making you a vital backbone business of the town in growing medicines, crops and livestock, focusing on thriving and profiting off of this for your own intrinsic goals. As per your terms of agreement you should follow the law and order of the town, maintaining a distinct amount of peace from the wild wasteland that civilisation hopes to outrun..."
 	selection_color = "#dcba97"
@@ -220,8 +220,8 @@ Mayor
 	flag = F13PROSPECTOR
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "law and order"
 	description = "Prospecting is a complicated business, some call it scrounging or looting, but there is more to it then sifting through rubble - few can boast the skills you posess in mining and delving through the ruins of pre-war America. Not many survive this line of business and the pay has always been uncertain, but perhaps today you'll find strike gold."
 	selection_color = "#dcba97"
@@ -472,8 +472,8 @@ Mayor
 	flag = F13BARKEEP
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "law and order"
 	description = "As a Barkeep, you believe that the frontier holds abundant opportunity for bartending and service. Hidden safely away behind the walls of Oasis, you enact out your skills of mixing the finest drinks and serving the best grub in the wasteland. As per your terms of agreement you should follow the law and order of the town. However the Blue Oyster is your private business, working in harmony with the farm next door to supply you with crop and goods to keep you in profit."
 	selection_color = "#dcba97"
@@ -545,8 +545,8 @@ Mayor
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 16
+	spawn_positions = 16
 	supervisors = "law and order"
 	description = "You are a Settler living within the Town of Oasis - as the name suggests, it is a slightly more civilised place amidst the chaos of the Wasteland. Treat it as such, be sure to follow the laws of the land and do not associate with those who have a tendency not to, or you are likely to face exile. Remember that Oasis is your home, and that you should not be leaving to explore the Wastes."
 	selection_color = "#dcba97"
@@ -753,8 +753,8 @@ Mayor
 	flag = F13SHOPKEEPER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "law and order"
 	description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
 	selection_color = "#dcba97"
