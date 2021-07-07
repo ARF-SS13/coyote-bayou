@@ -6,241 +6,241 @@ LINEN BINS
 */
 
 /obj/item/blanket
-    name = "blanket"
-    desc = "A undyed rough blanket."
-    icon = 'icons/obj/bedsheets.dmi'
-    icon_state = "blanket1"
-    item_state = "bedsheet"
-    layer = MOB_LAYER
-    throwforce = 0
-    throw_speed = 1
-    throw_range = 2
-    w_class = WEIGHT_CLASS_TINY
-    resistance_flags = FLAMMABLE
- 
+	name = "blanket"
+	desc = "A undyed rough blanket."
+	icon = 'icons/obj/bedsheets.dmi'
+	icon_state = "blanket1"
+	item_state = "bedsheet"
+	layer = MOB_LAYER
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = FLAMMABLE
+
 /obj/item/blanket/blanketalt
-    icon_state = "blanket2"
- 
+	icon_state = "blanket2"
+
 /obj/item/bedsheet
-    name = "bedsheet"
-    desc = "A surprisingly soft linen bedsheet."
-    icon = 'icons/obj/bedsheets.dmi'
-    icon_state = "sheetwhite"
-    item_state = "bedsheet"
-    slot_flags = ITEM_SLOT_NECK
-    layer = MOB_LAYER
-    throwforce = 0
-    throw_speed = 1
-    throw_range = 2
-    w_class = WEIGHT_CLASS_TINY
-    resistance_flags = FLAMMABLE
-    dying_key = DYE_REGISTRY_BEDSHEET
- 
-    dog_fashion = /datum/dog_fashion/head/ghost
-    var/list/dream_messages = list("white")
- 
+	name = "bedsheet"
+	desc = "A surprisingly soft linen bedsheet."
+	icon = 'icons/obj/bedsheets.dmi'
+	icon_state = "sheetwhite"
+	item_state = "bedsheet"
+	slot_flags = ITEM_SLOT_NECK
+	layer = MOB_LAYER
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = FLAMMABLE
+	dying_key = DYE_REGISTRY_BEDSHEET
+
+	dog_fashion = /datum/dog_fashion/head/ghost
+	var/list/dream_messages = list("white")
+
 /obj/item/bedsheet/attack(mob/living/M, mob/user)
-    if(!attempt_initiate_surgery(src, M, user))
-        ..()
- 
+	if(!attempt_initiate_surgery(src, M, user))
+		..()
+
 /obj/item/bedsheet/attack_self(mob/user)
-    if(!user.can_reach(src))        //No telekenetic grabbing.
-        return
-    if(!user.dropItemToGround(src))
-        return
-    if(layer == initial(layer))
-        layer = ABOVE_MOB_LAYER
-        to_chat(user, "<span class='notice'>You cover yourself with [src].</span>")
-    else
-        layer = initial(layer)
-        to_chat(user, "<span class='notice'>You smooth [src] out beneath you.</span>")
-    add_fingerprint(user)
-    return
- 
+	if(!user.can_reach(src))		//No telekenetic grabbing.
+		return
+	if(!user.dropItemToGround(src))
+		return
+	if(layer == initial(layer))
+		layer = ABOVE_MOB_LAYER
+		to_chat(user, "<span class='notice'>You cover yourself with [src].</span>")
+	else
+		layer = initial(layer)
+		to_chat(user, "<span class='notice'>You smooth [src] out beneath you.</span>")
+	add_fingerprint(user)
+	return
+
 /obj/item/bedsheet/attackby(obj/item/I, mob/user, params)
-    if(!(flags_1 & HOLOGRAM_1) && (istype(I, /obj/item/wirecutters) || I.get_sharpness()))
-        var/obj/item/stack/sheet/cloth/C = new (get_turf(src), 3)
-        transfer_fingerprints_to(C)
-        C.add_fingerprint(user)
-        qdel(src)
-        to_chat(user, "<span class='notice'>You tear [src] up.</span>")
-    else
-        return ..()
- 
+	if(!(flags_1 & HOLOGRAM_1) && (istype(I, /obj/item/wirecutters) || I.get_sharpness()))
+		var/obj/item/stack/sheet/cloth/C = new (get_turf(src), 3)
+		transfer_fingerprints_to(C)
+		C.add_fingerprint(user)
+		qdel(src)
+		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
+	else
+		return ..()
+
 /obj/item/bedsheet/blue
-    icon_state = "sheetblue"
-    dream_messages = list("blue")
- 
+	icon_state = "sheetblue"
+	dream_messages = list("blue")
+
 /obj/item/bedsheet/green
-    icon_state = "sheetgreen"
-    dream_messages = list("green")
- 
+	icon_state = "sheetgreen"
+	dream_messages = list("green")
+
 /obj/item/bedsheet/grey
-    icon_state = "sheetgrey"
-    dream_messages = list("grey")
- 
+	icon_state = "sheetgrey"
+	dream_messages = list("grey")
+
 /obj/item/bedsheet/orange
-    icon_state = "sheetorange"
-    dream_messages = list("orange")
- 
+	icon_state = "sheetorange"
+	dream_messages = list("orange")
+
 /obj/item/bedsheet/purple
-    icon_state = "sheetpurple"
-    dream_messages = list("purple")
- 
+	icon_state = "sheetpurple"
+	dream_messages = list("purple")
+
 /obj/item/bedsheet/patriot
-    name = "patriotic bedsheet"
-    desc = "You've never felt more free than when sleeping on this."
-    icon_state = "sheetUSA"
-    dream_messages = list("America", "freedom", "fireworks", "bald eagles")
- 
+	name = "patriotic bedsheet"
+	desc = "You've never felt more free than when sleeping on this."
+	icon_state = "sheetUSA"
+	dream_messages = list("America", "freedom", "fireworks", "bald eagles")
+
 /obj/item/bedsheet/rainbow
-    name = "rainbow bedsheet"
-    desc = "A multicolored blanket. It's actually several different sheets cut up and sewn together."
-    icon_state = "sheetrainbow"
-    dream_messages = list("red", "orange", "yellow", "green", "blue", "purple", "a rainbow")
- 
+	name = "rainbow bedsheet"
+	desc = "A multicolored blanket. It's actually several different sheets cut up and sewn together."
+	icon_state = "sheetrainbow"
+	dream_messages = list("red", "orange", "yellow", "green", "blue", "purple", "a rainbow")
+
 /obj/item/bedsheet/red
-    icon_state = "sheetred"
-    dream_messages = list("red")
- 
+	icon_state = "sheetred"
+	dream_messages = list("red")
+
 /obj/item/bedsheet/yellow
-    icon_state = "sheetyellow"
-    dream_messages = list("yellow")
- 
+	icon_state = "sheetyellow"
+	dream_messages = list("yellow")
+
 /obj/item/bedsheet/captain
-    name = "hubris comics bedsheet"
-    desc = "It has a Hubris Comics logo on it, part of a line of superhero themed bedsheets. This one is in Captain Cosmos colors."
-    icon_state = "sheetcaptain"
-    dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
- 
+	name = "hubris comics bedsheet"
+	desc = "It has a Hubris Comics logo on it, part of a line of superhero themed bedsheets. This one is in Captain Cosmos colors."
+	icon_state = "sheetcaptain"
+	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
+
 /obj/item/bedsheet/rd
-    name = "rich bedsheet"
-    desc = "Gold and purple, the colors of old world royalty, this luxurious blanket calls to the times of barons and kings."
-    icon_state = "sheetrd"
-    dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
- 
+	name = "research director's bedsheet"
+	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
+	icon_state = "sheetrd"
+	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
+
 // for Free Golems.
 /obj/item/bedsheet/rd/royal_cape
-    name = "Royal Cape of the Liberator"
-    desc = "Majestic."
-    dream_messages = list("mining", "stone", "a golem", "freedom", "doing whatever")
- 
+	name = "Royal Cape of the Liberator"
+	desc = "Majestic."
+	dream_messages = list("mining", "stone", "a golem", "freedom", "doing whatever")
+
 /obj/item/bedsheet/medical
-    name = "medical blanket"
-    desc = "It's a sterilized* blanket commonly used in hospitals.  *Sterilization is voided if sheets have not been changed in the past three days."
-    icon_state = "sheetmedical"
-    dream_messages = list("healing", "life", "surgery", "a doctor")
- 
+	name = "medical blanket"
+	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present onboard the station."
+	icon_state = "sheetmedical"
+	dream_messages = list("healing", "life", "surgery", "a doctor")
+
 /obj/item/bedsheet/cmo
-    name = "medical bedsheet"
-    desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, but there's no cats here."
-    icon_state = "sheetcmo"
-    dream_messages = list("authority", "a silvery ID", "healing", "life", "surgery", "a cat", "the chief medical officer")
- 
+	name = "chief medical officer's bedsheet"
+	desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, likely from Runtime."
+	icon_state = "sheetcmo"
+	dream_messages = list("authority", "a silvery ID", "healing", "life", "surgery", "a cat", "the chief medical officer")
+
 /obj/item/bedsheet/hos
-    name = "authoritarian bedsheet"
-    desc = "This red and gold blanket has an aura of authority. While crime doesn't sleep, you do, but you are still THE LAW!"
-    icon_state = "sheethos"
-    dream_messages = list("authority", "a silvery ID", "handcuffs", "a baton", "a flashbang", "sunglasses", "the head of security")
- 
+	name = "head of security's bedsheet"
+	desc = "It is decorated with a shield emblem. While crime doesn't sleep, you do, but you are still THE LAW!"
+	icon_state = "sheethos"
+	dream_messages = list("authority", "a silvery ID", "handcuffs", "a baton", "a flashbang", "sunglasses", "the head of security")
+
 /obj/item/bedsheet/hop
-    name = "clerk's bedsheet"
-    desc = "This gold and sky blue blanket has an aura of blissful bureaucracy. These were gifted to Yuma civil servants in a long ago festival."
-    icon_state = "sheethop"
-    dream_messages = list("authority", "a silvery ID", "obligation", "a computer", "an ID", "a corgi", "the head of personnel")
- 
+	name = "head of personnel's bedsheet"
+	desc = "It is decorated with a key emblem. For those rare moments when you can rest and cuddle with Ian without someone screaming for you over the radio."
+	icon_state = "sheethop"
+	dream_messages = list("authority", "a silvery ID", "obligation", "a computer", "an ID", "a corgi", "the head of personnel")
+
 /obj/item/bedsheet/ce
-    name = "engineer's bedsheet"
-    desc = "It is decorated with a wrench emblem. It's highly reflective and stain resistant, so you don't need to worry about ruining it with oil."
-    icon_state = "sheetce"
-    dream_messages = list("authority", "a silvery ID", "the engine", "power tools", "an APC", "a parrot", "the chief engineer")
- 
+	name = "chief engineer's bedsheet"
+	desc = "It is decorated with a wrench emblem. It's highly reflective and stain resistant, so you don't need to worry about ruining it with oil."
+	icon_state = "sheetce"
+	dream_messages = list("authority", "a silvery ID", "the engine", "power tools", "an APC", "a parrot", "the chief engineer")
+
 /obj/item/bedsheet/qm
-    name = "caravaneer's bedsheet"
-    desc = "It is decorated with a crate emblem in silver lining.  It's rather tough, and just the thing to lie on after a hard day of pushing paper."
-    icon_state = "sheetqm"
-    dream_messages = list("a grey ID", "a shuttle", "a crate", "a sloth", "the quartermaster")
- 
+	name = "quartermaster's bedsheet"
+	desc = "It is decorated with a crate emblem in silver lining.  It's rather tough, and just the thing to lie on after a hard day of pushing paper."
+	icon_state = "sheetqm"
+	dream_messages = list("a grey ID", "a shuttle", "a crate", "a sloth", "the quartermaster")
+
 /obj/item/bedsheet/brown
-    icon_state = "sheetbrown"
-    dream_messages = list("brown")
- 
+	icon_state = "sheetbrown"
+	dream_messages = list("brown")
+
 /obj/item/bedsheet/black
-    icon_state = "sheetblack"
-    dream_messages = list("black")
- 
+	icon_state = "sheetblack"
+	dream_messages = list("black")
+
 /obj/item/bedsheet/centcom
-    name = "\improper rare hubris comics bedsheet"
-    desc = "This collector's edition hubris comics bedsheet was sold on secret markets for tens of thousands of dollars, once upon a time."
-    icon_state = "sheetcentcom"
-    dream_messages = list("a unique ID", "authority", "artillery", "an ending")
- 
+	name = "\improper CentCom bedsheet"
+	desc = "Woven with advanced nanothread for warmth as well as being very decorated, essential for all officials."
+	icon_state = "sheetcentcom"
+	dream_messages = list("a unique ID", "authority", "artillery", "an ending")
+
 /obj/item/bedsheet/syndie
-    name = "shi bedsheet"
-    desc = "It has a Shi emblem and it has an imperial aura."
-    icon_state = "sheetsyndie"
-    dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
- 
+	name = "shi bedsheet"
+	desc = "It has a Shi emblem and it has an imperial aura."
+	icon_state = "sheetsyndie"
+	dream_messages = list("a green disc", "a red crystal", "a glowing blade", "a wire-covered ID")
+
 /obj/item/bedsheet/cult
-    name = "cultist's bedsheet"
-    desc = "Your dreams are filled with blood. It seems rather tattered and leaves you feeling nauseous."
-    icon_state = "sheetcult"
-    dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
- 
+	name = "cultist's bedsheet"
+	desc = "You might dream of Nar'Sie if you sleep with this. It seems rather tattered and glows of an eldritch presence."
+	icon_state = "sheetcult"
+	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
+
 /obj/item/bedsheet/wiz
-    name = "child's bedsheet"
-    desc = "A special blanket for the child that dreams of magical adventure, woven with real* wizard spells. It even glows!"
-    icon_state = "sheetwiz"
-    dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
- 
+	name = "wizard's bedsheet"
+	desc = "A special fabric enchanted with magic so you can have an enchanted night. It even glows!"
+	icon_state = "sheetwiz"
+	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
+
 /obj/item/bedsheet/nanotrasen
-    name = "navitron bedsheet"
-    desc = "It has the Navitron logo on it and has an aura of duty."
-    icon_state = "sheetNT"
-    dream_messages = list("authority", "an ending")
- 
+	name = "navitron bedsheet"
+	desc = "It has the Navitron logo on it and has an aura of duty."
+	icon_state = "sheetNT"
+	dream_messages = list("authority", "an ending")
+
 /obj/item/bedsheet/ian
-    icon_state = "sheetian"
-    dream_messages = list("a dog", "a corgi", "woof", "bark", "arf")
- 
+	icon_state = "sheetian"
+	dream_messages = list("a dog", "a corgi", "woof", "bark", "arf")
+
 /obj/item/bedsheet/runtime
-    icon_state = "sheetruntime"
-    dream_messages = list("a kitty", "a cat", "meow", "purr")
- 
+	icon_state = "sheetruntime"
+	dream_messages = list("a kitty", "a cat", "meow", "purr")
+
 /obj/item/bedsheet/pirate
-    name = "bandit's bedsheet"
-    desc = "It has a skull emblem on it and has a faint scent of whiskey."
-    icon_state = "sheetpirate"
-    dream_messages = list("doing whatever oneself wants", "cause a pirate is free", "being a pirate", "stealing", "landlubbers", "gold", "a buried treasure", "yarr", "avast", "a swashbuckler", "sailing the Seven Seas", "a parrot", "a monkey", "an island", "a talking skull")
- 
+	name = "pirate's bedsheet"
+	desc = "It has a Jolly Roger emblem on it and has a faint scent of grog."
+	icon_state = "sheetpirate"
+	dream_messages = list("doing whatever oneself wants", "cause a pirate is free", "being a pirate", "stealing", "landlubbers", "gold", "a buried treasure", "yarr", "avast", "a swashbuckler", "sailing the Seven Seas", "a parrot", "a monkey", "an island", "a talking skull")
+
 /obj/item/bedsheet/gondola
-    name = "gondola bedsheet"
-    desc = "A precious bedsheet made from the hide of a rare and peculiar critter."
-    icon_state = "sheetgondola"
-    var/g_mouth
-    var/g_eyes
- 
+	name = "gondola bedsheet"
+	desc = "A precious bedsheet made from the hide of a rare and peculiar critter."
+	icon_state = "sheetgondola"
+	var/g_mouth
+	var/g_eyes
+
 /obj/item/bedsheet/gondola/Initialize()
-    . = ..()
-    g_mouth = "sheetgondola_mouth[rand(1, 4)]"
-    g_eyes = "sheetgondola_eyes[rand(1, 4)]"
-    add_overlay(g_mouth)
-    add_overlay(g_eyes)
- 
+	. = ..()
+	g_mouth = "sheetgondola_mouth[rand(1, 4)]"
+	g_eyes = "sheetgondola_eyes[rand(1, 4)]"
+	add_overlay(g_mouth)
+	add_overlay(g_eyes)
+
 /obj/item/bedsheet/gondola/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
-    . = ..()
-    if(!isinhands)
-        . += mutable_appearance(icon_file, g_mouth)
-        . += mutable_appearance(icon_file, g_eyes)
- 
+	. = ..()
+	if(!isinhands)
+		. += mutable_appearance(icon_file, g_mouth)
+		. += mutable_appearance(icon_file, g_eyes)
+
 /obj/item/bedsheet/cosmos
-    name = "cosmic space bedsheet"
-    desc = "Made from the dreams of those who wonder at the stars, and sold back to them at market price."
-    icon_state = "sheetcosmos"
-    dream_messages = list("the infinite cosmos", "Hans Zimmer music", "a flight through space", "the galaxy", "being fabulous", "shooting stars")
-    light_power = 2
-    light_system = MOVABLE_LIGHT
-    light_range = 2
+	name = "cosmic space bedsheet"
+	desc = "Made from the dreams of those who wonder at the stars."
+	icon_state = "sheetcosmos"
+	dream_messages = list("the infinite cosmos", "Hans Zimmer music", "a flight through space", "the galaxy", "being fabulous", "shooting stars")
+	light_power = 2
+	light_system = MOVABLE_LIGHT
+	light_range = 2
 
 /obj/item/bedsheet/random
 	icon_state = "random_bedsheet"

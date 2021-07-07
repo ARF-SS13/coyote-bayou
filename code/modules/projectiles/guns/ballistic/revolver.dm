@@ -272,16 +272,16 @@
 	can_scope = FALSE
 
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
-    name = "Enforcer"
-    desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
-    item_state = "m29peace"
-    icon_state = "m29peace"
-    extra_damage = 15
-    extra_penetration = 0.1
-    fire_delay = 10
-    burst_size = 1
-    actions_types = list(/datum/action/item_action/toggle_firemode)
-    can_scope = FALSE
+	name = "Enforcer"
+	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
+	item_state = "m29peace"
+	icon_state = "m29peace"
+	extra_damage = 15
+	extra_penetration = 0.1
+	fire_delay = 10
+	burst_size = 1
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	can_scope = FALSE
 
 /obj/item/gun/ballistic/revolver/m29/peacekeeper/ui_action_click()
 	burst_select()
