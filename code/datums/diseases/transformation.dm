@@ -291,7 +291,7 @@
 	cure_text = "mutadone."
 	cures = list(/datum/reagent/medicine/mutadone)
 	cure_chance = 1 // Good luck
-	stage_prob = 20
+	stage_prob = 10
 	agent = "FEV-I toxin strain" // The unstable one.
 	desc = "A megavirus, with a protein sheath reinforced by ionized hydrogen. This virus is capable of mutating the affected into something horrifying..."
 	severity = DISEASE_SEVERITY_BIOHAZARD
