@@ -7940,7 +7940,9 @@
 /area/f13/clinic)
 "gJz" = (
 /obj/structure/table,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
 /area/f13/followers)
 "gJT" = (
 /obj/structure/window/reinforced/spawner{
@@ -43589,8 +43591,8 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
+uoO
+uoO
 uoO
 eLE
 eLE
@@ -43847,9 +43849,9 @@ chR
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
 uoO
 uoO
 uoO
