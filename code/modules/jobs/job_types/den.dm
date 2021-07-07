@@ -319,8 +319,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Your Master(s)."
-	description = "You are a beacon of faith in the wasteland. Guide the Town and any others who wish to be led on spiritual matters, and try to build your flock. Remember, the Oasis Oak and the Church are the centre of your religion - protect them at all costs."
+	supervisors = "Oasis Government & Police Department"
+	description = "You have finished your long pilgrimage to the fabled oasis. You have restored the chapel and cleared weeds from the grove, and it is now your duty to restore faith to this empty land. Remember that the Oak is the most holy living relic in this valley, protect it at all costs."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13preacher
@@ -474,8 +474,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "law and order"
-	description = "As a Barkeep, you believe that the frontier holds abundant opportunity for bartending and service. Hidden safely away behind the walls of Oasis, you enact out your skills of mixing the finest drinks and serving the best grub in the wasteland. As per your terms of agreement you should follow the law and order of the town. However the Blue Oyster is your private business, working in harmony with the farm next door to supply you with crop and goods to keep you in profit."
+	supervisors = "Oasis Government & Police Department"
+	description = "As the innkeeper, you are responsible for comfort and full bellies in town. Hidden safely away behind the town walls, you are free to refine your skills without always watching your back. As a citizen of the town you must follow its laws. However the inn is your private business, and you decide who is allowed to dine or reside in your hospitality."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -547,8 +547,8 @@ Mayor
 	faction = "Town"
 	total_positions = 16
 	spawn_positions = 16
-	supervisors = "law and order"
-	description = "You are a Settler living within the Town of Oasis - as the name suggests, it is a slightly more civilised place amidst the chaos of the Wasteland. Treat it as such, be sure to follow the laws of the land and do not associate with those who have a tendency not to, or you are likely to face exile. Remember that Oasis is your home, and that you should not be leaving to explore the Wastes."
+	supervisors = "Oasis Government & Police Department"
+	description = "You are a citizen living in the Town of Oasis - as the name suggests, it is a somewhat safe place amidst the chaos of the continent. Treat it as such, be sure to follow the laws of the land and do not associate with those who have a tendency not to, or you are likely to face exile. Remember that Oasis is your home, and that you should not be leaving to explore the Wastes."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -632,8 +632,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	description = "As a Detective you are a private eye and investigator who assists private persons to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the wasteland, but by working with forces greater than yourself to resolve conflicts and bring order where it is not present."
-	supervisors = "law and order"
+	description = "As a Detective you are a private eye who assists clients to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the valley, but for finding answers. Your life is already over, make the ending mean something."
+	supervisors = "paying clients"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/wasteland/f13detective
 
@@ -755,8 +755,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "law and order"
-	description = "The capitalist economy of pre-war america survived alongside its people. Now it's your job to continue its survival, so make some caps!"
+	supervisors = "free hand of the market"
+	description = "The greed of the United States survived better than its people. You are an organ of this greed. Ensure its continuation."
 	selection_color = "#dcba97"
 	exp_requirements = 600
 
