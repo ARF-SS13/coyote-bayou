@@ -31,7 +31,6 @@
 /datum/bounty/item/botany/banana
 	name = "Bananas"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/banana)
-	exclude_types = list(/obj/item/reagent_containers/food/snacks/grown/banana/bluespace)
 	foodtype = "banana split"
 
 /datum/bounty/item/botany/coconuts
@@ -93,13 +92,13 @@
 	name = "Novaflowers"
 	wanted_types = list(/obj/item/grown/novaflower)
 	multiplier = 2
-
+/*
 /datum/bounty/item/botany/banana_bluespace
 	name = "Bluespace Bananas"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/banana/bluespace)
 	multiplier = 2
 	foodtype = "banana split"
-
+*/
 /datum/bounty/item/botany/beans_koi
 	name = "Koi Beans"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/koibeans)
@@ -189,11 +188,12 @@
 	multiplier = 4
 	foodtype = "dessert"
 
+/* removed because lrp, cope
 /datum/bounty/item/botany/tomato_bluespace
 	name = "Bluespace Tomatoes"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/tomato/blue/bluespace)
 	multiplier = 4
-
+*/
 /datum/bounty/item/botany/cannabis
 	name = "Cannabis Leaves"
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/cannabis)

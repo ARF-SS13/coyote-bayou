@@ -61,7 +61,7 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/tomato/blue
 	yield = 2
 	icon_grow = "bluetomato-grow"
-	mutatelist = list(/obj/item/seeds/tomato/blue/bluespace)
+	mutatelist = list()
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/lube = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
@@ -75,6 +75,7 @@
 	filling_color = "#0000FF"
 	distill_reagent = /datum/reagent/consumable/laughter
 
+/* removed because lrp, cope
 // Bluespace Tomato
 /obj/item/seeds/tomato/blue/bluespace
 	name = "pack of bluespace tomato seeds"
@@ -96,6 +97,7 @@
 	icon_state = "bluespacetomato"
 	distill_reagent = null
 	wine_power = 80
+*/
 
 // Killer Tomato
 /obj/item/seeds/tomato/killer
