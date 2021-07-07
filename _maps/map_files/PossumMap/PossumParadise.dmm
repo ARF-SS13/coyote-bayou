@@ -4809,7 +4809,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/item/pipe_dispenser,
 /turf/open/floor/engine,
 /area/f13/vault/reactor)
 "aoC" = (
@@ -4912,7 +4911,6 @@
 /area/f13/vault/reactor)
 "aoV" = (
 /obj/structure/table,
-/obj/item/pipe_dispenser,
 /turf/open/floor/engine,
 /area/f13/vault/reactor)
 "aoW" = (
@@ -5658,11 +5656,9 @@
 	},
 /area/f13/vault/dormitory)
 "aqV" = (
-/obj/machinery/pipedispenser/disposal/transit_tube,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault/reactor)
 "aqW" = (
-/obj/machinery/pipedispenser/disposal,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault/reactor)
 "aqX" = (
@@ -5670,7 +5666,6 @@
 	dir = 4;
 	icon_state = "tube"
 	},
-/obj/machinery/pipedispenser,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault/reactor)
 "aqY" = (

@@ -56,13 +56,6 @@
 	required_count = 3
 	wanted_types = list(/obj/item/construction/rcd)
 
-/datum/bounty/item/engineering/rpd
-	name = "Spare RPD"
-	description = "Our Atmospheric Technicians are still living in the past, relying on stationary pipe dispensers to produce the pipes necessary to accomplish their strenuous tasks. They could use an upgrade. Could you send us some Rapid Pipe Dispensers?"
-	reward = 2500
-	required_count = 3
-	wanted_types = list(/obj/item/pipe_dispenser)
-
 /datum/bounty/item/engineering/heaters
 	name = "Space Heaters"
 	description = "The kitchen freezer was left open and now the whole place is frozen solid! We need a few space heaters to warm it back up before anyone gets hungry."
