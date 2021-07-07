@@ -36,7 +36,7 @@
 	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
 	color = "#00FF00"
 	toxpwr = 0
-	overdose_threshold = 20
+	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
 	taste_description = "horrific agony"
 	taste_mult = 0.9
 
@@ -52,11 +52,12 @@
 	..()
 
 /datum/reagent/toxin/FEV_solution/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(30,EFFECT_IRRADIATE,0)
-	C.adjustCloneLoss(2,0)
+	C.apply_effect(40,EFFECT_IRRADIATE,0)
+	C.adjustCloneLoss(3,0) // ~15 units will get you near crit condition.
 	return ..()
 
 /datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
+	C.adjustCloneLoss(-4,0) // Don't die while you are mutating.
 	C.ForceContractDisease(new /datum/disease/transformation/mutant(), FALSE, TRUE)
 
 /datum/reagent/toxin/mutagen
