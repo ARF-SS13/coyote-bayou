@@ -25,8 +25,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the people of the town"
-	description = "You are the head honcho of Oasis and the people look to you for leadership. Pass laws to protect your Citizens, distribute the Town's funds and make deals with the powers present within the Region to better the people - or exploit them for your own personal gain."
+	supervisors = "Oasis"
+	description = "You are the benevolent tyrant of Oasis, chosen by the people to represent and lead them. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the Region to better the people, and yourself, of course."
 	selection_color = "#d7b088"
 
 	exp_requirements = 1500
@@ -53,10 +53,10 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/f13/tan
-	uniform = /obj/item/clothing/under/f13/gentlesuit
-	suit = /obj/item/clothing/suit/armor/f13/town/mayor
-	head = /obj/item/clothing/head/f13/town/mayor
+	shoes = 		/obj/item/clothing/shoes/laceup
+	uniform = /obj/item/clothing/under/suit/checkered
+	suit = /obj/item/clothing/suit/armor/f13/kit
+	head = /obj/item/clothing/head/fedora
 	backpack_contents = list(
 		/obj/item/clothing/head/f13/town/big = 1, \
 		/obj/item/storage/box/citizenship_permits = 1, \
