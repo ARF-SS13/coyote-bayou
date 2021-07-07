@@ -128,8 +128,8 @@ Mayor
 	faction = "Town"
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the sheriff and the mayor"
-	description = "Working alongside the Sheriff you've known them for a while, having worked with them under the previous Sheriff - you bagged many a bandit and raider together on the road. These days you patrol the areas outside of town, tracking down bounties on the run and keeping the settlers safe from harm."
+	supervisors = "Oasis Police Department"
+	description = "You've passed the training and tests to join the OPD, and your loyalty to the Chief is absolute - this is your new home, your family. This oasis of civilization will not fall as long as you breathe. Protect its citizens and property, for that is your new purpose."
 	selection_color = "#dcba97"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_DEN
@@ -150,11 +150,11 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	suit = 			/obj/item/clothing/suit/armor/f13/town/deputy
-	head =	/obj/item/clothing/head/f13/town/deputy
+	suit = 			/obj/item/clothing/suit/armor/f13/kit
+	head =	/obj/item/clothing/head/f13/police
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/f13/explorer
-	uniform = /obj/item/clothing/under/f13/cowboyb
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	uniform = /obj/item/clothing/under/f13/police
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/ammo_box/tube/m44=2, \
