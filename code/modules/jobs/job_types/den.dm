@@ -73,8 +73,8 @@ Mayor
 	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the mayor"
-	description = "As the chief law enforcer of the Town, your job is to keep the peace, settle local disputes, and keep your townsfolk safe and alive. Unfortunately, with the NCR and Legion closing in on the region, the Town is caught between a rock and a hard place, as with the war brings with it unsavory elements like the Khans and Outlaws. Sometimes the people you handle inside the town will be alive in cuffs, or dead on the street. Other times, they'll escape the limits of the town, to which you can put a bounty on their head for their capture, or have your deputies capture them. However, you must remember these three critical things: never leave the town undefended, keep the townsfolk alive and safe, and most importantly - keep your hand on your gun and don't you trust anyone."
+	supervisors = "Oasis Government"
+	description = "You are the Mayor's best friend, you helped them get where they are. While they handle civil matters, you've been rewarded with more hands-on work, as preferred. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out. You have nowhere left to go, if this town falls, so will you."
 	selection_color = "#d7b088"
 	exp_requirements = 1500
 
@@ -93,11 +93,11 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	ears = 			/obj/item/radio/headset/headset_town
-	uniform =  		/obj/item/clothing/under/f13/sheriff
+	uniform =  		/obj/item/clothing/under/f13/police
 	neck =			/obj/item/storage/belt/holster
-	shoes = 		/obj/item/clothing/shoes/f13/cowboy
-	suit = 			/obj/item/clothing/suit/armor/f13/town/sheriff
-	head = 			/obj/item/clothing/head/f13/town/sheriff
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	suit = 			/obj/item/clothing/suit/armor/vest/warden
+	head = 			/obj/item/clothing/head/collectable/police/cos
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
