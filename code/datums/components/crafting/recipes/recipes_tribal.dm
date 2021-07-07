@@ -259,6 +259,15 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribalwar/tribe_bow
+	name = "String Wooden Bow"
+	result = /obj/item/gun/ballistic/automatic/bonebow
+	time = 50
+	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
+				/obj/item/stack/sheet/bone = 10,
+				/obj/item/stack/sheet/sinew = 5)
+	tools = list(TOOL_WORKBENCH)
+
 /*
 /datum/crafting_recipe/warmace
 	name = "Carve Wooden Warmace"

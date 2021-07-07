@@ -167,8 +167,8 @@
 
 //Regular Bow
 /obj/item/gun/ballistic/automatic/tribalbow
-	name = "tribal bow"
-	desc = "A simple wooden bow with small pieces of turquiose."
+	name = "short bow"
+	desc = "A simple wooden bow with small pieces of turquiose, cheaply made and small enough to fit most bags, better then nothing I guess."
 	icon_state = "tribalbow"
 	item_state = "tribalbow"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -177,7 +177,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/tribalbow
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0.5
 	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
@@ -208,7 +208,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/bonebow
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 2
 	select = 0
 	extra_speed = 100
 	actions_types = list()
@@ -240,7 +240,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/sturdybow
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 1
 	select = 0
 	extra_speed = 300
 	actions_types = list()
@@ -272,7 +272,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/silverbow
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 1.5
 	select = 0
 	actions_types = list()
 	casing_ejector = FALSE
@@ -303,7 +303,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/crossbow
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 1.5
 	select = 0
 	extra_speed = 400
 	actions_types = list()

@@ -176,4 +176,6 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
+	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
+
