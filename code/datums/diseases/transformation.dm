@@ -307,7 +307,7 @@
 	var/list/le_list = list(\
 		/mob/living/simple_animal/hostile/centaur/strong = 8, \
 		/mob/living/simple_animal/hostile/abomination/weak = 7, \
-		/mob/living/simple_animal/hostile/ghoul/glowing = 4, \
+		/mob/living/simple_animal/hostile/ghoul/glowing/strong = 4, \
 		/mob/living/simple_animal/hostile/supermutant/playable = 2, \
 		/mob/living/carbon/human/species/ghoul = 1)
 	new_form = pickweight(le_list)
