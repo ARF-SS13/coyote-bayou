@@ -472,7 +472,7 @@ Paladin
 	name = "Frontline Junior Paladin"
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/aer12=1,
-		/obj/item/stock_parts/cell/ammo/ecp=2,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
@@ -490,7 +490,7 @@ Paladin
 	name = "Frontline Paladin"
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/aer12=1,
-		/obj/item/stock_parts/cell/ammo/ecp=2,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
