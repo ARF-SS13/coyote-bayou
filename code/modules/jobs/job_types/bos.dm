@@ -104,9 +104,10 @@ Head Paladin
 	exp_requirements = 1500
 
 	loadout_options = list(
-	/datum/outfit/loadout/sentstand, //Tribeam laser and 10mm pistol
-	///datum/outfit/loadout/sentvet, //Pulse rifle and AEP7
-	/datum/outfit/loadout/sentheavy //Gatling laser
+	/datum/outfit/loadout/sentstand, //Tribeam laser
+	/datum/outfit/loadout/sentvet, //Rangemaster
+	/datum/outfit/loadout/sentheavy, //Gauss + Glock
+	/datum/outfit/loadout/sentgat // Gatling
 	)
 
 	outfit = /datum/outfit/job/bos/f13sentinel
@@ -142,27 +143,36 @@ Head Paladin
 	id = 			/obj/item/card/id/dogtag
 	neck = 			/obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1)
+		/obj/item/kitchen/knife/combat=1,
+		/obj/item/gun/ballistic/automatic/pistol/n99=1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
+		)
 
 /datum/outfit/loadout/sentstand
 	name = "Shock Head Paladin"
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/stock_parts/cell/ammo/mfc=3
+		)
 
 /datum/outfit/loadout/sentvet
 	name = "Veteran Head Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/ionrifle=1,
-		/obj/item/stock_parts/cell/ammo/mfc=3,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
+		/obj/item/gun/ballistic/automatic/rangemaster=1,
+		/obj/item/ammo_box/magazine/m762/ext=3
 		)
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/m72=1,
+		/obj/item/ammo_box/magazine/m2mm=3,
+		/obj/item/gun/energy/laser/plasma/glock=1,
+		/obj/item/stock_parts/cell/ammo/ec=2
+		)
+
+/datum/outfit/loadout/sentgat
+	name = "Gatling Paladin"
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
 		)
@@ -220,25 +230,22 @@ Head Scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/shield/energy=1, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=2, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=3, \
 		)
 
 /datum/outfit/loadout/hsstand
 	name = "Medicinal Expert"
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/marksman=1,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
-		/obj/item/gun/medbeam=1
+	backpack_contents = list(	
+		/obj/item/gun/medbeam=1,
+		/obj/item/reagent_containers/hypospray/CMO=1
 		)
 
 /datum/outfit/loadout/hspract
 	name = "Administrative Leader"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/needler=1,
-		/obj/item/ammo_box/needleap=2,
-		/obj/item/reagent_containers/hypospray/CMO=1
+		/obj/item/gun/energy/laser/plasma/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2
 		)
 
 /*
@@ -261,9 +268,9 @@ Head Knight
 	exp_requirements = 1500
 
 	loadout_options = list(
-	/datum/outfit/loadout/capstand, //AER9 and 10mm pistol
-	/datum/outfit/loadout/capsap, //glock86a and 2 blocks of c4
-	/datum/outfit/loadout/capalt //Riot shotgun
+	/datum/outfit/loadout/capstand, //AER14
+	/datum/outfit/loadout/capsap, //Marksman
+	/datum/outfit/loadout/capalt //Neostead with buck because they don't know slugs are better
 	)
 
 	outfit = /datum/outfit/job/bos/f13knightcap
@@ -301,28 +308,22 @@ Head Knight
 /datum/outfit/loadout/capstand
 	name = "Standard"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer12=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
+		/obj/item/gun/energy/laser/aer14=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
 		)
 
 /datum/outfit/loadout/capsap
 	name = "Close Support"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/g11=1,
-		/obj/item/ammo_box/magazine/m473=2,
-		/obj/item/gun/energy/laser/plasma/glock=1,
-		/obj/item/stock_parts/cell/ammo/ec=2
+		/obj/item/gun/ballistic/automatic/marksman=1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=3,
 		)
 
 /datum/outfit/loadout/capalt
 	name = "Warden-Defender"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/police=1,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead=1,
 		/obj/item/ammo_box/shotgun/buck=2,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/gun/energy/laser/pistol=1
 		)
 
 /*
@@ -345,8 +346,9 @@ Star Paladin
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
-		/datum/outfit/loadout/spaladina, //M72 Gauss rifle and Glock
-		/datum/outfit/loadout/spaladinc, //AER14 and N99. No more gatling. Sorry gamers; will balance it further and make it obtainable through other means.
+		/datum/outfit/loadout/spaladina, //R91
+		/datum/outfit/loadout/spaladinc, //AER14
+		/datum/outfit/loadout/spaladinas, //Ripper + shield + big leagues
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -378,27 +380,30 @@ Star Paladin
 	neck = /obj/item/clothing/neck/cloak/bos/paladin
 
 	backpack_contents = list(
-		/obj/item/melee/powerfist=1, \
+		/obj/item/gun/energy/laser/plasma/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2,
 		)
 
 /datum/outfit/loadout/spaladina
 	name = "Long-Range Support Senior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/m72=1,
-		/obj/item/ammo_box/magazine/m2mm=3,
-		/obj/item/gun/energy/laser/plasma/glock=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=3
 		)
 
 /datum/outfit/loadout/spaladinc
 	name = "Mainline Senior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer12=1,
-		/obj/item/stock_parts/cell/ammo/mfc=2,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
+		/obj/item/gun/energy/laser/aer14=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2
 		)
-
+/datum/outfit/loadout/spaladinas
+	name = "Assault Senior Paladin"
+	backpack_contents = list(
+		/obj/item/melee/powered/ripper/prewar=1,
+		/obj/item/book/granter/trait/bigleagues=1,
+		/obj/item/shield/riot=1
+		)
 /*
 Paladin
 */
@@ -417,8 +422,8 @@ Paladin
 	exp_requirements = 450
 
 	loadout_options = list(
-	/datum/outfit/loadout/paladina, //Carbine and aep7
-	/datum/outfit/loadout/paladinb, //rcw and n99
+	/datum/outfit/loadout/paladina, //10mm SMG
+	/datum/outfit/loadout/paladinb, //AER12
 	/datum/outfit/loadout/paladinc,
 	/datum/outfit/loadout/paladind
 	)
@@ -456,40 +461,36 @@ Paladin
 /datum/outfit/loadout/paladina
 	name = "Firesupport Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_carbine=1,
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
 /datum/outfit/loadout/paladinb
 	name = "Frontline Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/rcw=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/gun/energy/laser/aer12=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
 /datum/outfit/loadout/paladinc
 	name = "Firesupport Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_carbine=1,
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
 /datum/outfit/loadout/paladind
 	name = "Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/rcw=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/gun/energy/laser/aer12=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
@@ -631,8 +632,8 @@ datum/job/bos/f13seniorknight
 	exp_requirements = 600
 
 	loadout_options = list(
-	/datum/outfit/loadout/sknighta, //AER9
-	/datum/outfit/loadout/sknightb, //lever shotgun and teleshield
+	/datum/outfit/loadout/sknighta, //RCW
+	/datum/outfit/loadout/sknightb, //Police shotgun
 	)
 
 	outfit = /datum/outfit/job/bos/f13seniorknight
@@ -656,16 +657,13 @@ datum/job/bos/f13seniorknight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/plasma/glock=1, \
-		/obj/item/stock_parts/cell/ammo/ec=2)
+	)
 
 /datum/outfit/loadout/sknighta
 	name = "Footknight"
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/rcw=1,
-		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/stock_parts/cell/ammo/ecp=2,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/stock_parts/cell/ammo/ecp=2
 		)
 
 /datum/outfit/loadout/sknightb
@@ -697,7 +695,7 @@ Knight
 
 	loadout_options = list(
 	/datum/outfit/loadout/knighta, //AER9
-	/datum/outfit/loadout/knightb, //lever shotgun and teleshield
+	/datum/outfit/loadout/knightb, //R82 
 	/datum/outfit/loadout/knightc,
 	/datum/outfit/loadout/knightd
 	)
@@ -721,8 +719,7 @@ Knight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1, \
-		/obj/item/stock_parts/cell/ammo/ec=2)
+	)
 
 /datum/outfit/loadout/knighta
 	name = "Junior Footknight"
@@ -736,8 +733,8 @@ Knight
 	name = "Junior Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/gun/ballistic/shotgun/trench=1,
-		/obj/item/ammo_box/shotgun/buck=2
+		/obj/item/gun/ballistic/automatic/service/r82=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2
 		)
 
 /datum/outfit/loadout/knightc
@@ -752,9 +749,8 @@ Knight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/gun/ballistic/shotgun/trench=1,
-		/obj/item/ammo_box/shotgun/buck=2,
-		/obj/item/shield/riot=1
+		/obj/item/gun/ballistic/automatic/service/r82=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2
 		)
 /*
 Initiate
