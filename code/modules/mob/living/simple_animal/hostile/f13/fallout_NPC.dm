@@ -697,6 +697,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 75
 	melee_damage_upper = 75
+	armour_penetration = 0.1
 	attack_verb_simple = "eviscerates"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	speed = -0.5
@@ -732,11 +733,11 @@
 
 /mob/living/simple_animal/hostile/abomination/weak // For FEV mutation.
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES // So you don't break walls
-	maxHealth = 300
-	health = 300
+	maxHealth = 500
+	health = 500
 	harm_intent_damage = 8
-	melee_damage_lower = 35
-	melee_damage_upper = 35
+	melee_damage_lower = 45
+	melee_damage_upper = 45
 	speed = 2
 
 /mob/living/simple_animal/hostile/abomhorror
