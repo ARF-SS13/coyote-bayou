@@ -10679,10 +10679,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"fEk" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
-/area/f13/building)
 "fEJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/instamash,
@@ -11443,6 +11439,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"fZl" = (
+/obj/effect/landmark/start/f13/farmer,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "fZm" = (
 /obj/item/kirbyplants,
 /obj/effect/decal/cleanable/dirt{
@@ -27050,6 +27050,10 @@
 /obj/item/clothing/suit/f13/autumn,
 /obj/item/clothing/gloves/f13/leather,
 /obj/item/clothing/head/f13/cowboy,
+/obj/item/clothing/under/suit/checkered,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/head/fedora,
+/obj/item/clothing/suit/armor/f13/kit,
 /turf/open/floor/wood/f13/carpet,
 /area/f13/building)
 "olN" = (
@@ -35055,6 +35059,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
+"sqU" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/building)
 "sqZ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -35647,10 +35655,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/ncr)
-"sHJ" = (
-/obj/effect/landmark/start/f13/shopkeeper,
-/turf/open/floor/carpet/red,
-/area/f13/building)
 "sHQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -35879,10 +35883,6 @@
 /mob/living/simple_animal/pet/dog/protectron,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
-"sNA" = (
-/obj/effect/landmark/start/f13/farmer,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "sNB" = (
 /obj/structure/fence/corner/wooden,
 /turf/open/indestructible/ground/outside/dirt{
@@ -38090,6 +38090,10 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
+"tSS" = (
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "tSV" = (
 /obj/item/ammo_casing/caseless{
 	dir = 4;
@@ -69030,7 +69034,7 @@ nIP
 uCO
 oGv
 xAm
-sHJ
+tSS
 rnU
 fyf
 dCV
@@ -71067,7 +71071,7 @@ uqa
 bPe
 cNo
 dwP
-fEk
+sqU
 fgd
 fuv
 fyf
@@ -76219,7 +76223,7 @@ hQg
 hHK
 mRD
 kfY
-sNA
+fZl
 tBN
 bpD
 sYX
@@ -78018,7 +78022,7 @@ iRC
 hNC
 jVE
 lsq
-sNA
+fZl
 tBN
 bpD
 sYX
