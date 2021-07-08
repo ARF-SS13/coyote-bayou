@@ -461,8 +461,8 @@ Paladin
 /datum/outfit/loadout/paladina
 	name = "Firesupport Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/smg10mm=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=1,
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
@@ -479,8 +479,8 @@ Paladin
 /datum/outfit/loadout/paladinc
 	name = "Firesupport Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/smg10mm=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=1,
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin=1
@@ -691,7 +691,7 @@ Knight
 
 	loadout_options = list(
 	/datum/outfit/loadout/knighta, //AER9
-	/datum/outfit/loadout/knightb, //R91 (Pretty much a service rifle)
+	/datum/outfit/loadout/knightb, //R82 
 	/datum/outfit/loadout/knightc,
 	/datum/outfit/loadout/knightd
 	)
@@ -729,7 +729,7 @@ Knight
 	name = "Junior Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/gun/ballistic/automatic/service/r82=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2
 		)
 
@@ -745,7 +745,7 @@ Knight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/gun/ballistic/automatic/service/r82=1,
 		/obj/item/ammo_box/magazine/m556/rifle=2
 		)
 /*
