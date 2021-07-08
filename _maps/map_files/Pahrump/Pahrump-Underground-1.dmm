@@ -305,7 +305,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "amC" = (
-/obj/effect/landmark/start/f13/settler,
+/obj/effect/landmark/start/f13/prospector,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "amM" = (
@@ -3010,7 +3010,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/settler,
+/obj/effect/landmark/start/f13/prospector,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "cMJ" = (
@@ -14986,6 +14986,7 @@
 /obj/item/clothing/gloves/f13/military,
 /obj/item/clothing/suit/armor/vest/warden,
 /obj/item/megaphone,
+/obj/item/clothing/head/collectable/police/cos,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "miy" = (
@@ -20757,6 +20758,15 @@
 	icon_state = "purplefull"
 	},
 /area/f13/clinic)
+"qtG" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/followers)
 "qtL" = (
 /turf/closed/mineral/random/low_chance,
 /turf/closed/mineral/random/low_chance,
@@ -64663,11 +64673,11 @@ uoO
 uoO
 lPQ
 gSt
-gFu
+qtG
 hsK
 lPQ
 hFM
-gFu
+qtG
 ias
 lPQ
 eLE
@@ -66210,7 +66220,7 @@ gFu
 lPQ
 hIq
 hNi
-gFu
+qtG
 lPQ
 eLE
 uoO

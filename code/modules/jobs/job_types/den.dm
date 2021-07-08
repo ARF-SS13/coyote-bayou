@@ -53,10 +53,10 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/suit/checkered
-	suit = /obj/item/clothing/suit/armor/f13/kit
-	head = /obj/item/clothing/head/fedora
+	shoes = 		/obj/item/clothing/shoes/f13/tan
+	uniform = /obj/item/clothing/under/f13/gentlesuit
+	suit = /obj/item/clothing/suit/armor/f13/town/mayor
+	head = /obj/item/clothing/head/f13/town/mayor
 	backpack_contents = list(
 		/obj/item/clothing/head/f13/town/big = 1, \
 		/obj/item/storage/box/citizenship_permits = 1, \
@@ -93,11 +93,11 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	ears = 			/obj/item/radio/headset/headset_town
-	uniform =  		/obj/item/clothing/under/f13/police
+	uniform =  		/obj/item/clothing/under/f13/sheriff
 	neck =			/obj/item/storage/belt/holster
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	suit = 			/obj/item/clothing/suit/armor/vest/warden
-	head = 			/obj/item/clothing/head/collectable/police/cos
+	shoes = 		/obj/item/clothing/shoes/f13/cowboy
+	suit = 			/obj/item/clothing/suit/armor/f13/town/sheriff
+	head = 			/obj/item/clothing/head/f13/town/sheriff
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
@@ -150,11 +150,11 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	suit = 			/obj/item/clothing/suit/armor/f13/kit
-	head =	/obj/item/clothing/head/f13/police
+	suit = 			/obj/item/clothing/suit/armor/f13/town/deputy
+	head =	/obj/item/clothing/head/f13/town/deputy
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	uniform = /obj/item/clothing/under/f13/police
+	shoes = 		/obj/item/clothing/shoes/f13/explorer
+	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/ammo_box/tube/m44=2, \
@@ -174,10 +174,10 @@ Mayor
 	flag = F13FARMER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "law and order"
-	description = "As a Farmer, you believe that the frontier holds abundant opportunities for you to encroach and take advantage of. Enshrouded in safety by the walls of Oasis, you enact out your skills of cultivation and husbandry, making you a vital backbone business of the town in growing medicines, crops and livestock, focusing on thriving and profiting off of this for your own intrinsic goals. As per your terms of agreement you should follow the law and order of the town, maintaining a distinct amount of peace from the wild wasteland that civilisation hopes to outrun..."
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "Oasis Government & Police Department"
+	description = "Growing up in the Oasis, you have an endless love for the sacred Oak, for nowhere in the valley is the soil as fertile, the bounty as rich. Behind the safety of the walls, you grow crops, medicines, and raise livestock. The community depends on you, you are a manifestation of the Oak’s will."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -220,10 +220,10 @@ Mayor
 	flag = F13PROSPECTOR
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "law and order"
-	description = "Prospecting is a complicated business, some call it scrounging or looting, but there is more to it then sifting through rubble - few can boast the skills you posess in mining and delving through the ruins of pre-war America. Not many survive this line of business and the pay has always been uncertain, but perhaps today you'll find strike gold."
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "Oasis Government & Police Department"
+	description = "Prospecting is a complicated business, some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the skills you possess in mining and delving through the ruins of the fallen empire. Not many survive this line of business, and the pay has always been uncertain, but perhaps today you'll strike gold."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13prospector
@@ -472,8 +472,8 @@ Mayor
 	flag = F13BARKEEP
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Oasis Government & Police Department"
 	description = "As the innkeeper, you are responsible for comfort and full bellies in town. Hidden safely away behind the town walls, you are free to refine your skills without always watching your back. As a citizen of the town you must follow its laws. However the inn is your private business, and you decide who is allowed to dine or reside in your hospitality."
 	selection_color = "#dcba97"
@@ -545,8 +545,8 @@ Mayor
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 16
-	spawn_positions = 16
+	total_positions = 8
+	spawn_positions = 8
 	supervisors = "Oasis Government & Police Department"
 	description = "You are a citizen living in the Town of Oasis - as the name suggests, it is a somewhat safe place amidst the chaos of the continent. Treat it as such, be sure to follow the laws of the land and do not associate with those who have a tendency not to, or you are likely to face exile. Remember that Oasis is your home, and that you should not be leaving to explore the Wastes."
 	selection_color = "#dcba97"
@@ -753,8 +753,8 @@ Mayor
 	flag = F13SHOPKEEPER
 	department_flag = DEN
 	faction = "Town"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "free hand of the market"
 	description = "The greed of the United States survived better than its people. You are an organ of this greed. Ensure its continuation."
 	selection_color = "#dcba97"

@@ -5460,7 +5460,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood)
 "cXc" = (
-/obj/effect/landmark/start/f13/settler,
+/obj/effect/landmark/start/f13/farmer,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cXe" = (
@@ -10679,6 +10679,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"fEk" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/building)
 "fEJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/instamash,
@@ -35643,6 +35647,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/ncr)
+"sHJ" = (
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "sHQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -35871,6 +35879,10 @@
 /mob/living/simple_animal/pet/dog/protectron,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
+"sNA" = (
+/obj/effect/landmark/start/f13/farmer,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "sNB" = (
 /obj/structure/fence/corner/wooden,
 /turf/open/indestructible/ground/outside/dirt{
@@ -69018,7 +69030,7 @@ nIP
 uCO
 oGv
 xAm
-xAm
+sHJ
 rnU
 fyf
 dCV
@@ -71055,7 +71067,7 @@ uqa
 bPe
 cNo
 dwP
-iOg
+fEk
 fgd
 fuv
 fyf
@@ -76207,7 +76219,7 @@ hQg
 hHK
 mRD
 kfY
-hLs
+sNA
 tBN
 bpD
 sYX
@@ -78006,7 +78018,7 @@ iRC
 hNC
 jVE
 lsq
-hLs
+sNA
 tBN
 bpD
 sYX
