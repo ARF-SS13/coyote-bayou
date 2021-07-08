@@ -91,6 +91,17 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/anvil
+	name = "Anvil"
+	result = /obj/structure/anvil/obtainable/basic
+	time = 450
+	reqs = list(/obj/item/stack/sheet/metal = 50,
+				/obj/item/stack/rods = 5,
+				/obj/item/stack/sheet/mineral/titanium = 15)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER, TOOL_CROWBAR)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 /datum/crafting_recipe/sandvil
 	name = "Sandstone Anvil"
 	result = /obj/structure/anvil/obtainable/sandstone

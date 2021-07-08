@@ -123,6 +123,10 @@
 	workpiece_state = WORKPIECE_INPROGRESS
 	var/stepdone = input(user, "How would you like to work the metal?") in shapingsteps
 	var/steptime = 50
+	if(!locate(src) in range(1, user))
+		busy = FALSE
+		F.busy = FALSE
+		return FALSE
 	if(user.mind.skill_holder)
 		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/10 + 1
 		steptime = 50 / skillmod
