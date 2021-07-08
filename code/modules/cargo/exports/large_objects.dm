@@ -54,11 +54,6 @@
 	unit_name = "beer keg"
 	export_types = list(/obj/structure/reagent_dispensers/beerkeg)
 
-/datum/export/large/pipedispenser
-	cost = 500
-	unit_name = "pipe dispenser"
-	export_types = list(/obj/machinery/pipedispenser)
-
 /datum/export/large/emitter
 	cost = 550
 	unit_name = "emitter"

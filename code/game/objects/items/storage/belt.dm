@@ -453,7 +453,6 @@
 		/obj/item/lightreplacer,
 		/obj/item/rcd_ammo,
 		/obj/item/construction,
-		/obj/item/pipe_dispenser,
 		/obj/item/stack/rods,
 		/obj/item/stack/tile/plasteel,
 		/obj/item/grenade/chem_grenade/metalfoam,
