@@ -18,7 +18,7 @@
 /datum/atom_hud/data
 
 /datum/atom_hud/data/human/medical
-	hud_icons = list(STATUS_HUD, HEALTH_HUD, NANITE_HUD, RAD_HUD)
+	hud_icons = list(STATUS_HUD, HEALTH_HUD, NANITE_HUD, RAD_HUD, ONLINE_HUD)
 
 /datum/atom_hud/data/human/medical/basic
 
@@ -98,6 +98,7 @@
 				threat = D.severity
 	return threat
 
+
 //helper for getting the appropriate health status
 /proc/RoundHealth(mob/living/M)
 	if(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_FAKEDEATH)))
@@ -162,6 +163,21 @@
 	var/icon/I = icon(icon, icon_state, dir)
 	holder.pixel_y = I.Height() - world.icon_size
 	med_hud_set_radstatus()
+	med_hud_client_check()
+
+//Check if has client or not bruh
+/mob/living/proc/med_hud_client_check()
+	var/image/onlineholder = hud_list[ONLINE_HUD]
+	var/icon/I = icon(icon, icon_state, dir)
+	onlineholder.pixel_y = I.Height() - world.icon_size
+	if(istype(src, /mob/living/carbon/human) && client)
+		onlineholder.icon_state = "online"
+	else if(!istype(src, /mob/living/carbon/human) && client)
+		onlineholder.icon_state = "online"
+	else if (istype(src, /mob/living/carbon/human) && !client)
+		onlineholder.icon_state = "offline"
+	else
+		onlineholder.icon_state = "none"
 
 //for carbon suit sensors
 /mob/living/carbon/med_hud_set_health()

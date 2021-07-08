@@ -2,7 +2,7 @@
 	gender = MALE
 	pressure_resistance = 15
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
-	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,GLAND_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD,RAD_HUD)
+	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,GLAND_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD,RAD_HUD,ONLINE_HUD)
 	has_limbs = 1
 	held_items = list(null, null)
 	var/list/stomach_contents		= list()
@@ -77,4 +77,3 @@
 
 	/// Timer id of any transformation
 	var/transformation_timer
-

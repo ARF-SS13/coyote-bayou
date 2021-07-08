@@ -37,6 +37,7 @@
 		if(working)
 			to_chat(user, "You heat the [notsword] in the [src].")
 			notsword.workability = "shapeable"
+			I.on_attack_hand(user)
 		else
 			to_chat(user, "The furnace isn't working!.")
 	else

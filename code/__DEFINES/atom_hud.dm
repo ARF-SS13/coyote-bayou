@@ -26,6 +26,7 @@
 #define RAD_HUD			"22"	//radation alerts for medical huds
 //for antag huds. these are used at the /mob level
 #define ANTAG_HUD		"23"
+#define ONLINE_HUD		"24"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
