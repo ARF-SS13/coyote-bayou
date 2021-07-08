@@ -316,10 +316,9 @@
 	. = ..()
 
 /datum/disease/transformation/mutant/stage_act()
-	. = ..()
-	if(!.)
-		return
+	..()
 
+	affected_mob.adjustCloneLoss(-4,0) // Don't die while you are mutating.
 	switch(stage)
 		if(2)
 			if (prob(8))

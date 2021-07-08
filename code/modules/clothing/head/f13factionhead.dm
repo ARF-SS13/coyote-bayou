@@ -209,12 +209,11 @@
 	armor = list("tier" = 4)
 
 /obj/item/clothing/head/helmet/f13/helmet/enclave/officer
-	name = "officer hat"
-	desc = "(V) Wheeled hat with kevlar cap under."
+	name = "enclave officer hat"
+	desc = "(VII) Wheeled hat with a cap made of light-weight alloys beneath."
 	icon_state = "hat_enclave_officer"
 	item_state = "hat_enclave_officer"
-	armor = list("tier" = 5)
-
+	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30) // On par with BoS Knight
 
 //////////
 //LEGION//

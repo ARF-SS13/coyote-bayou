@@ -5,8 +5,8 @@
 /// How much someone is slowed by piggybacking a human
 #define PIGGYBACK_CARRY_SLOWDOWN 0
 /// slowdown when in softcrit. Note that crawling slowdown will also apply at the same time!
-#define SOFTCRIT_ADD_SLOWDOWN 2
+#define SOFTCRIT_ADD_SLOWDOWN 1.2
 /// slowdown when crawling
-#define CRAWLING_ADD_SLOWDOWN 4
+#define CRAWLING_ADD_SLOWDOWN 7
 /// slowdown while scoped in
 #define SCOPED_IN_ADD_SLOWDOWN 4

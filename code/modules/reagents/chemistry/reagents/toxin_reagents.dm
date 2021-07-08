@@ -57,7 +57,6 @@
 	return ..()
 
 /datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
-	C.adjustCloneLoss(-4,0) // Don't die while you are mutating.
 	C.ForceContractDisease(new /datum/disease/transformation/mutant(), FALSE, TRUE)
 
 /datum/reagent/toxin/mutagen
