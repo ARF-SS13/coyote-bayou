@@ -868,7 +868,7 @@ Raider
 
 //vigilante
 
-
+/*
 /datum/job/wasteland/f13vigilante
 	title = "Vigilante"
 	flag = F13VIGILANTE
@@ -938,7 +938,7 @@ Raider
 	backpack_contents = list(
 							/obj/item/ammo_box/c4570/explosive=2
 							)
-
+*/
 /datum/job/wasteland/f13adminboos
 	title = "Death"
 	flag = F13ADMINBOOS
@@ -953,7 +953,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13adminboos
 	name = "Death"
-	jobtype = /datum/job/wasteland/f13vigilante
+	jobtype = /datum/job/wasteland/f13wastelander
 	id = /obj/item/card/id/dogtag/vigilante
 	belt = /obj/item/storage/belt/military
 	shoes = /obj/item/clothing/shoes/f13/explorer
