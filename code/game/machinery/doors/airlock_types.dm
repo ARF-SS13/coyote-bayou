@@ -388,6 +388,7 @@
 	wiretypepath = /datum/wires/airlock/secure
 	explosion_block = 2
 	normal_integrity = 400 // reverse engieneerd: 400 * 1.5 (sec lvl 6) = 600 = original
+	damage_deflection = 44
 	security_level = 6
 
 //////////////////////////////////
@@ -425,7 +426,7 @@
 	explosion_block = 2
 	normal_integrity = 500
 	security_level = 1
-	damage_deflection = 30
+	damage_deflection = 38
 
 //////////////////////////////////
 /*
