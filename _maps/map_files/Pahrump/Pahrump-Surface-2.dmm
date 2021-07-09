@@ -1676,6 +1676,7 @@
 /area/f13/building)
 "aRp" = (
 /obj/machinery/light/broken,
+/obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/bar)
 "aRF" = (
@@ -9916,6 +9917,16 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"fiK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/decoration/smokeold{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bar)
 "fiY" = (
 /obj/structure/chair/office/dark{
 	dir = 4;
@@ -45172,6 +45183,7 @@
 "xkC" = (
 /obj/machinery/light/small/broken,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -60231,8 +60243,8 @@ gcK
 gcK
 gcK
 kBU
-tAg
-wXT
+kBU
+fiK
 wXT
 bCl
 orm

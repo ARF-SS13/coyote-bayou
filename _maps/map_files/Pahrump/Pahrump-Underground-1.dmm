@@ -3000,6 +3000,11 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"cMf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "cMl" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/f13{
@@ -3828,6 +3833,7 @@
 "duE" = (
 /obj/machinery/light/small/broken,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -22546,6 +22552,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -23467,6 +23474,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -25695,6 +25703,7 @@
 	},
 /obj/item/trash/plate,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -29354,6 +29363,7 @@
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xuF" = (
@@ -58525,7 +58535,7 @@ vuj
 lWy
 vuj
 vuj
-vuj
+cMf
 jmN
 eLE
 uoO
