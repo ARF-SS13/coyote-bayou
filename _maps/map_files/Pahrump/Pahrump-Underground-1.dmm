@@ -20758,15 +20758,6 @@
 	icon_state = "purplefull"
 	},
 /area/f13/clinic)
-"qtG" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/effect/landmark/start/f13/followersvolunteer,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/followers)
 "qtL" = (
 /turf/closed/mineral/random/low_chance,
 /turf/closed/mineral/random/low_chance,
@@ -25736,6 +25727,15 @@
 	icon_state = "plating"
 	},
 /area/f13/bunker)
+"uev" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/followers)
 "ueM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -58495,7 +58495,7 @@ jcn
 lnr
 uoO
 uoO
-uoO
+jPC
 uoO
 uoO
 uoO
@@ -64673,11 +64673,11 @@ uoO
 uoO
 lPQ
 gSt
-qtG
+uev
 hsK
 lPQ
 hFM
-qtG
+uev
 ias
 lPQ
 eLE
@@ -66220,7 +66220,7 @@ gFu
 lPQ
 hIq
 hNi
-qtG
+uev
 lPQ
 eLE
 uoO
