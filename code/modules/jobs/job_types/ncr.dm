@@ -109,6 +109,9 @@ Captain
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
@@ -313,7 +316,7 @@ Logistics Officer
 Sergeant First Class
 
 /datum/job/ncr/f13firstsergeant
-	title = "NCR Sergeant First Class" 
+	title = "NCR Sergeant First Class"
 	flag = F13FIRSTSERGEANT
 	total_positions = 0
 	spawn_positions = 0
@@ -364,7 +367,7 @@ Sergeant
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
 	exp_requirements = 600
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/sergeantrifleman,
 	/datum/outfit/loadout/sergeantrecon,
@@ -393,7 +396,7 @@ Sergeant
 
 /datum/outfit/loadout/sergeantrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service 
+	suit_store = /obj/item/gun/ballistic/automatic/service
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
@@ -401,7 +404,7 @@ Sergeant
 
 /datum/outfit/loadout/sergeantrecon
 	name = "Pathfinder Squad Leader"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	head 			= /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/book/granter/trait/trekking=1,
@@ -519,10 +522,10 @@ Corporal
 
 /datum/outfit/loadout/corporalspotter
 	name = "Spotter"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	head = /obj/item/clothing/head/beret/ncr_recon/worn
 	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_eight=1, 
+		/obj/item/storage/box/ration/menu_eight=1,
 		/obj/item/binoculars=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
 
@@ -558,7 +561,7 @@ Corporal
 	head			= /obj/item/clothing/head/f13/ncr/steelpot_med
 	gloves			= /obj/item/clothing/gloves/color/latex/nitrile
 	accessory		= /obj/item/clothing/accessory/armband/med/ncr
-	suit_store		= /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	suit_store		= /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	mask 			= /obj/item/clothing/mask/surgical
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -623,9 +626,9 @@ Combat Engineer
 		/obj/item/storage/bag/money/small/ncrenlisted=1 \
 		)
 
-/datum/outfit/loadout/combatengineerbuilder	
+/datum/outfit/loadout/combatengineerbuilder
 	name = "Construction Specialist"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	head = /obj/item/clothing/head/f13/ncr/goggles
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
 	glasses	= /obj/item/clothing/glasses/welding
@@ -712,7 +715,7 @@ Trooper
 
 /datum/outfit/loadout/trooperrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n 
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
 		/obj/item/storage/box/ration/menu_two=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
@@ -918,7 +921,7 @@ Veteran Ranger
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	
+
 	/*
 	var/datum/martial_art/rangertakedown/RT = new
 	RT.teach(H)

@@ -93,6 +93,9 @@
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name =			"Legate"
@@ -138,7 +141,7 @@
 	/datum/outfit/loadout/rangerhunter, //hunting revolver and ripper
 	/datum/outfit/loadout/centurion //marksman and powerfist
 	)
-/*	/datum/outfit/loadout/berserkercenturion 
+/*	/datum/outfit/loadout/berserkercenturion
 kept here incase it gets reworked later*/
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -149,6 +152,9 @@ kept here incase it gets reworked later*/
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = 			"Legion Centurion"
@@ -200,8 +206,8 @@ kept here incase it gets reworked later*/
 					/obj/item/melee/unarmed/sappers=1,
 					/obj/item/book/granter/martial/berserker=1,
 					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2)
-					
-					
+
+
 commented out pending rework*/
 
 
@@ -322,7 +328,7 @@ commented out pending rework*/
 	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 					/obj/item/ammo_box/tube/m44=2,
-					/obj/item/claymore/machete/gladius=1)					
+					/obj/item/claymore/machete/gladius=1)
 
 
 // RECRUIT DECANUS
