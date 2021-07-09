@@ -12493,10 +12493,6 @@
 	name = "Head Knight's PDA"
 	},
 /obj/item/storage/briefcase,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate{
-	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking officer of some lost prewar army.";
-	name = "old officer's vest"
-	},
 /obj/item/clothing/head/HoS/beret/syndicate{
 	name = "officer's beret"
 	},
@@ -15305,15 +15301,8 @@
 	pixel_x = 21;
 	pixel_y = 5
 	},
-/obj/item/book/granter/trait/pa_wear{
-	pixel_x = 5;
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/trait/pa_wear{
-	pixel_x = -3;
-	pixel_y = 7
-	},
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/wood/f13/carpet,
 /area/f13/brotherhood/offices1st)
 "mpE" = (
