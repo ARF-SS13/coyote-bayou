@@ -10,7 +10,7 @@
 	var/tier  //1 to 11. Tier 1 - thin clothing, 2 - thick clothing , 3 - armored jackets, 4 - low quality/light armor, 5 - medium qual armor, 6 - medium high, 7 - high, 8 - exceptional/low qual PA, 9 - t45, 10 - t51, 11 - t60
 	var/linemelee
 	var/linebullet
-	var/linelaser 
+	var/linelaser
 	var/melee
 	var/bullet
 	var/laser
@@ -26,7 +26,7 @@
 	var/tierline = list(25, 50, 75, 100, 125, 150, 200, 250, 300, 350, 400, 500, 600) //new
 
 /datum/armor/New(tier = 0, linemelee = 0, linebullet = 0, linelaser = 0, melee = 0, bullet = 0, laser = 0,  energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0, wound = 0)
-	
+
 	if(tier) //ASSIGNS ARMOR VALUES BASED ON TIER, IT WILL USE ARMOR VALUES INSTEAD OF THE TIER FOR THAT VALUE IF THE ARMOR VALUE IS PRESENT
 		linemelee = linemelee+tierline[tier] //If an armor has a tier value, having a linemelee value will add onto that tier value rather than replace it.
 		linebullet = linebullet+tierline[tier]

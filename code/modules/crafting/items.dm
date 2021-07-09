@@ -1178,7 +1178,6 @@
 	A.armor.linelaser += tiermod*2
 	A.name = prefix + A.name
 	A.tinkered += 1
-	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1220,7 +1219,6 @@
 	H.armor.linelaser += tiermod*2
 	H.name = prefix + H.name
 	H.tinkered += 1
-	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
