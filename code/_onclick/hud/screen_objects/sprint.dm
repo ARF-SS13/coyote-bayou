@@ -42,7 +42,7 @@
 
 /obj/screen/sprint_buffer
 	name = "sprint buffer"
-	icon = 'icons/effects/progessbar.dmi'
+	icon = 'icons/fallout/UI/sprintbar.dmi'
 	icon_state = "prog_bar_100"
 
 /obj/screen/sprint_buffer/Click()
