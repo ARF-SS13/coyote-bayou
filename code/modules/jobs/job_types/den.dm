@@ -713,7 +713,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
 	/obj/item/cane=1,
-	/obj/item/gun/ballistic/revolver/zipgun=1,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun=1
 	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1

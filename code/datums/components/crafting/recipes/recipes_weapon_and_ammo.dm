@@ -236,40 +236,41 @@
 
 
 
-//////////////////
-///GUNS CRAFTING//
-//////////////////
+/////////////////
+///GUN CRAFTING//
+/////////////////
 
 //Hobo Guns
 /datum/crafting_recipe/zipgun
-	name = "Zip Gun (9mm)"
-	result = /obj/item/gun/ballistic/revolver/zipgun
+	name = "Zip gun (9mm)"
+	result = /obj/item/gun/ballistic/automatic/hobo/zipgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/ammo_casing/c9mm = 6,
+				/obj/item/crafting/wonderglue = 1,
 				/obj/item/stack/rods = 1,
+				/obj/item/ammo_casing/c9mm = 5,
 				/obj/item/stack/crafting/metalparts = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/piperifle
-	name = "Pepperbox Gun (10mm)"
-	result = /obj/item/gun/ballistic/revolver/pipe_rifle
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/ammo_casing/c10mm = 6,
+/datum/crafting_recipe/pepperbox
+	name = "Pepperbox gun (10mm)"
+	result = /obj/item/gun/ballistic/revolver/hobo/pepperbox
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
 				/obj/item/stack/crafting/metalparts = 1,
-				/obj/item/stack/rods = 6)
+				/obj/item/ammo_casing/c10mm = 4,
+				/obj/item/stack/rods = 4)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/autopiperifle
-	name = "Pipe Rifle (.357)"
+	name = "Auto-pipe rifle (.357)"
 	result = /obj/item/gun/ballistic/automatic/autopipe
-	reqs = list(/datum/reagent/blackpowder = 30,
-	/obj/item/stack/crafting/metalparts = 1,
+	reqs = list(/obj/item/ammo_casing/a357 = 30,
+	/obj/item/stack/crafting/metalparts = 2,
 	/obj/item/crafting/duct_tape = 1,
 	/obj/item/stack/sheet/cloth = 1,
 	/obj/item/stack/sheet/mineral/wood = 2)
@@ -278,22 +279,32 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/slamfireshotgun
-	name = "Slamfire Shotgun"
+/datum/crafting_recipe/gun/shotgunbat
+	name = "Shotgun bat"
 	result = /obj/item/gun/ballistic/revolver/single_shotgun
 	reqs = list(/obj/item/screwdriver = 1,
+	/obj/item/twohanded/baseball = 1,
 	/obj/item/ammo_casing/shotgun = 1,
-	/obj/item/stack/rods = 1,
-	/obj/item/stack/sheet/mineral/wood = 2)
+	/obj/item/stack/rods = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/winchesterrebored
+	name = "Winchester rebored (.308)"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/gun/ballistic/revolver/widowmaker = 1,
+				/obj/item/stack/rods = 2)
+	tools = list(TOOL_WORKBENCH, TOOL_DRILL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/plasmamusket //lasmusket ammo
-	name = "Plasma Musket"
-	result = /obj/item/gun/ballistic/rifle/plasmacaster
-	reqs = list(/obj/item/gun/ballistic/rifle/lasmusket = 1,
+	name = "Plasma musket"
+	result = /obj/item/gun/ballistic/rifle/hobo/plasmacaster
+	reqs = list(/obj/item/gun/ballistic/rifle/hobo/lasmusket = 1,
 				/obj/item/advanced_crafting_components/conductors = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
 	time = 20
@@ -301,10 +312,10 @@
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/lasmusket
-	name = "Laser Musket"
-	result = /obj/item/gun/ballistic/rifle/lasmusket
+	name = "Laser musket"
+	result = /obj/item/gun/ballistic/rifle/hobo/lasmusket
 	reqs = list(/obj/item/stack/crafting/electronicparts = 2,
-	/obj/item/gun/ballistic/revolver/pipe_rifle = 1,
+	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 1,
 	/obj/item/reagent_containers/food/drinks/bottle = 1,
 	/obj/item/stack/cable_coil = 3)
 	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)

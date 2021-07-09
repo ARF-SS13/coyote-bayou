@@ -24,6 +24,16 @@
 	start_empty = 1
 
 //9mm
+/obj/item/ammo_box/magazine/zipgun
+	name = "Zip gun clip (9mm)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "zip"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 5
+	multiple_sprites = 2
+
+//9mm
 /obj/item/ammo_box/magazine/m9mm
 	name = "9mm pistol magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
