@@ -4733,13 +4733,6 @@
 /area/f13/brotherhood/leisure)
 "ejQ" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/syndicate/brotherhood,
-/obj/item/storage/belt/holster,
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat/swat,
-/obj/item/storage/belt/military,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -12477,11 +12470,6 @@
 /area/f13/tcoms)
 "kbH" = (
 /obj/item/bedsheet/hos,
-/obj/item/toy/figure/warden{
-	desc = "A refurbished military action figure made to look like a member of the Brotherhood of Steel.";
-	name = "Head Knight Action Figure";
-	toysay = "Victory is our tradition!"
-	},
 /obj/structure/bed,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
@@ -13376,6 +13364,7 @@
 	pixel_x = -3;
 	pixel_y = 15
 	},
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "kOc" = (
