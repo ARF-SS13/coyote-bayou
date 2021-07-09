@@ -158,8 +158,8 @@
 /area/ruin/powered/beach)
 "aF" = (
 /obj/machinery/vending/boozeomat{
-	set_obj_flags = "EMAGGED";
-	req_access_txt = "0"
+	req_access_txt = "0";
+	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
@@ -277,12 +277,6 @@
 	req_access = null
 	},
 /turf/open/floor/wood,
-/area/ruin/powered/beach)
-"be" = (
-//obj/vehicle/ridden/scooter/skateboard{
-//	dir = 4
-//	},
-/turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "bg" = (
 /obj/structure/sign/barsign,
@@ -546,8 +540,8 @@
 "rV" = (
 /obj/effect/turf_decal/sand,
 /obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_y = -3;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = -3
 	},
 /turf/open/floor/plating,
 /area/ruin/powered/beach)
@@ -1453,7 +1447,7 @@ ar
 ar
 aq
 aV
-be
+ar
 ar
 ch
 ar

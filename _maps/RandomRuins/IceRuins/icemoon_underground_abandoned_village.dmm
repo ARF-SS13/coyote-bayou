@@ -40,7 +40,7 @@
 "cj" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/fishandchips,
-/turf/open/floor/plasteel/checker,
+/turf/open/space/basic,
 /area/ruin/powered)
 "cB" = (
 /obj/effect/decal/cleanable/blood,
@@ -97,14 +97,8 @@
 /obj/structure/sign/poster/official/nanotrasen_logo,
 /turf/closed/wall,
 /area/icemoon/underground/explored)
-"ks" = (
-/obj/structure/flora/rock/icy,
-/obj/effect/mob_spawn/human/corpse/assistant,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/explored)
 "la" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
-/obj/effect/mob_spawn/human/corpse/assistant,
 /mob/living/simple_animal/hostile/skeleton/eskimo{
 	name = "Village Hunter"
 	},
@@ -191,7 +185,7 @@
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
 /obj/item/reagent_containers/food/condiment/pack/ketchup,
-/turf/open/floor/plasteel/checker,
+/turf/open/space/basic,
 /area/ruin/powered)
 "sG" = (
 /obj/effect/decal/cleanable/vomit,
@@ -209,7 +203,7 @@
 	pixel_x = -12
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/checker,
+/turf/open/space/basic,
 /area/ruin/powered)
 "tg" = (
 /obj/structure/fence{
@@ -326,7 +320,6 @@
 "Cl" = (
 /obj/structure/sacrificealtar,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/kitchen/knife/bloodletter,
 /turf/open/floor/engine/cult,
 /area/ruin/powered)
 "Dm" = (
@@ -673,7 +666,7 @@ Og
 Ei
 Ze
 iB
-ks
+oF
 Ei
 Ze
 Ei
