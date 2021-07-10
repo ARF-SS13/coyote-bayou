@@ -696,13 +696,14 @@
 				)
 
 /obj/effect/spawner/bundle/f13/zipgun
-	name = "zipgun spawner"
+	name = "zip gun spawner"
 	items = list(
-				/obj/item/gun/ballistic/revolver/zipgun
+				/obj/item/gun/ballistic/automatic/hobo/zipgun,
+				/obj/item/ammo_box/magazine/zipgun
 				)
 
 /obj/effect/spawner/bundle/f13/single_shotgun
-	name = "single slam-fire shotgun and ammo spawner"
+	name = "shotgun bat and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
 				/obj/item/ammo_box/shotgun/buck
@@ -799,9 +800,9 @@
 	)
 
 /obj/effect/spawner/bundle/f13/piperifle
-	name = "pipe rifle spawner"
+	name = "pepperbox gun spawner"
 	items = list(
-				/obj/item/gun/ballistic/revolver/pipe_rifle
+				/obj/item/gun/ballistic/revolver/hobo/pepperbox
 				)
 /obj/effect/spawner/bundle/f13/huntingshotgun
 	name = "hunting shotgun and ammo spawner"

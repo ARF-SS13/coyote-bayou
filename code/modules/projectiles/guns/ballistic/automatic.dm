@@ -162,7 +162,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_HEAVY //Automatic fire and onehanded use mix poorly.
 	slowdown = 0.2
-	fire_delay = 4 //most SMGs are pretty rapid fire
+	fire_delay = 3.75
 	burst_shot_delay = 3
 	spread = 10
 	force = 12 //Less good for bashing since smaller than rifles
@@ -206,7 +206,7 @@
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	fire_delay = 4
+	spread = 8
 	burst_shot_delay = 3.25 //Slow rate of fire
 	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
@@ -221,21 +221,22 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 10
-			fire_delay = 4.5
+			spread = 8
+			fire_delay =3.75
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 		if(1)
 			select = 0
 			burst_size = 1
-			fire_delay = 4
+			fire_delay = 3.5
 			spread = 2
 			weapon_weight = WEAPON_MEDIUM
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
+
 
 //10mm SMG									Keywords: 10mm, Automatic, 12/24 rounds
 /obj/item/gun/ballistic/automatic/smg/smg10mm
@@ -500,28 +501,6 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"][stock ? "" : "-f"]"
-
-
-//Destroyer carbine							Keywords: .45 ACP, Automatic, 30 rounds, Long barrel, Suppressor
-/obj/item/gun/ballistic/automatic/destroyer
-	name = "destroyer carbine"
-	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	icon_state = "destroyer-carbine"
-	item_state = "varmintrifle"
-	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 2
-	fire_delay = 5
-	burst_size = 2
-	can_attachments = FALSE
-	can_automatic = FALSE
-	automatic_burst_overlay = TRUE
-	can_scope = FALSE
-	scope_state = "scope_medium"
-	scope_x_offset = 6
-	scope_y_offset = 14
-	untinkerable = TRUE
-	semi_auto = FALSE
 
 
 

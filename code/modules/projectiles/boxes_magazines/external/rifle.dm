@@ -30,7 +30,7 @@
 	icon_state = "autopipe_belt"
 	caliber = "357"
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 30
+	max_ammo = 18
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/autopipe/empty
@@ -38,7 +38,7 @@
 
 /obj/item/ammo_box/magazine/autopipe/update_icon()
 	..()
-	icon_state = "autopipe_belt-[round(ammo_count(),15)]"
+	icon_state = "autopipe_belt-[round(ammo_count(),9)]"
 
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"
