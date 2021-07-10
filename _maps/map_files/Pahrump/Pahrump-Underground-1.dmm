@@ -489,6 +489,11 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/tunnel)
+"avH" = (
+/obj/structure/closet/crate/miningcar,
+/obj/effect/spawner/lootdrop/f13/attachments,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "awd" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice{
@@ -1458,7 +1463,7 @@
 	id = "storeshutters";
 	name = "store shutters"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
 "bqs" = (
 /obj/structure/rack,
@@ -3040,7 +3045,7 @@
 /obj/structure/sign/poster/official/report_crimes{
 	pixel_y = -32
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
 "cIG" = (
 /obj/machinery/light/small{
@@ -4489,6 +4494,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dMQ" = (
@@ -4506,6 +4517,9 @@
 /obj/item/ammo_box/shotgun/buck,
 /obj/item/ammo_box/shotgun/buck,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "dMW" = (
@@ -4559,15 +4573,8 @@
 	pixel_y = 32
 	},
 /obj/machinery/button/door{
-	id = "storeshutters";
-	name = "store shutters";
-	pixel_x = -6;
-	pixel_y = 30
-	},
-/obj/machinery/button/door{
 	id = "countershutters";
 	name = "counter shutters";
-	pixel_x = 6;
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4779,6 +4786,9 @@
 /obj/item/stack/sheet/plastic/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dYy" = (
@@ -5237,6 +5247,8 @@
 /area/f13/den)
 "esG" = (
 /obj/structure/rack,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -5292,14 +5304,12 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "evg" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
 /obj/structure/rack,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/leather/twenty,
-/obj/item/stack/sheet/cloth/thirty,
-/obj/item/stack/sheet/hay/fifty,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "evn" = (
@@ -5314,7 +5324,13 @@
 /area/f13/bunker)
 "evw" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/mineral/sandstone/thirty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/leather/twenty,
+/obj/item/stack/sheet/cloth/thirty,
+/obj/item/stack/sheet/hay/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "evD" = (
@@ -7436,7 +7452,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gdZ" = (
-/obj/structure/simple_door/interior,
+/obj/machinery/door/unpowered/wooddoor{
+	autoclose = 1;
+	max_integrity = 500;
+	name = "Store Backroom";
+	req_one_access_txt = "34"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "gea" = (
@@ -9385,9 +9406,6 @@
 	},
 /area/f13/enclave)
 "hvG" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
 /obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
@@ -9398,6 +9416,9 @@
 /obj/item/stack/f13Cash/random/high,
 /obj/item/stack/f13Cash/random/high,
 /obj/structure/table,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "hwI" = (
@@ -15641,6 +15662,15 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/tunnel)
+"mmK" = (
+/obj/machinery/button/door{
+	id = "storeshutters";
+	name = "store shutters";
+	pixel_x = -6;
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "mmL" = (
 /obj/structure/closet,
 /obj/item/clothing/under/rank/prisoner,
@@ -16951,6 +16981,12 @@
 /obj/item/candle/tribal_torch,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"nkq" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "nkE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light{
@@ -19530,6 +19566,12 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"pex" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "pez" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -25393,6 +25435,11 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/brotherhood/operations)
+"tmX" = (
+/obj/structure/closet/crate/miningcar,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "tnh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -41293,7 +41340,7 @@ rRo
 xVz
 xVz
 xVz
-fOf
+tmX
 uoO
 uoO
 uoO
@@ -52008,8 +52055,8 @@ dhy
 jmN
 dJx
 efX
-wKH
-wKH
+esG
+evw
 fAs
 lnr
 lnr
@@ -52265,7 +52312,7 @@ djX
 jmN
 dML
 wKH
-esG
+wKH
 wKH
 fBk
 lnr
@@ -52516,13 +52563,13 @@ rtG
 rrq
 dXE
 jmN
-wKH
+nkq
 wKH
 doL
 jmN
 dMQ
 wKH
-evg
+wKH
 wKH
 fEB
 lnr
@@ -52779,7 +52826,7 @@ hdq
 jmN
 dOF
 wKH
-evw
+wKH
 wKH
 fEB
 lnr
@@ -53116,7 +53163,7 @@ myy
 myy
 myy
 xVz
-xVz
+avH
 uoO
 uoO
 uoO
@@ -54059,12 +54106,12 @@ dCp
 mmc
 jmN
 crg
-wKH
+mmK
 wKH
 jmN
 pFp
 wKH
-xOn
+evg
 wKH
 fSH
 lnr
@@ -54573,7 +54620,7 @@ iPa
 uoO
 uoO
 uoO
-lnr
+fmO
 uoO
 uoO
 uoO
@@ -55085,8 +55132,8 @@ jXF
 qgC
 lnr
 siP
-uoO
-lnr
+jPC
+pex
 lnr
 pfG
 vjm
