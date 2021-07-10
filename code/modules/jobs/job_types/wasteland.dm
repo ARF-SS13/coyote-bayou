@@ -198,6 +198,13 @@
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 
+/datum/outfit/job/wasteland/enclavelt/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /*
 Coven Stuff

@@ -129,6 +129,9 @@ Head Paladin
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /datum/outfit/job/bos/f13sentinel
 	name = "Head Paladin"
