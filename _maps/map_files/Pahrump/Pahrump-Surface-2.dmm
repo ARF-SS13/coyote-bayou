@@ -2245,6 +2245,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"bcZ" = (
+/obj/structure/bed/old,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood{
+	icon_state = "housebase"
+	},
+/area/f13/building)
 "bdp" = (
 /obj/structure/table/wood,
 /obj/item/newspaper,
@@ -4462,7 +4469,6 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress2"
 	},
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -12372,7 +12378,7 @@
 /area/f13/building)
 "gir" = (
 /obj/structure/simple_door/bunker,
-/obj/machinery/door/poddoor/shutters/old{
+/obj/machinery/door/poddoor/shutters{
 	id = "raiderhubarmory"
 	},
 /turf/open/floor/f13{
@@ -18580,9 +18586,8 @@
 	},
 /area/f13/ncr)
 "jap" = (
-/obj/machinery/button{
+/obj/machinery/button/door{
 	id = "raiderhubarmory";
-	name = "shutter button";
 	pixel_x = 32
 	},
 /turf/open/floor/f13{
@@ -34078,7 +34083,7 @@
 	},
 /area/f13/wasteland)
 "qQa" = (
-/obj/machinery/door/poddoor/shutters/old{
+/obj/machinery/door/poddoor/shutters{
 	id = "raiderhubarmory"
 	},
 /turf/open/floor/f13{
@@ -45662,6 +45667,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -53740,8 +53746,8 @@ uqa
 itJ
 uqa
 uqa
-uqa
-itJ
+wWN
+wWN
 uqa
 uqa
 flw
@@ -53997,7 +54003,7 @@ cmU
 kxS
 fQA
 uqa
-wYN
+bcZ
 sHp
 rkZ
 uqa
