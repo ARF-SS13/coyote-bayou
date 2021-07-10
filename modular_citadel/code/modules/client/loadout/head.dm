@@ -271,15 +271,15 @@ datum/gear/head/steelpot_patriot
 	
 /datum/gear/head/ranger_tan
 	name = "tan cowboy hat"
-	path = /obj/item/clothing/head/f13/ranger_tan_hat
+	path = /obj/item/clothing/head/f13/ranger_hat/tan
 	cost = 2
 	
 /datum/gear/head/ranger_grey
 	name = "grey cowboy hat"
-	path = /obj/item/clothing/head/f13/ranger_grey_hat
+	path = /obj/item/clothing/head/f13/ranger_hat
 	cost = 2
 	
 /datum/gear/head/ranger_banded
 	name = "banded cowboy hat"
-	path = /obj/item/clothing/head/f13/ranger_banded_hat
+	path = /obj/item/clothing/head/f13/ranger_hat/banded
 	cost = 2
