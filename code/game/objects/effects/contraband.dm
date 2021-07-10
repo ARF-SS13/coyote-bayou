@@ -362,22 +362,22 @@
 
 /obj/structure/sign/poster/contraband/free_drone
 	name = "Free Drone"
-	desc = "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentCom."
+	desc = "This poster commemorates the bravery of the rogue drone; exiled, and then ultimately destroyed by the Calculator's Army."
 	icon_state = "poster35"
 
 /obj/structure/sign/poster/contraband/busty_backdoor_xeno_babes_6
-	name = "Busty Backdoor Xeno Babes 6"
-	desc = "Get a load, or give, of these all natural Xenos!"
+	name = "Captain Cosmos vs Lusty Xenomorph 2: Twin Terrors!"
+	desc = "This issue of the ill-fated Adult run of Captain Cosmos didn't even make it to production, its promotional material filling warehouses."
 	icon_state = "poster36"
 
 /obj/structure/sign/poster/contraband/robust_softdrinks
-	name = "Robust Softdrinks"
-	desc = "Robust Softdrinks: More robust than a toolbox to the head!"
+	name = "Nuka Cola"
+	desc = "Nuka Cola: Consumed on average by Americans more than water!"
 	icon_state = "poster37"
 
 /obj/structure/sign/poster/contraband/shamblers_juice
-	name = "Shambler's Juice"
-	desc = "~Shake me up some of that Shambler's Juice!~"
+	name = "Mysterious Sign"
+	desc = "This display fills you with uncertain dread, the air feels damp and chill."
 	icon_state = "poster38"
 
 /obj/structure/sign/poster/contraband/pwr_game
@@ -416,8 +416,8 @@
 	icon_state = "poster45"
 
 /obj/structure/sign/poster/contraband/scum
-	name = "Security are Scum"
-	desc = "Anti-security propaganda. Features a human NanoTrasen security officer being shot in the head, with the words 'Scum' and a short inciteful manifesto. Used to anger security."
+	name = "Only You Can Prevent CORPORATE ESPIONAGE"
+	desc = "This poster shows the silhouette of a man wearing a raincoat with the collar up and a hat groping towards the files in a drawer of a filing cabinet."
 	icon_state = "poster46"
 
 /obj/structure/sign/poster/contraband/syndicate_logo
@@ -443,12 +443,12 @@
 
 /obj/structure/sign/poster/official/here_for_your_safety
 	name = "Here For Your Safety"
-	desc = "A poster glorifying the station's security force."
+	desc = "A poster glorifying the regional security force."
 	icon_state = "poster1_legit"
 
 /obj/structure/sign/poster/official/nanotrasen_logo
-	name = "Nanotrasen Logo"
-	desc = "A poster depicting the Nanotrasen logo."
+	name = "Navitron Logo"
+	desc = "A poster depicting the Navitron logo."
 	icon_state = "poster2_legit"
 
 /obj/structure/sign/poster/official/cleanliness
@@ -458,17 +458,17 @@
 
 /obj/structure/sign/poster/official/help_others
 	name = "Help Others"
-	desc = "A poster encouraging you to help fellow crewmembers."
+	desc = "A poster encouraging you to help your neighbors."
 	icon_state = "poster4_legit"
 
 /obj/structure/sign/poster/official/build
 	name = "Build"
-	desc = "A poster glorifying the engineering team."
+	desc = "A poster glorifying the rebuilding of old ruins."
 	icon_state = "poster5_legit"
 
 /obj/structure/sign/poster/official/bless_this_spess
 	name = "Bless This Spess"
-	desc = "A poster blessing this area."
+	desc = "A poster blessing the area."
 	icon_state = "poster6_legit"
 
 /obj/structure/sign/poster/official/science
@@ -477,8 +477,8 @@
 	icon_state = "poster7_legit"
 
 /obj/structure/sign/poster/official/ian
-	name = "Ian"
-	desc = "Arf arf. Yap."
+	name = "Friend!"
+	desc = "People come and go, but the love and loyalty of a hound is forever!"
 	icon_state = "poster8_legit"
 
 /obj/structure/sign/poster/official/obey
@@ -493,12 +493,12 @@
 
 /obj/structure/sign/poster/official/state_laws
 	name = "State Laws"
-	desc = "A poster instructing cyborgs to state their laws."
+	desc = "A poster reminding passerby to ask their Mister Handy to state its laws."
 	icon_state = "poster11_legit"
 
 /obj/structure/sign/poster/official/love_ian
-	name = "Love Ian"
-	desc = "Ian is love, Ian is life."
+	name = "Love!"
+	desc = "A friendly poster reminding you to spread the love!"
 	icon_state = "poster12_legit"
 
 /obj/structure/sign/poster/official/space_cops
@@ -508,7 +508,7 @@
 
 /obj/structure/sign/poster/official/ue_no
 	name = "Ue No."
-	desc = "This thing is all in Japanese."
+	desc = "This thing is all in Japanese. Why is this here?"
 	icon_state = "poster14_legit"
 
 /obj/structure/sign/poster/official/get_your_legs
@@ -548,7 +548,7 @@
 
 /obj/structure/sign/poster/official/report_crimes
 	name = "Report Crimes"
-	desc = "A poster encouraging the swift reporting of crime or seditious behavior to station security."
+	desc = "A poster encouraging the swift reporting of crime or seditious behavior to local security."
 	icon_state = "poster22_legit"
 
 /obj/structure/sign/poster/official/ion_rifle
@@ -578,12 +578,12 @@
 
 /obj/structure/sign/poster/official/pda_ad
 	name = "PDA Ad"
-	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
+	desc = "A poster advertising the latest pipboy from RobCo Industries."
 	icon_state = "poster28_legit"
 
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
-	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
+	desc = "Enlist in the United States Deathsquadron reserves today!"
 	icon_state = "poster29_legit"
 
 /obj/structure/sign/poster/official/nanomichi_ad
@@ -603,12 +603,12 @@
 
 /obj/structure/sign/poster/official/the_owl
 	name = "The Owl"
-	desc = "The Owl would do his best to protect the station. Will you?"
+	desc = "The Owl would do his best to protect the world. Will you?"
 	icon_state = "poster33_legit"
 
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."
+	desc = "This poster reminds viewers that Eroticism, Rape and Pornography are forbidden in this area."
 	icon_state = "poster34_legit"
 
 /obj/structure/sign/poster/official/wtf_is_co2
@@ -618,7 +618,7 @@
 
 /obj/structure/sign/poster/official/spiderlings
 	name = "Spiderlings"
-	desc = "This poster informs the crew of the dangers of spiderlings."
+	desc = "This poster informs the people of the dangers of spiderlings."
 	icon_state = "poster36_legit"
 
 /obj/structure/sign/poster/official/duelshotgun
@@ -633,12 +633,12 @@
 
 /obj/structure/sign/poster/official/pda_ad600
 	name = "NT PDA600 Ad"
-	desc = "A poster advertising an old discounted Nanotrasen PDA. This is the old 600 model, it has a small screen and suffered from security and networking issues."
+	desc = "A poster advertising an old discounted RobCo pipboy. This is the old 600 model, it has a small screen and suffered from security and networking issues."
 	icon_state = "poster39_legit"
 
 /obj/structure/sign/poster/official/pda_ad800
 	name = "NT PDA800 Ad"
-	desc = "An advertisement on an old Nanotrasen PDA model. The 800 fixed a lot of security flaws that the 600 had; it also had large touchscreen and hot-swappable cartridges."
+	desc = "An advertisement on an old RobCo pipboy model. The 800 fixed a lot of security flaws that the 600 had; it also had large touchscreen and hot-swappable cartridges."
 	icon_state = "poster40_legit"
 
 /obj/structure/sign/poster/official/hydro_ad

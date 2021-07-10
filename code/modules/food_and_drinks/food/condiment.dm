@@ -120,12 +120,12 @@
 
 /obj/item/reagent_containers/food/condiment/sugar
 	name = "sugar bottle"
-	desc = "Tasty spacey sugar!"
+	desc = "Tasty sweet sugar!"
 	list_reagents = list(/datum/reagent/consumable/sugar = 50)
 
 /obj/item/reagent_containers/food/condiment/saltshaker		//Separate from above since it's a small shaker rather then
 	name = "salt shaker"											//	a large one.
-	desc = "Salt. From space oceans, presumably."
+	desc = "Salt. From the west coast, presumably."
 	icon_state = "saltshakersmall"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
 	amount_per_transfer_from_this = 1
@@ -178,8 +178,8 @@
 		icon_state = "peppermillsmall"
 
 /obj/item/reagent_containers/food/condiment/milk
-	name = "space milk"
-	desc = "It's milk. White and nutritious goodness!"
+	name = "milk"
+	desc = "You hope it hasn't expired, but its likely."
 	icon_state = "milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'

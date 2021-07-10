@@ -52,8 +52,12 @@
 /turf/open/floor/plasteel/f13,
 /area/shuttle/escape)
 "j" = (
-/obj/structure/decoration/clock/active,
-/turf/closed/wall/mineral/titanium,
+/obj/structure/decoration/clock/active{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "showroomfloor"
+	},
 /area/shuttle/escape)
 "k" = (
 /obj/structure/chair/comfy/shuttle{
@@ -96,8 +100,8 @@
 /area/shuttle/escape)
 "o" = (
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife/butcher
 /obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -286,6 +290,30 @@
 	icon_state = "greenfull"
 	},
 /area/shuttle/escape)
+"I" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. sturdy, plush, and futuristic.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/structure/decoration/clock/active{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluefull"
+	},
+/area/shuttle/escape)
+"J" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. sturdy, plush, and futuristic.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/structure/decoration/clock/active{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13,
+/area/shuttle/escape)
 "K" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 30
@@ -302,6 +330,19 @@
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
+	},
+/area/shuttle/escape)
+"W" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. sturdy, plush, and futuristic.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/structure/decoration/clock/active{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenfull"
 	},
 /area/shuttle/escape)
 
@@ -417,25 +458,25 @@ b
 b
 K
 l
-l
+j
 z
 A
 a
 D
 i
-i
+J
 i
 D
 a
 F
 v
-v
+I
 v
 F
 a
 H
 m
-m
+W
 m
 H
 b
@@ -444,25 +485,25 @@ b
 w
 b
 b
-j
 b
 b
 b
 b
 b
-j
 b
 b
 b
 b
 b
-j
 b
 b
 b
 b
 b
-j
+b
+b
+b
+b
 b
 b
 w

@@ -626,7 +626,7 @@
 
 /obj/item/bostaff //May as well make it a "claymore" and inherit the blocking
 	name = "quarterstaff"
-	desc = "A long, tall staff made of polished wood. Fitted with heavy metal ends. Traditionally used in ancient old-Earth martial arts."
+	desc = "A long, tall staff made of polished wood. Fitted with heavy metal ends. Traditionally used in ancient pre-collapse martial arts."
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20
 	block_chance = 50

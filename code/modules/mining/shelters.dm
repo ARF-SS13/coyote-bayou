@@ -33,7 +33,7 @@
 /datum/map_template/shelter/alpha
 	name = "Shelter Alpha"
 	shelter_id = "shelter_alpha"
-	description = "A cosy self-contained pressurized shelter, with \
+	description = "A cozy self-contained pressurized shelter, with \
 		built-in navigation, entertainment, medical facilities and a \
 		sleeping area! Order now, and we'll throw in a TINY FAN, \
 		absolutely free!"

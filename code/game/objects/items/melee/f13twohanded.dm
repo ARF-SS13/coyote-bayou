@@ -101,7 +101,7 @@
 /obj/item/twohanded/fireaxe/bmprsword
 	name = "bumper sword"
 	icon_state = "bmprsword0"
-	desc = "A heavy makeshift sword fashioned out of a car bumper."
+	desc = "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was more like a heap of raw iron."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK
