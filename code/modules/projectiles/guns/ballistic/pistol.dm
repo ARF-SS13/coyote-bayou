@@ -21,7 +21,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 12 //Pistol whip
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	spread = 3
+	spread = 2
 	burst_size = 1
 	fire_delay = 4
 	select = FALSE
@@ -49,7 +49,7 @@
 /////////////////
 
 
-//.22 Sport						Keywords: .22, Semi-auto, 16 round magazine, Suppressed
+//.22 Sport								Keywords: .22, Semi-auto, 16 round magazine, Suppressed
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
@@ -62,7 +62,7 @@
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
 
 
-//N99  10mm						Keywords: 10mm, Semi-auto, 12/24 round magazine
+//N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
@@ -75,7 +75,7 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
-//the Executive					Keywords: Unique, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
+//the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
 	name = "the Executive"
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
@@ -86,7 +86,7 @@
 	can_automatic = FALSE
 
 
-//Type 17						Keywords: 10mm, Semi-auto, 12/24 round magazine. Special modifiers: damage +1
+//Type 17								Keywords: 10mm, Semi-auto, 12/24 round magazine. Special modifiers: damage +1, spread +1
 /obj/item/gun/ballistic/automatic/pistol/type17
 	name = "Type 17"
 	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
@@ -94,12 +94,12 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 5
 	extra_damage = 1
-	spread = 4
+	spread = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
 
-//Browning Hi-power				Keywords: 9mm, Semi-auto, 10 round magazine
+//Browning Hi-power						Keywords: 9mm, Semi-auto, 10 round magazine
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "Browning Hi-power"
 	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
@@ -112,17 +112,17 @@
 	suppressor_y_offset = 19
 	fire_sound = 'sound/f13weapons/ninemil.ogg'
 
-//Maria							Keywords: Unique, 9mm, Semi-auto, 10 round magazine. Special modifiers: fire delay -1, damage +10, penetration +0.2
+//Maria									Keywords: UNIQUE, 9mm, Semi-auto, 10 round magazine. Special modifiers: fire delay -1, damage +10, penetration +0.2
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
 	name = "Maria"
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	fire_delay = 2
-	extra_damage = 10 //40 damage, 20 AP- hits like a 7.62 and fires faster
+	extra_damage = 10
 	extra_penetration = 0.2
 
 
-//Sig Sauer P220				Keywords: 9mm, Semi-auto, 10 round magazine
+//Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has a good rate of fire."
@@ -137,13 +137,13 @@
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
 
-//Beretta M9FS					Keywords: 9mm, Semi-auto, 15 round magazine. Special modifiers: spread -1
+//Beretta M9FS							Keywords: 9mm, Semi-auto, 15 round magazine. Special modifiers: spread -1
 /obj/item/gun/ballistic/automatic/pistol/beretta
 	name = "Beretta M9FS"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
-	fire_delay = 3.7
+	fire_delay = 3.5
 	spread = 1
 	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
@@ -151,7 +151,7 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
-//Beretta M93R					Keywords: 9mm, Automatic, 15 round magazine
+//Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "Beretta M93R"
 	desc = "A rare select fire variant of the M93R."
@@ -188,7 +188,7 @@
 	return
 
 
-//M1911							Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
+//M1911									Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
@@ -203,21 +203,21 @@
 	suppressor_y_offset = 21
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
-//M1911	Custom					Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
+//M1911	Custom							Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom
 	name = "M1911 Custom"
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
-	fire_delay = 3
+	fire_delay = 3.5
 
-//M1911	compact					Keywords: .45 ACP, Semi-auto, Short barrel, 8 round magazine. Special modifiers: damage +1
+//M1911	compact							Keywords: .45 ACP, Semi-auto, Short barrel, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911/compact
 	name = "M1911 compact"
 	desc = "The compact version of the classic .45 handgun."
 	icon_state = "c1911"
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = -1
-	spread = 5
+	spread = 4
 	suppressor_x_offset = 29
 	suppressor_y_offset = 21
 
@@ -225,7 +225,7 @@
 	spawnwithmagazine = FALSE
 
 
-//Mk. 23						Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
+//Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/pistol/mk23
 	name = "Mk. 23"
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
@@ -250,7 +250,7 @@
 /////////////////
 
 
-//Desert Eagle					Keywords: .44 Magnum, Semi-auto, Long barrel, 8 round magazine, Heavy. Special modifiers: bullet speed +300, damage +1
+//Desert Eagle							Keywords: .44 Magnum, Semi-auto, Long barrel, 8 round magazine, Heavy. Special modifiers: bullet speed +300, damage +1
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "Desert Eagle"
 	desc = "A robust .44 magnum semi-automatic handgun."
@@ -267,7 +267,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
-//Automag						Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
+//Automag								Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
 /obj/item/gun/ballistic/automatic/pistol/automag
 	name = "Automag"
 	desc = "A long-barreled .44 magnum semi-automatic handgun."
@@ -284,7 +284,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
-//14mm Pistol					Keywords: 14mm, Semi-auto, 7 rounds, Heavy
+//14mm Pistol							Keywords: 14mm, Semi-auto, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
@@ -296,7 +296,7 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-//14mm compact					Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
+//14mm compact							Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
@@ -305,7 +305,7 @@
 	extra_damage = -2
 	spread = 5
 
-//Little Devil					Keywords: Unique, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
+//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
 /obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."

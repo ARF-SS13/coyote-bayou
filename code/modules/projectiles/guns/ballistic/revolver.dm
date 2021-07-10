@@ -8,8 +8,8 @@
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
-	fire_delay = 6	
-	spread = 2
+	fire_delay = 5	
+	spread = 1
 	force = 12 // Pistol whip
 	casing_ejector = FALSE
 	spawnwithmagazine = TRUE
@@ -151,11 +151,13 @@
 	icon_state = "mateba"
 
 
+
 ///////////////////
 // .38 REVOLVERS //
 ///////////////////
 
-// .38 Detective	Keywords: .38, 6 rounds, Double action, Short barrel.
+
+// .38 Detective								Keywords: .38, 6 rounds, Double action, Short barrel.
 /obj/item/gun/ballistic/revolver/detective
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
@@ -173,7 +175,8 @@
 						)
 	var/list/safe_calibers
 
-//Police revolver	Keywords: .38, 6 rounds, Double action.
+
+//Police revolver								Keywords: .38, 6 rounds, Double action.
 /obj/item/gun/ballistic/revolver/police
 	name = ".38 police revolver"
 	desc = "Pre-war double action police revolver in .38 calibre."
@@ -183,11 +186,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 
+
 /////////////////////
 // 10 MM REVOLVERS //
 /////////////////////
 
-//Colt 6520			 Keywords: 10mm, Double action.
+//Colt 6520			 							Keywords: 10mm, Double action.
 /obj/item/gun/ballistic/revolver/colt6520
 	name = "Colt 6520"
 	desc = "The Colt 6520 10mm double action revolver is a highly durable weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
@@ -196,27 +200,32 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
 
+
 ///////////////////////
 // .45 ACP REVOLVERS //
 ///////////////////////
 
-//Colt 45			 Keywords: .45, 6 rounds, Single action, Long barrel.
+
+//Colt 45										 Keywords: .45, 6 rounds, Single action, Long barrel.
 /obj/item/gun/ballistic/revolver/revolver45
 	name = "\improper .45 colt revolver"
 	desc = "A Colt Single Action Army retooled to accept .45 ACP catridges. A classic piece of Americana."
 	item_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
-	fire_delay = 7
-	spread = 1
+	fire_delay = 6
+	spread = 0
 	extra_damage = 2
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+
 
 ////////////////////
 // .357 REVOLVERS //
 ////////////////////
 
-//357 Magnum		Keywords: .357, 6 rounds, Double action 
+
+//357 Magnum									Keywords: .357, 6 rounds, Double action 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
 	desc = "A relatively primitive .357 magnum revolver."
@@ -242,11 +251,13 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lucky37
 
 
+
 ///////////////////
 // .44 REVOLVERS //
 ///////////////////
 
-//.44 Magnum revolver		 Keywords: .44, 6 rounds, Double action
+
+//.44 Magnum revolver		 					Keywords: .44, 6 rounds, Double action
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 magnum revolver"
 	desc = "Powerful handgun for the fashion sensitive. "
@@ -271,6 +282,7 @@
 	icon_state = "coltwalker"
 	can_scope = FALSE
 
+//.44 Magnum revolver		 					Keywords: UNIQUE, .44, 6 rounds, Double action
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	name = "Enforcer"
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
@@ -305,7 +317,8 @@
 			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
 	update_icon()
 
-//.44 Snubnose			 Keywords: .44, 6 rounds, Double action, Short barrel
+
+//.44 Snubnose								 Keywords: .44, 6 rounds, Double action, Short barrel
 /obj/item/gun/ballistic/revolver/m29/snub
 	name = "snubnose .44 magnum revolver"
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
@@ -313,34 +326,36 @@
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	extra_damage = -2
-	spread = 5
+	spread = 4
 
-//.44 single action		 Keywords: .44, 6 rounds, Single action, Long barrel
+
+//.44 single action		 					Keywords: .44, 6 rounds, Single action, Long barrel
 /obj/item/gun/ballistic/revolver/revolver44
 	name = "\improper .44 magnum single-action revolver"
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44..."
 	item_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
-	fire_delay = 7
+	fire_delay = 6
 	extra_damage = 2
-	spread = 1
+	spread = 0
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
-//.44 Desert Ranger		Keywords: .44, 6 rounds, Single action, Long barrel. Special modifiers: fire delay -1,  damage +10, penetration +0.25
+
+//.44 Desert Ranger							Keywords: .44, 6 rounds, Single action, Long barrel. Special modifiers: fire delay -1,  damage +10, penetration +0.1Yu
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	name = ".44 magnum desert ranger revolver"
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
-	fire_delay = 6
+	fire_delay = 5
 	extra_damage = 10
-	extra_penetration = 0.25
+	extra_penetration = 0.1
 
 
 //////////////////////
 // .45-70 REVOLVERS //
 //////////////////////
 
-//Sequioa				Keywords: .45-70, 6 rounds, Double action, Heavy
+//Sequioa									Keywords: NCR, .45-70, 6 rounds, Double action, Heavy
 /obj/item/gun/ballistic/revolver/sequoia
 	name = "ranger sequoia"
 	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
@@ -364,9 +379,10 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	fire_delay = 0
-	spread = 1
+	spread = 0
 
-//Hunting revolver		Keywords: .45-70, 5 rounds, Double action, Heavy
+
+//Hunting revolver							Keywords: .45-70, 5 rounds, Double action, Heavy
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
@@ -385,18 +401,20 @@
 // WEIRD REVOLVERS //
 /////////////////////
 
-//Colt Army				Keywords: .45 long colt (bouncing), Single action. Special modifiers: spread -2 and fire delay +3
+
+//Colt Army									Keywords: .45 long colt (bouncing), Single action. Special modifiers: spread -1 and fire delay +2
 /obj/item/gun/ballistic/revolver/revolver45/gunslinger
 	name = "\improper Colt Single Action Army"
 	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
-	fire_delay = 10 //This fires MUCH slower then the Sequoia or 357. You're rewarded with bouncing bullets
+	fire_delay = 8 //This fires MUCH slower then the Sequoia or 357. You're rewarded with bouncing bullets
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	spread = 0 //Your reward for the slower fire rate is less spread anddd
 
-//.223 Pistol			Keywords: .223. Double action, Short barrel.
+
+//.223 Pistol								Keywords: .223. Double action, Short barrel.
 /obj/item/gun/ballistic/revolver/thatgun
 	name = ".223 pistol"
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
@@ -404,13 +422,16 @@
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	extra_damage = -2
-	spread = 6
-	recoil = 1
+	spread = 4
+	recoil = 0.5
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+
+
 
 /////////////
 // NEEDLER //
 /////////////
+
 
 /obj/item/gun/ballistic/revolver/needler
 	name = "Needler pistol"
@@ -419,6 +440,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 	w_class = WEIGHT_CLASS_SMALL
+
 
 /obj/item/gun/ballistic/revolver/needler/ultra
 	name = "Ultracite needler"
