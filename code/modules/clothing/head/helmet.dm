@@ -14,6 +14,7 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
+	var/durability_threshold = 0
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -26,6 +27,10 @@
 	. = ..()
 	if(attached_light)
 		alight = new(src)
+	var/round_armor = round((armor.linemelee + armor.linebullet + armor.linelaser) / 3)
+	if((durability_threshold <= 0) && round_armor > 30) // Weak armor, meh.
+		var/tier_ar = round(round_armor / 10) // Tier 7 would be 200/100 = 20, Tier 11 = 40
+		durability_threshold = tier_ar
 
 
 /obj/item/clothing/head/helmet/Destroy()
@@ -44,6 +49,8 @@
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
 	. += "The helmet is at [armor_durability] durability and is providing [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance."
+	if(durability_threshold > 0)
+		. += "Additionally, any attack below [durability_threshold] force will not damage its durability."
 
 
 /obj/item/clothing/head/helmet/handle_atom_del(atom/A)
@@ -74,7 +81,8 @@
 
 
 /obj/item/clothing/head/helmet/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(damage == 0)
+	var/AP_mod = armour_penetration * (damage * 1.5) // So, 100% AP bullet with 20 damage will be considered as 50 damage.
+	if((damage + AP_mod) < durability_threshold)
 		return ..()
 	if(def_zone in protected_zones)
 		damage_armor()
@@ -94,7 +102,7 @@
 				break
 
 /obj/item/clothing/head/helmet/proc/damage_armor()
-	if(armor.linebullet>0&&armor.linelaser>0&&armor.linemelee>0&&armor_durability>0)
+	if(armor.linebullet>0 && armor.linelaser>0 && armor.linemelee>0 && armor_durability>0)
 		armor_durability -= 1
 		armor = armor.modifyRating(linemelee = -2, linebullet = -2, linelaser = -2)
 
