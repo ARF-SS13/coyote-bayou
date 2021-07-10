@@ -25001,6 +25001,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"mZd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/wasteland_vendor/pipboy,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "mZn" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken"
@@ -25503,6 +25510,7 @@
 /obj/structure/sign/poster/contraband/pinup_vixen{
 	pixel_y = 32
 	},
+/obj/item/bot_assembly/cleanbot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -26360,6 +26368,7 @@
 "nNB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/bot/cleanbot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -32699,6 +32708,7 @@
 /area/f13/wasteland)
 "qXu" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/bot/cleanbot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -33748,9 +33758,9 @@
 /area/f13/wasteland)
 "rCx" = (
 /obj/structure/displaycase,
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
+/mob/living/simple_animal/bot/cleanbot,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -37579,6 +37589,12 @@
 /obj/structure/decoration/smokeold,
 /turf/closed/wall/f13/wood/house,
 /area/f13/bar)
+"tAj" = (
+/mob/living/simple_animal/bot/cleanbot,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/city)
 "tAC" = (
 /obj/structure/easel,
 /turf/open/floor/f13/wood,
@@ -40894,6 +40910,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/bot_assembly/cleanbot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -58255,7 +58272,7 @@ nOl
 oVe
 mXA
 gIA
-gIA
+tAj
 mXA
 gcK
 gcK
@@ -91818,7 +91835,7 @@ vvE
 xxO
 gts
 tPY
-tvJ
+mZd
 vRZ
 sjo
 vRZ
