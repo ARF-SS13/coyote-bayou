@@ -73,10 +73,19 @@
 /obj/item/ammo_box/magazine/tommygunm45
 	name = "drum magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "drum45"
+	icon_state = "tommydrum"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 50
+
+/obj/item/ammo_box/magazine/tommygunm45/stick
+	name = "drum magazine (.45)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "tommystick"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 30
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/tommygunm45/empty
 	start_empty = 1

@@ -198,7 +198,7 @@
 		..()
 
 
-//Paciencia								Keywords: Unique, .308, Bolt-action, 5 rounds internal
+//Paciencia								Keywords: UNIQUE, .308, Bolt-action, 5 rounds internal, Scoped
 /obj/item/gun/ballistic/rifle/hunting/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
@@ -208,6 +208,10 @@
 	fire_delay = 8
 	extra_damage = 20 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
 
 /obj/item/gun/ballistic/rifle/hunting/paciencia/attackby(obj/item/A, mob/user, params) //no sawing off this one
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -285,7 +289,7 @@
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
 
-//Varmint rifle								Keywords: 5.56, Bolt-action, 10/20/30 round magazine, Reduced damage & speed
+//Varmint rifle								Keywords: 5.56, Bolt-action, 10/20/30 round magazine, Reduced damage
 /obj/item/gun/ballistic/rifle/mag/varmint
 	name = "varmint rifle"
 	desc = "A simple bolt action rifle in 5.56mm calibre. Easy to use and maintain."
@@ -297,7 +301,6 @@
 	fire_delay = 9
 	spread = 0
 	extra_damage = 5
-	extra_speed = 700
 	can_bayonet = FALSE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -309,7 +312,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-//Commando carbine							Keywords: BOS, .45 ACP, Bolt-action, 12 round magazine, Long barrel, Suppressed, Reduces spread
+//Commando carbine							Keywords: BoS, .45 ACP, Bolt-action, 12 round magazine, Long barrel, Suppressed
 /obj/item/gun/ballistic/rifle/mag/commando
 	name = "commando carbine"
 	desc = "An integrally suppressed bolt action carbine, the few existing examples of this rare gun are mostly in Brotherhood hands. Uses .45 socom magazines."
@@ -327,7 +330,7 @@
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 
-//Ratslayer									Keywords: Unique, 5.56, Bolt-action, 10/20/30 round magazine, Suppressed, Extra damage +3
+//Ratslayer									Keywords: UNIQUE, 5.56, Bolt-action, 10/20/30 round magazine, Suppressed, Scoped, Extra damage +3
 /obj/item/gun/ballistic/rifle/mag/varmint/ratslayer
 	name = "Ratslayer"
 	desc = "A modified varmint rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
@@ -335,15 +338,11 @@
 	item_state = "ratslayer"
 	extra_damage = 9
 	extra_penetration = 0.1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
 	suppressed = 1
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
-	suppressed = 1
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 

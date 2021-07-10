@@ -20,18 +20,20 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	force = 15 //Decent clubs generally speaking
 	fire_delay = 7 //Typical pump action, pretty fast.
 	spread = 1
 	recoil = 0.1
+	can_scope = FALSE
 	flags_1 =  CONDUCT_1
-	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
+	untinkerable = TRUE //no tinkering shotguns, bad.
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
-	untinkerable = TRUE //no tinkering shotguns, bad.
+
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -107,9 +109,9 @@
 	item_state = "shotgundouble"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 1
+	fire_delay = 0.5
 	extra_damage = 2
-	force = 19
+	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -297,6 +299,7 @@
 	name = "semi-auto shotgun template"
 	fire_delay = 6
 	recoil = 0.1
+	spread = 2
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
@@ -325,11 +328,10 @@
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	fire_delay = 8
+	fire_delay = 7
 	recoil = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
 
