@@ -930,7 +930,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/head/f13/ranger_grey_hat
+/obj/item/clothing/head/f13/ranger_hat
 	name = "grey cowboy hat"
 	desc = "(II) A simple grey cowboy hat."
 	icon_state = "ranger_grey_hat"
@@ -938,13 +938,13 @@
 	armor = list("tier" = 2, "energy" = 25, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	
-/obj/item/clothing/head/f13/ranger_banded_hat
+/obj/item/clothing/head/f13/ranger_hat/banded
 	name = "banded cowboy hat"
 	desc = "(II) A grey cowboy hat with a hat band decorated with brassen rings."
 	icon_state = "ranger_banded_hat"
 	item_state = "ranger_banded_hat"
 	
-/obj/item/clothing/head/f13/ranger_tan_hat
+/obj/item/clothing/head/f13/ranger_hat/tan
 	name = "tan cowboy hat"
 	desc = "(II) A thick tanned leather hat, with a Montana Peak crease."
 	icon_state = "ranger_tan_hat"
