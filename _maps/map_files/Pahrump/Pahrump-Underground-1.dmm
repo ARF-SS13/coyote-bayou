@@ -1213,16 +1213,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/bunker)
-"bgZ" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mouse/white{
-	desc = "It's a strangely clean little white rodent.";
-	name = "Algernon"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/red{
-	icon_state = "darkyellowfull"
-	},
-/area/f13/brotherhood/operations)
 "bhe" = (
 /obj/item/stack/rods/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -4830,13 +4820,6 @@
 /area/f13/brotherhood/leisure)
 "ejQ" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/syndicate/brotherhood,
-/obj/item/storage/belt/holster,
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat/swat,
-/obj/item/storage/belt/military,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
@@ -12484,11 +12467,6 @@
 /area/f13/tcoms)
 "kbH" = (
 /obj/item/bedsheet/hos,
-/obj/item/toy/figure/warden{
-	desc = "A refurbished military action figure made to look like a member of the Brotherhood of Steel.";
-	name = "Head Knight Action Figure";
-	toysay = "Victory is our tradition!"
-	},
 /obj/structure/bed,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
@@ -12500,10 +12478,6 @@
 	name = "Head Knight's PDA"
 	},
 /obj/item/storage/briefcase,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate{
-	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking officer of some lost prewar army.";
-	name = "old officer's vest"
-	},
 /obj/item/clothing/head/HoS/beret/syndicate{
 	name = "officer's beret"
 	},
@@ -13366,6 +13340,7 @@
 	pixel_x = -3;
 	pixel_y = 15
 	},
+/obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "kOc" = (
@@ -15246,15 +15221,8 @@
 	pixel_x = 21;
 	pixel_y = 5
 	},
-/obj/item/book/granter/trait/pa_wear{
-	pixel_x = 5;
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/trait/pa_wear{
-	pixel_x = -3;
-	pixel_y = 7
-	},
+/obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/floor/wood/f13/carpet,
 /area/f13/brotherhood/offices1st)
 "mpE" = (
@@ -59177,7 +59145,7 @@ fJt
 yei
 ePe
 qUR
-bgZ
+ePe
 yhh
 ePe
 qUR
