@@ -81,7 +81,7 @@
 			return
 		in_use = TRUE
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", "<span class='notice'>You begin to climb [going_up ? "up" : "down"] [src].</span>")
-		if(!do_after(user, 30, target = src))
+		if(!do_after(user, 15, target = src))
 			in_use = FALSE
 			return
 		in_use = FALSE
