@@ -8,6 +8,7 @@
 	var/obj/structure/ladder/down   //the ladder below this one
 	var/obj/structure/ladder/up     //the ladder above this one
 	var/move_me = TRUE
+	var/in_use = FALSE // To avoid message spam
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -76,6 +77,14 @@
 
 /obj/structure/ladder/proc/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
 	if(!is_ghost)
+		if(in_use)
+			return
+		in_use = TRUE
+		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", "<span class='notice'>You begin to climb [going_up ? "up" : "down"] [src].</span>")
+		if(!do_after(user, 30, target = src))
+			in_use = FALSE
+			return
+		in_use = FALSE
 		show_fluff_message(going_up, user)
 		ladder.add_fingerprint(user)
 
