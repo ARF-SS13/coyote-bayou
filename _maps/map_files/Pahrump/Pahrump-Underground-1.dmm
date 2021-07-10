@@ -5320,6 +5320,8 @@
 "evD" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ewK" = (
@@ -8851,6 +8853,7 @@
 /area/f13/radiation)
 "hdq" = (
 /obj/structure/rack,
+/obj/item/stack/ore/blackpowder/fifty,
 /obj/item/stack/ore/blackpowder/fifty,
 /obj/item/stack/ore/blackpowder/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -23059,6 +23062,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/ncr)
+"rwt" = (
+/obj/effect/landmark/start/f13/shopkeeper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "rwA" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -23960,7 +23967,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/prospector,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -53797,7 +53803,7 @@ tyt
 jmN
 hvG
 iep
-wKH
+rwt
 gdZ
 wKH
 wKH
