@@ -1213,12 +1213,12 @@
 /turf/open/floor/plasteel/f13/vault_floor,
 /area/f13/den)
 "bgu" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "busladder"
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "church1"
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
