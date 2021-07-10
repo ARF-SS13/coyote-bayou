@@ -96,7 +96,7 @@
 ////////////////////////////////////////
 
 
-//Caravan shotgun. Double barrel, saw-off, Extra damage +2
+//Caravan shotgun								Keywords: Shotgun, Double barrel, saw-off, extra damage +1
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
 	desc = "An common over-under double barreled shotgun."
@@ -132,7 +132,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Widowmaker. Double barrel, saw-off, Fire delay -1, Extra damage +1
+//Widowmaker								Keywords: Shotgun, Double barrel, saw-off
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
 	desc = "A Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
@@ -145,7 +145,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 1
-	fire_delay = 0
+	fire_delay = 0.5
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
@@ -168,7 +168,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Hunting shotgun					Keywords: Shotgun, Pump-action, 4 rounds, Saw-off, Extra damage +1
+//Hunting shotgun							Keywords: Shotgun, Pump-action, 4 rounds, Saw-off
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
@@ -197,7 +197,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Police Shotgun					Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail, Extra damage +1
+//Police Shotgun							Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
 	desc = "A old-world shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
@@ -243,7 +243,7 @@
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
 
 
-//Trench shotgun					Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +2
+//Trench shotgun							Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +2
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -308,7 +308,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-//Browning Auto-5					Keywords: Shotgun, Semi-auto, 4 rounds internal
+//Browning Auto-5							Keywords: Shotgun, Semi-auto, 4 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
@@ -318,7 +318,7 @@
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 
-//Lever action shotgun					Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
+//Lever action shotgun						Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
 	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber. Signature weapon of the Legion."
@@ -333,7 +333,7 @@
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
 
-//Neostead 2000						Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
+//Neostead 2000								Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
 	name = "Neostead 2000"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
@@ -375,7 +375,7 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer			Keywords: Shotgun, Semi-auto, 12 rounds internal
+//Winchester City-Killer					Keywords: Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
 	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
@@ -386,7 +386,7 @@
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
-//Riot shotgun						Keywords: Shotgun, Semi-auto, 12 round magazine, Pistol grip
+//Riot shotgun								Keywords: Shotgun, Semi-auto, 12 round magazine, Pistol grip
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "Riot shotgun"
 	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."

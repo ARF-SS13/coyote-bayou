@@ -13,49 +13,50 @@ GENERAL
 KEYWORDS
 
 	SINGLE ACTION REVOLVER
-	fire_delay = 7
+	fire_delay = 6
 	spread = 1
 
 	DOUBLE ACTION REVOLVER
-	fire_delay = 6	
-	spread = 2
+	fire_delay = 5	
+	spread = 1
 
 	SEMI-AUTOMATIC PISTOL
 	fire_delay = 3-5	
-	spread = 3
+	spread = 2
 
 	SEMI-AUTOMATIC RIFLE
 	fire_delay = 3-6
-	spread = 1-2
+	spread = 1
 
 	AUTOMATIC SMG
-	fire_delay = 3-6
+	fire_delay = 2.5-6
 	burst_shot_delay = 2.75
 	spread = 8-14
 
 	AUTOMATIC RIFLE
-	fire_delay = 3-7
+	fire_delay = 3-6
 	burst_shot_delay = 3
 	spread = 7-12
 
 	REPEATER	
-	fire_delay = 8
-	spread = 1	
+	fire_delay = 7
+	spread = 0
 
 	DOUBLE BARREL
-	fire_delay = 1
+	fire_delay = 0.5
 	extra damage = 1
 
 	PUMP-ACTION
 	fire_delay = 7
 	extra damage = 1
-	spread = 1
+	spread = 1 (to avoid slugs being too good snipers, might need to be set to 2 for all shotguns)
 	(requires manual action to cycle)
 
 	BOLT-ACTION
 	fire_delay = 10-15
 	extra damage = 6
 	extra_speed = 800
+	spread = 0
 	(requires manual action to cycle)
 
 	PISTOL GRIP/FOLDED STOCK MALUS (For rifles, not pistols obviously)
@@ -74,7 +75,7 @@ KEYWORDS
 
 	SHORT BARREL
 	extra_damage = -2
-	spread = +3
+	spread = +2
 
 	HEAVY
 	recoil = 0.1
