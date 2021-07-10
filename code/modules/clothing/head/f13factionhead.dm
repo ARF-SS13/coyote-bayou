@@ -577,10 +577,10 @@
 
 /obj/item/clothing/head/f13/ncr_cap
 	name = "NCR garrison cap"
-	desc = "(I) A simple cloth garrison cap to be worn when a helmet isn't necessary."
+	desc = "(II) A simple cloth garrison cap to be worn when a helmet isn't necessary."
 	icon_state = "ncr_cap"
 	item_state = "ncr_cap"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("tier" = 2, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/f13/ncr_campaign
 	name = "NCR campaign hat"
@@ -591,17 +591,17 @@
 
 /obj/item/clothing/head/beret/ncr_dresscap
 	name = "NCR peaked cap"
-	desc = "(II) A tan peaked cap with silver pin, designated for enlisted NCRA personnel."
+	desc = "(III) A tan peaked cap with silver pin, designated for enlisted NCRA personnel."
 	icon_state = "ncr_dresscap"
 	item_state = "ncr_dresscap"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_codresscap
 	name = "NCR peaked cap"
-	desc = "(II) A tan peaked cap with golden pin, designated for commissioned NCRA personnel."
+	desc = "(III) A tan peaked cap with golden pin, designated for commissioned NCRA personnel."
 	icon_state = "ncr_codresscap"
 	item_state = "ncr_codresscap"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 //NCR Ranger
 
