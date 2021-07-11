@@ -330,7 +330,7 @@
 				emped = 0
 				if(istype(L))
 					L.update_equipment_speed_mods()
-					
+
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	. = ..()
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
@@ -599,7 +599,7 @@
 	melee_block_threshold = 35
 	armor_block_chance = 70
 	deflection_chance = 10
-	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	armor = list("tier" = 11, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
 /obj/item/clothing/suit/armor/f13/enclave/armorvest
 	name = "armored vest"

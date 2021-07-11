@@ -851,7 +851,7 @@
 
 /obj/item/card/id/dogtag/enclave/recruit
 	access = list(ACCESS_ENCLAVE)
-	
+
 /obj/item/card/id/dogtag/enclave/recruit/attack_self(mob/user)
 	if(isliving(user))
 		var/mob/living/living_user = user
@@ -1118,6 +1118,10 @@
 	icon_state = "brokenholodog"
 	item_state = "brokenholodog"
 	uses_overlays = FALSE
+
+/obj/item/card/id/rusted/brokenholodog/enclave
+	name = "malfunctioning holotag"
+	desc = "A would-be advanced holographic dogtag, if it was working. Kept as a reminder to something."
 
 /obj/item/card/id/dentattoo
 	name = "Den Gang tattoo"
