@@ -182,7 +182,7 @@
 	spread = 12
 	extra_damage = -1
 	can_attachments = TRUE
-
+	actions_types = null
 
 //American 180										Keywords: .22 LR, Automatic, 180 rounds
 /obj/item/gun/ballistic/automatic/smg/american180
@@ -196,6 +196,7 @@
 	can_unsuppress = FALSE
 	burst_shot_delay = 1.5 //rapid fire
 	suppressed = 1
+	actions_types = null
 	fire_sound = 'sound/f13weapons/american180.ogg'
 
 
@@ -832,7 +833,7 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 3
-	burst_shot_delay = 1
+	burst_shot_delay = 1.5
 	fire_delay = 3
 	spread = 4
 	recoil = 0.1
@@ -848,13 +849,13 @@
 //Assault Carbine									Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/assault_carbine
 	name = "assault carbine"
-	desc = "The US army carbine version of the R91, made by Colt and issued to special forces."
+	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3.5
-	burst_shot_delay = 2.2
+	burst_shot_delay = 2.5
 	spread = 9
 	recoil = 0.1
 	can_attachments = TRUE
@@ -1008,8 +1009,8 @@
 	mag_type = /obj/item/ammo_box/magazine/mm762
 	burst_size = 1
 	burst_shot_delay = 1.5
-	fire_delay = 3
-	extra_damage = -1
+	fire_delay = 4
+	extra_damage = -5
 	spread = 8
 	can_attachments = FALSE
 	var/cover_open = FALSE

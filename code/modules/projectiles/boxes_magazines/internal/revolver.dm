@@ -103,7 +103,7 @@
 	name = ".45 ACP revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
-	max_ammo = 6
+	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	name = ".45 LC revolver cylinder"

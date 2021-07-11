@@ -8,8 +8,8 @@ FMJ (full metal jacket)		=	Baseline
 AP (armor piercing)			=	-20% damage. AP increased by 0.2. Wound bonus -50%
 JHP (jacketed hollow point)	=	+15% damage. AP reduced by 0.2 (not below zero). Wound bonus + 50%
 SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
-P+ (overpressure)			=	extra speed 500. AP + 01. Wound bonus -25%
-Match						=	extra speed 200. AP +0.05. Wound bonus -10%
+P+ (overpressure)			=	extra speed 500. AP +25%
+Match						=	extra speed 200. AP +10%. Wound bonus -10%
 Civilian round				=	-10% damage. AP reduced by 50% 
 */
 
@@ -78,9 +78,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c9mm/op
 	name = "9mm +P bullet"
 	damage = 27
-	armour_penetration = 0.15
-	wound_bonus = 11
-	bare_wound_bonus = -11
+	armour_penetration = 0.07
 	var/extra_speed = 500
 
 /obj/item/projectile/bullet/c9mm/simple //for simple mobs, separate to allow balancing
@@ -132,9 +130,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/c45/op
 	name = ".45 +P bullet"
 	damage = 32
-	armour_penetration = 0.2
-	wound_bonus = 15
-	bare_wound_bonus = -15
+	armour_penetration = 0.12
 	var/extra_speed = 500
 
 
@@ -170,21 +166,21 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = 39
+	damage = 38
 	armour_penetration = 0.2
 	wound_bonus = 20
 	bare_wound_bonus = -20
 
 /obj/item/projectile/bullet/m44/jhp
 	name = ".44 JHP bullet"
-	damage = 45
+	damage = 44
 	armour_penetration = 0
 	wound_bonus = -30
 	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/m44/swc
 	name = ".44 SWC bullet"
-	damage = 39
+	damage = 38
 	armour_penetration = 0.1
 	wound_bonus = 30
 	bare_wound_bonus = 30
@@ -192,41 +188,29 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 
-//45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
-/obj/item/projectile/bullet/a45lc
-	name = ".45 LC bullet"
-	damage = 43 //Right inbetween 44 and 45-70. Gun this is used in has a fire delay of 8, doing the math I'm pretty sure a regular M29 has a higher DPS then dual wielding these unless you bounce shots
-	armour_penetration = 0.25 //Again, right inbetween 44 and 45-70.
-	wound_bonus = 20
-	bare_wound_bonus = -20
-	ricochets_max = 3
-	ricochet_incidence_leeway = 130
-	ricochet_decay_damage = 1.1 //48 damage on first bounce, 53 on second, 58 on third. Unless you bounce, the DPS dual wielding is lower then a single M29
-	ricochet_decay_chance = 1
-	ricochet_chance = 80 //100% if you have the vet's trait
-	ricochet_auto_aim_range = 4
+
 
 ////////////
 // .45-70 //
-////////////			-Huge round, AP focus
+////////////			-Heavy round, AP focus
 
 /obj/item/projectile/bullet/c4570
 	name = ".45-70 FMJ bullet"
-	damage = 46
+	damage = 42
 	armour_penetration = 0.3
 	wound_bonus = 24
 	bare_wound_bonus = -24
 
 /obj/item/projectile/bullet/c4570/jhp
 	name = ".45-70 JHP bullet"
-	damage = 53
+	damage = 49
 	armour_penetration = 0.1
 	wound_bonus = -36
 	bare_wound_bonus = 36
 
 /obj/item/projectile/bullet/c4570/swc
 	name = ".45-70 SWC bullet"
-	damage = 49
+	damage = 42
 	armour_penetration = 0.2
 	wound_bonus = 36
 	bare_wound_bonus = 36
@@ -244,21 +228,40 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 ///////////
 // 14 MM //
-///////////				-Huge pistol round, damage focus
+///////////				-Heavy round, damage focus
 
 /obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
-	damage = 50
-	armour_penetration = 0.25
+	damage = 44
+	armour_penetration = 0.2
 	wound_bonus = 28
 	bare_wound_bonus = -28
 
 /obj/item/projectile/bullet/mm14/jhp
 	name = "14mm JHP bullet"
-	damage = 57
-	armour_penetration = 0.05
+	damage = 54
+	armour_penetration = 0
 	wound_bonus = -42
 	bare_wound_bonus = 42
+
+
+//////////////////////
+//SPECIAL AMMO TYPES//
+//////////////////////
+
+//45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
+/obj/item/projectile/bullet/a45lc
+	name = ".45 LC bullet"
+	damage = 40 //Right inbetween 44 and 45-70. Gun this is used in has a fire delay of 8, doing the math I'm pretty sure a regular M29 has a higher DPS then dual wielding these unless you bounce shots
+	armour_penetration = 0.25 //Again, right inbetween 44 and 45-70.
+	wound_bonus = 20
+	bare_wound_bonus = -20
+	ricochets_max = 3
+	ricochet_incidence_leeway = 130
+	ricochet_decay_damage = 1.1 //48 damage on first bounce, 53 on second, 58 on third. Unless you bounce, the DPS dual wielding is lower then a single M29
+	ricochet_decay_chance = 11
+	ricochet_chance = 80 //100% if you have the vet's trait
+	ricochet_auto_aim_range = 4
 
 
 /////////////
@@ -268,13 +271,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
-	damage = 34
+	damage = 32
 	armour_penetration = 0.6
 	var/piercing = FALSE
 
 /obj/item/projectile/bullet/needle/ap
 	name = "armour piercing needle"
-	damage = 31
+	damage = 29
 	armour_penetration = 0.8
 	wound_bonus = 0
 	bare_wound_bonus = 0
@@ -282,7 +285,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/needle/ultra
 	name = "ultracite needle"
-	damage = 38
+	damage = 35
 	armour_penetration = 0.4
 	piercing = TRUE
 
