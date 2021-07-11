@@ -580,7 +580,6 @@ Raider
 		/obj/item/gun/ballistic/automatic/pistol/pistol22=1,
 		/obj/item/ammo_box/magazine/m22=2)
 
-
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
