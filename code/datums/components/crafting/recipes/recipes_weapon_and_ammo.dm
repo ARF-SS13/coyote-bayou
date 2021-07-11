@@ -472,19 +472,6 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//widowmaker
-/datum/crafting_recipe/widowmaker
-	name = "Winchester Widowmaker double barrel"
-	result = /obj/item/gun/ballistic/revolver/widowmaker
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/crafting/metalparts = 5,
-				/datum/reagent/blackpowder = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_availible = FALSE
-
 //hunting shotgun
 /datum/crafting_recipe/huntingshotgun
 	name = "Hunting Shotgun"
@@ -940,20 +927,6 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//pps
-/datum/crafting_recipe/pps
-	name = "Ppsh-41"
-	result = /obj/item/gun/ballistic/automatic/smg/ppsh
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/metalparts = 2
-				)
-	tools = list(TOOL_WORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_availible = FALSE
-
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
 	name = "R82 heavy service rifle"
@@ -963,6 +936,34 @@
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+/*
+/widowmaker
+/datum/crafting_recipe/widowmaker
+	name = "Winchester Widowmaker double barrel"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/datum/reagent/blackpowder = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//ppsh
+/datum/crafting_recipe/pps
+	name = "Ppsh-41"
+	result = /obj/item/gun/ballistic/automatic/smg/ppsh
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -984,6 +985,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
+*/
 
 //////////////////////////////////
 ///GUN ATTACHMENT/PARTS CRAFTING//

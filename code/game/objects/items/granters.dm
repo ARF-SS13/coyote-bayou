@@ -671,18 +671,6 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/thatgun)
 
-/obj/item/book/granter/crafting_recipe/blueprint/pps
-	name = "ppsh41 blueprint"
-	icon_state = "blueprint2"
-	crafting_recipe_types = list(/datum/crafting_recipe/pps)
-
-/*
-/obj/item/book/granter/crafting_recipe/blueprint/mg34
-	name = "mg34 blueprint"
-	icon_state = "blueprint2"
-	crafting_recipe_types = list(/datum/crafting_recipe/mg34)
-*/
-
 /obj/item/book/granter/crafting_recipe/blueprint/plasmapistol
 	name = "plasma pistol blueprint"
 	icon_state = "blueprint2"

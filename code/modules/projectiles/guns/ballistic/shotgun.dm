@@ -23,7 +23,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	force = 15 //Decent clubs generally speaking
 	fire_delay = 7 //Typical pump action, pretty fast.
-	spread = 1
+	spread = 2
 	recoil = 0.1
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
@@ -98,10 +98,10 @@
 ////////////////////////////////////////
 
 
-//Caravan shotgun								Keywords: Shotgun, Double barrel, saw-off, extra damage +1
+//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +1
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
-	desc = "An common over-under double barreled shotgun."
+	desc = "An common over-under double barreled shotgun made in the post-war era."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -112,7 +112,7 @@
 	fire_delay = 0.5
 	extra_damage = 2
 	force = 20
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
@@ -137,7 +137,7 @@
 //Widowmaker								Keywords: Shotgun, Double barrel, saw-off
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
-	desc = "A Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
+	desc = "Old-world Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -177,7 +177,6 @@
 	icon_state = "pump"
 	item_state = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
-	extra_damage = 1
 	fire_delay = 8 //slightly slower than police/military versions.
 	sawn_desc = "A concealed hand blaster, for any situation."
 
@@ -202,7 +201,7 @@
 //Police Shotgun							Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
-	desc = "A old-world shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
+	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
@@ -284,7 +283,7 @@
 		if(1)
 			select = 0
 			burst_size = 1
-			spread = 1
+			spread = 2
 			extra_damage = 2
 			to_chat(user, "<span class='notice'>You go back to firing the shotgun one round at a time.</span>")
 
@@ -298,6 +297,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
 	fire_delay = 6
+	extra damage = 0
 	recoil = 0.1
 	spread = 2
 
@@ -384,6 +384,7 @@
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
+	fire_delay = 5
 	var/semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 

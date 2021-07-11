@@ -178,7 +178,7 @@
 //Remington rifle						Keywords: 7.62, Bolt-action, 5 rounds internal
 /obj/item/gun/ballistic/rifle/hunting/remington
 	name = "Remington rifle"
-	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy. In use by 1st Recon and designated marksman throughout the NCR."
+	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
 	fire_delay = 12
 	extra_damage = 7
@@ -227,7 +227,7 @@
 //Mosin-Nagant							Keywords: 7.62, Bolt-action, 5 rounds internal
 /obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin-Nagant m38"
-	desc = "A classic Russian bolt action chambered in 7.62. Now all you need is some vodka."
+	desc = "A rusty old Russian bolt action chambered in 7.62."
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
@@ -315,7 +315,7 @@
 //Commando carbine							Keywords: BoS, .45 ACP, Bolt-action, 12 round magazine, Long barrel, Suppressed
 /obj/item/gun/ballistic/rifle/mag/commando
 	name = "commando carbine"
-	desc = "An integrally suppressed bolt action carbine, the few existing examples of this rare gun are mostly in Brotherhood hands. Uses .45 socom magazines."
+	desc = "A integrally suppressed bolt action carbine, the few existing examples of this rare gun are mostly in Brotherhood hands. Uses .45 socom magazines."
 	icon_state = "commando"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
