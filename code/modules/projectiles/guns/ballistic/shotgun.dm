@@ -297,7 +297,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
 	fire_delay = 6
-	extra damage = 0
+	extra_damage = 0
 	recoil = 0.1
 	spread = 2
 
