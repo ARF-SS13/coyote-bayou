@@ -223,8 +223,6 @@
 
 /obj/item/twohanded/spear/lance/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 100, 70)
-	AddElement(/datum/element/sword_point)
 	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]1")
 
 
@@ -237,8 +235,6 @@
 
 /obj/item/twohanded/spear/scrapspear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/butchering, 100, 70)
-	AddElement(/datum/element/sword_point)
 	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=27, icon_wielded="[icon_prefix]1")
 
 
