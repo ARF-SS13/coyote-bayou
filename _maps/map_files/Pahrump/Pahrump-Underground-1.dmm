@@ -4909,7 +4909,6 @@
 /obj/item/tape,
 /obj/item/tape,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/item/stack/f13Cash/random/med,
 /obj/item/storage/box/handcuffs,
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
@@ -5634,6 +5633,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/item/stack/f13Cash/random/med,
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
 "ePn" = (
@@ -21980,11 +21980,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"rrR" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/junglebush,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "rrW" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
@@ -22994,13 +22989,6 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/den)
-"saJ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
 "sbj" = (
 /obj/structure/flora/junglebush/large,
 /turf/closed/mineral/random/low_chance,
@@ -26399,7 +26387,6 @@
 /area/f13/brotherhood/mining)
 "vcM" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/structure/timeddoor,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -28879,12 +28866,6 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"xxJ" = (
-/obj/structure/timeddoor,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/clinic)
 "xyk" = (
 /turf/closed/wall/f13/wood,
 /area/f13/building)
@@ -32964,12 +32945,12 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -33221,12 +33202,12 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 xvg
 nvR
 khL
 xvg
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -33478,12 +33459,12 @@ uoO
 eLE
 eLE
 eLE
-dZF
+puJ
 vsJ
 qtr
 pzW
 xVW
-dZF
+puJ
 eLE
 eLE
 eLE
@@ -33733,16 +33714,16 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 xIF
 khL
 uls
 xIF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -33990,7 +33971,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 dJw
 nsw
 dOx
@@ -33999,7 +33980,7 @@ xVW
 wvi
 xIF
 oEC
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -34247,7 +34228,7 @@ aoj
 uoO
 uoO
 eLE
-dZF
+puJ
 nWh
 xIF
 rMk
@@ -34256,7 +34237,7 @@ xIF
 rKy
 nsw
 okO
-dZF
+puJ
 eLE
 uoO
 eLE
@@ -34504,7 +34485,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 puJ
 puJ
 puJ
@@ -34513,27 +34494,27 @@ mDR
 puJ
 puJ
 puJ
-dZF
+puJ
 eLE
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 eLE
 uoO
@@ -34761,7 +34742,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 tID
 chX
 pez
@@ -34770,11 +34751,11 @@ lVt
 pez
 vEB
 tID
-dZF
+puJ
 eLE
 eLE
 eLE
-dZF
+puJ
 ise
 ise
 ise
@@ -34790,8 +34771,8 @@ puJ
 bcN
 nzm
 bcN
-dZF
-dZF
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -35014,11 +34995,11 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 wFL
 lVt
 mxI
@@ -35027,11 +35008,11 @@ lVt
 lVt
 lVt
 wFL
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 ise
 nhE
 ise
@@ -35048,9 +35029,9 @@ pzF
 lvr
 bcN
 puJ
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -35271,7 +35252,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 vXV
 puJ
 mnk
@@ -35307,9 +35288,9 @@ bcN
 puJ
 tev
 jNA
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 lnr
@@ -35528,7 +35509,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 iiu
 puJ
 iiu
@@ -35566,7 +35547,7 @@ uVp
 bcN
 bcN
 sxA
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -35785,7 +35766,7 @@ eLE
 puJ
 puJ
 puJ
-dZF
+puJ
 vZM
 nGN
 ise
@@ -35823,7 +35804,7 @@ cTp
 npi
 lth
 xkx
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36080,7 +36061,7 @@ bcN
 bcN
 wbp
 bcN
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36299,7 +36280,7 @@ eLE
 uoO
 uoO
 ise
-xxJ
+ise
 cfe
 ise
 ise
@@ -36337,7 +36318,7 @@ bcN
 rQA
 bcN
 bcN
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36556,7 +36537,7 @@ eLE
 uoO
 puJ
 puJ
-dZF
+puJ
 fDw
 lMs
 cpE
@@ -36594,7 +36575,7 @@ pzF
 dGR
 bcN
 xkx
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36813,7 +36794,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 iiu
 puJ
 iiu
@@ -36851,7 +36832,7 @@ bcN
 wbp
 bcN
 fHP
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -37070,7 +37051,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 vIp
 puJ
 vXV
@@ -37106,9 +37087,9 @@ bcN
 puJ
 eHN
 mql
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -37327,11 +37308,11 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 sBG
 xIk
 iiu
@@ -37340,11 +37321,11 @@ cvd
 puJ
 xIk
 wQB
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 dqR
 pqw
 bcN
@@ -37361,9 +37342,9 @@ rrE
 cFE
 bcN
 puJ
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -37588,7 +37569,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 pqV
 gbG
 iiu
@@ -37597,11 +37578,11 @@ gJa
 puJ
 gbG
 pqV
-dZF
+puJ
 eLE
 eLE
 eLE
-dZF
+puJ
 fls
 iXH
 bcN
@@ -37617,8 +37598,8 @@ puJ
 bcN
 bEu
 bcN
-dZF
-dZF
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -37858,23 +37839,23 @@ dZF
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 eLE
 uoO
@@ -38101,7 +38082,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 puJ
 lnr
 lnr
@@ -38358,7 +38339,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 uoO
 rzg
 lnr
@@ -49982,7 +49963,7 @@ uoO
 uoO
 uoO
 uoO
-rrR
+qUx
 lnr
 nfv
 nfv
@@ -51253,7 +51234,7 @@ riT
 rsf
 rAW
 rtG
-saJ
+rtG
 rtG
 dXE
 jmN
