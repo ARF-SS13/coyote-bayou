@@ -45,9 +45,9 @@
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2
 
-/obj/item/ammo_box/magazine/internal/shot/dual/heck
-	name = "heckgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+/obj/item/ammo_box/magazine/internal/shot/dual/simple
+	name = "double-barrel shotgun internal magazine (simple)"
+	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"

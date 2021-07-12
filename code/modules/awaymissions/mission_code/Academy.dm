@@ -257,7 +257,7 @@
 						new /obj/item/coin/gold(M)
 		if(14)
 			//Free Gun
-			new /obj/item/gun/ballistic/revolver/mateba(drop_location())
+			new /obj/item/gun/ballistic/revolver/m29/snub(drop_location())
 		if(15)
 			//Random One-use spellbook
 			new /obj/item/book/granter/spell/random(drop_location())
