@@ -205,6 +205,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	name = "matrix"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
 	icon_state = "matrix"
+	var/in_use = FALSE
 
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
@@ -212,6 +213,8 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(!ishuman(dropping))
 		return //Only humans have job slots to be freed.
+	if(in_use) // Someone's already going in.
+		return
 	var/mob/living/carbon/human/departing_mob = dropping
 	if(departing_mob != user && departing_mob.client)
 		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to depart or not.</span>")
@@ -223,6 +226,17 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	if(departing_mob.logout_time && departing_mob.logout_time + 5 MINUTES > world.time)
 		to_chat(user, "<span class='warning'>This mind has only recently departed. Better give it some more time before taking such a drastic measure.</span>")
 		return
+	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to leave the wasteland!" : "is trying to send [departing_mob] away!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to leave the wasteland." : "are trying to send [departing_mob] away."]</span>")
+	icon_state = "matrix_going" // ALERT, WEE WOO
+	update_icon()
+	in_use = TRUE
+	if(!do_after(user, 50, target = src))
+		icon_state = "matrix"
+		in_use = FALSE
+		return
+	icon_state = "matrix"
+	in_use = FALSE
+	update_icon()
 	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
 	if(!length(departing_mob.contents))
 		dat += " none."
