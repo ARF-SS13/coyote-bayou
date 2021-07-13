@@ -465,7 +465,7 @@ Heavy Trooper
 		/obj/item/ammo_box/magazine/lmg=1, \
 		/obj/item/binoculars=1)
 
-/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncr/f13heavytrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
