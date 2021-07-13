@@ -425,7 +425,7 @@
 //NCR
 
 /obj/item/clothing/head/f13/ncr
-	name = "NCR steelpot helmet"
+	name = "NCR trooper helmet"
 	desc = "(III) A standard issue NCR steel helmet. Looks like you can write on it and strap a few items on the helmet band."
 	icon_state = "ncr_steelpot"
 	item_state = "ncr_steelpot"
@@ -439,7 +439,7 @@
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/ncr/steelpot_goggles
-	name = "NCR storm steelpot helmet"
+	name = "NCR storm helmet"
 	desc = "(III) A standard issue NCR steel helmet, issued with an additional pair of storm goggles for weather resistance."
 	icon_state = "steelpot_goggles"
 	item_state = "steelpot_goggles"
@@ -474,34 +474,28 @@
 					sleep(15)
 
 /obj/item/clothing/head/f13/ncr/steelpot_med
-	name = "NCR medic steelpot helmet"
+	name = "NCR medic helmet"
 	desc = "(III) A standard issue NCR steel helmet with the addition of decalling signifying a medic."
 	icon_state = "steelpot_med"
 	item_state = "steelpot_med"
 
 /obj/item/clothing/head/f13/ncr/steelpot_mp
-	name = "NCR military police steelpot helmet"
+	name = "NCR military police helmet"
 	desc = "(III) A standard issue NCR steel helmet emblazoned with the initials of the military police."
 	icon_state = "steelpot_mp"
 	item_state = "steelpot_mp"
 
 /obj/item/clothing/head/f13/ncr/steelpot_gambler
-	name = "NCR gambler steelpot helmet"
+	name = "NCR gambler helmet"
 	desc = "(III) A standard issue NCR steel helmet. Stashed in the strap are decks of cards, dominoes and cigarettes for personal use."
 	icon_state = "steelpot_gambler"
 	item_state = "steelpot_gambler"
 
 /obj/item/clothing/head/f13/ncr/steelpot_bandolier
-	name = "NCR bandolier steelpot helmet"
+	name = "NCR bandolier helmet"
 	desc = "(III) A standard issue NCR steel helmet. This one has clearly seen heavy use, as well as having additional bullets tucked into the strap."
 	icon_state = "steelpot_bandolier"
 	item_state = "steelpot_bandolier"
-
-/obj/item/clothing/head/f13/ncr/steelpot_patriot
-	name = "NCR patriot steelpot helmet"
-	desc = "(III) A standard issue NCR steel helmet. This one has been patriotically customised to feature the NCR's flag prominently across its front."
-	icon_state = "steelpot_patriot"
-	item_state = "steelpot_patriot"
 
 /obj/item/clothing/head/f13/ncr_flapcap
 	name = "NCR field cap"
@@ -524,6 +518,13 @@
 	desc = "(V) A green beret, standard issue for all commissioned NCR Officers."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
+	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/beret/ncr/ncr_medic
+	name = "NCR medical beret"
+	desc = "(V) A white beret, issued to officers of the medical corps."
+	icon_state = "ncr_medical_beret"
+	item_state = "ncr_medical_beret"
 	armor = list("tier" = 5, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon
