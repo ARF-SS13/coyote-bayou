@@ -63,6 +63,8 @@
 #define ANTAG_HUD_FUGITIVE		25
 #define ANTAG_HUD_HERETIC	26
 
+#define DATA_HUD_CLIENT			27 //data hud new
+
 // Notification action types
 #define NOTIFY_JUMP "jump"
 #define NOTIFY_ATTACK "attack"

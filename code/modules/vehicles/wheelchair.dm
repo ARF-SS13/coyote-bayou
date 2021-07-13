@@ -2,7 +2,7 @@
 	name = "wheelchair"
 	desc = "A chair without any wheels. It seems to be moveable by owner's self hatred."
 	icon = 'icons/obj/vehicles.dmi'
-	icon_state = "new_wheelchair"
+	icon_state = "wheelchair"
 	layer = OBJ_LAYER
 	max_integrity = 100
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 30)	//Wheelchairs aren't super tough yo
