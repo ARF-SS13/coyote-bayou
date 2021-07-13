@@ -600,8 +600,7 @@
 				/obj/item/kitchen/knife/combat/survival,
 				/obj/item/kitchen/knife/combat/bone,
 				/obj/item/instrument/guitar,
-				/obj/item/instrument/violin,
-				/obj/item/instrument/saxophone,
+				/obj/item/twohanded/spear/scrapspear,
 				/obj/item/claymore/machete/pipe,
 				/obj/item/kitchen/knife/cosmicdirty,
 				/obj/item/melee/unarmed/brass,
@@ -615,15 +614,13 @@
 	loot = list(
 				/obj/item/weldingtool,
 				/obj/item/twohanded/spear,
-				/obj/item/bostaff,
 				/obj/item/twohanded/baseball,
 				/obj/item/kitchen/knife/butcher,
-				/obj/item/claymore/machete/golf,
+				/obj/item/twohanded/baseball/golfclub,
 				/obj/item/claymore/machete,
 				/obj/item/claymore/machete/reinforced,
 				/obj/item/shield/riot/buckler,
 				/obj/item/melee/unarmed/tigerclaw,
-				/obj/item/melee/unarmed/bladed,
 				/obj/item/melee/unarmed/sappers
 				)
 
@@ -638,6 +635,7 @@
 				/obj/item/melee/unarmed/lacerator,
 				/obj/item/melee/unarmed/maceglove,
 				/obj/item/melee/unarmed/punchdagger,
+				/obj/item/twohanded/baseball/golfclub/louisville,
 				/obj/item/shield/riot
 				)
 
@@ -648,10 +646,10 @@
 	loot = list(
 				/obj/item/twohanded/thermic_lance,
 				/obj/item/twohanded/chainsaw,
-				/obj/item/kinetic_crusher,
+				/obj/item/twohanded/sledgehammer/rockethammer,
 				/obj/item/melee/powered/ripper,
 				/obj/item/melee/powerfist,
-				/obj/item/melee/transforming/energy/axe,
+				/obj/item/melee/transforming/energy/axe/protonaxe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
 				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
