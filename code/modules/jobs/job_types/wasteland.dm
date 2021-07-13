@@ -989,39 +989,3 @@ Raider
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
-
-/*
-Radio Host
-*/
-
-/datum/job/wasteland/f13radiohost
-	title = "Radio Host"
-	flag = F13RADIOHOST
-	faction = "Wastelander"
-	total_positions = 1
-	spawn_positions = 1
-	description = "You have been supplied by investors far west to report & inform those of the wasteland about ongoing local events. You have ample radios to use a less official way of reporting, or you could even use the radio broadcast console. You're going to have to hire armed muscle as someone may come knocking for your equipment & may want to use it."
-	supervisors = "none"
-	selection_color = "#002366"
-	exp_requirements = 1500
-	exp_type = EXP_TYPE_FALLOUT
-	outfit = /datum/outfit/job/wasteland/f13radiohost
-	access = list(ACCESS_HEADS)
-	minimal_access = list(ACCESS_HEADS)
-
-/datum/outfit/job/wasteland/f13radiohost
-	name = "Radio Host"
-	jobtype = /datum/job/wasteland/f13radiohost
-	id = /obj/item/card/id/radiohost
-	ears = /obj/item/radio/headset
-	shoes = /obj/item/clothing/shoes/laceup
-	l_pocket = /obj/item/switchblade
-	r_pocket = /obj/item/flashlight/seclite
-	uniform = /obj/item/clothing/under/suit/white
-	backpack =	/obj/item/storage/backpack/satchel
-	satchel = 	/obj/item/storage/backpack/satchel
-	gloves = /obj/item/clothing/gloves/color/white
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=3, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/storage/bag/money/small/settler=1)
