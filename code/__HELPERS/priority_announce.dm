@@ -7,7 +7,7 @@
 	if(type == "Priority")
 		announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		if (title && length(title) > 0)
-			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
+			announcement += "<br><h2 class='alert'>Radio Broadcast</h2>"
 	else if(type == "Radio Broadcast")
 		announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		GLOB.news_network.SubmitArticle(text, "Captain's Announcement", "Wasteland Announcements", null)
@@ -16,9 +16,9 @@
 		if(!sender_override)
 			announcement += "<h1 class='alert'>Radio Station Broadcast</h1>"
 		else
-			announcement += "<h1 class='alert'>[sender_override]</h1>"
+			announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		if (title && length(title) > 0)
-			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
+			announcement += "<br><h2 class='alert'>Radio Broadcast</h2>"
 
 		if(!sender_override)
 			if(title == "")
