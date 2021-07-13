@@ -880,3 +880,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
+
+/obj/effect/landmark/start/f13/radio
+	name = "Radio Host"
+	icon_state = "Wastelander"

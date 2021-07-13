@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 	"Curator",
 	"Lawyer",
 	"Chaplain",
-	"Assistant"))
+	"Assistant",))
 
 
 GLOBAL_LIST_INIT(nonhuman_positions, list(
@@ -303,7 +303,8 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Wastelander",
 	"Vigilante",
 	"Den Mob Enforcer",
-	"Den Mob Boss"
+	"Den Mob Boss",
+	"Radio Host"
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
