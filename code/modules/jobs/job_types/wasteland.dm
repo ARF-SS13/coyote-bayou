@@ -728,7 +728,9 @@ Raider
 	gloves = /obj/item/clothing/gloves/color/brown
 	l_hand = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
-		/obj/item/ammo_box/a357=2)
+		/obj/item/ammo_box/a357=2,
+		/obj/item/binoculars,
+		/obj/item/radio)
 
 /datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
