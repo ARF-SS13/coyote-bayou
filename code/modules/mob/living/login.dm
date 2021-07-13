@@ -23,3 +23,4 @@
 
 	if(ranged_ability)
 		ranged_ability.add_ranged_ability(src, "<span class='notice'>You currently have <b>[ranged_ability]</b> active!</span>")
+	hud_client_check()
