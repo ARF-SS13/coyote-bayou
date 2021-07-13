@@ -1705,6 +1705,14 @@
 /obj/item/stack/sheet/glass,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
+"aOM" = (
+/obj/structure/chair{
+	dir = 1;
+	icon_state = "chair"
+	},
+/obj/machinery/light,
+/turf/open/floor/wood,
+/area/f13/building)
 "aOO" = (
 /obj/item/caution{
 	desc = "A sign denoting the presence of a likely very moist molerat.";
@@ -5514,6 +5522,9 @@
 	},
 /obj/item/reagent_containers/pill/patch/turbo{
 	layer = 2.4
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/plasteel/grimy,
 /area/f13/building)
@@ -12497,6 +12508,9 @@
 /obj/structure/sign/poster/prewar/poster89{
 	pixel_y = 27
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "gdN" = (
@@ -15390,6 +15404,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"hsZ" = (
+/obj/machinery/light,
+/turf/open/floor/wood,
+/area/f13/building)
 "htf" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -18909,6 +18927,12 @@
 	},
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"iZI" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/f13/building)
 "iZJ" = (
 /obj/structure/rack,
@@ -22579,6 +22603,8 @@
 /area/f13/legion)
 "kKu" = (
 /obj/structure/table/wood/settler,
+/obj/item/flashlight/lamp,
+/obj/item/stack/f13Cash/random/med,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "kLc" = (
@@ -24909,6 +24935,14 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
+"lVi" = (
+/obj/effect/landmark/start/f13/radio,
+/obj/structure/bed/pod,
+/obj/item/bedsheet{
+	icon_state = "sheethos"
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "lVn" = (
 /obj/item/clothing/under/f13/rag,
 /turf/open/indestructible/ground/inside/mountain,
@@ -25010,6 +25044,15 @@
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/bar)
+"lYE" = (
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/trash/plate,
+/obj/item/kitchen/fork,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "lYF" = (
 /obj/structure/closet/cardboard,
 /obj/item/storage/briefcase,
@@ -25244,6 +25287,12 @@
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
+/area/f13/building)
+"mer" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood,
 /area/f13/building)
 "mfg" = (
 /obj/structure/rack,
@@ -28882,6 +28931,12 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/f13/building)
+"nZH" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/f13/building)
 "nZJ" = (
 /obj/structure/car/rubbish3,
@@ -32996,9 +33051,6 @@
 	color = "000000"
 	},
 /obj/structure/simple_door/interior,
-/obj/machinery/door/poddoor/shutters{
-	id = "mayor"
-	},
 /turf/open/floor/wood/f13/stage_b,
 /area/f13/building)
 "pXx" = (
@@ -34469,6 +34521,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
+"qKf" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "qKu" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt{
@@ -35543,6 +35601,9 @@
 "rkR" = (
 /obj/structure/displaycase/trophy,
 /obj/item/reagent_containers/food/drinks/trophy/gold_cup,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "rkZ" = (
@@ -37210,6 +37271,9 @@
 "sfP" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/fifty,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "sgd" = (
@@ -38238,6 +38302,7 @@
 /obj/structure/sign/poster/official/obey{
 	pixel_y = -32
 	},
+/obj/machinery/light,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "sGg" = (
@@ -44234,6 +44299,25 @@
 /area/f13/wasteland)
 "vqS" = (
 /obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/neck/tie/blue,
+/obj/item/clothing/neck/tie/red,
+/obj/item/clothing/neck/tie/horrible,
+/obj/item/clothing/neck/tie/black,
+/obj/item/clothing/under/suit/black,
+/obj/item/clothing/under/suit/black/skirt,
+/obj/item/clothing/under/suit/black_really,
+/obj/item/clothing/under/suit/burgundy,
+/obj/item/clothing/under/suit/charcoal,
+/obj/item/clothing/under/suit/checkered,
+/obj/item/clothing/under/suit/green,
+/obj/item/clothing/under/suit/navy,
+/obj/item/clothing/under/suit/polychromic,
+/obj/item/clothing/under/suit/red,
+/obj/item/clothing/under/suit/sl,
+/obj/item/clothing/under/suit/tan,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/head/fedora,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "vrB" = (
@@ -47789,6 +47873,9 @@
 /area/f13/wasteland)
 "xaf" = (
 /obj/machinery/vending/boozeomat,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "xaj" = (
@@ -48529,6 +48616,9 @@
 /area/f13/building)
 "xqa" = (
 /obj/structure/table/wood,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "xql" = (
@@ -49345,15 +49435,15 @@
 	},
 /area/f13/wasteland)
 "xJv" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
+/obj/structure/table/wood/poker,
+/obj/item/radio/intercom{
+	name = "radio station intercom";
+	pixel_y = 30
 	},
-/obj/machinery/button/door{
-	id = "mayor";
-	pixel_x = 1;
-	pixel_y = 36
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/carpet,
 /area/f13/building)
 "xJz" = (
 /obj/structure/window/fulltile/house{
@@ -49958,6 +50048,15 @@
 	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland)
+"xYM" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "xYN" = (
 /obj/structure/chair{
 	dir = 4
@@ -50253,6 +50352,9 @@
 /obj/item/paper/crumpled/ruins,
 /obj/item/paper/crumpled/ruins,
 /obj/item/paper/crumpled/ruins,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/f13/building)
 "yeh" = (
@@ -75686,7 +75788,7 @@ sYX
 nMs
 sYX
 pzh
-xJv
+ozq
 ozq
 sYX
 daU
@@ -89059,7 +89161,7 @@ tZe
 jtO
 rPC
 tXu
-hPE
+aOM
 kEI
 fyf
 jNE
@@ -90085,7 +90187,7 @@ rvr
 rvr
 wNh
 wNh
-wNh
+xYM
 wNh
 lKi
 kEI
@@ -90595,7 +90697,7 @@ sND
 kEI
 wZf
 xPb
-rvr
+nZH
 rvr
 aGH
 feM
@@ -91110,7 +91212,7 @@ khy
 gSH
 wUa
 kEI
-rvr
+mer
 xPb
 rvm
 xPb
@@ -92397,7 +92499,7 @@ kEI
 kEI
 wsO
 rvr
-rvr
+hsZ
 kEI
 kEI
 kEI
@@ -93685,7 +93787,7 @@ rvr
 rvr
 rvr
 rvr
-rvr
+iZI
 rvr
 exL
 kEI
@@ -94190,7 +94292,7 @@ dMW
 thG
 fyf
 kEI
-vma
+xJv
 sWI
 pIk
 kEI
@@ -95227,7 +95329,7 @@ xaf
 hyH
 kEI
 rvr
-rvr
+nZH
 rvr
 oyW
 kEI
@@ -95475,7 +95577,7 @@ dMW
 thG
 fyf
 kEI
-ftw
+lYE
 ftw
 rvr
 alI
@@ -96254,7 +96356,7 @@ rvr
 xft
 uDk
 epP
-rvr
+hsZ
 kEI
 kEI
 kEI
@@ -96503,7 +96605,7 @@ edA
 thG
 fyf
 kEI
-giO
+qKf
 giO
 giO
 kEI
@@ -96762,10 +96864,10 @@ fyf
 kEI
 vqS
 kKu
-giO
+lVi
 kEI
 fmN
-rvr
+nZH
 rvr
 rvr
 tYw
