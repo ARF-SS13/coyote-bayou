@@ -851,7 +851,7 @@
 
 /obj/item/card/id/dogtag/enclave/recruit
 	access = list(ACCESS_ENCLAVE)
-	
+
 /obj/item/card/id/dogtag/enclave/recruit/attack_self(mob/user)
 	if(isliving(user))
 		var/mob/living/living_user = user
@@ -896,6 +896,15 @@
 	icon_state = "deputy"
 	item_state = "badge-deputy"
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
+
+
+/obj/item/card/id/radiohost
+	name = "Radio Host's Card"
+	desc = "A identification card that seems to slot into some sort of console"
+	assignment = "ID tags"
+	icon_state = "gold"
+	item_state = "gold_id"
+	access = list(ACCESS_HEADS)
 
 /obj/item/card/id/dogtag/deputy/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/card/id/dogtag/sheriff))

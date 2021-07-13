@@ -11,12 +11,12 @@
 /area/f13/tunnel)
 "aaL" = (
 /obj/structure/decoration/rag{
-	icon_state = "skin"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_x = -32
 	},
-/obj/structure/decoration/rag{
-	icon_state = "skulls"
-	},
-/turf/closed/indestructible/f13vaultrusted,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "abi" = (
 /obj/effect/decal/cleanable/dirt{
@@ -512,6 +512,12 @@
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -1181,8 +1187,8 @@
 	color = "000000"
 	},
 /obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "church1"
+	height = 1;
+	id = "innhouse"
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
@@ -3314,10 +3320,12 @@
 /area/f13/brotherhood/operations)
 "cXx" = (
 /obj/structure/simple_door/wood,
-/obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
-	icon_state = "skulls"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls"
 	},
+/obj/structure/decoration/rag,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "cYr" = (
@@ -4901,7 +4909,6 @@
 /obj/item/tape,
 /obj/item/tape,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/item/stack/f13Cash/random/med,
 /obj/item/storage/box/handcuffs,
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
@@ -5626,6 +5633,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/item/stack/f13Cash/random/med,
 /turf/open/floor/wood/f13/oak,
 /area/f13/tunnel)
 "ePn" = (
@@ -7021,7 +7029,9 @@
 "fZO" = (
 /obj/structure/simple_door/metal/fence,
 /obj/structure/decoration/rag{
-	icon_state = "skulls"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -7752,10 +7762,14 @@
 	},
 /area/f13/clinic)
 "gAX" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/rag{
-	icon_state = "skulls"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_x = -32
 	},
-/turf/closed/indestructible/f13vaultrusted,
+/turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "gBh" = (
 /obj/machinery/door/airlock/medical{
@@ -14396,10 +14410,12 @@
 /area/f13/ncr)
 "lNb" = (
 /obj/structure/simple_door/metal/barred,
-/obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
-	icon_state = "skulls"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls"
 	},
+/obj/structure/decoration/rag,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "lOu" = (
@@ -17584,10 +17600,9 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
 "ogq" = (
-/obj/structure/flora/tree/jungle/small,
-/obj/structure/flora/junglebush,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/tunnel)
+/obj/machinery/telecomms/server/presets/town,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "ogE" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenfull"
@@ -21314,11 +21329,13 @@
 /area/f13/brotherhood/operations)
 "qVf" = (
 /obj/structure/simple_door/metal/barred,
-/obj/structure/decoration/rag,
-/obj/structure/decoration/rag{
-	icon_state = "skulls"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls"
+	},
+/obj/structure/decoration/rag,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -21692,7 +21709,7 @@
 /area/f13/caves)
 "rjq" = (
 /obj/structure/ladder/unbreakable{
-	height = 2;
+	height = 1;
 	id = "prospectorladder"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -21967,11 +21984,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"rrR" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/junglebush,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "rrW" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood{
@@ -22981,13 +22993,6 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/den)
-"saJ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
 "sbj" = (
 /obj/structure/flora/junglebush/large,
 /turf/closed/mineral/random/low_chance,
@@ -23373,8 +23378,8 @@
 /area/f13/tunnel)
 "sqz" = (
 /obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "storedown"
+	height = 1;
+	id = "oasis"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -25228,10 +25233,7 @@
 /area/f13/followers)
 "tYM" = (
 /obj/structure/bookcase/manuals,
-/obj/item/book/granter/trait/midsurgery,
-/obj/item/book/granter/trait/chemistry,
-/obj/item/book/granter/trait/lowsurgery,
-/obj/item/book/granter/trait/tinkering,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -25349,10 +25351,12 @@
 /area/f13/bunker)
 "uel" = (
 /obj/structure/simple_door/metal/barred,
-/obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
-	icon_state = "skulls"
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls"
 	},
+/obj/structure/decoration/rag,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -26387,7 +26391,6 @@
 /area/f13/brotherhood/mining)
 "vcM" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/structure/timeddoor,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -27762,10 +27765,6 @@
 /obj/structure/table/wood/fancy/green,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"wyu" = (
-/obj/item/clothing/head/hardhat,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "wzw" = (
 /obj/structure/fence/handrail_end/non_dense{
 	pixel_x = -16;
@@ -28871,12 +28870,6 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"xxJ" = (
-/obj/structure/timeddoor,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/clinic)
 "xyk" = (
 /turf/closed/wall/f13/wood,
 /area/f13/building)
@@ -32956,12 +32949,12 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -33086,7 +33079,7 @@ uoO
 xVz
 aoj
 aoj
-mlz
+fpw
 xVz
 xVz
 uoO
@@ -33213,12 +33206,12 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 xvg
 nvR
 khL
 xvg
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -33470,12 +33463,12 @@ uoO
 eLE
 eLE
 eLE
-dZF
+puJ
 vsJ
 qtr
 pzW
 xVW
-dZF
+puJ
 eLE
 eLE
 eLE
@@ -33725,16 +33718,16 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 xIF
 khL
 uls
 xIF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -33982,7 +33975,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 dJw
 nsw
 dOx
@@ -33991,7 +33984,7 @@ xVW
 wvi
 xIF
 oEC
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -34239,7 +34232,7 @@ aoj
 uoO
 uoO
 eLE
-dZF
+puJ
 nWh
 xIF
 rMk
@@ -34248,7 +34241,7 @@ xIF
 rKy
 nsw
 okO
-dZF
+puJ
 eLE
 uoO
 eLE
@@ -34379,7 +34372,7 @@ uoO
 uoO
 uoO
 xVz
-mlz
+fpw
 xVz
 xVz
 aoj
@@ -34496,7 +34489,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 puJ
 puJ
 puJ
@@ -34505,27 +34498,27 @@ mDR
 puJ
 puJ
 puJ
-dZF
+puJ
 eLE
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 eLE
 uoO
@@ -34753,7 +34746,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 tID
 chX
 pez
@@ -34762,11 +34755,11 @@ lVt
 pez
 vEB
 tID
-dZF
+puJ
 eLE
 eLE
 eLE
-dZF
+puJ
 ise
 ise
 ise
@@ -34782,8 +34775,8 @@ puJ
 bcN
 nzm
 bcN
-dZF
-dZF
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -35006,11 +34999,11 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 wFL
 lVt
 mxI
@@ -35019,11 +35012,11 @@ lVt
 lVt
 lVt
 wFL
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 ise
 nhE
 ise
@@ -35040,9 +35033,9 @@ pzF
 lvr
 bcN
 puJ
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -35263,7 +35256,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 vXV
 puJ
 mnk
@@ -35299,9 +35292,9 @@ bcN
 puJ
 tev
 jNA
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 lnr
@@ -35520,7 +35513,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 iiu
 puJ
 iiu
@@ -35558,7 +35551,7 @@ uVp
 bcN
 bcN
 sxA
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -35777,7 +35770,7 @@ eLE
 puJ
 puJ
 puJ
-dZF
+puJ
 vZM
 nGN
 ise
@@ -35815,7 +35808,7 @@ cTp
 npi
 lth
 xkx
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36072,7 +36065,7 @@ bcN
 bcN
 wbp
 bcN
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36291,7 +36284,7 @@ eLE
 uoO
 uoO
 ise
-xxJ
+ise
 cfe
 ise
 ise
@@ -36329,7 +36322,7 @@ bcN
 rQA
 bcN
 bcN
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36548,7 +36541,7 @@ eLE
 uoO
 puJ
 puJ
-dZF
+puJ
 fDw
 lMs
 cpE
@@ -36586,7 +36579,7 @@ pzF
 dGR
 bcN
 xkx
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36684,7 +36677,7 @@ xVz
 uoO
 uoO
 xVz
-mlz
+fpw
 xVz
 xVz
 xVz
@@ -36805,7 +36798,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 iiu
 puJ
 iiu
@@ -36843,7 +36836,7 @@ bcN
 wbp
 bcN
 fHP
-dZF
+puJ
 eLE
 uoO
 uoO
@@ -36926,7 +36919,7 @@ xVz
 xVz
 uoO
 uoO
-mlz
+fpw
 xVz
 xVz
 xVz
@@ -36949,7 +36942,7 @@ uoO
 uoO
 uoO
 xVz
-mlz
+fpw
 xVz
 xVz
 uoO
@@ -37062,7 +37055,7 @@ uoO
 uoO
 uoO
 eLE
-dZF
+puJ
 vIp
 puJ
 vXV
@@ -37098,9 +37091,9 @@ bcN
 puJ
 eHN
 mql
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 uoO
 uoO
@@ -37319,11 +37312,11 @@ uoO
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 sBG
 xIk
 iiu
@@ -37332,11 +37325,11 @@ cvd
 puJ
 xIk
 wQB
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
 dqR
 pqw
 bcN
@@ -37353,9 +37346,9 @@ rrE
 cFE
 bcN
 puJ
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -37580,7 +37573,7 @@ eLE
 eLE
 eLE
 eLE
-dZF
+puJ
 pqV
 gbG
 iiu
@@ -37589,11 +37582,11 @@ gJa
 puJ
 gbG
 pqV
-dZF
+puJ
 eLE
 eLE
 eLE
-dZF
+puJ
 fls
 iXH
 bcN
@@ -37609,8 +37602,8 @@ puJ
 bcN
 bEu
 bcN
-dZF
-dZF
+puJ
+puJ
 eLE
 eLE
 eLE
@@ -37850,23 +37843,23 @@ dZF
 uoO
 uoO
 eLE
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
-dZF
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
+puJ
 eLE
 eLE
 uoO
@@ -38093,7 +38086,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 puJ
 lnr
 lnr
@@ -38350,7 +38343,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 uoO
 rzg
 lnr
@@ -40002,7 +39995,7 @@ uoO
 xVz
 xVz
 xVz
-mlz
+fpw
 xVz
 uoO
 uoO
@@ -40792,7 +40785,7 @@ uoO
 xVz
 xVz
 xVz
-mlz
+fpw
 xVz
 xVz
 eAQ
@@ -41578,7 +41571,7 @@ uoO
 uoO
 uoO
 xVz
-mlz
+fpw
 xVz
 uoO
 uoO
@@ -41812,7 +41805,7 @@ xVz
 xVz
 xVz
 xVz
-mlz
+fpw
 uoO
 uoO
 uoO
@@ -44374,7 +44367,7 @@ xVz
 xVz
 xVz
 xVz
-mlz
+fpw
 uoO
 uoO
 uoO
@@ -44916,7 +44909,7 @@ xVz
 xVz
 xVz
 xVz
-mlz
+fpw
 xVz
 xVz
 xVz
@@ -45673,7 +45666,7 @@ xVz
 xVz
 bjI
 xVz
-mlz
+fpw
 xVz
 xVz
 xVz
@@ -46195,7 +46188,7 @@ aoj
 aoj
 uoO
 uoO
-mlz
+fpw
 xVz
 xVz
 xVz
@@ -49527,7 +49520,7 @@ xVz
 xVz
 xVz
 xVz
-mlz
+fpw
 xVz
 uoO
 uoO
@@ -49974,7 +49967,7 @@ uoO
 uoO
 uoO
 uoO
-rrR
+qUx
 lnr
 nfv
 nfv
@@ -51077,7 +51070,7 @@ uoO
 xVz
 xVz
 xVz
-mlz
+fpw
 xVz
 uoO
 uoO
@@ -51245,7 +51238,7 @@ riT
 rsf
 rAW
 rtG
-saJ
+rtG
 rtG
 dXE
 jmN
@@ -51283,7 +51276,7 @@ xVz
 fpw
 xVz
 jiP
-wyu
+xVz
 xVz
 xVz
 uoO
@@ -51587,7 +51580,7 @@ aoj
 aoj
 aoj
 xVz
-mlz
+fpw
 myy
 myy
 myy
@@ -54599,7 +54592,7 @@ lnr
 rNJ
 urU
 urU
-ogq
+tUC
 okH
 ppF
 dFv
@@ -79604,7 +79597,7 @@ nBk
 nBk
 uoO
 uoO
-uoO
+hQE
 uoO
 tqE
 nBk
@@ -85559,7 +85552,7 @@ tyR
 czn
 yhT
 fPd
-gAX
+yhT
 yhT
 hPD
 yhT
@@ -85816,7 +85809,7 @@ xSi
 xNC
 fai
 xSi
-xSi
+aaL
 xVz
 xVz
 uoO
@@ -86540,7 +86533,7 @@ uoO
 uoO
 uoO
 uoO
-uoO
+hQE
 nBk
 nBk
 uoO
@@ -88137,7 +88130,7 @@ yhT
 yhT
 yhT
 yhT
-gAX
+yhT
 yhT
 yhT
 yhT
@@ -88375,7 +88368,7 @@ eLE
 "}
 (230,1,1) = {"
 eLE
-aaL
+yhT
 axM
 mir
 bVO
@@ -88394,7 +88387,7 @@ iDq
 wOp
 szW
 bbO
-rHV
+gAX
 fIV
 rHV
 rHV
@@ -91699,7 +91692,7 @@ qzI
 cZA
 tNq
 pHv
-qLD
+ogq
 qLD
 eQC
 fZG

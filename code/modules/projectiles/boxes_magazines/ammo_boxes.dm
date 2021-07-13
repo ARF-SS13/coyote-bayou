@@ -44,6 +44,15 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "stunbox"
 
+/obj/item/ammo_box/shotgun/improvised
+	name = "Bag with home-made shotgun shells"
+	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+	ammo_type = /obj/item/ammo_casing/shotgun/improvised
+	icon_state = "improvshotbag"
+
 
 //.22 LR
 /obj/item/ammo_box/m22
@@ -103,6 +112,14 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/c38box/improvised
+	name = "bag with reloaded .38 bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+
 
 //10mm
 /obj/item/ammo_box/c10mm
@@ -130,6 +147,13 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/titanium = 3500, /datum/material/blackpowder = 1500)
 
+/obj/item/ammo_box/c10mm/improvised
+	name = "bag with reloaded 10mm bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 
 //.357 Magnum
 /obj/item/ammo_box/a357box
@@ -186,9 +210,18 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 
-//.45 ACP
+/obj/item/ammo_box/m44box/improvised
+	name = "bag with reloaded .44 bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+
+
+// .45 ACP
 /obj/item/ammo_box/c45
-	name = "ammo box (.45)"
+	name = "ammo box (.45 ACP)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	caliber = ".45"
 	multiple_sprites = 2
@@ -206,6 +239,14 @@
 	name = "ammo box (.45 +P)"
 	ammo_type = /obj/item/ammo_casing/c45/op
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 2000)
+
+/obj/item/ammo_box/c45/improvised
+	name = "bag with reloaded .45 ACP bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 
 
 //.45-70 Gov't
@@ -262,6 +303,14 @@
 	name = "ammo box (.223 sport)"
 	ammo_type = /obj/item/ammo_casing/a556/sport
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
+
+/obj/item/ammo_box/a556/sport/improvised
+	name = "bag with reloaded .223 bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	max_ammo = 8
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+	icon_state = "improvshotbag"
 
 
 //7.62x51, .308 Winchester
@@ -473,10 +522,11 @@
 /obj/item/ammo_box/c45rev
 	name = "speed loader (.45 ACP)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "38"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "10mm"
 	caliber = ".45"
 	ammo_type = /obj/item/ammo_casing/c45
-	max_ammo = 6
+	max_ammo = 7
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 3000)
 
@@ -486,7 +536,7 @@
 /obj/item/ammo_box/a45lcrev
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "38"
+	icon_state = "44"
 	caliber = "a45lc"
 	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 6

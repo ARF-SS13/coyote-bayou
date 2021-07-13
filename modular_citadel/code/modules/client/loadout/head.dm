@@ -268,3 +268,18 @@ datum/gear/head/steelpot_patriot
 	name = "chinese peaked cap"
 	path = /obj/item/clothing/head/f13/chinese_general
 	cost = 4
+	
+/datum/gear/head/ranger_tan
+	name = "tan cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat/tan
+	cost = 2
+	
+/datum/gear/head/ranger_grey
+	name = "grey cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat
+	cost = 2
+	
+/datum/gear/head/ranger_banded
+	name = "banded cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat/banded
+	cost = 2

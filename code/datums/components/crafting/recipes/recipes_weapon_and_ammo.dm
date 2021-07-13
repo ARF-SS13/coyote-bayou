@@ -5,6 +5,16 @@
 				/obj/item/kitchen/knife/combat = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/crafting/goodparts = 2)
+	time = 60
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/melee/scrapspear
+	name = "Scrap Spear"
+	result = /obj/item/twohanded/spear/scrapspear
+	reqs = list(/obj/item/crafting/duct_tape = 1,
+				/obj/item/stack/rods = 2,
+				/obj/item/shard = 1)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -14,7 +24,6 @@
 	result = /obj/item/shield/riot/scrapshield
 	reqs = list(/obj/item/stack/cable_coil = 30,
 				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/crafting/wonderglue = 1)
 	tools = list(TOOL_WELDER)
 	time = 100
@@ -467,19 +476,6 @@
 				/obj/item/stack/sheet/plastic = 3,
 				/datum/reagent/blackpowder = 30)
 	tools = list(TOOL_AWORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_availible = FALSE
-
-//widowmaker
-/datum/crafting_recipe/widowmaker
-	name = "Winchester Widowmaker double barrel"
-	result = /obj/item/gun/ballistic/revolver/widowmaker
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/crafting/metalparts = 5,
-				/datum/reagent/blackpowder = 5)
-	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -940,20 +936,6 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
-//pps
-/datum/crafting_recipe/pps
-	name = "Ppsh-41"
-	result = /obj/item/gun/ballistic/automatic/smg/ppsh
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/metalparts = 2
-				)
-	tools = list(TOOL_WORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_availible = FALSE
-
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
 	name = "R82 heavy service rifle"
@@ -963,6 +945,34 @@
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+/*
+/widowmaker
+/datum/crafting_recipe/widowmaker
+	name = "Winchester Widowmaker double barrel"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/datum/reagent/blackpowder = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//ppsh
+/datum/crafting_recipe/pps
+	name = "Ppsh-41"
+	result = /obj/item/gun/ballistic/automatic/smg/ppsh
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -984,6 +994,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
+*/
 
 //////////////////////////////////
 ///GUN ATTACHMENT/PARTS CRAFTING//

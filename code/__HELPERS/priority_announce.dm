@@ -1,24 +1,24 @@
-/proc/priority_announce(text, title = "", sound = 'sound/f13/quest.ogg', type , sender_override)
+/proc/priority_announce(text, title = "", type , sender_override)
 	if(!text)
 		return
 
 	var/announcement
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Vault-Tec Announcement</h1>"
+		announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		if (title && length(title) > 0)
-			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
-	else if(type == "Captain")
-		announcement += "<h1 class='alert'>Captain Announces</h1>"
+			announcement += "<br><h2 class='alert'>Radio Broadcast</h2>"
+	else if(type == "Radio Broadcast")
+		announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		GLOB.news_network.SubmitArticle(text, "Captain's Announcement", "Wasteland Announcements", null)
 
 	else
 		if(!sender_override)
-			announcement += "<h1 class='alert'>[command_name()] Update</h1>"
+			announcement += "<h1 class='alert'>Radio Station Broadcast</h1>"
 		else
-			announcement += "<h1 class='alert'>[sender_override]</h1>"
+			announcement += "<h1 class='alert'>Radio Broadcast</h1>"
 		if (title && length(title) > 0)
-			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
+			announcement += "<br><h2 class='alert'>Radio Broadcast</h2>"
 
 		if(!sender_override)
 			if(title == "")
@@ -29,12 +29,10 @@
 	announcement += "<br><span class='alert'>[html_encode(text)]</span><br>"
 	announcement += "<br>"
 
-	var/s = sound(get_announcer_sound(sound))
+
 	for(var/mob/M in GLOB.player_list)
 		if(!isnewplayer(M) && M.can_hear())
 			to_chat(M, announcement)
-			if(M.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
-				SEND_SOUND(M, s)
 
 /proc/get_announcer_sound(soundid)
 	if(isfile(soundid))
@@ -129,7 +127,7 @@
 
 /proc/print_command_report(text = "", title = null, announce=TRUE)
 	if(!title)
-		title = "Classified [command_name()] Update"
+		title = "Classified Central Command Report"
 
 	if(announce)
 		priority_announce("A report has been downloaded and printed out at all communications consoles.", "Incoming Classified Message", "commandreport")

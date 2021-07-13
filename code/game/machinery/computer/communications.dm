@@ -12,8 +12,8 @@
 
 // The communications computer
 /obj/machinery/computer/communications
-	name = "communications console"
-	desc = "A console used for high-priority announcements and emergencies."
+	name = "radio broadcast console"
+	desc = "A console used for broadcasting to nearby places & quite loudly."
 	icon_screen = "comm"
 	icon_keyboard = "tech_key"
 	req_access = list(ACCESS_HEADS)
@@ -89,46 +89,46 @@
 			playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
 
 		if("swipeidseclevel")
-			var/mob/M = usr
-			var/obj/item/card/id/I = M.get_active_held_item()
-			if (istype(I, /obj/item/pda))
-				var/obj/item/pda/pda = I
-				I = pda.id
-			if (I && istype(I))
-				if(ACCESS_CAPTAIN in I.access)
-					if(security_level_cd > world.time)
-						to_chat(usr, "<span class='warning'>Security level protocols are currently on cooldown. Please stand by.</span>")
-						return
-					var/old_level = GLOB.security_level
-					if(!tmp_alertlevel)
-						tmp_alertlevel = SEC_LEVEL_GREEN
-					if(tmp_alertlevel < SEC_LEVEL_GREEN)
-						tmp_alertlevel = SEC_LEVEL_GREEN
-					if(tmp_alertlevel > SEC_LEVEL_AMBER)
-						tmp_alertlevel = SEC_LEVEL_AMBER //Cannot engage delta with this
-					set_security_level(tmp_alertlevel)
-					security_level_cd = world.time + 15 SECONDS
-					if(GLOB.security_level != old_level)
-						to_chat(usr, "<span class='notice'>Authorization confirmed. Modifying security level.</span>")
-						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-						//Only notify people if an actual change happened
-						var/security_level = NUM2SECLEVEL(GLOB.security_level)
-						log_game("[key_name(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
-						message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
-						deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
-					tmp_alertlevel = 0
+			if(authenticated==2)
+				var/mob/M = usr
+				var/obj/item/card/id/I = M.get_active_held_item()
+				if (istype(I, /obj/item/pda))
+					var/obj/item/pda/pda = I
+					I = pda.id
+				if (I && istype(I))
+					if(ACCESS_CAPTAIN in I.access)
+						if(security_level_cd > world.time)
+							to_chat(usr, "<span class='warning'>Security level protocols are currently on cooldown. Please stand by.</span>")
+							return
+						var/old_level = GLOB.security_level
+						if(!tmp_alertlevel)
+							tmp_alertlevel = SEC_LEVEL_GREEN
+						if(tmp_alertlevel < SEC_LEVEL_GREEN)
+							tmp_alertlevel = SEC_LEVEL_GREEN
+						if(tmp_alertlevel > SEC_LEVEL_AMBER)
+							tmp_alertlevel = SEC_LEVEL_AMBER //Cannot engage delta with this
+						set_security_level(tmp_alertlevel)
+						security_level_cd = world.time + 15 SECONDS
+						if(GLOB.security_level != old_level)
+							to_chat(usr, "<span class='notice'>Authorization confirmed. Modifying security level.</span>")
+							playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+							//Only notify people if an actual change happened
+							var/security_level = NUM2SECLEVEL(GLOB.security_level)
+							log_game("[key_name(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
+							message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
+							deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+						tmp_alertlevel = 0
+					else
+						to_chat(usr, "<span class='warning'>You are not authorized to do this!</span>")
+						playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+						tmp_alertlevel = 0
+					state = STATE_DEFAULT
 				else
-					to_chat(usr, "<span class='warning'>You are not authorized to do this!</span>")
+					to_chat(usr, "<span class='warning'>You need to swipe your ID!</span>")
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
-					tmp_alertlevel = 0
-				state = STATE_DEFAULT
-			else
-				to_chat(usr, "<span class='warning'>You need to swipe your ID!</span>")
-				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 		if("announce")
-			if(authenticated==2)
-				playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
+			if(authenticated)
 				make_announcement(usr)
 
 		if("crossserver")
@@ -154,7 +154,8 @@
 				CM.lastTimeUsed = world.time
 
 		if("purchase_menu")
-			state = STATE_PURCHASE
+			if(authenticated==2)
+				state = STATE_PURCHASE
 
 		if("buyshuttle")
 			if(authenticated==2)
@@ -188,41 +189,46 @@
 							to_chat(usr, "<span class='alert'>Insufficient credits.</span>")
 
 		if("callshuttle")
-			state = STATE_DEFAULT
-			if(authenticated && SSshuttle.canEvac(usr))
-				state = STATE_CALLSHUTTLE
+			if(authenticated==2)
+				state = STATE_DEFAULT
+				if(authenticated && SSshuttle.canEvac(usr))
+					state = STATE_CALLSHUTTLE
 		if("callshuttle2")
-			if(authenticated)
-				SSshuttle.requestEvac(usr, href_list["call"])
-				if(SSshuttle.emergency.timer)
-					post_status("shuttle")
-			state = STATE_DEFAULT
+			if(authenticated==2)
+				if(authenticated)
+					SSshuttle.requestEvac(usr, href_list["call"])
+					if(SSshuttle.emergency.timer)
+						post_status("shuttle")
+				state = STATE_DEFAULT
 		if("cancelshuttle")
-			state = STATE_DEFAULT
-			if(authenticated)
-				state = STATE_CANCELSHUTTLE
+			if(authenticated==2)
+				state = STATE_DEFAULT
+				if(authenticated)
+					state = STATE_CANCELSHUTTLE
 		if("cancelshuttle2")
-			if(authenticated)
+			if(authenticated==2)
 				if(SSshuttle.endvote_passed) //Citadel Edit - endvote passing = no recalls
 					say("Warning: Train recalls have been blocked by Vault-Tec due to ongoing evacuation procedures.")
 				else
 					SSshuttle.cancelEvac(usr)
 			state = STATE_DEFAULT
 		if("messagelist")
-			currmsg = 0
-			state = STATE_MESSAGELIST
+			if(authenticated==2)
+				currmsg = 0
+				state = STATE_MESSAGELIST
 		if("viewmessage")
-			state = STATE_VIEWMESSAGE
-			if (!currmsg)
-				if(href_list["message-num"])
-					var/msgnum = text2num(href_list["message-num"])
-					currmsg = messages[msgnum]
-				else
-					state = STATE_MESSAGELIST
+			if(authenticated==2)
+				state = STATE_VIEWMESSAGE
+				if (!currmsg)
+					if(href_list["message-num"])
+						var/msgnum = text2num(href_list["message-num"])
+						currmsg = messages[msgnum]
+					else
+						state = STATE_MESSAGELIST
 		if("delmessage")
 			state = currmsg ? STATE_DELMESSAGE : STATE_MESSAGELIST
 		if("delmessage2")
-			if(authenticated)
+			if(authenticated==2)
 				if(currmsg)
 					if(aicurrmsg == currmsg)
 						aicurrmsg = null
@@ -232,63 +238,72 @@
 			else
 				state = STATE_VIEWMESSAGE
 		if("respond")
-			var/answer = text2num(href_list["answer"])
-			if(!currmsg || !answer || currmsg.possible_answers.len < answer)
-				state = STATE_MESSAGELIST
-			else
-				if(!currmsg.answered)
-					currmsg.answered = answer
-					log_game("[key_name(usr)] answered [currmsg.title] comm message. Answer : [currmsg.answered]")
-					if(currmsg)
-						currmsg.answer_callback.InvokeAsync()
-				state = STATE_VIEWMESSAGE
-				updateDialog()
+			if(authenticated==2)
+				var/answer = text2num(href_list["answer"])
+				if(!currmsg || !answer || currmsg.possible_answers.len < answer)
+					state = STATE_MESSAGELIST
+				else
+					if(!currmsg.answered)
+						currmsg.answered = answer
+						log_game("[key_name(usr)] answered [currmsg.title] comm message. Answer : [currmsg.answered]")
+						if(currmsg)
+							currmsg.answer_callback.InvokeAsync()
+					state = STATE_VIEWMESSAGE
+					updateDialog()
 		if("status")
 			state = STATE_STATUSDISPLAY
 		if("securitylevel")
-			tmp_alertlevel = text2num( href_list["newalertlevel"] )
-			if(!tmp_alertlevel)
-				tmp_alertlevel = 0
-			state = STATE_CONFIRM_LEVEL
+			if(authenticated==2)
+				tmp_alertlevel = text2num( href_list["newalertlevel"] )
+				if(!tmp_alertlevel)
+					tmp_alertlevel = 0
+				state = STATE_CONFIRM_LEVEL
 		if("changeseclevel")
-			state = STATE_ALERT_LEVEL
+			if(authenticated==2)
+				state = STATE_ALERT_LEVEL
 
 		if("emergencyaccess")
-			state = STATE_TOGGLE_EMERGENCY
+			if(authenticated==2)
+				state = STATE_TOGGLE_EMERGENCY
 		if("enableemergency")
-			make_maint_all_access()
-			log_game("[key_name(usr)] enabled emergency maintenance access.")
-			message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
-			deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
-			state = STATE_DEFAULT
+			if(authenticated==2)
+				make_maint_all_access()
+				log_game("[key_name(usr)] enabled emergency maintenance access.")
+				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
+				deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+				state = STATE_DEFAULT
 		if("disableemergency")
-			revoke_maint_all_access()
-			log_game("[key_name(usr)] disabled emergency maintenance access.")
-			message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
-			deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> disabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
-			state = STATE_DEFAULT
+			if(authenticated==2)
+				revoke_maint_all_access()
+				log_game("[key_name(usr)] disabled emergency maintenance access.")
+				message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
+				deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> disabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+				state = STATE_DEFAULT
 
 		// Status display stuff
 		if("setstat")
-			playsound(src, "terminal_type", 50, FALSE)
-			switch(href_list["statdisp"])
-				if("message")
-					post_status("message", stat_msg1, stat_msg2)
-				if("alert")
-					post_status("alert", href_list["alert"])
-				else
-					post_status(href_list["statdisp"])
+			if(authenticated==2)
+				playsound(src, "terminal_type", 50, FALSE)
+				switch(href_list["statdisp"])
+					if("message")
+						post_status("message", stat_msg1, stat_msg2)
+					if("alert")
+						post_status("alert", href_list["alert"])
+					else
+						post_status(href_list["statdisp"])
 
 		if("setmsg1")
-			stat_msg1 = reject_bad_text(input("Line 1", "Enter Message Text", stat_msg1) as text|null, 40)
-			updateDialog()
+			if(authenticated==2)
+				stat_msg1 = reject_bad_text(input("Line 1", "Enter Message Text", stat_msg1) as text|null, 40)
+				updateDialog()
 		if("setmsg2")
-			stat_msg2 = reject_bad_text(input("Line 2", "Enter Message Text", stat_msg2) as text|null, 40)
-			updateDialog()
+			if(authenticated==2)
+				stat_msg2 = reject_bad_text(input("Line 2", "Enter Message Text", stat_msg2) as text|null, 40)
+				updateDialog()
 
 		// OMG CENTCOM LETTERHEAD
 		if("MessageCentCom")
-			if(authenticated)
+			if(authenticated==2)
 				if(!checkCCcooldown())
 					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 					return
@@ -308,7 +323,7 @@
 
 		// OMG SYNDICATE ...LETTERHEAD
 		if("MessageSyndicate")
-			if((authenticated) && (obj_flags & EMAGGED))
+			if((authenticated==2) && (obj_flags & EMAGGED))
 				if(!checkCCcooldown())
 					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
@@ -328,10 +343,11 @@
 				CM.lastTimeUsed = world.time
 
 		if("RestoreBackup")
-			to_chat(usr, "<span class='notice'>Backup routing data restored!</span>")
-			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
-			obj_flags &= ~EMAGGED
-			updateDialog()
+			if(authenticated==2)
+				to_chat(usr, "<span class='notice'>Backup routing data restored!</span>")
+				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+				obj_flags &= ~EMAGGED
+				updateDialog()
 
 		if("nukerequest") //When there's no other way
 			if(authenticated==2)
@@ -480,45 +496,18 @@
 	switch(state)
 		if(STATE_DEFAULT)
 			if (authenticated)
-				if(SSshuttle.emergencyCallAmount)
-					if(SSshuttle.emergencyLastCallLoc)
-						dat += "Most recent train call/recall traced to: <b>[format_text(SSshuttle.emergencyLastCallLoc.name)]</b><BR>"
-					else
-						dat += "Unable to trace most recent train call/recall signal.<BR>"
 				dat += "Logged in as: [auth_id]"
 				dat += "<BR>"
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=logout'>Log Out</A> \]<BR>"
-				dat += "<BR><B>General Functions</B>"
-				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=messagelist'>Message List</A> \]"
-				switch(SSshuttle.emergency.mode)
-					if(SHUTTLE_IDLE, SHUTTLE_RECALL)
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=callshuttle'>Call Train</A> \]"
-					else
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=cancelshuttle'>Cancel Train Call</A> \]"
-
-				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=status'>Set Status Display</A> \]"
-				if (authenticated==2)
-					dat += "<BR><BR><B>Captain Functions</B>"
-					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=announce'>Make a Captain's Announcement</A> \]"
-					var/list/cross_servers = CONFIG_GET(keyed_list/cross_server)
-					var/our_id = CONFIG_GET(string/cross_comms_name)
-					if(cross_servers.len)
-						for(var/server in cross_servers)
-							if(server == our_id)
-								continue
-							dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=crossserver=all;cross_dest=[server]'>Send a message to station in [server] sector.</A> \]"
-						if(cross_servers.len > 2)
-							dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=crossserver;cross_dest=all'>Send a message to all allied stations</A> \]"
-					if(SSmapping.config.allow_custom_shuttles)
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=purchase_menu'>Purchase Shuttle</A> \]"
-					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=changeseclevel'>Change Alert Level</A> \]"
-					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=emergencyaccess'>Emergency Maintenance Access</A> \]"
-					dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=nukerequest'>Request Nuclear Authentication Codes</A> \]"
-					if(!(obj_flags & EMAGGED))
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=MessageCentCom'>Send Message to CentCom</A> \]"
-					else
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=MessageSyndicate'>Send Message to \[UNKNOWN\]</A> \]"
-						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=RestoreBackup'>Restore Backup Routing Data</A> \]"
+				dat += "<BR><BR><B> Broadcast Functions </B>"
+				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=announce'>Make a Radio Broadcast</A> \]"
+				var/list/cross_servers = CONFIG_GET(keyed_list/cross_server)
+				var/our_id = CONFIG_GET(string/cross_comms_name)
+				if(cross_servers.len)
+					for(var/server in cross_servers)
+						if(server == our_id)
+							continue
+						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=crossserver=all;cross_dest=[server]'>Send a message to station in [server] sector.</A> \]"
 			else
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=login'>Log In</A> \]"
 		if(STATE_CALLSHUTTLE)
@@ -733,7 +722,7 @@
 	if(!SScommunications.can_announce(user, is_silicon))
 		to_chat(user, "<span class='alert'>Intercomms recharging. Please stand by.</span>")
 		return
-	var/input = stripped_input(user, "Please choose a message to announce to the station crew.", "What?")
+	var/input = stripped_input(user, "Please type a message to broadcast to the wasteland", "What?")
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!

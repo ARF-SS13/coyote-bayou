@@ -158,7 +158,7 @@
 	icon_state = "m93r"
 	burst_size = 2
 	burst_shot_delay = 2.5
-	spread = 8
+	spread = 9
 	recoil = 0.1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
@@ -179,7 +179,7 @@
 		if(1)
 			select = 0
 			burst_size = 1
-			spread = 2
+			spread = 1
 			recoil = 0
 			weapon_weight = WEAPON_MEDIUM
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
