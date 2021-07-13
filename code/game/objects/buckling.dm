@@ -143,9 +143,9 @@
 				"<span class='notice'>You unbuckle yourself from [src].</span>",\
 				"<span class='italics'>You hear metal clanking.</span>")
 		add_fingerprint(user)
-	if(isliving(M.pulledby))
-		var/mob/living/L = M.pulledby
-		L.set_pull_offsets(M, L.grab_state)
+		if(isliving(M.pulledby))
+			var/mob/living/L = M.pulledby
+			L.set_pull_offsets(M, L.grab_state)
 	return M
 
 /atom/movable/proc/precise_user_unbuckle_mob(mob/user)
