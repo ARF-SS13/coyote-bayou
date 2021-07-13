@@ -169,7 +169,7 @@ kept here incase it gets reworked later*/
 	box = 			/obj/item/storage/survivalkit_tribal/chief
 	backpack_contents = list(
 					/obj/item/restraints/legcuffs/bola=1,
-					/obj/item/storage/bag/money/small/legofficers=1)
+					/obj/item/storage/bag/money/small/legofficers=1,)
 
 /datum/outfit/loadout/palacent
 	name = 			"Paladin-Slayer Centurion"
@@ -178,7 +178,7 @@ kept here incase it gets reworked later*/
 	suit_store = 	/obj/item/twohanded/thermic_lance
 	backpack_contents = list(
 					/obj/item/gun/ballistic/automatic/smg/smg10mm=1,
-					/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
+					/obj/item/ammo_box/magazine/m10mm_adv/ext=2,)
 
 /datum/outfit/loadout/rangerhunter
 	name = 			"Ranger-Hunter Centurion"
@@ -187,7 +187,7 @@ kept here incase it gets reworked later*/
 	backpack_contents = list(
 					/obj/item/ammo_box/c4570=3,
 					/obj/item/gun/ballistic/revolver/hunting=1,
-					/obj/item/melee/powered/ripper=1)
+					/obj/item/melee/powered/ripper=1,)
 
 /datum/outfit/loadout/centurion
 	name = 			"Frontline Centurion"
@@ -196,7 +196,8 @@ kept here incase it gets reworked later*/
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 					/obj/item/melee/powerfist/goliath=1,
-					/obj/item/ammo_box/magazine/m556/rifle=2)
+					/obj/item/ammo_box/magazine/m556/rifle=2,
+					/obj/item/tank/internals/oxygen=2,)
 
 /* /datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
