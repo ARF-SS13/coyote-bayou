@@ -729,8 +729,8 @@ Raider
 	l_hand = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2,
-		/obj/item/binoculars,
-		/obj/item/radio)
+		/obj/item/binoculars=1,
+		/obj/item/radio=1)
 
 /datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
