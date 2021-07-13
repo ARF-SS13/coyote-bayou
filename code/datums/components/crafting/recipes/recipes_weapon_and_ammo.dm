@@ -5,6 +5,16 @@
 				/obj/item/kitchen/knife/combat = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/crafting/goodparts = 2)
+	time = 60
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/melee/scrapspear
+	name = "Scrap Spear"
+	result = /obj/item/twohanded/spear/scrapspear
+	reqs = list(/obj/item/crafting/duct_tape = 1,
+				/obj/item/stack/rods = 2,
+				/obj/item/shard = 1)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -14,7 +24,6 @@
 	result = /obj/item/shield/riot/scrapshield
 	reqs = list(/obj/item/stack/cable_coil = 30,
 				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/crafting/wonderglue = 1)
 	tools = list(TOOL_WELDER)
 	time = 100

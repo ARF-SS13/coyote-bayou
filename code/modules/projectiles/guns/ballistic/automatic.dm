@@ -547,6 +547,22 @@
 	suppressor_y_offset = 28
 
 
+//Police rifle										Keywords: OASIS, 5.56mm, Semi-auto, 30 (10-50) round magazine
+/obj/item/gun/ballistic/automatic/marksman/policerifle
+	name = "Police  rifle"
+	desc = "A post war reproduction, of a pre war design marketed towards law enforcement. Inherited down generations in the Oasis PD."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "rifle-police"
+	item_state = "assault_carbine"
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/extended
+	fire_delay = 4.2
+	can_suppress = FALSE
+	can_scope = TRUE
+	zoomable = FALSE
+
+
 //Marksman carbine									Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine, Small scope
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"

@@ -113,6 +113,7 @@
 		force = force_on
 		slot_flags = null
 		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+		playsound(src.loc, on_sound, 50, 1)
 	else
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
@@ -121,7 +122,6 @@
 		force = force_off
 		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 		attack_verb = list("poked", "scraped")
-	playsound(src.loc, on_sound, 50, 1)
 	add_fingerprint(user)
 
 /obj/item/melee/powered/ripper/prewar
