@@ -2593,7 +2593,6 @@
 "ctV" = (
 /obj/structure/frame/machine,
 /obj/machinery/light,
-/obj/structure/table/reinforced,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -12114,8 +12113,13 @@
 	},
 /area/f13/tcoms)
 "jQs" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/operations)
+/obj/structure/sign/poster/prewar/poster66{
+	pixel_y = 32
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "jQN" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -13932,7 +13936,6 @@
 	},
 /area/f13/brotherhood/operations)
 "lqf" = (
-/obj/structure/table/reinforced,
 /obj/machinery/chem_master,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -15799,7 +15802,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "mRW" = (
-/obj/structure/table/reinforced,
 /obj/machinery/chem_heater,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -16385,8 +16387,13 @@
 	},
 /area/f13/bunker)
 "noI" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
+/obj/structure/sign/poster/prewar/poster81{
+	pixel_x = -32
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "noQ" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -17616,9 +17623,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/tunnel)
-"ogl" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
 "ogq" = (
 /obj/machinery/telecomms/server/presets/town,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
@@ -18045,9 +18049,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
-/area/f13/brotherhood/medical)
-"oBM" = (
-/turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
 "oBP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21017,21 +21018,6 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/brotherhood/medical)
-"qME" = (
-/obj/structure/table{
-	layer = 2.9
-	},
-/obj/item/hemostat,
-/obj/item/retractor,
-/obj/item/scalpel,
-/obj/item/circular_saw,
-/obj/item/surgicaldrill,
-/obj/item/cautery,
-/obj/item/bonesetter,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
-	},
-/area/f13/brotherhood/medical)
 "qMO" = (
 /obj/structure/table{
 	layer = 2.9
@@ -21096,25 +21082,6 @@
 /obj/structure/weightmachine/stacklifter,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"qNC" = (
-/obj/structure/table{
-	layer = 2.9
-	},
-/obj/item/clothing/under/rank/medical/green,
-/obj/item/clothing/under/rank/medical/purple,
-/obj/item/clothing/under/rank/medical/blue,
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = -9
-	},
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/obj/item/clothing/mask/surgical,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
-	},
-/area/f13/brotherhood/medical)
 "qNI" = (
 /obj/structure/decoration/hatch,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -21425,9 +21392,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"qWx" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
 "qXo" = (
 /obj/structure/closet,
 /obj/item/storage/box/gloves,
@@ -21511,9 +21475,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
-/area/f13/brotherhood/medical)
-"qZA" = (
-/turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
 "qZO" = (
 /turf/closed/indestructible/fakeglass,
@@ -21936,9 +21897,6 @@
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
-"rpx" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
 "rpH" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/tunnel{
@@ -22377,9 +22335,6 @@
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/den)
-"rDr" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
 "rDS" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/inside/mountain,
@@ -22665,9 +22620,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
-"rNi" = (
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/medical)
 "rNj" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
@@ -22804,6 +22756,9 @@
 "rRx" = (
 /obj/structure/table/glass,
 /obj/item/paper_bin,
+/obj/structure/sign/poster/prewar/poster74{
+	pixel_y = 32
+	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -23598,7 +23553,6 @@
 /area/f13/brotherhood/operations)
 "sEd" = (
 /obj/structure/frame/machine,
-/obj/structure/table/reinforced,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -27456,7 +27410,6 @@
 /obj/structure/window/spawner{
 	dir = 8
 	},
-/obj/structure/table/reinforced,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -27855,7 +27808,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
@@ -61421,7 +61373,7 @@ yhh
 yhh
 yhh
 yhh
-jQs
+yhh
 kbf
 ktE
 kIp
@@ -62468,12 +62420,12 @@ pdL
 nKk
 nKk
 nKk
-noI
-noI
-qWx
-rpx
-rDr
-rNi
+skC
+skC
+skC
+skC
+skC
+skC
 skC
 sXC
 sXC
@@ -62725,7 +62677,7 @@ peK
 pAn
 pWr
 qno
-noI
+skC
 qLo
 qXo
 rpV
@@ -62990,7 +62942,7 @@ qYA
 qYA
 qYA
 sZm
-noI
+skC
 tCe
 tCe
 tCe
@@ -63247,7 +63199,7 @@ qYA
 qYA
 qYA
 sZm
-noI
+skC
 ukv
 kYB
 vrD
@@ -63496,15 +63448,15 @@ nMN
 nMN
 peK
 nMN
-noI
-qME
+skC
+ted
 qYS
 qYA
 rFc
 qYA
 qYS
 ted
-noI
+skC
 ulr
 uCh
 vuM
@@ -63753,7 +63705,7 @@ nMN
 nMN
 peK
 qoF
-noI
+skC
 qMO
 qYA
 rrh
@@ -63761,7 +63713,7 @@ qYA
 rrh
 qYA
 tem
-noI
+skC
 umZ
 kYB
 vuY
@@ -64010,15 +63962,15 @@ pgt
 nMN
 peK
 qpc
-noI
-qNC
+skC
+tep
 qZt
 rsj
 qYA
 rsj
 qZt
 tep
-noI
+skC
 uqM
 kYB
 kYB
@@ -64267,15 +64219,15 @@ pgw
 nMN
 peK
 qpd
-noI
-noI
-qZA
-noI
+skC
+skC
+skC
+skC
 rFn
-noI
-qZA
+skC
+skC
 sXC
-noI
+skC
 uqO
 kYB
 kYB
@@ -64524,7 +64476,7 @@ phB
 nMN
 peK
 qoF
-noI
+skC
 qOD
 nMN
 nMN
@@ -64532,7 +64484,7 @@ nMN
 rPl
 snP
 tht
-noI
+skC
 yei
 uCi
 yei
@@ -64675,7 +64627,7 @@ uub
 uub
 uub
 rbg
-ufQ
+jQs
 ufQ
 fgx
 uLi
@@ -64781,7 +64733,7 @@ pik
 oxw
 qci
 qpc
-noI
+skC
 qOJ
 nMN
 nMN
@@ -64789,7 +64741,7 @@ nMN
 rPG
 nMN
 tkS
-noI
+skC
 uqU
 kYB
 elv
@@ -65038,7 +64990,7 @@ pis
 nMN
 peK
 nMN
-noI
+skC
 qPC
 qPC
 qPC
@@ -65046,7 +64998,7 @@ nMN
 rPG
 swY
 tls
-noI
+skC
 urc
 kYB
 vxA
@@ -65193,7 +65145,7 @@ ufQ
 ufQ
 jGP
 utd
-utd
+noI
 utd
 utd
 ugy
@@ -65286,23 +65238,23 @@ yhh
 xlN
 pvq
 xlN
-noI
+skC
 nPm
-ogl
-oBM
+skC
+skC
 oRa
 piT
 nMN
 peK
 nMN
 qys
-noI
-noI
+skC
+skC
 oRa
-noI
-noI
-noI
-noI
+skC
+skC
+skC
+skC
 sXC
 yei
 yei
