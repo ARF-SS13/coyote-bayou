@@ -575,10 +575,12 @@ Raider
 	name = "Enclave Remnant"
 	suit = /obj/item/clothing/suit/armor/f13/battlecoat/tan // Tier 3 armor, same as other raider things
 	uniform = /obj/item/clothing/under/f13/exile/enclave
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = /obj/item/card/id/rusted/brokenholodog/enclave
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/pistol22=1,
-		/obj/item/ammo_box/magazine/m22=2)
+		/obj/item/storage/backpack/satchel/enclave
+		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
+		/obj/item/ammo_box/magazine/m45=2)
 
 
 /datum/job/wasteland/f13wastelander
@@ -638,7 +640,7 @@ Raider
 
 /datum/outfit/loadout/salvager
 	name = "Salvager"
-	uniform = /obj/item/clothing/under/f13/machinist	
+	uniform = /obj/item/clothing/under/f13/machinist
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	head = /obj/item/clothing/head/welding
