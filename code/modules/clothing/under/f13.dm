@@ -798,8 +798,8 @@
 	item_color = "lumberjack"
 
 /obj/item/clothing/under/f13/police
-	name = "pre-War police uniform"
-	desc = "Golden classics of pre-War police officers."
+	name = "police uniform"
+	desc = "You have the right to remain violent."
 	icon_state = "retro_police"
 	item_state = "b_suit"
 	item_color = "retro_police"

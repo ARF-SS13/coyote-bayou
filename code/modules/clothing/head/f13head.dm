@@ -776,7 +776,7 @@
 
 /obj/item/clothing/head/f13/police
 	name = "police hat"
-	desc = "(I) A silver badge adorns the front of this hat.<br>The badge enscription has been worn away with time."
+	desc = "(I) The wasteland's finest."
 	icon_state = "retropolice"
 	item_state = "fedora"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0)
