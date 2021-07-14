@@ -648,19 +648,19 @@
 //chinesearmy
 /obj/item/clothing/head/f13/chinese_soldier
 	name = "chinese side cap"
-	desc = "(I) An pre-war People's Liberation Army side cap, worn enlisted and NCOs"
+	desc = "(I) A People's Liberation Army side cap, worn by enlisted and non-commissioned officers."
 	icon_state = "chinese_solder"
 	item_state = "secsoft"
 
 /obj/item/clothing/head/f13/chinese_officer
 	name = "chinese officer cap"
-	desc = "(I) An pre-war People's Liberation Army cap, worn by low rankedi officers."
+	desc = "(I) A People's Liberation Army cap, worn by low ranking officers."
 	icon_state = "chinese_officer"
 	item_state = "secsoft"
 
 /obj/item/clothing/head/f13/chinese_general
 	name = "chinese peaked cap"
-	desc = "(I) An pre-war People's Liberation Army peaked cap, worn by high ranked officers and generals."
+	desc = "(I) A People's Liberation Army peaked cap, worn by high ranking officers and commanders."
 	icon_state = "chinese_general"
 	item_state = "fedora"
 
