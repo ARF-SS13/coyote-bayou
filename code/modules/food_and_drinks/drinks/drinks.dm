@@ -343,8 +343,8 @@
 	custom_price = PRICE_PRETTY_CHEAP
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "beer"
+	desc = "Beer. Its cheap."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
