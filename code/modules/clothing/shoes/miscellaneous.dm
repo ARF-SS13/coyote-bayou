@@ -260,10 +260,6 @@
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
 
-/obj/item/clothing/shoes/bronze/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/machines/clockcult/integration_cog_install.ogg' = 1, 'sound/magic/clockwork/fellowship_armory.ogg' = 1), 50)
-
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"
 	desc = "Uses patented retractable wheel technology. Never sacrifice speed for style - not that this provides much of either." //Thanks Fel

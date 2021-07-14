@@ -36,10 +36,6 @@
 	item_state = "tennis_rainbow"
 	actions_types = list(/datum/action/item_action/squeeze)		//Giving the masses easy access to unilimted honks would be annoying
 
-/obj/item/toy/tennis/rainbow/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak)
-
 /obj/item/toy/tennis/rainbow/izzy	//izzyinbox's donator item
 	name = "Katlin's Ball"
 	desc = "A tennis ball that's seen a good bit of love, being covered in a few black and white hairs and slobber."
