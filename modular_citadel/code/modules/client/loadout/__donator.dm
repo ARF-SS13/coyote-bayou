@@ -36,5 +36,5 @@
 
 /datum/gear/donator/kits/cas
 	name = "Cas's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/Cas
+	path = /obj/item/storage/box/large/custom_kit/cas
 	ckeywhitelist = list("killergryphon")
