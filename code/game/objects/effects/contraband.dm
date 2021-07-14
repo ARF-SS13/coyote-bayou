@@ -923,7 +923,11 @@
 	posters = list(/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy, /obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded)
 
 /obj/effect/landmark/poster_spawner/prewar
-	posters = list(/obj/structure/sign/poster/prewar/corporate_espionage, /obj/structure/sign/poster/prewar/protectron, /obj/structure/sign/poster/prewar/vault_tec)
+	posters = list(
+		/obj/structure/sign/poster/prewar/corporate_espionage,
+		/obj/structure/sign/poster/prewar/protectron,
+		/obj/structure/sign/poster/prewar/vault_tec,
+	)
 
 /obj/effect/landmark/poster_spawner/pinup
 	posters = list(/obj/structure/sign/poster/contraband/pinup_ride, /obj/structure/sign/poster/contraband/pinup_couch,

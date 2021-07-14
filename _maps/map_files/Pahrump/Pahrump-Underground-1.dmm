@@ -2941,8 +2941,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "cHw" = (
-/obj/structure/decoration/smokeold,
-/turf/closed/wall/r_wall/rust,
+/obj/structure/decoration/smokeold{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "cHA" = (
 /obj/structure/barricade/bars,
@@ -87853,8 +87855,8 @@ yhT
 atO
 xNC
 xNC
-xSi
 cHw
+fLU
 fLU
 fLU
 fLU

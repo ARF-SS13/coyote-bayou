@@ -7782,10 +7782,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
-"dNH" = (
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "dNT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -49639,6 +49635,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"xuo" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "xus" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/road{
@@ -72017,10 +72017,10 @@ uqa
 uqa
 uqa
 uqa
-cWG
-cWG
-cWG
-cWG
+uqa
+uqa
+uqa
+uqa
 wDc
 fyf
 kGc
@@ -72273,10 +72273,10 @@ dCV
 dCV
 dCV
 dCV
-uqa
-uqa
-uqa
-uqa
+dCV
+dCV
+dCV
+dCV
 uqa
 bpD
 fyf
@@ -108931,7 +108931,7 @@ fyf
 fyf
 fyf
 dRo
-dNH
+xuo
 fyf
 gts
 knD
