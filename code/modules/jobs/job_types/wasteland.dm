@@ -573,7 +573,7 @@ Raider
 
 /datum/outfit/loadout/raider_enclave
 	name = "Enclave Remnant"
-	suit = /obj/item/clothing/suit/armor/f13/battlecoat/tan // Tier 3 armor, same as other raider things
+	suit = /obj/item/clothing/suit/armor/f13/battlecoat/tan/armored // Tier 4 armor, same as other raider things
 	uniform = /obj/item/clothing/under/f13/exile/enclave
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = /obj/item/card/id/rusted/brokenholodog/enclave
