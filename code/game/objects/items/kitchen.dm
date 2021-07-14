@@ -68,7 +68,7 @@
 	name = "kitchen knife"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "knife_kitchen"
-	desc = "A general purpose Chef's Knife made by VaultCook Incorporated. Guaranteed to stay sharp for years to come."
+	desc = "Keep hackin' and whackin' and smackin'."
 	flags_1 = CONDUCT_1
 	force = 15
 	w_class = WEIGHT_CLASS_SMALL
