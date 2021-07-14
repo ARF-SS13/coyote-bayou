@@ -689,7 +689,7 @@
 
 /obj/structure/sign/poster/prewar/poster60
 	name = "old movie poster"
-	desc = "Midnight man premiering next July!"
+	desc = "Midnight Man premiering July 2078!"
 	icon_state = "poster60"
 
 /obj/structure/sign/poster/prewar/poster61
@@ -699,7 +699,7 @@
 
 /obj/structure/sign/poster/prewar/poster62
 	name = "old game poster"
-	desc = "Fellout 8, Coming SOON."
+	desc = "Wasteland 3, Coming SOON."
 	icon_state = "poster62"
 
 /obj/structure/sign/poster/prewar/poster63
