@@ -10,3 +10,15 @@
 	new /obj/item/clothing/mask/bandana/skull(src)
 	new /obj/item/clothing/glasses/sunglasses/big(src)
 
+//Cas - KillerGryphon
+/obj/item/storage/box/large/custom_kit/cas/PopulateContents()
+	new /obj/item/clothing/under/f13/agent47(src)
+	new /obj/item/clothing/gloves/modif_patrol(src)
+	new /obj/item/storage/belt/military/assault(src)
+	new /obj/item/storage/belt/holster/legholster(src)
+	new /obj/item/clothing/mask/gas/hunter(src)
+	new /obj/item/clothing/suit/armor/f13/herbertranger(src)
+	new /obj/item/clothing/shoes/f13/military/desert(src)
+	new /obj/item/clothing/head/helmet/f13/herbertranger(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/storage/backpack/satchel/enclave(src)
