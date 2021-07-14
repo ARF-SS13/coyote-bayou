@@ -47,7 +47,7 @@
 /obj/structure/sign/poster
 	name = "poster"
 	var/original_name
-	desc = "A large piece of space-resistant printed paper."
+	desc = "A large piece of printed paper."
 	icon = 'icons/obj/contraband.dmi'
 	plane = ABOVE_WALL_PLANE
 	anchored = TRUE
@@ -68,7 +68,7 @@
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
-		desc = "A large piece of space-resistant printed paper. [desc]"
+		desc = "A large piece of printed paper. [desc]"
 
 	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 300)), 0)
 
