@@ -768,23 +768,23 @@
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	name = "Rusted Cowboy Hat"
-	desc = "(II) A cowboy hat made from tanned leather hides."
+	desc = "(II) A hat made from tanned leather hide."
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/police
-	name = "pre-War police hat"
-	desc = "(I) It's the police hat of dark blue in color with a silver colored badge on the frontside.<br>The badge is inscripted with the words SPECIAL and POLICE."
+	name = "police hat"
+	desc = "(I) A silver badge adorns the front of this hat.<br>The badge enscription has been worn away with time."
 	icon_state = "retropolice"
 	item_state = "fedora"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/simplekitty
-	name = "Kitty Headband"
-	desc = "A headband with a pair of cute kitty ears"
+	name = "kitty headband"
+	desc = "This headband leaves you with a feeling of uncertain dread."
 	icon_state = "kittyb"
 	color = "#999999"
 	armor = list("tier" = 0)
