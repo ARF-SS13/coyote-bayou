@@ -578,7 +578,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = /obj/item/card/id/rusted/brokenholodog/enclave
 	backpack_contents = list(
-		/obj/item/storage/backpack/satchel/enclave
+		/obj/item/storage/backpack/satchel/enclave,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
 		/obj/item/ammo_box/magazine/m45=2)
 
