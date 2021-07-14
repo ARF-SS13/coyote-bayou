@@ -688,21 +688,23 @@
 	icon_state = "poster46"
 
 /obj/structure/sign/poster/prewar/poster60
-	name = "pre-war poster"
+	name = "old movie poster"
 	desc = "Midnight man premiering next July!"
 	icon_state = "poster60"
 
 /obj/structure/sign/poster/prewar/poster61
 	name = "pin-up poster"
+	desc = "This poster is old enough to be a family heirloom."
 	icon_state = "poster61"
 
 /obj/structure/sign/poster/prewar/poster62
-	name = "pre-war poster"
+	name = "old game poster"
 	desc = "Fellout 8, Coming SOON."
 	icon_state = "poster62"
 
 /obj/structure/sign/poster/prewar/poster63
-	name = "pre-war poster"
+	name = "unsettling poster"
+	desc = "THE DREAMER REMAINS TRAPPED IN THE MAZE"
 	icon_state = "poster"
 
 /obj/structure/sign/poster/prewar/poster64
@@ -710,11 +712,13 @@
 	icon_state = "poster64"
 
 /obj/structure/sign/poster/prewar/poster65
-	name = "pre-war poster"
+	name = "niche game poster"
+	desc = "GRIDIRON - Where the only way to escape the game, is to kill. Hitting shelves in fall of 2078!"
 	icon_state = "poster65"
 
 /obj/structure/sign/poster/prewar/poster66
-	name = "pre-war poster"
+	name = "old hopeful poster"
+	desc = "This advertisement appears to be spiritual in nature. Whatever faith it called to has been worn away by time."
 	icon_state = "poster66"
 
 /obj/structure/sign/poster/prewar/poster67
@@ -722,35 +726,43 @@
 	icon_state = "poster67"
 
 /obj/structure/sign/poster/prewar/poster68
-	name = "pre-war poster"
+	name = "General Store Policy"
+	desc = "By decree of the Oasis Town Hall, the general store has the right to refuse any and all refunds to customers for any reason."
 	icon_state = "poster68"
 
 /obj/structure/sign/poster/prewar/poster69
-	name = "pre-war poster"
+	name = "old crowded poster"
+	desc = "It looks like the crowd is hoisting the man up in celebration, or are they tearing him apart? Its hard to tell."
 	icon_state = "poster69"
 
 /obj/structure/sign/poster/prewar/poster70
-	name = "pre-war poster"
+	name = "old spiritual poster"
+	desc = "Suffer well, may God be saved, and may God save us all. Who else can, in times such as these?"
 	icon_state = "poster70"
 
 /obj/structure/sign/poster/prewar/poster71
-	name = "pre-war poster"
+	name = "dead king propaganda"
+	desc = "Decades past, the Dead King invaded this area, his armies barely beaten back. These leftover posters remind of the siege."
 	icon_state = "poster71"
 
 /obj/structure/sign/poster/prewar/poster72
-	name = "pre-war poster"
+	name = "old military poster"
+	desc = "This picture glorifies some military commander of the past. You can't tell if it was before or after the collapse."
 	icon_state = "poster72"
 
 /obj/structure/sign/poster/prewar/poster73
-	name = "pre-war poster"
+	name = "old nihilist poster"
+	desc = "Only once the last human life is snuffed out will the gate open to the new reality."
 	icon_state = "poster73"
 
 /obj/structure/sign/poster/prewar/poster74
-	name = "pre-war poster"
+	name = "old research poster"
+	desc = "Only science can save us now, what has God done for humanity lately?"
 	icon_state = "poster74"
 
 /obj/structure/sign/poster/prewar/poster75
-	name = "pre-war poster"
+	name = "old rationing poster"
+	desc = "During the military occupation, these posters reminded the occupied people to carefully manage their supplies."
 	icon_state = "poster75"
 
 /obj/structure/sign/poster/prewar/poster76
@@ -766,19 +778,23 @@
 	icon_state = "poster78"
 
 /obj/structure/sign/poster/prewar/poster79
-	name = "pre-war poster"
+	name = "old party poster"
+	desc = "We've got the swills that kill, and they have! Stop by the Gin'n'Gout on the south end of town!"
 	icon_state = "poster79"
 
 /obj/structure/sign/poster/prewar/poster80
-	name = "pre-war poster"
+	name = "old distrustful poster"
+	desc = "Slavers, bandits, cultists, none can be trusted in these times. Remember that distrust is a virtue against the hidden enemy."
 	icon_state = "poster80"
 
 /obj/structure/sign/poster/prewar/poster81
-	name = "pre-war poster"
+	name = "old moon poster"
+	desc = "There was a time man looked at the stars with hope, anticipation. What fools they were."
 	icon_state = "poster81"
 
 /obj/structure/sign/poster/prewar/poster82
-	name = "pre-war poster"
+	name = "old tropical poster"
+	desc = "This poster calls to a time of free booze and fun. Today those beaches are full of mutants and bleached bones."
 	icon_state = "poster82"
 
 /obj/structure/sign/poster/prewar/poster83
@@ -830,11 +846,13 @@
 	icon_state = "poster92"
 
 /obj/structure/sign/poster/prewar/poster93
-	name = "pre-war poster"
+	name = "old cult poster"
+	desc = "Time is a trap, God slumbers locked in time. Humanity shares the Soul of God, each a spark of His spirit. The day when God rises and time will cease comes in thirteen centuries. On this day all sparks will unite in an endless bonfire."
 	icon_state = "poster93"
 
 /obj/structure/sign/poster/prewar/poster94
-	name = "pre-war poster"
+	name = "burning city poster"
+	desc = "An artists rendition of the 2195 Boneyard Riots, where the great gangs of the city made one last stand against the Republic. They lost."
 	icon_state = "poster94"
 
 /obj/structure/sign/poster/prewar/protectron
