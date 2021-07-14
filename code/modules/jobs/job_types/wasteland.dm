@@ -369,7 +369,8 @@ Raider
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_tribal
+	/datum/outfit/loadout/raider_tribal,
+	/datum/outfit/loadout/raider_enclave
 	)
 
 /datum/outfit/job/wasteland/f13raider
@@ -569,6 +570,15 @@ Raider
 	backpack_contents = list(
 		/obj/item/clothing/mask/cigarette/pipe=1,
 		/obj/item/kitchen/knife/combat/bone=1)
+
+/datum/outfit/loadout/raider_enclave
+	name = "Enclave Remnant"
+	suit = /obj/item/clothing/suit/armor/f13/battlecoat/tan // Tier 3 armor, same as other raider things
+	uniform = /obj/item/clothing/under/f13/exile/enclave
+	id = /obj/item/card/id/rusted/brokenholodog/enclave
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/pistol22=1,
+		/obj/item/ammo_box/magazine/m22=2)
 
 
 /datum/job/wasteland/f13wastelander

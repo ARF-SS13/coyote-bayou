@@ -683,6 +683,12 @@
 	item_state = "clothing_tribalout"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/f13/exile/enclave
+	name = "disheveled peacekeeper uniform"
+	desc = "Khaki standard issue uniform over a black turtleneck. This one seems to be damaged."
+	icon_state = "enclave_uniformexile"
+	item_state = "enclave_uniformexile"
+
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
 	name = "NCR pre-war uniform"
