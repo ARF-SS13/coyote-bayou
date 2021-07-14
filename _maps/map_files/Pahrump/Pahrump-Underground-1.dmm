@@ -369,9 +369,11 @@
 	},
 /area/f13/bunker)
 "aoV" = (
-/obj/structure/flora/junglebush,
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "apd" = (
 /obj/structure/wreck/trash/three_barrels,
@@ -442,7 +444,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "auh" = (
-/obj/structure/flora/junglebush/large,
+/obj/structure/flora/junglebush/b,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "auq" = (
@@ -1410,7 +1412,7 @@
 	id = "storeshutters";
 	name = "store shutters"
 	},
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "bqs" = (
 /obj/structure/rack,
@@ -1905,8 +1907,6 @@
 	layer = 3.2;
 	pixel_x = 0
 	},
-/obj/structure/flora/junglebush/large,
-/obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/tunnel)
 "bMe" = (
@@ -2762,12 +2762,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "cAV" = (
-/obj/structure/flora/rock/pile/largejungle{
-	layer = 3.2;
-	pixel_x = 0
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/obj/structure/flora/junglebush,
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood/f13/stage_b,
 /area/f13/tunnel)
 "cBb" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -2972,7 +2971,7 @@
 /obj/structure/sign/poster/official/report_crimes{
 	pixel_y = -32
 	},
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/stage_r,
 /area/f13/tunnel)
 "cIG" = (
 /obj/machinery/light/small{
@@ -8559,6 +8558,9 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"hfy" = (
+/turf/open/floor/wood/f13/stage_br,
+/area/f13/tunnel)
 "hfK" = (
 /obj/structure/closet/crate/medical,
 /turf/open/floor/f13{
@@ -8678,7 +8680,6 @@
 	},
 /area/f13/brotherhood/rnd)
 "hkW" = (
-/obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "hlI" = (
@@ -8897,6 +8898,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "hsJ" = (
@@ -9980,7 +9982,7 @@
 /area/f13/tunnel)
 "ikD" = (
 /obj/machinery/workbench/forge,
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "ikI" = (
 /obj/structure/girder/reinforced,
@@ -10004,7 +10006,7 @@
 /area/f13/den)
 "ili" = (
 /obj/machinery/workbench,
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "ilw" = (
 /obj/item/storage/trash_stack,
@@ -10027,8 +10029,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "imj" = (
-/obj/machinery/autolathe/ammo,
-/turf/open/floor/wood/f13/oak,
+/obj/structure/table/wood,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "imo" = (
 /obj/machinery/light/small{
@@ -11456,8 +11458,7 @@
 	},
 /area/f13/brotherhood/operations)
 "jtt" = (
-/obj/structure/table/wood,
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/stage_b,
 /area/f13/tunnel)
 "jtx" = (
 /obj/structure/simple_door/metal/barred{
@@ -13432,14 +13433,8 @@
 	},
 /area/f13/bunker)
 "lak" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/flora/rock/pile/largejungle{
-	layer = 3.2;
-	pixel_x = 0
-	},
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood/f13/stage_tl,
 /area/f13/tunnel)
 "laU" = (
 /obj/machinery/computer/rdconsole{
@@ -13621,10 +13616,7 @@
 	},
 /area/f13/brotherhood/operations)
 "lfc" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/closed/wall/f13/tentwall,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "lfg" = (
 /obj/machinery/door/airlock/hatch{
@@ -13714,6 +13706,10 @@
 /obj/machinery/telecomms/server/presets/security,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"liU" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "liV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -16776,8 +16772,6 @@
 /area/f13/brotherhood/operations)
 "nFg" = (
 /obj/structure/flora/junglebush/large,
-/obj/structure/flora/junglebush,
-/obj/structure/flora/junglebush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "nFr" = (
@@ -16967,9 +16961,8 @@
 	},
 /area/f13/brotherhood/medical)
 "nNc" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/junglebush/large,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/wood/f13/stage_tr,
 /area/f13/tunnel)
 "nNx" = (
 /obj/item/clothing/head/helmet/knight/f13/metal/reinforced,
@@ -17817,8 +17810,8 @@
 	},
 /area/f13/brotherhood/operations)
 "oqh" = (
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood/f13/oak,
+/obj/machinery/autolathe/ammo,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/tunnel)
 "oqz" = (
 /obj/structure/simple_door/bunker/glass,
@@ -22003,6 +21996,9 @@
 /obj/item/clothing/head/hardhat,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"rsh" = (
+/turf/open/floor/wood/f13/stage_r,
+/area/f13/tunnel)
 "rsj" = (
 /obj/machinery/computer/operating/bos{
 	dir = 1
@@ -22685,6 +22681,9 @@
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
+/area/f13/tunnel)
+"rOJ" = (
+/turf/open/floor/wood/f13/stage_bl,
 /area/f13/tunnel)
 "rOM" = (
 /obj/structure/table/wood,
@@ -24366,11 +24365,7 @@
 	},
 /area/f13/followers)
 "toA" = (
-/obj/structure/closet/crate/coffin,
-/mob/living/simple_animal/hostile/radroach,
-/obj/item/stack/sheet/bone,
-/obj/item/stack/sheet/animalhide/human,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/wood/f13/stage_l,
 /area/f13/tunnel)
 "toP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -45092,9 +45087,9 @@ hAd
 hIy
 hmZ
 lnr
-fmO
-fmO
-fmO
+lak
+toA
+rOJ
 lnr
 lnr
 lnr
@@ -45351,7 +45346,7 @@ hNq
 lnr
 ikD
 fmO
-oqh
+jtt
 lnr
 hmZ
 hmZ
@@ -45604,9 +45599,9 @@ hmZ
 huw
 htI
 hMw
-lfc
+hmZ
 lnr
-fmO
+lfc
 fmO
 jtt
 lnr
@@ -45861,7 +45856,7 @@ hmZ
 hmZ
 hmZ
 hmZ
-lfc
+hmZ
 lnr
 ili
 fmO
@@ -46634,9 +46629,9 @@ uoO
 uoO
 uoO
 lnr
-lnr
-fmO
-lnr
+nNc
+rsh
+hfy
 lnr
 lnr
 lnr
@@ -47400,12 +47395,12 @@ vuv
 vuv
 vuv
 hoH
-nNc
-nNc
-nNc
+nfv
+nfv
+nfv
 lnr
 fmO
-dQG
+lnr
 lnr
 qUx
 uoO
@@ -47657,13 +47652,13 @@ cBH
 gAp
 gWt
 lnr
-nNc
-nNc
+nfv
+nfv
 lnr
 lnr
 fmO
 nfv
-auh
+liU
 uoO
 uoO
 uoO
@@ -47920,7 +47915,7 @@ lnr
 lnr
 lnr
 auh
-auh
+lnr
 uoO
 uoO
 uoO
@@ -50489,8 +50484,8 @@ fmO
 fmO
 lnr
 lnr
-fmO
-cDK
+lnr
+nfv
 nfv
 lnr
 lnr
@@ -50746,8 +50741,8 @@ qUx
 uoO
 lnr
 idi
-fmO
-cDK
+lnr
+nfv
 nfv
 qUx
 lnr
@@ -51001,7 +50996,7 @@ lnr
 rNJ
 uqz
 uoO
-jXF
+vuv
 vuv
 vuv
 iQC
@@ -51256,9 +51251,9 @@ fmO
 lnr
 rNJ
 urU
-hkW
+nYD
 uoO
-jXF
+vuv
 ifu
 lnr
 iRw
@@ -51512,7 +51507,7 @@ fmO
 fmO
 lnr
 qrt
-okH
+urU
 nFg
 uoO
 vuv
@@ -52026,8 +52021,8 @@ lnr
 lrl
 nfv
 xDM
-cAV
-nYD
+urU
+hkW
 uoO
 vuv
 vuv
@@ -52284,7 +52279,7 @@ lnr
 nfv
 lnr
 xDM
-lak
+aQn
 uoO
 uoO
 uoO
@@ -53290,7 +53285,7 @@ aeS
 ayR
 ayR
 ayR
-qww
+aoV
 fmO
 vJy
 jXF
@@ -53807,7 +53802,7 @@ ayR
 vuv
 bmj
 vJy
-qww
+cAV
 lnr
 lnr
 lrl
@@ -54830,7 +54825,7 @@ vuv
 abm
 aaI
 aaI
-qww
+aoV
 vJy
 vJy
 vuv
@@ -55604,7 +55599,7 @@ vuv
 vuv
 vJy
 vJy
-qww
+cAV
 btC
 btC
 btC
@@ -55872,7 +55867,7 @@ bOJ
 uoO
 uoO
 uoO
-aoV
+lrl
 fmO
 lnr
 lnr
@@ -80615,7 +80610,7 @@ eLE
 uoO
 uoO
 rGw
-toA
+rQP
 lnr
 rQP
 uoO

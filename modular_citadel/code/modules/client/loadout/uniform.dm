@@ -139,7 +139,7 @@
 	path = /obj/item/clothing/under/f13/roving
 
 /datum/gear/uniform/police
-	name = "pre-War police uniform"
+	name = "police uniform"
 	path = /obj/item/clothing/under/f13/police
 
 /datum/gear/uniform/relaxedwear
