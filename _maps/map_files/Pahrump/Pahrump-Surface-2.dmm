@@ -7782,6 +7782,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"dNH" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "dNT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
@@ -12787,7 +12791,6 @@
 /area/f13/wasteland)
 "gez" = (
 /obj/structure/closet/crate/trashcart,
-/mob/living/simple_animal/hostile/radroach,
 /obj/item/trash/chips,
 /obj/item/trash/chips,
 /obj/item/trash/candy,
@@ -108928,7 +108931,7 @@ fyf
 fyf
 fyf
 dRo
-fyf
+dNH
 fyf
 gts
 knD
