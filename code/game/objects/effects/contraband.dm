@@ -463,7 +463,7 @@
 
 /obj/structure/sign/poster/official/build
 	name = "Build"
-	desc = "A poster glorifying the rebuilding of old ruins."
+	desc = "A poster encouraging the reader to make something new."
 	icon_state = "poster5_legit"
 
 /obj/structure/sign/poster/official/bless_this_spess
@@ -683,8 +683,8 @@
 	icon_state = "poster49"
 
 /obj/structure/sign/poster/prewar/corporate_espionage
-	name = "pre-war poster"
-	desc = "Only YOU can stop CORPORATE ESPIONAGE."
+	name = "Only You Can Prevent CORPORATE ESPIONAGE"
+	desc = "This poster shows the silhouette of a man wearing a raincoat with the collar up and a hat groping towards the files in a drawer of a filing cabinet."
 	icon_state = "poster46"
 
 /obj/structure/sign/poster/prewar/poster60
