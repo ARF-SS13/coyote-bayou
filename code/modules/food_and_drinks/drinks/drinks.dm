@@ -343,7 +343,7 @@
 	custom_price = PRICE_PRETTY_CHEAP
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "beer"
+	name = "Beer"
 	desc = "Beer. Its cheap."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
@@ -351,8 +351,8 @@
 	custom_price = PRICE_PRETTY_CHEAP
 
 /obj/item/reagent_containers/food/drinks/beer/light
-	name = "Carp Lite"
-	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
+	name = "Beer Lite"
+	desc = "Beer that somehow tastes \"even worse\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
