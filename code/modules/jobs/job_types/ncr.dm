@@ -39,7 +39,7 @@ Colonel
 	flag = F13COLONEL
 	faction = "NCR"
 	head_announce = list("Security")
-	supervisors = "the general"
+	supervisors = "The Republic Senate, High Command"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	req_admin_notify = 1
 
