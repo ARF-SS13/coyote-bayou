@@ -41,7 +41,7 @@
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
 
 	///Lumcount added by sources other than lighting datum objects, such as the overlay lighting component.
-	var/dynamic_lumcount = 0 // Not yet added to this codebase.
+	var/dynamic_lumcount = 0
 
 	///Which directions does this turf block the vision of, taking into account both the turf's opacity and the movable opacity_sources.
 	var/directional_opacity = NONE
