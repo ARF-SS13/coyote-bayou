@@ -758,7 +758,12 @@
 	icon_state = "battlecoat_tan"
 	item_state = "maxson_battlecoat"
 
-/obj/item/clothing/suit/armor/f13/battlecoat/tan/enclave
+/obj/item/clothing/suit/armor/f13/battlecoat/tan/armored // For the "Enclave Remnant" loadout of the Outlaws.
+	name = "armored battlecoat"
+	desc = "(IV) A heavy padded leather coat with faded colors, usually worn by those who have once considered themselves a part of the US Government. This one has additional armor plating."
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+
+/obj/item/clothing/suit/armor/f13/battlecoat/tan/enclave // For the Enclave Lieutenant.
 	name = "lieutenant's battlecoat"
 	desc = "(VII) A battle coat usually worn by the high-ranking officers within the US Military. This one has been armored with light-weight alloys, providing maximum defense at almost no weight cost."
 	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
