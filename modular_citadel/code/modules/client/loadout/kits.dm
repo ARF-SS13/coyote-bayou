@@ -10,7 +10,7 @@
 	new /obj/item/clothing/mask/bandana/skull(src)
 	new /obj/item/clothing/glasses/sunglasses/big(src)
 
-//Cas - KillerGryphon
+//Cas - Killergryphyn
 /obj/item/storage/box/large/custom_kit/cas/PopulateContents()
 	new /obj/item/clothing/under/f13/agent47(src)
 	new /obj/item/clothing/gloves/modif_patrol(src)
