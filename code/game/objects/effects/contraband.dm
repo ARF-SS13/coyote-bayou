@@ -737,7 +737,7 @@
 
 /obj/structure/sign/poster/prewar/poster70
 	name = "old spiritual poster"
-	desc = "Suffer well, may God be saved, and may God save us all. Who else can, in times such as these?"
+	desc = "Suffer well. May God be saved, and may God save us all. Who else can, in times such as these?"
 	icon_state = "poster70"
 
 /obj/structure/sign/poster/prewar/poster71
