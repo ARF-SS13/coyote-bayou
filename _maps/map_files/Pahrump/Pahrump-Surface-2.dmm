@@ -6984,9 +6984,6 @@
 /area/f13/wasteland)
 "dtq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster88{
-	pixel_x = -32
-	},
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/light/small/broken{
 	dir = 8
@@ -10310,14 +10307,9 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "eWW" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/sign/poster/prewar/poster85{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/village)
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "eXa" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -13498,16 +13490,6 @@
 /area/f13/caves)
 "gts" = (
 /turf/closed/wall/f13/store,
-/area/f13/building)
-"gtv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/spider/stickyweb,
-/obj/structure/sign/poster/prewar/poster92{
-	pixel_y = -32
-	},
-/obj/machinery/light/small/broken,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "gtz" = (
 /obj/structure/closet/cabinet,
@@ -17128,9 +17110,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/stickyweb,
-/obj/structure/sign/poster/prewar/poster84{
-	pixel_x = -32
-	},
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
@@ -26108,9 +26087,6 @@
 "mow" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/structure/sign/poster/prewar/poster89{
-	pixel_y = 30
 	},
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -35190,6 +35166,13 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"qNK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/poster82{
+	pixel_x = 32
+	},
+/turf/open/floor/wood/f13/oak,
+/area/f13/bar)
 "qNM" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/indestructible/ground/outside/water,
@@ -39143,9 +39126,6 @@
 	},
 /obj/item/reagent_containers/dropper,
 /obj/item/reagent_containers/dropper,
-/obj/structure/sign/poster/prewar/poster91{
-	pixel_x = 32
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -39640,6 +39620,15 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"sWe" = (
+/obj/structure/sign/poster/prewar/poster79{
+	pixel_x = -32
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 4;
+	icon_state = "outerpavement"
+	},
 /area/f13/wasteland)
 "sWg" = (
 /obj/structure/rack,
@@ -40715,9 +40704,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/stickyweb,
-/obj/structure/sign/poster/prewar/poster86{
-	pixel_y = -32
-	},
 /obj/machinery/light/small/broken,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -41558,7 +41544,7 @@
 /area/f13/building)
 "tPY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/energy_swords{
+/obj/structure/sign/poster/prewar/poster62{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -49635,10 +49621,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"xuo" = (
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "xus" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/road{
@@ -51401,11 +51383,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "yit" = (
-/obj/structure/sign/poster/prewar/poster92{
-	pixel_y = 32
+/obj/structure/sign/poster/prewar/poster70{
+	pixel_x = 32
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/village)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "yiU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_large,
@@ -69711,7 +69693,7 @@ cDd
 qIk
 uBx
 qiO
-xuy
+qNK
 xuy
 xuy
 xuy
@@ -70222,7 +70204,7 @@ sQX
 koD
 jkJ
 igz
-igz
+sWe
 igz
 igz
 igz
@@ -83060,9 +83042,9 @@ mvv
 mvv
 mvv
 mvv
+yit
 mvv
-mvv
-mvv
+yit
 rjE
 qVV
 qDy
@@ -85467,7 +85449,7 @@ gsu
 hjw
 uhu
 vMR
-gtv
+ttP
 gts
 qai
 mrQ
@@ -98942,7 +98924,7 @@ bcV
 cBQ
 ihA
 exA
-eWW
+exA
 pcG
 skq
 bcV
@@ -99723,7 +99705,7 @@ llX
 dQh
 hGF
 pcG
-yit
+ihA
 exA
 vkv
 fbI
@@ -108931,7 +108913,7 @@ fyf
 fyf
 fyf
 dRo
-xuo
+eWW
 fyf
 gts
 knD

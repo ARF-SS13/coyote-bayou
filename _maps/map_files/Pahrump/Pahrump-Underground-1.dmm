@@ -4070,6 +4070,9 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/sign/poster/prewar/poster68{
+	pixel_y = 32
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "dDi" = (
@@ -4377,6 +4380,9 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/structure/sign/poster/prewar/poster68{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "dMQ" = (
@@ -4841,7 +4847,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/sign/poster/contraband/pinup_couch{
+/obj/structure/sign/poster/prewar/poster61{
 	pixel_y = 32
 	},
 /turf/open/floor/wood/f13/oak,
@@ -5863,7 +5869,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/sign/poster/contraband/missing_gloves{
+/obj/structure/sign/poster/prewar/poster72{
 	pixel_y = 32
 	},
 /turf/open/floor/wood/f13/oak,
@@ -7267,6 +7273,9 @@
 	dir = 1
 	},
 /obj/structure/flora/junglebush,
+/obj/structure/sign/poster/prewar/poster68{
+	pixel_y = 32
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "gjB" = (
@@ -11072,6 +11081,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/operations)
+"jcR" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/sign/poster/prewar/poster75{
+	pixel_x = 32
+	},
+/turf/open/floor/wood/f13/oak,
+/area/f13/tunnel)
 "jdd" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11918,6 +11939,15 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
+"jLk" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/sign/poster/prewar/poster94{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/black,
+/area/f13/ncr)
 "jLX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -25157,6 +25187,16 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/f13/den)
+"tWv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants/dead{
+	desc = "It doesn't look very healthy...";
+	name = "Dead potted plant"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/bunker)
 "tWR" = (
 /obj/structure/chair/f13chair1{
 	dir = 4
@@ -27584,13 +27624,13 @@
 /area/f13/den)
 "wom" = (
 /obj/structure/bed/old,
-/obj/structure/sign/poster/contraband/pinup_couch{
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/ranged{
 	desc = "Another murderer churned out by the wastes, this one seems slightly more disciplined.";
 	name = "Raider Conscript"
+	},
+/obj/structure/sign/poster/prewar/poster61{
+	pixel_y = 32
 	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -32108,7 +32148,7 @@ uoO
 uoO
 eLE
 cNj
-lYi
+jLk
 lYi
 lYi
 cNj
@@ -32216,9 +32256,9 @@ jWa
 xkk
 qIH
 fLU
+tWv
 vaH
-vaH
-vaH
+tWv
 fLU
 fLU
 fLU
@@ -32473,9 +32513,9 @@ aCo
 xnk
 lla
 fLU
-cFF
 vaH
-cFF
+vaH
+vaH
 fLU
 fPm
 iaS
@@ -48415,7 +48455,7 @@ uoO
 vuv
 cBH
 cBH
-cBH
+jcR
 cBH
 cBH
 vuv
