@@ -403,9 +403,6 @@
 	return set_selected_zone(choice, usr)
 
 /obj/screen/zone_sel/MouseEntered(location, control, params)
-	MouseMove(location, control, params)
-
-/obj/screen/zone_sel/MouseMove(location, control, params)
 	if(isobserver(usr))
 		return
 

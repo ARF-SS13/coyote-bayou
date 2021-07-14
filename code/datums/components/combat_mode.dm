@@ -1,12 +1,10 @@
 /**
- * Combat mode component. It makes the user face whichever atom the mouse pointer is hovering,
- * amongst other things designed outside of this file, namely PvP and PvE stuff, hence the name.
+ * Combat mode component. It makes things designed outside of this file, namely PvP and PvE stuff, hence the name.
  * Can be toggled on and off by clicking the screen hud object or by pressing the assigned hotkey (default 'C')
  */
 /datum/component/combat_mode
 	var/mode_flags = COMBAT_MODE_INACTIVE
 	var/combatmessagecooldown
-	var/lastmousedir
 	var/obj/screen/combattoggle/hud_icon
 	var/hud_loc
 
@@ -88,9 +86,6 @@
 			to_chat(source, self_message)
 		if(playsound)
 			source.playsound_local(source, 'sound/misc/ui_toggle_vats.ogg', 50, FALSE, pressure_affected = FALSE) //Sound from interbay!
-	RegisterSignal(source, COMSIG_MOB_CLIENT_MOUSEMOVE, .proc/onMouseMove)
-	RegisterSignal(source, COMSIG_MOVABLE_MOVED, .proc/on_move)
-	//RegisterSignal(source, COMSIG_MOB_CLIENT_MOVE, .proc/on_client_move)
 	if(hud_icon)
 		hud_icon.combat_on = TRUE
 		hud_icon.update_icon()
@@ -117,7 +112,6 @@
 			to_chat(source, self_message)
 		if(playsound)
 			source.playsound_local(source, 'sound/misc/ui_toggleoff.ogg', 50, FALSE, pressure_affected = FALSE) //Slightly modified version of the toggleon sound!
-	UnregisterSignal(source, list(COMSIG_MOB_CLIENT_MOUSEMOVE, COMSIG_MOVABLE_MOVED, COMSIG_MOB_CLIENT_MOVE))
 	if(hud_icon)
 		hud_icon.combat_on = FALSE
 		hud_icon.update_icon()
@@ -126,23 +120,6 @@
 	var/mob/living/L = source
 	L.toggle_combat_mode()
 
-///Changes the user direction to (try) keep match the pointer.
-/datum/component/combat_mode/proc/on_move(atom/movable/source, dir, atom/oldloc, forced)
-	var/mob/living/L = source
-	if(mode_flags & COMBAT_MODE_ACTIVE && L.client && lastmousedir && lastmousedir != dir)
-		L.setDir(lastmousedir, ismousemovement = TRUE)
-/*
-/// Added movement delay if moving backward. Currently disabled, uncommoment line 93 to enable
-/datum/component/combat_mode/proc/on_client_move(mob/source, client/client, direction, n, oldloc, added_delay)
-	if(oldloc != n && direction == REVERSE_DIR(source.dir))
-		client.move_delay += added_delay*0.0
-*/
-///Changes the user direction to (try) match the pointer.
-/datum/component/combat_mode/proc/onMouseMove(mob/source, object, location, control, params)
-	if(source.client.show_popup_menus)
-		return
-	source.face_atom(object, TRUE)
-	lastmousedir = source.dir
 
 /// Toggles whether the user is intentionally in combat mode. THIS should be the proc you generally use! Has built in visual/to other player feedback, as well as an audible cue to ourselves.
 /datum/component/combat_mode/proc/user_toggle_intentional_combat_mode(mob/living/source)
