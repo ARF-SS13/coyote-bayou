@@ -33,3 +33,8 @@
 	name = "Crimson's Belongings"
 	path = /obj/item/storage/box/large/custom_kit/crimson
 	ckeywhitelist = list("rigbe")
+
+/datum/gear/donator/kits/cas
+	name = "Cas's Belongings"
+	path = /obj/item/storage/box/large/custom_kit/Cas
+	ckeywhitelist = list("killergryphon")
