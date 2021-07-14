@@ -163,8 +163,8 @@ Lieutenant
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the direct superior to the Sergeant First Class and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
-	supervisors = "Captain and above"
+	description = "You are the direct superior to the NCOs and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
+	supervisors = "Captain and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
@@ -214,8 +214,8 @@ Medical Officer
 	flag = F13MEDICALOFFICER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are lead medical professional in Camp Miller, you do not have any command authority unless it is of medical nature. Your duties are to ensure your troopers are in good health and that medical supplies are stocked for troopers."
-	supervisors = "Captain and above"
+	description = "You are the lead medical professional in Camp Miller, you do not have any command authority unless it is of medical nature. Your duties are to ensure your troopers are in good health and that medical supplies are stocked for troopers."
+	supervisors = "Captain and Above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
 	outfit = /datum/outfit/job/ncr/f13medicalofficer
@@ -264,7 +264,7 @@ Logistics Officer
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority unless it is of engineering nature. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies."
-	supervisors = "Captain and above"
+	supervisors = "Captain and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
@@ -362,7 +362,7 @@ Sergeant
 	total_positions = 2
 	spawn_positions = 2
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the enlisted follow them to the letter. Additionally, you are responsible for the wellbeing of the troops and their ongoing training with the NCR."
-	supervisors = "Sergeant First Class and above"
+	supervisors = "Lieutenant and Above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
@@ -434,8 +434,8 @@ Heavy Trooper
 	flag = F13HEAVYTROOPER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protects the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
-	supervisors = "Sergeant First Class and above"
+	description = "You are the most elite of the enlisted, sergeant in rank but forgoing regular command roles to lead in battle only. You are expected to be on the frontlines of every engagement, and to provide firing support for the rank and file. Your power armor lacks the protection the full working sets have, but you have trained with it and can use it in battle well. General Oliver praises you and your other Heavy Troopers, prove to him you're no exception to the rule."
+	supervisors = "Lieutenant and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_HEAVYTROOPER
@@ -543,8 +543,8 @@ Corporal
 	flag = F13COMBATMEDIC
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are a veteran enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
-	supervisors = "Corporals and above"
+	description = "You are a senior enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are no non-commissioned officers present."
+	supervisors = "Corporals and Above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATMEDIC
 	outfit = /datum/outfit/job/ncr/f13combatmedic
@@ -589,8 +589,8 @@ Combat Engineer
 	flag = F13COMBATENGINEER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are a veteran enlisted with an engineering skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are none present."
-	supervisors = "Corporals and above"
+	description = "You are a senior enlisted trooper with an engineering skill set. You work closely with your squad, taking orders from the officers. You have the authority to command troopers if there are no non-commissioned officers present."
+	supervisors = "Corporals and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
@@ -685,7 +685,7 @@ Trooper
 	total_positions = 8
 	spawn_positions = 8
 	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by the Lieutenant."
-	supervisors = "Corporals and above"
+	supervisors = "Corporals and Above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13trooper
@@ -746,7 +746,7 @@ Trooper
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
-	supervisors = "the Captain"
+	supervisors = "NCRA Captain"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13mp
@@ -782,8 +782,8 @@ Rear Echelon
 	flag = F13REARECHELON
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or your specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
-	supervisors = "Corporals and above"
+	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
+	supervisors = "Corporals and Above"
 	selection_color = "#fff5cc"
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
@@ -899,7 +899,7 @@ Veteran Ranger
 	total_positions = 1
 	spawn_positions = 1
 	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. Your primary mission is to improve general opinion of the Republic and to neutralize slavers and raiders operating in the area."
-	supervisors = "Captain and above"
+	supervisors = "NCRA Captain, High Command"
 	selection_color = "#ffeeaa"
 	display_order = JOB_DISPLAY_ORDER_VETRANGE
 	outfit = /datum/outfit/job/ncr/f13vetranger
