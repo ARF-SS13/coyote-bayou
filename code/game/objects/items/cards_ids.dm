@@ -892,7 +892,7 @@
 	name = "patrolman's badge"
 	desc = "A silver badge passed down from the first patrolmen."
 	assignment = "badge"
-	assignment = "Deputy"
+	assignment = "Patrolman"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)

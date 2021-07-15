@@ -1,6 +1,6 @@
 /*
 Town access doors
-Sheriff/Deputy, Gatehouse etc: 62 ACCESS_GATEWAY
+OPD Captain/OPD Patrolman, Gatehouse etc: 62 ACCESS_GATEWAY
 General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
 Shopkeeper: 34 ACCESS_CARGO_BOT
@@ -118,9 +118,9 @@ Mayor
 
 /*--------------------------------------------------------------*/
 
-/datum/job/den/f13deputy
+/datum/job/den/f13patrolman
 	title = "OPD Patrolman"
-	flag = F13DEPUTY
+	flag = F13PATROLMAN
 	department_flag = DEN
 	faction = "Town"
 	total_positions = 4
@@ -132,13 +132,13 @@ Mayor
 	exp_type = EXP_TYPE_DEN
 	exp_requirements = 600
 
-	outfit = /datum/outfit/job/den/f13deputy
+	outfit = /datum/outfit/job/den/f13patrolman
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
-/datum/outfit/job/den/f13deputy
+/datum/outfit/job/den/f13patrolman
 	name = "OPD Patrolman"
-	jobtype = /datum/job/den/f13deputy
+	jobtype = /datum/job/den/f13patrolman
 
 	ears = 			/obj/item/radio/headset/headset_town
 	id = /obj/item/card/id/dogtag/townpatrol
@@ -159,7 +159,7 @@ Mayor
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat)
 
-/datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/den/f13patrolman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
