@@ -151,7 +151,7 @@ Mayor
 	head =	/obj/item/clothing/head/f13/town/patrolmanhat
 	glasses =		/obj/item/clothing/glasses/townglasses
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/datum/gear/shoes/laceup
+	shoes = /datum/gear/shoes/laceup
 	uniform = /obj/item/clothing/under/f13/townpatrol
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2, \
