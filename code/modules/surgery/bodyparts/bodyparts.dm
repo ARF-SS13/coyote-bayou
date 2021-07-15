@@ -414,6 +414,7 @@
 	body_part = CHEST
 	px_x = 0
 	px_y = 0
+	dismemberable = FALSE
 	var/obj/item/cavity_item
 
 /obj/item/bodypart/chest/Destroy()
