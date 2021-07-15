@@ -888,27 +888,34 @@
 	item_state = "badge-deputy"
 
 
-/obj/item/card/id/dogtag/deputy
-	name = "deputy's badge"
-	desc = "A silver badge which shows honour and dedication."
+/obj/item/card/id/dogtag/townpatrol
+	name = "patrolman's badge"
+	desc = "A silver badge passed down from the first patrolmen."
 	assignment = "badge"
 	assignment = "Deputy"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
-/obj/item/card/id/dogtag/deputy/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/card/id/dogtag/sheriff))
-		var/newname = stripped_input(user, "Who do you want to designate as your deputy?", , "", MAX_NAME_LEN)
+/obj/item/card/id/dogtag/townpatrol/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/card/id/dogtag/towncaptain))
+		var/newname = stripped_input(user, "Who do you want to designate as a patrolman?", , "", MAX_NAME_LEN)
 		if(newname)
-			to_chat(user, "You scribble the [registered_name] for the name on the badge.")
+			to_chat(user, "You etch the [registered_name] for the name on the badge.")
 			registered_name = newname
 			update_label()
 	return ..()
 
-/obj/item/card/id/dogtag/sheriff
-	name = "sheriff's badge"
-	desc = "A golden Sheriff's badge."
+/obj/item/card/id/dogtag/townsergeant
+	name = "sergeant's badge"
+	desc = "The polished sergeant's badge, coveted among the patrolmen of the OPD. It designates the captain's true right hand."
+	assignment = "badge"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+
+/obj/item/card/id/dogtag/towncaptain
+	name = "captain's badge"
+	desc = "The golden captain's badge, passed down from the OPD's first captain. It bears the surname of the current captain."
 	assignment = "badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"

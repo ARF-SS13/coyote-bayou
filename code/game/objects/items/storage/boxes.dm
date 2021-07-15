@@ -1379,14 +1379,14 @@ obj/item/storage/box/stingbangs
 	for(var/i in 1 to 7)
 		new /obj/item/card/id/dogtag/legfollower
 
-/obj/item/storage/box/deputy_badges
+/obj/item/storage/box/patrolman_badges
 	name = "box of spare badges"
-	desc = "A box containing the spare badges for deputies. Use your sheriff badge on a deputy badge to assign its owner."
+	desc = "A box containing the spare badges for patrolmen. Use your captain badge on a patrolman badge to assign its owner."
 	illustration = "id"
 
-/obj/item/storage/box/deputy_badges/PopulateContents()
+/obj/item/storage/box/patrolman_badges/PopulateContents()
 	for(var/i in 1 to 3)
-		new /obj/item/card/id/dogtag/deputy(src)
+		new /obj/item/card/id/dogtag/townpatrol(src)
 
 /obj/item/storage/box/citizenship_permits
 	name = "box of citizenship permits"
