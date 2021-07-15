@@ -141,7 +141,7 @@ Mayor
 	jobtype = /datum/job/den/f13deputy
 
 	ears = 			/obj/item/radio/headset/headset_town
-	id =            /obj/item/card/id/dogtag/townpatrol
+	id = /obj/item/card/id/dogtag/townpatrol
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
