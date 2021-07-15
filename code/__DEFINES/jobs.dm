@@ -105,7 +105,7 @@
 #define F13SETTLER		(1<<2)
 #define F13FARMER		(1<<3)
 #define F13PROSPECTOR	(1<<4)
-#define F13PATROLMAN		(1<<5)
+#define F13PATROLMAN (1<<5)
 #define F13MAYOR		(1<<6)
 #define F13PREACHER		(1<<7)
 #define F13SHOPKEEPER	(1<<8)
