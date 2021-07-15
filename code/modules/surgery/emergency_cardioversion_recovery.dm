@@ -40,7 +40,7 @@
 		H.emote("scream")
 		H.electrocute_act(25, (tool), 1, SHOCK_ILLUSION)
 		H.adjustFireLoss(10)
-		H.emote("flip")
+		H.SpinAnimation(7, 1)
 		H.Jitter(100)
 		return FALSE
 	display_results(user, target, "<span class='notice'>You attach the [tool] to [target]'s heart and prepare to pulse.</span>",
@@ -75,7 +75,7 @@
 		"<span class='warning'>[user] screws up, causing [H] to flop around violently as they're zapped!</span>")
 	H.electrocute_act(25, (tool), 1, SHOCK_ILLUSION)
 	H.adjustFireLoss(10)
-	H.emote("flip")
+	H.SpinAnimation(7, 1)
 	H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
 
 /datum/surgery_step/ventricular_electrotherapy/proc/ghetto_defib(mob/user, mob/living/carbon/human/H, obj/item/tool)

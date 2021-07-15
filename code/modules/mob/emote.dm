@@ -14,18 +14,6 @@
 		return
 	E.run_emote(src, param, m_type, intentional)
 
-/datum/emote/flip
-	key = "flip"
-	key_third_person = "flips"
-	restraint_check = TRUE
-	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
-	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
-
-/datum/emote/flip/run_emote(mob/user, params)
-	. = ..()
-	if(.)
-		user.SpinAnimation(7,1)
-
 /datum/emote/spin
 	key = "spin"
 	key_third_person = "spins"
