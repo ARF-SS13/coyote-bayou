@@ -335,7 +335,7 @@
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-	desc = "Just add 10ml of water, self heats! A taste that reminds you of your school years."
+	desc = "Just add 10ml of water, self heats! A pre-collapse delicacy that's grown all-too-rare."
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 30)
 	foodtype = GRAIN
@@ -343,16 +343,16 @@
 	custom_price = PRICE_PRETTY_CHEAP
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "Beer"
+	desc = "Beer. Its cheap."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = PRICE_PRETTY_CHEAP
 
 /obj/item/reagent_containers/food/drinks/beer/light
-	name = "Carp Lite"
-	desc = "Brewed with \"Pure Ice Asteroid Spring Water\"."
+	name = "Beer Lite"
+	desc = "Beer that somehow tastes \"even worse\"."
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale

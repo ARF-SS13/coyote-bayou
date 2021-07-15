@@ -2234,9 +2234,6 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "jX" = (
-/obj/structure/sign/poster/prewar/poster89{
-	pixel_x = 32
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -2389,8 +2386,8 @@
 /obj/item/ammo_box/magazine/greasegun,
 /obj/item/ammo_box/magazine/greasegun,
 /obj/item/ammo_box/magazine/greasegun,
-/obj/item/gun/ballistic/automatic/greasegun,
-/obj/item/gun/ballistic/automatic/greasegun,
+/obj/item/gun/ballistic/automatic/smg/greasegun,
+/obj/item/gun/ballistic/automatic/smg/greasegun,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -5533,7 +5530,7 @@
 "yq" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/item/gun/ballistic/revolver/widowmaker,
-/obj/item/gun/ballistic/automatic/varmint,
+/obj/item/gun/ballistic/rifle/mag/varmint,
 /obj/item/ammo_box/magazine/m556/rifle/small,
 /obj/item/clothing/under/overalls,
 /obj/item/clothing/shoes/workboots,
@@ -5860,7 +5857,7 @@
 "zT" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/chinese,
-/obj/item/clothing/head/f13/chinese_commander,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/space)
 "zU" = (

@@ -45,18 +45,18 @@
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2
 
-/obj/item/ammo_box/magazine/internal/shot/dual/heck
-	name = "heckgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+/obj/item/ammo_box/magazine/internal/shot/dual/simple
+	name = "double-barrel shotgun internal magazine (simple)"
+	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	max_ammo = 1
 
-/obj/item/ammo_box/magazine/internal/shot/riot
-	name = "riot shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+/obj/item/ammo_box/magazine/internal/shot/police
+	name = "police shotgun internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/shot/bounty

@@ -25,11 +25,6 @@
 	},
 /turf/open/floor/grass,
 /area/f13/bunker)
-"aL" = (
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/bed/pod,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
 "aM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/workbench,
@@ -203,13 +198,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/obj/item/paper/fluff/stations/lavaland/sloth/note{
-	desc = "Enclave sucks, LMAO";
-	info = "Enclave is stinky";
-	name = "A note to the Enclave"
-	},
 /obj/structure/rack,
-/obj/item/clothing/accessory/medal/gold/heroism,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "fx" = (
@@ -479,7 +468,6 @@
 /area/f13/bunker)
 "mG" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf,
-/obj/item/reagent_containers/food/snacks/store/bread/spidermeat,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "mN" = (
@@ -632,9 +620,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sA" = (
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/bed/pod,
-/obj/effect/decal/cleanable/semen/femcum,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sN" = (
@@ -664,9 +650,8 @@
 /turf/closed/indestructible/fakeglass,
 /area/f13/bunker)
 "th" = (
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/bed/pod,
 /obj/item/clothing/suit/armor/f13/battlecoat/vault,
+/obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "tn" = (
@@ -991,12 +976,12 @@
 /area/f13/tunnel)
 "Ca" = (
 /obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/bed/pod,
 /obj/structure/spacevine{
 	name = "vines"
 	},
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
 /mob/living/simple_animal/hostile/supermutant,
+/obj/structure/bed/old,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "Cm" = (
@@ -1053,7 +1038,6 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/obj/item/dildo/flared/huge,
 /obj/machinery/light/broken{
 	dir = 8
 	},
@@ -1193,10 +1177,6 @@
 "Hb" = (
 /obj/structure/junk/small/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
-"HZ" = (
-/obj/structure/sign/poster/contraband/lusty_xenomorph,
-/turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "Ic" = (
 /turf/closed/wall/r_wall/rust{
@@ -1411,7 +1391,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Nj" = (
-/obj/item/storage/toolbox/plastitanium/gold_real,
 /turf/open/floor/mineral/gold,
 /area/f13/caves)
 "Nm" = (
@@ -1469,10 +1448,6 @@
 /area/f13/bunker)
 "Ox" = (
 /obj/structure/chair,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
-"Pu" = (
-/obj/effect/decal/cleanable/cum,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "PO" = (
@@ -1596,10 +1571,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "TI" = (
-/obj/structure/junk/small/bed,
 /obj/structure/spacevine{
 	name = "vines"
 	},
+/obj/structure/bed/old,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "TM" = (
@@ -3813,7 +3788,7 @@ YT
 YT
 WC
 Xm
-aL
+Ye
 CW
 Xm
 Ye
@@ -3876,7 +3851,7 @@ YT
 WC
 Xm
 Go
-Pu
+Ye
 Xm
 wd
 Ye
@@ -4854,7 +4829,7 @@ Xm
 Gp
 Ye
 Xm
-HZ
+Xm
 Td
 eT
 Go

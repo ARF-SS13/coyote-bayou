@@ -543,18 +543,18 @@
 	armor_block_chance = 80 //Enclave. 'nuff said
 	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
-/obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2
-	name = "advanced power helmet MK2"
-	desc = "(XIII) It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
-	icon_state = "advhelmet2"
-	item_state = "advhelmet2"
-	melee_block_threshold = 50
-	armor_block_threshold = 0.5
-	armor_block_chance = 90
-	deflection_chance = 30
+/obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
+	name = "hellfire power armor"
+	desc = "(XIII) A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
+	icon_state = "hellfirehelm"
+	item_state = "hellfirehelm"
+	melee_block_threshold = 70
+	armor_block_threshold = 0.8
+	armor_block_chance = 99
+	deflection_chance = 70
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
-/obj/item/clothing/head/helmet/f13/power_armor/advanced/mk2/wbos
+/obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire/wbos
 	name = "advanced Washington power helmet"
 	desc = "It's an improved model of the power armor helmet used exclusively by the Washington Brotherhood, designed to induce fear in a target."
 	icon_state = "t51wboshelmet"
@@ -645,22 +645,23 @@
 	icon_state = "trilby"
 	item_state = "fedora"
 
+//chinesearmy
 /obj/item/clothing/head/f13/chinese_soldier
 	name = "chinese side cap"
-	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by regular troops."
-	icon_state = "chinese_s"
+	desc = "(I) A People's Liberation Army side cap, worn by enlisted and non-commissioned officers."
+	icon_state = "chinese_solder"
 	item_state = "secsoft"
 
 /obj/item/clothing/head/f13/chinese_officer
 	name = "chinese officer cap"
-	desc = "(I) A foldable military cap with straight sides, with insignia of People's Liberation Army, that was supposedly worn by low rank officers."
-	icon_state = "chinese_o"
+	desc = "(I) A People's Liberation Army cap, worn by low ranking officers."
+	icon_state = "chinese_officer"
 	item_state = "secsoft"
 
-/obj/item/clothing/head/f13/chinese_commander
+/obj/item/clothing/head/f13/chinese_general
 	name = "chinese peaked cap"
-	desc = "(I) A peaked cap of dark green in color with a red star on the frontside.<br>It obviously belonged to a high rank officer of People's Liberation Army."
-	icon_state = "chinese_c"
+	desc = "(I) A People's Liberation Army peaked cap, worn by high ranking officers and commanders."
+	icon_state = "chinese_general"
 	item_state = "fedora"
 
 /obj/item/clothing/head/f13/stormchaser
@@ -767,23 +768,23 @@
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	name = "Rusted Cowboy Hat"
-	desc = "(II) A cowboy hat made from tanned leather hides."
+	desc = "(II) A hat made from tanned leather hide."
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/police
-	name = "pre-War police hat"
-	desc = "(I) It's the police hat of dark blue in color with a silver colored badge on the frontside.<br>The badge is inscripted with the words SPECIAL and POLICE."
+	name = "police hat"
+	desc = "(I) The wasteland's finest."
 	icon_state = "retropolice"
 	item_state = "fedora"
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/simplekitty
-	name = "Kitty Headband"
-	desc = "A headband with a pair of cute kitty ears"
+	name = "kitty headband"
+	desc = "This headband leaves you with a feeling of uncertain dread."
 	icon_state = "kittyb"
 	color = "#999999"
 	armor = list("tier" = 0)
@@ -928,3 +929,23 @@
 /obj/item/clothing/head/helmet/f13/marlowhat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/f13/ranger_hat
+	name = "grey cowboy hat"
+	desc = "(II) A simple grey cowboy hat."
+	icon_state = "ranger_grey_hat"
+	item_state = "ranger_grey_hat"
+	armor = list("tier" = 2, "energy" = 25, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+	
+/obj/item/clothing/head/f13/ranger_hat/banded
+	name = "banded cowboy hat"
+	desc = "(II) A grey cowboy hat with a hat band decorated with brassen rings."
+	icon_state = "ranger_banded_hat"
+	item_state = "ranger_banded_hat"
+	
+/obj/item/clothing/head/f13/ranger_hat/tan
+	name = "tan cowboy hat"
+	desc = "(II) A thick tanned leather hat, with a Montana Peak crease."
+	icon_state = "ranger_tan_hat"
+	item_state = "ranger_tan_hat"

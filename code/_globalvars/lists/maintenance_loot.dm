@@ -221,7 +221,7 @@ GLOBAL_LIST_INIT(trash_craft, list(
 GLOBAL_LIST_INIT(trash_gun, list(
 	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/revolver/colt6520 = 1,
-	/obj/item/gun/ballistic/shotgun/mosin = 1,
+	/obj/item/gun/ballistic/rifle/mosin = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1
@@ -499,7 +499,7 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/thermic_lance,
 	/obj/item/twohanded/chainsaw,
 	/obj/item/kinetic_crusher,
-	/obj/item/nullrod/claymore/chainsaw_sword,
+	/obj/item/melee/powered/ripper,
 	/obj/item/melee/powerfist,
 	/obj/item/melee/transforming/energy/axe,
 	/obj/item/gun/ballistic/revolver/ballisticfist,
@@ -511,14 +511,14 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 
 GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/revolver/single_shotgun,
-	/obj/item/storage/fancy/ammobox/beanbag,
+	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/gun/ballistic/revolver/caravan_shotgun,
-	/obj/item/storage/fancy/ammobox/beanbag,
-	/obj/item/gun/ballistic/shotgun/mosin,
+	/obj/item/ammo_box/shotgun/bean,
+	/obj/item/gun/ballistic/rifle/mosin,
 	/obj/item/ammo_box/a762,
-	/obj/item/gun/ballistic/revolver/zipgun,
-	/obj/item/gun/ballistic/revolver/pipe_rifle,
-	/obj/item/gun/ballistic/shotgun/remington,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun,
+	/obj/item/gun/ballistic/revolver/hobo/pepperbox,
+	/obj/item/gun/ballistic/rifle/hunting,
 	/obj/item/ammo_box/a308,
 	/obj/item/gun/ballistic/automatic/pistol/n99,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
@@ -528,18 +528,18 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/ammo_box/magazine/m9mm,
 	/obj/item/gun/ballistic/revolver/colt6520,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
-	/obj/item/gun/ballistic/automatic/varmint,
+	/obj/item/gun/ballistic/rifle/mag/varmint,
 	/obj/item/ammo_box/magazine/m556/rifle/small
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/shotgun/hunting,
-	/obj/item/storage/fancy/ammobox/lethalshot,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/gun/ballistic/revolver/m29,
 	/obj/item/ammo_box/m44,
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/m44,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,
+	/obj/item/gun/ballistic/rifle/repeater/cowboy,
 	/obj/item/ammo_box/a357,
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/revolver/colt357,
@@ -552,24 +552,24 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/automatic/m1carbine,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
-	/obj/item/gun/ballistic/automatic/commando,
+	/obj/item/gun/ballistic/rifle/mag/commando,
 	/obj/item/ammo_box/magazine/m45
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
-	/obj/item/gun/ballistic/automatic/mini_uzi,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 	/obj/item/ammo_box/magazine/uzim9mm,
-	/obj/item/gun/ballistic/automatic/smg10mm,
+	/obj/item/gun/ballistic/automatic/smg/smg10mm,
 	/obj/item/ammo_box/magazine/m10mm_adv/ext,
-	/obj/item/gun/ballistic/automatic/greasegun,
+	/obj/item/gun/ballistic/automatic/smg/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
-	/obj/item/storage/fancy/ammobox/lethalshot,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/gun/energy/laser/wattz,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/revolver/needler,
 	/obj/item/ammo_box/needle,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail,
+	/obj/item/gun/ballistic/rifle/repeater/trail,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/gun/energy/laser/aer9,
@@ -591,11 +591,11 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator,
 	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
+	/obj/item/gun/ballistic/rifle/repeater/brush,
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/shotgun/antimateriel,
-	/obj/item/ammo_box/a50MG,
+	/obj/item/gun/ballistic/rifle/mag/antimateriel,
+	/obj/item/ammo_box/magazine/amr,
 	/obj/item/gun/ballistic/automatic/rangemaster,
 	/obj/item/ammo_box/magazine/m762,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
@@ -609,7 +609,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
 	/obj/item/gun/energy/laser/plasma,
-	/obj/item/gun/ballistic/automatic/tommygun,
+	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,
@@ -620,16 +620,15 @@ GLOBAL_LIST_INIT(loot_t5_range, list(
 GLOBAL_LIST_INIT(loot_unique_range, list(
 	/obj/item/gun/ballistic/revolver/colt357/lucky,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
-	/obj/item/gun/ballistic/shotgun/remington/paciencia,
+	/obj/item/gun/ballistic/rifle/hunting/paciencia,
 	/obj/item/gun/energy/laser/solar,
 	/obj/item/gun/energy/laser/plasma/alien
 ))
 
 GLOBAL_LIST_INIT(loot_t1_ammo, list(
 	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/storage/fancy/ammobox/lethalshot,
-	/obj/item/storage/fancy/ammobox,
-	/obj/item/storage/fancy/ammobox/beanbag,
+	/obj/item/ammo_box/shotgun/buck,
+	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle/small
@@ -650,7 +649,7 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
-	/obj/item/storage/fancy/ammobox/lethalshot,
+	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
 	/obj/item/ammo_box/magazine/greasegun,
@@ -916,16 +915,15 @@ GLOBAL_LIST_INIT(loot_t1_blueprint, list(
 	/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 	/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 	/obj/item/book/granter/crafting_recipe/blueprint/aer9,
-	/obj/item/book/granter/crafting_recipe/blueprint/greasegun,
-	/obj/item/book/granter/crafting_recipe/blueprint/pps,
+	/obj/item/book/granter/crafting_recipe/blueprint/smg10mm
 ))
 
 GLOBAL_LIST_INIT(loot_t2_blueprint, list(
 	/obj/item/book/granter/crafting_recipe/blueprint/r91,
 	/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	/obj/item/book/granter/crafting_recipe/blueprint/breacher,
-	/obj/item/book/granter/crafting_recipe/blueprint/r84,
-	/obj/item/book/granter/crafting_recipe/blueprint/r82,
+	/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
+	/obj/item/book/granter/crafting_recipe/blueprint/thatgun,
+	/obj/item/book/granter/crafting_recipe/blueprint/lsw,
 	/obj/item/book/granter/crafting_recipe/blueprint/deagle
 ))
 

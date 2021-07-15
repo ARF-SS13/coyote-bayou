@@ -156,23 +156,6 @@ datum/gear/head/steelpot_mp
 							"NCR Corporal"
 						)
 
-datum/gear/head/steelpot_patriot
-	name = "NCR patriot helmet"
-	path = /obj/item/clothing/head/f13/ncr/steelpot_patriot
-	cost = 2
-	restricted_desc = "NCR"
-	restricted_roles = list("NCR Captain",
-							"NCR Lieutenant",
-							"NCR Medical Officer",
-							"NCR Sergeant First Class",
-							"NCR Lieutenant",
-							"NCR Sergeant",
-							"NCR Corporal",
-							"NCR Combat Engineer",
-							"NCR Combat Medic",
-							"NCR Trooper",
-						)
-
 /datum/gear/head/ncr_slouch
 	name = "NCR slouch hat"
 	path = /obj/item/clothing/head/f13/ncr_slouch
@@ -231,8 +214,9 @@ datum/gear/head/steelpot_patriot
 	path = /obj/item/clothing/head/f13/ncr_campaign
 	cost = 4
 	restricted_desc = "NCR"
-	restricted_roles = list("NCR Sergeant First Class",
-						"NCR Off-Duty")
+	restricted_roles = list("NCR Sergeant",
+							"NCR Heavy Trooper"
+						)
 
 /*
 /datum/gear/head/ncr_stetson
@@ -266,5 +250,20 @@ datum/gear/head/steelpot_patriot
 
 /datum/gear/head/chinese_commander
 	name = "chinese peaked cap"
-	path = /obj/item/clothing/head/f13/chinese_commander
+	path = /obj/item/clothing/head/f13/chinese_general
 	cost = 4
+
+/datum/gear/head/ranger_tan
+	name = "tan cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat/tan
+	cost = 2
+
+/datum/gear/head/ranger_grey
+	name = "grey cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat
+	cost = 2
+
+/datum/gear/head/ranger_banded
+	name = "banded cowboy hat"
+	path = /obj/item/clothing/head/f13/ranger_hat/banded
+	cost = 2

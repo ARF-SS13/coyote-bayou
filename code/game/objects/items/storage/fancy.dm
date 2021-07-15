@@ -123,103 +123,12 @@
 /obj/item/storage/fancy/candle_box/attack_self(mob_user)
 	return
 
-//fonky shotgun bullet
-
-/obj/item/storage/fancy/ammobox
-	name = "box of rubber shots"
-	desc = "A box full of rubber shots, designed for riot shotguns."
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "bbox"
-	w_class = WEIGHT_CLASS_SMALL
-	icon_type = "b"
-	spawn_type = /obj/item/ammo_casing/shotgun/rubbershot
-	var/foldable = /obj/item/stack/sheet/cardboard
-	custom_materials = list(/datum/material/iron=4000)
-
-/obj/item/storage/fancy/ammobox/attack_self(mob/user)
-	. = ..()
-
-	if(!foldable)
-		return
-	if(contents.len)
-		to_chat(user, SPAN_WARNING("You can't fold this box with items still inside!"))
-		return
-	if(!ispath(foldable))
-		return
-
-	to_chat(user, SPAN_NOTICE("You fold [src] flat."))
-	var/obj/item/I = new foldable
-	qdel(src)
-	user.put_in_hands(I)
-
-/obj/item/storage/fancy/ammobox/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 14
-	STR.can_hold = typecacheof(list(spawn_type))
-
-/obj/item/storage/fancy/ammobox/AltClick(mob/living/carbon/user)
-	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, SPAN_WARNING("Your hands are full!"))
-		return
-	var/obj/item/L = locate(spawn_type) in contents
-	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
-		user.put_in_hands(L)
-		to_chat(user, SPAN_NOTICE("You take \a [L] out of the box."))
-		return TRUE
-	else
-		to_chat(user, SPAN_NOTICE("There is nothing left in the box."))
-	return TRUE
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/obj/item/storage/fancy/ammobox/beanbag
-	name = "box of beanbag slugs"
-	desc = "A box full of beanbag slugs, designed for riot shotguns."
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "stunbox"
-	icon_type = "stun"
-	spawn_type = /obj/item/ammo_casing/shotgun/beanbag
-
-/obj/item/storage/fancy/ammobox/lethalshot
-	name = "box of buckshot shotgun shots"
-	desc = "A box full of lethal buckshot rounds, designed for riot shotguns."
-	icon_state = "gbox"
-	icon_type = "g"
-	spawn_type = /obj/item/ammo_casing/shotgun/buckshot
-
-/obj/item/storage/fancy/ammobox/magnumshot
-	name = "box of magnum buckshot shotgun shots"
-	desc = "A box full of lethal magnum buckshot rounds, designed for hunting shotguns."
-	icon_state = "gbox"
-	icon_type = "g"
-	spawn_type = /obj/item/ammo_casing/shotgun/magnumshot
-
-/obj/item/storage/fancy/ammobox/slugshot
-	name = "box of slug shotgun shots"
-	desc = "A box full of slug rounds, designed for riot shotguns."
-	icon = 'icons/obj/ammo.dmi'
-	icon_state = "lbox"
-	icon_type = "l"
-	spawn_type = /obj/item/ammo_casing/shotgun
-
-/obj/item/storage/fancy/ammobox/beanbag
-	name = "box of beanbags"
-	desc = "A box full of beanbag shells."
-	icon_state = "stunbox"
-	icon_type = "stun"
-	spawn_type = /obj/item/ammo_casing/shotgun/beanbag
-
 ////////////
 //CIG PACK//
 ////////////
 /obj/item/storage/fancy/cigarettes
-	name = "\improper Space Cigarettes packet"
-	desc = "The most popular brand of cigarettes, sponsors of the Space Olympics."
+	name = "\improper Cigarettes packet"
+	desc = "An unmarked brand of cigarettes, some would worry about cancer, but you know you'll die well before then."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig"
 	item_state = "cigpacket"

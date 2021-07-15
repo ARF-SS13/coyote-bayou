@@ -3538,10 +3538,10 @@
 /obj/structure/guncase,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -3594,10 +3594,7 @@
 /area/medical/abandoned)
 "iL" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
@@ -3632,13 +3629,13 @@
 	},
 /area/f13/bunker)
 "iP" = (
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},

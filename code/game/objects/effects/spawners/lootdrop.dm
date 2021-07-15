@@ -49,14 +49,14 @@
 	loot = list(
 				/obj/item/gun/ballistic/automatic/pistol = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
+				/obj/item/gun/ballistic/revolver/m29/snub,
 				/obj/item/gun/ballistic/automatic/pistol/deagle
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
 	loot = list(/obj/item/gun/ballistic/automatic/pistol = 5,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
+				/obj/item/gun/ballistic/revolver/m29/snub,
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
 
@@ -557,9 +557,7 @@
 		/obj/item/storage/toolbox/emergency = 1,
 		/obj/item/storage/toolbox/emergency/old = 1,
 		/obj/item/storage/toolbox/electrical = 1,
-		/obj/item/storage/toolbox/syndicate = 1,
 		/obj/item/storage/toolbox/artistic = 1,
-		/obj/item/storage/toolbox/gold_fake = 1,
 		/obj/item/storage/toolbox/rubber = 1
 		)
 

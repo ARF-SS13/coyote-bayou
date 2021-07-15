@@ -55,7 +55,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/katana
 	name = "katana"
-	desc = "Woefully underpowered in D20."
+	desc = "After the world ended, seppuku rates in Japan skyrocketed!"
 	icon_state = "katana"
 	item_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -75,7 +75,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
 /obj/item/katana/lavaland
-	desc = "Woefully underpowered in Lavaland."
+	desc = "This katana upon inspection is lower quality than the average blade."
 	block_chance = 30
 	force = 25 //Like a fireaxe but one handed and can block!
 
@@ -126,7 +126,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/melee/bokken // parrying stick
 	name = "bokken"
-	desc = "A space-Japanese training sword made of wood and shaped like a katana."
+	desc = "A Japanese training sword made of wood and shaped like a katana."
 	icon_state = "bokken"
 	item_state = "bokken"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'

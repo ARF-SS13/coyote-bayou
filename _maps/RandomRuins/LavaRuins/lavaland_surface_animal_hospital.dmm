@@ -330,9 +330,6 @@
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/ammo_casing/shotgun/dart,
 /obj/item/ammo_casing/shotgun/dart,
-/obj/item/gun/ballistic/revolver/doublebarrel{
-	desc = "For putting critters out to pasture."
-	},
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/storage/box/bodybags,
 /obj/machinery/light/small{
@@ -635,14 +632,6 @@
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plasteel,
 /area/ruin/powered/animal_hospital)
-"bL" = (
-//obj/vehicle/ridden/scooter/skateboard{
-//	dir = 4
-//	},
-/turf/open/floor/grass{
-	initial_gas_mix = "o2=14;n2=23;TEMP=300"
-	},
-/area/lavaland/surface/outdoors)
 "bM" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/grass{
@@ -1216,7 +1205,7 @@ br
 bA
 aP
 af
-bL
+ac
 ac
 ac
 ac

@@ -1035,14 +1035,9 @@
 /area/f13/tunnel)
 "adw" = (
 /obj/structure/closet/cardboard,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "adx" = (
@@ -1050,14 +1045,9 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "ady" = (
@@ -10202,7 +10192,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/underground/vault_atrium_upper)
 "aBB" = (
-/obj/structure/sign/poster/official/no_erp,
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -11002,11 +10991,9 @@
 /area/f13/underground/enclave_base)
 "aDE" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/ai_monitored/security/armory)
@@ -24917,7 +24904,6 @@
 	},
 /area/f13/ncr_main)
 "bri" = (
-/obj/structure/sign/poster/official/no_erp,
 /turf/closed/wall/r_wall/f13superstore{
 	icon_state = "supermart2"
 	},
@@ -25555,9 +25541,9 @@
 /area/f13/desert)
 "bsT" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/remington,
-/obj/item/gun/ballistic/shotgun/remington,
-/obj/item/gun/ballistic/shotgun/remington,
+/obj/item/gun/ballistic/rifle/hunting,
+/obj/item/gun/ballistic/rifle/hunting,
+/obj/item/gun/ballistic/rifle/hunting,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -26177,10 +26163,8 @@
 	dir = 5
 	},
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/plating,
 /area/f13/ncr_main)
 "buD" = (
@@ -31627,7 +31611,6 @@
 	},
 /area/f13/prison)
 "bKE" = (
-/obj/machinery/pipedispenser/disposal,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -32009,7 +31992,7 @@
 /area/f13/ncr_main)
 "bLP" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
 /obj/item/gun/ballistic/shotgun/trench,
 /obj/machinery/light/small{
 	brightness = 3;

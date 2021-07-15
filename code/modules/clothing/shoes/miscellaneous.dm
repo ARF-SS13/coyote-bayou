@@ -200,15 +200,6 @@
 	icon_state = "laceups"
 	equip_delay_other = 50
 
-/obj/item/clothing/shoes/roman
-	name = "roman sandals"
-	desc = "Sandals with buckled leather straps on it."
-	icon_state = "roman"
-	strip_delay = 100
-	equip_delay_other = 100
-	permeability_coefficient = 0.9
-	can_be_tied = FALSE
-
 /obj/item/clothing/shoes/griffin
 	name = "griffon boots"
 	desc = "A pair of costume boots fashioned after bird talons."
@@ -268,10 +259,6 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
-
-/obj/item/clothing/shoes/bronze/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/machines/clockcult/integration_cog_install.ogg' = 1, 'sound/magic/clockwork/fellowship_armory.ogg' = 1), 50)
 
 /obj/item/clothing/shoes/wheelys
 	name = "Wheely-Heels"

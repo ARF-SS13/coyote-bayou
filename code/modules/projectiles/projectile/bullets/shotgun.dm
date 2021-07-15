@@ -1,10 +1,11 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 60
+	damage = 49
 	sharpness = SHARP_POINTY
-	armour_penetration = 0.33
+	armour_penetration = 0.25
 	wound_bonus = 26
 	bare_wound_bonus = -26
+	spread = 2
 
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
@@ -19,7 +20,7 @@
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
 	damage = 10
-	stamina = 40
+	stamina = 60
 	wound_bonus = 20
 	sharpness = SHARP_NONE
 	embedding = null
@@ -31,6 +32,23 @@
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
 	damage = 5
+
+/obj/item/projectile/incendiary/flamethrower
+	name = "FIREEEEEEEEEE!!!!!"
+	icon = 'icons/effects/fire.dmi'
+	icon_state = "3"
+	light_range = LIGHT_RANGE_FIRE
+	light_color = LIGHT_COLOR_FIRE
+	damage_type = BURN
+	damage = 12 //slight damage on impact
+	range = 10
+
+/obj/item/projectile/incendiary/flamethrower/on_hit(atom/target)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(3) 
+		M.IgniteMob()
 
 /obj/item/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
@@ -148,3 +166,4 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
+

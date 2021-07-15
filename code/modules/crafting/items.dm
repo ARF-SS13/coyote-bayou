@@ -477,77 +477,77 @@
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionsimple&&m556barrel&&stockwood)//varmint
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/varmint
+				var/obj/item/B = new /obj/item/gun/ballistic/rifle/mag/varmint
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionsimple&&m44barrel&&stockwood)//trail carbine
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+				var/obj/item/B = new /obj/item/gun/ballistic/rifle/repeater/trail
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockwood&&receiver)//pps
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/pps/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/ppsh/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm9barrel&&stockplastic&&receiver)//uzi
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/mini_uzi/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&mm10barrel&&stockplastic&&receiver)//10mmsmg
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg10mm/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/smg10mm/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 		else if(screw&&trigger&&boltsimple&&actionauto&&m45barrel&&stockplastic&&receiver)//grease gun
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/low))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/mid))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/mid
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun/mid
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
 			if(istype(src,/obj/item/prefabs/complex/complexWeaponFrame/high))
-				var/obj/item/B = new /obj/item/gun/ballistic/automatic/greasegun/high
+				var/obj/item/B = new /obj/item/gun/ballistic/automatic/smg/greasegun/high
 				B.forceMove(usr.loc)
 				to_chat(usr,"You make a [B]")
 				qdel(src)
@@ -936,8 +936,12 @@
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
 				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
+				/obj/item/stack/sheet/mineral/titanium,
+				/obj/item/stack/sheet/mineral/gold,
+				/obj/item/stack/sheet/mineral/silver,
 				/obj/item/stack/sheet/lead/five,
 				/obj/item/stack/sheet/metal/ten,
+				/obj/item/stack/sheet/glass/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/scrap/research,
@@ -971,20 +975,30 @@
 				/obj/item/crafting/sensor,
 				/obj/item/crafting/lunchbox)
 
+/obj/item/salvage/tool
+	name = "Pre-war tool salvage"
+	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
+	icon_state = "toolsalvage"
+	Loot = list(/obj/item/blueprint/research,
+				/obj/item/reagent_containers/hypospray/medipen/stimpak,
+				/obj/item/reagent_containers/pill/patch/healingpowder,
+				/obj/item/weldingtool/advanced,
+				/obj/item/crowbar/hightech,
+				/obj/item/screwdriver/hightech,
+				/obj/item/wrench/hightech,
+				/obj/item/wirecutters/hightech,
+				/obj/item/stock_parts/cell/ammo/mfc,
+				/obj/item/stock_parts/cell/ammo/ecp,
+				/obj/item/switchblade,
+				/obj/item/megaphone)
 
 /obj/item/salvage/high
 	name = "Advanced pre-war salvage"
 	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "goodsalvage"
-	Loot = list(/obj/item/blueprint/research,
-				/obj/item/advanced_crafting_components/receiver,
+	Loot = list(/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,
-				/obj/item/advanced_crafting_components/alloys,
-				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/weldingtool/advanced,
-				/obj/item/stock_parts/cell/ammo/mfc,
-				/obj/item/stock_parts/cell/ammo/ecp,
-				/obj/item/megaphone)
+				/obj/item/advanced_crafting_components/alloys)
 
 /obj/item/experimental
 	name = "Experimental component"
@@ -1015,23 +1029,24 @@
 	if(istype(W, /obj/item/clothing/head))
 		hat(W, user)
 		return
-	
+
 /obj/item
 	var/tinkered = 0
+	var/untinkerable = FALSE
 
 /obj/item/experimental/proc/reroll(obj/item/W, mob/user)
 	var/obj/item/item = W.type
 	qdel(W)
-	if(prob(70))
+	if(prob(60))
 		new item(user.loc)
 		return
 	to_chat(user,"You destroy the item in the process.")
 
 /obj/item/experimental/proc/gun(obj/item/W, mob/user)
-	if(istype(W,/obj/item/gun/ballistic/automatic/shotgun))
+	if(W.untinkerable == TRUE)
 		to_chat(usr, "You can't improve [W.name]...")
 		return
-	var/obj/item/gun/ballistic/B = W 
+	var/obj/item/gun/ballistic/B = W
 
 	var/dmgmod = rand(-10,10)
 	var/penmod = rand(-10,10)
@@ -1066,10 +1081,10 @@
 			prefix = "Superior "
 		if(30 to 100)
 			prefix = "Legendary "
-	
-	B.extra_damage += (dmgmod)
-	B.extra_penetration += (penmod/60)
-	B.fire_delay += (spdmod/5)
+
+	B.extra_damage += (dmgmod) //edited from /1
+	B.extra_penetration += (penmod/120) //edited from /60
+	B.fire_delay += (spdmod/10) //edited from/5
 	B.name = prefix + B.name
 	B.tinkered += 1
 	B.desc += " Extra damage: [B.extra_damage]; Extra penetration: [B.extra_penetration]; Fire delay: [B.fire_delay]"
@@ -1092,7 +1107,7 @@
 		penmod += 4
 		spdmod -= 4
 		overall = dmgmod+penmod-spdmod
-	
+
 	if(E.tinkered > 0 && !HAS_TRAIT(user,TRAIT_MASTER_GUNSMITH))
 		to_chat(usr, "You have already tinkered with this item.")
 		return
@@ -1114,8 +1129,8 @@
 			prefix = "Superior "
 		if(30 to 100)
 			prefix = "Legendary "
-	
-	E.extra_damage += (dmgmod/2)
+
+	E.extra_damage += (dmgmod)
 	E.extra_penetration += (penmod/120)
 	E.fire_delay += (spdmod/10)
 	//E.ammo_type[1].delay += spdmod
@@ -1163,7 +1178,6 @@
 	A.armor.linelaser += tiermod*2
 	A.name = prefix + A.name
 	A.tinkered += 1
-	A.desc += " Armor: Melee: [A.armor.linemelee], Bullet: [A.armor.linebullet], Laser: [A.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
@@ -1205,11 +1219,10 @@
 	H.armor.linelaser += tiermod*2
 	H.name = prefix + H.name
 	H.tinkered += 1
-	H.desc += " Armor: Melee: [H.armor.linemelee], Bullet: [H.armor.linebullet], Laser: [H.armor.linelaser]"
 
 	to_chat(usr, "You tinker with the armor making [W.name]...")
 	qdel(src)
-			
+
 /obj/item/experimental/proc/parmor(obj/item/W, mob/user)
 	var/obj/item/clothing/suit/armor/f13/power_armor/A = W
 	//chance to upgrade all t45b versions to salvaged t45b, chance to upgrade salvaged t45b to t45b (new sprotes, t8 armor with no slowdown)
@@ -1280,17 +1293,17 @@
 
 	var/obj/item/item
 
-	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/nullrod/claymore/chainsaw_sword)
+	var/list/vhigh = list(/obj/item/melee/powerfist, /obj/item/melee/powered/ripper)
 
 	var/list/high = list(/obj/item/shishkebabpack, /obj/item/gun/energy/gammagun, /obj/item/clothing/suit/armor/f13/sulphitearmor,
-	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/item/circuitboard/machine/chem_master, 
+	/obj/item/clothing/head/helmet/f13/sulphitehelm, /obj/item/melee/powerfist/moleminer, /obj/item/circuitboard/machine/chem_master,
 	/obj/item/circuitboard/machine/cell_charger)
 
 	var/list/mid = list(/obj/item/twohanded/fireaxe/bmprsword, /obj/item/twohanded/sledgehammer, /obj/item/shield/riot/scrapshield,/obj/item/gun/ballistic/automatic/autopipe,
-	/obj/item/gun/ballistic/shotgun/lasmusket, /obj/item/gun/ballistic/shotgun/plasmacaster, /obj/item/clothing/suit/armor/f13/metalarmor,
+	/obj/item/gun/ballistic/rifle/hobo/lasmusket, /obj/item/gun/ballistic/rifle/hobo/plasmacaster, /obj/item/clothing/suit/armor/f13/metalarmor,
 	/obj/item/clothing/head/helmet/f13/raider/eyebot, /obj/item/clothing/head/helmet/knight/f13/metal/reinforced)
 
-	var/list/low = list(/obj/item/gun/ballistic/revolver/zipgun,/obj/item/gun/ballistic/revolver/pipe_rifle,/obj/item/fishingrod,/obj/item/grenade/iedcasing,
+	var/list/low = list(/obj/item/gun/ballistic/automatic/hobo/zipgun,/obj/item/gun/ballistic/revolver/hobo/pepperbox,/obj/item/fishingrod,/obj/item/grenade/iedcasing,
 	/obj/item/clothing/suit/armor/f13/slam, /obj/item/clothing/suit/armor/f13/raider/raidermetal,/obj/item/clothing/head/helmet/f13/raidermetal,
 	/obj/item/clothing/head/helmet/knight/f13/metal, /obj/item/melee/unarmed/punchdagger)
 

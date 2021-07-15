@@ -4,27 +4,23 @@
 	if(gender_override)
 		gender = gender_override
 	else
-		gender = pick(MALE,FEMALE)
-	underwear = random_underwear(gender)
-	undie_color = random_short_color()
-	undershirt = random_undershirt(gender)
-	shirt_color = random_short_color()
-	socks = random_socks()
-	socks_color = random_short_color()
+		gender = MALE
+	underwear = "Boxers"
+	undie_color = random_clothing_dye()
+	undershirt = "Shirt - Short Sleeved"
+	shirt_color = random_clothing_dye()
+	socks = "Short"
+	socks_color = random_clothing_dye()
 	use_custom_skin_tone = FALSE
-	skin_tone = random_skin_tone()
-	hair_style = random_hair_style(gender)
-	facial_hair_style = random_facial_hair_style(gender)
-	hair_color = random_short_color()
-	facial_hair_color = hair_color
-	var/random_eye_color = random_eye_color()
-	left_eye_color = random_eye_color
-	right_eye_color = random_eye_color
-	if(!pref_species)
-		var/rando_race = pick(GLOB.roundstart_races)
-		pref_species = new rando_race()
-	features = random_features(pref_species?.id, gender)
-	age = rand(AGE_MIN,AGE_MAX)
+	skin_tone = pick("latino", "mediterranean")
+	hair_style = pick("Trimmed", "Fade (Low)")
+	facial_hair_style = pick("Beard (5 o\'Clock)", "Beard (3 o\'Clock)")
+	hair_color = random_hair_shade()
+	facial_hair_color = random_hair_shade()
+	left_eye_color = random_dark_shade()
+	right_eye_color = random_dark_shade()
+	age = (rand(20, 25))
+ 
 
 /datum/preferences/proc/update_preview_icon(equip_job = TRUE)
 	// Determine what job is marked as 'High' priority, and dress them up as such.

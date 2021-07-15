@@ -7,7 +7,10 @@
 	anchored = TRUE
 	var/obj/structure/ladder/down   //the ladder below this one
 	var/obj/structure/ladder/up     //the ladder above this one
+	/// Associative lazy list of mobs peeking through the ladder. list[direction] -> list(watchers)
+	var/list/ladder_watchers
 	var/move_me = TRUE
+	var/in_use = FALSE // To avoid message spam
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -47,6 +50,94 @@
 
 	update_icon()
 
+
+//Peeking up/down
+/obj/structure/ladder/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
+	if(over != usr || !Adjacent(src, over))
+		return
+	var/mob/peeker = usr
+	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
+		return
+	if(peeker.incapacitated())
+		to_chat(peeker, "You can't do that in your current state.")
+		return
+
+	var/peek_dir = NONE
+	if(up && down)
+		switch(alert(peeker, "Look up or down the ladder?", "Ladder", list("Up", "Down", "Cancel")))
+			if("Up")
+				peeker.visible_message("<span class='notice'>[peeker] looks up [peeker]!</span>",
+				"<span class='notice'>You look up [peeker]!</span>")
+				peek_dir = UP
+			if("Down")
+				usr.visible_message("<span class='notice'>[usr] looks down [src]!</span>",
+				"<span class='notice'>You look down [src]!</span>")
+				peek_dir = DOWN
+			else
+				return
+	else if(up)
+		usr.visible_message("<span class='notice'>[usr] looks up [src]!</span>",
+		"<span class='notice'>You look up [src]!</span>")
+		peek_dir = UP
+	else if(down)
+		usr.visible_message("<span class='notice'>[usr] looks down [src]!</span>",
+		"<span class='notice'>You look down [src]!</span>")
+		peek_dir = DOWN
+	else
+		return
+
+	if(!Adjacent(src, over))
+		return
+	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
+		return
+	if(peeker.incapacitated())
+		to_chat(peeker, "You can't do that in your current state.")
+		return
+
+	switch(peek_dir)
+		if(UP)
+			peeker.reset_perspective(up.loc)
+			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
+				RegisterSignal(up, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+		if(DOWN)
+			peeker.reset_perspective(down.loc)
+			if(!LAZYACCESS(ladder_watchers, "[peek_dir]"))
+				RegisterSignal(down, COMSIG_CLICK, .proc/on_connected_ladder_clicked)
+		else
+			return
+
+	LAZYADDASSOC(ladder_watchers, "[peek_dir]", peeker)
+	RegisterSignal(peeker, COMSIG_MOVABLE_MOVED, .proc/on_peeker_move)
+	// This is the closest thing this codebase has to an incapacitation signal.
+	RegisterSignal(peeker, COMSIG_DISABLE_COMBAT_MODE, .proc/stop_peeking)
+
+
+/obj/structure/ladder/proc/on_peeker_move(mob/source)
+	SIGNAL_HANDLER
+	if(Adjacent(source))
+		return // Moved, but still nearby.
+	stop_peeking(source)
+
+
+/obj/structure/ladder/proc/stop_peeking(mob/source)
+	SIGNAL_HANDLER
+	UnregisterSignal(source, list(COMSIG_MOVABLE_MOVED, COMSIG_DISABLE_COMBAT_MODE))
+	if(source in (LAZYACCESS(ladder_watchers, "[UP]")))
+		LAZYREMOVEASSOC(ladder_watchers, "[UP]", source)
+		if(!LAZYACCESS(ladder_watchers, "[UP]"))
+			UnregisterSignal(up, list(COMSIG_CLICK))
+	if(source in (LAZYACCESS(ladder_watchers, "[DOWN]")))
+		LAZYREMOVEASSOC(ladder_watchers, "[DOWN]", source)
+		if(!LAZYACCESS(ladder_watchers, "[DOWN]"))
+			UnregisterSignal(down, list(COMSIG_CLICK))
+	source.reset_perspective(null)
+
+
+/obj/structure/ladder/proc/on_connected_ladder_clicked(atom/source, location, control, params, mob/user)
+	if((user in (LAZYACCESS(ladder_watchers, "[UP]"))) || (user in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
+		stop_peeking(user)
+
+
 /obj/structure/ladder/proc/disconnect()
 	if(up && up.down == src)
 		up.down = null
@@ -76,6 +167,14 @@
 
 /obj/structure/ladder/proc/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
 	if(!is_ghost)
+		if(in_use)
+			return
+		in_use = TRUE
+		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", "<span class='notice'>You begin to climb [going_up ? "up" : "down"] [src].</span>")
+		if(!do_after(user, 15, target = src))
+			in_use = FALSE
+			return
+		in_use = FALSE
 		show_fluff_message(going_up, user)
 		ladder.add_fingerprint(user)
 

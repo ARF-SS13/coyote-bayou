@@ -26,6 +26,7 @@
 #define RAD_HUD			"22"	//radation alerts for medical huds
 //for antag huds. these are used at the /mob level
 #define ANTAG_HUD		"23"
+#define ONLINE_HUD		"24"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -61,6 +62,8 @@
 #define ANTAG_HUD_BLOODSUCKER   24
 #define ANTAG_HUD_FUGITIVE		25
 #define ANTAG_HUD_HERETIC	26
+
+#define DATA_HUD_CLIENT			27 //data hud new
 
 // Notification action types
 #define NOTIFY_JUMP "jump"

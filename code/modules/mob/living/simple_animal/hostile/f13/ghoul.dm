@@ -137,6 +137,14 @@
 		var/mob/living/carbon/human/H = target
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
+/mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
+	maxHealth = 320
+	health = 320
+	speed = 1.4 // Nyooom
+	melee_damage_lower = 35
+	melee_damage_upper = 35
+	armour_penetration = 0.1
+
 /mob/living/simple_animal/hostile/ghoul/soldier
 	name = "ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."

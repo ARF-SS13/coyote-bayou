@@ -65,6 +65,16 @@
 	time = 45
 	category = CAT_MEDICAL
 
+/*/datum/crafting_recipe/berserkerpowder
+	name = "Berserker Powder"
+	result = /obj/item/reagent_containers/pill/patch/healingpowder/berserker
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 3,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 3,
+				/obj/item/reagent_containers/food/snacks/grown/feracactus = 3,
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 3)
+	time = 45
+	category = CAT_MEDICAL
+*/
 /datum/crafting_recipe/smell_salts
 	name = "Smelling salts"
 	result = /obj/item/smelling_salts/crafted

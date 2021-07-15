@@ -4,7 +4,7 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/spawnwithmagazine = TRUE
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm_adv //Removes the need for max_ammo and caliber info
 	var/init_mag_type = null
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
@@ -220,9 +220,12 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
+		weapon_weight = WEAPON_LIGHT //Possible to fire one from each hand. Let's see how it pans out.
 		item_state = "gun"
 		slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
 		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		recoil = 2
+		spread = 10
 		sawn_off = TRUE
 		update_icon()
 		return 1

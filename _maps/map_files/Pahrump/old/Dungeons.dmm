@@ -2763,10 +2763,7 @@
 /area/f13/bunker)
 "hy" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -3249,7 +3246,6 @@
 	},
 /area/f13/bunker)
 "iD" = (
-/obj/structure/sign/poster/contraband/pwr_game,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -4892,10 +4888,10 @@
 /obj/structure/guncase,
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
-/obj/item/gun/ballistic/shotgun/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/mosin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -4964,10 +4960,7 @@
 /area/f13/bunker)
 "mP" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
+/obj/item/ammo_box/shotgun/buck,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/west,
@@ -5008,7 +5001,7 @@
 	},
 /area/f13/bunker)
 "mV" = (
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/stripes/red/full,
 /obj/structure/window/reinforced/spawner,
@@ -9688,9 +9681,6 @@
 /area/f13/wasteland)
 "AZ" = (
 /obj/structure/table/wood,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -12091,7 +12081,7 @@
 /obj/structure/closet,
 /obj/item/clothing/neck/cloak/hos,
 /obj/item/clothing/under/hosparademale,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "HD" = (
@@ -12237,8 +12227,8 @@
 /obj/structure/table,
 /obj/item/stamp/hos,
 /obj/item/gun/ballistic/shotgun/trench,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/ammo_box/shotgun/bean,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "Ia" = (
@@ -17481,9 +17471,9 @@
 "Vh" = (
 /obj/structure/guncase/shotgun,
 /obj/effect/turf_decal/bot,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 9
 	},
@@ -17908,12 +17898,7 @@
 "Wh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/lethalshot,
-/obj/item/storage/fancy/ammobox/beanbag,
-/obj/item/storage/fancy/ammobox/beanbag,
+/obj/item/ammo_box/shotgun/buck,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},
@@ -18805,11 +18790,6 @@
 /area/f13/tunnel)
 "Yq" = (
 /obj/structure/rack,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
-/obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/c10mm,
 /obj/item/ammo_box/c10mm,
 /obj/item/ammo_box/c10mm,

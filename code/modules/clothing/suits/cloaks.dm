@@ -128,3 +128,8 @@
 	item_state = "cloakgrey"
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+
+/obj/item/clothing/neck/cloak/jaycloak
+	name = "blue silk cloak"
+	desc = "A finely weaved and blue dyed cloak, with the emblem of a bird on its back."
+	icon_state = "jaycloak"

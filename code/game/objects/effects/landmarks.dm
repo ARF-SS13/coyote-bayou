@@ -525,7 +525,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
-obj/effect/landmark/start/f13/ncrlogisticsofficer	
+obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Logistics Officer"
 	icon_state = "NCR Lieutenant"
 
@@ -541,7 +541,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
 
-/obj/effect/landmark/start/f13/ncrheavytrooper	
+/obj/effect/landmark/start/f13/ncrheavytrooper
 	name = "NCR Heavy Trooper"
 	icon_state = "NCR Sergeant"
 
@@ -637,11 +637,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
-	name = "Household Slave"
+	name = "Legion Auxilia"
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/campfollower
-	name = "Camp Duty"
+	name = "Legion Camp Duty"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/slave
@@ -773,7 +773,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/vigilante
 	name = "Vigilante"
 	icon_state = "Wastelander"
-	
+
 /obj/effect/landmark/start/f13/wastelander
 	name = "Wastelander"
 	icon_state = "Wastelander"
@@ -785,7 +785,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/pusher
 	name = "Great Khan"
 	icon_state = "Pusher"
-	
+
 /obj/effect/landmark/start/f13/enforcer
 	name = "Den Mob Enforcer"
 	icon_state = "Enforcer"
@@ -861,6 +861,9 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/spiritpledged
 	name = "Spirit-Pledged"
+
+/obj/effect/landmark/start/f13/guardian
+	name = "Guardian"
 
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator

@@ -45,6 +45,9 @@
 		var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 		if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 			H.update_damage_overlays()
+		var/list/hand_items = list(H.get_active_held_item(),H.get_inactive_held_item())
+		if(src in hand_items)
+			H.dropItemToGround(src)
 
 /obj/item/ingot/iron
 	custom_materials = list(/datum/material/iron=12000)

@@ -318,8 +318,8 @@ Follower Guard
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Follower Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. "
 	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."
@@ -360,6 +360,6 @@ Follower Guard
 	name = "Followers Close Protection Guard"
 	suit_store = /obj/item/gun/ballistic/shotgun/hunting
 	backpack_contents = list(
-		/obj/item/storage/fancy/ammobox/beanbag=1,
-		/obj/item/storage/fancy/ammobox/lethalshot=1
+		/obj/item/ammo_box/shotgun/bean=1,
+		/obj/item/ammo_box/shotgun/buck=1
 	)

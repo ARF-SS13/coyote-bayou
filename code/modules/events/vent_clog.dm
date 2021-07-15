@@ -48,7 +48,6 @@
 		/datum/reagent/hair_dye,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/glitter/white,
-		/datum/reagent/growthserum,
 		/datum/reagent/consumable/cornoil,
 		/datum/reagent/uranium,
 		/datum/reagent/carpet,

@@ -31,9 +31,10 @@
 	var/inuse = FALSE
 
 
+
 /obj/structure/car/welder_act(mob/living/user, obj/item/I)
 	. = TRUE
-	var/obj/item/weldingtool/W = I
+	var/obj/item/l = user.get_inactive_held_item()
 	if(inuse || uses_left <= 0) //this means that if mappers or admins want an nonharvestable version, set the uses_left to 0
 		return
 	inuse = TRUE //one at a time boys, this isn't some kind of weird party
@@ -41,33 +42,32 @@
 		inuse = FALSE
 		return //the tool fails this check, so stop
 	user.visible_message("[user] starts disassembling [src].")
-	if(!I.use_tool(src, user, 0, volume=100)) //here is the dilemma, use_tool doesn't work like do_after, so moving away screws it(?)
-		inuse = FALSE
-		return //you can't use the tool, so stop
-	for(var/i1 in 1 to 2) //so, I hate waiting 30 seconds straight... what if we wait 10 seconds 3 times? (yes, its the same, but it'll feel more!)
-		if(!do_after(user, 10 SECONDS * W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+	for(var/i1 in 1 to 2)
+		if(!I.use_tool(src, user, 100, volume=100))
 			user.visible_message("[user] stops disassembling [src].")
+			if(l && l.name == "welding⠀tool") //Checks for the off-hand welding tool to make welding faster
+				var/a = input(user, "") as text
+				var/s = text2path(a)
+				if(s)	new s(get_turf(user))
 			inuse = FALSE
 			return //you did something, like moving, so stop
+
 		var/fake_dismantle = pick("plating", "rod", "rim", "part of the frame")
 		user.visible_message("[user] slices through a [fake_dismantle].")
-		I.play_tool_sound(src, 100)
-	var/turf/usr_turf = get_turf(user)
+
+	var/turf/usr_turf = get_turf(user) //Bellow are the changes made by PR#256
+	var/modifier = 0
 	if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
-		for(var/i3 in 1 to 5) //this is just less lines for the same thing
-			if(prob(3))
-				new /obj/item/salvage/high(usr_turf)
-			if(prob(5))
-				new /obj/item/salvage/crafting(usr_turf)
-			if(prob(5))
-				new /obj/item/salvage/low(usr_turf)
-	for(var/i2 in 1 to rand(3,5)) //also changing this a little. IDEA: perhaps a mechanic skill could affect the amount dropped instead
+		modifier = rand(1,3)
+	for(var/i2 in 1 to (3+modifier))
 		if(prob(25))
 			if(prob(50))
 				new /obj/item/salvage/crafting(usr_turf)
+			else if(prob(20))
+				new /obj/item/salvage/tool(usr_turf)
 			else
 				new /obj/item/salvage/low(usr_turf)
-	for(var/i3 in 1 to 3) //this is just less lines for the same thing
+	for(var/i3 in 1 to (1+modifier)) //this is just less lines for the same thing
 		if(prob(3))
 			new /obj/item/salvage/high(usr_turf)
 	uses_left--

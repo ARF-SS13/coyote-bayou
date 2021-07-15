@@ -3,10 +3,36 @@
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
 	desc = "A 12 gauge lead slug."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "bbshell"
 	caliber = "shotgun"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug
 	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
+
+/obj/item/ammo_casing/shotgun/buckshot
+	name = "buckshot shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	pellets = 6
+	variance = 18
+
+/obj/item/ammo_casing/shotgun/improvised
+	name = "improvised shell"
+	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
+	icon_state = "improvshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
+	custom_materials = list(/datum/material/iron=250)
+	pellets = 10
+	variance = 25
+
+/obj/item/ammo_casing/shotgun/beanbag
+	name = "beanbag slug"
+	desc = "A weak beanbag slug for riot control."
+	icon_state = "bshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
+	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
+	
 
 obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
@@ -19,13 +45,6 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A 12 gauge lead slug purpose built to annihilate bones on impact."
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug/pulverizer
-
-/obj/item/ammo_casing/shotgun/beanbag
-	name = "beanbag slug"
-	desc = "A weak beanbag slug for riot control."
-	icon_state = "bshell"
-	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
-	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
 
 /obj/item/ammo_casing/shotgun/incendiary
 	name = "incendiary slug"
@@ -68,14 +87,6 @@ obj/item/ammo_casing/shotgun/executioner
 	icon_state = "heshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_frag12
 
-/obj/item/ammo_casing/shotgun/buckshot
-	name = "buckshot shell"
-	desc = "A 12 gauge buckshot shell."
-	icon_state = "gshell"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 6
-	variance = 25
-
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "rubber shot"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
@@ -84,15 +95,6 @@ obj/item/ammo_casing/shotgun/executioner
 	pellets = 6
 	variance = 25
 	custom_materials = list(/datum/material/iron=500, /datum/material/blackpowder = 70)
-
-/obj/item/ammo_casing/shotgun/improvised
-	name = "improvised shell"
-	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
-	icon_state = "improvshell"
-	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
-	custom_materials = list(/datum/material/iron=250)
-	pellets = 10
-	variance = 25
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"

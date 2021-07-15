@@ -414,79 +414,52 @@
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
 
-//Legion Bandanas - We make these as much like normal bandanas as possible without repathing them.
+///////////////////
+//LEGION BANDANAS//
+///////////////////
 
-/obj/item/clothing/mask/bandana/auxilia
-	name = "auxilia bandana"
-	desc = "Simple black cloth intended for auxilia."
+/obj/item/clothing/mask/bandana/legion
+	name = "legion mask template"
+	desc = "Should not exist."
+	icon = 'icons/fallout/objects/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/mask.dmi'
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/bandana/legion/camp
+	name = "camp duty bandana"
+	desc = "Simple black cloth intended for men on camp duty."
 	icon_state = "legaux"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
 
-/obj/item/clothing/mask/bandana/legrecruit
+/obj/item/clothing/mask/bandana/legion/legrecruit
 	name = "recruit bandana"
-	desc = "A fine recruit bandana."
+	desc = "A coarse dark recruit bandana."
 	icon_state = "legrecruit"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
 
-/obj/item/clothing/mask/bandana/legdecan
-	name = "decan bandana"
-	desc = "A fine decan bandana."
-	icon_state = "legdecan"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
-
-/obj/item/clothing/mask/bandana/oldredbandana
-	name = "old bandana"
-	desc = "A fine bandana."
-	icon_state = "legdecan"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
-
-/obj/item/clothing/mask/bandana/legcenturion
-	name = "centurion bandana"
-	desc = "A fine centurion bandana."
-	icon_state = "legcenturion"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
-
-/obj/item/clothing/mask/bandana/legvet
-	name = "veteran bandana"
-	desc = "A fine veteran bandana."
-	icon_state = "legvet"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
-
-/obj/item/clothing/mask/bandana/legprime
+/obj/item/clothing/mask/bandana/legion/legprime
 	name = "prime bandana"
-	desc = "A fine prime bandana"
+	desc = "A dark linen bandana worn by primes"
 	icon_state = "legdecan"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
 
-/obj/item/clothing/mask/bandana/momentobandana
-	name = "momento bandana"
-	desc = "A bandana that serves the user as a reminder of the past."
-	icon_state = "momento"
-	flags_inv = HIDEFACE
-	visor_flags_inv = HIDEFACE
-	adjusted_flags = null
-	actions_types = list(/datum/action/item_action/adjust)
+/obj/item/clothing/mask/bandana/legion/legvet
+	name = "veteran bandana"
+	desc = "A veterans bandana in red."
+	icon_state = "legvet"
+
+/obj/item/clothing/mask/bandana/legion/legdecan
+	name = "decanus bandana"
+	desc = "A fine decan bandana in dark red."
+	icon = 'icons/fallout/objects/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/mask.dmi'
+	icon_state = "legdecan"
+
+/obj/item/clothing/mask/bandana/legion/legcenturion
+	name = "centurion bandana"
+	desc = "A high quality bandana made for a centurion."
+	icon_state = "legcenturion"
+
 
 //Desert facewrap
 
@@ -508,3 +481,12 @@
 	icon_state = "societymask"
 	item_state = "societymask"
 	flags_inv = HIDEFACE
+
+/obj/item/clothing/mask/bandana/momentobandana
+	name = "momento bandana"
+	desc = "A bandana that serves the user as a reminder of the past."
+	icon_state = "momento"
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)

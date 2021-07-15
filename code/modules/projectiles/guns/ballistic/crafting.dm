@@ -1,6 +1,6 @@
 // Grease Gun //
 /*
-/obj/item/gun/ballistic/automatic/greasegun/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/greasegun/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -22,18 +22,18 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/greasegun/mid
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid
 	name = "enhanced m3a1 grease gun"
 
-/obj/item/gun/ballistic/automatic/greasegun/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid/enable_burst()
 	. = ..()
 	spread = 7.5
 
-/obj/item/gun/ballistic/automatic/greasegun/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/greasegun/mid/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -55,7 +55,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/greasegun/high
+/obj/item/gun/ballistic/automatic/smg/greasegun/high
 	name = "advanced m3a1 grease gun"
 	burst_size = 3
 	fire_delay = 2
@@ -63,16 +63,16 @@
 	extra_penetration = 0.1
 	extra_damage = 5
 
-/obj/item/gun/ballistic/automatic/greasegun/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid/enable_burst()
 	. = ..()
 	spread = 5
 
-/obj/item/gun/ballistic/automatic/greasegun/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/greasegun/mid/disable_burst()
 	. = ..()
 	spread = 0
 
 /*
-/obj/item/gun/ballistic/automatic/greasegun/high/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/greasegun/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -95,7 +95,7 @@
 	. = ..()
 
 //10mm smg//
-/obj/item/gun/ballistic/automatic/smg10mm/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/smg10mm/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -117,21 +117,21 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/smg10mm/mid
+/obj/item/gun/ballistic/automatic/smg/smg10mm/mid
 	name = "enhanced 10mm submachine gun"
 	extra_penetration = 0
 	extra_damage = 0
 
-/obj/item/gun/ballistic/automatic/smg10mm/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/smg10mm/mid/enable_burst()
 	. = ..()
 	spread = 13.5
 
-/obj/item/gun/ballistic/automatic/smg10mm/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/smg10mm/mid/disable_burst()
 	. = ..()
 	spread = 0
 
 /*
-/obj/item/gun/ballistic/automatic/smg10mm/mid/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/smg10mm/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -153,7 +153,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/smg10mm/high
+/obj/item/gun/ballistic/automatic/smg/smg10mm/high
 	name = "advanced 10mm submachine gun"
 	burst_size = 3
 	fire_delay = 2
@@ -161,15 +161,15 @@
 	extra_damage = 6
 	extra_penetration = 0.12
 
-/obj/item/gun/ballistic/automatic/smg10mm/high/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/smg10mm/high/enable_burst()
 	. = ..()
 	spread = 9
 
-/obj/item/gun/ballistic/automatic/smg10mm/high/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/smg10mm/high/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/smg10mm/high/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/smg10mm/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -192,7 +192,7 @@
 	. = ..()
 
 // PPSH-41 //
-/obj/item/gun/ballistic/automatic/pps/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/ppsh/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -214,22 +214,22 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/pps/mid
+/obj/item/gun/ballistic/automatic/smg/ppsh/mid
 	name = "enhanced ppsh-41"
 	burst_shot_delay = 1.5
 	fire_delay = 5
 	extra_damage = -9
 	extra_penetration = 0
 
-/obj/item/gun/ballistic/automatic/pps/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/ppsh/mid/enable_burst()
 	. = ..()
 	spread = 15
 
-/obj/item/gun/ballistic/automatic/pps/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/ppsh/mid/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/pps/mid/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/ppsh/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -251,21 +251,21 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/pps/high
+/obj/item/gun/ballistic/automatic/smg/ppsh/high
 	name = "advanced ppsh41"
 	extra_damage = 0
 	extra_penetration = 0.1
 	burst_shot_delay = 1.5
 
-/obj/item/gun/ballistic/automatic/pps/high/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/ppsh/high/enable_burst()
 	. = ..()
 	spread = 10
 
-/obj/item/gun/ballistic/automatic/pps/high/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/ppsh/high/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/pps/high/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/ppsh/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -287,7 +287,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/pps/burst_select()
+/obj/item/gun/ballistic/automatic/smg/ppsh/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
@@ -310,7 +310,7 @@
 	update_icon()
 	return
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -333,21 +333,21 @@
 	. = ..()
 */
 // UZI //
-/obj/item/gun/ballistic/automatic/mini_uzi/mid
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid
 	name = "enhanced uzi"
 	fire_delay = 4
 	extra_penetration = 0
 	extra_damage = 0
 
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/enable_burst()
 	. = ..()
 	spread = 7.5
 
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -369,21 +369,21 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/mini_uzi/high
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 	name = "advanced uzi"
 	fire_delay = 3
 	extra_damage = 5
 	extra_penetration = 0.1
 
-/obj/item/gun/ballistic/automatic/mini_uzi/high/enable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/enable_burst()
 	. = ..()
 	spread = 5
 
-/obj/item/gun/ballistic/automatic/mini_uzi/high/disable_burst()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/disable_burst()
 	. = ..()
 	spread = 0
 /*
-/obj/item/gun/ballistic/automatic/mini_uzi/high/attackby(obj/item/W, mob/user, params)
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
 		var/obj/item/A = new /obj/item/prefabs/complex/screw
 		var/obj/item/B = new /obj/item/prefabs/complex/trigger
@@ -405,7 +405,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/mini_uzi/burst_select()
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)

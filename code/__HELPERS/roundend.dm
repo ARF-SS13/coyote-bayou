@@ -244,11 +244,14 @@
 	//stop collecting feedback during grifftime
 	SSblackbox.Seal()
 
-	sleep(50)
-	ready_for_reboot = TRUE
-	standard_reboot()
+	end_of_round_deathmatch()
+	var/time_to_end = CONFIG_GET(number/eorg_period)
+	to_chat(world, "<span class='info'>EORD in progress, game end delayed by [time_to_end * 0.1] seconds!</a></span>")
+	addtimer(CALLBACK(src, .proc/standard_reboot), time_to_end)
+
 
 /datum/controller/subsystem/ticker/proc/standard_reboot()
+	ready_for_reboot = TRUE
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
 			Reboot("Station destroyed by Nuclear Device.", "nuke")

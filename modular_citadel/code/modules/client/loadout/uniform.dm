@@ -139,7 +139,7 @@
 	path = /obj/item/clothing/under/f13/roving
 
 /datum/gear/uniform/police
-	name = "pre-War police uniform"
+	name = "police uniform"
 	path = /obj/item/clothing/under/f13/police
 
 /datum/gear/uniform/relaxedwear
@@ -471,11 +471,11 @@
 */
 
 /datum/gear/uniform/chinese
-	name = "Chinese Uniform"
+	name = "Chinese Army uniform"
 	path = /obj/item/clothing/under/f13/chinese
-	cost = 3
+	cost = 2
 
-/datum/gear/uniform/chinese
-	name = "Chinese Uniform"
-	path = /obj/item/clothing/under/f13/chinese
+/datum/gear/uniform/chinese/officer
+	name = "Chinese Army officer's uniform"
+	path = /obj/item/clothing/under/f13/chinese/officer
 	cost = 3

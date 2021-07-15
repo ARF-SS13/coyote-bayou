@@ -2,7 +2,7 @@
 	name = "metal arrow"
 	desc = "a simple arrow with a metal head."
 	damage = 40
-	armour_penetration = 0.1
+	armour_penetration = 0.2
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
 
@@ -16,8 +16,8 @@
 /obj/item/projectile/bullet/reusable/arrow/bone //AP for ashwalkers
 	name = "bone arrow"
 	desc = "Arrow made of bone and sinew."
-	damage = 35
-	armour_penetration = 0.75
+	damage = 30
+	armour_penetration = 0.35
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone
 
 /obj/item/projectile/bullet/reusable/arrow/bronze //Just some AP shots
@@ -38,7 +38,7 @@
 /obj/item/projectile/bullet/reusable/arrow/poison
 	name = "poison arrow"
 	desc = "A simple arrow, tipped in a poisonous paste."
-	damage = 10 //really gotta balance this, holy cow
+	damage = 20 //really gotta balance this, holy cow
 	armour_penetration = 0.1
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/poison
@@ -52,7 +52,7 @@
 /obj/item/projectile/bullet/reusable/arrow/burning
 	name = "burn arrow"
 	desc = "A sumple arrow slathered in a paste that burns skin on contact."
-	damage = 10 //gotta balance it!
+	damage = 20 //gotta balance it!
 	armour_penetration = 0.1
 	icon_state = "arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/burning

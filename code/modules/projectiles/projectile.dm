@@ -696,8 +696,9 @@
 			return FALSE
 	else
 		var/mob/living/L = target
-		if(!direct_target && !L.density)
-			return FALSE
+		if(!direct_target)
+			if(!CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) || !(L.stat == CONSCIOUS))		//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are not stunned enough to dodge projectiles passing over.
+				return FALSE
 	return TRUE
 
 //Spread is FORCED!

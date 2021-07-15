@@ -114,8 +114,8 @@ LINEN BINS
 	dream_messages = list("authority", "a golden ID", "sunglasses", "a green disc", "an antique gun", "the captain")
 
 /obj/item/bedsheet/rd
-	name = "research director's bedsheet"
-	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
+	name = "rich bedsheet"
+	desc = "Gold and purple, the colors of old world royalty, this luxurious blanket calls to the times of barons and kings."
 	icon_state = "sheetrd"
 	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
 
@@ -127,36 +127,36 @@ LINEN BINS
 
 /obj/item/bedsheet/medical
 	name = "medical blanket"
-	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present onboard the station."
+	desc = "It's a sterilized* blanket commonly used in hospitals.  *Sterilization is void if sheets have not been changed in the past three days."
 	icon_state = "sheetmedical"
 	dream_messages = list("healing", "life", "surgery", "a doctor")
 
 /obj/item/bedsheet/cmo
-	name = "chief medical officer's bedsheet"
-	desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, likely from Runtime."
+	name = "medical bedsheet"
+	desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, but there's no cats here."
 	icon_state = "sheetcmo"
 	dream_messages = list("authority", "a silvery ID", "healing", "life", "surgery", "a cat", "the chief medical officer")
 
 /obj/item/bedsheet/hos
-	name = "head of security's bedsheet"
-	desc = "It is decorated with a shield emblem. While crime doesn't sleep, you do, but you are still THE LAW!"
+	name = "authoritarian bedsheet"
+	desc = "This red and gold blanket has an aura of authority. While crime doesn't sleep, you do, but you are still THE LAW!"
 	icon_state = "sheethos"
 	dream_messages = list("authority", "a silvery ID", "handcuffs", "a baton", "a flashbang", "sunglasses", "the head of security")
 
 /obj/item/bedsheet/hop
-	name = "head of personnel's bedsheet"
-	desc = "It is decorated with a key emblem. For those rare moments when you can rest and cuddle with Ian without someone screaming for you over the radio."
+	name = "clerk's bedsheet"
+	desc = "This gold and sky blue blanket has an aura of blissful bureaucracy. These were gifted to Yuma civil servants in a long ago festival."
 	icon_state = "sheethop"
 	dream_messages = list("authority", "a silvery ID", "obligation", "a computer", "an ID", "a corgi", "the head of personnel")
 
 /obj/item/bedsheet/ce
-	name = "chief engineer's bedsheet"
+	name = "engineer's bedsheet"
 	desc = "It is decorated with a wrench emblem. It's highly reflective and stain resistant, so you don't need to worry about ruining it with oil."
 	icon_state = "sheetce"
 	dream_messages = list("authority", "a silvery ID", "the engine", "power tools", "an APC", "a parrot", "the chief engineer")
 
 /obj/item/bedsheet/qm
-	name = "quartermaster's bedsheet"
+	name = "caravaneer's bedsheet"
 	desc = "It is decorated with a crate emblem in silver lining.  It's rather tough, and just the thing to lie on after a hard day of pushing paper."
 	icon_state = "sheetqm"
 	dream_messages = list("a grey ID", "a shuttle", "a crate", "a sloth", "the quartermaster")
@@ -170,8 +170,8 @@ LINEN BINS
 	dream_messages = list("black")
 
 /obj/item/bedsheet/centcom
-	name = "\improper CentCom bedsheet"
-	desc = "Woven with advanced nanothread for warmth as well as being very decorated, essential for all officials."
+	name = "\improper rare hubris comics bedsheet"
+	desc = "This collector's edition hubris comics bedsheet was sold on secret markets for tens of thousands of dollars, once upon a time."
 	icon_state = "sheetcentcom"
 	dream_messages = list("a unique ID", "authority", "artillery", "an ending")
 
@@ -183,13 +183,13 @@ LINEN BINS
 
 /obj/item/bedsheet/cult
 	name = "cultist's bedsheet"
-	desc = "You might dream of Nar'Sie if you sleep with this. It seems rather tattered and glows of an eldritch presence."
+	desc = "Your dreams are filled with blood. It seems rather tattered and leaves you feeling nauseous."
 	icon_state = "sheetcult"
 	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
 
 /obj/item/bedsheet/wiz
-	name = "wizard's bedsheet"
-	desc = "A special fabric enchanted with magic so you can have an enchanted night. It even glows!"
+	name = "child's bedsheet"
+	desc = "A special blanket for the child that dreams of magical adventure, woven with real* wizard spells. It even glows!"
 	icon_state = "sheetwiz"
 	dream_messages = list("a book", "an explosion", "lightning", "a staff", "a skeleton", "a robe", "magic")
 
@@ -208,8 +208,8 @@ LINEN BINS
 	dream_messages = list("a kitty", "a cat", "meow", "purr")
 
 /obj/item/bedsheet/pirate
-	name = "pirate's bedsheet"
-	desc = "It has a Jolly Roger emblem on it and has a faint scent of grog."
+	name = "bandit's bedsheet"
+	desc = "It has a skull emblem on it and has a faint scent of whiskey."
 	icon_state = "sheetpirate"
 	dream_messages = list("doing whatever oneself wants", "cause a pirate is free", "being a pirate", "stealing", "landlubbers", "gold", "a buried treasure", "yarr", "avast", "a swashbuckler", "sailing the Seven Seas", "a parrot", "a monkey", "an island", "a talking skull")
 
@@ -235,7 +235,7 @@ LINEN BINS
 
 /obj/item/bedsheet/cosmos
 	name = "cosmic space bedsheet"
-	desc = "Made from the dreams of those who wonder at the stars."
+	desc = "Made from the dreams of those who gaze at the stars, and sold back to them at market price."
 	icon_state = "sheetcosmos"
 	dream_messages = list("the infinite cosmos", "Hans Zimmer music", "a flight through space", "the galaxy", "being fabulous", "shooting stars")
 	light_power = 2
@@ -269,7 +269,7 @@ LINEN BINS
 //bedsheet bin
 /obj/structure/bedsheetbin
 	name = "linen bin"
-	desc = "It looks rather cosy."
+	desc = "It looks rather cozy."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "linenbin-full"
 	anchored = TRUE
@@ -380,7 +380,7 @@ LINEN BINS
 			hidden = null
 
 /obj/structure/bedsheetbin/towel
-	desc = "It looks rather cosy. This one is designed to hold towels."
+	desc = "It looks rather cozy. This one is designed to hold towels."
 	sheet_types = list(/obj/item/reagent_containers/rag/towel)
 
 /obj/structure/bedsheetbin/color

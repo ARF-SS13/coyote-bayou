@@ -65,6 +65,7 @@
 	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
+/*
 // Bluespace Banana
 /obj/item/seeds/banana/bluespace
 	name = "pack of bluespace banana seeds"
@@ -95,7 +96,7 @@
 	name = "bluespace banana peel"
 	desc = "A peel from a bluespace banana."
 	icon_state = "banana_peel_blue"
-
+*/
 //Banana Spider.
 /obj/item/seeds/banana/exotic_banana
 	name = "pack of exotic banana seeds"

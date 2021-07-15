@@ -24,13 +24,13 @@ $include policy.txt
 # SERVERNAME Unnamed F13 Server
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] A fresh F13 MRP/HRP server with power to the players and roleplay.
+SERVERTAGLINE [18+] A relaxed HRP Fallout style server.
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME Fortune 13 --- An immersive Fallout experience
+STATIONNAME Fortune 13 --- A Fallout Style SS13 Server
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -253,7 +253,7 @@ CHECK_RANDOMIZER
 #WEBCLIENT_ONLY_BYOND_MEMBERS
 
 ## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
-#USEWHITELIST
+USEWHITELIST
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
@@ -263,10 +263,10 @@ CHECK_RANDOMIZER
 # FORUMURL https://citadel-station.net/forum/
 
 ## Wiki address
-# WIKIURL https://katlin.dog/citadel-wiki
+WIKIURL https://f13wiki.herma.moe/index.php/Main_Page
 
 ## Rules address
-# RULESURL https://katlin.dog/citadel-rules/main
+RULESURL https://discord.gg/Bx2SJn6fzg
 
 ## Github address
 # GITHUBURL https://github.com/Citadel-Station-13/Citadel-Station-13

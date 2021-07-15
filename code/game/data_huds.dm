@@ -17,6 +17,9 @@
 
 /datum/atom_hud/data
 
+/datum/atom_hud/data/client
+	hud_icons = list(ONLINE_HUD)
+
 /datum/atom_hud/data/human/medical
 	hud_icons = list(STATUS_HUD, HEALTH_HUD, NANITE_HUD, RAD_HUD)
 
@@ -82,11 +85,24 @@
  * THESE HOOKS SHOULD BE CALLED BY THE MOB SHOWING THE HUD
  */
 
+
 /************************************************
  *Medical HUD! Basic mode needs suit sensors on.*
  ************************************************/
 
 //HELPERS
+
+//Check if has client or not bruh
+/mob/living/proc/hud_client_check()
+	var/image/onlineholder = hud_list[ONLINE_HUD]
+	var/icon/I = icon(icon, icon_state, dir)
+	onlineholder.pixel_y = I.Height() - world.icon_size
+	if(!istype(src, /mob/living/carbon/human) && !client)
+		onlineholder.icon_state = "none"
+	else if(istype(src, /mob/living/carbon/human) && !client || !key)
+		onlineholder.icon_state = "offline"
+	else
+		onlineholder.icon_state = "online"
 
 //called when a carbon changes virus
 /mob/living/carbon/proc/check_virus()
@@ -97,6 +113,7 @@
 			if(!threat || D.severity > threat) //a buffing virus gets an icon
 				threat = D.severity
 	return threat
+
 
 //helper for getting the appropriate health status
 /proc/RoundHealth(mob/living/M)
@@ -155,6 +172,7 @@
 	var/datum/atom_hud/data/human/medical/basic/B = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
 	B.update_suit_sensors(src)
 
+
 //called when a living mob changes health
 /mob/living/proc/med_hud_set_health()
 	var/image/holder = hud_list[HEALTH_HUD]
@@ -176,6 +194,7 @@
 		holder.icon_state = "huddead"
 	else
 		holder.icon_state = "hudhealthy"
+	hud_client_check()
 
 /mob/living/carbon/med_hud_set_status()
 	var/image/holder = hud_list[STATUS_HUD]

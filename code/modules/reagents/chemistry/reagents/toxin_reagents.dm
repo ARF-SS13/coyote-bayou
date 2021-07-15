@@ -33,10 +33,10 @@
 
 /datum/reagent/toxin/FEV_solution
 	name = "Unstable FEV solution"
-
 	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
 	color = "#00FF00"
 	toxpwr = 0
+	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
 	taste_description = "horrific agony"
 	taste_mult = 0.9
 
@@ -46,16 +46,18 @@
 	if(!M.has_dna())
 		return  //No robots, AIs, aliens, Ians or other mobs should be affected by this.
 	if((method==VAPOR && prob(min(25, reac_volume))) || method==INGEST || method==PATCH || method==INJECT)
-//		M.randmutb()
+		M.easy_randmut(NEGATIVE + MINOR_NEGATIVE, sequence = FALSE)
 		M.updateappearance()
 		M.domutcheck()
 	..()
 
 /datum/reagent/toxin/FEV_solution/on_mob_life(mob/living/carbon/C)
-	C.apply_effect(80,EFFECT_IRRADIATE,0)
-	C.adjustCloneLoss(3,0)
+	C.apply_effect(40,EFFECT_IRRADIATE,0)
+	C.adjustCloneLoss(3,0) // ~15 units will get you near crit condition.
 	return ..()
 
+/datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
+	C.ForceContractDisease(new /datum/disease/transformation/mutant(), FALSE, TRUE)
 
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"

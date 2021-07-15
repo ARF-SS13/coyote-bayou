@@ -683,6 +683,12 @@
 	item_state = "clothing_tribalout"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/f13/exile/enclave
+	name = "disheveled peacekeeper uniform"
+	desc = "Khaki standard issue uniform over a black turtleneck. This one seems to be damaged."
+	icon_state = "enclave_uniformexile"
+	item_state = "enclave_uniformexile"
+
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
 	name = "NCR pre-war uniform"
@@ -698,7 +704,30 @@
 	item_state = "nato_uniform"
 	item_color = "nato_uniform"
 
+//chinesearmy
+/obj/item/clothing/under/f13/chinese
+	name = "Chinese Army uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
+	icon_state = "chinese_solder"
+	item_state = "bl_suit"
+	item_color = "chinese_soldier"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
+/obj/item/clothing/under/f13/chinese/officer
+	name = "Chinese Army officer's uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by officers."
+	icon_state = "chinese_officer"
+	item_state = "bl_suit"
+	item_color = "chinese_officer"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
+
+/obj/item/clothing/under/f13/chinese/general
+	name = "Chinese Army general's uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by generals."
+	icon_state = "chinese_general"
+	item_state = "bl_suit"
+	item_color = "chinese_general"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 //Prom Dress
 
@@ -775,8 +804,8 @@
 	item_color = "lumberjack"
 
 /obj/item/clothing/under/f13/police
-	name = "pre-War police uniform"
-	desc = "Golden classics of pre-War police officers."
+	name = "police uniform"
+	desc = "You have the right to remain violent."
 	icon_state = "retro_police"
 	item_state = "b_suit"
 	item_color = "retro_police"
@@ -1118,14 +1147,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 40)
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
-
-/obj/item/clothing/under/f13/chinese
-	name = "chinese jumpsuit"
-	desc = "An ancient Chinese combat uniform. In use before the war."
-	icon_state = "chinese"
-	item_state = "bl_suit"
-	item_color = "chinese"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 //Fluff
 
@@ -1482,3 +1503,12 @@
 	desc = "Specially made for Super Mutants living in the NCR, this large piece of clothing is well pressed and suited for any NCR Super Mutant personnel"
 	icon_state = "mutie_ranger_under"
 	item_state = "mutie_ranger_under"
+
+/obj/item/clothing/under/f13/desert_ranger_scout
+	name = "desert ranger scouting uniform"
+	desc = "A set of clothing worn by desert ranger scouts."
+	icon_state = "scoutclothes"
+	can_adjust = FALSE
+	item_state = "scoutclothes"
+	item_color = "scoutclothes"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)

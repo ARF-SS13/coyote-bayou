@@ -94,13 +94,6 @@
 	surplus = 20
 	restricted_roles = list("Janitor")
 
-/datum/uplink_item/role_restricted/goldenbox
-	name = "Gold Toolbox"
-	desc = "A gold plated plastitanium toolbox. It comes loaded with a full tool set including a AI detector multitool and combat gloves."
-	item = /obj/item/storage/toolbox/plastitanium/gold_real
-	cost = 4 // Has syndie tools + gloves + a robust weapon
-	restricted_roles = list("Assistant", "Curator") //Curator due to this being made of gold - It fits the theme
-
 /datum/uplink_item/role_restricted/pressure_mod
 	name = "Kinetic Accelerator Pressure Mod"
 	desc = "A modification kit which allows Kinetic Accelerators to do greatly increased damage while indoors. \
@@ -124,7 +117,6 @@
 	desc = "An extra eight bullets for an extra eight uses of Kitchen Gun (TM)!"
 	cost = 1
 	restricted_roles = list("Cook", "Janitor")
-	item = /obj/item/ammo_box/magazine/m45/kitchengun
 
 /datum/uplink_item/role_restricted/magillitis_serum
 	name = "Magillitis Serum Autoinjector"

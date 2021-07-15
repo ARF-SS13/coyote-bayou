@@ -980,6 +980,7 @@
 	M.adjust_disgust(-5)
 	..()
 
+/*
 /datum/reagent/consumable/red_queen
 	name = "Red Queen"
 	description = "DRINK ME."
@@ -1009,6 +1010,7 @@
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
 	..()
+*/
 
 /datum/reagent/consumable/pinkmilk
 	name = "Strawberry Milk"

@@ -42,3 +42,25 @@
 			return
 	else
 		return
+
+//////////////
+//SEWING KIT//
+//////////////  Kind of temporary placement for now until implemented properly.
+
+/obj/item/crafting
+	icon = 'icons/fallout/objects/crafting/tool.dmi'
+	lefthand_file = 'icons/fallout/onmob/tools/kit_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/kit_righthand.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/crafting/tailoring/sewingkit
+	name = "sewing kit"
+	desc = "A box with thread, buttons and a selection of needles, for making and mending clothing."
+	icon_state = "sewingkit" 
+	item_state = "sewingkit" 
+
+/obj/item/crafting/tailoring/dyeset
+	name = "dye set"
+	desc = "A tray with various dyes, needed to color clothing."
+	icon_state = "dyeset" 
+	item_state = "dyeset" 

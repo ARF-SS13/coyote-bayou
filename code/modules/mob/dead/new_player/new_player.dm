@@ -397,7 +397,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? No current restrictions on observing, you can spawn in as normal.","Player Setup","Yes","No")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
@@ -417,8 +417,11 @@
 	else
 		to_chat(src, "<span class='notice'>Teleporting failed. Ahelp an admin please</span>")
 		stack_trace("There's no freaking observer landmark available on this map or you're making observers before the map is initialised")
-	transfer_ckey(observer, FALSE)
-	observer.client = client
+	if(mind)
+		mind.transfer_to(observer, TRUE)
+	else
+		transfer_ckey(observer, FALSE)
+		observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)
 		observer.real_name = observer.client.prefs.real_name

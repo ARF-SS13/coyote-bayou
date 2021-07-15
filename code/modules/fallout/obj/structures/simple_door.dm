@@ -238,8 +238,11 @@
 
 /obj/structure/simple_door/tentflap_leather
 	name = "brahminskin tent entrance"
+	icon = 'icons/fallout/turfs/doors.dmi'
 	icon_state = "tentflap_leather"
 	door_type = "tentflap_leather"
+	hard_open = 0
+	base_opacity = TRUE
 	can_disasemble = FALSE
 	can_hold_padlock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
@@ -247,8 +250,11 @@
 
 /obj/structure/simple_door/tentflap_cloth
 	name = "cotton tent entrance"
+	icon = 'icons/fallout/turfs/doors.dmi'
 	icon_state = "tentflap_cloth"
 	door_type = "tentflap_cloth"
+	hard_open = 0
+	base_opacity = TRUE
 	can_disasemble = FALSE
 	can_hold_padlock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'

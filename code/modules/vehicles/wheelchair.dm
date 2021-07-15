@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/wheelchair //ported from Hippiestation (by Jujumatic) Then ported by Fermis from tg!
 	name = "wheelchair"
-	desc = "A chair with big wheels. It looks like you can move in this on your own."
+	desc = "A chair without any wheels. It seems to be moveable by owner's self hatred."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "wheelchair"
 	layer = OBJ_LAYER
@@ -50,8 +50,7 @@
 
 /obj/vehicle/ridden/wheelchair/Moved()
 	. = ..()
-	cut_overlays()
-	playsound(src, 'sound/effects/roll.ogg', 75, 1)
+	cut_overlays()  // I removed the roll.ogg cause it's annoying af, sorry. Now you have a futuristic one
 	if(has_buckled_mobs())
 		handle_rotation_overlayed()
 

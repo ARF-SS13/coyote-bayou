@@ -176,11 +176,6 @@
 	unit_name = "compressed matter cardridge"
 	export_types = list(/obj/item/rcd_ammo)
 
-/datum/export/tool/rpd
-	cost = 100
-	unit_name = "rapid piping device"
-	export_types = list(/obj/item/pipe_dispenser)
-
 /datum/export/tool/rld
 	cost = 150
 	unit_name = "rapid light device"

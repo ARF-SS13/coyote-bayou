@@ -54,19 +54,19 @@
 		return
 
 	user.log_message(msg, LOG_EMOTE)
-	msg = "<b>[user]</b> " + msg
+	var/dchatmsg = "<b>[user]</b> [msg]"
 
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M) || !user.client)
+	var/user_turf = get_turf(user)
+	for(var/mob/ghost as anything in GLOB.dead_mob_list)
+		if(!ghost.client || isnewplayer(ghost) || !ghost.client)
 			continue
-		var/T = get_turf(user)
-		if(M.stat == DEAD && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
-			M.show_message(msg)
+		if(ghost.stat == DEAD && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, null)))
+			ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, user)] [dchatmsg]</span>")
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg)
+		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = EMOTE_MESSAGE)
 	else
-		user.visible_message(msg)
+		user.visible_message(msg, blind_message = "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = EMOTE_MESSAGE)
 
 /datum/emote/proc/replace_pronoun(mob/user, message)
 	if(findtext(message, "their"))

@@ -1,10 +1,3 @@
-/datum/bounty/item/security/riotshotgun
-	name = "Riot Shotguns"
-	description = "Hooligans have boarded CentCom! Ship riot shotguns quick, or things are going to get dirty."
-	reward = 2500
-	required_count = 2
-	wanted_types = list(/obj/item/gun/ballistic/shotgun/riot)
-
 /datum/bounty/item/security/recharger
 	name = "Rechargers"
 	description = "Nanotrasen military academy is conducting marksmanship exercises. They request that rechargers be shipped."
@@ -38,13 +31,6 @@
 	reward = 3500
 	required_count = 15
 	wanted_types = list(/obj/item/ammo_casing/shotgun/techshell)
-
-/datum/bounty/item/security/wt550
-	name = "Spare WT-550 clips"
-	description = "Nanotrasen Military Academy's ammunition is running low, please send in spare ammo for practice."
-	reward = 1500
-	required_count = 5
-	wanted_types = list(/obj/item/ammo_box/magazine/wt550m9)
 
 /datum/bounty/item/security/pins
 	name = "Test range firing pins"

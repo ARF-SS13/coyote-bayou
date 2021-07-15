@@ -15,11 +15,6 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"ae" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien/maid,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "af" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/egg/burst,
@@ -34,20 +29,9 @@
 /obj/structure/alien/weeds,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"aj" = (
-/obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/obj/item/clothing/mask/facehugger/impregnated,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "ak" = (
 /obj/structure/alien/resin/membrane,
 /obj/structure/alien/weeds,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
-"al" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien/drone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "am" = (
@@ -68,7 +52,6 @@
 /obj/structure/alien/weeds,
 /obj/item/clothing/mask/facehugger/impregnated,
 /obj/item/clothing/glasses/night,
-/obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/clothing/under/syndicate/tacticool,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -99,11 +82,6 @@
 /obj/item/grown/bananapeel,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"av" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien/sentinel,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "aw" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/resin/membrane,
@@ -118,7 +96,6 @@
 /obj/structure/alien/weeds,
 /obj/item/ammo_casing/c45,
 /obj/effect/decal/cleanable/blood/gibs,
-/mob/living/simple_animal/hostile/alien/sentinel,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "aC" = (
@@ -131,11 +108,6 @@
 "aE" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/ash,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
-"aF" = (
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "aG" = (
@@ -208,15 +180,9 @@
 /obj/structure/alien/resin/wall,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"aX" = (
-/obj/structure/alien/weeds,
-/obj/effect/gibspawner/xeno,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "aY" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/gibs,
-/mob/living/simple_animal/hostile/alien/drone,
 /obj/structure/alien/weeds/node,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
@@ -480,12 +446,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"bC" = (
-/obj/structure/alien/weeds,
-/obj/structure/bed/nest,
-/mob/living/simple_animal/hostile/alien,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "bD" = (
 /obj/structure/alien/weeds,
 /turf/template_noop,
@@ -525,34 +485,15 @@
 /obj/item/reagent_containers/syringe/alien,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"lG" = (
-/obj/structure/alien/weeds,
-/obj/effect/mob_spawn/alien/corpse/humanoid/drone,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
-"pE" = (
-/obj/effect/mob_spawn/alien/corpse/humanoid/queen,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "wA" = (
 /obj/structure/alien/weeds,
 /obj/structure/alien/weeds/node,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
-"yf" = (
-/obj/structure/alien/weeds/node,
-/mob/living/simple_animal/hostile/alien/sentinel,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "Dd" = (
 /obj/structure/alien/weeds,
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/item/storage/backpack/duffelbag/sec/surgery,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
-"JM" = (
-/obj/structure/alien/weeds/node,
-/obj/effect/mob_spawn/alien/corpse/humanoid/drone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 "QG" = (
@@ -575,13 +516,7 @@
 /obj/item/clothing/mask/facehugger/impregnated,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
-"VZ" = (
-/obj/structure/alien/weeds,
-/obj/effect/gibspawner/human,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/xenonest)
 "ZT" = (
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/xenonest)
 
@@ -691,7 +626,7 @@ aa
 ab
 ac
 ac
-aj
+aS
 ac
 QG
 ac
@@ -757,14 +692,14 @@ af
 ag
 aE
 ag
-aF
+ag
 ac
 ag
 ag
 aL
 ag
 ag
-VZ
+ag
 ag
 ag
 ag
@@ -792,14 +727,14 @@ aa
 (5,1,1) = {"
 ab
 ac
-ae
+ag
 ak
 ar
 ag
 au
 ag
 ag
-av
+ag
 ac
 ag
 ag
@@ -846,7 +781,7 @@ ac
 af
 ak
 ag
-lG
+ag
 ac
 ac
 ag
@@ -870,7 +805,7 @@ ac
 ac
 an
 ac
-al
+ag
 ac
 ag
 ag
@@ -898,7 +833,7 @@ wA
 ag
 ag
 ag
-aF
+ag
 ag
 ag
 ag
@@ -955,7 +890,7 @@ ac
 ac
 ac
 am
-aF
+ag
 ag
 ag
 ac
@@ -1163,7 +1098,7 @@ an
 ac
 ac
 ac
-aF
+ag
 ag
 ag
 ac
@@ -1178,7 +1113,7 @@ ag
 ag
 ag
 ag
-aF
+ag
 ac
 an
 ac
@@ -1257,7 +1192,7 @@ af
 ag
 af
 aw
-aF
+ag
 am
 ac
 an
@@ -1279,7 +1214,7 @@ ak
 ag
 af
 ac
-lG
+ag
 ac
 ac
 an
@@ -1329,7 +1264,7 @@ ac
 ac
 ac
 ac
-av
+ag
 ag
 bg
 ac
@@ -1356,7 +1291,7 @@ ac
 af
 ag
 ar
-lG
+ag
 ag
 ag
 wA
@@ -1391,7 +1326,7 @@ an
 an
 ac
 ar
-bC
+am
 ac
 aa
 aa
@@ -1485,7 +1420,7 @@ an
 an
 ac
 ag
-aX
+ag
 ac
 an
 an
@@ -1509,7 +1444,7 @@ ac
 ah
 af
 ah
-JM
+ar
 Vi
 ak
 ag
@@ -1522,7 +1457,7 @@ af
 ac
 ac
 ac
-yf
+ar
 ag
 ac
 ac
@@ -1563,7 +1498,7 @@ ac
 ah
 ag
 ac
-aF
+ag
 ag
 ar
 ag
@@ -1616,7 +1551,7 @@ ag
 wA
 ag
 ag
-pE
+ZT
 ag
 at
 ag
@@ -1769,7 +1704,7 @@ ac
 ac
 at
 ag
-av
+ag
 ag
 ac
 ac
@@ -1783,9 +1718,9 @@ ab
 ac
 ac
 ac
-aF
 ag
-aX
+ag
+ag
 ag
 ag
 ba
@@ -1814,7 +1749,7 @@ ab
 ac
 ag
 ag
-JM
+ar
 ag
 ag
 ac
@@ -1868,7 +1803,7 @@ af
 ag
 af
 ag
-aF
+ag
 ag
 ag
 aw

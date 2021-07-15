@@ -94,7 +94,7 @@
 	if (!lighting_object)
 		return FALSE
 
-	return !lighting_object.luminosity
+	return !(lighting_object.luminosity || dynamic_lumcount)
 
 
 /turf/proc/set_base_opacity(new_base_opacity)
