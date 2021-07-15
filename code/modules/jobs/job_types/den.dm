@@ -95,7 +95,7 @@ Mayor
 	shoes = 		/obj/item/clothing/shoes/laceup
 	suit = 			/obj/item/clothing/suit/armor/f13/town/coatcaptain
 	head = 			/obj/item/clothing/head/f13/town/captainhat
-	glasses =		/obj/item/clothing/glasses/towncptglasses
+	glasses =		/obj/item/clothing/glasses/sunglasses/towncptglasses
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
@@ -149,7 +149,7 @@ Mayor
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
 	suit  /obj/item/clothing/suit/armor/f13/town/coatpatrol
 	head = /obj/item/clothing/head/f13/town/patrolmanhat
-	glasses = /obj/item/clothing/glasses/townglasses
+	glasses = /obj/item/clothing/glasses/sunglasses/townglasses
 	belt = /obj/item/gun/ballistic/revolver/colt357
 	shoes = /datum/gear/shoes/laceup
 	uniform = /obj/item/clothing/under/f13/townpatrol
