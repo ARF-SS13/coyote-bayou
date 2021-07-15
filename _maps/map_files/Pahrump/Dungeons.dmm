@@ -8537,10 +8537,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet{
-	desc = "A weathered campaign hat tightly fitted over the viscera of a functional riot helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies, right the way to the underground depths of a pyromaniacs cave where it's slightly singed form has rested for the longest of times";
-	name = "low-light stetson"
-	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -10339,7 +10335,10 @@
 /area/f13/bunker)
 "mVZ" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
-/obj/item/grenade/iedcasing,
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet{
+	desc = "A weathered campaign hat tightly fitted over the viscera of a functional riot helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies, right the way to the underground depths of a pyromaniacs cave where it's slightly singed form has rested for the longest of times";
+	name = "low-light stetson"
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -10919,6 +10918,15 @@
 "nKy" = (
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
+"nKP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/obj/structure/table,
+/obj/item/grenade/iedcasing,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "nLZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -15220,7 +15228,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/f13/attachments,
-/obj/item/grenade/iedcasing,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -52964,7 +52971,7 @@ heT
 heT
 nVS
 nVS
-qwY
+nKP
 tfa
 kKY
 gwy
