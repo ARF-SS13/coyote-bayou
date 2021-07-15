@@ -1305,3 +1305,90 @@
 			STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[getStaminaLoss()]</a>
 		</font>
 	"}
+
+
+/mob/living/verb/give(mob/living/target in (view(1) - usr))
+	set category = "IC"
+	set name = "Give"
+	do_give(target)
+
+
+/mob/living/proc/do_give(mob/living/target)
+	if(incapacitated() || !Adjacent(target))
+		return
+
+	if(INTERACTING_WITH(src, target))
+		to_chat(src, SPAN_WARNING("You are already interacting with [target]."))
+		return
+
+	if(!target.can_hold_items())
+		to_chat(src, SPAN_WARNING("[target] does not have the ability to hold items."))
+		return
+
+	var/obj/item/gift = get_active_held_item()
+	if(!gift)
+		gift = get_inactive_held_item()
+		if(!gift)
+			to_chat(src, SPAN_WARNING("You don't have anything in your hands to give."))
+			return
+	
+	if(SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
+		to_chat(src, SPAN_WARNING("[target] is too busy fighting!"))
+		return
+
+	if(target.incapacitated())
+		to_chat(src, SPAN_WARNING("[target] is in no condition to handle items!"))
+		return
+
+	if(!gift.mob_can_equip(src, target, SLOT_HANDS, TRUE, TRUE))
+		to_chat(src, SPAN_WARNING("[target] is unable to receive \a [gift] right now."))
+		return
+
+	to_chat(src, SPAN_NOTICE("You offer \a [gift] to [target] ."))
+
+	START_INTERACTING_WITH(src, target)
+	var/target_answer = alert(target, "[src] wants to give you \a [gift]. Will you accept it?", "An offer you can't refuse", "Accept", "Visibly reject", "Quietly ignore")
+	STOP_INTERACTING_WITH(src, target)
+
+	if(QDELING(src) || QDELETED(target) || QDELETED(gift) || incapacitated() || target.incapacitated() || !target.can_hold_items())
+		return
+
+	switch(target_answer)
+		if("Accept")
+			if(!Adjacent(target))
+				to_chat(src, SPAN_WARNING("[target] is out of range."))
+				to_chat(target, SPAN_WARNING("\The [src] is out of range."))
+				return
+		if("Visibly reject")
+			if(!Adjacent(target))
+				to_chat(src, SPAN_WARNING("[target] is out of range."))
+				to_chat(target, SPAN_WARNING("\The [src] is out of range."))
+				return
+			target.visible_message("<b>[target]</b> visibly rejects [src]'s offer of \a [gift].")
+			return
+		else
+			if(!Adjacent(target))
+				to_chat(src, SPAN_WARNING("[target] is out of range."))
+				return
+			to_chat(src, SPAN_NOTICE("[target] does not seem interested in receiving \a [gift] at the moment."))
+			return
+
+	if(!is_holding(gift))
+		to_chat(src, SPAN_WARNING("[target] would accept receiving \a [gift], if you were still offering it."))
+		to_chat(target, SPAN_WARNING("\The [src] seems to have given up on passing \the [gift] to you."))
+		return
+
+	if(!gift.mob_can_equip(src, target, SLOT_HANDS, TRUE, TRUE))
+		to_chat(src, SPAN_WARNING("[target] is unable to receive \a [gift] right now."))
+		to_chat(target, SPAN_WARNING("\The [src] seems to have given up on passing \the [gift] to you."))
+		return
+
+	if(!temporarilyRemoveItemFromInventory(gift))
+		visible_message(SPAN_NOTICE("[src] tries to hand over [gift] but it's stuck to them...."))
+		return
+
+	target.put_in_hands(gift)
+	visible_message(
+		"<b>[src]</b> hands [target] \a [gift].",
+		SPAN_NOTICE("You give \the [target] a [gift].")
+		)
