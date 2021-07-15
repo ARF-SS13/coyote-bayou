@@ -3485,6 +3485,12 @@
 "km" = (
 /turf/closed/wall/f13/tunnel,
 /area/centcom/evac)
+"kn" = (
+/obj/structure/sign/poster/prewar/poster75{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "ko" = (
 /turf/closed/indestructible/abductor{
 	icon_state = "alien20"
@@ -8486,6 +8492,13 @@
 /obj/structure/chalkboard,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"yh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/poster60{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "yi" = (
 /mob/living/simple_animal/hostile/raider/baseball,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -9575,6 +9588,9 @@
 "CJ" = (
 /obj/structure/chair/stool/retro/black,
 /mob/living/simple_animal/hostile/raider,
+/obj/structure/sign/poster/prewar/poster82{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "CK" = (
@@ -10273,6 +10289,15 @@
 	dir = 8
 	},
 /area/tdome/tdomeobserve)
+"Ie" = (
+/obj/structure/chair/bench,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/deathmatch,
+/obj/structure/sign/poster/prewar/poster66{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "Ih" = (
 /obj/structure/wreck/trash/three_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -10622,6 +10647,15 @@
 /obj/effect/landmark/abductor/agent,
 /turf/open/floor/plating/abductor,
 /area/abductor_ship)
+"JO" = (
+/obj/structure/chair/bench,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/deathmatch,
+/obj/structure/sign/poster/prewar/poster62{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "JV" = (
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/escape/backup)
@@ -11176,6 +11210,13 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"Mz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/poster72{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "MB" = (
 /turf/open/indestructible/binary,
 /area/fabric_of_reality)
@@ -11318,6 +11359,12 @@
 "OC" = (
 /obj/machinery/light/small{
 	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
+"OF" = (
+/obj/structure/sign/poster/prewar/poster72{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
@@ -11936,6 +11983,13 @@
 	},
 /turf/open/floor/wood,
 /area/centcom/holding)
+"TU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/poster94{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "TZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -12286,6 +12340,14 @@
 /mob/living/simple_animal/bot/medbot,
 /turf/open/floor/wood,
 /area/centcom/holding)
+"Zy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/obj/structure/sign/poster/prewar/poster66{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
 "ZN" = (
 /obj/effect/decal/waste,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -33854,7 +33916,7 @@ yp
 Yw
 Fd
 Yy
-Yy
+yh
 QY
 Yy
 Yy
@@ -34117,7 +34179,7 @@ Qa
 Yy
 Ge
 Yw
-zS
+Ie
 Yy
 td
 DB
@@ -36672,7 +36734,7 @@ rb
 rb
 EF
 Yw
-Yv
+OF
 Yv
 Da
 Yv
@@ -37201,7 +37263,7 @@ WM
 Yv
 DW
 Yw
-zS
+JO
 Yy
 td
 DB
@@ -37700,7 +37762,7 @@ rb
 rb
 EF
 Yw
-Yy
+Mz
 Yv
 CZ
 Yv
@@ -39242,7 +39304,7 @@ rb
 rb
 EF
 Yw
-Yv
+OF
 Yv
 CZ
 Yy
@@ -40270,7 +40332,7 @@ rb
 rb
 EF
 Yw
-Yv
+OF
 Yv
 CZ
 Yv
@@ -40799,7 +40861,7 @@ Yv
 Yv
 Yv
 Yw
-Tm
+Zy
 Yy
 td
 DB
@@ -41821,7 +41883,7 @@ EO
 Yw
 YE
 Yy
-Yy
+TU
 VL
 Yy
 Fg
@@ -42329,7 +42391,7 @@ rb
 EF
 Yw
 Yw
-Yv
+kn
 Yv
 ES
 Yw

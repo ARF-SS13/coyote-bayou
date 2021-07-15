@@ -2,7 +2,7 @@
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
-	forbids = "The use of pre-war technology, especially prewar weapons of war."
+	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war."
 	enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
 	objectivesList = list("Leadership recommends the following goal for this week: Recruit worthy outlanders into the tribe","Leadership recommends the following goal for this week: Hunt dangerous creatures to improve the clan's standing", "Leadership recommends the following goal for this week: Preserve dangerous technology to prevent it from falling into the wrong hands.")
 
@@ -48,7 +48,7 @@ Tribal Chief
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe."
 	enforces = "The ways of the Machine spirits."
-	forbids = "Abusing technology and using Pre-War weapons."
+	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The leader and central political figure in the Wayfarer Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
 	outfit = /datum/outfit/job/tribal/f13chief
@@ -92,7 +92,7 @@ Tribal Shaman
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
-	forbids = "Abusing technology and using Pre-War weapons."
+	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The spiritual leader and cultural core of the Wayfarer Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
 	selection_color = "#006666"
 	exp_requirements = 1800
@@ -162,7 +162,7 @@ Tribal Head Hunter
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
-	forbids = "Abusing technology and using Pre-War weapons."
+	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Wayfarers. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
 	exp_requirements = 1800
@@ -205,8 +205,8 @@ Druid
 	spawn_positions = 2
 	supervisors = "The Chief and the Shaman."
 	enforces = "The ways of the Machine spirits."
-	forbids = "Abusing technology and using Pre-War weapons."
-	description = "You are a Druid in the tribe; you perform rituals, and bless pre-war relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
+	forbids = "Abusing technology and using Pre-Collapse weapons."
+	description = "You are a Druid in the tribe; you perform rituals, and bless pre-collapse relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
 	exp_requirements = 600
 
@@ -248,7 +248,7 @@ Villager
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Tribal Chief, Shaman and Headhunter"
-	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not thread far or without informing your kin."
+	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
 	exp_requirements = 300
 
@@ -327,7 +327,7 @@ Hunter
 	spawn_positions = 2
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Machine spirits."
-	forbids = "Abusing technology and using Pre-War weapons."
+	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a machine spirit that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
 	selection_color = "#006666"
 	exp_requirements = 900
