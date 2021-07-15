@@ -53,7 +53,7 @@
 
 //Peeking up/down
 /obj/structure/ladder/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
-	if(over != usr || !Adjacent(src, over))
+	if(over != usr || !Adjacent(over))
 		return
 	var/mob/peeker = usr
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
@@ -86,7 +86,7 @@
 	else
 		return
 
-	if(!Adjacent(src, over))
+	if(!Adjacent(over))
 		return
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
