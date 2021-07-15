@@ -8533,11 +8533,15 @@
 "kKY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /obj/structure/closet/secure_closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet{
+	desc = "A weathered campaign hat tightly fitted over the viscera of a functional riot helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies, right the way to the underground depths of a pyromaniacs cave where it's slightly singed form has rested for the longest of times";
+	name = "low-light stetson"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
