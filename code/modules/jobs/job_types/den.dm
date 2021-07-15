@@ -147,9 +147,9 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	suit = 			/obj/item/clothing/suit/armor/f13/town/coatpatrol
-	head =	/obj/item/clothing/head/f13/town/patrolmanhat
-	glasses =		/obj/item/clothing/glasses/townglasses
+	suit  /obj/item/clothing/suit/armor/f13/town/coatpatrol
+	head = /obj/item/clothing/head/f13/town/patrolmanhat
+	glasses = /obj/item/clothing/glasses/townglasses
 	belt = /obj/item/gun/ballistic/revolver/colt357
 	shoes = /datum/gear/shoes/laceup
 	uniform = /obj/item/clothing/under/f13/townpatrol
