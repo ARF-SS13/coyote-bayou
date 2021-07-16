@@ -82,6 +82,3 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 	if(!wtime)
 		wtime = world.time
 	return time2text(wtime - GLOB.timezoneOffset, format)
-
-/proc/station_time(display_only = FALSE)
-	return ((((world.time - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)

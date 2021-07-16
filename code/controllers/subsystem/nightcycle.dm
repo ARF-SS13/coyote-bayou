@@ -66,7 +66,7 @@ SUBSYSTEM_DEF(nightcycle)
 		last_custom_cycle = world.time
 		new_time = (current_time + 1) % DAY_END
 	else
-		switch (station_time())
+		switch (STATION_TIME(FALSE, world.time))
 			if (CYCLE_SUNRISE to CYCLE_MORNING)
 				new_time = SUNRISE
 			if (CYCLE_MORNING to CYCLE_DAYTIME)
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(nightcycle)
 			current_sun_color = nighttime_sun_color
 			current_sun_power = nighttime_sun_power
 		else
-			CRASH("Invalid new_time returned from station_time()")
+			CRASH("Invalid new_time returned from STATION_TIME()")
 
 	current_time = new_time
 
