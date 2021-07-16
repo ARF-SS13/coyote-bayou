@@ -43,10 +43,19 @@
 	if(check_mask && wear_mask && (wear_mask.flags_cover & MASKCOVERSMOUTH))
 		return TRUE
 
+
 /mob/living/carbon/check_projectile_dismemberment(obj/item/projectile/P, def_zone)
+	switch(def_zone)
+		if(BODY_ZONE_CHEST)
+			return // Gutting the chest with a projectile would just be weird.
+		if(BODY_ZONE_HEAD)
+			if(head) // If any kind of headgear is worn, no decap.
+				return
 	var/obj/item/bodypart/affecting = get_bodypart(def_zone)
-	if(affecting && affecting.dismemberable && affecting.get_damage() >= (affecting.max_damage - P.dismemberment))
-		affecting.dismember(P.damtype)
+	if(!affecting?.dismemberable || affecting.get_damage() < (affecting.max_damage - P.dismemberment))
+		return
+	affecting.dismember(P.damtype)
+
 
 /mob/living/carbon/catch_item(obj/item/I, skip_throw_mode_check = FALSE)
 	. = ..()
