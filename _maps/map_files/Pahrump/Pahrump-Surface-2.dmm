@@ -9026,12 +9026,6 @@
 /obj/item/paper_bin,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/legion)
-"esy" = (
-/obj/structure/bookcase,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
-/turf/open/floor/wood/f13/old,
-/area/f13/building)
 "esz" = (
 /obj/structure/fence/corner,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -16916,6 +16910,7 @@
 "hXJ" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/wood/f13/old{
 	icon_state = "housebase"
 	},
@@ -40029,12 +40024,6 @@
 "tfP" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/village)
-"tgm" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "tgC" = (
@@ -84068,7 +84057,7 @@ jdE
 gjP
 fyf
 gts
-esy
+eQR
 iMm
 eQR
 eQR
@@ -84843,7 +84832,7 @@ fOG
 mLv
 mLv
 mLv
-esy
+eQR
 gts
 gts
 gts
@@ -97928,7 +97917,7 @@ kqn
 pcG
 kNf
 eRn
-tgm
+ihA
 pcG
 skq
 kZz

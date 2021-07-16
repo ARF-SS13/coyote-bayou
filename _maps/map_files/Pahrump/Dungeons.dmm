@@ -430,8 +430,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "azq" = (
-/turf/closed/wall/r_wall/f13composite{
-	icon_state = "rubblepillar"
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess"
 	},
 /area/f13/bunker)
 "azU" = (
@@ -720,6 +721,16 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
+"aRw" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet{
+	desc = "A weathered campaign hat tightly fitted over the viscera of a functional riot helmet. The old stetson is faded with age and heavy use, having seen the green shores of California to the white peaks of the rockies, right the way to the underground depths of a pyromaniacs cave where it's slightly singed form has rested for the longest of times";
+	name = "low-light stetson"
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "aRG" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/supermutant/nightkin,
@@ -765,7 +776,13 @@
 	},
 /area/f13/wasteland)
 "aUx" = (
-/turf/closed/wall/r_wall/rust,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/sentrybot/chew{
+	faction = list("raider")
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
 /area/f13/bunker)
 "aUN" = (
 /obj/structure/table/wood,
@@ -924,7 +941,7 @@
 "bfl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/chem_dispenser/drinks/beer,
-/obj/structure/table/reinforced,
+/obj/structure/table,
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "bfm" = (
@@ -1326,7 +1343,7 @@
 /obj/machinery/light/fo13colored/Red{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/handy/sentrybot/chew,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1653,13 +1670,7 @@
 /area/f13/vault)
 "bZV" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom{
-	desc = "(VII) A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor. A sniper's veil is wrapped around the neck."
-	},
-/obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom{
-	desc = "(VII) A reclaimed riot helmet, carefully modified and upgraded with low-light vision and an internal guidance computer that's long since gone faulty.";
-	name = "sniper riot helmet"
-	},
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
 "bZY" = (
@@ -1808,6 +1819,13 @@
 	},
 /obj/item/trash/f13/rotten,
 /turf/open/floor/f13/wood,
+/area/f13/bunker)
+"cjz" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/table,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
 /area/f13/bunker)
 "ckm" = (
 /mob/living/simple_animal/hostile/molerat,
@@ -4946,7 +4964,7 @@
 /area/f13/bunker)
 "glR" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall/rust,
+/turf/closed/wall/rust,
 /area/f13/bunker)
 "glT" = (
 /obj/structure/chair/office/light{
@@ -5943,7 +5961,7 @@
 /area/f13/vault)
 "hnU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "hoi" = (
@@ -7009,11 +7027,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "iJV" = (
-/obj/structure/table/reinforced,
 /obj/machinery/light/floor,
 /obj/machinery/porta_turret/syndicate{
 	faction = list("raider")
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "iJW" = (
@@ -7826,9 +7844,9 @@
 /area/f13/bunker)
 "jUG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "jUT" = (
@@ -8790,9 +8808,7 @@
 /area/f13/bunker)
 "laJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/attachments,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -8819,16 +8835,6 @@
 /obj/item/candle/tribal_torch,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
-"ldT" = (
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/fnfal{
-	burst_size = 3;
-	desc = "Argued to be the most reliable assault rifle ever made, even in contrast to the AK-47, the FN FAL has been used by more armed forces than any other weapon in the world. In the roughness of the wasteland, it excels.";
-	slowdown = 0
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/pod/dark,
-/area/f13/underground/cave)
 "led" = (
 /obj/structure/chair/comfy/beige{
 	dir = 1
@@ -9155,13 +9161,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
-"lDQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/girder/reinforced,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/f13/bunker)
 "lFA" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/f13/leather,
@@ -9295,8 +9294,8 @@
 "lPR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/microwave/stove,
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "lQh" = (
@@ -9429,12 +9428,8 @@
 /area/f13/bunker)
 "maf" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever{
-	desc = "A cut-down lever action hunting shotgun made with mobility in mind.";
-	name = "mare's leg";
-	slowdown = 0
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/unique,
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
 "mao" = (
@@ -10364,7 +10359,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "mYL" = (
-/obj/structure/girder/reinforced,
+/obj/structure/girder,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -10738,6 +10733,13 @@
 /obj/effect/decal/remains/human,
 /turf/closed/mineral/random/low_chance,
 /area/f13/underground/cave)
+"nzw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "nzV" = (
 /obj/machinery/vr_sleeper,
 /turf/open/floor/f13{
@@ -10757,8 +10759,8 @@
 /area/f13/vault)
 "nBV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/structure/table,
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "nCg" = (
@@ -11452,12 +11454,8 @@
 /area/f13/underground/cave)
 "orx" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/marksman/sniper/gold{
-	desc = "A DKS 501, chambered in .308 Winchester. This one has a gold trim and looks mean.";
-	name = "el nino";
-	slowdown = 0
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
 "orV" = (
@@ -11677,6 +11675,14 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/vault)
+"oGh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/attachments,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "oGi" = (
 /obj/item/storage/pill_bottle/chem_tin/mentats{
 	desc = "An experimental,  pre-war medication used to treat memory and mental degridation It seems to be empty...";
@@ -12661,6 +12667,18 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
+"pSN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
+/obj/structure/closet/secure_closet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "pTK" = (
 /obj/structure/window/plastitanium,
 /obj/structure/grille,
@@ -13470,7 +13488,7 @@
 	},
 /area/f13/vault)
 "qPJ" = (
-/obj/structure/table/reinforced,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "qQG" = (
@@ -14076,8 +14094,8 @@
 /area/f13/vault)
 "ryR" = (
 /obj/machinery/microwave,
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "ryV" = (
@@ -15030,19 +15048,7 @@
 "sQJ" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot/reclaimed{
-	armor = list("tier" = 7, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20);
-	desc = "(VII) A refurbished and personalized set of pre-unification riot gear used in close quarters battle.";
-	name = "CQB riot gear"
-	},
-/obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed{
-	armor = list("tier" = 7, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0);
-	desc = "(VII) A refurbished and personalized pre-unification riot helmet modified for close quarters battle.";
-	icon_state = "remnant_helmet";
-	name = "CQB riot helmet";
-	pixel_x = 1;
-	pixel_y = 2
-	},
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
 "sQV" = (
@@ -16317,7 +16323,7 @@
 "uGH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/chem_dispenser/drinks,
-/obj/structure/table/reinforced,
+/obj/structure/table,
 /turf/open/floor/plasteel/bar,
 /area/f13/bunker)
 "uIJ" = (
@@ -16455,10 +16461,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "uNn" = (
-/obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "uNs" = (
@@ -16552,11 +16558,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
 "uUI" = (
-/obj/machinery/door/poddoor{
-	id = "lock2"
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
 	},
-/turf/open/floor/pod/dark,
-/area/f13/underground/cave)
+/area/f13/bunker)
 "uVH" = (
 /obj/item/ammo_box/magazine/m762/empty,
 /turf/open/floor/f13/wood{
@@ -16851,11 +16857,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "vkQ" = (
-/obj/machinery/door/poddoor{
-	id = "lock4"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/porta_turret/syndicate{
+	faction = list("raider")
 	},
-/turf/open/floor/pod/dark,
-/area/f13/underground/cave)
+/obj/structure/table,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "vkU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/trash_stack,
@@ -16887,6 +16897,15 @@
 	},
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
+"vlM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/obj/structure/table,
+/obj/item/grenade/iedcasing,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
+	},
+/area/f13/bunker)
 "vmW" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -17331,8 +17350,8 @@
 /area/f13/vault)
 "vNb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/attachments,
+/obj/structure/table,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/bunker)
 "vNk" = (
@@ -18470,8 +18489,8 @@
 	},
 /area/f13/bunker)
 "xeO" = (
-/obj/structure/girder/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/girder,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -18596,11 +18615,13 @@
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
 "xot" = (
-/obj/machinery/door/poddoor{
-	id = "lock3"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/obj/structure/table,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
 	},
-/turf/open/floor/pod/dark,
-/area/f13/underground/cave)
+/area/f13/bunker)
 "xps" = (
 /obj/structure/chair/bench,
 /obj/item/soap,
@@ -18810,7 +18831,9 @@
 /area/f13/bunker)
 "xzS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
+/mob/living/simple_animal/hostile/handy/sentrybot/nsb{
+	environment_smash = 2
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -19402,8 +19425,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "yku" = (
-/obj/structure/girder/reinforced,
 /obj/structure/barricade/wooden/planks,
+/obj/structure/girder,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -49337,29 +49360,29 @@ heT
 tSp
 heT
 heT
-hbR
-hbR
+bsh
+bsh
 bsh
 bsh
 bsh
 bsh
 bsh
 qYk
-aUx
-cIT
-cIT
-cIT
-koh
-koh
+gwy
 cIT
 cIT
 cIT
 cIT
 cIT
-aUx
 cIT
 cIT
-koh
+cIT
+cIT
+cIT
+gwy
+cIT
+cIT
+cIT
 heT
 heT
 heT
@@ -49594,7 +49617,7 @@ heT
 heT
 heT
 heT
-hbR
+bsh
 bsh
 bsh
 bsh
@@ -49616,7 +49639,7 @@ pbd
 gwy
 yfz
 cIT
-koh
+cIT
 heT
 heT
 heT
@@ -49873,7 +49896,7 @@ yku
 gwy
 qhp
 dQq
-koh
+cIT
 heT
 heT
 heT
@@ -50126,11 +50149,11 @@ xzS
 cIT
 gwy
 bjT
-lDQ
+xeO
 gwy
 ccI
 kRy
-aUx
+gwy
 heT
 heT
 heT
@@ -50387,7 +50410,7 @@ wFW
 gwy
 vhM
 iOE
-aUx
+gwy
 heT
 heT
 heT
@@ -50644,7 +50667,7 @@ uXT
 gwy
 vTt
 wRB
-aUx
+gwy
 heT
 heT
 heT
@@ -50879,7 +50902,7 @@ heT
 heT
 heT
 heT
-hbR
+bsh
 bsh
 pba
 jZk
@@ -50901,7 +50924,7 @@ ulM
 gwy
 gwy
 szh
-aUx
+gwy
 heT
 heT
 heT
@@ -51136,7 +51159,7 @@ heT
 heT
 heT
 heT
-hbR
+bsh
 bsh
 rog
 vlG
@@ -51393,7 +51416,7 @@ heT
 heT
 heT
 heT
-hbR
+bsh
 bsh
 bsh
 bsh
@@ -51414,7 +51437,7 @@ fRE
 ulM
 gEI
 aUd
-ulM
+azq
 cIT
 heT
 heT
@@ -51650,8 +51673,8 @@ heT
 heT
 heT
 heT
-hbR
-hbR
+bsh
+bsh
 bsh
 bsh
 bsh
@@ -51662,7 +51685,7 @@ xeO
 ryR
 rKG
 vNb
-gwy
+koh
 cIT
 bcE
 rKG
@@ -51672,10 +51695,10 @@ aBh
 gwy
 gwy
 tal
-aUx
-heT
-heT
-heT
+cIT
+cIT
+cIT
+gwy
 heT
 heT
 heT
@@ -51909,7 +51932,7 @@ heT
 heT
 fud
 jxu
-hbR
+bsh
 rog
 bsh
 bsh
@@ -51929,10 +51952,10 @@ fRE
 gwy
 bCR
 wey
-aUx
-heT
-heT
-heT
+nmg
+gEI
+nmg
+gwy
 heT
 heT
 heT
@@ -52177,7 +52200,7 @@ qPJ
 hnU
 jUG
 koh
-cIT
+koh
 cIT
 bQs
 gwy
@@ -52185,11 +52208,11 @@ ibz
 uXT
 gwy
 laJ
-koh
+gEI
 aUx
-heT
-heT
-heT
+gEI
+nzw
+cIT
 heT
 heT
 heT
@@ -52421,7 +52444,7 @@ heT
 heT
 heT
 heT
-hbR
+bsh
 esm
 mif
 bsh
@@ -52429,24 +52452,24 @@ bsh
 bsh
 bsh
 fRP
-aUx
-aUx
-aUx
-rwc
-koh
+gwy
+gwy
+gwy
+nVS
+cIT
 koh
 glR
-aUx
-aUx
+gwy
+gwy
 vPZ
-azq
-aUx
-aUx
-koh
-koh
-heT
-heT
-heT
+vPZ
+gwy
+gEI
+gEI
+vkQ
+cjz
+xot
+cIT
 heT
 heT
 heT
@@ -52697,13 +52720,13 @@ heT
 heT
 heT
 heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
+cIT
+nVS
+nmg
+xot
+laJ
+aRw
+cIT
 heT
 heT
 heT
@@ -52955,12 +52978,12 @@ heT
 heT
 heT
 heT
-heT
-heT
-heT
-heT
-heT
-heT
+nVS
+nVS
+vlM
+oGh
+pSN
+gwy
 heT
 heT
 heT
@@ -53212,12 +53235,12 @@ heT
 heT
 heT
 heT
-heT
-heT
-heT
-heT
-heT
-heT
+gwy
+uUI
+cIT
+gwy
+gwy
+gwy
 heT
 heT
 heT
@@ -53469,9 +53492,9 @@ heT
 heT
 heT
 heT
-heT
-heT
-heT
+cIT
+cIT
+cIT
 heT
 heT
 heT
@@ -53727,8 +53750,8 @@ heT
 heT
 heT
 heT
-heT
-heT
+cIT
+cIT
 heT
 heT
 heT
@@ -56119,7 +56142,7 @@ nDc
 mAq
 mAa
 uSu
-uUI
+adK
 uSu
 mAa
 gEY
@@ -56376,7 +56399,7 @@ jWN
 oEd
 oEd
 uSu
-xot
+syU
 uSu
 fqj
 oEd
@@ -56633,7 +56656,7 @@ nYi
 uSu
 uSu
 uSu
-vkQ
+bzs
 uSu
 uSu
 uSu
@@ -57399,9 +57422,9 @@ nDc
 kWB
 bpY
 wmn
-uUI
-xot
-vkQ
+adK
+syU
+bzs
 akN
 hEV
 gwG
@@ -57920,7 +57943,7 @@ bZV
 orx
 wTV
 hpr
-ldT
+orx
 uSu
 nYi
 tnc
@@ -58175,7 +58198,7 @@ fDu
 uSu
 uSu
 uSu
-vkQ
+bzs
 uSu
 uSu
 uSu
@@ -58432,7 +58455,7 @@ hcu
 nYi
 oEd
 uSu
-xot
+syU
 uSu
 oEd
 nYi
@@ -58689,7 +58712,7 @@ vBJ
 pVv
 uBF
 uSu
-uUI
+adK
 uSu
 uBF
 hiH
