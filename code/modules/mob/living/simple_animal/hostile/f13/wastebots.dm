@@ -445,7 +445,7 @@
 		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
 	if(prob(10) && health > 1)
 		visible_message("<span class='danger'>\The [src] releases a defensive explosive!</span>")
-		explosion(src.loc,-1,-1,2, flame_range = 4) //perish, mortal - explosion size identical to craftable IED
+		explosion(get_turf(src),-1,-1,2, flame_range = 4) //perish, mortal - explosion size identical to craftable IED
 	if(prob(75) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
 		return ..()
 	else
