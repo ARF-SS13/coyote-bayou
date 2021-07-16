@@ -101,6 +101,7 @@
 #define DEN				(1<<6)
 
 #define F13SHERIFF		(1<<0)
+#define F13TOWNSERGEANT (1<<0)
 #define F13DENDOC       (1<<1)
 #define F13SETTLER		(1<<2)
 #define F13FARMER		(1<<3)
