@@ -49,8 +49,8 @@
 
 /obj/structure/flora/tree/pine/Initialize()
 	. = ..()
-
-	if(islist(icon_states && icon_states.len))
+	AddComponent(/datum/component/largetransparency, y_size = 1, y_offset = 1)
+	if(length(icon_states))
 		icon_state = pick(icon_states)
 
 /obj/structure/flora/tree/pine/xmas
@@ -104,9 +104,10 @@
 	obj_integrity = 350
 	max_integrity = 350
 
-/obj/structure/flora/tree/tall/New()
+/obj/structure/flora/tree/tall/Initialize()
+	. = ..()
 	icon_state = "tree_[rand(1,3)]"
-	..()
+	AddComponent(/datum/component/largetransparency, y_offset = 1, y_size = 2)
 
 
 /obj/structure/festivus
@@ -122,8 +123,8 @@
 	anchored = TRUE
 
 /obj/structure/flora/tree/dead/Initialize()
-	icon_state = "tree_[rand(1, 6)]"
 	. = ..()
+	icon_state = "tree_[rand(1, 6)]"
 
 /obj/structure/flora/tree/jungle
 	name = "tree"
@@ -134,13 +135,21 @@
 	pixel_y = -20
 
 /obj/structure/flora/tree/jungle/Initialize()
-	icon_state = "[icon_state][rand(1, 6)]"
 	. = ..()
+	icon_state = "[icon_state][rand(1, 6)]"
+	setup_transparency()
+
+/obj/structure/flora/tree/jungle/proc/setup_transparency()
+	AddComponent(/datum/component/largetransparency, 1, 2, 1, 1)
+
 
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
 	pixel_x = -32
 	icon = 'icons/obj/flora/jungletreesmall.dmi'
+
+/obj/structure/flora/tree/jungle/small/setup_transparency()
+	AddComponent(/datum/component/largetransparency, 1, 1, 0, 1)
 
 //grass
 /obj/structure/flora/grass
@@ -193,114 +202,114 @@
 	icon_state = "firstbush_1"
 
 /obj/structure/flora/ausbushes/Initialize()
+	. = ..()
 	if(icon_state == "firstbush_1")
 		icon_state = "firstbush_[rand(1, 4)]"
-	. = ..()
 
 /obj/structure/flora/ausbushes/reedbush
 	icon_state = "reedbush_1"
 
 /obj/structure/flora/ausbushes/reedbush/Initialize()
-	icon_state = "reedbush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "reedbush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/leafybush
 	icon_state = "leafybush_1"
 
 /obj/structure/flora/ausbushes/leafybush/Initialize()
-	icon_state = "leafybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "leafybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/palebush
 	icon_state = "palebush_1"
 
 /obj/structure/flora/ausbushes/palebush/Initialize()
-	icon_state = "palebush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "palebush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/stalkybush
 	icon_state = "stalkybush_1"
 
 /obj/structure/flora/ausbushes/stalkybush/Initialize()
-	icon_state = "stalkybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "stalkybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/grassybush
 	icon_state = "grassybush_1"
 
 /obj/structure/flora/ausbushes/grassybush/Initialize()
-	icon_state = "grassybush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "grassybush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/fernybush
 	icon_state = "fernybush_1"
 
 /obj/structure/flora/ausbushes/fernybush/Initialize()
-	icon_state = "fernybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "fernybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/sunnybush
 	icon_state = "sunnybush_1"
 
 /obj/structure/flora/ausbushes/sunnybush/Initialize()
-	icon_state = "sunnybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "sunnybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/genericbush
 	icon_state = "genericbush_1"
 
 /obj/structure/flora/ausbushes/genericbush/Initialize()
-	icon_state = "genericbush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "genericbush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/pointybush
 	icon_state = "pointybush_1"
 
 /obj/structure/flora/ausbushes/pointybush/Initialize()
-	icon_state = "pointybush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "pointybush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/lavendergrass
 	icon_state = "lavendergrass_1"
 
 /obj/structure/flora/ausbushes/lavendergrass/Initialize()
-	icon_state = "lavendergrass_[rand(1, 4)]"
 	. = ..()
+	icon_state = "lavendergrass_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/ywflowers
 	icon_state = "ywflowers_1"
 
 /obj/structure/flora/ausbushes/ywflowers/Initialize()
-	icon_state = "ywflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "ywflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/brflowers
 	icon_state = "brflowers_1"
 
 /obj/structure/flora/ausbushes/brflowers/Initialize()
-	icon_state = "brflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "brflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/ppflowers
 	icon_state = "ppflowers_1"
 
 /obj/structure/flora/ausbushes/ppflowers/Initialize()
-	icon_state = "ppflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "ppflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/sparsegrass
 	icon_state = "sparsegrass_1"
 
 /obj/structure/flora/ausbushes/sparsegrass/Initialize()
-	icon_state = "sparsegrass_[rand(1, 3)]"
 	. = ..()
+	icon_state = "sparsegrass_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/fullgrass
 	icon_state = "fullgrass_1"
 
 /obj/structure/flora/ausbushes/fullgrass/Initialize()
-	icon_state = "fullgrass_[rand(1, 3)]"
 	. = ..()
+	icon_state = "fullgrass_[rand(1, 3)]"
 
 /obj/item/kirbyplants
 	name = "potted plant"
@@ -406,8 +415,8 @@
 
 
 /obj/structure/flora/grass/jungle/Initialize()
-	icon_state = "[icon_state][rand(1, 5)]"
 	. = ..()
+	icon_state = "[icon_state][rand(1, 5)]"
 
 /obj/structure/flora/grass/jungle/b
 	icon_state = "grassb"
@@ -435,8 +444,8 @@
 	icon_state = "busha"
 
 /obj/structure/flora/junglebush/Initialize()
-	icon_state = "[icon_state][rand(1, 3)]"
 	. = ..()
+	icon_state = "[icon_state][rand(1, 3)]"
 
 /obj/structure/flora/junglebush/b
 	icon_state = "bushb"
@@ -450,6 +459,10 @@
 	pixel_x = -16
 	pixel_y = -12
 	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/structure/flora/junglebush/large/Initialize()
+	. = ..()
+	AddComponent(/datum/component/largetransparency, 1, 1)
 
 /obj/structure/flora/rock/pile/largejungle
 	name = "rocks"

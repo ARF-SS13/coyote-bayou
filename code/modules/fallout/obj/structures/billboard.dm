@@ -15,16 +15,7 @@
 	. = ..()
 	AddComponent(/datum/component/largetransparency, x_size = 1, y_size = 1)
 
-/*
-/obj/structure/billboard/New()
-	..()
 
-	var/go/S = new (locate(x+1,y,z))
-	S.density = 1
-	S.anchored = 1
-	S.icon = null
-	S.verbs.Cut()
-*/
 /obj/structure/billboard/ritas
 	name = "Rita's Cafe billboard"
 	desc = "A defaced pre-War ad for Rita's Cafe.<br>The wasteland has taken its toll on the board."

@@ -35,13 +35,21 @@
 	if(!isnull(toggle_click))
 		src.toggle_click = toggle_click
 	if(large_atom.pixel_x)
-		src.x_offset += FLOOR(large_atom.pixel_x / 32, 1) // Every full 32 pixel shifts we leave one turf behind.
+		var/extra_x_offset = FLOOR(abs(large_atom.pixel_x / 32), 1) // Every full 32 pixel shifts we leave one turf behind.
+		if(extra_x_offset)
+			src.x_offset += large_atom.pixel_x > 0 ? extra_x_offset : -extra_x_offset
 		if(large_atom.pixel_x % 32)
 			src.x_size++ // Sprite is now sticking between two tiles, we'll have to listen for both.
+			if(large_atom.pixel_x < 0)
+				src.x_offset-- // If negative then we need to shift in the opposite direction.
 	if(large_atom.pixel_y)
-		src.y_offset += FLOOR(large_atom.pixel_y / 32, 1)
+		var/extra_y_offset = FLOOR(abs(large_atom.pixel_y / 32), 1)
+		if(extra_y_offset)
+			src.y_offset += large_atom.pixel_y > 0 ? extra_y_offset : -extra_y_offset
 		if(large_atom.pixel_y % 32)
 			src.y_size++
+			if(large_atom.pixel_y < 0)
+				src.y_offset--
 
 
 /datum/component/largetransparency/Destroy()
@@ -61,7 +69,7 @@
 	if(!current_tu)
 		return
 	var/turf/lowleft_tu = locate(clamp(current_tu.x + x_offset, 0, world.maxx), clamp(current_tu.y + y_offset, 0, world.maxy), current_tu.z)
-	var/turf/upright_tu = locate(min(lowleft_tu.x + x_size, world.maxx), min(lowleft_tu.y + y_size, world.maxy), current_tu.z)
+	var/turf/upright_tu = locate(clamp(current_tu.x + x_offset + x_size, 0, world.maxx), clamp(current_tu.y + y_offset + y_size, 0, world.maxy), current_tu.z)
 	registered_turfs = block(lowleft_tu, upright_tu) //small problems with z level edges but nothing gamebreaking.
 	//register the signals
 	for(var/regist_tu in registered_turfs)
