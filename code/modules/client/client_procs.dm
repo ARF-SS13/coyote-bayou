@@ -346,9 +346,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 
 
-	if(alert_mob_dupe_login)
-		spawn()
-			alert(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
+	if(alert_mob_dupe_login && !holder)
+		alert_async(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
 
 	connection_time = world.time
 	connection_realtime = world.realtime
@@ -477,6 +476,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// view_size.setZoomMode()
 	// fit_viewport()
 	Master.UpdateTickRate()
+
+
+/proc/alert_async(mob/target, message)
+	set waitfor = FALSE
+	alert(target, message)
+
 
 //////////////
 //DISCONNECT//
