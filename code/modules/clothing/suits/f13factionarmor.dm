@@ -6,12 +6,12 @@
 	name = "base raider armor"
 	desc = "for testing"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("tier" = 2, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("tier" = 3, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 40
 
 /obj/item/clothing/suit/armor/f13/raider/supafly
 	name = "supa-fly raider armor"
-	desc = "(II) Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
+	desc = "(III) Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
 	item_state = "supafly"
 
@@ -21,7 +21,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/rebel
 	name = "rebel raider armor"
-	desc = "(II) Rebel, rebel. Your face is a mess."
+	desc = "(III) Rebel, rebel. Your face is a mess."
 	icon_state = "raider_rebel_icon"
 	item_state = "raider_rebel_armor"
 
@@ -31,7 +31,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/sadist
 	name = "sadist raider armor"
-	desc = "(II) A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
+	desc = "(III) A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
 	icon_state = "sadist"
 	item_state = "sadist"
 
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/blastmaster
 	name = "blastmaster raider armor"
-	desc = "(II) A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
+	desc = "(III) A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -53,7 +53,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/yankee
 	name = "yankee raider armor"
-	desc = "(II) A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
+	desc = "(III) A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
 	icon_state = "yankee"
 	item_state = "yankee"
 
@@ -63,7 +63,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/badlands
 	name = "badlands raider armor"
-	desc = "(II) A leather top with a bandolier over it and a straps that cover the arms."
+	desc = "(III) A leather top with a bandolier over it and a straps that cover the arms."
 	icon_state = "badlands"
 	item_state = "badlands"
 
@@ -73,7 +73,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/painspike
 	name = "painspike raider armor"
-	desc = "(II) A particularly unhuggable armor, even by raider standards. Extremely spiky."
+	desc = "(III) A particularly unhuggable armor, even by raider standards. Extremely spiky."
 	icon_state = "painspike"
 	item_state = "painspike"
 
@@ -83,7 +83,7 @@
 
 /obj/item/clothing/suit/armor/f13/raider/iconoclast
 	name = "iconoclast raider armor"
-	desc = "(II) A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
+	desc = "(III) A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
 
@@ -93,13 +93,13 @@
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster
 	name = "combat duster"
-	desc = "(II) An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "(III) An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
 
 /obj/item/clothing/suit/armor/f13/raider/combatduster/patrolduster
 	name = "Patrol Duster"
-	desc = "(II) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
+	desc = "(III) What appears to be an NCR patrol ranger's armor under a green tinted duster. The armor itself looks much more well kept then the duster itself, said duster looking somewhat faded. On the back of the duster, is a symbol of a skull with an arrow piercing through the eye."
 	icon_state = "patrolduster"
 	item_state = "patrolduster"
 
@@ -111,13 +111,13 @@
 	name = "base faction exile armor"
 	desc = "this is for testing."
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/exile/ncrexile
 	name = "modified NCR armor"
-	desc = "(II) A modified detoriated armor kit consisting of NCR gear and scrap metal."
+	desc = "(III) A modified detoriated armor kit consisting of NCR gear and scrap metal."
 	icon_state = "ncrexile"
 	item_state = "ncrexile"
 
@@ -127,7 +127,7 @@
 
 /obj/item/clothing/suit/armor/f13/exile/legexile
 	name = "modified Legion armor"
-	desc = "(II) A modified detoriated armor kit consisting of Legion gear and scrap metal."
+	desc = "(III) A modified detoriated armor kit consisting of Legion gear and scrap metal."
 	icon_state = "legexile"
 	item_state = "legexile"
 
@@ -137,7 +137,7 @@
 
 /obj/item/clothing/suit/armor/f13/exile/bosexile
 	name = "modified Brotherhood armor"
-	desc = "(II) A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
+	desc = "(III) A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
 	icon_state = "brotherhoodexile"
 	item_state = "brotherhoodexile"
 
