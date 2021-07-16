@@ -78,8 +78,8 @@
 					continue
 			else
 				var/list/view_range_list = splittext(ghost_view, "x")
-				if(abs(x - ghost.x) <= ((text2num(view_range_list[1]) - 1) / 2))
-					if(abs(y - ghost.y) <= ((text2num(view_range_list[2]) - 1) / 2))
+				if(abs(x - ghost.x) < ((text2num(view_range_list[1]) - 1) / 2))
+					if(abs(y - ghost.y) < ((text2num(view_range_list[2]) - 1) / 2))
 						continue
 		ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, src)] [message]</span>")
 
