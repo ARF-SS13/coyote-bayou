@@ -5,8 +5,8 @@
 	desc = "Some dry, virtually dead grass."
 	icon_state = "tall_grass_1"
 
-/obj/structure/flora/grass/wasteland/New()
-	..()
+/obj/structure/flora/grass/wasteland/Initialize()
+	. = ..()
 	icon_state = "tall_grass_[rand(1,8)]"
 
 /obj/structure/flora/grass/wasteland/attackby(obj/item/W, mob/user, params) //we dont use /weapon any more
@@ -33,10 +33,10 @@
 	obj_integrity = 100
 	max_integrity = 100
 
-/obj/structure/flora/tree/wasteland/New()
+/obj/structure/flora/tree/wasteland/Initialize()
+	. = ..()
 	icon_state = "deadtree_[rand(1,6)]"
-	..()
-
+	AddComponent(/datum/component/largetransparency, y_offset = 1)
 
 
 /obj/structure/flora/wasteplant
@@ -187,6 +187,7 @@ obj/structure/flora/wasteplant/wild_punga
 /obj/structure/flora/tree/joshua/Initialize()
 	. = ..()
 	icon_state = "joshua_[rand(1,4)]"
+	AddComponent(/datum/component/largetransparency, y_offset = 1)
 
 /obj/structure/flora/tree/cactus
 	name = "cactus"
