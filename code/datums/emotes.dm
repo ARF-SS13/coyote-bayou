@@ -58,7 +58,7 @@
 
 	if(user.client)
 		for(var/mob/ghost as anything in GLOB.dead_mob_list)
-			if(!ghost.client || isnewplayer(ghost) || ghost.stat != DEAD)
+			if(!ghost.client || isnewplayer(ghost))
 				continue
 			if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 				continue
