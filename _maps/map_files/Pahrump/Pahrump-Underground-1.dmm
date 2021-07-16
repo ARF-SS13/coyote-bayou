@@ -994,7 +994,6 @@
 "aXJ" = (
 /obj/structure/closet/crate/large,
 /obj/item/circuitboard/machine/protolathe,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -7424,6 +7423,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/iv_drip/telescopic,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -8655,6 +8655,13 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"hjD" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "S2"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "hkh" = (
 /obj/structure/simple_door/metal/ventilation,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -15885,6 +15892,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"mTe" = (
+/mob/living/simple_animal/hostile/enclave/soldier,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/bunker)
 "mTj" = (
 /obj/effect/temp_visual/steam_release,
 /turf/open/water,
@@ -19567,6 +19580,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -22800,6 +22814,7 @@
 "rQm" = (
 /obj/structure/closet/crate/large,
 /obj/item/storage/box/stockparts/basic,
+/obj/item/circuitboard/machine/circuit_imprinter,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -38943,7 +38958,7 @@ uoO
 eLE
 aOW
 fSV
-dFI
+mTe
 qju
 cDL
 aOW
@@ -50510,7 +50525,7 @@ eLE
 uoO
 xVz
 xVz
-xVz
+eAQ
 xVz
 xVz
 xVz
@@ -51023,7 +51038,7 @@ eLE
 uoO
 xVz
 xVz
-lAE
+tmX
 xVz
 xVz
 xVz
@@ -53883,7 +53898,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+eAQ
 xVz
 xVz
 xVz
@@ -60198,7 +60213,7 @@ nBk
 nBk
 dyv
 nBk
-nBk
+hjD
 nKZ
 nBk
 aUW
