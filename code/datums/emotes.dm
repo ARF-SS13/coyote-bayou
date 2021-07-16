@@ -56,11 +56,23 @@
 	user.log_message(msg, LOG_EMOTE)
 	var/dchatmsg = "<b>[user]</b> [msg]"
 
-	var/user_turf = get_turf(user)
-	for(var/mob/ghost as anything in GLOB.dead_mob_list)
-		if(!ghost.client || isnewplayer(ghost) || !user.client)
-			continue
-		if(ghost.stat == DEAD && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, null)))
+	if(user.client)
+		for(var/mob/ghost as anything in GLOB.dead_mob_list)
+			if(!ghost.client || isnewplayer(ghost) || ghost.stat != DEAD)
+				continue
+			if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
+				continue
+			var/ghost_view = ghost.client.view
+			if(ghost.z == user.z)
+				if(isnum(ghost_view))
+					if(get_dist(user, ghost) > ghost_view)
+						continue
+				else
+					var/list/view_range_list = splittext(ghost_view, "x")
+					if(abs(user.x - ghost.x) > text2num(view_range_list[1]))
+						continue
+					if(abs(user.y - ghost.y) > text2num(view_range_list[2]))
+						continue
 			ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, user)] [dchatmsg]</span>")
 
 	if(emote_type == EMOTE_AUDIBLE)
