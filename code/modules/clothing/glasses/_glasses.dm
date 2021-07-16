@@ -252,18 +252,6 @@
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	dog_fashion = /datum/dog_fashion/head
 
-/obj/item/clothing/glasses/sunglasses/townglasses
-	name = "Rear Viewators"
-	desc = "Objects in mirror are probably deader than they appear."
-	icon_state = "townglasses"
-	item_state = "townglasses"
-
-/obj/item/clothing/glasses/sunglasses/towncptglasses
-	name = "Golden Rear Viewators"
-	desc = "Objects in mirror are probably deader than they appear. These belong to the OPD Captain, the frames have been painted gold."
-	icon_state = "towncptglasses"
-	item_state = "towncptglasses"
-
 /obj/item/clothing/glasses/sunglasses/reagent
 	name = "beer goggles"
 	desc = "A pair of sunglasses outfitted with apparatus to scan reagents."

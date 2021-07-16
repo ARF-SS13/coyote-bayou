@@ -1,6 +1,6 @@
 /*
 Town access doors
-OPD Captain/OPD Patrolman, Gatehouse etc: 62 ACCESS_GATEWAY
+Sheriff/Deputy, Gatehouse etc: 62 ACCESS_GATEWAY
 General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
 Shopkeeper: 34 ACCESS_CARGO_BOT
@@ -53,9 +53,12 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/datum/gear/shoes/laceup
+	shoes = 		/obj/item/clothing/shoes/f13/tan
 	uniform = /obj/item/clothing/under/f13/gentlesuit
+	suit = /obj/item/clothing/suit/armor/f13/town/mayor
+	head = /obj/item/clothing/head/f13/town/mayor
 	backpack_contents = list(
+		/obj/item/clothing/head/f13/town/big = 1, \
 		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/pen/fountain/captain = 1)
@@ -63,7 +66,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/den/f13sheriff
-	title = "OPD Captain"
+	title = "Sheriff"
 	flag = F13SHERIFF
 	department_flag = DEN
 	head_announce = list("Security")
@@ -81,25 +84,25 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 
 /datum/outfit/job/den/f13sheriff
-	name = "OPD Captain"
+	name = "Sheriff"
 	jobtype = /datum/job/den/f13sheriff
 
-	id = /obj/item/card/id/dogtag/towncaptain
+	id = /obj/item/card/id/dogtag/sheriff
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	ears = 			/obj/item/radio/headset/headset_town
-	uniform =  		/obj/item/clothing/under/f13/towncaptain
+	uniform =  		/obj/item/clothing/under/f13/sheriff
 	neck =			/obj/item/storage/belt/holster
-	shoes = 		/obj/item/clothing/shoes/laceup
-	suit = 			/obj/item/clothing/suit/armor/f13/town/coatcaptain
-	head = 			/obj/item/clothing/head/f13/town/captainhat
-	glasses =		/obj/item/clothing/glasses/sunglasses/towncptglasses
+	shoes = 		/obj/item/clothing/shoes/f13/cowboy
+	suit = 			/obj/item/clothing/suit/armor/f13/town/sheriff
+	head = 			/obj/item/clothing/head/f13/town/sheriff
+	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
-		/obj/item/storage/box/patrolman_badges=1, \
+		/obj/item/storage/box/deputy_badges=1, \
 		/obj/item/ammo_box/tube/c4570=3, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/restraints/handcuffs=1, \
@@ -118,48 +121,47 @@ Mayor
 
 /*--------------------------------------------------------------*/
 
-/datum/job/den/f13patrolman
-	title = "OPD Patrolman"
-	flag = F13PATROLMAN
+/datum/job/den/f13deputy
+	title = "Deputy"
+	flag = F13DEPUTY
 	department_flag = DEN
 	faction = "Town"
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "Oasis Police Department"
-	description = "You've passed the training and tests to join the OPD, and your loyalty to the Captain is absolute - this is your true family. This oasis of civilization will not fall as long as you breathe. Protect its citizens and property, for that is your new purpose."
+	description = "You've passed the training and tests to join the OPD, and your loyalty to the Chief is absolute - this is your new home, your family. This oasis of civilization will not fall as long as you breathe. Protect its citizens and property, for that is your new purpose."
 	selection_color = "#dcba97"
 	exp_requirements = 12
 	exp_type = EXP_TYPE_DEN
 	exp_requirements = 600
 
-	outfit = /datum/outfit/job/den/f13patrolman
+	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
-/datum/outfit/job/den/f13patrolman
-	name = "OPD Patrolman"
-	jobtype = /datum/job/den/f13patrolman
+/datum/outfit/job/den/f13deputy
+	name = "Deputy"
+	jobtype = /datum/job/den/f13deputy
 
 	ears = 			/obj/item/radio/headset/headset_town
-	id = /obj/item/card/id/dogtag/townpatrol
+	id =            /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	suit = /obj/item/clothing/suit/armor/f13/town/coatpatrol
-	head = /obj/item/clothing/head/f13/town/patrolmanhat
-	glasses = /obj/item/clothing/glasses/sunglasses/townglasses
+	suit = 			/obj/item/clothing/suit/armor/f13/town/deputy
+	head =	/obj/item/clothing/head/f13/town/deputy
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = /datum/gear/shoes/laceup
-	uniform = /obj/item/clothing/under/f13/townpatrol
+	shoes = 		/obj/item/clothing/shoes/f13/explorer
+	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat)
 
-/datum/outfit/job/den/f13patrolman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return

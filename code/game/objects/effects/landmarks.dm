@@ -737,8 +737,8 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Sheriff"
 	icon_state = "Sheriff"
 
-/obj/effect/landmark/start/f13/patrolman
-	name = "OPD Patrolman"
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
 
 /obj/effect/landmark/start/f13/farmer
 	name = "Farmer"

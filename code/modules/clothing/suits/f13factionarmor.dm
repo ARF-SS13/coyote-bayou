@@ -611,23 +611,30 @@
 	armor = list("tier" = 5, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 //Oasis/Town
-/obj/item/clothing/suit/armor/f13/town/coatpatrol
-	name = "OPD Patrolman Coat"
-	desc = "The coat of an Oasis Police Department Patrolman, with an armored vest underneath."
-	icon_state = "townpatrolcoat"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+/obj/item/clothing/suit/armor/f13/town
+	name = "town trenchcoat"
+	desc = "(III) A non-descript black trenchcoat."
+	icon_state = "towntrench"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("tier" = 3, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/town/coatsergeant
-	name = "OPD Sergeant Coat"
-	desc = "The coat of the Oasis Police Department's Sergeant, with an armored vest underneath."
-	icon_state = "townsargecoat"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+/obj/item/clothing/suit/armor/f13/town/mayor
+	name = "mayor trenchcoat"
+	desc = "(IV) A symbol of the mayor's authority (or lack thereof)."
+	armor = list("tier" = 4, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/town/coatcaptain
-	name = "OPD Captain Coat"
-	desc = "The coat of the Oasis Police Department's Captain, with an armored vest underneath."
-	icon_state = "towncaptaincoat"
+/obj/item/clothing/suit/armor/f13/town/sheriff
+	name = "sheriff trenchcoat"
+	desc = "(VI) A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
+	icon_state = "towntrench_heavy"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town/deputy
+	name = "deputy trenchcoat"
+	desc = "(V) An armored trench coat with added shoulderpads, a chestplate, and legguards."
+	icon_state = "towntrench_medium"
+	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket
