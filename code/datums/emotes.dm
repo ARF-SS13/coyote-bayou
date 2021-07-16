@@ -58,7 +58,7 @@
 
 	var/user_turf = get_turf(user)
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
-		if(!ghost.client || isnewplayer(ghost) || !ghost.client)
+		if(!ghost.client || isnewplayer(ghost) || !user.client)
 			continue
 		if(ghost.stat == DEAD && (ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(ghost in viewers(user_turf, null)))
 			ghost.show_message("<span class='emote'>[FOLLOW_LINK(ghost, user)] [dchatmsg]</span>")
