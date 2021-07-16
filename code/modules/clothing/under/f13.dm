@@ -189,6 +189,8 @@
 	item_state = "settler"
 	item_color = "settler"
 
+//The City
+
 //Ranger
 /obj/item/clothing/under/f13/ranger
 	name = "ranger outfit"
@@ -266,6 +268,14 @@
 	icon_state = "vetranger"
 	item_state = "rustictown"
 	item_color = "rustictown"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
+
+/obj/item/clothing/under/f13/sheriff
+	name = "sheriff outfit"
+	desc = "The symbol of law and civilization, a black vest over a well starched white shirt."
+	icon_state = "vest_and_slacks"
+	item_state = "vest_and_slacks"
+	item_color = "vest_and_slacks"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/sleazeball
@@ -450,6 +460,7 @@
 	desc = "A mercenary ragtag outfit."
 	icon_state = "merca"
 	item_state = "merca"
+	item_color = "merca"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/mercc
@@ -457,35 +468,29 @@
 	desc = "A mercenary ragtag outfit."
 	icon_state = "mercc"
 	item_state = "mercc"
+	item_color = "mercc"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-
-/obj/item/clothing/under/f13/townpatrol
-	name = "OPD Patrolman Uniform"
-	desc = "The uniform of the Oasis Police Department. It looks incredibly well cared for, intact and clean."
-	icon_state = "townpatrol"
-
-/obj/item/clothing/under/f13/towncaptain
-	name = "OPD Captain Uniform"
-	desc = "The uniform of the Oasis Police Department. It looks incredibly well cared for, intact and clean."
-	icon_state = "towncaptain"
 
 /obj/item/clothing/under/f13/cowboyb
 	name = "cowboy outfit"
-	desc = "An unwashed cowboy outfit. Common among the ranchero caste."
+	desc = "A dirt brown cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyb"
 	item_state = "cowboyb"
+	item_color = "cowboyb"
 
 /obj/item/clothing/under/f13/cowboyg
 	name = "cowboy outfit"
-	desc = "An unwashed cowboy outfit. Common among the ranchero caste."
+	desc = "A dirt grey cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyg"
 	item_state = "cowboyg"
+	item_color = "cowboyg"
 
 /obj/item/clothing/under/f13/combat_shirt
 	name = "combat uniform"
 	desc = "An old combat uniform, out of use around the time of the war."
 	icon_state = "combat_shirt"
 	item_state = "combat_shirt"
+	item_color = "combat_shirt"
 
 /obj/item/clothing/under/f13/Retro_Biker_Vest
 	name = "future vest"
@@ -548,6 +553,7 @@
 	desc = "It's an outfit commonly worn by the roving traders."
 	icon_state = "roving"
 	item_state = "roving"
+	item_color = "roving"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/follower

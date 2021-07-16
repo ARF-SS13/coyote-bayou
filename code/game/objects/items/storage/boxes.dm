@@ -686,6 +686,14 @@ obj/item/storage/box/stingbangs
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/deputy
+	name = "box of deputy armbands"
+	desc = "To be issued to those authorized to act as deputy of security."
+
+/obj/item/storage/box/deputy/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/clothing/accessory/armband/deputy(src)
+
 /obj/item/storage/box/metalfoam
 	name = "box of metal foam grenades"
 	desc = "To be used to rapidly seal hull breaches."
@@ -1371,14 +1379,14 @@ obj/item/storage/box/stingbangs
 	for(var/i in 1 to 7)
 		new /obj/item/card/id/dogtag/legfollower
 
-/obj/item/storage/box/patrolman_badges
+/obj/item/storage/box/deputy_badges
 	name = "box of spare badges"
-	desc = "A box containing the spare badges for patrolmen. Use your captain badge on a patrolman badge to assign its owner."
+	desc = "A box containing the spare badges for deputies. Use your sheriff badge on a deputy badge to assign its owner."
 	illustration = "id"
 
-/obj/item/storage/box/patrolman_badges/PopulateContents()
+/obj/item/storage/box/deputy_badges/PopulateContents()
 	for(var/i in 1 to 3)
-		new /obj/item/card/id/dogtag/townpatrol(src)
+		new /obj/item/card/id/dogtag/deputy(src)
 
 /obj/item/storage/box/citizenship_permits
 	name = "box of citizenship permits"

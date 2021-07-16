@@ -747,35 +747,35 @@
 	item_state = "bos_beret"
 
 //Oasis/Town
+
+/obj/item/clothing/head/f13/town
+	name = "town tricorn"
+	desc = "(III) Why are there tricorns in the desert again?"
+	icon_state = "tricorn"
+	item_state = "dethat"
+	flags_inv = HIDEHAIR
+	armor = list("tier" = 3, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/head/f13/town/mayor
+	name = "mayoral tricorn"
+	desc = "(IV) A tricorn in the desert.  Stranger things have happened."
+	armor = list("tier" = 4, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+
 /obj/item/clothing/head/f13/town/big
-	name = "old hat"
-	desc = "Worn by the first mayor of Oasis, who rallied the people around the one green oak left in the valley."
+	name = "big hat"
+	desc = "(III) It's a big hat."
 	icon_state = "bigcowboyhat"
 
-/obj/item/clothing/head/f13/town/patrolmanhat
-	name = "Patrolman's Hat"
-	desc = "An Oasis Police Department hat, this one belongs to one of the patrolmen. It has an aura of duty."
-	icon_state = "townpatrolhat"
+/obj/item/clothing/head/f13/town/deputy
+	name = "deputy hat"
+	desc = "(V) A black cowboy hat."
+	icon_state = "deputyhat"
 	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/f13/town/townhelmet
-	name = "OPD Helmet"
-	desc = "An Oasis Police Department helmet, modified from a former Highway Patrol helmet."
-	icon_state = "townhelmet"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/town/townriot
-	name = "OPD Riot Helmet"
-	desc = "An Oasis Police Department riot helmet, this has saved the lives of OPD patrolmen for generations on."
-	icon_state = "townriothelmet"
-	item_state = "townriothelmet"
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 60, "rad" = 20, "fire" = 75, "acid" = 10)
-	actions_types = list(/datum/action/item_action/toggle)
-
-/obj/item/clothing/head/f13/town/captainhat
-	name = "Captain's Hat"
-	desc = "An Oasis Police Department hat, this one belongs to the captain of the patrolmen. It has an aura of authority."
-	icon_state = "towncaptainhat"
+/obj/item/clothing/head/f13/town/sheriff
+	name = "sheriff hat"
+	desc = "(VI) A black cowboy hat with a snakeskin band."
+	icon_state = "sheriffhat"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/det_hat_alt

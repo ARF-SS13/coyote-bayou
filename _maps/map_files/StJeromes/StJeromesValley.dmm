@@ -1755,6 +1755,7 @@
 /obj/structure/closet/secure_closet/contraband,
 /obj/item/storage/briefcase/lawyer,
 /obj/item/clothing/accessory/lawyers_badge,
+/obj/item/clothing/accessory/armband/deputy,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/vault)
 "aeO" = (
@@ -38541,7 +38542,7 @@
 /area/f13/klamat)
 "gbL" = (
 /obj/structure/chair/stool,
-/obj/effect/landmark/start/f13/patrolman,
+/obj/effect/landmark/start/f13/deputy,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
@@ -39406,7 +39407,7 @@
 /area/f13/klamat)
 "jaS" = (
 /obj/structure/chair/stool,
-/obj/effect/landmark/start/f13/patrolman,
+/obj/effect/landmark/start/f13/deputy,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/old,
@@ -41541,7 +41542,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/patrolman,
+/obj/effect/landmark/start/f13/deputy,
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
 "sId" = (
