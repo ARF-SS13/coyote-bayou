@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Mayor",
 "Sheriff",
-"Deputy",
+"OPD Patrolman",
 "Shopkeeper",
 "Doctor",
 "Prospector",
@@ -141,7 +141,7 @@ GLOBAL_LIST_INIT(faction_player_positions, list(
 "Legion Auxilia",
 "Legion Slave",
 
-"Deputy",
+"OPD Patrolman",
 "Shopkeeper",
 "Doctor",
 "Prospector",
@@ -204,7 +204,7 @@ GLOBAL_LIST_INIT(den_command_positions, list(
 GLOBAL_LIST_INIT(den_positions, list(
 	"Doctor",
 	"Citizen",
-	"Deputy",
+	"OPD Patrolman",
 	"Shopkeeper",
 	"Farmer",
 	"Prospector",
@@ -315,7 +315,7 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 
 GLOBAL_LIST_INIT(security_positions, list(
 	"Vault-tec Security",
-	"Deputy"
+	"OPD Patrolman"
 ))
 GLOBAL_LIST_INIT(silicon_positions, list(
 	"Mr. Handy"

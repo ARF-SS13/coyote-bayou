@@ -278,7 +278,7 @@
 
 //Peacekeeper					 					Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
-	name = "Peacekeeper"
+	name = "The Enforcer"
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
 	icon_state = "m29peace"
