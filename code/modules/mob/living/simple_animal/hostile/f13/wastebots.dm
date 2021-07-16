@@ -429,14 +429,28 @@
 
 /mob/living/simple_animal/hostile/handy/sentrybot/chew
 	name = "lil' chew-chew"
-	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick, oddly blue armor plating, the name Lil' Chew-Chew scratched onto it's front armour."
+	desc = "An oddly scorched pre-war military robot armed with a deadly gatling laser and covered in thick, oddly blue armor plating, the name Lil' Chew-Chew scratched onto it's front armour crudely, highlighted by small bits of white paint. There seems to be an odd pack on the monstrosity of a sentrie's back, a chute at the bottom of it - there's the most scorch-marks on the robot here, so it's safe to assume this robot is capable of explosions. Better watch out!"
 	extra_projectiles = 6
 	health = 1000
 	maxHealth = 1000 //CHONK
 	obj_damage = 300
 	retreat_distance = 0
-	environment_smash = 2 //wall-busts
+	environment_smash = ENVIRONMENT_SMASH_RWALLS //wall-obliterator. perish.
 	color = "#75FFE2"
+	aggro_vision_range = 15
+	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 //cannot self-harm with it's explosion spam
+
+/mob/living/simple_animal/hostile/handy/sentrybot/chew/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
+	if(prob(10) && health > 1)
+		visible_message("<span class='danger'>\The [src] releases a defensive explosive!</span>")
+		explosion(get_turf(src),-1,-1,2, flame_range = 4) //perish, mortal - explosion size identical to craftable IED
+	if(prob(75) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
+		return ..()
+	else
+		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s armor plating!</span>")
+		return FALSE
 
 /mob/living/simple_animal/hostile/handy/sentrybot/nsb //NSB + Raider Bunker specific.
 	name = "sentry bot"
