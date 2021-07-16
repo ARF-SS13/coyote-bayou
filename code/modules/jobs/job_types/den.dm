@@ -118,54 +118,6 @@ Mayor
 
 /*--------------------------------------------------------------*/
 
-/datum/job/den/f13townsergeant
-	title = "OPD Sergeant"
-	flag = F13TOWNSERGEANT
-	department_flag = DEN
-	faction = "Town"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "Oasis Police Department"
-	description = "You are a veteran of the OPD, a tried and true lawman in the last true civilized place of Yuma Valley. Your loyalty to the Captain is beyond absolute, as is your loyalty to Oasis. Ensure the new patrolmen learn how to survive and how to treat the citizens properly."
-	selection_color = "#dcba97"
-	exp_requirements = 12
-	exp_type = EXP_TYPE_DEN
-	exp_requirements = 720
-
-	outfit = /datum/outfit/job/den/f13townsergeant
-	access = list(ACCESS_BAR, ACCESS_GATEWAY)
-	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
-
-/datum/outfit/job/den/f13townsergeant
-	name = "OPD Sergeant"
-	jobtype = /datum/job/den/f13townsergeant
-
-	ears = /obj/item/radio/headset/headset_town
-	id = /obj/item/card/id/dogtag/townsergeant
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-	l_pocket = /obj/item/storage/bag/money/small/settler
-	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	suit = /obj/item/clothing/suit/armor/f13/town/coatsergeant
-	head = /obj/item/clothing/head/f13/town/patrolmanhat
-	glasses = /obj/item/clothing/glasses/sunglasses/townglasses
-	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = /datum/gear/shoes/laceup
-	uniform = /obj/item/clothing/under/f13/townpatrol
-	backpack_contents = list(
-		/obj/item/ammo_box/a357=2, \
-		/obj/item/ammo_box/tube/m44=2, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat)
-
-/datum/outfit/job/den/f13townsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-
-/*---*/
 /datum/job/den/f13patrolman
 	title = "OPD Patrolman"
 	flag = F13PATROLMAN
