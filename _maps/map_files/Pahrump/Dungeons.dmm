@@ -760,7 +760,9 @@
 /area/f13/wasteland)
 "aUx" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/chew,
+/mob/living/simple_animal/hostile/handy/sentrybot/chew{
+	faction = list("raider")
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
