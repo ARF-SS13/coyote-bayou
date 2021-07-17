@@ -648,7 +648,7 @@
 /area/f13/ncr)
 "aco" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "acp" = (
@@ -2449,7 +2449,6 @@
 /obj/structure/rack,
 /obj/item/cultivator,
 /obj/item/shovel/spade,
-/obj/item/hatchet,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/followers)
 "ahY" = (
@@ -10658,9 +10657,7 @@
 /area/f13/village)
 "aId" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/warclub,
-/obj/item/claymore/machete/warclub,
-/obj/item/claymore/machete/warclub,
+/obj/item/melee/onehanded/machete,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "aIe" = (
@@ -10953,8 +10950,7 @@
 /area/f13/village)
 "aIV" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -14010,8 +14006,6 @@
 /area/f13/village)
 "aSQ" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
-/obj/item/hatchet,
 /obj/item/wirecutters{
 	icon_state = "cutters"
 	},
@@ -14744,8 +14738,6 @@
 /area/f13/wasteland)
 "aVn" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
-/obj/item/hatchet,
 /obj/item/lighter,
 /obj/item/wirecutters,
 /obj/item/screwdriver,
@@ -20866,8 +20858,7 @@
 /area/f13/building)
 "buy" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
 "buz" = (
@@ -28660,7 +28651,7 @@
 /area/f13/city)
 "bWZ" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/warclub,
+/obj/item/melee/onehanded/machete,
 /obj/item/twohanded/bonespear,
 /obj/item/twohanded/bonespear,
 /turf/open/indestructible/ground/inside/mountain,
@@ -41869,10 +41860,7 @@
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
 /obj/item/gun/ballistic/revolver/caravan_shotgun,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ptD" = (

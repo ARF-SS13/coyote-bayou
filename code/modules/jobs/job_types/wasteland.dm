@@ -40,7 +40,7 @@
 		/obj/item/pda=1,
 		/obj/item/ammo_box/magazine/m556/rifle/extended=2,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1
+		/obj/item/melee/onehanded/knife/hunting=1
 		)
 
 /datum/job/wasteland/enclavesgt
@@ -79,7 +79,7 @@
 		/obj/item/grenade/flashbang=1,
 		/obj/item/pda=1,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper=1
 		)
 
@@ -131,7 +131,7 @@
 		/obj/item/gun/energy/laser/ultra_pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/clothing/head/helmet/f13/helmet/enclave/science=1
 		)
 
@@ -188,7 +188,7 @@
 		/obj/item/stock_parts/cell/ammo/ec=3,
 		/obj/item/gun/energy/laser/plasma/glock/extended=1,
 		/obj/item/storage/bag/money/small/wastelander=1,
-		/obj/item/kitchen/knife/combat=1
+		/obj/item/melee/onehanded/knife/hunting=1
 		)
 
 /datum/outfit/job/wasteland/enclavelt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -278,7 +278,7 @@ Great Khan
 	jobtype = /datum/job/wasteland/f13pusher
 	id = 		/obj/item/card/id/khantattoo
 	ears = 		/obj/item/radio/headset
-	belt = 		/obj/item/claymore/machete
+	belt = 		/obj/item/melee/onehanded/machete
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	uniform = /obj/item/clothing/under/f13/khan
@@ -426,7 +426,7 @@ Raider
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=2, \
-		/obj/item/claymore/machete/pipe=1, \
+		/obj/item/melee/onehanded/club=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/raider=1)
 
@@ -453,7 +453,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/autopipe=1,
 		/obj/item/ammo_box/magazine/autopipe=3,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/storage/box/dice=1,
 		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1)
 
@@ -506,8 +506,8 @@ Raider
 		/obj/item/gun/ballistic/revolver/caravan_shotgun=1,
 		/obj/item/ammo_box/shotgun/buck=1,
 		/obj/item/ammo_box/shotgun/bean=1,
-		/obj/item/claymore/machete/pipe/tireiron=1,
-		/obj/item/claymore/machete/pipe/pan=1,
+		/obj/item/melee/onehanded/club/tireiron=1,
+		/obj/item/melee/onehanded/club/fryingpan=1,
 		/obj/item/grenade/chem_grenade/cleaner=1)
 
 
@@ -569,7 +569,7 @@ Raider
 	id = 		/obj/item/card/id/outcasttattoo
 	backpack_contents = list(
 		/obj/item/clothing/mask/cigarette/pipe=1,
-		/obj/item/kitchen/knife/combat/bone=1)
+		/obj/item/melee/onehanded/knife/bone=1)
 
 /datum/outfit/loadout/raider_enclave
 	name = "Enclave Remnant"
@@ -631,7 +631,7 @@ Raider
 		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer)
 	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
-	belt = 	/obj/item/kitchen/knife/combat/survival
+	belt = 	/obj/item/melee/onehanded/knife/survival
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/pill/radx=1, \
@@ -771,7 +771,7 @@ Raider
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_den
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
 	backpack =	/obj/item/storage/backpack/satchel
@@ -825,7 +825,7 @@ Raider
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(
 						/obj/item/ammo_box/shotgun/buck=2, \
-						/obj/item/kitchen/knife/combat=1
+						/obj/item/melee/onehanded/knife/hunting=1
 							)
 
 
@@ -857,7 +857,7 @@ Raider
 	belt = /obj/item/storage/belt/military/assault
 	ears = /obj/item/radio/headset/headset_den
 	shoes = /obj/item/clothing/shoes/laceup
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
 	suit = /obj/item/clothing/suit/armor/f13/combat/swat
@@ -920,7 +920,7 @@ Raider
 	id = /obj/item/card/id/dogtag/vigilante
 	belt = /obj/item/storage/belt/military
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/f13/merca
 	backpack = /obj/item/storage/backpack/satchel/trekker
@@ -981,7 +981,7 @@ Raider
 	id = /obj/item/card/id/dogtag/vigilante
 	belt = /obj/item/storage/belt/military
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	l_pocket = /obj/item/kitchen/knife/combat
+	l_pocket = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/f13/merca
 	backpack = /obj/item/storage/backpack/satchel/trekker

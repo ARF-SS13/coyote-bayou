@@ -309,9 +309,9 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(10, STAMINA, null, 0)
+	M.apply_damage(15, STAMINA, null, 0)
 
-// Spiked Baseball Bat				Keywords: Damage 15/33, Damage bonus Stamina
+// Spiked Baseball Bat				Keywords: Damage 15/33, Damage bonus Stamina, Sharp
 /obj/item/twohanded/baseball/spiked
 	name = "spiked baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter, especially with large nails drilled through the top of it."
@@ -346,16 +346,25 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(15, STAMINA, null, 0)
+	M.apply_damage(19, STAMINA, null, 0)
 
-// Louisville Slugger				Keywords: Damage 15/32, Damage bonus Stamina
+// Louisville Slugger				Keywords: Damage 15/33, Damage bonus Stamina
 /obj/item/twohanded/baseball/golfclub/louisville
-	name = "aluminium bat"
+	name = "Louisville slugger"
 	desc = "Makes a satisfying thwack when hitting people."
 	icon_state = "louisville0"
 	icon_prefix = "louisville"
 	attack_verb = list("thwacked", "bashed", "slugged", "hit", "bludgeoned", "whacked", "bonked")
 
+/obj/item/twohanded/baseball/golfclub/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]1")
+
+/obj/item/twohanded/baseball/golfclub/louisville/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(22, STAMINA, null, 0)
 
 
 ///////////////////
@@ -458,7 +467,7 @@
 	icon_state = "thermiclance_[on ? "on" : "off"]"
 
 
-// Proton axe							Keywords: Damage 20/45, AP 0.6
+// Proton axe							Keywords: Damage 20/43, AP 0.5
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -469,8 +478,8 @@
 	icon_state_on = "protonaxe1"
 	slot_flags = ITEM_SLOT_SUITSTORE
 	force = 20
-	force_on = 45
-	armour_penetration = 0.6
+	force_on = 43
+	armour_penetration = 0.5
 	throwforce = 15
 	throwforce_on = 30
 
@@ -608,7 +617,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 		return
 
 
-// Chainsaw							Keywords: Damage 13/55
+// Chainsaw							Keywords: Damage 13/57
 /obj/item/twohanded/chainsaw
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
@@ -617,7 +626,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
 	force = 13
-	var/force_on = 55
+	var/force_on = 57
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 10
 	throw_speed = 2

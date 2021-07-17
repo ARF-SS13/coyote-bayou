@@ -327,10 +327,10 @@
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a127mmjhp
+/datum/design/ammolathe/a14mmjhp
 	name = "12.7mm JHP ammo box"
 	id = "a127mmjhp"
-	build_path = /obj/item/ammo_box/m127mm/jhp
+	build_path = /obj/item/ammo_box/m14mm/jhp
 	materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Basic Ammo")
 
@@ -363,13 +363,6 @@
 	id = "speedloader45lc"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/a45lcrev/empty
-	category = list("initial", "Intermediate Magazines")
-
-/datum/design/ammolathe/pps_mag
-	name = "empty ppsh magazine (9mm)"
-	id = "pps_mag"
-	materials = list(/datum/material/iron = 6000)
-	build_path = /obj/item/ammo_box/magazine/pps9mm/empty
 	category = list("initial", "Intermediate Magazines")
 
 /datum/design/ammolathe/d12g
@@ -428,6 +421,12 @@
 	build_path = /obj/item/ammo_box/magazine/sks/empty
 	category = list("initial", "Intermediate Magazines")
 
+/datum/design/ammolathe/amrmag
+	name = "empty anti-materiel rifle magazine (.50)"
+	id = "amrmagazine"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/amr
+	category = list("initial", "Advanced Magazines")
 
 //Tier 3 Ammo
 /datum/design/ammolathe/c4570
@@ -475,7 +474,7 @@
 /datum/design/ammolathe/a14mm
 	name = "14mm FMJ ammo box"
 	id = "a127mm"
-	build_path = /obj/item/ammo_box/m127mm
+	build_path = /obj/item/ammo_box/m14mm
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
 	category = list("initial", "Intermediate Ammo")
 
@@ -509,13 +508,6 @@
 
 /* --Tier 4 Ammo and Magazines-- */
 //Tier 4 Magazines
-/datum/design/ammolathe/mg34mag
-	name = "empty machine gun magazine (7.62)"
-	id = "mg34mag"
-	materials = list(/datum/material/iron = 8000)
-	build_path = /obj/item/ammo_box/magazine/mg34/empty
-	category = list("initial", "Advanced Magazines")
-
 /datum/design/ammolathe/m10mm_p90
 	name = "empty toploader magazine (10mm)"
 	id = "m10mm_p90"
@@ -566,6 +558,12 @@
 	build_path = /obj/item/ammo_box/magazine/lmg/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/pps_mag
+	name = "empty ppsh magazine (9mm)"
+	id = "pps_mag"
+	materials = list(/datum/material/iron = 6000)
+	build_path = /obj/item/ammo_box/magazine/pps9mm/empty
+	category = list("initial", "Intermediate Magazines")
 
 
 //Tier 4 Ammo

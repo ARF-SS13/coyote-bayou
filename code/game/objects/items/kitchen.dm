@@ -148,7 +148,7 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
-/obj/item/kitchen/knife/combat/survival
+/obj/item/kitchen/knife/combat/survival //obsolete
 	name = "survival knife"
 	icon_state = "knife_survival"
 	item_state = "knife"
@@ -248,6 +248,8 @@
 	throwforce = 15
 	armour_penetration = 0.2
 
+
+/*
 /obj/item/kitchen/knife/cosmicheated
 	name = "superheated cosmic knife"
 	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
@@ -257,30 +259,4 @@
 	force = 35
 	throwforce = 20
 	armour_penetration = 0.4
-/*
-/obj/item/kitchen/knife/combat/bone/plastic
-	name = "plastic knife"
-	desc = "A plastic knife. Rather harmless to anything."
-	force = 1
-	throwforce = 1
-	bayonet = FALSE
-
-/obj/item/kitchen/knife/ritual
-	name = "ritual knife"
-	desc = "Used for blood sacrifices."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	item_state = "knife"
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/kitchen/knife/scimitar
-	name = "Scimitar knife"
-	desc = "A knife used to cleanly butcher. Its razor-sharp edge has been honed for butchering, but has been poorly maintained over the years."
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
-/obj/item/kitchen/knife/scimiar/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 90 - force, 100, force - 60) //bonus chance increases depending on force
 */

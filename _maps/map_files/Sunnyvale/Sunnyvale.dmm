@@ -1737,10 +1737,6 @@
 /area/f13/legioncamp)
 "afA" = (
 /obj/structure/closet/cardboard,
-/obj/item/claymore/machete,
-/obj/item/claymore/machete,
-/obj/item/claymore/machete,
-/obj/item/claymore/machete,
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "afB" = (
@@ -3800,7 +3796,6 @@
 /obj/machinery/light/small,
 /obj/structure/table/wood,
 /obj/item/shovel,
-/obj/item/hatchet,
 /turf/open/floor/wood/f13/old{
 	icon_state = "housewood3-broken2"
 	},
@@ -20578,7 +20573,6 @@
 /area/f13/raider_mall)
 "beD" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/golf,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
 "beE" = (
@@ -25766,12 +25760,7 @@
 /area/f13/desert)
 "btB" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -32681,12 +32670,7 @@
 /area/f13/brotherhood)
 "bNY" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
@@ -34841,9 +34825,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "bUb" = (
-/obj/structure/rack,
-/obj/item/claymore/machete/warclub,
-/obj/item/kitchen/knife/combat/bone,
+/obj/item/melee/onehanded/knife/hunting,
 /obj/item/twohanded/bonespear,
 /obj/item/twohanded/twohanded/fireaxe/boneaxe,
 /obj/item/twohanded/twohanded/fireaxe/bmprsword,

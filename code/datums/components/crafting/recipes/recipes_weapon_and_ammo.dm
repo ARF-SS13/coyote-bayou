@@ -2,7 +2,7 @@
 	name = "Spear"
 	result = /obj/item/twohanded/spear
 	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/kitchen/knife/combat = 1,
+				/obj/item/melee/onehanded/knife = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/stack/crafting/goodparts = 2)
 	time = 60
@@ -37,6 +37,15 @@
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 40
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/melee/improvisedbayonet
+	name = "Improvised bayonet"
+	result = /obj/item/melee/onehanded/knife/bayonet
+	time = 300
+	reqs = list(/obj/item/melee/onehanded/knife/hunting = 1,
+				/obj/item/crafting/duct_tape = 1)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 

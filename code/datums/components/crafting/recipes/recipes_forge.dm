@@ -156,14 +156,14 @@
 	result = /obj/item/kitchen/knife/butcher
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 3,
-				/obj/item/stack/sheet/cloth = 2)
+				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/combat
-	name = "Combat Knife"
-	result = /obj/item/kitchen/knife/combat
+	name = "Hunting Knife"
+	result = /obj/item/melee/onehanded/knife/hunting
 	time = 150
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/cloth = 2)
@@ -171,17 +171,15 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/*
-/datum/crafting_recipe/combatbayonet
+/datum/crafting_recipe/bayonet
 	name = "Bayonet Knife"
-	result = /obj/item/kitchen/knife/combat/bayonet
+	result = /obj/item/melee/onehanded/knife/bayonet
 	time = 300
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/kitchen
 	name = "Kitchen Knife"
@@ -205,7 +203,7 @@
 
 /datum/crafting_recipe/survival
 	name = "Survival Knife"
-	result = /obj/item/kitchen/knife/combat/survival
+	result = /obj/item/melee/onehanded/knife/survival
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/cloth = 1)
@@ -215,7 +213,7 @@
 
 /datum/crafting_recipe/survival
 	name = "Switchblade"
-	result = /obj/item/switchblade
+	result = /obj/item/melee/onehanded/knife/switchblade
 	time = 40
 	reqs = list(/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/cloth = 1)
@@ -223,21 +221,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/*
-/datum/crafting_recipe/throwingknife
-	name = "Throwing Knife"
-	result = /obj/item/throwing_star/throwingknife
-	reqs = list(/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/sheet/cloth = 1)
-	time = 300
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
-
 /datum/crafting_recipe/bowie_knife
 	name = "Bowie Knife"
-	result = /obj/item/kitchen/knife/bowie
+	result = /obj/item/melee/onehanded/knife/bowie
 	reqs = list(/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/mineral/wood = 2)
 	time = 200
@@ -247,7 +233,7 @@
 
 /datum/crafting_recipe/trench_knife
 	name = "Trench Knife"
-	result = /obj/item/kitchen/knife/trench
+	result = /obj/item/melee/onehanded/knife/trench
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/mineral/wood = 2)
@@ -269,7 +255,7 @@
 
 /datum/crafting_recipe/reinforcemachete
 	name = "Machete"
-	result = /obj/item/claymore/machete/reinforced
+	result = /obj/item/melee/onehanded/machete/forgedmachete
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 2)
 	time = 180
@@ -277,6 +263,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/*
 /datum/crafting_recipe/shortsword
 	name = "Shortsword"
 	result = /obj/item/claymore
@@ -286,24 +273,13 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
-
-/*
-/datum/crafting_recipe/katana
-	name = "Longsword"
-	result = /obj/item/katana/scrap
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/sheet/cloth = 2)
-	time = 1000
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
 */
 
 // LEGION SPECIFIC
 
 /datum/crafting_recipe/spatha
 	name = "Spatha"
-	result = /obj/item/claymore/machete/spatha
+	result = /obj/item/melee/onehanded/machete/spatha
 	reqs = list(/obj/item/stack/sheet/metal = 18,
 			/obj/item/stack/sheet/plasteel = 2,
 				/obj/item/stack/sheet/leather = 2, //custom hilt -
@@ -317,7 +293,7 @@
 
 /datum/crafting_recipe/gladius
 	name = "Gladius"
-	result = /obj/item/claymore/machete/gladius
+	result = /obj/item/melee/onehanded/machete/gladius
 	reqs = list(/obj/item/stack/sheet/metal = 15,
 				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/swordhandle = 1) //objects of mass production don't require hilts more than 2 wood.
@@ -352,20 +328,9 @@
 
 //polearms
 
-/*
-/datum/crafting_recipe/bostaff
-	name = "Quarterstaff"
-	result = /obj/item/twohanded/bostaff
-	time = 400
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/mineral/wood = 2)
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-*/
 
-/datum/crafting_recipe/forgeglaive
-	name = "Metal Glaive"
+/datum/crafting_recipe/forgespear
+	name = "Spear"
 	result = /obj/item/twohanded/spear
 	time = 200
 	reqs = list(/obj/item/stack/sheet/metal = 16,
@@ -391,17 +356,8 @@
 	time = 400
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
-
-/datum/crafting_recipe/pitchfork
-	name = "Pitchfork"
-	result = /obj/item/twohanded/pitchfork
-	time = 400
-	reqs = list(/obj/item/stack/sheet/metal = 3)
-	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 */
 
 /datum/crafting_recipe/scythe
@@ -426,27 +382,9 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
-/datum/crafting_recipe/pipe
-	name = "Pipe"
-	result = /obj/item/claymore/machete/pipe
-	time = 50
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/golf
-	name = "Golf Club"
-	result = /obj/item/claymore/machete/golf/teniron
-	time = 150
-	reqs = list(/obj/item/stack/sheet/metal = 10)
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
 /datum/crafting_recipe/pan
 	name = "Frying Pan"
-	result = /obj/item/claymore/machete/pipe/pan
+	result = /obj/item/melee/onehanded/club/fryingpan
 	time = 80
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/wood = 1)
@@ -457,6 +395,26 @@
 //miscweapons
 
 /*
+/datum/crafting_recipe/throwingknife
+	name = "Throwing Knife"
+	result = /obj/item/throwing_star/throwingknife
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/cloth = 1)
+	time = 300
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+
+/datum/crafting_recipe/pipe
+	name = "Pipe"
+	result = /obj/item/melee/onehanded/club
+	time = 50
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
 /datum/crafting_recipe/fire_axe
 	name = "Fire Axe"
 	result = /obj/item/twohanded/twohanded/fireaxe
@@ -464,8 +422,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/wood = 1)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEWEAPON
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 */
 
 /datum/crafting_recipe/pick_axe
@@ -555,7 +513,7 @@
 
 /datum/crafting_recipe/cosmicknife
 	name = "Cosmic Knife"
-	result = /obj/item/kitchen/knife/cosmic
+	result = /obj/item/melee/onehanded/knife/cosmic
 	reqs = list(/obj/item/kitchen/knife/cosmicdirty = 1,
 				/obj/item/crafting/abraxo = 1)
 	tools = list(TOOL_WORKBENCH)
@@ -565,7 +523,7 @@
 
 /datum/crafting_recipe/cosmicknifeheated
 	name = "Superheated Cosmic Knife"
-	result = /obj/item/kitchen/knife/cosmicheated
+	result = /obj/item/melee/onehanded/knife/cosmicheated
 	reqs = list(/obj/item/kitchen/knife/cosmic = 1,
 				/datum/reagent/fuel = 25)
 	tools = list(TOOL_WORKBENCH)
@@ -581,8 +539,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 30,
 				/obj/item/stack/sheet/cloth = 10)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEARMOR
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 */
 /*
 /datum/crafting_recipe/thejugg
@@ -592,8 +550,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 90,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEARMOR
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/thejugghelm
 	name = "Juggernaut Helmet"
@@ -602,8 +560,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 30,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_FORGE)
-	category = CAT_FORGE
-	subcategory = CAT_FORGEARMOR
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 */
 
 

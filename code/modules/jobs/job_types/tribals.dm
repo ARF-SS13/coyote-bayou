@@ -282,7 +282,7 @@ Villager
 	name = "Gatherer"
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear=1,
-		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/melee/onehanded/knife/bone=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
 	)
 
@@ -369,7 +369,7 @@ Hunter
 		/obj/item/gun/ballistic/automatic/tribalbow=1,
 		/obj/item/clothing/suit/armor/f13/lightcloak=1,
 		/obj/item/storage/belt/tribe_quiver/bone=1,
-		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/melee/onehanded/knife/bone=1,
 		/obj/item/restraints/legcuffs/bola=2,
 		/obj/item/binoculars=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1
@@ -379,7 +379,7 @@ Hunter
 	name = "Frontline"
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear/deathclaw=1,
-		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/melee/onehanded/knife/bone=1,
 		/obj/item/binoculars=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1

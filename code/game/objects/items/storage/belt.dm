@@ -199,7 +199,7 @@
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_box,
 		/obj/item/reagent_containers/food/snacks/donut,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/onehanded/knife/hunting,
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
@@ -414,7 +414,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/melee/classic_baton(src)
-	new /obj/item/kitchen/knife/combat(src)
+	new /obj/item/melee/onehanded/knife/hunting(src)
 	new /obj/item/ammo_box/magazine/m9mmds(src)
 	update_icon()
 
