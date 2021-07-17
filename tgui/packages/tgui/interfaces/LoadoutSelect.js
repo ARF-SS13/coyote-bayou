@@ -4,14 +4,20 @@ import { Button, Flex, Tabs, Section } from '../components';
 
 export const LoadoutSelect = (props, context) => {
   const { act, data } = useBackend(context);
+  const {
+    outfits,
+    selected,
+    items,
+    preview,
+  } = data;
   return (
-    <Window width={500} height={450} resizable>
+    <Window width={500} height={450}>
       <Window.Content scrollable>
         <Tabs style={{ "vertical-align": "top", "flex": "initial" }}>
-          {!(data.outfits?.length) && "No loadout options." || data.outfits.map(outfit => (
+          {!(outfits?.length) && "No loadout options." || outfits.map(outfit => (
             <Tabs.Tab
               key={outfit}
-              selected={data.selected === outfit}
+              selected={selected === outfit}
               onClick={() => act('loadout_select', {
                 name: outfit,
               })}>
@@ -22,7 +28,7 @@ export const LoadoutSelect = (props, context) => {
         <Flex direction="row" width="100%">
           <Flex.Item width="50%" height="100%" style={{ "vertical-align": "top" }}>
             <Section title="Contents" fill fitted>
-              {!data.items?.length && "No outfit selected." || data.items.map(item => (
+              {!items?.length && "No outfit selected." || items.map(item => (
                 <div style={{ "margin": "10px 10px", "text-align": "center" }} key={`${item.name}`}>
                   <div style={{ "transform": "scale(1.5)", "vertical-align": "middle", "float": "left", "clear": "left", "height": "32px", "width": "32px" }} class={item.icon} />
                   <div style={{ "display": "block", "vertical-align": "middle", "float": "left", "width": "calc(100% - 32px)", "line-height": "32px", "margin": "auto" }}>
@@ -34,10 +40,10 @@ export const LoadoutSelect = (props, context) => {
           </Flex.Item>
           <Flex.Item height="100%" width="50%" style={{ "vertical-align": "top" }}>
             <Section title="Preview" fill>
-              {!data.preview && "No outfit selected."
+              {!preview && "No outfit selected."
               || (
                 <div style={{ "text-align": "center" }}>
-                  <img src={`data:image/jpeg;base64,${data.preview}`} style={{ "image-rendering": "pixelated", "-ms-interpolation-mode": "nearest-neighbor" }} width={220} height={220} /><br />
+                  <img src={`data:image/jpeg;base64,${preview}`} style={{ "image-rendering": "pixelated", "-ms-interpolation-mode": "nearest-neighbor" }} width={220} height={220} /><br />
                   <br />
                   <div style={{ "display": "table", "width": "100%", "text-align": "center" }}>
                     <Button style={{ "display": "table-cell", "text-align": "center" }} content={"<<"} onClick={() => act('loadout_preview_direction', { direction: -1 })} />

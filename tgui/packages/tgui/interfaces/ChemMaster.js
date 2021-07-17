@@ -1,4 +1,3 @@
-import { Fragment } from 'inferno';
 import { useBackend, useSharedState } from '../backend';
 import { AnimatedNumber, Box, Button, ColorBox, LabeledList, NumberInput, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -9,8 +8,7 @@ export const ChemMaster = (props, context) => {
   return (
     <Window
       width={465}
-      height={550}
-      resizable>
+      height={550}>
       <Window.Content scrollable>
         {screen === 'analyze' && (
           <AnalysisResults />
@@ -39,11 +37,11 @@ const ChemMasterContent = (props, context) => {
     return <AnalysisResults />;
   }
   return (
-    <Fragment>
+    <>
       <Section
         title="Beaker"
         buttons={!!data.isBeakerLoaded && (
-          <Fragment>
+          <>
             <Box inline color="label" mr={2}>
               <AnimatedNumber
                 value={beakerCurrentVolume}
@@ -54,7 +52,7 @@ const ChemMasterContent = (props, context) => {
               icon="eject"
               content="Eject"
               onClick={() => act('eject')} />
-          </Fragment>
+          </>
         )}>
         {!isBeakerLoaded && (
           <Box color="label" mt="3px" mb="5px">
@@ -78,7 +76,7 @@ const ChemMasterContent = (props, context) => {
       <Section
         title="Buffer"
         buttons={(
-          <Fragment>
+          <>
             <Box inline color="label" mr={1}>
               Mode:
             </Box>
@@ -87,7 +85,7 @@ const ChemMasterContent = (props, context) => {
               icon={data.mode ? 'exchange-alt' : 'times'}
               content={data.mode ? 'Transfer' : 'Destroy'}
               onClick={() => act('toggleMode')} />
-          </Fragment>
+          </>
         )}>
         {bufferContents.length === 0 && (
           <Box color="label" mt="3px" mb="5px">
@@ -111,7 +109,7 @@ const ChemMasterContent = (props, context) => {
         <Section
           title="Pill Bottle"
           buttons={(
-            <Fragment>
+            <>
               <Box inline color="label" mr={2}>
                 {pillBottleCurrentAmount} / {pillBottleMaxAmount} pills
               </Box>
@@ -119,10 +117,10 @@ const ChemMasterContent = (props, context) => {
                 icon="eject"
                 content="Eject"
                 onClick={() => act('ejectPillBottle')} />
-            </Fragment>
+            </>
           )} />
       )}
-    </Fragment>
+    </>
   );
 };
 
@@ -236,32 +234,18 @@ const PackagingControls = (props, context) => {
     packAmount,
     setPackAmount,
   ] = useSharedState(context, 'packAmount', 1);
-  const [
-    stimpakAmount,
-    setstimpakAmount,
-  ] = useSharedState(context, 'setstimpakAmount', 1);
-  const [
-    superstimpakAmount,
-    setsuperstimpakAmount,
-  ] = useSharedState(context, 'setsuperstimpakAmount', 1);
-  const [
-    powderbagAmount,
-    setPowderbagAmount,
-  ] = useSharedState(context, 'setPowderbagAmount', 1);
-  const [
-    primitiveBottleAmount,
-    setprimitiveBottleAmount,
-  ] = useSharedState(context, 'setprimitiveBottleAmount', 1);
   const {
     condi,
-    advanced,
-    primitive,
     chosenPillStyle,
+    chosenCondiStyle,
+    autoCondiStyle,
     pillStyles = [],
+    condiStyles = [],
   } = data;
+  const autoCondiStyleChosen = autoCondiStyle === chosenCondiStyle;
   return (
     <LabeledList>
-      {!condi && !primitive && (
+      {!condi && (
         <LabeledList.Item label="Pill type">
           {pillStyles.map(pill => (
             <Button
@@ -276,7 +260,7 @@ const PackagingControls = (props, context) => {
           ))}
         </LabeledList.Item>
       )}
-      {!condi && !primitive && (
+      {!condi && (
         <PackagingControlsItem
           label="Pills"
           amount={pillAmount}
@@ -289,7 +273,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !!advanced && !primitive &&(
+      {!condi && (
         <PackagingControlsItem
           label="Patches"
           amount={patchAmount}
@@ -302,7 +286,7 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !primitive &&(
+      {!condi && (
         <PackagingControlsItem
           label="Bottles"
           amount={bottleAmount}
@@ -315,29 +299,42 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!condi && !primitive &&(
-        <PackagingControlsItem
-          label="Stimpaks"
-          amount={stimpakAmount}
-          amountUnit="stimpaks"
-          sideNote="max 10u"
-          onChangeAmount={(e, value) => setstimpakAmount(value)}
-          onCreate={() => act('create', {
-            type: 'stimPak',
-            amount: stimpakAmount,
-            volume: 'auto',
-          })} />
+      {!!condi && (
+        <LabeledList.Item label="Bottle type">
+          <Button.Checkbox
+            onClick={() => act('condiStyle', { id: autoCondiStyleChosen ? condiStyles[0].id : autoCondiStyle })}
+            checked={autoCondiStyleChosen}
+            disabled={!condiStyles.length}>
+            Guess from contents
+          </Button.Checkbox>
+        </LabeledList.Item>
       )}
-      {!condi && !!advanced && !primitive &&(
+      {!!condi && !autoCondiStyleChosen && (
+        <LabeledList.Item label="">
+          {condiStyles.map(style => (
+            <Button
+              key={style.id}
+              width="30px"
+              selected={style.id === chosenCondiStyle}
+              textAlign="center"
+              color="transparent"
+              title={style.title}
+              onClick={() => act('condiStyle', { id: style.id })}>
+              <Box mx={-1} className={style.className} />
+            </Button>
+          ))}
+        </LabeledList.Item>
+      )}
+      {!!condi && (
         <PackagingControlsItem
-          label="Super Stimpaks"
-          amount={superstimpakAmount}
-          amountUnit="super stimpaks"
-          sideNote="max 20u"
-          onChangeAmount={(e, value) => setsuperstimpakAmount(value)}
+          label="Bottles"
+          amount={bottleAmount}
+          amountUnit="bottles"
+          sideNote="max 50u"
+          onChangeAmount={(e, value) => setBottleAmount(value)}
           onCreate={() => act('create', {
-            type: 'superStimpak',
-            amount: superstimpakAmount,
+            type: 'condimentBottle',
+            amount: bottleAmount,
             volume: 'auto',
           })} />
       )}
@@ -354,52 +351,12 @@ const PackagingControls = (props, context) => {
             volume: 'auto',
           })} />
       )}
-      {!!condi && (
-        <PackagingControlsItem
-          label="Bottles"
-          amount={bottleAmount}
-          amountUnit="bottles"
-          sideNote="max 50u"
-          onChangeAmount={(e, value) => setBottleAmount(value)}
-          onCreate={() => act('create', {
-            type: 'condimentBottle',
-            amount: bottleAmount,
-            volume: 'auto',
-          })} />
-      )}
-      {!!primitive &&(
-        <PackagingControlsItem
-          label="Powder Bag"
-          amount={patchAmount}
-          amountUnit="powderbags"
-          sideNote="max 40u"
-          onChangeAmount={(e, value) => setPowderbagAmount(value)}
-          onCreate={() => act('create', {
-            type: 'bag',
-            amount: powderbagAmount,
-            volume: 'auto',
-          })} />
-      )}
-      {!!primitive && (
-        <PackagingControlsItem
-          label="Primitive Bottles"
-          amount={bottleAmount}
-          amountUnit="bottles"
-          sideNote="max 60u"
-          onChangeAmount={(e, value) => setprimitiveBottleAmount(value)}
-          onCreate={() => act('create', {
-            type: 'bottle_primitive',
-            amount: primitiveBottleAmount,
-            volume: 'auto',
-          })} />
-      )}
     </LabeledList>
   );
 };
 
 const AnalysisResults = (props, context) => {
   const { act, data } = useBackend(context);
-  const { fermianalyze } = props;
   const { analyzeVars } = data;
   return (
     <Section
@@ -412,13 +369,15 @@ const AnalysisResults = (props, context) => {
             screen: 'home',
           })} />
       )}>
-
       <LabeledList>
         <LabeledList.Item label="Name">
           {analyzeVars.name}
         </LabeledList.Item>
         <LabeledList.Item label="State">
           {analyzeVars.state}
+        </LabeledList.Item>
+        <LabeledList.Item label="pH">
+          {analyzeVars.ph}
         </LabeledList.Item>
         <LabeledList.Item label="Color">
           <ColorBox color={analyzeVars.color} mr={1} />
@@ -436,31 +395,6 @@ const AnalysisResults = (props, context) => {
         <LabeledList.Item label="Addiction Threshold">
           {analyzeVars.addicD}
         </LabeledList.Item>
-        {!!fermianalyze && ( // why did you do that before? it's fucking bad.
-          <Fragment>
-            <LabeledList.Item label="Purity">
-              {analyzeVars.purityF}
-            </LabeledList.Item>
-            <LabeledList.Item label="Inverse Ratio">
-              {analyzeVars.inverseRatioF}
-            </LabeledList.Item>
-            <LabeledList.Item label="Purity E">
-              {analyzeVars.purityE}
-            </LabeledList.Item>
-            <LabeledList.Item label="Lower Optimal Temperature">
-              {analyzeVars.minTemp}
-            </LabeledList.Item>
-            <LabeledList.Item label="Upper Optimal Temperature">
-              {analyzeVars.maxTemp}
-            </LabeledList.Item>
-            <LabeledList.Item label="Explosive Temperature">
-              {analyzeVars.eTemp}
-            </LabeledList.Item>
-            <LabeledList.Item label="pH Peak">
-              {analyzeVars.pHpeak}
-            </LabeledList.Item>
-          </Fragment>
-        )}
       </LabeledList>
     </Section>
   );

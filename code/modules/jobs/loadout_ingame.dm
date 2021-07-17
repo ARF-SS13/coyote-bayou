@@ -124,7 +124,6 @@
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "LoadoutSelect", "Loadout Select")
-		ui.set_autoupdate(FALSE)
 		ui.open()
 		ui.send_asset(get_asset_datum(/datum/asset/spritesheet/loadout))
 
@@ -139,8 +138,9 @@
 		data["preview"] = preview_images[selected_datum.name][dir2text(selected_direction)]
 	return data
 
-/datum/component/loadout_selector/ui_act(action, params)
-	if(..())
+/datum/component/loadout_selector/ui_act(action, params, datum/tgui/ui)
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("loadout_select")
@@ -151,6 +151,7 @@
 		if("loadout_preview_direction")
 			selected_direction = turn(selected_direction, 90 * text2num(params["direction"]))
 	return TRUE
+
 
 //Selects an outfit and loads the preview of it
 /datum/component/loadout_selector/proc/select_outfit(newname)
@@ -179,14 +180,12 @@
 	selected_items = selected_datum.ui_data()
 
 	generate_previews()
-	spawn()
-		if (usr)
-			ui_interact(usr)
+
 
 //This proc creates preview images for an outfit, if needed
 /datum/component/loadout_selector/proc/generate_previews()
 	//Lets make sure we have a parent mob and a player is connected
-	if (!istype(parent, /mob))
+	if (!ismob(parent))
 		return
 
 	//We need a client to send assets to
