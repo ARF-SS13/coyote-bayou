@@ -222,7 +222,7 @@
 	},
 /area/f13/bunker)
 "gj" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -728,10 +728,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"wQ" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/bunker)
 "wR" = (
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker)
@@ -1068,7 +1064,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1961,7 +1957,7 @@ eu
 pj
 NJ
 OL
-wQ
+NJ
 NJ
 NJ
 NJ
