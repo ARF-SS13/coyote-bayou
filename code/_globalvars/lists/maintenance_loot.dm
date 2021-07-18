@@ -599,7 +599,6 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/energy/laser/plasma/glock,
 	/obj/item/stock_parts/cell/ammo/ec,
-	/obj/item/gun/medbeam
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
@@ -684,7 +683,6 @@ GLOBAL_LIST_INIT(loot_garbage, list(
 	/obj/item/rollingpaper,
 	/obj/item/trash/coal,
 	/obj/item/soap/homemade,
-	/obj/item/bikehorn,
 	/obj/item/stack/cable_coil/random,
 	/obj/item/stack/medical/bruise_pack,
 	/obj/item/trash/popcorn,
@@ -694,7 +692,6 @@ GLOBAL_LIST_INIT(loot_garbage, list(
 	/obj/item/stack/medical/gauze,
 	/obj/item/trash/plate,
 	/obj/item/storage/box/snappops,
-	/obj/item/bikehorn/rubberducky,
 	/obj/item/stack/packageWrap,
 	/obj/item/storage/box/matches,
 	/obj/item/reagent_containers/food/snacks/deadmouse,
@@ -923,7 +920,6 @@ GLOBAL_LIST_INIT(loot_t2_blueprint, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_blueprint, list(
-	/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle,
 	/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
 	/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
 	/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,

@@ -465,8 +465,7 @@ Raider
 		/obj/item/twohanded/baseball/spiked=1,
 		/obj/item/gun/ballistic/rifle/mosin=1,
 		/obj/item/ammo_box/a762=2,
-		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1,
-		/obj/item/megaphone=1)
+		/obj/item/storage/fancy/cigarettes/cigpack_cannabis=1)
 
 /datum/outfit/loadout/raider_blast
 	name = "Blastmaster"
@@ -474,9 +473,9 @@ Raider
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/single_shotgun=1,
-		/obj/item/ammo_box/shotgun/bean,
+		/obj/item/ammo_box/shotgun/improvised=1,
 		/obj/item/melee/onehanded/knife/butcher=1,
-		/obj/item/grenade/iedcasing=6)
+		/obj/item/grenade/iedcasing=4)
 
 /datum/outfit/loadout/raider_sadist
 	name = "Sadist"
@@ -526,7 +525,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/exile/legion
 	id = /obj/item/card/id/rusted/rustedmedallion
 	backpack_contents = list(
-		/obj/item/claymore/machete/gladius=1,
+		/obj/item/melee/onehanded/machete/gladius=1,
 		/obj/item/storage/backpack/spearquiver=1)
 
 /datum/outfit/loadout/raider_sheriff
@@ -564,7 +563,7 @@ Raider
 	uniform = 	/obj/item/clothing/under/f13/exile/tribal
 	shoes = 	/obj/item/clothing/shoes/sandal
 	belt = 		/obj/item/storage/backpack/spearquiver
-	suit_store = /obj/item/claymore/machete/warclub
+	suit_store = /obj/item/melee/onehanded/club/warclub
 	box = 		/obj/item/storage/survivalkit_tribal
 	id = 		/obj/item/card/id/outcasttattoo
 	backpack_contents = list(
@@ -713,7 +712,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/welding
 	l_hand = /obj/item/shield/riot/buckler
 	backpack_contents = list(
-		/obj/item/claymore/machete/spatha=1)
+		/obj/item/melee/onehanded/machete/spatha=1)
 
 /datum/outfit/loadout/ncrcitizen
 	name = "NCR Citizen"

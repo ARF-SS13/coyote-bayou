@@ -81,7 +81,7 @@ Elder
 	neck = /obj/item/clothing/neck/cloak/bos/right
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1)
 
 /*
@@ -146,7 +146,7 @@ Head Paladin
 	id = 			/obj/item/card/id/dogtag
 	neck = 			/obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
@@ -234,7 +234,7 @@ Head Scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=3,
 		)
 
@@ -306,7 +306,7 @@ Head Knight
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 
@@ -387,7 +387,7 @@ Star Paladin
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/plasma/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 	)
 
@@ -462,7 +462,7 @@ Paladin
 	belt = 			/obj/item/storage/belt/military
 	neck = /obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 
@@ -547,7 +547,7 @@ Senior Scribe
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/reagent_containers/hypospray/CMO=1)
@@ -599,7 +599,7 @@ Scribe
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/kitchen/knife/combat=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2
 		)
@@ -666,7 +666,7 @@ datum/job/bos/f13seniorknight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 	
@@ -730,7 +730,7 @@ Knight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat/survival=1,
+		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 
@@ -803,7 +803,7 @@ Initiate
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 	backpack_contents = list(
-			/obj/item/kitchen/knife/combat/survival=1,)
+			/obj/item/melee/onehanded/knife/survival=1,)
 
 /datum/outfit/job/bos/f13initiate/post_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
@@ -887,7 +887,7 @@ Off-Duty
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/encryptionkey/headset_bos=1,
-		/obj/item/kitchen/knife/combat=1
+		/obj/item/melee/onehanded/knife/survival=1
 		)
 
 /datum/outfit/loadout/offa

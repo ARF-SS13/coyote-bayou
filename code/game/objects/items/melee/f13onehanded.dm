@@ -1,27 +1,11 @@
 //SS13 weapons that are parents to F13 weapons or still used may be included here
 //Unlike weaponry.dm, everything in here should be balanced for F13 combat.
 
-//Inherited from SS13
-/obj/item/claymore
-	name = "claymore"
-	desc = "What are you standing around staring at this for? Get to killing!"
-	icon_state = "claymore"
-	item_state = "claymore"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 30
-	throwforce = 10
-	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 15
-	sharpness = SHARP_EDGED
+
+/obj/item/melee //Melee weapon template
+	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
-	resistance_flags = FIRE_PROOF
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 50)
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -36,19 +20,13 @@
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 10
-	sharpness = SHARP_EDGED
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-
-//F13 Weapons
 
 
 ////////////
 // SWORDS //
-////////////		-block
+////////////		-block, 30-40 damage
 
 /obj/item/melee/onehanded/machete
 	name = "simple machete"
@@ -58,6 +36,8 @@
 	force = 32
 	block_chance = 5
 	throwforce = 20
+	sharpness = SHARP_EDGED
+
 
 /obj/item/melee/onehanded/machete/forgedmachete
 	name = "machete"
@@ -113,7 +93,6 @@
 	icon_state = "machete"
 	force = 35
 
-
 /obj/item/claymore/machete/training //obsolete
 	name = "training machete"
 	desc = "A training machete made of tough wood."
@@ -167,9 +146,12 @@
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
 
+
+
+
 ////////////
 // KNIVES //
-////////////			-small AP bonus
+////////////			-small AP bonus, 24-32 damage
 
 
 /obj/item/melee/onehanded/knife
@@ -206,24 +188,6 @@
 						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
 						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
-
-/obj/item/melee/onehanded/knife/kitchen
-	name = "kitchen knife"
-	desc = "Simple kitchen knife.."
-	icon_state = "knife_kitchen"
-	force = 15
-	armour_penetration = 0
-
-/obj/item/melee/onehanded/knife/butcher
-	name = "butcher's cleaver"
-	desc = "Keep hackin' and whackin' and smackin'."
-	icon_state = "knife_butcher"
-	item_state = "knife_butcher"
-	w_class = WEIGHT_CLASS_NORMAL
-	force = 25
-	armour_penetration = 0
-	custom_materials = list(/datum/material/iron=8000)
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
 
 /obj/item/melee/onehanded/knife/hunting
@@ -264,7 +228,7 @@
 	icon_state = "knife_trench"
 	item_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
-	force = 33
+	force = 32
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -276,7 +240,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	desc = "A sharpened bone. The bare minimum in survival."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 20
+	force = 24
 	throwforce = 20
 	custom_materials = null
 
@@ -358,24 +322,8 @@
 
 ///////////
 // CLUBS //
-///////////			- stamina damage
+///////////			- stamina damage, 26-32 damage
 
-/obj/item/kitchen/rollingpin
-	name = "rolling pin"
-	desc = "Used to knock out the Bartender."
-	icon_state = "rolling_pin"
-	force = 8
-	throwforce = 5
-	throw_speed = 3
-	throw_range = 7
-	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-	custom_price = PRICE_ALMOST_CHEAP
-
-/obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/melee/onehanded/club
 	name = "pipe"
@@ -383,7 +331,7 @@
 	icon_state = "pipe"
 	item_state = "pipe"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
-	force = 25
+	force = 26
 	throwforce = 10
 	throw_speed = 3
 	throw_range = 3
@@ -402,28 +350,22 @@
 	icon_state = "warclub"
 	item_state = "warclub"
 	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
-	force = 35
+	force = 32
 	throwforce = 25
-	block_chance = 10
-	armour_penetration = 0.1
+	block_chance = 5
+
+/obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(20, STAMINA, null, 0)
 
 /obj/item/melee/onehanded/club/tireiron
 	name = "tire iron"
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon_state = "tire"
 	item_state = "tire"
-	force = 33
-
-/obj/item/melee/onehanded/club/fryingpan
-	name = "frying pan"
-	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
-	icon_state = "pan"
-	item_state = "pan"
-	force = 24 //Just try to swing a frying pan//BONK
-	throw_speed = 1
-	throw_range = 2
-	throwforce = 20
-	hitsound = 'sound/f13weapons/pan.ogg'
+	force = 32
 
 
 /obj/item/claymore/machete/warclub //obsolete
@@ -626,246 +568,93 @@
 
 
 
-/////////////////////////////////
-// ADVANCED ONE HANDED WEAPONS //
-/////////////////////////////////	
+///////////
+// TOOLS //
+///////////		-generally max 24 damage
 
 
-// Ripper							Keywords: Damage 10/45, Wound bonus, block		
-/obj/item/melee/powered/ripper
-	name = "ripper"
-	desc = "The Ripper™ vibroblade is powered by a small energy cell wich allows it to easily cut through flesh and bone."
-	icon = 'icons/fallout/objects/melee/melee.dmi'
-	icon_state = "ripper"
-	var/on_icon_state = "ripper_on"
-	var/off_icon_state = "ripper"
-	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
-	var/on_item_state = "ripper_on"
-	var/off_item_state = "ripper"
-	w_class = WEIGHT_CLASS_BULKY
-	var/weight_class_on = WEIGHT_CLASS_HUGE
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
+/obj/item/melee/onehanded/knife/kitchen
+	name = "kitchen knife"
+	desc = "Simple kitchen knife.."
+	icon_state = "knife_kitchen"
+	force = 15
+	armour_penetration = 0
+
+/obj/item/melee/onehanded/knife/butcher
+	name = "butcher's cleaver"
+	desc = "Keep hackin' and whackin' and smackin'."
+	icon_state = "knife_butcher"
+	item_state = "knife_butcher"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 24
+	armour_penetration = 0
+	custom_materials = list(/datum/material/iron=8000)
+	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+
+/obj/item/melee/onehanded/club/rollingpin
+	name = "rolling pin"
+	desc = "Intended for baking, could in theory be used as a awkward club."
+	icon_state = "rolling_pin"
 	force = 10
-	var/force_on = 45
-	var/force_off = 10
-	wound_bonus = 25
-	block_chance = 15
+	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+
+/obj/item/melee/onehanded/club/rollingpin/suicide_act(mob/living/carbon/user)
+	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return BRUTELOSS
+
+/obj/item/melee/onehanded/club/fryingpan
+	name = "frying pan"
+	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
+	icon_state = "pan"
+	item_state = "pan"
+	force = 24 //Just try to swing a frying pan//BONK
+	throw_speed = 1
+	throw_range = 3
+	throwforce = 20
+	hitsound = 'sound/f13weapons/pan.ogg'
+
+/obj/item/shovel/trench
+	name = "p81 entrenching tool"
+	desc = "The 'Pattern 2281' Entrenching Tool is a new piece of infantry equipment given in limited quantity to infantry troops. An extremely robust shovel with a serrated edge for chopping wood."
+	icon_state = "entrenching_tool"
+	item_state = "trench"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 30
+	throwforce = 15
+	w_class = WEIGHT_CLASS_NORMAL
+	toolspeed = 0.7
+	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
+	sharpness = SHARP_EDGED
+
+/obj/item/hatchet
+	name = "hatchet"
+	desc = "Simple small metal axehead on a handle made from wood or some other hard material."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "hatchet"
+	item_state = "hatchet"
+	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
+	attack_speed = CLICK_CD_MELEE
+	flags_1 = CONDUCT_1
+	force = 24
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 15
 	throw_speed = 3
 	throw_range = 4
-	throwforce = 10
-	var/on = FALSE
-	tool_behaviour = TOOL_SAW
+	custom_materials = list(/datum/material/iron = 6000)
+	attack_verb = list("chopped", "torn", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
-	toolspeed = 1.5 //slower than a real saw
-	resistance_flags = FIRE_PROOF
-	hitsound = 'sound/weapons/chainsawhit.ogg'
-	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 
-// Description for when turning the ripper on
-/obj/item/melee/powered/ripper/proc/get_on_description()
-	. = list()
-	.["local_on"] = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
-	.["local_off"] = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
-	return
-
-/obj/item/melee/powered/ripper/attack_self(mob/user)
-	on = !on
-	var/list/desc = get_on_description()
-	if(on)
-		to_chat(user, desc["local_on"])
-		icon_state = on_icon_state
-		item_state = on_item_state
-		w_class = weight_class_on
-		force = force_on
-		slot_flags = null
-		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
-		playsound(src.loc, on_sound, 50, 1)
-	else
-		to_chat(user, desc["local_off"])
-		icon_state = off_icon_state
-		item_state = off_item_state
-		w_class = WEIGHT_CLASS_BULKY
-		force = force_off
-		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
-		attack_verb = list("poked", "scraped")
-	add_fingerprint(user)
-
-
-//Warhammer chainsword				Keywords: Damage 10/50, Wound bonus, Block, Bonus AP + 0.15
-/obj/item/melee/powered/ripper/prewar
-	name = "pre-war military ripper"
-	desc = "A hand-held, militarized chainsaw, popular with Army units requiring a compact engineering tool for cutting. Just what material is intended to be cut with the weapon remains open to debate."
-	icon_state = "prewarrip_off"
-	on_icon_state = "prewarrip_on"
-	off_icon_state = "prewarrip_off"
-	on_item_state = "prewarrip_on"
-	off_item_state = "prewarrip_off"
-	force_on = 50
-	armour_penetration = 0.15
-
-
-// Shishkebab backpack				Keywords: Damage 10/45, Wound bonus, block	
-/obj/item/shishkebabpack
-	name = "shishkebab backpack"
-	desc = "A backpack containing a large quantity of fuel and a pipe attaching it to a long, deadly blade. You ever wanted to set fire to people with a sword?"
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "shishkebabpack"
-	item_state = "shishkebabpack"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-//	actions_types = list(/datum/action/item_action/toggle_shishkebab)
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
-	resistance_flags = FIRE_PROOF
-
-	var/obj/item/sword
-
-/obj/item/shishkebabpack/Initialize()
+/obj/item/hatchet/Initialize()
 	. = ..()
-	sword = make_sword()
+	AddComponent(/datum/component/butchering, 70, 100)
 
-/obj/item/shishkebabpack/ui_action_click(mob/user)
-	toggle_shishkebab(user)
+/obj/item/hatchet/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+	return (BRUTELOSS)
 
-/obj/item/shishkebabpack/item_action_slot_check(slot, mob/user)
-	if(slot == user.getBackSlot())
-		return 1
-
-/obj/item/shishkebabpack/proc/toggle_shishkebab(mob/living/user)
-	if(!istype(user))
-		return
-	if(user.get_item_by_slot(user.getBackSlot()) != src)
-		to_chat(user, "<span class='warning'>The backpack must be worn properly to use!</span>")
-		return
-	if(user.incapacitated())
-		return
-
-	if(QDELETED(sword))
-		sword = make_sword()
-	if(sword in src)
-		//Detach the sword into the user's hands
-		if(!user.put_in_hands(sword))
-			to_chat(user, "<span class='warning'>You need a free hand to hold the shishkebab!</span>")
-			return
-	else
-		//Remove from their hands and put back "into" the tank
-		remove_sword()
-
-/obj/item/shishkebabpack/verb/toggle_shishkebab_verb()
-	set name = "Toggle Shishkebab"
-	set category = "Object"
-	toggle_shishkebab(usr)
-
-/obj/item/shishkebabpack/proc/make_sword()
-	return new /obj/item/weapon/melee/shishkebab(src)
-
-/obj/item/shishkebabpack/equipped(mob/user, slot)
-	..()
-	if(slot != SLOT_BACK)
-		remove_sword()
-
-/obj/item/shishkebabpack/proc/remove_sword()
-	if(ismob(sword.loc))
-		var/mob/M = sword.loc
-		M.temporarilyRemoveItemFromInventory(sword, TRUE)
-	sword.forceMove(src)
-
-/obj/item/shishkebabpack/Destroy()
-	QDEL_NULL(sword)
-	return ..()
-
-/obj/item/shishkebabpack/attack_hand(mob/user)
-	if (user.get_item_by_slot(user.getBackSlot()) == src)
-		toggle_shishkebab(user)
-	else
-		return ..()
-
-/obj/item/shishkebabpack/MouseDrop(obj/over_object)
-	var/mob/M = loc
-	if(istype(M) && istype(over_object, /obj/screen/inventory/hand))
-		var/obj/screen/inventory/hand/H = over_object
-		M.putItemFromInventoryInHandIfPossible(src, H.held_index)
-	return ..()
-
-/obj/item/shishkebabpack/attackby(obj/item/W, mob/user, params)
-	if(W == sword)
-		remove_sword()
-		return 1
-	else
-		return ..()
-
-/obj/item/shishkebabpack/dropped(mob/user)
-	..()
-	remove_sword()
-
-// Shishkebab sword				Keywords: Damage 55 (fire), Welder	
-/obj/item/weapon/melee/shishkebab //This should never exist without the backpack.
-	name = "shishkebab"
-	desc = "A deadly flaming sword covered in fuel. You're not sure this is entirely safe."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "shishkebab"
-	item_state = "shishkebab"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	item_flags = ABSTRACT  // don't put in storage
-	slot_flags = 0
-	force = 55
-	damtype = "fire"
-	tool_behaviour = TOOL_WELDER
-	toolspeed = 0.3
-
-	var/obj/item/shishkebabpack/tank
-
-/obj/item/weapon/melee/shishkebab/Initialize()
-	. = ..()
-	tank = loc
-	if(!istype(tank))
-		return INITIALIZE_HINT_QDEL
-
-/obj/item/weapon/melee/shishkebab/attack_self()
-	return
-
-/obj/item/weapon/melee/shishkebab/doMove(atom/destination)
-	if(destination && (destination != tank.loc || !ismob(destination)))
-		if (loc != tank)
-			to_chat(tank.loc, "<span class='notice'>The shishkebab slides back into the backpack tank.</span>")
-		destination = tank
-	..()
-
-/obj/item/mounted_chainsaw
-	name = "mounted chainsaw"
-	desc = "A chainsaw that has replaced your arm."
-	icon_state = "chainsaw_on"
-	item_state = "mounted_chainsaw"
-	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
-	item_flags = ABSTRACT | DROPDEL
-	w_class = WEIGHT_CLASS_BULKY
-	force = 56
-	throwforce = 0
-	throw_range = 0
-	throw_speed = 0
-	sharpness = SHARP_EDGED
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
-	hitsound = 'sound/weapons/chainsawhit.ogg'
-	total_mass = TOTAL_MASS_HAND_REPLACEMENT
-	tool_behaviour = TOOL_SAW
-	toolspeed = 1
-
-/obj/item/mounted_chainsaw/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-
-/obj/item/mounted_chainsaw/Destroy()
-	var/obj/item/bodypart/part
-	new /obj/item/twohanded/chainsaw(get_turf(src))
-	if(iscarbon(loc))
-		var/mob/living/carbon/holder = loc
-		var/index = holder.get_held_index_of_item(src)
-		if(index)
-			part = holder.hand_bodyparts[index]
-	. = ..()
-	if(part)
-		part.drop_limb()
+// Wrench force 12
+// Crowbar force 15

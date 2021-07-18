@@ -53,18 +53,6 @@
 	required_count = 3
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/cheesiehonkers)
 
-/datum/bounty/item/assistant/baseball_bat
-	name = "Baseball Bat"
-	description = "Baseball fever is going on at CentCom! Be a dear and ship them some baseball bats, so that management can live out their childhood dream."
-	reward = 1000
-	required_count = 5
-	wanted_types = list(/obj/item/melee/baseball_bat)
-
-/datum/bounty/item/assistant/extendohand
-	name = "Extendo-Hand"
-	description = "Commander Betsy is getting old, and can't bend over to get the telescreen remote anymore. Management has requested an extendo-hand to help her out."
-	reward = 1250
-	wanted_types = list(/obj/item/extendohand)
 
 // /datum/bounty/item/assistant/donut
 // 	name = "Donuts"
@@ -186,12 +174,6 @@
 	description = "The Syndicate recently stole all of CentCom's corgi meat. Ship out a replacement immediately."
 	reward = 3000
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/corgi)
-
-/datum/bounty/item/assistant/tail_whip
-	name = "Nine Tails whip"
-	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
-	reward = 4000
-	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip)
 
 /datum/bounty/item/assistant/bolas
 	name = "Bolas"

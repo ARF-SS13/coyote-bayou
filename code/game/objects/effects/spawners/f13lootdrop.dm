@@ -504,7 +504,6 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/gun/medbeam,
 				/obj/item/defibrillator/compact/combat/loaded,
 				/obj/item/reagent_containers/hypospray/combat,
 				/obj/item/clothing/glasses/hud/health/night,
@@ -704,14 +703,14 @@
 	name = "shotgun bat and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/caravan_shotgun
 	name = "caravan shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/ammo_box/shotgun/bean
+				/obj/item/ammo_box/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/mosin
@@ -1171,17 +1170,10 @@
 				/obj/effect/spawner/bundle/f13/wattz2k,
 				/obj/effect/spawner/bundle/f13/rcw,
 				/obj/effect/spawner/bundle/f13/riotshotgun,
-				/obj/effect/spawner/bundle/f13/beam,
 				/obj/effect/spawner/bundle/f13/aer12,
 				/obj/effect/spawner/bundle/f13/guns/tommygun,
 				/obj/effect/spawner/bundle/f13/hunting
 				)
-
-/obj/effect/spawner/bundle/f13/beam
-	name = "medbeam spawner"
-	items = list(
-				/obj/item/gun/medbeam
-	)
 
 /obj/effect/spawner/bundle/f13/guns/p90
 	name = "P90 SMG spawner"

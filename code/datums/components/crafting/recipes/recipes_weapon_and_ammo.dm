@@ -59,17 +59,6 @@
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/teleprod
-	name = "Teleprod"
-	result = /obj/item/melee/baton/cattleprod/teleprod
-	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/stack/rods = 1,
-				/obj/item/assembly/igniter = 1,
-				/obj/item/stack/ore/bluespace_crystal = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
 */
 
 /datum/crafting_recipe/bola
@@ -80,34 +69,6 @@
 	time = 20//15 faster than crafting them by hand!
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-/*
-/datum/crafting_recipe/tailclub
-	name = "Tail Club"
-	result = /obj/item/tailclub
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/sheet/metal = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/tailwhip
-	name = "Liz O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-
-/datum/crafting_recipe/catwhip
-	name = "Cat O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip/kitty
-	reqs = list(/obj/item/organ/tail/cat = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-*/
 
 ///datum/crafting_recipe/chainsaw
 //	name = "Chainsaw"

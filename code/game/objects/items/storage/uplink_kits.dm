@@ -57,7 +57,6 @@
 			new /obj/item/reagent_containers/syringe/stimulants(src)
 
 		if("baseball") // 42~ tc
-			new /obj/item/melee/baseball_bat/ablative/syndi(src) //Lets say 12 tc, lesser sleeping carp
 			new /obj/item/clothing/glasses/sunglasses/garb(src) //Lets say 2 tc
 			new /obj/item/card/emag(src) //6 tc
 			new /obj/item/clothing/shoes/sneakers/noslip(src) //2tc
@@ -135,7 +134,7 @@
 			new /obj/item/card/emag(src) // 6 tc
 
 		if("ninja") // 40~ tc worth
-			new /obj/item/katana(src) // Unique , basicly a better esword. 10 tc?
+			new /obj/item/melee/onehanded/machete(src)
 			new /obj/item/implanter/adrenalin(src) // 8 tc
 			new /obj/item/throwing_star(src) // ~5 tc for all 6
 			new /obj/item/throwing_star(src)

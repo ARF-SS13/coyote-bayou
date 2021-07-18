@@ -6,7 +6,7 @@
 	name = "Bucket"
 	id = "bucket"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 200)
+	materials = list(MAT_METAL = 500)
 	build_path = /obj/item/reagent_containers/glass/bucket
 	category = list("initial","Tools")
 
@@ -54,7 +54,7 @@
 	name = "Pre-War Crowbar"
 	id = "crowbar"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 50)
+	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/crowbar
 	category = list("initial","Tools")
 
@@ -62,7 +62,7 @@
 	name = "Pre-War Welding Tool"
 	id = "welding_tool"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 70, MAT_GLASS = 20)
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 500)
 	build_path = /obj/item/weldingtool
 	category = list("initial","Tools")
 
@@ -70,7 +70,7 @@
 	name = "Pre-War Screwdriver"
 	id = "screwdriver"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 75)
+	materials = list(MAT_METAL = 500)
 	build_path = /obj/item/screwdriver
 	category = list("initial","Tools")
 
@@ -78,7 +78,7 @@
 	name = "Pre-War Cutters"
 	id = "wirecutters"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 80)
+	materials = list(MAT_METAL = 500)
 	build_path = /obj/item/wirecutters
 	category = list("initial","Tools")
 
@@ -86,7 +86,7 @@
 	name = "Pre-war Wrench"
 	id = "wrench"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 150)
+	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/wrench
 	category = list("initial","Tools")
 

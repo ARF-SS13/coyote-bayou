@@ -29,7 +29,7 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmormk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmetmk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/entrenching_tool)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
 
 /*
 Colonel

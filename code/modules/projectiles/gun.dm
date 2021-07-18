@@ -151,7 +151,6 @@ ATTACHMENTS
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	attack_verb = list("struck", "hit", "bashed")
 	var/ranged_attack_speed = CLICK_CD_RANGE
-
 	var/fire_sound = "gunshot"
 	var/recoil = 0						//boom boom shake the room
 	var/clumsy_check = TRUE

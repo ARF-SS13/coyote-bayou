@@ -113,7 +113,7 @@
 		if(91)
 			new /obj/item/soulstone/anybody(src)
 		if(92)
-			new /obj/item/katana(src)
+			new /obj/item/organ/heart(src)
 		if(93)
 			new /obj/item/dnainjector/xraymut(src)
 		if(96)
@@ -122,7 +122,7 @@
 			new /obj/item/clothing/mask/balaclava
 			new /obj/item/gun/ballistic/automatic/pistol(src)
 		if(98)
-			new /obj/item/katana/cursed(src)
+			new /obj/item/organ/heart(src)
 		if(99)
 			new /obj/item/storage/belt/champion(src)
 			new /obj/item/clothing/mask/luchador(src)
