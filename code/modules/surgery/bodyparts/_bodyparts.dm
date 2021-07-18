@@ -724,6 +724,7 @@
 				. += image(body_markings_icon, "[body_markings]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
 
 	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+	var/image/second_limb
 	var/list/aux = list()
 	var/image/marking
 	var/list/auxmarking = list()
@@ -756,6 +757,11 @@
 				limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
 		else
 			limb.icon_state = "[species_id]_[body_zone]"
+
+		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
+			second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+			second_limb.icon = limb.icon
+			. += second_limb
 
 		// Body markings
 		if(!isnull(body_markings))
@@ -833,7 +839,8 @@
 			draw_color = "#[draw_color]"
 		if(draw_color)
 			if(grayscale)
-				limb.icon_state += "_g"
+				if(!second_limb)
+					limb.icon_state += "_g"
 			limb.color = draw_color
 			if(aux_icons)
 				for(var/a in aux)
@@ -855,6 +862,12 @@
 				else
 					marking.color = list(markings_color)
 
+
+	if(second_limb)
+		var/original_state = limb.icon_state
+		limb.icon_state = "[original_state]_front"
+		second_limb.icon_state = "[original_state]_behind"
+		second_limb.color = limb.color
 
 /obj/item/bodypart/deconstruct(disassembled = TRUE)
 	drop_organs()
