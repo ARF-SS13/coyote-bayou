@@ -2326,6 +2326,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/bunker)
+"chQ" = (
+/mob/living/simple_animal/hostile/supermutant/meleemutant,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "chR" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/tunnel)
@@ -20816,7 +20820,7 @@
 /area/f13/bunker)
 "qCm" = (
 /obj/structure/closet/crate/miningcar,
-/obj/effect/spawner/bundle/f13/plasmarifle,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/floor/wood/f13/stage_bl,
 /area/f13/caves)
 "qCu" = (
@@ -45656,7 +45660,7 @@ bZb
 nZk
 myy
 myy
-xVz
+chQ
 xVz
 xVz
 xVz
