@@ -6,7 +6,7 @@
 	products = list(/obj/item/reagent_containers/glass/bowl = 30,
 					/obj/item/storage/bag/tray = 8,
 					/obj/item/kitchen/fork = 6,
-					/obj/item/kitchen/knife = 6,
+					/obj/item/melee/onehanded/knife/kitchen = 6,
 					/obj/item/kitchen/rollingpin = 4,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 8,
 					/obj/item/clothing/suit/apron/chef = 2,
@@ -20,7 +20,7 @@
 					/obj/item/reagent_containers/food/condiment/saltshaker = 5,
 					/obj/item/reagent_containers/food/condiment/peppermill = 5)
 	contraband = list(
-					/obj/item/kitchen/knife/butcher = 2,
+					/obj/item/melee/onehanded/knife/butcher = 2,
 					/obj/item/reagent_containers/syringe = 3)
 	premium = list(
 					/obj/item/reagent_containers/food/condiment/enzyme = 1)

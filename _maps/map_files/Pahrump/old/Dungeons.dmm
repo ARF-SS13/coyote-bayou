@@ -5166,7 +5166,6 @@
 /area/f13/bunker)
 "nx" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -6729,7 +6728,7 @@
 /area/f13/city)
 "rZ" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
+
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "sa" = (
@@ -9849,7 +9848,7 @@
 /area/f13/bunker)
 "BA" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
+
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -10172,8 +10171,6 @@
 "Cy" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/apron/chef,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "Cz" = (
@@ -15749,8 +15746,7 @@
 /area/f13/vault)
 "QL" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/knife,
+
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -16139,7 +16135,6 @@
 /obj/item/reagent_containers/food/condiment/yeast{
 	layer = 5
 	},
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -17723,10 +17718,6 @@
 /area/f13/bunker)
 "VI" = (
 /obj/structure/table,
-/obj/item/kitchen/knife{
-	pixel_x = -2;
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "VJ" = (

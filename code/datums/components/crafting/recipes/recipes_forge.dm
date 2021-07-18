@@ -152,8 +152,8 @@
 //KNIVES//
 
 /datum/crafting_recipe/butchers
-	name = "Butchers Knife"
-	result = /obj/item/kitchen/knife/butcher
+	name = "Butchers Cleaver"
+	result = /obj/item/melee/onehanded/knife/butcher
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/cloth = 1)
@@ -183,7 +183,7 @@
 
 /datum/crafting_recipe/kitchen
 	name = "Kitchen Knife"
-	result = /obj/item/kitchen/knife
+	result = /obj/item/melee/onehanded/knife/kitchen
 	time = 30
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/cloth = 1)
@@ -193,7 +193,7 @@
 
 /datum/crafting_recipe/ritual
 	name = "Ritual Knife"
-	result = /obj/item/kitchen/knife/ritualdagger
+	result = /obj/item/melee/onehanded/knife/ritualdagger
 	time = 120
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/cloth = 1)

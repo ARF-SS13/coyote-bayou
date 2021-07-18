@@ -324,11 +324,11 @@
 /obj/item/smithing/knifeblade
 	name = "smithed knife blade"
 	finishingitem = /obj/item/swordhandle
-	finalitem = /obj/item/kitchen/knife
+	finalitem = /obj/item/melee/onehanded/knife/kitchen
 	icon_state = "dagger"
 
 /obj/item/smithing/knifeblade/startfinish()
-	finalitem = new /obj/item/kitchen/knife(src)
+	finalitem = new /obj/item/melee/onehanded/knife/kitchen(src)
 	finalitem.force = 4 + quality/2
 	finalitem.armour_penetration += quality*0.0375
 	finalitem.icon = 'icons/obj/smith.dmi'

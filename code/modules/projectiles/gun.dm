@@ -202,7 +202,7 @@ ATTACHMENTS
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/gunlight_state = "flight"
 
-	var/obj/item/kitchen/knife/bayonet
+	var/obj/item/melee/onehanded/knife/bayonet/bayonet
 	var/mutable_appearance/knife_overlay
 	var/can_bayonet = FALSE
 	var/bayonet_state = "bayonetstraight"
@@ -605,8 +605,8 @@ ATTACHMENTS
 				alight.Grant(user)
 		return
 
-	if(istype(I, /obj/item/kitchen/knife))
-		var/obj/item/kitchen/knife/K = I
+	if(istype(I, /obj/item/melee/onehanded/knife/bayonet))
+		var/obj/item/melee/onehanded/knife/bayonet/K = I
 		if(!can_bayonet || !K.bayonet || bayonet) //ensure the gun has an attachment point available, and that the knife is compatible with it.
 			return ..()
 		if(!user.transferItemToLoc(I, src))
@@ -683,7 +683,7 @@ ATTACHMENTS
 	if(can_bayonet && bayonet)
 		I.play_tool_sound(src)
 		to_chat(user, "<span class='notice'>You unscrew the bayonet from \the [src].</span>")
-		var/obj/item/kitchen/knife/K = bayonet
+		var/obj/item/melee/onehanded/knife/bayonet/K = bayonet
 		K.forceMove(get_turf(user))
 		bayonet = null
 		update_icon()

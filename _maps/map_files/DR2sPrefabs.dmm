@@ -1180,8 +1180,8 @@
 /area/space)
 "dg" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/butcher,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3038,7 +3038,7 @@
 /area/space)
 "iu" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/mining_scanner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -3545,7 +3545,7 @@
 /area/space)
 "jN" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/hatchet,
 /obj/item/wirecutters{
 	icon_state = "cutters"
@@ -5398,7 +5398,6 @@
 /area/space)
 "pI" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife/butcher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
 "pJ" = (
@@ -5677,7 +5676,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/screwdriver,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -5894,7 +5893,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/screwdriver,
 /obj/item/reagent_containers/pill/morphine,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5969,7 +5968,7 @@
 /area/space)
 "rB" = (
 /obj/structure/closet/cabinet,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/stack/f13Cash/denarius,
 /obj/item/stack/f13Cash/denarius,
 /turf/open/indestructible/ground/inside/mountain,
@@ -6298,7 +6297,6 @@
 /obj/structure/table/wood,
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/box/matches,
-/obj/item/kitchen/knife,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "sB" = (
@@ -6418,7 +6416,6 @@
 /area/space)
 "wq" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -7195,7 +7192,7 @@
 /area/space)
 "Ic" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/butcher
+/obj/item/melee/onehanded/knife/butcher,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,

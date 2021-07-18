@@ -29,7 +29,7 @@
 			new /obj/item/lighter(src)
 		if(6 to 10)
 			new /obj/item/bedsheet(src)
-			new /obj/item/kitchen/knife(src)
+			new /obj/item/melee/onehanded/knife/kitchen(src)
 			new /obj/item/wirecutters(src)
 			new /obj/item/screwdriver(src)
 			new /obj/item/weldingtool(src)

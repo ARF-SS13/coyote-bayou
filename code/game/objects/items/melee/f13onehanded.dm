@@ -280,7 +280,7 @@
 	throwforce = 20
 	custom_materials = null
 
-/obj/item/melee/onehanded/kniferitualdagger
+/obj/item/melee/onehanded/knife/ritualdagger
 	name = "ritual dagger"
 	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
 	icon_state = "knife_ritual"

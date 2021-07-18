@@ -72,7 +72,7 @@ Colonel
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/m556/rifle=1, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/storage/bag/money/small/ncr=1, \
@@ -126,7 +126,7 @@ Captain
 	neck 		= /obj/item/storage/belt/holster
 	ears = 		/obj/item/radio/headset/headset_ncr_com
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/binoculars=1, \
 		/obj/item/storage/bag/money/small/ncr, \
@@ -187,7 +187,7 @@ Lieutenant
 	suit_store	= /obj/item/gun/ballistic/automatic/service/r82
 	belt		= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -238,7 +238,7 @@ Medical Officer
 	r_hand 		= /obj/item/storage/backpack/duffelbag/med/surgery
 	mask 		= /obj/item/clothing/mask/surgical
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/storage/survivalkit_aid=2, \
@@ -288,7 +288,7 @@ Logistics Officer
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
 		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/ammo_box/magazine/m556/rifle=1, \
@@ -342,7 +342,6 @@ Sergeant First Class
 	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
 		/obj/item/storage/survivalkit_aid=1, \
@@ -387,7 +386,7 @@ Sergeant
 	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/bayonet=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
@@ -421,7 +420,7 @@ Sergeant
 		/obj/item/clothing/mask/gas=1, \
 		/obj/item/tank/internals/emergency_oxygen/engi=1, \
 		/obj/item/grenade/smokebomb=3, \
-		/obj/item/kitchen/knife/trench=1 \
+		/obj/item/melee/onehanded/knife/trench=1 \
 		)	//ahhhhhhhhhhh
 
 
@@ -457,7 +456,7 @@ Heavy Trooper
 	suit_store		= /obj/item/gun/ballistic/automatic/r84
 	belt			= /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
@@ -505,7 +504,7 @@ Corporal
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/bayonet=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted=1 \
 		)
@@ -566,7 +565,7 @@ Corporal
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid_adv=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted=1, \
 		/obj/item/ammo_box/magazine/m10mm_adv/ext=2, \
@@ -621,7 +620,7 @@ Combat Engineer
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted=1 \
 		)
@@ -708,7 +707,7 @@ Trooper
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	glasses = 		null
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 
@@ -767,7 +766,7 @@ Trooper
 	r_pocket = 		/obj/item/binoculars
 
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/ammo_box/magazine/m9mm=3, \
@@ -808,7 +807,7 @@ Rear Echelon
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	glasses = 		null
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted=1, \
 		)
@@ -884,7 +883,7 @@ Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/melee/onehanded/knife/survival=1, \
 		/obj/item/storage/survivalkit_aid=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
@@ -943,7 +942,7 @@ Veteran Ranger
 	ears = 			/obj/item/radio/headset/headset_ranger
 	r_pocket = 		/obj/item/binoculars
 	backpack_contents = list(
-		/obj/item/kitchen/knife/bowie=1, \
+		/obj/item/melee/onehanded/knife/bowie=1, \
 		/obj/item/storage/survivalkit_aid_adv=1, \
 		/obj/item/storage/bag/money/small/ncr=1)
 
@@ -1021,7 +1020,7 @@ Veteran Ranger
 	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/bowie=1, \
+		/obj/item/melee/onehanded/knife/bowie=1, \
 		/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/clothing/mask/gas/ranger = 1)
 

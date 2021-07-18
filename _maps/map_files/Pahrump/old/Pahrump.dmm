@@ -777,7 +777,6 @@
 /area/f13/building)
 "acN" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -4920,8 +4919,7 @@
 	pixel_y = 32
 	},
 /obj/structure/table,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife{
+/obj/item/melee/onehanded/knife/kitchen{
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
@@ -5059,7 +5057,7 @@
 	},
 /area/f13/building)
 "aqc" = (
-/obj/item/kitchen/knife/butcher,
+/obj/item/melee/onehanded/knife/butcher,
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibmid3"
 	},
@@ -6464,7 +6462,6 @@
 /area/f13/building)
 "auS" = (
 /obj/structure/table/reinforced,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6936,11 +6933,8 @@
 /area/f13/wasteland)
 "awz" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife{
+/obj/item/melee/onehanded/knife/kitchen{
 	pixel_x = 5
-	},
-/obj/item/kitchen/rollingpin{
-	pixel_x = -3
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
@@ -10039,7 +10033,6 @@
 /area/f13/caves)
 "aGe" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "aGf" = (
@@ -10582,7 +10575,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aHP" = (
-/obj/item/kitchen/knife/butcher,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aHQ" = (
@@ -10896,9 +10888,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "aIN" = (
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
 /obj/structure/rack,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
@@ -12581,7 +12570,6 @@
 /area/f13/village)
 "aOf" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -13834,7 +13822,7 @@
 /area/f13/village)
 "aSl" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aSm" = (
@@ -16128,7 +16116,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/army,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -16474,9 +16462,7 @@
 /area/f13/building)
 "bbV" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -16927,7 +16913,6 @@
 /area/f13/wasteland)
 "bdr" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bds" = (
@@ -17459,8 +17444,6 @@
 /area/f13/village)
 "beX" = (
 /obj/structure/table,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -18081,7 +18064,6 @@
 /area/f13/building)
 "bho" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -18109,7 +18091,7 @@
 "bht" = (
 /obj/structure/table/wood/fancy,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/wood/f13/carpet,
 /area/f13/bar)
 "bhu" = (
@@ -18855,7 +18837,7 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -20304,7 +20286,6 @@
 /area/f13/city)
 "brG" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -20601,7 +20582,6 @@
 /area/f13/ncr)
 "btq" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bts" = (
@@ -22143,7 +22123,6 @@
 /area/f13/caves)
 "bzo" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
 /obj/item/megaphone,
 /obj/item/flashlight/flare/torch,
 /obj/item/flashlight/flare/torch,
@@ -22251,8 +22230,6 @@
 /area/f13/ncr)
 "bzG" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -22345,10 +22322,7 @@
 /area/f13/ncr)
 "bAa" = (
 /obj/structure/table,
-/obj/item/kitchen/rollingpin{
-	pixel_x = -3
-	},
-/obj/item/kitchen/knife{
+/obj/item/melee/onehanded/knife/kitchen{
 	pixel_x = 5
 	},
 /obj/machinery/light{
@@ -23441,8 +23415,6 @@
 /area/f13/brotherhood)
 "bDs" = (
 /obj/structure/table/reinforced,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/brotherhood)
 "bDt" = (
@@ -23548,12 +23520,6 @@
 /area/f13/brotherhood)
 "bDF" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
 /obj/item/twohanded/sledgehammer/supersledge,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
@@ -23701,7 +23667,7 @@
 /obj/item/kitchen/rollingpin{
 	pixel_x = -3
 	},
-/obj/item/kitchen/knife{
+/obj/item/melee/onehanded/knife/kitchen{
 	pixel_x = 5
 	},
 /turf/open/floor/f13/wood,
@@ -26986,9 +26952,7 @@
 "bON" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -28374,8 +28338,7 @@
 /area/f13/caves)
 "bVs" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -29654,7 +29617,7 @@
 /area/f13/city)
 "cdm" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -31786,7 +31749,6 @@
 /area/f13/village)
 "cmY" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/cosmicdirty,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "cna" = (
@@ -33607,7 +33569,6 @@
 /area/f13/legion)
 "dgn" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -34727,7 +34688,6 @@
 /area/f13/bunker)
 "eTb" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -34819,7 +34779,7 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
+/obj/item/melee/onehanded/knife/butcher,
 /obj/machinery/processor/chopping_block{
 	pixel_y = 7
 	},
@@ -35538,7 +35498,6 @@
 /area/f13/tunnel)
 "ggd" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -36776,7 +36735,7 @@
 /area/f13/village)
 "hVN" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/butcher,
+/obj/item/melee/onehanded/knife/butcher,
 /obj/item/clothing/suit/apron/chef,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
@@ -37553,7 +37512,7 @@
 /obj/structure/table,
 /obj/item/reagent_containers/food/condiment/peppermill,
 /obj/item/reagent_containers/food/condiment/saltshaker,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -44642,7 +44601,6 @@
 /area/f13/village)
 "tEr" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},

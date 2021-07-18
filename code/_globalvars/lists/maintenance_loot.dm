@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/pipe = 5,
 	/obj/item/trash/f13/electronic/toaster = 5,
 	/obj/item/reagent_containers/glass/bucket = 5,
-	/obj/item/kitchen/knife = 5,
+	/obj/item/melee/onehanded/knife/kitchen = 5,
 	/obj/item/kitchen/fork = 5,
 	/obj/item/storage/bag/tray = 5,
 	/obj/item/reagent_containers/glass/bowl = 5,
@@ -275,7 +275,6 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/light/bulb = 5,
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
-	/obj/item/kitchen/knife/butcher = 5,
 	/obj/item/toy/crayon/spraycan = 5
 ))
 
@@ -446,7 +445,7 @@ GLOBAL_LIST_INIT(loot_t1_melee, list(
 	/obj/item/hatchet,
 	/obj/item/pickaxe/mini,
 	/obj/item/wrench,
-	/obj/item/kitchen/knife,
+	/obj/item/melee/onehanded/knife/kitchen,
 	/obj/item/kitchen/rollingpin,
 ))
 

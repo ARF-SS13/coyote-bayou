@@ -232,7 +232,7 @@ Druid
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
-		/obj/item/kitchen/knife/ritualdagger=1,
+		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
@@ -298,7 +298,7 @@ Villager
 /datum/outfit/loadout/mender
 	name = "Mender"
 	backpack_contents = list(
-		/obj/item/kitchen/knife/ritualdagger=1,
+		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/stack/medical/gauze/improvised=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/reagent_containers/glass/mortar=1,
