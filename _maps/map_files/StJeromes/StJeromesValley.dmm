@@ -1168,7 +1168,6 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
-/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -1358,7 +1357,6 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
-/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -11509,7 +11507,6 @@
 /area/f13/ruins)
 "aIt" = (
 /obj/item/clothing/under/rank/curator,
-/obj/item/melee/curator_whip,
 /obj/item/pda/curator,
 /obj/structure/table/wood,
 /obj/item/book/granter/action/drink_fling,
@@ -24639,21 +24636,6 @@
 /area/f13/legion)
 "bxg" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
 "bxh" = (
@@ -28662,7 +28644,6 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot/vaultsec,
-/obj/item/melee/classic_baton,
 /obj/item/clothing/mask/gas,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"

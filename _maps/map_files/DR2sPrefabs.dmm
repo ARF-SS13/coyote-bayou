@@ -6026,10 +6026,7 @@
 /area/space)
 "rL" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
 /obj/item/clothing/mask/muzzle,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -6536,10 +6533,7 @@
 /area/space)
 "FX" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "FY" = (

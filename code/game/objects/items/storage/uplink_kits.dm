@@ -465,7 +465,6 @@
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
 	new /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink(src)
 	new /obj/item/storage/box/syndicate/contractor_loadout(src)
-	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
 	var/list/item_list = list(	// All 4 TC or less - some nukeops only items, but fit nicely to the theme.
 		/obj/item/storage/backpack/duffelbag/syndie/x4,
 		/obj/item/storage/box/syndie_kit/throwing_weapons,

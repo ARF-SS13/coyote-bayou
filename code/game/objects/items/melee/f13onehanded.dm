@@ -338,7 +338,7 @@
 	sharpness = SHARP_NONE
 	slot_flags = SLOT_BELT
 
-/obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/club/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
@@ -354,7 +354,7 @@
 	throwforce = 25
 	block_chance = 5
 
-/obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/club/warclub/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
@@ -406,6 +406,236 @@
 	item_state = "ncr_flag"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+
+/obj/item/melee/classic_baton
+	name = "wooden baton"
+	desc = "A wooden truncheon for beating criminal scum."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "baton"
+	item_state = "classic_baton"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	force = 12 //9 hit crit
+	w_class = WEIGHT_CLASS_NORMAL
+	var/stun_stam_cost_coeff = 1.25
+	var/hardstun_ds = TRUE
+	var/softstun_ds = 0
+	var/stam_dmg = 30
+	var/cooldown_check = 0 // Used internally, you don't want to modify
+	var/cooldown = 13 // Default wait time until can stun again.
+	var/stun_time_silicon = 60 // How long it stuns silicons for - 6 seconds.
+	var/affect_silicon = FALSE // Does it stun silicons.
+	var/on_sound // "On" sound, played when switching between able to stun or not.
+	var/on_stun_sound = "sound/effects/woodhit.ogg" // Default path to sound for when we stun.
+	var/stun_animation = TRUE // Do we animate the "hit" when stunning.
+	var/on = TRUE // Are we on or off
+	var/on_icon_state // What is our sprite when turned on
+	var/off_icon_state // What is our sprite when turned off
+	var/on_item_state // What is our in-hand sprite when turned on
+	var/force_on // Damage when on - not stunning
+	var/force_off // Damage when off - not stunning
+	var/weight_class_on // What is the new size class when turned on
+
+	wound_bonus = 15
+
+/obj/item/melee/classic_baton/Initialize()
+	. = ..()
+
+// Description for trying to stun when still on cooldown.
+/obj/item/melee/classic_baton/proc/get_wait_description()
+	return
+
+// Description for when turning their baton "on"
+/obj/item/melee/classic_baton/proc/get_on_description()
+	. = list()
+	.["local_on"] = "<span class ='warning'>You extend the baton.</span>"
+	.["local_off"] = "<span class ='notice'>You collapse the baton.</span>"
+	return .
+
+// Default message for stunning mob.
+/obj/item/melee/classic_baton/proc/get_stun_description(mob/living/target, mob/living/user)
+	. = list()
+	.["visible"] =  "<span class ='danger'>[user] has knocked down [target] with [src]!</span>"
+	.["local"] = "<span class ='danger'>[user] has knocked down [target] with [src]!</span>"
+	return .
+
+// Default message for stunning a silicon.
+/obj/item/melee/classic_baton/proc/get_silicon_stun_description(mob/living/target, mob/living/user)
+	. = list()
+	.["visible"] = "<span class='danger'>[user] pulses [target]'s sensors with the baton!</span>"
+	.["local"] = "<span class='danger'>You pulse [target]'s sensors with the baton!</span>"
+	return .
+
+// Are we applying any special effects when we stun to carbon
+/obj/item/melee/classic_baton/proc/additional_effects_carbon(mob/living/target, mob/living/user)
+	return
+
+// Are we applying any special effects when we stun to silicon
+/obj/item/melee/classic_baton/proc/additional_effects_silicon(mob/living/target, mob/living/user)
+	return
+
+/obj/item/melee/classic_baton/attack(mob/living/target, mob/living/user)
+	if(!on)
+		return ..()
+
+	if(IS_STAMCRIT(user))//CIT CHANGE - makes batons unusuable in stamina softcrit
+		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		return //CIT CHANGE - ditto
+
+	add_fingerprint(user)
+	if((HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
+		to_chat(user, "<span class ='danger'>You club yourself over the head.</span>")
+		user.DefaultCombatKnockdown(60 * force)
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(2*force, BRUTE, BODY_ZONE_HEAD)
+		else
+			user.take_bodypart_damage(2*force)
+		return
+	if(iscyborg(target))
+		if(user.a_intent != INTENT_HARM)	// We don't stun if we're on harm.
+			if(affect_silicon)
+				var/list/desc = get_silicon_stun_description(target, user)
+				target.flash_act(affect_silicon = TRUE)
+				target.Stun(stun_time_silicon)
+				additional_effects_silicon(target, user)
+				user.visible_message(desc["visible"], desc["local"])
+				playsound(get_turf(src), on_stun_sound, 100, TRUE, -1)
+				if(stun_animation)
+					user.do_attack_animation(target)
+			else
+				..()
+		else
+			..()
+		return
+	if(!isliving(target))
+		return
+	if(user.a_intent == INTENT_HARM)
+		if(!..() || !iscyborg(target))
+			return
+	else
+		if(cooldown_check < world.time)
+			if(target.mob_run_block(src, 0, "[user]'s [name]", ATTACK_TYPE_MELEE, 0, user, null, null) & BLOCK_SUCCESS)
+				playsound(target, 'sound/weapons/genhit.ogg', 50, 1)
+				return
+			if(ishuman(target) && !user.zone_selected ==	BODY_ZONE_L_LEG || !user.zone_selected == BODY_ZONE_R_LEG)
+				var/mob/living/carbon/human/H = target
+				if(check_martial_counter(H, user))
+					return
+			var/list/desc = get_stun_description(target, user)
+			if(stun_animation)
+				user.do_attack_animation(target)
+			playsound(get_turf(src), on_stun_sound, 75, 1, -1)
+			target.adjustStaminaLoss(30)
+			additional_effects_carbon(target, user)
+			add_fingerprint(user)
+			target.visible_message(desc["visible"], desc["local"])
+			if(!iscarbon(user))
+				target.LAssailant = null
+			else
+				target.LAssailant = WEAKREF(user)
+			cooldown_check = world.time + cooldown
+			user.adjustStaminaLossBuffered(getweight(user, STAM_COST_BATON_MOB_MULT))
+		else
+			var/wait_desc = get_wait_description()
+			if(wait_desc)
+				to_chat(user, wait_desc)
+			return DISCARD_LAST_ACTION
+
+/obj/item/melee/classic_baton/telescopic
+	name = "telescopic baton"
+	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "telebaton_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	on = FALSE
+	on_sound = 'sound/weapons/batonextend.ogg'
+	on_icon_state = "telebaton_1"
+	off_icon_state = "telebaton_0"
+	on_item_state = "nullrod"
+	force_on = 10
+	force_off = 0
+	weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_NORMAL_ITEM
+	bare_wound_bonus = 5
+
+/obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
+	var/mob/living/carbon/human/H = user
+	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
+
+	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
+	if(!on)
+		src.attack_self(user)
+	else
+		playsound(loc, on_sound, 50, 1)
+		add_fingerprint(user)
+	sleep(3)
+	if (H && !QDELETED(H))
+		if (B && !QDELETED(B))
+			H.internal_organs -= B
+			qdel(B)
+		H.spawn_gibs()
+		return (BRUTELOSS)
+
+/obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
+	on = !on
+	var/list/desc = get_on_description()
+	if(on)
+		to_chat(user, desc["local_on"])
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list("smacked", "struck", "cracked", "beaten")
+	else
+		to_chat(user, desc["local_off"])
+		icon_state = off_icon_state
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("hit", "poked")
+	playsound(src.loc, on_sound, 50, 1)
+	add_fingerprint(user)
+
+
+// Slave whip
+/obj/item/melee/onehanded/slavewhip
+	name = "slave whip"
+	desc = "Corded leather strips turned into a instrument of pain. Cracks ominously when a skilled wielder uses it."
+	icon_state = "whip"
+	item_state = "chain"
+	force = 10
+	bare_wound_bonus = 5
+	sharpness = SHARP_EDGED
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	hitsound = 'sound/weapons/whip.ogg'
+
+/obj/item/melee/onehanded/slavewhip/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(20, STAMINA, null, 0)
+
+/obj/item/melee/curator_whip //obsolete
+	name = "curator's whip"
+	desc = "Somewhat eccentric and outdated, it still stings like hell to be hit by."
+	icon_state = "whip"
+	item_state = "chain"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	force = 15
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	hitsound = 'sound/weapons/whip.ogg'
 
 
 ///////////////////

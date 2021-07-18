@@ -1076,10 +1076,6 @@
 /area/f13/legioncamp)
 "adB" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "adC" = (
@@ -21207,7 +21203,6 @@
 /area/f13/sunny_dale)
 "bgC" = (
 /obj/structure/rack,
-/obj/item/melee/classic_baton,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
