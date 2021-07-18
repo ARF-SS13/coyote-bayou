@@ -69,8 +69,7 @@ jobs:
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           python3 tools/ci/template_dm_generator.py
-          tgui/bin/tgui --build
-          bash tools/ci/dm.sh -DCIBUILDING -DCITESTING -DALL_MAPS fortune13.dme
+          tools/build/build dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
   auxtools_tg:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
