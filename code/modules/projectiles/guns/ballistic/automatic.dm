@@ -722,16 +722,18 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle								Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +4
+//DKS 501 sniper rifle								Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +3
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
-	fire_delay = 10
+	fire_delay = 9
 	burst_size = 1
 	extra_speed = 500
+	zoom_amt = 10
+	zoom_out_amt = 13
 	semi_auto = TRUE
 	can_automatic = FALSE
 	can_bayonet = FALSE

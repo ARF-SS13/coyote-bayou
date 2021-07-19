@@ -97,6 +97,7 @@
 	message_admins(message)
 	log_game("[key_name(user)] has primed \a [src] for detonation at [AREACOORD(T)].")
 
+// for electric beep on activation
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/turf/T = get_turf(src)
 	log_grenade(user, T) //Inbuilt admin procs already handle null users
@@ -110,7 +111,42 @@
 	playsound(src, 'sound/weapons/armbomb.ogg', volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
+	item_state = initial(item_state) + "_active"
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
+// for ticking sound until detonation
+/obj/item/grenade/proc/primetimer(mob/user, delayoverride, msg = TRUE, volume = 60) 
+	var/turf/T = get_turf(src)
+	log_grenade(user, T) //Inbuilt admin procs already handle null users
+	if(user)
+		add_fingerprint(user)
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.throw_mode_on()
+		if(msg)
+			to_chat(user, "<span class='warning'>You prime [src]! [DisplayTimeText(det_time)]!</span>")
+	active = TRUE
+	icon_state = initial(icon_state) + "_active"
+	item_state = initial(item_state) + "_active"
+	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
+// For hissing fuse sound
+/obj/item/grenade/proc/primefuse(mob/user, delayoverride, msg = TRUE, volume = 60) 
+	var/turf/T = get_turf(src)
+	log_grenade(user, T) //Inbuilt admin procs already handle null users
+	if(user)
+		add_fingerprint(user)
+		if(iscarbon(user))
+			var/mob/living/carbon/C = user
+			C.throw_mode_on()
+		if(msg)
+			to_chat(user, "<span class='warning'>You prime [src]! [DisplayTimeText(det_time)]!</span>")
+	playsound(src, 'sound/effects/fuse.ogg', volume, 1)
+	active = TRUE
+	icon_state = initial(icon_state) + "_active"
+	item_state = initial(item_state) + "_active"
+	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+
 
 /obj/item/grenade/proc/prime(mob/living/lanced_by)
 	var/turf/T = get_turf(src)

@@ -1,11 +1,10 @@
 /datum/crafting_recipe/bottler
 	name = "Bottle Press"
 	result = /obj/machinery/workbench/bottler
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/crafting/goodparts = 10,
-				/obj/item/stack/cable_coil = 10,
-				/obj/item/wrench = 1)
-	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/crafting/reloader = 1)
+	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER)
 	time = 80
 	category = CAT_MISC
 	subcategory = CAT_BOTTLE
