@@ -104,7 +104,7 @@
 	merge_type = /obj/item/stack/ore/glass
 
 /obj/item/stack/ore/blackpowder
-	name = "blackpowder"
+	name = "gunpowder"
 	icon_state = "Blackpowder ore"
 	item_state = "Blackpowder ore"
 	singular_name = "blackpowder"
