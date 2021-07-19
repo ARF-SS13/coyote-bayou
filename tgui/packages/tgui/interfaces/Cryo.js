@@ -1,3 +1,4 @@
+import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { AnimatedNumber, Button, LabeledList, ProgressBar, Section } from '../components';
 import { BeakerContents } from './common/BeakerContents';
@@ -26,7 +27,8 @@ export const Cryo = () => {
   return (
     <Window
       width={400}
-      height={550}>
+      height={550}
+      resizable>
       <Window.Content scrollable>
         <CryoContent />
       </Window.Content>
@@ -37,14 +39,14 @@ export const Cryo = () => {
 const CryoContent = (props, context) => {
   const { act, data } = useBackend(context);
   return (
-    <>
+    <Fragment>
       <Section title="Occupant">
         <LabeledList>
           <LabeledList.Item label="Occupant">
             {data.occupant.name || 'No Occupant'}
           </LabeledList.Item>
           {!!data.hasOccupant && (
-            <>
+            <Fragment>
               <LabeledList.Item
                 label="State"
                 color={data.occupant.statstate}>
@@ -76,7 +78,7 @@ const CryoContent = (props, context) => {
                   </ProgressBar>
                 </LabeledList.Item>
               )))}
-            </>
+            </Fragment>
           )}
         </LabeledList>
       </Section>
@@ -119,6 +121,6 @@ const CryoContent = (props, context) => {
           beakerLoaded={data.isBeakerLoaded}
           beakerContents={data.beakerContents} />
       </Section>
-    </>
+    </Fragment>
   );
 };

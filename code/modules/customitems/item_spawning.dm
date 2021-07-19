@@ -17,7 +17,7 @@
 
 
 //ITEM_ICONS ARE DEPRECATED. USE CONTAINED SPRITES IN FUTURE
-//GLOBAL_LIST_EMPTY(custom_items)
+/var/list/custom_items = list()
 
 /datum/custom_item
 	var/assoc_key

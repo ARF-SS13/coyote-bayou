@@ -184,8 +184,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
-	/// Associative list[job path] -> loadout path. If unset the loadout chosen will be random on spawn.
-	var/list/preferred_loadouts = list()
 
 		// Want randomjob if preferences already filled - Donkie
 	var/joblessrole = RETURNTOLOBBY  //defaults to returning to lobby
@@ -1013,7 +1011,7 @@ Records disabled until a use for them is found
 	popup.open(FALSE)
 	onclose(user, "capturekeypress", src)
 
-/datum/preferences/proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), widthPerColumn = 465, height = 620)
+/datum/preferences/proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), widthPerColumn = 295, height = 620)
 	if(!SSjob)
 		return
 
@@ -1024,7 +1022,7 @@ Records disabled until a use for them is found
 
 	var/width = widthPerColumn
 
-	var/list/HTML = list("<center>")
+	var/HTML = "<center>"
 	if(SSjob.occupations.len <= 0)
 		HTML += "The job SSticker is not yet finished creating jobs, please try again later"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
@@ -1059,7 +1057,7 @@ Records disabled until a use for them is found
 				HTML += "</table></td><td width='20%'><table width='100%' cellpadding='1' cellspacing='0'>"
 				index = 0
 
-			HTML += "<tr bgcolor='[job.selection_color]'><td width='35%' align='right'>"
+			HTML += "<tr bgcolor='[job.selection_color]'><td width='60%' align='right'>"
 			var/rank = job.title
 			lastJob = job
 			if(jobban_isbanned(user, rank))
@@ -1087,7 +1085,7 @@ Records disabled until a use for them is found
 			else
 				HTML += "<span class='dark'>[rank]</span>"
 
-			HTML += "</td><td width='15%'>"
+			HTML += "</td><td width='40%'>"
 
 			var/prefLevelLabel = "ERROR"
 			var/prefLevelColor = "pink"
@@ -1123,26 +1121,14 @@ Records disabled until a use for them is found
 					HTML += "<font color=green>Yes</font>"
 				else
 					HTML += "<font color=red>No</font>"
-				HTML += "</a></td>"
-			else
-				HTML += "<font color=[prefLevelColor]>[prefLevelLabel]</font>"
-				HTML += "</a></td>"
+				HTML += "</a></td></tr>"
+				continue
 
-			if(length(job.loadout_options))
-				HTML += "<td width='60%'><a class='white' href='?_src_=prefs;preference=job;task=set_loadout;text=[rank]'>"
-				var/datum/outfit/preferred_loadout = preferred_loadouts[job.type]
-				if(preferred_loadout)
-					preferred_loadout = initial(preferred_loadout.name)
-				else
-					preferred_loadout = "Random"
-				HTML += "[preferred_loadout]</a>"
-			else
-				HTML += "<td width='60%'>"
-			
-			HTML += "</td></tr>"
+			HTML += "<font color=[prefLevelColor]>[prefLevelLabel]</font>"
+			HTML += "</a></td></tr>"
 
 		for(var/i = 1, i < (limit - index), i += 1) // Finish the column so it is even
-			HTML += "<tr bgcolor='[lastJob.selection_color]'><td width='60%' align='right'>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>"
+			HTML += "<tr bgcolor='[lastJob.selection_color]'><td width='60%' align='right'>&nbsp</td><td>&nbsp</td></tr>"
 
 		HTML += "</td'></tr></table>"
 		HTML += "</center></table>"
@@ -1155,9 +1141,8 @@ Records disabled until a use for them is found
 
 	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Occupation Preferences</div>", width, height)
 	popup.set_window_options("can_close=0")
-	popup.set_content(HTML.Join())
+	popup.set_content(HTML)
 	popup.open(FALSE)
-
 
 /datum/preferences/proc/SetJobPreferenceLevel(datum/job/job, level)
 	if (!job)
@@ -1207,50 +1192,6 @@ Records disabled until a use for them is found
 	SetChoices(user)
 
 	return 1
-
-
-/datum/preferences/proc/update_preferred_loadouts(mob/user, role)
-	if(!length(SSjob?.occupations))
-		return
-	var/datum/job/job = SSjob.GetJob(role)
-	if(!istype(job))
-		to_chat(user, "<span class='danger'>Error in setting the preferred outift. Please report this bug. A runtime log has been generated.</span>")
-		ShowChoices(user)
-		CRASH("Error in updating preferred loadout.")
-
-	if(!length(job.loadout_options))
-		SetChoices(user)
-		return
-
-	var/datum/outfit/new_loadout = preferred_loadouts[job.type]
-	if(ispath(new_loadout)) // Path to name
-		new_loadout = initial(new_loadout.name)
-	var/list/possible_choices = list("Random")
-	for(var/datum/outfit/outfit_path as anything in job.loadout_options)
-		possible_choices += initial(outfit_path.name)
-	new_loadout = input(user, "Select the desired loadout.", "Loadout Selection", new_loadout) as null|anything in possible_choices
-	if(!new_loadout)
-		SetChoices(user)
-		return
-	
-	if(new_loadout == "Random")
-		preferred_loadouts -= job.type
-		SetChoices(user)
-		return
-
-	for(var/datum/outfit/outfit_path as anything in job.loadout_options)
-		if(new_loadout != initial(outfit_path.name))
-			continue
-		new_loadout = outfit_path // Name to path
-		break
-
-	if(!ispath(new_loadout) || !(new_loadout in job.loadout_options))
-		preferred_loadouts -= job.type
-		SetChoices(user)
-		return
-
-	preferred_loadouts[job.type] = new_loadout
-	SetChoices(user)
 
 
 /datum/preferences/proc/ResetJobs()
@@ -1419,8 +1360,6 @@ Records disabled until a use for them is found
 				SetChoices(user)
 			if("setJobLevel")
 				UpdateJobPreference(user, href_list["text"], text2num(href_list["level"]))
-			if("set_loadout")
-				update_preferred_loadouts(user, href_list["text"])
 			else
 				SetChoices(user)
 		return 1

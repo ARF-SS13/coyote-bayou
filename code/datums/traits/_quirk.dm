@@ -20,8 +20,7 @@
 		return
 	quirk_holder = quirk_mob
 	SSquirks.quirk_objects += src
-	if(gain_text)
-		to_chat(quirk_holder, gain_text)
+	to_chat(quirk_holder, gain_text)
 	quirk_holder.roundstart_quirks += src
 	if(mob_trait)
 		ADD_TRAIT(quirk_holder, mob_trait, ROUNDSTART_TRAIT)

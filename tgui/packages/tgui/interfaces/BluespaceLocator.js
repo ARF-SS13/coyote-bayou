@@ -18,7 +18,8 @@ export const BluespaceLocator = (props, context) => {
   return (
     <Window
       width={300}
-      height={300}>
+      height={300}
+      resizable>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab

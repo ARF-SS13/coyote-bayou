@@ -1,5 +1,6 @@
+import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, Collapsible, Flex, LabeledList, NumberInput, Section, Stack, TextArea } from '../components';
+import { Box, Button, Collapsible, Flex, LabeledList, NumberInput, Section, TextArea } from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
@@ -7,7 +8,8 @@ export const RequestKiosk = (props, context) => {
   return (
     <Window
       width={550}
-      height={600}>
+      height={600}
+      resizable>
       <Window.Content scrollable>
         <RequestKioskContent />
       </Window.Content>
@@ -27,7 +29,7 @@ export const RequestKioskContent = (props, context) => {
   const color = 'rgba(13, 13, 213, 0.7)';
   const backColor = 'rgba(0, 0, 69, 0.5)';
   return (
-    <>
+    <Fragment>
       <Section>
         <LabeledList>
           <LabeledList.Item
@@ -52,14 +54,14 @@ export const RequestKioskContent = (props, context) => {
               <Section
                 key={request.name}
                 width="300px">
-                <Stack align="baseline">
-                  <Stack.Item bold width="310px">
+                <Flex spacing={1} align="baseline">
+                  <Flex.Item bold width="310px">
                     {request.owner}
-                  </Stack.Item>
-                  <Stack.Item width="100px">
+                  </Flex.Item>
+                  <Flex.Item width="100px">
                     {formatMoney(request.value) + ' cr'}
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Flex.Item>
+                  <Flex.Item>
                     <Button
                       fluid
                       icon="pen-fancy"
@@ -75,8 +77,8 @@ export const RequestKioskContent = (props, context) => {
                       onClick={() => act('deleteRequest', {
                         request: request.acc_number,
                       })} />
-                  </Stack.Item>
-                </Stack>
+                  </Flex.Item>
+                </Flex>
                 <Section align="center">
                   <i>&quot;{request.description}&quot;</i>
                 </Section>
@@ -148,6 +150,6 @@ export const RequestKioskContent = (props, context) => {
           </Collapsible>
         </Flex.Item>
       </Flex>
-    </>
+    </Fragment>
   );
 };

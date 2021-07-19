@@ -9,7 +9,8 @@ export const OreBox = (props, context) => {
   return (
     <Window
       width={335}
-      height={415}>
+      height={415}
+      resizable>
       <Window.Content scrollable>
         <Section
           title="Ores"

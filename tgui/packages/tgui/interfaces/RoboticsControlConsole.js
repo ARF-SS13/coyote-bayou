@@ -13,7 +13,8 @@ export const RoboticsControlConsole = (props, context) => {
   return (
     <Window
       width={500}
-      height={460}>
+      height={460}
+      resizable>
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab
@@ -109,7 +110,7 @@ const Cyborgs = (props, context) => {
                 : "Not Found"}
             </Box>
           </LabeledList.Item>
-          <LabeledList.Item label="Model">
+          <LabeledList.Item label="Module">
             {cyborg.module}
           </LabeledList.Item>
           <LabeledList.Item label="Master AI">

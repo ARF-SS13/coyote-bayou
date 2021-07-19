@@ -4,23 +4,15 @@
  * @license MIT
  */
 
-import DOMPurify from 'dompurify';
 import { storage } from 'common/storage';
 import { loadSettings, updateSettings } from '../settings/actions';
 import { selectSettings } from '../settings/selectors';
-import { addChatPage, changeChatPage, changeScrollTracking, loadChat, rebuildChat, removeChatPage, saveChatToDisk, toggleAcceptedType, updateMessageCount } from './actions';
+import { addChatPage, changeChatPage, changeScrollTracking, loadChat, rebuildChat, toggleAcceptedType, updateMessageCount, removeChatPage, saveChatToDisk } from './actions';
 import { MAX_PERSISTED_MESSAGES, MESSAGE_SAVE_INTERVAL } from './constants';
 import { createMessage, serializeMessage } from './model';
 import { chatRenderer } from './renderer';
 import { selectChat, selectCurrentChatPage } from './selectors';
-
-// List of blacklisted tags
-const FORBID_TAGS = [
-  'a',
-  'iframe',
-  'link',
-  'video',
-];
+import { logger } from 'tgui/logging';
 
 const saveChatToStorage = async store => {
   const state = selectChat(store.getState());
@@ -44,13 +36,6 @@ const loadChatFromStorage = async store => {
     return;
   }
   if (messages) {
-    for (let message of messages) {
-      if (message.html) {
-        message.html = DOMPurify.sanitize(message.html, {
-          FORBID_TAGS,
-        });
-      }
-    }
     const batch = [
       ...messages,
       createMessage({
@@ -117,9 +102,7 @@ export const chatMiddleware = store => {
       const settings = selectSettings(store.getState());
       chatRenderer.setHighlight(
         settings.highlightText,
-        settings.highlightColor,
-        settings.matchWord,
-        settings.matchCase);
+        settings.highlightColor);
       return;
     }
     if (type === 'roundrestart') {

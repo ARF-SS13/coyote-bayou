@@ -1,10 +1,11 @@
+import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { Box, Button, Icon, NoticeBox, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
 export const Gateway = () => {
   return (
-    <Window>
+    <Window resizable>
       <Window.Content scrollable>
         <GatewayContent />
       </Window.Content>
@@ -55,7 +56,7 @@ const GatewayContent = (props, context) => {
     );
   }
   return (
-    <>
+    <Fragment>
       {!gateway_status && (
         <NoticeBox>
           Gateway Unpowered
@@ -74,7 +75,7 @@ const GatewayContent = (props, context) => {
               Activate
             </Button>
           ) || (
-            <>
+            <Fragment>
               <Box m={1} textColor="bad">
                 {dest.reason}
               </Box>
@@ -84,10 +85,10 @@ const GatewayContent = (props, context) => {
                   Calibrating...
                 </ProgressBar>
               )}
-            </>
+            </Fragment>
           )}
         </Section>
       ))}
-    </>
+    </Fragment>
   );
 };

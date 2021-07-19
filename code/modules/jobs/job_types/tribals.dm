@@ -9,10 +9,10 @@
 /datum/outfit/job/tribal/
 	name = "TRIBALdatums"
 	jobtype = /datum/job/tribal/
-	shoes = /obj/item/clothing/shoes/sandal
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	backpack = /obj/item/storage/backpack/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
+	shoes = 		/obj/item/clothing/shoes/sandal
+	gloves =        /obj/item/clothing/gloves/f13/handwraps
+	backpack = 	/obj/item/storage/backpack/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	id = null
 	box = /obj/item/storage/survivalkit_tribal
 	ears = null
@@ -105,7 +105,7 @@ Tribal Shaman
 	loadout_options = list(
 		/datum/outfit/loadout/invoker, //Red shaman
 		/datum/outfit/loadout/ascetic, //Blue shaman
-		)
+	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -117,17 +117,17 @@ Tribal Shaman
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
 	jobtype = /datum/job/tribal/f13shaman
-	uniform = /obj/item/clothing/under/f13/tribe
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	shoes = /obj/item/clothing/shoes/sandal
-	r_hand = /obj/item/twohanded/sledgehammer/shamanstaff
-	id = /obj/item/card/id/tribetattoo
+	uniform = 	/obj/item/clothing/under/f13/tribe
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	r_hand = 	/obj/item/twohanded/sledgehammer/shamanstaff
+	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/smelling_salts/wayfarer = 1,
-		/obj/item/reagent_containers/glass/mortar = 1,
-		/obj/item/pestle = 1,
-		/obj/item/reagent_containers/glass/primitive_chem_isolator = 1,
-		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
+		/obj/item/smelling_salts/wayfarer=1,
+		/obj/item/reagent_containers/glass/mortar=1,
+		/obj/item/pestle=1,
+		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
+		/obj/item/reagent_containers/pill/patch/healpoultice=2
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -138,24 +138,16 @@ Tribal Shaman
 
 /datum/outfit/loadout/invoker
 	name = "Invoker"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred = 1,
-		/obj/item/clothing/under/f13/wayfarer/shamanred = 1
+		/obj/item/clothing/head/helmet/f13/wayfarer/shamanred=1,
+		/obj/item/clothing/under/f13/wayfarer/shamanred=1
 	)
 
 /datum/outfit/loadout/ascetic
 	name = "Ascetic"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue = 1,
-		/obj/item/clothing/under/f13/wayfarer/shamanblue = 1
+		/obj/item/clothing/head/helmet/f13/wayfarer/shamanblue=1,
+		/obj/item/clothing/under/f13/wayfarer/shamanblue=1
 	)
 
 /*
@@ -277,68 +269,51 @@ Villager
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
-	uniform = /obj/item/clothing/under/f13/wayfarer
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	shoes = /obj/item/clothing/shoes/sandal
-	id = /obj/item/card/id/tribetattoo
+	uniform = 	/obj/item/clothing/under/f13/wayfarer
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
-		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/flare/torch = 1,
-		)
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/stack/medical/gauze=1,
+		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/gatherer
 	name = "Gatherer"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/kitchen/knife/combat/bone = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
-		)
+		/obj/item/twohanded/spear/bonespear=1,
+		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1
+	)
 
 /datum/outfit/loadout/gardener
 	name = "Gardener"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/scythe = 1,
-		/obj/item/storage/bag/plants = 1,
-		/obj/item/cultivator = 1,
-		/obj/item/reagent_containers/glass/bucket/wood = 1,
-		)
+		/obj/item/scythe=1,
+		/obj/item/storage/bag/plants=1,
+		/obj/item/cultivator=1,
+		/obj/item/reagent_containers/glass/bucket/wood=1
+	)
 
 /datum/outfit/loadout/mender
 	name = "Mender"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/kitchen/knife/ritualdagger = 1,
-		/obj/item/stack/medical/gauze/improvised = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
-		/obj/item/reagent_containers/glass/mortar = 1,
-		/obj/item/pestle=1,
-		)
+		/obj/item/kitchen/knife/ritualdagger=1,
+		/obj/item/stack/medical/gauze/improvised=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/reagent_containers/glass/mortar=1,
+		/obj/item/pestle=1
+	)
 
 /datum/outfit/loadout/craftsman
 	name = "Craftsman"
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/storage/belt/utility = 1,
-		/obj/item/crowbar/crude = 1,
-		/obj/item/wrench/crude  =1,
-		/obj/item/wirecutters/crude = 1,
-		/obj/item/weldingtool/crude = 1,
-		)
+		/obj/item/storage/belt/utility=1,
+		/obj/item/crowbar/crude=1,
+		/obj/item/wrench/crude=1,
+		/obj/item/wirecutters/crude=1,
+		/obj/item/weldingtool/crude=1
+	)
 
 /*
 Hunter
@@ -365,7 +340,7 @@ Hunter
 	loadout_options = list(
 		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
 		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
-		)
+	)
 
 /datum/outfit/job/tribal/f13hunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -377,50 +352,38 @@ Hunter
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13hunter
-	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
-	suit = /obj/item/clothing/suit/armor/f13/tribe_armor
-	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	shoes = /obj/item/clothing/shoes/sandal
-	id = /obj/item/card/id/tribetattoo
+	head = 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter
+	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	suit = 		/obj/item/clothing/suit/armor/f13/tribe_armor
+	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
-		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/flare/torch = 1,
-		)
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/stack/medical/gauze=1,
+		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/ranged
 	name = "Marksman"
-	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
-	suit = /obj/item/clothing/suit/armor/f13/lightcloak
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/tribalbow = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/kitchen/knife/combat/bone = 1,
-		/obj/item/restraints/legcuffs/bola = 2,
-		/obj/item/binoculars = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
-		)
+		/obj/item/gun/ballistic/automatic/tribalbow=1,
+		/obj/item/clothing/suit/armor/f13/lightcloak=1,
+		/obj/item/storage/belt/tribe_quiver/bone=1,
+		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/restraints/legcuffs/bola=2,
+		/obj/item/binoculars=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1
+	)
 
 /datum/outfit/loadout/melee
 	name = "Frontline"
-	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
-	suit = /obj/item/clothing/suit/armor/f13/tribe_armor
-	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
-	back = list(
-		/obj/item/storage/backpack/explorer,
-		/obj/item/storage/backpack/satchel/explorer,
-	)
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat/bone = 1,
-		/obj/item/binoculars = 1,
-		/obj/item/restraints/legcuffs/bola/tactical = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1
-		)
+		/obj/item/twohanded/spear/bonespear/deathclaw=1,
+		/obj/item/kitchen/knife/combat/bone=1,
+		/obj/item/binoculars=1,
+		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1
+	)
 
 /*
 Spirit-Pledged
@@ -478,15 +441,14 @@ Guardian
 /datum/outfit/job/tribal/f13guardian
 	name = "Guardian"
 	jobtype = /datum/job/tribal/f13guardian
-	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	shoes = /obj/item/clothing/shoes/sandal
-	suit = /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
+	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = 	/obj/item/clothing/gloves/f13/handwraps
+	shoes = 	/obj/item/clothing/shoes/sandal
+	suit = 		/obj/item/clothing/suit/armor/f13/tribe_heavy_armor
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
-	id = /obj/item/card/id/tribetattoo
+	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
-		/obj/item/stack/medical/gauze = 1,
-		/obj/item/flashlight/flare/torch = 1,
-		/obj/item/restraints/legcuffs/bola/tactical = 1,
-		)
+		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/stack/medical/gauze=1,
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/restraints/legcuffs/bola/tactical=1)

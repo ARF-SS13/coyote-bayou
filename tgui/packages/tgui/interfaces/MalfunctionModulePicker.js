@@ -11,7 +11,8 @@ export const MalfunctionModulePicker = (props, context) => {
     <Window
       width={620}
       height={525}
-      theme="malfunction">
+      theme="malfunction"
+      resizable>
       <Window.Content scrollable>
         <GenericUplink
           currencyAmount={processingTime}

@@ -358,9 +358,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/cwv = CONFIG_GET(number/client_warn_version)
 	if (byond_version < cev || (byond_version == cev && byond_build < ceb))		//Out of date client.
 		to_chat(src, "<span class='danger'><b>Your version of BYOND is too old:</b></span>")
-		var/error_message = CONFIG_GET(string/client_error_message)
-		if(error_message)
-			to_chat(src, error_message)
+		to_chat(src, CONFIG_GET(string/client_error_message))
 		to_chat(src, "Your version: [byond_version].[byond_build]")
 		to_chat(src, "Required version: [cev].[ceb] or later")
 		to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
@@ -379,9 +377,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			src << browse(msg, "window=warning_popup")
 		else
 			to_chat(src, "<span class='danger'><b>Your version of byond may be getting out of date:</b></span>")
-			var/warn_message = CONFIG_GET(string/client_warn_message)
-			if(warn_message)
-				to_chat(src, warn_message)
+			to_chat(src, CONFIG_GET(string/client_warn_message))
 			to_chat(src, "Your version: [byond_version]")
 			to_chat(src, "Required version to remove this message: [cwv] or later")
 			to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
@@ -402,9 +398,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if(holder)
 		add_admin_verbs()
-		var/memo = get_message_output("memo")
-		if(memo)
-			to_chat(src, memo)
+		to_chat(src, get_message_output("memo"))
 		adminGreet()
 
 	add_verbs_from_config()
@@ -448,9 +442,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if(CONFIG_GET(flag/autoconvert_notes))
 		convert_notes_sql(ckey)
-	var/message_output = get_message_output("message", ckey)
-	if(message_output)
-		to_chat(src, message_output)
+	to_chat(src, get_message_output("message", ckey))
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
 
@@ -484,8 +476,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// view_size.setZoomMode()
 	// fit_viewport()
 	Master.UpdateTickRate()
-
-	mentor_datum_set()
 
 
 /proc/alert_async(mob/target, message)

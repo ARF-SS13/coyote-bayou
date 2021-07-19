@@ -5,22 +5,21 @@
  */
 
 import { toFixed } from 'common/math';
-import { useLocalState } from 'tgui/backend';
 import { useDispatch, useSelector } from 'common/redux';
-import { Box, Button, ColorBox, Divider, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Stack, Tabs, TextArea } from 'tgui/components';
+import { Box, Button, ColorBox, Divider, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Tabs, TextArea } from 'tgui/components';
 import { ChatPageSettings } from '../chat';
 import { rebuildChat, saveChatToDisk } from '../chat/actions';
 import { THEMES } from '../themes';
 import { changeSettingsTab, updateSettings } from './actions';
-import { FONTS, SETTINGS_TABS } from './constants';
+import { SETTINGS_TABS } from './constants';
 import { selectActiveTab, selectSettings } from './selectors';
 
 export const SettingsPanel = (props, context) => {
   const activeTab = useSelector(context, selectActiveTab);
   const dispatch = useDispatch(context);
   return (
-    <Stack fill>
-      <Stack.Item>
+    <Flex>
+      <Flex.Item mr={1}>
         <Section fitted fill minHeight="8em">
           <Tabs vertical>
             {SETTINGS_TABS.map(tab => (
@@ -35,34 +34,30 @@ export const SettingsPanel = (props, context) => {
             ))}
           </Tabs>
         </Section>
-      </Stack.Item>
-      <Stack.Item grow={1} basis={0}>
+      </Flex.Item>
+      <Flex.Item grow={1} basis={0}>
         {activeTab === 'general' && (
           <SettingsGeneral />
         )}
         {activeTab === 'chatPage' && (
           <ChatPageSettings />
         )}
-      </Stack.Item>
-    </Stack>
+      </Flex.Item>
+    </Flex>
   );
 };
 
 export const SettingsGeneral = (props, context) => {
   const {
     theme,
-    fontFamily,
     fontSize,
     lineHeight,
     highlightText,
     highlightColor,
-    matchWord,
-    matchCase,
   } = useSelector(context, selectSettings);
   const dispatch = useDispatch(context);
-  const [freeFont, setFreeFont] = useLocalState(context, "freeFont", false);
   return (
-    <Section>
+    <Section fill>
       <LabeledList>
         <LabeledList.Item label="Theme">
           <Dropdown
@@ -71,38 +66,6 @@ export const SettingsGeneral = (props, context) => {
             onSelected={value => dispatch(updateSettings({
               theme: value,
             }))} />
-        </LabeledList.Item>
-        <LabeledList.Item label="Font style">
-          <Stack inline align="baseline">
-            <Stack.Item>
-              {!freeFont && (
-                <Dropdown
-                  selected={fontFamily}
-                  options={FONTS}
-                  onSelected={value => dispatch(updateSettings({
-                    fontFamily: value,
-                  }))} />
-              ) || (
-                <Input
-                  value={fontFamily}
-                  onChange={(e, value) => dispatch(updateSettings({
-                    fontFamily: value,
-                  }))}
-                />
-              )}
-            </Stack.Item>
-            <Stack.Item>
-              <Button
-                content="Custom font"
-                icon={freeFont? "lock-open" : "lock"}
-                color={freeFont? "good" : "bad"}
-                ml={1}
-                onClick={() => {
-                  setFreeFont(!freeFont);
-                }}
-              />
-            </Stack.Item>
-          </Stack>
         </LabeledList.Item>
         <LabeledList.Item label="Font size">
           <NumberInput
@@ -136,7 +99,7 @@ export const SettingsGeneral = (props, context) => {
       <Box>
         <Flex mb={1} color="label" align="baseline">
           <Flex.Item grow={1}>
-            Highlight text (comma separated):
+            Highlight words (comma separated):
           </Flex.Item>
           <Flex.Item shrink={0}>
             <ColorBox mr={1} color={highlightColor} />
@@ -156,22 +119,6 @@ export const SettingsGeneral = (props, context) => {
           onChange={(e, value) => dispatch(updateSettings({
             highlightText: value,
           }))} />
-        <Button.Checkbox
-          checked={matchWord}
-          tooltipPosition="bottom-start"
-          tooltip="Not compatible with punctuation."
-          onClick={() => dispatch(updateSettings({
-            matchWord: !matchWord,
-          }))}>
-          Match word
-        </Button.Checkbox>
-        <Button.Checkbox
-          checked={matchCase}
-          onClick={() => dispatch(updateSettings({
-            matchCase: !matchCase,
-          }))}>
-          Match case
-        </Button.Checkbox>
       </Box>
       <Divider />
       <Box>

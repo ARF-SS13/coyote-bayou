@@ -540,8 +540,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Jobs
 	S["joblessrole"]		>> joblessrole
 	//Load prefs
-	READ_FILE(S["job_preferences"], job_preferences)
-	READ_FILE(S["preferred_loadouts"], preferred_loadouts)
+	S["job_preferences"]	>> job_preferences
 
 	//Quirks
 	S["all_quirks"]			>> all_quirks
@@ -765,19 +764,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences["[j]"] != JP_LOW && job_preferences["[j]"] != JP_MEDIUM && job_preferences["[j]"] != JP_HIGH)
 			job_preferences -= j
 
-	// Validate preferred loadouts
-	if(!preferred_loadouts)
-		preferred_loadouts = list()
-	else if(SSjob?.initialized)
-		for(var/key in preferred_loadouts)
-			var/datum/job/job = SSjob.GetJob(key)
-			if(!job)
-				preferred_loadouts -= key
-				continue
-			if(!(preferred_loadouts[key] in job.loadout_options))
-				preferred_loadouts -= key
-				continue
-
 	all_quirks = SANITIZE_LIST(all_quirks)
 
 	cit_character_pref_load(S)
@@ -901,7 +887,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["joblessrole"]		, joblessrole)
 	//Write prefs
 	WRITE_FILE(S["job_preferences"] , job_preferences)
-	WRITE_FILE(S["preferred_loadouts"] , preferred_loadouts)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
 	
 

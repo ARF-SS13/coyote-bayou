@@ -7,7 +7,8 @@ export const NtosShipping = (props, context) => {
   return (
     <NtosWindow
       width={450}
-      height={350}>
+      height={350}
+      resizable>
       <NtosWindow.Content scrollable>
         <Section
           title="NTOS Shipping Hub."

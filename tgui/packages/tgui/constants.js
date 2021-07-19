@@ -30,11 +30,6 @@ export const COLORS = {
     burn: '#e67e22',
     brute: '#e74c3c',
   },
-  // reagent / chemistry related colours
-  reagent: {
-    acidicbuffer: "#fbc314",
-    basicbuffer: "#3853a4",
-  },
 };
 
 // Colors defined in CSS
@@ -59,12 +54,11 @@ export const CSS_COLORS = [
   'label',
 ];
 
-/* IF YOU CHANGE THIS KEEP IT IN SYNC WITH CHAT CSS */
 export const RADIO_CHANNELS = [
   {
     name: 'Syndicate',
     freq: 1213,
-    color: '#8f4a4b',
+    color: '#a52a2a',
   },
   {
     name: 'Red Team',
@@ -75,16 +69,6 @@ export const RADIO_CHANNELS = [
     name: 'Blue Team',
     freq: 1217,
     color: '#3434fd',
-  },
-  {
-    name: 'Green Team',
-    freq: 1219,
-    color: '#34fd34',
-  },
-  {
-    name: 'Yellow Team',
-    freq: 1221,
-    color: '#fdfd34',
   },
   {
     name: 'CentCom',
@@ -109,7 +93,7 @@ export const RADIO_CHANNELS = [
   {
     name: 'Command',
     freq: 1353,
-    color: '#fcdf03',
+    color: '#5177ff',
   },
   {
     name: 'Medical',
@@ -135,6 +119,36 @@ export const RADIO_CHANNELS = [
     name: 'Common',
     freq: 1459,
     color: '#1ecc43',
+  },
+  {
+    name: 'Vault',
+    freq: 1361,
+    color: '#6eaa2c',
+  },
+  {
+    name: 'NCR',
+    freq: 1363,
+    color: '#eaaa54',
+  },
+  {
+    name: 'BOS',
+    freq: 1365,
+    color: '#686868',
+  },
+  {
+    name: 'Enclave',
+    freq: 1367,
+    color: '#003000',
+  },
+  {
+    name: 'Oasis',
+    freq: 1369,
+    color: '#a8732b',
+  },
+  {
+    name: 'Legion',
+    freq: 1371,
+    color: '#c24d44',
   },
 ];
 
