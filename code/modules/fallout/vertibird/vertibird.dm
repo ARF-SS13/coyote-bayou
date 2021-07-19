@@ -47,18 +47,18 @@
 
 /obj/vertibird/proc/getIn(mob/U)
 	src.visible_message("[U] enters the vertibird.")
-	U.forceMove(vertibirdEnterZone)
+	U.forceMove(GLOB.vertibirdEnterZone)
 
 /obj/vertibird/proc/moveIn(obj/O)
-	O.forceMove(vertibirdEnterZone)
+	O.forceMove(GLOB.vertibirdEnterZone)
 
 /obj/vertibird/proc/ejectTurf()
 	return locate(src.x, src.y + 6, src.z)
 
 obj/vertibird/proc/getLocationsHTML()
 	var/html
-	for(var/I = 1 to vertibirdLandZone.len)
-		var/obj/landmark/vertibird/mark = vertibirdLandZone[I]
+	for(var/I = 1 to length(GLOB.vertibirdLandZone))
+		var/obj/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
 		html += "<a href='?src=\ref[src];fly=true;x=[mark.x];y=[mark.y];z=[mark.z]'>[mark.name]</a><br>"
 	return html
 
@@ -69,7 +69,7 @@ obj/vertibird/proc/flew(targetX, targetY, targetZ)
 	z = targetZ
 
 	playsound(src, "sound/f13machines/vertibird_land.ogg", 100)
-	playsound(vertibirdEnterZone, "sound/f13machines/vertibird_land.ogg", 50)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_land.ogg", 50)
 
 	spawn(100)
 		inFly = FALSE
@@ -97,12 +97,12 @@ obj/vertibird/proc/fly(targetX, targetY, targetZ)
 		return
 
 	playsound(src, "sound/f13machines/vertibird_takeoff.ogg", 100)
-	playsound(vertibirdEnterZone, "sound/f13machines/vertibird_takeoff.ogg", 50)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_takeoff.ogg", 50)
 	inFly = TRUE
 	icon_state = "vb-fast"
 	spawn(60)
 		playsound(src, "sound/f13machines/vertibird_local.ogg", 100)
-		playsound(vertibirdEnterZone, "sound/f13machines/vertibird_local.ogg", 50)
+		playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_local.ogg", 50)
 
 		flyGlobal()
 

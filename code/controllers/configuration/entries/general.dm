@@ -331,6 +331,8 @@
 /datum/config_entry/string/extreme_popcap_message
 	config_entry_value = "The server is currently serving a high number of users, find alternative servers."
 
+/datum/config_entry/flag/byond_member_bypass_popcap
+
 /datum/config_entry/flag/panic_bunker	// prevents people the server hasn't seen before from connecting
 
 /datum/config_entry/number/notify_new_player_age	// how long do we notify admins of a new player

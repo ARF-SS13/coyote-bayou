@@ -198,11 +198,14 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	return b["totaldam"] - a["totaldam"]
 
 /datum/crewmonitor/ui_act(action,params)
-	var/mob/living/silicon/ai/AI = usr
-	if(!istype(AI))
+	. = ..()
+	if(.)
 		return
 	switch (action)
 		if ("select_person")
+			var/mob/living/silicon/ai/AI = usr
+			if(!istype(AI))
+				return
 			AI.ai_camera_track(params["name"])
 
 #undef SENSORS_UPDATE_PERIOD

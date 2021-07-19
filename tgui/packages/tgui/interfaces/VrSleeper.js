@@ -7,7 +7,8 @@ export const VrSleeper = (props, context) => {
   return (
     <Window
       width={475}
-      height={340}>
+      height={340}
+      resizable>
       <Window.Content>
         {!!data.emagged && (
           <Section>

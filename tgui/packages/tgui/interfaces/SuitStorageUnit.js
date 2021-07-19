@@ -19,7 +19,8 @@ export const SuitStorageUnit = (props, context) => {
   return (
     <Window
       width={400}
-      height={305}>
+      height={305}
+      resizable>
       <Window.Content>
         {!!(occupied && safeties) && (
           <NoticeBox>
