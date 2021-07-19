@@ -113,7 +113,7 @@
 /obj/item/crafting/coffee_pot
 	name = "coffeepot"
 	desc = "A coffeepot is a tall, narrow pot with a spout and a lid, in which coffee is made or served"
-	icon_state = "cofee_pot"
+	icon_state = "coffeepot"
 
 /*/obj/item/crafting/rope //sprite won't take. Maybe someone else can get it to work.
 	name = "rope"

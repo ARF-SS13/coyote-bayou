@@ -550,7 +550,7 @@
 //Police rifle										Keywords: OASIS, 5.56mm, Semi-auto, 30 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police  rifle"
-	desc = "A post war reproduction, of a pre war design marketed towards law enforcement. Inherited down generations in the Oasis PD."
+	desc = "This old pre-war rifle made for law enforcement has been passed down generations in the Oasis Police Department, carefully repaired and rebuilt whenever damaged. Dried and crumbling polymers have been replaced with wood and reinforcing strips of leather, the black finish worn down a century ago, but it still works, as good as ever."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -722,16 +722,18 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle								Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +4
+//DKS 501 sniper rifle								Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +3
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
-	fire_delay = 10
+	fire_delay = 9
 	burst_size = 1
 	extra_speed = 500
+	zoom_amt = 10
+	zoom_out_amt = 13
 	semi_auto = TRUE
 	can_automatic = FALSE
 	can_bayonet = FALSE

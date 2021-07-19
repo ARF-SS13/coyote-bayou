@@ -190,9 +190,11 @@
 
 /obj/item/dualsaber/proc/jedi_spin(mob/living/user)
 	for(var/i in list(NORTH,SOUTH,EAST,WEST,EAST,SOUTH,NORTH,SOUTH,EAST,WEST,EAST,SOUTH))
+		if(QDELETED(user) || user.incapacitated())
+			return
 		user.setDir(i)
 		if(i == WEST)
-			user.emote("flip")
+			user.SpinAnimation(7, 1)
 		sleep(1)
 
 /obj/item/dualsaber/proc/impale(mob/living/user)

@@ -239,7 +239,6 @@
 	var/static/regex/grabintent_words = regex("grab")
 	var/static/regex/harmintent_words = regex("harm|fight|punch")
 	var/static/regex/throwmode_words = regex("throw|catch")
-	var/static/regex/flip_words = regex("flip|rotate|revolve|roll|somersault")
 	var/static/regex/speak_words = regex("speak|say something")
 	var/static/regex/getup_words = regex("get up")
 	var/static/regex/sit_words = regex("sit")
@@ -462,13 +461,6 @@
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/C in listeners)
 			C.throw_mode_on()
-
-	//FLIP
-	else if((findtext(message, flip_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/L = V
-			L.emote("flip")
 
 	//SPEAK
 	else if((findtext(message, speak_words)))

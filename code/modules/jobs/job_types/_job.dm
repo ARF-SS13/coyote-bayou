@@ -89,8 +89,8 @@
 
 	//For things that faction Enforces.
 	var/enforces = ""
-	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
-	//This is ontop of the base job outfit
+
+	///List of outfit datums that if selected through prefs will partially replace the job gear.
 	var/list/datum/outfit/loadout_options
 
 
@@ -150,13 +150,18 @@
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
-	var/datum/outfit/job/O = outfit_override || outfit
-	if(O)
-		H.equipOutfit(O, visualsOnly, preference_source) //mob doesn't have a client yet.
-	
-	//If we have any additional loadouts, notify the player
-	if(!visualsOnly && LAZYLEN(loadout_options))
-		H.enable_loadout_select()
+	if(length(loadout_options))
+		var/preferred_loadout
+		if(preference_source)
+			preferred_loadout = preference_source.prefs.preferred_loadouts[type]
+		if(!preferred_loadout || !(preferred_loadout in loadout_options))
+			preferred_loadout = pick(loadout_options)
+		H.equipOutfit(preferred_loadout, visualsOnly, preference_source)
+
+	var/datum/outfit/job/job_outfit
+	job_outfit = outfit_override || outfit
+	if(job_outfit)
+		H.equipOutfit(job_outfit, visualsOnly, preference_source) //mob doesn't have a client yet.
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 

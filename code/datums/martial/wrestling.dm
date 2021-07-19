@@ -363,7 +363,6 @@
 		return
 	var/damage = damage_roll(A,D)
 	A.emote("scream")
-	A.emote("flip")
 	A.setDir(turn(A.dir, 90))
 
 	A.visible_message("<span class = 'danger'><B>[A] roundhouse-kicks [D]!</B></span>")

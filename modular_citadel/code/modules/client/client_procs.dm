@@ -1,7 +1,3 @@
-/client/New()
-	. = ..()
-	mentor_datum_set()
-
 /client/proc/citadel_client_procs(href_list)
 	if(href_list["mentor_msg"])
 		if(CONFIG_GET(flag/mentors_mobname_only))

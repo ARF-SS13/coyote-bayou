@@ -13,7 +13,8 @@ export const ParticleAccelerator = (props, context) => {
   return (
     <Window
       width={350}
-      height={185}>
+      height={185}
+      resizable>
       <Window.Content>
         <Section>
           <LabeledList>
