@@ -550,7 +550,7 @@
 //Police rifle										Keywords: OASIS, 5.56mm, Semi-auto, 30 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police  rifle"
-	desc = "A post war reproduction, of a pre war design marketed towards law enforcement. Inherited down generations in the Oasis PD."
+	desc = "This old pre-war rifle made for law enforcement has been passed down generations in the Oasis Police Department, carefully repaired and rebuilt whenever damaged. Dried and crumbling polymers have been replaced with wood and reinforcing strips of leather, the black finish worn down a century ago, but it still works, as good as ever."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
