@@ -74,7 +74,7 @@
 	icon_state = "spatha"
 	item_state = "spatha"
 	force = 40
-	block_chance = 15
+	block_chance = 18
 
 /obj/item/claymore/machete //obsolete
 	name = "machete"
@@ -105,30 +105,6 @@
 	if(!istype(M))
 		return
 	M.apply_damage(20, STAMINA, null, 0)
-
-/obj/item/claymore/machete/gladius//obsolete
-	name = "gladius"
-	desc = "A heavy cutting blade, made for war and mass produced in Legion territory."
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon_state = "gladius"
-	item_state = "gladius"
-	slot_flags = ITEM_SLOT_BELT
-	force = 35
-	throwforce = 25
-	block_chance = 10
-
-/obj/item/claymore/machete/spatha//obsolete
-	name = "spatha"
-	desc = "This long blade is favoured by Legion officers and leaders, a finely crafted weapon with good steel and hilt made from bronze and bone."
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	icon_state = "spatha"
-	item_state = "spatha"
-	slot_flags = ITEM_SLOT_BELT
-	force = 40
-	throwforce = 25
-	block_chance = 15
 
 /obj/item/throwing_star/spear
 	name = "throwing spear"
@@ -640,7 +616,7 @@
 
 ///////////////////
 // GLOVE WEAPONS //
-///////////////////
+///////////////////			-faster attack speed
 
 
 /obj/item/melee/unarmed
@@ -649,6 +625,7 @@
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 	flags_1 = CONDUCT_1
+	attack_speed = 0.7
 	attack_verb = list("punched", "jabbed", "whacked")
 	sharpness = SHARP_NONE
 	throwforce = 10
