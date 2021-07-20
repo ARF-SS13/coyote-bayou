@@ -8,7 +8,7 @@
 	name = "Combat Knife Single-Pack"
 	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Nanotrasen-standard boot."
 	cost = 800
-	contains = list(/obj/item/melee/onehanded/knife/hunting)
+	contains = list(/obj/item/kitchen/knife/combat)
 
 /datum/supply_pack/goody/sologamermitts
 	name = "Insulated Gloves Single-Pack"

@@ -23,7 +23,7 @@
 //		new /datum/data/mining_equipment("Stabilizing Serum",			/obj/item/hivelordstabilizer,										400),
 //		new /datum/data/mining_equipment("Fulton Beacon",				/obj/item/fulton_core,												400),
 //		new /datum/data/mining_equipment("Shelter Capsule",				/obj/item/survivalcapsule,											400),
-		new /datum/data/mining_equipment("Survival Knife",				/obj/item/melee/onehanded/knife/survival,							450),
+		new /datum/data/mining_equipment("Survival Knife",				/obj/item/kitchen/knife/combat/survival,							450),
 		new /datum/data/mining_equipment("GAR Meson Scanners",			/obj/item/clothing/glasses/meson/gar,								500),
 		new /datum/data/mining_equipment("Explorer's Webbing",			/obj/item/storage/belt/mining,										500),
 		new /datum/data/mining_equipment("Larger Ore Bag",				/obj/item/storage/bag/ore/large,									500),
@@ -340,7 +340,7 @@
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/card/mining_access_card(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
-	new /obj/item/melee/onehanded/knife/survival(src)
+	new /obj/item/kitchen/knife/combat/survival(src)
 	new /obj/item/flashlight/seclite(src)
 
 	//CITADEL ADDITIONS BELOW
@@ -356,7 +356,7 @@
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/implanter/tracking/gps(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
-	new /obj/item/melee/onehanded/knife/survival(src)
+	new /obj/item/kitchen/knife/combat/survival(src)
 	new /obj/item/storage/firstaid/regular(src)
 	new /obj/item/reagent_containers/hypospray/medipen/survival(src)
 	new /obj/item/t_scanner/adv_mining_scanner(src)

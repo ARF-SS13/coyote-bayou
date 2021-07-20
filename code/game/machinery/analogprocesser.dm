@@ -55,7 +55,7 @@
 		build_stage++
 		return
 	if(build_stage == 2)
-		if(!istype(I, /obj/item/melee/onehanded/knife/butcher))
+		if(!istype(I, /obj/item/kitchen/knife/butcher))
 			to_chat(user, "<span class='warning'>You require a butcher's knife!</span>")
 			return
 		var/turf/T = get_turf(src)
@@ -84,7 +84,7 @@
 	new /obj/item/chopping_block(T)
 	new /obj/item/kitchen/rollingpin(T)
 	new /obj/item/reagent_containers/glass/bowl(T)
-	new /obj/item/melee/onehanded/knife/butcher(T)
+	new /obj/item/kitchen/knife/butcher(T)
 	. = ..()
 
 /obj/machinery/processor/chopping_block/attackby(obj/item/O, mob/user, params)

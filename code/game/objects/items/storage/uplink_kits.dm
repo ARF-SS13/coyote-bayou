@@ -11,6 +11,7 @@
 			new /obj/item/multitool/ai_detect(src) // 1 tc
 			new /obj/item/encryptionkey/syndicate(src) // 2 tc
 			new /obj/item/reagent_containers/syringe/mulligan(src) // 4 tc
+			new /obj/item/switchblade(src) //I'll count this as 5 tc
 			new /obj/item/storage/fancy/cigarettes/cigpack_syndicate (src) // 2 tc this shit heals
 			new /obj/item/flashlight/emp(src) // 2 tc
 			new /obj/item/chameleon(src) // 7 tc
@@ -57,6 +58,7 @@
 			new /obj/item/reagent_containers/syringe/stimulants(src)
 
 		if("baseball") // 42~ tc
+			new /obj/item/melee/baseball_bat/ablative/syndi(src) //Lets say 12 tc, lesser sleeping carp
 			new /obj/item/clothing/glasses/sunglasses/garb(src) //Lets say 2 tc
 			new /obj/item/card/emag(src) //6 tc
 			new /obj/item/clothing/shoes/sneakers/noslip(src) //2tc
@@ -134,7 +136,7 @@
 			new /obj/item/card/emag(src) // 6 tc
 
 		if("ninja") // 40~ tc worth
-			new /obj/item/melee/onehanded/machete(src)
+			new /obj/item/katana(src) // Unique , basicly a better esword. 10 tc?
 			new /obj/item/implanter/adrenalin(src) // 8 tc
 			new /obj/item/throwing_star(src) // ~5 tc for all 6
 			new /obj/item/throwing_star(src)
@@ -465,6 +467,7 @@
 /obj/item/storage/box/syndie_kit/contract_kit/PopulateContents()
 	new /obj/item/modular_computer/tablet/syndicate_contract_uplink/preset/uplink(src)
 	new /obj/item/storage/box/syndicate/contractor_loadout(src)
+	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
 	var/list/item_list = list(	// All 4 TC or less - some nukeops only items, but fit nicely to the theme.
 		/obj/item/storage/backpack/duffelbag/syndie/x4,
 		/obj/item/storage/box/syndie_kit/throwing_weapons,

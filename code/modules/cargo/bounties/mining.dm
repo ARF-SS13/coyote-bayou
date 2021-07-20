@@ -43,6 +43,12 @@
 	required_count = 3
 	wanted_types = list(/obj/item/clothing/accessory/talisman)
 
+/datum/bounty/item/mining/bone_dagger
+	name = "Bone Daggers"
+	description = "Central Command's canteen is undergoing budget cuts. Ship over some bone daggers so our Chef can keep working."
+	reward = 1000
+	required_count = 3
+	wanted_types = list(/obj/item/kitchen/knife/combat/bone)
 
 /datum/bounty/item/mining/basalt
 	name = "Artificial Basalt Tiles"

@@ -3,6 +3,10 @@
 /datum/export/weapon
 	include_subtypes = FALSE
 
+/datum/export/weapon/knife
+	cost = 100
+	unit_name = "combat knife"
+	export_types = list(/obj/item/kitchen/knife/combat)
 
 /datum/export/weapon/flash
 	cost = 5

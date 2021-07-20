@@ -74,6 +74,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
+/obj/item/katana/lavaland
+	desc = "This katana upon inspection is lower quality than the average blade."
+	block_chance = 30
+	force = 25 //Like a fireaxe but one handed and can block!
 
 /obj/item/katana/cursed
 	slot_flags = null
@@ -360,6 +364,14 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 5
 	embedding = list("pain_chance" = 5, "embed_chance" = 100, "fall_chance" = 0, "jostle_chance" = 10, "pain_stam_pct" = 0.8, "jostle_pain_mult" = 3)
 
+/obj/item/throwing_star/toy
+	name = "toy throwing star"
+	desc = "An aerodynamic disc strapped with adhesive for sticking to people, good for playing pranks and getting yourself killed by security."
+	sharpness = SHARP_NONE
+	force = 0
+	throwforce = 0
+	embedding = list("pain_mult" = 0, "jostle_pain_mult" = 0, "embed_chance" = 100, "fall_chance" = 0)
+
 /obj/item/cane
 	name = "cane"
 	desc = "A cane used by a true gentleman. Or a clown."
@@ -460,7 +472,47 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	desc = "A whip fashioned from the severed tails of cats."
 	icon_state = "catwhip"
 
+//obj/item/melee/skateboard
+//	name = "improvised skateboard"
+//	desc = "A skateboard. It can be placed on its wheels and ridden, or used as a strong weapon."
+//	icon_state = "skateboard"
+//	item_state = "skateboard"
+//	force = 12
+//	throwforce = 4
+//	w_class = WEIGHT_CLASS_NORMAL
+//	attack_verb = list("smacked", "whacked", "slammed", "smashed")
+	///The vehicle counterpart for the board
+//	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
 
+///obj/item/melee/skateboard/attack_self(mob/user)
+//	if(!user.canUseTopic(src, TRUE, FALSE, TRUE))
+//		return
+//	var/obj/vehicle/ridden/scooter/skateboard/S = new board_item_type(get_turf(user))
+//	S.buckle_mob(user)
+//	qdel(src)
+
+///obj/item/melee/skateboard/pro
+//	name = "skateboard"
+//	desc = "A RaDSTORMz brand professional skateboard. It looks sturdy and well made."
+//	icon_state = "skateboard2"
+//	item_state = "skateboard2"
+//	board_item_type = /obj/vehicle/ridden/scooter/skateboard/pro
+//	custom_premium_price = 500
+
+///obj/item/melee/skateboard/hoverboard
+//	name = "hoverboard"
+//	desc = "A blast from the past, so retro!"
+//	icon_state = "hoverboard_red"
+//	item_state = "hoverboard_red"
+//	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard
+//	custom_premium_price = 2015
+
+///obj/item/melee/skateboard/hoverboard/admin
+//	name = "\improper Board Of Directors"
+//	desc = "The engineering complexity of a spaceship concentrated inside of a board. Just as expensive, too."
+//	icon_state = "hoverboard_nt"
+//	item_state = "hoverboard_nt"
+//	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard/admin
 
 /obj/item/melee/flyswatter
 	name = "flyswatter"
@@ -819,8 +871,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		W.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 		return
 
-//This is citadel's.
-/obj/item/melee/baseball_bat //obsolete
+//This is citadel's. See f13twohanded.dm for item/twohanded/baseball
+/obj/item/melee/baseball_bat
 	name = "baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter."
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -838,12 +890,20 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/homerun_able = 0
 	total_mass = 2.7 //a regular wooden major league baseball bat weighs somewhere between 2 to 3.4 pounds, according to google
 
-/*
-//////////////////
-// CODE ARCHIVE //
-//////////////////
+/obj/item/melee/baseball_bat/chaplain
+	name = "blessed baseball bat"
+	desc = "There ain't a cult in the league that can withstand a swatter."
+	force = 14
+	throwforce = 14
+	obj_flags = UNIQUE_RENAME
+	var/chaplain_spawnable = TRUE
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	wound_bonus = -5
 
-BASEBALL HOMERUN
+/obj/item/melee/baseball_bat/chaplain/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
+
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"
 	desc = "This thing looks dangerous... Dangerously good at baseball, that is."
@@ -877,4 +937,25 @@ BASEBALL HOMERUN
 	else if(!target.anchored)
 		var/whack_speed = (prob(60) ? 1 : 4)
 		target.throw_at(throw_target, rand(1, 2), whack_speed, user) // sorry friends, 7 speed batting caused wounds to absolutely delete whoever you knocked your target into (and said target)
-*/
+
+/obj/item/melee/baseball_bat/ablative
+	name = "metal baseball bat"
+	desc = "This bat is made of highly reflective, highly armored material."
+	icon_state = "baseball_bat_metal"
+	item_state = "baseball_bat_metal"
+	force = 12
+	throwforce = 15
+
+/obj/item/melee/baseball_bat/ablative/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	//some day this will reflect thrown items instead of lasers
+	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE))
+		var/turf = get_turf(src)
+		playsound(turf, pick('sound/weapons/effects/batreflect1.ogg', 'sound/weapons/effects/batreflect2.ogg'), 50, 1)
+		return BLOCK_SUCCESS | BLOCK_SHOULD_REDIRECT | BLOCK_PHYSICAL_EXTERNAL | BLOCK_REDIRECTED
+	return ..()
+
+/obj/item/melee/baseball_bat/ablative/syndi
+	name = "syndicate major league bat"
+	desc = "A metal bat made by the syndicate for the major league team."
+	force = 18 //Spear damage...
+	throwforce = 30

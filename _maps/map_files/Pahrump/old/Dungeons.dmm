@@ -1134,6 +1134,7 @@
 	},
 /area/f13/bunker)
 "da" = (
+/obj/item/kitchen/knife/combat,
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
@@ -3150,6 +3151,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/army,
+/obj/item/kitchen/knife/combat,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -5166,6 +5168,7 @@
 /area/f13/bunker)
 "nx" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -6728,7 +6731,7 @@
 /area/f13/city)
 "rZ" = (
 /obj/structure/table,
-
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "sa" = (
@@ -9848,7 +9851,7 @@
 /area/f13/bunker)
 "BA" = (
 /obj/structure/table,
-
+/obj/item/kitchen/knife/butcher,
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -10171,6 +10174,8 @@
 "Cy" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/suit/apron/chef,
+/obj/item/kitchen/knife/butcher,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "Cz" = (
@@ -15380,6 +15385,7 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -15402,6 +15408,7 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -15420,6 +15427,7 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -15445,6 +15453,7 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
+/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -15742,7 +15751,8 @@
 /area/f13/vault)
 "QL" = (
 /obj/structure/rack,
-
+/obj/item/kitchen/knife/butcher,
+/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -15941,6 +15951,8 @@
 /obj/item/clothing/shoes/f13/military,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/suit/armor/vest,
+/obj/item/melee/classic_baton,
+/obj/item/melee/classic_baton,
 /obj/item/restraints/handcuffs,
 /obj/item/restraints/handcuffs,
 /obj/item/flashlight{
@@ -16129,6 +16141,7 @@
 /obj/item/reagent_containers/food/condiment/yeast{
 	layer = 5
 	},
+/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -17712,6 +17725,10 @@
 /area/f13/bunker)
 "VI" = (
 /obj/structure/table,
+/obj/item/kitchen/knife{
+	pixel_x = -2;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "VJ" = (

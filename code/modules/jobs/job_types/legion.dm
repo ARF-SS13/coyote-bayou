@@ -302,7 +302,7 @@ commented out pending rework*/
 		/obj/item/storage/backpack/satchel/explorer,
 	)
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/claymore/machete/spatha = 1,
 		/obj/item/ammo_box/magazine/sks = 3,
 		)
 
@@ -376,7 +376,7 @@ commented out pending rework*/
 	)
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
-		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/claymore/machete/gladius = 1,
 		)
 
 
@@ -515,7 +515,7 @@ commented out pending rework*/
 		/obj/item/ammo_box/magazine/m45/ap = 2,
 		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/grenade/plastic/c4 = 1,
-		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/claymore/machete/spatha = 1,
 		)
 
 /datum/outfit/loadout/vexfox
@@ -591,7 +591,7 @@ commented out pending rework*/
 	)
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/greasegun = 2,
-		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/claymore/machete/gladius = 1,
 		/obj/item/shield/riot/legion = 1,
 		)
 
@@ -606,7 +606,7 @@ commented out pending rework*/
 	)
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
-		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/claymore/machete/gladius = 1,
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		)
@@ -1162,7 +1162,7 @@ Venator  - Removed to reduce role bloat and clarify chain of command.
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 3,
-		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/claymore/machete/gladius = 1,
 		/obj/item/storage/bag/money/small/legion = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,

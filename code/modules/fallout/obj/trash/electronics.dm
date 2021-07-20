@@ -53,7 +53,7 @@
 	if(!istype(U) || !istype(W))
 		return ..()
 
-	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/melee/onehanded/knife))
+	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/kitchen/knife))
 		if(alert(U, "You sure you want to jam that in there?",,"Yes","No") == "Yes")
 			if(do_after(user, 10, 1, target = src))
 				U.visible_message("<span class='warning'>[user] jams [W] into [src]!</span>", "<span class='notice'>You jam [W] into [src]!</span>")

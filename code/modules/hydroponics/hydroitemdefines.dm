@@ -84,6 +84,33 @@
 	user.visible_message("<span class='suicide'>[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
+/obj/item/hatchet
+	name = "hatchet"
+	desc = "A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "hatchet"
+	item_state = "hatchet"
+	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 12
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 15
+	throw_speed = 3
+	throw_range = 4
+	custom_materials = list(/datum/material/iron = 15000)
+	attack_verb = list("chopped", "torn", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	sharpness = SHARP_EDGED
+
+/obj/item/hatchet/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 70, 100)
+
+/obj/item/hatchet/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
+	return (BRUTELOSS)
 
 /obj/item/scythe
 	icon_state = "scythe0"
