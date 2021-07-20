@@ -302,7 +302,7 @@ commented out pending rework*/
 		/obj/item/storage/backpack/satchel/explorer,
 	)
 	backpack_contents = list(
-		/obj/item/claymore/machete/spatha = 1,
+		/obj/item/melee/onehanded/machete/spatha = 1,
 		/obj/item/ammo_box/magazine/sks = 3,
 		)
 
