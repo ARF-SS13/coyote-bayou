@@ -989,7 +989,7 @@
 				/obj/item/wirecutters/hightech,
 				/obj/item/stock_parts/cell/ammo/mfc,
 				/obj/item/stock_parts/cell/ammo/ecp,
-				/obj/item/switchblade,
+				/obj/item/melee/onehanded/knife/switchblade,
 				/obj/item/megaphone)
 
 /obj/item/salvage/high

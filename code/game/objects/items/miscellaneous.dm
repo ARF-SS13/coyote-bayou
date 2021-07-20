@@ -101,7 +101,6 @@
 	new /obj/item/clothing/suit/curator(src)
 	new /obj/item/clothing/under/rank/civilian/curator/treasure_hunter(src)
 	new /obj/item/clothing/shoes/workboots/mining(src)
-	new /obj/item/melee/curator_whip(src)
 
 /obj/item/storage/box/hero/astronaut
 	name = "First Man on the Moon - 1960's."

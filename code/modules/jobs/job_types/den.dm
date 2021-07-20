@@ -106,7 +106,7 @@ Mayor
 		/obj/item/ammo_box/m44 = 2,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		)
 
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -157,7 +157,7 @@ Mayor
 		/obj/item/ammo_box/a357 = 2,
 		/obj/item/ammo_box/tube/m44 = 2,
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -251,7 +251,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/mining_scanner,
 		/obj/item/shovel,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple,
@@ -576,7 +576,7 @@ Mayor
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
-		/obj/item/kitchen/knife/combat = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 		)

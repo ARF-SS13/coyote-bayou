@@ -51,7 +51,7 @@
 	name = "Crude Screwdriver"
 	result = /obj/item/screwdriver/crude
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 2)
+	reqs = list(/obj/item/stack/rods = 2)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
 
@@ -71,7 +71,7 @@
 	name = "Basic Cutters"
 	result = /obj/item/wirecutters/basic
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 4)
+	reqs = list(/obj/item/stack/sheet/metal = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
@@ -80,7 +80,7 @@
 	name = "Basic Welder"
 	result = /obj/item/weldingtool/basic
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
@@ -89,7 +89,7 @@
 	name = "Basic Wrench"
 	result = /obj/item/wrench/basic
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 3)
+	reqs = list(/obj/item/stack/sheet/metal = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
@@ -98,7 +98,7 @@
 	name = "Basic Crowbar"
 	result = /obj/item/crowbar/basic
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
@@ -107,7 +107,7 @@
 	name = "Basic Screwdriver"
 	result = /obj/item/screwdriver/basic
 	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 2)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL

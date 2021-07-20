@@ -8,16 +8,16 @@
 	name = "Bucket"
 	id = "bucket"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 200)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/reagent_containers/glass/bucket
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/crowbar
-	name = "Pocket Crowbar"
+	name = "Crowbar"
 	id = "crowbar"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/crowbar
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -42,7 +42,7 @@
 	name = "Fire Extinguisher"
 	id = "extinguisher"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 90)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/extinguisher
 	category = list("initial","Tools")
 
@@ -50,7 +50,7 @@
 	name = "Pocket Fire Extinguisher"
 	id = "pocketfireextinguisher"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 40)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 100)
 	build_path = /obj/item/extinguisher/mini
 	category = list("initial","Tools")
 
@@ -58,7 +58,7 @@
 	name = "Multitool"
 	id = "multitool"
 	build_type = AUTOLATHE | PROTOLATHE | NO_PUBLIC_LATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 20)
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 250)
 	build_path = /obj/item/multitool
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -84,7 +84,7 @@
 	name = "Welding Tool"
 	id = "welding_tool"
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
-	materials = list(/datum/material/iron = 70, /datum/material/glass = 20)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 250)
 	build_path = /obj/item/weldingtool
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -93,7 +93,7 @@
 	name = "Emergency Welding Tool"
 	id = "mini_welding_tool"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 30, /datum/material/glass = 10)
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
 	build_path = /obj/item/weldingtool/mini
 	category = list("initial","Tools")
 
@@ -101,7 +101,7 @@
 	name = "Screwdriver"
 	id = "screwdriver"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 75)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/screwdriver
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -110,7 +110,7 @@
 	name = "Wirecutters"
 	id = "wirecutters"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 80)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/wirecutters
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -119,7 +119,7 @@
 	name = "Wrench"
 	id = "wrench"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 150)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/wrench
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
@@ -146,7 +146,7 @@
 	name = "Toolbox"
 	id = "tool_box"
 	build_type = AUTOLATHE
-	materials = list(MAT_CATEGORY_RIGID = 500)
+	materials = list(MAT_CATEGORY_RIGID = 1000)
 	build_path = /obj/item/storage/toolbox/greyscale
 	category = list("initial","Tools")
 
@@ -154,7 +154,7 @@
 	name = "Spraycan"
 	id = "spraycan"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
+	materials = list(/datum/material/iron = 100, /datum/material/glass = 250)
 	build_path = /obj/item/toy/crayon/spraycan
 	category = list("initial", "Tools", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE

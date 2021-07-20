@@ -1,8 +1,7 @@
 GLOBAL_LIST_EMPTY(deathmatch_spawn_points)
 GLOBAL_LIST_INIT(eord_arsenal, list(
 	/obj/item/twohanded/spear,
-	/obj/item/claymore/machete,
-	/obj/item/claymore/machete/warclub,
+	/obj/item/melee/onehanded/machete,
 ))
 
 /obj/effect/landmark/deathmatch/Initialize()

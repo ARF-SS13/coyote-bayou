@@ -22,7 +22,7 @@
 
 //butchering and other attack stuff goes here
 /obj/item/fishy/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/kitchen/knife))
+	if(istype(W, /obj/item/melee/onehanded/knife))
 		to_chat(user, "<span class='notice'>You begin to butcher [src]...</span>")
 		playsound(user.loc, 'sound/effects/butcher.ogg', 50, TRUE, -1)
 		if(!do_after(user, 3 SECONDS, target = src))

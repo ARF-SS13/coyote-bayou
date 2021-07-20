@@ -240,7 +240,7 @@ Druid
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
-		/obj/item/kitchen/knife/ritualdagger=1,
+		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
@@ -295,7 +295,7 @@ Villager
 	)
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/kitchen/knife/combat/bone = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		)
 
@@ -319,7 +319,7 @@ Villager
 		/obj/item/storage/backpack/satchel/explorer,
 	)
 	backpack_contents = list(
-		/obj/item/kitchen/knife/ritualdagger = 1,
+		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
@@ -400,7 +400,7 @@ Hunter
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/tribalbow = 1,
 		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/kitchen/knife/combat/bone = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
@@ -416,7 +416,7 @@ Hunter
 		/obj/item/storage/backpack/satchel/explorer,
 	)
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat/bone = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1

@@ -974,12 +974,7 @@
 /area/f13/brotherhood)
 "acG" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
@@ -1173,7 +1168,6 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
-/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -1363,7 +1357,6 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
 /obj/item/storage/belt/security,
-/obj/item/melee/classic_baton/telescopic,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -2688,7 +2681,6 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
 /obj/item/kitchen/rollingpin,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
@@ -2765,7 +2757,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/item/gun/medbeam,
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/vault)
 "ahJ" = (
@@ -2892,7 +2883,6 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/condiment/yeast,
 /obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluechess"
 	},
@@ -3124,8 +3114,6 @@
 /area/f13/vault)
 "aiI" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
-/obj/item/megaphone,
 /obj/item/flashlight/flare/torch,
 /obj/item/flashlight/flare/torch,
 /obj/item/flashlight/flare/torch,
@@ -8582,8 +8570,6 @@
 /area/f13/office)
 "ayA" = (
 /obj/structure/table,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/cosmic,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/tunnel)
 "ayB" = (
@@ -10300,7 +10286,6 @@
 /area/f13/underground/mountain)
 "aEy" = (
 /obj/structure/table/wood/fancy,
-/obj/item/kitchen/knife/butcher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/mountain)
 "aEz" = (
@@ -11467,7 +11452,6 @@
 	},
 /area/f13/building)
 "aIk" = (
-/obj/item/kitchen/knife/butcher,
 /obj/structure/table,
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -11523,7 +11507,6 @@
 /area/f13/ruins)
 "aIt" = (
 /obj/item/clothing/under/rank/curator,
-/obj/item/melee/curator_whip,
 /obj/item/pda/curator,
 /obj/structure/table/wood,
 /obj/item/book/granter/action/drink_fling,
@@ -14059,7 +14042,6 @@
 /area/f13/wasteland)
 "aPW" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/tunnel)
 "aPX" = (
@@ -15444,7 +15426,6 @@
 /area/f13/klamat)
 "aUP" = (
 /obj/structure/table/wood,
-/obj/item/megaphone,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -19808,7 +19789,6 @@
 /area/f13/city)
 "biM" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -20001,9 +19981,6 @@
 /area/f13/city)
 "bjk" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -20360,7 +20337,6 @@
 /area/f13/city)
 "bkh" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/floor/f13/wood,
 /area/f13/city)
@@ -22098,7 +22074,7 @@
 /area/f13/legion)
 "bpD" = (
 /obj/structure/closet/cabinet,
-/obj/item/claymore/machete/gladius,
+/obj/item/melee/onehanded/machete,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/mountain)
 "bpE" = (
@@ -22722,7 +22698,6 @@
 	},
 /area/f13/city/museum)
 "brx" = (
-/obj/item/megaphone/cargo,
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
 /turf/open/floor/f13{
@@ -22964,7 +22939,6 @@
 	},
 /area/f13/city/museum)
 "bsd" = (
-/obj/item/megaphone/command,
 /obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
@@ -23461,8 +23435,6 @@
 /area/f13/underground/mountain)
 "btE" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/rollingpin,
 /obj/structure/curtain{
 	color = "red";
 	pixel_y = -30
@@ -24445,7 +24417,6 @@
 /area/f13/forest)
 "bwy" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife/butcher,
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9;
 	icon_state = "snow_corner"
@@ -24665,21 +24636,6 @@
 /area/f13/legion)
 "bxg" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	force = 5;
-	name = "Slave whip"
-	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
 "bxh" = (
@@ -24752,7 +24708,6 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
 /obj/item/screwdriver,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
@@ -24787,12 +24742,7 @@
 /area/f13/legion)
 "bxz" = (
 /obj/structure/table/wood,
-/obj/item/claymore/machete/gladius,
-/obj/item/claymore/machete/gladius,
-/obj/item/claymore/machete/gladius,
-/obj/item/claymore/machete/gladius,
-/obj/item/claymore/machete/gladius,
-/obj/item/claymore/machete/gladius,
+/obj/item/melee/onehanded/machete,
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
 "bxA" = (
@@ -25261,7 +25211,6 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
 /obj/item/screwdriver,
 /obj/item/reagent_containers/pill/morphine,
 /turf/open/indestructible/ground/inside/mountain,
@@ -25306,7 +25255,6 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/crowbar/large,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "byJ" = (
@@ -25326,7 +25274,7 @@
 "byM" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/roman,
-/obj/item/claymore/machete/gladius,
+/obj/item/melee/onehanded/machete,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
@@ -27548,7 +27496,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/klamat)
 "bET" = (
-/obj/item/kitchen/knife/butcher,
 /obj/structure/table/wood,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -28133,7 +28080,6 @@
 /obj/item/shovel/spade,
 /obj/item/cultivator,
 /obj/item/hatchet,
-/obj/item/melee/flyswatter,
 /obj/item/stack/f13Cash/random/low,
 /turf/open/floor/f13{
 	icon_state = "grass2"
@@ -28698,7 +28644,6 @@
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot/vaultsec,
-/obj/item/melee/classic_baton,
 /obj/item/clothing/mask/gas,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -30042,9 +29987,6 @@
 /area/f13/underground/cave/vault/fourfivefour)
 "bLl" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher{
-	icon_state = "cleaver"
-	},
 /turf/open/floor/f13{
 	icon_state = "grass2"
 	},
@@ -34066,8 +34008,6 @@
 /area/f13/tunnel)
 "bXn" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife/cosmicdirty,
-/obj/item/kitchen/knife/cosmicdirty,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bXo" = (
@@ -37518,7 +37458,6 @@
 /obj/item/restraints/legcuffs/bola,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/f13Cash/random/med,
-/obj/item/megaphone,
 /turf/open/floor/f13/wood,
 /area/f13/klamat)
 "cjK" = (
