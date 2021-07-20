@@ -47,10 +47,11 @@ if grep -P '\W\/turf\s*[,\){]' _maps/**/*.dmm; then
     echo "ERROR: base /turf path use detected in maps, please replace with proper paths."
     st=1
 fi;
-if grep -P '^/*var/' code/**/*.dm; then
-    echo "ERROR: Unmanaged global var use detected in code, please use the helpers."
-    st=1
-fi;
+# TODO: Remove GLOB manager, replace with global in 513+
+#if grep -P '^/*var/' code/**/*.dm; then
+#    echo "ERROR: Unmanaged global var use detected in code, please use the helpers."
+#    st=1
+#fi;
 echo "Checking for space indentation"
 if grep -P '(^ {2})|(^ [^ * ])|(^    +)' code/**/*.dm; then
     echo "space indentation detected"
@@ -61,16 +62,6 @@ if grep -P '^\t+ [^ *]' code/**/*.dm; then
     echo "mixed <tab><space> indentation detected"
     st=1
 fi;
-nl='
-'
-nl=$'\n'
-while read f; do
-    t=$(tail -c2 "$f"; printf x); r1="${nl}$"; r2="${nl}${r1}"
-    if [[ ! ${t%x} =~ $r1 ]]; then
-        echo "file $f is missing a trailing newline"
-        st=1
-    fi;
-done < <(find . -type f -name '*.dm')
 if grep -P '^/[\w/]\S+\(.*(var/|, ?var/.*).*\)' code/**/*.dm; then
     echo "changed files contains proc argument starting with 'var'"
     st=1

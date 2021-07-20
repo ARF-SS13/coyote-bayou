@@ -1,5 +1,5 @@
 
-// DM Environment file for fortune.dme.
+// DM Environment file for tgstation.dme.
 // All manual changes should be made outside the BEGIN_ and END_ blocks.
 // New source code should be placed in .dm files: choose File/New --> Code File.
 // BEGIN_INTERNALS
@@ -110,7 +110,6 @@
 #include "code\__DEFINES\sight.dm"
 #include "code\__DEFINES\sound.dm"
 #include "code\__DEFINES\spaceman_dmm.dm"
-#include "code\__DEFINES\span.dm"
 #include "code\__DEFINES\stat.dm"
 #include "code\__DEFINES\stat_tracking.dm"
 #include "code\__DEFINES\status_effects.dm"
@@ -2092,6 +2091,7 @@
 #include "code\modules\fallout\machinery\chalkboard.dm"
 #include "code\modules\fallout\machinery\light_sources\bar.dm"
 #include "code\modules\fallout\misc\boarding.dm"
+#include "code\modules\fallout\misc\flares.dm"
 #include "code\modules\fallout\misc\gang_items.dm"
 #include "code\modules\fallout\misc\gangs.dm"
 #include "code\modules\fallout\misc\gangtool.dm"
@@ -2118,6 +2118,7 @@
 #include "code\modules\fallout\obj\spawners\mob_spawner.dm"
 #include "code\modules\fallout\obj\stack\f13Cash.dm"
 #include "code\modules\fallout\obj\stack\hide.dm"
+#include "code\modules\fallout\obj\stack\wood.dm"
 #include "code\modules\fallout\obj\structures\barrel.dm"
 #include "code\modules\fallout\obj\structures\billboard.dm"
 #include "code\modules\fallout\obj\structures\cargocrate.dm"
@@ -2336,12 +2337,12 @@
 #include "code\modules\jobs\job_exp.dm"
 #include "code\modules\jobs\job_whitelist.dm"
 #include "code\modules\jobs\jobs.dm"
+#include "code\modules\jobs\loadout_ingame.dm"
 #include "code\modules\jobs\job_types\_job.dm"
 #include "code\modules\jobs\job_types\bos.dm"
 #include "code\modules\jobs\job_types\den.dm"
 #include "code\modules\jobs\job_types\followers.dm"
 #include "code\modules\jobs\job_types\legion.dm"
-#include "code\modules\jobs\job_types\loadout.dm"
 #include "code\modules\jobs\job_types\ncr.dm"
 #include "code\modules\jobs\job_types\silicon.dm"
 #include "code\modules\jobs\job_types\tribals.dm"
@@ -3656,6 +3657,9 @@
 #include "modular_citadel\code\modules\client\preferences_savefile.dm"
 #include "modular_citadel\code\modules\client\loadout\__donator.dm"
 #include "modular_citadel\code\modules\client\loadout\_loadout.dm"
+#include "modular_citadel\code\modules\client\loadout\_medical.dm"
+#include "modular_citadel\code\modules\client\loadout\_security.dm"
+#include "modular_citadel\code\modules\client\loadout\_service.dm"
 #include "modular_citadel\code\modules\client\loadout\backpack.dm"
 #include "modular_citadel\code\modules\client\loadout\glasses.dm"
 #include "modular_citadel\code\modules\client\loadout\gloves.dm"

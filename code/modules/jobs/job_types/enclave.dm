@@ -69,9 +69,9 @@ PEACEKEEPERS
 	outfit = /datum/outfit/job/enclave/peacekeeper/officer
 
 	loadout_options = list(
-		/datum/outfit/loadout/captain, //head honcho
-		/datum/outfit/loadout/lieutenant, //tear gas grenade
-		)
+	/datum/outfit/loadout/captain, //head honcho
+	/datum/outfit/loadout/lieutenant //tear gas grenade
+	)
 
 /datum/outfit/job/enclave/peacekeeper/officer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -82,35 +82,30 @@ PEACEKEEPERS
 
 /datum/outfit/job/enclave/peacekeeper/officer
 	name = "Officer"
-	jobtype = /datum/job/enclave/peacekeeper/officer
-	id = /obj/item/card/id/dogtag/enclave/officer
-	head = /obj/item/clothing/head/helmet/f13/helmet/enclave/officer
-	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = /obj/item/clothing/suit/armor/f13/enclave/officercoat
+	jobtype =		/datum/job/enclave/peacekeeper/officer
+	id = 			/obj/item/card/id/dogtag/enclave/officer
+	head =			/obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+	uniform = 		/obj/item/clothing/under/f13/enclave/officer
+	suit = 			/obj/item/clothing/suit/armor/f13/enclave/officercoat
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legofficers = 1,
-		)
+		/obj/item/storage/bag/money/small/legofficers=1)
 
 /datum/outfit/loadout/captain
 	name = "Captain"
-	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = /obj/item/clothing/suit/armor/f13/enclave/officercoat
-	neck = /obj/item/clothing/neck/cloak/enclavecaptain
-	suit_store = /obj/item/gun/energy/laser/plasma/glock
+	neck =			/obj/item/clothing/neck/cloak/enclavecaptain
+	suit_store =	/obj/item/gun/energy/laser/plasma/glock
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2,
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		)
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 /datum/outfit/loadout/lieutenant
 	name = "Lieutenant"
-	uniform = /obj/item/clothing/under/f13/enclave_officer
+	uniform = 		/obj/item/clothing/under/f13/enclave_officer
 	backpack_contents = list(
-		/obj/item/grenade/chem_grenade/teargas = 1,
-		/obj/item/gun/energy/laser/plasma/glock = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
-		)
+		/obj/item/grenade/chem_grenade/teargas=1,
+		/obj/item/gun/energy/laser/plasma/glock=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 //Peacekeeper Trooper
 /datum/job/enclave/peacekeeper/trooper
@@ -125,9 +120,9 @@ PEACEKEEPERS
 	outfit = /datum/outfit/job/enclave/peacekeeper/trooper
 
 	loadout_options = list(
-		/datum/outfit/loadout/lancecorporal, //NCO with NVG and long range stuff
-		/datum/outfit/loadout/armored, //power armor
-		)
+	/datum/outfit/loadout/lancecorporal, //NCO with NVG and long range stuff
+	/datum/outfit/loadout/armored, //power armor
+	)
 
 /datum/outfit/job/enclave/peacekeeper/trooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -138,30 +133,27 @@ PEACEKEEPERS
 /datum/outfit/job/enclave/peacekeeper/trooper
 	name = "Peacekeeper"
 	jobtype = /datum/job/enclave/peacekeeper/trooper
-	head = /obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
+	head = 			/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
-		/obj/item/ammo_box/magazine/m9mm = 1,
-		/obj/item/ammo_box/a762 = 3,
-		)
+		/obj/item/gun/ballistic/automatic/pistol/sig=1,
+		/obj/item/ammo_box/magazine/m9mm=1,
+		/obj/item/ammo_box/a762=3)
 
 /datum/outfit/loadout/lancecorporal
 	name = "Lance Corporal"
-	glasses = /obj/item/clothing/glasses/night
-	suit = /obj/item/clothing/suit/armor/f13/enclave/armorvest
-	suit_store = /obj/item/gun/ballistic/automatic/slr
+	glasses = 		/obj/item/clothing/glasses/night
+	suit = 			/obj/item/clothing/suit/armor/f13/enclave/armorvest
+	suit_store =	/obj/item/gun/ballistic/automatic/slr
 	backpack_contents = list(
-		/obj/item/grenade/smokebomb = 1,
-		/obj/item/ammo_box/magazine/m762 = 2,
-		)
+		/obj/item/grenade/smokebomb=1,
+		/obj/item/ammo_box/magazine/m762=2)
 
 /datum/outfit/loadout/armored
 	name = "Armored Infantry"
-	head = /obj/item/clothing/head/helmet/f13/power_armor/enclave/x02helmet
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/enclave/x02helmet
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
 	backpack_contents = list(
-		/obj/item/minigunpack = 1,
-		)
+		/obj/item/minigunpack=1)
 
 //PatriBots - planned 2 slot robots, Peacekeeper module with shotgun and Worker module for building stuff.
 
@@ -224,3 +216,170 @@ PEACEKEEPERS
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+
+//OLD STUFF, WEST COAST?
+
+/*/datum/outfit/job/enclave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+
+/datum/outfit/job/enclave/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+
+/*
+Commander
+*/
+/datum/job/enclave/f13uscommander
+	title = "US Commander"
+	flag = F13USCOMMANDER
+	department_flag = ENCLAVE
+	//
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the US Government"
+	selection_color = "#aaaaf7"
+
+	outfit = /datum/outfit/job/enclave/f13uscommander
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13uscommander
+	name = "US Commander"
+	jobtype = /datum/job/enclave/f13uscommander
+
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+
+
+/*
+Medic
+*/
+/datum/job/enclave/f13usmedic
+	title = "US Medic"
+	flag = F13USMEDIC
+	department_flag = ENCLAVE
+	//
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the commander"
+	selection_color = "#ccccff"
+
+	outfit = /datum/outfit/job/enclave/f13usmedic
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13usmedic
+	name = "US Medic"
+	jobtype = /datum/job/enclave/f13usmedic
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+
+
+/*
+Private
+*/
+/datum/job/enclave/f13usprivate
+	title = "US Private"
+	flag = F13USPRIVATE
+	department_flag = ENCLAVE
+	//
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the commander"
+	selection_color = "#ccccff"
+
+	outfit = /datum/outfit/job/enclave/f13usprivate
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13usprivate
+	name = "US Private"
+	jobtype = /datum/job/enclave/f13usprivate
+
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+
+/*
+Scientist
+*/
+/datum/job/enclave/f13usscientist
+	title = "US Scientist"
+	flag = F13USSCIENTIST
+	department_flag = ENCLAVE
+	//
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the commander"
+	selection_color = "#ccccff"
+
+	outfit = /datum/outfit/job/enclave/f13usscientist
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13usscientist
+	name = "US Scientist"
+	jobtype = /datum/job/enclave/f13usscientist
+
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+
+
+/*
+Engineer
+*/
+/datum/job/enclave/f13usengineer
+	title = "US Engineer"
+	flag = F13USENGINEER
+	department_flag = ENCLAVE
+	//
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the commander"
+	selection_color = "#ccccff"
+
+	outfit = /datum/outfit/job/enclave/f13usengineer
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13usengineer
+	name = "US Engineer"
+	jobtype = /datum/job/enclave/f13usengineer
+
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+
+/*
+Colonist
+*/
+/datum/job/enclave/f13uscolonist
+	title = "US Colonist"
+	flag = F13USCOLONIST
+	department_flag = ENCLAVE
+	//
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "the commander"
+	selection_color = "#ccccff"
+
+	outfit = /datum/outfit/job/enclave/f13uscolonist
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/enclave/f13uscolonist
+	name = "US Colonist"
+	jobtype = /datum/job/enclave/f13uscolonist
+
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
+*/

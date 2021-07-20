@@ -364,7 +364,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2000)
 
-/obj/item/ammo_box/m14mm
+/obj/item/ammo_box/m127mm
 	name = "ammo box (14mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "14mmbox"
@@ -375,7 +375,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 
-/obj/item/ammo_box/m14mm/jhp
+/obj/item/ammo_box/m127mm/jhp
 	name = "ammo box (14mm JHP)"
 	ammo_type = /obj/item/ammo_casing/p14mm/jhp
 	custom_materials = list(/datum/material/iron = 11000)

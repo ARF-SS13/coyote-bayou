@@ -8,7 +8,8 @@ export const SmartVend = (props, context) => {
   return (
     <Window
       width={440}
-      height={550}>
+      height={550}
+      resizable>
       <Window.Content scrollable>
         <Section
           title="Storage"

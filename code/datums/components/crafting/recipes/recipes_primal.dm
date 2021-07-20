@@ -278,7 +278,7 @@
 
 /datum/crafting_recipe/tribalwar/warclub
 	name = "Carve Wooden Warclub"
-	result = /obj/item/melee/onehanded/club/warclub
+	result = /obj/item/claymore/machete/warclub
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 1)

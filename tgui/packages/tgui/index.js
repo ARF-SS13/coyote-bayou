@@ -15,7 +15,6 @@ import './styles/themes/ntos.scss';
 import './styles/themes/paper.scss';
 import './styles/themes/retro.scss';
 import './styles/themes/syndicate.scss';
-import './styles/themes/wizard.scss';
 
 import { perf } from 'common/perf';
 import { setupHotReloading } from 'tgui-dev-server/link/client';
@@ -71,7 +70,6 @@ const setupApp = () => {
     setupHotReloading();
     module.hot.accept([
       './components',
-      './debug',
       './layouts',
       './routes',
     ], () => {

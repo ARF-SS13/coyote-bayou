@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Flex, Modal, Section, Stack, Tabs } from '../components';
+import { AnimatedNumber, Box, Button, Flex, Modal, Section, Tabs } from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
@@ -17,7 +17,8 @@ export const BlackMarketUplink = (props, context) => {
     <Window
       width={600}
       height={480}
-      theme="hackerman">
+      theme="hackerman"
+      resizable>
       <ShipmentSelector />
       <Window.Content scrollable>
         <Section
@@ -64,27 +65,27 @@ export const BlackMarketUplink = (props, context) => {
                 className="candystripe"
                 p={1}
                 pb={2}>
-                <Stack align="baseline">
-                  <Stack.Item grow bold>
+                <Flex spacing={1} align="baseline">
+                  <Flex.Item bold grow={1}>
                     {item.name}
-                  </Stack.Item>
-                  <Stack.Item color="label">
+                  </Flex.Item>
+                  <Flex.Item color="label">
                     {item.amount
                       ? item.amount + " in stock"
                       : "Out of stock"}
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Flex.Item>
+                  <Flex.Item>
                     {formatMoney(item.cost) + ' cr'}
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Flex.Item>
+                  <Flex.Item>
                     <Button
                       content="Buy"
                       disabled={!item.amount || item.cost > money}
                       onClick={() => act('select', {
                         item: item.id,
                       })} />
-                  </Stack.Item>
-                </Stack>
+                  </Flex.Item>
+                </Flex>
                 {item.desc}
               </Box>
             ))}

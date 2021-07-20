@@ -3,21 +3,21 @@
 /datum/asset/simple/tgui_common
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-common.bundle.js" = file("tgui/public/tgui-common.bundle.js"),
+		"tgui-common.chunk.js" = 'tgui/public/tgui-common.chunk.js',
 	)
 
 /datum/asset/simple/tgui
 	keep_local_name = TRUE
 	assets = list(
-		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
-		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
+		"tgui.bundle.js" = 'tgui/public/tgui.bundle.js',
+		"tgui.bundle.css" = 'tgui/public/tgui.bundle.css',
 	)
 
 /datum/asset/simple/tgui_panel
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
-		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
+		"tgui-panel.bundle.js" = 'tgui/public/tgui-panel.bundle.js',
+		"tgui-panel.bundle.css" = 'tgui/public/tgui-panel.bundle.css',
 	)
 
 /datum/asset/simple/headers
@@ -163,15 +163,6 @@
 		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
-
-/datum/asset/simple/namespaced/tgfont
-	assets = list(
-		"tgfont.eot" = file("tgui/packages/tgfont/dist/tgfont.eot"),
-		"tgfont.woff2" = file("tgui/packages/tgfont/dist/tgfont.woff2"),
-	)
-	parents = list(
-		"tgfont.css" = file("tgui/packages/tgfont/dist/tgfont.css"),
-	)
 
 /datum/asset/spritesheet/chat
 	name = "chat"
@@ -478,4 +469,46 @@
 				I.Blend(icon(icon_file, keyboard, SOUTH), ICON_OVERLAY)
 
 		Insert(asset_path, I)
+	return ..()
+
+
+/datum/asset/spritesheet/loadout
+	name = "loadout"
+
+/datum/asset/spritesheet/loadout/register()
+	var/list/outfits = list()
+	for(var/j in subtypesof(/datum/job))
+		var/datum/job/J = new j
+		for (var/D in J.loadout_options)
+			if (D in outfits)
+				continue
+			outfits += D
+			var/datum/outfit/O = new D
+			for(var/itemtype in O.get_all_possible_item_paths())
+				var/obj/item/I = itemtype
+				if(!ispath(itemtype, /obj/item))
+					world.log << "NON-ITEM \"[itemtype]\" IN [O.type] OF [j]"
+					continue
+				var/icon_file = initial(I.icon)
+				if(isnull(icon_file))
+					world.log << "MISSING ICON FOR [initial(I.name)] IN [O.type] OF [j]"
+					continue
+				var/icon_state = initial(I.icon_state)
+				if(isnull(icon_state) || !(icon_state in icon_states(icon_file)))
+					world.log << "MISSING ICON STATE[isnull(icon_state) ? null : " "][icon_state] FOR [itemtype]"
+					continue
+				var/c = initial(I.color)
+				var/genColor = FALSE
+				var/icon_string = "[sanitize_filename(replacetext("[icon_file]", ".dmi", ""))]-[icon_state]"
+				if(icon_string in sprites) // save us some work generating the icon if we already have it
+					continue
+				if (!isnull(c) && uppertext(c) != "#FFFFFF" && uppertext(c) != "#FFFFFFFF")
+					if("[icon_string]-[c]" in sprites) // save us an expensive icon.Blend() operation
+						continue
+					genColor = TRUE
+				var/icon/Ic = icon(icon_file, icon_state, SOUTH)
+				if (genColor)
+					Ic.Blend(c, ICON_MULTIPLY)
+					icon_string += "-[c]"
+				Insert(icon_string, Ic)
 	return ..()

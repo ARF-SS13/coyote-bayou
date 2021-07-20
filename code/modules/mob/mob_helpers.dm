@@ -431,29 +431,6 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 /mob/living/getImplant(type)
 	return locate(type) in implants
 
-
-///Is the passed in mob a ghost with admin powers, doesn't check for AI interact like isAdminGhost() used to
-/proc/isAdminObserver(mob/user)
-	if(!user) //Are they a mob? Auto interface updates call this with a null src
-		return
-	if(!user.client) // Do they have a client?
-		return
-	if(!isobserver(user)) // Are they a ghost?
-		return
-	if(!check_rights_for(user.client, R_ADMIN)) // Are they allowed?
-		return
-	return TRUE
-
-
-///Is the passed in mob an admin ghost WITH AI INTERACT enabled
-/proc/isAdminGhostAI(mob/user)
-	if(!isAdminObserver(user))
-		return
-	if(!user.client.AI_Interact) // Do they have it enabled?
-		return
-	return TRUE
-
-
 /proc/offer_control(mob/M,ignore_category=null)
 	to_chat(M, "Control of your mob has been offered to dead players.")
 	if(usr)

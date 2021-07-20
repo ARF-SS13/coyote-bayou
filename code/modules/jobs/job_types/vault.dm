@@ -68,7 +68,7 @@ Overseer
 	backpack = 		/obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/box/ids = 1,
-
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 		/obj/item/crowbar = 1)
@@ -109,25 +109,25 @@ Head of Security
 
 	id = /obj/item/card/id/chief
 	//pda
-	uniform = /obj/item/clothing/under/f13/vault13
-	ears = /obj/item/radio/headset/headset_vault_hos/alt
-	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	head = /obj/item/clothing/head/collectable/police/cos
-	belt = /obj/item/storage/belt/security
-	glasses = /obj/item/clothing/glasses/sunglasses
-	r_hand = /obj/item/gun/ballistic/revolver/colt6520
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/security
+	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	suit = 			/obj/item/clothing/suit/armor/vest/alt
+	head = 			/obj/item/clothing/head/collectable/police/cos
+	belt = 			/obj/item/storage/belt/security
+	glasses = 		/obj/item/clothing/glasses/sunglasses
+	r_hand =		/obj/item/gun/ballistic/revolver/colt6520
+	r_pocket = 		/obj/item/assembly/flash/handheld
+	l_pocket = 		/obj/item/restraints/handcuffs
+	backpack = 		/obj/item/storage/backpack/security
+	satchel = 		/obj/item/storage/backpack/satchel/sec
+	duffelbag = 	/obj/item/storage/backpack/duffelbag/sec
+	box = 			/obj/item/storage/box/security
 	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
-		/obj/item/crowbar = 1,
-		)
+		/obj/item/crowbar = 1)
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -158,18 +158,17 @@ Medical Doctor
 	jobtype = /datum/job/vault/f13doctor
 	chemwhiz = TRUE
 	//pda
-	uniform = /obj/item/clothing/under/f13/vault13
-	ears = /obj/item/radio/headset/headset_vault
-	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/toggle/labcoat
-	l_hand = /obj/item/storage/firstaid/regular
-	suit_store = /obj/item/flashlight/pen
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	ears = 			/obj/item/radio/headset/headset_vault
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	suit =			/obj/item/clothing/suit/toggle/labcoat
+	l_hand = 		/obj/item/storage/firstaid/regular
+	suit_store = 	/obj/item/flashlight/pen
+	backpack = 		/obj/item/storage/backpack/medic
+	satchel = 		/obj/item/storage/backpack/satchel/med
+	duffelbag = 	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
-		/obj/item/crowbar = 1,
-		)
+		/obj/item/crowbar = 1)
 
 /datum/outfit/job/vault/f13doctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -207,15 +206,13 @@ Scientist
 	chemwhiz = TRUE
 
 	//pda
-	uniform = /obj/item/clothing/under/f13/vault13
-	ears = /obj/item/radio/headset/headset_vault
-	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/toggle/labcoat
-	backpack = /obj/item/storage/backpack/science
-	satchel = /obj/item/storage/backpack/satchel/tox
-	backpack_contents = list(
-		/obj/item/crowbar = 1,
-		)
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	ears = 			/obj/item/radio/headset/headset_vault
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	suit =			/obj/item/clothing/suit/toggle/labcoat
+	backpack = 		/obj/item/storage/backpack/science
+	satchel = 		/obj/item/storage/backpack/satchel/tox
+	backpack_contents = list(/obj/item/crowbar = 1)
 
 /datum/outfit/job/vault/f13vaultscientist/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -255,25 +252,25 @@ Security Officer
 
 	id = /obj/item/card/id/sec
 	//pda
-	ears = /obj/item/radio/headset/headset_vaultsec
-	uniform = /obj/item/clothing/under/f13/vault13
-	head = /obj/item/clothing/head/helmet/riot/vaultsec
-	suit = /obj/item/clothing/suit/armor/vest
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/storage/belt/security
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/n99
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/security
+	ears = 			/obj/item/radio/headset/headset_vaultsec
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	head = 			/obj/item/clothing/head/helmet/riot/vaultsec
+	suit =			/obj/item/clothing/suit/armor/vest
+	glasses = 		/obj/item/clothing/glasses/sunglasses
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	belt = 			/obj/item/storage/belt/security
+	r_hand =		/obj/item/gun/ballistic/automatic/pistol/n99
+	l_pocket = 		/obj/item/restraints/handcuffs
+	r_pocket = 		/obj/item/assembly/flash/handheld
+	backpack = 		/obj/item/storage/backpack/security
+	satchel = 		/obj/item/storage/backpack/satchel/sec
+	duffelbag = 	/obj/item/storage/backpack/duffelbag/sec
+	box = 			/obj/item/storage/box/security
 	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
-		/obj/item/crowbar = 1,
-		)
+		/obj/item/crowbar = 1)
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -328,19 +325,17 @@ Vault Engineer
 	jobtype = /datum/job/vault/f13vaultengineer
 
 	//pda
-	ears = /obj/item/radio/headset/headset_vault
-	uniform = /obj/item/clothing/under/f13/vault13
-	belt = /obj/item/storage/belt/utility/full/engi
-	shoes = /obj/item/clothing/shoes/sneakers/red
-	head = /obj/item/clothing/head/hardhat
-	r_pocket = /obj/item/t_scanner
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	box = /obj/item/storage/box/engineer
-	backpack_contents = list(
-		/obj/item/crowbar,
-		)
+	ears = 			/obj/item/radio/headset/headset_vault
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	belt = 			/obj/item/storage/belt/utility/full/engi
+	shoes = 		/obj/item/clothing/shoes/sneakers/red
+	head = 			/obj/item/clothing/head/hardhat
+	r_pocket = 		/obj/item/t_scanner
+	backpack = 		/obj/item/storage/backpack/industrial
+	satchel = 		/obj/item/storage/backpack/satchel/eng
+	duffelbag = 	/obj/item/storage/backpack/duffelbag/engineering
+	box = 			/obj/item/storage/box/engineer
+	backpack_contents = list(/obj/item/crowbar = 1)
 
 /datum/job/vault/f13vaultDweller
 	title = "Vault Dweller"
@@ -366,10 +361,23 @@ Vault Engineer
 /datum/outfit/job/vault/f13vaultDweller
 	name = "Vault Dweller"
 	jobtype = /datum/job/vault/f13vaultDweller
-	backpack = /obj/item/storage/backpack/satchel/leather
-	uniform = /obj/item/clothing/under/f13/vault13
-	ears = /obj/item/radio/headset/headset_vault
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack_contents = list(
-		/obj/item/crowbar,
-		)
+	backpack = 		/obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(/obj/item/crowbar = 1)
+
+/datum/outfit/job/vault/f13vaultDweller/pre_equip(mob/living/carbon/human/H)
+	..()
+	if (CONFIG_GET(flag/grey_assistants))
+		uniform = /obj/item/clothing/under/f13/vault13
+		ears = /obj/item/radio/headset/headset_vault
+		shoes = /obj/item/clothing/shoes/jackboots
+	else
+		uniform = /obj/item/clothing/under/f13/vault13
+		ears = /obj/item/radio/headset/headset_vault
+		shoes = /obj/item/clothing/shoes/jackboots
+
+
+/datum/job/vault/New()
+	..()
+//	if(SSmapping.config.map_name == "Pahrump")
+//		total_positions = 0
+//		spawn_positions = 0

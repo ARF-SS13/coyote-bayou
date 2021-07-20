@@ -1,3 +1,4 @@
+import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { Button, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
@@ -27,7 +28,7 @@ export const PortableTurret = (props, context) => {
         <NoticeBox>
           Swipe an ID card to {locked ? 'unlock' : 'lock'} this interface.
         </NoticeBox>
-        <>
+        <Fragment>
           <Section>
             <LabeledList>
               <LabeledList.Item
@@ -100,7 +101,7 @@ export const PortableTurret = (props, context) => {
                 onClick={() => act('shootborgs')} />
             </Section>
           )}
-        </>
+        </Fragment>
       </Window.Content>
     </Window>
   );

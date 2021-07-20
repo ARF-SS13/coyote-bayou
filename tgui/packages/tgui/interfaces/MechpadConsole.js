@@ -52,7 +52,8 @@ export const MechpadConsole = (props, context) => {
   return (
     <Window
       width={475}
-      height={130}>
+      height={130}
+      resizable>
       <Window.Content>
         {mechpads.length === 0 && (
           <NoticeBox>

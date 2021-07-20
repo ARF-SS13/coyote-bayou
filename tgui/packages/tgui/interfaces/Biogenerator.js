@@ -1,5 +1,6 @@
 import { classes } from 'common/react';
 import { createSearch } from 'common/string';
+import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Flex, Icon, Input, NoticeBox, NumberInput, Section, Table, Tabs } from '../components';
 import { formatMoney } from '../format';
@@ -16,7 +17,8 @@ export const Biogenerator = (props, context) => {
   return (
     <Window
       width={550}
-      height={420}>
+      height={380}
+      resizable>
       {!!processing && (
         <Dimmer fontSize="32px">
           <Icon name="cog" spin={1} />
@@ -75,7 +77,7 @@ export const BiogeneratorContent = (props, context) => {
         </Box>
       )}
       buttons={(
-        <>
+        <Fragment>
           Search
           <Input
             autoFocus
@@ -85,13 +87,13 @@ export const BiogeneratorContent = (props, context) => {
           <Button
             icon="eject"
             content="Eject"
-            onClick={() => act('eject')} />
+            onClick={() => act('detach')} />
           <Button
             icon="cog"
             content="Activate"
             disabled={!can_process}
             onClick={() => act('activate')} />
-        </>
+        </Fragment>
       )}>
       <Flex>
         {searchText.length === 0 && (
@@ -133,16 +135,16 @@ const ItemList = (props, context) => {
     hoveredItem,
     setHoveredItem,
   ] = useLocalState(context, 'hoveredItem', {});
-  const hoveredCost = hoveredItem.cost || 0;
+  const hoveredCost = hoveredItem && hoveredItem.cost || 0;
   // Append extra hover data to items
   const items = props.items.map(item => {
     const [
       amount,
       setAmount,
     ] = useLocalState(context, "amount" + item.name, 1);
-    const notSameItem = hoveredItem.name !== item.name;
+    const notSameItem = hoveredItem && hoveredItem.name !== item.name;
     const notEnoughHovered = props.biomass - hoveredCost
-      * hoveredItem.amount < item.cost * amount;
+    * hoveredItem.amount < item.cost * amount;
     const disabledDueToHovered = notSameItem && notEnoughHovered;
     const disabled = props.biomass < item.cost * amount || disabledDueToHovered;
     return {

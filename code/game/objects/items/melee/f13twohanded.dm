@@ -1,7 +1,7 @@
-// In this document: Axes, Spears, Heavy clubs
+// In this document: Axes, Spears, Heavy clubs, Advanced two handed weapons
 
 
-/obj/item/twohanded // Two handed template. Slower melee speed than onehanders.
+/obj/item/twohanded
 	var/icon_prefix = null
 	var/wielded = FALSE
 
@@ -280,7 +280,7 @@
 
 /////////////////
 // HEAVY CLUBS //
-/////////////////					- Bonus damage to stamina
+/////////////////					- Bonus damage to stamina, knockback
 
 
 // Baseball Bat						Keywords: Damage 12/30, Damage bonus Stamina
@@ -303,14 +303,15 @@
 /obj/item/twohanded/baseball/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 12, force_wielded = 30, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
 /obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(15, STAMINA, null, 0)
+	M.apply_damage(10, STAMINA, null, 0)
 
-// Spiked Baseball Bat				Keywords: Damage 15/33, Damage bonus Stamina, Sharp
+// Spiked Baseball Bat				Keywords: Damage 15/33, Damage bonus Stamina
 /obj/item/twohanded/baseball/spiked
 	name = "spiked baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter, especially with large nails drilled through the top of it."
@@ -345,25 +346,16 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(19, STAMINA, null, 0)
+	M.apply_damage(15, STAMINA, null, 0)
 
-// Louisville Slugger				Keywords: Damage 15/33, Damage bonus Stamina
+// Louisville Slugger				Keywords: Damage 15/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/golfclub/louisville
-	name = "Louisville slugger"
+	name = "aluminium bat"
 	desc = "Makes a satisfying thwack when hitting people."
 	icon_state = "louisville0"
 	icon_prefix = "louisville"
 	attack_verb = list("thwacked", "bashed", "slugged", "hit", "bludgeoned", "whacked", "bonked")
 
-/obj/item/twohanded/baseball/golfclub/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]1")
-
-/obj/item/twohanded/baseball/golfclub/louisville/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(22, STAMINA, null, 0)
 
 
 ///////////////////
@@ -466,7 +458,7 @@
 	icon_state = "thermiclance_[on ? "on" : "off"]"
 
 
-// Proton axe							Keywords: Damage 20/43, AP 0.5
+// Proton axe							Keywords: Damage 20/45, AP 0.6
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -477,8 +469,8 @@
 	icon_state_on = "protonaxe1"
 	slot_flags = ITEM_SLOT_SUITSTORE
 	force = 20
-	force_on = 43
-	armour_penetration = 0.5
+	force_on = 45
+	armour_penetration = 0.6
 	throwforce = 15
 	throwforce_on = 30
 
@@ -543,7 +535,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	M.apply_effect(300, EFFECT_IRRADIATE, 0)
 
 
-// War Mace								Keywords: TRIBAL, Damage 25/45, AP 0.2
+// War Mace								Keywords: TRIBAL, Damage 25/45, AP 0.5
 /obj/item/twohanded/sledgehammer/warmace
 	name = "war mace"
 	desc = "A heavy wooden club with a turquoise head."
@@ -551,7 +543,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	icon_prefix = "warmace"
 	force = 25
 	throwforce = 20
-	armour_penetration = 0.2
+	armour_penetration = 0.5
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_NONE
@@ -614,6 +606,66 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 			user.dropItemToGround(src, TRUE)
 			user.Knockdown(50)
 		return
+
+
+// Chainsaw							Keywords: Damage 13/55
+/obj/item/twohanded/chainsaw
+	name = "chainsaw"
+	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
+	icon_state = "chainsaw_off"
+	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
+	flags_1 = CONDUCT_1
+	force = 13
+	var/force_on = 55
+	w_class = WEIGHT_CLASS_HUGE
+	throwforce = 10
+	throw_speed = 2
+	throw_range = 4
+//	custom_materials = list(MAT_METAL=13000)
+	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
+	hitsound = "swing_hit"
+	sharpness = SHARP_EDGED
+	actions_types = list(/datum/action/item_action/startchainsaw)
+	tool_behaviour = TOOL_SAW
+	toolspeed = 0.5
+	var/on = FALSE
+
+/obj/item/twohanded/chainsaw/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/twohanded/chainsaw/suicide_act(mob/living/carbon/user)
+	if(on)
+		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
+		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
+		if(myhead)
+			myhead.dismember()
+	else
+		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
+	return(BRUTELOSS)
+
+/obj/item/twohanded/chainsaw/attack_self(mob/user)
+	on = !on
+	to_chat(user, "As you pull the starting cord dangling from [src], [on ? "it begins to whirr." : "the chain stops moving."]")
+	force = on ? force_on : initial(force)
+	throwforce = on ? force_on : force
+	update_icon()
+	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
+	butchering.butchering_enabled = on
+
+	if(on)
+		hitsound = 'sound/weapons/chainsawhit.ogg'
+	else
+		hitsound = "swing_hit"
+
+/obj/item/twohanded/chainsaw/update_icon_state()
+	icon_state = "chainsaw_[on ? "on" : "off"]"
+
 
 //COMMENTED OUT STUFF
 

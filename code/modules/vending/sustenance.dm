@@ -7,7 +7,7 @@
 	products = list(/obj/item/reagent_containers/food/snacks/tofu = 24,
 					/obj/item/reagent_containers/food/drinks/ice/sustanance = 12,
 					/obj/item/reagent_containers/food/snacks/candy_corn = 6)
-	contraband = list(/obj/item/melee/onehanded/knife/kitchen = 6,
+	contraband = list(/obj/item/kitchen/knife = 6,
 					/obj/item/reagent_containers/food/drinks/coffee = 12,
 					/obj/item/tank/internals/emergency_oxygen = 6,
 					/obj/item/clothing/mask/breath = 6)

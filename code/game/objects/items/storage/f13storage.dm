@@ -14,7 +14,8 @@
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.can_hold = typecacheof(list(
 		/obj/item/storage/backpack/backsheathstorage,
-		/obj/item/melee/onehanded/machete,
+		/obj/item/claymore,
+		/obj/item/katana,
 		/obj/item/twohanded/fireaxe/bmprsword
 		))
 
@@ -62,7 +63,8 @@
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.can_hold = typecacheof(list(
 		/obj/item/storage/belt/waistsheathstorage,
-		/obj/item/melee/onehanded/machete,
+		/obj/item/claymore,
+		/obj/item/katana
 		))
 
 /obj/item/storage/belt/waistsheath/examine(mob/user)

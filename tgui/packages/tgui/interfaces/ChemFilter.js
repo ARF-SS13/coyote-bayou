@@ -1,6 +1,6 @@
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
-import { Button, Input, Section, Stack } from '../components';
+import { Button, Flex, Input, Section } from '../components';
 import { Window } from '../layouts';
 
 export const ChemFilterPane = (props, context) => {
@@ -12,7 +12,7 @@ export const ChemFilterPane = (props, context) => {
       title={title}
       minHeight="240px"
       buttons={(
-        <>
+        <Fragment>
           <Input
             placeholder="Reagent"
             width="140px"
@@ -24,7 +24,7 @@ export const ChemFilterPane = (props, context) => {
               which: titleKey,
               name: reagentName,
             })} />
-        </>
+        </Fragment>
       )}>
       {list.map(filter => (
         <Fragment key={filter}>
@@ -53,24 +53,25 @@ export const ChemFilter = (props, context) => {
   return (
     <Window
       width={500}
-      height={300}>
+      height={300}
+      resizable>
       <Window.Content scrollable>
-        <Stack>
-          <Stack.Item grow>
+        <Flex spacing={1}>
+          <Flex.Item grow={1}>
             <ChemFilterPane
               title="Left"
               list={left}
               reagentName={leftName}
               onReagentInput={value => setLeftName(value)} />
-          </Stack.Item>
-          <Stack.Item grow>
+          </Flex.Item>
+          <Flex.Item grow={1}>
             <ChemFilterPane
               title="Right"
               list={right}
               reagentName={rightName}
               onReagentInput={value => setRightName(value)} />
-          </Stack.Item>
-        </Stack>
+          </Flex.Item>
+        </Flex>
       </Window.Content>
     </Window>
   );

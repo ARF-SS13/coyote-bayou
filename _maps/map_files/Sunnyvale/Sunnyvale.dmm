@@ -1076,6 +1076,10 @@
 /area/f13/legioncamp)
 "adB" = (
 /obj/structure/table/wood,
+/obj/item/melee/curator_whip{
+	desc = "It stings like hell to be hit by.";
+	name = "Slave whip"
+	},
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "adC" = (
@@ -1733,6 +1737,10 @@
 /area/f13/legioncamp)
 "afA" = (
 /obj/structure/closet/cardboard,
+/obj/item/claymore/machete,
+/obj/item/claymore/machete,
+/obj/item/claymore/machete,
+/obj/item/claymore/machete,
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
 "afB" = (
@@ -1801,7 +1809,8 @@
 /area/f13/klamat/mine)
 "afM" = (
 /obj/structure/table,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -2335,6 +2344,8 @@
 /area/f13/klamat)
 "ahn" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife,
 /turf/open/floor/wood/f13/old,
 /area/f13/klamat)
 "aho" = (
@@ -2931,6 +2942,8 @@
 "aiT" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtysolid"
 	},
@@ -3188,6 +3201,7 @@
 /area/f13/farmhouse)
 "ajG" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/f13,
 /area/f13/farmhouse)
 "ajH" = (
@@ -3211,7 +3225,7 @@
 /area/f13/farmhouse)
 "ajK" = (
 /obj/structure/table/wood,
-/obj/item/melee/onehanded/knife/butcher,
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13,
 /area/f13/farmhouse)
 "ajL" = (
@@ -3370,6 +3384,7 @@
 /obj/structure/table/wood,
 /obj/item/clothing/suit/apron/chef,
 /obj/item/clothing/head/chefhat,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13,
 /area/f13/farmhouse)
 "akq" = (
@@ -3785,6 +3800,7 @@
 /obj/machinery/light/small,
 /obj/structure/table/wood,
 /obj/item/shovel,
+/obj/item/hatchet,
 /turf/open/floor/wood/f13/old{
 	icon_state = "housewood3-broken2"
 	},
@@ -4004,6 +4020,7 @@
 /obj/item/reagent_containers/spray/pestspray,
 /obj/item/reagent_containers/spray/plantbgone,
 /obj/item/reagent_containers/spray/pestspray,
+/obj/item/scythe,
 /turf/open/floor/wood/f13/old,
 /area/f13/farmhouse)
 "amr" = (
@@ -10932,6 +10949,7 @@
 /obj/structure/table,
 /obj/item/roller,
 /obj/item/roller,
+/obj/item/gun/medbeam,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -15906,6 +15924,8 @@
 /area/f13/desert)
 "aRH" = (
 /obj/structure/table,
+/obj/item/kitchen/rollingpin,
+/obj/item/kitchen/knife,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitepurplerustychess2"
@@ -16419,6 +16439,7 @@
 /obj/structure/toilet{
 	dir = 8
 	},
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -17641,6 +17662,7 @@
 "aWE" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/sunny_dale)
 "aWF" = (
@@ -19725,6 +19747,7 @@
 /area/f13/sunny_dale)
 "bct" = (
 /obj/structure/table/reinforced,
+/obj/item/kitchen/knife/butcher,
 /obj/item/reagent_containers/blood/radaway,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -20555,6 +20578,7 @@
 /area/f13/raider_mall)
 "beD" = (
 /obj/structure/rack,
+/obj/item/claymore/machete/golf,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/desert)
 "beE" = (
@@ -21203,6 +21227,7 @@
 /area/f13/sunny_dale)
 "bgC" = (
 /obj/structure/rack,
+/obj/item/melee/classic_baton,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -24514,6 +24539,7 @@
 /area/f13/sunny_dale)
 "bqd" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitepurplerustychess2"
 	},
@@ -24748,6 +24774,7 @@
 /area/f13/raider_mall)
 "bqO" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitepurplerustychess2"
 	},
@@ -25739,7 +25766,12 @@
 /area/f13/desert)
 "btB" = (
 /obj/structure/rack,
-/obj/item/melee/onehanded/knife/hunting,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -26897,6 +26929,7 @@
 "bwN" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/apron/chef,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
@@ -27160,12 +27193,14 @@
 /area/f13/powerplant)
 "bxD" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/sunny_dale)
 "bxE" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -28441,6 +28476,7 @@
 /area/f13/powerplant)
 "bBy" = (
 /obj/structure/table/wood,
+/obj/item/kitchen/knife,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -28623,6 +28659,7 @@
 "bBW" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/apron/chef,
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
@@ -32294,6 +32331,8 @@
 /area/f13/brotherhood)
 "bNe" = (
 /obj/structure/table,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/darkblue/side{
 	dir = 1
 	},
@@ -32642,7 +32681,12 @@
 /area/f13/brotherhood)
 "bNY" = (
 /obj/structure/rack,
-/obj/item/melee/onehanded/knife/hunting,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
+/obj/item/kitchen/knife/combat,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
@@ -34797,7 +34841,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "bUb" = (
-/obj/item/melee/onehanded/knife/hunting,
+/obj/structure/rack,
+/obj/item/claymore/machete/warclub,
+/obj/item/kitchen/knife/combat/bone,
 /obj/item/twohanded/bonespear,
 /obj/item/twohanded/twohanded/fireaxe/boneaxe,
 /obj/item/twohanded/twohanded/fireaxe/bmprsword,
@@ -36749,6 +36795,8 @@
 /area/f13/sunny_dale)
 "edy" = (
 /obj/structure/table,
+/obj/item/kitchen/knife/butcher,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},

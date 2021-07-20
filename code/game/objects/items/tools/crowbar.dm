@@ -1,6 +1,6 @@
 /obj/item/crowbar
-	name = "crowbar"
-	desc = "This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
+	name = "pocket crowbar"
+	desc = "A small crowbar. This handy tool is useful for lots of things, such as prying floor tiles or opening unpowered doors."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "crowbar"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -8,10 +8,10 @@
 	usesound = 'sound/items/crowbar.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	force = 15
+	force = 5
 	throwforce = 7
-	w_class = WEIGHT_CLASS_NORMAL
-	custom_materials = list(/datum/material/iron=1000)
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron=50)
 
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_CROWBAR
@@ -37,6 +37,12 @@
 	icon_state = "crowbar_clock"
 	toolspeed = 0.5
 
+/obj/item/crowbar/bronze
+	name = "bronze plated crowbar"
+	desc = "A bronze plated crowbar."
+	icon_state = "crowbar_brass"
+	toolspeed = 0.95
+
 /obj/item/crowbar/abductor
 	name = "alien crowbar"
 	desc = "A hard-light crowbar. It appears to pry by itself, without any effort required."
@@ -45,7 +51,7 @@
 	icon_state = "crowbar"
 	toolspeed = 0.1
 
-/obj/item/crowbar/large //obsolete
+/obj/item/crowbar/large
 	name = "crowbar"
 	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big."
 	force = 12

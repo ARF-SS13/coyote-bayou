@@ -21,7 +21,7 @@
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/raidermelee, /obj/item/melee/onehanded/knife/survival)
+	loot = list(/obj/effect/mob_spawn/human/corpse/raidermelee, /obj/item/kitchen/knife/combat/survival)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("raider")
@@ -73,7 +73,7 @@
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 
 /mob/living/simple_animal/hostile/raider/legendary
-	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human)
+	loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/kitchen/knife/combat/survival, /obj/item/reagent_containers/food/snacks/kebab/human)
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes - this one seems a bit faster than the average..."
 	color = "#FFFF00"

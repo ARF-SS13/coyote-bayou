@@ -15,7 +15,8 @@ export const PortableGenerator = (props, context) => {
   return (
     <Window
       width={450}
-      height={340}>
+      height={340}
+      resizable>
       <Window.Content scrollable>
         {!data.anchored && (
           <NoticeBox>Generator not anchored.</NoticeBox>

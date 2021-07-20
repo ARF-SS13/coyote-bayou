@@ -1033,7 +1033,7 @@
 /obj/structure/table/wood/fancy,
 /obj/item/clothing/suit/armor/riot/knight/blue,
 /obj/item/clothing/head/helmet/knight/blue,
-/obj/item/melee/onehanded/machete/forgedmachete,
+/obj/item/claymore,
 /turf/open/floor/holofloor/grass,
 /area/holodeck/rec_center/thunderdome1218)
 "dq" = (
@@ -1047,7 +1047,7 @@
 /obj/structure/table/wood/fancy,
 /obj/item/clothing/suit/armor/riot/knight/red,
 /obj/item/clothing/head/helmet/knight/red,
-/obj/item/melee/onehanded/machete/forgedmachete,
+/obj/item/claymore,
 /turf/open/floor/holofloor/grass,
 /area/holodeck/rec_center/thunderdome1218)
 "ds" = (
@@ -1333,6 +1333,7 @@
 "dX" = (
 /obj/structure/table/wood,
 /obj/item/folder,
+/obj/item/melee/classic_baton/telescopic,
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/school)
 "dY" = (
@@ -7612,7 +7613,7 @@
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -8
 	},
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -9607,7 +9608,7 @@
 /turf/open/floor/plasteel/blue,
 /area/centcom/evac)
 "CM" = (
-/obj/item/melee/onehanded/machete,
+/obj/item/claymore/machete,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "CN" = (
@@ -10071,7 +10072,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Fm" = (
-/obj/item/melee/onehanded/knife/trench,
+/obj/item/kitchen/knife/trench,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "FT" = (

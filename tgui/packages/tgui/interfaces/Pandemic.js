@@ -1,4 +1,5 @@
 import { map } from 'common/collections';
+import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { Box, Button, Collapsible, Grid, Input, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
@@ -16,7 +17,7 @@ export const PandemicBeakerDisplay = (props, context) => {
     <Section
       title="Beaker"
       buttons={(
-        <>
+        <Fragment>
           <Button
             icon="times"
             content="Empty and Eject"
@@ -33,7 +34,7 @@ export const PandemicBeakerDisplay = (props, context) => {
             content="Eject"
             disabled={!has_beaker}
             onClick={() => act('eject_beaker')} />
-        </>
+        </Fragment>
       )}>
       {has_beaker ? (
         !beaker_empty ? (
@@ -115,7 +116,7 @@ export const PandemicDiseaseDisplay = (props, context) => {
             </Grid.Column>
           </Grid>
           {!!virus.is_adv && (
-            <>
+            <Fragment>
               <Section
                 title="Statistics"
                 level={2}>
@@ -155,7 +156,7 @@ export const PandemicDiseaseDisplay = (props, context) => {
                   </Collapsible>
                 ))}
               </Section>
-            </>
+            </Fragment>
           )}
         </Section>
       );
@@ -271,14 +272,15 @@ export const Pandemic = (props, context) => {
   return (
     <Window
       width={520}
-      height={550}>
+      height={550}
+      resizable>
       <Window.Content scrollable>
         <PandemicBeakerDisplay />
         {!!data.has_blood && (
-          <>
+          <Fragment>
             <PandemicDiseaseDisplay />
             <PandemicAntibodyDisplay />
-          </>
+          </Fragment>
         )}
       </Window.Content>
     </Window>

@@ -1,5 +1,6 @@
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section } from '../components';
+import { Box, Section, LabeledList, Button, ProgressBar } from '../components';
+import { Fragment } from 'inferno';
 import { Window } from '../layouts';
 
 const damageTypes = [
@@ -57,7 +58,7 @@ export const Sleeper = (props, context) => {
             </Box>
           )}>
           {!!occupied && (
-            <>
+            <Fragment>
               <ProgressBar
                 value={occupant.health}
                 minValue={occupant.minHealth}
@@ -91,7 +92,7 @@ export const Sleeper = (props, context) => {
                   {occupant.brainLoss ? 'Abnormal' : 'Healthy'}
                 </LabeledList.Item>
               </LabeledList>
-            </>
+            </Fragment>
           )}
         </Section>
         <Section

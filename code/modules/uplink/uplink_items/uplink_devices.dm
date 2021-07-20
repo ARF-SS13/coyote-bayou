@@ -159,6 +159,14 @@
 	item = /obj/item/headsetupgrader
 	cost = 1
 
+/datum/uplink_item/device_tools/medgun
+	name = "Medbeam Gun"
+	desc = "A wonder of Syndicate engineering, the Medbeam gun, or Medi-Gun enables a medic to keep his fellow \
+			operatives in the fight, even while under fire. Don't cross the streams!"
+	item = /obj/item/gun/medbeam
+	cost = 15
+	include_modes = list(/datum/game_mode/nuclear)
+
 /datum/uplink_item/device_tools/nutcracker
 	name = "Nutcracker"
 	desc = "An oversized version of what you'd initially expect here. Big enough to crush skulls."

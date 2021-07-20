@@ -4,9 +4,9 @@
  * @license MIT
  */
 
-import { KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from 'common/keycodes';
 import { classes, pureComponentHooks } from 'common/react';
 import { Component, createRef } from 'inferno';
+import { KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from '../hotkeys';
 import { createLogger } from '../logging';
 import { Box } from './Box';
 import { Icon } from './Icon';
@@ -21,8 +21,6 @@ export const Button = props => {
     icon,
     iconRotation,
     iconSpin,
-    iconColor,
-    iconPosition,
     color,
     disabled,
     selected,
@@ -48,7 +46,7 @@ export const Button = props => {
   }
   // IE8: Use a lowercase "onclick" because synthetic events are fucked.
   // IE8: Use an "unselectable" prop because "user-select" doesn't work.
-  let buttonContent = (
+  return (
     <Box
       className={classes([
         'Button',
@@ -59,7 +57,6 @@ export const Button = props => {
         ellipsis && 'Button--ellipsis',
         circular && 'Button--circular',
         compact && 'Button--compact',
-        iconPosition && 'Button--iconPosition--' + iconPosition,
         (color && typeof color === 'string')
           ? 'Button--color--' + color
           : 'Button--color--default',
@@ -89,34 +86,21 @@ export const Button = props => {
         }
       }}
       {...rest}>
-      {(icon && iconPosition !== 'right') && (
+      {icon && (
         <Icon
           name={icon}
-          color={iconColor}
           rotation={iconRotation}
           spin={iconSpin} />
       )}
       {content}
       {children}
-      {(icon && iconPosition === 'right') && (
-        <Icon
-          name={icon}
-          color={iconColor}
-          rotation={iconRotation}
-          spin={iconSpin} />
+      {tooltip && (
+        <Tooltip
+          content={tooltip}
+          position={tooltipPosition} />
       )}
     </Box>
   );
-
-  if (tooltip) {
-    buttonContent = (
-      <Tooltip content={tooltip} position={tooltipPosition}>
-        {buttonContent}
-      </Tooltip>
-    );
-  }
-
-  return buttonContent;
 };
 
 Button.defaultHooks = pureComponentHooks;
@@ -243,7 +227,7 @@ export class ButtonInput extends Component {
       ...rest
     } = this.props;
 
-    let buttonContent = (
+    return (
       <Box
         className={classes([
           'Button',
@@ -283,21 +267,14 @@ export class ButtonInput extends Component {
             }
           }}
         />
+        {tooltip && (
+          <Tooltip
+            content={tooltip}
+            position={tooltipPosition}
+          />
+        )}
       </Box>
     );
-
-    if (tooltip) {
-      buttonContent = (
-        <Tooltip
-          content={tooltip}
-          position={tooltipPosition}
-        >
-          {buttonContent}
-        </Tooltip>
-      );
-    }
-
-    return buttonContent;
   }
 }
 
