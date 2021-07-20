@@ -893,7 +893,7 @@ Raider
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_den
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/beret/durathread
@@ -985,7 +985,7 @@ Raider
 	belt = /obj/item/storage/belt/military/assault
 	ears = /obj/item/radio/headset/headset_den
 	shoes = /obj/item/clothing/shoes/laceup
-	l_pocket = /obj/item/switchblade
+	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
 	suit = /obj/item/clothing/suit/armor/f13/combat/swat
