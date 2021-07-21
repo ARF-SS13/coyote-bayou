@@ -80,10 +80,13 @@
 
 /obj/item/clothing/head/helmet/f13/raider/arclight
 	name = "arclight raider helmet"
-	desc = "(IV) An intimidating visor, however its eye protection qualities are compromised."
+	desc = "(III) Welding mask with rare polarizing glass thats somehow still in working order. A treasured item in the wasteland."
 	icon_state = "arclight"
 	item_state = "arclight"
 	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	armor = list("tier" = 3, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
+	flash_protect = 2
+	tint = 0.5
 
 /obj/item/clothing/head/helmet/f13/raider/arclight/Initialize()
 	. = ..()
