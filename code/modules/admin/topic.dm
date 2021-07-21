@@ -1259,7 +1259,7 @@
 	else if(href_list["messageedits"])
 		if(!check_rights(R_ADMIN))
 			return
-		var/datum/DBQuery/query_get_message_edits = SSdbcore.NewQuery(
+		var/datum/db_query/query_get_message_edits = SSdbcore.NewQuery(
 			"SELECT edits FROM [format_table_name("messages")] WHERE id = :id",
 			list("id" = "[href_list["messageedits"]]")
 		)
@@ -2917,6 +2917,19 @@
 		else if(answer == "no")
 			log_query_debug("[usr.key] | Reported no server hang")
 
+	else if (href_list["interview"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/datum/interview/I = locate(href_list["interview"])
+		if (I)
+			I.ui_interact(usr)
+
+	else if (href_list["interview_man"])
+		if(!check_rights(R_ADMIN))
+			return
+		GLOB.interviews.ui_interact(usr)
+
+
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
 		return
@@ -2959,7 +2972,7 @@
 			to_chat(usr, "<span class='danger'>The client chosen is an admin! Cannot mentorize.</span>")
 			return
 	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_get_mentor = SSdbcore.NewQuery(
+		var/datum/db_query/query_get_mentor = SSdbcore.NewQuery(
 			"SELECT id FROM [format_table_name("mentor")] WHERE ckey = :ckey",
 			list("ckey" = ckey)
 		)
@@ -2971,10 +2984,10 @@
 			qdel(query_get_mentor)
 			return
 		qdel(query_get_mentor)
-		var/datum/DBQuery/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
+		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
 		if(!query_add_mentor.warn_execute())
 			return
-		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery({"
+		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
 			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
 			VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
 			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
@@ -3004,13 +3017,13 @@
 		C.mentor_datum = null
 		GLOB.mentors -= C
 	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_remove_mentor = SSdbcore.NewQuery(
+		var/datum/db_query/query_remove_mentor = SSdbcore.NewQuery(
 			"DELETE FROM [format_table_name("mentor")] WHERE ckey = :ckey",
 			list("ckey" = ckey)
 		)
 		if(!query_remove_mentor.warn_execute())
 			return		
-		var/datum/DBQuery/query_add_admin_log = SSdbcore.NewQuery({"
+		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
 			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
 			VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
 			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)

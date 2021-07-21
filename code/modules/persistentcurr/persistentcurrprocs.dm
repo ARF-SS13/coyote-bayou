@@ -6,7 +6,7 @@
 	var/currentMoney = getMoney(ckey)
 	var/newMoney
 	newMoney = currentMoney += amount
-	var/datum/DBQuery/query_set_money = SSdbcore.NewQuery(
+	var/datum/db_query/query_set_money = SSdbcore.NewQuery(
 		"UPDATE money SET amount = :amount WHERE ckey = :ckey",
 		list("ckey" = ckey, "amount" = newMoney)
 		)
@@ -20,7 +20,7 @@
 		return 0
 	if(!ckey)
 		return 0
-	var/datum/DBQuery/query_get_money = SSdbcore.NewQuery(
+	var/datum/db_query/query_get_money = SSdbcore.NewQuery(
 	"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
 	list("ckey" = ckey)
 	)
@@ -32,7 +32,7 @@
 		qdel(query_get_money)
 		return currentMoney
 	qdel(query_get_money)
-	var/datum/DBQuery/query_add_new_account = SSdbcore.NewQuery(
+	var/datum/db_query/query_add_new_account = SSdbcore.NewQuery(
 	"INSERT INTO [format_table_name("money")] VALUES (:ckey, '0')",
 	list("ckey" = ckey)
 	)
@@ -95,7 +95,7 @@
 	var/currentMoney = getMoney(ckey)
 	var/newMoney
 	newMoney = currentMoney += amount
-	var/datum/DBQuery/query_set_money = SSdbcore.NewQuery(
+	var/datum/db_query/query_set_money = SSdbcore.NewQuery(
 		"UPDATE money SET amount = :amount WHERE ckey = :ckey",
 		list("ckey" = ckey, "amount" = newMoney)
 		)
@@ -109,7 +109,7 @@
 		return 0
 	if(!ckey)
 		return 0
-	var/datum/DBQuery/query_get_money = SSdbcore.NewQuery(
+	var/datum/db_query/query_get_money = SSdbcore.NewQuery(
 	"SELECT amount FROM [format_table_name("money")] WHERE ckey = :ckey",
 	list("ckey" = ckey)
 	)
@@ -121,7 +121,7 @@
 		qdel(query_get_money)
 		return currentMoney
 	qdel(query_get_money)
-	var/datum/DBQuery/query_add_new_account = SSdbcore.NewQuery(
+	var/datum/db_query/query_add_new_account = SSdbcore.NewQuery(
 	"INSERT INTO [format_table_name("money")] VALUES (:ckey, '0')",
 	list("ckey" = ckey)
 	)

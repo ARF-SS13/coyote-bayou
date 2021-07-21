@@ -37,7 +37,13 @@
 	return
 
 /mob/dead/new_player/proc/new_player_panel()
-	var/output = "<center><p>Welcome, <b>[client ? client.prefs.real_name : "Unknown User"]</b></p>"
+	if (client?.interviewee)
+		return
+
+
+	var/datum/asset/asset_datum = get_asset_datum(/datum/asset/simple/lobby)
+	asset_datum.send(client)
+	var/list/output = list("<center><p>Welcome, <b>[client ? client.prefs.real_name : "Unknown User"]</b></p>")
 	output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
@@ -58,113 +64,59 @@
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 
 	if(!IsGuestKey(src.key))
-		if (SSdbcore.Connect())
-			var/isadmin = 0
-			if(src.client && src.client.holder)
-				isadmin = 1
-			var/datum/DBQuery/query_get_new_polls = SSdbcore.NewQuery({"
-				SELECT id FROM [format_table_name("poll_question")]
-				WHERE (adminonly = 0 OR :isadmin = 1)
-				AND Now() BETWEEN starttime AND endtime
-				AND id NOT IN (
-					SELECT pollid FROM [format_table_name("poll_vote")]
-					WHERE ckey = :ckey
-				)
-				AND id NOT IN (
-					SELECT pollid FROM [format_table_name("poll_textreply")]
-					WHERE ckey = :ckey
-				)
-			"}, list("isadmin" = isadmin, "ckey" = ckey))
-			var/rs = REF(src)
-			if(query_get_new_polls.Execute())
-				var/newpoll = 0
-				if(query_get_new_polls.NextRow())
-					newpoll = 1
-
-				if(newpoll)
-					output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
-				else
-					output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
-			qdel(query_get_new_polls)
-			if(QDELETED(src))
-				return
+		output += playerpolls()
 
 	output += "</center>"
 
-	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
 	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 265)
 	popup.set_window_options("can_close=0")
-	popup.set_content(output)
+	popup.set_content(output.Join())
 	popup.open(FALSE)
 
-/mob/dead/new_player/proc/age_gate()
-	var/list/dat = list("<center>")
-	dat += "Enter your date of birth here, to confirm that you are old enough to play here.<BR>"
-	dat += "<b>Your date of birth is not saved, only whether or not you are old enough to play here.</b><BR>"
-	dat += "</center>"
-
-	dat += "<form action='?src=[REF(src)]'>"
-	dat += "<input type='hidden' name='src' value='[REF(src)]'>"
-	dat += HrefTokenFormField()
-	dat += "<select name = 'Month'>"
-	var/monthList = list("January" = 1, "February" = 2, "March" = 3, "April" = 4, "May" = 5, "June" = 6, "July" = 7, "August" = 8, "September" = 9, "October" = 10, "November" = 11, "December" = 12)
-	for(var/month in monthList)
-		dat += "<option value = [monthList[month]]>[month]</option>"
-	dat += "</select>"
-	dat += "<select name = 'Year' style = 'float:right'>"
-	var/current_year = text2num(time2text(world.realtime, "YYYY"))
-	var/start_year = 1920
-	for(var/year in start_year to current_year)
-		var/reverse_year = 1920 + (current_year - year)
-		dat += "<option value = [reverse_year]>[reverse_year]</option>"
-	dat += "</select>"
-	dat += "<center><input type='submit' value='Submit information'></center>"
-	dat += "</form>"
-
-	winshow(src, "age_gate", TRUE)
-	var/datum/browser/popup = new(src, "age_gate", "<div align='center'>Age Gate</div>", 400, 250)
-	popup.set_content(dat.Join())
-	popup.open(FALSE)
-	onclose(src, "age_gate")
-
-	while(age_gate_result == null)
-		stoplag(1)
-
-	popup.close()
-
-	return age_gate_result
-
-/mob/dead/new_player/proc/age_verify()
-	/*
-	if(CONFIG_GET(flag/age_verification) && !check_rights_for(client, R_ADMIN) && !(client.ckey in GLOB.bunker_passthrough)) //make sure they are verified
-		if(!client.set_db_player_flags())
-			message_admins("Blocked [src] from new player panel because age gate could not access player database flags.")
-			return FALSE
+/mob/dead/new_player/proc/playerpolls()
+	var/list/output = list()
+	if (SSdbcore.Connect())
+		var/isadmin = FALSE
+		if(client?.holder)
+			isadmin = TRUE
+		var/datum/db_query/query_get_new_polls = SSdbcore.NewQuery({"
+			SELECT id FROM [format_table_name("poll_question")]
+			WHERE (adminonly = 0 OR :isadmin = 1)
+			AND Now() BETWEEN starttime AND endtime
+			AND deleted = 0
+			AND id NOT IN (
+				SELECT pollid FROM [format_table_name("poll_vote")]
+				WHERE ckey = :ckey
+				AND deleted = 0
+			)
+			AND id NOT IN (
+				SELECT pollid FROM [format_table_name("poll_textreply")]
+				WHERE ckey = :ckey
+				AND deleted = 0
+			)
+		"}, list("isadmin" = isadmin, "ckey" = ckey))
+		var/rs = REF(src)
+		if(!query_get_new_polls.Execute())
+			qdel(query_get_new_polls)
+			return
+		if(query_get_new_polls.NextRow())
+			output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
 		else
-			var/dbflags = client.prefs.db_flags
-			if(dbflags & DB_FLAG_AGE_CONFIRMATION_INCOMPLETE) //they have not completed age gate
-				var/age_verification = age_gate()
-				if(age_verification != 1)
-					client.add_system_note("Automated-Age-Gate", "Failed automatic age gate process")
-					//ban them and kick them
-					AddBan(client.ckey, client.computer_id, "SYSTEM BAN - Inputted date during join verification was under 18 years of age. Contact administration on discord for verification. https://discord.gg/NGpP36m", "SYSTEM", FALSE, null, client.address)
-					qdel(client)
-					return FALSE
-				else
-					//they claim to be of age, so allow them to continue and update their flags
-					client.update_flag_db(DB_FLAG_AGE_CONFIRMATION_COMPLETE, TRUE)
-					client.update_flag_db(DB_FLAG_AGE_CONFIRMATION_INCOMPLETE, FALSE)
-					//log this
-					message_admins("[ckey] has joined through the automated age gate process.")
-					return TRUE*/
-	return TRUE
+			output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
+		qdel(query_get_new_polls)
+		if(QDELETED(src))
+			return
+		return output
 
 /mob/dead/new_player/Topic(href, href_list[])
 	if(src != usr)
-		return 0
+		return
 
 	if(!client)
-		return 0
+		return
+
+	if(client.interviewee)
+		return FALSE
 
 	//don't let people get to this unless they are specifically not verified
 	if(href_list["Month"] && (CONFIG_GET(flag/age_verification) && !check_rights_for(client, R_ADMIN) && !(client.ckey in GLOB.bunker_passthrough)))
@@ -204,9 +156,6 @@
 				else
 					//it has NOT been their 18th birthday yet
 					age_gate_result = FALSE
-
-	if(!age_verify())
-		return
 
 	//Determines Relevent Population Cap
 	var/relevant_cap
@@ -587,7 +536,9 @@
 
 
 /mob/dead/new_player/proc/LateChoices()
-	var/dat = "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
+	var/list/dat = list()
+
+	dat += "<div class='notice'>Round Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]</div>"
 
 	if(SSshuttle.emergency)
 		switch(SSshuttle.emergency.mode)
@@ -597,56 +548,35 @@
 				if(!SSshuttle.canRecall())
 					dat += "<div class='notice red'>The area is currently undergoing evacuation procedures.</div><br>"
 
-	var/available_job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-			available_job_count++
-
-/*
-//Not used
-	for(var/datum/job/prioritized_job in SSjob.prioritized_jobs)
-		if(prioritized_job.current_positions >= prioritized_job.total_positions)
-			SSjob.prioritized_jobs -= prioritized_job
-	if(length(SSjob.prioritized_jobs))
-		dat += "<div class='notice red'>The station has flagged these jobs as high priority:<br>"
-		var/amt = length(SSjob.prioritized_jobs)
-		var/amt_count
-		for(var/datum/job/a in SSjob.prioritized_jobs)
-			amt_count++
-			if(amt_count != amt) // checks for the last job added.
-				dat += " [a.title], "
-			else
-				dat += " [a.title]. </div>"
-*/
-	dat += "<div class='clearBoth'>Choose from the following open positions:</div><br>"
-	dat += "<div class='jobs'><div class='jobsColumn'>"
-	var/job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobUnavailable(job.title, TRUE) == JOB_AVAILABLE)
-			job_count++;
-			if (job_count > round(available_job_count / 2))
-				dat += "</div><div class='jobsColumn'>"
-			var/position_class = "otherPosition"
-			if (job.title in GLOB.command_positions)
-				position_class = "commandPosition"
-			dat += "<a class='[position_class]' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
-
-	if(!job_count) //if there's nowhere to go, overflow opens up (this is wastelander)
-		for(var/datum/job/job in SSjob.occupations)
-			if(job.title != SSjob.overflow_role)
-				continue
-			dat += "<a class='otherPosition' href='byond://?src=[REF(src)];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
-			break
+	dat += "<table><tr><td valign='top'>"
+	var/column_counter = 0
+	// render each category's available jobs
+	for(var/category in GLOB.position_categories)
+		// position_categories contains category names mapped to available jobs and an appropriate color
+		var/cat_color = GLOB.position_categories[category]["color"]
+		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
+		dat += "<legend align='center' style='color: [cat_color]'>[category]</legend>"
+		var/list/dept_dat = list()
+		for(var/job in GLOB.position_categories[category]["jobs"])
+			var/datum/job/job_datum = SSjob.name_occupations[job]
+			if(job_datum && IsJobUnavailable(job_datum.title, TRUE) == JOB_AVAILABLE)
+				var/command_bold = ""
+				if(job in GLOB.command_positions)
+					command_bold = " command"
+				dept_dat += "<a class='job[command_bold]' href='byond://?src=[REF(src)];SelectedJob=[job_datum.title]'>[job_datum.title] ([job_datum.current_positions])</a>"
+		if(!dept_dat.len)
+			dept_dat += "<span class='nopositions'>No positions open.</span>"
+		dat += jointext(dept_dat, "")
+		dat += "</fieldset><br>"
+		column_counter++
+		if(column_counter > 0 && (column_counter % 3 == 0))
+			dat += "</td><td valign='top'>"
+	dat += "</td></tr></table></center>"
 	dat += "</div></div>"
-
-	// Removing the old window method but leaving it here for reference
-	//src << browse(dat, "window=latechoices;size=300x640;can_close=1")
-
-	// Added the new browser window method
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 440, 500)
+	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 680, 580)
 	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
-	popup.set_content(dat)
-	popup.open(0) // 0 is passed to open so that it doesn't use the onclose() proc
+	popup.set_content(jointext(dat, ""))
+	popup.open(FALSE) // 0 is passed to open so that it doesn't use the onclose() proc
 
 
 /mob/dead/new_player/proc/create_character(transfer_after)
@@ -749,3 +679,31 @@
 
 		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
+
+/**
+ * Prepares a client for the interview system, and provides them with a new interview
+ *
+ * This proc will both prepare the user by removing all verbs from them, as well as
+ * giving them the interview form and forcing it to appear.
+ */
+/mob/dead/new_player/proc/register_for_interview()
+	// First we detain them by removing all the verbs they have on client
+	for (var/v in client.verbs)
+		var/procpath/verb_path = v
+		if (!(verb_path in GLOB.stat_panel_verbs))
+			remove_verb(client, verb_path)
+
+	// Then remove those on their mob as well
+	for (var/v in verbs)
+		var/procpath/verb_path = v
+		if (!(verb_path in GLOB.stat_panel_verbs))
+			remove_verb(src, verb_path)
+
+	// Then we create the interview form and show it to the client
+	var/datum/interview/I = GLOB.interviews.interview_for_client(client)
+	if (I)
+		I.ui_interact(src)
+
+	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
+	add_verb(src, /mob/dead/new_player/proc/open_interview)
+

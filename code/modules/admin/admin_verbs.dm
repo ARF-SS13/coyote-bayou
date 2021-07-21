@@ -67,6 +67,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/respawn_character,
 	/client/proc/secrets,
 	/client/proc/toggle_hear_radio,		/*allows admins to hide all radio output*/
+	/client/proc/toggle_split_admin_tabs,
 	/client/proc/reload_admins,
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
 	/client/proc/cmd_admin_pm_context,	/*right-click adminPM interface*/
@@ -74,8 +75,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/adminChangeMoney,
 	/client/proc/adminCheckMoney,
 	/client/proc/panicbunker,
-	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass,
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
 	/client/proc/hide_verbs,			/*hides all our adminverbs*/
@@ -247,8 +246,6 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/proc/release,
 	/client/proc/reload_admins,
 	/client/proc/panicbunker,
-	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass,
 	/client/proc/admin_change_sec_level,
 	/client/proc/toggle_nuke,
 	/client/proc/cmd_display_del_log,

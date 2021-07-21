@@ -170,21 +170,19 @@ class ChatRenderer {
     }
   }
 
-  setHighlight(text, color) {
+  setHighlight(text, color, matchWord, matchCase) {
     if (!text || !color) {
       this.highlightRegex = null;
       this.highlightColor = null;
       return;
     }
-    const allowedRegex = /^[a-z0-9_\-\s]+$/ig;
     const lines = String(text)
       .split(',')
-      .map(str => str.trim())
+      // eslint-disable-next-line no-useless-escape
+      .map(str => str.trim().replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'))
       .filter(str => (
         // Must be longer than one character
         str && str.length > 1
-        // Must be alphanumeric (with some punctuation)
-        && allowedRegex.test(str)
       ));
     // Nothing to match, reset highlighting
     if (lines.length === 0) {
@@ -192,7 +190,9 @@ class ChatRenderer {
       this.highlightColor = null;
       return;
     }
-    this.highlightRegex = new RegExp('(' + lines.join('|') + ')', 'gi');
+    const pattern = `${(matchWord ? '\\b' : '')}(${lines.join('|')})${(matchWord ? '\\b' : '')}`;
+    const flags = 'g' + (matchCase ? '' : 'i');
+    this.highlightRegex = new RegExp(pattern, flags);
     this.highlightColor = color;
   }
 
@@ -313,7 +313,10 @@ class ChatRenderer {
           }
         }
         // Linkify text
-        linkifyNode(node);
+        const linkifyNodes = node.querySelectorAll('.linkify');
+        for (let i = 0; i < linkifyNodes.length; ++i) {
+          linkifyNode(linkifyNodes[i]);
+        }
         // Assign an image error handler
         if (now < message.createdAt + IMAGE_RETRY_MESSAGE_AGE) {
           const imgNodes = node.querySelectorAll('img');
@@ -446,7 +449,7 @@ class ChatRenderer {
     cssText += 'body, html { background-color: #141414 }\n';
     // Compile chat log as HTML text
     let messagesHtml = '';
-    for (let message of this.messages) {
+    for (let message of this.visibleMessages) {
       if (message.node) {
         messagesHtml += message.node.outerHTML + '\n';
       }

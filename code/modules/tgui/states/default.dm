@@ -1,11 +1,13 @@
+/*!
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ */
+
 /**
  * tgui state: default_state
  *
  * Checks a number of things -- mostly physical distance for humans
  * and view for robots.
- *
- * Copyright (c) 2020 Aleksej Komarov
- * SPDX-License-Identifier: MIT
  */
 
 GLOBAL_DATUM_INIT(default_state, /datum/ui_state/default, new)
@@ -19,7 +21,7 @@ GLOBAL_DATUM_INIT(default_state, /datum/ui_state/default, new)
 /mob/living/default_can_use_topic(src_object)
 	. = shared_ui_interaction(src_object)
 	if(. > UI_CLOSE && loc)
-		. = min(., loc.contents_ui_distance(src_object, src)) // Check the distance...
+		. = min(., shared_living_ui_distance(src_object)) // Check the distance...
 	if(. == UI_INTERACTIVE) // Non-human living mobs can only look, not touch.
 		return UI_UPDATE
 

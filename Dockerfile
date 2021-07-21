@@ -1,4 +1,4 @@
-FROM tgstation/byond:513.1536	 as base
+FROM fortune13/byond:513.1536	 as base
 
 FROM base as rust_g
 
@@ -27,7 +27,7 @@ RUN /bin/bash -c "source dependencies.sh \
 
 FROM base as dm_base
 
-WORKDIR /tgstation
+WORKDIR /fortune13
 
 FROM dm_base as build
 
@@ -57,6 +57,6 @@ RUN apt-get update \
 COPY --from=rust_g /rust_g/target/release/librust_g.so /root/.byond/bin/rust_g
 COPY --from=build /deploy ./
 
-VOLUME [ "/tgstation/config", "/tgstation/data" ]
+VOLUME [ "/fortune13/config", "/fortune13/data" ]
 
 ENTRYPOINT [ "DreamDaemon", "fortune13.dmb", "-port", "1337", "-trusted", "-close", "-verbose" ]

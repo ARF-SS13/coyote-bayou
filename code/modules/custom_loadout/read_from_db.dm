@@ -8,7 +8,7 @@ GLOBAL_LIST(custom_item_list_db)
 	if(!SSdbcore.Connect())	//make sure the database is connected
 		return -1
 
-	var/datum/DBQuery/custom_item_read = SSdbcore.NewQuery(
+	var/datum/db_query/custom_item_read = SSdbcore.NewQuery(
 		"SELECT id, ckey, charactername, rolename, itempath, description FROM [format_table_name("custom_items")] WHERE ckey = :ckey",
 		list("ckey" = ckey))
 	)

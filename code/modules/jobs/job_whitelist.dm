@@ -17,7 +17,7 @@
 		return -1
 	if(!SSdbcore.Connect())
 		return -1
-	var/datum/DBQuery/whitelist_read = SSdbcore.NewQuery(
+	var/datum/db_query/whitelist_read = SSdbcore.NewQuery(
 		"SELECT whitelist FROM [format_table_name("role_whitelist")] WHERE ckey = :ckey",
 		list("ckey" = ckey)
 	)

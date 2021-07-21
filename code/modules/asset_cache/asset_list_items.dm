@@ -3,21 +3,21 @@
 /datum/asset/simple/tgui_common
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-common.chunk.js" = 'tgui/public/tgui-common.chunk.js',
+		"tgui-common.bundle.js" = file("tgui/public/tgui-common.bundle.js"),
 	)
 
 /datum/asset/simple/tgui
 	keep_local_name = TRUE
 	assets = list(
-		"tgui.bundle.js" = 'tgui/public/tgui.bundle.js',
-		"tgui.bundle.css" = 'tgui/public/tgui.bundle.css',
+		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
+		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
 	)
 
 /datum/asset/simple/tgui_panel
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-panel.bundle.js" = 'tgui/public/tgui-panel.bundle.js',
-		"tgui-panel.bundle.css" = 'tgui/public/tgui-panel.bundle.css',
+		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
+		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
 	)
 
 /datum/asset/simple/headers
@@ -53,9 +53,9 @@
 
 /datum/asset/simple/radar_assets
 	assets = list(
-		"ntosradarbackground.png" = 'icons/UI_Icons/tgui/ntosradar_background.png',
-		"ntosradarpointer.png" = 'icons/UI_Icons/tgui/ntosradar_pointer.png',
-		"ntosradarpointerS.png" = 'icons/UI_Icons/tgui/ntosradar_pointer_S.png'
+		"ntosradarbackground.png" = 'icons/ui_icons/tgui/ntosradar_background.png',
+		"ntosradarpointer.png" = 'icons/ui_icons/tgui/ntosradar_pointer.png',
+		"ntosradarpointerS.png" = 'icons/ui_icons/tgui/ntosradar_pointer_S.png'
 	)
 
 /datum/asset/spritesheet/simple/pda
@@ -95,6 +95,7 @@
 /datum/asset/spritesheet/simple/paper
 	name = "paper"
 	assets = list(
+		"stamp-clown" = 'icons/stamp_icons/large_stamp-clown.png',
 		"stamp-deny" = 'icons/stamp_icons/large_stamp-deny.png',
 		"stamp-ok" = 'icons/stamp_icons/large_stamp-ok.png',
 		"stamp-hop" = 'icons/stamp_icons/large_stamp-hop.png',
@@ -106,6 +107,7 @@
 		"stamp-qm" = 'icons/stamp_icons/large_stamp-qm.png',
 		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
+		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
 		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png'
 	)
@@ -113,7 +115,7 @@
 
 /datum/asset/simple/irv
 	assets = list(
-		"jquery-ui.custom-core-widgit-mouse-sortable-min.js" = 'html/IRV/jquery-ui.custom-core-widgit-mouse-sortable-min.js',
+		"jquery-ui.custom-core-widgit-mouse-sortable.min.js" = 'html/jquery/jquery-ui.custom-core-widgit-mouse-sortable.min.js',
 	)
 
 /datum/asset/group/irv
@@ -122,39 +124,13 @@
 		/datum/asset/simple/irv
 	)
 
-/datum/asset/simple/namespaced/changelog
-	assets = list(
-		"88x31.png" = 'html/88x31.png',
-		"bug-minus.png" = 'html/bug-minus.png',
-		"cross-circle.png" = 'html/cross-circle.png',
-		"hard-hat-exclamation.png" = 'html/hard-hat-exclamation.png',
-		"image-minus.png" = 'html/image-minus.png',
-		"image-plus.png" = 'html/image-plus.png',
-		"music-minus.png" = 'html/music-minus.png',
-		"music-plus.png" = 'html/music-plus.png',
-		"tick-circle.png" = 'html/tick-circle.png',
-		"wrench-screwdriver.png" = 'html/wrench-screwdriver.png',
-		"spell-check.png" = 'html/spell-check.png',
-		"burn-exclamation.png" = 'html/burn-exclamation.png',
-		"chevron.png" = 'html/chevron.png',
-		"chevron-expand.png" = 'html/chevron-expand.png',
-		"scales.png" = 'html/scales.png',
-		"coding.png" = 'html/coding.png',
-		"ban.png" = 'html/ban.png',
-		"chrome-wrench.png" = 'html/chrome-wrench.png',
-		"changelog.css" = 'html/changelog.css'
-	)
-	parents = list("changelog.html" = 'html/changelog.html')
-
-
 /datum/asset/simple/jquery
 	legacy = TRUE
 	assets = list(
-		"jquery.min.js" = 'html/jquery.min.js',
+		"jquery.min.js" = 'html/jquery/jquery.min.js',
 	)
 
 /datum/asset/simple/namespaced/fontawesome
-	legacy = TRUE
 	assets = list(
 		"fa-regular-400.eot"  = 'html/font-awesome/webfonts/fa-regular-400.eot',
 		"fa-regular-400.woff" = 'html/font-awesome/webfonts/fa-regular-400.woff',
@@ -163,6 +139,15 @@
 		"v4shim.css"          = 'html/font-awesome/css/v4-shims.min.css'
 	)
 	parents = list("font-awesome.css" = 'html/font-awesome/css/all.min.css')
+
+/datum/asset/simple/namespaced/tgfont
+	assets = list(
+		"tgfont.eot" = file("tgui/packages/tgfont/dist/tgfont.eot"),
+		"tgfont.woff2" = file("tgui/packages/tgfont/dist/tgfont.woff2"),
+	)
+	parents = list(
+		"tgfont.css" = file("tgui/packages/tgfont/dist/tgfont.css"),
+	)
 
 /datum/asset/spritesheet/chat
 	name = "chat"
@@ -188,7 +173,7 @@
 	)
 
 /datum/asset/simple/namespaced/common
-	assets = list("padlock.png"	= 'html/padlock.png')
+	assets = list("padlock.png" = 'icons/ui_icons/common/padlock.png')
 	parents = list("common.css" = 'html/browser/common.css')
 
 /datum/asset/simple/permissions
@@ -205,108 +190,104 @@
 
 /datum/asset/simple/notes
 	assets = list(
-		"high_button.png" = 'html/high_button.png',
-		"medium_button.png" = 'html/medium_button.png',
-		"minor_button.png" = 'html/minor_button.png',
-		"none_button.png" = 'html/none_button.png',
+		"high_button.png" = 'icons/ui_icons/notes/high_button.png',
+		"medium_button.png" = 'icons/ui_icons/notes/medium_button.png',
+		"minor_button.png" = 'icons/ui_icons/notes/minor_button.png',
+		"none_button.png" = 'icons/ui_icons/notes/none_button.png',
 	)
 
 /datum/asset/simple/arcade
 	assets = list(
-		"boss1.gif" = 'icons/UI_Icons/Arcade/boss1.gif',
-		"boss2.gif" = 'icons/UI_Icons/Arcade/boss2.gif',
-		"boss3.gif" = 'icons/UI_Icons/Arcade/boss3.gif',
-		"boss4.gif" = 'icons/UI_Icons/Arcade/boss4.gif',
-		"boss5.gif" = 'icons/UI_Icons/Arcade/boss5.gif',
-		"boss6.gif" = 'icons/UI_Icons/Arcade/boss6.gif',
+		"boss1.gif" = 'icons/ui_icons/arcade/boss1.gif',
+		"boss2.gif" = 'icons/ui_icons/arcade/boss2.gif',
+		"boss3.gif" = 'icons/ui_icons/arcade/boss3.gif',
+		"boss4.gif" = 'icons/ui_icons/arcade/boss4.gif',
+		"boss5.gif" = 'icons/ui_icons/arcade/boss5.gif',
+		"boss6.gif" = 'icons/ui_icons/arcade/boss6.gif',
 	)
+
 /*
 /datum/asset/spritesheet/simple/achievements
 	name ="achievements"
 	assets = list(
-		"default" = 'icons/UI_Icons/Achievements/default.png',
-		"basemisc" = 'icons/UI_Icons/Achievements/basemisc.png',
-		"baseboss" = 'icons/UI_Icons/Achievements/baseboss.png',
-		"baseskill" = 'icons/UI_Icons/Achievements/baseskill.png',
-		"bbgum" = 'icons/UI_Icons/Achievements/Boss/bbgum.png',
-		"colossus" = 'icons/UI_Icons/Achievements/Boss/colossus.png',
-		"hierophant" = 'icons/UI_Icons/Achievements/Boss/hierophant.png',
-		"legion" = 'icons/UI_Icons/Achievements/Boss/legion.png',
-		"miner" = 'icons/UI_Icons/Achievements/Boss/miner.png',
-		"swarmer" = 'icons/UI_Icons/Achievements/Boss/swarmer.png',
-		"tendril" = 'icons/UI_Icons/Achievements/Boss/tendril.png',
-		"featofstrength" = 'icons/UI_Icons/Achievements/Misc/featofstrength.png',
-		"helbital" = 'icons/UI_Icons/Achievements/Misc/helbital.png',
-		"jackpot" = 'icons/UI_Icons/Achievements/Misc/jackpot.png',
-		"meteors" = 'icons/UI_Icons/Achievements/Misc/meteors.png',
-		"timewaste" = 'icons/UI_Icons/Achievements/Misc/timewaste.png',
-		"upgrade" = 'icons/UI_Icons/Achievements/Misc/upgrade.png',
-		"rule8" = 'icons/UI_Icons/Achievements/Misc/rule8.png',
-		"snail" = 'icons/UI_Icons/Achievements/Misc/snail.png',
-		"ascension" = 'icons/UI_Icons/Achievements/Misc/ascension.png',
-		"mining" = 'icons/UI_Icons/Achievements/Skills/mining.png',
-		"assistant" = 'icons/UI_Icons/Achievements/Mafia/assistant.png',
-		"changeling" = 'icons/UI_Icons/Achievements/Mafia/changeling.png',
-		"chaplain" = 'icons/UI_Icons/Achievements/Mafia/chaplain.png',
-		"detective" = 'icons/UI_Icons/Achievements/Mafia/detective.png',
-		"fugitive" = 'icons/UI_Icons/Achievements/Mafia/fugitive.png',
-		"hated" = 'icons/UI_Icons/Achievements/Mafia/hated.png',
-		"hop" = 'icons/UI_Icons/Achievements/Mafia/hop.png',
-		"lawyer" = 'icons/UI_Icons/Achievements/Mafia/lawyer.png',
-		"md" = 'icons/UI_Icons/Achievements/Mafia/md.png',
-		"nightmare" = 'icons/UI_Icons/Achievements/Mafia/nightmare.png',
-		"obsessed" = 'icons/UI_Icons/Achievements/Mafia/obsessed.png',
-		"psychologist" = 'icons/UI_Icons/Achievements/Mafia/psychologist.png',
-		"thoughtfeeder" = 'icons/UI_Icons/Achievements/Mafia/thoughtfeeder.png',
-		"traitor" = 'icons/UI_Icons/Achievements/Mafia/traitor.png',
-		"basemafia" ='icons/UI_Icons/Achievements/basemafia.png',
-		"frenching" = 'icons/UI_Icons/Achievements/Misc/frenchingthebubble.png'
+		"default" = 'icons/ui_icons/achievements/default.png',
+		"basemisc" = 'icons/ui_icons/achievements/basemisc.png',
+		"baseboss" = 'icons/ui_icons/achievements/baseboss.png',
+		"baseskill" = 'icons/ui_icons/achievements/baseskill.png',
+		"bbgum" = 'icons/ui_icons/achievements/boss/bbgum.png',
+		"colossus" = 'icons/ui_icons/achievements/boss/colossus.png',
+		"hierophant" = 'icons/ui_icons/achievements/boss/hierophant.png',
+		"legion" = 'icons/ui_icons/achievements/boss/legion.png',
+		"miner" = 'icons/ui_icons/achievements/boss/miner.png',
+		"swarmer" = 'icons/ui_icons/achievements/boss/swarmer.png',
+		"tendril" = 'icons/ui_icons/achievements/boss/tendril.png',
+		"featofstrength" = 'icons/ui_icons/achievements/misc/featofstrength.png',
+		"helbital" = 'icons/ui_icons/achievements/misc/helbital.png',
+		"jackpot" = 'icons/ui_icons/achievements/misc/jackpot.png',
+		"meteors" = 'icons/ui_icons/achievements/misc/meteors.png',
+		"timewaste" = 'icons/ui_icons/achievements/misc/timewaste.png',
+		"upgrade" = 'icons/ui_icons/achievements/misc/upgrade.png',
+		"clownking" = 'icons/ui_icons/achievements/misc/clownking.png',
+		"clownthanks" = 'icons/ui_icons/achievements/misc/clownthanks.png',
+		"rule8" = 'icons/ui_icons/achievements/misc/rule8.png',
+		"snail" = 'icons/ui_icons/achievements/misc/snail.png',
+		"ascension" = 'icons/ui_icons/achievements/misc/ascension.png',
+		"ashascend" = 'icons/ui_icons/achievements/misc/ashascend.png',
+		"fleshascend" = 'icons/ui_icons/achievements/misc/fleshascend.png',
+		"rustascend" = 'icons/ui_icons/achievements/misc/rustascend.png',
+		"voidascend" = 'icons/ui_icons/achievements/misc/voidascend.png',
+		"mining" = 'icons/ui_icons/achievements/skills/mining.png',
+		"changeling" = 'icons/ui_icons/achievements/mafia/mafia.png',
+		"chaplain" = 'icons/ui_icons/achievements/mafia/town.png',
+		"clown" = 'icons/ui_icons/achievements/mafia/neutral.png',
+		"basemafia" ='icons/ui_icons/achievements/basemafia.png',
+		"frenching" = 'icons/ui_icons/achievements/misc/frenchingthebubble.png'
 	)
 */
 
 /datum/asset/spritesheet/simple/minesweeper
 	name = "minesweeper"
 	assets = list(
-		"1" = 'icons/UI_Icons/minesweeper_tiles/one.png',
-		"2" = 'icons/UI_Icons/minesweeper_tiles/two.png',
-		"3" = 'icons/UI_Icons/minesweeper_tiles/three.png',
-		"4" = 'icons/UI_Icons/minesweeper_tiles/four.png',
-		"5" = 'icons/UI_Icons/minesweeper_tiles/five.png',
-		"6" = 'icons/UI_Icons/minesweeper_tiles/six.png',
-		"7" = 'icons/UI_Icons/minesweeper_tiles/seven.png',
-		"8" = 'icons/UI_Icons/minesweeper_tiles/eight.png',
-		"empty" = 'icons/UI_Icons/minesweeper_tiles/empty.png',
-		"flag" = 'icons/UI_Icons/minesweeper_tiles/flag.png',
-		"hidden" = 'icons/UI_Icons/minesweeper_tiles/hidden.png',
-		"mine" = 'icons/UI_Icons/minesweeper_tiles/mine.png',
-		"minehit" = 'icons/UI_Icons/minesweeper_tiles/minehit.png'
+		"1" = 'icons/ui_icons/minesweeper_tiles/one.png',
+		"2" = 'icons/ui_icons/minesweeper_tiles/two.png',
+		"3" = 'icons/ui_icons/minesweeper_tiles/three.png',
+		"4" = 'icons/ui_icons/minesweeper_tiles/four.png',
+		"5" = 'icons/ui_icons/minesweeper_tiles/five.png',
+		"6" = 'icons/ui_icons/minesweeper_tiles/six.png',
+		"7" = 'icons/ui_icons/minesweeper_tiles/seven.png',
+		"8" = 'icons/ui_icons/minesweeper_tiles/eight.png',
+		"empty" = 'icons/ui_icons/minesweeper_tiles/empty.png',
+		"flag" = 'icons/ui_icons/minesweeper_tiles/flag.png',
+		"hidden" = 'icons/ui_icons/minesweeper_tiles/hidden.png',
+		"mine" = 'icons/ui_icons/minesweeper_tiles/mine.png',
+		"minehit" = 'icons/ui_icons/minesweeper_tiles/minehit.png'
 	)
 
 /datum/asset/spritesheet/simple/pills
-	name ="pills"
+	name = "pills"
 	assets = list(
-		"pill1" = 'icons/UI_Icons/Pills/pill1.png',
-		"pill2" = 'icons/UI_Icons/Pills/pill2.png',
-		"pill3" = 'icons/UI_Icons/Pills/pill3.png',
-		"pill4" = 'icons/UI_Icons/Pills/pill4.png',
-		"pill5" = 'icons/UI_Icons/Pills/pill5.png',
-		"pill6" = 'icons/UI_Icons/Pills/pill6.png',
-		"pill7" = 'icons/UI_Icons/Pills/pill7.png',
-		"pill8" = 'icons/UI_Icons/Pills/pill8.png',
-		"pill9" = 'icons/UI_Icons/Pills/pill9.png',
-		"pill10" = 'icons/UI_Icons/Pills/pill10.png',
-		"pill11" = 'icons/UI_Icons/Pills/pill11.png',
-		"pill12" = 'icons/UI_Icons/Pills/pill12.png',
-		"pill13" = 'icons/UI_Icons/Pills/pill13.png',
-		"pill14" = 'icons/UI_Icons/Pills/pill14.png',
-		"pill15" = 'icons/UI_Icons/Pills/pill15.png',
-		"pill16" = 'icons/UI_Icons/Pills/pill16.png',
-		"pill17" = 'icons/UI_Icons/Pills/pill17.png',
-		"pill18" = 'icons/UI_Icons/Pills/pill18.png',
-		"pill19" = 'icons/UI_Icons/Pills/pill19.png',
-		"pill20" = 'icons/UI_Icons/Pills/pill20.png',
-		"pill21" = 'icons/UI_Icons/Pills/pill21.png',
-		"pill22" = 'icons/UI_Icons/Pills/pill22.png',
+		"pill1" = 'icons/ui_icons/pills/pill1.png',
+		"pill2" = 'icons/ui_icons/pills/pill2.png',
+		"pill3" = 'icons/ui_icons/pills/pill3.png',
+		"pill4" = 'icons/ui_icons/pills/pill4.png',
+		"pill5" = 'icons/ui_icons/pills/pill5.png',
+		"pill6" = 'icons/ui_icons/pills/pill6.png',
+		"pill7" = 'icons/ui_icons/pills/pill7.png',
+		"pill8" = 'icons/ui_icons/pills/pill8.png',
+		"pill9" = 'icons/ui_icons/pills/pill9.png',
+		"pill10" = 'icons/ui_icons/pills/pill10.png',
+		"pill11" = 'icons/ui_icons/pills/pill11.png',
+		"pill12" = 'icons/ui_icons/pills/pill12.png',
+		"pill13" = 'icons/ui_icons/pills/pill13.png',
+		"pill14" = 'icons/ui_icons/pills/pill14.png',
+		"pill15" = 'icons/ui_icons/pills/pill15.png',
+		"pill16" = 'icons/ui_icons/pills/pill16.png',
+		"pill17" = 'icons/ui_icons/pills/pill17.png',
+		"pill18" = 'icons/ui_icons/pills/pill18.png',
+		"pill19" = 'icons/ui_icons/pills/pill19.png',
+		"pill20" = 'icons/ui_icons/pills/pill20.png',
+		"pill21" = 'icons/ui_icons/pills/pill21.png',
+		"pill22" = 'icons/ui_icons/pills/pill22.png',
 	)
 
 //this exists purely to avoid meta by pre-loading all language icons.
@@ -385,7 +366,6 @@
 			if (!isnull(c) && c != "#FFFFFF")
 				I.Blend(c, ICON_MULTIPLY)
 		else
-			//stack_trace("[item] does not have a valid icon state, icon=[icon_file], icon_state=[json_encode(icon_state)](\ref[icon_state])")
 			I = icon('icons/turf/floors.dmi', "", SOUTH)
 
 		var/imgid = replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-")
@@ -395,14 +375,14 @@
 
 /datum/asset/simple/genetics
 	assets = list(
-		"dna_discovered.gif" = 'html/dna_discovered.gif',
-		"dna_undiscovered.gif" = 'html/dna_undiscovered.gif',
-		"dna_extra.gif" = 'html/dna_extra.gif'
+		"dna_discovered.gif" = 'icons/ui_icons/dna/dna_discovered.gif',
+		"dna_undiscovered.gif" = 'icons/ui_icons/dna/dna_undiscovered.gif',
+		"dna_extra.gif" = 'icons/ui_icons/dna/dna_extra.gif'
 	)
 
 /datum/asset/simple/orbit
 	assets = list(
-		"ghost.png"	= 'html/ghost.png'
+		"ghost.png" = 'icons/ui_icons/orbit/ghost.png'
 	)
 
 /datum/asset/simple/vv

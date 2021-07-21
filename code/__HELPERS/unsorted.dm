@@ -1598,6 +1598,23 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	if(channels_to_use.len)
 		world.TgsChatBroadcast()
 
+/**
+ * Sends a message to TGS admin chat channels.
+ *
+ * category - The category of the mssage.
+ * message - The message to send.
+ */
+/proc/send2adminchat(category, message, embed_links = FALSE)
+	category = replacetext(replacetext(category, "\proper", ""), "\improper", "")
+	message = replacetext(replacetext(message, "\proper", ""), "\improper", "")
+	if(!embed_links)
+		message = GLOB.has_discord_embeddable_links.Replace(replacetext(message, "`", ""), " ```$1``` ")
+	world.TgsTargetedChatBroadcast("[category] | [message]", TRUE)
+
+/// Handles text formatting for item use hints in examine text
+#define EXAMINE_HINT(text) ("<b>" + text + "</b>")
+
+
 //Checks to see if either the victim has a garlic necklace or garlic in their blood
 /proc/blood_sucking_checks(mob/living/carbon/target, check_neck, check_blood)
 	//Bypass this if the target isnt carbon.

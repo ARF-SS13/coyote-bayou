@@ -29,7 +29,7 @@
 		return
 	switch(task)
 		if("Write")
-			var/datum/DBQuery/query_memocheck = SSdbcore.NewQuery(
+			var/datum/db_query/query_memocheck = SSdbcore.NewQuery(
 				"SELECT ckey FROM [format_table_name("mentor_memo")] WHERE ckey = :ckey",
 				list("ckey" = ckey)
 			)
@@ -47,7 +47,7 @@
 			if(!memotext)
 				return
 			var/timestamp = SQLtime()
-			var/datum/DBQuery/query_memoadd = SSdbcore.NewQuery(
+			var/datum/db_query/query_memoadd = SSdbcore.NewQuery(
 				"INSERT INTO [format_table_name("mentor_memo")] (ckey, memotext, timestamp) VALUES (:ckey, :memotext, :timestamp)",
 				list("ckey" = ckey, "memotext" = memotext, "timestamp" = timestamp)
 			)
@@ -60,7 +60,7 @@
 			message_admins("[key_name_admin(src)] has set a mentor memo:<br>[memotext]")
 			qdel(query_memoadd)
 		if("Edit")
-			var/datum/DBQuery/query_memolist = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")]")
+			var/datum/db_query/query_memolist = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")]")
 			if(!query_memolist.Execute())
 				var/err = query_memolist.ErrorMsg()
 				qdel(query_memolist)
@@ -77,7 +77,7 @@
 			var/target_ckey = input(src, "Select whose memo to edit", "Select memo") as null|anything in memolist
 			if(!target_ckey)
 				return
-			var/datum/DBQuery/query_memofind = SSdbcore.NewQuery(
+			var/datum/db_query/query_memofind = SSdbcore.NewQuery(
 				"SELECT memotext FROM [format_table_name("mentor_memo")] WHERE ckey = :ckey",
 				list("ckey" = target_ckey)
 			)
@@ -93,7 +93,7 @@
 				if(!new_memo)
 					return
 				var/edit_text = "Edited by [ckey] on [SQLtime()] from<br>[old_memo]<br>to<br>[new_memo]<hr>"
-				var/datum/DBQuery/update_query = SSdbcore.NewQuery(
+				var/datum/db_query/update_query = SSdbcore.NewQuery(
 					"UPDATE [format_table_name("mentor_memo")] SET memotext = :memotext, last_editor = :last_editor, edits = CONCAT(IFNULL(edits,''), :edit_text) WHERE ckey = :ckey",
 					list("memotext" = new_memo, "last_editor" = ckey, "ckey" = target_ckey, "edit_text" = edit_text)
 				)
@@ -112,7 +112,7 @@
 			else
 				qdel(query_memofind)
 		if("Show")
-			var/datum/DBQuery/query_memoshow = SSdbcore.NewQuery("SELECT ckey, memotext, timestamp, last_editor FROM [format_table_name("mentor_memo")]")
+			var/datum/db_query/query_memoshow = SSdbcore.NewQuery("SELECT ckey, memotext, timestamp, last_editor FROM [format_table_name("mentor_memo")]")
 			if(!query_memoshow.Execute())
 				var/err = query_memoshow.ErrorMsg()
 				qdel(query_memoshow)
@@ -134,7 +134,7 @@
 				return
 			to_chat(src, output)
 		if("Remove")
-			var/datum/DBQuery/query_memodellist = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")]")
+			var/datum/db_query/query_memodellist = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("mentor_memo")]")
 			if(!query_memodellist.Execute())
 				var/err = query_memodellist.ErrorMsg()
 				qdel(query_memodellist)
@@ -151,7 +151,7 @@
 			var/target_ckey = input(src, "Select whose mentor memo to delete", "Select mentor memo") as null|anything in memolist
 			if(!target_ckey)
 				return
-			var/datum/DBQuery/query_memodel = SSdbcore.NewQuery(
+			var/datum/db_query/query_memodel = SSdbcore.NewQuery(
 				"DELETE FROM [format_table_name("memo")] WHERE ckey = :ckey",
 				list("ckey" = target_ckey)
 			)

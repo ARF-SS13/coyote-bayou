@@ -342,7 +342,16 @@ GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator"
 ))
 
-
+// job categories for rendering the late join menu
+GLOBAL_LIST_INIT(position_categories, list(
+	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
+	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
+	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
+	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#ffeeee"),
+	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
+	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
+	EXP_TYPE_DEN = list("jobs" = den_positions, "color" = "#d7b088"),
+))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions

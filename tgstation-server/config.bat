@@ -3,12 +3,12 @@ REM Server Tools configuration file. Lines starting with REM are comments and ig
 REM on/off config options are considered "on" if they have anything (even 0) and "off" if they are blank or commented out.
 
 REM This must be set to the name of your dme without the .dme part. (should be fine leaving this alone unless you renamed the code)
-set PROJECTNAME=tgstation
+set PROJECTNAME=fortune13
 
 
 REM location of the repo.
-set REPO_URL=https://github.com/tgstation/-tg-station.git
-REM set REPO_URL=git@github.com:tgstation/-tg-station.git
+set REPO_URL=https://github.com/nokele/Fortune13.git
+REM set REPO_URL=git@github.com:nokele/Fortune13.git
 
 
 REM What branch of the repo to use.

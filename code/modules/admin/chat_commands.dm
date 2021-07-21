@@ -127,22 +127,6 @@ GLOBAL_LIST(round_end_notifiees)
 	set waitfor = FALSE
 	load_admins()
 
-/datum/tgs_chat_command/addbunkerbypass
-	name = "whitelist"
-	help_text = "whitelist <ckey>"
-	admin_only = TRUE
-
-/datum/tgs_chat_command/addbunkerbypass/Run(datum/tgs_chat_user/sender, params)
-	if(!CONFIG_GET(flag/sql_enabled))
-		return "The Database is not enabled!"
-
-	GLOB.bunker_passthrough |= ckey(params)
-	GLOB.bunker_passthrough[ckey(params)] = world.realtime
-	SSpersistence.SavePanicBunker() //we can do this every time, it's okay
-	log_admin("[sender.friendly_name] has added [params] to the current round's bunker bypass list.")
-	message_admins("[sender.friendly_name] has added [params] to the current round's bunker bypass list.")
-	return "[params] has been added to the current round's bunker bypass list."
-
 // More (silly) chat commands citadel added.
 /datum/tgs_chat_command/valentine
 	name = "valentine"
