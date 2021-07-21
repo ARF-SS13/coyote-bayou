@@ -121,7 +121,7 @@
 	name = "caesar salad"
 	desc = "You too?"
 	icon_state = "ceasar_salad"
-	trash = /obj/item/kitchen/knife
+	trash = /obj/item/melee/onehanded/knife/kitchen
 	bonus_reagents = list(/datum/reagent/medicine/earthsblood = 1, /datum/reagent/iron = 4)
 	tastes = list("iron" = 1, "conspiracy" = 1)
 	foodtype = VEGETABLES

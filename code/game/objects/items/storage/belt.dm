@@ -99,7 +99,6 @@
 	new /obj/item/screwdriver/brass(src)
 	new /obj/item/wirecutters/brass(src)
 	new /obj/item/wrench/brass(src)
-	new /obj/item/crowbar/brass(src)
 	new /obj/item/weldingtool/experimental/brass(src)
 	new /obj/item/multitool/advanced/brass(src)
 	new /obj/item/stack/cable_coil(src, 30, "yellow")
@@ -199,7 +198,7 @@
 		/obj/item/ammo_casing/shotgun,
 		/obj/item/ammo_box,
 		/obj/item/reagent_containers/food/snacks/donut,
-		/obj/item/kitchen/knife/combat,
+		/obj/item/melee/onehanded/knife/hunting,
 		/obj/item/flashlight/seclite,
 		/obj/item/melee/classic_baton/telescopic,
 		/obj/item/radio,
@@ -251,7 +250,7 @@
 		/obj/item/storage/fancy/cigarettes,
 		/obj/item/reagent_containers/food/drinks/bottle,
 		/obj/item/stack/medical,
-		/obj/item/kitchen/knife,
+		/obj/item/melee/onehanded/knife/kitchen,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/gps,
 		/obj/item/storage/bag/ore,
@@ -414,7 +413,7 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/melee/classic_baton(src)
-	new /obj/item/kitchen/knife/combat(src)
+	new /obj/item/melee/onehanded/knife/hunting(src)
 	new /obj/item/ammo_box/magazine/m9mmds(src)
 	update_icon()
 

@@ -46,7 +46,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/obj/item/heirloom_type
 	switch(quirk_holder.mind.assigned_role)
 		if("Cook")
-			heirloom_type = /obj/item/kitchen/knife/butcher
+			heirloom_type = /obj/item/melee/onehanded/knife/butcher
 		if("Botanist")
 			heirloom_type = pick(/obj/item/cultivator, /obj/item/reagent_containers/glass/bucket, /obj/item/storage/bag/plants, /obj/item/toy/plush/beeplushie)
 		if("Medical Doctor")

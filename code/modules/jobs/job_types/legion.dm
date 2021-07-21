@@ -241,21 +241,22 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
-	name = 			"Legion Veteran Decanus"
-	jobtype = 		/datum/job/CaesarsLegion/Legionnaire/f13decanvet
-	id = 			/obj/item/card/id/dogtag/legveteran
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/heavy
-	mask =			/obj/item/clothing/mask/bandana/legion/legdecan
-	neck =			/obj/item/storage/belt/holster
-	gloves =		/obj/item/clothing/gloves/legion/plated
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	r_pocket =      /obj/item/flashlight/lantern
-	box = 			/obj/item/storage/survivalkit_tribal/chief
+	name = "Legion Veteran Decanus"
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decanvet
+	id = /obj/item/card/id/dogtag/legveteran
+	suit = /obj/item/clothing/suit/armor/f13/legion/heavy
+	mask = /obj/item/clothing/mask/bandana/legion/legdecan
+	neck = /obj/item/storage/belt/holster
+	gloves = /obj/item/clothing/gloves/legion/plated
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	r_pocket = /obj/item/flashlight/lantern
+	box = /obj/item/storage/survivalkit_tribal/chief
 	backpack_contents = list(
-					/obj/item/ammo_box/a357=1,
-					/obj/item/gun/ballistic/revolver/colt357=1,
-					/obj/item/restraints/handcuffs=1,
-					/obj/item/storage/bag/money/small/legion=1)
+		/obj/item/ammo_box/a357 = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
+		/obj/item/restraints/handcuffs = 1,
+	/obj/item/storage/bag/money/small/legion = 1,
+	)
 
 /datum/outfit/loadout/decvetfront
 	name =			"Lead from the front"
@@ -266,12 +267,13 @@ commented out pending rework*/
 					/obj/item/ammo_box/magazine/cg45=2)
 
 /datum/outfit/loadout/decvetrear
-	name =			"Lead from the rear"
-	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/decan
-	suit_store = 	/obj/item/gun/ballistic/automatic/m1garand/sks
+	name = "Lead from the rear"
+	head = /obj/item/clothing/head/helmet/f13/legion/vet/decan
+	suit_store = /obj/item/gun/ballistic/automatic/m1garand/sks
 	backpack_contents = list(
-					/obj/item/claymore/machete/spatha=1,
-					/obj/item/ammo_box/magazine/sks=3)
+		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/ammo_box/magazine/sks = 3,
+		)
 
 
 // PRIME DECANUS
@@ -325,11 +327,12 @@ commented out pending rework*/
 					/obj/item/melee/unarmed/punchdagger=1)
 
 /datum/outfit/loadout/decprimrear
-	name =			"Lead from the rear"
-	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
+	name = "Lead from the rear"
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-					/obj/item/ammo_box/tube/m44=2,
-					/obj/item/claymore/machete/gladius=1)
+		/obj/item/ammo_box/tube/m44 = 2,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		)
 
 
 // RECRUIT DECANUS
@@ -442,10 +445,11 @@ commented out pending rework*/
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
 	backpack_contents = list(
-					/obj/item/ammo_box/magazine/m45/ap=2,
-					/obj/item/ammo_box/magazine/m45=2,
-					/obj/item/grenade/plastic/c4=1,
-					/obj/item/claymore/machete/spatha=1)
+		/obj/item/ammo_box/magazine/m45/ap = 2,
+		/obj/item/ammo_box/magazine/m45 = 2,
+		/obj/item/grenade/plastic/c4 = 1,
+		/obj/item/melee/onehanded/machete/spatha = 1,
+		)
 
 /datum/outfit/loadout/vexfox
 	name =			"Desert Fox"
@@ -506,18 +510,20 @@ commented out pending rework*/
 	name =			"Breacher"
 	suit_store =	/obj/item/gun/ballistic/automatic/smg/greasegun
 	backpack_contents = list(
-					/obj/item/ammo_box/magazine/greasegun=2,
-					/obj/item/claymore/machete/gladius=1,
-					/obj/item/shield/riot/legion=1)
+		/obj/item/ammo_box/magazine/greasegun = 2,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/shield/riot/legion = 1,
+		)
 
 /datum/outfit/loadout/vetrifle
 	name =			"Sharpshooter"
 	suit_store =	/obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-					/obj/item/ammo_box/tube/m44=2,
-					/obj/item/claymore/machete/gladius=1,
-					/obj/item/ammo_box/a357=1,
-					/obj/item/gun/ballistic/revolver/colt357=1)
+		/obj/item/ammo_box/tube/m44 = 2,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/ammo_box/a357 = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
+		)
 
 
 /datum/outfit/loadout/vetberserker
@@ -978,20 +984,21 @@ Venator  - Removed to reduce role bloat and clarify chain of command.
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 	name = "Legion Venator"
-	jobtype 	= /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	id 			= 	/obj/item/card/id/dogtag/legvenator
-	suit 		= 	/obj/item/clothing/suit/armor/f13/legion/venator
-	head 		= 	/obj/item/clothing/head/helmet/f13/legion/venator
-	mask 		=	/obj/item/clothing/mask/bandana/legion/legdecan
-	neck 		=	/obj/item/storage/belt/holster
-	glasses 	= 	/obj/item/clothing/glasses/night
-	ears		=	/obj/item/radio/headset/headset_legion
-	r_pocket 	= 	/obj/item/binoculars
-	suit_store	= /obj/item/gun/ballistic/automatic/marksman/sniper
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
+	id = /obj/item/card/id/dogtag/legvenator
+	suit = /obj/item/clothing/suit/armor/f13/legion/venator
+	head = /obj/item/clothing/head/helmet/f13/legion/venator
+	mask = /obj/item/clothing/mask/bandana/legion/legdecan
+	neck = /obj/item/storage/belt/holster
+	glasses = /obj/item/clothing/glasses/night
+	ears = /obj/item/radio/headset/headset_legion
+	r_pocket = /obj/item/binoculars
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308=3,
-		/obj/item/claymore/machete/gladius=1,
-		/obj/item/storage/bag/money/small/legion=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=1,
-		/obj/item/gun/ballistic/revolver/revolver45=1,
-		/obj/item/ammo_box/c45rev=3)
+		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/storage/bag/money/small/legion = 1,
+		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
+		/obj/item/ammo_box/c45rev = 3,
+		)

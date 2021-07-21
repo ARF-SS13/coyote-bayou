@@ -28,8 +28,6 @@
 	id = /obj/item/card/id/syndicate/locked_banking
 	belt = /obj/item/gun/ballistic/automatic/pistol
 	l_pocket = /obj/item/paper/fluff/vr/fluke_ops
-	backpack_contents = list(/obj/item/storage/box/syndie=1,\
-		/obj/item/kitchen/knife/combat/survival)
 	starting_funds = 0 //Should be operating, not shopping.
 
 /datum/outfit/vr/syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

@@ -184,7 +184,7 @@
 	name = "Switchblade"
 	id = "switchblade"
 	cost = 20
-	item_path = /obj/item/switchblade
+	item_path = /obj/item/melee/onehanded/knife/switchblade
 
 /datum/gang_item/weapon/sappers
 	name = "Sappers"

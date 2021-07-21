@@ -102,14 +102,13 @@ Mayor
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
-		/obj/item/storage/box/deputy_badges=1, \
-		/obj/item/ammo_box/tube/c4570=3, \
-		/obj/item/ammo_box/m44=2, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/melee/classic_baton=1, \
-		/obj/item/kitchen/knife/combat)
-	r_pocket = /obj/item/flashlight/flare
-	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
+		/obj/item/storage/box/deputy_badges = 1,
+		/obj/item/ammo_box/tube/c4570 = 3,
+		/obj/item/ammo_box/m44 = 2,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
+		)
 
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -156,10 +155,11 @@ Mayor
 	shoes = 		/obj/item/clothing/shoes/f13/explorer
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
-		/obj/item/ammo_box/a357=2, \
-		/obj/item/ammo_box/tube/m44=2, \
-		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat)
+		/obj/item/ammo_box/a357 = 2,
+		/obj/item/ammo_box/tube/m44 = 2,
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
+		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -246,11 +246,12 @@ Mayor
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/workboots
 	backpack_contents = list(
-		/obj/item/mining_scanner=1, \
-		/obj/item/shovel=1, \
-		/obj/item/kitchen/knife/combat, \
-		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/mining_scanner,
+		/obj/item/shovel,
+		/obj/item/melee/onehanded/knife/hunting,
+		/obj/item/gun/ballistic/automatic/pistol/n99,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -563,6 +564,27 @@ Mayor
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 
+
+/datum/outfit/job/den/f13settler
+	name = "Citizen"
+	jobtype = /datum/job/den/f13settler
+	ears = /obj/item/radio/headset/headset_town
+	belt = null
+	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/book/granter/trait/selection
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		)
+
+
 /datum/outfit/loadout/provisioner
 	name = "Provisioner"
 	neck = /obj/item/clothing/neck/scarf/cptpatriot
@@ -606,23 +628,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack_contents = list()
 
-/datum/outfit/job/den/f13settler
-	name = "Citizen"
-	jobtype = /datum/job/den/f13settler
-	ears = /obj/item/radio/headset/headset_town
-	belt = null
-	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
-	uniform = /obj/item/clothing/under/f13/settler
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/book/granter/trait/selection
-	backpack_contents = list(
-			/obj/item/storage/bag/money/small/settler = 1, \
-			/obj/item/kitchen/knife/combat = 1, \
-			/obj/item/gun/ballistic/automatic/pistol/n99 = 1, \
-			/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/

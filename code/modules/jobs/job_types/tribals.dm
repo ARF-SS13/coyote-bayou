@@ -232,7 +232,7 @@ Druid
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
-		/obj/item/kitchen/knife/ritualdagger=1,
+		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
@@ -281,10 +281,10 @@ Villager
 /datum/outfit/loadout/gatherer
 	name = "Gatherer"
 	backpack_contents = list(
-		/obj/item/twohanded/spear/bonespear=1,
-		/obj/item/kitchen/knife/combat/bone=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=1
-	)
+		/obj/item/twohanded/spear/bonespear = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		)
 
 /datum/outfit/loadout/gardener
 	name = "Gardener"
@@ -298,12 +298,12 @@ Villager
 /datum/outfit/loadout/mender
 	name = "Mender"
 	backpack_contents = list(
-		/obj/item/kitchen/knife/ritualdagger=1,
-		/obj/item/stack/medical/gauze/improvised=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
-		/obj/item/reagent_containers/glass/mortar=1,
-		/obj/item/pestle=1
-	)
+		/obj/item/melee/onehanded/knife/ritualdagger = 1,
+		/obj/item/stack/medical/gauze/improvised = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/glass/mortar = 1,
+		/obj/item/pestle=1,
+		)
 
 /datum/outfit/loadout/craftsman
 	name = "Craftsman"
@@ -366,24 +366,22 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/tribalbow=1,
-		/obj/item/clothing/suit/armor/f13/lightcloak=1,
-		/obj/item/storage/belt/tribe_quiver/bone=1,
-		/obj/item/kitchen/knife/combat/bone=1,
-		/obj/item/restraints/legcuffs/bola=2,
-		/obj/item/binoculars=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=1
-	)
+		/obj/item/gun/ballistic/automatic/tribalbow = 1,
+		/obj/item/storage/belt/tribe_quiver/bone = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
+		/obj/item/restraints/legcuffs/bola = 2,
+		/obj/item/binoculars = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		)
 
 /datum/outfit/loadout/melee
 	name = "Frontline"
 	backpack_contents = list(
-		/obj/item/twohanded/spear/bonespear/deathclaw=1,
-		/obj/item/kitchen/knife/combat/bone=1,
-		/obj/item/binoculars=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=1
-	)
+		/obj/item/melee/onehanded/knife/bone = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1
+		)
 
 /*
 Spirit-Pledged

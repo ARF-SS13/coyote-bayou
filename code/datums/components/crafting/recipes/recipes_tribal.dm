@@ -43,7 +43,7 @@
 
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
-	result = /obj/item/claymore/machete/training
+	result = /obj/item/melee/onehanded/machete/training
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/cloth = 2)

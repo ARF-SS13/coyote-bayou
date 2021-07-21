@@ -504,7 +504,6 @@
 	lootcount = 1
 
 	loot = list(
-				/obj/item/gun/medbeam,
 				/obj/item/defibrillator/compact/combat/loaded,
 				/obj/item/reagent_containers/hypospray/combat,
 				/obj/item/clothing/glasses/hud/health/night,
@@ -579,7 +578,7 @@
 				/obj/item/hatchet,
 				/obj/item/pickaxe/mini,
 				/obj/item/wrench,
-				/obj/item/kitchen/knife,
+				/obj/item/melee/onehanded/knife/kitchen,
 				/obj/item/kitchen/rollingpin,
 				)
 
@@ -593,16 +592,16 @@
 				/obj/item/oar,
 				/obj/item/pickaxe,
 				/obj/item/shovel,
-				/obj/item/switchblade,
+				/obj/item/melee/onehanded/knife/switchblade,
 				/obj/item/throwing_star/spear,
 				/obj/item/surgicaldrill,
-				/obj/item/kitchen/knife/combat,
-				/obj/item/kitchen/knife/combat/survival,
-				/obj/item/kitchen/knife/combat/bone,
+				/obj/item/melee/onehanded/knife/hunting,
+				/obj/item/melee/onehanded/knife/survival,
+				/obj/item/melee/onehanded/knife/bone,
 				/obj/item/instrument/guitar,
 				/obj/item/twohanded/spear/scrapspear,
-				/obj/item/claymore/machete/pipe,
-				/obj/item/kitchen/knife/cosmicdirty,
+				/obj/item/melee/onehanded/club,
+				/obj/item/melee/onehanded/knife/cosmicdirty,
 				/obj/item/melee/unarmed/brass,
 				/obj/item/melee/unarmed/brass/spiked
 				)
@@ -615,10 +614,10 @@
 				/obj/item/weldingtool,
 				/obj/item/twohanded/spear,
 				/obj/item/twohanded/baseball,
-				/obj/item/kitchen/knife/butcher,
+				/obj/item/melee/onehanded/knife/butcher,
 				/obj/item/twohanded/baseball/golfclub,
-				/obj/item/claymore/machete,
-				/obj/item/claymore/machete/reinforced,
+				/obj/item/melee/onehanded/machete,
+				/obj/item/melee/onehanded/machete/forgedmachete,
 				/obj/item/shield/riot/buckler,
 				/obj/item/melee/unarmed/tigerclaw,
 				/obj/item/melee/unarmed/sappers
@@ -704,14 +703,14 @@
 	name = "shotgun bat and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/ammo_box/shotgun/buck
+				/obj/item/ammo_box/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/caravan_shotgun
 	name = "caravan shotgun and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/ammo_box/shotgun/bean
+				/obj/item/ammo_box/shotgun/improvised
 				)
 
 /obj/effect/spawner/bundle/f13/mosin
@@ -1171,17 +1170,10 @@
 				/obj/effect/spawner/bundle/f13/wattz2k,
 				/obj/effect/spawner/bundle/f13/rcw,
 				/obj/effect/spawner/bundle/f13/riotshotgun,
-				/obj/effect/spawner/bundle/f13/beam,
 				/obj/effect/spawner/bundle/f13/aer12,
 				/obj/effect/spawner/bundle/f13/guns/tommygun,
 				/obj/effect/spawner/bundle/f13/hunting
 				)
-
-/obj/effect/spawner/bundle/f13/beam
-	name = "medbeam spawner"
-	items = list(
-				/obj/item/gun/medbeam
-	)
 
 /obj/effect/spawner/bundle/f13/guns/p90
 	name = "P90 SMG spawner"

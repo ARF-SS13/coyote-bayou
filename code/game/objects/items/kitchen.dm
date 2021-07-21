@@ -55,15 +55,6 @@
 	else
 		return ..()
 
-/obj/item/kitchen/fork/throwing
-	name = "throwing fork"
-	desc = "A fork, sharpened to perfection, making it a great weapon for throwing."
-	throwforce = 15
-	throw_speed = 4
-	throw_range = 6
-	embedding = list("pain_mult" = 2, "embed_chance" = 100, "fall_chance" = 0, "embed_chance_turf_mod" = 15)
-	sharpness = SHARP_EDGED
-
 /obj/item/kitchen/knife
 	name = "kitchen knife"
 	icon = 'icons/obj/items_and_weapons.dmi'
@@ -148,40 +139,12 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
-/obj/item/kitchen/knife/combat/survival
-	name = "survival knife"
-	icon_state = "knife_survival"
-	item_state = "knife"
-	desc = "Multi-purpose knife with blackened steel."
-	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 25
-	throwforce = 25
-	bayonet = TRUE
-
-/obj/item/kitchen/knife/combat/bayonet
-	name = "bayonet knife"
-	icon_state = "knife_bayonet"
-	item_state = "knife"
-	desc = "This weapon is made for stabbing, not much use for other things."
-	force = 25
-	throwforce = 15
-	armour_penetration = 0.1
-
 /obj/item/kitchen/knife/bowie
 	name = "bowie knife"
 	icon_state = "knife_bowie"
 	item_state = "knife"
 	desc = "A large clip point fighting knife."
 	force = 33
-	throwforce = 25
-	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-
-/obj/item/kitchen/knife/trench
-	name = "trench knife"
-	icon_state = "knife_trench"
-	item_state = "knife"
-	desc = "This blade is designed for brutal close quarters combat."
-	force = 35
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -196,15 +159,6 @@
 	force = 20
 	throwforce = 20
 	custom_materials = null
-
-/obj/item/kitchen/knife/ritualdagger
-	name = "ritual dagger"
-	desc = "An ancient blade used to carry out the spiritual rituals of the Wayfarer people."
-	icon_state = "crysknife"
-	item_state = "crysknife"
-	force = 25
-	throwforce = 20
-	armour_penetration = 0.2
 
 /obj/item/kitchen/knife/combat/cyborg
 	name = "cyborg knife"
@@ -248,6 +202,8 @@
 	throwforce = 15
 	armour_penetration = 0.2
 
+
+/*
 /obj/item/kitchen/knife/cosmicheated
 	name = "superheated cosmic knife"
 	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
@@ -257,30 +213,4 @@
 	force = 35
 	throwforce = 20
 	armour_penetration = 0.4
-/*
-/obj/item/kitchen/knife/combat/bone/plastic
-	name = "plastic knife"
-	desc = "A plastic knife. Rather harmless to anything."
-	force = 1
-	throwforce = 1
-	bayonet = FALSE
-
-/obj/item/kitchen/knife/ritual
-	name = "ritual knife"
-	desc = "Used for blood sacrifices."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	item_state = "knife"
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/kitchen/knife/scimitar
-	name = "Scimitar knife"
-	desc = "A knife used to cleanly butcher. Its razor-sharp edge has been honed for butchering, but has been poorly maintained over the years."
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
-/obj/item/kitchen/knife/scimiar/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 90 - force, 100, force - 60) //bonus chance increases depending on force
 */

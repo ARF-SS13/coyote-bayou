@@ -1180,8 +1180,8 @@
 /area/space)
 "dg" = (
 /obj/structure/table,
-/obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/butcher,
+/obj/item/melee/onehanded/knife/kitchen,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3038,7 +3038,7 @@
 /area/space)
 "iu" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/mining_scanner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -3545,7 +3545,7 @@
 /area/space)
 "jN" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/hatchet,
 /obj/item/wirecutters{
 	icon_state = "cutters"
@@ -5023,7 +5023,7 @@
 "ov" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/roman,
-/obj/item/claymore/machete/gladius,
+/obj/item/melee/onehanded/machete/gladius,
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -5344,7 +5344,7 @@
 /area/space)
 "pz" = (
 /obj/structure/closet/cabinet,
-/obj/item/claymore/machete/gladius,
+/obj/item/melee/onehanded/machete/gladius,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "pA" = (
@@ -5398,7 +5398,6 @@
 /area/space)
 "pI" = (
 /obj/structure/table/wood/settler,
-/obj/item/kitchen/knife/butcher,
 /turf/open/indestructible/ground/outside/dirt,
 /area/space)
 "pJ" = (
@@ -5677,7 +5676,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/screwdriver,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -5818,7 +5817,7 @@
 /area/space)
 "rc" = (
 /obj/structure/closet/cabinet,
-/obj/item/crowbar/large,
+/obj/item/crowbar,
 /obj/item/reagent_containers/pill/morphine,
 /obj/item/stack/medical/gauze/improvised,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5894,7 +5893,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/screwdriver,
 /obj/item/reagent_containers/pill/morphine,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5942,7 +5941,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/crowbar/large,
+/obj/item/crowbar,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "rx" = (
@@ -5969,7 +5968,7 @@
 /area/space)
 "rB" = (
 /obj/structure/closet/cabinet,
-/obj/item/kitchen/knife,
+/obj/item/melee/onehanded/knife/kitchen,
 /obj/item/stack/f13Cash/denarius,
 /obj/item/stack/f13Cash/denarius,
 /turf/open/indestructible/ground/inside/mountain,
@@ -6027,10 +6026,7 @@
 /area/space)
 "rL" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
 /obj/item/clothing/mask/muzzle,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -6104,9 +6100,8 @@
 /area/space)
 "rX" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/reinforced,
-/obj/item/claymore/machete/reinforced,
-/obj/item/claymore/machete/reinforced,
+/obj/item/melee/onehanded/machete/forgedmachete,
+/obj/item/melee/onehanded/machete/forgedmachete,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "rY" = (
@@ -6298,7 +6293,6 @@
 /obj/structure/table/wood,
 /obj/item/storage/fancy/candle_box,
 /obj/item/storage/box/matches,
-/obj/item/kitchen/knife,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "sB" = (
@@ -6418,7 +6412,6 @@
 /area/space)
 "wq" = (
 /obj/structure/table,
-/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6540,10 +6533,7 @@
 /area/space)
 "FX" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "FY" = (
@@ -7195,7 +7185,7 @@
 /area/space)
 "Ic" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/butcher
+/obj/item/melee/onehanded/knife/butcher,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
