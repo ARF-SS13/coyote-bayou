@@ -218,21 +218,6 @@
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
 	medical_record_text = "Patient demonstrates a disturbing capacity for eating."
 
-/* go fuck yourself idiots -superballs
-/datum/quirk/trandening
-	name = "High Luminosity Eyes"
-	desc = "When the next big fancy implant came out you had to buy one on impluse!"
-	value = 1
-	gain_text = "<span class='notice'>You have to keep up with the next big thing!.</span>"
-	lose_text = "<span class='danger'>High-tech gizmos are a scam...</span>"
-*/
-
-/datum/quirk/trandening/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/autosurgeon/gloweyes/gloweyes = new(get_turf(H))
-	H.equip_to_slot(gloweyes, SLOT_IN_BACKPACK)
-	H.regenerate_icons()
-
 /datum/quirk/bloodpressure
 	name = "Polycythemia vera"
 	desc = "You've a treated form of Polycythemia vera that increases the total blood volume inside of you as well as the rate of replenishment!"
