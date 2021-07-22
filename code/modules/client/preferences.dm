@@ -1419,6 +1419,9 @@ Records disabled until a use for them is found
 			switch(href_list["preference"])
 				if("name")
 					real_name = pref_species.random_name(gender,1)
+					if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+						var/mob/dead/new_player/player_mob = parent.mob
+						player_mob.new_player_panel()
 				if("age")
 					age = rand(AGE_MIN, AGE_MAX)
 				if("hair")
@@ -1536,6 +1539,9 @@ Records disabled until a use for them is found
 						new_name = reject_bad_name(new_name)
 						if(new_name)
 							real_name = new_name
+							if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+								var/mob/dead/new_player/player_mob = parent.mob
+								player_mob.new_player_panel()
 						else
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
 
@@ -2471,6 +2477,9 @@ Records disabled until a use for them is found
 
 				if("name")
 					be_random_name = !be_random_name
+					if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+						var/mob/dead/new_player/player_mob = parent.mob
+						player_mob.new_player_panel()
 
 				if("all")
 					be_random_body = !be_random_body
@@ -2598,6 +2607,9 @@ Records disabled until a use for them is found
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
+					if(isnewplayer(parent.mob)) // Update the player panel with the new name.
+						var/mob/dead/new_player/player_mob = parent.mob
+						player_mob.new_player_panel()
 
 				if("tab")
 					if (href_list["tab"])
