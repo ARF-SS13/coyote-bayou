@@ -1180,8 +1180,8 @@
 /area/space)
 "dg" = (
 /obj/structure/table,
-/obj/item/melee/onehanded/knife/butcher,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife/butcher,
+/obj/item/kitchen/knife,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3038,7 +3038,7 @@
 /area/space)
 "iu" = (
 /obj/structure/table/wood/settler,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /obj/item/mining_scanner,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -3545,7 +3545,7 @@
 /area/space)
 "jN" = (
 /obj/structure/table/wood/settler,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /obj/item/hatchet,
 /obj/item/wirecutters{
 	icon_state = "cutters"
@@ -5676,7 +5676,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /obj/item/screwdriver,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
@@ -5893,7 +5893,7 @@
 /obj/structure/table/wood,
 /obj/item/hatchet,
 /obj/item/wirecutters,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /obj/item/screwdriver,
 /obj/item/reagent_containers/pill/morphine,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5968,7 +5968,7 @@
 /area/space)
 "rB" = (
 /obj/structure/closet/cabinet,
-/obj/item/melee/onehanded/knife/kitchen,
+/obj/item/kitchen/knife,
 /obj/item/stack/f13Cash/denarius,
 /obj/item/stack/f13Cash/denarius,
 /turf/open/indestructible/ground/inside/mountain,
@@ -7185,7 +7185,7 @@
 /area/space)
 "Ic" = (
 /obj/structure/table/wood,
-/obj/item/melee/onehanded/knife/butcher,
+/obj/item/kitchen/knife/butcher,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,
 /obj/item/reagent_containers/food/snacks/meatball,

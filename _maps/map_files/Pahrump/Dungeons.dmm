@@ -6797,7 +6797,7 @@
 "ivq" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/f13/baseball,
-/obj/item/melee/baseball_bat,
+/obj/item/twohanded/baseball,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -12338,7 +12338,6 @@
 	},
 /area/f13/bunker)
 "ptn" = (
-/obj/item/bikehorn,
 /obj/structure/rack,
 /obj/item/soap,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -16901,7 +16900,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/sandbags,
 /obj/structure/table,
-/obj/item/grenade/iedcasing,
+/obj/item/grenade/homemade/firebomb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},

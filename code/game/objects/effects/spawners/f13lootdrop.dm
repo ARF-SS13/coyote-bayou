@@ -578,7 +578,7 @@
 				/obj/item/hatchet,
 				/obj/item/pickaxe/mini,
 				/obj/item/wrench,
-				/obj/item/melee/onehanded/knife/kitchen,
+				/obj/item/kitchen/knife,
 				/obj/item/kitchen/rollingpin,
 				)
 
@@ -614,7 +614,7 @@
 				/obj/item/weldingtool,
 				/obj/item/twohanded/spear,
 				/obj/item/twohanded/baseball,
-				/obj/item/melee/onehanded/knife/butcher,
+				/obj/item/kitchen/knife/butcher,
 				/obj/item/twohanded/baseball/golfclub,
 				/obj/item/melee/onehanded/machete,
 				/obj/item/melee/onehanded/machete/forgedmachete,
@@ -1412,7 +1412,6 @@
 				/obj/item/rollingpaper,
 				/obj/item/trash/coal,
 				/obj/item/soap/homemade,
-				/obj/item/bikehorn,
 				/obj/item/stack/cable_coil/random,
 				/obj/item/stack/medical/bruise_pack,
 				/obj/item/trash/popcorn,
@@ -1422,7 +1421,7 @@
 				/obj/item/stack/medical/gauze,
 				/obj/item/trash/plate,
 				/obj/item/storage/box/snappops,
-				/obj/item/bikehorn/rubberducky,
+				/obj/item/storage/crayons,
 				/obj/item/stack/packageWrap,
 				/obj/item/storage/box/matches,
 				/obj/item/reagent_containers/food/snacks/deadmouse,
@@ -1560,7 +1559,6 @@
 	fan_out_items = TRUE
 
 	loot = list(
-				/obj/item/storage/crayons,
 				/obj/item/crafting/abraxo,
 				/obj/item/stack/crafting/metalparts/three,
 				/obj/item/stack/crafting/metalparts/five,
@@ -1569,6 +1567,7 @@
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/crafting/electronicparts/five,
 				/obj/item/reagent_containers/glass/bottle/blackpowder,
+				/obj/item/crafting/timer,
 				/obj/item/crafting/wonderglue,
 				/obj/item/crafting/duct_tape)
 

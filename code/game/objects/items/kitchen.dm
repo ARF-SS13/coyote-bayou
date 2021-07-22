@@ -128,43 +128,16 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = PRICE_EXPENSIVE
 
-/obj/item/kitchen/knife/combat
-	name = "hunting knife"
-	icon_state = "knife_hunting"
+/obj/item/kitchen/knife/combat // obsolete
+	name = "cyborg knife"
+	icon = 'icons/obj/items_cyborg.dmi'
 	item_state = "knife"
-	desc = "Dependable hunting knife."
+	desc = "A cyborg-mounted plasteel knife. Extremely sharp and durable."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
 	force = 30
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
-
-/obj/item/kitchen/knife/bowie
-	name = "bowie knife"
-	icon_state = "knife_bowie"
-	item_state = "knife"
-	desc = "A large clip point fighting knife."
-	force = 33
-	throwforce = 25
-	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-
-/obj/item/kitchen/knife/combat/bone
-	name = "bone dagger"
-	item_state = "bone_dagger"
-	icon_state = "bone_dagger"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	desc = "A sharpened bone. The bare minimum in survival."
-	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
-	force = 20
-	throwforce = 20
-	custom_materials = null
-
-/obj/item/kitchen/knife/combat/cyborg
-	name = "cyborg knife"
-	icon = 'icons/obj/items_cyborg.dmi'
-	icon_state = "knife"
-	desc = "A cyborg-mounted plasteel knife. Extremely sharp and durable."
 
 /obj/item/kitchen/rollingpin
 	name = "rolling pin"
@@ -182,35 +155,3 @@
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
-
-
-/obj/item/kitchen/knife/cosmicdirty
-	name = "dirty cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy."
-	icon_state = "knife_cosmic_dirty"
-	item_state = "knife"
-	force = 15
-	throwforce = 10
-	armour_penetration = 0.2
-
-/obj/item/kitchen/knife/cosmic
-	name = "cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
-	icon_state = "knife_cosmic"
-	item_state = "knife"
-	force = 25
-	throwforce = 15
-	armour_penetration = 0.2
-
-
-/*
-/obj/item/kitchen/knife/cosmicheated
-	name = "superheated cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
-	icon_state = "knife_cosmic_heated"
-	item_state = "knife"
-	damtype = BURN
-	force = 35
-	throwforce = 20
-	armour_penetration = 0.4
-*/

@@ -2506,10 +2506,10 @@
 /area/f13/city)
 "bgY" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -3530,7 +3530,6 @@
 /area/f13/building)
 "bFV" = (
 /obj/structure/rack,
-/obj/item/bikehorn,
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
 /turf/open/floor/f13/wood{
@@ -6201,7 +6200,7 @@
 "cZf" = (
 /obj/structure/table,
 /obj/item/kitchen/knife/butcher,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -10179,8 +10178,8 @@
 /area/f13/wasteland)
 "eST" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/warclub,
-/obj/item/claymore/machete/warclub,
+/obj/item/melee/onehanded/club/warclub,
+/obj/item/melee/onehanded/club/warclub,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "eSX" = (
@@ -10580,7 +10579,7 @@
 	},
 /area/f13/building)
 "fbs" = (
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete/training,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "fbv" = (
@@ -12028,10 +12027,7 @@
 /area/f13/legion)
 "fKU" = (
 /obj/structure/table,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/f13,
 /area/f13/building)
 "fKY" = (
@@ -20921,7 +20917,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/army,
-/obj/item/kitchen/knife/combat,
+ /obj/item/melee/onehanded/knife/hunting,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -26709,7 +26705,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/kitchen/knife/combat,
+ /obj/item/melee/onehanded/knife/hunting,
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
 	},
@@ -27273,7 +27269,7 @@
 	},
 /area/f13/village)
 "mVW" = (
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete/training,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/legion)
 "mVY" = (
@@ -27292,10 +27288,9 @@
 /area/f13/building)
 "mWy" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
-/obj/item/kitchen/knife/combat/bone,
+/obj/item/melee/onehanded/knife/bone,
+/obj/item/melee/onehanded/knife/bone,
+/obj/item/melee/onehanded/knife/bone,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "mWC" = (
@@ -28303,7 +28298,7 @@
 "nyB" = (
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -29925,7 +29920,7 @@
 	},
 /obj/structure/closet/cardboard,
 /obj/item/crafting/abraxo,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -30143,7 +30138,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/kitchen/knife/combat,
+ /obj/item/melee/onehanded/knife/hunting,
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
 	},
@@ -31251,7 +31246,7 @@
 /area/f13/legion)
 "oXi" = (
 /obj/structure/table/wood,
-/obj/item/kitchen/knife/bowie,
+/obj/item/melee/onehanded/knife/bowie,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "oXz" = (
@@ -34187,10 +34182,10 @@
 "qnG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
+/obj/item/melee/onehanded/machete/training,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "qnR" = (
@@ -35460,7 +35455,7 @@
 /area/f13/building)
 "qQB" = (
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -43120,7 +43115,7 @@
 	icon_state = "tall_grass_2";
 	pixel_x = -6
 	},
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting,
 /turf/open/indestructible/ground/outside/desert{
 	icon_state = "wasteland33"
 	},
@@ -43678,14 +43673,8 @@
 /area/f13/village)
 "uIU" = (
 /obj/structure/table/wood,
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
-/obj/item/melee/curator_whip{
-	desc = "It stings like hell to be hit by.";
-	name = "Slave whip"
-	},
+/obj/item/melee/onehanded/slavewhip,
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "uJd" = (

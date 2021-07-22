@@ -333,7 +333,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food, /obj/item/reagent_containers/glass, /datum/reagent/consumable, /obj/item/melee/onehanded/knife/kitchen, /obj/item/kitchen/rollingpin, /obj/item/kitchen/fork, /obj/item/storage/box)) //Should cover: Bottles, Beakers, Bowls, Booze, Glasses, Food, Kitchen Tools, and ingredient boxes.
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food, /obj/item/reagent_containers/glass, /datum/reagent/consumable, /obj/item/kitchen/knife, /obj/item/kitchen/rollingpin, /obj/item/kitchen/fork, /obj/item/storage/box)) //Should cover: Bottles, Beakers, Bowls, Booze, Glasses, Food, Kitchen Tools, and ingredient boxes.
 	STR.insert_preposition = "on"
 	STR.max_items = max_items
 

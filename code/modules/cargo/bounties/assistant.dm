@@ -13,11 +13,6 @@
 //	reward = 800 // the tony hawk
 //	wanted_types = list(/obj/vehicle/ridden/scooter/skateboard)
 
-/datum/bounty/item/assistant/stunprod
-	name = "Stunprod"
-	description = "CentCom demands a stunprod to use against dissidents. Craft one, then ship it."
-	reward = 950
-	wanted_types = list(/obj/item/melee/baton/cattleprod)
 
 /datum/bounty/item/assistant/soap
 	name = "Soap"
@@ -75,12 +70,6 @@
 	required_count = 3
 	wanted_types = list(/obj/item/storage/briefcase, /obj/item/storage/secure/briefcase)
 
-/datum/bounty/item/assistant/monkey_hide
-	name = "Monkey Hide"
-	description = "One of the scientists at CentCom is interested in testing products on monkey skin. Your mission is to acquire monkey's hide and ship it."
-	reward = 1250
-	required_count = 3
-	wanted_types = list(/obj/item/stack/sheet/animalhide/monkey)
 
 /datum/bounty/item/assistant/shard
 	name = "Shards"
@@ -150,12 +139,6 @@
 	reward = 2500
 	wanted_types = list(obj/item/twohanded/chainsaw)
 */
-/datum/bounty/item/assistant/ied
-	name = "IED"
-	description = "Nanotrasen's maximum security prison at CentCom is undergoing personnel training. Ship a handful of IEDs to serve as a training tools."
-	reward = 2000
-	required_count = 3
-	wanted_types = list(/obj/item/grenade/iedcasing)
 
 /datum/bounty/item/assistant/bonfire
 	name = "Lit Bonfire"
@@ -169,11 +152,6 @@
 	var/obj/structure/bonfire/B = O
 	return !!B.burning
 
-/datum/bounty/item/assistant/corgimeat
-	name = "Raw Corgi Meat"
-	description = "The Syndicate recently stole all of CentCom's corgi meat. Ship out a replacement immediately."
-	reward = 3000
-	wanted_types = list(/obj/item/reagent_containers/food/snacks/meat/slab/corgi)
 
 /datum/bounty/item/assistant/bolas
 	name = "Bolas"
@@ -195,10 +173,3 @@
 	reward = 1250
 	required_count = 4
 	wanted_types = list(/obj/item/clothing/mask/gas)
-
-/datum/bounty/item/assistant/pneumatic_cannon
-	name = "Pneumatic Cannons"
-	description = "Have you ever launched a tennis ball, newspaper, or ***** at someones head from across the room? No? We haven't either. Help us rectify this."
-	reward = 2000
-	required_count = 2
-	wanted_types = list(/obj/item/pneumatic_cannon/ghetto)

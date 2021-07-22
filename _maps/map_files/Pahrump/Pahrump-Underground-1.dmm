@@ -1371,7 +1371,7 @@
 /area/f13/tunnel)
 "bof" = (
 /obj/structure/rack,
-/obj/item/claymore/machete/golf,
+/obj/item/twohanded/baseball/golfclub,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bpa" = (
@@ -5694,11 +5694,9 @@
 "eSN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
-/obj/item/kitchen/knife/combat,
+/obj/item/melee/onehanded/knife/hunting,
+/obj/item/melee/onehanded/knife/hunting,
+/obj/item/melee/onehanded/knife/hunting,
 /obj/item/twohanded/sledgehammer/supersledge,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 5
@@ -5722,7 +5720,7 @@
 	},
 /area/f13/bunker)
 "eTS" = (
-/obj/item/crowbar/large,
+/obj/item/crowbar,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "eUk" = (
@@ -6073,7 +6071,7 @@
 /area/f13/brotherhood/leisure)
 "fkv" = (
 /obj/structure/table/wood/bar,
-/obj/item/claymore/machete/training,
+/obj/item/melee/onehanded/machete/training,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "fkB" = (
@@ -11188,7 +11186,7 @@
 /area/f13/brotherhood/leisure)
 "jga" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/claymore/machete/pipe/tireiron,
+/obj/item/melee/onehanded/club/tireiron,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
 "jgc" = (
@@ -14345,7 +14343,7 @@
 /area/f13/den)
 "lIx" = (
 /obj/machinery/microwave/stove,
-/obj/item/claymore/machete/pipe/pan,
+/obj/item/melee/onehanded/club/fryingpan,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -14901,7 +14899,6 @@
 /obj/item/clothing/under/f13/police,
 /obj/item/clothing/gloves/f13/military,
 /obj/item/clothing/suit/armor/vest/warden,
-/obj/item/megaphone,
 /obj/item/clothing/head/collectable/police/cos,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -25639,7 +25636,7 @@
 /area/f13/den)
 "uqm" = (
 /obj/structure/table/wood/fancy/green,
-/obj/item/kitchen/knife/cosmicdirty,
+/obj/item/melee/onehanded/knife/cosmicdirty,
 /obj/item/organ/heart,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)

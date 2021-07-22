@@ -819,25 +819,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		W.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 		return
 
-//This is citadel's.
-/obj/item/melee/baseball_bat //obsolete
-	name = "baseball bat"
-	desc = "There ain't a skull in the league that can withstand a swatter."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "baseball_bat"
-	item_state = "baseball_bat"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 10
-	wound_bonus = -10
-	throwforce = 12
-	attack_verb = list("beat", "smacked")
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 3.5)
-	w_class = WEIGHT_CLASS_BULKY
-	var/homerun_ready = 0
-	var/homerun_able = 0
-	total_mass = 2.7 //a regular wooden major league baseball bat weighs somewhere between 2 to 3.4 pounds, according to google
-
 /*
 //////////////////
 // CODE ARCHIVE //

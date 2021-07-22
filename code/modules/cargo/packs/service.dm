@@ -149,15 +149,6 @@
 	cost = 10000
 	contraband = TRUE
 	contains = list(/obj/item/sharpener, //Deluxe for a reason
-					/obj/item/kitchen/fork,
-					/obj/item/kitchen/fork,
-					/obj/item/kitchen/knife,
-					/obj/item/kitchen/knife,
-					/obj/item/kitchen/knife,
-					/obj/item/kitchen/knife,
-					/obj/item/kitchen/knife/butcher,
-					/obj/item/kitchen/knife/butcher,
-					/obj/item/kitchen/rollingpin,
 					/obj/item/trash/plate,
 					/obj/item/trash/plate,
 					/obj/item/trash/plate,

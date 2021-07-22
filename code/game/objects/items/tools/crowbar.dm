@@ -28,7 +28,7 @@
 
 /obj/item/crowbar/red
 	icon_state = "crowbar_red"
-	force = 8
+	toolspeed = 0.9
 
 /obj/item/crowbar/brass
 	name = "brass crowbar"
@@ -44,18 +44,6 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.1
-
-/obj/item/crowbar/large //obsolete
-	name = "crowbar"
-	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big."
-	force = 12
-	w_class = WEIGHT_CLASS_NORMAL
-	throw_speed = 3
-	throw_range = 3
-	custom_materials = list(/datum/material/iron=70)
-	icon_state = "crowbar_large"
-	item_state = "crowbar"
-	toolspeed = 0.5
 
 /obj/item/crowbar/cyborg
 	name = "hydraulic crowbar"

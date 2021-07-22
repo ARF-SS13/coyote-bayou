@@ -153,7 +153,7 @@
 
 /datum/crafting_recipe/melee/forged/cleaver
 	name = "Butchers Cleaver"
-	result = /obj/item/melee/onehanded/knife/butcher
+	result = /obj/item/kitchen/knife/butcher
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/cloth = 1)
@@ -183,7 +183,7 @@
 
 /datum/crafting_recipe/melee/forged/kitchen
 	name = "Kitchen Knife"
-	result = /obj/item/melee/onehanded/knife/kitchen
+	result = /obj/item/kitchen/knife
 	time = 30
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/cloth = 1)
@@ -360,7 +360,7 @@
 /datum/crafting_recipe/cosmicknife
 	name = "Cosmic Knife"
 	result = /obj/item/melee/onehanded/knife/cosmic
-	reqs = list(/obj/item/kitchen/knife/cosmicdirty = 1,
+	reqs = list(/obj/item/melee/onehanded/knife/cosmicdirty = 1,
 				/obj/item/crafting/abraxo = 1)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
@@ -370,7 +370,7 @@
 /datum/crafting_recipe/cosmicknifeheated
 	name = "Superheated Cosmic Knife"
 	result = /obj/item/melee/onehanded/knife/cosmicheated
-	reqs = list(/obj/item/kitchen/knife/cosmic = 1,
+	reqs = list(/obj/item/melee/onehanded/knife/cosmic = 1,
 				/datum/reagent/fuel = 25)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY

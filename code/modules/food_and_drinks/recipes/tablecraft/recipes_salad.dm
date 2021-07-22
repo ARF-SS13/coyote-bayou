@@ -53,7 +53,7 @@
 /datum/crafting_recipe/food/caesarsalad
 	name = "Caesar salad"
 	reqs = list(
-		/obj/item/melee/onehanded/knife/kitchen = 1,
+		/obj/item/kitchen/knife = 1,
 		/obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
 	)

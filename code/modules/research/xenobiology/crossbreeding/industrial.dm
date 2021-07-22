@@ -156,7 +156,7 @@ Industrial extracts:
 /obj/item/slimecross/industrial/oil
 	colour = "oil"
 	plasmarequired = 4
-	itempath = /obj/item/grenade/iedcasing
+	itempath = /obj/item/storage/fancy/heart_box
 
 /obj/item/slimecross/industrial/black //What does this have to do with black slimes? No clue! Fun, though
 	colour = "black"

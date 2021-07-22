@@ -33,11 +33,10 @@
 	desc = "A makeshift machete made of a lawn mower blade."
 	icon_state = "machete_imp"
 	item_state = "salvagedmachete"
-	force = 32
-	block_chance = 5
+	force = 34
+	block_chance = 7
 	throwforce = 20
 	sharpness = SHARP_EDGED
-
 
 /obj/item/melee/onehanded/machete/forgedmachete
 	name = "machete"
@@ -76,35 +75,6 @@
 	force = 40
 	block_chance = 18
 
-/obj/item/claymore/machete //obsolete
-	name = "machete"
-	desc = "A makeshift machete made of a lawn mower blade."
-	icon_state = "machete_imp"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = "salvagedmachete"
-	slot_flags = ITEM_SLOT_BELT
-	force = 30
-	block_chance = 5
-
-/obj/item/claymore/machete/reinforced //obsolete
-	name = "reinforced machete"
-	desc = "A reinforced machete made of high quality steel."
-	icon_state = "machete"
-	force = 35
-
-/obj/item/claymore/machete/training //obsolete
-	name = "training machete"
-	desc = "A training machete made of tough wood."
-	icon_state = "machete_training"
-	force = 0
-	throwforce = 5
-
-/obj/item/claymore/machete/training/attack(mob/living/M, mob/living/user)//obsolete
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(20, STAMINA, null, 0)
 
 /obj/item/throwing_star/spear
 	name = "throwing spear"
@@ -343,33 +313,6 @@
 	item_state = "tire"
 	force = 32
 
-
-/obj/item/claymore/machete/warclub //obsolete
-	name = "war club"
-	desc = "A simple carved wooden club with turquoise inlays."
-	icon_state = "warclub"
-	item_state = "warclub"
-	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
-	force = 34
-	throwforce = 25
-	block_chance = 10
-	armour_penetration = 0.1
-	sharpness = SHARP_NONE
-/obj/item/claymore/machete/pipe/pan //obsolete
-	name = "frying pan"
-	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
-	icon_state = "pan"
-	item_state = "pan"
-/obj/item/claymore/machete/pipe //obsolete
-	name = "pipe"
-	desc = "A heavy rusted pipe, good for smashing heads. "
-	icon_state = "pipe"
-	item_state = "pipe"
-
-/obj/item/claymore/machete/golf//obsolete
-
-/obj/item/claymore/machete/pipe/tireiron//obsolete
-
 /obj/item/bostaff/ncr_flag
 	name = "NCR flagpole"
 	desc = "The proud standard of the New California Republic. Used as a tool by patriots, used as a weapon by legends."
@@ -600,20 +543,6 @@
 		return
 	M.apply_damage(20, STAMINA, null, 0)
 
-/obj/item/melee/curator_whip //obsolete
-	name = "curator's whip"
-	desc = "Somewhat eccentric and outdated, it still stings like hell to be hit by."
-	icon_state = "whip"
-	item_state = "chain"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
-	force = 15
-	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
-	hitsound = 'sound/weapons/whip.ogg'
-
-
 ///////////////////
 // GLOVE WEAPONS //
 ///////////////////			-faster attack speed
@@ -625,7 +554,6 @@
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 	flags_1 = CONDUCT_1
-	attack_speed = 0.7
 	attack_verb = list("punched", "jabbed", "whacked")
 	sharpness = SHARP_NONE
 	throwforce = 10
@@ -780,13 +708,7 @@
 ///////////		-generally max 24 damage
 
 
-/obj/item/melee/onehanded/knife/kitchen
-	name = "kitchen knife"
-	desc = "Simple kitchen knife.."
-	icon_state = "knife_kitchen"
-	force = 15
-	armour_penetration = 0
-
+// obsolete
 /obj/item/melee/onehanded/knife/butcher
 	name = "butcher's cleaver"
 	desc = "Keep hackin' and whackin' and smackin'."
@@ -797,17 +719,6 @@
 	armour_penetration = 0
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
-/obj/item/melee/onehanded/club/rollingpin
-	name = "rolling pin"
-	desc = "Intended for baking, could in theory be used as a awkward club."
-	icon_state = "rolling_pin"
-	force = 10
-	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-
-/obj/item/melee/onehanded/club/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/melee/onehanded/club/fryingpan
 	name = "frying pan"
@@ -863,5 +774,7 @@
 	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
-// Wrench force 12
-// Crowbar force 15
+// Wrench				Force 12
+// Crowbar				Force 15
+// Kitchen knife		Force 15
+// Rolling pin			Force x
