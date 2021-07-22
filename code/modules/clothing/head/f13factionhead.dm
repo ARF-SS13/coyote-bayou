@@ -681,7 +681,16 @@
 	item_state = "desert_ranger"
 
 
-
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey
+	name = "weathered ranger helmet"
+	desc = "(II) A well-used desert ranger helmet passed down through generations. Though this one's stripped of night vision and it's kevlar lining, it's even more lightweight."
+	lighting_alpha = null
+	darkness_view = null
+	flash_protect = 0
+	resistance_flags = null
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 0)
+	
+	
 /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed
 	name = "reclaimed desert ranger gear"
 	desc = "(IV) A refurbished and personalized set of pre-unification desert ranger gear."
