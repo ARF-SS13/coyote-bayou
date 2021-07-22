@@ -767,9 +767,9 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/gun/lsw)
 
 /obj/item/book/granter/crafting_recipe/blueprint/trapper
-	name = "trapper's blueprints"
+	name = "guide to minelaying"
 	icon_state = "blueprint2"
-	crafting_recipe_types = list(/datum/crafting_recipe/punji_sticks, /datum/crafting_recipe/shrapnelmine)
+	crafting_recipe_types = list(/datum/crafting_recipe/shrapnelmine)
 
 /*
 /obj/item/book/granter/crafting_recipe/blueprint/fnfal

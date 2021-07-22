@@ -31,6 +31,8 @@
 	icon_state = "ncr_gloves"
 	item_state = "ncr_gloves"
 	transfer_prints = TRUE
+	heat_protection = null
+	max_heat_protection_temperature = null
 
 /obj/item/clothing/gloves/f13/military
 	name = "military gloves"

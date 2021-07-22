@@ -16,10 +16,17 @@
 	item_state = "legion"
 
 /obj/item/clothing/glasses/legionpolarizing
-	name = "polarizing goggles"
-	desc = "Fancy goggles with rare polarizing glass, usually reserved for commanders due to rarity."
 	icon_state = "legpolarizing"
 	item_state = "legpolarizing"
+
+/obj/item/clothing/glasses/night/polarizing
+	name = "polarizing goggles"
+	desc = "Fancy goggles with rare polarizing glass from some old cache, usually reserved for commanders and a few select scouts."
+	icon_state = "legpolarizing"
+	item_state = "legpolarizing"
+	darkness_view = 12
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	glass_colour_type = /datum/client_colour/glass_colour/lightorange
 
 //Fallout 13 sunglasses
 

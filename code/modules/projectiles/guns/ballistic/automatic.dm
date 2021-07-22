@@ -177,10 +177,10 @@
 	item_state = "rockwell"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm/rockwell
-	burst_shot_delay = 3
+	burst_shot_delay = 3.25
 	recoil = 0.1
 	spread = 12
-	extra_damage = -1
+	extra_damage = -2
 	can_attachments = TRUE
 	actions_types = null
 
@@ -223,7 +223,7 @@
 			select += 1
 			burst_size = 2
 			spread = 8
-			fire_delay =3.75
+			fire_delay =3.5
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
@@ -247,7 +247,7 @@
 	item_state = "smg10mm"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
-	fire_delay = 4
+	fire_delay = 3.75
 	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited 
 	suppressor_x_offset = 30
@@ -267,8 +267,8 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 10
-			fire_delay = 4
+			spread = 9
+			fire_delay = 3.75
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
@@ -294,7 +294,7 @@
 	burst_shot_delay = 2.5
 	can_suppress = TRUE
 	can_attachments = TRUE
-	spread = 11
+	spread = 10
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
@@ -332,7 +332,7 @@
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 3.5
-	spread = 9
+	spread = 8
 	recoil = 0.1
 	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
@@ -350,10 +350,10 @@
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	burst_size = 3
-	burst_shot_delay = 3
+	burst_shot_delay = 3.25
 	fire_delay = 5
 	extra_damage = -1
-	spread = 12
+	spread = 10
 	recoil = 0.5
 
 
@@ -368,7 +368,7 @@
 	burst_size = 3
 	fire_delay = 3
 	spread = 7
-	burst_shot_delay = 2
+	burst_shot_delay = 2.5
 	extra_damage = 1
 	recoil = 0.25
 	can_suppress = TRUE
@@ -752,7 +752,7 @@
 //////////////////
 
 
-//R82 Heavy service rifle							Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
+//R82												Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "R82 heavy service rifle"
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
@@ -955,15 +955,15 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 12
-			extra_damage = -3
+			spread = 8
+			extra_damage = -2
 			recoil = 0.25
 			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
 		if(1)
 			select = 0
 			burst_size = 5
-			spread = 16
-			extra_damage = -7
+			spread = 14
+			extra_damage = -5
 			recoil = 0.75
 			to_chat(user, "<span class='notice'>You switch to full auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -1016,22 +1016,23 @@
 	return
 
 
-//M1919 Machinegun							Keywords: LEGION, 7.62mm, Automatic, 80 round belt. Special modifiers: damage decrease bullethose
+//M1919 Machinegun							Keywords: LEGION, .308, Automatic, 80 round belt. Special modifiers: damage decrease bullethose
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
-	desc = "An old pre-war machine gun used in service by the US Military around the time of the war. Rechambered in 7.62x51."
+	desc = "This ancient machine gun has been dug up and put into working order by the Legion Forgemasters. It's loud, heavy and terrifying."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
-	slowdown = 2
+	slowdown = 1.25
 	mag_type = /obj/item/ammo_box/magazine/mm762
 	burst_size = 1
 	burst_shot_delay = 1.5
 	fire_delay = 4
-	extra_damage = -5
+	extra_damage = -4
 	spread = 8
 	can_attachments = FALSE
 	var/cover_open = FALSE
+	var/require_twohands = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
@@ -1088,23 +1089,17 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 12
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select += 1
-			burst_size = 3
-			spread = 16
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(2)
-			select += 1
-			burst_size = 4
-			spread = 20
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(3)
-			select = 0
-			burst_size = 1
 			spread = 8
-			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+			extra_damage = -2
+			recoil = 0.25
+			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
+		if(1)
+			select = 0
+			burst_size = 4
+			spread = 14
+			extra_damage = -5
+			recoil = 1
+			to_chat(user, "<span class='notice'>You switch to full auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return

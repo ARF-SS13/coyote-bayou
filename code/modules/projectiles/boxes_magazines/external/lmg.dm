@@ -68,9 +68,9 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/mm762
-	name = "ammo belt (7.62mm)"
+	name = "ammo belt (.308)"
 	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 80
 	caliber = "a762"
 
