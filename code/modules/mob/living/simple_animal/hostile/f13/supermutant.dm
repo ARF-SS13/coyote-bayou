@@ -251,7 +251,3 @@
 	icon_state = icon_dead
 	anchored = FALSE
 	..()
-	var/turf/T = get_turf(src)
-	if(prob(40))
-		new /obj/item/gun/energy/laser/plasma(T)
-	. = ..()
