@@ -95,13 +95,12 @@
 	var/list/command = list()
 	var/list/bos = list()	
 	var/list/enclave = list()
-	var/list/den = list()
+	var/list/oasis = list()
 	var/list/leg = list()
 	var/list/ncr = list()
 	var/list/vault = list()
 	var/list/flw = list()
 	var/list/tribe = list()
-	var/list/khan = list()
 	var/list/was = list()
 	var/list/misc = list()
 	var/dat = {"
@@ -134,8 +133,8 @@
 		if(rank in GLOB.enclave_positions)
 			enclave[name] = rank
 			department = 1
-		if(rank in GLOB.den_positions)
-			den[name] = rank
+		if(rank in GLOB.oasis_positions)
+			oasis[name] = rank
 			department = 1
 		if(rank in GLOB.legion_positions)
 			leg[name] = rank
@@ -148,9 +147,6 @@
 			department = 1
 		if(rank in GLOB.tribal_positions)
 			tribe[name] = rank
-			department = 1
-		if (rank == "Great Khan")
-			khan[name] = rank
 			department = 1
 		if(rank in GLOB.vault_positions)
 			vault[name] = rank
@@ -175,10 +171,10 @@
 		for(var/name in enclave)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[enclave[name]]</td></tr>"
 			even = !even
-	if(length(den))
+	if(length(oasis))
 		dat += "<tr><th colspan=3>Oasis</th></tr>"
-		for(var/name in den)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
+		for(var/name in oasis)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[oasis[name]]</td></tr>"
 			even = !even
 	if(length(leg))
 		dat += "<tr><th colspan=3>Caesar's Legion</th></tr>"
@@ -199,11 +195,6 @@
 		dat += "<tr><th colspan=3>Wayfarer Tribe</th></tr>"
 		for(var/name in tribe)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[tribe[name]]</td></tr>"
-			even = !even
-	if(length(khan))
-		dat += "<tr><th colspan=3>Great Khans</th></tr>"
-		for(var/name in khan)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[khan[name]]</td></tr>"
 			even = !even
 	if(length(vault))
 		dat += "<tr><th colspan=3>Vault</th></tr>"

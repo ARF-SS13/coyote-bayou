@@ -98,7 +98,7 @@
 #define F13INITIATE		(1<<10)
 #define F13OFFDUTYBOS	(1<<11)
 
-#define DEN				(1<<6)
+#define DEP_OASIS (1<<6)
 
 #define F13SHERIFF		(1<<0)
 #define F13DENDOC       (1<<1)

@@ -163,9 +163,6 @@ SUBSYSTEM_DEF(job)
 		if((job.title in GLOB.faction_whitelist_positions) && (CONFIG_GET(flag/use_role_whitelist))) //If you want a whitelist position, get a whitelist and choose it.
 			continue
 
-		if((job.title in GLOB.faction_whitelist_positions) && (CONFIG_GET(flag/use_role_whitelist))) //If you want an antagonist position, get a whitelist and choose it.
-			continue
-
 		if(jobban_isbanned(player, job.title) || QDELETED(player))
 			if(QDELETED(player))
 				JobDebug("GRJ isbanned failed, Player deleted")
