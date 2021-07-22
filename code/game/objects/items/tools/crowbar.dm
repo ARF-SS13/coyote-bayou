@@ -10,7 +10,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
 	throwforce = 7
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=1000)
 
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
