@@ -1007,3 +1007,9 @@
 	results = list(/datum/reagent/consumable/ethanol/species_drink/laval_spit = 20) //Limited use
 	required_reagents = list(/datum/reagent/iron = 5,  /datum/reagent/consumable/ethanol/mauna_loa = 10, /datum/reagent/sulfur = 5)
 	required_temp = 900 // (626.85'C)
+
+/datum/chemical_reaction/nukashine
+	name = "Nukashine"
+	id = /datum/reagent/consumable/ethanol/nukashine
+	results = list(/datum/reagent/consumable/ethanol/nukashine = 2)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/beer = 1)
