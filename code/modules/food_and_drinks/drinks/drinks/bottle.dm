@@ -558,77 +558,6 @@
 /obj/item/reagent_containers/food/drinks/bottle/grenadine/empty
 	list_reagents = null
 
-////////////////////////// MOLOTOV ///////////////////////
-/obj/item/reagent_containers/food/drinks/bottle/molotov
-	name = "molotov cocktail"
-	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
-	icon_state = "vodkabottle"
-	list_reagents = list()
-	var/list/accelerants = list(	/datum/reagent/consumable/ethanol, /datum/reagent/fuel, /datum/reagent/clf3, /datum/reagent/phlogiston,
-							/datum/reagent/napalm, /datum/reagent/hellwater, /datum/reagent/toxin/plasma, /datum/reagent/toxin/spore_burning)
-	var/active = 0
-
-/obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
-	..()
-	var/obj/item/reagent_containers/food/drinks/bottle/B = locate() in contents
-	if(B)
-		icon_state = B.icon_state
-		B.reagents.copy_to(src,100)
-		if(!B.isGlass)
-			desc += " You're not sure if making this out of a carton was the brightest idea."
-			isGlass = FALSE
-	return
-
-/obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	var/firestarter = 0
-	for(var/datum/reagent/R in reagents.reagent_list)
-		for(var/A in accelerants)
-			if(istype(R,A))
-				firestarter = 1
-				break
-	if(firestarter && active)
-		hit_atom.fire_act()
-		new /obj/effect/hotspot(get_turf(hit_atom))
-	..()
-
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
-	if(I.get_temperature() && !active)
-		active = 1
-		var/message = "[ADMIN_LOOKUP(user)] has primed a [name] for detonation at [ADMIN_VERBOSEJMP(user)]."
-		GLOB.bombers += message
-		message_admins(message)
-		log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(user)].")
-
-		to_chat(user, "<span class='info'>You light [src] on fire.</span>")
-		add_overlay(GLOB.fire_overlay)
-		if(!isGlass)
-			spawn(50)
-				if(active)
-					var/counter
-					var/target = src.loc
-					for(counter = 0, counter<2, counter++)
-						if(istype(target, /obj/item/storage))
-							var/obj/item/storage/S = target
-							target = S.loc
-					if(istype(target, /atom))
-						var/atom/A = target
-						SplashReagents(A)
-						A.fire_act()
-					qdel(src)
-
-/obj/item/reagent_containers/food/drinks/bottle/molotov/attack_self(mob/user)
-	if(active)
-		if(!isGlass)
-			to_chat(user, "<span class='danger'>The flame's spread too far on it!</span>")
-			return
-		to_chat(user, "<span class='info'>You snuff out the flame on [src].</span>")
-		cut_overlay(GLOB.fire_overlay)
-		active = 0
-
-/obj/item/export/bottle/attack_self(mob/user)
-	to_chat(user, "<span class='danger'>The seal seems fine. Best to not open it.</span>")
-	return
-
 /obj/item/export/bottle
 	name = "Report this please"
 	desc = "A sealed bottle of alcohol, ready to be exported"
@@ -757,6 +686,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/nukashine = 100)
 
 
+// Empty bottles
 /obj/item/reagent_containers/food/drinks/bottle/brown/white
 	name = "white bottle"
 	desc = "A homemade and hand-crafted white glass bottle."

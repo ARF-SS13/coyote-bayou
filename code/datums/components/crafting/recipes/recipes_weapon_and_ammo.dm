@@ -108,11 +108,11 @@
 
 /datum/crafting_recipe/explosive/molotov
 	name = "Molotov Cocktail"
-	result = /obj/item/grenade/homemade/molotov
+	result = /obj/item/reagent_containers/food/drinks/bottle/molotov
 	reqs = list(/obj/item/reagent_containers/rag = 1,
-				/datum/reagent/fuel = 50,
-				/obj/item/reagent_containers/food/drinks/bottle = 1)
-	time = 40
+		/obj/item/reagent_containers/food/drinks/bottle = 1,
+		)
+	time = 2 SECONDS
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
