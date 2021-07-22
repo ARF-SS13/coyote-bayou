@@ -789,114 +789,86 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/scoutcarbine)
 
 /obj/item/book/granter/trait/forgemaster
-	name = "The secrets of the Legion Forgemasters"
-	desc = "All you need to bend the steel right."
+	name = "Ashes of Phoenix: Imperial Weaponsmithing"
+	desc = "Bound in doghide, this book holds lessons from freemen in tributary cities on how to properly maintain and forge new weapons."
 	oneuse = TRUE
 	granted_trait = TRAIT_MASTER_GUNSMITH
 	traitname = "forge mastery"
-	remarks = list("Strike the steel while its hot...", "Don't take a rest..keep hammering...", "Don't forget to make a handle...", "Use gloves when touching red hot metal...", "Watch the sparks dance like fireflies..")
+	remarks = list("Strike while the metal is hot, both in weaponsmithing and in general practice.", "Rest regularly, fatigue is not desired during dangerous metalwork.", "All proper weapons need a handle, do not forget the handle.", "Do not forget gloves when handling hot metal, welding goggles as well.", "Chaos is a ladder, keep an organized forge.")
 	crafting_recipe_types = list(/datum/crafting_recipe/lance, /datum/crafting_recipe/spatha, /datum/crafting_recipe/gladius, /datum/crafting_recipe/trail_carbine, /datum/crafting_recipe/legionshield, /datum/crafting_recipe/brush)
 
 /obj/item/book/granter/trait/chemistry
-	name = "Chemistry for Wastelanders"
-	desc = "A useful book on chemistry."
+	name = "Big Book of Science"
+	desc = "This heavy textbook can teach basic chemistry, but saw more use as a blunt weapon shortly after the Collapse."
 	oneuse = TRUE
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
-	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
+	remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
 
 /obj/item/book/granter/trait/bigleagues
-	name = "Little League Batting Guide"
-	desc = "An extensive guide about swinging bats."
+	name = "Grognak the Barbarian"
+	desc = "A pulp fiction paperback detailing the adventures of a violent barbarian. Surprisingly, this was sold to children."
 	oneuse = TRUE
 	granted_trait = TRAIT_BIG_LEAGUES
 	traitname = "big_leagues"
-	remarks = list("Swing it hard..", "Don't miss...", "Words may hurt you but a big stick hurts more...", "Adding spikes to bats is effective but the referee might complain...")
+	remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
 	
 /obj/item/book/granter/trait/lowsurgery
-	name = "Surgery for Wastelanders"
-	desc = "A useful book on surgery."
+	name = "First Aid Pamphlet"
+	desc = "A flimsy collection of vital tips and tricks for the average American with a sudden injury."
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_LOW
 	traitname = "minor surgery"
-	remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
+	remarks = list("Keep your hands and any injuries clean!", "While bandages help to seal a wound, they do not heal a wound.", "Remain calm, focus on the task at hand, stop the bleeding.", "An open wound can lead to easy infection of said wound.", "Keep track of your home's first aid kit, restock used components regularly.", "If a body part has been lost, ice and transport it with the injured to a hospital.",)
 
 /obj/item/book/granter/trait/midsurgery
-	name = "Surgery for Experts"
-	desc = "A useful book on surgery."
+	name = "D.C. Journal of Internal Medicine"
+	desc = "A nearly intact guide on surgery for pre-collapse medical students and physicians."
 	oneuse = TRUE
 	granted_trait = TRAIT_SURGERY_MID
 	traitname = "intermediate surgery"
-	remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
+	remarks = list("Sterilization is essential before and after surgery.", "Keep track of all your tools, double check body cavities.", "Ensure complete focus while operating on the patient.", "Cauterize incisions once the operation concludes.", "Spare organs and blood must be kept at a low temperature.", "Most prosthesis come with significant trade-offs, and maintenance costs.",)
 
 /obj/item/book/granter/trait/tinkering
-	name = "Tinkering for Wastelander"
-	desc = "A useful book on tinkering."
+	name = "US Army: Weapon Maintenance"
+	desc = "A well-worn pamphlet from Fort Polk, useful tips and tricks compete for space with complaints from a small arms repairman."
 	oneuse = TRUE
 	granted_trait = TRAIT_MASTER_GUNSMITH
 	traitname = "tinkering"
-	remarks = list("Adapt weaponry and armor to your uses...", "Experiment freely...", "You can always try three times...", "Be careful with loaded guns...")
-
-/obj/item/book/granter/trait/spirit_teachings
-	name = "Teachings of the Machine Spirits"
-	desc = "A book all about tribal life among the Machine Spirits."
-	icon_state = "ms_teachings"
-	oneuse = TRUE
-	granted_trait = TRAIT_MACHINE_SPIRITS
-	traitname = "The Machine Spirits"
-	remarks = list("There are five Machine Spirits...", "Each govern an aspect of life...", "Always respect the Machine Spirits...", "Never use them for selfish reasons...", "Honor and love those blessed by the machine spirits...")
-
-/obj/item/book/granter/trait/mars_teachings
-	name = "Teachings of Mars"
-	desc = "A book all about Mars and the teachings he gives to the wise."
-	icon_state = "mars_teachings"
-	oneuse = TRUE
-	granted_trait = TRAIT_MARS_TEACH
-	traitname = "Mars' Teachings"
-	remarks = list("Remember the aeternit imperi of the Caesar's Legion...", "Do not abuse the knowledge of Mars to break his will, or be broken...", "Remember: In hoc signo taurus vinces...")
+	remarks = list("There are no thieves in the army, everyone's just trying to get their shit back.", "As soon as you think you've heard the dumbest way a man's broken his rifle, the door to your office will open.", "Act like you're mediocre, because otherwise they'll ask you to do extra work.", "Third time's the charm, but that's about it.", "Ensure your firearm is emptied before any maintenance work.")
 
 /obj/item/book/granter/trait/techno
-	name = "Craftsmanship Monthly"
-	desc = "A book on how to use advanced tools and production machinery. It's pretty complicated."
+	name = "Dean's Electronics"
+	desc = "A study book on the field of electronics. A note on the cover says that it is for the budding young electrician in everyone!"
 	oneuse = TRUE
 	granted_trait = TRAIT_TECHNOPHREAK
 	traitname = "craftsmanship"
-	remarks = list("Try turning it off and on again...", "Always craft in good form...", "Don't forget PPE...", "Keep your mechanisms OILED...", "Stay organized...")
+	remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
 
 /obj/item/book/granter/trait/pa_wear
-	name = "Advanced Armor and You"
-	desc = "An in-depth look into how power armor functions."
+	name = "US Army: Mechanized Infantry Handbook"
+	desc = "A battered olive-green handbook, detailing lessons to ancient mechanized US Army infantry units."
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
-	remarks = list("Don't forget to do daily maintenance...", "Keep your armor well guarded..", "Slow and steady wins the race...", "Positioning is important while moving slow...", "Tired? Take a nap in your suit...", "Safety comes first when wearing your gear...")
+	remarks = list("Daily maintenance is essential, clean and repair your suit often.", "Don't let overconfidence kill you, you are not invincible.", "Mechanized infantry should always be supported by regular infantry.", "You move slowly, pay attention to your position relative to the enemy.", "You are always vulnerable to ambush, do not rest in the field.", "AP rounds will shred your suit, you are not invincible.")
 
 /obj/item/book/granter/trait/trekking
-	name = "Ranger's Guide to the Wasteland"
-	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."
+	name = "Wasteland Survival Guide"
+	desc = "This indispensable guidebook contains everything that a survivor in the wasteland would need to know."
 	oneuse = TRUE
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
-	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
-
-
-/obj/item/book/granter/trait/trekking/legion
-	name = "Speculatores Codice"
-	desc = "An extensive guide about scouting, ambushing, and moving through harsh terrain. Originally written as a manual for the infamous Speculatores of the Legion."
-	oneuse = TRUE
-	granted_trait = TRAIT_HARD_YARDS
-	traitname = "trekking"
-	remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
-
+	remarks = list("Tribes and gangs often hide the best loot in the back room.", "Radiation is best avoided entirely, but it helps to carry spare rad-x.", "Whether ancient or recent, landmines are still a threat, and readers should look out for them.", "Injuries and open bleeding make it harder to travel, always carry spare medical supplies.", "Most animals are simple-minded, and can be led into easy lines of fire.")
 
 /obj/item/book/granter/trait/gunslinger
-	name = "Shalashaska: A gunslinger's memoirs"
-	desc = "The memoirs of an old gunslinger, has some useful advice."
+	name = "Tycho: Life of a Lawman"
+	desc = "The memoirs of a self-acclaimed companion to a mythical folk hero, between the blustering and tales of Texas Rangers there are snippets of useful information."
 	oneuse = TRUE
 	granted_trait = TRAIT_NICE_SHOT
 	traitname = "gunslinging"
-	remarks = list("Engravings offer no tactical advantage whatsoever...", "I love to reload during battle...", "There's nothing like the feeling of slamming a long silver bullet into a well greased chamber...", "It doesn't feel right to shoot an unarmed man, but I'll get over it....", "You’re pretty good...", "The moment any truth is passed on, it starts turning into fiction. The problem is, fiction inspires people more than facts...")
+	remarks = list("Engravings offer no tactical advantage whatsoever!", "I love to reload during battle.", "There's nothing like the feeling of slamming a long silver bullet into a well greased chamber.", "It doesn't feel right to shoot an unarmed man, but you get over it.", "He was pretty good, but I was better. At least, so I thought.", "The moment any truth is passed on, it starts turning into fiction. The problem is, fiction inspires people more than facts.")
 
 
 /*
@@ -910,48 +882,44 @@
 */
 
 /obj/item/book/granter/trait/selection
-	name = "Private Diary"
-	desc = "Your private diary, reminding you of the knowledge you previously had."
+	name = "Burned Book"
+	desc = "Pulled from the ashes of the old world, it feels warm to the touch. It looks to be in poor condition."
 	granted_trait = null
 	pages_to_mastery = 0
 	time_per_page = 0
 
 /obj/item/book/granter/trait/selection/attack_self(mob/user)
-	var/list/choices = list("Chemistry","Craftsmanship","Melee Expert","Minor Surgery","Power Armor","Tinkerer","Trekking")
+	var/list/choices = list("Big Book of Science","Dean's Electronics","Grognak the Barbarian","First Aid Pamphlet","US Army: Weapon Maintenance","Wasteland Survival Guide")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
 			if(null)
 				return 0
-			if("Trekking")
+			if("Wasteland Survival Guide")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"
-				remarks = list("It never hurts to take the road less traveled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
-			if("Minor Surgery")
+				remarks = list("Tribes and gangs often hide the best loot in the back room.", "Radiation is best avoided entirely, but it helps to carry spare rad-x.", "Whether ancient or recent, landmines are still a threat, and readers should look out for them.", "Injuries and open bleeding make it harder to travel, always carry spare medical supplies.", "Most animals are simple-minded, and can be led into easy lines of fire.")
+			if("First Aid Pamphlet")
 				granted_trait = TRAIT_SURGERY_LOW
 				traitname = "minor surgery"
-				remarks = list("Sterilise your hands and all tools...", "Don't forget your instruments inside patients...", "Maintain focus when cutting...", "Cauterise incisions post-operation...", "Keep organs and blood packs refrigerated...", "Welcome the new era of prosthetic replacements...",)
-			if("Chemistry")
+				remarks = list("Keep your hands and any injuries clean!", "While bandages help to seal a wound, they do not heal a wound.", "Remain calm, focus on the task at hand, stop the bleeding.", "An open wound can lead to easy infection of said wound.", "Keep track of your home's first aid kit, restock used components regularly.", "If a body part has been lost, ice and transport it with the injured to a hospital.",)
+			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
 				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
-				remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...", "Potassium and water don't mix...")
-			if("Craftsmanship")
+				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
+			if("Dean's Electronics")
 				granted_trait = TRAIT_TECHNOPHREAK
 				traitname = "craftsmanship"
-				remarks = list("Try turning it off and on again...", "Always craft in good form...", "Don't forget PPE...", "Keep your mechanisms OILED...", "Stay organized...")
-			if("Melee Expert")
+				remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
+			if("Grognak the Barbarian")
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "hitting things"
-				remarks = list("Utilise your momentum...", "Put weight behind your blows...", "Moves should transition and flow together...", "Stagger your opponent...")
-			if("Power Armor")
-				granted_trait = TRAIT_PA_WEAR
-				traitname = "Power Armor"
-				remarks = list("Don't forget to do daily maintenance...","Keep your armor well guarded..", "Slow and steady wins the race...", "Positioning is important while moving slow...","Tired? Take a nap in your suit...", "Safety comes first when wearing your gear...")
-			if("Tinkerer")
+				remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
+			if("US Army: Weapon Maintenance")
 				granted_trait = TRAIT_MASTER_GUNSMITH
 				traitname = "tinkering"
-				remarks = list("Adapt weaponry and armor to your uses...", "Experiment freely...", "You can always try three times...", "Be careful with loaded guns...")
+				remarks = list("There are no thieves in the army, everyone's just trying to get their shit back.", "As soon as you think you've heard the dumbest way a man's broken his rifle, the door to your office will open.", "Act like you're mediocre, because otherwise they'll ask you to do extra work.", "Third time's the charm, but that's about it.", "Ensure your firearm is emptied before any maintenance work.")
 	return ..()
 
 
