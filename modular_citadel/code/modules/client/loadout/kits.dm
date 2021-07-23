@@ -22,3 +22,13 @@
 	new /obj/item/clothing/head/helmet/f13/herbertranger(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/storage/backpack/satchel/enclave(src)
+
+//Whiskey - WhiskeyXL
+/obj/item/storage/box/large/custom_kit/whiskey/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey(src)
+	new /obj/item/clothing/shoes/cowboyboots(src)
+	new /obj/item/gun/ballistic/revolver/revolver44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/clothing/under/f13/ranger(src)
+	new /obj/item/storage/belt/waistsheath(src)
