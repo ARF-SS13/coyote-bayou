@@ -894,6 +894,13 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	icon_state = "foxranger"
 	item_state = "foxranger"
 
+/obj/item/clothing/suit/armor/f13/rangercombat/degancustom
+	name = "sniper riot gear"
+	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
+	icon_state = "foxranger"
+	item_state = "foxranger"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
+
 /obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
 	name = "11th armored calvary armor"
 	desc = "A suit of special military grade riot control gear and a duster, worn by 11th Armored Calvary Regiment members in The Divide before the war. Yellow markings are painted on the shoulderpads and forearm guards."

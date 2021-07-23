@@ -32,3 +32,11 @@
 	new /obj/item/ammo_box/m44(src)
 	new /obj/item/clothing/under/f13/ranger(src)
 	new /obj/item/storage/belt/waistsheath(src)
+
+//Degan - Kuusday
+/obj/item/storage/box/large/custom_kit/degan/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/degancustom(src)
+	new /obj/item/clothing/suit/armor/f13/rangercombat/degancustom(src)
+	new /obj/item/storage/belt/military(src)
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/clothing/gloves/combat(src)
