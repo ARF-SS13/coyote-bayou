@@ -205,3 +205,16 @@
 /datum/mood_event/cleared_stomach
 	description = "<span class='nicegreen'>Feels nice to get that out of the way!</span>\n"
 	mood_change = 3
+
+//SILVER RING
+/datum/mood_event/equipped_ring
+	description = "<span class='nicegreen'>You feel like you have a new purpose in life with your newly equipped silver ring.</span>\n"
+	mood_change = 0.3 //Just enough to cross a mood threshold
+
+/datum/mood_event/equipped_ring/gold
+	description = "<span class='nicegreen'>Having such a gold ring on your hand makes you feel a bit more secure about your personal wealth status.</span>\n"
+	mood_change = 0.6
+
+/datum/mood_event/equipped_ring/diamond
+	description = "<span class='nicegreen'>Wherever or however you gotten this diamond ring, it took a good amount of work trying to get this.</span>\n"
+	mood_change = 1
