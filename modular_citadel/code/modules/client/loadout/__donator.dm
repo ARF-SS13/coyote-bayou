@@ -42,4 +42,4 @@
 /datum/gear/donator/kits/whiskey
 	name = "Wihskey's Belongings"
 	path = /obj/item/storage/box/large/custom_kit/whiskey
-	ckeywhitelist = list("WhiskeyxL")
+	ckeywhitelist = list("whiskeyxl")
