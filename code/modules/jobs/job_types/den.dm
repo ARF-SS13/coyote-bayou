@@ -668,7 +668,7 @@ Mayor
 		/obj/item/detective_scanner=1,
 		/obj/item/storage/box/gloves=1,
 		/obj/item/storage/box/evidence=1,
-		/obj/item/ammo_box/a357=2)
+		/obj/item/ammo_box/c38=2)
 
 /*--------------------------------------------------------------*/
 
