@@ -326,12 +326,6 @@
 	if(!J)
 		J = SSjob.GetJob(H.job)
 
-	if(H.nameless && J.dresscodecompliant)
-		if(J.title in GLOB.command_positions)
-			H.real_name = J.title
-		else
-			H.real_name = "[J.title] #[rand(10000, 99999)]"
-
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C) && C.bank_support)
 		C.access = J.get_access()

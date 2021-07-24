@@ -63,8 +63,6 @@
 	var/name_override //For temporary visible name changes
 	var/genital_override = FALSE //Force genitals on things incase of chems
 
-	var/nameless = FALSE //For drones of both the insectoid and robotic kind. And other types of nameless critters.
-
 	var/custom_species = null
 
 	var/datum/physiology/physiology

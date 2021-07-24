@@ -7,7 +7,6 @@
 	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
 	var/list/features = list("FFF") //first value is mutant color
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
-	var/nameless = FALSE
 	var/custom_species	//siiiiigh I guess this is important
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
@@ -52,7 +51,6 @@
 	destination.set_species(species.type, icon_update=0)
 	destination.dna.species.say_mod = species.say_mod
 	destination.dna.real_name = real_name
-	destination.dna.nameless = nameless
 	destination.dna.custom_species = custom_species
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
 	if(ishuman(destination))
@@ -77,7 +75,6 @@
 	new_dna.species = new species.type
 	new_dna.species.say_mod = species.say_mod
 	new_dna.real_name = real_name
-	new_dna.nameless = nameless
 	new_dna.custom_species = custom_species
 	new_dna.mutations = mutations.Copy()
 
@@ -288,7 +285,7 @@
 		return
 
 /datum/dna/proc/is_same_as(datum/dna/D)
-	if(uni_identity != D.uni_identity || mutation_index != D.mutation_index || real_name != D.real_name || nameless != D.nameless || custom_species != D.custom_species)
+	if(uni_identity != D.uni_identity || mutation_index != D.mutation_index || real_name != D.real_name || custom_species != D.custom_species)
 		return FALSE
 	if(species.type != D.species.type || features != D.features || blood_type != D.blood_type || skin_tone_override != D.skin_tone_override)
 		return FALSE

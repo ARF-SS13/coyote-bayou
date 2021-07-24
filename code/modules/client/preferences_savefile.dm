@@ -187,7 +187,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	damagescreenshake	= sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	widescreenpref		= sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
 	end_of_round_deathmatch = sanitize_integer(end_of_round_deathmatch, FALSE, TRUE, initial(end_of_round_deathmatch))
-	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 	autostand			= sanitize_integer(autostand, 0, 1, initial(autostand))
 	cit_toggles			= sanitize_integer(cit_toggles, 0, 16777215, initial(cit_toggles))
 	auto_ooc			= sanitize_integer(auto_ooc, 0, 1, initial(auto_ooc))
@@ -297,7 +296,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["arousable"], arousable)
 	WRITE_FILE(S["widescreenpref"], widescreenpref)
 	WRITE_FILE(S["end_of_round_deathmatch"], end_of_round_deathmatch)
-	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 	WRITE_FILE(S["autostand"], autostand)
 	WRITE_FILE(S["cit_toggles"], cit_toggles)
 	WRITE_FILE(S["preferred_chaos"], preferred_chaos)
@@ -352,7 +350,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Character
 	S["real_name"]				>> real_name
-	S["nameless"]				>> nameless
 	S["custom_species"]			>> custom_species
 	S["name_is_always_random"]	>> be_random_name
 	S["body_is_always_random"]	>> be_random_body
@@ -511,6 +508,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["special_a"]			>> special_a
 	S["special_l"]			>> special_l
 
+	READ_FILE(S["matchmaking_prefs"], matchmaking_prefs)
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -530,7 +529,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!custom_names[custom_name_id])
 			custom_names[custom_name_id] = get_default_name(custom_name_id)
 
-	nameless		= sanitize_integer(nameless, 0, 1, initial(nameless))
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 
@@ -647,6 +645,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	all_quirks = SANITIZE_LIST(all_quirks)
 
+	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
+
 	cit_character_pref_load(S)
 
 	return 1
@@ -668,7 +668,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Character
 	WRITE_FILE(S["real_name"]				, real_name)
-	WRITE_FILE(S["nameless"]				, nameless)
 	WRITE_FILE(S["custom_species"]			, custom_species)
 	WRITE_FILE(S["name_is_always_random"]	, be_random_name)
 	WRITE_FILE(S["body_is_always_random"]	, be_random_body)
@@ -791,6 +790,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["loadout"] << text_to_save
 	else
 		S["loadout"] << "" //empty string to reset the value
+
+	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
 
 	cit_character_pref_save(S)
 
