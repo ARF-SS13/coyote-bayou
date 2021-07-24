@@ -40,7 +40,7 @@
 	ckeywhitelist = list("killergryphyn")
 
 /datum/gear/donator/kits/whiskey
-	name = "Wihskey's Belongings"
+	name = "Whiskey's Belongings"
 	path = /obj/item/storage/box/large/custom_kit/whiskey
 	ckeywhitelist = list("whiskeyxl")
 
