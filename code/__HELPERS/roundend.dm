@@ -281,6 +281,8 @@
 	parts += medal_report()
 	//Station Goals
 	parts += goal_report()
+	//Matchmaking!
+	parts += matchmaking_report()
 
 	listclearnulls(parts)
 
@@ -451,6 +453,16 @@
 			parts += com
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 	return ""
+
+
+/datum/controller/subsystem/ticker/proc/matchmaking_report()
+	var/list/matches_log = SSmatchmaking.matches_log
+	if(!length(matches_log))
+		return ""
+	var/list/parts = list("<span class='header'>Matchmakings:</span>")
+	parts += matches_log
+	return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
+
 
 /datum/controller/subsystem/ticker/proc/antag_report()
 	var/list/result = list()

@@ -8,6 +8,8 @@ SUBSYSTEM_DEF(matchmaking)
 	var/list/all_match_types = list()
 	/// Associative list of matches made. list: all_match_types[string ref] -> string ref
 	var/list/matches_made = list()
+	/// List of strings for the round end report.
+	var/list/matches_log = list()
 
 
 /datum/controller/subsystem/matchmaking/Initialize(timeofday)
@@ -67,6 +69,8 @@ SUBSYSTEM_DEF(matchmaking)
 	var/span_class = null
 	/// Whether we want to be remembered on every match, or just the first time.
 	var/remind_only_first_time = FALSE
+	/// Description of the matching act for the round-end report: "Candidate, the (job), [log_verb] bachelor, the (job)."
+	var/log_verb = ""
 
 
 /datum/matchmaking_pref/New(mob/living/pref_holder, matches_aimed = 1)
@@ -135,6 +139,8 @@ SUBSYSTEM_DEF(matchmaking)
 			LAZYADD(SSmatchmaking.matches_made[bachelor_ref], candidate_ref)
 			enact_match(bachelor)
 			aspiration.enact_match(pref_holder)
+			SSmatchmaking.matches_log += "<b>[pref_holder.real_name]</b>, the [candidate_job.title], [log_verb] <b>[bachelor.real_name]</b>, the [bachelor_job.title]."
+			log_game("MATCHMAKING: [pref_holder.real_name], the [candidate_job.title], [log_verb] [bachelor.real_name], the [bachelor_job.title].")
 			break
 
 		if(matches_found >= matches_aimed)
@@ -187,6 +193,7 @@ SUBSYSTEM_DEF(matchmaking)
 	acquire_memory = "You remember a friendly face you haven't seen in a while"
 	span_class = "nicegreen"
 	max_matches = 3
+	log_verb = "revisited fond moments with"
 
 
 /datum/matchmaking_pref/rival
@@ -195,6 +202,7 @@ SUBSYSTEM_DEF(matchmaking)
 	acquire_memory = "You remember a good-for-nothing piece of bad memory"
 	span_class = "red"
 	max_matches = 3
+	log_verb = "held mutual contempt for"
 
 
 /datum/matchmaking_pref/mentor
@@ -202,6 +210,7 @@ SUBSYSTEM_DEF(matchmaking)
 	target_type = /datum/matchmaking_pref/disciple
 	acquire_memory = "You remember an old disciple you once taught"
 	span_class = "blue"
+	log_verb = "taught"
 
 
 /datum/matchmaking_pref/disciple
@@ -209,6 +218,7 @@ SUBSYSTEM_DEF(matchmaking)
 	target_type = /datum/matchmaking_pref/mentor
 	acquire_memory = "You remember an old mentor you've lost contact with"
 	span_class = "blue"
+	log_verb = "was mentored by"
 
 
 /datum/matchmaking_pref/patron
@@ -216,6 +226,7 @@ SUBSYSTEM_DEF(matchmaking)
 	target_type = /datum/matchmaking_pref/protegee
 	acquire_memory = "You remember an old protegee you once took care of"
 	span_class = "green"
+	log_verb = "extended their protection to"
 
 
 /datum/matchmaking_pref/protegee
@@ -223,6 +234,7 @@ SUBSYSTEM_DEF(matchmaking)
 	target_type = /datum/matchmaking_pref/patron
 	acquire_memory = "You remember an old patron who once helped you set youreself up in life"
 	span_class = "green"
+	log_verb = "owed favors to"
 
 
 /datum/matchmaking_pref/outlaw
@@ -234,15 +246,17 @@ SUBSYSTEM_DEF(matchmaking)
 	we_know_target = FALSE
 	remind_only_first_time = TRUE
 	max_matches = 3
+	log_verb = "was hunted by"
 
 
 /datum/matchmaking_pref/bounty_hunter
-	pref_text = "Head bounties"
+	pref_text = "Hunt outlaw bounties"
 	target_type = /datum/matchmaking_pref/outlaw
 	spawn_time = 5 MINUTES
 	acquire_memory = "You remember the face in the wanted poster of a criminal, rumored to be wandering this area, for whose head you've been promised a reward"
 	span_class = "danger"
 	max_matches = 3
+	log_verb = "hunted"
 
 /datum/matchmaking_pref/bounty_hunter/on_match_enacted(mob/living/target)
 	if(pref_holder.stat != CONSCIOUS || pref_holder.restrained(pref_holder))
