@@ -81,7 +81,7 @@ Elder
 	neck = /obj/item/clothing/neck/cloak/bos/right
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		)
 
@@ -147,7 +147,7 @@ Head Paladin
 	id = 			/obj/item/card/id/dogtag
 	neck = 			/obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
@@ -306,7 +306,7 @@ Head Knight
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 		)
 
@@ -398,7 +398,7 @@ Star Paladin
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/plasma/pistol = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
 	)
 
@@ -487,7 +487,7 @@ Paladin
 	belt = 			/obj/item/storage/belt/military
 	neck = /obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 
@@ -729,7 +729,7 @@ Senior Knight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 	
@@ -807,7 +807,7 @@ Knight
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival=1,
+		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
 
