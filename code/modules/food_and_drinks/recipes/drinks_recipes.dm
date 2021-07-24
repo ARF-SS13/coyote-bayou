@@ -1008,6 +1008,18 @@
 	required_reagents = list(/datum/reagent/iron = 5,  /datum/reagent/consumable/ethanol/mauna_loa = 10, /datum/reagent/sulfur = 5)
 	required_temp = 900 // (626.85'C)
 
+/datum/chemical_reaction/nukafloat
+	name = "Nuka Float"
+	id = /datum/reagent/consumable/nukafloat
+	results = list(/datum/reagent/consumable/nukafloat = 15)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
+	
+/datum/chemical_reaction/sunsetfloat
+ 	name = "Sunset Float"
+	id = /datum/reagent/consumable/sunsetfloat
+	results = list(/datum/reagent/consumable/sunsetfloat = 15)
+	required_reagents = list(/datum/reagent/consumable/sunset = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
+	
 /datum/chemical_reaction/nukashine
 	name = "Nukashine"
 	id = /datum/reagent/consumable/ethanol/nukashine
