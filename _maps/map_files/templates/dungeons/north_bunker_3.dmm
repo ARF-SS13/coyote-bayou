@@ -215,7 +215,10 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "gl" = (
-/turf/open/floor/mineral/gold,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "gv" = (
 /obj/structure/fluff/railing,
@@ -422,6 +425,10 @@
 /obj/machinery/computer/pandemic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"lq" = (
+/obj/structure/flora/wasteplant/wild_fungus,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "lN" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -467,9 +474,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "mG" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/closed/mineral/random/high_chance,
+/area/f13/caves)
 "mN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap,
@@ -483,6 +492,12 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
+"nB" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_7"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "nJ" = (
 /obj/structure/fluff/railing{
 	dir = 4
@@ -635,7 +650,7 @@
 /obj/machinery/door/poddoor{
 	id = 455
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "sZ" = (
 /obj/structure/chair/comfy/beige{
@@ -1454,6 +1469,10 @@
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/grass,
 /area/f13/bunker)
+"PW" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "PY" = (
 /obj/structure/fluff/railing,
 /mob/living/simple_animal/hostile/bloatfly,
@@ -1597,6 +1616,16 @@
 /obj/machinery/light/fo13colored/Red,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"Vi" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"Vp" = (
+/obj/effect/decal/remains/human,
+/turf/closed/wall/r_wall/rust,
+/area/f13/bunker)
 "Vt" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf,
 /obj/machinery/light{
@@ -1692,6 +1721,12 @@
 "XS" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"Yc" = (
+/obj/machinery/computer/shuttle/northbunkerelevator{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
 "Ye" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -2288,7 +2323,7 @@ XS
 XS
 cf
 Eo
-XS
+PW
 XS
 XS
 Gn
@@ -2460,7 +2495,7 @@ WC
 WC
 WC
 Xm
-mG
+IF
 Ye
 Rx
 Xm
@@ -3582,8 +3617,8 @@ ZX
 ZX
 Kc
 vH
-gl
-gl
+Nj
+Nj
 ZX
 Kc
 ZX
@@ -3640,10 +3675,10 @@ ZX
 ZX
 XS
 XS
-Kc
+mG
 ZX
 Kc
-gl
+Nj
 bR
 Nj
 ZX
@@ -3702,12 +3737,12 @@ ZX
 ZX
 XS
 XS
+Vi
 Kc
 Kc
-Kc
-gl
+Nj
 vH
-gl
+Nj
 ZX
 ZX
 ZX
@@ -3825,7 +3860,7 @@ ZX
 ZX
 XS
 XS
-ZX
+gl
 ZX
 ZX
 ZX
@@ -3888,7 +3923,7 @@ XS
 od
 XS
 XS
-ZX
+gl
 ZX
 ZX
 ZX
@@ -3949,9 +3984,9 @@ ZX
 XS
 XS
 XS
-XS
-ZX
-ZX
+lq
+gl
+gl
 ZX
 ZX
 ZX
@@ -4083,7 +4118,7 @@ Ye
 wd
 Xm
 XH
-pX
+nB
 St
 St
 Ye
@@ -4192,7 +4227,7 @@ XS
 XS
 ZX
 ZX
-ZX
+gl
 XS
 XS
 XS
@@ -4254,11 +4289,11 @@ ZX
 ZX
 ZX
 ZX
-ZX
+gl
 XS
 fe
-ZX
-ZX
+gl
+gl
 ZX
 ZX
 Xm
@@ -4316,10 +4351,10 @@ ZX
 XS
 ZX
 ZX
-ZX
+gl
 XS
 XS
-ZX
+gl
 ZX
 ZX
 ZX
@@ -4381,7 +4416,7 @@ ZX
 aq
 XS
 XS
-ZX
+gl
 ZX
 ZX
 ZX
@@ -4503,7 +4538,7 @@ ZX
 ZX
 ZX
 XS
-XS
+lq
 XS
 ZX
 ZX
@@ -5142,7 +5177,7 @@ Xm
 Xm
 Nb
 Ye
-Ye
+Yc
 YA
 te
 kv
@@ -5204,7 +5239,7 @@ WC
 Xm
 cv
 Ye
-Ko
+Vp
 Qv
 iX
 iX

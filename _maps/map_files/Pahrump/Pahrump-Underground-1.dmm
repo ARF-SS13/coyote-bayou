@@ -530,6 +530,7 @@
 	},
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/structure/rack,
+/obj/item/healthanalyzer/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "ayA" = (
@@ -4165,6 +4166,13 @@
 /obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
+"dFt" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "dFv" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -5469,6 +5477,14 @@
 	icon_state = "bar"
 	},
 /area/f13/followers)
+"eJH" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "eJU" = (
 /obj/effect/decal/fakelattice,
 /obj/machinery/light/small{
@@ -6194,6 +6210,16 @@
 /obj/machinery/telecomms/server/presets/legion,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"fqc" = (
+/obj/structure/closet/crate{
+	icon_state = "medicalcrate"
+	},
+/obj/item/clothing/glasses/hud/health/night,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "fqz" = (
 /obj/item/storage/trash_stack,
 /obj/machinery/light/broken{
@@ -10273,6 +10299,7 @@
 /area/f13/bunker)
 "ivY" = (
 /obj/machinery/light/small/broken,
+/mob/living/simple_animal/hostile/supermutant,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "iwg" = (
@@ -11669,6 +11696,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"jzy" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "jzC" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -14068,6 +14099,16 @@
 	},
 /turf/open/floor/carpet,
 /area/f13/den)
+"luc" = (
+/obj/structure/decoration/rag,
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
 "luk" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light/small{
@@ -20273,7 +20314,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/clothing/head/helmet/f13/combat/mk2,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "qhW" = (
@@ -20533,7 +20574,6 @@
 /area/f13/tunnel)
 "qsr" = (
 /obj/structure/rack,
-/obj/item/twohanded/fireaxe/bmprsword,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "qsM" = (
@@ -22235,7 +22275,7 @@
 /area/f13/tunnel)
 "rxO" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/rifle/hunting,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ryb" = (
@@ -22341,9 +22381,9 @@
 /area/f13/brotherhood/operations)
 "rAx" = (
 /obj/structure/rack,
-/obj/item/ammo_box/a308,
-/obj/item/ammo_box/a308,
-/obj/item/ammo_box/a308,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "rAW" = (
@@ -22466,7 +22506,7 @@
 /area/f13/bunker)
 "rFQ" = (
 /obj/structure/rack,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "rFR" = (
@@ -22704,6 +22744,10 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
+"rNd" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "rNj" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
@@ -23916,6 +23960,10 @@
 	color = "000000"
 	},
 /turf/open/floor/carpet/black,
+/area/f13/tunnel)
+"sVv" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "sVL" = (
 /obj/structure/statue/uranium/nuke,
@@ -28743,6 +28791,11 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/den)
+"xow" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "xoS" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/indestructible/ground/inside/mountain,
@@ -45431,7 +45484,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+tTy
 xVz
 xVz
 xVz
@@ -78326,7 +78379,7 @@ eLE
 uoO
 qgo
 nBk
-rxO
+xow
 nBk
 tEH
 nBk
@@ -79876,7 +79929,7 @@ nBk
 nBk
 qUv
 nBk
-nBk
+rNd
 nBk
 nBk
 xVt
@@ -80390,7 +80443,7 @@ uoO
 uoO
 uoO
 nBk
-uoO
+nBk
 uoO
 uoO
 uoO
@@ -80647,7 +80700,7 @@ uoO
 hQE
 bqO
 nBk
-uoO
+nBk
 uoO
 uoO
 uoO
@@ -80899,12 +80952,12 @@ qUx
 lnr
 lnr
 lnr
-lnr
+sVv
 lnr
 uoO
 nBk
-uoO
-uoO
+nBk
+nBk
 uoO
 uoO
 uoO
@@ -81154,14 +81207,14 @@ eLE
 uoO
 qUO
 lnr
-lnr
+sVv
 lnr
 lnr
 lnr
 wHB
 nBk
-uoO
-uoO
+nBk
+nBk
 uoO
 uoO
 uoO
@@ -81417,8 +81470,8 @@ lnr
 lnr
 uoO
 nBk
+rNd
 nBk
-uoO
 uoO
 uoO
 uoO
@@ -81675,7 +81728,7 @@ uoO
 uoO
 uoO
 nBk
-uoO
+nBk
 uoO
 uoO
 uoO
@@ -81932,7 +81985,7 @@ uoO
 uoO
 uoO
 nBk
-uoO
+nBk
 uoO
 uoO
 uoO
@@ -82443,9 +82496,9 @@ fLU
 uoO
 uoO
 uoO
-uoO
 nBk
-uoO
+nBk
+nBk
 uoO
 uoO
 uoO
@@ -82699,10 +82752,10 @@ oPR
 fLU
 fLU
 uoO
-uoO
 nBk
 nBk
-uoO
+nBk
+nBk
 uoO
 uoO
 lnr
@@ -83214,7 +83267,7 @@ dbx
 uel
 nBk
 nBk
-uoO
+nBk
 uoO
 hQE
 nBk
@@ -83468,7 +83521,7 @@ dbx
 dbx
 rVd
 tsK
-dcf
+luc
 vvB
 iSb
 nBk
@@ -83718,16 +83771,16 @@ eLE
 uoO
 fLU
 gmN
-dbx
-dbx
+oPR
+eJH
 pHq
 dbx
-dbx
+eJH
 smm
 qIH
 fLU
 nBk
-uoO
+nBk
 nBk
 nBk
 nBk
@@ -84490,8 +84543,8 @@ uoO
 fLU
 oVe
 dbx
-fLU
-uoO
+dFt
+hQE
 uoO
 uoO
 aoj
@@ -84747,8 +84800,8 @@ uoO
 fLU
 pdH
 dbx
-fLU
-uoO
+oPR
+hQE
 xyk
 xyk
 xyk
@@ -85004,8 +85057,8 @@ uoO
 fLU
 ppv
 dbx
-fLU
-aoj
+fqc
+hQE
 xyk
 rce
 sYr
@@ -85262,7 +85315,7 @@ fLU
 fLU
 fLU
 fLU
-uoO
+hQE
 xyk
 rln
 sYr
@@ -85779,7 +85832,7 @@ eLE
 uoO
 xyk
 rrZ
-rrZ
+jzy
 rrZ
 rrZ
 xyk
