@@ -106,6 +106,11 @@ Tribal Shaman
 		/datum/outfit/loadout/invoker, //Red shaman
 		/datum/outfit/loadout/ascetic, //Blue shaman
 	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13druid,
+		),
+	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -170,6 +175,17 @@ Tribal Head Hunter
 	outfit = /datum/outfit/job/tribal/f13Hhunter
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13hunter,
+		),
+	)
 
 /datum/outfit/job/tribal/f13Hhunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -213,6 +229,21 @@ Druid
 	outfit = /datum/outfit/job/tribal/f13druid
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13spiritpledged,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/tribal/f13shaman,
+		),
+	)
 
 /datum/outfit/job/tribal/f13druid/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -263,8 +294,23 @@ Villager
 		/datum/outfit/loadout/mender,	//Ritual dagger, Improvized gauze, Healing powders, Mortar
 		/datum/outfit/loadout/craftsman, //Crude tools
 	)
-
-/datum/job/tribals/f13villager/after_spawn(mob/living/carbon/human/H, mob/M)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13spiritpledged,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/tribal/f13druid,
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13hunter,
+		),
+	)
 
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
@@ -341,6 +387,21 @@ Hunter
 		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
 		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
 	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13spiritpledged,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/tribal/f13Hhunter,
+		),
+	)
 
 /datum/outfit/job/tribal/f13hunter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -401,6 +462,16 @@ Spirit-Pledged
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/tribal,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/tribal/f13druid,
+			/datum/job/tribal/f13villager,
+			/datum/job/tribal/f13hunter,
+		),
+	)
 
 /datum/outfit/job/tribal/f13spiritpledged
 	name = "Spirit-Pledged"

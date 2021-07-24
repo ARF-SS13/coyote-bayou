@@ -170,3 +170,17 @@
 	HSL[3] = min(HSL[3],0.4)
 	var/list/RGB = hsl2rgb(arglist(HSL))
 	return "#[num2hex(RGB[1],2)][num2hex(RGB[2],2)][num2hex(RGB[3],2)]"
+
+/proc/sanitize_matchmaking_prefs(matchmaking_prefs)
+	if(!SSmatchmaking?.initialized)
+		return SANITIZE_LIST(matchmaking_prefs)
+	if(!islist(matchmaking_prefs))
+		return list()
+	. = list()
+	var/list/all_valid_types = SSmatchmaking.all_match_types
+	for(var/datum/matchmaking_pref/match_pref as anything in matchmaking_prefs)
+		if(!(match_pref in all_valid_types))
+			continue
+		if(matchmaking_prefs[match_pref] < 1)
+			continue
+		.[match_pref] = min(matchmaking_prefs[match_pref], initial(match_pref.max_matches))

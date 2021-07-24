@@ -269,9 +269,19 @@ Great Khan
 	minimal_access = list(ACCESS_KHAN)
 
 	loadout_options = list(
-	///datum/outfit/loadout/pusher,
-	/datum/outfit/loadout/enforcer,
-	/datum/outfit/loadout/brawler)
+		/datum/outfit/loadout/enforcer,
+		/datum/outfit/loadout/brawler,
+		)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13raider,
+			/datum/job/wasteland/f13pusher,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13raider,
+			/datum/job/wasteland/f13pusher,
+		),
+	)
 
 /datum/outfit/job/wasteland/f13pusher
 	name = "Great Khan"
@@ -353,6 +363,19 @@ Raider
 
 	access = list()
 	minimal_access = list()
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13raider,
+			/datum/job/wasteland/f13pusher,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13raider,
+			/datum/job/wasteland/f13pusher,
+		),
+		/datum/matchmaking_pref/outlaw = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+	)
 	loadout_options = list(
 	/datum/outfit/loadout/raider_supafly,
 	/datum/outfit/loadout/raider_yankee,
@@ -601,6 +624,33 @@ Raider
 
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13detective,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13detective,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13detective,
+		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13mobboss,
+		),
+		/datum/matchmaking_pref/protegee = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/bounty_hunter = list(
+			/datum/job/wasteland/f13raider,
+		),
+	)
 	loadout_options = list(
 	/datum/outfit/loadout/vault_refugee,
 	/datum/outfit/loadout/salvager,
@@ -762,11 +812,10 @@ Raider
 	minimal_access = list(ACCESS_DEN)
 
 	loadout_options = list(
-							/datum/outfit/loadout/mrwhite,
-							/datum/outfit/loadout/hitman,
-							/datum/outfit/loadout/bodyguard)
-
-
+		/datum/outfit/loadout/mrwhite,
+		/datum/outfit/loadout/hitman,
+		/datum/outfit/loadout/bodyguard,
+		)
 
 
 /datum/outfit/job/wasteland/f13enforcer
@@ -854,6 +903,17 @@ Raider
 
 	access = list(ACCESS_DEN)
 	minimal_access = list(ACCESS_DEN)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis/f13mayor,
+			/datum/job/oasis/f13sheriff,
+			/datum/job/wasteland/f13detective,
+		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+	)
+
 
 /datum/outfit/job/wasteland/f13mobboss
 	name = "Den Mob Boss"

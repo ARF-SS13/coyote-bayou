@@ -8,7 +8,7 @@
 	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	objectivesList = list("Leadership recommends the following goal for this week: Establish medical outposts throughout the wasteland","Leadership recommends the following goal for this week: Experiment with and improve medical techniques and equipment", "Leadership recommends the following goal for this week: Replenish the operation's funds through donations and sales.")
 
-/datum/outfit/job/followers/
+/datum/outfit/job/followers
 	name =		"FOLLOWERSdatums"
 	jobtype =	/datum/job/followers/
 	shoes =		/obj/item/clothing/shoes/sneakers/black
@@ -150,6 +150,17 @@ Practitioner
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/followers/f13practitioner
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/followers/f13practitioner,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/followers/f13practitioner,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/followers/f13followervolunteer,
+		),
+	)
 
 	loadout_options = list(
 	/datum/outfit/loadout/physician,
@@ -255,6 +266,17 @@ Follower Volunteer
 	/datum/outfit/loadout/volunteer_mechanic,
 	/datum/outfit/loadout/volunteer_farmer,
 	/datum/outfit/loadout/volunteer_student
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/followers/f13followervolunteer,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/followers/f13followervolunteer,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/followers/f13practitioner,
+		),
 	)
 
 	//the follower volunteer doesn't need more access as it is already stored in the /datum/job/followers

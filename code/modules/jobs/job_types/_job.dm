@@ -93,17 +93,33 @@
 	//This is ontop of the base job outfit
 	var/list/datum/outfit/loadout_options
 
+	/// Which kind of matchmaking this job allows, and with which departments. Associative list:  matchmaking_allowed[matchmaking datum typepath] -> list(job datum typepaths allowed)
+	var/list/matchmaking_allowed
 
-//Only override this proc
-//H is usually a human unless an /equip override transformed it
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
-	//do actions on H but send messages to M as the key may not have been transferred_yet
-	if(mind_traits)
-		for(var/t in mind_traits)
-			ADD_TRAIT(H.mind, t, JOB_TRAIT)
+
+/datum/job/proc/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
+	SHOULD_CALL_PARENT(TRUE)
+
+	for(var/trait in mind_traits)
+		ADD_TRAIT(spawner.mind, trait, JOB_TRAIT)
+
 	if(/datum/quirk/paraplegic in blacklisted_quirks)
-		H.regenerate_limbs() //if you can't be a paraplegic, attempt to regenerate limbs to stop amputated limb selection
-		H.set_resting(FALSE, TRUE) //they probably shouldn't be on the floor because they had no legs then suddenly had legs
+		spawner.regenerate_limbs() //if you can't be a paraplegic, attempt to regenerate limbs to stop amputated limb selection
+		spawner.set_resting(FALSE, TRUE) //they probably shouldn't be on the floor because they had no legs then suddenly had legs
+
+	var/matchmaking_prefs = shuffle(client_holder.client?.prefs?.matchmaking_prefs)
+	if(matchmaking_prefs)
+		for(var/datum/matchmaking_pref/matching as anything in matchmaking_prefs)
+			if(!(matching in matchmaking_allowed))
+				continue
+			var/number_of_matches = clamp(matchmaking_prefs[matching], 0, initial(matching.max_matches))
+			if(!number_of_matches)
+				continue
+			var/datum/matchmaking_pref/match_instance = new matching(spawner, number_of_matches)
+			if(latejoin)
+				match_instance.try_finding_matches()
+
+
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)

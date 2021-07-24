@@ -291,8 +291,16 @@ commented out pending rework*/
 	exp_requirements = 720
 
 	loadout_options = list(
-	/datum/outfit/loadout/decprimfront, //worn 10mm SMG and shield, punchdagger
-	/datum/outfit/loadout/decprimrear //trail carbine, gladius
+		/datum/outfit/loadout/decprimfront, //worn 10mm SMG and shield, punchdagger
+		/datum/outfit/loadout/decprimrear, //trail carbine, gladius
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
 	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -352,6 +360,14 @@ commented out pending rework*/
 	loadout_options = list(
 	/datum/outfit/loadout/recdeclegion, //lever shotgun, reinforced machete
 	/datum/outfit/loadout/recdectribal // .44 revolver, javelins and bumper sword
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
 	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanrec/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -415,8 +431,16 @@ commented out pending rework*/
 	exp_requirements = 720
 
 	loadout_options = list(
-	/datum/outfit/loadout/vexbear, //	Classic FO13 Vex with his ripper: .223 pistol, ripper
-	/datum/outfit/loadout/vexfox // 	Classic New Vegas Vex with his sniper: DKS sniper, gladius		
+		/datum/outfit/loadout/vexbear, //	Classic FO13 Vex with his ripper: .223 pistol, ripper
+		/datum/outfit/loadout/vexfox, // 	Classic New Vegas Vex with his sniper: DKS sniper, gladius		
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
 	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -480,10 +504,18 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(
-		/datum/outfit/loadout/vetshielder, //greasegun, shield, gladius
-		/datum/outfit/loadout/vetrifle, //trail gun, .357 revolver, gladius
-		/datum/outfit/loadout/vetberserker, //lever shotgun, fireaxe, bola. The former tribal at his peak.
+			/datum/outfit/loadout/vetshielder, //greasegun, shield, gladius
+			/datum/outfit/loadout/vetrifle, //trail gun, .357 revolver, gladius
+			/datum/outfit/loadout/vetberserker, //lever shotgun, fireaxe, bola. The former tribal at his peak.
 		)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/vetlegionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -551,8 +583,16 @@ commented out pending rework*/
 	loadout_options = list(
 		/datum/outfit/loadout/primelancer, //.44 revolver, lance
 		/datum/outfit/loadout/primerifle, //cowboy repeater, machete
-		/datum/outfit/loadout/primebrave //hunting shotgun, throwing spears, bola. Experienced tribal recruit.
-		)
+		/datum/outfit/loadout/primebrave, //hunting shotgun, throwing spears, bola. Experienced tribal recruit.
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -617,8 +657,16 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/recruittribal, //spiked baseball bat, .357 revolver
-		/datum/outfit/loadout/recruitlegion //autopipe, machete
-		)
+		/datum/outfit/loadout/recruitlegion, //autopipe, machete
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13recleg
 	name =			"Recruit Legionnaire"
@@ -664,8 +712,16 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/expsniper, //scoped trailgun, .357 revolver, c4, machete, smokebomb
-		/datum/outfit/loadout/expambusher //trench shotgun, .44 snubnose revolver, c4, smokebomb
-		)
+		/datum/outfit/loadout/expambusher, //trench shotgun, .44 snubnose revolver, c4, smokebomb
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -733,6 +789,14 @@ commented out pending rework*/
 		/datum/outfit/loadout/slavemaster, //shotgun, whip, bolas
 		/datum/outfit/loadout/forgemaster //sledgehammer, crafting recipes spathas, gladius, lance, trail carbine
 		)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -799,8 +863,16 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(
-	/datum/outfit/loadout/auxassist, // Tinker and keep track of the money, handle trading beneath the warriors
-	/datum/outfit/loadout/auxmedicus // Do surgery, medical tasks.
+		/datum/outfit/loadout/auxassist, // Tinker and keep track of the money, handle trading beneath the warriors
+		/datum/outfit/loadout/auxmedicus, // Do surgery, medical tasks.
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion,
+		),
 	)
 
 /*
@@ -885,7 +957,16 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/slaveservant,
-		/datum/outfit/loadout/slaveworker)
+		/datum/outfit/loadout/slaveworker,
+	)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/CaesarsLegion/slave,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/CaesarsLegion/slave,
+		),
+	)
 
 /datum/outfit/job/CaesarsLegion/slave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

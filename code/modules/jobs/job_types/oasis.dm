@@ -34,6 +34,15 @@ Mayor
 	outfit = /datum/outfit/job/den/f13mayor
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+			/datum/job/wasteland/f13mobboss,
+		),
+	)
 
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -82,6 +91,15 @@ Mayor
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+			/datum/job/wasteland/f13mobboss,
+		),
+	)
 
 /datum/outfit/job/den/f13sheriff
 	name = "Sheriff"
@@ -137,6 +155,14 @@ Mayor
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13deputy
 	name = "Deputy"
@@ -184,6 +210,14 @@ Mayor
 
 	access = list(ACCESS_BAR,  ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR,  ACCESS_KITCHEN)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13farmer
 	name = "Farmer"
@@ -230,6 +264,14 @@ Mayor
 
 	access = list(ACCESS_BAR, ACCESS_MINING)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINING)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
@@ -283,6 +325,14 @@ Mayor
 	outfit = /datum/outfit/job/den/f13dendoc
 	access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
@@ -327,12 +377,20 @@ Mayor
 	outfit = /datum/outfit/job/den/f13preacher
 
 	loadout_options = list(
-	/datum/outfit/loadout/standardpreacher, //Robes, Book
-	/datum/outfit/loadout/atompreacher, //Atoms Judgement, Followers Robes
+		/datum/outfit/loadout/standardpreacher, //Robes, Book
+		/datum/outfit/loadout/atompreacher, //Atoms Judgement, Followers Robes
 	)
 
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 
 /datum/outfit/loadout/atompreacher
@@ -352,6 +410,7 @@ Mayor
 		)
 
 /datum/job/oasis/f13preacher/after_spawn(mob/living/H, mob/M)
+	. = ..()
 	if(H.mind)
 		H.mind.isholy = TRUE
 
@@ -489,6 +548,14 @@ Mayor
 
 	access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13barkeep
 	name = "Barkeep"
@@ -555,14 +622,22 @@ Mayor
 	outfit = /datum/outfit/job/den/f13settler
 
 	loadout_options = list(
-	/datum/outfit/loadout/provisioner,
-	/datum/outfit/loadout/bum,
-	/datum/outfit/loadout/properlady,
-	/datum/outfit/loadout/propergent,
-	/datum/outfit/loadout/hombre,
+		/datum/outfit/loadout/provisioner,
+		/datum/outfit/loadout/bum,
+		/datum/outfit/loadout/properlady,
+		/datum/outfit/loadout/propergent,
+		/datum/outfit/loadout/hombre,
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 
 /datum/outfit/job/den/f13settler
@@ -645,6 +720,20 @@ Mayor
 
 	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13detective,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13detective,
+			/datum/job/wasteland/f13mobboss,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+	)
 
 
 /datum/outfit/job/wasteland/f13detective
@@ -769,6 +858,14 @@ Mayor
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+		),
+	)
 
 /datum/outfit/job/den/f13shopkeeper
 	name = "Shopkeeper"
