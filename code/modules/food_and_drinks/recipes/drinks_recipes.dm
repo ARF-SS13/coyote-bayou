@@ -1013,13 +1013,13 @@
 	id = /datum/reagent/consumable/nukafloat
 	results = list(/datum/reagent/consumable/nukafloat = 15)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
-	
+
 /datum/chemical_reaction/sunsetfloat
- 	name = "Sunset Float"
+	name = "Sunset Float"
 	id = /datum/reagent/consumable/sunsetfloat
 	results = list(/datum/reagent/consumable/sunsetfloat = 15)
 	required_reagents = list(/datum/reagent/consumable/sunset = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
-	
+
 /datum/chemical_reaction/nukashine
 	name = "Nukashine"
 	id = /datum/reagent/consumable/ethanol/nukashine
