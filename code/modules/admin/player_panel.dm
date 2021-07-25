@@ -1,11 +1,14 @@
 /datum/admins/proc/player_panel_new()//The new one
-	if(!check_rights())
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use player_panel_new() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use player_panel_new() without admin perms.")
 		return
+
 	log_admin("[key_name(usr)] checked the player panel.")
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Player Panel</title></head>"
+	var/list/dat = list()
 
 	//javascript, the part that does most of the work~
-	dat += {"
+	dat += {""<html>
 
 		<head>
 			<script type='text/javascript'>
@@ -197,8 +200,10 @@
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
-					<font size='5'><b>Player panel</b></font><br>
-					Hover over a line to see more information - <a href='?_src_=holder;[HrefToken()];check_antagonist=1'>Check antagonists</a> - Kick <a href='?_src_=holder;[HrefToken()];kick_all_from_lobby=1;afkonly=0'>everyone</a>/<a href='?_src_=holder;[HrefToken()];kick_all_from_lobby=1;afkonly=1'>AFKers</a> in lobby
+					<font size='5'><b>Player panel</b></font>
+					<br>Hover over a line to see more information
+					<br><a href='?_src_=holder;[HrefToken()];check_antagonist=1'>Check antagonists</a>
+					<br>Kick <a href='?_src_=holder;[HrefToken()];kick_all_from_lobby=1;afkonly=0'>everyone</a>/<a href='?_src_=holder;[HrefToken()];kick_all_from_lobby=1;afkonly=1'>AFKers</a> in lobby
 					<p>
 				</td>
 			</tr>
@@ -214,16 +219,16 @@
 	//player table header
 	dat += {"
 		<span id='maintable_data_archive'>
-		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
+		<table width='650' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
 	var/list/mobs = sortmobs()
 	var/i = 1
 	for(var/mob/M in mobs)
 		if(M.ckey)
 
-			var/color = "#e6e6e6"
-			if(i%2 == 0)
-				color = "#f2f2f2"
+			var/color = "#494949"
+			if(i % 2 == 0)
+				color = "#595959"
 			var/is_antagonist = is_special_character(M)
 
 			var/M_job = ""
@@ -310,4 +315,6 @@
 	</body></html>
 	"}
 
-	usr << browse(dat, "window=players;size=600x480")
+	var/datum/browser/browser = new(usr, "players", "<div align='center'>Player Panel</div>", 700, 500)
+	browser.set_content(dat.Join())
+	browser.open()

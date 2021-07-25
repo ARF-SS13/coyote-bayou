@@ -245,6 +245,8 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 /datum/antagonist/Topic(href,href_list)
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/antagonist/Topic() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/antagonist/Topic() without admin perms.")
 		return
 	//Antag memory edit
 	if (href_list["memory_edit"])

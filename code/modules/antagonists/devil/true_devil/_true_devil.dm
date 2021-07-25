@@ -57,8 +57,7 @@
 	mind.announce_objectives()
 
 /mob/living/carbon/true_devil/death(gibbed)
-	stat = DEAD
-	..(gibbed)
+	set_stat(DEAD)
 	drop_all_held_items()
 	INVOKE_ASYNC(mind.has_antag_datum(/datum/antagonist/devil), /datum/antagonist/devil/proc/beginResurrectionCheck, src)
 

@@ -55,7 +55,7 @@
 
 
 /mob/living/death(gibbed)
-	stat = DEAD
+	set_stat(DEAD)
 	unset_machine()
 	timeofdeath = world.time
 	tod = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)

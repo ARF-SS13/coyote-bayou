@@ -40,6 +40,8 @@
 	..()
 
 	if(!check_rights(R_ADMIN) || !usr.client.holder.CheckAdminHref(href, href_list))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/station_goal/Topic() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/station_goal/Topic() without admin perms.")
 		return
 
 	if(href_list["announce"])

@@ -79,7 +79,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/mark_datum_mapview,
 	/client/proc/hide_verbs,			/*hides all our adminverbs*/
 	/client/proc/hide_most_verbs,		/*hides all our hideable adminverbs*/
-	/datum/admins/proc/open_borgopanel
+	/datum/admins/proc/open_borgopanel,
+	/datum/admins/proc/toggle_sleep,
+	/datum/admins/proc/toggle_sleep_area,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -732,3 +734,48 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set category = "Debug"
 
 	src << output("", "statbrowser:create_debug")
+
+
+/datum/admins/proc/toggle_sleep(mob/living/perp in GLOB.mob_living_list)
+	set category = null
+	set name = "Toggle Sleeping"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use toggle_sleep() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use toggle_sleep() without admin perms.")
+		return
+
+	if(perp.IsAdminSleeping())
+		perp.ToggleAdminSleep()
+	else if(tgui_alert(usr, "Are you sure you want to sleep [key_name(perp)]?", "Toggle Sleeping", list("Yes", "No")) != "Yes")
+		return
+	else if(QDELETED(perp))
+		to_chat(usr, span_warning("Target is no longer valid."))
+		return
+	else
+		perp.ToggleAdminSleep()
+
+	log_admin("[key_name(usr)] has [perp.IsAdminSleeping() ? "enabled" : "disabled"] sleeping on [key_name(perp)].")
+	message_admins("[ADMIN_TPMONTY(usr)] has [perp.IsAdminSleeping() ? "enabled" : "disabled"] sleeping on [ADMIN_TPMONTY(perp)].")
+
+
+/datum/admins/proc/toggle_sleep_area()
+	set category = "Admin.Game"
+	set name = "Toggle Sleeping Area"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use toggle_sleep_area() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use toggle_sleep_area() without admin perms.")
+		return
+
+	switch(tgui_alert(usr, "Sleep or unsleep everyone?", "Toggle Sleeping Area", list("Sleep", "Unsleep", "Cancel")))
+		if("Sleep")
+			for(var/mob/living/perp in view())
+				perp.SetAdminSleep()
+			log_admin("[key_name(usr)] has slept everyone in view.")
+			message_admins("[ADMIN_TPMONTY(usr)] has slept everyone in view.")
+		if("Unsleep")
+			for(var/mob/living/perp in view())
+				perp.SetAdminSleep(remove = TRUE)
+			log_admin("[key_name(usr)] has unslept everyone in view.")
+			message_admins("[ADMIN_TPMONTY(usr)] has unslept everyone in view.")

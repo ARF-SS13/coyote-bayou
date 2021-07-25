@@ -182,8 +182,8 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 	if (..()) // Sanity, maybe ?
 		return
 	if(!check_rights(R_ADMIN))
-		message_admins("[usr.key] has attempted to override the game mode panel!")
-		log_admin("[key_name(usr)] tried to use the game mode panel without authorization.")
+		message_admins("[ADMIN_TPMONTY(usr)] has attempted to override the game mode panel!")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use the game mode panel without authorization.")
 		return
 	if (href_list["forced_extended"])
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
@@ -316,6 +316,8 @@ GLOBAL_VAR_INIT(dynamic_forced_storyteller, null)
 		return
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use show_threatlog() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use show_threatlog() without admin perms.")
 		return
 
 	var/list/out = list("<TITLE>Threat Log</TITLE><B><font size='3'>Threat Log</font></B><br><B>Starting Threat:</B> [initial_threat_level]<BR>")

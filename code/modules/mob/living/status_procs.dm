@@ -500,6 +500,27 @@
 			S = apply_status_effect(STATUS_EFFECT_SLEEPING, amount, updating)
 		return S
 
+/////////////////////////////////// ADMIN SLEEP ////////////////////////////////////
+
+/mob/living/proc/IsAdminSleeping()
+	return has_status_effect(STATUS_EFFECT_ADMINSLEEP)
+
+/mob/living/proc/ToggleAdminSleep()
+	var/datum/status_effect/incapacitating/adminsleep/S = IsAdminSleeping()
+	if(S)
+		qdel(S)
+	else
+		S = apply_status_effect(STATUS_EFFECT_ADMINSLEEP, null, TRUE)
+	return S
+
+/mob/living/proc/SetAdminSleep(remove = FALSE)
+	var/datum/status_effect/incapacitating/adminsleep/S = IsAdminSleeping()
+	if(remove)
+		qdel(S)
+	else
+		S = apply_status_effect(STATUS_EFFECT_ADMINSLEEP, null, TRUE)
+	return S
+
 ///////////////////////////////// OFF BALANCE/SHOVIES ////////////////////////
 /mob/living/proc/ShoveOffBalance(amount)
 	var/datum/status_effect/off_balance/B = has_status_effect(STATUS_EFFECT_OFF_BALANCE)

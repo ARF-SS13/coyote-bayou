@@ -235,7 +235,6 @@
 			owner.current.Unconscious(20, 1)
 
 /datum/antagonist/bloodsucker/proc/Torpor_Begin(amInCoffin = FALSE)
-	owner.current.stat = UNCONSCIOUS
 	owner.current.apply_status_effect(STATUS_EFFECT_UNCONSCIOUS)
 	ADD_TRAIT(owner.current, TRAIT_FAKEDEATH, "bloodsucker") // Come after UNCONSCIOUS or else it fails
 	ADD_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")	// Without this, you'll just keep dying while you recover.

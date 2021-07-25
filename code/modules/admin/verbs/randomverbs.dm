@@ -26,6 +26,8 @@
 	if(!ismob(M))
 		return
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_subtle_message() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_subtle_message() without admin perms.")
 		return
 
 	message_admins("[key_name_admin(src)] has started answering [ADMIN_LOOKUPFLW(M)]'s prayer.")
@@ -55,6 +57,8 @@
 	var/mob/living/carbon/human/H = M
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use admin_headset_message() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_headset_message() without admin perms.")
 		return
 
 	if(!istype(H))
@@ -86,6 +90,8 @@
 	set name = "Modify Antagonist Reputation"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_mod_antag_rep() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_mod_antag_rep() without admin perms.")
 		return
 
 	var/msg = ""
@@ -132,6 +138,8 @@
 	set name = "Global Narrate"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_world_narrate() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_world_narrate() without admin perms.")
 		return
 
 	var/msg = input("Message:", text("Enter the text you wish to appear to everyone:")) as text|null
@@ -148,6 +156,8 @@
 	set name = "Direct Narrate"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_direct_narrate() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_direct_narrate() without admin perms.")
 		return
 
 	if(!M)
@@ -173,6 +183,8 @@
 	set name = "Local Narrate"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_local_narrate() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_local_narrate() without admin perms.")
 		return
 	if(!A)
 		return
@@ -193,6 +205,8 @@
 	set category = "Admin.Game"
 	set name = "Godmode"
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_godmode() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_godmode() without admin perms.")
 		return
 
 	M.status_flags ^= GODMODE
@@ -339,6 +353,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Respawn Character"
 	set desc = "Respawn a person that has been gibbed/dusted/killed. They must be a ghost for this to work and preferably should not have a body to go back into."
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use respawn_character() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use respawn_character() without admin perms.")
 		return
 
 	var/input = ckey(input(src, "Please specify which key will be respawned.", "Key", ""))
@@ -507,6 +523,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Add Custom AI law"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_add_freeform_ai_law() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_add_freeform_ai_law() without admin perms.")
 		return
 
 	var/input = input(usr, "Please enter anything you want the AI to do. Anything. Serious.", "What?", "") as text|null
@@ -530,6 +548,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Rejuvenate"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_rejuvenate() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_rejuvenate() without admin perms.")
 		return
 
 	if(!mob)
@@ -550,6 +570,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Create Command Report"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_create_centcom_report() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_create_centcom_report() without admin perms.")
 		return
 
 	var/input = input(usr, "Enter a Command Report. Ensure it makes sense IC.", "What?", "") as message|null
@@ -576,6 +598,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Change Command Name"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_change_command_name() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_change_command_name() without admin perms.")
 		return
 
 	var/input = input(usr, "Please input a new name for Central Command.", "What?", "") as text|null
@@ -599,6 +623,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Manage Job Slots"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_list_open_jobs() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_list_open_jobs() without admin perms.")
 		return
 	holder.manage_free_slots()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Manage Job Slots") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -608,6 +634,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Explosion"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_explosion() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_explosion() without admin perms.")
 		return
 
 	var/devastation = input("Range of total devastation. -1 to none", text("Input"))  as num|null
@@ -644,6 +672,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "EM Pulse"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_emp() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_emp() without admin perms.")
 		return
 
 	var/range = input("Range.", text("Input"))  as num|null
@@ -660,6 +690,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Gib"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_gib() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_gib() without admin perms.")
 		return
 
 	var/confirm = alert(src, "Drop a brain?", "Confirm", "Yes", "No","Cancel")
@@ -723,6 +755,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use admin_call_shuttle() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_call_shuttle() without admin perms.")
 		return
 
 	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
@@ -758,6 +792,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Disable Shuttle"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use admin_disable_shuttle() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_disable_shuttle() without admin perms.")
 		return
 	if(SSshuttle.emergency.mode == SHUTTLE_DISABLED)
 		to_chat(usr, "<span class='warning'>Error, shuttle is already disabled.</span>")
@@ -778,6 +814,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Enable Shuttle"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use admin_enable_shuttle() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_enable_shuttle() without admin perms.")
 		return
 	if(SSshuttle.emergency.mode != SHUTTLE_DISABLED)
 		to_chat(usr, "<span class='warning'>Error, shuttle not disabled.</span>")
@@ -849,6 +887,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set desc = "Changes the security level. Announcement only, i.e. setting to Delta won't activate nuke"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use admin_change_sec_level() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_change_sec_level() without admin perms.")
 		return
 
 	var/level = input("Select security level to change to","Set Security Level") as null|anything in list("green","blue","amber","red","delta")
@@ -1061,6 +1101,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set desc = "Toggles the Admin Combo HUD (antag, sci, med, eng)"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use toggle_combo_hud() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use toggle_combo_hud() without admin perms.")
 		return
 
 	var/adding_hud = !has_antag_hud()
@@ -1121,6 +1163,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 		them on death."
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mass_zombie_infection() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mass_zombie_infection() without admin perms.")
 		return
 
 	var/confirm = alert(src, "Please confirm you want to add latent zombie organs in all humans?", "Confirm Zombies", "Yes", "No")
@@ -1139,6 +1183,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set name = "Mass Zombie Cure"
 	set desc = "Removes the zombie infection from all humans, returning them to normal."
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mass_zombie_cure() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mass_zombie_cure() without admin perms.")
 		return
 
 	var/confirm = alert(src, "Please confirm you want to cure all zombies?", "Confirm Zombie Cure", "Yes", "No")
@@ -1158,6 +1204,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set desc = "Applies the effects of the bolt of change to every single mob."
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use polymorph_all() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use polymorph_all() without admin perms.")
 		return
 
 	var/confirm = alert(src, "Please confirm you want polymorph all mobs?", "Confirm Polymorph", "Yes", "No")
@@ -1192,6 +1240,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 		you're the experienced player here."
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use show_tip() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use show_tip() without admin perms.")
 		return
 
 	var/input = input(usr, "Please specify your tip that you want to send to the players.", "Tip", "") as message|null
@@ -1217,6 +1267,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set name = "Modify goals"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use modify_goals() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use modify_goals() without admin perms.")
 		return
 
 	holder.modify_goals()
@@ -1248,6 +1300,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 
 	var/static/busy_toggling_fov = FALSE
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_toggle_fov() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_toggle_fov() without admin perms.")
 		return
 
 	var/on_off = CONFIG_GET(flag/use_field_of_vision)
@@ -1298,6 +1352,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set name = "Smite"
 	set category = "Admin.Fun"
 	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use smite() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use smite() without admin perms.")
 		return
 
 	var/list/punishment_list = list(ADMIN_PUNISHMENT_PIE,
@@ -1518,6 +1574,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 
 /client/proc/trigger_centcom_recall()
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use trigger_centcom_recall() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use trigger_centcom_recall() without admin perms.")
 		return
 	var/message = pick(GLOB.admiral_messages)
 	message = input("Enter message from the on-call admiral to be put in the recall report.", "Admiral Message", message) as text|null
@@ -1533,6 +1591,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	set category = "Admin"
 	set name = "Player Playtime"
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_check_player_exp() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_check_player_exp() without admin perms.")
 		return
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
@@ -1548,6 +1608,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 
 /datum/admins/proc/cmd_show_exp_panel(client/C)
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_show_exp_panel() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_show_exp_panel() without admin perms.")
 		return
 	if(!C)
 		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>")
@@ -1565,6 +1627,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 
 /datum/admins/proc/toggle_exempt_status(client/C)
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use toggle_exempt_status() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use toggle_exempt_status() without admin perms.")
 		return
 	if(!C)
 		to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>")

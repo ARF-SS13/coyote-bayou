@@ -63,6 +63,8 @@
 
 #define STATUS_EFFECT_SLEEPING /datum/status_effect/incapacitating/sleeping //the affected is asleep
 
+#define STATUS_EFFECT_ADMINSLEEP /datum/status_effect/incapacitating/adminsleep //the affected is admin slept
+
 /// Blocks sprint
 #define STATUS_EFFECT_STAGGERED /datum/status_effect/staggered
 

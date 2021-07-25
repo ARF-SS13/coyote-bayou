@@ -1,4 +1,6 @@
 #define SIGNAL_TRAIT(trait_ref) "trait [trait_ref]"
+#define SIGNAL_ADDTRAIT(trait_ref) "addtrait [trait_ref]"
+#define SIGNAL_REMOVETRAIT(trait_ref) "removetrait [trait_ref]"
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \
@@ -8,14 +10,14 @@
 			target.status_traits = list(); \
 			_L = target.status_traits; \
 			_L[trait] = list(source); \
-			SEND_SIGNAL(target, SIGNAL_TRAIT(trait), COMPONENT_ADD_TRAIT); \
+			SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 		} else { \
 			_L = target.status_traits; \
 			if (_L[trait]) { \
 				_L[trait] |= list(source); \
 			} else { \
 				_L[trait] = list(source); \
-				SEND_SIGNAL(target, SIGNAL_TRAIT(trait), COMPONENT_ADD_TRAIT); \
+				SEND_SIGNAL(target, SIGNAL_ADDTRAIT(trait), trait); \
 			} \
 		} \
 	} while (0)
@@ -36,7 +38,7 @@
 			};\
 			if (!length(_L[trait])) { \
 				_L -= trait; \
-				SEND_SIGNAL(target, SIGNAL_TRAIT(trait), COMPONENT_REMOVE_TRAIT); \
+				SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(trait), trait); \
 			}; \
 			if (!length(_L)) { \
 				target.status_traits = null \
@@ -51,12 +53,13 @@
 			for (var/_T in _L) { \
 				_L[_T] &= _S;\
 				if (!length(_L[_T])) { \
-					_L -= _T ; \
-					SEND_SIGNAL(target, SIGNAL_TRAIT(_T), COMPONENT_REMOVE_TRAIT); } \
+					_L -= _T; \
+					SEND_SIGNAL(target, SIGNAL_REMOVETRAIT(_T), _T); \
+					}; \
 				};\
-				if (!length(_L)) { \
-					target.status_traits = null\
-				};\
+			if (!length(_L)) { \
+				target.status_traits = null\
+			};\
 		}\
 	} while (0)
 #define HAS_TRAIT(target, trait) (target.status_traits ? (target.status_traits[trait] ? TRUE : FALSE) : FALSE)
@@ -70,6 +73,8 @@
 #define HAS_TRAIT_NOT_FROM(target, trait, source) (target.status_traits ? (target.status_traits[trait] ? (length(target.status_traits[trait] - source) > 0) : FALSE) : FALSE)
 
 //mob traits
+/// Forces the user to stay unconscious.
+#define TRAIT_KNOCKEDOUT "knockedout"
 #define TRAIT_BLIND 			"blind"
 #define TRAIT_MUTE				"mute"
 #define TRAIT_EMOTEMUTE			"emotemute"

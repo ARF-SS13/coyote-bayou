@@ -4,6 +4,8 @@
 	set desc = "Opens the train manipulator UI."
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use open_shuttlepanel() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use open_shuttlepanel() without admin perms.")
 		return
 
 	SSshuttle.ui_interact(usr)

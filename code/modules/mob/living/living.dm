@@ -1,5 +1,6 @@
 /mob/living/Initialize()
 	. = ..()
+	register_init_signals()
 	if(unique_name)
 		name = "[name] ([rand(1, 1000)])"
 		real_name = name
@@ -550,11 +551,9 @@
 		GLOB.dead_mob_list -= src
 		GLOB.alive_mob_list += src
 		suiciding = 0
-		stat = UNCONSCIOUS //the mob starts unconscious,
 		if(!eye_blind)
 			blind_eyes(1)
 		updatehealth() //then we check if the mob should wake up.
-		update_mobility()
 		update_sight()
 		clear_alert("not_enough_oxy")
 		reload_fullscreen()
@@ -1305,6 +1304,14 @@
 			STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[getStaminaLoss()]</a>
 		</font>
 	"}
+
+
+
+/mob/living/set_stat(new_stat)
+	. = ..()
+	if(isnull(.))
+		return
+	update_mobility()
 
 
 /mob/living/verb/give(mob/living/target in (view(1) - usr))

@@ -1,3 +1,5 @@
+#define TRAIT_STATUS_EFFECT(effect_id) "[effect_id]-trait"
+
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
 /datum/status_effect/incapacitating
@@ -95,6 +97,35 @@
 	if(prob((tick_interval+1) * 0.2) && owner.health > owner.crit_threshold)
 		owner.emote("snore")
 
+/obj/screen/alert/status_effect/asleep
+	name = "Asleep"
+	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
+	icon_state = "asleep"
+
+
+//ADMIN SLEEP
+/datum/status_effect/incapacitating/adminsleep
+	id = "adminsleep"
+	alert_type = /obj/screen/alert/status_effect/adminsleep
+	duration = -1
+
+/datum/status_effect/incapacitating/adminsleep/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+
+/datum/status_effect/incapacitating/adminsleep/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	return ..()
+
+/obj/screen/alert/status_effect/adminsleep
+	name = "Admin Slept"
+	desc = "You've been slept by an Admin."
+	icon_state = "asleep"
+
+
+//STAGGERED
 /datum/status_effect/staggered
 	id = "staggered"
 	blocks_sprint = TRUE
@@ -119,11 +150,6 @@
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
 		owner.visible_message("<span class='warning'>[owner.name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
 	return ..()
-
-/obj/screen/alert/status_effect/asleep
-	name = "Asleep"
-	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
-	icon_state = "asleep"
 
 /datum/status_effect/no_combat_mode
 	id = "no_combat_mode"

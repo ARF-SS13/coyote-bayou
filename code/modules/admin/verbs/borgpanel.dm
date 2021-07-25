@@ -4,6 +4,8 @@
 	set desc = "Show borg panel"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use open_borgopanel() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use open_borgopanel() without admin perms.")
 		return
 
 	if (!istype(borgo, /mob/living/silicon/robot))

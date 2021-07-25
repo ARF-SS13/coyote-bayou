@@ -50,10 +50,6 @@
 /// sent to the component itself when registered to a parent
 #define COMSIG_COMPONENT_REGISTER_PARENT "component_register_parent"
 
-/// Trait signals
-#define COMPONENT_ADD_TRAIT (1<<0)
-#define COMPONENT_REMOVE_TRAIT (1<<1)
-
 // /atom signals
 //from base of atom/proc/Initialize(): sent any time a new atom is created
 #define COMSIG_ATOM_CREATED "atom_created"
@@ -249,6 +245,8 @@
 	#define COMPONENT_EXAMINATE_BLIND 3 //outputs the "something is there but you can't see it" message.
 #define COMSIG_MOB_DEATH "mob_death"							//from base of mob/death(): (gibbed)
 	#define COMPONENT_BLOCK_DEATH_BROADCAST 1					//stops the death from being broadcasted in deadchat.
+///from base of mob/set_stat(): (new_stat)
+#define COMSIG_MOB_STATCHANGE "mob_statchange"
 #define COMSIG_MOB_CLICKON "mob_clickon"						//from base of mob/clickon(): (atom/A, params)
 	#define COMSIG_MOB_CANCEL_CLICKON 1
 #define COMSIG_MOB_GHOSTIZE "mob_ghostize"						//from base of mob/Ghostize(): (can_reenter_corpse, special, penalize)

@@ -149,20 +149,7 @@ GLOBAL_PROTECT(href_token)
 /datum/admins/vv_edit_var(var_name, var_value)
 	return FALSE //nice try trialmin
 
-/*
-checks if usr is an admin with at least ONE of the flags in rights_required. (Note, they don't need all the flags)
-if rights_required == 0, then it simply checks if they are an admin.
-if it doesn't return 1 and show_msg=1 it will prints a message explaining why the check has failed
-generally it would be used like so:
 
-/proc/admin_proc()
-	if(!check_rights(R_ADMIN))
-		return
-	to_chat(world, "you have enough rights!")
-
-NOTE: it checks usr! not src! So if you're checking somebody's rank in a proc which they did not call
-you will have to do something like if(client.rights & R_ADMIN) yourself.
-*/
 /proc/check_rights(rights_required, show_msg=1)
 	if(usr && usr.client)
 		if (check_rights_for(usr.client, rights_required))

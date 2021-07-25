@@ -1,12 +1,12 @@
 //A set of constants used to determine which type of mute an admin wishes to apply:
 //Please read and understand the muting/automuting stuff before changing these. MUTE_IC_AUTO etc = (MUTE_IC << 1)
 //Therefore there needs to be a gap between the flags for the automute flags
-#define MUTE_IC			(1<<0)
-#define MUTE_OOC		(1<<1)
-#define MUTE_PRAY		(1<<2)
-#define MUTE_ADMINHELP	(1<<3)
-#define MUTE_DEADCHAT	(1<<4)
-#define MUTE_ALL		(~0)
+#define MUTE_IC (1<<0)
+#define MUTE_OOC (1<<1)
+#define MUTE_PRAY (1<<2)
+#define MUTE_ADMINHELP (1<<3)
+#define MUTE_DEADCHAT (1<<4)
+#define MUTE_ALL (~0)
 
 //Some constants for DB_Ban
 #define BANTYPE_PERMA		1
@@ -56,6 +56,8 @@
 #define ADMIN_SET_SD_CODE "(<a href='?_src_=holder;[HrefToken(TRUE)];set_selfdestruct_code=1'>SETCODE</a>)"
 #define ADMIN_FULLMONTY_NONAME(user) "[ADMIN_QUE(user)] [ADMIN_PP(user)] [ADMIN_VV(user)] [ADMIN_SM(user)] [ADMIN_FLW(user)] [ADMIN_TP(user)] [ADMIN_INDIVIDUALLOG(user)] [ADMIN_SMITE(user)]"
 #define ADMIN_FULLMONTY(user) "[key_name_admin(user)] [ADMIN_FULLMONTY_NONAME(user)]"
+#define ADMIN_TPMONTY_NONAME(user) "[ADMIN_QUE(user)] [ADMIN_JMP(user)] [ADMIN_FLW(user)]"
+#define ADMIN_TPMONTY(user) "[key_name_admin(user)] [ADMIN_TPMONTY_NONAME(user)]"
 #define ADMIN_JMP(src) "(<a href='?_src_=holder;[HrefToken(TRUE)];adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>)"
 #define COORD(src) "[src ? "([src.x],[src.y],[src.z])" : "nonexistent location"]"
 #define AREACOORD(src) "[src ? "[get_area_name(src, TRUE)] ([src.x], [src.y], [src.z])" : "nonexistent location"]"

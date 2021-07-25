@@ -1085,6 +1085,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if(I.item_flags & SLOWS_WHILE_IN_HAND)
 			. += I.slowdown
 
+
+/mob/proc/set_stat(new_stat)
+	if(new_stat == stat)
+		return
+	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat)
+	. = stat
+	stat = new_stat
+
+
 /**
  * Mostly called by doUnEquip()
  * Like item dropped() on mob side.

@@ -1,11 +1,16 @@
 /proc/show_individual_logging_panel(mob/M, source = LOGSRC_CLIENT, type = INDIVIDUAL_ATTACK_LOG)
-	if(!M || !ismob(M))
+	if(!ismob(M))
+		return
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use show_individual_logging_panel() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use show_individual_logging_panel() without admin perms.")
 		return
 
 	var/ntype = text2num(type)
 
 	//Add client links
-	var/dat = ""
+	var/list/dat = list()
 	if(M.client)
 		dat += "<center><p>Client</p></center>"
 		dat += "<center>"
@@ -24,7 +29,7 @@
 	else
 		dat += "<p> No client attached to mob </p>"
 
-	dat += "<hr style='background:#000000; border:0; height:1px'>"
+	dat += "<hr style='background:#FFFFFF; border:0; height:1px'>"
 	dat += "<center><p>Mob</p></center>"
 	//Add the links for the mob specific log
 	dat += "<center>"
@@ -41,7 +46,7 @@
 	dat += individual_logging_panel_link(M, INDIVIDUAL_SHOW_ALL_LOG, LOGSRC_MOB, "Show All", source, ntype)
 	dat += "</center>"
 
-	dat += "<hr style='background:#000000; border:0; height:1px'>"
+	dat += "<hr style='background:#FFFFFF; border:0; height:1px'>"
 
 	var/log_source = M.logging;
 	if(source == LOGSRC_CLIENT && M.client) //if client doesn't exist just fall back to the mob log
@@ -54,10 +59,13 @@
 			if(islist(reversed))
 				reversed = reverseRange(reversed.Copy())
 				for(var/entry in reversed)
-					dat += "<font size=2px><b>[entry]</b><br>[reversed[entry]]</font><br>"
+					dat += "<font size=2px>[entry]<br>[reversed[entry]]</font><br>"
 			dat += "<hr>"
 
-	usr << browse(dat, "window=invidual_logging_[key_name(M)];size=600x480")
+	var/datum/browser/browser = new(usr, "invidual_logging_[key_name(M)]", "<div align='center'>Logs</div>", 700, 550)
+	browser.set_content(dat.Join())
+	browser.open(FALSE)
+
 
 /proc/individual_logging_panel_link(mob/M, log_type, log_src, label, selected_src, selected_type)
 	var/slabel = label

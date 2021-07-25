@@ -194,7 +194,7 @@
 	C.adjustAllOrganLoss(borrowed_health*0.25)
 	M.updatehealth()
 	if(borrowed_health && C.health < -20)
-		M.stat = DEAD
+		M.set_stat(DEAD)
 		M.visible_message("The synthetic tissue degrades off [M]'s wounds as they collapse to the floor.")
 //NEEDS ON_MOB_DEAD()
 

@@ -118,6 +118,8 @@
 
 		if("tdomereset")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: tdomereset, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: tdomereset, without admin perms.")
 				return
 			var/delete_mobs = alert("Clear all mobs?","Confirm","Yes","No","Cancel")
 			if(delete_mobs == "Cancel")
@@ -147,6 +149,8 @@
 					D.cure(0)
 		if("set_name")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: set_name, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: set_name, without admin perms.")
 				return
 			var/new_name = input(usr, "Please input a new name for the station.", "What?", "") as text|null
 			if(!new_name)
@@ -157,6 +161,8 @@
 			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
 		if("night_shift_set")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: night_shift_set, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: night_shift_set, without admin perms.")
 				return
 			var/val = alert(usr, "What do you want to set night shift to? This will override the automatic system until set to automatic again.", "Night Shift", "On", "Off", "Automatic")
 			switch(val)
@@ -175,6 +181,8 @@
 
 		if("reset_name")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: reset_name, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: reset_name, without admin perms.")
 				return
 			var/new_name = new_station_name()
 			set_station_name(new_name)
@@ -184,6 +192,8 @@
 
 		if("list_bombers")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: list_bombers, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: list_bombers, without admin perms.")
 				return
 			var/dat = "<B>Bombing List</B><HR>"
 			for(var/l in GLOB.bombers)
@@ -192,6 +202,8 @@
 
 		if("list_signalers")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: list_signalers, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: list_signalers, without admin perms.")
 				return
 			var/dat = "<B>Showing last [length(GLOB.lastsignalers)] signalers.</B><HR>"
 			for(var/sig in GLOB.lastsignalers)
@@ -200,6 +212,8 @@
 
 		if("list_lawchanges")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: list_lawchanges, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: list_lawchanges, without admin perms.")
 				return
 			var/dat = "<B>Showing last [length(GLOB.lawchanges)] law changes.</B><HR>"
 			for(var/sig in GLOB.lawchanges)
@@ -208,6 +222,8 @@
 
 		if("moveminingshuttle")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: moveminingshuttle, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: moveminingshuttle, without admin perms.")
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Send Mining Shuttle"))
 			if(!SSshuttle.toggleShuttle("mining","mining_home","mining_away"))
@@ -216,6 +232,8 @@
 
 		if("movelaborshuttle")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: movelaborshuttle, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: movelaborshuttle, without admin perms.")
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Send Labor Shuttle"))
 			if(!SSshuttle.toggleShuttle("laborcamp","laborcamp_home","laborcamp_away"))
@@ -224,6 +242,8 @@
 
 		if("moveferry")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: moveferry, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: moveferry, without admin perms.")
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Send CentCom Ferry"))
 			if(!SSshuttle.toggleShuttle("ferry","ferry_home","ferry_away"))
@@ -232,6 +252,8 @@
 
 		if("togglearrivals")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: togglearrivals, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: togglearrivals, without admin perms.")
 				return
 			var/obj/docking_port/mobile/arrivals/A = SSshuttle.arrivals
 			if(A)
@@ -244,10 +266,14 @@
 				to_chat(usr, "<span class='admin'>There is no arrivals shuttle</span>")
 		if("showailaws")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: showailaws, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: showailaws, without admin perms.")
 				return
 			output_ai_laws()
 		if("showgm")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: showgm, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: showgm, without admin perms.")
 				return
 			if(!SSticker.HasRoundStarted())
 				alert("The game hasn't started yet!")
@@ -256,6 +282,8 @@
 			else alert("For some reason there's a SSticker, but not a game mode")
 		if("manifest")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: manifest, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: manifest, without admin perms.")
 				return
 			var/dat = "<B>Showing Crew Manifest.</B><HR>"
 			dat += "<table cellspacing=5><tr><th>Name</th><th>Position</th></tr>"
@@ -265,6 +293,8 @@
 			usr << browse(dat, "window=manifest;size=440x410")
 		if("DNA")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: DNA, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: DNA, without admin perms.")
 				return
 			var/dat = "<B>Showing DNA from blood.</B><HR>"
 			dat += "<table cellspacing=5><tr><th>Name</th><th>DNA</th><th>Blood Type</th></tr>"
@@ -275,6 +305,8 @@
 			usr << browse(dat, "window=DNA;size=440x410")
 		if("fingerprints")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: fingerprints, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: fingerprints, without admin perms.")
 				return
 			var/dat = "<B>Showing Fingerprints.</B><HR>"
 			dat += "<table cellspacing=5><tr><th>Name</th><th>Fingerprints</th></tr>"
@@ -581,6 +613,8 @@
 
 		if("ctfbutton")
 			if(!check_rights(R_ADMIN))
+				message_admins("[ADMIN_TPMONTY(usr)] tried to use Secrets_topic(), item: ctfbutton, without admin perms.")
+				log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use Secrets_topic(), item: ctfbutton, without admin perms.")
 				return
 			toggle_all_ctf(usr)
 		if("masspurrbation")

@@ -16,197 +16,211 @@
 	set name = "Show Player Panel"
 	set desc="Edit player (respawn, ban, heal, etc)"
 
-	if(!check_rights())
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use show_player_panel() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use show_player_panel() without admin perms.")
 		return
 
 	log_admin("[key_name(usr)] checked the individual player panel for [key_name(M)][isobserver(usr)?"":" while in game"].")
 
-	if(!M)
+	if(QDELETED(M))
 		to_chat(usr, "<span class='warning'>You seem to be selecting a mob that doesn't exist anymore.</span>", confidential = TRUE)
 		return
 
-	var/body = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Options for [M.key]</title></head>"
-	body += "<body>Options panel for <b>[M]</b>"
+	var/ref = "[REF(usr.client.holder)];[HrefToken()]"
+	var/ref_mob = REF(M)
+
+	var/list/body = list("<b>[M.name]</b>")
 	if(M.client)
 		body += " played by <b>[M.client]</b> "
-		body += "\[<A href='?_src_=holder;[HrefToken()];editrights=[(GLOB.admin_datums[M.client.ckey] || GLOB.deadmins[M.client.ckey]) ? "rank" : "add"];key=[M.key]'>[M.client.holder ? M.client.holder.rank : "Player"]</A>\]"
+		body += " <a href='?src=[ref];editrights=[(GLOB.admin_datums[M.client.ckey] || GLOB.deadmins[M.client.ckey]) ? "rank" : "add"];key=[M.key];close=1'>[M.client.holder ? M.client.holder.rank : "Player"]</a>"
 		if(CONFIG_GET(flag/use_exp_tracking))
-			body += "\[<A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(M)]'>" + M.client.get_exp_living() + "</a>\]"
+			body += " <a href='?src=[ref];getplaytimewindow=[ref_mob]'>" + M.client.get_exp_living() + "</a> "
 
 	if(isnewplayer(M))
 		body += " <B>Hasn't Entered Game</B> "
 	else
-		body += " \[<A href='?_src_=holder;[HrefToken()];revive=[REF(M)]'>Heal</A>\] "
+		body += " | <a href='?src=[ref];revive=[ref_mob]'>Heal</a> | <a href='?src=[ref];sleep=[ref_mob]'>Sleep</a>"
 
 	if(M.client)
-		body += "<br>\[<b>First Seen:</b> [M.client.player_join_date]\]\[<b>Byond account registered on:</b> [M.client.account_join_date]\]"
+		body += "<br><b>First Seen:</b> [M.client.player_join_date]"
+		body += "<br><b>Byond account registered on:</b> [M.client.account_join_date]"
 		body += "<br><br><b>CentCom Galactic Ban DB: </b> "
 		if(CONFIG_GET(string/centcom_ban_db))
-			body += "<a href='?_src_=holder;[HrefToken()];centcomlookup=[M.client.ckey]'>Search</a>"
+			body += "<a href='?src=[ref];centcomlookup=[M.client.ckey]'>Search</a>"
 		else
 			body += "<i>Disabled</i>"
 		body += "<br><br><b>Show related accounts by:</b> "
-		body += "\[ <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a> | "
-		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> \]"
+		body += " <a href='?src=[ref];showrelatedacc=cid;client=[REF(M.client)]'>CID</a> | "
+		body += "<a href='?src=[ref];showrelatedacc=ip;client=[REF(M.client)]'>IP</a>"
 		var/rep = 0
 		rep += SSpersistence.antag_rep[M.ckey]
 		body += "<br><br>Antagonist reputation: [rep]"
-		body += "<br><a href='?_src_=holder;[HrefToken()];modantagrep=add;mob=[REF(M)]'>\[increase\]</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=subtract;mob=[REF(M)]'>\[decrease\]</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=set;mob=[REF(M)]'>\[set\]</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=zero;mob=[REF(M)]'>\[zero\]</a>"
+		body += "<br><a href='?src=[ref];modantagrep=add;mob=[ref_mob]'>increase</a> "
+		body += "<a href='?src=[ref];modantagrep=subtract;mob=[ref_mob]'>decrease</a> "
+		body += "<a href='?src=[ref];modantagrep=set;mob=[ref_mob]'>set</a> "
+		body += "<a href='?src=[ref];modantagrep=zero;mob=[ref_mob]'>zero</a>"
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
 			full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
-		body += "<br>\[<b>Byond version:</b> [full_version]\]<br>"
+		body += "<br><b>Byond version:</b> [full_version]<br>"
 
 
-	body += "<br><br>\[ "
-	body += "<a href='?_src_=vars;[HrefToken()];Vars=[REF(M)]'>VV</a> - "
+	body += "<br><br> <a href='?_src_=vars;[HrefToken()];Vars=[ref_mob]'>VV</a> - "
 	if(M.mind)
-		body += "<a href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>TP</a> - "
-		// body += "<a href='?_src_=holder;[HrefToken()];skill=[REF(M)]'>SKILLS</a> - "
+		body += "<a href='?src=[ref];traitor=[ref_mob]'>TP</a> - "
+		// body += "<a href='?src=[ref];skill=[ref_mob]'>SKILLS</a> - "
 	else
-		body += "<a href='?_src_=holder;[HrefToken()];initmind=[REF(M)]'>Init Mind</a> - "
+		body += "<a href='?src=[ref];initmind=[ref_mob]'>Init Mind</a> - "
 	if (iscyborg(M))
-		body += "<a href='?_src_=holder;[HrefToken()];borgpanel=[REF(M)]'>BP</a> - "
+		body += "<a href='?src=[ref];borgpanel=[ref_mob]'>BP</a> - "
 	body += "<a href='?priv_msg=[M.ckey]'>PM</a> - "
-	body += "<a href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>SM</a> - "
+	body += "<a href='?src=[ref];subtlemessage=[ref_mob]'>SM</a> - "
 	if (ishuman(M) && M.mind)
-		body += "<a href='?_src_=holder;[HrefToken()];HeadsetMessage=[REF(M)]'>HM</a> - "
-	body += "<a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(M)]'>FLW</a> - "
+		body += "<a href='?src=[ref];HeadsetMessage=[ref_mob]'>HM</a> - "
+	body += "<a href='?src=[ref];adminplayerobservefollow=[ref_mob]'>FLW</a> - "
 	//Default to client logs if available
 	var/source = LOGSRC_MOB
 	if(M.client)
 		source = LOGSRC_CLIENT
-	body += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_src=[source]'>LOGS</a>\] <br>"
+	body += "<a href='?src=[ref];individuallog=[ref_mob];log_src=[source]'>LOGS</a>\] <br>"
 
 	body += "<b>Mob type</b> = [M.type]<br><br>"
 
-	body += "<A href='?_src_=holder;[HrefToken()];boot2=[REF(M)]'>Kick</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];newban=[REF(M)]'>Ban</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];jobban2=[REF(M)]'>Jobban</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];appearanceban=[REF(M)]'>Identity Ban</A> | "
-	var/rm = REF(M)
+	body += "<a href='?src=[ref];boot2=[ref_mob]'>Kick</A> | "
+	body += "<a href='?src=[ref];newban=[ref_mob]'>Ban</A> | "
+	body += "<a href='?src=[ref];jobban2=[ref_mob]'>Jobban</A> | "
+	body += "<a href='?src=[ref];appearanceban=[ref_mob]'>Identity Ban</A> | "
 	if(jobban_isbanned(M, "OOC"))
-		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=OOC;jobban4=[rm]'><font color=red>OOCBan</font></A> | "
+		body+= "<a href='?src=[ref];jobban3=OOC;jobban4=[ref_mob]'><font color=red>OOCBan</font></A> | "
 	else
-		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=OOC;jobban4=[rm]'>OOCBan</A> | "
+		body += "<a href='?src=[ref];jobban3=OOC;jobban4=[ref_mob]'>OOCBan</A> | "
 	if(QDELETED(M) || QDELETED(usr))
 		return
 	if(jobban_isbanned(M, "emote"))
-		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=emote;jobban4=[rm]'><font color=red>EmoteBan</font></A> | "
+		body+= "<a href='?src=[ref];jobban3=emote;jobban4=[ref_mob]'><font color=red>EmoteBan</font></A> | "
 	else
-		body+= "<A href='?_src_=holder;[HrefToken()];jobban3=emote;jobban4=[rm]'>Emoteban</A> | "
+		body+= "<a href='?src=[ref];jobban3=emote;jobban4=[ref_mob]'>Emoteban</A> | "
 	if(QDELETED(M) || QDELETED(usr))
 		return
 
-	body += "<A href='?_src_=holder;[HrefToken()];showmessageckey=[M.ckey]'>Notes | Messages | Watchlist</A> | "
+	//body += "<A href='?_src_=holder;[HrefToken()];showmessageckey=[M.ckey]'>Notes | Messages | Watchlist</A> | "
+	body += "<a href='?src=[ref];showmessageckey=[M.ckey]'>Notes</A> | "
 	if(M.client)
-		body += "| <A href='?_src_=holder;[HrefToken()];sendtoprison=[REF(M)]'>Prison</A> | "
-		body += "\ <A href='?_src_=holder;[HrefToken()];sendbacktolobby=[REF(M)]'>Send back to Lobby</A> | "
+		body += "<a href='?src=[ref];sendtoprison=[ref_mob]'>Prison</A> | "
+		body += "<a href='?src=[ref];sendbacktolobby=[ref_mob]'>Send back to Lobby</A>"
 		var/muted = M.client.prefs.muted
-		body += "<br><b>Mute: </b> "
-		body += "\[<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC)?"red":"blue"]'>IC</font></a> | "
-		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC)?"red":"blue"]'>OOC</font></a> | "
-		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY)?"red":"blue"]'>PRAY</font></a> | "
-		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP)?"red":"blue"]'>ADMINHELP</font></a> | "
-		body += "<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT)?"red":"blue"]'>DEADCHAT</font></a>\]"
-		body += "(<A href='?_src_=holder;[HrefToken()];mute=[M.ckey];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL)?"red":"blue"]'>toggle all</font></a>)"
+		body += {"<br><b>Mute: </b>
+			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC) ? "#ff5e5e" : "white"]'>IC</font></a> |
+			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC) ? "#ff5e5e" : "white"]'>OOC</font></a> |
+			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY) ? "#ff5e5e" : "white"]'>PRAY</font></a> |
+			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP) ? "#ff5e5e" : "white"]'>ADMINHELP</font></a> |
+			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT) ? "#ff5e5e" : "white"]'>DEADCHAT</font></a>
+			(<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL) ? "#ff5e5e" : "white"]'>ALL</font></a>)
+		"}
 
-	body += "<br><br>"
-	body += "<A href='?_src_=holder;[HrefToken()];jumpto=[REF(M)]'><b>Jump to</b></A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];getmob=[REF(M)]'>Get</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];sendmob=[REF(M)]'>Send To</A>"
+	body += {"
+		<br><br>
+		<a href='?src=[ref];jumpto=[ref_mob]'>Jump to</A> | 
+		<a href='?src=[ref];getmob=[ref_mob]'>Get</A> | 
+		<a href='?src=[ref];sendmob=[ref_mob]'>Send To</A>
 
-	body += "<br><br>"
-	body += "<A href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>Traitor panel</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];narrateto=[REF(M)]'>Narrate to</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>Subtle message</A> | "
-	// body += "<A href='?_src_=holder;[HrefToken()];playsoundto=[REF(M)]'>Play sound to</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];languagemenu=[REF(M)]'>Language Menu</A>"
+		<br><br>
+		<a href='?src=[ref];traitor=[ref_mob]'>Traitor panel</A> | 
+		<a href='?src=[ref];narrateto=[ref_mob]'>Narrate to</A> | 
+		<a href='?src=[ref];subtlemessage=[ref_mob]'>Subtle message</A> | 
+		<a href='?src=[ref];languagemenu=[ref_mob]'>Language Menu</A>
+		"}
 
 	if (M.client)
 		if(!isnewplayer(M))
-			body += "<br><br>"
-			body += "<b>Transformation:</b>"
-			body += "<br>"
+			body += "<br><br><b>Transformation:</b><br>"
+
+			var/list/transformation_options = list()
 
 			//Human
 			if(ishuman(M))
-				body += "<B>Human</B> | "
+				transformation_options += "<B>Human</B>"
 			else
-				body += "<A href='?_src_=holder;[HrefToken()];humanone=[REF(M)]'>Humanize</A> | "
+				transformation_options += "<a href='?src=[ref];humanone=[ref_mob]'>Humanize</A>"
 
 			//Monkey
 			if(ismonkey(M))
-				body += "<B>Monkeyized</B> | "
+				transformation_options += "<B>Monkeyized</B>"
 			else
-				body += "<A href='?_src_=holder;[HrefToken()];monkeyone=[REF(M)]'>Monkeyize</A> | "
+				transformation_options += "<a href='?src=[ref];monkeyone=[ref_mob]'>Monkeyize</A>"
 
 			//Corgi
 			if(iscorgi(M))
-				body += "<B>Corgized</B> | "
+				transformation_options += "<B>Corgized</B>"
 			else
-				body += "<A href='?_src_=holder;[HrefToken()];corgione=[REF(M)]'>Corgize</A> | "
+				transformation_options += "<a href='?src=[ref];corgione=[ref_mob]'>Corgize</A>"
 
 			//AI / Cyborg
 			if(isAI(M))
-				body += "<B>Is an AI</B> "
+				transformation_options += "<B>Is an AI</B>"
 			else if(ishuman(M))
-				body += "<A href='?_src_=holder;[HrefToken()];makeai=[REF(M)]'>Make AI</A> | "
-				body += "<A href='?_src_=holder;[HrefToken()];makerobot=[REF(M)]'>Make Robot</A> | "
-				body += "<A href='?_src_=holder;[HrefToken()];makealien=[REF(M)]'>Make Alien</A> | "
-				body += "<A href='?_src_=holder;[HrefToken()];makeslime=[REF(M)]'>Make Slime</A> | "
-				body += "<A href='?_src_=holder;[HrefToken()];makeblob=[REF(M)]'>Make Blob</A> | "
+				transformation_options += {"
+					<a href='?src=[ref];makeai=[ref_mob]'>Make AI</A>
+					<a href='?src=[ref];makerobot=[ref_mob]'>Make Robot</A>
+					<a href='?src=[ref];makealien=[ref_mob]'>Make Alien</A>
+					<a href='?src=[ref];makeslime=[ref_mob]'>Make Slime</A>
+					<a href='?src=[ref];makeblob=[ref_mob]'>Make Blob</A>
+					"}
 
 			//Simple Animals
 			if(isanimal(M))
-				body += "<A href='?_src_=holder;[HrefToken()];makeanimal=[REF(M)]'>Re-Animalize</A> | "
+				transformation_options += "<a href='?src=[ref];makeanimal=[ref_mob]'>Re-Animalize</A>"
 			else
-				body += "<A href='?_src_=holder;[HrefToken()];makeanimal=[REF(M)]'>Animalize</A> | "
+				transformation_options += "<a href='?src=[ref];makeanimal=[ref_mob]'>Animalize</A>"
+			
+			body += transformation_options.Join(" | ")
 
-			body += "<br><br>"
-			body += "<b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font><br>"
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=observer;mob=[REF(M)]'>Observer</A> | "
-			body += "\[ Alien: <A href='?_src_=holder;[HrefToken()];simplemake=drone;mob=[REF(M)]'>Drone</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=hunter;mob=[REF(M)]'>Hunter</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=sentinel;mob=[REF(M)]'>Sentinel</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=praetorian;mob=[REF(M)]'>Praetorian</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=queen;mob=[REF(M)]'>Queen</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=larva;mob=[REF(M)]'>Larva</A> \] "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=human;mob=[REF(M)]'>Human</A> "
-			body += "\[ slime: <A href='?_src_=holder;[HrefToken()];simplemake=slime;mob=[REF(M)]'>Baby</A>, "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=adultslime;mob=[REF(M)]'>Adult</A> \] "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=monkey;mob=[REF(M)]'>Monkey</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=robot;mob=[REF(M)]'>Cyborg</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=cat;mob=[REF(M)]'>Cat</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=runtime;mob=[REF(M)]'>Runtime</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=corgi;mob=[REF(M)]'>Corgi</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=ian;mob=[REF(M)]'>Ian</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=crab;mob=[REF(M)]'>Crab</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=coffee;mob=[REF(M)]'>Coffee</A> | "
-			body += "\[ Construct: <A href='?_src_=holder;[HrefToken()];simplemake=constructarmored;mob=[REF(M)]'>Juggernaut</A> , "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=constructbuilder;mob=[REF(M)]'>Artificer</A> , "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=constructwraith;mob=[REF(M)]'>Wraith</A> \] "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=shade;mob=[REF(M)]'>Shade</A>"
-			body += "<br>"
+			body += {"
+				<br><br><b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font>
+				<br> Special: <a href='?src=[ref];simplemake=observer;mob=[ref_mob]'>Observer</A> | 
+				<a href='?src=[ref];simplemake=robot;mob=[ref_mob]'>Cyborg</A>
+				<br> Humanoid: <a href='?src=[ref];simplemake=human;mob=[ref_mob]'>Human</A> | 
+				<a href='?src=[ref];simplemake=monkey;mob=[ref_mob]'>Monkey</A>
+				<br> Alien: <a href='?src=[ref];simplemake=drone;mob=[ref_mob]'>Drone</A>, 
+				<a href='?src=[ref];simplemake=hunter;mob=[ref_mob]'>Hunter</A> | 
+				<a href='?src=[ref];simplemake=sentinel;mob=[ref_mob]'>Sentinel</A> | 
+				<a href='?src=[ref];simplemake=praetorian;mob=[ref_mob]'>Praetorian</A> | 
+				<a href='?src=[ref];simplemake=queen;mob=[ref_mob]'>Queen</A> | 
+				<a href='?src=[ref];simplemake=larva;mob=[ref_mob]'>Larva</A>
+				<br> Slime: <a href='?src=[ref];simplemake=slime;mob=[ref_mob]'>Baby</A> | 
+				<a href='?src=[ref];simplemake=adultslime;mob=[ref_mob]'>Adult</A>
+				<br> Pet: <a href='?src=[ref];simplemake=cat;mob=[ref_mob]'>Cat</A> | 
+				<a href='?src=[ref];simplemake=runtime;mob=[ref_mob]'>Runtime</A> | 
+				<a href='?src=[ref];simplemake=corgi;mob=[ref_mob]'>Corgi</A> | 
+				<a href='?src=[ref];simplemake=ian;mob=[ref_mob]'>Ian</A> | 
+				<a href='?src=[ref];simplemake=crab;mob=[ref_mob]'>Crab</A> | 
+				<a href='?src=[ref];simplemake=coffee;mob=[ref_mob]'>Coffee</A>
+				<br> Construct: <a href='?src=[ref];simplemake=constructarmored;mob=[ref_mob]'>Juggernaut</A> | 
+				<a href='?src=[ref];simplemake=constructbuilder;mob=[ref_mob]'>Artificer</A> | 
+				<a href='?src=[ref];simplemake=constructwraith;mob=[ref_mob]'>Wraith</A> | 
+				<a href='?src=[ref];simplemake=shade;mob=[ref_mob]'>Shade</A>
+				"}
 
-		body += "<br><br>"
-		body += "<b>Other actions:</b>"
-		body += "<br>"
-		body += "<A href='?_src_=holder;[HrefToken()];forcespeech=[REF(M)]'>Forcesay</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];tdome1=[REF(M)]'>Thunderdome 1</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];tdome2=[REF(M)]'>Thunderdome 2</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];tdomeadmin=[REF(M)]'>Thunderdome Admin</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];tdomeobserve=[REF(M)]'>Thunderdome Observer</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];makementor=[M.ckey]'>Make mentor</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];removementor=[M.ckey]'>Remove mentor</A> | "
-		body += "<A href='?_src_=holder;[HrefToken()];makeeligible=[REF(M)]'>Allow reentering round</A>"
-	body += "<br>"
-	body += "</body></html>"
+		body += {"
+			<br><br>
+			<b>Other actions:</b>
+			<br>
+			<a href='?src=[ref];forcespeech=[ref_mob]'>Forcesay</A> | 
+			<a href='?src=[ref];tdome1=[ref_mob]'>Thunderdome 1</A> | 
+			<a href='?src=[ref];tdome2=[ref_mob]'>Thunderdome 2</A> | 
+			<a href='?src=[ref];tdomeadmin=[ref_mob]'>Thunderdome Admin</A> | 
+			<a href='?src=[ref];tdomeobserve=[ref_mob]'>Thunderdome Observer</A> | 
+			<a href='?src=[ref];makementor=[M.ckey]'>Make mentor</A> | 
+			<a href='?src=[ref];removementor=[M.ckey]'>Remove mentor</A> | 
+			<a href='?src=[ref];makeeligible=[ref_mob]'>Allow reentering round</A>
+			"}
+	body += "<br></body></html>"
 
-	usr << browse(body, "window=adminplayeropts-[REF(M)];size=550x515")
+	var/datum/browser/browser = new(usr, "adminplayeropts-[ref_mob]", "<div align='center'>Player Panel</div>", 700, 500)
+	browser.set_content(body.Join())
+	browser.open()
+
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Player Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -1054,6 +1068,8 @@
 	if(!M)
 		return
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_man_up() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_man_up() without admin perms.")
 		return
 
 	to_chat(M, "<span class='warning bold reallybig'>Man up, and deal with it.</span><br><span class='warning big'>Move on.</span>")
@@ -1070,6 +1086,8 @@
 	set name = "Man Up Global"
 
 	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use cmd_admin_man_up_global() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use cmd_admin_man_up_global() without admin perms.")
 		return
 
 	to_chat(world, "<span class='warning bold reallybig'>Man up, and deal with it.</span><br><span class='warning big'>Move on.</span>")

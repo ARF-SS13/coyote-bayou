@@ -1,6 +1,6 @@
 /mob/living/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, SIGNAL_TRAIT(TRAIT_SPRINT_LOCKED), .proc/update_sprint_lock)
+	RegisterSignal(src, list(SIGNAL_ADDTRAIT(TRAIT_SPRINT_LOCKED), SIGNAL_REMOVETRAIT(TRAIT_SPRINT_LOCKED)), .proc/update_sprint_lock)
 
 /mob/living/proc/update_sprint_icon()
 	var/obj/screen/sprintbutton/S = locate() in hud_used?.static_inventory

@@ -6,6 +6,7 @@ quirks have it's own panel so we don't need them here.
 
 GLOBAL_LIST_INIT(traits_by_type, list(
 	/mob = list(
+		"TRAIT_KNOCKEDOUT" = TRAIT_KNOCKEDOUT,
 		"TRAIT_SURGERY_LOW" = TRAIT_SURGERY_LOW,
 		"TRAIT_SURGERY_MID" = TRAIT_SURGERY_MID,
 		"TRAIT_SURGERY_HIGH" = TRAIT_SURGERY_HIGH,
