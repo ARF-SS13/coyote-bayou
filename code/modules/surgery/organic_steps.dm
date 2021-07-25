@@ -72,7 +72,7 @@
 //close incision
 /datum/surgery_step/close
 	name = "mend incision"
-	implements = list(TOOL_CAUTERY = 100, /obj/item/gun/energy/laser = 90, TOOL_WELDER = 70,
+	implements = list(TOOL_CAUTERY = 100, /obj/item/gun/energy/laser = 90, TOOL_WELDER = 80,
 		/obj/item = 30) // 30% success with any hot item.
 	time = 24
 

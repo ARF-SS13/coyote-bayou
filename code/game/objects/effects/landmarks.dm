@@ -641,7 +641,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/campfollower
-	name = "Legion Camp Duty"
+	name = "Legion Forgemaster"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/slave

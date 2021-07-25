@@ -175,14 +175,15 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Prime Decanus",
 	"Legion Recruit Decanus",
 	"Legion Vexillarius",
+	"Legion Explorer",
 	"Veteran Legionnaire",
 	"Prime Legionnaire",
 	"Recruit Legionnaire",
-	"Legion Venator",
-	"Legion Explorer",
+	"Legion Forgemaster",
+	"Legion Slavemaster",
 	"Legion Auxilia",
-	"Legion Camp Duty",
 	"Legion Slave",
+	"Legion Venator",
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
@@ -192,20 +193,19 @@ GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
 GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Captain",
 	"NCR Lieutenant",
-	"NCR Medical Officer",
-	"NCR Logistics Officer",
+	"NCR Veteran Ranger",
+	"NCR Ranger",
 	"NCR Sergeant First Class",
 	"NCR Heavy Trooper",
+	"NCR Military Police",
 	"NCR Sergeant",
 	"NCR Corporal",
 	"NCR Combat Medic",
 	"NCR Combat Engineer",
 	"NCR Trooper",
+	"NCR Medical Officer",
+	"NCR Logistics Officer",
 	"NCR Rear Echelon",
-	"NCR Off-Duty",
-	"NCR Veteran Ranger",
-	"NCR Ranger",
-	"NCR Military Police",
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(

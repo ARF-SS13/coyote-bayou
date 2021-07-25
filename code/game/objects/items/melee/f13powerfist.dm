@@ -84,56 +84,51 @@
 	desc = "The Ripper™ vibroblade is powered by a small energy cell wich allows it to easily cut through flesh and bone."
 	icon = 'icons/fallout/objects/melee/melee.dmi'
 	icon_state = "ripper"
-	var/on_icon_state = "ripper_on"
-	var/off_icon_state = "ripper"
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
-	var/on_item_state = "ripper_on"
-	var/off_item_state = "ripper"
-	w_class = WEIGHT_CLASS_BULKY
-	var/weight_class_on = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_NORMAL
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 	slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 	force = 10
-	var/force_on = 45
-	var/force_off = 10
 	wound_bonus = 25
 	block_chance = 15
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
-	var/on = FALSE
 	tool_behaviour = TOOL_SAW
 	sharpness = SHARP_EDGED
 	toolspeed = 1.5 //slower than a real saw
 	resistance_flags = FIRE_PROOF
 	hitsound = 'sound/weapons/chainsawhit.ogg'
+	var/on_item_state = "ripper_on"
+	var/off_item_state = "ripper"
+	var/weight_class_on = WEIGHT_CLASS_HUGE
+	var/force_on = 45
+	var/force_off = 10
+	var/on = FALSE
+	var/on_icon_state = "ripper_on"
+	var/off_icon_state = "ripper"
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
-
-// Description for when turning the ripper on
-/obj/item/melee/powered/ripper/proc/get_on_description()
-	. = list()
-	.["local_on"] = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
-	.["local_off"] = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
-	return
+	var/description_on = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
+	var/description_off = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
 
 /obj/item/melee/powered/ripper/attack_self(mob/user)
 	on = !on
-	var/list/desc = get_on_description()
+	to_chat(user, description_on)
 	if(on)
-		to_chat(user, desc["local_on"])
+		to_chat(user, description_on)
 		icon_state = on_icon_state
 		item_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
 		slot_flags = null
 		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
-		playsound(src.loc, on_sound, 50, 1)
+		playsound(loc, on_sound, 50, TRUE)
 	else
-		to_chat(user, desc["local_off"])
+		to_chat(user, description_off)
 		icon_state = off_icon_state
 		item_state = off_item_state
-		w_class = WEIGHT_CLASS_BULKY
+		w_class = WEIGHT_CLASS_NORMAL
 		force = force_off
 		slot_flags = ITEM_SLOT_SUITSTORE | ITEM_SLOT_BELT
 		attack_verb = list("poked", "scraped")
@@ -156,31 +151,61 @@
 /obj/item/twohanded/chainsaw
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
-	icon_state = "chainsaw_off"
-	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
-	flags_1 = CONDUCT_1
-	force = 13
-	var/force_on = 57
-	w_class = WEIGHT_CLASS_HUGE
-	throwforce = 10
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "chainsaw"
+	item_state = "chainsaw"
+	icon_prefix = "chainsaw"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	force = 7
+	wound_bonus = 25
 	throw_speed = 2
 	throw_range = 2
-	wound_bonus = 25
-//	custom_materials = list(MAT_METAL=13000)
-	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
-	hitsound = "swing_hit"
-	sharpness = SHARP_EDGED
-	actions_types = list(/datum/action/item_action/startchainsaw)
-	tool_behaviour = TOOL_SAW
+	throwforce = 10
 	toolspeed = 0.5
+	tool_behaviour = TOOL_SAW
+	sharpness = SHARP_EDGED
+	resistance_flags = FIRE_PROOF
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+	var/on_icon_state = "chainsaw_on"
+	var/off_icon_state = "chainsaw"
+	var/on_item_state = "chainsaw_on"
+	var/off_item_state = "chainsaw"
+	var/weight_class_on = WEIGHT_CLASS_HUGE
 	var/on = FALSE
+	var/force_on = 57
+	var/force_off = 7
+	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
+	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"
+	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/twohanded/chainsaw/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-	AddElement(/datum/element/update_icon_updates_onmob)
+	update_icon()
+
+/obj/item/twohanded/chainsaw/attack_self(mob/user)
+	on = !on
+	if(on)
+		to_chat(user, description_on)
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+		playsound(loc, on_sound, 50, TRUE)
+	else
+		to_chat(user, description_off)
+		icon_state = off_icon_state
+		item_state = off_item_state
+		w_class = WEIGHT_CLASS_BULKY
+		force = force_off
+		attack_verb = list("poked", "scraped")
+	add_fingerprint(user)
 
 /obj/item/twohanded/chainsaw/suicide_act(mob/living/carbon/user)
 	if(on)
@@ -194,22 +219,6 @@
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
-/obj/item/twohanded/chainsaw/attack_self(mob/user)
-	on = !on
-	to_chat(user, "As you pull the starting cord dangling from [src], [on ? "it begins to whirr." : "the chain stops moving."]")
-	force = on ? force_on : initial(force)
-	throwforce = on ? force_on : force
-	update_icon()
-	var/datum/component/butchering/butchering = src.GetComponent(/datum/component/butchering)
-	butchering.butchering_enabled = on
-
-	if(on)
-		hitsound = 'sound/weapons/chainsawhit.ogg'
-	else
-		hitsound = "swing_hit"
-
-/obj/item/twohanded/chainsaw/update_icon_state()
-	icon_state = "chainsaw_[on ? "on" : "off"]"
 
 
 // Shishkebab backpack				The shishkebab weapon base unit
@@ -375,3 +384,20 @@
 	. = ..()
 	if(part)
 		part.drop_limb()
+
+/obj/item/twohanded/chainsaw/doomslayer
+	name = "THE GREAT COMMUNICATOR"
+	desc = "<span class='warning'>VRRRRRRR!!!</span>"
+	armour_penetration = 1
+	force_on = 30
+
+/obj/item/twohanded/chainsaw/doomslayer/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	block_return[BLOCK_RETURN_REFLECT_PROJECTILE_CHANCE] = 100
+	return ..()
+
+/obj/item/twohanded/chainsaw/doomslayer/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(attack_type & ATTACK_TYPE_PROJECTILE)
+		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
+		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return ..()

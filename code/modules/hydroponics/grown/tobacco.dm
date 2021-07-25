@@ -23,6 +23,11 @@
 	filling_color = "#008000"
 	distill_reagent = /datum/reagent/consumable/ethanol/creme_de_menthe //Menthol, I guess.
 
+/obj/item/reagent_containers/food/snacks/grown/tobacco/dried
+	name = "fine tobacco"
+	desc = "Some aromatic tobacco."
+	dry = TRUE
+
 // Space Tobacco
 /obj/item/seeds/tobacco/space
 	name = "pack of space tobacco seeds"

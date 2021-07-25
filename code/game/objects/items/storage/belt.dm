@@ -81,7 +81,7 @@
 	new /obj/item/crowbar/power(src)
 	new /obj/item/weldingtool/experimental(src)//This can be changed if this is too much
 	new /obj/item/multitool(src)
-	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
+	new /obj/item/stack/cable_coil(src,30,pick("blue"))
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/analyzer/ranged(src)
 	//much roomier now that we've managed to remove two tools
@@ -93,7 +93,53 @@
 	new /obj/item/crowbar(src)
 	new /obj/item/wirecutters(src)
 	new /obj/item/multitool(src)
-	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
+	new /obj/item/stack/cable_coil(src,30,pick("red"))
+
+/obj/item/storage/belt/utility/waster
+	name = "wastelander toolbelt"
+	desc = "Holds a collection of simple tools."
+
+/obj/item/storage/belt/utility/waster/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	var/static/list/can_hold = typecacheof(list(
+		/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/multitool,
+		/obj/item/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/analyzer,
+		/obj/item/geiger_counter,
+		/obj/item/extinguisher/mini,
+		/obj/item/radio,
+		/obj/item/assembly/signaler,
+		/obj/item/twohanded/chainsaw,
+		))
+	STR.can_hold = can_hold
+
+/obj/item/storage/belt/utility/waster/PopulateContents()
+	new /obj/item/crowbar(src)
+	new /obj/item/wrench(src)
+	new /obj/item/screwdriver/basic(src)
+	new /obj/item/weldingtool/basic(src)
+	new /obj/item/wirecutters/basic(src)
+	new /obj/item/stack/cable_coil(src,30,pick("yellow","orange"))
+
+/obj/item/storage/belt/utility/waster/forgemaster
+	name = "forgemasters toolbelt"
+	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
+
+/obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
+	new /obj/item/crowbar(src)
+	new /obj/item/wrench(src)
+	new /obj/item/screwdriver/basic(src)
+	new /obj/item/weldingtool/basic(src)
+	new /obj/item/wirecutters/basic(src)
+	new /obj/item/twohanded/chainsaw(src)
 
 /obj/item/storage/belt/utility/servant/PopulateContents()
 	new /obj/item/screwdriver/brass(src)
@@ -161,8 +207,24 @@
 		/obj/item/implanter,
 		/obj/item/pinpointer/crew,
 		/obj/item/reagent_containers/chem_pack,
-		/obj/item/stack/sticky_tape //surgical tape
+		/obj/item/weldingtool/basic,
+		/obj/item/stack/sticky_tape, //surgical tape
+		/obj/item/handsaw
 		))
+
+/obj/item/storage/belt/medical/primitive
+	name = "primitive medical toolbelt"
+	desc = "This might look a bit like a toolbelt for a carpenter, but the items inside are meant to be used in surgery. No really."
+	content_overlays = FALSE
+
+/obj/item/storage/belt/medical/legion/PopulateContents()
+	new /obj/item/surgical_drapes(src)
+	new /obj/item/scalpel (src)
+	new /obj/item/handsaw(src)
+	new /obj/item/retractor(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/weldingtool/basic(src)
+	new /obj/item/bonesetter(src)
 
 /obj/item/storage/belt/medical/surgery_belt_adv
 	name = "surgical supply belt"

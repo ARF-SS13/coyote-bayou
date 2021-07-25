@@ -998,11 +998,11 @@
 	desc = "A dog tag that demands respect from all those subordinate to it. This one belongs to an NCR colonel."
 	icon_state = "ncrdogtagcaptain"
 
-/obj/item/card/id/dogtag/legfollower
-	name = "follower medallion"
-	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a camp follower."
+/obj/item/card/id/dogtag/legforgemaster
+	name = "forgemasters' medallion"
+	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to the Forgemaster."
 	icon_state = "legionmedallionrecruit"
-	assignment = "follower medallion"
+	assignment = "forgmaster medallion"
 
 /obj/item/card/id/dogtag/legauxilia
 	name = "auxilia medallion"

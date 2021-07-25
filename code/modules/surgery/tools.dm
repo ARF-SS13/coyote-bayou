@@ -267,6 +267,29 @@
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
+// Hand saw
+/obj/item/handsaw
+	name = "handsaw"
+	desc = "Good old saw, can't run out of power or gas."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "saw"
+	item_state = "saw"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = ITEM_SLOT_BELT
+	force = 6
+	throw_speed = 3
+	throw_range = 7
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron=500)
+	attack_verb = list("sawed", "scratched")
+	hitsound = 'sound/effects/shovel_dig.ogg'
+	usesound = 'sound/effects/shovel_dig.ogg'
+	sharpness = SHARP_EDGED
+	tool_behaviour = TOOL_SAW
+	toolspeed = 1
+
 /obj/item/circular_saw
 	name = "circular saw"
 	desc = "For heavy duty cutting."
@@ -287,7 +310,7 @@
 	attack_verb = list("attacked", "slashed", "sawed", "cut")
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
-	toolspeed = 1
+	toolspeed = 0.9
 	wound_bonus = 5
 	bare_wound_bonus = 10
 

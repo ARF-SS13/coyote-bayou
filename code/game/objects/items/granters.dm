@@ -788,15 +788,6 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/scoutcarbine)
 
-/obj/item/book/granter/trait/forgemaster
-	name = "Ashes of Phoenix: Imperial Weaponsmithing"
-	desc = "Bound in doghide, this book holds lessons from freemen in tributary cities on how to properly maintain and forge new weapons."
-	oneuse = TRUE
-	granted_trait = TRAIT_MASTER_GUNSMITH
-	traitname = "forge mastery"
-	remarks = list("Strike while the metal is hot, both in weaponsmithing and in general practice.", "Rest regularly, fatigue is not desired during dangerous metalwork.", "All proper weapons need a handle, do not forget the handle.", "Do not forget gloves when handling hot metal, welding goggles as well.", "Chaos is a ladder, keep an organized forge.")
-	crafting_recipe_types = list(/datum/crafting_recipe/lance, /datum/crafting_recipe/spatha, /datum/crafting_recipe/gladius, /datum/crafting_recipe/trail_carbine, /datum/crafting_recipe/legionshield, /datum/crafting_recipe/brush)
-
 /obj/item/book/granter/trait/chemistry
 	name = "Big Book of Science"
 	desc = "This heavy textbook can teach basic chemistry, but saw more use as a blunt weapon shortly after the Collapse."

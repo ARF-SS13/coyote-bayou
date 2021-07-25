@@ -189,14 +189,14 @@
 	icon_state = "legion-opifex"
 	item_state = "legion-opifex"
 	blood_overlay_type = "armor"
-	armor = list("melee" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 5)
-	allowed = list(/obj/item/crowbar,
+	allowed = list(
+		/obj/item/crowbar,
 		/obj/item/screwdriver,
 		/obj/item/weldingtool,
 		/obj/item/wirecutters,
 		/obj/item/wrench,
-		/obj/item/stack/cable_coil,
-		/obj/item/twohanded/sledgehammer)
+		/obj/item/twohanded,
+		)
 
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
@@ -237,9 +237,11 @@
 
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	name = "legion explorer armor"
-	desc = "(IV) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
+	desc = "(III) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
+	slowdown = -0.13
+	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	name = "legion vexillarius armor"

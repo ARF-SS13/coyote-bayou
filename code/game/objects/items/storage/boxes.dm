@@ -1372,12 +1372,12 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/ids/follower
 	name = "box of spare medallions"
-	desc = "Medallions for issue to Camp Followers."
+	desc = "Medallions for issue to recruits."
 	illustration = "legauxilia"
 
 /obj/item/storage/box/ids/follower/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/card/id/dogtag/legfollower
+		new /obj/item/card/id/dogtag/legrecruit
 
 /obj/item/storage/box/deputy_badges
 	name = "box of spare badges"

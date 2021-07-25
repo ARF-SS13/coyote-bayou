@@ -484,6 +484,27 @@
 
 //CLOTHING//
 
+
+/datum/crafting_recipe/tailor/ncruniform
+	name = "NCR Uniform"
+	result = /obj/item/clothing/under/f13/ncr
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+	always_availible = FALSE
+
+/datum/crafting_recipe/tailor/legionuniform
+	name = "Legion Uniform"
+	result = /obj/item/clothing/under/f13/legskirt
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+	always_availible = FALSE
+
 /datum/crafting_recipe/settler
 	name = "Settler outfit"
 	result = /obj/item/clothing/under/f13/settler

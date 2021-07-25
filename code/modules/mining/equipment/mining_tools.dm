@@ -192,17 +192,3 @@
 	toolspeed = 0.7
 	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
 	sharpness = SHARP_EDGED
-
-/obj/item/shovel/trench
-	name = "p81 entrenching tool"
-	desc = "The 'Pattern 2281' Entrenching Tool is a new piece of infantry equipment given in limited quantity to infantry troops. An extremely robust shovel with a serrated edge for chopping wood."
-	icon_state = "entrenching_tool"
-	item_state = "trench"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 30
-	throwforce = 15
-	w_class = WEIGHT_CLASS_NORMAL
-	toolspeed = 0.7
-	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
-	sharpness = SHARP_EDGED

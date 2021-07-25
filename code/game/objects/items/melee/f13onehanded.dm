@@ -1,6 +1,4 @@
-//SS13 weapons that are parents to F13 weapons or still used may be included here
-//Unlike weaponry.dm, everything in here should be balanced for F13 combat.
-
+// In this document: Onehanded templates, Swords, Knives, Clubs, Glove weapons, Tool weapons
 
 /obj/item/melee //Melee weapon template
 	attack_speed = CLICK_CD_MELEE
@@ -26,7 +24,7 @@
 
 ////////////
 // SWORDS //
-////////////		-block, 30-40 damage
+////////////		-block, 34-39 damage
 
 /obj/item/melee/onehanded/machete
 	name = "simple machete"
@@ -72,9 +70,16 @@
 	desc = "This long blade is favoured by Legion officers and leaders, a finely crafted weapon with good steel and hilt made from bronze and bone."
 	icon_state = "spatha"
 	item_state = "spatha"
-	force = 40
+	force = 38
 	block_chance = 18
 
+/obj/item/melee/onehanded/machete/scrapsabre
+	name = "scrap sabre"
+	desc = "Made from materials found in the wastes, a skilled blacksmith has turned it into a thing of deadly beauty."
+	icon_state = "scrapsabre"
+	item_state = "scrapsabre"
+	force = 39
+	block_chance = 15
 
 /obj/item/throwing_star/spear
 	name = "throwing spear"
@@ -94,11 +99,9 @@
 
 
 
-
 ////////////
 // KNIVES //
-////////////			-small AP bonus, 24-32 damage
-
+////////////			-small AP bonus, 24-31 damage
 
 /obj/item/melee/onehanded/knife
 	name = "knife template"
@@ -141,7 +144,7 @@
 	icon_state = "knife_hunting"
 	desc = "Dependable hunting knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 28
+	force = 27
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 
@@ -165,7 +168,7 @@
 	icon_state = "knife_bowie"
 	item_state = "knife_bowie"
 	desc = "A large clip point fighting knife."
-	force = 31
+	force = 30
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -174,7 +177,7 @@
 	icon_state = "knife_trench"
 	item_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
-	force = 32
+	force = 31
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 
@@ -268,8 +271,7 @@
 
 ///////////
 // CLUBS //
-///////////			- stamina damage, 26-32 damage
-
+///////////			- stamina damage, 26-30 damage
 
 /obj/item/melee/onehanded/club
 	name = "pipe"
@@ -296,7 +298,7 @@
 	icon_state = "warclub"
 	item_state = "warclub"
 	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
-	force = 32
+	force = 30
 	throwforce = 25
 	block_chance = 5
 
@@ -311,20 +313,19 @@
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon_state = "tire"
 	item_state = "tire"
-	force = 32
+	force = 30
 
-/obj/item/bostaff/ncr_flag
+// NCR Flag			Keywords: NCR, Damage 26, Stamina damage, Block
+/obj/item/melee/onehanded/club/ncrflag
 	name = "NCR flagpole"
 	desc = "The proud standard of the New California Republic. Used as a tool by patriots, used as a weapon by legends."
-	attack_verb = list("smacked", "thwacked", "democratized", "freedomed")
+	icon_state = "flag-ncr"
+	item_state = "flag-ncr"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force = 20
-	block_chance = 50
-	icon_state = "ncr_flag"
-	item_state = "ncr_flag"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 26
+	block_chance = 30
+	attack_verb = list("smacked", "thwacked", "democratized", "freedomed")
 
 /obj/item/melee/classic_baton
 	name = "wooden baton"
@@ -335,8 +336,9 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
-	force = 12 //9 hit crit
+	force = 18
 	w_class = WEIGHT_CLASS_NORMAL
+	wound_bonus = 15
 	var/stun_stam_cost_coeff = 1.25
 	var/hardstun_ds = TRUE
 	var/softstun_ds = 0
@@ -355,8 +357,6 @@
 	var/force_on // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
-
-	wound_bonus = 15
 
 /obj/item/melee/classic_baton/Initialize()
 	. = ..()
@@ -462,6 +462,18 @@
 				to_chat(user, wait_desc)
 			return DISCARD_LAST_ACTION
 
+// Military baton - Desired effect instant disarm on hit on NCR when used by MP, could be sorted with a interesting martial art maybe.
+/obj/item/melee/classic_baton/militarypolice
+	name = "military baton"
+	desc = "Sturdy stick painted white, used by military police to get unruly troopers into line."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "batonmp"
+	item_state = "batonmp"
+
+
+// Telescopic baton
 /obj/item/melee/classic_baton/telescopic
 	name = "telescopic baton"
 	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
@@ -521,7 +533,7 @@
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
 		attack_verb = list("hit", "poked")
-	playsound(src.loc, on_sound, 50, 1)
+	playsound(loc, on_sound, 50, TRUE)
 	add_fingerprint(user)
 
 
@@ -638,30 +650,31 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 
-// Tiger claws						Keywords: Damage 27
+// Tiger claws						Keywords: Damage 28, Pointy
 /obj/item/melee/unarmed/tigerclaw
 	name = "tiger claws"
 	desc = "Gloves with short claws built into the palms."
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
-	force = 27
+	force = 28
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_POINTY
 	w_class = WEIGHT_CLASS_NORMAL
 
 
-// Lacerator						Keywords: Damage 28
+// Lacerator						Keywords: Damage 27, Edged, Wound bonus
 /obj/item/melee/unarmed/lacerator
 	name = "lacerator"
 	desc = "Leather gloves with razor blades built into the back of the hand."
 	icon_state = "lacerator"
 	item_state = "lacerator"
-	force = 28
+	force = 27
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
+	bare_wound_bonus = 5
 
 
 // Mace Glove						Keywords: Damage 30
@@ -675,13 +688,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 
-// Punch Dagger						Keywords: Damage 30
+// Punch Dagger						Keywords: Damage 29, Pointy
 /obj/item/melee/unarmed/punchdagger
 	name = "punch dagger"
 	desc = "A dagger designed to be gripped in the user�s fist with the blade protruding between the middle and ring fingers, to increase the penetration of a punch."
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
-	force = 30
+	force = 29
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = SHARP_POINTY
@@ -734,10 +747,11 @@
 /obj/item/shovel/trench
 	name = "p81 entrenching tool"
 	desc = "The 'Pattern 2281' Entrenching Tool is a new piece of infantry equipment given in limited quantity to infantry troops. An extremely robust shovel with a serrated edge for chopping wood."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "entrenching_tool"
 	item_state = "trench"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 30
 	throwforce = 15
 	w_class = WEIGHT_CLASS_NORMAL

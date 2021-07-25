@@ -1,3 +1,19 @@
+/*
+NCR Design notes:
+Standard issue stuff to keep the theme visually and gameplay and avoid watering down.
+Gloves		Officers - Leather glovesl, fingerless leather gloves for sergeants. Bayonet standard issue knife. Sidearms mostly for officers, 9mm is the standard. MP gets nonstandard pot helm, the exception to prove the rule.
+			NCOs -		Fingerless gloves
+			Rest -		No gloves
+Knives		Army -		Bayonet
+			Ranger -	Bowie knife
+Money		Commanding Officer (LT and CAP) - "small" money bag
+			Officers and Rangers - /obj/item/storage/bag/money/small/ncrofficers
+			Rest - /obj/item/storage/bag/money/small/ncrenlisted
+Sidearm		Officers & a few specialists - 9mm pistol
+Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
+			Don't use Greaseguns, Lever shotguns, Police shotguns, Berettas, Hunting knives
+*/
+
 /datum/job/ncr //do NOT use this for anything, it's just to store faction datums
 	department_flag = NCR
 	selection_color = "#ffeeaa"
@@ -16,7 +32,9 @@
 	backpack = /obj/item/storage/backpack/trekker
 	satchel = /obj/item/storage/backpack/satchel/trekker
 	ears = /obj/item/radio/headset/headset_ncr
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	uniform	= /obj/item/clothing/under/f13/ncr
+	belt = /obj/item/storage/belt/military/assault/ncr
+	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	l_pocket = /obj/item/book/manual/ncr/jobguide
 
 /datum/outfit/job/ncr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -28,12 +46,16 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmet)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmormk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmetmk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
 
-/*
-Colonel
-*/
+
+///////////////////////
+/// Colonel - Admin ///
+///////////////////////
+
+
+// COLONEL
+
 /datum/job/ncr/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
@@ -52,35 +74,77 @@ Colonel
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 
-/datum/outfit/job/ncr/f13colonel
-	name 		= "NCR Colonel"
-	jobtype 	= /datum/job/ncr/f13colonel
-	id 			= /obj/item/card/id/dogtag/ncrcolonel
-	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
-	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
-	accessory 	= /obj/item/clothing/accessory/ncr
-	head 		= /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
-	belt        = /obj/item/storage/belt/military/assault/ncr
-	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	suit_store  = /obj/item/gun/ballistic/automatic/marksman
-	gloves      = /obj/item/clothing/gloves/f13/leather
-	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+/datum/outfit/job/ncr/f13colonel	// Power armor, Desert Eagle
+	name = "NCR Colonel"
+	jobtype = /datum/job/ncr/f13colonel
+	id = /obj/item/card/id/dogtag/ncrcolonel
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
+	accessory = /obj/item/clothing/accessory/ncr
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t45d/sierra
+	neck = /obj/item/storage/belt/holster/legholster
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	gloves = /obj/item/clothing/gloves/f13/leather
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	r_pocket = /obj/item/binoculars	
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
-		/obj/item/melee/onehanded/knife/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/storage/bag/money/small/ncr=1, \
-		/obj/item/clothing/head/beret/ncr=1)
+		/obj/item/ammo_box/magazine/m44 = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/storage/bag/money/small/ncr = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/clothing/head/beret/ncr = 1,
+		)
 
-/*
-Captain
-*/
+// PERSONAL AIDE		The Colonels flagbearer and personal aide, for events only to help the Colonel and add color.
+
+/datum/job/ncr/f13aide
+	title = "NCR Personal Aide"
+	flag = F13COLONEL
+	faction = "NCR"
+	supervisors = "The Colonel"
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
+	req_admin_notify = 1
+	total_positions = 0
+	spawn_positions = 0
+	outfit = /datum/outfit/job/ncr/f13aide
+
+/datum/outfit/job/ncr/f13aide/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
+/datum/outfit/job/ncr/f13aide	// NCR Flag, Automag pistol
+	name = "NCR Personal Aide"
+	jobtype = /datum/job/ncr/f13aide
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	accessory = /obj/item/clothing/accessory/ncr/CPL
+	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
+	head = /obj/item/clothing/head/f13/ncr
+	neck = /obj/item/storage/belt/holster/legholster
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/captain
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
+	r_hand = /obj/item/melee/onehanded/club/ncrflag
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m44 = 2,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		)
+
+
+/////////////////////////////////
+/// Combat Officers & Leaders ///
+/////////////////////////////////
+
+// CAPTAIN
+
 /datum/job/ncr/f13captain
 	title = "NCR Captain"
 	flag = F13CAPTAIN
@@ -95,69 +159,49 @@ Captain
 	outfit = /datum/outfit/job/ncr/f13captain
 	exp_requirements = 2000
 
-	loadout_options = list(
-	/datum/outfit/loadout/captao, //Captain armor, m16a1, deagle
-	/datum/outfit/loadout/captco, //Officer coat, R91, hunting revolver
-	)
-
 /datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	ADD_TRAIT(H, TRAIT_NOSLIPALL, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
 
-/datum/outfit/job/ncr/f13captain
+/datum/outfit/job/ncr/f13captain	// Desert Eagle, Frag grenade, Smoke grenade, Binoculars, Trench knife
 	name = "NCR Captain"
 	jobtype = /datum/job/ncr/f13captain
 	id = /obj/item/card/id/dogtag/ncrcaptain
-	uniform = /obj/item/clothing/under/f13/ncr/ncr_officer
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
 	head = /obj/item/clothing/head/beret/ncr
-	gloves = /obj/item/clothing/gloves/f13/military
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	ears = /obj/item/radio/headset/headset_ncr_com
+	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	accessory = /obj/item/clothing/accessory/ncr/CPT
-	glasses = /obj/item/clothing/glasses/sunglasses/big
-	neck = /obj/item/storage/belt/holster
-	ears = /obj/item/radio/headset/headset_ncr_com
+	mask = /obj/item/clothing/mask/cigarette/pipe
+	neck = /obj/item/storage/belt/holster/legholster
+	r_pocket = /obj/item/binoculars	
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting,
-		/obj/item/melee/classic_baton/telescopic,
-		/obj/item/binoculars,
-		/obj/item/storage/bag/money/small/ncr,
-		/obj/item/megaphone,
-		/obj/item/clothing/mask/ncr_facewrap,
+		/obj/item/melee/onehanded/knife/trench = 1,
+		/obj/item/storage/bag/money/small/ncr = 1,
+		/obj/item/megaphone = 1,
+		/obj/item/grenade/frag = 1,
+		/obj/item/grenade/smokebomb = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/ammo_box/magazine/m44 = 3,
+		/obj/item/lighter = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tobacco/dried = 1,
 		)
 
-/datum/outfit/loadout/captao
-	name = "Armored Officer"
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
-	belt 		= /obj/item/storage/belt/military/assault/ncr
-	l_hand 		= /obj/item/gun/ballistic/automatic/assault_rifle
-	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/automatic/pistol/deagle=1,
-	/obj/item/ammo_box/magazine/m44=3)
 
-/datum/outfit/loadout/captco
-	name = "Commanding Officer"
-	suit = 		/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
-	belt = 		/obj/item/storage/belt/military/assault/ncr
-	l_hand =	/obj/item/gun/ballistic/automatic/assault_rifle
-	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m556/rifle/assault=1,
-	/obj/item/gun/ballistic/revolver/hunting=1,
-	/obj/item/ammo_box/c4570=3
-	)
-
-/*
-Lieutenant
-*/
+// LIEUTENANT
 
 /datum/job/ncr/f13lieutenant
 	title = "NCR Lieutenant"
@@ -165,12 +209,13 @@ Lieutenant
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are the direct superior to the NCOs and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
-	supervisors = "Captain and Above"
+	supervisors = "Captain"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
 	outfit = /datum/outfit/job/ncr/f13lieutenant
 	exp_requirements = 1500
+
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/ncr,
@@ -180,198 +225,37 @@ Lieutenant
 		),
 	)
 
-/datum/outfit/job/ncr/f13lieutenant
+/datum/outfit/job/ncr/f13lieutenant		// Marksman Rifle, Binoculars, Bayonet, 9mm sidearm
 	name = "NCR Lieutenant"
 	jobtype	= /datum/job/ncr/f13lieutenant
-	id			= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
-	shoes 		= /obj/item/clothing/shoes/f13/military/ncr_officer_boots
-	accessory 	= /obj/item/clothing/accessory/ncr/LT1
-	head 		= /obj/item/clothing/head/beret/ncr
-	neck 		= /obj/item/storage/belt/holster
-	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	gloves 		= /obj/item/clothing/gloves/f13/leather
-	ears 		= /obj/item/radio/headset/headset_ncr_com
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
-	suit_store	= /obj/item/gun/ballistic/automatic/service/r82
-	belt		= /obj/item/storage/belt/military/assault/ncr
+	id = /obj/item/card/id/dogtag/ncrlieutenant
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes =	/obj/item/clothing/shoes/f13/military/ncr_officer_boots
+	accessory = /obj/item/clothing/accessory/ncr/LT1
+	head = /obj/item/clothing/head/beret/ncr
+	neck = /obj/item/storage/belt/holster/legholster
+	gloves = /obj/item/clothing/gloves/f13/leather
+	ears = /obj/item/radio/headset/headset_ncr_com
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
+	r_pocket = /obj/item/binoculars	
+	suit_store = /obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/binoculars=1, \
-		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1)
+		/obj/item/melee/onehanded/knife/bayonet = 1, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1, \
+		/obj/item/ammo_box/magazine/m9mm = 2, \
+		/obj/item/storage/bag/money/small/ncr = 1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
+		)
 
 /datum/outfit/job/ncr/f13lieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
 
-/*
-Medical Officer
-*/
-/datum/job/ncr/f13medicalofficer
-	title = "NCR Medical Officer"
-	flag = F13MEDICALOFFICER
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are the lead medical professional in Camp Miller, you do not have any command authority unless it is of medical nature. Your duties are to ensure your troopers are in good health and that medical supplies are stocked for troopers."
-	supervisors = "Captain and Above"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
-	outfit = /datum/outfit/job/ncr/f13medicalofficer
-	exp_requirements = 1500
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/ncr,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/ncr,
-		),
-	)
 
-/datum/outfit/job/ncr/f13medicalofficer
-	name = "NCR Medical Officer"
-	jobtype		= /datum/job/ncr/f13medicalofficer
-	id			= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform		= /obj/item/clothing/under/f13/ncr/ncr_officer
-	shoes 		= /obj/item/clothing/shoes/f13/military/ncr
-	accessory 	= /obj/item/clothing/accessory/ncr/LT2
-	head 		= /obj/item/clothing/head/beret/ncr/ncr_medic
-	neck 		= /obj/item/storage/belt/holster
-	glasses 	= /obj/item/clothing/glasses/hud/health/f13
-	gloves		= /obj/item/clothing/gloves/color/latex/nitrile
-	ears 		= /obj/item/radio/headset/headset_ncr_com
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
-	belt		= /obj/item/storage/belt/military/assault/ncr
-	r_hand 		= /obj/item/storage/backpack/duffelbag/med/surgery
-	mask 		= /obj/item/clothing/mask/surgical
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting=1, \
-		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/storage/survivalkit_aid=2, \
-		/obj/item/storage/survivalkit_aid_adv=1, \
-		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/binoculars=1, \
-		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/storage/firstaid/regular=1)
-
-/datum/outfit/job/ncr/f13medicalofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
-
-/*
-Logistics Officer
-*/
-/datum/job/ncr/f13logisticsofficer
-	title = "NCR Logistics Officer"
-	flag = F13LOGISTICSOFFICER
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority unless it is of engineering nature. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies."
-	supervisors = "Captain and Above"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
-	outfit = /datum/outfit/job/ncr/f13logisticsofficer
-	exp_requirements = 1500
-
-/datum/outfit/job/ncr/f13logisticsofficer
-	name = "NCR Logistics Officer"
-	jobtype			= /datum/job/ncr/f13logisticsofficer
-	id				= /obj/item/card/id/dogtag/ncrlieutenant
-	uniform			= /obj/item/clothing/under/f13/ncr/ncr_officer
-	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
-	accessory 		= /obj/item/clothing/accessory/ncr/LT2
-	head 			= /obj/item/clothing/head/beret/ncr_sapper
-	neck 			= /obj/item/storage/belt/holster
-	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	glasses			= /obj/item/clothing/glasses/welding
-	belt 			= /obj/item/storage/belt/utility/full/engi
-	gloves			= /obj/item/clothing/gloves/color/yellow
-	suit_store		= /obj/item/gun/ballistic/automatic/service
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/m1911/custom=1, \
-		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/melee/onehanded/knife/hunting=1, \
-		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/ammo_box/magazine/m556/rifle=1, \
-		/obj/item/grenade/plastic=2, \
-		/obj/item/stack/sheet/metal/fifty=2, \
-		/obj/item/stack/sheet/glass/fifty=2
-		)
-
-/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R82)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1garand)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-
-
-/*
-Sergeant First Class
-
-/datum/job/ncr/f13firstsergeant
-	title = "NCR Sergeant First Class"
-	flag = F13FIRSTSERGEANT
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are the most senior NCO in Camp Miller. You act as an senior enlisted advisor to the Lieutenant as well as act as in the third in Command. You have the authority to recommend promotions and as well as managing the enlisted personnel"
-	supervisors = "Lieutenant and above"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_FIRSTSERGEANT
-	outfit = /datum/outfit/job/ncr/f13firstsergeant
-	exp_requirements = 1000
-
-/datum/outfit/job/ncr/f13firstsergeant
-	name = "NCR Sergeant First Class"
-	jobtype = /datum/job/ncr/f13firstsergeant
-	id 				= /obj/item/card/id/dogtag/ncrsergeant
-	uniform		 	= /obj/item/clothing/under/f13/ncr
-	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
-	accessory 		= /obj/item/clothing/accessory/ncr/FSGT
-	glasses 		= /obj/item/clothing/glasses/sunglasses/big
-	neck 			= /obj/item/storage/belt/holster
-	ears 			= /obj/item/radio/headset/headset_ncr_com
-	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
-	head 			= /obj/item/clothing/head/f13/ncr_campaign
-	suit_store		= /obj/item/gun/ballistic/automatic/service/r82
-	belt			= /obj/item/storage/belt/military/assault/ncr
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncr, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/ammo_box/magazine/m556/rifle/assault=1, \
-		/obj/item/binoculars=1)
-*/
-
-/*
-Sergeant
-*/
+// SERGEANT
 
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
@@ -384,14 +268,13 @@ Sergeant
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13sergeant
 	exp_requirements = 600
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/mentor = NCR,
-	)
-	loadout_options = list(
-		/datum/outfit/loadout/sergeantrifleman,
-		/datum/outfit/loadout/sergeantrecon,
-		/datum/outfit/loadout/sergeantcqc,
-	)
+
+	loadout_options = list(						// ALL: Bayonet
+		/datum/outfit/loadout/sergeantrifleman,	// Service Rifle
+		/datum/outfit/loadout/sergeantrecon,	// M1/n Carbine, Binoculars, 9mm sidearm
+		/datum/outfit/loadout/sergeantcqc,		// Trench Shotgun, Gas mask, Smoke bombs, Trench knife
+		)
+
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/ncr,
@@ -399,27 +282,20 @@ Sergeant
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/ncr,
 		),
-	)
+		)
 
 
 /datum/outfit/job/ncr/f13sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/ncr/f13sergeant
 	id = /obj/item/card/id/dogtag/ncrsergeant
-	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	accessory = /obj/item/clothing/accessory/ncr/SGT
-	glasses = /obj/item/clothing/glasses/sunglasses/big
-	neck = /obj/item/storage/belt/holster
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
-	belt = /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
-		/obj/item/binoculars = 1,
 		)
 
 /datum/outfit/loadout/sergeantrifleman
@@ -427,17 +303,20 @@ Sergeant
 	suit_store = /obj/item/gun/ballistic/automatic/service
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
-		/obj/item/storage/box/ration/menu_two=1)
+		/obj/item/ammo_box/magazine/m556/rifle/assault = 2,
+		/obj/item/storage/box/ration/menu_two = 1,
+		)
 
 /datum/outfit/loadout/sergeantrecon
-	name = "Pathfinder Squad Leader"
+	name = "Recon"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	head = /obj/item/clothing/head/f13/ncr
+	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
-		/obj/item/book/granter/trait/trekking=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=2, \
-		/obj/item/storage/box/ration/menu_eight=1,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 3,
+		/obj/item/storage/box/ration/menu_eight = 1,
 		)
 
 /datum/outfit/loadout/sergeantcqc
@@ -447,15 +326,211 @@ Sergeant
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/clothing/mask/gas = 1,
-		/obj/item/tank/internals/emergency_oxygen/engi = 1,
-		/obj/item/grenade/smokebomb = 3,
+		/obj/item/grenade/smokebomb = 2,
 		/obj/item/melee/onehanded/knife/trench = 1,
 		)
 
 
-/*
-Heavy Trooper
-*/
+///////////////
+/// Rangers ///
+///////////////
+
+// VETERAN RANGER
+
+/datum/job/ncr/f13vetranger
+	title = "NCR Veteran Ranger"
+	flag = F13VETRANGER
+	total_positions = 1
+	spawn_positions = 1
+	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. Your primary mission is to improve general opinion of the Republic and to neutralize slavers and raiders operating in the area."
+	supervisors = "NCRA Captain, High Command"
+	selection_color = "#ffeeaa"
+	display_order = JOB_DISPLAY_ORDER_VETRANGE
+	outfit = /datum/outfit/job/ncr/f13vetranger
+	exp_requirements = 1500
+
+	loadout_options = list(					// ALL: Binoculars, Bowie knife
+		/datum/outfit/loadout/vrclassic,	// AMR, Sequoia
+		/datum/outfit/loadout/vrlite,		// Rangemaster, Sequoia
+		/datum/outfit/loadout/vrcqc,		// 2 x .45 Long colt revolvers
+		)
+
+/datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+
+/datum/outfit/job/ncr/f13vetranger
+	name = "NCR Veteran Ranger"
+	jobtype	= /datum/job/ncr/f13vetranger
+	id = /obj/item/card/id/dogtag/ncrvetranger
+	uniform	= /obj/item/clothing/under/f13/ranger/vet
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat
+	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	gloves = /obj/item/clothing/gloves/rifleman
+	shoes =	/obj/item/clothing/shoes/f13/military/leather
+	glasses	= /obj/item/clothing/glasses/sunglasses
+	neck = /obj/item/storage/belt/holster
+	ears = /obj/item/radio/headset/headset_ranger
+	r_pocket = /obj/item/binoculars
+	backpack_contents = list(
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		)
+
+/datum/outfit/loadout/vrclassic
+	name = "Classic Veteran Ranger"
+	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/amr = 2,
+		/obj/item/gun/ballistic/revolver/sequoia = 1,
+		/obj/item/ammo_box/c4570 = 1,
+		)
+
+/datum/outfit/loadout/vrlite
+	name = "Light Veteran Ranger"
+	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m762/ext = 1,
+		/obj/item/gun/ballistic/revolver/sequoia = 1,
+		/obj/item/ammo_box/c4570 = 1,
+		)
+
+/datum/outfit/loadout/vrcqc
+	name = "Gunslinger"
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+	backpack_contents = list(
+		/obj/item/book/granter/trait/gunslinger = 1,
+		/obj/item/gun/ballistic/revolver/revolver45/gunslinger = 2,
+		/obj/item/ammo_box/a45lcbox = 1,
+		/obj/item/lighter = 1,
+		)
+
+
+// NCR Ranger
+
+/datum/job/ncr/f13ranger
+	title = "NCR Ranger"
+	flag = F13RANGER
+	total_positions = 2
+	spawn_positions = 2
+	description = "As an NCR Ranger, you are the premier special forces unit of the NCR. You are the forward observations and support the Army in it's campaigns, as well as continuing the tradition of stopping slavery in it's tracks."
+	supervisors = "Veteran Ranger"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_RANGER
+	outfit = /datum/outfit/job/ncr/f13ranger
+	exp_requirements = 600
+
+	loadout_options = list( // ALL: Binoculars, Bowie knife
+	/datum/outfit/loadout/rangerrecon, // DKS Sniper rifle, .45 Revolver
+	/datum/outfit/loadout/rangertrail, // Trail carbine, 2 x .357 Revolvers
+	/datum/outfit/loadout/rangerpatrol, // Scout carbine, .44 SA Revolver
+	/datum/outfit/loadout/rangerpatrolcqb, // Auto-5, .44 Snubnose revolver
+	)
+
+/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+
+
+/datum/outfit/job/ncr/f13ranger
+	name = "NCR Ranger"
+	jobtype	= /datum/job/ncr/f13ranger
+	id = /obj/item/card/id/dogtag/ncrranger
+	uniform	= /obj/item/clothing/under/f13/ranger/trail
+	head = /obj/item/clothing/head/f13/trailranger
+	gloves = /obj/item/clothing/gloves/patrol
+	shoes = /obj/item/clothing/shoes/f13/military/leather
+	glasses	= /obj/item/clothing/glasses/sunglasses
+	belt = null
+	ears = /obj/item/radio/headset/headset_ranger
+	r_pocket = /obj/item/binoculars
+	neck = /obj/item/storage/belt/holster
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		/obj/item/clothing/mask/gas/ranger = 1,
+		)
+
+/datum/outfit/loadout/rangerrecon
+	name = "Recon Ranger"
+	suit = /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
+	belt = /obj/item/storage/belt/military/reconbandolier
+	head = /obj/item/clothing/head/beret/ncr_recon_ranger
+	neck = /obj/item/clothing/neck/cloak/ranger
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
+		/obj/item/ammo_box/c45rev = 2,
+		)
+
+/datum/outfit/loadout/rangertrail
+	name = "Trail Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/trailranger
+	belt = /obj/item/storage/belt/military/NCR_Bandolier
+	neck = /obj/item/clothing/neck/cloak/ranger
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
+	backpack_contents = list(
+		/obj/item/ammo_box/tube/m44 = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/ballistic/revolver/colt357 = 2,
+		/obj/item/ammo_box/a357=4,
+		)
+
+/datum/outfit/loadout/rangerpatrol
+	name = "Patrol Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	head = /obj/item/clothing/head/f13/ranger
+	uniform	= /obj/item/clothing/under/f13/ranger/patrol
+	belt = /obj/item/storage/belt/military/assault/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
+		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/ammo_box/m44 = 2,
+		)
+
+/datum/outfit/loadout/rangerpatrolcqb
+	name = "CQB Patrol Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	head = /obj/item/clothing/head/f13/ranger
+	uniform	= /obj/item/clothing/under/f13/ranger/patrol
+	belt = /obj/item/storage/belt/military/assault/ncr
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
+	backpack_contents = list(
+		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/ammo_box/shotgun/slug = 1,
+		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 1,
+		/obj/item/ammo_box/m44box = 1,
+		)
+
+
+
+////////////////////
+/// Specialists ////
+////////////////////
+
+// HEAVY TROOPER
 
 /datum/job/ncr/f13heavytrooper
 	title = "NCR Heavy Trooper"
@@ -470,162 +545,28 @@ Heavy Trooper
 	outfit = /datum/outfit/job/ncr/f13heavytrooper
 	exp_requirements = 750
 
-/datum/outfit/job/ncr/f13heavytrooper
+/datum/outfit/job/ncr/f13heavytrooper	// R84 LMG, 9mm sidearm, Bayonet, Heavy armor
 	name = "NCR Heavy Trooper"
-	jobtype = /datum/job/ncr/f13heavytrooper
-	id 				= /obj/item/card/id/dogtag/ncrsergeant
-	uniform 		= /obj/item/clothing/under/f13/ncr
-	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
-	accessory		= /obj/item/clothing/accessory/ncr/SGT
-	gloves			= /obj/item/clothing/gloves/f13/military
-	head 			= /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
-	glasses			= /obj/item/clothing/glasses/sunglasses/big
-	neck 			= /obj/item/storage/belt/holster
-	suit 			= /obj/item/clothing/suit/armor/f13/power_armor/ncr
-	suit_store		= /obj/item/gun/ballistic/automatic/r84
-	belt			= /obj/item/storage/belt/military/assault/ncr
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/storage/bag/money/small/ncrofficers, \
-		/obj/item/ammo_box/magazine/lmg=1, \
-		/obj/item/binoculars=1)
-
-/datum/outfit/job/ncr/f13heavytrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-
-/*
-Corporal
-*/
-/datum/job/ncr/f13corporal
-	title = "NCR Corporal"
-	flag = F13CORPORAL
-	total_positions = 2
-	spawn_positions = 2
-	description = "You are a junior NCO. You are tasked with organizing the enlisted ranks into fireteams and answer directly to a Sergeant and/or the Sergeant First Class."
-	supervisors = "Sergeant and above"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_CORPORAL
-	outfit = /datum/outfit/job/ncr/f13corporal
-	loadout_options = list(
-		/datum/outfit/loadout/corporaldesignatedmarksman,
-		/datum/outfit/loadout/corporalspotter,
-		/datum/outfit/loadout/corporalrifleman,
-	)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/ncr,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/ncr,
-		),
-	)
-
-/datum/outfit/job/ncr/f13corporal
-	name = "NCR Corporal"
-	jobtype = /datum/job/ncr/f13corporal
+	jobtype	= /datum/job/ncr/f13heavytrooper
+	id = /obj/item/card/id/dogtag/ncrsergeant
 	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	id = /obj/item/card/id/dogtag/ncrtrooper
-	neck = /obj/item/storage/belt/holster
-	accessory = /obj/item/clothing/accessory/ncr/CPL
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	belt = /obj/item/storage/belt/military/assault/ncr
+	accessory =	/obj/item/clothing/accessory/ncr/SGT
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	head = /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
+	neck = /obj/item/storage/belt/holster/legholster
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/r84
 	backpack_contents = list(
+		/obj/item/ammo_box/magazine/lmg = 1,				
+		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
-		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
-/datum/outfit/loadout/corporaldesignatedmarksman
-	name = "Designated marksman"
-	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
-	head = /obj/item/clothing/head/beret/ncr_recon/worn
-	backpack_contents = list(
-		/obj/item/attachments/scope=1,
-		/obj/item/ammo_box/a762=4, \
-		/obj/item/storage/box/ration/menu_two=1,
-		)
 
-/datum/outfit/loadout/corporalspotter
-	name = "Spotter"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
-	head = /obj/item/clothing/head/beret/ncr_recon/worn
-	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_eight=1,
-		/obj/item/binoculars=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
-
-/datum/outfit/loadout/corporalrifleman
-	name = "Assistant Squad Leader"
-	head = /obj/item/clothing/head/f13/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/service
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
-		/obj/item/storage/box/ration/menu_one=1)
-
-
-/datum/job/ncr/f13combatmedic
-	title = "NCR Combat Medic"
-	flag = F13COMBATMEDIC
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are a senior enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are no non-commissioned officers present."
-	supervisors = "Corporals and Above"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_COMBATMEDIC
-	outfit = /datum/outfit/job/ncr/f13combatmedic
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/ncr,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/ncr,
-		),
-	)
-
-/datum/outfit/job/ncr/f13combatmedic
-	name = "NCR Combat Medic"
-	jobtype = /datum/job/ncr/f13combatmedic
-	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	id = /obj/item/card/id/dogtag/ncrtrooper
-	neck = /obj/item/storage/belt/holster
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	belt = /obj/item/storage/belt/military/assault/ncr
-	head = /obj/item/clothing/head/f13/ncr/steelpot_med
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	accessory = /obj/item/clothing/accessory/armband/med/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
-	mask = /obj/item/clothing/mask/surgical
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
-		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/storage/survivalkit_aid_adv = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
-		/obj/item/storage/firstaid/regular = 1,
-		)
-
-/datum/outfit/job/ncr/f13combatmedic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
-
-/*
-Combat Engineer
-*/
+// COMBAT ENGINEER
 
 /datum/job/ncr/f13combatengineer
 	title = "NCR Combat Engineer"
@@ -638,11 +579,13 @@ Combat Engineer
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
 	outfit = /datum/outfit/job/ncr/f13combatengineer
-	loadout_options = list(
-		/datum/outfit/loadout/combatengineerbuilder,
-		/datum/outfit/loadout/combatengineertrapper,
-		/datum/outfit/loadout/combatengineerflamethrower,
-	)
+
+	loadout_options = list(									// ALL: Trench tool, Limited blueprints
+		/datum/outfit/loadout/combatengineerbuilder,		// M1/n carbine, X4 explosive, Extra materials
+		/datum/outfit/loadout/combatengineertrapper,		// Rockwell SMG, Minelaying
+		/datum/outfit/loadout/combatengineerflamethrower,	// Flamer, M1/n carbine
+		)
+
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/ncr,
@@ -650,149 +593,70 @@ Combat Engineer
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/ncr,
 		),
-	)
-
+		)
 
 /datum/outfit/job/ncr/f13combatengineer
 	name = "NCR Combat Engineer"
-	jobtype 		= /datum/job/ncr/f13combatengineer
-	uniform 		= /obj/item/clothing/under/f13/ncr
-	shoes 			= /obj/item/clothing/shoes/f13/military/ncr
-	id 				= /obj/item/card/id/dogtag/ncrtrooper
-	neck 			= /obj/item/storage/belt/holster
-	head			= /obj/item/clothing/head/f13/ncr
-	suit 			= /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	gloves			= /obj/item/clothing/gloves/color/yellow
-	accessory		= /obj/item/clothing/accessory/ncr/SPC
+	jobtype = /datum/job/ncr/f13combatengineer
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	uniform = /obj/item/clothing/under/f13/ncr
+	head = /obj/item/clothing/head/f13/ncr
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	gloves = /obj/item/clothing/gloves/color/yellow
+	accessory =	/obj/item/clothing/accessory/ncr/SPC
+	belt = null
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
-		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/shovel/trench = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
 /datum/outfit/loadout/combatengineerbuilder
 	name = "Construction Specialist"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	head = /obj/item/clothing/head/f13/ncr/goggles
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
-	glasses	= /obj/item/clothing/glasses/welding
+	glasses = /obj/item/clothing/glasses/welding
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
-		/obj/item/grenade/plastic=1, \
-		/obj/item/stack/sheet/metal/fifty=1, \
-		/obj/item/stack/sheet/glass/fifty=1, \
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=2  \
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/grenade/plastic = 1,
+		/obj/item/stack/sheet/metal/twenty = 1,
+		/obj/item/stack/sheet/glass/ten = 1,
 		)
 
 /datum/outfit/loadout/combatengineertrapper
-	name = "Trapper"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
+	name = "Minelayer"
 	head = /obj/item/clothing/head/f13/ncr
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
-	glasses	= /obj/item/clothing/glasses/sunglasses
+	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv=2, \
-		/obj/item/book/granter/crafting_recipe/blueprint/trapper=1, \
-		/obj/item/stack/sheet/metal/twenty=1 \
+		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
+		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		)
 
 /datum/outfit/loadout/combatengineerflamethrower
 	name = "Combat Sapper"
-	suit_store = /obj/item/gun/ballistic/automatic/smg/greasegun
 	head = /obj/item/clothing/head/f13/ncr/goggles
 	belt = /obj/item/storage/belt/military/assault/ncr
 	glasses	= /obj/item/clothing/glasses/sunglasses
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/greasegun=2, \
-		/obj/item/m2flamethrowertank=1
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/m2flamethrowertank = 1,
 		)
-
 
 /datum/outfit/job/ncr/f13combatengineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R82)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1garand)
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
-/*
-Trooper
-*/
 
-/datum/job/ncr/f13trooper
-	title = "NCR Trooper"
-	flag = F13TROOPER
-	total_positions = 8
-	spawn_positions = 8
-	description = "You are considered the backbone and workforce strength of the NCR Army. You answer to everyone above you in the chain of command, taking orders from your Sergeant directly and obeying all commands given by the Lieutenant."
-	supervisors = "Corporals and Above"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_TROOPER
-	outfit = /datum/outfit/job/ncr/f13trooper
-	loadout_options = list(
-		/datum/outfit/loadout/trooperrifleman,
-		/datum/outfit/loadout/trooperpathfinder,
-		/datum/outfit/loadout/trooperfiresupport,
-	)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/ncr,
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/ncr,
-		),
-	)
-
-/datum/outfit/job/ncr/f13trooper
-	name = "NCR Trooper"
-	jobtype = /datum/job/ncr/f13trooper
-	id = /obj/item/card/id/dogtag/ncrtrooper
-	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	accessory = /obj/item/clothing/accessory/ncr/TPR
-	head = /obj/item/clothing/head/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
-	belt = /obj/item/storage/belt/military/assault/ncr
-	glasses = null
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
-		)
-
-
-/datum/outfit/loadout/trooperrifleman
-	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
-	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_two=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext=2)
-
-/datum/outfit/loadout/trooperpathfinder
-	name = "Pathfinder"
-	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
-	backpack_contents = list(
-		/obj/item/book/granter/trait/trekking=1, //You get a worse weapon, but are good at scouting. Hence "Pathfinder."
-		/obj/item/storage/box/ration/menu_eight=1,
-		/obj/item/ammo_box/magazine/uzim9mm/rockwell=1)
-
-/datum/outfit/loadout/trooperfiresupport
-	name = "Pointman"
-	suit_store = /obj/item/gun/ballistic/shotgun/police
-	backpack_contents = list(
-		/obj/item/storage/box/ration/menu_one=1,
-		/obj/item/flashlight/seclite=1, //for putting on your shotgun. You're a pointman, you lead the way in attacks.
-		/obj/item/ammo_box/shotgun/buck=2)
-
-
-
-//MP
+// MILITARY POLICE			Peak physical condition, supposed to keep discipline and make sure military law is followed, including chain of command.
 
 /datum/job/ncr/f13mp
 	title = "NCR Military Police"
@@ -800,36 +664,329 @@ Trooper
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
-	supervisors = "NCRA Captain"
+	supervisors = "NCRA Officers"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13mp
 	exp_requirements = 300
 
-/datum/outfit/job/ncr/f13mp
+/datum/outfit/job/ncr/f13mp		// .45 Pistol, Military baton
 	name = "NCR Military Police"
-	jobtype = /datum/job/ncr/f13mp
-	id = 			/obj/item/card/id/dogtag/ncrsergeant
-	uniform =  		/obj/item/clothing/under/f13/ncr
-	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
-	accessory =     /obj/item/clothing/accessory/armband/black
-	head = 			/obj/item/clothing/head/f13/ncr/steelpot_mp
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
-	belt =          /obj/item/storage/belt/military/assault/ncr
-	suit_store =    /obj/item/melee/classic_baton/telescopic
-	glasses = 		null
-	r_pocket = 		/obj/item/binoculars
-
+	jobtype	= /datum/job/ncr/f13mp
+	id = /obj/item/card/id/dogtag/ncrsergeant
+	neck = /obj/item/storage/belt/holster/legholster
+	accessory = /obj/item/clothing/accessory/armband/black
+	glasses	= /obj/item/clothing/glasses/sunglasses/big
+	head = /obj/item/clothing/head/f13/ncr/steelpot_mp
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	backpack = /obj/item/storage/backpack/satchel/trekker
+	suit_store = /obj/item/melee/classic_baton/militarypolice
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting=1, \
-		/obj/item/storage/survivalkit_aid=1, \
-		/obj/item/storage/bag/money/small/ncrofficers, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1)
+		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1,
+		/obj/item/ammo_box/magazine/m45 = 3,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
 
-/*
-Rear Echelon
-*/
+/datum/outfit/job/ncr/f13mp/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+
+
+// COMBAT MEDIC
+
+/datum/job/ncr/f13combatmedic
+	title = "NCR Combat Medic"
+	flag = F13COMBATMEDIC
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are a senior enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are no non-commissioned officers present."
+	supervisors = "Corporals and Above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_COMBATMEDIC
+	outfit = /datum/outfit/job/ncr/f13combatmedic
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+			),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+			),
+		)
+
+/datum/outfit/job/ncr/f13combatmedic		// M1A1 Carbine, Survival knife
+	name = "NCR Combat Medic"
+	jobtype = /datum/job/ncr/f13combatmedic
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	head = /obj/item/clothing/head/f13/ncr/steelpot_med
+	mask = /obj/item/clothing/mask/surgical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	accessory = /obj/item/clothing/accessory/armband/med/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		/obj/item/storage/firstaid/regular = 1,
+		)	
+
+/datum/outfit/job/ncr/f13combatmedic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+
+
+
+/////////////////////////
+//// Regular Soldiers ///
+/////////////////////////
+
+// CORPORAL
+
+/datum/job/ncr/f13corporal
+	title = "NCR Corporal"
+	flag = F13CORPORAL
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are a junior NCO, expected to help keep the troopers organized and follow the orders of your lord and savíour, the sergeant."
+	supervisors = "Sergeant and above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_CORPORAL
+	outfit = /datum/outfit/job/ncr/f13corporal
+
+	loadout_options = list(
+		/datum/outfit/loadout/corporaldesignatedmarksman,	// Remington rife, 9mm sidearm, Bayonet
+		/datum/outfit/loadout/corporalrifleman,				// Service rifle, Bayonet
+		)
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+			),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+			),
+		)
+
+/datum/outfit/job/ncr/f13corporal
+	name = "NCR Corporal"
+	jobtype	= /datum/job/ncr/f13corporal
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	accessory = /obj/item/clothing/accessory/ncr/CPL
+	backpack_contents = list(
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		)
+
+/datum/outfit/loadout/corporaldesignatedmarksman
+	name = "Designated marksman"
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = /obj/item/clothing/head/beret/ncr_recon/worn
+	neck = /obj/item/storage/belt/holster/legholster
+	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
+	backpack_contents = list(
+		/obj/item/attachments/scope = 1,
+		/obj/item/ammo_box/a762 = 4,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
+		)
+
+/datum/outfit/loadout/corporalrifleman
+	name = "Assistant Squad Leader"
+	head = /obj/item/clothing/head/f13/ncr
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit_store = /obj/item/gun/ballistic/automatic/service
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault = 2,
+		/obj/item/storage/box/ration/menu_one = 1,
+		)
+
+
+// TROOPER
+
+/datum/job/ncr/f13trooper
+	title = "NCR Trooper"
+	flag = F13TROOPER
+	total_positions = 8
+	spawn_positions = 8
+	description = "You are the backbone of the NCR Army. Obey your the NCOs and officers, no matter if you are a conscript or a volounteer you are expected to follow military discipline."
+	supervisors = "Corporals and Above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_TROOPER
+	outfit = /datum/outfit/job/ncr/f13trooper
+
+	loadout_options = list(
+		/datum/outfit/loadout/trooperrifleman,		// Service Rifle, Bayonet
+		/datum/outfit/loadout/trooperfiresupport,	// M1/n carbine, Trench tool
+		)
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+			),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+			),
+		)
+
+/datum/outfit/job/ncr/f13trooper
+	name = "NCR Trooper"
+	jobtype	= /datum/job/ncr/f13trooper
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	accessory = /obj/item/clothing/accessory/ncr/TPR
+	head = /obj/item/clothing/head/f13/ncr
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
+	glasses	= null
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
+
+/datum/outfit/loadout/trooperrifleman
+	name = "Rifleman"
+	suit_store = /obj/item/gun/ballistic/automatic/service
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
+		)
+
+/datum/outfit/loadout/trooperfiresupport
+	name = "Reservist"
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/shovel/trench = 1,
+		/obj/item/storage/box/ration/menu_eight = 1,
+		)
+
+
+
+/////////////////
+/// Logistics ///
+/////////////////
+
+// MEDICAL OFFICER
+
+/datum/job/ncr/f13medicalofficer
+	title = "NCR Medical Officer"
+	flag = F13MEDICALOFFICER
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the lead medical professional in Camp Miller, you do not have any command authority unless it is of medical nature. Your duties are to ensure your troopers are in good health and that medical supplies are stocked for troopers."
+	supervisors = "Captain and Above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_MEDICALOFFICER
+	outfit = /datum/outfit/job/ncr/f13medicalofficer
+	exp_requirements = 1500
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+			),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+			),
+		)
+
+/datum/outfit/job/ncr/f13medicalofficer		// 9mm sidearm, Telescopic baton
+	name = "NCR Medical Officer"
+	jobtype	= /datum/job/ncr/f13medicalofficer
+	id = /obj/item/card/id/dogtag/ncrlieutenant
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	shoes =	/obj/item/clothing/shoes/f13/military/ncr
+	accessory =	/obj/item/clothing/accessory/ncr/LT2
+	head = /obj/item/clothing/head/beret/ncr/ncr_medic
+	neck = /obj/item/storage/belt/holster/legholster
+	glasses = /obj/item/clothing/glasses/hud/health/f13
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	ears = /obj/item/radio/headset/headset_ncr_com
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
+	belt = /obj/item/storage/belt/military/assault/ncr
+	r_hand = /obj/item/storage/backpack/duffelbag/med/surgery
+	mask = /obj/item/clothing/mask/surgical
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 2,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		/obj/item/storage/firstaid/regular = 1,
+		)
+
+/datum/outfit/job/ncr/f13medicalofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+
+
+// LOGISTICS OFFICER
+
+/datum/job/ncr/f13logisticsofficer
+	title = "NCR Logistics Officer"
+	flag = F13LOGISTICSOFFICER
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority beyond the logistical side. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies. Organize the rear echelon to offload the frontline officers and make things happen."
+	supervisors = "Captain and Above"
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_LOGISTICSOFFICER
+	outfit = /datum/outfit/job/ncr/f13logisticsofficer
+	exp_requirements = 1500
+
+/datum/outfit/job/ncr/f13logisticsofficer		// Rockwell, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
+	name = "NCR Logistics Officer"
+	jobtype	= /datum/job/ncr/f13logisticsofficer
+	id = /obj/item/card/id/dogtag/ncrlieutenant
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	accessory = /obj/item/clothing/accessory/ncr/LT2
+	head = /obj/item/clothing/head/beret/ncr_sapper
+	neck = /obj/item/storage/belt/holster/legholster
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	glasses	= /obj/item/clothing/glasses/welding
+	belt = /obj/item/storage/belt/military/assault/ncr/engineer
+	gloves = /obj/item/clothing/gloves/color/yellow
+	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 2,
+		/obj/item/grenade/plastic/c4 = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		/obj/item/stack/sheet/metal/twenty = 2,
+		/obj/item/stack/sheet/glass/ten = 2,
+		)
+
+/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+
+
+// REAR ECHELON
 
 /datum/job/ncr/f13rearechelon
 	title = "NCR Rear Echelon"
@@ -837,328 +994,84 @@ Rear Echelon
 	total_positions = 4
 	spawn_positions = 4
 	description = "You are the support element sent to assist the Camp Miller garrison. You are essential specialized support staff to help sustain the base via supply or specialized skills. You are not allowed to leave base unless given an explicit order by the CO or the current acting CO."
-	supervisors = "Corporals and Above"
+	supervisors = "Logistics/Medical officer first, regular chain of command after that."
 	selection_color = "#fff5cc"
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
 	outfit = /datum/outfit/job/ncr/f13rearechelon
 
-	loadout_options = list(
-	/datum/outfit/loadout/rearlog,
-	/datum/outfit/loadout/reartech,
-	/datum/outfit/loadout/rearcorps,
-	/datum/outfit/loadout/rearscav,
-	/datum/outfit/loadout/offduty
-	)
+	loadout_options = list(				// ALL: Very limited blueprints
+		/datum/outfit/loadout/rearlog,	// Varmint rifle, Trench tool, Tinkering, 
+		/datum/outfit/loadout/reartech,	// Hunting shotgun, Survival knife, Toolbelt, Metal detector
+		/datum/outfit/loadout/rearcorps,// 9mm sidearm, Survival knife, Chemistry
+		/datum/outfit/loadout/offduty,	// 9mm sidearm
+		)
 
 /datum/outfit/job/ncr/f13rearechelon
 	name = "NCR Rear Echelon"
-	jobtype = /datum/job/ncr/f13rearechelon
+	jobtype	= /datum/job/ncr/f13rearechelon
 	id = /obj/item/card/id/dogtag/ncrtrooper
-	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	accessory = /obj/item/clothing/accessory/ncr/TPR
+	accessory =	/obj/item/clothing/accessory/ncr/TPR
 	head = /obj/item/clothing/head/f13/ncr_cap
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
-	glasses = null
+	glasses	= null
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
-//Supply and base management
+/datum/outfit/job/ncr/f13rearechelon/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tailor/ncruniform)
+
+// Logistics orderly
 /datum/outfit/loadout/rearlog
 	name = "Logistics"
 	backpack_contents = list(
-		/obj/item/book/granter/trait/tinkering=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/ammo_box/magazine/m9mm=3)
+		/obj/item/book/granter/trait/tinkering = 1,
+		/obj/item/gun/ballistic/rifle/mag/varmint = 1,
+		/obj/item/ammo_box/magazine/m556/rifle/small = 2,
+		/obj/item/shovel/trench = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
 
-//Technical repairs and engineering
+// Technician
 /datum/outfit/loadout/reartech
 	name = "Technician"
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/ammo_box/magazine/m9mm=3)
+		/obj/item/gun/ballistic/shotgun/hunting = 1,
+		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/metaldetector = 1,
+		/obj/item/weldingtool/largetank = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
 
-//Medical
+// Corpsman
 /datum/outfit/loadout/rearcorps
 	name = "Corpsman"
 	belt = /obj/item/storage/belt/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/ammo_box/magazine/m9mm=3, \
-		/obj/item/book/granter/trait/chemistry=1)
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 3,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/storage/firstaid/regular = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
 
-//Guard duty
-/datum/outfit/loadout/rearscav
-	name = "Scavenger"
-	head = /obj/item/clothing/head/f13/ncr
-	belt = /obj/item/storage/belt/military/NCR_Bandolier
-	backpack_contents = list(
-		/obj/item/metaldetector=1, \
-		/obj/item/shovel/spade=1, \
-		/obj/item/gun/ballistic/shotgun/hunting=1, \
-		/obj/item/ammo_box/shotgun/buck=2, \
-		/obj/item/weldingtool/largetank)
-
-/datum/outfit/loadout/offduty //Fuck having an entire role just for off duty, making it a rear-eche loadout
+// Off-duty
+/datum/outfit/loadout/offduty
 	name = "Off-Duty"
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/reagent_containers/food/snacks/cheesyburrito=2, \
-		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola=1, \
-		/obj/item/ammo_box/magazine/m9mm=3)
-
-
-/*
-Trooper
-*/
-
-/datum/job/ncr/f13ncroffduty
-	title = "NCR Off-Duty"
-	flag = F13NCROFFDUTY
-	total_positions = 0 //Again not commenting out, but it's been moved to a rear echelon loadout
-	spawn_positions = 0
-	description = "You are off-duty NCR-A personnel in the Yuma Region. Despite being out of uniform and off-duty you are still expected to follow NCR COMJ and represent the uniform properly. Failure to abide by this will result in disciplinary action."
-	supervisors = "All NCOs and COs"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_NCR_OFF_DUTY
-	outfit = /datum/outfit/job/ncr/f13ncroffduty
-
-/datum/outfit/job/ncr/f13ncroffduty
-	name = "NCR Off-Duty"
-	jobtype = /datum/job/ncr/f13ncroffduty
-	id = /obj/item/card/id/dogtag/ncrtrooper
-	uniform = /obj/item/clothing/under/f13/ncr
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting,
-		/obj/item/storage/survivalkit_aid,
-		/obj/item/storage/bag/money/small/ncrenlisted,
-		/obj/item/clothing/mask/ncr_facewrap,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/reagent_containers/food/snacks/cheesyburrito = 2,
+		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
 		)
-
-/*
-Veteran Ranger
-*/
-
-/datum/job/ncr/f13vetranger
-	title = "NCR Veteran Ranger"
-	flag = F13VETRANGER
-	total_positions = 1
-	spawn_positions = 1
-	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. Your primary mission is to improve general opinion of the Republic and to neutralize slavers and raiders operating in the area."
-	supervisors = "NCRA Captain, High Command"
-	selection_color = "#ffeeaa"
-	display_order = JOB_DISPLAY_ORDER_VETRANGE
-	outfit = /datum/outfit/job/ncr/f13vetranger
-	exp_requirements = 1500
-
-	loadout_options = list(
-	/datum/outfit/loadout/vrclassic, //AMR and Sequoia,
-	/datum/outfit/loadout/vrlite, //Rangemaster and Sequoia,
-	/datum/outfit/loadout/vrcqc //R91 and a MK23 instead of a Sequoia
-	)
-
-/datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-
-	/*
-	var/datum/martial_art/rangertakedown/RT = new
-	RT.teach(H)
-	commented out for now, readd it if it gets reworked later.
-	*/
-
-/datum/outfit/job/ncr/f13vetranger
-	name = "NCR Veteran Ranger"
-	jobtype = /datum/job/ncr/f13vetranger
-	id = /obj/item/card/id/dogtag/ncrvetranger
-	uniform = /obj/item/clothing/under/f13/ranger/vet
-	suit = /obj/item/clothing/suit/armor/f13/rangercombat
-	belt = /obj/item/storage/belt/military/assault/ncr
-	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat
-	gloves = /obj/item/clothing/gloves/rifleman
-	shoes = /obj/item/clothing/shoes/f13/military/leather
-	glasses = /obj/item/clothing/glasses/sunglasses
-	neck = /obj/item/storage/belt/holster
-	ears = /obj/item/radio/headset/headset_ranger
-	r_pocket = /obj/item/binoculars
-	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/bowie,
-		/obj/item/storage/survivalkit_aid_adv,
-		/obj/item/storage/bag/money/small/ncr,
-		)
-
-/datum/outfit/loadout/vrclassic
-	name = "Classic Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/amr=2,
-		/obj/item/gun/ballistic/revolver/sequoia=1,
-		/obj/item/ammo_box/c4570=1)
-
-/datum/outfit/loadout/vrlite
-	name = "Light Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762/ext=1,
-		/obj/item/gun/ballistic/revolver/sequoia=1,
-		/obj/item/ammo_box/c4570=1)
-
-
-/datum/outfit/loadout/vrcqc
-	name = "Gunslinger"
-	backpack_contents = list(
-		/obj/item/book/granter/trait/gunslinger=1, \
-		/obj/item/gun/ballistic/revolver/revolver45/gunslinger=2, \
-		/obj/item/ammo_box/a45lcbox=1
-		)
-
-
-
-//NCR Ranger
-/datum/job/ncr/f13ranger
-	title = "NCR Ranger"
-	flag = F13RANGER
-	total_positions = 4
-	spawn_positions = 4
-	description = "As an NCR Ranger, you are the premier special forces unit of the NCR. You are the forward observations and support the Army in it's campaigns, as well as continuing the tradition of stopping slavery in it's tracks."
-	supervisors = "Veteran Ranger"
-	selection_color = "#fff5cc"
-	display_order = JOB_DISPLAY_ORDER_RANGER
-	outfit = /datum/outfit/job/ncr/f13ranger
-	exp_requirements = 600
-
-	loadout_options = list(
-	/datum/outfit/loadout/rangerrecon,
-	/datum/outfit/loadout/rangertrail,
-	/datum/outfit/loadout/rangerpatrol,
-	/datum/outfit/loadout/rangerpatrolcqb
-	)
-
-/datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
-	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	/*
-	var/datum/martial_art/rangertakedown/RT = new
-	RT.teach(H)
-	commented out for now, readd it if it gets reworked later.
-	*/
-
-/datum/outfit/job/ncr/f13ranger
-	name = "NCR Ranger"
-	jobtype = /datum/job/ncr/f13ranger
-	id = /obj/item/card/id/dogtag/ncrranger
-	uniform = /obj/item/clothing/under/f13/ranger/trail
-	head = /obj/item/clothing/head/f13/trailranger
-	gloves = /obj/item/clothing/gloves/patrol
-	shoes = /obj/item/clothing/shoes/f13/military/leather
-	glasses = /obj/item/clothing/glasses/sunglasses
-	ears = /obj/item/radio/headset/headset_ranger
-	r_pocket = /obj/item/binoculars
-	neck = /obj/item/storage/belt/holster
-	backpack_contents = list(
-		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/storage/bag/money/small/ncr = 1,
-		/obj/item/clothing/mask/gas/ranger = 1,
-		)
-
-/datum/outfit/loadout/rangerrecon
-	name = "Recon Ranger"
-	suit =	/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
-	belt =	/obj/item/storage/belt/military/reconbandolier
-	head = /obj/item/clothing/head/beret/ncr_recon_ranger
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
-	neck = /obj/item/clothing/neck/cloak/ranger
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308 = 3,
-		/obj/item/storage/survivalkit_aid=1,
-		/obj/item/gun/ballistic/revolver/revolver45=1,
-		/obj/item/ammo_box/c45rev=2
-
-	)
-
-/datum/outfit/loadout/rangertrail
-	name = "Trail Ranger"
-	suit =	/obj/item/clothing/suit/armor/f13/trailranger
-	belt =	/obj/item/storage/belt/military/NCR_Bandolier
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
-	neck = /obj/item/clothing/neck/cloak/ranger
-	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44 = 3,
-		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/storage/survivalkit_aid=1,
-		/obj/item/attachments/scope=1,
-		/obj/item/gun/ballistic/revolver/colt357=2,
-		/obj/item/ammo_box/a357=4
-	)
-
-/datum/outfit/loadout/rangerpatrol
-	name = "Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
-	head = /obj/item/clothing/head/f13/ranger
-	uniform = /obj/item/clothing/under/f13/ranger/patrol
-	belt =	/obj/item/storage/belt/military/assault/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
-		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/attachments/scope = 1,
-		/obj/item/gun/ballistic/revolver/revolver44 = 1,
-		/obj/item/ammo_box/m44=2
-	)
-
-/datum/outfit/loadout/rangerpatrolcqb
-	name = "CQB Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
-	head = /obj/item/clothing/head/f13/ranger
-	uniform = /obj/item/clothing/under/f13/ranger/patrol
-	belt =	/obj/item/storage/belt/military/assault/ncr
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
-	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/buck = 1,
-		/obj/item/ammo_box/shotgun/slug = 1,
-		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/gun/ballistic/revolver/m29/snub=1,
-		/obj/item/ammo_box/m44box=1
-	)
-
-/datum/outfit/loadout/rangermedic
-	name = "Medic Ranger"
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
-	head = /obj/item/clothing/head/f13/ranger
-	uniform = /obj/item/clothing/under/f13/ranger/patrol
-	belt =	/obj/item/storage/belt/military/assault/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/clothing/accessory/armband/med/ncr = 1,
-		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid_adv = 1,
-		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1,
-		/obj/item/ammo_box/magazine/m45=3,
-		/obj/item/book/granter/trait/midsurgery=1
-	)
