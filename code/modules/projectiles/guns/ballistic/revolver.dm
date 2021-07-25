@@ -1,7 +1,6 @@
 // In this document: Revolvers, Needlers, Weird revolvers
 // See gun.dm for keywords and the system used for gun balance
 
-
 /obj/item/gun/ballistic/revolver
 	slowdown = 0.1
 	name = "revolver template"
@@ -33,20 +32,6 @@
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
 	chamber_round(1)
-
-/*
-/obj/item/gun/ballistic/revolver/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
-	var/num_loaded = magazine.attackby(A, user, params, 1)
-	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src].</span>")
-		playsound(user, 'sound/weapons/bulletinsert.ogg', 60, 1)
-		A.update_icon()
-		update_icon()
-		chamber_round(0)
-*/
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
 	var/num_unloaded = 0
@@ -151,8 +136,7 @@
 // .38 REVOLVERS //
 ///////////////////
 
-
-// .38 Detective								Keywords: .38, Double action, 6 rounds cylinder, Short barrel
+// .38 Detective					Keywords: .38, Double action, 6 rounds cylinder, Short barrel
 /obj/item/gun/ballistic/revolver/detective
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
@@ -172,7 +156,7 @@
 	var/list/safe_calibers
 
 
-//Police revolver								Keywords: .38, Double action, 6 rounds cylinder
+//Police revolver					Keywords: .38, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/police
 	name = ".38 police revolver"
 	desc = "Pre-war double action police revolver in .38 calibre."
@@ -200,8 +184,7 @@
 // .45 ACP REVOLVERS //
 ///////////////////////
 
-
-//S&W 45										 Keywords: .45, Single action, 7 rounds cylinder, Long barrel
+//S&W 45						Keywords: .45, Single action, 7 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver45
 	name = "S&W .45 ACP revolver"
 	desc = "Smith and Wesson revolver firing .45 ACP from a seven round cylinder."
@@ -219,8 +202,7 @@
 // .357 REVOLVERS //
 ////////////////////
 
-
-//357 Magnum									Keywords: .357, Double action, 6 rounds cylinder 
+//357 Magnum					Keywords: .357, Double action, 6 rounds cylinder 
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
@@ -230,7 +212,7 @@
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
 
-//Lucky											Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
+//Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
 	name = "Lucky"
 	desc = "Just holding this gun makes you feel like an ace. This revolver was handmade from pieces of other guns in some workshop after the war. A one-of-a-kind gun, it was someone's lucky gun for many a year, it's in good condition and hasn't changed hands often."
@@ -246,8 +228,7 @@
 // .44 REVOLVERS //
 ///////////////////
 
-
-//.44 Magnum revolver		 					Keywords: .44, Double action, 6 rounds cylinder
+//.44 Magnum revolver		 	Keywords: .44, Double action, 6 rounds cylinder
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 magnum revolver"
 	desc = "Powerful handgun for those who want to travel the wasteland safely in style. Has a bit of a kick."
@@ -267,16 +248,8 @@
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
 
-/*
-/obj/item/gun/ballistic/revolver/m29/coltwalker //literally a blackpowder revolver. Needs a fun gimmick, just a .44 clone in the code and not implemented.
-	name = "Colt Walker 1847"
-	desc = "A legendary gun of the west. The Colt Walker bears a fearsome reputation for a very good reason, finding itself in the hands of everyone from ancient army officials to outlaws throughout the years. An antique when the bombs dropped, the weapon is now incredibly outdated. Still, that doesn't make it any less lethal."
-	item_state = "coltwalker"
-	icon_state = "coltwalker"
-	can_scope = FALSE
-*/
 
-//Peacekeeper					 					Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
+//Peacekeeper					 Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	name = "Peacekeeper"
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
@@ -313,7 +286,7 @@
 	update_icon()
 
 
-//.44 Snubnose										Keywords: .44, Double action, 6 rounds cylinder, Short barrel
+//.44 Snubnose						Keywords: .44, Double action, 6 rounds cylinder, Short barrel
 /obj/item/gun/ballistic/revolver/m29/snub
 	name = "snubnose .44 magnum revolver"
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
@@ -323,7 +296,7 @@
 	spread = 3
 
 
-//.44 single action		 							Keywords: .44, Single action, 6 rounds cylinder, Long barrel
+//.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver44
 	name = "\improper .44 magnum single-action revolver"
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44..."
@@ -336,7 +309,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
 
-//Desert Ranger revolver							Keywords: .44, Single action, 6 rounds cylinder, Long barrel, Fire delay -2,  Damage +5, Penetration +0.1
+//Desert Ranger revolver			Keywords: .44, Single action, 6 rounds cylinder, Long barrel, Fire delay -2,  Damage +5, Penetration +0.1
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	name = "desert ranger revolver"
 	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
@@ -350,8 +323,7 @@
 // .45-70 REVOLVERS //
 //////////////////////
 
-
-//Sequioa											Keywords: NCR, .45-70, 6 rounds cylinder, Double action, Heavy
+//Sequioa					Keywords: NCR, .45-70, 6 rounds cylinder, Double action, Heavy
 /obj/item/gun/ballistic/revolver/sequoia
 	name = "ranger sequoia"
 	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
@@ -378,7 +350,7 @@
 	spread = 0
 
 
-//Hunting revolver									Keywords: .45-70, Double action, 5 rounds cylinder, Heavy
+//Hunting revolver				Keywords: .45-70, Double action, 5 rounds cylinder, Heavy
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
@@ -398,7 +370,7 @@
 /////////////////////
 
 
-//Colt Army											Keywords: .45 long colt (bouncing), Single action, 6 rounds cylinder, Spread -1, Fire delay +2
+//Colt Army						Keywords: .45 long colt (bouncing), Single action, 6 rounds cylinder, Spread -1, Fire delay +2
 /obj/item/gun/ballistic/revolver/revolver45/gunslinger
 	name = "\improper Colt Single Action Army"
 	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
@@ -410,7 +382,7 @@
 	spread = 0 //Your reward for the slower fire rate is less spread anddd
 
 
-//.223 Pistol										Keywords: .223, Double action, 5 rounds internal, Short barrel
+//.223 Pistol					Keywords: .223, Double action, 5 rounds internal, Short barrel
 /obj/item/gun/ballistic/revolver/thatgun
 	name = ".223 pistol"
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
@@ -427,8 +399,7 @@
 // NEEDLER //
 /////////////
 
-
-//Needler											Keywords: Needler, Double action, 10 rounds internal
+//Needler						Keywords: Needler, Double action, 10 rounds internal
 /obj/item/gun/ballistic/revolver/needler
 	name = "Needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "

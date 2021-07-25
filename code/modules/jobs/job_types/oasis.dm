@@ -120,6 +120,7 @@ Mayor
 	l_hand = 		/obj/item/gun/ballistic/rifle/repeater/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
+		/obj/item/gun/ballistic/revolver/m29/peacekeeper = 1,
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/ammo_box/tube/c4570 = 3,
 		/obj/item/ammo_box/m44 = 2,
