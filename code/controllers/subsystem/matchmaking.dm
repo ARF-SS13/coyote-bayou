@@ -18,23 +18,34 @@ SUBSYSTEM_DEF(matchmaking)
 	return ..()
 
 
-/datum/controller/subsystem/matchmaking/proc/add_candidate(mob/living/candidate, datum/matchmaking_pref/aspiration)
+/datum/controller/subsystem/matchmaking/proc/add_candidate_aspiration(mob/living/candidate, datum/matchmaking_pref/aspiration)
 	if(!bachelors[candidate])
 		RegisterSignal(candidate, COMSIG_PARENT_QDELETING, .proc/on_candidate_qdel)
+		RegisterSignal(candidate, COMSIG_MOB_CLIENT_LOGOUT, .proc/on_candidate_logout)
 	LAZYADD(bachelors[candidate], aspiration)
 
 
-/datum/controller/subsystem/matchmaking/proc/remove_candidate(mob/living/candidate, datum/matchmaking_pref/aspiration)
+/datum/controller/subsystem/matchmaking/proc/remove_candidate_aspiration(mob/living/candidate, datum/matchmaking_pref/aspiration)
 	LAZYREMOVE(bachelors[candidate], aspiration)
 	if(!bachelors[candidate])
-		bachelors -= candidate
-		UnregisterSignal(candidate, COMSIG_PARENT_QDELETING)
+		remove_candidate(candidate)
+
+
+/datum/controller/subsystem/matchmaking/proc/remove_candidate(mob/living/candidate)
+	bachelors -= candidate
+	UnregisterSignal(candidate, list(COMSIG_PARENT_QDELETING, COMSIG_MOB_CLIENT_LOGOUT))
 
 
 /datum/controller/subsystem/matchmaking/proc/on_candidate_qdel(mob/living/candidate)
 	SIGNAL_HANDLER
-	UnregisterSignal(candidate, COMSIG_PARENT_QDELETING)
-	bachelors -= candidate
+	remove_candidate(candidate)
+
+/datum/controller/subsystem/matchmaking/proc/on_candidate_logout(mob/living/candidate)
+	SIGNAL_HANDLER
+	if(candidate.key)
+		return // They disconnected and may be back.
+	// Else they're gone from good and won't be getting back anymore.
+	remove_candidate(candidate)
 
 
 /datum/controller/subsystem/matchmaking/proc/matchmake()
@@ -81,13 +92,13 @@ SUBSYSTEM_DEF(matchmaking)
 	RegisterSignal(pref_holder, COMSIG_PARENT_QDELETING, .proc/on_candidate_qdel)
 	src.pref_holder = pref_holder
 	src.matches_aimed = clamp(matches_aimed, 0, max_matches)
-	SSmatchmaking.add_candidate(pref_holder, src)
+	SSmatchmaking.add_candidate_aspiration(pref_holder, src)
 
 
 /datum/matchmaking_pref/Destroy(force, ...)
 	if(pref_holder)
 		if(SSmatchmaking.bachelors[pref_holder])
-			SSmatchmaking.remove_candidate(pref_holder, src)
+			SSmatchmaking.remove_candidate_aspiration(pref_holder, src)
 		pref_holder = null
 	return ..()
 
@@ -98,7 +109,7 @@ SUBSYSTEM_DEF(matchmaking)
 
 /datum/matchmaking_pref/proc/try_finding_matches()
 	if(matches_found >= matches_aimed)
-		SSmatchmaking.remove_candidate(pref_holder, src)
+		SSmatchmaking.remove_candidate_aspiration(pref_holder, src)
 		return
 	var/datum/job/candidate_job = SSjob.GetJob(pref_holder.mind.assigned_role)
 	// Does our job let us be this role? With which other jobs?
@@ -154,7 +165,7 @@ SUBSYSTEM_DEF(matchmaking)
 	else
 		do_enact_match(target)
 	if(matches_found >= matches_aimed)
-		SSmatchmaking.remove_candidate(pref_holder, src)
+		SSmatchmaking.remove_candidate_aspiration(pref_holder, src)
 
 
 /datum/matchmaking_pref/proc/do_enact_match(mob/living/target)
