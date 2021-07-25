@@ -12,7 +12,7 @@
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 	var/obj/item/showpiece = null
-	var/alert = TRUE
+	var/alert = FALSE
 	var/open = FALSE
 	var/openable = TRUE
 	var/obj/item/electronics/airlock/electronics
