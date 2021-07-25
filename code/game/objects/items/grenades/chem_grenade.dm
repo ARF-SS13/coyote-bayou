@@ -491,40 +491,6 @@
 	beakers += B1
 	beakers += B2
 
-/obj/item/grenade/chem_grenade/glitter
-	name = "generic glitter grenade"
-	desc = "You shouldn't see this description."
-	stage = READY
-	var/glitter_type = /datum/reagent/glitter
-
-/obj/item/grenade/chem_grenade/glitter/Initialize()
-	. = ..()
-	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
-	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
-
-	B1.reagents.add_reagent(glitter_type, 25)
-	B1.reagents.add_reagent(/datum/reagent/potassium, 25)
-	B2.reagents.add_reagent(/datum/reagent/phosphorus, 25)
-	B2.reagents.add_reagent(/datum/reagent/consumable/sugar, 25)
-
-	beakers += B1
-	beakers += B2
-
-/obj/item/grenade/chem_grenade/glitter/pink
-	name = "pink glitter bomb"
-	desc = "For that HOT glittery look."
-	glitter_type = /datum/reagent/glitter/pink
-
-/obj/item/grenade/chem_grenade/glitter/blue
-	name = "blue glitter bomb"
-	desc = "For that COOL glittery look."
-	glitter_type = /datum/reagent/glitter/blue
-
-/obj/item/grenade/chem_grenade/glitter/white
-	name = "white glitter bomb"
-	desc = "For that somnolent glittery look."
-	glitter_type = /datum/reagent/glitter/white
-
 /obj/item/grenade/chem_grenade/clf3
 	name = "clf3 grenade"
 	desc = "BURN!-brand foaming clf3. In a special applicator for rapid purging of wide areas."
