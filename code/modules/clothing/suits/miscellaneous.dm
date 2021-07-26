@@ -968,13 +968,13 @@
 
 /obj/item/clothing/suit/flakjack
 	name = "flak jacket"
-	desc = "(I) A dilapidated jacket made of a supposedly bullet-proof material (Hint: It isn't.). Smells faintly of napalm."
+	desc = "(II) A dilapidated jacket made of ballistic nylon. Smells faintly of napalm."
 	icon_state = "flakjack"
 	item_state = "redtag"
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST
 	resistance_flags = NONE
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = -5, "acid" = -15) //nylon sucks against acid
+	armor = list("tier" = 2, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "acid" = -15) //nylon sucks against acid
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/assu_suit

@@ -193,7 +193,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
 	/obj/item/ammo_box/magazine/m9mm = 3,
 	/obj/item/ammo_casing/shotgun/buckshot = 3,
-	/obj/item/ammo_box/c45rev = 3,
+	/obj/item/ammo_box/c38 = 3,
 	/datum/design/ammolathe/a22plink
 ))
 
@@ -335,7 +335,9 @@ GLOBAL_LIST_INIT(loot_prewar_costume, list(
 	/obj/item/clothing/neck/cloak/grey,
 	/obj/item/clothing/under/kilt,
 	/obj/item/clothing/under/pirate,
-	/obj/item/clothing/suit/pirate
+	/obj/item/clothing/suit/pirate,
+	/obj/item/clothing/under/costume/cheongsam,
+	/obj/item/clothing/under/costume/qipao/red,
 ))
 
 GLOBAL_LIST_INIT(loot_t1_armor, list(

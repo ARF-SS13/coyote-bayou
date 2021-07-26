@@ -105,7 +105,7 @@
 	name = "Flak Jacket"
 	path = /obj/item/clothing/suit/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 3
 
 //These should be left commented out until the holidays or special events.
 /*
