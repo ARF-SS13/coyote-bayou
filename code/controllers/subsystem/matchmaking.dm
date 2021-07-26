@@ -235,7 +235,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/patron
 	pref_text = "Be someone's patron"
 	target_type = /datum/matchmaking_pref/protegee
-	acquire_memory = "You remember an old protegee you once took care of"
+	acquire_memory = "You remember an old protegee you once took care of. They owe you, and should remember it"
 	span_class = "green"
 	log_verb = "extended their protection to"
 
@@ -243,7 +243,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/protegee
 	pref_text = "Have a patron"
 	target_type = /datum/matchmaking_pref/patron
-	acquire_memory = "You remember an old patron who once helped you set youreself up in life"
+	acquire_memory = "You remember an old patron who once helped you set youreself up in life. You owe them one, you'd be in a bad position if not for them"
 	span_class = "green"
 	log_verb = "owed favors to"
 

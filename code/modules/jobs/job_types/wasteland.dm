@@ -365,15 +365,22 @@ Raider
 	minimal_access = list()
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/wasteland/f13raider,
 			/datum/job/wasteland/f13pusher,
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/wasteland/f13raider,
 			/datum/job/wasteland/f13pusher,
 		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job/wasteland/f13raider,
+		),
+		/datum/matchmaking_pref/protegee = list(
+			/datum/job/wasteland/f13raider,
+		),
 		/datum/matchmaking_pref/outlaw = list(
-			/datum/job/wasteland/f13wastelander,
+			/datum/job/wasteland/f13raider,
+		),
+		/datum/matchmaking_pref/bounty_hunter = list(
+			/datum/job/wasteland/f13raider,
 		),
 	)
 	loadout_options = list(
@@ -646,9 +653,6 @@ Raider
 		),
 		/datum/matchmaking_pref/protegee = list(
 			/datum/job/wasteland/f13wastelander,
-		),
-		/datum/matchmaking_pref/bounty_hunter = list(
-			/datum/job/wasteland/f13raider,
 		),
 	)
 	loadout_options = list(
