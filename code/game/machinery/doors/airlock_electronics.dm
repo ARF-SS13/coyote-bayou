@@ -13,7 +13,7 @@
 
 /obj/item/electronics/airlock/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Has a neat <i>selection menu</i> for modifying airlock access levels.</span>"
+	. += span_notice("Has a neat <i>selection menu</i> for modifying airlock access levels.")
 
 /obj/item/electronics/airlock/ui_state(mob/user)
 	return GLOB.hands_state
@@ -26,7 +26,9 @@
 
 /obj/item/electronics/airlock/ui_static_data(mob/user)
 	var/list/data = list()
+
 	var/list/regions = list()
+
 	for(var/i in 1 to 7)
 		var/list/accesses = list()
 		for(var/access in get_region_accesses(i))
@@ -38,7 +40,6 @@
 
 		regions += list(list(
 			"name" = get_region_accesses_name(i),
-			"regid" = i,
 			"accesses" = accesses
 		))
 
@@ -53,8 +54,10 @@
 	return data
 
 /obj/item/electronics/airlock/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
+
 	switch(action)
 		if("clear_all")
 			accesses = list()
