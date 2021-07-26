@@ -563,15 +563,16 @@
 /obj/item/melee/unarmed
 	name = "glove weapon template"
 	desc = "should not be here"
-	var/can_adjust_unarmed = TRUE
-	var/unarmed_adjusted = TRUE
+	attack_speed = CLICK_CD_MELEE * 0.9
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
+	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	attack_verb = list("punched", "jabbed", "whacked")
 	sharpness = SHARP_NONE
 	throwforce = 10
 	throw_range = 5
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
-	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("punched", "jabbed", "whacked")
+	var/can_adjust_unarmed = TRUE
+	var/unarmed_adjusted = TRUE
 
 /obj/item/melee/unarmed/equipped(mob/user, slot)
 	. = ..()

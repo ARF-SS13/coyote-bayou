@@ -1,11 +1,11 @@
-// In this document: Axes, Spears, Heavy clubs
-
+// In this document: Axes, Spears, Heavy clubs, Sledgehammers, Advanced twohanded weapons
 
 /obj/item/twohanded // Two handed template. Slower melee speed than onehanders.
-	w_class = WEIGHT_CLASS_BULKY
 	icon = 'icons/fallout/objects/melee/melee.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	attack_speed = CLICK_CD_MELEE * 1.1
+	w_class = WEIGHT_CLASS_BULKY
 	var/icon_prefix = null
 	var/wielded = FALSE
 
@@ -30,7 +30,7 @@
 //////////			-bonus damage to grill/window
 
 
-// Fire Axe			Keywords: Damage 25/50, Bonus vs inanimate
+// Fire Axe			Keywords: Damage 25/45, Bonus vs inanimate
 /obj/item/twohanded/fireaxe
 	name = "fire axe"
 	desc = "Heavy fireman axe from the old world, with its distinctive red colour and excellent quality steel."
@@ -51,7 +51,7 @@
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=50, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=45, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/fireaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -82,13 +82,13 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
 
 
-// Bumper Sword		Keywords: Damage 25/50, Bonus vs inanimate
+// Bumper Sword		Keywords: Damage 25/45, Bonus vs inanimate
 /obj/item/twohanded/fireaxe/bmprsword
 	name = "bumper sword"
 	desc = "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was more like a heap of raw iron."
 	icon_prefix = "bumper"
 	icon_state = "bumper"
-	wound_bonus = 5
+	wound_bonus = null
 	sharpness = SHARP_NONE
 	resistance_flags = null
 
@@ -98,8 +98,7 @@
 // SPEARS //
 ////////////		- Reach
 
-
-// Metal Spear		Keywords: Damage 10/30, Armor-piercing +0.1, Reach
+// Metal Spear		Keywords: Damage 10/30, Reach
 /obj/item/twohanded/spear 
 	name = "spear"
 	desc = "A simple spear with a metal head and wooden shaft."
@@ -110,7 +109,6 @@
 	throwforce = 30
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
-	armour_penetration = 0.1
 	max_reach = 2
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
@@ -199,7 +197,7 @@
 	update_icon()
 
 
-// Lance		Keywords: LEGION, Damage 25/40, Armor-piercing +0.1, Reach		
+// Lance		Keywords: LEGION, Damage 25/40, Reach		
 /obj/item/twohanded/spear/lance
 	name = "legion lance"
 	desc = "A long spear made in the Legions war foundries. Useful for fighting tribals and hunting when ammunition is scarce."
@@ -211,7 +209,7 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
 
 
-// Scrap spear		Keywords: Damage 15/27, Armor-piercing +0.1, Reach
+// Scrap spear		Keywords: Damage 17/28, Reach
 /obj/item/twohanded/spear/scrapspear
 	name = "scrap spear"
 	desc = "Made from two rods, a glass shard and some duct tape. For the modern tribal or the truly desperate."
@@ -220,10 +218,10 @@
 
 /obj/item/twohanded/spear/scrapspear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=27, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=28, icon_wielded="[icon_prefix]2")
 
 
-// Bone Spear		Keywords: TRIBAL, Damage 15/30, Armor-piercing +0.25, Reach
+// Bone Spear		Keywords: TRIBAL, Damage 18/30, Armor-piercing +0.2, Reach
 /obj/item/twohanded/spear/bonespear
 	name = "bone spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
@@ -233,7 +231,7 @@
 	force = 15
 	throwforce = 25
 	throw_speed = 4
-	armour_penetration = 0.25
+	armour_penetration = 0.2
 	max_reach = 2
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
@@ -242,7 +240,7 @@
 
 /obj/item/twohanded/spear/bonespear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=30, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded=18, force_wielded=30, icon_wielded="[icon_prefix]2")
 
 
 // Deathclaw Spear		Keywords: TRIBAL, Damage 20/45, Armor-piercing +0.3, Reach
@@ -353,6 +351,7 @@
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
 	icon_state = "hammer-sledge"
 	icon_prefix = "hammer-sledge"
+	attack_speed = CLICK_CD_MELEE * 1.2
 	force = 25
 	throwforce = 30
 	slot_flags = ITEM_SLOT_BACK
@@ -400,7 +399,6 @@
 	throwforce = 20
 	throw_speed = 2
 	throw_range = 4
-//	custom_materials = list(MAT_METAL=13000)
 	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
 	hitsound = "swing_hit"
 	actions_types = list(/datum/action/item_action/toggle_lance)
@@ -574,6 +572,78 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 			user.dropItemToGround(src, TRUE)
 			user.Knockdown(50)
 		return
+
+// Chainsaw				Keywords: Damage 13/57, Wound bonus, Tool saw-off
+/obj/item/twohanded/chainsaw
+	name = "chainsaw"
+	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "chainsaw"
+	item_state = "chainsaw"
+	icon_prefix = "chainsaw"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	force = 7
+	wound_bonus = 25
+	throw_speed = 2
+	throw_range = 2
+	throwforce = 10
+	toolspeed = 0.5
+	tool_behaviour = TOOL_SAW
+	sharpness = SHARP_EDGED
+	resistance_flags = FIRE_PROOF
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+	var/on_icon_state = "chainsaw_on"
+	var/off_icon_state = "chainsaw"
+	var/on_item_state = "chainsaw_on"
+	var/off_item_state = "chainsaw"
+	var/weight_class_on = WEIGHT_CLASS_HUGE
+	var/on = FALSE
+	var/force_on = 57
+	var/force_off = 7
+	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
+	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"
+	var/on_sound = 'sound/weapons/chainsawhit.ogg'
+
+/obj/item/twohanded/chainsaw/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+	update_icon()
+
+/obj/item/twohanded/chainsaw/attack_self(mob/user)
+	on = !on
+	if(on)
+		to_chat(user, description_on)
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+		playsound(loc, on_sound, 50, TRUE)
+	else
+		to_chat(user, description_off)
+		icon_state = off_icon_state
+		item_state = off_item_state
+		w_class = WEIGHT_CLASS_BULKY
+		force = force_off
+		attack_verb = list("poked", "scraped")
+	add_fingerprint(user)
+
+/obj/item/twohanded/chainsaw/suicide_act(mob/living/carbon/user)
+	if(on)
+		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
+		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
+		if(myhead)
+			myhead.dismember()
+	else
+		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
+	return(BRUTELOSS)
 
 /*
 CODE ARCHIVE 

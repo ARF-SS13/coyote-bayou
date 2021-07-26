@@ -165,11 +165,11 @@
 	fire_delay = 3.75
 	burst_shot_delay = 3
 	spread = 10
-	force = 12 //Less good for bashing since smaller than rifles
+	force = 12
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 
-//Rockwell gun										Keywords: 9mm, Automatic, 20/32 rounds. Special modifiers: damage -1
+//Rockwell gun				Keywords: 9mm, Automatic, 20/32 rounds. Special modifiers: damage -2
 /obj/item/gun/ballistic/automatic/smg/rockwell
 	name = "Rockwell gun"
 	desc = "Post-war submachine gun in 9mm, based on old schematics by T.G. Rockwell for home-made weapons if under enemy occupation. The Rockwell is basically a toploaded sten gun with a pistol grip, allowing makeshift magazines without a spring."
@@ -184,7 +184,7 @@
 	can_attachments = TRUE
 	actions_types = null
 
-//American 180										Keywords: .22 LR, Automatic, 180 rounds
+//American 180				Keywords: .22 LR, Automatic, 180 rounds
 /obj/item/gun/ballistic/automatic/smg/american180
 	name = "American 180"
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle. Top loaded drum magazine."
@@ -200,7 +200,7 @@
 	fire_sound = 'sound/f13weapons/american180.ogg'
 
 
-//Greasegun											Keywords: .45 ACP, Automatic, 30 rounds
+//Greasegun				Keywords: .45 ACP, Automatic, 30 rounds
 /obj/item/gun/ballistic/automatic/smg/greasegun
 	name = "M3A1 Grease Gun"
 	desc = "An inexpensive submachine gun chambered in .45 ACP. Slow fire rate allows the operator to conserve ammunition in controllable bursts."
@@ -239,7 +239,7 @@
 	return
 
 
-//10mm SMG											Keywords: 10mm, Automatic, 12/24 rounds
+//10mm SMG			Keywords: 10mm, Automatic, 12/24 rounds
 /obj/item/gun/ballistic/automatic/smg/smg10mm
 	name = "10mm submachine gun"
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
@@ -283,7 +283,7 @@
 	update_icon()
 	return
 
-//Uzi												Keywords: 9mm, Automatic, 32 rounds
+//Uzi				Keywords: 9mm, Automatic, 32 rounds
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
@@ -323,14 +323,13 @@
 	return
 
 
-//Carl Gustaf										Keywords: 10mm, Automatic, 36 rounds
+//Carl Gustaf			Keywords: 10mm, Automatic, 36 rounds
 /obj/item/gun/ballistic/automatic/smg/cg45
 	name = "Carl Gustaf 10mm"
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
-	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 3.5
 	spread = 8
 	recoil = 0.1
@@ -338,7 +337,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 
-//Tommygun											Keywords: .45 ACP, Automatic, 30/50 rounds. Special modifiers: damage -1
+//Tommygun			Keywords: .45 ACP, Automatic, 30/50 rounds. Special modifiers: damage -1
 /obj/item/gun/ballistic/automatic/smg/tommygun
 	name = "ancient Thompson SMG"
 	desc = "Rusty, dinged up, but somehow still functional."
@@ -357,7 +356,7 @@
 	recoil = 0.5
 
 
-//P90												Keywords: 10mm, Automatic, 50 rounds. Special modifiers: damage +1
+//P90				Keywords: 10mm, Automatic, 50 rounds. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/smg/p90
 	name = "FN P90c"
 	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
@@ -385,7 +384,7 @@
 	extra_damage = 0
 
 
-//MP-5 SD											Keywords: 9mm, Automatic, 32 rounds, Suppressed
+//MP-5 SD				Keywords: 9mm, Automatic, 32 rounds, Suppressed
 /obj/item/gun/ballistic/automatic/smg/mp5
 	name = "MP-5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
@@ -402,7 +401,8 @@
 	can_unsuppress = FALSE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 
-//Ppsh-41											Keywords: 9mm, Automatic, 71 rounds. Special modifiers: damage -4
+
+//Ppsh-41				Keywords: 9mm, Automatic, 71 rounds. Special modifiers: damage -4
 /obj/item/gun/ballistic/automatic/smg/ppsh
 	name = "Ppsh-41"
 	desc = "An extremely fast firing, inaccurate submachine gun from World War 2. Low muzzle velocity. Uses 9mm rounds."
@@ -428,8 +428,7 @@
 //CARBINES//
 ////////////
 
-
-//M1 Carbine										Keywords: 10mm, Semi-auto, 12/24 rounds, Long barrel
+//M1 Carbine				Keywords: 10mm, Semi-auto, 12/24 rounds, Long barrel
 /obj/item/gun/ballistic/automatic/m1carbine
 	name = "m1 carbine"
 	desc = "The M1 Carbine was mass produced during some old war, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
@@ -459,7 +458,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-//M1/n Carbine										Keywords: NCR, 10mm, Semi-auto, 12/24 rounds, Long barrel, No autosear, No tinker, Damage +1
+//M1/n Carbine				Keywords: NCR, 10mm, Semi-auto, 12/24 rounds, Long barrel, No autosear, No tinker, Damage +1
 /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	name = "m1/n carbine"
 	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
@@ -471,7 +470,7 @@
 	untinkerable = TRUE
 
 
-//M1A1 Carbine										Keywords: 10mm, Semi-auto, 12/24 rounds, Long barrel, Folding stock.
+//M1A1 Carbine				Keywords: 10mm, Semi-auto, 12/24 rounds, Long barrel, Folding stock.
 /obj/item/gun/ballistic/automatic/m1carbine/compact
 	name = "m1a1 carbine"
 	desc = "The M1A1 carbine is an improvement of the original, with this particular model having a folding stock allowing for greater mobility. Chambered in 10mm."
@@ -510,8 +509,7 @@
 //SEMI-AUTO RIFLES//
 ////////////////////
 
-
-//Service rifle										Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine
+//Service rifle			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/service
 	name = "service rifle"
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
@@ -531,7 +529,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-//Scout carbine										Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine. Special modifiers: spread -1
+//Scout carbine			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine. Special modifiers: spread -1
 /obj/item/gun/ballistic/automatic/service/carbine
 	name = "scout carbine"
 	desc = "A cut down version of the standard-issue service rifle tapped with mounting holes for a scope. Shorter barrel, lower muzzle velocity."
@@ -547,7 +545,7 @@
 	suppressor_y_offset = 28
 
 
-//Police rifle										Keywords: OASIS, 5.56mm, Semi-auto, 30 (10-50) round magazine
+//Police rifle			Keywords: OASIS, 5.56mm, Semi-auto, 30 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police  rifle"
 	desc = "This old pre-war rifle made for law enforcement has been passed down generations in the Oasis Police Department, carefully repaired and rebuilt whenever damaged. Dried and crumbling polymers have been replaced with wood and reinforcing strips of leather, the black finish worn down a century ago, but it still works, as good as ever."
@@ -563,7 +561,7 @@
 	zoomable = FALSE
 
 
-//Marksman carbine									Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine, Small scope
+//Marksman carbine			Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine, Small scope
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
 	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and is semi-auto only."
@@ -592,7 +590,7 @@
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 
 
-//Colt Rangemaster									Keywords: 7.62mm, Semi-auto, 10/20 round magazine
+//Colt Rangemaster				Keywords: 7.62mm, Semi-auto, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/rangemaster
 	name = "Colt Rangemaster"
 	desc = "A Colt Rangemaster semi-automatic rifle, chambered for 7.62x51. Single-shot only."
@@ -617,7 +615,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-// Enfield SLR										Keywords: 7.62mm, Semi-auto, 10/20 round magazine
+// Enfield SLR				Keywords: 7.62mm, Semi-auto, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/slr
 	name = "Enfield SLR"
 	desc = "A self-loading rifle in 7.62mm NATO. Semi-auto only."
@@ -645,7 +643,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//M1 Garand											Keywords: .308, Semi-auto, 8 rounds internal
+//M1 Garand					Keywords: .308, Semi-auto, 8 rounds internal
 /obj/item/gun/ballistic/automatic/m1garand
 	name = "M1 Garand"
 	desc = "The WWII American Classic. Still has that satisfiying ping."
@@ -679,14 +677,14 @@
 	if(.)
 		return
 
-//Old Glory											Keywords: UNIQUE, .308, Semi-auto, 8 rounds internal, Damage +10
+//Old Glory					Keywords: UNIQUE, .308, Semi-auto, 8 rounds internal, Damage +10
 /obj/item/gun/ballistic/automatic/m1garand/oldglory
 	name = "Old Glory"
 	desc = "This Machine kills communists!"
 	icon_state = "oldglory"
 	extra_damage = 10
 
-//Republics Pride									Keywords: UNIQUE, 7.62mm, Semi-auto, 8 rounds internal, Scoped, Damage +8, Penetration +0.1
+//Republics Pride			Keywords: UNIQUE, 7.62mm, Semi-auto, 8 rounds internal, Scoped, Damage +8, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/republicspride
 	name = "Republic's Pride"
 	desc = "A well-tuned scoped M1C rifle crafted by master gunsmith from the Gunrunners. Chambered in 7.62x51."
@@ -700,7 +698,7 @@
 	can_scope = FALSE
 
 
-//SKS												Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
+//SKS				Keywords: LEGION, .308, Semi-auto, 10 rounds internal, Penetration +0.1
 /obj/item/gun/ballistic/automatic/m1garand/sks
 	name = "SKS"
 	desc = "Old hunting rifle taken from disovered stockpiles and refurbished in Phoenix workshops. The standard heavy rifle of the Legion, still rare. .308, semi-auto only, internal magazine."
@@ -722,14 +720,14 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle								Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +3
+//DKS 501 sniper rifle				Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +1
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
-	fire_delay = 9
+	fire_delay = 7
 	burst_size = 1
 	extra_speed = 500
 	zoom_amt = 10
@@ -752,7 +750,7 @@
 //////////////////
 
 
-//R82												Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
+//R82				Keywords: 5.56mm, Semi-auto, 20 (10-50) round magazine	NOT CANON
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "R82 heavy service rifle"
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
@@ -765,7 +763,7 @@
 	suppressor_y_offset = 28
 
 
-//R91 assault rifle									Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
+//R91 assault rifle				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "r91 assault rifle"
 	desc = "The R91 was the standard US Army assault rifle, and so saw wide-spread use after the war. Most are worn out by now."
@@ -788,7 +786,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 
-//Infiltrator										Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Suppressed, Small scope, Damage -1, Pistol grip
+//Infiltrator			Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Suppressed, Small scope, Damage -1, Pistol grip
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
 	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture."
@@ -812,7 +810,7 @@
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 
-//Type 93 Chinese rifle								Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
+//Type 93 Chinese rifle				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/type93
 	name = "type 93 assault rifle"
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
@@ -842,7 +840,7 @@
 	can_suppress = FALSE
 
 
-//Bozar												Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
+//Bozar					Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
 	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56."
@@ -864,7 +862,7 @@
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
 
 
-//Assault Carbine									Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Flashlight
+//Assault Carbine				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/assault_carbine
 	name = "assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
@@ -893,7 +891,7 @@
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 
 
-//FN-FAL											Keywords: 7.62mm, Automatic, 10/20 round magazine NOT CANON
+//FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine NOT CANON
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"
 	desc = "This rifle has been more widely used by armed forces than any other rifle in history. It's a reliable assault weapon for any terrain or tactical situation."
@@ -909,7 +907,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 
-//H&K G11											Keywords: 4.73mm, Automatic, 50 round magazine
+//H&K G11				Keywords: 4.73mm, Automatic, 50 round magazine
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"
 	desc = "This experimental german gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
@@ -934,7 +932,7 @@
 ////////////////
 
 
-//R84 Light machinegun						Keywords: NCR, 5.56mm, Automatic, 60 rounds, Damage decrease (bullethose)
+//R84 Light machinegun				Keywords: NCR, 5.56mm, Automatic, 60 rounds, Damage decrease (bullethose)
 /obj/item/gun/ballistic/automatic/r84
 	name = "R84 LMG"
 	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs NCR has produced."
@@ -971,7 +969,7 @@
 	return
 
 
-//LSW squad support weapon					Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
+//LSW squad support weapon				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
 /obj/item/gun/ballistic/automatic/lsw
 	name = "LSW (Light Support Weapon)"
 	desc = "This squad-level support weapon has a bullpup design. The bullpup design makes it difficult to use while lying down. Because of this it was remanded to National Guard units. It, however, earned a reputation as a reliable weapon that packs a lot of punch for its size."
@@ -1016,7 +1014,7 @@
 	return
 
 
-//M1919 Machinegun							Keywords: LEGION, .308, Automatic, 80 round belt. Special modifiers: damage decrease bullethose
+//M1919 Machinegun				Keywords: LEGION, .308, Automatic, 80 round belt. Special modifiers: damage decrease bullethose
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
 	desc = "This ancient machine gun has been dug up and put into working order by the Legion Forgemasters. It's loud, heavy and terrifying."
@@ -1110,7 +1108,6 @@
 //MISC//
 ////////
 
-
 //M72 Gauss rifle
 /obj/item/gun/ballistic/automatic/m72
 	name = "\improper M72 gauss rifle"
@@ -1124,7 +1121,6 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	//projectile_speed = 0
 	recoil = 2
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'

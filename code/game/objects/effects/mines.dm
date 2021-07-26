@@ -142,7 +142,7 @@
 	spawn(0)
 		new /datum/hallucination/delusion(victim, TRUE, "demon",duration,0)
 
-	var/obj/item/twohanded/chainsaw/doomslayer/chainsaw = new(victim.loc)
+	var/obj/item/twohanded/chainsaw = new(victim.loc)
 	victim.log_message("entered a blood frenzy", LOG_ATTACK)
 
 	ADD_TRAIT(chainsaw, TRAIT_NODROP, CHAINSAW_FRENZY_TRAIT)
