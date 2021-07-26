@@ -326,7 +326,7 @@
 	name = "Nuka Float"
 	description = "A delicious blend of ice-cream and classic Nuka-Cola!"
 	color = "#11111E"
-	nutriment_factor = 10
+	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "creamy Nuka"
 	glass_icon_state = "nukafloatglass"
 	glass_name = "Nuka Float"
@@ -344,7 +344,7 @@
 	name = "Sunset Float"
 	description = "A delicious blend of ice-cream and classic Sunset Sass!"
 	color = "#734517"
-	nutriment_factor = 10
+	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "creamy root beer"
 	glass_icon_state = "sunsetfloatglass"
 	glass_name = "Sunset Float"
