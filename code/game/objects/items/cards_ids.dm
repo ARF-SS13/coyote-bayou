@@ -921,6 +921,18 @@
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
 
+/obj/item/card/id/dogtag/town/ncr
+	name = "NCR citizenship permit"
+	desc = "A permit identifying the holder as a citizen of New Californian Republic."
+	assignment = "NCR Citizen"
+	access = list()
+
+/obj/item/card/id/dogtag/town/legion
+	name = "Legion citizenship permit"
+	desc = "A permit identifying the holder as a citizen of Caesar's Legion."
+	assignment = "Legion Citizen"
+	access = list()
+
 /obj/item/card/id/dogtag/town/mafia
 	name = "citizenship permit"
 	desc = "A permit identifying the holder as a citizen of a nearby town."

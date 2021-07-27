@@ -158,9 +158,9 @@
 		if(0)
 			return get_all_accesses()
 		if(1) //station general
-			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER)
+			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER, ACCESS_NCROFFDUTY)
 		if(2) //security
-			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_NCR, ACCESS_BOS, ACCESS_ENCLAVE)
+			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_LEGION, ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_BOS, ACCESS_ENCLAVE)
 		if(3) //medbay
 			return list(ACCESS_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_SURGERY, ACCESS_CMO, ACCESS_FOLLOWER)
 		if(4) //research
@@ -331,10 +331,14 @@
 			return "Cloning Room"
 		if(ACCESS_BOS)
 			return "BOS Access"
+		if(ACCESS_LEGION)
+			return "Legion Access"
 		if(ACCESS_NCR)
-			return "NCR Access"
+			return "NCR Military"
+		if(ACCESS_NCR_ARMORY)
+			return "NCR Armory"
 		if(ACCESS_NCROFFDUTY)
-			return "NCR Off-Duty Access"
+			return "NCR Civilian"
 		if(ACCESS_FOLLOWER)
 			return "Follower Access"
 		if(ACCESS_ENCLAVE)
@@ -360,6 +364,28 @@
 			return "Code Gold"
 		if(ACCESS_CENT_BAR)
 			return "Code Scotch"
+
+/* NCR */
+/proc/get_all_ncr_access()
+	return list(ACCESS_NCROFFDUTY, ACCESS_NCR, ACCESS_NCR_ARMORY)
+
+/proc/get_ncr_access_desc(A)
+	switch(A)
+		if(ACCESS_NCROFFDUTY)
+			return "NCR Civilian"
+		if(ACCESS_NCR)
+			return "NCR Military"
+		if(ACCESS_NCR_ARMORY)
+			return "NCR Armory"
+
+/* Legion */
+/proc/get_all_legion_access()
+	return list(ACCESS_LEGION)
+
+/proc/get_legion_access_desc(A)
+	switch(A)
+		if(ACCESS_LEGION)
+			return "Legion Access"
 
 /proc/get_all_jobs()
 	return list("Centurion", "NCR Captain", "Overseer", "Sheriff",

@@ -60,7 +60,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	faction = "NCR"
 	head_announce = list("Security")
 	supervisors = "The Republic Senate, High Command"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS)
 	req_admin_notify = 1
 
 	total_positions = 0
@@ -88,7 +88,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	gloves = /obj/item/clothing/gloves/f13/leather
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
-	r_pocket = /obj/item/binoculars	
+	r_pocket = /obj/item/binoculars
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m44 = 3,
@@ -151,7 +151,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	spawn_positions = 1
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant. Coordinating with your staff, you must ensure that the objectives of High Command are completed to the letter. Working closely with your subordinates on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS)
 	req_admin_notify = 1
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN_NCR
 	outfit = /datum/outfit/job/ncr/f13captain
@@ -227,7 +227,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	spawn_positions = 1
 	description = "You are the direct superior to the NCOs and Enlisted, and under special circumstances, Rangers. You are the XO of Camp Miller. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain"
-	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_CHANGE_IDS)
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_LIEUTENANT
 	outfit = /datum/outfit/job/ncr/f13lieutenant
@@ -254,7 +254,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	gloves = /obj/item/clothing/gloves/f13/leather
 	ears = /obj/item/radio/headset/headset_ncr_com
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
-	r_pocket = /obj/item/binoculars	
+	r_pocket = /obj/item/binoculars
 	suit_store = /obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1, \
@@ -574,7 +574,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/r84
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/lmg = 1,				
+		/obj/item/ammo_box/magazine/lmg = 1,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/storage/survivalkit_aid = 1,
@@ -753,7 +753,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/storage/firstaid/regular = 1,
-		)	
+		)
 
 /datum/outfit/job/ncr/f13combatmedic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -1102,4 +1102,24 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/reagent_containers/food/snacks/cheesyburrito = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		)
+
+// NCR Citizen
+// Really only used for ID console
+/datum/job/ncr/f13ncrcitizen
+	title = "NCR Citizen"
+	access = list(ACCESS_NCROFFDUTY)
+	minimal_access = list(ACCESS_NCROFFDUTY)
+	outfit = /datum/outfit/job/ncr/f13ncrcitizen
+
+/datum/outfit/job/ncr/f13ncrcitizen
+	name = "NCR Citizen (Role)"
+	uniform = /obj/item/clothing/under/f13/ncrcaravan
+	shoes = /obj/item/clothing/shoes/f13/tan
+	head = /obj/item/clothing/head/f13/cowboy
+	gloves = /obj/item/clothing/gloves/color/brown
+	id = /obj/item/card/id/dogtag/town/ncr
+	l_hand = /obj/item/gun/ballistic/rifle/mag/varmint
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		)

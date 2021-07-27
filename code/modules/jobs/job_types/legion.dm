@@ -7,12 +7,12 @@ Gloves		Officers - Leather glovesl, fingerless leather gloves for sergeants. Bay
 Money		Cent & Treasurer - "small" money bag (the biggest)
 			Decanus - Officer money bag
 			Rest - Enlisted money bag
-Sidearm		None. 
+Sidearm		None.
 Melee		Officers only - Spatha
 			Vets/Officers - Gladius
 			Rest - Lawnmower machete the most common
 Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns all good, very restrictive on long barrel automatics, generally limited ammo, always good melee option.
-			Avoid Police shotguns, 5,56 semis, Desert Eagle, Survival knives etc, be creative and work within the limitations to avoid powercreep and things getting bland and same.  
+			Avoid Police shotguns, 5,56 semis, Desert Eagle, Survival knives etc, be creative and work within the limitations to avoid powercreep and things getting bland and same.
 */
 
 /datum/job/CaesarsLegion
@@ -24,6 +24,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	objectivesList = list("Focus on the tribals, win them over or intimidate them.", "Focus on Oasis, display dominance.", "Send out patrols and establish checkpoints to curb use of digusting drugs and degenerate behaviour.", "Flagstaff requests more worker: acquire slaves, train them if possible, send them east for breaking if not.", "Make sure no other faction gains dominance over Oasis, if they remain neutral it can be used to the Legions advantage.")
 
 	exp_type = EXP_TYPE_LEGION
+
+	access = list(ACCESS_LEGION)
+	minimal_access = list(ACCESS_LEGION)
 
 /datum/outfit/job/CaesarsLegion
 	ears = null
@@ -98,8 +101,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	total_positions = 0
 	spawn_positions = 0
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -151,6 +154,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	display_order = JOB_DISPLAY_ORDER_CENTURION
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	exp_requirements = 1500
+
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 
 	loadout_options = list(
 		/datum/outfit/loadout/palacent,		// 10mm SMG, Thermic lance
@@ -241,6 +247,9 @@ commented out pending rework*/
 	display_order = JOB_DISPLAY_ORDER_DECANVET
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 	exp_requirements = 900
+
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 
 	loadout_options = list(
 		/datum/outfit/loadout/decvetfront,	// Carl Gustaf, Fireaxe, Smoke bomb, slightly better helmet
@@ -460,7 +469,7 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/vexbear,	//	Classic FO13 Vex with his ripper: .223 pistol, Ripper
-		/datum/outfit/loadout/vexfox,	// 	Classic New Vegas Vex with his sniper: DKS sniper, Gladius		
+		/datum/outfit/loadout/vexfox,	// 	Classic New Vegas Vex with his sniper: DKS sniper, Gladius
 		)
 
 	matchmaking_allowed = list(
@@ -852,7 +861,7 @@ commented out pending rework*/
 	mask = /obj/item/clothing/mask/bandana/legion/camp
 	uniform = /obj/item/clothing/under/f13/legskirt
 	suit = /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
-	head = /obj/item/clothing/head/helmet/f13/legion/prime/slavemaster	
+	head = /obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/roman
 	r_pocket = /obj/item/restraints/handcuffs
@@ -899,7 +908,7 @@ commented out pending rework*/
 	gloves = /obj/item/clothing/gloves/legion/forgemaster
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/legenlisted = 1,	
+		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/stack/sheet/metal/twenty = 1,
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,
@@ -976,7 +985,7 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tailor/legionuniform)
- 
+
 
 /datum/outfit/loadout/auxassist
 	name = "Treasurer"
@@ -1100,7 +1109,7 @@ commented out pending rework*/
 /*
 Post Scriptum
 Plans: Add recipes/traits to keep refining support roles, Forgemaster close to done, just missing armor, others will need some minor tweaking. Planned is making the medicus more of a improvised surgery master, using primitive tools to good effect, because its interesting and unique.
-Venator  - Zero slots, role built on cloning vet ranger, linear just vastly better than all but the Cent, snowflakey in command when it suits them, messes up the chain of command thats already messy for Legion. 
+Venator  - Zero slots, role built on cloning vet ranger, linear just vastly better than all but the Cent, snowflakey in command when it suits them, messes up the chain of command thats already messy for Legion.
 */
 /datum/job/CaesarsLegion/Legionnaire/f13venator
 	title = "Legion Venator"
@@ -1142,4 +1151,24 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 3,
+		)
+
+// Legion Citizen
+// Really only used for ID console
+/datum/job/ncr/f13legioncitizen
+	title = "Legion Citizen"
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legioncitizen
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13legioncitizen
+	name = "Legion Citizen (Role)"
+	uniform = /obj/item/clothing/under/f13/doctor
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	suit = /obj/item/clothing/suit/curator
+	head = /obj/item/clothing/head/scarecrow_hat
+	gloves = /obj/item/clothing/gloves/color/black
+	glasses = /obj/item/clothing/glasses/welding
+	id = /obj/item/card/id/dogtag/town/legion
+	l_hand = /obj/item/shield/riot/buckler
+	backpack_contents = list(
+		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
