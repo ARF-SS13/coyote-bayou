@@ -17,7 +17,7 @@
 	var/playsleepseconds = 0
 	var/obj/item/tape/mytape
 	var/starting_tape_type = /obj/item/tape/random
-	var/open_panel = 0
+	var/panel_open = FALSE
 	var/canprint = 1
 
 
@@ -26,11 +26,12 @@
 	if(starting_tape_type)
 		mytape = new starting_tape_type(src)
 	update_icon()
+	wires = new /datum/wires/taperecorder(src)
 
 
 /obj/item/taperecorder/examine(mob/user)
 	. = ..()
-	. += "The wire panel is [open_panel ? "opened" : "closed"]."
+	. += "The wire panel is [panel_open ? "opened" : "closed"]."
 
 
 /obj/item/taperecorder/attackby(obj/item/I, mob/user, params)
@@ -40,6 +41,18 @@
 		mytape = I
 		to_chat(user, "<span class='notice'>You insert [I] into [src].</span>")
 		update_icon()
+	else if(is_wire_tool(I) && panel_open)
+		wires.interact(user)
+
+/obj/item/taperecorder/screwdriver_act(mob/living/user, obj/item/I)
+	I.play_tool_sound(src, 50)
+	if(!panel_open)
+		panel_open = TRUE
+		to_chat(user, "<span class='notice'>You open the maintenance hatch of [src].</span>")
+	else
+		panel_open = FALSE
+		to_chat(user, "<span class='notice'>You close the maintenance hatch of [src].</span>")
+	return TRUE
 
 
 /obj/item/taperecorder/proc/eject(mob/user)
