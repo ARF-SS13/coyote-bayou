@@ -673,7 +673,7 @@ Raider
 	ears = null
 	belt = null
 	r_hand = /obj/item/book/granter/trait/selection
-	l_pocket = /obj/item/reagent_containers/food/drinks/flask
+	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/melee/onehanded/knife/survival
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -682,7 +682,6 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/reagent_containers/pill/radx,
-		/obj/item/storage/bag/money/small/wastelander,
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)

@@ -4259,13 +4259,6 @@
 /obj/structure/bed,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices1st)
-"dFt" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "dFv" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -5625,14 +5618,6 @@
 	icon_state = "bar"
 	},
 /area/f13/followers)
-"eJH" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "eJU" = (
 /obj/effect/decal/fakelattice,
 /obj/machinery/light/small{
@@ -5745,6 +5730,7 @@
 "eOl" = (
 /obj/machinery/autolathe/ammo,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/book/granter/crafting_recipe/gunsmith_four,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -10573,7 +10559,6 @@
 /area/f13/bunker)
 "ivY" = (
 /obj/machinery/light/small/broken,
-/mob/living/simple_animal/hostile/supermutant,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "iwg" = (
@@ -11987,10 +11972,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"jzy" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/wood/f13/oak,
-/area/f13/building)
 "jzC" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -23264,10 +23245,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/den)
-"rNd" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "rNj" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
@@ -24549,10 +24526,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/tunnel)
-"sVv" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "sVL" = (
 /obj/structure/statue/uranium/nuke,
 /obj/machinery/light{
@@ -24941,16 +24914,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/carpet,
 /area/f13/den)
-"tjy" = (
-/obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/item/book/granter/crafting_recipe/gunsmith_four,
-/obj/structure/decoration/rag,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/bunker)
 "tjA" = (
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/indestructible/ground/inside/mountain,
@@ -32273,7 +32236,7 @@ vaH
 cgk
 qju
 qju
-tjy
+pQX
 hjf
 fAi
 fLU
@@ -80667,7 +80630,7 @@ nBk
 nBk
 qUv
 nBk
-rNd
+nBk
 nBk
 nBk
 xVt
@@ -81690,7 +81653,7 @@ qUx
 lnr
 lnr
 lnr
-sVv
+lnr
 lnr
 uoO
 nBk
@@ -81945,7 +81908,7 @@ eLE
 uoO
 qUO
 lnr
-sVv
+lnr
 lnr
 lnr
 lnr
@@ -82208,7 +82171,7 @@ lnr
 lnr
 uoO
 nBk
-rNd
+nBk
 nBk
 uoO
 uoO
@@ -84510,10 +84473,10 @@ uoO
 fLU
 gmN
 oPR
-eJH
+dbx
 pHq
 dbx
-eJH
+dbx
 smm
 qIH
 fLU
@@ -85281,7 +85244,7 @@ uoO
 fLU
 oVe
 dbx
-dFt
+oPR
 hQE
 uoO
 uoO
@@ -86570,7 +86533,7 @@ eLE
 uoO
 xyk
 rrZ
-jzy
+rrZ
 rrZ
 rrZ
 xyk
