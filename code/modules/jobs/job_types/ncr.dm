@@ -41,18 +41,16 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmor)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmet)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmormk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmetmk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
+
 
 
 ///////////////////////
 /// Colonel - Admin ///
 ///////////////////////
-
 
 // COLONEL
 
@@ -120,7 +118,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
-/datum/outfit/job/ncr/f13aide	// NCR Flag, Automag pistol
+/datum/outfit/job/ncr/f13aide	// NCR Flag, Desert Eagle
 	name = "NCR Personal Aide"
 	jobtype = /datum/job/ncr/f13aide
 	id = /obj/item/card/id/dogtag/ncrtrooper
@@ -159,6 +157,11 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13captain
 	exp_requirements = 2000
 
+	loadout_options = list(
+		/datum/outfit/loadout/elcapitan,	// Service Rifle
+		/datum/outfit/loadout/courtmartial, // M1/n Carbine, Binoculars, 9mm sidearm
+		)
+
 /datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -172,7 +175,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
 
-/datum/outfit/job/ncr/f13captain	// Desert Eagle, Frag grenade, Smoke grenade, Binoculars, Trench knife
+/datum/outfit/job/ncr/f13captain	// Desert Eagle, Frag grenade, Binoculars, Trench knife
 	name = "NCR Captain"
 	jobtype = /datum/job/ncr/f13captain
 	id = /obj/item/card/id/dogtag/ncrcaptain
@@ -187,17 +190,31 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	mask = /obj/item/clothing/mask/cigarette/pipe
 	neck = /obj/item/storage/belt/holster/legholster
 	r_pocket = /obj/item/binoculars	
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/trench = 1,
 		/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/megaphone = 1,
 		/obj/item/grenade/frag = 1,
-		/obj/item/grenade/smokebomb = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/ammo_box/magazine/m44 = 3,
 		/obj/item/lighter = 1,
 		/obj/item/reagent_containers/food/snacks/grown/tobacco/dried = 1,
+		)
+
+/datum/outfit/loadout/elcapitan
+	name = "El Capitan"
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m14mm = 3,
+		/obj/item/storage/box/ration/menu_two = 1,
+		/obj/item/melee/onehanded/knife/trench = 1,
+		)
+
+/datum/outfit/loadout/courtmartial
+	name = "The Court Martial"
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/deagle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m44 = 3,
+		/obj/item/twohanded/sledgehammer/rockethammer/courtmartial = 1,
+		/obj/item/storage/box/ration/menu_eight = 1,
 		)
 
 
@@ -269,10 +286,10 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13sergeant
 	exp_requirements = 600
 
-	loadout_options = list(						// ALL: Bayonet
+	loadout_options = list( // ALL: Bayonet
 		/datum/outfit/loadout/sergeantrifleman,	// Service Rifle
-		/datum/outfit/loadout/sergeantrecon,	// M1/n Carbine, Binoculars, 9mm sidearm
-		/datum/outfit/loadout/sergeantcqc,		// Trench Shotgun, Gas mask, Smoke bombs, Trench knife
+		/datum/outfit/loadout/sergeantrecon, // M1/n Carbine, Binoculars, 9mm sidearm
+		/datum/outfit/loadout/sergeantcqc, // Trench Shotgun, Gas mask, Smoke bombs, Trench knife
 		)
 
 	matchmaking_allowed = list(
@@ -309,7 +326,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 /datum/outfit/loadout/sergeantrecon
 	name = "Recon"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	head = /obj/item/clothing/head/f13/ncr
 	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
@@ -349,10 +366,10 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13vetranger
 	exp_requirements = 1500
 
-	loadout_options = list(					// ALL: Binoculars, Bowie knife
-		/datum/outfit/loadout/vrclassic,	// AMR, Sequoia
-		/datum/outfit/loadout/vrlite,		// Rangemaster, Sequoia
-		/datum/outfit/loadout/vrcqc,		// 2 x .45 Long colt revolvers
+	loadout_options = list( // ALL: Binoculars, Bowie knife
+		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
+		/datum/outfit/loadout/vrlite, // Rangemaster, Sequoia
+		/datum/outfit/loadout/vrcqc, // 2 x .45 Long colt revolvers
 		)
 
 /datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -580,10 +597,10 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
 	outfit = /datum/outfit/job/ncr/f13combatengineer
 
-	loadout_options = list(									// ALL: Trench tool, Limited blueprints
-		/datum/outfit/loadout/combatengineerbuilder,		// M1/n carbine, X4 explosive, Extra materials
-		/datum/outfit/loadout/combatengineertrapper,		// Rockwell SMG, Minelaying
-		/datum/outfit/loadout/combatengineerflamethrower,	// Flamer, M1/n carbine
+	loadout_options = list( // ALL: Trench tool, Limited blueprints
+		/datum/outfit/loadout/combatengineerbuilder, // M1/n carbine, X4 explosive, Extra materials
+		/datum/outfit/loadout/combatengineertrapper, // Rockwell SMG, Minelaying
+		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, M1/n carbine
 		)
 
 	matchmaking_allowed = list(
@@ -594,6 +611,17 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 			/datum/job/ncr,
 		),
 		)
+
+/datum/outfit/job/ncr/f13combatengineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1garand)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
 /datum/outfit/job/ncr/f13combatengineer
 	name = "NCR Combat Engineer"
@@ -645,18 +673,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/m2flamethrowertank = 1,
 		)
 
-/datum/outfit/job/ncr/f13combatengineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1garand)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
-
-// MILITARY POLICE			Peak physical condition, supposed to keep discipline and make sure military law is followed, including chain of command.
+// MILITARY POLICE
 
 /datum/job/ncr/f13mp
 	title = "NCR Military Police"
@@ -728,7 +746,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	accessory = /obj/item/clothing/accessory/armband/med/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
@@ -764,8 +782,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13corporal
 
 	loadout_options = list(
-		/datum/outfit/loadout/corporaldesignatedmarksman,	// Remington rife, 9mm sidearm, Bayonet
-		/datum/outfit/loadout/corporalrifleman,				// Service rifle, Bayonet
+		/datum/outfit/loadout/corporaldesignatedmarksman, // Remington rife, 9mm sidearm, Bayonet
+		/datum/outfit/loadout/corporalrifleman, // Service rifle, Bayonet, Large magazines
 		)
 
 	matchmaking_allowed = list(
@@ -827,8 +845,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13trooper
 
 	loadout_options = list(
-		/datum/outfit/loadout/trooperrifleman,		// Service Rifle, Bayonet
-		/datum/outfit/loadout/trooperfiresupport,	// M1/n carbine, Trench tool
+		/datum/outfit/loadout/trooperrifleman, // Service Rifle, Bayonet
+		/datum/outfit/loadout/trooperfiresupport, // M1/n carbine, Trench tool
 		)
 
 	matchmaking_allowed = list(
@@ -849,7 +867,6 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
 	glasses	= null
 	backpack_contents = list(
-		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
@@ -916,8 +933,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	r_hand = /obj/item/storage/backpack/duffelbag/med/surgery
 	mask = /obj/item/clothing/mask/surgical
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mm = 2,
+		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
+		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
@@ -948,6 +965,20 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13logisticsofficer
 	exp_requirements = 1500
 
+/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
+	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+
 /datum/outfit/job/ncr/f13logisticsofficer		// Rockwell, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
 	name = "NCR Logistics Officer"
 	jobtype	= /datum/job/ncr/f13logisticsofficer
@@ -956,7 +987,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/ncr/LT2
 	head = /obj/item/clothing/head/beret/ncr_sapper
 	neck = /obj/item/storage/belt/holster/legholster
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit = /obj/item/clothing/suit/armor/f13/utilityvest
 	glasses	= /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -973,18 +1004,6 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/stack/sheet/glass/ten = 2,
 		)
 
-/datum/outfit/job/ncr/f13logisticsofficer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	. = ..()
-	if(visualsOnly)
-		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rangemaster)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
-	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-
 
 // REAR ECHELON
 
@@ -1000,11 +1019,11 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
 	outfit = /datum/outfit/job/ncr/f13rearechelon
 
-	loadout_options = list(				// ALL: Very limited blueprints
-		/datum/outfit/loadout/rearlog,	// Varmint rifle, Trench tool, Tinkering, 
-		/datum/outfit/loadout/reartech,	// Hunting shotgun, Survival knife, Toolbelt, Metal detector
-		/datum/outfit/loadout/rearcorps,// 9mm sidearm, Survival knife, Chemistry
-		/datum/outfit/loadout/offduty,	// 9mm sidearm
+	loadout_options = list( // ALL: Very limited blueprints
+		/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool, Tinkering, 
+		/datum/outfit/loadout/reartech, // Hunting shotgun, Survival knife, Toolbelt, Metal detector, Salvaging
+		/datum/outfit/loadout/rearcorps, // 9mm sidearm, Survival knife, Chemistry
+		/datum/outfit/loadout/offduty, // 9mm sidearm, Bayonet
 		)
 
 /datum/outfit/job/ncr/f13rearechelon
@@ -1013,21 +1032,23 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	id = /obj/item/card/id/dogtag/ncrtrooper
 	accessory =	/obj/item/clothing/accessory/ncr/TPR
 	head = /obj/item/clothing/head/f13/ncr_cap
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
-	glasses	= null
-	backpack_contents = list(
-		/obj/item/storage/survivalkit_aid = 1,
-		)
+	suit = null
+	belt = null	
 
 /datum/outfit/job/ncr/f13rearechelon/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tailor/ncruniform)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
 
-// Logistics orderly
+// Logistics soldier	Tinkering
 /datum/outfit/loadout/rearlog
 	name = "Logistics"
+	suit = /obj/item/clothing/suit/armor/f13/utilityvest
+	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/book/granter/trait/tinkering = 1,
 		/obj/item/gun/ballistic/rifle/mag/varmint = 1,
@@ -1036,12 +1057,15 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
-// Technician
+// Technician	Salvaging
 /datum/outfit/loadout/reartech
 	name = "Technician"
+	suit = /obj/item/clothing/suit/armor/f13/utilityvest
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
+		/obj/item/book/granter/trait/techno = 1,
+		/obj/item/clothing/suit/armor/f13/utilityvest = 1,
 		/obj/item/gun/ballistic/shotgun/hunting = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
@@ -1050,26 +1074,30 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
-// Corpsman
+// Corpsman		Chemistry, simple medical
 /datum/outfit/loadout/rearcorps
 	name = "Corpsman"
+	suit = /obj/item/clothing/suit/armor/f13/utilityvest
 	belt = /obj/item/storage/belt/medical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
+		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
-// Off-duty
+// Off-duty		Snazzy jacket, saved up money for leave
 /datum/outfit/loadout/offduty
 	name = "Off-Duty"
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/reagent_containers/food/snacks/cheesyburrito = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,

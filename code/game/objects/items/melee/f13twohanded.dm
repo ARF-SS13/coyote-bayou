@@ -434,7 +434,7 @@
 	icon_state = "thermiclance_[on ? "on" : "off"]"
 
 
-// Proton axe			Keywords: Damage 20/43, AP 0.5
+// Proton axe			Keywords: Damage 20/32, AP 0.7
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
@@ -445,8 +445,8 @@
 	icon_state_on = "protonaxe_on"
 	slot_flags = ITEM_SLOT_SUITSTORE
 	force = 20
-	force_on = 43
-	armour_penetration = 0.5
+	force_on = 32
+	armour_penetration = 0.7
 	throwforce = 15
 	throwforce_on = 30
 
@@ -490,6 +490,16 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 52, icon_wielded="[icon_prefix]2")
 
+// The Court Martial	Keywords: UNIQUE, Damage 20/52, AP 0.1, Inferior mining
+/obj/item/twohanded/sledgehammer/rockethammer/courtmartial
+	name = "the court martial"
+	desc = "The Captain found use for this during a discussion with a would-be deserter. He grew so fond of it he had the engineers refit the hammer head \
+	to focus its energy on impact, at the cost of utility as a mining tool. The men call it the Court Martial, and if you think it's a joke you better think again \
+	before your skull assumes a consistency reminiscent of a smashed egg."
+	icon_state = "hammer-courtmartial"
+	icon_prefix = "hammer-courtmartial"
+	toolspeed = 0.8
+	armour_penetration = 0.1
 
 // Atom's Judgement			Keywords: UNIQUE, Damage 25/60, Damage bonus Rad
 /obj/item/twohanded/sledgehammer/atomsjudgement

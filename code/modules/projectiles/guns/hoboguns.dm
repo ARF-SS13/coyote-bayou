@@ -24,7 +24,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/revolver/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(4))
+	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
 		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
 		user.take_bodypart_damage(0,22)
@@ -81,7 +81,7 @@
 	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 
-//Pipe rifle (add multi calibre options)				Keywords: .223, 1 round internal, Extra damage +4
+//Pipe rifle (add multi calibre options)				Keywords: .223, 1 round internal, Extra damage +6
 /obj/item/gun/ballistic/revolver/hobo/piperifle				
 	name = "pipe rifle (.223)"
 	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
@@ -92,8 +92,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	force = 20
 	fire_delay = 0.25
-	extra_damage = 4
-	spread = 3
+	extra_damage = 6
+	spread = 2
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
@@ -150,10 +150,10 @@
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
 
 
-//Knife gun. Or maybe gunknife.							Keywords: .44, 1 round internal, Extra damage +5, Melee damage
+//Knife gun. Or maybe gunknife.			Keywords: .44, 1 round internal, Extra damage +5, Melee damage, Bootgun
 /obj/item/gun/ballistic/revolver/hobo/knifegun				
 	name = "knife gun (.44)"
-	desc = "Someone thought, whats better than a knife? A knife that can shoot a bullet from its handle. It's doubtful if its true but it´s here so might as well use it."
+	desc = "Someone thought, whats better than a knife? A knife that can shoot a bullet from its handle, that's what. It's doubtful if its true but it´s here so might as well use it."
 	icon_state = "knifegun"
 	item_state = "knifegun"
 	w_class = WEIGHT_CLASS_SMALL

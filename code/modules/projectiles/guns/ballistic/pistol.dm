@@ -266,8 +266,17 @@
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+//El Capitan			Keywords: 14mm, Semi-auto, 7 round magazine, Heavy. Special modifiers: damage -2
+/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
+	name = "El Capitan"
+	desc = "The Captain loves his gun, despite some silly gunsmith adding some gas venting to the barrel after his second visit to the surgeon for recoil-related wrist injuries."
+	icon_state = "elcapitan"
+	item_state = "deagle"
+	mag_type = /obj/item/ammo_box/magazine/m14mm
+	extra_damage = -2
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-//Automag								Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
+//Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
 /obj/item/gun/ballistic/automatic/pistol/automag
 	name = "Automag"
 	desc = "A long-barreled .44 magnum semi-automatic handgun."
@@ -284,7 +293,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
-//14mm Pistol							Keywords: 14mm, Semi-auto, 7 rounds, Heavy
+//14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
@@ -296,7 +305,7 @@
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-//14mm compact							Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
+//14mm compact		Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
 /obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."

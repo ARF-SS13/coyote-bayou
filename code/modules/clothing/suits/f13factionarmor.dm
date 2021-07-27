@@ -352,6 +352,16 @@
 */
 
 //NCR
+/obj/item/clothing/suit/armor/f13/utilityvest
+	name = "utility vest"
+	desc = "(II) A practical vest with pockets for tools and such."
+	icon_state = "vest-utility"
+	item_state = "vest-utility"
+	icon = 'icons/fallout/objects/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	armor = list("tier" = 2, "energy" = 5, "bomb" = 10, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR patrol vest"
 	desc = "(III) A standard issue NCR Infantry vest."

@@ -136,7 +136,7 @@
 // .38 REVOLVERS //
 ///////////////////
 
-// .38 Detective					Keywords: .38, Double action, 6 rounds cylinder, Short barrel
+// .38 Detective					Keywords: .38, Double action, 6 rounds cylinder, Short barrel, Bootgun
 /obj/item/gun/ballistic/revolver/detective
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
@@ -147,12 +147,6 @@
 	extra_damage = -2
 	spread = 4
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Default" = "detective",
-						"Leopard Spots" = "detective_leopard",
-						"Black Panther" = "detective_panther",
-						"Gold Trim" = "detective_gold",
-						"The Peacemaker" = "detective_peacemaker"
-						)
 	var/list/safe_calibers
 
 
