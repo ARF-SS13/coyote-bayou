@@ -111,12 +111,12 @@
 		body += "<a href='?src=[ref];sendbacktolobby=[ref_mob]'>Send back to Lobby</A>"
 		var/muted = M.client.prefs.muted
 		body += {"<br><b>Mute: </b>
-			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC) ? "#ff5e5e" : "white"]'>IC</font></a> |
-			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC) ? "#ff5e5e" : "white"]'>OOC</font></a> |
-			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY) ? "#ff5e5e" : "white"]'>PRAY</font></a> |
-			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP) ? "#ff5e5e" : "white"]'>ADMINHELP</font></a> |
-			<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT) ? "#ff5e5e" : "white"]'>DEADCHAT</font></a>
-			(<a href='?src=[ref];mute=[ref_mob];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL) ? "#ff5e5e" : "white"]'>ALL</font></a>)
+			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_IC]'><font color='[(muted & MUTE_IC) ? "#ff5e5e" : "white"]'>IC</font></a> |
+			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_OOC]'><font color='[(muted & MUTE_OOC) ? "#ff5e5e" : "white"]'>OOC</font></a> |
+			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_PRAY]'><font color='[(muted & MUTE_PRAY) ? "#ff5e5e" : "white"]'>PRAY</font></a> |
+			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_ADMINHELP]'><font color='[(muted & MUTE_ADMINHELP) ? "#ff5e5e" : "white"]'>ADMINHELP</font></a> |
+			<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_DEADCHAT]'><font color='[(muted & MUTE_DEADCHAT) ? "#ff5e5e" : "white"]'>DEADCHAT</font></a>
+			(<a href='?src=[ref];mute=[M.ckey];mute_type=[MUTE_ALL]'><font color='[(muted & MUTE_ALL) ? "#ff5e5e" : "white"]'>ALL</font></a>)
 		"}
 
 	body += {"
