@@ -604,7 +604,7 @@
 //General clothing
 
 /datum/crafting_recipe/jeans
-	name = "Denim jeans"
+	name = "Denim Disasterpiece"
 	result = /obj/item/clothing/under/pants/youngfolksjeans
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)

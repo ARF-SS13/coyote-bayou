@@ -216,7 +216,7 @@
 	name = "sombrero"
 	icon_state = "sombrero"
 	item_state = "sombrero"
-	desc = "You can practically taste the fiesta."
+	desc = "Bury me con mi sombrero."
 	flags_inv = HIDEHAIR
 
 	dog_fashion = /datum/dog_fashion/head/sombrero
@@ -244,8 +244,8 @@
 	ADD_TRAIT(src, TRAIT_NODROP, SHAMEBRERO_TRAIT)
 
 /obj/item/clothing/head/cone
-	desc = "This cone is trying to warn you of something!"
-	name = "warning cone"
+	desc = "You can leave your friends behind."
+	name = "safety cone"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "cone"
 	item_state = "cone"

@@ -346,7 +346,7 @@
 	alt_covers_chest = TRUE
 	can_adjust = TRUE
 
-/obj/item/clothing/under/f13/legskirt/tac //whoaaa mama humina humina
+/obj/item/clothing/under/f13/legskirt/tac
 	name = "\improper ''tactical'' combat skirt"
 	desc = "A leathery skirt below a thick, black, long-sleeve cotton shirt. Perfect for operatives favoring wardrobe malfunctions."
 	icon_state = "tacskirt"
@@ -917,7 +917,7 @@
 
 /obj/item/clothing/under/f13/rag
 	name = "torn rags"
-	desc = "A shirt - or whatever it is, made of ripped cloth.<br>It has soaked in sweat, and has a bad smell.<br>Only the poorest of settlers, mostly the drug addicts, raiders or slaves wear something like that."
+	desc = "Keeps the sand outta yer crack, and not much else."
 	icon_state = "rag"
 	item_state = "lgloves"
 	item_color = "rag"
@@ -925,7 +925,7 @@
 
 /obj/item/clothing/under/f13/tribal
 	name = "male tribal outfit"
-	desc = "A male outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
+	desc = "Clothes made from gecko hide. Oh, so like, this is what that Darwin guy meant by, like, survival of the fittest?"
 	icon_state = "tribal_m"
 	item_state = "lgloves"
 	item_color = "tribal_m"
@@ -933,7 +933,7 @@
 
 /obj/item/clothing/under/f13/female/tribal
 	name = "female tribal outfit"
-	desc = "A female outfit made of gecko hides.<br>It doesn't cover some parts of body, yet it's better than to walk around naked..."
+	desc = "Clothes made from gecko hide. Oh, so like, this is what that Darwin guy meant by, like, survival of the fittest?"
 	icon_state = "tribal_f"
 	item_state = "lgloves"
 	item_color = "tribal_f"

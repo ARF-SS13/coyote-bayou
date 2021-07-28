@@ -22,8 +22,8 @@
 	icon_state = "jeansblack"
 
 /obj/item/clothing/under/pants/youngfolksjeans
-	name = "Young Folks jeans"
-	desc = "For those tired of boring old jeans. Relive the passion of your youth!"
+	name = "Denim Disasterpiece"
+	desc = "You're headed for disaster, and nobody can stop you."
 	icon_state = "jeansyoungfolks"
 
 /obj/item/clothing/under/pants/white
