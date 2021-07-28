@@ -16797,7 +16797,7 @@
 /area/f13/wasteland)
 "hNT" = (
 /obj/structure/sacrificealtar,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/carpet,
 /area/f13/building)
 "hNZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19788,7 +19788,7 @@
 /area/f13/caves)
 "jdN" = (
 /obj/machinery/door/airlock/medical{
-	name = "Clinic";
+	name = "Botany";
 	req_one_access_txt = "124"
 	},
 /turf/open/floor/f13{
@@ -24283,14 +24283,8 @@
 /turf/closed/indestructible/riveted,
 /area/f13/tcoms)
 "lju" = (
-/obj/machinery/light/floor,
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "followerladder"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
+/obj/structure/sign/departments/medbay/alt,
+/turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "ljy" = (
 /obj/structure/rack,
@@ -27967,10 +27961,7 @@
 /area/f13/building)
 "nel" = (
 /obj/machinery/light,
-/obj/machinery/hydroponics/soil/pot,
-/obj/structure/flora/ausbushes/genericbush{
-	pixel_y = 2
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -29790,7 +29781,7 @@
 "nZP" = (
 /obj/structure/table/wood/fancy,
 /obj/item/candle,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/carpet,
 /area/f13/building)
 "nZS" = (
 /turf/open/indestructible/ground/outside/ruins{
@@ -29883,7 +29874,7 @@
 "ocI" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/fancy/candle_box,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/carpet,
 /area/f13/building)
 "ocX" = (
 /turf/open/floor/plating/f13/outside/road{
@@ -35163,6 +35154,9 @@
 /area/f13/legion)
 "qBK" = (
 /obj/structure/table/reinforced,
+/obj/structure/decoration/smokeold{
+	pixel_y = 32
+	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -39274,8 +39268,8 @@
 /turf/open/floor/wood/f13/carpet,
 /area/f13/building)
 "syi" = (
-/obj/structure/grille/indestructable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -39712,7 +39706,7 @@
 "sJQ" = (
 /obj/structure/table/wood/fancy,
 /obj/item/storage/book/bible,
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/carpet,
 /area/f13/building)
 "sKe" = (
 /obj/structure/closet/fridge/cannibal,
@@ -40399,8 +40393,11 @@
 	},
 /area/f13/ncr)
 "sYK" = (
-/turf/open/floor/holofloor/carpet,
-/area/f13/building)
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/followers)
 "sYV" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -41061,8 +41058,13 @@
 	},
 /area/f13/ncr)
 "toM" = (
-/obj/structure/sign/departments/medbay/alt,
-/turf/closed/wall/f13/supermart,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
 /area/f13/followers)
 "toR" = (
 /obj/structure/flora/ausbushes/genericbush,
@@ -41094,12 +41096,13 @@
 	},
 /area/f13/wasteland)
 "tpk" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "followerladder"
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/f13{
-	icon_state = "freezerfloor"
+	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
 "tpo" = (
@@ -41950,8 +41953,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building)
 "tKI" = (
-/obj/structure/grille/indestructable,
-/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -45372,7 +45375,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/holofloor/carpet,
+/turf/open/floor/carpet,
 /area/f13/building)
 "vib" = (
 /obj/effect/decal/cleanable/dirt,
@@ -50627,7 +50630,7 @@
 /area/f13/building)
 "xBz" = (
 /obj/machinery/door/airlock/medical{
-	name = "Clinic";
+	name = "Operating Room";
 	req_one_access_txt = "124"
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -80026,9 +80029,9 @@ lRW
 uqa
 uqa
 uqa
-sYK
-sYK
-sYK
+hAk
+hAk
+hAk
 rpu
 rpu
 ngl
@@ -80283,10 +80286,10 @@ vXv
 csO
 kSJ
 uqa
-sYK
-sYK
+hAk
+hAk
 nZP
-sYK
+hAk
 rpu
 bcF
 rQB
@@ -80541,9 +80544,9 @@ rpu
 jOH
 uqa
 vhP
-sYK
+hAk
 ocI
-sYK
+hAk
 rpu
 bcF
 rpu
@@ -80797,17 +80800,17 @@ gKP
 rpu
 rpu
 sDp
-sYK
-sYK
+hAk
+hAk
 hNT
-sYK
-sYK
-sYK
-sYK
-sYK
-sYK
-sYK
-sYK
+hAk
+hAk
+hAk
+hAk
+hAk
+hAk
+hAk
+hAk
 rpu
 yjG
 kdJ
@@ -81055,9 +81058,9 @@ aug
 rpu
 uqa
 vhP
-sYK
+hAk
 sJQ
-sYK
+hAk
 rpu
 bcF
 rpu
@@ -81311,10 +81314,10 @@ nfp
 rpu
 oeL
 dCP
-sYK
-sYK
+hAk
+hAk
 nZP
-sYK
+hAk
 rpu
 bcF
 rpu
@@ -81568,9 +81571,9 @@ uqa
 uqa
 lRW
 uqa
-sYK
-sYK
-sYK
+hAk
+hAk
+hAk
 rpu
 rpu
 deT
@@ -87412,7 +87415,7 @@ lMJ
 qsX
 bau
 xBz
-urw
+lju
 toM
 urw
 urw
@@ -87669,10 +87672,10 @@ urw
 kAA
 swl
 swl
-swl
+urw
 tpk
-lju
-dit
+urw
+dCV
 dCV
 dCV
 dCV
@@ -87926,11 +87929,11 @@ urw
 qEs
 swl
 jmn
-swl
 urw
 urw
-dit
+urw
 dCV
+uqa
 uqa
 uqa
 uqa
@@ -88183,12 +88186,12 @@ urw
 qHZ
 swl
 swl
-swl
+sYK
 dit
 dCV
 dCV
-dCV
 uqa
+cbr
 aBH
 mfD
 mfD
@@ -88445,7 +88448,7 @@ dit
 dCV
 uqa
 uqa
-uqa
+cbr
 bpD
 fyf
 fyf
