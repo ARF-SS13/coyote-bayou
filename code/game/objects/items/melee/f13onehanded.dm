@@ -73,6 +73,14 @@
 	force = 38
 	block_chance = 18
 
+/obj/item/melee/onehanded/machete/spatha/longblade
+	name = "forged claymore"
+	desc = "A long one-handed blade sporting lovingly applied wraps and a wonderfully forged and engraved guard. The blade looks to be carefully sharpened."
+	icon_state = "longblade"
+	item_state = "longblade"
+	force = 38
+	block_chance = 18
+
 /obj/item/melee/onehanded/machete/scrapsabre
 	name = "scrap sabre"
 	desc = "Made from materials found in the wastes, a skilled blacksmith has turned it into a thing of deadly beauty."

@@ -528,6 +528,25 @@
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
+//ALR15			Keywords: Donor, 5.56mm, Semi-auto
+/obj/item/gun/ballistic/automatic/service/alr
+	name = "ALR15"
+	desc = "A 5.56x45mm rifle custom built off of a reproduction model AR15-style weapon. Sports a fancy holographic sight picture, forward grip, and a comfortable synthetic thumbhole stock. Bang bang."
+	icon_state = "alr15"
+	item_state = "alr15"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	fire_delay = 4.5
+	burst_size = 1
+	spread = 1
+	can_attachments = FALSE
+	automatic_burst_overlay = FALSE
+	semi_auto = TRUE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
 
 //Scout carbine			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine. Special modifiers: spread -1
 /obj/item/gun/ballistic/automatic/service/carbine
