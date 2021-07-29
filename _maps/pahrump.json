@@ -1,27 +1,37 @@
 {
-    "map_name": "Yuma",
+	"map_name": "Yuma",
 	"map_path": "map_files/Pahrump",
-    "map_file": [
-		"Pahrump-Surface-2.dmm",
-		"Pahrump-Underground-1.dmm"
+	"map_file": [
+		"Dungeons.dmm",
+		"Pahrump-Underground-1.dmm",
+		"Pahrump-Surface-2.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
 	"space_empty_levels":0,
-    "shuttles": {
+	"shuttles": {
 		"cargo":"cargo_pahrump",
-	   	"emergency": "emergency_pahrump",
-	    "ferry": "ferry_fancy"
+		"emergency": "emergency_pahrump",
+		"ferry": "ferry_fancy"
 	},
 	"traits":[
 		{
-			"Gravity":true,
-			"Station":1
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Dungeons": true,
+			"Up": 1
 		},
 		{
-			"Gravity":true,
-			"Baseturf":"/turf/open/indestructible/ground/inside/mountain"
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Up": 1,
+			"Down": -1
+		},
+		{
+			"Gravity": true,
+			"Station": 1,
+			"Down": -1
 		}
 	],
-	"minetype":"none"
+	"minetype": "none"
 }
