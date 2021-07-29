@@ -779,19 +779,6 @@
 	desc = "(I) A fancy winter coat hood."
 	icon_state = "winterhood_bar"
 
-/obj/item/clothing/suit/hooded/wintercoat/cosmic
-	name = "cosmic winter coat"
-	desc = "(I) A starry winter coat that even glows softly."
-	icon_state = "coatcosmic"
-	item_state = "coatcosmic"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/cosmic
-	light_power = 1.8
-	light_range = 1.2
-
-/obj/item/clothing/head/hooded/winterhood/cosmic
-	desc = "(I) A starry winter hood."
-	icon_state = "winterhood_cosmic"
-
 /obj/item/clothing/suit/hooded/wintercoat/janitor
 	name = "janitors winter coat"
 	desc = "(I) A purple-and-beige winter coat that smells of space cleaner."

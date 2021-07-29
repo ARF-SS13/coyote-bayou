@@ -233,15 +233,6 @@ LINEN BINS
 		. += mutable_appearance(icon_file, g_mouth)
 		. += mutable_appearance(icon_file, g_eyes)
 
-/obj/item/bedsheet/cosmos
-	name = "cosmic space bedsheet"
-	desc = "Made from the dreams of those who gaze at the stars, and sold back to them at market price."
-	icon_state = "sheetcosmos"
-	dream_messages = list("the infinite cosmos", "Hans Zimmer music", "a flight through space", "the galaxy", "being fabulous", "shooting stars")
-	light_power = 2
-	light_system = MOVABLE_LIGHT
-	light_range = 2
-
 /obj/item/bedsheet/random
 	icon_state = "random_bedsheet"
 	name = "random bedsheet"

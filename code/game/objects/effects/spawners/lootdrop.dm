@@ -40,7 +40,7 @@
 				/obj/item/bedsheet/red = 8, /obj/item/bedsheet/yellow = 8, /obj/item/bedsheet/brown = 8,
 				/obj/item/bedsheet/black = 8, /obj/item/bedsheet/patriot = 3, /obj/item/bedsheet/rainbow = 3,
 				/obj/item/bedsheet/ian = 3, /obj/item/bedsheet/runtime = 3, /obj/item/bedsheet/nanotrasen = 3,
-				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/cosmos = 1, /obj/item/bedsheet/gondola = 1
+				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/gondola = 1
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband
