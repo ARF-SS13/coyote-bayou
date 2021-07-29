@@ -53,7 +53,6 @@
 	contains = list(/obj/item/poster/random_contraband,
 					/obj/item/poster/random_contraband,
 					/obj/item/reagent_containers/food/snacks/grown/cannabis,
-					/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow,
 					/obj/item/reagent_containers/food/snacks/grown/cannabis/white,
 					/obj/item/storage/pill_bottle/zoom,
 					/obj/item/storage/pill_bottle/happy,
