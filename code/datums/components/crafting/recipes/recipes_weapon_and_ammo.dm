@@ -300,6 +300,18 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	
+/datum/crafting_recipe/m29snub
+	name = "snubnose .44 magnum revolver"
+	result = /obj/item/gun/ballistic/revolver/m29/snub
+	reqs = list(
+		/obj/item/gun/ballistic/revolver/m29 = 1,
+		/obj/item/stack/crafting/goodparts = 1,
+		)
+	tools = list(TOOL_WORKBENCH, TOOL_SAW, TOOL_SCREWDRIVER)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/gun/plasmamusket
 	name = "Plasma musket"

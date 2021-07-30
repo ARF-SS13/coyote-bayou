@@ -961,7 +961,7 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST
 	resistance_flags = NONE
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "acid" = -15) //nylon sucks against acid
+	armor = list("tier" = 2, "linemelee" = 5, "linebullet" = 5, "bomb" = 20, "bio" = 0, "rad" = 0, "acid" = -15) //nylon sucks against acid
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/assu_suit
