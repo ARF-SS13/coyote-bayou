@@ -389,19 +389,20 @@
 /obj/item/twohanded/thermic_lance
 	name = "thermic lance"
 	desc = "A versatile power-welding tool. Useful for cutting apart metal and limbs."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
 	icon_state = "thermiclance_off"
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	slot_flags = ITEM_SLOT_SUITSTORE
+	slot_flags = null
 	force = 5
 	throwforce = 20
 	throw_speed = 2
 	throw_range = 4
 	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
-	hitsound = "swing_hit"
 	actions_types = list(/datum/action/item_action/toggle_lance)
+	hitsound = "swing_hit"
 	var/on = FALSE
 	var/force_on = 60
 
@@ -443,7 +444,8 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "protonaxe"
 	icon_state_on = "protonaxe_on"
-	slot_flags = ITEM_SLOT_SUITSTORE
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
 	force = 20
 	force_on = 32
 	armour_penetration = 0.7
@@ -490,16 +492,16 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 52, icon_wielded="[icon_prefix]2")
 
-// The Court Martial	Keywords: UNIQUE, Damage 20/52, AP 0.1, Inferior mining
+// The Court Martial	Keywords: UNIQUE, Damage 20/52, Inferior mining
 /obj/item/twohanded/sledgehammer/rockethammer/courtmartial
 	name = "the court martial"
 	desc = "The Captain found use for this during a discussion with a would-be deserter. He grew so fond of it he had the engineers refit the hammer head \
-	to focus its energy on impact, at the cost of utility as a mining tool. The men call it the Court Martial, and if you think it's a joke you better think again \
+	to focus its energy on impact, at the cost of utility as a mining tool. <br>The men call it the Court Martial, and if you think it's a joke you better think again \
 	before your skull assumes a consistency reminiscent of a smashed egg."
 	icon_state = "hammer-courtmartial"
 	icon_prefix = "hammer-courtmartial"
 	toolspeed = 0.8
-	armour_penetration = 0.1
+
 
 // Atom's Judgement			Keywords: UNIQUE, Damage 25/60, Damage bonus Rad
 /obj/item/twohanded/sledgehammer/atomsjudgement
@@ -583,7 +585,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 			user.Knockdown(50)
 		return
 
-// Chainsaw				Keywords: Damage 13/57, Wound bonus, Tool saw-off
+// Chainsaw				Keywords: Damage 13/55, Wound bonus, Tool saw-off
 /obj/item/twohanded/chainsaw
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
@@ -612,7 +614,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	var/off_item_state = "chainsaw"
 	var/weight_class_on = WEIGHT_CLASS_HUGE
 	var/on = FALSE
-	var/force_on = 57
+	var/force_on = 55
 	var/force_off = 7
 	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
 	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"

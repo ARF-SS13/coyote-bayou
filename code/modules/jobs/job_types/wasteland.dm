@@ -504,7 +504,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/single_shotgun=1,
 		/obj/item/ammo_box/shotgun/bean,
-		/obj/item/melee/onehanded/knife/butcher = 1,
+		/obj/item/kitchen/knife/butcher = 1,
 		/obj/item/grenade/homemade/firebomb = 6,
 		)
 

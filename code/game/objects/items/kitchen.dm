@@ -10,9 +10,9 @@
  */
 
 /obj/item/kitchen
-	icon = 'icons/obj/kitchen.dmi'
-	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	icon = 'icons/fallout/objects/kitchen.dmi'
+	lefthand_file = 'icons/fallout/onmob/tools/kitchen_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/kitchen_righthand.dmi'
 
 /obj/item/kitchen/fork
 	name = "fork"
@@ -57,9 +57,11 @@
 
 /obj/item/kitchen/knife
 	name = "kitchen knife"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	desc = "A simple knife, best suited to cut stuff that doesn't cut back."
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "knife_kitchen"
-	desc = "Keep hackin' and whackin' and smackin'."
+	item_state = "knife"
 	flags_1 = CONDUCT_1
 	force = 15
 	w_class = WEIGHT_CLASS_SMALL
@@ -67,7 +69,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 6
-	custom_materials = list(/datum/material/iron=12000)
+	custom_materials = list(/datum/material/iron=4000)
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -93,51 +95,18 @@
 	return (BRUTELOSS)
 
 
-/*
-/obj/item/kitchen/knife/bloodletter
-	name = "bloodletter"
-	desc = "An occult looking dagger that is cold to the touch. Somehow, the flawless orb on the pommel is made entirely of liquid blood."
-	icon = 'icons/obj/ice_moon/artifacts.dmi'
-	icon_state = "bloodletter"
-	w_class = WEIGHT_CLASS_NORMAL
-	/// Bleed stacks applied when an organic mob target is hit
-	var/bleed_stacks_per_hit = 3
-
-/obj/item/kitchen/knife/bloodletter/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	. = ..()
-	if(!isliving(target) || !proximity_flag)
-		return
-	var/mob/living/M = target
-	if(!(M.mob_biotypes & MOB_ORGANIC))
-		return
-	var/datum/status_effect/stacking/saw_bleed/bloodletting/B = M.has_status_effect(/datum/status_effect/stacking/saw_bleed/bloodletting)
-	if(!B)
-		M.apply_status_effect(/datum/status_effect/stacking/saw_bleed/bloodletting, bleed_stacks_per_hit)
-	else
-		B.add_stacks(bleed_stacks_per_hit)
-*/
 /obj/item/kitchen/knife/butcher
 	name = "butcher's cleaver"
 	icon_state = "knife_cleaver"
-	desc = "Heavy bladed tool for chopping meat."
+	desc = "Keep hackin' and whackin' and smackin'."
 	flags_1 = CONDUCT_1
 	force = 25
 	throwforce = 15
-	custom_materials = list(/datum/material/iron=18000)
+	custom_materials = list(/datum/material/iron=6000)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_price = PRICE_EXPENSIVE
 
-/obj/item/kitchen/knife/combat // obsolete
-	name = "cyborg knife"
-	icon = 'icons/obj/items_cyborg.dmi'
-	item_state = "knife"
-	desc = "A cyborg-mounted plasteel knife. Extremely sharp and durable."
-	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
-	force = 30
-	throwforce = 25
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	bayonet = TRUE
 
 /obj/item/kitchen/rollingpin
 	name = "rolling pin"

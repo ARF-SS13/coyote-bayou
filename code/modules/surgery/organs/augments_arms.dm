@@ -174,8 +174,8 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += new /obj/item/kitchen/knife/combat(src)
+	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated rolling pin!</span>")
+	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/surgery
@@ -188,8 +188,8 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated knife!</span>")
-	items_list += new /obj/item/kitchen/knife/combat(src)
+	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated rolling pin!</span>")
+	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
 /obj/item/organ/cyberimp/arm/janitor
@@ -217,8 +217,8 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated real knife!</span>")
-	items_list += new /obj/item/kitchen/knife/combat(src)
+	to_chat(usr, "<span class='notice'>You unlock [src]'s integrated rolling pin!</span>")
+	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
 ///////////////
