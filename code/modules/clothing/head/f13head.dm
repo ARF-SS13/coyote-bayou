@@ -857,8 +857,8 @@
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/degancustom
 	name = "reclaimed ranger-hunter combat helmet"
 	desc = "A reclaimed Ranger-Hunter centurion helmet, carefully and lovingly restored to working condition with a sniper's veil wrapped around the neck. 'DE OPPRESSO LIBER' is stenciled on the front."
-	icon_state = "foxranger"
-	item_state = "foxranger"
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
 	actions_types = list(/datum/action/item_action/toggle)
 	toggle_message = "You put the sniper's veil on"
 	alt_toggle_message = "You take the sniper's veil off"

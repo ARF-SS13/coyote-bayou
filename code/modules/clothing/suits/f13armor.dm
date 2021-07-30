@@ -897,8 +897,8 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 /obj/item/clothing/suit/armor/f13/rangercombat/degancustom
 	name = "sniper riot gear"
 	desc = "A customized and well-worn suit of riot gear with parts of the suit reinforced with leather armor and slain Centurion armor pieces by the wearer. A sniper's veil is wrapped around the neck."
-	icon_state = "foxranger"
-	item_state = "foxranger"
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/rigscustom
