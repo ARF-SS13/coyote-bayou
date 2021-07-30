@@ -239,7 +239,6 @@
 	var/static/regex/grabintent_words = regex("grab")
 	var/static/regex/harmintent_words = regex("harm|fight|punch")
 	var/static/regex/throwmode_words = regex("throw|catch")
-	var/static/regex/speak_words = regex("speak|say something")
 	var/static/regex/getup_words = regex("get up")
 	var/static/regex/sit_words = regex("sit")
 	var/static/regex/stand_words = regex("stand")
@@ -461,14 +460,6 @@
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/C in listeners)
 			C.throw_mode_on()
-
-	//SPEAK
-	else if((findtext(message, speak_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/L = V
-			addtimer(CALLBACK(L, /atom/movable/proc/say, pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")), 5 * i)
-			i++
 
 	//GET UP
 	else if((findtext(message, getup_words)))
