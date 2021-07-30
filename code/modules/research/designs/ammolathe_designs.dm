@@ -425,7 +425,7 @@
 	name = "empty anti-materiel rifle magazine (.50)"
 	id = "amrmagazine"
 	materials = list(/datum/material/iron = 8000)
-	build_path = /obj/item/ammo_box/magazine/amr
+	build_path = /obj/item/ammo_box/magazine/amr/empty
 	category = list("initial", "Advanced Magazines")
 
 //Tier 3 Ammo

@@ -12,6 +12,9 @@
 	max_ammo = 36
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/cg45/empty
+	start_empty = TRUE
+	
 /obj/item/ammo_box/magazine/greasegun
 	name = "Grease gun magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -30,6 +33,9 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 20
+
+/obj/item/ammo_box/magazine/uzim9mm/rockwell/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/uzim9mm
 	name = "Uzi magazine (9mm)"

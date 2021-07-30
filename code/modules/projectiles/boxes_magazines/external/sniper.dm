@@ -7,6 +7,9 @@
 	caliber = "a50MG"
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/amr/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/amr/incindiary
 	name = "Anti-materiel magazine (Incindiary)"
 	special_ammo = TRUE
