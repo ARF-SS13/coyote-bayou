@@ -1,9 +1,38 @@
 /*
  * Contains:
+ *		Surgery scrubs
  *		Fire protection
  *		Bomb protection
  *		Radiation protection
  */
+
+
+/obj/item/clothing/suit/hooded/surgical
+	name = "surgical scrubs"
+	desc = "A bundle with all the sterile clothing needed to perform safe surgery accoring to the standards set in the Followers' pamphlet on safe surgery. The shoe covers have grip surfaces to prevent slipping in the blood."
+	icon = 'icons/fallout/clothing/suits-utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit-utility.dmi'
+	icon_state = "surgical-scrubs"
+	w_class = WEIGHT_CLASS_BULKY
+	strip_delay = 60
+	equip_delay_other = 60
+	hoodtype = /obj/item/clothing/head/hooded/surgical
+	clothing_flags = NOSLIP
+	permeability_coefficient = 0.6
+	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
+	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 40, "rad" = 10, "fire" = 0, "acid" = 10)
+
+/obj/item/clothing/head/hooded/surgical
+	name = "hair net"
+	desc = "It's not a good idea to risk hair falling into open wounds."
+	icon = 'icons/fallout/clothing/suits-utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit-utility.dmi'
+	icon_state = "hood_surgical-scrubs"
+	item_state = "hood_surgical-scrubs"
+	flags_inv = HIDEHAIR
+	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 40, "rad" = 10, "fire" = 0, "acid" = 10)
+
 
 /*
  * Fire protection
@@ -20,7 +49,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 1
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 10, "rad" = 20, "fire" = 100, "acid" = 50)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT

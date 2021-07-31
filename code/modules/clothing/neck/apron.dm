@@ -2,7 +2,7 @@
 /obj/item/clothing/neck/apron
 	name = "apron template"
 	icon = 'icons/fallout/clothing/aprons.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/apron.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/apron.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS
 	permeability_coefficient = 0.9
@@ -21,16 +21,9 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/neck/apron/surgical
-	name = "surgical apron"
-	desc = "A sterile blue surgical apron that has pockets for small medical items."
-	icon_state = "surgical"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/neck/apron/chef
 	name = "chefs apron"
-	desc = "A white apron for kitchenwork, got loops to attack kitchen knives and rollings pin to it."
+	desc = "A white apron for kitchenwork, or for some improvised surgery. Got loops to attach kitchen knives and rollings pin to it."
 	icon_state = "chef"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/kitchen
 

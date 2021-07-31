@@ -150,6 +150,7 @@ GLOBAL_LIST_INIT(storage_bartender_can_hold, typecacheof(list(
 	/obj/item/kitchen,
 	/obj/item/reagent_containers/food/drinks/bottle,
 	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/revolver/m29/snub,
 	)))
 
 GLOBAL_LIST_INIT(storage_kitchen_can_hold, typecacheof(list(

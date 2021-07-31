@@ -2,9 +2,9 @@
 
 /obj/item/clothing/neck/mantle
 	name = "mantle template"
-	desc = " worn over the shoulders, no hood, decorative."
+	desc = " worn in accessory slot, no concealing hood, decorative."
 	icon = 'icons/fallout/clothing/mantles.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/mantle.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -70,9 +70,9 @@
 	desc = "A finely woven and blue dyed mantle, with the emblem of a bird on its back."
 	icon_state = "jaymantle"
 
-/obj/item/clothing/neck/mantle/enclavecommander
+/obj/item/clothing/neck/mantle/commander
 	name = "commanders mantle"
-	desc = "A fine mantle marking the wearer as a Commander of the Enclave."
+	desc = "A fine mantle marking the wearer as a Commander of some long lost nation."
 	icon_state = "commander"
 
 /obj/item/clothing/neck/mantle/treasurer
@@ -102,30 +102,6 @@
 
 /obj/item/clothing/neck/mantle/poncho
 	name = "poncho"
-	desc = "Plain and rugged piece of clothing, to make sure your gear don't get soaked through when it rains."
+	desc = "Plain and rugged piece of clothing, put it over your suit and make sure your gear don't get soaked through when it rains."
 	icon_state = "poncho"
 	body_parts_covered = CHEST|GROIN|ARMS
-
-/*
-Obsolete
-/obj/item/clothing/neck/cloak
-
-/obj/item/clothing/suit/poncho
-	name = "poncho"
-	desc = "(I) Your classic, non-racist poncho."
-	icon_state = "classicponcho"
-	item_state = "classicponcho"
-	permeability_coefficient = 0.8
-
-/obj/item/clothing/suit/poncho/green
-	name = "green poncho"
-	desc = "(I) Your classic, non-racist poncho. This one is green."
-	icon_state = "greenponcho"
-	item_state = "greenponcho"
-
-/obj/item/clothing/suit/poncho/red
-	name = "red poncho"
-	desc = "(I) Your classic, non-racist poncho. This one is red."
-	icon_state = "redponcho"
-	item_state = "redponcho"
-*/
