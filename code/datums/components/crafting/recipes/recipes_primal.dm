@@ -235,8 +235,10 @@
 	name = "Sturdy Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/ap
 	time = 40
-	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/stack/crafting/metalparts = 2)
+	reqs = list(
+		/obj/item/stack/rods = 2,
+		/obj/item/stack/crafting/metalparts = 2,
+		)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
@@ -244,8 +246,10 @@
 	name = "Poison Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/poison
 	time = 30
-	reqs = list(/obj/item/ammo_casing/caseless/arrow = 1,
-				/obj/item/grown/nettle/basic = 5)
+	reqs = list(
+		/obj/item/ammo_casing/caseless/arrow = 1,
+		/obj/item/reagent_containers/food/snacks/grown/nettle = 5,
+		)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 

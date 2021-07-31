@@ -86,7 +86,7 @@
 	desc = "Made from materials found in the wastes, a skilled blacksmith has turned it into a thing of deadly beauty."
 	icon_state = "scrapsabre"
 	item_state = "scrapsabre"
-	force = 39
+	force = 37
 	block_chance = 15
 
 /obj/item/throwing_star/spear
@@ -644,8 +644,7 @@
 	icon_state = "brass"
 	item_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
-	force = 23
-
+	force = 24
 
 // Spiked knuckles	Keywords: Damage 24
 /obj/item/melee/unarmed/brass/spiked
@@ -653,8 +652,8 @@
 	desc = "Unlike normal brass knuckles, these have a metal plate across the knuckles with four spikes on, one for each knuckle. So not only does the victim feel the force of the punch, but also the devastating effects of spikes being driven in."
 	icon_state = "spiked"
 	item_state = "spiked"
-	force = 24
-
+	sharpness = SHARP_POINTY
+	force = 25
 
 // Sappers			Keywords: Damage 26
 /obj/item/melee/unarmed/sappers
@@ -662,9 +661,8 @@
 	desc = "Lead filled gloves which are ideal for beating the crap out of opponents."
 	icon_state = "sapper"
 	item_state = "sapper"
-	force = 26
 	w_class = WEIGHT_CLASS_NORMAL
-
+	force = 26
 
 // Tiger claws		Keywords: Damage 28, Pointy
 /obj/item/melee/unarmed/tigerclaw
@@ -672,12 +670,11 @@
 	desc = "Gloves with short claws built into the palms."
 	icon_state = "tiger_claw"
 	item_state = "tiger_claw"
-	force = 28
-	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_POINTY
 	w_class = WEIGHT_CLASS_NORMAL
-
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	sharpness = SHARP_POINTY
+	force = 28
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 // Lacerator		Keywords: Damage 27, Edged, Wound bonus
 /obj/item/melee/unarmed/lacerator
@@ -685,24 +682,22 @@
 	desc = "Leather gloves with razor blades built into the back of the hand."
 	icon_state = "lacerator"
 	item_state = "lacerator"
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 27
+	bare_wound_bonus = 5
+	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_EDGED
-	w_class = WEIGHT_CLASS_NORMAL
-	bare_wound_bonus = 5
 
-
-// Mace Glove		Keywords: Damage 30
+// Mace Glove		Keywords: Damage 31
 /obj/item/melee/unarmed/maceglove
 	name = "mace glove"
 	desc = "Weighted metal gloves that are covered in spikes.  Don't expect to grab things with this."
 	icon_state = "mace_glove"
 	item_state = "mace_glove"
-	force = 30
-	sharpness = SHARP_NONE
 	w_class = WEIGHT_CLASS_BULKY
-
+	force = 31
+	sharpness = SHARP_NONE
 
 // Punch Dagger		Keywords: Damage 29, Pointy
 /obj/item/melee/unarmed/punchdagger
@@ -711,10 +706,9 @@
 	icon_state = "punch_dagger"
 	item_state = "punch_dagger"
 	force = 29
+	sharpness = SHARP_POINTY
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_POINTY
-
 
 // Deathclaw Gauntlet	Keywords: Damage 28, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet
@@ -722,14 +716,13 @@
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
 	icon_state = "deathclaw_g"
 	item_state = "deathclaw_g"
-	force = 28
-	armour_penetration = 1
-	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_EDGED
 	slot_flags = ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
-
+	force = 28
+	armour_penetration = 1
+	sharpness = SHARP_EDGED
+	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/bladeslice.ogg'
 
 
 ///////////
@@ -758,12 +751,12 @@
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "entrenching_tool"
 	item_state = "trench"
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 30
 	throwforce = 15
-	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.7
-	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
 	sharpness = SHARP_EDGED
+	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
 
 // Hatchet
 /obj/item/hatchet
