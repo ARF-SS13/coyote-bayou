@@ -250,6 +250,16 @@
 	take_damage(damage)
 	return ..()
 
+/obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item))
+		if(cooldown < world.time - 25)
+			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+			cooldown = world.time
+	else
+		return ..()
+
+
 
 //Bulletproof riot shield
 obj/item/shield/riot/bullet_proof
@@ -279,6 +289,17 @@ obj/item/shield/riot/bullet_proof
 /obj/item/shield/riot/buckler/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/bang.ogg', 50)
 	new /obj/item/stack/sheet/mineral/wood(get_turf(src))
+
+
+// Stop sign shield.
+/obj/item/shield/riot/buckler/stop
+	name = "stop sign buckler"
+	desc = "Made from a ancient roadsign, with handles made of rope."
+	icon_state = "shield_stop"
+	item_state = "shield_stop"
+	max_integrity = 200
+	resistance_flags = null
+	repair_material = /obj/item/stack/sheet/metal
 
 
 //Legion shield

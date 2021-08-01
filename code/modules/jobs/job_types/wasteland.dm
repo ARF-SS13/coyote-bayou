@@ -649,7 +649,7 @@ Raider
 	/datum/outfit/loadout/medic,
 	/datum/outfit/loadout/merchant,
 	/datum/outfit/loadout/scavenger,
-	/datum/outfit/loadout/citizen,
+	/datum/outfit/loadout/warrior,
 	/datum/outfit/loadout/ncrcitizen,
 	/datum/outfit/loadout/wastelander_desert_ranger)
 
@@ -749,18 +749,16 @@ Raider
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
 
-/datum/outfit/loadout/citizen
-	name = "Legion Citizen"
-	uniform = /obj/item/clothing/under/f13/doctor
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	suit = /obj/item/clothing/suit/curator
-	head = /obj/item/clothing/head/scarecrow_hat
-	gloves = /obj/item/clothing/gloves/color/black
+/datum/outfit/loadout/warrior
+	name = "Wasteland Warrior"
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/f13/raidertreads
+	suit = /obj/item/clothing/suit/armor/light/wastewar
+	head = /obj/item/clothing/head/helmet/f13/wastewarhat
 	glasses = /obj/item/clothing/glasses/welding
-	id = /obj/item/card/id/dogtag/town/legion
-	l_hand = /obj/item/shield/riot/buckler
+	l_hand = /obj/item/shield/riot/buckler/stop
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/melee/onehanded/machete/scrapsabre = 1,
 		)
 
 /datum/outfit/loadout/ncrcitizen
