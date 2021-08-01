@@ -96,30 +96,14 @@
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
-/datum/crafting_recipe/talisman
-	name = "Hunter's talisman"
-	result = /obj/item/clothing/neck/cloak/amulet
-	time = 50
-	reqs = list(/obj/item/stack/sheet/bone = 1,
-				/obj/item/stack/sheet/sinew = 1)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
 */
 
-/datum/crafting_recipe/tribal/cloakbrown
-	name = "Cloak"
-	result = /obj/item/clothing/neck/cloak
-	time = 50
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/leather = 2)
-
 /datum/crafting_recipe/tribal/cloakdark
-	name = "Dark Cloak"
-	result = /obj/item/clothing/neck/cloak/grey
+	name = "Gecko Mantle"
+	result = /obj/item/clothing/neck/mantle/gecko
 	time = 50
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/leather = 2)
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
+	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribal/bonedie
 	name = "Carve Bone Die"

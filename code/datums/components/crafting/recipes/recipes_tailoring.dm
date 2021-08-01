@@ -484,6 +484,23 @@
 
 //CLOTHING//
 
+/datum/crafting_recipe/tailor/mantlebrown
+	name = "Brown Mantle"
+	result = /obj/item/clothing/neck/mantle/brown
+	time = 50
+	reqs = list(
+		/obj/item/stack/sheet/cloth = 1,
+		/obj/item/stack/sheet/leather = 2,
+	)
+
+/datum/crafting_recipe/tailor/mantlegray
+	name = "Gray Mantle"
+	result = /obj/item/clothing/neck/mantle/gray
+	time = 50
+	reqs = list(
+		/obj/item/stack/sheet/cloth = 3,
+		/obj/item/stack/sheet/leather = 1,
+	)
 
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"

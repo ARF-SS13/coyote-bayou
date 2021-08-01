@@ -604,7 +604,7 @@ Mayor
 	name = "Diner"
 	glasses = /obj/item/clothing/glasses/orange
 	uniform = /obj/item/clothing/under/f13/brahminf
-	suit = /obj/item/clothing/suit/apron/chef
+	neck = /obj/item/clothing/neck/apron/chef
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 
