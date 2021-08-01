@@ -235,14 +235,14 @@
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
 
 
-//Trench shotgun							Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +2
+//Trench shotgun							Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +1
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
 	item_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	extra_damage = 2
+	extra_damage = 1
 	var/select = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_bayonet = TRUE
@@ -319,6 +319,7 @@
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
+	extra_damage = 2
 	fire_delay = 7
 	recoil = 0.5
 	w_class = WEIGHT_CLASS_NORMAL

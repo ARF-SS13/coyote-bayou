@@ -113,7 +113,7 @@
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-	extra_damage = 2
+	extra_damage = 4
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 
@@ -124,7 +124,7 @@
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-	extra_damage = 2
+	extra_damage = 4
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
@@ -155,7 +155,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_delay = 10
-	extra_damage = 6
+	extra_damage = 8
 	extra_speed = 800
 	spread = 0
 	force = 18
@@ -181,7 +181,7 @@
 	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
 	fire_delay = 12
-	extra_damage = 7
+	extra_damage = 9
 	extra_penetration = 0.05
 	extra_speed = 800 
 	force = 18
@@ -205,7 +205,7 @@
 	icon_state = "paciencia"
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
-	fire_delay = 8
+	fire_delay = 9
 	extra_damage = 20 //60 damage- hits as hard as an AMR!
 	extra_penetration = 0.2
 	zoomable = TRUE
@@ -231,7 +231,7 @@
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 5
+	extra_damage = 6
 	extra_speed = 600
 	fire_delay = 12
 	force = 18
@@ -300,7 +300,7 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 	fire_delay = 9
 	spread = 0
-	extra_damage = 5
+	extra_damage = 6
 	can_bayonet = FALSE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -319,7 +319,7 @@
 	icon_state = "commando"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
-	extra_damage = 8
+	extra_damage = 9
 	fire_delay = 8
 	spread = 0
 	can_unsuppress = FALSE
@@ -336,7 +336,7 @@
 	desc = "A modified varmint rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
 	icon_state = "ratslayer"
 	item_state = "ratslayer"
-	extra_damage = 9
+	extra_damage = 10
 	extra_penetration = 0.1
 	suppressed = 1
 	zoomable = TRUE
