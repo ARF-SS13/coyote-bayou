@@ -110,7 +110,7 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/med = 5,
 					/obj/item/clothing/shoes/sneakers/white = 5,
 					/obj/item/clothing/head/soft/emt = 5,
-					/obj/item/clothing/suit/hooded/surgical = 5,
+					/obj/item/clothing/suit/apron/surgical = 5,
 					/obj/item/clothing/mask/surgical = 5,
 					/obj/item/clothing/under/rank/medical/doctor/util = 5,
 					/obj/item/clothing/under/rank/medical/paramedic/red = 5,
@@ -527,7 +527,7 @@
 					/obj/item/storage/backpack/captain = 1,
 					/obj/item/storage/backpack/satchel/cap = 1,
 					/obj/item/storage/backpack/duffelbag/captain = 1,
-
+					/obj/item/clothing/neck/cloak/cap = 1,
 					/obj/item/clothing/shoes/sneakers/brown = 2,
 					/obj/item/clothing/under/rank/captain = 1,
 					/obj/item/clothing/under/rank/captain/util = 1,

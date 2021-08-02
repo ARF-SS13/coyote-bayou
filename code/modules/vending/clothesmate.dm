@@ -128,7 +128,7 @@
 					/obj/item/clothing/head/beanie/stripedgreen = 3,
 					/obj/item/clothing/suit/jacket/letterman_red = 3,
 					/obj/item/clothing/ears/headphones = 10,
-					/obj/item/clothing/neck/apron/bartender = 4,
+					/obj/item/clothing/suit/apron/purple_bartender = 4,
 					/obj/item/clothing/under/rank/civilian/bartender/purple = 4,
 					/* Commenting out until next Christmas or made automatic
 					/obj/item/clothing/under/costume/christmas = 3,

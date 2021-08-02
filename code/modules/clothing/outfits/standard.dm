@@ -120,7 +120,7 @@
 	head = /obj/item/clothing/head/welding
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/thermal/monocle
-	neck = /obj/item/clothing/neck/apron/labor
+	suit = /obj/item/clothing/suit/apron
 	l_pocket = /obj/item/kitchen/knife
 	r_pocket = /obj/item/scalpel
 	r_hand = /obj/item/twohanded/fireaxe

@@ -66,27 +66,26 @@ Administrator
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
 /datum/outfit/job/followers/f13leadpractitioner
-	name =	"Followers Administrator"
-	jobtype =	/datum/job/followers/f13leadpractitioner
-	id =	/obj/item/card/id/silver
-	chemwhiz =	TRUE
-	backpack =	/obj/item/storage/backpack/explorer
-	uniform =	/obj/item/clothing/under/f13/followers
-	suit=	/obj/item/clothing/suit/toggle/labcoat/cmo
-	shoes =	/obj/item/clothing/shoes/f13/brownie
-	belt =	/obj/item/healthanalyzer/advanced
-	backpack =	/obj/item/storage/backpack/medic
-	satchel =	/obj/item/storage/backpack/satchel/med
-	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	name = "Followers Administrator"
+	jobtype = /datum/job/followers/f13leadpractitioner
+	id = 		/obj/item/card/id/silver
+	chemwhiz = TRUE
+	backpack = 	/obj/item/storage/backpack/explorer
+	uniform = 	/obj/item/clothing/under/f13/followers
+	suit= 		/obj/item/clothing/suit/toggle/labcoat/cmo
+	shoes = 	/obj/item/clothing/shoes/f13/brownie
+	belt = 		/obj/item/healthanalyzer/advanced
+	backpack = 	/obj/item/storage/backpack/medic
+	satchel = 	/obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
-		/obj/item/reagent_containers/glass/beaker/bluespace = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/reagent_containers/hypospray/combat = 1,
-		/obj/item/clothing/glasses/hud/health = 1,
-		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/book/granter/trait/techno = 1,
-	)
+		/obj/item/reagent_containers/glass/beaker/bluespace=1,
+		/obj/item/storage/firstaid/ancient=1,
+		/obj/item/reagent_containers/medspray/synthflesh=2,
+		/obj/item/reagent_containers/hypospray/combat=1,
+		/obj/item/clothing/glasses/hud/health=1,
+		/obj/item/book/granter/trait/chemistry=1,
+		/obj/item/book/granter/trait/techno=1)
 
 /*
 Professor
@@ -167,7 +166,7 @@ Practitioner
 	/datum/outfit/loadout/physician,
 	/datum/outfit/loadout/pharmacist,
 	/datum/outfit/loadout/paramedic,
-	/datum/outfit/loadout/medical_researcher,
+	/datum/outfit/loadout/medical_researcher
 	)
 
 /datum/outfit/job/followers/f13practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -183,65 +182,67 @@ Practitioner
 	//personally, I don't think a practitioner should have more access than a volunteer.
 
 
+
 /datum/outfit/job/followers/f13practitioner
-	name =	"Followers Doctor"
-	jobtype =	/datum/job/followers/f13practitioner
-	uniform =	/obj/item/clothing/under/f13/followers
-	id =	/obj/item/card/id/silver
-	chemwhiz =	TRUE
-	backpack =	/obj/item/storage/backpack/medic
-	satchel =	/obj/item/storage/backpack/satchel/med
-	duffelbag =	/obj/item/storage/backpack/duffelbag/med
+	name = "Followers Doctor"
+	jobtype = /datum/job/followers/f13practitioner
+	uniform = 	/obj/item/clothing/under/f13/followers
+	id = 		/obj/item/card/id/silver
+	chemwhiz = TRUE
+	backpack = 	/obj/item/storage/backpack/medic
+	satchel = 	/obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-	)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/reagent_containers/medspray/synthflesh=1,
+		/obj/item/storage/firstaid/ancient=1)
 
 /datum/outfit/loadout/physician
-	name =	"Emergency Physician"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/f13/followers
-	mask =	/obj/item/clothing/mask/surgical
-	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
-	glasses =	/obj/item/clothing/glasses/hud/health
+	name = "Emergency Physician"
+	suit = 		/obj/item/clothing/suit/toggle/labcoat/f13/followers
+	mask = 		/obj/item/clothing/mask/surgical
+	gloves = 	/obj/item/clothing/gloves/color/latex/nitrile
+	glasses = 	/obj/item/clothing/glasses/hud/health
 	backpack_contents = list(
-		/obj/item/clothing/suit/hooded/surgical = 1,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
-		/obj/item/healthanalyzer/advanced = 1,
-	)
+		/obj/item/clothing/suit/apron/surgical=1,
+		/obj/item/reagent_containers/medspray/synthflesh=1,
+		/obj/item/healthanalyzer/advanced=1,)
 
 /datum/outfit/loadout/pharmacist
-	name =	"Pharmacist"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/chemist
-	gloves =	/obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/science
+	name = "Pharmacist"
+	suit = 		/obj/item/clothing/suit/toggle/labcoat/chemist
+	gloves = 	/obj/item/clothing/gloves/color/latex
+	glasses = 	/obj/item/clothing/glasses/science
 	backpack_contents = list(
-		/obj/item/flashlight/pen = 1,
-		/obj/item/pda/chemist = 1,
-	)
+		/obj/item/flashlight/pen=1,
+		/obj/item/pda/chemist=1)
 
 /datum/outfit/loadout/paramedic
-	name =	"Paramedic"
-	head =	/obj/item/clothing/head/soft/emt
-	suit =	/obj/item/clothing/suit/toggle/labcoat/emt
-	glasses =	/obj/item/clothing/glasses/hud/health
-	belt =	/obj/item/storage/belt/medical
+	name = "Paramedic"
+	head = 		/obj/item/clothing/head/soft/emt
+	suit = 		/obj/item/clothing/suit/toggle/labcoat/emt
+	glasses = 	/obj/item/clothing/glasses/hud/health
+	belt = 		/obj/item/storage/belt/medical
 	backpack_contents = list(
-		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer=1,
-	)
+		/obj/item/reagent_containers/medspray/synthflesh=2,
+		/obj/item/pda/medical=1,
+		/obj/item/healthanalyzer=1)
 
 /datum/outfit/loadout/medical_researcher
-	name =	"Medical Researcher"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/f13/followers
+	name = "Medical Researcher"
+	suit = 		/obj/item/clothing/suit/toggle/labcoat/f13/followers
 	backpack_contents = list(
-		/obj/item/clothing/accessory/pocketprotector/full = 1,
-		/obj/item/folder/white = 1,
-		/obj/item/pda/medical = 1,
-		/obj/item/book/granter/trait/techno = 1,
+		/obj/item/clothing/accessory/pocketprotector/full=1,
+		/obj/item/folder/white=1,
+		/obj/item/pda/medical=1,
+		/obj/item/book/granter/trait/techno=1
 	)
 
+//datum/outfit/job/followers/practitioner/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+//	..()
+//	if(visualsOnly)
+//		return
+//	ADD_TRAIT(H, TRAIT_MEDICALEXPERT)
 
 /*
 Follower Volunteer
@@ -289,52 +290,50 @@ Follower Volunteer
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
-		/obj/item/storage/firstaid/ancient = 1,
-	)
+		/obj/item/storage/firstaid/ancient=1)
 
 /datum/outfit/loadout/volunteer_emt
 	name = "EMT"
 	suit = /obj/item/clothing/suit/toggle/labcoat/emt
 	head = /obj/item/clothing/head/soft/emt
 	backpack_contents = list(
-		/obj/item/healthanalyzer = 1,
-		/obj/item/reagent_containers/medspray/synthflesh = 1,
-	)
+		/obj/item/healthanalyzer=1,
+		/obj/item/reagent_containers/medspray/synthflesh=1
+		)
 
 /datum/outfit/loadout/volunteer_mechanic
-	name =	"Mechanic"
-	neck =	/obj/item/clothing/neck/apron/labor
-	head =	/obj/item/clothing/head/hardhat/orange
-	belt =	/obj/item/storage/belt/utility/full
-	gloves =	/obj/item/clothing/gloves/color/yellow
-	glasses =	/obj/item/clothing/glasses/welding
+	name = "Mechanic"
+	suit = 		/obj/item/clothing/suit/apron
+	head = 		/obj/item/clothing/head/hardhat/orange
+	belt = 		/obj/item/storage/belt/utility/full
+	gloves = 	/obj/item/clothing/gloves/color/yellow
+	glasses = 	/obj/item/clothing/glasses/welding
 	backpack_contents = list(
-		/obj/item/flashlight/pen = 1,
-		/obj/item/pda/chemist = 1,
-	)
+		/obj/item/flashlight/pen=1,
+		/obj/item/pda/chemist=1)
 
 /datum/outfit/loadout/volunteer_farmer
-	name =	"Farmer"
-	head =	/obj/item/clothing/head/helmet/f13/vaquerohat
-	suit =	/obj/item/clothing/suit/apron/overalls
-	belt =	/obj/item/storage/bag/plants/portaseeder
+	name = "Farmer"
+	head = /obj/item/clothing/head/helmet/f13/vaquerohat
+	suit = /obj/item/clothing/suit/apron/overalls
+	belt = /obj/item/storage/bag/plants/portaseeder
 	backpack_contents = list(
-		/obj/item/hatchet = 1,
-		/obj/item/cultivator = 1,
-		/obj/item/shovel/spade = 1,
-	)
+		/obj/item/hatchet=1,
+		/obj/item/cultivator=1,
+		/obj/item/shovel/spade=1)
 
 /datum/outfit/loadout/volunteer_student
 	name = "Student"
 	backpack_contents = list(
-		/obj/item/taperecorder = 1,
-		/obj/item/clothing/accessory/pocketprotector/full = 1,
-		/obj/item/clipboard = 1,
-		/obj/item/pen/fourcolor = 1,
+		/obj/item/taperecorder=1,
+		/obj/item/clothing/accessory/pocketprotector/full=1,
+		/obj/item/clipboard=1,
+		/obj/item/pen/fourcolor=1
 	)
 
-
-// Follower Guard
+/*
+Follower Guard
+*/
 
 /datum/job/followers/f13followerguard
 	title = "Followers Guard"
@@ -355,35 +354,34 @@ Follower Volunteer
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 
 /datum/outfit/job/followers/f13followerguard
-	name =	"Followers Guard"
-	jobtype =	/datum/job/followers/f13followerguard
-	belt =	/obj/item/storage/belt/military/followers
-	id =	/obj/item/card/id/silver
-	uniform =	/obj/item/clothing/under/f13/bodyguard
-	suit =	/obj/item/clothing/suit/armor/vest
-	head =	/obj/item/clothing/head/helmet/riot/vaultsec
-	glasses =	/obj/item/clothing/glasses/sunglasses
-	shoes =	/obj/item/clothing/shoes/combat
-	neck =	/obj/item/storage/belt/holster
-	backpack =	/obj/item/storage/backpack/explorer
-	satchel =	/obj/item/storage/backpack/satchel/explorer
+	name = "Followers Guard"
+	jobtype = /datum/job/followers/f13followerguard
+	belt = 		/obj/item/storage/belt/military/followers
+	id = 		/obj/item/card/id/silver
+	uniform = 	/obj/item/clothing/under/f13/bodyguard
+	suit = 		/obj/item/clothing/suit/armor/vest
+	head = 		/obj/item/clothing/head/helmet/riot/vaultsec
+	glasses = 	/obj/item/clothing/glasses/sunglasses
+	shoes = 	/obj/item/clothing/shoes/combat
+	neck = 		/obj/item/storage/belt/holster
+	backpack = 	/obj/item/storage/backpack/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/beretta = 1,
-		/obj/item/flashlight/seclite = 1,
-		/obj/item/storage/firstaid/ancient = 1,
-	)
+		/obj/item/gun/ballistic/automatic/pistol/beretta=1, \
+		/obj/item/flashlight/seclite=1, \
+		/obj/item/storage/firstaid/ancient=1)
 
 /datum/outfit/loadout/guard_ranged
 	name = "Followers Ranged Guard"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2
 	)
 
 /datum/outfit/loadout/guard_close
 	name = "Followers Close Protection Guard"
 	suit_store = /obj/item/gun/ballistic/shotgun/hunting
 	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/bean = 1,
-		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/ammo_box/shotgun/bean=1,
+		/obj/item/ammo_box/shotgun/buck=1
 	)

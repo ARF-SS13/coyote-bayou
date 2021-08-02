@@ -727,7 +727,7 @@ Raider
 /datum/outfit/loadout/merchant
 	name = "Roving Trader"
 	uniform = /obj/item/clothing/under/f13/merchant
-	neck = /obj/item/clothing/neck/mantle/brown
+	suit = /obj/item/clothing/neck/cloak
 	shoes = /obj/item/clothing/shoes/f13/brownie
 	head = /obj/item/clothing/head/f13/stormchaser
 	gloves = /obj/item/clothing/gloves/color/brown

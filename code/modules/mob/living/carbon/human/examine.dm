@@ -86,7 +86,7 @@
 		. += "[t_He] [t_has] [wear_mask.get_examine_string(user)] on [t_his] face."
 
 	if(wear_neck && !(SLOT_NECK in obscured))
-		. += "[t_He] [t_is] wearing [wear_neck.get_examine_string(user)]"
+		. += "[t_He] [t_is] wearing [wear_neck.get_examine_string(user)] around [t_his] neck."
 
 	//eyes
 	if(!(SLOT_GLASSES in obscured))

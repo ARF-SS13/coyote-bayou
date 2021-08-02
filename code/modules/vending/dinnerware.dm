@@ -9,7 +9,7 @@
 					/obj/item/kitchen/knife = 6,
 					/obj/item/kitchen/rollingpin = 4,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 8,
-					/obj/item/clothing/neck/apron/chef = 2,
+					/obj/item/clothing/suit/apron/chef = 2,
 					/obj/item/storage/box/cups = 2,
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 5,
 					/obj/item/reagent_containers/food/condiment/pack/mustard = 5,

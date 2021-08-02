@@ -74,16 +74,16 @@ Elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
 	pa_wear = TRUE
-	suit =	/obj/item/clothing/suit/f13/elder
-	glasses =	/obj/item/clothing/glasses/night
-	accessory =	/obj/item/clothing/accessory/bos/elder
+	suit = 			/obj/item/clothing/suit/f13/elder
+	glasses =       /obj/item/clothing/glasses/night
+	accessory = 	/obj/item/clothing/accessory/bos/elder
 	suit_store =	/obj/item/gun/energy/laser/laer
-	neck =	/obj/item/clothing/neck/mantle/bos/right
+	neck = /obj/item/clothing/neck/cloak/bos/right
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	)
+		)
 
 /*
 Head Paladin
@@ -145,7 +145,7 @@ Head Paladin
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t60
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	id = 			/obj/item/card/id/dogtag
-	neck = 			/obj/item/clothing/neck/mantle/bos/paladin
+	neck = 			/obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
@@ -157,30 +157,30 @@ Head Paladin
 	name = "Shock Head Paladin"
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 3,
-	)
+		/obj/item/stock_parts/cell/ammo/mfc=3
+		)
 
 /datum/outfit/loadout/sentvet
 	name = "Veteran Head Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/rangemaster = 1,
-		/obj/item/ammo_box/magazine/m762/ext = 3,
-	)
+		/obj/item/gun/ballistic/automatic/rangemaster=1,
+		/obj/item/ammo_box/magazine/m762/ext=3
+		)
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/m72 = 1,
-		/obj/item/ammo_box/magazine/m2mm = 3,
-		/obj/item/gun/energy/laser/plasma/glock = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
-	)
+		/obj/item/gun/ballistic/automatic/m72=1,
+		/obj/item/ammo_box/magazine/m2mm=3,
+		/obj/item/gun/energy/laser/plasma/glock=1,
+		/obj/item/stock_parts/cell/ammo/ec=2
+		)
 
 /datum/outfit/loadout/sentgat
 	name = "Gatling Paladin"
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
-	)
+		)
 
 
 /*
@@ -242,15 +242,15 @@ Head Scribe
 /datum/outfit/loadout/hsstand
 	name = "Medicinal Expert"
 	backpack_contents = list(	
-		/obj/item/gun/medbeam = 1,
-		/obj/item/reagent_containers/hypospray/CMO = 1,
+		/obj/item/gun/medbeam=1,
+		/obj/item/reagent_containers/hypospray/CMO=1
 		)
 
 /datum/outfit/loadout/hspract
 	name = "Administrative Leader"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/plasma/pistol = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/gun/energy/laser/plasma/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2
 		)
 
 /*
@@ -313,23 +313,23 @@ Head Knight
 /datum/outfit/loadout/capstand
 	name = "Standard"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14 = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-	)
+		/obj/item/gun/energy/laser/aer14=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
+		)
 
 /datum/outfit/loadout/capsap
 	name = "Close Support"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/marksman = 1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 3,
-	)
+		/obj/item/gun/ballistic/automatic/marksman=1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=3,
+		)
 
 /datum/outfit/loadout/capalt
 	name = "Warden-Defender"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
-		/obj/item/ammo_box/shotgun/buck = 2,
-	)
+		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead=1,
+		/obj/item/ammo_box/shotgun/buck=2,
+		)
 
 /*
 Star Paladin
@@ -385,15 +385,15 @@ Star Paladin
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/bos/f13seniorpaladin
-	name =	"Senior Paladin"
-	jobtype =	/datum/job/bos/f13seniorpaladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t51b
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t51b
-	accessory =	/obj/item/clothing/accessory/bos/seniorpaladin
-	uniform =	/obj/item/clothing/under/f13/recon
-	mask =	/obj/item/clothing/mask/gas/sechailer/swat
-	belt =	/obj/item/storage/belt/military/assault
-	neck =	/obj/item/clothing/neck/mantle/bos/paladin
+	name = "Senior Paladin"
+	jobtype = /datum/job/bos/f13seniorpaladin
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t51b
+	accessory = 	/obj/item/clothing/accessory/bos/seniorpaladin
+	uniform = 		/obj/item/clothing/under/f13/recon
+	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	belt = 			/obj/item/storage/belt/military/assault
+	neck = /obj/item/clothing/neck/cloak/bos/paladin
 
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/plasma/pistol = 1,
@@ -405,23 +405,23 @@ Star Paladin
 /datum/outfit/loadout/spaladina
 	name = "Long-Range Support Senior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_rifle = 1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 3,
-	)
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle/assault=3
+		)
 
 /datum/outfit/loadout/spaladinc
 	name = "Mainline Senior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14 = 1,
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-	)
+		/obj/item/gun/energy/laser/aer14=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2
+		)
 /datum/outfit/loadout/spaladinas
 	name = "Assault Senior Paladin"
 	backpack_contents = list(
-		/obj/item/melee/powered/ripper/prewar = 1,
-		/obj/item/book/granter/trait/bigleagues = 1,
-		/obj/item/shield/riot = 1,
-	)
+		/obj/item/melee/powered/ripper/prewar=1,
+		/obj/item/book/granter/trait/bigleagues=1,
+		/obj/item/shield/riot=1
+		)
 /*
 Paladin
 */
@@ -478,28 +478,28 @@ Paladin
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/bos/f13paladin
-	name =	"Paladin"
-	jobtype =	/datum/job/bos/f13paladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t45d
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t45d
-	uniform =	/obj/item/clothing/under/f13/recon
-	mask =	/obj/item/clothing/mask/gas/sechailer/swat
-	belt =	/obj/item/storage/belt/military
-	neck =	/obj/item/clothing/neck/mantle/bos/paladin
+	name = "Paladin"
+	jobtype = /datum/job/bos/f13paladin
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
+	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t45d
+	uniform = 		/obj/item/clothing/under/f13/recon
+	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	belt = 			/obj/item/storage/belt/military
+	neck = /obj/item/clothing/neck/cloak/bos/paladin
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
-	)
+		/obj/item/melee/onehanded/knife/hunting=1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
+		)
 
 /datum/outfit/loadout/paladina
 	name = "Firesupport Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_rifle = 1,
-		/obj/item/ammo_box/magazine/m556/rifle = 2,
-		/obj/item/gun/energy/laser/pistol = 1,
-		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
-	)
+		/obj/item/gun/ballistic/automatic/assault_rifle=1,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/clothing/accessory/bos/juniorpaladin=1
+		)
 
 /datum/outfit/loadout/paladinb
 	name = "Frontline Junior Paladin"
@@ -572,23 +572,23 @@ Senior Scribe
 	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/bos/f13seniorscribe
-	name =	"Senior Scribe"
-	jobtype =	/datum/job/bos/f13seniorscribe
-	chemwhiz =	TRUE
-	uniform =	/obj/item/clothing/under/syndicate/brotherhood
-	shoes =	/obj/item/clothing/shoes/combat
-	belt =	/obj/item/storage/belt/utility/full/engi
-	accessory =	/obj/item/clothing/accessory/bos/seniorscribe
-	suit =	/obj/item/clothing/suit/f13/seniorscribe
-	id =	/obj/item/card/id/dogtag
-	glasses =	/obj/item/clothing/glasses/sunglasses/big
+	name = "Senior Scribe"
+	jobtype = /datum/job/bos/f13seniorscribe
+	chemwhiz = TRUE
+	uniform =		/obj/item/clothing/under/syndicate/brotherhood
+	shoes = 		/obj/item/clothing/shoes/combat
+	belt = 			/obj/item/storage/belt/utility/full/engi
+	accessory = 	/obj/item/clothing/accessory/bos/seniorscribe
+	suit = 			/obj/item/clothing/suit/f13/seniorscribe
+	id = 			/obj/item/card/id/dogtag
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/gun/energy/laser/pistol = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/hypospray/CMO = 1,
-	)
+		)
 
 /*
 Scribe
