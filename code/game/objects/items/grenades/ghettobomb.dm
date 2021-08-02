@@ -228,9 +228,3 @@
 
 /obj/item/export/bottle/attack_self(mob/user)
 	to_chat(user, "<span class='danger'>The seal seems fine. Best to not open it.</span>")
-
-
-/obj/item/reagent_containers/glass/bottle/napalm
-	name = "napalm mix"
-	desc = "Add this mix to the molotov cocktail before lighting it." 
-	list_reagents = list(/datum/reagent/napalm = 30)

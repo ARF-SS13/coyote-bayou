@@ -830,7 +830,7 @@ commented out pending rework*/
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
-		/obj/item/reagent_containers/glass/bottle/napalm = 2,
+		/obj/item/reagent_containers/glass/bottle/welding_fuel = 2,
 		/obj/item/lighter/greyscale = 1,
 		)
 

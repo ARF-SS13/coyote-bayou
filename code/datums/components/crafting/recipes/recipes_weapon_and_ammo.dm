@@ -49,6 +49,18 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/*
+/datum/crafting_recipe/stunprod
+	name = "Stunprod"
+	result = /obj/item/melee/baton/cattleprod
+	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
+				/obj/item/stack/rods = 1,
+				/obj/item/assembly/igniter = 1)
+	time = 40
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+*/
+
 /datum/crafting_recipe/bola
 	name = "Bola"
 	result = /obj/item/restraints/legcuffs/bola
@@ -57,6 +69,17 @@
 	time = 20//15 faster than crafting them by hand!
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+///datum/crafting_recipe/chainsaw
+//	name = "Chainsaw"
+//	result = /obj/item/twohanded/chainsaw
+//	reqs = list(/obj/item/circular_saw = 1,
+//				/obj/item/stack/cable_coil = 3,
+//				/obj/item/stack/sheet/plasteel = 5)
+//	tools = list(TOOL_WELDER)
+//	time = 50
+//	category = CAT_WEAPONRY
+//	subcategory = CAT_MELEE
 
 //////////////////
 ///BOMB CRAFTING//
@@ -933,7 +956,49 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
+/*
+/widowmaker
+/datum/crafting_recipe/widowmaker
+	name = "Winchester Widowmaker double barrel"
+	result = /obj/item/gun/ballistic/revolver/widowmaker
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/datum/reagent/blackpowder = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
 
+//ppsh
+/datum/crafting_recipe/pps
+	name = "Ppsh-41"
+	result = /obj/item/gun/ballistic/automatic/smg/ppsh
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+//fn fal
+/datum/crafting_recipe/fnfal
+	name = "FN-FAL"
+	result = /obj/item/gun/ballistic/automatic/fnfal
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/mineral/titanium = 2,
+				/datum/reagent/blackpowder = 30)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+*/
 
 //////////////////////////////////
 ///GUN ATTACHMENT/PARTS CRAFTING//
