@@ -102,7 +102,7 @@
 	else if(istype(src, /mob/living/carbon/human) && !client || !key)
 		onlineholder.icon_state = "offline"
 	else
-		onlineholder.icon_state = "none"
+		onlineholder.icon_state = "online"
 
 //called when a carbon changes virus
 /mob/living/carbon/proc/check_virus()
