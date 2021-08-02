@@ -51,7 +51,7 @@
 /obj/item/storage/bag/money/small/legion/PopulateContents()
 	// ~450ish worth of legion money
 	new /obj/item/stack/f13Cash/random/denarius/high(src)
-	new /obj/item/stack/f13Cash/random/denarius/high(src)
+	new /obj/item/stack/f13Cash/random/denarius/med(src)
 	new /obj/item/stack/f13Cash/random/aureus/high(src)
 
 // Legion enlisted. Spawns with the Legionnaires. Average 12 caps.
