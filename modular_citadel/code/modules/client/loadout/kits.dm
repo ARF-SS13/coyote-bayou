@@ -40,3 +40,15 @@
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/clothing/gloves/combat(src)
+
+//Sarah Vargos - Killer402402
+/obj/item/storage/box/large/custom_kit/sarah/PopulateContents()
+	new /obj/item/clothing/suit/armor/vest/russian(src)
+	new /obj/item/clothing/mask/gas/explorer(src)
+	new /obj/item/clothing/mask/bandana/green(src)
+	new /obj/item/clothing/neck/cloak/green(src)
+	new /obj/item/clothing/under/costume/singer/yellow(src)
+	new /obj/item/storage/backpack/trekker(src)
+	new /obj/item/twohanded/spear(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/storage/belt/military(src)
