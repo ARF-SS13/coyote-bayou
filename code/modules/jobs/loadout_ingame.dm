@@ -56,6 +56,7 @@
 	desc = "Activate this item to select your additional loadout equipment. It will vanish once you're done."
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"
+	item_flags = DROPDEL
 
 /obj/item/loadout_token/Initialize()
 	. = ..()
