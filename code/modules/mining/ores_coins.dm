@@ -102,6 +102,7 @@
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	merge_type = /obj/item/stack/ore/glass
+	grind_results = list(/datum/reagent/silicon = 20,)
 
 /obj/item/stack/ore/blackpowder
 	name = "gunpowder"

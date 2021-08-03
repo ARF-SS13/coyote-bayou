@@ -139,6 +139,7 @@
 	var/list/loots = list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
+						/obj/item/stack/sheet/mineral/limestone/twenty = 10,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
 						/obj/effect/spawner/lootdrop/f13/armor/random_high = 3,
 						/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high = 3
@@ -147,7 +148,7 @@
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
-	if(prob(1))
+	if(prob(2))
 		var/obj/derp = pickweight(loots)
 		salvage = new derp()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
