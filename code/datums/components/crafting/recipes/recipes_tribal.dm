@@ -85,7 +85,6 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
 	time = 65
@@ -96,7 +95,6 @@
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
 /datum/crafting_recipe/talisman
 	name = "Hunter's talisman"
 	result = /obj/item/clothing/neck/cloak/amulet
@@ -108,15 +106,15 @@
 */
 
 /datum/crafting_recipe/tribal/cloakbrown
-	name = "Cloak"
-	result = /obj/item/clothing/neck/cloak
+	name = "Brown Mantle"
+	result = /obj/item/clothing/neck/mantle/brown
 	time = 50
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
 
-/datum/crafting_recipe/tribal/cloakdark
-	name = "Dark Cloak"
-	result = /obj/item/clothing/neck/cloak/grey
+/datum/crafting_recipe/tribal/cloakgray
+	name = "Gray Mantle"
+	result = /obj/item/clothing/neck/mantle/gray
 	time = 50
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
@@ -160,7 +158,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL_WEAPONS
-
 /datum/crafting_recipe/voodoo
 	name = "Voodoo"
 	result = /obj/item/reagent_containers/pill/patch/voodoo
@@ -171,7 +168,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
 /datum/crafting_recipe/coyotechew
 	name = "Coyote Tobacco Chew"
 	result = /obj/item/reagent_containers/pill/patch/coyotechew

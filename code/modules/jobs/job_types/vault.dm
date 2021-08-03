@@ -64,7 +64,7 @@ Overseer
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears = 			/obj/item/radio/headset/headset_overseer
-	neck = 			/obj/item/clothing/neck/cloak/overseer
+	neck = 			/obj/item/clothing/neck/mantle/overseer
 	backpack = 		/obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
 		/obj/item/storage/box/ids = 1,

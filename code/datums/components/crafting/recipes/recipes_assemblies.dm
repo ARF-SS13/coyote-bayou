@@ -178,7 +178,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 10)
-	tools = list(TOOL_WELDER, TOOL_WORKBENCH)
+	tools = list(TOOL_WELDER)
 	time = 80
 	subcategory = CAT_FARMING
 	category = CAT_MISC

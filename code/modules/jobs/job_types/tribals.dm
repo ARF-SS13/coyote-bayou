@@ -65,20 +65,21 @@ Tribal Chief
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /datum/outfit/job/tribal/f13chief
-	name = "Chief"
-	jobtype = /datum/job/tribal/f13chief
-	head = 			/obj/item/clothing/head/helmet/f13/wayfarer/chief/green
-	uniform = 		/obj/item/clothing/under/f13/wayfarer
-	belt = 			/obj/item/storage/backpack/spearquiver
-	neck =			/obj/item/clothing/neck/cloak/chiefcloak
-	id = 			/obj/item/card/id/tribetattoo
-	suit =			/obj/item/clothing/suit/hooded/cloak/hhunter
+	name =	"Chief"
+	jobtype =	/datum/job/tribal/f13chief
+	head =	/obj/item/clothing/head/helmet/f13/wayfarer/chief/green
+	uniform =	/obj/item/clothing/under/f13/wayfarer
+	belt =	/obj/item/storage/backpack/spearquiver
+	neck =	/obj/item/clothing/neck/mantle/chief
+	id =	/obj/item/card/id/tribetattoo
+	suit =	/obj/item/clothing/suit/hooded/cloak/hhunter
 	suit_store =	/obj/item/twohanded/spear/bonespear/deathclaw
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
-		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/lantern=1)
+		/obj/item/restraints/legcuffs/bola = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/stack/medical/gauze = 1,
+		/obj/item/flashlight/lantern = 1,
+	)
 
 /*
 Tribal Shaman

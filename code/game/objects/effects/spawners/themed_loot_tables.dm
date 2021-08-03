@@ -61,7 +61,7 @@
 	loot = list(
 		/obj/effect/spawner/lootdrop/ammo/civilian = 35,
 		/obj/effect/spawner/lootdrop/f13/junkspawners = 24,
-		/obj/effect/spawner/lootdrop/weapons/security = 10,			
+		/obj/effect/spawner/lootdrop/weapons/security = 10,
 		/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk = 5,
 		/obj/effect/spawner/lootdrop/f13/cash_random_low = 5,
 		/obj/effect/spawner/lootdrop/toolsgood = 5,
@@ -345,7 +345,7 @@
 		/obj/item/ammo_box/shotgun/buck = 5,
 		/obj/item/ammo_box/shotgun/bean = 5,
 		/obj/item/ammo_box/c38 = 5,
-		/obj/item/ammo_box/m22 = 5, 
+		/obj/item/ammo_box/m22 = 5,
 		/obj/item/ammo_box/c9mm = 5,
 		/obj/item/ammo_box/a308 = 5,
 		/obj/item/ammo_box/a556/sport = 5,
