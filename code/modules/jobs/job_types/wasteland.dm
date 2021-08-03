@@ -583,11 +583,13 @@ Raider
 
 /datum/outfit/loadout/raider_vault
 	name = "Vault Renegade"
-	suit = /obj/item/clothing/suit/armor/f13/leatherarmor
+	suit = /obj/item/clothing/suit/armor/f13/leather_jacket/combat
 	uniform = /obj/item/clothing/under/f13/exile/vault
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/widowmaker=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv = 2,
+		)
 
 /datum/outfit/loadout/raider_tribal
 	name = "Tribal Outcast"
