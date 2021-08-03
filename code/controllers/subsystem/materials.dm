@@ -17,7 +17,8 @@ SUBSYSTEM_DEF(materials)
 	///List of stackcrafting recipes for materials using rigid materials
 	var/list/rigid_stack_recipes = list(
 		new /datum/stack_recipe("chair", /obj/structure/chair/greyscale, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
-		new /datum/stack_recipe("Floor tile", /obj/item/stack/tile/material, 1, 4, 20, applies_mats = TRUE)
+		new /datum/stack_recipe("Floor tile", /obj/item/stack/tile/material, 1, 4, 20, applies_mats = TRUE),
+		new /datum/stack_recipe("Carving block", /obj/structure/carving_block, 5, one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE),
 	)
 
 ///Ran on initialize, populated the materials and materials_by_category dictionaries with their appropiate vars (See these variables for more info)
