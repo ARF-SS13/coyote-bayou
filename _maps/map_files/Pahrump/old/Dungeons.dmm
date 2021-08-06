@@ -4099,7 +4099,6 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/gloves/color/captain,
 /obj/item/clothing/head/caphat/parade,
-/obj/item/clothing/neck/cloak/cap,
 /obj/item/clothing/suit/armor/vest/capcarapace/alt,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -6768,7 +6767,7 @@
 "sg" = (
 /obj/structure/table,
 /obj/item/clothing/head/chefhat,
-/obj/item/clothing/suit/apron/chef,
+/obj/item/clothing/neck/apron/chef ,
 /obj/machinery/light/broken,
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -10169,7 +10168,7 @@
 /area/f13/vault)
 "Cy" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/apron/chef,
+/obj/item/clothing/neck/apron/chef,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "Cz" = (
@@ -12073,8 +12072,6 @@
 "HC" = (
 /obj/item/detective_scanner,
 /obj/structure/closet,
-/obj/item/clothing/neck/cloak/hos,
-/obj/item/clothing/under/hosparademale,
 /obj/item/gun/ballistic/shotgun/police,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
@@ -12277,7 +12274,7 @@
 /area/f13/tunnel)
 "Ig" = (
 /obj/structure/closet/wardrobe/cargotech,
-/obj/item/clothing/neck/cloak/qm,
+
 /obj/item/pda/quartermaster,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 10
@@ -12769,8 +12766,6 @@
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "Jx" = (
-/obj/item/clothing/neck/cloak/hop,
-/obj/item/clothing/neck/cloak/cmo,
 /obj/structure/closet,
 /obj/item/instrument/violin/golden,
 /obj/item/reagent_containers/food/drinks/flask/gold{
@@ -17434,10 +17429,6 @@
 	pixel_x = -5;
 	pixel_y = 1
 	},
-/obj/item/clothing/suit/apron/surgical{
-	pixel_x = 9;
-	pixel_y = 7
-	},
 /obj/item/clothing/mask/surgical{
 	pixel_y = -4
 	},
@@ -19072,8 +19063,6 @@
 /area/f13/brotherhood)
 "Zo" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/suit/apron,
-/obj/item/clothing/suit/apron,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/storage/bag/plants/portaseeder,
 /turf/open/floor/f13{

@@ -80,7 +80,6 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	gloves = /obj/item/clothing/gloves/color/latex
 	mask = /obj/item/clothing/mask/surgical
-	suit = /obj/item/clothing/suit/apron
 
 /datum/outfit/mafia/obsessed/post_equip(mob/living/carbon/human/H)
 	for(var/obj/item/carried_item in H.get_equipped_items(TRUE))

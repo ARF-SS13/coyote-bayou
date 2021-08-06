@@ -6,6 +6,8 @@
 	enforces = "Enclave rules: Stay in uniform. Act mature and respectful. Obey orders and always remember you are fighting for the only true legitimate power in this land of savages. Wearing gasmasks outside the compound is encouraged but not required."
 	objectivesList = list("Department of Defense advisory: Collect resources and produce more Patribots, attrition is depleting our reserves.","Department of Defense advisory: Establish checkpoints to show presence, they must not forget who is the legitimate goverment.", "Science Divison advisory: Capture human subjects for experiments, alive. We have some new neurotoxin grenades we wish to do final tests with before field deployment.")
 
+/* COMMENTED OUT FOR NOW
+
 /datum/outfit/job/enclave
 	id = null
 	ears = 			/obj/item/radio/headset/headset_enclave
@@ -52,9 +54,9 @@
 			L.registered_name = H.name
 			L.update_label()
 
-/*
+
 PEACEKEEPERS
-*/
+
 
 //Peacekeeper Officer
 /datum/job/enclave/peacekeeper/officer
@@ -92,7 +94,6 @@ PEACEKEEPERS
 
 /datum/outfit/loadout/captain
 	name = "Captain"
-	neck =			/obj/item/clothing/neck/cloak/enclavecaptain
 	suit_store =	/obj/item/gun/energy/laser/plasma/glock
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2,
@@ -219,7 +220,7 @@ PEACEKEEPERS
 
 //OLD STUFF, WEST COAST?
 
-/*/datum/outfit/job/enclave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/enclave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -231,9 +232,9 @@ PEACEKEEPERS
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
-/*
-Commander
-*/
+
+//Commander
+
 /datum/job/enclave/f13uscommander
 	title = "US Commander"
 	flag = F13USCOMMANDER
@@ -257,9 +258,8 @@ Commander
 	uniform =  /obj/item/clothing/under/rank/captain
 
 
-/*
-Medic
-*/
+//Medic
+
 /datum/job/enclave/f13usmedic
 	title = "US Medic"
 	flag = F13USMEDIC
@@ -282,9 +282,9 @@ Medic
 	uniform =  /obj/item/clothing/under/rank/captain
 
 
-/*
-Private
-*/
+
+//Private
+
 /datum/job/enclave/f13usprivate
 	title = "US Private"
 	flag = F13USPRIVATE
@@ -307,9 +307,9 @@ Private
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
 
-/*
-Scientist
-*/
+
+//Scientist
+
 /datum/job/enclave/f13usscientist
 	title = "US Scientist"
 	flag = F13USSCIENTIST
@@ -333,9 +333,9 @@ Scientist
 	uniform =  /obj/item/clothing/under/rank/captain
 
 
-/*
-Engineer
-*/
+
+//Engineer
+
 /datum/job/enclave/f13usengineer
 	title = "US Engineer"
 	flag = F13USENGINEER
@@ -358,9 +358,9 @@ Engineer
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
 
-/*
-Colonist
-*/
+
+//Colonist
+
 /datum/job/enclave/f13uscolonist
 	title = "US Colonist"
 	flag = F13USCOLONIST

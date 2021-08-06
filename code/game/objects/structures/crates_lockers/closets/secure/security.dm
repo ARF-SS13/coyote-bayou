@@ -24,7 +24,6 @@
 	icon_state = "hop"
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/whimsy(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
@@ -55,7 +54,6 @@
 	icon_state = "hos"
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/cartridge/hos(src)
 	new /obj/item/radio/headset/heads/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/parade/female(src)

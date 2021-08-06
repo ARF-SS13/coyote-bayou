@@ -106,18 +106,11 @@
 	icon_state = "vickyred"
 	item_state = "vickyred"
 
-/obj/item/clothing/suit/apron/overalls
+/obj/item/clothing/suit/overalls
 	name = "coveralls"
 	desc = "(I) A set of denim overalls."
 	icon_state = "overalls"
 	item_state = "overalls"
-
-/obj/item/clothing/suit/apron/purple_bartender
-	name = "purple bartender apron"
-	desc = "(I) A fancy purple apron for a stylish person."
-	icon_state = "purplebartenderapron"
-	item_state = "purplebartenderapron"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"

@@ -316,7 +316,7 @@ Follower Volunteer
 /datum/outfit/loadout/volunteer_farmer
 	name =	"Farmer"
 	head =	/obj/item/clothing/head/helmet/f13/vaquerohat
-	suit =	/obj/item/clothing/suit/apron/overalls
+	suit =	/obj/item/clothing/suit/overalls
 	belt =	/obj/item/storage/bag/plants/portaseeder
 	backpack_contents = list(
 		/obj/item/hatchet = 1,

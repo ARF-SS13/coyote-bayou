@@ -95,14 +95,6 @@
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-/datum/crafting_recipe/talisman
-	name = "Hunter's talisman"
-	result = /obj/item/clothing/neck/cloak/amulet
-	time = 50
-	reqs = list(/obj/item/stack/sheet/bone = 1,
-				/obj/item/stack/sheet/sinew = 1)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL_WEAPONS
 */
 
 /datum/crafting_recipe/tribal/cloakbrown

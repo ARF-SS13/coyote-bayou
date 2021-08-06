@@ -740,33 +740,6 @@ datum/export/gear/glasses //glasses are not worth selling
 	export_types = list(/obj/item/clothing/suit/bomb_suit)
 	include_subtypes = TRUE
 
-////////////////////
-//Cloaks and Coats//
-////////////////////
-
-/datum/export/gear/cloaks
-	cost = 30
-	unit_name = "cloak"
-	export_types = list(/obj/item/clothing/neck/cloak)
-	include_subtypes = TRUE
-
-/datum/export/gear/cloaksmining
-	cost = 90
-	unit_name = "lava land cloak"
-	export_types = list(/obj/item/clothing/suit/hooded/cloak/goliath)
-	include_subtypes = TRUE
-
-/datum/export/gear/labcoats
-	cost = 15
-	unit_name = "labcoats"
-	export_types = list(/obj/item/clothing/suit/toggle/labcoat)
-	include_subtypes = TRUE
-
-/datum/export/gear/wintercoats
-	cost = 25
-	unit_name = "wintercoats"
-	export_types = list(/obj/item/clothing/suit/hooded/wintercoat)
-	include_subtypes = TRUE
 
 //////////
 //SUITS///
@@ -787,5 +760,5 @@ datum/export/gear/glasses //glasses are not worth selling
 	unit_name = "chameleon item"
 	export_types = list(/obj/item/clothing/head/chameleon, /obj/item/clothing/mask/chameleon, /obj/item/clothing/under/chameleon, /obj/item/clothing/suit/chameleon, /obj/item/clothing/glasses/chameleon,\
 						/obj/item/clothing/gloves/chameleon, /obj/item/clothing/head/chameleon, /obj/item/clothing/shoes/chameleon, /obj/item/storage/backpack/chameleon, \
-						/obj/item/storage/belt/chameleon, /obj/item/radio/headset/chameleon, /obj/item/pda/chameleon, /obj/item/stamp/chameleon, /obj/item/clothing/neck/cloak/chameleon)
+						/obj/item/storage/belt/chameleon, /obj/item/radio/headset/chameleon, /obj/item/pda/chameleon, /obj/item/stamp/chameleon)
 	include_subtypes = TRUE

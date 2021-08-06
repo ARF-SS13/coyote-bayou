@@ -323,14 +323,6 @@
 	icon_state = "legion-slaveleather"
 	item_state = "legion-slaveleather"
 
-/obj/item/clothing/neck/cloak/treasurer
-	name = "treasurers cloak"
-	desc = "The grey and black cloak with gold thread trimming shows the wearer is entrusted with matters of money and records."
-	icon = 'icons/obj/clothing/cloaks.dmi'
-	icon_state = "legtrescloak"
-	item_state = "legtrescloak"
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 /*
 /obj/item/clothing/suit/armor/f13/legion/recruit/scout

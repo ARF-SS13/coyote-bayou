@@ -207,47 +207,6 @@
 		H.mind.AddSpell(S)
 
 /*
-Coven Stuff
-*/
-
-/datum/job/wasteland/covenwitch
-	title = "Coven Witch"
-	flag = EVENTCOVEN
-	faction = "Coven"
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are a Witch of the Iron Coven. As the Witch you answer directly to the Exalted and the Matriarchs. The commanding officer in this region is a Matriarch by the name of The Harbinger. Circumstances may change the identity of the local commanding officer, but you will forevermore answer to the bidding of any and all Matriarchs. You are the equivilent of a Brotherhood Knight in rank, but your role has changed in the century since your people betrayed the Brotherhood of Steel. Witches are the primary military force of your organization. From far away to the east, in Dallas, New Orleans, and the sprawling metropolis that is Miami, you have come to do the bidding of the Grand Matriarch, your holy leader. She orders that the people of this region, like any other, be subjugated to her will. Your job is to organize missions to subvert the power of the local factions, spread scripture, protect and recruit citizens, and disperse technology to the people. The Matriarchs of the Coven have given you the permission to recruit and command your own squad, given that they eventually submit to the Iron Church's FEV treatment. You spread the scripture of the Iron Codex, you distribute technology to the masses and though you are in open war with the people of this area, it is your sworn duty to preserve all life in the name of fulfilling the Prophecy. All lives lost are a tragedy. In the eyes of your superiors, all deserve a chance to bask in the shadow of the Void."
-	forbids = ""
-	enforces = ""
-	supervisors = "Exalted and the Matriarchs."
-	selection_color = "#95a5a6"
-
-	outfit = /datum/outfit/job/wasteland/covenwitch
-
-/datum/outfit/job/wasteland/covenwitch
-	name = "Coven Witch"
-	jobtype = /datum/job/wasteland/covenwitch
-	backpack = /obj/item/storage/backpack/satchel/leather
-	ears = 			/obj/item/radio/headset/headset_sci
-	glasses = 		/obj/item/clothing/glasses/night
-	mask = 			/obj/item/clothing/mask/gas/syndicate
-	uniform =		/obj/item/clothing/under/syndicate/combat
-	suit = 			/obj/item/clothing/suit/hooded/cloak/goliath
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/plate/red
-	gloves = 		/obj/item/clothing/gloves/plate/red
-	id = 			/obj/item/card/id/syndicate/anyone
-	l_hand =		/obj/item/nullrod/claymore/darkblade
-	suit_store =  	/obj/item/gun/ballistic/automatic/pistol/suppressed
-
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
-		/obj/item/flashlight/flare/culttorch=1,
-		/obj/item/grenade/flashbang=1,
-		/obj/item/pda=1,
-		/obj/item/reagent_containers/glass/bottle/FEV_solution=1
-		)
-/*
 Great Khan
 */
 

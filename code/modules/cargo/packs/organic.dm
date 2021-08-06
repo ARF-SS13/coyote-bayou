@@ -303,7 +303,6 @@
 					/obj/item/cultivator,
 					/obj/item/plant_analyzer,
 					/obj/item/clothing/gloves/botanic_leather,
-					/obj/item/clothing/suit/apron,
 					/obj/item/flashlight,
 					/obj/item/seeds/carrot,
 					/obj/item/seeds/carrot,

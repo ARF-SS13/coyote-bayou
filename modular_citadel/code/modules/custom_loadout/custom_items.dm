@@ -3,15 +3,6 @@
 // Unless there's a digitigrade version make sure you add mutantrace_variation = NONE to all clothing/under and shoes - Pooj
 // Digitigrade stuff is uniform_digi.dmi and digishoes.dmi in icons/mob
 
-/obj/item/clothing/neck/cloak/inferno
-	name = "Kiara's Cloak"
-	desc = "The design on this seems a little too familiar."
-	icon = 'icons/obj/custom.dmi'
-	icon_state = "infcloak"
-	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	item_state = "infcloak"
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/neck/petcollar/inferno
 	name = "Kiara's Collar"
@@ -119,16 +110,6 @@
 	resistance_flags = FLAMMABLE
 	squeak_override = list('sound/items/bikehorn.ogg'= 1)
 
-/obj/item/clothing/neck/cloak/carrot
-	name = "carrot cloak"
-	desc = "A cloak in the shape and color of a carrot!"
-	icon = 'icons/obj/custom.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	icon_state = "carrotcloak"
-	item_state = "carrotcloak"
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-
 /obj/item/storage/backpack/satchel/carrot
 	name = "carrot satchel"
 	desc = "An satchel that is designed to look like an carrot"
@@ -148,16 +129,6 @@
 	attack_verb = list("slapped")
 	resistance_flags = FLAMMABLE
 	squeak_override = list('sound/misc/server-ready.ogg'= 1)
-
-/obj/item/clothing/neck/cloak/festive
-	name = "Celebratory Cloak of Morozko"
-	desc = " It probably will protect from snow, charcoal or elves."
-	icon = 'icons/obj/custom.dmi'
-	icon_state = "festive"
-	item_state = "festive"
-	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
-	w_class = WEIGHT_CLASS_SMALL
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
 /obj/item/clothing/mask/luchador/zigfie
 	name = "Alboroto Rosa mask"
@@ -532,12 +503,6 @@
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Goodboye" = "fritz", "Badboye" = "fritz_bad")
 	mutantrace_variation = NONE
-
-/obj/item/clothing/neck/cloak/polychromic/polyce
-	name = "polychromic embroidered cloak"
-	desc = "A fancy cloak embroidered with polychromatic thread in a pattern that reminds one of the wielders of unlimited power."
-	icon_state = "polyce"
-	poly_colors = list("#808080", "#8CC6FF", "#FF3535")
 
 /obj/item/clothing/under/custom/customskirt
 	name = "unzipped atmos skirt"
