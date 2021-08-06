@@ -368,8 +368,8 @@
 	list_reagents = null
 
 /obj/item/reagent_containers/food/drinks/bottle/champagne
-	name = "Eau d' Dandy Brut Champagne"
-	desc = "Finely sourced from only the most pretentious French vineyards."
+	name = "Lead Champagne"
+	desc = "Finely sourced from only the most pretentious Appalachian vineyards."
 	icon_state = "champagne_bottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
 
@@ -395,6 +395,15 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/trappist/empty
 	list_reagents = null
+	
+/obj/item/reagent_containers/food/drinks/bottle/rotgut
+	name = "Rotgut"
+	desc = "a bottle of noxious homebrewed alcohol, it has the name Rotgut etched on its side"
+	icon_state = "rotgut"
+	list_reagents = list(/datum/reagent/consumable/ethanol/rotgut = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/tequila/empty
+	list_reagents = null	
 
 //////////////////////////JUICES AND STUFF ///////////////////////
 
