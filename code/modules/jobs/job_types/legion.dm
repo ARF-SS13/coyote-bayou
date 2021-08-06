@@ -931,6 +931,7 @@ commented out pending rework*/
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionlance)
 
 
 
