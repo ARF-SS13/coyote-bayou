@@ -647,7 +647,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//Warpaint and tattoos
 	if(H.warpaint)
 		standing += mutable_appearance('icons/mob/tribe_warpaint.dmi', H.warpaint, -MARKING_LAYER, color = H.warpaint_color)
-		
+
 
 	if(standing.len)
 		H.overlays_standing[BODY_LAYER] = standing
@@ -1491,6 +1491,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/same_dir = (target.dir & user.dir)
 	var/aim_for_groin  = user.zone_selected == "groin"
 	var/target_aiming_for_groin = target.zone_selected == "groin"
+	var/aim_for_head = user.zone_selected == "head"
+	var/target_aiming_for_head = target.zone_selected == "head"
 
 	if(target.check_martial_melee_block()) //END EDIT
 		target.visible_message("<span class='warning'>[target] blocks [user]'s disarm attempt!</span>", target = user, \
@@ -1529,6 +1531,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			"<span class='notice'>[user] slaps your ass! </span>",\
 			"You hear a slap.", target = user, target_message = "<span class='notice'>You slap [user == target ? "your own" : "\the [target]'s"] ass! </span>")
 
+		return FALSE
+
+//BONK chucklehead!
+	else if(aim_for_head && ( target_on_help || target_restrained || target_aiming_for_head))
+		playsound(target.loc, 'sound/weapons/klonk.ogg', 50, 1, -1)
+
+		target.visible_message(\
+			"<span class='danger'>\The [user] bonks [user == target ? "[user.p_them()]self" : "\the [target]"] on the head!</span>",\
+			"<span class='notice'>[user] bonks you on the head! </span>",\
+			"You hear a bonk.", target = user, target_message = "<span class='notice'>You bonk [user == target ? "yourself" : "\the [target]"] on the head! </span>")
+		user.do_attack_animation(target, ATTACK_EFFECT_FACE_SLAP)
+		user.adjustStaminaLossBuffered(3)
 		return FALSE
 
 	else
