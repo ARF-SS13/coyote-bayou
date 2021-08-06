@@ -213,6 +213,12 @@
 	slowdown = -0.13
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/legion/prime/orator
+	icon = 'icons/fallout/clothing/armor_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "legion_orator"
+	item_state = "legion_orator"
+
 /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	name = "slavemaster armor"
 	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."

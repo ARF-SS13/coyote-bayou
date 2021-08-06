@@ -1,9 +1,7 @@
 /*
 Legion Design notes:
-"Standard issue", AVOID repeating kits and guns. Legion got spotty logistics and the hodgepodge aesthetic suits them, don't ruin it.
-Gloves		Officers - Leather glovesl, fingerless leather gloves for sergeants. Bayonet standard issue knife. Sidearms mostly for officers, 9mm is the standard. MP gets nonstandard pot helm, the exception to prove the rule.
-			NCOs -		Fingerless gloves
-			Rest -		No gloves
+"Standard issue", AVOID identical kits and guns. Legion got spotty logistics and the hodgepodge aesthetic suits them, don't ruin it.
+Sunglasses	For vets mainly, most lower ranks should have sandstorm goggles.
 Money		Cent & Treasurer - "small" money bag (the biggest)
 			Decanus - Officer money bag
 			Rest - Enlisted money bag
@@ -47,7 +45,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	uniform = /obj/item/clothing/under/f13/legskirt
-	shoes = /obj/item/clothing/shoes/f13/military/plated
+	shoes = /obj/item/clothing/shoes/f13/military/legion
 	gloves = /obj/item/clothing/gloves/legion
 	box = /obj/item/storage/survivalkit_tribal
 
@@ -134,6 +132,40 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	box = /obj/item/storage/box/legate
 
 
+// ORATOR
+
+/datum/job/CaesarsLegion/Legionnaire/f13orator
+	title = "Orator"
+	flag = F13ORATOR
+	supervisors = "Legate"
+	selection_color = "#ffdddd"
+	req_admin_notify = 1
+	total_positions = 0
+	spawn_positions = 0
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	// 10mm Revolver, Spatha
+	name = "Orator"
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13orator
+	neck = /obj/item/storage/belt/holster
+	shoes =	/obj/item/clothing/shoes/f13/military/legate
+	suit = /obj/item/clothing/suit/armor/f13/legion/legate
+	head = null
+	gloves = null
+	shoes = /obj/item/clothing/shoes/roman
+	suit_store = /obj/item/gun/ballistic/revolver/colt6520
+	r_pocket = /obj/item/storage/bag/money/small/legofficers
+	l_pocket = /obj/item/flashlight/lantern
+	l_hand = /obj/item/melee/onehanded/machete/spatha
+	backpack_contents = list(
+		/obj/item/ammo_box/l10mm = 2,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		)
+
+
+
 /////////////////
 //// Officers ///
 /////////////////
@@ -160,7 +192,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 	loadout_options = list(
 		/datum/outfit/loadout/palacent,		// 10mm SMG, Thermic lance
-		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, Ripper
+		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, Spatha
 		/datum/outfit/loadout/centurion,	// M1919 Machinegun, Powerfist
 		)
 
@@ -184,6 +216,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	neck = /obj/item/storage/belt/holster
 	gloves = /obj/item/clothing/gloves/legion/plated
 	glasses = /obj/item/clothing/glasses/night/polarizing
+	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/restraints/handcuffs
 	l_pocket = /obj/item/flashlight/lantern
 	box = /obj/item/storage/survivalkit_tribal/chief
@@ -275,6 +308,7 @@ commented out pending rework*/
 	neck = /obj/item/storage/belt/holster
 	gloves = /obj/item/clothing/gloves/legion/plated
 	glasses = /obj/item/clothing/glasses/sunglasses/big
+	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/flashlight/lantern
 	box = /obj/item/storage/survivalkit_tribal/chief
 	backpack_contents = list(
@@ -350,6 +384,7 @@ commented out pending rework*/
 	mask = /obj/item/clothing/mask/bandana/legion/legdecan
 	neck = /obj/item/storage/belt/holster
 	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/flashlight/lantern
 	l_pocket = /obj/item/restraints/handcuffs
 	box = /obj/item/storage/survivalkit_tribal/chief
@@ -542,7 +577,7 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/expsniper,	// Scoped Hunting rifle, .45 Revolver, Machete, Smokebomb, Polarized goggles
-		/datum/outfit/loadout/expambusher,	// Trench shotgun, .45 Revolver, C-4, Machete
+		/datum/outfit/loadout/expambusher,	// Lever shotgun, .45 Revolver, Bottlecap mine, Machete
 		)
 
 	matchmaking_allowed = list(
@@ -579,14 +614,13 @@ commented out pending rework*/
 
 /datum/outfit/loadout/expambusher
 	name = "Ambusher"
-	suit_store = /obj/item/gun/ballistic/shotgun/trench
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	glasses = /obj/item/clothing/glasses/legiongoggles
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
-		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/melee/onehanded/machete = 1,
-		/obj/item/grenade/plastic/c4 = 1,
+		/obj/item/bottlecap_mine = 1,
 		)
 
 /datum/outfit/loadout/expsniper
@@ -651,6 +685,7 @@ commented out pending rework*/
 	neck = /obj/item/storage/belt/holster
 	suit = /obj/item/clothing/suit/armor/f13/legion/vet
 	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/f13/military/plated
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
@@ -887,7 +922,7 @@ commented out pending rework*/
 
 // FORGE MASTER
 
-/datum/job/CaesarsLegion/Legionnaire/f13campfollower			// Chainsaw, Extra materials, Blueprints
+/datum/job/CaesarsLegion/Legionnaire/f13campfollower	// Chainsaw, Extra materials, Blueprints
 	title = "Legion Forgemaster"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"

@@ -15,6 +15,7 @@
 /obj/item/clothing/gloves/f13/leather
 	name = "leather gloves"
 	desc = "Gloves made of wasteland animals hides, that were tanned and carefully stiched together."
+	icon = 'icons/fallout/clothing/gloves.dmi'
 	icon_state = "leather"
 	item_state = "leather"
 	item_color = null

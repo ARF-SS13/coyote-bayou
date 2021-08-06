@@ -20,6 +20,8 @@
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
 	desc = "A sterile mask designed to help prevent the spread of diseases."
+	icon = 'icons/fallout/clothing/masks.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/mask.dmi'
 	icon_state = "sterile"
 	item_state = "sterile"
 	w_class = WEIGHT_CLASS_TINY
