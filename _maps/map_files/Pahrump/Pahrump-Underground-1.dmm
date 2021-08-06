@@ -6434,7 +6434,7 @@
 /obj/structure/closet/crate{
 	icon_state = "medicalcrate"
 	},
-/obj/item/clothing/glasses/hud/health/night,
+/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -8791,6 +8791,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/den)
+"hcf" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "hcC" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13016,7 +13020,9 @@
 	},
 /area/f13/caves)
 "kfV" = (
-/obj/structure/simple_door/room,
+/obj/structure/simple_door/room{
+	req_access_txt = "125"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "kgl" = (
@@ -15193,8 +15199,7 @@
 /obj/effect/decal/waste,
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "lTj" = (
@@ -15507,9 +15512,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "miF" = (
-/obj/structure/closet/crate,
-/turf/open/floor/wood/f13/old,
-/area/f13/caves)
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/barricade/bars{
+	max_integrity = 9999
+	},
+/obj/structure/window/fulltile/house,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/den)
 "miI" = (
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -15951,9 +15964,17 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "mxS" = (
-/obj/structure/closet/cabinet,
-/turf/open/floor/wood/f13/old,
-/area/f13/caves)
+/obj/structure/barricade/bars{
+	max_integrity = 9999
+	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/window/fulltile/house,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/den)
 "mxU" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/broken{
@@ -27193,9 +27214,11 @@
 	},
 /area/f13/bunker)
 "uLN" = (
-/obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/room{
+	req_access_txt = "125"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -28091,6 +28114,7 @@
 /obj/structure/chair/comfy/brown,
 /obj/item/clothing/head/crown,
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vGT" = (
@@ -29339,6 +29363,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "wRA" = (
@@ -29973,11 +29998,7 @@
 /area/f13/tunnel)
 "xqZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/wooddoor{
-	autoclose = 1;
-	name = "Den Gate";
-	req_one_access_txt = "87"
-	},
+/obj/machinery/door/unpowered/wooddoor,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -56152,7 +56173,7 @@ uoO
 uoO
 uoO
 jPC
-mxS
+pwc
 bUW
 auq
 jPC
@@ -57181,7 +57202,7 @@ uoO
 uoO
 jPC
 qUd
-miF
+lez
 lez
 jPC
 wAO
@@ -62244,7 +62265,7 @@ tZE
 lns
 tWg
 wcC
-mRH
+miF
 sbE
 sbE
 tuD
@@ -62758,7 +62779,7 @@ tda
 sPS
 tWg
 wcC
-mRH
+mxS
 sbE
 vXU
 xPu
@@ -79786,7 +79807,7 @@ uoO
 uoO
 uoO
 uoO
-tJp
+hcf
 urM
 uoO
 uoO
