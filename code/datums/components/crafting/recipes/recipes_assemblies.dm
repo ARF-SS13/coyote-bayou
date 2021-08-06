@@ -203,3 +203,14 @@
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
+
+/datum/crafting_recipe/beartrap
+	name = "Bear trap"
+	result = /obj/item/restraints/legcuffs/beartrap
+	reqs = list(/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/crafting = 2,) //For the mechanism of the bear trap, crafting parts are needed.
+	tools = list(TOOL_WORKBENCH)
+	time = 80
+	subcategory = CAT_FARMING
+	category = CAT_MISC
