@@ -52,3 +52,13 @@
 	new /obj/item/twohanded/spear(src)
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/storage/belt/military(src)
+
+//Carbkatsu - Carbous
+/obj/item/storage/box/large/custom_kit/carbous/PopulateContents()
+	new /obj/item/clothing/under/f13/exile/tribal(src)
+	new /obj/item/clothing/suit/hooded/tribaloutcast(src)
+	new /obj/item/clothing/shoes/sandal(src)
+	new /obj/item/storage/backpack/spearquiver(src)
+	new /obj/item/twohanded/spear/bonespear(src)
+	new /obj/item/warpaint_bowl(src)
+	new	/obj/item/card/id/outcasttattoo(src)

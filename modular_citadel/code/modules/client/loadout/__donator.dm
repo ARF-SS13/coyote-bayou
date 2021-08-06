@@ -53,3 +53,9 @@
 	name = "Sarah's Belongings"
 	path = /obj/item/storage/box/large/custom_kit/sarah
 	ckeywhitelist = list("killer402402")
+
+/datum/gear/donator/kits/carbous
+	name = "Carbous's Belongings"
+	path = /obj/item/storage/box/large/custom_kit/carbous
+	ckeywhitelist = list("carbous")
+

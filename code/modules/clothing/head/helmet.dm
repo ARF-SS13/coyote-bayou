@@ -104,11 +104,11 @@
 /obj/item/clothing/head/helmet/proc/damage_armor()
 	if(armor.linebullet>0 && armor.linelaser>0 && armor.linemelee>0 && armor_durability>0)
 		armor_durability -= 1
-		armor = armor.modifyRating(linemelee = -2, linebullet = -2, linelaser = -2)
+		armor = armor.modifyRating(linemelee = -1, linebullet = -1, linelaser = -1)
 
 /obj/item/clothing/head/helmet/proc/fix_armor()
 	if(armor_durability<100)
-		armor = armor.modifyRating(linemelee = 2, linebullet = 2, linelaser = 2)
+		armor = armor.modifyRating(linemelee = 1, linebullet = 1, linelaser = 1)
 		armor_durability += 1
 
 /obj/item/clothing/head/helmet/ComponentInitialize()
