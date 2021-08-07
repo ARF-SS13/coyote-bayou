@@ -620,6 +620,182 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3, /obj/item/stack/sheet/bone = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
+///////////////////////
+//Dave's Brahmin Bags//
+///////////////////////
+	var/bags = FALSE
+	var/collar = FALSE
+	var/mob/living/owner = null
+	var/follow = FALSE
+	var/bridle = FALSE
+
+/obj/item/brahminbags
+	name = "brahmin bags"
+	desc = "Attach these bags to a brahmin and leave the heavy lifting to them!"
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "trekkerpack"
+
+obj/item/brahmincollar
+	name = "brahmin collar"
+	desc = "A collar with a piece of etched metal serving as a tag. Use this on a brahmin you own to rename them."
+	icon = 'icons/mob/pets.dmi'
+	icon_state = "petcollar"
+
+/obj/item/brahminbridle
+	name = "brahmin bridle set"
+	desc = "A set of headgear used to control and claim a brahmin. Consists of a bit, reins, and leather straps stored in a satchel."
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "satchel_enclave"
+
+/datum/crafting_recipe/brahminbags
+	name = "Brahmin bags"
+	result = /obj/item/brahminbags
+	time = 60
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/storage/backpack/duffelbag = 2,
+				/obj/item/weaponcrafting/string = 2)
+	tools = list(TOOL_WORKBENCH)
+	subcategory = CAT_FARMING
+	category = CAT_MISC
+
+/datum/crafting_recipe/brahmincollar
+	name = "Brahmin collar"
+	result = /obj/item/brahmincollar
+	time = 60
+	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	subcategory = CAT_FARMING
+	category = CAT_MISC
+
+/datum/crafting_recipe/brahminbridle
+	name = "Brahmin bridle set"
+	result = /obj/item/brahminbridle
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	subcategory = CAT_FARMING
+	category = CAT_MISC
+
+/mob/living/simple_animal/cow/brahmin/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I,/obj/item/brahminbags))
+		if(bags)
+			to_chat(user, "<span class='warning'>The brahmin already has bags attached!</span>")
+			return
+		if(is_calf)
+			to_chat(user, "<span class='warning'>The calf cannot carry the bags!</span>")
+			return
+		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
+		bags = TRUE
+		desc += "<br>This one has some bags attached."
+		qdel(I)
+		src.ComponentInitialize()
+		return
+
+	if(istype(I,/obj/item/brahmincollar))
+		if(user != owner)
+			to_chat(user, "<span class='warning'>You need to claim the brahmin with a bridle before you can rename it!</span>")
+			return
+
+		name = input("Choose a new name for your brahmin!","Name", name)
+
+		if(!name)
+			return
+
+		collar = TRUE
+		desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
+		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
+		message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].</span>") //So people don't name their brahmin the N-Word without notice
+		qdel(I)
+		return
+
+	if(istype(I,/obj/item/brahminbridle))
+		if(bridle)
+			to_chat(user, "<span class='warning'>This brahmin already has a bridle!</span>")
+			return
+
+		owner = user
+		bridle = TRUE
+		to_chat(user, "<span class='notice'>You add [I] to [src], claiming it as yours.</span>")
+		desc += "<br>It has a bridle and reins attached to its head."
+		qdel(I)
+		return
+
+/datum/component/storage/concrete/brahminbag
+	max_w_class = WEIGHT_CLASS_HUGE //Allows the storage of shotguns and other two handed items.
+	max_combined_w_class = 35
+	max_items = 30
+	drop_all_on_destroy = TRUE
+	allow_big_nesting = TRUE
+
+
+/mob/living/simple_animal/cow/brahmin/ComponentInitialize()
+	if(!bags)
+		return
+	AddComponent(/datum/component/storage/concrete/brahminbag)
+	return
+
+/mob/living/simple_animal/cow/brahmin/BiologicalLife(seconds, times_fired)
+	if(!(. = ..()))
+		return
+	handle_following()
+
+
+/mob/living/simple_animal/cow/brahmin/proc/handle_following()
+	if(owner)
+		if(!follow)
+			return
+		else if(CHECK_MOBILITY(src, MOBILITY_MOVE) && isturf(loc))
+			step_to(src, owner)
+
+/mob/living/simple_animal/cow/brahmin/CtrlShiftClick(mob/user)
+	//if user not close return check!!!
+	if(get_dist(user, src) > 1)
+		return
+
+	if(!bridle)
+		return
+
+	if(bridle && user.a_intent == INTENT_DISARM)
+		bridle = FALSE
+		owner = null
+		to_chat(user, "<span class='notice'>You remove the bridle gear from [src], dropping it on the ground.</span>")
+		new /obj/item/brahminbridle(user.loc)
+		desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
+		if(collar)
+			desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
+		if(bags)
+			desc += "<br>This one has some bags attached."
+		return
+
+	if(collar && user.a_intent == INTENT_GRAB)
+		collar = FALSE
+		name = "brahmin"
+		to_chat(user, "<span class='notice'>You remove the collar from [src], dropping it on the ground.</span>")
+		new /obj/item/brahmincollar(user.loc)
+		desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
+		if(bridle)
+			desc += "<br>It has a bridle and reins attached to its head."
+		if(bags)
+			desc += "<br>This one has some bags attached."
+
+	if(user == owner)
+		if(bridle && user.a_intent == INTENT_HELP)
+			if(follow)
+				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to stop.</span>")
+				follow = FALSE
+				return
+			else if(!follow)
+				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to follow.</span>")
+				follow = TRUE
+				return
+
+///////////////////////////
+//End Dave's Brahmin Bags//
+///////////////////////////
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
