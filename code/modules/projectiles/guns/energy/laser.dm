@@ -540,3 +540,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	ammo_x_offset = 3
+
+
+//// BETA /// Obsolete
+/obj/item/gun/energy/laser/lasertesting
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/lasertest)

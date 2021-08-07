@@ -424,3 +424,9 @@
 	name = "laser bolt"
 	damage = 40
 	armour_penetration = 0.6
+
+
+
+// BETA // Obsolete
+/obj/item/projectile/beam/laser/pistol/lasertesting //Wattz pistol
+	damage = 25

@@ -177,3 +177,12 @@
 /obj/item/ammo_box/magazine/m14mm/update_icon()
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
+
+// BETA STUFF // Obsolete
+/obj/item/ammo_box/magazine/testbullet
+	name = "Bulletcrate"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "m9mmds"
+	ammo_type = /obj/item/ammo_casing/testcasing
+	caliber = "9mm"
+	max_ammo = 100

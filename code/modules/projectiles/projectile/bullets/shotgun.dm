@@ -166,4 +166,8 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
-
+	
+// BETA STUFF // Obsolete
+/obj/item/projectile/bullet/pellet/shotgun_buckshot/test
+	name = "buckshot pellet"
+	damage = 0

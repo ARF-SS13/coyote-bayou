@@ -386,3 +386,8 @@ SOPORIFIC ROUND CODE
 		L.Sleeping(400)
 	return ..()
 */
+
+// BETA STUFF // Obsolete
+/obj/item/projectile/bullet/test
+	name = "testing bullet"
+	damage = 0

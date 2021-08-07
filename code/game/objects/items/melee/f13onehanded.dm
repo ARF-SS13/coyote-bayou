@@ -210,7 +210,7 @@
 	armour_penetration = 0.1
 	custom_materials = null
 
-/obj/item/melee/onehanded/knife/switchblade
+obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
 	desc = "A sharp, concealable, spring-loaded knife."
 	icon_state = "knife_switch"
@@ -811,3 +811,25 @@ CODE FOR BLEEDING STACK
 	else
 		B.add_stacks(bleed_stacks_per_hit)
 */
+
+
+// BETA // Obsolete
+
+/obj/item/melee/onehanded/machete/knifetesting
+	name = "testing knife"
+	icon_state = "knife_bowie"
+	item_state = "knife_bowie"
+	force = 18
+	throwforce = 15
+
+/obj/item/melee/onehanded/machete/clubtesting
+	name = "1hgeneric"
+	icon_state = "tire"
+	item_state = "tire"
+	force = 20
+
+/obj/item/melee/onehanded/machete/swordtesting
+	name = "topmelee"
+	icon_state = "machete_imp"
+	item_state = "salvagedmachete"
+	force = 30

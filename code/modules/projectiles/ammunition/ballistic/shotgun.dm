@@ -174,3 +174,13 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/pellet/magnum_buckshot
 	pellets = 7
 	variance = 15
+
+
+// BETA STUFF // Obsolete
+/obj/item/ammo_casing/shotgun/buckshot/test
+	name = "buckshot shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot/test
+	pellets = 6
+	variance = 18

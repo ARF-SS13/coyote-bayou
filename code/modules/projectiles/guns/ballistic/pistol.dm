@@ -323,3 +323,13 @@
 	extra_damage = 2
 	extra_penetration = 0.05
 	fire_delay = 4
+
+
+/////////////////////////////////
+// TEMPORARY REMOVE AFTER BETA //
+/////////////////////////////////obsolete
+
+/obj/item/gun/ballistic/automatic/pistol/pistoltesting
+	name = "pistol"
+	extra_damage = 18
+	mag_type = /obj/item/ammo_box/magazine/testbullet

@@ -1897,3 +1897,22 @@
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
 			)
+
+// Beta // Obsolete
+/obj/effect/spawner/lootdrop/f13/betatesting
+	name = "betatesting"
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "cheesie_honkers"
+	lootcount = 1
+	loot = list(
+			/obj/effect/spawner/bundle/testa = 10,
+			/obj/effect/spawner/bundle/testb = 10,
+			/obj/effect/spawner/bundle/testc = 10,
+			/obj/effect/spawner/bundle/testd = 10,
+			/obj/effect/spawner/bundle/teste = 10,
+			/obj/effect/spawner/bundle/testf = 10,
+			/obj/effect/spawner/bundle/testg = 10,
+			/obj/effect/spawner/bundle/testh = 10,
+			/obj/effect/spawner/bundle/testi = 10,
+			/obj/effect/spawner/bundle/testj = 10,
+			)

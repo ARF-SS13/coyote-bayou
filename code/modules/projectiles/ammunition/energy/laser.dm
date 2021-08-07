@@ -174,3 +174,7 @@
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	e_cost = 250
 	fire_sound = 'sound/f13weapons/aer9fire.ogg'
+
+// BETA // Obsolete
+/obj/item/ammo_casing/energy/laser/pistol/lasertest
+	projectile_type = /obj/item/projectile/beam/laser/pistol/lasertesting

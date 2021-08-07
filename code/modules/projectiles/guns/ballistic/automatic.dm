@@ -1159,3 +1159,20 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
+
+
+// BETA STUFF // =Obsolete
+/obj/item/gun/ballistic/automatic/smgtesting
+	name = "SMG"
+	mag_type = /obj/item/ammo_box/magazine/testbullet
+	extra_damage = 20
+
+/obj/item/gun/ballistic/automatic/snipertesting
+	name = "sniper rifle"
+	mag_type = /obj/item/ammo_box/magazine/testbullet
+	extra_damage = 25
+
+/obj/item/gun/ballistic/automatic/rifletesting
+	name = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/testbullet
+	extra_damage = 22

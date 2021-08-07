@@ -49,3 +49,9 @@
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
 	caliber = "fuel"
 	max_ammo = 12 //6 bursts, iirc its about the same ammount as the IRL M2
+
+
+// BETA STUFF // Obsolete
+/obj/item/ammo_box/magazine/internal/shot/lethal/test
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/test
+	max_ammo = 30

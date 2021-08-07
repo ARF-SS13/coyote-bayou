@@ -65,3 +65,10 @@
 	name = ".22lr plinking casing"
 	desc = "A .22lr plinking bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c22/plinking
+
+// BETA AMMO // Obsolete
+/obj/item/ammo_casing/testcasing
+	name = "casing"
+	desc = "casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/test
