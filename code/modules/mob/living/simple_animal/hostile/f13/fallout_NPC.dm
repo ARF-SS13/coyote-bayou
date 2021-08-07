@@ -680,7 +680,7 @@
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
-	neck = /obj/item/clothing/neck/cloak
+	neck = /obj/item/clothing/neck/mantle/brown
 
 /mob/living/simple_animal/hostile/abomination
 	name = "abomination"

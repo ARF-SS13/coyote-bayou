@@ -70,6 +70,14 @@
 	desc = "A finely woven and blue dyed mantle, with the emblem of a bird on its back."
 	icon_state = "jaymantle"
 
+/obj/item/clothing/neck/mantle/green
+	name = "green decorated mantle"
+	desc = "A mantle with festive green decorative patterns."
+	icon = 'icons/fallout/clothing/custom/custom.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
+	icon_state = "mantle_wintergreen"
+	item_state = "mantle_wintergreen"
+
 /obj/item/clothing/neck/mantle/commander
 	name = "commanders mantle"
 	desc = "A fine mantle marking the wearer as a Commander of some long lost nation."

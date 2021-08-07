@@ -97,14 +97,14 @@
 	subcategory = CAT_TRIBAL
 */
 
-/datum/crafting_recipe/tribal/cloakbrown
+/datum/crafting_recipe/tribal/mantlebrown
 	name = "Brown Mantle"
 	result = /obj/item/clothing/neck/mantle/brown
 	time = 50
 	reqs = list(/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 2)
 
-/datum/crafting_recipe/tribal/cloakgray
+/datum/crafting_recipe/tribal/mantlegray
 	name = "Gray Mantle"
 	result = /obj/item/clothing/neck/mantle/gray
 	time = 50

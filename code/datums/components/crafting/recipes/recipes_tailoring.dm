@@ -567,7 +567,7 @@
 
 /datum/crafting_recipe/poncho
 	name = "Poncho"
-	result = /obj/item/clothing/suit/poncho
+	result = /obj/item/clothing/neck/mantle/poncho
 	reqs = list(/obj/item/stack/sheet/cloth = 3,
 				/obj/item/stack/sheet/hay = 2)
 	tools = list(TOOL_WORKBENCH)

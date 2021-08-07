@@ -46,7 +46,7 @@
 	new /obj/item/clothing/suit/armor/vest/russian(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
 	new /obj/item/clothing/mask/bandana/green(src)
-	new /obj/item/clothing/neck/cloak/green(src)
+	new /obj/item/clothing/neck/mantle/green(src)
 	new /obj/item/clothing/under/costume/singer/yellow(src)
 	new /obj/item/storage/backpack/trekker(src)
 	new /obj/item/twohanded/spear(src)

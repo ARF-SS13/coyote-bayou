@@ -181,7 +181,7 @@
 	name = "sombrero and poncho"
 	items = list(
 				/obj/item/clothing/head/sombrero,
-				/obj/item/clothing/suit/poncho
+				/obj/item/clothing/neck/mantle/poncho
 				)
 
 /obj/effect/spawner/lootdrop/f13/schoolgirl

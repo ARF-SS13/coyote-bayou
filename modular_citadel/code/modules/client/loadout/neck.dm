@@ -3,6 +3,22 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	slot = SLOT_NECK
 
+/datum/gear/neck/poncho
+	name = "Poncho"
+	path = /obj/item/clothing/neck/mantle/poncho
+
+/datum/gear/neck/pelt
+	name = "Bighorner pelt"
+	path = /obj/item/clothing/neck/mantle/peltfur
+
+/datum/gear/neck/mantle
+	name = "Plain mantle"
+	path = /obj/item/clothing/neck/mantle/brown
+
+/datum/gear/neck/apron
+	name = "Simple apron"
+	path = /obj/item/clothing/neck/apron/labor
+
 /datum/gear/neck/blacktie
 	name = "Black tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE

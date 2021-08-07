@@ -3,21 +3,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	slot = SLOT_WEAR_SUIT
 
-/datum/gear/suit/poncho
-	name = "Poncho"
-	path = /obj/item/clothing/suit/poncho
-	cost = 2
-
-/datum/gear/suit/ponchogreen
-	name = "Green poncho"
-	path = /obj/item/clothing/suit/poncho/green
-	cost = 2
-
-/datum/gear/suit/ponchored
-	name = "Red poncho"
-	path = /obj/item/clothing/suit/poncho/red
-	cost = 2
-
 /datum/gear/suit/redhood
 	name = "Red cloak"
 	path = /obj/item/clothing/suit/hooded/cloak/david
@@ -125,10 +110,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
 */
 
-/datum/gear/suit/samurai
-	name = "Samurai Outfit"
-	path = /obj/item/clothing/suit/samurai
-	cost = 3
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR

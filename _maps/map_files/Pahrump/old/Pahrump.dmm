@@ -6476,7 +6476,7 @@
 "auV" = (
 /obj/structure/rack,
 /obj/item/clothing/head/sombrero,
-/obj/item/clothing/suit/poncho,
+/obj/item/clothing/neck/mantle/poncho,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -23273,25 +23273,6 @@
 	},
 /area/f13/brotherhood)
 "bDc" = (
-/obj/item/clothing/suit/poncho,
-/obj/item/clothing/suit/poncho,
-/obj/item/clothing/suit/poncho,
-/obj/item/clothing/suit/hooded/cloak/goliath{
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 15);
-	name = "red cloak"
-	},
-/obj/item/clothing/suit/hooded/cloak/goliath{
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 15);
-	name = "red cloak"
-	},
-/obj/item/clothing/suit/hooded/cloak/goliath{
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 15);
-	name = "red cloak"
-	},
-/obj/item/clothing/suit/hooded/cloak/goliath{
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 15);
-	name = "red cloak"
-	},
 /obj/item/clothing/under/f13/roving,
 /obj/item/clothing/under/f13/roving,
 /obj/item/clothing/under/f13/roving,
@@ -41680,7 +41661,6 @@
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/clothing/under/f13/gentlesuit,
 /obj/item/clothing/shoes/f13/fancy,
-/obj/item/clothing/suit/poncho/green,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
