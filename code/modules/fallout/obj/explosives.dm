@@ -9,8 +9,8 @@
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "capmine"
 	item_state = "capmine"
-	throw_speed = 3
-	throw_range = 7
+	throw_speed = 1
+	throw_range = 0
 //	flags = CONDUCT
 	resistance_flags = FLAMMABLE
 	obj_integrity = 80
