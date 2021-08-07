@@ -129,6 +129,7 @@
 
 #define F13MOBBOSS		(1<<0)
 #define F13ENFORCER		(1<<1)
+#define F13DENDOCTOR    (1<<2)
 #define F13WASTELANDER	(1<<2)
 #define F13RAIDER		(1<<3)
 #define F13PUSHER		(1<<4)

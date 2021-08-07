@@ -8781,9 +8781,12 @@
 	},
 /area/f13/bunker)
 "hbi" = (
-/obj/effect/landmark/start/f13/enforcer,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/dendoctor,
 /turf/open/floor/f13{
-	icon_state = "bluedirtyfull"
+	icon_state = "freezerfloor"
 	},
 /area/f13/den)
 "hbQ" = (
@@ -30278,6 +30281,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"xnp" = (
+/obj/effect/landmark/start/f13/dendoctor,
+/turf/open/floor/f13{
+	icon_state = "bluedirtyfull"
+	},
+/area/f13/den)
 "xnV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -70227,7 +70236,7 @@ eIn
 kUN
 gwE
 gZF
-czr
+xnp
 czr
 kUN
 xop
@@ -70740,7 +70749,7 @@ han
 bOJ
 kUN
 gza
-hbi
+czr
 czr
 hKo
 hpk
@@ -71511,7 +71520,7 @@ dOA
 kUN
 kUN
 dBU
-hbQ
+hbi
 hbQ
 kUN
 kUN

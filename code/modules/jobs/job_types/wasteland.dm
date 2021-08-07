@@ -764,7 +764,6 @@ Raider
 	minimal_access = list(ACCESS_DEN)
 
 	loadout_options = list(
-		/datum/outfit/loadout/mrwhite,
 		/datum/outfit/loadout/hitman,
 		/datum/outfit/loadout/bodyguard,
 		)
@@ -805,17 +804,6 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
-
-/datum/outfit/loadout/mrwhite
-	name = "Chem Cook"
-	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
-	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
-	backpack_contents = list(
-							/obj/item/reagent_containers/glass/beaker/large=2, \
-							/obj/item/book/granter/trait/chemistry=1, \
-							/obj/item/book/granter/trait/lowsurgery=1, \
-							/obj/item/ammo_box/magazine/m10mm_adv/simple=2 \
-							)
 
 /datum/outfit/loadout/hitman
 	name = "Hitman"
@@ -878,13 +866,13 @@ Raider
 	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
 	uniform = /obj/item/clothing/under/suit/white
-	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/raider
 	backpack =	/obj/item/storage/backpack/satchel
 	satchel = 	/obj/item/storage/backpack/satchel
 	gloves = /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/caphat/beret/white
 	mask = /obj/item/clothing/mask/bandana/durathread
-	suit_store = /obj/item/gun/ballistic/automatic/smg/p90/worn
+	suit_store = /obj/item/gun/ballistic/automatic/smg/p90
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
@@ -907,6 +895,90 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
+
+datum/job/wasteland/f13dendoctor
+	title = "Den Doctor"
+	flag = F13DENDOCTOR
+	faction = "Wastelander"
+	social_faction = "Raiders"
+	total_positions = 2
+	spawn_positions = 2
+	description = "While you prioritize providing medical treatment in emergency situations, you are still trained in combat and have the additional role as a loyal combanteer to the Den."
+	supervisors = "The Boss."
+	selection_color = "#ff4747"
+	exp_requirements = 1000
+	exp_type = EXP_TYPE_OUTLAW
+
+	outfit = /datum/outfit/job/wasteland/f13dendoctor
+
+	access = list(ACCESS_DEN)
+	minimal_access = list(ACCESS_DEN)
+
+	loadout_options = list(
+		/datum/outfit/loadout/dencombatmedic,
+		/datum/outfit/loadout/denchemist,
+		)
+
+/datum/outfit/job/wasteland/f13dendoctor
+	name = "Den Doctor"
+	jobtype = /datum/job/wasteland/f13dendoctor
+
+	id = /obj/item/card/id/dentattoo
+	belt = /obj/item/storage/belt/medical
+	shoes = /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_den
+	r_pocket = /obj/item/flashlight/seclite
+	uniform = /obj/item/clothing/under/suit/white
+	backpack =	/obj/item/storage/backpack/medic
+	gloves =  /obj/item/clothing/gloves/color/white
+	head = /obj/item/clothing/head/beret/durathread
+	mask =  /obj/item/clothing/mask/bandana/durathread
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/healthanalyzer=1, \
+		/obj/item/storage/bag/money/small/wastelander)
+
+/datum/outfit/job/wasteland/f13dendoctor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
+	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+
+/datum/outfit/job/wasteland/f13dendoctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	if(!H.gang)
+		var/datum/gang/denmob/DM = GLOB.denmob
+		GLOB.all_gangs |= DM
+		DM.add_member(H)
+		H.gang = DM
+
+/datum/outfit/loadout/dencombatmedic
+	name = "Combat medic"
+	r_hand = /obj/item/gun/ballistic/automatic/smg/american180
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
+	backpack_contents = list(
+							/obj/item/clothing/glasses/hud/health/f13=1, \
+							/obj/item/ammo_box/magazine/m22smg=1, \
+							)
+
+/datum/outfit/loadout/denchemist
+	name = "Chemist"
+	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
+	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
+	backpack_contents = list(
+						/obj/item/ammo_box/magazine/m10mm_adv/simple=1, \
+						/obj/item/grenade/chem_grenade=2, \
+						/obj/item/clothing/mask/gas=1, \
+						/obj/item/reagent_containers/glass/beaker/large=2 \
+						)
+
+
 
 //vigilante
 
