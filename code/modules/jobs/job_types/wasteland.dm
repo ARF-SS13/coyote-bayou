@@ -610,6 +610,7 @@ Raider
 	/datum/outfit/loadout/medic,
 	/datum/outfit/loadout/merchant,
 	/datum/outfit/loadout/scavenger,
+	/datum/outfit/loadout/settler,
 	/datum/outfit/loadout/warrior,
 	/datum/outfit/loadout/ncrcitizen,
 	/datum/outfit/loadout/wastelander_desert_ranger)
@@ -664,6 +665,23 @@ Raider
 							/obj/item/metaldetector=1,
 							/obj/item/shovel=1,
 							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
+
+/datum/outfit/loadout/settler
+	name = "Settler"
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/f13/explorer
+	r_hand = /obj/item/hatchet
+	l_hand = /obj/item/gun/ballistic/automatic/pistol/n99
+	belt = /obj/item/storage/belt
+	backpack_contents = list(
+		/obj/item/stack/sheet/metal = 50,
+		/obj/item/stack/sheet/mineral/wood = 50,
+		/obj/item/pickaxe/mini = 1,
+		/obj/item/toy/crayon/spraycan = 1,
+		/obj/item/cultivator = 1,
+		/obj/item/reagent_containers/glass/bucket = 1,
+		/obj/item/storage/bag/plants/portaseeder = 1,
+		)
 
 /datum/outfit/loadout/medic
 	name = "Wasteland Doctor"
