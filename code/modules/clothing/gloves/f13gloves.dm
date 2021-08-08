@@ -135,10 +135,10 @@
 /obj/item/clothing/gloves/legion
 	name = "leather gloves"
 	desc = "Fingerless leather gloves to improve grip worn by legionaires."
-	icon = 'icons/fallout/objects/clothing/gloves.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/hands.dmi'
-	icon_state = "legion-fingerless"
-	item_state = "legion-fingerless"
+	icon = 'icons/fallout/clothing/gloves.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/hand.dmi'
+	icon_state = "legion_fingerless"
+	item_state = "legion_fingerless"
 	item_color = null	//So they don't wash.
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -149,8 +149,8 @@
 /obj/item/clothing/gloves/legion/forgemaster
 	name = "forgemaster gloves"
 	desc = "A pair of heavy duty leather gloves designed to help the Forgemaster do his work."
-	icon_state = "legion-forge"
-	item_state = "legion-forge"
+	icon_state = "legion_forge"
+	item_state = "legion_forge"
 	item_color = null
 	transfer_prints = FALSE
 	strip_delay = 10
@@ -160,15 +160,15 @@
 /obj/item/clothing/gloves/legion/plated
 	name = "plated gloves"
 	desc = "Leather gloves with metal reinforcement."
-	icon_state = "legion-plated"
-	item_state = "legion-plated"
+	icon_state = "legion_plated"
+	item_state = "legion_plated"
 	transfer_prints = FALSE
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 10)
 
 /obj/item/clothing/gloves/legion/legate
 	name = "brass gauntlets"
 	desc = "Heavy finely crafted metal gloves."
-	icon_state = "legion-legate"
-	item_state = "legion-legate"
+	icon_state = "legion_legate"
+	item_state = "legion_legate"
 	transfer_prints = FALSE
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)

@@ -61,11 +61,12 @@
 /obj/item/clothing/suit/armor/f13/punk
 	name = "armor kit"
 	desc = "(III) A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
-	icon_state = "punkit" //Punk it
-	item_state = "punkit" //Pun kit
+	icon_state = "armorkit_punk"
+	item_state = "armorkit_punk"
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	strip_delay = 30
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /obj/item/clothing/suit/armor/f13/punk/Initialize()
 	. = ..()
@@ -620,10 +621,10 @@
 /obj/item/clothing/suit/hooded/tribaloutcast
 	name = "patched heavy leather cloak"
 	desc = "(IV) A robust cloak made from layered gecko skin patched with various bits of leather from dogs and other animals, able to absorb more force than one would expect from leather."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	icon_state = "armor_tribaloutcast"
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
-	item_state = "armor_tribaloutcast"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	icon_state = "cloak_outcast"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	item_state = "cloak_outcast"
 	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	strip_delay = 40
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/tribaloutcast
@@ -632,9 +633,9 @@
 /obj/item/clothing/head/hooded/cloakhood/tribaloutcast
 	name = "patched leather hood"
 	desc = "(IV) Thick layered leather, patched together."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "hood_tribaloutcast"
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	item_state = "hood_tribaloutcast"
 	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
@@ -647,7 +648,8 @@
 	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /obj/item/clothing/suit/armor/f13/chitinarmor
 	name = "insect chitin armor"
@@ -709,7 +711,7 @@
 /obj/item/clothing/suit/armor/light/wastewar
 	name = "wasteland warrior armor"
 	desc = "(III) A mad attempt to recreate armor based of images of japanese samurai, using a sawn up old car tire as shoulder pads, bits of chain to cover the hips and pieces of furniture for a breastplate. Might stop a blade but nothing else."
-	icon = 'icons/fallout/clothing/armor_light.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "wastewar"
 	item_state = "wastewar"
@@ -723,16 +725,18 @@
 	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/f13/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
 	desc = "(III) A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future."
-	icon_state = "battlecoat"
-	item_state = "battlecoat"
+	icon_state = "maxson_battlecoat"
+	item_state = "maxson_battlecoat"
 	armor = list("tier" = 3, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 30)
 	strip_delay = 30
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault
 	name = "command coat"
@@ -744,37 +748,14 @@
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer
 	name = "Overseer's battlecoat"
 	desc = "(III) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
-	icon_state = "overseer_commandcoat"
-	item_state = "overseer_commandcoat"
+	icon_state = "maxson_battlecoat"
+	item_state = "maxson_battlecoat"
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
 	desc = "(VII) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
-	icon_state = "marshal_commandcoat"
-	item_state = "marshal_commandcoat"
-	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
-
-/obj/item/clothing/suit/armor/f13/battlecoat/vault/armoured
-	name = "armoured vault battlecoat"
-	desc = "(IV) A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
-	icon_state = "armouredvault_commandcoat"
-	item_state = "armouredvault_commandcoat"
-	armor = list("tier" = 4, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
-
-/obj/item/clothing/suit/armor/f13/battlecoat/tan
-	name = "tan battlecoat"
-	desc = "(III) A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future. This one's colors have faded somewhat."
-	icon_state = "battlecoat_tan"
+	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
-
-/obj/item/clothing/suit/armor/f13/battlecoat/tan/armored // For the "Enclave Remnant" loadout of the Outlaws.
-	name = "armored battlecoat"
-	desc = "(IV) A heavy padded leather coat with faded colors, usually worn by those who have once considered themselves a part of the US Government. This one has additional armor plating."
-	armor = list("tier" = 4, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
-
-/obj/item/clothing/suit/armor/f13/battlecoat/tan/enclave // For the Enclave Lieutenant.
-	name = "lieutenant's battlecoat"
-	desc = "(VII) A battle coat usually worn by the high-ranking officers within the US Military. This one has been armored with light-weight alloys, providing maximum defense at almost no weight cost."
 	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/armor/f13/brahmin_leather_duster
@@ -1014,40 +995,6 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "ghostechoe"
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/cyberpunk
-	name = "armored trenchcoat"
-	desc = "A trenchcoat augmented with a special alloy for some protection and style."
-	icon_state = "jensencoat"
-	item_state = "jensencoat"
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-	resistance_flags = UNACIDABLE
-	strip_delay = 30
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/doom
-	name = "green chestplate"
-	desc = "(V) An odd green chestplate.<br>It's lightweight and strangely comfortable."
-	icon_state = "praetor"
-	item_state = "g_suit"
-	armor = list("tier" = 5, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	resistance_flags = UNACIDABLE
-	strip_delay = 10
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/scoutarmor
-	name = "light scout armor"
-	desc = "(VI) A prewar design for lightweight, battle-ready armor designed to be easily used in the field or in reconnaissance situations where mobility is required."
-	icon_state = "scout_armor_lt"
-	item_state = "scout_armor_lt"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-
-/obj/item/clothing/suit/armor/f13/reconarmor
-	name = "recon armor"
-	desc = "(VI) An old military grade pre war combat armor. It's well-fitted for good all-around protection."
-	icon_state = "recon_armor"
-	item_state = "recon_armor"
-	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
-	icon = 'icons/fallout/clothing/suits.dmi'
 
 //Mutants
 

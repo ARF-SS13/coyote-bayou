@@ -142,7 +142,6 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 35, "bomb" = 45, "bio" = 40, "rad" = 30, "fire" = 50, "acid" = 0)
-	icon = 'icons/fallout/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armored/heavy/tesla
 	name = "tesla armor"

@@ -218,12 +218,10 @@
 /obj/item/clothing/suit/slavelabor
 	name = "old leather strips"
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
-	icon_state = "legion-slaveleather"
-	item_state = "legion-slaveleather"
-
-
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "legion_slaveleather"
+	item_state = "legion_slaveleather"
 
 /obj/item/clothing/suit/bomber
 	name = "old bomber jacket"

@@ -10,9 +10,9 @@
 /obj/item/clothing/suit/hooded/surgical
 	name = "surgical scrubs"
 	desc = "A bundle with all the sterile clothing needed to perform safe surgery accoring to the standards set in the Followers' pamphlet on safe surgery. The shoe covers have grip surfaces to prevent slipping in the blood."
-	icon = 'icons/fallout/clothing/suits-utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit-utility.dmi'
-	icon_state = "surgical-scrubs"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "surgical_scrubs"
 	w_class = WEIGHT_CLASS_BULKY
 	strip_delay = 60
 	equip_delay_other = 60
@@ -26,10 +26,10 @@
 /obj/item/clothing/head/hooded/surgical
 	name = "hair net"
 	desc = "It's not a good idea to risk hair falling into open wounds."
-	icon = 'icons/fallout/clothing/suits-utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit-utility.dmi'
-	icon_state = "hood_surgical-scrubs"
-	item_state = "hood_surgical-scrubs"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "hood_surgical_scrubs"
+	item_state = "hood_surgical_scrubs"
 	flags_inv = HIDEHAIR
 	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 40, "rad" = 10, "fire" = 0, "acid" = 10)
 
@@ -39,10 +39,12 @@
  */
 
 /obj/item/clothing/suit/fire
-	name = "emergency firesuit"
-	desc = "(II) A suit that helps protect against fire and heat."
-	icon_state = "fire"
-	item_state = "ro_suit"
+	name = "firefighters suit"
+	desc = "Faded old asbestos coated suit. Very good protection against fire and heat."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "firesuit"
+	item_state = "firesuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -59,28 +61,6 @@
 	equip_delay_other = 60
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/fire/firefighter
-	icon_state = "firesuit"
-	item_state = "firefighter"
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
-
-
-/obj/item/clothing/suit/fire/heavy
-	name = "heavy firesuit"
-	desc = "An old, bulky thermal protection suit."
-	icon_state = "thermal"
-	item_state = "ro_suit"
-	slowdown = 1.5
-
-/obj/item/clothing/suit/fire/atmos
-	name = "firesuit"
-	desc = "An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame."
-	icon_state = "atmos_firesuit"
-	item_state = "firesuit_atmos"
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 
 /*
  * Bomb protection

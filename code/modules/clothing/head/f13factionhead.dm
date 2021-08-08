@@ -226,8 +226,8 @@
 /obj/item/clothing/head/helmet/f13/legion
 	name = "legion helmet template"
 	desc = "should not exist."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	lefthand_file = ""
 	righthand_file = ""
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
@@ -370,8 +370,8 @@
 /obj/item/clothing/head/f13/legion/servant
 	name = "servant headwear"
 	desc = "A simple uncoloured linen cloth wrapped around the head, the mark of a servant slave trained in household work."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-servant"
 	item_state = "legion-servant"
 	flags_inv = HIDEEARS|HIDEFACE
@@ -380,8 +380,8 @@
 /obj/item/clothing/head/f13/legion/auxilia
 	name = "auxilia headwear"
 	desc = "A soft red cap with a black band, used by female Auxilia outside camp."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-aux"
 	item_state = "legion-aux"
 	flags_inv = HIDEEARS|HIDEFACE
@@ -390,39 +390,18 @@
 /obj/item/clothing/head/helmet/f13/combat/legion
 	name = "Legion combat helmet"
 	desc = "(V) An old military grade pre-war helmet, repainted to the colour scheme of Caesar's Legion."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-combat"
 	item_state = "legion-combat"
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/legion
 	name = "reinforced Legion combat helmet"
 	desc = "(VI) A pre-war helmet in good condition, made from advanced materialas and paintend in the colors of Caesar's Legion."
-	icon = 'icons/fallout/objects/clothing/hats.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/head.dmi'
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-combat2"
 	item_state = "legion-combat2"
-
-/*
-/obj/item/clothing/head/helmet/f13/legion/recruit/scout
-	name = "legion scout hood"
-	desc = "(III) It's a leather hood worn by legion scouts."
-	icon_state = "legscout"
-	item_state = "legscout"
-
-/obj/item/clothing/head/helmet/f13/legion/libritor
-	name = "legion libritor helmet"
-	desc = "(VII) A metal legion veteran helmet with an inverted color scheme for libritors"
-	icon_state = "legheavy"
-	item_state = "legheavy"
-	armor = list("tier" = 7, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/legion/palacent/custom_excess
-	name = "Champion of Kanab's Helm"
-	desc = "(VII) A custom forged steel full helmet made for the Conqueror and Champion of Kanab. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
-	icon_state = "palacent_excess"
-	item_state = "palacent_excess"
-*/
 
 
 //NCR

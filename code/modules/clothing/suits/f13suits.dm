@@ -210,9 +210,10 @@
 /obj/item/clothing/suit/bio_suit/f13/hazmat
 	name = "hazmat suit"
 	desc = "(II) Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "hazmat"
-	item_state = "hazmat_suit"
+	item_state = "hazmat"
 
 /obj/item/clothing/head/bio_hood/f13/hazmat
 	name = "hazmat hood"

@@ -113,7 +113,8 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 3, "energy" = 20, "bomb" = 40, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 20)
 	strip_delay = 30
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/f13/exile/ncrexile
 	name = "modified NCR armor"
@@ -138,8 +139,10 @@
 /obj/item/clothing/suit/armor/f13/exile/bosexile
 	name = "modified Brotherhood armor"
 	desc = "(III) A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
-	icon_state = "brotherhoodexile"
-	item_state = "brotherhoodexile"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	icon_state = "exile_bos"
+	item_state = "exile_bos"
 
 /obj/item/clothing/suit/armor/f13/exile/bosexile/Initialize()
 	. = ..()
@@ -168,8 +171,8 @@
 /obj/item/clothing/suit/armor/f13/legion
 	name = "legion armor template"
 	desc = "should not exist. Bugreport."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
 	icon_state = "legrecruit"
 	item_state = "legarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -180,55 +183,38 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-
-/obj/item/clothing/suit/armor/f13/legion/forgemaster
-	name = "forgemaster apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging. The bull insignia marks the wearer as a Forgemaster."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
-	icon_state = "legion-opifex"
-	item_state = "legion-opifex"
-	blood_overlay_type = "armor"
-	allowed = list(
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/twohanded,
-		)
-
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
 	desc = "(II) Legion Recruits carry very basic protection, repurposed old sports gear with bits of leather and other tribal style armor that the wearer has managed to scrounge up."
-	icon_state = "legion-recruit"
+	icon_state = "legion_recruit"
 	item_state = "legion-recruit"
 	slowdown = -0.15
 
 /obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
 	desc = "(III) Legion Primes have survived some skirmishes, and when promoted often recieve a set of armor, padded leather modeled on ancient baseball catcher uniforms and various plates of metal or boiled leather."
-	icon_state = "legion-prime"
+	icon_state = "legion_prime"
 	item_state = "legion-prime"
 	slowdown = -0.13
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion/prime/orator
-	icon = 'icons/fallout/clothing/armor_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+/obj/item/clothing/suit/armor/f13/legion/vet/orator
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "legion_orator"
 	item_state = "legion_orator"
 
 /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	name = "slavemaster armor"
 	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
-	icon_state = "legion-slavemaster"
+	icon_state = "legion_slavemaster"
 	item_state = "legion-slavemaster"
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
 	desc = "(IV) Armor worn by veterans, salvaged bits of enemy armor and scrap metal often reinforcing the armor."
-	icon_state = "legion-veteran"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	icon_state = "legion_veteran"
 	item_state = "legion-veteran"
 	slowdown = -0.1
 	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
@@ -236,7 +222,8 @@
 /obj/item/clothing/suit/armor/f13/legion/heavy
 	name = "legion veteran decan armor"
 	desc = "(V) A Legion veterans armor reinforced with a patched bulletproof vest, the wearer has the markings of a Decanus."
-	icon_state = "legion-decvet"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	icon_state = "legion_heavy"
 	item_state = "legion-decvet"
 	slowdown = -0.1
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
@@ -244,16 +231,17 @@
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	name = "legion explorer armor"
 	desc = "(III) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
-	icon_state = "legion-explorer"
+	icon_state = "legion_explorer"
 	item_state = "legion-explorer"
 	slowdown = -0.13
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	name = "legion vexillarius armor"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	slowdown = -0.12
 	desc = "(IV) Worn by Vexillarius, this armor has been reinforced with circular metal plates on the chest and a back mounted pole for the flag of the Bull, making the wearer easy to see at a distance."
-	icon_state = "legion-vex"
+	icon_state = "legion_vex"
 	item_state = "legion-vex"
 
 /obj/item/clothing/suit/armor/f13/legion/venator
@@ -266,7 +254,8 @@
 /obj/item/clothing/suit/armor/f13/legion/centurion
 	name = "legion centurion armor"
 	desc = "(VI) Every Centurion is issued some of the best armor available in the Legion, and adds better pieces from slain opponents over time."
-	icon_state = "legion-centurion"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	icon_state = "legion_centurion"
 	item_state = "legion-centurion"
 	slowdown = -0.13
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -274,7 +263,8 @@
 /obj/item/clothing/suit/armor/f13/legion/palacent
 	name = "paladin-slayer centurion armor"
 	desc = "(VI) A Centurion able to defeat a Brotherhood Paladin gets the honorific title 'Paladin-Slayer', and adds bits of the looted armor to his own."
-	icon_state = "legion-palacent"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	icon_state = "legion_palacent"
 	item_state = "legion-palacent"
 	slowdown = -0.13
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -282,7 +272,8 @@
 /obj/item/clothing/suit/armor/f13/legion/rangercent
 	name = "ranger-hunter centurion armor"
 	desc = "(V) Centurions who have led many patrols and ambushes against NCR Rangers have a distinct look from the many looted pieces of Ranger armor, and are often experienced in skirmishing."
-	icon_state = "legion-rangercent"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	icon_state = "legion_rangercent"
 	item_state = "legion-rangercent"
 	slowdown = -0.2
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -290,7 +281,8 @@
 /obj/item/clothing/suit/armor/f13/legion/legate
 	name = "legion legate armor"
 	desc = "(VIII) Made by the most skilled blacksmiths in Arizona, the bronzed steel of this rare armor offers good protection, and the scars on its metal proves it has seen use on the field."
-	icon_state = "legion-legate"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	icon_state = "legion_legate"
 	item_state = "legion-legate"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
@@ -298,44 +290,29 @@
 /obj/item/clothing/suit/armor/f13/combat/legion
 	name = "Legion combat armor"
 	desc = "(V) Pre-war military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Caesar's Legion."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
 	icon_state = "legion-combat"
 	item_state = "legion-combat"
 
 /obj/item/clothing/suit/armor/f13/combat/mk2/legion
 	name = "reinforced Legion combat armor"
 	desc = "(VI) Pre-war military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Caesar's Legion."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
 	icon_state = "legion-combat2"
 	item_state = "legion-combat2"
-
-/obj/item/clothing/suit/armor/f13/medicus
-	name = "medicus apron"
-	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
-	icon_state = "legion-medicus"
-	item_state = "legion-medicus"
-	armor = list("energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
-	allowed = list(/obj/item/scalpel, /obj/item/surgical_drapes, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
 
 /obj/item/clothing/suit/armor/f13/slavelabor
 	name = "old leather strips"
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
-	icon_state = "legion-slaveleather"
-	item_state = "legion-slaveleather"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "legion_slaveleather"
+	item_state = "legion_slaveleather"
 
 
 /*
-/obj/item/clothing/suit/armor/f13/legion/recruit/scout
-	name = "legion scout armor"
-	desc = "(II) A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight."
-	icon_state = "legscout"
-
 /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	name = "legion orator armor"
 	desc = "(VI) The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
@@ -353,10 +330,10 @@
 /obj/item/clothing/suit/armor/f13/utilityvest
 	name = "utility vest"
 	desc = "(II) A practical vest with pockets for tools and such."
-	icon_state = "vest-utility"
-	item_state = "vest-utility"
-	icon = 'icons/fallout/objects/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothing/suit.dmi'
+	icon_state = "vest_utility"
+	item_state = "vest_utility"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	armor = list("tier" = 2, "energy" = 5, "bomb" = 10, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
@@ -739,24 +716,6 @@
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
 
-/obj/item/clothing/suit/armor/f13/gunnerplates
-	name = "gunner armor"
-	desc = "(V) An old military grade pre war combat armor. This armor has a skull painted on the back to symbolize the gunners."
-	icon_state = "GunnerPlates"
-	item_state = "GunnerPlates"
-	slowdown = 0
-	flags_inv = HIDEJUMPSUIT|HIDENECK
-	icon = 'icons/fallout/clothing/suits.dmi'
-	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-
-/obj/item/clothing/suit/armor/f13/caeserpelt
-	name = "Caesars' Pelt"
-	desc = "(VIII) A pelt fit for Caeser himself. Ave!"
-	icon = 'icons/fallout/clothing/suits.dmi'
-	icon_state = "caesar_pelt"
-	item_state = "caeser_pelt"
-	armor = list("tier" = 8, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-
 /obj/item/clothing/suit/armor/f13/town/embroidered
 	name = "embroidered trenchcoat"
 	desc = "(V) A custom armored trench coat with extra-length and a raised collar. There's a flower embroidered onto the back, although the color is a little faded."
@@ -764,106 +723,19 @@
 	item_state = "towntrench_special"
 	armor = list("tier" = 5, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/combatbosrein
-	name = "reinforced brotherhood combat armor"
-	desc = "(VII) A heavily-reinforced combat suit of prewar design, but postwar influence. It's marked in deep black with the insignia of the Brotherhood of Steel."
-	icon_state = "combat_armor_reinforced_bos"
-	item_state = "combat_armor_reinforced_bos"
-	armor = list("tier" = 7, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 10, "fire" = 60, "acid" = 20)
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/rangercombat/old
-	name = "worn veteran ranger combat armor"
-	desc = "A unique armor, that has been in countless battles and caused much bloodshed."
-	icon_state = "oldranger"
-	item_state = "oldranger"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 20)
-	icon = 'icons/fallout/clothing/suits.dmi'
-
 /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
 	name = "elite riot gear"
 	desc = "(VIII) A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list("tier" = 8, "energy" = 60, "bomb" = 70, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 50)
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot/reclaimed
-	name = "reclaimed desert ranger armor"
-	desc = "(IV) A refurbished and personalized set of pre-unification desert ranger gear."
-	icon_state = "reclaimed_desert_ranger"
-	item_state = "reclaimed_desert_ranger"
-	armor = list("tier" = 4, "energy" = 30, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 30, "acid" = 30)
-	icon = 'icons/fallout/clothing/suits.dmi'
+	icon = 'icons/obj/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"
 	desc = "(VIII) This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-
-/obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey
-	name = "weathered ranger combat armor"
-	desc = "(II) An original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
-	icon_state = "desert_ranger"
-	item_state = "desert_ranger"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/soldier
-	name = "standard issue trooper armor"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons, and gauntlets, worn by NCR soldiers in combat environments.<br>This one has had its breastplate emblazoned with the emblem of the NCR, that has slightly faded over time."
-	icon_state = "ncr_armor2"
-	item_state = "ncr_armor2"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/patriot
-	name = "trooper armor of \"Patriot\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR patriots in combat environments.<br>This one has a five-pointed star painted over the chestplate with white paint - it must be a battalion insignia."
-	icon_state = "ncr_armor3"
-	item_state = "ncr_armor3"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/commie
-	name = "trooper armor of \"Commie\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR comrades in combat environments.<br>This one has a five-pointed star painted over the chestplate with red paint - it must be a battalion insignia."
-	icon_state = "ncr_armor4"
-	item_state = "ncr_armor4"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/preacher
-	name = "trooper armor of \"Preacher\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR zealots in combat environments.<br>This one has a holy cross painted over the chestplate with yellow paint - it must be a battalion insignia."
-	icon_state = "ncr_armor5"
-	item_state = "ncr_armor5"
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/lover
-	name = "trooper armor of \"Lover\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR lovers in combat environments.<br>This one has a heart symbol painted over the chestplate with pink paint - it must be a battalion insignia."
-	icon_state = "ncr_armor6"
-	item_state = "ncr_armor6"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/stalker //Cheeki breeki i v damke !!!
-	name = "trooper armor of \"Stalker\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR explorers in combat environments.<br>This one has a radiation symbol painted over the chestplate with yellow paint - it must be a battalion insignia."
-	icon_state = "ncr_armor7"
-	item_state = "ncr_armor7"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/punisher
-	name = "trooper armor of \"Punisher\" battalion"
-	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR heroes and villains in combat environments.<br>This one has a skull symbol painted over the chestplate with white paint - it must be a battalion insignia."
-	icon_state = "ncr_armor8"
-	item_state = "ncr_armor8"
-	icon = 'icons/fallout/clothing/suits.dmi'
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/facewrap
-	name = "face wrap armor"
-	desc = "(IV) A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR scouts in combat environments.<br>This one has the facewrap, designed to be pulled over the user's face to protect oneself from dust particles and other mainly radioactive elements."
-	icon_state = "ncr_armor9"
-	item_state = "ncr_armor9"
-	armor = list("tier" = 4, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 30, "fire" = 10, "acid" = 10) //Better radiation protection, thank the facewrap bro!
-	icon = 'icons/fallout/clothing/suits.dmi'
 
 //Enclave/Remnants
 
