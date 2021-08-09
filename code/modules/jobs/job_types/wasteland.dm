@@ -964,6 +964,11 @@ datum/job/wasteland/f13dendoctor
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 
 /datum/outfit/job/wasteland/f13dendoctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -991,7 +996,7 @@ datum/job/wasteland/f13dendoctor
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
 						/obj/item/ammo_box/magazine/m10mm_adv/simple=1, \
-						/obj/item/grenade/chem_grenade=2, \
+						/obj/item/grenade/chem_grenade=1, \
 						/obj/item/clothing/mask/gas=1, \
 						/obj/item/reagent_containers/glass/beaker/large=2 \
 						)
