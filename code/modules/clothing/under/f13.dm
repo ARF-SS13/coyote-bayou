@@ -1,7 +1,7 @@
 /obj/item/clothing/under/f13
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //Base type has no armor as well
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	fitted = NO_FEMALE_UNIFORM
+	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
 	resistance_flags = NONE
 	has_sensor = NO_SENSORS //kek
