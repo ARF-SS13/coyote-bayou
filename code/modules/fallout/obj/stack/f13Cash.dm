@@ -10,16 +10,24 @@
 /* LOW_MIN / AUR = amount in AUR */
 
 // A low value cash spawn is on average worth 25
-#define LOW_MIN 1
+#define LOW_MIN 8
 #define LOW_MAX 50
 
-// A medium value cash spawn is on average worth 75
-#define MED_MIN 50
-#define MED_MAX 100
+// A medium value cash spawn is on average worth 60ish
+#define MED_MIN 40
+#define MED_MAX 80
 
-// A high value cash spawn is on average worth 300
-#define HIGH_MIN 100
-#define HIGH_MAX 500
+// Bad Pebbles fix to NCR money fudgery
+#define TEMP3_MIN 10
+#define TEMP3_MAX 65
+#define TEMP_MIN 65
+#define TEMP_MAX 120
+#define TEMP2_MIN 150
+#define TEMP2_MAX 600
+
+// A high value cash spawn is on average worth 280
+#define HIGH_MIN 120
+#define HIGH_MAX 440
 
 // The Bankers Vault-Stash, done like this make it so it only spawns on his person to stop metarushing. Average 8500.
 #define BANKER_MIN 2000
@@ -241,16 +249,16 @@
 	money_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/random/ncr/low
-	min_qty = LOW_MIN / CASH_NCR
-	max_qty = LOW_MAX / CASH_NCR
+	min_qty = TEMP3_MIN / CASH_NCR
+	max_qty = TEMP3_MAX / CASH_NCR
 
 /obj/item/stack/f13Cash/random/ncr/med
-	min_qty = MED_MIN / CASH_NCR
-	max_qty = MED_MAX / CASH_NCR
+	min_qty = TEMP_MIN / CASH_NCR
+	max_qty = TEMP_MAX / CASH_NCR
 
 /obj/item/stack/f13Cash/random/ncr/high
-	min_qty = HIGH_MIN / CASH_NCR
-	max_qty = HIGH_MAX / CASH_NCR
+	min_qty = TEMP2_MIN / CASH_NCR
+	max_qty = TEMP2_MAX / CASH_NCR
 
 /obj/item/stack/f13Cash/random/ncr/ncrpay_basic
 	min_qty = LOW_MIN / CASH_NCR
@@ -277,3 +285,9 @@
 #undef HIGH_MAX
 #undef BANKER_MIN
 #undef BANKER_MAX
+#undef TEMP3_MIN
+#undef TEMP3_MAX
+#undef TEMP_MIN
+#undef TEMP_MAX
+#undef TEMP2_MIN
+#undef TEMP2_MAX

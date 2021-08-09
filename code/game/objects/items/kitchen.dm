@@ -97,7 +97,7 @@
 
 /obj/item/kitchen/knife/butcher
 	name = "butcher's cleaver"
-	icon_state = "knife_cleaver"
+	icon_state = "knife_butcher"
 	desc = "Keep hackin' and whackin' and smackin'."
 	flags_1 = CONDUCT_1
 	force = 25
