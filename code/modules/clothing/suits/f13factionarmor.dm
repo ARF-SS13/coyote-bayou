@@ -231,6 +231,7 @@
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	name = "legion explorer armor"
 	desc = "(III) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
 	icon_state = "legion_explorer"
 	item_state = "legion-explorer"
 	slowdown = -0.13
@@ -663,6 +664,8 @@
 /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
 	name = "heavy tribal armor"
 	desc = "(V) Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "heavy_tribal_armor"
 	item_state = "heavy_tribal_armor"
 	armor = list("tier" = 5, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
