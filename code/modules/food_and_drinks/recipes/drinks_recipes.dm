@@ -1032,3 +1032,32 @@
 	results = list(/datum/reagent/consumable/ethanol/rotgut = 5)
 	required_reagents = list(/datum/reagent/space_cleaner = 1, /datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/oil = 1, /datum/reagent/consumable/ethanol = 1)
 
+/datum/chemical_reaction/nukavictory
+	name = "Nuka Victory"
+	id = /datum/reagent/consumable/ethanol/nukavictory
+	results = list(/datum/reagent/consumable/ethanol/nukavictory = 2)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/thirteenloko = 1)
+	
+/datum/chemical_reaction/nukaquartz
+	name = "Nuka Quartz"
+	id = /datum/reagent/consumable/nukaquartz
+	results = list(/datum/reagent/consumable/nukaquartz = 3)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/silicon = 1, /datum/reagent/consumable/sugar = 1)
+	
+/datum/chemical_reaction/nukacherry
+	name = "Nuka Cherry"
+	id = /datum/reagent/consumable/nukacherry
+	results = list(/datum/reagent/consumable/nukacherry = 4)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 3, /datum/reagent/consumable/cherryjelly = 1)
+	
+/datum/chemical_reaction/nukalove
+	name = "Nuka Love"
+	id = /datum/reagent/consumable/ethanol/nukalove
+	results = list(/datum/reagent/consumable/ethanol/nukalove = 2)
+	required_reagents = list(/datum/reagent/consumable/nukacherry = 1, /datum/reagent/consumable/nukaquartz = 1)
+	
+/datum/chemical_reaction/nukaquantum
+	name = "Nuka Quantum"
+	id = /datum/reagent/consumable/ethanol/nukaquantum
+	results = list(/datum/reagent/consumable/ethanol/nukaquantum = 3) ////results in only 3 instead of 5
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 2, /datum/reagent/uranium = 1, /datum/reagent/bluespace = 1, /datum/reagent/consumable/bluecherryjelly= 1)
