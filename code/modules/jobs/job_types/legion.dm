@@ -596,7 +596,7 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-
+	
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
@@ -608,19 +608,19 @@ commented out pending rework*/
 	l_pocket = /obj/item/binoculars
 	suit_store = /obj/item/gun/ballistic/revolver/revolver45
 	backpack_contents = list(
-		/obj/item/ammo_box/c45/improvised = 2,
+		/obj/item/ammo_box/c45/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/storage/bag/money/small/legenlisted = 1,
+		/obj/item/melee/onehanded/machete = 1,
 		)
 
 /datum/outfit/loadout/expambusher
 	name = "Ambusher"
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
-	glasses = /obj/item/clothing/glasses/legiongoggles
+	glasses = /obj/item/clothing/glasses/night/polarizing
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
-		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/bottlecap_mine = 1,
 		)
 
@@ -628,9 +628,9 @@ commented out pending rework*/
 	name = "Sniper"
 	glasses = /obj/item/clothing/glasses/night/polarizing
 	l_pocket = /obj/item/attachments/scope
-	suit_store = /obj/item/gun/ballistic/rifle/hunting
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
 	backpack_contents = list(
-		/obj/item/ammo_box/a308 = 1,
+		/obj/item/ammo_box/tube/c4570 = 3,
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/grenade/smokebomb = 1,
 		)
@@ -943,6 +943,7 @@ commented out pending rework*/
 	neck = /obj/item/clothing/neck/apron/labor/forge
 	gloves = /obj/item/clothing/gloves/legion/forgemaster
 	shoes = /obj/item/clothing/shoes/f13/military/plated
+	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/stack/sheet/metal/twenty = 2,

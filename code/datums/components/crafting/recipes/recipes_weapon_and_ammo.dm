@@ -261,6 +261,7 @@
 	result = /obj/item/gun/ballistic/revolver/single_shotgun
 	reqs = list(/obj/item/screwdriver = 1,
 	/obj/item/twohanded/baseball = 1,
+	/obj/item/stack/crafting/metalparts = 2,
 	/obj/item/ammo_casing/shotgun = 1,
 	/obj/item/stack/rods = 1)
 	tools = list(TOOL_WORKBENCH)
@@ -360,7 +361,7 @@
 	result = /obj/item/gun/ballistic/automatic/pistol/n99
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/obj/item/stack/sheet/metal = 1)
+				/obj/item/stack/sheet/metal = 1,)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -373,8 +374,7 @@
 	result = /obj/item/gun/ballistic/rifle/hunting
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
-				/datum/reagent/blackpowder = 20,
-				/obj/item/stack/sheet/metal = 3)
+				/obj/item/stack/sheet/metal = 3,)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -455,7 +455,7 @@
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/suppressor = 1,
 				/obj/item/stack/sheet/plastic = 3,
-				/datum/reagent/blackpowder = 30)
+	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -469,7 +469,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/sheet/metal = 3,
-				/datum/reagent/blackpowder = 15)
+	)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -574,7 +574,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/datum/reagent/blackpowder = 20)
+	)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -588,7 +588,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 3,
-				/datum/reagent/blackpowder = 20)
+	)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -600,8 +600,7 @@
 	name = ".223 Pistol"
 	result = /obj/item/gun/ballistic/revolver/thatgun
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
-				/datum/reagent/blackpowder = 15,
-				/obj/item/stack/sheet/metal = 3)
+				/obj/item/stack/sheet/metal = 3,)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -669,9 +668,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 3
-				)
+				/obj/item/stack/crafting/goodparts = 3,
+	)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_WEAPONRY
@@ -817,8 +815,7 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
-				/obj/item/stack/crafting/goodparts = 10
+				/obj/item/stack/crafting/goodparts = 10,
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120

@@ -325,6 +325,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 23
+	knife_y_offset = 23
 
 
 //Neostead 2000								Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal

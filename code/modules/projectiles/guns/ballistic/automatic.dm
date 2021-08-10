@@ -749,6 +749,7 @@
 	fire_delay = 7
 	burst_size = 1
 	extra_speed = 500
+	extra_penetration = 0.1
 	zoom_amt = 10
 	zoom_out_amt = 13
 	semi_auto = TRUE
