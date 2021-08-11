@@ -172,7 +172,7 @@
 	name = "legion armor template"
 	desc = "should not exist. Bugreport."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "legrecruit"
 	item_state = "legarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -187,20 +187,18 @@
 	name = "legion recruit armor"
 	desc = "(II) Legion Recruits carry very basic protection, repurposed old sports gear with bits of leather and other tribal style armor that the wearer has managed to scrounge up."
 	icon_state = "legion_recruit"
-	item_state = "legion-recruit"
+	item_state = "legion_recruit"
 	slowdown = -0.15
 
 /obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
 	desc = "(III) Legion Primes have survived some skirmishes, and when promoted often recieve a set of armor, padded leather modeled on ancient baseball catcher uniforms and various plates of metal or boiled leather."
 	icon_state = "legion_prime"
-	item_state = "legion-prime"
+	item_state = "legion_prime"
 	slowdown = -0.13
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/orator
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "legion_orator"
 	item_state = "legion_orator"
 
@@ -208,14 +206,15 @@
 	name = "slavemaster armor"
 	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
 	icon_state = "legion_slavemaster"
-	item_state = "legion-slavemaster"
+	item_state = "legion_slavemaster"
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
 	desc = "(IV) Armor worn by veterans, salvaged bits of enemy armor and scrap metal often reinforcing the armor."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "legion_veteran"
-	item_state = "legion-veteran"
+	item_state = "legion_veteran"
 	slowdown = -0.1
 	armor = list("tier" = 4, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
@@ -223,8 +222,9 @@
 	name = "legion veteran decan armor"
 	desc = "(V) A Legion veterans armor reinforced with a patched bulletproof vest, the wearer has the markings of a Decanus."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "legion_heavy"
-	item_state = "legion-decvet"
+	item_state = "legion_heavy"
 	slowdown = -0.1
 	armor = list("tier" = 5, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
@@ -232,8 +232,9 @@
 	name = "legion explorer armor"
 	desc = "(III) Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "legion_explorer"
-	item_state = "legion-explorer"
+	item_state = "legion_explorer"
 	slowdown = -0.13
 	armor = list("tier" = 3, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
@@ -243,7 +244,7 @@
 	slowdown = -0.12
 	desc = "(IV) Worn by Vexillarius, this armor has been reinforced with circular metal plates on the chest and a back mounted pole for the flag of the Bull, making the wearer easy to see at a distance."
 	icon_state = "legion_vex"
-	item_state = "legion-vex"
+	item_state = "legion_vex"
 
 /obj/item/clothing/suit/armor/f13/legion/venator
 	name = "legion venator armor"
@@ -256,26 +257,25 @@
 	name = "legion centurion armor"
 	desc = "(VI) Every Centurion is issued some of the best armor available in the Legion, and adds better pieces from slain opponents over time."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "legion_centurion"
-	item_state = "legion-centurion"
+	item_state = "legion_centurion"
 	slowdown = -0.13
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/palacent
 	name = "paladin-slayer centurion armor"
 	desc = "(VI) A Centurion able to defeat a Brotherhood Paladin gets the honorific title 'Paladin-Slayer', and adds bits of the looted armor to his own."
-	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	icon_state = "legion_palacent"
-	item_state = "legion-palacent"
+	item_state = "legion_palacent"
 	slowdown = -0.13
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/rangercent
 	name = "ranger-hunter centurion armor"
 	desc = "(V) Centurions who have led many patrols and ambushes against NCR Rangers have a distinct look from the many looted pieces of Ranger armor, and are often experienced in skirmishing."
-	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	icon_state = "legion_rangercent"
-	item_state = "legion-rangercent"
+	item_state = "legion_rangercent"
 	slowdown = -0.2
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
@@ -283,8 +283,9 @@
 	name = "legion legate armor"
 	desc = "(VIII) Made by the most skilled blacksmiths in Arizona, the bronzed steel of this rare armor offers good protection, and the scars on its metal proves it has seen use on the field."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "legion_legate"
-	item_state = "legion-legate"
+	item_state = "legion_legate"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("tier" = 8, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
@@ -292,17 +293,15 @@
 	name = "Legion combat armor"
 	desc = "(V) Pre-war military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Caesar's Legion."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
-	icon_state = "legion-combat"
-	item_state = "legion-combat"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "legion_combat"
+	item_state = "legion_combat"
 
 /obj/item/clothing/suit/armor/f13/combat/mk2/legion
 	name = "reinforced Legion combat armor"
 	desc = "(VI) Pre-war military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Caesar's Legion."
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit.dmi'
-	icon_state = "legion-combat2"
-	item_state = "legion-combat2"
+	icon_state = "legion_combat2"
+	item_state = "legion_combat2"
 
 /obj/item/clothing/suit/armor/f13/slavelabor
 	name = "old leather strips"
