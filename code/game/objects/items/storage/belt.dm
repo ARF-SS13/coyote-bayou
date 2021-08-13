@@ -695,8 +695,10 @@
 /obj/item/storage/belt/holster
 	name = "shoulder holster"
 	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
-	icon_state = "holster"
-	item_state = "holster"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "holster_shoulder"
+	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 
@@ -780,8 +782,10 @@
 /obj/item/storage/belt/holster/legholster
 	name = "leg holster"
 	desc = "A holster to carry a handgun and ammo worn on the leg."
-	icon_state = "holsterleg"
-	item_state = "holsterleg"
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "holster_leg"
+	item_state = "holster_leg"
 
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
@@ -873,9 +877,11 @@
 
 /obj/item/storage/belt/military/assault/legion
 	name = "legionnaire marching belt"
-	desc = "A belt capable of holding the necessities of a legionnaire."
-	icon_state = "legion_belt"
-	item_state = "legion_belt"
+	desc = "Sturdy leather belt with a red decorative sash."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "belt_legion"
+	item_state = "belt_legion"
 
 /obj/item/storage/belt/military/assault/enclave
 	name = "old style army belt"

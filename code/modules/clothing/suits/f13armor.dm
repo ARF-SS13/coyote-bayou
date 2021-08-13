@@ -90,6 +90,8 @@
 /obj/item/clothing/suit/armor/f13/metalarmor
 	name = "metal armor"
 	desc = "(IV) A set of plates formed together to form a crude chestplate."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
 	armor = list("tier" = 4, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
