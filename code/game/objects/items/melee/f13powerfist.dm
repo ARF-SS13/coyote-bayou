@@ -12,7 +12,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 25
+	force = 14
 	armour_penetration = 0.5
 	throwforce = 10
 	throw_range = 3
@@ -46,6 +46,7 @@
 	armour_penetration = 0.45
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	untinkerable = TRUE
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = NEEDS_PERMIT //doesn't slow you down
@@ -62,7 +63,6 @@
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 40
 	armour_penetration = 0.4
 	throwforce = 10
 	throw_range = 7

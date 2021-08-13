@@ -110,7 +110,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 0.5
-	extra_damage = 2
+	extra_damage = 1
+	untinkerable = TRUE
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
@@ -134,7 +135,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Widowmaker								Keywords: Shotgun, Double barrel, saw-off
+//Widowmaker				Keywords: Shotgun, Double barrel, saw-off
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
 	desc = "Old-world Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
@@ -144,6 +145,7 @@
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	untinkerable = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 1
@@ -170,7 +172,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Hunting shotgun							Keywords: Shotgun, Pump-action, 4 rounds, Saw-off
+//Hunting shotgun				Keywords: Shotgun, Pump-action, 4 rounds
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
@@ -178,7 +180,7 @@
 	item_state = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	fire_delay = 8 //slightly slower than police/military versions.
-	sawn_desc = "A concealed hand blaster, for any situation."
+	extra_damage = 1
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
 	if(sawn_off)
@@ -189,7 +191,7 @@
 		icon_state = "[initial(icon_state)]"
 
 
-//Police Shotgun							Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail
+//Police Shotgun				Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
@@ -198,14 +200,12 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
-	extra_damage = 1
 	recoil = 0.5
 	var/stock = FALSE
 	can_flashlight = TRUE
 	gunlight_state = "flightangle"
 	flight_x_offset = 23
 	flight_y_offset = 21
-
 
 /obj/item/gun/ballistic/shotgun/police/AltClick(mob/living/user)
 	. = ..()
@@ -235,7 +235,7 @@
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
 
 
-//Trench shotgun							Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +1
+//Trench shotgun					Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +1
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -275,7 +275,7 @@
 			select = 0
 			burst_size = 1
 			spread = 2
-			extra_damage = 2
+			extra_damage = 1
 			to_chat(user, "<span class='notice'>You go back to firing the shotgun one round at a time.</span>")
 
 
@@ -302,7 +302,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-//Browning Auto-5							Keywords: Shotgun, Semi-auto, 4 rounds internal
+//Browning Auto-5						Keywords: Shotgun, Semi-auto, 4 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
@@ -312,14 +312,14 @@
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 
-//Lever action shotgun						Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
+//Lever action shotgun					Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
 	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber. Signature weapon of the Legion."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	extra_damage = 2
+	extra_damage = 1
 	fire_delay = 7
 	recoil = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
@@ -331,7 +331,7 @@
 	knife_y_offset = 23
 
 
-//Neostead 2000								Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
+//Neostead 2000							Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
 	name = "Neostead 2000"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
@@ -373,7 +373,7 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer					Keywords: Shotgun, Semi-auto, 12 rounds internal
+//Winchester City-Killer				Keywords: Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
 	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
@@ -385,7 +385,7 @@
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 
-//Riot shotgun								Keywords: Shotgun, Semi-auto, 12 round magazine, Pistol grip
+//Riot shotgun							Keywords: Shotgun, Semi-auto, 12 round magazine, Pistol grip
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "Riot shotgun"
 	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."
@@ -395,6 +395,7 @@
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot" 
 	w_class = WEIGHT_CLASS_BULKY
+	untinkerable = TRUE
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_delay = 6
 	burst_size = 1
