@@ -957,7 +957,7 @@
 	desc = "(II) A simple grey cowboy hat."
 	icon_state = "ranger_grey_hat"
 	item_state = "ranger_grey_hat"
-	armor = list("tier" = 2, "energy" = 25, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = list("tier" = 2, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
 	
 /obj/item/clothing/head/f13/ranger_hat/banded
