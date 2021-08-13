@@ -697,19 +697,20 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
 		)
-
 
 /datum/outfit/loadout/provisioner
 	name = "Provisioner"
 	neck = /obj/item/clothing/neck/scarf/cptpatriot
 	suit = /obj/item/clothing/suit/jacket/miljacket
+	neck = /obj/item/clothing/ears/headphones
 	uniform = /obj/item/clothing/under/f13/merca
 	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1)
+	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
+	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+	/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+	)
 
 /datum/outfit/loadout/bum
 	name = "Bum"
@@ -718,7 +719,10 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/rag
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/f13/rag
-	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 1)
+	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun = 1,
+	/obj/item/twohanded/spear/scrapspear = 1,
+	)
 
 /datum/outfit/loadout/properlady
 	name = "Proper Lady"
@@ -726,7 +730,10 @@ Mayor
 	suit = /obj/item/clothing/under/sailordress
 	gloves = /obj/item/clothing/gloves/f13/lace
 	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/wine = 1)
+	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/champagne = 1,
+	/obj/item/gun/ballistic/revolver/police = 1,
+	/obj/item/ammo_box/c38 = 2,
+	)
 
 /datum/outfit/loadout/propergent
 	name = "Respectable Gent"
@@ -734,18 +741,48 @@ Mayor
 	suit = /obj/item/clothing/suit/f13/cowboybvest
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/storage/box/matches = 1, /obj/item/storage/fancy/cigarettes/cigars = 1)
+	backpack_contents = list(/obj/item/storage/box/matches = 1,
+	/obj/item/storage/fancy/cigarettes/cigars = 1,
+	/obj/item/gun/ballistic/revolver/widowmaker = 1,
+	/obj/item/ammo_box/shotgun/improvised = 2,
+	)
 
 /datum/outfit/loadout/hombre
 	name = "Hombre"
 	head = /obj/item/clothing/head/f13/cowboy
 	suit = /obj/item/clothing/suit/f13/duster
 	uniform = /obj/item/clothing/under/f13/cowboyb
+	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	gloves = /obj/item/clothing/gloves/f13/leather
 	shoes = /obj/item/clothing/shoes/f13/cowboy
-	backpack_contents = list()
-
-
+	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
+	)
+	
+/datum/outfit/loadout/secretary 
+	name = "Secretary"
+	uniform = /obj/item/clothing/under/suit/black
+	glasses = /obj/item/clothing/glasses/regular/hipster
+	shoes = /obj/item/clothing/shoes/laceup
+	r_hand = /obj/item/storage/briefcase
+	backpack_contents = list(/obj/item/pen = 1,
+	/obj/item/clipboard = 1,
+	/obj/item/paper_bin/bundlenatural = 1,
+	/obj/item/clothing/under/suit/black/skirt = 1,
+	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
+	/obj/item/ammo_box/magazine/m22 = 2,
+	)
+	///placeholder until a proper secretary role is added
+	
+/datum/outfit/loadout/singer
+	name = "Saloon Singer"
+	shoes = /obj/item/clothing/shoes/laceup
+	backpack_contents = list(/obj/item/clothing/under/f13/classdress = 1,
+	/obj/item/clothing/under/suit/black_really = 1,
+	/obj/item/clothing/gloves/evening = 1,
+	/obj/item/clothing/gloves/color/white = 1,
+	/obj/item/melee/unarmed/brass = 1,
+	)
+	
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
