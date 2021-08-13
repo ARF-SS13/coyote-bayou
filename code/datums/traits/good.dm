@@ -41,11 +41,13 @@
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, TRAIT_TRIBAL)
+	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
-	REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, TRAIT_TRIBAL)
+	REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 	
 /datum/quirk/apathetic
