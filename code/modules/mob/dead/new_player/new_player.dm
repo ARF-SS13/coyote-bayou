@@ -84,16 +84,13 @@
 			SELECT id FROM [format_table_name("poll_question")]
 			WHERE (adminonly = 0 OR :isadmin = 1)
 			AND Now() BETWEEN starttime AND endtime
-			AND deleted = 0
 			AND id NOT IN (
 				SELECT pollid FROM [format_table_name("poll_vote")]
 				WHERE ckey = :ckey
-				AND deleted = 0
 			)
 			AND id NOT IN (
 				SELECT pollid FROM [format_table_name("poll_textreply")]
 				WHERE ckey = :ckey
-				AND deleted = 0
 			)
 		"}, list("isadmin" = isadmin, "ckey" = ckey))
 		var/rs = REF(src)
