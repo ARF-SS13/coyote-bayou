@@ -212,22 +212,20 @@ Mayor
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/c38 = 3,
-		/obj/item/melee/classic_baton = 1,
+		/obj/item/flashlight/seclite = 1,
 		)
 		
 /datum/outfit/loadout/pmc
 	name = "Private Contractor"
 	uniform = /obj/item/clothing/under/f13/combat/militia
 	suit = /obj/item/clothing/suit/armor/vest/alt
-	head = /obj/item/clothing/head/soft/f13/utility/olive
+	head = /obj/item/clothing/head/helmet
 	r_hand = /obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	belt = /obj/item/melee/onehanded/knife/switchblade
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/clothing/head/helmet = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
 		)
-	
 	
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -669,6 +667,8 @@ Mayor
 		/datum/outfit/loadout/properlady,
 		/datum/outfit/loadout/propergent,
 		/datum/outfit/loadout/hombre,
+		/datum/outfit/loadout/secretary,
+		/datum/outfit/loadout/singer,
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
