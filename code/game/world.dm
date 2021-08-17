@@ -292,7 +292,7 @@ GLOBAL_LIST(topic_status_cache)
 	if (!GLOB.enter_allowed)
 		features += "closed"*/
 
-	var/s = ""
+	var/list/s = list()
 	var/hostedby
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
@@ -307,8 +307,8 @@ GLOBAL_LIST(topic_status_cache)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/a5Nb6vgVcG\">" //Change this to wherever you want the hub to link to. CIT CHANGE - links to cit's website on the hub
-	s += "F13 Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version. CIT CHANGE - modifies the hub entry link
+	s += "<a href=\"https://discord.gg/fortuna13\">" //Change this to wherever you want the hub to link to. CIT CHANGE - links to cit's website on the hub
+	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version. CIT CHANGE - modifies the hub entry link
 	s += "</a>"
 	s += ")\]" //CIT CHANGE - encloses the server title in brackets to make the hub entry fancier
 	s += "<br>[CONFIG_GET(string/servertagline)]<br>" //CIT CHANGE - adds a tagline!
@@ -332,7 +332,7 @@ GLOBAL_LIST(topic_status_cache)
 	if (features)
 		s += "\[[jointext(features, ", ")]" //CIT CHANGE - replaces the colon here with a left bracket
 
-	status = s
+	status = s.Join()
 
 /world/proc/update_hub_visibility(new_visibility)
 	if(new_visibility == GLOB.hub_visibility)
