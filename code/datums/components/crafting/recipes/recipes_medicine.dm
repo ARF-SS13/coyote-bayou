@@ -119,8 +119,8 @@
 /datum/crafting_recipe/jet
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
-	reqs = list(/obj/item/clothing/mask/cigarette = 2,
-				/datum/reagent/consumable/soymilk = 15,
+	reqs = list(/obj/item/clothing/mask/cigarette = 1,
+				/datum/reagent/consumable/milk = 10,
 				/obj/item/toy/crayon/spraycan = 1)
 	time = 35
 	tools = list(TOOL_WORKBENCH)
