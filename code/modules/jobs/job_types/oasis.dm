@@ -187,7 +187,7 @@ Mayor
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/storage/belt/holster = 1,
 		)
-		
+
 /datum/outfit/loadout/frontierjustice
 	name = "Frontier Justice"
 	suit = /obj/item/clothing/suit/armor/f13/town/deputy
@@ -199,7 +199,7 @@ Mayor
 		/obj/item/ammo_box/tube/m44 = 2,
 		/obj/item/ammo_box/m44 = 2,
 		)
-		
+
 /datum/outfit/loadout/police
 	name = "Oasis PD"
 	uniform = /obj/item/clothing/under/f13/police
@@ -214,7 +214,7 @@ Mayor
 		/obj/item/ammo_box/c38 = 3,
 		/obj/item/flashlight/seclite = 1,
 		)
-		
+
 /datum/outfit/loadout/pmc
 	name = "Private Contractor"
 	uniform = /obj/item/clothing/under/f13/combat/militia
@@ -226,7 +226,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
 		)
-	
+
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -757,8 +757,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
 	)
-	
-/datum/outfit/loadout/secretary 
+
+/datum/outfit/loadout/secretary
 	name = "Secretary"
 	uniform = /obj/item/clothing/under/suit/black
 	glasses = /obj/item/clothing/glasses/regular/hipster
@@ -772,7 +772,7 @@ Mayor
 	/obj/item/ammo_box/magazine/m22 = 2,
 	)
 	///placeholder until a proper secretary role is added
-	
+
 /datum/outfit/loadout/singer
 	name = "Saloon Singer"
 	shoes = /obj/item/clothing/shoes/laceup
@@ -782,7 +782,7 @@ Mayor
 	/obj/item/clothing/gloves/color/white = 1,
 	/obj/item/melee/unarmed/brass = 1,
 	)
-	
+
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
@@ -968,7 +968,6 @@ Mayor
 		return
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

@@ -247,7 +247,6 @@ ATTACHMENTS
 	var/dualwield_spread_mult = 1		//dualwield spread multiplier
 
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
-	//var/tinkered = 0
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 //	var/projectile_damage_multiplier = 1
 

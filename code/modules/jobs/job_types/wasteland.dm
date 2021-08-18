@@ -143,7 +143,6 @@
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
 
 
@@ -899,7 +898,6 @@ Raider
 
 /datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H)
 	..()
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 

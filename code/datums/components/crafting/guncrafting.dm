@@ -83,7 +83,7 @@
 		return ..()
 	if(istype(W,/obj/item/salvage))
 		var/obj/item/salvage/S = W
-		if(do_after(user,25,target = src))		
+		if(do_after(user,25,target = src))
 			if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
 				var/obj/I = pick(S.Loot)
 				new I (src.loc)
@@ -127,10 +127,7 @@
 
 /obj/machinery/workbench/fbench/attackby(obj/item/W, mob/user, params)//todo me
 //	var/mob/living/carbon/human/H = usr
-	if (istype(W, /obj/item/stack/sheet/prewar) && !HAS_TRAIT(usr, TRAIT_MASTER_GUNSMITH))
-		to_chat(usr,"You have no clue as to how to work this material.")
-		return
-	else if(istype(W, /obj/item/screwdriver) && mould)
+	if(istype(W, /obj/item/screwdriver) && mould)
 		var/obj/item/prefabs/mould/B = mould
 		B.forceMove(src.loc)
 		mould = null

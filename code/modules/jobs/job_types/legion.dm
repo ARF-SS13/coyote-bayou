@@ -596,7 +596,7 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
@@ -959,7 +959,6 @@ commented out pending rework*/
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gladius)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/spatha)
@@ -987,7 +986,7 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(
-		/datum/outfit/loadout/auxassist, // Tinker and keep track of the money, handle trading beneath the warriors
+		/datum/outfit/loadout/auxassist, // Keep track of the money, handle trading beneath the warriors
 		/datum/outfit/loadout/auxmedicus, // Do surgery, medical tasks.
 		)
 
@@ -1035,7 +1034,6 @@ commented out pending rework*/
 		/obj/item/pen/fountain = 1,
 		/obj/item/storage/bag/money/small/legion = 1,
 		/obj/item/taperecorder = 1,
-		/obj/item/book/granter/trait/tinkering = 1,
 		)
 
 /datum/outfit/loadout/auxmedicus

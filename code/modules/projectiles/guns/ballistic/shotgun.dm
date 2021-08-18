@@ -30,7 +30,6 @@
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
-	untinkerable = TRUE //no tinkering shotguns, bad.
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 
@@ -111,7 +110,6 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 0.5
 	extra_damage = 1
-	untinkerable = TRUE
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
@@ -145,7 +143,6 @@
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	untinkerable = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 1
@@ -393,9 +390,8 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunriot"
-	item_state = "shotgunriot" 
+	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
-	untinkerable = TRUE
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	fire_delay = 6
 	burst_size = 1

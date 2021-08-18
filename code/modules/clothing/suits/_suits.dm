@@ -16,8 +16,6 @@
 	var/mutable_appearance/accessory_overlay
 	var/dummy_thick = FALSE // is able to hold accessories on its item
 
-	//var/tinkered = 0
-
 /obj/item/clothing/suit/Initialize()
 	. = ..()
 	if(!allowed)

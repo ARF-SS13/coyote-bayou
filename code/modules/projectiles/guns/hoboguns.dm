@@ -82,7 +82,7 @@
 
 
 //Pipe rifle (add multi calibre options)				Keywords: .223, 1 round internal, Extra damage +6
-/obj/item/gun/ballistic/revolver/hobo/piperifle				
+/obj/item/gun/ballistic/revolver/hobo/piperifle
 	name = "pipe rifle (.223)"
 	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
 	icon_state = "piperifle"
@@ -151,7 +151,7 @@
 
 
 //Knife gun. Or maybe gunknife.			Keywords: .44, 1 round internal, Extra damage +5, Melee damage, Bootgun
-/obj/item/gun/ballistic/revolver/hobo/knifegun				
+/obj/item/gun/ballistic/revolver/hobo/knifegun
 	name = "knife gun (.44)"
 	desc = "Someone thought, whats better than a knife? A knife that can shoot a bullet from its handle, that's what. It's doubtful if its true but it´s here so might as well use it."
 	icon_state = "knifegun"
@@ -167,7 +167,7 @@
 
 
 //Knucklegun											Keywords: .38, 3 rounds internal, Extra damage +2, Melee damage
-/obj/item/gun/ballistic/revolver/hobo/knucklegun				
+/obj/item/gun/ballistic/revolver/hobo/knucklegun
 	name = "knucklegun (.38)"
 	desc = "An attempt to combine a knuckleduster and four short gun barrels. Does not work as a ballistic fist, be happy if it doesn't explode and take your fingers off."
 	icon_state = "knucklegun"
@@ -269,7 +269,6 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
-	untinkerable = TRUE
 	semi_auto = FALSE
 
 
@@ -326,4 +325,4 @@
 	else if(!magazine || !magazine.ammo_count(0))
 		icon_state = "[initial(icon_state)]-e"
 	else
-		icon_state = "[initial(icon_state)]"	
+		icon_state = "[initial(icon_state)]"

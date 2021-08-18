@@ -70,24 +70,6 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_SCAVENGING
 
-/datum/crafting_recipe/experimental
-	name = "Tinker"
-	result = /obj/item/experimental
-	time = 30
-	reqs = list(/obj/item/crafting = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
-
-/datum/crafting_recipe/experimentalinvent
-	name = "Invent"
-	result = /obj/item/invention
-	time = 30
-	reqs = list(/obj/item/crafting = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
-
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
 	result = /obj/item/stack/sheet/cloth/three
@@ -111,8 +93,6 @@
 	if (G.no_pin_required || !G.pin)
 		return FALSE
 	return TRUE
-
-
 
 //////////////////////
 //Burial & Execution//

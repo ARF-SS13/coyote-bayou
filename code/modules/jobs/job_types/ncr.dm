@@ -189,7 +189,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/ncr/CPT
 	mask = /obj/item/clothing/mask/cigarette/pipe
 	neck = /obj/item/storage/belt/holster/legholster
-	r_pocket = /obj/item/binoculars	
+	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/megaphone = 1,
@@ -976,7 +976,6 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
 /datum/outfit/job/ncr/f13logisticsofficer		// Rockwell, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
@@ -1020,7 +1019,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13rearechelon
 
 	loadout_options = list( // ALL: Very limited blueprints
-		/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool, Tinkering, 
+		/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool
 		/datum/outfit/loadout/reartech, // Hunting shotgun, Survival knife, Toolbelt, Metal detector, Salvaging
 		/datum/outfit/loadout/rearcorps, // 9mm sidearm, Survival knife, Chemistry
 		/datum/outfit/loadout/offduty, // 9mm sidearm, Bayonet
@@ -1033,7 +1032,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	accessory =	/obj/item/clothing/accessory/ncr/TPR
 	head = /obj/item/clothing/head/f13/ncr_cap
 	suit = null
-	belt = null	
+	belt = null
 
 /datum/outfit/job/ncr/f13rearechelon/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -1044,13 +1043,12 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/servicerifle)
 
-// Logistics soldier	Tinkering
+// Logistics soldier
 /datum/outfit/loadout/rearlog
 	name = "Logistics"
 	suit = /obj/item/clothing/suit/armor/f13/utilityvest
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
-		/obj/item/book/granter/trait/tinkering = 1,
 		/obj/item/gun/ballistic/rifle/mag/varmint = 1,
 		/obj/item/ammo_box/magazine/m556/rifle/small = 2,
 		/obj/item/shovel/trench = 1,

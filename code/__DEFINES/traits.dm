@@ -269,7 +269,6 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two"
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three"
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four"
-#define TRAIT_MASTER_GUNSMITH   "master_gunsmith"
 
 
 //non-mob traits

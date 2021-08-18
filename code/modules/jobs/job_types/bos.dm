@@ -222,7 +222,6 @@ Head Scribe
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
@@ -241,7 +240,7 @@ Head Scribe
 
 /datum/outfit/loadout/hsstand
 	name = "Medicinal Expert"
-	backpack_contents = list(	
+	backpack_contents = list(
 		/obj/item/gun/medbeam = 1,
 		/obj/item/reagent_containers/hypospray/CMO = 1,
 		)
@@ -569,7 +568,6 @@ Senior Scribe
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/bos/f13seniorscribe
 	name =	"Senior Scribe"
@@ -637,7 +635,6 @@ Scribe
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-	ADD_TRAIT(H, TRAIT_MASTER_GUNSMITH, src)
 
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
@@ -732,7 +729,7 @@ Senior Knight
 		/obj/item/melee/onehanded/knife/hunting=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
 		)
-	
+
 /datum/outfit/loadout/sknighta
 	name = "Footknight"
 	backpack_contents = list(
@@ -769,7 +766,7 @@ Knight
 
 	loadout_options = list(
 	/datum/outfit/loadout/knighta, //AER9
-	/datum/outfit/loadout/knightb, //R82 
+	/datum/outfit/loadout/knightb, //R82
 	/datum/outfit/loadout/knightc,
 	/datum/outfit/loadout/knightd
 	)

@@ -46,7 +46,6 @@
 	armour_penetration = 0.45
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	untinkerable = TRUE
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = NEEDS_PERMIT //doesn't slow you down
@@ -81,7 +80,7 @@
 // ADVANCED SWORDS //
 /////////////////////
 
-// Ripper				Keywords: Damage 10/45, Wound bonus, block		
+// Ripper				Keywords: Damage 10/45, Wound bonus, block
 /obj/item/melee/powered/ripper
 	name = "ripper"
 	desc = "The Ripper™ vibroblade is powered by a small energy cell wich allows it to easily cut through flesh and bone."
@@ -244,7 +243,7 @@
 	..()
 	remove_sword()
 
-// Shishkebab sword				Keywords: Damage 55 (fire), Tool welder	
+// Shishkebab sword				Keywords: Damage 55 (fire), Tool welder
 /obj/item/weapon/melee/shishkebab //This should never exist without the backpack.
 	name = "shishkebab"
 	desc = "A deadly flaming sword covered in fuel. You're not sure this is entirely safe."

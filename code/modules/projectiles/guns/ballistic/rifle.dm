@@ -21,7 +21,7 @@
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
 	can_automatic = FALSE
-	slowdown = 0.5 
+	slowdown = 0.5
 	fire_delay = 7
 	spread = 0
 	force = 15 //Decent clubs generally speaking
@@ -184,9 +184,8 @@
 	fire_delay = 12
 	extra_damage = 9
 	extra_penetration = 0.05
-	extra_speed = 800 
+	extra_speed = 800
 	force = 18
-	untinkerable = TRUE
 
 /obj/item/gun/ballistic/rifle/hunting/remington/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
