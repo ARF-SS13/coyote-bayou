@@ -15,4 +15,4 @@
 /obj/item/examine(mob/user)
 	. = ..()
 	if(istype(components))
-		. += SPAN_NOTICE("It seems it can be <b>disassembled</b>.")
+		. += span_notice("It seems it can be <b>disassembled</b>.")

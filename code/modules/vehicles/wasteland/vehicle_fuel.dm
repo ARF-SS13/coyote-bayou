@@ -62,7 +62,7 @@
 	set category = "Object"
 	set src in view(1)
 	fuel_holder.inside = !fuel_holder.inside
-	to_chat(usr, SPAN_NOTICE("You changed transfer type."))
+	to_chat(usr, span_notice("You changed transfer type."))
 
 /obj/vehicle/ridden/fuel/examine(mob/user)
 	. = ..()
@@ -70,15 +70,15 @@
 		var/fuel_percent = fuel_holder.reagents.total_volume / fuel_holder.reagents.maximum_volume * 100
 		switch(fuel_percent)
 			if(95 to INFINITY)
-				. += SPAN_NOTICE("Fuel meter shows 100% ! The fuel tank is full to the top. Let's ride!")
+				. += span_notice("Fuel meter shows 100% ! The fuel tank is full to the top. Let's ride!")
 			if(60 to 95)
-				. += SPAN_NOTICE("Fuel meter shows 75% ! Not so full, but it'll still last a while.")
+				. += span_notice("Fuel meter shows 75% ! Not so full, but it'll still last a while.")
 			if(25 to 60)
-				. += SPAN_NOTICE("Fuel meter shows 50% ! That should be just enough to find more fuel.")
+				. += span_notice("Fuel meter shows 50% ! That should be just enough to find more fuel.")
 			if(1 to 25)
-				. += SPAN_WARNING("Fuel meter shows 25% ! It's almost out of fuel!")
+				. += span_warning("Fuel meter shows 25% ! It's almost out of fuel!")
 			else
-				. += SPAN_DANGER("Fuel meter shows 0% ! There is no fuel left!")
+				. += span_danger("Fuel meter shows 0% ! There is no fuel left!")
 
 
 

@@ -112,7 +112,7 @@
 
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
 		RegisterSignal(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
-		pellets += shell.BB
+		LAZYADD(pellets, shell.BB)
 		if(!shell.throw_proj(target, targloc, shooter, params, spread))
 			return
 		if(i != num_pellets)
@@ -167,7 +167,7 @@
 			for(var/i in 1 to radius * self_harm_radius_mult)
 				pew(body) // free shrapnel if it goes off in your hand, and it doesn't even count towards the absorbed. fun!
 		else if(!(body in bodies))
-			martyrs += body // promoted from a corpse to a hero
+			LAZYADD(martyrs, body) // promoted from a corpse to a hero
 
 	for(var/M in martyrs)
 		var/mob/living/martyr = M
@@ -197,7 +197,7 @@
 
 ///One of our pellets hit something, record what it was and check if we're done (terminated == num_pellets)
 /datum/component/pellet_cloud/proc/pellet_hit(obj/item/projectile/P, atom/movable/firer, atom/target, Angle, hit_zone)
-	pellets -= P
+	LAZYREMOVE(pellets, P)
 	terminated++
 	hits++
 	var/obj/item/bodypart/hit_part
@@ -225,7 +225,7 @@
 
 ///One of our pellets disappeared due to hitting their max range (or just somehow got qdel'd), remove it from our list and check if we're done (terminated == num_pellets)
 /datum/component/pellet_cloud/proc/pellet_range(obj/item/projectile/P)
-	pellets -= P
+	LAZYREMOVE(pellets, P)
 	terminated++
 	UnregisterSignal(P, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
 	if(terminated == num_pellets)
@@ -240,12 +240,12 @@
 	P.original = target
 	P.fired_from = parent
 	P.firer = parent // don't hit ourself that would be really annoying
-	P.permutated += parent // don't hit the target we hit already with the flak
+	LAZYADD(P.permutated, parent) // don't hit the target we hit already with the flak
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
 	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
 	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
-	pellets += P
+	LAZYADD(pellets, P)
 	P.fire()
 
 ///All of our pellets are accounted for, time to go target by target and tell them how many things they got hit by.
@@ -297,11 +297,11 @@
 	LAZYCLEARLIST(bodies)
 	for(var/mob/living/L in get_turf(parent))
 		RegisterSignal(L, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
-		bodies += L
+		LAZYADD(bodies, L)
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
 /datum/component/pellet_cloud/proc/grenade_uncrossed(datum/source, atom/movable/AM)
-	bodies -= AM
+	LAZYREMOVE(bodies, AM)
 
 /// Our grenade or landmine or caseless shell or whatever tried deleting itself, so we intervene and nullspace it until we're done here
 /datum/component/pellet_cloud/proc/nullspace_parent()
@@ -313,9 +313,9 @@
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
 /datum/component/pellet_cloud/proc/on_target_qdel(atom/target)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
-	targets_hit -= target
-	bodies -= target
-	purple_hearts -= target
+	LAZYREMOVE(targets_hit, target)
+	LAZYREMOVE(bodies, target)
+	LAZYREMOVE(purple_hearts, target)
 
 #undef CLOUD_POSITION_DAMAGE
 #undef CLOUD_POSITION_W_BONUS

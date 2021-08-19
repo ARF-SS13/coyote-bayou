@@ -18,7 +18,7 @@
 
 /obj/structure/barricade/wooden/planks/examine()
 	. = ..()
-	. += SPAN_NOTICE("There are [planks] boards left.")
+	. += span_notice("There are [planks] boards left.")
 
 /obj/structure/barricade/wooden/planks/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crowbar))

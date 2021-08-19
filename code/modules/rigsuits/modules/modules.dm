@@ -59,11 +59,11 @@
 	. = ..()
 	switch(damage)
 		if(0)
-			. += SPAN_NOTICE("It is undamaged.")
+			. += span_notice("It is undamaged.")
 		if(1)
-			. += SPAN_NOTICE("It is badly damaged.")
+			. += span_notice("It is badly damaged.")
 		if(2)
-			. += SPAN_NOTICE("It is almost completely destroyed.")
+			. += span_notice("It is almost completely destroyed.")
 
 /obj/item/rig_module/attackby(obj/item/W as obj, mob/user as mob)
 	/*

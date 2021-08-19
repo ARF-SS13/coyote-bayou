@@ -22,11 +22,11 @@
 	. = ..()
 
 /obj/structure/table/booth/deconstruction_hints(mob/user)
-	return SPAN_NOTICE("The top is panelled together and could likely be taken apart with a crowbar.")
+	return span_notice("The top is panelled together and could likely be taken apart with a crowbar.")
 
 /obj/structure/table/booth/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crowbar) && deconstruction_ready)
-		to_chat(user, SPAN_NOTICE("You start deconstructing [src]..."))
+		to_chat(user, span_notice("You start deconstructing [src]..."))
 		if(I.use_tool(src, user, 40, volume=50))
 			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 			deconstruct(TRUE)

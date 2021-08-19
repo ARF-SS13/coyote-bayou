@@ -315,19 +315,19 @@
 
 /obj/item/warpaint_bowl/attack(mob/living/M, mob/living/user, attackchain_flags, damage_multiplier)
 	if(!paint_type || !paint_color)
-		to_chat(user, SPAN_WARNING("You need to select a style first!"))
+		to_chat(user, span_warning("You need to select a style first!"))
 		return
 	if(!user.Adjacent(M) || !ishuman(M))
 		return ..()
 	var/mob/living/carbon/human/H = M
 	if((H.warpaint == paint_type) && (H.warpaint_color == paint_color))
-		to_chat(user, SPAN_WARNING("[H] is already painted with this style!"))
+		to_chat(user, span_warning("[H] is already painted with this style!"))
 		return
 
-	user.visible_message(SPAN_NOTICE("[user] starts painting [H] with [src]."), SPAN_NOTICE("You start painting [H] with [src]."))
+	user.visible_message(span_notice("[user] starts painting [H] with [src]."), span_notice("You start painting [H] with [src]."))
 	if(!do_mob(user, H, 10 SECONDS))
 		return
-	user.visible_message(SPAN_NOTICE("[user] applies warpaint onto [H]."), SPAN_NOTICE("You apply warpaint onto [H]."))
+	user.visible_message(span_notice("[user] applies warpaint onto [H]."), span_notice("You apply warpaint onto [H]."))
 
 	H.warpaint = paint_type
 	H.warpaint_color = paint_color

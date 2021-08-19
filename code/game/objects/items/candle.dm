@@ -149,11 +149,11 @@
 		return
 	var/turf/user_turf = get_turf(user)
 	if(gotwallitem(user_turf, ndir, 2))
-		to_chat(user, SPAN_WARNING("There's already an item on this wall!"))
+		to_chat(user, span_warning("There's already an item on this wall!"))
 		return
 	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("[user.name] attaches [src] to the wall.",
-		SPAN_NOTICE("You attach [src] to the wall."),
+		span_notice("You attach [src] to the wall."),
 		"<span class='italics'>You hear clicking.</span>")
 	var/type_to_make = lit ? /obj/structure/destructible/tribal_torch/wall/lit : /obj/structure/destructible/tribal_torch/wall
 	var/obj/structure/destructible/tribal_torch/wall/wall_torch = new type_to_make (user_turf)

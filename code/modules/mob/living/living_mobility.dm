@@ -48,9 +48,11 @@
 			if(istype(src.get_item_by_slot(SLOT_WEAR_SUIT),/obj/item/clothing/suit/armor/f13/power_armor))
 				to_chat(src, "<span class='notice'>You cannot lie down in that heavy armor!</span>")
 				return
-			if(do_after(src,20))
+			if(do_after(src,2 SECONDS,src))
 				set_resting(TRUE, FALSE)
 				drop_all_held_items()
+			else
+				resist_a_rest()
 		else
 			resist_a_rest()
 	else

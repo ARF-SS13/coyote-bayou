@@ -332,7 +332,7 @@
 			if(result)
 				SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Species Change", "[result]"))
 				log_admin("[key_name(usr)] turned all humans into [result]", 1)
-				message_admins(SPAN_NOTICE("[key_name_admin(usr)] turned all humans into [result]"))
+				message_admins(span_notice("[key_name_admin(usr)] turned all humans into [result]"))
 				var/newtype = GLOB.species_list[result]
 				for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 					H.set_species(newtype)

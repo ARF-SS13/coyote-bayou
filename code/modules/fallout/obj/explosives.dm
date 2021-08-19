@@ -73,4 +73,4 @@
 
 /obj/item/bottlecap_mine/examine(mob/user)
 	. = ..()
-	. += SPAN_WARNING("It seems activated!")
+	. += span_warning("It seems activated!")

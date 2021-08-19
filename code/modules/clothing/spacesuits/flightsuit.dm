@@ -800,9 +800,9 @@
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/examine(mob/user)
 	. = ..()
-	. += SPAN_NOTICE("<b>SUIT: [locked ? "LOCKED" : "UNLOCKED"]</b>")
-	. += SPAN_NOTICE("<b>FLIGHTPACK: [deployedpack ? "ENGAGED" : "DISENGAGED"] FLIGHTSHOES : [deployedshoes ? "ENGAGED" : "DISENGAGED"] HELMET : [suittoggled ? "ENGAGED" : "DISENGAGED"]</b>")
-	. += SPAN_NOTICE("<b>Its maintainence panel is [maint_panel ? "OPEN" : "CLOSED"]</b>")
+	. += span_notice("<b>SUIT: [locked ? "LOCKED" : "UNLOCKED"]</b>")
+	. += span_notice("<b>FLIGHTPACK: [deployedpack ? "ENGAGED" : "DISENGAGED"] FLIGHTSHOES : [deployedshoes ? "ENGAGED" : "DISENGAGED"] HELMET : [suittoggled ? "ENGAGED" : "DISENGAGED"]</b>")
+	. += span_notice("<b>Its maintainence panel is [maint_panel ? "OPEN" : "CLOSED"]</b>")
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/Destroy()
 	dropped()

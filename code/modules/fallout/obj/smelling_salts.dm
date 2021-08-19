@@ -32,19 +32,19 @@
 		to_chat(user, "<span class='warning'>They are not ready smell something so pungent yet, I should wait a moment.</span>")
 		return
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, SPAN_WARNING("You don't know how to use [src]!"))
+		to_chat(user, span_warning("You don't know how to use [src]!"))
 		return
 	if(!iscarbon(target))
-		to_chat(user, SPAN_WARNING("Do smelling salts even work on that?"))
+		to_chat(user, span_warning("Do smelling salts even work on that?"))
 		return
 	var/mob/living/carbon/target_carbon = target
 
 	if(user.zone_selected != BODY_ZONE_PRECISE_MOUTH && user.zone_selected != BODY_ZONE_HEAD)
-		to_chat(user, SPAN_WARNING("[target_carbon] has to smell [src] to be revived, hold it up to their face!"))
+		to_chat(user, span_warning("[target_carbon] has to smell [src] to be revived, hold it up to their face!"))
 		return
 
 	if((target_carbon.head?.flags_cover & HEADCOVERSMOUTH) || (target_carbon.wear_mask?.flags_cover & MASKCOVERSMOUTH))
-		to_chat(user, SPAN_NOTICE("You're going to need to remove that [(target_carbon.head?.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] first."))
+		to_chat(user, span_notice("You're going to need to remove that [(target_carbon.head?.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] first."))
 		return
 
 	else if(can_revive(target_carbon))
@@ -53,7 +53,7 @@
 	do_revive(target_carbon, user)
 	charges--
 	if(charges <= 0)
-		to_chat(user, SPAN_NOTICE("[src] is now empty and useless; you throw it away."))
+		to_chat(user, span_notice("[src] is now empty and useless; you throw it away."))
 		qdel(src)
 
 /obj/item/smelling_salts/proc/can_revive(mob/living/carbon/T)
@@ -77,7 +77,7 @@
 	if(!do_after(user, time_to_use, target = revived_mob))
 		in_use = FALSE
 		return
-	user.visible_message(SPAN_NOTICE("[user] starts waving [src] under [revived_mob]'s nose."), SPAN_WARNING("You wave [src] under [revived_mob]'s nose."))
+	user.visible_message(span_notice("[user] starts waving [src] under [revived_mob]'s nose."), span_warning("You wave [src] under [revived_mob]'s nose."))
 	var/time_since_death = world.time - revived_mob.timeofdeath
 	// past this much time the patient is unrecoverable
 	// (in deciseconds)
@@ -89,7 +89,7 @@
 		in_use = FALSE
 		return
 	if((revived_mob.head?.flags_cover & HEADCOVERSMOUTH) || (revived_mob.wear_mask?.flags_cover & MASKCOVERSMOUTH)) // should've been checked prior, so it must've been put on during the pause
-		to_chat(user, SPAN_NOTICE("You're going to need to remove that [(revived_mob.head?.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] again."))
+		to_chat(user, span_notice("You're going to need to remove that [(revived_mob.head?.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] again."))
 		in_use = FALSE
 		return
 	if(revived_mob.stat != DEAD)
@@ -100,12 +100,12 @@
 	total_burn	= revived_mob.getFireLoss()
 
 	if (!can_revive(revived_mob))
-		revived_mob.visible_message(SPAN_WARNING("[revived_mob] doesn't respond..."))
+		revived_mob.visible_message(span_warning("[revived_mob] doesn't respond..."))
 		in_use = FALSE
 		return
 	else if(revived_mob.get_ghost())
-		revived_mob.visible_message(SPAN_WARNING("[revived_mob] gasps, but doesn't stir yet."))
-		to_chat(user, SPAN_NOTICE("Perhaps they need another dose?"))
+		revived_mob.visible_message(span_warning("[revived_mob] gasps, but doesn't stir yet."))
+		to_chat(user, span_notice("Perhaps they need another dose?"))
 		in_use = FALSE
 		return
 	//If the body has been fixed so that they would not be in crit when revived, give them oxyloss to put them back into crit
@@ -121,7 +121,7 @@
 		revived_mob.adjustFireLoss((mobhealth - threshold) * (total_burn / overall_damage), 0)
 		revived_mob.adjustBruteLoss((mobhealth - threshold) * (total_brute / overall_damage), 0)
 	revived_mob.updatehealth() // Previous "adjust" procs don't update health, so we do it manually.
-	revived_mob.visible_message(SPAN_NOTICE("[revived_mob] gasps and stirs!"), SPAN_NOTICE("You're alive!"))
+	revived_mob.visible_message(span_notice("[revived_mob] gasps and stirs!"), span_notice("You're alive!"))
 	revived_mob.set_heartattack(FALSE) // if you can safely be revived without this, then this should be removed; smelling salts aren't a defib
 	revived_mob.revive()
 	revived_mob.emote("gasp")

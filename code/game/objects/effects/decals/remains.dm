@@ -11,17 +11,17 @@
 	. = ..()
 
 /obj/effect/decal/remains/acid_act()
-	visible_message(SPAN_WARNING("[src] dissolve[gender==PLURAL?"":"s"] into a puddle of sizzling goop!"))
+	visible_message(span_warning("[src] dissolve[gender==PLURAL?"":"s"] into a puddle of sizzling goop!"))
 	playsound(src, 'sound/items/welder.ogg', 150, 1)
 	new /obj/effect/decal/cleanable/greenglow(drop_location())
 	qdel(src)
 
 /obj/effect/decal/remains/attack_hand(mob/user)
-	visible_message(SPAN_NOTICE("[user] begins to pick through [src]."))
+	visible_message(span_notice("[user] begins to pick through [src]."))
 	if(do_after(user, 40, target = src))
 		var/atom/find = make_debris()
 		if(find)
-			to_chat(user, SPAN_NOTICE("You find \a [find] in [src]!"))
+			to_chat(user, span_notice("You find \a [find] in [src]!"))
 			if(drop_amount == 0)
 				qdel(src)
 				return
@@ -34,12 +34,12 @@
 	return new type_to_spawn (get_turf(src))
 
 /obj/effect/decal/remains/examine_more()
-	. = list(SPAN_NOTICE("<i>You examine [src] closer, and note the following...</i>"))
+	. = list(span_notice("<i>You examine [src] closer, and note the following...</i>"))
 	if(LAZYLEN(debris_result))
 		var/obj/item/show = pick(debris_result)
-		. += SPAN_NOTICE("You think you can see some [initial(show.name)] in it.")
+		. += span_notice("You think you can see some [initial(show.name)] in it.")
 	if(drop_amount && (drop_amount < initial(drop_amount)))
-		. += SPAN_NOTICE("It looks like it has already been picked through somewhat.")
+		. += span_notice("It looks like it has already been picked through somewhat.")
 	return .
 
 /obj/effect/decal/remains/human

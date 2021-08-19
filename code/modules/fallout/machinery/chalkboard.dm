@@ -24,11 +24,11 @@
 		return
 
 	if(!ishuman(usr))
-		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
+		to_chat(usr, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	if(content)
-		to_chat(usr, SPAN_NOTICE("The board is full! Clean it to write again."))
+		to_chat(usr, span_notice("The board is full! Clean it to write again."))
 		return
 
 	add_fingerprint(usr)
@@ -60,18 +60,18 @@
 
 
 	if(!ishuman(usr))
-		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
+		to_chat(usr, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	if(content)
-		to_chat(usr, SPAN_NOTICE("The board is full! Clean it to write again."))
+		to_chat(usr, span_notice("The board is full! Clean it to write again."))
 		return
 
 	//part wrom paper/write
 	var/t =  input("What do you want to write here? 20 lines or 2000 symbols max.", "Write", null, null) as message
 
 	if(length(t) > 2048)
-		to_chat(usr, SPAN_NOTICE("Your message does not fit in the board!"))
+		to_chat(usr, span_notice("Your message does not fit in the board!"))
 		return
 
 	//t = checkhtml(t)
@@ -83,7 +83,7 @@
 	if(!t)
 		return
 	if(count_occurrences(t, "<BR>") > 20)
-		to_chat(usr, SPAN_NOTICE("You can't write it all on the board!"))
+		to_chat(usr, span_notice("You can't write it all on the board!"))
 		return
 
 	content = t
@@ -104,7 +104,7 @@
 		return
 
 	if(!ishuman(usr))
-		to_chat(usr, SPAN_WARNING("You don't have the dexterity to do this!"))
+		to_chat(usr, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	if(status != CB_WET)

@@ -401,4 +401,4 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(can_charge == 1)
-		. += SPAN_NOTICE("Alt-click to eject the battery.")
+		. += span_notice("Alt-click to eject the battery.")

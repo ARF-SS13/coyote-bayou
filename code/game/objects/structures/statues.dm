@@ -288,9 +288,9 @@
 /obj/structure/statue/wood/headstonewood/examine(mob/user)
 	. = ..()
 	if(Helmet)
-		. += SPAN_NOTICE("It has [Helmet] on it.")
+		. += span_notice("It has [Helmet] on it.")
 	if(Dogtags)
-		. += SPAN_NOTICE("It has [Dogtags] on it.")
+		. += span_notice("It has [Dogtags] on it.")
 
 /obj/structure/statue/wood/headstonewood/Destroy()
 	if(Helmet)

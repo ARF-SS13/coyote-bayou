@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	if(!istype(target, /turf/open/water) && !istype(target, /turf/open/indestructible/ground/outside/water))
 		return ..()
 	if(!(target in range(fish_range, user)))
-		to_chat(current_user, SPAN_WARNING("The line cannot reach that far, move closer!"))
+		to_chat(current_user, span_warning("The line cannot reach that far, move closer!"))
 		return
 	if(inuse)
 		if(current_wait <= world.time && world.time <= current_waitfail)

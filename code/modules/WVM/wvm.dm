@@ -280,7 +280,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 						"<span class='notice'>You start repairing the vending machine.</span>", \
 						"<span class='italics'>You hear welding.</span>")
 		if(OtherItem.use_tool(src, user, 100, volume=50, amount=20))
-			to_chat(user, SPAN_NOTICE("You repair the vending machine."))
+			to_chat(user, span_notice("You repair the vending machine."))
 			stat &= ~BROKEN
 			obj_integrity = max_integrity
 

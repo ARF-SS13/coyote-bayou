@@ -9,7 +9,7 @@
 
 ///proc/handle_roundstart_items(mob/living/M, ckey_override, job_override, special_override)
 //	if(!istype(M) || (!M.ckey && !ckey_override) || (!M.mind && (!job_override || !special_override)))
-//		to_chat(M, SPAN_NOTICE("DEBUG: handle_roundstart_items returned false. ckey: [M.ckey]"))
+//		to_chat(M, span_notice("DEBUG: handle_roundstart_items returned false. ckey: [M.ckey]"))
 //		return FALSE
 
 //	return load_itemlist_to_mob(M, parse_custom_roundstart_items(ckey_override? ckey_override : M.ckey, M.name, job_override? job_override : M.mind.assigned_role, special_override? special_override : M.mind.special_role), TRUE, TRUE, FALSE)
@@ -17,7 +17,7 @@
 //Just incase there's extra mob selections in the future.....
 /proc/handle_roundstart_items(mob/living/L, list/itemlist, drop_on_floor_if_full = TRUE, load_to_all_slots = TRUE, replace_slots = FALSE)
 	if(!istype(L) || !islist(itemlist))
-//		to_chat(L, SPAN_NOTICE("DEBUG: No List of loadout items for this character."))
+//		to_chat(L, span_notice("DEBUG: No List of loadout items for this character."))
 		return FALSE
 	return load_itemlist_to_human(L, itemlist, drop_on_floor_if_full, load_to_all_slots, replace_slots, L)
 
@@ -26,13 +26,13 @@
 		return FALSE
 
 	if (itemlist.len < 1)
-//		to_chat(L, SPAN_NOTICE("DEBUG: No items found for this character/ckey: [H.ckey]"))
+//		to_chat(L, span_notice("DEBUG: No items found for this character/ckey: [H.ckey]"))
 		return FALSE
 
 	spawn(50)
-		to_chat(L, SPAN_NOTICE("-------------------------------------------"))
-		to_chat(L, SPAN_NOTICE("You have custom loadout items!  They are in the box at your feet."))
-		to_chat(L, SPAN_NOTICE("-------------------------------------------"))
+		to_chat(L, span_notice("-------------------------------------------"))
+		to_chat(L, span_notice("You have custom loadout items!  They are in the box at your feet."))
+		to_chat(L, span_notice("-------------------------------------------"))
 
 	var/turf/T = get_turf(H)
 
@@ -42,7 +42,7 @@
 	customloadoutbox.name = "Custom Loadout for [L.name]"
 	customloadoutbox.desc = "Your custom loadout items!"
 	customloadoutbox.w_class = WEIGHT_CLASS_BULKY
-//	to_chat(H, SPAN_NOTICE("You have custom loadout items in the box at your feet.  Don't forget them!"))
+//	to_chat(H, span_notice("You have custom loadout items in the box at your feet.  Don't forget them!"))
 
 	var obj/item/loaded_box = customloadoutbox			  //call it loaded_box
 	loaded_box.forceMove(T)								  //move box to below mob
@@ -81,7 +81,7 @@
 
 /proc/load_custom_items_to_mob_from_db(mob/living/M, list/itemlist)
 	if (itemlist.len < 1)
-		//to_chat(M, SPAN_NOTICE("DEBUG: No DB items found for this character/ckey - from load_custom_items_to_mob_from_db"))
+		//to_chat(M, span_notice("DEBUG: No DB items found for this character/ckey - from load_custom_items_to_mob_from_db"))
 		return FALSE
 
 	var/j = 0
@@ -105,9 +105,9 @@
 		return FALSE   // We didn't have anything to spawn for this character so don't make a box or parse items.
 
 	spawn(50)
-		to_chat(M, SPAN_NOTICE("-------------------------------------------"))
-		to_chat(M, SPAN_NOTICE("You have custom loadout items. They are in the box at your feet."))
-		to_chat(M, SPAN_NOTICE("-------------------------------------------"))
+		to_chat(M, span_notice("-------------------------------------------"))
+		to_chat(M, span_notice("You have custom loadout items. They are in the box at your feet."))
+		to_chat(M, span_notice("-------------------------------------------"))
 
 	var/turf/T = get_turf(M)
 
