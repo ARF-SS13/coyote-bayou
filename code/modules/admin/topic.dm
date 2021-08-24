@@ -676,9 +676,9 @@
 	************************************WARNING!***********************************/
 		var/counter = 0
 //Regular jobs
-	//Command (Blue)
+	//Command (Deep Blue)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr align='center' bgcolor='ccccff'><th colspan='[length(GLOB.command_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=commanddept;jobban4=[REF(M)]'>Command Positions</a></th></tr><tr align='center'>"
+		dat += "<tr align='center' bgcolor='238dff'><th colspan='[length(GLOB.command_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=commanddept;jobban4=[REF(M)]' style='color: white;'>Command Positions</a></th></tr><tr align='center'>"
 		for(var/jobPos in GLOB.command_positions)
 			if(!jobPos)
 				continue
@@ -694,119 +694,168 @@
 				counter = 0
 		dat += "</tr></table>"
 
-	//Security (Red)
-		counter = 0
+	//BoS (Steel Blue)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='ffddf0'><th colspan='[length(GLOB.security_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=securitydept;jobban4=[REF(M)]'>Security Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.security_positions)
+		dat += "<tr align='center' bgcolor='8eb7e3'><th colspan='[length(GLOB.oasis_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=brotherhooddept;jobban4=[REF(M)]'>Brotherhood Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.brotherhood_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get squiiiiished!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Engineering (Yellow)
-		counter = 0
+	//Oasis (Green)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='fff5cc'><th colspan='[length(GLOB.engineering_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=engineeringdept;jobban4=[REF(M)]'>Engineering Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.engineering_positions)
+		dat += "<tr align='center' bgcolor='8ee3a4'><th colspan='[length(GLOB.oasis_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=oasisdept;jobban4=[REF(M)]'>Oasis Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.oasis_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get squiiiiished!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Medical (White)
-		counter = 0
+	//Legion (Red)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='ffeef0'><th colspan='[length(GLOB.medical_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=medicaldept;jobban4=[REF(M)]'>Medical Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.medical_positions)
+		dat += "<tr align='center' bgcolor='e3a28e'><th colspan='[length(GLOB.legion_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=legiondept;jobban4=[REF(M)]'>Legion Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.legion_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get squiiiiished!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Science (Purple)
-		counter = 0
+	//NCR (Yellow)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='e79fff'><th colspan='[length(GLOB.science_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=sciencedept;jobban4=[REF(M)]'>Science Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.science_positions)
+		dat += "<tr align='center' bgcolor='e3e28e'><th colspan='[length(GLOB.ncr_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=ncrdept;jobban4=[REF(M)]'>NCR Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.ncr_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get squiiiiished!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Supply (Brown)
-		counter = 0
+	//Vault (Teal)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='DDAA55'><th colspan='[length(GLOB.supply_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=supplydept;jobban4=[REF(M)]'>Supply Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.supply_positions)
+		dat += "<tr align='center' bgcolor='8ee3b4'><th colspan='[length(GLOB.vault_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=vaultdept;jobban4=[REF(M)]'>Vault Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.vault_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get COPYPASTE!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
 
-	//Civilian (Grey)
-		counter = 0
+	//Wasteland (Grey)
 		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		dat += "<tr bgcolor='dddddd'><th colspan='[length(GLOB.civilian_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=civiliandept;jobban4=[REF(M)]'>Civilian Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in GLOB.civilian_positions)
+		dat += "<tr align='center' bgcolor='c9c9c9'><th colspan='[length(GLOB.wasteland_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=wastelanddept;jobban4=[REF(M)]'>Wasteland Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.wasteland_positions)
 			if(!jobPos)
 				continue
 			if(jobban_isbanned(M, jobPos))
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
 				counter++
 			else
-				dat += "<td width='20%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
 				counter++
 
-			if(counter >= 5) //So things dont get squiiiiished!
-				dat += "</tr><tr align='center'>"
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
 				counter = 0
 		dat += "</tr></table>"
+
+	//Enclave (Red)
+		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		dat += "<tr align='center' bgcolor='ffa2a2'><th colspan='[length(GLOB.enclave_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=enclavedept;jobban4=[REF(M)]'>Enclave Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.enclave_positions)
+			if(!jobPos)
+				continue
+			if(jobban_isbanned(M, jobPos))
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				counter++
+			else
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
+				counter = 0
+		dat += "</tr></table>"
+
+	//Tribal (Brown)
+		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		dat += "<tr align='center' bgcolor='cbb888'><th colspan='[length(GLOB.tribal_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=tribaldept;jobban4=[REF(M)]'>Tribal Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.tribal_positions)
+			if(!jobPos)
+				continue
+			if(jobban_isbanned(M, jobPos))
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				counter++
+			else
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
+				counter = 0
+		dat += "</tr></table>"
+
+	//Followers (Light Blue)
+		dat += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		dat += "<tr align='center' bgcolor='abfffd'><th colspan='[length(GLOB.followers_positions)]'><a href='?src=[REF(src)];[HrefToken()];jobban3=followersdept;jobban4=[REF(M)]'>Followers Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in GLOB.followers_positions)
+			if(!jobPos)
+				continue
+			if(jobban_isbanned(M, jobPos))
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'><font color=red>[jobPos]</font></a></td>"
+				counter++
+			else
+				dat += "<td width='15%'><a href='?src=[REF(src)];[HrefToken()];jobban3=[jobPos];jobban4=[REF(M)]'>[jobPos]</a></td>"
+				counter++
+
+			if(counter >= 6) //So things dont get squiiiiished!
+				dat += "</tr><tr>"
+				counter = 0
+		dat += "</tr></table>"
+
 
 	//Non-Human (Green)
 		counter = 0
@@ -978,33 +1027,48 @@
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("securitydept")
-				for(var/jobPos in GLOB.security_positions)
+			if("brotherhooddept")
+				for(var/jobPos in GLOB.brotherhood_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("engineeringdept")
-				for(var/jobPos in GLOB.engineering_positions)
+			if("oasisdept")
+				for(var/jobPos in GLOB.oasis_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("medicaldept")
-				for(var/jobPos in GLOB.medical_positions)
+			if("legiondept")
+				for(var/jobPos in GLOB.legion_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("sciencedept")
-				for(var/jobPos in GLOB.science_positions)
+			if("ncrdept")
+				for(var/jobPos in GLOB.ncr_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("supplydept")
-				for(var/jobPos in GLOB.supply_positions)
+			if("vaultdept")
+				for(var/jobPos in GLOB.vault_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
-			if("civiliandept")
-				for(var/jobPos in GLOB.civilian_positions)
+			if("wastelanddept")
+				for(var/jobPos in GLOB.wasteland_positions)
+					if(!jobPos)
+						continue
+					joblist += jobPos
+			if("enclavedept")
+				for(var/jobPos in GLOB.enclave_positions)
+					if(!jobPos)
+						continue
+					joblist += jobPos
+			if("tribaldept")
+				for(var/jobPos in GLOB.tribal_positions)
+					if(!jobPos)
+						continue
+					joblist += jobPos
+			if("followersdept")
+				for(var/jobPos in GLOB.followers_positions)
 					if(!jobPos)
 						continue
 					joblist += jobPos
