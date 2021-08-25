@@ -28,34 +28,3 @@
 
 
 */
-
-/datum/gear/donator/kits/crimson
-	name = "Crimson's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/crimson
-	ckeywhitelist = list("rigbe")
-
-/datum/gear/donator/kits/cas
-	name = "Cas's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/cas
-	ckeywhitelist = list("killergryphyn")
-
-/datum/gear/donator/kits/whiskey
-	name = "Whiskey's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/whiskey
-	ckeywhitelist = list("whiskeyxl")
-
-/datum/gear/donator/kits/degan
-	name = "Degan's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/degan
-	ckeywhitelist = list("kuusday")
-
-/datum/gear/donator/kits/sarah
-	name = "Sarah's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/sarah
-	ckeywhitelist = list("killer402402")
-
-/datum/gear/donator/kits/carbous
-	name = "Carbous's Belongings"
-	path = /obj/item/storage/box/large/custom_kit/carbous
-	ckeywhitelist = list("carbous")
-

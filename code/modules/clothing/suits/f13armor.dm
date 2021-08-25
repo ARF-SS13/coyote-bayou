@@ -221,7 +221,7 @@
 	var/armor_block_chance = 0 //Chance for the power armor to block a low penetration projectile
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/deflection_chance = 0 //Chance for the power armor to redirect a blocked projectile
-	var/armor_block_threshold = 0.3 //projectiles below this will deflect
+	var/armor_block_threshold = 0.2 //projectiles below this will deflect
 	var/melee_block_threshold = 30
 	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
@@ -488,7 +488,7 @@
 	armor_block_chance = 70
 	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
-	armor_block_threshold = 0.35
+	armor_block_threshold = 0.25
 	melee_block_threshold = 35
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/tesla
@@ -527,7 +527,7 @@
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 
 	melee_block_threshold = 40
-	armor_block_threshold = 0.4
+	armor_block_threshold = 0.3
 	armor_block_chance = 80
 	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
 

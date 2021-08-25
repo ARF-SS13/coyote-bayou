@@ -242,7 +242,7 @@
 	var/armor_block_chance = 0
 	protected_zones = list(BODY_ZONE_HEAD)
 	var/deflection_chance = 0
-	var/armor_block_threshold = 0.3 //projectiles below this will deflect
+	var/armor_block_threshold = 0.2 //projectiles below this will deflect
 	var/melee_block_threshold = 30
 	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
@@ -478,7 +478,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor_block_chance = 70
 	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
-	armor_block_threshold = 0.35
+	armor_block_threshold = 0.25
 	melee_block_threshold = 35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
@@ -517,7 +517,7 @@
 	armor_block_chance = 80
 	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
 	melee_block_threshold = 40
-	armor_block_threshold = 0.4
+	armor_block_threshold = 0.3
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
 	icon_state = "t60helmet[light_on]"
