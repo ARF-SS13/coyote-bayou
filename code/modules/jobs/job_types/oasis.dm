@@ -224,7 +224,7 @@ Mayor
 	belt = /obj/item/melee/onehanded/knife/switchblade
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle,
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
