@@ -104,6 +104,14 @@
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
 
+/obj/item/clothing/under/f13/ncr/sniper
+	name = "NCR sniper fatigues"
+	desc = "A standard duty uniform for snipers of the New California Republic."
+	can_adjust = FALSE
+	icon_state = "ncr_snipermgs"
+	item_state = "ncr_snipermgs"
+	item_color = "ncr_snipermgs"
+
 /obj/item/clothing/under/f13/ncr/pants
 	name = "NCR fatigue pants"
 	desc = "A set of standard issue fatigue pants without the upper overcoat. For when you really need to show off your guns."

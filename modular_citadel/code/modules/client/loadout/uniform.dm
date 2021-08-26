@@ -67,6 +67,14 @@
 							"NCR Ranger"
 						)
 
+/datum/gear/uniform/sniper
+	name = "NCR sniper outfit"
+	path = /obj/item/clothing/under/f13/ncr/sniper
+	restricted_desc = "Sergeants, Corporals"
+	restricted_roles = list("NCR Corporal",
+							"NCR Sergeant"
+						)
+
 /datum/gear/uniform/ranger
 	name = "ranger outfit"
 	path = /obj/item/clothing/under/f13/ranger
