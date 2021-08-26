@@ -22472,6 +22472,13 @@
 "qcp" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/bunker)
+"qcN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/clothing,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/operations)
 "qdj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/grunge{
@@ -74052,7 +74059,7 @@ xBs
 yhh
 aGH
 aGH
-yhh
+qcN
 cxR
 cSH
 dwv

@@ -986,12 +986,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building)
-"atV" = (
-/obj/machinery/vending/clothing,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "auc" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -6615,9 +6609,7 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "cYu" = (
-/obj/structure/rack,
-/obj/item/clothing/suit/pirate,
-/obj/item/clothing/head/pirate,
+/obj/machinery/vending/clothing,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -11246,13 +11238,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "eZO" = (
-/obj/structure/rack,
-/obj/item/clothing/head/fedora,
-/obj/item/clothing/head/frenchberet,
-/obj/item/clothing/head/flatcap,
-/obj/item/clothing/under/shorts/black,
-/obj/item/clothing/under/shorts/red,
-/obj/item/clothing/under/shorts/blue,
+/obj/machinery/vending/autodrobe,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -96596,7 +96582,7 @@ gts
 gts
 gts
 gts
-atV
+vYv
 dMc
 xFS
 vYv
