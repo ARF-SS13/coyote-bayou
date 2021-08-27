@@ -87,6 +87,13 @@
 	new /obj/item/stack/f13Cash/random/denarius/med(src)
 	new /obj/item/stack/f13Cash/random/ncr/med(src)
 
+// Oasis reserves. Spawns with the Mayor.
+/obj/item/storage/bag/money/small/oasis/PopulateContents()
+	// ~225 worth of assorted money
+	new /obj/item/stack/f13Cash/random/med(src)
+	new /obj/item/stack/f13Cash/random/denarius/med(src)
+	new /obj/item/stack/f13Cash/random/ncr/med(src)
+
 // Standard Wastelander money bag. They have more but are liable to get robbed for it.
 /obj/item/storage/bag/money/small/wastelander/PopulateContents()
 	// ~48 worth of assorted money
