@@ -813,6 +813,12 @@
 	traitname = "minor surgery"
 	remarks = list("Keep your hands and any injuries clean!", "While bandages help to seal a wound, they do not heal a wound.", "Remain calm, focus on the task at hand, stop the bleeding.", "An open wound can lead to easy infection of said wound.", "Keep track of your home's first aid kit, restock used components regularly.", "If a body part has been lost, ice and transport it with the injured to a hospital.",)
 
+/obj/item/book/granter/trait/lowsurgery/already_known(mob/user)
+	if(HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+		to_chat(user, "<span class ='notice'>This book is too basic for you!")
+		return TRUE
+	return ..()
+
 /obj/item/book/granter/trait/midsurgery
 	name = "D.C. Journal of Internal Medicine"
 	desc = "A nearly intact guide on surgery for pre-collapse medical students and physicians."
@@ -820,6 +826,12 @@
 	granted_trait = TRAIT_SURGERY_MID
 	traitname = "intermediate surgery"
 	remarks = list("Sterilization is essential before and after surgery.", "Keep track of all your tools, double check body cavities.", "Ensure complete focus while operating on the patient.", "Cauterize incisions once the operation concludes.", "Spare organs and blood must be kept at a low temperature.", "Most prosthesis come with significant trade-offs, and maintenance costs.",)
+
+/obj/item/book/granter/trait/midsurgery/already_known(mob/user)
+	if(HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+		to_chat(user, "<span class ='notice'>This book is too basic for you!")
+		return TRUE
+	return ..()
 
 /obj/item/book/granter/trait/techno
 	name = "Dean's Electronics"
