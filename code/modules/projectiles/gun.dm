@@ -39,7 +39,7 @@ KEYWORDS
 	spread = 7-12
 
 	REPEATER	
-	fire_delay = 7
+	fire_delay = 6
 	spread = 0
 
 	DOUBLE BARREL

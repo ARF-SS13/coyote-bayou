@@ -138,13 +138,14 @@
 	. = ..()
 	can_hold = GLOB.storage_holster_can_hold
 
-
-GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
-	/obj/item/stack/f13Cash,
-	/obj/item/key,
-	/obj/item/melee/onehanded/knife,
-	/obj/item/paper,
-	)))
+/datum/component/storage/concrete/pockets/small/holdout
+	max_items = 1
+	attack_hand_interact = TRUE
+	max_w_class = WEIGHT_CLASS_NORMAL
+	
+/datum/component/storage/concrete/pockets/small/holdout/Initialize()
+	. = ..()
+	can_hold = GLOB.storage_holdout_can_hold
 
 GLOBAL_LIST_INIT(storage_bartender_can_hold, typecacheof(list(
 	/obj/item/kitchen,
@@ -245,3 +246,23 @@ GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
 GLOBAL_LIST_INIT(storage_binocular_can_hold, typecacheof(list(
 	/obj/item/binoculars,
 	)))
+
+GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
+	/obj/item/stack/f13Cash,
+	/obj/item/key,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/paper,
+	)))
+
+GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
+	/obj/item/gun/ballistic/automatic/pistol/sig,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun,
+	/obj/item/gun/ballistic/automatic/pistol/m1911/compact,
+	/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/gun/ballistic/revolver/colt357/lucky,
+	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/revolver/needler,
+	/obj/item/gun/energy/laser/wattz,
+)))

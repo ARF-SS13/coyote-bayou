@@ -22,7 +22,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	can_automatic = FALSE
 	slowdown = 0.5
-	fire_delay = 7
+	fire_delay = 6
 	spread = 0
 	force = 15 //Decent clubs generally speaking
 	flags_1 =  CONDUCT_1

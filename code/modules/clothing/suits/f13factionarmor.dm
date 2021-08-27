@@ -622,6 +622,14 @@
 	desc = "(VI) A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+	
+/obj/item/clothing/suit/armor/f13/town/commissioner
+	name = "commissioner's jacket"
+	desc = "(V*)A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
+	icon_state = "warden_alt"
+	item_state = "armor"
+	armor = list("tier" = 5, "linebullet" = 30, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/holdout
 
 /obj/item/clothing/suit/armor/f13/town/deputy
 	name = "deputy trenchcoat"
