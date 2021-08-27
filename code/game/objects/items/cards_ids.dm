@@ -920,6 +920,11 @@
 	item_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
+	
+/obj/item/card/id/dogtag/MDfakepermit
+	name = "faded medical license"
+	desc = "a revoked medical license. This is why we do not remove people's skeletons "
+	access = list()
 
 /obj/item/card/id/dogtag/town/ncr
 	name = "NCR citizenship permit"
@@ -1251,3 +1256,4 @@
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
+
