@@ -552,14 +552,14 @@
 	name = "scout carbine"
 	desc = "A cut down version of the standard-issue service rifle tapped with mounting holes for a scope. Shorter barrel, lower muzzle velocity."
 	icon_state = "scout_carbine"
-	extra_damage = -2
+	extra_damage = 2
 	fire_delay = 4
-	spread = 3
+	spread = 1
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
 	scope_y_offset = 15
-	suppressor_x_offset = 26
+	suppressor_x_offset = 26	
 	suppressor_y_offset = 28
 
 
@@ -747,10 +747,11 @@
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
-	fire_delay = 7
+	fire_delay = 10
 	burst_size = 1
-	extra_speed = 500
-	extra_penetration = 0.1
+	extra_speed = 800
+	extra_penetration = 0.2
+	extra_damage = 10
 	zoom_amt = 10
 	zoom_out_amt = 13
 	semi_auto = TRUE

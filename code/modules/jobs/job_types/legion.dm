@@ -191,9 +191,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// 10mm SMG, Thermic lance
-		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, Spatha
-		/datum/outfit/loadout/centurion,	// M1919 Machinegun, Powerfist
+		/datum/outfit/loadout/palacent,		// M1919, military ripper
+		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR
+		/datum/outfit/loadout/centurion,	// 10mm SMG, Powerfist
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -229,17 +229,19 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Paladin-Slayer Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/palacent
 	head = /obj/item/clothing/head/helmet/f13/legion/palacent
-	suit_store = /obj/item/twohanded/thermic_lance
+	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/melee/powered/ripper/prewar,
+		/obj/item/ammo_box/magazine/mm762 = 1,
 		)
 
 /datum/outfit/loadout/rangerhunter
 	name = "Ranger-Hunter Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/rangercent
 	head = /obj/item/clothing/head/helmet/f13/legion/rangercent
+	suit_store = /obj/item/gun/ballistic/rifle/mag/antimateriel
 	backpack_contents = list(
+		/obj/item/ammo_box/magazine/amr = 1,
 		/obj/item/ammo_box/c4570 = 3,
 		/obj/item/gun/ballistic/revolver/hunting = 1,
 		/obj/item/melee/onehanded/machete/spatha = 1,
@@ -249,11 +251,11 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Frontline Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/centurion
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
-	suit_store = /obj/item/gun/ballistic/automatic/m1919
+	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
 		/obj/item/melee/powerfist/goliath = 1,
-		/obj/item/ammo_box/magazine/mm762 = 1,
-		/obj/item/tank/internals/oxygen = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/tank/internals/oxygen = 1
 		)
 
 /* /datum/outfit/loadout/berserkercenturion

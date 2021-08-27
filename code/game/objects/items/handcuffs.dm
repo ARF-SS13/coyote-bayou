@@ -242,7 +242,7 @@
 	flags_1 = CONDUCT_1
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
-	slowdown = 7
+	slowdown = 4.5
 	breakouttime = 300	//Deciseconds = 30s = 0.5 minute
 
 /obj/item/restraints/legcuffs/beartrap

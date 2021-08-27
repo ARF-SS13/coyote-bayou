@@ -408,6 +408,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/ammo_box/magazine/amr = 2,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570 = 1,
+		/obj/item/ammo_box/magazine/amr = 2,
 		)
 
 /datum/outfit/loadout/vrlite
