@@ -269,7 +269,7 @@
 
 /obj/item/nullrod
 	name = "null rod"
-	desc = "A rod of pure obsidian; its very presence disrupts and dampens the powers of Nar'Sie and Ratvar's followers."
+	desc = "A rod of pure obsidian; its very presence disrupts and dampens the powers of evil spirits."
 	icon_state = "nullrod"
 	item_state = "nullrod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -292,9 +292,9 @@
 	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
-/obj/item/nullrod/attack_self(mob/user)
+/*/obj/item/nullrod/attack_self(mob/user)
 	if(user.mind && (user.mind.isholy) && !reskinned)
-		reskin_holy_weapon(user)
+		reskin_holy_weapon(user)*/
 
 /**
  * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
