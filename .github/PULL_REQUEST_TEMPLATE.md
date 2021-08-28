@@ -9,6 +9,14 @@
 
 <!-- Please add a short description of why you think these changes would benefit the game. If you can't justify it in words, it might not be worth adding. -->
 
+## Pre-Merge Checklist
+- [ ] Your Pull Request contains no breaking changes
+- [ ] You tested your changes locally, and they work.
+- [ ] There are no new Runtimes that appear.
+- [ ] You documented all of your changes.
+
+<!-- Please check these accordingly. -->
+
 ## Changelog
 :cl:
 add: Added new things
