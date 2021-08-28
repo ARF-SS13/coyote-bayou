@@ -488,7 +488,6 @@
 		/datum/reagent/consumable/coffee,
 		/datum/reagent/consumable/cream,
 		/datum/reagent/consumable/tea,
-		/datum/reagent/consumable/icetea,
 		/datum/reagent/consumable/space_cola,
 		/datum/reagent/consumable/spacemountainwind,
 		/datum/reagent/consumable/dr_gibb,
@@ -497,38 +496,41 @@
 		/datum/reagent/consumable/sodawater,
 		/datum/reagent/consumable/lemon_lime,
 		/datum/reagent/consumable/pwr_game,
-		/datum/reagent/consumable/shamblers,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/consumable/pineapplejuice,
 		/datum/reagent/consumable/orangejuice,
-		/datum/reagent/consumable/grenadine,
 		/datum/reagent/consumable/limejuice,
 		/datum/reagent/consumable/tomatojuice,
 		/datum/reagent/consumable/lemonjuice,
-		/datum/reagent/consumable/menthol,
 		/datum/reagent/consumable/sunset,
-		/datum/reagent/consumable/nuka_cola
+		/datum/reagent/consumable/nuka_cola,
+		/datum/reagent/consumable/grenadine,
+		/datum/reagent/consumable/menthol,
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
 		/datum/reagent/consumable/berryjuice,
-		/datum/reagent/consumable/strawberryjuice
+		/datum/reagent/consumable/strawberryjuice,
+		/datum/reagent/consumable/vanilla,
 	)
 	upgrade_reagents2 = list(
 		/datum/reagent/consumable/applejuice,
 		/datum/reagent/consumable/carrotjuice,
 		/datum/reagent/consumable/pumpkinjuice,
-		/datum/reagent/consumable/watermelonjuice
+		/datum/reagent/consumable/watermelonjuice,
+		/datum/reagent/consumable/cherryjelly,
 	)
 	upgrade_reagents3 = list(
 		/datum/reagent/drug/mushroomhallucinogen,
-		/datum/reagent/consumable/peachjuice
+		/datum/reagent/consumable/peachjuice,
+		/datum/reagent/consumable/bluecherryjelly,
 	)
 	emagged_reagents = list(
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/staminatoxin,
 		/datum/reagent/medicine/cryoxadone,
-		/datum/reagent/iron
+		/datum/reagent/iron,
+		/datum/reagent/consumable/shamblers,
 	)
 
 /obj/machinery/chem_dispenser/drinks/fullupgrade //fully ugpraded stock parts, emagged
@@ -574,22 +576,26 @@
 		/datum/reagent/consumable/ethanol/creme_de_coconut,
 		/datum/reagent/consumable/ethanol/triple_sec,
 		/datum/reagent/consumable/ethanol/sake,
-		/datum/reagent/consumable/ethanol/applejack
+		/datum/reagent/consumable/ethanol/applejack,
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/ethanol,
-		/datum/reagent/consumable/ethanol/fernet
+		/datum/reagent/consumable/ethanol/fernet,
 	)
-	upgrade_reagents2 = null
-	upgrade_reagents3 = null
+	upgrade_reagents2 = list(
+		/datum/reagent/consumable/ethanol/hooch,
+		/datum/reagent/consumable/ethanol/mead
+		)
+	upgrade_reagents3 = list(
+		/datum/reagent/consumable/ethanol/atomicbomb,
+		/datum/reagent/consumable/ethanol/thirteenloko,
+		)
+		
 	emagged_reagents = list(
 		/datum/reagent/consumable/ethanol/alexander,
 		/datum/reagent/toxin/minttoxin,
-		/datum/reagent/consumable/ethanol/atomicbomb,
-		/datum/reagent/consumable/ethanol/thirteenloko,
-		/datum/reagent/consumable/ethanol/changelingsting
+		/datum/reagent/consumable/ethanol/changelingsting,
 	)
-
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade //fully ugpraded stock parts, emagged
 	desc = "Contains a large reservoir of the good stuff. This model has had its safeties shorted out."
 	obj_flags = CAN_BE_HIT | EMAGGED
