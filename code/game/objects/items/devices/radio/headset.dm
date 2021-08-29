@@ -360,6 +360,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
 
+/obj/item/radio/headset/headset_followers
+	name = "followers radio headset"
+	desc = "This is used by the followers.\nTo access the town channel, use :f. \nTo access the medical channel, use :m"
+	icon_state = "med_headset"
+	keyslot = new /obj/item/encryptionkey/headset_med
+	keyslot2 = new /obj/item/encryptionkey/headset_town
+
 /obj/item/radio/headset/headset_den
 	name = "den radio headset"
 	desc = "This is used by the den. \nTo access the den channel, use :j."
