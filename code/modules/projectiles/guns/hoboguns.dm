@@ -65,6 +65,7 @@
 /obj/item/gun/ballistic/automatic/hobo/zipgun
 	name = "Zip gun (9mm)"
 	icon_state = "zipgun"
+	desc = "A crudely handcrafted zip gun that uses 9mm ammo."
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT

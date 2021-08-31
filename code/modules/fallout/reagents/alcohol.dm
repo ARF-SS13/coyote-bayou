@@ -250,7 +250,7 @@
 	taste_description = "freedom"
 	glass_icon_state = "nukavictoryglass"
 	glass_name = "Nuka Victory"
-	glass_desc = "Nuka Cola with an <BIG>AMERICAN<BIG> twist."
+	glass_desc = "Nuka Cola with an AMERICAN twist."
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
 	ADD_TRAIT(M, TRAIT_BIG_LEAGUES, "[type]")
