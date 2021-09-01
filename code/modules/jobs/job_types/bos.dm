@@ -145,7 +145,7 @@ Head Paladin
 	head = 			/obj/item/clothing/head/helmet/f13/power_armor/t60
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	id = 			/obj/item/card/id/dogtag
-	neck = 			/obj/item/clothing/neck/mantle/bos/paladin
+	neck = 			/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
@@ -392,7 +392,7 @@ Star Paladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer/swat
 	belt =	/obj/item/storage/belt/military/assault
-	neck =	/obj/item/clothing/neck/mantle/bos/paladin
+	neck =	/obj/item/storage/belt/holster
 
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/plasma/pistol = 1,
@@ -484,7 +484,7 @@ Paladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer/swat
 	belt =	/obj/item/storage/belt/military
-	neck =	/obj/item/clothing/neck/mantle/bos/paladin
+	neck =	/obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
