@@ -810,7 +810,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 /datum/outfit/loadout/corporaldesignatedmarksman
 	name = "Designated marksman"
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = /obj/item/clothing/head/beret/ncr_recon/worn
+	head = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	neck = /obj/item/storage/belt/holster/legholster
 	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
 	backpack_contents = list(
