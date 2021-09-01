@@ -52,24 +52,6 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
-/datum/crafting_recipe/repair_kit
-	name = "Armor repair kit"
-	result = /obj/item/repair_kit
-	time = 30
-	reqs = list(/obj/item/crafting = 3, /obj/item/stack/crafting/metalparts = 1)
-	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
-
-/datum/crafting_recipe/repair_kit_pa
-	name = "Power armor repair kit"
-	result = /obj/item/repair_kit/pa
-	time = 30
-	reqs = list(/obj/item/crafting = 7, /obj/item/stack/crafting/goodparts = 3)
-	tools = list(TOOL_SCREWDRIVER, TOOL_MULTITOOL, TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
-
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
 	result = /obj/item/stack/sheet/cloth/three

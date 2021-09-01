@@ -226,7 +226,6 @@
 	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
 	var/powerMode = 3
-	repair_kit = /obj/item/repair_kit/pa
 
 /obj/item/fusion_fuel
 	name = "fusion fuel cell"
@@ -337,8 +336,6 @@
 /obj/item/clothing/suit/armor/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	. = ..()
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
-		return
-	if(src.armor_durability<60)
 		return
 	if(check_armor_penetration(object) <= src.armor_block_threshold && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(armor_block_chance))

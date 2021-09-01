@@ -66,25 +66,6 @@
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/durability_list = list()
 
-	var/armor_durability = 100
-	var/repair_kit = /obj/item/repair_kit
-
-/obj/item/repair_kit
-	name = "armor repair kit"
-	desc = "A repair kit used to repair armor."
-
-	icon = 'icons/fallout/objects/tools.dmi'
-	icon_state = "repairkitarmor"
-	item_state = "cell"
-	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'	
-	var/uses_left = 25
-
-/obj/item/repair_kit/pa
-	name = "power armor repair kit"
-	desc = "A specialized repair kit used to repair power armor."
-	icon_state = "repairkitPA"
-
 /obj/item/clothing/Initialize()
 	. = ..()
 	if(CHECK_BITFIELD(clothing_flags, VOICEBOX_TOGGLABLE))
