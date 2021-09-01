@@ -328,9 +328,6 @@
 	},
 /area/f13/brotherhood/operations)
 "amC" = (
-/obj/structure/curtain{
-	color = "#5c131b"
-	},
 /turf/open/floor/wood,
 /area/f13/brotherhood/operations)
 "amD" = (
@@ -2517,9 +2514,8 @@
 /turf/open/water,
 /area/f13/tunnel)
 "bDz" = (
-/obj/structure/simple_door/bunker{
+/obj/machinery/door/airlock/grunge{
 	name = "Head Knight's Office";
-	req_access = 120;
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -3315,7 +3311,8 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood/leisure)
 "cam" = (
-/obj/structure/simple_door/blast{
+/obj/machinery/door/airlock/hatch{
+	desc = "An airtight door, built to withstand a nuclear blast.";
 	max_integrity = 10000;
 	name = "bunker entry";
 	req_access_txt = "120"
@@ -14243,13 +14240,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "itI" = (
-/obj/structure/simple_door/blast{
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	desc = "An airtight door, built to withstand a nuclear blast.";
 	max_integrity = 10000;
 	name = "bunker entry";
 	req_access_txt = "120"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -15794,23 +15792,10 @@
 	},
 /area/f13/bunker)
 "jKo" = (
-/obj/structure/flora/rock/jungle{
-	density = 1
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
 	},
-/obj/structure/flora/grass/jungle/b,
-/obj/structure/flora/ausbushes/grassybush{
-	layer = 2.1
-	},
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 1;
-	layer = 3
-	},
-/obj/structure/window/reinforced{
-	color = "#3e3d42";
-	dir = 8
-	},
-/turf/open/water,
 /area/f13/brotherhood/leisure)
 "jKW" = (
 /obj/effect/decal/cleanable/insectguts,
@@ -18697,6 +18682,12 @@
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
+"mgi" = (
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/turf/open/floor/wood/f13/stage_t,
+/area/f13/brotherhood/operations)
 "mhc" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -19441,7 +19432,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "mKh" = (
-/obj/structure/simple_door/bunker,
+/obj/machinery/door/airlock/grunge{
+	req_access_txt = "120"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "mKn" = (
@@ -19771,6 +19764,12 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"mTf" = (
+/obj/machinery/workbench,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/brotherhood/leisure)
 "mTj" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/effect/decal/cleanable/dirt,
@@ -21309,13 +21308,12 @@
 /turf/closed/wall/f13/wood,
 /area/f13/tunnel)
 "nRq" = (
-/obj/structure/simple_door/bunker{
-	name = "Head Paladin's Office";
-	req_access = 120;
-	req_access_txt = "120"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/grunge{
+	name = "Head Paladin's Office";
+	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
@@ -22393,11 +22391,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "oDY" = (
-/obj/structure/simple_door/blast{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/hatch{
+	desc = "An airtight door, built to withstand a nuclear blast.";
 	max_integrity = 10000;
+	name = "bunker entry";
 	req_access_txt = "120"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "oDZ" = (
@@ -24090,9 +24090,8 @@
 /area/f13/brotherhood/offices1st)
 "pME" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/bunker{
-	name = "Senior Knight Office";
-	req_access = 120;
+/obj/machinery/door/airlock/grunge{
+	name = "Senior Knight's Office";
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -24875,12 +24874,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "qmV" = (
-/obj/structure/simple_door/bunker{
-	name = "Paladin Halls";
-	req_access = 120;
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/grunge{
 	req_access_txt = "120"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
 "qmZ" = (
@@ -90687,7 +90684,7 @@ hpM
 gKP
 gKP
 gKP
-jJM
+mTf
 iAR
 iAR
 iAR
@@ -98116,7 +98113,7 @@ wKL
 wKL
 wKL
 nqO
-nqO
+mgi
 nqO
 axv
 nqO
@@ -100698,19 +100695,19 @@ eLE
 eLE
 eLE
 eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
+qvn
 eLE
 eLE
 eLE

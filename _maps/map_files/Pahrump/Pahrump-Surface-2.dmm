@@ -1210,9 +1210,14 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/building)
 "ayE" = (
-/obj/item/storage/money_stack,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "oasis3"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain1"
+	},
+/area/f13/wasteland)
 "ayU" = (
 /obj/structure/chair/f13chair2{
 	dir = 4
@@ -84173,7 +84178,7 @@ sgz
 erY
 dma
 erY
-hOl
+ayE
 hOl
 sgz
 sgz
@@ -89148,7 +89153,7 @@ dCV
 jix
 hzm
 hzm
-ayE
+hzm
 dCV
 gcK
 gcK
