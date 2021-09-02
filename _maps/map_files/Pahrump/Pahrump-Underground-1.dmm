@@ -9441,6 +9441,13 @@
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"fqQ" = (
+/turf/closed/indestructible/opshuttle{
+	icon = 'icons/turf/walls/reinforced_wall.dmi';
+	icon_state = "r_wall";
+	smooth = 1
+	},
+/area/f13/brotherhood/offices2nd)
 "fqV" = (
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
@@ -11751,10 +11758,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	barefootstep = "water";
 	clawfootstep = "water";
+	desc = "Shallow water.";
 	footstep = "water";
 	heavyfootstep = "water";
 	icon = 'icons/turf/floors.dmi';
-	icon_state = "riverwater_motion"
+	icon_state = "riverwater_motion";
+	name = "water"
 	},
 /area/f13/brotherhood/leisure)
 "gKl" = (
@@ -11780,10 +11789,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	barefootstep = "water";
 	clawfootstep = "water";
+	desc = "Shallow water.";
 	footstep = "water";
 	heavyfootstep = "water";
 	icon = 'icons/turf/floors.dmi';
-	icon_state = "riverwater_motion"
+	icon_state = "riverwater_motion";
+	name = "water"
 	},
 /area/f13/brotherhood/leisure)
 "gKP" = (
@@ -12789,10 +12800,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	barefootstep = "water";
 	clawfootstep = "water";
+	desc = "Shallow water.";
 	footstep = "water";
 	heavyfootstep = "water";
 	icon = 'icons/turf/floors.dmi';
-	icon_state = "riverwater_motion"
+	icon_state = "riverwater_motion";
+	name = "water"
 	},
 /area/f13/brotherhood/leisure)
 "hpM" = (
@@ -12847,10 +12860,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	barefootstep = "water";
 	clawfootstep = "water";
+	desc = "Shallow water.";
 	footstep = "water";
 	heavyfootstep = "water";
 	icon = 'icons/turf/floors.dmi';
-	icon_state = "riverwater_motion"
+	icon_state = "riverwater_motion";
+	name = "water"
 	},
 /area/f13/brotherhood/leisure)
 "hrq" = (
@@ -13668,10 +13683,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	barefootstep = "water";
 	clawfootstep = "water";
+	desc = "Shallow water.";
 	footstep = "water";
 	heavyfootstep = "water";
 	icon = 'icons/turf/floors.dmi';
-	icon_state = "riverwater_motion"
+	icon_state = "riverwater_motion";
+	name = "water"
 	},
 /area/f13/brotherhood/leisure)
 "hYt" = (
@@ -29493,18 +29510,12 @@
 	},
 /area/f13/den)
 "tEj" = (
-/obj/structure/table/wood/fancy/black{
-	desc = "A set of thin pipes that no longer function.";
-	icon_state = "latticefull";
-	layer = 2.4;
-	name = "pipes"
+/turf/closed/indestructible/opshuttle{
+	icon = 'icons/turf/walls/reinforced_wall.dmi';
+	icon_state = "r_wall";
+	smooth = 1
 	},
-/obj/structure/lattice{
-	layer = 3
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/brotherhood/offices1st)
+/area/f13/caves)
 "tEm" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
@@ -29906,13 +29917,15 @@
 "tTd" = (
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+	icon_state = "r_wall";
+	smooth = 1
 	},
 /area/f13/brotherhood/offices1st)
 "tTn" = (
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+	icon_state = "r_wall";
+	smooth = 1
 	},
 /area/f13/brotherhood/medical)
 "tTr" = (
@@ -29925,7 +29938,8 @@
 /obj/structure/decoration/smokeold,
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
-	icon_state = "r_wall"
+	icon_state = "r_wall";
+	smooth = 1
 	},
 /area/f13/brotherhood/medical)
 "tTy" = (
@@ -90730,8 +90744,8 @@ iAR
 qMn
 qMn
 tTd
-tYS
-tYS
+fqQ
+fqQ
 tVr
 tVr
 tVr
@@ -95354,7 +95368,7 @@ qPN
 qPN
 qPN
 wKL
-tEj
+tCe
 tTd
 tXu
 umr
@@ -96897,7 +96911,7 @@ mHM
 sAE
 mHM
 mHM
-mHM
+tTn
 tVr
 tVr
 ueZ
@@ -97154,7 +97168,7 @@ mHM
 sPQ
 mHM
 mHM
-mHM
+tTn
 tVr
 tVr
 uEg
@@ -100718,19 +100732,19 @@ eLE
 eLE
 eLE
 eLE
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
 eLE
 eLE
 eLE
@@ -100744,15 +100758,15 @@ eLE
 eLE
 eLE
 eLE
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
-qvn
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
+tEj
 eLE
 eLE
 eLE
