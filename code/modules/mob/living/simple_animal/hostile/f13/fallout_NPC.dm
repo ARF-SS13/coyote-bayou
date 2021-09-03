@@ -513,40 +513,6 @@
 	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	//back = /obj/item/weapon/storage/backpack
 
-/mob/living/simple_animal/hostile/raider
-	name = "raiding npc"
-	desc = "this firefighter was once a man too."
-	icon_state = "firefighter_raider"
-	icon_living = "firefighter_raider"
-	icon_dead = "firefighter_raider"
-	icon_gib = "firefighter_raider"
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	turns_per_move = 5
-	response_help_simple = "pokes"
-	response_disarm_simple = "shoves"
-	response_harm_simple = "hits"
-	speed = 1
-	stat_attack = 1
-	robust_searching = 1
-	maxHealth = 150
-	health = 150
-	harm_intent_damage = 8
-	melee_damage_lower = 20
-	melee_damage_upper = 30
-	attack_verb_simple = "attacks"
-	attack_sound = 'sound/weapons/punch1.ogg'
-	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 15
-	faction = list("raiders")
-	check_friendly_fire = 1
-	status_flags = CANPUSH
-	del_on_death = 1
-	speak = "Yes!"
-	speak_emote = list("rushes")
-	speak_chance = 2
-
 /mob/living/simple_animal/hostile/raider/sulphite
 	name = "Sulphite Brawler"
 	desc = "A raider with low military grade armor and a shishkebab"
@@ -579,35 +545,6 @@
 	speak_emote = list("rushes")
 	speak_chance = 2
 
-/obj/effect/mob_spawn/human/corpse/raider
-	name = "Raider"
-	uniform = /obj/item/clothing/under/f13/rag
-	suit = /obj/item/clothing/suit/armor/f13/raider/iconoclast
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	gloves = /obj/item/clothing/gloves/f13/leather
-	//radio = /obj/item/device/radio/headset
-	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/firefighter
-	//back = /obj/item/weapon/storage/backpack
-
-/mob/living/simple_animal/hostile/raider/Aggro()
-	..()
-	summon_backup(15)
-	say("HURRY, HURRY, HURRY!!!")
-
-/mob/living/simple_animal/hostile/raider/firefighter
-	icon_state = "firefighter_raider"
-	icon_living = "firefighter_raider"
-	icon_dead = "firefighter_raider"
-	icon_gib = "firefighter_raider"
-	retreat_distance = 0
-	minimum_distance = 0
-	melee_damage_lower = 50
-	melee_damage_upper = 50
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider, /obj/item/twohanded/fireaxe)
-	healable = 1
-	ranged = 0
-
 /mob/living/simple_animal/hostile/raider/tribal
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
@@ -630,57 +567,6 @@
 	mask = /obj/item/clothing/mask/facewrap
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	//back = /obj/item/weapon/storage/backpack
-
-/mob/living/simple_animal/hostile/raider/baseball
-	icon_state = "baseball_raider"
-	icon_living = "baseball_raider"
-	icon_dead = "baseball_raider"
-	icon_gib = "baseball_raider"
-	retreat_distance = 1
-	minimum_distance = 1
-	melee_damage_lower = 40
-	melee_damage_upper = 40
-	maxHealth = 200
-	health = 200
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider/baseball, /obj/item/twohanded/baseball)
-	healable = 1
-	ranged = 0
-
-/obj/effect/mob_spawn/human/corpse/raider/baseball
-	uniform = /obj/item/clothing/under/f13/mechanic
-	suit = /obj/item/clothing/suit/armor/f13/raider/yankee
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
-	//radio = /obj/item/device/radio/headset
-	//mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/raider/yankee
-	//back = /obj/item/weapon/storage/backpack
-
-/mob/living/simple_animal/hostile/raider/biker
-	icon_state = "biker_raider"
-	icon_living = "biker_raider"
-	icon_dead = "biker_raider"
-	icon_gib = "biker_raider"
-	retreat_distance = 4
-	minimum_distance = 4
-	melee_damage_lower = 20
-	melee_damage_upper = 20
-	maxHealth = 200
-	health = 200
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider/biker, /obj/item/gun/ballistic/revolver/thatgun)
-	healable = 1
-	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a556/match
-	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
-	casingtype = /obj/item/ammo_casing/a556
-
-/obj/effect/mob_spawn/human/corpse/raider/biker
-	uniform = /obj/item/clothing/under/f13/ncrcf
-	suit = /obj/item/clothing/suit/armor/f13/combatrusted
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
-	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
-	neck = /obj/item/clothing/neck/mantle/brown
 
 /mob/living/simple_animal/hostile/abomination
 	name = "abomination"
