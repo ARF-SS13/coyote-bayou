@@ -351,7 +351,7 @@ Star Paladin
 
 	loadout_options = list(
 		/datum/outfit/loadout/spaladina, //R91
-		/datum/outfit/loadout/spaladinc, //AER14
+		/datum/outfit/loadout/spaladinc, //Wattz2000 Extended
 		/datum/outfit/loadout/spaladinas, //Ripper + shield + big leagues
 		)
 
@@ -411,7 +411,7 @@ Star Paladin
 /datum/outfit/loadout/spaladinc
 	name = "Mainline Senior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer14 = 1,
+		/obj/item/gun/energy/laser/wattz2k/extended = 1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 	)
 /datum/outfit/loadout/spaladinas
@@ -429,8 +429,8 @@ Paladin
 	title = "Paladin"
 	flag = F13PALADIN
 	faction = "BOS"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to the Senior Paladin. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
@@ -439,8 +439,8 @@ Paladin
 	exp_requirements = 450
 
 	loadout_options = list(
-	/datum/outfit/loadout/paladina, //10mm SMG
-	/datum/outfit/loadout/paladinb, //AER12
+	/datum/outfit/loadout/paladina, //R91
+	/datum/outfit/loadout/paladinb, //AER9
 	/datum/outfit/loadout/paladinc,
 	/datum/outfit/loadout/paladind
 	)
@@ -503,7 +503,7 @@ Paladin
 /datum/outfit/loadout/paladinb
 	name = "Frontline Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer12=1,
+		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
@@ -521,7 +521,7 @@ Paladin
 /datum/outfit/loadout/paladind
 	name = "Frontline Paladin"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/aer12=1,
+		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
@@ -596,8 +596,8 @@ Scribe
 	title = "Scribe"
 	flag = F13SCRIBE
 	faction = "BOS"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "You answer directly to the Senior Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
@@ -754,8 +754,8 @@ Knight
 	title = "Knight"
 	flag = F13KNIGHT
 	faction = "BOS"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = " You are the Brotherhood Knight, the veritable lifeblood of your organization. You are a versatile and adaptably trained person: from your primary duties of weapon & armor repair to basic combat, survival and stealth skills, the only thing you lack is proper experience. You are also in charge of Initiates."
 	forbids = "TheBrotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."

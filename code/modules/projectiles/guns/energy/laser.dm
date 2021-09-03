@@ -303,7 +303,18 @@
 	name = "wattz 2000e"
 	desc = "This Wattz 2000 laser rifle has had its recharging system upgraded and a special recycling chip installed that reduces the drain on the micro fusion cell by 50%."
 	icon_state = "wattz2k_ext"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "wattz2k"
+	item_state = "sniper_rifle"
+	fire_delay = 3.5
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+	
 
 
 //AER9 Laser rifle
