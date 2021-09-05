@@ -26,3 +26,11 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 /area/awaymission/vr
 	name = "Virtual Reality"
 	icon_state = "awaycontent1"
+
+/area/awaymission/vr/bos
+	has_gravity = STANDARD_GRAVITY
+	requires_power = FALSE
+
+/area/awaymission/vr/followers
+	has_gravity = STANDARD_GRAVITY
+	requires_power = FALSE

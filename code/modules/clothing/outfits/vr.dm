@@ -45,3 +45,26 @@
 /obj/item/paper/fluff/vr/fluke_ops
 	name = "Where is my uplink?"
 	info = "Use the radio in your backpack."
+
+/datum/outfit/vr/bos
+	name = "Brotherhood"
+	ears = 		/obj/item/radio/headset/headset_bos
+	uniform =	/obj/item/clothing/under/syndicate/brotherhood
+	shoes = 	/obj/item/clothing/shoes/combat/swat
+	gloves = 	/obj/item/clothing/gloves/combat
+	id = 		/obj/item/card/id/dogtag
+	box = 		/obj/item/storage/survivalkit_adv
+	starting_funds = 0
+
+/datum/outfit/vr/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	. = ..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmetmk2)
+

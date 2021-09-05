@@ -16,6 +16,14 @@
 	var/allow_creating_vr_mobs = TRUE //So you can have vr_sleepers that always spawn you as a specific person or 1 life/chance vr games
 	var/only_current_user_can_interact = FALSE
 
+/obj/machinery/vr_sleeper/bos
+	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured for combat simulations."
+	vr_category = "bos"
+
+/obj/machinery/vr_sleeper/followers
+	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured to serve as a medical and botanical training ground."
+	vr_category = "followers"
+
 /obj/machinery/vr_sleeper/Initialize()
 	. = ..()
 	sparks = new /datum/effect_system/spark_spread()
@@ -223,6 +231,13 @@
 
 /obj/effect/landmark/vr_spawn/syndicate // Multiple missions will use syndicate gear
 	vr_outfit = /datum/outfit/vr/syndicate
+
+/obj/effect/landmark/vr_spawn/bos
+	vr_category = "bos"
+	vr_outfit = /datum/outfit/vr/bos
+
+/obj/effect/landmark/vr_spawn/followers
+	vr_category = "followers"
 
 /obj/effect/vr_clean_master // Will keep VR areas that have this relatively clean.
 	icon = 'icons/mob/screen_gen.dmi'
