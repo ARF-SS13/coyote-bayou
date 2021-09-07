@@ -513,61 +513,6 @@
 	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	//back = /obj/item/weapon/storage/backpack
 
-/mob/living/simple_animal/hostile/raider/sulphite
-	name = "Sulphite Brawler"
-	desc = "A raider with low military grade armor and a shishkebab"
-	icon_state = "melee_sulphitemob"
-	icon_living = "melee_sulphitemob"
-	turns_per_move = 5
-	response_help_simple = "pokes"
-	response_disarm_simple = "shoves"
-	response_harm_simple = "hits"
-	speed = 1
-	stat_attack = 1
-	robust_searching = 1
-	maxHealth = 220
-	health = 220
-	harm_intent_damage = 8
-	melee_damage_lower = 40
-	melee_damage_upper = 55
-	attack_verb_simple = "attacks"
-	attack_sound = 'sound/weapons/punch1.ogg'
-	a_intent = INTENT_HARM
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider)
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	loot = list(/obj/effect/mob_spawn/human/corpse/raidermelee, /obj/item/locked_box/misc/money/all/low)
-	unsuitable_atmos_damage = 15
-	faction = list("raiders")
-	check_friendly_fire = 1
-	status_flags = CANPUSH
-	del_on_death = 1
-	speak = "Yes!"
-	speak_emote = list("rushes")
-	speak_chance = 2
-
-/mob/living/simple_animal/hostile/raider/tribal
-	icon_state = "tribal_raider"
-	icon_living = "tribal_raider"
-	icon_dead = "tribal_raider"
-	icon_gib = "tribal_raider"
-	retreat_distance = 0
-	minimum_distance = 0
-	melee_damage_lower = 40
-	melee_damage_upper = 40
-	loot = list(/obj/effect/mob_spawn/human/corpse/raider/tribal, /obj/item/twohanded/spear)
-	healable = 1
-	ranged = 0
-
-/obj/effect/mob_spawn/human/corpse/raider/tribal
-	uniform = /obj/item/clothing/under/f13/raiderrags
-	suit = /obj/item/clothing/suit/armor/f13/tribal
-	shoes = /obj/item/clothing/shoes/f13/rag
-	//gloves = /obj/item/clothing/gloves/f13/doom
-	//radio = /obj/item/device/radio/headset
-	mask = /obj/item/clothing/mask/facewrap
-	head = /obj/item/clothing/head/helmet/f13/fiend
-	//back = /obj/item/weapon/storage/backpack
-
 /mob/living/simple_animal/hostile/abomination
 	name = "abomination"
 	desc = "A horrible fusion of man, animal, and something entirely different. It quakes and shudders, looking to be in an immense amount of pain. Blood and other fluids ooze from various gashes and lacerations on its body, punctuated by mouths that gnash and scream."
