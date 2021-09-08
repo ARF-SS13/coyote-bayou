@@ -1264,7 +1264,7 @@
 				/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
 				/obj/item/gun/ballistic/rifle/hunting/paciencia,
 				/obj/item/gun/energy/laser/solar,
-				/obj/item/gun/energy/laser/plasma/alien,
+				/obj/item/gun/energy/laser/plasma/pistol/alien,
 				/obj/item/gun/ballistic/rifle/mag/varmint/ratslayer
 				)
 

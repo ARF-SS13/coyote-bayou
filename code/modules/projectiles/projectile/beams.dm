@@ -385,11 +385,14 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
-/obj/item/projectile/plasma/alien
+/obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
 	icon_state = "ion"
 	damage = 90 //horrifyingly powerful, but very limited ammo
 	armour_penetration = 0.8
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_range = 2
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/laer //Elder's/Unique LAER
 	name = "advanced laser beam"

@@ -306,7 +306,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil,
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
-		/obj/item/gun/energy/laser/plasma/alien,
+		/obj/item/gun/energy/laser/plasma/pistol/alien,
 		/obj/item/melee/unarmed/deathclawgauntlet,
 		)
 

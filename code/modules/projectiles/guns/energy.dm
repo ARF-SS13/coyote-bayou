@@ -26,6 +26,7 @@
 	/// The index of the ammo_types/firemodes which we're using right now
 	var/current_firemode_index = 1
 	var/can_charge = 1 //Can it be charged in a recharger?
+	var/can_remove = 1 //Can the cell itself be removed and replaced?
 	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_icon()?
 	var/charge_sections = 4
 	ammo_x_offset = 2
@@ -348,7 +349,7 @@
 		return
 	if (get_dist(src, user)<2)
 		if(cell)
-			if(can_charge == 0)
+			if(can_charge == 0 && can_remove == 0)
 				to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
 				return
 			cell.forceMove(drop_location())
@@ -367,7 +368,7 @@
 	if (!ishuman(user))
 		return
 	if(cell)
-		if(can_charge == 0)
+		if(can_charge == 0 && can_remove == 0)
 			to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
 			return
 		cell.forceMove(drop_location())

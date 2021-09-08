@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/plasma/glock/extended,
 	/obj/item/gun/energy/laser/wattz,
 	/obj/item/gun/energy/laser/wattz/magneto,
-	/obj/item/gun/energy/laser/plasma/alien,
+	/obj/item/gun/energy/laser/plasma/pistol/alien,
 	/obj/item/stock_parts/cell/ammo/ec,
 	)))
 
