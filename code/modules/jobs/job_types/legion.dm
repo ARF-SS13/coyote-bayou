@@ -1036,6 +1036,7 @@ commented out pending rework*/
 		/obj/item/pen/fountain = 1,
 		/obj/item/storage/bag/money/small/legion = 1,
 		/obj/item/taperecorder = 1,
+		/obj/item/clothing/under/f13/legauxilia = 1,
 		)
 
 /datum/outfit/loadout/auxmedicus
@@ -1049,6 +1050,7 @@ commented out pending rework*/
 		/obj/item/stack/sticky_tape/surgical = 1,
 		/obj/item/stack/medical/bone_gel = 1,
 		/obj/item/book/granter/trait/midsurgery = 1,
+		/obj/item/clothing/under/f13/legauxilia = 1,
 		)
 
 
