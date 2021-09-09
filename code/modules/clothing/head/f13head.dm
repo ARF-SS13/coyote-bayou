@@ -156,6 +156,13 @@
 	desc = "(III) It's a fancy dark metal helmet with orange spray painted flames."
 	icon_state = "rider"
 	item_state = "rider"
+	
+/obj/item/clothing/head/helmet/knight/f13/riderW
+	name = "reinforced rider helmet" //Not raider. Rider. //Count up your sins
+	desc = "(IV) It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
+	icon_state = "riderW"
+	item_state = "riderW"
+	armor = list("tier" = 4, "energy" = 23, "bomb" = 15, "bio" = 1, "rad" = 1, "fire" = 3, "acid" = 3)
 
 /obj/item/clothing/head/helmet/f13/metalmask
 	name = "metal mask"

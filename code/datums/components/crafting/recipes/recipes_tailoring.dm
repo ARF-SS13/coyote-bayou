@@ -131,6 +131,16 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/datum/crafting_recipe/riderhelmetmk2
+	name = "Rider Helmet, reinforced"
+	result = /obj/item/clothing/head/helmet/knight/f13/riderW
+	reqs = list(/obj/item/clothing/head/helmet/knight/f13/rider = 1,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
 /datum/crafting_recipe/raiderpaconversion
 	name = "Salvaged Power Armor Raider"
 	result = /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
