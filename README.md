@@ -16,7 +16,7 @@ All relevant forum content takes place on the Discord!
 **Desert Rose Information**
 * **Code** <https://github.com/DesertRose2/desertrose>
 * **Legacy Code** <https://github.com/judgex/desertrose>
-* 
+
 **Citadel Station Information**  
 * **Website:** <http://citadel-station.net>
 * **Code:** <https://github.com/Citadel-Station-13/Citadel-Station-13>
