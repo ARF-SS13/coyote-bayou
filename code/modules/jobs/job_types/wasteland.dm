@@ -796,7 +796,7 @@ Raider
 	ears = /obj/item/radio/headset/headset_den
 	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
-	uniform = /obj/item/clothing/under/suit/white
+	uniform = /obj/item/clothing/under/f13/densuit
 	backpack =	/obj/item/storage/backpack/satchel
 	satchel =  /obj/item/storage/backpack/satchel
 	gloves =  /obj/item/clothing/gloves/color/white
@@ -882,7 +882,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/melee/onehanded/knife/switchblade
 	r_pocket = /obj/item/flashlight/seclite
-	uniform = /obj/item/clothing/under/suit/white
+	uniform = /obj/item/clothing/under/f13/densuit
 	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/raider
 	backpack =	/obj/item/storage/backpack/satchel
 	satchel = 	/obj/item/storage/backpack/satchel
@@ -944,7 +944,7 @@ datum/job/wasteland/f13dendoctor
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_den
 	r_pocket = /obj/item/flashlight/seclite
-	uniform = /obj/item/clothing/under/suit/white
+	uniform = /obj/item/clothing/under/f13/densuit
 	backpack =	/obj/item/storage/backpack/medic
 	gloves =  /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/beret/durathread
