@@ -8401,12 +8401,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
-"dSb" = (
-/mob/living/simple_animal/hostile/gecko,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "dSg" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -26534,12 +26528,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/village)
-"lZY" = (
-/mob/living/simple_animal/hostile/gecko,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalbottombordertop0"
-	},
-/area/f13/wasteland)
 "maa" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -28101,15 +28089,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"mOq" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "mOv" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -35083,12 +35062,6 @@
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 4;
 	icon_state = "dirt"
-	},
-/area/f13/wasteland)
-"qds" = (
-/mob/living/simple_animal/hostile/gecko,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom2"
 	},
 /area/f13/wasteland)
 "qdB" = (
@@ -47810,10 +47783,6 @@
 /obj/structure/window/reinforced/tinted,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/village)
-"vVT" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "vVU" = (
 /obj/machinery/hydroponics/soil{
 	mutmod = 0;
@@ -51187,15 +51156,6 @@
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2"
-	},
-/area/f13/wasteland)
-"xsd" = (
-/obj/effect/decal/marking{
-	icon_state = "dottedvertical"
-	},
-/mob/living/simple_animal/hostile/raider/thief,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
 "xse" = (
@@ -56954,7 +56914,7 @@ gcK
 gcK
 gcK
 hBr
-vVT
+ggK
 ggK
 hBr
 gcK
@@ -58237,7 +58197,7 @@ uUh
 rXj
 rXj
 szm
-suP
+mZD
 mZD
 rXj
 mZD
@@ -72799,7 +72759,7 @@ fyf
 fyf
 nlO
 xGH
-vtH
+mvv
 doX
 wDc
 fyf
@@ -73644,7 +73604,7 @@ uxC
 wEo
 kGc
 unI
-qds
+dXy
 cdc
 snB
 koD
@@ -76473,7 +76433,7 @@ kGc
 unI
 hbW
 erY
-lZY
+gmX
 koD
 dMW
 sYX
@@ -84097,7 +84057,7 @@ kaM
 kaM
 kaM
 kaM
-xTZ
+kaM
 kaM
 qoS
 fjk
@@ -85974,7 +85934,7 @@ unI
 hbW
 cdc
 erY
-dSb
+erY
 fAt
 erY
 hOl
@@ -86743,7 +86703,7 @@ fyf
 kGc
 unI
 hbW
-dSb
+erY
 erY
 erY
 fAt
@@ -103865,7 +103825,7 @@ otv
 otv
 otv
 ibJ
-uhl
+otv
 heS
 heS
 heS
@@ -111319,7 +111279,7 @@ fyh
 kYG
 oIi
 kYG
-mOq
+kYG
 wrV
 wrV
 kYG
@@ -113101,7 +113061,7 @@ wtj
 wtj
 jae
 uYf
-xsd
+mYz
 kBG
 jae
 jae
