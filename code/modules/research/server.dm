@@ -9,8 +9,8 @@
 	var/working = TRUE			//temperature should break it.
 	var/server_id = 0
 	var/base_mining_income = 2
-	var/heat_gen = 100
-	var/heating_power = 40000
+	var/heat_gen = 80
+	var/heating_power = 30000
 	var/delay = 5
 	var/temp_tolerance_low = 0
 	var/temp_tolerance_high = T20C

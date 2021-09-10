@@ -9,8 +9,8 @@
 	icon_state = "camera"
 	light_color = "#CDDDFF"
 	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 10
+	idle_power_usage = 15
+	active_power_usage = 30
 	layer = WALL_OBJ_LAYER
 
 	resistance_flags = FIRE_PROOF

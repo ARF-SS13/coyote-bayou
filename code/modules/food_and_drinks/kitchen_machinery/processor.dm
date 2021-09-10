@@ -7,8 +7,8 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 50
+	idle_power_usage = 15
+	active_power_usage = 150
 	circuit = /obj/item/circuitboard/machine/processor
 	var/broken = FALSE
 	var/processing = FALSE

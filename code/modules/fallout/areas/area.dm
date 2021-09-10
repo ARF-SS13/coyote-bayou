@@ -454,6 +454,26 @@
 	name = "Brotherhood of Steel Medbay"//Brother Hood
 	icon_state = "brotherhoodmedbay"
 
+/area/f13/brotherhood/operating
+	name = "Brotherhood of Steel Operating Room"//Brother Hood
+	icon_state = "brotherhoodoperating"
+
+/area/f13/brotherhood/chemistry
+	name = "Brotherhood of Steel Chemistry Lab"//Brother Hood
+	icon_state = "brotherhoodchemistry"
+
+/area/f13/brotherhood/dorms
+	name = "Brotherhood of Steel Dormitories"//Brother Hood
+	icon_state = "brotherhooddorms"
+
+/area/f13/brotherhood/armory
+	name = "Brotherhood of Steel Armory"//Brother Hood
+	icon_state = "brotherhoodarmory"
+
+/area/f13/brotherhood/archives
+	name = "Brotherhood of Steel Archives"//Brother Hood
+	icon_state = "brotherhoodarchives"
+
 /area/f13/brotherhood/operations
 	name = "Brotherhood of Steel Operations Department"//Brother Hood
 	icon_state = "brotherhoodoperationsdepartment"

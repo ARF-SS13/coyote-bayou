@@ -186,8 +186,8 @@
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
 	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 20
+	idle_power_usage = 6
+	active_power_usage = 60
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE

@@ -1,0 +1,174 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/light/floor,
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"d" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/window/plasma/reinforced,
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"f" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/caution{
+	dir = 4
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"h" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"j" = (
+/obj/machinery/computer/shuttle/bosentryelevator{
+	dir = 4
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"t" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"A" = (
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"D" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"G" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"K" = (
+/obj/effect/turf_decal/caution{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"M" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/structure/window/plasma/reinforced,
+/obj/machinery/light/floor,
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"Q" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/caution{
+	dir = 8
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"R" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+"W" = (
+/obj/docking_port/mobile/elevator{
+	can_move_docking_ports = 1;
+	dir = 8;
+	dwidth = 1;
+	height = 4;
+	id = "entrance_elevator";
+	name = "BOS Entrance Elevator";
+	width = 5
+	},
+/obj/effect/turf_decal/caution{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/lattice,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating/rust,
+/area/shuttle/entrance_elevator)
+
+(1,1,1) = {"
+G
+Q
+R
+K
+a
+"}
+(2,1,1) = {"
+t
+A
+j
+A
+d
+"}
+(3,1,1) = {"
+t
+A
+A
+A
+d
+"}
+(4,1,1) = {"
+D
+f
+h
+W
+M
+"}
