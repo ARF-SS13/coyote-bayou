@@ -514,6 +514,7 @@
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
+	extra_damage = 4
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4.5
 	burst_size = 1
@@ -588,7 +589,8 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 4
+	fire_delay = 4.2
+	extra_damage = 6
 	burst_size = 1
 	spread = 1
 	can_attachments = TRUE
@@ -618,6 +620,7 @@
 	item_state = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
+	extra_damage = 7
 	burst_size = 1
 	fire_delay = 5
 	spread = 1
