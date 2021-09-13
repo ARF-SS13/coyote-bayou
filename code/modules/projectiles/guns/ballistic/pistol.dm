@@ -85,6 +85,18 @@
 	semi_auto = FALSE
 	can_automatic = FALSE
 
+//Crusader pistol
+/obj/item/gun/ballistic/automatic/pistol/n99/crusader
+	name = "\improper Crusader pistol"
+	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
+	extra_penetration = 0.1
+	extra_damage = 2
+	force = 18
+	icon_state = "crusader"
+	item_state = "crusader"
+	can_attachments = FALSE
+	can_automatic = FALSE
+
 
 //Type 17								Keywords: 10mm, Semi-auto, 12/24 round magazine. Special modifiers: damage +1, spread +1
 /obj/item/gun/ballistic/automatic/pistol/type17

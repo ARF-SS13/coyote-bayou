@@ -746,7 +746,7 @@ Raider
 	head = /obj/item/clothing/head/f13/cowboy
 	gloves = /obj/item/clothing/gloves/color/brown
 	id = /obj/item/card/id/dogtag/town/ncr
-	l_hand = /obj/item/gun/ballistic/rifle/mag/varmint
+	l_hand = /obj/item/gun/ballistic/automatic/varmint
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2)
 

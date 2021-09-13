@@ -87,9 +87,8 @@
 	},
 /area/f13/underground/cave)
 "adK" = (
-/obj/machinery/door/poddoor{
-	id = "lock2";
-	max_integrity = 9600
+/obj/machinery/door/poddoor/ert{
+	id = "lock2"
 	},
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
@@ -1251,9 +1250,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "bzs" = (
-/obj/machinery/door/poddoor{
-	id = "lock4";
-	max_integrity = 9600
+/obj/machinery/door/poddoor/ert{
+	id = "lock4"
 	},
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
@@ -7875,7 +7873,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/bunker)
 "jWr" = (
-
 /obj/structure/closet,
 /obj/item/instrument/violin/golden,
 /obj/item/reagent_containers/food/drinks/flask/gold{
@@ -12733,8 +12730,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "pWt" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/armor/random_high,
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "pXf" = (
@@ -14796,9 +14794,8 @@
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
 "syU" = (
-/obj/machinery/door/poddoor{
-	id = "lock3";
-	max_integrity = 9600
+/obj/machinery/door/poddoor/ert{
+	id = "lock3"
 	},
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
@@ -17704,9 +17701,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "wmn" = (
-/obj/machinery/door/poddoor{
-	id = "lock1";
-	max_integrity = 9600
+/obj/machinery/door/poddoor/ert{
+	id = "lock1"
 	},
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)

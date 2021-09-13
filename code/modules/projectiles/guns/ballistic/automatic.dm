@@ -508,6 +508,78 @@
 //SEMI-AUTO RIFLES//
 ////////////////////
 
+
+//Varmint rifle								Keywords: 5.56, 10/20/30 round magazine, Reduced damage
+/obj/item/gun/ballistic/automatic/varmint
+	name = "varmint rifle"
+	desc = "A simple bolt action rifle in 5.56mm calibre. Easy to use and maintain."
+	icon_state = "varmint"
+	item_state = "varmintrifle"
+	force = 18
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	fire_delay = 9
+	burst_size = 1
+	spread = 0
+	extra_damage = 6
+	can_bayonet = FALSE
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+	scope_state = "scope_short"
+	scope_x_offset = 4
+	scope_y_offset = 12
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
+//De Lisle carbine							Keywords: Pre-war, 9mm, Long barrel, Suppressed
+/obj/item/gun/ballistic/automatic/delisle
+	name = "De Lisle carbine"
+	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. Chambered in 9mm."
+	icon_state = "delisle"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	extra_damage = 9
+	extra_penetration = 0.05
+	fire_delay = 9
+	burst_size = 1
+	spread = 0
+	can_scope = FALSE
+	can_unsuppress = FALSE
+	suppressed = 1
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+//Commando carbine (BoS De Lisle variant)							Keywords: BoS, .45 ACP, 12 round magazine, Long barrel, Suppressed
+/obj/item/gun/ballistic/automatic/delisle/commando
+	name = "commando carbine"
+	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. This modified version is often used by the Brotherhood of Steel. Its stock has been replaced by post-war polymer furniture, with space to mount a scope. Chambered in .45 ACP."
+	icon_state = "commando"
+	item_state = "commando"
+	mag_type = /obj/item/ammo_box/magazine/m45exp
+	can_scope = TRUE
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+	scope_state = "scope_medium"
+	scope_x_offset = 6
+	scope_y_offset = 14
+
+//Ratslayer									Keywords: UNIQUE, 5.56, 10/20/30 round magazine, Suppressed, Scoped, Extra damage +3
+/obj/item/gun/ballistic/automatic/varmint/ratslayer
+	name = "Ratslayer"
+	desc = "A modified varmint rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
+	icon_state = "ratslayer"
+	item_state = "ratslayer"
+	extra_damage = 10
+	extra_penetration = 0.1
+	suppressed = 1
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
 //Service rifle			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine
 /obj/item/gun/ballistic/automatic/service
 	name = "service rifle"
@@ -535,8 +607,8 @@
 	icon_state = "alr15"
 	item_state = "alr15"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 4.5
-	burst_size = 1
+	fire_delay = 5.5
+	burst_size = 2
 	spread = 1
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
@@ -1142,7 +1214,7 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	burst_size = 1
-	fire_delay = 15
+	fire_delay = 12
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13

@@ -42,7 +42,7 @@
 
 /obj/item/storage/survivalkit_adv/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/super(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/reagent_containers/pill/radx(src)

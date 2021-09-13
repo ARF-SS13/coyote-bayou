@@ -400,7 +400,7 @@
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
 	name = "Varmint Rifle"
-	result = /obj/item/gun/ballistic/rifle/mag/varmint
+	result = /obj/item/gun/ballistic/automatic/varmint
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
 				/obj/item/stack/crafting/metalparts = 4,
 				/obj/item/stack/sheet/metal = 1)

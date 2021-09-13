@@ -52,6 +52,7 @@
 
 /obj/item/projectile/beam/weak
 	damage = 25
+	armour_penetration = 0.1
 
 /obj/item/projectile/beam/weak/penetrator
 	armour_penetration = 0.35

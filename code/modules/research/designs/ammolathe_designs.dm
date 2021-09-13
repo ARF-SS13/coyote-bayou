@@ -570,7 +570,7 @@
 /datum/design/ammolathe/m2mm
 	name = "2mm Electromagnetic Magazine"
 	id = "2mm"
-	materials = list(/datum/material/iron = 25000, /datum/material/titanium = 25000)
+	materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
 	build_path = /obj/item/ammo_box/magazine/m2mm
 	category = list("initial", "Advanced Ammo")
 
