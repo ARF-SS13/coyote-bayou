@@ -1,3 +1,8 @@
+/*IN THIS FILE:
+-Deathclaws
+*/
+
+//Base Deathclaw
 /mob/living/simple_animal/hostile/deathclaw
 	name = "deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match."
@@ -9,7 +14,7 @@
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	robust_searching = 1
+	robust_searching = TRUE
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
@@ -33,13 +38,12 @@
 	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("deathclaw")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	unsuitable_atmos_damage = 5
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/charging = FALSE
 	wound_bonus = 0 //This might be a TERRIBLE idea
 	bare_wound_bonus = 0 //is already 0 from simple_animal.dm but putting it here for ease of adjustment
 	sharpness = SHARP_EDGED
+	move_resist = MOVE_FORCE_OVERPOWERING
 
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
@@ -55,6 +59,7 @@
 	environment_smash = 2 //can smash walls
 	wander = 0
 
+// Mother death claw
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
@@ -69,6 +74,7 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
+//Legendary Deathclaw
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
@@ -90,13 +96,13 @@
 	if(!Proj)
 		return
 	if(prob(10))
-		visible_message("<span class='danger'>\The [src] growls, enraged!</span>")
+		visible_message(span_danger("\The [src] growls, enraged!"))
 		sleep(3)
 		Charge()
 	if(prob(85) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want deathclaws to be
 		return ..()
 	else
-		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s thick hide!</span>")
+		visible_message(span_danger("\The [Proj] bounces off \the [src]'s thick hide!"))
 		return 0
 
 /mob/living/simple_animal/hostile/deathclaw/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
@@ -124,7 +130,7 @@
 	if(!T || T == loc)
 		return
 	charging = TRUE
-	visible_message("<span class='danger'>[src] charges!</span>")
+	visible_message(span_danger(">[src] charges!"))
 	DestroySurroundings()
 	walk(src, 0)
 	setDir(get_dir(src, T))
@@ -151,7 +157,7 @@
 
 	else if(isliving(A))
 		var/mob/living/L = A
-		L.visible_message("<span class='danger'>[src] slams into [L]!</span>", "<span class='userdanger'>[src] slams into you!</span>")
+		L.visible_message(span_danger("[src] slams into [L]!"), span_userdanger("[src] slams into you!"))
 		L.apply_damage(melee_damage_lower/2, BRUTE)
 		playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, 1)
 		shake_camera(L, 4, 3)

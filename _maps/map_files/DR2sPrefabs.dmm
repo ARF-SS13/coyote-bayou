@@ -536,9 +536,6 @@
 	},
 /turf/closed/wall/rust,
 /area/space)
-"by" = (
-/turf/closed/wall/rust,
-/area/space)
 "bz" = (
 /obj/structure/simple_door/glass,
 /turf/open/floor/f13{
@@ -6120,10 +6117,6 @@
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
-"sb" = (
-/obj/structure/rack,
-/turf/open/indestructible/ground/inside/mountain,
-/area/space)
 "sc" = (
 /obj/structure/table/wood,
 /obj/item/stack/sheet/cloth/ten,
@@ -6409,12 +6402,6 @@
 /area/space)
 "sX" = (
 /turf/closed/indestructible/f13/matrix,
-/area/space)
-"wq" = (
-/obj/structure/table,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
 /area/space)
 "BN" = (
 /obj/effect/landmark/poster_spawner/prewar,
@@ -7868,7 +7855,7 @@
 	},
 /area/space)
 "Kl" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -9372,7 +9359,7 @@ aa
 aA
 aw
 aw
-wq
+aA
 mj
 LD
 LI
@@ -9773,7 +9760,7 @@ aa
 aa
 aa
 aa
-wq
+aA
 Ld
 aw
 Lq
@@ -10136,7 +10123,7 @@ ac
 ac
 aV
 ac
-by
+ac
 aw
 aw
 cf
@@ -121621,7 +121608,7 @@ fs
 fs
 ab
 rX
-sb
+rY
 ab
 ab
 fr

@@ -277,6 +277,10 @@
 	is_reflectable = TRUE
 	pixels_per_second = TILES_TO_PIXELS(50)
 
+//Securitrons Beam
+/obj/item/projectile/beam/laser/pistol/ultraweak
+	damage = 15 //quantity over quality
+
 //Alrem's plasmacaster
 /obj/item/projectile/f13plasma/plasmacaster/arlem
 	name = "plasma bolt"

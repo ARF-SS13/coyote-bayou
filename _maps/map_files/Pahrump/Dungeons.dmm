@@ -775,7 +775,7 @@
 /area/f13/wasteland)
 "aUx" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/chew{
+/mob/living/simple_animal/hostile/securitron/sentrybot/chew{
 	faction = list("raider")
 	},
 /turf/open/floor/plating/tunnel{
@@ -5112,7 +5112,7 @@
 /area/f13/underground/cave)
 "gsP" = (
 /obj/effect/decal/remains/human,
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "gsV" = (
@@ -5597,7 +5597,7 @@
 /area/f13/vault)
 "gRT" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "gRV" = (
@@ -7915,7 +7915,7 @@
 /area/f13/vault)
 "kaY" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron{
+/mob/living/simple_animal/hostile/securitron{
 	faction = list("bonnie")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
@@ -9613,7 +9613,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "mlO" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
 	icon_state = "dirtcorner"
@@ -9835,7 +9835,7 @@
 	},
 /area/f13/bunker)
 "mxz" = (
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "mxL" = (
@@ -10030,7 +10030,7 @@
 /area/f13/underground/cave)
 "mFH" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "mGp" = (
@@ -11849,7 +11849,7 @@
 /area/f13/bunker)
 "oSz" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot{
+/mob/living/simple_animal/hostile/securitron/sentrybot{
 	aggro_vision_range = 15;
 	color = "#FFFF00";
 	desc = "A pre-war military robot equipped with a high-yield gatling laser and improved dual fusion cores setup to detonate in the event of the robot's destruction. This one looks armored up and powered up to an exponential degree. Oh, fuck.";
@@ -12279,7 +12279,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -14468,7 +14468,7 @@
 /area/f13/bunker)
 "rVH" = (
 /obj/item/trash/f13/cram_large,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb/riot{
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
 	faction = list("wastebot")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -15115,7 +15115,7 @@
 /area/f13/underground/cave)
 "sVK" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron,
+/mob/living/simple_animal/hostile/securitron,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -18824,7 +18824,7 @@
 /area/f13/bunker)
 "xzS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb{
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb{
 	environment_smash = 2
 	},
 /turf/open/floor/plating/tunnel{

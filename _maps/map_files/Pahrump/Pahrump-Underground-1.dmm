@@ -412,7 +412,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "aqn" = (
-/mob/living/simple_animal/hostile/raider/biker{
+/mob/living/simple_animal/hostile/raider/ranged/biker{
 	desc = "Another murderer churned out by the wastes, this one seems slightly more disciplined.";
 	name = "Raider Conscript"
 	},
@@ -4722,7 +4722,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -7179,7 +7179,7 @@
 /area/f13/brotherhood/reactor)
 "egg" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "egE" = (
@@ -7870,7 +7870,7 @@
 /area/f13/clinic)
 "eAg" = (
 /obj/structure/chair/f13foldupchair,
-/mob/living/simple_animal/hostile/raider/biker{
+/mob/living/simple_animal/hostile/raider/ranged/biker{
 	desc = "Another murderer churned out by the wastes, this one seems slightly more disciplined.";
 	name = "Raider Conscript"
 	},
@@ -8398,7 +8398,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/mining)
 "ePT" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "eQC" = (
@@ -10525,7 +10525,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "gfI" = (
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "ggm" = (
@@ -13135,7 +13135,7 @@
 /area/f13/clinic)
 "hNi" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "hNk" = (
@@ -14691,7 +14691,7 @@
 /area/f13/brotherhood/armory)
 "iZM" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -16680,7 +16680,7 @@
 /area/f13/caves)
 "kGU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -18541,7 +18541,7 @@
 /area/f13/clinic)
 "mnG" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "mob" = (

@@ -1133,10 +1133,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"da" = (
-/mob/living/simple_animal/hostile/deathclaw,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/bunker)
 "db" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2731,13 +2727,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/bunker)
-"hu" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/machinery/door/window/westleft,
-/turf/open/floor/plasteel/showroomfloor,
-/area/f13/bunker)
 "hv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3238,11 +3227,6 @@
 /obj/machinery/door/airlock{
 	name = "Vault 223 Bar"
 	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
-/area/f13/bunker)
-"iD" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -5162,12 +5146,6 @@
 	icon_state = "showroomfloor"
 	},
 /area/f13/bunker)
-"nx" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
-/area/f13/bunker)
 "ny" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6726,7 +6704,6 @@
 /area/f13/city)
 "rZ" = (
 /obj/structure/table,
-
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "sa" = (
@@ -6910,10 +6887,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"sC" = (
-/obj/structure/table,
-/turf/open/floor/wood/f13/old,
-/area/f13/city)
 "sD" = (
 /obj/structure/simple_door/interior,
 /turf/open/floor/wood/f13/old,
@@ -8169,7 +8142,7 @@
 	},
 /area/f13/mountain_bunker)
 "ws" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "wt" = (
@@ -9846,7 +9819,6 @@
 /area/f13/bunker)
 "BA" = (
 /obj/structure/table,
-
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -11114,12 +11086,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Fa" = (
-/obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "darkdirty"
-	},
-/area/f13/bunker)
 "Fb" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
@@ -12274,7 +12240,6 @@
 /area/f13/tunnel)
 "Ig" = (
 /obj/structure/closet/wardrobe/cargotech,
-
 /obj/item/pda/quartermaster,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 10
@@ -15736,7 +15701,6 @@
 /area/f13/vault)
 "QL" = (
 /obj/structure/rack,
-
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -24329,7 +24293,7 @@ ac
 wW
 Rt
 wz
-nx
+hJ
 wW
 wW
 wW
@@ -26946,7 +26910,7 @@ ra
 ra
 ra
 ac
-Fa
+AZ
 Ft
 ra
 ra
@@ -27717,7 +27681,7 @@ ra
 ra
 ra
 ac
-Fa
+AZ
 ra
 ra
 ra
@@ -43859,7 +43823,7 @@ sD
 sk
 sk
 sk
-sC
+rZ
 uZ
 sk
 rP
@@ -44373,7 +44337,7 @@ wS
 sR
 sk
 sk
-sC
+rZ
 sk
 sk
 rP
@@ -49516,7 +49480,7 @@ sD
 sk
 sk
 uU
-sC
+rZ
 vi
 sk
 vM
@@ -49772,7 +49736,7 @@ Aa
 wS
 td
 va
-sC
+rZ
 vm
 sk
 sk
@@ -50286,7 +50250,7 @@ pJ
 wS
 ss
 sk
-sC
+rZ
 sk
 sk
 sk
@@ -52581,7 +52545,7 @@ rP
 rT
 sk
 sk
-sC
+rZ
 sk
 sk
 DJ
@@ -52838,7 +52802,7 @@ rP
 rP
 sk
 sk
-sC
+rZ
 sk
 sk
 sk
@@ -76324,7 +76288,7 @@ cu
 ct
 cJ
 bl
-da
+cI
 ct
 dj
 aX
@@ -76987,7 +76951,7 @@ hD
 dZ
 fd
 dZ
-iD
+dZ
 HD
 HD
 eh
@@ -81351,7 +81315,7 @@ dZ
 dZ
 HD
 fb
-hu
+dS
 HD
 dZ
 dZ

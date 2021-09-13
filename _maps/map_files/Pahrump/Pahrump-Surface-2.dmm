@@ -2565,7 +2565,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bfO" = (
-/mob/living/simple_animal/hostile/handy/sentrybot,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -23475,7 +23475,7 @@
 	},
 /area/f13/building)
 "kxZ" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /obj/structure/chair/f13chair2,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -23727,7 +23727,7 @@
 	},
 /area/f13/building)
 "kFI" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -42374,7 +42374,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/village)
 "txM" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "txN" = (
@@ -51159,7 +51159,7 @@
 	},
 /area/f13/wasteland)
 "xse" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)

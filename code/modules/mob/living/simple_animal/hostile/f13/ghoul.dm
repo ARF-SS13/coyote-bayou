@@ -1,3 +1,8 @@
+/* IN THIS FILE
+-Ghouls
+*/
+
+//Base Ghoul
 /mob/living/simple_animal/hostile/ghoul
 	name = "feral ghoul"
 	desc = "A ghoul that has lost its mind and become aggressive."
@@ -29,8 +34,6 @@
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
 
-//	loot = list(/obj/effect/gibspawner/human, /obj/item/stack/f13Cash/random/low)   // not quite ready for cap drops on ghouls
-
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
 	emote_taunt = list("gurgles", "stares")
 	taunt_chance = 30
@@ -38,6 +41,7 @@
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
 
+// Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
@@ -59,6 +63,7 @@
 	..()
 	summon_backup(10)
 
+//Cold Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/coldferal
 	name = "cold ghoul feral"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
@@ -73,6 +78,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
+//Frozen Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
 	name = "frozen ghoul reaver"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
@@ -87,6 +93,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 
+//Legendary Ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
 	name = "legendary ghoul"
 	desc = "A ghoul that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
@@ -104,6 +111,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 
+//Glowing Ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
 	name = "glowing feral ghoul"
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
@@ -145,6 +153,7 @@
 	melee_damage_upper = 35
 	armour_penetration = 0.1
 
+//Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier
 	name = "ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
@@ -156,6 +165,7 @@
 	maxHealth = 90
 	health = 90
 
+//Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
 	name = "armored ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
@@ -167,6 +177,7 @@
 	maxHealth = 100
 	health = 100
 
+//Alive Ghoul
 /mob/living/simple_animal/hostile/ghoul/scorched
 	name = "scorched ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
@@ -176,23 +187,19 @@
 	icon_dead = "scorched_m_d"
 	icon_gib = "syndicate_gib"
 	speak_chance = 1
-	turns_per_move = 5
 	environment_smash = 0
 	response_help_simple = "hugs"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "growl"
 	move_to_delay = 4
-	maxHealth = 80
-	health = 80
 	faction = list("scorched", "hostile")
 	death_sound = null
-	melee_damage_lower = 15
 	melee_damage_upper = 20
 	aggro_vision_range = 10
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 
-
+//Alive Ghoul Ranged
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
 	name = "Ranged Ghoul Solder"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
@@ -208,9 +215,7 @@
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "ow"
 	move_to_delay = 4
-	maxHealth = 80
-	health = 80
-	ranged = 1
+	ranged = TRUE
 	ranged_cooldown_time = 200
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'

@@ -367,7 +367,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "gI" = (
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "gM" = (
@@ -703,7 +703,7 @@
 /area/f13/tunnel)
 "ns" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ny" = (
@@ -812,14 +812,14 @@
 "pJ" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
 /area/f13/bunker)
 "qb" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb/riot,
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "qt" = (
@@ -1102,7 +1102,7 @@
 /area/f13/bunker)
 "ve" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -1211,7 +1211,7 @@
 /area/f13/bunker)
 "vS" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "wm" = (
@@ -1508,7 +1508,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ce" = (
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ch" = (
@@ -1865,7 +1865,7 @@
 /area/f13/tunnel)
 "Jf" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/securitron/nsb,
+/mob/living/simple_animal/hostile/securitron/nsb,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "Jj" = (
@@ -2303,7 +2303,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "RF" = (
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "RH" = (
@@ -2408,7 +2408,7 @@
 /area/f13/bunker)
 "TO" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -2491,7 +2491,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "Vx" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "VE" = (
@@ -2570,7 +2570,7 @@
 /turf/open/water,
 /area/f13/tunnel)
 "Xi" = (
-/mob/living/simple_animal/hostile/raider/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "Xn" = (
@@ -2714,7 +2714,7 @@
 /area/f13/caves)
 "ZB" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/sentrybot/nsb,
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "ZF" = (
