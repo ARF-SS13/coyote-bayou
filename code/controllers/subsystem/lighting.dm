@@ -31,56 +31,52 @@ SUBSYSTEM_DEF(lighting)
 	MC_SPLIT_TICK_INIT(3)
 	if(!init_tick_checks)
 		MC_SPLIT_TICK
-	var/i = 0
-	for (i in 1 to GLOB.lighting_update_lights.len)
-		var/datum/light_source/L = GLOB.lighting_update_lights[i]
+	var/list/queue = GLOB.lighting_update_lights
+	while(length(queue))
+		var/datum/light_source/light_datum = queue[length(queue)]
+		queue.len--
 
-		L.update_corners()
+		light_datum.update_corners()
 
-		L.needs_update = LIGHTING_NO_UPDATE
+		light_datum.needs_update = LIGHTING_NO_UPDATE
 
 		if(init_tick_checks)
 			CHECK_TICK
 		else if (MC_TICK_CHECK)
 			break
-	if (i)
-		GLOB.lighting_update_lights.Cut(1, i+1)
-		i = 0
 
 	if(!init_tick_checks)
 		MC_SPLIT_TICK
 
-	for (i in 1 to GLOB.lighting_update_corners.len)
-		var/datum/lighting_corner/C = GLOB.lighting_update_corners[i]
+	queue = GLOB.lighting_update_corners
+	while(length(queue))
+		var/datum/lighting_corner/corner_datum = queue[length(queue)]
+		queue.len--
 
-		C.update_objects()
-		C.needs_update = FALSE
+		corner_datum.update_objects()
+		corner_datum.needs_update = FALSE
 		if(init_tick_checks)
 			CHECK_TICK
 		else if (MC_TICK_CHECK)
 			break
-	if (i)
-		GLOB.lighting_update_corners.Cut(1, i+1)
-		i = 0
-
 
 	if(!init_tick_checks)
 		MC_SPLIT_TICK
 
-	for (i in 1 to GLOB.lighting_update_objects.len)
-		var/atom/movable/lighting_object/O = GLOB.lighting_update_objects[i]
+	queue = GLOB.lighting_update_objects
+	while(length(queue))
+		var/atom/movable/lighting_object/lighting_object = queue[length(queue)]
+		queue.len--
 
-		if (QDELETED(O))
+		if (QDELETED(lighting_object))
 			continue
 
-		O.update()
-		O.needs_update = FALSE
+		lighting_object.update()
+		lighting_object.needs_update = FALSE
 		if(init_tick_checks)
 			CHECK_TICK
 		else if (MC_TICK_CHECK)
 			break
-	if (i)
-		GLOB.lighting_update_objects.Cut(1, i+1)
 
 
 /datum/controller/subsystem/lighting/Recover()
