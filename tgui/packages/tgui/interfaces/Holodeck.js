@@ -32,7 +32,7 @@ export const Holodeck = (props, context) => {
             <Button
               fluid
               key={def_program.type}
-              content={def_program.name.substring(11)}
+              content={def_program.name.split(' - ')[1]}
               textAlign="center"
               selected={def_program.type === program}
               onClick={() => act('load_program', {
@@ -46,7 +46,7 @@ export const Holodeck = (props, context) => {
               <Button
                 fluid
                 key={emag_program.type}
-                content={emag_program.name.substring(11)}
+                content={emag_program.name.split(' - ')[1]}
                 color="bad"
                 textAlign="center"
                 selected={emag_program.type === program}

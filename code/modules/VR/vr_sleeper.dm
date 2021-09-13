@@ -16,14 +16,6 @@
 	var/allow_creating_vr_mobs = TRUE //So you can have vr_sleepers that always spawn you as a specific person or 1 life/chance vr games
 	var/only_current_user_can_interact = FALSE
 
-/obj/machinery/vr_sleeper/bos
-	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured for combat simulations."
-	vr_category = "bos"
-
-/obj/machinery/vr_sleeper/followers
-	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured to serve as a medical and botanical training ground."
-	vr_category = "followers"
-
 /obj/machinery/vr_sleeper/Initialize()
 	. = ..()
 	sparks = new /datum/effect_system/spark_spread()
@@ -208,6 +200,26 @@
 	if(vr_mob)
 		vr_mob.Dizzy(10)
 
+/obj/machinery/vr_sleeper/bos
+	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured for combat simulations."
+	vr_category = "bos"
+	circuit = /obj/item/circuitboard/machine/vr_sleeper/bos
+
+/obj/machinery/vr_sleeper/followers
+	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. This one is configured to serve as a medical and botanical training ground."
+	vr_category = "followers"
+	circuit = /obj/item/circuitboard/machine/vr_sleeper/followers
+
+/obj/machinery/vr_sleeper/den
+	desc = "A sleeper modified to alter the subconscious state of the user, allowing them to visit virtual worlds. It's seen better days, and appears to have been tampered with."
+	vr_category = "den"
+	circuit = /obj/item/circuitboard/machine/vr_sleeper/den
+
+/obj/machinery/vr_sleeper/den/new_player(mob/M, location, datum/outfit/outfit, transfer = TRUE)
+	. = ..()
+	// Hacked VR Avatar has Faction Attribute so den can fuck with BoS simulations without getting merked
+	vr_mob.faction = list("hostile", "enclave", "silicon", "turret", "supermutant", "wastebot") 
+
 /obj/effect/landmark/vr_spawn //places you can spawn in VR, auto selected by the vr_sleeper during get_vr_spawnpoint()
 	var/vr_category = "default" //So we can have specific sleepers, eg: "Basketball VR Sleeper", etc.
 	var/vr_outfit = /datum/outfit/vr
@@ -238,6 +250,11 @@
 
 /obj/effect/landmark/vr_spawn/followers
 	vr_category = "followers"
+	vr_outfit = /datum/outfit/vr/followers
+
+/obj/effect/landmark/vr_spawn/den
+	vr_category = "den"
+	vr_outfit = /datum/outfit/vr/den
 
 /obj/effect/vr_clean_master // Will keep VR areas that have this relatively clean.
 	icon = 'icons/mob/screen_gen.dmi'

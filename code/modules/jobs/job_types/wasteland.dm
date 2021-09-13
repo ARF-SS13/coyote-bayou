@@ -275,6 +275,9 @@ Great Khan
 		GLOB.all_gangs |= GK
 		GK.add_member(H)
 		H.gang = GK
+	
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
+
 
 /datum/outfit/loadout/pusher
 	name = "Chemist"
@@ -821,6 +824,8 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
+	
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
 /datum/outfit/loadout/hitman
 	name = "Hitman"
@@ -900,6 +905,8 @@ Raider
 	..()
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
+
 
 /datum/outfit/job/wasteland/f13mobboss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -967,6 +974,8 @@ datum/job/wasteland/f13dendoctor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
+
 
 /datum/outfit/job/wasteland/f13dendoctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

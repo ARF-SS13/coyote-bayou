@@ -203,3 +203,46 @@
 	if(!A || A.noteleport)
 		return FALSE
 	return TRUE
+
+/obj/machinery/computer/teleporter/vr
+	name = "VR Scenario Loader"
+	desc = "A virtual computer acting as an interface to transport digital avatars to specific scenarios."
+
+/obj/machinery/computer/teleporter/vr/Initialize()
+	. = ..()
+	// This cannot be allowed to be deconstructed. We don't want people escaping VR by making a normal teleporter console
+	flags_1 |= NODECONSTRUCT_1
+
+
+/obj/machinery/computer/teleporter/vr/reset_regime()
+	target = null
+	regime_set = "Teleporter"
+
+/obj/machinery/computer/teleporter/vr/bos
+	desc = "A virtual computer acting as an interface to transport digital avatars to specific scenarios. This one allows access to combat simulations."
+
+/obj/machinery/computer/teleporter/vr/followers
+	desc = "A virtual computer acting as an interface to transport digital avatars to specific scenarios. This one allows access various training simulations."
+
+/obj/machinery/computer/teleporter/vr/den
+	desc = "A virtual computer acting as an interface to transport digital avatars to specific scenarios. This one leads to interesting places."
+
+/obj/machinery/computer/teleporter/vr/is_eligible(atom/movable/AM)
+	if(istype(AM, /obj/item/beacon/vr/public))
+		return TRUE
+	return ..(AM)
+
+/obj/machinery/computer/teleporter/vr/bos/is_eligible(atom/movable/AM)
+	if(istype(AM, /obj/item/beacon/vr/bos))
+		return TRUE
+	return ..(AM)
+
+/obj/machinery/computer/teleporter/vr/followers/is_eligible(atom/movable/AM)
+	if(istype(AM, /obj/item/beacon/vr/followers))
+		return TRUE
+	return ..(AM)
+
+/obj/machinery/computer/teleporter/vr/den/is_eligible(atom/movable/AM)
+	if(istype(AM, /obj/item/beacon/vr/den))
+		return TRUE
+	return ..(AM)

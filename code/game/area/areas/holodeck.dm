@@ -137,3 +137,113 @@
 /area/holodeck/rec_center/thunderdome1218
 	name = "Holodeck - 1218 AD"
 	restricted = 1
+
+// BoS Programs
+
+/area/holodeck/bos
+	name = "\improper BOS HOLODECK"
+	has_gravity = STANDARD_GRAVITY
+
+/area/holodeck/bos/sim_1
+	name = "BoS Simulation Chamber 1"
+
+/area/holodeck/bos/sim_2
+	name = "BoS Simulation Chamber 2"
+
+/area/holodeck/bos/programs/medical
+	name = "VR - Medical"
+
+/area/holodeck/bos/programs/armory
+	name = "VR - Armory"
+
+/area/holodeck/bos/programs/bodies
+	name = "VR - Body"
+
+/area/holodeck/bos/programs/offline
+	name = "VR - null"
+
+
+// Den Programs
+
+/area/holodeck/den
+	name = "\improper DEN HOLODECK"
+	has_gravity = STANDARD_GRAVITY
+
+/area/holodeck/den/sim_1
+	name = "Den Simulation Chamber 1"
+
+/area/holodeck/den/sim_2
+	name = "Den Simulation Chamber 2"
+
+/area/holodeck/den/programs/medical
+	name = "VR - Medical"
+
+/area/holodeck/den/programs/armory
+	name = "VR - Armory"
+
+/area/holodeck/den/programs/bodies
+	name = "VR - Body"
+
+/area/holodeck/den/programs/offline
+	name = "VR - null"
+
+
+// Followers Programs
+
+/area/holodeck/followers
+	name = "\improper FOLLOWERS HOLODECK"
+	has_gravity = STANDARD_GRAVITY
+
+/area/holodeck/followers/sim_1
+	name = "Followers Simulation Chamber 1"
+
+/area/holodeck/followers/sim_2
+	name = "Followers Simulation Chamber 2"
+
+/area/holodeck/followers/programs/garden
+	name = "VR - Garden"
+
+/area/holodeck/followers/programs/medical
+	name = "VR - Medical"
+
+/area/holodeck/followers/programs/bodies
+	name = "VR - Body"
+
+/area/holodeck/followers/programs/offline
+	name = "VR - null"
+
+// Arena programs
+
+/area/holodeck/deathmatch
+	name = "\improper DEATHMATCH"
+	has_gravity = STANDARD_GRAVITY
+
+/area/holodeck/deathmatch/public/blue_1
+	name = "\improper DEATHMATCH BLUE 1"
+
+/area/holodeck/deathmatch/public/blue_2
+	name = "\improper DEATHMATCH BLUE 2"
+
+/area/holodeck/deathmatch/public/red_1
+	name = "\improper DEATHMATCH RED 1"
+
+/area/holodeck/deathmatch/public/red_2
+	name = "\improper DEATHMATCH RED 2"
+
+/area/holodeck/deathmatch/bos/blue_1
+	name = "\improper DEATHMATCH BLUE 1 BOS"
+
+/area/holodeck/deathmatch/bos/blue_2
+	name = "\improper DEATHMATCH BLUE 2 BOS"
+
+/area/holodeck/deathmatch/bos/red_1
+	name = "\improper DEATHMATCH RED 1 BOS"
+
+/area/holodeck/deathmatch/bos/red_2
+	name = "\improper DEATHMATCH RED 2 BOS"
+
+/area/holodeck/deathmatch/rooms/armory
+	name = "Arena - Armory"
+
+/area/holodeck/deathmatch/rooms/offline
+	name = "Arena - Offline"

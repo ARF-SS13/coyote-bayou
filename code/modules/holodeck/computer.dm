@@ -29,6 +29,7 @@
 	var/area/holodeck/program
 	var/area/holodeck/last_program
 	var/area/offline_program = /area/holodeck/rec_center/offline
+	var/area/init_program = /area/holodeck/rec_center/offline
 
 	var/list/program_cache
 	var/list/emag_programs
@@ -53,6 +54,8 @@
 		linked = pop(get_areas(holodeck_type, FALSE))
 	if(ispath(offline_program, /area))
 		offline_program = pop(get_areas(offline_program), FALSE)
+	if(ispath(init_program, /area))
+		init_program = pop(get_areas(init_program), FALSE)
 	// the following is necessary for power reasons
 	if(!linked || !offline_program)
 		log_world("No matching holodeck area found")
@@ -73,7 +76,10 @@
 			linked.power_usage = new /list(AREA_USAGE_LEN)
 		*/
 	generate_program_list()
-	load_program(offline_program, FALSE, FALSE)
+	if(init_program)
+		load_program(init_program, FALSE, FALSE)
+	else
+		load_program(offline_program, FALSE, FALSE)
 
 /obj/machinery/computer/holodeck/Destroy()
 	emergency_shutdown()
@@ -309,6 +315,40 @@
 	if(!silent)
 		visible_message("<span class='notice'>[O] fades away!</span>")
 	qdel(O)
+
+/obj/machinery/computer/holodeck/virtual
+	name = "VR environment control console"
+	desc = "A console for interacting with the simulation"
+
+/obj/machinery/computer/holodeck/virtual/derez(obj/O, silent = TRUE, forced = FALSE)
+	// We don't want to ever despawn things that got out of the holodeck area in this case
+	var/area/AS = get_area(O)
+	if(!istype(AS, /area/holodeck))
+		return
+
+	if(O && !stat && !forced)
+		if((ismob(O) || ismob(O.loc)))
+			addtimer(CALLBACK(src, .proc/derez, O, silent), 200) // We want virtual objects to last a long time.
+			return
+
+	spawned -= O
+	if(!O)
+		return
+	var/turf/T = get_turf(O)
+	for(var/atom/movable/AM in O) // these should be derezed if they were generated
+		AM.forceMove(T)
+		if(ismob(AM))
+			silent = FALSE					// otherwise make sure they are dropped
+
+	if(!silent)
+		visible_message("<span class='notice'>[O] fades away!</span>")
+	qdel(O)
+
+/obj/machinery/computer/holodeck/virtual/nerf(active)
+	// Custom overloaded nerf proc because we don't need to change damage types in VR
+	for(var/e in effects)
+		var/obj/effect/holodeck_effect/HE = e
+		HE.safety(active)
 
 #undef HOLODECK_CD
 #undef HOLODECK_DMG_CD

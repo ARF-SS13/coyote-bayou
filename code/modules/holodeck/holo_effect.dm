@@ -109,3 +109,21 @@
 
 /obj/effect/holodeck_effect/mobspawner/penguin_baby
 	mobtype = /mob/living/simple_animal/pet/penguin/baby
+
+/obj/effect/holodeck_effect/machinespawner
+	var/machinetype = /obj/machinery
+	var/obj/machinery/machine = null
+
+/obj/effect/holodeck_effect/machinespawner/activate(obj/machinery/computer/holodeck/HC)
+	if(islist(machinetype))
+		machinetype = pick(machinetype)
+	machine = new machinetype(loc)
+
+	ENABLE_BITFIELD(machine.flags_1, HOLOGRAM_1)
+	return machine
+
+/obj/effect/holodeck_effect/machinespawner/deactivate(obj/machinery/computer/holodeck/HC)
+	if(machine)
+		HC.derez(machine)
+	qdel(src)
+

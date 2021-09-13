@@ -41,6 +41,8 @@ Main doors: ACCESS_CAPTAIN 20
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmet)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmormk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmetmk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/bos)
+
 /*
 Elder
 */
@@ -626,12 +628,6 @@ Scribe
 		),
 	)
 
-/datum/outfit/job/bos/f13scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
-
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/bos/f13scribe
@@ -655,6 +651,7 @@ Scribe
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"

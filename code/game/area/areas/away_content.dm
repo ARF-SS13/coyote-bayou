@@ -26,11 +26,41 @@ Unused icons for new areas are "awaycontent1" ~ "awaycontent30"
 /area/awaymission/vr
 	name = "Virtual Reality"
 	icon_state = "awaycontent1"
+	has_gravity = STANDARD_GRAVITY
+	requires_power = FALSE
 
 /area/awaymission/vr/bos
-	has_gravity = STANDARD_GRAVITY
-	requires_power = FALSE
+	name = "\improper Bos VR"
 
 /area/awaymission/vr/followers
-	has_gravity = STANDARD_GRAVITY
-	requires_power = FALSE
+	name = "\improper Followers VR"
+
+/area/awaymission/vr/den
+	name = "\improper Den VR"
+
+/area/awaymission/vr/public
+	name = "\improper Public VR"
+
+/area/awaymission/vr/bos/enclavebunker
+	name = "Enclave Bunker VR Mission"
+
+/area/awaymission/vr/bos/casino
+	name = "Casino VR Mission"
+
+/area/awaymission/vr/bos/deathmatch/
+	name = "Arena VR Mission"
+
+/area/awaymission/vr/bos/deathmatch/blue
+	name = "Arena VR Mission Blue Team"
+
+/area/awaymission/vr/bos/deathmatch/red
+	name = "Arena VR Mission Red Team"
+
+/area/awaymission/vr/public/deathmatch/
+	name = "Public Arena VR Mission"
+
+/area/awaymission/vr/public/deathmatch/blue
+	name = "Public Arena VR Mission Blue Team"
+
+/area/awaymission/vr/public/deathmatch/red
+	name = "Public Arena VR Mission Red Team"

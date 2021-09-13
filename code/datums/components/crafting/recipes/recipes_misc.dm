@@ -76,6 +76,39 @@
 		return FALSE
 	return TRUE
 
+/datum/crafting_recipe/reset_vrboard
+	name = "Reset VR Sleeper Board"
+	time = 15
+	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
+	tools = list(/obj/item/multitool)
+	result = /obj/item/circuitboard/machine/vr_sleeper
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+
+/datum/crafting_recipe/set_vrboard
+	category = CAT_CRAFTING
+	subcategory = CAT_SCAVENGING
+	time = 15
+	always_availible = FALSE
+
+/datum/crafting_recipe/set_vrboard/bos
+	name = "Modify VR Sleeper Board (BoS)"
+	result = /obj/item/circuitboard/machine/vr_sleeper/bos
+	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
+	tools = list(/obj/item/multitool)
+
+/datum/crafting_recipe/set_vrboard/followers
+	name = "Modify VR Sleeper Board (Followers)"
+	result = /obj/item/circuitboard/machine/vr_sleeper/followers
+	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
+	tools = list(/obj/item/multitool)
+
+/datum/crafting_recipe/set_vrboard/den
+	name = "Modify VR Sleeper Board (Den)"
+	result = /obj/item/circuitboard/machine/vr_sleeper/den
+	reqs = list(/obj/item/circuitboard/machine/vr_sleeper = 1)
+	tools = list(/obj/item/multitool)
+
 //////////////////////
 //Burial & Execution//
 //////////////////////

@@ -20,6 +20,18 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stack/sheet/glass = 2)
 
+/obj/item/circuitboard/machine/vr_sleeper/bos
+	name = "Brotherhood VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/vr_sleeper/bos
+
+/obj/item/circuitboard/machine/vr_sleeper/followers
+	name = "Followers VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/vr_sleeper/followers
+
+/obj/item/circuitboard/machine/vr_sleeper/den
+	name = "Den VR Sleeper (Machine Board)"
+	build_path = /obj/machinery/vr_sleeper/den
+
 /obj/item/circuitboard/machine/announcement_system
 	name = "Announcement System (Machine Board)"
 	build_path = /obj/machinery/announcement_system
