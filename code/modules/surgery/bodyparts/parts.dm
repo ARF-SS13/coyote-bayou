@@ -288,3 +288,68 @@
 	dismemberable = 0
 	max_damage = 5000
 	animal_origin = DEVIL_BODYPART
+
+/*
+Cannibal Butchering
+*/
+
+/obj/item/bodypart/l_arm/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness())
+		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
+		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		if(do_after(user, 50, target = src))
+			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
+			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
+			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
+			new /obj/effect/gibspawner/human(user.drop_location(), 1)
+			use(1)
+			del src
+	else
+		return ..()
+
+/obj/item/bodypart/r_arm/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness())
+		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
+		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		if(do_after(user, 50, target = src))
+			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
+			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
+			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
+			new /obj/effect/gibspawner/human(user.drop_location(), 1)
+			use(1)
+			del src
+	else
+		return ..()
+
+/obj/item/bodypart/r_leg/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness())
+		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
+		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		if(do_after(user, 50, target = src))
+			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
+			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
+			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
+			new /obj/effect/gibspawner/human(user.drop_location(), 1)
+			use(1)
+			del src
+	else
+		return ..()
+
+/obj/item/bodypart/l_leg/attackby(obj/item/W, mob/user, params)
+	if(W.get_sharpness())
+		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
+		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		if(do_after(user, 50, target = src))
+			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
+			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
+			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
+			new /obj/effect/gibspawner/human(user.drop_location(), 1)
+			use(1)
+			del src
+	else
+		return ..()
+
