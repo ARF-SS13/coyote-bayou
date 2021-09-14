@@ -336,6 +336,9 @@
 	id_tag = "bosaccesscontrol";
 	req_access_txt = "120"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "anM" = (
@@ -549,7 +552,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "auO" = (
 /obj/structure/sign/poster/prewar/poster71,
@@ -687,7 +690,7 @@
 	layer = 2.9
 	},
 /obj/machinery/light/small,
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "azj" = (
 /obj/machinery/light/small{
@@ -715,7 +718,7 @@
 	layer = 2.9
 	},
 /obj/item/storage/fancy/donut_box,
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "azU" = (
 /obj/structure/flora/rock/jungle,
@@ -750,11 +753,11 @@
 "aAE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "aAX" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "aBb" = (
 /turf/closed/mineral/random/high_chance,
@@ -812,11 +815,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "aCY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/broken_flooring,
-/obj/structure/lattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/obj/item/crowbar{
+	pixel_x = 31
+	},
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 33
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood/dorms)
 "aDa" = (
@@ -3307,7 +3314,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
-	dir = 1;
+	dir = 4;
 	pixel_x = 32;
 	start_charge = 500
 	},
@@ -4374,7 +4381,7 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/ncr)
 "cNv" = (
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "cNW" = (
 /obj/structure/table/reinforced,
@@ -9543,7 +9550,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/snack,
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "fCi" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9553,7 +9560,7 @@
 /obj/structure/table{
 	layer = 2.9
 	},
-/turf/open/floor/circuit/f13_red/off,
+/turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
 "fCl" = (
 /obj/structure/wreck/trash/five_tires,
@@ -10212,7 +10219,9 @@
 	icon_state = "officechair_dark"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "fWv" = (
 /obj/structure/fence{
@@ -10436,13 +10445,6 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
-"geb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/gun/energy/e_gun/old{
-	pixel_x = -32
-	},
-/turf/open/floor/carpet/black,
-/area/f13/brotherhood/offices2nd)
 "ger" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/wood/f13/old,
@@ -11458,7 +11460,9 @@
 	layer = 2.9
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "gIW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -13744,7 +13748,9 @@
 /obj/structure/table{
 	layer = 2.9
 	},
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "imd" = (
 /obj/item/circular_saw,
@@ -14150,6 +14156,7 @@
 	},
 /obj/item/gun/energy/pulse{
 	anchored = 1;
+	cell_type = null;
 	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel. This one is for display, and no longer fires.";
 	name = "display pulse rifle";
 	pin = null;
@@ -14761,16 +14768,6 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"jdj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/lattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/f13/brotherhood/dorms)
 "jdF" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
@@ -16390,7 +16387,9 @@
 /area/f13/den)
 "ksk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "ksv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17316,6 +17315,8 @@
 	pixel_y = 34
 	},
 /obj/item/gun/energy/laser/plasma/scatter{
+	anchored = 1;
+	cell_type = null;
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots. This one is for display, and no longer fires.";
 	name = "display multiplas rifle";
 	pin = null;
@@ -21225,7 +21226,7 @@
 "obV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc{
-	dir = 1;
+	dir = 4;
 	pixel_x = 32;
 	start_charge = 500
 	},
@@ -23938,15 +23939,6 @@
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/caves)
-"pVy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/item/crowbar,
-/obj/structure/lattice,
-/turf/open/floor/plating/tunnel,
-/area/f13/brotherhood/dorms)
 "pVA" = (
 /obj/effect/decal/cleanable/shreds{
 	pixel_x = -6;
@@ -25322,6 +25314,7 @@
 	},
 /obj/item/gun/energy/laser/rcw{
 	anchored = 1;
+	cell_type = null;
 	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds. This one is for display, and no longer fires.";
 	name = "display laser RCW";
 	pin = null;
@@ -26119,7 +26112,9 @@
 /area/f13/brotherhood/medical)
 "rpZ" = (
 /obj/structure/filingcabinet/filingcabinet,
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "rqc" = (
 /obj/machinery/light{
@@ -27597,7 +27592,9 @@
 /obj/machinery/atmospherics/pipe/manifold{
 	dir = 4
 	},
-/turf/open/floor/plating/f13/inside,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/brotherhood/operating)
 "sqn" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -27798,7 +27795,9 @@
 /obj/item/integrated_circuit_printer,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "szN" = (
 /obj/structure/decoration/warning{
@@ -31991,13 +31990,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood/dorms)
-"vYx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/lattice,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
-	},
-/area/f13/brotherhood/dorms)
 "vYY" = (
 /obj/structure/window/reinforced/clockwork/fulltile,
 /obj/structure/grille,
@@ -32007,7 +31999,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "vZa" = (
-/turf/open/floor/circuit/f13_blue/off,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/rnd)
 "vZj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -32236,6 +32230,7 @@
 	},
 /obj/item/gun/energy/e_gun/old{
 	anchored = 1;
+	cell_type = null;
 	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command. This one is for display, and does not fire.";
 	pin = null;
 	pixel_y = 32
@@ -93988,8 +93983,8 @@ aXV
 aXV
 dTR
 dTR
-pVy
-jdj
+dSU
+dSU
 dTR
 aXl
 xCN
@@ -94245,8 +94240,8 @@ bBc
 pPK
 dTR
 bBc
-vYx
-aCY
+dTR
+dTR
 dTR
 lYO
 bpw
@@ -94502,7 +94497,7 @@ dTR
 amA
 bBc
 bBc
-bBc
+aCY
 ecf
 dTR
 fYf
@@ -97892,7 +97887,7 @@ ugU
 tVr
 uIZ
 uUk
-geb
+uWC
 vNS
 wvy
 wSb
