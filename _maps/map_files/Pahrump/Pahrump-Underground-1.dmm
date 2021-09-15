@@ -4841,13 +4841,10 @@
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
 "cZJ" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/crafting,
-/obj/item/stack/ore/blackpowder/fifty,
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/stack/ore/blackpowder/fifty,
+/obj/machinery/mineral/wasteland_trader/organ,
 /turf/open/floor/f13{
 	icon_state = "floorgrime"
 	},
@@ -8988,6 +8985,9 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/stack/ore/blackpowder/fifty,
+/obj/item/stack/ore/blackpowder/fifty,
+/obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/f13{
 	icon_state = "floorgrime"
 	},

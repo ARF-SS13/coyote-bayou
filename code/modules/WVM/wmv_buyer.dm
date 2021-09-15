@@ -1,6 +1,6 @@
 /obj/machinery/mineral/wasteland_trader
 	name = "Trading point"
-	desc = "Trading point at which you can sell select goods for caps"
+	desc = "Trading point at which you can sell select goods for caps."
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "weapon_idle"
 
@@ -127,4 +127,78 @@
 		C.forceMove(src.loc)
 		stored_caps = 0
 	playsound(src, 'sound/items/coinflip.ogg', 60, 1)
+	src.ui_interact(usr)
+
+/*
+
+ORGAN SELLER
+
+*/
+
+/obj/machinery/mineral/wasteland_trader/organ
+	name = "Organ Grinder"
+	desc = "Organs go in, caps come out. How does it work? Nobody knows."
+	icon = 'icons/WVM/machines.dmi'
+	icon_state = "organs"
+
+	goods_list = list( /obj/item/organ/heart = 30,
+								/obj/item/organ/ears = 5,
+								/obj/item/organ/eyes = 5,
+								/obj/item/organ/liver = 15,
+								/obj/item/organ/lungs = 25,
+								/obj/item/organ/stomach = 15,
+								/obj/item/organ/tongue = 5
+								)
+
+/obj/machinery/mineral/wasteland_trader/organ/ui_interact(mob/user)
+	. = ..()
+	var/dat
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "</div>"
+	dat += "<br>"
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Accepted goods and prices:</b><br>"
+	dat += "Heart : 30 caps<br>"
+	dat += "Lungs : 25 caps<br>"
+	dat += "Liver : 15 caps<br>"
+	dat += "Stomach : 15 caps<br>"
+	dat += "Eyes : 5 caps<br>"
+	dat += "Ears : 5 caps<br>"
+	dat += "Tongue : 5 caps<br>"
+	dat += "Brain : UNAVAILABLE<br>"
+	dat += ""
+	dat += "</div>"
+
+	var/datum/browser/popup = new(user, "tradingvendor", "Organ Grinder", 400, 500)
+	popup.set_content(dat)
+	popup.open()
+	return
+
+/obj/machinery/mineral/wasteland_trader/organ/attackby(obj/item/I, mob/user, params)
+	add_caps_squish(I)
+
+/* Adding a caps to caps storage and release vending item. */
+/obj/machinery/mineral/wasteland_trader/organ/proc/add_caps_squish(obj/item/I)
+	var/final_value = 0
+	var/value_per = 0
+
+	if(!(I?.type in goods_list))
+		to_chat(usr, "<span class='notice'>[src] is not buying that!</span>")
+		return
+
+	value_per = goods_list[I.type]
+	if(!isnum(value_per))
+		return
+
+	if(istype(I, /obj/item/stack))
+		var/obj/item/stack/S = I
+		final_value = FLOOR(S.amount * value_per, 1)
+	else
+		final_value = value_per
+
+	stored_caps += final_value
+	playsound(src, 'sound/vore/prey/squish_01.ogg', 60, 1)
+	to_chat(usr, "You sell [final_value] bottle caps value to the [src]. Total caps: [stored_caps].")
+	qdel(I)
 	src.ui_interact(usr)
