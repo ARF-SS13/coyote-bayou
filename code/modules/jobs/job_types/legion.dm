@@ -631,7 +631,7 @@ commented out pending rework*/
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/magazine/w308 = 3,
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/grenade/smokebomb = 1,
 		)
