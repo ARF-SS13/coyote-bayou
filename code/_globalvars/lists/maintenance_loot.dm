@@ -189,10 +189,9 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/a308box = 3,
 	/obj/item/ammo_box/a556/sport = 3,
-	/obj/item/ammo_box/magazine/m45 = 3,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
-	/obj/item/ammo_box/magazine/m9mm = 3,
-	/obj/item/ammo_casing/shotgun/buckshot = 3,
+	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
+	/obj/item/ammo_box/magazine/zipgun = 3,
+	/obj/item/ammo_casing/shotgun/buckshot = 2,
 	/obj/item/ammo_box/c38 = 3,
 	/datum/design/ammolathe/a22plink
 ))
@@ -219,10 +218,10 @@ GLOBAL_LIST_INIT(trash_craft, list(
 ))
 
 GLOBAL_LIST_INIT(trash_gun, list(
-	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-	/obj/item/gun/ballistic/revolver/colt6520 = 1,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun = 2,
+	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 2,
 	/obj/item/gun/ballistic/rifle/mosin = 1,
-	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1
 ))
@@ -510,7 +509,8 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/gun/ballistic/rifle/mosin,
 	/obj/item/ammo_box/a762,
-	/obj/item/gun/ballistic/automatic/hobo/zipgun,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/ammo_box/c38,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox,
 	/obj/item/gun/ballistic/rifle/hunting,
 	/obj/item/ammo_box/a308,
@@ -541,8 +541,6 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/ammo_box/a357,
 	/obj/item/gun/ballistic/automatic/service,
 	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/gun/ballistic/revolver/police,
-	/obj/item/ammo_box/a357,
 	/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/automatic/m1carbine,
