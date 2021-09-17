@@ -583,7 +583,8 @@
 	name = "mirelurk cake"
 	desc = "A savory cake made from the meat of a Mirelurk.  A popular dish from the coastlines."
 	bitesize = 5
-	icon_state = "mirelurk_cake"
+	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon_state = "Mirelurk_cake"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/nutriment/vitamin = 9)
 	tastes = list("cake" = 1, "crab" = 5)
 	filling_color = "#406618"
