@@ -232,7 +232,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/*
 /datum/design/board/experimentor
 	name = "Machine Design (E.X.P.E.R.I-MENTOR Board)"
 	desc = "The circuit board for an E.X.P.E.R.I-MENTOR."
@@ -240,7 +239,6 @@
 	build_path = /obj/item/circuitboard/machine/experimentor
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-*/
 
 /datum/design/board/protolathe
 	name = "Machine Design (Protolathe Board)"
