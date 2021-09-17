@@ -399,6 +399,7 @@ Star Paladin
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/melee/powerfist = 1,
+		/obj/item/tank/internals/oxygen = 1,
 	)
 
 /datum/outfit/loadout/spaladina
