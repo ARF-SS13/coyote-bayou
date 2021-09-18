@@ -159,7 +159,6 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Farmer",
 	"Prospector",
 	"Detective",
-	"Preacher",
 	"Barkeep",
 ))
 
@@ -225,6 +224,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Great Khan",
 	"Faithful",
 	"Vigilante",
+	"Preacher",
 	"Wastelander",
 ))
 

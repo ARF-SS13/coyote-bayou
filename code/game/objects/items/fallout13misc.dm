@@ -187,7 +187,6 @@
 	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Oasis."
 	icon_state = "oasisflag"
 	item_state = "oasisflag"
-	faction = "Oasis"
 
 /obj/item/flag/followers
 	name = "Followers of the Apocalypse flag"
@@ -202,6 +201,13 @@
 	icon_state = "locustflag"
 	item_state = "locustflag"
 	faction = "Locust"
+
+/obj/item/flag/yuma
+	name = "Yuma banner"
+	desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
+	icon_state = "cornflag"
+	item_state = "cornflag"
+	faction = "Oasis"
 
 /obj/item/flag/vtcc
 	name = "Vault-Tec Cityscape Coalition flag"
@@ -220,7 +226,7 @@
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/flag = alert(user, "Please choose which faction flag you wish to create.", "NCR", "Legion", "Oasis", "BOS",)
+				var/flag = alert(user, "Please choose which faction flag you wish to create.", "NCR", "Legion", "Yuma", "BOS",)
 				switch(flag)
 					if("NCR")
 						name = "NCR flag"
@@ -234,11 +240,11 @@
 						icon_state = "legionflag"
 						item_state = "legionflag"
 						faction = "Legion"
-					if("Oasis")
-						name = "Oasis flag"
-						desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Oasis."
-						icon_state = "oasisflag"
-						item_state = "oasisflag"
+					if("Yuma")
+						name = "Yuma flag"
+						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
+						icon_state = "cornflag"
+						item_state = "cornflag"
 						faction = "Oasis"
 					if("BOS")
 						name = "BOS flag"

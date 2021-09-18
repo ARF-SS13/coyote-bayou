@@ -65,7 +65,7 @@
 #define RADIO_KEY_ENCLAVE "z"
 #define RADIO_TOKEN_ENCLAVE ":z"
 
-#define RADIO_CHANNEL_TOWN "Oasis"
+#define RADIO_CHANNEL_TOWN "Town"
 #define RADIO_KEY_TOWN "f"
 #define RADIO_TOKEN_TOWN ":f"
 

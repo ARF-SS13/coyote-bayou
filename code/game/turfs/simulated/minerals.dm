@@ -663,10 +663,10 @@
 	icon_state = "rock2"
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = list (/turf/closed)
-	baseturfs = /turf/open/floor/plating/ashplanet/wateryrock
+	baseturfs = /turf/open/indestructible/ground/inside/subway
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	environment_type = "waste"
-	turf_type = /turf/open/floor/plating/ashplanet/rocky
+	turf_type = /turf/open/indestructible/ground/inside/subway
 	defer_change = TRUE
 
 /turf/closed/mineral/snowmountain
