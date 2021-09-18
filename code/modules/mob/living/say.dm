@@ -386,6 +386,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(clockcultslurring)
 		message = CLOCK_CULT_SLUR(message)
+	
+	var/end_char = copytext(message, length(message), length(message) + 1)
+	if(!(end_char in list(".", "?", "!", "-", "~", ",")))
+		message += "."
 
 	message = capitalize(message)
 
