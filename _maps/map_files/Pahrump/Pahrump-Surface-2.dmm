@@ -4582,6 +4582,14 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"ceM" = (
+/obj/structure/statue/wood/headstonewood,
+/mob/dead/observer{
+	desc = "His life style finally caught up with him, he died of STD.";
+	name = "Jon Pratt"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "ceP" = (
 /obj/structure/closet,
 /obj/item/storage/backpack/satchel/leather,
@@ -35007,6 +35015,14 @@
 "qbD" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
+"qbF" = (
+/obj/structure/statue/wood/headstonewood,
+/mob/dead/observer{
+	desc = "Shot dead by a Centurio following the famed 'Eyepatch Dilemma', he will be missed.";
+	name = "Jake Dunn"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "qbX" = (
 /obj/structure/flora/grass/wasteland{
 	pixel_x = 9;
@@ -35225,6 +35241,14 @@
 "qhA" = (
 /turf/open/floor/plasteel/grimy,
 /area/f13/building)
+"qhF" = (
+/obj/structure/statue/wood/headstonewood,
+/mob/dead/observer{
+	desc = "Erika Wagner's beloved, he fell into a pit.";
+	name = "Xarnata Daemos"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "qij" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
@@ -36926,7 +36950,9 @@
 /area/f13/building)
 "qUv" = (
 /obj/effect/landmark/observer_start,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain2"
+	},
 /area/f13/wasteland)
 "qUy" = (
 /obj/machinery/light/small/broken{
@@ -42874,6 +42900,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building)
+"tPD" = (
+/obj/item/paper/fluff{
+	info = "By order of Legatus Saturn Atticus, all able-bodied men are obligated to maintain routine clearings of Yuma encampment possessions. Under no means, shall chem-enamored wastrels of the Yuma Valley infiltrate or establish hives of degenerancy under the nose of the Son of Mars. Maintain the virtue of vigilance and diligence.";
+	name = "instruction"
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/legion)
 "tPY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/prewar/poster81{
@@ -44198,6 +44231,14 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"utl" = (
+/obj/structure/statue/wood/headstonewood,
+/mob/dead/observer{
+	desc = "A man denied his caps, his terror upon the Wasteland will be forever known, and villanized.";
+	name = "Lipstain"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "utB" = (
 /obj/structure/table/wood/settler,
 /obj/item/storage/box/matches,
@@ -47575,10 +47616,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/giant_spider{
-	desc = "Slayer of recruits, and queen of the Legion camp toilets. This furry oversized arachnid has the dangerous fangs for any that break into her nest, as well as an apetite for the unrobust.";
-	name = "Shelob"
-	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -77995,7 +78032,7 @@ qEU
 mvv
 qZD
 mvv
-qZD
+utl
 bpD
 fyf
 fyf
@@ -78507,7 +78544,7 @@ pPg
 tBN
 qZD
 mvv
-qZD
+ceM
 mvv
 tci
 aBH
@@ -79019,7 +79056,7 @@ gtU
 gtU
 ccz
 tBN
-qZD
+qbF
 mvv
 rXv
 mvv
@@ -79537,7 +79574,7 @@ qZD
 mvv
 saf
 mvv
-qZD
+qhF
 bpD
 uqa
 sIm
@@ -81520,7 +81557,7 @@ mHj
 oQa
 ydO
 qaI
-qUv
+mvv
 tQU
 pMI
 ydO
@@ -83319,7 +83356,7 @@ sgz
 sgz
 hOl
 sgz
-sgz
+qUv
 sgz
 hOl
 hOl
@@ -117313,7 +117350,7 @@ gcK
 hom
 hom
 bbV
-hom
+tPD
 wom
 ggK
 tvL
