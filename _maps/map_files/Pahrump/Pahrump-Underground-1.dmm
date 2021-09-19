@@ -4952,21 +4952,10 @@
 	},
 /area/f13/den)
 "daK" = (
-/obj/structure/rack,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
-/obj/item/clothing/under/f13/recon,
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 6;
-	icon_state = "warningline_red"
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -4984,141 +4973,18 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/den)
 "dbr" = (
-/obj/structure/rack,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/clothing/shoes/combat/swat{
-	pixel_x = 7;
-	pixel_y = -9
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/item/target,
+/obj/structure/closet/crate{
+	anchored = 1
 	},
-/obj/item/clothing/shoes/combat/swat{
-	pixel_x = 7;
-	pixel_y = -9
-	},
-/obj/item/clothing/shoes/combat/swat{
-	pixel_x = 7;
-	pixel_y = -9
-	},
-/obj/item/clothing/shoes/combat/swat{
-	pixel_x = 7;
-	pixel_y = -9
-	},
-/obj/item/clothing/shoes/combat/swat{
-	pixel_x = 7;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/storage/belt/military{
-	pixel_x = -7;
-	pixel_y = -9
-	},
-/obj/item/clothing/mask/gas/sechailer/swat{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/gas/sechailer/swat{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/gas/sechailer/swat{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/gas/sechailer/swat{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/mask/gas/sechailer/swat{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 10
-	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/clothing/mask/gas/explorer{
-	pixel_y = 11
-	},
-/obj/item/clothing/mask/gas/explorer{
-	pixel_y = 11
-	},
-/obj/item/clothing/mask/gas/explorer{
-	pixel_y = 11
-	},
-/obj/item/clothing/mask/gas/explorer{
-	pixel_y = 11
-	},
-/obj/item/clothing/mask/gas/explorer{
-	pixel_y = 11
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -5289,12 +5155,11 @@
 	},
 /area/f13/den)
 "dhi" = (
-/obj/structure/rack,
-/obj/item/clothing/suit/bomb_suit/security,
-/obj/item/clothing/head/bomb_hood/security,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 10;
-	icon_state = "warningline_red"
+	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -6338,6 +6203,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -6360,18 +6226,6 @@
 	icon_state = "tealwhdirty"
 	},
 /area/f13/den)
-"dJD" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/brotherhood/armory)
 "dJF" = (
 /obj/item/instrument/accordion,
 /obj/structure/rack,
@@ -9033,11 +8887,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/brotherhood/armory)
 "flq" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/clothing/bos{
+	density = 0;
+	pixel_x = 32
+	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -10252,9 +10109,6 @@
 /area/f13/den)
 "fTM" = (
 /obj/structure/rack,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
@@ -10954,6 +10808,7 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
+/obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -11019,6 +10874,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12118,12 +11974,9 @@
 /area/f13/brotherhood/armory)
 "gTE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/rack,
-/obj/item/twohanded/sledgehammer/supersledge,
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 5
+	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12139,33 +11992,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "gUf" = (
-/obj/structure/rack,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
 /area/f13/brotherhood/armory)
 "gUm" = (
-/obj/structure/rack,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/pda,
-/obj/item/book/granter/trait/pa_wear,
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 9;
-	icon_state = "warningline_red"
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -12639,6 +12476,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "hmP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -12998,9 +12838,6 @@
 	name = "Armory Camera";
 	network = list("BoS");
 	pixel_x = -1
-	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -13923,10 +13760,10 @@
 	},
 /area/f13/brotherhood/mining)
 "inm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
-	icon_state = "warningline_red"
+/obj/structure/simple_door/bunker{
+	name = "Firing Range";
+	req_access = 120;
+	req_access_txt = "120"
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -13993,14 +13830,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "iqY" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
-	icon_state = "warningline_red"
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/brotherhood/armory)
 "iro" = (
 /obj/structure/decoration/vent,
@@ -14033,18 +13867,8 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "irU" = (
-/obj/item/toy/plush/nukeplushie{
-	desc = "A stuffed toy that resembles a Chinese spy/ The tag claims operatives to be purely fictitious and not stealing your armory.";
-	name = "Knight-Captain Aryom";
-	pixel_x = 9
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
+/turf/closed/wall/r_wall,
 /area/f13/brotherhood/armory)
 "ise" = (
 /turf/open/floor/f13{
@@ -14069,10 +13893,21 @@
 /area/f13/brotherhood/operations)
 "isV" = (
 /obj/structure/rack,
-/obj/item/pda{
-	icon_state = "pda-warden";
-	name = "Armory Warden PDA"
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/item/clothing/under/f13/recon,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 6;
+	icon_state = "warningline_red"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -14274,6 +14109,15 @@
 /obj/item/wallframe/camera,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"iAL" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1;
+	icon_state = "warningline_red"
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "iAR" = (
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices1st)
@@ -14496,13 +14340,11 @@
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "iMP" = (
-/obj/machinery/button/door{
-	id = "bosarmoryacc";
-	normaldoorcontrol = 1;
-	pixel_x = -23;
-	specialfunctions = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1;
+	icon_state = "warningline_red"
+	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -14871,23 +14713,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
-"iZH" = (
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/structure/closet/crate{
-	anchored = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/brotherhood/armory)
 "iZM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/securitron/nsb,
@@ -14971,9 +14796,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "jdS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/bin,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/fulltile/store,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -15352,21 +15175,9 @@
 /turf/open/water,
 /area/f13/brotherhood/archives)
 "jtx" = (
-/obj/structure/closet/crate/secure/weapon{
-	anchored = 1
-	},
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/twohanded/sledgehammer/supersledge,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/f13{
@@ -15416,6 +15227,10 @@
 /obj/structure/rack,
 /obj/item/shield/riot/bullet_proof,
 /obj/item/shield/riot/bullet_proof,
+/obj/item/pda{
+	icon_state = "pda-warden";
+	name = "Armory Warden PDA"
+	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -18107,6 +17922,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"lzF" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1;
+	icon_state = "warningline_red"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "lAw" = (
 /obj/structure/girder/reinforced,
 /turf/open/indestructible/ground/inside/mountain,
@@ -19485,10 +19310,9 @@
 	},
 /area/f13/clinic)
 "mFZ" = (
-/obj/structure/window/fulltile/store,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/brotherhood/armory)
 "mGK" = (
 /obj/structure/fence/handrail{
@@ -19538,6 +19362,31 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"mIx" = (
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/item/stock_parts/cell/ammo/ecp,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/obj/effect/turf_decal/stripes/red/line,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "mII" = (
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/door/poddoor/shutters{
@@ -19609,25 +19458,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "mLP" = (
-/obj/structure/closet/crate/secure/weapon{
-	anchored = 1
-	},
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
-/obj/item/stock_parts/cell/ammo/ecp,
+/obj/structure/rack,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
+/obj/item/storage/belt/utility/full,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -19654,25 +19490,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "mMk" = (
-/obj/structure/closet/crate/secure/weapon{
-	anchored = 1
-	},
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/pda,
+/obj/item/book/granter/trait/pa_wear,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -20291,11 +20120,141 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "nek" = (
-/obj/structure/simple_door/bunker{
-	name = "Firing Range";
-	req_access = 120;
-	req_access_txt = "120"
+/obj/structure/rack,
+/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/military/army,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/clothing/shoes/combat/swat{
+	pixel_x = 7;
+	pixel_y = -9
 	},
+/obj/item/clothing/shoes/combat/swat{
+	pixel_x = 7;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/combat/swat{
+	pixel_x = 7;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/combat/swat{
+	pixel_x = 7;
+	pixel_y = -9
+	},
+/obj/item/clothing/shoes/combat/swat{
+	pixel_x = 7;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/storage/belt/military{
+	pixel_x = -7;
+	pixel_y = -9
+	},
+/obj/item/clothing/mask/gas/sechailer/swat{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/gas/sechailer/swat{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/gas/sechailer/swat{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/gas/sechailer/swat{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/mask/gas/sechailer/swat{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 10
+	},
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/clothing/mask/gas/explorer{
+	pixel_y = 11
+	},
+/obj/item/clothing/mask/gas/explorer{
+	pixel_y = 11
+	},
+/obj/item/clothing/mask/gas/explorer{
+	pixel_y = 11
+	},
+/obj/item/clothing/mask/gas/explorer{
+	pixel_y = 11
+	},
+/obj/item/clothing/mask/gas/explorer{
+	pixel_y = 11
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -21964,9 +21923,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/clothing/glasses/hud/health/night,
-/obj/item/clothing/glasses/hud/health/night,
 /obj/item/pda,
+/obj/item/clothing/glasses/hud/health/f13,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -28363,6 +28321,18 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"sEt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/toy/plush/nukeplushie{
+	desc = "A stuffed toy that resembles a Chinese spy/ The tag claims operatives to be purely fictitious and not stealing your armory.";
+	name = "Knight-Captain Aryom";
+	pixel_x = 9
+	},
+/obj/machinery/light/small,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "sEw" = (
 /obj/structure/ladder/unbreakable{
 	height = 1;
@@ -28513,6 +28483,34 @@
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
+"sNW" = (
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 9;
+	icon_state = "warningline_red"
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "sNX" = (
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/indestructible/ground/inside/mountain,
@@ -29289,6 +29287,12 @@
 	},
 /turf/open/floor/carpet,
 /area/f13/ncr)
+"tvd" = (
+/obj/structure/rack,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "tvw" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -29624,8 +29628,28 @@
 /turf/open/floor/wood/f13/stage_l,
 /area/f13/ncr)
 "tHk" = (
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/r_wall,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 5
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
 /area/f13/brotherhood/armory)
 "tHD" = (
 /obj/structure/table/wood,
@@ -34104,6 +34128,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"xkq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "xkr" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Elder's Office";
@@ -34467,10 +34498,14 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/caves)
 "xwn" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/bomb_suit/security,
+/obj/item/clothing/head/bomb_hood/security,
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 1;
+	dir = 10;
 	icon_state = "warningline_red"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -35068,7 +35103,8 @@
 /area/f13/bunker)
 "xWQ" = (
 /obj/structure/bookcase/manuals,
-/obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/item/book/granter/trait/midsurgery,
+/obj/item/book/granter/trait/chemistry,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -99160,8 +99196,8 @@ bvr
 gCD
 bTP
 fpv
-llQ
-iZH
+dbr
+jdS
 mFZ
 cZm
 dID
@@ -99171,7 +99207,7 @@ fQU
 goR
 gTD
 jKY
-inm
+jKY
 iMP
 jtx
 wKL
@@ -99418,8 +99454,7 @@ gCD
 bVc
 pvq
 llQ
-llQ
-nek
+inm
 jKY
 jKY
 jKY
@@ -99428,8 +99463,9 @@ jKY
 jKY
 jKY
 jKY
-xwn
-llQ
+jKY
+jKY
+iAL
 mLP
 wKL
 wKL
@@ -99675,8 +99711,8 @@ gCD
 bVc
 pvq
 llQ
-llQ
-nek
+inm
+jKY
 jKY
 jKY
 jKY
@@ -99686,7 +99722,7 @@ jKY
 jKY
 hBC
 iqY
-llQ
+lzF
 mMk
 dMW
 nXm
@@ -99931,18 +99967,18 @@ gCD
 gCD
 bVc
 pvq
-llQ
-hmP
-mFZ
+gUf
+jdS
+isV
 daK
 dIU
 ezG
-ezG
+gTE
 fSK
 gpZ
 gTE
 tHk
-mMr
+irU
 iNo
 mMr
 dMW
@@ -100190,18 +100226,18 @@ gCD
 eRN
 hmP
 jdS
-mFZ
-dbr
+nek
 llQ
+xkq
+xkq
 llQ
+tvd
+xkq
 llQ
-hmP
-llQ
-gUf
-tHk
+mIx
 irU
 llQ
-llQ
+sEt
 gkr
 kxR
 wfY
@@ -100447,16 +100483,16 @@ dMW
 dMW
 dMW
 dMW
-dMW
+xwn
 dhi
-dJD
+gsd
 eEL
 flq
 fTM
 gsd
 gUm
+sNW
 dMW
-isV
 iOt
 juq
 dMW
@@ -100703,7 +100739,7 @@ eLE
 eLE
 eLE
 eLE
-eLE
+tEj
 tEj
 tEj
 tEj

@@ -5655,9 +5655,12 @@
 	},
 /area/f13/building)
 "cGU" = (
-/obj/effect/landmark/start/f13/settler,
-/turf/open/floor/wood/f13/oak,
-/area/f13/building)
+/obj/structure/simple_door/metal/fence{
+	door_type = "fence_wood";
+	icon_state = "fence_wood"
+	},
+/turf/open/indestructible/ground/outside/savannah/topleftcorner,
+/area/f13/wasteland)
 "cGV" = (
 /obj/structure/table,
 /obj/item/trash/f13/electronic/toaster,
@@ -11175,10 +11178,8 @@
 	},
 /area/f13/village)
 "fgy" = (
-/obj/effect/landmark/start/f13/settler,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating"
-	},
+/obj/effect/landmark/start/f13/farmer,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fgB" = (
 /obj/structure/chair/sofa/left{
@@ -13138,6 +13139,13 @@
 	name = "tile"
 	},
 /area/f13/building)
+"gax" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/dresser,
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
 "gay" = (
 /obj/structure/bed/mattress/pregame,
 /turf/open/floor/f13/wood,
@@ -14277,11 +14285,16 @@
 	},
 /area/f13/ncr)
 "gxW" = (
-/obj/item/flag/yuma,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/area/f13/wasteland)
+/obj/structure/simple_door/wood{
+	name = "Town Hall"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
+/area/f13/building)
 "gxZ" = (
 /obj/machinery/button/door{
 	id = "hospitalgarage1";
@@ -15205,9 +15218,7 @@
 	door_type = "fence_wood";
 	icon_state = "fence_wood"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating"
-	},
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "gXu" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -17320,6 +17331,7 @@
 /area/f13/wasteland)
 "hQQ" = (
 /obj/structure/bed/wooden,
+/obj/item/bedsheet/brown,
 /turf/open/floor/wood,
 /area/f13/building)
 "hRb" = (
@@ -18769,8 +18781,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/village)
 "izI" = (
-/obj/item/flag/yuma{
-	icon_state = "cornflag2"
+/obj/machinery/vending/clothing,
+/obj/machinery/light/small{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
@@ -24623,6 +24636,7 @@
 	},
 /area/f13/wasteland)
 "lak" = (
+/obj/effect/landmark/start/f13/settler,
 /turf/open/floor/plasteel/stairs{
 	icon = 'icons/obj/stairs.dmi'
 	},
@@ -27258,12 +27272,6 @@
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
-"moy" = (
-/obj/item/flag/yuma,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland)
 "moz" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -27814,9 +27822,11 @@
 	},
 /area/f13/building)
 "mFu" = (
-/obj/structure/dresser,
-/turf/open/floor/wood/f13/oak,
-/area/f13/building)
+/obj/effect/landmark/start/f13/settler,
+/turf/open/indestructible/ground/outside/wood{
+	icon_state = "wood"
+	},
+/area/f13/wasteland)
 "mFz" = (
 /obj/structure/toilet{
 	pixel_y = 16
@@ -28235,7 +28245,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/landmark/start/f13/settler,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -45794,12 +45803,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vcM" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /obj/effect/landmark/start/f13/settler,
-/turf/open/floor/wood/f13/oak,
-/area/f13/building)
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
+/area/f13/wasteland)
 "vcY" = (
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -76627,7 +76635,7 @@ doX
 cWG
 daU
 gCh
-llq
+gxW
 llq
 nKA
 sYX
@@ -76901,7 +76909,7 @@ khy
 xYI
 kEI
 mng
-ozq
+gax
 mng
 dCV
 uqa
@@ -77140,7 +77148,7 @@ ydO
 ydO
 ydO
 ydO
-izI
+mHj
 ydO
 ydO
 mHj
@@ -77652,7 +77660,7 @@ iqN
 mfD
 xGH
 mvv
-fgy
+mHj
 ydO
 ydO
 ydO
@@ -77672,7 +77680,7 @@ xYI
 xYI
 kEI
 moc
-mFu
+aRl
 nqp
 dCV
 uqa
@@ -78683,7 +78691,7 @@ lEJ
 ueA
 ydO
 ydO
-fgy
+mHj
 mvv
 mvv
 mHj
@@ -82780,14 +82788,14 @@ mEL
 wKo
 gkv
 ybI
-moy
+ybI
 dCV
 dCV
 ekB
 ekB
 ekB
 jfj
-izI
+mHj
 mHj
 mHj
 yes
@@ -82814,7 +82822,7 @@ lMA
 lMA
 dCV
 dCV
-moy
+ybI
 ybI
 ybI
 ybI
@@ -83808,14 +83816,14 @@ hWk
 rkr
 geM
 ees
-gxW
+ees
 dCV
 dCV
 dCV
 dCV
 dCV
 dCV
-izI
+mHj
 mHj
 mHj
 mHj
@@ -83842,7 +83850,7 @@ dCV
 dCV
 dCV
 dCV
-gxW
+ees
 ees
 kKo
 ees
@@ -84101,7 +84109,7 @@ dCV
 dCV
 dCV
 uqa
-ptf
+uqa
 ptf
 ptf
 ptf
@@ -84357,11 +84365,11 @@ ybx
 ybx
 ybx
 ybx
+dCV
 uqa
 wDc
 fyf
 fyf
-qOV
 sYX
 rpu
 rpu
@@ -84614,11 +84622,11 @@ mtR
 mWH
 nLd
 ybx
+dCV
 uqa
-bpD
+doX
+wDc
 fyf
-qOV
-daU
 kGD
 rpu
 rCD
@@ -84871,11 +84879,11 @@ xAm
 xAm
 nWu
 ybx
+dCV
 uqa
-bpD
-qOV
-daU
 mvv
+bpD
+fyf
 sYX
 rpu
 rpu
@@ -85109,7 +85117,7 @@ ozq
 ozq
 ozq
 ozq
-vcM
+ozq
 rkt
 mHj
 ydO
@@ -85128,11 +85136,11 @@ xAm
 xAm
 nZh
 ybx
+dCV
 uqa
+mvv
 bpD
-tBN
-mvv
-mvv
+fyf
 kGD
 rpu
 chc
@@ -85359,7 +85367,7 @@ cEb
 dve
 ozq
 ejT
-vcM
+ozq
 aRl
 ozq
 mcI
@@ -85385,11 +85393,11 @@ xAm
 xAm
 oei
 ybx
+dCV
 uqa
-bpD
-nlO
-xGH
 mvv
+bpD
+fyf
 sYX
 rpu
 rpu
@@ -85642,11 +85650,11 @@ xUO
 xUO
 wnn
 ybx
+dCV
 uqa
+mvv
 bpD
 fyf
-tBN
-mvv
 viK
 voR
 rpu
@@ -85899,11 +85907,11 @@ xUO
 xUO
 ofK
 ybx
+dCV
 uqa
+mvv
 bpD
 fyf
-tBN
-mvv
 sYX
 sYX
 sDp
@@ -86156,11 +86164,11 @@ xUO
 xUO
 wnn
 ybx
+dCV
 uqa
+mvv
 bpD
 fyf
-tBN
-mvv
 sYX
 mtb
 rpu
@@ -86413,11 +86421,11 @@ xUO
 xUO
 xUO
 uLh
+dCV
 uqa
+mvv
 doX
 wDc
-tBN
-mvv
 kGD
 rpu
 rpu
@@ -86670,11 +86678,11 @@ mtV
 mXF
 ohp
 mvV
+dCV
 uqa
 uqa
+mvv
 bpD
-nlO
-xGH
 sYX
 vUF
 aIl
@@ -86896,7 +86904,7 @@ uqa
 dCV
 bZi
 uqa
-cGU
+aRl
 ozq
 nJU
 aRl
@@ -86928,10 +86936,10 @@ ybx
 ybx
 ybx
 ybx
+dCV
 uqa
+mvv
 bpD
-fyf
-nlO
 sYX
 sYX
 kGD
@@ -87185,10 +87193,10 @@ nbI
 oiw
 oqA
 ybx
+dCV
 uqa
+mvv
 bpD
-fyf
-fyf
 ilu
 trd
 xKx
@@ -87442,10 +87450,10 @@ xiy
 xiy
 xiy
 ybx
+dCV
 uqa
+mvv
 bpD
-fyf
-fyf
 tVV
 lae
 esP
@@ -87699,10 +87707,10 @@ xiy
 viV
 xiy
 ybx
+dCV
 uqa
-doX
-wDc
-fyf
+mvv
+bpD
 wIW
 wIW
 wIW
@@ -87956,10 +87964,10 @@ ncF
 oli
 osB
 ybx
+dCV
 uqa
-uqa
+mvv
 bpD
-fyf
 wIW
 rWS
 lTk
@@ -88215,8 +88223,8 @@ ybx
 ybx
 dCV
 uqa
+mvv
 bpD
-fyf
 wIW
 gvW
 rpu
@@ -88472,8 +88480,8 @@ uqa
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 wIW
 rWS
 rpu
@@ -88729,8 +88737,8 @@ osQ
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 wIW
 djI
 rpu
@@ -88986,8 +88994,8 @@ otI
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 wIW
 qZJ
 rpu
@@ -89215,7 +89223,7 @@ gXt
 dZi
 mvv
 mvv
-mvv
+fgy
 mvv
 mvv
 puV
@@ -89233,7 +89241,7 @@ ydO
 ydO
 ydO
 ydO
-mHj
+vcM
 uqa
 aRl
 aRl
@@ -89243,8 +89251,8 @@ xyX
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 wIW
 wIW
 wIW
@@ -89468,11 +89476,11 @@ fDi
 fZe
 fCO
 fDi
-gXt
+cGU
 ebx
 mvv
 mvv
-mvv
+fgy
 mvv
 mvv
 puV
@@ -89486,7 +89494,7 @@ uqa
 why
 uqa
 uqa
-ydO
+mFu
 ydO
 ydO
 ydO
@@ -89500,8 +89508,8 @@ uqa
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -89757,8 +89765,8 @@ hEp
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -90014,9 +90022,9 @@ lUZ
 uqa
 dCV
 uqa
+mvv
 doX
 wDc
-fyf
 jcp
 fyf
 uey
@@ -90272,8 +90280,8 @@ uqa
 dCV
 uqa
 uqa
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -90529,8 +90537,8 @@ dCV
 dCV
 dCV
 uqa
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -90786,8 +90794,8 @@ uqa
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -91043,8 +91051,8 @@ ouu
 uqa
 dCV
 uqa
+mvv
 bpD
-fyf
 fyf
 sVO
 wim
@@ -91300,8 +91308,8 @@ lUZ
 uqa
 dCV
 uqa
-doX
-wDc
+mvv
+bpD
 fyf
 xHc
 daU
@@ -91540,7 +91548,7 @@ tBN
 uqa
 dCV
 dCV
-nsP
+izI
 ydO
 mHj
 mHj
