@@ -513,7 +513,7 @@
 	item_state = "stealthsuit"
 	
 /obj/item/clothing/under/f13/bearvest //This is being used as Donator gear, check as to whether MidgetDragon still donating before using for anything else.
-	name = "Hub's Pride"
+	name = "Great Bear Vest"
 	desc = "A casual set of ripped jeans and a duster. The duster seems to have a familiar symbol spray painted on the back. The inside of the duster seems to have the letters MEB sewn on."
 	icon_state = "bearvest"
 	item_state = "bearvest"
