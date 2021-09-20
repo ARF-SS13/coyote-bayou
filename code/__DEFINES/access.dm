@@ -122,3 +122,5 @@ also be like that but I can't be arsed to go back and change them all*/
 	//Special, for anything that's basically internal
 #define ACCESS_BLOODCULT 250
 #define ACCESS_CLOCKCULT 251
+
+#define ACCESS_NCRREP 252 //NCR Rep access

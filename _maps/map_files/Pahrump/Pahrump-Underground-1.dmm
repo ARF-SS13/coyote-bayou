@@ -15477,18 +15477,6 @@
 	dir = 4;
 	pixel_y = -9
 	},
-/obj/machinery/button{
-	id = "office_privacy";
-	name = "Office privacy";
-	pixel_x = -5;
-	pixel_y = 9
-	},
-/obj/machinery/button{
-	id = "office_safe";
-	name = "Secure storage";
-	pixel_x = 5;
-	pixel_y = 9
-	},
 /turf/open/floor/carpet/red,
 /area/f13/ncr)
 "jHV" = (
@@ -20547,10 +20535,8 @@
 /area/f13/brotherhood/rnd)
 "nsf" = (
 /obj/machinery/door/airlock/wood{
-	name = "Secure Storage"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "office_safe"
+	name = "Secure Storage";
+	req_one_access_txt = "252"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
@@ -24830,6 +24816,7 @@
 	color = "#FF0000";
 	dir = 8
 	},
+/obj/effect/landmark/start/f13/ncrrep,
 /turf/open/floor/carpet/red,
 /area/f13/ncr)
 "qkN" = (
@@ -34048,10 +34035,8 @@
 /area/f13/followers)
 "xhM" = (
 /obj/machinery/door/airlock/wood{
-	name = "VIP Office"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "office_privacy"
+	name = "VIP Office";
+	req_one_access_txt = "252"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)

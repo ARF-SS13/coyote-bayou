@@ -62,6 +62,7 @@
 #define F13VETRANGER	 (1<<14)
 #define F13RANGER	 	 (1<<15)
 #define F13MP            (1<<16)
+#define F13REP           (1<<17)
 
 #define LEGION			(1<<4)
 
@@ -314,3 +315,5 @@
 #define JOB_DISPLAY_ORDER_PROFESSOR 115
 
 #define JOB_DISPLAY_ORDER_SECRETARY 116
+#define JOB_DISPLAY_ORDER_REPRESENTATIVE 117
+

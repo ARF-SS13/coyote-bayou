@@ -990,6 +990,11 @@
 	desc = "A chevron decorated dog tag showing NCO-ship."
 	icon_state = "ncrdogtagsergeant"
 
+/obj/item/card/id/dogtag/ncrrep
+	name = "representative's tags"
+	desc = "A special dog tag belonging to the NCR representative."
+	icon_state = "ncrdogtagofficer"
+
 /obj/item/card/id/dogtag/ncrlieutenant
 	name = "lieutenant's tags"
 	desc = "A silver bar dog tag that denotes a member of the NCR military with a lieutenant commission."
