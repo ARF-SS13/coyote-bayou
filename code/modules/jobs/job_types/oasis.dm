@@ -71,6 +71,54 @@ Mayor
 		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/pen/fountain/captain = 1)
+		
+/*--------------------------------------------------------------*/	
+	
+/datum/job/oasis/f13secretary
+	title = "Secretary"
+	flag = F13SECRETARY
+	department_flag = DEP_OASIS
+	faction = "Town"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "The Mayor"
+	description = "You are the mayor's assistant, you help them with anything and everything they require and make sure trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings. An efficient and smooth running town means a happy mayor."
+	selection_color = "#d7b088"
+
+	exp_requirements = 800
+
+	outfit = /datum/outfit/job/den/f13secretary
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/oasis,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/oasis,
+			/datum/job/wasteland/f13enforcer,
+		),
+	)
+
+/datum/outfit/job/den/f13secretary
+	name = "Secretary"
+	jobtype = /datum/job/oasis/f13secretary
+
+	ears = 			/obj/item/radio/headset/headset_town
+	id =            /obj/item/card/id/silver
+	glasses = /obj/item/clothing/glasses/regular/hipster
+	gloves = /obj/item/clothing/gloves/color/white
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+	r_hand = /obj/item/storage/briefcase/secretary
+	l_pocket = /obj/item/storage/bag/money/small/settler
+	r_pocket = /obj/item/flashlight/seclite
+	belt = /obj/item/pda
+	shoes = 		/obj/item/clothing/shoes/f13/fancy
+	uniform = /obj/item/clothing/under/suit/black
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m9mm = 1, 
+		/obj/item/melee/onehanded/knife/switchblade = 1,)
 
 /*--------------------------------------------------------------*/
 
@@ -525,7 +573,6 @@ Mayor
 		/datum/outfit/loadout/properlady,
 		/datum/outfit/loadout/propergent,
 		/datum/outfit/loadout/hombre,
-		/datum/outfit/loadout/secretary,
 		/datum/outfit/loadout/singer,
 	)
 	access = list(ACCESS_BAR)
@@ -615,7 +662,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
 	)
-
+/*
 /datum/outfit/loadout/secretary
 	name = "Secretary"
 	uniform = /obj/item/clothing/under/suit/black
@@ -629,8 +676,8 @@ Mayor
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/ammo_box/magazine/m22 = 2,
 	)
-	///placeholder until a proper secretary role is added
-
+	///we should find something to do with this
+*/
 /datum/outfit/loadout/singer
 	name = "Saloon Singer"
 	shoes = /obj/item/clothing/shoes/laceup
