@@ -321,6 +321,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
+	weapon_weight = WEAPON_MEDIUM
 	force = 15
 	fire_delay = 5
 	recoil = 0.25
