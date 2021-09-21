@@ -497,11 +497,11 @@
 	. = 1
 
 /datum/reagent/drug/skooma
-	name = "Skooma"
-	description = "An ancient, highly-addictive drug of long-forgotten times. It greatly improves the user's speed and strength, but heavily impedes their intelligence and agility."
+	name = "Getaway"
+	description = "A highly-addictive drug developed by a local pre-war crime family. It greatly improves the user's speed and strength, but heavily impedes their intelligence and agility."
 	reagent_state = LIQUID
 	color = "#F3E0F9"
-	taste_description = "ancient, unfulfilled prophecies"
+	taste_description = "moonshine and the feeling of a successful heist"
 	addiction_threshold = 1
 	addiction_stage3_end = 40
 	addiction_stage4_end = 240

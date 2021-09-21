@@ -2339,9 +2339,9 @@
 
 /datum/reagent/moonsugar
 	name = "Moonsugar"
-	description = "The primary precursor for an ancient feline delicacy known as skooma. While it has no notable effects on it's own, mixing it with morphine in a chilled container may yield interesting results."
+	description = "An unstable slurry consisting of moonshine and sugar, made by stirring at high speeds."
 	color = "#FAEAFF"
-	taste_description = "synthetic catnip"
+	taste_description = "sugar and moonshine"
 	value = REAGENT_VALUE_UNCOMMON
 
 /datum/reagent/changeling_string

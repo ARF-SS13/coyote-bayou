@@ -57,7 +57,7 @@
 	required_catalysts = list(/datum/reagent/toxin/plasma = 5)
 
 /datum/chemical_reaction/skooma
-	name = "skooma"
+	name = "Getaway"
 	id = /datum/reagent/drug/skooma
 	results = list(/datum/reagent/drug/skooma = 2, /datum/reagent/consumable/ethanol/moonshine = 4, /datum/reagent/consumable/sugar = 4)
 	required_temp = 280

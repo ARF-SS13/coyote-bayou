@@ -10,7 +10,7 @@
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
 	dynamic_hair_suffix = "+generic"
-	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot 
+	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
 	var/list/speechspan = null
 
 /obj/item/clothing/head/Initialize()
@@ -156,13 +156,6 @@
 	desc = "(III) It's a fancy dark metal helmet with orange spray painted flames."
 	icon_state = "rider"
 	item_state = "rider"
-	
-/obj/item/clothing/head/helmet/knight/f13/riderW
-	name = "reinforced rider helmet" //Not raider. Rider. //Count up your sins
-	desc = "(IV) It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
-	icon_state = "riderW"
-	item_state = "riderW"
-	armor = list("tier" = 4, "energy" = 23, "bomb" = 15, "bio" = 1, "rad" = 1, "fire" = 3, "acid" = 3)
 
 /obj/item/clothing/head/helmet/f13/metalmask
 	name = "metal mask"
@@ -803,6 +796,13 @@
 	color = "#999999"
 	armor = list("tier" = 0)
 
+/obj/item/clothing/head/f13/riderw
+	name = "Reinforced Rider Helmet" //Not raider. Rider. //Count up your sins
+	desc = "(IV) It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
+	icon_state = "riderw"
+	item_state = "riderw"
+	armor = list("tier" = 4)
+
 //Soft caps
 /obj/item/clothing/head/soft/f13
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -963,13 +963,13 @@
 	item_state = "ranger_grey_hat"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
-	
+
 /obj/item/clothing/head/f13/ranger_hat/banded
 	name = "banded cowboy hat"
 	desc = "(II) A grey cowboy hat with a hat band decorated with brassen rings."
 	icon_state = "ranger_banded_hat"
 	item_state = "ranger_banded_hat"
-	
+
 /obj/item/clothing/head/f13/ranger_hat/tan
 	name = "tan cowboy hat"
 	desc = "(II) A thick tanned leather hat, with a Montana Peak crease."
