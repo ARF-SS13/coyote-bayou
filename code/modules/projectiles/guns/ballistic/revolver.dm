@@ -266,6 +266,7 @@
 			spread = 0
 			extra_damage = 15
 			extra_penetration = 0.1
+			fire_delay = 10
 			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
 	update_icon()
 
