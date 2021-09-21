@@ -399,6 +399,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/rotgut
 	name = "Rotgut"
 	desc = "a bottle of noxious homebrewed alcohol, it has the name Rotgut etched on its side"
+	icon = 'icons/fallout/objects/food&drinks/drinks.dmi'
 	icon_state = "rotgut"
 	list_reagents = list(/datum/reagent/consumable/ethanol/rotgut = 100)
 
