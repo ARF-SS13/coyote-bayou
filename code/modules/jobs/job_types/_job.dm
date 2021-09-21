@@ -157,8 +157,8 @@
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", preference_source)
-	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD OR VAULT
-	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
+	// F13 EDIT: GHOULS CANNOT BE LEGION, BROTHERHOOD, TRIBAL OR VAULT
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions) || (title in GLOB.tribal_positions))
 		if(H.dna.species.id == "ghoul")
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
@@ -169,7 +169,7 @@
 	var/datum/outfit/job/O = outfit_override || outfit
 	if(O)
 		H.equipOutfit(O, visualsOnly, preference_source) //mob doesn't have a client yet.
-	
+
 	//If we have any additional loadouts, notify the player
 	if(!visualsOnly && LAZYLEN(loadout_options))
 		H.enable_loadout_select()
