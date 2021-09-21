@@ -142,6 +142,7 @@
 	max_items = 1
 	attack_hand_interact = TRUE
 	max_w_class = WEIGHT_CLASS_NORMAL
+	quickdraw = TRUE
 	
 /datum/component/storage/concrete/pockets/small/holdout/Initialize()
 	. = ..()
