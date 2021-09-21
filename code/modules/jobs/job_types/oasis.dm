@@ -113,12 +113,13 @@ Mayor
 	r_hand = /obj/item/storage/briefcase/secretary
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/seclite
-	belt = /obj/item/pda
 	shoes = 		/obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm = 1, 
-		/obj/item/melee/onehanded/knife/switchblade = 1,)
+		/obj/item/melee/onehanded/knife/switchblade = 1,
+		/obj/item/pda = 1,
+		)
 
 /*--------------------------------------------------------------*/
 

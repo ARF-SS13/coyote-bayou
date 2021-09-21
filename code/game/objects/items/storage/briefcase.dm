@@ -62,8 +62,9 @@
 /obj/item/storage/briefcase/secretary
 	name = "fancy briefcase"
 	desc = "a gecko-skin briefcase with nickel-plated hinges and carrying handle, the height of post-war business fashion."
+	force = 12 //oasis made it better
 
-/obj/item/storage/briefcase/secretary/populate/PopulateContents()
+/obj/item/storage/briefcase/secretary/PopulateContents()
 	new /obj/item/suppressor(src)
 	new /obj/item/gun/ballistic/automatic/pistol/sig(src)
 	new /obj/item/paper_bin/bundlenatural(src)
