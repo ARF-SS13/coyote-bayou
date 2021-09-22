@@ -628,7 +628,7 @@
 				/obj/item/melee/unarmed/lacerator,
 				/obj/item/melee/unarmed/maceglove,
 				/obj/item/melee/unarmed/punchdagger,
-				/obj/item/twohanded/baseball/golfclub/louisville,
+				/obj/item/twohanded/baseball/louisville,
 				/obj/item/shield/riot
 				)
 

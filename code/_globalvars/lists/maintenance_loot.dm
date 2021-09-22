@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(loot_t2_melee, list(
 	/obj/item/melee/onehanded/knife/survival,
 	/obj/item/melee/onehanded/knife/bone,
 	/obj/item/twohanded/baseball/golfclub,
-	/obj/item/twohanded/baseball/golfclub/louisville,
+	/obj/item/twohanded/baseball/louisville,
 	/obj/item/instrument/guitar,
 	/obj/item/melee/onehanded/club,
 	/obj/item/melee/onehanded/knife/cosmicdirty,

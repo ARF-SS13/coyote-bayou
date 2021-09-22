@@ -143,7 +143,7 @@
 		/obj/item/melee/onehanded/knife/switchblade = 5,
 		/obj/item/melee/unarmed/brass = 4,
 		/obj/item/melee/classic_baton/telescopic = 2,
-		/obj/item/twohanded/baseball/golfclub/louisville = 2,
+		/obj/item/twohanded/baseball/louisville = 2,
 		)
 
 /obj/effect/spawner/lootdrop/weapons/waster

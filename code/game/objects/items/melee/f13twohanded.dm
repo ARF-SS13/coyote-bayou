@@ -303,6 +303,24 @@
 	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]2")
 
 
+// Louisville Slugger		Keywords: Damage 15/33, Damage bonus Stamina
+/obj/item/twohanded/baseball/louisville
+	name = "Louisville slugger"
+	desc = "Makes a satisfying thwack when hitting people."
+	icon_state = "louisville"
+	icon_prefix = "louisville"
+	attack_verb = list("thwacked", "bashed", "slugged", "hit", "bludgeoned", "whacked", "bonked")
+
+/obj/item/twohanded/baseball/louisville/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]2")
+
+/obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(22, STAMINA, null, 0)
+
 // Golf Club		Keywords: Damage 15/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/golfclub
 	name = "golf club"
@@ -320,26 +338,6 @@
 	if(!istype(M))
 		return
 	M.apply_damage(19, STAMINA, null, 0)
-
-
-// Louisville Slugger		Keywords: Damage 15/33, Damage bonus Stamina
-/obj/item/twohanded/baseball/golfclub/louisville
-	name = "Louisville slugger"
-	desc = "Makes a satisfying thwack when hitting people."
-	icon_state = "louisville"
-	attack_verb = list("thwacked", "bashed", "slugged", "hit", "bludgeoned", "whacked", "bonked")
-
-/obj/item/twohanded/baseball/golfclub/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]2")
-
-/obj/item/twohanded/baseball/golfclub/louisville/attack(mob/living/M, mob/living/user)
-	. = ..()
-	if(!istype(M))
-		return
-	M.apply_damage(22, STAMINA, null, 0)
-
-
 
 ///////////////////
 // SLEDGEHAMMERS //
