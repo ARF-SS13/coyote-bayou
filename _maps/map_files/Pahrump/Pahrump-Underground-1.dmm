@@ -2129,10 +2129,10 @@
 "buX" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/glass/ten,
-/obj/item/stack/sheet/glass/ten,
-/obj/item/stack/sheet/glass/ten,
 /obj/item/stack/rods/twentyfive,
-/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty{
+	amount = 25
+	},
 /turf/open/floor/plating/f13,
 /area/f13/followers)
 "buZ" = (
@@ -8169,10 +8169,9 @@
 /area/f13/bunker)
 "eMR" = (
 /obj/structure/table/reinforced,
-/obj/item/pickaxe/drill,
-/obj/item/storage/bag/ore,
-/obj/item/mining_scanner,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/caves)
 "eNf" = (
 /obj/structure/table/wood/fancy/royalblack,
@@ -10466,9 +10465,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "gfI" = (
-/mob/living/simple_animal/hostile/securitron/nsb,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/bunker)
+/turf/closed/wall/f13/supermart,
+/area/f13/caves)
 "ggm" = (
 /obj/item/gun/ballistic/automatic/tribalbow{
 	desc = "A simple wooden bow with small pieces of turquiose. This one looks particularly blood-covered. Who the fuck brings a /BOW/ to a /BUNKER/"
@@ -12127,12 +12125,13 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "gWY" = (
-/obj/item/storage/trash_stack,
-/mob/living/simple_animal/hostile/handy/assaultron/nsb,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/obj/machinery/light{
+	dir = 1
 	},
-/area/f13/bunker)
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/caves)
 "gXb" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1"
@@ -12995,10 +12994,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "hJi" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/robobrain/nsb,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/bunker)
+/obj/structure/frame/machine,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/caves)
 "hJL" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood/leisure)
@@ -15237,13 +15237,6 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
-	},
-/area/f13/bunker)
-"jvM" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/assaultron/nsb,
-/turf/open/floor/plasteel/f13{
-	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
 "jwA" = (
@@ -18250,7 +18243,6 @@
 /area/f13/followers)
 "lOo" = (
 /obj/structure/spider/stickyweb,
-/mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lOu" = (
@@ -20367,7 +20359,12 @@
 /area/f13/brotherhood/rnd)
 "niF" = (
 /obj/structure/table/reinforced,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/caves)
 "niU" = (
 /turf/open/floor/plating/f13/inside,
@@ -24828,8 +24825,9 @@
 	},
 /area/f13/brotherhood/mining)
 "qlp" = (
-/obj/structure/frame/machine,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/caves)
 "qma" = (
 /obj/structure/kitchenspike_frame{
@@ -32605,8 +32603,9 @@
 /area/f13/bunker)
 "wev" = (
 /obj/machinery/light,
-/obj/structure/ore_box,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/caves)
 "weA" = (
 /obj/item/crowbar{
@@ -34370,7 +34369,9 @@
 "xsx" = (
 /obj/machinery/light,
 /obj/structure/frame/machine,
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
 /area/f13/caves)
 "xsy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -58841,7 +58842,7 @@ gVR
 hDC
 cJH
 iQL
-jvM
+iVt
 jWn
 iVt
 lew
@@ -60379,7 +60380,7 @@ dTe
 fnS
 fYj
 gyZ
-gWY
+hDC
 hGO
 iuL
 onP
@@ -61665,7 +61666,7 @@ fob
 cJH
 gAz
 hhi
-hJi
+ecp
 fLU
 gkG
 fYj
@@ -68858,7 +68859,7 @@ mir
 egg
 eVI
 fxu
-gfI
+mir
 eVI
 eVI
 rKY
@@ -71075,12 +71076,12 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 uoO
 uoO
 aoj
@@ -71330,30 +71331,30 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
 rbg
 rbg
 rbg
 rbg
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 uoO
 tur
 nBk
@@ -71589,7 +71590,7 @@ uoO
 uoO
 aoj
 aoj
-eLE
+uoO
 rbg
 wkN
 hTR
@@ -71610,7 +71611,7 @@ uoO
 uoO
 aoj
 aoj
-eLE
+uoO
 uoO
 tur
 nBk
@@ -71844,9 +71845,9 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
 rbg
 fMe
 wMq
@@ -71867,7 +71868,7 @@ uoO
 uoO
 aoj
 aoj
-eLE
+uoO
 uoO
 tur
 nBk
@@ -72101,7 +72102,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
@@ -72122,9 +72123,9 @@ uoO
 uoO
 uoO
 uoO
-aoj
-aoj
-eLE
+uoO
+uoO
+uoO
 uoO
 tur
 nBk
@@ -72358,7 +72359,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 toR
 tFh
@@ -72378,10 +72379,10 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
 uoO
 tur
 nBk
@@ -72615,7 +72616,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rBv
 tFh
@@ -72635,7 +72636,7 @@ uoO
 uoO
 aoj
 aoj
-eLE
+uoO
 dXE
 dXE
 dXE
@@ -72872,7 +72873,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
@@ -72892,7 +72893,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 dXE
 rAp
 uwA
@@ -73129,7 +73130,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rBv
 tFh
@@ -73149,7 +73150,7 @@ uoO
 uoO
 uoO
 aoj
-eLE
+uoO
 dXE
 uwA
 uwA
@@ -73386,7 +73387,7 @@ uoO
 aoj
 uoO
 uoO
-eLE
+uoO
 rbg
 toR
 tFh
@@ -73406,7 +73407,7 @@ uoO
 uoO
 uoO
 aoj
-eLE
+uoO
 dXE
 aUs
 uwA
@@ -73643,7 +73644,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
@@ -73663,7 +73664,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 dXE
 hAs
 sRa
@@ -73900,7 +73901,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 utd
 rMC
 xll
@@ -73920,7 +73921,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 dXE
 dXE
 dXE
@@ -74177,7 +74178,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -74434,7 +74435,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -74691,11 +74692,11 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
 tur
 nBk
 nBk
@@ -74952,7 +74953,7 @@ rbg
 rbg
 rbg
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -75209,7 +75210,7 @@ hiV
 ufQ
 ufQ
 rbg
-eLE
+uoO
 tur
 mRT
 nBk
@@ -75438,8 +75439,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+gfI
+gfI
 rbg
 rbg
 rbg
@@ -75466,7 +75467,7 @@ vPf
 ufQ
 qmj
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -75694,9 +75695,9 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
-agL
+gfI
+gfI
+eMR
 niF
 eMR
 rbg
@@ -75723,7 +75724,7 @@ xxS
 qmj
 meq
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -75951,11 +75952,11 @@ uoO
 aoj
 aoj
 aoj
-uoO
-xVz
-xVz
-xVz
-niF
+gfI
+qlp
+qlp
+qlp
+eMR
 rbg
 kEv
 uug
@@ -75980,7 +75981,7 @@ ufQ
 ufQ
 ufQ
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -76208,10 +76209,10 @@ uoO
 aoj
 aoj
 aoj
-uoO
-xVz
+gfI
+gWY
 qlp
-xVz
+qlp
 wev
 rbg
 xZl
@@ -76237,7 +76238,7 @@ ufQ
 qmj
 ufQ
 rbg
-eLE
+uoO
 tur
 bqO
 nBk
@@ -76465,11 +76466,11 @@ uoO
 aoj
 aoj
 aoj
-aoj
-xVz
-xVz
-xVz
-xVz
+gfI
+qlp
+qlp
+qlp
+qlp
 xjD
 uug
 uug
@@ -76494,7 +76495,7 @@ rbg
 aAz
 rbg
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -76722,10 +76723,10 @@ uoO
 aoj
 aoj
 uoO
-uoO
-xVz
-xVz
-xVz
+gfI
+gWY
+qlp
+qlp
 xsx
 rbg
 jcb
@@ -76751,7 +76752,7 @@ ufQ
 ufQ
 ufQ
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -76979,11 +76980,11 @@ uoO
 aoj
 aoj
 uoO
-uoO
-xVz
-xVz
-xVz
+gfI
 qlp
+qlp
+qlp
+hJi
 rbg
 uNq
 mPx
@@ -77008,7 +77009,7 @@ ufQ
 tdS
 ufQ
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -77236,8 +77237,8 @@ uoO
 uoO
 uoO
 uoO
-uoO
-uoO
+gfI
+gfI
 rbg
 rbg
 rbg
@@ -77265,7 +77266,7 @@ rbg
 rbg
 rbg
 rbg
-eLE
+uoO
 tur
 nBk
 nBk
@@ -77520,9 +77521,9 @@ mXm
 liH
 eOh
 rbg
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
 tur
 nBk
 nBk
@@ -77777,7 +77778,7 @@ eOh
 rBX
 jyi
 rbg
-eLE
+uoO
 uoO
 uoO
 tur
@@ -78034,7 +78035,7 @@ rBX
 rBX
 eOh
 rbg
-eLE
+uoO
 uoO
 uoO
 tur
@@ -78291,7 +78292,7 @@ cyY
 mXm
 tYQ
 rbg
-eLE
+uoO
 uoO
 uoO
 tur
@@ -78525,7 +78526,7 @@ aoj
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 vgX
 ylz
@@ -78548,7 +78549,7 @@ rBX
 rBX
 jyi
 rbg
-eLE
+uoO
 aoj
 uoO
 tur
@@ -78782,7 +78783,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
@@ -78805,7 +78806,7 @@ eRM
 top
 cJI
 rbg
-eLE
+uoO
 aoj
 aoj
 tur
@@ -79039,8 +79040,8 @@ aoj
 uoO
 uoO
 uoO
-eLE
-eLE
+uoO
+uoO
 rbg
 cbd
 rCj
@@ -79062,7 +79063,7 @@ rbg
 rbg
 rbg
 rbg
-eLE
+uoO
 aoj
 aoj
 tur
@@ -79297,7 +79298,7 @@ aoj
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 ljt
 ljt
@@ -79313,13 +79314,13 @@ axz
 ess
 kjS
 rbg
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 aoj
 uoO
 tur
@@ -79554,7 +79555,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 sPn
 cFY
@@ -79570,7 +79571,7 @@ rbg
 rbg
 rbg
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -79811,7 +79812,7 @@ uoO
 uoO
 uoO
 aoj
-eLE
+uoO
 rbg
 eaI
 cFY
@@ -79826,8 +79827,8 @@ ufQ
 ufQ
 cPl
 rbg
-eLE
-eLE
+uoO
+uoO
 uoO
 uoO
 uoO
@@ -80068,7 +80069,7 @@ aoj
 aoj
 uoO
 uoO
-eLE
+uoO
 rbg
 jSy
 jSy
@@ -80083,7 +80084,7 @@ ufQ
 ufQ
 dlI
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -80325,7 +80326,7 @@ aoj
 aoj
 uoO
 uoO
-eLE
+uoO
 rbg
 iQT
 jqR
@@ -80340,7 +80341,7 @@ ufQ
 ufQ
 iqI
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -80582,7 +80583,7 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
@@ -80597,7 +80598,7 @@ ufQ
 ufQ
 dlI
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -80839,12 +80840,12 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 rbg
 rbg
 rbg
@@ -80854,7 +80855,7 @@ rbg
 iYS
 rbg
 rbg
-eLE
+uoO
 aoj
 uoO
 uoO
@@ -81101,17 +81102,17 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
 rbg
 kQL
 pqE
 iIp
 utd
-eLE
-eLE
+uoO
+uoO
 aoj
 uoO
 uoO
@@ -81361,13 +81362,13 @@ uoO
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 amD
 pqE
 fvn
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -81618,13 +81619,13 @@ aoj
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 vwE
 pqE
 iIp
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -81875,13 +81876,13 @@ aoj
 uoO
 uoO
 uoO
-eLE
+uoO
 rbg
 rbg
 rbg
 rbg
 rbg
-eLE
+uoO
 uoO
 uoO
 uoO
@@ -82132,13 +82133,13 @@ uoO
 uoO
 uoO
 uoO
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
-eLE
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
+uoO
 uoO
 uoO
 uoO
