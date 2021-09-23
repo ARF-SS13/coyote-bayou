@@ -351,9 +351,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	title = "NCR Representative"
 	flag = F13REP
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCRREP)
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are a representative for the NCR. You are here to further the objective of the NCR, have been supplied with ample amounts of money to do so."
+	total_positions = 0
+	spawn_positions = 0
+	description = "You are an influential representative for the NCR and experienced bureaucrat. You are here to further the objective and ensure the interests of the NCR, your company or own enterprise are met through thick and thin, and have been supplied with ample amounts of money to do so."
 	supervisors = "The Captain and the NCR"
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
 	outfit = /datum/outfit/job/ncr/f13representative
@@ -389,7 +389,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 /datum/outfit/loadout/repbrahminbaron
 	name = "Brahmin Baron"
-	suit = /obj/item/clothing/under/suit/red
+	suit = /obj/item/clothing/under/suit/burgundy
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	backpack_contents = list(
@@ -399,11 +399,13 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 /datum/outfit/loadout/repambassador
 	name = "Ambassador"
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
+	suit = /obj/item/clothing/under/rank/security/detective/grey
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
+		/obj/item/clothing/accessory/waistcoat = 1,
+		/obj/item/clothing/suit/toggle/lawyer/black = 1,
 		/obj/item/storage/briefcase
 		)
 
@@ -411,6 +413,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	name = "Executive"
 	suit = /obj/item/clothing/under/suit_jacket/tan
 	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/ncr = 1,
 		/obj/item/storage/box/ration/menu_two = 1
