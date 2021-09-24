@@ -304,7 +304,7 @@ Cannibal Butchering
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
 			new /obj/effect/gibspawner/human(user.drop_location(), 1)
 			use(1)
-			del src
+			qdel(src)
 	else
 		return ..()
 
@@ -319,7 +319,7 @@ Cannibal Butchering
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
 			new /obj/effect/gibspawner/human(user.drop_location(), 1)
 			use(1)
-			del src
+			qdel(src)
 	else
 		return ..()
 
@@ -334,7 +334,7 @@ Cannibal Butchering
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
 			new /obj/effect/gibspawner/human(user.drop_location(), 1)
 			use(1)
-			del src
+			qdel(src)
 	else
 		return ..()
 
@@ -349,7 +349,7 @@ Cannibal Butchering
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
 			new /obj/effect/gibspawner/human(user.drop_location(), 1)
 			use(1)
-			del src
+			qdel(src)
 	else
 		return ..()
 
