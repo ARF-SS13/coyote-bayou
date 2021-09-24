@@ -3,22 +3,24 @@
 	description = "A chemical used to induce a euphoric high derived from brahmin dung. Fast-acting, powerful, and highly addictive."
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 20
-	addiction_threshold = 12.5
+	addiction_threshold = 15
+
 
 /datum/reagent/drug/jet/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You feel an incredible high! You just absolutely love life in this moment!</span>")
+		to_chat(M, "<span class='notice'>You feel an exhilarating high, the flow of time around you slowing to a crawl!</span>")
 
 /datum/reagent/drug/jet/on_mob_delete(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You come down from your high. The wild ride is unfortunately over...</span>")
+		to_chat(M, "<span class='notice'>Time begins to return to normal speed around you as the high fades...</span>")
 		M.confused += 2
-	
+
 /datum/reagent/drug/jet/on_mob_life(mob/living/carbon/M)
 	M.adjustStaminaLoss(-20, 0)
 	M.set_drugginess(20)
+	M.Jitter(2)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(10))
 		step(M, pick(GLOB.cardinals))
 	if(prob(12))
@@ -37,14 +39,15 @@
 	..()
 
 /datum/reagent/drug/jet/addiction_act_stage1(mob/living/M)
+	M.set_disgust(30)
 	if(prob(20))
 		M.emote(pick("twitch","drool","moan"))
 	..()
 
 /datum/reagent/drug/jet/addiction_act_stage2(mob/living/M)
 	M.Dizzy(5)
-	M.adjustToxLoss(1, 0)
-	if(prob(30))
+	M.set_disgust(60)
+	if(prob(40))
 		M.emote(pick("twitch","drool","moan"))
 	..()
 
@@ -52,9 +55,8 @@
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 4, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(3, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
-	M.set_disgust(60)
+	M.set_disgust(90)
+	M.blur_eyes(25)
 	M.Dizzy(10)
 	if(prob(40))
 		M.emote(pick("twitch","drool","moan"))
@@ -64,10 +66,8 @@
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !ismovableatom(M.loc) && !isspaceturf(M.loc))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(GLOB.cardinals))
-	M.adjustToxLoss(5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	M.set_disgust(100)
-	M.Dizzy(15)
+	M.set_disgust(150)
+	M.blur_eyes(50)
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
 	..()
