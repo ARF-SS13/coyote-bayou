@@ -5509,6 +5509,10 @@
 /obj/structure/chair/left{
 	dir = 4
 	},
+/obj/structure/sign/painting/library{
+	persistence_id = "oasis_public";
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "cDB" = (
@@ -10680,6 +10684,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"eXd" = (
+/obj/structure/easel,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/toy/crayon/spraycan,
+/turf/open/indestructible/ground/outside/wood{
+	icon_state = "wood"
+	},
+/area/f13/wasteland)
 "eXw" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood,
@@ -24950,6 +24962,18 @@
 	name = "metal plating"
 	},
 /area/f13/building)
+"lgL" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/sign/painting/library{
+	persistence_id = "oasis_public";
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
+/area/f13/wasteland)
 "lgP" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress6"
@@ -81102,7 +81126,7 @@ ueA
 kTf
 nVb
 dCV
-nsP
+lgL
 mHj
 ydO
 ydO
@@ -82134,7 +82158,7 @@ xGH
 mHj
 ydO
 ydO
-ydO
+eXd
 ydO
 ydO
 ydO
@@ -82391,7 +82415,7 @@ nza
 xGH
 mHj
 ydO
-ydO
+eXd
 ydO
 mHj
 mHj

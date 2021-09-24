@@ -799,11 +799,20 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "aBN" = (
-/obj/machinery/light/fo13colored/Pink{
-	critical_machine = 1;
-	dir = 1;
-	flicker_chance = 0
+/obj/structure/sign/painting/library_secure{
+	persistence_id = "brotherhood_secure";
+	pixel_y = 32
 	},
+/obj/item/canvas,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/twentythreeXnineteen,
+/obj/item/canvas/twentythreeXtwentythree,
+/obj/item/canvas/nineteenXnineteen,
+/obj/item/canvas/nineteenXnineteen,
+/obj/structure/closet/crate,
+/obj/item/toy/crayon/spraycan,
+/obj/item/toy/crayon/spraycan,
+/obj/item/toy/crayon/spraycan,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "aBP" = (
@@ -850,14 +859,6 @@
 	color = "000000"
 	},
 /turf/open/floor/wood,
-/area/f13/brotherhood/leisure)
-"aDb" = (
-/obj/structure/chair/stool/retro/black,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/contraband/revolver{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "aDd" = (
 /obj/structure/table/wood,
@@ -7822,10 +7823,9 @@
 "eDs" = (
 /obj/structure/chair/stool/retro/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/fo13colored/Pink{
-	critical_machine = 1;
-	dir = 1;
-	flicker_chance = 0
+/obj/structure/sign/painting/library_secure{
+	persistence_id = "brotherhood_secure";
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
@@ -12786,6 +12786,17 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hyN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/machinery/light/fo13colored/Pink{
+	critical_machine = 1;
+	dir = 8;
+	flicker_chance = 0
+	},
+/turf/open/floor/wood,
+/area/f13/brotherhood/leisure)
 "hzg" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -17136,6 +17147,10 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/bunker)
+"kTY" = (
+/obj/structure/easel,
+/turf/open/floor/wood,
+/area/f13/brotherhood/leisure)
 "kUa" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -18256,6 +18271,14 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/molerat,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"lPo" = (
+/obj/machinery/light/fo13colored/Pink{
+	critical_machine = 1;
+	dir = 1;
+	flicker_chance = 0
+	},
+/turf/open/floor/wood,
+/area/f13/brotherhood/leisure)
 "lPt" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -19798,6 +19821,17 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/bunker)
+"mWk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/sign/painting/library_secure{
+	persistence_id = "brotherhood_secure";
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/leisure)
 "mWn" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/curtain{
@@ -27396,6 +27430,14 @@
 /obj/item/stack/sheet/animalhide/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"rQX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/painting/library_secure{
+	persistence_id = "brotherhood_secure";
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/brotherhood/leisure)
 "rRb" = (
 /obj/structure/grille,
 /obj/structure/cable{
@@ -91720,7 +91762,7 @@ aXV
 aBq
 aBq
 hWI
-uoI
+kTY
 dSf
 bEw
 bVb
@@ -91977,7 +92019,7 @@ aXV
 aXV
 aXV
 aXV
-uoI
+lPo
 dRZ
 bEx
 ipv
@@ -92233,7 +92275,7 @@ dTR
 aXV
 ghw
 aLe
-fVx
+hyN
 fVx
 hhZ
 hPF
@@ -92745,7 +92787,7 @@ ali
 dSU
 bBc
 aXV
-ghC
+mWk
 fXr
 fXr
 aDa
@@ -93002,7 +93044,7 @@ aXV
 slX
 bBc
 aXV
-aDb
+eDs
 aLM
 fXs
 fXr
@@ -93516,7 +93558,7 @@ alP
 dTR
 bBc
 aXV
-hYS
+rQX
 hsI
 aRx
 iDq
