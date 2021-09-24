@@ -41,9 +41,9 @@ SUBSYSTEM_DEF(nightcycle)
 	var/nighttime_sun_color = "#00111a"
 	var/nighttime_sun_power = 10
 	/// How does it take to get darker or brighter each step.
-	var/cycle_transition_time = 30 SECONDS
+	var/cycle_transition_time = 120 SECONDS
 	/// If defined with any number besides null it will determine how long each cycle lasts.
-	var/custom_cycle_wait = null
+	var/custom_cycle_wait = 1600 SECONDS
 	var/last_custom_cycle = 0
 
 	// Light objects
@@ -116,7 +116,7 @@ SUBSYSTEM_DEF(nightcycle)
 	animate(light_object, alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
 	for(var/key in sunlight_border_objects)
 		animate(sunlight_border_objects[key], alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
-
+		CHECK_TICK
 
 /datum/controller/subsystem/nightcycle/proc/get_border_object(object_key)
 	. = sunlight_border_objects["[object_key]"]
