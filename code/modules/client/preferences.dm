@@ -1289,8 +1289,9 @@ Records disabled until a use for them is found
 
 	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
 
-	dat += "<center><b>Allocate points</b></center><br>"
-	dat += "<center>[total] out of 35 possible</center><br>"
+	dat += "<center><b>Allocate points</b></center>"
+	dat += "<center>Note: SPECIAL is purely cosmetic. These points have no effect on gameplay.</center><br>"
+	dat += "<center>[total] out of 40 possible</center><br>"
 	dat += "<b>Strength	   :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
 	dat += "<b>Perception  :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
 	dat += "<b>Endurance   :</b> <a href='?_src_=prefs;preference=special_e;task=input'>[special_e]</a><BR>"
@@ -1298,8 +1299,8 @@ Records disabled until a use for them is found
 	dat += "<b>Intelligence:</b> <a href='?_src_=prefs;preference=special_i;task=input'>[special_i]</a><BR>"
 	dat += "<b>Agility     :</b> <a href='?_src_=prefs;preference=special_a;task=input'>[special_a]</a><BR>"
 	dat += "<b>Luck        :</b> <a href='?_src_=prefs;preference=special_l;task=input'>[special_l]</a><BR>"
-	if (total>35)
-		dat += "<center>Maximum exceeded, please change until your total is at or below 35<center>"
+	if (total>40)
+		dat += "<center>Maximum exceeded, please change until your total is at or below 40<center>"
 	else
 		dat += "<center><a href='?_src_=prefs;preference=special;task=close'>Done</a></center>"
 
