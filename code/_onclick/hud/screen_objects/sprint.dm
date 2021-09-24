@@ -8,10 +8,12 @@
 	layer = HUD_LAYER - 0.1
 	var/mutable_appearance/flashy
 
+/*
 /obj/screen/sprintbutton/Click()
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.default_toggle_sprint()
+*/
 
 /obj/screen/sprintbutton/update_icon_state()
 	var/mob/living/user = hud?.mymob
