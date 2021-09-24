@@ -936,26 +936,13 @@ Off-Duty
 	faction = "BOS"
 	total_positions = 3
 	spawn_positions = 3
-	description = "Whether operating in disguise or simply enjoying time from the off-shift, you are still a member of the Brotherhood and must abide by the Codex and follow the orders of your superiors. That being said, while off-duty your orders do not take precedence and you should resist issuing them when another of your rank is currently on duty, and if one does not exist, commit to going on-duty. You have a duty to safeguard what equipment you are given, especially your holotags. Ideally, you should be paired with one or more fellow off-duty members; and you would know where the bunker in the region is."
-	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
+	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason. However, you may not leave the bunker, and you may not get in the way of on-duty personnel. Do not pull rank or give orders. Should the bunker be attacked, you are expected NOT to participate in the fighting, and must instead head to the lower levels for safety (i.e. despawn yourself at the matrix point)."
+	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."	
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "your superior rank."
 	selection_color = "#95a5a6"
 
-	loadout_options = list(
-	/datum/outfit/loadout/offa, //Junior Knight
-	/datum/outfit/loadout/offb, //Knight
-	/datum/outfit/loadout/offc, //Star Knight
-	/datum/outfit/loadout/offd, //Head Knight
-	/datum/outfit/loadout/offe, //Junior Scribe
-	/datum/outfit/loadout/offf, //Scribe
-	/datum/outfit/loadout/offg, //Senior Scribe
-	/datum/outfit/loadout/offh, //Head Scribe
-	/datum/outfit/loadout/offi, //Junior Paladin
-	/datum/outfit/loadout/offj, //Paladin
-	/datum/outfit/loadout/offk, //Star Paladin
-	/datum/outfit/loadout/offl, //Head Paladin
-	)
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/bos/f13offdutybos
 
@@ -977,76 +964,4 @@ Off-Duty
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/encryptionkey/headset_bos=1,
 		/obj/item/melee/onehanded/knife/survival=1
-		)
-
-/datum/outfit/loadout/offa
-	name = "Junior Knight"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorknight=1
-		)
-
-/datum/outfit/loadout/offb
-	name = "Knight"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/knight=1
-		)
-
-/datum/outfit/loadout/offc
-	name = "Senior Knight"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/seniorknight=1
-		)
-
-/datum/outfit/loadout/offd
-	name = "Knight-Captain"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/knightcaptain=1
-		)
-
-/datum/outfit/loadout/offe
-	name = "Junior Scribe"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorscribe=1
-		)
-
-/datum/outfit/loadout/offf
-	name = "Scribe"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/scribe=1
-		)
-
-/datum/outfit/loadout/offg
-	name = "Senior Scribe"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/seniorscribe=1
-		)
-
-/datum/outfit/loadout/offh
-	name = "Head Scribe"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/headscribe=1
-		)
-
-/datum/outfit/loadout/offi
-	name = "Junior Paladin"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/juniorpaladin=1
-		)
-
-/datum/outfit/loadout/offj
-	name = "Paladin"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/paladin=1
-		)
-
-/datum/outfit/loadout/offk
-	name = "Senior Paladin"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/seniorpaladin=1
-		)
-
-/datum/outfit/loadout/offl
-	name = "Sentinel"
-	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/sentinel=1
 		)
