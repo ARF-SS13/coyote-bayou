@@ -54,6 +54,13 @@
 	time = 20
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/bitterdrink5
+	name = "Bottle Bitterdrink (x5)"
+	result = /obj/item/storage/box/medicine/bitterdrink5
+	reqs = list(/datum/reagent/medicine/bitter_drink = 150)
+	time = 60
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice
@@ -95,6 +102,16 @@
 	time = 45
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/stimpak5
+	name = "Stimpak (x5)"
+	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 20,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 20,
+				/obj/item/reagent_containers/syringe = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/superstimpak
 	name = "Super Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
@@ -103,6 +120,18 @@
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 50
+	category = CAT_MEDICAL
+	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/custom)
+
+/datum/crafting_recipe/superstimpak5
+	name = "Super Stimpak (x5)"
+	result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
+	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
+				/obj/item/stack/sheet/leather = 10,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 					/obj/item/reagent_containers/hypospray/medipen/stimpak/custom)

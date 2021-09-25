@@ -766,6 +766,7 @@
 	if(preparsed.len > 1)
 		amount = clamp(text2num(preparsed[2]),1, 50) //50 at a time!
 
+	to_chat(usr,"<span class='notice'><font size=1>Syntax: 'object : amount' \n example: wrench:50 will open a search for 'wrench', and then spawn 50 of your selection.</font></span>", confidential = TRUE)
 	var/chosen = pick_closest_path(path)
 	if(!chosen)
 		return

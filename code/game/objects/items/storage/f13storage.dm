@@ -419,9 +419,30 @@
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler(src)
 	new /obj/item/storage/box/matches(src)
 	new /obj/item/clothing/mask/cigarette/cigar/ncr(src)
-	
-	
 
+/obj/item/storage/box/medicine/stimpaks/stimpaks5
+	name = "box of stimpaks"
+	desc = "A box full of stimpaks."
+	illustration = "syringe"
+
+/obj/item/storage/box/medicine/stimpaks/stimpaks5/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+
+/obj/item/storage/box/medicine/stimpaks/superstimpaks5
+	name = "box of super stimpaks"
+	desc = "A box full of super stimpaks."
+	illustration = "syringe"
+
+/obj/item/storage/box/medicine/stimpaks/superstimpaks5/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/hypospray/medipen/stimpak/super(src)
 	
 	
-	
+/obj/item/storage/box/medicine/bitterdrink5
+	name = "box of bitter drinks"
+	desc = "A box full of bitter drinks."
+
+/obj/item/storage/box/medicine/bitterdrink5/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/patch/bitterdrink(src)
