@@ -205,8 +205,8 @@
 /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
 	name = "slavemaster armor"
 	desc = "(III) Issued to slave masters to keep them cool during long hours of watching the slaves work in the sun."
-	icon_state = "legion_slavemaster"
-	item_state = "legion_slavemaster"
+	icon_state = "legion_master"
+	item_state = "legion_master"
 
 /obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
