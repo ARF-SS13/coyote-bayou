@@ -143,13 +143,16 @@
 		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/structure/destructible/clockwork/ocular_warden,/obj/item/electronic_assembly))
 
 		for(var/HM in typecache_filter_list(range(vision_range, targets_from), hostile_machines))
+			CHECK_TICK
 			if(can_see(targets_from, HM, vision_range))
 				. += HM
 	else
 		. = list() // The following code is only very slightly slower than just returning oview(vision_range, targets_from), but it saves us much more work down the line, particularly when bees are involved
 		for (var/obj/A in oview(vision_range, targets_from))
+			CHECK_TICK
 			. += A
-		for (var/mob/A in oview(vision_range, targets_from))
+		for (var/mob/living/A in oview(vision_range, targets_from)) //mob/dead/observers arent possible targets
+			CHECK_TICK
 			. += A
 
 /mob/living/simple_animal/hostile/proc/FindTarget(list/possible_targets, HasTargetsList = 0)//Step 2, filter down possible targets to things we actually care about
