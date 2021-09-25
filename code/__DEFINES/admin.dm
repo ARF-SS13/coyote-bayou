@@ -64,6 +64,7 @@
 #define ADMIN_COORDJMP(src) "[src ? "[COORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_VERBOSEJMP(src) "[src ? "[AREACOORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_INDIVIDUALLOG(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];individuallog=[REF(user)]'>LOGS</a>)"
+#define ADMIN_JMP_MSGTERMINAL(src) "(<a href='?_src_=holder;[HrefToken(TRUE)];adminplayerobservecoodjump=1;X=[69];Y=[77];Z=[1]'>JMP</a>)"
 
 #define ADMIN_PUNISHMENT_LIGHTNING "Lightning bolt"
 #define ADMIN_PUNISHMENT_BRAINDAMAGE "Brain damage"

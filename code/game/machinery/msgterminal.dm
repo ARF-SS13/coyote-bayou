@@ -71,7 +71,9 @@ GLOBAL_LIST_EMPTY(allTerminals)
 		if(2)
 			if(!("[terminal]" in GLOB.req_terminal))
 				GLOB.req_terminal += terminal
-
+		if(3) // command reply terminals that we dont want listed
+			if("[terminal]" in GLOB.req_terminal)
+				GLOB.req_terminal -= terminal
 
 /obj/machinery/msgterminal/Destroy()
 	GLOB.allTerminals -= "[terminal]"
@@ -82,8 +84,12 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	. = ..()
 	if(open) 
 		return
-
 	var/dat = ""
+	dat += "<head><style>body {padding: 0; margin: 15px; background-color: #062113; color: #4aed92; line-height: 170%;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style></head><font face='courier'>"
+	dat += "<center><b>ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM v.85</b><br>"
+	dat += "<b>COPYRIGHT 2075-2077 ROBCO INDUSTRIES</b><br><br><br><br>"
+
+	
 	playsound(src, 'sound/f13machines/terminalkeytap01.ogg', 20, 1)
 	switch(screen)
 		if(1)	//choose your target
@@ -180,7 +186,7 @@ GLOBAL_LIST_EMPTY(allTerminals)
 		if(11)
 			var/message = input(usr,"Send a message to command staff. Ensure it makes sense IC.","") as message|null
 			if(message)
-				message_admins("[ADMIN_LOOKUPFLW(usr)] has sent <font size=1>COMMAND MESSAGE</font> FROM terminal:[ADMIN_LOOKUPFLW(src)] '[message]' ")
+				message_admins("[ADMIN_LOOKUPFLW(usr)] has sent <font size=2>COMMAND MESSAGE</font> FROM terminal:[ADMIN_LOOKUPFLW(src)]. '[message]' <br>Jump to the reply terminal:[ADMIN_JMP_MSGTERMINAL(src)]")
 				log_terminal("[key_name(usr)] sent a COMMAND message, '[message]' from the terminal at [AREACOORD(usr)].")
 				screen = 6
 				dat += "<span class='good'>Message to Command delivered.</span><br><br>"
@@ -436,3 +442,13 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	terminalid = "brotherhood"
 	terminal = "Brotherhood Communcations Terminal"
 	terminalType = 2
+/obj/machinery/msgterminal/command
+	terminalid = "command"
+	terminal = "COMMAND"
+	terminalType = 3
+
+
+
+// so admins can easily jump-to-area
+/area/f13/commandconsole
+	name = "Command Communications"
