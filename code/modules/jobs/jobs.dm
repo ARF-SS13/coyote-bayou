@@ -165,11 +165,13 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 
 GLOBAL_LIST_INIT(legion_command_positions, list(
 	"Legate",
+	"Legion Orator",
 	"Legion Centurion",
 	"Legion Veteran Decanus",
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
+	"Legion Orator",
 	"Legion Centurion",
 	"Legion Veteran Decanus",
 	"Legion Prime Decanus",

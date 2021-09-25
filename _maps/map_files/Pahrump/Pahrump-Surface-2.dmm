@@ -11354,6 +11354,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ncr)
+"fil" = (
+/obj/effect/landmark/start/f13/orator,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/legion)
 "fiy" = (
 /obj/machinery/door/unpowered/wooddoor{
 	autoclose = 1;
@@ -18049,6 +18053,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"icR" = (
+/obj/effect/landmark/start/f13/legate,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/legion)
 "icU" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/wood/f13/oak,
@@ -111334,7 +111342,7 @@ yir
 qKU
 hom
 wSA
-tUc
+icR
 dRs
 lNv
 lNv
@@ -111591,7 +111599,7 @@ oxA
 mpu
 hom
 unJ
-cjV
+fil
 dRs
 lNv
 wfG

@@ -90,10 +90,11 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // LEGATE
 
 /datum/job/CaesarsLegion/Legionnaire/f13legate
-	title = "Legate"
+	title = "Legion Legate"
 	flag = F13LEGATE
 	head_announce = list("Security")
 	supervisors = "Caesar"
+	faction = "Legion"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	total_positions = 0
@@ -135,14 +136,16 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 // ORATOR
 
 /datum/job/CaesarsLegion/Legionnaire/f13orator
-	title = "Orator"
+	title = "Legion Orator"
 	flag = F13ORATOR
 	supervisors = "Legate"
+	faction = "Legion"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	total_positions = 0
 	spawn_positions = 0
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
+	display_order = JOB_DISPLAY_ORDER_ORATOR
 	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
 
@@ -153,6 +156,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	shoes =	/obj/item/clothing/shoes/f13/military/legate
 	suit = /obj/item/clothing/suit/armor/f13/legion/legate
 	head = null
+	id = /obj/item/card/id/dogtag/legcenturion
 	gloves = null
 	shoes = /obj/item/clothing/shoes/roman
 	suit_store = /obj/item/gun/ballistic/revolver/colt6520
@@ -164,7 +168,17 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
 		)
 
-
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13orator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 /////////////////
 //// Officers ///
