@@ -190,6 +190,8 @@ Class Procs:
 	update_icon()
 	updateUsrDialog()
 
+/obj/machinery/proc/createmessage(source, title, message, priority)
+
 /obj/machinery/proc/dropContents(list/subset = null)
 	var/turf/T = get_turf(src)
 	for(var/atom/movable/A in contents)

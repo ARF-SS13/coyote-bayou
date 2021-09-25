@@ -116,6 +116,7 @@ GLOBAL_LIST(topic_status_cache)
 	GLOB.world_attack_log = "[GLOB.log_directory]/attack.log"
 	GLOB.world_pda_log = "[GLOB.log_directory]/pda.log"
 	GLOB.world_telecomms_log = "[GLOB.log_directory]/telecomms.log"
+	GLOB.world_terminal_log = "[GLOB.log_directory]/terminalmsg.log"
 	GLOB.world_manifest_log = "[GLOB.log_directory]/manifest.log"
 	GLOB.world_href_log = "[GLOB.log_directory]/hrefs.log"
 	GLOB.sql_error_log = "[GLOB.log_directory]/sql.log"
@@ -141,6 +142,7 @@ GLOBAL_LIST(topic_status_cache)
 	start_log(GLOB.world_attack_log)
 	start_log(GLOB.world_pda_log)
 	start_log(GLOB.world_telecomms_log)
+	start_log(GLOB.world_terminal_log)
 	start_log(GLOB.world_manifest_log)
 	start_log(GLOB.world_href_log)
 	start_log(GLOB.world_qdel_log)

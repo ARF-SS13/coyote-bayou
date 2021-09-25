@@ -13666,6 +13666,11 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/archives)
 "igo" = (
+/obj/machinery/msgterminal/brotherhood{
+	dir = 8;
+	pixel_x = 23;
+	pixel_y = -3
+	},
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"

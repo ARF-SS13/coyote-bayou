@@ -464,7 +464,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 	emergency = null
 	update_icon()
 
-/obj/machinery/requests_console/proc/createmessage(source, title, message, priority)
+/obj/machinery/requests_console/createmessage(source, title, message, priority)
 	var/linkedsender
 	if(istype(source, /obj/machinery/requests_console))
 		var/obj/machinery/requests_console/sender = source

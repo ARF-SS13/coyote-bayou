@@ -136,6 +136,10 @@
 	if (CONFIG_GET(flag/log_telecomms))
 		WRITE_LOG(GLOB.world_telecomms_log, "TCOMMS: [text]")
 
+/proc/log_terminal(text) // will make a unique toggle config flag for this eventually
+	if (CONFIG_GET(flag/log_telecomms))
+		WRITE_LOG(GLOB.world_terminal_log, "TERMINAL: [text]")
+
 /proc/log_chat(text)
 	if (CONFIG_GET(flag/log_pda))
 		//same thing here
