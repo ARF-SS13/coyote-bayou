@@ -197,14 +197,10 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
-	/obj/item/storage/pill_bottle/chem_tin/mentats = 5,
-	/obj/item/storage/pill_bottle/chem_tin/fixer = 5,
 	/obj/item/storage/pill_bottle/chem_tin/radx = 5,
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
-	/obj/item/reagent_containers/hypospray/medipen/psycho = 5,
-	/obj/item/reagent_containers/pill/patch/healingpowder = 5
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
@@ -418,8 +414,6 @@ GLOBAL_LIST_INIT(loot_medical_medicine, list(
 	/obj/item/reagent_containers/pill/patch/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/radx,
 	/obj/item/reagent_containers/blood/radaway,
-	/obj/item/storage/pill_bottle/chem_tin/mentats,
-	/obj/item/storage/pill_bottle/chem_tin/fixer,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak,
 	/obj/item/reagent_containers/medspray/styptic,
 	/obj/item/reagent_containers/medspray/silver_sulf,

@@ -510,8 +510,7 @@
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/chem_tin/mentats,
-				/obj/item/storage/pill_bottle/chem_tin/fixer
+				/obj/item/storage/pill_bottle/chem_tin/mentats
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland
@@ -525,7 +524,6 @@
 				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
 				/obj/item/storage/pill_bottle/chem_tin/mentats,
-				/obj/item/storage/pill_bottle/chem_tin/fixer,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/reagent_containers/medspray/styptic,
 				/obj/item/reagent_containers/medspray/silver_sulf,
@@ -1908,3 +1906,4 @@
 			/obj/effect/spawner/bundle/testi = 10,
 			/obj/effect/spawner/bundle/testj = 10,
 			)
+

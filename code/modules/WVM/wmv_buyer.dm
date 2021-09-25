@@ -202,3 +202,69 @@ ORGAN SELLER
 	to_chat(usr, "You sell [final_value] bottle caps value to the [src]. Total caps: [stored_caps].")
 	qdel(I)
 	src.ui_interact(usr)
+
+/*
+
+Fence
+
+*/
+
+/obj/machinery/mineral/wasteland_trader/brotherhood
+	name = "Brotherhood of Steal"
+
+	goods_list = list( /obj/item/radio/headset/headset_bos = 15,
+								/obj/item/clothing/under/syndicate/brotherhood = 15,
+								/obj/item/card/id/dogtag = 30,
+								/obj/item/clothing/shoes/combat/swat = 5,
+								/obj/item/clothing/gloves/combat = 5,
+								/obj/item/clothing/accessory/bos/initiateS = 5,
+								/obj/item/clothing/accessory/bos/initiateK = 5,
+								/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate = 30,
+								/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate = 30,
+								/obj/item/clothing/accessory/bos/juniorknight = 5,
+								/obj/item/clothing/accessory/bos/knight = 15,
+								/obj/item/clothing/head/helmet/f13/combat/brotherhood = 45,
+								/obj/item/clothing/suit/armor/f13/combat/brotherhood = 45,
+								/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior = 60,
+								/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior = 60,
+								/obj/item/clothing/glasses/night = 150,
+								/obj/item/clothing/accessory/bos/seniorknight = 30,
+								/obj/item/clothing/accessory/bos/scribe = 15,
+								/obj/item/clothing/accessory/bos/juniorscribe = 5,
+								/obj/item/clothing/suit/f13/scribe = 45,
+								/obj/item/clothing/suit/f13/seniorscribe = 60,
+								/obj/item/clothing/accessory/bos/seniorscribe = 30,
+								/obj/item/clothing/accessory/bos/juniorpaladin = 15,
+								/obj/item/clothing/accessory/bos/paladin = 30,
+								/obj/item/clothing/accessory/bos/seniorpaladin = 45,
+								/obj/item/clothing/suit/armor/f13/combat/brotherhood/captain = 75,
+								/obj/item/clothing/accessory/bos/knightcaptain = 60,
+								/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain = 75,
+								/obj/item/clothing/accessory/bos/headscribe = 60,
+								/obj/item/clothing/suit/armor/f13/headscribe = 75,
+								/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 75,
+								/obj/item/clothing/under/f13/recon = 30,
+								/obj/item/clothing/accessory/bos/sentinel = 30,
+								/obj/item/clothing/suit/f13/elder = 300,
+								/obj/item/clothing/accessory/bos/elder = 300,
+								/obj/item/gun/energy/laser/laer = 600,
+								/obj/item/clothing/neck/mantle/bos/right = 300
+
+								)
+
+/obj/machinery/mineral/wasteland_trader/brotherhood/ui_interact(mob/user)
+	. = ..()
+	var/dat
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "</div>"
+	dat += "<br>"
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Buying a wide variety of Brotherhood gear.</b><br>"
+	dat += ""
+	dat += "</div>"
+
+	var/datum/browser/popup = new(user, "tradingvendor", "Brotherhood of Steal", 400, 500)
+	popup.set_content(dat)
+	popup.open()
+	return
