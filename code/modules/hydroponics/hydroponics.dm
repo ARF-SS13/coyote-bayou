@@ -317,7 +317,6 @@
 		to_chat(user, "<span class='warning'>It's filled with weeds!</span>")
 	if(pestlevel >= 5)
 		to_chat(user, "<span class='warning'>It's filled with tiny worms!</span>")
-	to_chat(user, "" )
 
 // Examining more a plant will yield a rough estimation of it's stats.
 // Intended for use by Wayfarer's and Legion to allow their farmers to gauge roughly how it's going.

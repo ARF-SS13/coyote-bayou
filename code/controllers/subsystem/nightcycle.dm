@@ -111,7 +111,7 @@ SUBSYSTEM_DEF(nightcycle)
 			CRASH("Invalid new_time returned from STATION_TIME()")
 
 	current_time = new_time
-
+	message_admins("Transitioning into [new_time]...")
 	var/atom/movable/sunlight/light_object = sunlight_source_object
 	animate(light_object, alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
 	for(var/key in sunlight_border_objects)
@@ -161,7 +161,6 @@ SUBSYSTEM_DEF(nightcycle)
 		neighbor.sunlight_state = SUNLIGHT_BORDER
 		if(neighbor.flags_1 & INITIALIZED_1)
 			neighbor.smooth_sunlight_border()
-
 
 #define SUNLIGHT_ADJ_IN_DIR(source, junction, direction, direction_flag) \
 	do { \

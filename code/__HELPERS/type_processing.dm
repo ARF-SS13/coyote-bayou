@@ -57,4 +57,5 @@
 		var/value = L[key]
 		if(findtext("[key]", filter) || findtext("[value]", filter))
 			matches[key] = value
+			CHECK_TICK
 	return matches

@@ -103,8 +103,8 @@
 
 /mob/living/carbon/human/RangedAttack(atom/A, mouseparams)
 	. = ..()
-	if(gloves)
-		var/obj/item/clothing/gloves/G = gloves
+	var/obj/item/clothing/gloves/G = gloves
+	if(gloves && (istype(G)))
 		. |= G.Touch(A, FALSE)
 		if(. & INTERRUPT_UNARMED_ATTACK)
 			return
