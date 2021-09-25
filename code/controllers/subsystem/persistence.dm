@@ -44,6 +44,7 @@ SUBSYSTEM_DEF(persistence)
 	LoadRandomizedRecipes()
 	LoadPanicBunker()
 	SSjob.AddMapJobs() //shut up
+	LoadPaintings() //i am in physical pain
 	return ..()
 
 /datum/controller/subsystem/persistence/proc/LoadSatchels()
