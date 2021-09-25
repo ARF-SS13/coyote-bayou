@@ -21,15 +21,12 @@
 		/obj/item/storage/box/actionfigure = ARCADE_WEIGHT_USELESS,
 		/obj/item/toy/foamblade = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/gun = ARCADE_WEIGHT_TRICK,
-		/obj/item/toy/gun/justicar = ARCADE_WEIGHT_TRICK,
-		/obj/item/toy/gun/m41 = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/katana = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/minimeteor = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/nuke = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/redbutton = ARCADE_WEIGHT_TRICK,
 //		/obj/item/toy/spinningtoy = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/sword = ARCADE_WEIGHT_TRICK,
-		/obj/item/toy/sword/cx = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/talking/AI = ARCADE_WEIGHT_USELESS,
 		/obj/item/toy/talking/codex_gigas = ARCADE_WEIGHT_USELESS,
 		/obj/item/toy/talking/griffin = ARCADE_WEIGHT_USELESS,
@@ -48,16 +45,11 @@
 
 		/obj/item/storage/box/snappops = ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/under/syndicate/tacticool = ARCADE_WEIGHT_TRICK,
-		/obj/item/gun/ballistic/shotgun/toy/crossbow = ARCADE_WEIGHT_TRICK,
-		/obj/item/storage/box/fakesyndiesuit = ARCADE_WEIGHT_TRICK,
 		/obj/item/storage/crayons = ARCADE_WEIGHT_USELESS,
 		/obj/item/coin/antagtoken = ARCADE_WEIGHT_USELESS,
 //		/obj/item/stack/tile/fakespace/loaded = ARCADE_WEIGHT_TRICK,
-//		/obj/item/stack/tile/fakepit/loaded = ARCADE_WEIGHT_TRICK,
+		/obj/item/stack/tile/fakepit/loaded = ARCADE_WEIGHT_TRICK,
 		/obj/item/restraints/handcuffs/fake = ARCADE_WEIGHT_TRICK,
-		/obj/item/clothing/gloves/fingerless/pugilist/hug = ARCADE_WEIGHT_TRICK,
-		/obj/item/card/emagfake	= ARCADE_WEIGHT_TRICK,
-		/obj/item/clothing/shoes/wheelys = ARCADE_WEIGHT_RARE,
 		/obj/item/clothing/shoes/kindleKicks = ARCADE_WEIGHT_RARE,
 		/obj/item/storage/belt/military/snack = ARCADE_WEIGHT_RARE,
 
@@ -79,8 +71,7 @@
 	if(!circuit)
 		var/list/gameodds = list(/obj/item/circuitboard/computer/arcade/battle = 33,
 								/obj/item/circuitboard/computer/arcade/orion_trail = 33,
-								/obj/item/circuitboard/computer/arcade/minesweeper = 33,
-								/obj/item/circuitboard/computer/arcade/amputation = 2)
+								/obj/item/circuitboard/computer/arcade/minesweeper = 34)
 		var/thegame = pickweight(gameodds)
 		var/obj/item/circuitboard/CB = new thegame()
 		var/obj/machinery/computer/arcade/A = new CB.build_path(loc, CB)
@@ -93,10 +84,6 @@
 
 /obj/machinery/computer/arcade/proc/prizevend(mob/user, list/rarity_classes)
 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "arcade", /datum/mood_event/arcade)
-
-	if(prob(1) && prob(1) && prob(1)) //Proper 1 in a million
-		new /obj/item/gun/energy/pulse/prize(src)
-		SSmedals.UnlockMedal(MEDAL_PULSE, usr.client)
 
 	if(!contents.len)
 		var/list/toy_raffle
