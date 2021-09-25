@@ -3,7 +3,7 @@
 	result = /obj/item/stack/medical/gauze/adv/one
 	time = 50
 	reqs = list(/obj/item/stack/medical/gauze = 1,
-				/datum/reagent/space_cleaner/sterilizine = 10)
+				/datum/reagent/abraxo_cleaner/sterilizine = 10)
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/stack/medical/gauze/improvised)
 

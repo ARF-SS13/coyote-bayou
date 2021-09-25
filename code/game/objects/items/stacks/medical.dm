@@ -179,12 +179,12 @@
 					"<span class='notice'>You cut [src] into pieces of cloth with [I].</span>", \
 					"<span class='italics'>You hear cutting.</span>")
 		use(2)
-	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine))
-		if(!I.reagents.has_reagent(/datum/reagent/space_cleaner/sterilizine, 10))
+	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine))
+		if(!I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10))
 			to_chat(user, "<span class='warning'>There's not enough sterilizine in [I] to sterilize [src]!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] pours the contents of [I] onto [src], sterilizing it.</span>", "<span class='notice'>You pour the contents of [I] onto [src], sterilizing it.</span>")
-		I.reagents.remove_reagent(/datum/reagent/space_cleaner/sterilizine, 10)
+		I.reagents.remove_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10)
 		new /obj/item/stack/medical/gauze/adv/one(user.drop_location())
 		use(1)
 	else

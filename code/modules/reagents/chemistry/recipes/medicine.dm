@@ -346,7 +346,7 @@ datum/chemical_reaction/rezadone
 		new /obj/item/stack/medical/suture/medicated(location)
 
 /datum/chemical_reaction/medmesh
-	required_reagents = list(/datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/space_cleaner/sterilizine = 10)
+	required_reagents = list(/datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20, /datum/reagent/abraxo_cleaner/sterilizine = 10)
 
 /datum/chemical_reaction/medmesh/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)

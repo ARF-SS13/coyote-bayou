@@ -101,8 +101,8 @@
 
 /obj/item/reagent_containers/medspray/sterilizine
 	name = "sterilizer spray"
-	desc = "Spray bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
-	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)
+	desc = "Spray bottle loaded with non-toxic sterilizer from Abraxodyne Chemical. Useful in preparation for surgery."
+	list_reagents = list(/datum/reagent/abraxo_cleaner/sterilizine = 60)
 
 /obj/item/reagent_containers/medspray/synthtissue
 	name = "Synthtissue young culture spray"

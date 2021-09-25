@@ -1148,14 +1148,14 @@
 				GG = new/obj/effect/decal/cleanable/greenglow(T)
 			GG.reagents.add_reagent(/datum/reagent/radium, reac_volume)
 
-/datum/reagent/space_cleaner/sterilizine
+/datum/reagent/abraxo_cleaner/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#e6f1f5" // rgb: 200, 165, 220
 	taste_description = "bitterness"
 	pH = 10.5
 
-/datum/reagent/space_cleaner/sterilizine/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
+/datum/reagent/abraxo_cleaner/sterilizine/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -1163,7 +1163,7 @@
 			// +20% success propability on each step, useful while operating in less-than-perfect conditions
 	..()
 
-/datum/reagent/space_cleaner/sterilizine/reaction_obj(obj/O, reac_volume)
+/datum/reagent/abraxo_cleaner/sterilizine/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/stack/medical/gauze))
 		var/obj/item/stack/medical/gauze/G = O
 		reac_volume = min((reac_volume / 10), G.amount)
@@ -1335,14 +1335,14 @@
 	..()
 	return TRUE
 
-/datum/reagent/space_cleaner
-	name = "Space cleaner"
+/datum/reagent/abraxo_cleaner
+	name = "Abraxo cleaner"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
 	color = "#A5F0EE" // rgb: 165, 240, 238
 	taste_description = "sourness"
 	pH = 5.5
 
-/datum/reagent/space_cleaner/reaction_obj(obj/O, reac_volume)
+/datum/reagent/abraxo_cleaner/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/effect/decal/cleanable)  || istype(O, /obj/item/projectile/bullet/reusable/foam_dart) || istype(O, /obj/item/ammo_casing/caseless/foam_dart))
 		qdel(O)
 	else
@@ -1351,7 +1351,7 @@
 			SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 			O.clean_blood()
 
-/datum/reagent/space_cleaner/reaction_turf(turf/T, reac_volume)
+/datum/reagent/abraxo_cleaner/reaction_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
 		T.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 		SEND_SIGNAL(T, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
@@ -1362,7 +1362,7 @@
 		for(var/mob/living/simple_animal/slime/M in T)
 			M.adjustToxLoss(rand(5,10))
 
-/datum/reagent/space_cleaner/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/abraxo_cleaner/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
 		M.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 		if(iscarbon(M))
@@ -1401,7 +1401,7 @@
 			SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 			M.clean_blood()
 
-/datum/reagent/space_cleaner/ez_clean
+/datum/reagent/abraxo_cleaner/ez_clean
 	name = "EZ Clean"
 	description = "A powerful, acidic cleaner sold by Waffle Co. Affects organic matter while leaving other objects unaffected."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
@@ -1409,13 +1409,13 @@
 	pH = 2
 	value = REAGENT_VALUE_RARE
 
-/datum/reagent/space_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
+/datum/reagent/abraxo_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
 	M.adjustFireLoss(3.33)
 	M.adjustToxLoss(3.33)
 	..()
 
-/datum/reagent/space_cleaner/ez_clean/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/abraxo_cleaner/ez_clean/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
 	if((method == TOUCH || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1)

@@ -745,13 +745,13 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/janitor
 	name = "janitors winter coat"
-	desc = "(I) A purple-and-beige winter coat that smells of space cleaner."
+	desc = "(I) A purple-and-beige winter coat that smells of Abraxo-brand cleaner."
 	icon_state = "coatjanitor"
 	item_state = "coatjanitor"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/janitor
 
 /obj/item/clothing/head/hooded/winterhood/janitor
-	desc = "(I) A purple hood that smells of space cleaner."
+	desc = "(I) A purple hood that smells of Abraxo-brand cleaner."
 	icon_state = "winterhood_janitor"
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo

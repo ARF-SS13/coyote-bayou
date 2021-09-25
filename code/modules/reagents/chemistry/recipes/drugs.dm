@@ -17,7 +17,7 @@
 	name = "Krokodil"
 	id = /datum/reagent/drug/krokodil
 	results = list(/datum/reagent/drug/krokodil = 6)
-	required_reagents = list(/datum/reagent/medicine/diphenhydramine = 1, /datum/reagent/medicine/morphine = 1, /datum/reagent/space_cleaner = 1, /datum/reagent/potassium = 1, /datum/reagent/phosphorus = 1, /datum/reagent/fuel = 1)
+	required_reagents = list(/datum/reagent/medicine/diphenhydramine = 1, /datum/reagent/medicine/morphine = 1, /datum/reagent/abraxo_cleaner = 1, /datum/reagent/potassium = 1, /datum/reagent/phosphorus = 1, /datum/reagent/fuel = 1)
 	mix_message = "The mixture dries into a pale blue powder."
 	required_temp = 380
 
@@ -40,7 +40,7 @@
 	name = "bath_salts"
 	id = /datum/reagent/drug/bath_salts
 	results = list(/datum/reagent/drug/bath_salts = 7)
-	required_reagents = list(/datum/reagent/toxin/bad_food = 1, /datum/reagent/saltpetre = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/space_cleaner = 1, /datum/reagent/consumable/enzyme = 1, /datum/reagent/consumable/tea = 1, /datum/reagent/mercury = 1)
+	required_reagents = list(/datum/reagent/toxin/bad_food = 1, /datum/reagent/saltpetre = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/abraxo_cleaner = 1, /datum/reagent/consumable/enzyme = 1, /datum/reagent/consumable/tea = 1, /datum/reagent/mercury = 1)
 	required_temp = 374
 
 /datum/chemical_reaction/aranesp

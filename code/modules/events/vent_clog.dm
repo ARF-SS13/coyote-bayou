@@ -17,7 +17,7 @@
 		/datum/reagent/water,
 		/datum/reagent/carbon,
 		/datum/reagent/consumable/flour,
-		/datum/reagent/space_cleaner,
+		/datum/reagent/abraxo_cleaner,
 		/datum/reagent/consumable/nutriment,
 		/datum/reagent/consumable/condensedcapsaicin,
 		/datum/reagent/drug/mushroomhallucinogen,
