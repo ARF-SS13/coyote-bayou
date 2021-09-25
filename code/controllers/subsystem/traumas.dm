@@ -14,8 +14,7 @@ SUBSYSTEM_DEF(traumas)
 	//phobia types is to pull from randomly for brain traumas, e.g. conspiracies is for special assignment only
 	phobia_types = list("spiders", "space", "security", "greytide", "lizards",
 						"skeletons", "snakes", "robots", "doctors", "authority", "the supernatural",
-						"aliens", "strangers", "birds", "falling", "anime", "cats", "syndicate",
-						"eye"
+						"aliens", "strangers", "birds", "falling", "anime", "cats","eye"
 						)
 
 	phobia_words = list("spiders"   = strings(PHOBIA_FILE, "spiders"),
@@ -36,7 +35,6 @@ SUBSYSTEM_DEF(traumas)
 						"falling" = strings(PHOBIA_FILE, "falling"),
 						"anime" = strings(PHOBIA_FILE, "anime"),
 						"cats" = strings(PHOBIA_FILE, "cats"),
-						"syndicate"= strings(PHOBIA_FILE, "syndicate"),
 						"eye" = strings(PHOBIA_FILE, "eye")
 						)
 
@@ -58,7 +56,6 @@ SUBSYSTEM_DEF(traumas)
 		/mob/living/simple_animal/pet/penguin)),
 		"anime" = typecacheof(list(/mob/living/simple_animal/hostile/guardian)),
 		"cats"= typecacheof(list(/mob/living/simple_animal/mouse, /mob/living/simple_animal/pet/cat, /mob/living/simple_animal/hostile/cat_butcherer)),
-		"syndicate" = typecacheof(list(/mob/living/simple_animal/hostile/syndicate, /mob/living/simple_animal/hostile/viscerator, /mob/living/simple_animal/hostile/carp/cayenne, /mob/living/silicon/robot/modules/syndicate)),
 		"eye" = typecacheof(list(/mob/living/simple_animal/hostile/asteroid/basilisk/watcher, /mob/living/simple_animal/hostile/carp/eyeball))
 		)
 
@@ -151,8 +148,6 @@ SUBSYSTEM_DEF(traumas)
 					"cats" = typecacheof(list(/obj/item/organ/ears/cat, /obj/item/organ/tail/cat, /obj/item/laser_pointer, /obj/item/toy/cattoy, /obj/item/clothing/head/kitty,
 						/obj/item/clothing/head/collectable/kitty, /obj/item/melee/chainofcommand/tailwhip/kitty, /obj/item/stack/sheet/animalhide/cat)),
 
-					"syndicate" = typecacheof(list(/obj/item/stack/tile/mineral/plastitanium, /obj/item/toy/plush/nukeplushie)),
-
 					"eye" = typecacheof(list(/obj/item/organ/eyes, /obj/item/reagent_containers/syringe))
 						)
 
@@ -162,7 +157,6 @@ SUBSYSTEM_DEF(traumas)
 						"aliens" = typecacheof(list(/turf/open/floor/plating/abductor, /turf/open/floor/plating/abductor2,
 						/turf/open/floor/mineral/abductor, /turf/closed/wall/mineral/abductor)),
 						"falling" = typecacheof(list(/turf/open/chasm, /turf/open/floor/fakepit)),
-						"syndicate" = typecacheof(list(/turf/closed/wall/mineral/plastitanium, /turf/open/floor/mineral/plastitanium, /turf/open/floor/plasteel/shuttle/red/syndicate))
 						)
 
 	phobia_species = list("lizards" = typecacheof(list(/datum/species/lizard)),
@@ -173,7 +167,6 @@ SUBSYSTEM_DEF(traumas)
 						"aliens" = typecacheof(list(/datum/species/abductor, /datum/species/jelly, /datum/species/pod, /datum/species/shadow)),
 						"anime" = typecacheof(list(/datum/species/human/felinid)),
 						"cats" = typecacheof(list(/datum/species/human/felinid)),
-						"syndicate" = typecacheof(list(/datum/species/corporate, /datum/species/zombie/infectious))
 						)
 
 	return ..()
