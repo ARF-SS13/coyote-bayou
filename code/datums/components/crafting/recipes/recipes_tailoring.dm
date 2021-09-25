@@ -131,50 +131,6 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
-/datum/crafting_recipe/raiderpaconversion
-	name = "Salvaged Power Armor Raider"
-	result = /obj/item/clothing/suit/armor/f13/power_armor/raiderpa
-	reqs = list(/obj/item/clothing/suit/armor/f13/power_armor/t45b  = 1,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/crafting/electronicparts = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-/datum/crafting_recipe/raiderpahelmconversion
-	name = "Salvaged Power Armor Helmet Raider"
-	result = /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
-	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/crafting/electronicparts = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-/datum/crafting_recipe/hotrodpaconversion
-	name = "Salvaged Power Armor Hot Rod"
-	result = /obj/item/clothing/suit/armor/f13/power_armor/hotrod
-	reqs = list(/obj/item/clothing/suit/armor/f13/power_armor/t45b  = 1,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/crafting/electronicparts = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
-/datum/crafting_recipe/hotrodpahelmconversion
-	name = "Salvaged Power Armor Helmet Hot Rod"
-	result = /obj/item/clothing/head/helmet/f13/power_armor/hotrod
-	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/crafting/electronicparts = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 60
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-
 /datum/crafting_recipe/ncrsalvagedarmorconversion
 	name = "Salvaged NCR Power Armor"
 	result = /obj/item/clothing/suit/armor/f13/power_armor/ncr
