@@ -249,6 +249,30 @@
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
+//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 5 rounds internal, short barrel (-2 damage, -100 velocity, -2 melee, less slowdown), faster firing rate
+/obj/item/gun/ballistic/rifle/enfield		
+	name = "Lee-Enfield rifle"
+	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
+	icon_state = "enfield2"
+	item_state = "308"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	extra_damage = 4
+	extra_speed = 500
+	fire_delay = 10
+	slowdown = 0.35
+	force = 16
+	can_scope = TRUE
+	scope_state = "scope_mosin"
+	scope_x_offset = 3
+	scope_y_offset = 13
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	pump_sound = 'sound/weapons/boltpump.ogg'
+	fire_sound = 'sound/f13weapons/boltfire.ogg'
+
+
 
 
 /////////////////////////////////////
