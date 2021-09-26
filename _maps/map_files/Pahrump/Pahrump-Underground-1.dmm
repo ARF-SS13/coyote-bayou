@@ -4846,7 +4846,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "cXf" = (
-/obj/structure/chair/wood{
+/obj/structure/table/wood/settler,
+/obj/machinery/computer/terminal{
 	dir = 4
 	},
 /obj/machinery/light,
@@ -5105,9 +5106,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "deQ" = (
-/obj/structure/rack,
-/obj/item/storage/secure/briefcase,
-/turf/open/floor/wood/wood_tiled,
+/turf/closed/wall/r_wall/rust,
 /area/f13/ncr)
 "dfN" = (
 /obj/structure/fluff/railing{
@@ -7396,9 +7395,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "eqM" = (
-/obj/structure/table/wood/settler,
-/obj/item/paper_bin,
-/obj/item/pen/fountain,
+/obj/structure/chair/comfy/beige{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "eqN" = (
@@ -9370,7 +9369,9 @@
 	},
 /area/f13/den)
 "fyq" = (
-/obj/item/reagent_containers/food/drinks/mug,
+/obj/structure/chair/wood{
+	dir = 4
+	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "fyA" = (
@@ -13621,10 +13622,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "ieP" = (
-/obj/item/folder/red{
-	pixel_y = 1
+/obj/item/flashlight/lamp/green{
+	pixel_x = -5;
+	pixel_y = 10
 	},
-/obj/item/pen/fountain,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
@@ -15152,10 +15153,10 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operations)
 "jtd" = (
-/obj/item/flashlight/lamp/green{
-	pixel_x = -5;
-	pixel_y = 10
+/obj/item/folder/red{
+	pixel_y = 1
 	},
+/obj/item/pen/fountain,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
@@ -15230,12 +15231,7 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/leisure)
 "jue" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/suit/charcoal,
-/obj/item/clothing/under/suit/charcoal,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood/f13/stage_r,
 /area/f13/ncr)
 "juq" = (
 /obj/structure/rack,
@@ -15484,6 +15480,20 @@
 	dir = 4;
 	pixel_y = -9
 	},
+/obj/machinery/button/door{
+	id = "vipvaultroom";
+	name = "VIP vault";
+	pixel_x = 5;
+	pixel_y = 9;
+	req_one_access_txt = "252"
+	},
+/obj/machinery/button/door{
+	id = "vipprivshutter";
+	name = "Privacy shutter";
+	pixel_x = -5;
+	pixel_y = 9;
+	req_access_txt = "252"
+	},
 /turf/open/floor/carpet/red,
 /area/f13/ncr)
 "jHV" = (
@@ -15664,16 +15674,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
 "jMz" = (
-/obj/item/flashlight/lamp/green{
-	pixel_x = -5;
-	pixel_y = 10
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/obj/item/paper,
-/obj/item/pen,
 /obj/structure/table/wood,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
+/turf/open/floor/wood/f13/stage_bl,
 /area/f13/ncr)
 "jMF" = (
 /obj/structure/chair/f13foldupchair,
@@ -17641,25 +17646,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lou" = (
-/obj/structure/filingcabinet/chestdrawer{
-	pixel_x = -6
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/filingcabinet/chestdrawer{
-	pixel_x = 8
-	},
-/obj/item/kirbyplants{
-	icon_state = "plant-18";
-	pixel_x = -6;
-	pixel_y = 18
-	},
-/obj/item/toy/figure/lawyer{
-	pixel_x = 7;
-	pixel_y = 9
-	},
-/turf/open/floor/wood/f13/oak,
+/obj/structure/table/wood,
+/turf/open/floor/wood/f13/stage_br,
 /area/f13/ncr)
 "loJ" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -18112,6 +18103,8 @@
 /obj/item/pen/fountain/captain{
 	name = "luxurious fountain pen"
 	},
+/obj/item/key,
+/obj/item/pda,
 /turf/open/floor/carpet/red,
 /area/f13/ncr)
 "lIx" = (
@@ -18192,12 +18185,15 @@
 	},
 /area/f13/brotherhood/operations)
 "lMo" = (
-/obj/structure/table/wood/settler,
-/obj/item/folder/red,
-/obj/machinery/light{
-	dir = 4
+/obj/structure/chair/comfy/black{
+	dir = 1
 	},
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
 /area/f13/ncr)
 "lMp" = (
 /obj/structure/handrail/g_central{
@@ -18295,10 +18291,25 @@
 	},
 /area/f13/clinic)
 "lPu" = (
-/obj/structure/decoration/clock/old/active{
-	pixel_y = 32
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = -6
 	},
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = 8
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-18";
+	pixel_x = -6;
+	pixel_y = 18
+	},
+/obj/item/toy/figure/lawyer{
+	pixel_x = 7;
+	pixel_y = 9
+	},
+/turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "lPQ" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -18783,6 +18794,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/item/reagent_containers/food/drinks/mug,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "mjJ" = (
@@ -19074,9 +19086,6 @@
 /area/f13/bunker)
 "muK" = (
 /obj/structure/table/wood/fancy/royalblack,
-/obj/item/trash/plate{
-	pixel_y = 6
-	},
 /obj/item/reagent_containers/food/snacks/grown/mutfruit{
 	pixel_x = 1;
 	pixel_y = 11
@@ -20568,10 +20577,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
 "nsf" = (
-/obj/machinery/door/airlock/wood{
-	name = "Secure Storage";
-	req_one_access_txt = "252"
-	},
+/obj/machinery/door/unpowered/wooddoor,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
 "nsw" = (
@@ -23114,12 +23120,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "pbQ" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
+/obj/structure/table/wood/settler,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "pbW" = (
@@ -23672,6 +23675,8 @@
 /obj/structure/rack,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/reagent_containers/food/drinks/bottle/cognac,
+/obj/item/storage/fancy/cigarettes/cigars/cohiba,
+/obj/item/lighter/gold,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
 "pzu" = (
@@ -26622,9 +26627,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rsh" = (
-/obj/structure/rack,
-/obj/item/storage/fancy/cigarettes/cigars/cohiba,
-/obj/item/lighter/gold,
+/obj/item/storage/secure/briefcase,
+/obj/item/stack/f13Cash/caps/fivezerozero,
+/obj/item/stack/f13Cash/caps/fivezerozero,
+/obj/item/stack/f13Cash/caps/fivezerozero,
+/obj/item/stack/f13Cash/caps/fivezerozero,
+/obj/structure/closet/cabinet/anchored,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
 "rsi" = (
@@ -29217,8 +29225,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/caves)
 "trV" = (
-/obj/structure/chair/comfy/beige{
-	dir = 8
+/obj/structure/table/wood/settler,
+/obj/item/folder/red,
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
@@ -29635,9 +29645,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "tGo" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/computer/terminal{
-	dir = 4
+/obj/structure/decoration/clock/old/active{
+	pixel_y = 32
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
@@ -30335,6 +30344,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/brotherhood/rnd)
+"ueW" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/suit/charcoal,
+/obj/item/clothing/under/suit/charcoal,
+/turf/open/floor/f13/wood,
+/area/f13/ncr)
 "ueZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -31201,6 +31218,15 @@
 "uQi" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/stage_br,
+/area/f13/ncr)
+"uQY" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/ncr)
 "uRF" = (
 /obj/structure/destructible/clockwork/wall_gear{
@@ -33271,15 +33297,15 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
 "wAZ" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
+/obj/machinery/door/airlock/wood{
+	name = "VIP Office vault";
+	req_one_access_txt = "252"
 	},
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
+/obj/machinery/door/poddoor/shutters{
+	id = "vipvaultroom";
+	name = "VIP vault"
 	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
+/turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
 "wBF" = (
 /obj/structure/grille,
@@ -34081,6 +34107,10 @@
 /obj/machinery/door/airlock/wood{
 	name = "VIP Office";
 	req_one_access_txt = "252"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "vipprivshutter";
+	name = "VIP office shutters"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
@@ -40910,8 +40940,8 @@ xqh
 rwf
 rKJ
 cmD
-jtd
-aIa
+cmD
+cmD
 oIK
 pIG
 rwf
@@ -41168,7 +41198,7 @@ rwf
 rKJ
 cmD
 ieP
-wAZ
+aIa
 rwf
 cNj
 rwf
@@ -41421,11 +41451,11 @@ end
 end
 end
 hWe
-rwf
+vok
+jMz
 cmD
-rKJ
-rKJ
-cmD
+jtd
+lMo
 rwf
 cNj
 yhn
@@ -41678,10 +41708,10 @@ ieF
 end
 fFc
 pqY
-rwf
-rKJ
-jMz
-aIa
+fFc
+nQG
+cmD
+cmD
 rKJ
 rwf
 rgt
@@ -41935,11 +41965,11 @@ end
 gMM
 end
 nQG
-rwf
+jue
+lou
 cmD
-cmD
-rKJ
-rKJ
+ieP
+aIa
 rwf
 cNj
 yhn
@@ -42452,8 +42482,8 @@ uQi
 rwf
 cmD
 cmD
-ieP
-aIa
+cmD
+cmD
 oIK
 cNj
 edI
@@ -43489,7 +43519,7 @@ rWM
 ghX
 cNj
 xgj
-xgj
+uQY
 fyq
 cNj
 eLE
@@ -44002,9 +44032,9 @@ muK
 ucE
 ucE
 cNj
-xgj
-eqM
 tGo
+eqM
+xgj
 cNj
 eLE
 uoO
@@ -44261,7 +44291,7 @@ ucE
 cNj
 lPu
 trV
-xgj
+ueW
 cNj
 eLE
 aoj
@@ -44516,9 +44546,9 @@ lWn
 ogA
 fIv
 cNj
-lou
-lMo
-jue
+cNj
+cNj
+cNj
 cNj
 eLE
 aoj
@@ -44773,10 +44803,10 @@ lIn
 bCY
 ucE
 cNj
-cNj
-cNj
-cNj
-cNj
+deQ
+deQ
+deQ
+deQ
 eLE
 aoj
 aoj
@@ -45030,10 +45060,10 @@ qkJ
 lWn
 ucE
 nsf
-ucE
+wAZ
 lYd
 ucE
-cNj
+deQ
 eLE
 aoj
 aoj
@@ -45290,7 +45320,7 @@ cNj
 deQ
 rsh
 pyX
-cNj
+deQ
 eLE
 aoj
 aoj
@@ -45544,10 +45574,10 @@ cNj
 cNj
 cNj
 cNj
-cNj
-cNj
-cNj
-cNj
+deQ
+deQ
+deQ
+deQ
 eLE
 aoj
 aoj
