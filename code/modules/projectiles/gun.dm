@@ -463,7 +463,7 @@ ATTACHMENTS
 		return FALSE
 
 /obj/item/gun/CheckAttackCooldown(mob/user, atom/target)
-	if((user.a_intent == INTENT_HARM) && user.Adjacent(target))		//melee
+	if((user.a_intent == INTENT_HARM || INTENT_HELP) && user.Adjacent(target))		//melee
 		return user.CheckActionCooldown(CLICK_CD_MELEE)
 	return user.CheckActionCooldown(get_clickcd())
 
