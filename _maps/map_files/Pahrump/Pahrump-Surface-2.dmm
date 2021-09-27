@@ -16353,6 +16353,11 @@
 	icon_state = "housewood2"
 	},
 /area/f13/ncr)
+"hqX" = (
+/obj/structure/table/wood,
+/obj/item/storage/book/bible,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "hrh" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing{
@@ -22070,10 +22075,11 @@
 /area/f13/wasteland)
 "jNr" = (
 /mob/living/simple_animal/hostile/radroach{
-	desc = "The most trustworthy ally of the sheriff. This tough bug has survived dozens of attemprs to squish 'em. ";
-	faction = list("dog");
+	desc = "The most trustworthy ally of the sheriff. This tough bug has survived dozens of attempts to squish 'em. ";
+	faction = list("neutral");
 	health = 60;
-	name = "Deputy Bug"
+	name = "Deputy Bug";
+	social_faction = list("neutral")
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
@@ -107650,7 +107656,7 @@ sQX
 sQX
 koD
 doP
-rkZ
+hqX
 wYv
 xrO
 sYX
