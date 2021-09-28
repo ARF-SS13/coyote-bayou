@@ -1144,16 +1144,10 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	if(!weather_type)
 		return
 
-	var/z_level = input("Z-Level to target? Leave blank to target current Z-Level.", "Z-Level")  as num|null
-	if(!isnum(z_level))
-		if(!src.mob)
-			return
-		z_level = src.mob.z
+	SSweather.run_weather(weather_type)
 
-	SSweather.run_weather(weather_type, z_level)
-
-	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
+	message_admins("[key_name_admin(usr)] started weather of type [weather_type].")
+	log_admin("[key_name(usr)] started weather of type [weather_type].")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()
