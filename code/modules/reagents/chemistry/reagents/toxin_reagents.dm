@@ -989,7 +989,8 @@
 /datum/reagent/toxin/bonehurtingjuice //oof ouch
 	name = "Bone Hurting Juice"
 	description = "A strange substance that looks a lot like water. Drinking it is oddly tempting. Oof ouch."
-	color = "#AAAAAA77" //RGBA: 170, 170, 170, 77
+	color = "#AAAAAA" //RGBA: 170, 170, 170
+	alpha = 77
 	toxpwr = 0
 	taste_description = "bone hurting"
 	overdose_threshold = 20
@@ -1049,7 +1050,8 @@
 
 /datum/reagent/toxin/brainhurtingjuice //oof ouch
 	name = "Brain Hurting Juice"
-	color = "#AAAAAA77" //RGBA: 170, 170, 170, 77
+	color = "#AAAAAA" //RGBA: 170, 170, 170
+	alpha = 77
 	toxpwr = 0
 	taste_description = "brain hurting"
 	metabolization_rate = 5

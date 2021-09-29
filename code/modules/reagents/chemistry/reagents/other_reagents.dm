@@ -2263,7 +2263,8 @@
 /datum/reagent/pax
 	name = "pax"
 	description = "A colorless liquid that suppresses violence on the subjects."
-	color = "#AAAAAA55"
+	color = "#AAAAAA"
+	alpha = 55
 	taste_description = "water"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_RARE
@@ -2510,7 +2511,8 @@
 	name = "Female Ejaculate"
 	description = "Vaginal lubricant found in most mammals and other animals of similar nature. Where you found this is your own business."
 	taste_description = "something with a tang" // wew coders who haven't eaten out a girl.
-	color = "#AAAAAA77"
+	color = "#AAAAAA"
+	alpha = 77
 	decal_path = /obj/effect/decal/cleanable/semen/femcum
 
 /obj/effect/decal/cleanable/semen/femcum
