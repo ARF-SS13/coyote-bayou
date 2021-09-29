@@ -138,7 +138,7 @@
 		if(hellbound)
 			. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.</span>"
 		if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
+			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and resuscitation is not possible...</span>"
 		else
 			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
