@@ -56,8 +56,6 @@
 	name = "Paralysis"
 	desc = "Patient's brain can no longer control part of its motor functions."
 	scan_desc = "cerebral paralysis"
-	gain_text = ""
-	lose_text = ""
 	var/paralysis_type
 	var/list/paralysis_traits = list()
 	//for descriptions
@@ -150,7 +148,6 @@
 	name = "Monophobia"
 	desc = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."
 	scan_desc = "monophobia"
-	gain_text = ""
 	lose_text = "<span class='notice'>You feel like you could be safe on your own.</span>"
 	var/stress = 0
 

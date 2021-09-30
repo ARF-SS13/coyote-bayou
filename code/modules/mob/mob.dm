@@ -346,8 +346,11 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	to_chat(src, result.Join("\n"))
-	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+	if(!result)
+		return
+	else
+		to_chat(src, result.Join("\n"))
+		SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 /mob/proc/clear_from_recent_examines(atom/A)
 	if(!client)
