@@ -377,6 +377,10 @@
 	item_state = "duffel"
 	slowdown = 1
 
+/obj/item/storage/backpack/duffelbag/equipment/update_icon_state()
+	if(contents.len == 0)
+		qdel(src)
+
 /obj/item/storage/backpack/duffelbag/scavengers
 	name = "scavenger's duffel bag"
 	desc = "An extra large duffel bag for holding extra things."

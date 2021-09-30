@@ -4,31 +4,32 @@
 	probability = 15
 
 	telegraph_duration = 300
-	telegraph_overlay = "snow_storm"
-	telegraph_message = "<span class='userdanger'>Rain is coming to the area, bringing purity and sustenance to all life. Rejoice!</span>"
-	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
+	telegraph_overlay = "rain_gathering"
+	telegraph_message = "<span class='notice'><font size=2>You hear a rainstorm gathering on the horizon.</font></span>"
+	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
 
-	weather_message = "<span class='userdanger'><i>Rain pours down around you!</i></span>"
-	weather_overlay = "rain"
+	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
+	weather_overlay = "thunderstorm"
 	weather_duration_lower = 1200
 	weather_duration_upper = 2400
-	weather_sound = 'sound/ambience/acidrain_mid.ogg'
-
-	end_duration = 100
-	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. The rain is over.</span>"
-	end_sound = 'sound/ambience/acidrain_end.ogg'
-
+	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	end_duration = 250
+	end_message = "<span class='notice'><font size=2>You start to hear the last of the rain as the sky begins to clear up.</font></span>"
+	end_overlay = "rain_gathering"
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
-
+	protect_indoors = TRUE
 	immunity_type = "water"
 
 	barometer_predictable = TRUE
 
 	affects_turfs = TRUE
-
 	carbons_only = TRUE
+
+
+	var/datum/looping_sound/rain_sounds/sound_ao = new(list(), FALSE, TRUE)
+	var/datum/looping_sound/indoor_rain_sounds/sound_ai = new(list(), FALSE, TRUE)
 
 /datum/weather/rain/weather_act(mob/living/L)
 	if(iscarbon(L))
@@ -85,12 +86,15 @@
 				H.update_inv_ears()
 			if(H.belt && wash_obj(H.belt))
 				H.update_inv_belt()
+		CHECK_TICK
 
+/*
+//TODO: dear god optimize this 
 /datum/weather/rain/weather_act_turf(turf/T)
 	for(var/O in T) //Clean cleanable decals in affected areas
 		if(is_cleanable(O))
 			qdel(O)
-
+*/
 /datum/weather/rain/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 	O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
@@ -98,3 +102,34 @@
 		var/obj/item/I = O
 		I.acid_level = 0
 		I.extinguish()
+
+
+
+/datum/weather/rain/telegraph()
+	. = ..()
+	var/list/inside_areas = list()
+	var/list/outside_areas = list()
+	var/list/eligible_areas = list()
+	for (var/z in impacted_z_levels)
+		eligible_areas += SSmapping.areas_in_z["[z]"]
+	for(var/i in 1 to eligible_areas.len)
+		var/area/place = eligible_areas[i]
+		if(place.outdoors)
+			outside_areas += place
+		else
+			inside_areas += place
+
+	sound_ao.output_atoms = outside_areas
+	sound_ai.output_atoms = inside_areas
+
+/datum/weather/rain/start()
+	. = ..()
+	sound_ao.start()
+	sound_ai.start()
+
+/datum/weather/rain/end()
+	. = ..()
+	sound_ao.stop()
+	sound_ai.stop()
+
+	return ..()

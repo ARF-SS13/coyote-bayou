@@ -45,3 +45,23 @@
 	start_length = 130
 	end_sound = 'sound/weather/ashstorm/inside/weak_end.ogg'
 	volume = 30
+
+//credit: soundjay.com
+/datum/looping_sound/rain_sounds
+	mid_sounds = list(
+		'sound/weather/rain/outdoors/rain-01.ogg'=1,
+		'sound/weather/rain/outdoors/rain-02.ogg'=1,
+		'sound/weather/rain/outdoors/rain-03.ogg'=1
+		)
+	mid_length = 80
+	volume = 50
+
+//credit: soundjay.com
+/datum/looping_sound/indoor_rain_sounds
+	mid_sounds = list(
+		'sound/weather/rain/indoors/rain-01.ogg'=1,
+		'sound/weather/rain/indoors/rain-02.ogg'=1,
+		'sound/weather/rain/indoors/rain-03.ogg'=1
+		)
+	mid_length = 80
+	volume = 25

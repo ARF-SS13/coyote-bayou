@@ -112,7 +112,7 @@
 		return
 
 	var/mob/M = parent
-	var/obj/item/storage/backpack/duffelbag/duffelkit = new
+	var/obj/item/storage/backpack/duffelbag/equipment/duffelkit = new
 	duffelkit.name = "equipment duffelbag"
 	duffelkit.desc = "A duffelbag containing necessary equipment."
 	duffelkit.w_class = WEIGHT_CLASS_BULKY

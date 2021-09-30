@@ -418,6 +418,7 @@
 			var/mob/user = usr
 			var/datum/crafting_recipe/TR = locate(params["recipe"]) in GLOB.crafting_recipes
 			busy = TRUE
+			CHECK_TICK
 			ui_interact(user)
 			var/atom/movable/result = construct_item(user, TR)
 			if(!istext(result)) //We made an item and didn't get a fail message

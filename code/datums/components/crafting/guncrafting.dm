@@ -95,6 +95,7 @@
 				if(prob(30))
 					var/obj/K = pick(S.Loot)
 					new K (src.loc)
+			stoplag(1)
 			qdel(W)
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1
