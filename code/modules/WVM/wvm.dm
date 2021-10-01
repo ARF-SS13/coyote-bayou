@@ -787,7 +787,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Metal Sheets x 20",				/obj/item/stack/sheet/metal/twenty,									50),
 		new /datum/data/wasteland_equipment("Metal Sheets x 50",				/obj/item/stack/sheet/metal/fifty,									115),
 		new /datum/data/wasteland_equipment("Glass Sheets x 10",				/obj/item/stack/sheet/glass/ten,									30),
-		new /datum/data/wasteland_equipment("Glass Sheets x 50",				/obj/item/stack/sheet/glass/fifty,									90)
+		new /datum/data/wasteland_equipment("Glass Sheets x 50",				/obj/item/stack/sheet/glass/fifty,									90),
+		new /datum/data/wasteland_equipment("Wood Planks x 50",					/obj/item/stack/sheet/mineral/wood/fifty,							50),
+		new /datum/data/wasteland_equipment("Wood Planks x 20",					/obj/item/stack/sheet/mineral/wood/twenty,							20)
+
 		)
 
 /obj/machinery/mineral/wasteland_vendor/mining
