@@ -33,8 +33,7 @@
 		var/mob/living/carbon/human/H = target
 		if (!(NOBLOOD in H.dna.species.species_traits))
 			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
-				"Blood pools around the incision in [H]'s heart.",
-				"")
+				"Blood pools around the incision in [H]'s heart.")
 			var/obj/item/bodypart/BP = H.get_bodypart(target_zone)
 			BP.generic_bleedstacks += 10
 			H.adjustBruteLoss(10)

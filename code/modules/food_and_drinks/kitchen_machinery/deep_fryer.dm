@@ -83,6 +83,9 @@
 			return ..()
 		else if(!frying && user.transferItemToLoc(I, src))
 			frying = I
+			if(!isfood(I))
+				message_admins("[ADMIN_LOOKUPFLW(user)] has placed non-food item [I] into a deep fryer. [ADMIN_LOOKUPFLW(src)]")
+				log_game("[user] has placed non-food item [I] into a deep fryer at [AREACOORD(src)].")
 			to_chat(user, "<span class='notice'>You put [I] into [src].</span>")
 			icon_state = "fryer_on"
 			fry_loop.start()

@@ -1057,13 +1057,13 @@ Raider
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/ammo_box/magazine/m10mm_p90=2, \
-		/obj/item/storage/bag/money/small/raider/mobboss)
+		/obj/item/storage/bag/money/small/raider/mobboss, \
+		/obj/item/book/granter/crafting_recipe/manual/denvr)
 
-/datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13mobboss/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
 
 /datum/outfit/job/wasteland/f13mobboss/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

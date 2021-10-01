@@ -343,6 +343,8 @@
 /datum/component/overlay_lighting/proc/set_power(atom/source, old_power)
 	SIGNAL_HANDLER
 	var/new_power = source.light_power
+	if(new_power == 0)
+		new_power = 1
 	set_lum_power(new_power >= 0 ? 0.5 : -0.5)
 	set_alpha = min(230, (abs(new_power) * 120) + 30)
 	visible_mask.alpha = set_alpha
