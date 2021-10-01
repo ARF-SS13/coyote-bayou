@@ -94,8 +94,9 @@
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		flamethrower_screwdriver(I, user)
-	else if(istype(I, /obj/item/stack/rods))
+	/*else if(istype(I, /obj/item/stack/rods))
 		flamethrower_rods(I, user)
+	*/
 	else
 		. = ..()
 	update_icon()
@@ -276,7 +277,7 @@
 		to_chat(user, "<span class='notice'>[src] can now be attached, modified, and refuelled.</span>")
 		ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 	add_fingerprint(user)
-
+/*
 /obj/item/weldingtool/proc/flamethrower_rods(obj/item/I, mob/user)
 	if(!status)
 		var/obj/item/stack/rods/R = I
@@ -290,7 +291,7 @@
 			user.put_in_hands(F)
 		else
 			to_chat(user, "<span class='warning'>You need one rod to start building a flamethrower!</span>")
-
+*/
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))
 		return "<span class='notice'>[user] casually lights [A] with [src], what a badass.</span>"
