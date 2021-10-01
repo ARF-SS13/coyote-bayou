@@ -283,7 +283,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
-		/obj/item/ammo_box/c38 = 3,
+		/obj/item/ammo_box/a357 = 3,
 		/obj/item/flashlight/seclite = 1,
 		)
 
@@ -615,7 +615,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
 	)
 
 /datum/outfit/loadout/bum
@@ -626,7 +626,8 @@ Mayor
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/f13/rag
 	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
-	/obj/item/gun/ballistic/automatic/hobo/zipgun = 1,
+	/obj/item/gun/ballistic/revolver/hobo/piperifle = 1,
+	/obj/item/ammo_box/a556/stripper = 1,
 	/obj/item/twohanded/spear/scrapspear = 1,
 	)
 
@@ -638,7 +639,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/champagne = 1,
 	/obj/item/gun/ballistic/revolver/police = 1,
-	/obj/item/ammo_box/c38 = 2,
+	/obj/item/ammo_box/a357 = 2,
 	)
 
 /datum/outfit/loadout/propergent
@@ -742,7 +743,7 @@ Mayor
 		/obj/item/detective_scanner=1,
 		/obj/item/storage/box/gloves=1,
 		/obj/item/storage/box/evidence=1,
-		/obj/item/ammo_box/c38=2)
+		/obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
 
@@ -758,7 +759,6 @@ Mayor
 	description = "No matter where society lurks, profit and fortune are there to be made! It is up to you to distribute caps and earn interest while safekeeping items of value for the wastelands denizens! Ensure you make a profit and make your money back no matter the cost. You are to work alongside the Town, and should not be attempting to harm the residents of Oasis."
 	selection_color = "#dcba97"
 	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
-
 	outfit = /datum/outfit/job/den/f13banker
 
 	loadout_options = list(

@@ -139,17 +139,6 @@
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
 
-
-//Police revolver					Keywords: .38, Double action, 6 rounds cylinder
-/obj/item/gun/ballistic/revolver/police
-	name = ".38 police revolver"
-	desc = "Pre-war double action police revolver in .38 calibre."
-	icon_state = "police"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
-	w_class = WEIGHT_CLASS_SMALL
-	fire_sound = 'sound/f13weapons/policepistol.ogg'
-
-
 /////////////////////
 // 10 MM REVOLVERS //
 /////////////////////
@@ -186,13 +175,16 @@
 // .357 REVOLVERS //
 ////////////////////
 
-//357 Magnum					Keywords: .357, Double action, 6 rounds cylinder 
+//357 Magnum					Keywords: .357, Single action, 6 rounds cylinder, long barrel
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 magnum revolver"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	item_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	fire_delay = 6
+	spread = 0
+	extra_damage = 2
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
 
@@ -205,6 +197,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	fire_delay = 4
 	block_chance = 20
+	
+//Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol 
+/obj/item/gun/ballistic/revolver/police
+	name = "police revolver"
+	desc = "Pre-war double action police revolver chambered in .357 magnum."
+	icon_state = "police"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	w_class = WEIGHT_CLASS_SMALL
+	spread = 2
+	extra_damage = -1
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
 
 
 

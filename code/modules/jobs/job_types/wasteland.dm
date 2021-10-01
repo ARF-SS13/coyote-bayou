@@ -715,7 +715,7 @@ Raider
 	glasses = /obj/item/clothing/glasses/f13/biker
 	l_hand = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents =  list(/obj/item/storage/box/vendingmachine=1,
-							/obj/item/stack/f13Cash/caps/threefivezero=1,
+							/obj/item/stack/f13Cash/random/med = 2,
 							/obj/item/gun/ballistic/automatic/pistol/m1911/compact=1)
 
 //end new
