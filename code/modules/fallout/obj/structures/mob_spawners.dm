@@ -26,6 +26,7 @@
 	
 /obj/structure/nest/Destroy()
 	GLOB.mob_nests -= src
+	visible_message("[src] collapses!")
 	. = ..()
 
 /obj/structure/nest/proc/spawn_mob()
@@ -51,7 +52,7 @@
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(user.a_intent == INTENT_HARM)	
-		to_chat(user, "<span class='warning'>You feel it is impossible to hit a hole!</span>")
+		to_chat(user, "<span class='warning'>You feel it is impossible to destroy this. Best to cover it up with something.</span>")
 		return
 
 	if(istype(I, /obj/item/stack/rods))
@@ -229,7 +230,7 @@
 	spawnsound = 'sound/effects/bin_close.ogg'
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
 					/mob/living/simple_animal/hostile/raider/firefighter = 2,
-					/mob/living/simple_animal/hostile/raider/baseball = 2,
+					/mob/living/simple_animal/hostile/raider/baseball = 5,
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
@@ -239,16 +240,28 @@
 
 /obj/structure/nest/protectron
 	name = "protectron pod"
-	desc = "An old protectron containment pod system. This one looks like it is connected to a storage system underground."
+	desc = "An old robot storage system. This one looks like it is connected to space underground."
 	max_mobs = 5
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_modified"
-	mob_types = list(/mob/living/simple_animal/hostile/handy/protectron = 5,
-					/mob/living/simple_animal/hostile/handy = 3,
-					/mob/living/simple_animal/hostile/handy/robobrain = 3,
-					/mob/living/simple_animal/hostile/handy/assaultron = 1,
-					/mob/living/simple_animal/hostile/securitron/nsb = 1,
-					/mob/living/simple_animal/hostile/handy/gutsy/nsb = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/handy/protectron = 5)
+
+/obj/structure/nest/securitron
+	name = "securitron pod"
+	desc = "An old securitron containment pod system. This one looks like it is connected to a storage system underground."
+	max_mobs = 5
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "scanner_modified"
+	mob_types = list(/mob/living/simple_animal/hostile/securitron = 5)
+					
+/obj/structure/nest/assaultron
+	name = "assaultron pod"
+	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
+	spawn_time = 40 SECONDS
+	max_mobs = 5
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "scanner_modified"
+	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
 
 /obj/structure/nest/cazador
 	name = "cazador nest"
@@ -268,6 +281,7 @@
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"
+	spawn_time = 30 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
 					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2,
