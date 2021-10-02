@@ -5,7 +5,7 @@
 	icon = 'icons/mob/nest_new.dmi'
 	icon_state = "hole"
 	var/list/spawned_mobs = list()
-	var/max_mobs = 5
+	var/max_mobs = 3
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	var/spawn_delay = 0
 	//make spawn_time's multiples of 10. The SS runs on 10 seconds.
@@ -180,7 +180,7 @@
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
-	spawn_time = 50 SECONDS
+	spawn_time = 60 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 19, 
 					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
 
@@ -225,7 +225,6 @@
 	name = "narrow tunnel"
 	desc = "A crude tunnel used by raiders to travel across the wasteland."
 	max_mobs = 5
-	icon = 'icons/fallout/objects/decals.dmi'
 	icon_state = "ventblue"
 	spawnsound = 'sound/effects/bin_close.ogg'
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
@@ -242,7 +241,6 @@
 	name = "protectron pod"
 	desc = "An old robot storage system. This one looks like it is connected to space underground."
 	max_mobs = 5
-	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/protectron = 5)
 
@@ -250,7 +248,6 @@
 	name = "securitron pod"
 	desc = "An old securitron containment pod system. This one looks like it is connected to a storage system underground."
 	max_mobs = 5
-	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/securitron = 5)
 					
@@ -259,7 +256,6 @@
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
 	spawn_time = 40 SECONDS
 	max_mobs = 5
-	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
 
