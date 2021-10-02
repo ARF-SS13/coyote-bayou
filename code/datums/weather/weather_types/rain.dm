@@ -88,13 +88,16 @@
 				H.update_inv_belt()
 		CHECK_TICK
 
-/*
-//TODO: dear god optimize this 
-/datum/weather/rain/weather_act_turf(turf/T)
-	for(var/O in T) //Clean cleanable decals in affected areas
-		if(is_cleanable(O))
-			qdel(O)
-*/
+
+/datum/weather/rain/weather_act_turf(turf/open/T)
+	var/cleaned
+	if(!cleaned)
+		for(var/obj/effect/decal/O in T) //Clean cleanable decals in affected areas
+			if(is_cleanable(O))
+				qdel(O)
+				cleaned = 1
+				CHECK_TICK
+
 /datum/weather/rain/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 	O.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
