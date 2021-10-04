@@ -38,6 +38,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
+	decompose = FALSE
 
 /mob/living/simple_animal/hostile/cazador/playable
 	emote_taunt_sound = null

@@ -23,6 +23,7 @@
 	taunt_chance = 25
 	speed = -1
 	see_in_dark = 8
+	decompose = FALSE
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
 							/obj/item/stack/sheet/bone = 4)
