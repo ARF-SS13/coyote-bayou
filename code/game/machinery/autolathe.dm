@@ -608,9 +608,6 @@
 			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
 			advanced = 1
 			qdel(O)
-	if(panel_open)
-		default_deconstruction_crowbar(O)
-		return TRUE
 	else
 		attack_hand(user)
 		return TRUE
