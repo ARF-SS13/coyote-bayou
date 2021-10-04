@@ -49,6 +49,9 @@
 #define COMSIG_COMPONENT_UNREGISTER_PARENT "component_unregister_parent"
 /// sent to the component itself when registered to a parent
 #define COMSIG_COMPONENT_REGISTER_PARENT "component_register_parent"
+///Subsystem signals
+///From base of datum/controller/subsystem/Initialize: (start_timeofday)
+#define COMSIG_SUBSYSTEM_POST_INITIALIZE "subsystem_post_initialize"
 
 // /atom signals
 //from base of atom/proc/Initialize(): sent any time a new atom is created
