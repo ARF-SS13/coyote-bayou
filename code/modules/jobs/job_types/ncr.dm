@@ -749,9 +749,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 /datum/job/ncr/f13mp
 	title = "NCR Military Police"
 	flag = F13MP
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are NOT allowed to participate in front-line combat outside the base/embassy. You are tasked with the supervision of the NCRA to maintain internal order and disciplice and to prevent any warcrimes from happening."
 	supervisors = "NCRA Officers"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
