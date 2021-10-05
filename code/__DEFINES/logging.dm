@@ -20,6 +20,7 @@
 #define INVESTIGATE_RCD				"rcd"
 #define INVESTIGATE_CRYOGENICS		"cryogenics"
 #define INVESTIGATE_GHOST			"ghost"
+#define INVESTIGATE_DESTROYED		"destroyed" //fortuna edit
 
 // Logging types for log_message()
 #define LOG_ATTACK		(1 << 0)
