@@ -794,18 +794,12 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	update_inv_head()
 	update_inv_wear_mask()
 
+//fortuna edit. for applying effects to players that enter water
 /mob/living/carbon/human/update_water()
 	if(QDESTROYING(src))
 		return
-
-	remove_layer(ABOVE_MOB_LAYER)
-
 	var/depth = check_submerged()
 	if(!depth)
 		return
 	if(lying)
-		overlays_standing[ABOVE_MOB_LAYER] = image(icon = 'icons/effects/effects.dmi', icon_state = "mob_submerged_lying", layer = ABOVE_MOB_LAYER) //TODO: Improve
-	else
-		overlays_standing[ABOVE_MOB_LAYER] = image(icon = 'icons/effects/effects.dmi', icon_state = "mob_submerged", layer = ABOVE_MOB_LAYER) //TODO: Improve
-
-	apply_layer(ABOVE_MOB_LAYER)
+		return

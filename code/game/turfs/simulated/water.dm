@@ -16,15 +16,20 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
-
+	//fortuna edit
 	depth = 1 // Higher numbers indicates deeper water.
+	var/obj/effect/overlay/water/river/top
 
-// Largely ported from citadels HRP branch
+
+// Fortuna edit. Below is Largely ported from citadels HRP branch
 
 /turf/open/water/Initialize()
 	. = ..()
 	update_icon()
 
+/turf/open/water/update_icon()
+	. = ..()
+	top = new /obj/effect/overlay/water/river(src)
 
 /turf/open/water/Entered(atom/movable/AM, atom/oldloc)
 	if(istype(AM, /mob/living))
@@ -77,3 +82,14 @@
 	adjust_fire_stacks(-amount * 5)
 	for(var/atom/movable/AM in contents)
 		AM.water_act(amount)
+
+//water overlays
+/obj/effect/overlay/water/river
+	name = "water"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "mob_submerged"
+	density = FALSE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	layer = ABOVE_MOB_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
