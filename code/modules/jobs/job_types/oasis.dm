@@ -17,12 +17,12 @@ Mayor
 
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
+	faction = FACTION_OASIS
 
 /datum/job/oasis/f13mayor
 	title = "Mayor"
 	flag = F13MAYOR
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Oasis"
@@ -78,7 +78,6 @@ Mayor
 	title = "Secretary"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Mayor"
@@ -128,7 +127,6 @@ Mayor
 	flag = F13SHERIFF
 	department_flag = DEP_OASIS
 	head_announce = list("Security")
-	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Oasis Government"
@@ -215,7 +213,6 @@ Mayor
 	title = "Deputy"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "Oasis Police Department"
@@ -311,7 +308,6 @@ Mayor
 	title = "Farmer"
 	flag = F13FARMER
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "Oasis Government & Police Department"
@@ -365,7 +361,6 @@ Mayor
 	title = "Prospector"
 	flag = F13PROSPECTOR
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "Oasis Government & Police Department"
@@ -427,7 +422,6 @@ Mayor
 	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "law and order"
@@ -477,7 +471,6 @@ Mayor
 	title = "Barkeep"
 	flag = F13BARKEEP
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Oasis Government & Police Department"
@@ -559,7 +552,6 @@ Mayor
 	title = "Citizen"
 	flag = F13SETTLER
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 8
 	spawn_positions = 8
 	supervisors = "Oasis Government & Police Department"
@@ -696,7 +688,6 @@ Mayor
 /datum/job/wasteland/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	description = "As a Detective you are a private eye who assists clients to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the valley, but for finding answers. Your life is already over, make the ending mean something."
@@ -752,7 +743,6 @@ Mayor
 	title = "Banker"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "law and order"
@@ -832,7 +822,6 @@ Mayor
 	title = "Shopkeeper"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	faction = "Town"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "free hand of the market"

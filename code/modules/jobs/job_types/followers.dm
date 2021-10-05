@@ -3,6 +3,7 @@
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_FOLLOWERS
 	access = list(ACCESS_FOLLOWER)
+	faction = FACTION_FOLLOWERS
 	minimal_access = list(ACCESS_FOLLOWER)
 	forbids = "Aligning oneself with a faction exclusively. Acting in an aggressive and violent way on the offensive, not in defense. Abandoning your facility, peers, and community."
 	enforces = "Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
@@ -40,7 +41,6 @@ Administrator
 	flag = F13LEADPRACTITIONER
 	department_flag = FOLLOWERS
 	head_announce = list("Security")
-	faction = "Followers"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "No one."
@@ -96,7 +96,6 @@ Professor
 	title = "Followers Scientist"
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
-	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
@@ -141,7 +140,6 @@ Practitioner
 	title = "Followers Doctor"
 	flag = F13PRACTITIONER
 	department_flag = FOLLOWERS
-	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
@@ -252,7 +250,6 @@ Follower Volunteer
 	title = "Followers Volunteer"
 	flag = F13FOLLOWERVOLUNTEER
 	department_flag = FOLLOWERS
-	faction = "Followers"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
@@ -341,7 +338,6 @@ Follower Volunteer
 	title = "Followers Guard"
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
-	faction = "Followers"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."

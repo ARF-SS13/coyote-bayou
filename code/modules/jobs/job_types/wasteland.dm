@@ -4,7 +4,7 @@
 /datum/job/wasteland/enclavespy
 	title = "Enclave Private"
 	flag = F13USPRIVATE
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 0
 	spawn_positions = 0
 	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
@@ -46,7 +46,7 @@
 /datum/job/wasteland/enclavesgt
 	title = "Enclave Sergeant"
 	flag = F13USSGT
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 0
 	spawn_positions = 0
 	description = "You are in charge of the recruiting for the remnants of the Enclave. You are to recruit all those interested to your cause."
@@ -93,7 +93,7 @@
 /datum/job/wasteland/enclavesci
 	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 0
 	spawn_positions = 0
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
@@ -149,7 +149,7 @@
 /datum/job/wasteland/enclavelt
 	title = "Enclave Lieutenant"
 	flag = F13USLT
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 0
 	spawn_positions = 0
 	description = "You are the Lieutenant in charge of commanding the remnants of the Enclave forces in the area. You are to recruit all those interested to your cause."
@@ -214,7 +214,7 @@ Great Khan
 	flag = F13USPRIVATE
 	department_head = list("Captain")
 	head_announce = list("Security")
-	faction = "Wastelander"
+	faction = FACTION_WASTELAND
 	total_positions = 6
 	spawn_positions = 6
 	description = "You are no common raider or tribal settler, for you are a Great Khan. Your ancestry is that of fierce warriors and noble chieftans, whose rites and sagas tell of blood soaked battlefields and great sacrifice for your tribe. At least, this was once the case: after the massacre at Bitter Springs by the NCR, your people have lost much of their strength - now you and many other Khans travel west of Vegas through Red Rock Canyon in the hopes of settling in the region of Yuma."
@@ -310,8 +310,8 @@ Raider
 	flag = F13RAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
-	faction = "Wastelander"
-	social_faction = "Raiders"
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
 	total_positions = 12
 	spawn_positions = 12
 	description = "You are an undesirable figure of some kind- perhaps a corrupt official, or a cannibalistic bartender, or a devious conman, to name a few examples. You have more freedom than anyone else in the wastes, and are not bound by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting, fun, and engaging for others- this means that whatever path you pursue should be more nuanced and flavorful than simple highway robbery or slavery. (Adminhelp if you require help setting up your character for the round.)"
@@ -433,7 +433,7 @@ Raider
 	if(visualsOnly)
 		return
 
-	H.social_faction = "Raiders"
+	H.social_faction = FACTION_RAIDERS
 	add_verb(H, /mob/living/proc/creategang)
 
 /datum/outfit/loadout/raider_supafly
@@ -571,7 +571,7 @@ Raider
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
-	faction = "Wastelander"
+	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
 	description = "You arrive in Yuma Valley, hoping to escape your past, the war, or perhaps something worse. But you’ve seen the torchlight and heard the bark of the military officers. You haven’t escaped anything. Try to survive, establish your own settlement, make your own legend. Suffer well and die gladly."
@@ -768,8 +768,8 @@ Raider
 /datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
-	faction = "Wastelander"
-	social_faction = "Raiders"
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
 	total_positions = 6
 	spawn_positions = 6
 	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
@@ -792,7 +792,7 @@ Raider
 /datum/job/wasteland/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
-	faction = "Wastelander"
+	faction = FACTION_WASTELAND
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "God"
@@ -1009,8 +1009,8 @@ Raider
 /datum/job/wasteland/f13mobboss
 	title = "Den Mob Boss"
 	flag = F13MOBBOSS
-	faction = "Wastelander"
-	social_faction = "Raiders"
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
 	total_positions = 1
 	spawn_positions = 1
 	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
@@ -1080,8 +1080,8 @@ Raider
 datum/job/wasteland/f13dendoctor
 	title = "Den Doctor"
 	flag = F13DENDOCTOR
-	faction = "Wastelander"
-	social_faction = "Raiders"
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
 	total_positions = 2
 	spawn_positions = 2
 	description = "While you prioritize providing medical treatment in emergency situations, you are still trained in combat and have the additional role as a loyal combanteer to the Den."
@@ -1174,7 +1174,7 @@ datum/job/wasteland/f13dendoctor
 /datum/job/wasteland/f13vigilante
 	title = "Vigilante"
 	flag = F13VIGILANTE
-	faction = "Wastelander"
+	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
 	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
@@ -1244,7 +1244,7 @@ datum/job/wasteland/f13dendoctor
 /datum/job/wasteland/f13adminboos
 	title = "Death"
 	flag = F13ADMINBOOS
-	faction = "Wastelander"
+	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
 	description = ""

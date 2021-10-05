@@ -248,7 +248,7 @@
 	icon_gib = "bs_knight"
 	speak_chance = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	faction = list("bos")
+	faction = list(FACTION_BROTHERHOOD)
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"

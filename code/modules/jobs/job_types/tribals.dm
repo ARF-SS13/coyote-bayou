@@ -43,7 +43,7 @@ Tribal Chief
 	title = "Chief"
 	flag = F13CHIEF
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe."
@@ -88,7 +88,7 @@ Tribal Shaman
 	title = "Shaman"
 	flag = F13SHAMAN
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
@@ -163,7 +163,7 @@ Tribal Head Hunter
 	title = "Head Hunter"
 	flag = F13HHUNTER
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
@@ -217,7 +217,7 @@ Druid
 	title = "Druid"
 	flag = F13DRUID
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Chief and the Shaman."
@@ -276,7 +276,7 @@ Villager
 	title = "Villager"
 	flag = F13VILLAGER
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Tribal Chief, Shaman and Headhunter"
@@ -369,7 +369,7 @@ Hunter
 	title = "Hunter"
 	flag = F13HUNTER
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The chief and Head Hunter."
@@ -453,7 +453,7 @@ Spirit-Pledged
 	title = "Spirit-Pledged"
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "All other tribals."
@@ -489,7 +489,7 @@ Guardian
 	title = "Guardian"
 	flag = F13GUARDIAN
 	department_flag = TRIBAL
-	faction = "Village"
+	faction = FACTION_TRIBE
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "All leadership, but the Chief is priority"

@@ -62,7 +62,7 @@ PEACEKEEPERS
 /datum/job/enclave/peacekeeper/officer
 	title = "Enclave Officer"
 	flag = ENCLAVEOFFICER
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are an experienced officer in charge of the local Enclave compound. You have ultimate authority but do not micromanage when not needed, and make sure any executions have a witness and documentation to avoid being court martialed."
@@ -112,7 +112,7 @@ PEACEKEEPERS
 /datum/job/enclave/peacekeeper/trooper
 	title = "Peacekeeper Trooper"
 	flag = ENCLAVETROOPER
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 5
 	spawn_positions = 5
 	description = "Obey your officer, the lance corporal and defend the United States against all foes, foreign and domestic. "
@@ -164,7 +164,7 @@ PEACEKEEPERS
 /datum/job/enclave/noncombat/science
 	title = "Science Officer"
 	flag = ENCLAVESCIENCE
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 2
 	spawn_positions = 2
 	description = "Responsible for logistics, surgeries, manufacturing, experiments. May not leave the compound perimeter without express orders from the Officer."
@@ -193,7 +193,7 @@ PEACEKEEPERS
 /datum/job/enclave/noncombat/intel
 	title = "Intel Officer"
 	flag = ENCLAVEINTEL
-	faction = "Enclave"
+	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
 	description = "Analyze and gather data, help the Science officers keep the compound running. Secondary duty: support the troops with paramedic duties, scouting. "

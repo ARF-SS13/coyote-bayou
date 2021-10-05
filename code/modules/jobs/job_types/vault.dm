@@ -11,6 +11,7 @@ here's a tip, go search DEFINES/access.dm
 /datum/job/vault
 	department_flag = VAULT
 	exp_type = EXP_TYPE_VAULT
+	faction = FACTION_VAULT
 
 /datum/outfit/job/vault
 	gloves = /obj/item/pda
@@ -31,9 +32,7 @@ Overseer
 /datum/job/vault/f13overseer
 	title = "Overseer"
 	flag = F13OVERSEER
-	department_flag = VAULT
 	head_announce = list("Security")
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -83,7 +82,6 @@ Head of Security
 	department_head = list("Overseer")
 	department_flag = VAULT
 	head_announce = list("Security")
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -137,8 +135,6 @@ Medical Doctor
 	title = "Vault-tec Doctor"
 	flag = F13DOCTOR
 	department_head = list("Overseer")
-	department_flag = VAULT
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -184,8 +180,6 @@ Scientist
 	title = "Vault-tec Scientist"
 	flag = F13VAULTSCIENTIST
 	department_head = list("Overseer")
-	department_flag = VAULT
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -226,8 +220,6 @@ Security Officer
 	title = "Vault-tec Security"
 	flag = F13OFFICER
 	department_head = list("Chief of Security")
-	department_flag = VAULT
-	faction = "Vault"
 	total_positions = 0 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 0 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -303,8 +295,6 @@ Vault Engineer
 	title = "Vault-tec Engineer"
 	flag = F13VAULTENGINEER
 	department_head = list("Overseer")
-	department_flag = VAULT
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
@@ -338,8 +328,6 @@ Vault Engineer
 /datum/job/vault/f13vaultDweller
 	title = "Vault Dweller"
 	flag = ASSISTANT
-	department_flag = VAULT
-	faction = "Vault"
 	total_positions = 0
 	spawn_positions = 0
 	forbids = "The Vault forbids: Disobeying the Overseer. Deserting the Vault unless it is rendered unhospitable. Killing fellow Vault Dwellers. Betraying the Vault and its people."
