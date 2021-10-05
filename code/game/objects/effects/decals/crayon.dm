@@ -15,7 +15,7 @@
 
 	if(e_name)
 		name = e_name
-	desc = "A [name] vandalizing the station."
+	desc = "A [name] vandalizing the vicinity."
 	if(alt_icon)
 		icon = alt_icon
 	if(type)
