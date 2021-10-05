@@ -1401,3 +1401,7 @@
 		"<b>[src]</b> hands [target] \a [gift].",
 		span_notice("You give \the [target] a [gift].")
 		)
+
+
+/mob/living/proc/update_water()
+	return

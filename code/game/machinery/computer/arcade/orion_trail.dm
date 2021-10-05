@@ -201,7 +201,7 @@
 						else
 							to_chat(usr, "<span class='userdanger'>Something strikes you from behind! It hurts like hell and feel like a blunt weapon, but nothing is there...</span>")
 							M.take_bodypart_damage(30)
-							playsound(loc, 'sound/weapons/genhit2.ogg', 100, 1)
+							playsound(loc, 'sound/weapons/genhit2.ogg', 10, 1)
 					if(ORION_TRAIL_ILLNESS)
 						var/severity = rand(1,3) //pray to RNGesus. PRAY, PIGS
 						if(severity == 1)
@@ -219,12 +219,12 @@
 							M.DefaultCombatKnockdown(60)
 							say("A sudden gust of powerful wind slams [M] into the floor!")
 							M.take_bodypart_damage(25)
-							playsound(loc, 'sound/weapons/genhit.ogg', 100, 1)
+							playsound(loc, 'sound/weapons/genhit.ogg', 10, 1)
 						else
 							to_chat(M, "<span class='userdanger'>A violent gale blows past you, and you barely manage to stay standing!</span>")
 					if(ORION_TRAIL_COLLISION) //by far the most damaging event
 						if(prob(90))
-							playsound(loc, 'sound/effects/bang.ogg', 100, 1)
+							playsound(loc, 'sound/effects/bang.ogg', 10, 1)
 							var/turf/open/floor/F
 							for(F in orange(1, src))
 								F.ScrapeAway()
@@ -232,15 +232,15 @@
 							if(hull)
 								sleep(10)
 								say("A new floor suddenly appears around [src]. What the hell?")
-								playsound(loc, 'sound/weapons/genhit.ogg', 100, 1)
+								playsound(loc, 'sound/weapons/genhit.ogg', 10, 1)
 								var/turf/open/space/T
 								for(T in orange(1, src))
 									T.PlaceOnTop(/turf/open/floor/plating)
 						else
 							say("Something slams into the floor around [src] - luckily, it didn't get through!")
-							playsound(loc, 'sound/effects/bang.ogg', 50, 1)
+							playsound(loc, 'sound/effects/bang.ogg', 10, 1)
 					if(ORION_TRAIL_MALFUNCTION)
-						playsound(loc, 'sound/effects/empulse.ogg', 50, 1)
+						playsound(loc, 'sound/effects/empulse.ogg', 10, 1)
 						visible_message("<span class='danger'>[src] malfunctions, randomizing in-game stats!</span>")
 						var/oldfood = food
 						var/oldfuel = fuel
@@ -254,7 +254,7 @@
 								audible_message("<span class='danger'>[src] lets out a somehow ominous chime.</span>")
 							food = oldfood
 							fuel = oldfuel
-							playsound(loc, 'sound/machines/chime.ogg', 50, 1)
+							playsound(loc, 'sound/machines/chime.ogg', 10, 1)
 
 	else if(href_list["newgame"]) //Reset everything
 		if(gameStatus == ORION_STATUS_START)
@@ -306,7 +306,7 @@
 				event = ORION_TRAIL_BLACKHOLE
 				event()
 				if(obj_flags & EMAGGED)
-					playsound(loc, 'sound/effects/supermatter.ogg', 100, 1)
+					playsound(loc, 'sound/effects/supermatter.ogg', 10, 1)
 					say("A miniature black hole suddenly appears in front of [src], devouring [usr] alive!")
 					if(isliving(usr))
 						var/mob/living/L = usr
@@ -328,7 +328,7 @@
 	else if(href_list["killcrew"]) //shoot a crewmember
 		if(gameStatus == ORION_STATUS_NORMAL || event == ORION_TRAIL_LING)
 			var/sheriff = remove_crewmember() //I shot the sheriff
-			playsound(loc,'sound/weapons/gunshot.ogg', 100, 1)
+			playsound(loc,'sound/weapons/gunshot.ogg', 10, 1)
 
 			if(settlers.len == 0 || alive == 0)
 				say("The last crewmember [sheriff], shot themselves, GAME OVER!")
@@ -398,7 +398,7 @@
 						last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food, AND [lost_crew] in your scramble to escape! ([FU]FI,[FO]FO,-Crew)"
 						if(obj_flags & EMAGGED)
 							say("WEEWOO! WEEWOO! Spaceport security en route!")
-							playsound(src, 'sound/items/weeoo1.ogg', 100, FALSE)
+							playsound(src, 'sound/items/weeoo1.ogg', 10, FALSE)
 							for(var/i, i<=3, i++)
 								var/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion/O = new/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion(get_turf(src))
 								O.target = usr
@@ -779,14 +779,14 @@
 	to_chat(user, "<span class='warning'>You flip the switch on the underside of [src].</span>")
 	active = 1
 	visible_message("<span class='notice'>[src] softly beeps and whirs to life!</span>")
-	playsound(loc, 'sound/machines/defib_SaftyOn.ogg', 25, 1)
+	playsound(loc, 'sound/machines/defib_SaftyOn.ogg', 10, 1)
 	say("This is ship ID #[rand(1,1000)] to Orion Port Authority. We're coming in for landing, over.")
 	sleep(20)
 	visible_message("<span class='warning'>[src] begins to vibrate...</span>")
 	say("Uh, Port? Having some issues with our reactor, could you check it out? Over.")
 	sleep(30)
 	say("Oh, God! Code Eight! CODE EIGHT! IT'S GONNA BL-")
-	playsound(loc, 'sound/machines/buzz-sigh.ogg', 25, 1)
+	playsound(loc, 'sound/machines/buzz-sigh.ogg', 10, 1)
 	sleep(3.6)
 	visible_message("<span class='userdanger'>[src] explodes!</span>")
 	explosion(loc, 2,4,8, flame_range = 16)

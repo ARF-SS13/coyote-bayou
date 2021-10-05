@@ -48,6 +48,20 @@ There are several things that need to be remembered:
 
 */
 
+//ported from citadel
+//Add an entry to overlays, assuming it exists
+/mob/living/carbon/human/proc/apply_layer(cache_index)
+	if((. = overlays_standing[cache_index]))
+		add_overlay(.)
+
+//Remove an entry from overlays, and from the list
+/mob/living/carbon/human/proc/remove_layer(cache_index)
+	var/I = overlays_standing[cache_index]
+	if(I)
+		cut_overlay(I)
+		overlays_standing[cache_index] = null
+//end ported from citadel
+
 //HAIR OVERLAY
 /mob/living/carbon/human/update_hair()
 	dna.species.handle_hair(src)
@@ -779,3 +793,19 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 
 	update_inv_head()
 	update_inv_wear_mask()
+
+/mob/living/carbon/human/update_water()
+	if(QDESTROYING(src))
+		return
+
+	remove_layer(ABOVE_MOB_LAYER)
+
+	var/depth = check_submerged()
+	if(!depth)
+		return
+	if(lying)
+		overlays_standing[ABOVE_MOB_LAYER] = image(icon = 'icons/effects/effects.dmi', icon_state = "mob_submerged_lying", layer = ABOVE_MOB_LAYER) //TODO: Improve
+	else
+		overlays_standing[ABOVE_MOB_LAYER] = image(icon = 'icons/effects/effects.dmi', icon_state = "mob_submerged", layer = ABOVE_MOB_LAYER) //TODO: Improve
+
+	apply_layer(ABOVE_MOB_LAYER)

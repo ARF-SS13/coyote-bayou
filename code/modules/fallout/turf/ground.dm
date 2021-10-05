@@ -264,6 +264,39 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "riverwater_motion"
 	slowdown = 2
+	depth = 1
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null //needs a splashing sound one day.
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	
+/turf/open/indestructible/ground/outside/water/Initialize()
+	. = ..()
+	update_icon()
+
+/turf/open/indestructible/ground/outside/water/Entered(atom/movable/AM, atom/oldloc)
+	if(istype(AM, /mob/living))
+		var/mob/living/L = AM
+		L.update_water()
+		if(L.check_submerged() <= 0)
+			return
+		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
+			to_chat(L, "<span class='warning'>You get drenched in water!</span>")
+	AM.water_act(5)
+	..()
+
+/turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
+	if(istype(AM, /mob/living))
+		var/mob/living/L = AM
+		L.update_water()
+		if(L.check_submerged() <= 0)
+			return
+		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
+			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+	..()
+
 
 /turf/open/indestructible/ground/outside/snow
 	initial_gas_mix = "o2=22;n2=82;TEMP=285"
