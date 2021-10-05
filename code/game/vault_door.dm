@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(vault_doors)
+
 /obj/structure/vaultdoor
 	name = "vault door 113"
 	icon = 'icons/obj/doors/gear.dmi'
@@ -14,6 +16,14 @@
 	max_integrity = 1000
 	resistance_flags = FIRE_PROOF | ACID_PROOF | UNACIDABLE | FREEZE_PROOF | INDESTRUCTIBLE  //it's a fucking steel blast door
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 95, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100) //it's a fucking steel door 2.0
+
+/obj/structure/vaultdoor/Initialize()
+	. = ..()
+	LAZYADD(GLOB.vault_doors, src)
+
+/obj/structure/vaultdoor/Destroy()
+	LAZYREMOVE(GLOB.vault_doors, src)
+	return ..()
 
 /obj/structure/vaultdoor/blob_act()
 	ex_act(4)
