@@ -592,8 +592,8 @@
 	icon_state = "poster74"
 
 /obj/structure/sign/poster/prewar/poster75
-	name = "old rationing poster"
-	desc = "During the military occupation, these posters reminded the people to carefully manage their supplies."
+	name = "old festive poster"
+	desc = "An old world advertisement for a festive atomic pail."
 	icon_state = "poster75"
 
 /obj/structure/sign/poster/prewar/poster79
