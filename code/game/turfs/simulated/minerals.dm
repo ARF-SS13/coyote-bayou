@@ -13,7 +13,10 @@
 	density = TRUE
 	blocks_air = 1
 	layer = EDGED_TURF_LAYER
-	initial_temperature = T20C
+
+	initial_temperature = 293.15
+	// base_icon_state = "smoothrocks"
+	smooth_icon = 'icons/turf/smoothrocks.dmi'
 	var/environment_type = "asteroid"
 	var/turf/open/indestructible/ground/inside/mountain/turf_type = /turf/open/indestructible/ground/inside/mountain
 	var/mineralType = null

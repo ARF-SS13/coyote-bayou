@@ -240,9 +240,14 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
 
+
 #define isfinite(n) (isnum(n) && n == n)
 
 //F13 EDIT
 #define iskey(A) istype(A, /obj/item/key)
+
+#define isProbablyWallMounted(O) (O.pixel_x > 20 || O.pixel_x < -20 || O.pixel_y > 20 || O.pixel_y < -20)
+
+#define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 
 #define islock(A) istype(A, /obj/item/lock_construct)

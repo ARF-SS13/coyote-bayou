@@ -55,7 +55,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	if(A.anchored)
 		return FALSE
 	for(var/obj/O in contents)
-		if(O.obj_flags & BLOCK_Z_FALL)
+		if(O.obj_flags & BLOCK_Z_OUT_DOWN)
 			return FALSE
 	return TRUE
 

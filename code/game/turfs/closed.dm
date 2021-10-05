@@ -8,6 +8,14 @@
 	rad_insulation = RAD_MEDIUM_INSULATION
 
 
+/turf/closed/Initialize()
+	. = ..()
+
+
+/turf/closed/Initialize()
+	. = ..()
+
+
 /turf/closed/AfterChange()
 	. = ..()
 	SSair.high_pressure_delta -= src

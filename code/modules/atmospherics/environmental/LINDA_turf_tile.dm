@@ -30,7 +30,9 @@
 
 /turf/open/Initialize()
 	if(!blocks_air)
-		air = new(2500, src)
+
+		air = new(2500,src)
+
 		air.copy_from_turf(src)
 		update_air_ref(planetary_atmos ? 1 : 2)
 	. = ..()
@@ -45,18 +47,59 @@
 /////////////////GAS MIXTURE PROCS///////////////////
 
 /turf/open/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
+	return assume_air_ratio(giver, 1)
+
+/turf/open/assume_air_moles(datum/gas_mixture/giver, moles)
 	if(!giver)
 		return FALSE
 	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(src, giver))
+
+		SSair.deferred_airs += list(list(giver, air, moles / giver.total_moles()))
 	else
-		air.merge(giver)
+		giver.transfer_to(air, moles)
+		update_visuals()
+	return TRUE
+
+/turf/open/assume_air_ratio(datum/gas_mixture/giver, ratio)
+	if(!giver)
+		return FALSE
+	if(SSair.thread_running())
+		SSair.deferred_airs += list(list(giver, air, ratio))
+	else
+		giver.transfer_ratio_to(air, ratio)
+		update_visuals()
+	return TRUE
+
+/turf/open/transfer_air(datum/gas_mixture/taker, moles)
+	if(!taker || !return_air()) // shouldn't transfer from space
+		return FALSE
+	if(SSair.thread_running())
+		SSair.deferred_airs += list(list(air, taker, moles / air.total_moles()))
+	else
+		air.transfer_to(taker, moles)
+		update_visuals()
+	return TRUE
+
+/turf/open/transfer_air_ratio(datum/gas_mixture/taker, ratio)
+	if(!taker || !return_air())
+		return FALSE
+	if(SSair.thread_running())
+		SSair.deferred_airs += list(list(air, taker, ratio))
+	else
+		air.transfer_ratio_to(taker, ratio)
+
 		update_visuals()
 	return TRUE
 
 /turf/open/remove_air(amount)
 	var/datum/gas_mixture/ours = return_air()
 	var/datum/gas_mixture/removed = ours.remove(amount)
+	update_visuals()
+	return removed
+
+/turf/open/remove_air_ratio(ratio)
+	var/datum/gas_mixture/ours = return_air()
+	var/datum/gas_mixture/removed = ours.remove_ratio(ratio)
 	update_visuals()
 	return removed
 
@@ -106,8 +149,10 @@
 	for(var/id in air.get_gases())
 		if (nonoverlaying_gases[id])
 			continue
-		var/gas_overlay = GLOB.meta_gas_overlays[id]
-		if(gas_overlay && air.get_moles(id) > GLOB.meta_gas_visibility[id])
+
+		var/gas_overlay = GLOB.gas_data.overlays[id]
+		if(gas_overlay && air.get_moles(id) > GLOB.gas_data.visibility[id])
+
 			new_overlay_types += gas_overlay[min(FACTOR_GAS_VISIBLE_MAX, CEILING(air.get_moles(id) / MOLES_GAS_VISIBLE_STEP, 1))]
 
 	if (atmos_overlay_types)
@@ -141,7 +186,7 @@
 	for (var/gastype in subtypesof(/datum/gas))
 		var/datum/gas/gasvar = gastype
 		if (!initial(gasvar.gas_overlay))
-			.[gastype] = TRUE
+			.[initial(gasvar.id)] = TRUE
 
 /////////////////////////////SIMULATION///////////////////////////////////
 
@@ -222,3 +267,4 @@
 	move_prob += pressure_resistance_prob_delta
 	if (move_prob > PROBABILITY_OFFSET && prob(move_prob) && (move_resist != INFINITY) && (!anchored && (max_force >= (move_resist * MOVE_FORCE_PUSH_RATIO))) || (anchored && (max_force >= (move_resist * MOVE_FORCE_FORCEPUSH_RATIO))))
 		step(src, direction)
+

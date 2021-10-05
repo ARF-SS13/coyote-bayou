@@ -36,18 +36,23 @@
 			if(!.)
 				return .
 
-/atom/movable/proc/BlockThermalConductivity() // objects that block air and don't let superconductivity act. Only firelocks atm.
+
+/atom/movable/proc/BlockThermalConductivity() // Objects that don't let heat through.
+
 	return FALSE
 
 /turf/proc/ImmediateCalculateAdjacentTurfs()
+	if(SSair.thread_running())
+		CALCULATE_ADJACENT_TURFS(src)
+		return
 	var/canpass = CANATMOSPASS(src, src)
 	var/canvpass = CANVERTICALATMOSPASS(src, src)
 	for(var/direction in GLOB.cardinals_multiz)
 		var/turf/T = get_step_multiz(src, direction)
-		var/opp_dir = REVERSE_DIR(direction)
-		if(!isopenturf(T))
+		if(!istype(T))
 			continue
-		if(!(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))) )
+		var/opp_dir = REVERSE_DIR(direction)
+		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))) )
 			LAZYINITLIST(atmos_adjacent_turfs)
 			LAZYINITLIST(T.atmos_adjacent_turfs)
 			atmos_adjacent_turfs[T] = direction
@@ -65,7 +70,9 @@
 	set_sleeping(blocks_air)
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
 
-/turf/proc/set_sleeping()
+
+/turf/proc/set_sleeping(should_sleep)
+
 
 /turf/proc/__update_auxtools_turf_adjacency_info()
 

@@ -504,3 +504,8 @@
 	config_entry_value = TRUE
 
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
+
+
+/datum/config_entry/flag/atmos_equalize_enabled
+	default = FALSE
+
