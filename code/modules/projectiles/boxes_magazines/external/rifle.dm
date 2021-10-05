@@ -81,12 +81,6 @@
 	caliber = "a762"
 	max_ammo = 8
 
-/obj/item/ammo_box/magazine/garand308/ap
-	name = "en-bloc clip Armor Piercing (7.62x51mm)"
-	icon_state = "enbloc-8"
-	ammo_type = /obj/item/ammo_casing/a762/ap
-	caliber = "a762"
-	max_ammo = 8
 
 /obj/item/ammo_box/magazine/garand308/update_icon()
 	..()

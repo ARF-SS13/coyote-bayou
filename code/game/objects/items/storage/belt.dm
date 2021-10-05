@@ -721,8 +721,6 @@
 		/obj/item/ammo_box/a762,
 		/obj/item/ammo_box/a556/stripper,
 		/obj/item/ammo_box/needle,
-		/obj/item/ammo_box/needleap,
-		/obj/item/ammo_box/needleultra,
 		/obj/item/ammo_box/a308,
 		/obj/item/ammo_box/c4570,
 		/obj/item/ammo_box/a50MG,

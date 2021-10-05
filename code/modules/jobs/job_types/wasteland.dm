@@ -1222,7 +1222,6 @@ datum/job/wasteland/f13dendoctor
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	backpack_contents = list(
-							/obj/item/ammo_box/m44box/swc=2
 							)
 
 /datum/outfit/loadout/bounty_hunter

@@ -65,17 +65,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
 
-/obj/item/ammo_box/m22/plinking
-	name = "ammo box (.22lr plinking)"
-	ammo_type = /obj/item/ammo_casing/a22/plinking
-	custom_materials = list(/datum/material/iron = 3000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/m22/hp
-	name = "ammo box (.22lr hollow point)"
-	ammo_type = /obj/item/ammo_casing/a22/hp
-	custom_materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 1500)
-
-
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -86,21 +75,6 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/c9mm/ap
-	name = "ammo box (9mm AP)"
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-	custom_materials = list(/datum/material/iron = 15000, /datum/material/titanium = 3750, /datum/material/blackpowder = 1500)
-
-/obj/item/ammo_box/c9mm/jhp
-	name = "ammo box (9mm JHP)"
-	ammo_type = /obj/item/ammo_casing/c9mm/jhp
-	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/c9mm/op
-	name = "ammo box (9mm +P)"
-	ammo_type = /obj/item/ammo_casing/c9mm/op
-	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2500)
 
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
@@ -132,20 +106,12 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
-/obj/item/ammo_box/c10mm/jhp
-	name = "ammo box (10mm JHP)"
-	ammo_type = /obj/item/ammo_casing/c10mm/jhp
-	custom_materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm Incendiary)"
 	icon_state = "10mmbox"
 	max_ammo = 20
 
-/obj/item/ammo_box/c10mm/ap
-	name = "ammo box (10mm AP)"
-	ammo_type = /obj/item/ammo_casing/c10mm/ap
-	custom_materials = list(/datum/material/iron = 14000, /datum/material/titanium = 3000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c10mm/improvised
 	name = "bag with reloaded 10mm bullets"
@@ -167,17 +133,6 @@
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/a357box/jhp
-	name = "ammo box (.357 Magnum JHP)"
-	ammo_type = /obj/item/ammo_casing/a357/jhp
-	custom_materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/a357box/jfp
-	name = "ammo box (.357 Magnum JFP)"
-	ammo_type = /obj/item/ammo_casing/a357/jfp
-	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 1000)
-
-
 //.44 Magnum
 /obj/item/ammo_box/m44box
 	name = "ammo box (.44 Magnum FMJ)"
@@ -189,16 +144,6 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/m44box/jhp
-	name = "ammo box (.44 Magnum JHP)"
-	ammo_type = /obj/item/ammo_casing/m44/jhp
-	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/m44box/swc
-	name = "ammo box (.44 Magnum SWC)"
-	ammo_type = /obj/item/ammo_casing/m44/swc
-	custom_materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 1500)
 
 /obj/item/ammo_box/a45lcbox
 	name = "ammo box (.45 Long Colt)"
@@ -230,16 +175,6 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
-/obj/item/ammo_box/c45/jhp
-	name = "ammo box (.45 JHP)"
-	ammo_type = /obj/item/ammo_casing/c45/jhp
-	custom_materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/c45/op
-	name = "ammo box (.45 +P)"
-	ammo_type = /obj/item/ammo_casing/c45/op
-	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
-
 /obj/item/ammo_box/c45/improvised
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
@@ -261,17 +196,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 
-/obj/item/ammo_box/c4570box/jhp
-	name = "ammo box (.45-70 JHP)"
-	ammo_type = /obj/item/ammo_casing/c4570/jhp
-	custom_materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
-
-/obj/item/ammo_box/c4570box/swc
-	name = "ammo box (.45-70 SWC)"
-	ammo_type = /obj/item/ammo_casing/c4570/swc
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 2500)
-
-
 //5.56x45
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"
@@ -283,21 +207,6 @@
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/a556/jhp
-	name = "ammo box (5.56 JHP)"
-	ammo_type = /obj/item/ammo_casing/a556/jhp
-	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/a556/ap
-	name = "ammo box (5.56 AP)"
-	ammo_type = /obj/item/ammo_casing/a556/ap
-	custom_materials = list(/datum/material/iron = 24000, /datum/material/titanium = 4000, /datum/material/blackpowder = 1000)
-
-/obj/item/ammo_box/a556/match
-	name = "ammo box (5.56 match)"
-	ammo_type = /obj/item/ammo_casing/a556/match
-	custom_materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 2500)
 
 /obj/item/ammo_box/a556/sport
 	name = "ammo box (.223 sport)"
@@ -336,22 +245,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 
-/obj/item/ammo_box/a762box/jhp
-	name = "ammo box (7.62x51 JHP)"
-	ammo_type = /obj/item/ammo_casing/a762/jhp
-	custom_materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
-
-/obj/item/ammo_box/a762box/ap
-	name = "ammo box (7.62x51 AP)"
-	ammo_type = /obj/item/ammo_casing/a762/ap
-	custom_materials = list(/datum/material/iron = 20000, /datum/material/titanium = 4000, /datum/material/blackpowder = 1500)
-
-/obj/item/ammo_box/a762box/match
-	name = "ammo box (7.62x51 Match)"
-	ammo_type = /obj/item/ammo_casing/a762/match
-	custom_materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 2500)
-
-
 //.50 MG and 14mm
 /obj/item/ammo_box/a50MGbox
 	name = "ammo box (.50 MG)"
@@ -375,10 +268,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 
-/obj/item/ammo_box/m14mm/jhp
-	name = "ammo box (14mm JHP)"
-	ammo_type = /obj/item/ammo_casing/p14mm/jhp
-	custom_materials = list(/datum/material/iron = 11000)
 
 
 //Misc.
@@ -679,24 +568,6 @@
 	max_ammo = 5
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 3000, /datum/material/glass = 5000)
-
-/obj/item/ammo_box/needleap
-	name = "armour-piercing needler stripper clip (needle darts)"
-	icon_state = "apneedler"
-	caliber = "needle"
-	ammo_type = /obj/item/ammo_casing/caseless/needle/ap
-	max_ammo = 5
-	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 4000, /datum/material/glass = 5000)
-
-/obj/item/ammo_box/needleultra
-	name = "ultracite needler stripper clip (needle darts)"
-	icon_state = "ultraneedler"
-	caliber = "needle"
-	ammo_type = /obj/item/ammo_casing/caseless/needle/ultra
-	max_ammo = 5
-	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 4000, /datum/material/glass = 5000)
 
 //.50 BMG
 /obj/item/ammo_box/a50MG

@@ -141,12 +141,6 @@
 	category = list("initial", "Simple Ammo")
 
 /datum/design
-/datum/design/ammolathe/a22plink
-	name = ".22lr plinking ammo box"
-	id = "a22plink"
-	build_path = /obj/item/ammo_box/m22/plinking
-	materials = list(/datum/material/iron = 3000, /datum/material/blackpowder = 1000)
-	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/a223
 	name = ".223 ammo box"
@@ -155,19 +149,7 @@
 	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 	category = list("initial", "Simple Ammo")
 
-/datum/design/ammolathe/a9mmjhp
-	name = "9mm JHP ammo box"
-	id = "a9mmjhp"
-	build_path = /obj/item/ammo_box/c9mm/jhp
-	materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1000)
-	category = list("initial", "Simple Ammo")
 
-/datum/design/ammolathe/a45jhp
-	name = ".45 ACP JHP ammo box"
-	id = "a45jhp"
-	build_path = /obj/item/ammo_box/c45/jhp
-	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
-	category = list("initial", "Simple Ammo")
 
 /* --Tier 2 Ammo And Magazines-- */
 //Tier 2 Magazines
@@ -222,19 +204,6 @@
 	category = list("initial", "Basic Magazines")
 
 //Tier 2 Ammo
-/datum/design/ammolathe/c10mmjhp
-	name = "10mm JHP ammo box"
-	id = "c10mmjhp"
-	materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/c10mm/jhp
-	category = list("initial", "Basic Ammo")
-
-/datum/design/ammolathe/c10mmap
-	name = "10mm AP ammo box"
-	id = "c10mmap"
-	materials = list(/datum/material/iron = 14000, /datum/material/titanium = 3500, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/c10mm/ap
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/m44
 	name = ".44 Magnum FMJ ammo box"
@@ -243,12 +212,6 @@
 	build_path = /obj/item/ammo_box/m44box
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/m44jhp
-	name = ".44 Magnum JHP ammo box"
-	id = "m44jhp"
-	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/m44box/jhp
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a357
 	name = ".357 Magnum FMJ ammo box"
@@ -257,12 +220,6 @@
 	build_path = /obj/item/ammo_box/a357box
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a357jhp
-	name = ".357 Magnum JHP ammo box"
-	id = "a357jhp"
-	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/a357box/jhp
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a556
 	name = "5.56mm FMJ ammo box"
@@ -271,12 +228,6 @@
 	build_path = /obj/item/ammo_box/a556
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a556jhp
-	name = "5.56 JHP ammo box"
-	id = "a556jhp"
-	materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/a556/jhp
-	category = list("initial", "Basic Ammo")
 /*
 /datum/design/ammolathe/magnumshot
 	name = "magnum buckshot shotgun box"
@@ -292,12 +243,6 @@
 	build_path = /obj/item/ammo_box/shotgun/slug
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a556ap
-	name = "5.56 AP ammo box"
-	id = "a556ap"
-	materials = list(/datum/material/iron = 24000, /datum/material/titanium = 6000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/a556/ap
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a762
 	name = "7.62 FMJ ammo box"
@@ -306,12 +251,6 @@
 	build_path = /obj/item/ammo_box/a762box
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a762jhp
-	name = "7.62 JHP ammo box"
-	id = "a762jhp"
-	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/a762box/jhp
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a22
 	name = ".22lr ammo box"
@@ -327,12 +266,6 @@
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1500)
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a14mmjhp
-	name = "12.7mm JHP ammo box"
-	id = "a127mmjhp"
-	build_path = /obj/item/ammo_box/m14mm/jhp
-	materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
-	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a45fmj
 	name = ".45 ACP FMJ ammo box"
@@ -436,12 +369,6 @@
 	build_path = /obj/item/ammo_box/c4570box
 	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/c4570jhp
-	name = ".45-70 JHP ammo box"
-	id = "c4570jhp"
-	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 2000)
-	build_path = /obj/item/ammo_box/c4570box/jhp
-	category = list("initial", "Intermediate Ammo")
 
 /datum/design/ammolathe/lc45
 	name = ".45 LC ammo box"
@@ -457,46 +384,13 @@
 	build_path = /obj/item/ammo_box/a50MGbox
 	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/a22hp
-	name = ".22lr HP ammo box"
-	id = "a22hp"
-	build_path = /obj/item/ammo_box/m22/hp
-	materials = list(/datum/material/iron = 8000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
 
-/datum/design/ammolathe/a9mmap
-	name = "9mm AP ammo box"
-	id = "a9mmap"
-	build_path = /obj/item/ammo_box/c9mm/ap
-	materials = list(/datum/material/iron = 15000, /datum/material/titanium = 3750, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
 
 /datum/design/ammolathe/a14mm
 	name = "14mm FMJ ammo box"
 	id = "a127mm"
 	build_path = /obj/item/ammo_box/m14mm
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a357jfp
-	name = ".357 Magnum JFP ammo box"
-	id = "a357jfp"
-	build_path = /obj/item/ammo_box/a357box/jfp
-	materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a44swc
-	name = ".44 Magnum SWC ammo box"
-	id = "a44swc"
-	build_path = /obj/item/ammo_box/m44box/swc
-	materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a762ap
-	name = "7.62mm AP ammo box"
-	id = "a762ap"
-	materials = list(/datum/material/iron = 20000, /datum/material/titanium = 5000, /datum/material/blackpowder = 2000)
-	build_path = /obj/item/ammo_box/a762box/ap
 	category = list("initial", "Intermediate Ammo")
 
 /*/datum/design/ammolathe/a45op
@@ -572,34 +466,6 @@
 	id = "2mm"
 	materials = list(/datum/material/iron = 25000, /datum/material/titanium = 15000)
 	build_path = /obj/item/ammo_box/magazine/m2mm
-	category = list("initial", "Advanced Ammo")
-
-/*/datum/design/ammolathe/a9mmop
-	name = "9mm +P ammo box"
-	id = "a9mmop"
-	materials = list(/datum/material/iron = 19000, /datum/material/blackpowder = 3500)
-	build_path = /obj/item/ammo_box/c9mm/op
-	category = list("initial", "Advanced Ammo")*/
-
-/datum/design/ammolathe/a4570swc
-	name = ".45-70 SWC ammo box"
-	id = "a4570swc"
-	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 3500)
-	build_path = /obj/item/ammo_box/c4570box/swc
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a762match
-	name = "7.62mm Match ammo box"
-	id = "a762match"
-	materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 3500)
-	build_path = /obj/item/ammo_box/a762box/match
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a556match
-	name = "5.56 Match ammo box"
-	id = "a556match"
-	materials = list(/datum/material/iron = 28000, /datum/material/blackpowder = 3500)
-	build_path = /obj/item/ammo_box/a556/match
 	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/m473fmj

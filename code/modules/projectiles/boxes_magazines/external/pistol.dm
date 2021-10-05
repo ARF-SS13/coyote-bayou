@@ -56,11 +56,6 @@
 	max_ammo = 15
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/m9mmds/ap
-	name = "doublestack AP magazine (9mm)"
-	icon_state = "m9mmds"
-	ammo_type = /obj/item/ammo_casing/c9mm/ap
-	special_ammo = TRUE
 
 /obj/item/ammo_box/magazine/m9mmds/empty
 	start_empty = 1
@@ -111,10 +106,6 @@
 	max_ammo = 8
 	multiple_sprites = 1
 
-/obj/item/ammo_box/magazine/m45/ap
-	name = "premium magazine (.45)"
-	ammo_type = /obj/item/ammo_casing/c45/op
-	special_ammo = TRUE
 
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = 1

@@ -193,7 +193,6 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/magazine/zipgun = 3,
 	/obj/item/ammo_casing/shotgun/buckshot = 2,
 	/obj/item/ammo_box/c38 = 3,
-	/datum/design/ammolathe/a22plink
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
