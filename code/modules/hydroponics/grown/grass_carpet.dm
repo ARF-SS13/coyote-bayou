@@ -47,7 +47,7 @@
 /obj/item/seeds/grass/fairy
 	name = "pack of fairygrass seeds"
 	desc = "These seeds grow into a more mystical grass."
-	icon_state = "seed-fairygrass"
+	icon_state = "seed-grass"
 	species = "fairygrass"
 	plantname = "Fairygrass"
 	product = /obj/item/reagent_containers/food/snacks/grown/grass/fairy
