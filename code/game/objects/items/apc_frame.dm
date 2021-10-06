@@ -103,6 +103,14 @@
 	if(!A.requires_power)
 		to_chat(user, "<span class='warning'>You cannot place [src] in this area!</span>")
 		return //can't place apcs in areas with no power requirement
+	/*fortuna edit. 
+	stops our very many duplicated areas from going powerless from one apc placement. 
+	now only the BoS areas need worry about the APCs.
+	TODO: replace the many duplicated areas with unique areas so we dont need this.
+	*/
+	if(A.power_light)
+		to_chat(user, "<span class='warning'>This area already has power!</span>")
+		return
 	for(var/obj/machinery/power/terminal/E in T)
 		if(E.master)
 			to_chat(user, "<span class='warning'>There is another network terminal here!</span>")
