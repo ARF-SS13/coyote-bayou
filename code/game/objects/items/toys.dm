@@ -1535,6 +1535,7 @@
 /obj/item/toy/tragicthegarnering
 	name = "'Tragic: The Garnering' deck"
 	desc = "the greatest pre-war TCG. Dangerously addictive."
+	icon = 'icons/obj/toy.dmi'
 	icon_state = "deck_nanotrasen_full"
 	attack_verb = list("declares an attack against")
 	

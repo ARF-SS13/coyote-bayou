@@ -1419,3 +1419,5 @@ list(/obj/item/stack/sheet/metal = 20,
 	new /obj/item/stack/cable_coil/ten(src)
 	new /obj/item/screwdriver(src)
 	new /obj/item/weldingtool(src)
+	new /obj/item/stack/f13Cash/random/med(src)
+	new /obj/item/stack/f13Cash/random/med(src)
