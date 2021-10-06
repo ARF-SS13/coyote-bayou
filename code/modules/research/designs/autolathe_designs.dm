@@ -115,6 +115,7 @@
 	build_path = /obj/item/storage/toolbox
 	category = list("initial","Tools")
 
+/*
 /datum/design/apc_board
 	name = "APC Module"
 	id = "power control"
@@ -123,6 +124,7 @@
 	build_path = /obj/item/electronics/apc
 	category = list("initial", "Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+*/
 
 /datum/design/airlock_board
 	name = "Airlock Electronics"
