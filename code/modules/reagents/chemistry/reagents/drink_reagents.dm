@@ -779,7 +779,7 @@
 	taste_description = "homely fruit"
 	glass_icon_state = "doctorsdelightglass"
 	glass_name = "Doctor's Delight"
-	glass_desc = "The space doctor's favorite. Guaranteed to restore bodily injury; side effects include cravings and hunger."
+	glass_desc = "The follower's favorite. Guaranteed to restore bodily injury; side effects include cravings and hunger."
 	value = REAGENT_VALUE_COMMON
 
 /datum/reagent/consumable/doctor_delight/on_mob_life(mob/living/carbon/M)
@@ -953,13 +953,13 @@
 
 /datum/reagent/consumable/cream_soda
 	name = "Cream Soda"
-	description = "A classic space-American vanilla flavored soft drink."
+	description = "A classic All-American vanilla flavored soft drink."
 	color = "#dcb137"
 	quality = DRINK_VERYGOOD
 	taste_description = "fizzy vanilla"
 	glass_icon_state = "cream_soda"
 	glass_name = "Cream Soda"
-	glass_desc = "A classic space-American vanilla flavored soft drink."
+	glass_desc = "A classic All-American vanilla flavored soft drink."
 	value = REAGENT_VALUE_VERY_COMMON //just a little vanilla
 
 /datum/reagent/consumable/cream_soda/on_mob_life(mob/living/carbon/M)
