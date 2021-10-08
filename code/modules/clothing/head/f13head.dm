@@ -976,8 +976,9 @@
 /obj/item/clothing/head/f13/ranger_hat/banded
 	name = "banded cowboy hat"
 	desc = "(II) A grey cowboy hat with a hat band decorated with brassen rings."
-	icon_state = "ranger_banded_hat"
-	item_state = "ranger_banded_hat"
+	icon = 'icons/mob/clothing/head.dmi'
+	icon_state = "ranger_hat_grey_banded"
+	item_state = "ranger_hat_grey_banded"
 
 /obj/item/clothing/head/f13/ranger_hat/tan
 	name = "tan cowboy hat"

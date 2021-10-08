@@ -342,6 +342,7 @@
 /obj/item/clothing/mask/bandana/durathread
 	name = "durathread bandana"
 	desc =  "A bandana made from durathread, you wish it would provide some protection to its wearer, but it's far too thin..."
+	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
 	icon_state = "banddurathread"
 
 /obj/item/clothing/mask/paper
