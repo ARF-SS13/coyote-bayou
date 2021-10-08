@@ -2,12 +2,10 @@ GLOBAL_VAR_INIT(pixel_slide, 0)  //if 1, initiate pixel sliding
 GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries wheter or not the other mob is in help intent
 
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
-	GLOB.mob_list -= src
-	GLOB.has_played_list -= src
-	GLOB.dead_mob_list -= src
-	GLOB.alive_mob_list -= src
+	remove_from_mob_list()
+	remove_from_dead_mob_list()
+	remove_from_alive_mob_list()
 	GLOB.all_clockwork_mobs -= src
-	GLOB.mob_directory -= tag
 	focus = null
 	LAssailant = null
 	movespeed_modification = null
@@ -28,12 +26,11 @@ GLOBAL_VAR_INIT(pixel_slide_other_has_help_int, 0)  //This variable queries whet
 	return ..() // Coyote Modify, Mobs wont lag the server when gibbed :o
 
 /mob/Initialize()
-	GLOB.mob_list += src
-	GLOB.mob_directory[tag] = src
+	add_to_mob_list()
 	if(stat == DEAD)
-		GLOB.dead_mob_list += src
+		add_to_dead_mob_list()
 	else
-		GLOB.alive_mob_list += src
+		add_to_alive_mob_list()
 	set_focus(src)
 	prepare_huds()
 	for(var/v in GLOB.active_alternate_appearances)
