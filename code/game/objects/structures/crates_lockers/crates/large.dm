@@ -38,6 +38,10 @@
 			return ..()						//Stops it from opening and turning invisible when items are used on it.
 
 		else
+			if(HAS_TRAIT(user, TRAIT_SKITTISH)) //for our stealthy skittish types to close crates after they've used them
+				close()
 			to_chat(user, "<span class='warning'>You need a crowbar to pry this open!</span>")
-			return FALSE //Just stop. Do nothing. Don't turn into an invisible sprite. Don't open like a locker.
-					//The large crate has no non-attack interactions other than the crowbar, anyway.
+			return FALSE 
+
+/obj/structure/closet/crate/large/CtrlShiftClick()
+	return ..()
