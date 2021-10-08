@@ -20,6 +20,7 @@
 	var/radius = 10
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
+	var/infinite = FALSE
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -52,6 +53,9 @@
 	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
 	if(spawnsound)
 		playsound(src, spawnsound, 30, 1)
+	if(!infinite)
+		if(spawned_mobs.len >= max_mobs)
+			Destroy()
 	if(spawn_once) //if the subtype has TRUE, call destroy() after we spawn our first mob
 		Destroy()
 		return
