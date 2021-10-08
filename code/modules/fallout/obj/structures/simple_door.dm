@@ -41,9 +41,9 @@
 		padlock.forceMove(get_turf(src))
 		padlock = null
 	//fortuna edit
-	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintshidden]", INVESTIGATE_DESTROYED)
-	message_admins("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintshidden]")
-	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintshidden]")
+	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
+	message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
+	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
 /obj/structure/simple_door/proc/attach_padlock(obj/item/lock_construct/P, force = FALSE, mob/user)
