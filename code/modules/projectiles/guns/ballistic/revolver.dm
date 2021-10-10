@@ -244,7 +244,7 @@
 	icon_state = "m29peace"
 	extra_damage = 15
 	extra_penetration = 0.1
-	fire_delay = 10
+	fire_delay = 7
 	burst_size = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
@@ -269,7 +269,7 @@
 			spread = 0
 			extra_damage = 15
 			extra_penetration = 0.1
-			fire_delay = 10
+			fire_delay = 7
 			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
 	update_icon()
 
