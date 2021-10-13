@@ -49,3 +49,7 @@
 /datum/gear/hands/cigar
 	name = "Cigar"
 	path = /obj/item/clothing/mask/cigarette/cigar
+	
+/datum/gear/hands/lipstick
+	name = "Red Lipstick"
+	path = "/obj/item/lipstick"
