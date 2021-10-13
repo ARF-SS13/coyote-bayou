@@ -53,7 +53,7 @@
 	..()
 	. = TRUE
 
-/datum/reagent/medicine/super_stimpak
+/datum/reagent/medicine/stimpak/super_stimpak
 	name = "super stim chemicals"
 
 	description = "Chemicals found in pre-war stimpaks."
@@ -63,7 +63,7 @@
 	overdose_threshold = 20
 	addiction_threshold = 16
 
-datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
