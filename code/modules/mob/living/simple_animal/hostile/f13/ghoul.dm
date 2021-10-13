@@ -253,3 +253,82 @@
 	faction = list("supermutant","ghoul")
 	decompose = FALSE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
+
+//Halloween Event Ghouls
+/mob/living/simple_animal/hostile/ghoul/zombie
+	name = "ravenous feral ghoul"
+	desc = "A ferocious feral ghoul, hungry for human meat."
+	faction = list("ghoul")
+	stat_attack = UNCONSCIOUS
+	maxHealth = 200
+	health = 200
+
+/mob/living/simple_animal/hostile/ghoul/zombie/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		try_to_ghoul_zombie_infect(H)
+
+/mob/living/simple_animal/hostile/ghoul/zombie/reaver
+	name = "ravenous feral ghoul reaver"
+	desc = "A ferocious feral ghoul, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "ghoulreaver"
+	icon_living = "ghoulreaver"
+	icon_dead = "ghoulreaver_dead"
+	speed = 2
+	maxHealth = 270
+	health = 270
+	harm_intent_damage = 8
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+
+/mob/living/simple_animal/hostile/ghoul/zombie/glowing
+	name = "ravenous glowing feral ghoul"
+	desc = "A ferocious feral ghoul, hungry for human meat. This one has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
+	icon_state = "glowinghoul"
+	icon_living = "glowinghoul"
+	icon_dead = "glowinghoul_dead"
+	maxHealth = 240
+	health = 240
+	speed = 2
+	harm_intent_damage = 8
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+
+/mob/living/simple_animal/hostile/ghoul/zombie/glowing/Initialize(mapload)
+	. = ..()
+	// we only heal BRUTELOSS because each type directly heals a simplemob's health
+	// therefore setting it to BRUTELOSS | FIRELOSS | TOXLOSS | OXYLOSS would mean healing 4x as much
+	// aka 40% of max life every tick, which is basically unkillable
+	// TODO: refactor this if simple_animals ever get damage types
+	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+
+/mob/living/simple_animal/hostile/ghoul/zombie/glowing/Aggro()
+	..()
+	summon_backup(10)
+
+/mob/living/simple_animal/hostile/ghoul/zombie/glowing/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.apply_effect(20, EFFECT_IRRADIATE, 0)
+
+/mob/living/simple_animal/hostile/ghoul/zombie/legendary
+	name = "legendary ravenous ghoul"
+	desc = "A ferocious feral ghoul, hungry for human meat. This one has exceptionally large, bulging muscles. It looks quite strong."
+	icon_state = "glowinghoul"
+	icon_living = "glowinghoul"
+	icon_dead = "glowinghoul_dead"
+	color = "#FFFF00"
+	maxHealth = 650
+	health = 650
+	speed = 2.5
+	harm_intent_damage = 8
+	melee_damage_lower = 30
+	melee_damage_upper = 35
+	mob_size = 5
+	wound_bonus = 0
+	bare_wound_bonus = 0

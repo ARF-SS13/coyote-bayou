@@ -82,6 +82,89 @@
 		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
 		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
 
+//A new item rather than a child of an existing item has been made for the ghoul claw. It's spaghetti code, but it was the only way to make it properly infect people.
+/obj/item/ghoul_zombie_hand
+	name = "infectious ghoul claw"
+	desc = "As a ravenous ghoul, your claws are your best friends. It's your primary tool, as it is capable of infecting \
+		humans, butchering all other living things to \
+		sustain yourself, smashing open doors, and opening \
+		nuka-cola bottles."
+	item_flags = ABSTRACT | DROPDEL
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "bloodhand_left"
+	var/icon_left = "bloodhand_left"
+	var/icon_right = "bloodhand_right"
+	hitsound = 'sound/hallucinations/growl1.ogg'
+	force = 20
+	sharpness = SHARP_POINTY
+	damtype = "brute"
+	total_mass = TOTAL_MASS_HAND_REPLACEMENT
+	sharpness = SHARP_EDGED
+	wound_bonus = -30
+	bare_wound_bonus = 15
+
+/obj/item/ghoul_zombie_hand/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
+
+/obj/item/ghoul_zombie_hand/equipped(mob/user, slot)
+	. = ..()
+	//these are intentionally inverted
+	var/i = user.get_held_index_of_item(src)
+	if(!(i % 2))
+		icon_state = icon_left
+	else
+		icon_state = icon_right
+
+/obj/item/ghoul_zombie_hand/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if(!proximity_flag)
+		return
+	else
+		if(istype(target, /obj))
+			var/obj/target_object = target
+			target_object.take_damage(force * 3, BRUTE, "melee", 0)
+		else if(isliving(target))
+			if(ishuman(target))
+				try_to_ghoul_zombie_infect(target)
+			else
+				check_feast(target, user)
+
+/proc/try_to_ghoul_zombie_infect(mob/living/carbon/human/target)
+	CHECK_DNA_AND_SPECIES(target)
+
+	if(NOZOMBIE in target.dna.species.species_traits)
+		return
+
+	var/obj/item/organ/zombie_infection/ghoul/infection
+	infection = target.getorganslot(ORGAN_SLOT_ZOMBIE)
+	if(!infection)
+		infection = new()
+		infection.Insert(target)
+
+/obj/item/ghoul_zombie_hand/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] is ripping [user.p_their()] brains out! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	if(isliving(user))
+		var/mob/living/L = user
+		var/obj/item/bodypart/O = L.get_bodypart(BODY_ZONE_HEAD)
+		if(O)
+			O.dismember()
+	return (BRUTELOSS)
+
+/obj/item/ghoul_zombie_hand/proc/check_feast(mob/living/target, mob/living/user)
+	if(target.stat == DEAD)
+		var/hp_gained = target.maxHealth
+		target.gib()
+		// zero as argument for no instant health update
+		user.adjustBruteLoss(-hp_gained, 0)
+		user.adjustToxLoss(-hp_gained, 0)
+		user.adjustFireLoss(-hp_gained, 0)
+		user.adjustCloneLoss(-hp_gained, 0)
+		user.updatehealth()
+		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, -hp_gained) // Zom Bee gibbers "BRAAAAISNSs!1!"
+		user.adjust_nutrition(hp_gained, NUTRITION_LEVEL_FULL)
+
 /obj/item/paper/guides/antag/romerol_instructions
 	info = "How to do necromancy with chemicals:<br>\
 	<ul>\

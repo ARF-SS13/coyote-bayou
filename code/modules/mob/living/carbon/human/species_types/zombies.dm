@@ -96,6 +96,27 @@
 		part.incoming_stam_mult = incoming_stam_mult
 		//todo: add negative wound resistance to all parts when wounds is merged (zombies are physically weak in terms of limbs)
 
+/datum/species/zombie/infectious/ghoul
+	name = "Ravenous Ghoul"
+	id = "ghoulzombies"
+	limbs_id = "ghoul"
+	say_mod = "rasps"
+	mutanthands = /obj/item/ghoul_zombie_hand
+	brutemod = 0.5
+	burnmod = 0.5
+	armor = 50
+
+/datum/species/zombie/infectious/ghoul/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	for(var/obj/item/bodypart/b in C.bodyparts)
+		b.max_damage += 35
+	C.faction |= "ghoul"
+/datum/species/zombie/infectious/ghoul/on_species_loss(mob/living/carbon/C)
+	..()
+	C.faction -= "ghoul"
+	for(var/obj/item/bodypart/b in C.bodyparts)
+		b.max_damage = initial(b.max_damage)
+
 // Your skin falls off
 /datum/species/krokodil_addict
 	name = "Human"

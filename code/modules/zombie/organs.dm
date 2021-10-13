@@ -98,3 +98,41 @@
 
 /obj/item/organ/zombie_infection/nodamage
 	causes_damage = FALSE
+
+/obj/item/organ/zombie_infection/ghoul
+	name = "ghoul tumor"
+	desc = "An irradiated tumor, pulsing slowly and spilling yellow ooze."
+
+/obj/item/organ/zombie_infection/on_find(mob/living/finder)
+	to_chat(finder, "<span class='warning'>Inside the head is a disgusting tumor \
+		leaking yellow ooze, bound tightly to the brain.</span>")
+
+/obj/item/organ/zombie_infection/ghoul/zombify()
+	timer_id = null
+
+	if(!converts_living && owner.stat != DEAD)
+		return
+
+	if(!iszombie(owner))
+		old_species = owner.dna.species.type
+		owner.set_species(/datum/species/ghoul) //The player becomes a regular ghoul before they become a zombie ghoul to make sure the sprites work
+		owner.set_species(/datum/species/zombie/infectious/ghoul)
+
+	var/stand_up = (owner.stat == DEAD) || (owner.stat == UNCONSCIOUS)
+
+	//Fully heal the zombie's damage the first time they rise
+	owner.setToxLoss(0, 0)
+	owner.setOxyLoss(0, 0)
+	owner.heal_overall_damage(INFINITY, INFINITY, INFINITY, FALSE, FALSE, TRUE)
+
+	if(!owner.revive())
+		return
+
+	owner.grab_ghost()
+	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " staggers to [owner.p_their()] feet and" : ""] gains a ravenous hunger in [owner.p_their()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
+	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
+	owner.do_jitter_animation(living_transformation_time)
+	owner.Stun(living_transformation_time)
+	to_chat(owner, "<span class='alertalien'>You are now a ravenous ghoul! You claw and bite, turning unsuspecting wasters into monstrosities that help spread the infection.</span>")
+	to_chat(owner, "<span class='alertwarning'>You are now effectively a (zombie) feral ghoul. Do not try to help your former allies in any way, all you must do is consume!</span>")
+
