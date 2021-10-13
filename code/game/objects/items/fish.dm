@@ -22,7 +22,7 @@
 
 //butchering and other attack stuff goes here
 /obj/item/fishy/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/melee/onehanded/knife))
+	if(W.get_sharpness())
 		to_chat(user, "<span class='notice'>You begin to butcher [src]...</span>")
 		playsound(user.loc, 'sound/effects/butcher.ogg', 50, TRUE, -1)
 		if(!do_after(user, 3 SECONDS, target = src))
@@ -120,7 +120,7 @@
 
 /obj/item/fishyegg/lobster
 	name = "lobster fish egg"
-	icon_state = "lobster_eggs"
+	icon_state = "catfish_eggs"
 
 /obj/item/fishyegg/shrimp
 	name = "shrimp fish egg"
