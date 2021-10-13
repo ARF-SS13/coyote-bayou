@@ -29,11 +29,13 @@
 	var/stored_core_stability_delay = 0
 
 	var/stored_power = 0//Power to deploy per tick
+	var/datum/looping_sound/supermatter/soundloop //fortuna edit. adds reactor sounds
 
 /obj/machinery/power/am_control_unit/Initialize()
 	. = ..()
 	linked_shielding = list()
 	linked_cores = list()
+	soundloop = new(list(src), TRUE) //fortuna edit
 
 
 /obj/machinery/power/am_control_unit/Destroy()//Perhaps damage and run stability checks rather than just del on the others
@@ -71,13 +73,14 @@
 	return
 
 /obj/machinery/power/am_control_unit/proc/produce_power()
-	playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+	soundloop.mid_sounds = list('sound/machines/sm/loops/calm.ogg' = 1) //fortuna edit
+	//playsound(src.loc, 'sound/effects/bang.ogg', 25, 1) //fortuna edit
 	var/core_power = reported_core_efficiency//Effectively how much fuel we can safely deal with
 	if(core_power <= 0)
 		return 0//Something is wrong
 	var/core_damage = 0
 	var/fuel = fueljar.usefuel(fuel_injection)
-
+	soundloop.volume = clamp((50 + (core_power / 50)), 50, 100) //fortuna edit
 	stored_power = (fuel/core_power)*fuel*200000
 	//Now check if the cores could deal with it safely, this is done after so you can overload for more power if needed, still a bad idea
 	if(fuel > (2*core_power))//More fuel has been put in than the current cores can deal with
@@ -92,7 +95,9 @@
 		for(var/obj/machinery/am_shielding/AMS in linked_cores)
 			AMS.stability -= core_damage
 			AMS.check_stability(1)
-		playsound(src.loc, 'sound/effects/bang.ogg', 50, 1)
+		//playsound(src.loc, 'sound/effects/bang.ogg', 50, 1) //fortuna edit
+	CHECK_TICK
+
 	return
 
 
