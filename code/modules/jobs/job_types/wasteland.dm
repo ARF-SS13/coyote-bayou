@@ -275,7 +275,7 @@ Great Khan
 		GLOB.all_gangs |= GK
 		GK.add_member(H)
 		H.gang = GK
-	
+
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
 
@@ -615,6 +615,7 @@ Raider
 	/datum/outfit/loadout/settler,
 	/datum/outfit/loadout/warrior,
 	/datum/outfit/loadout/ncrcitizen,
+	/datum/outfit/loadout/legioncivilian,
 	/datum/outfit/loadout/wastelander_desert_ranger)
 
 /datum/outfit/job/wasteland/f13wastelander
@@ -739,6 +740,20 @@ Raider
 	l_hand = /obj/item/shield/riot/buckler/stop
 	backpack_contents = list(
 		/obj/item/melee/onehanded/machete/scrapsabre = 1,
+		)
+
+/datum/outfit/loadout/legioncivilian
+	name = "Legion Civilian"
+	uniform = /obj/item/clothing/under/f13/doctor
+	shoes = /obj/item/clothing/shoes/f13/fancy
+	suit = /obj/item/clothing/suit/curator
+	head = /obj/item/clothing/head/scarecrow_hat
+	gloves = /obj/item/clothing/gloves/color/black
+	glasses = /obj/item/clothing/glasses/welding
+	id = /obj/item/card/id/dogtag/town/legion
+	l_hand = /obj/item/shield/riot/buckler
+	backpack_contents = list(
+		/obj/item/melee/onehanded/machete = 1,
 		)
 
 /datum/outfit/loadout/ncrcitizen
@@ -981,7 +996,7 @@ Raider
 		GLOB.all_gangs |= DM
 		DM.add_member(H)
 		H.gang = DM
-	
+
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
 
 /datum/outfit/loadout/hitman
