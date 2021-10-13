@@ -1,7 +1,7 @@
 ## Fallout Fortuna
 Based and maintained from Citadel Station.
 
-[![Build Status](https://github.com/DesertRose2/desertrose/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://github.com/DesertRose2/desertrose/actions) 
+[![CI Suite](https://github.com/FortunaSS13/Fortuna/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://github.com/FortunaSS13/Fortuna/actions/workflows/ci_suite.yml)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/FortunaSS13/Fortuna.svg)](http://isitmaintained.com/project/FortunaSS13/Fortuna "Percentage of issues still open")
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/FortunaSS13/Fortuna.svg)](http://isitmaintained.com/project/FortunaSS13/Fortuna "Average time to resolve an issue")
 
