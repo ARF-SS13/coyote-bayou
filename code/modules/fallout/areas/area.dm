@@ -31,6 +31,9 @@
 	environment = 19
 	grow_chance = 45
 
+/area/f13/wasteland/event
+	name = "Wasteland (Event)"
+
 /area/f13/forest
 	name = "Forest"
 	icon_state = "forest"

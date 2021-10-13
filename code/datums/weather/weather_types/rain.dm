@@ -31,6 +31,13 @@
 	var/datum/looping_sound/rain_sounds/sound_ao = new(list(), FALSE, TRUE)
 	var/datum/looping_sound/indoor_rain_sounds/sound_ai = new(list(), FALSE, TRUE)
 
+/datum/weather/rain/eventarea
+	area_types = list(/area/f13/wasteland/event)
+	probability = 0
+	target_trait = ZTRAIT_AWAY
+	weather_duration_lower = 18000
+	weather_duration_upper = 18000
+
 /datum/weather/rain/weather_act(mob/living/L)
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
