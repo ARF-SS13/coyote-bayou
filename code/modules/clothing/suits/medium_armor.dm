@@ -51,6 +51,13 @@
 	item_state = "combat_chestpiece"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armored/medium/steelbib
+	name = "steel breastplate"
+	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
+	icon_state = "steel_bib"
+	item_state = "steel_bib"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 30, "energy" = 10, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
+	slowdown = 0.11
 
 // Combat armor
 /obj/item/clothing/suit/armored/medium/combat
@@ -371,7 +378,20 @@
 	desc = "A trenchcoat which does a poor job at hiding the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 35,  "energy" = 40, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10)
+	
+/obj/item/clothing/suit/armored/medium/lawcoat/commissioner
+	name = "commissioner's jacket"
+	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
+	icon_state = "warden_alt"
+	item_state = "armor"
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 30,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/holdout
 
+/obj/item/clothing/suit/armored/medium/steelbib/town
+	name = "steel breastplate"
+	desc = "a steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
+	armor = list("melee" = 30, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
+	slowdown = 0.11
 
 ///////////////
 // WAYFARERS //
