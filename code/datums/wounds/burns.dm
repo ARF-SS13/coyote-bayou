@@ -31,7 +31,6 @@
 /datum/wound/burn/handle_process()
 	. = ..()
 	if(strikes_to_lose_limb == 0)
-		victim.adjustToxLoss(0.5)
 		if(prob(1))
 			victim.visible_message("<span class='danger'>The infection on the remnants of [victim]'s [limb.name] shift and bubble nauseatingly!</span>", "<span class='warning'>You can feel the infection on the remnants of your [limb.name] coursing through your veins!</span>")
 		return
@@ -97,6 +96,10 @@
 			else if(prob(4))
 				victim.adjustToxLoss(1)
 		if(WOUND_INFECTION_SEPTIC to INFINITY)
+			victim.adjustToxLoss(0.5) //When the infection is septic, toxin damage isn't a roll of the dice anymore, it's happening.
+			if(limb.body_zone == BODY_ZONE_HEAD || limb.body_zone == BODY_ZONE_CHEST) //These limbs will never be permanently destroyed, but they've got vital organs. When they reach septic level, they deal more tox damage.
+				victim.adjustToxLoss(1)
+				return
 			if(prob(infestation))
 				switch(strikes_to_lose_limb)
 					if(3 to INFINITY)
