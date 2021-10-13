@@ -16,6 +16,7 @@
 	obj_integrity = 80
 	max_integrity = 80
 	var/state = FALSE
+	layer = 10
 
 /obj/item/bottlecap_mine/attack_self(mob/user as mob)
 	toggle_activate(user)
@@ -41,7 +42,7 @@
 			STOP_PROCESSING(SSobj, src)
 
 /obj/item/bottlecap_mine/proc/boom()
-	explosion(src.loc,1,2,3, flame_range = 6)
+	explosion(src.loc,0,2,3, flame_range = 6)
 
 /obj/item/bottlecap_mine/process()
 	if(state != ACTIVE)
