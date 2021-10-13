@@ -819,8 +819,8 @@
 /obj/item/clothing/head/soft/f13/baseball
 	name = "baseball cap"
 	desc = "(I) A type of soft cap with a rounded crown and a stiff peak projecting out the front."
-	icon_state = "baseball"
-	item_color = "baseball"
+	icon_state = "baseballsoft"
+	soft_type = "baseball"
 
 /obj/item/clothing/head/soft/f13/utility
 	name = "grey utility cover"
