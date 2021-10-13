@@ -10,6 +10,17 @@
 	var/footstep_type
 	///This can be a list OR a soundfile OR null. Determines whatever sound gets played.
 	var/footstep_sounds
+	//fortuna edit. power armor sound list
+	var/powerArmorSounds = list('modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_01.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_02.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_03.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_04.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_05.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_06.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_01.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_02.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_03.ogg',
+	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_04.ogg')
 
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
 	if(!isliving(parent))
@@ -57,6 +68,7 @@
 		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
 			return
 		if(C.m_intent == MOVE_INTENT_WALK)
+			powerarmorcheck() //fortuna edit. power armor walking sounds
 			return
 	steps++
 
@@ -96,6 +108,7 @@
 	if(!T)
 		return
 	var/mob/living/carbon/human/H = parent
+	powerarmorcheck() //fortuna edit. power armor sounds
 	var/list/L = GLOB.barefootstep
 	var/turf_footstep = T.barefootstep
 	var/special = FALSE
@@ -136,3 +149,15 @@
 			L[turf_footstep][2] * volume,
 			TRUE,
 			L[turf_footstep][3] + e_range)
+//fortuna edit. power armor sound check proc
+/datum/component/footstep/proc/powerarmorcheck()
+	var/mob/living/carbon/human/P = parent
+	var/turf/open/T = get_turf(P)
+	var/powerArmor = (P.wear_suit && istype(P.wear_suit,/obj/item/clothing/suit/armor/f13/power_armor))
+	if(powerArmor)
+		if(P.m_intent == MOVE_INTENT_WALK)
+			if(prob(25))
+				playsound(T, pick(powerArmorSounds), 25, TRUE)
+				return
+		else
+			playsound(T, pick(powerArmorSounds), 50, TRUE)
