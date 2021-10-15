@@ -63,64 +63,6 @@ jobs:
           python3 tools/ci/template_dm_generator.py
           tools/build/build dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
-  auxtools_tg:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Build Auxtools_tg
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: 'willox/auxtools_tg'
-          ref: '83b317412033f6ac28ac6c1ffbb08ef3d524202e'
-          path: 'auxtools_tg'
-
-      - name: Cache cargo registry
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/registry
-          key: auxtools_tg-registry-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Cache cargo index
-        uses: actions/cache@v2
-        with:
-          path: ~/.cargo/git
-          key: auxtools_tg-index-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Cache cargo build
-        id: auxtools_tg-cache
-        uses: actions/cache@v2
-        with:
-          path: auxtools_tg/target
-          key: auxtools_tg-build-target-${{ hashFiles('auxtools_tg/Cargo.lock') }}
-
-      - name: Install Ubuntu Deps
-        if: steps.auxtools_tg-cache.outputs.cache-hit != 'true'
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt-get update
-          sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
-
-      - uses: actions-rs/toolchain@v1
-        if: steps.auxtools_tg-cache.outputs.cache-hit != 'true'
-        with:
-          profile: minimal
-          toolchain: ${{env.toolchain}}
-          target: ${{env.target}}
-          override: true
-
-      - name: Build
-        if: steps.auxtools_tg-cache.outputs.cache-hit != 'true'
-        run: |
-          cargo build --manifest-path auxtools_tg/Cargo.toml --target=${{env.target}} --release --verbose
-          ldd auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
-      
-      - name: Upload libauxtools_tg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: libauxtools_tg
-          path: auxtools_tg/target/${{env.target}}/release/libauxtools_tg.so
-  
   auxmos:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Build Auxmos

@@ -28,7 +28,6 @@ cp -r icons/runtime/* $1/icons/runtime/
 cp -r sound/runtime/* $1/sound/runtime/
 cp -r strings/* $1/strings/
 cp *auxmos.* $1/ || true
-cp *auxtools_tg.* $1/ || true
 cp -r tgui/public/* $1/tgui/public/
 cp -r tgui/packages/tgfont/dist/* $1/tgui/packages/tgfont/dist/
 
