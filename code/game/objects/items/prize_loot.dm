@@ -4,12 +4,6 @@
 	icon = 'icons/obj/fallout/lockbox.dmi'
 	icon_state = "basic_lockpick"
 
-/obj/item/lockpick_set/advanced
-	icon_state = "advanced_lockpick"
-
-/obj/item/lockpick_set/master
-	icon_state = "master_lockpick"
-
 /obj/item/locked_box
 	name = "locked box"
 	desc = "An object that contains objects that may be useful."
@@ -115,7 +109,6 @@
 	else if(istype(W, /obj/item/lockpick_set))
 		if(!locked)
 			return
-		var/obj/item/lockpick_set/lockpickW = W
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
 		var/success_after_skill = min((user.client.prefs.special_l * 5) + success_after_tier, 100) //the higher the persons luck, the better, up to a max of 100, with 50 added
 		if(!prob(success_after_skill))

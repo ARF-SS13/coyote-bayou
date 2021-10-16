@@ -120,22 +120,3 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/lockpick_advanced
-	name = "Advanced Lockpick Set"
-	result = /obj/item/lockpick_set/advanced
-	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_TOOL
-
-/datum/crafting_recipe/lockpick_master
-	name = "Master Lockpick Set"
-	result = /obj/item/lockpick_set/master
-	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/sheet/mineral/diamond = 5)
-	tools = list(TOOL_WORKBENCH)
-	category = CAT_CRAFTING
-	subcategory = CAT_TOOL
