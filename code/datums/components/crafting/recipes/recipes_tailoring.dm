@@ -141,6 +141,17 @@
 	subcategory = CAT_ARMOR
 	always_availible = FALSE
 
+/datum/crafting_recipe/ncrsalvagedhelmetconversion
+	name = "NCR salvaged T-45b helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
+	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 20
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_availible = FALSE
+
+
 /datum/crafting_recipe/ncrcombatarmor
 	name = "NCR combat armor"
 	result = /obj/item/clothing/suit/armor/f13/combat/ncr
