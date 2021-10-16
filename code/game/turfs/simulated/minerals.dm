@@ -13,7 +13,7 @@
 	density = TRUE
 	blocks_air = 1
 	layer = EDGED_TURF_LAYER
-
+	var/indestructible = 0 //fortuna edit
 	initial_temperature = 293.15
 	// base_icon_state = "smoothrocks"
 	smooth_icon = 'icons/turf/smoothrocks.dmi'
@@ -51,6 +51,8 @@
 
 
 /turf/closed/mineral/attackby(obj/item/pickaxe/I, mob/user, params)
+	if(indestructible) //fortuna edit. RNG rocks that dont budge
+		return
 	var/stored_dir = user.dir
 	if (!user.IsAdvancedToolUser())
 		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
@@ -83,6 +85,8 @@
 		return attack_hand(user)
 
 /turf/closed/mineral/proc/gets_drilled()
+	if(indestructible) //fortuna edit. RNG rocks that dont budge
+		return
 	if (mineralType && (mineralAmt > 0))
 		new mineralType(src, mineralAmt)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
@@ -109,6 +113,8 @@
 
 /turf/closed/mineral/Bumped(atom/movable/AM)
 	..()
+	if(indestructible) //fortuna edit. RNG rocks that dont budge
+		return
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		var/obj/item/I = H.is_holding_tool_quality(TOOL_MINING)
@@ -242,7 +248,7 @@
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
 		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40, /turf/closed/mineral/lead = 30,
-		/*/turf/closed/mineral/gibtonite = 2, *//turf/closed/mineral/bscrystal = 1)
+		/*/turf/closed/mineral/gibtonite = 2, *//turf/closed/mineral/bscrystal = 1, /turf/closed/mineral/indestructible = 50) //fortuna edit, indestructible rocks added to chance list
 
 /turf/closed/mineral/random/low_chance/earth_like
 	icon_state = "rock_lowchance_oxy"
@@ -883,3 +889,23 @@
 
 /turf/closed/mineral/strong/ex_act(severity, target)
 	return
+
+//fortuna edit start. adds an indestructible rock type to the ore generator
+// as well as adjusting the rock around faction bases to let RNG decide if there is an exploitable opening or not.
+// some rounds may have exploitable areas everywhere, some may have none anywhere. utter chaos.
+/turf/closed/mineral/indestructible
+	name = "dense rock"
+	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
+	spreadChance = 90
+	spread = 10
+	indestructible = 1
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	canSmoothWith = list (/turf/closed/mineral)
+
+/turf/closed/mineral/random/protective_area
+	mineralChance = 100
+	mineralSpawnChanceList = list(
+		/turf/closed/mineral/random/low_chance = 5, /turf/closed/mineral/indestructible = 95)
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	canSmoothWith = list (/turf/closed/mineral)
+//fortuna edit end

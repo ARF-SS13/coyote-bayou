@@ -38,6 +38,8 @@
 	. = ..()
 	if(!.)
 		user.do_attack_animation(src)
+		if(istype(W, /obj/item/pickaxe)) //stops pickaxes from running needless attack checks on our baseturf
+			return
 		if(W.force > hardness/3 && !unbreakable)
 			take_damage(W.force/10)
 			to_chat(user, text("<span class='warning'>You smash the wall with [W].</span>"))

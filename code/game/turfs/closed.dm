@@ -152,7 +152,7 @@
 /turf/closed/indestructible/rock
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
-	icon = 'icons/turf/mining.dmi'
+	icon = 'icons/fallout/turfs/mining.dmi' //fortuna edit. fixing icon path.
 	icon_state = "rock"
 
 /turf/closed/indestructible/f13vaultrusted
