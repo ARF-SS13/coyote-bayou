@@ -85,6 +85,12 @@ export const MESSAGE_TYPES = [
     selector: '.ooc, .adminooc, .oocplain, .adminobserverooc',
   },
   {
+    type: 'looc',
+    name: 'LOOC',
+    description: 'Local Out of Character message.',
+    selector: '.filter_looc, .looc',
+  },
+  {
     type: MESSAGE_TYPE_ADMINPM,
     name: 'Admin PMs',
     description: 'Messages to/from admins (adminhelp)',
