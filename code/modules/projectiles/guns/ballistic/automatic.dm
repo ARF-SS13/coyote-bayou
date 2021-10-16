@@ -111,14 +111,14 @@
 /obj/item/gun/ballistic/automatic/proc/enable_burst()
 	burst_size = initial(burst_size)
 	if(auto_sear)
-		burst_size = 1 + initial(burst_size)
+		burst_size += initial(burst_size)
 	if(burst_improvement)
-		burst_size = 1 + initial(burst_size)
+		burst_size += initial(burst_size)
 	if(burst_improvement && auto_sear)
-		burst_size = 2 + initial(burst_size)
+		burst_size += 1 + initial(burst_size)
 
 /obj/item/gun/ballistic/automatic/proc/disable_burst()
-	burst_size = 1
+	burst_size = initial(burst_size)
 
 /obj/item/gun/ballistic/automatic/can_shoot()
 	return get_ammo()
@@ -227,6 +227,7 @@
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+			enable_burst()
 		if(1)
 			select = 0
 			burst_size = 1
@@ -272,6 +273,7 @@
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+			enable_burst()
 		if(1)
 			select = 0
 			burst_size = 1
@@ -311,6 +313,7 @@
 			recoil = 0.1
 			weapon_weight = WEAPON_HEAVY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+			enable_burst()
 		if(1)
 			select = 0
 			burst_size = 1
