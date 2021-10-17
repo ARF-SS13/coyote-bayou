@@ -74,7 +74,7 @@ else:
 
 write_cl['delete-after'] = True
 
-with open(Path.cwd().joinpath("tools/changelog/tags.yml")) as file:
+with open(Path.cwd().joinpath("tools/cl/tags.yml")) as file:
     tags = yaml.safe_load(file)
 
 write_cl['changes'] = []
