@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0 # Otherwise, we will fail to push refs
           ref: master
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Python setup
         uses: actions/setup-python@3105fb18c05ddd93efea5f9e0bef7a03a6e9e7df
         with:
