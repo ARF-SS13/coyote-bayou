@@ -136,7 +136,7 @@
 	if(abandoned)
 		var/outcome = rand(1,100)
 		switch(outcome)
-			if(1 to 9)
+/*			if(1 to 9) // Fortuna removal. No idea why this is a thing, randomly replacing airlocks with walls?
 				var/turf/here = get_turf(src)
 				for(var/turf/closed/T in range(2, src))
 					here.PlaceOnTop(T.type)
@@ -144,7 +144,7 @@
 					return
 				here.PlaceOnTop(/turf/closed/wall)
 				qdel(src)
-				return
+				return */
 			if(9 to 11)
 				lights = FALSE
 				locked = TRUE
