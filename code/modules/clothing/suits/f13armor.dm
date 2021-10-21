@@ -121,8 +121,7 @@
 	desc = "(III*) a steel breastplate, inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
-	body_parts_covered = CHEST|GROIN
-	armor = list("tier" = 3, "linebullet" = 30, "linemelee" = 30, "energy" = 30, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, "energy" = 30, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.05
 	strip_delay = 5
 

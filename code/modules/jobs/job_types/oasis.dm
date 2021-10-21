@@ -83,10 +83,15 @@ Mayor
 	supervisors = "The Mayor"
 	description = "You are the mayor's assistant, you help them with anything and everything they require and make sure trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings. An efficient and smooth running town means a happy mayor."
 	selection_color = "#d7b088"
-
 	exp_requirements = 800
 
 	outfit = /datum/outfit/job/den/f13secretary
+	
+	loadout_options = list(
+	/datum/outfit/loadout/pr,
+	/datum/outfit/loadout/pw,
+	)
+	
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
@@ -110,6 +115,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	r_hand = /obj/item/storage/briefcase/secretary
+	l_hand = /obj/item/book/granter/trait/selection
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = 		/obj/item/clothing/shoes/f13/fancy
@@ -120,6 +126,26 @@ Mayor
 		/obj/item/pda = 1,
 		)
 
+/datum/outfit/loadout/pr
+	name = "Public Relations"
+	backpack_contents = list(
+		/obj/item/megaphone = 1,
+		/obj/item/reagent_containers/food/snacks/store/cake/birthday = 1,
+		/obj/item/clothing/accessory/medal/ribbon = 1,
+		/obj/item/clothing/gloves/color/latex/nitrile = 1,
+		/obj/item/camera = 1,
+		/obj/item/storage/crayons = 1,
+		)
+		
+/datum/outfit/loadout/pw
+	name = "Public Works"
+	backpack_contents = list(
+		/obj/item/clothing/head/hardhat = 1,
+		/obj/item/clothing/suit/hazardvest = 1,
+		/obj/item/stack/sheet/metal/twenty = 1,
+		/obj/item/stack/sheet/glass/ten = 1,
+		/obj/item/stack/sheet/mineral/concrete/ten = 1
+		)
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13sheriff
@@ -562,10 +588,10 @@ Mayor
 
 	loadout_options = list(
 		/datum/outfit/loadout/provisioner,
-		/datum/outfit/loadout/bum,
-		/datum/outfit/loadout/properlady,
-		/datum/outfit/loadout/propergent,
-		/datum/outfit/loadout/hombre,
+		/datum/outfit/loadout/groundskeeper,
+		/datum/outfit/loadout/artisan,
+		/datum/outfit/loadout/outdoorsman,
+		/datum/outfit/loadout/militia,
 		/datum/outfit/loadout/singer,
 	)
 	access = list(ACCESS_BAR)
@@ -610,50 +636,47 @@ Mayor
 	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
 	)
 
-/datum/outfit/loadout/bum
-	name = "Bum"
+/datum/outfit/loadout/groundskeeper
+	name = "groundskeeper"
 	mask = /obj/item/clothing/mask/facewrap
-	neck = /obj/item/clothing/neck/mantle/poncho
-	uniform = /obj/item/clothing/under/f13/rag
-	gloves = /obj/item/clothing/gloves/f13/handwraps
-	shoes = /obj/item/clothing/shoes/f13/rag
-	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
+	belt = /obj/item/storage/belt
+	suit = /obj/item/clothing/under/f13/mechanic
+	gloves = /obj/item/clothing/gloves/color/yellow
+	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/spray/cleaner = 1,
 	/obj/item/gun/ballistic/revolver/hobo/piperifle = 1,
-	/obj/item/ammo_box/a556/stripper = 1,
-	/obj/item/twohanded/spear/scrapspear = 1,
+	/obj/item/ammo_box/a556/stripper = 2,
+
 	)
 
-/datum/outfit/loadout/properlady
-	name = "Proper Lady"
-	head = /obj/item/clothing/head/beret/black
-	suit = /obj/item/clothing/under/sailordress
-	gloves = /obj/item/clothing/gloves/f13/lace
-	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/champagne = 1,
-	/obj/item/gun/ballistic/revolver/police = 1,
-	/obj/item/ammo_box/a357 = 2,
+/datum/outfit/loadout/artisan
+	name = "Artisan"
+	glasses = /obj/item/clothing/glasses/welding
+	suit = /obj/item/clothing/under/f13/petrochico
+	belt = /obj/item/storage/belt/utility
+	gloves = /obj/item/clothing/gloves/f13/blacksmith
+	backpack_contents = list(/obj/item/twohanded/sledgehammer = 1,
+	/obj/item/stack/sheet/metal/twenty = 1,
 	)
 
-/datum/outfit/loadout/propergent
-	name = "Respectable Gent"
+/datum/outfit/loadout/outdoorsman
+	name = "outdoorsman"
 	head = /obj/item/clothing/head/f13/beaver
 	suit = /obj/item/clothing/suit/f13/cowboybvest
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
-	backpack_contents = list(/obj/item/storage/box/matches = 1,
+	backpack_contents = list(/obj/item/fishingrod = 1,
 	/obj/item/storage/fancy/cigarettes/cigars = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1,
-	/obj/item/ammo_box/shotgun/improvised = 2,
+	/obj/item/ammo_box/shotgun/buck = 2,
 	)
 
-/datum/outfit/loadout/hombre
-	name = "Hombre"
-	head = /obj/item/clothing/head/f13/cowboy
-	suit = /obj/item/clothing/suit/f13/duster
-	uniform = /obj/item/clothing/under/f13/cowboyb
+/datum/outfit/loadout/militia
+	name = "Militia"
+	head = /obj/item/clothing/head/helmet/armyhelmet
+	suit = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	uniform = /obj/item/clothing/under/f13/mercc
 	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	gloves = /obj/item/clothing/gloves/f13/leather
-	shoes = /obj/item/clothing/shoes/f13/cowboy
 	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
 	)
 /*
@@ -679,7 +702,8 @@ Mayor
 	/obj/item/clothing/under/suit/black_really = 1,
 	/obj/item/clothing/gloves/evening = 1,
 	/obj/item/clothing/gloves/color/white = 1,
-	/obj/item/melee/unarmed/brass = 1,
+	/obj/item/gun/ballistic/revolver/police = 1,
+	/obj/item/ammo_box/a357 = 1,
 	)
 
 /*----------------------------------------------------------------
