@@ -247,7 +247,7 @@ Great Khan
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	id = /obj/item/card/id/khantattoo
-	ears = /obj/item/radio/headset
+	ears = /obj/item/radio/headset/headset_khans
 	belt = /obj/item/melee/onehanded/machete
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer

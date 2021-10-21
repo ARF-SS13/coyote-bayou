@@ -73,6 +73,10 @@
 #define RADIO_KEY_LEGION "l"
 #define RADIO_TOKEN_LEGION ":l"
 
+#define RADIO_CHANNEL_KHANS "Khans"
+#define RADIO_KEY_KHANS "j"
+#define RADIO_TOKEN_KHANS ":j"
+
 #define RADIO_CHANNEL_DEN "Den"
 #define RADIO_KEY_DEN "j"
 #define RADIO_TOKEN_DEN ":j"
@@ -99,9 +103,10 @@
 #define FREQ_BOS 1365 //BOS
 #define FREQ_ENCLAVE 1367 //ENCLAVE
 #define FREQ_TOWN 1369 //TOWN
-#define FREQ_LEGION 1371 //LEGIO
+#define FREQ_LEGION 1371 //LEGION
 #define FREQ_RANGER 1373 //Ranger
 #define FREQ_DEN 1375 //Den
+#define FREQ_KHANS 1375 //Khans
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435
