@@ -685,7 +685,7 @@ Mayor
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
-/datum/job/wasteland/f13detective
+/datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
 	total_positions = 1
@@ -693,18 +693,18 @@ Mayor
 	description = "As a Detective you are a private eye who assists clients to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the valley, but for finding answers. Your life is already over, make the ending mean something."
 	supervisors = "paying clients"
 	selection_color = "#dcba97"
-	outfit = /datum/outfit/job/wasteland/f13detective
+	outfit = /datum/outfit/job/oasis/f13detective
 
 	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/wasteland/f13detective,
+			/datum/job/oasis/f13detective,
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/wasteland/f13detective,
+			/datum/job/oasis/f13detective,
 			/datum/job/wasteland/f13mobboss,
 		),
 		/datum/matchmaking_pref/mentor = list(
@@ -713,9 +713,9 @@ Mayor
 	)
 
 
-/datum/outfit/job/wasteland/f13detective
+/datum/outfit/job/oasis/f13detective
 	name = "Detective"
-	jobtype = /datum/job/wasteland/f13detective
+	jobtype = /datum/job/oasis/f13detective
 	suit = /obj/item/clothing/suit/det_suit/grey
 	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/detectivealt
