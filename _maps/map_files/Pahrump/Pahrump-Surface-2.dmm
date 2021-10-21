@@ -9777,6 +9777,10 @@
 /obj/item/radio/headset/headset_legion,
 /obj/item/radio/headset/headset_legion,
 /obj/item/radio/headset/headset_legion,
+/obj/machinery/radioterminal/legion{
+	layer = 4;
+	pixel_y = 29
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "ezx" = (
@@ -48414,6 +48418,10 @@
 /obj/effect/landmark/start/f13/ncrlieutenant,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
+	},
+/obj/machinery/radioterminal/ncr{
+	pixel_x = -18;
+	pixel_y = 24
 	},
 /turf/open/floor/carpet,
 /area/f13/ncr)

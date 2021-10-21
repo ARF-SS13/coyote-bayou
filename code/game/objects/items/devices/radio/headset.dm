@@ -298,6 +298,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ncr
+	linked_faction = FACTION_NCR
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_ncr/ComponentInitialize()
 	. = ..()
@@ -308,6 +310,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ranger
+	linked_faction = FACTION_NCR
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_ranger/ComponentInitialize()
 	. = ..()
@@ -319,6 +323,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_ranger
+	linked_faction = FACTION_NCR
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_ncr_com/ComponentInitialize()
 	. = ..()
@@ -330,6 +336,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "sec_headset"
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_legion
+	linked_faction = FACTION_LEGION
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_legion/ComponentInitialize()
 	. = ..()
@@ -340,6 +348,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q."
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_bos
+	linked_faction = FACTION_BROTHERHOOD
+	factionized = TRUE
 
 /obj/item/radio/headset/headset_bos/ComponentInitialize()
 	. = ..()
@@ -428,7 +438,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 			to_chat(user,"<span class='notice'>You upgrade [src].</span>")
 			bowmanize()
 			qdel(W)
-	if(istype(W, /obj/item/screwdriver))
+	if(istype(W, /obj/item/screwdriver) && !factionized) //Fortuna edit. Radio management
 		if(keyslot || keyslot2)
 			for(var/ch_name in channels)
 				SSradio.remove_object(src, GLOB.radiochannels[ch_name])

@@ -10137,7 +10137,9 @@
 	},
 /area/f13/den)
 "fTM" = (
-/obj/structure/rack,
+/obj/structure/rack{
+	layer = 2.6
+	},
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
@@ -12028,8 +12030,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/radioterminal/bos{
+	dir = 8;
+	pixel_x = 27;
+	pixel_y = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
@@ -35232,6 +35236,21 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
+"yce" = (
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/machinery/light/small{
+	dir = 4;
+	layer = 2.7;
+	pixel_y = 17
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/brotherhood/armory)
 "ycl" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -100476,7 +100495,7 @@ gsd
 eEL
 flq
 fTM
-gsd
+yce
 gUm
 sNW
 dMW

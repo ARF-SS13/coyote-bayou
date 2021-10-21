@@ -145,8 +145,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	spawn_positions = 0
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator
 	display_order = JOB_DISPLAY_ORDER_ORATOR
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	// 10mm Revolver, Spatha
 	name = "Orator"
@@ -199,8 +199,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	exp_requirements = 1500
 
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
 		/datum/outfit/loadout/palacent,		// M1919, military ripper
@@ -294,8 +294,8 @@ commented out pending rework*/
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decanvet
 	exp_requirements = 900
 
-	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS)
+	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
 		/datum/outfit/loadout/decvetfront,	// Carl Gustaf, Fireaxe, Smoke bomb, slightly better helmet
@@ -363,6 +363,8 @@ commented out pending rework*/
 	supervisors = "the Veteran Decanus and the Centurion"
 	display_order = JOB_DISPLAY_ORDER_DECAN
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
+	access = list(ACCESS_LEGION, ACCESS_LEGION_COMMAND)
+	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
 	exp_requirements = 720
 
 	loadout_options = list(

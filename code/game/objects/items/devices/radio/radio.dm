@@ -42,6 +42,13 @@
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
 
+	//fortuna addition start. radio management.
+	var/kill_switched = FALSE // If true, the radio is essentially useless.
+	var/factionized = FALSE
+	var/linked_faction = FALSE // Which faction the radio is linked to.
+	var/mob/living/carbon/linked_mob = null // Which mob the radio is checked out to.
+	//fortuna addition end. radio management.
+
 /obj/item/radio/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
@@ -79,6 +86,16 @@
 	recalculateChannels()
 
 /obj/item/radio/Destroy()
+	if(factionized) //fortuna addition. radio management.
+		linked_mob = null
+		LAZYREMOVE(GLOB.faction_radios, src)
+		switch(linked_faction)
+			if(FACTION_NCR)
+				LAZYREMOVE(GLOB.ncr_radios, src)
+			if(FACTION_LEGION)
+				LAZYREMOVE(GLOB.legion_radios, src)
+			if(FACTION_BROTHERHOOD)
+				LAZYREMOVE(GLOB.bos_radios, src)
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
 	QDEL_NULL(keyslot)
@@ -95,6 +112,19 @@
 
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
+	Factionize() //add our radio to the factionized list through a proc
+
+//fortuna addition. radio management proc that allows us to re-add manageable radios after being killswitched or upon creation
+/obj/item/radio/proc/Factionize()
+	if(factionized)
+		LAZYADD(GLOB.faction_radios, src)
+		switch(linked_faction)
+			if(FACTION_NCR)
+				LAZYADD(GLOB.ncr_radios, src)
+			if(FACTION_LEGION)
+				LAZYADD(GLOB.legion_radios, src)
+			if(FACTION_BROTHERHOOD)
+				LAZYADD(GLOB.bos_radios, src)
 
 /obj/item/radio/ComponentInitialize()
 	. = ..()
@@ -109,6 +139,11 @@
 
 /obj/item/radio/ui_state(mob/user)
 	return GLOB.inventory_state
+
+/obj/item/radio/proc/kill_switch() //fortuna addition. radio management
+	playsound(src, 'sound/machines/buzz-sigh.ogg', 100, 1)
+	kill_switched = TRUE
+	linked_mob = null
 
 /obj/item/radio/ui_interact(mob/user, datum/tgui/ui, datum/ui_state/state)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -202,6 +237,12 @@
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
 	if(!on)
 		return // the device has to be on
+	//Fortuna edit start. Radio management
+	if(kill_switched)
+		return
+	if(factionized && !linked_mob)
+		return
+	//Fortuna edit end. Radio management
 	if(!M || !message)
 		return
 	if(wires.is_cut(WIRE_TX))  // Permacell and otherwise tampered-with radios
@@ -302,6 +343,12 @@
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
+	//Fortuna edit start. Radio management
+	if(kill_switched)
+		return FALSE
+	if(factionized && !linked_mob)
+		return
+	//Fortuna edit end. Radio management
 	if (freq == FREQ_SYNDICATE && !syndie)
 		return FALSE
 	if (freq == FREQ_CENTCOM)
@@ -328,6 +375,14 @@
 		. += "<span class='notice'>It can be attached and modified.</span>"
 	else
 		. += "<span class='notice'>It cannot be modified or attached.</span>"
+	//Fortuna edit start. Radio management
+	if(kill_switched)
+		. += span_warning("The radio has been disabled remotely and no longer functions!")
+	if(linked_faction)
+		. += span_notice("The radio is linked to [linked_faction]!")
+	if(factionized && !linked_mob && !kill_switched)
+		. += span_warning("This radio will not work without being checked-out at a radio terminal belonging to [linked_faction] first!")
+	//Fortuna edit end. Radio management
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
