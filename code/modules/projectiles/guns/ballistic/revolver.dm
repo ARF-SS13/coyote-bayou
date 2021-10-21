@@ -258,10 +258,11 @@
 		if(0)
 			select += 1
 			burst_size = 3 //fan the hammer
-			spread = 15
+			spread = 25
 			extra_damage = 0
 			extra_penetration = 0
-			fire_delay = 1
+			fire_delay = 6
+			weapon_weight = WEAPON_HEAVY //fan the hammer requires two hands
 			to_chat(user, "<span class='notice'>You prepare to fan the hammer for a rapid burst of shots.</span>")
 		if(1)
 			select = 0
@@ -270,6 +271,7 @@
 			extra_damage = 15
 			extra_penetration = 0.1
 			fire_delay = 7
+			weapon_weight = WEAPON_LIGHT
 			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
 	update_icon()
 
