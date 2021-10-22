@@ -432,6 +432,7 @@ Raider
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_LONGPORKLOVER, src)
 
 	H.social_faction = FACTION_RAIDERS
 	add_verb(H, /mob/living/proc/creategang)
