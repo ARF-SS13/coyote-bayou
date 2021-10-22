@@ -36,7 +36,6 @@
 		/obj/item/toy/windupToolbox = ARCADE_WEIGHT_TRICK,
 
 		/mob/living/simple_animal/bot/secbot/grievous/toy = ARCADE_WEIGHT_RARE,
-		/obj/item/clothing/mask/facehugger/toy = ARCADE_WEIGHT_RARE,
 		/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted = ARCADE_WEIGHT_TRICK,
 		/obj/item/hot_potato/harmless/toy = ARCADE_WEIGHT_RARE,
 		/obj/item/dualsaber/toy = ARCADE_WEIGHT_RARE,
