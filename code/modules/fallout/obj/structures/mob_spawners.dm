@@ -318,3 +318,10 @@
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul/zombie = 5, 
 					/mob/living/simple_animal/hostile/ghoul/zombie/reaver = 3, 
 					/mob/living/simple_animal/hostile/ghoul/zombie/glowing = 1)
+
+/obj/structure/nest/tunneler
+	name = "tunneler tunnel"
+	desc = "A tunnel which leads to an underground network of even more tunnels, made by the dangerous tunnelers."
+	max_mobs = 5
+	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
+	spawn_time = 20 SECONDS

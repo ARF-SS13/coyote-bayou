@@ -53,16 +53,27 @@
 	icon_state = "tunneler"
 	icon_living = "tunneler"
 	icon_dead = "tunneler_dead"
-	health = 120
-	maxHealth = 120
-	speed = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 25
+	robust_searching = TRUE
+	stat_attack = UNCONSCIOUS
+	health = 250
+	maxHealth = 250
+	speed = -1
+	melee_damage_lower = 35
+	melee_damage_upper = 40
+	armour_penetration = 0.25
+	obj_damage = 150
+	see_in_dark = 8
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = -1, CLONE = 0, STAMINA = 0, OXY = 0)
 	unsuitable_atmos_damage = 5
 	faction = list("tunneler")
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/bone = 1)
+	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
+
+/mob/living/simple_animal/hostile/trog/tunneler/Aggro()
+	..()
+	summon_backup(15)
 
 /mob/living/simple_animal/hostile/trog/tunneler/AttackingTarget()
 	. = ..()

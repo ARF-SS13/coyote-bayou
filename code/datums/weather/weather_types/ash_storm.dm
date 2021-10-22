@@ -115,3 +115,35 @@
 	aesthetic = TRUE
 
 	probability = 10
+
+/datum/weather/ash_storm/dust_event
+	name = "toxic cloud"
+	desc = "A mysterious red cloud, incredibly dangerous to most living things."
+
+	telegraph_message = "<span class='boldwarning'>On the horizon, a thick red cloud can be seen approaching the area. It is unlike anything you've ever seen before. Seek shelter, lest you want to find out what's in store for yourself.</span>"
+	telegraph_duration = 3000
+	telegraph_overlay = "light_ash"
+
+	weather_message = "<span class='userdanger'><i>The red cloud is here, and it is incredibly dangerous to be in! Get inside!</i></span>"
+	weather_duration_lower = 108000 //Three hours. Lasts the whole round, basically
+	weather_duration_upper = 108000
+	weather_overlay = "ash_storm"
+
+	end_message = "<span class='boldannounce'>The cloud has passed over the region. It should be safe to go outside now.</span>"
+	end_duration = 3000
+	end_overlay = "light_ash"
+
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	protect_indoors = TRUE
+	target_trait = ZTRAIT_STATION
+
+	probability = 0
+
+/datum/weather/ash_storm/dust_event/weather_act(mob/living/L)
+	if(is_ash_immune(L))
+		return
+	if(is_species(L, /datum/species/lizard/ashwalker))
+		if(!IS_STAMCRIT(L))
+			L.adjustStaminaLossBuffered(4)
+		return
+	L.adjustToxLoss(7.5)
