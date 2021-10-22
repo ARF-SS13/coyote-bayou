@@ -217,3 +217,94 @@
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/f13/metalarmor/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2)
+
+//Junkers
+/mob/living/simple_animal/hostile/raider/junker
+	name = "Junker"
+	desc = "A raider from the Junker gang."
+	faction = list("raider", "wastebot")
+	icon_state = "melee_sulphite"
+	icon_living = "melee_sulphite"
+	icon_dead= "melee_sulphite_dead"
+	color = "#B85C00"
+	maxHealth = 220
+	health = 220
+	melee_damage_lower = 40
+	melee_damage_upper = 55
+	loot = null
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker
+	name = "Junker Footman"
+	desc = "A Junker raider, outfitted in reinforced combat raider armor with extra metal plates."
+	color = "#B85C00"
+	faction = list("raider", "wastebot")
+	maxHealth = 245
+	health = 245
+	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
+	melee_damage_lower = 25
+	melee_damage_upper = 50
+
+/mob/living/simple_animal/hostile/raider/junker/creator
+	name = "Junker Field Creator"
+	desc = "A Junker raider, specialized in spitting out eyebots on the fly with any scrap they can find."
+	icon_state = "ranged_sulphitemob"
+	icon_living = "ranged_sulphitemob"
+	icon_dead = "melee_sulphite_dead"
+	maxHealth = 180
+	health = 180
+	ranged = TRUE
+	retreat_distance = 6
+	minimum_distance = 8
+	projectiletype = /obj/item/projectile/bullet/c45/op
+	projectilesound = 'sound/weapons/gunshot.ogg'
+	var/list/spawned_mobs = list()
+	var/max_mobs = 3
+	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
+	var/spawn_delay = 0
+	var/spawn_time = 15 SECONDS
+	var/spawn_text = "flies from"
+
+/mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
+	. = ..()
+	GLOB.mob_nests += src
+
+/mob/living/simple_animal/hostile/raider/junker/creator/death()
+	GLOB.mob_nests -= src
+	. = ..()
+
+/mob/living/simple_animal/hostile/raider/junker/creator/Destroy()
+	GLOB.mob_nests -= src
+	. = ..()
+
+/mob/living/simple_animal/hostile/raider/junker/creator/Aggro()
+	..()
+	summon_backup(10)
+
+/mob/living/simple_animal/hostile/raider/junker/creator/proc/spawn_mob()
+	if(world.time < spawn_delay)
+		return 0
+	spawn_delay = world.time + spawn_time
+	if(spawned_mobs.len >= max_mobs)
+		return FALSE
+	var/chosen_mob_type = pickweight(mob_types)
+	var/mob/living/simple_animal/L = new chosen_mob_type(get_turf(src))
+	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
+	spawned_mobs += L
+	L.nest = src
+	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+
+/mob/living/simple_animal/hostile/raider/junker/boss
+	name = "Junker Boss"
+	desc = "A Junker boss, clad in hotrod power armor, and wielding a deadly rapid-fire shrapnel cannon."
+	icon_state = "boss_mob"
+	icon_living = "boss_mob"
+	icon_dead = "boss_mob_dead"
+	maxHealth = 450
+	health = 450
+	ranged = TRUE
+	retreat_distance = 4
+	minimum_distance = 6
+	extra_projectiles = 9
+	ranged_cooldown_time = 15
+	projectiletype = /obj/item/projectile/bullet/shrapnel
+	projectilesound = 'sound/f13weapons/auto5.ogg'

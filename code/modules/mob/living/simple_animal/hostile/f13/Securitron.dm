@@ -185,3 +185,18 @@
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable/death()
 	return ..()
+
+//Junkers
+/mob/living/simple_animal/hostile/securitron/sentrybot/suicide
+	name = "explosive sentry bot"
+	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick armor plating. Don't get too close to this one, it looks like it's rigged to blow!"
+	maxHealth = 200
+	health = 200
+	color = "#B85C00"
+	retreat_distance = null
+	minimum_distance = 1
+
+/mob/living/simple_animal/hostile/securitron/sentrybot/suicide/AttackingTarget()
+	if(ishuman(target))
+		addtimer(CALLBACK(src, .proc/do_death_beep), 1 SECONDS)
+		addtimer(CALLBACK(src, .proc/self_destruct), 2 SECONDS)

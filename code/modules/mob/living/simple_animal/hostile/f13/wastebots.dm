@@ -314,3 +314,22 @@
 	del_on_death = FALSE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	dextrous = TRUE
+
+//Junkers
+/mob/living/simple_animal/hostile/handy/gutsy/flamer
+	name = "Mr. Burnsy"
+	desc = "A modified mr. gutsy, equipped with a more precise flamer, ditching it's plasma weaponry."
+	color = "#B85C00"
+	projectilesound = 'sound/magic/fireball.ogg'
+	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	extra_projectiles = 1
+
+/mob/living/simple_animal/hostile/handy/assaultron/laser
+	name = "red eye assaultron"
+	desc = "A modified assaultron. It's eye has been outfitted with a deadly laser."
+	color = "#B85C00"
+	ranged = TRUE
+	retreat_distance = null
+	minimum_distance = 1
+	projectilesound = 'sound/weapons/laser.ogg'
+	projectiletype = /obj/item/projectile/beam/laser/lasgun

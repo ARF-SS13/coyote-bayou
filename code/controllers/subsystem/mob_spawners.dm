@@ -11,3 +11,8 @@ SUBSYSTEM_DEF(mobspawners)
 			GLOB.mob_nests -= Q
 			continue
 		Q.spawn_mob()
+	for(var/mob/living/simple_animal/hostile/raider/junker/creator/J in GLOB.mob_nests)
+		if(QDELETED(J) || !get_turf(J))
+			GLOB.mob_nests -= J
+			continue
+		J.spawn_mob()

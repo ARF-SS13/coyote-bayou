@@ -127,3 +127,17 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	speed = -1
+
+//Junkers
+/mob/living/simple_animal/hostile/eyebot/reinforced
+	name = "reinforced eyebot"
+	desc = "An eyebot with beefier protection, and extra electronic aggression."
+	color = "#B85C00"
+	maxHealth = 150
+	health = 150
+	faction = list("raider", "wastebot")
+	extra_projectiles = 1
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	minimum_distance = 4
+	retreat_distance = 6
