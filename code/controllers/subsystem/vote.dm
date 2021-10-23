@@ -376,6 +376,7 @@ SUBSYSTEM_DEF(vote)
 			if(SSmapping.changemap(config.maplist[.]))
 				to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
 	if(end_round)
+	/* Fortuna edit, shuttle will autocall after a successful transfer vote even when admins are online
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
 			if(!C.is_afk() && check_rights_for(C, R_SERVER))
@@ -385,6 +386,7 @@ SUBSYSTEM_DEF(vote)
 			to_chat(world, "<span style='boldannounce'>Notice:Vote will not take effect automatically because there are active admins on.</span>")
 			message_admins("A [mode] vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may enforce it.")
 			return
+	*/
 		switch(mode)
 			if("restart")
 				SSticker.Reboot("Restart vote successful.", "restart vote")
