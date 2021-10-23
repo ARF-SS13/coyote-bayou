@@ -2,7 +2,7 @@
 
 /area
 	var/open_space = 0
-//	var/list/ambientmusic = list('sound/misc/null.ogg')
+	var/list/ambientmusic = list('sound/misc/null.ogg')
 //	var/ambience_area =  list('sound/f13ambience/wasteland.ogg')
 	ambientsounds = list('sound/misc/null.ogg')
 	var/environment = -1
@@ -22,7 +22,7 @@
 	name = "Wasteland"
 	icon_state = "wasteland"
 //	ambience_area =  list('sound/f13ambience/wasteland.ogg')
-//	ambientmusic = list('sound/f13music/fo2_wasteland.ogg','sound/f13music/fo2_desert.ogg','sound/f13music/fo2_world.ogg','sound/misc/null.ogg')
+	ambientmusic = WASTELAND_AMBIENCE
 	ambientsounds = list('sound/f13ambience/battle_1.ogg','sound/f13ambience/battle_2.ogg','sound/f13ambience/battle_3.ogg', \
 	'sound/f13ambience/rattlesnake_1.ogg','sound/f13ambience/rattlesnake_2.ogg','sound/f13ambience/rattlesnake_3.ogg','sound/f13ambience/bird_1.ogg','sound/f13ambience/bird_2.ogg','sound/f13ambience/bird_3.ogg','sound/f13ambience/bird_4.ogg')
 	outdoors = 1
