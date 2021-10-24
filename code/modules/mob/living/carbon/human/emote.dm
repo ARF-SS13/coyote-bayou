@@ -165,6 +165,7 @@
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 
+/* Fortuna edit: robot sound emotes disabled
 /datum/emote/sound/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
@@ -189,6 +190,7 @@
 	key_third_person = "chimes"
 	message = "chimes."
 	sound = 'sound/machines/chime.ogg'
+*/
 
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(chosen_move)

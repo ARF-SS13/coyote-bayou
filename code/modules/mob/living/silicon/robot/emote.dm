@@ -3,7 +3,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/silicon
-	mob_type_allowed_typecache = list(/mob/living/silicon, /mob/living/carbon/human)
+	mob_type_allowed_typecache = list(/mob/living/silicon) // Fortuna edit: removed /mob/living/carbon/human from allowed mobs, because humans should not be beeping and pinging
 	emote_type = EMOTE_AUDIBLE
 	var/unrestricted = TRUE
 
