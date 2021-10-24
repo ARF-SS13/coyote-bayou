@@ -308,6 +308,8 @@ Head Knight
 		/obj/item/ammo_box/magazine/m14mm = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
 		)
 
 /datum/outfit/loadout/capstand
@@ -717,7 +719,9 @@ Senior Knight
 	gunsmith_four = TRUE
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting=1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
+		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
 		)
 
 /datum/outfit/loadout/sknighta
@@ -799,6 +803,8 @@ Knight
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
 		)
 
 /datum/outfit/loadout/knighta
