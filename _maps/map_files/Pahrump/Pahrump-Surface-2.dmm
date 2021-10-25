@@ -25379,13 +25379,13 @@
 	},
 /area/f13/followers)
 "lof" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "followershutters";
 	name = "followers shutters"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -26415,12 +26415,12 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "lQQ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room";
 	req_one_access_txt = "124"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
@@ -45590,7 +45590,7 @@
 	},
 /area/f13/village)
 "vad" = (
-/obj/machinery/door/airlock/medical{
+/obj/machinery/door/airlock/medical/glass{
 	name = "Botany";
 	req_one_access_txt = "124"
 	},
