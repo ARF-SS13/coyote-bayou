@@ -96,7 +96,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustOxyLoss(12*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
-	
+
 /datum/reagent/medicine/longpork_stew
 	name = "longpork stew"
 	description = "A dish sworn by some to have unusual healing properties. To most it just tastes disgusting. What even is longpork anyways?..."
@@ -134,7 +134,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	color =  "#7f7add"
 	taste_description = "heaven."
-	metabolization_rate = 0.7 * REAGENTS_METABOLISM 
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM
 	overdose_threshold = 30 //hard to OD on, besides if you use too much it kills you when it wears off
 
 /datum/reagent/medicine/berserker_powder/on_mob_life(mob/living/carbon/M)
@@ -307,28 +307,32 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 
 /datum/reagent/medicine/medx
 	name = "Med-X"
-
 	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 16
-	addiction_threshold = 6
+	overdose_threshold = 6
+	addiction_threshold = 10
 
 /datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.maxHealth += 100
-		M.health += 100
 		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+		ADD_TRAIT(M, TRAIT_NOLIMBDISABLE, "[type]")
+		ADD_TRAIT(M, TRAIT_NOSOFTCRIT, "[type]")
+		ADD_TRAIT(M, TRAIT_HEAVY_SLEEPER, "[type]")
+		if(prob(50))
+			addiction_random = 7
+			addiction_threshold = (addiction_random -= addiction_threshold)
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.maxHealth -= 100
-		M.health -= 100
 		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
+		REMOVE_TRAIT(M, TRAIT_NOLIMBDISABLE, "[type]")
+		REMOVE_TRAIT(M, TRAIT_NOSOFTCRIT, "[type]")
+		REMOVE_TRAIT(M, TRAIT_HEAVY_SLEEPER, "[type]")
 	switch(current_cycle)
 		if(1 to 25)
 			M.confused += 10
@@ -372,6 +376,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+
 /datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
 	M.set_blurriness(30)
 	M.Unconscious(400)
@@ -393,7 +398,6 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
 		M.Dizzy(3)
 		M.Jitter(3)
@@ -402,7 +406,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
 		M.Dizzy(4)
 		M.Jitter(4)
@@ -411,7 +415,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
 		M.Dizzy(5)
 		M.Jitter(5)
@@ -498,6 +502,12 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 25
 	addiction_threshold = 15
 
+/datum/reagent/medicine/mentat/on_mob_add(mob/living/carbon/human/M)
+	..()
+	if(isliving(M) && prob(50))
+		addiction_random = 7
+		addiction_threshold = (addiction_random -= addiction_threshold)
+
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
@@ -578,6 +588,7 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 //			M.reagents.remove_reagent(R.id,2)
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
+		M.set_disgust(50)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
 	M.confused = max(M.confused, 4)
 	if(ishuman(M) && prob(5))
@@ -585,6 +596,18 @@ datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = TRUE
+
+/datum/reagent/medicine/addictol // fortuna addition
+	name = "Addictol"
+	description = "A medicine delivered via a metered-dose inhaler that sates addictions, allowing junkies to live without being affected by withdrawal symptoms for a period of time."
+	reagent_state = LIQUID
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	color = "#30D5C8"
+
+/datum/reagent/medicine/addictol/on_mob_life(mob/living/carbon/M)
+	M.set_disgust(0)
+	sate_addiction(M)
+	return
 
 /datum/reagent/medicine/gaia
 	name = "Gaia Extract"

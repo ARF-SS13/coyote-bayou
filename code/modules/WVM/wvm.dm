@@ -547,44 +547,48 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "P.A.P.A"
 	icon_state = "med_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						30),
+		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/inhaler/jet,						30),
 		new /datum/data/wasteland_equipment("Psycho",						/obj/item/reagent_containers/hypospray/medipen/psycho,				30),
-		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						30),
+		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/inhaler/turbo,						30),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						30),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						30),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/syringe/medx,							30),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							30),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("Addictol",						/obj/item/reagent_containers/inhaler/addictol,						50)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						30),
+		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/inhaler/jet,						30),
 		new /datum/data/wasteland_equipment("Psycho",						/obj/item/reagent_containers/hypospray/medipen/psycho,				30),
-		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						30),
+		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/inhaler/turbo,						30),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						30),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						30),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/syringe/medx,							30),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							30),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("Addictol",						/obj/item/reagent_containers/inhaler/addictol,						50)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/denchem
 	name = "Chem Dispenser"
 	icon_state = "med_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						60),
+		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/inhaler/jet,						60),
 		new /datum/data/wasteland_equipment("Psycho",						/obj/item/reagent_containers/hypospray/medipen/psycho,				60),
-		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						60),
+		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/inhaler/turbo,						60),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						60),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						60),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/syringe/medx,							60),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							60),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("Addictol",						/obj/item/reagent_containers/inhaler/addictol,						50)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/pill/patch/jet,						60),
+		new /datum/data/wasteland_equipment("Jet",							/obj/item/reagent_containers/inhaler/jet,						60),
 		new /datum/data/wasteland_equipment("Psycho",						/obj/item/reagent_containers/hypospray/medipen/psycho,				60),
-		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/pill/patch/turbo,						60),
+		new /datum/data/wasteland_equipment("Turbo",						/obj/item/reagent_containers/inhaler/turbo,						60),
 		new /datum/data/wasteland_equipment("Mentats",						/obj/item/storage/pill_bottle/chem_tin/mentats,						60),
 		new /datum/data/wasteland_equipment("Buffout",						/obj/item/storage/pill_bottle/chem_tin/buffout,						60),
-		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/syringe/medx,							60),
-		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
+		new /datum/data/wasteland_equipment("Med-X",						/obj/item/reagent_containers/hypospray/medipen/medx,							60),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("Addictol",						/obj/item/reagent_containers/inhaler/addictol,						50)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/weapons

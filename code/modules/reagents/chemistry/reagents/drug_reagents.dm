@@ -3,6 +3,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	var/trippy = TRUE //Does this drug make you trip?
+	var/addiction_random = 0 // fortuna addition
 
 /datum/reagent/drug/on_mob_end_metabolize(mob/living/M)
 	if(trippy)

@@ -44,18 +44,6 @@
 /obj/item/reagent_containers/pill/patch/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
 
-/obj/item/reagent_containers/pill/patch/jet
-	name = "Jet"
-	desc = "A highly addictive meta-amphetamine that produces a fast-acting, intense euphoric high on the user."
-	list_reagents = list(/datum/reagent/drug/jet = 10)
-	icon_state = "bandaid_jet"
-
-/obj/item/reagent_containers/pill/patch/turbo
-	name = "Turbo"
-	desc = "A chem that vastly increases the user's reflexes and slows their perception of time."
-	list_reagents = list(/datum/reagent/drug/turbo = 5)
-	icon_state = "bandaid_turbo"
-
 /obj/item/reagent_containers/pill/patch/healingpowder
 	name = "Healing Powder"
 	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
@@ -80,7 +68,7 @@
 /obj/item/reagent_containers/pill/patch/bitterdrink
 	name = "Bitter drink"
 	desc = "A strong herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
-	list_reagents = list(/datum/reagent/medicine/bitter_drink = 15) 
+	list_reagents = list(/datum/reagent/medicine/bitter_drink = 15)
 	icon_state = "Voodoo"
 	self_delay = 0
 

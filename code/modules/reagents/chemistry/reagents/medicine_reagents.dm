@@ -9,6 +9,7 @@
 	name = "Medicine"
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_VERY_COMMON //Low prices, spess medical companies are cheapstakes and products are taxed honk...
+	var/addiction_random = 0 // fortuna addition
 
 /datum/reagent/medicine/on_mob_life(mob/living/carbon/M)
 	current_cycle++

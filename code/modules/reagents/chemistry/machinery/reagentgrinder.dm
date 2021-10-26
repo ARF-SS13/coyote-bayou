@@ -18,6 +18,15 @@
 	var/limit = 10
 	var/speed = 1
 	var/list/holdingitems
+	var/blacklistchems = list( // fortuna addition
+		/obj/item/reagent_containers/hypospray/medipen/psycho,
+		/obj/item/reagent_containers/hypospray/medipen/medx,
+		/obj/item/reagent_containers/inhaler/jet,
+		/obj/item/reagent_containers/inhaler/turbo,
+		/obj/item/reagent_containers/pill/buffout,
+		/obj/item/reagent_containers/pill/fixer,
+		/obj/item/reagent_containers/pill/mentat,
+		)
 
 	var/static/radial_examine = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_examine")
 	var/static/radial_eject = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_eject")
@@ -97,6 +106,10 @@
 
 	if(panel_open) //Can't insert objects when its screwed open
 		return TRUE
+
+	if(is_type_in_list(I, blacklistchems))
+		to_chat(user, "<span class='notice'>This cannot be ground up!</span>")
+		return
 
 	if (istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		var/obj/item/reagent_containers/B = I

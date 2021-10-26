@@ -263,6 +263,8 @@
 	Also known for fixing eye damage and blindness, for some reason."
 	icon_state = "pill20"
 	list_reagents = list(/datum/reagent/medicine/mentat = 10)
+	dissolvable = FALSE
+	grind_results = list()
 
 /obj/item/reagent_containers/pill/fixer
 	name = "Fixer pill"
@@ -270,6 +272,8 @@
 	Side effects include heavy nausea."
 	icon_state = "pill3"
 	list_reagents = list(/datum/reagent/medicine/fixer = 10)
+	dissolvable = FALSE
+	grind_results = list()
 
 /obj/item/reagent_containers/pill/radx
 	name = "Rad-X pill"
@@ -283,3 +287,5 @@
 	Side effects may include sore muscles and increased irritability."
 	icon_state = "buffoutpill"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)
+	dissolvable = FALSE
+	grind_results = list()

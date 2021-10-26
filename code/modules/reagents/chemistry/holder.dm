@@ -334,11 +334,12 @@
 						need_mob_update += R.addiction_act_stage3(C)
 					else if(R.addiction_stage3_end < R.addiction_stage && R.addiction_stage <= R.addiction_stage4_end)
 						need_mob_update += R.addiction_act_stage4(C)
-					else if(R.addiction_stage4_end < R.addiction_stage)
-						remove_addiction(R)
+					//else if(R.addiction_stage4_end < R.addiction_stage) // Addictions shouldn't end automatically, Fortuna removal
+						//remove_addiction(R)
 					else
 						SEND_SIGNAL(C, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 		addiction_tick++
+
 	if(C && need_mob_update) //some of the metabolized reagents had effects on the mob that requires some updates.
 		C.updatehealth()
 		C.update_mobility()
