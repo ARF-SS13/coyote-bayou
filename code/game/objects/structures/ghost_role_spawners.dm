@@ -711,3 +711,138 @@
 	new /obj/item/clothing/head/chameleon(src)
 	new /obj/item/clothing/mask/chameleon(src)
 	new /obj/item/storage/backpack/chameleon(src)
+
+//F13 Ghost Roles
+/obj/effect/mob_spawn/human/fallout13 //Not to actually be used on server
+	mob_species = /datum/species/human
+	roundstart = FALSE
+	death = FALSE
+	icon = 'icons/fallout/turfs/walls.dmi'
+	icon_state = "matrix"
+	uses = 3
+
+/obj/effect/mob_spawn/human/fallout13/ncr
+	name = "NCR Trooper Spawn"
+	desc = "An entry point for troopers of the NCR to join a battle."
+	mob_name = "NCR Trooper"
+	job_description = "NCR Trooper"
+	short_desc = "You are a proud fighter of the New California Republic. Do not falter!"
+	flavour_text = "Good troopers follow orders."
+	assignedrole = "NCR Trooper"
+	outfit = /datum/outfit/job/ncr/f13trooper
+	suit_store = /obj/item/gun/ballistic/automatic/service
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/ncr/ranger
+	name = "NCR Ranger Spawn"
+	desc = "An entry point for rangers of the NCR to join a battle."
+	mob_name = "NCR Ranger"
+	job_description = "NCR Ranger"
+	flavour_text = "Rangers lead the way!"
+	assignedrole = "NCR Ranger"
+	outfit = /datum/outfit/job/ncr/f13ranger
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	belt = /obj/item/storage/belt/military/assault/ncr
+	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
+	head = /obj/item/clothing/head/f13/ranger
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
+		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/attachments/scope = 1,
+		/obj/item/gun/ballistic/revolver/revolver44 = 1,
+		/obj/item/ammo_box/m44 = 2,
+		/obj/item/clothing/mask/gas/ranger = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/ncr/special(mob/living/new_spawn)
+	new_spawn.real_name = random_unique_name(gender)
+
+/obj/effect/mob_spawn/human/fallout13/legion
+	name = "Prime Legionnaire Spawn"
+	desc = "An entry point for prime legionaries of Caesar's Legion to join a battle."
+	mob_name = "Prime Legionnaire"
+	job_description = "Prime Legionnaire"
+	short_desc = "You are a might warrior of Caesar's Legion. Retribution!"
+	flavour_text = "True to Caesar!"
+	assignedrole = "Prime Legionnaire"
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
+	backpack_contents = list(
+		/obj/item/ammo_box/a357 = 3,
+		/obj/item/melee/onehanded/machete = 1,
+		/obj/item/grenade/homemade/firebomb = 1,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/legion/veteran
+	name = "Veteran Legionnaire Spawn"
+	desc = "An entry point for veteran legionaries of Caesar's Legion to join a battle."
+	mob_name = "Veteran Legionnaire"
+	job_description = "Veteran Legionnaire"
+	assignedrole = "Veteran Legionnaire"
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/vetlegionnaire
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
+	backpack_contents = list(
+		/obj/item/ammo_box/tube/m44 = 3,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/bos
+	name = "Knight Spawn"
+	desc = "An entry point for knights of the Brotherhood Of Steel to join a battle."
+	mob_name = "Knight"
+	job_description = "Knight"
+	short_desc = "You are a brave soldier of the Brotherhood Of Steel. Onwards!"
+	flavour_text = "Praise Steel!"
+	assignedrole = "Knight"
+	outfit = /datum/outfit/job/bos/f13knight
+	suit_store = /obj/item/gun/energy/laser/aer9
+	backpack_contents = list(
+		/obj/item/clothing/accessory/bos/knight=1,
+		/obj/item/stock_parts/cell/ammo/mfc=2,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/bos/paladin
+	name = "Paladin Spawn"
+	desc = "An entry point for paladins of the Brotherhood Of Steel to join a battle."
+	mob_name = "Paladin"
+	job_description = "Paladin"
+	assignedrole = "Paladin"
+	outfit = /datum/outfit/job/bos/f13paladin
+	suit_store = /obj/item/gun/energy/laser/aer9
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/mfc=2,
+		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
+		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/clothing/accessory/bos/paladin=1
+		)
+
+/obj/effect/mob_spawn/human/fallout13/bos/special(mob/living/new_spawn)
+	new_spawn.real_name = random_unique_name(gender)
+
+/obj/effect/mob_spawn/human/fallout13/raider
+	name = "Raider Spawn"
+	desc = "An entry point for raiders to join a battle."
+	mob_name = "Raider"
+	job_description = "Raider"
+	short_desc = "You are a vicious, bloodthirsty raider hailing from Yuma. Take what you deserve!"
+	flavour_text = "Hurry, hurry, hurry!!"
+	assignedrole = "Raider"
+	suit_store = /obj/item/gun/ballistic/automatic/smg/greasegun
+	uniform = /obj/item/clothing/under/f13/ravenharness
+	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/raider
+	head = /obj/item/clothing/head/helmet/f13/combat/mk2/raider
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/jackboots
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/greasegun = 2,
+		)
+
+/obj/effect/mob_spawn/human/fallout13/raider/special(mob/living/new_spawn)
+	new_spawn.real_name = random_unique_name(gender)
