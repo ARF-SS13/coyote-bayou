@@ -91,6 +91,34 @@
 	path = /obj/item/clothing/suit/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
+	
+/datum/gear/suit/town
+	name = "Town Trenchcoat"
+	path = /obj/item/clothing/suit/armor/f13/town
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 5
+	restricted_desc = "Oasis"
+	restricted_roles = list("Mayor",
+							"Secretary",
+							"Sheriff",
+							"Doctor",
+							"Citizen",
+							"Deputy",
+							"Shopkeeper",
+							"Farmer",
+							"Prospector",
+							"Detective",
+							"Barkeep",
+							)
+/datum/gear/suit/hazardvest
+	name = "Hazard Vest"
+	path = /obj/item/clothing/suit/hazardvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 2
+	restricted_roles = list("Citizen",
+							"Prospector",
+							)
+
 
 //These should be left commented out until the holidays or special events.
 /*

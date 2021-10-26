@@ -143,10 +143,17 @@
 	attack_hand_interact = TRUE
 	max_w_class = WEIGHT_CLASS_NORMAL
 	quickdraw = TRUE
-	
+
 /datum/component/storage/concrete/pockets/small/holdout/Initialize()
 	. = ..()
 	can_hold = GLOB.storage_holdout_can_hold
+
+/datum/component/storage/concrete/pockets/bulletbelt
+	max_items = 4
+
+/datum/component/storage/concrete/pockets/bulletbelt/Initialize()
+	. = ..()
+	can_hold = GLOB.storage_bulletbelt_can_hold
 
 GLOBAL_LIST_INIT(storage_bartender_can_hold, typecacheof(list(
 	/obj/item/kitchen,
@@ -251,6 +258,11 @@ GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
 	/obj/item/key,
 	/obj/item/melee/onehanded/knife,
 	/obj/item/paper,
+	/obj/item/folder,
+	/obj/item/storage/bag/money/small,
+	/obj/item/binoculars,
+	/obj/item/lipstick,
+	/obj/item/pen,
 	)))
 
 GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
@@ -264,4 +276,30 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/gun/ballistic/revolver/needler,
 	/obj/item/gun/energy/laser/wattz,
+)))
+
+GLOBAL_LIST_INIT(storage_bulletbelt_can_hold, typecacheof(list(
+	/obj/item/ammo_box/magazine,
+	/obj/item/ammo_box/tube,
+	/obj/item/ammo_box/a357,
+	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/l10mm,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/shotgun,
+	/obj/item/ammo_box/m44,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a556/stripper,
+	/obj/item/ammo_box/needle,
+	/obj/item/ammo_box/a308,
+	/obj/item/ammo_box/c4570,
+	/obj/item/ammo_box/a50MG,
+	/obj/item/gun/energy/laser/solar,
+	/obj/item/gun/energy/laser/pistol,
+	/obj/item/gun/energy/laser/plasma/pistol,
+	/obj/item/gun/energy/laser/plasma/glock,
+	/obj/item/gun/energy/laser/plasma/glock/extended,
+	/obj/item/gun/energy/laser/wattz,
+	/obj/item/gun/energy/laser/wattz/magneto,
+	/obj/item/gun/energy/laser/plasma/pistol/alien,
+	/obj/item/stock_parts/cell/ammo/ec,
 )))
