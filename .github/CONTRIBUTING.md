@@ -2,7 +2,17 @@
 
 ## Reporting Issues
 
-See [this page](http://tgstation13.org/wiki/Reporting_Issues) for a guide and format to issue reports.
+See [this page](https://github.com/FortunaSS13/Fortuna/issues/new/choose) for a guide and format to issue reports.
+
+## Fortuna Contributions and Modularization
+Everything below this Fortuna entry comes from the original /tg/ documentation for contribution and code quality. There are a few key things we ask from our contributors specifically however and I'd like to cover those briefly.
+
+**Quality**
+All contributions should be formatted well and follow traditional SS13 code standards you might find upstream. Failure to maintain code standards will result in your Pull Request being reviewed with 'requested changes', where you will have around 7 days to correct any errors before the request is closed on our end. Note, just because we close out your request doesn't mean you can't continue your work! If you cannot make the requested changes within that time window, work at your own pace on your fork and open another Pull Request when you are ready for another review.
+
+**Modularization**
+Any and all contributions that touch the 'fallout' areas and modules of our code are free to be deleted and modified without need for extensive labelling. This is because we do not consider our immediate upstream codebase to be our official upstream, and pull all updates from our original upstream [Citadel](https://github.com/Citadel-Station-13/Citadel-Station-13). If your code and/or modifications to code touch those 'original' Citadel areas, and are not located in a fallout module or folder, you may be asked to adjust your contribution to be modular and/or comment rather than delete lines of code. This is to preserve our upstream code as much as we can so that this community can benefit from the development and improvements occurring upstream without needing to resolve hundreds of conflicts to 'port' features to us.
+
 
 ## Introduction
 
