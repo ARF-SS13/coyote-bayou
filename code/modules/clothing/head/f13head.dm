@@ -800,10 +800,11 @@
 
 /obj/item/clothing/head/simplekitty
 	name = "kitty headband"
-	desc = "This headband leaves you with a feeling of uncertain dread."
+	desc = "A headband with a pair of cute kitty ears."
 	icon_state = "kittyb"
 	color = "#999999"
 	armor = list("tier" = 0)
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/riderw
 	name = "Reinforced Rider Helmet" //Not raider. Rider. //Count up your sins
