@@ -1,5 +1,5 @@
 /datum/job/doctor
-	title = "Medical Doctor"
+	title = "Medical Doctor (Unused)"
 	flag = DOCTOR
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
@@ -23,7 +23,7 @@
 	starting_modifiers = list(/datum/skill_modifier/job/surgery, /datum/skill_modifier/job/affinity/surgery)
 
 /datum/outfit/job/doctor
-	name = "Medical Doctor"
+	name = "Medical Doctor (Unused)"
 	jobtype = /datum/job/doctor
 
 	belt = /obj/item/pda/medical
