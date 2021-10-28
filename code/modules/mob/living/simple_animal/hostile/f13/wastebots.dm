@@ -210,6 +210,7 @@
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
+	stat_attack = CONSCIOUS
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
