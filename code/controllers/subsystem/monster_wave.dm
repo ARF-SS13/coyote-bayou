@@ -24,7 +24,8 @@ SUBSYSTEM_DEF(monster_wave)
 		return // 50/50 chance for it to either fire or not fire
 	successful_firing++
 	addtimer(CALLBACK(src, .proc/spawn_monsterwave), 10 SECONDS)
-	priority_announce("WARNING: A large amount of monster activity has been detected. It is estimated that the monsters will breach the ground in a few moments. Please report the location of the breach once found.", "Monster Alert", sender_override = "Monster Reporting Division")
+	for(var/M in GLOB.player_list)
+		to_chat(M, "<span class='notice'>You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font></span>")
 
 /datum/controller/subsystem/monster_wave/proc/spawn_monsterwave()
 	var/pick_unfortune = pick("Ghoul", "Deathclaw", "Radscorpion", "Fireant", "Molerat", "Mirelurk")

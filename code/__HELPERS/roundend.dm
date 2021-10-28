@@ -208,9 +208,10 @@
 
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		send_news_report()
-
+	//fortuna addition. list of random names for the roundend news author
+	var/list/publisher = list("Oasis Publishing","Brotherhood News","Mojave Publishing","FEV News")
 	//tell the nice people on discord what went on before the salt cannon happens.
-	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!", FALSE)
+	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for your [pick(publisher)] report!", FALSE)
 	world.TgsTargetedChatBroadcast(send_news_report(),FALSE)
 
 	CHECK_TICK
