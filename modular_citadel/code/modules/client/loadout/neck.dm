@@ -4,85 +4,94 @@
 	slot = SLOT_NECK
 
 /datum/gear/neck/poncho
-	name = "Poncho"
+	name = "poncho"
 	path = /obj/item/clothing/neck/mantle/poncho
 
 /datum/gear/neck/pelt
-	name = "Bighorner pelt"
+	name = "bighorner pelt"
 	path = /obj/item/clothing/neck/mantle/peltfur
 
 /datum/gear/neck/mantle
-	name = "Plain mantle"
+	name = "plain brown cloak"
 	path = /obj/item/clothing/neck/mantle/brown
 
+/datum/gear/neck/mantle/grey
+	name = "grey cloak"
+	path = /obj/item/clothing/neck/mantle/gray 
+
+/datum/gear/neck/mantle/ragged
+	name = "ragged mantle"
+	path = /obj/item/clothing/neck/mantle/ragged 
+
+
 /datum/gear/neck/apron
-	name = "Simple apron"
+	name = "simple apron"
 	path = /obj/item/clothing/neck/apron/labor
 
 /datum/gear/neck/blacktie
-	name = "Black tie"
+	name = "black tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/black
 
 /datum/gear/neck/bluetie
-	name = "Blue tie"
+	name = "blue tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/blue
 
 /datum/gear/neck/redtie
-	name = "Red tie"
+	name = "red tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/red
 
 /datum/gear/neck/choker
-	name = "Choker"
+	name = "choker"
 	path = /obj/item/clothing/neck/petcollar/choker
 
 /datum/gear/neck/scarf
-	name = "White scarf"
+	name = "white scarf"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_SCARVES
 	path = /obj/item/clothing/neck/scarf
 
 /datum/gear/neck/scarf/black
-	name = "Black scarf"
+	name = "black scarf"
 	path = /obj/item/clothing/neck/scarf/black
 
 /datum/gear/neck/scarf/red
-	name = "Red scarf"
+	name = "red scarf"
 	path = /obj/item/clothing/neck/scarf/red
 
 /datum/gear/neck/scarf/green
-	name = "Green scarf"
+	name = "green scarf"
 	path = /obj/item/clothing/neck/scarf/green
 
 /datum/gear/neck/scarf/darkblue
-	name = "Dark blue scarf"
+	name = "dark blue scarf"
 	path = /obj/item/clothing/neck/scarf/darkblue
 
 /datum/gear/neck/scarf/purple
-	name = "Purple scarf"
+	name = "purple scarf"
 	path = /obj/item/clothing/neck/scarf/purple
 
 /datum/gear/neck/scarf/yellow
-	name = "Yellow scarf"
+	name = "yellow scarf"
 	path = /obj/item/clothing/neck/scarf/yellow
 
 /datum/gear/neck/scarf/orange
-	name = "Orange scarf"
+	name = "orange scarf"
 	path = /obj/item/clothing/neck/scarf/orange
 
 /datum/gear/neck/scarf/cyan
-	name = "Cyan scarf"
+	name = "cyan scarf"
 	path = /obj/item/clothing/neck/scarf/cyan
 
 /datum/gear/neck/scarf/stripedred
-	name = "Striped red scarf"
+	name = "striped red scarf"
 	path = /obj/item/clothing/neck/stripedredscarf
 
 /datum/gear/neck/scarf/stripedblue
-	name = "Striped blue scarf"
+	name = "striped blue scarf"
 	path = /obj/item/clothing/neck/stripedbluescarf
 
 /datum/gear/neck/scarf/stripedgreen
-	name = "Striped green scarf"
+	name = "striped green scarf"
 	path = /obj/item/clothing/neck/stripedgreenscarf

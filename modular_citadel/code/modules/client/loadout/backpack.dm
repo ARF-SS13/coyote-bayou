@@ -28,6 +28,11 @@
 	name = "Renameable Necklace"
 	path = /obj/item/clothing/accessory/necklace
 
+/datum/gear/backpack/redbelt
+	name = "primitive belt"
+	path = /obj/item/storage/belt/mining/primitive
+	cost = 4
+
 /datum/gear/backpack/tape
 	name = "Spare Cassette Tape"
 	path = /obj/item/tape/random

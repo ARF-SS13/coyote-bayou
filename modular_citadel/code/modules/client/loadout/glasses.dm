@@ -16,22 +16,6 @@
 	name = "Large sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/big
 
-/datum/gear/glasses/sunglasses/gar
-	name = "Pointy orange glasses"
-	path = /obj/item/clothing/glasses/sunglasses/gar
-
-/datum/gear/glasses/sunglasses/gar/supergar
-	name = "Large pointy orange glasses"
-	path = /obj/item/clothing/glasses/sunglasses/gar/supergar
-
-/datum/gear/glasses/sunglasses/garb
-	name = "Pointy black glasses"
-	path = /obj/item/clothing/glasses/sunglasses/garb
-
-/datum/gear/glasses/sunglasses/garb/supergarb
-	name = "Large pointy black glasses"
-	path = /obj/item/clothing/glasses/sunglasses/garb/supergarb
-
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
@@ -60,3 +44,15 @@
 /datum/gear/glasses/prescription
 	name = "Prescription glasses"
 	path = /obj/item/clothing/glasses/regular
+
+/datum/gear/glasses/cold
+	name = "cold-resistant goggles"
+	path = /obj/item/clothing/glasses/cold 
+
+/datum/gear/glasses/heat
+	name = "heat-resistant goggles"
+	path = /obj/item/clothing/glasses/heat 
+
+/datum/gear/glasses/biker
+	name = "biker goggles"
+	path = /obj/item/clothing/glasses/f13/biker 
