@@ -188,7 +188,7 @@
 		return
 	if(!A)
 		return
-	var/range = input("Range:", "Narrate to mobs within how many tiles:", 7) as num|null
+	var/range = input("Range:", "Narrate to mobs within how many tiles:", 50) as num|null
 	if(!range)
 		return
 	var/msg = input("Message:", text("Enter the text you wish to appear to everyone within view:")) as text|null
