@@ -50,7 +50,7 @@
 
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
 	var/obj/structure/flora/turfPlant = null
-	slowdown = 0.2
+	slowdown = 0
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 2
 	var/storedindex = 0			//amount of stored items
