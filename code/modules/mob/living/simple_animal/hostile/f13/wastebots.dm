@@ -204,8 +204,8 @@
 	icon_state = "protectron"
 	icon_living = "protectron"
 	icon_dead = "protectron_dead"
-	health = 160
-	maxHealth = 160
+	health = 130
+	maxHealth = 130
 	speed = 4
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10

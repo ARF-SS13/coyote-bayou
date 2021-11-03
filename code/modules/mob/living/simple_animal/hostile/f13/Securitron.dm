@@ -21,8 +21,8 @@
 	move_to_delay = 5
 	stat_attack = SOFT_CRIT
 	robust_searching = TRUE
-	maxHealth = 250
-	health = 250
+	maxHealth = 150
+	health = 150
 	blood_volume = 0
 	del_on_death = TRUE
 	healable = FALSE
@@ -98,8 +98,8 @@
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot"
-	health = 280
-	maxHealth = 280
+	health = 210
+	maxHealth = 210
 	del_on_death = FALSE
 	melee_damage_lower = 48
 	melee_damage_upper = 72
