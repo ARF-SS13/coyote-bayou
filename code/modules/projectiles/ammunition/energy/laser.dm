@@ -175,6 +175,11 @@
 	e_cost = 250
 	fire_sound = 'sound/f13weapons/aer9fire.ogg'
 
+//f13 hitscan test, i'll delete this later if the basic works out
+/obj/item/ammo_casing/energy/laser/lasgun/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan
+	e_cost = 50
+
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest
 	projectile_type = /obj/item/projectile/beam/laser/pistol/lasertesting

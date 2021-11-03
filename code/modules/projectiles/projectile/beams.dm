@@ -298,6 +298,15 @@
 	damage = 33
 	armour_penetration = 0.44
 
+/obj/item/projectile/beam/laser/lasgun/hitscan //hitscan aer9 test
+	name = "laser beam"
+	damage = 25
+	armour_penetration = 0.2
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/beam/laser/pistol //AEP7
 	name = "laser beam"
 	damage = 35

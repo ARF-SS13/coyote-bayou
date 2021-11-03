@@ -332,6 +332,10 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
+/obj/item/gun/energy/laser/aer9/hitscan
+	desc = "A surprisingly well maintained pre-war laser rifle."
+	fire_delay = 1
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle

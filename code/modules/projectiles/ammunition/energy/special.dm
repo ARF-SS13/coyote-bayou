@@ -1,10 +1,11 @@
 /obj/item/ammo_casing/energy/ion
 	projectile_type = /obj/item/projectile/ion/weak
 	select_name = "ion"
-	fire_sound = 'sound/weapons/ionrifle.ogg'
+	fire_sound = 'sound/f13weapons/pulsegunfire.ogg'
 
 /obj/item/ammo_casing/energy/ion/hos
 	projectile_type = /obj/item/projectile/ion/weak
+	fire_sound = 'sound/f13weapons/pulsepistolfire.ogg'
 	e_cost = 200
 
 /obj/item/ammo_casing/energy/declone
