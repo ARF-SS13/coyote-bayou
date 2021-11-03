@@ -36,10 +36,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/overdose_threshold = 0
 	var/addiction_threshold = 0
 	var/addiction_stage = 0
-	var/addiction_stage1_end = 20
-	var/addiction_stage2_end = 40
-	var/addiction_stage3_end = 60
-	var/addiction_stage4_end = 80
+	var/addiction_stage1_end = 10
+	var/addiction_stage2_end = 20
+	var/addiction_stage3_end = 30
+	var/addiction_stage4_end = 40
 	var/overdosed = 0 // You fucked up and this is now triggering its overdose effects, purge that shit quick.
 	var/self_consuming = FALSE  //I think this uhhh, makes weird stuff happen when metabolising, but... doesn't seem to do what I think, so I'm gonna leave it.
 	//Fermichem vars:
@@ -196,28 +196,23 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 /datum/reagent/proc/addiction_act_stage1(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_light, name)
-	if(prob(10))
-		to_chat(M, "<span class='danger'>You feel like having some [name] right about now.</span>")
+	if(prob(30))
+		to_chat(M, "<span class='notice'>You feel like having some [name] right about now.</span>")
 
 /datum/reagent/proc/addiction_act_stage2(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_medium, name)
-	if(prob(20))
-		to_chat(M, "<span class='danger'>You feel like you need [name]. You just can't get enough.</span>")
+	if(prob(30))
+		to_chat(M, "<span class='notice'>You feel like you need [name]. You just can't get enough.</span>")
 
 /datum/reagent/proc/addiction_act_stage3(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_severe, name)
-	if(prob(25))
+	if(prob(30))
 		to_chat(M, "<span class='danger'>You have an intense craving for [name].</span>")
 
 /datum/reagent/proc/addiction_act_stage4(mob/living/M)
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/withdrawal_critical, name)
-	if(prob(25))
+	if(prob(30))
 		to_chat(M, "<span class='boldannounce'>You're not feeling good at all! You really need some [name].</span>")
-
-/datum/reagent/proc/sate_addiction(mob/living/carbon/M) // fortuna addition
-	for(var/datum/reagent/A in M.reagents.addiction_list)
-		if(!isnull(A.addiction_stage))
-			A.addiction_stage = -15
 
 /**
  * New, standardized method for chemicals to affect hydroponics trays.

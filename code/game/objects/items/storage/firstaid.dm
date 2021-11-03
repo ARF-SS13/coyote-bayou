@@ -1,3 +1,4 @@
+
 /* First aid storage
  * Contains:
  *		First Aid Kits
@@ -243,7 +244,7 @@
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/dice))
-	STR.cant_hold = typecacheof(list(/obj/item/reagent_containers/inhaler/jet, /obj/item/reagent_containers/inhaler/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice))
+	STR.cant_hold = typecacheof(list(/obj/item/reagent_containers/pill/patch/jet, /obj/item/reagent_containers/pill/patch/turbo, /obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/reagent_containers/pill/patch/healpoultice))
 
 /obj/item/storage/pill_bottle/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -584,7 +585,7 @@
 	desc = "Contains pills used to increase intelligence and perception."
 
 /obj/item/storage/pill_bottle/chem_tin/mentats/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/mentat(src)
 
 /obj/item/storage/pill_bottle/chem_tin/fixer
@@ -593,7 +594,7 @@
 	desc = "Contains pills used to treat addiction and overdose on other chems."
 
 /obj/item/storage/pill_bottle/chem_tin/fixer/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/fixer(src)
 
 /obj/item/storage/pill_bottle/chem_tin/radx
@@ -602,7 +603,7 @@
 	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
 
 /obj/item/storage/pill_bottle/chem_tin/radx/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/radx(src)
 
 /obj/item/storage/pill_bottle/chem_tin/buffout
@@ -611,5 +612,6 @@
 	desc = "Contains pills used to increase muscle mass."
 
 /obj/item/storage/pill_bottle/chem_tin/buffout/PopulateContents()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/pill/buffout(src)
+	

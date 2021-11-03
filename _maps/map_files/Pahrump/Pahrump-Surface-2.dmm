@@ -5749,7 +5749,7 @@
 /obj/structure/decoration/clock/active{
 	pixel_y = 30
 	},
-/obj/item/reagent_containers/inhaler/turbo{
+/obj/item/reagent_containers/pill/patch/turbo{
 	layer = 2.4
 	},
 /turf/open/floor/plasteel/grimy,
@@ -10841,10 +10841,10 @@
 "eVx" = (
 /obj/structure/table,
 /obj/item/trash/f13/cram,
-/obj/item/reagent_containers/inhaler/jet{
+/obj/item/reagent_containers/pill/patch/jet{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/floor/wood/f13/housewoodbroken2,
 /area/f13/building)
 "eVJ" = (
@@ -11716,7 +11716,7 @@
 /area/f13/village)
 "fnE" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/inhaler/turbo,
+/obj/item/reagent_containers/pill/patch/turbo,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fnL" = (
@@ -12891,8 +12891,8 @@
 /area/f13/building)
 "fPv" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/inhaler/turbo,
-/obj/item/reagent_containers/inhaler/turbo,
+/obj/item/reagent_containers/pill/patch/turbo,
+/obj/item/reagent_containers/pill/patch/turbo,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fPT" = (
@@ -12922,7 +12922,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "fQA" = (
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /obj/structure/bed/mattress{
 	icon_state = "mattress6"
 	},
@@ -13497,8 +13497,8 @@
 /area/f13/building)
 "gcv" = (
 /obj/structure/closet/cabinet,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -18848,7 +18848,7 @@
 	},
 /area/f13/ncr)
 "ive" = (
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
@@ -22602,7 +22602,7 @@
 	},
 /area/f13/building)
 "jWM" = (
-/obj/item/reagent_containers/inhaler/turbo,
+/obj/item/reagent_containers/pill/patch/turbo,
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
@@ -28154,7 +28154,7 @@
 /obj/item/lighter,
 /obj/item/clothing/suit/toggle/labcoat/f13/followers,
 /obj/item/storage/box/pillbottles,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mIF" = (
@@ -28179,7 +28179,7 @@
 /area/f13/legion)
 "mJb" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -30869,7 +30869,7 @@
 "oaJ" = (
 /obj/structure/table,
 /obj/item/trash/f13/rotten,
-/obj/item/reagent_containers/inhaler/turbo{
+/obj/item/reagent_containers/pill/patch/turbo{
 	pixel_x = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria{
@@ -32890,7 +32890,7 @@
 /obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
 "pbn" = (
@@ -33226,7 +33226,7 @@
 /area/f13/village)
 "phz" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pir" = (
@@ -37963,7 +37963,7 @@
 "ryn" = (
 /obj/structure/closet/cardboard,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plasteel/f13{
@@ -38769,7 +38769,7 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass{
 	pixel_x = 8
 	},
-/obj/item/reagent_containers/inhaler/jet{
+/obj/item/reagent_containers/pill/patch/jet{
 	pixel_y = -10
 	},
 /turf/open/floor/wood/f13/stage_r,
@@ -41460,8 +41460,8 @@
 /area/f13/building)
 "tjQ" = (
 /obj/structure/closet,
-/obj/item/reagent_containers/inhaler/jet,
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "tjR" = (
@@ -41671,7 +41671,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/remains/human,
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -41719,8 +41719,8 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/medspray/synthflesh,
 /obj/item/reagent_containers/medspray/synthflesh,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -49903,7 +49903,7 @@
 /obj/structure/table,
 /obj/item/trash/f13/steak,
 /obj/item/candle,
-/obj/item/reagent_containers/inhaler/jet{
+/obj/item/reagent_containers/pill/patch/jet{
 	pixel_x = 6;
 	pixel_y = 8
 	},
@@ -50296,7 +50296,7 @@
 "xkC" = (
 /obj/structure/closet/cardboard,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /obj/item/reagent_containers/food/drinks/beer,
 /obj/item/reagent_containers/food/drinks/beer,
 /turf/open/floor/plasteel/f13{

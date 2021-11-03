@@ -147,7 +147,7 @@
 
 /datum/crafting_recipe/jet
 	name = "Jet"
-	result = /obj/item/reagent_containers/inhaler/jet
+	result = /obj/item/reagent_containers/pill/patch/jet
 	reqs = list(/obj/item/clothing/mask/cigarette = 1,
 				/datum/reagent/consumable/milk = 10,
 				/obj/item/toy/crayon/spraycan = 1)
@@ -158,7 +158,7 @@
 
 /datum/crafting_recipe/turbo
 	name = "Turbo"
-	result = /obj/item/reagent_containers/inhaler/turbo
+	result = /obj/item/reagent_containers/pill/patch/turbo
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/agave = 2,
 				/datum/reagent/consumable/ethanol/whiskey = 15)
@@ -180,7 +180,7 @@
 
 /datum/crafting_recipe/medx
 	name = "Med-X"
-	result = /obj/item/reagent_containers/hypospray/medipen/medx
+	result = /obj/item/reagent_containers/syringe/medx
 	reqs = list(/obj/item/reagent_containers/syringe = 1,
 				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2,
 				/obj/item/reagent_containers/food/snacks/grown/datura = 2,

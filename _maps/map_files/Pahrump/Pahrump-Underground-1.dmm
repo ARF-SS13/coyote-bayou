@@ -2174,6 +2174,9 @@
 "bvs" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/mineral/wasteland_vendor/denchem{
+	pixel_y = 32
+	},
 /turf/open/floor/wood/f13/old,
 /area/f13/den)
 "bvT" = (
@@ -3467,7 +3470,7 @@
 /area/f13/den)
 "clz" = (
 /obj/structure/bed/old,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_y = 32
 	},
@@ -5149,7 +5152,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/medical)
 "dgC" = (
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "dgO" = (
@@ -8164,7 +8167,7 @@
 /area/f13/den)
 "eLy" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/den)
 "eLB" = (
@@ -8406,11 +8409,11 @@
 /area/f13/bunker)
 "eVj" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/inhaler/jet{
+/obj/item/reagent_containers/pill/patch/jet{
 	pixel_x = 6;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/inhaler/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
 "eVu" = (
@@ -10331,9 +10334,9 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
+/obj/item/reagent_containers/syringe/medx,
 /obj/structure/closet/crate/medical/anchored,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
@@ -17624,7 +17627,7 @@
 /area/f13/den)
 "lmG" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -21078,7 +21081,6 @@
 	icon_state = "skulls";
 	name = "skulls"
 	},
-/obj/machinery/mineral/wasteland_vendor/denchem,
 /turf/closed/wall/r_wall/rust,
 /area/f13/den)
 "nIl" = (
@@ -31999,7 +32001,7 @@
 /area/f13/building)
 "vEB" = (
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/medx,
+/obj/item/reagent_containers/syringe/medx,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -33758,7 +33760,7 @@
 	},
 /area/f13/brotherhood/offices2nd)
 "wZU" = (
-/obj/item/reagent_containers/inhaler/turbo,
+/obj/item/reagent_containers/pill/patch/turbo,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wZZ" = (
