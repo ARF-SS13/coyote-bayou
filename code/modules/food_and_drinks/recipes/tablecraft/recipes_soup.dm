@@ -203,7 +203,7 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/peasoup
 	subcategory = CAT_SOUP
 
-/*
+
 /datum/crafting_recipe/food/wishsoup
 	name = "Wish soup"
 	reqs = list(
@@ -245,7 +245,7 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/spacylibertyduff
 	subcategory = CAT_SOUP
 
-	/datum/crafting_recipe/food/slimesoup
+/datum/crafting_recipe/food/slimesoup
 	name = "Slime soup"
 	reqs = list(
 			/datum/reagent/water = 10,
@@ -278,4 +278,4 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/coldchili
 	subcategory = CAT_SOUP
-*/
+

@@ -151,7 +151,6 @@
 	result = /obj/item/reagent_containers/food/snacks/pizza/vegetable
 	subcategory = CAT_BURGER
 
-/*
 /datum/crafting_recipe/food/superbiteburger
 	name = "Super bite burger"
 	reqs = list(
@@ -234,7 +233,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/crab
 	subcategory = CAT_BURGER
-
+/*
 /datum/crafting_recipe/food/empoweredburger
 	name = "Empowered Burger"
 	reqs = list(
@@ -243,7 +242,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/empoweredburger
 	subcategory = CAT_BURGER
-
+*/
 /datum/crafting_recipe/food/fivealarmburger
 	name = "Five alarm burger"
 	reqs = list(
@@ -271,7 +270,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/jelly/cherry
 	subcategory = CAT_BURGER
-
+/*
 /datum/crafting_recipe/food/xenoburger
 	name = "Xeno burger"
 	reqs = list(
@@ -309,7 +308,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/spell
 	subcategory = CAT_BURGER
-
+*/
 ////////////COLORED BURGERS//////////////
 
 /datum/crafting_recipe/food/redburger
@@ -391,6 +390,3 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/burger/white
 	subcategory = CAT_BURGER
-
-
-*/

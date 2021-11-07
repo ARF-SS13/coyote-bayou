@@ -23,3 +23,27 @@
 	else
 		C.adjustToxLoss(2)
 	..()
+
+/datum/reagent/impure/impurestimpak
+	name = "Impure Stimpak Fluid"
+	description = "Stimpak production is a hard process, and improperly prepared stimpak fluid is toxic."
+	can_synth = FALSE
+	color = "FFFFFF"
+
+/datum/reagent/impure/impurestimpak/on_mob_life(mob/living/carbon/C)
+	C.adjustToxLoss(2)
+	..()
+
+/datum/reagent/impure/failedstimpak
+	name = "something that's probably not stimpak fluid"
+	description = "How? How did you do this?"
+	can_synth = FALSE
+	color = "#302000"
+	taste_description = "horrible, horrible burning"
+	taste_mult = 52
+	metabolization_rate = 0.6
+
+/datum/reagent/impure/failedstimpak/on_mob_life(mob/living/carbon/C)
+	C.blood_volume -= 10
+	C.adjustCloneLoss(2, 0)
+	..()

@@ -191,19 +191,19 @@
 	tastes = list("ice" = 1, "water" = 1, "pineapples" = 5)
 	foodtype = PINEAPPLE //Pineapple to allow all that like pineapple to enjoy
 
-/obj/item/reagent_containers/food/snacks/snowcones/soda
-	name = "space cola snowcone"
-	desc = "Space Cola drizzled over a snowball in a paper cup."
+/obj/item/reagent_containers/food/snacks/snowcones/nuka
+	name = "Nuka Cola snowcone"
+	desc = "America's favorite, cold at last. Drizzled over a snowball in a paper cup."
 	icon_state = "soda_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/space_cola = 5)
-	tastes = list("ice" = 1, "water" = 1, "cola" = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nuka_cola = 5,  /datum/reagent/radium = 5)
+	tastes = list("ice" = 1, "water" = 1, "nuka cola" = 5)
 
-/obj/item/reagent_containers/food/snacks/snowcones/spacemountainwind
-	name = "\improper Space Mountain Wind snowcone"
-	desc = "Space Mountain Wind drizzled over a snowball in a paper cup."
+/obj/item/reagent_containers/food/snacks/snowcones/sunset
+	name = "\improper Sunset Sasparilla snowcone"
+	desc = "Sunset Sasparilla drizzled over a snowball in a paper cup."
 	icon_state = "kiwi_sc"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/spacemountainwind = 5)
-	tastes = list("ice" = 1, "water" = 1, "mountain wind" = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sunset = 5)
+	tastes = list("ice" = 1, "water" = 1, "root beer, vanilla, and caramel" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
 	name = "pwrgame snowcone"

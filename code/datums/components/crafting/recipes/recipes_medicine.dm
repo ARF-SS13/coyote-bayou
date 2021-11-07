@@ -92,9 +92,9 @@
 	time = 50
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/stimpak
-	name = "Stimpak"
-	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+/datum/crafting_recipe/improvisedstimpak
+	name = "Imitation Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/imitation
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 4,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 4,
 				/obj/item/reagent_containers/syringe = 1)
@@ -102,9 +102,25 @@
 	time = 45
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/stimpak
+	name = "Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/datum/reagent/medicine/stimpak = 10,
+				/obj/item/reagent_containers/syringe = 1)
+	time = 1 //you're just filling a hypospray with stim fluid... 
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak (x5)"
 	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	reqs = list(/datum/reagent/medicine/stimpak = 50,
+				/obj/item/reagent_containers/syringe = 5)
+	time = 5 //you're just filling 5 hypospray with stim fluid... 
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/improvisedstimpak5
+	name = "Imitation Stimpak (x5)"
+	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5/imitation
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 20,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 20,
 				/obj/item/reagent_containers/syringe = 5)
@@ -119,6 +135,7 @@
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
 	tools = list(TOOL_WORKBENCH)
+	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation)
 	time = 50
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
@@ -131,6 +148,7 @@
 				/obj/item/stack/sheet/leather = 10,
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
 	tools = list(TOOL_WORKBENCH)
+	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation)
 	time = 60
 	category = CAT_MEDICAL
 	blacklist = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super,

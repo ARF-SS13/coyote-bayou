@@ -1,7 +1,6 @@
 
 
 /////////////SPECIAL////////////
-/*
 /datum/crafting_recipe/food/holycake
 	name = "Angel food cake"
 	reqs = list(
@@ -49,7 +48,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/store/cake/slimecake
 	subcategory = CAT_CAKE
-
+/*
 /datum/crafting_recipe/food/trumpetcake
 	name = "Spaceman's Cake"
 	reqs = list(

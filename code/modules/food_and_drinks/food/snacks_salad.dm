@@ -15,7 +15,7 @@
 
 /obj/item/reagent_containers/food/snacks/salad/aesirsalad
 	name = "\improper Aesir salad"
-	desc = "Probably too incredible for mortal men to fully enjoy."
+	desc = "Very rarely eaten by Caesar's Legion when nobody is around to comment on the terrible pun."
 	icon_state = "aesirsalad"
 	bonus_reagents = list(/datum/reagent/medicine/omnizine = 2, /datum/reagent/consumable/nutriment/vitamin = 6)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/medicine/omnizine = 8, /datum/reagent/consumable/nutriment/vitamin = 6)

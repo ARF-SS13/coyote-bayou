@@ -178,7 +178,7 @@
 	icon_state = "stimpakpen"
 	volume = 10
 	amount_per_transfer_from_this = 10
-	list_reagents = list(/datum/reagent/medicine/stimpak = 10, /datum/reagent/medicine/stimulants = 10, /datum/reagent/medicine/omnizine = 10)
+	list_reagents = list(/datum/reagent/medicine/stimpak = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/on_reagent_change(changetype)
 	update_icon()
@@ -192,6 +192,10 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak/custom
 	desc = "A handheld delivery system for medicine, this particular one will deliver a tailored cocktail."
 	list_reagents = null
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation
+	desc = "A handheld delivery system for medicine. This one is filled with ground up flower juice, but hey, whatever gets you moving, right?"
+	list_reagents = list(/datum/reagent/medicine/stimpak/imitation = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	name = "super stimpak"

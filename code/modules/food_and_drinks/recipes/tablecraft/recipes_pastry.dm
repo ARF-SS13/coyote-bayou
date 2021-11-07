@@ -1,7 +1,6 @@
 // see code/module/crafting/table.dm
 
 ////////////////////////////////////////////////MUFFINS////////////////////////////////////////////////
-/*
 /datum/crafting_recipe/food/muffin
 	time = 15
 	name = "Muffin"
@@ -174,4 +173,3 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 	subcategory = CAT_PASTRY
-*/

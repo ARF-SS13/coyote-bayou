@@ -328,7 +328,7 @@ obj/item/reagent_containers/food/snacks/store/cake/pound_cake
 
 /obj/item/reagent_containers/food/snacks/store/cake/hardware_cake
 	name = "hardware cake"
-	desc = "A cake that is made with electronic boards and leaks acid..."
+	desc = "The Brotherhood are going to be SO mad."
 	icon_state = "hardware_cake"
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/hardware_cake_slice
 	bonus_reagents = list(/datum/reagent/toxin/acid = 15, /datum/reagent/oil = 15)

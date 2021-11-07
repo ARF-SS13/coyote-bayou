@@ -170,7 +170,6 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/frostypie
 	subcategory = CAT_PASTRY
 
-/*
 /datum/crafting_recipe/food/goldenappletart
 	name = "Golden apple tart"
 	reqs = list(
@@ -182,7 +181,7 @@
 	result = /obj/item/reagent_containers/food/snacks/pie/appletart
 	subcategory = CAT_PIE
 
-	/datum/crafting_recipe/food/bearypie
+/datum/crafting_recipe/food/bearypie
 	name = "Beary Pie"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/pie/plain = 1,
@@ -200,4 +199,16 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/pie/amanita_pie
 	subcategory = CAT_PIE
-*/
+
+/datum/crafting_recipe/food/cocolavatart
+	name = "Chocolate Lava tart"
+	always_availible = FALSE
+	reqs = list(
+			/datum/reagent/consumable/milk = 5,
+			/datum/reagent/consumable/sugar = 5,
+			/obj/item/reagent_containers/food/snacks/pie/plain = 1,
+			/obj/item/reagent_containers/food/snacks/chocolatebar = 3,
+			/obj/item/slime_extract = 1
+			)
+	result = /obj/item/reagent_containers/food/snacks/pie/cocolavatart
+	subcategory = CAT_PIE

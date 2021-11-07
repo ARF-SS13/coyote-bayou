@@ -23,9 +23,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/icecreamsandwich
 	subcategory = CAT_ICE
-
-/* clownish or branded drink products (pwrgame, cola, soda etc.) are commented out
-
+/*
 /datum/crafting_recipe/food/honkdae
 	name ="Honkdae"
 	reqs = list(
@@ -36,6 +34,7 @@
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/honkdae
+*/
 /datum/crafting_recipe/food/icecreamsandwich
 	name = "Icecream sandwich"
 	reqs = list(
@@ -48,10 +47,10 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/spacefreezy
-	name ="Space Freezy"
+	name ="Nuka Freezy"
 	reqs = list(
 		/datum/reagent/consumable/bluecherryjelly = 5,
-		/datum/reagent/consumable/spacemountainwind = 15,
+		/datum/reagent/consumable/nuka_cola = 15,
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/spacefreezy
@@ -63,12 +62,11 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/icecream = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,
-		/datum/reagent/consumable/space_cola = 10,
+		/datum/reagent/consumable/nuka_cola = 10,
 		/obj/item/reagent_containers/food/drinks/drinkingglass = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/cola_float
 	subcategory = CAT_ICE
-*/
 
 //////////////////////////SNOW CONES///////////////////////
 
@@ -204,7 +202,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
 	subcategory = CAT_ICE
-
+*/
 /datum/crafting_recipe/food/rainbow_sc
 	name = "Rainbow snowcone"
 	reqs = list(
@@ -216,22 +214,21 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/soda_sc
-	name = "Space Cola snowcone"
+	name = "Nuka Cola snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/space_cola = 5
+		/datum/reagent/consumable/nuka_cola = 5
 	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/soda
+	result = /obj/item/reagent_containers/food/snacks/snowcones/nuka
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/spacemountainwind_sc
-	name = "Space Mountain Wind snowcone"
+	name = "Sunset Sasparilla snowcone"
 	reqs = list(
 		/obj/item/reagent_containers/food/drinks/sillycup = 1,
 		/datum/reagent/consumable/ice = 15,
-		/datum/reagent/consumable/spacemountainwind = 5
+		/datum/reagent/consumable/sunset = 5
 	)
-	result = /obj/item/reagent_containers/food/snacks/snowcones/spacemountainwind
+	result = /obj/item/reagent_containers/food/snacks/snowcones/sunset
 	subcategory = CAT_ICE
-*/

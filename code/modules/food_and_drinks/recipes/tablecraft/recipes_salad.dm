@@ -71,7 +71,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
 	subcategory = CAT_MISCFOOD
-/*
+
 /datum/crafting_recipe/food/aesirsalad
 	name = "Aesir salad"
 	reqs = list(
@@ -82,7 +82,7 @@
 	result = /obj/item/reagent_containers/food/snacks/salad/aesirsalad
 	subcategory = CAT_SALAD
 
-
+/*
 /datum/crafting_recipe/food/monkeysdelight
 	name = "Monkeys delight"
 	reqs = list(
