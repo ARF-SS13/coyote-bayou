@@ -287,18 +287,18 @@ Great Khan
 
 /datum/outfit/loadout/enforcer
 	name = "Enforcer"
-	suit_store = /obj/item/gun/ballistic/revolver/caravan_shotgun
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
+	belt = /obj/item/storage/belt/bandolier
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck=1, \
 		/obj/item/ammo_box/shotgun/bean=1, \
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/restraints/handcuffs=2)
 
 /datum/outfit/loadout/brawler
 	name = "Brawler"
 	gloves =	/obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/twohanded/baseball/spiked=1, \
+		/obj/item/twohanded/sledgehammer, \
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
 /*
