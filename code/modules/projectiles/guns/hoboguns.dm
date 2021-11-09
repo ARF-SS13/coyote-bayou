@@ -183,7 +183,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
-//Auto-pipe rifle										Keywords: .357, 18 round belt, Extra damage -2 (bullet hose style)
+//Auto-pipe rifle										Keywords: .357, 18 round belt, Extra damage -8, no AP (bullet hose style)
 /obj/item/gun/ballistic/automatic/autopipe
 	name = "Auto-pipe rifle (.357)"
 	desc = "A belt fed pipe rifle held together with duct tape. Highly inaccurate. What could go wrong."
@@ -196,11 +196,12 @@
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	force = 20
-	extra_damage = -2
-	burst_size = 3
-	fire_delay = 10
-	burst_shot_delay = 5
-	spread = 24
+	extra_damage = -8
+	extra_penetration = -0.15
+	burst_size = 4
+	fire_delay = 6
+	burst_shot_delay = 6
+	spread = 15
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()

@@ -50,12 +50,12 @@
 	item_state = "duster_brahmin"
 	armor = list("melee" = 14, "bullet" = 14, "laser" = 25, "energy" = 20, "bomb" = 10, "bio" = 5, "rad" = 0, "fire" = 25, "acid" = 5)
 
-/obj/item/clothing/suit/armored/light/duster/lawman
-	name = "lawmans duster"
+/obj/item/clothing/suit/armored/light/duster/desperado
+	name = "desperado's duster"
 	desc = "A dyed brahmin hide duster, with a thick waxy surface, making it less vulnerable to lasers and energy based weapons."
 	icon_state = "duster_lawman"
 	item_state = "duster_lawman"
-	armor = list("melee" = 15, "bullet" = 16, "laser" = 24, "energy" = 20, "bomb" = 15, "bio" = 5, "rad" = 0, "fire" = 25, "acid" = 5)
+	armor = list("tier" = 4, "linelaser" = 24, "energy" = 20, "bomb" = 15, "bio" = 5, "rad" = 0, "fire" = 25, "acid" = 5)
 
 
 
