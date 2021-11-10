@@ -49,9 +49,9 @@
 	merge_type = /obj/item/stack/tile/mineral/diamond
 
 /obj/item/stack/tile/mineral/abductor
-	name = "alien floor tile"
-	singular_name = "alien floor tile"
-	desc = "A tile made out of alien alloy."
+	name = "polymer floor tile" //Fortuna edit: alien alloy -> polymer
+	singular_name = "polymer floor tile"
+	desc = "A tile made from an experimental polymer alloy."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "tile_abductor"
 	turf_type = /turf/open/floor/mineral/abductor

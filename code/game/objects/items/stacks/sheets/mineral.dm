@@ -405,26 +405,26 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 /*
  * Alien Alloy
  */
-/obj/item/stack/sheet/mineral/abductor
-	name = "alien alloy"
+/obj/item/stack/sheet/mineral/abductor //Start Fortuna edit: alien alloy -> polymer alloy
+	name = "experimental polymer alloy"
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "sheet-abductor"
 	item_state = "sheet-abductor"
-	singular_name = "alien alloy sheet"
+	singular_name = "experimental polymer alloy sheet"
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
 
 GLOBAL_LIST_INIT(abductor_recipes, list ( \
-	new/datum/stack_recipe("alien bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien locker", /obj/structure/closet/abductor, 2, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien table frame", /obj/structure/table_frame/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien bar stool", /obj/item/chair/stool/bar/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien stool", /obj/item/chair/stool/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("alien airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("poylmer bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer locker", /obj/structure/closet/abductor, 2, time = 15, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer table frame", /obj/structure/table_frame/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer bar stool", /obj/item/chair/stool/bar/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer stool", /obj/item/chair/stool/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("poylmer airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
 	null, \
-	new/datum/stack_recipe("alien floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
-	))
+	new/datum/stack_recipe("polymer floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
+	)) //End Fortuna edit
 
 /obj/item/stack/sheet/mineral/abductor/get_main_recipes()
 	. = ..()

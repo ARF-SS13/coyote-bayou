@@ -683,45 +683,44 @@
 	name = "beacon - Reagent Synthesizer"
 	spawned_machine = /obj/machinery/chem_dispenser/abductor
 
-/obj/item/scalpel/alien
-	name = "alien scalpel"
+/obj/item/scalpel/alien //Fortuna edit: alien tools -> experimental tools
+	name = "experimental scalpel"
 	desc = "It's a gleaming sharp knife made out of silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/hemostat/alien
-	name = "alien hemostat"
+	name = "experimental hemostat"
 	desc = "You've never seen this before."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/retractor/alien
-	name = "alien retractor"
+	name = "experimental retractor"
 	desc = "You're not sure if you want the veil pulled back."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/circular_saw/alien
-	name = "alien saw"
-	desc = "Do the aliens also lose this, and need to find an alien hatchet?"
+	name = "experimental saw"
+	desc = "It's the sharpest thing you've ever saw."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/surgicaldrill/alien
-	name = "alien drill"
-	desc = "Maybe alien surgeons have finally found a use for the drill."
+	name = "experimental drill"
+	desc = "Maybe researchers finally found a use for the drill."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/cautery/alien
-	name = "alien cautery"
-	desc = "Why would bloodless aliens have a tool to stop bleeding? \
-		Unless..."
+	name = "experimental cautery"
+	desc = "Doubles as a soldering iron, in a pinch."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/clothing/head/helmet/abductor
-	name = "agent headgear"
+	name = "polymer headgear"
 	desc = "Abduct with style - spiky style. Prevents digital tracking."
 	icon_state = "alienhelmet"
 	item_state = "alienhelmet"
@@ -731,15 +730,15 @@
 // Operating Table / Beds / Lockers
 
 /obj/structure/bed/abductor
-	name = "resting contraption"
-	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
+	name = "polymer bed"
+	desc = "This looks harder than a rock. Can people really sleep on this thing?"
 	icon = 'icons/obj/abductor.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/abductor
 	icon_state = "bed"
 
 /obj/structure/table_frame/abductor
-	name = "alien table frame"
-	desc = "A sturdy table frame made from alien alloy."
+	name = "polymer table frame"
+	desc = "A sturdy table frame made from an experimental polymer alloy."
 	icon_state = "alien_frame"
 	framestack = /obj/item/stack/sheet/mineral/abductor
 	framestackamount = 1
@@ -757,7 +756,7 @@
 	if(istype(I, /obj/item/stack/sheet/mineral/abductor))
 		var/obj/item/stack/sheet/P = I
 		if(P.get_amount() < 1)
-			to_chat(user, "<span class='warning'>You need one alien alloy sheet to do this!</span>")
+			to_chat(user, "<span class='warning'>You need one polymer alloy sheet to do this!</span>")
 			return
 		to_chat(user, "<span class='notice'>You start adding [P] to [src]...</span>")
 		if(do_after(user, 50, target = src))
@@ -777,7 +776,7 @@
 			qdel(src)
 
 /obj/structure/table/abductor
-	name = "alien table"
+	name = "polymer table"
 	desc = "Advanced flat surface technology at work!"
 	icon = 'icons/obj/smooth_structures/alien_table.dmi'
 	icon_state = "alien_table"
@@ -789,8 +788,8 @@
 	frame = /obj/structure/table_frame/abductor
 
 /obj/structure/table/optable/abductor
-	name = "alien operating table"
-	desc = "Used for alien medical procedures. The surface is covered in tiny spines."
+	name = "poylmer operating table"
+	desc = "Used for advanced medical procedures. The surface is covered in tiny spines."
 	frame = /obj/structure/table_frame/abductor
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	framestack = /obj/item/stack/sheet/mineral/abductor
@@ -821,7 +820,7 @@
 	. = ..()
 
 /obj/structure/closet/abductor
-	name = "alien locker"
+	name = "polymer locker"
 	desc = "Contains secrets of the universe."
 	icon_state = "abductor"
 	icon_door = "abductor"
@@ -829,9 +828,9 @@
 	material_drop = /obj/item/stack/sheet/mineral/abductor
 
 /obj/structure/door_assembly/door_assembly_abductor
-	name = "alien airlock assembly"
+	name = "polymer airlock assembly"
 	icon = 'icons/obj/doors/airlocks/abductor/abductor_airlock.dmi'
-	base_name = "alien airlock"
+	base_name = "experimental polymer airlock"
 	overlays_file = 'icons/obj/doors/airlocks/abductor/overlays.dmi'
 	airlock_type = /obj/machinery/door/airlock/abductor
 	material_type = /obj/item/stack/sheet/mineral/abductor
@@ -839,7 +838,7 @@
 
 /obj/item/clothing/under/abductor
 	desc = "The most advanced form of jumpsuit known to reality, looks uncomfortable."
-	name = "alien jumpsuit"
+	name = "polymer jumpsuit" //End Fortuna edit
 	icon_state = "abductor"
 	item_state = "bl_suit"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0, fire = 0, acid = 0)

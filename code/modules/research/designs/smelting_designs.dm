@@ -61,8 +61,8 @@
 	maxstack = 50
 
 /datum/design/alienalloy
-	name = "Alien Alloy"
-	desc = "A sheet of reverse-engineered alien alloy."
+	name = "Polymer Alloy" //Fortuna edit: alien alloy -> polymer
+	desc = "A sheet of reverse-engineered polymer alloy."
 	id = "alienalloy"
 	build_type = PROTOLATHE | SMELTER
 	materials = list(/datum/material/iron = 4000, /datum/material/plasma = 4000)

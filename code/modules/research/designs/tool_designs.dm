@@ -63,7 +63,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/exwelder
-	name = "Experimental Welding Tool"
+	name = "Regenerating Welding Tool"
 	desc = "An experimental welder capable of self-fuel generation."
 	id = "exwelder"
 	build_type = PROTOLATHE
@@ -97,8 +97,8 @@
 /////////////////////////////////////////
 
 /datum/design/alienwrench
-	name = "Alien Wrench"
-	desc = "An advanced wrench obtained through Abductor technology."
+	name = "Experimental Wrench" //Start Fortuna edit: alien tech -> experimental
+	desc = "An experimental wrench obtained through advanced technology."
 	id = "alien_wrench"
 	build_path = /obj/item/wrench/abductor
 	build_type = PROTOLATHE
@@ -107,8 +107,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwirecutters
-	name = "Alien Wirecutters"
-	desc = "Advanced wirecutters obtained through Abductor technology."
+	name = "Experimental Wirecutters"
+	desc = "Experimental wirecutters obtained through advanced technology."
 	id = "alien_wirecutters"
 	build_path = /obj/item/wirecutters/abductor
 	build_type = PROTOLATHE
@@ -117,8 +117,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienscrewdriver
-	name = "Alien Screwdriver"
-	desc = "An advanced screwdriver obtained through Abductor technology."
+	name = "Experimental Screwdriver"
+	desc = "An experimental screwdriver obtained through advanced technology."
 	id = "alien_screwdriver"
 	build_path = /obj/item/screwdriver/abductor
 	build_type = PROTOLATHE
@@ -127,8 +127,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/aliencrowbar
-	name = "Alien Crowbar"
-	desc = "An advanced crowbar obtained through Abductor technology."
+	name = "Experimental Crowbar"
+	desc = "An experimental crowbar obtained through advanced technology."
 	id = "alien_crowbar"
 	build_path = /obj/item/crowbar/abductor
 	build_type = PROTOLATHE
@@ -137,8 +137,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwelder
-	name = "Alien Welding Tool"
-	desc = "An advanced welding tool obtained through Abductor technology."
+	name = "Experimental Welding Tool"
+	desc = "An experimental welding tool obtained through advanced technology."
 	id = "alien_welder"
 	build_path = /obj/item/weldingtool/abductor
 	build_type = PROTOLATHE
@@ -147,8 +147,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienmultitool
-	name = "Alien Multitool"
-	desc = "An advanced multitool obtained through Abductor technology."
+	name = "Experimental Multitool"
+	desc = "An experimental multitool obtained through advanced technology."
 	id = "alien_multitool"
 	build_path = /obj/item/multitool/abductor
 	build_type = PROTOLATHE
@@ -161,8 +161,8 @@
 /////////////////////////////////////////
 
 /datum/design/alienscalpel
-	name = "Alien Scalpel"
-	desc = "An advanced scalpel obtained through Abductor technology."
+	name = "Experimental Scalpel"
+	desc = "An experimental scalpel obtained through advanced technology."
 	id = "alien_scalpel"
 	build_path = /obj/item/scalpel/alien
 	build_type = PROTOLATHE
@@ -171,8 +171,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/alienhemostat
-	name = "Alien Hemostat"
-	desc = "An advanced hemostat obtained through Abductor technology."
+	name = "Experimental Hemostat"
+	desc = "An experimental hemostat obtained through advanced technology."
 	id = "alien_hemostat"
 	build_path = /obj/item/hemostat/alien
 	build_type = PROTOLATHE
@@ -181,8 +181,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/alienretractor
-	name = "Alien Retractor"
-	desc = "An advanced retractor obtained through Abductor technology."
+	name = "Experimental Retractor"
+	desc = "An experimental retractor obtained through advanced technology."
 	id = "alien_retractor"
 	build_path = /obj/item/retractor/alien
 	build_type = PROTOLATHE
@@ -191,8 +191,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliensaw
-	name = "Alien Circular Saw"
-	desc = "An advanced surgical saw obtained through Abductor technology."
+	name = "Experimental Circular Saw"
+	desc = "An experimental surgical saw obtained through advanced technology."
 	id = "alien_saw"
 	build_path = /obj/item/circular_saw/alien
 	build_type = PROTOLATHE
@@ -201,8 +201,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliendrill
-	name = "Alien Drill"
-	desc = "An advanced drill obtained through Abductor technology."
+	name = "Experimental Drill"
+	desc = "An experimental surgical drill obtained through advanced technology."
 	id = "alien_drill"
 	build_path = /obj/item/surgicaldrill/alien
 	build_type = PROTOLATHE
@@ -211,8 +211,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/aliencautery
-	name = "Alien Cautery"
-	desc = "An advanced cautery obtained through Abductor technology."
+	name = "Experimental Cautery"
+	desc = "An experimental cautery obtained through advanced technology." //End Fortuna edit
 	id = "alien_cautery"
 	build_path = /obj/item/cautery/alien
 	build_type = PROTOLATHE
