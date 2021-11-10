@@ -769,12 +769,12 @@ Raider
 /datum/outfit/loadout/vault_refugee
 	name = "Vaultie"
 	uniform = /obj/item/clothing/under/f13/vault
-	gloves = /obj/item/pda
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/pda)
 
 /datum/outfit/loadout/warrior
 	name = "Wasteland Warrior"
