@@ -86,7 +86,7 @@
 		R.use(4)		
 
 		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
+			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
 			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
 
 		covered = TRUE
@@ -114,7 +114,7 @@
 		W.use(4)		
 
 		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/random(src.loc)
+			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
 			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
 
 		covered = TRUE
@@ -194,16 +194,15 @@
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
+	spawn_once = TRUE
 	spawn_time = 60 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 5)
 
-/obj/structure/nest/deathclawlegendary
-	name = "legendary deathclaw nest"
+/obj/structure/nest/deathclaw/mother
+	name = "mother deathclaw nest"
 	max_mobs = 1
 	spawn_time = 120 SECONDS
-	spawn_once = TRUE
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/legendary = 5,
-					/mob/living/simple_animal/hostile/deathclaw/mother = 5)
+	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/mother = 5)
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
@@ -233,7 +232,7 @@
 	name = "molerat nest"
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 1)
-	spawn_time = 20 SECONDS //They just love tunnelin'.. And are pretty soft
+	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
@@ -254,21 +253,41 @@
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/tribal = 1,
-					/mob/living/simple_animal/hostile/raider/ranged/boss = 1,
-					/mob/living/simple_animal/hostile/raider/legendary = 1)
+					/mob/living/simple_animal/hostile/raider/tribal = 1)
+
+/obj/structure/nest/raider/melee
+	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
+					/mob/living/simple_animal/hostile/raider/firefighter = 2,
+					/mob/living/simple_animal/hostile/raider/baseball = 5,
+					/mob/living/simple_animal/hostile/raider/tribal = 1)
+
+/obj/structure/nest/raider/ranged
+	max_mobs = 3
+	mob_types = list(/mob/living/simple_animal/hostile/raider/ranged = 2,
+					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
+					/mob/living/simple_animal/hostile/raider/ranged/biker = 1)
+
+/obj/structure/nest/raider/boss
+	max_mobs = 1
+	spawn_once = TRUE
+	mob_types = list(/mob/living/simple_animal/hostile/raider/ranged/boss = 5)
+
+/obj/structure/nest/raider/legendary
+	max_mobs = 1
+	spawn_once = TRUE
+	mob_types = list(/mob/living/simple_animal/hostile/raider/legendary = 1)
 
 /obj/structure/nest/protectron
 	name = "protectron pod"
 	desc = "An old robot storage system. This one looks like it is connected to space underground."
-	max_mobs = 5
+	max_mobs = 3
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/protectron = 5)
 
 /obj/structure/nest/securitron
 	name = "securitron pod"
 	desc = "An old securitron containment pod system. This one looks like it is connected to a storage system underground."
-	max_mobs = 5
+	max_mobs = 3
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/securitron = 5)
 					
@@ -276,13 +295,13 @@
 	name = "assaultron pod"
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
 	spawn_time = 40 SECONDS
-	max_mobs = 5
+	max_mobs = 2
 	icon_state = "scanner_modified"
 	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
 
 /obj/structure/nest/cazador
 	name = "cazador nest"
-	max_mobs = 5
+	max_mobs = 4
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
 					/mob/living/simple_animal/hostile/cazador/young = 3,)
 
@@ -301,9 +320,18 @@
 	spawn_time = 30 SECONDS
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
-					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2,
-					/mob/living/simple_animal/hostile/supermutant/nightkin = 1,
-					/mob/living/simple_animal/hostile/supermutant/legendary = 1)
+					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2)
+
+/obj/structure/nest/supermutant/melee
+	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5)
+
+/obj/structure/nest/supermutant/ranged
+	mob_types = list(/mob/living/simple_animal/hostile/supermutant/rangedmutant = 5)
+
+/obj/structure/nest/supermutant/nightkin
+	mob_types = list(/mob/living/simple_animal/hostile/supermutant/nightkin = 5,
+					/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant = 2,
+					/mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant = 1)
 
 /obj/structure/nest/nightstalker
 	name = "nightstalker nest"

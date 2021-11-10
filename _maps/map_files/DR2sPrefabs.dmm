@@ -58,7 +58,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13/wood,
 /area/space)
 "ak" = (
@@ -858,7 +858,7 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "cs" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/machinery/workbench,
@@ -910,7 +910,7 @@
 /area/space)
 "cy" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -1046,8 +1046,8 @@
 /area/space)
 "cO" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13/wood,
 /area/space)
@@ -1164,7 +1164,7 @@
 /area/space)
 "de" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2252,7 +2252,7 @@
 /area/space)
 "gi" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/space)
@@ -2367,9 +2367,9 @@
 	dir = 8
 	},
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/space)
 "gy" = (
@@ -2735,7 +2735,7 @@
 /area/space)
 "hH" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3288,7 +3288,7 @@
 /area/space)
 "ja" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/space)
 "jb" = (
@@ -3387,7 +3387,7 @@
 /turf/open/floor/f13/wood,
 /area/space)
 "js" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3608,7 +3608,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/space)
 "jZ" = (
@@ -4401,7 +4401,7 @@
 /obj/structure/table,
 /obj/item/ammo_box/c10mm,
 /obj/item/clothing/ears/earmuffs,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -4498,7 +4498,7 @@
 /obj/item/ammo_casing/shotgun/buckshot,
 /obj/item/clothing/head/beret,
 /obj/item/clothing/ears/earmuffs,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	dir = 10;
 	icon_state = "redmark"
@@ -4552,7 +4552,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -4563,7 +4563,7 @@
 /obj/item/clothing/shoes/combat,
 /obj/structure/closet,
 /obj/item/clothing/head/beret,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -4593,7 +4593,7 @@
 /obj/effect/decal/remains{
 	icon_state = "remains"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5100,7 +5100,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/space)
 "oG" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6921,7 +6921,7 @@
 /area/space)
 "Hm" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "Hn" = (
@@ -6942,7 +6942,7 @@
 /area/space)
 "Hp" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/wood/f13/old,
 /area/space)
@@ -6962,7 +6962,7 @@
 "Hs" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "Ht" = (
@@ -6996,7 +6996,7 @@
 "Hx" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "Hy" = (
@@ -7022,7 +7022,7 @@
 /area/space)
 "HC" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "HD" = (
@@ -7085,7 +7085,7 @@
 /area/space)
 "HM" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/wood/f13/old,
 /area/space)
 "HN" = (
@@ -7348,7 +7348,7 @@
 /area/space)
 "IJ" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/wood/f13{
 	icon_state = "wood-broken2"
 	},
@@ -7361,14 +7361,14 @@
 /area/space)
 "IL" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/wood/f13{
 	icon_state = "housebase"
 	},
 /area/space)
 "IM" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13{
 	icon_state = "housebase"
 	},
@@ -7559,7 +7559,7 @@
 /area/space)
 "Jq" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/wood/f13{
 	icon_state = "wood"
 	},
@@ -7779,7 +7779,7 @@
 /area/space)
 "Ka" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -7789,7 +7789,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -7812,7 +7812,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -7862,7 +7862,7 @@
 /area/space)
 "Km" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/unique,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -7870,7 +7870,7 @@
 /area/space)
 "Kn" = (
 /obj/structure/bed/mattress/pregame,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/inside/subway,
 /area/space)
 "Ko" = (
@@ -7902,7 +7902,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},

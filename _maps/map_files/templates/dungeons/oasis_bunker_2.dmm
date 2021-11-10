@@ -92,8 +92,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "bK" = (
@@ -195,7 +194,6 @@
 	},
 /area/f13/bunker)
 "dm" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -237,8 +235,7 @@
 	},
 /area/f13/bunker)
 "eg" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/gecko,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -320,7 +317,7 @@
 "fD" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fG" = (
@@ -503,7 +500,7 @@
 "je" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ji" = (
 /obj/structure/toilet{
@@ -541,10 +538,7 @@
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "jZ" = (
 /obj/structure/wreck/trash/secway,
@@ -699,12 +693,11 @@
 	},
 /area/f13/bunker)
 "ni" = (
-/obj/structure/chair/stool/retro,
-/mob/living/simple_animal/hostile/gecko,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/supermutant{
+	max_mobs = 3
 	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "nj" = (
 /obj/structure/table/reinforced,
@@ -771,8 +764,8 @@
 /area/f13/bunker)
 "on" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -781,9 +774,11 @@
 /turf/closed/indestructible/rock,
 /area/f13/bunker)
 "oz" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "oE" = (
 /obj/structure/grille,
@@ -871,12 +866,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
 /area/f13/radiation)
+"qp" = (
+/obj/structure/closet/anchored,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "qA" = (
 /obj/machinery/jukebox,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
+/area/f13/bunker)
+"qV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/assaultron{
+	spawn_time = 300
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "qZ" = (
 /mob/living/simple_animal/hostile/gecko,
@@ -910,7 +917,7 @@
 /obj/effect/spawner/lootdrop/ammo,
 /obj/structure/closet/anchored,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "rJ" = (
 /obj/structure/sink{
@@ -973,8 +980,7 @@
 /obj/structure/closet/crate/secure/weapon,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -1010,6 +1016,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/nest/assaultron{
+	spawn_time = 300
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "tI" = (
@@ -1019,8 +1028,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "tO" = (
-/mob/living/simple_animal/hostile/handy/protectron,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/assaultron{
+	max_mobs = 1;
+	spawn_once = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "tS" = (
@@ -1080,7 +1092,7 @@
 /area/f13/radiation)
 "uI" = (
 /obj/item/trash/popcorn,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "uP" = (
 /obj/machinery/light{
@@ -1133,7 +1145,12 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
+"vU" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "wc" = (
 /obj/machinery/camera,
@@ -1287,7 +1304,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier9,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "yA" = (
@@ -1299,11 +1316,11 @@
 	},
 /area/f13/radiation)
 "yB" = (
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/supermutant/ranged{
+	spawn_time = 50
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1311,10 +1328,7 @@
 /area/f13/bunker)
 "yK" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "yZ" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
@@ -1411,7 +1425,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/supermutant,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1576,8 +1589,10 @@
 	},
 /area/f13/bunker)
 "Dg" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/obj/structure/nest/supermutant/ranged{
+	spawn_time = 100
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Di" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1598,15 +1613,10 @@
 	},
 /area/f13/bunker)
 "DJ" = (
-/obj/machinery/shower{
-	dir = 4
+/obj/structure/nest/protectron{
+	max_mobs = 1;
+	spawn_once = 1
 	},
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/decoration/vent,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/supermutant/nightkin,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "DM" = (
@@ -1627,11 +1637,9 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker)
 "DV" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "DY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1738,11 +1746,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "Fe" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/obj/structure/nest/supermutant/melee{
+	spawn_time = 100
 	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Ff" = (
 /obj/structure/urinal,
@@ -1792,11 +1799,14 @@
 /obj/effect/decal/waste{
 	icon_state = "goo8"
 	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/radiation)
+"GA" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/bunker)
 "GB" = (
 /obj/structure/chair/stool/retro,
 /obj/effect/spawner/lootdrop/trash,
@@ -1807,7 +1817,7 @@
 /area/f13/bunker)
 "GD" = (
 /obj/structure/reagent_dispensers/barrel/four,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "GL" = (
 /obj/structure/sign/poster/contraband/pinup_bed,
@@ -1841,18 +1851,11 @@
 	},
 /mob/living/simple_animal/hostile/centaur,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "Ho" = (
-/mob/living/simple_animal/hostile/gecko,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/obj/structure/nest/deathclaw/mother,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Hy" = (
 /turf/closed/mineral/random/low_chance,
@@ -1933,10 +1936,10 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "JM" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/deathclaw/mother,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
 "JP" = (
@@ -1991,7 +1994,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2184,9 +2186,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "Op" = (
-/mob/living/simple_animal/hostile/supermutant,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/obj/structure/nest/deathclaw,
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess"
+	},
 /area/f13/bunker)
 "Os" = (
 /obj/docking_port/stationary{
@@ -2202,7 +2205,7 @@
 "Ow" = (
 /obj/structure/rack,
 /obj/item/poster/random_contraband,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier6,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "OB" = (
@@ -2231,7 +2234,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier5,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "PH" = (
@@ -2275,14 +2278,8 @@
 	},
 /area/f13/bunker)
 "Ql" = (
-/obj/structure/nest/ghoul,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
+/turf/open/floor/plating/tunnel,
+/area/f13/radiation)
 "Qn" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
 /obj/effect/decal/cleanable/cobweb,
@@ -2329,7 +2326,7 @@
 /area/f13/bunker)
 "Ro" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -2347,6 +2344,9 @@
 "Rq" = (
 /obj/structure/chair/office{
 	dir = 1
+	},
+/obj/structure/nest/supermutant/melee{
+	spawn_time = 100
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -2527,7 +2527,7 @@
 	color = "#845f58"
 	},
 /obj/structure/decoration/vent,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "TZ" = (
 /obj/structure/chair/stool/retro{
@@ -2556,7 +2556,7 @@
 /obj/structure/chair/office,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Uj" = (
 /obj/effect/decal/cleanable/blood,
@@ -2599,13 +2599,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
-"Vb" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
-	},
-/area/f13/bunker)
 "Vi" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plating/tunnel,
@@ -2644,7 +2637,7 @@
 /area/f13/radiation)
 "Vy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/engine,
 /area/f13/radiation)
 "VA" = (
@@ -2678,14 +2671,6 @@
 "Wd" = (
 /obj/structure/sign/warning,
 /turf/closed/wall/r_wall/rust,
-/area/f13/bunker)
-"Wq" = (
-/mob/living/simple_animal/hostile/supermutant,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
 /area/f13/bunker)
 "Wr" = (
 /obj/item/circuitboard/machine/smartfridge,
@@ -2729,7 +2714,7 @@
 /area/f13/bunker)
 "WS" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2749,10 +2734,6 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/bunker)
-"Xc" = (
-/mob/living/simple_animal/hostile/supermutant,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/bunker)
 "Xe" = (
 /obj/machinery/shower{
 	dir = 1;
@@ -2767,10 +2748,7 @@
 "Xi" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "Xo" = (
 /obj/machinery/microwave/stove,
@@ -2788,7 +2766,6 @@
 /area/f13/bunker)
 "Xs" = (
 /obj/effect/decal/cleanable/blood/old,
-/mob/living/simple_animal/hostile/deathclaw/mother,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
@@ -2836,18 +2813,20 @@
 	},
 /area/f13/bunker)
 "XX" = (
-/mob/living/simple_animal/hostile/handy/assaultron,
-/turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/bunker)
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/tunnel,
+/area/f13/radiation)
 "Yj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/fusion_fuel,
 /turf/open/floor/engine,
 /area/f13/radiation)
-"Ym" = (
-/mob/living/simple_animal/hostile/supermutant,
+"Yk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
+/obj/structure/nest/supermutant/nightkin{
+	spawn_time = 200
+	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Yp" = (
 /obj/structure/table,
@@ -2878,10 +2857,7 @@
 /area/f13/bunker)
 "YO" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Zn" = (
 /obj/machinery/light{
@@ -3139,7 +3115,7 @@ jd
 uf
 uf
 Ev
-Ev
+SG
 rW
 dm
 Ev
@@ -3184,7 +3160,7 @@ uf
 uI
 nJ
 zu
-uf
+qV
 uf
 hK
 rW
@@ -3192,7 +3168,7 @@ ty
 GW
 CX
 Pg
-oz
+yq
 ml
 Zs
 Zs
@@ -3218,22 +3194,22 @@ Zs
 Zs
 rW
 Ev
-Ev
+DJ
 zc
 uf
 Ax
-uf
-uf
-nJ
+yq
+yq
+Vi
 uf
 Ev
 gz
 uf
 nJ
-Fc
 Ev
+DJ
 iT
-Ev
+SG
 jd
 rW
 Zs
@@ -3264,18 +3240,18 @@ uf
 zp
 iT
 vT
-XX
+SG
 GD
 rW
 XE
 Sm
 LC
-oz
+uf
 nJ
 ny
 zu
-uf
-XD
+yq
+vU
 Ev
 rW
 rW
@@ -3351,7 +3327,7 @@ Oo
 rW
 cy
 cy
-DJ
+cy
 TN
 uf
 uf
@@ -3360,7 +3336,7 @@ LR
 uf
 Sv
 Kg
-Ma
+qp
 aq
 Qh
 YH
@@ -3384,17 +3360,17 @@ cw
 BJ
 rW
 VM
-Op
+uf
 jd
 iS
 VM
-Op
+uf
 Ev
 rW
 xU
 Ev
-uf
-uf
+yq
+Yk
 je
 Ev
 ww
@@ -3427,7 +3403,7 @@ To
 rW
 gh
 uf
-uf
+ni
 Ui
 gB
 lS
@@ -3440,7 +3416,7 @@ nJ
 rW
 nJ
 rW
-XX
+Ev
 Ow
 iR
 jq
@@ -3469,7 +3445,7 @@ sV
 rW
 wv
 MO
-uf
+yq
 iu
 fl
 hy
@@ -3511,7 +3487,7 @@ rW
 rW
 rW
 Ev
-Dg
+Ev
 Ev
 Ri
 uf
@@ -3644,7 +3620,7 @@ sG
 Fc
 rW
 Gq
-Bb
+XX
 kb
 cE
 Ny
@@ -3685,7 +3661,7 @@ Ka
 XQ
 uf
 rW
-Mz
+Ql
 PZ
 WS
 cE
@@ -3707,7 +3683,7 @@ rW
 kj
 kj
 rW
-Fe
+SD
 SD
 rW
 Zs
@@ -3720,8 +3696,8 @@ VA
 jj
 si
 rW
-Jw
-BD
+oz
+Dg
 nN
 rV
 Ev
@@ -3748,7 +3724,7 @@ rW
 yZ
 yq
 CE
-tY
+Op
 ex
 Bh
 rW
@@ -3763,7 +3739,7 @@ rW
 rW
 rW
 nb
-lp
+yq
 rW
 rW
 rW
@@ -3800,7 +3776,7 @@ Zs
 (22,1,1) = {"
 rW
 Fq
-Xc
+bZ
 bZ
 fV
 rW
@@ -3815,7 +3791,7 @@ yA
 Mz
 Xi
 Mz
-Mz
+Ql
 te
 aJ
 uH
@@ -3846,7 +3822,7 @@ fP
 cs
 XC
 rW
-Wq
+lp
 BD
 rW
 Cv
@@ -3914,7 +3890,7 @@ rW
 Qh
 aX
 Qh
-SD
+JM
 el
 nD
 rW
@@ -3928,7 +3904,7 @@ rW
 bZ
 nE
 RC
-Ym
+FY
 rW
 BD
 lp
@@ -3977,15 +3953,15 @@ Ai
 rW
 XU
 tS
-DV
+BD
+SG
 BD
 BD
-DV
 lp
 lp
 lp
-Qv
-Vl
+vU
+GA
 rW
 Ua
 An
@@ -4019,12 +3995,12 @@ St
 ea
 Rs
 lp
+yq
+DV
 lp
-lp
-lp
-lp
-Qv
-lp
+yq
+vU
+yq
 SL
 lp
 lp
@@ -4061,11 +4037,11 @@ ky
 rW
 lp
 lp
-Ql
+TL
 Wy
 KN
 lp
-lp
+yq
 lp
 lp
 lp
@@ -4095,11 +4071,11 @@ Zs
 rW
 ky
 vB
-ni
+cT
 BD
 rW
 lp
-eg
+SG
 rW
 rW
 Xq
@@ -4124,7 +4100,7 @@ Ua
 SG
 SD
 SM
-Vb
+RO
 CZ
 rW
 Zs
@@ -4135,13 +4111,13 @@ Zs
 "}
 (30,1,1) = {"
 rW
-ni
+cT
 pH
 pH
 TZ
 rW
-lp
-BD
+yq
+Fe
 rW
 BD
 BA
@@ -4164,7 +4140,7 @@ ZN
 An
 Ua
 Xu
-SG
+Ho
 cx
 VA
 RO
@@ -4346,7 +4322,7 @@ Zs
 (35,1,1) = {"
 rW
 lp
-BD
+eg
 De
 hI
 rW
@@ -4392,7 +4368,7 @@ Vu
 En
 En
 rW
-Wq
+lp
 rW
 Zs
 rW
@@ -4430,7 +4406,7 @@ Zs
 (37,1,1) = {"
 rW
 Cv
-Ho
+lp
 lp
 lp
 rW
@@ -4492,7 +4468,7 @@ lp
 Mf
 bn
 rW
-JM
+BD
 rW
 Zs
 Zs
@@ -4564,7 +4540,7 @@ Cv
 ZU
 BD
 Qv
-Wq
+yq
 lp
 lp
 lp
@@ -4614,8 +4590,8 @@ lp
 lp
 BD
 EC
-BD
-BD
+SG
+Fe
 lp
 lp
 lp

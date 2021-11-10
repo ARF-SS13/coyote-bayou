@@ -9,7 +9,7 @@
 /obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
 /obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "ac" = (
@@ -24,7 +24,7 @@
 	dir = 1
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "af" = (
@@ -483,7 +483,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -548,7 +548,7 @@
 	icon_state = "left"
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -598,7 +598,7 @@
 /obj/item/seeds/tower/steel,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
 /obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
@@ -970,7 +970,7 @@
 /area/f13/bunker)
 "cD" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/f13,
 /area/f13/city)
@@ -1080,7 +1080,7 @@
 	},
 /area/f13/bunker)
 "cR" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -1128,7 +1128,7 @@
 	},
 /area/f13/bunker)
 "cZ" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -2299,8 +2299,8 @@
 "gh" = (
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -2314,7 +2314,7 @@
 /area/f13/bunker)
 "gj" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
@@ -2430,7 +2430,7 @@
 /turf/open/floor/plating,
 /area/f13/bunker)
 "gB" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -2987,7 +2987,7 @@
 "ie" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
 	},
@@ -2998,7 +2998,7 @@
 	id = 93
 	},
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -3443,7 +3443,7 @@
 	},
 /area/f13/bunker)
 "jb" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jc" = (
@@ -4338,7 +4338,7 @@
 "lo" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -4361,7 +4361,7 @@
 /area/f13/bunker)
 "lt" = (
 /obj/machinery/door/window,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -5906,7 +5906,7 @@
 /area/f13/tunnel)
 "pm" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -5940,12 +5940,12 @@
 /area/f13/bunker)
 "ps" = (
 /obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "pt" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
@@ -5959,7 +5959,7 @@
 /area/f13/bunker)
 "pv" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -5973,7 +5973,7 @@
 /area/f13/city)
 "px" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -5987,7 +5987,7 @@
 "pz" = (
 /obj/effect/decal/waste,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "pB" = (
@@ -6254,7 +6254,7 @@
 /area/f13/caves)
 "qw" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
 "qx" = (
@@ -6713,7 +6713,7 @@
 /area/f13/city)
 "sb" = (
 /obj/structure/closet/fridge/standard,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "sc" = (
@@ -6987,7 +6987,7 @@
 /area/f13/bunker)
 "sU" = (
 /obj/structure/closet/fridge/meat,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "sV" = (
@@ -7847,15 +7847,15 @@
 /obj/item/binoculars,
 /obj/item/binoculars,
 /obj/item/binoculars,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/structure/closet,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "vB" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "vC" = (
@@ -8102,7 +8102,7 @@
 /area/f13/bunker)
 "wl" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "wm" = (
@@ -8117,8 +8117,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/mountain_bunker)
 "wo" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -8293,7 +8293,7 @@
 	},
 /area/f13/bunker)
 "wR" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/structure/closet,
 /turf/open/floor/f13,
 /area/f13/city)
@@ -8302,7 +8302,7 @@
 /area/f13/city)
 "wT" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13,
 /area/f13/city)
 "wU" = (
@@ -8327,7 +8327,7 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/legion)
 "wY" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
@@ -8636,7 +8636,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "xW" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "xX" = (
@@ -8761,8 +8761,8 @@
 	dir = 4
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
@@ -8829,7 +8829,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13,
 /area/f13/city)
 "yD" = (
@@ -8842,8 +8842,8 @@
 /area/f13/bunker)
 "yE" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13,
 /area/f13/city)
 "yF" = (
@@ -9128,7 +9128,7 @@
 /obj/effect/spawner/lootdrop/armory_contraband,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -9175,7 +9175,7 @@
 "zG" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/armor/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13,
 /area/f13/wasteland)
 "zH" = (
@@ -10452,7 +10452,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "Dq" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "Dr" = (
@@ -10933,7 +10933,7 @@
 	dir = 1;
 	icon_state = "left"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -12253,7 +12253,7 @@
 /area/f13/bunker)
 "Ii" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -12409,7 +12409,7 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "IH" = (
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "II" = (
@@ -12926,7 +12926,7 @@
 /turf/open/floor/wood,
 /area/f13/vault)
 "JX" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "JY" = (
@@ -15208,7 +15208,7 @@
 	icon_state = "goo12"
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -15849,7 +15849,7 @@
 /area/f13/bunker)
 "Rh" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
@@ -17989,14 +17989,14 @@
 /area/f13/underground/cave)
 "WB" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "WC" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "WD" = (
@@ -18209,7 +18209,7 @@
 /area/f13/vault)
 "Xe" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/plasteel/barber{
 	icon_state = "platingdmg3"
@@ -18847,7 +18847,7 @@
 /turf/open/floor/f13,
 /area/f13/wasteland)
 "YK" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier1,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "YL" = (
@@ -19164,12 +19164,12 @@
 /area/f13/brotherhood)
 "ZO" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "ZP" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)

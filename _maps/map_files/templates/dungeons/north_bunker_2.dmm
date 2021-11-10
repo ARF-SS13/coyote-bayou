@@ -138,7 +138,7 @@
 	},
 /area/f13/bunker)
 "dj" = (
-/mob/living/simple_animal/hostile/cazador,
+/obj/structure/nest/cazador,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "dv" = (
@@ -164,8 +164,11 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "dD" = (
-/mob/living/simple_animal/hostile/radscorpion,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/scorpion{
+	max_mobs = 4;
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -199,7 +202,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier7,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "eD" = (
@@ -232,7 +235,10 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "fj" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
+/obj/structure/nest/scorpion{
+	max_mobs = 4;
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -255,8 +261,8 @@
 	},
 /area/f13/bunker)
 "fy" = (
-/mob/living/simple_animal/hostile/cazador/young,
-/turf/open/floor/grass,
+/obj/structure/nest/deathclaw,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "fB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -328,9 +334,8 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "gA" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/hostile/cazador/young,
-/turf/open/floor/grass,
+/obj/structure/nest/deathclaw/mother,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "gB" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -544,7 +549,7 @@
 	},
 /area/f13/bunker)
 "lU" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ma" = (
@@ -582,7 +587,7 @@
 /area/f13/bunker)
 "mC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "mD" = (
@@ -609,7 +614,9 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/bunker)
 "nf" = (
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	faction = list("hostile", "deathclaw")
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "nh" = (
@@ -695,10 +702,6 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"oP" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "oS" = (
 /mob/living/simple_animal/opossum{
 	name = "Mimi"
@@ -714,10 +717,6 @@
 "pt" = (
 /obj/item/stack/medical/mesh,
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"pA" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
-/turf/open/floor/grass,
 /area/f13/bunker)
 "pI" = (
 /obj/structure/spider/stickyweb,
@@ -791,10 +790,6 @@
 	id = 180
 	},
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"rm" = (
-/obj/item/storage/trash_stack,
-/turf/open/transparent/glass,
 /area/f13/bunker)
 "rB" = (
 /mob/living/simple_animal/radstag{
@@ -1085,7 +1080,7 @@
 /area/f13/bunker)
 "xS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier10,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -1305,15 +1300,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"BZ" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "Cd" = (
 /obj/machinery/door/poddoor{
 	id = 732
@@ -1337,14 +1323,6 @@
 "Co" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"Cp" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radscorpion,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1525,13 +1503,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Gg" = (
-/obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/venus_human_trap{
-	faction = list("hostile","goodboy")
-	},
-/turf/open/floor/grass,
-/area/f13/bunker)
 "GX" = (
 /obj/structure/wreck/trash/machinepile,
 /turf/open/transparent/glass,
@@ -1576,29 +1547,12 @@
 /obj/structure/flora/ausbushes/brflowers{
 	pixel_x = 17
 	},
-/mob/living/simple_animal/hostile/cazador,
 /turf/open/floor/grass,
 /area/f13/bunker)
 "IG" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"IH" = (
-/mob/living/simple_animal/hostile/venus_human_trap{
-	faction = list("hostile","goodboy")
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/grass,
-/area/f13/bunker)
-"IR" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/structure/spider/stickyweb,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
 /area/f13/bunker)
 "IT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1614,12 +1568,6 @@
 	dir = 1
 	},
 /turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"IZ" = (
-/mob/living/simple_animal/hostile/venus_human_trap{
-	faction = list("hostile","goodboy")
-	},
-/turf/open/floor/grass,
 /area/f13/bunker)
 "Jq" = (
 /obj/structure/table,
@@ -1678,15 +1626,6 @@
 "KI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/barrel/four,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"KK" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1815,7 +1754,7 @@
 "MQ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier8,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1828,10 +1767,6 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
-/area/f13/bunker)
-"Ng" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/transparent/glass,
 /area/f13/bunker)
 "NC" = (
 /obj/machinery/light/small{
@@ -1958,20 +1893,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"Px" = (
-/mob/living/simple_animal/hostile/molerat{
-	desc = "An extra-large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas. This one is specifically large and older than the others";
-	health = 100;
-	melee_damage_lower = 20;
-	melee_damage_upper = 20;
-	mob_size = 3;
-	name = "The giant molerat";
-	obj_damage = 30;
-	resize = 2
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
 "PF" = (
 /obj/structure/table_frame,
 /obj/item/ingot/silver,
@@ -2008,7 +1929,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Qb" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -2145,11 +2065,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"SE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/transparent/glass,
-/area/f13/bunker)
 "SI" = (
 /obj/structure/flora/tree/wasteland,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -2203,21 +2118,10 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"Uf" = (
-/mob/living/simple_animal/hostile/radscorpion,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "Ui" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/showroomfloor,
-/area/f13/bunker)
-"Uw" = (
-/turf/open/transparent/glass,
 /area/f13/bunker)
 "UE" = (
 /obj/machinery/door/poddoor/preopen{
@@ -2431,7 +2335,6 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Zg" = (
-/mob/living/simple_animal/hostile/radscorpion/black,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider/stickyweb,
@@ -2819,7 +2722,7 @@ xG
 Qe
 Zf
 xS
-nf
+oj
 oj
 xG
 Rl
@@ -2855,10 +2758,10 @@ Rl
 Rl
 xG
 oj
-oP
 oj
+gA
 Zf
-Uw
+oj
 xG
 Rl
 Rl
@@ -2896,7 +2799,7 @@ XZ
 Dv
 YR
 Zf
-Eo
+oj
 xG
 Rl
 Rl
@@ -2932,7 +2835,7 @@ Rl
 xG
 zw
 oj
-oj
+fy
 fI
 oj
 xG
@@ -3007,10 +2910,10 @@ Rl
 Rl
 xG
 oj
-SE
+sl
 Qe
 oj
-oP
+oj
 xG
 Rl
 Rl
@@ -3047,7 +2950,7 @@ xG
 oj
 Zf
 Zf
-oj
+fy
 dE
 xG
 Rl
@@ -3082,7 +2985,7 @@ nu
 nu
 nu
 xG
-oj
+fy
 Eo
 oj
 oj
@@ -3145,7 +3048,7 @@ XM
 jS
 ts
 ZP
-IH
+ZP
 DY
 nu
 SI
@@ -3153,7 +3056,7 @@ nu
 nu
 ZP
 jn
-Gg
+QO
 nu
 ln
 nu
@@ -3162,7 +3065,7 @@ oj
 oj
 wN
 oj
-rM
+nf
 YR
 Zf
 xG
@@ -3201,8 +3104,8 @@ YR
 Su
 lc
 Zf
-SE
-Uw
+sl
+oj
 xG
 Rl
 Rl
@@ -3274,11 +3177,11 @@ nu
 xG
 AI
 wP
-Uw
+oj
 oj
 CA
 oj
-rM
+nf
 xG
 Rl
 Rl
@@ -3314,7 +3217,7 @@ oj
 hy
 oj
 oj
-rm
+YR
 oj
 oj
 xG
@@ -3338,7 +3241,7 @@ Dx
 nu
 nu
 nu
-IZ
+nu
 nu
 nu
 Om
@@ -3442,7 +3345,7 @@ Rl
 Rl
 Rl
 xG
-IR
+cQ
 yS
 XN
 kj
@@ -3464,7 +3367,7 @@ kj
 BR
 oj
 Zf
-Ng
+Zf
 Zf
 Zf
 oj
@@ -3484,9 +3387,9 @@ Ra
 xJ
 KI
 OK
-kj
+dD
 XM
-BZ
+cQ
 xG
 xG
 xG
@@ -3504,7 +3407,7 @@ Ba
 oj
 oj
 oj
-rM
+nf
 wP
 oj
 xG
@@ -3521,7 +3424,7 @@ xG
 Zg
 xJ
 XN
-dD
+kj
 Ra
 kj
 XM
@@ -3636,7 +3539,7 @@ oj
 oj
 Pp
 yr
-fj
+XM
 xf
 Ra
 xG
@@ -3823,14 +3726,14 @@ zJ
 xf
 xf
 kj
-XM
+fj
 UE
 Ra
-Uf
+Ra
 kj
 Mj
 Ra
-fj
+XM
 Ra
 iU
 XM
@@ -3857,22 +3760,22 @@ Rl
 xG
 XM
 vH
-dD
+kj
 bB
 XM
 Sa
 XM
 fW
-fj
+XM
 XM
 XN
 pI
 XM
 xf
-KK
+XN
 yr
 Vf
-fj
+XM
 dw
 qj
 dv
@@ -3909,7 +3812,7 @@ xG
 fd
 fd
 Ra
-XM
+fj
 Ra
 dw
 Gc
@@ -3971,7 +3874,7 @@ Rl
 xG
 XM
 bS
-fj
+XM
 Pd
 LL
 Or
@@ -3985,7 +3888,7 @@ Ra
 Ra
 FC
 Ra
-Uf
+Ra
 cK
 Od
 qj
@@ -4011,9 +3914,9 @@ Zn
 AS
 XM
 Jq
-kj
+dD
 vp
-Cp
+kj
 xG
 sl
 Pp
@@ -4363,7 +4266,7 @@ XM
 MJ
 kj
 ti
-fy
+nu
 nu
 nu
 nu
@@ -4554,15 +4457,15 @@ Ra
 Ra
 ti
 nu
-fy
+nu
 QJ
 Ed
 nu
 nu
-pA
 nu
 nu
-dj
+nu
+nu
 nu
 xG
 Rl
@@ -4591,15 +4494,15 @@ yu
 XM
 Ra
 ti
+nu
+nu
+nu
+nu
+nu
+nu
+nu
+nu
 dj
-nu
-nu
-nu
-nu
-nu
-nu
-nu
-nu
 dV
 KY
 xG
@@ -4638,7 +4541,7 @@ nu
 nu
 Om
 ny
-gA
+Vx
 nu
 xG
 Rl
@@ -4902,7 +4805,7 @@ Zf
 Qe
 Tm
 mC
-Px
+Zf
 Zf
 Zf
 TH

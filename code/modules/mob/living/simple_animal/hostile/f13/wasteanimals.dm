@@ -32,7 +32,7 @@
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("cazador")
+	faction = list("hostile", "cazador")
 	movement_type = FLYING
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -142,7 +142,7 @@
 	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("radscorpion")
+	faction = list("hostile", "radscorpion")
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
@@ -611,7 +611,7 @@
 	attack_sound = 'sound/creatures/bloatfly_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("hostile", "gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	blood_volume = 0
@@ -654,7 +654,7 @@
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
-	faction = list("gecko")
+	faction = list("hostile", "gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 

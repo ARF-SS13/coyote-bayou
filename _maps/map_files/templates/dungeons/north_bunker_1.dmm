@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aH" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
@@ -70,6 +70,15 @@
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
+	},
+/area/f13/bunker)
+"cj" = (
+/obj/structure/nest/supermutant/ranged{
+	max_mobs = 1;
+	spawn_once = 1
+	},
+/turf/open/floor/plasteel/barber{
+	icon_state = "plating"
 	},
 /area/f13/bunker)
 "dj" = (
@@ -150,11 +159,8 @@
 	},
 /area/f13/bunker)
 "fe" = (
-/obj/structure/barricade/sandbags{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/nest/supermutant{
+	spawn_time = 150
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -188,7 +194,10 @@
 	},
 /area/f13/bunker)
 "gl" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/obj/structure/nest/supermutant{
+	max_mobs = 3;
+	spawn_time = 150
+	},
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -219,7 +228,7 @@
 /area/f13/bunker)
 "hd" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -254,7 +263,6 @@
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 5
 	},
-/mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plating,
 /area/f13/bunker)
 "jQ" = (
@@ -291,8 +299,8 @@
 	},
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -344,7 +352,7 @@
 /area/f13/bunker)
 "na" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -436,7 +444,7 @@
 /area/f13/bunker)
 "oP" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -469,10 +477,12 @@
 	},
 /area/f13/bunker)
 "pz" = (
-/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/nest/scorpion{
+	max_mobs = 4;
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/bunker)
 "pB" = (
@@ -516,8 +526,8 @@
 "qk" = (
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -602,9 +612,12 @@
 	},
 /area/f13/bunker)
 "tJ" = (
-/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/nest/scorpion{
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "platingdmg3"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "tM" = (
@@ -700,7 +713,10 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "wJ" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
+/obj/structure/nest/scorpion{
+	max_mobs = 4;
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -729,7 +745,7 @@
 	icon_state = "goo12"
 	},
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -814,7 +830,11 @@
 	},
 /area/f13/bunker)
 "zw" = (
-/mob/living/simple_animal/hostile/supermutant,
+/obj/structure/nest/supermutant{
+	max_mobs = 1;
+	spawn_once = 1;
+	spawn_time = 150
+	},
 /turf/open/floor/plating,
 /area/f13/bunker)
 "zJ" = (
@@ -840,9 +860,13 @@
 /turf/open/floor/plating,
 /area/f13/bunker)
 "Bo" = (
-/mob/living/simple_animal/hostile/supermutant,
+/obj/structure/nest/scorpion{
+	max_mobs = 3;
+	spawn_time = 30
+	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Bp" = (
@@ -911,7 +935,6 @@
 /obj/item/grenade/smokebomb,
 /obj/item/grenade/syndieminibomb/concussion/frag,
 /obj/item/grenade/syndieminibomb/concussion/frag,
-/obj/item/grenade/syndieminibomb/concussion/frag,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -919,7 +942,7 @@
 /area/f13/bunker)
 "Cm" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -940,7 +963,7 @@
 /obj/machinery/door/window{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/structure/closet,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -1019,7 +1042,7 @@
 /area/f13/bunker)
 "ER" = (
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
@@ -1084,7 +1107,11 @@
 	},
 /area/f13/bunker)
 "GI" = (
-/mob/living/simple_animal/hostile/supermutant/legendary,
+/obj/structure/nest/supermutant/melee{
+	max_mobs = 1;
+	spawn_once = 1;
+	spawn_time = 10
+	},
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1116,8 +1143,7 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random_high,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1126,7 +1152,6 @@
 "IT" = (
 /obj/effect/decal/remains/human,
 /obj/item/flashlight/flare/torch,
-/mob/living/simple_animal/hostile/radscorpion,
 /turf/open/floor/plasteel/barber{
 	icon_state = "platingdmg2"
 	},
@@ -1164,9 +1189,12 @@
 	},
 /area/f13/bunker)
 "JF" = (
-/mob/living/simple_animal/hostile/radscorpion,
+/obj/structure/nest/supermutant/ranged{
+	spawn_time = 100
+	},
 /turf/open/floor/plasteel/barber{
-	icon_state = "plating"
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
 "Kk" = (
@@ -1177,13 +1205,11 @@
 /turf/open/floor/plating,
 /area/f13/bunker)
 "KA" = (
-/obj/machinery/light/small{
-	dir = 1
+/obj/structure/nest/supermutant/melee{
+	spawn_time = 100
 	},
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
+	icon_state = "plating"
 	},
 /area/f13/bunker)
 "LC" = (
@@ -1237,7 +1263,6 @@
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
-/mob/living/simple_animal/hostile/supermutant,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1339,7 +1364,10 @@
 	},
 /area/f13/bunker)
 "QJ" = (
-/mob/living/simple_animal/hostile/supermutant,
+/obj/structure/nest/supermutant{
+	max_mobs = 3;
+	spawn_time = 150
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1423,7 +1451,9 @@
 	},
 /area/f13/bunker)
 "TZ" = (
-/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/obj/structure/nest/supermutant/ranged{
+	spawn_time = 200
+	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1515,7 +1545,7 @@
 /area/f13/bunker)
 "WC" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1535,7 +1565,7 @@
 /area/f13/bunker)
 "Xv" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/armor/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -1568,8 +1598,8 @@
 /area/f13/bunker)
 "Yv" = (
 /obj/machinery/door/window,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
 /obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1577,7 +1607,7 @@
 /area/f13/bunker)
 "YG" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/plasteel/barber{
 	icon_state = "platingdmg3"
@@ -2218,8 +2248,8 @@ xG
 Wr
 pd
 xG
-KA
-QJ
+gv
+JF
 xG
 XM
 Bp
@@ -2332,8 +2362,8 @@ Dx
 nV
 RD
 xG
-fe
-QJ
+gv
+XM
 xG
 gv
 lS
@@ -2370,7 +2400,7 @@ ES
 XM
 XM
 xG
-TZ
+XM
 XM
 xG
 gH
@@ -2409,7 +2439,7 @@ xG
 qJ
 xG
 XM
-QJ
+XM
 xG
 xG
 xG
@@ -2483,7 +2513,7 @@ LC
 xG
 gv
 XM
-XM
+QJ
 xG
 xG
 xG
@@ -2512,7 +2542,7 @@ XM
 Eg
 xG
 Yv
-wJ
+XM
 aQ
 xG
 Ae
@@ -2622,7 +2652,7 @@ xG
 qA
 qN
 XM
-QJ
+XM
 Oh
 xG
 BZ
@@ -2659,7 +2689,7 @@ Rl
 xG
 Zg
 DZ
-QJ
+fe
 XM
 Jv
 xG
@@ -2696,14 +2726,14 @@ Rl
 Rl
 xG
 XM
-QJ
+XM
 FR
 lS
 wU
 xG
 op
 lS
-pz
+XM
 xG
 FR
 XM
@@ -2739,12 +2769,12 @@ XM
 Bw
 XM
 qJ
-pz
 XM
+tJ
 Bw
 qJ
 XM
-pz
+XM
 XM
 xG
 Rl
@@ -2848,7 +2878,7 @@ rr
 XM
 xG
 gv
-QJ
+XM
 sy
 Wj
 qN
@@ -2857,7 +2887,7 @@ op
 XM
 pq
 XM
-XM
+Bo
 fH
 Bw
 xG
@@ -2893,7 +2923,7 @@ DA
 uu
 sy
 Bw
-pz
+XM
 XM
 XM
 XM
@@ -2921,7 +2951,7 @@ Rl
 Rl
 xG
 ef
-QJ
+XM
 xG
 XL
 XM
@@ -3009,7 +3039,7 @@ Ra
 XM
 XM
 XM
-pz
+XM
 XM
 XM
 Od
@@ -3045,8 +3075,8 @@ XY
 xG
 XM
 XM
-pz
 XM
+wJ
 XM
 XM
 sy
@@ -3163,7 +3193,7 @@ pQ
 xG
 XM
 XM
-pz
+XM
 Od
 PW
 PW
@@ -3200,7 +3230,7 @@ jf
 xG
 xG
 XM
-pz
+XM
 XM
 Pl
 Pl
@@ -3228,7 +3258,7 @@ zu
 By
 gA
 Ja
-gl
+oh
 Vh
 yp
 mi
@@ -3270,7 +3300,7 @@ lH
 lU
 By
 oh
-oh
+pz
 gA
 EG
 oh
@@ -3381,12 +3411,12 @@ Rl
 xG
 WD
 oh
-oh
+gl
 lU
 oh
 tM
 gA
-JF
+oh
 ud
 jf
 qu
@@ -3420,7 +3450,7 @@ Rl
 wQ
 OG
 Re
-Bo
+oh
 gA
 xG
 QA
@@ -3500,12 +3530,12 @@ Fr
 ud
 xG
 gA
-Bo
+oh
 ti
 xG
 ZV
 gA
-tJ
+lU
 xG
 xG
 xG
@@ -3694,7 +3724,7 @@ Rl
 Rl
 xG
 po
-QJ
+fe
 Ed
 pP
 YG
@@ -3780,9 +3810,9 @@ oh
 gA
 xG
 pS
-Bo
 oh
-Bo
+oh
+oh
 vt
 xG
 Rl
@@ -3817,7 +3847,7 @@ HB
 zm
 Pw
 HB
-oh
+KA
 wh
 aJ
 lU
@@ -3931,9 +3961,9 @@ HB
 wh
 lU
 xG
-gl
-dV
 oh
+dV
+cj
 Rl
 Rl
 xG

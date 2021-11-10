@@ -27,7 +27,7 @@
 	robust_searching = 0
 	stat_attack = UNCONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
-	faction = list("supermutant")
+	faction = list("hostile", "supermutant")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/centaur = 3,
 							/obj/item/stack/sheet/animalhide/human = 2,
 							/obj/item/stack/sheet/bone = 2)
