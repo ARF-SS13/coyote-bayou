@@ -285,7 +285,7 @@
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
 	maxHealth = 450
 	health = 450
-	damage_coeff = list(BRUTE = -0.5, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
+	damage_coeff = list(BRUTE = -0.1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 60
 	melee_damage_upper = 70
 	var/charging = FALSE
@@ -376,7 +376,7 @@
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
 	maxHealth = 450
 	health = 450
-	damage_coeff = list(BRUTE = 0.75, BURN = -0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
+	damage_coeff = list(BRUTE = 1, BURN = -0.25, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 60
 	melee_damage_upper = 70
 	extra_projectiles = 2
