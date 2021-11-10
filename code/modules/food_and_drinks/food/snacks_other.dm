@@ -94,7 +94,7 @@
 	foodtype = VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/fries
-	name = "space fries"
+	name = "fries"
 	desc = "AKA: French Fries, Freedom Fries, etc."
 	icon_state = "fries"
 	trash = /obj/item/trash/plate
@@ -368,7 +368,7 @@
 
 /obj/item/reagent_containers/food/snacks/nachos
 	name = "nachos"
-	desc = "Chips from Space Mexico."
+	desc = "These could really use some cheese."
 	icon_state = "nachos"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)

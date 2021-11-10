@@ -32,7 +32,7 @@
 	return TRUE
 
 /obj/structure/musician/piano
-	name = "space minimoog"
+	name = "minimoog"
 	icon = 'icons/obj/musician.dmi'
 	icon_state = "minimoog"
 	anchored = TRUE
@@ -44,10 +44,10 @@
 /obj/structure/musician/piano/Initialize(mapload)
 	. = ..()
 	if(prob(50) && icon_state == initial(icon_state))
-		name = "space minimoog"
-		desc = "This is a minimoog, like a space piano, but more spacey!"
+		name = "minimoog"
+		desc = "This is a minimoog, like a piano, but more futuristic!"
 		icon_state = "minimoog"
 	else
-		name = "space piano"
-		desc = "This is a space piano, like a regular piano, but always in tune! Even if the musician isn't."
+		name = "piano"
+		desc = "This old piano can barely hold a tune. Too bad all the piano tuners are dead, more or less."
 		icon_state = "piano"
