@@ -191,12 +191,13 @@
 	required_temp = 525
 
 //Technically a mutation toxin
+/* Fortuna edit: Mutation toxins disabled
 /datum/chemical_reaction/mulligan
 	name = "Mulligan"
 	id = "mulligan"
 	results = list(/datum/reagent/mulligan = 1)
 	required_reagents = list(/datum/reagent/slime_toxin = 1, /datum/reagent/toxin/mutagen = 1)
-
+*/
 
 /datum/chemical_reaction/fermis_plush
 	name = "Fermis plush"

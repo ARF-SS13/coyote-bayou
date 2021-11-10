@@ -6,7 +6,7 @@
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "single"
 	tank_volume = 500
-	reagent_id = /datum/reagent/mutationtoxin
+	reagent_id = /datum/reagent/fluorine
 //	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/dangerous
