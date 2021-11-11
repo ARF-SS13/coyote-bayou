@@ -81,6 +81,9 @@
 //" This is here because else the rest of the file looks like a string in notepad++.
 /datum/browser/proc/get_footer()
 	return {"
+			<div class="wrapper"></div>
+			<div class="scanline"></div>
+			<div class="overlay"></div>
 			</div>
 		</div>
 	</body>

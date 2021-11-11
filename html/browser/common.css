@@ -1,34 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
 body
 {
 	padding: 0;
 	margin: 0;
-	background-color: #272727;
+	background: #383838;
+	color: #00dd00;
 	font-size: 12px;
-	color: #ffffff;
+	font-family: 'VT323', Courier;
+	color: #2fc22f;
 	line-height: 170%;
 }
 
 hr
 {
-	background-color: #40628a;
+	background-color: #000000;
 	height: 1px;
 }
 
 a, button, a:link, a:visited, a:active, .linkOn, .linkOff
 {
-	color: #ffffff;
+	color: #00dd00;
 	text-decoration: none;
-	background: #40628a;
-	border: 1px solid #161616;
 	padding: 1px 4px 1px 4px;
 	margin: 0 2px 0 0;
 	cursor:default;
 }
 
-a:hover
-{
-	color: #40628a;
-	background: #ffffff;
+a:hover {
+	background-color: #5DC966;
+	color: black;	
 }
 
 a.white, a.white:link, a.white:visited, a.white:active
@@ -131,9 +131,9 @@ h4
 {
 	clear: both;
 	padding: 6px 8px 6px 8px;
-	border-bottom: 2px solid #161616;
+	border-bottom: 2px solid #00dd00;
 	background: #383838;
-	color: #98B0C3;
+	color: #00dd00;
 	font-size: 16px;
 }
 
@@ -146,9 +146,11 @@ h4
 
 .uiContent
 {
+	animation: scroll 0.25s 1;
 	clear: both;
 	padding: 8px;
 	font-family: Verdana, Geneva, sans-serif;
+	
 }
 
 .good
@@ -173,7 +175,7 @@ h4
 
 .dark
 {
-	color: #272727;
+	color: #383838;
 }
 
 .notice
@@ -220,7 +222,7 @@ div.notice
 	width: 138px;
 	float: left;
 	overflow: hidden;
-	color: #98B0C3;
+	color: #383838;
 }
 
 .statusValue
@@ -332,7 +334,7 @@ div.notice
   width: 18px;
   left: 4px;
   bottom: 4px;
-  background-color: #98B0C3;
+  background-color: #383838;
   transition: .4s;
 }
 
@@ -379,7 +381,21 @@ input:checked + .slider:before {
   width: 60px;
   margin-left: 60px;
 }
+ul {
+	list-style: none;
+}
 
+ul a:before,
+p a:before {
+	color: #00dd00;
+	content: ' > ';
+}
+
+ul a:after,
+p a:after {
+	color: #00dd00;
+	content: '  ';	
+}
 ul.sparse {
 	padding-bottom:20px;
 }
@@ -408,4 +424,129 @@ ul.sparse {
 .severity img {
     display: inline-block;
     vertical-align: middle;
+}
+.overlay {
+	height: 1px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+}
+
+.overlay:before {
+	background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.02) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+	background-size: 10% 3px, 6px 10%;
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index:-1;
+}
+	
+.overlay:after {
+	background: rgba(16, 16, 16, 0.01);
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	z-index:-1;
+	
+}
+.scanline {
+	animation: scrollfade 10s 5s infinite;
+	pointer-events: none;
+	background: linear-gradient(to bottom,  rgba(0,221,0,0) 0%,rgba(0,221,0,1) 25%,rgba(0,221,0,0) 50%);
+	filter: progid:DXImageTransform.Microsoft.Gradient( startColorstr='#0000dd00', endColorstr='#0000dd00',GradientType=0 );
+	display: block;
+	height: 20px;
+	opacity: 0.05;
+	position: absolute;
+		left: 0;
+		right: 0;
+		top: -5%;
+
+}
+
+@keyframes scroll {
+	0% { height:0;opacity: 0.15795; }
+	5% { opacity: 0.31511 }
+	10% { opacity: 0.94554 }
+	15% { opacity: 0.2469 }
+	20% { opacity: 0.62031 }
+	25% { opacity: 0.0293 }
+	30% { opacity: 0.00899 }
+	35% { opacity: 0.5344 }
+	40% { opacity: 0.12778 }
+	45% { opacity: 0.52042 }
+	50% { opacity: 0.3823 }
+	55% { opacity: 0.2198 }
+	60% { opacity: 0.9383 }
+	65% { opacity: 0.86615 }
+	70% { opacity: 0.68695 }
+	75% { opacity: 0.55749 }
+	80% { opacity: 0.96984 }
+	85% { opacity: 0.0361 }
+	90% { opacity: 0.24467 }
+	95% { opacity: 0.08351 }
+	100% { height: 100%;opacity: 0.54813; }
+}
+@keyframes scrollfade {
+	0% { height:0;opacity: 0.15795; }
+
+	100% { height: 100%;opacity: 0.01; }
+}
+@keyframes blinky {
+		0% { opacity: 0.015795 }
+		5% { opacity: 0.031511 }
+		10% { opacity: 0.094554 }
+		15% { opacity: 0.02469 }
+		20% { opacity: 0.062031 }
+		25% { opacity: 0.0293 }
+		30% { opacity: 0.00899 }
+		35% { opacity: 0.05344 }
+		40% { opacity: 0.012778 }
+		45% { opacity: 0.052042 }
+		50% { opacity: 0.03823 }
+		55% { opacity: 0.02198 }
+		60% { opacity: 0.09383 }
+		65% { opacity: 0.086615 }
+		70% { opacity: 0.068695 }
+		75% { opacity: 0.055749 }
+		80% { opacity: 0.096984 }
+		85% { opacity: 0.00361 }
+		90% { opacity: 0.024467 }
+		95% { opacity: 0.08351 }
+		100% { opacity: 0.054813 }
+	}
+@keyframes type { 
+  from { width: 0; } 
+} 
+
+@keyframes type2 {
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink {
+  to{opacity: .0;}
+}
+
+@keyframes scan {
+	from { top: 0 }
+	to { top: 100% }
+}
+.wrapper {
+  animation: scroll 5s 1;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
 }
