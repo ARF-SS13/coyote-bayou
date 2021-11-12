@@ -184,8 +184,8 @@
 	canSmoothWith = null
 
 /turf/closed/wall/mineral/abductor
-	name = "alien wall"
-	desc = "A wall with alien alloy plating."
+	name = "polymer wall" // Fortuna edit: alien alloy -> polymer
+	desc = "A wall with an advanced polymer alloy plating."
 	icon = 'icons/turf/walls/abductor_wall.dmi'
 	icon_state = "abductor"
 	smooth = SMOOTH_TRUE|SMOOTH_DIAGONAL

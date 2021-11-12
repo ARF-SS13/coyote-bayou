@@ -187,7 +187,7 @@
 
 // ALIEN ALLOY
 /turf/open/floor/mineral/abductor
-	name = "alien floor"
+	name = "polymer floor"
 	icon_state = "alienpod1"
 	floor_tile = /obj/item/stack/tile/mineral/abductor
 	icons = list("alienpod1", "alienpod2", "alienpod3", "alienpod4", "alienpod5", "alienpod6", "alienpod7", "alienpod8", "alienpod9")
