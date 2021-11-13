@@ -337,7 +337,7 @@
 #define SILENCE_RANGED_MESSAGE (1<<0)
 
 //Respawn timer
-#define RESPAWN_TIMER 6000 // in deciseconds, the time to wait before allowing respawn. 15 minutes = 15 * 60 (seconds in minute) * 15 (seconds to deciseconds)
+#define RESPAWN_TIMER 3000
 
 ///Define for spawning megafauna instead of a mob for cave gen
 #define SPAWN_MEGAFAUNA "bluh bluh huge boss"
