@@ -284,9 +284,12 @@
 	},
 /area/f13/bunker)
 "ato" = (
-/obj/structure/debris/v3,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
+/obj/structure/nest/securitron{
+	max_mobs = 2;
+	spawn_time = 20
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
 	},
 /area/f13/bunker)
 "atr" = (
@@ -833,7 +836,9 @@
 	},
 /area/f13/bunker)
 "aYd" = (
-/obj/structure/nest/securitron,
+/obj/structure/nest/securitron{
+	max_mobs = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "aYz" = (
@@ -1039,7 +1044,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/vault_door/old{
 	density = 0;
-	icon_state = "oldopen"
+	icon_state = "oldopen";
+	mouse_opacity = 0;
+	opacity = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
@@ -3683,13 +3690,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
-"eFh" = (
-/obj/structure/window/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
-/area/f13/bunker)
 "eFo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/f13/mre,
@@ -6463,7 +6463,7 @@
 /area/f13/bunker)
 "ien" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "ies" = (
@@ -12288,8 +12288,8 @@
 	},
 /area/f13/bunker)
 "pTK" = (
-/obj/structure/window/plastitanium,
 /obj/structure/grille,
+/obj/structure/window/fulltile,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -12874,7 +12874,6 @@
 "qDz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/protectron{
-	max_mobs = 4;
 	spawn_time = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -29953,8 +29952,8 @@ heT
 heT
 hMb
 qGW
-kRy
-ato
+sJn
+ulM
 kRy
 kYv
 hMb
@@ -36879,7 +36878,7 @@ heT
 heT
 heT
 heT
-tHQ
+cIT
 xKX
 xKX
 xKX
@@ -37442,8 +37441,8 @@ kNL
 kJj
 kha
 fvX
-ocB
-aYd
+ato
+xRY
 kJZ
 vtn
 vtn
@@ -39490,11 +39489,11 @@ tin
 tin
 xKX
 xCj
-eFh
-eFh
+hFm
+hFm
 vOB
-eFh
-eFh
+hFm
+hFm
 xCj
 xKX
 xKX
@@ -41575,8 +41574,8 @@ bYL
 xKX
 xKX
 xKX
-heT
-heT
+xKX
+xKX
 heT
 heT
 heT
@@ -41831,7 +41830,7 @@ wQo
 xKX
 xKX
 xKX
-heT
+xKX
 heT
 heT
 heT
@@ -42342,7 +42341,7 @@ xKX
 xKX
 xKX
 xKX
-heT
+xKX
 heT
 heT
 heT
