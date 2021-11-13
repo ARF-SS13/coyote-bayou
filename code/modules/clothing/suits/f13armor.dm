@@ -201,7 +201,8 @@
 
 /obj/item/clothing/suit/armor/f13/combat/mk2/raider
 	name = "raider combat armor"
-	desc = "(VI) An old set of reinforced combat armor with some parts supplanted with painspike armor."
+	desc = "(IV) An old set of reinforced combat armor with some parts supplanted with painspike armor. It seems less protective than a mint-condition set of combat armor."
+	armor = list("tier" = 4, "energy" = 35, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35)
 	icon_state = "combat_armor_raider"
 	item_state = "combat_armor_raider"
 
