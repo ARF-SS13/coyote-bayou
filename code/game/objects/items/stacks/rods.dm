@@ -4,6 +4,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("barred door", /obj/structure/simple_door/metal/barred, 30, time = 40, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("flagpole", /obj/item/flag, 2, time = 8, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/rods
