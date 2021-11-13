@@ -216,6 +216,37 @@
 	flags_inv = HIDEJUMPSUIT|HIDESHOES
 	mutantrace_variation = NONE
 
+/obj/item/clothing/suit/hooded/robes
+	name = "thick brown robes"
+	desc = "(I) When was the last time these things were washed?"
+	icon_state = "brownrobes"
+	item_state = "brownrobes"
+	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	hoodtype = /obj/item/clothing/head/hooded/robes
+
+/obj/item/clothing/head/hooded/robes
+	name = "brown hood"
+	desc = "(I) Perfect for concealing your identity."
+	icon_state = "eldritch"
+	icon_state = "eldritch"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flash_protect = 2
+
+/obj/item/clothing/suit/hooded/robes/grey
+	name = "grey robes"
+	desc = "(I) Requisite attire for the monthly meetings of your local cult."
+	icon_state = "greyrobes"
+	item_state = "greyrobes"
+	hoodtype = /obj/item/clothing/head/hooded/robes/grey
+
+/obj/item/clothing/head/hooded/robes/grey
+	name = "grey hood"
+	desc = "(I) Keeps the sun out of your face, so you can brood in peace."
+	item_state = "greyrobes"
+	icon_state = "greyrobes"
+
 /obj/item/clothing/suit/hooded/carp_costume
 	name = "carp costume"
 	desc = "(I) A costume made from 'synthetic' carp scales, it smells."
