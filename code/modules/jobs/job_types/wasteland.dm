@@ -296,9 +296,9 @@ Great Khan
 
 /datum/outfit/loadout/brawler
 	name = "Brawler"
-	gloves =	/obj/item/melee/unarmed/brass/spiked
+	suit_store = /obj/item/twohanded/sledgehammer
+	gloves = /obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/twohanded/sledgehammer, \
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
 /*
