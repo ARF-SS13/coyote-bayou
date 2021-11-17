@@ -98,8 +98,8 @@
 		return
 	if(prob(10))
 		visible_message(span_danger("\The [src] growls, enraged!"))
-		sleep(3)
-		Charge()
+
+		addtimer(CALLBACK(src, .proc/Charge), 3)
 	if(prob(85) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want deathclaws to be
 		return ..()
 	else
@@ -137,7 +137,6 @@
 	setDir(get_dir(src, T))
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 1)
-	sleep(3)
 	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src, .proc/charge_end))
 
 /mob/living/simple_animal/hostile/deathclaw/proc/charge_end(list/effects_to_destroy)

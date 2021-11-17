@@ -78,7 +78,6 @@
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
 	explosion(src,1,2,4,4)
-	qdel(src)
 
 /mob/living/simple_animal/hostile/securitron/death()
 	do_sparks(3, TRUE, src)
