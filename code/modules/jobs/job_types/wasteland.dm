@@ -836,7 +836,7 @@ Raider
 	supervisors = "The Boss."
 	selection_color = "#ff4747"
 	exp_requirements = 600
-	exp_type = EXP_TYPE_OUTLAW
+	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13enforcer
 
