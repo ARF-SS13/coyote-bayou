@@ -446,6 +446,32 @@
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
 
+/datum/crafting_recipe/pps
+	name = "Ppsh-41"
+	result = /obj/item/gun/ballistic/automatic/smg/ppsh
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+/datum/crafting_recipe/commando
+	name = "DeLisle Commando Carbine"
+	result = /obj/item/gun/ballistic/automatic/delisle/commando
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
 //infiltrator
 /datum/crafting_recipe/infiltrator
 	name = "Infiltrator Carbine"
@@ -551,6 +577,40 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_availible = FALSE
+
+/datum/crafting_recipe/gaussrifle
+	name = "M72 Gauss Rifle"
+	result = /obj/item/gun/ballistic/automatic/m72
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/advanced_crafting_components/conductors = 2,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/electronicparts = 15
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+/datum/crafting_recipe/neostead
+	name = "Neostead 2000"
+	result = /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 15,
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
 
 //aep7
 /datum/crafting_recipe/AEP7
@@ -715,6 +775,19 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/stack/sheet/mineral/wood = 5,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_availible = FALSE
+
+/datum/crafting_recipe/m1carbine
+	name = "M1 Carbine"
+	result = /obj/item/gun/ballistic/automatic/m1carbine
+	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/crafting/goodparts = 5
 				)
@@ -932,6 +1005,7 @@
 
 
 
+
 //////////////////////////////////
 ///GUN ATTACHMENT/PARTS CRAFTING//
 //////////////////////////////////
@@ -1006,8 +1080,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_availible = FALSE
-
-
 /*
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"

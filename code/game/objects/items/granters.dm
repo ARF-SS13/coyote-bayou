@@ -766,6 +766,21 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/gun/lsw)
 
+/obj/item/book/granter/crafting_recipe/blueprint/m1carbine
+	name = "m1 carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/m1carbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/pps
+	name = "ppsh-41 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/pps)
+
+/obj/item/book/granter/crafting_recipe/blueprint/commando
+	name = "commando carbine blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/commando)
+
 /obj/item/book/granter/crafting_recipe/blueprint/trapper
 	name = "guide to minelaying"
 	icon_state = "blueprint2"
@@ -787,6 +802,16 @@
 	name = "scout carbine blueprint"
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/scoutcarbine)
+
+/obj/item/book/granter/crafting_recipe/blueprint/neostead
+	name = "neostead 2000 blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/neostead)
+
+/obj/item/book/granter/crafting_recipe/blueprint/gauss
+	name = "gauss rifle blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/gaussrifle)
 
 /obj/item/book/granter/crafting_recipe/manual/denvr
 	name = "den vr configuration"

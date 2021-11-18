@@ -1871,8 +1871,15 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/marksman,
 		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
 		/obj/item/book/granter/crafting_recipe/blueprint/greasegun,
+		/obj/item/book/granter/crafting_recipe/blueprint/r82,
+		/obj/item/book/granter/crafting_recipe/blueprint/service,
+		/obj/item/book/granter/crafting_recipe/blueprint/trailcarbine,
+		/obj/item/book/granter/crafting_recipe/blueprint/thatgun,
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi,
+		/obj/item/book/granter/crafting_recipe/blueprint/smg10mm,
+		/obj/item/book/granter/crafting_recipe/blueprint/m1carbine,
+		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
@@ -1884,7 +1891,11 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
 		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
 		/obj/item/book/granter/crafting_recipe/blueprint/r84,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle,
+		/obj/item/book/granter/crafting_recipe/blueprint/commando,
+		/obj/item/book/granter/crafting_recipe/blueprint/pps,
+		/obj/item/book/granter/crafting_recipe/blueprint/leveraction,
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh
@@ -1894,7 +1905,10 @@
 	loot = list(
 		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
 		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
-		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster
+		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,
+		/obj/item/book/granter/crafting_recipe/blueprint/neostead,
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+		/obj/item/book/granter/crafting_recipe/blueprint/gauss
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics

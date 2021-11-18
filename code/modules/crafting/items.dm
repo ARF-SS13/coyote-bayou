@@ -937,43 +937,28 @@
 				/obj/item/stack/ore/blackpowder/two,
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/mineral/titanium,
-				/obj/item/stack/sheet/mineral/gold,
-				/obj/item/stack/sheet/mineral/silver,
-				/obj/item/stack/sheet/lead/five,
 				/obj/item/stack/sheet/metal/ten,
 				/obj/item/stack/sheet/glass/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/scrap/research,
 				/obj/item/stock_parts/cell/ammo/ec,
-				/obj/item/stack/crafting/goodparts
+				/obj/item/stack/crafting/goodparts/five
 				)
 
 /obj/item/salvage/crafting
 	name = "salvaged components"
 	desc = "Some salvaged components, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvagecomponents"
-	Loot = list(/obj/item/crafting/diode,
-				/obj/item/crafting/transistor,
-				/obj/item/crafting/capacitor,
-				/obj/item/crafting/fuse,
-				/obj/item/crafting/resistor,
-				/obj/item/crafting/switch_crafting,
-				/obj/item/crafting/bulb,
-				/obj/item/crafting/board,
-				/obj/item/crafting/buzzer,
-				/obj/item/crafting/frame,
-				/obj/item/crafting/small_gear,
-				/obj/item/crafting/large_gear,
-				/obj/item/crafting/duct_tape,
+	Loot = list(/obj/item/crafting/duct_tape,
 				/obj/item/crafting/coffee_pot,
 				/obj/item/crafting/wonderglue,
-				/obj/item/crafting/turpentine,
 				/obj/item/crafting/abraxo,
 				/obj/item/crafting/igniter,
 				/obj/item/crafting/timer,
 				/obj/item/crafting/sensor,
-				/obj/item/crafting/lunchbox)
+				/obj/item/crafting/lunchbox,
+				/obj/item/reagent_containers/glass/bottle/blackpowder)
 
 /obj/item/salvage/tool
 	name = "Pre-war tool salvage"
@@ -981,16 +966,16 @@
 	icon_state = "toolsalvage"
 	Loot = list(/obj/item/blueprint/research,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/reagent_containers/pill/patch/healingpowder,
-				/obj/item/stack/ore/blackpowder/two,
+				/obj/item/reagent_containers/pill/patch/healpoultice,
 				/obj/item/weldingtool/advanced,
 				/obj/item/crowbar/hightech,
 				/obj/item/screwdriver/hightech,
 				/obj/item/wrench/hightech,
 				/obj/item/wirecutters/hightech,
+				/obj/item/multitool/advanced,
 				/obj/item/stock_parts/cell/ammo/mfc,
 				/obj/item/stock_parts/cell/ammo/ecp,
-				/obj/item/melee/onehanded/knife/switchblade,
+				/obj/item/melee/onehanded/knife/cosmic,
 				/obj/item/megaphone)
 
 /obj/item/salvage/high
@@ -999,5 +984,13 @@
 	icon_state = "goodsalvage"
 	Loot = list(/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,
-				/obj/item/advanced_crafting_components/alloys)
+				/obj/item/advanced_crafting_components/alloys,
+				/obj/item/advanced_crafting_components/conductors,
+				/obj/item/advanced_crafting_components/lenses,
+				/obj/item/advanced_crafting_components/flux,
+				/obj/item/attachments/scope,
+				/obj/item/suppressor,
+				/obj/item/attachments/burst_improvement,
+				/obj/item/attachments/recoil_decrease,
+				/obj/item/attachments/auto_sear)
 
