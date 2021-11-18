@@ -355,7 +355,7 @@
 	icon_state = "tribeam"
 	item_state = "laser-rifle9"
 	fire_delay = 3
-	ammo_type = list(/obj/item/projectile/beam/laser/tribeam/hitscan)
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
 
