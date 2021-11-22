@@ -1,7 +1,7 @@
 /obj/structure/punching_bag
 	name = "punching bag"
 	desc = "A punching bag. Can you get to speed level 4???"
-	icon = 'goon/icons/obj/fitness.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "punchingbag"
 	anchored = TRUE
 	layer = WALL_OBJ_LAYER
@@ -56,7 +56,7 @@
 		user.apply_status_effect(STATUS_EFFECT_EXERCISED)
 
 /obj/structure/weightmachine/stacklifter
-	icon = 'goon/icons/obj/fitness.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "fitnesslifter"
 	icon_state_inuse = "fitnesslifter2"
 
@@ -73,7 +73,7 @@
 		playsound(user, 'goon/sound/effects/spring.ogg', 60, 1)
 
 /obj/structure/weightmachine/weightlifter
-	icon = 'goon/icons/obj/fitness.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "fitnessweight"
 	icon_state_inuse = "fitnessweight-c"
 
@@ -103,7 +103,7 @@
 /obj/structure/stacklifter
 	name = "Weight Machine"
 	desc = "Just looking at this thing makes you feel tired."
-	icon = 'goon/icons/obj/fitness.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "fitnesslifter"
 	density = TRUE
 	anchored = TRUE
@@ -145,7 +145,7 @@
 /obj/structure/weightlifter
 	name = "Weight Machine"
 	desc = "Just looking at this thing makes you feel tired."
-	icon = 'goon/icons/obj/fitness.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "fitnessweight"
 	density = TRUE
 	anchored = TRUE

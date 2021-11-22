@@ -647,11 +647,27 @@
 /*
  * Racks
  */
+
+// Wooden shelf. Construct by crafting, not rack parts.
+/obj/structure/shelf_wood
+	name = "wooden shelf"
+	desc = "For storage."
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
+	icon_state = "shelf_wood"
+	layer = TABLE_LAYER
+	density = TRUE
+	anchored = TRUE
+	pass_flags = LETPASSTHROW
+	pass_flags_self = PASSTABLE
+	max_integrity = 30
+	attack_hand_speed = CLICK_CD_MELEE
+	attack_hand_is_action = TRUE
+
 /obj/structure/rack
 	name = "rack"
-	desc = "Different from the Middle Ages version."
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "rack"
+	desc = "Different from the Medieval version."
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
+	icon_state = "shelf_wood"
 	layer = TABLE_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -660,6 +676,12 @@
 	max_integrity = 20
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
+
+// Metal shelf, made with rack parts.
+/obj/structure/rack/shelf_metal
+	name = "metal shelf"
+	desc = "Metal shelf."
+	icon_state = "shelf"
 
 /obj/structure/rack/examine(mob/user)
 	. = ..()
@@ -740,8 +762,8 @@
 /obj/item/rack_parts
 	name = "rack parts"
 	desc = "Parts of a rack."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "rack_parts"
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
+	icon_state = "rack"
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
 	var/building = FALSE
@@ -761,7 +783,7 @@
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		var/obj/structure/rack/R = new /obj/structure/rack/shelf_metal(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)

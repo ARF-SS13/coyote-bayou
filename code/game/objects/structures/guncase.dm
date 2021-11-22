@@ -2,7 +2,7 @@
 /obj/structure/guncase
 	name = "gun locker"
 	desc = "A locker that holds guns."
-	icon = 'icons/obj/closet.dmi'
+	icon = 'icons/fallout/objects/furniture/closet.dmi'
 	icon_state = "shotguncase"
 	anchored = FALSE
 	density = TRUE
@@ -105,6 +105,7 @@
 /obj/structure/guncase/ecase
 	name = "energy gun locker"
 	desc = "A locker that holds energy guns."
+	icon = 'icons/obj/closet.dmi'
 	icon_state = "ecase"
 	case_type = "egun"
 	gun_category = /obj/item/gun/energy/e_gun

@@ -1,7 +1,7 @@
 /obj/structure/noticeboard
 	name = "notice board"
 	desc = "A board for pinning important notices upon."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "nboard00"
 	plane = ABOVE_WALL_PLANE
 	density = FALSE

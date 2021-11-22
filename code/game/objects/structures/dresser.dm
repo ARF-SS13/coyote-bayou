@@ -1,7 +1,7 @@
 /obj/structure/dresser
 	name = "dresser"
 	desc = "A nicely-crafted wooden dresser. It's filled with lots of undies."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "dresser"
 	density = TRUE
 	anchored = TRUE

@@ -10,9 +10,22 @@
  * Bookcase
  */
 
+//Fallout style bookshelf, simplified until someone adds functional storage and debris, maybe some planks.
+/obj/structure/bookshelf
+	name = "bookshelf"
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
+	icon_state = "book-0"
+	desc = "A great place for storing knowledge."
+	opacity = 0
+	resistance_flags = FLAMMABLE
+
+/obj/structure/bookshelf/New()
+	..()
+	icon_state = "book-[rand(1,5)]"
+
 /obj/structure/bookcase
 	name = "bookcase"
-	icon = 'icons/obj/library.dmi'
+	icon = 'icons/fallout/objects/furniture/stationary.dmi'
 	icon_state = "bookempty"
 	desc = "A great place for storing knowledge."
 	anchored = FALSE

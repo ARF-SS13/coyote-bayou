@@ -15,11 +15,10 @@
 	desc = "A chain link fence. Not as effective as a wall, but generally it keeps people out."
 	density = TRUE
 	anchored = TRUE
-	icon = 'icons/obj/fence.dmi'
+	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "straight"
 	barricade = TRUE
 	proj_pass_rate = 95
-
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
 	var/invulnerable = FALSE
@@ -29,15 +28,18 @@
 
 	update_cut_status()
 
+//Obsolete handrails, railing is better
 /obj/structure/fence/handrail_end
 	name = "handrail"
 	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "y_handrail_end"
 	cuttable = FALSE
 
 /obj/structure/fence/handrail_corner
 	name = "handrail"
 	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "y_handrail_corner"
 	cuttable = FALSE
 	climbable = TRUE
@@ -45,6 +47,7 @@
 /obj/structure/fence/handrail
 	name = "handrail"
 	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "y_handrail"
 	cuttable= FALSE
 	climbable = TRUE
@@ -52,6 +55,7 @@
 /obj/structure/fence/handrail_end/non_dense
 	name = "handrail"
 	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "y_handrail_end"
 	cuttable = FALSE
 	density = FALSE
@@ -182,6 +186,7 @@
 /obj/structure/simple_door/metal/fence
 	name = "fence gate"
 	desc = "A gate for a fence."
+	icon = 'icons/fallout/structures/fences.dmi'
 	icon_state = "fence"
 	door_type = "fence"
 	open_sound = "sound/f13machines/doorchainlink_open.ogg"
@@ -189,7 +194,9 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
-	icon = 'icons/obj/fence.dmi'
+	opening_time = 3
+	closing_time = 2
+	hard_open = 0	
 
 #undef CUT_TIME
 #undef CLIMB_TIME
@@ -199,6 +206,7 @@
 #undef LARGE_HOLE
 #undef MAX_HOLE_SIZE
 
+// Obsolete wooden fences and dancing pole, better in railing.
 /obj/structure/fence/wooden
 	name = "wooden fence"
 	desc = "A fence fashioned out of wood planks. Designed to keep animals in and vagrants out"
@@ -209,24 +217,14 @@
 	proj_pass_rate = 80
 
 /obj/structure/fence/end/wooden
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "end_wood"
 	cuttable = FALSE
 
 /obj/structure/fence/corner/wooden
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "corner_wood"
 	cuttable = FALSE
-
-/obj/structure/simple_door/metal/fence/wooden
-	name = "wood fence gate"
-	desc = "A wooden gate for a wood fence."
-	icon_state = "fence_wooden"
-	door_type = "fence_wooden"
-	open_sound = "sound/f13machines/doorchainlink_open.ogg"
-	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opacity = FALSE
-	base_opacity = FALSE
-	can_hold_padlock = TRUE
-	icon = 'icons/obj/fence.dmi'
 
 /obj/structure/fence/pole_t
 	name = "pole"

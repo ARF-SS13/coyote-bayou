@@ -1,7 +1,7 @@
 /obj/structure/chair
 	name = "chair"
 	desc = "You sit in this. Either by will or force."
-	icon = 'icons/obj/chairs.dmi'
+	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
 	icon_state = "chair"
 	anchored = TRUE
 	can_buckle = 1
@@ -151,34 +151,153 @@
 
 // Chair types
 
+////////////////////
+// Fallout chairs //
+////////////////////
 
-///Material chair
-/obj/structure/chair/greyscale
-	icon_state = "chair_greyscale"
-	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	item_chair = /obj/item/chair/greyscale
-	buildstacktype = null //Custom mats handle this
-
+// Settler chair
 /obj/structure/chair/wood
-	icon_state = "wooden_chair_settler"
 	name = "wooden chair"
-	desc = "Old is never too old to not be in fashion."
+	desc = "Simple chair made from weathered old wood."
+	icon_state = "wooden_chair_settler"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 3
 	item_chair = /obj/item/chair/wood
 
-/obj/structure/chair/wood/narsie_act()
-	return
+/obj/item/chair/wood
+	name = "wooden chair"
+	icon_state = "wooden_chair_settler_toppled"
+	item_state = "woodenchair"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	hitsound = 'sound/weapons/genhit1.ogg'
+	origin_type = /obj/structure/chair/wood
+	custom_materials = null
+	break_chance = 50
 
-/obj/structure/chair/wood/normal //Kept for map compatibility
+// Simple wooden chair
+/obj/structure/chair/wood/normal
+	icon_state = "wooden_chair"
 
+/obj/item/chair/wood/normal
+	icon_state = "wooden_chair_toppled"
+	item_state = "wooden_chair"
+	origin_type = /obj/structure/chair/wood/normal
 
+// Winged wooden chair
 /obj/structure/chair/wood/wings
-	icon_state = "wooden_chair_wings"
+	icon_state = "wooden_chair_fine"
 	item_chair = /obj/item/chair/wood/wings
 
+/obj/item/chair/wood/wings
+	icon_state = "wooden_chair_fine_toppled"
+	origin_type = /obj/structure/chair/wood/wings
+
+// Fancy wooden chair
+/obj/structure/chair/wood/fancy
+	icon_state = "wooden_chair_fancy"
+	name = "fancy wooden chair"
+	desc = "An elegant chair made of luxurious wood."
+	item_chair = /obj/item/chair/wood/fancy
+
+/obj/item/chair/wood/fancy
+	icon_state = "wooden_chair_fancy_toppled"
+	item_state = "wooden_chair_fancy"
+	origin_type = /obj/structure/chair/wood/fancy
+
+// Folding chair
+/obj/structure/chair/folding
+	icon_state = "folding_chair"
+	item_chair = /obj/item/chair/folding
+
+/obj/item/chair/folding
+	icon_state = "folding_chair_toppled"
+	item_state = "folding_chair"
+	origin_type = /obj/structure/chair/folding
+
+// Plywood chair
+/obj/structure/chair/comfy/plywood
+	name = "plywood chair"
+	desc = "A relaxing plywood chair."
+	icon_state = "plywood_chair"
+	anchored = FALSE
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 4
+
+/obj/structure/chair/comfy/plywood/GetArmrest()
+	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "plywood_chair_armrest")
+
+// Pre-war chair
+/obj/structure/chair/comfy/shuttle
+	name = "pre-war comfy chair"
+	desc = "A comfortable, secure seat in synthetics."
+	icon_state = "shuttle_chair"
+
+/obj/structure/chair/comfy/shuttle/GetArmrest()
+	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "shuttle_chair_armrest")
+
+// Office chairs
+/obj/structure/chair/office
+	icon_state = "office_chair"
+	anchored = FALSE
+	buildstackamount = 5
+	item_chair = null
+	drag_delay = 0.05 SECONDS //Pulling something on wheels is easy
+
+/obj/structure/chair/office/Moved()
+	. = ..()
+	if(has_gravity())
+		playsound(src, 'sound/effects/roll.ogg', 100, 1)
+
+/obj/structure/chair/office/light
+	icon_state = "office_chair_white"
+
+/obj/structure/chair/office/dark
+	icon_state = "office_chair_dark"
+
+// Bar stools
+/obj/structure/chair/stool/retro
+	name = "bar stool"
+	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
+	icon_state = "bar"
+	item_chair = /obj/item/chair/stool/retro
+
+/obj/item/chair/stool/retro
+	icon_state = "bar_toppled"
+	item_state = "bar"
+	origin_type = /obj/structure/chair/stool/retro
+
+/obj/structure/chair/stool/retro/black
+	icon_state = "bar_black"
+	item_chair = /obj/item/chair/stool/retro/black
+
+/obj/item/chair/stool/retro/black
+	icon_state = "bar_black_toppled"
+	item_state = "bar_black"
+	origin_type = /obj/structure/chair/stool/retro/black
+
+/obj/structure/chair/stool/retro/tan
+	name = "bar stool"
+	icon_state = "bar_tan"
+	item_chair = /obj/item/chair/stool/retro/tan
+
+/obj/item/chair/stool/retro/tan
+	icon_state = "bar_tan_toppled"
+	item_state = "bar_tan"
+	origin_type = /obj/structure/chair/stool/retro/tan
+
+/obj/structure/chair/stool/retro/backed
+	icon_state = "bar_backed"
+	item_chair = /obj/item/chair/stool/retro/backed
+
+/obj/item/chair/stool/retro/backed
+	icon_state = "bar_backed_toppled"
+	item_state = "bar_backed"
+	origin_type = /obj/structure/chair/stool/retro/backed
+
+// Comfy chairs
 /obj/structure/chair/comfy
 	name = "comfy chair"
 	desc = "It looks comfy."
@@ -217,89 +336,60 @@
 	update_armrest()
 
 /obj/structure/chair/comfy/brown
-	color = rgb(255,113,0)
+	color = COLOR_MAROON
 
 /obj/structure/chair/comfy/beige
-	color = rgb(255,253,195)
+	color = COLOR_BROWN
 
 /obj/structure/chair/comfy/teal
-	color = rgb(0,255,255)
+	color = COLOR_TEAL
 
 /obj/structure/chair/comfy/black
-	color = rgb(167,164,153)
+	color = COLOR_FLOORTILE_GRAY 
 
 /obj/structure/chair/comfy/green
-	color = rgb(81,173,106)
+	color = COLOR_GREEN_GRAY
 
 /obj/structure/chair/comfy/lime
-	color = rgb(255,251,0)
+	color = COLOR_LIME
 
 /obj/structure/chair/comfy/purple
-	color = rgb(255,50,230)
+	color = COLOR_PURPLE_GRAY
 
-/obj/structure/chair/comfy/plywood
-	name = "plywood chair"
-	desc = "A relaxing plywood chair."
-	icon_state = "plywood_chair"
-	anchored = FALSE
-	buildstacktype = /obj/item/stack/sheet/mineral/wood
-	buildstackamount = 4
 
-/obj/structure/chair/comfy/plywood/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "plywood_chair_armrest")
+///Material chair
+/obj/structure/chair/greyscale
+	icon = 'icons/obj/chairs.dmi'
+	icon_state = "chair_greyscale"
+	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	item_chair = /obj/item/chair/greyscale
+	buildstacktype = null //Custom mats handle this
 
-/obj/structure/chair/comfy/shuttle
-	name = "shuttle seat"
-	desc = "A comfortable, secure seat. It has a more sturdy looking buckling system, for smoother flights."
-	icon_state = "shuttle_chair"
-
-/obj/structure/chair/comfy/shuttle/GetArmrest()
-	return mutable_appearance('icons/obj/chairs.dmi', "shuttle_chair_armrest")
-
-/obj/structure/chair/office
-	anchored = FALSE
-	buildstackamount = 5
-	item_chair = null
-	drag_delay = 0.05 SECONDS //Pulling something on wheels is easy
+/obj/structure/chair/wood/narsie_act()
+	return
 
 /obj/structure/chair/f13foldupchair
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "f13foldupchair"
 	item_chair = null
 
 /obj/structure/chair/f13chair1
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "f13chair1"
 	item_chair = null
 
 /obj/structure/chair/f13chair2
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "f13chair2"
 	item_chair = null
 
-/obj/structure/chair/stool/retro/black
-	name = "bar stool"
-	icon_state = "nvbar_black"
-	item_chair = /obj/item/chair/stool/retro/black
-
-/obj/item/chair/stool/retro/black
-	icon_state = "nvbar_black_toppled"
-	item_state = "nvbar_black"
-	origin_type = /obj/structure/chair/stool/retro/black
-
-/obj/structure/chair/office/Moved()
-	. = ..()
-	if(has_gravity())
-		playsound(src, 'sound/effects/roll.ogg', 100, 1)
-
-/obj/structure/chair/office/light
-	icon_state = "officechair_white"
-
-/obj/structure/chair/office/dark
-	icon_state = "officechair_dark"
 
 //Stool
 
 /obj/structure/chair/stool
 	name = "stool"
 	desc = "Apply butt."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stool"
 	can_buckle = 0
 	buildstackamount = 1
@@ -328,10 +418,24 @@
 	icon_state = "bar"
 	item_chair = /obj/item/chair/stool/bar
 
+/obj/structure/chair/stool/f13stool
+	name = "bar stool"
+	desc = "It has some unsavory stains on it..."
+	icon_state = "f13stool"
+	item_chair = /obj/item/chair/stool/bar
+
+/obj/item/chair/stool/bar
+	name = "bar stool"
+	icon_state = "bar_toppled"
+	item_state = "stool_bar"
+	origin_type = /obj/structure/chair/stool/bar
+
+/obj/item/chair/wood/modern
+
 /obj/item/chair
 	name = "chair"
 	desc = "Bar brawl essential."
-	icon = 'icons/obj/chairs.dmi'
+	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
 	icon_state = "chair_toppled"
 	item_state = "chair"
 	lefthand_file = 'icons/mob/inhands/misc/chairs_lefthand.dmi'
@@ -437,6 +541,7 @@
 		smash(user)
 
 /obj/item/chair/greyscale
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair_greyscale_toppled"
 	item_state = "chair_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -444,16 +549,11 @@
 
 /obj/item/chair/stool
 	name = "stool"
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stool_toppled"
 	item_state = "stool"
 	origin_type = /obj/structure/chair/stool
 	break_chance = 0 //It's too sturdy.
-
-/obj/item/chair/stool/bar
-	name = "bar stool"
-	icon_state = "bar_toppled"
-	item_state = "stool_bar"
-	origin_type = /obj/structure/chair/stool/bar
 
 //////////////////////////
 //Alien(Disco) Stools!////
@@ -530,24 +630,28 @@
 
 /obj/item/chair/stool/brass
 	name = "brass stool"
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stoolbrass_toppled"
 	item_state = "stoolbrass"
 	origin_type = /obj/structure/chair/stool/brass
 
 /obj/item/chair/stool/bar/brass
 	name = "brass bar stool"
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "barbrass_toppled"
 	item_state = "stoolbrass_bar"
 	origin_type = /obj/structure/chair/stool/bar/brass
 
 /obj/item/chair/stool/bronze
 	name = "bronze stool"
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stoolbrass_toppled"
 	item_state = "stoolbrass"
 	origin_type = /obj/structure/chair/stool/bronze
 
 /obj/item/chair/stool/bar/bronze
 	name = "bronze bar stool"
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "barbrass_toppled"
 	item_state = "stoolbrass_bar"
 	origin_type = /obj/structure/chair/stool/bar/bronze
@@ -559,33 +663,24 @@
 /obj/item/chair/stool/narsie_act()
 	return //sturdy enough to ignore a god
 
-/obj/item/chair/wood
-	name = "wooden chair"
-	icon_state = "wooden_chair_settler_toppled"
-	item_state = "woodenchair"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	hitsound = 'sound/weapons/genhit1.ogg'
-	origin_type = /obj/structure/chair/wood
-	custom_materials = null
-	break_chance = 50
-
 /obj/item/chair/wood/narsie_act()
 	return
 
-/obj/item/chair/wood/wings
-	icon_state = "wooden_chair_wings_toppled"
-	origin_type = /obj/structure/chair/wood/wings
+//Temporary compilation stuff, obsolete
+/obj/structure/chair/wood/modern
+/obj/structure/chair/wood/worn
 
 /obj/structure/chair/old
 	name = "strange chair"
 	desc = "You sit in this. Either by will or force. Looks REALLY uncomfortable."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chairold"
 	item_chair = null
 
 /obj/structure/chair/brass
 	name = "brass chair"
 	desc = "A spinny chair made of brass. It looks uncomfortable."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "brass_chair"
 	max_integrity = 150
 	buildstacktype = /obj/item/stack/tile/brass
@@ -624,57 +719,23 @@
 	name = "brass chair"
 	desc = "A spinny chair made of bronze. It has little cogs for wheels!"
 	anchored = FALSE
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "brass_chair"
 	buildstacktype = /obj/item/stack/sheet/bronze
 	buildstackamount = 1
 	item_chair = null
-
-/obj/structure/chair/wood/modern
-	icon_state = "wooden_chair_new"
-	desc = "This chair is good as new.<br>Old is never too old to not be in fashion."
-	item_chair = /obj/item/chair/wood/modern
-
 
 /obj/structure/chair/bronze/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
 
-/obj/item/chair/wood/modern
-	icon_state = "wooden_chair_generic_toppled"
-	item_state = "wooden_chair_new"
-	origin_type = /obj/structure/chair/wood/modern
 
-/obj/structure/chair/wood/fancy
-	icon_state = "wooden_chair_fancy"
-	name = "fancy wooden chair"
-	desc = "An elegant chair made of luxurious wood."
-	item_chair = /obj/item/chair/wood/fancy
-
-/obj/item/chair/wood/fancy
-	icon_state = "wooden_chair_fancy_toppled"
-	item_state = "wooden_chair_fancy"
-	origin_type = /obj/structure/chair/wood/fancy
-
-/obj/structure/chair/wood/worn
-	icon_state = "wooden_chair_old"
-	desc = "The furnish has faded and it's not so shiny anymore.<br>Still a good chair though."
-	item_chair = /obj/item/chair/wood/worn
-
-/obj/item/chair/wood/worn
-	icon_state = "wooden_chair_generic_toppled"
-	item_state = "wooden_chair_old"
-	origin_type = /obj/structure/chair/wood/worn
-
-/obj/structure/chair/stool/f13stool
-	name = "bar stool"
-	desc = "It has some unsavory stains on it..."
-	icon_state = "f13stool"
-	item_chair = /obj/item/chair/stool/bar
 
 /obj/structure/chair/booth
 	name = "single booth"
 	desc = "A lone-some diner-styled booth."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "booth_single"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -699,6 +760,7 @@
 /obj/structure/chair/left
 	name = "booth"
 	desc = "A diner-styled end booth."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "booth_leftend"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -723,6 +785,7 @@
 /obj/structure/chair/west_middle
 	name = "booth"
 	desc = "A diner-styled end booth."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "booth_west_middle"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -741,6 +804,7 @@
 /obj/structure/chair/middle
 	name = "booth"
 	desc = "A diner-styled middle booth."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "booth_middle"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -762,20 +826,10 @@
 /obj/structure/chair/middle/proc/GetOverlay()
 	return mutable_appearance('icons/obj/chairs.dmi', "booth_middle_overlay")
 
-
-/obj/structure/chair/stool/retro/tan
-	name = "bar stool"
-	icon_state = "nvbar_tan"
-	item_chair = /obj/item/chair/stool/retro/tan
-
-/obj/item/chair/stool/retro/tan
-	icon_state = "nvbar_tan_toppled"
-	item_state = "nvbar_tan"
-	origin_type = /obj/structure/chair/stool/retro/tan
-
 /obj/structure/chair/right
 	name = "booth"
 	desc = "A diner-styled end booth."
+	icon = 'icons/obj/chairs.dmi'
 	icon_state = "booth_rightend"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -796,14 +850,3 @@
 
 /obj/structure/chair/right/proc/GetOverlay()
 	return mutable_appearance('icons/obj/chairs.dmi', "booth_rightend_overlay")
-
-
-/obj/structure/chair/stool/retro/backed
-	name = "bar stool"
-	icon_state = "nv_backed"
-	item_chair = /obj/item/chair/stool/retro/backed
-
-/obj/item/chair/stool/retro/backed
-	icon_state = "nv_backed_toppled"
-	item_state = "nv_backed"
-	origin_type = /obj/structure/chair/stool/retro/backed

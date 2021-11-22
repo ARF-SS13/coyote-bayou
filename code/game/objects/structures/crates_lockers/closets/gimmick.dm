@@ -1,6 +1,7 @@
 /obj/structure/closet/cabinet
 	name = "cabinet"
 	desc = "Opens and closes. Just about."
+	icon = 'icons/fallout/objects/furniture/closet.dmi'
 	icon_state = "cabinet"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70

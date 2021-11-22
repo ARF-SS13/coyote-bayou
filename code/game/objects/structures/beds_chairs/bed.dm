@@ -11,7 +11,7 @@
 	name = "bed"
 	desc = "This is used to lie in, sleep in or strap on."
 	icon_state = "bed"
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
 	anchored = TRUE
 	can_buckle = TRUE
 	buckle_lying = TRUE
@@ -57,13 +57,14 @@
 /obj/structure/bed/old
 	name = "ancient bed"
 	desc = "Filthy beyond belief."
-	icon_state = "bed_old1"
+	icon_state = "bed_dirty"
 	max_integrity = 50
 
+// Obsolete
 /obj/structure/bed/oldalt
 	name = "ancient bed"
 	desc = "Filthy beyond belief."
-	icon_state = "bed_old2"
+	icon_state = "bed_dirty"
 	max_integrity = 50
 
 /*
@@ -238,5 +239,5 @@
 
 /obj/structure/bed/mattress/pregame/New()
 	..()
-	icon_state = "mattress[rand(0,6)]"
+	icon_state = "mattress[rand(0,5)]"
 

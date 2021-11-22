@@ -74,14 +74,13 @@
 	icon_state = "cloth_edge"
 	max_integrity = 80
 	opacity = TRUE
-
+/*
 /obj/structure/barricade/wooden
-	name = "wooden barricade"
+	name = "wooden barricade" 
 	desc = "This space is blocked off by a wooden barricade."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "woodenbarricade"
-	bar_material = WOOD
-	var/drop_amount = 3
+
 
 /obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
@@ -97,23 +96,9 @@
 			qdel(src)
 		return
 	return ..()
+*/
 
 
-/obj/structure/barricade/wooden/crude
-	name = "crude plank barricade"
-	desc = "This space is blocked off by a crude assortment of planks."
-	icon_state = "woodenbarricade-old"
-	drop_amount = 1
-	max_integrity = 50
-	proj_pass_rate = 65
-
-/obj/structure/barricade/wooden/crude/snow
-	desc = "This space is blocked off by a crude assortment of planks. It seems to be covered in a layer of snow."
-	icon_state = "woodenbarricade-snow-old"
-	max_integrity = 75
-
-/obj/structure/barricade/wooden/make_debris()
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
 
 /obj/structure/barricade/sandbags

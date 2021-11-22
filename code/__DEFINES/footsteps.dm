@@ -2,12 +2,15 @@
 #define FOOTSTEP_FLOOR "floor"
 #define FOOTSTEP_PLATING "plating"
 #define FOOTSTEP_CARPET "carpet"
-#define FOOTSTEP_SAND "sand"
+#define FOOTSTEP_SAND "dirt"
 #define FOOTSTEP_GRASS "grass"
 #define FOOTSTEP_WATER "water"
 #define FOOTSTEP_LAVA "lava"
 #define FOOTSTEP_MEAT "meat"
 #define FOOTSTEP_RUST "rust"
+#define FOOTSTEP_LOOSE_SAND "sand"
+#define FOOTSTEP_SNOW "snow"
+#define FOOTSTEP_GRAVEL "gravel"
 
 //barefoot sounds
 #define FOOTSTEP_WOOD_BAREFOOT "woodbarefoot"
@@ -95,7 +98,27 @@ GLOBAL_LIST_INIT(footstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 100, 0)
+		'sound/effects/footstep/hull1.ogg',
+		'sound/effects/footstep/hull2.ogg',
+		'sound/effects/footstep/hull3.ogg',
+		'sound/effects/footstep/hull4.ogg',
+		'sound/effects/footstep/hull5.ogg'), 100, 1),
+	FOOTSTEP_SNOW = list(list(
+		'sound/effects/footstep/snow1.ogg',
+		'sound/effects/footstep/snow2.ogg',
+		'sound/effects/footstep/snow3.ogg',
+		'sound/effects/footstep/snow4.ogg',
+		'sound/effects/footstep/snow5.ogg'), 100, 1),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
+	FOOTSTEP_LOOSE_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 100, 1),
 ))
 
 //bare footsteps lists
