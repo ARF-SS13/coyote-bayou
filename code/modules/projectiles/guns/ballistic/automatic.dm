@@ -666,7 +666,7 @@
 	scope_state = "scope_short"
 	scope_x_offset = 4
 	scope_y_offset = 15
-	suppressor_x_offset = 26	
+	suppressor_x_offset = 26
 	suppressor_y_offset = 28
 
 
@@ -939,6 +939,51 @@
 	zoom_out_amt = 9
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+
+//R93 PDW		Keywords: 5.56mm, Semi-Automatic, 20 (10-50) round magazine, Pistol grip
+/obj/item/gun/ballistic/automatic/r93
+	name = "R93 PDW"
+	desc = "A lightweight assault rifle manufactured by the Brotherhood of Steel with a folding stock, based on weapons from the R-series platforms. It is generally issued to Brotherhood Knights for scouting missions."
+	icon_state = "r93"
+	item_state = "r93"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	fire_delay = 3.25
+	spread = 1
+	can_attachments = FALSE
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+	can_scope = FALSE
+	zoomable = TRUE
+	zoom_amt = 6
+	zoom_out_amt = 9
+	can_bayonet = FALSE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+
+/obj/item/gun/ballistic/automatic/r93/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 8
+			fire_delay = 3.75
+			recoil = 0.1
+			weapon_weight = WEAPON_HEAVY
+			to_chat(user, "<span class='notice'>You switch to 2-rnd burst.</span>")
+			enable_burst()
+		if(1)
+			select = 0
+			burst_size = 1
+			fire_delay = 3.25
+			spread = 1
+			weapon_weight = WEAPON_MEDIUM
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 
 //Type 93 Chinese rifle				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine
@@ -1244,7 +1289,7 @@
 	name = "\improper M72 gauss rifle"
 	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
 	icon_state = "m72"
-	item_state = "shotgun"
+	item_state = "sniper"
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	burst_size = 1
