@@ -69,6 +69,13 @@
 	build_path = /obj/item/ammo_box/m44/empty
 	category = list("initial", "Simple Magazines")
 
+/datum/design/ammolathe/automag44
+	name = "empty automag magazine  (.44 magnum)"
+	id = "magnum"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/magazine/automag/empty
+	category = list("initial", "Simple Magazines")
+
 /datum/design/ammolathe/rifle556
 	name = "empty 20rd rifle magazine (5.56mm)"
 	id = "rifle556"

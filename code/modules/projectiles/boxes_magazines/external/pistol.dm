@@ -152,6 +152,9 @@
 	max_ammo = 7
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/automag/empty
+	start_empty = 1
+
 //14mm
 /obj/item/ammo_box/magazine/m14mm
 	name = "handgun magazine (14mm)"
