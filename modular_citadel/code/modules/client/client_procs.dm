@@ -1,6 +1,7 @@
 /client/New()
 	. = ..()
 	mentor_datum_set()
+	staff_setup() //fortuna addition
 
 /client/proc/citadel_client_procs(href_list)
 	if(href_list["mentor_msg"])
@@ -39,6 +40,15 @@
 /client/proc/is_mentor() // admins are mentors too.
 	if(mentor_datum || check_rights_for(src, R_ADMIN,0))
 		return TRUE
+
+/client/proc/is_staff() // fortuna add
+	if(check_rights_for(src, R_SPAWN,0) || check_rights_for(src, R_ADMIN,0))
+		return TRUE
+
+/client/proc/staff_setup()
+	if(is_staff())
+		GLOB.staff |= src
+		add_staff_verbs()
 
 /client/verb/togglerightclickstuff()
 	set category = "OOC"

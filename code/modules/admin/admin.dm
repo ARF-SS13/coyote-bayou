@@ -550,7 +550,7 @@
 
 	var/message = input("Global message to send:", "Admin Announce", null, null)  as message
 	if(message)
-		if(!check_rights(R_SERVER,0))
+		if(!check_rights(R_SPAWN,0)) //fortuna edit
 			message = adminscrub(message,500)
 		to_chat(world, "<span class='adminnotice'><b>[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:</b></span>\n \t [message]", confidential = TRUE)
 		log_admin("Announce: [key_name(usr)] : [message]")
