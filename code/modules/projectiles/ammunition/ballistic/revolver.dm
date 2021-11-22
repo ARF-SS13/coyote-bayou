@@ -5,6 +5,11 @@
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357
 
+/obj/item/ammo_casing/a357/ricochet
+	name = ".357 ricochet bullet casing"
+	desc = "A .357 ricochet bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a357/ricochet
+
 
 // .38 special
 /obj/item/ammo_casing/c38
@@ -12,6 +17,11 @@
 	desc = "A .38 special bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38
+
+/obj/item/ammo_casing/c38/rubber
+	name = ".38 special rubber bullet casing"
+	desc = "A .38 specia rubber bullet casing. For when you want to be extra useless."
+	projectile_type = /obj/item/projectile/bullet/c38/rubber
 	
 // .44 magnum
 /obj/item/ammo_casing/m44

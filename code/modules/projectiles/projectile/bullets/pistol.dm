@@ -26,6 +26,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	armour_penetration = 0.06
 	wound_bonus = 6
 
+/obj/item/projectile/bullet/c22/rubber
+	name = ".22lr rubber bullet"
+	damage = 2
+	armour_penetration = 0
+	stamina = 15
+	wound_bonus = 0
+	sharpness = SHARP_NONE
 
 /////////////////
 // .38 SPECIAL //
@@ -36,6 +43,13 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	damage = 30
 	armour_penetration = 0
 	wound_bonus = 10
+
+/obj/item/projectile/bullet/c38/rubber
+	name = ".38 rubber bullet"
+	damage = 5
+	armour_penetration = 25
+	wound_bonus = 0
+	sharpness = SHARP_NONE
 
 
 //////////
@@ -54,6 +68,24 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	armour_penetration = 0.07
 	var/extra_speed = 500
 
+/obj/item/projectile/bullet/c9mm/rubber
+	name = "9mm rubber bullet"
+	damage = 4
+	stamina = 23
+	armour_penetration = 0
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+
+/obj/item/projectile/bullet/c9mm/wounding
+	name = "9mm wounding bullet"
+	damage = 24
+	armour_penetration = 0
+	ricochets_max = 0
+	sharpness = SHARP_EDGED
+	wound_bonus = 35
+	bare_wound_bonus = 35
+	wound_falloff_tile = -8
+
 /obj/item/projectile/bullet/c9mm/simple //for simple mobs, separate to allow balancing
 	name = "9mm bullet"
 
@@ -67,6 +99,36 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	damage = 29
 	armour_penetration = 0.12
 	wound_bonus = 18
+
+/obj/item/projectile/bullet/c10mm/rubber
+	name = "10mm rubber bullet"
+	damage = 8
+	armour_penetration = 0
+	stamina = 26
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+
+/obj/item/projectile/bullet/c10mm/wounding
+	name = "10mm wounding bullet"
+	damage = 24
+	armour_penetration = 0
+	ricochets_max = 0
+	sharpness = SHARP_EDGED
+	wound_bonus = 40
+	bare_wound_bonus = 40
+	wound_falloff_tile = -8
+
+/obj/item/projectile/bullet/c10mm/incendiary
+	name = "10mm incendiary bullet"
+	damage = 13
+	var/fire_stacks = 1
+
+/obj/item/projectile/bullet/c10mm/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 
 
 /////////////
@@ -86,6 +148,25 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	armour_penetration = 0.12
 	var/extra_speed = 500
 
+/obj/item/projectile/bullet/c45/rubber
+	name = ".45 rubber bullet"
+	damage = 10
+	stamina = 45
+	armour_penetration = 0
+	sharpness = SHARP_NONE
+	wound_bonus = 0
+
+/obj/item/projectile/bullet/c45/incendiary
+	name = ".45 incendiary bullet"
+	damage = 15
+	var/fire_stacks = 1
+	
+/obj/item/projectile/bullet/c45/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 
 /////////////////
 // .357 MAGNUM //
@@ -98,6 +179,16 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	wound_bonus = 14
 	bare_wound_bonus = -14
 
+// 3 ricochets, more than enough to kill anything that moves
+/obj/item/projectile/bullet/a357/ricochet
+	name = ".357 ricochet bullet"
+	damage = 30
+	armour_penetration = 0.15
+	ricochets_max = 3
+	ricochet_chance = 140
+	ricochet_auto_aim_angle = 50
+	ricochet_auto_aim_range = 6
+	ricochet_incidence_leeway = 80
 
 ////////////////
 // .44 MAGNUM //
@@ -113,7 +204,6 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
-
 
 
 ////////////
@@ -178,7 +268,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	name = "needle"
 	icon_state = "cbbolt"
 	damage = 32
-	armour_penetration = 0.6
+	armour_penetration = 0.8
 	var/piercing = FALSE
 
 

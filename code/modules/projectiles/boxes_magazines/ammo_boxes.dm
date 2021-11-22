@@ -53,6 +53,12 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	icon_state = "improvshotbag"
 
+/obj/item/ammo_box/shotgun/incendiary
+	name = "Box of incendiary shotgun shells"
+	desc = "A box full of incendiary shotgun shells."
+	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
+	icon_state = "mbox"
+
 
 //.22 LR
 /obj/item/ammo_box/m22
@@ -65,6 +71,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/m22/rubber
+	name = "ammo box (.22lr rubber)"
+	desc = "A box of .22 rubber rounds. For when you want to be useless."
+	ammo_type = /obj/item/ammo_casing/a22/rubber
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -76,6 +87,23 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/c9mm/wounding
+	name = "ammo box (9mm wounding)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmbox"
+	multiple_sprites = 2
+	caliber = "9mm"
+	desc = "A box full of 9mm wounding bullets. They do more damage the closer you are."
+	ammo_type = /obj/item/ammo_casing/c9mm/wounding
+
+/obj/item/ammo_box/c9mm/rubber
+	name = "ammo box (9mm rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmbox"
+	multiple_sprites = 2
+	caliber = "9mm"
+	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -85,6 +113,13 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
+
+/obj/item/ammo_box/c38box/rubber
+	name = "ammo box (.38 rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "38box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/c38/rubber
 
 /obj/item/ammo_box/c38box/improvised
 	name = "bag with reloaded .38 bullets"
@@ -111,7 +146,24 @@
 	name = "ammo box (10mm Incendiary)"
 	icon_state = "10mmbox"
 	max_ammo = 20
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "10mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/c10mm/incendiary
 
+/obj/item/ammo_box/c10mm/rubber
+	name = "ammo box (10mm rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "10mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
+
+/obj/item/ammo_box/c10mm/wounding
+	name = "ammo box (10mm wounding)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "10mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/c10mm/wounding
 
 /obj/item/ammo_box/c10mm/improvised
 	name = "bag with reloaded 10mm bullets"
@@ -132,6 +184,15 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a357box/ricochet
+	name = "ammo box (.357 Magnum ricochet)"
+	max_ammo = 6
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "357box"
+	multiple_sprites = 2
+	desc = "Six shots...more than enough to kill anything that moves."
+	ammo_type = /obj/item/ammo_casing/a357/ricochet
 
 //.44 Magnum
 /obj/item/ammo_box/m44box
@@ -175,6 +236,23 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/c45/rubber
+	name = "ammo box (.45 rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = ".45"
+	multiple_sprites = 2
+	icon_state = "45box"
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+
+/obj/item/ammo_box/c45/incendiary
+	name = "ammo box (.45 incendiary)"
+	ammo_type = /obj/item/ammo_casing/c45/incendiary
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	caliber = ".45"
+	multiple_sprites = 2
+	icon_state = "45box"
+	desc = "It's a completely safe idea to fill up a .45 pistol with napalm cartridges. This will not backfire." //it's telling the truth
+
 /obj/item/ammo_box/c45/improvised
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
@@ -213,6 +291,29 @@
 	ammo_type = /obj/item/ammo_casing/a556/sport
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/a556/rubber
+	name = "ammo box (5.56 rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "556box"
+	multiple_sprites = 2
+	caliber = "a556"
+	ammo_type = /obj/item/ammo_casing/a556/rubber
+
+/obj/item/ammo_box/a556/uraniumtipped
+	name = "ammo box (5.56 uranium)"
+	ammo_type = /obj/item/ammo_casing/a556/uraniumtipped
+	desc = "Even the box is glowing!"
+
+/obj/item/ammo_box/a556/uraniumtipped/Initialize()
+	. = ..()
+	AddComponent(/datum/component/radioactive, 5, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
+	START_PROCESSING(SSradiation,src)
+
+/obj/item/ammo_box/a556/uraniumtipped/Destroy()
+	STOP_PROCESSING(SSradiation,src)
+	..()
+
+
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
@@ -245,6 +346,30 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/a762box/uraniumtipped
+	name = "ammo box (7.62x51 uranium tipped)"
+	ammo_type = /obj/item/ammo_casing/a762/uraniumtipped
+	desc = "Not depleted uranium. Regular uranium."
+
+/obj/item/ammo_box/a762box/uraniumtipped/Initialize()
+	. = ..()
+	AddComponent(/datum/component/radioactive, 5, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
+	START_PROCESSING(SSradiation,src)
+
+/obj/item/ammo_box/a762box/uraniumtipped/Destroy()
+	STOP_PROCESSING(SSradiation,src)
+	..()
+
+/obj/item/ammo_box/a762box/rubber
+	name = "ammo box (7.62x51 rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "762box"
+	multiple_sprites = 2
+	caliber = "a762"
+	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/a762/rubber
+
+
 //.50 MG and 14mm
 /obj/item/ammo_box/a50MGbox
 	name = "ammo box (.50 MG)"
@@ -256,6 +381,15 @@
 	max_ammo = 25
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1500)
+
+/obj/item/ammo_box/a50MGbox/rubber
+	name = "ammo box (.50 rubber)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "50box"
+	multiple_sprites = 2
+	caliber = "a50MG"
+	ammo_type = /obj/item/ammo_casing/a50MG/rubber
+
 
 /obj/item/ammo_box/m14mm
 	name = "ammo box (14mm)"
@@ -598,6 +732,12 @@
 	max_ammo = 5
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 20000)
+
+/obj/item/ammo_box/a50MG/penetrator
+	name = "anti-materiel penetrator ammo rack (.50MG)"
+	desc = "5 rounds of penetrator .50 MG, when you really want something dead and it's on the other side of a wall."
+	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
+	icon_state = "50ap"
 
 
 ////////////////////////////////

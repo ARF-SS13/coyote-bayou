@@ -42,6 +42,21 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	wound_bonus = 18
 	bare_wound_bonus = -18
 
+/obj/item/projectile/bullet/a556/rubber
+	name = "5.56 rubber bullet"
+	damage = 5
+	stamina = 28
+	sharpness = SHARP_NONE
+	armour_penetration = 0
+	wound_bonus = 0
+	bare_wound_bonus = 0
+
+/obj/item/projectile/bullet/a556/uraniumtipped
+	name = "5.56 uranium-tipped bullet"
+	damage = 15
+	armour_penetration = 0.25
+	irradiate = 150
+
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
 
@@ -66,9 +81,23 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	damage = 37
 	armour_penetration = 0.15
 
+/obj/item/projectile/bullet/a762/rubber
+	name = "7.62 rubber bullet"
+	damage = 5
+	stamina = 35
+	sharpness = SHARP_NONE
+	armour_penetration = 0
+	wound_bonus = 0
+	bare_wound_bonus = 0
+
 /obj/item/projectile/bullet/a762/sport/simple //for simple mobs, separate to allow balancing
 	name = ".308 bullet"
 
+/obj/item/projectile/bullet/a762/uraniumtipped
+	name = "7.62 uranium-tipped bullet"
+	damage = 25
+	armour_penetration = 0.25
+	irradiate = 250
 
 /////////
 // .50 //
@@ -78,11 +107,13 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	damage = 53
 	armour_penetration = 0.8
 	pixels_per_second = 4000
+	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = 40
 	armour_penetration = 0.5
 	var/fire_stacks = 4
+	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -98,6 +129,18 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 /obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(target, 0, 1, 1, 1)
+
+/obj/item/projectile/bullet/a50MG/rubber
+	name = ".50 rubber bullet"
+	damage = 20
+	stamina = 80
+	armour_penetration = 0
+	sharpness = SHARP_NONE
+
+/obj/item/projectile/bullet/a50MG/penetrator
+	name = ".50 penetrator round"
+	damage = 45
+	movement_type = FLYING | UNSTOPPABLE
 
 
 //////////////////////
