@@ -5,9 +5,10 @@ matchTitle: false
 matchBody: true
 
 # Determines if label matching is case sensitive (optional). Defaults to true.
-caseSensitive: true
+caseSensitive: false
 
 # Explicit keyword mappings to labels. Form of match:label. Required.
 labelMappings:
   "Test Merge Updated": Currently Testmerged
+  "Test Merge Deployed": Currently Testmerged
   hooks: documentation
