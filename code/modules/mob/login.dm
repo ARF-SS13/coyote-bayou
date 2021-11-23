@@ -6,7 +6,6 @@
 	world.update_status()
 	client.screen = list()				//remove hud items just in case
 	client.images = list()
-	logout_time = 0 //Zero it up, to allow the person to despawn at will after re-logging.
 
 	if(!hud_used)
 		create_mob_hud()
@@ -40,8 +39,7 @@
 	update_client_colour()
 	update_mouse_pointer()
 	if(client)
-		client.change_view(CONFIG_GET(string/default_view)) // Resets the client.view in case it was changed.
-
+		client.view_size?.resetToDefault()
 		if(client.player_details && istype(client.player_details))
 			if(client.player_details.player_actions.len)
 				for(var/datum/action/A in client.player_details.player_actions)
@@ -55,7 +53,6 @@
 
 	log_message("Client [key_name(src)] has taken ownership of mob [src]([src.type])", LOG_OWNERSHIP)
 	SEND_SIGNAL(src, COMSIG_MOB_CLIENT_LOGIN, client)
-	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_LOGIN, src)
 
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
