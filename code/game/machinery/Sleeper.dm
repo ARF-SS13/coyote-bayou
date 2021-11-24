@@ -5,10 +5,11 @@
 	density = FALSE
 
 /obj/machinery/sleeper
-	name = "sleeper"
-	desc = "An enclosed machine used to stabilize and heal patients."
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
+	name = "autodoc"
+	desc = "An old pre war machine, used to stablize and heal patients"
+	icon = 'icons/obj/machines/autodoc.dmi'
+	icon_state = "autodoc"
+	layer = 3.3
 	density = FALSE
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/sleeper
