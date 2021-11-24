@@ -11,6 +11,7 @@
 #define FOOTSTEP_LOOSE_SAND "sand"
 #define FOOTSTEP_SNOW "snow"
 #define FOOTSTEP_GRAVEL "gravel"
+#define FOOTSTEP_ROAD	"road"
 
 //barefoot sounds
 #define FOOTSTEP_WOOD_BAREFOOT "woodbarefoot"
@@ -119,6 +120,13 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/effects/footstep/sand2.ogg',
 		'sound/effects/footstep/sand3.ogg',
 		'sound/effects/footstep/sand4.ogg'), 100, 1),
+	FOOTSTEP_ROAD = list(list(
+		'sound/f13effects/footstep/Road/road_walk1.ogg',
+		'sound/f13effects/footstep/Road/road_walk2.ogg',
+		'sound/f13effects/footstep/Road/road_walk3.ogg',
+		'sound/f13effects/footstep/Road/road_walk4.ogg',
+		'sound/f13effects/footstep/Road/road_walk5.ogg',
+		'sound/f13effects/footstep/Road/road_walk6.ogg'), 50, 1),
 ))
 
 //bare footsteps lists

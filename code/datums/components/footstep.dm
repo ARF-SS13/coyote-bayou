@@ -11,16 +11,16 @@
 	///This can be a list OR a soundfile OR null. Determines whatever sound gets played.
 	var/footstep_sounds
 	//fortuna edit. power armor sound list
-	var/powerArmorSounds = list('modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_01.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_02.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_03.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_04.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_05.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_06.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_01.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_02.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_03.ogg',
-	'modular_citadel/sound/footsteps/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_04.ogg')
+	var/powerArmorSounds = list('sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_01.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_02.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_03.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_04.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_05.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_Walk_3rd_06.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_01.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_02.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_03.ogg',
+	'sound/f13effects/footstep/ArmorPower/FST_ArmorPower_Dirt_WalkUp_3rd_04.ogg')
 
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -1)
 	if(!isliving(parent))
