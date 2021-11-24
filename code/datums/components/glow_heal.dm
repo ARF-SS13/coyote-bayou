@@ -52,6 +52,10 @@
 			continue
 		if(faction_only && !(faction_only in livingMob.faction))
 			continue //if you don't have the faction listed in the intial, then you aren't getting targeted 
+		if(livingMob.stat == DEAD) 
+			if(revive_allowed)
+				livingMob.revive(full_heal = TRUE)
+			return //dont waste cpu on dead mobs that cant be revived
 		if(healing_types && BRUTELOSS)
 			livingMob.adjustBruteLoss(-livingMob.maxHealth*0.1)
 		if(healing_types && FIRELOSS)	
@@ -60,7 +64,5 @@
 			livingMob.adjustToxLoss(-livingMob.maxHealth*0.1)
 		if(healing_types && OXYLOSS)	
 			livingMob.adjustOxyLoss(-livingMob.maxHealth*0.1)
-		if(livingMob.stat == DEAD && revive_allowed)
-			livingMob.revive(full_heal = TRUE)
 		var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(livingMob)) //shameless copy from blobbernaut
 		H.color = glow_color
