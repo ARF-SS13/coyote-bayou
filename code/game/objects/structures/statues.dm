@@ -347,3 +347,18 @@
 		var/icon/O = new('icons/mob/clothing/head.dmi', icon_state = "[Helmet.icon_state]")
 		O.Shift(SOUTH, 6)
 		overlays += O
+
+//fortuna statues
+
+/obj/structure/statue/bos/ladyleft
+	name = "The Lady"
+	desc = "The inscription reads 'Scribe with hands outstretched, pray her shelter of the world, reborn anew of olde.'"
+	icon = 'icons/obj/tomb.dmi'
+	icon_state = "ladystatue-left"
+	anchored = TRUE
+/obj/structure/statue/bos/ladyright
+	name = "The Lady"
+	desc = "The inscription reads 'Scribe with hands outstretched, pray her shelter of the world, reborn anew of olde.'"
+	icon = 'icons/obj/tomb.dmi'
+	icon_state = "ladystatue-right"
+	anchored = TRUE
