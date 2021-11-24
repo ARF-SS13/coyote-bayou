@@ -178,7 +178,7 @@
 
 /obj/item/card/id
 	name = "identification card"
-	desc = "A card used to provide ID and determine access across the station."
+	desc = "A card used to provide ID and determine access."
 	icon_state = "id"
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -202,6 +202,7 @@
 	. = ..()
 	if(mapload && access_txt)
 		access = text2access(access_txt)
+	/* //fortuna removal
 	switch(bank_support)
 		if(ID_FREE_BANK_ACCOUNT)
 			var/turf/T = get_turf(src)
@@ -209,7 +210,7 @@
 				bank_support = ID_NO_BANK_ACCOUNT
 		if(ID_LOCKED_BANK_ACCOUNT)
 			registered_account = new /datum/bank_account/remote/non_transferable(pick(GLOB.redacted_strings))
-
+	*/
 /obj/item/card/id/Destroy()
 	if(bank_support == ID_LOCKED_BANK_ACCOUNT)
 		QDEL_NULL(registered_account)
@@ -236,6 +237,7 @@
 /obj/item/card/id/attackby(obj/item/W, mob/user, params)
 	if(!bank_support)
 		return ..()
+	/* //fortuna removal
 	if(istype(W, /obj/item/holochip))
 		insert_money(W, user)
 	else if(istype(W, /obj/item/stack/spacecash) || istype(W, /obj/item/coin))
@@ -246,6 +248,7 @@
 		var/money_added = mass_insert_money(money_contained, user)
 		if (money_added)
 			to_chat(user, "<span class='notice'>You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account.</span>")
+	*/
 	else
 		return ..()
 
@@ -333,6 +336,7 @@
 
 /obj/item/card/id/AltClick(mob/living/user)
 	. = ..()
+	/* //fortuna removal
 	if(!bank_support || !alt_click_can_use_id(user))
 		return
 
@@ -357,7 +361,7 @@
 		to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
 		return
 	registered_account.bank_card_talk("<span class='warning'>ERROR: The linked account has no sufficient credits to perform that withdrawal.</span>", TRUE)
-
+	*/
 /obj/item/card/id/examine(mob/user)
 	. = ..()
 	if(mining_points)
