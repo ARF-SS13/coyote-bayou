@@ -6,10 +6,12 @@
 // "I know what you feel, bro (and thx)."
 //  - maxyo
 
+// Ok, this is the main door directory. They open, they close, they take padlocks, easy. For ID locked doors use either airlocks for mechanical ones, or machinery/unpowered for secure wooden doors or cell doors.
+
 /obj/structure/simple_door
 	name = "wooden door"
 	desc = "It opens and closes - nothing out of the ordinary."
-	icon = 'icons/obj/doors/wastelanddoors.dmi'
+	icon = 'icons/fallout/structures/doors.dmi'
 	icon_state = "house"
 	opacity = TRUE
 	density = TRUE
@@ -22,7 +24,7 @@
 	var/base_opacity = TRUE
 	var/manual_opened = 0
 	var/material_count = 10
-	var/hard_open = 1
+	var/hard_open = FALSE
 	var/moving = 0
 	var/material_type = /obj/item/stack/sheet/mineral/wood
 	var/can_disasemble = 0
@@ -242,10 +244,8 @@
 
 /obj/structure/simple_door/tentflap_leather
 	name = "brahminskin tent entrance"
-	icon = 'icons/fallout/turfs/doors.dmi'
 	icon_state = "tentflap_leather"
 	door_type = "tentflap_leather"
-	hard_open = 0
 	base_opacity = TRUE
 	can_disasemble = FALSE
 	can_hold_padlock = FALSE
@@ -254,21 +254,33 @@
 
 /obj/structure/simple_door/tentflap_cloth
 	name = "cotton tent entrance"
-	icon = 'icons/fallout/turfs/doors.dmi'
 	icon_state = "tentflap_cloth"
 	door_type = "tentflap_cloth"
-	hard_open = 0
 	base_opacity = TRUE
 	can_disasemble = FALSE
 	can_hold_padlock = FALSE
 	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
 	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
 
-/obj/structure/simple_door/house
+// weathered white door
+/obj/structure/simple_door/house 
 	icon_state = "house"
 	door_type = "house"
-	can_disasemble = 1
+	can_disasemble = TRUE
 	can_hold_padlock = TRUE
+
+// cleaned and repainted white
+/obj/structure/simple_door/house/clean 
+	icon_state = "houseclean"
+	door_type = "houseclean"
+
+// Rough outer door
+/obj/structure/simple_door/wood
+	icon_state = "wood"
+	door_type = "wood"
+	can_disasemble = TRUE
+	can_hold_padlock = TRUE
+
 
 /obj/structure/simple_door/interior
 	icon_state = "interior"
@@ -279,24 +291,50 @@
 /obj/structure/simple_door/room
 	icon_state = "room"
 	door_type = "room"
-	can_disasemble = 1
+	can_disasemble = TRUE
 	can_hold_padlock = TRUE
 
+/obj/structure/simple_door/room/dirty
+	icon_state = "room_d"
+	door_type = "room_d"
+
+/obj/structure/simple_door/repaired
+	name = "old damaged door"
+	desc = "Battered and hastily repaired."
+	icon_state = "room_repaired"
+	door_type = "room_repaired"
+	can_hold_padlock = TRUE
+
+/obj/structure/simple_door/metal
+	name = "metal door"
+	icon_state = "metal"
+	door_type = "metal"
+	material_type = /obj/item/stack/sheet/metal
+	open_sound = "sound/f13machines/doorstore_open.ogg"
+	close_sound = "sound/f13machines/doorstore_close.ogg"
+	explosion_block = 1.5
+	material_count = 5
+
+// Supposed to be the heaviest defensive door thats craftable without machinery. Maybe too weak still.
+/obj/structure/simple_door/metal/iron
+	name = "iron door"
+	desc = "A heavy iron door."
+	icon_state = "iron"
+	door_type = "iron"
+	explosion_block = 5
+	can_hold_padlock = TRUE
+	opening_time = 12
+	closing_time = 8
+
+
 /obj/structure/simple_door/dirtyglass
-	desc = "A glass is dirty, you can't see a thing behind it."
+	desc = "The glass is dirty, you can't see a thing behind it."
 	icon_state = "dirtyglass"
 	door_type = "dirtyglass"
 	can_hold_padlock = TRUE
 
-/obj/structure/simple_door/fakeglass
-	name = "old damaged door"
-	desc = "It still somehow opens and closes."
-	icon_state = "fakeglass"
-	door_type = "fakeglass"
-	can_hold_padlock = TRUE
-
 /obj/structure/simple_door/brokenglass
-	name = "shattered door"
+	name = "shattered glass door"
 	desc = "It still opens and closes."
 	icon_state = "brokenglass"
 	door_type = "brokenglass"
@@ -312,19 +350,6 @@
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
 
-/obj/structure/simple_door/wood
-	icon_state = "wood"
-	door_type = "wood"
-	can_disasemble = 1
-	can_hold_padlock = TRUE
-
-/obj/structure/simple_door/metal
-	name = "metal door"
-	icon_state = "metal"
-	material_type = /obj/item/stack/sheet/metal
-	open_sound = "sound/f13machines/doorstore_open.ogg"
-	close_sound = "sound/f13machines/doorstore_close.ogg"
-	explosion_block = 2
 
 /obj/structure/simple_door/metal/dirtystore
 	desc = "A metal door with dirty glass, you can't see a thing behind it."
@@ -340,16 +365,6 @@
 	can_disasemble = 1
 	can_hold_padlock = TRUE
 
-/obj/structure/simple_door/metal/iron
-	name = "iron door"
-	desc = "A heavy iron door."
-	icon_state = "metal"
-	door_type = "metal"
-	explosion_block = 5
-	can_hold_padlock = TRUE
-	opening_time = 15
-	closing_time = 10
-	hard_open = 0
 
 /obj/structure/simple_door/metal/barred
 	name = "barred door"
@@ -361,6 +376,7 @@
 	opacity = FALSE
 	base_opacity = FALSE
 	can_hold_padlock = TRUE
+	proj_pass_rate = 95
 
 /obj/structure/simple_door/metal/ventilation
 	name = "ventilation system"
@@ -369,7 +385,6 @@
 	door_type = "ventilation"
 	open_sound = "sound/f13machines/doorhidden_open.ogg"
 	close_sound = "sound/f13machines/doorhidden_close.ogg"
-	hard_open = 0
 	opening_time = 25
 	closing_time = 20
 
@@ -400,7 +415,6 @@
 	open_sound = "sound/f13machines/doorblast_open.ogg"
 	close_sound = "sound/f13machines/doorblast_close.ogg"
 	explosion_block = 10
-	hard_open = 0
 	opening_time = 30
 	closing_time = 20
 
@@ -413,7 +427,6 @@
 	open_sound = "sound/f13machines/doorairlock_open.ogg"
 	close_sound = "sound/f13machines/doorairlock_close.ogg"
 	explosion_block = 5
-	hard_open = 0
 
 /obj/structure/simple_door/bunker/glass
 	desc = "An olive green painted airlock, with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
@@ -432,4 +445,3 @@
 	open_sound = "sound/effects/curtain.ogg"
 	close_sound = "sound/effects/curtain.ogg"
 	can_hold_padlock = TRUE
-	hard_open = 0

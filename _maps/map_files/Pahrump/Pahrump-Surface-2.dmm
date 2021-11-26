@@ -1248,7 +1248,7 @@
 	},
 /area/f13/farm)
 "aAr" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -3780,7 +3780,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "bEu" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -4860,7 +4860,7 @@
 /area/f13/caves)
 "cfp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -6061,7 +6061,7 @@
 	},
 /area/f13/ncr)
 "cIk" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 500;
 	name = "shopkeeper's mansion";
@@ -6968,7 +6968,7 @@
 /turf/closed/wall/rust,
 /area/f13/caves)
 "dfY" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	max_integrity = 300;
 	obj_integrity = 300;
 	req_access_txt = "131"
@@ -8322,7 +8322,7 @@
 	},
 /area/f13/building)
 "dJw" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -10420,7 +10420,7 @@
 "eHQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -11554,7 +11554,7 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "fdx" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "bar backroom";
 	req_one_access_txt = "28"
@@ -11797,7 +11797,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "fiy" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Bar";
 	req_one_access_txt = "28"
@@ -12753,7 +12753,7 @@
 	},
 /area/f13/building)
 "fCM" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -17149,7 +17149,7 @@
 	},
 /area/f13/building)
 "huX" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	req_one_access_txt = "62"
 	},
@@ -26821,7 +26821,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "lAW" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	req_one_access_txt = "62"
 	},
@@ -31959,7 +31959,7 @@
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "nWl" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "farmhouse";
 	req_one_access_txt = "28"
@@ -35226,7 +35226,7 @@
 /area/f13/building)
 "pBp" = (
 /obj/structure/decoration/rag,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -38555,7 +38555,7 @@
 "qYD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/fakeglass,
+/obj/structure/simple_door/repaired,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "qZc" = (
@@ -39235,7 +39235,7 @@
 	},
 /area/f13/building)
 "rqG" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -42589,7 +42589,7 @@
 	},
 /area/f13/village)
 "sWz" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	name = "Sergeant"
 	},
 /obj/effect/decal/cleanable/dirt{
@@ -42735,7 +42735,7 @@
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "sZU" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -42857,7 +42857,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tdn" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	name = "Commanding Officer"
 	},
 /turf/open/floor/f13/wood{
@@ -45757,7 +45757,7 @@
 	},
 /area/f13/ncr)
 "uuB" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	req_one_access_txt = "62"
 	},
@@ -45920,7 +45920,7 @@
 /turf/open/floor/wood/f13/stage_tr,
 /area/f13/wasteland)
 "uyB" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	name = "Sergeant FIrst Class"
 	},
 /turf/open/floor/f13/wood{
@@ -47280,7 +47280,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "vde" = (
-/obj/structure/simple_door/fakeglass,
+/obj/structure/simple_door/repaired,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vdg" = (
@@ -48874,7 +48874,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "vRb" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -52699,7 +52699,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "xGS" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
@@ -53844,7 +53844,7 @@
 	},
 /area/f13/tunnel)
 "yin" = (
-/obj/structure/simple_door/fakeglass,
+/obj/structure/simple_door/repaired,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/legion)
 "yio" = (

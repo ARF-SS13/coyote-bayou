@@ -1545,7 +1545,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
 "bbd" = (
-/obj/structure/simple_door/fakeglass,
+/obj/structure/simple_door/repaired,
 /obj/structure/barricade/wooden/planks,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -3024,7 +3024,7 @@
 	},
 /area/f13/brotherhood/armory)
 "bVg" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Store Backroom";
 	req_one_access_txt = "87"
@@ -6312,7 +6312,7 @@
 	},
 /area/f13/bunker)
 "dIN" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Torture Room";
 	req_one_access_txt = "87"
@@ -6494,7 +6494,7 @@
 	},
 /area/f13/clinic)
 "dOT" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Cells";
 	req_one_access_txt = "87"
@@ -6516,7 +6516,7 @@
 	},
 /area/f13/den)
 "dPl" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Clinic";
 	req_one_access_txt = "87"
@@ -6582,7 +6582,7 @@
 	},
 /area/f13/clinic)
 "dQG" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Clinic Spare Room";
 	req_one_access_txt = "87"
@@ -7495,7 +7495,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operating)
 "epg" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Store";
 	req_one_access_txt = "87"
@@ -8225,7 +8225,7 @@
 /area/f13/bunker)
 "eJq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Gatehouse";
 	req_one_access_txt = "87"
@@ -8277,7 +8277,7 @@
 	},
 /area/f13/bunker)
 "eLg" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Boss Office";
 	req_one_access_txt = "87"
@@ -10658,7 +10658,7 @@
 	icon_state = "skulls";
 	name = "skulls"
 	},
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -14329,7 +14329,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "iAm" = (
-/obj/structure/simple_door/fakeglass,
+/obj/structure/simple_door/repaired,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -16334,7 +16334,7 @@
 	},
 /area/f13/bunker)
 "kev" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
@@ -19336,7 +19336,7 @@
 /area/f13/brotherhood/operations)
 "mvu" = (
 /obj/structure/decoration/rag,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -20815,7 +20815,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
 "nsf" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/ncr)
 "nsI" = (
@@ -21792,7 +21792,7 @@
 	},
 /area/f13/clinic)
 "nXS" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	name = "Veteran Ranger's Office"
 	},
 /obj/effect/decal/cleanable/dirt{
@@ -22816,7 +22816,7 @@
 	},
 /area/f13/brotherhood/operations)
 "oIJ" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "oIK" = (
@@ -22888,7 +22888,7 @@
 	},
 /area/f13/tunnel)
 "oMK" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
@@ -24159,7 +24159,7 @@
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
 "pHQ" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Storage";
 	req_one_access_txt = "87"
@@ -24376,7 +24376,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pNS" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -26827,7 +26827,7 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "rqt" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -26963,7 +26963,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/reactor)
 "rvs" = (
-/obj/machinery/door/unpowered/wooddoor,
+/obj/structure/simple_door,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "rvI" = (
@@ -28370,7 +28370,7 @@
 	},
 /area/f13/brotherhood/rnd)
 "sud" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Dorms";
 	req_one_access_txt = "87"
@@ -32298,7 +32298,7 @@
 	color = "#363636"
 	},
 /obj/structure/decoration/rag,
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	max_integrity = 300;
 	obj_integrity = 300;
@@ -35151,7 +35151,7 @@
 /turf/closed/indestructible/vaultdoor,
 /area/f13/bunker)
 "xFA" = (
-/obj/machinery/door/unpowered/wooddoor{
+/obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
 	name = "Den Clinic Backroom";
 	req_one_access_txt = "87"
