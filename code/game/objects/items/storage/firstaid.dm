@@ -581,6 +581,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/mentats
 	name = "Mentats"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_mentats"
 	desc = "Contains pills used to increase intelligence and perception."
 
@@ -590,6 +591,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/fixer
 	name = "Fixer"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_fixer"
 	desc = "Contains pills used to treat addiction and overdose on other chems."
 
@@ -599,6 +601,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/radx
 	name = "Rad-X"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_radx"
 	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
 
@@ -608,6 +611,7 @@
 
 /obj/item/storage/pill_bottle/chem_tin/buffout
 	name = "Buffout"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_buffout"
 	desc = "Contains pills used to increase muscle mass."
 

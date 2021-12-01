@@ -200,11 +200,11 @@
 	item = /obj/item/book/granter/trait/rifleman
 	cost = 3 // fuck it available for everyone
 
-/datum/uplink_item/device_tools/stimpack
-	name = "Stimpack"
-	desc = "Stimpacks, the tool of many great heroes. Makes you nearly immune to non-lethal weaponry for about \
+/datum/uplink_item/device_tools/painkiller
+	name = "Medx"
+	desc = "Medx, the tool of many great heroes. Makes you nearly immune to non-lethal weaponry for about \
 			5 minutes after injection."
-	item = /obj/item/reagent_containers/syringe/stimulants
+	item = /obj/item/reagent_containers/hypospray/medipen/medx
 	cost = 5
 	surplus = 90
 

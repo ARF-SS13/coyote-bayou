@@ -651,7 +651,7 @@
 	new /obj/item/watertank/op(src)
 	new /obj/item/scalpel(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
-	new /obj/item/reagent_containers/syringe/stimulants(src)
+	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 	new /obj/item/grenade/syndieminibomb(src)
 
 obj/item/storage/backpack/duffelbag/syndie/shredderbundle

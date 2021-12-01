@@ -652,7 +652,7 @@
 	max_n_of_items = 100
 
 /obj/machinery/smartfridge/bottlerack/alchemy_rack/accept_check(obj/item/O)
-	if(istype(O, /obj/item/reagent_containers/pill/patch/healingpowder) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/reagent_containers/pill/patch/healpoultice))
+	if(istype(O, /obj/item/reagent_containers/pill/patch/healingpowder) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/reagent_containers/pill/patch/healpoultice) || istype(O, /obj/item/reagent_containers/pill/patch/bitterdrink))
 		return TRUE
 	return FALSE
 // -------------------------

@@ -432,9 +432,12 @@
 	..()
 	return
 
+//FALLOUT POWERCELLS
+
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
 	maxcharge = 2000
 
@@ -451,12 +454,14 @@
 /obj/item/stock_parts/cell/ammo/ultracite
 	name = "ultracite cell"
 	desc = "An advanced ultracite cell, used as ammunition for special energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ultracite"
 	maxcharge = 2000
 
 /obj/item/stock_parts/cell/ammo/ec
 	name = "energy cell"
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 1600
 
@@ -475,6 +480,7 @@
 /obj/item/stock_parts/cell/ammo/alien
 	name = "alien weapon cell"
 	desc = "A weapon cell that glows and thrums with unearthly energies. You're not sure you'd be able to recharge it, but it seems very powerful."
+	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "aliencell"
 	ratingdesc = FALSE
 	maxcharge = 4000

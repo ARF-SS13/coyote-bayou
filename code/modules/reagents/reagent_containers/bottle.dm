@@ -452,7 +452,8 @@
 	list_reagents = list(/datum/reagent/medicine/gaia = 60)
 
 /obj/item/reagent_containers/glass/bottle/primitive
-	icon_state = "Voodoo"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "bottle_primitive"
 	possible_transfer_amounts = list(5,10,15,20,30,60)
 	volume = 60
 

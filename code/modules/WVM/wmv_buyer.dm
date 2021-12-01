@@ -21,7 +21,7 @@
 								/obj/item/stack/sheet/leather = 3,
 								/obj/item/reagent_containers/pill/patch/jet = 5,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 15,
-								/obj/item/reagent_containers/syringe/medx = 15
+								/obj/item/reagent_containers/hypospray/medipen/medx = 15
 								)
 
 /obj/machinery/mineral/wasteland_trader/general

@@ -25,7 +25,7 @@
 		if("bond") // 29 tc
 			new /obj/item/clothing/under/chameleon(src)
 			new /obj/item/card/id/syndicate(src)
-			new /obj/item/reagent_containers/syringe/stimulants(src)
+			new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 			new /obj/item/clothing/neck/tie/red(src)
 
 		if("screwed") // 29 tc
@@ -54,7 +54,7 @@
 			new /obj/item/encryptionkey/syndicate(src)
 			new /obj/item/grenade/syndieminibomb(src)
 			new /obj/item/clothing/glasses/phantomthief/syndicate(src)
-			new /obj/item/reagent_containers/syringe/stimulants(src)
+			new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 
 		if("baseball") // 42~ tc
 			new /obj/item/clothing/glasses/sunglasses/garb(src) //Lets say 2 tc
@@ -480,7 +480,7 @@
 		/obj/item/clothing/glasses/thermal/syndi,
 		/obj/item/storage/box/syndie_kit/imp_uplink,
 		/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-		/obj/item/reagent_containers/syringe/stimulants,
+		/obj/item/reagent_containers/hypospray/medipen/medx,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
 		/obj/item/storage/toolbox/infiltrator
 	)

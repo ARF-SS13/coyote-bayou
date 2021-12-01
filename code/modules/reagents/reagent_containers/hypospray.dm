@@ -1,3 +1,4 @@
+//In this document Psycho, Med-X
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
 	desc = "The DeForest Medical Corporation hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
@@ -175,6 +176,7 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak
 	name = "stimpak"
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "stimpakpen"
 	volume = 10
 	amount_per_transfer_from_this = 10
@@ -325,22 +327,23 @@
 	quickload = TRUE
 	penetrates = TRUE
 
+/obj/item/reagent_containers/hypospray/medipen/medx
+	name = "Med-X"
+	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "medx"
+	volume = 15
+	amount_per_transfer_from_this = 5
+	list_reagents = list(/datum/reagent/medicine/medx = 15)
+
 /obj/item/reagent_containers/hypospray/medipen/psycho
 	name = "Psycho"
 	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "psychopen"
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/drug/psycho = 10)
-
-
-/obj/item/reagent_containers/hypospray/medipen/medx
-	name = "Med-X"
-	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
-	icon_state = "medx"
-	volume = 15
-	amount_per_transfer_from_this = 5
-	list_reagents = list(/datum/reagent/medicine/medx = 5)
 
 /obj/item/hypospray/mkii/Initialize()
 	. = ..()

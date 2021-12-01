@@ -451,6 +451,9 @@
 /obj/item/storage/box/medicine/bitterdrink5
 	name = "box of bitter drinks"
 	desc = "A box full of bitter drinks."
+	icon = 'icons/fallout/objects/storage.dmi'
+	icon_state = "box_simple"
+	illustration = "overlay_bitter"
 
 /obj/item/storage/box/medicine/bitterdrink5/PopulateContents()
 	for(var/i in 1 to 5)

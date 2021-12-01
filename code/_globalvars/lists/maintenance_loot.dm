@@ -424,7 +424,7 @@ GLOBAL_LIST_INIT(loot_medical_drug, list(
 	/obj/item/reagent_containers/pill/patch/turbo,
 	/obj/item/reagent_containers/pill/patch/healingpowder,
 	/obj/item/reagent_containers/pill/stimulant,
-	/obj/item/reagent_containers/syringe/medx
+	/obj/item/reagent_containers/hypospray/medipen/medx
 ))
 
 GLOBAL_LIST_INIT(loot_t1_melee, list(
