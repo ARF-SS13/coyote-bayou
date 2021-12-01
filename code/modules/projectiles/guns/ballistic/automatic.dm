@@ -695,12 +695,12 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	fire_delay = 4.2
+	fire_delay = 4
+	extra_penetration = 0.1
 	extra_damage = 6
 	burst_size = 1
 	spread = 1
 	can_attachments = TRUE
-	can_automatic = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
