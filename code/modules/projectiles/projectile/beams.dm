@@ -262,6 +262,7 @@
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser beam"
 	damage = 40
+	hitscan = TRUE
 	armour_penetration = 0.5
 	pixels_per_second = TILES_TO_PIXELS(50)
 
@@ -448,7 +449,7 @@
 /obj/item/projectile/beam/laser/rcw/hitscan //RCW
 	name = "rapidfire beam"
 	icon_state = "emitter"
-	damage = 15 //ALWAYS does 30, this is a burstfire hitscan weapon that fires in bursts of 2.
+	damage = 25 //ALWAYS does 50, this is a burstfire hitscan weapon that fires in bursts of 2.
 	armour_penetration = 0.1
 	hitscan = TRUE
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
@@ -539,7 +540,7 @@
 
 /obj/item/projectile/beam/laser/wattz2k/hitscan
 	name = "sniper laser bolt"
-	damage = 20
+	damage = 28
 	armour_penetration = 0.3
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
