@@ -551,6 +551,13 @@
 	build_path = /obj/item/ammo_box/magazine/lmg/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/mm762
+	name = "empty ammo belt (.308)"
+	id = "mm762"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/mm762/empty
+	category = list("initial", "Advanced Magazines")
+
 /datum/design/ammolathe/pps_mag
 	name = "empty ppsh magazine (9mm)"
 	id = "pps_mag"

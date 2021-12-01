@@ -74,6 +74,9 @@
 	max_ammo = 80
 	caliber = "a762"
 
+/obj/item/ammo_box/magazine/mm762/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/mm762/can_load()
 	return 0
 
