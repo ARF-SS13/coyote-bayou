@@ -2570,7 +2570,18 @@
 			to_chat(usr, "This can only be used on instances on mindless mobs")
 			return
 		M.mind_initialize()
+//fortuna addition start
+	else if(href_list["toggle_build"])
+		if(!check_rights(R_SPAWN))
+			return
+		usr.client.togglebuildmodeself()
 
+	else if(href_list["toggle_invis"])
+		if(!check_rights(R_SPAWN))
+			return
+		usr.client.invisimin()
+
+//fortuna addition end
 	else if(href_list["create_object"])
 		if(!check_rights(R_SPAWN))
 			return
@@ -3049,7 +3060,7 @@
 			to_chat(usr, "You may only use this when the game is running.")
 
 	else if(href_list["create_outfit"])
-		if(!check_rights(R_ADMIN))
+		if(!check_rights(R_SPAWN))
 			message_admins("[ADMIN_TPMONTY(usr)] tried to use /datum/admins/proc/CheckAdminHref(): create_outfit without admin perms.")
 			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/CheckAdminHref(): create_outfit without admin perms.")
 			return

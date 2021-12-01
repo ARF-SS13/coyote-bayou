@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	icon_state = "bubbleplush"
 	attack_verb = list("rends")
 	squeak_override = list('sound/magic/demon_attack1.ogg'=1)
-
+/* Fortuna removal. dear god unoptimized plushie code
 /obj/item/toy/plush/plushvar
 	name = "ratvar plushie"
 	desc = "An adorable plushie of the clockwork justiciar himself with new and improved spring arm action."
@@ -564,10 +564,10 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	var/obj/item/toy/plush/plushvar/P = locate() in range(1, src)
 	if(P && istype(P.loc, /turf/open) && !P.clash_target && !clashing)
 		P.clash_of_the_plushies(src)
-
+*/
 /obj/item/toy/plush/narplush/hugbox
 	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy? <b>It looks sad.</b>"
-	is_invoker = FALSE
+	//is_invoker = FALSE
 
 /obj/item/toy/plush/lizardplushie
 	name = "lizard plushie"

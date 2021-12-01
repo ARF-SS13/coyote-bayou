@@ -442,8 +442,7 @@
 					/obj/item/clothing/head/nemes = 1,
 					/obj/item/clothing/head/pharaoh = 1,
 					/obj/item/storage/fancy/candle_box = 3)
-	premium = list(/obj/item/toy/plush/plushvar = 1,
-					/obj/item/toy/plush/narplush = 1)
+
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	payment_department = ACCOUNT_CIV
 	cost_multiplier_per_dept = list(ACCOUNT_CIV = 0)
