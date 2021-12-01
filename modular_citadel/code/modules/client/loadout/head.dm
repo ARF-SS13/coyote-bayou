@@ -54,6 +54,11 @@
 	path = /obj/item/clothing/head/soft/f13/utility/tan
 	cost = 2
 
+/datum/gear/head/vaquerohat
+	name = "vaquero hat"
+	path = /obj/item/clothing/head/helmet/f13/vaquerohat
+	cost = 2
+
 /datum/gear/head/pirate
 	name = "pirate hat"
 	path = /obj/item/clothing/head/pirate

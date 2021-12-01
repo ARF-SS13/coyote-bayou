@@ -86,9 +86,9 @@
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	name = "fieldscribe suit"
-	desc = "(II) A suit that protects against the weather, and looks stylish, but not much else."
+	desc = "(IV) A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
 	icon_state = "fieldscribe"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = list("tier" = 4, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	name = "fieldscribe coat"

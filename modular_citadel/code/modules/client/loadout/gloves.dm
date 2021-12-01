@@ -35,3 +35,8 @@
 	name = "Midnight gloves"
 	path = /obj/item/clothing/gloves/evening/black
 	cost = 2
+
+/datum/gear/gloves/plated
+	name = "plated gloves"
+	path = /obj/item/clothing/gloves/legion/plated
+	cost = 2

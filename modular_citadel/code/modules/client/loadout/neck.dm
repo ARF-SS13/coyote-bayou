@@ -28,6 +28,10 @@
 	name = "simple apron"
 	path = /obj/item/clothing/neck/apron/labor
 
+/datum/gear/neck/apron
+	name = "stethoscope"
+	path = /obj/item/clothing/neck/stethoscope
+
 /datum/gear/neck/blacktie
 	name = "black tie"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE

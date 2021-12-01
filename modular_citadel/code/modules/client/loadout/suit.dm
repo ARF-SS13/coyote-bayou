@@ -91,6 +91,28 @@
 	path = /obj/item/clothing/suit/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
+
+/datum/gear/suit/fieldscribe
+	name = "Fieldscribe suit"
+	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 5
+	restricted_desc = "Scribes"
+	restricted_roles = list("Head Scribe",
+							"Senior Scribe",
+							"Scribe",
+							)
+
+/datum/gear/suit/scribecoat
+	name = "Fieldscribe coat"
+	path = /obj/item/clothing/suit/toggle/labcoat/scribecoat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 5
+	restricted_desc = "Scribes"
+	restricted_roles = list("Head Scribe",
+							"Senior Scribe",
+							"Scribe",
+							)
 	
 /datum/gear/suit/town
 	name = "Town Trenchcoat"

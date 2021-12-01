@@ -100,4 +100,27 @@
 
 /datum/gear/shoes/plated
 	name = "plated war boots"
+	path = /obj/item/clothing/shoes/f13/military/plated
 	cost = 2
+
+/datum/gear/shoes/patrol_boots
+	name = "NCR patrol boots"
+	path = /obj/item/clothing/shoes/f13/military/ncr
+	cost = 2
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR Veteran Ranger", 
+							"NCR Ranger",
+							"NCR Medical Officer",
+							"NCR Sergeant First Class",
+							"NCR Lieutenant",
+							"NCR Heavy Trooper",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Combat Engineer",
+							"NCR Combat Medic",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty"
+						)

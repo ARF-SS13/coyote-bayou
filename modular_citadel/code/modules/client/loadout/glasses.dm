@@ -28,6 +28,10 @@
 	name = "Jamjar glasses"
 	path = /obj/item/clothing/glasses/regular/jamjar
 
+/datum/gear/glasses/circle
+	name = "Circle glasses"
+	path = /obj/item/clothing/glasses/regular/circle
+
 /datum/gear/glasses/monocle
 	name = "Monocle"
 	path = /obj/item/clothing/glasses/monocle
