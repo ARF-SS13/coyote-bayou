@@ -469,18 +469,43 @@
 
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	if(M.hud_used)
+		if(current_cycle >= 20 && current_cycle%20 == 0)
+			var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"],
+									M.hud_used.plane_masters["[LIGHTING_PLANE]"], M.hud_used.plane_masters["[WALL_PLANE]"],
+									M.hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
+			var/rotation = min(round(current_cycle/20), 89) // By this point the player is probably puking and quitting anyway
+			for(var/whole_screen in screens)
+				animate(whole_screen, transform = matrix(rotation, MATRIX_ROTATE), time = 5, easing = QUAD_EASING, loop = -1)
+				animate(transform = matrix(-rotation, MATRIX_ROTATE), time = 5, easing = QUAD_EASING)
+	return ..()
+
+/datum/reagent/consumable/ethanol/nukaxtreme/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_IRONFIST, "[type]")
+	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
+	if(M && M.hud_used)
+		var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"], M.hud_used.plane_masters["[LIGHTING_PLANE]"])
+		for(var/whole_screen in screens)
+			animate(whole_screen, transform = matrix(), time = 5, easing = QUAD_EASING)
+	if(rage)
+		QDEL_NULL(rage)
+	if(iscarbon(M))
+		var/mob/living/carbon/C = M
+		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
+	..()
+
+/* GO FUCK YOURSELF - Skewium
+/datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
+	if(M.hud_used)
 		if(current_cycle >= 5 && current_cycle % 3 == 0)
 			var/list/screens = list(M.hud_used.plane_masters["[FLOOR_PLANE]"], M.hud_used.plane_masters["[GAME_PLANE]"])
 			var/matrix/skew = matrix()
 			var/intensity = 8
 			skew.set_skew(rand(-intensity,intensity), rand(-intensity,intensity))
 			var/matrix/newmatrix = skew
-
 			for(var/whole_screen in screens)
 				animate(whole_screen, transform = newmatrix, time = 5, easing = QUAD_EASING, loop = -1)
 				animate(transform = -newmatrix, time = 5, easing = QUAD_EASING)
 	return ..()
-
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_delete(mob/living/M)
 	REMOVE_TRAIT(M, TRAIT_IRONFIST, "[type]")
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
@@ -494,6 +519,7 @@
 		var/mob/living/carbon/C = M
 		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 	..()
+*/
 
 //vim
 
@@ -512,15 +538,14 @@
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,0))
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustFireLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(0.2*REAGENTS_EFFECT_MULTIPLIER)
 	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustStun(-20, 0)
-	M.adjustToxLoss(-3, 0)
-	M.AdjustKnockdown(-20, 0)
-	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-3, 0)
+	M.AdjustStun(-2, 0)
+	M.adjustToxLoss(-0.3, 0)
+
+	M.adjustStaminaLoss(-1, 0)
 	if(holder.has_reagent(/datum/reagent/consumable/frostoil))
 		holder.remove_reagent(/datum/reagent/consumable/frostoil, 5)
 	..()
@@ -620,7 +645,7 @@
 	glass_desc = "Underground river wine, stewed from logs and food poisoning."
 
 /datum/reagent/consumable/ethanol/bbrew2/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
 
 /datum/reagent/consumable/ethanol/dwastelander
@@ -634,7 +659,7 @@
 	glass_desc = "A wastelanders second favourite."
 
 /datum/reagent/consumable/ethanol/dwastelander/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.3*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
 
 /datum/reagent/consumable/ethanol/firebelly
@@ -687,8 +712,8 @@
 
 /datum/reagent/consumable/ethanol/firecracker/on_mob_life(mob/living/carbon/M)
 	if(prob(33))
-		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 		. = TRUE
 	..()
 
@@ -755,7 +780,7 @@
 	color = "#706A58"
 	boozepwr = 150
 	taste_description = "sweetness and liverpain"
-	glass_icon_state = "glass_brown"
+	glass_icon_state = "nukashine"
 	glass_name = "Nukashine"
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night. Stronger than the normal stuff, whooboy."
 
@@ -770,8 +795,9 @@
 	glass_desc = "So smooth its flakey, leaves your throat confused and your body numb."
 
 /datum/reagent/consumable/ethanol/olflakey/on_mob_life(mob/living/carbon/M)
-	M.emote("laugh")
-	M.emote("cough")
+	if(prob(10))
+		M.emote("laugh")
+		M.emote("cough")
 	..()
 
 /datum/reagent/consumable/ethanol/oldpossum
@@ -791,7 +817,7 @@
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
-	M.adjustStaminaLoss(-3, 0)
+	M.adjustStaminaLoss(-0.3, 0)
 	M.hallucination += 20
 	M.Jitter(2)
 	..()
@@ -808,9 +834,9 @@
 
 /datum/reagent/consumable/ethanol/sludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
-		M.adjustFireLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustToxLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
 	else
 		if(ishuman(M))
 			if(prob(80))
@@ -830,9 +856,9 @@
 
 /datum/reagent/consumable/ethanol/strongsludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
-		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustToxLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	else
 		if(ishuman(M))
 			if(prob(98))
@@ -960,7 +986,7 @@
 
 /datum/reagent/consumable/ethanol/vaulttech/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
-	M.adjustToxLoss(-3, 0)
+	M.adjustToxLoss(-0.3, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -982,9 +1008,9 @@
 
 /datum/reagent/consumable/ethanol/vaultboy/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
-	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustToxLoss(-2, 0)
+	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.2, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -1017,9 +1043,9 @@
 
 /datum/reagent/consumable/ethanol/vaultgirl/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
-	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustToxLoss(-2, 0)
+	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.2, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
@@ -1028,7 +1054,7 @@
 	..()
 	. = TRUE
 
-/datum/reagent/consumable/ethanol/vaultboy/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/vaultgirl/overdose_process(mob/living/M)
 	if(M && ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.hair_style = "Over Eye"
@@ -1102,10 +1128,11 @@
 	if(prob(50))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
 		to_chat(M, "<span class='notice'>[smoke_message]</span>")
-	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	M.emote("sigh")
+	if(prob(10))
+		M.emote("sigh")
 	..()
 	. = TRUE
 
