@@ -139,7 +139,6 @@
 	var/list/loots = list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
-						/obj/item/stack/sheet/mineral/limestone/twenty = 10,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
 						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid = 3,
 						/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low = 3
@@ -152,7 +151,6 @@
 	slowdown = 0.5
 	list/loots = list(
 						/obj/item/stack/crafting/metalparts/five = 30,
-						/obj/item/stack/sheet/mineral/limestone/twenty = 10,
 						)
 	footstep = FOOTSTEP_LOOSE_SAND
 	barefootstep = FOOTSTEP_LOOSE_SAND
