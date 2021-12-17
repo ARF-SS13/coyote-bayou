@@ -4733,6 +4733,10 @@
 "cbr" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"cbM" = (
+/obj/structure/furnace,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/village)
 "cbS" = (
 /obj/structure/chair/greyscale{
 	dir = 1
@@ -19073,6 +19077,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
+/area/f13/village)
+"ijK" = (
+/obj/structure/reagent_dispensers/barrel/explosive,
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "ijO" = (
 /obj/structure/flora/grass/wasteland,
@@ -43081,6 +43089,7 @@
 /area/f13/village)
 "tka" = (
 /obj/item/pickaxe,
+/obj/item/metaldetector,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tkc" = (
@@ -44774,6 +44783,7 @@
 /area/f13/bar)
 "tZT" = (
 /obj/machinery/workbench,
+/obj/item/stack/sheet/metal/twenty,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/village)
 "tZW" = (
@@ -64949,7 +64959,7 @@ wNP
 tpD
 tsv
 ulu
-vPY
+cbM
 vPY
 tZT
 qFk
@@ -66749,7 +66759,7 @@ vPY
 vPY
 fbs
 hLm
-vPY
+ijK
 qSs
 qFk
 kHB
