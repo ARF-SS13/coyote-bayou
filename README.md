@@ -1,9 +1,9 @@
-## Fallout Fortuna
-Based and maintained from Citadel Station.
+## Lone Star
+Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
 
-[![CI Suite](https://github.com/FortunaSS13/Fortuna/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://github.com/FortunaSS13/Fortuna/actions/workflows/ci_suite.yml)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/FortunaSS13/Fortuna.svg)](http://isitmaintained.com/project/FortunaSS13/Fortuna "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/FortunaSS13/Fortuna.svg)](http://isitmaintained.com/project/FortunaSS13/Fortuna "Average time to resolve an issue")
+[![CI Suite](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/FortunaSS13/Fortuna.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/FortunaSS13/Fortuna.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Average time to resolve an issue")
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
