@@ -43,7 +43,6 @@
 	M.adjustToxLoss(-0.5, 0)
 	M.adjustOxyLoss(0.5, 0)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-40, FALSE)
 	//310.15 is the normal bodytemp.
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	if(holder?.has_reagent(/datum/reagent/consumable/frostoil))
@@ -62,11 +61,10 @@
 
 /datum/reagent/consumable/vimquartz/on_mob_life(mob/living/carbon/M)
 	M.vomit(10)
-	M.adjustToxLoss(-2, 0)
-	M.adjustOxyLoss(4, 0)
+	M.adjustToxLoss(-1, 0)
+	M.adjustOxyLoss(2, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-40, FALSE)
 	//310.15 is the normal bodytemp.
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	if(holder?.has_reagent(/datum/reagent/consumable/frostoil))
@@ -84,8 +82,8 @@
 	glass_desc = "You've Got Vim Refresh! Ooooh!"
 
 /datum/reagent/consumable/vimrefresh/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustToxLoss(-1.5, 0)
+	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.1, 0)
 	M.adjustOxyLoss(1, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
@@ -108,13 +106,11 @@
 
 /datum/reagent/consumable/vimice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-40 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C)
-	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustOxyLoss(1, 0)
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
-	M.AdjustSleeping(-40, FALSE)
 	//310.15 is the normal bodytemp.
-
 	..()
 	. = TRUE
 
@@ -130,7 +126,7 @@
 	glass_desc = "Nuka-Cola with a Cherry Aftertaste."
 
 /datum/reagent/consumable/nukacherry/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -147,7 +143,7 @@
 	glass_desc = "Nuka-Cola with a Grape Aftertaste."
 
 /datum/reagent/consumable/nukagrape/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -164,9 +160,8 @@
 	glass_desc = "Nuka-Cola with a Orange Aftertaste."
 
 /datum/reagent/consumable/nukaorange/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
@@ -200,7 +195,6 @@
 /datum/reagent/consumable/nukaice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
 	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
@@ -215,9 +209,8 @@
 	glass_desc = "A totally original concept of Nuka-Cola!"
 
 /datum/reagent/consumable/nukawild/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-5, 0)
-	M.AdjustKnockdown(-5, 0)
-	M.AdjustUnconscious(-5, 0)
+	M.AdjustStun(-2, 0)
+	M.AdjustKnockdown(-2, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -236,12 +229,11 @@
 	glass_desc = "The tastiest Hybridisation of Nuka-Colas."
 
 /datum/reagent/consumable/nukanew/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustStun(-15, 0)
-	M.AdjustKnockdown(-15, 0)
-	M.AdjustUnconscious(-15, 0)
+	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.AdjustStun(-3, 0)
+	M.AdjustKnockdown(-3, 0)
+	M.AdjustUnconscious(-3, 0)
 	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
@@ -255,15 +247,6 @@
 	glass_name = "Nuka Berry"
 	glass_desc = "Nuka-Cola with a Berry Aftertaste."
 
-/datum/reagent/consumable/nukaberry/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
-
 /datum/reagent/consumable/nukacooler
 	name = "Nuka Cooler"
 	description = "Insanely cold Nuka-Cola, Freezing the air that surrounds it."
@@ -275,8 +258,6 @@
 
 /datum/reagent/consumable/nukacooler/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-60 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
@@ -292,12 +273,10 @@
 
 /datum/reagent/consumable/nukafree/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustToxLoss(0.1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.nutrition = max(M.nutrition - 3, 0)
 	M.overeatduration = 0
 	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
 
@@ -311,12 +290,10 @@
 	glass_desc = "The frutiest of Nukas."
 
 /datum/reagent/consumable/nukafrutti/on_mob_life(mob/living/carbon/M)
-	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
 
@@ -332,14 +309,6 @@
 	glass_name = "Nuka Float"
 	glass_desc = "A delicious blend of ice-cream and classic Nuka-Cola!"
 
-/datum/reagent/consumable/nukafloat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
-
 /datum/reagent/consumable/sunsetfloat
 	name = "Sunset Float"
 	description = "A delicious blend of ice-cream and classic Sunset Sass!"
@@ -350,14 +319,6 @@
 	glass_name = "Sunset Float"
 	glass_desc = "A delicious blend of ice-cream and classic Sunset Sass!"
 
-/datum/reagent/consumable/sunsetfloat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
-
 /datum/reagent/consumable/bawlsshake
 	name = "Bawls Shake"
 	description = "A blended shake consumed by those on high energy blitz-lifestyles."
@@ -367,14 +328,6 @@
 	glass_icon_state = "bawlsshakeglass"
 	glass_name = "Bawls Shake"
 	glass_desc = "A blended shake consumed by those on high energy blitz-lifestyles."
-
-/datum/reagent/consumable/bawlsshake/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
 
 /datum/reagent/consumable/jakeshake
 	name = "Jake Shake"
@@ -387,7 +340,7 @@
 	glass_desc ="Jakes patented shake of Jake."
 
 /datum/reagent/consumable/jakeshake/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -405,7 +358,7 @@
 	glass_desc = "The sweetest water."
 
 /datum/reagent/consumable/sweetwaterfloat/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-0.2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -423,7 +376,7 @@
 	glass_desc = "For when the days dawn, lest brings a brighter tommorrow."
 
 /datum/reagent/consumable/sunsetter/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -441,7 +394,7 @@
 	glass_desc = "A blended shake consisting of yucca and creamy goodness."
 
 /datum/reagent/consumable/yuccashake/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -458,8 +411,8 @@
 	glass_desc = "Beverage of the Balls Guarana Company."
 
 /datum/reagent/consumable/bawls/on_mob_life(mob/living/carbon/M)
-	M.dizziness = max(0,M.dizziness-5)
-	M.drowsyness = max(0,M.drowsyness-3)
+	M.dizziness = max(0,M.dizziness-2)
+	M.drowsyness = max(0,M.drowsyness-1)
 	M.AdjustSleeping(-40, FALSE)
 	//310.15 is the normal bodytemp.
 	M.adjust_bodytemperature(25 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
