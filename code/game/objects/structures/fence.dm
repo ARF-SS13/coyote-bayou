@@ -2,13 +2,13 @@
 //Sprites derivative from unweathered VG originals.
 
 
-#define CUT_TIME 100
+#define CUT_TIME 50
 #define CLIMB_TIME 150
 
 #define NO_HOLE 0 //section is intact
 #define MEDIUM_HOLE 1 //medium hole in the section - can climb through
 #define LARGE_HOLE 2 //large hole in the section - can walk through
-#define MAX_HOLE_SIZE LARGE_HOLE
+#define DESTROY_HOLE 3 //time to remove that fence
 
 /obj/structure/fence
 	name = "fence"
@@ -22,44 +22,12 @@
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
 	var/invulnerable = FALSE
+	var/hole_visuals = TRUE //Whether the fence piece has visuals for being cut. Used in update_cut_status()
 
 /obj/structure/fence/Initialize()
 	. = ..()
 
 	update_cut_status()
-
-//Obsolete handrails, railing is better
-/obj/structure/fence/handrail_end
-	name = "handrail"
-	desc = "A waist high handrail, perhaps you could climb over it."
-	icon = 'icons/obj/fence.dmi'
-	icon_state = "y_handrail_end"
-	cuttable = FALSE
-
-/obj/structure/fence/handrail_corner
-	name = "handrail"
-	desc = "A waist high handrail, perhaps you could climb over it."
-	icon = 'icons/obj/fence.dmi'
-	icon_state = "y_handrail_corner"
-	cuttable = FALSE
-	climbable = TRUE
-
-/obj/structure/fence/handrail
-	name = "handrail"
-	desc = "A waist high handrail, perhaps you could climb over it."
-	icon = 'icons/obj/fence.dmi'
-	icon_state = "y_handrail"
-	cuttable= FALSE
-	climbable = TRUE
-
-/obj/structure/fence/handrail_end/non_dense
-	name = "handrail"
-	desc = "A waist high handrail, perhaps you could climb over it."
-	icon = 'icons/obj/fence.dmi'
-	icon_state = "y_handrail_end"
-	cuttable = FALSE
-	density = FALSE
-	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fence/examine(mob/user)
 	. = ..()
@@ -71,11 +39,13 @@
 
 /obj/structure/fence/end
 	icon_state = "end"
-	cuttable = FALSE
+	cuttable = TRUE
+	hole_visuals = FALSE
 
 /obj/structure/fence/corner
 	icon_state = "corner"
-	cuttable = FALSE
+	cuttable = TRUE
+	hole_visuals = FALSE
 
 /obj/structure/fence/post
 	icon_state = "post"
@@ -89,6 +59,7 @@
 	icon_state = "straight_cut3"
 	hole_size = LARGE_HOLE
 
+
 /obj/structure/fence/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/wirecutters))
 		if(!cuttable)
@@ -98,9 +69,6 @@
 			to_chat(user, "<span class='notice'>This fence is too strong to cut through.</span>")
 			return
 		var/current_stage = hole_size
-		if(current_stage >= MAX_HOLE_SIZE)
-			to_chat(user, "<span class='notice'>This fence has too much cut out of it already.</span>")
-			return
 
 		user.visible_message("<span class='danger'>\The [user] starts cutting through \the [src] with \the [W].</span>",\
 		"<span class='danger'>You start cutting through \the [src] with \the [W].</span>")
@@ -112,14 +80,58 @@
 						visible_message("<span class='notice'>\The [user] cuts into \the [src] some more.</span>")
 						to_chat(user, "<span class='info'>You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger.</span>")
 						climbable = TRUE
+						W.play_tool_sound(user, 20)
 					if(LARGE_HOLE)
 						visible_message("<span class='notice'>\The [user] completely cuts through \the [src].</span>")
 						to_chat(user, "<span class='info'>The hole in \the [src] is now big enough to walk through.</span>")
 						climbable = FALSE
+						W.play_tool_sound(user, 20)
+					if(DESTROY_HOLE)
+						visible_message("<span class='notice'>\The [user] removes \the [src].</span>")
+						to_chat(user, "<span class='info'>\The [src] is removed.</span>")
+						deconstruct(TRUE)
+						W.play_tool_sound(user, 20)
 
 				update_cut_status()
 
+		
+	if(istype(W, /obj/item/stack/rods))
+		var/obj/item/stack/rods/rods = W
+		switch(hole_size)
+			if(NO_HOLE)
+				to_chat(user, "<span class='warning'>You cannot repair \the [src] any further!</span>")
+				return
+			if(MEDIUM_HOLE)
+				if(rods.get_amount() < 2)
+					to_chat(user, "<span class='warning'>You need at least two rods to repair \the [src]!</span>")
+					return
+				to_chat(user, "<span class='notice'>You start repairing \the [src]...</span>")
+				if(do_after(user, 20, target = src))
+					if(rods.get_amount() < 2)
+						return
+					rods.use(2)
+					to_chat(user, "<span class='notice'>You completely repair the hole in \the [src].</span>")
+					hole_size = NO_HOLE
+			if(LARGE_HOLE)
+				if(rods.get_amount() < 2)
+					to_chat(user, "<span class='warning'>You need at least two rods to repair \the [src]!</span>")
+					return
+				to_chat(user, "<span class='notice'>You start repairing \the [src]...</span>")
+				if(do_after(user, 20, target = src))
+					if(rods.get_amount() < 2)
+						return
+					rods.use(2)
+					to_chat(user, "<span class='notice'>You repair a bit of the hole in \the [src].</span>")
+					hole_size = MEDIUM_HOLE
+
+		update_cut_status()
+
 	return TRUE
+
+/obj/structure/fence/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/stack/rods(get_turf(src), 4)
+	qdel(src)
 
 /obj/structure/fence/proc/update_cut_status()
 	if(!cuttable)
@@ -127,12 +139,18 @@
 	density = TRUE
 	switch(hole_size)
 		if(NO_HOLE)
+			if(!hole_visuals) //This is omega-stupid, fix this idiot
+				return
 			icon_state = initial(icon_state)
 		if(MEDIUM_HOLE)
+			if(!hole_visuals)
+				return
 			icon_state = "straight_cut2"
 		if(LARGE_HOLE)
-			icon_state = "straight_cut3"
 			density = FALSE
+			if(!hole_visuals)
+				return
+			icon_state = "straight_cut3"
 
 //FENCE DOORS
 
@@ -198,13 +216,46 @@
 	closing_time = 2
 	hard_open = 0	
 
+//Obsolete handrails, railing is better
+/obj/structure/fence/handrail_end
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+
+/obj/structure/fence/handrail_corner
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "y_handrail_corner"
+	cuttable = FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "y_handrail"
+	cuttable= FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail_end/non_dense
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+	density = FALSE
+	layer = ABOVE_MOB_LAYER
+
 #undef CUT_TIME
 #undef CLIMB_TIME
 
 #undef NO_HOLE
 #undef MEDIUM_HOLE
 #undef LARGE_HOLE
-#undef MAX_HOLE_SIZE
+#undef DESTROY_HOLE
 
 // Obsolete wooden fences and dancing pole, better in railing.
 /obj/structure/fence/wooden
@@ -240,3 +291,4 @@
 	desc = "A pole, commonly used in traditional fertility rituals. Or by degenerates."
 	cuttable = FALSE
 	density = FALSE
+
