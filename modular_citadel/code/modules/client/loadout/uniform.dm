@@ -17,11 +17,11 @@
 
 /datum/gear/uniform/brahminskin/female
 	name = "female brahmin skin outfit"
-	path = /obj/item/clothing/under/f13/female/brahmin 
+	path = /obj/item/clothing/under/f13/female/brahmin
 
 /datum/gear/uniform/tribal
 	name = "male tribal outfit"
-	path = /obj/item/clothing/under/f13/tribal 
+	path = /obj/item/clothing/under/f13/tribal
 
 /datum/gear/uniform/tribal/female
 	name = "female tribal outfit"
@@ -33,7 +33,7 @@
 
 /datum/gear/unform/doctorfatigues/female
 	name = "female doctor fatigues"
-	path = /obj/item/clothing/under/f13/female/doctor 
+	path = /obj/item/clothing/under/f13/female/doctor
 
 /datum/gear/uniform/caravan
 	name = "caravan pants"
@@ -61,7 +61,7 @@
 
 /datum/gear/uniform/mechanic
 	name = "worn mechanic jumpsuit"
-	path = /obj/item/clothing/under/f13/mechanic 
+	path = /obj/item/clothing/under/f13/mechanic
 
 /datum/gear/uniform/lumberjack
 	name = "lumberjack outfit"
@@ -85,7 +85,7 @@
 
 /datum/gear/uniform/bodyguard
 	name = "bodyguard outfit"
-	path = /obj/item/clothing/under/f13/bodyguard 
+	path = /obj/item/clothing/under/f13/bodyguard
 	cost = 2
 
 /datum/gear/uniform/cowboy
@@ -107,20 +107,20 @@
 
 /datum/gear/uniform/bdu
 	name = "battle dress uniform"
-	path = /obj/item/clothing/under/f13/bdu 
+	path = /obj/item/clothing/under/f13/bdu
 	cost = 3
-	
+
 /datum/gear/uniform/bdu/desert
 	name = "desert battle dress uniform"
-	path = /obj/item/clothing/under/f13/dbdu 
+	path = /obj/item/clothing/under/f13/dbdu
 
 /datum/gear/uniform/syndicate
 	name = "tactical turtleneck"
-	path = /obj/item/clothing/under/syndicate 
+	path = /obj/item/clothing/under/syndicate
 
 /datum/gear/uniform/syndicate/skirt
 	name = "tactical skirt"
-	path = /obj/item/clothing/under/f13/legskirt/tac 
+	path = /obj/item/clothing/under/f13/legskirt/tac
 
 /datum/gear/uniform/roving
 	name = "roving trader outfit"
@@ -128,7 +128,7 @@
 
 /datum/gear/uniform/navy
 	name = "navy jumpsuit"
-	path = /obj/item/clothing/under/f13/navy 
+	path = /obj/item/clothing/under/f13/navy
 
 /datum/gear/uniform/police
 	name = "police uniform"
@@ -242,11 +242,11 @@
 
 /datum/gear/uniform/dress/bustle
 	name = "western bustle dress"
-	path = /obj/item/clothing/under/dress/westernbustle 
+	path = /obj/item/clothing/under/dress/westernbustle
 
 /datum/gear/uniform/dress/flamenco
 	name = "flamenco dress"
-	path = /obj/item/clothing/under/dress/flamenco 
+	path = /obj/item/clothing/under/dress/flamenco
 
 /datum/gear/uniform/dress/housewife
 	name = "yellow pre-war dress"
@@ -254,7 +254,7 @@
 
 /datum/gear/uniform/dress/picnic
 	name = "red pre-war dress"
-	path = /obj/item/clothing/under/f13/picnicdress50s 
+	path = /obj/item/clothing/under/f13/picnicdress50s
 
 /datum/gear/uniform/dress/bandage
 	name = "bandage dress"
@@ -421,12 +421,12 @@
 
 /datum/gear/uniform/prostitute
 	name = "male prostitute outfit"
-	path = /obj/item/clothing/under/f13/mprostitute 
+	path = /obj/item/clothing/under/f13/mprostitute
 	cost = 3
 
 /datum/gear/uniform/prostitute/female
 	name = "female prostitute outfit"
-	path = /obj/item/clothing/under/f13/fprostitute 
+	path = /obj/item/clothing/under/f13/fprostitute
 
 /datum/gear/uniform/greenstripper
 	name = "green stripper outfit"
@@ -472,7 +472,7 @@
 
 /datum/gear/uniform/dress/black
 	name = "black dress"
-	path = /obj/item/clothing/under/f13/blackdress 
+	path = /obj/item/clothing/under/f13/blackdress
 
 /datum/gear/uniform/dress/black/alt
 	name = "little black dress"
@@ -480,11 +480,11 @@
 
 /datum/gear/uniform/dress/class
 	name = "classy dress"
-	path = /obj/item/clothing/under/f13/classdress 
+	path = /obj/item/clothing/under/f13/classdress
 
 /datum/gear/uniform/dress/corset
 	name = "corset"
-	path = /obj/item/clothing/under/dress/corset 
+	path = /obj/item/clothing/under/dress/corset
 
 /datum/gear/uniform/bathrobe
 	name = "bathrobe"

@@ -651,25 +651,6 @@
 	icon_state = "trilby"
 	item_state = "fedora"
 
-//chinesearmy
-/obj/item/clothing/head/f13/chinese_soldier
-	name = "chinese side cap"
-	desc = "(I) A People's Liberation Army side cap, worn by enlisted and non-commissioned officers."
-	icon_state = "chinese_s"
-	item_state = "secsoft"
-
-/obj/item/clothing/head/f13/chinese_officer
-	name = "chinese officer cap"
-	desc = "(I) A People's Liberation Army cap, worn by low ranking officers."
-	icon_state = "chinese_o"
-	item_state = "secsoft"
-
-/obj/item/clothing/head/f13/chinese_general
-	name = "chinese peaked cap"
-	desc = "(I) A People's Liberation Army peaked cap, worn by high ranking officers and commanders."
-	icon_state = "chinese_c"
-	item_state = "fedora"
-
 /obj/item/clothing/head/f13/stormchaser
 	name = "stormchaser hat"
 	desc = "(I) Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
@@ -844,6 +825,19 @@
 	icon_state = "utility_t"
 	item_color = "utility_t"
 
+//Chinese Army
+
+/obj/item/clothing/head/f13/chinese
+	name = "PLA field cap"
+	desc = "(I) A People's Liberation Army cap, worn by enlisted and non-commissioned officers."
+	icon_state = "chinese_soldier"
+	item_state = "chinese_soldier"
+
+/obj/item/clothing/head/f13/chinese/officer
+	name = "PLA officer's cap"
+	desc = "(I) A People's Liberation Army peaked cap, worn by officers."
+	icon_state = "chinese_officer"
+	item_state = "chinese_officer"
 
 //DONOR, PATREON AND CUSTOM
 

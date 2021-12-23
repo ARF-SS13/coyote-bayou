@@ -511,13 +511,13 @@
 	desc = "(II) A matte grey set of ultralight composite above a carefully padded noise-absorbant suit. This unit, used by Chinese special forces during the great war, looks to have had it's fusion matrix removed, and is all but a fashion statement now."
 	icon_state = "stealthsuit"
 	item_state = "stealthsuit"
-	
+
 /obj/item/clothing/under/f13/bearvest //This is being used as Donator gear, check as to whether MidgetDragon still donating before using for anything else.
 	name = "Great Bear Vest"
 	desc = "A casual set of ripped jeans and a duster. The duster seems to have a familiar symbol spray painted on the back. The inside of the duster seems to have the letters MEB sewn on."
 	icon_state = "bearvest"
 	item_state = "bearvest"
-	
+
 /* //slave rags, crafted from 2 cloth- uncomment when sprites available
 /obj/item/clothing/under/f13/slaverags
 	name = "slave rags"
@@ -723,31 +723,6 @@
 	icon_state = "nato_uniform"
 	item_state = "nato_uniform"
 	item_color = "nato_uniform"
-
-//chinesearmy
-/obj/item/clothing/under/f13/chinese
-	name = "Chinese Army uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
-	icon_state = "chinese_solder"
-	item_state = "bl_suit"
-	item_color = "chinese_soldier"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-
-/obj/item/clothing/under/f13/chinese/officer
-	name = "Chinese Army officer's uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by officers."
-	icon_state = "chinese_officer"
-	item_state = "bl_suit"
-	item_color = "chinese_officer"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
-
-/obj/item/clothing/under/f13/chinese/general
-	name = "Chinese Army general's uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by generals."
-	icon_state = "chinese_general"
-	item_state = "bl_suit"
-	item_color = "chinese_general"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 //Prom Dress
 
@@ -1497,6 +1472,20 @@
 	desc = "A pair of worn buckskin trousers held up by a heavy pistol belt. The attire is synonymous with the colors of the criminal Marlow gang."
 	icon_state = "masonduds"
 	item_state = "masonduds"
+
+//Chinese Army
+
+/obj/item/clothing/under/f13/chinese
+	name = "PLA uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
+	icon_state = "chinese_soldier"
+	item_state = "chinese_soldier"
+
+/obj/item/clothing/under/f13/chinese/officer
+	name = "PLA officer's uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by officers."
+	icon_state = "chinese_officer"
+	item_state = "chinese_officer"
 
 //Super Mutants
 

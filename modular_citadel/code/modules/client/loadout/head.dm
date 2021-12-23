@@ -11,25 +11,35 @@
 	name = "beanie"
 	path = /obj/item/clothing/head/beanie
 
+/datum/gear/head/chinese
+	name = "Chinese Army cap"
+	path = /obj/item/clothing/head/f13/chinese
+	cost = 2
+
+/datum/gear/head/chineseofficer
+	name = "Chinese Army officer's cap"
+	path = /obj/item/clothing/head/f13/chinese/officer
+	cost = 3
+
 /datum/gear/head/stripedbeanie
 	name = "striped beanie"
-	path = /obj/item/clothing/head/beanie/striped 
+	path = /obj/item/clothing/head/beanie/striped
 
 /datum/gear/head/stripedredbeanie
 	name = "striped red beanie"
-	path = /obj/item/clothing/head/beanie/stripedred 
+	path = /obj/item/clothing/head/beanie/stripedred
 
 /datum/gear/head/stripedbluebeanie
 	name = "striped blue beanie"
-	path = /obj/item/clothing/head/beanie/stripedblue 
+	path = /obj/item/clothing/head/beanie/stripedblue
 
 /datum/gear/head/stripedgreenbeanie
 	name = "striped green beanie"
-	path = /obj/item/clothing/head/beanie/stripedgreen 
+	path = /obj/item/clothing/head/beanie/stripedgreen
 
 /datum/gear/head/beretred
 	name = "red beret"
-	path = /obj/item/clothing/head/beret 
+	path = /obj/item/clothing/head/beret
 
 /datum/gear/head/beret
 	name = "black beret"
@@ -41,12 +51,12 @@
 
 /datum/gear/head/utilityolive
 	name = "olive utility covering"
-	path = /obj/item/clothing/head/soft/f13/utility/olive 
+	path = /obj/item/clothing/head/soft/f13/utility/olive
 	cost = 2
 
 /datum/gear/head/utilitynavy
 	name = "navy utility covering"
-	path = /obj/item/clothing/head/soft/f13/utility/navy 
+	path = /obj/item/clothing/head/soft/f13/utility/navy
 	cost = 2
 
 /datum/gear/head/utilitytan
@@ -75,7 +85,7 @@
 
 /datum/gear/head/gambler
 	name = "gambler hat"
-	path = /obj/item/clothing/head/fluff/gambler 
+	path = /obj/item/clothing/head/fluff/gambler
 
 /datum/gear/head/that
 	name = "top hat"
@@ -84,12 +94,12 @@
 
 /datum/gear/head/beaver
 	name = "beaverskin top hat"
-	path = /obj/item/clothing/head/f13/beaver 
+	path = /obj/item/clothing/head/f13/beaver
 	cost = 4
 
 /datum/gear/head/purpletophat
 	name = "purple tophat"
-	path = /obj/item/clothing/head/f13/purple 
+	path = /obj/item/clothing/head/f13/purple
 	cost = 4
 
 /datum/gear/head/mailmanhat
@@ -98,7 +108,7 @@
 
 /datum/gear/head/sombrero
 	name = "sombrero"
-	path = /obj/item/clothing/head/sombrero 
+	path = /obj/item/clothing/head/sombrero
 
 /datum/gear/head/sombrerogreen
 	name = "green sombrero"
@@ -117,20 +127,20 @@
 
 /datum/gear/head/powderedwig
 	name = "powdered wig"
-	path = /obj/item/clothing/head/powdered_wig 
+	path = /obj/item/clothing/head/powdered_wig
 	cost = 2
 
 /datum/gear/head/nurse
 	name = "nurse hat"
-	path = /obj/item/clothing/head/f13/nursehat 
+	path = /obj/item/clothing/head/f13/nursehat
 
 /datum/gear/head/chef
 	name = "chef hat"
-	path = /obj/item/clothing/head/chefhat 
+	path = /obj/item/clothing/head/chefhat
 
 /datum/gear/head/rasta
 	name = "rasta cap"
-	path = /obj/item/clothing/head/f13/rastacap 
+	path = /obj/item/clothing/head/f13/rastacap
 
 /datum/gear/head/hotel
 	name = "telegram cap"
@@ -138,7 +148,7 @@
 
 /datum/gear/head/papersack
 	name = "paper sack"
-	path = /obj/item/clothing/head/papersack 
+	path = /obj/item/clothing/head/papersack
 
 //Cowboy Stuff
 /datum/gear/head/cowboy
@@ -153,12 +163,12 @@
 
 /datum/gear/head/bountyhunter
 	name = "bounty hunter hat"
-	path = /obj/item/clothing/head/hunter 
+	path = /obj/item/clothing/head/hunter
 	cost = 2
 
 /datum/gear/head/bandit
 	name = "bandit hat"
-	path = /obj/item/clothing/head/fluff/bandit 
+	path = /obj/item/clothing/head/fluff/bandit
 	cost = 2
 
 /datum/gear/head/wkepi
@@ -173,28 +183,13 @@
 	name = "kabuto helmet"
 	path = /obj/item/clothing/head/kabuto
 
-/datum/gear/head/chinese_soldier
-	name = "Chinese side cap"
-	path = /obj/item/clothing/head/f13/chinese_soldier
-	cost = 2
-
-/datum/gear/head/chinese_officer
-	name = "Chinese officer cap"
-	path = /obj/item/clothing/head/f13/chinese_officer
-	cost = 3
-
-/datum/gear/head/chinese_commander
-	name = "Chinese peaked cap"
-	path = /obj/item/clothing/head/f13/chinese_general
-	cost = 4
-
 /datum/gear/head/ushanka
 	name = "ushanka"
-	path = /obj/item/clothing/head/ushanka 
+	path = /obj/item/clothing/head/ushanka
 
 /datum/gear/head/russobluecamohat
 	name = "Russian blue camo beret"
-	path = /obj/item/clothing/head/fluff/gambler 
+	path = /obj/item/clothing/head/fluff/gambler
 	cost = 3
 
 /datum/gear/head/ranger_tan
@@ -219,7 +214,7 @@
 
 /datum/gear/head/pot
 	name = "(III) pot helmet"
-	path = /obj/item/clothing/head/f13/pot 
+	path = /obj/item/clothing/head/f13/pot
 	cost = 4
 
 /datum/gear/head/ncr_sapper
