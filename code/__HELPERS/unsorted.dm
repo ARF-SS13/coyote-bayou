@@ -1595,8 +1595,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		if(channel.tag == config_setting)
 			channels_to_use += channel
 
-	if(channels_to_use.len)
-		world.TgsChatBroadcast()
+	if(length(channels_to_use))
+		world.TgsChatBroadcast(message, channels_to_use)
 
 /**
  * Sends a message to TGS admin chat channels.

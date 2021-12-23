@@ -623,6 +623,9 @@ SUBSYSTEM_DEF(ticker)
 		else
 			news_message += " [pick(investigator)] have reported a relatively safe week so far!"
 
+		//role ping for discord
+		news_message += " <BR> \n <@&922230570791108628> "
+
 	if(news_message)
 		send2otherserver(news_source, news_message,"News_Report")
 		return news_message
