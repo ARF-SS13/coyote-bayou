@@ -74,6 +74,17 @@
 /obj/item/ammo_box/magazine/m556/rifle/extended/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m5mm
+	name = "Assault Rifle Magazine (5mm)"
+	icon_state = "r30"
+	caliber = "m5mm"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	max_ammo = 30
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m5mm/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/garand308
 	name = "en-bloc clip (7.62x51mm)"
 	icon_state = "enbloc-8"

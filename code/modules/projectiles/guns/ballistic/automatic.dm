@@ -1038,18 +1038,17 @@
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
 
 
-//Assault Carbine				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Flashlight
+//Assault Carbine				Keywords: 5mm, Automatic, 30 round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/assault_carbine
 	name = "assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	mag_type = /obj/item/ammo_box/magazine/m5mm
 	fire_delay = 3.5
-	burst_shot_delay = 2.5
+	burst_shot_delay = 2.0
 	spread = 9
-	recoil = 0.1
 	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "scope_short"
@@ -1065,7 +1064,6 @@
 	flight_y_offset = 21
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
-
 
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine NOT CANON
 /obj/item/gun/ballistic/automatic/fnfal

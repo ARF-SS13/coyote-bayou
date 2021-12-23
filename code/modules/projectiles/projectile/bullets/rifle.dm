@@ -163,6 +163,21 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 
 
 //////////////////////////
+// 5 MM rifle			 //
+//////////////////////////
+
+/obj/item/projectile/bullet/m5mm  //for rifles//
+	damage = 19
+	armour_penetration = 0.21
+	wound_bonus = 10
+	bare_wound_bonus = -10
+	var/extra_speed = 200
+
+/obj/item/projectile/bullet/m5mm/simple //for simple mobs, separate to allow balancing
+	name = "5mm bullet"
+	armour_penetration = 0.19
+
+//////////////////////////
 // 5 MM minigun special //
 //////////////////////////
 

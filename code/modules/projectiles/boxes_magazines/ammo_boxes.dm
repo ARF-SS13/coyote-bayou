@@ -274,6 +274,19 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 
+//5mm
+
+/obj/item/ammo_box/m5mmbox
+	name = "ammo box (5mm FMJ)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "556box"
+	multiple_sprites = 2
+	caliber = "m5mm"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500)
+
 //5.56x45
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"

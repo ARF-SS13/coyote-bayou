@@ -43,6 +43,14 @@
 	desc = "A .223 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a556/sport
 
+//5mm
+
+/obj/item/ammo_casing/m5mm
+	name = "5mm FMJ bullet casing"
+	desc = "A 5mm bullet casing."
+	caliber = "m5mm"
+	projectile_type = /obj/item/projectile/bullet/m5mm
+
 // 40mm (Grenade Launcher)
 /obj/item/ammo_casing/a40mm
 	name = "40mm HE shell"
