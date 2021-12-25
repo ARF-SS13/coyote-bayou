@@ -403,7 +403,6 @@
 	icon_state = "legion-combat2"
 	item_state = "legion-combat2"
 
-
 //NCR
 
 /obj/item/clothing/head/f13/ncr
@@ -668,8 +667,8 @@
 	flash_protect = 0
 	resistance_flags = null
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 0)
-	
-	
+
+
 /obj/item/clothing/head/helmet/f13/rangercombat/eliteriot/reclaimed
 	name = "reclaimed desert ranger gear"
 	desc = "(IV) A refurbished and personalized set of pre-unification desert ranger gear."
@@ -768,7 +767,7 @@
 	desc = "(VI) A black cowboy hat with a snakeskin band."
 	icon_state = "sheriffhat"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
-	
+
 /obj/item/clothing/head/f13/town/commissioner
 	name = "commissioner's hat"
 	desc = "(V*) A blue hat with a silver badge"
@@ -896,7 +895,116 @@
 	item_state = "vtcc_riot_helmet"
 	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
+//Old World Militaries
+//US Army and PLA
 
+/obj/item/clothing/head/f13/army
+	name = "US Army field cap"
+	desc = "(II) Standard issue US Army field cap."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_cap"
+	item_state = "army_cap"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	dynamic_hair_suffix = "+generic"
+
+/obj/item/clothing/head/f13/army/officer
+	name = "US Army officer's cap"
+	desc = "(II) US Army officer's cap."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_officer"
+	item_state = "army_officer"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+/obj/item/clothing/head/f13/army/general
+	name = "US Army general's cap"
+	desc = "(III) US Army officer's cap."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_general"
+	item_state = "army_general"
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+obj/item/clothing/head/f13/army/beret
+	name = "US Army beret"
+	desc = "(II) A black beret, standard issue for all US Army personnel, this one holds the generic Department of the Army beret flash."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_beret"
+	item_state = "army_beret"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+/obj/item/clothing/head/f13/army/beret/airborne
+	name = "US Army airborne beret"
+	desc = "(III) A red beret, issued to US Army airborne forces, this one holds the beret flash of the 82nd Airborne Div, 1st BCT."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_beret_airborne"
+	item_state = "army_beret_airborne"
+	armor = list("tier" = 3, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+/obj/item/clothing/head/f13/army/beret/specialforces
+	name = "US Army special forces beret"
+	desc = "(IV) A green beret, issued to US Army special forces personnel, this one holds the beret flash of the 2nd Special Forces Group."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_beret_specialforces"
+	item_state = "army_beret_specialforces"
+	armor = list("tier" = 4, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+//People's Liberation Army
+
+/obj/item/clothing/head/f13/chinese
+	name = "PLA field cap"
+	desc = "(I) A People's Liberation Army cap, worn by enlisted and non-commissioned officers."
+	icon_state = "chinese_soldier"
+	item_state = "chinese_soldier"
+
+/obj/item/clothing/head/f13/chinese/officer
+	name = "PLA officer's cap"
+	desc = "(I) A People's Liberation Army peaked cap, worn by officers."
+	icon_state = "chinese_officer"
+	item_state = "chinese_officer"
+
+//Old World Law Enforcement
+//Police and State Police
+
+/obj/item/clothing/head/f13/police/officer
+	name = "police officer's cap"
+	desc = "(II) A simple dark navy peaked cap, worn by police."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/head/f13/police/sergeant
+	name = "police campaign hat"
+	desc = "(II) A simple dark navy campaign hat, worn by police."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_sergeant"
+	item_state = "police_sergeant"
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/head/f13/police/lieutenant
+	name = "police lieutenant's cap"
+	desc = "(II) A simple dark navy peaked cap, worn by police."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/head/f13/police/chief
+	name = "police chief's cap"
+	desc = "(III) A simple dark navy peaked cap, worn by police."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+	armor = list("tier" = 3, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

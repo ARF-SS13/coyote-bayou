@@ -68,7 +68,7 @@
 	item_state = "badlands"
 	armor = list("tier" = 3, "linebullet" = -10, "linelaser" = -10, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
-	
+
 /obj/item/clothing/suit/armor/f13/raider/badlands/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -612,7 +612,7 @@
 	desc = "(VI) A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
-	
+
 /obj/item/clothing/suit/armor/f13/town/commissioner
 	name = "commissioner's jacket"
 	desc = "(V*)A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
@@ -718,6 +718,35 @@
 	item_state = "vtcc_riot_gear"
 	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
+//Old World Law Enforcement
+//Police
+
+/obj/item/clothing/suit/f13/police
+	name = "police officer's jacket"
+	desc = "(II) A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/f13/police/lieutenant
+	name = "police lieutenant's jacket"
+	desc = "(II) A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/f13/police/chief
+	name = "police chief's jacket"
+	desc = "(III) A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

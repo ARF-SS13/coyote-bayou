@@ -511,6 +511,16 @@
 	path = /obj/item/clothing/under/costume/kimono/sakura
 */
 
+/datum/gear/uniform/usarmy
+	name = "US Army combat uniform"
+	path = /obj/item/clothing/under/f13/army
+	cost = 2
+
+/datum/gear/uniform/usarmy/officer
+	name = "US Army officer's combat uniform"
+	path = /obj/item/clothing/under/f13/army/officer
+	cost = 3
+
 /datum/gear/uniform/chinese
 	name = "Chinese Army uniform"
 	path = /obj/item/clothing/under/f13/chinese

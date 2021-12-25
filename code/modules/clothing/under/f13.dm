@@ -769,6 +769,96 @@
 	item_color = "enclave_o"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
+//Old World Militaries
+//US Army
+
+/obj/item/clothing/under/f13/army
+	name = "US Army combat uniform"
+	desc = "A green combat uniform, this one is for enlisted and NCOs."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "army_uniform"
+	item_state = "army_uniform"
+
+/obj/item/clothing/under/f13/army/officer
+	name = "US Army officer's combat uniform"
+	desc = "A green combat uniform, this one is for officers."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "army_officer"
+	item_state = "army_officer"
+
+/obj/item/clothing/under/f13/army/general
+	name = "US Army officer's combat uniform"
+	desc = "A green combat uniform, this one is for generals."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "army_general"
+	item_state = "army_general"
+
+//People's Liberation Army
+
+/obj/item/clothing/under/f13/chinese
+	name = "PLA uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "chinese_soldier"
+	item_state = "chinese_soldier"
+
+/obj/item/clothing/under/f13/chinese/officer
+	name = "PLA officer's uniform"
+	desc = "An pre-war People's Liberation Army uniform, worn by officers."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "chinese_officer"
+	item_state = "chinese_officer"
+
+//Old World Law Enforcement
+//Police and State Police
+
+/obj/item/clothing/under/f13/police/officer
+	name = "Police Officer's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+
+/obj/item/clothing/under/f13/police/lieutenant
+	name = "Police Lieutenant's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+
+/obj/item/clothing/under/f13/police/chief
+	name = "Police Chief's uniform"
+	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+
+/obj/item/clothing/under/f13/police/formal
+	name = "Police formal uniform"
+	desc = "A formal police uniform."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "police_formal"
+	item_state = "police_formal"
+
+/obj/item/clothing/under/f13/police/trooper
+	name = "State Police uniform"
+	desc = "The uniform of the State Police force, composed of a a gray long sleeve shirt, gray pants, and a black tie."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "state_trooper"
+	item_state = "state_trooper"
+
+//other
+
 /obj/item/clothing/under/f13/navy
 	name = "navy jumpsuit"
 	desc = "Pre-War standard naval uniform."
@@ -1472,20 +1562,6 @@
 	desc = "A pair of worn buckskin trousers held up by a heavy pistol belt. The attire is synonymous with the colors of the criminal Marlow gang."
 	icon_state = "masonduds"
 	item_state = "masonduds"
-
-//Chinese Army
-
-/obj/item/clothing/under/f13/chinese
-	name = "PLA uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
-	icon_state = "chinese_soldier"
-	item_state = "chinese_soldier"
-
-/obj/item/clothing/under/f13/chinese/officer
-	name = "PLA officer's uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by officers."
-	icon_state = "chinese_officer"
-	item_state = "chinese_officer"
 
 //Super Mutants
 
