@@ -1011,7 +1011,7 @@ Raider
 	name = "Den Mob Enforcer"
 	jobtype = /datum/job/wasteland/f13enforcer
 
-	id = /obj/item/card/id/dentattoo
+	id = /obj/item/card/id/denid
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_den
@@ -1099,7 +1099,7 @@ Raider
 	name = "Den Mob Boss"
 	jobtype = /datum/job/wasteland/f13mobboss
 
-	id = /obj/item/card/id/dentattoo
+	id = /obj/item/card/id/denid
 	belt = /obj/item/storage/belt/military/assault
 	ears = /obj/item/radio/headset/headset_den
 	shoes = /obj/item/clothing/shoes/laceup
@@ -1164,7 +1164,7 @@ datum/job/wasteland/f13dendoctor
 	name = "Den Doctor"
 	jobtype = /datum/job/wasteland/f13dendoctor
 
-	id = /obj/item/card/id/dentattoo
+	id = /obj/item/card/id/denid
 	belt = /obj/item/storage/belt/medical
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/headset_den

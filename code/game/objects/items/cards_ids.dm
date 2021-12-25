@@ -1149,19 +1149,18 @@
 	name = "malfunctioning holotag"
 	desc = "A would-be advanced holographic dogtag, if it was working. Kept as a reminder to something."
 
-/obj/item/card/id/dentattoo
-	name = "Den Gang tattoo"
-	desc = "A tattoo identifying the bearer as a 'Made Man' of the Den Mob."
-	icon_state = "skin"
-	item_state = "skin"
+/obj/item/card/id/denid
+	name = "Den Gang Ring"
+	desc = "A silver ring identifying the bearer as a 'Made Man' of the Den Mob."
+	icon  = 'icons/obj/ring.dmi'
+	icon_state = "ringsilver"
+	item_state = "sring"
+	slot_flags = ITEM_SLOT_GLOVES | ITEM_SLOT_ID
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
 
 	access = list(ACCESS_DEN)
 
-/obj/item/card/id/dentattoo/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"
