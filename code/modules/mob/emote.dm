@@ -34,3 +34,20 @@
 					riding_datum.force_dismount(M)
 			else
 				R.unbuckle_all_mobs()
+
+/datum/emote/flip
+	key = "flip"
+	key_third_person = "flips"
+	restraint_check = TRUE
+	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
+	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
+
+/datum/emote/flip/run_emote(mob/user, params)
+	. = ..()
+	if(.)
+		user.SpinAnimation(7,1)
+
+/datum/emote/flip/run_emote(mob/living/user, params)
+	if(ishuman(user))
+		user.adjustStaminaLoss(5)
+	. = ..()
