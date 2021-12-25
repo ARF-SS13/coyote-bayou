@@ -53,12 +53,13 @@
 	..()
 	. = TRUE
 
-/datum/reagent/medicine/stimpak/imitation
+/datum/reagent/medicine/stimpakimitation
 	name = "Imitation Stimpak Fluid"
 	description = "Rapidly heals damage when injected. A poor man's stimpak."
 	reagent_state = LIQUID
-
-/datum/reagent/medicine/stimpak/imitation/on_mob_life(mob/living/carbon/M)
+	color = "#FFA500"
+	
+/datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
 		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
@@ -67,7 +68,7 @@
 	M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 
-/datum/reagent/medicine/stimpak/super_stimpak
+/datum/reagent/medicine/super_stimpak
 	name = "super stim chemicals"
 
 	description = "Chemicals found in pre-war stimpaks."
@@ -77,7 +78,7 @@
 	overdose_threshold = 20
 	addiction_threshold = 16
 
-datum/reagent/medicine/stimpak/super_stimpak/on_mob_life(mob/living/M)
+datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
