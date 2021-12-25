@@ -211,6 +211,8 @@
 	//fortuna addition. list of random names for the roundend news author
 	var/list/publisher = list("Oasis Publishing","Brotherhood News","Mojave Publishing","FEV News")
 	//tell the nice people on discord what went on before the salt cannon happens.
+	// send2chat sending the new round ping off
+	send2chat(" <@&922230570791108628> ", CONFIG_GET(string/discord_channel_serverstatus))
 	world.TgsTargetedChatBroadcast("The current round has ended. Please standby for your [pick(publisher)] report!", FALSE)
 	//lonestar edit. i'm adding a timer here because i'm tired of the messages being sent out of order
 	addtimer(CALLBACK(src, .proc/send_roundinfo), 3 SECONDS)
