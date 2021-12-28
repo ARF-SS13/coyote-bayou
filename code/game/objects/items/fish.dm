@@ -109,23 +109,29 @@
 /obj/item/fishyegg/carp
 	name = "carp fish egg"
 	icon_state = "carp_eggs"
+	desc = "Carp roe is often referred to the 'poor man's caviar'. This particular set of eggs seems to be unfit even for hoboes, though."
 
 /obj/item/fishyegg/salmon
 	name = "salmon fish egg"
 	icon_state = "salmon_eggs"
+	desc = "Salmon roe is an inexpensive alternative to sturgeon caviar. If you're eating this, it's probably not for the taste."
 
 /obj/item/fishyegg/eel
 	name = "eel fish egg"
 	icon_state = "electric_eel_eggs"
+	desc = "Eel eggs are not, typically, considered food. Then again, haute cuisine has fallen mostly by the wayside in the modern era, so go ham."
 
 /obj/item/fishyegg/lobster
 	name = "lobster fish egg"
 	icon_state = "catfish_eggs"
+	desc = "Lobster eggs are historically widely eaten by absolutely nobody."
 
 /obj/item/fishyegg/shrimp
 	name = "shrimp fish egg"
 	icon_state = "shrimp_eggs"
+	desc = "Don't put it in your mouth. Don't do it. Trust your instincts on this one."
 
 /obj/item/fishyegg/clownfish
 	name = "clown fish egg"
 	icon_state = "clown_eggs"
+	desc = "If this tastes funny to you, it's probably because it's toxic."
