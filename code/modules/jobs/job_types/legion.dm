@@ -126,7 +126,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
 	r_pocket = /obj/item/storage/bag/money/small/legion
 	l_pocket = /obj/item/flashlight/lantern
-	r_hand = /obj/item/melee/powerfist/goliath
+	r_hand = /obj/item/melee/powerfist/f13/goliath
 	l_hand = /obj/item/tank/internals/oxygen
 	backpack = null
 	satchel = null
@@ -265,7 +265,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
 	backpack_contents = list(
-		/obj/item/melee/powerfist/goliath = 1,
+		/obj/item/melee/powerfist/f13/goliath = 1,
 		/obj/item/ammo_box/magazine/m14mm = 3,
 		/obj/item/tank/internals/oxygen = 1
 		)

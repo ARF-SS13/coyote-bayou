@@ -637,13 +637,13 @@
 				/obj/item/twohanded/chainsaw,
 				/obj/item/twohanded/sledgehammer/rockethammer,
 				/obj/item/melee/powered/ripper,
-				/obj/item/melee/powerfist,
+				/obj/item/melee/powerfist/f13,
 				/obj/item/melee/transforming/energy/axe/protonaxe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
 				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
-				/obj/item/melee/powerfist/moleminer
+				/obj/item/melee/powerfist/f13/moleminer
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random

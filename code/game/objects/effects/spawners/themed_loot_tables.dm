@@ -323,7 +323,7 @@
 		/obj/item/gun/energy/laser/plasma/glock = 2,
 		/obj/item/gun/energy/laser/plasma = 2,
 		/obj/item/gun/energy/laser/plasma/scatter =1,
-		/obj/item/melee/powerfist/moleminer = 10,
+		/obj/item/melee/powerfist/f13/moleminer = 10,
 		/obj/item/melee/transforming/energy/axe/protonaxe = 10,
 		/obj/item/gun/ballistic/revolver/ballisticfist = 5,
 		)
