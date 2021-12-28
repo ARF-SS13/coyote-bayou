@@ -33,6 +33,11 @@
 	path = /obj/item/storage/belt/mining/primitive
 	cost = 4
 
+/datum/gear/backpack/fannypack
+	name = "fannypack"
+	path = /obj/item/storage/belt/fannypack
+	cost = 3
+
 /datum/gear/backpack/tape
 	name = "Spare Cassette Tape"
 	path = /obj/item/tape/random

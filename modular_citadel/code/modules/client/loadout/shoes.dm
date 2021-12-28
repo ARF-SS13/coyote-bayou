@@ -98,6 +98,11 @@
 	path = /obj/item/clothing/shoes/f13/military/leather 
 	cost = 2
 
+/datum/gear/shoes/desert
+	name = "desert combat boots"
+	path = /obj/item/clothing/shoes/f13/military/desert 
+	cost = 2
+
 /datum/gear/shoes/plated
 	name = "plated war boots"
 	path = /obj/item/clothing/shoes/f13/military/plated
