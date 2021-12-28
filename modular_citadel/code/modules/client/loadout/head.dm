@@ -207,6 +207,25 @@
 	path = /obj/item/clothing/head/f13/pot
 	cost = 4
 
+//POLICE
+
+/datum/gear/head/police
+	name = "Police Officer's cap"
+	path = /obj/item/clothing/head/f13/police/officer
+	cost = 2
+
+/datum/gear/head/police/sergeant
+	name = "Police campaign hat"
+	path = /obj/item/clothing/head/f13/police/sergeant
+	cost = 2
+
+/datum/gear/head/police/lieutenant
+	name = "Police Lieutenant's cap"
+	path = /obj/item/clothing/head/f13/army/officer
+	cost = 3
+
+//US
+
 /datum/gear/head/usarmy
 	name = "US Army field cap"
 	path = /obj/item/clothing/head/f13/army
@@ -217,15 +236,19 @@
 	path = /obj/item/clothing/head/f13/army/officer
 	cost = 3
 
+//CHINA
+
 /datum/gear/head/chinese
-	name = "Chinese Army cap"
+	name = "PLA field cap"
 	path = /obj/item/clothing/head/f13/chinese
 	cost = 2
 
 /datum/gear/head/chinese/officer
-	name = "Chinese Army officer's cap"
+	name = "PLA officer's cap"
 	path = /obj/item/clothing/head/f13/chinese/officer
 	cost = 3
+
+//NCR
 
 /datum/gear/head/ncr_sapper
 	name = "NCR sapper beret"

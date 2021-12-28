@@ -71,7 +71,7 @@
 
 /obj/item/clothing/shoes/f13/military
 	name = "military boots"
-	desc = "High speed, no-drag combat boots designed for use by the U.S. Army before the Great War."
+	desc = "High speed, no-drag combat boots, designed for use by the U.S. Army before the Great War."
 	icon_state = "military"
 	item_state = "military"
 	permeability_coefficient = 0.05

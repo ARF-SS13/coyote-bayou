@@ -130,10 +130,6 @@
 	name = "navy jumpsuit"
 	path = /obj/item/clothing/under/f13/navy
 
-/datum/gear/uniform/police
-	name = "police uniform"
-	path = /obj/item/clothing/under/f13/police
-
 /datum/gear/uniform/relaxedwear
 	name = "pre-war male relaxedwear"
 	path = /obj/item/clothing/under/f13/relaxedwear
@@ -511,6 +507,20 @@
 	path = /obj/item/clothing/under/costume/kimono/sakura
 */
 
+//POLICE
+
+/datum/gear/uniform/police
+	name = "Police Officer's uniform"
+	path = /obj/item/clothing/under/f13/police/officer
+	cost = 2
+
+/datum/gear/uniform/police/lieutenant
+	name = "Police Lieutenant's uniform"
+	path = /obj/item/clothing/under/f13/police/lieutenant
+	cost = 3
+
+//US
+
 /datum/gear/uniform/usarmy
 	name = "US Army combat uniform"
 	path = /obj/item/clothing/under/f13/army
@@ -521,6 +531,18 @@
 	path = /obj/item/clothing/under/f13/army/officer
 	cost = 3
 
+/datum/gear/uniform/usnavy
+	name = "US Navy jumpsuit"
+	path = /obj/item/clothing/under/f13/navy
+	cost = 2
+
+/datum/gear/uniform/usnavy/officer
+	name = "US Navy officer's jumpsuit"
+	path = /obj/item/clothing/under/f13/navy/officer
+	cost = 3
+
+//CHINA
+
 /datum/gear/uniform/chinese
 	name = "Chinese Army uniform"
 	path = /obj/item/clothing/under/f13/chinese
@@ -530,6 +552,8 @@
 	name = "Chinese Army officer's uniform"
 	path = /obj/item/clothing/under/f13/chinese/officer
 	cost = 3
+
+//NCR
 
 /datum/gear/uniform/ncr_fatigue_pants
 	name = "NCR fatigue pants"

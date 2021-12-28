@@ -37,7 +37,7 @@
 
 /obj/item/clothing/gloves/f13/military
 	name = "military gloves"
-	desc = "Tight fitting black leather gloves with mesh along the finger tips and padding along the palm. The craftsmanship indicates it was made for a officer."
+	desc = "Tight fitting black leather gloves with mesh along the finger tips and padding along the palm, designed for use by the U.S. Army before the Great War."
 	icon_state = "military"
 	item_state = "military"
 	item_color = null

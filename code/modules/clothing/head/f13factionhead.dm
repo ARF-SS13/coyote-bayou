@@ -625,8 +625,8 @@
 /obj/item/clothing/head/helmet/f13/combat/mk2/ncr
 	name = "reinforced NCR combat helmet"
 	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the New California Republic."
-	icon_state = "ncr_helmet"
-	item_state = "ncr_helmet"
+	icon_state = "ncr_helmet_mk2"
+	item_state = "ncr_helmet_mk2"
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	name = "ranger combat helmet"
@@ -957,21 +957,27 @@ obj/item/clothing/head/f13/army/beret
 
 /obj/item/clothing/head/f13/chinese
 	name = "PLA field cap"
-	desc = "(I) A People's Liberation Army cap, worn by enlisted and non-commissioned officers."
+	desc = "(II) A People's Liberation Army cap, worn by enlisted and non-commissioned officers."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "chinese_soldier"
 	item_state = "chinese_soldier"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/head/f13/chinese/officer
 	name = "PLA officer's cap"
-	desc = "(I) A People's Liberation Army peaked cap, worn by officers."
+	desc = "(II) A People's Liberation Army peaked cap, worn by officers."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "chinese_officer"
 	item_state = "chinese_officer"
+	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 //Old World Law Enforcement
 //Police and State Police
 
 /obj/item/clothing/head/f13/police/officer
-	name = "police officer's cap"
+	name = "Police Officer's cap"
 	desc = "(II) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -980,7 +986,7 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/sergeant
-	name = "police campaign hat"
+	name = "Police campaign hat"
 	desc = "(II) A simple dark navy campaign hat, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -989,7 +995,7 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/lieutenant
-	name = "police lieutenant's cap"
+	name = "Police Lieutenant's cap"
 	desc = "(II) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -998,7 +1004,7 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/chief
-	name = "police chief's cap"
+	name = "Police Chief's cap"
 	desc = "(III) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'

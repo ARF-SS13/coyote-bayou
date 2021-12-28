@@ -774,7 +774,7 @@
 
 /obj/item/clothing/under/f13/army
 	name = "US Army combat uniform"
-	desc = "A green combat uniform, this one is for enlisted and NCOs."
+	desc = "Standard issue combat uniform for the Army, worn by enlisted and NCOs."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon_state = "army_uniform"
@@ -782,7 +782,7 @@
 
 /obj/item/clothing/under/f13/army/officer
 	name = "US Army officer's combat uniform"
-	desc = "A green combat uniform, this one is for officers."
+	desc = "Standard issue combat uniform for the Army, worn by officers."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon_state = "army_officer"
@@ -790,11 +790,27 @@
 
 /obj/item/clothing/under/f13/army/general
 	name = "US Army officer's combat uniform"
-	desc = "A green combat uniform, this one is for generals."
+	desc = "Standard issue combat uniform for the Army, worn by general rank officers."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	icon_state = "army_general"
 	item_state = "army_general"
+
+//US Navy
+
+/obj/item/clothing/under/f13/navy
+	name = "US Navy jumpsuit"
+	desc = "Pre-War standard naval uniform."
+	icon_state = "navy"
+	item_state = "bl_suit"
+	item_color = "navy"
+
+/obj/item/clothing/under/f13/navy/officer
+	name = "US Navy officer's jumpsuit"
+	desc = "Pre-War standard naval uniform for ranked officers."
+	icon_state = "navyofficer"
+	item_state = "bl_suit"
+	item_color = "navyofficer"
 
 //People's Liberation Army
 
@@ -857,21 +873,15 @@
 	icon_state = "state_trooper"
 	item_state = "state_trooper"
 
-//other
+//get a custom swat sprite at some point
 
-/obj/item/clothing/under/f13/navy
-	name = "navy jumpsuit"
-	desc = "Pre-War standard naval uniform."
-	icon_state = "navy"
-	item_state = "bl_suit"
-	item_color = "navy"
-
-/obj/item/clothing/under/f13/navyofficer
-	name = "navy officer jumpsuit"
-	desc = "Pre-War standard naval uniform for ranked officers."
-	icon_state = "navyofficer"
-	item_state = "bl_suit"
-	item_color = "navyofficer"
+/obj/item/clothing/under/f13/police/swat
+	name = "SWAT Officer uniform"
+	desc = "A US Army combat uniform, modified for SWAT team personnel."
+	icon = 'icons/fallout/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
+	icon_state = "army_uniform"
+	item_state = "army_uniform"
 
 /obj/item/clothing/under/f13/machinist
 	name = "workman outfit"

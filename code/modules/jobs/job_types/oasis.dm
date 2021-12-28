@@ -71,9 +71,9 @@ Mayor
 		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/ammo_box/a357=2, \
 		/obj/item/pen/fountain/captain = 1)
-		
-/*--------------------------------------------------------------*/	
-	
+
+/*--------------------------------------------------------------*/
+
 /datum/job/oasis/f13secretary
 	title = "Secretary"
 	flag = F13SECRETARY
@@ -86,12 +86,12 @@ Mayor
 	exp_requirements = 800
 
 	outfit = /datum/outfit/job/den/f13secretary
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/pr,
 	/datum/outfit/loadout/pw,
 	)
-	
+
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
@@ -121,7 +121,7 @@ Mayor
 	shoes = 		/obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm = 1, 
+		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/pda = 1,
 		)
@@ -136,7 +136,7 @@ Mayor
 		/obj/item/camera = 1,
 		/obj/item/storage/crayons = 1,
 		)
-		
+
 /datum/outfit/loadout/pw
 	name = "Public Works"
 	backpack_contents = list(
@@ -161,7 +161,7 @@ Mayor
 	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/den/f13sheriff
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
 	/datum/outfit/loadout/dacommissioner,
@@ -251,7 +251,7 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
 	/datum/outfit/loadout/police,
-	/datum/outfit/loadout/pmc,)
+	/datum/outfit/loadout/swat,)
 
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -297,12 +297,12 @@ Mayor
 
 /datum/outfit/loadout/police
 	name = "Oasis PD"
-	uniform = /obj/item/clothing/under/f13/police
-	suit = /obj/item/clothing/suit/armor/bulletproof
-	head = /obj/item/clothing/head/f13/police
+	uniform = /obj/item/clothing/under/f13/police/officer
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	head = /obj/item/clothing/head/f13/police/officer
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	belt = /obj/item/gun/ballistic/revolver/police
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
@@ -310,14 +310,14 @@ Mayor
 		/obj/item/flashlight/seclite = 1,
 		)
 
-/datum/outfit/loadout/pmc
-	name = "Private Contractor"
-	uniform = /obj/item/clothing/under/f13/combat/militia
-	suit = /obj/item/clothing/suit/armor/vest/alt
+/datum/outfit/loadout/swat
+	name = "S.W.A.T. Officer"
+	uniform = /obj/item/clothing/under/f13/police/swat
+	suit = /obj/item/clothing/suit/armor/bulletproof
 	head = /obj/item/clothing/head/helmet
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/policerifle
 	belt = /obj/item/melee/onehanded/knife/switchblade
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/combat
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		)
