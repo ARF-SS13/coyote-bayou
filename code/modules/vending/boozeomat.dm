@@ -31,7 +31,8 @@
 					/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 15,
 					/obj/item/reagent_containers/food/drinks/ice = 5,
 					/obj/item/reagent_containers/food/drinks/flask = 3,
-					/obj/item/reagent_containers/food/drinks/beer = 5)
+					/obj/item/reagent_containers/food/drinks/beer = 5,
+					/obj/item/book/manual/nuka_recipes = 1)
 	contraband = list(/obj/item/reagent_containers/food/drinks/mug/tea = 12,
 					/obj/item/reagent_containers/food/drinks/bottle/fernet = 5)
 	premium = list(/obj/item/reagent_containers/glass/bottle/ethanol = 4,
