@@ -223,8 +223,8 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		return
 	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
-	if(departing_mob.logout_time && departing_mob.logout_time + 5 MINUTES > world.time)
-		to_chat(user, "<span class='warning'>This mind has only recently departed. Better give it some more time before taking such a drastic measure.</span>")
+	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
+		to_chat(user, "<span class='warning'>This mind has only recently departed. Wait at most two minutes before sending this character out of the round.</span>")
 		return
 	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to leave the wasteland!" : "is trying to send [departing_mob] away!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to leave the wasteland." : "are trying to send [departing_mob] away."]</span>")
 	icon_state = "matrix_going" // ALERT, WEE WOO
