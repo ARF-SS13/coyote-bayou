@@ -1150,14 +1150,9 @@
 	desc = "A would-be advanced holographic dogtag, if it was working. Kept as a reminder to something."
 
 /obj/item/card/id/denid
-	name = "Den Gang Ring"
-	desc = "A silver ring identifying the bearer as a 'Made Man' of the Den Mob."
-	icon  = 'icons/obj/ring.dmi'
-	icon_state = "ringsilver"
-	item_state = "sring"
-	slot_flags = ITEM_SLOT_GLOVES | ITEM_SLOT_ID
+	name = "Den Gang Membership Certificate"
+	desc = "A certificate declaring your loyalty to the gang"
 	assignment = "gang tattoo"
-	uses_overlays = FALSE
 
 	access = list(ACCESS_DEN)
 
