@@ -240,11 +240,11 @@
 	var/emped = 0
 	var/requires_training = TRUE
 	var/armor_block_chance = 0
-	protected_zones = list(BODY_ZONE_HEAD)
-	var/deflection_chance = 0
-	var/armor_block_threshold = 0.2 //projectiles below this will deflect
-	var/melee_block_threshold = 30
-	var/dmg_block_threshold = 42
+//	protected_zones = list(BODY_ZONE_HEAD)
+//	var/deflection_chance = 0
+//	var/armor_block_threshold = 0.2 //projectiles below this will deflect
+//	var/melee_block_threshold = 30
+//	var/dmg_block_threshold = 42
 	var/powerLevel = 7000
 	var/powerMode = 3
 	var/powered = TRUE
@@ -347,7 +347,7 @@
 		if(istype(L))
 			L.update_equipment_speed_mods()
 	return TRUE
-
+/*
 /obj/item/clothing/head/helmet/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	. = ..()
 	if(damage >= src.dmg_block_threshold && check_armor_penetration(object) >= 0)
@@ -363,7 +363,7 @@
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return
-
+*/
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
 	name = "salvaged T-45b helmet"
 	desc = "(VIII) It's a salvaged T-45b power armor helmet."
@@ -371,8 +371,8 @@
 	item_state = "t45bhelmet"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 //	darkness_view = 0
-	armor_block_chance = 25
-	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+//	armor_block_chance = 25
+//	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 	requires_training = FALSE
 	powered = FALSE
 
@@ -383,16 +383,16 @@
 	item_state = "t45bhelmet_ncr"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 //	darkness_view = 0
-	armor_block_chance = 40
-	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
+//	armor_block_chance = 40
+//	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
 	requires_training = FALSE
 	powered = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
 	name = "restored T-45b helmet"
 	desc = "(VIII) It's a restored T-45b power armor helmet."
-	armor_block_chance = 60
-	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+//	armor_block_chance = 60
+//	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 	requires_training = TRUE
 	powered = TRUE
 
@@ -403,8 +403,8 @@
 	item_state = "raiderpa_helm"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
-	armor_block_chance = 20
-	deflection_chance = 10
+//	armor_block_chance = 20
+//	deflection_chance = 10
 	powered = FALSE
 
 
@@ -415,9 +415,9 @@
 	item_state = "t45hotrod_helm"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
-	armor_block_chance = 20
+//	armor_block_chance = 20
 	powered = FALSE
-	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
+//	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttec
 	name = "Vault-Tec power helmet"
@@ -425,8 +425,8 @@
 	icon_state = "vaultpahelm"
 	item_state = "vaultpahelm"
 	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
-	armor_block_chance = 40
-	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
+//	armor_block_chance = 40
+//	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
 
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttecta
 	name = "Vault-Tec power helmet"
@@ -443,8 +443,8 @@
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
-	armor_block_chance = 60
-	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+//	armor_block_chance = 60
+//	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
@@ -472,8 +472,8 @@
 	icon_state = "midwestgrey_helm"
 	item_state = "midwestgrey_helm"
 	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
-	armor_block_chance = 60
-	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
+//	armor_block_chance = 60
+//	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
@@ -482,10 +482,10 @@
 	item_state = "t51bhelmet0"
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor_block_chance = 70
-	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
-	armor_block_threshold = 0.25
-	melee_block_threshold = 35
+//	armor_block_chance = 70
+//	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
+//	armor_block_threshold = 0.25
+//	melee_block_threshold = 35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
 	icon_state = "t51bhelmet[light_on]"
@@ -520,10 +520,10 @@
 	item_state = "t60helmet0"
 	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor_block_chance = 80
-	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
-	melee_block_threshold = 40
-	armor_block_threshold = 0.3
+//	armor_block_chance = 80
+//	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
+//	melee_block_threshold = 40
+//	armor_block_threshold = 0.3
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60/update_icon_state()
 	icon_state = "t60helmet[light_on]"
@@ -535,8 +535,8 @@
 	icon_state = "excavator"
 	item_state = "excavator"
 	armor = list("tier" = 8, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0)
-	armor_block_chance = 40
-	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
+//	armor_block_chance = 40
+//	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not a heavy combat model
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
 	name = "advanced power helmet"
@@ -544,20 +544,20 @@
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("tier" = 12, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
-	armor_block_threshold = 0.45
-	melee_block_threshold = 45
-	armor_block_chance = 80 //Enclave. 'nuff said
-	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
+//	armor_block_threshold = 0.45
+//	melee_block_threshold = 45
+//	armor_block_chance = 80 //Enclave. 'nuff said
+//	deflection_chance = 15 //40% chance to block damage from blockable bullets and redirect the bullet at a random angle. Your ride's over mutie, time to die.
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor"
 	desc = "(XIII) A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
 	icon_state = "hellfirehelm"
 	item_state = "hellfirehelm"
-	melee_block_threshold = 70
-	armor_block_threshold = 0.8
-	armor_block_chance = 99
-	deflection_chance = 70
+//	melee_block_threshold = 70
+//	armor_block_threshold = 0.8
+//	armor_block_chance = 99
+//	deflection_chance = 70
 	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire/wbos
@@ -590,10 +590,10 @@
 	slowdown = 0.1
 	armor = list("tier" = 11, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor_block_threshold = 0.45
-	melee_block_threshold = 45
-	armor_block_chance = 80
-	deflection_chance = 15
+//	armor_block_threshold = 0.45
+//	melee_block_threshold = 45
+//	armor_block_chance = 80
+//	deflection_chance = 15
 
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
