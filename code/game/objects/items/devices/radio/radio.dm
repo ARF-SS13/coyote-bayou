@@ -1,9 +1,9 @@
 /obj/item/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "handheld transceiver"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "A basic handheld radio that communicates with local telecommunication networks."
+	desc = "A basic handheld radio that can both broadcast and recieve signals."
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1 | HEAR_1
@@ -487,3 +487,16 @@
 		qdel(implant)
 	else
 		return ..()
+		
+/// Other Radios
+	
+/obj/item/radio/tribal
+	name = "primitive radio"
+	icon_state = "radio"
+	item_state = "radio"
+	desc = "a homemade radio transceiver made out of transistors and wire."
+	canhear_range = 2
+	w_class = WEIGHT_CLASS_NORMAL
+		
+
+	
