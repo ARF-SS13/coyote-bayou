@@ -235,7 +235,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	fire_delay = 0
-	can_scope = TRUE
+	can_scope = FALSE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
 	scope_y_offset = 22
