@@ -322,6 +322,28 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/hitscan/stun //compliance regulator beam
+	name = "compliance beam"
+	damage = 33
+	damage_type = STAMINA
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+	tracer_type = /obj/effect/projectile/tracer/disabler
+	muzzle_type = /obj/effect/projectile/muzzle/disabler
+	impact_type = /obj/effect/projectile/impact/disabler
+
+
+/obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
+	name = "recharger beam"
+	damage = 20
+	hitscan = TRUE
+	armour_penetration = 0.05
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	light_color = LIGHT_COLOR_BLUE
+
+
 /obj/item/projectile/beam/laser/ultra_pistol //unused
 	name = "laser beam"
 	damage = 40
