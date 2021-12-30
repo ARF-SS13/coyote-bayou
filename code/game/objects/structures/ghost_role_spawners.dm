@@ -724,6 +724,7 @@
 /obj/effect/mob_spawn/human/fallout13/ncr
 	name = "NCR Trooper Spawn"
 	desc = "An entry point for troopers of the NCR to join a battle."
+	faction = "NCR"
 	mob_name = "NCR Trooper"
 	job_description = "NCR Trooper"
 	short_desc = "You are a proud fighter of the New California Republic. Do not falter!"
@@ -766,6 +767,7 @@
 /obj/effect/mob_spawn/human/fallout13/legion
 	name = "Prime Legionnaire Spawn"
 	desc = "An entry point for prime legionaries of Caesar's Legion to join a battle."
+	faction = "Legion"
 	mob_name = "Prime Legionnaire"
 	job_description = "Prime Legionnaire"
 	short_desc = "You are a might warrior of Caesar's Legion. Retribution!"
@@ -795,6 +797,7 @@
 /obj/effect/mob_spawn/human/fallout13/bos
 	name = "Knight Spawn"
 	desc = "An entry point for knights of the Brotherhood Of Steel to join a battle."
+	faction = "BOS"
 	mob_name = "Knight"
 	job_description = "Knight"
 	short_desc = "You are a brave soldier of the Brotherhood Of Steel. Onwards!"
@@ -828,6 +831,7 @@
 /obj/effect/mob_spawn/human/fallout13/raider
 	name = "Raider Spawn"
 	desc = "An entry point for raiders to join a battle."
+	faction = "raider"
 	mob_name = "Raider"
 	job_description = "Raider"
 	short_desc = "You are a vicious, bloodthirsty raider hailing from Yuma. Take what you deserve!"
@@ -855,3 +859,39 @@
 	var/area/A = get_area(src)
 	if(A)
 		notify_ghosts("A small gang of raiders are arriving at \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_RAIDER, ignore_dnr_observers = FALSE)
+
+/obj/effect/mob_spawn/human/fallout13/tribal
+	name = "Spear Hunter Spawn"
+	desc = "An entry point for spear hunters to join a battle."
+	faction = "Tribe"
+	mob_name = "Spear Hunter"
+	job_description = "Spear Hunter"
+	short_desc = "You are a hunter hailing from the local tribe in the region. Honor your your tribe, and those that came before you!"
+	flavour_text = "For the gods!"
+	assignedrole = "Spear Hunter"
+	outfit = /datum/outfit/job/tribal/f13hunter
+	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/melee/onehanded/knife/bone = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 1
+	)
+	
+/obj/effect/mob_spawn/human/fallout13/tribal/ranged
+	name = "Bow Hunter Spawn"
+	desc = "An entry point for bow hunters to join a battle."
+	mob_name = "Bow Hunter"
+	job_description = "Bow Hunter"
+	assignedrole = "Bow Hunter"
+	suit_store = /obj/item/gun/ballistic/automatic/tribalbow
+	belt = /obj/item/storage/belt/tribe_quiver/bone
+	backpack_contents = list(
+		/obj/item/melee/onehanded/knife/bone = 1,
+		/obj/item/restraints/legcuffs/bola = 2,
+		/obj/item/binoculars = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 1
+	)
+
+/obj/effect/mob_spawn/human/fallout13/tribal/special(mob/living/new_spawn)
+	new_spawn.real_name = random_unique_name(gender)

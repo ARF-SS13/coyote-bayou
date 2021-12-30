@@ -11,6 +11,7 @@
 	var/list/ladder_watchers
 	var/move_me = TRUE
 	var/in_use = FALSE // To avoid message spam
+	var/timetouse = 15
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -171,7 +172,7 @@
 			return
 		in_use = TRUE
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", "<span class='notice'>You begin to climb [going_up ? "up" : "down"] [src].</span>")
-		if(!do_after(user, 15, target = src))
+		if(!do_after(user, timetouse, target = src))
 			in_use = FALSE
 			return
 		in_use = FALSE
@@ -337,3 +338,68 @@
 /obj/structure/ladder/unbreakable/binary/unlinked //Crew gets to complete one
 	id = "unlinked_binary"
 	area_to_place = null
+	
+/obj/structure/ladder/unbreakable/transition
+	name = "transition zone"
+	desc = "<font color='#6eaa2c'>Head to the other side.</font>"
+	icon = 'icons/turf/overlays.dmi'
+	icon_state = "transOverlay"
+	alpha = 135
+	timetouse = 30
+
+/obj/structure/ladder/unbreakable/transition/update_icon_state()
+	if(up && down)
+		icon_state = "transOverlay"
+
+	else if(up)
+		icon_state = "transOverlay"
+
+	else if(down)
+		icon_state = "transOverlay"
+
+	else
+		icon_state = "transOverlay"
+
+/obj/structure/ladder/unbreakable/transition/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
+	return
+
+/obj/structure/ladder/unbreakable/transition/attack_paw(mob/user)
+	return
+
+/obj/structure/ladder/unbreakable/transition/attackby(obj/item/W, mob/user, params)
+	return
+
+/obj/structure/ladder/unbreakable/transition/attack_robot(mob/living/silicon/robot/R)
+	if(R.Adjacent(src))
+		return
+
+/obj/structure/ladder/unbreakable/transition/show_fluff_message(going_up, mob/user)
+	if(going_up)
+		user.visible_message("[user] walks up to [src].","<span class='notice'>You walk up to [src].</span>")
+	else
+		user.visible_message("[user] walks down to [src].","<span class='notice'>You walk down to [src].</span>")
+
+/obj/structure/ladder/unbreakable/transition/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
+	if(!is_ghost)
+		if(in_use)
+			return
+		in_use = TRUE
+		user.visible_message("[user] begins to walk [going_up ? "up to" : "down to"] [src].", "<span class='notice'>You begin to walk [going_up ? "up to" : "down to"] [src].</span>")
+		if(!do_after(user, timetouse, target = src))
+			in_use = FALSE
+			return
+		in_use = FALSE
+		show_fluff_message(going_up, user)
+		ladder.add_fingerprint(user)
+
+	var/turf/T = get_turf(ladder)
+	var/atom/movable/AM
+	if(user.pulling)
+		AM = user.pulling
+		AM.forceMove(T)
+	user.forceMove(T)
+	if(AM)
+		user.start_pulling(AM)
+
+/obj/structure/ladder/unbreakable/transition/Cross(atom/movable/AM)
+	use(AM)

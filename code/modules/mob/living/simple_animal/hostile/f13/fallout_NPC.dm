@@ -241,14 +241,14 @@
 
 /mob/living/simple_animal/hostile/bs
 	name = "BS"
-	desc = "the brotherhood never fails."
+	desc = "The brotherhood never fails."
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight"
 	icon_gib = "bs_knight"
 	speak_chance = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	faction = list(FACTION_BROTHERHOOD)
+	faction = list("BOS")
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -267,7 +267,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("bs", "city", "vault")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -331,7 +330,7 @@
 
 /mob/living/simple_animal/hostile/ncr
 	name = "NCR"
-	desc = "Just an NCR."
+	desc = "For the Republic!"
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper"
@@ -357,7 +356,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("ncr", "city", "followers", "vault")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -378,7 +376,7 @@
 
 /mob/living/simple_animal/hostile/ncr/trooper
 	name = "NCR Trooper"
-	desc = "Just a NCR Trooper"
+	desc = "A standard NCR Trooper wielding a service rifle and equipped with a patrol vest."
 	icon_state = "ncr_trooper"
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper"
@@ -394,7 +392,7 @@
 
 /mob/living/simple_animal/hostile/ncr/sergeant
 	name = "NCR Sergeant"
-	desc = "Just a NCR Sergeant"
+	desc = "A Sergeant of the NCRA, wielding a heavy service rifle and equipped with a reinforced patrol vest."
 	icon_state = "ncr_sergeant"
 	icon_living = "ncr_sergeant"
 	icon_dead = "ncr_sergeant"
@@ -423,12 +421,12 @@
 
 /mob/living/simple_animal/hostile/legion
 	name = "Legion"
-	desc = "Just a Legion"
+	desc = "True to Caesar."
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
 	icon_dead = "legion_prime"
 	icon_gib = "legion_prime"
-	faction = list("legion")
+	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	speak_chance = 0
 	turns_per_move = 5
@@ -449,7 +447,6 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/legion)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list("hostile")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -470,7 +467,7 @@
 
 /mob/living/simple_animal/hostile/legion/prime
 	name = "Legion Prime"
-	desc = "Just a Legion Prime"
+	desc = "A Prime Legionary, equipped with a hunting rifle."
 	icon_state = "legion_prime"
 	icon_living = "legion_prime"
 	icon_dead = "legion_prime"
@@ -485,8 +482,8 @@
 	casingtype = /obj/item/ammo_casing/a762
 
 /mob/living/simple_animal/hostile/legion/decan
-	name = "Legion Decan"
-	desc = "Just a Legion Decan"
+	name = "Legion Decanus"
+	desc = "A Prime Decanus, equipped with a hunting rifle."
 	icon_state = "legion_decan"
 	icon_living = "legion_decan"
 	icon_dead = "legion_decan"
@@ -503,7 +500,7 @@
 	casingtype = /obj/item/ammo_casing/a762
 
 /obj/effect/mob_spawn/human/corpse/legion/decan
-	name = "Legion Decan"
+	name = "Legion Decanus"
 	uniform = /obj/item/clothing/under/f13/rag
 	suit = /obj/item/clothing/suit/armor/f13/legion/vet
 	shoes = /obj/item/clothing/shoes/f13/military/leather
@@ -513,6 +510,38 @@
 	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	//back = /obj/item/weapon/storage/backpack
 
+/mob/living/simple_animal/hostile/tribe
+	name = "Wayfarer Hunter"
+	desc = "A hunter of the wayfarer tribe, wielding a glaive."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "tribal_raider"
+	icon_living = "tribal_raider"
+	icon_dead = "tribal_raider_dead"
+	icon_gib = "syndicate_gib"
+	faction = list("Tribe")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	speak_chance = 0
+	turns_per_move = 5
+	response_help_simple = "pokes"
+	response_disarm_simple = "shoves"
+	response_harm_simple = "hits"
+	speed = 1
+	stat_attack = 1
+	robust_searching = 1
+	maxHealth = 200
+	health = 200
+	harm_intent_damage = 8
+	melee_damage_lower = 50
+	melee_damage_upper = 50
+	attack_verb_simple = "attacks"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	a_intent = INTENT_HARM
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	unsuitable_atmos_damage = 15
+	status_flags = CANPUSH
+	speak = list("For our kin!", "This will be a good hunt.", "The gods look upon me today.")
+	speak_emote = list("says")
+	speak_chance = 1
 /mob/living/simple_animal/hostile/abomination
 	name = "abomination"
 	desc = "A horrible fusion of man, animal, and something entirely different. It quakes and shudders, looking to be in an immense amount of pain. Blood and other fluids ooze from various gashes and lacerations on its body, punctuated by mouths that gnash and scream."

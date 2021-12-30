@@ -55,6 +55,14 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
+	var/peaceful = FALSE //Determines if mob is actively looking to attack something, regardless if hostile by default to the target or not
+
+//These vars activate certain things on the mob depending on what it hears
+	var/attack_phrase = "" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
+	var/peace_phrase = "" //Makes the mob become peaceful (if it wasn't beforehand) upon hearing
+	var/reveal_phrase = "" //Uncamouflages the mob (if it were to become invisible via the alpha var) upon hearing
+	var/hide_phrase = "" //Camouflages the mob (Sets it to a defined alpha value, regardless if already 'hiddeb') upon hearing
+
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
 
@@ -124,15 +132,32 @@
 		face_atom(target) //Looks better if they keep looking at you when dodging
 
 /mob/living/simple_animal/hostile/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
+	if (peaceful == TRUE)
+		peaceful = FALSE
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client && user)
 		FindTarget(list(user), 1)
 	return ..()
 
 /mob/living/simple_animal/hostile/bullet_act(obj/item/projectile/P)
+	if (peaceful == TRUE)
+		peaceful = FALSE
 	if(stat == CONSCIOUS && !target && AIStatus != AI_OFF && !client)
 		if(P.firer && get_dist(src, P.firer) <= aggro_vision_range)
 			FindTarget(list(P.firer), 1)
 		Goto(P.starting, move_to_delay, 3)
+	return ..()
+
+/mob/living/simple_animal/hostile/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+	. = ..()
+	if (raw_message == attack_phrase)
+		alpha = 255
+		peaceful = FALSE
+	if (raw_message == peace_phrase)
+		peaceful = TRUE
+	if (raw_message == reveal_phrase)
+		alpha = 255
+	if (raw_message == hide_phrase)
+		alpha = 90
 	return ..()
 
 //////////////HOSTILE MOB TARGETTING AND AGGRESSION////////////
@@ -158,19 +183,20 @@
 
 /mob/living/simple_animal/hostile/proc/FindTarget(list/possible_targets, HasTargetsList = 0)//Step 2, filter down possible targets to things we actually care about
 	. = list()
-	if(!HasTargetsList)
-		possible_targets = ListTargets()
-	for(var/pos_targ in possible_targets)
-		var/atom/A = pos_targ
-		if(Found(A))//Just in case people want to override targetting
-			. = list(A)
-			break
-		if(CanAttack(A))//Can we attack it?
-			. += A
-			continue
-	var/Target = PickTarget(.)
-	GiveTarget(Target)
-	return Target //We now have a target
+	if (peaceful == FALSE)
+		if(!HasTargetsList)
+			possible_targets = ListTargets()
+		for(var/pos_targ in possible_targets)
+			var/atom/A = pos_targ
+			if(Found(A))//Just in case people want to override targetting
+				. = list(A)
+				break
+			if(CanAttack(A))//Can we attack it?
+				. += A
+				continue
+		var/Target = PickTarget(.)
+		GiveTarget(Target)
+		return Target //We now have a target
 
 
 
@@ -289,6 +315,9 @@
 
 /mob/living/simple_animal/hostile/proc/MoveToTarget(list/possible_targets)//Step 5, handle movement between us and our target
 	stop_automated_movement = 1
+	if (peaceful == TRUE)
+		LoseTarget()
+		return 0
 	if(!target || !CanAttack(target))
 		LoseTarget()
 		return 0
