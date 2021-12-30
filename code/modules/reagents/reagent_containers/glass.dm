@@ -428,6 +428,11 @@
 	spillable = TRUE
 	var/obj/item/grinded
 	var/mortar_mode = MORTAR_JUICE
+	var/blacklistchems = list(
+		/obj/item/reagent_containers/pill/patch/turbo,
+		/obj/item/reagent_containers/pill/buffout,
+		/obj/item/reagent_containers/pill/patch/jet,
+	)
 
 /obj/item/reagent_containers/glass/mortar/examine(mob/user)
 	. = ..()
@@ -445,6 +450,8 @@
 		to_chat(user, "<span class='notice'>You decide to hold [src] differently to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"].</span>")
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
+	if (is_type_in_list(I, blacklistchems))
+		return
 	..()
 	if(istype(I,/obj/item/pestle))
 		if(grinded)
