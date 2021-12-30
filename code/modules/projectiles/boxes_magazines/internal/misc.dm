@@ -10,6 +10,12 @@
 	caliber = "gatling"
 	max_ammo = 5000
 
+/obj/item/ammo_box/magazine/internal/minigunbal
+	name = "minigun ammo pack"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 2500
+
 //Basic Bow Ammo
 /obj/item/ammo_box/magazine/internal/tribalbow
 	name = "bow internal magazine"
