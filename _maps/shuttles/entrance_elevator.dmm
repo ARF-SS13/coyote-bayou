@@ -3,18 +3,23 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
-/obj/structure/window/plasma/reinforced,
 /obj/machinery/light/floor,
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing{
+	dir = 10;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "d" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/structure/window/plasma/reinforced,
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "f" = (
 /obj/effect/turf_decal/stripes/line{
@@ -23,65 +28,61 @@
 /obj/effect/turf_decal/caution{
 	dir = 4
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "h" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/shuttle/entrance_elevator)
-"j" = (
-/obj/machinery/computer/shuttle/bosentryelevator{
-	dir = 4
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/shuttle/entrance_elevator)
 "t" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/window/plasma/reinforced{
+/obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "A" = (
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "D" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
 /obj/machinery/light/floor,
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "G" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
 /obj/machinery/light/floor,
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing{
+	dir = 9;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "K" = (
 /obj/effect/turf_decal/caution{
@@ -90,19 +91,26 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/fluff/railing{
+	density = 0;
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "M" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/structure/window/plasma/reinforced,
 /obj/machinery/light/floor,
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing{
+	dir = 6;
+	layer = 4.1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "Q" = (
 /obj/effect/turf_decal/stripes/line{
@@ -111,17 +119,39 @@
 /obj/effect/turf_decal/caution{
 	dir = 8
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/fluff/railing{
+	density = 0;
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "R" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/machinery/computer/shuttle/bosentryelevator{
+	dir = 4
+	},
+/obj/structure/fluff/railing{
+	density = 0;
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
+/area/shuttle/entrance_elevator)
+"T" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 "W" = (
 /obj/docking_port/mobile/elevator{
@@ -139,9 +169,17 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/structure/lattice,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
+/area/shuttle/entrance_elevator)
+"Y" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/railing/corner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating"
+	},
 /area/shuttle/entrance_elevator)
 
 (1,1,1) = {"
@@ -154,16 +192,16 @@ a
 (2,1,1) = {"
 t
 A
-j
+A
 A
 d
 "}
 (3,1,1) = {"
-t
+T
 A
 A
 A
-d
+Y
 "}
 (4,1,1) = {"
 D
