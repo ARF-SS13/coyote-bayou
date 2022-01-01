@@ -147,5 +147,48 @@
 	inverse = TRUE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
 
-/obj/item/radio/intercom/kebob
+/obj/item/radio/intercom/retro
+	name = "vintage intercom"
+	icon_state = "intercom_retro"
+	
+/obj/item/radio/intercom/retro/process()
+	if(((world.timeofday - last_tick) > 30) || ((world.timeofday - last_tick) < 0))
+		last_tick = world.timeofday
+
+		var/area/A = get_area(src)
+		if(!A || emped)
+			on = FALSE
+		else
+			on = A.powered(EQUIP) // set "on" to the power status
+
+		if(!on)
+			icon_state = "intercom_retro_on"
+		else
+			icon_state = initial(icon_state)
+
+/obj/item/radio/intercom/retro/kebob
 	name = "Oasis intercom"
+	frequency = FREQ_TOWN
+	freqlock = FALSE
+	
+/obj/item/radio/intercom/retro/kebob/mayor
+	name = "Mayor's intercom"
+	use_command = TRUE
+	command = TRUE
+
+	
+/obj/item/radio/intercom/retro/foa
+	name = "Clinic intercom"
+	frequency = FREQ_MEDICAL
+	freqlock = FALSE
+	
+/obj/item/radio/intercom/retro/pirate
+	name = "Pirate Radio Broadcaster"
+	desc = "A radio that has been hacked to send and recieve from any frequency."
+	freerange = TRUE
+	canhear_range = 1 
+
+/obj/item/radio/intercom/retro/bear
+	name = "NCR intercom"
+	frequency = FREQ_NCR
+	freqlock = FALSE
