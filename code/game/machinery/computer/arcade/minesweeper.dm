@@ -256,7 +256,7 @@
 						new /obj/item/sbeacondrop/bomb(loc)
 					if(2)
 						itemname = "a rocket launcher"
-						new /obj/item/gun/ballistic/rocketlauncher/unrestricted(loc)
+						new /obj/item/gun/ballistic/rocketlauncher(loc)
 						new /obj/item/ammo_casing/caseless/rocket(loc)
 						new /obj/item/ammo_casing/caseless/rocket(loc)
 						new /obj/item/ammo_casing/caseless/rocket(loc)

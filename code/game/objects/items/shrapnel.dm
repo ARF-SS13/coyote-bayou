@@ -39,7 +39,25 @@
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	sharpness = SHARP_EDGED
-	wound_bonus = 40
+	wound_bonus = 50
+
+/obj/item/projectile/bullet/shrapnel/plasma // plasma grenades
+	name = "plasma split"
+	embedding = list(embed_chance=0, ignore_throwspeed_threshold=FALSE, fall_chance=0, embed_chance_turf_mod=0)
+	custom_materials = list(/datum/material/iron=50)
+	damage = 35
+	armour_penetration = 0.8
+	damage_type = BURN
+	range = 30
+	dismemberment = 0
+	ricochets_max = 0
+	ricochet_chance = 0
+	shrapnel_type = /obj/item/shrapnel
+	ricochet_incidence_leeway = 0
+	sharpness = SHARP_EDGED
+	wound_bonus = 60
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "plasma1"
 
 /obj/item/projectile/bullet/shrapnel/mega
 	name = "flying shrapnel hunk"

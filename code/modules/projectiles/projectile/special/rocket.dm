@@ -12,10 +12,8 @@
 	name ="\improper HEDP rocket"
 	desc = "USE A WEEL GUN"
 	icon_state= "84mm-hedp"
-	damage = 80
+	damage = 0
 	var/anti_armour_damage = 200
-	armour_penetration = 1
-	dismemberment = 100
 	ricochets_max = 0
 
 /obj/item/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
@@ -30,8 +28,62 @@
 		S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
 	return BULLET_ACT_HIT
 
+/obj/item/projectile/bullet/a84mm_incend
+	name ="\improper incendiary missile"
+	desc = "Fwoosh."
+	icon_state = "missile" //temp until sprites
+	ricochets_max = 0
+	damage = 15
+	var/fire_stacks = 8
+	damage_type = BURN
+
+/obj/item/projectile/bullet/a84mm_incend/on_hit(atom/target, blocked=0)
+	..()
+	explosion(target, -1, -1, -1, -1, 4, flame_range = 5)
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		C.adjustFireLoss(20)
+	for(var/mob/living/carbon/C in view(5,target))
+		if(istype(C))
+			C.adjust_fire_stacks(fire_stacks)
+			C.IgniteMob()
+			to_chat(C, "<span class='userdanger'>The incendiary rocket sets you ablaze!</span>")
+			C.emote("scream")
+	return BULLET_ACT_HIT
+
+/obj/item/projectile/bullet/a84mm_incend/Move()
+	. = ..()
+	var/turf/location = get_turf(src)
+	if(location)
+		new /obj/effect/hotspot(location)
+		location.hotspot_expose(700, 50, 1)
+
+/obj/item/projectile/bullet/a84mm_chem
+	name ="\improper chemical payload missile"
+	desc = "Rocket propelled chemical warfare."
+	icon_state = "missile"
+	ricochets_max = 0 //it's a MISSILE
+	damage = 0
+
+/obj/item/projectile/bullet/a84mm_chem/Initialize()
+	. = ..()
+	create_reagents(120, NO_REAGENTS_VALUE)
+	reagents.add_reagent(/datum/reagent/toxin/anacea, 30)
+	reagents.add_reagent(/datum/reagent/toxin/amatoxin, 30)
+	reagents.add_reagent(/datum/reagent/toxin/cyanide, 30)
+	reagents.add_reagent(/datum/reagent/toxin/bungotoxin, 30)
+
+/obj/item/projectile/bullet/a84mm_chem/on_hit(atom/target, blocked=0)
+	var/turf/T = get_turf(target)
+	if(T)
+		var/datum/effect_system/smoke_spread/chem/smoke = new()
+		smoke.set_up(reagents, 5, T)
+		smoke.start()
+	..(target, blocked)
+	return BULLET_ACT_HIT
+
 /obj/item/projectile/bullet/a84mm_he
-	name ="\improper HE missile"
+	name ="\improper low yield HE missile"
 	desc = "Boom."
 	icon_state = "missile"
 	damage = 30
@@ -43,6 +95,23 @@
 		explosion(target, 0, 1, 2, 4)
 	else
 		explosion(target, 0, 0, 2, 4)
+	new /obj/effect/temp_visual/explosion(get_turf(target))
+	return BULLET_ACT_HIT
+
+/obj/item/projectile/bullet/a84mm_he_big
+	name ="\improper high yield HE missile"
+	desc = "Boom plus."
+	icon_state = "missile"
+	damage = 45
+	ricochets_max = 0 //it's a MISSILE
+
+/obj/item/projectile/bullet/a84mm_he_big/on_hit(atom/target, blocked=0)
+	..()
+	if(!isliving(target)) //if the target isn't alive, so is a wall or something
+		explosion(target, 0, 3, 5, 5)
+	else
+		explosion(target, 0, 3, 5, 5)
+	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/a84mm_br

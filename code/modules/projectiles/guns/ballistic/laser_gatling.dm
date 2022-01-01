@@ -105,7 +105,7 @@
 	custom_materials = null
 	burst_size = 5
 	burst_shot_delay = 1
-	//automatic = 0
+	ranged_attack_speed = CLICK_CD_RAPID
 	fire_delay = 1
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/weapons/laser.ogg'
