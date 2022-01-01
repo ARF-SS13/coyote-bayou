@@ -556,6 +556,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 //weapon parts
+/*
 /datum/design/fluxcap
 	name = "Flux capacitator"
 	desc = "An advanced weapons part."
@@ -615,3 +616,4 @@
 	build_path = /obj/item/advanced_crafting_components/alloys
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+*/
