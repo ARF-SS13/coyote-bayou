@@ -8,6 +8,7 @@
 	idle_power_usage = 40
 	circuit = /obj/item/circuitboard/machine/biogenerator
 	var/processing = FALSE
+	tooadvanced = TRUE
 	var/obj/item/reagent_containers/glass/beaker = null
 	var/points = 0
 	var/efficiency = 0
@@ -259,6 +260,9 @@
 	)
 
 /obj/machinery/biogenerator/ui_interact(mob/user, datum/tgui/ui)
+	if(tooadvanced == TRUE && HAS_TRAIT(user, TRAIT_TECHNOPHOBE))
+		to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "Biogenerator", name)

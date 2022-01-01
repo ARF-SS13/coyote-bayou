@@ -26,6 +26,7 @@
 	var/obj/item/seeds/myseed = null	//The currently planted seed
 	var/rating = 1
 	var/unwrenchable = TRUE
+	tooadvanced = TRUE
 	var/recent_bee_visit = FALSE //Have we been visited by a bee recently, so bees dont overpollinate one plant
 	var/mob/lastuser //Last user to add reagents to a tray. Mostly for logging.
 	var/self_sustaining = FALSE //If the tray generates nutrients and water on its own
@@ -73,6 +74,9 @@
 		if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
 			return
 		if(default_deconstruction_crowbar(I))
+			return
+		if(tooadvanced == TRUE && HAS_TRAIT(user, TRAIT_TECHNOPHOBE))
+			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
 			return
 
 	return ..()

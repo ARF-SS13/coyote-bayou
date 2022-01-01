@@ -22,7 +22,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	var/tooadvanced = TRUE //Prevents people with Technophobe from using the lathe unless set to false.
+	tooadvanced = TRUE //Prevents people with Technophobe from using the lathe unless set to false.
 	var/busy = FALSE
 	var/prod_coeff = 1
 
@@ -479,7 +479,7 @@
 	name = "Workshop"
 	desc = "Contains an array of custom made and skilled tools for professional craftsmen."
 	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
-	super_advanced_technology = FALSE
+	super_advanced_technology = TRUE
 	resistance_flags = NONE
 	var/constage = 0 //construction stage for upgrading into a regular lathe
 	//DRM = 1
@@ -586,7 +586,7 @@
 	var/basic = 0
 	var/intermediate = 0
 	var/advanced = 0
-	tooadvanced = FALSE //technophobes will still need to be able to make ammo
+	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	..()
 	if(!simple && panel_open)

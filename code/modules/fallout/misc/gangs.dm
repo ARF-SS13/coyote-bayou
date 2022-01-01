@@ -13,7 +13,8 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 
 //Which social factions are allowed to join gangs?
 GLOBAL_LIST_INIT(allowed_gang_factions, list ( \
-"Raiders", \
+"Raiders",
+"Tribal", \
 ))
 
 // List of all existing gangs

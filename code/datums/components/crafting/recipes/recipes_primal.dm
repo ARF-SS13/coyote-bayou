@@ -177,6 +177,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
@@ -187,6 +188,7 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/bonebow
 	name = "Deathclaw Bow"
@@ -197,6 +199,7 @@
 				/obj/item/stack/sheet/sinew = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/tribe_bow
 	name = "Short Bow"
@@ -205,6 +208,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
@@ -259,6 +263,7 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 //MELEE
 
@@ -269,6 +274,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/boneaxe
 	name = "Bone Axe"
@@ -277,15 +283,17 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/warclub
-	name = "Carve Wooden Warclub"
+	name = "Wooden Warclub"
 	result = /obj/item/melee/onehanded/club/warclub
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
@@ -294,6 +302,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/leather = 1)
+	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/spearquiver
@@ -303,6 +312,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
 	category = CAT_TRIBAL
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
@@ -312,6 +322,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_FORGE)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/heavytribe
 	name = "Heavy Tribal Plates"
@@ -321,6 +332,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_FORGE)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/goliathcloak
 	name = "Deathclaw cloak"
@@ -331,6 +343,7 @@
 				/obj/item/stack/sheet/animalhide/deathclaw = 4)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
@@ -341,6 +354,41 @@
 				/obj/item/stack/sheet/cloth = 4)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribalwar/deathclawspear
+	name = "Deathclaw Spear"
+	result = /obj/item/twohanded/spear/bonespear/deathclaw
+	time = 240
+	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/bone = 8,
+				/obj/item/stack/sheet/mineral/wood = 10)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribalwar/lightcloak
+	name = "Light Armored Cloak"
+	result = /obj/item/clothing/suit/armor/f13/lightcloak
+	time = 120
+	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
+				/obj/item/stack/sheet/leather = 6,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/cloth = 5)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_availible = FALSE
+
+/datum/crafting_recipe/tribalwar/legendaryclawcloak
+	name = "Legendary Deathclaw Cloak"
+	result = /obj/item/clothing/suit/hooded/cloak/hhunter
+	time = 300
+	reqs = list(/obj/item/melee/unarmed/deathclawgauntlet = 1,
+				/obj/item/stack/sheet/animalhide/chitin = 10,
+				/obj/item/stack/sheet/cloth = 5,
+				/obj/item/stack/sheet/sinew = 10,
+				/obj/item/stack/crafting/goodparts= 3)
 
 /datum/crafting_recipe/tribalradio
 	name = "Primitive Radio"

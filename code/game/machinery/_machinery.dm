@@ -127,7 +127,7 @@ Class Procs:
 	var/ui_y
 	var/init_process = TRUE //Stop processing from starting on init
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
-
+	var/tooadvanced = FALSE
 	var/fair_market_price = 69
 	var/market_verb = "Customer"
 	var/payment_department = ACCOUNT_ENG

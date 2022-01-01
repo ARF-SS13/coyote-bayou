@@ -169,6 +169,8 @@
 	item_state = "tribal_outcast"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	armor = list("melee" = 30, "bullet" = 20, "laser" = 15, "energy" = 10, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 0)
+	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
+	)
 
 /obj/item/clothing/suit/hooded/outcast
 	name = "patched heavy leather cloak"

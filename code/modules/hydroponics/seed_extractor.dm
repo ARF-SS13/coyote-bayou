@@ -63,6 +63,7 @@
 	circuit = /obj/item/circuitboard/machine/seed_extractor
 	/// Associated list of seeds, they are all weak refs.  We check the len to see how many refs we have for each
 	// seed
+	tooadvanced = TRUE
 	var/list/piles = list()
 	var/max_seeds = 1000
 	var/seed_multiplier = 1
@@ -165,10 +166,14 @@
 	return GLOB.notcontained_state
 
 /obj/machinery/seed_extractor/ui_interact(mob/user, datum/tgui/ui)
+	if(tooadvanced == TRUE && HAS_TRAIT(user, TRAIT_TECHNOPHOBE))
+		to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "SeedExtractor", name)
 		ui.open()
+
 
 /obj/machinery/seed_extractor/ui_data()
 	var/list/V = list()

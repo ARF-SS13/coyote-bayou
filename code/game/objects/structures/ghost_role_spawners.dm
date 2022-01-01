@@ -860,7 +860,7 @@
 	if(A)
 		notify_ghosts("A small gang of raiders are arriving at \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_RAIDER, ignore_dnr_observers = FALSE)
 
-/obj/effect/mob_spawn/human/fallout13/tribal
+/*/obj/effect/mob_spawn/human/fallout13/tribal
 	name = "Spear Hunter Spawn"
 	desc = "An entry point for spear hunters to join a battle."
 	faction = "Tribe"
@@ -895,3 +895,5 @@
 
 /obj/effect/mob_spawn/human/fallout13/tribal/special(mob/living/new_spawn)
 	new_spawn.real_name = random_unique_name(gender)
+*/
+//We already have new tribals, no need to have duplicates.

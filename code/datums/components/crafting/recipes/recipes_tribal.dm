@@ -17,6 +17,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/bracers
 	name = "Bone Bracers"
@@ -24,6 +25,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
+	always_availible = FALSE
 
 //WEAPONS//
 
@@ -32,6 +34,7 @@
 	result = /obj/item/gun/syringe/blowgun
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/bamboo = 10)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribalwar/bone_bow
 	name = "Bone Bow"
@@ -66,6 +69,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
+	always_availible = FALSE
 
 /datum/crafting_recipe/tribal/bonebag
 	name = "Tribal Satchel"
@@ -73,6 +77,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 3,
 				/obj/item/stack/sheet/sinew = 2)
+	always_availible = FALSE
 
 /*
 /datum/crafting_recipe/headpike
@@ -118,12 +123,14 @@
 	reqs = list(/obj/item/stack/sheet/bone = 1)
 	tools = list(TOOL_WORKBENCH)
 
-/datum/crafting_recipe/tribal/maletribal
-	name = "Coarse Tribal outfit"
-	result = /obj/item/clothing/under/f13/tribal
-	reqs = list(/obj/item/stack/sheet/cloth = 3)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
+//Gecko outfits already exist, see below.
+/*datum/crafting_recipe/tribal/maletribal
+	//name = "Coarse Tribal outfit"
+	//result = /obj/item/clothing/under/f13/tribal
+	//reqs = list(/obj/item/stack/sheet/cloth = 3)
+	//tools = list(TOOL_WORKBENCH)
+	//time = 30
+*/
 
 /datum/crafting_recipe/tribal/tribaloutfit
 	name = "Male Tribal Outfit"
@@ -139,7 +146,32 @@
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribal/tribalarmoredcloth
+	name = "Patched Tribal Loincloth"
+	result = /obj/item/clothing/under/f13/wayfarer/hunter
+	time = 20
+	reqs = list(/obj/item/stack/sheet/cloth = 3,
+				/obj/item/stack/sheet/leather = 1)
+	tools = list (TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribal/tribalcloth
+	name = "Tribal Loincloth"
+	result = /obj/item/clothing/under/f13/wayfarer
+	time = 15
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/warpaint
+	name = "Body Paint"
+	result = /obj/item/warpaint_bowl
+	time = 30
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2,
+				/obj/item/stack/ore/glass = 1,
+				/obj/item/pestle = 1,
+				/obj/item/reagent_containers/glass/mortar = 1)
+	category = CAT_TRIBAL
+	always_availible = FALSE
+	
 /*
 /datum/crafting_recipe/warmace
 	name = "Carve Wooden Warmace"

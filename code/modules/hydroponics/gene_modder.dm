@@ -22,6 +22,7 @@
 	var/max_endurance = 10 // IMPT: ALSO AFFECTS LIFESPAN
 	var/min_wchance = 67
 	var/min_wrate = 10
+	tooadvanced = TRUE
 
 /obj/machinery/plantgenes/RefreshParts() // Comments represent the max you can set per tier, respectively. seeds.dm [219] clamps these for us but we don't want to mislead the viewer.
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
@@ -103,6 +104,9 @@
 /obj/machinery/plantgenes/ui_interact(mob/user)
 	. = ..()
 	if(!user)
+		return
+	if(tooadvanced == TRUE && HAS_TRAIT(user, TRAIT_TECHNOPHOBE))
+		to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
 		return
 
 	var/datum/browser/popup = new(user, "plantdna", "Plant DNA Manipulator", 450, 600)
