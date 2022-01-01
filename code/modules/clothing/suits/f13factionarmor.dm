@@ -267,11 +267,29 @@
 	item_state = "legion_palacent"
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/legion/legionsalvaged
+	name = "legion heavy armor"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi' // Inconsistent naming, clean all of the sprites and code up sometime
+	desc = "(VI) It's a set of standard legion armor strengthened using numerous parts taken from a suit of power armor, still retaining great mobility with added protection."
+	icon_state = "legion_palacent"
+	item_state = "legion_palacent"
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/legion/rangercent
 	name = "ranger-hunter centurion armor"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	desc = "(V) Centurions who have led many patrols and ambushes against NCR Rangers have a distinct look from the many looted pieces of Ranger armor, and are often experienced in skirmishing."
+	icon_state = "legion_rangercent"
+	item_state = "legion_rangercent"
+	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/legionriot
+	name = "legion riot armor"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	desc = "(V) It's a set of standard legion armor strengthened using numerous parts taken from a set of riot armor, still retaining great mobility with added protection."
 	icon_state = "legion_rangercent"
 	item_state = "legion_rangercent"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
