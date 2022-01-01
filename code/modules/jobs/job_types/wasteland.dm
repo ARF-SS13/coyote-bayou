@@ -215,11 +215,13 @@ Great Khan
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = FACTION_WASTELAND
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 8
+	spawn_positions = 8
 	description = "You are no common raider or tribal settler, for you are a Great Khan. Your ancestry is that of fierce warriors and noble chieftans, whose rites and sagas tell of blood soaked battlefields and great sacrifice for your tribe. At least, this was once the case: after the massacre at Bitter Springs by the NCR, your people have lost much of their strength - now you and many other Khans travel west of Vegas through Red Rock Canyon in the hopes of settling in the region of Yuma."
 	supervisors = "your gang leadership"
 	selection_color = "#ff915e"
+	exp_requirements = 1000
+	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
 
@@ -228,7 +230,7 @@ Great Khan
 
 	loadout_options = list(
 		/datum/outfit/loadout/enforcer,
-		/datum/outfit/loadout/brawler,
+		/datum/outfit/loadout/skirmisher2,
 		)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -292,14 +294,15 @@ Great Khan
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/buck=1, \
 		/obj/item/ammo_box/shotgun/bean=1, \
-		/obj/item/restraints/handcuffs=2)
+		/obj/item/restraints/legcuffs/bola/tactical=1)
 
-/datum/outfit/loadout/brawler
-	name = "Brawler"
-	suit_store = /obj/item/twohanded/sledgehammer
+/datum/outfit/loadout/skirmisher2
+	name = "Skirmisher"
+	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	gloves = /obj/item/melee/unarmed/brass/spiked
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healpoultice=2)
+		/obj/item/ammo_box/magazine/uzim9mm=3)
+
 
 /*
 Raider
