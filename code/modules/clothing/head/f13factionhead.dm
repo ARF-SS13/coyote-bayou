@@ -351,8 +351,8 @@
 /obj/item/clothing/head/helmet/f13/legion/legionriothelmet
 	name = "legion riot helmet"
 	desc = "(V) A pre-war riot helmet, repurposed and painted in the colors of Caesar's Legion."
-	icon_state = "legion-rangercent"
-	item_state = "legion-rangercent"
+	icon_state = "legion-riot"
+	item_state = "legion-riot"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
@@ -367,8 +367,8 @@
 /obj/item/clothing/head/helmet/f13/legion/legionsalvagedhelmet
 	name = "legion heavy helmet"
 	desc = "(VII) A once-operational power armor helmet, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally."
-	icon_state = "legion-palacent"
-	item_state = "legion-palacent"
+	icon_state = "legion-heavy"
+	item_state = "legion-heavy"
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
