@@ -230,7 +230,7 @@ Great Khan
 
 	loadout_options = list(
 		/datum/outfit/loadout/enforcer,
-		/datum/outfit/loadout/skirmisher2,
+		/datum/outfit/loadout/khanskirmisher,
 		)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -296,12 +296,11 @@ Great Khan
 		/obj/item/ammo_box/shotgun/bean=1, \
 		/obj/item/restraints/legcuffs/bola/tactical=1)
 
-/datum/outfit/loadout/skirmisher2
+/datum/outfit/loadout/khanskirmisher
 	name = "Skirmisher"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	gloves = /obj/item/melee/unarmed/brass/spiked
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm=3)
+	backpack_contents = list(/obj/item/ammo_box/magazine/uzim9mm=3)
 
 
 /*
@@ -1424,7 +1423,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/spearman
 	name = "Spearman"
 	suit = /obj/item/clothing/suit/armored/light/tribalraider
-	head = /obj/item/clothing/head/helmet/f13/fiend 
+	head = /obj/item/clothing/head/helmet/f13/fiend
 	mask = /obj/item/clothing/mask/facewrap
 	neck = /obj/item/clothing/neck/mantle/gray
 	backpack_contents = list(
@@ -1491,6 +1490,6 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal/bonebag,
 		/datum/crafting_recipe/tribalwar/spearquiver
 	)
- 
+
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)
