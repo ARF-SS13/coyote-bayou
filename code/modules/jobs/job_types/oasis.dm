@@ -273,26 +273,26 @@ Mayor
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+	belt = /obj/item/storage/belt/security
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/melee/onehanded/knife/hunting
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/storage/belt/holster = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
 
 /datum/outfit/loadout/frontierjustice
 	name = "Frontier Justice"
 	suit = /obj/item/clothing/suit/armor/f13/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
+	neck =	/obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	belt = /obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/ammo_box/tube/m44 = 2,
 		/obj/item/ammo_box/m44 = 2,
+		/obj/item/gun/ballistic/revolver/m29 = 1,
 		)
 
 /datum/outfit/loadout/police
@@ -300,14 +300,15 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	head = /obj/item/clothing/head/f13/police/officer
+	neck = /obj/item/storage/belt/holster/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
-	belt = /obj/item/gun/ballistic/revolver/police
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/flashlight/seclite = 1,
+		/obj/item/gun/ballistic/revolver/police = 1,
 		)
 
 /datum/outfit/loadout/swat
@@ -315,11 +316,14 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/swat
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	head = /obj/item/clothing/head/helmet
+	neck = /obj/item/storage/belt/holster/legholster
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/policerifle
-	belt = /obj/item/melee/onehanded/knife/switchblade
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /datum/gear/shoes/military
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
+		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/flashlight/seclite = 1,
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
