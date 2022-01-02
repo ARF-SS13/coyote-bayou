@@ -784,10 +784,13 @@
 	icon_state = "sheriffhat"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/f13/town/commissioner
-	name = "commissioner's hat"
+/obj/item/clothing/head/f13/town/chief
+	name = "OPD Chief's hat"
 	desc = "(V*) A blue hat with a silver badge"
-	icon_state = "policehelm"
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
 	armor = list("tier" = 5, "linebullet" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/f13/det_hat_alt
@@ -993,7 +996,7 @@ obj/item/clothing/head/f13/army/beret
 //Police and State Police
 
 /obj/item/clothing/head/f13/police/officer
-	name = "Police Officer's cap"
+	name = "police officer's cap"
 	desc = "(II) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -1002,7 +1005,7 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/sergeant
-	name = "Police campaign hat"
+	name = "police campaign hat"
 	desc = "(II) A simple dark navy campaign hat, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -1011,7 +1014,7 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/lieutenant
-	name = "Police Lieutenant's cap"
+	name = "police lieutenant's cap"
 	desc = "(II) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -1020,13 +1023,22 @@ obj/item/clothing/head/f13/army/beret
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/f13/police/chief
-	name = "Police Chief's cap"
+	name = "police chief's cap"
 	desc = "(III) A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "police_chief"
 	item_state = "police_chief"
 	armor = list("tier" = 3, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/head/f13/police/trooper
+	name = "state police campaign hat"
+	desc = "(II) A gray campaign hat, worn by the State Police."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

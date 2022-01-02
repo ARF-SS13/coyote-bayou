@@ -164,7 +164,7 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/dacommissioner,
+	/datum/outfit/loadout/thechief,
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -212,12 +212,12 @@ Mayor
 		/obj/item/ammo_box/m44 = 2,
 		)
 
-/datum/outfit/loadout/dacommissioner
-	name = "The Commissioner"
-	uniform = /obj/item/clothing/under/f13/detectivealt
-	suit = /obj/item/clothing/suit/armor/f13/town/commissioner
-	head = /obj/item/clothing/head/f13/town/commissioner
-	shoes = /obj/item/clothing/shoes/combat
+/datum/outfit/loadout/thechief
+	name = "The Chief"
+	uniform = /obj/item/clothing/under/f13/police/formal
+	suit = /obj/item/clothing/suit/armor/f13/town/chief
+	head = /obj/item/clothing/head/f13/town/chief
+	shoes = /obj/item/clothing/shoes/jackboots
 	r_hand = /obj/item/gun/energy/laser/aer9
 	belt = /obj/item/gun/ballistic/automatic/pistol/sig/commissioner
 	backpack_contents = list(

@@ -834,7 +834,7 @@
 //Police and State Police
 
 /obj/item/clothing/under/f13/police/officer
-	name = "Police Officer's uniform"
+	name = "police officer's uniform"
 	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -842,7 +842,7 @@
 	item_state = "police_officer"
 
 /obj/item/clothing/under/f13/police/lieutenant
-	name = "Police Lieutenant's uniform"
+	name = "police lieutenant's uniform"
 	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -850,7 +850,7 @@
 	item_state = "police_lieutenant"
 
 /obj/item/clothing/under/f13/police/chief
-	name = "Police Chief's uniform"
+	name = "police chief's uniform"
 	desc = "A classic law enforcement uniform, composed of a dark navy long sleeve shirt, dark navy pants, and a black tie."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -858,7 +858,7 @@
 	item_state = "police_chief"
 
 /obj/item/clothing/under/f13/police/formal
-	name = "Police formal uniform"
+	name = "police formal uniform"
 	desc = "A formal police uniform."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -866,7 +866,7 @@
 	item_state = "police_formal"
 
 /obj/item/clothing/under/f13/police/trooper
-	name = "State Police uniform"
+	name = "state police uniform"
 	desc = "The uniform of the State Police force, composed of a a gray long sleeve shirt, gray pants, and a black tie."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -876,7 +876,7 @@
 //get a custom swat sprite at some point
 
 /obj/item/clothing/under/f13/police/swat
-	name = "SWAT Officer uniform"
+	name = "SWAT officer uniform"
 	desc = "A US Army combat uniform, modified for SWAT team personnel."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
