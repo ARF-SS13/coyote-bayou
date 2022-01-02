@@ -239,8 +239,8 @@
 	name = "\improper AEP7 laser pistol"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light."
 	slowdown = 0.2
-	icon_state = "AEP5CR"
-	icon_state = "AEP5CR"
+	icon_state = "AEP7"
+	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
 	slot_flags = ITEM_SLOT_BELT
@@ -259,8 +259,8 @@
 	name = "AEP5-CR"
 	desc = "A laser pistol that has been modified for less-than-lethal work."
 	slowdown = 0.2
-	icon_state = "AEP7"
-	item_state = "laser-pistol"
+	icon_state = "AEP5CR"
+	icon_state = "AEP5CR"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BELT

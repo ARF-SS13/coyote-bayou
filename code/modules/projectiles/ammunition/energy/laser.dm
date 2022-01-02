@@ -141,6 +141,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/stun  //compliance regulator
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/stun
 	e_cost = 100
+	harmful = FALSE
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz
