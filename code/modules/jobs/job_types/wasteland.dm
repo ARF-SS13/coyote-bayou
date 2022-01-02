@@ -358,7 +358,8 @@ Raider
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion,
-	/datum/outfit/loadout/raider_tribal,
+	/datum/outfit/loadout/quack_doctor,
+	/datum/outfit/loadout/raider_mobster,
 	)
 
 
@@ -615,6 +616,21 @@ Raider
 		/obj/item/melee/onehanded/knife/bone = 1,
 		)
 
+/datum/outfit/loadout/raider_mobster
+	name = "Den Mob Enforcer"
+	belt = /obj/item/storage/belt/military/assault
+	shoes = /obj/item/clothing/shoes/laceup
+	uniform = /obj/item/clothing/under/f13/densuit
+	suit = /obj/item/clothing/suit/armor/vest
+	gloves =  /obj/item/clothing/gloves/color/white
+	head = /obj/item/clothing/head/fedora 
+	mask =  /obj/item/clothing/mask/bandana/durathread
+	backpack_contents = list(
+		/obj/item/gun/ballistic/shotgun/police = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/gun/ballistic/automatic/smg/rockwell = 1,
+		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
+		)
 
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
@@ -648,7 +664,6 @@ Raider
 		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/wasteland/f13mobboss,
 		),
 		/datum/matchmaking_pref/protegee = list(
 			/datum/job/wasteland/f13wastelander,
@@ -827,13 +842,13 @@ Raider
 		/obj/item/binoculars=1,
 		/obj/item/radio=1)
 
-/datum/job/wasteland/f13enforcer
+/*/datum/job/wasteland/f13enforcer
 	title = "Den Mob Enforcer"
 	flag = F13ENFORCER
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 0
+	spawn_positions = 0
 	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
 	supervisors = "The Boss."
 	selection_color = "#ff4747"
@@ -849,7 +864,7 @@ Raider
 		/datum/outfit/loadout/hitman,
 		/datum/outfit/loadout/bodyguard,
 		)
-
+*/
 //Wasteland Preacher
 /datum/job/wasteland/f13preacher
 	title = "Preacher"
@@ -883,7 +898,6 @@ Raider
 		),
 		/datum/matchmaking_pref/patron = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/wasteland/f13mobboss,
 		),
 		/datum/matchmaking_pref/protegee = list(
 			/datum/job/wasteland/f13wastelander,
@@ -1009,7 +1023,7 @@ Raider
 		/obj/item/storage/bag/money/small/settler)
 //end preacher
 
-/datum/outfit/job/wasteland/f13enforcer
+/*/datum/outfit/job/wasteland/f13enforcer
 	name = "Den Mob Enforcer"
 	jobtype = /datum/job/wasteland/f13enforcer
 
@@ -1073,8 +1087,8 @@ Raider
 	flag = F13MOBBOSS
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
 	supervisors = "Whatever god you pray to. Sky's the limit!"
 	selection_color = "#ff4747"
@@ -1144,8 +1158,8 @@ datum/job/wasteland/f13dendoctor
 	flag = F13DENDOCTOR
 	faction = FACTION_WASTELAND
 	social_faction = FACTION_RAIDERS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "While you prioritize providing medical treatment in emergency situations, you are still trained in combat and have the additional role as a loyal combanteer to the Den."
 	supervisors = "The Boss."
 	selection_color = "#ff4747"
@@ -1227,7 +1241,7 @@ datum/job/wasteland/f13dendoctor
 						/obj/item/clothing/mask/gas=1, \
 						/obj/item/reagent_containers/glass/beaker/large=2 \
 						)
-
+*/
 
 
 //vigilante

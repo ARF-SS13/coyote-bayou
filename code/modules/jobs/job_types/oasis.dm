@@ -40,7 +40,6 @@ Mayor
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/oasis,
-			/datum/job/wasteland/f13mobboss,
 		),
 	)
 
@@ -100,7 +99,6 @@ Mayor
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/oasis,
-			/datum/job/wasteland/f13enforcer,
 		),
 	)
 
@@ -175,7 +173,6 @@ Mayor
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/oasis,
-			/datum/job/wasteland/f13mobboss,
 		),
 	)
 
@@ -735,7 +732,6 @@ Mayor
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/wasteland/f13wastelander,
 			/datum/job/oasis/f13detective,
-			/datum/job/wasteland/f13mobboss,
 		),
 		/datum/matchmaking_pref/mentor = list(
 			/datum/job/wasteland/f13wastelander,

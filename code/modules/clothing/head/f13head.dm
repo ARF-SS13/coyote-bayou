@@ -972,3 +972,9 @@
 	desc = "(II) A bright yellow visor in a timelessly infamous shape makes this helmet immediately recognizable. It's non-ballistic, and it's power unit for the HUD has been long since removed."
 	icon_state = "stealthhelmet"
 	item_state = "stealthhelmet"
+
+/obj/item/clothing/glasses/f13/tribaleyepatch
+	name = "bandage eyepatch"
+	desc = "A set of heavy bandages wrapped around the head. Made to protect the eye from whatever injury occured."
+	icon_state = "eyepatch_white_r"
+	item_state = "eyepatch_white_r"

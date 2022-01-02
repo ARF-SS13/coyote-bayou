@@ -998,3 +998,10 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	icon_state = "mutie_metal_armour_mk2"
 	item_state = "mutie_metal_armour_mk2"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 40, "fire" = 30, "acid" = 20)
+
+/obj/item/clothing/suit/f13/NCR_tribal_armor
+	name = "tribalized NCR armor vest"
+	desc = "A suit of worn dated NCR armor, it seems to have seen better days."
+	icon_state = "ncr_tribal_armor"
+	item_state = "ncr_tribal_armor"
+	armor = list("tier" = 4, "energy" = 30, "bomb" = 20, "bio" = 0, "rad" = 70, "fire" = 70, "acid" = 15)
