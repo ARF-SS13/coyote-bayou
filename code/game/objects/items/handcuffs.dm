@@ -331,7 +331,7 @@
 	name = "bola"
 	desc = "A restraining device designed to be thrown at the target. Upon connecting with said target, it will wrap around their legs, making it difficult for them to move quickly."
 	icon_state = "bola"
-	breakouttime = 1.5//easy to apply, easy to break out of
+	breakouttime = 20//easy to apply, easy to break out of
 	gender = NEUTER
 	slowdown = 1.3
 	var/knockdown = 0
@@ -368,7 +368,7 @@
 	name = "reinforced bola"
 	desc = "A strong bola, made with a long steel chain. It looks heavy, enough so that it could trip somebody."
 	icon_state = "bola_r"
-	breakouttime = 3.5
+	breakouttime = 10
 	slowdown = 7
 
 /obj/item/restraints/legcuffs/bola/energy //For Security
