@@ -220,13 +220,20 @@
 	name = "High Valley Hills flag"
 	desc = "A flag with two white stripes, blue border and a red centre with a white Vault-Tec logo, turned on its side and stretched out."
 
+/obj/item/flag/khan
+	name = "Great Khans flag"
+	desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
+	icon_state = "khanflag"
+	item_state = "khanflag"
+	faction = "Great Khans"
+
 /obj/item/flag/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/leather) && item_state == "emptyflag")
 		visible_message("<span class='notice'>[user] begins to make a flag.</span>")
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/list/choices = list("NCR", "Legion", "Yuma", "BOS", "Followers")
+				var/list/choices = list("NCR", "Legion", "Yuma", "BOS", "Followers", "Great Khans")
 				var/flag = input("Please choose which faction flag you wish to create.") in choices
 				switch(flag)
 					if(FACTION_NCR)
@@ -259,6 +266,12 @@
 						icon_state = "followersflag"
 						item_state = "followersflag"
 						faction = FACTION_FOLLOWERS
+					if("Great Khans")
+						name = "Great Khans flag"
+						desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
+						icon_state = "khanflag"
+						item_state = "khanflag"
+						faction = "Great Khans"
 				update_icon()
 	else
 		attack_hand(user)
