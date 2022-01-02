@@ -350,8 +350,8 @@ Star Paladin
 /datum/job/bos/f13seniorpaladin
 	title = "Senior Paladin"
 	flag = F13SENIORPALADIN
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "As the Chapter's senior offensive warrior, you have proven your service and dedication to the Brotherhood over your time as a Paladin. As your skills gained, however, you were deigned to be more useful as a commander and trainer. Your job is to coordinate the Paladins and ensure they work as a team, instilling discipline as you go."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
@@ -1019,7 +1019,6 @@ Off-Duty
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
-		/obj/item/stack/medical/gauze=1,
 		/obj/item/encryptionkey/headset_bos=1,
 		/obj/item/melee/onehanded/knife/survival=1
 		)
