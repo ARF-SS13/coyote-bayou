@@ -1389,7 +1389,7 @@ datum/job/wasteland/f13dendoctor
 	box =         /obj/item/storage/survivalkit_tribal
 	shoes =     /obj/item/clothing/shoes/sandal
 	gloves =    /obj/item/clothing/gloves/f13/handwraps
-	r_hand = /obj/item/book/granter/trait/selection
+	r_hand = /obj/item/book/granter/trait/selection/tribal
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
@@ -1476,6 +1476,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribalwar/lightcloak,
 		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
 		/datum/crafting_recipe/warpaint,
+		/datum/crafting_recipe/tribalradio,
 		/datum/crafting_recipe/tribalwar/goliathcloak,
 		/datum/crafting_recipe/tribalwar/bonebow,
 		/datum/crafting_recipe/tribalwar/tribe_bow,

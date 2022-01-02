@@ -786,7 +786,7 @@
 
 /obj/item/clothing/head/f13/town/chief
 	name = "OPD Chief's hat"
-	desc = "(V*) A blue hat with a silver badge"
+	desc = "(V) A blue hat with a silver badge."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "police_chief"

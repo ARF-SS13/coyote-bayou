@@ -981,3 +981,36 @@
 /obj/item/book/granter/trait/selection/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+	
+	
+/obj/item/book/granter/trait/selection/tribal
+		name = "Book of Ancient Knowledge"
+		desc = "A compendium of knowledge passed down from the elders. It looks to be in poor condition."
+		
+/obj/item/book/granter/trait/selection/tribal/attack_self(mob/user)
+	var/list/choices = list("Tribal Healing","Scrapping the Old World","Grognak the Barbarian","Skinning the Gecko","Inner Strength. Outer Resillience") 
+	if(granted_trait == null)
+		var/choice = input("Choose a trait:") in choices
+		switch(choice)
+			if(null)
+				return 0
+			if("Tribal Healing")
+				granted_trait = TRAIT_SURGERY_LOW
+				traitname = "minor surgery"
+			if("Scrapping the Old World")
+				granted_trait = TRAIT_TECHNOPHREAK
+				traitname = "craftsmanship"
+			if("Grognak the Barbarian")
+				granted_trait = TRAIT_BIG_LEAGUES
+				traitname = "big leagues"
+			if("Skinning the Gecko")
+				granted_trait = TRAIT_TRAPPER	
+				traitname = "trapper"
+			if("Inner Strength. Outer Resillience")
+				granted_trait = TRAIT_LIFEGIVER	
+				traitname = "lifegiver"
+		return ..()
+	
+/obj/item/book/granter/trait/selection/tribal/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
