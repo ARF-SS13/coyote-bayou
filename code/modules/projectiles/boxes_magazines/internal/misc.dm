@@ -16,6 +16,12 @@
 	caliber = "a556"
 	max_ammo = 2500
 
+/obj/item/ammo_box/magazine/internal/minigunbal5mm
+	name = "minigun ammo pack"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = "m5mm"
+	max_ammo = 500
+
 //Basic Bow Ammo
 /obj/item/ammo_box/magazine/internal/tribalbow
 	name = "bow internal magazine"

@@ -620,7 +620,6 @@
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
-	extra_damage = 4
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3.5
 	burst_size = 1
@@ -660,7 +659,7 @@
 	desc = "A cut down version of the standard-issue service rifle tapped with mounting holes for a scope. Shorter barrel, lower muzzle velocity."
 	icon_state = "scout_carbine"
 	extra_damage = 2
-	fire_delay = 4
+	fire_delay = 3.5
 	spread = 1
 	can_scope = TRUE
 	scope_state = "scope_short"

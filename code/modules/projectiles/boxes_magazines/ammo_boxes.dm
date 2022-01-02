@@ -279,7 +279,7 @@
 /obj/item/ammo_box/m5mmbox
 	name = "ammo box (5mm FMJ)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "556box"
+	icon_state = "5mmbox"
 	multiple_sprites = 2
 	caliber = "m5mm"
 	ammo_type = /obj/item/ammo_casing/m5mm

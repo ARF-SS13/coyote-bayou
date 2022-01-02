@@ -308,26 +308,26 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/ncr/SGT
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
+	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
-		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
 		)
 
 /datum/outfit/loadout/sergeantrifleman
 	name = "Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/service
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 2,
+		/obj/item/ammo_box/magazine/m5mm = 2,
 		/obj/item/storage/box/ration/menu_two = 1,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
 		)
 
 /datum/outfit/loadout/sergeantrecon
 	name = "Recon"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	head = /obj/item/clothing/head/f13/ncr
-	neck = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
@@ -343,7 +343,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/ammo_box/shotgun/buck = 2,
 		/obj/item/clothing/mask/gas = 1,
 		/obj/item/grenade/smokebomb = 2,
-		/obj/item/melee/onehanded/knife/trench = 1,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
 		)
 
 /datum/job/ncr/f13representative
@@ -897,7 +897,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	name = "Assistant Squad Leader"
 	head = /obj/item/clothing/head/f13/ncr
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	suit_store = /obj/item/gun/ballistic/automatic/service
+	suit_store = /obj/item/gun/ballistic/automatic/service/r82
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 2,
 		/obj/item/storage/box/ration/menu_one = 1,

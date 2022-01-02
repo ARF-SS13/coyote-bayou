@@ -273,6 +273,13 @@
 	build_path = /obj/item/ammo_box/a556/rubber
 	category = list("initial", "Basic Ammo")
 
+/datum/design/ammolathe/m5mm
+	name = "5mm FMJ ammo box"
+	id = "m5mm"
+	materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500)
+	build_path = /obj/item/ammo_box/m5mmbox
+	category = list("initial", "Basic Ammo")
+
 /*
 /datum/design/ammolathe/magnumshot
 	name = "magnum buckshot shotgun box"
@@ -513,6 +520,13 @@
 	id = "rifleassault556"
 	materials = list(/datum/material/iron = 8000)
 	build_path = /obj/item/ammo_box/magazine/m556/rifle/assault/empty
+	category = list("initial", "Advanced Magazines")
+
+/datum/design/ammolathe/rifleassault5mm
+	name = "empty 30rd rifle magazine (5mm)"
+	id = "rifleassault5mm"
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/m5mm/empty
 	category = list("initial", "Advanced Magazines")
 
 /*
