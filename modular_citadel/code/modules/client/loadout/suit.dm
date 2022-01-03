@@ -46,7 +46,7 @@
 
 /datum/gear/suit/jacketleather
 	name = "Leather jacket"
-	path = /obj/item/clothing/suit/jacket/leather
+	path = /obj/item/clothing/suit/armor/f13/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
 
@@ -91,6 +91,18 @@
 	path = /obj/item/clothing/suit/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
+
+/datum/gear/suit/armorkit
+	name = "Armor Kit"
+	path = /obj/item/clothing/suit/armor/f13/kit
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 5
+	
+/datum/gear/suit/punkkit
+	name = "Punk Armor Kit"
+	path = /obj/item/clothing/suit/armor/f13/punk
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 5
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
