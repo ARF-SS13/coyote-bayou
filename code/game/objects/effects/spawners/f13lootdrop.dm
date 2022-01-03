@@ -1846,8 +1846,9 @@
 	loot = list(/obj/item/book/granter/trait/lowsurgery = 10,
 				/obj/item/book/granter/trait/chemistry = 10,
 				/obj/item/book/granter/trait/trekking = 10,
+				/obj/item/book/granter/trait/techno = 10,
 				/obj/item/book/granter/trait/pa_wear = 1,
-				/obj/item/book/granter/crafting_recipe/gunsmith_one = 50,
+				/obj/item/book/granter/crafting_recipe/gunsmith_one = 40,
 				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
