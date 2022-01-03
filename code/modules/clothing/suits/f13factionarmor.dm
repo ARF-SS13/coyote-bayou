@@ -274,6 +274,7 @@
 	desc = "(VI) It's a set of standard legion armor strengthened using numerous parts taken from a suit of power armor, still retaining great mobility with added protection."
 	icon_state = "legion_palacent"
 	item_state = "legion_palacent"
+	slowdown = 0.4
 	armor = list("tier" = 6, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legion/rangercent
