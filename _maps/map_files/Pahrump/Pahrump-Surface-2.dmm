@@ -1264,10 +1264,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"aAI" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/oak,
-/area/f13/raiders)
 "aAK" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -1738,10 +1734,6 @@
 /obj/item/bedsheet/captain,
 /turf/open/floor/carpet/royalblack,
 /area/f13/ncr)
-"aMl" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/oak,
-/area/f13/raiders)
 "aMn" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -13659,10 +13651,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"fTx" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/oak,
-/area/f13/raiders)
 "fTy" = (
 /obj/machinery/computer/slot_machine,
 /obj/effect/decal/cleanable/dirt,
@@ -18314,10 +18302,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"hLm" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/oak,
-/area/f13/raiders)
 "hLs" = (
 /obj/structure/curtain{
 	color = "#845f58";
@@ -44107,7 +44091,7 @@
 	},
 /area/f13/building)
 "tfz" = (
-/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/radioterminal/ncr,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "tfL" = (
