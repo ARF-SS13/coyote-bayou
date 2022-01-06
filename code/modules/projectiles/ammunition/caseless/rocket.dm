@@ -16,14 +16,14 @@
 	name = "\improper PM-9 I"
 	desc = "An 84mm incendiary rocket. Fire with care."
 	caliber = "84mm"
-	icon_state = "84mm-hedp"
+	icon_state = "84mm-incin"
 	projectile_type = /obj/item/projectile/bullet/a84mm_incend
 
 /obj/item/ammo_casing/caseless/rocket/chem
 	name = "\improper PM-9C"
 	desc = "An 84mm chemical dispersement rocket. Fire with great shame."
 	caliber = "84mm"
-	icon_state = "84mm-hedp"
+	icon_state = "84mm-chem"
 	projectile_type = /obj/item/projectile/bullet/a84mm_chem
 
 /obj/item/ammo_casing/caseless/rocket/big
