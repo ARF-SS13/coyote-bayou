@@ -685,11 +685,11 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
 	name = "mid tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 30,
-				/obj/effect/spawner/bundle/f13/aer12 = 12,
-				/obj/effect/spawner/bundle/f13/wattz2k = 12,
-				/obj/effect/spawner/bundle/f13/wattz2kext = 8,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 18,
+	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 26,
+				/obj/effect/spawner/bundle/f13/aer12 = 13,
+				/obj/effect/spawner/bundle/f13/wattz2k = 26,
+				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
+				/obj/effect/spawner/bundle/f13/plasmapistol = 15,
 				/obj/effect/spawner/bundle/f13/ionrifle = 5
 				)
 

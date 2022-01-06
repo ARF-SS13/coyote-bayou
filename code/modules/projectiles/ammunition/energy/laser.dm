@@ -223,11 +223,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/wattz2k/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan
-	e_cost = 80 //25 //32.5 shots
+	e_cost = 166.6 //12 shots
 
 /obj/item/ammo_casing/energy/wattz2k/extended
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k
-	e_cost = 62.5 //32.5 shots
+	e_cost = 83.3 //24
 
 /obj/item/ammo_casing/energy/wattz2k/extended/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan

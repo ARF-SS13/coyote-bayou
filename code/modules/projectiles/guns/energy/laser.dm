@@ -259,6 +259,7 @@
 	name = "AEP5-CR"
 	desc = "A laser pistol that has been modified for less-than-lethal work."
 	slowdown = 0.2
+	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "AEP5CR"
 	icon_state = "AEP5CR"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -318,6 +319,7 @@
 /obj/item/gun/energy/laser/wattz2k
 	name = "wattz 2000"
 	desc = "Wattz 2000 Laser Rifle. Uses micro fusion cells for more powerful lasers, and an extended barrel for additional range."
+	slowdown = 0.3
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -340,7 +342,6 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
-	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	zoomable = TRUE
