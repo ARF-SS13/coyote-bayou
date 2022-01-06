@@ -1,3 +1,6 @@
+// ---------------------------
+// STIMPAK FLUID REAGENT
+
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
@@ -52,6 +55,9 @@
 	M.jitteriness += 3
 	..()
 	. = TRUE
+
+// ---------------------------
+// SUPER STIMPAK FLUID REAGENT
 
 /datum/reagent/medicine/stimpakimitation
 	name = "Imitation Stimpak Fluid"
@@ -112,8 +118,11 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 	
+// ---------------------------
+// LONGPORK STEW REAGENT
+
 /datum/reagent/medicine/longpork_stew
-	name = "longpork stew"
+	name = "Longpork stew"
 	description = "A dish sworn by some to have unusual healing properties. To most it just tastes disgusting. What even is longpork anyways?..."
 	reagent_state = LIQUID
 	color =  "#915818"
@@ -144,7 +153,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 
 
 /datum/reagent/medicine/berserker_powder
-	name = "berserker powder"
+	name = "Berserker powder"
 	description = "a combination of psychadelic mushrooms and tribal drugs used by the legion. Induces a trancelike state, allowing them much greater pain resistance. Extremely dangerous, even for those who are trained to use it. It's a really bad idea to use this if you're not initiated in the rites of the berserker. Even if you are, taking it for too long causes extreme symptoms when the trance ends."
 	reagent_state = SOLID
 	color =  "#7f7add"
@@ -209,8 +218,11 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+// ---------------------------
+// BITTER DRINK REAGENT
+
 /datum/reagent/medicine/bitter_drink
-	name = "bitter drink"
+	name = "Bitter drink"
 	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
 	reagent_state = LIQUID
 	color ="#A9FBFB"
@@ -241,8 +253,12 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+
+// ---------------------------
+// HEALING POWDER REAGENT
+
 /datum/reagent/medicine/healing_powder
-	name = "healing powder"
+	name = "Healing powder"
 	description = "A healing powder derived from a mix of ground broc flowers and xander roots. Consumed orally, and produces a euphoric high."
 	reagent_state = SOLID
 	color = "#A9FBFB"
@@ -280,13 +296,19 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = TRUE
 
+// ---------------------------
+// HEALING POULTICE REAGENT
+
 /datum/reagent/medicine/healing_powder/poultice
-	name = "healing poultice"
+	name = "ealing poultice"
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -2
 	heal_factor_perk = -4
+
+// ---------------------------
+// RAD-X REAGENT
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
@@ -302,6 +324,10 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER)
 	. = TRUE
 	..()
+
+
+// ---------------------------
+// RADAWAY REAGENT
 
 /datum/reagent/medicine/radaway
 	name = "Radaway"
@@ -319,6 +345,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		H.confused = max(M.confused, 3)
 	. = TRUE
 	..()
+
+// ---------------------------
+// MED-X REAGENT
 
 /datum/reagent/medicine/medx
 	name = "Med-X"
@@ -500,6 +529,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Jitter(5)
 	..()
 
+// ---------------------------
+// MENTAT REAGENT
+
 /datum/reagent/medicine/mentat
 	name = "Mentat Powder"
 
@@ -576,6 +608,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Jitter(5)
 	..()
 
+// ---------------------------
+// FIXER REAGENT
+
 /datum/reagent/medicine/fixer
 	name = "Fixer Powder"
 
@@ -596,6 +631,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		H.vomit(10)
 	..()
 	. = TRUE
+
+// ---------------------------
+// GAIA EXTRACT REAGENT
 
 /datum/reagent/medicine/gaia
 	name = "Gaia Extract"

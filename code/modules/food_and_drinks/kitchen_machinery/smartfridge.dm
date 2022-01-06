@@ -643,7 +643,7 @@
 
 
 //-------------------------
-// Alchemy Rack
+// Alchemy Rack - Takes patches, primitive bottle, mourning dust, smelling salt
 //-------------------------
 /obj/machinery/smartfridge/bottlerack/alchemy_rack
 	name = "alchemy rack"
@@ -652,7 +652,7 @@
 	max_n_of_items = 100
 
 /obj/machinery/smartfridge/bottlerack/alchemy_rack/accept_check(obj/item/O)
-	if(istype(O, /obj/item/reagent_containers/pill/patch/healingpowder) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/reagent_containers/pill/patch/healpoultice) || istype(O, /obj/item/reagent_containers/pill/patch/bitterdrink))
+	if(istype(O, /obj/item/reagent_containers/pill/patch) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/stack/medical/poultice) || istype(O, /obj/item/smelling_salts))
 		return TRUE
 	return FALSE
 // -------------------------

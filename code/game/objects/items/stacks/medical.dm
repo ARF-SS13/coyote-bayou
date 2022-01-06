@@ -508,12 +508,17 @@
 
 	to_chat(user, "<span class='warning'>You can't heal [M] with the \the [src]!</span>")
 
+
+// ------------------
+// MOURNING DUST   (should be repathed to be less misleading at some point)
+// ------------------
+
 /obj/item/stack/medical/poultice
-	name = "mourning poultices"
-	singular_name = "mourning poultice"
-	desc = "A type of primitive herbal poultice.\nWhile traditionally used to prepare corpses for the mourning feast, it can also treat scrapes and burns on the living, however, it is liable to cause shortness of breath when employed in this manner.\nIt is imbued with ancient wisdom."
+	name = "mourning dust"
+	singular_name = "mourning dust"
+	desc = "A type of primitive herbal powder.\nWhile traditionally used to prepare corpses for the mourning feast, it can also treat scrapes and burns on the living, however, it is liable to cause shortness of breath when employed in this manner.\nIt is imbued with ancient wisdom."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
-	icon_state = "bandaid_mourningpoultice"
+	icon_state = "mourningdust"
 	amount = 15
 	max_amount = 15
 	heal_brute = 10
@@ -540,8 +545,8 @@
 	healed_mob.adjustOxyLoss(amount_healed)
 
 /datum/chemical_reaction/mourningpoultice
-	name = "mourning poultice"
-	id = "mournpoultice"
+	name = "mourning dust"
+	id = "mourningdust"
 	required_reagents = list(/datum/reagent/consumable/tea/coyotetea = 10, /datum/reagent/cellulose = 20, /datum/reagent/consumable/tea/feratea = 10)
 	mob_react = FALSE
 

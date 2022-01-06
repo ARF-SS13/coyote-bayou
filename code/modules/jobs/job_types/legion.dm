@@ -1125,7 +1125,7 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
-		/obj/item/smelling_salts/crafted = 1,
+		/obj/item/smelling_salts = 1,
 		/obj/item/book/granter/trait/lowsurgery = 1,
 		/obj/item/reagent_containers/food/condiment/flour = 2,
 		/obj/item/storage/box/bowls = 1,
