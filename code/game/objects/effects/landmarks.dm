@@ -642,7 +642,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/auxilia
 	name = "Legion Auxilia"
-	icon_state = "Wastelander"
+	icon_state = "Auxilla"
 
 /obj/effect/landmark/start/f13/campfollower
 	name = "Legion Forgemaster"
@@ -739,6 +739,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/secretary
 	name = "Secretary"
+	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
 	name = "Sheriff"
@@ -846,47 +847,55 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 //Tribal
 
+/obj/effect/landmark/start/f13/tribal
+	name = "Tribal"
+	icon_state = "Tribal"
+
 /obj/effect/landmark/start/f13/chief
 	name = "Chief"
-	icon_state = "Chief"
-
+	icon_state = "Tribal"
+	
 /obj/effect/landmark/start/f13/shaman
 	name = "Shaman"
-	icon_state = "Shaman"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/villager
 	name = "Villager"
-	icon_state = "Villager"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
 	name = "Hunter"
-	icon_state = "Hunter"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/Hhunter
 	name = "Head Hunter"
-	icon_state = "Head Hunter"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid
-	name = "Druid"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/spiritpledged
-	name = "Spirit-Pledged"
+	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/guardian
-	name = "Guardian"
+	icon_state = "Tribal"
 
 //Followers of the Apocalypse
 /obj/effect/landmark/start/f13/followersadministrator
 	name = "Followers Administrator"
+	icon_state = "Chief Medical Officer"
 
 /obj/effect/landmark/start/f13/followersdoctor
 	name = "Followers Doctor"
+	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard
 	name = "Followers Guard"
+	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer
 	name = "Followers Volunteer"
+	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
