@@ -1162,7 +1162,19 @@ obj/item/storage/box/stingbangs
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
+	
+/obj/item/storage/box/sparelimbs
+	name = "box of prosthethic limbs"
+	desc = "Contains superior prosthethic limbs, one of each type."
+	icon_state = "syndiebox"
 
+/obj/item/storage/box/sparelimbs/PopulateContents()
+	new /obj/item/bodypart/chest/robot(src)
+	new /obj/item/bodypart/l_arm/robot(src)
+	new /obj/item/bodypart/r_arm/robot(src)
+	new /obj/item/bodypart/l_leg/robot(src)
+	new /obj/item/bodypart/r_leg/robot(src)
+	
 //Colored boxes.
 /obj/item/storage/box/green
 	icon_state = "box_green"

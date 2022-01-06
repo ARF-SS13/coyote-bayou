@@ -18,7 +18,7 @@
 								/obj/item/stack/ore/gold = 7,
 								/obj/item/stack/ore/silver = 2,
 								/obj/item/stack/ore/iron = 1,
-								/obj/item/stack/sheet/leather = 3,
+								/obj/item/reagent_containers/food/snacks/grown = 0.5,
 								/obj/item/reagent_containers/pill/patch/jet = 5,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 15,
 								/obj/item/reagent_containers/hypospray/medipen/medx = 15
@@ -49,11 +49,11 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
+	dat += "Fruits/Vegetables : 1 caps<br>"
 	dat += "Iron ore : 1.5 caps<br>"
 	dat += "Silver : 5 caps<br>"
 	dat += "Gold : 15 caps<br>"
 	dat += "Diamond : 50 caps<br>"
-	dat += "Leather : 5 caps<br>"
 	dat += "Jet/Psycho/MedX : 5-15 caps<br>"
 	dat += ""
 	dat += "</div>"
@@ -265,6 +265,55 @@ Fence
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "tradingvendor", "Brotherhood of Steal", 400, 500)
+	popup.set_content(dat)
+	popup.open()
+	return
+
+/obj/machinery/mineral/wasteland_trader/gunbuyer
+	name = "Gun Repository"
+	desc = "Place weapon inside slot. Weapon is sent out of the region for post-processing. Recieve compensation. Yuma Wasteland Supply Inc. thanks you for disarming the wasteland."
+	goods_list = list(/obj/item/gun/ballistic/automatic/hobo/zipgun = 5,
+						/obj/item/gun/ballistic/revolver/hobo = 5,
+						/obj/item/gun/ballistic/revolver/detective = 5,
+						/obj/item/gun/ballistic/revolver/hobo/piperifle = 8,
+						/obj/item/gun/ballistic/revolver/hobo/knifegun = 8,
+						/obj/item/gun/ballistic/revolver/colt6520 = 8,
+						/obj/item/gun/ballistic/automatic/pistol/n99 = 8,
+						/obj/item/gun/ballistic/automatic/pistol/pistol22 = 8,
+						/obj/item/gun/ballistic/automatic/pistol/ninemil = 8,
+						/obj/item/gun/ballistic/automatic/pistol/sig = 8,
+						/obj/item/gun/ballistic/automatic/pistol/beretta = 8,
+						/obj/item/gun/ballistic/automatic/pistol/m1911 = 8,
+						/obj/item/gun/ballistic/rifle/hunting = 10,
+						/obj/item/gun/ballistic/revolver/colt357 = 10,
+						/obj/item/gun/ballistic/rifle/mosin = 10,
+						/obj/item/gun/ballistic/revolver/caravan_shotgun = 10,
+						/obj/item/gun/ballistic/revolver/widowmaker = 10,
+						/obj/item/gun/ballistic/revolver/winchesterrebored = 10,
+						/obj/item/gun/ballistic/automatic/autopipe = 15,
+						/obj/item/gun/ballistic/rifle/hobo/lasmusket = 15,
+						/obj/item/stack/crafting/armor_plate = 20,
+						)
+						
+/obj/machinery/mineral/wasteland_trader/gunbuyer/ui_interact(mob/user)
+	. = ..()
+	var/dat
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "</div>"
+	dat += "<br>"
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Disarming the Wasteland one gun at a time.</b><br>"
+	dat += "<b>Warning: The automated system cannot guarantee an accurate appraisal of value.</b><br>"
+	dat += "<b>Accepted goods and prices:</b><br>"
+	dat += "Pistols and revolvers: 5-10 caps<br>"
+	dat += "Rifles and Shotguns : 10-15 caps<br>"
+	dat += "Armor Plate: 20 caps<br>"
+	dat += "Does not accept weapons of historical or artisanal value. Those belong in a musuem."
+	dat += ""
+	dat += "</div>"
+						
+	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
 	popup.set_content(dat)
 	popup.open()
 	return

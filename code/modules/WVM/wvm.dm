@@ -587,6 +587,37 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200)
 		)
 
+/obj/machinery/mineral/wasteland_vendor/followerterminal
+	name = "Follower's Resupply Terminal"
+	desc = "a vending machine stocked with imported medical supplies. The pricing is to cover the cost of shipping and handling."
+	icon_state = "med_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Soap",							/obj/item/soap/deluxe,												50),
+		new /datum/data/wasteland_equipment("Gas Mask",						/obj/item/clothing/mask/gas,										50),
+		new /datum/data/wasteland_equipment("Advanced Mop",					/obj/item/mop/advanced,												100),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("X-tra Large Beaker",			/obj/item/reagent_containers/glass/beaker/plastic,					500),
+		new /datum/data/wasteland_equipment("Medical HUD",					/obj/item/clothing/glasses/hud,										500),
+		new /datum/data/wasteland_equipment("Defibrillator",				/obj/item/defibrillator,											1000),
+		new /datum/data/wasteland_equipment("Integrated Toolset Implant",	/obj/item/organ/cyberimp/arm/toolset,								2000),
+		new /datum/data/wasteland_equipment("Upgraded Prosthethic Limbs",	/obj/item/storage/box/sparelimbs,									2000),
+		new /datum/data/wasteland_equipment("Cat",							/mob/living/simple_animal/pet/cat/Runtime,							10000),
+		)
+	highpop_list = list(
+		new /datum/data/wasteland_equipment("Medicated Suture",				/obj/item/stack/medical/suture/medicated,							10),
+		new /datum/data/wasteland_equipment("Advanced Regen. Mesh",			/obj/item/stack/medical/mesh/advanced,								10),
+		new /datum/data/wasteland_equipment("Soap",							/obj/item/soap/syndie,												50),
+		new /datum/data/wasteland_equipment("Gas Mask",						/obj/item/clothing/mask/gas,										50),
+		new /datum/data/wasteland_equipment("Advanced Mop",					/obj/item/mop/advanced,												100),
+		new /datum/data/wasteland_equipment("Fixer",						/obj/item/storage/pill_bottle/chem_tin/fixer,						200),
+		new /datum/data/wasteland_equipment("X-tra Large Beaker",			/obj/item/reagent_containers/glass/beaker/plastic,					500),
+		new /datum/data/wasteland_equipment("Medical HUD",					/obj/item/clothing/glasses/hud,										500),
+		new /datum/data/wasteland_equipment("Defibrillator",				/obj/item/defibrillator,											1000),
+		new /datum/data/wasteland_equipment("Integrated Toolset Implant",	/obj/item/organ/cyberimp/arm/toolset,								2000),
+		new /datum/data/wasteland_equipment("Upgraded Prosthethic Limbs",	/obj/item/storage/box/sparelimbs,									2000),
+		new /datum/data/wasteland_equipment("Cat",							/mob/living/simple_animal/pet/cat/Runtime,							10000),
+		)
+		
 /obj/machinery/mineral/wasteland_vendor/weapons
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
@@ -615,7 +646,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
 		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
-		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv/simple,								60),
+		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv/simple,						60),
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
 		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												70),
 		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												70),
