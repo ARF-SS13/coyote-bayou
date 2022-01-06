@@ -28,3 +28,25 @@
 /obj/item/projectile/energy/tesla/cannon
 	name = "tesla orb"
 	power = 20000
+
+/obj/item/projectile/energy/teslacannon
+	name = "tesla beam"
+	icon_state = "omnilaser"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+	damage = 55
+	armour_penetration = 0.35
+	wound_bonus = 30
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+	hitscan = TRUE
+	hitscan_light_intensity = 4
+	hitscan_light_range = 1
+	hitscan_light_color_override = LIGHT_COLOR_BLUE
+	muzzle_flash_intensity = 9
+	muzzle_flash_range = 4
+	muzzle_flash_color_override = LIGHT_COLOR_BLUE
+	impact_light_intensity = 8
+	impact_light_range = 3.75
+	impact_light_color_override = LIGHT_COLOR_BLUE
