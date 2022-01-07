@@ -4,6 +4,15 @@
 #define LOADOUT_SUBCATEGORY_NONE		"Miscellaneous"
 #define LOADOUT_SUBCATEGORIES_NONE		list("Miscellaneous")
 
+//the names of the customization tabs
+#define SETTINGS_TAB 0
+#define GAME_PREFERENCES_TAB 1
+#define APPEARANCE_TAB 2
+//#define SPEECH_TAB 3
+#define LOADOUT_TAB 4
+#define CONTENT_PREFERENCES_TAB 5
+#define KEYBINDINGS_TAB 6
+
 //backpack
 #define LOADOUT_CATEGORY_BACKPACK 				"In backpack"
 #define LOADOUT_SUBCATEGORY_BACKPACK_GENERAL 	"General" //basically anything that there's not enough of to have its own subcategory
@@ -67,3 +76,11 @@
 #define LOADOUT_LIMB_AMPUTATED		"Amputated"
 
 #define LOADOUT_LIMBS		 		list(LOADOUT_LIMB_NORMAL,LOADOUT_LIMB_PROSTHETIC,LOADOUT_LIMB_AMPUTATED) //you can amputate your legs/arms though
+
+//loadout saving/loading specific defines
+#define MAXIMUM_LOADOUT_SAVES 30	//Remember to increase this if more slots are added
+#define LOADOUT_ITEM				"loadout_item"
+
+//loadout item flags
+#define LOADOUT_CAN_NAME (1<<0) //renaming items
+#define LOADOUT_CAN_DESCRIPTION (1<<1) //adding a custom description to items

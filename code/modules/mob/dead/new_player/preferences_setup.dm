@@ -20,9 +20,10 @@
 	left_eye_color = random_dark_shade()
 	right_eye_color = random_dark_shade()
 	age = (rand(20, 25))
- 
 
-/datum/preferences/proc/update_preview_icon(equip_job = TRUE)
+
+/datum/preferences/proc/update_preview_icon(current_tab)
+	var/equip_job = (current_tab != APPEARANCE_TAB)
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob = get_highest_job()
 
@@ -41,9 +42,13 @@
 	mannequin.add_overlay(mutable_appearance('modular_citadel/icons/ui/backgrounds.dmi', bgstate, layer = SPACE_LAYER))
 	copy_to(mannequin, initial_spawn = TRUE)
 
-	if(previewJob && equip_job)
-		mannequin.job = previewJob.title
-		previewJob.equip(mannequin, TRUE, preference_source = parent)
+	if(current_tab == LOADOUT_TAB)
+		//give it its loadout if not on the appearance tab
+		SSjob.equip_loadout(parent.mob, mannequin, FALSE, bypass_prereqs = TRUE, can_drop = FALSE)
+	else
+		if(previewJob && equip_job)
+			mannequin.job = previewJob.title
+			previewJob.equip(mannequin, TRUE, preference_source = parent)
 
 	COMPILE_OVERLAYS(mannequin)
 	parent.show_character_previews(new /mutable_appearance(mannequin))

@@ -184,11 +184,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
 
-		// Want randomjob if preferences already filled - Donkie
+	// Want randomjob if preferences already filled - Donkie
 	var/joblessrole = RETURNTOLOBBY  //defaults to returning to lobby
 
 	// 0 = character settings, 1 = game preferences
-	var/current_tab = 0
+	var/current_tab = SETTINGS_TAB
 
 	var/unlock_content = 0
 
@@ -229,6 +229,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/gear_points = 10
 	var/list/gear_categories
 	var/list/chosen_gear = list()
+	var/list/loadout_data = list()
+	var/loadout_slot = 1 //goes from 1 to MAXIMUM_LOADOUT_SAVES
 	var/gear_category
 	var/gear_subcategory
 
@@ -299,15 +301,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(CONFIG_GET(flag/use_role_whitelist))
 		user.client.set_job_whitelist_from_db()
 
-	update_preview_icon(current_tab != 2)
+	update_preview_icon(current_tab)
 	var/list/dat = list("<center>")
 
-	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Settings</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>Character Appearance</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Loadout</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=4' [current_tab == 4 ? "class='linkOn'" : ""]>Content Preferences</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=5' [current_tab == 5 ? "class='linkOn'" : ""]>Keybindings</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[SETTINGS_TAB]' [current_tab == SETTINGS_TAB ? "class='linkOn'" : ""]>Character Settings</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' [current_tab == APPEARANCE_TAB ? "class='linkOn'" : ""]>Character Appearance</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Content Preferences</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Keybindings</a>"
 
 	if(!path)
 		dat += "<div class='notice'>Please create an account to save your preferences</div>"
@@ -317,7 +319,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<HR>"
 
 	switch(current_tab)
-		if (0) // Character Settings#
+		if(SETTINGS_TAB) // Character Settings#
 			if(path)
 				var/savefile/S = new /savefile(path)
 				if(S)
@@ -414,7 +416,7 @@ Records disabled until a use for them is found
 
 
 		//Character Appearance
-		if(2)
+		if(APPEARANCE_TAB)
 			if(path)
 				var/savefile/S = new /savefile(path)
 				if(S)
@@ -661,7 +663,7 @@ Records disabled until a use for them is found
 			dat += "</td>"
 			dat += "</tr></table>"
 
-		if (1) // Game Preferences
+		if(GAME_PREFERENCES_TAB) // Game Preferences
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>General Settings</h2>"
 			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
@@ -819,7 +821,20 @@ Records disabled until a use for them is found
 
 			dat += "<br>"
 */
-		if(3)
+		if(LOADOUT_TAB)
+			//calculate your gear points from the chosen item
+			gear_points = CONFIG_GET(number/initial_gear_points)
+			var/list/chosen_gear = loadout_data["SAVE_[loadout_slot]"]
+			if(chosen_gear)
+				for(var/loadout_item in chosen_gear)
+					var/loadout_item_path = loadout_item[LOADOUT_ITEM]
+					if(loadout_item_path)
+						var/datum/gear/loadout_gear = text2path(loadout_item_path)
+						if(loadout_gear)
+							gear_points -= initial(loadout_gear.cost)
+			else
+				chosen_gear = list()
+
 			dat += "<table align='center' width='100%'>"
 			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> loadout points remaining.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
 			dat += "<tr><td colspan=4><center>You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
@@ -875,7 +890,8 @@ Records disabled until a use for them is found
 						if(donoritem && !gear.donator_ckey_check(user.ckey))
 							continue
 						var/class_link = ""
-						if(gear.type in chosen_gear)
+						var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
+						if(loadout_item)
 							class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
 						else if(gear_points <= 0)
 							class_link = "style='white-space:normal;' class='linkOff'"
@@ -897,7 +913,7 @@ Records disabled until a use for them is found
 									dat += "</font>"
 						dat += "</td><td><font size=2><i>[gear.description]</i></font></td></tr>"
 					dat += "</table>"
-		if(4) // Content preferences
+		if(CONTENT_PREFERENCES_TAB)
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>Adult content prefs</h2>"
 			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
@@ -917,7 +933,7 @@ Records disabled until a use for them is found
 			dat += "</tr></table>"
 			dat += "<br>"
 */
-		if(5) // Custom keybindings
+		if(KEYBINDINGS_TAB) // Custom keybindings
 			dat += "<b>Keybindings:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Input"]</a><br>"
 			dat += "Keybindings mode controls how the game behaves with tab and map/input focus.<br>If it is on <b>Hotkeys</b>, the game will always attempt to force you to map focus, meaning keypresses are sent \
 			directly to the map instead of the input. You will still be able to use the command bar, but you need to tab to do it every time you click on the game map.<br>\
@@ -2646,12 +2662,12 @@ Records disabled until a use for them is found
 						player_mob.new_player_panel()
 
 				if("tab")
-					if (href_list["tab"])
+					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
-			chosen_gear = list()
-			gear_points = CONFIG_GET(number/initial_gear_points)
+			loadout_data["SAVE_[loadout_slot]"] = list()
+
 			save_preferences()
 		if(href_list["select_category"])
 			gear_category = html_decode(href_list["select_category"])
@@ -2664,10 +2680,9 @@ Records disabled until a use for them is found
 			if(!G)
 				return
 			var/toggle = text2num(href_list["toggle_gear"])
-			if(!toggle && (G.type in chosen_gear))//toggling off and the item effectively is in chosen gear)
-				chosen_gear -= G.type
-				gear_points += initial(G.cost)
-			else if(toggle && (!(is_type_in_ref_list(G, chosen_gear))))
+			if(!toggle && has_loadout_gear(loadout_slot, "[G.type]"))//toggling off and the item effectively is in chosen gear)
+				remove_gear_from_loadout(loadout_slot, "[G.type]")
+			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
 				/*
 				if(!is_loadout_slot_available(G.category))
 					to_chat(user, "<span class='danger'>You cannot take this loadout, as you've already chosen too many of the same category!</span>")
@@ -2677,8 +2692,11 @@ Records disabled until a use for them is found
 					to_chat(user, "<span class='danger'>This is an item intended for donator use only. You are not authorized to use this item.</span>")
 					return
 				if(gear_points >= initial(G.cost))
-					chosen_gear += G.type
-					gear_points -= initial(G.cost)
+					var/list/new_loadout_data = list(LOADOUT_ITEM = "[G.type]")
+					if(loadout_data["SAVE_[loadout_slot]"])
+						loadout_data["SAVE_[loadout_slot]"] += list(new_loadout_data) //double packed because it does the union of the CONTENTS of the lists
+					else
+						loadout_data["SAVE_[loadout_slot]"] = list(new_loadout_data) //double packed because you somehow had no save slot in your loadout?
 
 	ShowChoices(user)
 	return 1
@@ -2891,8 +2909,8 @@ Records disabled until a use for them is found
 /datum/preferences/proc/is_loadout_slot_available(slot)
 	var/list/L
 	LAZYINITLIST(L)
-	for(var/i in chosen_gear)
-		var/datum/gear/G = i
+	for(var/i in loadout_data["SAVE_[loadout_slot]"])
+		var/datum/gear/G = i[LOADOUT_ITEM]
 		var/occupied_slots = L[initial(G.category)] ? L[initial(G.category)] + 1 : 1
 		LAZYSET(L, initial(G.category), occupied_slots)
 	switch(slot)
@@ -2905,6 +2923,18 @@ Records disabled until a use for them is found
 		else
 			if(L[slot] < DEFAULT_SLOT_AMT)
 				return TRUE
+
+/datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
+	var/list/gear_list = loadout_data["SAVE_[save_slot]"]
+	for(var/loadout_gear in gear_list)
+		if(loadout_gear[LOADOUT_ITEM] == gear_type)
+			return loadout_gear
+	return FALSE
+
+/datum/preferences/proc/remove_gear_from_loadout(save_slot, gear_type)
+	var/find_gear = has_loadout_gear(save_slot, gear_type)
+	if(find_gear)
+		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
 
 #undef DEFAULT_SLOT_AMT
 #undef HANDS_SLOT_AMT

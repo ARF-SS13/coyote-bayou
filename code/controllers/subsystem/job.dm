@@ -691,15 +691,16 @@ SUBSYSTEM_DEF(job)
 		message_admins(msg)
 		CRASH(msg)
 
-/datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, equipbackpackstuff, bypass_prereqs = FALSE)
+/datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, equipbackpackstuff, bypass_prereqs = FALSE, can_drop = TRUE)
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
-	if(the_mob.client && the_mob.client.prefs && (the_mob.client.prefs.chosen_gear && the_mob.client.prefs.chosen_gear.len))
+	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
-		for(var/i in the_mob.client.prefs.chosen_gear)
-			var/datum/gear/G = i
+		for(var/i in chosen_gear)
+			var/datum/gear/G = istext(i[LOADOUT_ITEM]) ? text2path(i[LOADOUT_ITEM]) : i[LOADOUT_ITEM]
 			G = GLOB.loadout_items[initial(G.category)][initial(G.subcategory)][initial(G.name)]
 			if(!G)
 				continue
@@ -720,9 +721,15 @@ SUBSYSTEM_DEF(job)
 					var/mob/living/carbon/C = M
 					var/obj/item/storage/backpack/B = C.back
 					if(!B || !SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, I, null, TRUE, TRUE)) // Otherwise, try to put it in the backpack, for carbons.
-						I.forceMove(get_turf(C))
+						if(can_drop)
+							I.forceMove(get_turf(C))
+						else
+							qdel(I)
 				else if(!M.equip_to_slot_if_possible(I, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // Otherwise, try to put it in the backpack
-					I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
+					if(can_drop)
+						I.forceMove(get_turf(M)) // If everything fails, just put it on the floor under the mob.
+					else
+						qdel(I)
 
 /datum/controller/subsystem/job/proc/FreeRole(rank)
 	if(!rank)
