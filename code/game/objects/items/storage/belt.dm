@@ -727,6 +727,7 @@
 		/obj/item/ammo_box/c45rev,
 		/obj/item/gun/energy/laser/solar,
 		/obj/item/gun/energy/laser/pistol,
+		/obj/item/gun/energy/laser/complianceregulator,
 		/obj/item/gun/energy/laser/plasma/pistol,
 		/obj/item/gun/energy/laser/plasma/glock,
 		/obj/item/gun/energy/laser/plasma/glock/extended,
