@@ -450,6 +450,14 @@
 	icon_state = "t45dhelmet[light_on]"
 	item_state = "t45dhelmet[light_on]"
 
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/bos
+	name = "Brotherhood T-45d power helmet"
+	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it."
+
+/obj/item/clothing/head/helmet/f13/power_armor/t45d/bos/update_icon_state()
+	icon_state = "t45dhelmet[light_on]"
+	item_state = "t45dhelmet[light_on]"
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/gunslinger
 	name = "Gunslinger T-51b Helm"
 	desc = "(IX) With most of the external plating stripped to allow for internal thermal and night vision scanners, as well as aided targeting assist via onboard systems, this helm provides much more utility then protection. To support these systems, secondary power cells were installed into the helm, and covered with a stylish hat."
@@ -488,6 +496,14 @@
 //	melee_block_threshold = 35
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
+	icon_state = "t51bhelmet[light_on]"
+	item_state = "t51bhelmet[light_on]"
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
+	name = "T-51b power helmet"
+	desc = "(X) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos/update_icon_state()
 	icon_state = "t51bhelmet[light_on]"
 	item_state = "t51bhelmet[light_on]"
 
