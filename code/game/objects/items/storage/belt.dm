@@ -476,7 +476,6 @@
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/melee/classic_baton(src)
 	new /obj/item/melee/onehanded/knife/hunting(src)
-	new /obj/item/ammo_box/magazine/m9mmds(src)
 	update_icon()
 
 /obj/item/storage/belt/durathread

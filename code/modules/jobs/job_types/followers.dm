@@ -191,6 +191,7 @@ Practitioner
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
+	belt = /obj/item/gun/energy/laser/complianceregulator
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
@@ -373,16 +374,17 @@ Follower Volunteer
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/beretta = 1,
+		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 2,
 	)
 
 /datum/outfit/loadout/guard_ranged
 	name = "Followers Ranged Guard"
-	suit_store = /obj/item/gun/ballistic/automatic/m1carbine
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/tube/a357 = 2,
 	)
 
 /datum/outfit/loadout/guard_close
@@ -391,4 +393,5 @@ Follower Volunteer
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/ammo_box/shotgun/slug = 1,
 	)

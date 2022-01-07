@@ -10,7 +10,7 @@
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
-	var/capacity = 4
+	var/capacity = 6
 
 /obj/structure/guncase/Initialize(mapload)
 	. = ..()
@@ -101,6 +101,7 @@
 	desc = "A locker that holds shotguns."
 	case_type = "shotgun"
 	gun_category = /obj/item/gun/ballistic/shotgun
+	capacity = 8
 
 /obj/structure/guncase/ecase
 	name = "energy gun locker"
@@ -108,4 +109,5 @@
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "ecase"
 	case_type = "egun"
-	gun_category = /obj/item/gun/energy/e_gun
+	gun_category = /obj/item/gun/energy
+	capacity = 8
