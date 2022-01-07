@@ -279,6 +279,18 @@ Great Khan
 		H.gang = GK
 
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_salvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvagedhelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
 
 
 /datum/outfit/loadout/pusher

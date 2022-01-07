@@ -776,6 +776,10 @@
 	equip_delay_other = 50
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/suit/armor/bulletproof/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/armor/bone
 	name = "bone armor"
 	desc = "(III) A tribal armor plate, crafted from animal bone."

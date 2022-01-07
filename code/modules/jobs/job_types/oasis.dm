@@ -187,7 +187,7 @@ Mayor
 
 	ears = 			/obj/item/radio/headset/headset_town
 	uniform =  		/obj/item/clothing/under/f13/sheriff
-	neck =			/obj/item/storage/belt/holster
+	belt =			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_pocket =		/obj/item/storage/bag/money/small/den
@@ -195,13 +195,14 @@ Mayor
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
-		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
 
 /datum/outfit/loadout/thelaw
 	name = "The Law Man"
 	suit = /obj/item/clothing/suit/armor/f13/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
+	neck = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	backpack_contents = list(
@@ -214,11 +215,12 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/formal
 	suit = /obj/item/clothing/suit/armor/f13/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
+	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_hand = /obj/item/gun/energy/laser/aer9
-	belt = /obj/item/gun/ballistic/automatic/pistol/sig/commissioner
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 1,
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/gun/ballistic/automatic/pistol/sig/commissioner = 1,
 		/obj/item/ammo_box/magazine/m9mm = 3,
 		)
 
@@ -226,6 +228,18 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_salvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvagedhelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
@@ -295,8 +309,8 @@ Mayor
 /datum/outfit/loadout/police
 	name = "Oasis PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	head = /obj/item/clothing/head/f13/police/officer
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	head = /obj/item/clothing/head/f13/town/officer
 	neck = /obj/item/storage/belt/holster/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -312,10 +326,10 @@ Mayor
 	name = "S.W.A.T. Officer"
 	uniform = /obj/item/clothing/under/f13/police/swat
 	suit = /obj/item/clothing/suit/armor/bulletproof
-	head = /obj/item/clothing/head/helmet
+	head = /obj/item/clothing/head/helmet/alt
 	neck = /obj/item/storage/belt/holster/legholster
 	l_hand = /obj/item/gun/ballistic/automatic/marksman/policerifle
-	shoes = /obj/item/clothing/shoes/f13/military
+	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
@@ -327,6 +341,18 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_salvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvagedhelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /*--------------------------------------------------------------*/

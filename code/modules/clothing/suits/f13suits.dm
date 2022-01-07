@@ -251,12 +251,20 @@
 	item_state = "jensencoat"
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored
 	name = "Great Khan armored jacket"
 	desc = "(V) A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem.<br>Protective plates have been sewn into the jacket."
 	icon_state = "khan_jacket"
 	item_state = "jensencoat"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan/battlecoat
 	name = "Great Khan battle coat"

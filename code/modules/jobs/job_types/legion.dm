@@ -1022,7 +1022,7 @@ commented out pending rework*/
 	name = "Legion Auxilia"
 	jobtype = /datum/job/CaesarsLegion/auxilia
 	id = /obj/item/card/id/dogtag/legauxilia
-	head = /obj/item/clothing/head/f13/legion/auxilia
+	head = /obj/item/clothing/head/f13/auxilia
 	uniform = /obj/item/clothing/under/f13/legauxiliaf
 	shoes = /obj/item/clothing/shoes/roman
 	ears = /obj/item/radio/headset/headset_legion
@@ -1117,7 +1117,7 @@ commented out pending rework*/
 //Servants cook, clean, help with medical tasks.
 /datum/outfit/loadout/slaveservant
 	name = "Servant"
-	head = /obj/item/clothing/head/f13/legion/servant
+	head = /obj/item/clothing/head/f13/servant
 	uniform	= /obj/item/clothing/under/f13/campfollowermale
 	gloves = /obj/item/clothing/gloves/f13/crudemedical
 	shoes =	/obj/item/clothing/shoes/roman
