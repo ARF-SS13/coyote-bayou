@@ -20,6 +20,23 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/toilet
+	name = "Toilet"
+	result = /obj/structure/toilet
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 5)
+	time = 50
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/sink
+	name = "Sink"
+	result = /obj/structure/sink
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/crafting/metalparts = 5)
+	time = 50
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISCELLANEOUS
 /datum/crafting_recipe/shower
 	name = "Shower"
 	result = /obj/machinery/shower
