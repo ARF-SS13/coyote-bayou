@@ -190,6 +190,21 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/gun/rockitlauncher
+	name = "Rock-It-Launcher"
+	result = /obj/item/rockitlauncher_pack
+	reqs = list(/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/plastic = 5,
+				/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL, TOOL_SCREWDRIVER, TOOL_WRENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/flamerfuel
 	name = "Flamethrower Fuel"
 	result = /obj/item/ammo_box/jerrycan
