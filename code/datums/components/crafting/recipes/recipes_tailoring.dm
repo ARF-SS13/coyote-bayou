@@ -183,7 +183,7 @@
 	always_availible = FALSE
 
 /datum/crafting_recipe/ncrcombathelmetmk2
-	name = "Shred comabt helmet mk2 for armor plates"
+	name = "Shred combat helmet mk2 for armor plates"
 	result = /obj/item/stack/crafting/armor_plate/eight
 	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
 	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,)

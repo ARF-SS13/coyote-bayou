@@ -236,7 +236,7 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
-/obj/item/clothing/head/f13/legion/Initialize()
+/obj/item/clothing/head/helmet/f13/legion/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -614,7 +614,7 @@
 	item_state = "cowboyrang"
 	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/trailranger/Initialize()
+/obj/item/clothing/head/f13/trailranger/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -625,7 +625,7 @@
 	item_state = "rangerhat"
 	armor = list("tier" = 4, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/ranger/Initialize()
+/obj/item/clothing/head/f13/ranger/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -638,7 +638,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("tier" = 4, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/combat/ncr_patrol/Initialize()
+/obj/item/clothing/head/f13/combat/ncr_patrol/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
