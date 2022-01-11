@@ -1,9 +1,11 @@
 /turf/open/space
 	icon = 'icons/turf/space.dmi'
-	icon_state = "0"
-	name = "\proper space"
+	icon_state = "black"
+	name = "\proper nothing"
 	intact = 0
-
+	density = 1
+	opacity = 1
+/*lonestar edit. don't need space. so dont initialize it.
 	initial_temperature = TCMB
 	thermal_conductivity = 0
 	heat_capacity = 700000
@@ -18,13 +20,19 @@
 	light_power = 0.25
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 	bullet_bounce_sound = null
-
-
+*/
 /turf/open/space/basic/New()	//Do not convert to Initialize
 	//This is used to optimize the map loader
 	return
+	
+/turf/open/space/examine() //nothing, nowhere
+	return
 
+/*
 /turf/open/space/Initialize()
+	..()
+	return
+	
 	SHOULD_CALL_PARENT(FALSE)
 	icon_state = SPACE_ICON_STATE
 	if(!space_gas)
@@ -91,10 +99,10 @@
 
 /turf/open/space/attack_paw(mob/user)
 	return attack_hand(user)
-
+*/
 /turf/open/space/proc/CanBuildHere()
 	return TRUE
-
+/*
 /turf/open/space/handle_slip(mob/living/carbon/C, knockdown_amount, obj/O, lube)
 	if(lube & FLYING_DOESNT_HELP)
 		return ..()
@@ -344,4 +352,4 @@
 				return FALSE
 		return TRUE
 	return FALSE
-
+*/
