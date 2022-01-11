@@ -308,6 +308,15 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
+	name = "laser beam"
+	damage = 12
+	armour_penetration = 0
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/beam/laser/pistol //AEP7
 	name = "laser beam"
 	damage = 35

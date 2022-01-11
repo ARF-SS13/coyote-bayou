@@ -645,7 +645,12 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13heavytrooper
 	exp_requirements = 750
 
-/datum/outfit/job/ncr/f13heavytrooper	// R84 LMG, 9mm sidearm, Bayonet, Heavy armor
+	loadout_options = list(
+		/datum/outfit/loadout/shockht,	// Minigun
+		/datum/outfit/loadout/supportht, // R84
+		)
+
+/datum/outfit/job/ncr/f13heavytrooper	// 9mm sidearm, Bayonet, Heavy armor
 	name = "NCR Heavy Trooper"
 	jobtype	= /datum/job/ncr/f13heavytrooper
 	id = /obj/item/card/id/dogtag/ncrsergeant
@@ -655,14 +660,26 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	head = /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
 	neck = /obj/item/storage/belt/holster/legholster
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/ncr
-	suit_store = /obj/item/gun/ballistic/automatic/r84
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/lmg = 1,
-		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
+
+/datum/outfit/loadout/shockht
+	name = "Shock Heavy Trooper"
+	backpack_contents = list(
+		/obj/item/minigunpackbal5mm = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		)
+
+/datum/outfit/loadout/supportht
+	name = "Support Heavy Trooper"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/r84 = 1,
+		/obj/item/ammo_box/magazine/lmg = 1,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
 		)
 
 

@@ -48,6 +48,17 @@
 /obj/item/ammo_box/magazine/lmg/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/cz53
+	name = "ammo box (5mm)"
+	icon_state = "cz53"
+	ammo_type = /obj/item/ammo_casing/m5mm
+	caliber = "m5mm"
+	max_ammo = 240
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/cz53/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/mg34
 	name = "ammo box (7.62)"
 	icon_state = "r80"

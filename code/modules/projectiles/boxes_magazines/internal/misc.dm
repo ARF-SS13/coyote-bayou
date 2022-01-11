@@ -20,7 +20,7 @@
 	name = "minigun ammo pack"
 	ammo_type = /obj/item/ammo_casing/m5mm
 	caliber = "m5mm"
-	max_ammo = 500
+	max_ammo = 480
 
 //Basic Bow Ammo
 /obj/item/ammo_box/magazine/internal/tribalbow

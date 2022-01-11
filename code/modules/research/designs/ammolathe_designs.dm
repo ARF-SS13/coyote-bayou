@@ -529,6 +529,13 @@
 	build_path = /obj/item/ammo_box/magazine/m5mm/empty
 	category = list("initial", "Advanced Magazines")
 
+/datum/design/ammolathe/cz535mm
+	name = "empty 240rd cz53 pack (5mm)"
+	id = "cz535mm"
+	materials = list(/datum/material/iron = 24000)
+	build_path = /obj/item/ammo_box/magazine/cz53/empty
+	category = list("initial", "Advanced Magazines")
+
 /*
 /datum/design/ammolathe/m556_rifle_extended
 	name = "empty extended rifle magazine (5.56mm)"

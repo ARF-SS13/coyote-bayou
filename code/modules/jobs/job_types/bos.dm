@@ -460,7 +460,9 @@ Paladin
 	/datum/outfit/loadout/paladina, //R91
 	/datum/outfit/loadout/paladinb, //AER9
 	/datum/outfit/loadout/paladinc,
-	/datum/outfit/loadout/paladind
+	/datum/outfit/loadout/paladind,
+	/datum/outfit/loadout/paladine,
+	/datum/outfit/loadout/paladinf
 	)
 
 	outfit = /datum/outfit/job/bos/f13paladin
@@ -512,8 +514,7 @@ Paladin
 /datum/outfit/loadout/paladina
 	name = "Firesupport Junior Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_rifle = 1,
-		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/minigunpackbal5mm = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/juniorpaladin = 1,
@@ -529,24 +530,43 @@ Paladin
 		/obj/item/clothing/accessory/bos/juniorpaladin=1
 		)
 
-
 /datum/outfit/loadout/paladinc
+	name = "Overwatch Junior Paladin"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/m72 = 1,
+		/obj/item/ammo_box/magazine/m2mm = 3,
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2,
+		/obj/item/clothing/accessory/bos/juniorpaladin=1
+		)
+
+
+/datum/outfit/loadout/paladind
 	name = "Firesupport Paladin"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/assault_rifle=1,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/minigunpackbal5mm = 1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
-/datum/outfit/loadout/paladind
+/datum/outfit/loadout/paladine
 	name = "Frontline Paladin"
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/clothing/accessory/bos/paladin=1
+		)
+
+/datum/outfit/loadout/paladinf
+	name = "Overwatch Paladin"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/m72 = 1,
+		/obj/item/ammo_box/magazine/m2mm = 3,
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
