@@ -173,6 +173,12 @@
 	cost = 20
 	item_path = /obj/item/melee/onehanded/knife/switchblade
 
+/datum/gang_item/weapon/slugger
+	name = "Louiseville Slugger"
+	id = "slugger"
+	cost = 50
+	item_path = /obj/item/twohanded/baseball/louisville
+
 /datum/gang_item/weapon/sappers
 	name = "Sappers"
 	id = "sappers"
@@ -182,8 +188,14 @@
 /datum/gang_item/weapon/greasegun
 	name = "Grease Gun"
 	id = "greasegun"
-	cost = 150
+	cost = 300
 	item_path = /obj/item/gun/ballistic/automatic/smg/greasegun
+	
+/datum/gang_item/weapon/uzi
+	name = "Uzi"
+	id = "uzi"
+	cost = 300
+	item_path = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 
 /datum/gang_item/weapon/type17
 	name = "Type 17 Pistol"
@@ -192,9 +204,9 @@
 	item_path = /obj/item/gun/ballistic/automatic/pistol/type17
 
 /datum/gang_item/weapon/type93
-	name = "Worn Type 56"
+	name = "Worn Type 93"
 	id = "worntype93"
-	cost = 700
+	cost = 500
 	item_path = /obj/item/gun/ballistic/automatic/type93/worn
 
 
@@ -240,8 +252,91 @@
 	id = "c4"
 	cost = 200
 	item_path = /obj/item/grenade/plastic/c4
+	
+/datum/gang_item/equipment/frag
+	name = "Frag grenade"
+	cost = 75
+	item_path = /obj/item/grenade/frag
 
 
 ///////////////////
 //EQUIPMENT
 ///////////////////
+
+
+///////////////////
+//BUNDLES
+///////////////////
+
+/datum/gang_item/equipment/bundledenboss
+	name = "Drug Lord Bundle"
+	id = "bundledenboss"
+	cost = 850
+	item_path = /obj/item/storage/box/bundledenboss
+	
+/obj/item/storage/box/bundledenboss
+	name = "Drug Lord Bundle"
+	desc = "Rule the underworld like the Den Mob of old."
+
+/obj/item/storage/box/bundledenboss/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault_carbine/worn(src)
+	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
+	new /obj/item/clothing/under/f13/densuit(src)
+	
+/datum/gang_item/equipment/bundleanarchist
+	name = "Mad Bomber Bundle"
+	id = "bundleanarchist"
+	cost = 650
+	item_path = /obj/item/storage/box/bundleanarchist
+	
+/obj/item/storage/box/bundleanarchist
+	name = "Mad Bomber Bundle"
+	desc = "Come on feel the noise. The noise of explosions, specifically."
+
+/obj/item/storage/box/bundleanarchist/PopulateContents()
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/grenade/plastic/c4(src)
+	new /obj/item/grenade/plastic/c4(src)
+	new /obj/item/grenade/syndieminibomb/concussion(src)
+	new /obj/item/clothing/suit/bomb_suit(src)
+	
+/datum/gang_item/equipment/bundlegunner
+	name = "Old Soldier Bundle"
+	id = "bundlegunner"
+	cost = 500
+	item_path = /obj/item/storage/box/bundlegunner
+	
+/obj/item/storage/box/bundlegunner
+	name = "Old Soldier Bundle"
+	desc = "This wasteland needs a classier kind of raider. Back in my day, we walked uphill both ways to find some victims. "
+
+/obj/item/storage/box/bundlegunner/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/greasegun(src)
+	new /obj/item/ammo_box/magazine/greasegun(src)
+	new /obj/item/clothing/head/helmet/armyhelmet(src)
+	new /obj/item/storage/belt(src)
+	new /obj/item/clothing/under/f13/army(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	
+/datum/gang_item/equipment/bundleelguapo
+	name = "Bandito Bundle"
+	id = "bundleelguapo"
+	cost = 500
+	item_path = /obj/item/storage/box/bundleelguapo
+	
+/obj/item/storage/box/bundleelguapo
+	name = "Bandito Bundle"
+	desc = "You burned the Village, raped the horses, and rode off on their women. It was a long time ago, so the details got mixed up, but you get the point. "
+
+/obj/item/storage/box/bundleelguapo/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
+	new /obj/item/ammo_box/a357box/ricochet(src)
+	new /obj/item/gun/ballistic/revolver/colt357(src)
+	new /obj/item/clothing/head/f13/ranger_hat(src)
+	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat(src)

@@ -42,6 +42,10 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 
 		/datum/gang_item/weapon/shuriken,
 		/datum/gang_item/weapon/switchblade,
+		/datum/gang_item/weapon/slugger,
+		/datum/gang_item/weapon/type17,
+		/datum/gang_item/weapon/uzi,
+		/datum/gang_item/weapon/type93,
 
 		/datum/gang_item/clothing/prostitute_dress,
 		/datum/gang_item/clothing/hat,
@@ -51,7 +55,12 @@ GLOBAL_DATUM_INIT(denmob, /datum/gang/denmob, new)
 		/datum/gang_item/clothing/jester_uniform,
 		/datum/gang_item/clothing/soviet_uniform,
 		/datum/gang_item/clothing/biker_uniform,
-		/datum/gang_item/clothing/chairmen_uniform
+		/datum/gang_item/clothing/chairmen_uniform,
+		
+		/datum/gang_item/equipment/bundleelguapo,
+		/datum/gang_item/equipment/bundleanarchist,
+		/datum/gang_item/equipment/bundlegunner,
+		/datum/gang_item/equipment/bundledenboss,
 	)
 
 //Round-start gangs

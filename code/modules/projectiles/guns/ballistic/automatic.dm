@@ -979,8 +979,8 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/type93/worn
-	name = "\improper Worn Type 56"
-	desc = "The original Type 56 was a copy of the Soviet AKM, and this is a copy of that copy produced in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
+	name = "\improper Worn Type 93"
+	desc = "This Type 93 Chinese assault rifle looks like it has been made in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "type93"
 	item_state = "handmade_rifle"
@@ -1038,6 +1038,16 @@
 	flight_y_offset = 21
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	
+/obj/item/gun/ballistic/automatic/assault_carbine/worn	
+	name = "worn assault carbine"
+	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces. This one is beat-up and falling apart."
+	icon_state = "assault_carbine"
+	fire_delay = 3.25
+	burst_shot_delay = 2.5
+	extra_penetration = -0.04
+	spread = 10
+	extra_damage = -4
 
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine NOT CANON
 /obj/item/gun/ballistic/automatic/fnfal
