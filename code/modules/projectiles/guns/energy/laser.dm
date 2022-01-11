@@ -256,12 +256,14 @@
 //Compliance Regulator
 
 /obj/item/gun/energy/laser/complianceregulator
-	name = "AEP5-CR"
+	name = "AEP5-CR Disabling Beam Pistol"
 	desc = "A laser pistol that has been modified for less-than-lethal work."
 	slowdown = 0.2
 	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "AEP5CR"
-	icon_state = "AEP5CR"
+	item_state = "AEP5CR"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BELT
