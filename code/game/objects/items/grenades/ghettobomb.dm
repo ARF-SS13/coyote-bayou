@@ -103,7 +103,7 @@
 // Coffeepot Bomb
 /obj/item/grenade/homemade/coffeepotbomb
 	name = "coffeepot bomb"
-	desc = "What happens when you fill a coffeepot with blackpowder and bits of metal, then hook up a eggclock timer to a wire stuck inside? Better throw it far away before finding out. Too bad its pretty heavy so its hard to throw far."
+	desc = "What happens when you fill a coffeepot with blackpowder and bits of metal, then hook up a eggclock timer to a wire stuck inside? Better throw it far away before finding out. Cannot be thrown far."
 	icon_state = "coffeebomb"
 	item_state = "coffeebomb"
 	throw_range = 4
@@ -123,7 +123,7 @@
 /obj/item/grenade/homemade/coffeepotbomb/prime(mob/living/lanced_by)
 	. = ..()
 	update_mob()
-	explosion(src.loc, 0, 1, 2, 3, 0, flame_range = 2)
+	explosion(src.loc, 1, 2, 2, 3, 0, flame_range = 2)
 	qdel(src)
 
 

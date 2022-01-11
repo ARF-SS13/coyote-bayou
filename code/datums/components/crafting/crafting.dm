@@ -53,6 +53,7 @@
 				),
 				CAT_MEDICAL = CAT_NONE,
 				CAT_DRINK = CAT_NONE,
+				CAT_EXPLOSIVE = CAT_NONE,
 			)
 
 	var/cur_category = CAT_NONE

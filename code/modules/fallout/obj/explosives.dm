@@ -74,4 +74,10 @@
 
 /obj/item/bottlecap_mine/examine(mob/user)
 	. = ..()
-	. += span_warning("It seems activated!")
+	switch(state)
+		if(DISABLED)
+			. += span_warning("It seems to be inactive.")
+		if(PREACTIVE)
+			. += span_warning("It seems to be activating!")
+		if(ACTIVE)
+			. += span_warning("It seems activated!")

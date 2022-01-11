@@ -366,3 +366,19 @@
 	gain_text = "<span class='notice'>You feel yourself discovering the most intricate secrets of the human body.</span>"
 	lose_text = "<span class='danger'>You forget your advanced surgical knowledge.</span>"
 	locked = TRUE
+
+/datum/quirk/explosive_crafting
+	name = "Explosives Crafting"
+	desc = "You have strong feelings about the future of industrial society."
+	value = 1
+	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
+	gain_text = "<span class='notice'>You feel like you can make a bomb out of anything.</span>"
+	lose_text = "<span class='danger'You feel okay with the advancement of technology.</span>"
+
+/datum/quirk/advanced_explosive_crafting
+	name = "Advanced Explosive Crafting"
+	desc = "Decades of engineering knowledge have taught you to make all kinds of horrible explosives."
+	value = 1
+	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
+	gain_text = "<span class='notice'>You're on the no-fly list.'</span>"
+	lose_text = "<span class='danger'You feel like you're allowed to fly on planes again.</span>"

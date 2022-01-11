@@ -641,17 +641,16 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
-	name = "Wasteland Vending Machine - Ammo"
+	name = "Wasteland Vending Machine - Ammo n Bombs"
 	icon_state = "ammo_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
 		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
 		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv/simple,						60),
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
-		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												70),
-		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												70),
-		new /datum/data/wasteland_equipment("small rifle magazine (5.56mm)",/obj/item/ammo_box/magazine/m556/rifle/small,						100),
-		new /datum/data/wasteland_equipment("Blackpowder",					/obj/item/reagent_containers/glass/bottle/blackpowder,				65)
+		new /datum/data/wasteland_equipment("Smoke Bomb",			/obj/item/grenade/smokebomb,												70),
+		new /datum/data/wasteland_equipment("Explosives Crafting Guide",			/obj/item/book/granter/trait/explosives,												600),
+		new /datum/data/wasteland_equipment("Firebomb",/obj/item/grenade/homemade/firebomb,						100),
 		)
 	highpop_list = list()
 

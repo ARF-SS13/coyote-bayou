@@ -969,8 +969,9 @@ commented out pending rework*/
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,
 		/obj/item/stack/sheet/cloth/thirty = 1,
-		/obj/item/stack/sheet/prewar = 1,
+		/obj/item/stack/sheet/prewar/twenty = 1,
 		/obj/item/weldingtool = 1,
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -987,6 +988,9 @@ commented out pending rework*/
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionlance)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/strongrocket)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
 
 
 

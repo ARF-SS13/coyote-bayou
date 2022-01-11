@@ -372,6 +372,7 @@ Raider
 	/datum/outfit/loadout/raider_legion,
 	/datum/outfit/loadout/quack_doctor,
 	/datum/outfit/loadout/raider_mobster,
+	/datum/outfit/loadout/raider_cannibal
 	)
 
 
@@ -484,6 +485,7 @@ Raider
 		/obj/item/bottlecap_mine = 1,
 		/obj/item/grenade/homemade/coffeepotbomb = 4,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 /datum/outfit/loadout/raider_sadist

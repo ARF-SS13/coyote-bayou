@@ -1,6 +1,6 @@
 /obj/item/gun/grenadelauncher
 	name = "grenade launcher"
-	desc = "A terrible, terrible thing. It's really awful!"
+	desc = "Accepts grenades-not 40mm, the throwable kind-and then fires them. Do not use at close range."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "riotgun"
 	item_state = "riotgun"

@@ -682,7 +682,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Trench tool, Limited blueprints
 		/datum/outfit/loadout/combatengineerbuilder, // M1/n carbine, X4 explosive, Extra materials
-		/datum/outfit/loadout/combatengineertrapper, // Rockwell SMG, Minelaying
+		/datum/outfit/loadout/combatengineertrapper, // Rockwell SMG, Minelaying, Explosive Crafting
 		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, M1/n carbine
 		)
 
@@ -744,6 +744,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 /datum/outfit/loadout/combatengineerflamethrower
@@ -1062,6 +1063,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedarmorconversion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tools/forged/entrenching_tool)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedhelmetconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/incendiaryrocket)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
 /datum/outfit/job/ncr/f13logisticsofficer		// Rockwell, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
@@ -1087,6 +1091,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/stack/sheet/metal/twenty = 2,
 		/obj/item/stack/sheet/glass/ten = 2,
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 

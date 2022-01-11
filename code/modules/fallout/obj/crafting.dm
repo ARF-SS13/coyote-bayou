@@ -13,9 +13,16 @@
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "riflestock"
 
+/obj/item/rocketshell //only useful for crafting rockets
+	name = "empty rocket casing"
+	desc = "The casing of a rocket, waiting for a warhead."
+	icon = 'icons/obj/ammo.dmi'
+	icon_state = "84mm-hedp"
+	w_class = WEIGHT_CLASS_SMALL
+
 //The following items are in "crafting" type just to keep code clean.
 /obj/item/crafting
-	name = "crafting component"
+	name = "basic crafting components obtained from salvaging"
 	desc = "This should not be visible. Tell someone about it."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	item_state = "null"

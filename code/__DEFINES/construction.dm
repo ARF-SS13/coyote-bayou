@@ -112,6 +112,7 @@
 #define CAT_SHOES "Shoes"
 #define CAT_MISCCLOTHING "Misc Clothing"
 #define CAT_DRINK "Drinks"
+#define CAT_EXPLOSIVE "Explosives"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

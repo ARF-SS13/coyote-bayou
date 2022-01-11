@@ -69,3 +69,13 @@
 	build_path = /obj/item/stack/sheet/mineral/abductor
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/prewaralloy
+	name = "Pre-war alloy (Lead + Titanium + Plasma)"
+	id = "prewaralloy"
+	build_type = SMELTER | PROTOLATHE
+	materials = list(/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5, /datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5)
+	build_path = /obj/item/stack/sheet/prewar
+	category = list("initial", "Stock Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	maxstack = 50
