@@ -56,6 +56,13 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/curtain
+	name = "Curtains"
+	reqs = list(/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/rods = 1)
+	result = /obj/structure/curtain
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 /datum/crafting_recipe/dogbed
 	name = "Dog Bed"
 	result = /obj/structure/bed/dogbed
