@@ -17,11 +17,11 @@
 
 /datum/gear/neck/mantle/grey
 	name = "grey cloak"
-	path = /obj/item/clothing/neck/mantle/gray 
+	path = /obj/item/clothing/neck/mantle/gray
 
 /datum/gear/neck/mantle/ragged
 	name = "ragged mantle"
-	path = /obj/item/clothing/neck/mantle/ragged 
+	path = /obj/item/clothing/neck/mantle/ragged
 
 
 /datum/gear/neck/apron

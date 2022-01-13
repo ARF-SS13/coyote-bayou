@@ -891,15 +891,20 @@ Records disabled until a use for them is found
 							continue
 						var/class_link = ""
 						var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
+						var/extra_loadout_data = ""
 						if(loadout_item)
 							class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
-						else if(gear_points <= 0)
+							if(gear.loadout_flags & LOADOUT_CAN_NAME)
+								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
+							if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
+								extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+						else if((gear_points - gear.cost) < 0)
 							class_link = "style='white-space:normal;' class='linkOff'"
 						else if(donoritem)
 							class_link = "style='white-space:normal;background:#ebc42e;' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=1'"
 						else
 							class_link = "style='white-space:normal;' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=1'"
-						dat += "<tr style='vertical-align:top;'><td width=15%><a [class_link]>[name]</a></td>"
+						dat += "<tr style='vertical-align:top;'><td width=15%><a [class_link]>[name]</a>[extra_loadout_data]</td>"
 						dat += "<td width = 5% style='vertical-align:top'>[gear.cost]</td><td>"
 						if(islist(gear.restricted_roles))
 							if(gear.restricted_roles.len)
@@ -911,7 +916,10 @@ Records disabled until a use for them is found
 									dat += "<font size=2>"
 									dat += gear.restricted_roles.Join(";")
 									dat += "</font>"
-						dat += "</td><td><font size=2><i>[gear.description]</i></font></td></tr>"
+						// the below line essentially means "if the loadout item is picked by the user and has a custom description, give it the custom description, otherwise give it the default description"
+						//This would normally be part if an if else but because we dont have unlockable loadout items it's not
+						dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description]</i></font></td></tr>"
+
 					dat += "</table>"
 		if(CONTENT_PREFERENCES_TAB)
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -2697,6 +2705,33 @@ Records disabled until a use for them is found
 						loadout_data["SAVE_[loadout_slot]"] += list(new_loadout_data) //double packed because it does the union of the CONTENTS of the lists
 					else
 						loadout_data["SAVE_[loadout_slot]"] = list(new_loadout_data) //double packed because you somehow had no save slot in your loadout?
+
+		if(href_list["loadout_color"] || href_list["loadout_rename"] || href_list["loadout_redescribe"])
+		//if the gear doesn't exist, or they don't have it, ignore the request
+			var/name = html_decode(href_list["loadout_gear_name"])
+			var/datum/gear/G = GLOB.loadout_items[gear_category][gear_subcategory][name]
+			if(!G)
+				return
+			var/user_gear = has_loadout_gear(loadout_slot, "[G.type]")
+			if(!user_gear)
+				return
+
+			//possible requests: rename, redescribe (recolor/recolor polychrom not ported)
+			//always make sure the gear allows said request before proceeding
+
+			//both renaming and redescribing strip the input to stop html injection
+
+			//renaming is only allowed if it has the flag for it
+			if(href_list["loadout_rename"] && (G.loadout_flags & LOADOUT_CAN_NAME))
+				var/new_name = stripped_input(user, "Enter new name for item. Maximum [MAX_NAME_LEN] characters.", "Loadout Item Naming", null, MAX_NAME_LEN)
+				if(new_name)
+					user_gear[LOADOUT_CUSTOM_NAME] = new_name
+
+			//redescribing is only allowed if it has the flag for it
+			if(href_list["loadout_redescribe"] && (G.loadout_flags & LOADOUT_CAN_DESCRIPTION)) //redescribe isnt a real word but i can't think of the right term to use
+				var/new_description = stripped_input(user, "Enter new description for item. Maximum 500 characters.", "Loadout Item Redescribing", null, 500)
+				if(new_description)
+					user_gear[LOADOUT_CUSTOM_DESCRIPTION] = new_description
 
 	ShowChoices(user)
 	return 1

@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 47
+#define SAVEFILE_VERSION_MAX 48
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -74,7 +74,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			//it's double packed into a list because += will union the two lists contents
 
 		S["loadout"] = safe_json_encode(loadout_data)
-
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
@@ -509,7 +508,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["silicon_flavor_text"] >> features["silicon_flavor_text"]
 
 	//gear loadout
-	loadout_data = safe_json_decode(S["loadout"])
+	if(S["loadout"])
+		loadout_data = safe_json_decode(S["loadout"])
+	else
+		loadout_data = list()
 	//special
 	S["special_s"]			>> special_s
 	S["special_p"]			>> special_p

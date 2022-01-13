@@ -79,7 +79,10 @@
 
 //loadout saving/loading specific defines
 #define MAXIMUM_LOADOUT_SAVES 30	//Remember to increase this if more slots are added
-#define LOADOUT_ITEM				"loadout_item"
+#define LOADOUT_ITEM "loadout_item"
+#define LOADOUT_COLOR "loadout_color"
+#define LOADOUT_CUSTOM_NAME "loadout_custom_name"
+#define LOADOUT_CUSTOM_DESCRIPTION "loadout_custom_description"
 
 //loadout item flags
 #define LOADOUT_CAN_NAME (1<<0) //renaming items

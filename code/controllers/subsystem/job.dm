@@ -716,6 +716,12 @@ SUBSYSTEM_DEF(job)
 			if(!permitted)
 				continue
 			var/obj/item/I = new G.path
+			if(i[LOADOUT_CUSTOM_NAME])
+				var/custom_name = i[LOADOUT_CUSTOM_NAME]
+				I.name = custom_name
+			if(i[LOADOUT_CUSTOM_DESCRIPTION])
+				var/custom_description = i[LOADOUT_CUSTOM_DESCRIPTION]
+				I.desc = custom_description
 			if(!M.equip_to_slot_if_possible(I, G.slot, disable_warning = TRUE, bypass_equip_delay_self = TRUE)) // If the job's dresscode compliant, try to put it in its slot, first
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
