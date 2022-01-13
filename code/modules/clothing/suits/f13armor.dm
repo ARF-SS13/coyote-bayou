@@ -483,15 +483,23 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
-	desc = "(X) The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	desc = "(IX) The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
+	slowdown = 0.15 //+0.1 from helmet = total 0.25
+	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51green
+	name = "T-51b power armor"
+	desc = "(X) The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "t51green"
+	item_state = "t51green"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
-	desc = "(X) The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
+	desc = "(IX) The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
 

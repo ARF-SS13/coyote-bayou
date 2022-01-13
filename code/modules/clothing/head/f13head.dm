@@ -485,10 +485,10 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
-	desc = "(X) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	desc = "(IX) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 	icon_state = "t51bhelmet0"
 	item_state = "t51bhelmet0"
-	armor = list("tier" = 10, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 //	armor_block_chance = 70
 //	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
@@ -501,7 +501,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	name = "T-51b power helmet"
-	desc = "(X) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	desc = "(IX) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos/update_icon_state()
 	icon_state = "t51bhelmet[light_on]"

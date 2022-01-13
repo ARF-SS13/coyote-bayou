@@ -142,7 +142,7 @@ Head Paladin
 	uniform = 		/obj/item/clothing/under/f13/recon
 	accessory = 	/obj/item/clothing/accessory/bos/sentinel
 	glasses =       /obj/item/clothing/glasses/night
-	suit =			/obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
+	suit =			/obj/item/clothing/suit/armor/f13/power_armor/t51green
 	head =			/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	belt =			/obj/item/storage/belt/military/assault
 	mask =			/obj/item/clothing/mask/gas/sechailer
@@ -350,15 +350,15 @@ Star Paladin
 /datum/job/bos/f13seniorpaladin
 	title = "Senior Paladin"
 	flag = F13SENIORPALADIN
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "As the Chapter's senior offensive warrior, you have proven your service and dedication to the Brotherhood over your time as a Paladin. As your skills gained, however, you were deigned to be more useful as a commander and trainer. Your job is to coordinate the Paladins and ensure they work as a team, instilling discipline as you go."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 2400 //Not used right now anyways. Slot disabled.
+	exp_requirements = 3000 //Not used right now anyways. Slot disabled.
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
@@ -398,8 +398,8 @@ Star Paladin
 /datum/outfit/job/bos/f13seniorpaladin
 	name =	"Senior Paladin"
 	jobtype =	/datum/job/bos/f13seniorpaladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t45d/bos
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t45d/bos
+	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
+	head =	/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	accessory =	/obj/item/clothing/accessory/bos/seniorpaladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
@@ -452,7 +452,7 @@ Paladin
 	description = "You answer directly to the Senior Paladin. You are this Chapter's main line of defense and offense; highly trained in combat and weaponry though with little practical field experience, you are eager to prove your worth to the Brotherhood. Your primary duties are defense and surface operations. You may also be assigned a trainee Initiate."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
-	supervisors = "the Senior Paladin and Head Paladin"
+	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
 	exp_requirements = 2400
 
@@ -499,8 +499,8 @@ Paladin
 /datum/outfit/job/bos/f13paladin
 	name =	"Paladin"
 	jobtype =	/datum/job/bos/f13paladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t45d/bos
-	head =	/obj/item/clothing/head/helmet/f13/power_armor/t45d/bos
+	suit =	/obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
+	head =	/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
 	belt =	/obj/item/storage/belt/military/assault
