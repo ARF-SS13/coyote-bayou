@@ -374,6 +374,7 @@
 	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
 	gain_text = "<span class='notice'>You feel like you can make a bomb out of anything.</span>"
 	lose_text = "<span class='danger'You feel okay with the advancement of technology.</span>"
+	locked = TRUE
 
 /datum/quirk/advanced_explosive_crafting
 	name = "Advanced Explosive Crafting"
@@ -382,3 +383,4 @@
 	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	gain_text = "<span class='notice'>You're on the no-fly list.'</span>"
 	lose_text = "<span class='danger'You feel like you're allowed to fly on planes again.</span>"
+	locked = TRUE
