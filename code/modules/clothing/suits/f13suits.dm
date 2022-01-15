@@ -249,6 +249,7 @@
 	desc = "(IV) A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
 	icon_state = "khan_jacket"
 	item_state = "jensencoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/Initialize()
@@ -260,6 +261,7 @@
 	desc = "(V) A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem.<br>Protective plates have been sewn into the jacket."
 	icon_state = "khan_jacket"
 	item_state = "jensencoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored/Initialize()
@@ -271,7 +273,12 @@
 	desc = "(V) A dark red leather coat lined with a patchwork of metal plates and padding on the inside. The back is dominated by a burning skull adorned with a horned helmet; the symbol of the Khans."
 	icon_state = "khan_battlecoat"
 	item_state = "khan_battlecoat"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+
+/obj/item/clothing/suit/toggle/labcoat/f13/khan/battlecoat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	name = "followers lab coat"
