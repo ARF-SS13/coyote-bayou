@@ -82,7 +82,7 @@
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty and can't be refilled!</span>")
+			to_chat(user, "<span class='warning'>[target] is empty and might not be refillabe.</span>")
 			return
 
 		if(reagents.holder_full())
@@ -281,84 +281,6 @@
 
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
-
-/obj/item/reagent_containers/glass/bucket
-	name = "bucket"
-	desc = "It's a bucket."
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "bucket"
-	item_state = "bucket"
-	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
-	custom_materials = list(/datum/material/iron=200)
-	w_class = WEIGHT_CLASS_NORMAL
-	amount_per_transfer_from_this = 20
-	possible_transfer_amounts = list(5,10,15,20,25,30,50,70)
-	volume = 70
-	flags_inv = HIDEHAIR
-	slot_flags = ITEM_SLOT_HEAD
-	resistance_flags = NONE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
-	slot_equipment_priority = list( \
-		SLOT_BACK, SLOT_WEAR_ID,\
-		SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
-		SLOT_WEAR_MASK, SLOT_HEAD, SLOT_NECK,\
-		SLOT_SHOES, SLOT_GLOVES,\
-		SLOT_EARS, SLOT_GLASSES,\
-		SLOT_BELT, SLOT_S_STORE,\
-		SLOT_L_STORE, SLOT_R_STORE,\
-		SLOT_GENERC_DEXTROUS_STORAGE
-	)
-	container_flags = APTFT_ALTCLICK|APTFT_VERB
-	container_HP = 1
-
-/obj/item/reagent_containers/glass/bucket/attackby(obj/O, mob/user, params)
-	if(istype(O, /obj/item/mop))
-		if(reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>[src] is out of water!</span>")
-		else
-			reagents.trans_to(O, 5, log = "reagentcontainer-bucket fill mop")
-			to_chat(user, "<span class='notice'>You wet [O] in [src].</span>")
-			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
-	else if(isprox(O))
-		to_chat(user, "<span class='notice'>You add [O] to [src].</span>")
-		qdel(O)
-		qdel(src)
-		user.put_in_hands(new /obj/item/bot_assembly/cleanbot)
-	else
-		..()
-
-/obj/item/reagent_containers/glass/bucket/equipped(mob/user, slot)
-	..()
-	if (slot == SLOT_HEAD)
-		if(reagents.total_volume)
-			to_chat(user, "<span class='userdanger'>[src]'s contents spill all over you!</span>")
-			var/R = reagents.log_list()
-			log_reagent("SPLASH: [user] splashed [src] on their head via bucket/equipped(self, SLOT_HEAD) - [R]")
-			reagents.reaction(user, TOUCH)
-			reagents.clear_reagents()
-		reagent_flags = NONE
-
-/obj/item/reagent_containers/glass/bucket/dropped(mob/user)
-	. = ..()
-	reagent_flags = initial(reagent_flags)
-
-/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(mob/M)
-	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
-		var/index = slot_equipment_priority.Find(SLOT_HEAD)
-		slot_equipment_priority.Remove(SLOT_HEAD)
-		. = ..()
-		slot_equipment_priority.Insert(index, SLOT_HEAD)
-		return
-	return ..()
-
-/obj/item/reagent_containers/glass/bucket/wood
-	name = "wooden bucket"
-	desc = "It's a bucket made of wood."
-	icon_state = "bucket_wooden"
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 2)
-	slot_flags = NONE
-	item_flags = NO_MAT_REDEMPTION
 
 /obj/item/reagent_containers/glass/beaker/waterbottle
 	name = "bottle of water"

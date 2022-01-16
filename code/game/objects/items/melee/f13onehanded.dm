@@ -758,36 +758,8 @@ obj/item/melee/onehanded/knife/switchblade
 	sharpness = SHARP_EDGED
 	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
 
-// Hatchet
-/obj/item/hatchet
-	name = "hatchet"
-	desc = "Simple small metal axehead on a handle made from wood or some other hard material."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "hatchet"
-	item_state = "hatchet"
-	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
-	attack_speed = CLICK_CD_MELEE
-	flags_1 = CONDUCT_1
-	force = 24
-	w_class = WEIGHT_CLASS_SMALL
-	throwforce = 15
-	throw_speed = 3
-	throw_range = 4
-	custom_materials = list(/datum/material/iron = 6000)
-	attack_verb = list("chopped", "torn", "cut")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	sharpness = SHARP_EDGED
 
-/obj/item/hatchet/Initialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 70, 100)
-
-/obj/item/hatchet/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
-	return (BRUTELOSS)
-
+// Hatchet				Force 24			
 // Wrench				Force 12
 // Crowbar				Force 15
 // Kitchen knife		Force 15

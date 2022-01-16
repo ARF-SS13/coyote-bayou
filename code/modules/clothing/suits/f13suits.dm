@@ -44,6 +44,16 @@
 */
 
 //Fallout 50s
+/obj/item/clothing/suit/overalls
+	name = "overalls"
+	desc = "(I) A set of denim overalls suitable for farming."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "overalls_farmer"
+	item_state = "overalls_farmer"
+	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
+
 /obj/item/clothing/suit/f13/vest
 	name = "tan vest"
 	desc = "(I) It's a vest made of tanned leather."

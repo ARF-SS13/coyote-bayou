@@ -131,7 +131,7 @@
 //Farming & Cooking//
 /////////////////////
 
-/datum/crafting_recipe/barrel
+/datum/crafting_recipe/barrel //in wooden inhand now
 	name = "Wooden Barrel"
 	result = /obj/structure/fermenting_barrel
 	reqs = 	list(/obj/item/stack/sheet/mineral/wood = 8,
@@ -140,7 +140,7 @@
 	subcategory = CAT_FARMING
 	category = CAT_MISC
 
-/datum/crafting_recipe/dryingrack
+/datum/crafting_recipe/dryingrack //In sandstone inhand now
 	name = "Drying Rack"
 	result = /obj/machinery/smartfridge/drying_rack
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
@@ -149,7 +149,7 @@
 	subcategory = CAT_FARMING
 	category = CAT_MISC
 
-/datum/crafting_recipe/seedextractor
+/datum/crafting_recipe/seedextractor //In metal inhand now
 	name = "Seed Extractor"
 	result = /obj/structure/legion_extractor
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 20,

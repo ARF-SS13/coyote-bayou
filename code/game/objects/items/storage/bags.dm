@@ -223,7 +223,7 @@
 
 /obj/item/storage/bag/plants
 	name = "plant bag"
-	icon = 'icons/obj/hydroponics/equipment.dmi'
+	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "plantbag"
 	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
@@ -241,6 +241,7 @@
 /obj/item/storage/bag/plants/portaseeder
 	name = "portable seed extractor"
 	desc = "For the enterprising botanist on the go. Less efficient than the stationary model, it creates one seed per plant."
+	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "portaseeder"
 
 /obj/item/storage/bag/plants/portaseeder/verb/dissolve_contents()
