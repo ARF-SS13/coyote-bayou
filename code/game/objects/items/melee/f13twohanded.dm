@@ -99,7 +99,7 @@
 ////////////		- Reach
 
 // Metal Spear		Keywords: Damage 10/30, Reach
-/obj/item/twohanded/spear 
+/obj/item/twohanded/spear
 	name = "spear"
 	desc = "A simple spear with a metal head and wooden shaft."
 	icon_state = "spear-metal"
@@ -197,7 +197,7 @@
 	update_icon()
 
 
-// Lance		Keywords: LEGION, Damage 25/40, Reach		
+// Lance		Keywords: LEGION, Damage 25/40, Reach
 /obj/item/twohanded/spear/lance
 	name = "legion lance"
 	desc = "A long spear made in the Legions war foundries. Useful for fighting tribals and hunting when ammunition is scarce."
@@ -655,8 +655,43 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
+//Steel Saw		Keywords: Damage 14/40, Fast, Wound Bonus, Tool saw-off
+/obj/item/twohanded/chainsaw/steelsaw
+	name = "steel saw"
+	desc = "A long, heavy circular saw with reinforced blades, designed for cutting through I-beams."
+	icon_state = "steelsaw"
+	item_state = "steelsaw"
+	icon_prefix = "steelsaw"
+	force = 4
+	force_on = 40
+	force_off = 14
+	on_icon_state = "steelsaw_on"
+	off_icon_state = "steelsaw"
+	on_item_state = "steelsaw_on"
+	off_item_state = "steelsaw"
+	wound_bonus = 15
+	attack_speed = CLICK_CD_MELEE * 0.9
+
+//Auto Axe 		Keywords: Damage 14/40, AP 0.5, Wound Bonus
+/obj/item/twohanded/chainsaw/autoaxe
+	name = "auto axe"
+	desc = "A reinforced and heavier steel saw, upgraded using the parts of a car engine."
+	icon_state = "autoaxe"
+	item_state = "autoaxe"
+	icon_prefix = "autoaxe"
+	force = 6
+	force_on = 40
+	force_off = 14
+	armour_penetration = 0.3
+	on_icon_state = "autoaxe_on"
+	off_icon_state = "autoaxe"
+	on_item_state = "autoaxe_on"
+	off_item_state = "autoaxe"
+	wound_bonus = 10
+	tool_behaviour = null
+
 /*
-CODE ARCHIVE 
+CODE ARCHIVE
 
 CODE FOR POISON EFFECT
 /obj/item/twohanded/spear/ultra/attack(mob/living/M, mob/living/user)

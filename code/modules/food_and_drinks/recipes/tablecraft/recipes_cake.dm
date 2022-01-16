@@ -21,7 +21,7 @@
 
 /datum/crafting_recipe/food/clowncake
 	name = "Clown cake"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
 		/obj/item/reagent_containers/food/snacks/sundae = 2,

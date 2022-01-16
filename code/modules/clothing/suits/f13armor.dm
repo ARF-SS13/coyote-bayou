@@ -1023,9 +1023,106 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "mutie_metal_armour_mk2"
 	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 40, "fire" = 30, "acid" = 20)
 
-/obj/item/clothing/suit/f13/NCR_tribal_armor
+//TRIBALS
+
+/obj/item/clothing/suit/f13/tribal
+	name = "tribal armor"
+	desc = "(IV) A set of armor made of gecko hides.<br>It's pretty good for makeshift armor."
+	icon_state = "tribal"
+	item_state = "tribal"
+	armor = list("tier" = 4, "energy" = 30, "bomb" = 20, "bio" = 0, "rad" = 40, "fire" = 40, "acid" = 15)
+
+/obj/item/clothing/suit/f13/tribal/light
+	name = "light tribal armor"
+	desc = "(III) A set of armor made of a variety of tanned hides. It's not the best."
+	armor = list("tier" = 3, "energy" = 30, "bomb" = 20, "bio" = 0, "rad" = 20, "fire" = 35, "acid" = 15)
+
+/obj/item/clothing/suit/f13/tribal/heavy
+	name = "heavy tribal armor"
+	desc = "(V) A heavy suit of armour made of brahmin and gecko hides. It seems rather heavy."
+	armor = list("tier" = 5, "energy" = 50, "bomb" = 30, "bio" = 0, "rad" = 60, "fire" = 45, "acid" = 15)
+	slowdown = 0.1
+
+/obj/item/clothing/suit/f13/tribal/ncr
 	name = "tribalized NCR armor vest"
-	desc = "A suit of worn dated NCR armor, it seems to have seen better days."
+	desc = "(IV) A suit of worn dated NCR armor, it seems to have seen better days."
 	icon_state = "ncr_tribal_armor"
 	item_state = "ncr_tribal_armor"
-	armor = list("tier" = 4, "energy" = 30, "bomb" = 20, "bio" = 0, "rad" = 70, "fire" = 70, "acid" = 15)
+
+/obj/item/clothing/suit/f13/tribal/light/rustwalkers
+	name = "Rustwalkers light armor"
+	desc = "(III) A duster made from some combination of leather and cloth, probably torn out of an old car. The shoulders appear to have had parts of an engine either strapped or stitched onto them. Commonly worn by members of the Rustwalkers tribe."
+	icon_state = "rustwalkers_armour_light"
+	item_state = "rustwalkers_armour_light"
+
+/obj/item/clothing/suit/f13/tribal/rustwalkers
+	name = "Rustwalkers armor"
+	desc = "(IV) A chestplate, pauldron and vambrace that bear a distinct resemblance to a coolant tank, engine valves and an exhaust. Commonly worn by members of the Rustwalkers tribe"
+	icon_state = "rustwalkers_armour"
+	item_state = "rustwalkers_armour"
+
+/obj/item/clothing/suit/f13/tribal/heavy/rustwalkers
+	name = "Rustwalkers heavy armor"
+	desc = "(V) A car seat leather duster, a timing belt bandolier, and armour plating made from various parts of a car, it surely would weigh the wearer down. Commonly worn by members of the Rustwalkers tribe."
+	icon_state = "rustwalkers_armour_heavy"
+	item_state = "rustwalkers_armour_heavy"
+
+/obj/item/clothing/suit/f13/tribal/light/whitelegs
+	name = "White Legs light armour"
+	desc = "(III) A small series of tan and khaki armour plates, held in place with a thin bandolier. Commonly worn by members of the White Legs tribe."
+	icon_state = "white_legs_armour_light"
+	item_state = "white_legs_armour_light"
+
+/obj/item/clothing/suit/f13/tribal/whitelegs
+	name = "White Legs armour"
+	desc = "(IV) A series of tan and khaki armour plates, held in place with a considerable amount of strapping. Commonly worn by members of the White Legs tribe."
+	icon_state = "white_legs_armour"
+	item_state = "white_legs_armour"
+
+/obj/item/clothing/suit/f13/tribal/heavy/whitelegs
+	name = "White Legs heavy armour"
+	desc = "(V) A series of tan and khaki armour plates, held in place with a considerable amount of strapping and possibly duct tape. Commonly worn by members of the White Legs tribe."
+	icon_state = "white_legs_armour_heavy"
+	item_state = "white_legs_armour_heavy"
+
+/obj/item/clothing/suit/f13/tribal/light/eighties
+	name = "80s light armour"
+	desc = "(III) A black leather jacket with the number 80 stitched onto the back. Worn by the members of the 80s tribe."
+	icon_state = "80s_armour_light"
+	item_state = "80s_armour_light"
+
+/obj/item/clothing/suit/f13/tribal/eighties
+	name = "80s armour"
+	desc = "(IV) A plain, slightly cropped leather jacket with a black lining and neck brace, paired with a set of metal vambraces and a black belt of pouches. Commonly worn by the members of the 80s tribe."
+	icon_state = "80s_armour"
+	item_state = "80s_armour"
+
+/obj/item/clothing/suit/f13/tribal/heavy/eighties
+	name = "80s heavy armour"
+	desc = "(V) A ballistic duster with the number 80 stitched onto the back worn over a breastplate made from a motorcycle's engine housing, with kneepads made from stirrups. Worn by the members of the 80s tribe."
+	icon_state = "80s_armour_heavy"
+	item_state = "80s_armour_heavy"
+
+/obj/item/clothing/suit/f13/tribal/light/deadhorses
+	name = "Dead Horses light armour"
+	desc = "(III) A simple leather bandolier and gecko hide chest covering. Worn by the members of the Dead Horses tribe."
+	icon_state = "dead_horses_armour_light"
+	item_state = "dead_horses_armour_light"
+
+/obj/item/clothing/suit/f13/tribal/deadhorses
+	name = "Dead Horses armour"
+	desc = "(IV) A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a pair of black leather straps. Commonly worn by the members of the Dead Horses tribe."
+	icon_state = "dead_horses_armour"
+	item_state = "dead_horses_armour"
+
+/obj/item/clothing/suit/f13/tribal/heavy/deadhorses
+	name = "Dead Horses heavy armour"
+	desc = "(V) A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a set of black leather straps, one holding a shinpad in place. Commonly worn by the members of the Dead Horses tribe."
+	icon_state = "dead_horses_armour_heavy"
+	item_state = "dead_horses_armour_heavy"
+
+/obj/item/clothing/suit/f13/tribal/light/sorrows
+	name = "Sorrows armour"
+	desc = "(III) A worn ballistic vest from Salt Lake, adorned with feathers and turqoise beads, with an ornamental pattern painted over the sides. Commonly worn by the members of the peaceful Sorrows tribe."
+	icon_state = "sorrows_armour"
+	item_state = "sorrows_armour"

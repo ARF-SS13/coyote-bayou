@@ -61,14 +61,14 @@
 	name = "Sandstone Bow Making Manual"
 	result = /obj/item/book/granter/crafting_recipe/bone_bow
 	time = 200 //Scribing // don't care
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(/obj/item/stack/rods = 1,
 				/obj/item/stack/sheet/mineral/sandstone = 4)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/rib
 	name = "Collosal Rib"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 10,
 			/datum/reagent/oil = 5)
@@ -77,7 +77,7 @@
 
 /datum/crafting_recipe/skull
 	name = "Skull Carving"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 6,
 			/datum/reagent/oil = 5)
@@ -86,7 +86,7 @@
 
 /datum/crafting_recipe/halfskull
 	name = "Cracked Skull Carving"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 3,
 			/datum/reagent/oil = 5)
@@ -95,7 +95,7 @@
 
 /datum/crafting_recipe/boneshovel
 	name = "Serrated Bone Shovel"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 4,
 			/datum/reagent/oil = 5,
@@ -110,7 +110,7 @@
 			/obj/item/stack/sheet/mineral/bamboo = 5)
 	result = /obj/structure/punji_sticks
 	category = CAT_PRIMAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribal_pa
 	name = "Tribal Salvaged Power Armor"
@@ -125,8 +125,8 @@
 			)
 	result = /obj/item/clothing/suit/armor/f13/wayfarer/tribal_pa
 	category = CAT_TRIBAL
-	always_availible = FALSE
-	
+	always_available = FALSE
+
 /datum/crafting_recipe/tribal_pa_helmet
 	name = "Tribal Salvaged Power Armor Helmet"
 	time = 120
@@ -140,7 +140,7 @@
 			)
 	result = /obj/item/clothing/head/helmet/f13/wayfarer/pa_helmet
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribal_combat_armor
 	name = "Tribal Combat Armor"
@@ -153,7 +153,7 @@
 			)
 	result = /obj/item/clothing/suit/armor/f13/tribal_combat_armor
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribal_combat_armor_helmet
 	name = "Tribal Combat Helmet"
@@ -166,7 +166,7 @@
 			)
 	result = /obj/item/clothing/head/helmet/f13/combat/wayfarer/tribe_helmet
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/sturdybow
 	name = "Sturdy Bow"
@@ -177,7 +177,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
@@ -188,7 +188,7 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/bonebow
 	name = "Deathclaw Bow"
@@ -199,7 +199,7 @@
 				/obj/item/stack/sheet/sinew = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/tribe_bow
 	name = "Short Bow"
@@ -208,7 +208,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
@@ -263,7 +263,7 @@
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 //MELEE
 
@@ -274,7 +274,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/boneaxe
 	name = "Bone Axe"
@@ -283,7 +283,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/warclub
 	name = "Wooden Warclub"
@@ -293,7 +293,7 @@
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
@@ -312,7 +312,7 @@
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
 	category = CAT_TRIBAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
@@ -322,7 +322,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_FORGE)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/heavytribe
 	name = "Heavy Tribal Plates"
@@ -332,7 +332,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_FORGE)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/goliathcloak
 	name = "Deathclaw cloak"
@@ -343,7 +343,7 @@
 				/obj/item/stack/sheet/animalhide/deathclaw = 4)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
@@ -354,7 +354,7 @@
 				/obj/item/stack/sheet/cloth = 4)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/deathclawspear
 	name = "Deathclaw Spear"
@@ -366,7 +366,7 @@
 				/obj/item/stack/sheet/mineral/wood = 10)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"
@@ -378,7 +378,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/legendaryclawcloak
 	name = "Legendary Deathclaw Cloak"
@@ -399,4 +399,4 @@
 				/obj/item/stack/cable_coil = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_availible = FALSE
+	always_available = FALSE

@@ -54,7 +54,7 @@
 				)
 	time = 15
 	category = CAT_EXPLOSIVE
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/lance
 	name = "Explosive Spear (Grenade)"
@@ -81,7 +81,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/frag_shrapnel
 	name = "Fragmentation Grenade"
@@ -99,7 +99,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/incendiary
 	name = "Incendiary Grenade"
@@ -118,7 +118,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/stinger
 	name = "Stinger Grenade"
@@ -134,7 +134,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/radgrenade
 	name = "Radiation Grenade"
@@ -154,7 +154,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/flashbang
 	name = "Flashbang"
@@ -171,7 +171,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/smokebomb
 	name = "Smokebomb"
@@ -188,7 +188,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/empgrenade
 	name = "Pulse Grenade"
@@ -207,7 +207,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/rocket_base
 	name = "Empty rocket shell"
@@ -223,7 +223,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/weakrocket
 	name = "Low-yield HE rocket"
@@ -238,7 +238,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/strongrocket
 	name = "High-yield HE rocket"
@@ -253,7 +253,7 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/incendiaryrocket
 	name = "Incendiary rocket"
@@ -269,4 +269,4 @@
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
-	always_availible = FALSE
+	always_available = FALSE

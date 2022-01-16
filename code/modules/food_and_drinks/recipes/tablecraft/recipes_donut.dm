@@ -77,7 +77,7 @@
 
 /datum/crafting_recipe/food/dessert/bluecherryshake
 	name = "Blue Cherry Milkshake"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/icecream = 1,
 		/obj/item/reagent_containers/food/snacks/grown/bluecherries = 3,
@@ -87,7 +87,7 @@
 
 /datum/crafting_recipe/food/dessert/cherryshake
 	name = "Cherry Milkshake"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/icecream = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cherries = 3,
@@ -193,7 +193,7 @@
 
 /datum/crafting_recipe/food/dessert/vanillacake
 	name = "Vanilla cake"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/store/cake/plain = 1,
 		/obj/item/reagent_containers/food/snacks/grown/vanillapod = 2

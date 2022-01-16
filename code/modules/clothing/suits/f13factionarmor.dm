@@ -739,7 +739,7 @@
 
 /obj/item/clothing/suit/armor/f13/wayfarer/tribal_pa
 	name = "tribal full plate armor"
-	desc = "(VI) A set of power armor, now reborn in the paints of the Wayfarers, it serves its new owners as an idol to Kwer, as well as being a piece of heavy covering, with removed parts to allow for quick nimble speed, its hardly what it used to be long ago."
+	desc = "(VII) A set of power armor, now reborn in the paints of the Wayfarers, it serves its new owners as an idol to Kwer, as well as being a piece of heavy covering, with removed parts to allow for quick nimble speed, its hardly what it used to be long ago."
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
 	armor = list("tier" = 7, "energy" = 50, "bomb" = 40, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)

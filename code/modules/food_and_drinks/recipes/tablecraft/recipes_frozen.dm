@@ -4,7 +4,7 @@
 
 /datum/crafting_recipe/food/banana_split
 	name = "Banana Split"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/icecream = 3,
 		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
@@ -58,7 +58,7 @@
 
 /datum/crafting_recipe/food/root_float
 	name = "Cola Float"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/icecream = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cherries = 1,

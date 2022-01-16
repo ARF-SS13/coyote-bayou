@@ -58,6 +58,44 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/chainsaw
+	name = "Chainsaw"
+	result = /obj/item/twohanded/chainsaw
+	reqs = list(/obj/item/circular_saw = 1,
+				/obj/item/stack/cable_coil = 3,
+				/obj/item/stack/sheet/plasteel = 5)
+	tools = list(TOOL_WELDER)
+	time = 50
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
+/datum/crafting_recipe/steelsaw
+	name = "Steel Saw"
+	result = /obj/item/twohanded/chainsaw/steelsaw
+	reqs = list(/obj/item/circular_saw = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/plasteel = 5,
+				/obj/item/stack/crafting/goodparts = 3)
+	tools = list(TOOL_WELDER, TOOL_AWORKBENCH)
+	time = 60
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
+/datum/crafting_recipe/autoaxe
+	name = "Auto Axe"
+	result = /obj/item/twohanded/chainsaw/autoaxe
+	reqs = list(/obj/item/twohanded/chainsaw/steelsaw = 1,
+				/obj/item/stack/sheet/mineral/titanium = 1,
+				/obj/item/stack/crafting/goodparts = 3,
+				/obj/structure/wreck/trash/engine)
+	tools = list(TOOL_WELDER)
+	time = 60
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 /////////////////////////
 ///POWER CELL RECYCLING//
 /////////////////////////
@@ -134,7 +172,7 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 30
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO	
+	subcategory = CAT_AMMO
 
 
 
@@ -214,7 +252,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	
+
 /datum/crafting_recipe/m29snub
 	name = "snubnose .44 magnum revolver"
 	result = /obj/item/gun/ballistic/revolver/m29/snub
@@ -262,7 +300,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //colt 6520
 /datum/crafting_recipe/colt6520
@@ -276,7 +314,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //m1911
 /datum/crafting_recipe/m1911
@@ -289,7 +327,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //n99
 /datum/crafting_recipe/n99
@@ -302,7 +340,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //hunting rifle
 /datum/crafting_recipe/huntingrifle
@@ -315,7 +353,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //battle rifle
 /datum/crafting_recipe/m1garand
@@ -331,7 +369,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //varmint rifle
 /datum/crafting_recipe/varmintrifle
@@ -344,7 +382,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 
 
@@ -363,7 +401,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //r91
 /datum/crafting_recipe/r91
@@ -380,7 +418,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/pps
 	name = "Ppsh-41"
@@ -393,7 +431,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/commando
 	name = "DeLisle Commando Carbine"
@@ -406,7 +444,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //infiltrator
 /datum/crafting_recipe/infiltrator
@@ -422,7 +460,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //hunting shotgun
 /datum/crafting_recipe/huntingshotgun
@@ -436,7 +474,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //marksman carbine
 /datum/crafting_recipe/marksmancarbine
@@ -450,7 +488,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //r84 lmg
 /datum/crafting_recipe/lmg
@@ -465,7 +503,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //lsw lmg
 /datum/crafting_recipe/gun/lsw
@@ -481,7 +519,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 
 //service rifle
@@ -497,7 +535,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //scout carbine
 /datum/crafting_recipe/scoutcarbine
@@ -512,7 +550,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/gaussrifle
 	name = "M72 Gauss Rifle"
@@ -530,7 +568,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/neostead
 	name = "Neostead 2000"
@@ -545,7 +583,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 
 //aep7
@@ -561,7 +599,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //lever action shotgun
 /datum/crafting_recipe/lever_action
@@ -575,7 +613,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //trail carbine
 /datum/crafting_recipe/trail_carbine
@@ -589,7 +627,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //.223 pistol
 /datum/crafting_recipe/thatgun
@@ -601,7 +639,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //plasma pistol
 /datum/crafting_recipe/plasmapistol
@@ -616,7 +654,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //uzi
 /datum/crafting_recipe/uzi
@@ -629,7 +667,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //10mm smg
 /datum/crafting_recipe/smg10mm
@@ -642,7 +680,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //grease gun
 /datum/crafting_recipe/grease_gun
@@ -655,7 +693,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //brush gun
 /datum/crafting_recipe/brush
@@ -670,7 +708,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //r91
 /datum/crafting_recipe/r91
@@ -686,7 +724,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //Riot shotgun
 /datum/crafting_recipe/riotshotgun
@@ -702,7 +740,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //sniper
 /datum/crafting_recipe/sniper
@@ -718,7 +756,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/m1carbine
 	name = "M1 Carbine"
@@ -731,7 +769,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //deagle
 /datum/crafting_recipe/deagle
@@ -747,7 +785,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //aer9
 /datum/crafting_recipe/AER9
@@ -763,7 +801,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //plasma rifle
 /datum/crafting_recipe/plasmarifle
@@ -780,7 +818,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //tribeam
 /datum/crafting_recipe/tribeam
@@ -797,7 +835,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //AM rifle
 /datum/crafting_recipe/am_rifle
@@ -814,7 +852,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //city killer
 /datum/crafting_recipe/city_killer
@@ -830,7 +868,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //rangemaster
 /datum/crafting_recipe/rangemaster
@@ -846,7 +884,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //bozar
 /datum/crafting_recipe/bozar
@@ -863,7 +901,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //wattz2000
 /datum/crafting_recipe/gun/energy/wattz2k
@@ -880,7 +918,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //magneto
 /datum/crafting_recipe/magnetowattz
@@ -921,7 +959,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 //R82 heavy service rifle
 /datum/crafting_recipe/R82
@@ -937,7 +975,7 @@
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 
 
 
@@ -958,7 +996,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/suppressor
 	name = "Suppressor"
@@ -973,7 +1011,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/burst_improvement
 	name = "Burst Cam"
@@ -987,7 +1025,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/recoil_decrease
 	name = "Recoil Compensator"
@@ -1001,7 +1039,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/automatic_sear
 	name = "Automatic Sear"
@@ -1015,7 +1053,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 /*
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"
@@ -1029,7 +1067,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/lenses
 	name = "Focused crystal lenses"
@@ -1044,7 +1082,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/conductors
 	name = "Superconductor coil"
@@ -1058,7 +1096,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/receiver
 	name = "Advanced modular receiver"
@@ -1072,7 +1110,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/assembly
 	name = "Pre-war weapon assembly"
@@ -1087,7 +1125,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/alloys
 	name = "Superlight alloys"
@@ -1101,7 +1139,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_availible = FALSE
+	always_available = FALSE
 
 Not implemented due to balance at the moment
 /datum/crafting_recipe/caws
@@ -1116,5 +1154,5 @@ Not implemented due to balance at the moment
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	always_availible = FALSE
+	always_available = FALSE
 */

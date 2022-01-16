@@ -116,7 +116,7 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
 	reqs = list(/datum/reagent/medicine/stimpak = 10,
 				/obj/item/reagent_containers/syringe = 1)
-	time = 1 //you're just filling a hypospray with stim fluid... 
+	time = 1 //you're just filling a hypospray with stim fluid...
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak5
@@ -124,7 +124,7 @@
 	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
 	reqs = list(/datum/reagent/medicine/stimpak = 50,
 				/obj/item/reagent_containers/syringe = 5)
-	time = 5 //you're just filling 5 hypospray with stim fluid... 
+	time = 5 //you're just filling 5 hypospray with stim fluid...
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/improvisedstimpak5
@@ -181,7 +181,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/turbo
 	name = "Turbo"
@@ -192,7 +192,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/psycho
 	name = "Psycho"
@@ -203,7 +203,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/medx
 	name = "Med-X"
@@ -217,7 +217,7 @@
 	time = 35
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_MEDICAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/buffout
 	name = "Buffout"
@@ -230,7 +230,7 @@
 	time = 50
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
-	always_availible = FALSE
+	always_available = FALSE
 
 /datum/crafting_recipe/extract_gaia
 	name = "Extract gaia"

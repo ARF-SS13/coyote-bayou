@@ -751,10 +751,6 @@
 
 //Powder Gangers
 
-//White Legs
-
-//Dead Horses
-
 //The Kings
 
 //Mutant Band
@@ -1613,3 +1609,79 @@
 	desc = "A dark grey, and finely pressed suit, complete with kneepads and a suspiciously golden silk shirt, only the best."
 	icon_state = "den_suit"
 	item_state = "den_suit"
+
+//TRIBALS
+
+/obj/item/clothing/under/f13/whitelegs
+	name = "White Legs garb"
+	desc = "A segmented pair of dark leather shorts with an orange belt, paired with a distinct facewrap, worn by members of the White Legs tribe."
+	icon_state = "white_legs_under"
+	item_state = "white_legs_under"
+	item_color = "white_legs_under"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/female/whitelegs
+	name = "White Legs garb"
+	desc = "A segmented pair of dark leather shorts with an orange belt and matching sports bra, paired with a distinct facewrap, worn by members of the White Legs tribe."
+	icon_state = "white_legs_under_f"
+	item_state = "white_legs_under_f"
+	item_color = "white_legs_under_f"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/rustwalkers
+	name = "Rustwalkers outfit"
+	desc = "A plaid shirt with torn short sleeves with a set of grey cargo pants, commonly worn by members of the Rustwalkers tribe."
+	icon_state = "rustwalkers_under"
+	item_state = "rustwalkers_under"
+	item_color = "rustwalkers_under"
+	can_adjust = TRUE
+
+/obj/item/clothing/under/f13/female/rustwalkers
+	name = "Rustwalkers outfit"
+	desc = "A cropped red leather jacket with a torn sleeve, alongside a pair of torn brown trousers patched with fishnets, commonly worn by members of the Rustwalkers tribe."
+	icon_state = "rustwalkers_under_f"
+	item_state = "rustwalkers_under_f"
+	item_color = "rustwalkers_under_f"
+
+/obj/item/clothing/under/f13/eighties
+	name = "Eighties outfit"
+	desc = "A thin, short sleeved grey shirt that's longer down the back, with black jeans and a series of chains used as a belt. Commonly worn by members of the Eighties tribe."
+	icon_state = "80s_under"
+	item_state = "80s_under"
+	item_color = "80s_under"
+
+/obj/item/clothing/under/f13/female/eighties
+	name = "Eighties outfit"
+	desc = "A simple grey corset with brown jeans and a series of chains used as a belt and harness. Commonly worn by members of the Eighties tribe."
+	icon_state = "80s_under_f"
+	item_state = "80s_under_f"
+	item_color = "80s_under_f"
+
+/obj/item/clothing/under/f13/deadhorses
+	name = "Dead Horses garb"
+	desc = "A simple leather bandolier with a pouch, paired with a gecko-hide loincloth. Commonly worn by members of the Dead Horses tribe."
+	icon_state = "dead_horses_under"
+	item_state = "dead_horses_under"
+	item_color = "dead_horses_under"
+
+/obj/item/clothing/under/f13/female/deadhorses
+	name = "Dead Horses garb"
+	desc = "A simple gecko-hide sports bra and loincloth. Commonly worn by members of the Dead Horses tribe."
+	icon_state = "dead_horses_under_f"
+	item_state = "dead_horses_under_f"
+	item_color = "dead_horses_under_f"
+
+/obj/item/clothing/under/f13/sorrows
+	name = "Sorrows garb"
+	desc = "A simple pair of blue shorts with a length of the fabric extending down each leg. Commonly worn by members of the Sorrows tribe."
+	icon_state = "sorrows_under"
+	item_state = "sorrows_under"
+	item_color = "sorrows_under"
+
+/obj/item/clothing/under/f13/female/sorrows
+	name = "Sorrows garb"
+	desc = "A simple set of blue shorts with a length of the fabric extending down each leg and similarly coloured sports bra. Commonly worn by members of the Sorrows tribe."
+	icon_state = "sorrows_under_f"
+	item_state = "sorrows_under_f"
+	item_color = "sorrows_under_f"
+

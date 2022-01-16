@@ -165,7 +165,7 @@
 
 /datum/crafting_recipe/food/berrytart
 	name = "Berry tart"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/datum/reagent/consumable/milk = 5,
 			/datum/reagent/consumable/sugar = 5,
@@ -177,7 +177,7 @@
 
 /datum/crafting_recipe/food/cocolavatart
 	name = "Chocolate Lava tart"
-	always_availible = FALSE
+	always_available = FALSE
 	reqs = list(
 			/datum/reagent/consumable/milk = 5,
 			/datum/reagent/consumable/sugar = 5,

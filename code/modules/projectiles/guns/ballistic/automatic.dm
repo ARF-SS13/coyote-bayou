@@ -391,6 +391,14 @@
 	spread = 10
 	recoil = 0.5
 
+//White Legs Tommygun			Keywords: .45 ACP, Automatic, 30 rounds
+/obj/item/gun/ballistic/automatic/smg/tommygun/whitelegs
+	name = "storm drum"
+	desc = "Rusty, dinged up and stuck on semi-auto, but somehow still functional. Commonly used by the White Legs tribe."
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
+	semi_auto = TRUE
+	fire_delay = 5
+	spread = 15
 
 //P90				Keywords: 10mm, Automatic, 50 rounds. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/smg/p90

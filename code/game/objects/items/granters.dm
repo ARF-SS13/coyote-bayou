@@ -621,6 +621,27 @@
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
 	//crafting_recipe_types = list(/datum/crafting_recipe/flux, /datum/crafting_recipe/lenses, /datum/crafting_recipe/conductors, /datum/crafting_recipe/receiver, /datum/crafting_recipe/assembly, /datum/crafting_recipe/alloys)
 
+/obj/item/book/granter/crafting_recipe/scav_one
+	name = "SCAV! Issue 1"
+	desc = "A popular post-war comic series detailing the trials and tribulations of scavengers and their tools."
+	oneuse = TRUE
+	remarks = list("And it was here that I stabbed a man over a desk fan...", "The paint was chipping, but that didn't matter when he lay dead...", "A tank here, a pipe there...", "A bit of duct tape wrapped around everything...", "My flamethrower spat fire! Wait, where are my eyebrows...")
+	crafting_recipe_types = list(/datum/crafting_recipe/chainsaw, /datum/crafting_recipe/tools/forged/entrenching_tool)
+
+/obj/item/book/granter/crafting_recipe/scav_two
+	name = "SCAV! Issue 2"
+	desc = "A popular post-war comic series detailing the trials and tribulations of scavengers and their tools."
+	oneuse = TRUE
+	remarks = list("And it was here that I stabbed a man over a desk fan...", "The paint was chipping, but that didn't matter when he lay dead...", "A tank here, a pipe there...", "A bit of duct tape wrapped around everything...", "My flamethrower spat fire! Wait, where are my eyebrows...")
+	crafting_recipe_types = list(/datum/crafting_recipe/steelsaw)
+
+/obj/item/book/granter/crafting_recipe/scav_three
+	name = "SCAV! Issue 3"
+	desc = "A popular post-war comic series detailing the trials and tribulations of scavengers and their tools."
+	oneuse = TRUE
+	remarks = list("And it was here that I stabbed a man over a desk fan...", "The paint was chipping, but that didn't matter when he lay dead...", "A tank here, a pipe there...", "A bit of duct tape wrapped around everything...", "My flamethrower spat fire! Wait, where are my eyebrows...")
+	crafting_recipe_types = list(/datum/crafting_recipe/autoaxe)
+
 // New Blueprints, yay! -Superballs
 /obj/item/book/granter/crafting_recipe/blueprint
 	name = "blueprint"
@@ -819,6 +840,14 @@
 	remarks = list("Never make dreams...", "Don't pick from an empty list...", "Runtimes are not good for cardio...", "Report an issue to a nearby technician, and expect to be told to post it to their terminal...", "Probably don't adjust the default safety settings.", "Clean up any messes left in the pod before the next use.")
 	crafting_recipe_types = list(/datum/crafting_recipe/set_vrboard/den)
 
+/obj/item/book/granter/trait/tagger
+	name = "Picket Fences"
+	desc = "A guide to home decor! The American Dream might be dead and the white picket fences might be caked in rads, but at least you can read about it!"
+	oneuse = TRUE
+	granted_trait = TRAIT_TAGGER
+	traitname = "tagger"
+	remarks = list("Just two tins of paint is enough for your whole house!", "Move your sofa to the left three paces, and you've discovered Feng Shui! Please report to the nearest police station.", "Your neighbours got a new BBQ and is hosting one at the weekend! Here's what you do...")
+
 /obj/item/book/granter/trait/chemistry
 	name = "Big Book of Science"
 	desc = "This heavy textbook can teach basic chemistry, but saw more use as a blunt weapon shortly after the Collapse."
@@ -889,7 +918,6 @@
 	traitname = "trekking"
 	remarks = list("Tribes and gangs often hide the best loot in the back room.", "Radiation is best avoided entirely, but it helps to carry spare rad-x.", "Whether ancient or recent, landmines are still a threat, and readers should look out for them.", "Injuries and open bleeding make it harder to travel, always carry spare medical supplies.", "Most animals are simple-minded, and can be led into easy lines of fire.")
 
-
 /obj/item/book/granter/trait/explosives
 	name = "Industrial Society and Its Future"
 	desc = "This lengthy manifesto happens to contain a variety of valuable knowledge on how to craft explosives of all kinds."
@@ -897,7 +925,7 @@
 	granted_trait = TRAIT_EXPLOSIVE_CRAFTING
 	traitname = "explosive crafting"
 	remarks = list("If you want to get started making bombs, you're going to need a lot of igniters and black powder.", "Did a Follower write this book, or something?", "All thermite takes is some aluminum and iron.", "Coconut shells make acceptable grenade casings in a pinch.")
-	crafting_recipe_types = list(/datum/crafting_recipe/frag_shrapnel, /datum/crafting_recipe/stinger, /datum/crafting_recipe/flashbang, 
+	crafting_recipe_types = list(/datum/crafting_recipe/frag_shrapnel, /datum/crafting_recipe/stinger, /datum/crafting_recipe/flashbang,
 /datum/crafting_recipe/smokebomb, /datum/crafting_recipe/rocket_base, /datum/crafting_recipe/weakrocket, /datum/crafting_recipe/shrapnelmine)
 
 /obj/item/book/granter/trait/explosives_advanced
@@ -907,7 +935,7 @@
 	granted_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	traitname = "advanced explosive crafting"
 	remarks = list("Is this actually a legal chess move...?", "If you hook electronic parts up to a flux capacitor-oh, that makes a lot of sense, actually.", "Radium? What would you use radium f-oh no.", "Why would anyone actually publish this?")
-	crafting_recipe_types = list(/datum/crafting_recipe/incendiary, /datum/crafting_recipe/concussion, /datum/crafting_recipe/radgrenade, /datum/crafting_recipe/empgrenade, /datum/crafting_recipe/incendiaryrocket, /datum/crafting_recipe/strongrocket, /datum/crafting_recipe/frag_shrapnel, /datum/crafting_recipe/stinger, /datum/crafting_recipe/flashbang, 
+	crafting_recipe_types = list(/datum/crafting_recipe/incendiary, /datum/crafting_recipe/concussion, /datum/crafting_recipe/radgrenade, /datum/crafting_recipe/empgrenade, /datum/crafting_recipe/incendiaryrocket, /datum/crafting_recipe/strongrocket, /datum/crafting_recipe/frag_shrapnel, /datum/crafting_recipe/stinger, /datum/crafting_recipe/flashbang,
 /datum/crafting_recipe/smokebomb, /datum/crafting_recipe/rocket_base, /datum/crafting_recipe/weakrocket, /datum/crafting_recipe/shrapnelmine)
 
 /obj/item/book/granter/trait/gunslinger
@@ -918,8 +946,6 @@
 	traitname = "gunslinging"
 	remarks = list("Engravings offer no tactical advantage whatsoever!", "I love to reload during battle.", "There's nothing like the feeling of slamming a long silver bullet into a well greased chamber.", "It doesn't feel right to shoot an unarmed man, but you get over it.", "He was pretty good, but I was better. At least, so I thought.", "The moment any truth is passed on, it starts turning into fiction. The problem is, fiction inspires people more than facts.")
 
-
-/*
 /obj/item/book/granter/trait/iron_fist
 	name = "Brawler's Guide to Fisticuffs"
 	desc = "An advanced manual on fistfighting. It has pictures, too!"
@@ -927,7 +953,6 @@
 	granted_trait = TRAIT_IRONFIST
 	traitname = "punching"
 	remarks = list("Keep your fists up...", "Don't clench your thumb in your fist, or you might break it...", "Turn into your punch, and put your body weight behind it...", "Footwork is everything, make sure to step into your punches...", "Aim for their jaw for an easy K-O...")
-*/
 
 /obj/item/book/granter/trait/medical
 	name = "Medical Booklet"
@@ -1002,36 +1027,79 @@
 /obj/item/book/granter/trait/selection/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-	
-	
+
+//TRIBAL BOOKS
+
 /obj/item/book/granter/trait/selection/tribal
 		name = "Book of Ancient Knowledge"
 		desc = "A compendium of knowledge passed down from the elders. It looks to be in poor condition."
-		
+
 /obj/item/book/granter/trait/selection/tribal/attack_self(mob/user)
-	var/list/choices = list("Tribal Healing","Scrapping the Old World","Grognak the Barbarian","Skinning the Gecko","Inner Strength. Outer Resillience") 
+	var/list/choices = list("White Legs","Rustwalkers","Dead Horses","Sorrows","Eighties","Wayfarers","Other")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
 			if(null)
 				return 0
-			if("Tribal Healing")
-				granted_trait = TRAIT_SURGERY_LOW
-				traitname = "minor surgery"
-			if("Scrapping the Old World")
+			if("White Legs")
+				granted_trait = TRAIT_TRIBAL
+				traitname = "White Legs"
+				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/colt6520)
+			if("Other")
+				granted_trait = TRAIT_TRIBAL
+				traitname = "Other"
+			if("Rustwalkers")
 				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "craftsmanship"
-			if("Grognak the Barbarian")
-				granted_trait = TRAIT_BIG_LEAGUES
-				traitname = "big leagues"
-			if("Skinning the Gecko")
-				granted_trait = TRAIT_TRAPPER	
-				traitname = "trapper"
-			if("Inner Strength. Outer Resillience")
-				granted_trait = TRAIT_LIFEGIVER	
-				traitname = "lifegiver"
+				traitname = "Rustwalkers"
+				crafting_recipe_types = list(/datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw)
+			if("Dead Horses")
+				granted_trait = TRAIT_IRONFIST
+				traitname = "Dead Horses"
+			if("Sorrows")
+				granted_trait = TRAIT_TRAPPER
+				traitname = "Sorrows"
+			if("Eighties")				
+				granted_trait = TRAIT_FREERUNNING
+				traitname = "Eighties"
+			if("Wayfarers")
+				granted_trait = TRAIT_MACHINE_SPIRITS
+				traitname = "Wayfarer"
 		return ..()
-	
+
 /obj/item/book/granter/trait/selection/tribal/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+
+/obj/item/book/granter/crafting_recipe/tribal
+	name = "Tribal traditions"
+	desc = "A book of traditions passed down through generations within the tribe."
+	crafting_recipe_types = list(/datum/crafting_recipe/warmace, /datum/crafting_recipe/tribalwar/bone_bow, /datum/crafting_recipe/tribalwar/pipe_bow)
+
+/obj/item/book/granter/crafting_recipe/tribal/whitelegs
+	name = "White Legs traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb,
+								/datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour)
+
+/obj/item/book/granter/crafting_recipe/tribal/deadhorses
+	name = "Dead Horses traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour, /datum/crafting_recipe/tribalwar/deadhorses/garb,
+								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour)
+
+/obj/item/book/granter/crafting_recipe/tribal/rustwalkers
+	name = "Rustwalkers traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
+								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour)
+
+/obj/item/book/granter/crafting_recipe/tribal/eighties
+	name = "Eighties traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour, /datum/crafting_recipe/tribalwar/eighties/garb,
+								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour)
+
+/obj/item/book/granter/crafting_recipe/tribal/sorrows
+	name = "Sorrows traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb, /datum/crafting_recipe/tribalwar/sorrows/femalegarb,
+								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet)
+
+/obj/item/book/granter/crafting_recipe/tribal/wayfarer
+	name = "Wayfarer traditions"
+	crafting_recipe_types = list(/datum/crafting_recipe/tribal_pa,/datum/crafting_recipe/tribal_pa_helmet, /datum/crafting_recipe/tribal_combat_armor, /datum/crafting_recipe/tribal_combat_armor_helmet)

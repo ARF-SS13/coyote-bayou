@@ -692,6 +692,12 @@
 	max_stacks = 7
 	bleed_damage = 20
 
+/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet
+	id = "yaoguaigauntletbleed"
+	stack_threshold = 10
+	max_stacks = 14
+	bleed_damage = 40
+
 /datum/status_effect/neck_slice
 	id = "neck_slice"
 	status_type = STATUS_EFFECT_UNIQUE

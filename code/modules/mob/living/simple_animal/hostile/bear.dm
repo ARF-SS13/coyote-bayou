@@ -166,10 +166,10 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 /mob/living/simple_animal/hostile/bear/yaoguai
 	name = "yao guai"
 	desc = "A mutated American black bear, sporting razor sharp teeth, claws, and a nasty temper."
-	icon = 'icons/mob/wastemobs.dmi'
+	icon = 'icons/mob/deathclaw.dmi'
 	icon_state = "yaoguai"
 	icon_living = "yaoguai"
-	icon_dead = "yaoguai_d"
+	icon_dead = "yaoguai_dead"
 	maxHealth = 300
 	health = 300
 	melee_damage_lower = 45 //Don't fuck with these, they're god damn BEARS
@@ -178,12 +178,12 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 	bare_wound_bonus = 25
 	faction = list("yaoguai")
 
-/mob/living/simple_animal/hostile/bear/yaoguai/frozen
+/*mob/living/simple_animal/hostile/bear/yaoguai/frozen
 	name = "frozen yao guai"
 	desc = "A mutated American black bear, sporting razor sharp teeth, claws, and a nasty temper. This one seems to have acclimatized to a harsh, snowy environment."
 	icon_state = "polar_yao_guai"
 	icon_living = "polar_yao_guai"
-	icon_dead = "polar_yao_guai_dead"
+	icon_dead = "polar_yao_guai_dead"*/
 
 
 
