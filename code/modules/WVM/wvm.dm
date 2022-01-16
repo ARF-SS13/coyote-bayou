@@ -604,8 +604,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Cat",							/mob/living/simple_animal/pet/cat/Runtime,							10000),
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Medicated Suture",				/obj/item/stack/medical/suture/medicated,							10),
-		new /datum/data/wasteland_equipment("Advanced Regen. Mesh",			/obj/item/stack/medical/mesh/advanced,								10),
+		new /datum/data/wasteland_equipment("Medicated Suture",				/obj/item/stack/medical/suture/medicated,							45),
+		new /datum/data/wasteland_equipment("Advanced Regen. Mesh",			/obj/item/stack/medical/mesh/advanced,								45),
 		new /datum/data/wasteland_equipment("Soap",							/obj/item/soap/syndie,												50),
 		new /datum/data/wasteland_equipment("Gas Mask",						/obj/item/clothing/mask/gas,										50),
 		new /datum/data/wasteland_equipment("Advanced Mop",					/obj/item/mop/advanced,												100),

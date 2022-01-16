@@ -266,10 +266,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "ajO" = (
-/obj/structure/table,
-/obj/item/storage/box/bodybags,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
-	icon_state = "bluerustysolid"
+	icon_state = "yellowdirtyfull"
 	},
 /area/f13/followers)
 "ajQ" = (
@@ -1577,6 +1577,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood/reactor)
 "aZR" = (
+/obj/machinery/light/small,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -2159,6 +2160,7 @@
 "bqF" = (
 /obj/structure/guncase,
 /obj/item/gun/energy/laser/wattz,
+/obj/item/gun/energy/laser/complianceregulator,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -6052,6 +6054,7 @@
 /obj/structure/guncase,
 /obj/item/gun/ballistic/revolver/widowmaker,
 /obj/item/gun/energy/laser/wattz,
+/obj/item/gun/energy/laser/complianceregulator,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -9880,6 +9883,15 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/bunker)
+"fLL" = (
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "fLU" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
@@ -14068,13 +14080,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "iAu" = (
-/obj/machinery/door/airlock/medical{
-	name = "Cremation";
-	req_one_access_txt = "124"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/machinery/mineral/wasteland_vendor/followerterminal,
+/turf/closed/wall/f13/supermart,
 /area/f13/followers)
 "iAx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16685,9 +16692,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
 "kzL" = (
-/obj/machinery/button/crematorium{
-	pixel_y = 19
-	},
+/obj/structure/bodycontainer/crematorium,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -18373,6 +18378,12 @@
 /obj/effect/landmark/start/f13/followersdoctor,
 /turf/open/floor/carpet/blue,
 /area/f13/followers)
+"lOE" = (
+/obj/effect/decal/cleanable/blood/gibs/human/body,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "lPf" = (
 /obj/structure/table/wood/settler,
 /obj/item/trash/plate,
@@ -19200,6 +19211,7 @@
 /obj/item/twohanded/spear,
 /obj/item/twohanded/sledgehammer,
 /obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -19971,7 +19983,11 @@
 /area/f13/brotherhood/mining)
 "nce" = (
 /obj/structure/table,
-/obj/item/flashlight/lamp,
+/obj/item/flashlight/lamp{
+	pixel_x = 2;
+	pixel_y = 12
+	},
+/obj/machinery/recharger,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -28796,7 +28812,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "trA" = (
-/obj/structure/bodycontainer/crematorium,
+/obj/machinery/button/crematorium{
+	pixel_y = 19
+	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -30752,9 +30770,12 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood/rnd)
 "uQl" = (
-/obj/machinery/light/small,
+/obj/machinery/door/airlock/medical{
+	name = "Cremation";
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/f13{
-	icon_state = "darkrusty"
+	icon_state = "floorrusty"
 	},
 /area/f13/followers)
 "uRF" = (
@@ -32366,6 +32387,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/den)
+"whi" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "whA" = (
 /obj/structure/weightmachine/stacklifter,
 /turf/open/indestructible/ground/inside/subway,
@@ -74376,7 +74403,7 @@ dhF
 nTf
 ejL
 sIG
-aay
+ajO
 aay
 sIG
 cAC
@@ -74634,7 +74661,7 @@ xVz
 ylz
 sIG
 gaN
-sIG
+aay
 ylz
 ylz
 lHU
@@ -74898,7 +74925,7 @@ jYZ
 jYZ
 tKk
 upv
-wMb
+fLL
 uaC
 dsx
 ylz
@@ -76178,7 +76205,7 @@ gWY
 uvE
 jSb
 fBE
-ylz
+iAu
 jYZ
 jYZ
 lCJ
@@ -78753,7 +78780,7 @@ jYZ
 jYZ
 ylz
 qbU
-jYZ
+whi
 jYZ
 tqB
 ylz
@@ -79266,10 +79293,10 @@ jtz
 jYZ
 jYZ
 ylz
-ylz
-iAu
-ylz
-ylz
+qbU
+jYZ
+lOE
+tqB
 ylz
 uoO
 uoO
@@ -79523,11 +79550,11 @@ ylz
 jYZ
 jYZ
 ylz
-ajO
-vjQ
-aZR
-shY
-uoO
+ylz
+uQl
+ylz
+ylz
+ylz
 uoO
 uoO
 uoO
@@ -79782,8 +79809,8 @@ lrg
 ylz
 trA
 vjQ
-uQl
-ylz
+iuY
+shY
 uoO
 uoO
 uoO
