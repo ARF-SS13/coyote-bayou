@@ -3,6 +3,7 @@
 	desc = "Some sort of primitive projectile weapon. Used to fire arrows."
 	icon_state = "bow"
 	item_state = "bow"
+	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY //need both hands to fire
 	force = 5

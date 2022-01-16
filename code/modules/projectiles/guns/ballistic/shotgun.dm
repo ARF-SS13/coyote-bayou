@@ -15,6 +15,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_prefix = "shotgunpump"
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
@@ -106,6 +107,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "caravan"
 	item_state = "shotgundouble"
+	icon_prefix = "shotgundouble"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 0.5
@@ -141,6 +143,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
+	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -173,6 +176,7 @@
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	item_state = "shotgunpump"
+	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	fire_delay = 8 //slightly slower than police/military versions.
 
@@ -191,6 +195,7 @@
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
+	icon_prefix = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
@@ -311,6 +316,7 @@
 	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber. Signature weapon of the Legion."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
+	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	fire_delay = 9
 	recoil = 0.5

@@ -157,6 +157,7 @@
 	name = "SMG TEMPLATE"
 	desc = "should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_prefix = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -277,6 +278,7 @@
 	desc = "One of the most common personal-defense weapons of the Great War, a sturdy and reliable open-bolt 10mm submachine gun."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
+	icon_prefix = "smg10mm"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	fire_delay = 3.75
@@ -620,6 +622,7 @@
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
+	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 3.5
 	burst_size = 1
@@ -676,6 +679,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_prefix = "assault_carbine"
 	icon_state = "rifle-police"
 	item_state = "assault_carbine"
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -723,6 +727,7 @@
 	desc = "A Colt Rangemaster semi-automatic rifle, chambered for 7.62x51. Single-shot only."
 	icon_state = "rangemaster"
 	item_state = "308"
+	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
 	extra_damage = 7
@@ -777,6 +782,7 @@
 	desc = "The WWII American Classic. Still has that satisfiying ping."
 	icon_state = "m1garand"
 	item_state = "rifle"
+	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/garand308
 	fire_delay = 5.5
@@ -852,8 +858,10 @@
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	icon_prefix = "sniperrifle"
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
+	
 	mag_type = /obj/item/ammo_box/magazine/w308
 	fire_delay = 10
 	burst_size = 1
@@ -886,6 +894,7 @@
 	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. Issued to high-ranking troopers and specialized units. Chambered in 5.56."
 	icon_state = "R82"
 	item_state = "R84"
+	icon_prefix = "r82"
 	fire_delay = 2.5
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
@@ -966,6 +975,7 @@
 	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
+	icon_prefix = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4
 	spread = 10
@@ -1018,6 +1028,7 @@
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces."
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
+	icon_prefix = "assault_carbine"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m5mm
 	fire_delay = 3.5

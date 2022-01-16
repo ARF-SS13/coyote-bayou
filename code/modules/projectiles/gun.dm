@@ -144,6 +144,7 @@ ATTACHMENTS
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=2000)
 	w_class = WEIGHT_CLASS_NORMAL
+	var/icon_prefix = null
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
@@ -309,7 +310,8 @@ ATTACHMENTS
 /obj/item/gun/proc/process_chamber(mob/living/user)
 	return FALSE
 
-
+/obj/item/gun/update_icon_state()
+	icon_state = "[icon_prefix]"
 
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
@@ -1252,3 +1254,4 @@ ICON UPDATE FOR GRADUAL DEPLETION, PLASTIC MAGS ETC
 /obj/item/gun/ballistic/automatic/wt550/update_icon_state()
 	icon_state = "wt550[magazine ? "-[CEILING(((get_ammo(FALSE) / magazine.max_ammo) * 20) /4, 1)*4]" : "-0"]" //Sprites only support up to 20.
 */
+
