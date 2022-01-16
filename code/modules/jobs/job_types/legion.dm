@@ -212,9 +212,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// M1919, military ripper
-		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR
-		/datum/outfit/loadout/centurion,	// 14mm pistol, Powerfist
+		/datum/outfit/loadout/palacent,		// M1919, Spatha
+		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR, Spatha
+		/datum/outfit/loadout/centurion,	// Riot Shotgun, Military Ripper
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -252,7 +252,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	head = /obj/item/clothing/head/helmet/f13/legion/palacent
 	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/melee/powered/ripper/prewar = 1,
+		/obj/item/melee/onehanded/machete/spatha = 1,
 		/obj/item/ammo_box/magazine/mm762 = 1,
 		)
 
@@ -272,11 +272,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Frontline Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/centurion
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
+	suit_store = /obj/item/gun/ballistic/automatic/shotgun/riot
 	backpack_contents = list(
-		/obj/item/melee/powerfist/f13/goliath = 1,
-		/obj/item/ammo_box/magazine/m14mm = 3,
-		/obj/item/tank/internals/oxygen = 1
+		/obj/item/melee/powered/ripper/prewar = 1,
+		/obj/item/ammo_box/magazine/d12g = 3,
 		)
 
 /* /datum/outfit/loadout/berserkercenturion
