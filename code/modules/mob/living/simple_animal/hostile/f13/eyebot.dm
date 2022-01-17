@@ -88,8 +88,8 @@
 	name = "FEB-[rand(1,99)]"
 
 /mob/living/simple_animal/pet/dog/eyebot //It's a propaganda eyebot, not a dog, but...
-	name = "propaganda eyebot"
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting Pre-War propaganda."
+	name = "reprogrammed eyebot"
+	desc = "This eyebot's has had it's weapon removed, rendering it safe to handle. It looks much friendlier now."
 	icon = 'icons/fallout/mobs/animal.dmi'
 	icon_state = "eyebot"
 	icon_living = "eyebot"
@@ -101,16 +101,21 @@
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
-	speak = list("America will never fall to communist invasion.", "Democracy is truth. Communism is death.", "Communism is the very definition of failure!", "Freedom is always worth fighting for.", "Memorial site recognized. Patriotism subroutines engaged. Honoring the fallen is the duty of every red blooded American.", "Cultural database accessed. Quoting New England poet Robert Frost: 'Freedom lies in being bold.'", "Defending Life, Liberty, and the pursuit of Happiness.")
+	speak = list()
 	speak_emote = list("states")
 	emote_hear = list()
-	emote_see = list()
+	emote_see = list("buzzes.","pings.","floats in place")
 	response_help_simple  = "shakes the radio of"
 	response_disarm_simple = "pushes"
 	response_harm_simple   = "punches"
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
+	
+/mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)
+	AddElement(/datum/element/mob_holder, held_icon)
 
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
