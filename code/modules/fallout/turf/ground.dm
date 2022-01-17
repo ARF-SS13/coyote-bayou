@@ -77,9 +77,14 @@
 	slowdown = 3
 	flags_1 = ADJACENCIES_OVERLAY
 
+
+//////////////
+// SAVANNAH //
+//////////////
+
 /turf/open/indestructible/ground/outside/savannah
 	name = "savannah"
-	icon_state = "savannahcenter"
+	icon_state = "savannah"
 	desc = "Some savannah."
 	slowdown = 1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
@@ -87,6 +92,8 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 
+/turf/open/indestructible/ground/outside/savannah/center
+	icon_state = "savannahcenter"
 /turf/open/indestructible/ground/outside/savannah/bottomright
 	icon_state = "savannah1"
 /turf/open/indestructible/ground/outside/savannah/bottomcenter
@@ -115,6 +122,14 @@
 	icon_state = "savannah13"
 /turf/open/indestructible/ground/outside/savannah/edgesnew
 	icon_state = "savannah14"
+
+// Savannah merged with dark dirt 1-
+/turf/open/indestructible/ground/outside/savannah/dark
+	icon_state = "savannah1_dark"
+
+
+
+// DESERT
 
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"
@@ -250,6 +265,7 @@
 
 /turf/open/indestructible/ground/outside/dirt
 	name = "dirt"
+	icon = 'icons/fallout/turfs/dirt.dmi'
 	icon_state = "dirtfull"
 //	step_sounds = list("human" = "dirtfootsteps")
 //	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
@@ -262,6 +278,10 @@
 
 /turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //same thing here, dirt absorbs the liquid... :(
+
+// DARK DIRT - the legacy one
+/turf/open/indestructible/ground/outside/dirt/dark
+
 
 /turf/open/indestructible/ground/outside/dirt_s
 	name = "dirt"
