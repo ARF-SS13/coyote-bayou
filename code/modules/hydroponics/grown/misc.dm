@@ -312,6 +312,7 @@
 		return
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/attackby(obj/item/W, mob/user, params)
+	/* Coconut bombs (disabled)
 	//DEFUSING NADE LOGIC
 	if (W.tool_behaviour == TOOL_WIRECUTTER && fused)
 		user.show_message("<span class='notice'>You cut the fuse!</span>", MSG_VISUAL)
@@ -352,6 +353,7 @@
 			desc = "A makeshift bomb made out of a coconut. You estimate the fuse is long enough for 5 seconds."
 			name = "coconut bomb"
 			return
+	*/
 	//ADDING STRAW LOGIC
 	if (istype(W,/obj/item/stack/sheet/mineral/bamboo) && opened && !straw && fused)
 		user.show_message("<span class='notice'>You add a bamboo straw to the coconut!</span>", 1)
@@ -454,8 +456,10 @@
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/afterattack(obj/target, mob/user, proximity)
 	. = ..()
+	/* coconut bombs disabled
 	if(fusedactive)
 		return
+	*/
 
 	if((!proximity) || !check_allowed_items(target,target_self=1))
 		return
@@ -495,6 +499,7 @@
 	. = ..()
 	transform *= TRANSFORM_USING_VARIABLE(40, 100) + 0.5 //temporary fix for size?
 
+/* coconut bombs disabled
 /obj/item/reagent_containers/food/snacks/grown/coconut/proc/prime()
 	if (defused)
 		return
@@ -512,6 +517,7 @@
 		prime()
 	if(!QDELETED(src))
 		qdel(src)
+*/
 
 /obj/item/seeds/aloe
 	name = "pack of aloe seeds"
