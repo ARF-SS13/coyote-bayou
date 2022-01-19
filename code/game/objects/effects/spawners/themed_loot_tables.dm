@@ -316,7 +316,6 @@
 		/obj/item/gun/ballistic/automatic/g11 = 15,
 		/obj/effect/spawner/bundle/f13/needler = 10,
 		/obj/item/gun/energy/laser/laer = 10,
-		/obj/item/gun/energy/laser/aer14 = 10,
 		/obj/item/gun/energy/laser/rcw = 10,
 		/obj/item/gun/ballistic/automatic/m72 =10,
 		/obj/item/gun/energy/laser/plasma/carbine = 5,
