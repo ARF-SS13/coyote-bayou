@@ -161,11 +161,11 @@
 /datum/gang_item/weapon/ammo/get_cost_display(mob/living/carbon/user, datum/gang/gang, obj/item/device/gangtool/gangtool)
 	return "&nbsp;&#8627;" + ..() //this is pretty hacky but it looks nice on the popup
 
-/datum/gang_item/weapon/bowie
-	name = "Bowie Knife"
-	id = "bowie"
+/datum/gang_item/weapon/shuriken
+	name = "Shuriken"
+	id = "shuriken"
 	cost = 30
-	item_path = /obj/item/melee/onehanded/knife/bowie
+	item_path = /obj/item/throwing_star
 
 /datum/gang_item/weapon/switchblade
 	name = "Switchblade"
