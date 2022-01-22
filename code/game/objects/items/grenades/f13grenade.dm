@@ -105,3 +105,13 @@
 	update_mob()
 	playsound(loc, 'sound/effects/empulse.ogg', 50, 1)
 	radiation_pulse(src, rad_damage)
+
+/obj/item/grenade/f13/dynamite
+	name = "stick of dynamite"
+	desc = "I'll hold it down, you light the fuse!"
+	icon = 'icons/fallout/objects/guns/explosives.dmi'
+	icon_state = "dynamite"
+	ex_dev = 0
+	ex_heavy = 2
+	ex_light = 3
+	ex_flame = 0
