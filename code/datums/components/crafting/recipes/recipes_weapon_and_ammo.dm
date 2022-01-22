@@ -384,8 +384,29 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/policerifle
+	name = "Police Rifle"
+	result = /obj/item/gun/ballistic/automatic/marksman/policerifle
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/crafting/duct_tape =1)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
 
-
+/datum/crafting_recipe/policepistol
+	name = ".357 Police Pistol"
+	result = /obj/item/gun/ballistic/revolver/police
+	reqs = list(/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/sheet/metal = 4,)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+	
 //rangemaster
 /datum/crafting_recipe/rangemaster
 	name = "Colt Rangemaster"
@@ -1156,3 +1177,4 @@ Not implemented due to balance at the moment
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 */
+

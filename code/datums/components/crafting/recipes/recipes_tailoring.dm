@@ -109,6 +109,30 @@
 	time = 120
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+	
+datum/crafting_recipe/steelbib
+	name = "Steel Breastplate"
+	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/crafting/metalparts = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	
+datum/crafting_recipe/steelbib/heavy
+	name = "Heavy Steel Breastplate"
+	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/prewar = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR	
+	always_available = FALSE
 
 /datum/crafting_recipe/metalmask
 	name = "Metal Mask"
@@ -426,6 +450,29 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/armyhelmet
+	name = "Steel Helmet"
+	result = /obj/item/clothing/head/helmet/armyhelmet
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	
+/datum/crafting_recipe/armyhelmetheavy
+	name = "Heavy Steel Helmet"
+	result = /obj/item/clothing/head/helmet/armyhelmet/heavy
+	reqs = list(/obj/item/clothing/head/helmet/armyhelmet,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/prewar = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
 
 /datum/crafting_recipe/swag
 	name = "Flame Metal Helmet"
@@ -1230,3 +1277,5 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 */
+
+

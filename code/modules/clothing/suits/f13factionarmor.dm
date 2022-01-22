@@ -660,6 +660,15 @@
 /obj/item/clothing/suit/armor/f13/town/deputy/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+	
+/obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
+	name = "heavy steel breastplate"
+	desc = "(V*) a steel breastplate, inspired by a pre-war design. Looks like oasis citiznes added an additional layer of metal on the front face."
+	icon_state = "steel_bib"
+	item_state = "steel_bib"
+	armor = list("tier" = 3, "linebullet" = 75, "linemelee" = 35, "linelaser" = 5, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	slowdown = 0.07
+	strip_delay = 5
 
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket

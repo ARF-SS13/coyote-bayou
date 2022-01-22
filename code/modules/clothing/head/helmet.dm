@@ -468,4 +468,19 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon_state = "armyhelmet"
 	item_state = "armyhelmet"
-	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, energy = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	
+/obj/item/clothing/head/helmet/armyhelmet/heavy
+	name = "heavy steel helmet"
+	desc = "(V*) a steel helmet, inspired by several pre-war designs. This one has been modified by oasis citizens to provide more protection to the face and neck."
+	icon_state = "armyhelmetheavy"
+	item_state = "armyhelmetheavy"
+	armor = list("tier" = 3, "linebullet" = 75, "linemelee" = 35, "linelaser" = 5, "energy" = 15, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	slowdown = 0.025
+	
+/obj/item/clothing/head/helmet/armyhelmet/heavy/attack_self(mob/user)
+	weldingvisortoggle(user)
+	icon_state = "armyhelmetheavy_up"
+	item_state = "armyhelmetheavy_up"
+	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	slowdown = 0.01
