@@ -120,6 +120,12 @@
 		/obj/item/stock_parts/manipulator = 1)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
+/obj/item/circuitboard/machine/colormate
+	name = "Colormate (Machine Board)"
+	build_path = /obj/machinery/gear_painter
+	req_components = list()	//Make sure to modify this if you want the machine to need machine parts to build
+	def_components = list()
+
 /obj/item/circuitboard/machine/limbgrower
 	name = "Limb Grower (Machine Board)"
 	build_path = /obj/machinery/limbgrower
