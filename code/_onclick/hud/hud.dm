@@ -6,7 +6,8 @@
 
 // The default UI style is the first one in the list
 GLOBAL_LIST_INIT(available_ui_styles, list(
-	"Fallout" = 'icons/mob/screen_fallout2.dmi', // Fallout 2 Pip-boy style UI. Walk the wasteland with style. -Pebbles
+	"Fallout" = 'icons/fallout/UI/screen_fallout2.dmi', // Fallout 2 Pip-boy style UI. Walk the wasteland with style. -Pebbles
+	"Darkout" = 'icons/fallout/UI/screen_fallout2_dark.dmi', // The original Fallout 2 pipboy UI, dark
 	"Midnight" = 'icons/mob/screen_midnight.dmi',
 	"Retro" = 'icons/mob/screen_retro.dmi',
 	"Plasmafire" = 'icons/mob/screen_plasmafire.dmi',
