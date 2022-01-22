@@ -275,8 +275,8 @@
 
 	mb_cd_timer = world.time + mb_cd_length
 
-/mob/living/carbon/human/verb/climax_verb()
+/*/mob/living/carbon/human/verb/climax_verb()			// LoneStar removal.
 	set category = "IC"
 	set name = "Climax"
 	set desc = "Lets you choose a couple ways to ejaculate."
-	mob_climax()
+	mob_climax()*/
