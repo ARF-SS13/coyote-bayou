@@ -1071,8 +1071,8 @@ obj/item/clothing/head/f13/army/beret
 	desc = "(II) A gray campaign hat, worn by the State Police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
-	icon_state = "police_chief"
-	item_state = "police_chief"
+	icon_state = "state_trooper"
+	item_state = "state_trooper"
 	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 //THE GRAVEYARD

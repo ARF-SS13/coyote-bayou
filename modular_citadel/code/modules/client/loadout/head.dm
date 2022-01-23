@@ -221,7 +221,7 @@
 
 /datum/gear/head/police/lieutenant
 	name = "Police Lieutenant's cap"
-	path = /obj/item/clothing/head/f13/army/officer
+	path = /obj/item/clothing/head/f13/police/lieutenant
 	cost = 3
 
 //US
