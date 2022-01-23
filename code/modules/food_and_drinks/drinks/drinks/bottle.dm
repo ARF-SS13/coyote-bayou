@@ -2,7 +2,7 @@
 
 ///////////////////////////////////////////////Alchohol bottles! -Agouri //////////////////////////
 //Functionally identical to regular drinks. The only difference is that the default bottle size is 100. - Darem
-//Bottles now knockdown and break when smashed on people's heads. - Giacom
+//Bottle knockdown is cancer. - Scheveningen
 
 /obj/item/reagent_containers/food/drinks/bottle
 	amount_per_transfer_from_this = 10
@@ -12,7 +12,7 @@
 	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	var/knockdown_duration = 13 //Directly relates to the 'knockdown' duration. Lowered by armor (i.e. helmets)
+	var/knockdown_duration = 0 // Don't change this back, ever.
 	isGlass = TRUE
 	foodtype = ALCOHOL
 
@@ -50,8 +50,8 @@
 	if(affecting == BODY_ZONE_HEAD && iscarbon(target))
 		head_attack_message = " on the head"
 		//Knockdown the target for the duration that we calculated and divide it by 5.
-		if(armor_duration)
-			target.DefaultCombatKnockdown(min(armor_duration, 200)) // Never knockdown more than a flash!
+		//if(armor_duration)
+		//	target.DefaultCombatKnockdown(min(armor_duration, 200)) // What the fuck were tg coders thinking
 
 	//Display an attack message.
 	if(target != user)
@@ -195,7 +195,7 @@
 	foodtype = NONE
 	force = 18
 	throwforce = 18
-	knockdown_duration = 18
+	knockdown_duration = 0
 
 /obj/item/reagent_containers/food/drinks/bottle/holyoil/empty
 	list_reagents = null
