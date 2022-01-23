@@ -987,7 +987,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "kicks"
-	faction = list("neutral", "bighorner")
+	faction = list("bighorner")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_verb_simple = "rams"
 	attack_sound = 'sound/weapons/punch1.ogg'
