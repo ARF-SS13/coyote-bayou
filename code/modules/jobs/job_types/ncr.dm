@@ -1060,7 +1060,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	flag = F13LOGISTICSOFFICER
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority beyond the logistical side. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies. Organize the rear echelon to offload the frontline officers and make things happen."
+	description = "You are the lead engineering professional in Camp Miller, you do not have any command authority beyond the logistical side. Your duties are to ensure your outpost is well defended, the armory is in order, and you always have supplies."
 	supervisors = "Captain and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	selection_color = "#fff5cc"
@@ -1112,10 +1112,10 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		)
 
 
-// REAR ECHELON
+// NCR Off-Duty
 
 /datum/job/ncr/f13rearechelon
-	title = "NCR Rear Echelon"
+	title = "NCR Off-Duty"
 	flag = F13REARECHELON
 	total_positions = 4
 	spawn_positions = 4
@@ -1127,14 +1127,14 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	outfit = /datum/outfit/job/ncr/f13rearechelon
 
 	loadout_options = list( // ALL: Very limited blueprints
-		/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool
+	/*	/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool
 		/datum/outfit/loadout/reartech, // Hunting shotgun, Survival knife, Toolbelt, Metal detector, Salvaging
 		/datum/outfit/loadout/rearcorps, // 9mm sidearm, Survival knife, Chemistry
-		/datum/outfit/loadout/offduty, // 9mm sidearm, Bayonet
+	*/	/datum/outfit/loadout/offduty, // 9mm sidearm, Bayonet
 		)
 
 /datum/outfit/job/ncr/f13rearechelon
-	name = "NCR Rear Echelon"
+	name = "NCR Off-Duty"
 	jobtype	= /datum/job/ncr/f13rearechelon
 	id = /obj/item/card/id/dogtag/ncrtrooper
 	accessory =	/obj/item/clothing/accessory/ncr/TPR
