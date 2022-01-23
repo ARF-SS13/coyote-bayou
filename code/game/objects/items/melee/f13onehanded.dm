@@ -276,6 +276,19 @@ obj/item/melee/onehanded/knife/switchblade
 	throwforce = 20
 	armour_penetration = 0.4
 
+/obj/item/melee/onehanded/knife/throwing
+	name = "throwing knife"
+	desc = "a finely balanced knife made from a lightweight alloy, designed for being thrown. You can easily embed these in someone, and you look darn cool while doing so."
+	icon_state = "throwing_knife"
+	item_state = "knife"
+	force = 20
+	throwforce = 23
+	armour_penetration = 0.25
+	bare_wound_bonus = 15 //keep your arteries covered
+	throw_speed = 5
+	throw_range = 7
+	embedding = list("pain_mult" = 4, "embed_chance" = 70, "fall_chance" = 5)
+	
 
 ///////////
 // CLUBS //

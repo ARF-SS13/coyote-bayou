@@ -180,6 +180,19 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+	
+/datum/crafting_recipe/melee/forged/throwing
+	name = "Throwing Knife"
+	result = /obj/item/melee/onehanded/knife/throwing
+	time = 90
+	reqs = list(
+		/obj/item/stack/sheet/prewar = 3,
+		/obj/item/stack/sheet/leather = 1,
+		)
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
 
 /datum/crafting_recipe/melee/forged/bayonet
 	name = "Bayonet Knife"
