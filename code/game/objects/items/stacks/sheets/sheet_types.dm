@@ -288,7 +288,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe_list("primitive industry & agriculture", list( \
 		new /datum/stack_recipe("wooden bucket", /obj/item/reagent_containers/glass/bucket/wood, 2, time = 30), \
 		new /datum/stack_recipe("rake", /obj/item/cultivator/rake , 2, time = 30), \
-		new /datum/stack_recipe("fermenting barrel", /datum/crafting_recipe/barrel, 10, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("fermenting barrel", /obj/structure/fermenting_barrel, 10, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 		null, \
 		new /datum/stack_recipe("compost bin", /obj/structure/reagent_dispensers/compostbin, 25, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 		new /datum/stack_recipe("harvest bin", /obj/machinery/smartfridge/bottlerack/grownbin, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE), \

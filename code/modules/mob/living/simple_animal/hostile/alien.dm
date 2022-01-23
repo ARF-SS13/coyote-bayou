@@ -1,11 +1,19 @@
 /mob/living/simple_animal/hostile/alien
 	name = "wanamingo"
 	desc = "Hiss!"
-	icon = 'icons/mob/deathclaw.dmi'
+	icon = 'icons/fallout/mobs/monsters/wanamingo.dmi'
 	icon_state = "wanamingo"
 	icon_living = "wanamingo"
 	icon_dead = "wanamingo_dead"
-	icon_gib = "syndicate_gib"
+
+	speed = 0
+	maxHealth = 275
+	health = 275
+	harm_intent_damage = 8
+	obj_damage = 60
+	melee_damage_lower = 60
+	melee_damage_upper = 60
+
 	gender = FEMALE
 	response_help_continuous = "pokes"
 	response_help_simple = "poke"
@@ -13,14 +21,7 @@
 	response_disarm_simple = "shove"
 	response_harm_continuous = "hits"
 	response_harm_simple = "hit"
-	speed = 0
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/xeno = 4)
-	maxHealth = 275
-	health = 275
-	harm_intent_damage = 8
-	obj_damage = 60
-	melee_damage_lower = 60
-	melee_damage_upper = 60
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	speak_emote = list("hisses")

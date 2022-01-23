@@ -149,12 +149,6 @@
 					/obj/item/clothing/neck/petcollar)
 	crate_name = "pug crate"
 
-/datum/supply_pack/critter/kiwi
-	name = "Space kiwi Crate"
-	cost = 2000
-	contains = list( /mob/living/simple_animal/kiwi)
-	crate_name = "space kiwi crate"
-
 /datum/supply_pack/critter/snake
 	name = "Snake Crate"
 	desc = "Tired of these MOTHER FUCKING snakes on this MOTHER FUCKING space station? Then this isn't the crate for you. Contains three poisonous snakes."

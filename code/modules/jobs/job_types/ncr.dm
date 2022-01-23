@@ -50,7 +50,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvaged_salvaged)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrriot_broken)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrriothelmet_broken)
-
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrgate)
 
 
 ///////////////////////

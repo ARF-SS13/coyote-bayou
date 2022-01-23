@@ -9,10 +9,10 @@
 /mob/living/simple_animal/hostile/handy
 	name = "mr. handy"
 	desc = "A crazed pre-war household assistant robot, armed with a cutting saw."
-	icon = 'icons/mob/robots.dmi'
+	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "handy"
 	icon_living = "handy"
-	icon_dead = "gib7"
+	icon_dead = "robot_dead"
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
@@ -78,7 +78,7 @@
 	desc = "A pre-war combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
-	icon_dead = "gib7"
+	icon_dead = "robot_dead"
 	health = 200
 	maxHealth = 200
 	melee_damage_lower = 72
@@ -163,6 +163,7 @@
 /mob/living/simple_animal/hostile/handy/robobrain
 	name = "robobrain"
 	desc = "A next-gen cybor developed by General Atomic International"
+	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "robobrain"
 	icon_living = "robobrain"
 	icon_dead = "robobrain_d"
@@ -201,6 +202,7 @@
 /mob/living/simple_animal/hostile/handy/protectron
 	name = "protectron"
 	desc = "A pre-war security robot armed with deadly lasers."
+	icon = 'icons/fallout/mobs/robots/protectrons.dmi'
 	icon_state = "protectron"
 	icon_living = "protectron"
 	icon_dead = "protectron_dead"
@@ -257,10 +259,10 @@
 /mob/living/simple_animal/pet/dog/protectron //Not an actual dog
 	name = "Trading Protectron"
 	desc = "A standard RobCo RX2 V1.16.4 \"Trade-o-Vend\", loaded with Trade protocols.<br>Looks like it was kept operational for an indefinite period of time. Its body is covered in cracks and dents of various sizes.<br>As it has been repaired countless times, it's amazing the machine is still functioning at all."
-	icon = 'icons/fallout/mobs/animal.dmi'
-	icon_state = "protectron"
-	icon_living = "protectron"
-	icon_dead = "protectron_d"
+	icon = 'icons/fallout/mobs/robots/protectrons.dmi'
+	icon_state = "protectron_trade"
+	icon_living = "protectron_trade"
+	icon_dead = "protectron_trade_dead"
 	maxHealth = 200
 	health = 200
 	speak_chance = 5

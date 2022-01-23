@@ -7,11 +7,10 @@
 /mob/living/simple_animal/hostile/securitron
 	name = "securitron"
 	desc = "A pre-War type of securitron.<br>Extremely dangerous machine."
-	icon = 'icons/fallout/mobs/robots.dmi'
-	icon_state = "Securitron"
-	icon_living = "Securitron"
-	icon_dead = "gib7"
-	icon_gib = "Securitron_d"
+	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
+	icon_state = "securitron"
+	icon_living = "securitron"
+	icon_dead = "securitron_dead"
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
@@ -96,7 +95,7 @@
 	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick armor plating."
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
-	icon_dead = "sentrybot"
+	icon_dead = "sentrybot_dead"
 	health = 210
 	maxHealth = 210
 	del_on_death = FALSE

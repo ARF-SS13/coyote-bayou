@@ -242,25 +242,8 @@
 
 // Fallout 13 general doors directory
 
-/obj/structure/simple_door/tentflap_leather
-	name = "brahminskin tent entrance"
-	icon_state = "tentflap_leather"
-	door_type = "tentflap_leather"
-	base_opacity = TRUE
-	can_disasemble = FALSE
-	can_hold_padlock = FALSE
-	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
-	close_sound = 'sound/effects/footstep/hardbarefoot5.ogg'
-
-/obj/structure/simple_door/tentflap_cloth
-	name = "cotton tent entrance"
-	icon_state = "tentflap_cloth"
-	door_type = "tentflap_cloth"
-	base_opacity = TRUE
-	can_disasemble = FALSE
-	can_hold_padlock = FALSE
-	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
-	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
+// -------------------------------------------------
+//	WOODEN DOORS
 
 // weathered white door
 /obj/structure/simple_door/house 
@@ -298,12 +281,52 @@
 	icon_state = "room_d"
 	door_type = "room_d"
 
+// Raider style door
 /obj/structure/simple_door/repaired
 	name = "old damaged door"
 	desc = "Battered and hastily repaired."
 	icon_state = "room_repaired"
 	door_type = "room_repaired"
 	can_hold_padlock = TRUE
+
+
+// ---------------------------------------------
+//	TENT FLAPS
+
+/obj/structure/simple_door/tentflap_leather
+	name = "brahminskin tent entrance"
+	icon_state = "tentflap_leather"
+	door_type = "tentflap_leather"
+	base_opacity = TRUE
+	can_disasemble = FALSE
+	can_hold_padlock = FALSE
+	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
+	close_sound = 'sound/effects/footstep/hardbarefoot5.ogg'
+
+/obj/structure/simple_door/tentflap_cloth
+	name = "cotton tent entrance"
+	icon_state = "tentflap_cloth"
+	door_type = "tentflap_cloth"
+	base_opacity = TRUE
+	can_disasemble = FALSE
+	can_hold_padlock = FALSE
+	open_sound = 'sound/effects/footstep/hardbarefoot4.ogg'
+	close_sound = 'sound/effects//footstep/hardbarefoot5.ogg'
+
+// Old square style tent door
+/obj/structure/simple_door/tent
+	name = "tent flap"
+	desc = "A fairly simple looking entrance to a war tent."
+	icon_state = "tent"
+	door_type = "tent"
+	material_type = /obj/item/stack/sheet/cloth
+	open_sound = "sound/effects/curtain.ogg"
+	close_sound = "sound/effects/curtain.ogg"
+	can_hold_padlock = TRUE
+
+
+// --------------------------------------------------------------
+//	METAL DOORS
 
 /obj/structure/simple_door/metal
 	name = "metal door"
@@ -315,7 +338,6 @@
 	explosion_block = 1.5
 	material_count = 5
 
-// Supposed to be the heaviest defensive door thats craftable without machinery. Maybe too weak still.
 /obj/structure/simple_door/metal/iron
 	name = "iron door"
 	desc = "A heavy iron door."
@@ -326,6 +348,18 @@
 	opening_time = 12
 	closing_time = 8
 
+/obj/structure/simple_door/metal/barred
+	name = "barred door"
+	desc = "Bars. No matter which side we're on, aren't we always behind them?"
+	icon_state = "barred"
+	door_type = "barred"
+	open_sound = "sound/f13machines/doorchainlink_open.ogg"
+	close_sound = "sound/f13machines/doorchainlink_close.ogg"
+	opacity = FALSE
+	base_opacity = FALSE
+	can_hold_padlock = TRUE
+	proj_pass_rate = 95
+	pass_flags = LETPASSTHROW 
 
 /obj/structure/simple_door/dirtyglass
 	desc = "The glass is dirty, you can't see a thing behind it."
@@ -366,17 +400,8 @@
 	can_hold_padlock = TRUE
 
 
-/obj/structure/simple_door/metal/barred
-	name = "barred door"
-	desc = "Bars. No matter which side we're on, aren't we always behind them?"
-	icon_state = "barred"
-	door_type = "barred"
-	open_sound = "sound/f13machines/doorchainlink_open.ogg"
-	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opacity = FALSE
-	base_opacity = FALSE
-	can_hold_padlock = TRUE
-	proj_pass_rate = 95
+// --------------------------------------
+//	BUNKER DOORS
 
 /obj/structure/simple_door/metal/ventilation
 	name = "ventilation system"
@@ -429,19 +454,9 @@
 	explosion_block = 5
 
 /obj/structure/simple_door/bunker/glass
-	desc = "An olive green painted airlock, with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
+	desc = "A olive green painted armored door with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an elecrtic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
 	icon_state = "bunkerglass"
 	door_type = "bunkerglass"
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?
 	opacity = FALSE
 	base_opacity = FALSE
-
-/obj/structure/simple_door/tent
-	name = "tent flap"
-	desc = "A fairly simple looking entrance to a war tent."
-	icon_state = "tent"
-	door_type = "tent"
-	material_type = /obj/item/stack/sheet/cloth
-	open_sound = "sound/effects/curtain.ogg"
-	close_sound = "sound/effects/curtain.ogg"
-	can_hold_padlock = TRUE

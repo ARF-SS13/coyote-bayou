@@ -6,11 +6,20 @@
 /mob/living/simple_animal/hostile/deathclaw
 	name = "deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match."
-	icon = 'icons/mob/deathclaw.dmi'
+	icon = 'icons/fallout/mobs/monsters/deathclaw.dmi'
 	icon_state = "deathclaw"
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
+	maxHealth = 750
+
+	speed = -1
+	health = 750
+	obj_damage = 200
+	armour_penetration = 0.7
+	melee_damage_lower = 80
+	melee_damage_upper = 85
+
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -21,31 +30,24 @@
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-	speed = -1
+
 	see_in_dark = 8
 	decompose = FALSE
+	wound_bonus = 0 //This might be a TERRIBLE idea
+	bare_wound_bonus = 0 
+	sharpness = SHARP_EDGED
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
 							/obj/item/stack/sheet/bone = 4)
 	response_help_simple  = "pets"
 	response_disarm_simple = "gently pushes aside"
 	response_harm_simple   = "hits"
-	maxHealth = 750
-	health = 750
-	obj_damage = 200
-	armour_penetration = 0.7
-	melee_damage_lower = 80
-	melee_damage_upper = 85
 	attack_verb_simple = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("deathclaw")
 	gold_core_spawnable = HOSTILE_SPAWN
 	var/charging = FALSE
-	wound_bonus = 0 //This might be a TERRIBLE idea
-	bare_wound_bonus = 0 //is already 0 from simple_animal.dm but putting it here for ease of adjustment
-	sharpness = SHARP_EDGED
 	move_resist = MOVE_FORCE_OVERPOWERING
-
 	emote_taunt_sound = list('sound/f13npc/deathclaw/taunt.ogg')
 	aggrosound = list('sound/f13npc/deathclaw/aggro1.ogg', 'sound/f13npc/deathclaw/aggro2.ogg', )
 	idlesound = list('sound/f13npc/deathclaw/idle.ogg',)
@@ -58,7 +60,7 @@
 	idlesound = null
 	see_in_dark = 8
 	environment_smash = 2 //can smash walls
-	wander = 0
+	wander = FALSE
 
 // Mother death claw
 /mob/living/simple_animal/hostile/deathclaw/mother

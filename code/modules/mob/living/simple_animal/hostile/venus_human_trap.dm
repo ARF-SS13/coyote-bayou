@@ -61,15 +61,19 @@
 /mob/living/simple_animal/hostile/venus_human_trap
 	name = "venus human trap"
 	desc = "Now you know how the fly feels."
+	icon = 'icons/fallout/mobs/monsters/freaks.dmi'	
 	icon_state = "venus_human_trap"
-	layer = SPACEVINE_MOB_LAYER
+	icon_dead = "venus_human_trap_d"
+
 	health = 50
 	maxHealth = 50
-	ranged = TRUE
-	harm_intent_damage = 5
 	obj_damage = 60
 	melee_damage_lower = 25
 	melee_damage_upper = 25
+	harm_intent_damage = 5
+
+	layer = SPACEVINE_MOB_LAYER
+	ranged = TRUE
 	a_intent = INTENT_HARM
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
