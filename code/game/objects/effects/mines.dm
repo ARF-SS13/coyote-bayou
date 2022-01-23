@@ -12,7 +12,7 @@
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
 /obj/effect/mine/Crossed(atom/movable/AM)
-	if(triggered || !isturf(loc))
+	if(triggered || !isturf(loc) || isnottriggermine(AM))
 		return
 	. = ..()
 

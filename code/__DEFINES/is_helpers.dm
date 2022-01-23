@@ -251,3 +251,5 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 
 #define islock(A) istype(A, /obj/item/lock_construct)
+
+#define isnottriggermine(A) istype(A, /obj/effect/abstract/directional_lighting)		// Affects obj/effect/mine, add anything needed
