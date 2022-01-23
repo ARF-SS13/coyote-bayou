@@ -869,7 +869,7 @@
 	desc = "A pulp fiction paperback detailing the adventures of a violent barbarian. Surprisingly, this was sold to children."
 	oneuse = TRUE
 	granted_trait = TRAIT_BIG_LEAGUES
-	traitname = "big_leagues"
+	traitname = "hitting things"
 	remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
 
 /obj/item/book/granter/trait/lowsurgery
