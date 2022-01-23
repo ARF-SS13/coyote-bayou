@@ -529,8 +529,8 @@ Mayor
 	title = "Barkeep"
 	flag = F13BARKEEP
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "Oasis Government & Police Department"
 	description = "As the innkeeper, you are responsible for comfort and full bellies in town. Hidden safely away behind the town walls, you are free to refine your skills without always watching your back. As a citizen of the town you must follow its laws. However the inn is your private business, and you decide who is allowed to dine or reside in your hospitality."
 	selection_color = "#dcba97"
@@ -880,8 +880,8 @@ Mayor
 	title = "Shopkeeper"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "free hand of the market"
 	description = "The greed of the United States survived better than its people. You are an organ of this greed. Ensure its continuation."
 	selection_color = "#dcba97"
