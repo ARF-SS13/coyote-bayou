@@ -47,7 +47,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legiongate)	
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legiongate)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
 	belt = /obj/item/storage/belt/military/assault/legion
@@ -729,7 +729,7 @@ commented out pending rework*/
 	name = "Sharpshooter"
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/m44box = 1,
+		/obj/item/ammo_box/tube/m44 = 3,
 		/obj/item/gun/ballistic/revolver/colt357,
 		/obj/item/ammo_box/a357 = 1,
 		)
