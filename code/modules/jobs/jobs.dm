@@ -208,7 +208,7 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Trooper",
 	"NCR Medical Officer",
 	"NCR Logistics Officer",
-	"NCR Off-Duty",
+	"NCR Rear Echelon",
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(
