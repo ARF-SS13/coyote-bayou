@@ -34,7 +34,6 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
-		playsound(loc, 'sound/f13items/stimpak.ogg', 100, 1)
 		to_chat(M, "<span class='warning'>You feel a tiny prick!</span>")
 		to_chat(user, "<span class='notice'>You inject [M] with [src].</span>")
 
@@ -160,6 +159,15 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/medicine/stimpak = 10)
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/on_reagent_change(changetype)
+	update_icon()
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/update_overlays()
+	. = ..()
+	var/mutable_appearance/stimpak_overlay = mutable_appearance('icons/obj/reagentfillings.dmi', "stimfilling", color = mix_color_from_reagents(reagents.reagent_list))
+	if(reagents.total_volume)
+		. += stimpak_overlay
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/custom
 	desc = "A handheld delivery system for medicine, this particular one will deliver a tailored cocktail."
