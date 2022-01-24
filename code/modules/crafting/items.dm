@@ -178,7 +178,7 @@
 				/obj/item/stack/sheet/glass/ten,
 				/obj/item/stack/sheet/cloth/five,
 				/obj/item/stack/sheet/leather/five,
-				/obj/item/scrap/research,
+				/obj/item/stack/sheet/prewar/five,
 				/obj/item/stock_parts/cell/ammo/ec,
 				/obj/item/stack/crafting/goodparts/five
 				)
