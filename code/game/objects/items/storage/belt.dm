@@ -638,20 +638,37 @@
 		/obj/item/stack/cable_coil
 		))
 
+// ---------------------------------------------
+// BANDOLIER - since TG style bandolier was useless, now takes 3 boxes of shotgun ammo, or flasks, or grenades, or improvised bombs/molotovs
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding ammunition."
+	desc = "A bandolier for holding shotgun boxes, flasks, las musket cells or various grenades."
 	icon_state = "bandolier"
 	item_state = "bandolier"
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 18
-	STR.display_numerical_stacking = TRUE
+	STR.max_items = 3
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_casing
+		/obj/item/ammo_box/shotgun,
+		/obj/item/ammo_box/lasmusket,
+		/obj/item/reagent_containers/food/drinks/flask,
+		/obj/item/grenade/f13,
+		/obj/item/reagent_containers/food/drinks/bottle/molotov,
+		/obj/item/grenade/homemade
 		))
+
+/obj/item/storage/belt/utility
+	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
+	desc = "Holds tools."
+	icon_state = "utilitybelt"
+	item_state = "utility"
+	content_overlays = TRUE
+	custom_premium_price = 300
+
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"

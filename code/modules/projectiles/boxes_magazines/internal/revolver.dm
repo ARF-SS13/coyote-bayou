@@ -51,10 +51,10 @@
 	caliber = "a556"
 	max_ammo = 1
 
-/obj/item/ammo_box/magazine/internal/cylinder/improvised38
-	name = "improvised internal magazine .38"
-	ammo_type = /obj/item/ammo_casing/c38
-	caliber = "38"
+/obj/item/ammo_box/magazine/internal/cylinder/improvised45
+	name = "improvised internal magazine .45"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
 	max_ammo = 4
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised9mm

@@ -2070,8 +2070,10 @@
 /obj/machinery/workbench/bottler,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
-	dir = 1
+	dir = 1;
+	pixel_y = 31
 	},
+/obj/structure/table,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "aSY" = (
@@ -2330,15 +2332,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aZF" = (
-/obj/structure/table,
-/obj/structure/closet/crate/large,
-/obj/item/stack/ore/blackpowder/twenty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/hay/twenty,
-/obj/machinery/light/small{
-	dir = 4
-	},
+/obj/machinery/autolathe/ammo/unlocked_basic,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
@@ -2667,10 +2661,9 @@
 /area/f13/building)
 "bgd" = (
 /obj/structure/table,
-/obj/item/stack/sheet/cardboard/fifty,
-/obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/metal/five,
+/obj/item/stack/sheet/glass/five,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -2807,7 +2800,7 @@
 "bix" = (
 /obj/structure/rack,
 /obj/effect/spawner/bundle/f13/greasegun,
-/obj/effect/spawner/bundle/f13/greasegun,
+/obj/effect/spawner/bundle/f13/guns/rockwell,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
@@ -3269,7 +3262,8 @@
 "bqF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
-	dir = 4
+	dir = 4;
+	pixel_x = 6
 	},
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
@@ -4876,6 +4870,10 @@
 "cbM" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/glowstick/red,
+/obj/item/flashlight/glowstick/red,
+/obj/item/flashlight/glowstick/red,
+/obj/item/reagent_containers/food/drinks/bottle/molotov/filled,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -5530,10 +5528,8 @@
 /area/f13/building)
 "crg" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug{
-	pixel_y = 10
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/binoculars,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "crp" = (
@@ -8469,7 +8465,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 8;
-	light_color = "#d8b1b1"
+	light_color = "#d8b1b1";
+	pixel_x = -6
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -11853,10 +11850,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "eZI" = (
-/obj/machinery/autolathe/ammo,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
+/obj/structure/table,
+/obj/structure/closet/crate/large,
+/obj/item/stack/ore/blackpowder/twenty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/five,
+/obj/item/stack/sheet/hay/twenty,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/cloth/five,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "eZW" = (
@@ -15477,6 +15481,11 @@
 "gun" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/twohanded/baseball/spiked,
+/obj/item/melee/unarmed/punchdagger,
+/obj/item/melee/onehanded/knife/hunting,
+/obj/item/melee/onehanded/machete,
+/obj/item/melee/onehanded/machete,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "gus" = (
@@ -17750,8 +17759,10 @@
 /area/f13/village)
 "hoH" = (
 /obj/structure/rack,
-/obj/item/melee/classic_baton/telescopic,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/revolver/hobo/piperifle,
+/obj/item/gun/ballistic/revolver/hobo/knucklegun,
+/obj/item/ammo_box/c45/improvised,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "hoR" = (
@@ -18931,13 +18942,11 @@
 "hMz" = (
 /obj/machinery/light/small{
 	dir = 8;
-	light_color = "#d8b1b1"
+	light_color = "#d8b1b1";
+	pixel_x = -8
 	},
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/glowstick/red,
-/obj/item/flashlight/glowstick/red,
-/obj/item/flashlight/glowstick/red,
 /obj/item/storage/toolbox/mechanical/old,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
@@ -19681,6 +19690,7 @@
 "iad" = (
 /obj/machinery/workbench,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/crafting/duct_tape,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "iam" = (
@@ -25570,8 +25580,12 @@
 /area/f13/wasteland)
 "krS" = (
 /obj/structure/rack,
-/obj/item/camera,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_box/shotgun/bean,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/legcuffs/bola,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "krX" = (
@@ -34827,10 +34841,10 @@
 /area/f13/building)
 "osF" = (
 /obj/structure/rack,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
+/obj/machinery/light/small{
+	pixel_y = -10
+	},
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "osH" = (
@@ -37560,6 +37574,11 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
+"pGq" = (
+/obj/structure/table/wood,
+/obj/structure/bedsheetbin,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "pGH" = (
 /obj/structure/rack,
 /obj/item/paper/pamphlet{
@@ -38849,9 +38868,13 @@
 	},
 /area/f13/building)
 "qiN" = (
-/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug{
+	pixel_y = 10
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/item/binoculars,
+/obj/machinery/smartfridge/bottlerack/drug_storage,
+/obj/item/reagent_containers/pill/patch/jet,
+/obj/item/reagent_containers/pill/patch/jet,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "qiO" = (
@@ -48915,6 +48938,8 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/stack/sheet/cardboard/fifty,
+/obj/item/camera,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "uFT" = (
@@ -49708,21 +49733,12 @@
 /area/f13/building)
 "uVT" = (
 /obj/structure/table,
-/obj/item/melee/onehanded/knife/survival{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/pill/patch/jet,
-/obj/item/reagent_containers/pill/patch/jet,
-/obj/item/reagent_containers/food/drinks/bottle/molotov{
-	pixel_x = 7;
-	pixel_y = 7
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 8;
 	light_color = "#d8b1b1"
 	},
+/obj/item/flashlight,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "uVW" = (
@@ -69234,7 +69250,7 @@ gcK
 uKu
 dxJ
 cOU
-urJ
+buD
 hMz
 gin
 dkW
@@ -69763,7 +69779,7 @@ qOV
 cWG
 daU
 mvv
-pSC
+pGq
 tsv
 mvv
 tpD

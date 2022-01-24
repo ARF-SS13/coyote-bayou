@@ -163,6 +163,10 @@
 		)
 	var/active = FALSE
 
+/obj/item/reagent_containers/food/drinks/bottle/molotov/filled
+	desc = "A molotov filled with napalm and ready to be thrown."
+	list_reagents = list(/datum/reagent/napalm = 40)
+
 /obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
 	. = ..()
 	var/obj/item/reagent_containers/food/drinks/bottle/bottle_found = locate() in contents

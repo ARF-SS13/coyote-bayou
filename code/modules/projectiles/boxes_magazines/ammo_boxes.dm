@@ -44,9 +44,10 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "stunbox"
 
-/obj/item/ammo_box/shotgun/improvised
-	name = "Bag with home-made shotgun shells"
+/obj/item/ammo_box/shotgun/improvised 
+	name = "homemade shotgun shells"
 	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
@@ -125,6 +126,7 @@
 	name = "bag with reloaded .38 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
@@ -169,6 +171,7 @@
 	name = "bag with reloaded 10mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
@@ -220,6 +223,7 @@
 	name = "bag with reloaded .44 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
@@ -257,6 +261,7 @@
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
@@ -330,6 +335,7 @@
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	

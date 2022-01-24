@@ -167,16 +167,17 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
-//Knucklegun											Keywords: .38, 3 rounds internal, Extra damage +2, Melee damage
+//Knucklegun											Keywords: .45, 4 rounds internal, Extra damage +2, Melee damage
 /obj/item/gun/ballistic/revolver/hobo/knucklegun
-	name = "knucklegun (.38)"
+	name = "knucklegun (.45)"
 	desc = "An attempt to combine a knuckleduster and four short gun barrels. Does not work as a ballistic fist, be happy if it doesn't explode and take your fingers off."
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised38
-	force = 23
+	slot_flags = ITEM_SLOT_GLOVES	
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
+	force = 24
 	fire_delay = 0.25
 	spread = 5
 	extra_damage = 2

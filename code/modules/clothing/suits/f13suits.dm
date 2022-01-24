@@ -254,11 +254,19 @@
 	item_state = "owl"
 	armor = list("tier" = 2, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+
+///////////////////////
+// GREAT KHANS ARMOR //
+///////////////////////
+
+//Basic Jacket
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
 	name = "Great Khan jacket"
-	desc = "(IV) A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
+	desc = "(IV) A blue-black reinforced jacket. <br>There is an illustration on the back - the horned helmet emblem of the Great Khans.<br> Some prefer to wear a vest (alt-click)."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_jacket"
-	item_state = "jensencoat"
+	item_state = "khan_jacket"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
 	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
@@ -266,29 +274,31 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored
+//Armored jacket
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
 	name = "Great Khan armored jacket"
-	desc = "(V) A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem.<br>Protective plates have been sewn into the jacket."
-	icon_state = "khan_jacket"
-	item_state = "jensencoat"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
+	desc = "(V) A black leather jacket with metal plates and a big Great Khan logo on the back. Some prefer to wear a leather vest (alt-click)."
+	icon_state = "khan_jacket_armored"
+	item_state = "khan_jacket_armored"
 	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket_armored/Initialize()
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan/battlecoat
+//Battlecoat
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 	name = "Great Khan battle coat"
-	desc = "(V) A dark red leather coat lined with a patchwork of metal plates and padding on the inside. The back is dominated by a burning skull adorned with a horned helmet; the symbol of the Khans."
-	icon_state = "khan_battlecoat"
-	item_state = "khan_battlecoat"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
-	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	desc = "(VI) Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
+	icon_state = "khan_heavy"
+	item_state = "khan_heavy"
+	armor = list("tier" = 6, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan/battlecoat/Initialize()
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
+
+// --------------------------------------------------------------------------
 
 /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	name = "followers lab coat"

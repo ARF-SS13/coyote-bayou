@@ -674,6 +674,16 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	icon_state = "satchel-trekker"
 	item_state = "satchel-trekker"
 
+/obj/item/storage/backpack/satchel/old
+	name = "old satchel"
+	desc = "The leather is stiff and cracking, but the satchel still works."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	lefthand_file = 'icons/fallout/onmob/items/bags_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/items/bags_righthand.dmi'
+	icon_state = "satchel_old"
+	item_state = "satchel_old"
+
 /obj/item/storage/backpack/enclave
 	name = "service backpack"
 	desc = "Backpack copying an old US Army pattern."

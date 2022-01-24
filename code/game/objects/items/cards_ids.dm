@@ -1160,11 +1160,11 @@
 /obj/item/card/id/khantattoo
 	name = "Great Khan tattoo"
 	desc = "A tattoo of the symbol of the Great Khans."
-	icon_state = "skin"
-	item_state = "skin"
+	icon = 'icons/fallout/clothing/khans.dmi'
+	icon_state = "khan_id"
+	item_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
-
 	access = list(ACCESS_KHAN)
 
 /obj/item/card/id/khantattoo/Initialize()
@@ -1179,7 +1179,7 @@
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
 
-/obj/item/card/id/khantattoo/Initialize()
+/obj/item/card/id/outcasttattoo/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 

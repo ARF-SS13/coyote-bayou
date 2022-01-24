@@ -692,6 +692,22 @@
 	if(istype(O, /obj/item/reagent_containers/pill/patch) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/stack/medical/poultice) || istype(O, /obj/item/smelling_salts))
 		return TRUE
 	return FALSE
+
+//-------------------------
+// Drug Rack - Drugs, medicines, stuff like that. Made from rusting metal. Not buildable.
+//-------------------------
+/obj/machinery/smartfridge/bottlerack/drug_storage
+	name = "drug storage"
+	desc = "Rusting metal shelves stocked with various drugs and medicines."
+	icon = 'icons/fallout/structures/racks.dmi'
+	icon_state = "drugrack"
+	max_n_of_items = 100
+
+/obj/machinery/smartfridge/bottlerack/drug_storage/accept_check(obj/item/O)
+	if(istype(O, /obj/item/reagent_containers/pill/patch) || istype(O, /obj/item/reagent_containers/glass/bottle) || istype(O, /obj/item/storage/pill_bottle) || istype(O, /obj/item/reagent_containers/hypospray/medipen))
+		return TRUE
+	return FALSE
+
 // -------------------------
 // LOOTABLE RACKS - PREWAR SHELVES ETC
 // -------------------------------------------------------------------------

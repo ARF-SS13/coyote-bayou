@@ -683,6 +683,11 @@
 		new /obj/item/book/granter/crafting_recipe/gunsmith_four(src)
 	return
 
+/obj/machinery/autolathe/ammo/unlocked_basic
+	desc = "A ammo bench where you can make ammo and magazines. Copies of Guns and Ammo, parts one and two, can be found in a drawer."
+	simple = 1
+	basic = 1
+
 /obj/machinery/autolathe/ammo/unlocked
 	simple = 1
 	basic = 1
