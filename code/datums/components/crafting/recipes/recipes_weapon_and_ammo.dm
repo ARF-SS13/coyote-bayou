@@ -72,7 +72,7 @@
 
 /datum/crafting_recipe/steelsaw
 	name = "Steel Saw"
-	result = /obj/item/twohanded/chainsaw/steelsaw
+	result = /obj/item/twohanded/steelsaw
 	reqs = list(/obj/item/circular_saw = 1,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/sheet/plasteel = 5,
@@ -85,8 +85,8 @@
 
 /datum/crafting_recipe/autoaxe
 	name = "Auto Axe"
-	result = /obj/item/twohanded/chainsaw/autoaxe
-	reqs = list(/obj/item/twohanded/chainsaw/steelsaw = 1,
+	result = /obj/item/twohanded/steelsaw/autoaxe
+	reqs = list(/obj/item/twohanded/steelsaw = 1,
 				/obj/item/stack/sheet/mineral/titanium = 1,
 				/obj/item/stack/crafting/goodparts = 3,
 				/obj/structure/wreck/trash/engine)

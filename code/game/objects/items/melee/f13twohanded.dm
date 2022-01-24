@@ -1,11 +1,15 @@
 // In this document: Axes, Spears, Heavy clubs, Sledgehammers, Advanced twohanded weapons
 
 /obj/item/twohanded // Two handed template. Slower melee speed than onehanders.
-	icon = 'icons/fallout/objects/melee/melee.dmi'
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	attack_speed = CLICK_CD_MELEE * 1.1
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	max_integrity = 200
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	var/icon_prefix = null
 	var/wielded = FALSE
 
@@ -27,31 +31,28 @@
 
 //////////
 // AXES //
-//////////			-bonus damage to grill/window
+//////////			-bonus damage to all doors, windows
 
 
-// Fire Axe			Keywords: Damage 25/45, Bonus vs inanimate
+// Fire Axe			Keywords: Damage 25/46
 /obj/item/twohanded/fireaxe
 	name = "fire axe"
-	desc = "Heavy fireman axe from the old world, with its distinctive red colour and excellent quality steel."
+	desc = "Heavy fireman axe from the old world, with its distinctive red colour and excellent quality steel. Excellent for smashing doors."
 	icon_state = "fireaxe"
 	icon_prefix = "fireaxe"
-	slot_flags = ITEM_SLOT_BACK
-	force = 25
+	force = 26
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
-	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=45, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded=26, force_wielded=46, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/fireaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -67,9 +68,15 @@
 	else if(istype(A, /obj/structure/grille))
 		var/obj/structure/grille/G = A
 		G.take_damage(40, BRUTE, "melee", 0)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(20, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(20, BRUTE, "melee", 0)
 
 
-// Bone Axe			Keywords: Damage 25/40, Bonus vs inanimate
+// Bone Axe			Keywords: Damage 25/40, Bonus vs door, window
 /obj/item/twohanded/fireaxe/boneaxe
 	name = "bone axe"
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
@@ -81,8 +88,24 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
 
+/obj/item/twohanded/fireaxe/boneaxe/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
+		var/obj/structure/window/W = A
+		W.take_damage(100, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/grille))
+		var/obj/structure/grille/G = A
+		G.take_damage(20, BRUTE, "melee", 0)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(10, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(10, BRUTE, "melee", 0)
 
-// Bumper Sword		Keywords: Damage 25/45, Bonus vs inanimate
+// Bumper Sword		Keywords: Damage 25/45, Bonus vs window, door
 /obj/item/twohanded/fireaxe/bmprsword
 	name = "bumper sword"
 	desc = "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was more like a heap of raw iron."
@@ -92,6 +115,19 @@
 	sharpness = SHARP_NONE
 	resistance_flags = null
 
+/obj/item/twohanded/fireaxe/bmprsword/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure/window))
+		var/obj/structure/window/W = A
+		W.take_damage(200, BRUTE, "melee", 0)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(15, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(15, BRUTE, "melee", 0)
 
 
 ////////////
@@ -105,7 +141,6 @@
 	icon_state = "spear-metal"
 	icon_prefix = "spear-metal"
 	force = 10
-	slot_flags = ITEM_SLOT_BACK
 	throwforce = 30
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
@@ -209,12 +244,14 @@
 	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
 
 
-// Scrap spear		Keywords: Damage 17/28, Reach
+// Scrap spear		Keywords: Damage 17/28, Reach, Throw bonus
 /obj/item/twohanded/spear/scrapspear
 	name = "scrap spear"
-	desc = "Made from two rods, a glass shard and some duct tape. For the modern tribal or the truly desperate."
+	desc = "Made from two rods, a glass shard and some duct tape. For the modern tribal or the truly desperate. Surprisingly effective when thrown."
 	icon_state = "spear-scrap"
 	icon_prefix = "spear-scrap"
+	throwforce = 28
+	embedding = list("pain_mult" = 2, "embed_chance" = 35, "fall_chance" = 20)
 
 /obj/item/twohanded/spear/scrapspear/ComponentInitialize()
 	. = ..()
@@ -227,7 +264,6 @@
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	icon_state = "spear-bone"
 	icon_prefix = "spear-bone"
-	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	throwforce = 25
 	throw_speed = 4
@@ -261,17 +297,17 @@
 
 /////////////////
 // HEAVY CLUBS //
-/////////////////		- Bonus damage to stamina
+/////////////////		- Bonus damage to stamina, low damage
 
-// Baseball Bat			Keywords: Damage 12/30, Damage bonus Stamina
+// Baseball Bat			Keywords: Damage 20/30, Damage bonus Stamina
 /obj/item/twohanded/baseball
+	icon = 'icons/fallout/objects/melee/melee.dmi'
 	name = "baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter."
 	icon_state = "baseball"
 	icon_prefix = "baseball"
-	force = 12
+	force = 24
 	throwforce = 12
-	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
@@ -279,31 +315,36 @@
 
 /obj/item/twohanded/baseball/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 12, force_wielded = 30, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded = 24, force_wielded = 30, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(15, STAMINA, null, 0)
+	M.apply_damage(24, STAMINA, null, 0)
 
-// Spiked Baseball Bat		Keywords: Damage 15/33, Damage bonus Stamina, Sharp
+// Spiked Baseball Bat		Keywords: Damage 24/33, Damage bonus Stamina, Sharp
 /obj/item/twohanded/baseball/spiked
 	name = "spiked baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter, especially with large nails drilled through the top of it."
 	icon_state = "baseballspike"
 	icon_prefix = "baseballspike"
-	force = 15
+	force = 26
 	throwforce = 15
 	wound_bonus = 5
 	sharpness = SHARP_POINTY
 
 /obj/item/twohanded/baseball/spiked/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded = 26, force_wielded = 33, icon_wielded="[icon_prefix]2")
 
+/obj/item/twohanded/baseball/spiked/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(22, STAMINA, null, 0)
 
-// Louisville Slugger		Keywords: Damage 15/33, Damage bonus Stamina
+// Louisville Slugger		Keywords: Damage 25/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/louisville
 	name = "Louisville slugger"
 	desc = "Makes a satisfying thwack when hitting people."
@@ -313,15 +354,15 @@
 
 /obj/item/twohanded/baseball/louisville/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 33, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 34, icon_wielded="[icon_prefix]2")
 
-/obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user)
+/obj/item/twohanded/baseball/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(22, STAMINA, null, 0)
+	M.apply_damage(26, STAMINA, null, 0)
 
-// Golf Club		Keywords: Damage 15/32, Damage bonus Stamina
+// Golf Club		Keywords: Damage 22/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/golfclub
 	name = "golf club"
 	desc = "This old and quite heavy 9 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
@@ -331,28 +372,28 @@
 
 /obj/item/twohanded/baseball/golfclub/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 32, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded = 22, force_wielded = 32, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(19, STAMINA, null, 0)
+	M.apply_damage(25, STAMINA, null, 0)
+
 
 ///////////////////
 // SLEDGEHAMMERS //
-///////////////////			-Bonus damage to structures
+///////////////////			-Bonus damage to all structures, such as barricades
 
 // Sledgehammer			Keywords: Damage 25/45
 /obj/item/twohanded/sledgehammer
 	name = "sledgehammer"
-	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	desc = "A heavy sledgehammer that lost most of its use besides caving in heads and barricades."
 	icon_state = "hammer-sledge"
 	icon_prefix = "hammer-sledge"
 	attack_speed = CLICK_CD_MELEE * 1.2
 	force = 25
 	throwforce = 30
-	slot_flags = ITEM_SLOT_BACK
 	sharpness = SHARP_NONE
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 
@@ -360,84 +401,72 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
 
-/*
-/obj/item/twohanded/sledgehammer/afterattack(atom/A, mob/living/user, proximity) //Bonus damage to structures, demolition time
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /obj/structure))
-		var/obj/structure/ = A
-		A.take_damage(30, BRUTE, "melee", 0)
-*/
 /obj/item/twohanded/sledgehammer/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
+	if(istype(A, /obj/structure)) 
 		var/obj/structure/W = A
-		W.take_damage(30, BRUTE, "melee", 0)
-		return
+		W.take_damage(20, BRUTE, "melee", 0)
+
 
 
 /////////////////////////////////
 // ADVANCED TWO HANDED WEAPONS //
 /////////////////////////////////
 
-// Thermic Lance		Keywords: Damage 5/60, Special Damage Type - Burn
+// Thermic Lance		Keywords: Damage 5/60, AP 0.1 Special Damage Type - Burn, bonus damage metal door
 /obj/item/twohanded/thermic_lance
 	name = "thermic lance"
-	desc = "A versatile power-welding tool. Useful for cutting apart metal and limbs."
-	icon = 'icons/fallout/objects/melee/melee.dmi'
-	icon_state = "thermiclance_off"
-	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
+	desc = "A versatile power-welding tool. Useful for cutting apart metal things like airlocks, bars, and probably limbs."
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	icon_state = "thermiclance"
+	icon_prefix = "thermiclance"
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	slot_flags = null
+	damtype = "fire"
 	force = 5
-	throwforce = 20
+	armour_penetration = 0.1
+	throwforce = 5
 	throw_speed = 2
-	throw_range = 4
+	throw_range = 3
 	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
-	actions_types = list(/datum/action/item_action/toggle_lance)
-	hitsound = "swing_hit"
-	var/on = FALSE
-	var/force_on = 60
+	hitsound = 'sound/items/welder2.ogg'
 
 /obj/item/twohanded/thermic_lance/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-	AddElement(/datum/element/update_icon_updates_onmob)
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=60, icon_wielded="[icon_prefix]2")
 
-/obj/item/twohanded/thermic_lance/attack_self(mob/user)
-	on = !on
-	to_chat(user, "As you turn the lever from [src], [on ? "it begins to heat." : "the flame goes off."]")
-	force = on ? force_on : initial(force)
-	throwforce = on ? force_on : initial(force)
-	update_icon()
-
-	if(on)
-		hitsound = 'sound/items/welder2.ogg'
-		damtype = "fire"
-	else
-		hitsound = "swing_hit"
-		damtype = "brute"
-
-	if(src == user.get_active_held_item()) //update inhands
-		user.update_inv_hands()
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
-
-/obj/item/twohanded/thermic_lance/update_icon_state()
-	icon_state = "thermiclance_[on ? "on" : "off"]"
-
+/obj/item/twohanded/thermic_lance/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/M = A
+		M.take_damage(40, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 70, TRUE)
+	else if(istype(A, /obj/structure/simple_door/metal))
+		var/obj/structure/simple_door/metal/G = A
+		G.take_damage(30, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 70, TRUE)
+	else if(istype(A, /obj/machinery/door/unpowered))
+		var/obj/machinery/door/unpowered/U = A
+		U.take_damage(20, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 70, TRUE)
+	else if(istype(A, /obj/structure))
+		playsound(loc, hitsound, 70, TRUE)
+	else if(istype(A, /obj/machinery))
+		playsound(loc, hitsound, 70, TRUE)
+	else if(istype(A, /turf/closed))
+		playsound(loc, hitsound, 70, TRUE)
 
 // Proton axe			Keywords: Damage 20/32, AP 0.7
 /obj/item/melee/transforming/energy/axe/protonaxe
 	name = "proton axe"
 	desc = "The experimental proton axe resembles a futuristic war-axe with a glowing blue blade of electrical energy at its head."
-	icon = 'icons/fallout/objects/melee/melee.dmi'
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "protonaxe"
@@ -468,6 +497,18 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]2")
 
+obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure)) 
+		var/obj/structure/W = A
+		W.take_damage(25, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /obj/machinery))
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /turf/closed))
+		playsound(loc, hitsound, 80, TRUE)
 
 // Rocket-assisted Sledgehammer			Keywords: Damage 20/52, Mining  Issues left: mining only when dual wielded, sound to play always on hit
 /obj/item/twohanded/sledgehammer/rockethammer
@@ -479,7 +520,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	icon_prefix = "hammer-rocket"
 	force = 20
 	tool_behaviour = TOOL_MINING
-	toolspeed = 0.4
+	toolspeed = 0.5
 	hitsound = "sound/f13effects/explosion_distant_2.ogg"
 	usesound = "sound/f13effects/explosion_distant_2.ogg"
 	var/digrange = 1
@@ -489,6 +530,20 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 /obj/item/twohanded/sledgehammer/rockethammer/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 52, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
+
+/obj/item/twohanded/sledgehammer/rockethammer/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure)) 
+		var/obj/structure/W = A
+		W.take_damage(10, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 50, TRUE)
+	else if(istype(A, /obj/machinery))
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /turf/closed))
+		playsound(loc, hitsound, 80, TRUE)
 
 // The Court Martial	Keywords: UNIQUE, Damage 20/52, Inferior mining
 /obj/item/twohanded/sledgehammer/rockethammer/courtmartial
@@ -500,8 +555,20 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	icon_prefix = "hammer-courtmartial"
 	toolspeed = 0.8
 
+/obj/item/twohanded/sledgehammer/rockethammer/courtmartial/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure)) 
+		var/obj/structure/W = A
+		W.take_damage(10, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /obj/machinery))
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /turf/closed))
+		playsound(loc, hitsound, 80, TRUE)
 
-// Atom's Judgement			Keywords: UNIQUE, Damage 25/60, Damage bonus Rad
+// Atom's Judgement			Keywords: UNIQUE, Damage 25/55, Damage bonus Rad
 /obj/item/twohanded/sledgehammer/atomsjudgement
 	name = "atom's judgement"
 	desc = "A heavy hammer with a head that consists of leaking fusion cores. Might be unhealthy."
@@ -511,7 +578,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 55, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -536,7 +603,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
 
 
-// Shaman staff				Keywords: TRIBAL, Damage 15/30
+// Shaman staff				Keywords: Damage 15/30, Big stamina damage buff 
 /obj/item/twohanded/sledgehammer/shamanstaff
 	name = "shaman staff"
 	desc = "An intricate staff, carried for centuries by the shaman class of the Wayfayer Tribe."
@@ -549,6 +616,11 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 30, icon_wielded="[icon_prefix]2")
 
+/obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(25, STAMINA, null, 0)
 
 // Staff of Mars			Keywords: Damage 10/10, Damage bonus Burn + Stamina
 /obj/item/twohanded/sledgehammer/marsstaff
@@ -583,48 +655,80 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 			user.Knockdown(50)
 		return
 
-// Chainsaw				Keywords: Damage 13/55, Wound bonus, Tool saw-off
+// Chainsaw			Keywords: Damage 25/55, big bonus vs wooden barricades
 /obj/item/twohanded/chainsaw
 	name = "chainsaw"
 	desc = "A versatile power tool. Useful for limbing trees and delimbing humans."
-	icon = 'icons/fallout/objects/melee/melee.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "chainsaw"
-	item_state = "chainsaw"
 	icon_prefix = "chainsaw"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = null
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	force = 7
-	wound_bonus = 25
-	throw_speed = 2
-	throw_range = 2
-	throwforce = 10
-	toolspeed = 0.5
-	tool_behaviour = TOOL_SAW
+	force = 8
+	wound_bonus = 15
+	bare_wound_bonus = 15
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
+	attack_verb = list("sawed", "shredded", "mauled")
+	throw_speed = 2
+	throw_range = 2
+	throwforce = 5
+	toolspeed = 0.5
+	tool_behaviour = TOOL_SAW
 	hitsound = 'sound/weapons/chainsawhit.ogg'
-	var/on_icon_state = "chainsaw_on"
-	var/off_icon_state = "chainsaw"
-	var/on_item_state = "chainsaw_on"
-	var/off_item_state = "chainsaw"
-	var/weight_class_on = WEIGHT_CLASS_HUGE
-	var/on = FALSE
-	var/force_on = 55
-	var/force_off = 7
-	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
-	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"
-	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/twohanded/chainsaw/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
-	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
-	update_icon()
+	AddComponent(/datum/component/two_handed, force_unwielded = 8, force_wielded = 55, icon_wielded="[icon_prefix]2")
 
-/obj/item/twohanded/chainsaw/attack_self(mob/user)
+/obj/item/twohanded/chainsaw/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure/barricade/wooden)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
+		var/obj/structure/barricade/wooden/K = A
+		K.take_damage(40, BRUTE, "melee", 0)
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /obj/structure))
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /obj/machinery))
+		playsound(loc, hitsound, 80, TRUE)
+	else if(istype(A, /turf/closed))
+		playsound(loc, hitsound, 80, TRUE)
+
+
+//Steel Saw		Keywords: Damage 14/40, Fast, Wound Bonus, Tool saw-off
+/obj/item/twohanded/steelsaw
+	name = "steel saw"
+	desc = "A long, heavy circular saw with reinforced blades, designed for cutting through I-beams."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "steelsaw"
+	item_state = "steelsaw"
+	icon_prefix = "steelsaw"
+	force = 4
+	toolspeed = 0.5
+	wound_bonus = 15
+	attack_speed = CLICK_CD_MELEE * 0.9
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+	tool_behaviour = TOOL_SAW
+	sharpness = SHARP_EDGED
+	resistance_flags = FIRE_PROOF
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
+	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	var/on_icon_state = "steelsaw_on"
+	var/off_icon_state = "steelsaw"
+	var/on_item_state = "steelsaw_on"
+	var/off_item_state = "steelsaw"
+	var/weight_class_on = WEIGHT_CLASS_HUGE
+	var/on = FALSE
+	var/force_on = 40
+	var/force_off = 14
+	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
+	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"
+	var/on_sound = 'sound/weapons/chainsawhit.ogg'
+
+/obj/item/twohanded/steelsaw/attack_self(mob/user)
 	on = !on
 	if(on)
 		to_chat(user, description_on)
@@ -643,7 +747,13 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 		attack_verb = list("poked", "scraped")
 	add_fingerprint(user)
 
-/obj/item/twohanded/chainsaw/suicide_act(mob/living/carbon/user)
+/obj/item/twohanded/steelsaw/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+	update_icon()
+
+/obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)
 	if(on)
 		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
@@ -655,25 +765,8 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
-//Steel Saw		Keywords: Damage 14/40, Fast, Wound Bonus, Tool saw-off
-/obj/item/twohanded/chainsaw/steelsaw
-	name = "steel saw"
-	desc = "A long, heavy circular saw with reinforced blades, designed for cutting through I-beams."
-	icon_state = "steelsaw"
-	item_state = "steelsaw"
-	icon_prefix = "steelsaw"
-	force = 4
-	force_on = 40
-	force_off = 14
-	on_icon_state = "steelsaw_on"
-	off_icon_state = "steelsaw"
-	on_item_state = "steelsaw_on"
-	off_item_state = "steelsaw"
-	wound_bonus = 15
-	attack_speed = CLICK_CD_MELEE * 0.9
-
 //Auto Axe 		Keywords: Damage 14/40, AP 0.5, Wound Bonus
-/obj/item/twohanded/chainsaw/autoaxe
+/obj/item/twohanded/steelsaw/autoaxe
 	name = "auto axe"
 	desc = "A reinforced and heavier steel saw, upgraded using the parts of a car engine."
 	icon_state = "autoaxe"
@@ -689,6 +782,7 @@ obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
 	off_item_state = "autoaxe"
 	wound_bonus = 10
 	tool_behaviour = null
+
 
 /*
 CODE ARCHIVE

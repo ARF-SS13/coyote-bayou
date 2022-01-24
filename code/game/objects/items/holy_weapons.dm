@@ -608,7 +608,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	attack_verb = list("smashed", "bashed", "hammered", "crunched")
 
-/obj/item/nullrod/chainsaw
+/obj/item/nullrod/chainsaw_hand
 	name = "chainsaw hand"
 	desc = "Good? Bad? You're the guy with the chainsaw hand."
 	icon_state = "chainsaw_on"
@@ -624,7 +624,7 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 2
 
-/obj/item/nullrod/chainsaw/Initialize()
+/obj/item/nullrod/chainsaw_hand/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
 	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
