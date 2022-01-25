@@ -161,8 +161,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	exp_requirements = 3800
 
 	loadout_options = list(
-		/datum/outfit/loadout/elcapitan,	// Service Rifle
-		/datum/outfit/loadout/courtmartial, // M1/n Carbine, Binoculars, 9mm sidearm
+		/datum/outfit/loadout/elcapitan,	// El Capitan
+		/datum/outfit/loadout/courtmartial, // The Court Martial, Desert Eagle
 		)
 
 /datum/outfit/job/ncr/f13captain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -178,7 +178,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
 
-/datum/outfit/job/ncr/f13captain	// Desert Eagle, Frag grenade, Binoculars, Trench knife
+/datum/outfit/job/ncr/f13captain	// Binoculars, Trench knife
 	name = "NCR Captain"
 	jobtype = /datum/job/ncr/f13captain
 	id = /obj/item/card/id/dogtag/ncrcaptain
@@ -245,7 +245,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		),
 	)
 
-/datum/outfit/job/ncr/f13lieutenant		// Marksman Rifle, Binoculars, Bayonet, 9mm sidearm
+/datum/outfit/job/ncr/f13lieutenant		// Republic's Pride, Binoculars, Bayonet, 9mm sidearm
 	name = "NCR Lieutenant"
 	jobtype	= /datum/job/ncr/f13lieutenant
 	id = /obj/item/card/id/dogtag/ncrlieutenant
@@ -258,13 +258,13 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	ears = /obj/item/radio/headset/headset_ncr_com
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	r_pocket = /obj/item/binoculars
-	suit_store = /obj/item/gun/ballistic/automatic/marksman
+	suit_store = /obj/item/gun/ballistic/automatic/m1garand/republicspride
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1, \
 		/obj/item/ammo_box/magazine/m9mm = 2, \
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
+		/obj/item/ammo_box/magazine/garand308 = 1,
 		)
 
 /datum/outfit/job/ncr/f13lieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -273,6 +273,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 
 // SERGEANT
@@ -342,6 +343,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 		/obj/item/ammo_box/magazine/m9mm = 3,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		/obj/item/attachments/scope = 1,
+		/obj/item/book/granter/trait/trekking = 1,
 		)
 
 /datum/outfit/loadout/sergeantcqc
@@ -450,7 +452,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
-		/datum/outfit/loadout/vrlite, // Rangemaster, Sequoia
+		/datum/outfit/loadout/vrlite, // Brush Gun, Sequoia
 		/datum/outfit/loadout/vrcqc, // 2 x .45 Long colt revolvers
 		)
 
@@ -495,9 +497,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 /datum/outfit/loadout/vrlite
 	name = "Light Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762/ext = 1,
+		/obj/item/ammo_box/tube/c4570 = 3,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570 = 1,
 		)
@@ -814,7 +816,6 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 
 // COMBAT MEDIC
@@ -930,6 +931,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_one = 1,
+		/obj/item/book/granter/trait/trekking = 1,
 		)
 
 
@@ -1019,7 +1021,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 			),
 		)
 
-/datum/outfit/job/ncr/f13medicalofficer		// 9mm sidearm, Telescopic baton
+/datum/outfit/job/ncr/f13medicalofficer		// M1911 Custom, Telescopic baton
 	name = "NCR Medical Officer"
 	jobtype	= /datum/job/ncr/f13medicalofficer
 	id = /obj/item/card/id/dogtag/ncrlieutenant
