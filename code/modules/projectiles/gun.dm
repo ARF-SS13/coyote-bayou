@@ -173,6 +173,8 @@ ATTACHMENTS
 	var/burst_shot_delay = 3
 	/// The time between firing actions, this means between bursts if this is burst weapon. The reason this is 0 is because you are still, by default, limited by clickdelay.
 	var/fire_delay = 0
+	//Time between individual shots when firing full-auto.
+	var/autofire_shot_delay = 3
 	/// Last world.time this was fired
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
@@ -251,9 +253,7 @@ ATTACHMENTS
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 //	var/projectile_damage_multiplier = 1
 
-/*
 	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds 
-*/ //Disabled because automatic fire is buggy and a bit OP.
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -432,7 +432,10 @@ ATTACHMENTS
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
 		return
 
-	user.DelayNextAction(ranged_attack_speed)
+	if (automatic == 0)
+		user.DelayNextAction(ranged_attack_speed)
+	if (automatic == 1)
+		user.DelayNextAction(autofire_shot_delay)
 
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -470,7 +473,10 @@ ATTACHMENTS
 	return user.CheckActionCooldown(get_clickcd())
 
 /obj/item/gun/proc/get_clickcd()
-	return isnull(chambered?.click_cooldown_override)? CLICK_CD_RANGE : chambered.click_cooldown_override
+	if (automatic == 0)
+		return isnull(chambered?.click_cooldown_override)? CLICK_CD_RANGE : chambered.click_cooldown_override
+	if (automatic == 1)
+		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
 
 /obj/item/gun/GetEstimatedAttackSpeed()
 	return get_clickcd()
@@ -492,7 +498,10 @@ ATTACHMENTS
 	return
 
 /obj/item/gun/proc/on_cooldown()
-	return busy_action || firing || ((last_fire + fire_delay) > world.time)
+	if (automatic == 0)
+		return busy_action || firing || ((last_fire + fire_delay) > world.time)
+	if (automatic == 1)
+		return busy_action || firing
 
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	add_fingerprint(user)
