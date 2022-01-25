@@ -338,6 +338,18 @@
 	icon = 'icons/turf/floors.dmi'
 	//	step_sounds = list("human" = "woodfootsteps")
 
+/turf/open/indestructible/ground/outside/woodalt
+	name = "\proper wood planks"
+	icon_state = "wood"
+	icon = 'icons/turf/floors.dmi'
+	//	step_sounds = list("human" = "woodfootsteps")
+
+/turf/open/indestructible/ground/outside/roof
+	name = "roof"
+	icon_state = "floorrusty"
+	icon = 'icons/fallout/turfs/floors.dmi'
+	//	step_sounds = list("human" = "woodfootsteps")
+
 /turf/open/indestructible/ground/outside/water
 	gender = PLURAL
 	name = "river water"

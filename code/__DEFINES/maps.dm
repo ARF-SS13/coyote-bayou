@@ -43,6 +43,7 @@ require only minor tweaks.
 #define ZTRAIT_ISOLATED_RUINS "Isolated Ruins" //Placing ruins on z levels with this trait will use turf reservation instead of usual placement.
 #define ZTRAIT_VIRTUAL_REALITY "Virtual Reality"
 #define ZTRAIT_DUNGEON "Dungeons"
+#define ZTRAIT_ABOVE "Above"
 //boolean - weather types that occur on the level
 #define ZTRAIT_SNOWSTORM "Weather_Snowstorm"
 #define ZTRAIT_ASHSTORM "Weather_Ashstorm"
@@ -83,6 +84,7 @@ require only minor tweaks.
 #define ZTRAITS_REEBE list(ZTRAIT_REEBE = TRUE, ZTRAIT_BOMBCAP_MULTIPLIER = 0.5)
 #define ZTRAITS_VR list(ZTRAIT_VIRTUAL_REALITY = TRUE, ZTRAIT_AWAY = TRUE)
 #define ZTRAITS_DUNGEON list(ZTRAIT_DUNGEON = TRUE)
+#define ZTRAITS_ABOVE list(ZTRAIT_ABOVE = TRUE)
 
 #define DL_NAME "name"
 #define DL_TRAITS "traits"
