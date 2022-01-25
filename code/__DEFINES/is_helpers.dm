@@ -252,4 +252,4 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 
 #define islock(A) istype(A, /obj/item/lock_construct)
 
-#define isnottriggermine(A) istype(A, /obj/effect/abstract/directional_lighting)		// Affects obj/effect/mine, add anything needed
+#define isnottriggermine(A) istype(A, /obj/effect/abstract)	// Affects obj/effect/mine, add anything needed
