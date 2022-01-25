@@ -266,7 +266,8 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	desc = "A red emergency flare. There are instructions on the side, it reads 'pull cord, make light'."
+	icon = 'icons/fallout/objects/lamps.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
 	light_range = 7 // Pretty bright.
@@ -344,6 +345,7 @@
 /obj/item/flashlight/flare/torch
 	name = "torch"
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
+	icon = 'icons/obj/lighting.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	light_range = 5
 	light_color = LIGHT_COLOR_ORANGE

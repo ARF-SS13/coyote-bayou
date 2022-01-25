@@ -83,8 +83,9 @@
 
 /turf/open/indestructible/ground/outside/savannah
 	name = "savannah"
-	icon_state = "savannah"
 	desc = "Some savannah."
+	icon = 'icons/fallout/turfs/savannah.dmi'
+	icon_state = "savannahcenter"
 	slowdown = 0.4
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
 	footstep = FOOTSTEP_SAND

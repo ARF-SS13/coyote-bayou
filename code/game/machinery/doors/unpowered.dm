@@ -31,7 +31,6 @@
 	icon_state = "secure"
 	assemblytype = /obj/item/stack/sheet/mineral/wood/five
 	opacity = TRUE
-	density = TRUE
 	explosion_block = TRUE
 
 /obj/machinery/door/unpowered/securedoor/update_icon()

@@ -301,7 +301,6 @@
 
 // Baseball Bat			Keywords: Damage 20/30, Damage bonus Stamina
 /obj/item/twohanded/baseball
-	icon = 'icons/fallout/objects/melee/melee.dmi'
 	name = "baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter."
 	icon_state = "baseball"
