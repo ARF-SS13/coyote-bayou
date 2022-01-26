@@ -843,9 +843,6 @@ ATTACHMENTS
 
 	if(worn_out)
 		. += ("[initial(icon_state)]_worn")
-		src.fire_delay += 0.1
-		src.spread += 2
-		src.extra_damage -= 1
 
 
 /obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)

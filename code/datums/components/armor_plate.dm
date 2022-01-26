@@ -2,7 +2,7 @@
 	var/amount = 0
 	var/maxamount = 5
 	var/upgrade_item = /obj/item/stack/crafting/armor_plate
-	var/datum/armor/added_armor = list("linemelee" = 10, "linebullet" = 10, "linelaser" = 10)
+	var/datum/armor/added_armor = list("melee" = 2, "bullet" = 2, "laser" = 2)
 	var/upgrade_name
 
 /datum/component/armor_plate/Initialize(_maxamount,obj/item/_upgrade_item,datum/armor/_added_armor)

@@ -77,8 +77,8 @@
 	emote_taunt = list("growls")
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 250
-	health = 250
+	maxHealth = 180 //9 shots to kill with 9mm
+	health = 180
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 10

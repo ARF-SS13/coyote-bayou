@@ -22,12 +22,12 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "hits"
-	maxHealth = 300
-	health = 300
-	force_threshold = 15
+	maxHealth = 200 //20 x 10, 1 full mag of 9mm with no misses
+	health = 200
+	force_threshold = 14
 	faction = list("hostile", "supermutant")
-	melee_damage_lower = 45
-	melee_damage_upper = 55
+	melee_damage_lower = 35
+	melee_damage_upper = 45
 	mob_size = MOB_SIZE_LARGE
 	move_resist = MOVE_FORCE_OVERPOWERING
 	attack_verb_simple = "smashes"
@@ -106,11 +106,11 @@
 	icon_state = "hulk_melee_s"
 	icon_living = "hulk_melee_s"
 	icon_dead = "hulk_melee_s"
-	maxHealth = 350
-	health = 350
-	force_threshold = 15
-	melee_damage_lower = 45
-	melee_damage_upper = 65
+	maxHealth = 200
+	health = 200
+	force_threshold = 14
+	melee_damage_lower = 40
+	melee_damage_upper = 60
 	attack_sound = "hit_swing"
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant/death(gibbed)
@@ -126,8 +126,8 @@
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
 	ranged = 1
-	maxHealth = 400
-	health = 400
+	maxHealth = 180 //9 shots of 9mm, more room for error to account for dodges
+	health = 180
 	retreat_distance = 4
 	minimum_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
@@ -149,8 +149,8 @@
 	icon_dead = "hulk_113_s"
 	melee_damage_lower = 55
 	melee_damage_upper = 70
-	maxHealth = 950
-	health = 950
+	maxHealth = 700 //30 shots of 5.56, bring an extended mag
+	health = 700
 	mob_size = 5
 
 /mob/living/simple_animal/hostile/supermutant/legendary/death(gibbed)
@@ -166,12 +166,12 @@
 	icon_state = "night_s"
 	icon_living = "night_s"
 	icon_dead = "night_s"
-	maxHealth = 350
-	health = 350
+	maxHealth = 300
+	health = 300
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 45
-	melee_damage_upper = 70
+	melee_damage_lower = 50
+	melee_damage_upper = 60
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 
@@ -193,13 +193,13 @@
 	icon_state = "night_ranged_s"
 	icon_living = "night_ranged_s"
 	icon_dead = "night_ranged_s"
-	maxHealth = 400
-	health = 400
+	maxHealth = 300
+	health = 300
 	ranged = 1
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 45
-	melee_damage_upper = 55
+	melee_damage_lower = 35
+	melee_damage_upper = 45
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	extra_projectiles = 1

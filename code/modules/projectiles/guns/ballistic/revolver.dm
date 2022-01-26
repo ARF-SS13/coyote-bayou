@@ -134,7 +134,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	force = 10
-	extra_damage = -2
+	extra_damage = 30
 	spread = 4
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
@@ -148,6 +148,10 @@
 	name = "Colt 6520"
 	desc = "The Colt 6520 10mm double action revolver is a highly durable weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
 	icon_state = "colt6520"
+	extra_damage = 20
+	extra_penetration = 0.1
+	fire_delay = 4
+	recoil = 0.05
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6520
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
@@ -164,9 +168,9 @@
 	item_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	extra_damage = 32
 	fire_delay = 6
 	spread = 1
-	extra_damage = 2
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 
@@ -182,9 +186,9 @@
 	icon_state = "357colt"
 	item_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	extra_damage = 36
 	fire_delay = 6
 	spread = 0
-	extra_damage = 2
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
 
@@ -195,6 +199,7 @@
 	icon_state = "lucky37"
 	item_state = "lucky"
 	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 36
 	fire_delay = 4
 	block_chance = 20
 	
@@ -203,10 +208,10 @@
 	name = "police revolver"
 	desc = "Pre-war double action police revolver chambered in .357 magnum."
 	icon_state = "police"
+	extra_damage = 34
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
-	extra_damage = -1
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 
 
@@ -222,6 +227,8 @@
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	extra_damage = 36
+	extra_penetration = 0.1
 	recoil = 0.1
 	can_scope = FALSE
 	scope_state = "revolver_scope"
@@ -234,6 +241,7 @@
 	item_state = "44magnum"
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
+	extra_damage = 38
 
 
 //Peacekeeper					 Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
@@ -242,7 +250,7 @@
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
 	icon_state = "m29peace"
-	extra_damage = 15
+	extra_damage = 40
 	extra_penetration = 0.1
 	fire_delay = 7
 	burst_size = 1
@@ -259,7 +267,7 @@
 			select += 1
 			burst_size = 3 //fan the hammer
 			spread = 25
-			extra_damage = 0
+			extra_damage = 30
 			extra_penetration = 0
 			fire_delay = 6
 			weapon_weight = WEAPON_HEAVY //fan the hammer requires two hands
@@ -268,7 +276,7 @@
 			select = 0
 			burst_size = 1
 			spread = 0
-			extra_damage = 15
+			extra_damage = 40
 			extra_penetration = 0.1
 			fire_delay = 7
 			weapon_weight = WEAPON_LIGHT
@@ -282,31 +290,30 @@
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
 	icon_state = "m29_snub"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = -2
+	extra_damage = 34
 	spread = 3
 
 
 //.44 single action		 			Keywords: .44, Single action, 6 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver44
 	name = "\improper .44 magnum single-action revolver"
-	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44..."
+	desc = "I hadn't noticed, but there on his hip, was a moderately sized iron..."
 	item_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_delay = 6
-	extra_damage = 2
+	extra_damage = 36
 	spread = 0
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
 
-//Desert Ranger revolver			Keywords: .44, Single action, 6 rounds cylinder, Long barrel, Fire delay -2,  Damage +5, Penetration +0.1
+//Desert Ranger revolver			Keywords: .44, Single action, 6 rounds cylinder,
 /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	name = "desert ranger revolver"
-	desc = "I hadn't noticed, but there on his hip, was a short-barreled bad .44... This one has been improved by its owner."
+	desc = "I hadn't noticed, but there on his hip, was a really spiffy looking iron..."
 	fire_delay = 4
-	extra_damage = 5
 	extra_penetration = 0.1
-
+	extra_damage = 36
 
 
 //////////////////////
@@ -320,7 +327,9 @@
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	weapon_weight = WEAPON_MEDIUM
-	recoil = 0.1
+	recoil = 0.2
+	extra_damage = 50
+	extra_penetration = 0.1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -350,6 +359,9 @@
 	recoil = 0.1
 	can_scope = TRUE
 	scope_state = "revolver_scope"
+	extra_damage = 50
+	extra_penetration = 0.05 //its not brass hardcast
+	fire_delay = 5.5
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
@@ -367,6 +379,8 @@
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
+	extra_damage = 35
+	extra_penetration = 0.15
 	fire_delay = 8 //This fires MUCH slower then the Sequoia or 357. You're rewarded with bouncing bullets
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 	spread = 0 //Your reward for the slower fire rate is less spread anddd
@@ -378,7 +392,8 @@
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	extra_damage = -2
+	extra_damage = 30
+	extra_penetration = 0.1
 	spread = 4
 	recoil = 0.5
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -393,6 +408,7 @@
 /obj/item/gun/ballistic/revolver/needler
 	name = "Needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
+	extra_damage = 21
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'

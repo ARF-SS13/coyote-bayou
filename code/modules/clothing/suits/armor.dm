@@ -8,12 +8,13 @@
 	equip_delay_other = 40
 	max_integrity = 250
 	resistance_flags = NONE
-	armor = list("tier" = 4, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 25)
+	slowdown = 0.01
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/item/clothing/suit/armor/examine(mob/user)
 	. = ..()
-	. += "This armor provides [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance."
+	. += "This armor provides [armor.bullet] bullet, [armor.laser] energy, and [armor.melee] melee resistance."
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
@@ -30,16 +31,17 @@
 
 /obj/item/clothing/suit/armor/vest
 	name = "armor vest"
-	desc = "(IV) A slim Type I armored vest that provides decent protection against most types of damage."
+	desc = "A slim armored vest with a rigid exterior that provides decent protection against most types of damage."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 25)
 
 /obj/item/clothing/suit/armor/vest/trench
 	name = "followers trenchcoat"
-	desc = "(IV) A grey and which trench coat with dark blue highlights, on the sides and back it has the unique symbol of the followers. Under said coat is an armor vest, perfect for light weight protection."
+	desc = "A grey and which trench coat with dark blue highlights, on the sides and back it has the unique symbol of the followers. Under said coat is an armor vest, perfect for light weight protection."
 	icon_state = "followerstrench"
 	item_state = "followerstrench"
 
@@ -53,7 +55,7 @@
 	desc = "Older generation Type 1 armored vest. Due to degradation over time the vest is far less maneuverable to move in."
 	icon_state = "armor"
 	item_state = "armor"
-	slowdown = 1
+	slowdown = 0.1
 
 /obj/item/clothing/suit/armor/vest/blueshirt
 	name = "large armor vest"
@@ -154,13 +156,13 @@
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
-	desc = "(IV*) A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
+	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
 	icon_state = "riot"
 	item_state = "swat_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("tier" = 4, "linemelee" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80, "wound" = 20)
+	armor = list("melee" = 60, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80, "wound" = 40)
 	blocks_shove_knockdown = TRUE
 	strip_delay = 80
 	equip_delay_other = 60
@@ -294,14 +296,14 @@
 	equip_delay_other = 40
 	max_integrity = 200
 	resistance_flags = FLAMMABLE
-	armor = list("tier" = 3, "energy" = 5, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 5, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 
 /obj/item/clothing/suit/armor/vest/russian
 	name = "russian vest"
 	desc = "A bulletproof vest with forest camo. Good thing there's plenty of forests to hide in around here, right?"
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
-	armor = list("tier" = 3, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50, "wound" = 10)
+	armor = list("tier" = 3, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50, "wound" = 25)
 
 /obj/item/clothing/suit/armor/vest/russian_coat
 	name = "russian battle coat"

@@ -474,15 +474,20 @@
 	slowdown = 0.2
 	item_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
-	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires heavy low penetration plasma clots."
+	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
-
-
+	
+/obj/item/gun/energy/laser/plasma/pistol/worn
+	name ="shoddy plasma pistol"
+	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas. This one's internal parts have loose seals and corroded electronics."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
+	fire_delay = 4.5
+	
 //Glock 86 Plasma pistol
 /obj/item/gun/energy/laser/plasma/glock
 	name = "glock 86"

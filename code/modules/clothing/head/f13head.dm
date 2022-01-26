@@ -30,7 +30,7 @@
 	desc = "Standard Security gear. Protects the head from impacts."
 	icon_state = "helmet"
 	item_state = "helmet"
-	armor = list("tier" = 4, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
@@ -51,10 +51,10 @@
 
 /obj/item/clothing/head/helmet/f13/combat
 	name = "combat helmet"
-	desc = "(V) An old military grade pre-war combat helmet."
+	desc = "An old military grade pre-war combat helmet."
 	icon_state = "combat_helmet"
 	item_state = "combat_helmet"
-	armor = list("tier" = 5, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	strip_delay = 50
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
@@ -76,10 +76,10 @@
 
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
-	desc = "(VI) An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
+	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
 	icon_state = "combat_helmet_mk2"
 	item_state = "combat_helmet_mk2"
-	armor = list("tier" = 6, "energy" = 45, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/dark
 	name = "reinforced combat helmet"
@@ -87,15 +87,15 @@
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/raider
 	name = "customized raider combat helmet"
-	desc = "(VI) A reinforced combat helmet painted black with the laser designator removed."
+	desc = "A reinforced combat helmet painted black with the laser designator removed."
 	icon_state = "combat_helmet_raider"
 	item_state = "combat_helmet_raider"
 
 /obj/item/clothing/head/helmet/f13/rangerbroken
 	name = "broken riot helmet"
 	icon_state = "ranger_broken"
-	desc = "(VII) An old riot police helmet, out of use around the time of the war."
-	armor = list("tier" = 7, "energy" = 50, "bomb" = 39, "bio" = 20, "rad" = 20, "fire" = 30, "acid" = 0)
+	desc = "An old riot police helmet, out of use around the time of the war."
+	armor = list("melee" = 38, "bullet" = 45, "laser" = 38, "energy" = 18, "bomb" = 45, "bio" = 55, "rad" = 10, "fire" = 60, "acid" = 20)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -108,13 +108,15 @@
 	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+
 
 /obj/item/clothing/head/helmet/f13/combat/environmental
 	name = "environmental armor helmet"
-	desc = "(V) A full head helmet and gas mask, developed for use in heavily contaminated environments."
+	desc = "A full head helmet and gas mask, developed for use in heavily contaminated environments."
 	icon_state = "env_helmet"
 	item_state = "env_helmet"
-	armor = list("tier" = 5,"energy" = 45, "bomb" = 55, "bio" = 70, "rad" = 100, "fire" = 60, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 40,"energy" = 20, "bomb" = 55, "bio" = 70, "rad" = 100, "fire" = 60, "acid" = 50)
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
@@ -127,10 +129,10 @@
 
 /obj/item/clothing/head/helmet/f13/sulphitehelm
 	name = "sulphite helmet"
-	desc = "(VI) A sulphite raider helmet, affixed with thick anti-ballistic glass over the eyes."
+	desc = "A sulphite raider helmet, affixed with thick anti-ballistic glass over the eyes."
 	icon_state = "sulphite_helm"
 	item_state = "sulphite_helm"
-	armor = list("tier" = 6, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 25, "bullet" = 55,"laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 
@@ -138,34 +140,33 @@
 
 /obj/item/clothing/head/helmet/knight/f13/metal
 	name = "metal helmet"
-	desc = "(III) An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
+	desc = "An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
 	icon_state = "metalhelmet"
 	item_state = "metalhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 16, "bio" = 0, "rad" = 0)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 40, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/knight/f13/metal/reinforced
 	name = "reinforced metal helmet"
-	desc = "(IV) An iron helmet forged by tribal warriors, with a unique design to protect the face from arrows and axes."
 	icon_state = "metalhelmet_r"
 	item_state = "metalhelmet_r"
-	armor = list("tier" = 4, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 0)
-
+	armor = list("melee" = 37, "bullet" = 22, "laser" = 42, "energy" = 16, "bomb" = 45, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
+	
 /obj/item/clothing/head/helmet/knight/f13/rider
 	name = "rider helmet" //Not raider. Rider.
-	desc = "(III) It's a fancy dark metal helmet with orange spray painted flames."
+	desc = "It's a fancy dark metal helmet with orange spray painted flames."
 	icon_state = "rider"
 	item_state = "rider"
 
 /obj/item/clothing/head/helmet/f13/metalmask
 	name = "metal mask"
-	desc = "(IV) A crudely formed metal hockey mask."
+	desc = "A crudely formed metal hockey mask."
 	icon_state = "metal_mask"
 	item_state = "metal_mask"
 	toggle_message = "You lower"
 	alt_toggle_message = "You raise"
 	can_toggle = 1
-	armor = list("tier" = 4, "energy" = 40, "bomb" = 40, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 40, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	strip_delay = 80
 	actions_types = list(/datum/action/item_action/toggle)
@@ -185,18 +186,17 @@
 
 /obj/item/clothing/head/helmet/f13/metalmask/mk2
 	name = "reinforced metal mask"
-	desc = "(V) A reinforced metal hockey mask."
+	desc = "A reinforced metal hockey mask."
 	icon_state = "metal_mask2"
 	item_state = "metal_mask2"
-	armor = list("tier" = 5, "energy" = 50, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 37, "bullet" = 25, "laser" = 42, "energy" = 15, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
-	desc = "(V) A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
+	desc = "A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
-	armor = list("tier" = 5, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-	strip_delay = 10
+	armor = list("melee" = 25, "bullet" = 25,"laser" = 80, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -218,7 +218,7 @@
 	ispowerarmor = 1 //TRUE
 	strip_delay = 200
 	equip_delay_self = 20
-	slowdown = 0.1
+	slowdown = 0.05
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	clothing_flags = THICKMATERIAL
@@ -333,7 +333,7 @@
 	var/curremp = emped
 	if(ismob(loc))
 		to_chat(loc, "<span class='warning'>Warning: electromagnetic surge detected in helmet. Rerouting power to emergency systems.</span>")
-		armor = armor.modifyRating(linemelee = -100, linebullet = -100, linelaser = -100)
+		armor = armor.modifyRating(melee = -100, bullet = -100, laser = -100)
 		addtimer(CALLBACK(src, .proc/end_emp_effect, curremp), 5 SECONDS)
 
 /obj/item/clothing/head/helmet/f13/power_armor/proc/end_emp_effect(curremp)
@@ -343,7 +343,7 @@
 		var/mob/living/L = loc
 		emped = FALSE
 		to_chat(loc, "<span class='warning'>Helmet power reroute successful. All systems operational.</span>")
-		armor = armor.modifyRating(linemelee = 100, linebullet = 100, linelaser = 100)
+		armor = armor.modifyRating(melee = 100, bullet = 100,laser = 100)
 		if(istype(L))
 			L.update_equipment_speed_mods()
 	return TRUE
@@ -366,10 +366,10 @@
 */
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
 	name = "salvaged T-45b helmet"
-	desc = "(VIII) It's a salvaged T-45b power armor helmet."
+	desc = "It's a salvaged T-45b power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 //	darkness_view = 0
 //	armor_block_chance = 25
 //	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
@@ -378,10 +378,10 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
 	name = "ncr salvaged T-45b helmet"
-	desc = "(VIII) It's an NCR salvaged T-45b power armor helmet, better repaired than regular salvaged PA, and decorated with the NCR flag and other markings for an NCR Heavy Trooper."
+	desc = "It's an NCR salvaged T-45b power armor helmet, better repaired than regular salvaged PA, and decorated with the NCR flag and other markings for an NCR Heavy Trooper."
 	icon_state = "t45bhelmet_ncr"
 	item_state = "t45bhelmet_ncr"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 60, "bullet" = 65, "laser" = 65, "energy" = 24, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 //	darkness_view = 0
 //	armor_block_chance = 40
 //	deflection_chance = 10 //10% chance to block damage from blockable bullets and redirect the bullet at a random angle. Not nearly as effective as true power armor
@@ -390,7 +390,8 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
 	name = "restored T-45b helmet"
-	desc = "(VIII) It's a restored T-45b power armor helmet."
+	desc = "It's a restored T-45b power armor helmet."
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 65, "energy" = 22, "bomb" = 55, "bio" = 65, "rad" = 55, "fire" = 85, "acid" = 0, "wound" = 40)
 //	armor_block_chance = 60
 //	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 	requires_training = TRUE
@@ -398,27 +399,29 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
 	name = "raider T-45b power helmet"
-	desc = "(VIII) This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm. This helmet seems to be heavily modified, heavy metal banding fused to the helmet"
+	desc = "a raider's attempt to duplicate a power armor helmet. The result is a fuzed mass of metal and ceramic that nonetheless provides protection"
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 //	armor_block_chance = 20
 //	deflection_chance = 10
 	powered = FALSE
+	slowdown = 0.05
 
 
 /obj/item/clothing/head/helmet/f13/power_armor/hotrod
 	name = "hotrod T-45b power helmet"
-	desc = "(VIII) This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm."
+	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm."
 	icon_state = "t45hotrod_helm"
 	item_state = "t45hotrod_helm"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	requires_training = FALSE
 //	armor_block_chance = 20
 	powered = FALSE
 //	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
-
+	slowdown = 0.05
+	
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttec
 	name = "Vault-Tec power helmet"
 	desc = "(VIII) A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
@@ -430,19 +433,18 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttecta
 	name = "Vault-Tec power helmet"
-	desc = "(VIII) A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
+	desc = "A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
 	icon_state = "vaulttahelm"
 	item_state = "vaulttahelm"
-	armor = list("tier" = 8, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
 	slowdown = 0.1
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
-	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	desc = "t's an old pre-War power armor helmet. It's pretty hot inside of it."
 	icon_state = "t45dhelmet0"
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
 //	armor_block_chance = 60
 //	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
@@ -452,7 +454,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos
 	name = "Brotherhood T-45d power helmet"
-	desc = "(IX) It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
@@ -476,19 +478,19 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
 	name = "midwestern power helmet"
-	desc = "(IX) This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."
+	desc = "This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."
 	icon_state = "midwestgrey_helm"
 	item_state = "midwestgrey_helm"
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 80, "energy" = 27, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 //	armor_block_chance = 60
 //	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"
-	desc = "(IX) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 	icon_state = "t51bhelmet0"
 	item_state = "t51bhelmet0"
-	armor = list("tier" = 9, "energy" = 60, "bomb" = 62, "bio" = 100, "rad" = 90, "fire" = 90, "acid" = 0, "wound" = 60)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 80, "energy" = 27, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 //	armor_block_chance = 70
 //	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
@@ -501,7 +503,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	name = "T-51b power helmet"
-	desc = "(IX) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos/update_icon_state()
 	icon_state = "t51bhelmet[light_on]"
@@ -509,21 +511,21 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/wbos
 	name = "Washington power helmet"
-	desc = "(X) It's a Washington Brotherhood power helmet. It looks somewhat terrifying."
+	desc = "It's a Washington Brotherhood power helmet. It looks somewhat terrifying."
 	icon_state = "t51wboshelmet"
 	item_state = "t51wboshelmet"
 	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/reforgedwbos
 	name = "reforged Washington power helmet"
-	desc = "(X) It's a reforged Washington Brotherhood power helmet, designed to induce fear in a target."
+	desc = "It's a reforged Washington Brotherhood power helmet, designed to induce fear in a target."
 	icon_state = "t51matthelmet"
 	item_state = "t51matthelmet"
 	actions_types = list()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/ultra
 	name = "Ultracite power helmet"
-	desc = "(X) It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming. Now enhanced with ultracite."
+	desc = "It's a T-51b power helmet, typically used by the Brotherhood. It looks somewhat charming. Now enhanced with ultracite."
 	icon_state = "ultracitepa_helm"
 	item_state = "ultracitepa_helm"
 	slowdown = 0
@@ -531,10 +533,10 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
-	desc = "(XI) The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
+	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
 	icon_state = "t60helmet0"
 	item_state = "t60helmet0"
-	armor = list("tier" = 11, "energy" = 70, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
+	armor = list("melee" = 80, "bullet" = 70, "laser" = 80, "energy" = 30, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 0, "wound" = 80)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 //	armor_block_chance = 80
 //	deflection_chance = 15 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle. Same deflection as T-45 due to it having the same general shape.
@@ -559,7 +561,7 @@
 	desc = "(XII) It's an advanced power armor MK1 helmet, typically used by the Enclave. It looks somewhat threatening."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
-	armor = list("tier" = 12, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
 //	armor_block_threshold = 0.45
 //	melee_block_threshold = 45
 //	armor_block_chance = 80 //Enclave. 'nuff said
@@ -567,14 +569,14 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor"
-	desc = "(XIII) A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
+	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
 	icon_state = "hellfirehelm"
 	item_state = "hellfirehelm"
 //	melee_block_threshold = 70
 //	armor_block_threshold = 0.8
 //	armor_block_chance = 99
 //	deflection_chance = 70
-	armor = list("tier" = 13, "energy" = 90, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
+	armor = list("melee" = 85, "bullet" = 85, "laser" = 87, "energy" = 37, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 100)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire/wbos
 	name = "advanced Washington power helmet"
@@ -616,11 +618,11 @@
 
 /obj/item/clothing/head/helmet/f13/tribal
 	name = "tribal power helmet"
-	desc = "(IV) This power armor helmet was salvaged by savages from the battlefield.<br>They believe that these helmets capture the spirits of their fallen wearers, so they painted some runes on to give it a more sacred meaning."
+	desc = "This power armor helmet was salvaged by savages from the battlefield.<br>They believe that these helmets capture the spirits of their fallen wearers, so they painted some runes on to give it a more sacred meaning."
 	icon_state = "tribal"
 	item_state = "tribal"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("tier" = 4, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 90)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	strip_delay = 30
 	dynamic_hair_suffix = ""
@@ -631,7 +633,7 @@
 
 /obj/item/clothing/head/f13/rastacap
 	name = "rastacap"
-	desc = "(I) <font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
+	desc = "<font color='#157206'>Him haffi drop him fork and run,</font><br><font color='green'>Him can't stand up to Jah Jah son,</font><br><font color='#fd680e'>Him haffi lef' ya with him gun,</font><br><font color='red'>Dig off with him bomb.</font>"
 	icon_state = "rastacap"
 	item_state = "fedora"
 	cold_protection = HEAD //This tam brings the warm reggae and Jamaican sun with it.
@@ -663,20 +665,20 @@
 
 /obj/item/clothing/head/f13/trilby
 	name = "feather trilby"
-	desc = "(I) A sharp, stylish blue hat with a feather."
+	desc = "A sharp, stylish blue hat with a feather."
 	icon_state = "trilby"
 	item_state = "fedora"
 
 /obj/item/clothing/head/f13/stormchaser
 	name = "stormchaser hat"
-	desc = "(I) Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
+	desc = "Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
 	icon_state = "stormchaser"
 	item_state = "fedora"
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/headscarf
 	name = "headscarf"
-	desc = "(I) A piece of cloth worn on head for a variety of purposes, such as protection of the head or hair from rain, wind, dirt, cold, warmth, for sanitation, for fashion, recognition or social distinction - with religious significance, to hide baldness, out of modesty, or other forms of social convention."
+	desc = "A piece of cloth worn on head for a variety of purposes, such as protection of the head or hair from rain, wind, dirt, cold, warmth, for sanitation, for fashion, recognition or social distinction - with religious significance, to hide baldness, out of modesty, or other forms of social convention."
 	icon_state = "headscarf"
 	item_state = "dethat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -687,54 +689,52 @@
 
 /obj/item/clothing/head/f13/pot
 	name = "metal cooking pot"
-	desc = "(III) Step one: Start with the sauce.<br>Step two: Add the noodles.<br>Step three: Stir the pasta.<br>Step four: Turn up the heat.<br>Step five: Burn the house."
+	desc = "Step one: Start with the sauce.<br>Step two: Add the noodles.<br>Step three: Stir the pasta.<br>Step four: Turn up the heat.<br>Step five: Burn the house."
 	icon_state = "pot"
 	item_state = "fedora"
 	force = 20
 	hitsound = 'sound/items/trayhit1.ogg'
 	flags_inv = HIDEHAIR
-	armor = list("tier" = 3)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/f13/cowboy
 	name = "cowboy hat"
-	desc = "(II) I've never seen so many men wasted so badly."
+	desc = "I've never seen so many men wasted so badly."
 	icon_state = "cowboy"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
-	armor = list("tier" = 2)
 
 /obj/item/clothing/head/f13/bandit
 	name = "bandit hat"
-	desc = "(I) A black cowboy hat with a large brim that's curved to the sides.<br>A silver eagle pin is attached to the front."
+	desc = "A black cowboy hat with a large brim that's curved to the sides.<br>A silver eagle pin is attached to the front."
 	icon_state = "bandit"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
-	armor = list("tier" = 2)
 
 /obj/item/clothing/head/f13/gambler
 	name = "gambler hat"
-	desc = "(I) A perfect hat for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	desc = "A perfect hat for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/motorcycle
 	name = "motorcycle helmet"
-	desc = "(II) A type of helmet used by motorcycle riders.<br>The primary goal of a motorcycle helmet is motorcycle safety - to protect the rider's head during impact, thus preventing or reducing head injury and saving the rider's life."
+	desc = "A type of helmet used by motorcycle riders.<br>The primary goal of a motorcycle helmet is motorcycle safety - to protect the rider's head during impact, thus preventing or reducing head injury and saving the rider's life."
 	icon_state = "motorcycle"
 	item_state = "motorcycle"
 	flags_cover = HEADCOVERSEYES
-	armor = list("tier" = 2, "linemelee" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEHAIR
 	strip_delay = 10
 
 /obj/item/clothing/head/helmet/f13/firefighter
 	name = "firefighter helmet"
-	desc = "(III) A firefighter's helmet worn on top of a fire-retardant covering and broken gas mask.<br>It smells heavily of sweat."
+	desc = "A firefighter's helmet worn on top of a fire-retardant covering and broken gas mask.<br>It smells heavily of sweat."
 	icon_state = "firefighter"
 	item_state = "firefighter"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
@@ -745,35 +745,34 @@
 
 /obj/item/clothing/head/helmet/f13/vaquerohat
 	name = "vaquero hat"
-	desc = "(III) An old sombrero worn by Vaqueros to keep off the harsh sun."
+	desc = "An old sombrero worn by Vaqueros to keep off the harsh sun."
 	icon_state = "vaquerohat"
 	item_state = "vaquerohat"
-	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/wastewarhat
 	name = "warrior helmet"
-	desc = "(III) It might have been a cooking pot once, now its a helmet, with a piece of cloth covering the neck from the sun."
+	desc = "It might have been a cooking pot once, now its a helmet, with a piece of cloth covering the neck from the sun."
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon_state = "wastewar"
 	item_state = "wastewar"
-	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/hoodedmask
 	name = "hooded mask"
-	desc = "(III) A gask mask with the addition of a hood."
+	desc = "A gask mask with the addition of a hood."
 	icon_state = "Hooded_Gas_Mask"
 	item_state = "Hooded_Gas_Mask"
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	name = "brahmin leather cowboy hat"
-	desc = "(II) A cowboy hat made from brahmin hides."
+	desc = "A cowboy hat made from brahmin hides."
 	icon_state = "brahmin_leather_cowboy_hat"
 	item_state = "brahmin_leather_cowboy_hat"
 	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
@@ -781,10 +780,9 @@
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	name = "Rusted Cowboy Hat"
-	desc = "(II) A hat made from tanned leather hide."
+	desc = "A hat made from tanned leather hide."
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
-	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/police
@@ -792,7 +790,6 @@
 	desc = "(I) The wasteland's finest."
 	icon_state = "retropolice"
 	item_state = "fedora"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/simplekitty
@@ -805,10 +802,10 @@
 
 /obj/item/clothing/head/f13/riderw
 	name = "Reinforced Rider Helmet" //Not raider. Rider. //Count up your sins
-	desc = "(IV) It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
+	desc = "It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
 	icon_state = "riderw"
 	item_state = "riderw"
-	armor = list("tier" = 4)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 //Soft caps
 /obj/item/clothing/head/soft/f13
@@ -816,13 +813,13 @@
 
 /obj/item/clothing/head/soft/f13/baseball
 	name = "baseball cap"
-	desc = "(I) A type of soft cap with a rounded crown and a stiff peak projecting out the front."
+	desc = "A type of soft cap with a rounded crown and a stiff peak projecting out the front."
 	icon_state = "baseballsoft"
 	soft_type = "baseball"
 
 /obj/item/clothing/head/soft/f13/utility
 	name = "grey utility cover"
-	desc = "(I) An eight-pointed hat, with a visor similar to a baseball cap, known as utility cover, also called the utility cap or eight-pointed cover."
+	desc = "An eight-pointed hat, with a visor similar to a baseball cap, known as utility cover, also called the utility cap or eight-pointed cover."
 	icon_state = "utility_g"
 	item_color = "utility_g"
 
@@ -845,10 +842,10 @@
 
 /obj/item/clothing/head/donor/macarthur
 	name = "Peaked Cap"
-	desc = "(II) A resistant, tan peaked cap, typically worn by pre-War Generals."
+	desc = "A resistant, tan peaked cap, typically worn by pre-War Generals."
 	icon_state = "macarthur"
 	item_state = "macarthur"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
+
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/rigscustom
 	name = "11th armored calvary helmet"
@@ -902,48 +899,42 @@
 
 /obj/item/clothing/head/helmet/f13/jasonmask
 	name = "jasons mask"
-	desc = "(II) A metal mask made specifically for jason."
+	desc = "A metal mask made specifically for jason."
 	icon_state = "jasonmask"
 	item_state = "jasonmask"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 65, "acid" = 30)
 
 /obj/item/clothing/head/welding/f13/fire
 	name = "cremator welding helmet"
-	desc = "(III) A welding helmet with flames painted on it.<br>It sure is creepy but also badass."
+	desc = "A welding helmet with flames painted on it.<br>It sure is creepy but also badass."
 	icon_state = "welding_fire"
 	item_state = "welding"
 	tint = 1
-	armor = list("tier" = 3, "energy" = 5, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/atombeliever
 	name = "believer headdress"
-	desc = "(II) The headwear of the true faith."
+	desc = "The headwear of the true faith."
 	icon_state = "atombeliever"
 	item_state = "atombeliever"
-	armor = list("tier" = 2, "energy" = 45, "bomb" = 55, "bio" = 65, "rad" = 100, "fire" = 60, "acid" = 20)
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13/flatranger
 	name = "NCR gambler ranger hat"
-	desc = "(IV) A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
+	desc = "A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
 	icon_state = "gamblerrang"
 	item_state = "gamblerrang"
-	armor = list("tier" = 4, "energy" = 30, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/venator/diohelmet
 	name = "galerum lacertarex"
-	desc = "(VI) The hide of a deadly green gecko affixed over a reinforced legion helmet. Its ghastly appearance serves as an intimidating gesture to those who do not yet fear the Lizard King."
+	desc = "The hide of a deadly green gecko affixed over a reinforced legion helmet. Its ghastly appearance serves as an intimidating gesture to those who do not yet fear the Lizard King."
 	icon_state = "diohelmet"
 	item_state = "diohelmet"
-	armor = list("tier" = 6, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/herbertranger
 	name = "weathered desert ranger helmet"
 	icon_state = "modified_usmc_riot"
 	item_state = "modified_usmc_riot"
-	desc = "(IV) An ancient USMC riot helmet. This paticular piece retains the classic colouration of the legendary Desert Rangers, and looks as if it has been worn for decades; its night vision no longer seems to be functional. Scratched into the helmet is the sentence: 'Death to the Devils that simulate our freedom.'"
-	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
+	desc = "An ancient USMC riot helmet. This paticular piece retains the classic colouration of the legendary Desert Rangers, and looks as if it has been worn for decades; its night vision no longer seems to be functional. Scratched into the helmet is the sentence: 'Death to the Devils that simulate our freedom.'"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -964,28 +955,27 @@
 
 /obj/item/clothing/head/f13/ranger_hat
 	name = "grey cowboy hat"
-	desc = "(II) A simple grey cowboy hat."
+	desc = "A simple grey cowboy hat."
 	icon_state = "ranger_grey_hat"
 	item_state = "ranger_grey_hat"
-	armor = list("tier" = 2, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 70, "fire" = 70, "acid" = 15)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/f13/ranger_hat/banded
 	name = "banded cowboy hat"
-	desc = "(II) A grey cowboy hat with a hat band decorated with brassen rings."
+	desc = "A grey cowboy hat with a hat band decorated with brassen rings."
 	icon = 'icons/mob/clothing/head.dmi'
 	icon_state = "ranger_hat_grey_banded"
 	item_state = "ranger_hat_grey_banded"
 
 /obj/item/clothing/head/f13/ranger_hat/tan
 	name = "tan cowboy hat"
-	desc = "(II) A thick tanned leather hat, with a Montana Peak crease."
+	desc = "A thick tanned leather hat, with a Montana Peak crease."
 	icon_state = "ranger_tan_hat"
 	item_state = "ranger_tan_hat"
 
 /obj/item/clothing/head/f13/chinahelmetcosmetic
 	name = "dysfunctional chinese stealth helmet"
-	desc = "(II) A bright yellow visor in a timelessly infamous shape makes this helmet immediately recognizable. It's non-ballistic, and it's power unit for the HUD has been long since removed."
+	desc = "A bright yellow visor in a timelessly infamous shape makes this helmet immediately recognizable. It's non-ballistic, and it's power unit for the HUD has been long since removed."
 	icon_state = "stealthhelmet"
 	item_state = "stealthhelmet"
 

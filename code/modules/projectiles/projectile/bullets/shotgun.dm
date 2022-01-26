@@ -1,8 +1,8 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 48
+	damage = 50
+	stamina = 10 //all shotguns deal a very slight amount of stamina damage from the impact
 	sharpness = SHARP_POINTY
-	armour_penetration = 0.2
 	wound_bonus = 26
 	bare_wound_bonus = -26
 	spread = 2

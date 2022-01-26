@@ -38,6 +38,10 @@
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 200 //8 shots
 
+/obj/item/ammo_casing/energy/plasma/pistol/worn
+	projectile_type = /obj/item/projectile/f13plasma/pistol/worn
+	e_cost = 200 //8 shots
+
 /obj/item/ammo_casing/energy/plasma/pistol/glock
 	projectile_type = /obj/item/projectile/f13plasma/pistol/glock
 	e_cost = 160 //10 shots

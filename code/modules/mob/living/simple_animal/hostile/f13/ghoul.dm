@@ -101,8 +101,8 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 600
-	health = 600
+	maxHealth = 300
+	health = 300
 	speed = 2.5
 	harm_intent_damage = 8
 	melee_damage_lower = 30

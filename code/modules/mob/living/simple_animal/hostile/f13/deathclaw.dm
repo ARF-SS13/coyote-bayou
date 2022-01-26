@@ -14,11 +14,11 @@
 	maxHealth = 750
 
 	speed = -1
-	health = 750
+	health = 600
 	obj_damage = 200
-	armour_penetration = 0.7
-	melee_damage_lower = 80
-	melee_damage_upper = 85
+	armour_penetration = 0.3
+	melee_damage_lower = 40
+	melee_damage_upper = 50
 
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
@@ -67,12 +67,12 @@
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
 	gender = FEMALE
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 800
+	health = 800
 	stat_attack = UNCONSCIOUS
-	melee_damage_lower = 76
-	melee_damage_upper = 78
-	armour_penetration = 0.75
+	melee_damage_lower = 50
+	melee_damage_upper = 55
+	armour_penetration = 0.35
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
@@ -81,13 +81,13 @@
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
-	maxHealth = 1500
-	health = 1500
+	maxHealth = 1200
+	health = 1200
 	color = "#FFFF00"
 	stat_attack = UNCONSCIOUS
-	melee_damage_lower = 80
-	melee_damage_upper = 85
-	armour_penetration = 0.85
+	melee_damage_lower = 55
+	melee_damage_upper = 55
+	armour_penetration = 0.5
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
 	var/turf/T = get_turf(src)

@@ -46,51 +46,52 @@
 //Fallout 50s
 /obj/item/clothing/suit/overalls
 	name = "overalls"
-	desc = "(I) A set of denim overalls suitable for farming."
+	desc = "A set of denim overalls suitable for farming."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 
 /obj/item/clothing/suit/f13/vest
 	name = "tan vest"
-	desc = "(I) It's a vest made of tanned leather."
+	desc = "It's a vest made of tanned leather."
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	body_parts_covered = CHEST|GROIN|LEGS
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
 	name = "captain's coat"
-	desc = "(II) Battlecruiser operational!"
+	desc = "Battlecruiser operational!"
 	icon_state = "battlecruiser"
 	item_state = "hostrench"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/cowboybvest //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
-	desc = "(I) A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboybvest"
 	item_state = "lb_suit"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS
 
 /obj/item/clothing/suit/f13/westender
 	name = "bartenders vest"
-	desc = "(I) A grey vest, adorned with bartenders arm cuffs, a classic western look."
+	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
 	item_state = "lb_suit"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
 
 /obj/item/clothing/suit/f13/cowboygvest
 	name = "grey vest"
-	desc = "(I) A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboygvest"
 	item_state = "gy_suit"
 	body_parts_covered = CHEST|GROIN|LEGS
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/ghost_sheet
 	name = "ghost sheet"
@@ -106,83 +107,86 @@
 //Fallout 13 various suits directory
 /obj/item/clothing/suit/f13/robe_liz
 	name = "tan robe"
-	desc = "(I) Only a monk would find this robe nice and comfortable."
+	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
-	armor = list("tier" = 1)
 
 /obj/item/clothing/suit/f13/mantle_liz
 	name = "hide mantle"
-	desc = "(I) A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
+	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
-	armor = list("tier" = 1)
-
+	
 /obj/item/clothing/suit/f13/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
-	desc = "(II) A Main Force Patrol leather jacket.<br>Offbeat."
+	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
 	icon_state = "mfp"
 	item_state = "hostrench"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 20, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/mfp/raider
 	name = "offbeat jacket"
-	desc = "(II) A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
+	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
 	icon_state = "mfp_raider"
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/lonesome
 	name = "lonesome duster"
-	desc = "(II) A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
+	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
 	icon_state = "courier"
 	item_state = "suit-command"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
-
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	
 /obj/item/clothing/suit/f13/veteran
 	name = "merc veteran coat"
-	desc = "(II) A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
+	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
 	icon_state = "veteran"
 	item_state = "suit-command"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/duster
 	name = "duster"
-	desc = "(II) A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
+	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
 	icon_state = "duster"
 	item_state = "det_suit"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/f13/sheriff
 	name = "sheriff duster"
-	desc = "(III) A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
+	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
 	icon_state = "sheriff"
 	item_state = "det_suit"
-	armor = list("tier" = 3, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/suit/f13/banker
 	name = "bankers tailcoat"
-	desc = "(I) A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
+	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
 	icon_state = "banker"
 	item_state = "banker"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/f13/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
-	desc = "(III) A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
 	icon_state = "autumn"
 	item_state = "autumn"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	
 
 /obj/item/clothing/suit/f13/hubologist
 	name = "hubologist robe"
-	desc = "(I) A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
 	item_state = "wcoat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	armor = list("tier" = 1)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/f13/sexymaid
 	name = "sexy maid outfit"
@@ -214,45 +218,48 @@
 		/obj/item/holosign_creator,
 		/obj/item/assembly/signaler
 	) //robust storage options!! -superballs
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 //Special Biosuit
 
 /obj/item/clothing/suit/bio_suit/f13/hazmat
 	name = "hazmat suit"
-	desc = "(II) Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
+	desc = "(Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat"
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/bio_hood/f13/hazmat
 	name = "hazmat hood"
-	desc = "(II) My star, my perfect silence."
+	desc = "My star, my perfect silence."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	icon_state = "hazmat"
 	item_state = "hazmat_helmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	armor = list("melee" = 29, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
 //Fallout 13 toggle apparel directory
 /obj/item/clothing/suit/toggle/labcoat/f13/emergency
 	name = "first responder jacket"
-	desc = "(I) A high-visibility jacket worn by medical first responders."
+	desc = "A high-visibility jacket worn by medical first responders."
 	icon_state = "fr_jacket"
 	item_state = "fr_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/f13/warriors
 	name = "warriors jacket"
-	desc = "(II) A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
+	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
 	icon_state = "warriors"
 	item_state = "owl"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/wanderer
 	name = "wanderer jacket"
 	desc = "A zipped-up hoodie made of tanned leather."
 	icon_state = "wanderer"
 	item_state = "owl"
-	armor = list("tier" = 2, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 
 ///////////////////////
@@ -262,13 +269,15 @@
 //Basic Jacket
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
 	name = "Great Khan jacket"
-	desc = "(IV) A blue-black reinforced jacket. <br>There is an illustration on the back - the horned helmet emblem of the Great Khans.<br> Some prefer to wear a vest (alt-click)."
+	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_jacket"
 	item_state = "khan_jacket"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
-	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0)
+	slowdown = 0.05
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/Initialize()
 	. = ..()
@@ -277,10 +286,13 @@
 //Armored jacket
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
 	name = "Great Khan armored jacket"
-	desc = "(V) A black leather jacket with metal plates and a big Great Khan logo on the back. Some prefer to wear a leather vest (alt-click)."
+	desc = "A black leather jacket with metal plates and a big Great Khan logo on the back. Some prefer to wear a leather vest (alt-click)."
 	icon_state = "khan_jacket_armored"
 	item_state = "khan_jacket_armored"
-	armor = list("tier" = 5, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
+	armor = list("melee" = 35, "bullet" = 37, "laser" = 35, "energy" = 25, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0)
+	slowdown = 0.07
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored/Initialize()
 	. = ..()
@@ -289,10 +301,12 @@
 //Battlecoat
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 	name = "Great Khan battle coat"
-	desc = "(VI) Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
+	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
-	armor = list("tier" = 6, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
+	armor = list("melee" = 37, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/Initialize()
 	. = ..()
@@ -302,10 +316,11 @@
 
 /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	name = "followers lab coat"
-	desc = "(II) A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
+	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
 	icon_state = "followers"
 	item_state = "labcoat"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 0, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 20, "energy" = 25, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
 
 /obj/item/clothing/suit/armor/f13/generaluniform
 	name = "Yuma 1st Irregular General Uniform"
@@ -346,30 +361,30 @@
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "deathclaw cloak"
 	icon_state = "clawsuitcloak"
-	desc = "(V) A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
-	armor = list("tier" = 5, "energy" = 30, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 60)
+	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 0.07
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "deathclaw cloak hood"
 	icon_state = "clawheadcloak"
-	desc = "(V) A protective & concealing hood."
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	desc = "A protective & concealing hood."
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/parka/medical
 	name = "armored medical parka"
 	icon_state = "armormedical"
-	desc = "(III) A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
+	
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
 
 /obj/item/clothing/head/hooded/parkahood/medical
 	name = "armored medical parka hood"
 	icon_state = "armorhoodmedical"
-	desc = "(III) A protective & concealing parka hood."
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	desc = " A protective & concealing parka hood."
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/parka/grey
@@ -424,34 +439,35 @@
 /obj/item/clothing/suit/hooded/cloak/hhunter
 	name = "Razorclaw armour"
 	icon_state = "rcarmour"
-	desc = "(VI) A suit of armour fashioned out of the remains of a legendary deathclaw."
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw."
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/hhunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = 0.05
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
 	name = "Razorclaw helm"
 	icon_state = "rchelmet"
-	desc = "(VI) The skull of a legendary deathclaw."
-	armor = list("tier" = 6, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	desc = "The skull of a legendary deathclaw."
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/f13/jamrock
 	name = "disco-ass blazer"
-	desc = "(I) Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
+	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 
 /obj/item/clothing/suit/hooded/cloak/shunter
 	name = "Quickclaw armour"
 	icon_state = "birdarmor"
-	desc = "(V) A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
-	slowdown = -0.20
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 30, "bio" = 20, "rad" = 20, "fire" = 30, "acid" = 0)
+	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
+	slowdown = 0.025
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -460,7 +476,7 @@
 /obj/item/clothing/head/hooded/cloakhood/shunter
 	name = "Quickclaw hood"
 	icon_state = "birdhood"
-	desc = "(VI) A hood madde of deathclaw hides, light while also being comfortable to wear, designed for speed."
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 20, "rad" = 20, "fire" = 30, "acid" = 0)
+	desc = "A hood madde of deathclaw hides, light while also being comfortable to wear, designed for speed."
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF

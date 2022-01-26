@@ -16,8 +16,8 @@
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
-	health = 160
-	maxHealth = 160
+	health = 130 //7 shots of 9mm
+	maxHealth = 130
 	healable = FALSE
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 28
@@ -167,8 +167,8 @@
 	icon_state = "robobrain"
 	icon_living = "robobrain"
 	icon_dead = "robobrain_d"
-	health = 200
-	maxHealth = 200
+	health = 180
+	maxHealth = 180
 	melee_damage_lower = 30
 	melee_damage_upper = 45
 	attack_verb_simple = "slaps"
@@ -286,9 +286,9 @@
 	icon_living = "assaultron"
 	gender = FEMALE //Pffffffffffffffffffffff
 	icon_dead = "gib7"
-	health = 450
+	health = 200
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
-	maxHealth = 450
+	maxHealth = 200
 	speed = 0
 	melee_damage_lower = 55
 	melee_damage_upper = 60

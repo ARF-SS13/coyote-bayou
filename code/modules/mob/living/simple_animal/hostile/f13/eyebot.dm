@@ -38,7 +38,7 @@
 	vision_range = 7 //reduced from 13 to 7 because who needs that kind of shit in their life
 	aggro_vision_range = 7 //as above
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam/laser/lasgun
+	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	aggrosound = list('sound/f13npc/eyebot/aggro.ogg', )
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')

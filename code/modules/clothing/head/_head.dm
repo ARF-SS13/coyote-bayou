@@ -10,7 +10,7 @@
 	dynamic_hair_suffix = "+generic"
 	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
 	var/list/speechspan = null
-	armor = list("tier" = 1)
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5)
 
 /obj/item/clothing/head/Initialize()
 	. = ..()

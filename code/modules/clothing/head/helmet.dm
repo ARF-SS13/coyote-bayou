@@ -3,7 +3,7 @@
 	desc = "Standard Security gear. Protects the head from impacts."
 	icon_state = "helmet"
 	item_state = "helmet"
-	armor = list("tier" = 4, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
@@ -42,7 +42,7 @@
 			. += "<span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
-	. += "This helmet provides [armor.linebullet] bullet, [armor.linelaser] energy and [armor.linemelee] melee resistance."
+	. += "This helmet provides [armor.bullet] bullet, [armor.laser] energy, and [armor.melee] melee resistance."
 
 /obj/item/clothing/head/helmet/handle_atom_del(atom/A)
 	if(A == attached_light)
@@ -179,10 +179,10 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "(V) An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
+	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("tier" = 5,"energy" = 30, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -199,11 +199,10 @@
 
 /obj/item/clothing/head/helmet/thunderdome
 	name = "\improper Thunderdome helmet"
-	desc = "(IV) <i>'Let the battle commence!'</i>"
+	desc = "<i>'Let the battle commence!'</i>"
 	flags_inv = HIDEEARS|HIDEHAIR
 	icon_state = "thunderdome"
 	item_state = "thunderdome"
-	armor = list("tier" = 4,"energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -213,10 +212,10 @@
 
 /obj/item/clothing/head/helmet/roman
 	name = "\improper Roman helmet"
-	desc = "(III*) An ancient helmet made of bronze and leather."
+	desc = "An ancient helmet made of bronze and leather."
 	flags_inv = HIDEEARS|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
-	armor = list("tier" = 3, "linemelee" = 20, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	resistance_flags = FIRE_PROOF
 	icon_state = "roman"
 	item_state = "roman"
@@ -224,12 +223,12 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/roman/fake
-	desc = "(I) An ancient helmet made of plastic and leather."
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	desc = "An ancient helmet made of plastic and leather."
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/roman/legionnaire
 	name = "\improper Roman legionnaire helmet"
-	desc = "(III*) An ancient helmet made of bronze and leather. Has a red crest on top of it."
+	desc = "An ancient helmet made of bronze and leather. Has a red crest on top of it."
 	icon_state = "roman_c"
 	item_state = "roman_c"
 
@@ -239,40 +238,40 @@
 
 /obj/item/clothing/head/helmet/gladiator
 	name = "gladiator helmet"
-	desc = "(III*) Ave, Imperator, morituri te salutant."
+	desc = "( Ave, Imperator, morituri te salutant."
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
 	dog_fashion = null
-	armor = list("tier" = 3, "linemelee" = 20, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 
 /obj/item/clothing/head/helmet/redtaghelm
 	name = "red laser tag helmet"
-	desc = "(II) They have chosen their own end."
+	desc = "They have chosen their own end."
 	icon_state = "redtaghelm"
 	flags_cover = HEADCOVERSEYES
 	item_state = "redtaghelm"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	// Offer about the same protection as a hardhat.
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/bluetaghelm
 	name = "blue laser tag helmet"
-	desc = "(II) They'll need more men."
+	desc = "They'll need more men."
 	icon_state = "bluetaghelm"
 	flags_cover = HEADCOVERSEYES
 	item_state = "bluetaghelm"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	// Offer about the same protection as a hardhat.
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/knight
 	name = "medieval helmet"
-	desc = "(III) A classic metal helmet worn by all ranks of knights and horsemen of the Old Era."
+	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era."
 	icon_state = "knight_green"
 	item_state = "knight_green"
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 30, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	strip_delay = 80
@@ -311,17 +310,17 @@
 
 /obj/item/clothing/head/helmet/knight/greyscale
 	name = "knight helmet"
-	desc = "(III) A classic medieval helmet, if you hold it upside down you could see that it's actually a bucket."
+	desc = "A classic medieval helmet, if you hold it upside down you could see that it's actually a bucket."
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Can change color and add prefix
 
 /obj/item/clothing/head/helmet/skull
 	name = "skull helmet"
-	desc = "(II) An intimidating tribal helmet, it doesn't look very comfortable."
+	desc = "An intimidating tribal helmet, it doesn't look very comfortable."
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 10, "bio" = 5, "rad" = 20, "fire" = 40, "acid" = 20)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	icon_state = "skull"
 	item_state = "skull"
 	strip_delay = 100
@@ -456,31 +455,28 @@
 
 /obj/item/clothing/head/helmet/police
 	name = "police officer's hat"
-	desc = "(II) A police officer's Hat. This hat emphasizes that you are THE LAW."
+	desc = "A police officer's Hat. This hat emphasizes that you are THE LAW."
 	icon_state = "policehelm"
 	dynamic_hair_suffix = ""
 	armor = list("tier" = 2)
 	
 /obj/item/clothing/head/helmet/armyhelmet
 	name = "steel helmet"
-	desc = "(III) a steel helmet, inspired by several pre-war designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	desc = "a steel helmet, inspired by several pre-war designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon_state = "armyhelmet"
 	item_state = "armyhelmet"
-	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, energy = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 20, "bullet" = 45, "laser" = 20, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	
 /obj/item/clothing/head/helmet/armyhelmet/heavy
 	name = "heavy steel helmet"
-	desc = "(V*) a steel helmet, inspired by several pre-war designs. This one has been modified by oasis citizens to provide more protection to the face and neck."
+	desc = "a steel helmet, inspired by several pre-war designs. This one has been modified by oasis citizens to provide more protection to the face and neck."
 	icon_state = "armyhelmetheavy"
 	item_state = "armyhelmetheavy"
-	armor = list("tier" = 3, "linebullet" = 75, "linemelee" = 35, "linelaser" = 5, "energy" = 15, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
+	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.025
 	
 /obj/item/clothing/head/helmet/armyhelmet/heavy/attack_self(mob/user)
 	weldingvisortoggle(user)
-	icon_state = "armyhelmetheavy_up"
-	item_state = "armyhelmetheavy_up"
-	armor = list("tier" = 3, "linebullet" = 25, "linemelee" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-	slowdown = 0.01
+

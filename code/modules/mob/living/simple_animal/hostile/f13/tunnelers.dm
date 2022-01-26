@@ -56,8 +56,8 @@
 	icon_dead = "tunneler_dead"
 	robust_searching = TRUE
 	stat_attack = UNCONSCIOUS
-	health = 250
-	maxHealth = 250
+	health = 180 //9shots to kill
+	maxHealth = 180
 	speed = -1
 	melee_damage_lower = 35
 	melee_damage_upper = 40
