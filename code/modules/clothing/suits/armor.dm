@@ -14,7 +14,7 @@
 
 /obj/item/clothing/suit/armor/examine(mob/user)
 	. = ..()
-	. += "This armor provides [armor.bullet] bullet, [armor.laser] energy, and [armor.melee] melee resistance."
+	. += "This armor provides [armor.bullet]%  bullet, [armor.laser]% laser, and [armor.melee]% melee resistance."
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()

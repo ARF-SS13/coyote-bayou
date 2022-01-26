@@ -124,7 +124,7 @@ datum/crafting_recipe/steelbib
 	
 datum/crafting_recipe/steelbib/heavy
 	name = "Heavy Steel Breastplate"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/prewar = 5)

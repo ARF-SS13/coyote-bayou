@@ -254,6 +254,7 @@
 	desc = "The compact version of the classic .45 handgun."
 	icon_state = "c1911"
 	w_class = WEIGHT_CLASS_SMALL
+	weapon_weight = WEAPON_LIGHT
 	extra_damage = 28
 	spread = 4
 	suppressor_x_offset = 29
