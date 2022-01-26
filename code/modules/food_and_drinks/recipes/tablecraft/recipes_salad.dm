@@ -12,7 +12,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/citrus/orange = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/citrusdelight
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD //This one is the only one I'm unsure about.
 
 /datum/crafting_recipe/food/fruitsalad
 	name = "Fruit salad"
@@ -25,7 +25,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fruit
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/herbsalad
 	name = "Herb salad"
@@ -35,7 +35,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/apple = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/herbsalad
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/junglesalad
 	name = "Jungle salad"
@@ -48,7 +48,7 @@
 
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/jungle
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/caesarsalad
 	name = "Caesar salad"
@@ -58,7 +58,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/caesar
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/edensalad
 	name = "Salad of Eden"
@@ -70,7 +70,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/peace = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
-	subcategory = CAT_MISCFOOD
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/aesirsalad
 	name = "Aesir salad"
