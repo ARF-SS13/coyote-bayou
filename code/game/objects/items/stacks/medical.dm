@@ -130,8 +130,8 @@
 	other_delay = 20
 	amount = 10
 	max_amount = 10
-	absorption_rate = 0.25
-	absorption_capacity = 5
+	absorption_rate = 0.45
+	absorption_capacity = 7
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -242,7 +242,7 @@
 	max_amount = 15
 	repeating = TRUE
 	heal_brute = 10
-	stop_bleeding = 0.6
+	stop_bleeding = 0.8
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
