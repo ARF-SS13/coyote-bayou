@@ -1267,5 +1267,8 @@
 /mob/living/carbon/human/species/ghoul
 	race = /datum/species/ghoul
 
+///mob/living/carbon/human/species/ghoul/glowing //might not actually be correct but it's okay because it's disabled :)
+//	race = /datum/species/ghoul/glowing
+
 /mob/living/carbon/human/species/smutant
 	race = /datum/species/smutant

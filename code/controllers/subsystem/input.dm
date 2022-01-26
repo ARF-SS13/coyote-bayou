@@ -66,9 +66,9 @@ SUBSYSTEM_DEF(input)
 	// Misc
 	macroset_classic_input["Tab"] = "\".winset \\\"mainwindow.macro=[SKIN_MACROSET_CLASSIC_HOTKEYS] map.focus=true input.background-color=[COLOR_INPUT_DISABLED]\\\"\""
 	macroset_classic_input["Escape"] = "\".winset \\\"input.text=\\\"\\\"\\\"\""
-	
+
 	// FINALLY, WE CAN DO SOMETHING MORE NORMAL FOR THE SNOWFLAKE-BUT-LESS KEYSET.
-	
+
 	macroset_classic_hotkey = list(
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
@@ -76,7 +76,7 @@ SUBSYSTEM_DEF(input)
 	"Escape" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
 	)
-	
+
 	// And finally, the modern set.
 	macroset_hotkey = list(
 	"Any" = "\"KeyDown \[\[*\]\]\"",
@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(input)
 	"Escape" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"",
 	)
-	
+
 // Badmins just wanna have fun ♪
 /datum/controller/subsystem/input/proc/refresh_client_macro_sets()
 	var/list/clients = GLOB.clients
@@ -99,6 +99,7 @@ SUBSYSTEM_DEF(input)
 		var/client/C = clients[i]
 		C.keyLoop()
 
+#define NONSENSICAL_VERB "NONSENSICAL_VERB_THAT_DOES_NOTHING"
 /// *sigh
 /client/verb/NONSENSICAL_VERB_THAT_DOES_NOTHING()
 	set name = ".NONSENSICAL_VERB_THAT_DOES_NOTHING"

@@ -46,7 +46,8 @@
 		icon_state = "colormate"
 
 /obj/machinery/gear_painter/Destroy()
-	inserted.forceMove(drop_location())
+	if(inserted) //please i beg you do not drop nulls
+		inserted.forceMove(drop_location())
 	return ..()
 
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
@@ -70,8 +71,7 @@
 		if(!QDELETED(H))
 			H.release()
 		insert_mob(victim, user)
-		temp = "[victim] has been inserted."
-		SStgui.update_uis(src)
+	SStgui.update_uis(src)
 
 	if(is_type_in_list(I, allowed_types) && is_operational())
 		if(!user.transferItemToLoc(I, src))
@@ -83,7 +83,6 @@
 		update_icon()
 		temp = "[I] has been inserted."
 		SStgui.update_uis(src)
-
 	else
 		return ..()
 
@@ -97,6 +96,11 @@
 
 /obj/machinery/gear_painter/AllowDrop()
 	return FALSE
+
+/obj/machinery/gear_painter/handle_atom_del(atom/movable/AM)
+	if(AM == inserted)
+		inserted = null
+	return ..()
 
 /obj/machinery/gear_painter/AltClick(mob/user)
 	. = ..()

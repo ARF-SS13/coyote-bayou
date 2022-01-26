@@ -174,6 +174,9 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 	else if(!HAS_TRAIT(x, TRAIT_KEEP_TOGETHER))\
 		x.appearance_flags &= ~KEEP_TOGETHER
 
+/// 33554431 (2^24 - 1) is the maximum value our bitflags can reach.
+#define MAX_BITFLAG_DIGITS 8
+
 //dir macros
 ///Returns true if the dir is diagonal, false otherwise
 #define ISDIAGONALDIR(d) (d&(d-1))

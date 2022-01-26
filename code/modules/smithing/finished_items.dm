@@ -32,6 +32,7 @@
 /obj/item/melee/smith/twohand
 	item_flags = NEEDS_PERMIT //it's a bigass sword/spear. beepsky is going to give you shit for it.
 	sharpness = SHARP_EDGED
+	obj_flags = UNIQUE_RENAME
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	force = 10
 	wielded_mult = 1.75
@@ -115,8 +116,9 @@
 	icon_state = "halberd"
 	w_class = WEIGHT_CLASS_HUGE
 	overlay_state = "spearhandle"
-	max_reach = 2 
+	max_reach = 2
 	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
 	wielded_mult = 1.8
 
 /obj/item/melee/smith/twohand/halberd/ComponentInitialize()
@@ -130,6 +132,7 @@
 	overlay_state = "longhandle"
 	wielded_mult = 1.5
 	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
 	sharpness = SHARP_POINTY
 
 
@@ -141,8 +144,9 @@
 	name = "glaive"
 	icon_state = "glaive"
 	overlay_state = "longhandle"
-	max_reach = 2 
+	max_reach = 2
 	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
 	wielded_mult = 1.5
 
 /obj/item/melee/smith/twohand/glaive/ComponentInitialize()
@@ -157,6 +161,7 @@
 	max_reach = 2 //yeah ok
 	wielded_mult = 1.3
 	slot_flags = ITEM_SLOT_BACK
+	obj_flags = UNIQUE_RENAME
 	sharpness = SHARP_POINTY
 
 //////////////////////////
@@ -171,6 +176,7 @@
 	var/qualitymod = 0
 
 /obj/item/scythe/smithed //we need to inherit scythecode, but that's about it.
+	obj_flags = UNIQUE_RENAME
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 
 
@@ -178,12 +184,14 @@
 	name = "coghead club"
 	icon_state = "coghead"
 	item_flags = NEEDS_PERMIT
+	obj_flags = UNIQUE_RENAME
 	overlay_state = "stick"
 
 /obj/item/melee/smith/shortsword
 	name = "gladius"
 	force = 9
 	item_flags = NEEDS_PERMIT
+	obj_flags = UNIQUE_RENAME
 	sharpness = SHARP_EDGED
 	icon_state = "gladius"
 	overlay_state = "gladiushilt"
@@ -191,6 +199,7 @@
 /obj/item/melee/smith/shortsword/scimitar
 	name = "scimitar"
 	sharpness = SHARP_EDGED
+	obj_flags = UNIQUE_RENAME
 	icon_state = "scimitar"
 	overlay_state = "scimitarhilt"
 
@@ -222,6 +231,7 @@
 	name = "broadsword"
 	icon_state = "broadsword"
 	overlay_state = "broadhilt"
+	obj_flags = UNIQUE_RENAME
 	wielded_mult = 1.8
 
 /obj/item/melee/smith/twohand/zweihander
@@ -230,6 +240,7 @@
 	overlay_state = "zweihilt"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
 	force = 4
+	obj_flags = UNIQUE_RENAME
 	wielded_mult = 2 //affected more by quality. a -1 is 25% less damage, a +1 is 25% more. These bonuses are tripled when wielded.
 
 /obj/item/melee/smith/twohand/katana
@@ -251,6 +262,7 @@
 	force = 9
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
+	obj_flags = UNIQUE_RENAME
 	block_parry_data = /datum/block_parry_data/captain_saber //yeah this is fine i guess
 
 /obj/item/melee/smith/sabre/rapier
@@ -261,6 +273,7 @@
 	force = 6 //less force, stronger parry
 	sharpness = SHARP_POINTY
 	armour_penetration = 0.6
+	obj_flags = UNIQUE_RENAME
 	block_parry_data = /datum/block_parry_data/smithrapier
 
 /datum/block_parry_data/smithrapier //parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.

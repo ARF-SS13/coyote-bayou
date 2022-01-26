@@ -284,4 +284,4 @@ GLOBAL_LIST_INIT(greyscale_limb_types, list("human",/*"moth","lizard","pod","pla
 GLOBAL_LIST_INIT(prosthetic_limb_types, list("xion","bishop","cybersolutions","grayson","hephaestus","nanotrasen","talon"))
 
 //body ids that have non-gendered bodyparts
-GLOBAL_LIST_INIT(nongendered_limb_types, list(/*"fly", "zombie" ,"synth", "shadow", "cultgolem", "agent", "plasmaman", "clockgolem", "clothgolem"*/))
+GLOBAL_LIST_INIT(nongendered_limb_types, list(/*"fly", "zombie" ,"synth", "shadow", "cultgolem", "agent", "plasmaman", "clockgolem", "clothgolem"*/"smutant"))

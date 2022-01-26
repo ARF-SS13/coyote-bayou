@@ -89,6 +89,11 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isxenoperson(A) (is_species(A, /datum/species/xeno))
 #define isstartjelly(A) (is_species(A, /datum/species/jelly/roundstartslime))
 
+// Fallout specific species
+#define isghoul(A) (is_species(A, /datum/species/ghoul))
+//#define isghoul(A) (is_species(A, /datum/species/ghoul/glowing))
+//#definte issmutant(A) (is_pecies(A, /datum/species/smutant))
+
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))
 
@@ -116,8 +121,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define iscyborg(A) (istype(A, /mob/living/silicon/robot))
 
 #define isAI(A) (istype(A, /mob/living/silicon/ai))
-
-#define isghoul(A) (is_species(A, /datum/species/ghoul))
 
 #define ispAI(A) (istype(A, /mob/living/silicon/pai))
 
