@@ -362,9 +362,11 @@ Raider
 	/datum/outfit/loadout/raider_vault,
 	/datum/outfit/loadout/raider_ncr,
 	/datum/outfit/loadout/raider_legion,
+	/datum/outfit/loadout/raider_bos,
 	/datum/outfit/loadout/quack_doctor,
 	/datum/outfit/loadout/raider_mobster,
-	/datum/outfit/loadout/raider_cannibal
+	/datum/outfit/loadout/raider_cannibal,
+	/datum/outfit/loadout/raider_tribal
 	)
 
 
@@ -556,6 +558,14 @@ Raider
 		/obj/item/ammo_box/magazine/greasegun = 1,
 		/obj/item/book/granter/trait/trekking = 1
 		)
+		
+/datum/outfit/loadout/raider_bos
+	name = "Brotherhood Exile"
+	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
+	id = /obj/item/card/id/rusted/brokenholodog
+	backpack_contents = list(
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 /datum/outfit/loadout/raider_sheriff
 	name = "Desperado"
