@@ -31,8 +31,7 @@
 
 /obj/item/gun/ballistic/bow/attack_self(mob/living/user)
 	if (chambered)
-		var/obj/item/ammo_casing/AC = magazine.get_round(0)
-		user.put_in_hands(AC)
+		user.put_in_hands(chambered)
 		chambered = null
 		to_chat(user, "<span class='notice'>You gently release the bowstring, removing the arrow.</span>")
 	else if (get_ammo())
@@ -65,3 +64,18 @@
 	icon_state = "pipebow"
 	item_state = "pipebow"
 	force = 2
+
+/obj/item/gun/ballistic/bow/xbow
+	name = "magazine-fed crossbow"
+	desc = "A somewhat primitive projectile weapon. Has a spring-loaded magazine, but still requires drawing back before firing. Fires arrows slightly faster than regular bows, improving damage"
+	icon_state = "xbow"
+	item_state = "xbow"
+	icon_prefix = "xbow"
+	extra_damage = 3 //generally won't reduce TTK, but does increase performance against armor, especially with AP arrows
+	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
+
+
+/obj/item/gun/ballistic/bow/xbow/attackby(obj/item/I, mob/user, params)
+	if (magazine.attackby(I, user, params, 1))
+		to_chat(user, "<span class='notice'>You slide the arrow into the magazine.</span>")
+		update_icon()

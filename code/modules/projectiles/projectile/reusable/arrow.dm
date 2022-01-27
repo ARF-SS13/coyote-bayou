@@ -27,6 +27,14 @@
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bronze
 
 //FO13 ARROWS
+/obj/item/projectile/bullet/reusable/arrow/cheap
+	name = "lightweight arrow"
+	desc = "A cheap, lightweight wooden arrow. Not as effective against armor."
+	damage = 40
+	armour_penetration = -0.25
+	icon_state = "arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/cheap
+
 /obj/item/projectile/bullet/reusable/arrow/ap
 	name = "sturdy arrow"
 	desc = "A reinforced arrow with a metal shaft and heavy duty head."

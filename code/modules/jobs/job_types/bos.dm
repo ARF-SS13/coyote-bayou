@@ -297,6 +297,13 @@ Head Knight
 		return
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightplasmapistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribeam)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rcw)
+
 
 /datum/outfit/job/bos/f13knightcap
 	name = "Head Knight"
@@ -749,6 +756,14 @@ Senior Knight
 		),
 	)
 
+/datum/outfit/job/bos/f13seniorknight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
 	jobtype = /datum/job/bos/f13seniorknight
@@ -852,6 +867,14 @@ Knight
 		),
 	)
 
+/datum/outfit/job/bos/f13knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
 	jobtype = /datum/job/bos/f13knight
@@ -892,7 +915,7 @@ Knight
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		)
-		
+
 /datum/outfit/loadout/knightc
 	name = "Junior Knight-Cavalry"
 	backpack_contents = list(

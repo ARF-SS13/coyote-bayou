@@ -565,7 +565,7 @@
 				/obj/item/melee/onehanded/knife/throwing,
 				/obj/item/melee/onehanded/knife/throwing,
 				)
-	
+
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1 //TIER 1 MELEE WEAPON
 	name = "tier 1 melee"
@@ -784,7 +784,8 @@
 				/obj/effect/spawner/bundle/f13/revolver45,
 				/obj/effect/spawner/bundle/f13/thatgun,
 				/obj/effect/spawner/bundle/f13/marksman,
-				/obj/effect/spawner/bundle/f13/dkssniper,
+				/obj/effect/spawner/bundle/f13/hunting,
+				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
@@ -792,9 +793,8 @@
 	name = "high tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/assault_rifle = 20,
 				/obj/effect/spawner/bundle/f13/r84 = 10,
-				/obj/effect/spawner/bundle/f13/hunting = 15,
+				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/guns/tommygun = 15,
-				/obj/effect/spawner/bundle/f13/m1garand = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
 				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 				)
@@ -1951,6 +1951,24 @@
 		/obj/item/attachments/auto_sear
 	)
 
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted
+	name = "parts and mods spawner (weighted towards parts)"
+	icon_state = "blueprint_loot"
+	lootcount = 3
+	lootdoubles = FALSE
+	loot = list(
+		/obj/item/advanced_crafting_components/flux = 2,
+		/obj/item/advanced_crafting_components/lenses = 2,
+		/obj/item/advanced_crafting_components/conductors = 2,
+		/obj/item/advanced_crafting_components/receiver = 2,
+		/obj/item/advanced_crafting_components/assembly = 2,
+		/obj/item/advanced_crafting_components/alloys = 2,
+		/obj/item/attachments/scope,
+		/obj/item/attachments/burst_improvement,
+		/obj/item/attachments/recoil_decrease,
+		/obj/item/attachments/auto_sear
+	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintMid
 	name = "blueprint-tier(Mid) item spawner"
 	icon_state = "blueprint_loot"
@@ -2004,6 +2022,29 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
 		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,
 		/obj/item/book/granter/crafting_recipe/blueprint/bozar
+	)
+
+/obj/effect/spawner/lootdrop/f13/blueprintVHighPartsWeighted
+	name = "parts and mods spawner (weighted towards blueprints)"
+	icon_state = "blueprint_loot"
+	lootcount = 3
+	lootdoubles = FALSE
+	loot = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/r91 ,
+		/obj/item/book/granter/crafting_recipe/blueprint/r84 ,
+		/obj/item/book/granter/crafting_recipe/blueprint/gauss = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/neostead = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9 = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/citykiller = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster = 3,
+		/obj/item/book/granter/crafting_recipe/blueprint/bozar = 3,
+		/obj/item/advanced_crafting_components/flux,
+		/obj/item/advanced_crafting_components/lenses,
+		/obj/item/advanced_crafting_components/conductors,
+		/obj/item/advanced_crafting_components/receiver,
+		/obj/item/advanced_crafting_components/assembly,
+		/obj/item/advanced_crafting_components/alloys,
 	)
 
 /obj/effect/spawner/lootdrop/f13/advcrafting
@@ -2088,4 +2129,3 @@
 			/obj/effect/spawner/bundle/testi = 10,
 			/obj/effect/spawner/bundle/testj = 10,
 			)
-

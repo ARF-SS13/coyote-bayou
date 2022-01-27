@@ -49,6 +49,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legiongate)
 
+
 /datum/outfit/job/CaesarsLegion/Legionnaire
 	belt = /obj/item/storage/belt/military/assault/legion
 	ears = /obj/item/radio/headset/headset_legion
@@ -981,6 +982,7 @@ commented out pending rework*/
 		return
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gladius)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/spatha)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lance)
@@ -988,10 +990,14 @@ commented out pending rework*/
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lever_action)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/grease_gun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/brush)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/colt6520)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionlance)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/strongrocket)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/empgrenade)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/crossbow)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalwar/cheaparrow)
 
 
 

@@ -587,7 +587,7 @@
 /area/f13/bunker)
 "mC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "mD" = (
@@ -1080,7 +1080,7 @@
 /area/f13/bunker)
 "xS" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -1754,7 +1754,7 @@
 "MQ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"

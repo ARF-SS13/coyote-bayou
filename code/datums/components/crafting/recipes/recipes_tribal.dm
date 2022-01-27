@@ -66,6 +66,18 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribalwar/crossbow
+	name = "Manual Crossbow"
+	result = /obj/item/gun/ballistic/bow/xbow
+	time = 120
+	always_available = FALSE
+	reqs = list(/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/mineral/wood = 15,
+				/obj/item/weaponcrafting/string = 1
+				)
+	tools = list(TOOL_WORKBENCH)
+
 /datum/crafting_recipe/tribalwar/training_machete
 	name = "Training Machete"
 	result = /obj/item/melee/onehanded/machete/training

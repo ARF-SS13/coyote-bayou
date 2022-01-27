@@ -396,6 +396,18 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+/datum/crafting_recipe/dks
+	name = "Marksman Sniper Rifle"
+	result = /obj/item/gun/ballistic/automatic/marksman/sniper
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/stack/crafting/metalparts = 2)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 /datum/crafting_recipe/policepistol
 	name = ".357 Police Pistol"
 	result = /obj/item/gun/ballistic/revolver/police
@@ -406,7 +418,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
-	
+
 //rangemaster
 /datum/crafting_recipe/rangemaster
 	name = "Colt Rangemaster"
@@ -677,6 +689,20 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//BoS plasma pistol
+/datum/crafting_recipe/lightplasmapistol
+	name = "Lightweight Plasma Pistol"
+	result = /obj/item/gun/energy/laser/plasma/pistol/light
+	reqs = list(/obj/item/advanced_crafting_components/flux = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/electronicparts = 2
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //uzi
 /datum/crafting_recipe/uzi
 	name = "Uzi SMG"
@@ -808,6 +834,22 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+//a180
+/datum/crafting_recipe/a180
+	name = "American 180"
+	result = /obj/item/gun/ballistic/automatic/smg/american180
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/crafting/metalparts = 15,
+				/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/advanced_crafting_components/alloys = 2,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //aer9
 /datum/crafting_recipe/AER9
 	name = "AER-9"
@@ -857,6 +899,24 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 	always_available = FALSE
+
+//rcw
+/datum/crafting_recipe/rcw
+	name = "Laser RCW"
+	result = /obj/item/gun/energy/laser/rcw
+	reqs = list(/obj/item/stack/sheet/mineral/titanium = 15,
+				/obj/item/advanced_crafting_components/conductors = 2,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/stack/crafting/electronicparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 
 //AM rifle
 /datum/crafting_recipe/am_rifle
@@ -1177,4 +1237,3 @@ Not implemented due to balance at the moment
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 */
-

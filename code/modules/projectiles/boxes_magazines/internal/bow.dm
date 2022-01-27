@@ -4,3 +4,8 @@
 	caliber = "arrow"
 	max_ammo = 1
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/internal/bow/xbow
+	name = "crossbow magazine" //shouldn't be seeing this
+	max_ammo = 4
+	start_empty = 1

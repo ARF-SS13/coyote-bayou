@@ -265,6 +265,17 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
+
+/datum/crafting_recipe/tribalwar/cheaparrow
+	name = "Lightweight Wooden Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/cheap
+	time = 15
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/sheet/mineral/sandstone = 2)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = FALSE
+
 //MELEE
 
 /datum/crafting_recipe/tribalwar/bonespear
