@@ -4,7 +4,6 @@ Sheriff/Deputy, Gatehouse etc: 62 ACCESS_GATEWAY
 General access: 25 ACCESS_BAR
 Clinic surgery/storage: 68 ACCESS_CLONING
 Shopkeeper: 34 ACCESS_CARGO_BOT
-Banker : 52 ACCESS_MINT_VAULT
 Barkeep : 28 ACCESS_KITCHEN - you jebronis made default bar for no reason bruh
 Prospector : 48 ACCESS_MINING
 Detective : 4 ACCESS_FORENSICS_LOCKERS
@@ -43,6 +42,14 @@ Mayor
 		),
 	)
 
+	loadout_options = list(
+			/datum/outfit/loadout/mayoral,
+			/datum/outfit/loadout/dictator,
+			/datum/outfit/loadout/firstcitizen,
+			/datum/outfit/loadout/highroller,
+					)
+
+
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -53,23 +60,69 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-
 	ears = 			/obj/item/radio/headset/headset_town
 	id =            /obj/item/card/id/silver/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
-	r_pocket = /obj/item/flashlight/flare
-	belt = /obj/item/gun/ballistic/revolver/colt357
+	r_pocket = /obj/item/flashlight/seclite
+	belt = /obj/item/gun/ballistic/automatic/wt550
 	shoes = 		/obj/item/clothing/shoes/f13/tan
 	uniform = /obj/item/clothing/under/f13/gentlesuit
-	suit = /obj/item/clothing/suit/armor/f13/town/mayor
-	head = /obj/item/clothing/head/f13/town/mayor
-	backpack_contents = list(
-		/obj/item/clothing/head/f13/town/big = 1, \
+	head = /obj/item/clothing/head/f13/town/big
+	backpack_contents = list( 
 		/obj/item/storage/box/citizenship_permits = 1, \
-		/obj/item/ammo_box/a357=2, \
-		/obj/item/pen/fountain/captain = 1)
+		/obj/item/pen/fountain/captain = 1,
+		/obj/item/ammo_box/magazine/m473/small = 2,
+		)
+		
+
+
+/datum/outfit/loadout/dictator
+	name = "Mayor for Life"
+	backpack_contents = list(
+	/obj/item/clothing/under/f13/general/oasis = 1,
+	/obj/item/clothing/head/f13/army/general = 1,
+	/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
+	/obj/item/ammo_box/magazine/m45 = 2,
+	/obj/item/clothing/shoes/jackboots = 1,
+	/obj/item/clothing/mask/cigarette/pipe/cobpipe = 1,
+	)
+
+/datum/outfit/loadout/mayoral
+	name = "Frontier Leader"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/f13/town/mayor = 1,
+		/obj/item/clothing/head/f13/town/mayor = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 1,
+		/obj/item/ammo_box/m44 = 2,
+		/obj/item/clothing/shoes/f13/cowboy = 1,
+		/obj/item/clothing/mask/cigarette/cigar = 1,
+		)
+	
+/datum/outfit/loadout/firstcitizen
+	name = "First Citizen"
+	backpack_contents = list(
+		/obj/item/clothing/under/f13/vault = 1,
+		/obj/item/clothing/shoes/jackboots = 1,
+		/obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer = 1,
+		/obj/item/reagent_containers/food/drinks/flask/vault113,
+		/obj/item/gun/energy/laser/pistol= 1,
+		/obj/item/stock_parts/cell/ammo/ec = 1,
+		)
+
+/datum/outfit/loadout/highroller
+	name = "High Roller"
+	backpack_contents = list(
+		/obj/item/clothing/glasses/orange = 1,
+		/obj/item/clothing/suit/f13/vest = 1,
+		/obj/item/clothing/under/f13/sleazeball = 1,
+		/obj/item/clothing/shoes/laceup = 1,
+		/obj/item/toy/cards/deck/unum = 1,
+		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+	)
+
 
 /*--------------------------------------------------------------*/
 
@@ -217,10 +270,10 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/chief
 	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_hand = /obj/item/gun/energy/laser/aer9
+	r_hand = /obj/item/gun/energy/laser/aer9/oasis
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/ballistic/automatic/pistol/sig/commissioner = 1,
+		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
 		/obj/item/ammo_box/magazine/m9mm = 3,
 		)
 

@@ -366,6 +366,12 @@
 	scope_x_offset = 12
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+	
+/obj/item/gun/energy/laser/aer9/oasis
+	name = "\improper Hot-wired AER9 laser rifle"
+	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
+	fire_delay = 5
 
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle

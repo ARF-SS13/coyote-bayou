@@ -150,6 +150,35 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	wound_bonus = 10
 	bare_wound_bonus = -10
 
+/obj/item/projectile/bullet/a473/rubber
+	name = "4.73 polyurethane bullet "
+	damage = 5
+	stamina = 18
+	sharpness = SHARP_NONE
+	armour_penetration = 0.05
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	
+/obj/item/projectile/bullet/a473/incendiary
+	name = "4.73 tracer bullet"
+	damage = 15
+	armour_penetration = 0.1
+	var/fire_stacks = 3
+	zone_accuracy_factor = 100
+
+/obj/item/projectile/bullet/a473/uraniumtipped
+	name = "4.73 U-235 bullet"
+	damage = 15
+	armour_penetration = 0.3
+	irradiate = 300
+	
+/obj/item/projectile/bullet/a473/dumdum
+	name = "4.73 flat-nose bullet"
+	damage = 20
+	armour_penetration = 0.1
+	wound_bonus = 20
+	bare_wound_bonus = 30
+
 /obj/item/projectile/bullet/a473/explosive
 	name = "4.73 explosive bullet"
 

@@ -306,6 +306,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/lasgun/hitscan/focused
+	name = "overcharged laser beam"
+	damage = 30
+	armour_penetration = 0.6
+
 /obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
 	name = "laser beam"
 	damage = 12
