@@ -44,3 +44,34 @@
 	spawn(13)
 		playsound(loc, close_sound, 15, 1, -3)
 		update_icon()
+
+///////////////////////
+// FALLOUT TRASH BIN //
+/////////////////////// Low tech, no displays, don't block movement
+
+/obj/structure/closet/crate/bin/trashbin
+	desc = "Beat up old trash bin."
+	icon = 'icons/fallout/objects/crates.dmi'
+	icon_state = "trashbin"
+	density = FALSE
+	dense_when_open = FALSE
+	barricade = FALSE
+	anchorable = FALSE
+
+/obj/structure/closet/crate/bin/trash_fallout/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/storage/bag/trash))
+		var/obj/item/storage/bag/trash/T = W
+		to_chat(user, "<span class='notice'>You fill the bag.</span>")
+		for(var/obj/item/O in src)
+			SEND_SIGNAL(T, COMSIG_TRY_STORAGE_INSERT, O, user, TRUE)
+		T.update_icon()
+		do_animated()
+		return TRUE
+	else
+		return ..()
+
+/obj/structure/closet/crate/bin/trash_fallout/proc/do_animated()
+	playsound(loc, open_sound, 15, 1, -3)
+	flick("animate_trashbin", src)
+	spawn(13)
+		playsound(loc, close_sound, 15, 1, -3)

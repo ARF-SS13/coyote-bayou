@@ -18,7 +18,7 @@
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/molotov
-	name = "Molotov Cocktail"
+	name = "Molotov Cocktail (empty)"
 	result = /obj/item/reagent_containers/food/drinks/bottle/molotov
 	reqs = list(/obj/item/reagent_containers/rag = 1,
 		/obj/item/reagent_containers/food/drinks/bottle = 1,

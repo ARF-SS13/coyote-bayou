@@ -245,12 +245,6 @@
 	maxcharge = 40000
 	chargerate = 1500
 
-/obj/item/stock_parts/cell/ammo/ecp
-	name = "electron charge pack"
-	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
-	icon_state = "icell"
-	maxcharge = 2400
-
 /obj/item/stock_parts/cell/pulse/carbine //25 pulse shots
 	name = "pulse carbine power cell"
 	maxcharge = 5000
@@ -415,6 +409,12 @@
 	name = "toy mag burst rifle power supply"
 	maxcharge = 4000
 
+
+////////////////////////
+// FALLOUT POWERCELLS //
+////////////////////////
+
+// Ammo cell template
 /obj/item/stock_parts/cell/ammo
 	name = "ammo cell"
 	desc = "You shouldn't be holding this."
@@ -432,8 +432,7 @@
 	..()
 	return
 
-//FALLOUT POWERCELLS
-
+// Microfusion cell - large energy weapons
 /obj/item/stock_parts/cell/ammo/mfc
 	name = "microfusion cell"
 	desc = "A microfusion cell, typically used as ammunition for large energy weapons."
@@ -458,13 +457,15 @@
 	icon_state = "ultracite"
 	maxcharge = 2000
 
+// Energy cell - small energy weapons
 /obj/item/stock_parts/cell/ammo/ec
 	name = "energy cell"
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
 	maxcharge = 1600
-	
+
+// Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder
 	name = "microfusion breeder"
 	desc = "A miniature microfusion reactor connected to capacitor banks. This is not a removable part, you messed up."
@@ -484,6 +485,25 @@
 			icon_state = "ec-empty"
 	. = ..()
 
+// Electron charge pack - rapid fire energy
+/obj/item/stock_parts/cell/ammo/ecp
+	name = "electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "ecp-full"
+	maxcharge = 2400
+
+/obj/item/stock_parts/cell/ammo/ecp/update_icon()
+	switch(charge)
+		if (1501 to 2400)
+			icon_state = "ecp-full"
+		if (101 to 1500)
+			icon_state = "ecp-half"
+		if (0 to 100)
+			icon_state = "ecp-empty"
+	. = ..()
+
+// Alien power cell
 /obj/item/stock_parts/cell/ammo/alien
 	name = "alien weapon cell"
 	desc = "A weapon cell that glows and thrums with unearthly energies. You're not sure you'd be able to recharge it, but it seems very powerful."

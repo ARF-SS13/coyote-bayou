@@ -82,6 +82,12 @@
 	cost = 25
 	item_path = /obj/item/clothing/head/helmet/f13/khan/bandana
 
+/datum/gang_item/clothing/khan_fullhelmet
+	name = "Great Khan full helmet"
+	id = "khan_fullhelmet"
+	cost = 100
+	item_path = /obj/item/clothing/head/helmet/f13/khan/fullhelm
+
 /datum/gang_item/clothing/khan_uniform
 	name = "Great Khan uniform"
 	id = "khan_uniform"

@@ -840,7 +840,7 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/recruittribal,	// Lance, Bola, Big Leagues (Fresh tribal, meant to go melee)
-		/datum/outfit/loadout/recruitlegion,	// .357 Revolver, Machete, 2 x Molotovs
+		/datum/outfit/loadout/recruitlegion,	// .357 Revolver, Machete, 2 x prefilled Molotovs
 		)
 
 	matchmaking_allowed = list(
@@ -888,8 +888,7 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/ammo_box/a357 = 3,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
-		/obj/item/reagent_containers/glass/bottle/napalm = 2,
+		/obj/item/reagent_containers/food/drinks/bottle/molotov/filled = 2,
 		/obj/item/lighter/greyscale = 1,
 		)
 
