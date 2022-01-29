@@ -166,7 +166,7 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 /mob/living/simple_animal/hostile/bear/yaoguai
 	name = "yao guai"
 	desc = "A mutated American black bear, sporting razor sharp teeth, claws, and a nasty temper."
-	icon = 'icons/mob/deathclaw.dmi'
+	icon = 'icons/fallout/mobs/animals/yaoguai_2.dmi'
 	icon_state = "yaoguai"
 	icon_living = "yaoguai"
 	icon_dead = "yaoguai_dead"

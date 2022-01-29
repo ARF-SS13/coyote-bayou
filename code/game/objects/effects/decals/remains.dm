@@ -72,5 +72,5 @@
 
 /obj/effect/decal/remains/deadeyebot
 	desc = "A destroyed or deactivated eyebot. Best not stick around to see if it's still functioning."
-	icon = 	'icons/fallout/mobs/animal.dmi'
+	icon = 'icons/fallout/mobs/robots/eyebots.dmi'
 	icon_state = "eyebot_d"

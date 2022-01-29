@@ -1,12 +1,13 @@
-//Fallout 13 wolf directory
+//Fallout 13 canine directory
 
+// Feral dog - visually some sort of mutt, at some point a coyote style dog can be made from the previous dog sprite, saved as coyote
 /mob/living/simple_animal/hostile/wolf
 	name = "feral dog"
 	desc = "The dogs that survived the Great War are a larger, and tougher breed, size of a wolf.<br>This one seems to be severely malnourished and its eyes are bloody red."
-	icon = 'icons/fallout/mobs/animal.dmi'
-	icon_state = "dog_angry"
-	icon_living = "dog_angry"
-	icon_dead = "dog_dead"
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "dog_feral"
+	icon_living = "dog_feral"
+	icon_dead = "dog_feral_dead"
 	icon_gib = "gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	turns_per_move = 1
@@ -15,16 +16,7 @@
 	response_harm_simple = "kicks"
 	maxHealth = 60
 	health = 60
-//	self_weight = 35
-
 	faction = list("hostile", "wolf")
-
-//	sound_speak_chance = 5
-//	sound_speak = list('sound/f13npc/dog_charge1.ogg','sound/f13npc/dog_charge2.ogg','sound/f13npc/dog_charge3.ogg')
-
-//	aggro_sound_chance = 50
-//	aggro_sound = list('sound/f13npc/dog_alert1.ogg','sound/f13npc/dog_alert2.ogg','sound/f13npc/dog_alert3.ogg')
-
 	environment_smash = 0
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 1, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 1,/obj/item/stack/sheet/bone = 1)
 	melee_damage_lower = 20
@@ -54,13 +46,13 @@
 	anchored = FALSE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 
+// Alpha dog
 /mob/living/simple_animal/hostile/wolf/alpha
 	name = "alpha feral dog"
 	desc = "The dogs that survived the Great War are a larger, and tougher breed, size of a wolf.<br>Wait... This one's a wolf!"
-	icon_state = "wolf_angry"
-	icon_living = "wolf_angry"
-	icon_dead = "wolf_dead"
-	icon_gib = "gib"
+	icon_state = "dog_alpha"
+	icon_living = "dog_alpha"
+	icon_dead = "dog_alpha_dead"
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 100
 	health = 100
@@ -79,14 +71,13 @@
 	anchored = FALSE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 
+// The first proper wolf, got to love just relabels without repathing.
 /mob/living/simple_animal/hostile/wolf/cold
-	name = "cold feral dog"
-	desc = "The dogs that survived the Great War are a larger, and tougher breed, size of a wolf.<br>Wait... This one's a wolf!"
-	icon = 'icons/mob/wastemobs.dmi'
-	icon_state = "cold_wolf"
-	icon_living = "cold_wolf"
-	icon_dead = "cold_wolf_dead"
-	icon_gib = "gib"
+	name = "wolf"
+	desc = "A mangy wolf."
+	icon_state = "wolf"
+	icon_living = "wolf"
+	icon_dead = "wolf_dead"
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
 	maxHealth = 100
 	health = 100

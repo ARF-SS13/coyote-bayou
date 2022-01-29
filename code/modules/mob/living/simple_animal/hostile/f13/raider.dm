@@ -1,16 +1,17 @@
-/*IN THIS FILE:
--All Raider Mobs
-*/
+// IN THIS FILE: -All Raider Mobs
 
-//Base Raider Mob
+///////////////////
+// BASIC RAIDERS //
+///////////////////
+
+// BASIC MELEE RAIDER
 /mob/living/simple_animal/hostile/raider
 	name = "Raider"
 	desc = "Another murderer churned out by the wastes."
-	icon = 'icons/mob/wastemobs.dmi'
+	icon = 'icons/fallout/mobs/humans/raider.dmi'
 	icon_state = "raider_melee"
 	icon_living = "raider_melee"
-	icon_dead = "raider_generic_dead"
-	icon_gib = "syndicate_gib"
+	icon_dead = "raider_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
 	maxHealth = 140
@@ -39,7 +40,7 @@
 	summon_backup(15)
 	say("HURRY, HURRY, HURRY!!!")
 
-// Thief mob
+// THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
 	desc = "Another murderer churned out by the wastes. This one looks like they have sticky fingers..."
 
@@ -71,7 +72,7 @@
 		src.dropItemToGround(I)
 	. = ..()
 
-//Ranged Raider Mob
+// BASIC RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged
 	icon_state = "raider_ranged"
 	icon_living = "raider_ranged"
@@ -84,7 +85,7 @@
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider)
 
-//Legendary Melee Raider Mob
+// LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes - this one seems a bit faster than the average..."
@@ -96,7 +97,7 @@
 	aggro_vision_range = 15
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human)
 
-//Legendary Ranged Raider Mob
+// LEGENDARY RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/legendary
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes, wielding a decent pistol and looking very strong"
@@ -112,12 +113,12 @@
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29)
 
-//Raider Boss Mob
+// RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
 	name = "Raider Boss"
-	icon_state = "raider_boss"
-	icon_living = "raider_boss"
-	icon_dead = "raider_boss_dead"
+	icon_state = "raiderboss"
+	icon_living = "raiderboss"
+	icon_dead = "raiderboss_dead"
 	maxHealth = 170
 	health = 170
 	extra_projectiles = 3
@@ -129,14 +130,26 @@
 	summon_backup(15)
 	say("KILL 'EM, FELLAS!")
 
-//Firefighter Mob
+// RANGED RAIDER WITH ARMOR
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
+	icon_state = "metal_raider"
+	icon_living = "metal_raider"
+	icon_dead = "metal_raider_dead"
+	maxHealth = 180
+	health = 180
+	projectiletype = /obj/item/projectile/bullet/c45/op
+	projectilesound = 'sound/weapons/gunshot.ogg'
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/f13/metalarmor/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2)
+
+
+// FIREFIGHTER RAIDER
 /mob/living/simple_animal/hostile/raider/firefighter
 	icon_state = "firefighter_raider"
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
 	loot = list(/obj/item/twohanded/fireaxe)
 
-//Biker Raider Mob 
+// BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
 	icon_state = "biker_raider"
 	icon_living = "biker_raider"
@@ -158,7 +171,7 @@
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
 
-//Baseball Raider Mob
+// YANKEE RAIDER
 /mob/living/simple_animal/hostile/raider/baseball
 	icon_state = "baseball_raider"
 	icon_living = "baseball_raider"
@@ -178,7 +191,7 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 
-//Tribal Raider Mob
+// TRIBAL RAIDER
 /mob/living/simple_animal/hostile/raider/tribal
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
@@ -194,39 +207,33 @@
 	mask = /obj/item/clothing/mask/facewrap
 	head = /obj/item/clothing/head/helmet/f13/fiend
 
-//Sulphite Brawler Mob
+//////////////
+// SULPHITE //
+//////////////
+
 /mob/living/simple_animal/hostile/raider/sulphite
 	name = "Sulphite Brawler"
 	desc = "A raider with low military grade armor and a shishkebab"
-	icon_state = "melee_sulphite"
-	icon_living = "melee_sulphite"
-	icon_dead= "melee_sulphite_dead"
+	icon_state = "sulphite"
+	icon_living = "sulphite"
+	icon_dead= "sulphite_dead"
 	maxHealth = 220
 	health = 220
 	melee_damage_lower = 40
 	melee_damage_upper = 55
 	loot = list(/obj/item/locked_box/misc/money/all/low)
 
-//Metal Raider Mob
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
-	icon_state = "metal_raider"
-	icon_living = "metal_raider"
-	icon_dead = "metal_raider_dead"
-	maxHealth = 180
-	health = 180
-	projectiletype = /obj/item/projectile/bullet/c45/op
-	projectilesound = 'sound/weapons/gunshot.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/f13/metalarmor/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2)
+/////////////
+// JUNKERS //
+/////////////
 
-//Junkers
 /mob/living/simple_animal/hostile/raider/junker
 	name = "Junker"
 	desc = "A raider from the Junker gang."
 	faction = list("raider", "wastebot")
-	icon_state = "melee_sulphite"
-	icon_living = "melee_sulphite"
-	icon_dead= "melee_sulphite_dead"
-	color = "#B85C00"
+	icon_state = "junker_hijacker"
+	icon_living = "junker_hijacker"
+	icon_dead = "junker_dead"
 	maxHealth = 220
 	health = 220
 	melee_damage_lower = 40
@@ -236,7 +243,9 @@
 /mob/living/simple_animal/hostile/raider/ranged/boss/junker
 	name = "Junker Footman"
 	desc = "A Junker raider, outfitted in reinforced combat raider armor with extra metal plates."
-	color = "#B85C00"
+	icon_state = "junker_scrapper"
+	icon_living = "junker_scrapper"
+	icon_dead = "junker_dead"
 	faction = list("raider", "wastebot")
 	maxHealth = 245
 	health = 245
@@ -247,9 +256,9 @@
 /mob/living/simple_animal/hostile/raider/junker/creator
 	name = "Junker Field Creator"
 	desc = "A Junker raider, specialized in spitting out eyebots on the fly with any scrap they can find."
-	icon_state = "ranged_sulphitemob"
-	icon_living = "ranged_sulphitemob"
-	icon_dead = "melee_sulphite_dead"
+	icon_state = "junker"
+	icon_living = "junker"
+	icon_dead = "junker_dead"
 	maxHealth = 180
 	health = 180
 	ranged = TRUE
@@ -296,9 +305,9 @@
 /mob/living/simple_animal/hostile/raider/junker/boss
 	name = "Junker Boss"
 	desc = "A Junker boss, clad in hotrod power armor, and wielding a deadly rapid-fire shrapnel cannon."
-	icon_state = "boss_mob"
-	icon_living = "boss_mob"
-	icon_dead = "boss_mob_dead"
+	icon_state = "junker_boss"
+	icon_living = "junker_boss"
+	icon_dead = "junker_dead"
 	maxHealth = 450
 	health = 450
 	ranged = TRUE

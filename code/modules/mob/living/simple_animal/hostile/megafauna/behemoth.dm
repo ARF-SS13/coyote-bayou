@@ -1,17 +1,14 @@
 /mob/living/simple_animal/hostile/megafauna/behemoth
 	name = "supermutant behemoth"
 	desc = "A super mutant who has grown to an incredible size, it's skin is pulled tight! This one wields two lamposts that have had car doors tied to the ends creating deadly axes."
-	health = 3000
-	maxHealth = 3000
+	icon = 'icons/fallout/mobs/behemoth.dmi'
 	icon_state = "behemoth_axe"
 	icon_living = "behemoth_axe"
 	icon_dead = "behemoth_dead"
-	icon = 'icons/mob/Behemoth.dmi'
-	attack_verb_continuous = "slams"
-	attack_verb_simple = "slams"
-	attack_sound = 'sound/magic/demon_attack1.ogg'
-	weather_immunities = list("snow")
-	speak_emote = list("roars")
+
+	health = 3000
+	maxHealth = 3000
+	
 	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -28,6 +25,11 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	deathmessage = "falls, shaking the ground around it."
 	deathsound = 'sound/effects/gravhit.ogg'
+	attack_verb_continuous = "slams"
+	attack_verb_simple = "slams"
+	attack_sound = 'sound/magic/demon_attack1.ogg'
+	weather_immunities = list("snow")
+	speak_emote = list("roars")
 	attack_action_types = list(/datum/action/innate/megafauna_attack/heavy_stomp,
 							   /datum/action/innate/megafauna_attack/disorienting_scream)
 	/// Saves the turf the megafauna was created at (spawns exit portal here)

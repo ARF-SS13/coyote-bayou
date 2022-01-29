@@ -1,4 +1,4 @@
-/*Common East Coast hostile critters
+/*Common East Coast hostile critters -Pebbles
 - Ghoul Rotter		/mob/living/simple_animal/hostile/ghoulrotter
 	Just trying to make a new ghoul sprite thats less ass
 - Skolf				/mob/living/simple_animal/hostile/skolf
@@ -25,7 +25,7 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 /mob/living/simple_animal/hostile/ghoulrotter
 	name = "rotting ghoul"
 	desc = "A bloated ghoul that has lost its mind and become aggressive."
-	icon = 'icons/fallout/mob/hostile_feralghoul.dmi'
+	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "ghoulrotter"
 	icon_living = "ghoulrotter"
 	icon_dead = "ghoulrotter_dead"

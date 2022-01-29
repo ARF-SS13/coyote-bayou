@@ -6,7 +6,7 @@
 /mob/living/simple_animal/hostile/ghoul
 	name = "feral ghoul"
 	desc = "A ghoul that has lost its mind and become aggressive."
-	icon = 'icons/mob/wastemobs.dmi'
+	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
 	icon_state = "feralghoul"
 	icon_living = "feralghoul"
 	icon_dead = "feralghoul_dead"
@@ -45,7 +45,6 @@
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
@@ -67,7 +66,6 @@
 /mob/living/simple_animal/hostile/ghoul/coldferal
 	name = "cold ghoul feral"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "cold_feral"
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
@@ -82,7 +80,6 @@
 /mob/living/simple_animal/hostile/ghoul/frozenreaver
 	name = "frozen ghoul reaver"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "frozen_reaver"
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
@@ -157,7 +154,6 @@
 /mob/living/simple_animal/hostile/ghoul/soldier
 	name = "ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "soldier_ghoul"
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
@@ -169,7 +165,6 @@
 /mob/living/simple_animal/hostile/ghoul/soldier/armored
 	name = "armored ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "soldier_ghoul_a"
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
@@ -181,7 +176,6 @@
 /mob/living/simple_animal/hostile/ghoul/scorched
 	name = "scorched ghoul soldier"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "scorched_m"
 	icon_living = "scorched_m"
 	icon_dead = "scorched_m_d"
@@ -203,7 +197,6 @@
 /mob/living/simple_animal/hostile/ghoul/scorched/ranged
 	name = "Ranged Ghoul Solder"
 	desc = "Have you ever seen a living ghoul before?<br>Ghouls are necrotic post-humans - decrepit, rotting, zombie-like mutants."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "scorched_r"
 	icon_living = "scorched_r"
 	icon_dead = "scorched_r_d"
@@ -229,7 +222,6 @@
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
 	name = "ghost soldier"
 	desc = "A figure clad in armor that stands silent except for the slight wheezing coming from them, a dark orange and black liquid pumps through a clear tube into the gas mask. The armor they wear seems to be sealed to their skin."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "wyomingghost"
 	icon_living = "wyomingghost"
 	icon_dead = "wyomingghost_dead"
@@ -272,7 +264,6 @@
 /mob/living/simple_animal/hostile/ghoul/zombie/reaver
 	name = "ravenous feral ghoul reaver"
 	desc = "A ferocious feral ghoul, hungry for human meat. This one is strapped with metal armor, and appears far stronger."
-	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"

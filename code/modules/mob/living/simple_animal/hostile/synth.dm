@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/synth
 	name = "synth mk1"
 	desc = "Synth strider. Looks like a weird human but it's a machine."
-	icon = 'icons/fallout/mobs/animal.dmi'
+	icon = 'icons/fallout/mobs/robots/weirdrobots.dmi'
 	icon_state = "synthmk1"
 	icon_living = "synthmk1"
 	icon_dead = "synthmk1_d"
