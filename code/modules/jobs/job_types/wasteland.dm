@@ -1430,7 +1430,11 @@ datum/job/wasteland/f13dendoctor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
-
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_TRAPPER, src)
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
+	H.grant_language(/datum/language/tribal)
 	H.social_faction = FACTION_WASTELAND
 	add_verb(H, /mob/living/proc/create_tribe)
 
