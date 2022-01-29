@@ -257,7 +257,18 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 	always_available = FALSE
+*/
 
+/datum/crafting_recipe/papermask	//Citadel item
+	name = "Paper Mask"
+	result = /obj/item/clothing/mask/paper
+	reqs = list(/obj/item/paper = 20)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING	//F13 category
+
+/*
 /datum/crafting_recipe/hudsunsec
 	name = "Security HUDsunglasses"
 	result = /obj/item/clothing/glasses/hud/security/sunglasses

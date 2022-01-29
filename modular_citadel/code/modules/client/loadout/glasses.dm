@@ -7,6 +7,11 @@
 	path = /obj/item/clothing/glasses/sunglasses/blindfold
 	cost = 2
 
+/datum/gear/glasses/fakeblindfold
+	name = "Fake Blindfold"
+	path = /obj/item/clothing/glasses/fakeblindfold
+	//No cost because there's no mechanical use
+
 /datum/gear/glasses/sunglasses
 	name = "Sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses
@@ -51,12 +56,12 @@
 
 /datum/gear/glasses/cold
 	name = "cold-resistant goggles"
-	path = /obj/item/clothing/glasses/cold 
+	path = /obj/item/clothing/glasses/cold
 
 /datum/gear/glasses/heat
 	name = "heat-resistant goggles"
-	path = /obj/item/clothing/glasses/heat 
+	path = /obj/item/clothing/glasses/heat
 
 /datum/gear/glasses/biker
 	name = "biker goggles"
-	path = /obj/item/clothing/glasses/f13/biker 
+	path = /obj/item/clothing/glasses/f13/biker
