@@ -129,3 +129,10 @@
 							"NCR Rear Echelon",
 							"NCR Off-Duty"
 						)
+
+/datum/gear/shoes/khan_peltboots
+	name = "Great Khan pelt boots"
+	path = /obj/item/clothing/shoes/f13/military/khan_pelt
+	cost = 2
+	restricted_desc = "KHAN"
+	restricted_roles = list("Great Khan")
