@@ -302,6 +302,7 @@ Head Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribeam)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rcw)
 
 
@@ -763,6 +764,7 @@ Senior Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
 
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"

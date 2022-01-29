@@ -40,7 +40,6 @@
 			headarmor = I.armor.melee
 
 	//Calculate the knockdown duration for the target.
-	var/armor_duration = (knockdown_duration - headarmor) + force
 
 	//Apply the damage!
 	target.apply_damage(force, BRUTE, affecting, armor_block)
@@ -51,7 +50,7 @@
 		head_attack_message = " on the head"
 		//Knockdown the target for the duration that we calculated and divide it by 5.
 		//if(armor_duration)
-		//	target.DefaultCombatKnockdown(min(armor_duration, 200)) // What the fuck were tg coders thinking
+		//	target.DefaultCombatKnockdown(min(armor_duration, 200)) // What the fuck were tg coders thinking //it's a melee knockdown it's not that strong
 
 	//Display an attack message.
 	if(target != user)
@@ -395,7 +394,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/trappist/empty
 	list_reagents = null
-	
+
 /obj/item/reagent_containers/food/drinks/bottle/rotgut
 	name = "Rotgut"
 	desc = "a bottle of noxious homebrewed alcohol, it has the name Rotgut etched on its side"
@@ -404,7 +403,7 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/rotgut = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila/empty
-	list_reagents = null	
+	list_reagents = null
 
 //////////////////////////JUICES AND STUFF ///////////////////////
 

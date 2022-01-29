@@ -1058,7 +1058,21 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-
+//R82 heavy service rifle
+/datum/crafting_recipe/R93
+	name = "R93 PDW"
+	result = /obj/item/gun/ballistic/automatic/r93
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/sheet/plastic = 5,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
 
 
 //////////////////////////////////
