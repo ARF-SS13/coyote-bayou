@@ -106,12 +106,6 @@
 	icon_state = "vickyred"
 	item_state = "vickyred"
 
-/obj/item/clothing/suit/overalls
-	name = "coveralls"
-	desc = "A set of denim overalls."
-	icon_state = "overalls"
-	item_state = "overalls"
-
 /obj/item/clothing/suit/syndicatefake
 	name = "black and red space suit replica"
 	icon_state = "syndicate-black-red"
