@@ -220,7 +220,7 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = WEAPON_LIGHT //Possible to fire one from each hand. Let's see how it pans out.
+		weapon_weight = WEAPON_MEDIUM // Nope. Not unless you want broken wrist.
 		item_state = "gun"
 		slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
 		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
