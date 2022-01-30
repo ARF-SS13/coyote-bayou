@@ -37,7 +37,7 @@
 	species = "lily"
 	plantname = "Lily Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
-	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/geranium)
+	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/lily/trumpet)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
 	seed = /obj/item/seeds/poppy/lily
