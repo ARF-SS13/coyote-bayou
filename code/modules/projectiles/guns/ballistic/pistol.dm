@@ -55,7 +55,7 @@
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
-	extra_damage = 15
+	extra_damage = 18
 	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_TINY
 	can_attachments = TRUE
@@ -71,8 +71,7 @@
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	extra_damage = 20
-	extra_penetration = 0.1
+	extra_damage = 22
 	fire_delay = 4
 	recoil = 0.05
 	can_attachments = TRUE
@@ -97,7 +96,7 @@
 	name = "\improper Crusader pistol"
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
 	extra_penetration = 0.1
-	extra_damage = 2
+	extra_damage = 26
 	force = 18
 	icon_state = "crusader"
 	item_state = "crusader"
@@ -112,7 +111,7 @@
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	fire_delay = 5
-	extra_damage = 23
+	extra_damage = 24
 	recoil = 0.1
 	spread = 3
 	can_suppress = FALSE
@@ -127,7 +126,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	weapon_weight = WEAPON_LIGHT
 	extra_damage = 20
-	fire_delay = 3.5
+	fire_delay = 2.5
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -147,13 +146,13 @@
 //Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "Sig P220"
-	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has a good rate of fire."
+	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "sig"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	extra_damage = 19
-	fire_delay = 3
+	fire_delay = 3.25
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
@@ -246,7 +245,6 @@
 	icon_state = "m1911_custom"
 	recoil = 0.05
 	fire_delay = 4
-	extra_damage = 32
 
 //M1911	compact							Keywords: .45 ACP, Semi-auto, Short barrel, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911/compact
@@ -296,8 +294,9 @@
 	icon_state = "deagle"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m44
+	fire_delay = 4
 	force = 15
-	extra_damage = 35
+	extra_damage = 38
 	extra_penetration = 0.05
 	extra_speed = 300
 	recoil = 0.2
@@ -312,8 +311,8 @@
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
-	extra_damage = 29
-	extra_penetration = 0.2
+	extra_damage = 45
+	extra_penetration = 0.15
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 //Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
@@ -325,7 +324,6 @@
 	mag_type = /obj/item/ammo_box/magazine/automag
 	extra_damage = 41
 	extra_speed = 300
-	fire_delay = 3.7
 	recoil = 0.2
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
@@ -339,8 +337,8 @@
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	force = 15
-	extra_damage = 30
-	extra_penetration = 0.2
+	extra_damage = 44
+	extra_penetration = 0.1
 	fire_delay = 5
 	recoil = 0.25
 	can_suppress = FALSE
@@ -352,7 +350,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 29
+	extra_damage = 42
 	spread = 5
 
 //Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
@@ -361,7 +359,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 35
+	extra_damage = 50
 	fire_delay = 4
 
 

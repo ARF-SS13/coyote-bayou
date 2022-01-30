@@ -61,7 +61,7 @@
 /////////////
 
 
-//Zip gun												Keywords: 9mm, 5 rounds internal, Extra damage +2
+//Zip gun												Keywords: 9mm, 5 rounds internal
 /obj/item/gun/ballistic/automatic/hobo/zipgun
 	name = "Zip gun (9mm)"
 	icon_state = "zipgun"
@@ -72,7 +72,7 @@
 	slowdown = 0.1
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	force = 16
-	extra_damage = 2
+	extra_damage = 15
 	spread = 8
 	fire_delay = 4
 	burst_size = 1
@@ -82,7 +82,7 @@
 	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 
-//Pipe rifle (add multi calibre options)				Keywords: .223, 1 round internal, Extra damage +6
+//Pipe rifle (add multi calibre options)				Keywords: .223, 1 round internal
 /obj/item/gun/ballistic/revolver/hobo/piperifle
 	name = "pipe rifle (.223)"
 	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
@@ -93,7 +93,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	force = 20
 	fire_delay = 0.25
-	extra_damage = 6
+	extra_damage = 21
 	spread = 2
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -117,7 +117,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	force = 20
 	fire_delay = 0.25
-	extra_damage = 3
+	extra_damage = 17
 	spread = 7
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -163,7 +163,7 @@
 	force = 24
 	fire_delay = 0.5
 	spread = 4
-	extra_damage = 5
+	extra_damage = 30
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
@@ -180,7 +180,7 @@
 	force = 24
 	fire_delay = 0.25
 	spread = 5
-	extra_damage = 2
+	extra_damage = 25
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
@@ -197,7 +197,7 @@
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	force = 20
-	extra_damage = -8
+	extra_damage = 27
 	extra_penetration = -0.15
 	burst_size = 4
 	fire_delay = 6
@@ -255,16 +255,16 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
 
-//Destroyer carbine										Keywords: .45 ACP, Automatic, 30 rounds, Long barrel, Suppressor
+//Destroyer carbine										Keywords: 9mm, Automatic, 30 rounds, Long barrel, Suppressor
 /obj/item/gun/ballistic/automatic/hobo/destroyer
 	name = "destroyer carbine"
-	desc = "There are many ways to describe this, very few of them nice. This is a .45 caliber silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
+	desc = "There are many ways to describe this, very few of them nice. This is a 9mm silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
 	icon_state = "destroyer-carbine"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	extra_damage = 2
+	extra_damage = 22
 	fire_delay = 5
-	burst_size = 2
+	burst_size = 1
 	can_attachments = FALSE
 	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
@@ -306,7 +306,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	extra_damage = -1
+	extra_damage = 35
 	fire_delay = 0.25
 	force = 20
 	spread = 5
