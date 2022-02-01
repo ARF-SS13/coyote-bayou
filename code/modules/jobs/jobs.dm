@@ -48,33 +48,21 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	))
 
 GLOBAL_LIST_INIT(command_positions, list(
-	"Elder",
 	"Head Scribe",
 	"Head Paladin",
 	"Head Knight",
 
-	"Enclave Lieutenant",
-
 	"NCR Captain",
 	"NCR Lieutenant",
+	"NCR Veteran Ranger",
 
-	"Legate",
 	"Legion Centurion",
 	"Legion Veteran Decanus",
-
-	"Overseer",
-	"Chief of Security",
 
 	"Mayor",
 	"Sheriff",
 
-	"Chief",
-	"Shaman",
-	"Head Hunter",
-
 	"Followers Administrator",
-
-	"Den Mob Boss",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(

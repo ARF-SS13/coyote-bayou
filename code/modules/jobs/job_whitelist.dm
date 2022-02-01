@@ -1,7 +1,7 @@
 /proc/job_is_whitelist_locked(jobtitle)
-	if(!CONFIG_GET(flag/use_role_whitelist) && (jobtitle in (GLOB.faction_whitelist_positions | GLOB.command_positions | GLOB.ncr_rangervet_positions)))
+	if(!CONFIG_GET(flag/use_role_whitelist) && (jobtitle in GLOB.command_positions))
 		return FALSE
-	if(!CONFIG_GET(flag/use_role_whitelist) && !(jobtitle in (GLOB.faction_whitelist_positions | GLOB.command_positions | GLOB.ncr_rangervet_positions)))
+	if(!CONFIG_GET(flag/use_role_whitelist) && !(jobtitle in GLOB.command_positions))
 		return FALSE
 	return TRUE
 
@@ -33,20 +33,19 @@
 		play_records[rtype] = rtype
 
 	qdel(whitelist_read)
-
-	if(!whitelists["faction"])							// if they do not have faction whitelist, remove faction whitelist positions This whitelist is for all roles.
-		for(var/rtypeWL in GLOB.faction_whitelist_positions)
-			play_records[rtypeWL] = 0
-
+	
 	if(!whitelists["leadership"])					// if they do not have leadership whitelist, remove leadership whitelist positions
 		for(var/rtypeWL in GLOB.command_positions)
+			play_records[rtypeWL] = 0
+	/*
+	
+	if(!whitelists["faction"])							// if they do not have faction whitelist, remove faction whitelist positions This whitelist is for all roles.
+		for(var/rtypeWL in GLOB.faction_whitelist_positions)
 			play_records[rtypeWL] = 0
 
 	if(!whitelists["vetranger"])
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)	// if they do not have ranger whitelist, remove ranger whitelist positions
 			play_records[rtypeWL] = 0
-
-	/*
 
 	if(!whitelists["faction_bos"])					// if they do not have faction_bos whitelist, remove faction_bos whitelist positions
 		for(var/rtypeWL in GLOB.brotherhood_positions)
@@ -67,18 +66,16 @@
 	if(!whitelists["faction_vault"])					// if they do not have faction_vault whitelist, remove faction_vault whitelist positions
 		for(var/rtypeWL in GLOB.vault_positions)
 			play_records[rtypeWL] = 0
-	*/
 
 	if(whitelists["faction"])
 		for(var/rtypeWL in GLOB.faction_whitelist_positions)
 			play_records[rtypeWL] = rtypeWL
 
-	if(whitelists["leadership"])
-		for(var/rtypeWL in GLOB.command_positions)
-			play_records[rtypeWL] = rtypeWL
-
 	if(whitelists["vetranger"])
 		for(var/rtypeWL in GLOB.ncr_rangervet_positions)
 			play_records[rtypeWL] = rtypeWL
-
+	*/
+	if(whitelists["leadership"])
+		for(var/rtypeWL in GLOB.command_positions)
+			play_records[rtypeWL] = rtypeWL
 	prefs.job_whitelists = play_records
