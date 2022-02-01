@@ -860,7 +860,7 @@
 		if (istype(g))
 			strip_mod = g.strip_mod
 			strip_silence = g.strip_silence
-	if (!strip_silence)
+	if(!strip_silence)
 		who.visible_message("<span class='danger'>[src] tries to remove [who]'s [what.name].</span>", \
 					"<span class='userdanger'>[src] tries to remove your [what.name].</span>", target = src,
 					target_message = "<span class='danger'>You try to remove [who]'s [what.name].</span>")
@@ -1340,7 +1340,7 @@
 		if(!gift)
 			to_chat(src, span_warning("You don't have anything in your hands to give."))
 			return
-	
+
 	if(SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
 		to_chat(src, span_warning("[target] is too busy fighting!"))
 		return

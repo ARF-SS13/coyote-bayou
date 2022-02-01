@@ -63,7 +63,7 @@
 			whom = GLOB.directory[AH.initiator_ckey]
 		else
 			to_chat(src, "<span class='danger'>Error: Admin-PM: Client not found.</span>", confidential = TRUE)
-			to_chat(src, "<span class='danger'><b>Message not sent:</b></span><br>[msg]", confidential = TRUE)
+			to_chat(src, "<span class='danger'><b>Message not sent:</b></span><br>[sanitize(msg)]", confidential = TRUE)
 			AH.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
 			return
 	cmd_admin_pm(whom, msg)
@@ -133,6 +133,11 @@
 						recipient_ticket.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
 					return
 				else
+					//clean the message if it's not sent by a high-rank admin
+					if(!check_rights(R_SERVER|R_DEBUG,0)||external)//no sending html to the poor bots
+						msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
+						if(!msg)
+							return
 					current_ticket.MessageNoRecipient(msg)
 					return
 
@@ -141,7 +146,7 @@
 		to_chat(src, "<span class='danger'>Error: Admin-PM: You are unable to use admin PM-s (muted).</span>", confidential = TRUE)
 		return
 
-	if (src.handle_spam_prevention(msg,MUTE_ADMINHELP))
+	if(src.handle_spam_prevention(msg,MUTE_ADMINHELP))
 		return
 
 	//clean the message if it's not sent by a high-rank admin

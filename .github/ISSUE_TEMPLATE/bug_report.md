@@ -3,6 +3,7 @@ name: Bug report
 about: Create a report to help reproduce and fix the issue
 ---
 <!-- Write **BELOW** The Headers for each section -->
+<!-- When you are done submitting your bug report, please paste a link to it in the #bug-reports channel on discord! -->
 
 ## Testmerges:
 <!-- PLEASE DO NOT FORGET TO INCLUDE THIS INFORMATION FOR THE LOVE OF JEEBUS WE NEED TO KNOW THIS INFORMATION MORE THAN ANYTHING ELSE -->

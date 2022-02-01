@@ -392,7 +392,7 @@
 				grinded.on_grind()
 				reagents.add_reagent_list(grinded.grind_results)
 				if(grinded.reagents && (mortar_mode== MORTAR_GRIND)) //food and pills
-					grinded.reagents.trans_to(src, grinded.reagents.total_volume)
+					grinded.reagents.trans_to(src, grinded.reagents.total_volume, log = "mortar powdering")
 				to_chat(user, "<span class='notice'>You grind [grinded] into a fine powder.</span>")
 				QDEL_NULL(grinded)
 				return
