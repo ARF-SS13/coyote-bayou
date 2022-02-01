@@ -22,6 +22,14 @@
 	icon_state = "wood"
 	},
 /area/f13/building)
+"aB" = (
+/obj/structure/noticeboard/captain{
+	desc = "The second Evidence Board shows a small amount of what looks to be crime scenes with corpses all connected to eachother.";
+	dir = 4;
+	name = "Evidence Board"
+	},
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "aJ" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -32,6 +40,12 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"aK" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "bi" = (
 /obj/structure/chair/left{
 	dir = 4
@@ -65,6 +79,27 @@
 /obj/structure/chair/right,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"ct" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"cH" = (
+/obj/structure/sign/poster/prewar/vault_tec,
+/turf/closed/wall/f13/store,
+/area/f13/building)
+"cI" = (
+/obj/structure/chair,
+/obj/effect/decal/remains/human,
+/obj/item/paper/pamphlet{
+	desc = "a trashy prewar comic book";
+	name = "prewar comic book"
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "cS" = (
 /obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -84,9 +119,68 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"dB" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
+"dP" = (
+/obj/structure/bookcase,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"dS" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"dU" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Chief... Sergeant Smith is up to no good again, he's brought in flowers for Olivia now.. and I overheard someone say he's bring chocolates too! It's getting outrageous now, I think it's time you pull the plug on Smith, Sir.   -Detective Gray.";
+	doc_title_1 = "Sent to -Chief Lopez."
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"eS" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/book/bible,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "eU" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/bunker)
+"fz" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"fE" = (
+/obj/structure/table,
+/obj/item/newspaper{
+	pixel_x = 6;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/food/drinks/coffee,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "hd" = (
 /obj/structure/toilet{
 	dir = 4
@@ -105,8 +199,23 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"hg" = (
+/obj/structure/sign/poster/prewar/poster82,
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "hs" = (
 /turf/open/indestructible/ground/outside/woodalt,
+/area/f13/building)
+"hG" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/trash/energybar,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/building)
 "hM" = (
 /obj/effect/decal/cleanable/dirt{
@@ -135,6 +244,12 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"if" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/building)
 "io" = (
 /obj/structure/chair/right{
 	dir = 4
@@ -163,12 +278,81 @@
 	icon_state = "oakfloor4-broken"
 	},
 /area/f13/building)
+"iP" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Attention Sergeant Smith, I've heard some reports about you sexually harrasing Detective Olivia, I want this to stop RIGHT NOW, I do not need more shit on my plate after the Chinese Radio Station was found out right under my nose.   -Chief Brown.";
+	doc_title_1 = "Deep Shit, Smith."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"iU" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowleft"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"jj" = (
+/obj/structure/table/wood/fancy/black,
+/obj/structure/displaycase/trophy{
+	desc = "This plaque reads: For their bravery during the stopping of the assasination of Congressman Stone in 2070, the Yuma Police Department is awarded this Silver Cup.";
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/food/drinks/trophy/silver_cup,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building)
+"jk" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowhorizontal"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "jl" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/clinic)
+"jY" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Want to meet up later in the bathrooms, I have some spare time since I handed that report to the Chief about the chinese.. I miss ya Cynth..   -Williams.";
+	doc_title_1 = "Come on, Cynthia."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "kC" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
+"kO" = (
+/obj/structure/sign/poster/prewar/poster72,
+/turf/closed/wall/f13/store,
+/area/f13/building)
+"lc" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowleft"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "lm" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/city)
@@ -182,6 +366,12 @@
 "lH" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/tunnel)
+"lT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "mc" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/legion)
@@ -194,6 +384,12 @@
 	sunlight_state = 1
 	},
 /area/f13/legion)
+"mV" = (
+/obj/structure/chair,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "nb" = (
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
@@ -209,11 +405,25 @@
 /obj/machinery/light/small,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"nO" = (
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "nV" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty";
 	name = "grimy tile"
+	},
+/area/f13/building)
+"nY" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowright"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "oj" = (
@@ -239,12 +449,26 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"oE" = (
+/obj/structure/sign/poster/contraband/scum,
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "oJ" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/brotherhood/surface)
 "pb" = (
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/legion)
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowleft"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "pl" = (
 /obj/structure/mirror{
 	pixel_y = 5
@@ -257,6 +481,12 @@
 	sunlight_state = 1
 	},
 /area/f13/caves)
+"qt" = (
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "rf" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -272,12 +502,34 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"rz" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "I know you stole my fucking donuts, Steve. I SWEAR to god, after this shift you will go and buy me some more because you're a dirty little thief!   -Kev.";
+	doc_title_1 = "Little Thief."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "rZ" = (
 /obj/structure/barricade/bars,
 /obj/structure/window/fulltile/house{
 	max_integrity = 200
 	},
 /turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"sz" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Kevin, you fat fuck. I didn't steal your damned donuts and if you harrass me more about it I WILL bring this to the Chief, now don't make me.   -Cynthia.";
+	doc_title_1 = "I didn't steal your donuts."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/building)
 "sD" = (
 /turf/closed/wall/f13/wood,
@@ -291,6 +543,46 @@
 "tg" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
+"tq" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"tv" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Olivia... I really love you.. okay? I know you've looked at me during lunch hours.. you want this too.. I sent you these flowers and this heart shaped chocolate box in hopes that you'll go out with me... please?   -Love, Chris.";
+	doc_title_1 = "Read This, Olivia."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"tE" = (
+/obj/structure/table,
+/obj/item/paper/crumpled/muddy/fluff/elephant_graveyard/rnd_notes{
+	desc = "This page details a raid warrant of some location, though the place's name is illegible.";
+	info = "";
+	name = "Raid Warrant on.."
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
+"tT" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
 	},
 /area/f13/building)
 "tU" = (
@@ -309,6 +601,13 @@
 "ub" = (
 /turf/closed/wall/r_wall,
 /area/f13/ncr)
+"us" = (
+/obj/structure/chair,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "uI" = (
 /turf/open/floor/carpet/black,
 /area/f13/building)
@@ -326,11 +625,54 @@
 "vG" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/ncr)
+"vY" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Hey neighbour... just saw something.. frankly fucked up.. uh.. well, your wife is in your house right now with another man, now I'm hearing.. an awful lot of noises.. I'm sorry you're hearing this from me, Clint.. but, I have to do my duty as a man to man.. well.. that's all I wanted to type to you.  -Your Neighbour Sebastian.";
+	doc_title_1 = "I'm sorry, Clint."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"wa" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "wI" = (
 /obj/structure/bed/wooden{
 	pixel_y = 14
 	},
 /turf/open/floor/carpet/black,
+/area/f13/building)
+"wY" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	doc_content_1 = "Sir, SHIT, there's a COUPLE HUNDRED PEOPLE OUTSIDE THE STATION RIGHT NOW!! THEY'RE THROWING ROCKS AT THE WINDOWS SHOUTING SOME SLOGAN ABOUT BRUTALITY OR SOME BULLSHIT, CALL THE OFFICERS DOWN NOW!!";
+	doc_content_2 = "Chief Lopez, I have sent a detachment of the National Guard to the location you claim there is a Chinese Listening Post, better be right on this Fergus, I'm counting on you to have the raid warrant ready when the Guard arrive. Do not fail me.  -Captain Brooks.";
+	doc_content_3 = "You should call your wife, Chief Fergus Lopez, I'm sure she'll answer you. I'll keep this simple, drop 10 grand at the back of the diner opposite of your station before this hour is up.. or your wife and kids won't see the light of day again. Now run, pig.";
+	doc_title_1 = "Send the Officers STAT!";
+	doc_title_2 = "National Guard Sent.";
+	doc_title_3 = "Your Family or your career.. pig."
+	},
+/obj/item/clothing/head/f13/police/chief{
+	pixel_x = -5;
+	pixel_y = 7
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
+"xk" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/building)
 "xN" = (
 /obj/structure/chair/right{
@@ -340,6 +682,11 @@
 	color = "000000"
 	},
 /turf/open/floor/carpet/red,
+/area/f13/building)
+"xP" = (
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
 /area/f13/building)
 "yd" = (
 /turf/open/transparent/openspace,
@@ -381,6 +728,12 @@
 "Ab" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/tunnel)
+"Ad" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Al" = (
 /turf/closed/indestructible/rock,
 /area/f13/caves)
@@ -390,9 +743,41 @@
 	sunlight_state = 1
 	},
 /area/f13/ncr)
+"Ap" = (
+/obj/item/kirbyplants/random,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
+"AK" = (
+/obj/structure/table,
+/obj/item/clothing/mask/cigarette/cigar{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/lighter/gold{
+	pixel_x = 7
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "AM" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/legion)
+"AV" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/building)
 "BH" = (
 /obj/structure/closet/crate/footlocker{
 	pixel_x = 8;
@@ -401,6 +786,12 @@
 /obj/item/reagent_containers/glass/bucket/wood,
 /obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"BI" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/building)
 "BU" = (
 /turf/closed/wall/f13/tunnel,
@@ -415,12 +806,71 @@
 "BY" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/building)
+"Cc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "CC" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/brotherhood/surface)
+"CG" = (
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/building)
+"CQ" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowright"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "DB" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/village)
+"DI" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "storewindowright"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"DS" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"DW" = (
+/obj/structure/table,
+/obj/item/paper/pamphlet{
+	info = "Some religious talk about the Church of Christ, you don't want to read this.";
+	name = "Church pamphlet "
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "ED" = (
 /obj/structure/chair/middle{
 	dir = 1
@@ -439,6 +889,22 @@
 "FK" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"FR" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/grown/poppy/lily{
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/snacks/grown/poppy{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/snacks/grown/poppy/geranium{
+	pixel_x = -4
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/building)
 "FT" = (
 /obj/effect/decal/cleanable/dirt{
@@ -472,6 +938,12 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/tcoms)
+"GB" = (
+/obj/structure/table/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/building)
 "GG" = (
 /obj/structure/chair/wood/modern{
 	dir = 8;
@@ -482,12 +954,48 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"Hm" = (
+/obj/structure/noticeboard/captain{
+	desc = "The final Evidence Board shows a location of the Yuma Sewers circled many times in red, looks like the police found something there..";
+	dir = 4;
+	name = "Evidence Board"
+	},
+/turf/closed/wall/f13/store,
+/area/f13/building)
+"Hp" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowhorizontal"
+	},
+/obj/structure/barricade/bars,
+/obj/structure/curtain{
+	color = "#363636"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"Hr" = (
+/obj/structure/noticeboard/captain{
+	desc = "The first Evidence Board has a bunch of different faces pinned on it, with one being at the top of them all.";
+	dir = 4;
+	name = "Evidence Board"
+	},
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "HG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /obj/structure/closet/crate/bin,
 /turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"Ip" = (
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/f13/building)
 "Iq" = (
 /obj/structure/chair/left{
@@ -507,6 +1015,46 @@
 "Jd" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/ncr)
+"Jl" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/building)
+"Jp" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/building)
+"Jt" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/beaker/waterbottle{
+	pixel_x = -4;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/snacks/donut/berry,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Ju" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen/fountain/captain{
+	name = "chief's fountain pen"
+	},
+/obj/item/clipboard,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
+"Jx" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Ks" = (
 /turf/closed/wall/f13/wood,
 /area/f13/legion)
@@ -524,6 +1072,32 @@
 "Lp" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/village)
+"Lt" = (
+/obj/structure/table/wood,
+/obj/structure/fluff/paper/stack{
+	desc = "A stack of various papers, illegible scribbles scattered across each page.";
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
+"Ly" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "storewindowhorizontal"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"LW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Mj" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/bar)
@@ -543,6 +1117,14 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"Na" = (
+/obj/structure/simple_door/metal/store{
+	name = "Chief's Office"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "Nd" = (
 /obj/structure/table/booth,
 /turf/open/floor/carpet/red,
@@ -550,9 +1132,33 @@
 "NP" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/raiders)
+"NU" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Mack.. I can't anymore with this bullshit... it's so annoying... the Chief IGNORED me about fixing the fucking BATHROOM SINK.. Like come the FUCK on, Chief, I reported that broken weeks ago.. and he STILL does jackshit about it, god damn it. I might call a repair-man myself, Jesus Christ.   -Jake.";
+	doc_title_1 = "Sent to  -Officer Mack"
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Oc" = (
+/obj/machinery/vending/cola/space_up,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Of" = (
 /obj/structure/barricade/wooden,
 /turf/closed/wall/f13/wood,
+/area/f13/building)
+"OH" = (
+/obj/machinery/light{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/transparent/openspace,
 /area/f13/building)
 "Pl" = (
 /turf/open/indestructible/ground/outside/woodalt,
@@ -573,6 +1179,24 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"Qe" = (
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_x = 10;
+	pixel_y = 23
+	},
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_x = -4;
+	pixel_y = 21
+	},
+/obj/structure/filingcabinet{
+	pixel_x = 10
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Qs" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -592,14 +1216,66 @@
 	sunlight_state = 1
 	},
 /area/f13/farm)
+"Rw" = (
+/obj/structure/decoration/smokeold{
+	pixel_y = 32
+	},
+/obj/machinery/photocopier,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Rx" = (
+/obj/structure/decoration/clock/old/active,
+/turf/closed/wall/f13/store,
+/area/f13/building)
+"Sb" = (
+/obj/structure/simple_door/metal/store{
+	icon_state = "brokenstore";
+	name = "Meeting Room"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "Sl" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/raiders)
+"Sv" = (
+/obj/structure/chair,
+/obj/effect/decal/remains/human,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Sw" = (
+/obj/machinery/light{
+	dir = 4;
+	pixel_y = -16
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"SL" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "Tm" = (
 /turf/open/indestructible/ground/outside/wood{
 	icon = 'icons/fallout/turfs/floors.dmi';
 	icon_state = "floorrusty";
 	name = "roof"
+	},
+/area/f13/building)
+"Tr" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
 "Ts" = (
@@ -629,6 +1305,23 @@
 /obj/structure/chair/middle,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"UA" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/building)
+"UC" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/storage/fancy/heart_box,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "UD" = (
 /obj/structure/sign/painting/library{
 	persistence_id = "oasis_public";
@@ -651,6 +1344,21 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"UR" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"UT" = (
+/obj/structure/table,
+/obj/item/paper/fluff/stations/lavaland/orm_notice{
+	info = "A hastily written note has been scribbled here... <br><br> Please stop stealing my FUCKING donuts, get your OWN MOR-ONS! <br><br>--Kevin Redding"
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Ve" = (
 /obj/structure/table/booth,
 /obj/item/candle{
@@ -672,9 +1380,74 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"Vx" = (
+/obj/structure/table,
+/obj/item/paper/fluff/ruins/listeningstation/reports/may{
+	info = "Got something of real interest to report. I have intercepted faint transmissions from what appears to be some sort of chinese radio station. We should send someone to find it PRONTO.";
+	name = "Chinese Radio Station Report"
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"VJ" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	doc_content_1 = "Oh son of a BITCH, My WIFE'S FUCKING CHEATING ON ME, WILLIAMS, WITH HER FUCKING TRAINER, I'M GOING TO GO KILL THAT BITCH, FUCK!   -A FUCKING loser.";
+	doc_title_1 = "Do Not Stop Me."
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Wp" = (
+/obj/structure/table,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"Ws" = (
+/obj/structure/filingcabinet{
+	layer = 3.3;
+	pixel_x = 5;
+	pixel_y = 6
+	},
+/obj/structure/filingcabinet{
+	density = 0;
+	pixel_x = -9;
+	pixel_y = 21
+	},
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "Wx" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
+"Xa" = (
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/building)
+"Xb" = (
+/obj/structure/table/wood,
+/obj/structure/table/wood,
+/obj/structure/fluff/paper/stack{
+	desc = "A stack of various papers, illegible scribbles scattered across each page.";
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/building)
 "XQ" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -684,6 +1457,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
+	},
+/area/f13/building)
+"YB" = (
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
 "YY" = (
@@ -26882,11 +27660,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -27139,11 +27917,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -27396,11 +28174,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -27653,11 +28431,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -27910,11 +28688,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -28167,11 +28945,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -28671,12 +29449,12 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -28928,12 +29706,12 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -29185,21 +29963,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -29442,21 +30220,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -29699,21 +30477,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -29956,21 +30734,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -30213,21 +30991,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -30470,21 +31248,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -30727,21 +31505,21 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -30984,21 +31762,21 @@ PL
 PL
 PL
 PL
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -31241,21 +32019,21 @@ PL
 PL
 PL
 PL
+md
+md
+md
+md
+md
+md
 PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+md
+md
+md
+md
+md
 PL
 PL
 PL
@@ -49217,23 +49995,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+al
+Hr
+aB
+Hm
+al
+al
+al
+al
+al
+al
+Rx
+al
+al
+hg
+al
+al
+al
 kC
 kC
 kC
@@ -49474,23 +50252,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+pb
+BI
+AV
+if
+lc
+UR
+OH
+yd
+hG
+DS
+tq
+AK
+DS
+tq
+DW
+DS
+al
 kC
 kC
 kC
@@ -49731,23 +50509,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+Hp
+Jl
+Xb
+Ip
+Ly
+Oc
+nO
+nO
+mV
+iP
+nO
+Sv
+VJ
+Ad
+mV
+vY
+al
 kC
 kC
 kC
@@ -49988,23 +50766,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+Hp
+aK
+qt
+Xa
+Ly
+ct
+Ad
+Ad
+Ad
+fz
+Ad
+nO
+Vx
+nO
+Ad
+eS
+al
 kC
 kC
 kC
@@ -50245,23 +51023,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+Hp
+Jp
+GB
+Xa
+Ly
+xk
+nO
+nO
+nO
+nO
+nO
+Ad
+LW
+wa
+nO
+dS
+al
 kC
 kC
 kC
@@ -50502,23 +51280,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+Hp
+aK
+Lt
+Ip
+nY
+Jx
+Ad
+Tr
+fE
+DS
+nO
+fz
+Wp
+Ad
+FR
+UC
+al
 kC
 kC
 kC
@@ -50759,23 +51537,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+DI
+YB
+UA
+CG
+Sb
+nO
+dS
+nO
+Sv
+dU
+nO
+us
+NU
+Ad
+Sv
+tv
+al
 kC
 kC
 kC
@@ -51016,23 +51794,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+al
+Na
+al
+al
+al
+Rw
+nO
+Ad
+nO
+LW
+nO
+nO
+nO
+nO
+Ad
+nO
+al
 kC
 kC
 kC
@@ -51273,23 +52051,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+iU
+lT
+SL
+dB
+al
+Ws
+Ad
+Tr
+fz
+DS
+nO
+UT
+DS
+Ad
+Jt
+DS
+al
 kC
 kC
 kC
@@ -51530,23 +52308,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
+jk
+xP
+wY
+Ju
+al
+Qe
+Sw
+nO
+mV
+rz
+Cc
+mV
+jY
+Sw
+cI
+sz
+al
 kC
 kC
 kC
@@ -51787,23 +52565,23 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-md
-Ty
-Ty
-Ty
-Ty
-Ty
-Ty
-kC
-kC
-kC
-kC
-kC
-kC
+CQ
+lT
+tT
+tE
+al
+al
+al
+al
+al
+al
+oE
+al
+al
+al
+kO
+al
+al
 kC
 kC
 kC
@@ -52044,11 +52822,11 @@ PL
 PL
 PL
 PL
-md
-md
-md
-md
-Ty
+al
+Ap
+jj
+dP
+al
 AM
 AM
 AM
@@ -52301,11 +53079,11 @@ AM
 AM
 AM
 AM
-pb
-md
-md
-Ty
-Ty
+al
+al
+cH
+al
+al
 AM
 AM
 AM
