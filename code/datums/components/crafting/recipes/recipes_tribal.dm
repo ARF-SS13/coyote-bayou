@@ -66,7 +66,7 @@
 				)
 	tools = list(TOOL_WORKBENCH)
 
-/datum/crafting_recipe/tribalwar/crossbow
+/datum/crafting_recipe/tribalwar/xbow
 	name = "Manual Crossbow"
 	result = /obj/item/gun/ballistic/bow/xbow
 	time = 120
