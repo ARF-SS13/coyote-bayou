@@ -202,7 +202,7 @@
 	list_reagents = list(/datum/reagent/medicine/charcoal = 15)
 
 /obj/item/reagent_containers/syringe/antiviral
-	name = "syringe (spaceacillin)"
+	name = "syringe (penicillin)"
 	desc = "Contains antiviral agents."
 	list_reagents = list(/datum/reagent/medicine/spaceacillin = 15)
 

@@ -255,8 +255,8 @@
 			patient.visible_message("<span class='nicegreen'>[patient]'s body rapidly absorbs moisture from the enviroment, taking on a more healthy appearance.")
 
 /datum/reagent/medicine/spaceacillin
-	name = "Spaceacillin"
-	description = "Spaceacillin will prevent a patient from conventionally spreading any diseases they are currently infected with. Also reduces infection in serious burns."
+	name = "Penicillin"
+	description = "Penicillin will prevent a patient from conventionally spreading any diseases they are currently infected with. Also reduces infection in serious burns."
 	color = "#f2f2f2"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	pH = 8.1

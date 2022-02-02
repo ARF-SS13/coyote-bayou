@@ -13,7 +13,7 @@ datum/chemical_reaction/rezadone
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 1, /datum/reagent/cryptobiolin = 1, /datum/reagent/copper = 1)
 
 /datum/chemical_reaction/spaceacillin
-	name = "Spaceacillin"
+	name = "Penicillin"
 	id = /datum/reagent/medicine/spaceacillin
 	results = list(/datum/reagent/medicine/spaceacillin = 2)
 	required_reagents = list(/datum/reagent/cryptobiolin = 1, /datum/reagent/medicine/epinephrine = 1)
