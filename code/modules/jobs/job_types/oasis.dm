@@ -800,8 +800,8 @@ Mayor
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "As a Detective you are a private eye who assists clients to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the valley, but for finding answers. Your life is already over, make the ending mean something."
 	supervisors = "paying clients"
 	selection_color = "#dcba97"
