@@ -1431,7 +1431,6 @@ datum/job/wasteland/f13dendoctor
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
 	H.grant_language(/datum/language/tribal)
@@ -1492,7 +1491,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
 	)
 
 //White Legs
@@ -1505,7 +1503,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/unarmed/maceglove = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
-		/obj/item/book/granter/trait/iron_fist = 1
 	)
 
 /datum/outfit/loadout/whitelegsranged
@@ -1527,8 +1524,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/whitelegs = 1,
 		/obj/item/twohanded/fireaxe = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/whitelegs = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
+		/obj/item/book/granter/crafting_recipe/tribal/whitelegs = 1
 	)
 
 //Dead Horses
@@ -1563,8 +1559,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/cultivator=1,
 		/obj/item/reagent_containers/glass/bucket/wood=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
-		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
+		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1
 	)
 
 //Sorrows
@@ -1579,8 +1574,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/gun/ballistic/bow = 1,
 		/obj/item/storage/belt/tribe_quiver = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
+		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
 /datum/outfit/loadout/sorrowsshaman
@@ -1596,8 +1590,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/warpaint_bowl = 1,
 		/obj/item/toy/crayon/spraycan = 2,
 		/obj/item/book/granter/trait/tagger = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
+		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
 //Eighties
@@ -1637,8 +1630,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
 		/obj/item/storage/belt/utility/full = 1,
-		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
+		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1
 	)
 
 //Wayfarers
@@ -1677,7 +1669,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/wayfarer = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1
 	)
 
 //Rustwalkers
@@ -1716,7 +1707,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/circular_saw = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/storage/belt/utility/full = 1,
-		/obj/item/book/granter/trait/lowsurgery = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/rustwalkers = 1
 )
 

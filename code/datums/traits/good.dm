@@ -237,13 +237,13 @@
 	if(quirk_holder)
 		quirk_holder.blood_ratio = 1
 
-/datum/quirk/machine_spirits
-	name = "Spirit Blessed"
-	desc = "You respect the teachings of the Machine Spirits."
-	value = 3
+/datum/quirk/tribal_tech
+	name = "Primitive Tech"
+	desc = "You're able to use primitive technology."
+	value = 2
 	mob_trait = TRAIT_MACHINE_SPIRITS
-	gain_text = "<span class='notice'>You have recieved the blessing of the Machine Spirits.</span>"
-	lose_text = "<span class='danger'>You've lost the  blessing of the Machine Spirits.</span>"
+	gain_text = "<span class='notice'>You are now able to use primitive technology.</span>"
+	lose_text = "<span class='danger'>You are no longer able to use primitive technology.</span>"
 	locked = TRUE
 
 /datum/quirk/night_vision

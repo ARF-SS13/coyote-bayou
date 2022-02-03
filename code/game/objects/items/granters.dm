@@ -1047,34 +1047,34 @@
 		desc = "A compendium of knowledge passed down from the elders. It looks to be in poor condition."
 
 /obj/item/book/granter/trait/selection/tribal/attack_self(mob/user)
-	var/list/choices = list("White Legs","Rustwalkers","Dead Horses","Sorrows","Eighties","Wayfarers","Other")
+	var/list/choices = list("Hit Them With Sticks","Technophilia","Pugilist","Padded Feet","Veteran Table Climber","Basic Surgery")
 	if(granted_trait == null)
 		var/choice = input("Choose a trait:") in choices
 		switch(choice)
 			if(null)
 				return 0
-			if("White Legs")
+			if("Hit Them With Sticks")
 				granted_trait = TRAIT_BIG_LEAGUES
-				traitname = "White Legs"
-				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/colt6520)
-			if("Other")
-				granted_trait = TRAIT_LIFEGIVER
-				traitname = "Other"
-			if("Rustwalkers")
+				traitname = "fighting with melee weapons"
+			if("Technophilia")
 				granted_trait = TRAIT_TECHNOPHREAK
-				traitname = "Rustwalkers"
-				crafting_recipe_types = list(/datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw)
-			if("Dead Horses")
+				traitname = "technology and crafting"
+				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/colt6520, /datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw)
+			if("Pugilist")
 				granted_trait = TRAIT_IRONFIST
-				traitname = "Dead Horses"
-			if("Sorrows")
+				traitname = "using your fists"
+			if("Padded Feet")
 				granted_trait = TRAIT_LIGHT_STEP
-				traitname = "Sorrows"
-			if("Eighties")
+				traitname = "treading carefully"
+			if("Veteran Table Climber")
 				granted_trait = TRAIT_FREERUNNING
-				traitname = "Eighties"
-			if("Wayfarers")
-				traitname = "Wayfarer"
+				traitname = "....climbing tables"
+			if("Basic Surgery")
+				granted_trait = TRAIT_SURGERY_LOW
+				traitname = "basic surgery"
+			if("Desert Affinity")
+				granted_trait = TRAIT_HARD_YARDS
+				traitname = "trekking"
 		return ..()
 
 /obj/item/book/granter/trait/selection/tribal/Initialize()
