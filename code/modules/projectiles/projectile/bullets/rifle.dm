@@ -10,7 +10,7 @@ JHP (jacketed hollow point)	=	+15% damage. AP reduced by 0.2 (not below zero). W
 SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
 P+ (overpressure)			=	extra speed 500. AP +25%
 Match						=	extra speed 200. AP +10%. Wound bonus -10%
-Civilian round				=	-10% damage for .223. AP reduced by 50% 
+Civilian round				=	-10% damage for .223. AP reduced by 50%
 */
 
 // Explanation: Two major ammo stats, AP and Damage. Bullets placed in classes. Light rounds for example balanced with each other, one more AP, one more Damage.
@@ -75,7 +75,7 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	bare_wound_bonus = -20
 
 //.308 Winchester
-/obj/item/projectile/bullet/a762/sport 
+/obj/item/projectile/bullet/a762/sport
 	name = ".308 bullet"
 	damage = -4
 
@@ -95,9 +95,9 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 
 /obj/item/projectile/bullet/a762/uraniumtipped
 	name = "7.62 uranium-tipped bullet"
-	damage = 30
-	armour_penetration = 0.2
-	irradiate = 400
+	damage = -4
+	armour_penetration = 0.18
+	irradiate = 300
 
 /////////
 // .50 //
@@ -158,7 +158,7 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	armour_penetration = 0.05
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	
+
 /obj/item/projectile/bullet/a473/incendiary
 	name = "4.73 tracer bullet"
 	damage = 15
@@ -171,7 +171,7 @@ Civilian round				=	-10% damage for .223. AP reduced by 50%
 	damage = 15
 	armour_penetration = 0.3
 	irradiate = 300
-	
+
 /obj/item/projectile/bullet/a473/dumdum
 	name = "4.73 flat-nose bullet"
 	damage = 20
