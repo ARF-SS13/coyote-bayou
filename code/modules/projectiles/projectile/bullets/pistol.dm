@@ -117,7 +117,7 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c10mm/incendiary
 	name = "10mm incendiary bullet"
-	damage = 13
+	damage = -5
 	var/fire_stacks = 1
 
 /obj/item/projectile/bullet/c10mm/incendiary/on_hit(atom/target, blocked = FALSE)

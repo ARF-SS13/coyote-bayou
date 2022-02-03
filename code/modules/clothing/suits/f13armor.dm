@@ -23,7 +23,7 @@
 	icon_state = "leather_jacket"
 	item_state = "leather_jacket"
 	desc = "A black, heavy leather jacket. Looks like it has spare pockets."
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 25)
+	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 25)
 	slowdown = 0.025 //token slowdown
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
@@ -32,7 +32,7 @@
 	icon_state = "combat_jacket"
 	item_state = "combat_jacket"
 	desc = "This heavily padded leather jacket is unusual in that it has two sleeves and bullet belts draped across it. You'll definitely make a fashion statement whenever, and wherever, you rumble."
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 15, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 30)
+	armor = list("melee" = 30, "bullet" = 20, "laser" = 20, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 30)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 
 /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
@@ -40,7 +40,7 @@
 	icon_state = "combat_coat"
 	item_state = "combat_coat"
 	desc = "A combat leather jacket, outfitted with a special armored leather coat."
-	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 35)
+	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 35)
 
 /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice
 	name = "combat body armor"
@@ -55,7 +55,7 @@
 	desc = "Separate armor parts you can wear over the clothing to get the most basic protection from the dangers of wasteland.<br>It sure is better than going into the battle without any armor at all."
 	icon_state = "armorkit"
 	item_state = "armorkit"
-	armor = list("melee" = 15, "bullet" = 35, "laser" = 30, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
+	armor = list("melee" = 20, "bullet" = 40, "laser" = 15, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 	strip_delay = 30
 	slowdown = 0.05
 
@@ -68,7 +68,7 @@
 	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
 	icon_state = "armorkit_punk"
 	item_state = "armorkit_punk"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -83,7 +83,7 @@
 	desc = "Your basic all leather apparel. Finely crafted from tanned brahmin hide."
 	icon_state = "leather_armor"
 	item_state = "leather_armor"
-	armor = list("melee" = 35, "bullet" = 20, "laser" = 10, "energy" = 25, "bomb" = 32, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 35, "wound" = 30)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 35, "energy" = 25, "bomb" = 32, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 35, "wound" = 30)
 	strip_delay = 40
 	slowdown = 0.06
 
@@ -92,7 +92,7 @@
 	icon_state = "leather_armor_2"
 	item_state = "leather_armor_2"
 	desc = "An enhanced version of the basic leather armor with extra layers of protection. Finely crafted from tanned brahmin hide."
-	armor = list("melee" = 37, "bullet" = 22, "laser" = 22, "energy" = 27, "bomb" = 35, "bio" = 0, "rad" = 15, "fire" = 40, "acid" = 35, "wound" = 35)
+	armor = list("melee" = 37, "bullet" = 22, "laser" = 37, "energy" = 27, "bomb" = 35, "bio" = 0, "rad" = 15, "fire" = 40, "acid" = 35, "wound" = 35)
 	slowdown = 0.08
 
 
@@ -1051,6 +1051,10 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "tribal"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 35, "energy" = 15, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 40)
 	slowdown = 0.05
+	
+/obj/item/clothing/suit/f13/tribal/examine(mob/user)
+	. = ..()
+	. += "This armor provides [armor.bullet]%  bullet, [armor.laser]% laser, and [armor.melee]% melee resistance."
 
 /obj/item/clothing/suit/f13/tribal/light
 	name = "light tribal armor"
@@ -1076,6 +1080,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A duster made from some combination of leather and cloth, probably torn out of an old car. The shoulders appear to have had parts of an engine either strapped or stitched onto them. Commonly worn by members of the Rustwalkers tribe."
 	icon_state = "rustwalkers_armour_light"
 	item_state = "rustwalkers_armour_light"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/f13/tribal/rustwalkers
@@ -1084,6 +1089,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	icon_state = "rustwalkers_armour"
 	item_state = "rustwalkers_armour"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	slowdown = 0.1
 	
 /obj/item/clothing/suit/f13/tribal/heavy/rustwalkers
@@ -1092,6 +1098,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	icon_state = "rustwalkers_armour_heavy"
 	item_state = "rustwalkers_armour_heavy"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	slowdown = 0.15
 
 /obj/item/clothing/suit/f13/tribal/light/whitelegs
@@ -1103,24 +1110,28 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 /obj/item/clothing/suit/f13/tribal/whitelegs
 	name = "White Legs armour"
 	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping. Commonly worn by members of the White Legs tribe."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny
 	icon_state = "white_legs_armour"
 	item_state = "white_legs_armour"
 
 /obj/item/clothing/suit/f13/tribal/heavy/whitelegs
 	name = "White Legs heavy armour"
 	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping and possibly duct tape. Commonly worn by members of the White Legs tribe."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny
 	icon_state = "white_legs_armour_heavy"
 	item_state = "white_legs_armour_heavy"
 
 /obj/item/clothing/suit/f13/tribal/light/eighties
 	name = "80s light armour"
 	desc = "A black leather jacket with the number 80 stitched onto the back. Worn by the members of the 80s tribe."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	icon_state = "80s_armour_light"
 	item_state = "80s_armour_light"
 
 /obj/item/clothing/suit/f13/tribal/eighties
 	name = "80s armour"
 	desc = "A plain, slightly cropped leather jacket with a black lining and neck brace, paired with a set of metal vambraces and a black belt of pouches. Commonly worn by the members of the 80s tribe."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	icon_state = "80s_armour"
 	item_state = "80s_armour"
 
@@ -1129,6 +1140,8 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A ballistic duster with the number 80 stitched onto the back worn over a breastplate made from a motorcycle's engine housing, with kneepads made from stirrups. Worn by the members of the 80s tribe."
 	icon_state = "80s_armour_heavy"
 	item_state = "80s_armour_heavy"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.1
 
@@ -1137,16 +1150,17 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A simple leather bandolier and gecko hide chest covering. Worn by the members of the Dead Horses tribe."
 	icon_state = "dead_horses_armour_light"
 	item_state = "dead_horses_armour_light"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.01
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	
 
 /obj/item/clothing/suit/f13/tribal/deadhorses
 	name = "Dead Horses armour"
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a pair of black leather straps. Commonly worn by the members of the Dead Horses tribe."
 	icon_state = "dead_horses_armour"
 	item_state = "dead_horses_armour"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.025
 
@@ -1155,7 +1169,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a set of black leather straps, one holding a shinpad in place. Commonly worn by the members of the Dead Horses tribe."
 	icon_state = "dead_horses_armour_heavy"
 	item_state = "dead_horses_armour_heavy"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.05
 

@@ -703,6 +703,12 @@
 	icon_state = "cowboy"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
+	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+
+/obj/item/clothing/head/f13/cowboy/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 
 /obj/item/clothing/head/f13/bandit
 	name = "bandit hat"
@@ -710,6 +716,11 @@
 	icon_state = "bandit"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
+	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+
+/obj/item/clothing/head/f13/bandit/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/gambler
 	name = "gambler hat"
@@ -717,6 +728,12 @@
 	icon_state = "gambler"
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
+	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	
+/obj/item/clothing/head/f13/gambler/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 
 /obj/item/clothing/head/helmet/f13/motorcycle
 	name = "motorcycle helmet"
@@ -727,6 +744,10 @@
 	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEHAIR
 	strip_delay = 10
+	
+/obj/item/clothing/head/helmet/f13/motorcycle/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)	
 
 /obj/item/clothing/head/helmet/f13/firefighter
 	name = "firefighter helmet"
@@ -759,6 +780,11 @@
 	item_state = "wastewar"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
+	
+/obj/item/clothing/head/helmet/f13/wastewarhat/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)	
+
 
 /obj/item/clothing/head/helmet/f13/hoodedmask
 	name = "hooded mask"
@@ -775,8 +801,12 @@
 	desc = "A cowboy hat made from brahmin hides."
 	icon_state = "brahmin_leather_cowboy_hat"
 	item_state = "brahmin_leather_cowboy_hat"
-	armor = list("tier" = 2, "energy" = 15, "bomb" = 70, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 15)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
+	
+/obj/item/clothing/head/helmet/f13/brahmincowboyhat/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat
 	name = "Rusted Cowboy Hat"
@@ -784,10 +814,16 @@
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 	flags_inv = HIDEEARS|HIDEHAIR
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+	
+/obj/item/clothing/head/helmet/f13/rustedcowboyhat/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/police
 	name = "police hat"
-	desc = "(I) The wasteland's finest."
+	desc = "The wasteland's finest."
 	icon_state = "retropolice"
 	item_state = "fedora"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -959,6 +995,10 @@
 	icon_state = "ranger_grey_hat"
 	item_state = "ranger_grey_hat"
 	flags_inv = HIDEEARS|HIDEHAIR
+	
+/obj/item/clothing/head/f13/ranger_hat/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/ranger_hat/banded
 	name = "banded cowboy hat"

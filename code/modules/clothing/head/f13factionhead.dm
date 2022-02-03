@@ -861,7 +861,7 @@
 
 
 /obj/item/clothing/head/helmet/f13/khan/pelt
-	desc = "(IV) A helmet with traditional horns, but wasteland-chique fur trimming instead of the classic leather cover. For the Khan who wants to show off their hair."
+	desc = "A helmet with traditional horns, but wasteland-chique fur trimming instead of the classic leather cover. For the Khan who wants to show off their hair."
 	icon_state = "khan_helmetpelt"
 	item_state = "khan_helmetpelt"
 
@@ -872,7 +872,7 @@
 
 /obj/item/clothing/head/helmet/f13/khan/bandana
 	name = "Great Khan bandana"
-	desc = "(IV) A bandana. Tougher than it looks. One side of the cloth is dark, the other red, so it can be reversed."
+	desc = "A bandana. Tougher than it looks. One side of the cloth is dark, the other red, so it can be reversed."
 	icon_state = "khan_bandana"
 	item_state = "khan_bandana"
 	strip_delay = 10
@@ -916,10 +916,10 @@
 
 /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	name = "Great Khan full helmet"
-	desc = "(IV) A Khan helmet modified with steel horns and a full guard comprised of red sunglass lenses and a thick metal plate to conceal the lower face."
+	desc = " A Khan helmet modified with steel horns and a full guard comprised of red sunglass lenses and a thick metal plate to conceal the lower face."
 	icon_state = "khan_fullhelmet"
 	item_state = "khan_fullhelmet"
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 45, "energy" = 25, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	strip_delay = 20

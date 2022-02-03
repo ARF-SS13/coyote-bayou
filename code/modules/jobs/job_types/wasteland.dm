@@ -1712,7 +1712,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/rustwalkers = 1,
 		/obj/item/clothing/under/f13/female/rustwalkers = 1,
 		/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
-		/obj/item/ammo_box/c38box/improvised = 2,
+		/obj/item/ammo_box/c45rev = 2,
 		/obj/item/circular_saw = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/storage/belt/utility/full = 1,

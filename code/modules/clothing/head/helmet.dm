@@ -95,10 +95,10 @@
 
 /obj/item/clothing/head/helmet/alt
 	name = "bulletproof helmet"
-	desc = "(IV*) A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
+	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "helmetalt"
 	item_state = "helmetalt"
-	armor = list("tier" = 4, "linebullet" = 50, "energy" = 35, "bomb" = 55, "bio" = 0, "rad" = 0, "fire" = 55, "acid" = 55)
+	armor = list("melee" = 25, "bullet" = 60, "laser" = 25, "energy" = 35, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 50)
 	can_flashlight = 1
 	dog_fashion = null
 
@@ -120,13 +120,13 @@
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"
-	desc = "(III*) It's a helmet specifically designed to protect against close range attacks."
+	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	item_state = "helmet"
 	toggle_message = "You pull the visor down on"
 	alt_toggle_message = "You push the visor up on"
 	can_toggle = 1
-	armor = list("tier" = 3, "linemelee" = 55, "energy" = 5, "bomb" = 5, "bio" = 2, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 60, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80, "wound" = 40)
 	flags_inv = HIDEEARS|HIDEFACE
 	strip_delay = 80
 	actions_types = list(/datum/action/item_action/toggle)
@@ -233,12 +233,12 @@
 	item_state = "roman_c"
 
 /obj/item/clothing/head/helmet/roman/legionnaire/fake
-	desc = "(I) An ancient helmet made of plastic and leather. Has a red crest on top of it."
+	desc = "An ancient helmet made of plastic and leather. Has a red crest on top of it."
 	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/helmet/gladiator
 	name = "gladiator helmet"
-	desc = "( Ave, Imperator, morituri te salutant."
+	desc = "Ave, Imperator, morituri te salutant."
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
@@ -429,10 +429,10 @@
 
 /obj/item/clothing/head/helmet/durathread
 	name = "makeshift helmet"
-	desc = "(III) A hardhat with strips of leather and durathread for additional blunt protection."
+	desc = "A hardhat with strips of leather and durathread for additional blunt protection."
 	icon_state = "durathread"
 	item_state = "durathread"
-	armor = list("tier" = 3,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
+
 
 /obj/item/clothing/head/helmet/rus_helmet
 	name = "russian helmet"
@@ -476,4 +476,3 @@
 	item_state = "armyhelmetheavy"
 	armor = list("melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.025
-
