@@ -596,8 +596,8 @@ commented out pending rework*/
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	title = "Legion Explorer"
 	flag = F13EXPLORER
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "Scout the area, secure key points, but do not ignore orders or wordlessly die some place. A good explorer helps his unit by taking initiative and helping the commander without needing micro-managment."
 	supervisors = "the Veteran Decanus and Centurion must be obeyed, and as always, respect must be given to other Decanus. You are not a officer, but you are a specialist."
 	display_order = JOB_DISPLAY_ORDER_EXPLORER
@@ -950,8 +950,8 @@ commented out pending rework*/
 /datum/job/CaesarsLegion/Legionnaire/f13campfollower	// Chainsaw, Extra materials, Blueprints
 	title = "Legion Forgemaster"
 	flag = F13CAMPFOLLOWER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "The Forgemaster makes weapons of all sorts and upgrades them, keeping order in the Forge and makes sure the camp is defended."
 	supervisors = "the Centurion."
 	display_order = JOB_DISPLAY_ORDER_CAMPFOLLOWER

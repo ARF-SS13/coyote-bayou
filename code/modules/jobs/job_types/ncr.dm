@@ -10,7 +10,7 @@ Money		Commanding Officer (LT and CAP) - "small" money bag
 			Officers and Rangers - /obj/item/storage/bag/money/small/ncrofficers
 			Rest - /obj/item/storage/bag/money/small/ncrenlisted
 Sidearm		Officers & a few specialists - 9mm pistol
-Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
+Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 			Don't use Greaseguns, Lever shotguns, Police shotguns, Berettas, Hunting knives
 */
 
@@ -520,8 +520,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 /datum/job/ncr/f13ranger
 	title = "NCR Ranger"
 	flag = F13RANGER
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "As an NCR Ranger, you are the premier special forces unit of the NCR. You are the forward observations and support the Army in it's campaigns, as well as continuing the tradition of stopping slavery in it's tracks."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
@@ -690,8 +690,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 /datum/job/ncr/f13combatengineer
 	title = "NCR Combat Engineer"
 	flag = F13COMBATENGINEER
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are a senior enlisted trooper with an engineering skill set. You work closely with your squad, taking orders from the officers. You have the authority to command troopers if there are no non-commissioned officers present."
 	supervisors = "Corporals and Above"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY)
@@ -701,7 +701,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Trench tool, Limited blueprints
 		/datum/outfit/loadout/combatengineerbuilder, // M1/n carbine, X4 explosive, Extra materials
-		/datum/outfit/loadout/combatengineertrapper, // Rockwell SMG, Minelaying, Explosive Crafting
+		/datum/outfit/loadout/combatengineertrapper, // Grease Gun, Minelaying, Explosive Crafting
 		/datum/outfit/loadout/combatengineerflamethrower, // Flamer, M1/n carbine
 		)
 
@@ -764,9 +764,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	name = "Minelayer"
 	head = /obj/item/clothing/head/f13/ncr
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
-	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
+	suit_store = /obj/item/gun/ballistic/automatic/smg/greasegun
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
+		/obj/item/ammo_box/magazine/greasegun = 2,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		/obj/item/book/granter/trait/explosives = 1
 		)
@@ -805,7 +805,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/armband/black
 	glasses	= /obj/item/clothing/glasses/sunglasses/big
 	head = /obj/item/clothing/head/f13/ncr/steelpot_mp
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	backpack = /obj/item/storage/backpack/satchel/trekker
 	suit_store = /obj/item/melee/classic_baton/militarypolice
@@ -828,8 +828,8 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 /datum/job/ncr/f13combatmedic
 	title = "NCR Combat Medic"
 	flag = F13COMBATMEDIC
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are a senior enlisted with a medical skill set. You work closely with your squad, taking orders from your officers. You have the authority to command troopers if there are no non-commissioned officers present."
 	supervisors = "Corporals and Above"
 	selection_color = "#fff5cc"
@@ -1104,7 +1104,7 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
-/datum/outfit/job/ncr/f13logisticsofficer		// Rockwell, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
+/datum/outfit/job/ncr/f13logisticsofficer		// Grease Gun, 9mm sidearm, Survival knife, C-4 bomb, Extra materials, Full blueprints
 	name = "NCR Logistics Officer"
 	jobtype	= /datum/job/ncr/f13logisticsofficer
 	id = /obj/item/card/id/dogtag/ncrlieutenant
@@ -1116,9 +1116,9 @@ Weapons		Service Rifle, Rockwell, 9mm pistol, all good.
 	glasses	= /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
 	gloves = /obj/item/clothing/gloves/color/yellow
-	suit_store = /obj/item/gun/ballistic/automatic/smg/rockwell
+	suit_store = /obj/item/gun/ballistic/automatic/smg/greasegun
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/uzim9mm/rockwell = 2,
+		/obj/item/ammo_box/magazine/greasegun = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mm = 2,
 		/obj/item/grenade/plastic/c4 = 1,
