@@ -850,6 +850,28 @@
 	required_reagents = list(/datum/reagent/cellulose = 1)
 	required_temp = 512
 
+
+/datum/chemical_reaction/celugel
+	name = "Cellulose Plasticization"
+	id = /datum/reagent/celugel
+	required_catalysts = list(/datum/reagent/lithium = 5, /datum/reagent/chlorine = 5)
+	results = list(/datum/reagent/celugel = 3)
+	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/fermi/acidic_buffer = 0.5, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical
+	OptimalTempMin 		= 430
+	OptimalTempMax		= 520
+	ExplodeTemp			= 9999
+	OptimalpHMin		= 3
+	OptimalpHMax		= 6
+	ReactpHLim			= 2
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.5
+	ThermicConstant		= 4
+	HIonRelease 		= 0.1
+	RateUpLim 			= 5
+	FermiChem 			= TRUE
+	FermiExplode 		= FALSE
+
+
 /datum/chemical_reaction/nutracid_reaction
 	name = "Nutracid Nutriment Reaction"
 	id = "nutracid"

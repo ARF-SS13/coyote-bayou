@@ -910,7 +910,7 @@
 /datum/reagent/aslimetoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(method != TOUCH)
 		L.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
-*/ 
+*/
 
 /datum/reagent/gluttonytoxin
 	name = "Gluttony's Blessing"
@@ -2594,6 +2594,11 @@ datum/reagent/eldritch
 	color = "#E6E6DA"
 	taste_mult = 0
 
+/datum/reagent/celugel
+	name = "Plasticized Cellulose"
+	description = "A plastic formed from esterized cellulose fibers. Organic!"
+	reagent_state = SOLID
+	color = "#E6E6DA"
 
 /datum/reagent/hairball
 	name = "Hairball"

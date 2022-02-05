@@ -3,7 +3,7 @@
 	desc = "These seeds grow into a mutfruit sapling."
 	icon_state = "seed-mutfruit"
 	species = "mutfruit"
-	plantname = "mutfruit sapling"
+	plantname = "Mutfruit Sapling"
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "mutfruit-grow"
 	icon_dead = "mutfruit-dead"
@@ -14,6 +14,7 @@
 	growthstages = 3
 	production = 5
 	maturation = 5
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/radium = 0.15)
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	seed = /obj/item/seeds/mutfruit
@@ -21,13 +22,5 @@
 	desc = "Mutfruit provides both hydration and sustenance, but the mutated plant also carries small amounts of radiation."
 	icon_state = "mutfruit"
 	filling_color = "#FF6347"
-	distill_reagent = /datum/reagent/consumable/purplecider
+	distill_reagent = /datum/reagent/consumable/ethanol/purplecider
 	juice_results = list(/datum/reagent/consumable/mutjuice = 0)
-
-/obj/item/reagent_containers/food/snacks/grown/mutfruit/add_juice()
-	if(..())
-		reagents.add_reagent(/datum/reagent/consumable/nutriment, 3 + round((seed.potency / 20), 1))
-		reagents.add_reagent(/datum/reagent/radium, 1 + round((seed.potency / 20), 1))
-		bitesize = 1 + round(reagents.total_volume / 3, 1)
-
-/*HRP*/

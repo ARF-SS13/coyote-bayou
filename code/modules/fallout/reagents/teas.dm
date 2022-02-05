@@ -46,28 +46,7 @@
 	..()
 	. = TRUE
 
-/datum/reagent/consumable/tea/broctea
-	name = "Broc Tea"
-	description = "A soothing herbal rememedy steeped from the Broc Flower. Increases the clearance and flow of airways."
-	color = "#FF6347"
-	nutriment_factor = 0
-	taste_description = "bitterness"
-	glass_icon_state = "tea"
-	glass_name = "Broc Tea"
-	glass_desc = "A soothing herbal rememedy steeped from the Broc Flower. Increases the clearance and flow of airways."
 
-/datum/reagent/consumable/tea/broctea/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.nutrition = max(M.nutrition - 3, 0)
-	M.dizziness = max(0,M.dizziness-2)
-	M.drowsyness = max(0,M.drowsyness-1)
-	M.jitteriness = max(0,M.jitteriness-3)
-	M.AdjustSleeping(-20, FALSE)
-	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1, 0)
-	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
 
 /datum/reagent/consumable/tea/coyotetea
 	name = "Coyote Tea"
@@ -76,34 +55,6 @@
 	nutriment_factor = 0
 	taste_description = "smoke"
 	glass_icon_state = "coyotetea"
-	glass_name = "Coyote Tea"
-	glass_desc = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
-
-/datum/reagent/consumable/tea/coyotetea/on_mob_life(mob/living/carbon/M)
-	if(prob(10))
-		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
-	M.AdjustStun(-40, 0)
-	M.AdjustKnockdown(-40, 0)
-	M.AdjustUnconscious(-40, 0)
-	M.adjustStaminaLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.dizziness = max(0,M.dizziness-2)
-	M.drowsyness = max(0,M.drowsyness-1)
-	M.jitteriness = max(0,M.jitteriness-3)
-	M.AdjustSleeping(-20, FALSE)
-	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1, 0)
-	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	..()
-	. = TRUE
-
-/datum/reagent/consumable/tea/coyotetea
-	name = "Coyote Tea"
-	description = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
-	color = "#008000"
-	nutriment_factor = 0
-	taste_description = "smoke"
-	glass_icon_state = "chocolateglass"
 	glass_name = "Coyote Tea"
 	glass_desc = "A smokey herbal rememedy steeped from coyote tobacco stems. Natural caffeines keep the drinker alert and awake while numbing the senses."
 
@@ -158,13 +109,13 @@
 
 /datum/reagent/consumable/tea/pricklytea
 	name = "Prickly Tea"
-	description = "A sweet and fruitfel rememedy steeped from barrel cactus fruit. Keeps you on edge."
+	description = "A sweet and fruity rememedy steeped from prickly pear fruit. Keeps you on edge."
 	color = "#FF6347"
 	nutriment_factor = 0
 	taste_description = "sweetness"
 	glass_icon_state = "cafe_latte"
 	glass_name = "Prickly Tea"
-	glass_desc = "A sour and dry rememedy steeped from barrel cactus fruit. Keeps you on edge."
+	glass_desc = "A sweet and fruity rememedy steeped from prickly pear fruit. Keeps you on edge."
 
 /datum/reagent/consumable/tea/pricklytea/on_mob_life(mob/living/carbon/M)
 	if(prob(33))

@@ -15,7 +15,7 @@
 	icon_grow = "coyote-grow"
 	icon_dead = "coyote-dead"
 	icon_harvest = "coyote-harvest"
-	reagents_add = list(/datum/reagent/drug/nicotine = 0.03, /datum/reagent/consumable/nutriment = 0.03)
+	reagents_add = list(/datum/reagent/drug/nicotine = 0.1,  /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/coyotetobacco
 	seed = /obj/item/seeds/coyotetobacco
@@ -23,5 +23,5 @@
 	desc = "This tobacco like plant is commonly used by tribals for a great variety of medicinal and ceremonial purposes."
 	icon_state = "Coyote Tobacco"
 	filling_color = "#008000"
-	juice_results = list(/datum/reagent/consumable/coyotetea = 0)
+	juice_results = list(/datum/reagent/consumable/coyotejuice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/deathroach

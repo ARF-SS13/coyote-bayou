@@ -382,17 +382,97 @@
 
 /datum/reagent/consumable/brocjuice
 	name = "Broc Flower Juice"
-	description = "The juice of a ground-up broc flower."
+	description = "The juice of a ground-up broc flower. Heals mild hypoxia."
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "flowers"
 
+/datum/reagent/consumable/brocjuice/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
 /datum/reagent/consumable/xanderjuice
 	name = "Xander Root Juice"
-	description = "Ground up xander root, mashed into juicy pulp."
+	description = "Ground up xander root, mashed into juicy pulp. Stimulates blood production."
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "dirt"
+
+/datum/reagent/consumable/xanderjuice/on_mob_life(mob/living/carbon/M)
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 1)
+	..()
+
+/datum/reagent/consumable/agavejuice
+	name = "Agave Leaf Juice"
+	description = "Ground up agave leaf, mashed into juicy pulp. Heals minor burns."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#BAE3B4"
+	taste_description = "plants"
+
+/datum/reagent/consumable/agavejuice/on_mob_life(mob/living/carbon/M)
+	M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
+/datum/reagent/consumable/ferajuice
+	name = "Barrel Fruit Juice"
+	description = "Squeezed barrelfruit juice. Heals damage caused by poisons and venoms."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#E8E67E"
+	taste_description = "bitter"
+
+/datum/reagent/consumable/ferajuice/on_mob_life(mob/living/carbon/M)
+	if(M.health > 20)
+		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
+/datum/reagent/consumable/daturajuice
+	name = "Datura Juice"
+	description = "Ground up bits of the datura plant. Mildly hallucinogenic."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#ACDFCE"
+	taste_description = "bitter leaves"
+
+/datum/reagent/consumable/daturajuice/on_mob_life(mob/living/carbon/M)
+	M.set_drugginess(5)
+	M.hallucination += 2
+	..()
+
+/datum/reagent/consumable/coyotejuice
+	name = "Coyote Leaf Juice"
+	description = "Juiced coyote tobacco leaves. Stimulates the nervous system."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#168B64"
+	taste_description = "leaves"
+
+/datum/reagent/consumable/coyotejuice/on_mob_life(mob/living/carbon/M)
+	if(prob(10))
+		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
+		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+	M.AdjustStun(-4, 0)
+	M.AdjustKnockdown(-4, 0)
+	M.AdjustUnconscious(-4, 0)
+	..()
+
+/datum/reagent/consumable/cavefungusjuice
+	name = "Cave Fungus Juice"
+	description = "Juiced cave fungus fruiting bodies."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#274E13"
+	taste_description = "nuts"
+
+/datum/reagent/consumable/cavefungusjuice/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	..()
+
+/datum/reagent/consumable/tato_juice
+	name = "Tato Juice"
+	description = "Juiced tatos."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#274E13"
+	taste_description = "tato"
+
+
 
 /datum/reagent/consumable/blackpepper
 	name = "Black Pepper"
@@ -889,4 +969,3 @@
 	taste_mult = 2
 	taste_description = "fizzy sweetness"
 	value = REAGENT_VALUE_COMMON
-

@@ -70,3 +70,75 @@
 	results = list(/datum/reagent/moonsugar = 1, /datum/reagent/medicine/morphine = 2.5)
 	required_temp = 315 //a little above normal body temperature
 	required_reagents = list(/datum/reagent/drug/skooma = 1)
+
+/datum/chemical_reaction/jet
+	name = "Jet"
+	id = /datum/reagent/drug/jet
+	results = list(/datum/reagent/drug/jet = 3)
+	required_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
+	OptimalTempMin 		= 600
+	OptimalTempMax		= 675
+	ExplodeTemp			= 700
+	OptimalpHMin		= 8
+	OptimalpHMax		= 10
+	ReactpHLim			= 2
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= -6
+	HIonRelease 		= -0.5
+	RateUpLim 			= 5
+	FermiChem 			= TRUE
+
+/datum/chemical_reaction/turbo
+	name = "Turbo"
+	id = /datum/reagent/drug/turbo
+	results = list(/datum/reagent/drug/turbo = 2)
+	required_reagents = list(/datum/reagent/consumable/ferajuice = 3, /datum/reagent/consumable/agavejuice = 3, /datum/reagent/consumable/ethanol = 1)
+	OptimalTempMin 		= 410
+	OptimalTempMax		= 525
+	ExplodeTemp			= 585
+	OptimalpHMin		= 4
+	OptimalpHMax		= 7
+	ReactpHLim			= 2
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 8
+	HIonRelease 		= 0.5
+	RateUpLim 			= 5
+	FermiChem 			= TRUE
+
+/datum/chemical_reaction/psycho
+	name = "Psycho"
+	id = /datum/reagent/drug/psycho
+	results = list(/datum/reagent/drug/psycho = 2)
+	required_reagents = list(/datum/reagent/consumable/ferajuice = 3, /datum/reagent/consumable/cavefungusjuice = 3, /datum/reagent/consumable/nuka_cola = 1)
+	OptimalTempMin 		= 273
+	OptimalTempMax		= 303
+	ExplodeTemp			= 323
+	OptimalpHMin		= 3
+	OptimalpHMax		= 5
+	ReactpHLim			= 1
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 7
+	HIonRelease 		= 0.5
+	RateUpLim 			= 5
+	FermiChem 			= TRUE
+
+/datum/chemical_reaction/buffout
+	name = "Buffout"
+	id = /datum/reagent/drug/buffout
+	results = list(/datum/reagent/drug/buffout = 2)
+	required_reagents = list(/datum/reagent/consumable/yuccajuice = 3, /datum/reagent/consumable/mutjuice = 3, /datum/reagent/consumable/ethanol/buffalo = 3, /datum/reagent/consumable/nuka_cola = 3, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1)
+	OptimalTempMin 		= 165
+	OptimalTempMax		= 215
+	ExplodeTemp			= 223
+	OptimalpHMin		= 8
+	OptimalpHMax		= 10
+	ReactpHLim			= 1
+	CurveSharpT 		= 5
+	CurveSharppH 		= 0.7
+	ThermicConstant		= 15
+	HIonRelease 		= 0.5
+	RateUpLim 			= 1
+	FermiChem 			= TRUE

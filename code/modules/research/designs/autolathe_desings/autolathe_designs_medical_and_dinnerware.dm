@@ -172,6 +172,14 @@
 	category = list("initial", "Medical","Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/xl_beaker
+	name = "Extra-Large Beaker"
+	id = "xl_beaker"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 2500, /datum/material/plastic = 3000)
+	build_path = /obj/item/reagent_containers/glass/beaker/plastic
+	category = list("initial", "Medical")
+
 /datum/design/healthanalyzer
 	name = "Health Analyzer"
 	id = "healthanalyzer"

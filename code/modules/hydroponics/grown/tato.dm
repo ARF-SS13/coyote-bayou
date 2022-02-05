@@ -6,8 +6,8 @@
 	plantname = "Tato Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/tato
 	lifespan = 30
-	maturation = 10
-	production = 1
+	maturation = 7
+	production = 3
 	yield = 4
 	growthstages = 4
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
@@ -15,7 +15,7 @@
 	icon_dead = "tato-dead"
 	icon_harvest = "tato-harvest"
 	genes = list(/datum/plant_gene/trait/battery, /datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list( /datum/reagent/consumable/nutriment/vitamin = 0.04,  /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/tato
 	seed = /obj/item/seeds/tato
@@ -25,7 +25,7 @@
 	filling_color = "#E9967A"
 	bitesize = 100
 	foodtype = VEGETABLES
-	juice_results = list(/datum/reagent/tato = 0)
+	juice_results = list(/datum/reagent/consumable/tato_juice = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/tatovodka
 
 /obj/item/reagent_containers/food/snacks/grown/tato/wedges

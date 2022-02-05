@@ -7,8 +7,8 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/pinyon
 	lifespan = 80
 	endurance = 50
-	maturation = 15
-	production = 1
+	maturation = 9
+	production = 6
 	yield = 5
 	potency = 50
 	growthstages = 4
@@ -17,7 +17,7 @@
 	icon_dead = "pinyon-dead"
 	icon_harvest = "pinyon-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list(/datum/reagent/consumable/nutriment = 0.04)
+	reagents_add = list( /datum/reagent/consumable/nutriment = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/pinyon
 	seed = /obj/item/seeds/pinyon

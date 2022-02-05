@@ -152,7 +152,7 @@ datum/chemical_reaction/rezadone
 	name = "Pentetic Jelly"
 	id = /datum/reagent/medicine/pen_acid/pen_jelly
 	results = list(/datum/reagent/medicine/pen_acid/pen_jelly = 2)
-	required_reagents = list(/datum/reagent/medicine/pen_acid = 1, /datum/reagent/toxin/slimejelly = 1)
+	required_reagents = list(/datum/reagent/medicine/pen_acid = 1, /datum/reagent/celugel = 1)
 
 /datum/chemical_reaction/sal_acid
 	name = "Salicyclic Acid"
@@ -260,7 +260,7 @@ datum/chemical_reaction/rezadone
 	name = "Pyroxadone"
 	id = /datum/reagent/medicine/pyroxadone
 	results = list(/datum/reagent/medicine/pyroxadone = 2)
-	required_reagents = list(/datum/reagent/medicine/cryoxadone = 1, /datum/reagent/toxin/slimejelly = 1)
+	required_reagents = list(/datum/reagent/medicine/cryoxadone = 1, /datum/reagent/celugel = 1)
 
 /datum/chemical_reaction/clonexadone
 	name = "Clonexadone"
@@ -303,7 +303,7 @@ datum/chemical_reaction/rezadone
 	name = "Regenerative Jelly"
 	id = /datum/reagent/medicine/regen_jelly
 	results = list(/datum/reagent/medicine/regen_jelly = 2)
-	required_reagents = list(/datum/reagent/medicine/tricordrazine = 1, /datum/reagent/toxin/slimejelly = 1)
+	required_reagents = list(/datum/reagent/medicine/tricordrazine = 1, /datum/reagent/celugel = 1)
 
 /datum/chemical_reaction/jelly_convert
 	name = "Blood Jelly Conversion"
@@ -391,7 +391,7 @@ datum/chemical_reaction/rezadone
 /datum/chemical_reaction/stimpak2
 	name = "Imitation Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpakimitation
-	results = list(/datum/reagent/medicine/stimpakimitation = 1)
+	results = list(/datum/reagent/medicine/stimpakimitation = 3)
 	required_reagents = list(/datum/reagent/consumable/brocjuice = 3, /datum/reagent/consumable/xanderjuice = 3)
 	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
 	OptimalTempMax		= 650 // Upper end for above
@@ -406,6 +406,43 @@ datum/chemical_reaction/rezadone
 	RateUpLim 			= 12 //Optimal/max rate possible if all conditions are perfect
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
+
+/datum/chemical_reaction/superstimpak
+	name = "Super Stimpak Fluid"
+	id = /datum/reagent/medicine/super_stimpak
+	results = list(/datum/reagent/medicine/super_stimpak = 2)
+	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/drug/aranesp = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1, /datum/reagent/medicine/salglu_solution = 1, /datum/reagent/medicine/pen_acid/pen_jelly = 1, /datum/reagent/medicine/regen_jelly = 1, /datum/reagent/medicine/atropine = 1)
+	OptimalTempMin 		= 65
+	OptimalTempMax		= 95
+	ExplodeTemp			= 100
+	OptimalpHMin		= 0.5
+	OptimalpHMax		= 3
+	ReactpHLim			= 1
+	CurveSharpT 		= 1 //flat tcurve
+	CurveSharppH 		= 0.5
+	ThermicConstant		= 5
+	HIonRelease 		= 0.75
+	RateUpLim 			= 50 //this seems quite high but 1. runaway thermals 2. it's very slow since it's 100K
+	FermiChem 			= TRUE
+	FermiExplode 		= FALSE
+
+/datum/chemical_reaction/medx
+	name = "Med-X"
+	id = /datum/reagent/medicine/medx
+	results = list(/datum/reagent/medicine/medx = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/pungajuice = 1, /datum/reagent/consumable/daturajuice = 1, /datum/reagent/consumable/coyotejuice = 1, /datum/reagent/medicine/stimpakimitation = 1)
+	OptimalTempMin 		= 800
+	OptimalTempMax		= 821
+	ExplodeTemp			= 824
+	OptimalpHMin		= 11
+	OptimalpHMax		= 14
+	ReactpHLim			= 1
+	CurveSharpT 		= 10
+	CurveSharppH 		= 0.5
+	ThermicConstant		= 8
+	HIonRelease 		= -0.5
+	RateUpLim 			= 40
+	FermiChem 			= TRUE
 
 
 /datum/chemical_reaction/mentats

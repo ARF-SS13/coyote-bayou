@@ -417,8 +417,8 @@
 	name = "Energized Jelly"
 	id = /datum/reagent/teslium/energized_jelly
 	results = list(/datum/reagent/teslium/energized_jelly = 2)
-	required_reagents = list(/datum/reagent/toxin/slimejelly = 1, /datum/reagent/teslium = 1)
-	mix_message = "<span class='danger'>The slime jelly starts glowing intermittently.</span>"
+	required_reagents = list(/datum/reagent/celugel = 1, /datum/reagent/teslium = 1)
+	mix_message = "<span class='danger'>The cellulose gel starts glowing intermittently.</span>"
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning
 	name = "Teslium Destabilization"
