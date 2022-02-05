@@ -454,6 +454,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
 		/datum/outfit/loadout/vrlite, // Brush Gun, Sequoia
 		/datum/outfit/loadout/vrcqc, // 2 x .45 Long colt revolvers
+		/datum/outfit/loadout/vrshotgunner //Riot shotty, Sequoia
 		)
 
 /datum/outfit/job/ncr/f13vetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -500,6 +501,16 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570 = 3,
+		/obj/item/gun/ballistic/revolver/sequoia = 1,
+		/obj/item/ammo_box/c4570 = 1,
+		)
+
+/datum/outfit/loadout/vrshotgunner
+	name = "Veteran Ranger Shotgunner"
+	suit_store = /obj/item/gun/ballistic/automatic/shotgun/riot
+	backpack_contents = list(
+		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570 = 1,
 		)
