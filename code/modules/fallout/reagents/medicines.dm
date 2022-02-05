@@ -41,11 +41,14 @@
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
 		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
 		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustToxLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
+	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
+		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjust_nutrition(-6)
+		M.overeatduration = 0
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
@@ -105,11 +108,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
 		M.adjustBruteLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
 		M.adjustFireLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustStaminaLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
+	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
+		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjust_nutrition(-7)
+		M.overeatduration = 0
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
@@ -233,6 +239,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -5 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
+	M.blur_eyes(5)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
@@ -300,12 +307,16 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 // HEALING POULTICE REAGENT
 
 /datum/reagent/medicine/healing_powder/poultice
-	name = "ealing poultice"
+	name = "Healing poultice"
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -2
 	heal_factor_perk = -4
+
+/datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
+	M.blur_eyes(10)
+	..()
 
 // ---------------------------
 // RAD-X REAGENT
