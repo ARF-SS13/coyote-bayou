@@ -578,9 +578,9 @@
 	weapon_weight = WEAPON_MEDIUM
 	spread = 0 //low-recoil + forward grip
 	fire_delay = 3
-	
-	
-	
+
+
+
 
 ////////////////////
 //SEMI-AUTO RIFLES//
@@ -669,7 +669,7 @@
 	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	slowdown = 0.45
-	fire_delay = 3.5
+	fire_delay = 3
 	burst_size = 1
 	spread = 1
 	extra_damage = 25
@@ -906,7 +906,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 
 
-//DKS 501 sniper rifle				Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +1, 45dmg 
+//DKS 501 sniper rifle				Keywords: .308, Semi-auto, 7 round magazine, Scoped, Extra speed +500, Fire delay +1, 45dmg
 /obj/item/gun/ballistic/automatic/marksman/sniper
 	name = "sniper rifle"
 	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
@@ -1107,8 +1107,8 @@
 	flight_y_offset = 21
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
-	
-/obj/item/gun/ballistic/automatic/assault_carbine/worn	
+
+/obj/item/gun/ballistic/automatic/assault_carbine/worn
 	name = "worn assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces. This one is beat-up and falling apart."
 	icon_state = "assault_carbine"
