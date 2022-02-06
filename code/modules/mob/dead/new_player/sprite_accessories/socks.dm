@@ -114,11 +114,13 @@
 /datum/sprite_accessory/underwear/socks/stockings_orange
 	name = "Stockings - Orange"
 	icon_state = "stockings_orange"
+*/
 
 /datum/sprite_accessory/underwear/socks/stockings_programmer
 	name = "Stockings - Programmer"
 	icon_state = "stockings_lpink"
 
+/*
 /datum/sprite_accessory/underwear/socks/stockings_purple
 	name = "Stockings - Purple"
 	icon_state = "stockings_purple"
@@ -156,6 +158,8 @@
 	name = "Thigh-high - Freedom"
 	icon_state = "assblastusa_thigh"
 
+*/
+
 /datum/sprite_accessory/underwear/socks/rainbow_thigh
 	name = "Thigh-high - Rainbow"
 	icon_state = "rainbow_thigh"
@@ -172,7 +176,7 @@
 	name = "Thigh-high - Striped"
 	icon_state = "striped_thigh"
 	has_color = TRUE
-*/
+
 
 /datum/sprite_accessory/underwear/socks/thin_thigh
 	name = "Thigh-high - Thin"
