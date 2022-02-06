@@ -180,6 +180,15 @@
 	build_path = /obj/item/reagent_containers/glass/beaker/plastic
 	category = list("initial", "Medical")
 
+/datum/design/blood_bag_s
+	name = "Empty Small Blood Bag"
+	desc = "A small sterilized plastic bag for blood."
+	id = "blood_bag_s"
+	build_path = /obj/item/reagent_containers/blood/small
+	build_type = AUTOLATHE
+	materials = list(/datum/material/glass = 1500, /datum/material/plastic = 3500)
+	category = list("initial", "Medical")
+
 /datum/design/healthanalyzer
 	name = "Health Analyzer"
 	id = "healthanalyzer"

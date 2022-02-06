@@ -155,3 +155,10 @@
 	labelled = 1
 	blood_type = null
 	list_reagents = list(/datum/reagent/medicine/radaway = 200)
+
+
+/obj/item/reagent_containers/blood/small
+	name = "small blood pack"
+	volume = 150 //same as plasbucket
+	w_class = WEIGHT_CLASS_SMALL
+	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
