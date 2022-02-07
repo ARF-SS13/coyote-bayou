@@ -209,12 +209,7 @@
 	max_integrity = 450
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/melee))
-		if(cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
-			cooldown = world.time
-	else if(istype(W, repair_material))
+	if(istype(W, repair_material))
 		if(obj_integrity >= max_integrity)
 			to_chat(user, "<span class='warning'>[src] is already in perfect condition.</span>")
 		else
@@ -222,6 +217,11 @@
 			S.use(1)
 			obj_integrity = max_integrity
 			to_chat(user, "<span class='notice'>You repair [src] with [S].</span>")
+	else if(istype(W, /obj/item/melee))
+		if(cooldown < world.time - 25)
+			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
+			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
+			cooldown = world.time
 	else
 		return ..()
 
@@ -249,17 +249,6 @@
 		return FALSE
 	take_damage(damage)
 	return ..()
-
-/obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item))
-		if(cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
-			cooldown = world.time
-	else
-		return ..()
-
-
 
 //Bulletproof riot shield
 obj/item/shield/riot/bullet_proof
