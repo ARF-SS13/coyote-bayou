@@ -232,6 +232,7 @@ GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
 	/obj/item/ammo_box/a308,
 	/obj/item/ammo_box/c4570,
 	/obj/item/ammo_box/a50MG,
+	/obj/item/ammo_box/c45rev,
 	/obj/item/gun/energy/laser/solar,
 	/obj/item/gun/energy/laser/pistol,
 	/obj/item/gun/energy/laser/plasma/pistol,

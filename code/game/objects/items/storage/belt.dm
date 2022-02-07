@@ -894,6 +894,33 @@
 /obj/item/storage/belt/sabre/PopulateContents()
 	new starting_sword(src)
 
+/obj/item/storage/belt/sabre/heavy
+	name = "heavy-duty sheath"
+	desc = "A rugged set of leather straps and metal tips to comfortably carry a large variety of blades (and even blunt objects) on your side."
+	icon_state = "sheath"
+	item_state = "sheath"
+	w_class = WEIGHT_CLASS_BULKY
+	content_overlays = TRUE
+	onmob_overlays = TRUE
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	fitting_swords = list(/obj/item/melee/smith/shortsword,
+	/obj/item/melee/smith/wakizashi, 
+	/obj/item/melee/smith/twohand/broadsword, 
+	/obj/item/melee/smith/twohand/zweihander, 
+	/obj/item/melee/smith/twohand/katana, 
+	/obj/item/melee/smith/sabre,
+	/obj/item/melee/smith/cogheadclub, 
+	/obj/item/melee/onehanded/machete,
+	/obj/item/melee/onehanded/club,
+	/obj/item/melee/classic_baton,
+	/obj/item/twohanded/fireaxe,
+	/obj/item/twohanded/baseball,
+	/obj/item/twohanded/sledgehammer,
+	/obj/item/melee/transforming/energy/axe/protonaxe,
+	/obj/item/melee/powered/ripper)
+	starting_sword = null
+	
+
 /obj/item/storage/belt/sabre/rapier
 	name = "rapier sheath"
 	desc = "A sinister, thin sheath, suitable for a rapier."
