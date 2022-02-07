@@ -21,6 +21,7 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
+	M.adjust_nutrition(-6)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -47,7 +48,6 @@
 		. = TRUE
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjust_nutrition(-6)
 		M.overeatduration = 0
 	..()
 
@@ -88,6 +88,7 @@
 	addiction_threshold = 16
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	M.adjust_nutrition(-7)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -114,7 +115,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		. = TRUE
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjust_nutrition(-7)
 		M.overeatduration = 0
 	..()
 
@@ -239,7 +239,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -5 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
-	M.blur_eyes(5)
+	M.set_blurriness(7)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
@@ -276,7 +276,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/heal_factor_perk = -2.5 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	M.blur_eyes(5)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
@@ -316,7 +315,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	heal_factor_perk = -4
 
 /datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
-	M.blur_eyes(10)
+	M.set_blurriness(5)
 	..()
 
 // ---------------------------

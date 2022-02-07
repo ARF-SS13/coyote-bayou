@@ -278,7 +278,7 @@
 	status_effect_type = /datum/status_effect/wound/burn/severe
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
 	infestation_rate = 0.05 // appx 13 minutes to reach sepsis without any treatment
-	flesh_damage = 12.5
+	flesh_damage = 10.5
 	scar_keyword = "burnsevere"
 
 /datum/wound/burn/critical
