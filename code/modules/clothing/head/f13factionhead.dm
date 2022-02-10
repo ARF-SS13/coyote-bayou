@@ -302,6 +302,11 @@
 	icon_state = "legion-vex-alt"
 	item_state = "legion-vex-alt"
 
+/obj/item/clothing/head/helmet/f13/legion/vet/nightvexil
+	name = "legion nightstalker vexillarius helmet"
+	desc = "This helmet is decorated with the pelt of a nightstalker."
+	icon_state = "legion-vex-night"
+	item_state = "legion-vex-night"
 
 /obj/item/clothing/head/helmet/f13/legion/venator
 	name = "legion venator hood"

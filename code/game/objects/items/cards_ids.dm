@@ -1051,12 +1051,12 @@
 	item_state = "card-id_leg"
 	assignment = "prime medallion"
 
-/obj/item/card/id/dogtag/legslavemaster
-	name = "slavemaster medallion"
-	desc = "A marked silver disc stamped with the Legion's Bull insignia and a whip. Worn by legionnaires on camp duty."
+/obj/item/card/id/dogtag/legimmune
+	name = "immune medallion"
+	desc = "A marked silver disc stamped with the Legion's Bull insignia. Worn by legionnaires on camp duty."
 	icon_state = "legionmedallionprime"
 	item_state = "card-id_leg"
-	assignment = "slavemaster medallion"
+	assignment = "immune medallion"
 
 /obj/item/card/id/dogtag/legveteran
 	name = "veteran medallion"

@@ -164,7 +164,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Prime Legionnaire",
 	"Recruit Legionnaire",
 	"Legion Forgemaster",
-	"Legion Slavemaster",
+	"Legion Immune",
 	"Legion Auxilia",
 	"Legion Slave",
 	"Legion Venator",

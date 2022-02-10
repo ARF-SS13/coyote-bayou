@@ -587,9 +587,8 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
-		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
-
 
 //EXPLORER
 
@@ -901,48 +900,39 @@ commented out pending rework*/
 ////Support Roles ////
 //////////////////////
 
-// SLAVEMASTER  Kind off duty, camp defender, making sure slaves and prisoners are in order.
+// Immunes are mostly an off-duty role meant to attend to the camp itself and the slaves or prisoners within.
 
-/datum/job/CaesarsLegion/Legionnaire/f13slavemaster
-	title = "Legion Slavemaster"
-	flag = F13SLAVEMASTER
-	total_positions = 1
+/datum/job/CaesarsLegion/Legionnaire/f13immune
+	title = "Legion Immune"
+	flag = F13IMMUNE
+	total_positions = 5
 	spawn_positions = 1
-	description = " The Slavemaster is a legionnaire temporarily assigned to keeping slaves and prisoners in check."
+	description = " An Immune is a legionnaire temporarily assigned to keeping the camp in order, according to their tasking on any given week."
 	supervisors = "the Centurion."
-	display_order = JOB_DISPLAY_ORDER_SLAVEMASTER
-	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster
+	display_order = JOB_DISPLAY_ORDER_IMMUNE
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13immune
 	exp_requirements = 300
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster
-	name = "Slavemaster"
-	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13slavemaster
-	id = /obj/item/card/id/dogtag/legslavemaster
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13immune
+	name = "Immune"
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13immune
+	id = /obj/item/card/id/dogtag/legimmune
 	mask = /obj/item/clothing/mask/bandana/legion/camp
 	uniform = /obj/item/clothing/under/f13/legskirt
-	suit = /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
-	head = /obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
 	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/roman
-	r_pocket = /obj/item/restraints/handcuffs
+	shoes = /obj/item/clothing/shoes/f13/military/leather
 	l_pocket = /obj/item/flashlight/lantern
 	suit_store = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/legenlisted = 1,
-		/obj/item/melee/onehanded/machete = 1,
-		/obj/item/ammo_box/shotgun/bean = 1,
-		/obj/item/melee/onehanded/slavewhip = 1,
-		/obj/item/razor = 1,
-		/obj/item/restraints/legcuffs/bola = 1,
-		/obj/item/electropack/shockcollar/explosive = 1,
-		/obj/item/warpaint_bowl
+		/obj/item/melee/onehanded/machete/forgedmachete = 1,
+		/obj/item/reagent_containers/pill/patch/healingpowder = 2
 		)
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13immune/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 
 // FORGE MASTER

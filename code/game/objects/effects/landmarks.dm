@@ -598,8 +598,8 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/orator
 	name = "Legion Orator"
 
-/obj/effect/landmark/start/f13/slavemaster
-	name = "Legion Slavemaster"
+/obj/effect/landmark/start/f13/immune
+	name = "Legion Immune"
 
 /obj/effect/landmark/start/f13/priestess
 	name = "Priestess of Mars"
