@@ -386,7 +386,7 @@
 
 /datum/crafting_recipe/policerifle
 	name = "Police Rifle"
-	result = /obj/item/gun/ballistic/automatic/marksman/policerifle
+	result = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/crafting/metalparts = 2,

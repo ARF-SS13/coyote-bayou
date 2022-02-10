@@ -42,7 +42,7 @@
 			. += "<span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
-	. += "This helmet provides [armor.bullet] bullet, [armor.laser] energy, and [armor.melee] melee resistance."
+	. += "This helmet provides [armor.bullet]% bullet, [armor.laser]% laser, and [armor.melee]% melee resistance."
 
 /obj/item/clothing/head/helmet/handle_atom_del(atom/A)
 	if(A == attached_light)

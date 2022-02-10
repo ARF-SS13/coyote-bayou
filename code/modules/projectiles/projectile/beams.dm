@@ -568,6 +568,7 @@
 	damage = 25
 	wound_bonus = 10
 	bare_wound_bonus = 20
+	armour_penetration = 0
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser

@@ -109,6 +109,34 @@
 	path = /obj/item/clothing/suit/f13/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
+	
+/datum/gear/suit/ncrcfjacket
+	name = "NCRCF jacket"
+	path = /obj/item/clothing/suit/armor/f13/ncrcfjacket
+	cost = 1
+
+/datum/gear/suit/NCRutilityvest
+	name = "Utility Vest"
+	path = /obj/item/clothing/suit/armor/f13/utilityvest
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 4
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR Medical Officer",
+							"NCR Veteran Ranger",
+							"NCR Lieutenant",
+							"NCR Heavy Trooper",
+							"NCR Sergeant First Class",
+							"NCR Sergeant",
+							"NCR Corporal",
+							"NCR Combat Engineer",
+							"NCR Combat Medic",
+							"NCR Trooper",
+							"NCR Rear Echelon",
+							"NCR Off-Duty",
+						)
+	
 
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
@@ -150,6 +178,18 @@
 							"Detective",
 							"Barkeep",
 							)
+							
+/datum/gear/suit/deputyvest
+	name = "OPD armor vest"
+	path = /obj/item/clothing/suit/armor/vest/oasis
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	cost = 5
+	restricted_desc = "Oasis Police"
+	restricted_roles = list("Sheriff",
+								"Deputy",
+								"Detective",
+								)
+							
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
 	path = /obj/item/clothing/suit/hazardvest

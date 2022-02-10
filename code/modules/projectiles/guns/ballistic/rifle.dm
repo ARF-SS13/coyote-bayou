@@ -115,7 +115,6 @@
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	extra_damage = 35
-	fire_delay = 4.5
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 

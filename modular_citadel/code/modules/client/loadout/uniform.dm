@@ -10,6 +10,10 @@
 /datum/gear/uniform/caravaneer
 	name = "caravaneer outfit"
 	path = /obj/item/clothing/under/f13/caravaneer
+	
+/datum/gear/uniform/ncrcf
+	name = "NCRCF outfit" 
+	path = /obj/item/clothing/under/f13/ncrcf
 
 /datum/gear/uniform/brahminskin
 	name = "brahmin skin outfit"

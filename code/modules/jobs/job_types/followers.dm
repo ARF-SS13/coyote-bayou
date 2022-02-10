@@ -363,10 +363,10 @@ Follower Volunteer
 /datum/outfit/job/followers/f13followerguard
 	name =	"Followers Guard"
 	jobtype =	/datum/job/followers/f13followerguard
-	belt =	/obj/item/storage/belt/military/followers
+	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
-	suit =	/obj/item/clothing/suit/armor/vest
+	suit =	/obj/item/clothing/suit/armor/vest/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat

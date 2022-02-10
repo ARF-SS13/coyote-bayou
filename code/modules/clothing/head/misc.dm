@@ -17,11 +17,10 @@
 
 /obj/item/clothing/head/that
 	name = "top-hat"
-	desc = "(I) It's an amish looking hat."
+	desc = "It's an amish looking hat."
 	icon_state = "tophat"
 	item_state = "that"
 	throwforce = 1
-	armor = list("tier" = 1)
 	dog_fashion = /datum/dog_fashion/head
 	beepsky_fashion = /datum/beepsky_fashion/tophat
 
@@ -36,8 +35,7 @@
 /obj/item/clothing/head/redcoat
 	name = "redcoat's hat"
 	icon_state = "redcoat"
-	desc = "(I) <i>'I guess it's a redhead.'</i>"
-	armor = list("tier" = 1)
+	desc = "<i>'I guess it's a redhead.'</i>"
 
 /obj/item/clothing/head/mailman
 	name = "mailman's hat"
@@ -46,10 +44,10 @@
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
-	desc = "(I) These were once used by plague doctors. They're pretty much useless."
+	desc = "These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 25, "rad" = 0, "fire" = 30, "acid" = 0)
 	permeability_coefficient = 0.01
-	armor = list("tier" = 1)
 
 
 /obj/item/clothing/head/hasturhood
@@ -299,12 +297,10 @@
 
 /obj/item/clothing/head/crown
 	name = "crown"
-	desc = "(I) A crown fit for a king, a petty king maybe."
+	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("tier" = 1,"energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
-
 	beepsky_fashion = /datum/beepsky_fashion/king
 
 /obj/item/clothing/head/crown/fancy
@@ -455,15 +451,16 @@
 
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
-	desc = "(I) Ain't nobody gonna cheat the hangman in my town."
+	desc = "Ain't nobody gonna cheat the hangman in my town."
 	icon_state = "hunter"
 	item_state = "hunter"
-	armor = list("tier" = 1, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/kepi
 	name = "kepi"
 	desc = "A white cap with visor. Oui oui, mon capitane!"
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 5, "rad" = 5, "fire" = 30, "acid" = 5)
 	icon_state = "kepi"
 
 /obj/item/clothing/head/kepi/old
@@ -489,26 +486,27 @@
 	icon_state = "kabuto"
 	item_state = "kabuto"
 	flags_inv = HIDEHAIR|HIDEEARS
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/fluff/bandit
 	name = "bandit hat"
-	desc = "(I) A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
+	desc = "A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
 	icon_state = "bandit"
 	item_state = "fedora"
-	armor = list("tier" = 1)
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/fluff/gambler
 	name = "gambler hat"
-	desc = "(I) Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
-	armor = list("tier" = 1)
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/fluff/Bikerhelmet
 	name = "Future Helmet"
-	desc = "(II) A helmet of some sort as if from the distant future."
+	desc = "(A helmet of some sort as if from the distant future."
 	icon_state = "biker_helmet"
 	item_state = "biker_helmet"
-	armor = list("tier" = 2,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR

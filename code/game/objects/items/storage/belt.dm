@@ -506,7 +506,7 @@
 	STR.max_items = 7
 
 
-/obj/item/storage/belt/military/followers/PopulateContents()
+/obj/item/storage/belt/military/army/military/followers/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/restraints/handcuffs(src)
 	new /obj/item/melee/classic_baton(src)

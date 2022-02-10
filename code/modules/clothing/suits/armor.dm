@@ -31,13 +31,24 @@
 
 /obj/item/clothing/suit/armor/vest
 	name = "armor vest"
-	desc = "A slim armored vest with a rigid exterior that provides decent protection against most types of damage."
+	desc = "A slim armored vest with a rigid exterior that provides decent protection against pistol rounds, stabs, and bludgeons."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 25)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
+	slowdown = 0.05
+
+/obj/item/clothing/suit/armor/vest/big
+	name = "security vest"
+	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "vest_armor"
+	item_state = "vest_armor"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 25, energy = "20", "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
+	slowdown = 0.18
 
 /obj/item/clothing/suit/armor/vest/trench
 	name = "followers trenchcoat"
@@ -46,9 +57,11 @@
 	item_state = "followerstrench"
 
 /obj/item/clothing/suit/armor/vest/alt
-	desc = "A Type I armored vest that provides decent protection against most types of damage."
+	desc = "A thick armored vest that provides decent protection against most types of damage."
 	icon_state = "armor"
 	item_state = "armor"
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
+	slowdown = 0.1
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
