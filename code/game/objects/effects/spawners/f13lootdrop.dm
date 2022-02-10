@@ -1550,7 +1550,8 @@
 				/obj/item/grenade/plastic/c4,
 				/obj/item/grenade/empgrenade,
 				/obj/item/grenade/f13/radiation,
-				/obj/item/grenade/f13/frag
+				/obj/item/grenade/f13/frag,
+				/obj/effect/spawner/bundle/f13/grenadelauncher,
 				)
 /obj/effect/spawner/lootdrop/f13/bomb/top_tier
 	lootcount = 1
@@ -1559,7 +1560,8 @@
 				/obj/item/grenade/f13/incendiary,
 				/obj/item/grenade/f13/radiation,
 				/obj/item/grenade/plastic/x4,
-				/obj/item/grenade/stingbang/shred = 1
+				/obj/item/grenade/stingbang/shred = 1,
+				/obj/effect/spawner/bundle/f13/rocketlauncher,
 				)
 
 
