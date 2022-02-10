@@ -244,6 +244,15 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribalwar/arrowbronze
+	name = "Bronze Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/bronze
+	time = 30
+	reqs = list(/obj/item/stack/sheet/bronze = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
 /datum/crafting_recipe/tribalwar/arrowpoison
 	name = "Poison Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/poison
@@ -259,8 +268,8 @@
 	name = "Bone Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/bone
 	time = 30
-	reqs = list(/obj/item/stack/sheet/bone = 4,
-				/obj/item/stack/sheet/sinew = 1)
+	reqs = list(/obj/item/stack/sheet/bone = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE

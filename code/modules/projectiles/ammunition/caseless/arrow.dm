@@ -50,7 +50,7 @@
 
 /obj/item/ammo_casing/caseless/arrow/bone
 	name = "bone arrow"
-	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce through a goliath plate."
+	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce through deathclaw hide."
 	icon_state = "bonearrow"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bone
 

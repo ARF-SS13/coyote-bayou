@@ -13,17 +13,20 @@
 	damage = 0.5
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/ash
 
-/obj/item/projectile/bullet/reusable/arrow/bone //AP for ashwalkers
+/obj/item/projectile/bullet/reusable/arrow/bone //extra mob damage
 	name = "bone arrow"
 	desc = "Arrow made of bone and sinew."
-	damage = 30
-	armour_penetration = 0.35
+	damage = 20
+	armour_penetration = 0.10
+	supereffective_damage = 40
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot")
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone
 
 /obj/item/projectile/bullet/reusable/arrow/bronze //Just some AP shots
 	name = "bronze arrow"
 	desc = "Bronze tipped arrow."
-	armour_penetration = 0.2
+	damage = 30
+	armour_penetration = 0.35
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/bronze
 
 //FO13 ARROWS
