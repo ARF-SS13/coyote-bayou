@@ -42,7 +42,7 @@
 
 /obj/item/weaponcrafting/improvised_parts/trigger_assembly
 	name = "firearm trigger assembly"
-	desc = "A modular trigger assembly with a firing pin, this can be used to make a whole bunch of improvised firearss."
+	desc = "A modular trigger assembly with a firing pin, this can be used to make a whole bunch of improvised firearms."
 	icon_state = "trigger_assembly"
 	w_class = WEIGHT_CLASS_SMALL
 

@@ -645,6 +645,23 @@
 	scope_x_offset = 6
 	scope_y_offset = 14
 
+//'Verminkiller'									Keywords: 5.56, 10/20/30 round magazine, Suppressed, Scoped, 25 damage
+//Basically an obtainable ratslayer
+/obj/item/gun/ballistic/automatic/varmint/verminkiller
+	name = "verminkiller rifle"
+	desc = "Legends are told of the \"Ratslayer\", a custom-made souped-up varmint rifle with a sick paintjob. This is a pale imitation, made of chopped-up bits of other guns."
+	icon_state = "verminrifle"
+	item_state = "ratslayer"
+	extra_damage = 25
+	suppressed = 1
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	can_scope = FALSE
+	can_unsuppress = FALSE
+	suppressor_state = "none"
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
 //Ratslayer									Keywords: UNIQUE, 5.56, 10/20/30 round magazine, Suppressed, Scoped, Extra damage +3
 /obj/item/gun/ballistic/automatic/varmint/ratslayer
 	name = "Ratslayer"
