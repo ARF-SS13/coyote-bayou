@@ -276,6 +276,28 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.update_sight()
 
+/datum/quirk/nukalover
+	name = "Nuka Fiend"
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives."
+	value = 2
+	mob_trait = TRAIT_NUKA_LOVER
+	gain_text = "<span class='notice'>You want to buy the whole world a nuka-cola!</span>"
+	lose_text = "<span class='danger'>What's the big deal about nuka-cola?</span>"
+	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+	
+/datum/quirk/nukalover/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.liked_food |= NUKA
+	species.disliked_food |= VEGETABLES
+
+/datum/quirk/nukalover/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+		species.liked_food = initial(species.liked_food)
+		species.disliked_food = initial(species.disliked_food)
+
 /datum/quirk/trapper
 	name = "Trapper"
 	desc = "As an experienced hunter and trapper you know your way around butchering animals for their products, and are able to get twice the usable materials by eliminating waste."

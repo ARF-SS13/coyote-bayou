@@ -416,6 +416,7 @@
 	glass_name = "Nuka Quantum"
 	glass_desc = "An extremely blue and glowing combination of Nuka-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+	
 
 /datum/reagent/consumable/ethanol/nukaquantum/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -429,6 +430,9 @@
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
 	M.Jitter(2)
+	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
+		M.adjustBruteLoss(-0.1)
+		M.adjustFireLoss(-0.1)
 	ADD_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M

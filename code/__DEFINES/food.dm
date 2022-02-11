@@ -14,6 +14,7 @@
 #define BREAKFAST	(1<<13)
 #define ANTITOXIC 	(1<<14)
 #define LONGPORK 	(1<<15)
+#define NUKA		(1<<16)
 
 #define DRINK_NICE	1
 #define DRINK_GOOD	2

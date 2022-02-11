@@ -134,6 +134,7 @@
 #define TRAIT_NODEATH			"nodeath"
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
+#define TRAIT_NUKA_LOVER		"nukalover"
 #define TRAIT_MINDSHIELD		"mindshield"
 #define TRAIT_HIJACKER			"hijacker"
 #define TRAIT_SIXTHSENSE		"sixthsense"

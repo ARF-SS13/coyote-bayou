@@ -48,6 +48,10 @@
 	timeout = 300
 	//special_screen_obj = "mood_happiness_good" Originally in tg, but I personally think they look dumb
 
+/datum/mood_event/nuka
+	description = "the whole world loves Nuka-cola"
+	mood_change = 2
+
 /datum/mood_event/happiness_drug_bad_od
 	description = "<span class='boldwarning'>NO! NO!! NO!!!</span>\n"
 	mood_change = -20
