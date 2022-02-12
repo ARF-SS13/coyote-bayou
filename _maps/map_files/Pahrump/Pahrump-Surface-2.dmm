@@ -10724,7 +10724,7 @@
 /area/f13/wasteland)
 "eDc" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flag/bos,
+/obj/structure/filingcabinet,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/brotherhood/surface)
 "eDp" = (
@@ -10959,7 +10959,9 @@
 /area/f13/building)
 "eJv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/filingcabinet,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/f13,
 /area/f13/brotherhood/surface)
 "eJy" = (
@@ -12030,8 +12032,7 @@
 /area/f13/building)
 "fdA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/filingcabinet,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/stairs/east,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/brotherhood/surface)
 "fdO" = (
@@ -16321,6 +16322,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"gNu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/brotherhood/surface)
 "gNA" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 10;
@@ -32192,6 +32198,9 @@
 	icon_state = "plant-25"
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/sign/poster/prewar/poster82{
+	pixel_y = 32
+	},
 /turf/open/floor/f13,
 /area/f13/brotherhood/surface)
 "nlA" = (
@@ -39508,9 +39517,7 @@
 /area/f13/tunnel)
 "qyH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster82{
-	pixel_y = 32
-	},
+/obj/item/flag/bos,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/brotherhood/surface)
 "qyJ" = (
@@ -90963,7 +90970,7 @@ fWj
 sNL
 ccF
 wOv
-sNL
+gNu
 vIx
 gJp
 uJB
@@ -91735,7 +91742,7 @@ ooa
 ooa
 wOv
 fdA
-hfa
+fdA
 uYP
 wOv
 wOv
