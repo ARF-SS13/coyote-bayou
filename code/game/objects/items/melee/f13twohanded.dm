@@ -404,7 +404,7 @@
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure)) 
+	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
 		W.take_damage(20, BRUTE, "melee", 0)
 
@@ -500,7 +500,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure)) 
+	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
 		W.take_damage(25, BRUTE, "melee", 0)
 		playsound(loc, hitsound, 80, TRUE)
@@ -535,7 +535,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure)) 
+	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
 		W.take_damage(10, BRUTE, "melee", 0)
 		playsound(loc, hitsound, 50, TRUE)
@@ -558,7 +558,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/structure)) 
+	if(istype(A, /obj/structure))
 		var/obj/structure/W = A
 		W.take_damage(10, BRUTE, "melee", 0)
 		playsound(loc, hitsound, 80, TRUE)
@@ -602,7 +602,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
 
 
-// Shaman staff				Keywords: Damage 15/30, Big stamina damage buff 
+// Shaman staff				Keywords: Damage 15/30, Big stamina damage buff
 /obj/item/twohanded/sledgehammer/shamanstaff
 	name = "shaman staff"
 	desc = "An intricate staff, carried for centuries by the shaman class of the Wayfayer Tribe."
@@ -694,7 +694,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		playsound(loc, hitsound, 80, TRUE)
 
 
-//Steel Saw		Keywords: Damage 14/40, Fast, Wound Bonus, Tool saw-off
+//Steel Saw		Keywords: Damage 10/27, 2x attackspeed, Wound Bonus, Tool saw-off, structure bonus damage
 /obj/item/twohanded/steelsaw
 	name = "steel saw"
 	desc = "A long, heavy circular saw with reinforced blades, designed for cutting through I-beams."
@@ -706,44 +706,45 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	icon_prefix = "steelsaw"
 	force = 4
 	toolspeed = 0.5
-	wound_bonus = 15
-	attack_speed = CLICK_CD_MELEE * 0.9
+	wound_bonus = 20
+	bare_wound_bonus = 20
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	total_mass = TOTAL_MASS_NORMAL_ITEM //it swings faster
+	var/structure_bonus_damage = 20
 	var/on_icon_state = "steelsaw_on"
 	var/off_icon_state = "steelsaw"
 	var/on_item_state = "steelsaw_on"
 	var/off_item_state = "steelsaw"
 	var/weight_class_on = WEIGHT_CLASS_HUGE
 	var/on = FALSE
-	var/force_on = 40
-	var/force_off = 14
-	var/description_on = "<span class ='warning'>You pull the cord, starting up the chainsaw with a roar and letting the blades spin up.</span>"
-	var/description_off = "<span class ='notice'>You press the off button, stopping the noise and the carnage.</span>"
+	var/force_on = 27 //10 more dps than chainsaw, but less perhit
+	var/force_off = 10
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/twohanded/steelsaw/attack_self(mob/user)
 	on = !on
 	if(on)
-		to_chat(user, description_on)
+		user.visible_message("<span class ='warning'>[user] pulls the cord, starting up the [src] with a roar and letting the blades spin up.</span>")
 		icon_state = on_icon_state
 		item_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
+		attack_speed = CLICK_CD_MELEE * 0.5
 		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 		playsound(loc, on_sound, 50, TRUE)
 	else
-		to_chat(user, description_off)
+		user.visible_message("<span class ='notice'>[user] presses the off button, stopping the noise and the carnage.</span>")
 		icon_state = off_icon_state
 		item_state = off_item_state
 		w_class = WEIGHT_CLASS_BULKY
 		force = force_off
 		attack_verb = list("poked", "scraped")
+		attack_speed = CLICK_CD_MELEE * 1.2
 	add_fingerprint(user)
 
 /obj/item/twohanded/steelsaw/ComponentInitialize()
@@ -751,6 +752,18 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 	update_icon()
+
+/obj/item/twohanded/steelsaw/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure)) //hurts structures more (it can cut through i-beams, it can ostensibly cut through weaker shit)
+		var/obj/structure/S = A
+		S.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(structure_bonus_damage, BRUTE, "melee", 0, armour_penetration = src.armour_penetration)
+
 
 /obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)
 	if(on)
@@ -764,25 +777,43 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
-//Auto Axe 		Keywords: Damage 14/40, AP 0.5, Wound Bonus
+//autoaxe		Keywords: Damage 10/29, 2x attackspeed, Wound Bonus, structure bonus damage, 0.3 AP
 /obj/item/twohanded/steelsaw/autoaxe
 	name = "auto axe"
-	desc = "A reinforced and heavier steel saw, upgraded using the parts of a car engine."
+	desc = "A reinforced and heavier steel saw, upgraded using the parts of a car engine. A little heavy and ungainly to use as a tool, however."
 	icon_state = "autoaxe"
 	item_state = "autoaxe"
 	icon_prefix = "autoaxe"
-	force = 6
-	force_on = 40
-	force_off = 14
+	force_on = 29
+	attack_speed = CLICK_CD_MELEE * 1.5
 	armour_penetration = 0.3
 	on_icon_state = "autoaxe_on"
 	off_icon_state = "autoaxe"
 	on_item_state = "autoaxe_on"
 	off_item_state = "autoaxe"
-	wound_bonus = 10
-	tool_behaviour = null
+	toolspeed = 2
+	structure_bonus_damage = 40
 
-
+/obj/item/twohanded/steelsaw/autoaxe/attack_self(mob/user)
+	on = !on
+	if(on)
+		user.visible_message("<span class ='warning'>[user] turns the starting crank on the [src], starting it up with a guttral roar.</span>")
+		icon_state = on_icon_state
+		item_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_speed = CLICK_CD_MELEE * 0.5
+		attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+		playsound(loc, on_sound, 50, TRUE)
+	else
+		user.visible_message("<span class ='notice'>[user] cuts the throttle on the [src], letting the blades slowly spin down.</span>")
+		icon_state = off_icon_state
+		item_state = off_item_state
+		w_class = WEIGHT_CLASS_BULKY
+		force = force_off
+		attack_verb = list("poked", "scraped")
+		attack_speed = CLICK_CD_MELEE * 1.5
+	add_fingerprint(user)
 /*
 CODE ARCHIVE
 
