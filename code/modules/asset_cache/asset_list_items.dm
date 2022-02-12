@@ -245,24 +245,6 @@
 	)
 */
 
-/datum/asset/spritesheet/simple/minesweeper
-	name = "minesweeper"
-	assets = list(
-		"1" = 'icons/ui_icons/minesweeper_tiles/one.png',
-		"2" = 'icons/ui_icons/minesweeper_tiles/two.png',
-		"3" = 'icons/ui_icons/minesweeper_tiles/three.png',
-		"4" = 'icons/ui_icons/minesweeper_tiles/four.png',
-		"5" = 'icons/ui_icons/minesweeper_tiles/five.png',
-		"6" = 'icons/ui_icons/minesweeper_tiles/six.png',
-		"7" = 'icons/ui_icons/minesweeper_tiles/seven.png',
-		"8" = 'icons/ui_icons/minesweeper_tiles/eight.png',
-		"empty" = 'icons/ui_icons/minesweeper_tiles/empty.png',
-		"flag" = 'icons/ui_icons/minesweeper_tiles/flag.png',
-		"hidden" = 'icons/ui_icons/minesweeper_tiles/hidden.png',
-		"mine" = 'icons/ui_icons/minesweeper_tiles/mine.png',
-		"minehit" = 'icons/ui_icons/minesweeper_tiles/minehit.png'
-	)
-
 /datum/asset/spritesheet/simple/pills
 	name = "pills"
 	assets = list(

@@ -145,8 +145,6 @@
 					/obj/item/circuitboard/computer/arcade/battle,
 					/obj/item/circuitboard/computer/arcade/orion_trail,
 					/obj/item/circuitboard/computer/arcade/orion_trail,
-					/obj/item/circuitboard/computer/arcade/minesweeper,
-					/obj/item/circuitboard/computer/arcade/minesweeper,
 					/obj/item/circuitboard/computer/slot_machine,
 					/obj/item/circuitboard/computer/slot_machine,
 					/obj/item/circuitboard/computer/slot_machine,

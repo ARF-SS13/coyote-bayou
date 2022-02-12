@@ -136,10 +136,6 @@
 	name = "Orion Trail (Computer Board)"
 	build_path = /obj/machinery/computer/arcade/orion_trail
 
-/obj/item/circuitboard/computer/arcade/minesweeper
-	name = "Minesweeper (Computer Board)"
-	build_path = /obj/machinery/computer/arcade/minesweeper
-
 /obj/item/circuitboard/computer/arcade/amputation
 	name = "Mediborg's Amputation Adventure (Computer Board)"
 	build_path = /obj/machinery/computer/arcade/amputation
