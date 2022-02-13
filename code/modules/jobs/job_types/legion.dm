@@ -733,7 +733,7 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 3,
-		/obj/item/gun/ballistic/revolver/colt357,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/ammo_box/a357 = 1,
 		)
 
