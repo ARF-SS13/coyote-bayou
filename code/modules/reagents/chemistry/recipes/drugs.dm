@@ -74,7 +74,7 @@
 /datum/chemical_reaction/jet
 	name = "Jet"
 	id = /datum/reagent/drug/jet
-	results = list(/datum/reagent/drug/jet = 3)
+	results = list(/datum/reagent/drug/jet = 5)
 	required_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
 	OptimalTempMin 		= 600
 	OptimalTempMax		= 675
@@ -92,8 +92,8 @@
 /datum/chemical_reaction/turbo
 	name = "Turbo"
 	id = /datum/reagent/drug/turbo
-	results = list(/datum/reagent/drug/turbo = 2)
-	required_reagents = list(/datum/reagent/consumable/ferajuice = 3, /datum/reagent/consumable/agavejuice = 3, /datum/reagent/consumable/ethanol = 1)
+	results = list(/datum/reagent/drug/turbo = 4)
+	required_reagents = list(/datum/reagent/consumable/ferajuice = 2, /datum/reagent/consumable/agavejuice = 2, /datum/reagent/consumable/ethanol = 1)
 	OptimalTempMin 		= 410
 	OptimalTempMax		= 525
 	ExplodeTemp			= 585
@@ -110,8 +110,8 @@
 /datum/chemical_reaction/psycho
 	name = "Psycho"
 	id = /datum/reagent/drug/psycho
-	results = list(/datum/reagent/drug/psycho = 2)
-	required_reagents = list(/datum/reagent/consumable/ferajuice = 3, /datum/reagent/consumable/cavefungusjuice = 3, /datum/reagent/consumable/nuka_cola = 1)
+	results = list(/datum/reagent/drug/psycho = 4)
+	required_reagents = list(/datum/reagent/consumable/ferajuice = 2, /datum/reagent/consumable/cavefungusjuice = 2, /datum/reagent/consumable/nuka_cola = 1)
 	OptimalTempMin 		= 273
 	OptimalTempMax		= 303
 	ExplodeTemp			= 323
@@ -128,8 +128,8 @@
 /datum/chemical_reaction/buffout
 	name = "Buffout"
 	id = /datum/reagent/drug/buffout
-	results = list(/datum/reagent/drug/buffout = 2)
-	required_reagents = list(/datum/reagent/consumable/yuccajuice = 3, /datum/reagent/consumable/mutjuice = 3, /datum/reagent/consumable/ethanol/buffalo = 3, /datum/reagent/consumable/nuka_cola = 3, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1)
+	results = list(/datum/reagent/drug/buffout = 6)
+	required_reagents = list(/datum/reagent/consumable/yuccajuice = 1, /datum/reagent/consumable/mutjuice = 1, /datum/reagent/consumable/ethanol/buffalo = 1, /datum/reagent/consumable/nuka_cola = 1, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1)
 	OptimalTempMin 		= 165
 	OptimalTempMax		= 215
 	ExplodeTemp			= 223
