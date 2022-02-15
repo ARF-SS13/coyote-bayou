@@ -418,6 +418,30 @@
 		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
 		death()
 
+/mob/living/verb/lookup()
+	set name = "Look Up"
+	set category = "IC"
+	if(src.incapacitated())
+		to_chat(src, "<span class='warning'>You can't look up right now!</span>")
+	var/turf/T = SSmapping.get_turf_above(get_turf(src))
+	if(!istype(T, /turf/open/transparent/openspace))
+		if(istype(T, /turf/open) || istype(T, /turf/closed))
+			to_chat(src, "<span class='notice'>You look up at the ceiling. You can see ceiling.</span>")
+		return
+	else
+		src.reset_perspective(T)
+		RegisterSignal(src, COMSIG_MOB_CLIENT_CHANGE_VIEW, .proc/stop_looking_up) //no binos/scops
+		RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_LIVING_STATUS_KNOCKDOWN, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_LIVING_STATUS_PARALYZE, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_LIVING_STATUS_UNCONSCIOUS, .proc/stop_looking_up)
+		RegisterSignal(src, COMSIG_LIVING_STATUS_SLEEP, .proc/stop_looking_up)
+
+/mob/living/proc/stop_looking_up()
+	reset_perspective(null)
+	UnregisterSignal(src, list(COMSIG_LIVING_STATUS_PARALYZE, COMSIG_LIVING_STATUS_UNCONSCIOUS, COMSIG_LIVING_STATUS_SLEEP, COMSIG_LIVING_STATUS_KNOCKDOWN, COMSIG_MOVABLE_MOVED, COMSIG_MOB_CLIENT_CHANGE_VIEW))
+
+
 /mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
 	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (combat_flags & COMBAT_FLAG_HARD_STAMCRIT) || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)))
 		return TRUE
