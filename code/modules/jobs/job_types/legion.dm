@@ -383,6 +383,7 @@ commented out pending rework*/
 	loadout_options = list(
 		/datum/outfit/loadout/decprimfront,	// Grease Gun, Gladius, Smoke bomb
 		/datum/outfit/loadout/decprimrear,	// Trail carbine, 10mm Revolver, Gladius, Smoke bomb
+		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 revolver, Gladius
 		)
 
 	matchmaking_allowed = list(
@@ -420,7 +421,7 @@ commented out pending rework*/
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		/obj/item/storage/bag/money/small/legofficers = 1,
 		/obj/item/grenade/smokebomb = 1,
-		/obj/item/binoculars,
+		/obj/item/binoculars = 1,
 		)
 
 /datum/outfit/loadout/decprimfront
@@ -428,6 +429,8 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
+		/obj/item/ammo_box/a357 = 1,
 		)
 
 /datum/outfit/loadout/decprimrear
@@ -437,6 +440,15 @@ commented out pending rework*/
 		/obj/item/ammo_box/tube/m44 = 2,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/ammo_box/a357 = 1,
+		)
+
+/datum/outfit/loadout/decprimboom
+	name = "Lead from the rubble"
+	suit_store = /obj/item/gun/ballistic/revolver/grenadelauncher
+	backpack_contents = list(
+		/obj/item/ammo_box/a40mm = 2,
+		/obj/item/gun/ballistic/revolver/m29 = 1,
+		/obj/item/ammo_box/m44 = 3,
 		)
 
 
