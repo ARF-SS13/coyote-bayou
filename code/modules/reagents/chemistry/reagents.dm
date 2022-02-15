@@ -182,6 +182,10 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 /datum/reagent/proc/on_update(atom/A)
 	return
 
+//Ran by a reagent holder on a specific reagent after copying its data.
+/datum/reagent/proc/post_copy_data()
+	return
+
 // Called when the reagent container is hit by an explosion
 /datum/reagent/proc/on_ex_act(severity)
 	return

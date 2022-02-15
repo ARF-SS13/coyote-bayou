@@ -230,7 +230,7 @@
 	var/mob/living/carbon/C = host_mob
 	if(C.get_ghost())
 		return FALSE
-	return C.can_defib()
+	return C.can_revive()
 
 /datum/nanite_program/defib/proc/zap()
 	var/mob/living/carbon/C = host_mob
@@ -247,4 +247,3 @@
 		log_game("[C] has been successfully defibrillated by nanites.")
 	else
 		playsound(C, 'sound/machines/defib_failed.ogg', 50, FALSE)
-

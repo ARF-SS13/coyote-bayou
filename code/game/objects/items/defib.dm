@@ -239,7 +239,7 @@
 	item_state = "defibunit"
 	cell = /obj/item/stock_parts/cell/high
 
-/obj/item/defibrillator/primitive/Initialize() 
+/obj/item/defibrillator/primitive/Initialize()
 	. = ..()
 	paddles = make_paddlesprim()
 	update_power()
@@ -441,7 +441,7 @@
 	if((!req_defib && grab_ghost) || (req_defib && defib.grab_ghost))
 		H.notify_ghost_cloning("Your heart is being defibrillated!")
 		H.grab_ghost() // Shove them back in their body.
-	else if(H.can_defib())
+	else if(H.can_revive())
 		H.notify_ghost_cloning("Your heart is being defibrillated. Re-enter your corpse if you want to be revived!", source = src)
 
 	do_help(H, user)
