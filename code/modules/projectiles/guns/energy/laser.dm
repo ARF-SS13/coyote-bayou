@@ -227,6 +227,7 @@
 	can_remove = 0
 	can_charge = 0
 	selfcharge = 1
+	icon_state = "rechargerpistol"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
 	slot_flags = ITEM_SLOT_BELT
