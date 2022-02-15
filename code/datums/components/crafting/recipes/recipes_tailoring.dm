@@ -99,6 +99,17 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/datum/crafting_recipe/metalarmor/polish
+	name = "Polished Metal Armor"
+	result = /obj/item/clothing/suit/armor/f13/metalarmor/laserproof
+	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor,
+				/obj/item/crafting/abraxo,
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR		
+	
 /datum/crafting_recipe/metalarmormk2
 	name = "Metal Armor, reinforced"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/reinforced
@@ -614,6 +625,17 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 */
+
+/datum/crafting_recipe/combat_armor
+	name = "replace ballistic plates in combat armor with laser-proof plates"
+	result = /obj/item/clothing/suit/armor/f13/combat/laserproof
+	reqs = list(/obj/item/stack/sheet/mineral/titanium = 5,
+				/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/stack/crafting/goodparts = 2)
+	tools = list(TOOL_AWORKBENCH)
+	time = 60
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
 
 //CLOTHING//
 

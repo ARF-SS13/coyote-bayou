@@ -817,7 +817,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
-		/obj/item/pda)
+		/obj/item/pda=1,)
 
 /datum/outfit/loadout/warrior
 	name = "Wasteland Warrior"

@@ -103,7 +103,7 @@
 /datum/gang_item/clothing/khan_battlecoat
 	name = "Great Khan battlecoat"
 	id = "khan_battlecoat"
-	cost = 1000
+	cost = 300
 	item_path = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
 
 // ---------------------------

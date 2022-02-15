@@ -234,7 +234,8 @@
 				/obj/effect/spawner/bundle/f13/armor/psycho,
 				/obj/item/clothing/suit/f13/duster,
 				/obj/effect/spawner/bundle/f13/armor/combatduster,
-				/obj/item/clothing/suit/armor/f13/raider/iconoclast
+				/obj/item/clothing/suit/armor/f13/raider/iconoclast,
+				/obj/item/clothing/suit/armor/f13/plates,
 	)
 
 /obj/effect/spawner/bundle/f13/armor/supafly
@@ -291,6 +292,7 @@
 	loot = list(
 				/obj/effect/spawner/bundle/f13/armor/knight,
 				/obj/effect/spawner/bundle/f13/armor/metal,
+				/obj/effect/spawner/bundle/f13/armor/laserproofmetal,
 				/obj/item/clothing/suit/armor/f13/leather_jacket/combat,
 				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat,
 				/obj/item/clothing/suit/armor/vest,
@@ -310,6 +312,14 @@
 				/obj/item/clothing/suit/armor/f13/metalarmor,
 				/obj/item/clothing/head/helmet/f13/metalmask
 				)
+
+/obj/effect/spawner/bundle/f13/armor/laserproofmetal
+	name = "polsihed metal armor spawner"
+	items = list(
+				/obj/item/clothing/suit/armor/f13/metalarmor/laserproof,
+				/obj/item/clothing/head/helmet/f13/metalmask
+				)
+
 
 /obj/effect/spawner/lootdrop/f13/armor/tier3 //TIER 3 ARMOR
 	name = "tier 3 armor"
