@@ -494,8 +494,8 @@
 	item_state = "sierra"
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/knightcaptain
-	name = "Knight-Captain's T-45d Power Armour"
-	desc = "A classic set of T-45d Power Armour only to be used in armed combat, it signifies the Knight Captain and their place in the Brotherhood. A leader, and a beacon of structure in a place where chaos reigns. All must rally to his call, for he is the Knight Captain and your safety is his duty."
+	name = "Head-Knight's T-45d Power Armour"
+	desc = "A classic set of T-45d Power Armour only to be used in armed combat, it signifies the Head Knight and their place in the Brotherhood. A leader, and a beacon of structure in a place where chaos reigns. All must rally to his call, for he is the Head Knight and your safety is his duty."
 	icon_state = "t45dkc"
 	item_state = "t45dkc"
 	slowdown = 0.16

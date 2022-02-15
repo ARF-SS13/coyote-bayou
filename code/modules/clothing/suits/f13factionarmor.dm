@@ -625,14 +625,14 @@
 
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
 	name = "brotherhood senior knight armor"
-	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knight. It bears a silver stripe."
+	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe."
 	icon_state = "brotherhood_armor_senior"
 	item_state = "brotherhood_armor_senior"
 	
 	
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/captain
-	name = "brotherhood knight-captain armor"
-	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Knight-Captains. It bears golden embroidery."
+	name = "brotherhood head knight armor"
+	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Head Knights. It bears golden embroidery."
 	icon_state = "brotherhood_armor_captain"
 	item_state = "brotherhood_armor_captain"
 
