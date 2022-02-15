@@ -46,3 +46,40 @@
 	name = "Taperecorder"
 	path = /obj/item/taperecorder
 	cost = 2
+
+/datum/gear/backpack/razor
+	name = "electric razor"
+	path = /obj/item/razor
+	cost = 2
+
+/datum/gear/backpack/donuts
+	name = "donut box"
+	path = /obj/item/storage/fancy/donut_box
+	cost = 2
+
+/datum/gear/backpack/cigarettes/cigpack_bigboss
+	name = "Big Boss Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_bigboss
+
+/datum/gear/backpack/cigarettes/cigpack_pyramid
+	name = "Pyramid Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_pyramid
+
+/datum/gear/backpack/cigarettes/cigpack_greytort
+	name = "Grey Tortoise Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
+
+/datum/gear/backpack/cigarettes/cigars
+	name = "Premium cigar case"
+	path = /obj/item/storage/fancy/cigarettes/cigars
+	cost = 2
+
+/datum/gear/backpack/cigarettes/cigars/cohiba
+	name = "Cohiba Robusto cigar case"
+	path = /obj/item/storage/fancy/cigarettes/cigars/cohiba
+	cost = 2
+
+/datum/gear/backpack/cigarettes/cigars/havana
+	name = "Havanian cigar case"
+	path = /obj/item/storage/fancy/cigarettes/cigars/havana
+	cost = 2

@@ -59,18 +59,6 @@
 	name = "cigarette pack"
 	path = /obj/item/storage/fancy/cigarettes
 
-/datum/gear/hands/cigarettes/cigpack_bigboss
-	name = "\improper Big Boss Smokes"
-	path = /obj/item/storage/fancy/cigarettes/cigpack_bigboss
-
-/datum/gear/hands/cigarettes/cigpack_pyramid
-	name = "\improper Pyramid Smokes"
-	path = /obj/item/storage/fancy/cigarettes/cigpack_pyramid
-
-/datum/gear/hands/cigarettes/cigpack_greytort
-	name = "\improper Grey Tortoise Smokes"
-	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
-
 /datum/gear/hands/dice
 	name = "dice bag"
 	path = /obj/item/storage/box/dice
