@@ -31,6 +31,7 @@
 	spawnwithmagazine = TRUE
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	var/pump_stam_cost = 2
 
 /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -50,7 +51,7 @@
 	else
 		recentpump = world.time + 10
 		if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
-			user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
+			user.adjustStaminaLossBuffered(pump_stam_cost) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
 
 /obj/item/gun/ballistic/rifle/blow_up(mob/user)
@@ -247,16 +248,16 @@
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
-//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 5 rounds internal, short barrel (-2 damage, -100 velocity, -2 melee, less slowdown), faster firing rate
+//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 5 rounds internal, very fast firing rate, high stamina cost on working bolt
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
 	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
 	icon_state = "enfield2"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 35
-	extra_speed = 500
-	fire_delay = 10
+	extra_damage = 37
+	extra_speed = 600
+	fire_delay = 7
 	slowdown = 0.35
 	force = 16
 	can_scope = TRUE
@@ -269,6 +270,7 @@
 	knife_y_offset = 21
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
+	pump_stam_cost = 15
 
 
 

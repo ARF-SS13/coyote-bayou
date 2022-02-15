@@ -666,9 +666,11 @@ commented out pending rework*/
 /datum/outfit/loadout/expsniper
 	name = "Sniper"
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	suit_store = /obj/item/gun/ballistic/rifle/enfield
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/ammo_box/a762 = 3,
+		/obj/item/book/granter/trait/rifleman = 1,
+		/obj/item/attachments/scope = 1,
 		/obj/item/grenade/smokebomb = 1,
 		)
 
