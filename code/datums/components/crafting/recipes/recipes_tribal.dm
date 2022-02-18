@@ -38,33 +38,12 @@
 
 /datum/crafting_recipe/tribalwar/bow
 	name = "String Wooden Bow"
-	result = /obj/item/gun/ballistic/bow
+	result = /obj/item/gun/ballistic/bow/tribal
 	time = 65
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/melee/onehanded/knife
 				)
-
-/datum/crafting_recipe/tribalwar/bone_bow
-	name = "Bone Bow"
-	result = /obj/item/gun/ballistic/bow/ashen
-	time = 120 // 80+120 = 200
-	always_available = FALSE
-	reqs = list(/obj/item/stack/sheet/bone = 8,
-				/obj/item/stack/sheet/sinew = 4
-				)
-
-/datum/crafting_recipe/tribalwar/pipe_bow
-	name = "Pipe Bow"
-	result = /obj/item/gun/ballistic/bow/pipe
-	time = 80
-	always_available = FALSE
-	reqs = list(/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/crafting/duct_tape = 1,
-				/obj/item/stack/rods = 1,
-				/obj/item/weaponcrafting/string = 1
-				)
-	tools = list(TOOL_WORKBENCH)
 
 /datum/crafting_recipe/tribalwar/xbow
 	name = "Manual Crossbow"

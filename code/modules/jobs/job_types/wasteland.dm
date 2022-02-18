@@ -564,7 +564,7 @@ Raider
 		/obj/item/ammo_box/magazine/greasegun = 1,
 		/obj/item/book/granter/trait/trekking = 1
 		)
-		
+
 /datum/outfit/loadout/raider_bos
 	name = "Brotherhood Exile"
 	suit = /obj/item/clothing/suit/armor/f13/exile/bosexile
@@ -1433,6 +1433,7 @@ datum/job/wasteland/f13dendoctor
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
 	H.grant_language(/datum/language/tribal)
 	H.social_faction = FACTION_WASTELAND
 	add_verb(H, /mob/living/proc/create_tribe)
@@ -1650,7 +1651,7 @@ datum/job/wasteland/f13dendoctor
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/sturdybow = 1,
+		/obj/item/gun/ballistic/bow/sturdy = 1,
 		/obj/item/storage/belt/tribe_quiver/bone = 1,
 		/obj/item/storage/belt/tribe_quiver = 1,
 		/obj/item/binoculars = 1,

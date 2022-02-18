@@ -170,7 +170,7 @@
 
 /datum/crafting_recipe/tribalwar/sturdybow
 	name = "Sturdy Bow"
-	result = /obj/item/gun/ballistic/automatic/sturdybow
+	result = /obj/item/gun/ballistic/bow/sturdy
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 5,
 				/obj/item/stack/sheet/metal = 10,
@@ -181,7 +181,7 @@
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
-	result = /obj/item/gun/ballistic/automatic/silverbow
+	result = /obj/item/gun/ballistic/bow/silver
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/silver = 10,
 				/obj/item/stack/sheet/metal = 10,
@@ -192,7 +192,7 @@
 
 /datum/crafting_recipe/tribalwar/bonebow
 	name = "Deathclaw Bow"
-	result = /obj/item/gun/ballistic/automatic/bonebow
+	result = /obj/item/gun/ballistic/bow/claw
 	time = 80
 	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
 				/obj/item/stack/sheet/bone = 10,
@@ -203,7 +203,7 @@
 
 /datum/crafting_recipe/tribalwar/tribe_bow
 	name = "Short Bow"
-	result = /obj/item/gun/ballistic/automatic/tribalbow
+	result = /obj/item/gun/ballistic/bow/tribal
 	time = 50
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
@@ -212,7 +212,7 @@
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
-	result = /obj/item/gun/ballistic/automatic/crossbow
+	result = /obj/item/gun/ballistic/bow/crossbow
 	time = 180
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/crafting/metalparts = 3,

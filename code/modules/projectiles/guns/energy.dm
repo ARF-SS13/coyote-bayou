@@ -39,7 +39,8 @@
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
-	isenergy = TRUE
+	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
+	dryfire_text = "*power failure*"
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -361,7 +362,7 @@
 		else
 			to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
 		return
-	else 
+	else
 		return
 
 /obj/item/gun/energy/attack_self(mob/living/user)

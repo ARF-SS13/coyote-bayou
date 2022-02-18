@@ -176,7 +176,7 @@
 	item_state = "knucklegun"
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = WEAPON_LIGHT
-	slot_flags = ITEM_SLOT_GLOVES	
+	slot_flags = ITEM_SLOT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	force = 24
 	fire_delay = 0.25
@@ -224,7 +224,8 @@
 	item_state = "lasmusket"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket
 	fire_delay = 15
-	isenergy = TRUE
+	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
+	dryfire_text = "*power failure*"
 	var/bolt_open = FALSE
 	can_bayonet = TRUE
 	knife_x_offset = 22
@@ -247,7 +248,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/plasmacaster
 	fire_delay = 20
 	var/bolt_open = FALSE
-	isenergy = TRUE
+	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
+	dryfire_text = "*power failure*"
 	scope_state = "scope_medium"
 	scope_x_offset = 9
 	scope_y_offset = 20

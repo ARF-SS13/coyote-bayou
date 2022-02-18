@@ -17,11 +17,11 @@ KEYWORDS
 	spread = 1
 
 	DOUBLE ACTION REVOLVER
-	fire_delay = 5	
+	fire_delay = 5
 	spread = 1
 
 	SEMI-AUTOMATIC PISTOL
-	fire_delay = 3-5	
+	fire_delay = 3-5
 	spread = 2
 
 	SEMI-AUTOMATIC RIFLE
@@ -38,7 +38,7 @@ KEYWORDS
 	burst_shot_delay = 3
 	spread = 7-12
 
-	REPEATER	
+	REPEATER
 	fire_delay = 6
 	spread = 0
 
@@ -86,14 +86,14 @@ GENERAL RULES
 	SMALL GUNS
 	slowdown = 0.1-0.2
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT - MEDIUM		
+	weapon_weight = WEAPON_LIGHT - MEDIUM
 
 	MEDIUM GUNS
 	slowdown = 0.3-0.4
 	w_class = WEIGHT_CLASS_NORMAL - BULKY
-	weapon_weight = WEAPON_MEDIUM - HEAVY	
+	weapon_weight = WEAPON_MEDIUM - HEAVY
 
-	RIFLES 
+	RIFLES
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -235,8 +235,6 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	var/isenergy = null
-	var/isbow = null
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
@@ -252,8 +250,10 @@ ATTACHMENTS
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
 //	var/projectile_damage_multiplier = 1
+	var/dryfire_sound = "gun_dry_fire"
+	var/dryfire_text = "*click*"
 
-	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds 
+	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -319,15 +319,8 @@ ATTACHMENTS
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	if (isenergy == TRUE)
-		to_chat(user, "<span class='danger'>*power failure*</span>")
-		playsound(src, 'sound/f13weapons/noammoenergy.ogg', 30, 1)
-		return
-	if (isbow == TRUE)
-		to_chat(user, "<span class='danger'>*no arrows*</span>") //Insert cool plink plink sound here
-		return
-	to_chat(user, "<span class='danger'>*click*</span>")
-	playsound(src, "gun_dry_fire", 30, 1)
+	to_chat(user, "<span class='danger'>[dryfire_text]</span>")
+	playsound(src, dryfire_sound, 30, 1)
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	if(recoil)
@@ -680,7 +673,7 @@ ATTACHMENTS
 
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	
+
 	if(can_flashlight && gun_light)
 		I.play_tool_sound(src)
 		var/obj/item/flashlight/seclite/S = gun_light
@@ -820,7 +813,7 @@ ATTACHMENTS
 		. += knife_overlay
 	else
 		knife_overlay = null
-	
+
 	if(scope)
 		if(scope.icon_state in icon_states('icons/fallout/objects/guns/attachments.dmi'))
 			scope_overlay = scope.icon_state
@@ -964,7 +957,7 @@ ATTACHMENTS
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	user.client.change_view(CONFIG_GET(string/default_view))
 	user.client.pixel_x = 0
-	user.client.pixel_y = 0	
+	user.client.pixel_y = 0
 
 /obj/item/gun/proc/rotate(mob/living/user, old_dir, direction = FALSE)
 	var/_x = 0
@@ -981,7 +974,7 @@ ATTACHMENTS
 	user.client.change_view(zoom_out_amt)
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
-		
+
 //Proc, so that gun accessories/scopes/etc. can easily add zooming.
 /obj/item/gun/proc/build_zooming()
 	if(azoom)
@@ -1260,4 +1253,3 @@ ICON UPDATE FOR GRADUAL DEPLETION, PLASTIC MAGS ETC
 /obj/item/gun/ballistic/automatic/wt550/update_icon_state()
 	icon_state = "wt550[magazine ? "-[CEILING(((get_ammo(FALSE) / magazine.max_ammo) * 20) /4, 1)*4]" : "-0"]" //Sprites only support up to 20.
 */
-
