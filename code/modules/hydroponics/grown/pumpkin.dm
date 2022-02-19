@@ -73,3 +73,13 @@
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/blumpkinjuice = 0)
 	wine_power = 50
+
+/obj/item/reagent_containers/food/snacks/grown/blumpkin/attackby(obj/item/W as obj, mob/user as mob, params)
+	if(W.get_sharpness())
+		user.show_message("<span class='notice'>You carve a face into [src]!</span>", MSG_VISUAL)
+		new /obj/item/clothing/head/hardhat/pumpkinhead/blumpkin(user.loc)
+		qdel(src)
+		return
+	else
+		return ..()
+

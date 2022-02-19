@@ -37,6 +37,10 @@
 	species = "lily"
 	plantname = "Lily Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/poppy/lily
+	growthstages = 3
+	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
+	icon_grow = "lily-grow"
+	icon_dead = "lily-dead"
 	mutatelist = list(/obj/item/seeds/bee_balm, /obj/item/seeds/poppy/lily/trumpet)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/lily
@@ -96,15 +100,44 @@
 	species = "geranium"
 	plantname = "Geranium Plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
-	mutatelist = list()
+	growthstages = 3
+	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
+	icon_grow = "geranium-grow"
+	icon_dead = "geranium-dead"
+	mutatelist = list(/obj/item/seeds/poppy/geranium/forgetmenot)
 
 /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
 	seed = /obj/item/seeds/poppy/geranium
 	name = "geranium"
-	desc = "A beautiful blue flower."
+	desc = "A cluster of small purple geranium flowers. They symbolize happiness, good health, wishes and friendship and are generally associated with positive emotions."
 	icon_state = "geranium"
 	filling_color = "#008B8B"
 	tastes = list("pelts " = 1)
+
+//Forget-Me-Not
+/obj/item/seeds/poppy/geranium/forgetmenot
+	name = "pack of forget-me-not seeds"
+	desc = "These seeds grow into forget-me-nots."
+	icon_state = "seed-forget_me_not"
+	species = "forget_me_not"
+	plantname = "Forget-Me-Not Plants"
+	product = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
+	endurance = 30
+	maturation = 5
+	yield = 4
+	potency = 25
+	icon_grow = "forget_me_not-grow"
+	icon_dead = "forget_me_not-dead"
+	mutatelist = list()
+	reagents_add = list(/datum/reagent/medicine/kelotane = 0.2, /datum/reagent/consumable/nutriment = 0.05)
+
+/obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
+	seed = /obj/item/seeds/poppy/geranium/forgetmenot
+	name = "forget-me-not"
+	desc = "A clump of small blue flowers, they are primarily associated with rememberance, respect and loyalty."
+	icon_state = "forget_me_not"
+	filling_color = "#4466ff"
+	bitesize_mod = 2
 
 // Harebell
 /obj/item/seeds/harebell
@@ -337,3 +370,65 @@
 	tastes = list("wax" = 1)
 	foodtype = SUGAR
 	distill_reagent = /datum/reagent/consumable/ethanol/mead
+
+// Roses
+/obj/item/seeds/rose
+	name = "pack of rose seeds"
+	desc = "These seeds grow into roses."
+	icon_state = "seed-rose"
+	species = "rose"
+	plantname = "Rose Bush"
+	product = /obj/item/grown/rose
+	endurance = 12
+	yield = 6
+	potency = 15
+	instability = 20 //Roses crossbreed easily, and there's many many species of them.
+	growthstages = 3
+	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
+	icon_grow = "rose-grow"
+	icon_dead = "rose-dead"
+	mutatelist = list(/obj/item/seeds/carbon_rose)
+	//Roses are commonly used as herbal medicines (diarrhodons) and for their 'rose oil'.
+	reagents_add = list(/datum/reagent/consumable/nutriment = 0.05)
+
+/obj/item/grown/rose
+	seed = /obj/item/seeds/rose
+	name = "\improper rose"
+	desc = "The classic fleur d'amour - flower of love. Watch for its thorns!"
+	icon_state = "rose"
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+
+// Carbon Roses
+/obj/item/seeds/carbon_rose
+	name = "pack of carbon rose seeds"
+	desc = "These seeds grow into carbon roses."
+	icon_state = "seed-carbonrose"
+	species = "carbonrose"
+	plantname = "Carbon Rose Flower"
+	product = /obj/item/grown/carbon_rose
+	endurance = 12
+	yield = 6
+	potency = 15
+	instability = 3
+	growthstages = 3
+	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
+	icon_grow = "carbonrose-grow"
+	icon_dead = "carbonrose-dead"
+	reagents_add = list(/datum/reagent/carbon = 0.05)
+	rarity = 10
+
+/obj/item/grown/carbon_rose
+	seed = /obj/item/seeds/carbon_rose
+	name = "carbon rose"
+	desc = "The all new fleur d'amour gris - the flower of love, modernized, with no harsh thorns."
+	icon_state = "carbonrose"
+	lefthand_file = 'icons/mob/inhands/weapons/plants_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/plants_righthand.dmi'
+	force = 0
+	throwforce = 0
+	slot_flags = ITEM_SLOT_HEAD
+	throw_speed = 1
+	throw_range = 3

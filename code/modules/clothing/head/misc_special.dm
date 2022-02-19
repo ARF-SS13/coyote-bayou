@@ -125,6 +125,14 @@
 	light_range = 2
 	flags_cover = HEADCOVERSEYES
 
+/obj/item/clothing/head/hardhat/pumpkinhead/blumpkin
+	name = "carved blumpkin"
+	desc = "A very blue jack o' lantern! Believed to ward off vengeful chemists."
+	icon_state = "hardhat0_blumpkin"
+	item_state = "hardhat0_blumpkin"
+	hat_type = "blumpkin"
+	light_color = "#76ff8e"
+
 /*
  * Kitty ears
  */
