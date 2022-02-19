@@ -25,14 +25,14 @@
 	var/list/trophies = list()
 	var/charged = TRUE
 	var/charge_time = 15
-	var/detonation_damage = 50
+	var/detonation_damage = 30
 	var/backstab_bonus = 30
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/kinetic_crusher/cyborg //probably give this a unique sprite later
 	desc = "An integrated version of the standard kinetic crusher with a grinded down axe head to dissuade mis-use against crewmen. Deals damage equal to the standard crusher against creatures, however."
 	force = 10 //wouldn't want to give a borg a 20 brute melee weapon unemagged now would we
-	detonation_damage = 60
+	detonation_damage = 90
 	wielded = 1
 
 /obj/item/kinetic_crusher/Initialize()
@@ -43,7 +43,7 @@
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 110) //technically it's huge and bulky, but this provides an incentive to use it
-	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=20)
+	AddComponent(/datum/component/two_handed, force_unwielded=0, force_wielded=40)
 
 /obj/item/kinetic_crusher/Destroy()
 	QDEL_LIST(trophies)
@@ -177,6 +177,7 @@
 	attack_verb = list("stabbed", "diced", "sliced", "cleaved", "chopped", "lacerated", "cut", "jabbed", "punctured")
 	icon_state = "crusher-glaive"
 	item_state = "crusher0-glaive"
+	detonation_damage = 40
 	block_parry_data = /datum/block_parry_data/crusherglaive
 	//ideas: altclick that lets you pummel people with the handguard/handle?
 	//parrying functionality?

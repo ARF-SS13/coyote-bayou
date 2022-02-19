@@ -180,7 +180,7 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
-	
+
 /datum/crafting_recipe/melee/forged/throwing
 	name = "Throwing Knife"
 	result = /obj/item/melee/onehanded/knife/throwing
@@ -467,6 +467,33 @@
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/crusher
+	name = "Kinetic Crusher"
+	result = /obj/item/kinetic_crusher
+	time = 300
+	reqs = list(
+		/obj/item/stack/sheet/metal = 25,
+		/obj/item/stack/crafting/metalparts = 2,
+		/obj/item/stack/crafting/electronicparts = 3
+		)
+	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/glaive
+	name = "Kinetic Glaive"
+	result = /obj/item/kinetic_crusher/glaive
+	time = 100
+	reqs = list(
+		/obj/item/kinetic_crusher = 1,
+		/obj/item/stack/sheet/mineral/titanium = 1,
+		/obj/item/stack/crafting/electronicparts = 5
+		)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
 
 /datum/crafting_recipe/tools/forged/fryingpan
 	name = "Frying Pan"
