@@ -42,7 +42,6 @@
 			. += "<span class='info'>[attached_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
-	. += "This helmet provides [armor.bullet]% bullet, [armor.laser]% laser, and [armor.melee]% melee resistance."
 
 /obj/item/clothing/head/helmet/handle_atom_del(atom/A)
 	if(A == attached_light)
@@ -459,7 +458,7 @@
 	icon_state = "policehelm"
 	dynamic_hair_suffix = ""
 	armor = list("tier" = 2)
-	
+
 /obj/item/clothing/head/helmet/armyhelmet
 	name = "steel helmet"
 	desc = "a steel helmet, inspired by several pre-war designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
@@ -468,7 +467,7 @@
 	icon_state = "armyhelmet"
 	item_state = "armyhelmet"
 	armor = list("melee" = 20, "bullet" = 45, "laser" = 20, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-	
+
 /obj/item/clothing/head/helmet/armyhelmet/heavy
 	name = "heavy steel helmet"
 	desc = "a steel helmet, inspired by several pre-war designs. This one has been modified by oasis citizens to provide more protection to the face and neck."

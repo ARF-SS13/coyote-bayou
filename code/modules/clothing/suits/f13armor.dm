@@ -168,7 +168,7 @@
 	name = "ablative combat armor"
 	desc = "An old military grade pre war combat armor. This one switches out its ballistic fibers for an ablative coating that disrupts energy weapons."
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 60, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
-	
+
 /obj/item/clothing/suit/armor/f13/combat/dark
 	name = "combat armor"
 	desc = "An old military grade pre war combat armor. Now in dark, and extra-crispy!"
@@ -191,7 +191,7 @@
 	item_state = "combat_armor_mk2"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 	slowdown = 0.15
-	
+
 /obj/item/clothing/suit/armor/f13/combat/mk2/dark
 	name = "reinforced combat armor"
 	desc = "A reinforced model based of the pre-war combat armor. Now in dark, light, and smoky barbeque!"
@@ -217,7 +217,7 @@
 	item_state = "rusted_combat_armor"
 	armor = list("melee" = 38, "bullet" = 45, "laser" = 38, "energy" = 18, "bomb" = 45, "bio" = 55, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 45)
 	slowdown = 0.12
-	
+
 /obj/item/clothing/suit/armor/f13/combat/environmental
 	name = "environmental armor"
 	desc = "A pre-war suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
@@ -512,13 +512,13 @@
 	icon_state = "midwestgrey_pa"
 	item_state = "midwestgrey_pa"
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 45, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 70)
-	
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
-	slowdown = 0.15 //+0.05 from helmet = total 0.175 
+	slowdown = 0.15 //+0.05 from helmet = total 0.175
 	armor = list("melee" = 73, "bullet" = 73, "laser" = 73, "energy" = 30, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 72)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51green
@@ -779,7 +779,7 @@
 	desc = "A heavy pre-war bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
-	
+
 
 /obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer
 	name = "Overseer's battlecoat"
@@ -1066,10 +1066,6 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "tribal"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 35, "energy" = 15, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 40)
 	slowdown = 0.05
-	
-/obj/item/clothing/suit/f13/tribal/examine(mob/user)
-	. = ..()
-	. += "This armor provides [armor.bullet]%  bullet, [armor.laser]% laser, and [armor.melee]% melee resistance."
 
 /obj/item/clothing/suit/f13/tribal/light
 	name = "light tribal armor"
@@ -1106,7 +1102,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	slowdown = 0.1
-	
+
 /obj/item/clothing/suit/f13/tribal/heavy/rustwalkers
 	name = "Rustwalkers heavy armor"
 	desc = "A car seat leather duster, a timing belt bandolier, and armour plating made from various parts of a car, it surely would weigh the wearer down. Commonly worn by members of the Rustwalkers tribe."
@@ -1168,7 +1164,7 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.01
-	
+
 
 /obj/item/clothing/suit/f13/tribal/deadhorses
 	name = "Dead Horses armour"
