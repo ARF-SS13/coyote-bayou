@@ -111,13 +111,13 @@
 /datum/gang_item/clothing/prostitute_dress
 	name = "Prostitute dress"
 	id = "prostitute_dress"
-	cost = 25
+	cost = 10
 	item_path = /obj/item/clothing/under/f13/female/flapper
 
 /datum/gang_item/clothing/hat
 	name = "Pimp Hat"
 	id = "hat"
-	cost = 30
+	cost = 20
 	item_path = /obj/item/clothing/head/collectable/petehat/gang
 
 /obj/item/clothing/head/collectable/petehat/gang
@@ -127,43 +127,43 @@
 /datum/gang_item/clothing/glasses/sunglasses
 	name = "Sunglasses"
 	id = "sunglasses"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/glasses/sunglasses
 
 /datum/gang_item/clothing/raider_uniform
 	name = "Raider uniform"
 	id = "raider_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/f13/raider_leather
 
 /datum/gang_item/clothing/jester_uniform
 	name = "Jester suit"
 	id = "jester_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/jester
 
 /datum/gang_item/clothing/biker_uniform
 	name = "Biker uniform"
 	id = "biker_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/f13/Retro_Biker_Vest
 
 /datum/gang_item/clothing/scarecrow_uniform
 	name = "Scarecrow uniform"
 	id = "scarecrow_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/scarecrow
 
 /datum/gang_item/clothing/soviet_uniform
 	name = "Soviet uniform"
 	id = "soviet_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/soviet
 
 /datum/gang_item/clothing/chairmen_uniform
 	name = "Chairmen uniform"
 	id = "chairmen_uniform"
-	cost = 40
+	cost = 20
 	item_path = /obj/item/clothing/under/f13/bennys/gang
 
 /obj/item/clothing/under/f13/bennys/gang
@@ -203,7 +203,7 @@
 /datum/gang_item/weapon/slugger
 	name = "Louiseville Slugger"
 	id = "slugger"
-	cost = 50
+	cost = 40
 	item_path = /obj/item/twohanded/baseball/louisville
 
 /datum/gang_item/weapon/sappers
@@ -317,7 +317,7 @@
 /datum/gang_item/equipment/bundleanarchist
 	name = "Mad Bomber Bundle"
 	id = "bundleanarchist"
-	cost = 650
+	cost = 550
 	item_path = /obj/item/storage/box/bundleanarchist
 	
 /obj/item/storage/box/bundleanarchist
@@ -336,7 +336,7 @@
 /datum/gang_item/equipment/bundlegunner
 	name = "Old Soldier Bundle"
 	id = "bundlegunner"
-	cost = 500
+	cost = 400
 	item_path = /obj/item/storage/box/bundlegunner
 	
 /obj/item/storage/box/bundlegunner
@@ -350,11 +350,12 @@
 	new /obj/item/storage/belt(src)
 	new /obj/item/clothing/under/f13/army(src)
 	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/grenade/frag(src)
 	
 /datum/gang_item/equipment/bundleelguapo
 	name = "Bandito Bundle"
 	id = "bundleelguapo"
-	cost = 500
+	cost = 300
 	item_path = /obj/item/storage/box/bundleelguapo
 	
 /obj/item/storage/box/bundleelguapo
