@@ -1,5 +1,6 @@
 /mob/living/Login()
 	..()
+	disconnect_time = null //we are connected
 	//Mind updates
 	sync_mind()
 	mind.show_memory(src, 0)

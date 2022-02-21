@@ -30,6 +30,7 @@
 
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
+	var/living_flags = NONE
 	// Combat - Blocking/Parrying system
 	/// Our block_parry_data for unarmed blocks/parries. Currently only used for parrying, as unarmed block isn't implemented yet. YOU MUST RUN [get_block_parry_data(this)] INSTEAD OF DIRECTLY ACCESSING!
 	var/datum/block_parry_data/block_parry_data = /datum/block_parry_data		// defaults to *something* because [combat_flags] dictates whether or not we can unarmed block/parry.
@@ -159,3 +160,5 @@
 	var/sprint_buffer_regen_last = 0		//last world.time this was regen'd for math.
 	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.
 	//---End
+
+	var/disconnect_time //how long have we been dc'd for

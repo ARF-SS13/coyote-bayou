@@ -333,8 +333,12 @@
 
 /// If you examine the same atom twice in this timeframe, we call examine_more() instead of examine()
 #define EXAMINE_MORE_TIME	1 SECONDS
+//simplemob flagf
 
 #define SILENCE_RANGED_MESSAGE (1<<0)
+
+//living flag
+#define HIDE_OFFLINE_INDICATOR (1<<0)
 
 //Respawn timer
 #define RESPAWN_TIMER 3000

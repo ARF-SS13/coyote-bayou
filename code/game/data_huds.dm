@@ -97,9 +97,12 @@
 	var/image/onlineholder = hud_list[ONLINE_HUD]
 	var/icon/I = icon(icon, icon_state, dir)
 	onlineholder.pixel_y = I.Height() - world.icon_size
+	if(living_flags & HIDE_OFFLINE_INDICATOR)
+		onlineholder.icon_state = "none"
+		return
 	if(!istype(src, /mob/living/carbon/human) && !client)
 		onlineholder.icon_state = "none"
-	else if(istype(src, /mob/living/carbon/human) && !client || !key)
+	else if(istype(src, /mob/living/carbon/human) && !key)
 		onlineholder.icon_state = "offline"
 	else
 		onlineholder.icon_state = "none"
