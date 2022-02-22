@@ -1201,7 +1201,7 @@
 	burst_shot_delay = 2.0
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.5
+	autofire_shot_delay = 2.2
 	extra_damage = 20
 	extra_penetration = 0.25
 	spread = 10 //high-velocity
@@ -1229,20 +1229,17 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "rifle-police"
-	extra_damage = 22
-	spread = 1.1
-	fire_delay = 3.5
+	extra_damage = 22 //longer barrel
+	autofire_shot_delay = 3.5 //not a real auto-gun
+	spread = 8 //longer barrel
 	can_scope = TRUE
-	can_automatic = FALSE
-	semi_auto = TRUE
 	
 /obj/item/gun/ballistic/automatic/assault_carbine/worn	
 	name = "worn assault carbine"
 	desc = "The U.S. army carbine version of the R91, made by Colt and issued to special forces. This one is beat-up and falling apart."
 	icon_state = "assault_carbine"
 	fire_delay = 3.5
-	burst_shot_delay = 2.5
-	extra_penetration = 0.15
+	burst_shot_delay = 2.2
 	spread = 14
 	extra_damage = 18
 
@@ -1272,12 +1269,12 @@
 	icon_state = "BAR"
 	item_state = "BAR"
 	icon_prefix = "BAR"
+	automatic = 1
 	force = 24 //club
-	burst_size = 1
-	burst_shot_delay = 2
 	slowdown = 1.25 //really goddamn big
+	autofire_shot_delay = 2.75
 	extra_damage = 28
-	spread = 12
+	spread = 10
 	recoil = 0.3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
