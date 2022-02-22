@@ -135,6 +135,7 @@
 							"NCR Trooper",
 							"NCR Rear Echelon",
 							"NCR Off-Duty",
+							"NCR Ranger"
 						)
 	
 
