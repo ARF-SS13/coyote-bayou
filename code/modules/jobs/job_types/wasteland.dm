@@ -495,7 +495,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/throwing = 5,
 		/obj/item/clothing/mask/gas/explorer/folded=1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/belt = 1,
 		/obj/item/restraints/legcuffs/beartrap = 2,
 		/obj/item/reverse_bear_trap = 1,
 		/obj/item/melee/unarmed/lacerator = 1,
