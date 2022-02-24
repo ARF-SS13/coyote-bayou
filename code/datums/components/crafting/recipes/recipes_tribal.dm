@@ -415,3 +415,49 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/reagent_containers/food/snacks/meat/slab/bear = 2,
 				/obj/item/clothing/head/bearpelt = 1)
+
+//Bone Dancers
+
+datum/crafting_recipe/tribalwar/bone
+	always_available = FALSE
+
+/datum/crafting_recipe/tribalwar/bone/lightarmour
+	name = "Bone Dancer Light Armor"
+	result = /obj/item/clothing/suit/f13/tribal/light/bone
+	time = 30
+	reqs = list(/obj/item/stack/sheet/bone = 6)
+
+/datum/crafting_recipe/tribalwar/bone/armour
+	name = "Bone Dancer Reinforced Armor"
+	result = /obj/item/clothing/suit/f13/tribal/bone
+	time = 60
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/bone = 6)
+
+/datum/crafting_recipe/tribalwar/bone/heavyarmour
+	name = "Bone Dancer Heavy Armor"
+	result = /obj/item/clothing/suit/f13/tribal/heavy/bone
+	time = 60
+	reqs = list(/obj/item/clothing/suit/f13/tribal/light/bone =1,
+				/obj/item/clothing/suit/f13/tribal/bone = 1,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/bone = 4)
+
+/datum/crafting_recipe/tribalwar/bone/garb
+	name = "Bone Dancer Garb"
+	result = /obj/item/clothing/under/f13/bone
+	time = 30
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+
+
+/datum/crafting_recipe/tribalwar/bone/helmet
+	name = "Bone Dancer helmet"
+	result = /obj/item/clothing/head/helmet/skull/bone
+	time = 30
+	reqs = list(/obj/item/stack/sheet/cloth = 1,
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/clothing/head/helmet/skull = 1)
+
+

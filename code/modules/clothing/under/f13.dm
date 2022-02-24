@@ -29,7 +29,7 @@
 	desc = "Khaki officers uniform with gold trimming over a black turtleneck."
 	icon_state = "uniform_enclave_officer"
 	item_state = "uniform_enclave_officer"
-	
+
 /obj/item/clothing/under/f13/enclave/intel
 	name = "intel officer uniform"
 	desc = "Dark pants and turtleneck with hidden kevlar layers, since intel officers often wear no proper armor."
@@ -1311,7 +1311,7 @@
 	item_state = "lb_suit"
 	item_color = "general"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 40, "acid" = 40)
-	
+
 /obj/item/clothing/under/f13/general/oasis
 	name = "dictator's overcoat"
 	desc = "A grim looking overcoat - preferable standard for the ruler of oasis.<br>It's decorated with golden stars, each one adorned with a tree."
@@ -1770,3 +1770,13 @@
 	item_state = "sorrows_under_f"
 	item_color = "sorrows_under_f"
 
+/obj/item/clothing/under/f13/bone
+	name = "Bone Dancer outfit"
+	desc = "A full body skin tight overalls, seemingly of brown color. Commonly worn by members of the Bone Dancers tribe."
+	icon_state = "bone_dancer"
+	item_state = "bone_dancer"
+	item_color = "bone_dancer"
+	var/sleeves_adjusted = 0
+	alt_covers_chest = TRUE
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE

@@ -1191,3 +1191,35 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	item_state = "sorrows_armour"
 	armor = list("melee" = 20, "bullet" = 45, "laser" = 20, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 	slowdown = 0.08
+
+/obj/item/clothing/suit/f13/tribal/light/bone
+	name = "Bone armor"
+	desc = "A tribal armor plate, crafted from animal bone."
+	icon_state = "bone_dancer_armor_light"
+	item_state = "bone_dancer_armor_light"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
+/obj/item/clothing/suit/f13/tribal/bone
+	name = "Reinforced Bone armor"
+	desc = "A tribal armor plate, reinforced with leather and a few metal parts."
+	icon_state = "bone_dancer_armor"
+	item_state = "bone_dancer_armor"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 0.025
+
+/obj/item/clothing/suit/f13/tribal/heavy/bone
+	name = "Heavy Bone armor"
+	desc = "A tribal full armor plate, crafted from animal bone, metal and leather. Usually worn by the Bone Dancers"
+	icon_state = "bone_dancer_armor_heavy"
+	item_state = "bone_dancer_armor_heavy"
+	blood_overlay_type = "armor"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 45)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 0.05

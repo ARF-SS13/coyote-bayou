@@ -151,7 +151,7 @@
 	icon_state = "metalhelmet_r"
 	item_state = "metalhelmet_r"
 	armor = list("melee" = 37, "bullet" = 22, "laser" = 42, "energy" = 16, "bomb" = 45, "bio" = 30, "rad" = 15, "fire" = 60, "acid" = 0)
-	
+
 /obj/item/clothing/head/helmet/knight/f13/rider
 	name = "rider helmet" //Not raider. Rider.
 	desc = "It's a fancy dark metal helmet with orange spray painted flames."
@@ -421,7 +421,7 @@
 	powered = FALSE
 //	deflection_chance = 10 //5% chance to block damage from blockable bullets and redirect the bullet at a random angle. Stripped down version of an already stripped down version
 	slowdown = 0.05
-	
+
 /obj/item/clothing/head/helmet/f13/power_armor/vaulttec
 	name = "Vault-Tec power helmet"
 	desc = "(VIII) A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
@@ -705,7 +705,7 @@
 	flags_inv = HIDEHAIR
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
-/obj/item/clothing/head/f13/cowboy/Initialize() 
+/obj/item/clothing/head/f13/cowboy/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -718,7 +718,7 @@
 	flags_inv = HIDEHAIR
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
-/obj/item/clothing/head/f13/bandit/Initialize() 
+/obj/item/clothing/head/f13/bandit/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -729,8 +729,8 @@
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-	
-/obj/item/clothing/head/f13/gambler/Initialize() 
+
+/obj/item/clothing/head/f13/gambler/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -744,10 +744,10 @@
 	armor = list("melee" = 35, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEHAIR
 	strip_delay = 10
-	
-/obj/item/clothing/head/helmet/f13/motorcycle/Initialize() 
+
+/obj/item/clothing/head/helmet/f13/motorcycle/Initialize()
 	. = ..()
-	AddComponent(/datum/component/armor_plate)	
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/helmet/f13/firefighter
 	name = "firefighter helmet"
@@ -780,10 +780,10 @@
 	item_state = "wastewar"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
-	
-/obj/item/clothing/head/helmet/f13/wastewarhat/Initialize() 
+
+/obj/item/clothing/head/helmet/f13/wastewarhat/Initialize()
 	. = ..()
-	AddComponent(/datum/component/armor_plate)	
+	AddComponent(/datum/component/armor_plate)
 
 
 /obj/item/clothing/head/helmet/f13/hoodedmask
@@ -803,8 +803,8 @@
 	item_state = "brahmin_leather_cowboy_hat"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
-	
-/obj/item/clothing/head/helmet/f13/brahmincowboyhat/Initialize() 
+
+/obj/item/clothing/head/helmet/f13/brahmincowboyhat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -816,8 +816,8 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
-	
-/obj/item/clothing/head/helmet/f13/rustedcowboyhat/Initialize() 
+
+/obj/item/clothing/head/helmet/f13/rustedcowboyhat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -995,7 +995,7 @@
 	icon_state = "ranger_grey_hat"
 	item_state = "ranger_grey_hat"
 	flags_inv = HIDEEARS|HIDEHAIR
-	
+
 /obj/item/clothing/head/f13/ranger_hat/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -1024,3 +1024,13 @@
 	desc = "A set of heavy bandages wrapped around the head. Made to protect the eye from whatever injury occured."
 	icon_state = "eyepatch_white_r"
 	item_state = "eyepatch_white_r"
+
+/obj/item/clothing/head/helmet/skull/bone
+	name = "Reinforced skull helmet"
+	desc = "An intimidating tribal helmet reinforced with leather and cloth parts on the inside for more comfort, while styling it on the Bone dancers way."
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
+	icon_state = "bone_dancer_helmet"
+	item_state = "bone_dancer_helmet"
+	strip_delay = 100

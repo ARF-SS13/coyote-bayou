@@ -5,13 +5,6 @@
 // WASTELAND //
 ///////////////
 
-/obj/item/clothing/suit/armored/medium/bone
-	name = "bone armor"
-	desc = "Primitive armor made from animal bones and sinew. Rattles when walking. Hard for critters to bite through and fire to burn."
-	icon_state = "bone"
-	item_state = "bone"
-	armor = list("melee" = 45, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 5, "fire" = 25, "acid" = 0)
-
 // Kevlar
 /obj/item/clothing/suit/armored/medium/vestarmor
 	name = "armored vest"
@@ -115,7 +108,7 @@
 	icon_state = "supafly"
 	item_state = "supafly"
 	armor = list("melee" = 25, "bullet" = 40, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
- 
+
 /obj/item/clothing/suit/armored/medium/rebel
 	name = "rebel raider armor"
 	desc = "Rebel, rebel. Your face is a mess."
@@ -378,7 +371,7 @@
 	desc = "A trenchcoat which does a poor job at hiding the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 35,  "energy" = 40, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10)
-	
+
 /obj/item/clothing/suit/armored/medium/lawcoat/commissioner
 	name = "commissioner's jacket"
 	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
