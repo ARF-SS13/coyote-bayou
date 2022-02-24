@@ -389,6 +389,7 @@
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	weapon_weight = WEAPON_MEDIUM
 	extra_damage = 33
 	extra_penetration = 0.2
 	spread = 4

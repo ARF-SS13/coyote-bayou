@@ -89,8 +89,8 @@
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
-	var/bigleagues = force*0.45
-	var/buffout = force*0.55
+	var/bigleagues = force*0.25
+	var/buffout = force*0.25
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
 
 	//force += regular//SPECIAL integration
