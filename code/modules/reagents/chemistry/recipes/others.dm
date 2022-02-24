@@ -867,7 +867,7 @@
 	CurveSharppH 		= 0.5
 	ThermicConstant		= 4
 	HIonRelease 		= 0.1
-	RateUpLim 			= 5
+	RateUpLim 			= 6
 	FermiChem 			= TRUE
 	FermiExplode 		= FALSE
 
