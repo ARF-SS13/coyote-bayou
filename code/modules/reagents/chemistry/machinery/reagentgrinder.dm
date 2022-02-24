@@ -15,7 +15,7 @@
 	resistance_flags = ACID_PROOF
 	var/operating = FALSE
 	var/obj/item/reagent_containers/beaker = null
-	var/limit = 10
+	var/limit = 20
 	var/speed = 1
 	var/list/holdingitems
 
