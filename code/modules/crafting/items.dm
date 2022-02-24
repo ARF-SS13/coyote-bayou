@@ -175,9 +175,9 @@
 				/obj/item/stack/crafting/electronicparts/three,
 				/obj/item/stack/sheet/mineral/titanium,
 				/obj/item/stack/sheet/metal/ten,
+				/obj/item/stack/sheet/cloth/ten,
+				/obj/item/stack/sheet/leather/ten,
 				/obj/item/stack/sheet/glass/ten,
-				/obj/item/stack/sheet/cloth/five,
-				/obj/item/stack/sheet/leather/five,
 				/obj/item/stack/sheet/prewar/five,
 				/obj/item/stock_parts/cell/ammo/ec,
 				/obj/item/stack/crafting/goodparts/five
@@ -191,9 +191,8 @@
 				/obj/item/crafting/coffee_pot,
 				/obj/item/crafting/wonderglue,
 				/obj/item/crafting/abraxo,
-				/obj/item/crafting/igniter,
-				/obj/item/crafting/timer,
-				/obj/item/crafting/sensor,
+				/obj/item/stack/sheet/cloth/five,
+				/obj/item/stack/sheet/leather/five,
 				/obj/item/crafting/lunchbox,
 				/obj/item/reagent_containers/glass/bottle/blackpowder)
 
@@ -230,4 +229,3 @@
 				/obj/item/attachments/burst_improvement,
 				/obj/item/attachments/recoil_decrease,
 				/obj/item/attachments/auto_sear)
-

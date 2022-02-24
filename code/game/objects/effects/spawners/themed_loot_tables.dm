@@ -390,7 +390,7 @@
 		/obj/item/reagent_containers/food/drinks/flask,
 		/obj/item/reagent_containers/glass/bottle/blackpowder,
 		/obj/item/stack/cable_coil,
-		/obj/item/crafting/timer,
+		/obj/item/assembly/timer,
 		/obj/item/crafting/coffee_pot,
 		/obj/item/assembly/igniter,
 		/obj/item/ammo_box/jerrycan,

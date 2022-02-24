@@ -184,6 +184,9 @@ GLOBAL_LIST_INIT(leather_recipes, list ( \
 /obj/item/stack/sheet/leather/five
 	amount = 5
 
+/obj/item/stack/sheet/leather/ten
+	amount = 10
+
 /obj/item/stack/sheet/leather/twenty
 	amount = 20
 

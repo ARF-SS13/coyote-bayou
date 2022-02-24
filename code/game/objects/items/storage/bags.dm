@@ -120,6 +120,7 @@
 	AddComponent(/datum/component/rad_insulation, 0.01) //please datum mats no more cancer
 	var/datum/component/storage/concrete/stack/STR = GetComponent(/datum/component/storage/concrete/stack)
 	STR.allow_quick_empty = TRUE
+	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/stack/ore))
 	STR.max_w_class = WEIGHT_CLASS_HUGE
 	STR.max_combined_stack_amount = 50
@@ -494,3 +495,22 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_items = 2
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(/obj/item/rcd_ammo, /obj/item/stack/sheet))
+
+/obj/item/storage/bag/salvage
+	name = "salvage sack"
+	desc = "A sack for your salvage."
+	icon = 'icons/obj/janitor.dmi' //im lazy
+	icon_state = "trashbag"
+	item_state = "trashbag"
+	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
+	w_class = WEIGHT_CLASS_HUGE
+	resistance_flags = FLAMMABLE
+
+/obj/item/storage/bag/salvage/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
+	STR.max_items = 30
+	STR.can_hold = typecacheof(list(/obj/item/salvage))

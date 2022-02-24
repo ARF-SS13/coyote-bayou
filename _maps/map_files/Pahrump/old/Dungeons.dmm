@@ -2266,7 +2266,7 @@
 /area/f13/bunker)
 "gd" = (
 /obj/structure/table/wood,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -3855,7 +3855,7 @@
 /area/f13/bunker)
 "kh" = (
 /obj/structure/table/wood,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -13995,7 +13995,7 @@
 /obj/item/crafting/capacitor,
 /obj/item/crafting/capacitor,
 /obj/item/crafting/capacitor,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -14704,7 +14704,7 @@
 "On" = (
 /obj/structure/rack,
 /obj/item/crafting/large_gear,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /obj/item/crafting/small_gear,
 /obj/item/crafting/transistor,
 /obj/item/crafting/transistor,
@@ -15604,7 +15604,7 @@
 /obj/structure/table,
 /obj/item/crafting/board,
 /obj/item/crafting/board,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "QA" = (
@@ -15728,7 +15728,7 @@
 "QP" = (
 /obj/item/storage/toolbox/electrical,
 /obj/structure/table,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "QQ" = (
@@ -17657,9 +17657,9 @@
 /area/f13/vault)
 "VH" = (
 /obj/structure/rack,
-/obj/item/crafting/igniter,
-/obj/item/crafting/igniter,
-/obj/item/crafting/igniter,
+/obj/item/assembly/igniter,
+/obj/item/assembly/igniter,
+/obj/item/assembly/igniter,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -18575,7 +18575,7 @@
 /obj/item/crafting/buzzer,
 /obj/item/crafting/buzzer,
 /obj/item/crafting/buzzer,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},

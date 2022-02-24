@@ -152,21 +152,6 @@
 	icon_state = "reloader"
 	tool_behaviour = TOOL_MSRELOADER
 
-/obj/item/crafting/igniter
-	name = "igniter"
-	desc = "A small electronic device able to ignite combustable substances."
-	icon_state = "igniter"
-
-/obj/item/crafting/timer
-	name = "timer"
-	desc = "Used to time things. Works well with contraptions which has to count down. Tick tock."
-	icon_state = "timer"
-
-/obj/item/crafting/sensor
-	name = "proximity sensor"
-	desc = "Used for scanning and alerting when someone enters a certain proximity."
-	icon_state = "sensor"
-
 /obj/item/crafting/lunchbox
 	name = "lunch box"
 	desc = "This was a promotional item created by Vault-Tec before the Great War and used in the company's advertisements. With the right schematics, it can be used to make bottlecap mines."

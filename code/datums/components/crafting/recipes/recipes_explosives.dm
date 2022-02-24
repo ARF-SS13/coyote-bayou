@@ -42,7 +42,7 @@
 	reqs = list(/datum/reagent/blackpowder = 50,
 				/obj/item/crafting/coffee_pot = 1,
 				/obj/item/stack/cable_coil = 1,
-				/obj/item/crafting/timer = 1,)
+				/obj/item/assembly/timer = 1,)
 	time = 30
 	category = CAT_EXPLOSIVE
 
@@ -75,7 +75,7 @@
 			/obj/item/stack/crafting/metalparts = 10,
 			/obj/item/stack/crafting/goodparts = 3,
 			/obj/item/stack/crafting/electronicparts = 5,
-			/obj/item/stack/ore/blackpowder = 4,		
+			/obj/item/stack/ore/blackpowder = 4,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -94,7 +94,6 @@
 			/obj/item/stack/crafting/electronicparts = 5,
 			/obj/item/stack/ore/blackpowder = 4,
 			/obj/item/assembly/prox_sensor = 1,
-			/obj/item/crafting = 15,
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -112,7 +111,6 @@
 			/obj/item/stack/crafting/electronicparts = 5,
 			/obj/item/stack/ore/blackpowder = 10,
 			/obj/item/assembly/prox_sensor = 1,
-			/obj/item/crafting = 7,
 			/datum/reagent/napalm = 100,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -146,7 +144,6 @@
 			/obj/item/stack/crafting/goodparts = 3,
 			/obj/item/stack/crafting/electronicparts = 30,
 			/obj/item/stack/ore/blackpowder = 4,
-			/obj/item/crafting = 15,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/advanced_crafting_components/flux = 2,
 			/obj/item/stack/sheet/mineral/uranium = 5,
@@ -202,7 +199,6 @@
 			/obj/item/assembly/prox_sensor = 1,
 			/datum/reagent/iron = 50,
 			/datum/reagent/radium = 50,
-			/obj/item/crafting = 10,
 			/obj/item/stack/cable_coil = 200
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -234,7 +230,6 @@
 		/obj/item/stack/crafting/electronicparts = 5,
 		/obj/item/stack/sheet/mineral/titanium = 5,
 		/obj/item/stack/ore/blackpowder = 5,
-		/obj/item/crafting = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
@@ -249,7 +244,6 @@
 		/obj/item/stack/crafting/electronicparts = 5,
 		/obj/item/stack/sheet/prewar = 5,
 		/obj/item/stack/ore/blackpowder = 15,
-		/obj/item/crafting = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 5
@@ -264,7 +258,6 @@
 		/obj/item/stack/crafting/electronicparts = 25,
 		/obj/item/stack/sheet/prewar = 10,
 		/obj/item/stack/ore/blackpowder = 15,
-		/obj/item/crafting = 10,
 		/datum/reagent/phlogiston = 200
 	)
 	tools = list(TOOL_AWORKBENCH)

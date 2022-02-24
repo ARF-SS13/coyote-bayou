@@ -2353,7 +2353,7 @@
 /area/f13/vault)
 "cND" = (
 /obj/structure/table/wood,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -4740,7 +4740,7 @@
 /obj/item/crafting/buzzer,
 /obj/item/crafting/buzzer,
 /obj/item/crafting/buzzer,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -5524,7 +5524,7 @@
 /area/f13/underground/cave)
 "gwo" = (
 /obj/structure/table/wood,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -9893,9 +9893,9 @@
 /area/f13/bunker)
 "lYs" = (
 /obj/structure/rack,
-/obj/item/crafting/igniter,
-/obj/item/crafting/igniter,
-/obj/item/crafting/igniter,
+/obj/item/assembly/igniter,
+/obj/item/assembly/igniter,
+/obj/item/assembly/igniter,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -11846,7 +11846,7 @@
 "ogw" = (
 /obj/structure/rack,
 /obj/item/crafting/large_gear,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /obj/item/crafting/small_gear,
 /obj/item/crafting/transistor,
 /obj/item/crafting/transistor,
@@ -14325,7 +14325,7 @@
 /obj/item/crafting/capacitor,
 /obj/item/crafting/capacitor,
 /obj/item/crafting/capacitor,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -14845,7 +14845,7 @@
 /obj/structure/rack,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /obj/item/mining_scanner,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
@@ -15049,7 +15049,7 @@
 "rLZ" = (
 /obj/item/storage/toolbox/electrical,
 /obj/structure/table,
-/obj/item/crafting/timer,
+/obj/item/assembly/timer,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "rMe" = (
@@ -17305,7 +17305,7 @@
 /obj/structure/table,
 /obj/item/crafting/board,
 /obj/item/crafting/board,
-/obj/item/crafting/sensor,
+/obj/item/assembly/prox_sensor,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "uNm" = (

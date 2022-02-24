@@ -68,7 +68,7 @@
 	switch(welding)
 		if(0)
 			force = 3
-			damtype = "brute"
+			damtype = BRUTE
 			update_icon()
 			if(!can_off_process)
 				STOP_PROCESSING(SSobj, src)
@@ -76,7 +76,7 @@
 	//Welders left on now use up fuel, but lets not have them run out quite that fast
 		if(1)
 			force = 15
-			damtype = "fire"
+			damtype = BURN
 			++burned_fuel_for
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
 				use(1)
