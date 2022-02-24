@@ -417,6 +417,9 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
 
+/obj/item/stack/sheet/mineral/abductor/ten
+	amount = 10
+
 GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	new/datum/stack_recipe("poylmer bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("polymer locker", /obj/structure/closet/abductor, 2, time = 15, one_per_turf = 1, on_floor = 1), \

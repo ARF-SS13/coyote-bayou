@@ -562,6 +562,44 @@
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout
 				)
+				
+
+obj/effect/spawner/lootdrop/f13/medical/rnd/mid
+	name = "mid dungeon science loot"	//to replace guns as treasure in slightly protected areas
+	lootcount = 1
+	
+	loot = list(
+		/obj/item/screwdriver/power,
+		/obj/item/wrench/power,
+		/obj/item/storage/box/medicine/stimpaks/stimpaks5,
+		/obj/item/stack/sheet/prewar/twenty,
+		/obj/item/stack/sheet/plastic/twenty,
+		/obj/item/defibrillator/primitive,
+		/obj/item/reagent_containers/syringe/bluespace,
+		)
+		
+
+obj/effect/spawner/lootdrop/f13/medical/rnd/good
+	name = "good dungeon science loot"	//to replace guns as treasure in heavily guarded areas
+	lootcount = 1
+	
+	loot = list(
+		/obj/item/reagent_containers/glass/beaker/meta = 5,
+		/obj/item/stack/sheet/mineral/abductor/ten = 5,
+		/obj/item/scalpel/advanced = 5,
+		/obj/item/surgical_drapes/advanced = 5,
+		/obj/effect/spawner/bundle/f13/needler = 5,
+		/obj/item/clothing/glasses/night = 5,
+		/obj/item/circuitboard/machine/chem_dispenser/apothecary = 5,
+		/obj/item/storage/box/stockparts/deluxe = 5,
+		/obj/item/storage/box/emps = 5,
+		/obj/item/organ/cyberimp/arm/janitor = 5,
+		/obj/item/reagent_containers/glass/bottle/fentanyl = 5,
+		/obj/item/reagent_containers/glass/bottle/frostoil = 5,
+		/obj/item/book/granter/trait/midsurgery = 5,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution = 1,
+		)
+		
 /*	------------------------------------------------
 	--------------WEAPON SPAWNERS-------------------
 	------------------------------------------------ */
@@ -1969,8 +2007,6 @@
 				/obj/item/book/granter/action/drink_fling = 10,
 				/obj/item/book/granter/crafting_recipe/gunsmith_one = 10,
 				)
-
-
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"
 	icon_state = "blueprint_loot"
