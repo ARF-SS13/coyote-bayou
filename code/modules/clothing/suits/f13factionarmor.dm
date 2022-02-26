@@ -498,7 +498,7 @@
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.05
 
-/obj/item/clothing/suit/armor/f13/rangerrecon/Initialize()
+/obj/item/clothing/suit/toggle/armor/f13/rangerrecon/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
