@@ -820,7 +820,6 @@ Senior Knight
 /datum/outfit/loadout/sknightd
 	name = "Cavalry"
 	backpack_contents = list(
-		/obj/item/clothing/accessory/bos/knight=1,
 		/obj/item/melee/powered/ripper/prewar=1,
 		/obj/item/shield/riot/bullet_proof=1,
 		)
