@@ -280,7 +280,6 @@ Fence
 						/obj/item/gun/ballistic/revolver/hobo/knifegun = 8,
 						/obj/item/gun/ballistic/revolver/hobo/pepperbox = 8,
 						/obj/item/gun/ballistic/revolver/single_shotgun = 8,
-						/obj/item/gun/ballistic/revolver/colt6520 = 8,
 						/obj/item/gun/ballistic/automatic/pistol/n99 = 8,
 						/obj/item/gun/ballistic/automatic/pistol/pistol22 = 8,
 						/obj/item/gun/ballistic/automatic/pistol/ninemil = 8,
@@ -297,7 +296,7 @@ Fence
 						/obj/item/gun/ballistic/rifle/hobo/lasmusket = 15,
 						/obj/item/stack/crafting/armor_plate = 20,
 						)
-						
+
 /obj/machinery/mineral/wasteland_trader/gunbuyer/ui_interact(mob/user)
 	. = ..()
 	var/dat
@@ -315,7 +314,7 @@ Fence
 	dat += "Does not accept weapons of historical or artisanal value. Those belong in a musuem."
 	dat += ""
 	dat += "</div>"
-						
+
 	var/datum/browser/popup = new(user, "tradingvendor", "Trading point", 400, 500)
 	popup.set_content(dat)
 	popup.open()

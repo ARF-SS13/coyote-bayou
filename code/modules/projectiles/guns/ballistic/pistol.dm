@@ -238,21 +238,6 @@
 	recoil = 0.05
 	fire_delay = 4
 
-//M1911	compact							Keywords: .45 ACP, Semi-auto, Short barrel, 8 round magazine. Special modifiers: damage +1
-/obj/item/gun/ballistic/automatic/pistol/m1911/compact
-	name = "M1911 compact"
-	desc = "The compact version of the classic .45 handgun."
-	icon_state = "c1911"
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
-	extra_damage = 28
-	spread = 4
-	suppressor_x_offset = 29
-	suppressor_y_offset = 21
-
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
-	spawnwithmagazine = FALSE
-
 
 //Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
 /obj/item/gun/ballistic/automatic/pistol/mk23

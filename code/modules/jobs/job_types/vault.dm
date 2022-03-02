@@ -114,7 +114,7 @@ Head of Security
 	head = 			/obj/item/clothing/head/collectable/police/cos
 	belt = 			/obj/item/storage/belt/security
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	r_hand =		/obj/item/gun/ballistic/revolver/colt6520
+	r_hand =		/obj/item/gun/ballistic/automatic/pistol/n99
 	r_pocket = 		/obj/item/assembly/flash/handheld
 	l_pocket = 		/obj/item/restraints/handcuffs
 	backpack = 		/obj/item/storage/backpack/security

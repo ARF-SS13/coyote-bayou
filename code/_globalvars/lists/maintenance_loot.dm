@@ -509,7 +509,7 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/ammo_box/magazine/m45,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil,
 	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/gun/ballistic/revolver/colt6520,
+	/obj/item/gun/ballistic/automatic/pistol/n99,
 	/obj/item/ammo_box/magazine/m10mm_adv/simple,
 	/obj/item/gun/ballistic/automatic/varmint,
 	/obj/item/ammo_box/magazine/m556/rifle/small

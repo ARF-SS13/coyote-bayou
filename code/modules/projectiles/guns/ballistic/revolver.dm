@@ -7,7 +7,7 @@
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
-	fire_delay = 4.5	
+	fire_delay = 4.5
 	spread = 1
 	force = 12 // Pistol whip
 	casing_ejector = FALSE
@@ -139,27 +139,10 @@
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
 
-/////////////////////
-// 10 MM REVOLVERS //
-/////////////////////
-
-//Colt 6520			 							Keywords: 10mm, Double action, 12 rounds cylinder
-/obj/item/gun/ballistic/revolver/colt6520
-	name = "Colt 6520"
-	desc = "The Colt 6520 10mm double action revolver is a highly durable weapon developed by Colt Firearms prior to the Great War. It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
-	icon_state = "colt6520"
-	extra_damage = 24
-	extra_penetration = 0.1
-	fire_delay = 4.5
-	recoil = 0.05
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6520
-	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-
-
-
-///////////////////////
+///////////////////
 // .45 ACP REVOLVERS //
-///////////////////////
+///////////////////
+
 
 //S&W 45						Keywords: .45, Single action, 7 rounds cylinder, Long barrel
 /obj/item/gun/ballistic/revolver/revolver45
@@ -202,8 +185,8 @@
 	extra_damage = 40
 	fire_delay = 3
 	block_chance = 20
-	
-//Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol 
+
+//Police revolver					Keywords: .357, Double action, 6 rounds cylinder, Pocket Pistol
 /obj/item/gun/ballistic/revolver/police
 	name = "police revolver"
 	desc = "Pre-war double action police revolver chambered in .357 magnum."

@@ -82,7 +82,7 @@
 	. = ..()
 	can_hold = GLOB.storage_medical_can_hold
 
-	
+
 /datum/component/storage/concrete/pockets/tiny
 	max_items = 1
 	max_w_class = WEIGHT_CLASS_TINY
@@ -208,7 +208,7 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/dropper,
 	/obj/item/screwdriver,
 	/obj/item/weldingtool/mini,
-	/obj/item/pen, 
+	/obj/item/pen,
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
@@ -270,7 +270,6 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/automatic/pistol/sig,
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/automatic/hobo/zipgun,
-	/obj/item/gun/ballistic/automatic/pistol/m1911/compact,
 	/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
 	/obj/item/gun/ballistic/revolver/police,
 	/obj/item/gun/ballistic/revolver/colt357/lucky,

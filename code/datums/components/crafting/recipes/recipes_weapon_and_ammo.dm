@@ -302,20 +302,6 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-//colt 6520
-/datum/crafting_recipe/colt6520
-	name = "Colt 6520 Revolver"
-	result = /obj/item/gun/ballistic/revolver/colt6520
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/crafting/metalparts = 5,
-				/datum/reagent/blackpowder = 10,
-				/obj/item/stack/sheet/metal = 1)
-	tools = list(TOOL_WORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_available = FALSE
-
 //m1911
 /datum/crafting_recipe/m1911
 	name = "M1911"
