@@ -32,7 +32,7 @@
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
 	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
-	
+
 
 obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
@@ -173,6 +173,14 @@ obj/item/ammo_casing/shotgun/executioner
 	icon_state = "magshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/magnum_buckshot
 	pellets = 7
+	variance = 15
+
+/obj/item/ammo_casing/shotgun/trainshot
+	name = "12 gauge trainshot shell"
+	desc = "It's a 12-gauge, 3-pellet tungsten trainshot shotgun shell. Sometimes referred to as the tungsten trinity."
+	icon_state = "magshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/trainshot
+	pellets = 3
 	variance = 15
 
 

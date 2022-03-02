@@ -74,3 +74,28 @@
 		var/mob/living/carbon/human/targetHuman = target
 		targetHuman.adjust_fire_stacks(5)
 		targetHuman.IgniteMob() //you just got burned!
+
+
+/obj/item/projectile/bullet/reusable/arrow/broadhead
+	name = "broadhead arrow"
+	desc = "An arrow that sticks in wounds. Badly."
+	armour_penetration = 0.1
+	damage = 20
+	sharpness = SHARP_EDGED
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/broadhead
+	embedding = list(embed_chance=100, fall_chance=0, jostle_chance=3, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.2, pain_mult=3, jostle_pain_mult=5, rip_time=25, projectile_payload = /obj/item/ammo_casing/caseless/arrow/broadhead)
+
+/obj/item/projectile/bullet/reusable/arrow/broadhead/on_hit(atom/target, blocked)
+	if(iscarbon(target))
+		dropped = TRUE
+	..()
+
+/obj/item/projectile/bullet/reusable/arrow/serrated
+	name = "serrated arrow"
+	desc = "An arrow that can sever arteries!"
+	wound_bonus = 25
+	bare_wound_bonus = 20
+	sharpness = SHARP_EDGED
+	armour_penetration = 0.05
+	damage = 30
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated

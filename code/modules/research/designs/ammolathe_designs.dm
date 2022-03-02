@@ -456,7 +456,6 @@
 	build_path = /obj/item/ammo_box/c4570box
 	category = list("initial", "Intermediate Ammo")
 
-
 /datum/design/ammolathe/lc45
 	name = ".45 LC ammo box"
 	id = "c45lc"
@@ -476,27 +475,6 @@
 	id = "a127mm"
 	build_path = /obj/item/ammo_box/m14mm
 	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 2000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a10mmwounding
-	name = "10mm wounding ammo box"
-	id = "a10mmwound"
-	build_path = /obj/item/ammo_box/c10mm/wounding
-	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 5000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a10mmfire
-	name = "10mm incendiary ammo box"
-	id = "10mmincend"
-	build_path = /obj/item/ammo_box/c10mm/fire
-	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 10000)
-	category = list("initial", "Intermediate Ammo")
-
-/datum/design/ammolathe/a9mmwounding
-	name = "9mm wounding ammo box"
-	id = "9mmincend"
-	build_path = /obj/item/ammo_box/c9mm/wounding
-	materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 5000)
 	category = list("initial", "Intermediate Ammo")
 
 /*/datum/design/ammolathe/a45op
@@ -600,27 +578,6 @@
 	id = "m473fmj"
 	materials = list(/datum/material/iron = 25000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a556uraniumtipped
-	name = "5.56mm uranium-tipped ammo box"
-	id = "a556uranium"
-	materials = list(/datum/material/iron = 40000, /datum/material/titanium = 15000, /datum/material/blackpowder = 5000, /datum/material/uranium = 4000)
-	build_path = /obj/item/ammo_box/a556/uraniumtipped
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a762uraniumtipped
-	name = "7.62 uranium-tipped ammo box"
-	id = "a762uranium"
-	materials = list(/datum/material/iron = 40000, /datum/material/titanium = 15000, /datum/material/blackpowder = 5000, /datum/material/uranium = 4000)
-	build_path = /obj/item/ammo_box/a762box/uraniumtipped
-	category = list("initial", "Advanced Ammo")
-
-/datum/design/ammolathe/a45incendiary
-	name = ".45 incendiary ammo box"
-	id = "45incend"
-	materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 15000)
-	build_path = /obj/item/ammo_box/c45/incendiary
 	category = list("initial", "Advanced Ammo")
 
 /datum/design/ammolathe/a357ricochet

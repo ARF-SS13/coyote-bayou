@@ -70,14 +70,6 @@
 /obj/item/ammo_box/magazine/mg34/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/m2mm
-	name = "2mm electromagnetic magazine"
-	icon_state = "2mm"
-	ammo_type = /obj/item/ammo_casing/c2mm
-	caliber = "2mm"
-	max_ammo = 10
-	multiple_sprites = 2
-
 /obj/item/ammo_box/magazine/mm762
 	name = "ammo belt (.308)"
 	icon_state = "762belt"

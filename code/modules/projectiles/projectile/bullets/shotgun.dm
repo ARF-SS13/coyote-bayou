@@ -47,7 +47,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(3) 
+		M.adjust_fire_stacks(3)
 		M.IgniteMob()
 
 /obj/item/projectile/bullet/shotgun_stunslug
@@ -146,6 +146,23 @@
 	do_sparks(1, TRUE, src)
 	..()
 
+/obj/item/projectile/bullet/pellet/trainshot
+	damage = 15
+	stamina = 10
+	armour_penetration = 0.45
+	wound_bonus = 15
+	bare_wound_bonus = 15
+	sharpness = SHARP_NONE //crunch
+	tile_dropoff = 0
+	tile_dropoff_s = 0
+
+/obj/item/projectile/bullet/pellet/trainshot/on_hit(atom/target)
+	. = ..()
+	if(ismovable(target) && prob(8))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 3)
+
 // Mech Scattershots
 
 /obj/item/projectile/bullet/scattershot
@@ -166,7 +183,7 @@
 	armour_penetration = 0.15
 	wound_bonus = 10
 	bare_wound_bonus = 10
-	
+
 // BETA STUFF // Obsolete
 /obj/item/projectile/bullet/pellet/shotgun_buckshot/test
 	name = "buckshot pellet"

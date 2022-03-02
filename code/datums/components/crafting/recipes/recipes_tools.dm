@@ -120,3 +120,13 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_CRAFTING
 	subcategory = CAT_TOOL
+
+/datum/crafting_recipe/msreloader
+	name = "Makeshift Reloading Press"
+	result = /obj/item/crafting/reloader
+	time = 80
+	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/rods = 2)
+	category = CAT_CRAFTING
+	subcategory = CAT_TOOL

@@ -69,7 +69,7 @@
 #define CAT_WEAPONRY	"Weaponry"
 #define CAT_WEAPON	"Ranged Weapons"
 #define CAT_MELEE	"Melee Weapons"
-#define CAT_AMMO	"Explosives & Cells"
+#define CAT_AMMO	"Ammo & Cells"
 #define CAT_MISCWEP	"Weapons Misc"
 #define CAT_PARTS	"Weapon Parts"
 #define CAT_CRAFTING	"Crafting"

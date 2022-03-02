@@ -6,14 +6,14 @@
 ////////////////////
 
 
-//Shotguns 
+//Shotguns
 /obj/item/ammo_box/shotgun
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	max_ammo = 12
 	custom_materials = list(/datum/material/iron = 6000, /datum/material/blackpowder = 1000)
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
-	
+
 /obj/item/ammo_box/shotgun/slug
 	name = "Slug shotgun ammo box"
 	desc = "A box full of shotgun shells."
@@ -44,13 +44,11 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "stunbox"
 
-/obj/item/ammo_box/shotgun/improvised 
+/obj/item/ammo_box/shotgun/improvised
 	name = "homemade shotgun shells"
 	desc = "Recycled paper, plastic, little pieces of metal and gunpowder. Loud but not very effective."
-	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	icon_state = "improvshotbag"
 
@@ -60,6 +58,11 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/incendiary
 	icon_state = "mbox"
 
+/obj/item/ammo_box/shotgun/trainshot
+	name = "trainshot shotshell ammo box"
+	desc = "A box full of trainshot shells. For hunting trains, you suppose."
+	ammo_type = /obj/item/ammo_casing/shotgun/trainshot
+	icon_state = "trainshotbox"
 
 //.22 LR
 /obj/item/ammo_box/m22
@@ -77,6 +80,13 @@
 	desc = "A box of .22 rubber rounds. For when you want to be useless."
 	ammo_type = /obj/item/ammo_casing/a22/rubber
 
+/obj/item/ammo_box/m22/shock
+	name = "ammo box (.22lr electroshock)"
+	icon_state = "22shockbox"
+	multiple_sprites = 1
+	desc = "A box of .22 electroshock rounds."
+	ammo_type = /obj/item/ammo_casing/a22/shock
+
 //9mm and .38
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -88,15 +98,6 @@
 	max_ammo = 30
 	custom_materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1000)
 
-/obj/item/ammo_box/c9mm/wounding
-	name = "ammo box (9mm wounding)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "9mmbox"
-	multiple_sprites = 2
-	caliber = "9mm"
-	desc = "A box full of 9mm wounding bullets. They do more damage the closer you are."
-	ammo_type = /obj/item/ammo_casing/c9mm/wounding
-
 /obj/item/ammo_box/c9mm/rubber
 	name = "ammo box (9mm rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -104,6 +105,24 @@
 	multiple_sprites = 2
 	caliber = "9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
+/obj/item/ammo_box/c9mm/acid
+	name = "ammo box (9mm acid-tipped)"
+	desc = "A box of 9mm acid-tipped rounds. This'll sting."
+	ammo_type = /obj/item/ammo_casing/c9mm/acid
+
+/obj/item/ammo_box/c9mm/incendiary
+	name = "ammo box (9mm incendiary-tipped)"
+	desc = "A box of 9mm incendiary-tipped rounds. This'll burn."
+	ammo_type = /obj/item/ammo_casing/c9mm/incendiary
+
+/obj/item/ammo_box/c9mm/improv
+	name = "bag with reloaded 9mm bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
+	ammo_type = /obj/item/ammo_casing/c9mm/improv
 
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
@@ -122,14 +141,22 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c38/rubber
 
+/obj/item/ammo_box/c38box/acid
+	name = "ammo box (.38 acid-tipped)"
+	desc = "A box of .38 acid-tipped rounds. This'll sting."
+	ammo_type = /obj/item/ammo_casing/c38/acid
+
+/obj/item/ammo_box/c38box/incendiary
+	name = "ammo box (.38 incendiary-tipped)"
+	desc = "A box of .38 incendiary-tipped rounds. This'll burn."
+	ammo_type = /obj/item/ammo_casing/c38/incendiary
+
 /obj/item/ammo_box/c38box/improvised
 	name = "bag with reloaded .38 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+	ammo_type = /obj/item/ammo_casing/c38/improv
 
 
 //10mm
@@ -145,36 +172,20 @@
 
 
 /obj/item/ammo_box/c10mm/fire
-	name = "ammo box (10mm Incendiary)"
-	icon_state = "10mmbox"
-	max_ammo = 20
+	name = "ammo box (10mm incendiary-tipped)"
+	desc = "A box of 10mm incendiary-tipped rounds. This'll burn."
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "10mmbox"
-	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c10mm/incendiary
 
 /obj/item/ammo_box/c10mm/rubber
 	name = "ammo box (10mm rubber)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "10mmbox"
-	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
-
-/obj/item/ammo_box/c10mm/wounding
-	name = "ammo box (10mm wounding)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "10mmbox"
-	multiple_sprites = 2
-	ammo_type = /obj/item/ammo_casing/c10mm/wounding
 
 /obj/item/ammo_box/c10mm/improvised
 	name = "bag with reloaded 10mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 
 //.357 Magnum
 /obj/item/ammo_box/a357box
@@ -190,12 +201,26 @@
 
 /obj/item/ammo_box/a357box/ricochet
 	name = "ammo box (.357 Magnum ricochet)"
-	max_ammo = 6
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "357box"
-	multiple_sprites = 2
-	desc = "Six shots...more than enough to kill anything that moves."
+	desc = "Six shots...more than enough to kill anything that moves. This box has thirty, so you can kill five things."
 	ammo_type = /obj/item/ammo_casing/a357/ricochet
+
+
+/obj/item/ammo_box/a357box/incendiary
+	name = "ammo box (.357 magnum incendiary-tipped)"
+	desc = ".357 incendiary-tipped ammo. There's not much else to it."
+	ammo_type = /obj/item/ammo_casing/a357/incendiary
+
+/obj/item/ammo_box/a357box/acid
+	name = "ammo box (.357 magnum acid-tipped)"
+	desc = ".357 acid-tipped ammo. There's not much else to it, really."
+	ammo_type = /obj/item/ammo_casing/a357/acid
+
+/obj/item/ammo_box/a357box/improvised
+	name = "bag with reloaded .357 bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	ammo_type = /obj/item/ammo_casing/a357/improv
+	icon_state = "improvshotbag"
+	multiple_sprites = 1
 
 //.44 Magnum
 /obj/item/ammo_box/m44box
@@ -208,6 +233,12 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1000)
+
+/obj/item/ammo_box/m44box/incendiary
+	name = "ammo box (.44 magnum incendiary-tipped)"
+	desc = "A box of .44 (not 10mm) incendiary-tipped rounds. Filled with a safe homemade naplam made from phosphorus, welding fuel, thickened with abraxo cleaner."
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	ammo_type = /obj/item/ammo_casing/m44/incendiary
 
 /obj/item/ammo_box/a45lcbox
 	name = "ammo box (.45 Long Colt)"
@@ -223,10 +254,7 @@
 	name = "bag with reloaded .44 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 
 
 // .45 ACP
@@ -249,22 +277,15 @@
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 /obj/item/ammo_box/c45/incendiary
-	name = "ammo box (.45 incendiary)"
+	name = "ammo box (.45 incendiary-tipped)"
 	ammo_type = /obj/item/ammo_casing/c45/incendiary
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	caliber = ".45"
-	multiple_sprites = 2
-	icon_state = "45box"
 	desc = "It's a completely safe idea to fill up a .45 pistol with napalm cartridges. This will not backfire." //it's telling the truth
 
 /obj/item/ammo_box/c45/improvised
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
 
 
 //.45-70 Gov't
@@ -279,6 +300,21 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1500)
 
+/obj/item/ammo_box/c4570box/explosive
+	name = "ammo box (.45-70 HE)"
+	desc = ".45-70 Goverment rounds with explosive tips. Surely an archaic blackpowder cartridge with an explosive payload is completely safe."
+	ammo_type = /obj/item/ammo_casing/c4570/explosive
+
+/obj/item/ammo_box/c4570box/acid
+	name = "ammo box (.45-70 acid-tip)"
+	desc = ".45-70 Goverment rounds with acid tips. Surely an archaic blackpowder cartridge with an acid tip is completely safe."
+	ammo_type = /obj/item/ammo_casing/c4570/acid
+
+/obj/item/ammo_box/c4570box/knockback
+	name = "ammo box (.45-70 ultradense)"
+	desc = ".45-70 Goverment rounds with heavy, blunt bullets. Sure to knock even an elephant off their footing."
+	ammo_type = /obj/item/ammo_casing/c4570/knockback
+
 //5mm
 
 /obj/item/ammo_box/m5mmbox
@@ -292,6 +328,11 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500)
 
+/obj/item/ammo_box/m5mmbox/shock
+	name = "ammo box (5mm ESD)"
+	desc = "Advanced 5mm bullets with electrostatic discharger tips."
+	ammo_type = /obj/item/ammo_casing/m5mm/shock
+	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500, /datum/material/glass = 8000)
 //5.56x45
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"
@@ -317,28 +358,17 @@
 	caliber = "a556"
 	ammo_type = /obj/item/ammo_casing/a556/rubber
 
-/obj/item/ammo_box/a556/uraniumtipped
-	name = "ammo box (5.56 uranium)"
-	ammo_type = /obj/item/ammo_casing/a556/uraniumtipped
-	desc = "Even the box is glowing!"
-
-/obj/item/ammo_box/a556/uraniumtipped/Initialize()
-	. = ..()
-	AddComponent(/datum/component/radioactive, 5, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
-	START_PROCESSING(SSradiation,src)
-
-/obj/item/ammo_box/a556/uraniumtipped/Destroy()
-	STOP_PROCESSING(SSradiation,src)
-	..()
-
+/obj/item/ammo_box/a556/microshrapnel
+	name = "ammo box (5.56 microshrapnel)"
+	desc = "Now with fragments!"
+	ammo_type = /obj/item/ammo_casing/a556/microshrapnel
+	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
-	w_class = WEIGHT_CLASS_SMALL
-	max_ammo = 8
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)	
+	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)
 	icon_state = "improvshotbag"
 
 
@@ -379,13 +409,17 @@
 	STOP_PROCESSING(SSradiation,src)
 	..()
 
+/obj/item/ammo_box/a762box/microshrapnel
+	name = "ammo box (7.62x51 microshrapnel)"
+	desc = "Now with EVEN MORE fragments!"
+	ammo_type = /obj/item/ammo_casing/a762/microshrapnel
+
 /obj/item/ammo_box/a762box/rubber
 	name = "ammo box (7.62x51 rubber)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "762box"
 	multiple_sprites = 2
 	caliber = "a762"
-	ammo_type = /obj/item/ammo_casing/a762
 	ammo_type = /obj/item/ammo_casing/a762/rubber
 
 
@@ -409,6 +443,17 @@
 	caliber = "a50MG"
 	ammo_type = /obj/item/ammo_casing/a50MG/rubber
 
+/obj/item/ammo_box/a50MGbox/contam
+	name = "ammo box (12.7mm contaminated)"
+	max_ammo = 15
+	desc = "12.7mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
+	ammo_type = /obj/item/ammo_casing/a50MG/contam
+
+/obj/item/ammo_box/a50MGbox/uraniumtipped
+	name = "ammo box (12.7mm uranium-tipped)"
+	max_ammo = 15
+	desc = "12.7mm bullets loaded with enriched-uranium penetrators."
+	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
 
 /obj/item/ammo_box/m14mm
 	name = "ammo box (14mm)"
@@ -421,7 +466,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 11000, /datum/material/blackpowder = 1500)
 
-
+/obj/item/ammo_box/m14mm/contam
+	name = "ammo box (14mm contaminated)"
+	desc = "14mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
+	ammo_type = /obj/item/ammo_casing/p14mm/contam
 
 //Misc.
 /obj/item/ammo_box/m473
@@ -588,7 +636,7 @@
 /obj/item/ammo_box/a45lcrev/empty
 	start_empty = 1
 
-	
+
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"
@@ -758,6 +806,11 @@
 	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
 	icon_state = "50ap"
 
+/obj/item/ammo_box/a50MG/uraniumtipped
+	name = "anti-materiel uranium-tipped ammo rack (.50MG)"
+	desc = "5 rounds of uranium-tipped .50 MG, when you really want something to remember what it was like back in '77.'"
+	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
+	icon_state = "50ap"
 
 ////////////////////////////////
 // FLAMER FUEL AND OTHER MISC //

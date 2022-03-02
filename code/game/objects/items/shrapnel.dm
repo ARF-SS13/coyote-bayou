@@ -11,7 +11,6 @@
 
 /obj/item/shrapnel/stingball // stingbang grenades
 	name = "stingball"
-	embedding = list(embed_chance=90, fall_chance=3, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=5, jostle_pain_mult=6, rip_time=15, embed_chance_turf_mod=-100)
 	icon_state = "tiny"
 	sharpness = SHARP_NONE
 
@@ -36,14 +35,14 @@
 	dismemberment = 5
 	ricochets_max = 2
 	ricochet_chance = 70
-	shrapnel_type = /obj/item/shrapnel
+	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=4, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel)
 	ricochet_incidence_leeway = 60
 	sharpness = SHARP_EDGED
 	wound_bonus = 50
 
 /obj/item/projectile/bullet/shrapnel/plasma // plasma grenades
 	name = "plasma split"
-	embedding = list(embed_chance=0, ignore_throwspeed_threshold=FALSE, fall_chance=0, embed_chance_turf_mod=0)
+	embedding = list(embed_chance=0, ignore_throwspeed_threshold=FALSE, fall_chance=0, embed_chance_turf_mod=0, payload = /obj/item/shrapnel)
 	custom_materials = list(/datum/material/iron=50)
 	damage = 35
 	armour_penetration = 0.8
@@ -52,7 +51,6 @@
 	dismemberment = 0
 	ricochets_max = 0
 	ricochet_chance = 0
-	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 0
 	sharpness = SHARP_EDGED
 	wound_bonus = 60
@@ -79,7 +77,7 @@
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 2
 	ricochet_incidence_leeway = 0
-	shrapnel_type = /obj/item/shrapnel/stingball
+	embedding = list(embed_chance=90, fall_chance=3, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=5, jostle_pain_mult=6, rip_time=15, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel/stingball)
 
 /obj/item/projectile/bullet/pellet/stingball/mega
 	name = "megastingball pellet"
@@ -97,3 +95,9 @@
 	damage = 10
 	wound_bonus = 30
 	sharpness = SHARP_EDGED
+
+/obj/item/shrapnel/bullet/a556/microshrapnel
+	name = "\improper 5.56mm microshrapnel bullet"
+
+/obj/item/shrapnel/bullet/a762/microshrapnel
+	name = "\improper 7.62mm microshrapnel bullet"

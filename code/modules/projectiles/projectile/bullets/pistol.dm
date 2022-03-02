@@ -5,12 +5,27 @@
 //////////////////////
 /*
 FMJ (full metal jacket)		=	Baseline
-AP (armor piercing)			=	-20% damage. AP increased by 0.2. Wound bonus -50%
-JHP (jacketed hollow point)	=	+15% damage. AP reduced by 0.2 (not below zero). Wound bonus + 50%
-SWC (semi wadcutter)		=	AP reduced by 0.1. Wound bonus +50%
-P+ (overpressure)			=	extra speed 500. AP +25%
-Match						=	extra speed 200. AP +10%. Wound bonus -10%
-Civilian round				=	-10% damage. AP reduced by 50% 
++P/+P+ = used by simplemobs
+SHOCK = low-severity emp, -damage base, bonus burn damage (5-10)
+Incin = -damage, sets target on fire
+Acid = Heavy -damage, coats target in small amount of acid (1-5u)
+Uranium = Irradiates, high AP, lower damage
+Micro-Shrapnel = Wound bonus, embed bonus, high falloff for both
+Contaminated = -damage, spawns a gas cloud that heavily reduces healing efficiency
+Improvised = -1 to -4 damage
+Civilian round				=	-10% damage. AP reduced by 50%
+*/
+
+/*
+Ammo groupings for specialty:
+5mm/22lr: Shock
+Small Pistol calibers (38 357 9mm): Acid/Incin
+Large Pistol Calibers (44 45 10mm): Incin
+Very Large pistol (45-70): Knockback, Acid
+autorifle calibers (5.56 7.62):
+Micro-Shrapnel (wound/embed)
+heavy rifle calibers (12.7, 14mm, 7.62):
+Uranium, Contaminated
 */
 
 // Explanation: Two major ammo stats, AP and Damage. Bullets placed in classes. Light rounds for example balanced with each other, one more AP, one more Damage.
@@ -32,6 +47,21 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	wound_bonus = 0
 	sharpness = SHARP_NONE
 
+/obj/item/projectile/bullet/c22/shock
+	name = ".22lr shock bullet"
+	damage = -8 //about -50% damage
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/energy_damage = 5
+
+/obj/item/projectile/bullet/c22/shock/on_hit(atom/target, blocked = FALSE)
+	..()
+	target.emp_act(5)//5 severity is very, very low
+	if(blocked != 100 && isliving(target))
+		var/mob/living/L = target
+		L.electrocute_act(energy_damage, "shock bullet", 1, SHOCK_NOGLOVES | SHOCK_NOSTUN) //this might be spammy todo: check
+		//if it is, use O.take_damage(energy_damage, BURN, "energy", FALSE)
+
 /////////////////
 // .38 SPECIAL //
 /////////////////		-Light round, damage focus
@@ -47,6 +77,42 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	stamina = 32
 	wound_bonus = 0
 	sharpness = SHARP_NONE
+
+/obj/item/projectile/bullet/c38/improv
+	damage = -3
+
+/obj/item/projectile/bullet/c38/acid
+	name = ".38 acid-tipped bullet"
+	damage = -5
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/c38/acid/Initialize()
+	. = ..()
+	create_reagents(5, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 5)
+
+/obj/item/projectile/bullet/c38/acid/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+
+/obj/item/projectile/bullet/c38/incendiary
+	name = ".38 incendiary bullet"
+	damage = -5
+	var/fire_stacks = 1
+
+/obj/item/projectile/bullet/c38/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
 
 
 //////////
@@ -70,14 +136,39 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	wound_bonus = 0
 	sharpness = SHARP_NONE
 
-/obj/item/projectile/bullet/c9mm/wounding
-	name = "9mm wounding bullet"
-	damage = 0
-	ricochets_max = 0
-	sharpness = SHARP_EDGED
-	wound_bonus = 25
-	bare_wound_bonus = 25
-	wound_falloff_tile = -8
+/obj/item/projectile/bullet/c9mm/acid
+	name = "9mm acid-tipped bullet"
+	damage = -5
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/c9mm/acid/Initialize()
+	. = ..()
+	create_reagents(2.5, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 2.5)
+
+/obj/item/projectile/bullet/c9mm/acid/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+/obj/item/projectile/bullet/c9mm/incendiary
+	name = "9mm incendiary bullet"
+	damage = -5
+	var/fire_stacks = 1
+
+/obj/item/projectile/bullet/c9mm/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+/obj/item/projectile/bullet/c9mm/improv
+	damage = -3
 
 /obj/item/projectile/bullet/c9mm/simple //for simple mobs, separate to allow balancing
 	name = "9mm bullet"
@@ -105,15 +196,6 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	stamina = 26
 	wound_bonus = 0
 	sharpness = SHARP_NONE
-
-/obj/item/projectile/bullet/c10mm/wounding
-	name = "10mm wounding bullet"
-	damage = 0
-	ricochets_max = 0
-	sharpness = SHARP_EDGED
-	wound_bonus = 33
-	bare_wound_bonus = 33
-	wound_falloff_tile = -8
 
 /obj/item/projectile/bullet/c10mm/incendiary
 	name = "10mm incendiary bullet"
@@ -156,9 +238,9 @@ Civilian round				=	-10% damage. AP reduced by 50%
 
 /obj/item/projectile/bullet/c45/incendiary
 	name = ".45 incendiary bullet"
-	damage = 0
+	damage = -5
 	var/fire_stacks = 1
-	
+
 /obj/item/projectile/bullet/c45/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
@@ -186,6 +268,40 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	ricochet_auto_aim_range = 6
 	ricochet_incidence_leeway = 80
 
+/obj/item/projectile/bullet/a357/acid
+	name = ".357 acid-tipped bullet"
+	damage = -5
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/a357/acid/Initialize()
+	. = ..()
+	create_reagents(5, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 5)
+
+/obj/item/projectile/bullet/a357/acid/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+/obj/item/projectile/bullet/a357/incendiary
+	name = ".357 incendiary bullet"
+	damage = -5
+	var/fire_stacks = 2
+
+/obj/item/projectile/bullet/a357/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+/obj/item/projectile/bullet/a357/improv
+	name = "poor .357 bullet"
+	damage = -5
 ////////////////
 // .44 MAGNUM //
 ////////////////		- Higher power round
@@ -200,6 +316,18 @@ Civilian round				=	-10% damage. AP reduced by 50%
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
 	damage = 40
+
+/obj/item/projectile/bullet/m44/incendiary
+	name = ".44 incendiary bullet"
+	damage = -5
+	var/fire_stacks = 2
+
+/obj/item/projectile/bullet/m44/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
 
 ////////////
 // .45-70 //
@@ -220,16 +348,77 @@ Civilian round				=	-10% damage. AP reduced by 50%
 	..()
 	explosion(target, 0, 0, 1, 1, flame_range = 1)
 
+/obj/item/projectile/bullet/c4570/acid
+	name = ".45-70 acid-tipped bullet"
+	damage = -10
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/c4570/acid/Initialize()
+	. = ..()
+	create_reagents(10, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 10)
+
+/obj/item/projectile/bullet/c4570/acid/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+/obj/item/projectile/bullet/c4570/knockback
+	name = ".45-70 ultradense bullet"
+	damage = -15
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	pixels_per_second = TILES_TO_PIXELS(500)
+
+/obj/item/projectile/bullet/c4570/knockback/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovable(target) && prob(50))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 3)
+
 
 ///////////
 // 14 MM //
 ///////////				-very heavy round, AP (reference to FO1/2)
 
 /obj/item/projectile/bullet/mm14
-	name = "14mm AP bullet"
+	name = "14mm FMJ bullet"
 	damage = 0
 	wound_bonus = 25
 	bare_wound_bonus = -28
+
+/obj/item/projectile/bullet/mm14/contam
+	name = "14mm contaiminated bullet"
+	damage = -10
+	var/smoke_radius = 1
+
+/obj/item/projectile/bullet/mm14/contam/Initialize()
+	. = ..()
+	create_reagents(15, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(/datum/reagent/toxin/metabtoxin, 15)
+
+/obj/item/projectile/bullet/mm14/contam/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/location = get_turf(src)
+	var/datum/effect_system/smoke_spread/chem/S = new
+	S.attach(location)
+	playsound(location, 'sound/effects/smoke.ogg', 50, 1, -3)
+	if(S)
+		S.set_up(src.reagents, smoke_radius, location, 0)
+		S.start()
+
+
+/obj/item/projectile/bullet/mm14/uraniumtipped
+	name = "14mm uranium-tipped bullet"
+	damage = -5
+	armour_penetration = 0.1
+	irradiate = 300
+
 
 
 

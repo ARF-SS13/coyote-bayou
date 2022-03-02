@@ -152,8 +152,6 @@
 
 	var/temporary_unstoppable_movement = FALSE
 
-	///If defined, on hit we create an item of this type then call hitby() on the hit target with this, mainly used for embedding items (bullets) in targets
-	var/shrapnel_type
 	///If TRUE, hit mobs even if they're on the floor and not our target
 	var/hit_stunned_targets = FALSE
 
@@ -169,7 +167,7 @@
 	. = ..()
 	permutated = list()
 	decayedRange = range
-	if(embedding)
+	if(LAZYLEN(embedding))
 		updateEmbedding()
 
 /**
@@ -181,7 +179,7 @@
 	if(wound_bonus != CANT_WOUND)
 		wound_bonus += wound_falloff_tile
 		bare_wound_bonus = max(0, bare_wound_bonus + wound_falloff_tile)
-	if(embedding)
+	if(LAZYLEN(embedding))
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
 		on_range()
@@ -489,8 +487,8 @@
 /obj/item/projectile/proc/fire(angle, atom/direct_target)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_BEFORE_FIRE, src, original)	//If no angle needs to resolve it from xo/yo!
-	if(shrapnel_type)
-		AddElement(/datum/element/embed, projectile_payload = shrapnel_type)
+	if(LAZYLEN(embedding))//our embedding stats change, possibly
+		updateEmbedding()
 	if(!log_override && firer && original)
 		log_combat(firer, original, "fired at", src, "from [get_area_name(src, TRUE)]")
 	if(direct_target)

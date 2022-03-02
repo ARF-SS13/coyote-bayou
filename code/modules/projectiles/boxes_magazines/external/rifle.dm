@@ -164,3 +164,16 @@
 	icon_state = "473small"
 	max_ammo = 20
 
+/obj/item/ammo_box/magazine/m2mm
+	name = "2mm electromagnetic magazine"
+	icon_state = "2mm"
+	ammo_type = /obj/item/ammo_casing/c2mm
+	caliber = "2mm"
+	max_ammo = 10
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m2mm/blender
+	name = "2mm \"Blender\" electromagnetic magazine"
+	ammo_type = /obj/item/ammo_casing/c2mm/blender
+	max_ammo = 10
+	multiple_sprites = 2

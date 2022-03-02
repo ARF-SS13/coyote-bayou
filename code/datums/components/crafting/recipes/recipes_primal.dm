@@ -283,7 +283,29 @@
 				/obj/item/stack/sheet/mineral/sandstone = 2)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+
+
+/datum/crafting_recipe/tribalwar/arrowwound
+	name = "Serrated Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/serrated
+	time = 10
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/stack/crafting/goodparts = 1
+		)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/arrowembed
+	name = "Broadhead Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/broadhead
+	time = 10
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/stack/crafting/goodparts = 1
+		)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
 
 //MELEE
 
