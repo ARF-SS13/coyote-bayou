@@ -34,6 +34,10 @@
 /datum/gear/head/beret
 	name = "black beret"
 	path = /obj/item/clothing/head/beret/black
+	
+/datum/gear/head/medicalberet
+	name = "medical beret"
+	path = /obj/item/clothing/head/beret/med
 
 /datum/gear/head/flatcap
 	name = "flat cap"
