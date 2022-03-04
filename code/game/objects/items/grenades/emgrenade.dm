@@ -11,5 +11,5 @@
 	if(!empgrenade_turf)
 		return
 	playsound(empgrenade_turf, 'sound/f13weapons/pulsegrenade.ogg', 100, TRUE, 8, 0.9)
-	empulse_using_range(src, 14)
+	empulse_using_range(src, 7)
 	qdel(src)

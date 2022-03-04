@@ -252,7 +252,7 @@
 	icon_state = "beartrap"
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
-	var/trap_damage = 20
+	var/trap_damage = 30
 
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()

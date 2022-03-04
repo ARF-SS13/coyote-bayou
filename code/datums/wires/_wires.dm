@@ -32,6 +32,7 @@
 					  // Prevents wires from showing up in station blueprints
 	var/req_knowledge = INFINITY //wiring skill level on which the functions are revealed.
 	var/req_skill = JOB_SKILL_BASIC //used in user's cutting/pulsing/mending speed calculations.
+	var/req_trait = TRAIT_WIREVISION //trait required to see all wires
 	var/list/current_users //list of untrained people currently interacting with this set of wires.
 
 /datum/wires/New(atom/holder)
@@ -261,7 +262,7 @@
 	var/reveal_wires = FALSE
 
 	// Admin ghost can see a purpose of each wire.
-	if(IsAdminGhost(user) || user.mind.get_skill_level(/datum/skill/level/job/wiring) >= req_knowledge)
+	if(IsAdminGhost(user) || user.mind.get_skill_level(/datum/skill/level/job/wiring) >= req_knowledge || HAS_TRAIT(user, req_trait))
 		reveal_wires = TRUE
 
 	// Same for anyone with an abductor multitool.

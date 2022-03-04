@@ -1,3 +1,6 @@
+/datum/wires/explosive
+	req_trait = TRAIT_EXPLOSIVE_CRAFTING
+
 /datum/wires/explosive/New(atom/holder)
 	add_duds(2) // In this case duds actually explode.
 	..()
@@ -80,3 +83,45 @@
 /datum/wires/explosive/gibtonite/explode()
 	var/obj/item/gibtonite/P = holder
 	P.GibtoniteReaction(null, 2)
+
+/datum/wires/explosive/mine
+	holder_type = /obj/item/mine
+	randomize = FALSE
+	req_skill = JOB_SKILL_UNTRAINED
+
+/datum/wires/explosive/mine/New(atom/holder)
+	wires = list(
+		WIRE_DISARM
+	)
+	add_duds(2) // Duds also explode here.
+	..()
+
+/datum/wires/explosive/mine/interactable(mob/user)
+	return TRUE
+
+/datum/wires/explosive/mine/explode()
+	var/obj/item/mine/P = holder
+	P.arm()
+
+/datum/wires/explosive/mine/on_cut(wire, mend)
+	var/obj/item/mine/P = holder
+	switch(wire)
+		if(WIRE_DISARM) // Disarm and untrap the box.
+			if(!mend)
+				P.armed = FALSE
+				P.anchored = FALSE
+		else
+			if(!mend)
+				P.arm()
+
+/datum/wires/explosive/mine/on_pulse(wire)
+	var/obj/item/mine/P = holder
+	switch(wire)
+		if(WIRE_DISARM) // Pulse to toggle
+			P.armed = FALSE
+			P.anchored = FALSE
+		else // Boom
+			P.arm()
+
+/datum/wires/explosive/mine/random
+	randomize = TRUE //be careful!

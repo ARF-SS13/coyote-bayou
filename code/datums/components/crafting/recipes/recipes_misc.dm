@@ -423,7 +423,7 @@
 	time = 20
 	reqs = list(/obj/item/grown/sunflower = 5,
 				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS	
+	subcategory = CAT_MISCELLANEOUS
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/poppycrown

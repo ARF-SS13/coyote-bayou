@@ -102,14 +102,14 @@
 /datum/crafting_recipe/metalarmor/polish
 	name = "Polished Metal Armor"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor,
+	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1,
 				/obj/item/crafting/abraxo,
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR		
-	
+	subcategory = CAT_ARMOR
+
 /datum/crafting_recipe/metalarmormk2
 	name = "Metal Armor, reinforced"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/reinforced
@@ -120,7 +120,7 @@
 	time = 120
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
-	
+
 datum/crafting_recipe/steelbib
 	name = "Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
@@ -132,7 +132,7 @@ datum/crafting_recipe/steelbib
 	time = 120
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
-	
+
 datum/crafting_recipe/steelbib/heavy
 	name = "Heavy Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
@@ -142,7 +142,7 @@ datum/crafting_recipe/steelbib/heavy
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR	
+	subcategory = CAT_ARMOR
 	always_available = FALSE
 
 /datum/crafting_recipe/metalmask
@@ -472,7 +472,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 60
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
-	
+
 /datum/crafting_recipe/armyhelmetheavy
 	name = "Heavy Steel Helmet"
 	result = /obj/item/clothing/head/helmet/armyhelmet/heavy
@@ -1299,5 +1299,3 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 */
-
-

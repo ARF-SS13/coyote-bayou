@@ -289,6 +289,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	new/datum/stack_recipe("titanium tile", /obj/item/stack/tile/mineral/titanium, 1, 4, 20), \
 	new/datum/stack_recipe("titanic ingot", /obj/item/ingot/titanium, 6, time = 100), \
+	new/datum/stack_recipe("bear trap", /obj/item/restraints/legcuffs/beartrap, 1, time = 50), \
 	new/datum/stack_recipe("high quality parts", /obj/item/stack/crafting/goodparts, 5, time = 50) \
 	))
 

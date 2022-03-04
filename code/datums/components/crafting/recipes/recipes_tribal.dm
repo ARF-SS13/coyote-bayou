@@ -187,15 +187,13 @@
 	category = CAT_TRIBAL
 	always_available = FALSE
 
-/datum/crafting_recipe/warmace
+/datum/crafting_recipe/tribalwar/warmace
 	name = "Carve Wooden Warmace"
 	result = /obj/item/twohanded/sledgehammer/warmace
 	time = 100
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 	always_available = FALSE
 
 /*datum/crafting_recipe/voodoo
@@ -459,5 +457,3 @@ datum/crafting_recipe/tribalwar/bone
 	reqs = list(/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/clothing/head/helmet/skull = 1)
-
-
