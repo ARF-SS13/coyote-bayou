@@ -116,7 +116,7 @@
 	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
-	
+
 /obj/item/clothing/suit/f13/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
 	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
@@ -137,7 +137,7 @@
 	item_state = "suit-command"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	
+
 /obj/item/clothing/suit/f13/veteran
 	name = "merc veteran coat"
 	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
@@ -178,7 +178,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-	
+
 
 /obj/item/clothing/suit/f13/hubologist
 	name = "hubologist robe"
@@ -379,7 +379,7 @@
 	name = "armored medical parka"
 	icon_state = "armormedical"
 	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
-	
+
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
 
 /obj/item/clothing/head/hooded/parkahood/medical
@@ -465,10 +465,10 @@
 
 /obj/item/clothing/suit/hooded/cloak/shunter
 	name = "Quickclaw armour"
-	icon_state = "birdarmor"
+	icon_state = "birdarmor_t"
 	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
-	slowdown = 0.025
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	slowdown = 0
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -478,6 +478,6 @@
 	name = "Quickclaw hood"
 	icon_state = "birdhood"
 	desc = "A hood madde of deathclaw hides, light while also being comfortable to wear, designed for speed."
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF

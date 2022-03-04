@@ -55,3 +55,9 @@
 	icon_state = "ion"
 	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 1000 //four shots and you're out. use them wisely.
+
+/obj/item/ammo_casing/energy/plasma/miner
+	projectile_type = /obj/item/projectile/f13plasma/repeater/mining
+	select_name = "mining plasma stream"
+	fire_sound = 'sound/f13weapons/plasma_rifle.ogg'
+	e_cost = 2.4 //this seems very low but the weapon fires 5 5-damage shots per burst and only fires in bursts

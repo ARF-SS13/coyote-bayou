@@ -3190,6 +3190,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/bunker)
+"dPz" = (
+/obj/structure/stone_tile/slab,
+/obj/item/gun/energy/laser/plasma/spear,
+/mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "dQM" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -6680,6 +6686,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/vaultdoor,
 /area/f13/vault)
+"hJV" = (
+/obj/structure/stone_tile/slab/cracked,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "hJW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
@@ -7926,6 +7936,10 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"jvv" = (
+/obj/structure/stone_tile/block/burnt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "jvO" = (
 /obj/structure/bedsheetbin,
 /obj/structure/table,
@@ -12707,6 +12721,10 @@
 	icon_state = "housewood2"
 	},
 /area/f13/underground/cave)
+"pjy" = (
+/obj/structure/stone_tile/slab,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "pjP" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -13368,6 +13386,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
+"pYE" = (
+/obj/structure/stone_tile/block,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "pYM" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -77517,7 +77539,7 @@ fpy
 gTc
 qOX
 tRH
-pOr
+tHQ
 atE
 pOr
 cIT
@@ -82411,8 +82433,8 @@ wxj
 wxj
 wxj
 wxj
-bYA
-bYA
+hJV
+pjy
 fyx
 bYA
 wxj
@@ -82668,9 +82690,9 @@ wxj
 wxj
 wxj
 wxj
-bYA
-bYA
-bYA
+hJV
+dPz
+pYE
 bYA
 wxj
 wxj
@@ -82925,9 +82947,9 @@ wxj
 wxj
 wxj
 wxj
-bYA
-bYA
-bYA
+hJV
+hJV
+jvv
 bYA
 wxj
 wxj
