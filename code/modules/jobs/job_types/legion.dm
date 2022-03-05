@@ -258,6 +258,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
 		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/melee/powerfist/f13/goliath = 1,
 		/obj/item/ammo_box/magazine/mm762 = 1,
 		)
 
