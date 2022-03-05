@@ -47,7 +47,7 @@
 	var/rng = FALSE
 	var/debug = FALSE //vv this if you want an artifact
 	var/artifactrolled = FALSE
-	var/itemqualitymax = 10
+	var/itemqualitymax = 8
 	var/list/smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SCYTHE = /obj/item/smithing/scytheblade,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
@@ -290,13 +290,13 @@
 	desc = "A big block of basalt. Useable as an anvil, better than sandstone. Igneous!"
 	icon_state = "sandvilnoir"
 	anvilquality = -1
-	itemqualitymax = 10
+	itemqualitymax = 8
 
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
 	desc = "An anvil. It's got wheels bolted to the bottom."
 	anvilquality = 1
-	itemqualitymax = 10
+	itemqualitymax = 8
 
 /obj/structure/anvil/obtainable/ratvar
 	name = "brass anvil"
@@ -304,8 +304,7 @@
 	custom_materials = list(/datum/material/bronze=8000)
 	icon_state = "ratvaranvil"
 	anvilquality = 1
-	itemqualitymax = 10
-
+	itemqualitymax = 8
 /obj/structure/anvil/obtainable/ratvar/attackby(obj/item/I, mob/user)
 	if(is_servant_of_ratvar(user))
 		return ..()
@@ -319,7 +318,7 @@
 	icon = 'icons/obj/smith.dmi'
 	icon_state = "evil"
 	anvilquality = 1
-	itemqualitymax = 10
+	itemqualitymax = 8
 
 /obj/structure/anvil/obtainable/narsie/attackby(obj/item/I, mob/user)
 	if(iscultist(user))
