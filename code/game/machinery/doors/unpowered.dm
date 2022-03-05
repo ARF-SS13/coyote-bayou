@@ -55,6 +55,11 @@
 	name = "Legion Castrum"
 	req_access_txt = "123"
 
+//khoor
+/obj/machinery/door/unpowered/securedoor/khandoor
+	name = "khan door"
+	req_access_txt = "125"
+
 
 // ------------------------------------
 // NCR SECURE REINFORCED DOOR - tough airlock replacement

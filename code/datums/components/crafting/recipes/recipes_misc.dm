@@ -39,6 +39,16 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
+	
+/datum/crafting_recipe/gate_khanate
+	name = "Khans steel-reinforced wood door"
+	result = /obj/machinery/door/unpowered/securedoor/khandoor
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/mineral/wood = 10,)
+	time = 60
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+	always_available = FALSE
 
 /datum/crafting_recipe/plant
 	name = "Potted plant"
