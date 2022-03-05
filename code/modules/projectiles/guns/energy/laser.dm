@@ -603,7 +603,7 @@
 	burst_size = 1
 	burst_shot_delay = 1
 	automatic = 1
-	autofire_shot_delay = 2.5
+	autofire_shot_delay = 1.75
 	spread = 8
 	fire_delay = 1
 	weapon_weight = WEAPON_HEAVY

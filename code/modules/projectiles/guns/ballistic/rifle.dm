@@ -99,6 +99,7 @@
 	can_scope = TRUE
 	scope_state = "scope_long"
 	fire_delay = 5
+	slowdown = 0.35
 	scope_x_offset = 5
 	scope_y_offset = 13
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
@@ -116,6 +117,7 @@
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	extra_damage = 35
+	extra_speed = 300
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
 
@@ -127,6 +129,7 @@
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	extra_damage = 40
+	extra_speed = 200
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
@@ -139,6 +142,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	extra_damage = 50
 	extra_penetration = 0.05
+	extra_speed = 100
 	fire_delay = 5.1
 	recoil = 0.15
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
@@ -255,9 +259,9 @@
 	icon_state = "enfield2"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 37
+	extra_damage = 40
 	extra_speed = 600
-	fire_delay = 7
+	fire_delay = 6
 	slowdown = 0.35
 	force = 16
 	can_scope = TRUE
