@@ -448,6 +448,7 @@ ATTACHMENTS
 				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, bonus_spread, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
+
 	process_fire(target, user, TRUE, params, null, bonus_spread, stam_cost)
 
 /obj/item/gun/can_trigger_gun(mob/living/user)
@@ -522,7 +523,9 @@ ATTACHMENTS
 	else if(burst_size > 1 && burst_spread)
 		randomized_gun_spread = rand(0, burst_spread)
 	var/randomized_bonus_spread = rand(0, bonus_spread)
-
+	if(HAS_TRAIT(user, SPREAD_CONTROL))
+		randomized_gun_spread = max(0, randomized_gun_spread-8)
+		randomized_bonus_spread = max(0, randomized_bonus_spread-8)
 	if(burst_size > 1)
 		do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, 1)
 		for(var/i in 2 to burst_size)

@@ -32,11 +32,9 @@
 	if(!istype(SSticker.mode, /datum/game_mode/clockwork_cult))
 		invisibility = INVISIBILITY_OBSERVER
 		alpha = 125
-		emped = TRUE
 	else
 		invisibility = initial(invisibility)
 		alpha = initial(alpha)
-		emped = FALSE
 	..()
 
 /obj/item/radio/intercom/Initialize(mapload, ndir, building)
@@ -124,7 +122,7 @@
 		last_tick = world.timeofday
 
 		var/area/A = get_area(src)
-		if(!A || emped)
+		if(!A)
 			on = FALSE
 		else
 			on = A.powered(EQUIP) // set "on" to the power status
@@ -150,13 +148,13 @@
 /obj/item/radio/intercom/retro
 	name = "vintage intercom"
 	icon_state = "intercom_retro"
-	
+
 /obj/item/radio/intercom/retro/process()
 	if(((world.timeofday - last_tick) > 30) || ((world.timeofday - last_tick) < 0))
 		last_tick = world.timeofday
 
 		var/area/A = get_area(src)
-		if(!A || emped)
+		if(!A)
 			on = FALSE
 		else
 			on = A.powered(EQUIP) // set "on" to the power status
@@ -169,30 +167,28 @@
 /obj/item/radio/intercom/retro/kebob
 	name = "Oasis intercom"
 	freqlock = TRUE
-	frequency = 1369 
+	frequency = 1369
 	channels = list(RADIO_CHANNEL_TOWN = 1)
 
 /obj/item/radio/intercom/retro/kebob/mayor
 	name = "Mayor's intercom"
 	use_command = TRUE
 	command = TRUE
-	
+
 /obj/item/radio/intercom/retro/foa
 	name = "Clinic intercom"
 	freqlock = TRUE
 	frequency = 1355
 	channels = list(RADIO_CHANNEL_MEDICAL = 1)
-	
+
 /obj/item/radio/intercom/retro/pirate
 	name = "Pirate Radio Broadcaster"
 	desc = "A radio that has been hacked to send and recieve from any frequency."
 	freerange = TRUE
-	canhear_range = 1 
+	canhear_range = 1
 
 /obj/item/radio/intercom/retro/bear
 	name = "NCR intercom"
 	freqlock = TRUE
 	frequency = 1363
 	channels = list(RADIO_CHANNEL_NCR = 1)
-
-

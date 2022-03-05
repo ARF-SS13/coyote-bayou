@@ -17,7 +17,6 @@
 	var/on = TRUE
 	var/frequency = FREQ_COMMON
 	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
-	var/emped = 0  // Tracks the number of EMPs currently stacked.
 
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
 	var/listening = TRUE  // Whether the radio is currently receiving.
@@ -399,22 +398,14 @@
 	. = ..()
 	if (. & EMP_PROTECT_SELF)
 		return
-	emped++ //There's been an EMP; better count it
-	var/curremp = emped //Remember which EMP this was
-	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
-	broadcasting = FALSE
-	listening = FALSE
-	for (var/ch_name in channels)
-		channels[ch_name] = 0
-	on = FALSE
-	addtimer(CALLBACK(src, .proc/end_emp_effect, curremp), 2 SECONDS)
-
-/obj/item/radio/proc/end_emp_effect(curremp)
-	if(emped != curremp) //Don't fix it if it's been EMP'd again
-		return FALSE
-	emped = FALSE
-	return TRUE
+	if(prob(severity * 1.5))
+		if(listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
+			to_chat(loc, "<span class='warning'>\The [src] shorts out!</span>")
+		broadcasting = FALSE
+		listening = FALSE
+		for (var/ch_name in channels)
+			channels[ch_name] = 0
+		on = FALSE
 
 ///////////////////////////////
 //////////Borg Radios//////////
@@ -487,9 +478,9 @@
 		qdel(implant)
 	else
 		return ..()
-		
+
 /// Other Radios
-	
+
 /obj/item/radio/tribal
 	name = "primitive radio"
 	icon_state = "radio"
@@ -497,6 +488,3 @@
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_NORMAL
-		
-
-	
