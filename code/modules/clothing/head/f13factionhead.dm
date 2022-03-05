@@ -645,7 +645,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/head/f13/combat/ncr_patrol/Initialize()
+/obj/item/clothing/head/helmet/f13/combat/ncr_patrol/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
