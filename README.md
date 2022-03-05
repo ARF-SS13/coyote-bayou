@@ -1,4 +1,4 @@
-## Lone Star
+## Fortune 13
 Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
 
 [![CI Suite](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml)
@@ -8,9 +8,9 @@ Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
 **Fortuna Information**  
-* **Code:** <https://github.com/FortunaSS13/Fortuna>
-* **Wiki:** <https://f13wiki.herma.moe/index.php/Main_Page>
-* **Discord:** <https://discord.gg/54DkKxyf9z>
+* **Code:** <https://github.com/fortune13-ss13/Fortune>
+* **Wiki:** <>
+* **Discord:** <https://discord.gg/8QrW7ypum9>
 All relevant forum content takes place on the Discord!
 
 **Desert Rose Information**
