@@ -1095,7 +1095,7 @@
 /obj/item/book/granter/crafting_recipe/tribal
 	name = "Tribal traditions"
 	desc = "A book of traditions passed down through generations within the tribe."
-	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/warmace)
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/crafting_recipe/tribal/whitelegs
 	name = "White Legs traditions"
@@ -1124,9 +1124,14 @@
 
 /obj/item/book/granter/crafting_recipe/tribal/wayfarer
 	name = "Wayfarer traditions"
-	crafting_recipe_types = list(/datum/crafting_recipe/tribal_pa,/datum/crafting_recipe/tribal_pa_helmet, /datum/crafting_recipe/tribal_combat_armor, /datum/crafting_recipe/tribal_combat_armor_helmet)
+	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/crafting_recipe/tribal/bone
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+								
+								
+								
+								
+								

@@ -192,7 +192,7 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/legion
-	
+
 /datum/component/storage/concrete/pockets/tiny/legion
 	max_items = 3
 
@@ -343,7 +343,7 @@
 	name = "legion orator armor"
 	desc = "he armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
 	icon_state = "legheavy"
-	
+
 /obj/item/clothing/suit/armor/f13/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
 	desc = "(VI) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
@@ -362,10 +362,10 @@
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 15, "bio" = 10, "rad" = 20, "fire" = 30, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/utility
 	slowdown = 0.02
-	
+
 /datum/component/storage/concrete/pockets/utility
 	max_items = 4
-	
+
 /obj/item/clothing/suit/armor/f13/utilityvest/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -379,10 +379,10 @@
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 	slowdown = 0.1
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt/ncr
-	
+
 /datum/component/storage/concrete/pockets/bulletbelt/ncr
 	max_items = 2
-	
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -423,7 +423,7 @@
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 40, "bullet" = 42, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/treasurer
-	
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant
 	name = "NCR officer vest"
 	desc = "A reinforced set of NCR mantle armour, with added padding on the groin, neck and shoulders. Intended for use by the officer class."
@@ -510,7 +510,7 @@
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt/ncr
-	
+
 
 /obj/item/clothing/suit/armor/f13/trailranger
 	name = "ranger vest"
@@ -574,7 +574,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	slowdown = 0.08
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20)
-	
+
 
 /obj/item/clothing/suit/armor/f13/ncrcfjacket
 	name = "NCRCF jacket"
@@ -628,8 +628,8 @@
 	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knights. It bears a silver stripe."
 	icon_state = "brotherhood_armor_senior"
 	item_state = "brotherhood_armor_senior"
-	
-	
+
+
 /obj/item/clothing/suit/armor/f13/combat/brotherhood/captain
 	name = "brotherhood head knight armor"
 	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Head Knights. It bears golden embroidery."
@@ -667,7 +667,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 40)
 	slowdown = 0.025 // zoom zoom
-	
+
 
 /obj/item/clothing/suit/armor/f13/town/mayor
 	name = "mayor trenchcoat"
@@ -681,7 +681,7 @@
 	icon_state = "towntrench_heavy"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 55)
 	slowdown = 0.1 //reinforced combat armor, but less slowdown
-	
+
 /obj/item/clothing/suit/armor/f13/town/sheriff/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -707,7 +707,7 @@
 	icon_state = "towntrench_medium"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 35,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
 	slowdown = 0.06 //combat armor but less slowdown
-	
+
 /obj/item/clothing/suit/armor/f13/town/deputy/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
@@ -718,10 +718,10 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list("melee" = 38, "bullet" = 38, "laser" = 38,  "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
 	slowdown = 0.06
-	
+
 /obj/item/clothing/suit/armor/vest/oasis/Initialize()
 	. = ..()
-	AddComponent(/datum/component/armor_plate)		
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	name = "heavy steel breastplate"
@@ -754,29 +754,31 @@
 	item_state = "lightcloak"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	slowdown = 0.05
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	
-/obj/item/clothing/suit/armor/f13/tribal_combat_armor
+
+/obj/item/clothing/suit/armor/f13/combat/tribal
 	name = "tribal combat armor"
 	desc = "An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
 	icon_state = "tribecombatarmor"
 	item_state = "tribecombatarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 35,  "energy" = 25, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 45)
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
-	slowdown = 0.07
-	
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/tribal
+	name = "tribal reinforced combat armor"
+	desc = "An old military grade pre-war reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	icon_state = "tribecombatarmor"
+	item_state = "tribecombatarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+
 /obj/item/clothing/suit/armor/f13/tribe_armor
 	name = "light tribal armor"
-	desc = "Light armor made of leather stips and a large, flat piece of turquoise.Armor commonplace among the Wayfinders."
+	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 20, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 47)
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 50)
 	slowdown = 0.04
-	
+
 /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
 	name = "heavy tribal armor"
 	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
@@ -784,11 +786,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 30, "energy" = 30, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 50)
-	slowdown = 0.15
-	flags_inv = HIDEJUMPSUIT
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
-)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 30, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 50)
+	slowdown = 0.10
 
 /obj/item/clothing/suit/armor/f13/lightcloak
 	name = "light tribal cloak"
@@ -796,29 +795,15 @@
 	icon_state = "lightcloak"
 	item_state = "lightcloak"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 20, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 50)
 	slowdown = 0.025
 
-/obj/item/clothing/suit/armor/f13/tribal_combat_armor
-	name = "tribal combat armor"
-	desc = "An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
-	icon_state = "tribecombatarmor"
-	item_state = "tribecombatarmor"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/claymore, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
-	slowdown = 0.09
-
-
-/obj/item/clothing/suit/armor/f13/wayfarer/tribal_pa
-	name = "tribal full plate armor"
-	desc = "A set of power armor, now reborn in the paints of the Wayfarers, it serves its new owners as an idol to Kwer, as well as being a piece of heavy covering, with removed parts to allow for quick nimble speed, its hardly what it used to be long ago."
+/obj/item/clothing/suit/armor/f13/power_armor/t45b/tribal
+	name = "tribal salvaged t45-b"
+	desc = "A set of salvaged power armor, with certain bits of plating stripped out to retain more freedom of movement. No cooling module, though."
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 30, "bomb" = 40, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
-	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
-	)
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 65, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 65)
 	slowdown = 0.3
 //Followers
 
