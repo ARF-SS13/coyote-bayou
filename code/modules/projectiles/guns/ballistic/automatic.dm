@@ -410,7 +410,6 @@
 	spread = 12
 	fire_delay = 3.5
 	extra_damage = 20
-	spread = 8
 	recoil = 0.1
 	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'

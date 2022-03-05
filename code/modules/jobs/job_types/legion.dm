@@ -702,6 +702,7 @@ commented out pending rework*/
 		/datum/outfit/loadout/vetshielder,	// .44 DA Revolver, Shield, Gladius, Armor plate
 		/datum/outfit/loadout/vetrifle,		// Trail gun, Gladius
 		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Fireaxe, Bola
+		/datum/outfit/loadout/vetsmg, // Carl Gustaf
 		)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -767,7 +768,14 @@ commented out pending rework*/
 		/obj/item/restraints/legcuffs/bola = 2,
 		)
 
-
+/datum/outfit/loadout/vetsmg
+	name = "Flanker"
+	suit_store = /obj/item/gun/ballistic/automatic/smg/cg45
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/cg45 = 2,
+		/obj/item/gun/ballistic/revolver/colt357 = 1,
+		/obj/item/ammo_box/a357 = 1,
+		)
 // PRIME
 
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
