@@ -332,7 +332,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/legionriothelmet_ncr
 	name = "Shred veteran ranger helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
+	result = list(/obj/item/stack/crafting/armor_plate/fifteen, /obj/item/clothing/glasses/night/polarizing)
 	reqs = list(/obj/item/clothing/head/helmet/f13/ncr/rangercombat = 1,)
 	time = 30
 	category = CAT_CLOTHING
