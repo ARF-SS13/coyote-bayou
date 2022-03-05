@@ -293,7 +293,7 @@
 	subcategory = CAT_MELEE
 
 
-/datum/crafting_recipe/spatha
+/datum/crafting_recipe/scrapsabre
 	name = "Scrap sabre"
 	result = /obj/item/melee/onehanded/machete/scrapsabre
 	reqs = list(
@@ -305,7 +305,6 @@
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
-	always_available = FALSE
 
 
 // LEGION SPECIFIC
