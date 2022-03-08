@@ -122,7 +122,7 @@
 	var/mob/M = user.mob
 	M.westshift()
 	return TRUE
-/*
+
 /datum/keybinding/living/hold_sprint
 	hotkey_keys = list("Space")
 	name = "hold_sprint"
@@ -166,7 +166,7 @@
 /datum/keybinding/living/toggle_sprint/up(client/user)
 	is_down -= user
 	return TRUE
-*/
+
 /datum/keybinding/mob/toggle_move_intent
 	hotkey_keys = list("Alt")
 	name = "toggle_move_intent"

@@ -116,7 +116,7 @@
 	using.screen_loc = ui_movi
 	using.hud = src
 	static_inventory += using
-/*
+
 	//CITADEL CHANGES - sprint button
 	using = new /obj/screen/sprintbutton
 	using.icon = tg_ui_icon_to_cit_ui(ui_style)
@@ -131,7 +131,7 @@
 	sprint_buffer.screen_loc = ui_sprintbufferloc
 	sprint_buffer.hud = src
 	static_inventory += sprint_buffer
-*/
+
 	// clickdelay
 	clickdelay = new
 	clickdelay.hud = src
