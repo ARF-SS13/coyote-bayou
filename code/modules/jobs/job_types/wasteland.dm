@@ -8,8 +8,8 @@
 	total_positions = 4
 	spawn_positions = 4
 	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
-	forbids = ""
-	enforces = ""
+	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of organization."
 	supervisors = "the United States Government."
 	selection_color = "#323232"
 	exp_type = EXP_TYPE_FALLOUT

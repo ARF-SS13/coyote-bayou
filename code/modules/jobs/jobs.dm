@@ -213,6 +213,10 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Preacher",
 	"Tribal",
 	"Wastelander",
+	"Enclave Private",
+	"Enclave Sergeant",
+	"Enclave Scientist",
+	"Enclave Lieutenant",
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
