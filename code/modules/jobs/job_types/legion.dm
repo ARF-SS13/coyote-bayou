@@ -1035,6 +1035,7 @@ commented out pending rework*/
 	loadout_options = list(
 		/datum/outfit/loadout/auxassist, // Keep track of the money, handle trading beneath the warriors
 		/datum/outfit/loadout/auxmedicus, // Do surgery, medical tasks.
+		/datum/outfit/loadout/auxopifex, // Build defenses, craft necessary items
 		)
 
 	matchmaking_allowed = list(
@@ -1099,7 +1100,24 @@ commented out pending rework*/
 		/obj/item/book/granter/trait/midsurgery = 1,
 		/obj/item/clothing/under/f13/legauxilia = 1,
 		)
-
+/datum/outfit/loadout/auxopifex
+	name = "Opifex (Artisan)"
+	neck = /obj/item/clothing/neck/apron/labor/forge
+	gloves = /obj/item/clothing/gloves/legion/forgemaster
+	belt = /obj/item/storage/belt
+	glasses = /obj/item/clothing/glasses/welding
+	shoes = /obj/item/clothing/shoes/f13/military/plated
+	r_pocket = /obj/item/flashlight/lantern
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/legenlisted = 1,
+		/obj/item/stack/sheet/metal/twenty = 2,
+		/obj/item/stack/sheet/mineral/wood/twenty = 1,
+		/obj/item/stack/sheet/leather/twenty = 1,
+		/obj/item/stack/sheet/cloth/thirty = 1,
+		/obj/item/stack/sheet/prewar/twenty = 1,
+		/obj/item/weldingtool = 1,
+		/obj/item/book/granter/trait/explosives = 1
+		)	
 
 // LEGION SLAVES - Servant cook, and assist with medical, low surgery. Worker farm and mine.
 // Both get Mars teachings to help out when normal work is done.
