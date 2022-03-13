@@ -42,14 +42,6 @@
 /obj/structure/sign/poster/prewar/poster60,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
-"aci" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/protectron{
-	layer = 3;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/bunker)
 "acl" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/showroomfloor,
@@ -610,10 +602,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood/operations)
-"ats" = (
-/obj/structure/nest/radroach,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "atw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -5801,11 +5789,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/bunker)
-"doO" = (
-/mob/living/simple_animal/hostile/handy/playable,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating/tunnel,
-/area/f13/caves)
 "dpj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -9385,10 +9368,6 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
-"foj" = (
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/radiation)
 "fol" = (
 /obj/machinery/computer/rdconsole/core/vault,
 /obj/structure/sign/poster/official/science{
@@ -10066,10 +10045,6 @@
 	icon_state = "tunnelchess"
 	},
 /area/f13/caves)
-"fDw" = (
-/obj/structure/nest/molerat,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "fDz" = (
 /obj/structure/toilet{
 	dir = 4
@@ -11405,13 +11380,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"gsS" = (
-/obj/structure/nest/supermutant/ranged{
-	max_mobs = 1;
-	spawn_time = 100
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
 "gtx" = (
 /obj/effect/decal/waste{
 	pixel_x = -5;
@@ -13708,10 +13676,6 @@
 "hQE" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
-"hQG" = (
-/obj/structure/nest/deathclaw/mother,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "hQS" = (
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/indestructible/ground/inside/dirt,
@@ -15208,12 +15172,6 @@
 /obj/structure/target_stake,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/underground/enclave_base)
-"iWc" = (
-/mob/living/simple_animal/hostile/handy/playable,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
-	},
-/area/f13/caves)
 "iWz" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -20673,10 +20631,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
-"mXj" = (
-/obj/structure/nest/molerat,
-/turf/open/floor/plating/dirt,
-/area/f13/tunnel)
 "mXm" = (
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
@@ -20941,12 +20895,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/bunker)
-"nee" = (
-/obj/structure/nest/deathclaw/mother,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
-	},
-/area/f13/caves)
 "nef" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -22639,16 +22587,6 @@
 /obj/item/ammo_casing/shotgun/improvised,
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
-"oem" = (
-/obj/structure/nest/ghoul{
-	layer = 2.7;
-	max_mobs = 1;
-	radius = 3
-	},
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess2"
-	},
-/area/f13/caves)
 "oev" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/fakelattice,
@@ -24489,7 +24427,6 @@
 /area/f13/den)
 "pCg" = (
 /obj/structure/closet,
-/mob/living/simple_animal/hostile/ghoul,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -34321,14 +34258,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
-"wJe" = (
-/obj/structure/nest/ghoul{
-	layer = 2.7;
-	max_mobs = 1;
-	radius = 3
-	},
-/turf/open/floor/plating/tunnel,
-/area/f13/caves)
 "wJl" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/chair/wood,
@@ -40318,7 +40247,7 @@ aoj
 xVz
 xVz
 kGx
-gjC
+xVz
 xVz
 xVz
 hts
@@ -43371,7 +43300,7 @@ vPg
 vPg
 vPg
 vPg
-fDw
+lnr
 lnr
 vPg
 vPg
@@ -43929,7 +43858,7 @@ xVz
 xVz
 xVz
 xVz
-gjC
+xVz
 xVz
 xVz
 rDS
@@ -46201,7 +46130,7 @@ lnr
 jGs
 kkc
 jGs
-mXj
+jGs
 jGs
 weW
 tur
@@ -48705,7 +48634,7 @@ eoy
 eoy
 nBk
 nBk
-mSD
+nBk
 nBk
 nBk
 eoy
@@ -48923,7 +48852,7 @@ vPg
 gpM
 lnr
 lnr
-hQG
+lnr
 vPg
 vPg
 vPg
@@ -49546,7 +49475,7 @@ dXE
 jPC
 jPC
 wDa
-doO
+gSS
 dXE
 dXE
 rDt
@@ -50830,7 +50759,7 @@ tur
 jPC
 uIm
 lzb
-iWc
+bzQ
 mvK
 dXE
 dXE
@@ -51053,7 +50982,7 @@ jfU
 jfU
 hdh
 jfU
-foj
+jfU
 jfU
 jfU
 jfU
@@ -60915,7 +60844,7 @@ xVz
 xVz
 xVz
 xVz
-eAQ
+xVz
 xVz
 xVz
 xVz
@@ -63961,7 +63890,7 @@ dXE
 rDt
 dXE
 rrq
-wJe
+uPr
 fRK
 rrq
 fjS
@@ -64734,7 +64663,7 @@ wYo
 rrq
 jaG
 wzt
-oem
+fRK
 fJQ
 wnQ
 weW
@@ -68633,7 +68562,7 @@ xDp
 dXE
 tur
 nBk
-mSD
+nBk
 miI
 tur
 vPg
@@ -69985,7 +69914,7 @@ vPg
 vPg
 rex
 rKY
-aci
+dvP
 dvP
 eVI
 fxu
@@ -71358,7 +71287,7 @@ dXE
 dXE
 tur
 bhA
-mSD
+nBk
 nKZ
 bvT
 buD
@@ -72558,7 +72487,7 @@ rKY
 rex
 fxu
 fxu
-xBs
+fxu
 fxu
 afc
 rex
@@ -74357,7 +74286,7 @@ dWN
 dWN
 dWN
 dWN
-xBs
+fxu
 dWN
 dWN
 agb
@@ -75427,7 +75356,7 @@ vPg
 vPg
 aoj
 jWV
-ryj
+jWV
 jWV
 jWV
 vPg
@@ -79273,7 +79202,7 @@ jWV
 kcJ
 iYB
 jWV
-nee
+jWV
 jWV
 cAq
 cAq
@@ -91141,7 +91070,7 @@ vPg
 vPg
 aoj
 xVz
-ats
+xVz
 vPg
 vPg
 vPg
@@ -95777,7 +95706,7 @@ vPg
 vPg
 vPg
 xVz
-ats
+xVz
 aoj
 vPg
 vPg
@@ -98367,7 +98296,7 @@ hSh
 myy
 myy
 gWJ
-gsS
+myy
 myy
 nLP
 myy
@@ -99900,7 +99829,7 @@ mUC
 fHC
 fRK
 hQE
-gsS
+myy
 myy
 myy
 gWJ
