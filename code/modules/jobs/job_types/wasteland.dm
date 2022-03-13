@@ -24,11 +24,11 @@
 	name = "Enclave Private"
 	jobtype = /datum/job/wasteland/enclavespy
 	backpack = /obj/item/storage/backpack/satchel/leather
-	head = 			/obj/item/clothing/head/helmet/f13/combat/enclave
+	head = 			/obj/item/clothing/head/helmet/f13/combat/swat
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/navy
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/enclave
+	suit = 			/obj/item/clothing/suit/armor/bulletproof
 	belt = 			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	id = 			/obj/item/card/id/dogtag/enclave
@@ -38,7 +38,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
-		/obj/item/ammo_box/magazine/m556/rifle/extended = 2,
+		/obj/item/ammo_box/magazine/m5mm = 2,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1
 		)
@@ -68,6 +68,9 @@
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/mk2/dark
+	suit_store = 	/obj/item/gun/energy/laser/aer9
+	head = 			/obj/item/clothing/head/helmet/f13/combat/mk2/dark
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
@@ -80,7 +83,8 @@
 		/obj/item/pda=1,
 		/obj/item/storage/bag/money/small/wastelander=1,
 		/obj/item/melee/onehanded/knife/survival=1,
-		/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper=1
+		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper = 1
 		)
 
 /datum/outfit/job/wasteland/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -169,11 +173,12 @@
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/wasteland/enclavelt
 	backpack = /obj/item/storage/backpack/satchel/enclave
-	head = /obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+	head = /obj/item/clothing/head/helmet/f13/power_armor/advanced
 	ears = /obj/item/radio/headset/headset_enclave
 	glasses = /obj/item/clothing/glasses/night
 	mask = /obj/item/clothing/mask/gas/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/officer
+	suit = 	/obj/item/clothing/suit/armor/f13/power_armor/advanced
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	belt = /obj/item/storage/belt/military/assault/enclave
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
@@ -204,7 +209,6 @@
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
-
 
 ////////////////
 // GREAT KHAN //
