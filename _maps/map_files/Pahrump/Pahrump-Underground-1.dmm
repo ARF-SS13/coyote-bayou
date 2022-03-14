@@ -12636,7 +12636,7 @@
 "haO" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/curtain,
-/turf/closed/indestructible/vaultdoor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/underground/enclave_base)
 "haS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17146,6 +17146,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
+"krB" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/indestructible/f13/matrix,
+/area/f13/underground/enclave_base)
 "krD" = (
 /obj/structure/decoration/rag,
 /turf/closed/wall/rust,
@@ -68573,7 +68577,7 @@ wju
 dXE
 aoj
 vPg
-vIC
+krB
 ahJ
 eMr
 xEd
@@ -68830,7 +68834,7 @@ fkc
 dXE
 vPg
 vPg
-vIC
+krB
 xEd
 eMr
 xEd

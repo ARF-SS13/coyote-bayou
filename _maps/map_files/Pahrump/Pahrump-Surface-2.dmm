@@ -9472,6 +9472,14 @@
 	icon_state = "verticalleftborderleft0"
 	},
 /area/f13/building)
+"ega" = (
+/obj/machinery/door/poddoor{
+	id = "vaultelevator"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/caves)
 "egn" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -15983,6 +15991,7 @@
 	color = "000000"
 	},
 /obj/item/clothing/under/f13/doctorf,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building)
 "gMB" = (
@@ -18046,6 +18055,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/table/optable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building)
 "hCF" = (
@@ -20470,6 +20480,7 @@
 /obj/item/screwdriver,
 /obj/item/wirecutters,
 /obj/item/scalpel,
+/obj/item/defibrillator/primitive,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building)
 "iDN" = (
@@ -25392,6 +25403,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/building)
 "kCH" = (
@@ -42715,9 +42728,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "stM" = (
-/obj/structure/table_frame,
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -42776,14 +42789,7 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
 "svW" = (
-/obj/structure/frame/machine,
-/obj/item/stock_parts/manipulator,
-/obj/item/stack/cable_coil/cut/red,
-/obj/item/stock_parts/matter_bin,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/stock_parts/matter_bin,
+/obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -49594,6 +49600,7 @@
 /area/f13/ncr)
 "vyN" = (
 /obj/structure/table/reinforced,
+/obj/item/defibrillator/primitive,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "vzb" = (
@@ -100932,7 +100939,7 @@ gaV
 lCc
 imR
 mRD
-hNC
+ega
 ggK
 ggK
 ggK
