@@ -8,6 +8,11 @@
 	path = /obj/item/clothing/suit/hooded/cloak/david
 	cost = 3
 
+/datum/gear/suit/labcoat
+	name = "Labcoat"
+	path = /obj/item/clothing/suit/toggle/labcoat
+	cost = 2
+
 /datum/gear/suit/jacketbomber
 	name = "Bomber jacket"
 	path = /obj/item/clothing/suit/jacket
@@ -97,7 +102,7 @@
 	path = /obj/item/clothing/suit/armor/f13/kit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 5
-	
+
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/f13/punk
@@ -109,7 +114,7 @@
 	path = /obj/item/clothing/suit/f13/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
-	
+
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
 	path = /obj/item/clothing/suit/armor/f13/ncrcfjacket
@@ -137,7 +142,7 @@
 							"NCR Off-Duty",
 							"NCR Ranger"
 						)
-	
+
 
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
@@ -160,7 +165,7 @@
 							"Senior Scribe",
 							"Scribe",
 							)
-	
+
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
 	path = /obj/item/clothing/suit/armor/f13/town
@@ -179,7 +184,7 @@
 							"Detective",
 							"Barkeep",
 							)
-							
+
 /datum/gear/suit/deputyvest
 	name = "OPD armor vest"
 	path = /obj/item/clothing/suit/armor/vest/oasis
@@ -190,7 +195,7 @@
 								"Deputy",
 								"Detective",
 								)
-							
+
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
 	path = /obj/item/clothing/suit/hazardvest

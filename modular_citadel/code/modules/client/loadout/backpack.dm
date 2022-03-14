@@ -28,6 +28,10 @@
 	name = "Renameable Necklace"
 	path = /obj/item/clothing/accessory/necklace
 
+/datum/gear/backpack/bible
+	name = "Bible"
+	/obj/item/storage/book/bible
+
 /datum/gear/backpack/redbelt
 	name = "primitive belt"
 	path = /obj/item/storage/belt/mining/primitive
