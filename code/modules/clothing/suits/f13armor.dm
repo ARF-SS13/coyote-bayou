@@ -437,12 +437,6 @@
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("tier" = 6)
 
-/obj/item/clothing/suit/armor/f13/enclave/officercoat
-	name = "armored coat"
-	desc = "(VII) Premium prewar armor fitted into a coat for Enclave officers."
-	icon_state = "armor_enclave_officer"
-	item_state = "armor_enclave_officer"
-	armor = list("tier" = 7)
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 //Trying generic tribal armor stats for this one for now.

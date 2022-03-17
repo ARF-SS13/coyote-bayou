@@ -214,14 +214,28 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	armor = list("tier" = 4)
+	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/helmet/enclave/officer
-	name = "enclave officer hat"
-	desc = "(VII) Wheeled hat with a cap made of light-weight alloys beneath."
-	icon_state = "hat_enclave_officer"
-	item_state = "hat_enclave_officer"
-	armor = list("tier" = 7, "energy" = 45, "bomb" = 60, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30) // On par with BoS Knight
+/obj/item/clothing/head/helmet/f13/enclave
+	name = "officer hat"
+	desc = "A standard-issue Enclave officer's cap."
+	icon_state = "enclave"
+	item_color = "enclave"
+	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/envirosuit
+	name = "enclave envirosuit hood"
+	icon_state = "envirohead"
+	item_state = "envirohead"
+	desc = "A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
+	clothing_flags = THICKMATERIAL
+	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	armor = list("melee" = 29, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
 
 //////////
 //LEGION//
@@ -1225,19 +1239,6 @@ obj/item/clothing/head/f13/army/beret
 
 
 //Enclave / Remnant
-/obj/item/clothing/head/donor/enclave
-	name = "enclave forge cap"
-	desc = "(III) A resistant, black forage cap issued to Enclave soldiers."
-	icon_state = "enclave_cap"
-	item_state = "enclave_cap"
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/combat/enclave
-	name = "enclave combat helmet"
-	desc = "(VI) An intimidating helmet that is issued with it's corresponding suit."
-	icon_state = "enclave_new"
-	item_state = "enclave_new"
-	armor = list("tier" = 6, "energy" = 75, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
 /obj/item/clothing/head/helmet/f13/combat/remnant
 	name = "remnant combat helmet"
@@ -1246,21 +1247,24 @@ obj/item/clothing/head/f13/army/beret
 	item_state = "remnant_helmet"
 	armor = list("tier" = 6, "energy" = 75, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
-/obj/item/clothing/head/helmet/f13/envirosuit
-	name = "enclave envirosuit hood"
-	icon_state = "envirohead"
-	item_state = "envirohead"
-	desc = "(II) A white hazmat helmet with a coupling system, the visor looks to be made out of orange plexiglas."
-	clothing_flags = THICKMATERIAL
-	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	armor = list("tier" = 2,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 100)
-	strip_delay = 60
-	equip_delay_other = 60
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+/obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+	name = "enclave officer hat"
+	desc = "Wheeled hat with a cap made of light-weight alloys beneath."
+	icon_state = "hat_enclave_officer"
+	item_state = "hat_enclave_officer"
+	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
-/obj/item/clothing/head/soft/f13/enclave
-	name = "officer hat"
-	desc = "(I) A standard-issue Enclave officer's cap."
-	icon_state = "enclave"
-	item_color = "enclave"
+/obj/item/clothing/head/helmet/f13/helmet/enclave/forgecap
+	name = "enclave forge cap"
+	desc = "A resistant, black forage cap issued to Enclave Officers."
+	icon_state = "enclave_cap"
+	item_state = "enclave_cap"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20) // On par with BoS Initiate
+	
+
+/obj/item/clothing/head/helmet/f13/combat/enclave
+	name = "enclave combat helmet"
+	desc = "An intimidating helmet that is issued with it's corresponding suit."
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)

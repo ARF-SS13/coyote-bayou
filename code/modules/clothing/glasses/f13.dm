@@ -27,7 +27,13 @@
 	darkness_view = 12
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = /datum/client_colour/glass_colour/lightorange
-
+	
+/obj/item/clothing/glasses/night/f13/enclave
+	name = "\improper pilot goggles"
+	desc = "Heat-sensitive goggles commonly worn by Enclave Personnel."
+	icon_state = "enclavegoggles"
+	item_state = "enclavegoggles"
+	
 //Fallout 13 sunglasses
 
 /obj/item/clothing/glasses/sunglasses/f13
@@ -48,11 +54,6 @@
 	item_state = "3d"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100, fire = 100, acid = 100)
 
-/obj/item/clothing/glasses/thermal/f13/enclave
-	name = "\improper pilot goggles"
-	desc = "Heat-sensitive goggles commonly worn by Enclave vertibird pilots."
-	icon_state = "enclavegoggles"
-	item_state = "enclavegoggles"
 
 //Fallout 13 science goggles
 

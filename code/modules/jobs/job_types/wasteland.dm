@@ -10,7 +10,7 @@
 	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
 	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
 	enforces = "You must maintain the secrecy of organization."
-	supervisors = "the United States Government."
+	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 1200
@@ -23,15 +23,16 @@
 /datum/outfit/job/wasteland/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/wasteland/enclavespy
-	backpack = /obj/item/storage/backpack/satchel/leather
+	backpack = /obj/item/storage/backpack/satchel/enclave
 	head = 			/obj/item/clothing/head/helmet/f13/combat/swat
+	mask =			/obj/item/clothing/mask/gas/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
-	glasses = 		/obj/item/clothing/glasses/night
-	uniform =		/obj/item/clothing/under/f13/navy
+	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
+	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
 	suit = 			/obj/item/clothing/suit/armor/bulletproof
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	id = 			/obj/item/card/id/dogtag/enclave
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	id = 			/obj/item/card/id/dogtag/enclave/trooper
 	suit_store =  	/obj/item/gun/ballistic/automatic/assault_carbine
 
 	backpack_contents = list(
@@ -49,10 +50,10 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are in charge of the recruiting for the remnants of the Enclave. You are to recruit all those interested to your cause."
+	description = "Entrused with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
 	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
 	enforces = "You must maintain the secrecy of organization."
-	supervisors = "the United States Government."
+	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	exp_requirements = 2400
 	exp_type = EXP_TYPE_FALLOUT
@@ -66,7 +67,7 @@
 	jobtype = /datum/job/wasteland/enclavesgt
 	backpack = /obj/item/storage/backpack/satchel/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
-	glasses = 		/obj/item/clothing/glasses/night
+	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/mk2/dark
 	suit_store = 	/obj/item/gun/energy/laser/aer9
@@ -75,7 +76,7 @@
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = 		/obj/item/clothing/gloves/combat
-	id = 			/obj/item/card/id/dogtag/enclave
+	id = 			/obj/item/card/id/dogtag/enclave/trooper
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
@@ -98,12 +99,12 @@
 	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
 	faction = FACTION_ENCLAVE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	forbids = "The Enclave forbids you from leaving the base alone while it is still habitable."
 	enforces = "You must maintain the secrecy of organization."
-	supervisors = "the United States Government."
+	supervisors = "Enclave Research and Development Division."
 	selection_color = "#323232"
 	exp_requirements = 2800
 	exp_type = EXP_TYPE_FALLOUT
@@ -118,21 +119,21 @@
 	backpack = /obj/item/storage/backpack/satchel/enclave
 	head = 			/obj/item/clothing/head/helmet/f13/envirosuit
 	ears = 			/obj/item/radio/headset/headset_enclave
-	glasses = 		/obj/item/clothing/glasses/night
+	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
 	mask =			/obj/item/clothing/mask/breath/medical
 	gloves = 		/obj/item/clothing/gloves/color/latex/nitrile
 	uniform =		/obj/item/clothing/under/f13/enclave/science
 	suit = 			/obj/item/clothing/suit/armor/f13/environmentalsuit
 	belt = 			/obj/item/storage/belt/medical
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
-	id = 			/obj/item/card/id/dogtag/enclave
+	id = 			/obj/item/card/id/dogtag/enclave/noncombatant
 	suit_store =  	/obj/item/tank/internals/oxygen
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/grenade/chem_grenade/cleaner=1,
 		/obj/item/pda=1,
-		/obj/item/gun/energy/laser/ultra_pistol=1,
+		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/storage/bag/money/small/wastelander=1,
 		/obj/item/melee/onehanded/knife/survival=1,
@@ -156,10 +157,10 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the Lieutenant in charge of commanding the remnants of the Enclave forces in the area. You are to recruit all those interested to your cause."
+	description = "You are in command of the post, holding the rank of First Lieutenant- albiet honourably. Conduct research and help rebuild America with your Scientists aswell as any research your Scientists wish to pursuit, utilise any resources available to you to achieve this."
 	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
 	enforces = "You must maintain the secrecy of organization."
-	supervisors = "the United States Government."
+	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	exp_requirements = 1500
 	exp_type = EXP_TYPE_ENCLAVE
@@ -173,17 +174,17 @@
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/wasteland/enclavelt
 	backpack = /obj/item/storage/backpack/satchel/enclave
-	head = /obj/item/clothing/head/helmet/f13/power_armor/advanced
+	head = /obj/item/clothing/head/helmet/f13/enclave
 	ears = /obj/item/radio/headset/headset_enclave
-	glasses = /obj/item/clothing/glasses/night
+	glasses = /obj/item/clothing/glasses/night/f13/enclave
 	mask = /obj/item/clothing/mask/gas/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = 	/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	suit = 	/obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	belt = /obj/item/storage/belt/military/assault/enclave
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = /obj/item/clothing/gloves/combat
-	id = /obj/item/card/id/dogtag/enclave
+	id = /obj/item/card/id/dogtag/enclave/officer
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 2,

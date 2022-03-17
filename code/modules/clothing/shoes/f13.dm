@@ -8,7 +8,7 @@
 
 /obj/item/clothing/shoes/f13/enclave/serviceboots
 	name = "enclave service boots"
-	desc = "(III)Tall shiny boots with kevlar layers."
+	desc = "Tall shiny boots with kevlar layers."
 	icon_state = "boots_enclave"
 	item_state = "boots_enclave"
 

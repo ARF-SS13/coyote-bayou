@@ -1246,7 +1246,7 @@
 
 /obj/item/card/id/dogtag/enclave/trooper
 	name = "US dogtags"
-	desc = "Worn by Enclave officers."
+	desc = "Worn by Enclave NCOs."
 	icon_state = "enclavetrooper"
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
@@ -1254,7 +1254,7 @@
 
 /obj/item/card/id/dogtag/enclave/noncombatant
 	name = "US identity card"
-	desc = "Issued to Enclave citizens with photo and fingerprint."
+	desc = "Issued to Enclave Non-Combat Personnel with a photograph and fingerprints."
 	icon_state = "enclavenoncombat"
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
