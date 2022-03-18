@@ -20,10 +20,7 @@
 	desc = "A .357 bullet casing, made by hand."
 	projectile_type = /obj/item/projectile/bullet/a357/improv
 
-/obj/item/ammo_casing/a357/acid
-	name = ".357 special acid-tipped bullet casing"
-	desc = "A .357 acid-tipped bullet casing."
-	projectile_type = /obj/item/projectile/bullet/a357/acid
+
 // .38 special
 /obj/item/ammo_casing/c38
 	name = ".38 special bullet casing"
@@ -47,10 +44,7 @@
 	desc = "A .38 special incendiary bullet casing. For when you want to be slightly less useless."
 	projectile_type = /obj/item/projectile/bullet/c38/incendiary
 
-/obj/item/ammo_casing/c38/acid
-	name = ".38 special acid-tipped bullet casing"
-	desc = "A .38 special acid-tipped bullet casing. For when you want to be slightly less useless."
-	projectile_type = /obj/item/projectile/bullet/c38/acid
+
 
 
 // .44 magnum
@@ -77,10 +71,7 @@
 	desc = "A .45-70 explosive bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c4570/explosive
 
-/obj/item/ammo_casing/c4570/acid
-	name = ".45-70 acid-tipped bullet casing"
-	desc = "A .45-70 acid-tipped bullet casing."
-	projectile_type = /obj/item/projectile/bullet/c4570/acid
+
 
 /obj/item/ammo_casing/c4570/knockback
 	name = ".45-70 ultradense bullet casing"
