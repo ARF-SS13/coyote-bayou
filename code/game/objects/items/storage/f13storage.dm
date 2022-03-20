@@ -434,7 +434,7 @@
 // -----------------------------------
 // STIMPAK BOX
 
-/obj/item/storage/box/medicine/stimpaks/stimpaks5
+/obj/item/storage/box/medicine/stimpaks/stimpaks5 
 	name = "box of stimpaks"
 	desc = "A box full of stimpaks."
 

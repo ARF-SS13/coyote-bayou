@@ -101,16 +101,6 @@
 	time = 50
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/improvisedstimpak
-	name = "Imitation Stimpak"
-	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/imitation
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 4,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 4,
-				/obj/item/reagent_containers/syringe = 1)
-	tools = list(TOOL_WORKBENCH)
-	time = 45
-	category = CAT_MEDICAL
-
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
@@ -129,16 +119,6 @@
 				/obj/item/reagent_containers/syringe = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 40
-	category = CAT_MEDICAL
-
-/datum/crafting_recipe/improvisedstimpak5
-	name = "Imitation Stimpak (x5)"
-	result = /obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 20,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 20,
-				/obj/item/reagent_containers/syringe = 5)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/superstimpak
