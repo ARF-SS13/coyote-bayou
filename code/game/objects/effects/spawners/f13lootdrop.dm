@@ -328,7 +328,6 @@
 				/obj/effect/spawner/bundle/f13/armor/swat,
 				/obj/effect/spawner/bundle/f13/armor/combat,
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
-				/obj/effect/spawner/bundle/f13/armor/combat/dark,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
 				/obj/effect/spawner/bundle/f13/armor/vault,
 				)
