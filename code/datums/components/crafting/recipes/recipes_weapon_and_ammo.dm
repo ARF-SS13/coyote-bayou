@@ -228,18 +228,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/c9mmacid
-	name = "9mm acid-tipped ammo box"
-	result = /obj/item/ammo_box/c9mm/acid
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/toxin/acid = 20,
-	/datum/reagent/blackpowder = 50
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 75
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c9mmincin
 	name = "9mm incendiary-tipped ammo box"
@@ -255,19 +243,6 @@
 	subcategory = CAT_AMMO
 
 
-
-/datum/crafting_recipe/c38boxacid
-	name = ".38 acid-tipped ammo box"
-	result = /obj/item/ammo_box/c38box/acid
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/toxin/acid = 20,
-	/datum/reagent/blackpowder = 50
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 75
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c38boxincin
 	name = ".38 incendiary-tipped ammo box"
@@ -317,19 +292,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-
-/datum/crafting_recipe/a357boxacid
-	name = ".357 acid-tipped ammo box"
-	result = /obj/item/ammo_box/a357box/acid
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/toxin/acid = 20,
-	/datum/reagent/blackpowder = 50
-	)
-	tools = list(TOOL_AWORKBENCH)
-	time = 75
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a357boxincin
 	name = ".357 incendiary-tipped ammo box"
@@ -403,19 +365,6 @@
 	/datum/reagent/blackpowder = 25
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c4570boxacid
-	name = ".45-70 Gv'mt acid-tipped ammo box"
-	result = /obj/item/ammo_box/c4570box/acid
-	reqs = list(/obj/item/stack/crafting/metalparts = 2,
-	/obj/item/stack/sheet/metal = 2,
-	/datum/reagent/toxin/acid/fluacid = 20,
-	/datum/reagent/blackpowder = 50
-	)
-	tools = list(TOOL_AWORKBENCH)
 	time = 75
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -1144,7 +1093,7 @@
 
 //grease gun
 /datum/crafting_recipe/grease_gun
-	name = "Grease Gun"
+	name = "9mm SMG"
 	result = /obj/item/gun/ballistic/automatic/smg/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,

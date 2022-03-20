@@ -830,8 +830,8 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/uscommander
 	name = "US Commander"
 
-/obj/effect/landmark/start/f13/usmedic
-	name = "US Medic"
+/obj/effect/landmark/start/f13/usspecialist
+	name = "Enclave Specialist"
 
 /obj/effect/landmark/start/f13/usprivate
 	name = "US Private"
@@ -839,8 +839,8 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/usscientist
 	name = "Enclave Scientist"
 
-/obj/effect/landmark/start/f13/usengineer
-	name = "US Engineer"
+/obj/effect/landmark/start/f13/usgysgt
+	name = "Enclave Gunnery Sergeant"
 
 /obj/effect/landmark/start/f13/uscolonist
 	name = "US Colonist"

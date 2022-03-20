@@ -198,11 +198,11 @@
 // Enclave corpses
 /obj/effect/mob_spawn/human/corpse/enclavescientist
 	name = "enclave scientist"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/radiation
-	shoes = /obj/item/clothing/shoes/f13/military
-	gloves = /obj/item/clothing/gloves/f13/military
-	head = /obj/item/clothing/head/radiation
+	uniform = /obj/item/clothing/under/f13/enclave/science
+	suit = /obj/item/clothing/suit/armor/f13/environmentalsuit
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	head = /obj/item/clothing/head/helmet/f13/envirosuit
 
 /obj/effect/mob_spawn/human/corpse/enclave
 	name = "enclave specialist"

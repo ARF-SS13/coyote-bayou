@@ -106,11 +106,6 @@
 	caliber = "9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
-/obj/item/ammo_box/c9mm/acid
-	name = "ammo box (9mm acid-tipped)"
-	desc = "A box of 9mm acid-tipped rounds. This'll sting."
-	ammo_type = /obj/item/ammo_casing/c9mm/acid
-
 /obj/item/ammo_box/c9mm/incendiary
 	name = "ammo box (9mm incendiary-tipped)"
 	desc = "A box of 9mm incendiary-tipped rounds. This'll burn."
@@ -140,11 +135,6 @@
 	icon_state = "38box"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/c38/rubber
-
-/obj/item/ammo_box/c38box/acid
-	name = "ammo box (.38 acid-tipped)"
-	desc = "A box of .38 acid-tipped rounds. This'll sting."
-	ammo_type = /obj/item/ammo_casing/c38/acid
 
 /obj/item/ammo_box/c38box/incendiary
 	name = "ammo box (.38 incendiary-tipped)"
@@ -209,11 +199,6 @@
 	name = "ammo box (.357 magnum incendiary-tipped)"
 	desc = ".357 incendiary-tipped ammo. There's not much else to it."
 	ammo_type = /obj/item/ammo_casing/a357/incendiary
-
-/obj/item/ammo_box/a357box/acid
-	name = "ammo box (.357 magnum acid-tipped)"
-	desc = ".357 acid-tipped ammo. There's not much else to it, really."
-	ammo_type = /obj/item/ammo_casing/a357/acid
 
 /obj/item/ammo_box/a357box/improvised
 	name = "bag with reloaded .357 bullets"
@@ -304,11 +289,6 @@
 	name = "ammo box (.45-70 HE)"
 	desc = ".45-70 Goverment rounds with explosive tips. Surely an archaic blackpowder cartridge with an explosive payload is completely safe."
 	ammo_type = /obj/item/ammo_casing/c4570/explosive
-
-/obj/item/ammo_box/c4570box/acid
-	name = "ammo box (.45-70 acid-tip)"
-	desc = ".45-70 Goverment rounds with acid tips. Surely an archaic blackpowder cartridge with an acid tip is completely safe."
-	ammo_type = /obj/item/ammo_casing/c4570/acid
 
 /obj/item/ammo_box/c4570box/knockback
 	name = "ammo box (.45-70 ultradense)"

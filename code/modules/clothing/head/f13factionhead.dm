@@ -187,6 +187,15 @@
 
 //Enclave
 
+/obj/item/clothing/head/f13/helmet/usmcriot
+	name = "old United States Marine Corp riot helmet"
+	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	icon_state = "modified_usmc_riot"
+	item_state = "modified_usmc_riot"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+
 /obj/item/clothing/head/helmet/f13/helmet/enclave/science
 	name = "science beret"
 	desc = "Blue beret signifying the wearer is a Science Officer of the Enclave."
@@ -194,7 +203,6 @@
 	item_state = "hat_enclave_science"
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
-	armor = list("tier" = 1)
 
 /obj/item/clothing/head/helmet/f13/helmet/enclave/intel
 	name = "intel beret"
@@ -203,7 +211,6 @@
 	item_state = "hat_enclave_intel"
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
-	armor = list("tier" = 3)
 
 /obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
 	name = "peacekeeper cap"

@@ -57,6 +57,8 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Legion Centurion",
 
 	"Sheriff",
+
+	"Enclave Lieutenant",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -97,6 +99,13 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Doctor",
 "Prospector",
 "Detective",
+
+"Enclave Lieutenant",
+"Enclave Gunnery Sergeant",
+"Enclave Sergeant",
+"Enclave Specialist",
+"Enclave Scientist",
+"Enclave Private",
 
 "Chief",
 "Shaman",
@@ -213,17 +222,15 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Preacher",
 	"Tribal",
 	"Wastelander",
-	"Enclave Private",
-	"Enclave Sergeant",
-	"Enclave Scientist",
-	"Enclave Lieutenant",
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
-	"Enclave Private",
-	"Enclave Sergeant",
-	"Enclave Scientist",
 	"Enclave Lieutenant",
+	"Enclave Gunnery Sergeant",
+	"Enclave Sergeant",
+	"Enclave Specialist",
+	"Enclave Scientist",
+	"Enclave Private",
 ))
 
 GLOBAL_LIST_INIT(security_positions, list(
@@ -258,8 +265,9 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
 	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
-	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#ffeeee"),
+	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
+	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
 ))
