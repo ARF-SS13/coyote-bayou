@@ -364,8 +364,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/job/ncr/f13drillsergeant
 	title = "NCR Drill Sergeant"
 	flag = F13DRILLSERGEANT
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are the direct superior to the conscripts, you are to provide training exercises, maintain military discipline, and instill orderliness within the ranks."
 	supervisors = "Lieutenant and Above"
 	selection_color = "#fff5cc"
@@ -409,8 +409,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	title = "NCR Representative"
 	flag = F13REP
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCRREP)
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are an influential representative for the NCR and experienced bureaucrat. You are here to further the objective and ensure the interests of the NCR, your company or own enterprise are met through thick and thin, and have been supplied with ample amounts of money to do so."
 	supervisors = "The Captain and the NCR"
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
@@ -1060,8 +1060,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/job/ncr/f13conscript
 	title = "NCR Conscript"
 	flag = F13CONSCRIPT
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 6
+	spawn_positions = 6
 	description = "You are the recent bulk of the NCR Army. You have been recently conscripted, given little to no training and were issued a gun. Obey your the NCOs and officers, no matter what you are expected to follow military discipline."
 	supervisors = "The Drill Sergeant, Corporals and Above"
 	selection_color = "#fff5cc"
