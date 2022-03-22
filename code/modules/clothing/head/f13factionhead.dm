@@ -1104,7 +1104,7 @@
 
 obj/item/clothing/head/f13/army/beret
 	name = "US Army beret"
-	desc = "A black beret, standard issue for all US Army personnel, this one holds the generic Department of the Army beret flash."
+	desc = "A black beret, standard issue for all US Army personnel not authorised to wear a different beret."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "army_beret"
@@ -1113,16 +1113,23 @@ obj/item/clothing/head/f13/army/beret
 
 /obj/item/clothing/head/f13/army/beret/airborne
 	name = "US Army airborne beret"
-	desc = "(A red beret, issued to US Army airborne forces, this one holds the beret flash of the 82nd Airborne Div, 1st BCT."
+	desc = "A red beret, issued to US Army Airborne personnel."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "army_beret_airborne"
 	item_state = "army_beret_airborne"
 
+/obj/item/clothing/head/f13/army/beret/rangers
+	name = "US Army rangers beret"
+	desc = "A tan beret, issued to US Army Rangers."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
+	icon_state = "army_beret_ranger"
+	item_state = "army_beret_ranger"
 
 /obj/item/clothing/head/f13/army/beret/specialforces
 	name = "US Army special forces beret"
-	desc = "(A green beret, issued to US Army special forces personnel, this one holds the beret flash of the 2nd Special Forces Group."
+	desc = "A green beret, issued to US Army Special Forces personnel."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "army_beret_specialforces"
@@ -1283,7 +1290,7 @@ obj/item/clothing/head/f13/army/beret
 	icon_state = "enclave_cap"
 	item_state = "enclave_cap"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20) // On par with BoS Initiate
-	
+
 
 /obj/item/clothing/head/helmet/f13/combat/enclave
 	name = "enclave combat helmet"

@@ -34,7 +34,7 @@
 /datum/gear/head/beret
 	name = "black beret"
 	path = /obj/item/clothing/head/beret/black
-	
+
 /datum/gear/head/medicalberet
 	name = "medical beret"
 	path = /obj/item/clothing/head/beret/med
@@ -238,6 +238,16 @@
 /datum/gear/head/usarmy/officer
 	name = "US Army officer's cap"
 	path = /obj/item/clothing/head/f13/army/officer
+	cost = 3
+
+/datum/gear/head/usarmy/beret
+	name = "US Army beret"
+	path = obj/item/clothing/head/f13/army/beret
+	cost = 2
+
+/datum/gear/head/usarmy/beretairborne
+	name = "US Army airborne beret"
+	path = /obj/item/clothing/head/f13/army/beret/airborne
 	cost = 3
 
 //CHINA
