@@ -323,7 +323,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/outfit/loadout/sergeantrifleman
 	name = "Rifleman"
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
-	head = /obj/item/clothing/head/f13/ncr
+	head = /obj/item/clothing/head/f13
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m5mm = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
@@ -358,6 +358,52 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mmds = 3,
 		)
+
+// DRILL SERGEANT
+
+/datum/job/ncr/f13drillsergeant
+	title = "NCR Drill Sergeant"
+	flag = F13DRILLSERGEANT
+	total_positions = 0
+	spawn_positions = 0
+	description = "You are the direct superior to the conscripts, you are to provide training exercises, maintain military discipline, and instill orderliness within the ranks."
+	supervisors = "Lieutenant and Above"
+	selection_color = "#fff5cc"
+	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
+	display_order = JOB_DISPLAY_ORDER_SERGEANT
+	outfit = /datum/outfit/job/ncr/f13drillsergeant
+	exp_requirements = 1000
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+		),
+		)
+
+
+/datum/outfit/job/ncr/f13drillsergeant
+	name = "NCR Drill Sergeant"
+	jobtype = /datum/job/ncr/f13drillsergeant
+	id = /obj/item/card/id/dogtag/ncrsergeant
+	accessory = /obj/item/clothing/accessory/ncr/SGT
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	head = /obj/item/clothing/head/f13/ncr_campaign
+	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
+	glasses	= /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/f13/ncr/ncr_dress
+	neck = /obj/item/storage/belt/holster/legholster
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mmds = 2,
+		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		)
+
+// REPRESENATIVE
 
 /datum/job/ncr/f13representative
 	title = "NCR Representative"
@@ -956,9 +1002,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/job/ncr/f13trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
-	total_positions = 8
-	spawn_positions = 8
-	description = "You are the backbone of the NCR Army. Obey your the NCOs and officers, no matter if you are a conscript or a volounteer you are expected to follow military discipline."
+	total_positions = 4
+	spawn_positions = 4
+	description = "You are a professional soldier of the NCR Army. Obey your the NCOs and officers, no matter what you are expected to follow military discipline."
 	supervisors = "Corporals and Above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
@@ -994,7 +1040,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Rifleman"
 	suit_store = /obj/item/gun/ballistic/automatic/service
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle = 2,
+		/obj/item/ammo_box/magazine/m556/rifle = 3,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		)
@@ -1003,11 +1049,70 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "Reservist"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
 		/obj/item/shovel/trench = 1,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		)
 
+
+// CONSCRIPT
+
+/datum/job/ncr/f13conscript
+	title = "NCR Conscript"
+	flag = F13CONSCRIPT
+	total_positions = 0
+	spawn_positions = 0
+	description = "You are the recent bulk of the NCR Army. You have been recently conscripted, given little to no training and were issued a gun. Obey your the NCOs and officers, no matter what you are expected to follow military discipline."
+	supervisors = "The Drill Sergeant, Corporals and Above"
+	selection_color = "#fff5cc"
+	display_order = JOB_DISPLAY_ORDER_TROOPER
+	outfit = /datum/outfit/job/ncr/f13conscript
+
+	loadout_options = list(
+		/datum/outfit/loadout/conscriptvarmint, // varmint rifle, Bayonet
+		/datum/outfit/loadout/conscripthunting, // hunting rifle, Trench tool, Sandbags
+		)
+
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/ncr,
+			),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/ncr,
+			),
+		)
+
+/datum/outfit/job/ncr/f13conscript
+	name = "NCR Conscript"
+	jobtype	= /datum/job/ncr/f13conscript
+	id = /obj/item/card/id/dogtag/ncrtrooper
+	accessory = /obj/item/clothing/accessory/ncr/TPR
+	head = /obj/item/clothing/head/f13/ncr/standard/conscript
+	uniform = /obj/item/clothing/under/f13/ncr/conscript
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/conscript
+	glasses	= null
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/ncrenlisted = 1,
+		)
+
+/datum/outfit/loadout/conscriptvarmint
+	name = "Assault"
+	suit_store = /obj/item/gun/ballistic/automatic/varmint
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle = 1,
+		/obj/item/melee/onehanded/knife/bayonet = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
+		)
+
+/datum/outfit/loadout/conscripthunting
+	name = "Sapper"
+	suit_store = /obj/item/gun/ballistic/rifle/hunting
+	backpack_contents = list(
+		/obj/item/ammo_box/a308 = 2,
+		/obj/item/shovel/trench = 1,
+		/obj/item/stack/sheet/mineral/sandbags = 7,
+		/obj/item/storage/box/ration/menu_eight = 1,
+		)
 
 
 /////////////////

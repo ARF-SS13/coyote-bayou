@@ -98,6 +98,14 @@
 	item_state = "ncr_officer"
 	item_color = "ncr_officer"
 
+/obj/item/clothing/under/f13/ncr/conscript
+	name = "NCR conscript fatigues"
+	desc = "A standard duty uniform for conscripts of the New California Republic."
+	can_adjust = FALSE
+	icon_state = "ncr_conscript"
+	item_state = "ncr_conscript"
+	item_color = "ncr_conscript"
+
 /obj/item/clothing/under/f13/ncr/scout
 	name = "NCR scout fatigues"
 	desc = "A standard duty uniform for scouts of the New California Republic."

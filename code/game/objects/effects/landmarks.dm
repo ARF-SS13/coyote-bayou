@@ -537,6 +537,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "NCR Sergeant First Class"
 	icon_state = "NCR Sergeant"
 
+/obj/effect/landmark/start/f13/ncrdrillsergeant
+	name = "NCR Drill Sergeant"
+	icon_state = "NCR Drill Sergeant"
+
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
@@ -568,6 +572,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
 	icon_state = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrconscript
+	name = "NCR Conscript"
+	icon_state = "NCR Conscript"
 
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
@@ -800,7 +808,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/dendoctor
 	name = "Den Doctor"
-	
+
 /obj/effect/landmark/start/f13/mobboss
 	name = "Den Mob Boss"
 	icon_state = "Boss"
@@ -854,7 +862,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 /obj/effect/landmark/start/f13/chief
 	name = "Chief"
 	icon_state = "Tribal"
-	
+
 /obj/effect/landmark/start/f13/shaman
 	name = "Shaman"
 	icon_state = "Tribal"
