@@ -186,8 +186,18 @@
 
 
 //Enclave
+/obj/item/clothing/head/helmet/f13/enclave
+	name = "officer hat"
+	desc = "A standard-issue Enclave officer's cap."
+	icon_state = "enclave"
+	item_color = "enclave"
+	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
-/obj/item/clothing/head/f13/helmet/usmcriot
+/obj/item/clothing/head/helmet/f13/enclave/Initialize() 
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
+/obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	name = "old United States Marine Corp riot helmet"
 	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "modified_usmc_riot"
@@ -196,7 +206,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
-/obj/item/clothing/head/helmet/f13/helmet/enclave/science
+/obj/item/clothing/head/helmet/f13/enclave/science
 	name = "science beret"
 	desc = "Blue beret signifying the wearer is a Science Officer of the Enclave."
 	icon_state = "hat_enclave_science"
@@ -204,7 +214,7 @@
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
 
-/obj/item/clothing/head/helmet/f13/helmet/enclave/intel
+/obj/item/clothing/head/helmet/f13/enclave/intel
 	name = "intel beret"
 	desc = "Dark beret issued to Intelligence Officers of the Enclave."
 	icon_state = "hat_enclave_intel"
@@ -212,7 +222,7 @@
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
 
-/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
+/obj/item/clothing/head/helmet/f13/enclave/peacekeeper
 	name = "peacekeeper cap"
 	desc = "Reinforced field cap issued to the soldiers of the Enclave."
 	icon_state = "hat_enclave_peacekeeper"
@@ -223,12 +233,6 @@
 	dynamic_fhair_suffix = ""
 	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/enclave
-	name = "officer hat"
-	desc = "A standard-issue Enclave officer's cap."
-	icon_state = "enclave"
-	item_color = "enclave"
-	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/envirosuit
 	name = "enclave envirosuit hood"

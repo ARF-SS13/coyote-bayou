@@ -872,6 +872,10 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 
+/obj/item/clothing/suit/armor/f13/usmcriot/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 
 /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	name = "enclave officer trenchcoat"
@@ -881,6 +885,9 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 50)
 
+/obj/item/clothing/suit/armor/f13/enclavetrenchcoat/Initialize() //HQ parts reinforcement
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/environmentalsuit
 	name = "enclave envirosuit"

@@ -134,7 +134,7 @@ PEACEKEEPERS
 /datum/outfit/job/enclave/peacekeeper/trooper
 	name = "Peacekeeper"
 	jobtype = /datum/job/enclave/peacekeeper/trooper
-	head = 			/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper
+	head = 			/obj/item/clothing/head/helmet/f13/enclave/peacekeeper
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/sig=1,
 		/obj/item/ammo_box/magazine/m9mm=1,
@@ -174,7 +174,7 @@ PEACEKEEPERS
 /datum/outfit/job/enclave/noncombat/science
 	name = "Science Officer"
 	jobtype = /datum/job/enclave/noncombat/science
-	head = 			/obj/item/clothing/head/helmet/f13/helmet/enclave/science
+	head = 			/obj/item/clothing/head/helmet/f13/enclave/science
 	uniform = 		/obj/item/clothing/under/f13/enclave/science
 	backpack_contents = list(
 		/obj/item/reagent_containers/spray/pepper=1)
@@ -203,7 +203,7 @@ PEACEKEEPERS
 /datum/outfit/job/enclave/noncombat/intel
 	name = "Intelligence Officer"
 	jobtype = /datum/job/enclave/noncombat/intel
-	head = 			/obj/item/clothing/head/helmet/f13/helmet/enclave/intel
+	head = 			/obj/item/clothing/head/helmet/f13/enclave/intel
 	mask =			/obj/item/clothing/mask/gas/enclave
 	uniform = 		/obj/item/clothing/under/f13/enclave/intel
 	suit_store =	/obj/item/gun/ballistic/revolver/needler

@@ -1235,7 +1235,7 @@
 	automatic = 1
 	autofire_shot_delay = 3
 	mag_type = /obj/item/ammo_box/magazine/m762
-	spread = 12
+	spread = 10
 	recoil = 0.25
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
@@ -1308,9 +1308,9 @@
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-//LSW squad support weapon				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
+//LSW Squad Support Weapon				Keywords: 5.56mm, Automatic, 20 (10-50) round magazine, Scoped, Damage decrease (bullethose)
 /obj/item/gun/ballistic/automatic/lsw
-	name = "LSW (Light Support Weapon)"
+	name = "Light Support Weapon"
 	desc = "This squad-level support weapon has a bullpup design. The bullpup design makes it difficult to use while lying down. Because of this it was remanded to National Guard units. It, however, earned a reputation as a reliable weapon that packs a lot of punch for its size."
 	icon = 'icons/obj/guns/projectile.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -1321,6 +1321,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_delay = 4.5
 	burst_shot_delay = 2.25
+	is_automatic = TRUE
+	automatic = 1
 	extra_damage = 23
 	spread = 12
 	spawnwithmagazine = TRUE
@@ -1331,27 +1333,6 @@
 	can_scope = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-
-/obj/item/gun/ballistic/automatic/lsw/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 10
-			extra_damage = 23
-			recoil = 0.25
-			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
-		if(1)
-			select = 0
-			burst_size = 4
-			spread = 14
-			extra_damage = 23
-			recoil = 0.5
-			to_chat(user, "<span class='notice'>You switch to full auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
 
 
 //M1919 Machinegun				Keywords: LEGION, .308, Automatic, 80 round belt. Special modifiers: damage decrease bullethose

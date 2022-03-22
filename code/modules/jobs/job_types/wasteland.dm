@@ -56,8 +56,8 @@
 	title = "Enclave Specialist"
 	flag = F13USSPECIALIST
 	faction = FACTION_ENCLAVE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are an undercover operative for the remnants of the Enclave. You, unlike the normal privates, have gotten some specialist training and can be specialized in either engineering or medicine."
 	supervisors = "Enclave Department of the Army."
 	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
@@ -89,13 +89,13 @@
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	id = 			/obj/item/card/id/dogtag/enclave/trooper
 	accessory = 	/obj/item/clothing/accessory/ncr/SPC
-	suit_store = 	/obj/item/gun/ballistic/automatic/smg/smg10mm/worn
+	suit_store = 	/obj/item/gun/ballistic/automatic/smg/mp5
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		)
@@ -104,7 +104,7 @@
 	name = "Combat Medic"
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	head = /obj/item/clothing/head/helmet/f13/helmet/enclave/science
+	head = /obj/item/clothing/head/helmet/f13/enclave/science
 	backpack_contents = list(
 		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -130,8 +130,8 @@
 	title = "Enclave Gunnery Sergeant"
 	flag = F13USGYSGT
 	faction = FACTION_ENCLAVE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are the Quartermaster and Heavy Weapons Specialist of the Enclave, along with commanding the Sergeants and their squads."
 	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
 	enforces = "You must maintain the secrecy of organization."
@@ -158,7 +158,7 @@
 	gloves = 		/obj/item/clothing/gloves/f13/military
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
-	head =			/obj/item/clothing/head/f13/helmet/usmcriot
+	head =			/obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	suit = 			/obj/item/clothing/suit/armor/f13/usmcriot
 	suit_store = 	/obj/item/gun/ballistic/automatic/lsw
 
@@ -223,7 +223,7 @@
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/clothing/head/helmet/f13/helmet/enclave/peacekeeper = 1,
+		/obj/item/clothing/head/helmet/f13/enclave/peacekeeper = 1,
 		)
 
 /datum/outfit/job/wasteland/enclavesgt/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -276,7 +276,7 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
-		/obj/item/clothing/head/helmet/f13/helmet/enclave/science = 1,
+		/obj/item/clothing/head/helmet/f13/enclave/science = 1,
 		)
 
 /datum/outfit/job/wasteland/enclavesci/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -342,7 +342,7 @@
 	name = "Good Old Reliable"
 	suit_store = /obj/item/gun/ballistic/automatic/fnfal
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m14mm = 2,
+		/obj/item/ammo_box/magazine/m44= 2,
 		/obj/item/ammo_box/magazine/m762 = 2,
 		/obj/item/gun/ballistic/automatic/pistol/deagle = 1,
 		)
@@ -360,7 +360,7 @@
 	..()
 	if(visualsOnly)
 		return
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	if(H.mind)
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
