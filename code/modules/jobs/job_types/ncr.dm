@@ -389,18 +389,21 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	jobtype = /datum/job/ncr/f13drillsergeant
 	id = /obj/item/card/id/dogtag/ncrsergeant
 	accessory = /obj/item/clothing/accessory/ncr/SGT
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	gloves = /obj/item/clothing/gloves/f13/leather
 	head = /obj/item/clothing/head/f13/ncr_campaign
 	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	glasses	= /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/f13/ncr/ncr_dress
-	neck = /obj/item/storage/belt/holster/legholster
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack
+	neck = /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mmds = 2,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
 		)
 
 // REPRESENATIVE
