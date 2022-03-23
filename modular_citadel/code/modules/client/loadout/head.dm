@@ -242,7 +242,7 @@
 
 /datum/gear/head/usarmy/beret
 	name = "US Army beret"
-	path = obj/item/clothing/head/f13/army/beret
+	path = /obj/item/clothing/head/f13/army/beret
 	cost = 2
 
 /datum/gear/head/usarmy/beretairborne
