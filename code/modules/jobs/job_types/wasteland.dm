@@ -43,8 +43,8 @@
 		/obj/item/ammo_box/magazine/m5mm = 2,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/melee/onehanded/knife/survival = 1
-		/obj/item/flashlight/seclite = 1
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/flashlight/seclite = 1,
 		)
 
 
@@ -99,7 +99,7 @@
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/flashlight/seclite = 1
+		/obj/item/flashlight/seclite = 1,
 		)
 
 /datum/outfit/loadout/combatmedic
@@ -172,7 +172,7 @@
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/flashlight/seclite = 1
+		/obj/item/flashlight/seclite = 1,
 		)
 
 
@@ -226,7 +226,7 @@
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/flashlight/seclite = 1
+		/obj/item/flashlight/seclite = 1,
 		/obj/item/clothing/head/helmet/f13/enclave/peacekeeper = 1,
 		)
 
@@ -280,7 +280,7 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
-		/obj/item/flashlight/seclite = 1
+		/obj/item/flashlight/seclite = 1,
 		/obj/item/clothing/head/helmet/f13/enclave/science = 1,
 		)
 
@@ -341,7 +341,7 @@
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/flashlight/seclite = 1
+		/obj/item/flashlight/seclite = 1,
 		)
 
 /datum/outfit/loadout/ballistics
