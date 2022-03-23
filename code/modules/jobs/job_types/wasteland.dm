@@ -7,9 +7,9 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are an undercover operative for the remnants of the Enclave. You are to remain concealed and attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
-	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
-	enforces = "You must maintain the secrecy of organization."
+	description = "You are an operative for the remnants of the Enclave. You are to attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	exp_type = EXP_TYPE_FALLOUT
@@ -44,6 +44,7 @@
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1
+		/obj/item/flashlight/seclite = 1
 		)
 
 
@@ -58,10 +59,10 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are an undercover operative for the remnants of the Enclave. You, unlike the normal privates, have gotten some specialist training and can be specialized in either engineering or medicine."
+	description = "You are an operative for the remnants of the Enclave. You, unlike the normal privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "Enclave Department of the Army."
-	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
-	enforces = "You must maintain the secrecy of organization."
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	selection_color = "#323232"
 	outfit = /datum/outfit/job/wasteland/f13specialist
 	exp_type = EXP_TYPE_FALLOUT
@@ -69,9 +70,9 @@
 
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
-	
 
-	loadout_options = list( 
+
+	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
 		/datum/outfit/loadout/combatengie, // Grenade Launcher
 		)
@@ -98,6 +99,7 @@
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/flashlight/seclite = 1
 		)
 
 /datum/outfit/loadout/combatmedic
@@ -132,9 +134,9 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the Quartermaster and Heavy Weapons Specialist of the Enclave, along with commanding the Sergeants and their squads."
-	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
-	enforces = "You must maintain the secrecy of organization."
+	description = "You are the Quartermaster and Logistics Specialist. Your role is an advisory one that sees that the bunker has everything it needs; soldiers, medicine and food. These roles are yours, along with commanding the Sergeants and helping direct their squads."
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	outfit = /datum/outfit/job/wasteland/f13gysergeant
@@ -169,7 +171,8 @@
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/melee/onehanded/knife/survival = 1
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/flashlight/seclite = 1
 		)
 
 
@@ -187,8 +190,8 @@
 	total_positions = 2
 	spawn_positions = 2
 	description = "Entrused with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
-	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
-	enforces = "You must maintain the secrecy of organization."
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	exp_requirements = 2400
@@ -223,6 +226,7 @@
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/flashlight/seclite = 1
 		/obj/item/clothing/head/helmet/f13/enclave/peacekeeper = 1,
 		)
 
@@ -238,9 +242,9 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 2
 	spawn_positions = 2
-	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in proficiency, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
-	forbids = "The Enclave forbids you from leaving the base alone while it is still habitable."
-	enforces = "You must maintain the secrecy of organization."
+	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
+	forbids = "The Enclave forbids you from leaving the base alone while it is still habitable. You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	supervisors = "Enclave Research and Development Division."
 	selection_color = "#323232"
 	exp_type = EXP_TYPE_FALLOUT
@@ -276,6 +280,7 @@
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/flashlight/seclite = 1
 		/obj/item/clothing/head/helmet/f13/enclave/science = 1,
 		)
 
@@ -296,9 +301,9 @@
 	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are in command of the post, holding the rank of First Lieutenant- albiet honourably. Conduct research and help rebuild America with your Scientists aswell as any research your Scientists wish to pursuit, utilise any resources available to you to achieve this."
-	forbids = "You are not allowed to have friendly interactions with those outside of the Enclave."
-	enforces = "You must maintain the secrecy of organization."
+	description = "You are in command of the post, holding the rank of First Lieutenant- albiet honourably. Conduct research and help rebuild America with your Scientists aswell as any research your Scientists wish to pursue, utilise any resources available to you to achieve this."
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
 	supervisors = "Enclave Department of the Army."
 	selection_color = "#323232"
 	outfit = /datum/outfit/job/wasteland/enclavelt
@@ -331,11 +336,12 @@
 	id = 		/obj/item/card/id/dogtag/enclave/officer
 
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
 		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/flashlight/seclite = 1
 		)
 
 /datum/outfit/loadout/ballistics
