@@ -3062,6 +3062,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/twohanded/fireaxe,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -4358,6 +4359,7 @@
 /area/f13/brotherhood/leisure)
 "cBQ" = (
 /obj/item/reagent_containers/glass/bucket,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /turf/open/floor/f13/wood{
 	icon_state = "housebase"
 	},
@@ -15704,6 +15706,7 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},

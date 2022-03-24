@@ -818,8 +818,12 @@
 	desc = "A set of salvaged power armor, with certain bits of plating stripped out to retain more freedom of movement. No cooling module, though."
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 65, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 65)
 	slowdown = 0.3
+	requires_training = FALSE
+	powered = FALSE
+
 //Followers
 
 //Vault

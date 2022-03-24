@@ -410,10 +410,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"ajy" = (
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "ajD" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2"
@@ -9081,10 +9077,6 @@
 	name = "metal plating"
 	},
 /area/f13/wasteland)
-"dWE" = (
-/obj/structure/nest/radroach,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "dWH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -13745,13 +13737,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "fRb" = (
-/obj/structure/statue/wood/headstonewood,
-/mob/dead/observer{
-	desc = "Erika Wagner's beloved, he fell into a pit.";
-	name = "Xarnata Daemos"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/meat/steak/mirelurk,
+/turf/open/floor/wood/f13/oak,
+/area/f13/bar)
 "fRj" = (
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /turf/open/floor/wood/f13/oak,
@@ -15173,6 +15162,7 @@
 	id = "mus3"
 	},
 /obj/item/clothing/glasses/hud/diagnostic,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -17675,13 +17665,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
-"hsy" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/table/wood/fancy/black,
-/turf/open/floor/carpet/black,
-/area/f13/bar)
 "hsH" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/beret,
@@ -18219,14 +18202,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
-"hDQ" = (
-/obj/structure/nest/ghoul{
-	layer = 2.7;
-	max_mobs = 1;
-	radius = 3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "hEh" = (
 /obj/structure/chair/f13chair2{
 	dir = 1
@@ -19336,6 +19311,7 @@
 "hZJ" = (
 /obj/structure/rack,
 /obj/item/stack/f13Cash/random/med,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -34989,12 +34965,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building)
-"oLg" = (
-/obj/structure/statue/sandstone/gravestone{
-	anchored = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "oLm" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white,
@@ -35049,14 +35019,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/legion)
-"oMx" = (
-/obj/structure/statue/wood/headstonewood,
-/mob/dead/observer{
-	desc = "Shot dead by a Centurio following the famed 'Eyepatch Dilemma', he will be missed.";
-	name = "Jake Dunn"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "oMC" = (
 /obj/structure/simple_door/metal/ventilation,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -35774,14 +35736,6 @@
 /obj/structure/chair/sofa/right,
 /turf/open/floor/wood,
 /area/f13/building)
-"peF" = (
-/obj/structure/statue/wood/headstonewood,
-/mob/dead/observer{
-	desc = "His life style finally caught up with him, he died of STD.";
-	name = "Jon Pratt"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "peG" = (
 /obj/structure/closet/cardboard,
 /obj/effect/decal/cleanable/dirt,
@@ -36657,14 +36611,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"pzv" = (
-/obj/structure/statue/wood/headstonewood,
-/mob/dead/observer{
-	desc = "A man denied his caps, his terror upon the Wasteland will be forever known, and villanized.";
-	name = "Lipstain"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "pzy" = (
 /obj/effect/overlay/junk/toilet{
 	pixel_y = 12
@@ -45404,14 +45350,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_large,
 /area/f13/building)
-"tCZ" = (
-/obj/structure/statue/sandstone/gravestone{
-	anchored = 1
-	},
-/turf/open/indestructible/ground/outside/desert{
-	icon_state = "wasteland32"
-	},
-/area/f13/wasteland)
 "tDg" = (
 /obj/structure/nest/gecko{
 	max_mobs = 2
@@ -51447,7 +51385,6 @@
 /area/f13/wasteland)
 "woS" = (
 /obj/structure/table/wood/fancy/black,
-/obj/item/reagent_containers/food/snacks/burger/orange,
 /turf/open/floor/carpet/black,
 /area/f13/bar)
 "woT" = (
@@ -54168,7 +54105,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/fancy/black,
-/obj/item/reagent_containers/food/snacks/burger/jelly/slime,
+/obj/item/reagent_containers/food/snacks/meat/steak/mirelurk,
 /turf/open/floor/carpet/black,
 /area/f13/bar)
 "xuM" = (
@@ -54862,9 +54799,6 @@
 "xLK" = (
 /obj/structure/closet/cabinet,
 /obj/item/twohanded/fireaxe/bmprsword,
-/obj/structure/nest/ghoul{
-	max_mobs = 2
-	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "xLY" = (
@@ -72748,7 +72682,7 @@ gcK
 xAX
 vff
 vff
-hsy
+xuL
 woS
 ykH
 xAX
@@ -73262,7 +73196,7 @@ gcK
 xAX
 mmM
 xkC
-nuB
+fRb
 afw
 nuB
 xAX
@@ -80234,11 +80168,11 @@ fyf
 fyf
 nme
 fyf
-oLg
 fyf
-fRb
 fyf
-pzv
+fyf
+fyf
+fyf
 fyf
 hAC
 kdJ
@@ -80748,11 +80682,11 @@ uey
 fyf
 nme
 fyf
-nwM
 fyf
-peF
 fyf
-tCZ
+fyf
+fyf
+uey
 fyf
 hAC
 kdJ
@@ -81262,11 +81196,11 @@ fyf
 fyf
 nwM
 uey
-oMx
 fyf
-oLg
 fyf
-nwM
+fyf
+fyf
+fyf
 uey
 fyf
 uey
@@ -90154,7 +90088,7 @@ pcG
 cPR
 bvd
 vIb
-hDQ
+uRJ
 fQW
 pcG
 hpc
@@ -90162,7 +90096,7 @@ bbU
 pcG
 hlo
 nSK
-hDQ
+uRJ
 uRJ
 qiV
 ofX
@@ -102884,7 +102818,7 @@ gcK
 gcK
 gcK
 gcK
-ajy
+mwp
 mwp
 gcK
 gcK
@@ -103140,7 +103074,7 @@ gcK
 gcK
 gcK
 gcK
-ajy
+mwp
 mwp
 mwp
 mwp
@@ -103400,7 +103334,7 @@ gcK
 mwp
 gcK
 mwp
-dWE
+mwp
 gcK
 gcK
 gcK

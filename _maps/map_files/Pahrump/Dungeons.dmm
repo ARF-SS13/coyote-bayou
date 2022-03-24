@@ -2019,6 +2019,11 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"hdA" = (
+/obj/structure/flora/grass/jungle,
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/water,
+/area/f13/bunker)
 "hdK" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
@@ -2108,6 +2113,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
+"huE" = (
+/obj/structure/stone_tile/burnt,
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "hwI" = (
 /obj/machinery/conveyor{
 	id = "mining_area"
@@ -2176,6 +2186,11 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
+"hFU" = (
+/obj/structure/stone_tile/slab/cracked,
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "hGQ" = (
 /turf/open/floor/plasteel/dark/side,
 /area/f13/bunker)
@@ -2230,6 +2245,10 @@
 "hOw" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/bunker)
+"hRY" = (
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "hTa" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/diy,
@@ -2338,6 +2357,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/bunker)
+"ijJ" = (
+/obj/structure/stone_tile/slab/burnt,
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "ilS" = (
 /obj/structure/table,
@@ -2602,6 +2626,11 @@
 	icon_state = "verticalrightborderlefttop"
 	},
 /area/f13/wasteland)
+"jmz" = (
+/obj/structure/stone_tile/center/burnt,
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "jnu" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -4471,6 +4500,10 @@
 /obj/structure/flora/stump,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"pEc" = (
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/water,
+/area/f13/bunker)
 "pII" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -4772,6 +4805,12 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"qHr" = (
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood3-broken"
+	},
+/area/f13/bunker)
 "qIK" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/indestructible/ground/inside/mountain,
@@ -4897,6 +4936,10 @@
 "qZH" = (
 /obj/effect/turf_decal/box,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/bunker)
+"ram" = (
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "raL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5485,6 +5528,7 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/item/clothing/gloves/ring/diamond,
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "tfw" = (
@@ -5697,6 +5741,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
+"tNy" = (
+/mob/living/simple_animal/hostile/radscorpion/black,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/bunker)
 "tPS" = (
 /obj/structure/table/abductor{
 	desc = "After YEARS of research, prototyping, and testing, the brotherhood created the sequel to the table. Advanced flat surface technology at work!";
@@ -5867,6 +5917,10 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/underground/cave)
+"uyP" = (
+/mob/living/simple_animal/hostile/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "uAn" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -6429,6 +6483,10 @@
 /obj/structure/nest/securitron,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
+"wuw" = (
+/mob/living/simple_animal/hostile/cazador,
+/turf/open/water,
+/area/f13/bunker)
 "wvy" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
@@ -6641,6 +6699,10 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/bunker)
+"xmA" = (
+/mob/living/simple_animal/hostile/gecko,
+/turf/open/water,
 /area/f13/bunker)
 "xnX" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans,
@@ -6911,6 +6973,10 @@
 "ygU" = (
 /obj/structure/debris/v3,
 /turf/closed/wall/f13/tunnel,
+/area/f13/bunker)
+"yhl" = (
+/mob/living/simple_animal/hostile/deathclaw,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "yhp" = (
 /obj/structure/debris/v3{
@@ -59050,7 +59116,7 @@ heT
 heT
 heT
 bkV
-lhe
+pEc
 lhe
 lhe
 lhe
@@ -59572,7 +59638,7 @@ tHQ
 tHQ
 tHQ
 cWO
-tHQ
+ram
 tHQ
 bkV
 heT
@@ -60595,7 +60661,7 @@ bkV
 lwL
 sST
 vHC
-mcE
+qHr
 sST
 qWe
 nNk
@@ -60606,7 +60672,7 @@ tHQ
 tHQ
 tHQ
 tHQ
-tHQ
+uyP
 ltA
 tHQ
 tHQ
@@ -60860,13 +60926,13 @@ cWO
 tHQ
 tHQ
 tHQ
-tHQ
+uyP
 tHQ
 tHQ
 tHQ
 tHQ
 uNm
-tHQ
+uyP
 tHQ
 tHQ
 pBV
@@ -60876,7 +60942,7 @@ ltA
 qIK
 qCj
 gTc
-enO
+huE
 bkV
 heT
 heT
@@ -61144,7 +61210,7 @@ nUv
 tHQ
 tHQ
 tHQ
-tHQ
+yhl
 tHQ
 tHQ
 ltA
@@ -61374,7 +61440,7 @@ bkV
 uNm
 ltA
 dkH
-lhe
+xmA
 lhe
 eAJ
 lhe
@@ -62143,17 +62209,17 @@ cWO
 ltA
 bkV
 tHQ
-tHQ
+uyP
 lhe
 lhe
 ltA
 tHQ
-tHQ
+uyP
 tHQ
 tHQ
 tHQ
 mJU
-pOr
+hFU
 hpC
 tHQ
 ltA
@@ -62391,10 +62457,10 @@ heT
 heT
 cIT
 irk
-lhe
+pEc
 lhe
 sST
-nNk
+tNy
 tHQ
 tHQ
 tHQ
@@ -62660,7 +62726,7 @@ lhe
 eAJ
 lhe
 lhe
-tHQ
+uyP
 tHQ
 bkV
 cWO
@@ -63685,7 +63751,7 @@ tHQ
 ltA
 bkV
 rQl
-tHQ
+hRY
 iYb
 sjo
 tHQ
@@ -63953,7 +64019,7 @@ cWO
 nvZ
 qIK
 gTc
-atE
+jmz
 pOr
 bgc
 bkV
@@ -64709,7 +64775,7 @@ sjo
 ltA
 tHQ
 tHQ
-tHQ
+ram
 ltA
 bkV
 tHQ
@@ -64719,7 +64785,7 @@ sST
 uSs
 uNm
 pOr
-qOX
+ijJ
 bkV
 tRH
 uNm
@@ -65236,7 +65302,7 @@ bkV
 heT
 bkV
 bkV
-eAJ
+hdA
 bUi
 lhe
 sjo
@@ -65741,7 +65807,7 @@ heT
 heT
 bkV
 lhe
-lhe
+wuw
 lhe
 sjo
 lhe
