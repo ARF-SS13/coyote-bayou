@@ -12,7 +12,7 @@
 
 
 /obj/machinery/hydroponics/proc/mutation_roll(mob/user)
-	switch(rand(100))
+	switch(rand(1, 100))
 		if(91 to 100)
 			adjustHealth(-10)
 			visible_message("<span class='warning'>\The [myseed.plantname] starts to wilt and burn!</span>")
