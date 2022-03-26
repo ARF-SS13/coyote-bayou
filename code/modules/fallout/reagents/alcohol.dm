@@ -1094,7 +1094,7 @@
 	glass_name = "glass of fernet cola"
 	glass_desc = "A sawed-off cola bottle filled with Fernet Cola. Nothing better after eating like a lardass."
 
-/datum/reagent/consumable/ethanol/fernetcola/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
 		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.nutrition = max(M.nutrition - 5, 0)
