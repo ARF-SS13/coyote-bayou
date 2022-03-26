@@ -266,19 +266,21 @@
 	var/powered = TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-	var/mob/living/carbon/human/H = user
-	if(src == H.wear_suit) //Suit is already equipped
-		return ..()
-	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-		return 0
-	if(slot == SLOT_WEAR_SUIT && powered)
-		ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"PA_stun_immunity")
-		ADD_TRAIT(user, TRAIT_PUSHIMMUNE,	"PA_push_immunity")
-		ADD_TRAIT(user, SPREAD_CONTROL,	"PA_spreadcontrol")
+    var/mob/living/carbon/human/H = user
+    if(src == H.wear_suit) //Suit is already equipped
+        return ..()
+    if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+        return 0
+    if(slot == SLOT_WEAR_SUIT && powered)
+        ADD_TRAIT(user, TRAIT_STUNIMMUNE,    "PA_stun_immunity")
+        ADD_TRAIT(user, TRAIT_PUSHIMMUNE,    "PA_push_immunity")
+        ADD_TRAIT(user, SPREAD_CONTROL,    "PA_spreadcontrol")
 
-		return ..()
-	return
+        return ..()
+    if(slot == SLOT_WEAR_SUIT && !powered)
+        return ..()
+    return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 	if(powered)
