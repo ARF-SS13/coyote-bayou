@@ -2210,6 +2210,9 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "bpf" = (
@@ -2877,7 +2880,9 @@
 /turf/open/water,
 /area/f13/den)
 "bJc" = (
-/obj/structure/nest/deathclaw,
+/obj/structure/nest/deathclaw{
+	max_mobs = 2
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -3452,9 +3457,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "caG" = (
-/obj/structure/bed/wooden,
-/obj/item/bedsheet/cult,
-/turf/open/floor/carpet/black,
+/obj/structure/flora/junglebush/c,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "caQ" = (
 /obj/machinery/button/door{
@@ -3511,7 +3518,7 @@
 /area/f13/den)
 "ccy" = (
 /obj/structure/flora/grass/jungle,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ccz" = (
 /obj/structure/wreck/trash/engine,
@@ -4601,13 +4608,6 @@
 	icon_state = "neutraldirtyfull"
 	},
 /area/f13/tunnel)
-"cGA" = (
-/obj/structure/flora/junglebush/c,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass,
-/area/f13/caves)
 "cGZ" = (
 /obj/structure/table/booth,
 /turf/open/indestructible/ground/inside/subway,
@@ -5243,8 +5243,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "cZR" = (
-/obj/structure/flora/wasteplant/wild_feracactus,
-/turf/open/floor/grass,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/closed/wall/f13/wood,
 /area/f13/caves)
 "day" = (
 /obj/structure/bed/mattress{
@@ -5904,9 +5904,9 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/den)
 "dsj" = (
-/obj/structure/shelf_wood,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
+/obj/structure/closet/crate/wooden,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter,
 /turf/open/floor/carpet/black,
 /area/f13/caves)
 "dsx" = (
@@ -6849,8 +6849,9 @@
 	},
 /area/f13/brotherhood/dorms)
 "dUb" = (
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/grass,
+/obj/structure/fireplace,
+/obj/item/clothing/head/bearpelt,
+/turf/open/floor/carpet/black,
 /area/f13/caves)
 "dUe" = (
 /obj/structure/wreck/trash/four_barrels,
@@ -7109,6 +7110,11 @@
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/nest/supermutant/melee{
+	max_mobs = 3;
+	spawn_once = 1;
+	spawn_time = 10
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
@@ -9790,7 +9796,7 @@
 /area/f13/caves)
 "fxR" = (
 /obj/structure/flora/ausbushes/fernybush,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fyd" = (
 /obj/structure/simple_door/metal/barred,
@@ -10311,7 +10317,7 @@
 "fMQ" = (
 /obj/structure/flora/junglebush/c,
 /obj/structure/flora/wasteplant/wild_mesquite,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fMS" = (
 /obj/structure/simple_door/metal/barred,
@@ -10686,7 +10692,7 @@
 	pixel_x = 4;
 	pixel_y = 8
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "fVJ" = (
 /obj/effect/turf_decal/caution/stand_clear/white,
@@ -12044,7 +12050,9 @@
 /area/f13/den)
 "gKW" = (
 /obj/structure/flora/ausbushes/reedbush,
-/obj/structure/flora/rock/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "gLy" = (
@@ -12637,8 +12645,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "hcu" = (
-/obj/structure/flora/junglebush/large,
-/turf/open/floor/grass,
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/caves)
 "hcw" = (
 /obj/effect/decal/cleanable/dirt,
@@ -13676,11 +13687,8 @@
 /turf/open/floor/carpet/purple,
 /area/f13/brotherhood/rnd)
 "hRE" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
 /obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "hRI" = (
 /obj/structure/wreck/trash/two_barrels,
@@ -14291,7 +14299,7 @@
 /area/f13/brotherhood/armory)
 "iou" = (
 /obj/structure/flora/grass/jungle/b,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iox" = (
 /obj/effect/decal/cleanable/dirt,
@@ -14730,7 +14738,9 @@
 	},
 /area/f13/brotherhood/rnd)
 "iDw" = (
-/obj/structure/flora/rock/jungle,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "iDK" = (
@@ -15082,7 +15092,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iSR" = (
 /obj/structure/chair/comfy/green,
@@ -15309,7 +15319,7 @@
 /area/f13/clinic)
 "iYB" = (
 /obj/effect/mob_spawn/human/corpse/bs,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
@@ -16513,7 +16523,7 @@
 /area/f13/caves)
 "jPz" = (
 /obj/structure/nest/supermutant/melee{
-	max_mobs = 1;
+	max_mobs = 3;
 	spawn_once = 1;
 	spawn_time = 10
 	},
@@ -16663,11 +16673,11 @@
 /area/f13/caves)
 "jTm" = (
 /obj/structure/ladder/unbreakable{
+	height = 1;
 	id = junglehome;
-	name = "Damp Ladder";
-	height = 1
+	name = "Damp Ladder"
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jTw" = (
 /obj/structure/chair/comfy/shuttle{
@@ -16735,11 +16745,8 @@
 /area/f13/bunker)
 "jWR" = (
 /obj/structure/flora/junglebush/large,
-/obj/structure/spacevine{
-	name = "vines"
-	},
 /obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jWV" = (
 /turf/open/indestructible/ground/inside/subway{
@@ -16973,8 +16980,10 @@
 	},
 /area/f13/caves)
 "kfY" = (
-/obj/machinery/seed_extractor,
-/turf/open/floor/grass,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "kgl" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18790,7 +18799,7 @@
 "luS" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/wasteplant/wild_mutfruit,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lvc" = (
 /obj/effect/decal/cleanable/dirt{
@@ -20117,11 +20126,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "myb" = (
-/obj/structure/nest/supermutant{
-	spawn_time = 200
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/obj/structure/nest/ghoul{
+	layer = 2.7;
+	max_mobs = 1;
+	radius = 3
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/caves)
 "myy" = (
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -21521,7 +21535,7 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/bunker)
 "nnB" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/armor/tier5,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "nnN" = (
@@ -21727,8 +21741,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/bunker)
 "nuK" = (
-/obj/structure/flora/wasteplant/wild_punga,
-/turf/open/floor/grass,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "nva" = (
 /obj/structure/decoration/vent/rusty,
@@ -22720,9 +22736,10 @@
 	},
 /area/f13/bunker)
 "obl" = (
-/obj/structure/flora/wasteplant/wild_fungus,
-/turf/open/floor/grass,
-/area/f13/caves)
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
+/turf/open/floor/plasteel/f13/vault_floor/blue/white,
+/area/f13/bunker)
 "obV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc{
@@ -24078,11 +24095,15 @@
 	name = "vines"
 	},
 /obj/structure/flora/wasteplant/wild_prickly,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pbI" = (
 /obj/structure/flora/wasteplant/wild_xander,
-/turf/open/floor/grass,
+/obj/structure/flora/rock/pile/largejungle{
+	layer = 3.2;
+	pixel_x = 0
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pbW" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -25340,10 +25361,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pYF" = (
-/obj/structure/closet/crate/wooden,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/obj/item/lighter,
-/turf/open/floor/carpet/black,
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
+/turf/open/floor/wood/f13/old,
 /area/f13/caves)
 "pYZ" = (
 /obj/effect/turf_decal/stripes/line,
@@ -25649,8 +25669,8 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "qip" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/floor/grass,
+/mob/living/simple_animal/hostile/radscorpion/blue,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "qis" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26066,7 +26086,10 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/medical)
 "qsN" = (
-/turf/open/floor/grass,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/turf/closed/wall/f13/wood,
 /area/f13/caves)
 "qtb" = (
 /obj/structure/bed/pod,
@@ -26101,7 +26124,7 @@
 	},
 /area/f13/clinic)
 "qtL" = (
-/turf/open/space/basic,
+/turf/closed/wall/r_wall,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices2nd)
 "qvn" = (
@@ -26231,12 +26254,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/stairs,
 /area/f13/brotherhood/offices1st)
-"qyp" = (
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass,
-/area/f13/caves)
 "qys" = (
 /obj/structure/table{
 	layer = 2.9
@@ -26345,7 +26362,7 @@
 "qCm" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/wood/f13/stage_bl,
 /area/f13/caves)
 "qCn" = (
@@ -27031,10 +27048,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/bunker)
-"qWl" = (
-/obj/structure/flora/junglebush,
-/turf/open/floor/grass,
-/area/f13/caves)
 "qXf" = (
 /obj/structure/chair/bench,
 /obj/effect/decal/cleanable/dirt{
@@ -29019,11 +29032,6 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
-"suE" = (
-/obj/structure/fireplace,
-/obj/item/clothing/head/bearpelt,
-/turf/open/floor/carpet/black,
-/area/f13/caves)
 "suN" = (
 /obj/structure/wreck/trash/five_tires,
 /turf/open/floor/plating/tunnel{
@@ -29398,7 +29406,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "sMQ" = (
 /obj/structure/reagent_dispensers/beerkeg,
@@ -29545,7 +29553,7 @@
 /area/f13/caves)
 "sSl" = (
 /obj/structure/flora/tree/jungle/small,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "sTo" = (
 /obj/structure/barricade/wooden,
@@ -29618,13 +29626,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/oak,
 /area/f13/den)
-"sWB" = (
-/obj/structure/nest/gecko,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass,
-/area/f13/caves)
 "sXn" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "aesculapius"
@@ -29981,7 +29982,7 @@
 /area/f13/den)
 "tmf" = (
 /obj/structure/flora/junglebush/c,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tmh" = (
 /obj/effect/decal/cleanable/oil,
@@ -29991,6 +29992,11 @@
 "tms" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/nest/supermutant/melee{
+	max_mobs = 3;
+	spawn_once = 1;
+	spawn_time = 10
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -30014,10 +30020,6 @@
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
-"tnh" = (
-/obj/machinery/vending/hydroseeds,
-/turf/open/floor/grass,
 /area/f13/caves)
 "tni" = (
 /obj/structure/lattice{
@@ -30630,7 +30632,7 @@
 /area/f13/clinic)
 "tJc" = (
 /obj/structure/flora/wasteplant/wild_broc,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tJd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -31442,8 +31444,8 @@
 	},
 /area/f13/brotherhood/rnd)
 "umu" = (
-/obj/effect/spawner/lootdrop/f13/armor/random,
-/obj/effect/decal/waste,
+/obj/structure/closet/crate/miningcar,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "umD" = (
@@ -31737,9 +31739,8 @@
 	},
 /area/f13/caves)
 "uzb" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/cult,
 /turf/open/floor/carpet/black,
 /area/f13/caves)
 "uzc" = (
@@ -32146,10 +32147,6 @@
 	icon_state = "whiterustysolid"
 	},
 /area/f13/brotherhood/offices2nd)
-"uOO" = (
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "uOX" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -32261,11 +32258,6 @@
 /obj/structure/wreck/trash/engine,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"uSv" = (
-/obj/machinery/hydroponics/soil,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/grass,
-/area/f13/caves)
 "uSO" = (
 /obj/structure/closet/secure_closet/freezer/meat{
 	anchored = 1
@@ -32356,17 +32348,8 @@
 /area/f13/brotherhood/offices2nd)
 "uXH" = (
 /obj/structure/shelf_wood,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/item/stack/sheet/animalhide/gecko,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/carpet/black,
 /area/f13/caves)
 "uXR" = (
@@ -32507,7 +32490,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/offices2nd)
 "vcp" = (
-/turf/open/space/basic,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/offices2nd)
 "vct" = (
@@ -32746,7 +32729,7 @@
 /area/f13/caves)
 "vlQ" = (
 /mob/living/simple_animal/hostile/gecko,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vlT" = (
 /obj/structure/simple_door/bunker{
@@ -32908,7 +32891,7 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/structure/flora/wasteplant/wild_yucca,
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vsH" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -33044,7 +33027,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vwJ" = (
 /obj/machinery/door/airlock/grunge{
@@ -33163,6 +33146,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
+"vDN" = (
+/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "vEd" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/wood/f13/oak,
@@ -33180,10 +33167,8 @@
 /area/f13/enclave)
 "vFf" = (
 /mob/living/simple_animal/hostile/gecko,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/turf/open/floor/grass,
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vFi" = (
 /obj/structure/table{
@@ -34312,6 +34297,7 @@
 "wvW" = (
 /obj/structure/closet/crate/miningcar,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wwb" = (
@@ -34468,6 +34454,7 @@
 /obj/item/clothing/suit/armor/f13/leather_jacket,
 /obj/item/clothing/suit/armor/f13/leather_jacket,
 /obj/item/clothing/suit/armor/f13/leather_jacket,
+/obj/item/clothing/suit/armor/f13/harpercoat,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -34809,7 +34796,7 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/turf/open/floor/grass,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "wNL" = (
 /obj/structure/chair/comfy/shuttle{
@@ -36125,13 +36112,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/caves)
-"xDs" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
-	},
-/turf/open/floor/grass,
-/area/f13/caves)
 "xDt" = (
 /obj/structure/sink{
 	dir = 4;
@@ -36231,9 +36211,10 @@
 /area/f13/brotherhood/reactor)
 "xIV" = (
 /obj/effect/decal/waste,
-/obj/structure/nest/supermutant/ranged{
-	max_mobs = 1;
-	spawn_time = 100
+/obj/structure/nest/supermutant/melee{
+	max_mobs = 3;
+	spawn_once = 1;
+	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -40696,7 +40677,7 @@ xVz
 aoj
 xVz
 xVz
-lAE
+umu
 xVz
 xVz
 xVz
@@ -40932,7 +40913,7 @@ aoj
 vPg
 vPg
 xVz
-xVz
+qip
 xVz
 xVz
 vPg
@@ -41208,7 +41189,7 @@ xVz
 xVz
 xVz
 xVz
-xVz
+bsL
 xVz
 xVz
 xVz
@@ -43270,7 +43251,7 @@ vPg
 eLE
 eLE
 eLE
-eAQ
+xVz
 xVz
 xVz
 xVz
@@ -44245,7 +44226,7 @@ aoj
 xVz
 xVz
 xVz
-xVz
+iAy
 xVz
 xVz
 xVz
@@ -44502,7 +44483,7 @@ nvk
 xVz
 xVz
 osd
-iAy
+xVz
 xVz
 xVz
 osd
@@ -44557,7 +44538,7 @@ vPg
 vPg
 vPg
 vPg
-xVz
+eAQ
 xVz
 eLE
 eLE
@@ -44635,15 +44616,15 @@ vPg
 vPg
 aoj
 vPg
+vPg
 jPC
 jPC
 jPC
+qsN
 jPC
 jPC
-jPC
-jPC
-jPC
-jPC
+qsN
+qsN
 jPC
 vPg
 vPg
@@ -44892,10 +44873,10 @@ vPg
 vPg
 vPg
 vPg
+vPg
 jPC
-pYF
-cDP
 dsj
+cDP
 uXH
 fNU
 jZQ
@@ -45149,8 +45130,8 @@ vPg
 aoj
 vPg
 vPg
-uOO
-cDP
+vPg
+cZR
 cDP
 cDP
 cDP
@@ -45406,9 +45387,9 @@ vPg
 vPg
 vPg
 vPg
+vPg
 jPC
-suE
-cDP
+dUb
 cDP
 cDP
 snp
@@ -45663,8 +45644,8 @@ aoj
 vPg
 vPg
 vPg
+vPg
 jPC
-cDP
 cDP
 cDP
 cDP
@@ -45920,8 +45901,8 @@ vPg
 vPg
 vPg
 vPg
-uOO
-cDP
+vPg
+cZR
 cDP
 cDP
 cDP
@@ -46096,7 +46077,7 @@ vPg
 vPg
 vPg
 jPC
-dYY
+gPR
 xVz
 xVz
 vPg
@@ -46174,13 +46155,13 @@ vPg
 vPg
 luS
 tmf
+jPC
 vPg
 vPg
 vPg
 jPC
-caG
+uzb
 cDP
-caG
 uzb
 wwM
 snp
@@ -46353,8 +46334,8 @@ vPg
 vPg
 vPg
 vPg
-qDR
-qDR
+vzw
+vzw
 vPg
 aoj
 vPg
@@ -46429,20 +46410,20 @@ vPg
 vPg
 vPg
 vPg
-hcu
-qsN
+bLF
+xVz
 pbI
-qsN
+xVz
 vwH
+vPg
 jPC
+qsN
 jPC
-jPC
-jPC
-jPC
+qsN
 jPC
 kFZ
 jPC
-jPC
+qsN
 jPC
 vPg
 vPg
@@ -46548,7 +46529,7 @@ xVz
 hts
 osd
 xVz
-iAy
+xVz
 xVz
 xVz
 xVz
@@ -46686,19 +46667,19 @@ vPg
 vPg
 vPg
 vPg
-qWl
-qsN
+xaX
+xVz
 vlQ
-qsN
-sWB
+xVz
+gCf
 jPC
 sSl
 fMQ
 wND
-dUb
-tnh
-qsN
-qip
+xVz
+xVz
+xVz
+xVz
 jPC
 vPg
 vPg
@@ -46943,20 +46924,20 @@ vPg
 vPg
 aoj
 vPg
-vPg
+jPC
 fxR
-qsN
-qsN
+xVz
+xVz
 vFf
 jPC
-hcu
-qsN
-qsN
-qsN
-qsN
-qsN
-qip
-jPC
+bLF
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+vPg
 vPg
 vPg
 vPg
@@ -47201,19 +47182,19 @@ vPg
 vPg
 vPg
 vPg
+xVz
+xVz
+xVz
+tmf
 qsN
-qsN
-qsN
-cGA
-jPC
-qsN
+xVz
 ccy
-iou
+hcu
 qsN
 iou
-qsN
-uSv
-jPC
+xVz
+xVz
+hRE
 vPg
 vPg
 vPg
@@ -47459,18 +47440,18 @@ vPg
 vPg
 tJc
 jTm
-qsN
-qsN
+xVz
+xVz
 jWR
-jPC
+qsN
 sMO
-qsN
-qsN
+xVz
+xVz
 tmf
-qsN
-qsN
-kfY
-jPC
+xVz
+xVz
+xVz
+xVz
 aoj
 vPg
 vPg
@@ -47714,20 +47695,20 @@ vPg
 vPg
 vPg
 vPg
-qWl
-qsN
-qsN
-qsN
-qyp
+xaX
+xVz
+xVz
+xVz
+xVz
 ura
-qsN
-qsN
+xVz
+xVz
 iou
-qsN
-qsN
+xVz
+xVz
 ccy
-qip
-jPC
+xVz
+vPg
 vPg
 aoj
 vPg
@@ -47972,19 +47953,19 @@ vPg
 vPg
 vPg
 vPg
-qsN
-qsN
-qsN
+xVz
+xVz
+aVU
 hRE
-jPC
-xDs
 qsN
-qsN
+pRZ
+xVz
+xVz
 iou
-qsN
+aVU
 fVA
 vsC
-jPC
+qsN
 vPg
 vPg
 vPg
@@ -48229,19 +48210,19 @@ vPg
 vPg
 vPg
 vPg
-qsN
-nuK
-qsN
+xVz
+xVz
+xVz
 iSl
-jPC
 qsN
-qsN
+xVz
+xVz
 sSl
-qsN
+xVz
 iDw
-xmk
+nuK
 gKW
-jPC
+qsN
 vPg
 vPg
 vPg
@@ -48394,7 +48375,7 @@ xVz
 xVz
 hIR
 xVz
-qDR
+vzw
 vPg
 vPg
 vPg
@@ -48486,19 +48467,19 @@ vPg
 aoj
 vPg
 vPg
-qsN
-qsN
-qyp
+xVz
+xVz
+gCf
 vwH
-jPC
-hcu
 qsN
-qsN
+bLF
+xVz
+xVz
 fVA
-xmk
+kfY
 wzN
 aMY
-jPC
+qsN
 vPg
 vPg
 vPg
@@ -48651,7 +48632,7 @@ xVz
 xVz
 xVz
 xVz
-qDR
+vzw
 vPg
 vPg
 vPg
@@ -48743,19 +48724,19 @@ vPg
 vPg
 vPg
 fxR
-qsN
+xVz
 vlQ
-qyp
-cGA
+gCf
+caG
 jPC
 sSl
 iou
-obl
+tTy
 iou
 boO
 aMY
 evr
-jPC
+vPg
 vPg
 aoj
 aoj
@@ -49000,19 +48981,19 @@ vPg
 vPg
 vPg
 tmf
-qsN
-cZR
+xVz
+xVz
 pbl
 vPg
 jPC
-jPC
-jPC
-jPC
-jPC
-jPC
-jPC
-jPC
-jPC
+vPg
+qsN
+vPg
+vPg
+qsN
+qsN
+vPg
+vPg
 aoj
 aoj
 vPg
@@ -49256,8 +49237,8 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
+qsN
+qsN
 aoj
 vPg
 vPg
@@ -55819,7 +55800,7 @@ vPg
 vPg
 xVz
 xVz
-xVz
+eAQ
 xVz
 xVz
 xVz
@@ -56078,7 +56059,7 @@ xVz
 xVz
 xVz
 xVz
-eAQ
+xVz
 xVz
 xVz
 xVz
@@ -58448,7 +58429,7 @@ aGc
 aoj
 aoj
 xVz
-umu
+ikx
 xVz
 peA
 xVz
@@ -58705,7 +58686,7 @@ aoj
 aoj
 aoj
 eWg
-xVz
+vDN
 hLM
 ikx
 aoj
@@ -60441,9 +60422,9 @@ vPg
 vPg
 aoj
 vPg
-xVz
-xVz
-xVz
+vPg
+vPg
+vPg
 xVz
 xVz
 xVz
@@ -60696,12 +60677,12 @@ vPg
 vPg
 vPg
 vPg
-aoj
-xVz
-xVz
-xVz
-xVz
-xVz
+vPg
+vPg
+vPg
+vPg
+vPg
+vPg
 xVz
 bjI
 xVz
@@ -60952,10 +60933,10 @@ dXE
 dXE
 vPg
 vPg
-xVz
-xVz
-xVz
-xVz
+vPg
+vPg
+vPg
+vPg
 vPg
 vPg
 vPg
@@ -61209,8 +61190,8 @@ gxB
 dXE
 vPg
 vPg
-xVz
-xVz
+vPg
+vPg
 vPg
 aoj
 aoj
@@ -61465,8 +61446,8 @@ dXE
 adf
 dXE
 vPg
-xVz
-xVz
+vPg
+vPg
 vPg
 vPg
 vPg
@@ -61722,8 +61703,8 @@ dXE
 cSY
 dXE
 dXE
-xVz
-xVz
+dXE
+dXE
 dXE
 dXE
 dXE
@@ -61739,7 +61720,7 @@ vPg
 vPg
 vPg
 jPC
-pwc
+pYF
 wAO
 lMM
 jPC
@@ -64056,7 +64037,7 @@ gbI
 xzp
 fLl
 xzp
-bUW
+myb
 sNT
 xVz
 wAO
@@ -92098,7 +92079,7 @@ rxw
 nBk
 wHi
 cGZ
-myb
+nBk
 nBk
 raD
 fzP
@@ -93611,7 +93592,7 @@ eSW
 xnO
 mOw
 nds
-kUr
+obl
 vuv
 jBq
 eSW

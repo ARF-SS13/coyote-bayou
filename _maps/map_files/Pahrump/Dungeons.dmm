@@ -243,10 +243,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/box,
-/obj/structure/nest/securitron{
-	max_mobs = 4;
-	spawn_time = 30
-	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "aNv" = (
@@ -295,10 +291,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/bunker)
 "aYd" = (
-/obj/structure/nest/securitron{
-	max_mobs = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "aYz" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -883,6 +878,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
+"dns" = (
+/obj/structure/nest/securitron{
+	max_mobs = 1;
+	spawn_once = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "doK" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -1461,6 +1463,12 @@
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/bunker)
+"fji" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "fkg" = (
@@ -2659,6 +2667,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
+/area/f13/bunker)
+"juh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/bunker)
 "juI" = (
 /obj/effect/turf_decal/caution/stand_clear,
@@ -4500,6 +4513,10 @@
 /obj/structure/flora/stump,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"pDP" = (
+/obj/structure/nest/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/bunker)
 "pEc" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
 /turf/open/water,
@@ -4785,11 +4802,8 @@
 	},
 /area/f13/bunker)
 "qDz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/protectron{
-	spawn_time = 20
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/structure/nest/ghoul,
+/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "qEW" = (
 /obj/machinery/mineral/stacking_machine,
@@ -4816,10 +4830,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
 "qJp" = (
-/obj/structure/nest/protectron{
-	radius = 30
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy,
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/bunker)
 "qJs" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -5212,9 +5229,6 @@
 /area/f13/bunker)
 "rVH" = (
 /obj/item/trash/f13/cram_large,
-/mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
-	faction = list("wastebot")
-	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "rVN" = (
@@ -5591,8 +5605,8 @@
 /area/f13/bunker)
 "tmY" = (
 /obj/structure/ladder/unbreakable{
-	id = bigbunk;
-	height = 1
+	height = 1;
+	id = bigbunk
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -6349,6 +6363,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/bunker)
+"vYA" = (
+/obj/structure/nest/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/area/f13/bunker)
 "vYN" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/vr_sleeper,
@@ -6490,6 +6508,11 @@
 "wvy" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/bunker)
+"wws" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "wxj" = (
@@ -16942,7 +16965,7 @@ nmg
 kRy
 ulM
 ulM
-kRy
+qDz
 uXT
 nsh
 kRy
@@ -17449,7 +17472,7 @@ uXT
 siX
 kRy
 ulM
-uXT
+wqq
 kRy
 qaZ
 nmg
@@ -17472,7 +17495,7 @@ kRy
 kRy
 qaZ
 nmg
-kRy
+qDz
 kRy
 sJn
 hMb
@@ -20797,7 +20820,7 @@ xKX
 xKX
 tyO
 tyO
-ulK
+qJp
 laE
 obK
 lZr
@@ -21832,7 +21855,7 @@ tyO
 cFH
 xKX
 cIT
-tHQ
+dns
 tHQ
 tHQ
 tHQ
@@ -24659,7 +24682,7 @@ xKX
 xKX
 aJC
 sQG
-tHQ
+dns
 cIT
 cIT
 cIT
@@ -28560,7 +28583,7 @@ hae
 kqx
 hae
 xRY
-vtn
+wws
 xRY
 qAC
 rVz
@@ -28817,7 +28840,7 @@ kqx
 kqx
 kqx
 mHz
-qDz
+vtn
 xRY
 vtn
 vtn
@@ -29074,7 +29097,7 @@ kqx
 kKa
 kKa
 xRY
-vtn
+wws
 xRY
 qCr
 xRY
@@ -30072,7 +30095,7 @@ pAL
 dkK
 xKX
 bVI
-qJp
+lJE
 dlL
 gyN
 efM
@@ -30103,7 +30126,7 @@ xKX
 xKX
 lzU
 vtn
-aYd
+xRY
 xRY
 vtn
 pxN
@@ -31097,7 +31120,7 @@ pVK
 ocT
 ijk
 ocT
-xpJ
+enP
 aVC
 pZh
 pZh
@@ -31105,7 +31128,7 @@ lJE
 lJE
 pZh
 pZh
-lJE
+vYA
 lJE
 xKX
 heT
@@ -31353,8 +31376,8 @@ qsf
 pVK
 pVK
 pVK
-qsf
-xpJ
+fji
+enP
 pVK
 hXH
 pZh
@@ -31610,8 +31633,8 @@ pVK
 xpJ
 xpJ
 xpJ
-xpJ
-pVK
+enP
+jJI
 bSg
 pZh
 lJE
@@ -32387,7 +32410,7 @@ hFm
 lJE
 lJE
 jPG
-lJE
+vYA
 xlz
 lJE
 okz
@@ -34443,7 +34466,7 @@ xKX
 lJE
 sEC
 pZh
-pZh
+juh
 pZh
 lJE
 pZh
@@ -35458,7 +35481,7 @@ pVK
 pVK
 pVK
 xpJ
-xpJ
+pDP
 qsf
 qsf
 pVK
@@ -35959,7 +35982,7 @@ xKX
 xKX
 kLP
 pVK
-pVK
+aYd
 xpJ
 xKX
 xpJ
