@@ -47,6 +47,64 @@
 		/obj/item/flashlight/seclite = 1,
 		)
 
+//Heavy trooper
+
+
+/datum/job/wasteland/f13heavytooper
+	title = "Enclave Armored Infantry"
+	flag = F13USGYSGT
+	faction = FACTION_ENCLAVE
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the main force of the remnants of the Enclave in this area, become the fist that will destroy all your opponents, or die because of a homeless man with a power fist "
+	forbids = "You are not allowed to have overly-friendly interactions with those outside of the Enclave."
+	enforces = "You must maintain the secrecy of the bunker location."
+	supervisors = "Enclave Department of the Army."
+	selection_color = "#323232"
+	outfit = /datum/outfit/job/wasteland/f13heavytrooper
+	exp_type = EXP_TYPE_FALLOUT
+	exp_requirements = 3000
+
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
+
+/datum/outfit/job/wasteland/f13heavytrooper
+	name = "Enclave Armored Infantry"
+	jobtype = /datum/job/wasteland/f13heavytooper
+	backpack = 		/obj/item/storage/backpack/satchel/enclave
+	id = 			/obj/item/card/id/dogtag/enclave/trooper
+	accessory = 	/obj/item/clothing/accessory/ncr/FSGT
+	ears = 			/obj/item/radio/headset/headset_enclave
+	mask =			/obj/item/clothing/mask/gas/enclave
+	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
+	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = 		/obj/item/clothing/gloves/f13/military
+	belt = 			/obj/item/storage/belt/military/assault/enclave
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	head =			/obj/item/clothing/head/helmet/f13/tesla
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor
+	suit_store = 	/obj/item/minigunpack
+
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ecp = 3,
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/grenade/flashbang = 1,
+		/obj/item/pda = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/flashlight/seclite = 1
+		)
+
+
+
+/datum/outfit/job/wasteland/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
+
+
 
 
 
