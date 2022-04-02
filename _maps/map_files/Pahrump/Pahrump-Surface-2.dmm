@@ -2807,6 +2807,7 @@
 /obj/structure/rack,
 /obj/effect/spawner/bundle/f13/greasegun,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/bundle/f13/greasegun,
 /turf/open/floor/f13/wood,
 /area/f13/raiders)
 "biA" = (
@@ -3749,6 +3750,7 @@
 	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "bzH" = (
@@ -8690,6 +8692,19 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"dFL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass{
+	amount = 50
+	},
+/obj/item/stack/sheet/metal{
+	amount = 50
+	},
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "dFQ" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2left"
@@ -16808,6 +16823,13 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
+"gQh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/west{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "gQv" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2"
@@ -23465,6 +23487,12 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/wood,
 /area/f13/building)
+"jsq" = (
+/obj/structure/stairs/north{
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "jsz" = (
 /obj/structure/displaycase,
 /obj/effect/decal/cleanable/dirt,
@@ -26983,15 +27011,14 @@
 	},
 /area/f13/building)
 "kQJ" = (
-/obj/structure/closet/crate/large,
-/obj/item/stack/sheet/metal{
-	amount = 50
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
 	},
-/obj/item/stack/sheet/glass{
-	amount = 50
+/obj/structure/stairs/north{
+	color = "#A47449"
 	},
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "kQV" = (
@@ -33597,6 +33624,7 @@
 /area/f13/clinic)
 "nDd" = (
 /obj/structure/chair/wood,
+/obj/effect/landmark/start/f13/immune,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "nDe" = (
@@ -112276,7 +112304,7 @@ mvv
 mvv
 bpD
 hom
-xXm
+jsq
 xXm
 xXm
 hom
@@ -119213,7 +119241,7 @@ cRh
 hom
 hom
 hom
-vKl
+kQJ
 xNm
 oqH
 kRD
@@ -119223,8 +119251,8 @@ ggK
 vwL
 wOS
 hom
-kQJ
-xNm
+hom
+gQh
 mvv
 mvv
 mvv
@@ -119995,7 +120023,7 @@ vIB
 ggK
 hom
 mgg
-xNm
+xXm
 xNm
 bMP
 uNK
@@ -120510,7 +120538,7 @@ ggK
 gcK
 hom
 uda
-xNm
+dFL
 xNm
 eHQ
 xNm
@@ -121794,7 +121822,7 @@ ggK
 ggK
 gcK
 hom
-ylR
+xNm
 xNm
 xNm
 cdc

@@ -739,8 +739,16 @@
 /obj/structure/closet/crate/secure,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
+"axr" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/curtain{
+	color = "red"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue,
+/area/f13/enclave)
 "axv" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
@@ -6247,8 +6255,8 @@
 /area/f13/den)
 "dBB" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/ten,
+/obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "dBL" = (
@@ -6431,12 +6439,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dHh" = (
-/obj/structure/table/reinforced,
-/obj/item/book/granter/trait/chemistry{
-	name = "Chemistry for Vault Dwellers"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/enclave)
+/obj/structure/nest/deathclaw/mother,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/bunker)
 "dHv" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -8274,7 +8279,7 @@
 "eFn" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/healthanalyzer/advanced,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
 "eFq" = (
@@ -11554,9 +11559,9 @@
 /area/f13/caves)
 "gxY" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "gyf" = (
@@ -13739,8 +13744,7 @@
 /area/f13/bunker)
 "hTU" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "hUn" = (
@@ -14025,6 +14029,12 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/operations)
+"ibO" = (
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "ibZ" = (
 /obj/structure/chair/bench,
 /turf/open/floor/plating/tunnel,
@@ -14054,10 +14064,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "ida" = (
-/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
-/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/machinery/workbench/advanced,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "ids" = (
@@ -14277,7 +14287,7 @@
 /area/f13/caves)
 "ikU" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "ikY" = (
@@ -14840,8 +14850,8 @@
 /area/f13/brotherhood/rnd)
 "iGF" = (
 /obj/structure/rack,
-/obj/item/stack/ore/blackpowder/fifty,
-/obj/item/stack/crafting/armor_plate/twenty,
+/obj/item/stack/crafting/armor_plate/ten,
+/obj/item/stack/ore/blackpowder/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "iHc" = (
@@ -18352,7 +18362,7 @@
 	pixel_x = 1;
 	pixel_y = 25
 	},
-/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "lfg" = (
@@ -20023,10 +20033,6 @@
 "mth" = (
 /obj/structure/table,
 /obj/item/storage/firstaid,
-/obj/item/storage/firstaid{
-	pixel_x = 10;
-	pixel_y = 4
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
 "mtw" = (
@@ -22034,7 +22040,7 @@
 /area/f13/den)
 "nFh" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "nFk" = (
@@ -27888,6 +27894,7 @@
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "rCX" = (
@@ -28789,7 +28796,7 @@
 "shM" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "shY" = (
@@ -29684,22 +29691,14 @@
 /area/f13/brotherhood/operating)
 "sXB" = (
 /obj/structure/rack,
+/obj/item/stock_parts/manipulator/nano,
+/obj/item/stock_parts/manipulator/nano,
+/obj/item/stock_parts/manipulator/nano,
+/obj/item/stock_parts/manipulator/nano,
 /obj/item/stock_parts/capacitor/adv,
 /obj/item/stock_parts/capacitor/adv,
-/obj/item/stock_parts/manipulator/pico,
-/obj/item/stock_parts/manipulator/pico,
-/obj/item/stock_parts/manipulator/pico,
-/obj/item/stock_parts/scanning_module/adv,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/stock_parts/matter_bin/super,
-/obj/item/stock_parts/matter_bin/super,
-/obj/item/stock_parts/matter_bin/super,
-/obj/item/stock_parts/matter_bin/super,
-/obj/item/stock_parts/matter_bin/super,
-/obj/item/stock_parts/matter_bin/super,
+/obj/item/stock_parts/capacitor/adv,
+/obj/item/stock_parts/capacitor/adv,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "sXM" = (
@@ -31400,8 +31399,6 @@
 /area/f13/enclave)
 "uiJ" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/mask/gas/enclave,
-/obj/item/clothing/mask/gas/enclave,
 /obj/item/clothing/mask/gas/enclave,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/enclave)
@@ -33255,6 +33252,7 @@
 /obj/structure/chair/comfy/brown,
 /obj/item/clothing/head/crown,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "vFz" = (
@@ -35813,35 +35811,18 @@
 /area/f13/caves)
 "xuN" = (
 /obj/structure/table,
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/circuitboard/machine/mechfab,
 /obj/structure/sign/poster/official/safety_eye_protection{
 	pixel_y = 32
 	},
+/obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "xuS" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/stack/sheet/glass/fifty{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/stack/sheet/plasteel/twenty,
+/obj/item/stack/sheet/plasteel/five,
+/obj/item/stack/sheet/metal/twenty,
+/obj/item/stack/sheet/glass/ten,
+/obj/item/stack/sheet/glass/ten,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "xvg" = (
@@ -36311,7 +36292,7 @@
 	},
 /area/f13/bunker)
 "xLc" = (
-/obj/structure/frame/machine,
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "xLe" = (
@@ -71847,7 +71828,7 @@ fcz
 dJh
 qwT
 qwT
-qwT
+sZq
 sZq
 sZq
 sZq
@@ -72104,7 +72085,7 @@ fcz
 dNT
 uDu
 uDu
-uDu
+sZq
 sZq
 sZq
 sZq
@@ -72355,10 +72336,10 @@ ycf
 ycf
 fcz
 bIs
-dHh
+daA
 fcz
 fcz
-ycf
+axr
 sZq
 sZq
 sZq
@@ -73695,7 +73676,7 @@ dWN
 dWN
 dWN
 dWN
-xBs
+dHh
 dWN
 afc
 rex
@@ -78090,7 +78071,7 @@ cAq
 cAq
 jWV
 jWV
-jWV
+bJc
 oyu
 jWV
 jWV
@@ -79637,7 +79618,7 @@ jWV
 jWV
 kcJ
 iYB
-jWV
+ibO
 jWV
 jWV
 cAq
