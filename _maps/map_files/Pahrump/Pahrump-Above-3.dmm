@@ -60,6 +60,20 @@
 	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"aD" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "aI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kirbyplants{
@@ -229,7 +243,14 @@
 /area/f13/legion)
 "cH" = (
 /obj/structure/sign/poster/prewar/vault_tec,
-/turf/closed/wall/f13/store,
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
 /area/f13/building)
 "cI" = (
 /obj/structure/chair,
@@ -340,14 +361,8 @@
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
 "ea" = (
-/obj/structure/closet/crate/footlocker{
-	anchored = 1;
-	pixel_x = -9
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood/wood_large,
+/obj/structure/sign/poster/ncr/democracy,
+/turf/closed/wall/mineral/wood,
 /area/f13/ncr)
 "er" = (
 /obj/structure/table,
@@ -442,6 +457,16 @@
 /obj/item/reagent_containers/food/drinks/coffee,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
+"fK" = (
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
 	},
 /area/f13/building)
 "fV" = (
@@ -722,11 +747,9 @@
 	},
 /area/f13/brotherhood/surface)
 "ju" = (
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/brotherhood/surface)
 "jO" = (
@@ -809,7 +832,14 @@
 /area/f13/caves)
 "kO" = (
 /obj/structure/sign/poster/prewar/poster72,
-/turf/closed/wall/f13/store,
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
 /area/f13/building)
 "lc" = (
 /obj/structure/window/fulltile/house{
@@ -860,8 +890,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mg" = (
-/obj/structure/sign/poster/ncr/democracy,
-/turf/closed/wall/mineral/wood,
+/obj/structure/closet/crate/footlocker{
+	anchored = 1;
+	pixel_x = -9
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_large,
 /area/f13/ncr)
 "mh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1037,7 +1073,14 @@
 /area/f13/legion)
 "oE" = (
 /obj/structure/sign/poster/contraband/scum,
-/turf/closed/wall/f13/store,
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
 /area/f13/building)
 "oJ" = (
 /turf/open/floor/carpet,
@@ -1368,6 +1411,9 @@
 	},
 /area/f13/building)
 "uF" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
 /turf/open/transparent/openspace,
 /area/f13/legion)
 "uI" = (
@@ -1561,6 +1607,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/f13/brotherhood/surface)
+"xs" = (
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/legion)
 "xw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -1639,6 +1691,12 @@
 /obj/item/pda,
 /turf/open/floor/wood/wood_large,
 /area/f13/ncr)
+"yE" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
 "yI" = (
 /obj/structure/table/booth,
 /obj/item/candle{
@@ -1675,11 +1733,18 @@
 /turf/closed/wall/f13/store,
 /area/f13/brotherhood/surface)
 "zs" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/woodalt,
-/area/f13/legion)
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "zx" = (
 /obj/structure/table/wood,
 /obj/item/paper/crumpled/ruins,
@@ -1975,6 +2040,10 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"Dt" = (
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/legion)
 "DB" = (
 /obj/structure/table/wood,
 /turf/open/indestructible/ground/outside/woodalt,
@@ -2011,12 +2080,11 @@
 	},
 /area/f13/building)
 "Ei" = (
-/obj/structure/closet/crate/footlocker{
-	anchored = 1;
-	pixel_x = -9
-	},
-/obj/machinery/light/broken{
-	dir = 1
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/hostile/wolf/alpha{
+	desc = "The NCR Rangers have been known to employ K9 units from time to time.";
+	faction = list("neutral");
+	name = "Ranger Seth"
 	},
 /turf/open/floor/wood/wood_large,
 /area/f13/ncr)
@@ -2414,6 +2482,10 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
+"JA" = (
+/obj/structure/closet/crate/bin,
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/building)
 "JB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/comfy/shuttle{
@@ -2436,6 +2508,19 @@
 /obj/item/gun/ballistic/automatic/pistol/type17,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/brotherhood/surface)
+"JN" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "Kc" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -2517,11 +2602,12 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood/surface)
 "Lb" = (
+/obj/structure/barricade/sandbags,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/woodalt,
-/area/f13/wasteland)
+/area/f13/legion)
 "Li" = (
 /obj/structure/barricade/wooden,
 /turf/closed/wall/rust,
@@ -2914,6 +3000,19 @@
 "Qx" = (
 /turf/open/indestructible,
 /area/f13/tcoms)
+"QL" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "QM" = (
 /obj/structure/closet/cabinet/anchored,
 /obj/item/clothing/under/f13/ranger,
@@ -3437,6 +3536,13 @@
 "Wx" = (
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
+"WF" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "WI" = (
 /obj/structure/sign/plaques/golden,
 /turf/closed/wall/mineral/wood,
@@ -3481,12 +3587,25 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/brotherhood/surface)
+"Xk" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/legion)
 "XF" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating";
 	sunlight_state = 1
 	},
 /area/f13/building)
+"XN" = (
+/obj/structure/barricade/sandbags,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/legion)
 "XQ" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -3623,11 +3742,12 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood/surface)
 "ZB" = (
-/obj/structure/bed/dogbed,
-/mob/living/simple_animal/hostile/wolf/alpha{
-	desc = "The NCR Rangers have been known to employ K9 units from time to time.";
-	faction = list("neutral");
-	name = "Ranger Seth"
+/obj/structure/closet/crate/footlocker{
+	anchored = 1;
+	pixel_x = -9
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/wood/wood_large,
 /area/f13/ncr)
@@ -20425,8 +20545,8 @@ kC
 kC
 kC
 kC
-tg
-tg
+kC
+kC
 tg
 tg
 eO
@@ -20682,10 +20802,10 @@ kC
 kC
 kC
 kC
+kC
+kC
 tg
 yP
-XT
-zN
 zN
 yP
 tg
@@ -20939,10 +21059,10 @@ kC
 kC
 kC
 kC
+kC
+kC
 tg
-Ei
-zN
-XT
+mg
 XT
 KC
 tg
@@ -21196,10 +21316,10 @@ kC
 kC
 kC
 kC
+kC
+kC
 tg
-ZB
-XT
-XT
+Ei
 zN
 QM
 tg
@@ -21212,8 +21332,8 @@ go
 tg
 tg
 tg
-kC
-PL
+zN
+aJ
 PL
 PL
 PL
@@ -21453,10 +21573,10 @@ kC
 kC
 kC
 kC
-mg
+kC
+kC
+ea
 RJ
-zN
-zN
 XT
 zN
 eF
@@ -21469,8 +21589,8 @@ zN
 xW
 eE
 tg
-kC
-kC
+zN
+WF
 PL
 PL
 PL
@@ -21710,10 +21830,10 @@ kC
 kC
 kC
 kC
+kC
+kC
 tg
 yP
-XT
-XT
 zN
 yP
 tg
@@ -21726,8 +21846,8 @@ XT
 zN
 zN
 tg
-kC
-kC
+zN
+WF
 PL
 PL
 PL
@@ -21967,10 +22087,10 @@ kC
 kC
 kC
 kC
+kC
+kC
 tg
-ea
-zN
-XT
+ZB
 XT
 KC
 tg
@@ -21983,8 +22103,8 @@ zN
 sS
 sS
 tg
-kC
-PL
+zN
+aJ
 PL
 PL
 PL
@@ -22224,8 +22344,8 @@ kC
 kC
 kC
 kC
-tg
-tg
+kC
+kC
 tg
 tg
 tg
@@ -22240,8 +22360,8 @@ zN
 tK
 Yb
 tg
-kC
-PL
+zN
+aJ
 PL
 PL
 PL
@@ -22497,8 +22617,8 @@ TA
 tg
 tg
 tg
-kC
-PL
+zN
+aJ
 PL
 PL
 PL
@@ -22754,8 +22874,8 @@ kC
 kC
 kC
 kC
-kC
-PL
+zN
+aJ
 PL
 PL
 PL
@@ -23011,7 +23131,7 @@ PL
 PL
 PL
 PL
-PL
+nE
 PL
 PL
 PL
@@ -33323,7 +33443,7 @@ PL
 PL
 mI
 rf
-EX
+JA
 mI
 PL
 PL
@@ -54261,7 +54381,7 @@ DS
 Ad
 Jt
 DS
-al
+fK
 kC
 kC
 kC
@@ -54518,7 +54638,7 @@ jY
 Sw
 cI
 sz
-al
+fK
 kC
 kC
 kC
@@ -54763,19 +54883,19 @@ CQ
 lT
 tT
 tE
-al
-al
-al
-al
-al
-al
+fK
+fK
+fK
+fK
+fK
+fK
 oE
-al
-al
-al
+fK
+fK
+fK
 kO
 al
-al
+fK
 kC
 kC
 kC
@@ -55011,19 +55131,19 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-al
+zs
+tY
+tY
+zs
+tY
+fK
 Ap
 jj
 dP
-al
+fK
 Wx
 Wx
-Wx
+yE
 Wx
 Wx
 Wx
@@ -55267,17 +55387,17 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
 RI
 RI
 Ks
 Ks
-al
-al
+fK
+fK
 cH
-al
-al
+fK
+fK
 Wx
 Wx
 Wx
@@ -55524,8 +55644,8 @@ PL
 PL
 PL
 PL
-PL
-RI
+Mj
+Lb
 mc
 mc
 mc
@@ -55781,7 +55901,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 RI
 mc
 mc
@@ -56038,13 +56158,13 @@ PL
 PL
 PL
 PL
-PL
+Mj
 RI
 mc
 mc
 Jj
 Ks
-Ks
+mc
 Ks
 Wx
 Wx
@@ -56076,7 +56196,7 @@ Wx
 PL
 PL
 PL
-PL
+Mj
 BA
 Ks
 sN
@@ -56295,13 +56415,13 @@ PL
 PL
 PL
 PL
-PL
-RI
-mc
-zs
+Mj
+XN
 mc
 mc
-PK
+mc
+Hi
+mc
 Ks
 Wx
 Wx
@@ -56333,7 +56453,7 @@ Wx
 PL
 PL
 PL
-PL
+Mj
 LJ
 Ks
 Ks
@@ -56552,13 +56672,13 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
-Ks
-Ks
-NW
-Ks
-Ks
+mc
+mc
+mc
+mc
+mc
 Ks
 Wx
 Wx
@@ -56590,7 +56710,7 @@ Wx
 PL
 PL
 PL
-PL
+Mj
 mc
 ye
 Vd
@@ -56809,14 +56929,14 @@ PL
 PL
 PL
 PL
-PL
-Wx
-Wx
-Lb
-Wx
+Mj
+yE
 Wx
 Wx
 Wx
+Wx
+Wx
+yE
 Wx
 Wx
 Wx
@@ -57067,11 +57187,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+nE
+nE
+nE
+nE
+JN
 Wx
 Wx
 Wx
@@ -57104,7 +57224,7 @@ Wx
 PL
 PL
 PL
-PL
+Mj
 BA
 Ks
 Ks
@@ -57328,17 +57448,17 @@ PL
 PL
 PL
 PL
-PL
-Wx
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+Mj
+Gl
+aD
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+JN
 Wx
 Wx
 Wx
@@ -57361,7 +57481,7 @@ Wx
 PL
 PL
 PL
-PL
+Mj
 kC
 kC
 kC
@@ -57585,6 +57705,9 @@ PL
 PL
 PL
 PL
+Mj
+Gl
+aJ
 PL
 PL
 PL
@@ -57592,10 +57715,7 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -57842,6 +57962,9 @@ PL
 PL
 PL
 PL
+Mj
+Gl
+aJ
 PL
 PL
 PL
@@ -57849,10 +57972,7 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -58099,6 +58219,9 @@ PL
 PL
 PL
 PL
+Mj
+Gl
+aJ
 PL
 PL
 PL
@@ -58106,10 +58229,7 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -58118,7 +58238,7 @@ Wx
 Wx
 Wx
 Wx
-PL
+aJ
 PL
 kC
 Wx
@@ -58356,17 +58476,17 @@ PL
 PL
 PL
 PL
-PL
-Ks
-PL
-PL
-PL
+Mj
+Gl
+aJ
 PL
 PL
 PL
 PL
 PL
 PL
+PL
+Mj
 Wx
 Wx
 Wx
@@ -58375,7 +58495,7 @@ Wx
 Wx
 Wx
 Wx
-PL
+aJ
 PL
 kC
 Wx
@@ -58609,21 +58729,21 @@ PL
 PL
 PL
 PL
+zs
+tY
+tY
+tY
+QL
+Gl
+aJ
 PL
 PL
 PL
 PL
 PL
-Ks
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -58632,7 +58752,7 @@ Wx
 Wx
 Wx
 Wx
-PL
+aJ
 PL
 Wx
 Wx
@@ -58865,13 +58985,14 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
-Ks
-Ks
-Ks
-Ks
-Ks
+RI
+RI
+RI
+RI
+mc
+aJ
 PL
 PL
 PL
@@ -58879,8 +59000,7 @@ PL
 PL
 PL
 PL
-PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -58889,7 +59009,7 @@ Wx
 Wx
 Wx
 Wx
-PL
+aJ
 PL
 PL
 PL
@@ -59122,31 +59242,31 @@ PL
 PL
 PL
 PL
-PL
-Ks
-Wx
-Wx
-Wx
-Wx
-Wx
-PL
-PL
-PL
+Mj
+Lb
+NY
+mc
+mc
+mc
+mc
+aJ
 PL
 PL
 PL
 PL
 PL
 PL
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
 PL
+Mj
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+aJ
 PL
 PL
 PL
@@ -59379,31 +59499,31 @@ PL
 PL
 PL
 PL
-PL
-Ks
-Wx
-Wx
-Wx
-Wx
-Wx
-PL
-PL
-PL
+Mj
+RI
+RP
+mc
+mc
+mc
+mc
+aJ
 PL
 PL
 PL
 PL
 PL
 PL
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
 PL
+Mj
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+aJ
 PL
 PL
 PL
@@ -59636,31 +59756,31 @@ PL
 PL
 PL
 PL
-PL
-Ks
-Wx
-Wx
-Wx
-Wx
-Wx
-PL
-PL
-PL
+Mj
+RI
+Dt
+mc
+mc
+mc
+mc
+aJ
 PL
 PL
 PL
 PL
 PL
 PL
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
 PL
+Mj
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+aJ
 PL
 PL
 PL
@@ -59893,31 +60013,31 @@ PL
 PL
 PL
 PL
-PL
-Ks
-Wx
-Wx
-Wx
-Wx
-Wx
-PL
-PL
-PL
+Mj
+RI
+NY
+mc
+mc
+mc
+mc
+aJ
 PL
 PL
 PL
 PL
 PL
 PL
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
-Wx
 PL
+Mj
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+Wx
+aJ
 PL
 PL
 PL
@@ -60150,16 +60270,14 @@ PL
 PL
 PL
 PL
-PL
-Ks
-Wx
-Wx
-Wx
-Wx
-Wx
-PL
-PL
-PL
+Mj
+XN
+mc
+Xk
+Jj
+xs
+mc
+aJ
 PL
 PL
 PL
@@ -60168,12 +60286,14 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
+nE
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 PL
 PL
 PL
@@ -60407,14 +60527,14 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
 Ks
 Ks
-Wx
-Wx
-Wx
-PL
+Jj
+Jj
+mc
+aJ
 PL
 PL
 PL
@@ -60668,6 +60788,9 @@ kC
 kC
 kC
 Ks
+nE
+nE
+nE
 PL
 PL
 PL
@@ -60690,14 +60813,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+tY
+tY
+tY
+tY
+tY
 PL
 PL
 PL
@@ -60949,7 +61069,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Wx
 Wx
 Wx
@@ -61206,7 +61326,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
 Ks
 NW
@@ -61463,7 +61583,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
 RP
 mc
@@ -61720,7 +61840,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 RI
 mc
 mc
@@ -61977,7 +62097,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 RI
 NY
 mc
@@ -62234,7 +62354,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 RI
 NY
 mc
@@ -62491,7 +62611,7 @@ PL
 PL
 PL
 PL
-PL
+Mj
 Ks
 Ks
 mc

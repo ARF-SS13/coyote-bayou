@@ -548,7 +548,7 @@
 "aqK" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "redrustyfull"
 	},
@@ -1190,6 +1190,13 @@
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
+"aJh" = (
+/obj/structure/rack,
+/obj/item/instrument/glockenspiel,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
 /area/f13/tunnel)
 "aJo" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2942,6 +2949,12 @@
 /obj/effect/landmark/start/f13/knightcap,
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood/operations)
+"bKK" = (
+/obj/item/gun/medbeam,
+/turf/open/floor/plasteel/f13{
+	icon_state = "redrustyfull"
+	},
+/area/f13/bunker)
 "bLb" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/showcase/machinery/cloning_pod,
@@ -4523,7 +4536,7 @@
 "cFx" = (
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "cFE" = (
@@ -9325,6 +9338,7 @@
 /area/f13/caves)
 "fmw" = (
 /obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "fmO" = (
@@ -10031,10 +10045,12 @@
 /area/f13/brotherhood/dorms)
 "fCl" = (
 /obj/machinery/autolathe,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "fCx" = (
 /obj/structure/rack,
+/obj/item/stack/sheet/plasteel/twenty,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -13579,6 +13595,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_box/c10mm,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -24130,6 +24147,7 @@
 "pdk" = (
 /obj/structure/spider/cocoon,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -24682,6 +24700,7 @@
 "pCg" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pCw" = (
@@ -25362,7 +25381,7 @@
 /area/f13/building)
 "pYF" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
+/obj/item/clothing/glasses/hud/health/night,
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
 "pYZ" = (
@@ -26420,9 +26439,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "qDV" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/nurse,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/bunker)
+/obj/structure/rack,
+/obj/item/stack/sheet/plastic/five,
+/obj/item/stack/sheet/prewar/five,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/caves)
 "qEg" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
 /turf/open/indestructible/ground/inside/mountain,
@@ -28632,6 +28655,13 @@
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
+"sbU" = (
+/obj/structure/rack,
+/obj/item/instrument/banjo,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/tunnel)
 "scS" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp,
@@ -28954,6 +28984,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/archives)
+"sqt" = (
+/obj/structure/rack,
+/obj/item/instrument/guitar,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/tunnel)
 "sqT" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
@@ -29478,6 +29515,20 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
+"sOM" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider{
+	alpha = 0;
+	max_mobs = 1;
+	radius = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/bunker)
 "sPK" = (
 /obj/structure/handrail/g_central{
 	pixel_y = -16
@@ -32501,6 +32552,17 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/den)
+"vcC" = (
+/obj/structure/chair/f13chair1,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider{
+	max_mobs = 3;
+	pixel_y = 25
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/bunker)
 "vcL" = (
 /obj/item/kirbyplants/photosynthetic,
 /turf/open/floor/carpet,
@@ -35947,6 +36009,10 @@
 /obj/item/geiger_counter,
 /obj/item/geiger_counter,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider{
+	max_mobs = 3;
+	pixel_y = 25
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -38538,7 +38604,7 @@ fLU
 rhG
 wcr
 fLU
-mIp
+vcC
 qju
 pQX
 qju
@@ -41097,7 +41163,7 @@ lnr
 vPg
 rDk
 fLU
-qeH
+sOM
 vaH
 vaH
 lmB
@@ -56047,8 +56113,8 @@ cSY
 cSY
 cSY
 fhr
-cSY
-cSY
+dXE
+xVz
 xVz
 xVz
 xVz
@@ -56304,8 +56370,8 @@ cSY
 cSY
 cSY
 cSY
-cSY
-cSY
+dXE
+xVz
 xVz
 xVz
 xVz
@@ -58719,7 +58785,7 @@ vPg
 vPg
 rex
 cJH
-dKo
+bKK
 dKn
 eHy
 cJH
@@ -74022,7 +74088,7 @@ aUb
 dXE
 dXE
 tur
-rBS
+sbU
 rBS
 rBS
 rBS
@@ -74540,7 +74606,7 @@ jZT
 jZT
 jZT
 jZT
-rBS
+sqt
 tur
 dXE
 rDt
@@ -74793,7 +74859,7 @@ saE
 dXE
 dXE
 tur
-rBS
+aJh
 rBS
 rBS
 jZT
@@ -94617,7 +94683,7 @@ tee
 tdJ
 dmq
 lxX
-qDV
+hNl
 tdJ
 vnJ
 eSW
@@ -98726,7 +98792,7 @@ tdJ
 jrI
 jrI
 tdJ
-tdJ
+hNl
 gBl
 sxq
 nrv
@@ -100195,7 +100261,7 @@ vPg
 eLE
 hQE
 hQE
-mUC
+qDV
 fHC
 fRK
 hQE
