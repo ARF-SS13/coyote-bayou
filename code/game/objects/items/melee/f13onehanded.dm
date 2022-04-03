@@ -568,7 +568,7 @@ obj/item/melee/onehanded/knife/switchblade
 	desc = "Corded leather strips turned into a instrument of pain. Cracks ominously when a skilled wielder uses it."
 	icon_state = "whip"
 	item_state = "chain"
-	force = 10
+	force = 1
 	bare_wound_bonus = 5
 	sharpness = SHARP_EDGED
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined")

@@ -7,6 +7,7 @@
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
 	slowdown = 0.2
+	armour_penetration = 0.02
 	item_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
@@ -60,7 +61,9 @@
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
-	fire_delay = 4.5
+	armour_penetration = 0.1
+	slowdown = 1
+	fire_delay = 6.5
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc

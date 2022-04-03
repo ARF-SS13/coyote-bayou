@@ -98,6 +98,7 @@
 #define F13LEGIONSLAVE	(1<<14)
 #define F13IMMUNE	(1<<15)
 #define F13CAMPFOLLOWER (1<<16)
+#define F13SLAVEMASTER	(1<<17)
 
 #define BOS				(1<<5)
 
@@ -168,6 +169,7 @@
 #define F13USPRIVATE	(1<<5)
 #define F13USCOLONIST	(1<<6)
 #define F13USCOMMANDER	(1<<7)
+#define F13USGYSGT2		(1<<8)
 
 #define TRIBAL			(1<<10)
 

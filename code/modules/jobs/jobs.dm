@@ -82,6 +82,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 "Legion Centurion",
 "Legion Venator",
+"Legion Slavemaster",
 "Legion Veteran Decanus",
 "Veteran Legionnaire",
 "Legion Prime Decanus",
@@ -106,6 +107,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Enclave Specialist",
 "Enclave Scientist",
 "Enclave Private",
+"Enclave Armored Infantry",
 
 "Chief",
 "Shaman",
@@ -177,6 +179,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Auxilia",
 	"Legion Slave",
 	"Legion Venator",
+	"Legion Slavemaster"
 ))
 
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
@@ -233,6 +236,7 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 	"Enclave Specialist",
 	"Enclave Scientist",
 	"Enclave Private",
+	"Enclave Armored Infantry",
 ))
 
 GLOBAL_LIST_INIT(security_positions, list(
