@@ -1,4 +1,4 @@
-## Fortune 13
+## The Wasteland
 Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
 
 [![CI Suite](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml)
@@ -7,10 +7,10 @@ Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-**Fortune 13 Information**  
-* **Code:** <https://github.com/fortune13-ss13/Fortune>
+**The Wasteland Information**  
+* **Code:** <https://github.com/ogrigbe/thewasteland>
 * **Wiki:** <>
-* **Discord:** <https://discord.gg/nzXDHwk7Ub>
+* **Discord:** <https://discord.gg/xCgEwJTppx>
 All relevant forum content takes place on the Discord!
 
 **Desert Rose Information**
