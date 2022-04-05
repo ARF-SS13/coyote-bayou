@@ -156,6 +156,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	display_order = JOB_DISPLAY_ORDER_ORATOR
 	access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
+	exp_requirements = 1500
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	// 10mm Revolver, Spatha
 	name = "Orator"
@@ -163,17 +164,18 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	neck = /obj/item/storage/belt/holster
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	suit = /obj/item/clothing/suit/armor/f13/legion/orator
-	head = null
+	head = /obj/item/clothing/head/helmet/f13/legion/orator
 	id = /obj/item/card/id/dogtag/legorator
 	gloves = null
 	shoes = /obj/item/clothing/shoes/roman
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/n99
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/mk23
 	r_pocket = /obj/item/storage/bag/money/small/legofficers
 	l_pocket = /obj/item/flashlight/lantern
 	l_hand = /obj/item/melee/onehanded/machete/spatha
 	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m45exp = 2,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1244,7 +1246,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	glasses = /obj/item/clothing/glasses/night
 	ears = /obj/item/radio/headset/headset_legion
 	r_pocket = /obj/item/binoculars
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308 = 3,
 		/obj/item/melee/onehanded/machete/gladius = 1,
@@ -1272,3 +1274,44 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	backpack_contents = list(
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
+
+
+// Slave master
+
+datum/job/CaesarsLegion/Legionnaire/f13slavemaster
+	title = "Legion Slavemaster"
+	flag = F13SLAVEMASTER
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are the feared and respected disciplinary corps of the Legion. Acting as both master of the Slaves and de-facto executioner of the Centurion's will within his ranks, you are a faceless and undoubtedly cruel torturer... but be careful to not let your hubris and malice lead to a strikeback from those you thought broken."
+	supervisors = "the Decani and Centurion"
+	exp_requirements = 300
+
+	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster
+	name = "Legion Slavemaster"
+	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
+	id =			/obj/item/card/id/dogtag/legslavemaster
+	uniform =		/obj/item/clothing/under/gladiator
+	suit = /obj/item/clothing/suit/armor/f13/legion/prime/slavemaster
+	belt = 			/obj/item/melee/onehanded/slavewhip
+	head = 			/obj/item/clothing/head/helmet/f13/legion/prime/slavemaster
+	shoes =	/obj/item/clothing/shoes/roman
+	suit_store = /obj/item/gun/ballistic/automatic/smg/greasegun
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, 
+		/obj/item/flashlight/lantern=1,
+		/obj/item/electropack/shockcollar = 3,
+		/obj/item/assembly/signaler/advanced = 3,
+		/obj/item/ammo_box/magazine/greasegun = 2
+		)
+
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13slavemaster/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_TRIBAL, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)

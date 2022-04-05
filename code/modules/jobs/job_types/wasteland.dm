@@ -52,7 +52,7 @@
 
 /datum/job/wasteland/f13heavytooper
 	title = "Enclave Armored Infantry"
-	flag = F13USGYSGT
+	flag = F13USGYSGT2
 	faction = FACTION_ENCLAVE
 	total_positions = 1
 	spawn_positions = 1
@@ -82,21 +82,17 @@
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
 	head =			/obj/item/clothing/head/helmet/f13/tesla
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor
+	suit = 			/obj/item/clothing/suit/armor/tesla
 	suit_store = 	/obj/item/minigunpack
 
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 3,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/grenade/flashbang = 1,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/flashlight/seclite = 1
 		)
-
-
 
 /datum/outfit/job/wasteland/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

@@ -427,7 +427,7 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 45 //fucc you normies
+	damage = 25 //fucc you normies
 	armour_penetration = 0 //no AP, armor shouldnt have more than 20 resist against plasma unless its specialized
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
@@ -469,7 +469,7 @@
 		M.gets_drilled(firer)
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
-	damage = 33
+	damage = 15
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 31

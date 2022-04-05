@@ -594,6 +594,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	/datum/outfit/loadout/rangertrail, // Trail carbine, 2 x .357 Revolvers
 	/datum/outfit/loadout/rangerpatrol, // Scout carbine, .44 SA Revolver
 	/datum/outfit/loadout/rangerpatrolcqb, // Auto-5, .44 Snubnose revolver
+	/datum/outfit/loadout/rangerbigiron,
 	)
 
 /datum/outfit/job/ncr/f13ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -686,6 +687,18 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/ammo_box/m44box = 1,
 		)
 
+/datum/outfit/loadout/rangerbigiron
+	name = "Big Iron Ranger"
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	head = /obj/item/clothing/head/f13/ranger
+	uniform	= /obj/item/clothing/under/f13/ranger/patrol
+	belt = /obj/item/storage/belt/military/assault/ncr
+	suit_store = /obj/item/gun/ballistic/revolver/m29/peacekeeper
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/gun/ballistic/revolver/m29/peacekeeper = 1,
+		/obj/item/ammo_box/m44 = 2,
+		)
 
 
 ////////////////////
