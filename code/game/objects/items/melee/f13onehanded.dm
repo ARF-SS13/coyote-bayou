@@ -287,7 +287,7 @@ obj/item/melee/onehanded/knife/switchblade
 	throw_speed = 5
 	throw_range = 7
 	embedding = list("pain_mult" = 4, "embed_chance" = 70, "fall_chance" = 5)
-	
+
 
 ///////////
 // CLUBS //
@@ -497,6 +497,15 @@ obj/item/melee/onehanded/knife/switchblade
 	icon_state = "batonmp"
 	item_state = "batonmp"
 
+// Baton but coloured black
+/obj/item/melee/classic_baton/police
+	name = "police baton"
+	desc = "A black plastic nightstick, used by police officers to detain rowdy law-breakers."
+	icon = 'icons/fallout/objects/melee/melee.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
+	icon_state = "batonpolice"
+	item_state = "batonpolice"
 
 // Telescopic baton
 /obj/item/melee/classic_baton/telescopic
@@ -794,7 +803,7 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("cleaved", "chopped", "sliced", "slashed")
 
 
-// Hatchet				Force 24			
+// Hatchet				Force 24
 // Wrench				Force 12
 // Crowbar				Force 15
 // Kitchen knife		Force 15

@@ -23,7 +23,7 @@
 /datum/outfit/job/wasteland/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/wasteland/enclavespy
-	backpack = 		/obj/item/storage/backpack/satchel/enclave
+	backpack = 		/obj/item/storage/backpack/enclave
 	head = 			/obj/item/clothing/head/helmet/f13/combat/swat
 	mask =			/obj/item/clothing/mask/gas/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
@@ -71,7 +71,7 @@
 /datum/outfit/job/wasteland/f13heavytrooper
 	name = "Enclave Armored Infantry"
 	jobtype = /datum/job/wasteland/f13heavytooper
-	backpack = 		/obj/item/storage/backpack/satchel/enclave
+	backpack = 		/obj/item/storage/backpack/enclave
 	id = 			/obj/item/card/id/dogtag/enclave/trooper
 	accessory = 	/obj/item/clothing/accessory/ncr/FSGT
 	ears = 			/obj/item/radio/headset/headset_enclave
@@ -134,7 +134,7 @@
 /datum/outfit/job/wasteland/f13specialist
 	name = "Enclave Specialist"
 	jobtype = /datum/job/wasteland/f13specialist
-	backpack = 		/obj/item/storage/backpack/satchel/enclave
+	backpack = 		/obj/item/storage/backpack/enclave
 	mask =			/obj/item/clothing/mask/gas/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
@@ -204,7 +204,7 @@
 /datum/outfit/job/wasteland/f13gysergeant
 	name = "Enclave Gunnery Sergeant"
 	jobtype = /datum/job/wasteland/f13gysergeant
-	backpack = 		/obj/item/storage/backpack/satchel/enclave
+	backpack = 		/obj/item/storage/backpack/enclave
 	id = 			/obj/item/card/id/dogtag/enclave/trooper
 	accessory = 	/obj/item/clothing/accessory/ncr/FSGT
 	ears = 			/obj/item/radio/headset/headset_enclave
@@ -258,7 +258,7 @@
 /datum/outfit/job/wasteland/enclavesgt
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/wasteland/enclavesgt
-	backpack = /obj/item/storage/backpack/satchel/enclave
+	backpack = /obj/item/storage/backpack/enclave
 	ears = 			/obj/item/radio/headset/headset_enclave
 	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
 	mask =			/obj/item/clothing/mask/gas/enclave
