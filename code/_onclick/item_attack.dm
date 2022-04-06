@@ -128,6 +128,9 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force -= buffout
 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
+		force -= smutant
+
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
