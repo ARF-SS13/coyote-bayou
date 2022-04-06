@@ -1432,7 +1432,7 @@
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
-	extra_damage = 15
+	extra_damage = 30
 	burst_size = 1
 	fire_delay = 10
 	zoomable = TRUE

@@ -63,6 +63,7 @@
 	icon_state = "plasma"
 	armour_penetration = 0.1
 	slowdown = 1
+	extra_damage = 20
 	fire_delay = 6.5
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
