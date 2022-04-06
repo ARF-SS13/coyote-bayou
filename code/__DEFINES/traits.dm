@@ -247,6 +247,7 @@
 #define TRAIT_SPRINT_LOCKED				"sprint_locked"
 
 
+#define TRAIT_SMUTANT		"Super Mutant"	//boosts salvage return
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
