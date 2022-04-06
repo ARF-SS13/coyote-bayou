@@ -107,11 +107,12 @@ Head Paladin
 	exp_requirements = 4800
 
 	loadout_options = list(
-	/datum/outfit/loadout/sentstand, //Tribeam laser
+	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened T-51
 	/datum/outfit/loadout/sentvet, //xl70e3
-	/datum/outfit/loadout/sentheavy, //Gauss + Glock
-	/datum/outfit/loadout/sentgat, // Gatling
-	/datum/outfit/loadout/sentmini // Minigun
+	/datum/outfit/loadout/sentheavy, //Gauss + Glock + Hardened T-51
+	/datum/outfit/loadout/sentgat, // Gatling + Hardened T-51
+	/datum/outfit/loadout/sentmini, // Minigun + Hardened T-51
+	/datum/outfit/loadout/midwest, // AER14 + Laser Pistol + Midwest PA
 	)
 
 	outfit = /datum/outfit/job/bos/f13sentinel
@@ -143,12 +144,10 @@ Head Paladin
 	uniform = 		/obj/item/clothing/under/f13/recon
 	accessory = 	/obj/item/clothing/accessory/bos/sentinel
 	glasses =       /obj/item/clothing/glasses/night
-	suit =			/obj/item/clothing/suit/armor/f13/power_armor/t51green
-	head =			/obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	belt =			/obj/item/storage/belt/military/assault
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	id = 			/obj/item/card/id/dogtag
-	neck = 			/obj/item/storage/belt/holster
+	neck = 			/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/melee/powerfist/f13 = 1,
@@ -159,6 +158,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentstand
 	name = "Shock Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 3,
@@ -166,6 +167,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentvet
 	name = "Veteran Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/xl70e3 = 1,
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 3,
@@ -173,6 +176,8 @@ Head Paladin
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m72 = 1,
 		/obj/item/ammo_box/magazine/m2mm = 3,
@@ -182,16 +187,31 @@ Head Paladin
 
 /datum/outfit/loadout/sentgat
 	name = "Gatling Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
 	)
 
 /datum/outfit/loadout/sentmini
 	name = "Minigun Head Paladin"
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	backpack_contents = list(
 		/obj/item/minigunpackbal5mm=1,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
+	)
+
+/datum/outfit/loadout/midwest
+    name = "Midwestern Head Paladin"
+    suit = /obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+    head = /obj/item/clothing/head/helmet/f13/power_armor/midwest
+    l_hand = /obj/item/gun/energy/laser/aer14
+    backpack_contents = list(
+        /obj/item/stock_parts/cell/ammo/mfc = 3,
+        /obj/item/gun/energy/laser/pistol=1,
+        /obj/item/stock_parts/cell/ammo/ec=2,
 	)
 
 
@@ -414,7 +434,7 @@ Star Paladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
 	belt =	/obj/item/storage/belt/military/assault
-	neck =	/obj/item/storage/belt/holster
+	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
@@ -514,7 +534,7 @@ Paladin
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
 	belt =	/obj/item/storage/belt/military/assault
-	neck =	/obj/item/storage/belt/holster
+	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak= 1,

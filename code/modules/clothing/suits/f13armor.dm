@@ -402,6 +402,14 @@
 	slowdown = 0.25 //+0.05 from helmet = total 0.2
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 75)
 
+/obj/item/clothing/suit/armor/f13/power_armor/hmidwest
+	name = "Hardened Midwestern power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
+	icon_state = "midwestgrey_pa"
+	item_state = "midwestgrey_pa"
+	slowdown = 0.15 //+0.05 from helmet = total 0.2
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 75)
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
 	desc = "The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."

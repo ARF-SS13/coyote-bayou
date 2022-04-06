@@ -348,6 +348,15 @@
 	icon_state = "t51bhelmet[light_on]"
 	item_state = "t51bhelmet[light_on]"
 
+/obj/item/clothing/head/helmet/f13/power_armor/midwest
+	name = "Midwestern Power Helmet"
+	desc = "It's a Midwest power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	icon_state = "midwestgrey_helm"
+	item_state = "midwestgrey_helm"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 27, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+
+
 
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
