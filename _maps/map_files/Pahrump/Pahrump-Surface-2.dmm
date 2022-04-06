@@ -146,6 +146,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/crafting/armor_plate/five,
+/obj/item/stack/crafting/armor_plate/five,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "ada" = (
@@ -13421,12 +13422,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ftz" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
 	},
-/area/f13/legion)
+/obj/structure/flora/tree/cactus,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "ftA" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/fakelattice{
@@ -35220,7 +35221,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "nSl" = (
-/obj/structure/kitchenspike,
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -48277,8 +48281,12 @@
 	},
 /area/f13/village)
 "tmA" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/legion)
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 4;
+	icon_state = "outerpavementcorner"
+	},
+/area/f13/wasteland)
 "tmF" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -54731,11 +54739,15 @@
 	},
 /area/f13/building)
 "vPA" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 4;
-	icon_state = "dirt"
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_2";
+	layer = 6;
+	pixel_x = -6;
+	pixel_y = 13
 	},
-/area/f13/legion)
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "vPF" = (
 /obj/structure/rack,
 /obj/item/soap,
@@ -54781,9 +54793,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vQB" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
 	},
 /area/f13/legion)
 "vQE" = (
@@ -55008,8 +55026,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "vWL" = (
-/obj/item/flag/legion,
-/turf/open/indestructible/ground/outside/desert,
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
+/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
+/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/legion)
 "vWS" = (
 /obj/structure/tires/two,
@@ -55815,7 +55841,7 @@
 	obj_integrity = 800
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/wasteland)
+/area/f13/legion)
 "wqG" = (
 /obj/structure/chair/bench,
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
@@ -55831,7 +55857,7 @@
 	dir = 4;
 	icon_state = "dirt"
 	},
-/area/f13/wasteland)
+/area/f13/legion)
 "wqO" = (
 /obj/effect/turf_decal,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -55951,7 +55977,7 @@
 "wue" = (
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/area/f13/legion)
 "wuk" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verylittleshadowleft"
@@ -56083,7 +56109,7 @@
 	dir = 10;
 	icon_state = "dirt"
 	},
-/area/f13/wasteland)
+/area/f13/legion)
 "wxi" = (
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/inside/mountain,
@@ -56352,7 +56378,7 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/bars,
 /turf/closed/wall/f13/wood,
-/area/f13/wasteland)
+/area/f13/legion)
 "wCn" = (
 /obj/item/reagent_containers/blood,
 /obj/effect/decal/cleanable/dirt{
@@ -56407,11 +56433,7 @@
 	},
 /area/f13/building)
 "wDP" = (
-/obj/structure/table,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/obj/machinery/processor/chopping_block,
+/obj/structure/kitchenspike,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -57431,15 +57453,6 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
-"wWI" = (
-/obj/structure/table,
-/obj/machinery/chem_dispenser/drinks{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/legion)
 "wWM" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -58985,13 +58998,8 @@
 	},
 /area/f13/village)
 "xBC" = (
-/obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
-/obj/item/reagent_containers/food/snacks/rawbrahminliver,
+/obj/structure/table,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -59083,13 +59091,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/village)
 "xEh" = (
-/obj/structure/closet/fridge,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
-/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
-/obj/item/reagent_containers/food/snacks/rawbrahmintongue,
+/obj/structure/table,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/obj/machinery/processor/chopping_block,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -111725,17 +111731,17 @@ ktB
 ktB
 gcK
 gcK
-hom
-hom
-hom
-hom
-hom
-hom
-hom
-hom
 gcK
 gcK
 gcK
+hom
+hom
+hom
+hom
+hom
+hom
+hom
+hom
 gcK
 gcK
 gcK
@@ -111982,17 +111988,17 @@ hom
 ktB
 gcK
 ktB
+gcK
+gcK
+gcK
 hom
-ftz
-wDP
-wWI
 xBC
 xEh
 nSl
+vQB
+vWL
+wDP
 hom
-gcK
-gcK
-gcK
 gcK
 gcK
 gcK
@@ -112467,7 +112473,7 @@ ehN
 koD
 dMW
 fyf
-fyf
+qTY
 uey
 fyf
 uey
@@ -112481,8 +112487,8 @@ xXm
 xXm
 xXm
 wXo
-hom
-hom
+xih
+vHe
 hom
 mCf
 qHc
@@ -112739,7 +112745,7 @@ xXm
 vVe
 wXo
 xih
-vHe
+xXm
 hom
 uYC
 xNm
@@ -112983,7 +112989,7 @@ dMW
 fyf
 fyf
 fyf
-qTY
+fyf
 fyf
 nlO
 mfD
@@ -113239,7 +113245,7 @@ koD
 dMW
 fyf
 fyf
-qTY
+fyf
 hAC
 dzE
 cWG
@@ -113494,7 +113500,7 @@ ehN
 ehN
 eEz
 dMW
-xTK
+ftz
 fyf
 fyf
 qOV
@@ -114014,14 +114020,14 @@ igz
 igz
 igz
 igz
-bEw
+tmA
 fyf
 fyf
 pyf
 fyf
 fyf
-tmA
-vWL
+fyf
+vYe
 woj
 vTH
 mtK
@@ -114277,7 +114283,7 @@ fyf
 jxH
 fyf
 fyf
-tmA
+fyf
 vAe
 wqz
 tBN
@@ -114534,7 +114540,7 @@ qOV
 vly
 cWG
 cWG
-vPA
+cWG
 cWG
 wqJ
 daU
@@ -114791,7 +114797,7 @@ nlO
 iXE
 mvv
 mvv
-uqW
+mvv
 mvv
 wue
 mvv
@@ -115048,7 +115054,7 @@ fyf
 nrV
 mfD
 mfD
-vQB
+mfD
 mfD
 wxc
 mvv
@@ -115305,7 +115311,7 @@ fyf
 jec
 fyf
 fyf
-tmA
+fyf
 vAe
 wqz
 mvv
@@ -115562,7 +115568,7 @@ fyf
 chW
 fyf
 fyf
-tmA
+fyf
 vYe
 wBM
 mvv
@@ -115810,12 +115816,12 @@ dMW
 jJb
 fyf
 fyf
-imv
 fyf
 fyf
 fyf
 fyf
-qod
+fyf
+vPA
 hom
 pBp
 vIB
@@ -116065,12 +116071,12 @@ ehN
 eEz
 dMW
 fyf
-fyf
+qTY
 fyf
 fyf
 uey
 qOV
-bVo
+wDc
 uey
 fyf
 pBp
@@ -116323,11 +116329,11 @@ koD
 dMW
 fyf
 fyf
-qTY
+fyf
 qod
 qOV
 daU
-cxL
+bpD
 fyf
 fyf
 pBp
@@ -117349,7 +117355,7 @@ ehN
 ehN
 koD
 dMW
-fyf
+dDC
 fyf
 fyf
 fyf
@@ -118378,7 +118384,7 @@ ehN
 pIf
 dMW
 fyf
-fyf
+sqA
 gcK
 gcK
 gcK
