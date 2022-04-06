@@ -5260,6 +5260,9 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/rust,
 /area/f13/building)
+"cdZ" = (
+/turf/open/floor/wood/f13/stage_b/outdoors,
+/area/f13/building)
 "ces" = (
 /obj/item/trash/f13/dog,
 /turf/open/floor/wood/f13/old/ruinedcornerendtl,
@@ -7419,6 +7422,12 @@
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
+"dbj" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop2"
+	},
+/area/f13/building)
 "dbr" = (
 /obj/machinery/light,
 /obj/structure/closet/crate/bin,
@@ -8543,6 +8552,10 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
+"dxT" = (
+/obj/structure/gallow,
+/turf/open/floor/wood/f13/stage_tr,
+/area/f13/building)
 "dxU" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -11999,6 +12012,9 @@
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/wood/f13/stage_bl,
 /area/f13/building)
@@ -17584,6 +17600,9 @@
 /turf/open/floor/wood,
 /area/f13/building)
 "gZD" = (
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2top"
 	},
@@ -29693,8 +29712,12 @@
 	},
 /area/f13/building)
 "lMO" = (
-/obj/structure/gallow,
-/turf/open/floor/wood/f13/stage_l,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
 /area/f13/building)
 "lMY" = (
 /obj/structure/bed/mattress,
@@ -40336,7 +40359,7 @@
 /area/f13/legion)
 "pZS" = (
 /obj/structure/gallow,
-/turf/open/floor/wood/f13/oak,
+/turf/open/floor/wood/f13/stage_tl,
 /area/f13/building)
 "qai" = (
 /obj/effect/decal/waste{
@@ -40914,6 +40937,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
+	},
+/area/f13/building)
+"qlz" = (
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/building)
 "qmc" = (
@@ -41866,7 +41895,7 @@
 /area/f13/building)
 "qGG" = (
 /obj/structure/gallow,
-/turf/open/floor/wood/f13/stage_r,
+/turf/open/floor/wood/f13/stage_t,
 /area/f13/building)
 "qGZ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -54652,6 +54681,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
+	},
+/area/f13/building)
+"vOz" = (
+/obj/structure/chair/stool{
+	dir = 4;
+	icon_state = "bench"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
 	},
 /area/f13/building)
 "vOA" = (
@@ -88215,15 +88253,15 @@ dmC
 jlm
 sHA
 lLY
+nWl
 sxT
 sxT
+nWl
+nWl
 sxT
-qUC
-qUC
+nWl
 sxT
-sxT
-sxT
-gjI
+qlz
 uCO
 uCO
 lXy
@@ -88472,13 +88510,13 @@ dmV
 ohA
 kJn
 ePI
+qUC
 sxT
-sxT
-sxT
-aDk
-lMO
+pZS
 oAV
-sxT
+qUC
+iax
+qUC
 iax
 gjI
 kgU
@@ -88729,13 +88767,13 @@ dpK
 jlm
 evL
 uyD
-sxT
-sxT
+qUC
 nWl
-meh
-pZS
-uyD
-sxT
+qGG
+cdZ
+qUC
+eEP
+vmB
 ibA
 iVA
 kgU
@@ -88986,12 +89024,12 @@ dCV
 dCV
 dCV
 nVb
-sxT
-nWl
 vmB
-meh
-pZS
-uyD
+nWl
+qGG
+cdZ
+qUC
+vOz
 sxT
 iax
 cJE
@@ -89242,13 +89280,13 @@ hjZ
 ixe
 dOJ
 dCV
-qUC
+lMO
 nWl
 qUC
-tQU
-dAq
-qGG
+dxT
 bmh
+qUC
+eEP
 sxT
 eEP
 iVE
@@ -89504,7 +89542,7 @@ ePQ
 fKN
 qUC
 qUC
-qUC
+vmB
 vmB
 tQU
 qUC
@@ -89765,7 +89803,7 @@ sxT
 qUC
 fmN
 vmB
-cJE
+dbj
 dCV
 uCO
 lYu
@@ -90019,7 +90057,7 @@ fOC
 vmB
 sxT
 sxT
-qUC
+vmB
 sxT
 ijO
 cJE
