@@ -1421,9 +1421,10 @@
 	},
 /area/f13/brotherhood/leisure)
 "aSl" = (
-/obj/machinery/light/small,
-/obj/machinery/processor,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/obj/machinery/smartfridge,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "aSo" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -2748,11 +2749,8 @@
 	},
 /area/f13/tunnel)
 "bBA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/plantgenes,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "neutralrustyfull"
-	},
+/obj/machinery/processor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "bBM" = (
 /obj/item/pickaxe/drill,
@@ -4155,11 +4153,11 @@
 	},
 /area/f13/caves)
 "cmM" = (
-/obj/structure/table/reinforced,
 /obj/machinery/light/small{
 	dir = 1;
 	pixel_x = 8
 	},
+/obj/machinery/deepfryer,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "cnf" = (
@@ -5169,7 +5167,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/leisure)
 "cMe" = (
-/obj/machinery/biogenerator,
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -7604,8 +7602,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
 "eec" = (
-/obj/machinery/vending/hydronutrients,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "eeq" = (
 /obj/structure/table,
@@ -8011,8 +8012,11 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/caves)
 "enK" = (
-/obj/machinery/vending/hydroseeds,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/seed_extractor,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "enN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11817,6 +11821,10 @@
 	color = "#3e3d42";
 	dir = 8
 	},
+/obj/structure/window/reinforced{
+	color = "#3e3d42";
+	dir = 4
+	},
 /turf/open/water,
 /area/f13/brotherhood/leisure)
 "grU" = (
@@ -14282,7 +14290,9 @@
 	name = "gardening locker";
 	req_access = list(120)
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "hSr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19158,8 +19168,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "kVL" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/vending/hydroseeds,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "kVP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -20909,10 +20921,14 @@
 	},
 /area/f13/bunker)
 "mbe" = (
-/obj/structure/curtain{
-	color = "#5c131b"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/biogenerator,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "mbT" = (
 /obj/structure/table/wood,
@@ -21033,7 +21049,9 @@
 "mhx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
+	},
 /area/f13/brotherhood/leisure)
 "mir" = (
 /turf/open/indestructible/ground/inside/subway,
@@ -29747,10 +29765,6 @@
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"rAs" = (
-/obj/machinery/deepfryer,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
-/area/f13/brotherhood/leisure)
 "rAt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/f13chair2,
@@ -29998,6 +30012,7 @@
 	color = "000000"
 	},
 /obj/structure/table,
+/obj/item/trash/f13/electronic/toaster/atomics,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria{
 	icon_state = "tealwhdirty_chess2"
 	},
@@ -30765,6 +30780,9 @@
 /area/f13/bunker)
 "saB" = (
 /obj/structure/simple_door/bunker/glass,
+/obj/structure/curtain{
+	color = "#5c131b"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "saC" = (
@@ -31621,11 +31639,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
 "sEa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/vending/hydronutrients,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "neutralrustyfull"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "sEi" = (
 /obj/structure/cable{
@@ -37055,8 +37072,7 @@
 /turf/closed/wall/rust,
 /area/f13/den)
 "wmL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/seed_extractor,
+/obj/machinery/plantgenes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "neutralrustyfull"
 	},
@@ -38991,6 +39007,10 @@
 	},
 /obj/structure/flora/ausbushes/grassybush{
 	layer = 2.1
+	},
+/obj/structure/window/reinforced{
+	color = "#3e3d42";
+	dir = 4
 	},
 /turf/open/water,
 /area/f13/brotherhood/leisure)
@@ -93878,7 +93898,7 @@ lAK
 jNu
 ood
 ebT
-qkX
+hXf
 rZx
 cOc
 dBX
@@ -94136,7 +94156,7 @@ bRV
 ood
 pHr
 qkX
-hXf
+qkX
 qkX
 uBh
 tci
@@ -94399,7 +94419,7 @@ qkX
 ood
 bps
 gqM
-gqM
+eec
 gqM
 btc
 aSi
@@ -94656,7 +94676,7 @@ qkX
 fgN
 btc
 btc
-bBA
+gqM
 btc
 btc
 cwz
@@ -94913,7 +94933,7 @@ pnq
 ood
 erQ
 btc
-wmL
+gqM
 btc
 gqM
 cwz
@@ -95171,7 +95191,7 @@ ood
 bps
 gqM
 btc
-btc
+cMe
 btc
 aSi
 xZn
@@ -95419,7 +95439,7 @@ web
 lQa
 bRV
 ood
-ksg
+bBA
 xta
 qin
 mjR
@@ -95678,14 +95698,14 @@ bfK
 dEr
 cmM
 jLd
-mjR
+kom
 hQs
 xta
 ood
 xsD
-cMe
-uFr
-htQ
+btc
+btc
+btc
 btc
 grM
 ood
@@ -95939,12 +95959,12 @@ rFC
 hQs
 sXq
 ood
-ood
-ood
-ood
-ood
 mbe
-ood
+btc
+enK
+wmL
+btc
+aSl
 cLU
 vLv
 qCb
@@ -96195,13 +96215,13 @@ sXq
 sXq
 xta
 kom
-aSl
 ood
-ood
-enK
-kVL
-kVL
-kVL
+sEa
+btc
+btc
+gqM
+gqM
+gqM
 saB
 vLv
 adZ
@@ -96452,11 +96472,11 @@ xta
 sXq
 xta
 xta
-rAs
 ood
-ood
-eec
-sEa
+kVL
+btc
+uFr
+htQ
 hSp
 mhx
 cLU
