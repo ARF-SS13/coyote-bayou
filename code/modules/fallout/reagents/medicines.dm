@@ -21,7 +21,6 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjust_nutrition(-2)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -84,7 +83,7 @@
 	reagent_state = LIQUID
 	color = "#e50d0d"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 20
+	overdose_threshold = 25
 	addiction_threshold = 16
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
@@ -236,10 +235,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
 	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5 //Multiplier if you have the right perk.
+	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
-	M.set_blurriness(7)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
@@ -273,7 +271,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -2.5 //Multiplier if you have the right perk.
+	var/heal_factor_perk = -2.9 //Multiplier if you have the right perk.
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	var/is_tribal = FALSE
@@ -312,11 +310,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -2
-	heal_factor_perk = -4
-
-/datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
-	M.set_blurriness(5)
-	..()
+	heal_factor_perk = -4.3
 
 // ---------------------------
 // RAD-X REAGENT
