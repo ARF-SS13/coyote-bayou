@@ -1322,7 +1322,7 @@
 "ju" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/brotherhood/surface)
 "jz" = (
@@ -2799,14 +2799,14 @@
 	icon_state = "bench"
 	},
 /obj/item/clothing/mask/cigarette/rollie/cannabis{
+	layer = 4;
 	pixel_x = -6;
-	pixel_y = 7;
-	layer = 4
+	pixel_y = 7
 	},
 /obj/item/toy/plush/lizardplushie{
+	name = "Khanizard";
 	pixel_x = 2;
-	pixel_y = 3;
-	name = "Khanizard"
+	pixel_y = 3
 	},
 /obj/item/clothing/head/helmet/f13/khan/pelt{
 	pixel_y = 10
@@ -3973,6 +3973,7 @@
 /obj/structure/closet/cabinet/anchored{
 	pixel_y = 10
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/wood,
 /area/f13/building)
 "BX" = (
@@ -6024,12 +6025,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/hostile/wolf/alpha{
+	desc = "Sheepdogs are known for their intelligence and have worked alongside humans for thousands of years. This one has a dopey smile and smells of barbecue sauce.";
+	faction = list("neutral");
+	health = 200;
+	icon_dead = "tippen_dead";
 	icon_living = "tippen";
 	icon_state = "tippen";
-	icon_dead = "tippen_dead";
-	faction = list("neutral");
-	desc = "Sheepdogs are known for their intelligence and have worked alongside humans for thousands of years. This one has a dopey smile and smells of barbecue sauce.";
-	health = 200;
 	name = "Dreams-of-Moonlight"
 	},
 /turf/open/floor/f13/wood,
@@ -18189,9 +18190,9 @@ kC
 kC
 kC
 kC
-PL
-PL
-PL
+tY
+tY
+tY
 PL
 PL
 PL
@@ -18449,7 +18450,7 @@ Qw
 Qw
 Qw
 xo
-PL
+aJ
 PL
 PL
 PL
@@ -18706,7 +18707,7 @@ Qw
 Qw
 zc
 Qw
-PL
+aJ
 PL
 BY
 BY
@@ -18963,7 +18964,7 @@ Qw
 Qw
 ue
 Qw
-PL
+aJ
 PL
 BY
 BY
@@ -19220,7 +19221,7 @@ Qw
 rC
 aE
 Qw
-PL
+aJ
 PL
 BY
 BY
@@ -19477,7 +19478,7 @@ Qw
 Qw
 aE
 Qw
-PL
+aJ
 PL
 PL
 PL
@@ -19734,7 +19735,7 @@ Qw
 Qw
 kj
 Qw
-PL
+aJ
 PL
 PL
 PL
@@ -19991,7 +19992,7 @@ Qw
 Qw
 Qw
 Qw
-PL
+aJ
 PL
 PL
 PL
@@ -20248,7 +20249,7 @@ Qw
 gO
 Qw
 Qw
-PL
+aJ
 PL
 PL
 PL
@@ -20505,7 +20506,7 @@ Qw
 Qw
 Qw
 xo
-PL
+aJ
 PL
 PL
 PL
@@ -20758,10 +20759,10 @@ ru
 ux
 ru
 Tc
-PL
-PL
-PL
-PL
+nE
+nE
+nE
+nE
 PL
 PL
 PL
@@ -21289,8 +21290,8 @@ BY
 BY
 BY
 BY
-PL
-PL
+tY
+tY
 PL
 PL
 PL
@@ -21541,23 +21542,23 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-kC
-kC
-kC
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+tY
+tY
+tY
+tY
+JN
+AM
+AM
+AM
+Ds
+tY
+tY
+tY
+tY
+tY
+tY
+tY
+tY
 kC
 kC
 kC
@@ -21784,6 +21785,7 @@ kC
 kC
 Gl
 Gl
+nL
 PL
 PL
 PL
@@ -21796,8 +21798,7 @@ PL
 PL
 PL
 PL
-PL
-PL
+Mj
 AM
 AM
 AM
@@ -21810,11 +21811,11 @@ ad
 AM
 AM
 AM
-PL
-PL
-PL
-PL
-PL
+Gl
+Gl
+Gl
+Gl
+Gl
 kC
 kC
 kC
@@ -22042,6 +22043,7 @@ kC
 Ka
 Ka
 AN
+aJ
 PL
 PL
 PL
@@ -22052,9 +22054,8 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
+tY
+QL
 AM
 kC
 kC
@@ -22067,12 +22068,12 @@ kC
 AM
 AM
 AM
-PL
-PL
-PL
-PL
-PL
-PL
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
 kC
 kC
 kC
@@ -22299,6 +22300,7 @@ AM
 Ka
 Ka
 fu
+aJ
 PL
 PL
 PL
@@ -22308,8 +22310,7 @@ PL
 PL
 PL
 PL
-PL
-PL
+Mj
 Gl
 Gl
 AM
@@ -22324,13 +22325,13 @@ kC
 AM
 AM
 gX
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
+Gl
 kC
 kC
 kC
@@ -22556,6 +22557,7 @@ AM
 Ka
 Ka
 AN
+aJ
 PL
 PL
 PL
@@ -22565,29 +22567,28 @@ PL
 PL
 PL
 PL
-PL
-PL
+Mj
 AM
 ad
 kC
 kC
 kC
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+nE
+nE
+nE
+nE
+nE
+nE
+jS
 AM
-PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+nd
+nE
+nE
+nE
+nE
+nE
+nE
+nE
 kC
 kC
 kC
@@ -22811,6 +22812,8 @@ AM
 AM
 AM
 AM
+aD
+nE
 PL
 PL
 PL
@@ -22821,9 +22824,7 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
+Mj
 AM
 kC
 kC
@@ -22836,7 +22837,7 @@ BY
 BY
 BY
 PL
-PL
+nE
 PL
 PL
 PL
@@ -23064,11 +23065,11 @@ kC
 kC
 kC
 kC
-PL
-PL
+nE
+YL
 AM
 AM
-PL
+aJ
 PL
 PL
 PL
@@ -23322,14 +23323,14 @@ kC
 kC
 kC
 PL
-PL
+Mj
 AM
 AM
 kC
-PL
-PL
-PL
-PL
+tY
+tY
+tY
+tY
 ws
 kC
 AM
@@ -23580,7 +23581,7 @@ kC
 kC
 PL
 PL
-PL
+YL
 ad
 AM
 Gl
@@ -24095,11 +24096,11 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
+nE
+nE
+nE
+nE
+nE
 kC
 PL
 PL

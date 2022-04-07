@@ -240,12 +240,13 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/village)
 "afr" = (
-/obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/police,
-/obj/item/gun/ballistic/shotgun/police,
-/obj/item/gun/ballistic/shotgun/police,
-/obj/effect/turf_decal/stripes/white/box,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
 /area/f13/ncr)
 "afs" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -780,8 +781,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "apw" = (
+/obj/structure/guncase/shotgun,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
+/obj/item/gun/ballistic/shotgun/police,
 /obj/effect/turf_decal/stripes/white/box,
-/obj/structure/guncase,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "apP" = (
@@ -1070,17 +1074,14 @@
 	},
 /area/f13/building)
 "auH" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NCR"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
 /area/f13/ncr)
 "auU" = (
 /obj/machinery/vending/nukacolavend,
@@ -2335,6 +2336,14 @@
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
+"aXH" = (
+/obj/structure/fence/corner{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland)
 "aXL" = (
 /obj/structure/closet/crate/trashcart,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -5665,8 +5674,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "cnt" = (
-/obj/effect/landmark/start/f13/ncrmp,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/store/constructed,
 /area/f13/ncr)
 "cnv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7555,6 +7566,15 @@
 /obj/item/flashlight/lantern,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"dcK" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/store/constructed,
+/area/f13/ncr)
 "dcM" = (
 /obj/structure/closet,
 /obj/item/picket_sign,
@@ -8035,7 +8055,11 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "dlX" = (
-/obj/structure/simple_door/repaired,
+/obj/machinery/door/unpowered/securedoor{
+	max_integrity = 300;
+	obj_integrity = 300;
+	req_access_txt = "125"
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -8600,11 +8624,11 @@
 /mob/living/simple_animal/hostile/wolf/alpha{
 	desc = "The Rottweiler is a robust dog breed of great strength descended from the mastiffs.This one smells of beans and sunflowers.";
 	faction = list("neutral");
+	health = 200;
 	icon_dead = "rottweiler_dead";
 	icon_living = "rottweiler";
 	icon_state = "rottweiler";
-	name = "Sunflower";
-	health = 200
+	name = "Sunflower"
 	},
 /obj/machinery/light/small{
 	dir = 1;
@@ -9055,6 +9079,9 @@
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
+/area/f13/building)
+"dFg" = (
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "dFs" = (
 /obj/structure/window/fulltile/house{
@@ -9682,6 +9709,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"dUM" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "Legion"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "dUS" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -10087,10 +10121,10 @@
 	},
 /area/f13/building)
 "ebv" = (
-/obj/structure/table/reinforced,
-/obj/item/ammo_box/shotgun/bean,
-/obj/effect/turf_decal/stripes/white/box,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/obj/structure/table,
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
 /area/f13/ncr)
 "ebx" = (
 /turf/open/indestructible/ground/outside/savannah/topleft,
@@ -10184,6 +10218,15 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/wasteland)
+"edx" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Holding Facility";
+	req_access_txt = "121"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
+/area/f13/ncr)
 "edy" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/road{
@@ -15944,6 +15987,13 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/brotherhood/surface)
+"gqf" = (
+/obj/structure/barricade/wooden,
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "gqy" = (
 /obj/structure/chair/f13chair1{
 	dir = 8
@@ -16291,6 +16341,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"gvk" = (
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "gvm" = (
 /obj/structure/wreck/trash/two_barrels{
 	max_integrity = 1000
@@ -16811,6 +16865,12 @@
 	},
 /turf/open/indestructible/ground/outside/savannah/bottomright,
 /area/f13/building)
+"gDu" = (
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "gDL" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/inside/mountain,
@@ -17017,6 +17077,9 @@
 /obj/effect/decal/fakelattice{
 	density = 0;
 	pixel_x = 17
+	},
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
 	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
@@ -17245,6 +17308,10 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
+"gOA" = (
+/obj/effect/landmark/start/f13/ncrmp,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "gOC" = (
 /obj/structure/barricade/wooden,
 /turf/closed/indestructible/rock{
@@ -20449,6 +20516,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
+"hXf" = (
+/obj/effect/decal/fakelattice{
+	pixel_x = -17
+	},
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "hXi" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindowvertical"
@@ -20735,6 +20808,13 @@
 	color = "000000"
 	},
 /turf/open/floor/wood,
+/area/f13/building)
+"iaV" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "oasisdb"
+	},
+/turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "iaX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -21315,6 +21395,17 @@
 	icon_state = "housewood3-broken"
 	},
 /area/f13/clinic)
+"ioF" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland)
 "ioH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -22671,6 +22762,13 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"iPG" = (
+/obj/effect/turf_decal/caution{
+	dir = 4;
+	icon_state = "caution"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "iPS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/f13/carpet{
@@ -26242,6 +26340,8 @@
 "kiC" = (
 /obj/structure/closet/crate/large,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/plastic/fifty,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kiH" = (
@@ -26372,6 +26472,13 @@
 /obj/item/lighter/gold,
 /turf/open/floor/carpet/royalblack,
 /area/f13/ncr)
+"klv" = (
+/obj/structure/flora/tree/joshua,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "klA" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
@@ -28193,6 +28300,13 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
+"lcc" = (
+/obj/effect/decal/fakelattice{
+	pixel_x = -17
+	},
+/obj/effect/decal/fakelattice,
+/turf/open/indestructible/ground/outside/ruins,
+/area/f13/building)
 "lcm" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8"
@@ -28789,6 +28903,13 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"lnP" = (
+/obj/structure/barricade/wooden,
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/wood,
+/area/f13/legion)
 "lnZ" = (
 /obj/structure/statue/sandstone/mars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -29444,6 +29565,12 @@
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"lDq" = (
+/obj/structure/reagent_dispensers/barrel/three,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/f13/wasteland)
 "lDx" = (
 /obj/structure/fence/corner/wooden{
 	dir = 8
@@ -30311,6 +30438,13 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/village)
+"lUT" = (
+/obj/structure/table,
+/obj/item/flashlight/lantern,
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
+/area/f13/ncr)
 "lUZ" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 8
@@ -33951,7 +34085,6 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
 	},
-/obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
 "nnH" = (
@@ -35949,6 +36082,12 @@
 	},
 /turf/open/floor/wood/f13,
 /area/f13/village)
+"odQ" = (
+/obj/structure/stairs/east{
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "odV" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindow"
@@ -36061,6 +36200,15 @@
 /obj/item/seeds/soya,
 /obj/item/seeds/soya,
 /turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland)
+"ogR" = (
+/obj/structure/wreck/car/bike{
+	density = 0;
+	layer = 3.5;
+	pixel_x = -6;
+	pixel_y = -6
+	},
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "ogZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36231,13 +36379,11 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "oks" = (
-/obj/structure/wreck/car/bike{
-	density = 0;
-	layer = 3.5;
-	pixel_x = -6;
-	pixel_y = -6
+/obj/structure/flora/tree/joshua,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
 	},
-/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "oku" = (
 /obj/structure/table/wood/settler,
@@ -37459,6 +37605,12 @@
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/carpet/red,
 /area/f13/legion)
+"oJc" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "oJm" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -40929,6 +41081,13 @@
 /obj/item/restraints/legcuffs/bola,
 /turf/open/floor/plating,
 /area/f13/tunnel)
+"qgQ" = (
+/obj/structure/simple_door/metal/fence{
+	dir = 8;
+	icon_state = "fence"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "qgZ" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -40975,6 +41134,12 @@
 	icon_state = "hydrofloor"
 	},
 /area/f13/building)
+"qie" = (
+/obj/effect/turf_decal/caution,
+/turf/open/floor/plasteel/f13{
+	icon_state = "plating"
+	},
+/area/f13/ncr)
 "qij" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/processor/chopping_block,
@@ -46221,6 +46386,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/pill/patch/bitterdrink,
 /obj/item/reagent_containers/pill/patch/bitterdrink,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "sqA" = (
@@ -46538,6 +46704,9 @@
 /area/f13/building)
 "sxu" = (
 /obj/effect/decal/fakelattice,
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
 /turf/closed/wall/f13/store,
 /area/f13/building)
 "sxv" = (
@@ -46858,6 +47027,11 @@
 	dir = 5
 	},
 /area/f13/village)
+"sFc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ncrmp,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "sFh" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt{
@@ -47439,6 +47613,15 @@
 	icon_state = "housewood2-broken"
 	},
 /area/f13/legion)
+"sQg" = (
+/obj/structure/reagent_dispensers/barrel/three,
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2"
+	},
+/area/f13/wasteland)
 "sQk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt{
@@ -48279,25 +48462,36 @@
 	pixel_x = -8;
 	pixel_y = 7
 	},
-/obj/structure/reagent_dispensers/barrel/three,
 /obj/effect/decal/fakelattice{
 	pixel_x = -17
 	},
 /obj/effect/decal/fakelattice,
+/obj/effect/decal/fakelattice{
+	pixel_x = -17
+	},
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
 "tin" = (
-/obj/structure/bonfire,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
+/obj/structure/table/reinforced,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/effect/decal/fakelattice,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/wasteland)
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "tis" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -48447,6 +48641,14 @@
 /area/f13/tunnel)
 "tkS" = (
 /obj/structure/wreck/trash/five_tires,
+/obj/structure/debris/v3,
+/obj/effect/decal/fakelattice{
+	pixel_x = -17
+	},
+/obj/effect/decal/fakelattice,
+/obj/structure/fence{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
@@ -52124,6 +52326,12 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
+"uHG" = (
+/obj/structure/decoration/warning{
+	name = "WARNING: NO MANS LAND AHEAD PVP ZONE"
+	},
+/turf/closed/wall/f13/store,
+/area/f13/building)
 "uHH" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -64782,9 +64990,9 @@ ktB
 (16,1,1) = {"
 ktB
 wvV
-arU
+tin
 jQd
-xGv
+gOA
 jQd
 jQd
 hvh
@@ -65041,7 +65249,7 @@ ktB
 wvV
 xGv
 xGv
-jQd
+sFc
 xGv
 xGv
 hAm
@@ -65811,9 +66019,9 @@ ktB
 ktB
 wvV
 afr
-cnt
+qwe
 ebv
-sBf
+dcK
 fFO
 ees
 ees
@@ -66066,11 +66274,11 @@ ktB
 "}
 (21,1,1) = {"
 ktB
-wvV
+cnt
 auH
-xGv
-xGv
-eJN
+qie
+qwe
+edx
 dKW
 hJI
 cpK
@@ -66325,9 +66533,9 @@ ktB
 ktB
 wvV
 afr
+qwe
+lUT
 cnt
-ebv
-wvV
 fLc
 ybI
 ybI
@@ -69496,7 +69704,7 @@ fyf
 fyf
 fyf
 nlO
-mfD
+oks
 mfD
 xGH
 mvv
@@ -72569,7 +72777,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+bKy
 fyf
 rtR
 fyf
@@ -74161,7 +74369,7 @@ vDe
 xKi
 bKy
 hAC
-oks
+fyf
 fyf
 nlO
 mfD
@@ -74416,9 +74624,9 @@ unW
 nJr
 vJP
 xKi
-fyf
-fyf
 iVQ
+hAC
+hAC
 keK
 vAe
 jxH
@@ -74673,9 +74881,9 @@ unW
 qCV
 mRH
 xKi
-qTY
 fyf
-fyf
+odQ
+ogR
 pEv
 cqG
 kKk
@@ -75664,7 +75872,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+qTY
 fyf
 fyf
 fyf
@@ -75912,7 +76120,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+qTY
 fyf
 fyf
 fyf
@@ -76692,7 +76900,7 @@ fyf
 tBN
 mvv
 doX
-cWG
+klv
 wDc
 fyf
 fyf
@@ -79030,7 +79238,7 @@ qTY
 fyf
 uxC
 sVO
-fyf
+uey
 fyf
 tBN
 bpD
@@ -79053,8 +79261,8 @@ fyf
 nZL
 fyf
 tBN
+mvv
 bpD
-fyf
 fyf
 uey
 fyf
@@ -79310,8 +79518,8 @@ fyf
 hLi
 dzE
 daU
+mvv
 bpD
-fyf
 fyf
 fyf
 fyf
@@ -79567,8 +79775,8 @@ qOV
 fbH
 daU
 mvv
-doX
-wDc
+mvv
+bpD
 qTY
 fyf
 fyf
@@ -80298,7 +80506,7 @@ hDE
 aYK
 fyf
 fyf
-fyf
+qTY
 fyf
 fyf
 fyf
@@ -80554,7 +80762,7 @@ pJd
 uYp
 qFk
 fyf
-fyf
+uey
 fyf
 fyf
 fyf
@@ -80854,7 +81062,7 @@ hAC
 fyf
 fyf
 fyf
-fyf
+uey
 fyf
 fyf
 fyf
@@ -81106,7 +81314,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+uey
 uey
 fyf
 fyf
@@ -81626,7 +81834,7 @@ uqa
 uqa
 fyf
 thG
-fyf
+ptP
 fyf
 fyf
 fyf
@@ -81842,8 +82050,8 @@ fyf
 fyf
 fyf
 fyf
-fyf
-fyf
+bKy
+hAC
 fyf
 fyf
 fyf
@@ -81858,7 +82066,7 @@ uRJ
 aji
 fyf
 upX
-fyf
+uey
 fyf
 fyf
 tBN
@@ -82099,9 +82307,9 @@ cWG
 cWG
 cWG
 wDc
+uey
 fyf
-fyf
-fyf
+uey
 fyf
 upX
 gjP
@@ -82339,7 +82547,7 @@ fyf
 fyf
 fyf
 fyf
-fyf
+qTY
 fyf
 fyf
 fyf
@@ -82615,7 +82823,7 @@ mfD
 hCg
 fyf
 fyf
-fyf
+qTY
 fyf
 fyf
 dpx
@@ -82627,7 +82835,7 @@ uJd
 uRJ
 aji
 fyf
-fyf
+uey
 fyf
 fyf
 fyf
@@ -83115,7 +83323,7 @@ fyf
 fyf
 fyf
 uey
-fyf
+bKy
 fyf
 fyf
 fyf
@@ -83143,7 +83351,7 @@ gjP
 fyf
 fyf
 fyf
-fyf
+uey
 fyf
 fyf
 xHN
@@ -84444,7 +84652,7 @@ iRy
 chb
 tKZ
 fyf
-fyf
+uey
 uey
 fyf
 gts
@@ -85984,7 +86192,7 @@ fyf
 fyf
 sqA
 fyf
-fyf
+uey
 fyf
 fyf
 fyf
@@ -89612,9 +89820,9 @@ qBu
 uqa
 gts
 gts
-sBk
+sQg
 dkg
-cpK
+upu
 cpK
 dkg
 cah
@@ -89867,8 +90075,8 @@ aRl
 oLp
 ihi
 uqa
-gts
-tQl
+uHG
+hXf
 tik
 nnG
 cpK
@@ -90125,10 +90333,10 @@ ita
 qHe
 uqa
 gIH
-sxT
-tin
+iaV
+plO
 rtl
-cpK
+faW
 cpK
 qji
 uCW
@@ -90382,9 +90590,9 @@ oWU
 mzs
 gxW
 sxu
-tQl
-koD
-cpK
+dFg
+ioF
+faW
 cpK
 ulz
 uCW
@@ -90639,9 +90847,9 @@ lGD
 dCV
 xft
 szi
-sxT
+lcc
 tkS
-cpK
+oJc
 cpK
 ulz
 iwa
@@ -90897,8 +91105,8 @@ dCV
 dCV
 gts
 gts
-ybI
-ybI
+aXH
+lDq
 uda
 jps
 jps
@@ -112291,10 +112499,10 @@ hom
 hom
 ktB
 gcK
-ktB
-gcK
-gcK
-gcK
+mTd
+gDu
+mTd
+gDu
 hom
 xBC
 xEh
@@ -112549,9 +112757,9 @@ ury
 sdc
 opQ
 hom
-ktB
-gcK
-ktB
+vzG
+dUM
+vzG
 hom
 vsO
 oXV
@@ -112806,9 +113014,9 @@ wMc
 hbO
 cmm
 hom
-ktB
-gcK
-ktB
+unp
+iPG
+gvk
 hom
 uCR
 oXV
@@ -113063,9 +113271,9 @@ hbO
 hbO
 mRZ
 hom
-ktB
-gcK
-gcK
+lwj
+ggK
+ggK
 hom
 nLe
 oXV
@@ -113320,9 +113528,9 @@ hbO
 hbO
 jhm
 hom
-gcK
-gcK
-cRh
+gqf
+qgQ
+lnP
 hom
 hom
 nZV
@@ -113578,7 +113786,7 @@ hPp
 aPQ
 hom
 gcK
-isv
+tUc
 tUc
 mtK
 mUr
