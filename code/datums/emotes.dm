@@ -18,6 +18,20 @@
 	var/stat_allowed = CONSCIOUS
 	var/static/list/emote_list = list()
 	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
+	/// Sound to play when emote is called.
+	var/sound
+	/// Volume of the sound we play
+	var/sound_volume = 50
+	/// If the sound varies in pitch, set to true
+	var/sound_vary = FALSE
+	/// Can only play sound when forced
+	var/only_forced_audio = FALSE
+	/// The cooldown between the uses of the emote.
+	var/cooldown = 0.8 SECONDS
+	/// Does this message have a message that can be modified by the user?
+	var/can_message_change = FALSE
+	/// How long is the cooldown on the audio of the emote, if it has one?
+	var/audio_cooldown = 2 SECONDS
 
 /datum/emote/New()
 	if(key_third_person)
@@ -54,6 +68,11 @@
 		return
 
 	user.log_message(msg, LOG_EMOTE)
+
+	var/tmp_sound = get_sound(user)
+	if(tmp_sound && should_play_sound(user, intentional) && !TIMER_COOLDOWN_CHECK(user, type))
+		TIMER_COOLDOWN_START(user, type, audio_cooldown)
+		playsound(user, tmp_sound, sound_volume, sound_vary)
 
 	if(user.ckey)
 		user.emote_for_ghost_sight("<b>[user]</b> [msg]")
@@ -149,13 +168,27 @@
 		if(HAS_TRAIT(L, TRAIT_EMOTEMUTE))
 			return FALSE
 
-/datum/emote/sound
-	var/sound //Sound to play when emote is called
-	var/vary = FALSE	//used for the honk borg emote
-	var/volume = 50
-	mob_type_allowed_typecache = list(/mob/living/brain, /mob/living/silicon)
+/**
+ * To get the sound that the emote plays, for special sound interactions depending on the mob.
+ *
+ * Arguments:
+ * * user - Person that is trying to send the emote.
+ *
+ * Returns the sound that will be made while sending the emote.
+ */
+/datum/emote/proc/get_sound(mob/living/user)
+	return pick(sound) //by default just return this var.
 
-/datum/emote/sound/run_emote(mob/user, params)
-	. = ..()
-	if(.)
-		playsound(user.loc, sound, volume, vary)
+/**
+ * Check to see if the user should play a sound when performing the emote.
+ *
+ * Arguments:
+ * * user - Person that is doing the emote.
+ * * intentional - Bool that says whether the emote was forced (FALSE) or not (TRUE).
+ *
+ * Returns a bool about whether or not the user should play a sound when performing the emote.
+ */
+/datum/emote/proc/should_play_sound(mob/user, intentional = FALSE)
+	if(only_forced_audio && intentional)
+		return FALSE
+	return TRUE

@@ -214,51 +214,48 @@
 	key_third_person = "laughs"
 	message = "laughs."
 
-/datum/emote/living/audio_emote/laugh/run_emote(mob/user, params)
+/datum/emote/living/audio_emote/laugh/get_sound(mob/living/user)
 	. = ..()
-	if(. && iscarbon(user)) //Citadel Edit because this is hilarious
-		var/mob/living/carbon/C = user
-		if(iscatperson(C))	//we ask for is cat first because they're a subtype that tests true for ishumanbasic because HERESY
-			playsound(C, pick('sound/voice/catpeople/nyahaha1.ogg',
-			'sound/voice/catpeople/nyahaha2.ogg',
-			'sound/voice/catpeople/nyaha.ogg',
-			'sound/voice/catpeople/nyahehe.ogg'),
-			50, 1)
-			return
-		else if(isinsect(C))
-			playsound(C, 'sound/voice/moth/mothlaugh.ogg', 50, 1)
-		else if(isjellyperson(C))
-			var/mob/living/carbon/human/H = C
-			if(H.dna.features["mam_ears"] == "Cat" || H.dna.features["mam_ears"] == "Cat, Big") //slime have cat ear. slime go nya.
-				playsound(C, pick('sound/voice/jelly/nyahaha1.ogg',
-				'sound/voice/jelly/nyahaha2.ogg',
-				'sound/voice/jelly/nyaha.ogg',
-				'sound/voice/jelly/nyahehe.ogg'),
-				50, 1)
-				return
+	if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		//power armor laugh track.... spooky
+		if(istype(human_user.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/f13/power_armor))
+			return 'sound/voice/robolaugh.ogg'
+		if(iscatperson(human_user))	//we ask for is cat first because they're a subtype that tests true for ishumanbasic because HERESY
+			return pick('sound/voice/catpeople/nyahaha1.ogg',
+						'sound/voice/catpeople/nyahaha2.ogg',
+						'sound/voice/catpeople/nyaha.ogg',
+						'sound/voice/catpeople/nyahehe.ogg')
+		else if(isinsect(human_user))
+			return 'sound/voice/moth/mothlaugh.ogg'
+		else if(isjellyperson(human_user))
+			//slime have cat ear. slime go nya.
+			if(human_user.dna.features["mam_ears"] == "Cat" || human_user.dna.features["mam_ears"] == "Cat, Big")
+				return pick('sound/voice/jelly/nyahaha1.ogg',
+							'sound/voice/jelly/nyahaha2.ogg',
+							'sound/voice/jelly/nyaha.ogg',
+							'sound/voice/jelly/nyahehe.ogg')
 			else if(user.gender == FEMALE)
-				playsound(C, 'sound/voice/jelly/womanlaugh.ogg', 50, 1)
-				return
+				return 'sound/voice/jelly/womanlaugh.ogg'
 			else
-				playsound(C, pick('sound/voice/jelly/manlaugh1.ogg', 'sound/voice/jelly/manlaugh2.ogg'), 50, 1)
-				return
-		else if(ishumanbasic(C))
+				return pick('sound/voice/jelly/manlaugh1.ogg', 'sound/voice/jelly/manlaugh2.ogg')
+		else
 			if(user.gender == FEMALE)
-				playsound(C, 'sound/voice/human/womanlaugh.ogg', 50, 1)
+				return 'sound/voice/human/womanlaugh.ogg'
 			else
-				playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg'), 50, 1)
+				return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
 
 /datum/emote/living/audio_emote/chitter
 	key = "chitter"
 	key_third_person = "chitters"
 	message = "chitters."
 
-/datum/emote/living/audio_emote/chitter/run_emote(mob/user, params)
+/datum/emote/living/audio_emote/chitter/get_sound(mob/living/user)
 	. = ..()
-	if(. && iscarbon(user)) //Citadel Edit because this is hilarious
-		var/mob/living/carbon/C = user
-		if(isinsect(C))
-			playsound(C, 'sound/voice/moth/mothchitter.ogg', 50, 1)
+	if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		if(isinsect(human_user))
+			return 'sound/voice/moth/mothchitter.ogg'
 
 /datum/emote/living/look
 	key = "look"
@@ -390,6 +387,11 @@
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	restraint_check = FALSE
+	sound_volume = 80
+	sound_vary = FALSE
+
+/datum/emote/living/surrender/get_sound(mob/living/user)
+	return 'sound/f13effects/surrender1.ogg'
 
 /datum/emote/living/surrender/run_emote(mob/user, params)
 	. = ..()
@@ -397,7 +399,6 @@
 		var/mob/living/L = user
 		L.Knockdown(200)
 		L.Paralyze(200)
-		playsound(L, 'sound/f13effects/surrender1.ogg', 80, 1)
 
 /datum/emote/living/sway
 	key = "sway"
@@ -514,7 +515,7 @@
 	to_chat(user, message)
 
 /* Fortuna edit: beep disabled
-/datum/emote/sound/beep
+/datum/emote/beep
 	key = "beep"
 	key_third_person = "beeps"
 	message = "beeps."

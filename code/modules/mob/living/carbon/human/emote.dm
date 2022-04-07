@@ -161,31 +161,31 @@
 		var/turf/T = loc
 		T.Entered(src)
 
-/datum/emote/sound/human
+/datum/emote/human
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 
 /* Fortuna edit: robot sound emotes disabled
-/datum/emote/sound/human/buzz
+/datum/emote/human/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
 	message = "buzzes."
 	message_param = "buzzes at %t."
 	sound = 'sound/machines/buzz-sigh.ogg'
 
-/datum/emote/sound/human/buzz2
+/datum/emote/human/buzz2
 	key = "buzz2"
 	message = "buzzes twice."
 	sound = 'sound/machines/buzz-two.ogg'
 
-/datum/emote/sound/human/ping
+/datum/emote/human/ping
 	key = "ping"
 	key_third_person = "pings"
 	message = "pings."
 	message_param = "pings at %t."
 	sound = 'sound/machines/ping.ogg'
 
-/datum/emote/sound/human/chime
+/datum/emote/human/chime
 	key = "chime"
 	key_third_person = "chimes"
 	message = "chimes."
