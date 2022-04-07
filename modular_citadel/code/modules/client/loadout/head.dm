@@ -268,6 +268,7 @@
 	name = "NCR sapper beret"
 	path = /obj/item/clothing/head/beret/ncr_sapper
 	cost = 4
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Combat Engineer",
 							"NCR Off-Duty"
@@ -276,6 +277,7 @@
 /datum/gear/head/ncr_cap
 	name = "NCR garrison cap"
 	path = /obj/item/clothing/head/f13/ncr_cap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -295,6 +297,7 @@
 /datum/gear/head/steelpot_goggles
 	name = "NCR storm helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_goggles
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -313,6 +316,7 @@
 /datum/gear/head/steelpot_gambler
 	name = "NCR gambler helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_gambler
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -331,6 +335,7 @@
 datum/gear/head/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	path = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -351,6 +356,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/ncr_slouch
 	name = "NCR slouch hat"
 	path = /obj/item/clothing/head/f13/ncr_slouch
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -371,6 +377,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/ncr_flapcap
 	name = "NCR field cap"
 	path = /obj/item/clothing/head/f13/ncr_flapcap
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -391,6 +398,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/ncr_campaign
 	name = "NCR campaign hat"
 	path = /obj/item/clothing/head/f13/ncr_campaign
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 4
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Sergeant",
@@ -400,6 +408,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/khan_bandana
 	name = "Great Khan bandana"
 	path = /obj/item/clothing/head/helmet/f13/khan/bandana
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "KHAN"
 	restricted_roles = list("Great Khan")
@@ -407,6 +416,7 @@ datum/gear/head/steelpot_bandolier
 /datum/gear/head/khan_furtrimmed
 	name = "Great Khan fur-trimmed helmet"
 	path = /obj/item/clothing/head/helmet/f13/khan/pelt
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 2
 	restricted_desc = "KHAN"
 	restricted_roles = list("Great Khan")

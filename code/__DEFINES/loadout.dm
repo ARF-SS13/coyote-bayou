@@ -32,7 +32,7 @@
 //uniform
 #define LOADOUT_CATEGORY_UNIFORM 			"Uniform" //there's so many types of uniform it's best to have lots of categories
 #define LOADOUT_SUBCATEGORY_UNIFORM_GENERAL "General"
-#define LOADOUT_SUBCATEGORY_UNIFORM_JOBS 	"Jobs"
+#define LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS  	"Factions"
 #define LOADOUT_SUBCATEGORY_UNIFORM_SUITS	"Suits"
 #define LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS	"Skirts"
 #define LOADOUT_SUBCATEGORY_UNIFORM_DRESSES	"Dresses"
@@ -46,12 +46,12 @@
 #define LOADOUT_SUBCATEGORY_SUIT_GENERAL 	"General"
 #define LOADOUT_SUBCATEGORY_SUIT_COATS 		"Coats"
 #define LOADOUT_SUBCATEGORY_SUIT_JACKETS 	"Jackets"
-#define LOADOUT_SUBCATEGORY_SUIT_JOBS 		"Jobs"
+#define LOADOUT_SUBCATEGORY_SUIT_FACTIONS		"Factions"
 
 //head
 #define LOADOUT_CATEGORY_HEAD 				"Head"
 #define LOADOUT_SUBCATEGORY_HEAD_GENERAL 	"General"
-#define LOADOUT_SUBCATEGORY_HEAD_JOBS 		"Jobs"
+#define LOADOUT_SUBCATEGORY_HEAD_FACTIONS 		"Factions"
 
 //shoes
 #define LOADOUT_CATEGORY_SHOES 		"Shoes"

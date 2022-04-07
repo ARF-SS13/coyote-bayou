@@ -561,6 +561,7 @@
 /datum/gear/uniform/ncr_fatigue_pants
 	name = "NCR fatigue pants"
 	path = /obj/item/clothing/under/f13/ncr/pants
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -582,6 +583,7 @@
 /datum/gear/uniform/ncr_shorts
 	name = "NCR fatigue shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -603,6 +605,7 @@
 /datum/gear/uniform/sniper
 	name = "NCR sniper outfit"
 	path = /obj/item/clothing/under/f13/ncr/sniper
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "Sergeants, Corporals"
 	restricted_roles = list("NCR Corporal",
 							"NCR Sergeant"
@@ -611,6 +614,7 @@
 /datum/gear/uniform/ranger
 	name = "ranger outfit"
 	path = /obj/item/clothing/under/f13/ranger
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "Rangers"
 	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger")
 

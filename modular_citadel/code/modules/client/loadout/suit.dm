@@ -118,12 +118,13 @@
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
 	path = /obj/item/clothing/suit/armor/f13/ncrcfjacket
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/f13/utilityvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
@@ -147,7 +148,7 @@
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 5
 	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
@@ -158,7 +159,7 @@
 /datum/gear/suit/scribecoat
 	name = "Fieldscribe coat"
 	path = /obj/item/clothing/suit/toggle/labcoat/scribecoat
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 5
 	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
@@ -169,7 +170,7 @@
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
 	path = /obj/item/clothing/suit/armor/f13/town
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 5
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
@@ -188,7 +189,7 @@
 /datum/gear/suit/deputyvest
 	name = "OPD armor vest"
 	path = /obj/item/clothing/suit/armor/vest/oasis
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 5
 	restricted_desc = "Oasis Police"
 	restricted_roles = list("Sheriff",
@@ -199,7 +200,7 @@
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
 	path = /obj/item/clothing/suit/hazardvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JOBS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 2
 	restricted_roles = list("Citizen",
 							"Prospector",
