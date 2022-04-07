@@ -6026,11 +6026,7 @@
 	},
 /area/f13/caves)
 "dmt" = (
-/obj/machinery/suit_storage_unit/enclave{
-	locked = 1;
-	name = "Emergency Power Armor Storage Unit";
-	req_one_access_txt = "134"
-	},
+/obj/structure/closet/cabinet,
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
 "dmI" = (
@@ -13258,7 +13254,6 @@
 "hgW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -14337,8 +14332,7 @@
 /area/f13/brotherhood/offices1st)
 "hTw" = (
 /obj/effect/turf_decal/stripes/line{
-	dir = 1;
-	icon_state = "warningline"
+	dir = 1
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelrusty"
@@ -21770,7 +21764,6 @@
 /area/f13/clinic)
 "mFA" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/floor/f13/wood,
@@ -22619,7 +22612,6 @@
 /area/f13/brotherhood/leisure)
 "niF" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/r_wall/rust,
@@ -25934,8 +25926,7 @@
 /area/f13/brotherhood/rnd)
 "ppS" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube"
+	dir = 4
 	},
 /turf/open/floor/plasteel/caution{
 	dir = 4
@@ -29139,8 +29130,7 @@
 /area/f13/brotherhood/reactor)
 "rkv" = (
 /obj/machinery/light{
-	dir = 4;
-	icon_state = "tube"
+	dir = 4
 	},
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/caution{
@@ -29760,8 +29750,7 @@
 /area/f13/brotherhood/offices1st)
 "rzd" = (
 /obj/effect/turf_decal/stripes/line{
-	dir = 1;
-	icon_state = "warningline"
+	dir = 1
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/structure/reagent_dispensers/barrel/dangerous,
@@ -32857,8 +32846,7 @@
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/stripes/line{
-	dir = 1;
-	icon_state = "warningline"
+	dir = 1
 	},
 /obj/structure/nest/supermutant,
 /turf/open/indestructible/ground/outside/ruins,
@@ -38918,7 +38906,6 @@
 /area/f13/caves)
 "xnl" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -40114,7 +40101,6 @@
 "xZl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/dirt,

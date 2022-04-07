@@ -890,7 +890,7 @@
 	icon_state = "armor_enclave_officer"
 	item_state = "armor_enclave_officer"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 50)
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
 /obj/item/clothing/suit/armor/f13/enclavetrenchcoat/Initialize() //HQ parts reinforcement
 	. = ..()
