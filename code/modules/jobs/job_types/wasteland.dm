@@ -81,9 +81,9 @@
 	gloves = 		/obj/item/clothing/gloves/f13/military
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
-	head =			/obj/item/clothing/head/helmet/f13/tesla
-	suit = 			/obj/item/clothing/suit/armor/tesla
-	suit_store = 	/obj/item/minigunpack
+	head =			/obj/item/clothing/head/helmet/f13/power_armor/advanced
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	r_hand =        /obj/item/minigunpack
 
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 3,
@@ -98,10 +98,11 @@
 	..()
 	if(visualsOnly)
 		return
+	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-
-
-
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
+		H.mind.AddSpell(S)
 
 
 
