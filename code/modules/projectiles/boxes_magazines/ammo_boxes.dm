@@ -460,6 +460,35 @@
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
 
+/obj/item/ammo_box/m473/rubber
+	name = "ammo box (4.73mm less-than-lethal)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/rubber
+
+/obj/item/ammo_box/m473/incendiary
+	name = "ammo box (4.73mm incendiary)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/incendiary
+
+/obj/item/ammo_box/m473/uraniumtipped
+	name = "ammo box (4.73mm uranium-tipped)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/uraniumtipped
+
+/obj/item/ammo_box/m473/dumdum
+	name = "ammo box (4.73mm flat-nose)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/dumdum
+
+/obj/item/ammo_box/m473/explosive
+	name = "ammo box (4.73mm explosive)"
+	desc = "Explosive caseless rounds. Very safe."
+	ammo_type = /obj/item/ammo_casing/caseless/g11/explosive
+
+/obj/item/ammo_box/m473/shock
+	name = "ammo box (4.73mm ESD)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/shock
+
+/obj/item/ammo_box/m473/hv
+	name = "ammo box (4.73mm high-velocity)"
+	ammo_type = /obj/item/ammo_casing/caseless/g11/hv
+
 /obj/item/ammo_box/lasmusket
 	name = "Battery box (Laser musket)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'

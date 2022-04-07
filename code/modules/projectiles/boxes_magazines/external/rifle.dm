@@ -164,6 +164,9 @@
 	icon_state = "473small"
 	max_ammo = 20
 
+/obj/item/ammo_box/magazine/m473/small/empty
+	start_empty = 1
+
 /obj/item/ammo_box/magazine/m2mm
 	name = "2mm electromagnetic magazine"
 	icon_state = "2mm"

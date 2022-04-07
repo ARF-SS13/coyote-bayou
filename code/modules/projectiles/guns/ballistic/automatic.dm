@@ -605,22 +605,27 @@
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"][stock ? "" : "-f"]"
 
 
-//WT-550								4.7mm, 20 round magazine, low damage/low AP
+//WT-550								4.7mm, 20 round magazine
 /obj/item/gun/ballistic/automatic/wt550
-	name = "Prototype Carbine"
-	desc = "A carbine made by vault-tec, chambered in a curious caseless round and designed to fire a multitude of bullets. It has 'WT-550' on the side. This one looks like it was repaired by the Oasis citizenry."
-	item_state = "wt550"
+	name = "WT-550"
+	desc = "A compact PDW derived from the G11, firing the same 4.73mm rounds."
+	item_state = "m90"
+	icon_state = "WT550"
 	mag_type = /obj/item/ammo_box/magazine/m473/small
-	semi_auto = TRUE
 	burst_size = 1
-	extra_damage = 15
+	is_automatic = TRUE
+	automatic = TRUE
+	extra_damage = 20
+	autofire_shot_delay = 1.75
 	extra_penetration = 0.2
+	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
-	spread = 0 //low-recoil + forward grip
-	fire_delay = 3
-
-
+	weapon_weight = WEAPON_HEAVY
+	spread = 0
+	fire_delay = 1
+	can_bayonet = TRUE
+	knife_x_offset = 25
+	knife_y_offset = 12
 
 
 ////////////////////
@@ -1275,28 +1280,70 @@
 //H&K G11				Keywords: 4.73mm, Automatic, 50 round magazine
 /obj/item/gun/ballistic/automatic/g11
 	name = "g11"
-	desc = "This experimental german gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
+	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
 	icon_state = "g11"
 	item_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/m473
-	extra_damage = 23
-	fire_delay = 2.5
+	burst_size = 1
+	extra_damage = 22.5
+	fire_delay = 2
 	is_automatic = TRUE
-	automatic = 1
-	autofire_shot_delay = 2.25
-	burst_shot_delay = 1.5
+	automatic = FALSE
 	extra_penetration = 0.1
-	extra_damage = 3
+	autofire_shot_delay = 1.75
+	burst_shot_delay = 0.5
 	can_attachments = TRUE
-	can_automatic = TRUE
 	semi_auto = TRUE
 	can_scope = FALSE
-	spread = 8
+	spread = 0
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	select = 0
 
+/obj/item/gun/ballistic/automatic/g11/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/toggle_firemode))
+		burst_select()
+	else
+		return ..()
 
+/obj/item/gun/ballistic/automatic/g11/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			if(burst_improvement)
+				burst_size = 5
+			else
+				burst_size = 3
+			automatic = FALSE
+			if(recoil_decrease)
+				burst_spread = 5.5
+			else
+				burst_spread = 7.5
+			recoil = 0.25
+			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
+		if(1)
+			select += 1
+			burst_size = 1
+			automatic = TRUE
+			if(recoil_decrease)
+				burst_spread = 8.5
+			else
+				burst_spread = 12.5
+			recoil = 0.5
+			to_chat(user, "<span class='notice'>You switch to full-auto.</span>")
+		if(2)
+			select = 0
+			burst_size = 1
+			automatic = FALSE
+			spread = 0
+			recoil = 0
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 ////////////////
 //MACHINE-GUNS//

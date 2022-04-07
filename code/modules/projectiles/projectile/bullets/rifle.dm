@@ -205,8 +205,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	bare_wound_bonus = -10
 
 /obj/item/projectile/bullet/a473/rubber
-	name = "4.73 polyurethane bullet "
-	damage = 5
+	name = "4.73 polyurethane bullet"
+	damage = -20
 	stamina = 18
 	sharpness = SHARP_NONE
 	armour_penetration = 0.05
@@ -215,31 +215,63 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a473/incendiary
 	name = "4.73 tracer bullet"
-	damage = 15
+	damage = -8
 	armour_penetration = 0.1
 	var/fire_stacks = 3
 	zone_accuracy_factor = 100
 
+/obj/item/projectile/bullet/a473/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
-	damage = 15
+	damage = -10
 	armour_penetration = 0.3
 	irradiate = 300
 
 /obj/item/projectile/bullet/a473/dumdum
 	name = "4.73 flat-nose bullet"
-	damage = 20
-	armour_penetration = 0.1
+	damage = 5
+	supereffective_damage = 10
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot")
+	armour_penetration = -0.2
 	wound_bonus = 20
 	bare_wound_bonus = 30
 
 /obj/item/projectile/bullet/a473/explosive
 	name = "4.73 explosive bullet"
+	damage = -10
 
 /obj/item/projectile/bullet/a473/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, 0, 0, 1, 0, adminlog = FALSE, flame_range = 1)
+	if(prob(10))
+		explosion(target, 0, 0, 1, 1, adminlog = FALSE, flame_range = 0)
+	else
+		explosion(target, 0, 0, 0, 1, adminlog = FALSE, flame_range = 1) //no boom, just flame and flash
 
+/obj/item/projectile/bullet/a473/shock
+	name = "4.73mm shock bullet"
+	damage = -12 // -50% damage
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/energy_damage = 4
+
+/obj/item/projectile/bullet/a473/shock/on_hit(atom/target, blocked = FALSE)
+	..()
+	target.emp_act(5)//5 severity is very, very low
+	if(blocked != 100 && isliving(target))
+		var/mob/living/L = target
+		L.electrocute_act(energy_damage, "shock bullet", 1, SHOCK_NOGLOVES | SHOCK_NOSTUN)
+
+/obj/item/projectile/bullet/a473/hv
+	name = "4.73mm highvelocity bullet"
+	damage = -14 //about -60% damage for hitscan
+	hitscan = TRUE
+	wound_bonus = 0
 
 //////////////////////////
 // 5 MM rifle			 //

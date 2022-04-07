@@ -21,6 +21,14 @@
 	name = "Large sunglasses"
 	path = /obj/item/clothing/glasses/sunglasses/big
 
+/datum/gear/glasses/geist_gazers
+	name = "Geist Gazers Glasses"
+	path = /obj/item/clothing/glasses/geist_gazers
+
+/datum/gear/glasses/psychglasses
+	name = "Psych Glasses"
+	path = /obj/item/clothing/glasses/psych
+
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch

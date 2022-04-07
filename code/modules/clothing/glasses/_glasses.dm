@@ -252,11 +252,6 @@
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	dog_fashion = /datum/dog_fashion/head
 
-/obj/item/clothing/glasses/sunglasses/reagent
-	name = "beer goggles"
-	desc = "A pair of sunglasses outfitted with apparatus to scan reagents."
-	clothing_flags = SCAN_REAGENTS
-
 /obj/item/clothing/glasses/sunglasses/garb
 	name = "black gar glasses"
 	desc = "Go beyond impossible and kick reason to the curb!"
@@ -544,6 +539,32 @@
 		add_client_colour(G.glass_colour_type)
 	else
 		remove_client_colour(G.glass_colour_type)
+
+/obj/item/clothing/glasses/sunglasses/reagent
+	name = "beer goggles"
+	icon_state = "sunhudbeer"
+	item_state = "sunhudbeer"
+	desc = "A pair of sunglasses outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion."
+	clothing_flags = SCAN_REAGENTS
+
+/obj/item/clothing/glasses/sunglasses/chemical
+	name = "science glasses"
+	icon_state = "sunhudsci"
+	item_state = "sunhudsci"
+	desc = "A pair of tacky purple sunglasses that allow the wearer to recognize various chemical compounds with only a glance."
+	clothing_flags = SCAN_REAGENTS
+
+/obj/item/clothing/glasses/geist_gazers
+	name = "geist gazers"
+	icon_state = "geist_gazers"
+	item_state = "geist_gazers"
+	glass_colour_type = /datum/client_colour/glass_colour/green
+
+/obj/item/clothing/glasses/psych
+	name = "psych glasses"
+	icon_state = "psych_glasses"
+	item_state = "psych_glasses"
+	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/glasses/debug
 	name = "debug glasses"
