@@ -13117,6 +13117,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/city)
+"fjQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "fjR" = (
 /obj/item/kitchen/knife/butcher,
 /turf/open/floor/f13/wood,
@@ -40397,8 +40403,8 @@
 	id = junglehome;
 	name = "Damp Ladder"
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
 "pWe" = (
 /obj/item/bedsheet/orange,
 /obj/structure/bed/old,
@@ -67435,7 +67441,7 @@ fyf
 tBN
 mvv
 mvv
-pVb
+mvv
 bpD
 fyf
 fyf
@@ -67447,7 +67453,7 @@ gmz
 mTd
 fmY
 vzG
-vzG
+pVb
 gcK
 gcK
 gcK
@@ -107175,7 +107181,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (181,1,1) = {"
@@ -107432,7 +107438,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (182,1,1) = {"
@@ -107689,7 +107695,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (183,1,1) = {"
@@ -107946,7 +107952,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (184,1,1) = {"
@@ -108203,7 +108209,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (185,1,1) = {"
@@ -108460,7 +108466,7 @@ gcK
 gcK
 gcK
 gcK
-uqa
+gcK
 ktB
 "}
 (186,1,1) = {"
@@ -108715,9 +108721,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-rTi
-uqa
+gcK
+gcK
+gcK
 ktB
 "}
 (187,1,1) = {"
@@ -108972,9 +108978,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-pob
-xJz
+gcK
+gcK
+fjQ
 ktB
 "}
 (188,1,1) = {"
@@ -109229,9 +109235,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-pob
-xJz
+gcK
+gcK
+fjQ
 ktB
 "}
 (189,1,1) = {"
@@ -109486,9 +109492,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-nKn
-hHX
+gcK
+gcK
+gcK
 ktB
 "}
 (190,1,1) = {"
@@ -109743,9 +109749,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-pkR
-xJz
+gcK
+gcK
+gcK
 ktB
 "}
 (191,1,1) = {"
@@ -110000,9 +110006,9 @@ gcK
 gcK
 gcK
 gcK
-uqa
-uqa
-uqa
+gcK
+gcK
+gcK
 ktB
 "}
 (192,1,1) = {"
@@ -110257,9 +110263,9 @@ gcK
 gcK
 gcK
 gcK
-fyf
-uqa
-nKn
+gcK
+gcK
+gcK
 ktB
 "}
 (193,1,1) = {"
@@ -110514,9 +110520,9 @@ gcK
 gcK
 gcK
 gcK
-fyf
-uqa
-fYp
+gcK
+gcK
+gcK
 ktB
 "}
 (194,1,1) = {"
@@ -110771,9 +110777,9 @@ gcK
 gcK
 gcK
 gcK
-vzp
-uqa
-mlb
+gcK
+gcK
+gcK
 ktB
 "}
 (195,1,1) = {"
@@ -111028,9 +111034,9 @@ gcK
 gbL
 gbL
 gcK
-fyf
-uqa
-fym
+gcK
+gcK
+gcK
 ktB
 "}
 (196,1,1) = {"
@@ -111285,9 +111291,9 @@ gbL
 gbL
 gcK
 gcK
-fyf
-uqa
-fUR
+gcK
+gcK
+gcK
 ktB
 "}
 (197,1,1) = {"
@@ -111542,9 +111548,9 @@ gcK
 gcK
 gcK
 gcK
-hll
-uqa
-pTP
+gcK
+gcK
+gcK
 ktB
 "}
 (198,1,1) = {"
@@ -111799,9 +111805,9 @@ gcK
 gcK
 gcK
 gcK
-fyf
-uqa
-uqa
+gcK
+gcK
+gcK
 ktB
 "}
 (199,1,1) = {"
