@@ -723,6 +723,24 @@
 	can_scope = FALSE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
+//Combat Rifle		Keywords: .45 Caliber Rifle, No Attachments (!)
+/obj/item/gun/ballistic/automatic/combat
+	name = "Combat Rifle"
+	desc = "A .45 semi-automatic combat rifle, produced pre-war for National Guard forces."
+	icon_state = "combat_rifle"
+	item_state = "combatrifle"
+	icon_prefix = "combatrifle"
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	fire_delay = 3
+	burst_size = 1
+	spread = 1
+	extra_damage = 32
+	slowdown = 0.3
+	can_attachments = FALSE
+	automatic_burst_overlay = FALSE
+	semi_auto = TRUE
+	fire_sound = 'sound/f13weapons/combatrifle.ogg'
+
 //Service rifle			Keywords: NCR, 5.56mm, Semi-auto, 20 (10-50) round magazine, 25dmg
 /obj/item/gun/ballistic/automatic/service
 	name = "service rifle"
@@ -1282,7 +1300,7 @@
 	name = "g11"
 	desc = "This experimental gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The weight and space savings allows for a very high magazine capacity. Chambered in 4.73mm."
 	icon_state = "g11"
-	item_state = "g11"
+	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/m473
 	burst_size = 1
 	extra_damage = 22.5

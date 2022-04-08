@@ -563,6 +563,7 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/magazine/m556/rifle/assault,
 	/obj/item/gun/ballistic/automatic/marksman,
 	/obj/item/ammo_box/magazine/m556/rifle,
+	/obj/item/gun/ballistic/automatic/combat,
 	/obj/item/gun/ballistic/automatic/pistol/deagle,
 	/obj/item/ammo_box/magazine/m44,
 	/obj/item/gun/energy/laser/rcw,
@@ -891,6 +892,7 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(
 	/obj/item/book/granter/crafting_recipe/blueprint/marksman,
+	/obj/item/book/granter/crafting_recipe/blueprint/combatrifle,
 	/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 	/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 	/obj/item/book/granter/crafting_recipe/blueprint/aer9,

@@ -42,17 +42,17 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 
 	/// Amount of "free" damage blocking absorbs
 	var/block_damage_absorption = 10
-	/// Override absorption, list("[ATTACK_TYPE_DEFINE]" = absorption), see [block_damage_absorption]
+	/// Override absorption, list(ATTACK_TYPE_DEFINE_TEXT = absorption), see [block_damage_absorption]
 	var/list/block_damage_absorption_override
 
 	/// Ratio of damage to allow through above absorption and below limit. Multiplied by damage to determine how much to let through. Lower is better.
 	var/block_damage_multiplier = 0.5
-	/// Override damage overrun efficiency, list("[ATTACK_TYPE_DEFINE]" = absorption), see [block_damage_efficiency]
+	/// Override damage overrun efficiency, list(ATTACK_TYPE_DEFINE_TEXT = absorption), see [block_damage_efficiency]
 	var/list/block_damage_multiplier_override
 
 	/// Upper bound of damage block, anything above this will go right through.
 	var/block_damage_limit = 80
-	/// Override upper bound of damage block, list("[ATTACK_TYPE_DEFINE]" = absorption), see [block_damage_limit]
+	/// Override upper bound of damage block, list(ATTACK_TYPE_DEFINE_TEXT = absorption), see [block_damage_limit]
 	var/list/block_damage_limit_override
 
 	/// The blocked variable of on_hit() on projectiles is impacted by this. Higher is better, 0 to 100, percentage.
@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 
 	/// Default damage-to-stamina coefficient, higher is better. This is based on amount of damage BLOCKED, not initial damage, to prevent damage from "double dipping".
 	var/block_stamina_efficiency = 2
-	/// Override damage-to-stamina coefficient, see [block_efficiency], this should be list("[ATTACK_TYPE_DEFINE]" = coefficient_number)
+	/// Override damage-to-stamina coefficient, see [block_efficiency], this should be list(ATTACK_TYPE_DEFINE_TEXT = coefficient_number)
 	var/list/block_stamina_efficiency_override
 	/// Ratio of stamina incurred by blocking that goes to the arm holding the object instead of the chest. Has no effect if this is not held in hand.
 	var/block_stamina_limb_ratio = 0.5
@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 	var/block_resting_attack_types_directional = ATTACK_TYPE_PROJECTILE | ATTACK_TYPE_THROWN
 	/// Multiplier to stamina damage taken for attacks blocked while downed.
 	var/block_resting_stamina_penalty_multiplier = 1.5
-	/// Override list for multiplier to stamina damage taken for attacks blocked while down. list("[ATTACK_TYPE_DEFINE]" = multiplier_number)
+	/// Override list for multiplier to stamina damage taken for attacks blocked while down. list(ATTACK_TYPE_DEFINE_TEXT = multiplier_number)
 	var/list/block_resting_stamina_penalty_multiplier_override
 
 	/// Sounds for blocking
@@ -118,15 +118,15 @@ GLOBAL_LIST_EMPTY(block_parry_data)
 	var/parry_time_perfect = 2.5
 	/// Time on both sides of perfect parry that still counts as part of the perfect window.
 	var/parry_time_perfect_leeway = 1
-	/// [parry_time_perfect_leeway] override for attack types, list("[ATTACK_TYPE_DEFINE]" = deciseconds)
+	/// [parry_time_perfect_leeway] override for attack types, list(ATTACK_TYPE_DEFINE_TEXT = deciseconds)
 	var/list/parry_time_perfect_leeway_override
 	/// Parry "efficiency" falloff in percent per decisecond once perfect window is over.
 	var/parry_imperfect_falloff_percent = 20
-	/// [parry_imperfect_falloff_percent] override for attack types, list("[ATTACK_TYPE_DEFINE]" = deciseconds)
+	/// [parry_imperfect_falloff_percent] override for attack types, list(ATTACK_TYPE_DEFINE_TEXT = deciseconds)
 	var/list/parry_imperfect_falloff_percent_override
 	/// Efficiency in percent on perfect parry.
 	var/parry_efficiency_perfect = 120
-	/// Override for attack types, list("[ATTACK_TYPE_DEFINE]" = perecntage) for perfect efficiency.
+	/// Override for attack types, list(ATTACK_TYPE_DEFINE_TEXT = perecntage) for perfect efficiency.
 	var/parry_efficiency_perfect_override
 	/// Parry effect data.
 	var/list/parry_data = list(

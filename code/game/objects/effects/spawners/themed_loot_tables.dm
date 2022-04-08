@@ -243,6 +243,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 15,
 		/obj/effect/spawner/bundle/f13/assault_rifle = 10,
 		/obj/item/gun/ballistic/automatic/marksman/sniper = 8,
+		/obj/effect/spawner/bundle/f13/combat_rifle = 6,
 		/obj/effect/spawner/bundle/f13/marksman = 6,
 		/obj/item/gun/ballistic/shotgun/trench = 6,
 		/obj/effect/spawner/bundle/f13/rangemaster = 5,

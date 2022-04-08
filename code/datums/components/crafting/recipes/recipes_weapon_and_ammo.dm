@@ -30,6 +30,30 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
+/datum/crafting_recipe/scraptower
+	name = "Scrap Towershield"
+	result = /obj/item/shield/riot/tower/scrap
+	reqs = list(/obj/item/stack/cable_coil = 30,
+				/obj/item/stack/sheet/metal = 35,
+				/obj/item/crafting/duct_tape = 1,
+				/obj/item/crafting/wonderglue = 1)
+	tools = list(TOOL_WELDER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+
+/datum/crafting_recipe/steeltower
+	name = "Steel Towershield"
+	result = /obj/item/shield/riot/tower
+	reqs = list(/obj/item/stack/cable_coil = 30,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/crafting/metalparts = 5)
+	tools = list(TOOL_WELDER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+
 /datum/crafting_recipe/buckler
 	name = "Wooden Buckler"
 	result = /obj/item/shield/riot/buckler
@@ -874,6 +898,19 @@
 /datum/crafting_recipe/marksmancarbine
 	name = "Marksman Carbine"
 	result = /obj/item/gun/ballistic/automatic/marksman
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/stack/crafting/goodparts = 3
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
+/datum/crafting_recipe/combatrifle
+	name = "Combat Rifle"
+	result = /obj/item/gun/ballistic/automatic/combat
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/stack/crafting/goodparts = 3

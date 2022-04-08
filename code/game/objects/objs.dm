@@ -269,11 +269,7 @@
 		if (islist(result))
 			if (result["button"] != 2) // If the user pressed the cancel button
 				// text2num conveniently returns a null on invalid values
-				armor = armor.setRating(tier = text2num(result["values"]["tier"]),\
-							linemelee = text2num(result["values"]["linemelee"]),\
-							linebullet = text2num(result["values"]["linebullet"]),\
-							linelaser = text2num(result["values"]["linelaser"]),\
-							melee = text2num(result["values"]["melee"]),\
+				armor = armor.setRating(melee = text2num(result["values"]["melee"]),\
 							bullet = text2num(result["values"]["bullet"]),\
 							laser = text2num(result["values"]["laser"]),\
 							energy = text2num(result["values"]["energy"]),\
@@ -286,8 +282,8 @@
 							bullet = text2num(result["values"]["bullet"]),\
 							laser = text2num(result["values"]["laser"])
 							)
-				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to linemelee: [armor.linemelee], linebullet: [armor.linebullet], linelaser: [armor.linelaser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid], melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser]")
-				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to linemelee: [armor.linemelee], linebullet: [armor.linebullet], linelaser: [armor.linelaser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid], melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser]</span>")
+				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to  melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser] energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
+				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser] energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
 	if(href_list[VV_HK_MASS_DEL_TYPE])
 		if(check_rights(R_DEBUG|R_SERVER))
 			var/action_type = alert("Strict type ([type]) or type and all subtypes?",,"Strict type","Type and subtypes","Cancel")
@@ -380,3 +376,4 @@
 
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
 	return
+	
