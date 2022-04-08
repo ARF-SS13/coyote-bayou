@@ -13431,6 +13431,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bunker)
+"sSQ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/mineral/wasteland_vendor/followerterminal,
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/followers)
 "sST" = (
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
@@ -22115,7 +22124,7 @@ mVD
 mVD
 mVD
 dcB
-kcy
+sSQ
 fzi
 fzi
 fzi

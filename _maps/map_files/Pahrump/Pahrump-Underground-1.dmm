@@ -24357,7 +24357,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/enclave)
 "ojv" = (
-/obj/machinery/ore_silo,
+/obj/effect/turf_decal/bot_white,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/random/five,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "engine"
 	},
@@ -35424,7 +35430,9 @@
 /area/f13/caves)
 "vfC" = (
 /obj/effect/turf_decal/bot_white,
-/obj/machinery/ore_silo,
+/obj/item/circuitboard/machine/ore_silo,
+/obj/structure/frame/machine,
+/obj/item/stack/cable_coil/random/five,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "vfU" = (
@@ -38665,11 +38673,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "xic" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /obj/structure/sign/poster/prewar/poster73{
 	pixel_y = 31
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "engine"
