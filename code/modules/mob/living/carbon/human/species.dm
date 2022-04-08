@@ -116,6 +116,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	//the ids you can use for your species, if empty, it means default only and not changeable
 	var/list/allowed_limb_ids
+	
+	// scream sound overrides
+	/// This is used for every gender other than female
+	var/scream_male = list('sound/voice/human/womanlaugh.ogg')
+	/// This is used exclusively by females
+	var/scream_female = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
 
 ///////////
 // PROCS //
@@ -2200,3 +2206,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				mutant_bodyparts["spines"] = mutant_bodyparts["waggingspines"]
 				mutant_bodyparts -= "waggingspines"
 			H.update_body()
+
+/datum/species/proc/get_scream_sound(mob/living/carbon/human/H)
+	if(H.gender != FEMALE)
+		return pick(scream_female)
+	else
+		return pick(scream_female)

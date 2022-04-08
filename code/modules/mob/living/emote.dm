@@ -221,29 +221,7 @@
 		//power armor laugh track.... spooky
 		if(istype(human_user.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/f13/power_armor))
 			return 'sound/voice/robolaugh.ogg'
-		if(iscatperson(human_user))	//we ask for is cat first because they're a subtype that tests true for ishumanbasic because HERESY
-			return pick('sound/voice/catpeople/nyahaha1.ogg',
-						'sound/voice/catpeople/nyahaha2.ogg',
-						'sound/voice/catpeople/nyaha.ogg',
-						'sound/voice/catpeople/nyahehe.ogg')
-		else if(isinsect(human_user))
-			return 'sound/voice/moth/mothlaugh.ogg'
-		else if(isjellyperson(human_user))
-			//slime have cat ear. slime go nya.
-			if(human_user.dna.features["mam_ears"] == "Cat" || human_user.dna.features["mam_ears"] == "Cat, Big")
-				return pick('sound/voice/jelly/nyahaha1.ogg',
-							'sound/voice/jelly/nyahaha2.ogg',
-							'sound/voice/jelly/nyaha.ogg',
-							'sound/voice/jelly/nyahehe.ogg')
-			else if(user.gender == FEMALE)
-				return 'sound/voice/jelly/womanlaugh.ogg'
-			else
-				return pick('sound/voice/jelly/manlaugh1.ogg', 'sound/voice/jelly/manlaugh2.ogg')
-		else
-			if(user.gender == FEMALE)
-				return 'sound/voice/human/womanlaugh.ogg'
-			else
-				return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+		return human_user.dna.species.get_scream_sound()
 
 /datum/emote/living/audio_emote/chitter
 	key = "chitter"
