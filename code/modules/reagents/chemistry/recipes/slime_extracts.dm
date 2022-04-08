@@ -685,6 +685,7 @@
 	new /obj/item/slimepotion/transference(get_turf(holder.my_atom))
 	..()
 
+/*
 /datum/chemical_reaction/slime/flight_potion
 	name = "Flight Potion"
 	id = "flightpotion"
@@ -695,3 +696,4 @@
 /datum/chemical_reaction/slime/flight_potion/on_reaction(datum/reagents/holder)
 	new /obj/item/reagent_containers/glass/bottle/potion/flight(get_turf(holder.my_atom))
 	..()
+*/
