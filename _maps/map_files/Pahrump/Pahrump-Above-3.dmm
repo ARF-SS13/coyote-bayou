@@ -454,6 +454,7 @@
 /obj/structure/table,
 /obj/item/reagent_containers/glass/beaker,
 /obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/hypospray/combat,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "db" = (
@@ -3641,10 +3642,6 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/wasteland)
-"zw" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
 "zx" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -5706,6 +5703,7 @@
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
+/obj/item/clothing/glasses/hud/health/night,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -53919,7 +53917,7 @@ HG
 al
 Ub
 YO
-zw
+Ub
 al
 Dp
 sT

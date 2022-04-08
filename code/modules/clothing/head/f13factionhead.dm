@@ -427,7 +427,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-servant"
 	item_state = "legion-servant"
-	flags_inv = HIDEEARS|HIDEFACE
+	flags_inv = HIDEEARS
 	flags_cover = null
 
 /obj/item/clothing/head/f13/auxilia
@@ -437,7 +437,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-aux"
 	item_state = "legion-aux"
-	flags_inv = HIDEEARS|HIDEFACE
+	flags_inv = HIDEEARS
 	flags_cover = null
 
 /obj/item/clothing/head/helmet/f13/combat/legion

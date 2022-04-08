@@ -443,8 +443,7 @@
 "aiY" = (
 /obj/machinery/workbench/advanced,
 /obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/clothing/glasses/hud/health/night,
+/obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/wood/f13/oak,
 /area/f13/caves)
 "aji" = (
@@ -3392,12 +3391,6 @@
 	pixel_y = 11
 	},
 /obj/structure/fence/wooden,
-/obj/structure/fence/wooden{
-	climbable = 0;
-	dir = 4;
-	layer = 6.1;
-	pixel_x = -13
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bpU" = (
@@ -4767,10 +4760,13 @@
 	},
 /area/f13/building)
 "bRF" = (
-/mob/living/simple_animal/chicken{
-	name = "rad-chicken"
+/obj/structure/fence/wooden,
+/obj/structure/fence/wooden{
+	climbable = 0;
+	dir = 4;
+	layer = 6.1;
+	pixel_x = -13
 	},
-/obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bRG" = (
@@ -8650,6 +8646,11 @@
 	},
 /obj/structure/fence/wooden{
 	dir = 4
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	icon_state = "post_wood";
+	pixel_x = -18
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -56439,7 +56440,7 @@
 /area/f13/wasteland)
 "wsJ" = (
 /obj/structure/fence/corner{
-	dir = 9
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -82332,7 +82333,7 @@ aLg
 aLg
 aLg
 ueA
-bRF
+rjH
 bZi
 alU
 fyf
@@ -82590,7 +82591,7 @@ aLg
 aLg
 ueA
 rjH
-bRF
+rjH
 alU
 fyf
 fyf
@@ -106537,7 +106538,7 @@ mvv
 mvv
 mvv
 xSS
-srL
+bRF
 fZD
 fZD
 viN
@@ -106797,7 +106798,7 @@ sXB
 mvv
 mvv
 mvv
-mvv
+bRF
 bpO
 fZD
 aiT
