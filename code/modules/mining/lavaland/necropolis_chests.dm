@@ -708,7 +708,6 @@
 	else
 		icon_state = "potionflask_empty"
 
-/*
 /datum/reagent/flightpotion
 	name = "Flight Potion"
 	description = "Strange mutagenic compound of unknown origins."
@@ -728,7 +727,6 @@
 		M.adjustBruteLoss(20)
 		M.emote("scream")
 	..()
-*/
 
 
 /obj/item/jacobs_ladder
