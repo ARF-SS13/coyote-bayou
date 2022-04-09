@@ -2966,7 +2966,6 @@
 /area/f13/underground/cave)
 "ebM" = (
 /obj/machinery/chem_heater,
-/obj/structure/closet,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
 	},
@@ -5028,6 +5027,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/green,
+/area/f13/underground/cave)
+"haa" = (
+/obj/structure/stone_tile/slab,
+/obj/item/melee/transforming/cleaving_saw,
+/mob/living/simple_animal/hostile/deathclaw/mother,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "hae" = (
 /obj/item/stock_parts/cell/ammo/mfc,
@@ -9337,12 +9342,7 @@
 	},
 /area/f13/ncr)
 "nmQ" = (
-/turf/closed/indestructible/wood{
-	desc = "A wall with wooden plating. Stiff, and knocking on it indictates that the wood is just a covering for some heavily-reinforced machinery.";
-	icon = 'icons/fallout/turfs/walls/wood.dmi';
-	icon_state = "wood0";
-	icon_type_smooth = "wood"
-	},
+/turf/closed/indestructible/wood,
 /area/f13/city)
 "nnF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11214,12 +11214,7 @@
 /area/f13/bunker)
 "pUI" = (
 /obj/structure/fireaxecabinet,
-/turf/closed/indestructible/wood{
-	desc = "A wall with wooden plating. Stiff, and knocking on it indictates that the wood is just a covering for some heavily-reinforced machinery.";
-	icon = 'icons/fallout/turfs/walls/wood.dmi';
-	icon_state = "wood0";
-	icon_type_smooth = "wood"
-	},
+/turf/closed/indestructible/wood,
 /area/f13/city)
 "pVg" = (
 /obj/structure/flora/grass/wasteland{
@@ -12476,8 +12471,8 @@
 	},
 /area/f13/followers)
 "rvw" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/water,
 /area/f13/underground/cave)
 "rvF" = (
@@ -15480,8 +15475,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bunker)
 "vUl" = (
-/obj/structure/simple_door/interior,
-/turf/closed/indestructible/f13vaultrusted,
+/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant,
+/turf/open/floor/wood/f13/old,
 /area/f13/city)
 "vUS" = (
 /obj/structure/sign/poster/ncr/loaded,
@@ -15919,6 +15914,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"wFZ" = (
+/obj/effect/decal/remains/human,
+/mob/living/simple_animal/hostile/venus_human_trap,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "wGi" = (
 /obj/structure/table,
 /obj/item/pen,
@@ -25213,7 +25213,7 @@ dXd
 pKe
 qDz
 qDz
-vUl
+wus
 qDz
 ako
 qDz
@@ -27507,7 +27507,7 @@ vOG
 wef
 fJM
 qDz
-qDz
+vUl
 wef
 qDz
 wef
@@ -29835,14 +29835,14 @@ seN
 fMG
 jYt
 jtF
-qDz
+vUl
 wus
 qDz
 qDz
 qDz
 qDz
 oCX
-qDz
+euN
 pUI
 vOG
 vKV
@@ -30594,7 +30594,7 @@ hUZ
 vkL
 wef
 qJe
-qDz
+vUl
 qDz
 jhd
 cce
@@ -31638,7 +31638,7 @@ fMG
 obN
 eXb
 uel
-qDz
+vUl
 qDz
 qDz
 dka
@@ -32152,7 +32152,7 @@ fMG
 hUZ
 qDz
 uel
-qDz
+euN
 qDz
 qDz
 caN
@@ -32393,7 +32393,7 @@ qDz
 qDz
 wus
 qDz
-qDz
+vUl
 qDz
 qDz
 hMY
@@ -34209,7 +34209,7 @@ xdM
 xdM
 fMG
 imw
-xdM
+qhW
 fMG
 xdM
 swh
@@ -45508,7 +45508,7 @@ bRI
 ndi
 ndi
 ndi
-heT
+bYA
 heT
 heT
 heT
@@ -45763,8 +45763,8 @@ cbg
 aiS
 gHO
 ndi
-heT
-heT
+bYA
+bYA
 heT
 heT
 heT
@@ -46020,7 +46020,7 @@ cbg
 bRI
 bRI
 bYA
-heT
+bYA
 heT
 heT
 heT
@@ -49080,7 +49080,7 @@ heT
 heT
 heT
 heT
-heT
+bYA
 bYA
 ksx
 iMU
@@ -49351,15 +49351,15 @@ bYA
 bYA
 bYA
 bYA
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
 heT
 heT
 heT
@@ -49606,16 +49606,16 @@ hRJ
 bYA
 bYA
 bYA
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
 heT
 heT
 heT
@@ -49853,25 +49853,25 @@ heT
 heT
 heT
 heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
-heT
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
+bYA
 heT
 heT
 heT
@@ -64268,7 +64268,7 @@ bYA
 drH
 rSD
 rri
-sZI
+wFZ
 fRi
 wPz
 bYA
@@ -65296,7 +65296,7 @@ rQD
 plm
 rri
 rri
-rri
+rJi
 wPz
 ggB
 bYA
@@ -67609,7 +67609,7 @@ bYA
 bYA
 jkn
 rri
-rri
+rJi
 rri
 sZI
 wPz
@@ -68132,7 +68132,7 @@ rri
 rri
 rri
 rri
-rri
+rJi
 rri
 rri
 rri
@@ -77438,7 +77438,7 @@ wxj
 wxj
 wxj
 qbS
-rjt
+haa
 dNZ
 bYA
 wxj

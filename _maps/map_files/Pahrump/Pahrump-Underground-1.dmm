@@ -3009,10 +3009,6 @@
 "bIa" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice/catwalk,
-/obj/structure/handrail/g_central{
-	dir = 4;
-	pixel_x = 20
-	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "bIh" = (
@@ -5151,13 +5147,14 @@
 	},
 /area/f13/bunker)
 "cLR" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/handrail/g_central{
-	dir = 4;
-	pixel_x = 20
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/obj/machinery/porta_turret/syndicate{
+	faction = list("china")
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/caves)
 "cLS" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -8675,8 +8672,8 @@
 /area/f13/bunker)
 "eGs" = (
 /obj/structure/table/wood,
-/obj/item/melee/transforming/cleaving_saw,
 /obj/item/clothing/neck/mantle/gecko,
+/obj/item/twohanded/spear/bonespear,
 /turf/open/floor/wood/f13/oak,
 /area/f13/caves)
 "eGM" = (
@@ -16598,6 +16595,7 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -41267,7 +41265,7 @@ duY
 cSY
 cSY
 cSY
-cSY
+cRW
 vPg
 vPg
 vPg
@@ -43574,7 +43572,7 @@ vPg
 vPg
 eLE
 vPg
-xVz
+cRW
 rRo
 cSY
 cSY
@@ -45886,7 +45884,7 @@ xVz
 ovo
 ovo
 iXe
-xVz
+cRW
 vPg
 vPg
 vPg
@@ -46396,9 +46394,9 @@ vPg
 eLE
 vPg
 vPg
-cRW
+uPr
 agq
-bjI
+cLR
 vPg
 eLE
 vPg
@@ -54003,7 +54001,7 @@ vPg
 vPg
 tur
 aUb
-cLR
+nuA
 bIa
 tur
 jPC
@@ -64855,9 +64853,9 @@ aoj
 aoj
 aoj
 vPg
-vPg
-vPg
-vPg
+eLE
+eLE
+eLE
 xVz
 xVz
 xVz
@@ -65112,7 +65110,7 @@ aoj
 aoj
 aoj
 vPg
-vPg
+eLE
 jPC
 jPC
 jPC
@@ -65369,7 +65367,7 @@ aoj
 aoj
 vPg
 vPg
-vPg
+eLE
 jPC
 pYF
 wAO
@@ -65626,7 +65624,7 @@ vPg
 vPg
 vPg
 vPg
-vPg
+eLE
 jPC
 ujj
 wAO
@@ -65883,7 +65881,7 @@ vPg
 vPg
 vPg
 vPg
-vPg
+eLE
 jPC
 pwc
 bUW
@@ -66140,7 +66138,7 @@ aoj
 aoj
 vPg
 vPg
-aoj
+eLE
 vPg
 wAO
 bUW
@@ -66397,7 +66395,7 @@ aoj
 aoj
 vPg
 vPg
-vPg
+eLE
 vPg
 vPg
 oHz
@@ -66654,7 +66652,7 @@ vPg
 vPg
 vPg
 vPg
-vPg
+eLE
 vPg
 wAO
 vPg
@@ -66911,7 +66909,7 @@ vPg
 vPg
 vPg
 vPg
-aoj
+eLE
 jPC
 qUd
 lez
@@ -66921,12 +66919,12 @@ wAO
 bZj
 wAO
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
 vPg
 vPg
 vPg
@@ -67168,7 +67166,7 @@ vPg
 vPg
 vPg
 vPg
-vPg
+eLE
 jPC
 jPC
 jPC
@@ -67183,7 +67181,7 @@ jPC
 vPg
 vPg
 jPC
-vPg
+eLE
 vPg
 vPg
 vPg
@@ -67425,7 +67423,7 @@ wZU
 aoj
 aoj
 aoj
-vPg
+eLE
 jPC
 wAO
 bUW
@@ -67440,7 +67438,7 @@ wAO
 vPg
 wAO
 jPC
-vPg
+eLE
 vPg
 aoj
 vPg
@@ -67682,7 +67680,7 @@ piQ
 vPg
 vPg
 aoj
-vPg
+eLE
 jPC
 gbI
 xzp
@@ -67697,7 +67695,7 @@ bUW
 wAO
 cdQ
 jPC
-vPg
+eLE
 vPg
 vPg
 vPg
@@ -67939,7 +67937,7 @@ vPg
 vPg
 aoj
 vPg
-aoj
+eLE
 jPC
 ntN
 hsJ
@@ -67954,7 +67952,7 @@ ett
 uqh
 bXM
 jPC
-vPg
+eLE
 vPg
 vPg
 vPg
@@ -68196,7 +68194,7 @@ dXE
 vPg
 aoj
 vPg
-vPg
+eLE
 jPC
 wAO
 bUW
@@ -68211,7 +68209,7 @@ bUW
 fIh
 czF
 jPC
-vPg
+eLE
 vPg
 vPg
 vPg
@@ -68453,7 +68451,7 @@ dXE
 vPg
 aoj
 aoj
-vPg
+eLE
 jPC
 lbH
 mCA
@@ -68468,7 +68466,7 @@ rpw
 rpw
 oXW
 jPC
-vPg
+eLE
 vPg
 vPg
 aoj
@@ -68710,7 +68708,7 @@ dXE
 vPg
 vPg
 aoj
-vPg
+eLE
 jPC
 jPC
 jPC
@@ -68725,7 +68723,7 @@ jPC
 jPC
 jPC
 jPC
-vPg
+eLE
 vPg
 vPg
 aoj
@@ -68967,22 +68965,22 @@ dXE
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
+eLE
 vPg
 vPg
 vPg
@@ -69450,7 +69448,7 @@ ejQ
 ejQ
 ejQ
 vkj
-mQi
+ryY
 weW
 weW
 weW

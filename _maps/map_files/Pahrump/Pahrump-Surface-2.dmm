@@ -500,8 +500,16 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "akk" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin";
+	tag = "icon-skin"
+	},
+/obj/structure/decoration/rag,
+/obj/structure/decoration/rag{
+	icon_state = "skulls"
+	},
 /obj/structure/barricade/wooden,
-/turf/closed/wall/f13/wood/house,
+/turf/closed/wall/f13/wood,
 /area/f13/caves)
 "ako" = (
 /obj/structure/closet/crate/trashcart,
@@ -3825,8 +3833,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "bzq" = (
-/obj/structure/barricade/wooden,
-/turf/closed/mineral/random/low_chance,
+/obj/machinery/workbench/forge,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bzr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5302,8 +5310,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "cgS" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/f13/wood,
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken";
+	tag = "icon-housewood2-broken"
+	},
 /area/f13/caves)
 "chb" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16991,10 +17002,7 @@
 /turf/closed/wall/f13/store,
 /area/f13/village)
 "gIs" = (
-/obj/structure/barricade/wooden,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/structure/anvil/obtainable/basic,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gIA" = (
@@ -22965,7 +22973,9 @@
 	},
 /area/f13/building)
 "iTx" = (
-/turf/closed/wall/f13/wood/house/broken,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
 /area/f13/caves)
 "iTB" = (
 /obj/structure/rack,
@@ -25086,6 +25096,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/furnace,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "jKT" = (
@@ -27771,6 +27782,11 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
+"kRT" = (
+/obj/structure/bed/mattress/pregame,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "kSd" = (
 /obj/structure/tires{
 	pixel_x = 9;
@@ -29973,7 +29989,7 @@
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/restraints/handcuffs,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -39665,6 +39681,9 @@
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/grown/potato,
 /obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "pDO" = (
@@ -49153,10 +49172,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "tvD" = (
-/obj/structure/decoration/rag{
-	icon_state = "skulls"
+/obj/machinery/light/small{
+	dir = 4
 	},
-/turf/open/indestructible/ground/inside/mountain,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "tvE" = (
 /obj/structure/table/wood,
@@ -54497,7 +54516,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "vCj" = (
-/obj/machinery/light/small,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -102738,8 +102756,8 @@ fyf
 fyf
 fyf
 fyf
-dhG
-wnA
+akk
+ayd
 gcK
 gcK
 gcK
@@ -102995,10 +103013,10 @@ fyf
 fyf
 fyf
 fyf
-tvD
 ggK
 ggK
-wnA
+ggK
+ayd
 gcK
 ktB
 "}
@@ -103251,8 +103269,8 @@ fyf
 fyf
 gcK
 gcK
-dhG
-wnA
+akk
+akk
 ggK
 ggK
 ggK
@@ -103509,7 +103527,7 @@ fyf
 gcK
 gcK
 wnA
-ggK
+uJa
 ggK
 ggK
 xTQ
@@ -104278,9 +104296,9 @@ gcK
 gcK
 gcK
 gcK
-bzq
+ayd
 lRj
-ggK
+uJa
 ggK
 ggK
 wWT
@@ -104535,8 +104553,8 @@ gcK
 gcK
 fyp
 qdD
-gcK
 pCx
+ggK
 uJa
 ggK
 ggK
@@ -104794,10 +104812,10 @@ fPT
 ggK
 ggK
 ggK
-uJa
 ggK
 ggK
-wnA
+ggK
+mTd
 gcK
 ktB
 "}
@@ -105042,9 +105060,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gIs
+ayd
+fTT
+fTT
 pDM
 diU
 ggK
@@ -105299,9 +105317,9 @@ gcK
 gcK
 gcK
 gcK
-gcK
-fTT
-fTT
+tVe
+ggK
+ggK
 ggK
 fPT
 ggK
@@ -105556,7 +105574,7 @@ gcK
 gcK
 gcK
 gcK
-tVe
+bzq
 ggK
 ggK
 gsv
@@ -105822,8 +105840,8 @@ bwK
 akk
 ggK
 ggK
-pAm
-pAm
+ggK
+mTd
 gcK
 gcK
 gcK
@@ -106070,18 +106088,18 @@ gcK
 gcK
 gcK
 gcK
-ggK
+gIs
 ggK
 ggK
 plT
 ggK
-pAm
-pAm
+mTd
+mTd
 sLX
-pAm
-pAm
-gcK
-gcK
+mTd
+mTd
+mTd
+mTd
 gcK
 gcK
 ktB
@@ -106332,13 +106350,13 @@ ggK
 ggK
 ggK
 yhH
-pAm
+mTd
 egt
 tuO
-rng
-iTx
-gcK
-gcK
+tuO
+tuO
+kRT
+mTd
 gcK
 gcK
 ktB
@@ -106584,18 +106602,18 @@ gcK
 gcK
 gcK
 gAs
-wnA
-bfN
-bfN
-bfN
+ayd
+ggK
+ggK
+ggK
 fFZ
-pAm
+mTd
 nMn
 tuO
 vCj
-iTx
-gcK
-gcK
+tuO
+cgS
+mTd
 gcK
 gcK
 ktB
@@ -106842,17 +106860,17 @@ gcK
 gcK
 gcK
 gcK
+bfN
+bfN
+bfN
 gcK
-gcK
-gcK
-gcK
-pAm
-cgS
+mTd
+tuO
 tuO
 rng
 iTx
-gcK
-gcK
+tuO
+mTd
 gcK
 gcK
 ktB
@@ -107103,13 +107121,13 @@ gcK
 gcK
 gcK
 gcK
-pAm
-pAm
-pAm
-pAm
-iTx
-gcK
-gcK
+mTd
+rng
+tvD
+tuO
+tuO
+rng
+mTd
 gcK
 gcK
 ktB
@@ -107360,13 +107378,13 @@ gcK
 gcK
 gcK
 gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
-gcK
+mTd
+mTd
+mTd
+mTd
+mTd
+mTd
+mTd
 gcK
 gcK
 ktB
