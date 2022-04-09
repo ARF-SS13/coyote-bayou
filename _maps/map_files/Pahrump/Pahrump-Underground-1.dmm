@@ -25987,6 +25987,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/clinic)
+"pra" = (
+/obj/machinery/vending/clothing,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "prd" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -36194,6 +36198,10 @@
 	icon_state = "2-i"
 	},
 /area/f13/bunker)
+"vHM" = (
+/obj/machinery/vending/autodrobe,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "vHN" = (
 /obj/structure/chair{
 	dir = 4
@@ -72341,8 +72349,8 @@ gey
 ihM
 gey
 ihM
-xEd
-xEd
+vHM
+pra
 xEd
 iVM
 sZq
