@@ -34688,6 +34688,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/sink/kitchen{
+	desc = "Strictly for filling up mop buckets.";
+	name = "Mop Sink";
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/enclave)
 "uGX" = (
