@@ -10462,7 +10462,7 @@
 /area/f13/caves)
 "fBE" = (
 /obj/machinery/door/airlock/grunge{
-	name = "store airlock";
+	name = "Store Storage";
 	req_one_access_txt = "34"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11879,7 +11879,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/door/airlock/wood/glass,
+/obj/structure/simple_door/room/dirty,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "gtS" = (
@@ -14652,7 +14652,9 @@
 /area/f13/brotherhood/reactor)
 "iel" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/metal/barred,
+/obj/structure/barricade/bars{
+	layer = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "iem" = (
@@ -16525,6 +16527,7 @@
 /area/f13/caves)
 "joN" = (
 /obj/machinery/door/airlock/grunge{
+	name = "Police Department Armory";
 	req_one_access_txt = "62"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -16595,7 +16598,6 @@
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -19909,7 +19911,8 @@
 /turf/open/floor/plating/dirt,
 /area/f13/caves)
 "lsw" = (
-/obj/machinery/door/airlock/wood{
+/obj/machinery/door/unpowered/securedoor{
+	name = "Sheriff's Quarters";
 	req_one_access_txt = "62"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -25939,11 +25942,12 @@
 	},
 /area/f13/bunker)
 "pqu" = (
-/obj/machinery/door/airlock/wood{
-	req_one_access_txt = "48"
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "prospector1open"
+	},
+/obj/machinery/door/unpowered/securedoor{
+	name = "Prospector Entrance";
+	req_one_access_txt = "48"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -27747,6 +27751,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"quD" = (
+/obj/structure/simple_door/brokenglass,
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "qvn" = (
 /turf/closed/indestructible/rock,
 /area/space)
@@ -30537,7 +30545,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rRX" = (
-/obj/machinery/door/airlock/wood/glass,
+/obj/structure/simple_door/dirtyglass,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "rSv" = (
@@ -33643,6 +33651,10 @@
 "tTy" = (
 /obj/structure/flora/wasteplant/wild_fungus,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"tUy" = (
+/obj/structure/simple_door/repaired,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "tUT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -76420,7 +76432,7 @@ slw
 sJm
 nAj
 nAj
-rRX
+tUy
 nAj
 vLK
 rjz
@@ -77957,7 +77969,7 @@ vLK
 yhT
 yhT
 jPC
-rRX
+quD
 jPC
 qgz
 nAj
