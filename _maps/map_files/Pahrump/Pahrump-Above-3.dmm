@@ -324,7 +324,6 @@
 /area/f13/building)
 "cl" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
 	obj_integrity = 400;
@@ -1175,6 +1174,13 @@
 	},
 /turf/open/floor/holofloor/carpet,
 /area/f13/building)
+"ii" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/floor/wood,
+/area/f13/building)
 "ik" = (
 /obj/structure/chair/f13chair2{
 	dir = 8
@@ -1641,7 +1647,6 @@
 /area/f13/building)
 "lV" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
 	obj_integrity = 400;
@@ -1877,8 +1882,7 @@
 /area/f13/raiders)
 "nC" = (
 /obj/structure/chair/wood/modern{
-	dir = 8;
-	icon_state = "wooden_chair_settler"
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2050,7 +2054,6 @@
 /area/f13/building)
 "ov" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
 	obj_integrity = 400;
@@ -2832,7 +2835,6 @@
 "ui" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
 	obj_integrity = 400;
@@ -3233,8 +3235,8 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "wU" = (
-/obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wY" = (
@@ -3309,7 +3311,6 @@
 /area/f13/brotherhood/surface)
 "xn" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	damage_deflection = 28;
 	max_integrity = 400;
 	obj_integrity = 400;
@@ -3383,6 +3384,13 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
+/area/f13/building)
+"xT" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/ranged/boss,
+/turf/open/floor/wood,
 /area/f13/building)
 "xW" = (
 /obj/machinery/light{
@@ -3850,6 +3858,13 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/building)
+"AL" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/firefighter,
+/turf/open/floor/wood,
+/area/f13/building)
 "AM" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -4127,6 +4142,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"CT" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/mob/living/simple_animal/hostile/raider/baseball,
+/turf/open/floor/wood,
+/area/f13/building)
 "CV" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -4136,6 +4158,16 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"CW" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/thief,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "Da" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/wood,
@@ -4226,7 +4258,7 @@
 	},
 /area/f13/building)
 "DJ" = (
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -4857,8 +4889,7 @@
 /area/f13/building)
 "HX" = (
 /obj/structure/chair/wood{
-	dir = 4;
-	icon_state = "wooden_chair_settler"
+	dir = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6803,7 +6834,7 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "UR" = (
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -7051,7 +7082,7 @@
 /area/f13/building)
 "Wt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/bin,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "Ww" = (
@@ -7198,7 +7229,6 @@
 /area/f13/building)
 "XF" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/f13/store,
@@ -7293,7 +7323,6 @@
 /area/f13/brotherhood/surface)
 "YA" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /obj/effect/decal/fakelattice,
@@ -22629,7 +22658,7 @@ Py
 Py
 Py
 jG
-Pr
+CT
 ql
 hD
 Ak
@@ -23147,7 +23176,7 @@ Jh
 ql
 QI
 Ak
-Ak
+CW
 ol
 aJ
 PL
@@ -24165,7 +24194,7 @@ zB
 zB
 zB
 Da
-Gr
+ii
 Gr
 Gr
 Gr
@@ -24418,7 +24447,7 @@ kC
 kC
 ze
 BV
-Gr
+xT
 Gr
 AS
 SP
@@ -24428,7 +24457,7 @@ SP
 Pr
 Pr
 AC
-Gr
+AL
 SP
 gD
 ol
