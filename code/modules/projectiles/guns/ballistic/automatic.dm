@@ -730,7 +730,7 @@
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
-	mag_type = /obj/item/ammo_box/magazine/greasegun
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 	fire_delay = 3
 	burst_size = 1
 	spread = 1
