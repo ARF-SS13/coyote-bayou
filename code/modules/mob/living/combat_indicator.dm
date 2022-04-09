@@ -52,9 +52,11 @@
 		//set_combat_indicator(TRUE)
 		log_attack("[src] has toggled on the combat indicator")
 		log_message("has turned the combat indicator ON.", LOG_ATTACK)
+		log_message("has turned the combat indicator ON.", LOG_EMOTE)
 		change_combat_indicator(TRUE)
 	else
 		//set_combat_indicator(FALSE)
 		log_attack("[src] has toggled off the combat indicator")
 		log_message("has turned the combat indicator OFF.", LOG_ATTACK)
+		log_message("has turned the combat indicator OFF.", LOG_EMOTE)
 		change_combat_indicator(FALSE)
