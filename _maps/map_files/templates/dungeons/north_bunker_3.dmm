@@ -64,6 +64,7 @@
 	name = "vines"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/item/grenade/frag,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "cf" = (
@@ -1476,7 +1477,7 @@
 /turf/open/floor/grass,
 /area/f13/bunker)
 "PW" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "PY" = (
@@ -1614,6 +1615,12 @@
 /area/f13/bunker)
 "Uk" = (
 /mob/living/simple_animal/hostile/radroach,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/bunker)
+"UI" = (
+/obj/machinery/smartfridge/bottlerack/lootshelf,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/item/grenade/frag,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "Ve" = (
@@ -3716,7 +3723,7 @@ Ye
 Ye
 Xm
 Xm
-IF
+UI
 LR
 Ye
 Xm

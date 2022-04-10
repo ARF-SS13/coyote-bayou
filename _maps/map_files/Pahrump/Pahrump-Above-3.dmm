@@ -2063,7 +2063,6 @@
 /area/f13/brotherhood/surface)
 "oj" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -3730,8 +3729,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "zs" = (
-/obj/structure/simple_door/wood,
-/turf/open/indestructible/ground/outside/woodalt,
+/obj/effect/landmark/start/f13/vexillarius,
+/turf/open/floor/carpet/black,
 /area/f13/legion)
 "zv" = (
 /obj/structure/decoration/rag{
@@ -6232,10 +6231,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/building)
-"PK" = (
-/obj/structure/simple_door/wood,
-/turf/open/space/basic,
-/area/f13/legion)
 "PL" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -61234,11 +61229,11 @@ Lb
 Ks
 Ks
 Ks
-PK
+On
 Ks
 Ks
 Ks
-PK
+On
 Ks
 kC
 kC
@@ -70986,7 +70981,7 @@ kC
 Ks
 Ks
 Ks
-zs
+On
 Ks
 kC
 BC
@@ -71755,7 +71750,7 @@ kC
 kC
 kC
 Ks
-ye
+zs
 Bj
 BA
 Ks

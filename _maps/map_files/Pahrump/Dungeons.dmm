@@ -208,6 +208,10 @@
 	},
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
+"apL" = (
+/mob/living/simple_animal/hostile/securitron/sentrybot,
+/turf/open/floor/plasteel/dark,
+/area/f13/bunker)
 "aqU" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -2689,7 +2693,7 @@
 /area/f13/bunker)
 "dNU" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "dNZ" = (
@@ -3151,7 +3155,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "enQ" = (
@@ -4953,6 +4957,12 @@
 	icon_state = "dirt"
 	},
 /area/f13/bunker)
+"gWv" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/turf/open/floor/plasteel/dark,
+/area/f13/bunker)
 "gWV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5272,7 +5282,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hte" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "huE" = (
@@ -5729,7 +5739,7 @@
 /area/f13/legion)
 "ien" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "iep" = (
@@ -10723,7 +10733,7 @@
 /area/f13/bunker)
 "pjy" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "pjT" = (
@@ -36635,11 +36645,11 @@ vHC
 vHC
 bVI
 daB
+apL
 cdl
 cdl
 cdl
-cdl
-cdl
+apL
 fWH
 bVI
 vHC
@@ -37405,7 +37415,7 @@ heT
 vHC
 vHC
 cgp
-dhZ
+gWv
 dNU
 enO
 eRS

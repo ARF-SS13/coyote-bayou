@@ -6382,12 +6382,6 @@
 	desc = "This is a plaque commemorating the thunderdome and all those who have died at its pearly blast doors."
 	},
 /area/centcom/evac)
-"rU" = (
-/obj/machinery/computer/operating{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cmo,
-/area/centcom/evac)
 "rV" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/cmo,
@@ -6407,12 +6401,6 @@
 "rY" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/underground/mountain)
-"rZ" = (
-/obj/machinery/computer/operating{
-	dir = 8
-	},
-/turf/open/floor/plasteel/cmo,
-/area/centcom/evac)
 "sa" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -7076,18 +7064,6 @@
 "tR" = (
 /obj/machinery/status_display/ai,
 /turf/closed/indestructible/riveted,
-/area/centcom/evac)
-"tS" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cmo,
-/area/centcom/evac)
-"tT" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
-/turf/open/floor/plasteel/cmo,
 /area/centcom/evac)
 "tU" = (
 /obj/effect/turf_decal/stripes/line{
@@ -10138,10 +10114,6 @@
 "Fk" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/centcom/evac)
-"Fm" = (
-/obj/item/melee/onehanded/knife/trench,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Fn" = (
@@ -38991,7 +38963,7 @@ Yy
 Yv
 Yv
 Yy
-Fm
+Yv
 Yv
 Yv
 Yy
@@ -40495,18 +40467,18 @@ MX
 jU
 qQ
 rr
-rU
+rs
 jU
 tA
-tS
-rs
-tS
 rs
 rs
 rs
-tS
 rs
-tS
+rs
+rs
+rs
+rs
+rs
 tA
 jU
 Br
@@ -41523,18 +41495,18 @@ MX
 jU
 qQ
 rr
-rZ
+rs
 jU
 tD
-tT
-uu
-tT
 rs
 uu
 rs
-tT
+rs
 uu
-tT
+rs
+rs
+uu
+rs
 vo
 jU
 vH

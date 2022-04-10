@@ -75,15 +75,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"cd" = (
-/obj/structure/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/trash_stack,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "cl" = (
 /obj/machinery/workbench/forge,
 /turf/open/floor/plasteel/barber{
@@ -109,14 +100,6 @@
 "cz" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plasteel/twenty,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"cK" = (
-/obj/structure/spider/stickyweb,
-/obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -549,7 +532,7 @@
 	},
 /area/f13/bunker)
 "lU" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "ma" = (
@@ -700,6 +683,7 @@
 /area/f13/bunker)
 "oK" = (
 /obj/effect/spawner/lootdrop/f13/traitbooks,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "oS" = (
@@ -1094,23 +1078,8 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
-"yr" = (
-/obj/item/storage/trash_stack,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
 "yu" = (
 /obj/structure/wreck/trash/machinepile,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/bunker)
-"yS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1715,6 +1684,7 @@
 "LV" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "LW" = (
@@ -1729,7 +1699,6 @@
 "Mj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/splats,
-/obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -1777,11 +1746,6 @@
 /area/f13/bunker)
 "ND" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plating/tunnel,
-/area/f13/bunker)
-"NO" = (
-/obj/structure/spider/stickyweb,
-/obj/item/storage/trash_stack,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Od" = (
@@ -1911,7 +1875,6 @@
 	},
 /area/f13/bunker)
 "PO" = (
-/obj/item/storage/trash_stack,
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
@@ -1942,11 +1905,6 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
-/area/f13/bunker)
-"Qe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/trash_stack,
-/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "Qi" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2173,10 +2131,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
-"Vw" = (
-/obj/item/storage/trash_stack,
-/turf/open/floor/grass,
-/area/f13/bunker)
 "Vx" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
@@ -2304,10 +2258,6 @@
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
 	},
-/area/f13/bunker)
-"YR" = (
-/obj/item/storage/trash_stack,
-/turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "YT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2722,7 +2672,7 @@ Rl
 Rl
 Rl
 xG
-Qe
+Zf
 Zf
 xS
 oj
@@ -2774,7 +2724,7 @@ Rl
 (11,1,1) = {"
 Rl
 xG
-Vw
+nu
 nu
 nu
 nu
@@ -2800,7 +2750,7 @@ Rl
 xG
 XZ
 Dv
-YR
+oj
 Zf
 oj
 xG
@@ -2813,7 +2763,7 @@ Rl
 Rl
 xG
 Be
-Vw
+nu
 Lx
 nu
 xG
@@ -2914,7 +2864,7 @@ Rl
 xG
 oj
 sl
-Qe
+Zf
 oj
 oj
 xG
@@ -3009,7 +2959,7 @@ XM
 kj
 Eu
 Cy
-yr
+XM
 jS
 jy
 mx
@@ -3043,7 +2993,7 @@ Rl
 Rl
 xG
 XM
-yr
+XM
 XM
 qM
 Zu
@@ -3069,7 +3019,7 @@ oj
 wN
 oj
 nf
-YR
+oj
 Zf
 xG
 Rl
@@ -3103,7 +3053,7 @@ fe
 nu
 XR
 gv
-YR
+oj
 Su
 lc
 Zf
@@ -3220,7 +3170,7 @@ oj
 hy
 oj
 oj
-YR
+oj
 oj
 oj
 xG
@@ -3233,7 +3183,7 @@ Rl
 Rl
 xG
 Aq
-yr
+XM
 XM
 kj
 kj
@@ -3331,7 +3281,7 @@ nX
 fd
 xG
 fN
-Qe
+Zf
 Zf
 zR
 iq
@@ -3349,7 +3299,7 @@ Rl
 Rl
 xG
 cQ
-yS
+kj
 XN
 kj
 XM
@@ -3365,7 +3315,7 @@ XM
 XM
 XM
 PH
-yr
+XM
 kj
 BR
 oj
@@ -3434,7 +3384,7 @@ XM
 Bq
 kj
 rY
-yS
+kj
 xf
 xf
 kj
@@ -3467,7 +3417,7 @@ xG
 xG
 XM
 Ra
-cd
+XN
 kj
 Bq
 Ra
@@ -3514,7 +3464,7 @@ XM
 XM
 XM
 FD
-yS
+kj
 XM
 XM
 XM
@@ -3541,7 +3491,7 @@ oj
 oj
 oj
 Pp
-yr
+XM
 XM
 xf
 Ra
@@ -3620,7 +3570,7 @@ Pp
 kj
 qN
 Ra
-yr
+XM
 xG
 Rl
 Rl
@@ -3776,7 +3726,7 @@ pI
 XM
 xf
 XN
-yr
+XM
 Vf
 XM
 dw
@@ -3886,13 +3836,13 @@ xG
 Zf
 qW
 XM
-yr
+XM
 Ra
 Ra
 FC
 Ra
 Ra
-cK
+Ra
 Od
 qj
 dv
@@ -4072,7 +4022,7 @@ fq
 DG
 cZ
 eN
-yS
+kj
 Pw
 xG
 xG
@@ -4126,7 +4076,7 @@ fd
 kj
 Ra
 xJ
-yS
+kj
 xG
 xG
 xG
@@ -4144,7 +4094,7 @@ Rl
 Rl
 xG
 XM
-yr
+XM
 XM
 kj
 tn
@@ -4153,7 +4103,7 @@ kj
 ZO
 XM
 Ra
-cK
+Ra
 XM
 jf
 Ra
@@ -4198,7 +4148,7 @@ EG
 Fp
 QE
 kj
-yS
+kj
 Bw
 AF
 XM
@@ -4379,7 +4329,7 @@ ZP
 ZP
 QF
 Lk
-cd
+XN
 XN
 XM
 ti
@@ -4532,7 +4482,7 @@ ZP
 cq
 Lk
 XM
-cd
+XN
 we
 ti
 Ed
@@ -4728,14 +4678,14 @@ xG
 Rl
 xG
 gk
-YR
+oj
 oj
 SD
 oj
 Ub
 oj
 sl
-Qe
+Zf
 lU
 xG
 Rl
@@ -4760,7 +4710,7 @@ Rl
 Rl
 xG
 hj
-NO
+hj
 XM
 xG
 Rl
@@ -4772,9 +4722,9 @@ Zf
 oj
 oj
 oj
-Qe
+Zf
 vg
-YR
+oj
 xG
 Rl
 Rl
@@ -4805,7 +4755,7 @@ Rl
 xG
 oj
 Zf
-Qe
+Zf
 Tm
 mC
 Zf
@@ -4849,7 +4799,7 @@ gR
 oj
 Rl
 oj
-YR
+oj
 oh
 xG
 Rl
@@ -4871,7 +4821,7 @@ hI
 Zf
 Hi
 oj
-YR
+oj
 gu
 oj
 oj
@@ -4917,7 +4867,7 @@ oj
 Rl
 Rl
 xG
-YR
+oj
 oj
 oh
 XO
@@ -4941,7 +4891,7 @@ Rl
 Rl
 Rl
 xG
-YR
+oj
 oj
 Yi
 kU
