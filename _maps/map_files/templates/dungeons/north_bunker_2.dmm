@@ -2264,7 +2264,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "XX" = (
-/turf/open/floor/plating/tunnel,
+/obj/item/storage/box/disks_plantgene,
+/turf/open/floor/plasteel/barber{
+	icon = 'icons/turf/f13floors2.dmi';
+	icon_state = "bluerustychess2"
+	},
 /area/f13/bunker)
 "XY" = (
 /turf/closed/indestructible/rock,
@@ -2872,7 +2876,7 @@ Rl
 xG
 IG
 Zf
-XX
+oj
 LV
 oj
 xG
@@ -3437,7 +3441,7 @@ kj
 kj
 MU
 Lt
-XM
+XX
 kj
 xG
 xG
