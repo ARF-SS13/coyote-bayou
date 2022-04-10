@@ -16,7 +16,7 @@
 	target_mobtypes = list(/mob/living/carbon/human)
 	possible_locs = list(BODY_ZONE_HEAD)
 
-	requires_trait = "UNETHICAL_PRACTITIONER_BRAINWASHING"
+	requires_trait = "UNETHICAL_PRACTITIONER"
 
 /datum/surgery/advanced/brainwashing/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
 	if(!..())

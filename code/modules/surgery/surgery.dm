@@ -71,12 +71,6 @@
 		else
 			return FALSE
 
-	if(requires_trait== "UNETHICAL_PRACTITIONER_BRAINWASHING") //brainwashing, romerol revivication, viral bonding, combat implants
-		if(HAS_TRAIT(user,TRAIT_UNETHICAL_PRACTITIONER_BRAINWASHING))
-			return TRUE
-		else
-			return FALSE
-
 // Robotic surgeries
 
 	if(requires_trait== "CYBERNETICIST_2") //robotic brain surgery, augumentation, robotic repairs.

@@ -22,8 +22,6 @@
 		dat += " | "
 		dat += individual_logging_panel_link(M, INDIVIDUAL_COMMS_LOG, LOGSRC_CLIENT, "Comms Log", source, ntype)
 		dat += " | "
-		dat += individual_logging_panel_link(M, INDIVIDUAL_IC_LOG, LOGSRC_CLIENT, "IC Log", source, ntype)
-		dat += " | "
 		dat += individual_logging_panel_link(M, INDIVIDUAL_OOC_LOG, LOGSRC_CLIENT, "OOC Log", source, ntype)
 		dat += " | "
 		dat += individual_logging_panel_link(M, INDIVIDUAL_SHOW_ALL_LOG, LOGSRC_CLIENT, "Show All", source, ntype)
@@ -42,8 +40,6 @@
 	dat += individual_logging_panel_link(M, INDIVIDUAL_EMOTE_LOG, LOGSRC_MOB, "Emote Log", source, ntype)
 	dat += " | "
 	dat += individual_logging_panel_link(M, INDIVIDUAL_COMMS_LOG, LOGSRC_MOB, "Comms Log", source, ntype)
-	dat += " | "
-	dat += individual_logging_panel_link(M, INDIVIDUAL_IC_LOG, LOGSRC_MOB, "IC Log", source, ntype)
 	dat += " | "
 	dat += individual_logging_panel_link(M, INDIVIDUAL_OOC_LOG, LOGSRC_MOB, "OOC Log", source, ntype)
 	dat += " | "
