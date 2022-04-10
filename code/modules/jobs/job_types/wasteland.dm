@@ -261,9 +261,9 @@
 	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
 	mask =			/obj/item/clothing/mask/gas/enclave
 	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/mk2/dark
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/mk2/remnant
 	suit_store = 	/obj/item/gun/ballistic/automatic/assault_rifle
-	head = 			/obj/item/clothing/head/helmet/f13/combat/mk2/dark
+	head = 			/obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	belt = 			/obj/item/storage/belt/military/assault/enclave
 	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots

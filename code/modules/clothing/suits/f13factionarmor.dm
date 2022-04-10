@@ -450,42 +450,12 @@
 	armor = list("melee" = 38, "bullet" = 40, "laser" = 33, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/treasurer
 
-/obj/item/clothing/suit/armor/f13/ncrarmor/scout
-	name = "NCR 3rd Scout combat armor"
-	desc = "A specialized variant of combat armor issued to members of the 3rd Scout Battalion."
-	icon_state = "scoutarmor"
-	item_state = "scoutarmor"
-	slowdown = 0.01
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
-	name = "NCR 3rd Scout veteran combat armor"
-	desc = "A specialized variant of combat armor issued to veteran members of the 3rd Scout Battalion."
-	slowdown = 0.01
-
-/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
-	name = " NCR 3rd Scout officer combat armor"
-	icon_state = "scout_armor_lt"
-	item_state = "scout_armor_lt"
-	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
-	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
-
-/obj/item/clothing/suit/armor/f13/combat/ncr
-	name = "NCR combat armor"
-	desc = "An old military grade pre war combat armor and, repainted to the colour scheme of the New California Republic."
-	icon_state = "ncr_armor"
-	item_state = "ncr_armor"
-
-/obj/item/clothing/suit/armor/f13/combat/ncr/mutant
-	name = "NCR mutant armor"
-	desc = "Multiple sets of NCR patrol vests that have been fused, stitched and welded together in order to fit the frame of a Super Mutant."
-	icon_state = "mutie_ncr"
-	item_state = "mutie_ncr"
-
-/obj/item/clothing/suit/armor/f13/combat/mk2/ncr
-	name = "reinforced NCR combat armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
-	icon_state = "ncr_armor_mk2"
-	item_state = "ncr_armor_mk2"
+/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
+	name = "NCR officer vest"
+	desc = "A special issue NCR officer's armour with an added thick overcoat for protection from the elements."
+	icon_state = "ncr_officer_coat"
+	item_state = "ncr_officer_coat"
+	armor = list("melee" = 40, "bullet" = 42, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 50)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack
 	name = "NCR dress jacket"
@@ -499,13 +469,13 @@
 	desc = "A brown dress uniform jacket for commissioned NCRA personnel."
 	icon_state = "ncr_codressjack"
 	item_state = "ncr_codressjack"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 30)
 
-/obj/item/clothing/suit/armor/f13/ncrarmor/lieutenant/ncr_officer_coat
-	name = "NCR officer vest"
-	desc = "A special issue NCR officer's armour with an added thick overcoat for protection from the elements."
-	icon_state = "ncr_officer_coat"
-	item_state = "ncr_officer_coat"
+/obj/item/clothing/suit/armor/f13/combat/ncr/mutant
+	name = "NCR mutant armor"
+	desc = "Multiple sets of NCR patrol vests that have been fused, stitched and welded together in order to fit the frame of a Super Mutant."
+	icon_state = "mutie_ncr"
+	item_state = "mutie_ncr"
 
 //NCR Ranger
 /obj/item/clothing/suit/toggle/armor/f13/rangerrecon
@@ -911,6 +881,14 @@
 	flags_inv = HIDEJUMPSUIT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
+/obj/item/clothing/suit/armor/f13/combat/mk2/remnant
+	name = "remnant combat armor"
+	desc = "A dark armor, used commonly in espionage or shadow ops."
+	icon_state = "remnant"
+	item_state = "remnant"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	
+
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
@@ -936,15 +914,41 @@
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 
+//NCR
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout
+	name = "NCR 3rd Scout combat armor"
+	desc = "A specialized variant of combat armor issued to members of the 3rd Scout Battalion."
+	icon_state = "scoutarmor"
+	item_state = "scoutarmor"
+	slowdown = 0.01
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
+	name = "NCR 3rd Scout veteran combat armor"
+	desc = "A specialized variant of combat armor issued to veteran members of the 3rd Scout Battalion."
+	slowdown = 0.01
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
+	name = " NCR 3rd Scout officer combat armor"
+	icon_state = "scout_armor_lt"
+	item_state = "scout_armor_lt"
+	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
+	armor = list("tier" = 7, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/combat/ncr
+	name = "NCR combat armor"
+	desc = "An old military grade pre war combat armor and, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_armor"
+	item_state = "ncr_armor"
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/ncr
+	name = "reinforced NCR combat armor"
+	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
+	icon_state = "ncr_armor_mk2"
+	item_state = "ncr_armor_mk2"
+
+
 //Enclave/Remnants
 
-/obj/item/clothing/suit/armor/f13/combat/remnant
-	name = "remnant combat armor"
-	desc = "(VI) A dark armor, used commonly in espionage or shadow ops."
-	icon_state = "remnant"
-	item_state = "remnant"
-	armor = list("tier" = 6, "energy" = 75, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
-	
 /obj/item/clothing/suit/armor/f13/combat/enclave
 	name = "enclave combat armor"
 	desc = "An old set of pre-war combat armor, painted black."
