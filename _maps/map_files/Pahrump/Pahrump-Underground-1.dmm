@@ -32108,6 +32108,10 @@
 "sZq" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
+"sZu" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "sZz" = (
 /obj/machinery/light/small,
 /obj/structure/lattice{
@@ -38147,6 +38151,11 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"wWN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "wXg" = (
 /obj/effect/landmark/start/f13/Knight,
 /obj/effect/landmark/start/f13/initiate,
@@ -76008,7 +76017,7 @@ pNt
 jPC
 jPC
 fea
-xhF
+sZu
 nAj
 nAj
 nAj
@@ -82160,7 +82169,7 @@ yhT
 xVz
 xVz
 tth
-rtG
+wWN
 rtG
 lHU
 rtG

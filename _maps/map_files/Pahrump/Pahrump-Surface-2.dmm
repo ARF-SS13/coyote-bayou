@@ -8984,10 +8984,7 @@
 	},
 /area/f13/building)
 "dLB" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor2"
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/ore_redemption,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -15962,6 +15959,13 @@
 /mob/living/simple_animal/hostile/mirelurk/hunter,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"gxi" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 10;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "gxl" = (
 /obj/structure/barricade/wooden/strong,
 /obj/structure/decoration/rag{
@@ -28617,6 +28621,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/legion)
+"lzE" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/f13/wood,
+/area/f13/ncr)
 "lzU" = (
 /obj/item/trash/boritos,
 /turf/open/indestructible/ground/inside/mountain,
@@ -71516,7 +71524,7 @@ wvV
 bAo
 bMo
 dlI
-dlR
+lzE
 ehN
 ubg
 ehN
@@ -121085,7 +121093,7 @@ sQf
 xNm
 mvv
 goK
-xGH
+gxi
 mvv
 oVb
 bIY
