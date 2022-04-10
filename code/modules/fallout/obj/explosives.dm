@@ -45,18 +45,18 @@
 	explosion(src.loc,0,2,3, flame_range = 6)
 
 /obj/item/bottlecap_mine/process()
-	if(state != ACTIVE)
-		STOP_PROCESSING(SSobj, src)
-		return
-	var/list/Mobs = hearers(1, get_turf(src)) - src
-	if(Mobs.len)
-		playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
-		spawn(5)
-			boom()
-			STOP_PROCESSING(SSobj, src)
-			return
-	if(prob(15))
-		playsound(get_turf(src),'sound/f13weapons/mine_one.ogg',100, extrarange = -5)
+    if(state != ACTIVE)
+        STOP_PROCESSING(SSobj, src)
+        return
+    if (locate(/mob/living) in range(1, get_turf(src)))
+        playsound(get_turf(src),'sound/f13weapons/mine_five.ogg',50)
+        spawn(5)
+            boom()
+            STOP_PROCESSING(SSobj, src)
+            return
+    if(prob(15))
+        playsound(get_turf(src),'sound/f13weapons/mine_one.ogg',100, extrarange = -5)
+
 /*
 /obj/item/bottlecap_mine/Crossed(go/AM)
 	if(state == ACTIVE && ishuman(AM))
