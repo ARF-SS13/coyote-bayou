@@ -1243,7 +1243,7 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	head = /obj/item/clothing/head/helmet/f13/legion/venator
 	mask = /obj/item/clothing/mask/bandana/legion/legdecan
 	neck = /obj/item/storage/belt/holster
-	glasses = /obj/item/clothing/glasses/night
+	glasses = /obj/item/clothing/glasses/night/polarizing
 	ears = /obj/item/radio/headset/headset_legion
 	r_pocket = /obj/item/binoculars
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator
