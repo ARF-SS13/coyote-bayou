@@ -185,54 +185,45 @@
 	slowdown = 0.025
 
 
-//Enclave
-/obj/item/clothing/head/helmet/f13/enclave
+///////////
+//ENCLAVE//
+///////////
+
+
+/obj/item/clothing/head/f13/enclave
 	name = "officer hat"
 	desc = "A standard-issue Enclave officer's cap."
 	icon_state = "enclave"
 	item_color = "enclave"
-	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
-/obj/item/clothing/head/helmet/f13/enclave/Initialize() 
+/obj/item/clothing/head/helmet/soft/f13/enclave/Initialize() 
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/head/helmet/f13/enclave/usmcriot
-	name = "old United States Marine Corp riot helmet"
-	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
-	icon_state = "modified_usmc_riot"
-	item_state = "modified_usmc_riot"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
+/obj/item/clothing/head/f13/enclave/peacekeeper
+	name = "peacekeeper cap"
+	desc = "Reinforced field cap issued to the soldiers of the Enclave."
+	icon_state = "hat_enclave_peacekeeper"
+	item_state = "hat_enclave_peacekeeper"
 
-/obj/item/clothing/head/helmet/f13/enclave/science
+/obj/item/clothing/head/beret/enclave/science
 	name = "science beret"
 	desc = "Blue beret signifying the wearer is a Science Officer of the Enclave."
 	icon_state = "hat_enclave_science"
 	item_state = "hat_enclave_science"
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
-/obj/item/clothing/head/helmet/f13/enclave/intel
+/obj/item/clothing/head/beret/enclave/intel
 	name = "intel beret"
 	desc = "Dark beret issued to Intelligence Officers of the Enclave."
 	icon_state = "hat_enclave_intel"
 	item_state = "hat_enclave_intel"
 	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
-
-/obj/item/clothing/head/helmet/f13/enclave/peacekeeper
-	name = "peacekeeper cap"
-	desc = "Reinforced field cap issued to the soldiers of the Enclave."
-	icon_state = "hat_enclave_peacekeeper"
-	item_state = "hat_enclave_peacekeeper"
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
-	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
-
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
 /obj/item/clothing/head/helmet/f13/envirosuit
 	name = "enclave envirosuit hood"
@@ -246,6 +237,15 @@
 	equip_delay_other = 60
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/clothing/head/helmet/f13/enclave/usmcriot
+	name = "old United States Marine Corp riot helmet"
+	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	icon_state = "modified_usmc_riot"
+	item_state = "modified_usmc_riot"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	name = "remnant combat helmet"
