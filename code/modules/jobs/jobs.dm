@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Legion Centurion",
 
-	"Chief of Police",
+	"Sheriff",
 
 	"Enclave Lieutenant",
 	))
@@ -94,8 +94,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Slave",
 
 "Mayor",
-"Chief of Police",
-"Officer",
+"Sheriff",
+"Deputy",
 "Shopkeeper",
 "Doctor",
 "Prospector",
