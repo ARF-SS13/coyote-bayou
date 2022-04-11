@@ -159,7 +159,7 @@
 #define F13CULTLEADER	(1<<9)
 #define F13TRIBAL	(1<<10)
 
-#define ENCLAVE			(1<<9)
+#define ENCLAVE			(1<<10)
 
 #define F13USLT			(1<<0)
 #define F13USGYSGT		(1<<1)
@@ -170,6 +170,7 @@
 #define F13USCOLONIST	(1<<6)
 #define F13USCOMMANDER	(1<<7)
 #define F13USGYSGT2		(1<<8)
+#define F13USLDUTY      (1<<9)
 
 #define TRIBAL			(1<<10)
 

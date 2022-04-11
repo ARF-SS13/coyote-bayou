@@ -176,8 +176,101 @@
 		/obj/item/shovel/trench = 1,
 	)
 
+//Light Duty
+/datum/job/wasteland/f13LDUTY
+	title = "Enclave Light Duty"
+	flag = F13USLDUTY
+	faction = FACTION_ENCLAVE
+	total_positions = 4
+	spawn_positions = 1
+	description = "You are involved in the United States Army, and for whatever reason, you have been assigned light duty. You are responsible for upkeep of the base, maintenance of the troopers, and ensuring morale for the troops."
+	forbids = "You are a non-combatant. You are not allowed to have overly-friendly interactions with those outside of the Enclave. You are not permited to leave the base without express orders."
+	enforces = "You must maintain the secrecy of the bunker location."
+	supervisors = "Enclave Department of the Army."
+	selection_color = "#323232"
+	outfit = /datum/outfit/job/wasteland/f13REARSPT
+	exp_type = EXP_TYPE_FALLOUT
+	exp_requirements = 0
+
+	access = list(ACCESS_ENCLAVE)
+	minimal_access = list(ACCESS_ENCLAVE)
+
+	loadout_options = list(
+		/datum/outfit/loadout/pharma,
+		/datum/outfit/loadout/janny,
+		/datum/outfit/loadout/chaplain,
+		/datum/outfit/loadout/cook,
+		)
 
 
+/datum/outfit/job/wasteland/f13REARSPT
+	name = "Enclave Rear Support"
+	jobtype = /datum/outfit/job/wasteland/f13REARSPT
+	backpack = 		/obj/item/storage/backpack/enclave
+	id = 			/obj/item/card/id/dogtag/enclave/trooper
+	accessory = 	/obj/item/clothing/accessory/ncr/REC
+	ears = 			/obj/item/radio/headset/headset_enclave
+	mask =			/obj/item/clothing/mask/gas/enclave
+	uniform =		/obj/item/clothing/under/f13/enclave/peacekeeper
+	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		/obj/item/melee/onehanded/knife/survival = 1,
+		/obj/item/flashlight/seclite = 1,
+		)
+
+/datum/outfit/loadout/pharma
+	name = "Pharmaceutical Technician"
+	mask = /obj/item/clothing/mask/surgical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/modular_computer/laptop = 1
+		)
+
+/datum/outfit/loadout/janny
+	name = "Sanitation Technician"
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/reagent_containers/spray/cleaner = 1,
+		/obj/item/grenade/chem_grenade/cleaner = 3
+		
+		)
+
+/datum/outfit/loadout/chaplain
+	name = "Spiritual Technician"
+	mask = /obj/item/clothing/mask/surgical
+	suit = /obj/item/clothing/suit/f13/autumn
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/book/bible = 2,
+		/obj/item/pen = 1,
+		/obj/item/folder = 1,
+		/obj/item/modular_computer/laptop = 1
+		)
+
+/datum/outfit/loadout/cook
+	name = "Culinary Technician"
+	mask = /obj/item/clothing/mask/surgical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	suit = /obj/item/clothing/suit/toggle/chef
+	backpack_contents = list(
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/box/ingredients/wildcard = 3,
+		/obj/item/kitchen/knife/butcher = 1
+		)
+
+/datum/outfit/job/wasteland/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 //Gunnery Sergeant
 
 /datum/job/wasteland/f13gysergeant

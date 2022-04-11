@@ -855,7 +855,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/usgysgt
 	name = "Enclave Gunnery Sergeant"
-
+	
+/obj/effect/landmark/start/f13/uslightduty
+    name = "Enclave Light Duty"
+	
 /obj/effect/landmark/start/f13/uscolonist
 	name = "US Colonist"
 
