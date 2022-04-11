@@ -77,7 +77,8 @@
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 2
 	ricochet_incidence_leeway = 0
-	embedding = list(embed_chance=90, fall_chance=3, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=5, jostle_pain_mult=6, rip_time=15, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel/stingball)
+	embed_falloff_tile = -2
+	embedding = list(embed_chance=55, fall_chance=20, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=3, jostle_pain_mult=3, rip_time=15, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel/stingball)
 
 /obj/item/projectile/bullet/pellet/stingball/mega
 	name = "megastingball pellet"
