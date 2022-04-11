@@ -17,6 +17,7 @@
 #define LOADOUT_CATEGORY_BACKPACK 				"In backpack"
 #define LOADOUT_SUBCATEGORY_BACKPACK_GENERAL 	"General" //basically anything that there's not enough of to have its own subcategory
 #define LOADOUT_SUBCATEGORY_BACKPACK_TOYS 		"Toys"
+
 //neck
 #define LOADOUT_CATEGORY_NECK "Neck"
 #define LOADOUT_SUBCATEGORY_NECK_GENERAL 	"General"
@@ -25,6 +26,9 @@
 
 //mask
 #define LOADOUT_CATEGORY_MASK "Mask"
+#define LOADOUT_SUBCATEGORY_MASK_GENERAL 		"General"
+#define LOADOUT_SUBCATEGORY_MASK_BANDANA 		"Bandanas"
+#define LOADOUT_SUBCATEGORY_MASK_MISCELLANEOUS  "Miscellaneous"
 
 //hands
 #define LOADOUT_CATEGORY_HANDS 				"Hands"
@@ -55,6 +59,8 @@
 
 //shoes
 #define LOADOUT_CATEGORY_SHOES 		"Shoes"
+#define LOADOUT_SUBCATEGORY_SHOES_GENERAL 	"General"
+#define LOADOUT_SUBCATEGORY_SHOES_FACTIONS 		"Factions"
 
 //gloves
 #define LOADOUT_CATEGORY_GLOVES		"Gloves"

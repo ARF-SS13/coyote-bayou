@@ -1,5 +1,6 @@
 /datum/gear/shoes
 	category = LOADOUT_CATEGORY_SHOES
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_GENERAL
 	slot = SLOT_SHOES
 
 /datum/gear/shoes/laceup
@@ -112,6 +113,7 @@
 	name = "NCR patrol boots"
 	path = /obj/item/clothing/shoes/f13/military/ncr
 	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_FACTIONS
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
@@ -134,5 +136,6 @@
 	name = "Great Khan pelt boots"
 	path = /obj/item/clothing/shoes/f13/military/khan_pelt
 	cost = 2
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_FACTIONS
 	restricted_desc = "KHAN"
 	restricted_roles = list("Great Khan")
