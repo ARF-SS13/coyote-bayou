@@ -67,6 +67,7 @@
 /area/f13/tunnel)
 "abN" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder"
 	},
@@ -343,6 +344,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_3"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "horizontaloutermain1"
@@ -561,6 +563,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_3"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 7;
 	icon_state = "outerpavement"
@@ -1177,6 +1180,7 @@
 /area/f13/caves)
 "axG" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
@@ -1309,9 +1313,8 @@
 	},
 /area/f13/caves)
 "aAD" = (
-/obj/item/storage/trash_stack{
-	layer = 2
-	},
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
 	},
@@ -2110,6 +2113,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
 	},
@@ -3116,6 +3120,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2"
 	},
@@ -3336,6 +3341,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "horizontaloutermain1"
@@ -3437,6 +3443,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -3846,6 +3853,7 @@
 	icon_state = "doublehorizontaldegraded"
 	},
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -4011,6 +4019,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "bEr" = (
@@ -4112,6 +4121,7 @@
 /area/f13/village)
 "bGW" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
 	},
@@ -4131,6 +4141,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright0"
 	},
@@ -4340,6 +4351,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_3"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -23345,6 +23357,7 @@
 /area/f13/tunnel)
 "jni" = (
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -32169,6 +32182,15 @@
 /obj/structure/sign/poster/contraband/pinup_topless,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"mST" = (
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright2"
+	},
+/area/f13/wasteland)
 "mTd" = (
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
@@ -40410,6 +40432,15 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"qqb" = (
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalleftborderright1"
+	},
+/area/f13/wasteland)
 "qqu" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_8";
@@ -87088,7 +87119,7 @@ lXy
 ifU
 uHg
 nIP
-gGz
+aRl
 vUG
 qzF
 rHT
@@ -95073,9 +95104,9 @@ usx
 usx
 rNC
 wGJ
+qqb
 xQh
-xQh
-aJb
+mST
 aJb
 qkz
 jFI

@@ -352,6 +352,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -13645,6 +13646,7 @@
 	icon_state = "trash_2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "hxl" = (
@@ -14640,6 +14642,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_3"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -20376,6 +20379,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_2"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -25208,13 +25212,12 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood/offices1st)
 "oQP" = (
-/obj/item/storage/trash_stack{
-	layer = 2
-	},
 /obj/machinery/light/fo13colored/Aqua{
 	dir = 1;
 	name = "light fixture"
 	},
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "oSc" = (
@@ -30234,12 +30237,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"rMS" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/enclave)
 "rMY" = (
 /obj/structure/fluff/railing{
 	dir = 6;
@@ -36321,6 +36318,7 @@
 /obj/item/storage/trash_stack{
 	icon_state = "trash_3"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -38978,9 +38976,8 @@
 /obj/structure/handrail/g_central{
 	pixel_y = -16
 	},
-/obj/item/storage/trash_stack{
-	layer = 2
-	},
+/obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -70913,7 +70910,7 @@ eIK
 jnt
 chT
 chT
-rMS
+chT
 sZq
 ycf
 ehe
@@ -71427,7 +71424,7 @@ eIK
 jnt
 chT
 chT
-rMS
+chT
 sZq
 ycf
 paG

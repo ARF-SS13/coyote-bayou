@@ -281,6 +281,13 @@
 /obj/item/paper_bin,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"bP" = (
+/obj/structure/chair/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "bQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
@@ -1843,9 +1850,17 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "mK" = (
-/obj/structure/barricade/wooden,
-/obj/structure/decoration/rag,
-/turf/closed/wall/rust,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/mirror{
+	pixel_y = 30
+	},
+/obj/structure/sink{
+	dir = 1;
+	pixel_y = 16
+	},
+/turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "mN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2345,6 +2360,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/item/storage/trash_stack,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qD" = (
@@ -3583,6 +3599,15 @@
 	},
 /turf/open/floor/wood/wood_large,
 /area/f13/ncr)
+"yB" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "yE" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -3912,8 +3937,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "AB" = (
-/obj/structure/barricade/wooden,
-/turf/closed/wall/f13/wood,
+/obj/structure/toilet{
+	pixel_y = 13
+	},
+/turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "AC" = (
 /obj/machinery/light/small{
@@ -4437,6 +4464,12 @@
 "Ec" = (
 /obj/structure/chair/wood{
 	dir = 4
+	},
+/turf/open/floor/wood/f13/oak,
+/area/f13/building)
+"Ed" = (
+/obj/structure/sign/poster/contraband/pinup_couch{
+	pixel_y = -31
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
@@ -6215,6 +6248,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Pw" = (
@@ -6473,6 +6507,10 @@
 /area/f13/building)
 "Rm" = (
 /turf/open/floor/carpet/red,
+/area/f13/building)
+"Rn" = (
+/obj/structure/simple_door/wood,
+/turf/open/floor/wood/f13/oak,
 /area/f13/building)
 "Rr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -34923,8 +34961,8 @@ PL
 fv
 Xv
 Xv
-fv
-HD
+Xv
+Rn
 Xv
 HD
 HD
@@ -35177,12 +35215,12 @@ PL
 PL
 PL
 Mj
-ol
 Wd
 ol
 fv
-AB
-fv
+mK
+HD
+Xv
 KT
 HD
 HD
@@ -35436,10 +35474,10 @@ PL
 Mj
 aU
 ol
-ol
-ol
-Wd
-mK
+fv
+AB
+Ed
+Xv
 UZ
 dp
 yJ
@@ -35693,10 +35731,10 @@ PL
 Mj
 BD
 ol
-ol
-aU
-ol
-iq
+fv
+Xv
+YY
+Xv
 cU
 iq
 HD
@@ -35951,7 +35989,7 @@ Mj
 hO
 ol
 ol
-BD
+Wd
 ol
 ol
 ol
@@ -36207,9 +36245,9 @@ PL
 Mj
 ol
 ol
-ol
-hO
-ol
+bP
+BD
+yB
 ol
 OM
 VN
