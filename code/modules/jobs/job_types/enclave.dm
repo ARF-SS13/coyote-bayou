@@ -282,6 +282,7 @@
 	description = "You are an operative for the remnants of the Enclave. You are to attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
+	exp_type = EXP_TYPE_FALLOUT
 	exp_requirements = 1200
 
 /datum/outfit/job/enclave/peacekeeper/enclavespy
