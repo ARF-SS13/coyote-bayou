@@ -5,6 +5,16 @@
 	reqs = list(/datum/reagent/blackpowder = 50)
 	category = CAT_EXPLOSIVE
 
+/datum/crafting_recipe/explosive/explosive_collar
+	name = "Explosive Collar"
+	result = /obj/item/electropack/shockcollar/explosive
+	reqs = list(/datum/reagent/blackpowder = 50,
+				/obj/item/electropack/shockcollar = 1,
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/assembly/igniter = 1,)
+	time = 30
+	category = CAT_EXPLOSIVE
+
 /datum/crafting_recipe/chemical_payload
 	name = "Chemical Payload (C4)"
 	result = /obj/item/bombcore/chemical
