@@ -6,11 +6,11 @@
 	species_traits = list(NOTRANSSTING,NOGENITALS,NOAROUSAL)
 	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_VIRUSIMMUNE,TRAIT_SMUTANT,)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
-	speedmod = 0.75
-	armor = 25
+	speedmod = 0.85
+	armor = 35
 	siemens_coeff = 0
-	punchdamagelow = 10
-	punchdamagehigh = 20
+	punchdamagelow = 15
+	punchdamagehigh = 30
 	use_skintones = 0
 	sexes = 0
 	liked_food = JUNKFOOD | FRIED | RAW
@@ -18,8 +18,7 @@
 /datum/species/smutant/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	for(var/obj/item/bodypart/b in C.bodyparts)
-		b.max_damage += 75
-	C.faction |= "supermutant"
+		b.max_damage += 100
 /datum/species/smutant/on_species_loss(mob/living/carbon/C)
 	..()
 	for(var/obj/item/bodypart/b in C.bodyparts)
