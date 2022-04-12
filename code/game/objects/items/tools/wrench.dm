@@ -10,6 +10,9 @@
 	force = 12
 	throwforce = 7
 	w_class = WEIGHT_CLASS_SMALL
+	unique_reskin = list("Brass" = "wrench_clock",
+					"Bronze" = "wrench_brass"
+					)
 	usesound = 'sound/items/ratchet.ogg'
 	custom_materials = list(/datum/material/iron=500)
 
