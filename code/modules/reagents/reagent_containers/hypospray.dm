@@ -121,6 +121,9 @@
 	if(!iscyborg(user))
 		reagents.maximum_volume = 0 //Makes them useless afterwards
 		reagent_flags = NONE
+		if(!reagents.total_volume)
+			qdel(src)
+			return
 	update_icon()
 	addtimer(CALLBACK(src, .proc/cyborg_recharge, user), 80)
 
