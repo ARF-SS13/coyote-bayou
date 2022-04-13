@@ -95,18 +95,29 @@
 
 /datum/outfit/loadout/enforcer
 	name = "Enforcer"
-	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
+	r_hand = /obj/item/twohanded/baseball/spiked
 	belt = /obj/item/storage/belt/bandolier
 	backpack_contents = list(
-		/obj/item/ammo_box/shotgun/buck=1, \
-		/obj/item/ammo_box/shotgun/improvised=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1)
+		/obj/item/restraints/legcuffs/bola/tactical=1,
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
 
 /datum/outfit/loadout/khanskirmisher
 	name = "Skirmisher"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	backpack_contents = list(/obj/item/ammo_box/magazine/uzim9mm=3)
+	belt = /obj/item/storage/belt/bandolier
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/uzim9mm=3,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1)
 
+/datum/outfit/loadout/khandrug
+	name = "Drug Pusher"
+	belt = /obj/item/storage/belt/bandolier
+	backpack_contents = list(,
+		/obj/item/book/granter/trait/midsurgery = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/reagent_containers/pill/patch/turbo = 2,
+		)
 
 /*
 Raider

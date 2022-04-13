@@ -259,7 +259,7 @@
 /datum/gang_item/equipment/fixer
 	name = "Fixer"
 	id = "fixer"
-	cost = 100
+	cost = 30
 	item_path = /obj/item/storage/pill_bottle/chem_tin/fixer
 
 /datum/gang_item/equipment/emp
@@ -277,13 +277,18 @@
 /datum/gang_item/equipment/c4
 	name = "C4 Explosive"
 	id = "c4"
-	cost = 200
+	cost = 100
 	item_path = /obj/item/grenade/plastic/c4
 	
-/datum/gang_item/equipment/frag
-	name = "Frag grenade"
+/datum/gang_item/equipment/stinger
+	name = "Stinger"
 	cost = 75
-	item_path = /obj/item/grenade/frag
+	item_path = /obj/item/grenade/f13/stinger
+
+/datum/gang_item/equipment/he
+	name = "High Explosive Grenade"
+	cost = 100
+	item_path = /datum/crafting_recipe/concussion
 
 
 ///////////////////
