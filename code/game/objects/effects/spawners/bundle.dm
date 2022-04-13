@@ -205,8 +205,7 @@
 	name = "C"
 	items = list(
 		/obj/item/clothing/suit/armored/light/vest/kevlar,		
-		/obj/item/melee/onehanded/machete/swordtesting,
-		/obj/item/gun/ballistic/automatic/smgtesting,
+		/obj/item/melee/onehanded/machete/swordtesting
 		)
 
 /obj/effect/spawner/bundle/testd
@@ -216,24 +215,21 @@
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
 		/obj/item/reagent_containers/glass/bottle/napalm = 2,
-		/obj/item/lighter/greyscale = 1,
-		/obj/item/gun/ballistic/automatic/snipertesting,
+		/obj/item/lighter/greyscale = 1
 		)
 
 /obj/effect/spawner/bundle/teste
 	name = "E"
 	items = list(
 		/obj/item/clothing/suit/armored/light/leathersuit,		
-		/obj/item/melee/onehanded/machete/swordtesting,
-		/obj/item/gun/ballistic/automatic/pistol/pistoltesting,
+		/obj/item/melee/onehanded/machete/swordtesting
 		)
 
 /obj/effect/spawner/bundle/testf
 	name = "F"
 	items = list(
 		/obj/item/clothing/suit/toggle/armored/ranger_duster,		
-		/obj/item/melee/onehanded/machete/knifetesting,
-		/obj/item/gun/ballistic/automatic/rifletesting,
+		/obj/item/melee/onehanded/machete/knifetesting
 		)
 
 /obj/effect/spawner/bundle/testg
@@ -243,8 +239,7 @@
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
 		/obj/item/reagent_containers/glass/bottle/napalm = 2,
-		/obj/item/lighter/greyscale = 1,
-		/obj/item/gun/ballistic/automatic/pistol/pistoltesting,
+		/obj/item/lighter/greyscale = 1
 		)
 
 /obj/effect/spawner/bundle/testh
