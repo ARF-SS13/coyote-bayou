@@ -75,7 +75,6 @@
 	icon_state = "military"
 	item_state = "military"
 	permeability_coefficient = 0.05
-	clothing_flags = NOSLIP
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 	strip_delay = 40
 	resistance_flags = NONE
@@ -130,7 +129,6 @@
 	item_state = "legion_pelt"
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-	clothing_flags = NOSLIP
 
 /obj/item/clothing/shoes/f13/military/legion
 	name = "rough leather boots"
