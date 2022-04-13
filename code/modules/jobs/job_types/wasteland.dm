@@ -27,6 +27,7 @@
 	loadout_options = list(
 		/datum/outfit/loadout/enforcer,
 		/datum/outfit/loadout/khanskirmisher,
+		/datum/outfit/loadout/khandrug,
 		)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -105,10 +106,10 @@
 /datum/outfit/loadout/khanskirmisher
 	name = "Skirmisher"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	belt = /obj/item/storage/belt/bandolier
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm=3,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/storage/belt/holster=1)
 
 /datum/outfit/loadout/khandrug
 	name = "Drug Pusher"
