@@ -7,7 +7,6 @@
 	name = "\improper Cuban carp"
 	desc = "A grifftastic sandwich that burns your tongue and then leaves it numb!"
 	icon_state = "cubancarp"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	bitesize = 3
 	filling_color = "#CD853F"
@@ -195,7 +194,6 @@
 	name = "corned beef and cabbage"
 	desc = "Now you can feel like a real tourist vacationing in Ireland."
 	icon_state = "cornedbeef"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("meat" = 1, "cabbage" = 1)
@@ -205,7 +203,6 @@
 	name = "Filet migrawr"
 	desc = "Because eating bear wasn't manly enough."
 	icon_state = "bearsteak"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 6)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/ethanol/manly_dorf = 5)
 	tastes = list("meat" = 1, "salmon" = 1)
@@ -279,7 +276,6 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/kebab
-	trash = /obj/item/stack/rods
 	icon_state = "kebab"
 	w_class = WEIGHT_CLASS_NORMAL
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
@@ -348,7 +344,6 @@
 	name = "stewed soy meat"
 	desc = "Even non-vegetarians will LOVE this!"
 	icon_state = "stewedsoymeat"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
 	filling_color = "#D2691E"
@@ -363,7 +358,6 @@
 	name = "boiled spider leg"
 	desc = "A giant spider's leg that's still twitching after being cooked. Gross!"
 	icon_state = "spiderlegcooked"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/capsaicin = 2)
 	filling_color = "#000000"
@@ -374,7 +368,6 @@
 	name = "green eggs and ham"
 	desc = "Would you eat them on a train? Would you eat them on a plane? Would you eat them on a state of the art corporate deathtrap floating through space?"
 	icon_state = "spidereggsham"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	bitesize = 4
@@ -429,7 +422,6 @@
 	name = "corndog plate"
 	desc = "A plate with two small corn dogs, with two dimples of ketchup and mustard to dip them in."
 	icon_state = "corndog"
-	trash = /obj/item/trash/plate/alt
 	tastes = list("hotdog" = 2, "mustard and ketchup" = 1, "fryed bread" = 1)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/mustard = 5, /datum/reagent/consumable/ketchup = 5)
 

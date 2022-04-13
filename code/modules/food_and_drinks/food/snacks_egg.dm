@@ -108,7 +108,6 @@
 	name = "omelette du fromage"
 	desc = "That's all you can say!"
 	icon_state = "omelette"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 1)
 	bitesize = 1
@@ -140,7 +139,6 @@
 	icon_state = "benedict"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 	w_class = WEIGHT_CLASS_NORMAL
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
 	foodtype = MEAT | BREAKFAST

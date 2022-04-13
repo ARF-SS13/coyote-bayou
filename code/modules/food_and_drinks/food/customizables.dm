@@ -192,7 +192,6 @@
 	name = "kebab"
 	desc = "Delicious food on a stick."
 	ingredients_placement = INGREDIENTS_LINE
-	trash = /obj/item/stack/rods
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	ingMax = 6
 	icon_state = "rod"
@@ -230,7 +229,6 @@
 /obj/item/reagent_containers/food/snacks/customizable/salad
 	name = "salad"
 	desc = "Very tasty."
-	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 6
 	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "bowl"
@@ -276,7 +274,6 @@
 /obj/item/reagent_containers/food/snacks/customizable/soup
 	name = "soup"
 	desc = "A bowl with liquid and... stuff in it."
-	trash = /obj/item/reagent_containers/glass/bowl
 	ingMax = 8
 	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "wishsoup"

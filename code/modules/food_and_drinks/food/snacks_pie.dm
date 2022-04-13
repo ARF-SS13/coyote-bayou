@@ -1,7 +1,6 @@
 
 /obj/item/reagent_containers/food/snacks/pie
 	icon = 'icons/obj/food/piecake.dmi'
-	trash = /obj/item/trash/plate
 	bitesize = 3
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 80
@@ -22,7 +21,6 @@
 	name = "banana cream pie"
 	desc = "Just like back home, on clown planet! HONK!"
 	icon_state = "pie"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("pie" = 1)
@@ -181,7 +179,6 @@
 	name = "xeno-pie"
 	icon_state = "xenomeatpie"
 	desc = "A delicious meatpie. Probably heretical."
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("pie" = 1, "meat" = 1, "acid" = 1)
 	foodtype = GRAIN | MEAT
@@ -219,7 +216,6 @@
 	desc = "A slice of pumpkin pie, with whipped cream on top. Perfection."
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "pumpkinpieslice"
-	trash = /obj/item/trash/plate
 	filling_color = "#FFA500"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("pie" = 1, "pumpkin" = 1)
@@ -276,7 +272,6 @@
 	desc = "A slice of blumpkin pie, with whipped cream on top. Is this edible?"
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "blumpkinpieslice"
-	trash = /obj/item/trash/plate
 	filling_color = "#1E90FF"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("pie" = 1, "a mouthful of pool water" = 1)
@@ -297,7 +292,6 @@
 	desc = "A slice of sweet dulce de batata jelly."
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "dulcedebatataslice"
-	trash = /obj/item/trash/plate
 	filling_color = "#8B4513"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("jelly" = 1, "sweet potato" = 1)
@@ -326,7 +320,6 @@
 	desc = "A portion delightful healthy snake made of nut layers with thin bread"
 	icon = 'icons/obj/food/piecake.dmi'
 	icon_state = "baklavaslice"
-	trash = /obj/item/trash/plate
 	filling_color = "#1E90FF"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("nuts" = 1, "pie" = 1)

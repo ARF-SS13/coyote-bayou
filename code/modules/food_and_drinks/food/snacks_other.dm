@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////////OTHER////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/store/cheesewheel
@@ -72,7 +71,6 @@
 	name = "popcorn"
 	desc = "Now let's find some cinema."
 	icon_state = "popcorn"
-	trash = /obj/item/trash/popcorn
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	bitesize = 0.1 //this snack is supposed to be eating during looooong time. And this it not dinner food! --rastaf0
 	filling_color = "#FFEFD5"
@@ -97,7 +95,6 @@
 	name = "fries"
 	desc = "AKA: French Fries, Freedom Fries, etc."
 	icon_state = "fries"
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	filling_color = "#FFD700"
 	tastes = list("fries" = 3, "salt" = 1)
@@ -118,7 +115,6 @@
 	name = "soy dope"
 	desc = "Dope from a soy."
 	icon_state = "soydope"
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	filling_color = "#DEB887"
 	tastes = list("soy" = 1)
@@ -129,7 +125,6 @@
 	name = "cheesy fries"
 	desc = "Fries. Covered in cheese. Duh."
 	icon_state = "cheesyfries"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	filling_color = "#FFD700"
@@ -140,7 +135,6 @@
 	name = "chili cheese fries"
 	desc = "Fries smothered in cheese -and- chilli."
 	icon_state = "chilicheesefries"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#FFD700"
@@ -160,7 +154,6 @@
 	name = "carrot fries"
 	desc = "Tasty fries from fresh Carrots."
 	icon_state = "carrotfries"
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/medicine/oculine = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FFA500"
 	tastes = list("carrots" = 3, "salt" = 1)
@@ -182,7 +175,6 @@
 	desc = "It is only wafer thin."
 	icon_state = "mint"
 	bitesize = 1
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/toxin/minttoxin = 2)
 	filling_color = "#800000"
 	foodtype = TOXIC | SUGAR
@@ -260,7 +252,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/coco = 1)
 	filling_color = "#A0522D"
-	trash = /obj/item/dice/fudge
 	tastes = list("fudge" = 1)
 	foodtype = JUNKFOOD | SUGAR
 
@@ -278,7 +269,6 @@
 	name = "eggplant parmigiana"
 	desc = "The only good recipe for eggplant."
 	icon_state = "eggplantparm"
-	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#BA55D3"
@@ -339,7 +329,6 @@
 	name = "yaki imo"
 	desc = "Made with roasted sweet potatoes!"
 	icon_state = "yakiimo"
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#8B1105"
 	tastes = list("sweet potato" = 1)
@@ -349,7 +338,6 @@
 	name = "roast parsnip"
 	desc = "Sweet and crunchy."
 	icon_state = "roastparsnip"
-	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#FF5500"
 	tastes = list("parsnip" = 1)
@@ -663,7 +651,6 @@
 	name = "boritos corn chips"
 	desc = "Triangular corn chips. They do seem a bit bland but would probably go well with some kind of dipping sauce."
 	icon_state = "boritos"
-	trash = /obj/item/trash/boritos
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/cooking_oil = 2, /datum/reagent/consumable/sodiumchloride = 3)
 	filling_color = "#ECA735"

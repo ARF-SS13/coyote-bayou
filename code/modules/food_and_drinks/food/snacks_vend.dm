@@ -6,7 +6,6 @@
 	name = "candy"
 	desc = "Nougat love it or hate it."
 	icon_state = "candy"
-	trash = /obj/item/trash/candy
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/coco = 3)
 	junkiness = 25
 	filling_color = "#D2691E"
@@ -17,7 +16,6 @@
 	name = "\improper Scaredy's Private Reserve Beef Jerky"
 	icon_state = "sosjerky"
 	desc = "Beef jerky made from the finest space cows."
-	trash = /obj/item/trash/sosjerky
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/sodiumchloride = 2)
 	junkiness = 25
 	filling_color = "#8B0000"
@@ -41,7 +39,6 @@
 	name = "chips"
 	desc = "Commander Riker's What-The-Crisps."
 	icon_state = "chips"
-	trash = /obj/item/trash/chips
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/sodiumchloride = 1)
 	junkiness = 20
@@ -53,7 +50,6 @@
 	name = "4no raisins"
 	icon_state = "4no_raisins"
 	desc = "Best raisins in the universe. Not sure why."
-	trash = /obj/item/trash/raisins
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 4)
 	junkiness = 25
 	filling_color = "#8B0000"
@@ -81,7 +77,6 @@
 	name = "cheesie honkers"
 	desc = "Bite sized cheesie snacks that will honk all over your mouth."
 	icon_state = "cheesie_honkers"
-	trash = /obj/item/trash/cheesie
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
 	junkiness = 25
 	filling_color = "#FFD700"
@@ -92,7 +87,6 @@
 	name = "syndi-cakes"
 	icon_state = "syndi_cakes"
 	desc = "An extremely moist snack cake that tastes just as good after being nuked."
-	trash = /obj/item/trash/syndi_cakes
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/doctor_delight = 5)
 	filling_color = "#F5F5DC"
 	tastes = list("sweetness" = 3, "cake" = 1)
@@ -103,7 +97,6 @@
 	name = "High-power energy bars"
 	icon_state = "energybar"
 	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Ethereal."
-	trash = /obj/item/trash/energybar
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 3)
 	filling_color = "#97ee63"
 	tastes = list("pure electricity" = 3, "fitness" = 2)

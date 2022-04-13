@@ -213,7 +213,6 @@
 	icon_state = "cookedantmeat"
 	filling_color = "#967117"
 	tastes = list("bug protein" = 1)
-	trash = null
 
 /obj/item/reagent_containers/food/snacks/meat/steak/fireant_meat
 	name = "fried fire-ant"
@@ -222,7 +221,6 @@
 	icon_state = "cooked_fireant_meat"
 	filling_color = "#967117"
 	tastes = list("bug protein" = 1,"spicyness" = 1)
-	trash = null
 
 /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
 	name = "cazador steak"
@@ -302,7 +300,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/bubblegum
 	foodtype = JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/bubblegum/large
@@ -312,7 +309,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 4)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/bubblegum_large
 	foodtype = JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/cram
@@ -322,7 +318,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/cram
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/cram/large
@@ -332,7 +327,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 40)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/cram_large
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/yumyum
@@ -342,7 +336,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/yumyum
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/fancylads
@@ -352,7 +345,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/fancylads
 	foodtype = JUNKFOOD | SUGAR | GRAIN
 
 /obj/item/reagent_containers/food/snacks/f13/sugarbombs
@@ -362,7 +354,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/sugarbombs
 	foodtype = JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/crisps
@@ -372,7 +363,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/crisps
 	foodtype = JUNKFOOD
 
 /obj/item/reagent_containers/food/snacks/f13/steak
@@ -382,7 +372,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/steak
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/specialapples
@@ -392,7 +381,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/tricordrazine = 10)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/specialapples
 	foodtype = DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/dandyapples
@@ -402,7 +390,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/sugar = 10)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/dandyapples
 	foodtype = DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/blamco
@@ -412,7 +399,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/blamco
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/f13/blamco/large
@@ -422,7 +408,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/blamco_large
 	foodtype = DAIRY
 
 /obj/item/reagent_containers/food/snacks/f13/mechanic
@@ -432,7 +417,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 3)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/mechanist
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/f13/instamash
@@ -442,7 +426,6 @@
 	bonus_reagents = list(/datum/reagent/radium = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/instamash
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/f13/mre
@@ -452,7 +435,6 @@
 	bonus_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 10, /datum/reagent/medicine/tricordrazine = 10, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	filling_color = "#B22222"
-	trash = /obj/item/trash/f13/mre
 
 /obj/item/reagent_containers/food/snacks/f13/galette
 	name = "dehydrated pea soup"
@@ -538,7 +520,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 50)
 	filling_color = "B#22222"
-	trash = /obj/item/crafting/lunchbox
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/f13/wastelandwellington
@@ -623,7 +604,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 32)
 	filling_color = "B#22222"
-	trash = /obj/item/reagent_containers/glass/bowl
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/soup/longpork_stew
@@ -637,7 +617,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/medicine/longpork_stew = 5)
 	filling_color = "#a7510b"
 	tastes = list("oily broth" = 5, "chewy meat" = 1)
-	trash = /obj/item/reagent_containers/glass/bowl
 	foodtype = MEAT | LONGPORK
 
 /obj/item/reagent_containers/food/snacks/soup/mirelurkstew
@@ -651,7 +630,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/tricordrazine = 5)
 	tastes = list("crab" = 5, "onions" = 1)
 	filling_color = "#406618"
-	trash = /obj/item/reagent_containers/glass/bowl
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/soup/rubycasserole
@@ -665,7 +643,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/medicine/tricordrazine = 5, /datum/reagent/consumable/capsaicin = 2.5)
 	tastes = list("casserole" = 5, "meat" = 2, "peppers" = 2)
 	filling_color = "#406618"
-	trash = /obj/item/reagent_containers/glass/bowl
 	foodtype = MEAT | VEGETABLES
 
 // Canned Items
@@ -703,7 +680,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("doughy beans" = 5, "pork flavoring" = 1)
-	trash = /obj/item/trash/f13/porknbeans
 	foodtype = MEAT | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/f13/canned/borscht
@@ -714,7 +690,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("old beets" = 4, "vegetables" = 2, "meat broth" = 2)
-	trash = /obj/item/trash/f13/borscht
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/f13/canned/dog //Max Rockatansky favorite
@@ -725,7 +700,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35)
 	filling_color = "#B22222"
 	tastes = list("mushy kibble" = 4, "musty meat" = 2)
-	trash = /obj/item/trash/f13/dog
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr
@@ -734,7 +708,6 @@
 	filling_color = "#B22222"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 35, /datum/reagent/consumable/nutriment/vitamin = 3)
 	icon_state = "c_ration_1"
-	trash = /obj/item/trash/f13/c_ration_1
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/brahmin_chili
 	name = "c-ration entree - 'Brahmin Meatchunks in Fava Bean Chili'"
@@ -817,7 +790,6 @@
 	tastes = list("cracker" = 4)
 	foodtype = GRAIN
 	slice_path = /obj/item/reagent_containers/food/snacks/cracker/c_ration
-	trash = /obj/item/trash/f13/c_ration_2
 	slices_num = 4
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit
@@ -825,7 +797,6 @@
 	desc = "A canned food product containing the dessert portion of a military combat ration."
 	icon_state = "c_ration_3"
 	tastes = list("mutfruit" = 3, "sugar" = 3)
-	trash = /obj/item/trash/f13/c_ration_3
 	foodtype = SUGAR | FRUIT
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/cranberry_cobbler
@@ -833,7 +804,6 @@
 	desc = "A canned food product containing the dessert portion of a military combat ration."
 	icon_state = "c_ration_3"
 	tastes = list("perfectly replicated GMO cranberries" = 3, "buttery flakey crust" = 2)
-	trash = /obj/item/trash/f13/c_ration_3
 	foodtype = SUGAR | FRUIT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast
@@ -841,7 +811,6 @@
 	desc = "A canned food product containing the entree portion of a military combat ration."
 	icon_state = "k_ration_can"
 	tastes = list("rich beef" = 3, "peppers" = 3, "eggs" = 2)
-	trash = /obj/item/trash/f13/k_ration
 	foodtype = MEAT | VEGETABLES | BREAKFAST
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/lunch
@@ -849,7 +818,6 @@
 	desc = "A canned food product containing the entree portion of a military combat ration, a star with the initials 'A.F' is stamped on the can."
 	icon_state = "k_ration_can"
 	tastes = list("corn tortilla" = 2, "stewed brahmin" = 3, "picante salsa" = 3)
-	trash = /obj/item/trash/f13/k_ration
 	foodtype = MEAT | GRAIN
 
 /obj/item/reagent_containers/food/snacks/f13/canned/ncr/dinner
@@ -857,5 +825,4 @@
 	desc = "A canned food product containing the entree portion of a military combat ration. Better than Cram."
 	icon_state = "k_ration_can"
 	tastes = list("beef luncheon loaf" = 3, "jalapeno peppers and spices" = 2)
-	trash = /obj/item/trash/f13/k_ration
 	foodtype = MEAT
