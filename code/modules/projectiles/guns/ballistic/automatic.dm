@@ -461,7 +461,6 @@
 	automatic = 1
 	autofire_shot_delay = 2
 	burst_shot_delay = 2.5
-	extra_damage = 1
 	recoil = 0.25
 	can_suppress = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -1526,19 +1525,3 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	can_scope = FALSE
-
-// BETA STUFF // =Obsolete
-/obj/item/gun/ballistic/automatic/smgtesting
-	name = "SMG"
-	mag_type = /obj/item/ammo_box/magazine/testbullet
-	extra_damage = 20
-
-/obj/item/gun/ballistic/automatic/snipertesting
-	name = "sniper rifle"
-	mag_type = /obj/item/ammo_box/magazine/testbullet
-	extra_damage = 25
-
-/obj/item/gun/ballistic/automatic/rifletesting
-	name = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/testbullet
-	extra_damage = 22
