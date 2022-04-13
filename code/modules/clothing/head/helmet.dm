@@ -111,11 +111,11 @@
 	tint = 2
 
 /obj/item/clothing/head/helmet/blueshirt
-	name = "light security helmet"
+	name = "blue helmet"
 	desc = "A reliable, blue tinted helmet reminding you that you <i>still</i> owe that engineer a beer."
 	icon_state = "blueshift"
 	item_state = "blueshift"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 50, "bio" = 40, "rad" = 40, "fire" = 70, "acid" = 40, "wound" = 50)
+	custom_premium_price = PRICE_ABOVE_EXPENSIVE
 
 /obj/item/clothing/head/helmet/riot
 	name = "riot helmet"

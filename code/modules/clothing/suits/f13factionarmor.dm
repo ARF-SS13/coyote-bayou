@@ -701,12 +701,14 @@
 
 /obj/item/clothing/suit/armor/vest/oasis
 	name = "OPD vest"
-	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
+	desc = "A slim armored vest with a rigid exterior that provides decent protection against most types of damage. This one has pockets sewn into the front and OPD stitched on the back."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-	armor = list("melee" = 15, "bullet" = 45, "laser" = 15,  "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
-	icon_state = "blueshift"
-	item_state = "blueshift"
-	slowdown = 0.02
+	armor = list("melee" = 38, "bullet" = 38, "laser" = 38,  "energy" = 30, "bomb" = 40, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 50)
+	slowdown = 0.06
+
+/obj/item/clothing/suit/armor/vest/oasis/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
 	name = "heavy steel breastplate"
