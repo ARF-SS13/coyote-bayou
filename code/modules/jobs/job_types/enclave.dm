@@ -45,18 +45,7 @@
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
-/datum/outfit/job/enclave/peacekeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	if(H.gender == FEMALE)
-		H.gender = MALE
-		H.real_name = random_unique_name(MALE)
-		H.name = H.real_name
-		if(H.wear_id)
-			var/obj/item/card/id/dogtag/L = H.wear_id
-			L.registered_name = H.name
-			L.update_label()
+
 
 
 
@@ -347,3 +336,76 @@
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
+
+//Bunker Duty
+/datum/job/enclave/f13BDUTY
+    title = "Enclave Bunker Duty"
+    flag = F13USBDUTY
+    total_positions = 2
+    spawn_positions = 2
+    description = "You were assigned to bunker duty this week, clean up, cook up, preach up or chem up your fellow Americans and remember don't join any raids or battles from your fellow Americans, after all it's none of your concern this week is it."
+    enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
+    supervisors = "Everyone else."
+    outfit = /datum/outfit/job/enclave/noncombat/f13BDUTY
+    exp_type = EXP_TYPE_FALLOUT
+    exp_requirements = 100
+
+    loadout_options = list(
+        /datum/outfit/loadout/pharma,
+        /datum/outfit/loadout/janny,
+        /datum/outfit/loadout/chaplain,
+        /datum/outfit/loadout/cook,
+        )
+
+/datum/outfit/job/enclave/noncombat/f13BDUTY
+    name = "Enclave Bunker Duty"
+    jobtype = /datum/job/enclave/f13BDUTY
+    id =             /obj/item/card/id/dogtag/enclave/trooper
+    glasses =         /obj/item/clothing/glasses/sunglasses/big
+    uniform =        /obj/item/clothing/under/f13/enclave/peacekeeper
+
+    backpack_contents = list(
+        /obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+        /obj/item/storage/survivalkit_aid_adv = 1,
+        /obj/item/storage/bag/money/small/wastelander = 1,
+        )
+
+/datum/outfit/loadout/pharma
+    name = "Pharmaceutical Technician"
+    mask = /obj/item/clothing/mask/surgical
+    suit = /obj/item/clothing/suit/hooded/surgical
+    gloves = /obj/item/clothing/gloves/color/latex/nitrile
+    backpack_contents = list(
+        /obj/item/book/granter/trait/chemistry = 1,
+        /obj/item/healthanalyzer = 1,
+        )
+
+/datum/outfit/loadout/janny
+    name = "Sanitation Technician"
+    gloves = /obj/item/clothing/gloves/color/black
+    head = /obj/item/clothing/head/soft/purple
+    shoes = /obj/item/clothing/shoes/galoshes
+    backpack_contents = list(
+        /obj/item/reagent_containers/spray/cleaner = 1,
+        /obj/item/mop/advanced = 1,
+        /obj/item/grenade/chem_grenade/cleaner = 3,
+        )
+
+/datum/outfit/loadout/chaplain
+    name = "Spiritual Technician"
+    mask = /obj/item/clothing/mask/surgical
+    suit = /obj/item/clothing/suit/f13/autumn
+    backpack_contents = list(
+        /obj/item/storage/book/bible = 2,
+        /obj/item/pen = 1,
+        /obj/item/folder = 1,
+        )
+
+/datum/outfit/loadout/cook
+    name = "Culinary Technician"
+    head = /obj/item/clothing/head/chefhat 
+    suit = /obj/item/clothing/neck/apron/housewife
+    backpack_contents = list(
+        /obj/item/storage/box/ingredients/wildcard = 4,
+        /obj/item/kitchen/knife/butcher = 1,
+        )
