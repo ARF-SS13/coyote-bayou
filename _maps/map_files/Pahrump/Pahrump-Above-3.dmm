@@ -586,9 +586,8 @@
 /turf/open/transparent/openspace,
 /area/f13/brotherhood/surface)
 "df" = (
-/obj/structure/bed,
-/obj/item/bedsheet/purple,
-/turf/open/floor/carpet/black,
+/obj/effect/landmark/start/f13/ncrlogisticsofficer,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "dg" = (
 /obj/machinery/photocopier,
@@ -715,6 +714,9 @@
 	},
 /obj/item/clothing/under/f13/ncr_formal_uniform,
 /obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/f13/ncr/ncr_officer,
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack,
+/obj/item/clothing/head/beret/ncr_codresscap,
 /turf/open/floor/carpet/royalblue,
 /area/f13/ncr)
 "dI" = (
@@ -1027,10 +1029,12 @@
 	},
 /area/f13/ncr)
 "fs" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/under/f13/ncr_formal_uniform,
-/obj/item/clothing/shoes/laceup,
-/turf/open/floor/carpet/black,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/toilet,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/ncr)
 "fu" = (
 /obj/structure/campfire/barrel,
@@ -1290,13 +1294,16 @@
 	},
 /area/f13/wasteland)
 "gU" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/under/f13/ncr_formal_uniform,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/f13/ncr/ncr_officer,
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack,
+/obj/item/clothing/head/beret/ncr_codresscap,
 /obj/structure/decoration/rag{
 	icon_state = "flag_ncr";
 	name = "NCR banner";
-	pixel_y = 32
-	},
-/obj/item/kirbyplants/random{
-	pixel_y = 8
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
@@ -1439,12 +1446,11 @@
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/legion)
 "hC" = (
-/obj/machinery/door/unpowered/securedoor{
-	desc = "Door with a built-in lock. Can't be padlocked. Carved into the door are the words 'STAY OUT', I guess the Sergeant likes their privacy...";
-	name = "Sergeant's Quarters";
+/obj/machinery/door/airlock/security/glass{
+	name = "Logistics Office";
 	req_access_txt = "121"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "hD" = (
 /obj/effect/decal/cleanable/dirt{
@@ -2117,14 +2123,14 @@
 /area/f13/ncr)
 "lm" = (
 /obj/structure/closet/locker,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
-/obj/item/clothing/head/beret/ncr_codresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/head/beret/ncr_dresscap,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "lo" = (
@@ -2494,6 +2500,9 @@
 /obj/item/clothing/accessory/medal/plasma/nobel_science{
 	name = "Medal of Science"
 	},
+/obj/item/clothing/under/f13/ncr/ncr_officer,
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack,
+/obj/item/clothing/head/beret/ncr_codresscap,
 /turf/open/floor/carpet/royalblack,
 /area/f13/ncr)
 "mS" = (
@@ -3166,10 +3175,8 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/ncr)
 "qO" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
+/obj/structure/bed,
+/obj/item/bedsheet/purple,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "qT" = (
@@ -4185,6 +4192,14 @@
 /obj/structure/railing,
 /turf/open/floor/wood/f13/old,
 /area/f13/building)
+"vV" = (
+/obj/machinery/door/unpowered/securedoor{
+	desc = "Door with a built-in lock. Can't be padlocked. Carved into the door are the words 'STAY OUT', I guess the Sergeant likes their privacy...";
+	name = "Commissioned Officer's Bathroom";
+	req_access_txt = "121"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/ncr)
 "vW" = (
 /obj/structure/chair/booth{
 	dir = 8
@@ -5227,17 +5242,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Bc" = (
-/obj/structure/bed,
-/obj/item/bedsheet/hos{
-	desc = "A comfortable red bedsheet.";
-	name = "Comfy Red Bedsheet"
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/ncr)
 "Bg" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/sunset,
-/turf/open/floor/carpet/black,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mirror{
+	pixel_x = -26;
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/ncr)
 "Bj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5467,9 +5484,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Cz" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp/green,
-/turf/open/floor/carpet/black,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/ncr)
 "CA" = (
 /obj/structure/table,
@@ -8089,12 +8105,12 @@
 /area/f13/brotherhood/surface)
 "PX" = (
 /obj/structure/table/reinforced,
-/obj/item/pda/engineering,
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/computer/terminal{
 	dir = 4;
 	termtag = "Camp Miller LO Quarters"
 	},
+/obj/item/pda/engineering,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "Qb" = (
@@ -10773,9 +10789,9 @@ JS
 ot
 Bk
 Jd
-df
-Ld
-fs
+Ox
+pc
+Bg
 Jd
 ub
 kC
@@ -11030,8 +11046,8 @@ JS
 fW
 Bk
 Jd
-Bg
-dI
+Jd
+Jd
 Cz
 Jd
 ub
@@ -11288,7 +11304,7 @@ JS
 lm
 Jd
 fs
-dI
+pc
 Bc
 Jd
 ub
@@ -11545,8 +11561,8 @@ JS
 lm
 Jd
 Jd
-hC
 Jd
+vV
 Jd
 ub
 kC
@@ -19501,7 +19517,7 @@ PL
 Jd
 UM
 JS
-ko
+hC
 JS
 JS
 hE
@@ -19757,7 +19773,7 @@ PL
 PL
 Jd
 JS
-JS
+df
 Jd
 JS
 JS

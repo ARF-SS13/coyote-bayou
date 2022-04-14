@@ -1762,7 +1762,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building)
 "aMc" = (
-/obj/structure/table/wood,
+/obj/structure/closet/crate,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "aMl" = (
@@ -2275,6 +2275,9 @@
 /obj/item/clothing/under/rank/medical/doctor/purple,
 /obj/item/clothing/under/rank/medical/doctor/green,
 /obj/item/clothing/under/rank/medical/doctor/blue,
+/obj/item/clothing/under/f13/ncr/ncr_officer,
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_codressjack,
+/obj/item/clothing/head/beret/ncr_codresscap,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -2575,6 +2578,11 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"bdz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ncrdrillsergeant,
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "bdE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
@@ -9066,6 +9074,12 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
+"dOC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ncrsergeant,
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "dOH" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/fence{
@@ -9804,7 +9818,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eeo" = (
-/obj/structure/simple_door/room,
+/obj/structure/simple_door/room{
+	name = "Drill Sergeant's Office"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
@@ -11274,6 +11290,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/megaphone,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "eJO" = (
@@ -18979,10 +18996,10 @@
 "hIR" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrheavytrooper,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/effect/landmark/start/f13/ncrrearechelon,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "hJf" = (
@@ -19739,7 +19756,7 @@
 "hYp" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrcorporal,
+/obj/effect/landmark/start/f13/ncrconscript,
 /turf/open/floor/wood/f13/oakbroken4,
 /area/f13/ncr)
 "hYu" = (
@@ -20188,6 +20205,11 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
+"ihc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ncrcorporal,
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "ihi" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
@@ -23604,8 +23626,9 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/caves)
 "jxd" = (
-/obj/structure/closet/wardrobe,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/cabinet,
+/obj/item/clothing/under/f13/ncr_formal_uniform,
+/obj/item/clothing/shoes/laceup,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -24023,7 +24046,7 @@
 /area/f13/wasteland)
 "jIJ" = (
 /obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lamp/green,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "jIR" = (
@@ -24443,6 +24466,7 @@
 /area/f13/building)
 "jSD" = (
 /obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -28669,7 +28693,9 @@
 	},
 /area/f13/city)
 "lGW" = (
-/obj/structure/simple_door/room,
+/obj/structure/simple_door/room{
+	name = "Corporal Bunks"
+	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "lHo" = (
@@ -32538,10 +32564,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "nfk" = (
-/obj/structure/closet/wardrobe,
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/head/beret/ncr_dresscap,
+/obj/item/clothing/under/f13/ncr/ncr_dress,
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_dressjack,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "nfp" = (
@@ -37416,7 +37445,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/landmark/start/f13/ncrdrillsergeant,
 /turf/open/floor/carpet,
 /area/f13/ncr)
 "pkf" = (
@@ -39096,6 +39124,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"pVQ" = (
+/obj/structure/simple_door/room{
+	name = "Heavy Trooper Bunks"
+	},
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "pWe" = (
 /obj/item/bedsheet/orange,
 /obj/structure/bed/old,
@@ -43515,6 +43549,12 @@
 	icon_state = "verticalleftborderleftbottom"
 	},
 /area/f13/wasteland)
+"rRS" = (
+/obj/structure/simple_door/room{
+	name = "Sergeant Bunks"
+	},
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "rRT" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/floor/f13/wood,
@@ -46340,12 +46380,6 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/building)
-"sZT" = (
-/obj/item/bedsheet/brown,
-/obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrsergeant,
-/turf/open/floor/wood/f13/oak,
-/area/f13/ncr)
 "sZU" = (
 /obj/structure/barricade/bars,
 /obj/structure/barricade/wooden/strong,
@@ -46473,12 +46507,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"tdn" = (
-/obj/item/bedsheet/brown,
-/obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrheavytrooper,
-/turf/open/floor/wood/f13/oak,
-/area/f13/ncr)
 "tdv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -47324,7 +47352,7 @@
 "tvE" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrcorporal,
+/obj/effect/landmark/start/f13/ncrconscript,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "tvJ" = (
@@ -51311,7 +51339,7 @@
 "vcm" = (
 /obj/item/bedsheet/brown,
 /obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrfirstsergeant,
+/obj/effect/landmark/start/f13/ncrrearechelon,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "vcx" = (
@@ -51864,6 +51892,10 @@
 /obj/effect/landmark/start/f13/campfollower,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
+"vpm" = (
+/obj/effect/landmark/start/f13/ncrsergeant,
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "vpp" = (
 /obj/structure/window/reinforced/tinted{
 	dir = 8
@@ -52564,7 +52596,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "vEG" = (
-/obj/effect/landmark/start/f13/ncrsergeant,
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
@@ -55630,6 +55661,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"wUZ" = (
+/obj/effect/landmark/start/f13/ncrheavytrooper,
+/turf/open/floor/wood/f13/oak,
+/area/f13/ncr)
 "wVl" = (
 /obj/item/mop,
 /turf/open/floor/f13{
@@ -56086,7 +56121,6 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "xeK" = (
-/obj/effect/landmark/start/f13/ncrsergeant,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
@@ -57624,12 +57658,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "xKH" = (
-/obj/item/bedsheet/brown,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/bed/old,
-/obj/effect/landmark/start/f13/ncrrearechelon,
+/obj/effect/landmark/start/f13/ncrcorporal,
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "xKV" = (
@@ -59257,7 +59286,7 @@ bzf
 jxd
 oaB
 lvS
-nfk
+jxd
 wvV
 cpK
 ajD
@@ -59504,16 +59533,16 @@ ktB
 wvV
 wvV
 wvV
-ykz
-ykz
-oaB
-lIh
+xKH
 ykz
 oaB
-jFl
+ihc
+ykz
+oaB
+dOC
 jFl
 wvV
-ykz
+vpm
 ykz
 wvV
 cpK
@@ -59771,7 +59800,7 @@ lIh
 jIJ
 wvV
 ykz
-aMc
+jIJ
 wvV
 cpK
 unI
@@ -60024,10 +60053,10 @@ wvV
 lGW
 wvV
 wvV
-lGW
+rRS
 wvV
 wvV
-lGW
+rRS
 wvV
 wvV
 cpK
@@ -60795,7 +60824,7 @@ lIh
 ykz
 ykz
 wvV
-lGW
+pVQ
 wvV
 wvV
 eeo
@@ -61309,10 +61338,10 @@ fow
 eQj
 bjA
 wvV
-ykz
+wUZ
 ykz
 wvV
-lIh
+bdz
 ykz
 wvV
 cpK
@@ -62093,7 +62122,7 @@ dRA
 gmX
 koD
 wvV
-sZT
+vcm
 ykz
 vcm
 wvV
@@ -62607,7 +62636,7 @@ vfc
 gmX
 koD
 dku
-tdn
+vcm
 ykz
 hIR
 wvV
@@ -65184,10 +65213,10 @@ wvV
 xGv
 xGv
 wvV
-xKH
+xIo
 cwO
 wGY
-xKH
+xIo
 fvN
 wvV
 mJz
