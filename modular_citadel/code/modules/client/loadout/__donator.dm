@@ -19,7 +19,6 @@
 /datum/gear/donator/kits
 	slot = SLOT_IN_BACKPACK
 
-
 /*example
 /datum/gear/donator/kits/averyamadeus
 	name = "Avery Amadeus' belongings"
@@ -28,3 +27,11 @@
 
 
 */
+
+
+/datum/gear/donator/kits/cayce
+	name = "Jett Lowe's belongings"
+	path = /obj/item/storage/box/large/custom_kit/cayce
+	ckeywhitelist = list("Cayce")
+
+
