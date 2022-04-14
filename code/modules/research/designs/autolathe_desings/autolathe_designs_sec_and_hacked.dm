@@ -62,6 +62,14 @@
 	build_path = /obj/item/construction/rcd
 	category = list("hacked", "Construction")
 
+/datum/design/rpd
+	name = "Rapid Pipe Dispenser (RPD)"
+	id = "rpd"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 75000, /datum/material/glass = 37500)
+	build_path = /obj/item/pipe_dispenser
+	category = list("hacked", "Construction")
+
 
 /datum/design/handcuffs
 	name = "Handcuffs"
