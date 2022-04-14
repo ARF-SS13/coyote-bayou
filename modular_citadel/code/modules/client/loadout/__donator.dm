@@ -32,6 +32,6 @@
 /datum/gear/donator/kits/cayce
 	name = "Jett Lowe's belongings"
 	path = /obj/item/storage/box/large/custom_kit/cayce
-	ckeywhitelist = list("Cayce")
+	ckeywhitelist = list("cayce")
 
 
