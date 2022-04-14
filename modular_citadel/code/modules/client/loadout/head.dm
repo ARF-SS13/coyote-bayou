@@ -420,3 +420,17 @@ datum/gear/head/steelpot_bandolier
 	cost = 2
 	restricted_desc = "KHAN"
 	restricted_roles = list("Great Khan")
+
+/datum/gear/head/oasishelmet
+	name = "light security helmet"
+	path = /obj/item/clothing/head/helmet/blueshirt
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
+	cost = 3
+	restricted_desc = "Oasis PD, Oasis officials"
+	restricted_roles = list("Sheriff",
+							"Deputy",
+							"Mayor",
+							"Detective",
+							"Secretary",
+							"Shopkeeper",
+						)
