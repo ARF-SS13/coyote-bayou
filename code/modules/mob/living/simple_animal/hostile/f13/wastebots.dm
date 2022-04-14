@@ -315,8 +315,15 @@
 	wander = 0
 	anchored = FALSE
 	del_on_death = FALSE
-	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
+	possible_a_intents = list(INTENT_HELP, INTENT_HARM, INTENT_GRAB, INTENT_DISARM)
 	dextrous = TRUE
+	deathmessage = "abruptly shuts down, falling to the ground!"
+
+/mob/living/simple_animal/hostile/handy/assaultron/playable/medical
+	name = "SA-S-E"
+	desc = "An Assaultron modified for the Medical field, SA-S-E forgoes the weaponry and deadliness of her military countarparts to save lives. Painted white with blue highlights, and a blue cross on the front of her visor, this robot comes equipped with what looks like modified medical gear. Her head has no eye-laser, instead a gently pulsing blue eye that scans people the analyze their health, a defibrilator on her back, and articulated hands to be able to use the myriad medical tools strapped to parts of her body under protective cases all show this model is meant to save lives. She's stockier than other Assaultrons due to all the added gear, and her legs seem much thicker than normal due to reinforced servos and gears."
+	icon_state = "assaultron_sase"
+	icon_dead = "assaultron_sase_dead"
 
 //Junkers
 /mob/living/simple_animal/hostile/handy/gutsy/flamer

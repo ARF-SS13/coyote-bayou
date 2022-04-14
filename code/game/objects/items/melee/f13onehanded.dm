@@ -733,6 +733,13 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("stabbed", "sliced", "pierced", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
+obj/item/melee/unarmed/punchdagger/cyborg
+	name = "assaultron claws"
+	desc = "Razor sharp blades embedded into the grippers of an assaultron. Sharp."
+	icon_state = "tiger_claw"
+	item_state = "tiger_claw"
+	force = 40 //Assaultron, so, makes sense.
+
 // Deathclaw Gauntlet	Keywords: Damage 28, AP 1
 /obj/item/melee/unarmed/deathclawgauntlet
 	name = "deathclaw gauntlet"

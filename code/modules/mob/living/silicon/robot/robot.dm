@@ -701,6 +701,27 @@
 /mob/living/silicon/robot/modules/miner
 	set_module = /obj/item/robot_module/miner
 
+/mob/living/silicon/robot/modules/assaultron //F13 stuff, better Handy.
+	name = "Assaultron"
+	set_module = /obj/item/robot_module/assaultron
+	faction = list("wastebots") //Friendly to other assaultrons?
+
+/mob/living/silicon/robot/modules/assaultron/Initialize()
+	. = ..()
+	cell = new /obj/item/stock_parts/cell/hyper(src, 25000)
+
+/mob/living/silicon/robot/modules/assaultron/medical
+	name = "Medical Assaultron"
+	set_module = /obj/item/robot_module/assaultron/medical
+
+/mob/living/silicon/robot/modules/assaultron/medical/sase
+	name = "SA-S-E"
+	desc = "An assaultron modified for the medical field, SA-S-E forgoes the weaponry and deadliness of her military countarparts to save lives. \
+	Painted white with blue highlights, and a blue cross on the front of her visor, this robot comes equipped with what looks like modified medical gear. \
+	Her head has no eye-laser, instead a gently pulsing blue eye that scans people the analyze their health, a defibrilator on her back, and articulated hands to be able \
+	to use the myriad medical tools strapped to parts of her body under protective cases all show this model is meant to save lives. She's stockier than other assaultrons \
+	due to all the added gear, and her legs seem much thicker than normal due to reinforced servos and gears."
+
 /mob/living/silicon/robot/modules/syndicate
 	icon_state = "synd_sec"
 	faction = list(ROLE_SYNDICATE)

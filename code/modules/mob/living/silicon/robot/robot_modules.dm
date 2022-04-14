@@ -331,43 +331,13 @@
 	var/static/list/med_icons
 	if(!med_icons)
 		med_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical"),
-		"Droid" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "medical"),
-		"Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleekmed"),
-		"Marina" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "marinamed"),
-		"Eyebot" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "eyebotmed"),
-		"Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavymed")
+		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "medical")
 		)
-		var/list/L = list("Medihound" = "medihound", "Medihound Dark" = "medihounddark", "Vale" = "valemed")
-		for(var/a in L)
-			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
-			wide.pixel_x = -16
-			med_icons[a] = wide
-		if(R.client && R.client.ckey == "nezuli")
-			var/image/bad_snowflake = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "alina-med")
-			bad_snowflake.pixel_x = -16
-			med_icons["Alina"] = bad_snowflake
 		med_icons = sortList(med_icons)
 	var/med_borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(med_borg_icon)
 		if("Default")
 			cyborg_base_icon = "medical"
-		if("Droid")
-			cyborg_base_icon = "medical"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-			hat_offset = 4
-		if("Sleek")
-			cyborg_base_icon = "sleekmed"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Marina")
-			cyborg_base_icon = "marinamed"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Eyebot")
-			cyborg_base_icon = "eyebotmed"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Heavy")
-			cyborg_base_icon = "heavymed"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
 		else
 			return FALSE
 	return ..()
@@ -415,56 +385,13 @@
 	var/static/list/engi_icons
 	if(!engi_icons)
 		engi_icons = list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer"),
-		"Default - Treads" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "engi-tread"),
-		"Loader" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "loaderborg"),
-		"Handy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "handyeng"),
-		"Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleekeng"),
-		"Can" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "caneng"),
-		"Marina" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "marinaeng"),
-		"Spider" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "spidereng"),
-		"Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavyeng")
+		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "engineer")
 		)
-		var/list/L = list("Pup Dozer" = "pupdozer", "Vale" = "valeeng")
-		for(var/a in L)
-			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
-			wide.pixel_x = -16
-			engi_icons[a] = wide
-		if(R.client && R.client.ckey == "nezuli")
-			var/image/bad_snowflake = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "alina-eng")
-			bad_snowflake.pixel_x = -16
-			engi_icons["Alina"] = bad_snowflake
 		engi_icons = sortList(engi_icons)
 	var/engi_borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(engi_borg_icon)
 		if("Default")
 			cyborg_base_icon = "engineer"
-		if("Default - Treads")
-			cyborg_base_icon = "engi-tread"
-			special_light_key = "engineer"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Loader")
-			cyborg_base_icon = "loaderborg"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-			has_snowflake_deadsprite = TRUE
-		if("Handy")
-			cyborg_base_icon = "handyeng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Sleek")
-			cyborg_base_icon = "sleekeng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Can")
-			cyborg_base_icon = "caneng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Marina")
-			cyborg_base_icon = "marinaeng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Spider")
-			cyborg_base_icon = "spidereng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Heavy")
-			cyborg_base_icon = "heavyeng"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
 		else
 			return FALSE
 	return ..()
@@ -498,46 +425,12 @@
 	if(!sec_icons)
 		sec_icons = list(
 		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "sec"),
-		"Default - Treads" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sec-tread"),
-		"Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleeksec"),
-		"Can" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "cansec"),
-		"Marina" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "marinasec"),
-		"Spider" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "spidersec"),
-		"Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavysec")
 		)
-		var/list/L = list("K9" = "k9", "Vale" = "valesec", "K9 Dark" = "k9dark")
-		for(var/a in L)
-			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
-			wide.pixel_x = -16
-			sec_icons[a] = wide
-		if(R.client && R.client.ckey == "nezuli")
-			var/image/bad_snowflake = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "alina-sec")
-			bad_snowflake.pixel_x = -16
-			sec_icons["Alina"] = bad_snowflake
 		sec_icons = sortList(sec_icons)
 	var/sec_borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(sec_borg_icon)
 		if("Default")
 			cyborg_base_icon = "sec"
-		if("Default - Treads")
-			cyborg_base_icon = "sec-tread"
-			special_light_key = "sec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Sleek")
-			cyborg_base_icon = "sleeksec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Marina")
-			cyborg_base_icon = "marinasec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Can")
-			cyborg_base_icon = "cansec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Spider")
-			cyborg_base_icon = "spidersec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Heavy")
-			cyborg_base_icon = "heavysec"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
 		else
 			return FALSE
 	return ..()
@@ -579,24 +472,12 @@
 /obj/item/robot_module/peacekeeper/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
 	var/static/list/peace_icons = sortList(list(
-		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "peace"),
-		"Borgi" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "borgi"),
-		"Spider" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "whitespider")
+		"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "peace")
 		))
 	var/peace_borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(peace_borg_icon)
 		if("Default")
 			cyborg_base_icon = "peace"
-		if("Spider")
-			cyborg_base_icon = "whitespider"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Borgi")
-			cyborg_base_icon = "borgi"
-			moduleselect_icon = "borgi"
-			moduleselect_alternate_icon = 'modular_citadel/icons/ui/screen_cyborg.dmi'
-			hat_offset = INFINITY
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-			has_snowflake_deadsprite = TRUE
 		else
 			return FALSE
 	return ..()
@@ -697,25 +578,7 @@
 		"(Service) Bro" = image(icon = 'icons/mob/robots.dmi', icon_state = "brobot"),
 		"(Service) Can" = image(icon = 'icons/mob/robots.dmi', icon_state = "kent"),
 		"(Service) Tophat" = image(icon = 'icons/mob/robots.dmi', icon_state = "tophat"),
-		"(Service) Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleekserv"),
-		"(Service) Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavyserv"),
-		"(Janitor) Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "janitor"),
-		"(Janitor) Marina" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "marinajan"),
-		"(Janitor) Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleekjan"),
-		"(Janitor) Can" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "canjan"),
-		"(Janitor) Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavyjan")
 		)
-		var/list/L = list("(Service) DarkK9" = "k50", "(Service) Vale" = "valeserv", "(Service) ValeDark" = "valeservdark",
-						"(Janitor) Scrubpuppy" = "scrubpup")
-		for(var/a in L)
-			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
-			wide.pixel_x = -16
-			service_icons[a] = wide
-		if(R.client && R.client.ckey == "nezuli")
-			var/image/bad_snowflake = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = "alina-sec")
-			bad_snowflake.pixel_x = -16
-			service_icons["Alina"] = bad_snowflake
-		service_icons = sortList(service_icons)
 	var/service_robot_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(service_robot_icon)
 		if("(Service) Waitress")
@@ -735,26 +598,6 @@
 			cyborg_base_icon = "tophat"
 			special_light_key = null
 			hat_offset = INFINITY //He is already wearing a hat
-		if("(Service) Sleek")
-			cyborg_base_icon = "sleekserv"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("(Service) Heavy")
-			cyborg_base_icon = "heavyserv"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("(Janitor) Default")
-			cyborg_base_icon = "janitor"
-		if("(Janitor) Marina")
-			cyborg_base_icon = "marinajan"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("(Janitor) Sleek")
-			cyborg_base_icon = "sleekjan"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("(Janitor) Can")
-			cyborg_base_icon = "canjan"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("(Janitor) Heavy")
-			cyborg_base_icon = "heavyres"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
 		else
 			return FALSE
 	return ..()
@@ -795,19 +638,8 @@
 	if(!mining_icons)
 		mining_icons = list(
 		"Lavaland" = image(icon = 'icons/mob/robots.dmi', icon_state = "miner"),
-		"Asteroid" = image(icon = 'icons/mob/robots.dmi', icon_state = "minerOLD"),
-		"Droid" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "miner"),
-		"Sleek" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "sleekmin"),
-		"Marina" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "marinamin"),
-		"Can" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "canmin"),
-		"Heavy" = image(icon = 'modular_citadel/icons/mob/robots.dmi', icon_state = "heavymin")
+		"Asteroid" = image(icon = 'icons/mob/robots.dmi', icon_state = "minerOLD")
 		)
-		var/list/L = list("Blade" = "blade", "Vale" = "valemine")
-		for(var/a in L)
-			var/image/wide = image(icon = 'modular_citadel/icons/mob/widerobot.dmi', icon_state = L[a])
-			wide.pixel_x = -16
-			mining_icons[a] = wide
-		mining_icons = sortList(mining_icons)
 	var/mining_borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
 	switch(mining_borg_icon)
 		if("Lavaland")
@@ -815,28 +647,74 @@
 		if("Asteroid")
 			cyborg_base_icon = "minerOLD"
 			special_light_key = "miner"
-		if("Droid")
-			cyborg_base_icon = "miner"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-			hat_offset = 4
-		if("Sleek")
-			cyborg_base_icon = "sleekmin"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Can")
-			cyborg_base_icon = "canmin"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Marina")
-			cyborg_base_icon = "marinamin"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Spider")
-			cyborg_base_icon = "spidermin"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
-		if("Heavy")
-			cyborg_base_icon = "heavymin"
-			cyborg_icon_override = 'modular_citadel/icons/mob/robots.dmi'
 		else
 			return FALSE
 	return ..()
+
+/obj/item/robot_module/assaultron
+	name = "Assaultron"
+	basic_modules = list( //Security borg
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/extinguisher/mini,
+		/obj/item/crowbar/cyborg,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/melee/unarmed/punchdagger/cyborg,
+		/obj/item/gun/energy/laser/pistol/cyborg,
+		/obj/item/clothing/mask/gas/sechailer/cyborg,
+		/obj/item/pinpointer/crew)
+	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
+	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+		/obj/item/clockwork/weapon/ratvarian_spear)
+	hat_offset = 3 //what
+	borghealth = 450 //Assaultron health
+	cyborg_base_icon = "assaultron"
+	moduleselect_icon = "security"
+	hat_offset = 3
+
+/obj/item/robot_module/assaultron/rebuild_modules()
+	..()
+	var/mob/living/silicon/robot/assault = loc
+	assault.faction += "wastebots" //So other assaultrons don't gank you for existing.
+
+obj/item/robot_module/assaultron/remove_module(obj/item/I, delete_after)
+	..()
+	var/mob/living/silicon/robot/assault = loc
+	assault.faction -= "wastebots" //Removes the faction if the module is removed.
+
+/obj/item/robot_module/assaultron/medical
+	name = "Medical Assaultron"
+	basic_modules = list(
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/extinguisher/mini,
+		/obj/item/crowbar/cyborg,
+		/obj/item/healthanalyzer,
+		/obj/item/reagent_containers/borghypo,
+		/obj/item/weapon/gripper/medical,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/surgical_drapes,
+		/obj/item/retractor,
+		/obj/item/hemostat,
+		/obj/item/cautery,
+		/obj/item/surgicaldrill,
+		/obj/item/scalpel,
+		/obj/item/circular_saw,
+		/obj/item/bonesetter,
+		/obj/item/roller/robo,
+		/obj/item/borg/cyborghug/medical,
+		/obj/item/stack/medical/gauze/cyborg,
+		/obj/item/stack/medical/bone_gel/cyborg,
+		/obj/item/organ_storage,
+		/obj/item/borg/lollipop,
+		/obj/item/sensor_device,
+		/obj/item/shockpaddles/cyborg,
+		/obj/item/melee/unarmed/punchdagger/cyborg
+		)
+	emag_modules = list(/obj/item/reagent_containers/borghypo/hacked)
+	ratvar_modules = list(
+		/obj/item/clockwork/slab/cyborg/medical,
+		/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "assaultron_sase"
 
 /obj/item/robot_module/syndicate
 	name = "Syndicate Assault"
