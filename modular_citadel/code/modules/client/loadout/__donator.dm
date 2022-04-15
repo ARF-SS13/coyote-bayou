@@ -52,7 +52,6 @@
 	path = /obj/item/storage/box/large/custom_kit/sugga
 	ckeywhitelist = list("sugga")
 
-
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/hobo/plasmacaster(src)
 	new /obj/item/ammo_casing/caseless/plasmacaster(src)
