@@ -38,3 +38,16 @@
 	name = "Jett Lowes belongings"
 	path = /obj/item/storage/box/large/custom_kit/cayce
 	ckeywhitelist = list("cayce")
+
+/obj/item/storage/box/large/custom_kit/sugga/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/combat(src)
+	new /obj/item/clothing/head/helmet/f13/combat(src)
+	new /obj/item/gun/ballistic/revolver/police(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/datum/gear/donator/kits/sugga
+	name = "Suggas box"
+	path = /obj/item/storage/box/large/custom_kit/sugga
+	ckeywhitelist = list("sugga")
