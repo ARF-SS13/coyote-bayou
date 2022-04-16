@@ -687,9 +687,6 @@
 										/obj/effect/decal/cleanable/crayon,
 										/obj/machinery/door/window)
 									)
-			if(hsl[3] < 0.25 && !whitelisted[target]) //Colors too dark are rejected
-				to_chat(usr, "<span class='warning'>A color that dark on an object like this? Surely not...</span>")
-				return FALSE
 
 			target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
 
