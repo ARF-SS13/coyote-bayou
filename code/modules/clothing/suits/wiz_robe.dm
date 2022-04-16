@@ -1,10 +1,9 @@
 /obj/item/clothing/head/wizard
 	name = "wizard hat"
-	desc = "(III) Strange-looking hat-wear that most certainly belongs to a real magic user."
+	desc = "Strange-looking hat-wear that most certainly belongs to a real magic user."
 	icon_state = "wizard"
 	gas_transfer_coefficient = 0.01 // IT'S MAGICAL OKAY JEEZ +1 TO NOT DIE
 	permeability_coefficient = 0.01
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100, "wound" = 20)
 	strip_delay = 50
 	equip_delay_other = 50
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -19,41 +18,40 @@
 
 /obj/item/clothing/head/wizard/red
 	name = "red wizard hat"
-	desc = "(III) Strange-looking red hat-wear that most certainly belongs to a real magic user."
+	desc = "Strange-looking red hat-wear that most certainly belongs to a real magic user."
 	icon_state = "redwizard"
 	dog_fashion = /datum/dog_fashion/head/red_wizard
 
 /obj/item/clothing/head/wizard/yellow
 	name = "yellow wizard hat"
-	desc = "(III) Strange-looking yellow hat-wear that most certainly belongs to a powerful magic user."
+	desc = "Strange-looking yellow hat-wear that most certainly belongs to a powerful magic user."
 	icon_state = "yellowwizard"
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/black
 	name = "black wizard hat"
-	desc = "(III) Strange-looking black hat-wear that most certainly belongs to a real skeleton. Spooky."
+	desc = "Strange-looking black hat-wear that most certainly belongs to a real skeleton. Spooky."
 	icon_state = "blackwizard"
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/fake
 	name = "wizard hat"
-	desc = "(I) It has WIZZARD written across it in sequins. Comes with a cool beard."
+	desc = "It has WIZZARD written across it in sequins. Comes with a cool beard."
 	icon_state = "wizard-fake"
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	magic_flags = NONE
 
 /obj/item/clothing/head/wizard/marisa
 	name = "witch hat"
-	desc = "(III) Strange-looking hat-wear. Makes you want to cast fireballs."
+	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
 	icon_state = "marisa"
 	dog_fashion = null
 
 /obj/item/clothing/head/wizard/magus
 	name = "\improper Magus helm"
-	desc = "(III) A mysterious helmet that hums with an unearthly power."
+	desc = "A mysterious helmet that hums with an unearthly power."
 	icon_state = "magus"
 	item_state = "magus"
 	dog_fashion = null
@@ -61,20 +59,19 @@
 
 /obj/item/clothing/head/wizard/santa
 	name = "Santa's hat"
-	desc = "(III) Ho ho ho. Merrry X-mas!"
+	desc = "Ho ho ho. Merrry X-mas!"
 	icon_state = "santahat"
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR
 	dog_fashion = null
 
 /obj/item/clothing/suit/wizrobe
 	name = "wizard robe"
-	desc = "(III) A magnificent, gem-lined robe that seems to radiate power."
+	desc = "A magnificent, gem-lined robe that seems to radiate power."
 	icon_state = "wizard"
 	item_state = "wizrobe"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("tier" = 3, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100, "wound" = 20)
 	allowed = list(/obj/item/teleportation_scroll)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 50
@@ -90,31 +87,31 @@
 
 /obj/item/clothing/suit/wizrobe/red
 	name = "red wizard robe"
-	desc = "(III) A magnificent red gem-lined robe that seems to radiate power."
+	desc = "A magnificent red gem-lined robe that seems to radiate power."
 	icon_state = "redwizard"
 	item_state = "redwizrobe"
 
 /obj/item/clothing/suit/wizrobe/yellow
 	name = "yellow wizard robe"
-	desc = "(III) A magnificent yellow gem-lined robe that seems to radiate power."
+	desc = "A magnificent yellow gem-lined robe that seems to radiate power."
 	icon_state = "yellowwizard"
 	item_state = "yellowwizrobe"
 
 /obj/item/clothing/suit/wizrobe/black
 	name = "black wizard robe"
-	desc = "(III) An unnerving black gem-lined robe that reeks of death and decay."
+	desc = "An unnerving black gem-lined robe that reeks of death and decay."
 	icon_state = "blackwizard"
 	item_state = "blackwizrobe"
 
 /obj/item/clothing/suit/wizrobe/marisa
 	name = "witch robe"
-	desc = "(III) Magic is all about the spell power, ZE!"
+	desc = "Magic is all about the spell power, ZE!"
 	icon_state = "marisa"
 	item_state = "marisarobe"
 
 /obj/item/clothing/suit/wizrobe/magusblue
 	name = "\improper Magus robe"
-	desc = "(III) A set of armored robes that seem to radiate a dark power."
+	desc = "A set of armored robes that seem to radiate a dark power."
 	icon_state = "magusblue"
 	item_state = "magusblue"
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -122,7 +119,7 @@
 
 /obj/item/clothing/suit/wizrobe/magusred
 	name = "\improper Magus robe"
-	desc = "(III) A set of armored robes that seem to radiate a dark power."
+	desc = "A set of armored robes that seem to radiate a dark power."
 	icon_state = "magusred"
 	item_state = "magusred"
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -130,33 +127,30 @@
 
 /obj/item/clothing/suit/wizrobe/santa
 	name = "Santa's suit"
-	desc = "(III, one for each ho!) Festive!"
+	desc = "Festive!"
 	icon_state = "santa"
 	item_state = "santa"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/suit/wizrobe/fake
-	desc = "(I) A rather dull blue robe meant to mimick real wizard robes."
+	desc = "A rather dull blue robe meant to mimick real wizard robes."
 	icon_state = "wizard-fake"
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	magic_flags = NONE
 
 /obj/item/clothing/head/wizard/marisa/fake
-	desc = "(I) Strange-looking hat-wear. Makes you want to cast fireballs."
+	desc = "Strange-looking hat-wear. Makes you want to cast fireballs."
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	magic_flags = NONE
 
 /obj/item/clothing/suit/wizrobe/marisa/fake
-	desc = "(I) Magic is all about the spell power, ZE!"
+	desc = "Magic is all about the spell power, ZE!"
 	gas_transfer_coefficient = 1
 	permeability_coefficient = 1
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	magic_flags = NONE
 
@@ -301,7 +295,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/shielded/wizard
 	name = "battlemage armour"
-	desc = "(IV) Not all wizards are afraid of getting up close and personal."
+	desc = "Not all wizards are afraid of getting up close and personal."
 	icon_state = "battlemage"
 	item_state = "battlemage"
 	recharge_rate = 0
@@ -311,7 +305,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
 	slowdown = 0
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
@@ -321,12 +315,12 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard
 	name = "battlemage helmet"
-	desc = "(IV) A suitably impressive helmet.."
+	desc = "A suitably impressive helmet.."
 	icon_state = "battlemage"
 	item_state = "battlemage"
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	armor = list("tier" = 4, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
 	actions_types = null //No inbuilt light
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 

@@ -29,11 +29,11 @@
 //Captain
 /obj/item/clothing/head/caphat
 	name = "captain's hat"
-	desc = "(V) It's good being the king."
+	desc = "It's good being the king."
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 
 	dog_fashion = /datum/dog_fashion/head/captain
@@ -92,8 +92,7 @@
 //Detective
 /obj/item/clothing/head/fedora/det_hat
 	name = "detective's fedora"
-	desc = "(III) There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
-	armor = list("tier" = 3, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 50)
+	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
 	icon_state = "detective"
 	var/candy_cooldown = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/detective
@@ -166,7 +165,7 @@
 	name = "head of security cap"
 	desc = "The robust standard-issue cap of the Head of Security. For showing the officers who's in charge."
 	icon_state = "hoscap"
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
 	dynamic_hair_suffix = ""
 
@@ -190,9 +189,9 @@
 
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
-	desc = "(V) It's a special armored hat issued to the Warden of a security force. Protects the head from impacts."
+	desc = "It's a special armored hat issued to the Warden of a security force. Protects the head from impacts."
 	icon_state = "policehelm"
-	armor = list("tier" = 5, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden
 
@@ -265,9 +264,9 @@
 
 /obj/item/clothing/head/beret/sec
 	name = "security beret"
-	desc = "(V) A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
 	icon_state = "beret_badge"
-	armor = list("tier" = 5,"energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 	dog_fashion = null
 

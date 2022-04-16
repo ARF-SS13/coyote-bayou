@@ -3,7 +3,7 @@
 
 /obj/item/clothing/head/beanie //Default is white, this is meant to be seen
 	name = "white beanie"
-	desc = "(I) A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
+	desc = "A stylish beanie. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their heads."
 	icon_state = "beanie" //Default white
 
 /obj/item/clothing/head/beanie/black
@@ -70,9 +70,8 @@
 
 /obj/item/clothing/head/beanie/durathread
 	name = "durathread beanie"
-	desc = "(III) A beanie made from durathread, its resilient fibres provide some protection to the wearer."
+	desc = "A beanie made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "beaniedurathread"
-	armor = list("tier" = 3,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
 
 /obj/item/clothing/head/beanie/waldo
 	name = "red striped bobble hat"

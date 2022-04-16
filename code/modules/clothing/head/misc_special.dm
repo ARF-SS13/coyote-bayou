@@ -15,14 +15,14 @@
  */
 /obj/item/clothing/head/welding
 	name = "welding helmet"
-	desc = "(III) A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
 	icon_state = "welding"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "welding"
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = 2
 	tint = 2
-	armor = list("tier" = 3,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 60)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 60)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	actions_types = list(/datum/action/item_action/toggle)
 	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
@@ -39,13 +39,12 @@
  */
 /obj/item/clothing/head/hardhat/cakehat
 	name = "cakehat"
-	desc = "(I) You put the cake on your head. Brilliant."
+	desc = "You put the cake on your head. Brilliant."
 	icon_state = "hardhat0_cakehat"
 	item_state = "hardhat0_cakehat"
 	hat_type = "cakehat"
 	hitsound = 'sound/weapons/tap.ogg'
 	flags_inv = HIDEEARS|HIDEHAIR
-	armor = list("tier" = 1,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	light_system = MOVABLE_LIGHT
 	light_range = 2 //luminosity when on
 	flags_cover = HEADCOVERSEYES
@@ -86,7 +85,7 @@
  */
 /obj/item/clothing/head/ushanka
 	name = "ushanka"
-	desc = "(I) Perfect for winter in Siberia, da?"
+	desc = "Perfect for winter in Siberia, da?"
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
 	alternate_screams = list('sound/voice/human/cyka1.ogg', 'sound/voice/human/cheekibreeki.ogg')
@@ -94,7 +93,6 @@
 	var/earflaps = 1
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
-	armor = list("tier" = 1)
 
 	dog_fashion = /datum/dog_fashion/head/ushanka
 
@@ -115,12 +113,11 @@
  */
 /obj/item/clothing/head/hardhat/pumpkinhead
 	name = "carved pumpkin"
-	desc = "(I) A jack o' lantern! Believed to ward off evil spirits."
+	desc = "A jack o' lantern! Believed to ward off evil spirits."
 	icon_state = "hardhat0_pumpkin"
 	item_state = "hardhat0_pumpkin"
 	hat_type = "pumpkin"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	armor = list("tier" = 1,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	flags_cover = HEADCOVERSEYES
@@ -247,11 +244,11 @@
 
 /obj/item/clothing/head/bronze
 	name = "bronze hat"
-	desc = "(I) A crude helmet made out of bronze plates. It offers very little in the way of protection."
+	desc = "A crude helmet made out of bronze plates. It offers very little in the way of protection."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_helmet_old"
 	flags_inv = HIDEEARS|HIDEHAIR
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
+	armor = list("melee" = 15, "bullet" = 0, "laser" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/foilhat
 	name = "tinfoil hat"
@@ -324,10 +321,10 @@
 
 /obj/item/clothing/head/flakhelm	//Actually the M1 Helmet
 	name = "flak helmet"
+	desc = "A dilapidated helmet, obsolete even by pre-war standards. An ace of spades is tucked into the band around the outer shell."
 	icon_state = "m1helm"
 	item_state = "helmet"
-	armor = list("tier" = 1, "bomb" = 5, "bio" = 0, "rad" = 0, "acid" = -15)
-	desc = "(I) A dilapidated helmet, obsolete even by pre-war standards. An ace of spades is tucked into the band around the outer shell."
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "acid" = -15)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/spacenam	//So you can stuff other things in the elastic band instead of it simply being a fluff thing.
 
 //The "pocket" for the M1 helmet so you can tuck things into the elastic band

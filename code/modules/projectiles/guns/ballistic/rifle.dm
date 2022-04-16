@@ -327,9 +327,9 @@
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
-	fire_delay = 11 //Heavy round, tiny bit slower
-	extra_damage = 60
-	extra_penetration = 0.25
+	fire_delay = 12 //Heavy round, tiny bit slower
+	extra_damage = 50
+	extra_penetration = 0.6
 	recoil = 1
 	spread = 0
 	force = 10 //Big clumsy and sensitive scope, makes for a poor club
