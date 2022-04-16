@@ -501,7 +501,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
-		/datum/outfit/loadout/vrlite, // Brush Gun, Sequoia
+		/datum/outfit/loadout/vrlite, // FN FAL, Sequoia
 		/datum/outfit/loadout/vrcqc, // 2 x .45 Long colt revolvers
 		/datum/outfit/loadout/vrshotgunner //Riot shotty, Sequoia
 		)
@@ -546,10 +546,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/vrlite
-	name = "Light Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
+	name = "Rifler Veteran Ranger"
+	suit_store = /obj/item/gun/ballistic/automatic/fnfal
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/c4570 = 3,
+		/obj/item/ammo_box/magazine/m762 = 3,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
 		/obj/item/ammo_box/c4570 = 1,
 		)
@@ -644,9 +644,9 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/f13/trailranger
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	neck = /obj/item/clothing/neck/mantle/ranger
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
+	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44 = 3,
+		/obj/item/ammo_box/magazine/m762 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/storage/survivalkit_aid = 1,
 		/obj/item/attachments/scope = 1,
