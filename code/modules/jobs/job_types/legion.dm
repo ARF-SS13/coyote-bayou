@@ -158,6 +158,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 	exp_requirements = 1500
 
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator	// .357 Revolver, Spatha
 	name = "Orator"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13orator
@@ -167,6 +168,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	head = /obj/item/clothing/head/helmet/f13/legion/orator
 	id = /obj/item/card/id/dogtag/legorator
 	gloves = null
+	backpack = /obj/item/storage/backpack/legionr
 	shoes = /obj/item/clothing/shoes/roman
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	r_pocket = /obj/item/storage/bag/money/small/legofficers
@@ -186,7 +188,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
-	
+
 /////////////////
 //// Officers ///
 /////////////////
@@ -1114,7 +1116,7 @@ commented out pending rework*/
 		/obj/item/stack/sheet/prewar/twenty = 1,
 		/obj/item/weldingtool = 1,
 		/obj/item/book/granter/trait/explosives = 1
-		)	
+		)
 
 // LEGION SLAVES - Servant cook, and assist with medical, low surgery. Worker farm and mine.
 // Both get Mars teachings to help out when normal work is done.

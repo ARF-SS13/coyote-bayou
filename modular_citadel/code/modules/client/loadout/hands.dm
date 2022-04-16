@@ -4,16 +4,16 @@
 
 /datum/gear/hands/backpack
 	name = "hiking backpack"
-	path = /obj/item/storage/backpack/old  
+	path = /obj/item/storage/backpack/old
 	cost = 3
 
 /datum/gear/hands/backpack/duffel
 	name = "duffelbag"
-	path = /obj/item/storage/backpack/duffelbag 
+	path = /obj/item/storage/backpack/duffelbag
 
 /datum/gear/hands/backpack/explorer
 	name = "explorer backpack"
-	path = /obj/item/storage/backpack/explorer 
+	path = /obj/item/storage/backpack/explorer
 
 /datum/gear/hands/backpack/explorer/satchel
 	name = "explorer satchel"
@@ -21,7 +21,8 @@
 
 /datum/gear/hands/backpack/trekker
 	name = "trekker backpack"
-	path = /obj/item/storage/backpack/trekker 
+	path = /obj/item/storage/backpack/trekker
+
 
 /datum/gear/hands/backpack/trekker/satchel
 	name = "trekker satchel"
@@ -29,27 +30,55 @@
 
 /datum/gear/hands/backpack/sec
 	name = "security backpack"
-	path = /obj/item/storage/backpack/security 
+	path = /obj/item/storage/backpack/security
 	cost = 4
 
 /datum/gear/hands/backpack/sec/satchel
 	name = "security satchel"
-	path = /obj/item/storage/backpack/satchel/sec 
+	path = /obj/item/storage/backpack/satchel/sec
 
 /datum/gear/hands/backpack/trophy
 	name = "trophy rack"
-	path = /obj/item/storage/backpack/cultpack 
+	path = /obj/item/storage/backpack/cultpack
 	cost = 3
 
 /datum/gear/hands/briefcase/crafted
 	name = "briefcase"
-	path = /obj/item/storage/briefcase/crafted 
+	path = /obj/item/storage/briefcase/crafted
 	cost = 2
 
 /datum/gear/hands/toolbox/mechanical/old
 	name = "rusty blue toolbox"
-	path = /obj/item/storage/toolbox/mechanical/old 
+	path = /obj/item/storage/toolbox/mechanical/old
 	cost = 2
+
+/datum/gear/hands/backpack/legionr
+	name = "legion red cape backpack"
+	path = /obj/item/storage/backpack/legionr
+	cost = 2
+	restricted_desc = "Legion Veteran+"
+	restricted_roles = list("Legion Orator",
+							"Legion Centurion",
+							"Legion Veteran Decanus",
+							"Legion Prime Decanus",
+							"Legion Recruit Decanus",
+							"Legion Vexillarius",
+							"Veteran Legionnaire"
+						)
+
+/datum/gear/hands/backpack/legionb
+	name = "legion black cape backpack"
+	path = /obj/item/storage/backpack/legionb
+	cost = 2
+	restricted_desc = "Legion Veteran+"
+	restricted_roles = list("Legion Orator",
+							"Legion Centurion",
+							"Legion Veteran Decanus",
+							"Legion Prime Decanus",
+							"Legion Recruit Decanus",
+							"Legion Vexillarius",
+							"Veteran Legionnaire"
+						)
 
 /datum/gear/hands/cane
 	name = "cane"
@@ -102,19 +131,19 @@
 /datum/gear/hands/cigar
 	name = "cigar"
 	path = /obj/item/clothing/mask/cigarette/cigar
-	
+
 /datum/gear/hands/lipstick
 	name = "red lipstick"
 	path = "/obj/item/lipstick"
 
 /datum/gear/hands/lipstickpurple
 	name = "purple lipstick"
-	path = /obj/item/lipstick/purple 
+	path = /obj/item/lipstick/purple
 
 /datum/gear/hands/lipstickjade
 	name = "jade lipstick"
-	path = /obj/item/lipstick/jade 
+	path = /obj/item/lipstick/jade
 
 /datum/gear/hands/lipstickblack
 	name = "black lipstick"
-	path = /obj/item/lipstick/black 
+	path = /obj/item/lipstick/black

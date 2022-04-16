@@ -22,13 +22,13 @@
 	max_integrity = 300
 
 /obj/item/storage/backpack/ComponentInitialize()
-	. = ..()	
+	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	//STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
-	
+
 
 /*
  * Backpack Types
@@ -695,3 +695,15 @@ obj/item/storage/backpack/duffelbag/syndie/shredderbundle
 	desc = "Satchel modeled after old US Army pattern."
 	icon_state = "satchel_enclave"
 	item_state = "satchel_enclave"
+
+/obj/item/storage/backpack/legionr
+	name = "Legion red flag"
+	desc = "Legion cape made from what looks like red piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	icon_state = "legioncaper"
+	item_state = "legioncaper"
+
+/obj/item/storage/backpack/legionb
+	name = "Legion black flag"
+	desc = "Legion cape made from what looks like black piece of cloth, with a golden bull on the back. With a lot of pockets underneath"
+	icon_state = "legioncapeb"
+	item_state = "legioncapeb"
