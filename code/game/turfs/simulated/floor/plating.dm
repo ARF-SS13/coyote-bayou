@@ -66,7 +66,7 @@
 					R.use(2)
 					to_chat(user, "<span class='notice'>You reinforce the floor.</span>")
 				return
-	/* Fortuna edit: glass floors disabled
+
 	if(istype(C, /obj/item/stack/sheet/glass))
 		if(broken || burnt)
 			to_chat(user, "<span class='warning'>Repair the plating first!</span>")
@@ -101,7 +101,7 @@
 					RG.use(2)
 					to_chat(user, "<span class='notice'>You add reinforced glass to the floor.</span>")
 				return
-	*/
+
 	else if(istype(C, /obj/item/stack/tile))
 		if(!broken && !burnt)
 			for(var/obj/O in src)

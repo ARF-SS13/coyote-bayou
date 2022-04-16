@@ -21,7 +21,7 @@
 	starting_node = TRUE
 	display_name = "Cyborg Construction"
 	description = "Sapient robots with preloaded tool modules and programmable laws."
-	design_ids = list("robocontrol", "sflash", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
+	design_ids = list("robocontrol", "borg_suit", "sflash", "borg_head", "borg_chest", "borg_r_arm", "borg_l_arm", "borg_r_leg", "borg_l_leg", "borgupload",
 	"cyborgrecharger", "borg_upgrade_restart", "borg_upgrade_rename")
 
 
@@ -73,7 +73,7 @@
 	design_ids = list("borg_upgrade_vtec", "borg_upgrade_disablercooler")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 
-/*
+
 /datum/techweb_node/ai
 	id = "ai"
 	display_name = "Artificial Intelligence"
@@ -83,4 +83,4 @@
 	"reset_module", "purge_module", "remove_module", "freeformcore_module", "asimov_module", "paladin_module", "tyrant_module", "corporate_module",
 	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-*/
+

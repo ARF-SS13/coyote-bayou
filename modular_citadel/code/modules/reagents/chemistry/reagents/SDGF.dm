@@ -35,7 +35,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	5.3 Other similar things exist already though in the codebase; impostors, split personalites, abductors, ect.
 6. Giving this to someone without concent is against space law and gets you sent to gulag.
  // Comment end removed here and placed at bottom to disable SDGF as a whole. ~FO13
-
+*/
 #define POLICYCONFIG_SDGF "SDGF"
 #define POLICYCONFIG_SDGF_GOOD "SDGF_ALIGNED"
 #define POLICYCONFIG_SDGF_BAD "SDGF_UNALIGNED"
@@ -396,4 +396,3 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 			M.adjustToxLoss(2, 0)
 			M.reagents.remove_reagent(type, 1)
 	..()
-*/
