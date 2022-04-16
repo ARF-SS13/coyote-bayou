@@ -967,7 +967,7 @@ Initiate
 	selection_color = "#95a5a6"
 
 	exp_type = EXP_TYPE_FALLOUT
-	exp_requirements = 300
+	exp_requirements = 0
 
 	loadout_options = list(
 	/datum/outfit/loadout/initiatek, //AEP7 and Engibelt with combat armor, no helmet
