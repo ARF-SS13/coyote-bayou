@@ -33,7 +33,15 @@
 	desc = "Heat-sensitive goggles commonly worn by Enclave Personnel."
 	icon_state = "enclavegoggles"
 	item_state = "enclavegoggles"
-	
+
+
+/obj/item/clothing/glasses/night/ncr
+	name = "lit shades"
+	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes, it's also got Night Vision installed, wow!"
+	icon_state = "bigsunglasses"
+	item_state = "bigsunglasses"
+
+
 //Fallout 13 sunglasses
 
 /obj/item/clothing/glasses/sunglasses/f13
