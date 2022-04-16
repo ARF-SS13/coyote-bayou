@@ -59,7 +59,7 @@
 	new /obj/item/ammo_casing/caseless/plasmacaster(src)
 	new /obj/item/storage/belt/holster(src)
 	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
-	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/gun/energy/laser/wattz/magneto(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/head/helmet/riot(src)
 
