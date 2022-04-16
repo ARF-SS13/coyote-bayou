@@ -67,3 +67,19 @@
 	name = "Klatue box"
 	path = /obj/item/storage/box/large/custom_kit/klatue
 	ckeywhitelist = list("klatue9")
+
+/obj/item/storage/box/large/custom_kit/riggy/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/hobo/plasmacaster(src)
+	new /obj/item/ammo_casing/caseless/plasmacaster(src)
+	new /obj/item/ammo_casing/caseless/plasmacaster(src)
+	new /obj/item/ammo_casing/caseless/plasmacaster(src)
+	new /obj/item/storage/belt/holster(src)
+	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
+	new /obj/item/gun/energy/laser/wattz/magneto(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/clothing/head/helmet/riot(src)
+
+/datum/gear/donator/kits/riggy
+	name = "Items"
+	path = /obj/item/storage/box/large/custom_kit/riggy
+	ckeywhitelist = list("rigbe")
