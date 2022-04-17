@@ -42,10 +42,11 @@
 /obj/item/storage/box/large/custom_kit/sugga/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/combat(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
-	new /obj/item/gun/ballistic/revolver/police(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
-	new /obj/item/ammo_box/a357(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/ammo_box/magazine/m9mmds(src)
+	new /obj/item/ammo_box/magazine/m9mmds(src)
+	new /obj/item/ammo_box/magazine/m9mmds(src)
+	new /obj/item/melee/rapier(src)
 
 /datum/gear/donator/kits/sugga
 	name = "Suggas box"
@@ -53,10 +54,10 @@
 	ckeywhitelist = list("sugga")
 
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/hobo/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
+	new /obj/item/ammo_box/tube/a357(src)
+	new /obj/item/ammo_box/tube/a357(src)
+	new /obj/item/ammo_box/tube/a357(src)
 	new /obj/item/storage/belt/holster(src)
 	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
 	new /obj/item/gun/energy/laser/wattz/magneto(src)
@@ -83,3 +84,17 @@
 	name = "Items"
 	path = /obj/item/storage/box/large/custom_kit/riggy
 	ckeywhitelist = list("rigbe")
+
+/obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
+	new /obj/item/clothing/neck/mantle/umbo(src)
+	new /obj/item/gun/ballistic/automatic/service/carbine(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
+	new /obj/item/toy/figure/dsquad(src)
+	
+
+/datum/gear/donator/kits/canadian
+	name = "Canadian"
+	path = /obj/item/storage/box/large/custom_kit/canadian
+	ckeywhitelist = list("comradesocks")

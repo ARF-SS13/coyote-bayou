@@ -113,3 +113,8 @@
 	desc = "Plain and rugged piece of clothing, put it over your suit and make sure your gear don't get soaked through when it rains."
 	icon_state = "poncho"
 	body_parts_covered = CHEST|GROIN|ARMS
+
+/obj/item/clothing/neck/mantle/umbo
+	name = "Roman mantle"
+	desc = "A decorated mantle created in the ancient roman era, this one appears to be hand made by an auxilia likely with a large bust."
+	icon_state = "umbo"

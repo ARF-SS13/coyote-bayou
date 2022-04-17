@@ -342,6 +342,16 @@
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 	armor = list("melee" = 20, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 0)
 
+
+/obj/item/clothing/suit/armor/f13/legion/vet/explorercanada
+	name = "custom explorer armor"
+	desc = "Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight. This one has been custom made."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "legion-explorercustom"
+	item_state = "legion-explorercustom"
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 40, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+	slowdown = 0.03
 /*
 /obj/item/clothing/suit/armor/f13/legion/vet/orator
 	name = "legion orator armor"
