@@ -234,7 +234,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	id = /obj/item/card/id/dogtag/legcenturion
 	mask = /obj/item/clothing/mask/bandana/legion/legcenturion
-	neck = /obj/item/storage/belt/holster
+	neck = /obj/item/clothing/neck/mantle/legion
 	gloves = /obj/item/clothing/gloves/legion/plated
 	glasses = /obj/item/clothing/glasses/night/polarizing
 	shoes = /obj/item/clothing/shoes/f13/military/plated

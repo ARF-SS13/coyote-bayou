@@ -54,6 +54,12 @@
 	icon_state = "paladin"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
+/obj/item/clothing/neck/mantle/legion
+	name = "Legion Cape"
+	desc = "A deep crimson cape woven by fine legionnaire craftsmanship. A shoulder holster is added beneath for utility."
+	icon_state = "legion"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
+
 /obj/item/clothing/neck/mantle/ranger
 	name = "NCR ranger cape"
 	desc = "Ranger cape made from what looks like old poncho fitted with star, stripes and a bear. Most likely has a holster hidden underneath."
