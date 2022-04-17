@@ -174,6 +174,12 @@
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
+/obj/item/gun/ballistic/revolver/colt357/mateba //this is a skin that rigbe wanted
+	name = "\improper Unica 6 auto-revolver"
+	desc = "A pre-war high-power autorevolver commonly used by people who think they look cool."
+	icon_state = "mateba"
+	item_state = "mateba"
+	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
 //Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
@@ -390,7 +396,7 @@
 	name = "Needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
 	extra_damage = 21
-	extra_penetration = 0.5
+	extra_penetration = 0.8
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
@@ -508,8 +514,8 @@
 //////////////////
 // CODE ARCHIVE //
 //////////////////
-/*
-SLING CODE
+
+/*SLING CODE
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
@@ -533,7 +539,7 @@ SLING CODE
 		slung = 0
 		update_icon()
 
-BREAK ACTION CODE
+//BREAK ACTION CODE
 /obj/item/gun/ballistic/revolver/doublebarrel/attack_self(mob/living/user)
 	var/num_unloaded = 0
 	while (get_ammo() > 0)
@@ -548,7 +554,7 @@ BREAK ACTION CODE
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
-DODGE CODE
+//DODGE CODE
 /obj/item/gun/ballistic/revolver/colt357/lucky/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		if(prob(block_chance))
@@ -670,7 +676,7 @@ DODGE CODE
 		. += charge_bar
 
 
-ACCIDENTALLY SHOOT YOURSELF IN THE FACE CODE
+//ACCIDENTALLY SHOOT YOURSELF IN THE FACE CODE
 /obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
 		return ..()

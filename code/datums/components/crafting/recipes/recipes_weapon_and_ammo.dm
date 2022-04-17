@@ -194,7 +194,7 @@
 	name = "12g handloaded ammo bag"
 	result = /obj/item/ammo_box/shotgun/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -207,7 +207,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/prewar = 2,
 	/obj/item/stack/sheet/metal = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -220,7 +220,7 @@
 	result = /obj/item/ammo_box/m22
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/metal = 1,
-	/datum/reagent/blackpowder = 30
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -234,7 +234,7 @@
 	/obj/item/stack/cable_coil = 5,
 	/obj/item/stack/crafting/electronicparts = 2,
 	/obj/item/stack/sheet/metal = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -245,7 +245,7 @@
 	name = "9mm handloaded ammo bag"
 	result = /obj/item/ammo_box/c9mm/improv
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -259,7 +259,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 20,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -274,7 +274,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 20,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -285,7 +285,7 @@
 	name = ".38 handloaded ammo bag"
 	result = /obj/item/ammo_box/c38box/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -297,8 +297,8 @@
 	result = /obj/item/ammo_box/c10mm/fire
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/metal = 6,
-	/datum/reagent/phosphorus = 20,
-	/datum/reagent/blackpowder = 50
+	/datum/reagent/fuel = 10,
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -322,8 +322,8 @@
 	result = /obj/item/ammo_box/a357box/incendiary
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/phosphorus = 20,
-	/datum/reagent/blackpowder = 50
+	/datum/reagent/fuel = 10,
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -334,7 +334,7 @@
 	name = ".357 handloaded ammo bag"
 	result = /obj/item/ammo_box/a357box/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -347,9 +347,8 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/phosphorus = 10,
 	/datum/reagent/fuel = 10,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -360,7 +359,7 @@
 	name = ".44 handloaded ammo bag"
 	result = /obj/item/ammo_box/m44box/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -373,9 +372,8 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/phosphorus = 10,
 	/datum/reagent/fuel = 10,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -386,7 +384,7 @@
 	name = ".45 ACP handloaded ammo bag"
 	result = /obj/item/ammo_box/c45/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -399,7 +397,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	/obj/item/stack/sheet/prewar = 2,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -412,7 +410,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	/obj/item/stack/sheet/prewar = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 75
@@ -427,7 +425,7 @@
 	/obj/item/stack/sheet/prewar = 1,
 	/obj/item/stack/cable_coil = 5,
 	/obj/item/stack/crafting/electronicparts = 2,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -440,7 +438,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/prewar = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -451,7 +449,7 @@
 	name = ".223  handloaded ammo bag"
 	result = /obj/item/ammo_box/a556/sport/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/datum/reagent/blackpowder = 30
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 75
@@ -465,7 +463,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	/obj/item/stack/sheet/prewar = 1,
 	/obj/item/stack/sheet/mineral/uranium = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -479,7 +477,7 @@
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/prewar = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -493,7 +491,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 2,
 	/obj/item/stack/sheet/prewar = 2,
 	/obj/item/stack/sheet/mineral/uranium = 2,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -507,7 +505,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 2,
 	/obj/item/stack/sheet/prewar = 2,
 	/datum/reagent/toxin/formaldehyde = 25,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
@@ -522,7 +520,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 2,
 	/obj/item/stack/sheet/prewar = 2,
 	/datum/reagent/toxin/formaldehyde = 30,
-	/datum/reagent/blackpowder = 50
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 100
