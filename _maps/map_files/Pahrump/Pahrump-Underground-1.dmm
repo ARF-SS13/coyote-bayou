@@ -5033,6 +5033,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"cHz" = (
+/obj/item/broom,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "cHL" = (
 /obj/structure/sign/poster/prewar/poster60,
 /turf/closed/wall/r_wall,
@@ -9312,6 +9316,14 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/rnd)
+"eUR" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "eVd" = (
 /obj/structure/simple_door/metal/ventilation,
 /obj/effect/decal/cleanable/dirt,
@@ -15521,6 +15533,13 @@
 /obj/item/trash/f13/dog,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"iGV" = (
+/obj/item/mop,
+/obj/item/storage/bag/trash,
+/obj/item/reagent_containers/glass/bucket/plastic,
+/obj/structure/mopbucket,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "iHc" = (
 /obj/effect/spawner/bundle/f13/armor/combat,
 /turf/open/indestructible/ground/inside/mountain,
@@ -19234,6 +19253,11 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/offices1st)
+"lal" = (
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "laS" = (
 /obj/structure/window/reinforced/spawner/east,
 /obj/structure/window/reinforced/spawner/north,
@@ -31770,10 +31794,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/enclave)
 "sLV" = (
-/obj/structure/wreck/trash/five_tires{
-	pixel_x = 3;
-	pixel_y = -13
-	},
+/obj/item/soap/syndie,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "sLW" = (
@@ -77344,7 +77365,7 @@ hkn
 xyk
 xyk
 xyk
-hkn
+sLV
 ugq
 hkn
 hkn
@@ -77599,8 +77620,8 @@ xyk
 hkn
 hkn
 xyk
-sLV
-xhF
+qgz
+eUR
 hkn
 wHf
 hkn
@@ -77856,11 +77877,11 @@ wTR
 xyk
 quD
 xyk
-qgz
+cHz
 wHf
 hkn
 wHf
-hkn
+lal
 xyk
 dcS
 tYQ
@@ -78117,7 +78138,7 @@ hkn
 hkn
 wHf
 wHf
-hkn
+lal
 xyk
 xyk
 xRe
@@ -78374,7 +78395,7 @@ wHf
 hkn
 hkn
 hkn
-hkn
+iGV
 xyk
 wHf
 wHf
@@ -79659,7 +79680,7 @@ rWg
 pOo
 wHf
 wHf
-hkn
+vLK
 xyk
 rAp
 vPd
@@ -79916,7 +79937,7 @@ rWg
 pOo
 wHf
 hkn
-vLK
+hkn
 xyk
 xyk
 xyk
