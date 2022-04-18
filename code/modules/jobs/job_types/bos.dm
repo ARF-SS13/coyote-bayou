@@ -170,8 +170,8 @@ Head Paladin
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51green
 	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/xl70e3 = 1,
-		/obj/item/ammo_box/magazine/m556/rifle/assault = 3,
+		/obj/item/gun/ballistic/automatic/g11 = 1,
+		/obj/item/ammo_box/magazine/m473 = 3,
 	)
 
 /datum/outfit/loadout/sentheavy
@@ -394,7 +394,8 @@ Star Paladin
 	loadout_options = list(
 		/datum/outfit/loadout/spaladina, //R91 Assault Rifle
 		/datum/outfit/loadout/spaladinb, //AER12
-		/datum/outfit/loadout/spaladinc  //Minigun
+		/datum/outfit/loadout/spaladinc,  //Minigun
+		/datum/outfit/loadout/spaladintactical //WT-550
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -469,6 +470,16 @@ Star Paladin
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 	)
+
+/datum/outfit/loadout/spaladintactical
+	name = "Tactical Senior Paladin"
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/wt550 = 1,
+		/obj/item/ammo_box/magazine/m473/small = 3,
+		/obj/item/gun/energy/laser/pistol=1,
+		/obj/item/stock_parts/cell/ammo/ec=2,
+	)
+
 
 /*
 Paladin
@@ -938,8 +949,8 @@ Knight
 	name = "Knight-Defender"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/knight=1,
-		/obj/item/gun/ballistic/automatic/r93=1,
-		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/gun/ballistic/automatic/smg/mp5=1,
+		/obj/item/ammo_box/magazine/uzim9mm=2,
 		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		)

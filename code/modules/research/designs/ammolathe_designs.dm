@@ -247,6 +247,13 @@
 	build_path = /obj/item/ammo_box/magazine/m45exp/empty
 	category = list("initial", "Basic Magazines")
 
+/datum/design/ammolathe/Thompsonstick
+	name = "empty thompson stick magazine (.45)"
+	id = "Thompsonstick"
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_box/magazine/tommygunm45/stick/empty
+	category = list("initial", "Basic Magazines")
+
 //Tier 2 Ammo
 
 /datum/design/ammolathe/m44

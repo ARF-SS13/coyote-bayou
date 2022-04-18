@@ -5,7 +5,7 @@
 
 /obj/item/ammo_box/magazine/cg45
 	name = "Carl Gustaf magazine (10mm)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'	
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "cg45"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -14,7 +14,7 @@
 
 /obj/item/ammo_box/magazine/cg45/empty
 	start_empty = TRUE
-	
+
 /obj/item/ammo_box/magazine/greasegun
 	name = "Grease gun magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -94,6 +94,9 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/tommygunm45/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/tommygunm45/stick/empty
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m10mm_p90
