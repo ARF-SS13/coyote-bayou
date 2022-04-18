@@ -83,3 +83,26 @@
 	sparks.set_up(n, c, source)
 	sparks.autocleanup = TRUE
 	sparks.start()
+
+// BLACKSMITH SPARKS I wanted some sparky stuff to set the mood when clanging on metal
+/obj/effect/particle_effect/smithing_sparks
+	name = "sparks"
+	icon_state = "sparks"
+
+/obj/effect/particle_effect/smithing_sparks/Initialize()
+	. = ..()
+	flick(icon_state, src) // replay the animation
+	anchored = TRUE
+	light_power = 1.3
+	light_range = MINIMUM_USEFUL_LIGHT_RANGE
+	light_color = LIGHT_COLOR_FIRE
+	QDEL_IN(src, 20)
+
+/datum/effect_system/smithing_spark_spread
+	effect_type = /obj/effect/particle_effect/smithing_sparks
+
+/proc/do_smithing_sparks(n, c, source)
+	var/datum/effect_system/smithing_spark_spread/sparks = new
+	sparks.set_up(n, c, source)
+	sparks.autocleanup = TRUE
+	sparks.start()

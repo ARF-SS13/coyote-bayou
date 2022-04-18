@@ -17,7 +17,7 @@
 
 /obj/item/ingot
 	name = "ingot"
-	icon = 'icons/obj/smith.dmi'
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "ingot"
 	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX
 	var/workability = 0

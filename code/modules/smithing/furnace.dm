@@ -1,7 +1,7 @@
 /obj/structure/furnace
 	name = "furnace"
 	desc = "A furnace."
-	icon = 'icons/obj/smith.dmi'
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "furnace0"
 	density = TRUE
 	anchored = TRUE
@@ -37,6 +37,7 @@
 		if(working)
 			to_chat(user, "You heat the [notsword] in the [src].")
 			notsword.workability = "shapeable"
+			notsword.icon_state = "hot_ingot"
 			I.on_attack_hand(user)
 		else
 			to_chat(user, "The furnace isn't working!.")
