@@ -161,9 +161,15 @@
 /obj/item/taperecorder/verb/WipeTapeInRecorder()
 	set name = "Wipe Tape"
 
-	mytape.used_capacity = 0;
-	mytape.storedinfo = new;
-	mytape.timestamp = new;
+	if(!mytape || mytape.ruined)
+		return
+	if(recording || playing)
+		return
+	else
+		mytape.used_capacity = 0;
+		mytape.storedinfo = new;
+		mytape.timestamp = new;
+		to_chat(usr, "<span class='notice'>You wipe this tape entirely.")
 
 /obj/item/taperecorder/verb/play()
 	set name = "Play Tape"
@@ -261,6 +267,11 @@
 	var/list/storedinfo = list()
 	var/list/timestamp = list()
 	var/ruined = 0
+	var/list/storedinfo_otherside = list()
+	var/list/timestamp_otherside = list()
+	var/list/used_capacity_otherside = 0
+	var/firstFlip = TRUE
+	var/originalIconState 
 
 /obj/item/tape/fire_act(exposed_temperature, exposed_volume)
 	ruin()
@@ -290,6 +301,7 @@
 /obj/item/tape/verb/wipeverb()
 	set name = "Wipe Tape";
 	if(ruined)
+		to_chat(usr, "<span class='notice'>You scrub the magnetic strip clean of its contents.")
 		wipeproc()
 	else if(!ruined)
 		to_chat(usr, "<span class='notice'>You need to pull out the tape's magnetic strips first.")
@@ -300,6 +312,48 @@
 		if(I.use_tool(src, user, 120))
 			to_chat(user, "<span class='notice'>You wound the tape back in.</span>")
 			fix()
+
+/obj/item/tape/Initialize()
+	. = ..()
+	originalIconState = icon_state
+
+/obj/item/tape/proc/flip()
+
+	//first we save a copy of our current side
+	var/list/storedinfo_currentside = storedinfo.Copy()
+	var/list/timestamp_currentside = timestamp.Copy()
+	var/used_capacity_currentside = used_capacity
+	//then we overwite our current side with our other side
+	storedinfo = storedinfo_otherside.Copy()
+	timestamp = timestamp_otherside.Copy()
+	used_capacity = used_capacity_otherside
+	//then we overwrite our other side with the saved side
+	storedinfo_otherside = storedinfo_currentside.Copy()
+	timestamp_otherside = timestamp_currentside.Copy()
+	used_capacity_otherside = used_capacity_currentside
+	if(icon_state == originalIconState)
+		icon_state = "[originalIconState]_flipped"
+	else if(icon_state == "[originalIconState]_flipped") //so flipping doesn't overwrite an unexpected icon_state (e.g. an admin's)
+		icon_state = originalIconState
+
+/obj/item/tape/AltClick(mob/user)
+	. = ..()
+	if (firstFlip)
+		to_chat(usr, "<span class='notice'>You flip the tape so you can record on the clean magnetic strip.</span>")
+		firstFlip = FALSE
+	else
+		to_chat(usr, "<span class='notice'>You flip the tape back around.</span>")
+	flip()
+
+/obj/item/tape/verb/flipVerb()
+//adding this verb too just so players know it's an option.
+	set name = "Flip Tape";
+	if (firstFlip)
+		to_chat(usr, "<span class='notice'>You flip the tape so you can record on the clean magnetic strip</span>")
+		firstFlip = FALSE
+	else
+		to_chat(usr, "<span class='notice'>You flip the tape back around.</span>")
+	flip()
 
 //Random colour tapes
 /obj/item/tape/random
