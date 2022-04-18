@@ -289,7 +289,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	total_positions = 2
 	spawn_positions = 2
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the enlisted follow them to the letter. Additionally, you are responsible for the wellbeing of the troops and their ongoing training with the NCR."
-	supervisors = "Lieutenant and Above"
+	supervisors = "Sergeant First Class and Above"
 	selection_color = "#fff5cc"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
@@ -327,7 +327,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/sergeantrifleman
-	name = "Rifleman"
+	name = "Lead Rifleman"
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
@@ -340,7 +340,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/sergeantrecon
-	name = "Recon"
+	name = "Recon Squad Leader"
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
@@ -368,17 +368,17 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 // DRILL SERGEANT
 
 /datum/job/ncr/f13drillsergeant
-	title = "NCR Drill Sergeant"
+	title = "NCR Senior Enlisted Advisor"
 	flag = F13DRILLSERGEANT
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the direct superior to the conscripts, you are to provide training exercises, maintain military discipline, and instill orderliness within the ranks."
+	description = "The direct superior to all enlisted, you are to provide training exercises, maintain military discipline, and instill orderliness within the ranks. You may also manage the NCOs. You are the pinnacle of the NCR's enlisted ranks, and are to advise the commissioned officers. You are not a frontline trooper, you are support."
 	supervisors = "Lieutenant and Above"
 	selection_color = "#fff5cc"
 	access = list(ACCESS_NCR, ACCESS_NCR_ARMORY, ACCESS_NCR_COMMAND)
 	display_order = JOB_DISPLAY_ORDER_SERGEANT
 	outfit = /datum/outfit/job/ncr/f13drillsergeant
-	exp_requirements = 1000
+	exp_requirements = 2000
 
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -391,10 +391,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 
 /datum/outfit/job/ncr/f13drillsergeant
-	name = "NCR Drill Sergeant"
+	name = "NCR Senior Enlisted Advisor"
 	jobtype = /datum/job/ncr/f13drillsergeant
 	id = /obj/item/card/id/dogtag/ncrsergeant
-	accessory = /obj/item/clothing/accessory/ncr/SGT
+	accessory = /obj/item/clothing/accessory/ncr/FSGT
 	gloves = /obj/item/clothing/gloves/f13/leather
 	head = /obj/item/clothing/head/f13/ncr/ncr_campaign
 	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
@@ -424,6 +424,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	supervisors = "The Captain and the NCR"
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
 	outfit = /datum/outfit/job/ncr/f13representative
+	exp_requirements = 1500
 
 	loadout_options = list(
 		/datum/outfit/loadout/repbrahminbaron,
@@ -773,6 +774,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATENGINEER
 	outfit = /datum/outfit/job/ncr/f13combatengineer
+	exp_requirements = 120
 
 	loadout_options = list( // ALL: Trench tool, Limited blueprints
 		/datum/outfit/loadout/combatengineerbuilder, // M1/n carbine, X4 explosive, Extra materials
@@ -931,6 +933,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_COMBATMEDIC
 	outfit = /datum/outfit/job/ncr/f13combatmedic
+	exp_requirements = 120
 
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -968,7 +971,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-	
+
 
 
 
@@ -981,17 +984,20 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 /datum/job/ncr/f13corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
-	total_positions = 2
-	spawn_positions = 2
-	description = "You are a junior NCO, expected to help keep the troopers organized and follow the orders of your lord and savíour, the sergeant."
+	total_positions = 3
+	spawn_positions = 3
+	description = "You are a junior NCO. You are expected to lead from the frontlines with your sergeant. Keep the troopers in order and keep your squad coherent."
 	supervisors = "Sergeant and above"
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_CORPORAL
 	outfit = /datum/outfit/job/ncr/f13corporal
+	exp_requirements = 180
 
 	loadout_options = list(
-		/datum/outfit/loadout/corporaldesignatedmarksman, // Remington rife, 9mm sidearm, Bayonet
-		/datum/outfit/loadout/corporalrifleman, // Service rifle, Bayonet, Large magazines
+		/datum/outfit/loadout/corporaldesignatedmarksman,	 // Remington rife, 9mm sidearm, Bayonet
+		/datum/outfit/loadout/corporalrifleman,				 // Service rifle, Bayonet, Large magazines
+		/datum/outfit/loadout/corporalcqc,					 // Shotgun and trekking.
+		/datum/outfit/loadout/corporalcommand,				 // Intel and backline support
 		)
 
 	matchmaking_allowed = list(
@@ -1024,7 +1030,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/corporaldesignatedmarksman
-	name = "Designated marksman"
+	name = "Squad Ranged Support"
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	neck = /obj/item/storage/belt/holster/legholster
@@ -1036,8 +1042,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/storage/box/ration/menu_two = 1,
 		)
 
-/datum/outfit/loadout/corporalrifleman
-	name = "Assistant Squad Leader"
+/datum/outfit/loadout/corporalrifleman		//Name changed for better flavor
+	name = "Master Corporal"
 	head = /obj/item/clothing/head/f13/ncr
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	suit_store = /obj/item/gun/ballistic/automatic/service/r82
@@ -1045,8 +1051,34 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/storage/box/ration/menu_one = 1,
 		/obj/item/book/granter/trait/trekking = 1,
+		/obj/item/clothing/accessory/ncr/MCPL = 1 //Same rank, mostly for flavor and RP. - Kitsunemitsu
 		)
 
+/datum/outfit/loadout/corporalcqc		//I think this one sucks, personally.
+	name = "Squad Pointman"
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit_store = /obj/item/gun/ballistic/shotgun/hunting
+	head = /obj/item/clothing/head/f13/ncr/steelpot_goggles
+	backpack_contents = list(
+		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/storage/box/ration/menu_one = 1,
+		/obj/item/book/granter/trait/trekking = 1,
+		)
+
+/datum/outfit/loadout/corporalcommand	//Has a fold out gun. It serves it's purpose in being a support role but it is primarily for RP.
+	name = "Squad Pathfinder"
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
+	neck = /obj/item/storage/belt/holster/legholster
+	head = /obj/item/clothing/head/f13/ncr/steelpot_goggles
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/binoculars = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mmds = 1,
+		/obj/item/storage/box/ration/menu_one = 1,
+		/obj/item/clothing/accessory/ncr/MCPL = 1
+		)
 
 // TROOPER
 
@@ -1060,6 +1092,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	selection_color = "#fff5cc"
 	display_order = JOB_DISPLAY_ORDER_TROOPER
 	outfit = /datum/outfit/job/ncr/f13trooper
+	exp_requirements = 60
 
 	loadout_options = list(
 		/datum/outfit/loadout/trooperrifleman, // Service Rifle, Bayonet
@@ -1106,11 +1139,12 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/trooperfiresupport
-	name = "Reservist"
+	name = "Sapper"
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
 		/obj/item/shovel/trench = 1,
+		/obj/item/stack/sheet/mineral/sandbags = 10,
 		/obj/item/storage/box/ration/menu_eight = 1,
 		)
 
@@ -1146,7 +1180,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "NCR Conscript"
 	jobtype	= /datum/job/ncr/f13conscript
 	id = /obj/item/card/id/dogtag/ncrtrooper
-	accessory = /obj/item/clothing/accessory/ncr/TPR
+	accessory = /obj/item/clothing/accessory/ncr/REC
 	head = /obj/item/clothing/head/f13/ncr/standard/conscript
 	uniform = /obj/item/clothing/under/f13/ncr/conscript
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/conscript
@@ -1165,7 +1199,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 		)
 
 /datum/outfit/loadout/conscripthunting
-	name = "Sapper"
+	name = "Reservist"
 	suit_store = /obj/item/gun/ballistic/rifle/hunting
 	backpack_contents = list(
 		/obj/item/ammo_box/a308 = 2,
@@ -1321,6 +1355,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_type = EXP_TYPE_NCR
 	display_order = JOB_DISPLAY_ORDER_REAR_ECHELON
 	outfit = /datum/outfit/job/ncr/f13rearechelon
+	exp_requirements = 60
 
 	loadout_options = list( // ALL: Very limited blueprints
 		/datum/outfit/loadout/rearlog, // Varmint rifle, Trench tool

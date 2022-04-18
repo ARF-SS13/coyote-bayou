@@ -538,7 +538,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "NCR Sergeant"
 
 /obj/effect/landmark/start/f13/ncrdrillsergeant
-	name = "NCR Drill Sergeant"
+	name = "NCR Senior Enlisted Advisor"
 	icon_state = "NCR Drill Sergeant"
 
 /obj/effect/landmark/start/f13/ncrsergeant
@@ -849,7 +849,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/uslightduty
     name = "Enclave Bunker Duty"
-	
+
 //Tribal
 
 /obj/effect/landmark/start/f13/tribal
