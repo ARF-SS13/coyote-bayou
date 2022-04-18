@@ -356,7 +356,7 @@
 			inuse = FALSE
 			return //you can't use the tool, so stop
 		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 3 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
+			if(!do_after(user, 1 SECONDS*W.toolspeed, target = src)) //this is my work around, because do_After does have a move away
 				user.visible_message("[user] stops disassembling [src].")
 				inuse = FALSE
 				return //you did something, like moving, so stop
@@ -402,7 +402,7 @@
 			inuse = FALSE
 			return //you can't use the tool, so stop
 		for(var/i1 in 1 to 2) //so, I hate waiting
-			if(!do_after(user, 3 SECONDS, target = src)) //this is my work around, because do_After does have a move away
+			if(!do_after(user, 1 SECONDS, target = src)) //this is my work around, because do_After does have a move away
 				user.visible_message("[user] stops disassembling [src].")
 				inuse = FALSE
 				return //you did something, like moving, so stop

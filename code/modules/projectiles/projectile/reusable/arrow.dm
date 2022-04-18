@@ -83,7 +83,7 @@
 	damage = 20
 	sharpness = SHARP_EDGED
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/broadhead
-	embedding = list(embed_chance=100, fall_chance=0, jostle_chance=3, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.2, pain_mult=3, jostle_pain_mult=5, rip_time=25, projectile_payload = /obj/item/ammo_casing/caseless/arrow/broadhead)
+	embedding = list(embed_chance=50, fall_chance=60, jostle_chance=3, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.2, pain_mult=2, jostle_pain_mult=1, rip_time=25, projectile_payload = /obj/item/ammo_casing/caseless/arrow/broadhead)
 
 /obj/item/projectile/bullet/reusable/arrow/broadhead/on_hit(atom/target, blocked)
 	if(iscarbon(target))

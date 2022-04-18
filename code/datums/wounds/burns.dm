@@ -37,19 +37,28 @@
 
 	if(victim.reagents)
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/spaceacillin))
-			sanitization += 0.9
+			sanitization += 7
 		if(victim.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine/))
-			sanitization += 0.9
+			sanitization += 4
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
-			sanitization += 0.3
+			sanitization += 4
+			flesh_healing += 1
+		if(victim.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
+			sanitization -= 0.02 //you are rubbing dirty powder in your burns
+			flesh_healing += 0.1
+		if(victim.reagents.has_reagent(/datum/reagent/medicine/stimpak))
+			sanitization +=0.01
 			flesh_healing += 0.5
+		if(victim.reagents.has_reagent(/datum/reagent/medicine/bitter_drink))
+			sanitization +=0.5
+			flesh_healing +=0.3
 
 	if(limb.current_gauze)
 		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE)
 
 	if(flesh_healing > 0)
 		var/bandage_factor = (limb.current_gauze ? limb.current_gauze.splint_factor : 1)
-		flesh_damage = max(0, flesh_damage - 1)
+		flesh_damage = max(0, flesh_damage - 2)
 		flesh_healing = max(0, flesh_healing - bandage_factor) // good bandages multiply the length of flesh healing
 
 	// here's the check to see if we're cleared up
@@ -170,7 +179,7 @@
 			if(WOUND_INFECTION_SEPTIC to INFINITY)
 				. += "Infection Level: <span class='deadsay'>LOSS IMMINENT</span>\n"
 		if(infestation > sanitization)
-			. += "\tSurgical debridement, antiobiotics/sterilizers, or regenerative mesh will rid infection. Paramedic UV penlights are also effective.\n"
+			. += "\tSurgery will remove infection. Antibiotics like penicillin or miner's salve will remove infection. The burn must be treated separately with synthflesh, regenerative mesh, and ointment.\n"
 
 		if(flesh_damage > 0)
 			. += "Flesh damage detected: Please apply ointment or regenerative mesh to allow recovery.\n"
@@ -191,6 +200,7 @@
 	I.use(1)
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
+	infestation -= I.sanitization * 0.05
 
 	if((infestation <= 0 || sanitization >= infestation) && (flesh_damage <= 0 || flesh_healing > flesh_damage))
 		to_chat(user, "<span class='notice'>You've done all you can with [I], now you must wait for the flesh on [victim]'s [limb.name] to recover.</span>")
@@ -208,6 +218,7 @@
 	I.use(1)
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
+	infestation -= I.sanitization * 0.2
 
 	if(sanitization >= infestation && flesh_healing > flesh_damage)
 		to_chat(user, "<span class='notice'>You've done all you can with [I], now you must wait for the flesh on [victim]'s [limb.name] to recover.</span>")
@@ -248,13 +259,13 @@
 		infestation = max(0, infestation - WOUND_BURN_SANITIZATION_RATE * 0.2)
 
 /datum/wound/burn/on_synthflesh(amount)
-	flesh_healing += amount * 0.5 // 20u patch will heal 10 flesh standard
+	flesh_healing += amount * 2 // 20u patch will heal 40 flesh standard
 
 // we don't even care about first degree burns, straight to second
 /datum/wound/burn/moderate
 	name = "Second Degree Burns"
 	desc = "Patient is suffering considerable burns with mild skin penetration, weakening limb integrity and increased burning sensations."
-	treat_text = "Recommended application of topical ointment or regenerative mesh to affected region."
+	treat_text = "Apply penicillin, miner's salve, abraxo cleaner to clear infection, and use bandages, synthetic flesh, ointment, or regenerative mesh to heal the damaged tissue."
 	examine_desc = "is badly burned and breaking out in blisters"
 	occur_text = "breaks out with violent red burns"
 	severity = WOUND_SEVERITY_MODERATE
@@ -268,7 +279,7 @@
 /datum/wound/burn/severe
 	name = "Third Degree Burns"
 	desc = "Patient is suffering extreme burns with full skin penetration, creating serious risk of infection and greatly reduced limb integrity."
-	treat_text = "Recommended immediate disinfection and excision of any infected skin, followed by bandaging and ointment."
+	treat_text = "Apply penicillin, miner's salve, abraxo cleaner to clear infection, and use bandages, synthetic flesh, ointment, or regenerative mesh to heal the damaged tissue. Surgery will help treat infection, but not the burn itself."
 	examine_desc = "appears seriously charred, with aggressive red splotches"
 	occur_text = "chars rapidly, exposing ruined tissue and spreading angry red burns"
 	severity = WOUND_SEVERITY_SEVERE
@@ -284,7 +295,7 @@
 /datum/wound/burn/critical
 	name = "Catastrophic Burns"
 	desc = "Patient is suffering near complete loss of tissue and significantly charred muscle and bone, creating life-threatening risk of infection and negligible limb integrity."
-	treat_text = "Immediate surgical debriding of any infected skin, followed by potent tissue regeneration formula and bandaging."
+	treat_text = "Use surgery to treat infection, followed by penicillin, miner's salve, or abraxo. Ointment and regenerative mesh will treat both tissue damage and infection, and synthetic flesh will treat burn."
 	examine_desc = "is a ruined mess of blanched bone, melted fat, and charred tissue"
 	occur_text = "vaporizes as flesh, bone, and fat melt together in a horrifying mess"
 	severity = WOUND_SEVERITY_CRITICAL
@@ -294,6 +305,6 @@
 	threshold_penalty = 80
 	status_effect_type = /datum/status_effect/wound/burn/critical
 	treatable_by = list(/obj/item/flashlight/pen/paramedic, /obj/item/stack/medical/ointment, /obj/item/stack/medical/mesh)
-	infestation_rate = 0.15 // appx 4.33 minutes to reach sepsis without any treatment
+	infestation_rate = 0.10 // appx 4.33 minutes to reach sepsis without any treatment
 	flesh_damage = 20
 	scar_keyword = "burncritical"

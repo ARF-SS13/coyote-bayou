@@ -645,7 +645,7 @@
 	name = "Stable Mutation Toxin"
 	description = "A humanizing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
-	metabolization_rate = INFINITY //So it instantly removes all of itself
+	metabolization_rate = 0.5 * REM //So it instantly removes all of itself
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
 	var/datum/species/race = /datum/species/human
@@ -899,7 +899,7 @@
 	H.visible_message("<b>[H]</b> suddenly transforms!")
 	randomize_human(H)
 
-/* Fortuna edit: disabled slime mutation toxins
+
 /datum/reagent/aslimetoxin
 	name = "Advanced Mutation Toxin"
 	description = "An advanced corruptive toxin produced by slimes."
@@ -910,7 +910,7 @@
 /datum/reagent/aslimetoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(method != TOUCH)
 		L.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
-*/
+
 
 /datum/reagent/gluttonytoxin
 	name = "Gluttony's Blessing"

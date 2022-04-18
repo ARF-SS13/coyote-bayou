@@ -83,7 +83,6 @@
 	icon_state = "xbow"
 	item_state = "xbow"
 	icon_prefix = "xbow"
-	extra_damage = 3 //generally won't reduce TTK, but does increase performance against armor, especially with AP arrows
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/xbow
 	extra_speed = 400
 

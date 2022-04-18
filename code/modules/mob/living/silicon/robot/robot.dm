@@ -127,7 +127,11 @@
 	"Engineering" = /obj/item/robot_module/engineering, \
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
-	"Service" = /obj/item/robot_module/butler)
+	"Service" = /obj/item/robot_module/butler,
+	"Assaultron" = /obj/item/robot_module/assaultron,
+	"Medical Assaultron" = /obj/item/robot_module/assaultron/medical
+	)
+
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
 	if(BORG_SEC_AVAILABLE)
@@ -807,11 +811,6 @@
 				audible_message("<span class='warning'>[src] sounds an alarm! \"SYSTEM ERROR: Module 2 OFFLINE.\"</span>")
 				to_chat(src, "<span class='userdanger'>SYSTEM ERROR: Module 2 OFFLINE.</span>")
 				playsound(loc, 'sound/machines/warning-buzzer.ogg', 60, 1, 1)
-			if(health < -maxHealth*0.5)
-				if(uneq_module(held_items[1]))
-					audible_message("<span class='warning'>[src] sounds an alarm! \"CRITICAL ERROR: All modules OFFLINE.\"</span>")
-					to_chat(src, "<span class='userdanger'>CRITICAL ERROR: All modules OFFLINE.</span>")
-					playsound(loc, 'sound/machines/warning-buzzer.ogg', 75, 1, 1)
 
 /mob/living/silicon/robot/update_sight()
 	if(!client)

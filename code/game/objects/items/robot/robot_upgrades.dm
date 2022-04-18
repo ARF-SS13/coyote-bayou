@@ -384,10 +384,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 		if(cyborg.health < cyborg.maxHealth)
 			if(cyborg.health < 0)
-				repair_amount = -2.5
+				repair_amount = -7 //super stim
 				powercost = 30
 			else
-				repair_amount = -1
+				repair_amount = -4 //stim
 				powercost = 10
 			cyborg.adjustBruteLoss(repair_amount)
 			cyborg.adjustFireLoss(repair_amount)

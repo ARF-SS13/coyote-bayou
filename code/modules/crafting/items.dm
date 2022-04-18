@@ -179,8 +179,8 @@
 				/obj/item/stack/sheet/leather/ten,
 				/obj/item/stack/sheet/glass/ten,
 				/obj/item/stack/sheet/prewar/five,
-				/obj/item/stock_parts/cell/ammo/ec,
-				/obj/item/stack/crafting/goodparts/five
+				/obj/item/stack/crafting/goodparts/five,
+				/obj/item/stack/sheet/lead/five,
 				)
 
 /obj/item/salvage/crafting
@@ -223,9 +223,4 @@
 				/obj/item/advanced_crafting_components/alloys,
 				/obj/item/advanced_crafting_components/conductors,
 				/obj/item/advanced_crafting_components/lenses,
-				/obj/item/advanced_crafting_components/flux,
-				/obj/item/attachments/scope,
-				/obj/item/suppressor,
-				/obj/item/attachments/burst_improvement,
-				/obj/item/attachments/recoil_decrease,
-				/obj/item/attachments/auto_sear)
+				/obj/item/advanced_crafting_components/flux)

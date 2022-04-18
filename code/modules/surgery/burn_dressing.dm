@@ -22,7 +22,7 @@
 ///// Debride
 /datum/surgery_step/debride
 	name = "excise infection"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCALPEL = 85, TOOL_SAW = 80, TOOL_WIRECUTTER = 60)
+	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCALPEL = 100, TOOL_SAW = 80, TOOL_WIRECUTTER = 60)
 	time = 30
 	repeatable = TRUE
 
@@ -48,7 +48,7 @@
 			"<span class='notice'>[user] successfully excises some of the infected flesh from  [target]'s [parse_zone(target_zone)]!</span>")
 		log_combat(user, target, "excised infected flesh in", addition="INTENT: [uppertext(user.a_intent)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
-		burn_wound.infestation -= 0.85
+		burn_wound.infestation -= 4
 		burn_wound.sanitization += 0.75
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE

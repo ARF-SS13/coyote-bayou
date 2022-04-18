@@ -312,7 +312,7 @@
 		return
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/attackby(obj/item/W, mob/user, params)
-	/* Coconut bombs (disabled)
+
 	//DEFUSING NADE LOGIC
 	if (W.tool_behaviour == TOOL_WIRECUTTER && fused)
 		user.show_message("<span class='notice'>You cut the fuse!</span>", MSG_VISUAL)
@@ -334,8 +334,6 @@
 			fusedactive = TRUE
 			defused = FALSE
 			playsound(src, 'sound/effects/fuse.ogg', 100, 0)
-			message_admins("[ADMIN_LOOKUPFLW(user)] ignited a coconut bomb for detonation at [ADMIN_VERBOSEJMP(user)] [pretty_string_from_reagent_list(reagents.reagent_list)]")
-			log_game("[key_name(user)] primed a coconut grenade for detonation at [AREACOORD(user)].")
 			addtimer(CALLBACK(src, .proc/prime), 5 SECONDS)
 			icon_state = "coconut_grenade_active"
 			desc = "RUN!"
@@ -353,7 +351,7 @@
 			desc = "A makeshift bomb made out of a coconut. You estimate the fuse is long enough for 5 seconds."
 			name = "coconut bomb"
 			return
-	*/
+
 	//ADDING STRAW LOGIC
 	if (istype(W,/obj/item/stack/sheet/mineral/bamboo) && opened && !straw && fused)
 		user.show_message("<span class='notice'>You add a bamboo straw to the coconut!</span>", 1)
@@ -456,10 +454,10 @@
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/afterattack(obj/target, mob/user, proximity)
 	. = ..()
-	/* coconut bombs disabled
+
 	if(fusedactive)
 		return
-	*/
+	
 
 	if((!proximity) || !check_allowed_items(target,target_self=1))
 		return
@@ -499,14 +497,13 @@
 	. = ..()
 	transform *= TRANSFORM_USING_VARIABLE(40, 100) + 0.5 //temporary fix for size?
 
-/* coconut bombs disabled
+
 /obj/item/reagent_containers/food/snacks/grown/coconut/proc/prime()
 	if (defused)
 		return
 	var/turf/T = get_turf(src)
 	reagents.chem_temp = 1000
 	reagents.handle_reactions()
-	log_game("Coconut bomb detonation at [AREACOORD(T)], location [loc]")
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/grown/coconut/ex_act(severity)
@@ -517,11 +514,11 @@
 		prime()
 	if(!QDELETED(src))
 		qdel(src)
-*/
+
 
 /obj/item/seeds/aloe
 	name = "pack of aloe seeds"
-	desc = "These seeds grow into aloe."
+	desc = "These seeds grow into aloe, a plant useful for treating burns."
 	icon_state = "seed-aloe"
 	species = "aloe"
 	plantname = "Aloe"
@@ -533,12 +530,12 @@
 	yield = 6
 	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/kelotane = 0.01)
 
 /obj/item/reagent_containers/food/snacks/grown/aloe
 	seed = /obj/item/seeds/aloe
 	name = "aloe"
-	desc = "Cut leaves from the aloe plant."
+	desc = "Cut leaves from the aloe plant. Heating it with a microwave or bonfire will make aloe. It can also be ground up and used to make advanced regenerative mesh."
 	icon_state = "aloe"
 	filling_color = "#90EE90"
 	bitesize_mod = 5
@@ -547,5 +544,5 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/tequila
 
 /obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/M)
-	new /obj/item/stack/medical/aloe(drop_location(), 2)
+	new /obj/item/stack/medical/mesh/aloe(drop_location(), 2)
 	qdel(src)

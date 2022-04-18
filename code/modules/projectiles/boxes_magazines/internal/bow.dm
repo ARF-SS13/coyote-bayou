@@ -7,7 +7,7 @@
 
 /obj/item/ammo_box/magazine/internal/bow/xbow
 	name = "crossbow magazine"
-	max_ammo = 4
+	max_ammo = 3
 	start_empty = 1
 
 //Deathclaw Bow Ammo
@@ -23,7 +23,7 @@
 
 //Silver Bow Ammo
 /obj/item/ammo_box/magazine/internal/bow/silver
-	max_ammo = 5 // 6 shots in total
+	max_ammo = 3 // 6 shots in total
 
 //Crossbow Ammo
 /obj/item/ammo_box/magazine/internal/bow/cross

@@ -235,7 +235,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
 	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
+	var/heal_factor_perk = -4.5 //Multiplier if you have the right perk. //it's weaker than it used to be, because it's insanely easy to mass produce (availability based on plant potency, which scales upward)
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
 	var/is_tribal = FALSE
@@ -249,6 +249,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.adjustBruteLoss(heal_rate)
 		M.adjustToxLoss(heal_rate)
 		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
+		M.radiation -= min(M.radiation, 8)
 		. = TRUE
 	..()
 
@@ -310,7 +311,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	color = "#C8A5DC"
 	overdose_threshold = 20
 	heal_factor = -2
-	heal_factor_perk = -4.3
+	heal_factor_perk = -4 //same as stimpak
 
 // ---------------------------
 // RAD-X REAGENT

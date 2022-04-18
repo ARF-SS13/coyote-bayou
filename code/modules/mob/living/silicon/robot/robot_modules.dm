@@ -462,6 +462,7 @@
 		/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "peace"
 	moduleselect_icon = "standard"
+	borghealth = 300
 	hat_offset = -2
 
 /obj/item/robot_module/peacekeeper/do_transform_animation()
