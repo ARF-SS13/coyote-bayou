@@ -30,7 +30,7 @@
 	wagging_type = "mam_waggingtail"
 	species_type = "jelly"
 
-/datum/species/jelly/get_scream_sound(mob/living/carbon/human/H)
+/datum/species/jelly/get_laugh_sound(mob/living/carbon/human/H)
 	//slime have cat ear. slime go nya.
 	if((H.dna.features["mam_ears"] == "Cat") || (H.dna.features["mam_ears"] == "Cat, Big"))
 		return pick('sound/voice/jelly/nyahaha1.ogg',

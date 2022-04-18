@@ -200,35 +200,35 @@
 	message_param = "blows a kiss to %t."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/audio_emote
+/datum/emote/living/audible
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/audio_emote/can_run_emote(mob/living/user, status_check = TRUE)
+/datum/emote/living/audible/can_run_emote(mob/living/user, status_check = TRUE)
 	. = ..()
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		return !C.silent && (!C.mind || !C.mind.miming)
 
-/datum/emote/living/audio_emote/laugh
+/datum/emote/living/audible/laugh
 	key = "laugh"
 	key_third_person = "laughs"
 	message = "laughs."
 
-/datum/emote/living/audio_emote/laugh/get_sound(mob/living/user)
+/datum/emote/living/audible/laugh/get_sound(mob/living/user)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		//power armor laugh track.... spooky
 		if(istype(human_user.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/f13/power_armor))
 			return 'sound/voice/robolaugh.ogg'
-		return human_user.dna.species.get_scream_sound()
+		return human_user.dna.species.get_laugh_sound(user)
 
-/datum/emote/living/audio_emote/chitter
+/datum/emote/living/audible/chitter
 	key = "chitter"
 	key_third_person = "chitters"
 	message = "chitters."
 
-/datum/emote/living/audio_emote/chitter/get_sound(mob/living/user)
+/datum/emote/living/audible/chitter/get_sound(mob/living/user)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
@@ -531,26 +531,26 @@
 	else
 		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
 
-/datum/emote/living/audio_emote/blorble
+/datum/emote/living/audible/blorble
 	key = "blorble"
 	key_third_person = "blorbles"
 	message = "blorbles."
 	message_param = "blorbles at %t."
 
-/datum/emote/living/audio_emote/blorble/run_emote(mob/user, params)
+/datum/emote/living/audible/blorble/run_emote(mob/user, params)
 	. = ..()
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(isjellyperson(C))
 			pick(playsound(C, 'sound/effects/attackblob.ogg', 50, 1),playsound(C, 'sound/effects/blobattack.ogg', 50, 1))
 
-/datum/emote/living/audio_emote/blurp
+/datum/emote/living/audible/blurp
 	key = "blurp"
 	key_third_person = "blurps"
 	message = "blurps."
 	message_param = "blurps at %t."
 
-/datum/emote/living/audio_emote/blurp/run_emote(mob/user, params)
+/datum/emote/living/audible/blurp/run_emote(mob/user, params)
 	. = ..()
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user

@@ -13,19 +13,19 @@
 	tail_type = "tail_human"
 	wagging_type = "waggingtail_human"
 	species_type = "human"
-	scream_male = list(
+	laugh_male = list(
 		'sound/voice/catpeople/nyahaha1.ogg',
 		'sound/voice/catpeople/nyahaha2.ogg',
 		'sound/voice/catpeople/nyaha.ogg',
 		'sound/voice/catpeople/nyahehe.ogg',
 	)
-	scream_female = list(
+	laugh_female = list(
 		'sound/voice/catpeople/nyahaha1.ogg',
 		'sound/voice/catpeople/nyahaha2.ogg',
 		'sound/voice/catpeople/nyaha.ogg',
 		'sound/voice/catpeople/nyahehe.ogg',
 	)
-	
+
 /datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
 		stop_wagging_tail(H)

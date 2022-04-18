@@ -15,8 +15,8 @@
 	disliked_food = FRUIT | GROSS
 	toxic_food = MEAT | RAW
 	mutanteyes = /obj/item/organ/eyes/moth
-	scream_male = 'sound/voice/moth/mothlaugh.ogg'
-	scream_female = 'sound/voice/moth/mothlaugh.ogg'
+	laugh_male = 'sound/voice/moth/mothlaugh.ogg'
+	laugh_female = 'sound/voice/moth/mothlaugh.ogg'
 
 /datum/species/moth/on_species_gain(mob/living/carbon/C)
 	. = ..()
