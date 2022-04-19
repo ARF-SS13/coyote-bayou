@@ -12,6 +12,18 @@
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
 	species_type = "furry"
+	laugh_male = list(
+		'sound/voice/catpeople/nyahaha1.ogg',
+		'sound/voice/catpeople/nyahaha2.ogg',
+		'sound/voice/catpeople/nyaha.ogg',
+		'sound/voice/catpeople/nyahehe.ogg',
+	)
+	laugh_female = list(
+		'sound/voice/catpeople/nyahaha1.ogg',
+		'sound/voice/catpeople/nyahaha2.ogg',
+		'sound/voice/catpeople/nyaha.ogg',
+		'sound/voice/catpeople/nyahehe.ogg',
+	)
 
 /datum/species/human/felinid/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	if(ishuman(C))
