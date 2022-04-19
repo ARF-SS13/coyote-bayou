@@ -455,5 +455,5 @@ datum/chemical_reaction/rezadone
 /datum/chemical_reaction/bitterdrink
 	name = "Bitter drink"
 	id = /datum/reagent/medicine/bitter_drink
-	results = list(/datum/reagent/medicine/bitter_drink = 15) //legion get a fuckton of these chems based on the potency of the plant
+	results = list(/datum/reagent/medicine/bitter_drink = 30)
 	required_reagents = list(/datum/reagent/consumable/ethanol/salgam = 10 , /datum/reagent/consumable/ethanol/brocbrew = 10 , /datum/reagent/consumable/sunset = 10 , /datum/reagent/consumable/ethanol/yellowpulque = 10)

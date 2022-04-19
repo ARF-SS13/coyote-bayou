@@ -410,6 +410,7 @@
 	is_automatic = TRUE
 	autofire_shot_delay = 5
 	recoil = 1
+	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 

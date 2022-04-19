@@ -652,6 +652,27 @@
 			return FALSE
 	return ..()
 
+/obj/item/robot_module/gutsy
+	name = "Gutsy"
+	basic_modules = list( //Security borg
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/extinguisher/mini,
+		/obj/item/crowbar/cyborg,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/borg/cyborghug,
+		/obj/item/megaphone,
+		/obj/item/melee/classic_baton/police,
+		/obj/item/gun/energy/laser/pistol/cyborg,
+		/obj/item/clothing/mask/gas/sechailer/cyborg,
+		/obj/item/pinpointer/crew)
+	emag_modules = list(/obj/item/gun/energy/laser/cyborg)
+	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/security,
+		/obj/item/clockwork/weapon/ratvarian_spear)
+	borghealth = 300
+	cyborg_base_icon = "gutsy"
+	moduleselect_icon = "standard"
+	hat_offset = -2
+
 /obj/item/robot_module/assaultron
 	name = "Assaultron"
 	basic_modules = list( //Security borg

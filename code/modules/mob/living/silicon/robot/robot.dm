@@ -128,8 +128,7 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Service" = /obj/item/robot_module/butler,
-	"Assaultron" = /obj/item/robot_module/assaultron,
-	"Medical Assaultron" = /obj/item/robot_module/assaultron/medical
+	"Gutsy" = /obj/item/robot_module/gutsy
 	)
 
 	if(!CONFIG_GET(flag/disable_peaceborg))
@@ -704,6 +703,9 @@
 
 /mob/living/silicon/robot/modules/miner
 	set_module = /obj/item/robot_module/miner
+
+/mob/living/silicon/robot/modules/gutsy
+	set_module = /obj/item/robot_module/gutsy
 
 /mob/living/silicon/robot/modules/assaultron //F13 stuff, better Handy.
 	name = "Assaultron"
