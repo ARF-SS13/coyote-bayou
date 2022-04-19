@@ -75,6 +75,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	embed_falloff_tile = 0.5
 	embedding = list(embed_chance=5, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.5, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a556/microshrapnel)
 
+/obj/item/projectile/bullet/a556/uraniumtipped
+	name = "5.56 uranium-tipped bullet"
+	damage = -4
+	armour_penetration = 0.18
+	irradiate = 300
+
+
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
 	damage = 25
@@ -229,7 +236,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
-	damage = -10
+	damage = -2
 	armour_penetration = 0.3
 	irradiate = 300
 
@@ -255,7 +262,6 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a473/shock
 	name = "4.73mm shock bullet"
-	damage = -12 // -50% damage
 	wound_bonus = 0
 	sharpness = SHARP_NONE
 	var/energy_damage = 4
@@ -269,7 +275,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a473/hv
 	name = "4.73mm highvelocity bullet"
-	damage = -14 //about -60% damage for hitscan
+	damage = -6 //the g11 is now just straight up 16 damage so this makes it 10
 	hitscan = TRUE
 	wound_bonus = 0
 

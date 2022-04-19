@@ -445,6 +445,20 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/a556shrap
+	name = "5.56mm micro-shrapnel ammo box"
+	result = /obj/item/ammo_box/a556/uraniumtipped
+	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+	/obj/item/stack/sheet/mineral/titanium = 2,
+	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/mineral/uranium = 2,
+	/obj/item/stack/ore/blackpowder = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/a556
 	name = ".223  handloaded ammo bag"
 	result = /obj/item/ammo_box/a556/sport/improvised

@@ -1311,65 +1311,22 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/m473
 	burst_size = 1
-	extra_damage = 22.5
+	extra_damage = 16
 	fire_delay = 2
 	is_automatic = TRUE
-	automatic = FALSE
-	extra_penetration = 0.2
-	autofire_shot_delay = 1.75
-	burst_shot_delay = 0.5
+	automatic = 1
+	autofire_shot_delay = 1.5
+	burst_shot_delay = 1.5
+	spread = 8
+	recoil = 0.1
 	can_attachments = TRUE
 	semi_auto = TRUE
 	can_scope = FALSE
-	spread = 0
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	select = 0
-
-/obj/item/gun/ballistic/automatic/g11/ui_action_click(mob/user, action)
-	if(istype(action, /datum/action/item_action/toggle_firemode))
-		burst_select()
-	else
-		return ..()
-
-/obj/item/gun/ballistic/automatic/g11/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			if(burst_improvement)
-				burst_size = 5
-			else
-				burst_size = 3
-			automatic = FALSE
-			if(recoil_decrease)
-				burst_spread = 5.5
-			else
-				burst_spread = 7.5
-			recoil = 0.25
-			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
-		if(1)
-			select += 1
-			burst_size = 1
-			automatic = TRUE
-			if(recoil_decrease)
-				burst_spread = 8.5
-			else
-				burst_spread = 12.5
-			recoil = 0.5
-			to_chat(user, "<span class='notice'>You switch to full-auto.</span>")
-		if(2)
-			select = 0
-			burst_size = 1
-			automatic = FALSE
-			spread = 0
-			recoil = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
 
 ////////////////
 //MACHINE-GUNS//

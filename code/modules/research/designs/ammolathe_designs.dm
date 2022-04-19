@@ -627,13 +627,6 @@
 	build_path = /obj/item/ammo_box/m473/dumdum
 	category = list("initial", "Advanced Ammo")
 
-/datum/design/ammolathe/m473explosive
-	name = "4.73mm explosive caseless ammo box"
-	id = "m473explosive"
-	materials = list(/datum/material/iron = 24000, /datum/material/titanium = 10000, /datum/material/blackpowder = 10000)
-	build_path = /obj/item/ammo_box/m473/explosive
-	category = list("initial", "Advanced Ammo")
-
 /datum/design/ammolathe/m473esd
 	name = "4.73mm ESD caseless ammo box"
 	id = "m473esd"
@@ -644,7 +637,7 @@
 /datum/design/ammolathe/m473hv
 	name = "4.73mm high-velocity caseless ammo box"
 	id = "m473hv"
-	materials = list(/datum/material/iron = 12000, /datum/material/titanium = 8000, /datum/material/blackpowder = 3000)
+	materials = list(/datum/material/iron = 12000, /datum/material/titanium = 15000, /datum/material/blackpowder = 3000)
 	build_path = /obj/item/ammo_box/m473/hv
 	category = list("initial", "Advanced Ammo")
 

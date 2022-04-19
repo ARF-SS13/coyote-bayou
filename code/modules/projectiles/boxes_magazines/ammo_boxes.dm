@@ -344,6 +344,22 @@
 	ammo_type = /obj/item/ammo_casing/a556/microshrapnel
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1000)
 
+/obj/item/ammo_box/a556/uraniumtipped
+	name = "ammo box (5.56 uranium-tipped)"
+	desc = "Not depleted uranium. Regular uranium."
+	ammo_type = /obj/item/ammo_casing/a556/uranium_tipped
+	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1000)
+
+/obj/item/ammo_box/a556/uraniumtipped/Initialize()
+	. = ..()
+	AddComponent(/datum/component/radioactive, 5, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
+	START_PROCESSING(SSradiation,src)
+
+/obj/item/ammo_box/a762box/uraniumtipped/Destroy()
+	STOP_PROCESSING(SSradiation,src)
+	..()
+
+
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
