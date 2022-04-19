@@ -5,6 +5,7 @@
 	icon_state = "pipe_d"
 	desc = "Dispenses countless types of pipes. Very useful if you need pipes."
 	density = TRUE
+	circuit = /obj/item/circuitboard/machine/pipedispenser
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_OFFLINE
 	var/wait = 0
 	var/piping_layer = PIPING_LAYER_DEFAULT
@@ -41,10 +42,10 @@
 		return 1
 	usr.set_machine(src)
 	add_fingerprint(usr)
-	if(href_list["makepipe"])
+	if(href_list["make"])
 		if(wait < world.time)
-			var/p_type = text2path(href_list["makepipe"])
-			if (!verify_recipe(GLOB.atmos_pipe_recipes, p_type))
+			var/p_type = text2path(href_list["make"])
+			if(!ispath(p_type, /obj/machinery/atmospherics))
 				return
 			var/p_dir = text2num(href_list["dir"])
 			var/obj/item/pipe/P = new (loc, p_type, p_dir)
@@ -92,6 +93,8 @@
 	icon_state = "pipe_d"
 	desc = "Dispenses pipes that will ultimately be used to move trash around."
 	density = TRUE
+	circuit = /obj/item/circuitboard/machine/disposaldispenser
+
 
 
 //Allow you to drag-drop disposal pipes and transit tubes into it
@@ -160,6 +163,8 @@
 	icon_state = "pipe_d"
 	density = TRUE
 	desc = "Dispenses pipes that will move beings around."
+	circuit = /obj/item/circuitboard/machine/transitdispenser
+
 
 /obj/machinery/pipedispenser/disposal/transit_tube/interact(mob/user)
 

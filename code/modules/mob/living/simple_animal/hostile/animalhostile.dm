@@ -155,13 +155,14 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	footstep_type = FOOTSTEP_MOB_CLAW
 	has_field_of_vision = FALSE // 360° vision.
 
-/* Radiation injection non functional right now
+
 /mob/living/simple_animal/hostile/aradnid/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-			M.radiation += 100
-*/
+		H.reagents.add_reagent(/datum/reagent/toxin/polonium, 20) //irradiates as pebbles wanted it to do
+
+
 
 
 /mob/living/simple_animal/hostile/scolopendra

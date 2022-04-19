@@ -376,6 +376,30 @@
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ALL		//Lets be honest here half the maps have public ones.
 
+/datum/design/board/pipedispenser
+	name = "Machine Design (Pipe Dispenser Board)"
+	desc = "The circuit board for a pipe dispenser."
+	id = "pipedispenser"
+	build_path = /obj/item/circuitboard/machine/pipedispenser
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ALL
+
+/datum/design/board/transitdispenser
+	name = "Machine Design (Transit Tube Dispenser Board)"
+	desc = "The circuit board for a transit tube dispenser."
+	id = "transitdispenser"
+	build_path = /obj/item/circuitboard/machine/transitdispenser
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ALL		//Lets be honest here half the maps have public ones.
+
+/datum/design/board/disposaldispenser
+	name = "Machine Design (Disposal Dispenser Board)"
+	desc = "The circuit board for a disposal dispenser."
+	id = "disposaldispenser"
+	build_path = /obj/item/circuitboard/machine/disposaldispenser
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ALL		//Lets be honest here half the maps have public ones.
+
 /datum/design/board/recharger
 	name = "Machine Design (Weapon Recharger Board)"
 	desc = "The circuit board for a Weapon Recharger."

@@ -555,7 +555,8 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/gun/energy/laser/aer9,
-	/obj/item/stock_parts/cell/ammo/mfc
+	/obj/item/stock_parts/cell/ammo/mfc,
+	/obj/item/gun/energy/gammagun
 ))
 
 GLOBAL_LIST_INIT(loot_t4_range, list(
@@ -595,8 +596,7 @@ GLOBAL_LIST_INIT(loot_t5_range, list(
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,
-	/obj/item/gun/ballistic/automatic/bozar,
-	/obj/item/gun/energy/gammagun
+	/obj/item/gun/ballistic/automatic/bozar
 ))
 
 GLOBAL_LIST_INIT(loot_unique_range, list(

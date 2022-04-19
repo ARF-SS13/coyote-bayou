@@ -4,6 +4,7 @@
 	obj_damage = 40
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	mob_size = MOB_SIZE_LARGE
+	gold_core_spawnable = NO_SPAWN
 	var/atom/target
 	var/ranged = FALSE
 	var/rapid = 0 //How many shots per volley.

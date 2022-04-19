@@ -501,9 +501,9 @@
 //Gamma gun
 /obj/item/gun/energy/gammagun
 	name = "Gamma gun"
-	desc = "A very crude weapon overall and appears to have been built from scavenged junk found throughout the wasteland."
-	icon_state = "gammagun"
-	item_state = "gammagun"
+	desc = "An advanced radiation weapon commonly utilized by people who have passionate hatred for their fellow man. Fires slow velocity, low damage radiation beams."
+	icon_state = "ultra_pistol"
+	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 	slot_flags = ITEM_SLOT_BELT

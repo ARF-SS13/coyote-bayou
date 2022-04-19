@@ -1,7 +1,7 @@
 /obj/item/projectile/beam
 	name = "laser"
 	icon_state = "laser"
-	pass_flags = PASSTABLE
+	pass_flags = PASSTABLE| PASSGLASS
 	damage = 20
 	light_range = 2
 	damage_type = BURN
@@ -85,7 +85,9 @@
 	name = "gamma beam"
 	icon_state = "xray"
 	damage = 5
-	damage_type = "clone"
+	flag = "energy"
+	armour_penetration = 1 //it only does 5 damage.
+	damage_type = "toxin"
 	irradiate = 200
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF

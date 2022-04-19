@@ -501,7 +501,6 @@
 /obj/item/reagent_containers/food/snacks/grown/coconut/proc/prime()
 	if (defused)
 		return
-	var/turf/T = get_turf(src)
 	reagents.chem_temp = 1000
 	reagents.handle_reactions()
 	qdel(src)

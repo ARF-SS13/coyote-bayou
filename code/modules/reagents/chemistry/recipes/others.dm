@@ -620,8 +620,8 @@
 	required_temp = 374
 
 /datum/chemical_reaction/life/on_reaction(datum/reagents/holder, multiplier)
-	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life (friendly)", FRIENDLY_SPAWN) // a certain person keep abusing this to spawn like 20 mobs infront of ncr base
-
+	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life") // Defaults to HOSTILE SPAWN
+/*
 //This is missing, I'm adding it back (see tgwiki). Not sure why we don't have it.
 /datum/chemical_reaction/life_friendly
 	name = "Life (Friendly)"
@@ -631,6 +631,7 @@
 
 /datum/chemical_reaction/life_friendly/on_reaction(datum/reagents/holder, multiplier)
 	chemical_mob_spawn(holder, rand(1, round(multiplier, 1)), "Life (friendly)", FRIENDLY_SPAWN) //Pray for cute cats
+*/
 
 /datum/chemical_reaction/corgium
 	name = "corgium"
@@ -707,13 +708,13 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i in 1 to multiplier)
 		new /obj/item/stack/sheet/plastic(location)
-/*
+
 /datum/chemical_reaction/pax
 	name = "pax"
 	id = /datum/reagent/pax
 	results = list(/datum/reagent/pax = 3)
 	required_reagents  = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/medicine/synaptizine = 1, /datum/reagent/water = 1)
-*/
+
 // TODO: Add some kind of ghoulification mutation toxin? Iunno.
 
 // Liquid Carpets

@@ -30,7 +30,7 @@
 	id = /datum/reagent/nitroglycerin
 	results = list(/datum/reagent/nitroglycerin = 2)
 	required_reagents = list(/datum/reagent/glycerol = 1, /datum/reagent/toxin/acid/fluacid = 1, /datum/reagent/toxin/acid = 1)
-	strengthdiv = 16
+	strengthdiv = 2
 
 /datum/chemical_reaction/reagent_explosion/nitroglycerin/on_reaction(datum/reagents/holder, multiplier)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -43,14 +43,14 @@
 	id = "nitroglycerin_explosion"
 	required_reagents = list(/datum/reagent/nitroglycerin = 1)
 	required_temp = 474
-	strengthdiv = 6
+	strengthdiv = 2
 
 
 /datum/chemical_reaction/reagent_explosion/potassium_explosion
 	name = "Explosion"
 	id = "potassium_explosion"
 	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/potassium = 1)
-	strengthdiv = 100 // Nerfed to unusability in grenades
+	strengthdiv = 10
 
 /datum/chemical_reaction/reagent_explosion/holyboom
 	name = "Holy Explosion"
@@ -95,7 +95,7 @@
 	id = "blackpowder_explosion"
 	required_reagents = list(/datum/reagent/blackpowder = 1)
 	required_temp = 474
-	strengthdiv = 24
+	strengthdiv = 6
 	modifier = 1
 	mix_message = "<span class='boldannounce'>Sparks start flying around the black powder!</span>"
 
@@ -118,7 +118,7 @@
 	var/location = get_turf(holder.my_atom)
 	empulse(location, multiplier)
 	holder.clear_reagents()
-/* strange reagent removed
+
 /datum/chemical_reaction/beesplosion
 	name = "Bee Explosion"
 	id = "beesplosion"
@@ -127,22 +127,20 @@
 /datum/chemical_reaction/beesplosion/on_reaction(datum/reagents/holder, multiplier)
 	var/location = holder.my_atom.drop_location()
 	if(multiplier < 5)
-		playsound(location,'sound/effects/sparks1.ogg', 100, TRUE)
-	else
-		playsound(location,'sound/creatures/bee.ogg', 100, TRUE)
-		var/list/beeagents = list()
-		for(var/X in holder.reagent_list)
-			var/datum/reagent/R = X
-			if(required_reagents[R.type])
-				continue
-			beeagents += R
-		var/bee_amount = round(multiplier * 0.2)
-		for(var/i in 1 to bee_amount)
-			var/mob/living/simple_animal/hostile/poison/bees/short/new_bee = new(location)
-			if(LAZYLEN(beeagents))
-				new_bee.assign_reagent(pick(beeagents))
+	playsound(location,'sound/creatures/bee.ogg', 100, TRUE)
+	var/list/beeagents = list()
+	for(var/X in holder.reagent_list)
+		var/datum/reagent/R = X
+		if(required_reagents[R.type])
+			continue
+		beeagents += R
+	var/bee_amount = round(multiplier * 0.2)
+	for(var/i in 1 to bee_amount)
+		var/mob/living/simple_animal/hostile/poison/bees/short/new_bee = new(location)
+		if(LAZYLEN(beeagents))
+			new_bee.assign_reagent(pick(beeagents))
 
-*/
+
 /datum/chemical_reaction/stabilizing_agent
 	name = "stabilizing_agent"
 	id = /datum/reagent/stabilizing_agent
@@ -167,7 +165,7 @@
 	id = "methboom1"
 	required_temp = 380 //slightly above the meth mix time.
 	required_reagents = list(/datum/reagent/drug/methamphetamine = 1)
-	strengthdiv = 24
+	strengthdiv = 6
 	modifier = 1
 	mob_react = FALSE
 
@@ -252,8 +250,6 @@
 		if(C.flash_act())
 			if(get_dist(C, location) < 4)
 				C.DefaultCombatKnockdown(60)
-			else
-				C.Stun(100)
 	holder.remove_reagent(/datum/reagent/flash_powder, multiplier*3)
 
 /datum/chemical_reaction/flash_powder_flash
@@ -273,8 +269,6 @@
 		if(C.flash_act())
 			if(get_dist(C, location) < 4)
 				C.DefaultCombatKnockdown(60)
-			else
-				C.Stun(100)
 
 /datum/chemical_reaction/smoke_powder
 	name = "smoke_powder"
@@ -472,7 +466,7 @@
 	required_reagents = list(/datum/reagent/stabilizing_agent = 1, /datum/reagent/fluorosurfactant = 1,/datum/reagent/carbon = 1)
 	required_temp = 200
 	is_cold_recipe = 1
-
+/*
 /datum/chemical_reaction/reagent_explosion/lingblood
 	name = "Changeling Blood Reaction"
 	id = "ling_blood_reaction"
@@ -498,3 +492,4 @@
 		return ..()
 	else
 		return FALSE
+*/
