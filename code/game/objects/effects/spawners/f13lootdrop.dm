@@ -682,7 +682,7 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 	lootcount = 1
 
 	loot = list(/obj/item/twohanded/fireaxe,
-				/obj/item/twohanded/sledgehammer,
+				/obj/item/twohanded/sledgehammer/simple,
 				/obj/item/twohanded/fireaxe/bmprsword,
 				/obj/item/melee/unarmed/lacerator,
 				/obj/item/melee/unarmed/maceglove,

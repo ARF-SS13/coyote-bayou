@@ -457,7 +457,7 @@
 
 /datum/crafting_recipe/tools/forged/sledge
 	name = "Sledgehammer"
-	result = /obj/item/twohanded/sledgehammer
+	result = /obj/item/twohanded/sledgehammer/simple
 	time = 700
 	reqs = list(
 		/obj/item/stack/sheet/metal = 25,

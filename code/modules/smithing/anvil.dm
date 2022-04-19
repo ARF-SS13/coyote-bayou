@@ -106,6 +106,20 @@
 			return FALSE
 		do_shaping(user, hammertime.qualitymod)
 		return
+	else if(istype(I, /obj/item/twohanded/sledgehammer/simple))
+		var/obj/item/twohanded/sledgehammer/simple/hammertime = I
+		if(!(workpiece_state == WORKPIECE_PRESENT || workpiece_state == WORKPIECE_INPROGRESS))
+			to_chat(user, "You can't work an empty anvil!")
+			return FALSE
+		var/mob/living/carbon/human/F = user
+		if(busy)
+			to_chat(user, "This anvil is already being worked!")
+			return FALSE
+		if(F.busy)
+			to_chat(user, "You are already working another anvil!")
+			return FALSE
+		do_shaping(user, hammertime.qualitymod)
+		return
 	return ..()
 
 /obj/structure/anvil/wrench_act(mob/living/user, obj/item/I)

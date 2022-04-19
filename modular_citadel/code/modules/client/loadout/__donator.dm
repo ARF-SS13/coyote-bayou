@@ -31,7 +31,7 @@
 /obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
 	new /obj/item/clothing/suit/armored/medium/steelbib(src)
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
-	new /obj/item/twohanded/sledgehammer(src)
+	new /obj/item/twohanded/sledgehammer/simple(src)
 	new /obj/item/pda(src)
 
 /datum/gear/donator/kits/cayce

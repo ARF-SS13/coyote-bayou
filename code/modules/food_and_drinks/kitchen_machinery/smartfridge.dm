@@ -786,7 +786,7 @@
 		/obj/item/pickaxe/mini = 1,
 		/obj/item/wrench = 1,
 		/obj/item/twohanded/fireaxe = 1,
-		/obj/item/twohanded/sledgehammer = 1,
+		/obj/item/twohanded/sledgehammer/simple = 1,
 		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
 		/obj/item/clothing/gloves/color/yellow = 1,
 		/obj/item/flashlight = 1,

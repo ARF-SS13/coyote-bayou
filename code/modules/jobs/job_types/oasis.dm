@@ -738,7 +738,7 @@ Mayor
 	suit = /obj/item/clothing/under/f13/petrochico
 	belt = /obj/item/storage/belt/utility
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
-	backpack_contents = list(/obj/item/twohanded/sledgehammer = 1,
+	backpack_contents = list(/obj/item/twohanded/sledgehammer/simple = 1,
 	/obj/item/stack/sheet/metal/twenty = 1,
 	/obj/item/book/granter/crafting_recipe/ODF = 1,
 	)
