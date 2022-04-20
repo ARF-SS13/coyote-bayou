@@ -242,8 +242,7 @@
 	result = /obj/item/ammo_casing/caseless/arrow/burning
 	time = 30
 	reqs = list(/obj/item/ammo_casing/caseless/arrow = 1,
-				/obj/item/reagent_containers/food/drinks/bottle = 1,
-				/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 4)
+				/datum/reagent/fuel = 10)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
@@ -273,7 +272,7 @@
 	time = 30
 	reqs = list(
 		/obj/item/ammo_casing/caseless/arrow = 1,
-		/obj/item/reagent_containers/food/snacks/grown/nettle = 5,
+		/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
 		)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
