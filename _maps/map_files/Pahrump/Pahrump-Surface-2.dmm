@@ -167,15 +167,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"adf" = (
-/obj/machinery/pool/filter{
-	pixel_y = -17
-	},
-/obj/structure/railing{
-	layer = 4.1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/village)
 "adp" = (
 /obj/structure/billboard/ritas,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -1722,10 +1713,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/ncr)
-"aLA" = (
-/obj/structure/pool/ladder,
-/turf/open/pool,
-/area/f13/village)
 "aLW" = (
 /obj/structure/simple_door/repaired,
 /turf/open/indestructible/ground/inside/mountain,
@@ -2066,8 +2053,7 @@
 	},
 /area/f13/village)
 "aUa" = (
-/obj/machinery/pool/drain,
-/turf/open/pool,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/village)
 "aUl" = (
 /obj/structure/fence,
@@ -2160,10 +2146,6 @@
 /obj/item/storage/box/papersack,
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
-"aWz" = (
-/obj/structure/pool/Lboard,
-/turf/open/pool,
-/area/f13/village)
 "aWM" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -2198,10 +2180,6 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"aXl" = (
-/obj/structure/pool/Rboard,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/village)
 "aXu" = (
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#9c9c9c"
@@ -24178,10 +24156,6 @@
 	},
 /area/f13/village)
 "jxD" = (
-/obj/structure/furnace{
-	desc = "A sauna furnace, used to boil water to create steam. Simply light the coals in the furnace, and add water.";
-	name = "sauna furnace"
-	},
 /obj/item/trash/coal,
 /obj/item/trash/coal,
 /obj/item/trash/coal,
@@ -39358,13 +39332,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"pKI" = (
-/obj/structure/pool/ladder{
-	dir = 1;
-	pixel_y = 11
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/village)
 "pKK" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -48841,13 +48808,6 @@
 /obj/item/key,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"tNR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/pool/controller,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating"
-	},
-/area/f13/village)
 "tNX" = (
 /obj/structure/car/rubbish4,
 /turf/open/indestructible/ground/outside/desert,
@@ -54251,9 +54211,6 @@
 /obj/item/reagent_containers/pill/patch/bitterdrink,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"vWX" = (
-/turf/open/pool,
-/area/f13/village)
 "vXh" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -98099,11 +98056,11 @@ pfl
 fyf
 pcG
 vjj
-vWX
-vWX
-aLA
-vWX
-vWX
+aUa
+aUa
+aUa
+aUa
+aUa
 lag
 qXO
 ihA
@@ -98356,11 +98313,11 @@ pWN
 oCi
 pcG
 vjj
-vWX
-vWX
-vWX
-vWX
-vWX
+aUa
+aUa
+aUa
+aUa
+aUa
 lag
 qXO
 kNf
@@ -98612,12 +98569,12 @@ hOl
 sgz
 koD
 pcG
-adf
-vWX
-vWX
-vWX
-vWX
-vWX
+vjj
+aUa
+aUa
+aUa
+aUa
+aUa
 lag
 qXO
 sQW
@@ -98870,11 +98827,11 @@ uit
 iYF
 pcG
 vjj
-vWX
-vWX
 aUa
-vWX
-vWX
+aUa
+aUa
+aUa
+aUa
 lag
 qXO
 pcG
@@ -99127,12 +99084,12 @@ hOl
 wwM
 pcG
 xei
-vWX
-vWX
-vWX
-vWX
-vWX
-pKI
+aUa
+aUa
+aUa
+aUa
+aUa
+pbx
 qER
 pcG
 tHN
@@ -99384,11 +99341,11 @@ hOl
 koD
 pcG
 xei
-vWX
-vWX
-vWX
-vWX
-vWX
+aUa
+aUa
+aUa
+aUa
+aUa
 bkc
 ihA
 sTn
@@ -99641,15 +99598,15 @@ ehN
 koD
 pcG
 xei
-vWX
-vWX
-aWz
-vWX
-vWX
+aUa
+aUa
+aUa
+aUa
+aUa
 bkc
 ihA
 pcG
-tNR
+xDL
 xOt
 pcG
 iTC
@@ -99900,7 +99857,7 @@ pcG
 psD
 psD
 axw
-aXl
+pbx
 psD
 psD
 psD
