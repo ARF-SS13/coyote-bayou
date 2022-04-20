@@ -111,6 +111,14 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
+/datum/crafting_recipe/junk_table
+	name = "Makeshift Bar Table"
+	reqs = list(/obj/item/stack/rods = 2,
+				/obj/item/stack/sheet/mineral/wood = 2)
+	result = /obj/structure/table/wood/junk
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
 ///////////////////////////
 //Scavenging and Tinkering//
 ///////////////////////////
