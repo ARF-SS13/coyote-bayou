@@ -359,12 +359,12 @@
 	item_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	fire_delay = 3
-	burst_shot_delay = 2.5
+	burst_shot_delay = 2.2
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 2
 	spread = 16
-	extra_damage = 18
+	extra_damage = 17
 	can_suppress = TRUE
 	can_attachments = TRUE
 	spread = 10
@@ -483,15 +483,15 @@
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	spread = 10
+	spread = 6
 	fire_delay = 3.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2
+	autofire_shot_delay = 2.25
 	burst_shot_delay = 2
-	extra_damage = 18
+	extra_damage = 15
 	suppressed = 1
-	recoil = 0.1
+	recoil = 0.05
 	can_attachments = TRUE
 	can_suppress = FALSE
 	can_unsuppress = FALSE
@@ -1274,34 +1274,35 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	force = 20
-	extra_damage = 30
+	extra_damage = 28
 	fire_delay = 3.5
 	is_automatic = TRUE
 	automatic = 1
 	autofire_shot_delay = 3
 	mag_type = /obj/item/ammo_box/magazine/m762
-	spread = 10
+	spread = 16 //infamously hard to control on full-auto
 	recoil = 0.25
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
-/obj/item/gun/ballistic/automatic/bar
-	name = "automatic rifle (debug)"
-	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle.(Debug)"
+obj/item/gun/ballistic/automatic/bar
+	name = "automatic rifle (.308)"
+	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "BAR"
 	item_state = "BAR"
 	icon_prefix = "BAR"
 	automatic = 1
+	mag_type = /obj/item/ammo_box/magazine/m762/ext
 	force = 24 //club
 	slowdown = 1.25 //really goddamn big
-	autofire_shot_delay = 2.75
+	autofire_shot_delay = 2.5
 	extra_damage = 28
 	spread = 10
 	recoil = 0.3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
 
 //H&K G11				Keywords: 4.73mm, Automatic, 50 round magazine
 /obj/item/gun/ballistic/automatic/g11
