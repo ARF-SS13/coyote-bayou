@@ -368,7 +368,7 @@
 	name = "reinforced bola"
 	desc = "A strong bola, made with a long steel chain. It looks heavy, enough so that it could trip somebody."
 	icon_state = "bola_r"
-	breakouttime = 10
+	breakouttime = 35
 	slowdown = 7
 
 /obj/item/restraints/legcuffs/bola/energy //For Security

@@ -656,6 +656,7 @@ commented out pending rework*/
 	loadout_options = list(	// ALL: .45 Revolver, Machete
 		/datum/outfit/loadout/expsniper,	// Lee-Enfield, Smokebomb
 		/datum/outfit/loadout/expambusher,	// Ballistic Fist, Bottlecap mine
+		/datum/outfit/loadout/expduelist, // .45 Revolver
 		)
 
 	matchmaking_allowed = list(
@@ -683,8 +684,8 @@ commented out pending rework*/
 	neck = /obj/item/storage/belt/holster
 	r_pocket = /obj/item/flashlight
 	l_pocket = /obj/item/binoculars
-	suit_store = /obj/item/gun/ballistic/revolver/revolver45
 	backpack_contents = list(
+		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/storage/bag/money/small/legenlisted = 1,
@@ -699,19 +700,30 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/bottlecap_mine = 1,
-		/obj/item/restraints/legcuffs/bola = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		)
 
 /datum/outfit/loadout/expsniper
 	name = "Sniper"
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	suit_store = /obj/item/gun/ballistic/rifle/enfield
+	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
 	backpack_contents = list(
-		/obj/item/ammo_box/a762 = 3,
-		/obj/item/restraints/legcuffs/beartrap = 2,
+		/obj/item/ammo_box/magazine/m762 = 2,
+		/obj/item/restraints/legcuffs/beartrap = 1,
 		/obj/item/book/granter/trait/rifleman = 1,
 		/obj/item/attachments/scope = 1,
-		/obj/item/grenade/smokebomb = 1,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		)
+
+
+/datum/outfit/loadout/expduelist
+	name = "Duelist"
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	suit_store = /obj/item/gun/ballistic/revolver/revolver45/gunslinger
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger = 2,
+		/obj/item/ammo_box/a45lcbox = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
 		)
 
