@@ -280,13 +280,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/book/granter/martial/cqc = 1,
 		/obj/item/gun/ballistic/revolver/hunting = 1,
-		/obj/item/ammo_box/c4570 = 3,)
-	suit_store = /obj/item/gun/ballistic/revolver/widowmaker
-	backpack_contents = list(
-		/obj/item/melee/powered/ripper/prewar = 1,
-		/obj/item/ammo_box/shotgun/trainshot = 1,
-		/obj/item/ammo_box/shotgun/buck = 3,
-		)
+		/obj/item/ammo_box/c4570 = 3)
 
 /* /datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
