@@ -1,10 +1,3 @@
-/obj/item/basaltblock
-	name = "basalt block"
-	desc = "A block of basalt."
-	icon = 'icons/obj/smith.dmi'
-	icon_state = "sandvilnoir"
-
-
 /obj/item/smithing
 	name = "base class /obj/item/smithing"
 	icon = 'icons/obj/smith.dmi'
@@ -143,9 +136,64 @@
 	finalitem.desc = finaldesc
 	finalitem.name = pick("Delersibnir", "Nekolangrir", "Zanoreshik","Öntakrítin", "Nogzatan", "Vunomam", "Nazushagsaldôbar", "Sergeb", "Zafaldastot", "Vudnis", "Dostust", "Shotom", "Mugshith", "Angzak", "Oltud", "Deleratîs", "Nökornomal") //one of these is literally BLOOD POOL CREATE.iirc its Nazushagsaldôbar.
 
+
+//////////////////////
+//					//
+//  	HANDLES		//
+//					//
+//////////////////////
+
+// Stick can be made by using a sharp tool on a piece of wood, less time wasted in crafting menu
+/obj/item/stick
+	name = "wooden rod"
+	desc = "It's a rod, suitable for use of a handle of a tool. Also could serve as a weapon, in a pinch."
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "stick"
+	force = 7
+
+// Using leather strips on a stick to make a weapon handle
+/obj/item/stick/attackby/(obj/item/W, mob/user, params)
+	if (istype(W, /obj/item/stack/sheet/leatherstrips))
+		user.visible_message("[user] begins finishing the [src] into a handle.", \
+				"<span class='notice'>You begin wrapping the [src] with leather strips, and shaping the wood into a handle.</span>", \
+				"<span class='italics'>You hear faint sounds of handcrafting.</span>")
+		// 6 Second Timer
+		if(!do_after(user, 60, TRUE, src))
+			return
+		// Make stick
+		var/obj/item/swordhandle/new_item = new(user.loc)
+		user.visible_message("[user] finishes making a handle from the [src].", \
+				"<span class='notice'>You finish making a weapon handle from the [src].</span>")
+		// Prepare to Put xin Hands (if holding wood)
+		var/obj/item/stack/sheet/leatherstrips/N = src
+		var/replace = (user.get_inactive_held_item() == N)
+		// Use up the strips
+		N.use(1)
+		// If stack depleted, put item in that hand (if it had one)
+		if (!N && replace)
+			user.put_in_hands(new_item)
+	else
+		. = ..()
+
+
+/obj/item/swordhandle
+	name = "weapon handle"
+	desc = "It's a wooden handle with leather strips, making it comfortable to hold."
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "shorthilt"
+
+
+//////////////////////
+//					//
+//  SMITHED TOOLS	//
+//	METAL PARTS		//
+//					//
+//////////////////////
+
 /obj/item/smithing/hammerhead
 	name = "smithed hammer head"
 	finalitem = /obj/item/melee/smith/hammer
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "hammer"
 
 /obj/item/smithing/hammerhead/startfinish()
@@ -155,22 +203,10 @@
 	finalitem = finalforreal
 	..()
 
-
-
-/obj/item/smithing/scytheblade
-	name = "smithed scythe head"
-	finalitem = /obj/item/scythe/smithed
-	icon_state = "scythe"
-
-/obj/item/smithing/scytheblade/startfinish()
-	finalitem = new /obj/item/scythe/smithed(src)
-	finalitem.force += quality*2.5
-	//finalitem.armour_penetration += quality*0.0375
-	..()
-
 /obj/item/smithing/shovelhead
 	name = "smithed shovel head"
 	finalitem = /obj/item/shovel/smithed
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "shovel"
 
 /obj/item/smithing/shovelhead/startfinish()
@@ -182,15 +218,82 @@
 		finalitem.toolspeed *= max(1, (quality * -1))
 	..()
 
-/obj/item/smithing/cogheadclubhead
-	name = "smithed coghead club head"
-	finalitem = /obj/item/melee/smith/cogheadclub
-	icon_state = "coghead"
+/obj/item/smithing/pickaxehead
+	name = "smithed pickaxe head"
+	finalitem = /obj/item/pickaxe/smithed
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "pickaxe"
 
-/obj/item/smithing/cogheadclubhead/startfinish()
-	finalitem = new /obj/item/melee/smith/cogheadclub(src)
-	finalitem.force += quality*3.4
+/obj/item/smithing/pickaxehead/startfinish()
+	var/obj/item/pickaxe/smithed/finalforreal = new /obj/item/pickaxe/smithed(src)
+	finalforreal.force += quality/2
+	if(quality > 0)
+		finalforreal.toolspeed = max(0.05,(1-(quality/10)))
+	else
+		finalforreal.toolspeed *= max(1, (quality * -1))
+	switch(quality)
+		if(10 to INFINITY)
+			finalforreal.digrange = 2
+		if(5 to 9)
+			finalforreal.digrange = 2
+		if(3,4)
+			finalforreal.digrange = 1
+		else
+			finalforreal.digrange = 1
+	finalitem = finalforreal
 	..()
+
+/obj/item/smithing/prospectingpickhead
+	name = "smithed prospector's pickaxe head"
+	finalitem = /obj/item/mining_scanner/prospector
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "minipick"
+
+/obj/item/smithing/prospectingpickhead/startfinish()
+	var/obj/item/mining_scanner/prospector/finalforreal = new /obj/item/mining_scanner/prospector(src)
+	finalforreal.range = 2 + quality
+	if(quality)
+		finalforreal.cooldown = 100/quality
+	finalitem = finalforreal
+	..()
+
+
+//////////////////////
+//					//
+//  	BLING		//
+//					//
+//////////////////////
+
+/obj/item/smithing/jewelry
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "ring"
+	mob_overlay_icon = 'icons/fallout/onmob/items/misc_righthand.dmi'
+	item_state = "ring"
+	gender = NEUTER
+	w_class = WEIGHT_CLASS_SMALL
+	strip_delay = 20
+	equip_delay_other = 40
+	var/strip_mod = 1 //how much they alter stripping items time by, higher is quicker
+	var/strip_silence = TRUE
+	var/mood_event_on_equip = /datum/mood_event/equipped_ring/gold
+
+/obj/item/smithing/jewelry/ring
+	name = "ring"
+	slot_flags = ITEM_SLOT_GLOVES
+	attack_verb = list("proposed")
+
+/obj/item/smithing/jewelry/ring/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_GLOVES && istype(user))
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ringbuff", mood_event_on_equip)
+	else
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "ringbuff")
+
+/obj/item/smithing/jewelry/ring/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "ringbuff")
+
+
 
 /obj/item/smithing/javelinhead
 	name = "smithed javelin head"
@@ -222,43 +325,7 @@
 	finalitem = finalforreal
 	..()
 
-/obj/item/smithing/pickaxehead
-	name = "smithed pickaxe head"
-	finalitem = /obj/item/pickaxe/smithed
-	icon_state = "pickaxe"
 
-/obj/item/smithing/pickaxehead/startfinish()
-	var/obj/item/pickaxe/smithed/finalforreal = new /obj/item/pickaxe/smithed(src)
-	finalforreal.force += quality/2
-	if(quality > 0)
-		finalforreal.toolspeed = max(0.05,(1-(quality/10)))
-	else
-		finalforreal.toolspeed *= max(1, (quality * -1))
-	switch(quality)
-		if(10 to INFINITY)
-			finalforreal.digrange = 2
-		if(5 to 9)
-			finalforreal.digrange = 2
-		if(3,4)
-			finalforreal.digrange = 1
-		else
-			finalforreal.digrange = 1
-	finalitem = finalforreal
-	..()
-
-
-/obj/item/smithing/prospectingpickhead
-	name = "smithed prospector's pickaxe head"
-	finalitem = /obj/item/mining_scanner/prospector
-	icon_state = "minipick"
-
-/obj/item/smithing/prospectingpickhead/startfinish()
-	var/obj/item/mining_scanner/prospector/finalforreal = new /obj/item/mining_scanner/prospector(src)
-	finalforreal.range = 2 + quality
-	if(quality)
-		finalforreal.cooldown = 100/quality
-	finalitem = finalforreal
-	..()
 
 
 /obj/item/smithing/shortswordblade
@@ -418,16 +485,3 @@
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]")
 	finalitem = finalforreal
 	..()
-
-/obj/item/stick
-	name = "wooden rod"
-	desc = "It's a rod, suitable for use of a handle of a tool. Also could serve as a weapon, in a pinch."
-	icon = 'icons/obj/smith.dmi'
-	icon_state = "stick"
-	force = 7
-
-/obj/item/swordhandle
-	name = "sword handle"
-	desc = "It's a crudlely shaped wooden sword hilt."
-	icon = 'icons/obj/smith.dmi'
-	icon_state = "shorthilt"

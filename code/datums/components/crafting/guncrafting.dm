@@ -157,10 +157,10 @@
 	machine_tool_behaviour = list(TOOL_BOTTLER)
 
 /obj/machinery/workbench/forge
-	name = "metalworking forge"
-	desc = "A large furnace used for forging metal items such as swords, spears and shields. You can imagine yourself making iron daggers here for a long time."
+	name = "metalworking bench"
+	desc = "A workbench with a drill press, a makeshift blowtorch setup, and various tools for making crude weapons and tools."
 	icon = 'icons/fallout/machines/64x32.dmi'
-	icon_state = "forge"
+	icon_state = "bench_metal"
 	bound_width = 64
 	machine_tool_behaviour = list(TOOL_FORGE)
 

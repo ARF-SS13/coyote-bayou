@@ -44,16 +44,31 @@
 	AddElement(/datum/element/sword_point)
 
 
+//////////////////////
+//					//
+//  SMITHED TOOLS	//
+//					//
+//////////////////////
 
-///////////////////////////
-//        Mining         //
-///////////////////////////
+/obj/item/melee/smith/hammer//blacksmithing, not warhammer.
+	name = "smithing hammer"
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "hammer"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "hammer"
+	overlay_state = "hammerhandle"
+	var/qualitymod = 0
+
 /obj/item/mining_scanner/prospector
 	name = "prospector's pickaxe"
-	desc = "A pickaxe that can sound rocks to find mineral deposits and stop gibtonite detonations."
+	desc = "A pickaxe that can sound rocks to find mineral deposits."
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/obj/smith.dmi'
-	icon_state = "minipick" //todo:sprite
+	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon_state = "minipick"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "minipick"
 	sharpness = SHARP_POINTY//it doesnt have a blade it has a point
 
 /obj/item/mining_scanner/prospector/Initialize()
@@ -70,8 +85,12 @@
 	name = "pickaxe"
 	desc = "A pickaxe."
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/obj/smith.dmi'
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "pickaxe"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "pickaxe"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	sharpness = SHARP_POINTY
 
 /obj/item/pickaxe/smithed/Initialize()
@@ -90,9 +109,12 @@
 /obj/item/shovel/smithed
 	name = "shovel"
 	desc = "A shovel."
-	icon = 'icons/obj/smith.dmi'
-	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
+	icon = 'icons/fallout/objects/blacksmith.dmi'
 	icon_state = "shovel"
+	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
+	item_state = "shovel"
+	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	sharpness = SHARP_EDGED //it cuts through the earth
 
 /obj/item/shovel/smithed/Initialize()
@@ -104,6 +126,10 @@
 	add_overlay(overlay)
 	if(force < 0)
 		force = 0
+
+//obj/item/scythe/smithed //we need to inherit scythecode, but that's about it. Scythe not implemented, but good example of how to make smited items inherit special mechanics.
+//	obj_flags = UNIQUE_RENAME
+//	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 
 
 ///////////////////////////
@@ -168,24 +194,6 @@
 //      Other Melee     //
 ///////////////////////////
 
-
-/obj/item/melee/smith/hammer//blacksmithing, not warhammer.
-	name = "hammer"
-	icon_state = "hammer"
-	overlay_state = "hammerhandle"
-	var/qualitymod = 0
-
-/obj/item/scythe/smithed //we need to inherit scythecode, but that's about it.
-	obj_flags = UNIQUE_RENAME
-	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-
-
-/obj/item/melee/smith/cogheadclub
-	name = "coghead club"
-	icon_state = "coghead"
-	item_flags = NEEDS_PERMIT
-	obj_flags = UNIQUE_RENAME
-	overlay_state = "stick"
 
 /obj/item/melee/smith/shortsword
 	name = "gladius"

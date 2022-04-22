@@ -904,7 +904,6 @@
 	/obj/item/melee/smith/twohand/zweihander,
 	/obj/item/melee/smith/twohand/katana,
 	/obj/item/melee/smith/sabre,
-	/obj/item/melee/smith/cogheadclub,
 	/obj/item/melee/onehanded/machete,
 	/obj/item/melee/onehanded/club,
 	/obj/item/melee/classic_baton,
