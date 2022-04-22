@@ -82,6 +82,11 @@
 	amount = 350
 	merge_type = /obj/item/stack/f13Cash/caps
 
+
+/obj/item/stack/f13Cash/caps/onezerozerozero
+	amount = 1000
+	merge_type = /obj/item/stack/f13Cash/caps
+
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
 	update_desc()
