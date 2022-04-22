@@ -10434,8 +10434,8 @@
 /area/f13/ncr)
 "eoC" = (
 /obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1
+	dir = 1;
+	light_color = "#e8eaff"
 	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
@@ -23826,16 +23826,8 @@
 	pixel_x = 6
 	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -38464,17 +38456,8 @@
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
-<<<<<<< Updated upstream
-/area/f13/building)
-=======
+/area/f13/followers,
 /area/f13/followers)
-"prm" = (
-/obj/structure/simple_door/metal/fence{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
->>>>>>> Stashed changes
 "prp" = (
 /obj/structure/barricade/tentclothedge,
 /turf/open/indestructible/ground/outside/dirt{
@@ -47373,8 +47356,8 @@
 "tfZ" = (
 /obj/structure/table,
 /obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1
+	dir = 1;
+	light_color = "#e8eaff"
 	},
 /obj/item/folder/blue,
 /obj/item/pen/fourcolor,
