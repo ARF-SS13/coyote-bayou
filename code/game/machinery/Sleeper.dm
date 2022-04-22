@@ -286,6 +286,7 @@
 
 
 /obj/machinery/sleeper/syndie
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	controls_inside = TRUE
 
@@ -312,11 +313,13 @@
 	RefreshParts()
 
 /obj/machinery/sleeper/old
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "oldpod"
 
 /obj/machinery/sleeper/party
 	name = "party pod"
 	desc = "'Sleeper' units were once known for their healing properties, until a lengthy investigation revealed they were also dosing patients with deadly lead acetate. This appears to be one of those old 'sleeper' units repurposed as a 'Party Pod'. It’s probably not a good idea to use it."
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "partypod"
 	idle_power_usage = 3000
 	circuit = /obj/item/circuitboard/machine/sleeper/party
@@ -357,6 +360,7 @@
 /obj/machinery/sleeper/clockwork
 	name = "soothing sleeper"
 	desc = "A large cryogenics unit built from brass. Its surface is pleasantly cool the touch."
+	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_clockwork"
 	enter_message = "<span class='bold inathneq_small'>You hear the gentle hum and click of machinery, and are lulled into a sense of peace.</span>"
 	possible_chems = list(

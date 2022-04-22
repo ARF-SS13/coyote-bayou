@@ -55,7 +55,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(20, STAMINA, null, 0)
+	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
 
 /obj/item/melee/onehanded/machete/gladius
 	name = "gladius"
@@ -311,7 +311,7 @@ obj/item/melee/onehanded/knife/switchblade
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(10, STAMINA, null, 0)
+	M.apply_damage(10, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
 
 // War Club
 /obj/item/melee/onehanded/club/warclub
@@ -328,7 +328,7 @@ obj/item/melee/onehanded/knife/switchblade
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(20, STAMINA, null, 0)
+	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
 
 // Tire Iron
 /obj/item/melee/onehanded/club/tireiron

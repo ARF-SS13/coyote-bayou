@@ -37,6 +37,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/gun/energy/laser/cyborg
+	name = "integrated AER9"
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the Handy's internal energy cell directly. So this is what freedom looks like?"
 	fire_delay = 1
@@ -264,6 +265,10 @@
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 3
+
+/obj/item/gun/energy/laser/pistol/cyborg/gutsy
+	name = "\improper integrated laser pistol"
+	desc = "An integrated laser pistol that draws power directly from your cell."
 
 //Compliance Regulator
 

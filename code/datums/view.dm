@@ -81,6 +81,8 @@
 	apply()
 
 /datum/viewData/proc/apply()
+	if(!chief)
+		return
 	chief.change_view(getView())
 	safeApplyFormat()
 	if(chief.prefs.auto_fit_viewport)

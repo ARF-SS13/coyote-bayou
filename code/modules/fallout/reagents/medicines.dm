@@ -36,8 +36,6 @@
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
 		M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
 		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
@@ -68,8 +66,6 @@
 	color = "#FFA500"
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
 	M.adjustFireLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
 	M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -103,8 +99,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(prob(20))
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0 && M.getOxyLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
 		M.adjustBruteLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
 		M.adjustFireLoss(-8*REAGENTS_EFFECT_MULTIPLIER)
@@ -241,8 +235,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)&& !M.reagents.has_reagent(/datum/reagent/medicine/super_stimpak))
 		M.adjustFireLoss(heal_rate)
@@ -278,8 +270,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	var/is_tribal = FALSE
 	if(HAS_TRAIT(M, TRAIT_TRIBAL))
 		is_tribal = TRUE
-	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0)
-		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
 	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
 	M.adjustFireLoss(heal_rate)
 	M.adjustBruteLoss(heal_rate)

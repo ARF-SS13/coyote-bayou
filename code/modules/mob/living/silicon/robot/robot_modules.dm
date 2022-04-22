@@ -662,7 +662,7 @@
 		/obj/item/borg/cyborghug,
 		/obj/item/megaphone,
 		/obj/item/melee/classic_baton/police,
-		/obj/item/gun/energy/laser/pistol/cyborg,
+		/obj/item/gun/energy/laser/pistol/cyborg/gutsy,
 		/obj/item/clothing/mask/gas/sechailer/cyborg,
 		/obj/item/pinpointer/crew)
 	emag_modules = list(/obj/item/gun/energy/laser/cyborg)

@@ -128,6 +128,8 @@
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
 	message_loc = target
+	if(!owned_by)
+		return
 	if (owned_by.seen_messages)
 		var/idx = 1
 		var/combined_height = approx_lines
