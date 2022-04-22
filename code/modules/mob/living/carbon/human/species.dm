@@ -119,9 +119,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
-	var/laugh_male = list('sound/voice/human/womanlaugh.ogg')
+	var/laugh_male = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
 	/// This is used exclusively by females
-	var/laugh_female = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	var/laugh_female = list('sound/voice/human/womanlaugh.ogg')
 
 ///////////
 // PROCS //

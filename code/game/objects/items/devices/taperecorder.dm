@@ -84,11 +84,8 @@
 	set name = "Eject Tape"
 	set category = "Object"
 
-	if(!can_use(usr))
+	if(!can_use(usr) || !mytape)
 		return
-	if(!mytape)
-		return
-
 	eject(usr)
 
 /obj/item/taperecorder/update_icon_state()
@@ -111,14 +108,7 @@
 /obj/item/taperecorder/verb/record()
 	set name = "Start Recording"
 	set category = "Object"
-
-	if(!can_use(usr))
-		return
-	if(!mytape || mytape.ruined)
-		return
-	if(recording)
-		return
-	if(playing)
+	if(!can_use(usr) || !mytape || mytape.ruined || recording || playing)
 		return
 
 	if(mytape.used_capacity < mytape.max_capacity)
@@ -142,10 +132,8 @@
 /obj/item/taperecorder/verb/stop()
 	set name = "Stop"
 	set category = "Object"
-
 	if(!can_use(usr))
 		return
-
 	if(recording)
 		recording = 0
 		mytape.timestamp += mytape.used_capacity
@@ -158,12 +146,16 @@
 		T.visible_message("<font color=Maroon><B>Tape Recorder</B>: Playback stopped.</font>")
 	update_icon()
 
+/obj/item/taperecorder/AltClick(mob/user)
+	. = ..()
+	if (recording)
+		stop()
+	else
+		record()
+
 /obj/item/taperecorder/verb/WipeTapeInRecorder()
 	set name = "Wipe Tape"
-
-	if(!mytape || mytape.ruined)
-		return
-	if(recording || playing)
+	if(!mytape || mytape.ruined || recording || playing)
 		return
 	else
 		mytape.used_capacity = 0;
@@ -174,14 +166,7 @@
 /obj/item/taperecorder/verb/play()
 	set name = "Play Tape"
 	set category = "Object"
-
-	if(!can_use(usr))
-		return
-	if(!mytape || mytape.ruined)
-		return
-	if(recording)
-		return
-	if(playing)
+	if(!mytape || mytape.ruined || recording || playing || !can_use(usr))
 		return
 
 	playing = 1
@@ -190,11 +175,7 @@
 	var/used = mytape.used_capacity	//to stop runtimes when you eject the tape
 	var/max = mytape.max_capacity
 	for(var/i = 1, used < max, sleep(10 * playsleepseconds))
-		if(!mytape)
-			break
-		if(playing == 0)
-			break
-		if(mytape.storedinfo.len < i)
+		if(!mytape || playing == 0 || mytape.storedinfo.len < i)
 			break
 		say(mytape.storedinfo[i])
 		if(mytape.storedinfo.len < i + 1)
@@ -224,14 +205,10 @@
 	set name = "Print Transcript"
 	set category = "Object"
 
-	if(!can_use(usr))
-		return
-	if(!mytape)
+	if(!mytape || recording || playing || !can_use(usr))
 		return
 	if(!canprint)
 		to_chat(usr, "<span class='notice'>The recorder can't print that fast!</span>")
-		return
-	if(recording || playing)
 		return
 
 	to_chat(usr, "<span class='notice'>Transcript printed.</span>")
