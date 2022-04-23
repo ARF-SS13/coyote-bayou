@@ -69,22 +69,6 @@
 	path = /obj/item/storage/box/large/custom_kit/klatue
 	ckeywhitelist = list("klatue9")
 
-/obj/item/storage/box/large/custom_kit/riggy/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/hobo/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
-	new /obj/item/ammo_casing/caseless/plasmacaster(src)
-	new /obj/item/storage/belt/holster(src)
-	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
-	new /obj/item/gun/energy/laser/wattz/magneto(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
-	new /obj/item/clothing/head/helmet/riot(src)
-
-/datum/gear/donator/kits/riggy
-	name = "Items"
-	path = /obj/item/storage/box/large/custom_kit/riggy
-	ckeywhitelist = list("rigbe")
-
 /obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
 	new /obj/item/clothing/neck/mantle/umbo(src)
@@ -98,3 +82,23 @@
 	name = "Canadian"
 	path = /obj/item/storage/box/large/custom_kit/canadian
 	ckeywhitelist = list("comradesocks")
+
+/obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice(src)
+	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
+	new /obj/item/storage/belt/military(src))
+	new /obj/item/melee/onehanded/knife/survival(src)
+	
+
+/datum/gear/donator/kits/vaktus
+	name = "Vaks goods"
+	path = /obj/item/storage/box/large/custom_kit/vaktus
+	ckeywhitelist = list("vaktus4")
+
+/obj/item/storage/box/large/custom_kit/pug/PopulateContents()
+	new /obj/item/melee/transforming/old_rusty(src)
+
+/datum/gear/donator/kits/pug
+	name = "I die to mobs"
+	path = /obj/item/storage/box/large/custom_kit/pug
+	ckeywhitelist = list("puglord777)
