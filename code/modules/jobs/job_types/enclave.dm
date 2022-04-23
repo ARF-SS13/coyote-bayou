@@ -55,6 +55,7 @@
 	flag = F13USLT
 	total_positions = 1
 	spawn_positions = 1
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
 	description = "You are in command of the post, holding the rank of First Lieutenant- albiet honourably. Conduct research and help rebuild America with your Scientists aswell as any research your Scientists wish to pursue, utilise any resources available to you to achieve this."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
@@ -120,6 +121,7 @@
 	flag = F13USGYSGT
 	total_positions = 1
 	spawn_positions = 1
+	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
 	description = "You are the Quartermaster and Logistics Specialist. Your role is an advisory one that sees that the bunker has everything it needs; soldiers, medicine and food. These roles are yours, along with commanding the Sergeants and helping direct their squads."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
@@ -409,3 +411,17 @@
         /obj/item/storage/box/ingredients/wildcard = 4,
         /obj/item/kitchen/knife/butcher = 1,
         )
+
+// Enclave Citizen
+// Really only used for ID console
+/datum/job/enclave/f13enclavecitizen
+	title = "American Citizen"
+	access = list()
+	minimal_access = list()
+	outfit = /datum/outfit/job/enclave/f13enclavecitizen
+
+/datum/outfit/job/enclave/f13enclavecitizen
+	name = "American Citizen (Role)"
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	id = /obj/item/card/id/dogtag/town/enclave

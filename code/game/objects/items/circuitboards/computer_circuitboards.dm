@@ -67,6 +67,14 @@
 	name = "Legion ID Console (Computer Board)"
 	build_path = /obj/machinery/computer/card/legion
 
+/obj/item/circuitboard/computer/card/enclave
+	name = "Enclave ID Console (Computer Board)"
+	build_path = /obj/machinery/computer/card/enclave
+
+/obj/item/circuitboard/computer/card/bos
+	name = "Brotherhood of Steel ID Console (Computer Board)"
+	build_path = /obj/machinery/computer/card/bos
+
 /obj/item/circuitboard/computer/card/minor
 	name = "Department Management Console (Computer Board)"
 	build_path = /obj/machinery/computer/card/minor

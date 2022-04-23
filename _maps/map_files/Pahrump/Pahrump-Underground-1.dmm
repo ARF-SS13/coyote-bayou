@@ -3235,18 +3235,17 @@
 /area/f13/caves)
 "bNT" = (
 /obj/structure/table/reinforced,
-/obj/item/folder{
-	icon_state = "folder_syndie";
-	pixel_x = -6;
-	pixel_y = 2
+/obj/item/card/id/dogtag/enclave/officer{
+	pixel_x = -5
 	},
-/obj/item/folder{
-	icon_state = "folder_syndie";
-	pixel_x = 5;
-	pixel_y = 4
+/obj/item/card/id/dogtag/enclave/officer{
+	pixel_x = -5
 	},
-/obj/item/folder{
-	icon_state = "folder_syndie"
+/obj/item/card/id/dogtag/enclave/trooper{
+	pixel_x = 7
+	},
+/obj/item/card/id/dogtag/enclave/trooper{
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/enclave)
@@ -3706,8 +3705,12 @@
 /area/f13/brotherhood/chemistry)
 "can" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/item/card/id/dogtag/enclave/noncombatant,
+/obj/item/card/id/dogtag/enclave/noncombatant,
+/obj/item/card/id/dogtag/enclave/noncombatant,
+/obj/item/card/id/dogtag/enclave/noncombatant,
+/obj/item/card/id/dogtag/enclave/noncombatant,
+/obj/item/card/id/dogtag/enclave/noncombatant,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/enclave)
 "caw" = (
@@ -4082,7 +4085,27 @@
 /turf/open/floor/plating/dirt,
 /area/f13/bunker)
 "ckv" = (
-/obj/structure/closet/crate/bin,
+/obj/structure/table{
+	layer = 2.9
+	},
+/obj/item/encryptionkey/headset_bos{
+	pixel_x = -8
+	},
+/obj/item/encryptionkey/headset_bos{
+	pixel_x = -8
+	},
+/obj/item/encryptionkey/headset_bos{
+	pixel_x = -8
+	},
+/obj/item/card/id/dogtag{
+	pixel_x = 4
+	},
+/obj/item/card/id/dogtag{
+	pixel_x = 4
+	},
+/obj/item/card/id/dogtag{
+	pixel_x = 4
+	},
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood/operations)
 "ckD" = (
@@ -4664,7 +4687,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "cAp" = (
-/obj/structure/table/reinforced,
+/obj/machinery/computer/card/enclave{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/enclave)
 "cAq" = (
@@ -4879,6 +4904,16 @@
 	name = "enclave officer beret"
 	},
 /obj/item/clothing/head/helmet/f13/helmet/enclave/officer,
+/obj/item/clothing/suit/armor/f13/enclavetrenchcoat,
+/obj/item/encryptionkey/headset_enclave{
+	pixel_x = 9
+	},
+/obj/item/encryptionkey/headset_enclave{
+	pixel_x = 9
+	},
+/obj/item/encryptionkey/headset_enclave{
+	pixel_x = 9
+	},
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
 "cEm" = (
@@ -15056,6 +15091,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/bunker)
+"iqd" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
+/area/f13/enclave)
 "iqo" = (
 /obj/structure/lattice{
 	layer = 3
@@ -33610,6 +33651,23 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/bunker)
+"tWd" = (
+/obj/structure/table/reinforced,
+/obj/item/folder{
+	icon_state = "folder_syndie";
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/folder{
+	icon_state = "folder_syndie";
+	pixel_x = -6;
+	pixel_y = 2
+	},
+/obj/item/folder{
+	icon_state = "folder_syndie"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
+/area/f13/enclave)
 "tWg" = (
 /obj/structure/closet/cabinet,
 /obj/effect/decal/cleanable/dirt,
@@ -36356,6 +36414,7 @@
 	pixel_x = 16;
 	pixel_y = 29
 	},
+/obj/machinery/computer/card/bos,
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/brotherhood/operations)
 "vLu" = (
@@ -46375,7 +46434,7 @@ wcj
 aAL
 bvF
 bvF
-cAp
+iqd
 cLc
 bvF
 ehe
@@ -46632,7 +46691,7 @@ wcj
 wcj
 bvF
 can
-cAp
+tWd
 bvF
 bvF
 ejA

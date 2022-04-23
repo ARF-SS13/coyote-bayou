@@ -924,7 +924,7 @@
 	item_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
-	
+
 /obj/item/card/id/dogtag/MDfakepermit
 	name = "faded medical license"
 	desc = "a revoked medical license. This is why we do not remove people's skeletons "
@@ -940,6 +940,12 @@
 	name = "Legion citizenship permit"
 	desc = "A permit identifying the holder as a citizen of Caesar's Legion."
 	assignment = "Legion Citizen"
+	access = list()
+
+/obj/item/card/id/dogtag/town/enclave
+	name = "American citizenship permit"
+	desc = "A permit identifying the holder as a citizen of United States of America."
+	assignment = "American Citizen"
 	access = list()
 
 /obj/item/card/id/dogtag/town/mafia
