@@ -228,3 +228,20 @@
 		data["messages"] = list()
 
 	return data
+
+//Deactivates chat client because fuck you
+/datum/computer_file/program/chatclient/New()
+	return
+
+/datum/computer_file/program/chatclient/ui_act(action, params)
+	return
+
+/datum/computer_file/program/chatclient/process_tick()
+	return
+
+/datum/computer_file/program/chatclient/run_program(mob/living/user)
+	message_admins("[user] tried to use the chatclient.")
+	return
+
+/datum/computer_file/program/chatclient/kill_program(forced = FALSE)
+	return
