@@ -101,4 +101,4 @@
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"
 	path = /obj/item/storage/box/large/custom_kit/pug
-	ckeywhitelist = list("puglord777)
+	ckeywhitelist = list("puglord777")
