@@ -86,7 +86,7 @@
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
 	new /obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
-	new /obj/item/storage/belt/military(src))
+	new /obj/item/storage/belt/military(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
 	
 
