@@ -5792,7 +5792,8 @@
 /area/f13/building)
 "csd" = (
 /obj/structure/holohoop{
-	dir = 8
+	dir = 8;
+	pixel_x = 7
 	},
 /obj/machinery/light{
 	dir = 4
@@ -8104,6 +8105,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"dsI" = (
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_x = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/ncr)
 "dsL" = (
 /obj/item/trash/pistachios,
 /turf/open/indestructible/ground/inside/mountain,
@@ -19817,7 +19824,7 @@
 "hQD" = (
 /obj/machinery/light,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "hQE" = (
@@ -21796,7 +21803,8 @@
 	dir = 8
 	},
 /obj/structure/holohoop{
-	dir = 4
+	dir = 4;
+	pixel_x = -5
 	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -32180,7 +32188,7 @@
 /area/f13/wasteland)
 "mLT" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/f13/ncr_c_ration,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "mMd" = (
@@ -37972,7 +37980,9 @@
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
 "pgN" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	pixel_x = -6
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "phy" = (
@@ -70114,7 +70124,7 @@ wUZ
 xGv
 xGv
 tNa
-bZg
+dsI
 xGv
 xGv
 hSK
