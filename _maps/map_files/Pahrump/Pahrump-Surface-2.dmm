@@ -12258,7 +12258,7 @@
 /area/f13/city)
 "faQ" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = Mayor's Office;
+	name = "Mayor's Office";
 	req_one_access_txt = "62"
 	},
 /turf/open/floor/carpet/black,
@@ -30857,7 +30857,7 @@
 "mlO" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = bigbunk
+	id = "bigbunk"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
@@ -39075,7 +39075,7 @@
 "pFX" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
-	id = junglehome;
+	id = "junglehome";
 	name = "Damp Ladder"
 	},
 /turf/open/indestructible/ground/inside/mountain,
