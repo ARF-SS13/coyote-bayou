@@ -70,6 +70,8 @@
 
 /datum/config_entry/flag/log_job_debug	// log roundstart divide occupations debug information to a file
 
+/datum/config_entry/flag/log_timers_on_bucket_reset // logs all timers on bucket reset
+
 /datum/config_entry/flag/allow_admin_ooccolor	// Allows admins with relevant permissions to have their own ooc colour
 
 /datum/config_entry/flag/allow_vote_restart	// allow votes to restart
