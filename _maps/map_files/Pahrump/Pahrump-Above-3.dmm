@@ -4343,6 +4343,13 @@
 /obj/structure/decoration/rag,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"ss" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/raider/ranged/boss,
+/turf/open/floor/wood,
+/area/f13/building)
 "sw" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -6614,7 +6621,7 @@
 /obj/structure/closet/cabinet/anchored{
 	pixel_y = 10
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/wood,
 /area/f13/building)
 "BW" = (
@@ -29078,7 +29085,7 @@ xT
 Gr
 AS
 SP
-AC
+ss
 SP
 SP
 Pr
