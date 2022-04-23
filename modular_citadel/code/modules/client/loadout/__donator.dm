@@ -54,14 +54,12 @@
 	ckeywhitelist = list("sugga")
 
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
-	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
-	new /obj/item/ammo_box/tube/a357(src)
-	new /obj/item/ammo_box/tube/a357(src)
-	new /obj/item/ammo_box/tube/a357(src)
 	new /obj/item/storage/belt/holster(src)
+	new /obj/item/gun/ballistic/revolver/hunting(src)
+	new /obj/item/gun/ballistic/revolver/hunting(src)
+	new /obj/item/ammo_box/c4570(src)
+	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
-	new /obj/item/gun/energy/laser/wattz/magneto(src)
-	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/clothing/head/helmet/riot(src)
 
 /datum/gear/donator/kits/klatue
