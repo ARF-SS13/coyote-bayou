@@ -18,10 +18,16 @@
 	sexes = 1
 	disliked_food = NONE
 	liked_food = NONE
+	var/info_text = "You are a <span class='danger'>Ghoul.</span>. As pre-war zombified relic, or an unluckily recently made post-necrotic, you cannot bleed, cannot breathe, and heal from radiation. On surface examination, you are indistinguishable from a corpse. \
+					Your <span class='warning'>fragile limbs</span> are a source of vulnerability for you-they are easily dismembered and easily detached, though you can stick them on just as easily. \
+					<span class='boldwarning'>Healing medicines and drugs</span> will have next to no effect on your bizzare biology, with some exceptions. To heal, you must use sutures and ointments, or irradiate yourself-though some medicines, like omnizine, are powerful enough to slowly mend your wounds. \
+					<span class='nicegreen'>Radiation heals you slowly.</span> The more radiation you have, the slower you will move, and too much radiation can hurt you all the same. \
+					<span class='warning'>You are terrible at melee</span> and innately slower than humans. You also cannot go into critical condition-ever. You will keep shambling forward until you are <span class='danger'>dead.</span>"
 
 //Ghouls have weak limbs.
 /datum/species/ghoul/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
+	to_chat(C, "[info_text]")
 	for(var/obj/item/bodypart/r_arm/b in C.bodyparts)
 		b.max_damage -= 10
 		b.wound_resistance = -40
