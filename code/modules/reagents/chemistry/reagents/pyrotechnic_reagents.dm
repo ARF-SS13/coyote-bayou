@@ -6,6 +6,7 @@
 	color = "#550000"
 	taste_description = "sweet tasting metal"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/thermite/reaction_turf(turf/T, reac_volume)
 	if(reac_volume >= 1)
@@ -40,6 +41,7 @@
 	metabolization_rate = 4
 	taste_description = "burning"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/clf3/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -83,6 +85,7 @@
 	color = "#5A64C8"
 	taste_description = "air and bitterness"
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/liquid_dark_matter
 	name = "Liquid Dark Matter"
@@ -91,6 +94,7 @@
 	color = "#210021"
 	value = REAGENT_VALUE_UNCOMMON
 	taste_description = "compressed bitterness"
+	ghoulfriendly = TRUE
 
 /datum/reagent/blackpowder
 	name = "Black Powder"
@@ -100,6 +104,7 @@
 	metabolization_rate = 0.05
 	taste_description = "salt"
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/blackpowder/on_mob_life(mob/living/carbon/M)
 	..()
@@ -144,6 +149,7 @@
 	color = "#FA00AF"
 	taste_description = "burning"
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/phlogiston/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjust_fire_stacks(1)
@@ -166,6 +172,7 @@
 	color = "#FA00AF"
 	taste_description = "burning"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/napalm/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(1)
@@ -183,6 +190,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/cryostylane/on_mob_life(mob/living/carbon/M) //TODO: code freezing into an ice cube
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -202,6 +210,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/pyrosium/on_mob_life(mob/living/carbon/M)
 	if(M.reagents.has_reagent(/datum/reagent/oxygen))
@@ -218,6 +227,7 @@
 	taste_description = "charged metal"
 	var/shock_timer = 0
 	value = REAGENT_VALUE_VERY_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/teslium/on_mob_life(mob/living/carbon/M)
 	shock_timer++
@@ -245,6 +255,7 @@
 	reagent_state = LIQUID
 	color = "#CAFF43"
 	taste_description = "jelly"
+	ghoulfriendly = TRUE
 
 /datum/reagent/teslium/energized_jelly/on_mob_life(mob/living/carbon/M)
 	if(isjellyperson(M))
@@ -265,6 +276,7 @@
 	color = "#A6FAFF55"
 	taste_description = "the inside of a fire extinguisher"
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/firefighting_foam/reaction_turf(turf/open/T, reac_volume)
 	if (!istype(T))

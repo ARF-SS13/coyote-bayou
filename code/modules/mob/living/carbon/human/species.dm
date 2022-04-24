@@ -1287,7 +1287,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/radiation = H.radiation
 
 	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
-		radiation = 0
 		return TRUE
 
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))

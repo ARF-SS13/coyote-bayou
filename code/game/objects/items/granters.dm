@@ -95,7 +95,7 @@
 /obj/item/book/granter/trait/rifleman
 	name = "The Neo-Russian Rifleman\'s Primer"
 	desc = "A book with stains of vodka and...blood? The back is hard to read, but says something about bolt-actions. Or pump-actions. Both, maybe."
-	oneuse = FALSE
+	oneuse = TRUE
 	granted_trait = TRAIT_FAST_PUMP
 	traitname = "riflery"
 	icon_state = "book1"

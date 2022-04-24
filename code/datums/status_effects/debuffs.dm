@@ -1082,6 +1082,17 @@ datum/status_effect/pacify
 	desc = "I don't feel so good. Your body can't handle the mutations! You have one minute to remove your mutations, or you will be met with a horrible fate."
 	icon_state = "dna_melt"
 
+/datum/status_effect/ghouldoomed //the actual dooming is handled in ghoul.dm
+	id = "ghouldoom"
+	duration = -1
+	alert_type = /obj/screen/alert/status_effect/ghouldoom
+	examine_text = "<span class='danger'>They are withering like a grape on the vine, alight with searing green!</span>"
+
+/obj/screen/alert/status_effect/ghouldoom
+	name = "Too much radiation"
+	desc = "You've absorbed so much radiation that it's cooking your brain alive! Shed rads or die."
+	icon_state = "fleshmend_fire"
+
 /datum/status_effect/fake_virus
 	id = "fake_virus"
 	duration = 1800//3 minutes

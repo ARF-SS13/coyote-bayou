@@ -32,6 +32,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/alpha = 0
 	var/can_synth = TRUE // can this reagent be synthesized? (for example: odysseus syringe gun)
 	var/metabolization_rate = REAGENTS_METABOLISM //how fast the reagent is metabolized by the mob
+	var/ghoulfriendly = FALSE //can ghouls metabolize this chemical
 	var/overrides_metab = 0
 	var/overdose_threshold = 0
 	var/addiction_threshold = 0

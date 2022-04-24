@@ -82,6 +82,7 @@ Elder
 	accessory =	/obj/item/clothing/accessory/bos/elder
 	suit_store =	/obj/item/gun/energy/laser/laer
 	neck =	/obj/item/clothing/neck/mantle/bos/right
+	ears = /obj/item/radio/headset/headset_bos/command
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
 		/obj/item/melee/onehanded/knife/hunting = 1,
@@ -146,6 +147,7 @@ Head Paladin
 	glasses =       /obj/item/clothing/glasses/night
 	belt =			/obj/item/storage/belt/military/assault
 	mask =			/obj/item/clothing/mask/gas/sechailer
+	ears =			/obj/item/radio/headset/headset_bos/command
 	id = 			/obj/item/card/id/dogtag
 	neck = 			/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(

@@ -18,3 +18,12 @@
 	blacklisted_movetypes = (FLOATING|CRAWLING)
 	variable = TRUE
 	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/ghoulhealone
+	multiplicative_slowdown = 0.5
+
+/datum/movespeed_modifier/ghoulhealtwo
+	multiplicative_slowdown = 0.8
+
+/datum/movespeed_modifier/ghoulhealthree
+	multiplicative_slowdown = 1.5
