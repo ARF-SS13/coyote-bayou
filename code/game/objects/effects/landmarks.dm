@@ -753,11 +753,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
-	name = "Sheriff"
+	name = "Chief of Police"
 	icon_state = "Sheriff"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Deputy"
+	name = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
 	name = "Farmer"

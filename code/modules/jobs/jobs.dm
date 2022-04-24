@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 	"Legion Centurion",
 
-	"Sheriff",
+	"Chief of Police",
 
 	"Enclave Lieutenant",
 	))
@@ -95,8 +95,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Legion Slave",
 
 "Mayor",
-"Sheriff",
-"Deputy",
+"Chief of Police",
+"Officer",
 "Shopkeeper",
 "Doctor",
 "Prospector",
@@ -146,10 +146,10 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Mayor",
 	"Secretary",
-	"Sheriff",
+	"Chief of Police",
 	"Doctor",
 	"Citizen",
-	"Deputy",
+	"Officer",
 	"Shopkeeper",
 	"Farmer",
 	"Prospector",
@@ -242,7 +242,7 @@ GLOBAL_LIST_INIT(enclave_positions, list(
 
 GLOBAL_LIST_INIT(security_positions, list(
 	"Vault-tec Security",
-	"Deputy",
+	"Officer",
 ))
 GLOBAL_LIST_INIT(silicon_positions, list(
 	"Mr. Handy",

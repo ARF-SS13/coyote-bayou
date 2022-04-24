@@ -72,6 +72,8 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/box/citizenship_permits = 1, \
 		/obj/item/pen/fountain/captain = 1,
+		/obj/item/gun/ballistic/automatic/wt550 = 1,
+		/obj/item/ammo_box/magazine/m473/small = 2,
 		)
 
 
@@ -212,8 +214,8 @@ Mayor
 	outfit = /datum/outfit/job/den/f13sheriff
 
 	loadout_options = list(
-	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/thechief,
+	/datum/outfit/loadout/dakka,
+	/datum/outfit/loadout/pew,
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -228,51 +230,45 @@ Mayor
 	)
 
 /datum/outfit/job/den/f13sheriff
-	name = "Sheriff"
+	name = "Chief of Police"
 	jobtype = /datum/job/oasis/f13sheriff
 
 	id = /obj/item/card/id/dogtag/sheriff
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-
-	ears = 			/obj/item/radio/headset/headset_town
-	uniform =  		/obj/item/clothing/under/f13/sheriff
-	belt =			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/f13/cowboy
-	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_pocket =		/obj/item/storage/bag/money/small/den
-	backpack_contents = list(
-		/obj/item/storage/box/deputy_badges = 1,
-		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/classic_baton = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1,
-		)
-
-/datum/outfit/loadout/thelaw
-	name = "The Law Man"
-	suit = /obj/item/clothing/suit/armor/f13/town/sheriff
-	head = /obj/item/clothing/head/f13/town/sheriff
-	neck = /obj/item/storage/belt/holster
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
-	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
-	backpack_contents = list(
-		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/ammo_box/m44 = 2,
-		)
-
-/datum/outfit/loadout/thechief
-	name = "The Chief"
+	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/police/formal
 	suit = /obj/item/clothing/suit/armor/f13/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
 	neck = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/military/army
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_hand = /obj/item/gun/energy/laser/aer9/oasis
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_pocket = /obj/item/storage/bag/money/small/den
+	backpack_contents = list(
+		/obj/item/storage/box/deputy_badges = 1,
+		/obj/item/restraints/handcuffs = 2,
+		/obj/item/melee/classic_baton = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		)
+
+/datum/outfit/loadout/dakka
+	name = "Door kicker"
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m5mm = 2,
+		/obj/item/ammo_box/m44 = 2,
+		/obj/item/gun/ballistic/revolver/m29/peacekeeper = 1,
+		)
+
+/datum/outfit/loadout/pew
+	name = "Tactical"
+	suit_store = /obj/item/gun/energy/laser/aer9/oasis
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
+		/obj/item/ammo_box/magazine/m45exp= 2,
+		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		)
 
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -302,11 +298,11 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13deputy
-	title = "Deputy"
+	title = "Officer"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 5
+	spawn_positions = 5
 	supervisors = "Oasis Police Department"
 	description = "You've passed the training and tests to join the OPD, and your loyalty to the Chief is absolute - this is your new home, your family. This oasis of civilization will not fall as long as you breathe. Protect its citizens and property, for that is your new purpose."
 	selection_color = "#dcba97"
@@ -315,11 +311,11 @@ Mayor
 	exp_requirements = 600
 
 	loadout_options = list(
-	/datum/outfit/loadout/frontierjustice,
+	/datum/outfit/loadout/standardpd,
 	/datum/outfit/loadout/police,
 	/datum/outfit/loadout/swat,)
 
-	outfit = /datum/outfit/job/den/f13deputy
+	outfit = /datum/outfit/job/oasis/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	matchmaking_allowed = list(
@@ -331,65 +327,59 @@ Mayor
 		),
 	)
 
-/datum/outfit/job/den/f13deputy
-	name = "Deputy"
+/datum/outfit/job/oasis/f13deputy
+	name = "Officer"
 	jobtype = /datum/job/oasis/f13deputy
-
 	ears = /obj/item/radio/headset/headset_town
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/security
+	belt = /obj/item/storage/belt/military/assault
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	neck = /obj/item/storage/belt/holster/legholster
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
-	shoes = /obj/item/clothing/shoes/f13/explorer
-	uniform = /obj/item/clothing/under/f13/cowboyb
-	backpack_contents = list(
-		/obj/item/restraints/handcuffs = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1,
-		)
-
-/datum/outfit/loadout/frontierjustice
-	name = "Frontier Justice"
-	suit = /obj/item/clothing/suit/armor/f13/town/deputy
-	head = /obj/item/clothing/head/f13/town/deputy
-	neck =	/obj/item/storage/belt/holster
-	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
-	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44 = 2,
-		/obj/item/ammo_box/m44 = 2,
-		/obj/item/gun/ballistic/revolver/m29 = 1,
-		)
-
-/datum/outfit/loadout/police
-	name = "Oasis PD"
-	uniform = /obj/item/clothing/under/f13/police/officer
-	suit = /obj/item/clothing/suit/armor/bulletproof
-	head = /obj/item/clothing/head/f13/town/officer
-	neck = /obj/item/storage/belt/holster/legholster
-	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
+	uniform = /obj/item/clothing/under/f13/police/officer
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs = 2,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/gun/ballistic/revolver/police = 1,
+		/obj/item/ammo_box/a357 = 3,
+		)
+
+/datum/outfit/loadout/standardpd
+	name = "Standard"
+	head = /obj/item/clothing/head/f13/town/officer
+	suit_store = /obj/item/gun/ballistic/shotgun/police
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
-		/obj/item/ammo_box/a357 = 3,
+		/obj/item/ammo_box/shotgun/trainshot = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/gun/ballistic/revolver/police = 1,
+		)
+
+/datum/outfit/loadout/police
+	name = "Police Marksman"
+	head = /obj/item/clothing/head/f13/town/officer
+	gloves = /obj/item/clothing/gloves/rifleman
+	suit_store = /obj/item/gun/ballistic/rifle/hunting/remington
+	backpack_contents = list(
+		/obj/item/attachments/scope = 1,
+		/obj/item/ammo_box/a762 = 3,
+		/obj/item/book/granter/trait/rifleman = 1,
 		)
 
 /datum/outfit/loadout/swat
 	name = "S.W.A.T. Officer"
 	uniform = /obj/item/clothing/under/f13/police/swat
-	suit = /obj/item/clothing/suit/armor/bulletproof
 	head = /obj/item/clothing/head/helmet/alt
+	mask = /obj/item/clothing/mask/balaclava
 	neck = /obj/item/storage/belt/holster/legholster
-	l_hand = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
-	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/f13/military
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m45exp=2,
-		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
-		/obj/item/ammo_box/magazine/m5mm=1,
-		/obj/item/flashlight/seclite = 1,
+		/obj/item/ammo_box/magazine/m5mm = 1,
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
