@@ -34,6 +34,7 @@
 	force = 34
 	block_chance = 7
 	throwforce = 20
+	wound_bonus = 10
 	sharpness = SHARP_EDGED
 
 /obj/item/melee/onehanded/machete/forgedmachete
@@ -41,6 +42,7 @@
 	desc = "A forged machete made of high quality steel."
 	icon_state = "machete"
 	force = 35
+	wound_bonus = 20
 	block_chance = 8
 
 /obj/item/melee/onehanded/machete/training
@@ -49,6 +51,7 @@
 	icon_state = "machete_training"
 	force = 1
 	throwforce = 5
+	wound_bonus = -20
 	block_chance = 8
 
 /obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user)
@@ -63,6 +66,7 @@
 	icon_state = "gladius"
 	item_state = "gladius"
 	force = 36
+	wound_bonus = 30
 	block_chance = 10
 
 /obj/item/melee/onehanded/machete/spatha
@@ -71,6 +75,7 @@
 	icon_state = "spatha"
 	item_state = "spatha"
 	force = 38
+	wound_bonus = 30
 	block_chance = 18
 
 /obj/item/melee/onehanded/machete/spatha/longblade
@@ -100,8 +105,6 @@
 	throwforce = 35
 	armour_penetration = 0.10
 	max_reach = 2
-	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 0.3
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
 

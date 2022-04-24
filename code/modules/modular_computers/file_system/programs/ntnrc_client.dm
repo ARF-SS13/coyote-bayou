@@ -233,9 +233,6 @@
 /datum/computer_file/program/chatclient/New()
 	return
 
-/datum/computer_file/program/chatclient/ui_act(action, params)
-	return
-
 /datum/computer_file/program/chatclient/process_tick()
 	return
 

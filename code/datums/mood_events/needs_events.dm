@@ -13,11 +13,11 @@
 
 /datum/mood_event/hungry
 	description = "<span class='warning'>I'm getting a bit hungry.</span>\n"
-	mood_change = -8
+	mood_change = -2
 
 /datum/mood_event/starving
 	description = "<span class='boldwarning'>I'm starving!</span>\n"
-	mood_change = -15
+	mood_change = -4
 
 //charge
 /datum/mood_event/supercharged

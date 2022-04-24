@@ -76,6 +76,7 @@
 	suit = 		/obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = 		/obj/item/card/id/dogtag/enclave/officer
+	ears =		/obj/item/radio/headset/headset_enclave/command
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,

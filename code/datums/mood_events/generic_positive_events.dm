@@ -154,6 +154,11 @@
 /datum/mood_event/nanite_happiness/add_effects(message)
 	description = "<span class='nicegreen robot'>+++++++[message]+++++++</span>\n"
 
+/datum/mood_event/homicidalracist
+	description = "<span class='nicegreen'>I killed a ghoul recently. The world is a better place.</span>\n"
+	mood_change = 5
+	timeout = 15 MINUTES
+
 /datum/mood_event/area
 	description = "" //Fill this out in the area
 	mood_change = 0
