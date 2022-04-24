@@ -197,7 +197,12 @@
 	item_color = "enclave"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
-/obj/item/clothing/head/helmet/soft/f13/enclave/Initialize() 
+/obj/item/clothing/head/f13/enclave/officer
+	name = "armored officer hat"
+	desc = "A standard-issue Enclave officer's cap with additional armor platings."
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+
+/obj/item/clothing/head/helmet/soft/f13/enclave/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

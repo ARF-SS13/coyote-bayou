@@ -13,30 +13,30 @@
 
 /datum/outfit/job/enclave
 	id = null
-	ears = 			/obj/item/radio/headset/headset_enclave
-	glasses = 		/obj/item/clothing/glasses/night/f13/enclave
-	box = 			/obj/item/storage/survivalkit_aid
+	ears = /obj/item/radio/headset/headset_enclave
+	glasses = /obj/item/clothing/glasses/night/f13/enclave
+	box = /obj/item/storage/survivalkit_adv
 
 /datum/outfit/job/enclave/peacekeeper
-	id = 			/obj/item/card/id/dogtag/enclave/trooper
-	mask =			/obj/item/clothing/mask/gas/enclave
-	neck =			/obj/item/storage/belt/holster/legholster
-	backpack = 		/obj/item/storage/backpack/enclave
-	satchel = 		/obj/item/storage/backpack/satchel/enclave
-	belt = 			/obj/item/storage/belt/military/assault/enclave
-	uniform = 		/obj/item/clothing/under/f13/enclave/peacekeeper
-	r_pocket =		/obj/item/flashlight/seclite
-	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
-	gloves =		/obj/item/clothing/gloves/f13/military
+	id = /obj/item/card/id/dogtag/enclave/trooper
+	mask = /obj/item/clothing/mask/gas/enclave
+	neck = /obj/item/storage/belt/holster/legholster
+	backpack = /obj/item/storage/backpack/enclave
+	satchel = /obj/item/storage/backpack/satchel/enclave
+	belt = /obj/item/storage/belt/military/assault/enclave
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	r_pocket = /obj/item/flashlight/seclite
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
+	gloves = /obj/item/clothing/gloves/f13/military
 
 /datum/outfit/job/enclave/noncombat
-	id = 			/obj/item/card/id/dogtag/enclave/noncombatant
-	backpack = 		/obj/item/storage/backpack/enclave
-	satchel = 		/obj/item/storage/backpack/satchel/enclave
-	belt = 			/obj/item/storage/belt/military/assault/enclave
-	uniform = 		/obj/item/clothing/under/f13/enclave/science
-	r_pocket =		/obj/item/flashlight/seclite
-	shoes = 		/obj/item/clothing/shoes/f13/enclave/serviceboots
+	id = /obj/item/card/id/dogtag/enclave/noncombatant
+	backpack = /obj/item/storage/backpack/enclave
+	satchel = /obj/item/storage/backpack/satchel/enclave
+	belt = /obj/item/storage/belt/military/assault/enclave
+	uniform = /obj/item/clothing/under/f13/enclave/science
+	r_pocket = /obj/item/flashlight/seclite
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 
 /datum/outfit/job/enclave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -44,9 +44,6 @@
 		return
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
-
-
-
 
 
 //Lieutenant
@@ -61,21 +58,20 @@
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
 	exp_requirements = 3000
 
-
 	loadout_options = list(
-		/datum/outfit/loadout/ballistics,	// FN FAL and Deagle
-		/datum/outfit/loadout/plasmaman, 	// Plasma Rifle and Compliance Regulator
+		/datum/outfit/loadout/ballistics, // FN FAL and Deagle
+		/datum/outfit/loadout/plasmaman, // Plasma Rifle and Compliance Regulator
 		)
 
 
 /datum/outfit/job/enclave/peacekeeper/enclavelt
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/enclave/enclavelt
-	head = 		/obj/item/clothing/head/f13/enclave
-	uniform = 	/obj/item/clothing/under/f13/enclave/officer
-	suit = 		/obj/item/clothing/suit/armor/f13/enclavetrenchcoat
-	accessory = /obj/item/clothing/accessory/ncr/LT1
-	id = 		/obj/item/card/id/dogtag/enclave/officer
+	head = /obj/item/clothing/head/f13/enclave/officer
+	uniform = /obj/item/clothing/under/f13/enclave/officer
+	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
+	accessory = /obj/item/clothing/accessory/enclave/lieutenant
+	id = /obj/item/card/id/dogtag/enclave/officer
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 3,
@@ -135,7 +131,7 @@
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant
 	name = "Enclave Gunnery Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
-	accessory = 	/obj/item/clothing/accessory/ncr/FSGT
+	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -187,10 +183,10 @@
 /datum/outfit/job/enclave/peacekeeper/enclavesgt
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/enclave/enclavesgt
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/mk2/remnant
-	suit_store = 	/obj/item/gun/ballistic/automatic/assault_rifle
-	head = 			/obj/item/clothing/head/helmet/f13/combat/mk2/remnant
-	accessory =     /obj/item/clothing/accessory/ncr/SGT
+	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/remnant
+	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle
+	head = /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
+	accessory = /obj/item/clothing/accessory/enclave/sergeant
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -229,9 +225,9 @@
 /datum/outfit/job/enclave/peacekeeper/f13specialist
 	name = "Enclave Specialist"
 	jobtype = /datum/job/enclave/f13specialist
-	suit = 			/obj/item/clothing/suit/armor/bulletproof
-	accessory = 	/obj/item/clothing/accessory/ncr/SPC
-	suit_store = 	/obj/item/gun/ballistic/automatic/smg/mp5
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
+	accessory = /obj/item/clothing/accessory/enclave/specialist
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -279,10 +275,10 @@
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
 	jobtype = /datum/job/enclave/enclavespy
-	head = 			/obj/item/clothing/head/helmet/f13/combat/swat
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/swat
-	accessory = 	/obj/item/clothing/accessory/ncr/REC
-	suit_store =  	/obj/item/gun/ballistic/automatic/assault_carbine/worn
+	head = /obj/item/clothing/head/helmet/f13/combat/swat
+	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	suit_store =  /obj/item/gun/ballistic/automatic/assault_carbine/worn
+	accessory = /obj/item/clothing/accessory/enclave/private_firstclass
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -310,12 +306,12 @@
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
 	jobtype = /datum/job/enclave/enclavesci
-	head = 			/obj/item/clothing/head/helmet/f13/envirosuit
-	mask =			/obj/item/clothing/mask/breath/medical
-	gloves = 		/obj/item/clothing/gloves/color/latex/nitrile
-	suit = 			/obj/item/clothing/suit/armor/f13/environmentalsuit
-	belt = 			/obj/item/storage/belt/medical
-	suit_store =  	/obj/item/tank/internals/oxygen
+	head = /obj/item/clothing/head/helmet/f13/envirosuit
+	mask =/obj/item/clothing/mask/breath/medical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	suit = /obj/item/clothing/suit/armor/f13/environmentalsuit
+	belt = /obj/item/storage/belt/medical
+	suit_store =  /obj/item/tank/internals/oxygen
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
@@ -341,76 +337,90 @@
 
 //Bunker Duty
 /datum/job/enclave/f13BDUTY
-    title = "Enclave Bunker Duty"
-    flag = F13USBDUTY
-    total_positions = 2
-    spawn_positions = 2
-    description = "You were assigned to bunker duty this week, clean up, cook up, preach up or chem up your fellow Americans and remember don't join any raids or battles from your fellow Americans, after all it's none of your concern this week is it."
-    enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
-    supervisors = "Everyone else."
-    outfit = /datum/outfit/job/enclave/noncombat/f13BDUTY
-    exp_type = EXP_TYPE_FALLOUT
-    exp_requirements = 100
+	title = "Enclave Bunker Duty"
+	flag = F13USBDUTY
+	total_positions = 2
+	spawn_positions = 2
+	description = "You were assigned to bunker duty this week, clean up, cook up, preach up or chem up your fellow Americans and remember don't join any raids or battles from your fellow Americans, after all it's none of your concern this week is it."
+	enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
+	supervisors = "Everyone else."
+	outfit = /datum/outfit/job/enclave/noncombat/f13BDUTY
+	exp_type = EXP_TYPE_FALLOUT
+	exp_requirements = 100
 
-    loadout_options = list(
-        /datum/outfit/loadout/pharma,
-        /datum/outfit/loadout/janny,
-        /datum/outfit/loadout/chaplain,
-        /datum/outfit/loadout/cook,
-        )
+	loadout_options = list(
+		/datum/outfit/loadout/bunkerduty_pharma,
+		/datum/outfit/loadout/bunkerduty_engi,
+		/datum/outfit/loadout/bunkerduty_janny,
+		/datum/outfit/loadout/bunkerduty_chaplain,
+		/datum/outfit/loadout/bunkerduty_cook,
+		)
 
 /datum/outfit/job/enclave/noncombat/f13BDUTY
-    name = "Enclave Bunker Duty"
-    jobtype = /datum/job/enclave/f13BDUTY
-    id =             /obj/item/card/id/dogtag/enclave/trooper
-    glasses =         /obj/item/clothing/glasses/sunglasses/big
-    uniform =        /obj/item/clothing/under/f13/enclave/peacekeeper
+	name = "Enclave Bunker Duty"
+	jobtype = /datum/job/enclave/f13BDUTY
+	id = /obj/item/card/id/dogtag/enclave/trooper
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	accessory = /obj/item/clothing/accessory/enclave
 
-    backpack_contents = list(
-        /obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-        /obj/item/storage/survivalkit_aid_adv = 1,
-        /obj/item/storage/bag/money/small/wastelander = 1,
-        )
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/bag/money/small/wastelander = 1,
+		)
 
-/datum/outfit/loadout/pharma
-    name = "Pharmaceutical Technician"
-    mask = /obj/item/clothing/mask/surgical
-    suit = /obj/item/clothing/suit/hooded/surgical
-    gloves = /obj/item/clothing/gloves/color/latex/nitrile
-    backpack_contents = list(
-        /obj/item/book/granter/trait/chemistry = 1,
-        /obj/item/healthanalyzer = 1,
-        )
+/datum/outfit/loadout/bunkerduty_pharma
+	name = "Pharmaceutical Technician"
+	mask = /obj/item/clothing/mask/surgical
+	suit = /obj/item/clothing/suit/hooded/surgical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	backpack_contents = list(
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/healthanalyzer = 1,
+		)
 
-/datum/outfit/loadout/janny
-    name = "Sanitation Technician"
-    gloves = /obj/item/clothing/gloves/color/black
-    head = /obj/item/clothing/head/soft/purple
-    shoes = /obj/item/clothing/shoes/galoshes
-    backpack_contents = list(
-        /obj/item/reagent_containers/spray/cleaner = 1,
-        /obj/item/mop/advanced = 1,
-        /obj/item/grenade/chem_grenade/cleaner = 3,
-        )
+/datum/outfit/loadout/bunkerduty_engi
+	name = "Maintenance Technician"
+	head = /obj/item/clothing/head/hardhat
+	suit = /obj/item/clothing/suit/hazardvest
+	gloves = /obj/item/clothing/gloves/color/yellow
+	backpack_contents = list(
+		/obj/item/storage/belt/utility = 1,
+		/obj/item/stack/sheet/metal/twenty = 1,
+		/obj/item/stack/sheet/glass/ten = 2,
+		/obj/item/stack/cable_coil/thirty = 2,
+		)
 
-/datum/outfit/loadout/chaplain
-    name = "Spiritual Technician"
-    mask = /obj/item/clothing/mask/surgical
-    suit = /obj/item/clothing/suit/f13/autumn
-    backpack_contents = list(
-        /obj/item/storage/book/bible = 2,
-        /obj/item/pen = 1,
-        /obj/item/folder = 1,
-        )
+/datum/outfit/loadout/bunkerduty_janny
+	name = "Sanitation Technician"
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/soft/purple
+	shoes = /obj/item/clothing/shoes/galoshes
+	backpack_contents = list(
+		/obj/item/reagent_containers/spray/cleaner = 1,
+		/obj/item/mop/advanced = 1,
+		/obj/item/grenade/chem_grenade/cleaner = 3,
+		)
 
-/datum/outfit/loadout/cook
-    name = "Culinary Technician"
-    head = /obj/item/clothing/head/chefhat
-    suit = /obj/item/clothing/neck/apron/housewife
-    backpack_contents = list(
-        /obj/item/storage/box/ingredients/wildcard = 4,
-        /obj/item/kitchen/knife/butcher = 1,
-        )
+/datum/outfit/loadout/bunkerduty_chaplain
+	name = "Spiritual Technician"
+	mask = /obj/item/clothing/mask/surgical
+	suit = /obj/item/clothing/suit/f13/autumn
+	backpack_contents = list(
+		/obj/item/storage/book/bible = 2,
+		/obj/item/pen = 1,
+		/obj/item/folder = 1,
+		)
+
+/datum/outfit/loadout/bunkerduty_cook
+	name = "Culinary Technician"
+	head = /obj/item/clothing/head/chefhat
+	suit = /obj/item/clothing/neck/apron/housewife
+	backpack_contents = list(
+		/obj/item/storage/box/ingredients/wildcard = 4,
+		/obj/item/kitchen/knife/butcher = 1,
+		)
 
 // Enclave Citizen
 // Really only used for ID console
@@ -422,6 +432,6 @@
 
 /datum/outfit/job/enclave/f13enclavecitizen
 	name = "American Citizen (Role)"
-	uniform = 		/obj/item/clothing/under/f13/vault13
-	shoes = 		/obj/item/clothing/shoes/jackboots
+	uniform = /obj/item/clothing/under/f13/vault13
+	shoes = /obj/item/clothing/shoes/jackboots
 	id = /obj/item/card/id/dogtag/town/enclave
